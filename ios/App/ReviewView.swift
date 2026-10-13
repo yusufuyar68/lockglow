@@ -47,13 +47,20 @@ struct ReviewView: View {
             Text("\(index + 1) / \(session.words.count)")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Button {
-                isRevealed = true
-            } label: {
-                flashcard(for: word)
+            // The card scrolls on its own when the revealed side is taller than the space left
+            // (iPhone SE), so the answer buttons below always stay visible and tappable.
+            GeometryReader { proxy in
+                ScrollView {
+                    Button {
+                        isRevealed = true
+                    } label: {
+                        flashcard(for: word, minHeight: proxy.size.height)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityHint(isRevealed ? "" : "Anlamını göstermek için çift dokun")
+                }
+                .scrollBounceBehavior(.basedOnSize)
             }
-            .buttonStyle(.plain)
-            .accessibilityHint(isRevealed ? "" : "Anlamını göstermek için çift dokun")
             answerArea(word: word)
         }
         .padding(16)
@@ -66,10 +73,11 @@ struct ReviewView: View {
         }
     }
 
-    private func flashcard(for word: WidgetWord) -> some View {
+    /// At least `minHeight` tall (the visible scroll area) with the content centered; taller when
+    /// the revealed side needs more room, and the scroll view then scrolls.
+    private func flashcard(for word: WidgetWord, minHeight: CGFloat) -> some View {
         let detail = model.detail(for: word)
         return VStack(spacing: 12) {
-            Spacer(minLength: 0)
             Text(word.lemma)
                 .font(.largeTitle.bold())
                 .multilineTextAlignment(.center)
@@ -112,10 +120,9 @@ struct ReviewView: View {
                     .foregroundStyle(.secondary)
                     .padding(.top, 8)
             }
-            Spacer(minLength: 0)
         }
         .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, minHeight: minHeight)
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .contentShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
     }
