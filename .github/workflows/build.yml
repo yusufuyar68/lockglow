@@ -7,6 +7,13 @@ name: build
 on:
   push:
     branches: [main]
+    # Documentation-only pushes do not need a (10x billed) macOS build.
+    paths-ignore:
+      - "**/*.md"
+      - "raporlar/**"
+      - "docs/**"
+      - "marketing/**"
+      - "referans/**"
   workflow_dispatch:
 
 concurrency:
