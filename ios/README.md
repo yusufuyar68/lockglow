@@ -145,6 +145,15 @@ bash ios/Tools/linux_check.sh
 - Son sonuç (2026-10-12, Swift 6.2.4): derleme hatasız, **97 test geçti**. Kasıtlı yanlış bir argüman etiketiyle denendi: kontrol hatayı yakalıyor.
 - Ayrıca gerçek `content.sqlite`'taki 479 kartın tam JSON'u Swift'teki `CardDetail` ile çözüldü: 479/479 başarılı.
 
+## GitHub Actions (Mac olmadan tam derleme)
+
+Depo: `github.com/yusuf68435/lockglow` (özel). İki iş akışı var:
+
+- **`build.yml`** (`main`'e her push'ta): Python testleri ve taslak kartların katı doğrulaması (Linux); VocabKit testleri (GRDB'li `ContentStore` dahil) ve uygulama + widget'ın **imzasız simülatör derlemesi** (macOS, en yeni Xcode). Derleme günlüğü `ios-build-log` adıyla saklanır.
+- **`screenshots.yml`** (elle: `gh workflow run screenshots.yml`): `LockglowUITests` ana ekranları gezip ekran görüntüsü alır; iPhone SE ve Pro Max simülatöründe çalışır, görüntüler `screenshots` adıyla yüklenir. Widget'ları ana ekrana ekleyemez, onlar cihazda bakılır.
+
+macOS dakikaları özel depoda 10 kat sayılır; `build.yml` ~2, `screenshots.yml` ~6 dakika sürer. İlk sonuç (2026-10-13, Xcode 26.3): derleme hatasız ve uyarısız, 107 paket testi geçti.
+
 ## Widget spike test kontrol listesi
 
 Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Widget Sağlığı" sekmesinde App Group "Erişilebilir", kuyruk boyutu > 0 olmalı.
@@ -220,7 +229,7 @@ Derleyici olmadan doğrulanamayanlar. Birincil şüpheliler en üstte.
 37. Akış 5000 karta kadar yükleniyor (`AppModel.feedLimit`). ~550 kartta `LazyVStack` + `.scrollPosition(id:)` performansı ve derin bağlantıyla uzak karta kayma ölçülmedi (madde 23).
 38. Tekrar sekmesinde `body` her değerlendirmede `nextReviewSession()` çağırıyor (tüm kelime listesini tarar). 550 kartta ucuz; 5000'de ölçülmedi.
 39. Kişisel kurulum bölümündeki ücretsiz hesap sınırları Apple'ın sayfasından alındı, ama gerçek cihazda denenmedi; "doğrulanmadı" işaretli maddeler gerçekten bilinmiyor.
-40. Akış ve Tekrar kartına örneğin Türkçesi ve "Dikkat" kutusu (ilk yaygın hata) eklendi (`CardDetailViews.swift`). Uzun bir tanım + örnek + hata kutusu küçük ekranlı iPhone'larda (SE) sayfaya sığmayabilir; sayfa kendi içinde kaydırılmıyor. Gerçek cihazda bakılmadı.
+40. Akış ve Tekrar kartına örneğin Türkçesi ve "Dikkat" kutusu (ilk yaygın hata) eklendi (`CardDetailViews.swift`). **Simülatörde bakıldı (2026-10-13, iPhone SE 3 ve 16 Pro Max):** akış kartı ikisinde de sığıyor. Tekrar kartı SE'de taşıyordu (butonlar sekme çubuğunun altında kalıyordu); kart artık kendi içinde kayıyor, butonlar sabit. Daha uzun kartlar akışta denenmedi: akış sayfası kaymaz, `MistakeBox` açıklaması 3 satırla sınırlı.
 41. Kart ayrıntısı (`AppModel.detail(for:)`) ana iş parçacığında, görünüm çizilirken veritabanından tek satır okur ve önbelleğe alır. Satır başına çok kısa sürmesi beklenir, ölçülmedi.
 
 
