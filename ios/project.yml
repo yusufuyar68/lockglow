@@ -129,6 +129,20 @@ targets:
       - package: VocabKit
         product: Scheduler
 
+  # Screenshot-only UI test (CI review of the screens; not a behaviour test). Never shipped.
+  LockglowUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX).$(APP_ID_SLUG).uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Lockglow
+    dependencies:
+      - target: Lockglow
+
 # Both schemes are declared explicitly: XcodeGen does not generate a default scheme for a target
 # unless asked, and Xcode may skip auto-creating one once a shared scheme exists.
 # Lockglow-Release runs the app in Release, the only configuration that enforces widget
@@ -140,6 +154,10 @@ schemes:
         Lockglow: all
     run:
       config: Debug
+    test:
+      config: Debug
+      targets:
+        - LockglowUITests
     archive:
       config: Release
   Lockglow-Release:
