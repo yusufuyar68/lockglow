@@ -13,7 +13,7 @@ from functools import lru_cache
 from .llm_schemas import MAX_TOTAL, PASS_THRESHOLD
 from .taxonomy import DATA_DIR
 
-PROMPT_VERSION = "2026-10-13.1"
+PROMPT_VERSION = "2026-10-13.2"
 
 FOLK_ETYMOLOGY_MYTHS = [
     "posh = 'port out, starboard home'",
@@ -65,7 +65,7 @@ Other fields:
 - extra_topics: optional extra category ids from the allowed list below (never invent ids). Exam tags are curated by editors; do not add them.
 - flags: short machine tags such as "uncountable", "inseparable", "confusable:<word>", "coined", "not_for_exams", "false_friend_tr".
 - sensitivity: 0 clean, 1 mildly negative or rude (e.g. "condescending"), 2 offensive, sexual, violent or a slur.
-- quiz: a cloze sentence (at most 100 characters) with exactly one blank written as "______", the exact answer form, and 3 distractors (each at most 16 characters) of the same part of speech that are clearly wrong in context. The answer must not appear anywhere in the cloze sentence.
+- quiz: a cloze sentence (at most 100 characters) with exactly one blank written as "______", the exact answer form, and 3 distractors (each at most 16 characters) of the same part of speech that are clearly wrong in context. Exactly one option may fit: no distractor may also complete the sentence correctly or naturally, and the sentence must give enough context to choose without guessing. The answer must not appear anywhere in the cloze sentence.
 - If the word is offensive, sexual, violent or a slur, set sensitivity to 2, write a short skip_reason and keep every other field minimal. Otherwise skip_reason is null.
 - uncertain_fields: list every field you are not confident about. Being honest here is more useful than guessing; an editor reviews every flagged field.
 
