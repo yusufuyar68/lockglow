@@ -49,12 +49,12 @@ jobs:
             [ -n "$udid" ] || { echo "no simulator for $name"; return 0; }
             # Sign to run locally (simulator only; embeds the App Group entitlement). Fall back to unsigned.
             xcodebuild test -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$udid" \
-              -only-testing:LockglowUITests -resultBundlePath "out/$name.xcresult" \
+              -only-testing:LockglowUITests -only-testing:LockglowWidgetSnapshots -resultBundlePath "out/$name.xcresult" \
               CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
               > "out/$name.log" 2>&1 \
             || { echo "signed run failed on $name, retrying unsigned"; rm -rf "out/$name.xcresult";
                  xcodebuild test -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$udid" \
-                   -only-testing:LockglowUITests -resultBundlePath "out/$name.xcresult" \
+                   -only-testing:LockglowUITests -only-testing:LockglowWidgetSnapshots -resultBundlePath "out/$name.xcresult" \
                    CODE_SIGNING_ALLOWED=NO > "out/$name.log" 2>&1 || echo "test run failed on $name"; }
             grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" "out/$name.log" | tail -20 || true
             if [ -d "out/$name.xcresult" ]; then
