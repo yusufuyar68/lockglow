@@ -1,0 +1,489 @@
+{
+ "note": "Altın örnekler: A/B/C sistem mesajlarında kullanılır. Değiştirmek prompt cache'ini geçersiz kılar; değiştirirsen PROMPT_VERSION'ı artır.",
+ "entries": [
+  {
+   "id": "en.breakfast.n.1",
+   "lemma": "breakfast",
+   "type": "word",
+   "pos": "n",
+   "sense_no": 1,
+   "sense_note": null,
+   "level": "A1",
+   "level_source": "editorial_estimate",
+   "freq": {
+    "rank": 2426,
+    "zipf": 4.61
+   },
+   "ipa": {
+    "us": "/ˈbrɛkfəst/",
+    "uk": "/ˈbrɛkfəst/"
+   },
+   "def": {
+    "micro": "first meal of the day",
+    "short": "the first meal of the day, eaten in the morning",
+    "long": "The first meal of the day, usually eaten in the morning before work or school. It can be light (tea and toast) or large (eggs, cheese, olives, and more)."
+   },
+   "examples": [
+    {
+     "en": "I usually have breakfast at seven.",
+     "tr": "Genellikle yedide kahvaltı yaparım.",
+     "register": "neutral",
+     "focus": "breakfast"
+    },
+    {
+     "en": "Ayşe made breakfast for the whole family.",
+     "tr": "Ayşe bütün aile için kahvaltı hazırladı.",
+     "register": "neutral",
+     "focus": "breakfast"
+    },
+    {
+     "en": "Breakfast is included in the hotel price.",
+     "tr": "Kahvaltı otel fiyatına dâhildir.",
+     "register": "neutral",
+     "focus": "Breakfast"
+    }
+   ],
+   "synonyms": [
+    "morning meal"
+   ],
+   "antonyms": [],
+   "collocations": [
+    "have breakfast",
+    "skip breakfast",
+    "make breakfast",
+    "breakfast in bed",
+    "a light breakfast"
+   ],
+   "word_family": [],
+   "etymology": {
+    "text": "From 'break' + 'fast': the meal that breaks the long overnight fast since dinner.",
+    "origin": "English",
+    "confidence": "high"
+   },
+   "l1": {
+    "tr": {
+     "gloss": "kahvaltı",
+     "alt": [],
+     "equivalence": "full",
+     "false_friend": null,
+     "note": "Türkçedeki 'kahvaltı' da bir birleşik sözcüktür (kahve altı). İngilizcede öğün adlarından önce genellikle 'the' kullanılmaz.",
+     "mistakes": [
+      {
+       "wrong": "I did breakfast at eight.",
+       "right": "I had breakfast at eight.",
+       "why": "'Kahvaltı yapmak' kalıbını 'do' ile kurmayın; İngilizcede 'have breakfast' denir ('make breakfast' = hazırlamak)."
+      },
+      {
+       "wrong": "I eat the breakfast at 8.",
+       "right": "I eat breakfast at 8.",
+       "why": "Öğün adlarının önüne genellikle 'the' gelmez."
+      }
+     ],
+     "mnemonic": "Break + fast = orucu bozmak. İftar gibi, ama her sabah: gece boyu süren açlığı bozan öğün."
+    }
+   },
+   "tags": {
+    "primary_topic": "food_drink",
+    "topics": [
+     "food_drink",
+     "time_routines"
+    ],
+    "exams": [],
+    "register": "neutral",
+    "vibes": [],
+    "flags": [],
+    "sensitivity": 0
+   },
+   "quiz": {
+    "cloze": "We usually eat ______ at 7 a.m., before school.",
+    "answer": "breakfast",
+    "distractors": [
+     "dinner",
+     "supper",
+     "lunch"
+    ]
+   },
+   "meta": {
+    "status": "sample",
+    "qa_flags": []
+   }
+  },
+  {
+   "id": "en.actually.adv.1",
+   "lemma": "actually",
+   "type": "word",
+   "pos": "adv",
+   "sense_no": 1,
+   "sense_note": "in fact",
+   "level": "B1",
+   "level_source": "editorial_estimate",
+   "freq": {
+    "rank": 302,
+    "zipf": 5.49
+   },
+   "ipa": {
+    "us": "/ˈæktʃuəli/",
+    "uk": "/ˈæktʃuəli/"
+   },
+   "def": {
+    "micro": "in fact; in reality",
+    "short": "used to say what is really true, often when it is not what people expect",
+    "long": "Used to show what is really true or what really happened, especially when it is surprising or different from what was expected. It does NOT mean 'at the moment' ('currently' or 'now' mean that)."
+   },
+   "examples": [
+    {
+     "en": "I thought the test would be hard, but it was actually quite easy.",
+     "tr": "Sınavın zor olacağını sanıyordum ama aslında oldukça kolaymış.",
+     "register": "neutral",
+     "focus": "actually"
+    },
+    {
+     "en": "Actually, I'd prefer tea, if that's okay.",
+     "tr": "Aslında çay tercih ederim, sakıncası yoksa.",
+     "register": "neutral",
+     "focus": "Actually"
+    },
+    {
+     "en": "He looks shy, but he actually loves meeting new people.",
+     "tr": "Çekingen görünüyor ama aslında yeni insanlarla tanışmaya bayılıyor.",
+     "register": "neutral",
+     "focus": "actually"
+    }
+   ],
+   "synonyms": [
+    "in fact",
+    "in reality",
+    "really",
+    "in truth"
+   ],
+   "antonyms": [],
+   "collocations": [
+    "actually quite",
+    "what actually happened",
+    "did you actually",
+    "but actually",
+    "actually, no"
+   ],
+   "word_family": [
+    {
+     "lemma": "actual",
+     "pos": "adj"
+    }
+   ],
+   "etymology": {
+    "text": "From 'actual', from Latin 'actus' (a doing, a deed): 'actually' = in deed, in real fact, not just in theory.",
+    "origin": "Latin",
+    "confidence": "high"
+   },
+   "l1": {
+    "tr": {
+     "gloss": "aslında, gerçekte",
+     "alt": [
+      "doğrusu",
+      "esasında"
+     ],
+     "equivalence": "false_friend",
+     "false_friend": {
+      "tr_word": "aktüel",
+      "tr_means": "güncel, şu anki",
+      "en_for_that": "current / currently"
+     },
+     "note": "Türkçedeki 'aktüel' = 'güncel'. İngilizce 'actual/actually' ise 'gerçek/aslında' demektir. 'Şu anda' için 'currently' veya 'at the moment' kullanılır.",
+     "mistakes": [
+      {
+       "wrong": "The actual price of petrol is very high.",
+       "right": "The current price of petrol is very high.",
+       "why": "'Güncel' = 'current'; 'actual' = gerçek/asıl."
+      },
+      {
+       "wrong": "Actually I'm studying English. (= şu anda)",
+       "right": "I'm currently studying English.",
+       "why": "'Actually' zaman bildirmez; 'şu anda' için 'currently / at the moment'."
+      }
+     ],
+     "mnemonic": "ACT = eylem: 'actually' = fiilen, gerçekte. 'Aktüel' (güncel) tuzağına düşme."
+    }
+   },
+   "tags": {
+    "primary_topic": "confusing_words",
+    "topics": [
+     "confusing_words",
+     "social_skills"
+    ],
+    "exams": [],
+    "register": "neutral",
+    "vibes": [],
+    "flags": [
+     "false_friend_tr"
+    ],
+    "sensitivity": 0
+   },
+   "quiz": {
+    "cloze": "He looks young, but he is ______ forty.",
+    "answer": "actually",
+    "distractors": [
+     "currently",
+     "recently",
+     "fortunately"
+    ]
+   },
+   "meta": {
+    "status": "sample",
+    "qa_flags": []
+   }
+  },
+  {
+   "id": "en.look_up_to.phv.1",
+   "lemma": "look up to",
+   "type": "phrasal_verb",
+   "pos": "phv",
+   "sense_no": 1,
+   "sense_note": "admire",
+   "level": "B2",
+   "level_source": "editorial_estimate",
+   "freq": null,
+   "ipa": {
+    "us": "/lʊk ˈʌp tu/",
+    "uk": "/lʊk ˈʌp tuː/"
+   },
+   "def": {
+    "micro": "admire and respect",
+    "short": "admire and respect someone, often an older or more experienced person",
+    "long": "To feel great respect and admiration for someone and see them as a role model. The opposite is 'look down on'. Careful: 'look up' without 'to' means something different (search for information)."
+   },
+   "grammar": {
+    "pattern": "look up to + sb (inseparable)"
+   },
+   "examples": [
+    {
+     "en": "I've always looked up to my older sister.",
+     "tr": "Ablamı hep örnek aldım.",
+     "register": "neutral",
+     "focus": "looked up to"
+    },
+    {
+     "en": "Many young players look up to him.",
+     "tr": "Birçok genç oyuncu onu kendine örnek alıyor.",
+     "register": "neutral",
+     "focus": "look up to"
+    },
+    {
+     "en": "Children look up to teachers who treat them fairly.",
+     "tr": "Çocuklar, kendilerine adil davranan öğretmenlere büyük saygı duyar.",
+     "register": "neutral",
+     "focus": "look up to"
+    }
+   ],
+   "synonyms": [
+    "admire",
+    "respect",
+    "idolize"
+   ],
+   "antonyms": [
+    "look down on"
+   ],
+   "collocations": [
+    "look up to a role model",
+    "always looked up to",
+    "someone to look up to",
+    "look up to your parents"
+   ],
+   "word_family": [],
+   "etymology": {
+    "text": "Picture a child literally looking up at a taller person: 'up' = higher status. The opposite 'look down on' uses the same picture.",
+    "origin": "English",
+    "confidence": "high"
+   },
+   "l1": {
+    "tr": {
+     "gloss": "hayran olmak, örnek almak",
+     "alt": [
+      "saygı duymak"
+     ],
+     "equivalence": "partial",
+     "false_friend": null,
+     "note": "Tek sözcüklük bir karşılığı yok; bağlama göre 'hayran olmak', 'saygı duymak' veya 'örnek almak'. Zıttı 'look down on' = 'tepeden bakmak'.",
+     "mistakes": [
+      {
+       "wrong": "I looked up to the word in the dictionary.",
+       "right": "I looked up the word in the dictionary.",
+       "why": "'Look up' = bakıp bulmak; 'to' eklenince anlam tamamen değişir."
+      },
+      {
+       "wrong": "I look up my father.",
+       "right": "I look up to my father.",
+       "why": "Saygı duymak için 'to' şarttır."
+      }
+     ],
+     "mnemonic": "Yukarı (up) bakıyorsun çünkü karşındaki senden 'yüce': yukarı bakmak = hayran olmak."
+    }
+   },
+   "tags": {
+    "primary_topic": "phrasal_verbs",
+    "topics": [
+     "phrasal_verbs",
+     "social_skills",
+     "family_relationships"
+    ],
+    "exams": [],
+    "register": "neutral",
+    "vibes": [],
+    "flags": [
+     "inseparable"
+    ],
+    "sensitivity": 0
+   },
+   "quiz": {
+    "cloze": "I really ______ my grandfather. He taught me to work hard and be kind.",
+    "answer": "look up to",
+    "distractors": [
+     "look down on",
+     "look after",
+     "look into"
+    ]
+   },
+   "meta": {
+    "status": "sample",
+    "qa_flags": [
+     "cefr_estimate_check"
+    ]
+   }
+  },
+  {
+   "id": "en.mitigate.v.1",
+   "lemma": "mitigate",
+   "type": "word",
+   "pos": "v",
+   "sense_no": 1,
+   "sense_note": null,
+   "level": "C1",
+   "level_source": "editorial_estimate",
+   "freq": {
+    "rank": 14170,
+    "zipf": 3.54
+   },
+   "ipa": {
+    "us": "/ˈmɪtɪɡeɪt/",
+    "uk": "/ˈmɪtɪɡeɪt/"
+   },
+   "def": {
+    "micro": "make less harmful",
+    "short": "make something bad less serious, harmful, or painful",
+    "long": "To reduce how serious, harmful, or painful something is, without removing it completely. Common in formal writing about risks, damage, and climate change: mitigate the effects, impact, or risk of something."
+   },
+   "grammar": {
+    "pattern": "mitigate + the effects/risk/impact of sth"
+   },
+   "examples": [
+    {
+     "en": "Planting trees can help mitigate the effects of climate change.",
+     "tr": "Ağaç dikmek, iklim değişikliğinin etkilerini hafifletmeye yardımcı olabilir.",
+     "register": "formal",
+     "focus": "mitigate"
+    },
+    {
+     "en": "The company took steps to mitigate the risk of data loss.",
+     "tr": "Şirket, veri kaybı riskini azaltmak için önlemler aldı.",
+     "register": "formal",
+     "focus": "mitigate"
+    },
+    {
+     "en": "Good insulation mitigates heat loss in winter.",
+     "tr": "İyi yalıtım, kışın ısı kaybını azaltır.",
+     "register": "neutral",
+     "focus": "mitigates"
+    }
+   ],
+   "synonyms": [
+    "alleviate",
+    "reduce",
+    "lessen",
+    "ease"
+   ],
+   "antonyms": [
+    "worsen",
+    "aggravate"
+   ],
+   "collocations": [
+    "mitigate the risk",
+    "mitigate the impact",
+    "mitigate the effects",
+    "mitigate damage",
+    "mitigating circumstances"
+   ],
+   "word_family": [
+    {
+     "lemma": "mitigation",
+     "pos": "n"
+    },
+    {
+     "lemma": "mitigating",
+     "pos": "adj"
+    }
+   ],
+   "etymology": {
+    "text": "From Latin 'mitigare', 'to soften': mitis 'mild, gentle' + agere 'to do, make': literally 'make mild'.",
+    "origin": "Latin",
+    "confidence": "high"
+   },
+   "l1": {
+    "tr": {
+     "gloss": "hafifletmek, azaltmak",
+     "alt": [
+      "etkisini azaltmak"
+     ],
+     "equivalence": "full",
+     "false_friend": null,
+     "note": "Sorunu tamamen ortadan kaldırmaz, şiddetini azaltır. 'Önlemek' (prevent) değildir.",
+     "mistakes": [
+      {
+       "wrong": "We must mitigate against floods.",
+       "right": "We must mitigate the effects of floods.",
+       "why": "'Mitigate' doğrudan nesne alır; 'against' ile kullanılmaz ('militate against' ile karıştırılır)."
+      },
+      {
+       "wrong": "This law will mitigate crime completely.",
+       "right": "This law will reduce crime.",
+       "why": "'Mitigate' tamamen önlemek değil, hafifletmektir."
+      }
+     ],
+     "mnemonic": "Latince 'mitis' = yumuşak: sert bir sorunu yumuşatmak."
+    }
+   },
+   "tags": {
+    "primary_topic": "environment_climate",
+    "topics": [
+     "environment_climate",
+     "academic_core",
+     "business_management"
+    ],
+    "exams": [
+     "ielts",
+     "toefl",
+     "sat"
+    ],
+    "register": "formal",
+    "vibes": [],
+    "flags": [
+     "confusable:militate"
+    ],
+    "sensitivity": 0
+   },
+   "quiz": {
+    "cloze": "Sandbags can ______ the damage caused by flooding.",
+    "answer": "mitigate",
+    "distractors": [
+     "ignore",
+     "predict",
+     "celebrate"
+    ]
+   },
+   "meta": {
+    "status": "sample",
+    "qa_flags": [
+     "exam_tags_unverified"
+    ]
+   }
+  }
+ ]
+}

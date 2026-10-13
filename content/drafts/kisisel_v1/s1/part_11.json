@@ -1,0 +1,1024 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.second_hand.adj.1",
+      "lemma": "second-hand",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɛkəndˈhænd/",
+        "uk": "/ˌsɛkəndˈhænd/"
+      },
+      "def": {
+        "micro": "owned by someone before",
+        "short": "not new, because another person used it before you",
+        "long": "Not new, because someone else owned and used it before. People buy second-hand clothes, books, phones, and cars because they cost less."
+      },
+      "examples": [
+        {
+          "en": "I bought a second-hand bike online.",
+          "tr": "İnternetten ikinci el bir bisiklet aldım.",
+          "register": "neutral",
+          "focus": "second-hand"
+        },
+        {
+          "en": "Second-hand clothes are cheap and often in good shape.",
+          "tr": "İkinci el kıyafetler ucuz ve çoğu zaman iyi durumda.",
+          "register": "neutral",
+          "focus": "Second-hand"
+        },
+        {
+          "en": "Kenji sold his old phone to a second-hand shop.",
+          "tr": "Kenji eski telefonunu ikinci el bir dükkâna sattı.",
+          "register": "neutral",
+          "focus": "second-hand"
+        }
+      ],
+      "synonyms": [
+        "used",
+        "pre-owned"
+      ],
+      "antonyms": [
+        "new"
+      ],
+      "collocations": [
+        "second-hand clothes",
+        "a second-hand car",
+        "buy second-hand",
+        "a second-hand shop"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ikinci el",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'used' da aynı anlamda kullanılır: a used car. Yazılışı tireli: second-hand.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I only buy ______ furniture, because it is cheaper.",
+        "answer": "second-hand",
+        "distractors": [
+          "fresh",
+          "loose",
+          "spicy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.groceries.n.1",
+      "lemma": "groceries",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡroʊsəriz/",
+        "uk": "/ˈɡrəʊsəriz/"
+      },
+      "def": {
+        "micro": "food you buy for the home",
+        "short": "the food and other things for the home that you buy in a supermarket",
+        "long": "The food and other things for the home, such as milk, bread, and soap, that you buy in a shop or supermarket. People say 'do the groceries' or 'buy groceries'."
+      },
+      "examples": [
+        {
+          "en": "I need to buy groceries after work.",
+          "tr": "İşten sonra market alışverişi yapmam lazım.",
+          "register": "neutral",
+          "focus": "groceries"
+        },
+        {
+          "en": "The groceries are in the car. Can you help me?",
+          "tr": "Market alışverişi arabada. Taşımama yardım eder misin?",
+          "register": "neutral",
+          "focus": "groceries"
+        },
+        {
+          "en": "Ayşe orders her groceries online every week.",
+          "tr": "Ayşe market alışverişini her hafta internetten sipariş ediyor.",
+          "register": "neutral",
+          "focus": "groceries"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "buy groceries",
+        "do the groceries",
+        "a grocery store",
+        "grocery bags",
+        "a grocery list"
+      ],
+      "word_family": [
+        {
+          "lemma": "grocery",
+          "pos": "adj"
+        },
+        {
+          "lemma": "grocer",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "market alışverişi",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Groceries' hep çoğul kullanılır. 'Grocery store' yiyecek ve ev ihtiyaçları satan market demektir; büyük olanına 'supermarket' da denir.",
+          "mistakes": [
+            {
+              "wrong": "I bought a grocery yesterday.",
+              "right": "I bought groceries yesterday.",
+              "why": "Türkçede 'alışveriş' tek kelimedir; İngilizcede market alışverişi için çoğul 'groceries' kullanılır, 'a grocery' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural_only"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We have no milk or eggs. I'll buy some ______ on my way home.",
+        "answer": "groceries",
+        "distractors": [
+          "recipes",
+          "dishes",
+          "pillows"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.queue.n.1",
+      "lemma": "queue",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kjuː/",
+        "uk": "/kjuː/"
+      },
+      "def": {
+        "micro": "line of people waiting",
+        "short": "a line of people who are waiting for something",
+        "long": "A line of people who are waiting for something, for example in a shop, a bank, or at a bus stop. In American English, people usually say 'line'."
+      },
+      "examples": [
+        {
+          "en": "There is a long queue at the bank.",
+          "tr": "Bankada uzun bir sıra var.",
+          "register": "neutral",
+          "focus": "queue"
+        },
+        {
+          "en": "Please wait in the queue until it is your turn.",
+          "tr": "Lütfen sıranız gelene kadar sırada bekleyin.",
+          "register": "neutral",
+          "focus": "queue"
+        },
+        {
+          "en": "Maria joined the queue behind two other people.",
+          "tr": "Maria diğer iki kişinin arkasında sıraya girdi.",
+          "register": "neutral",
+          "focus": "queue"
+        }
+      ],
+      "synonyms": [
+        "line"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a long queue",
+        "wait in the queue",
+        "join the queue",
+        "jump the queue"
+      ],
+      "word_family": [
+        {
+          "lemma": "queue",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sıra",
+          "alt": [
+            "kuyruk"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngiltere'de 'queue', ABD'de 'line' denir. Koltuk ya da masa sırası için 'row' kullanılır. Okunuşu yazılışından çok kısa: 'kyu'.",
+          "mistakes": [
+            {
+              "wrong": "Please stand in row.",
+              "right": "Please stand in the queue. / Please stand in line.",
+              "why": "Türkçedeki 'sıraya girmek' için 'row' kullanılmaz. 'Row' koltuk sırasıdır; bekleyenler için 'queue' ya da 'line' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I waited in a long ______ at the supermarket.",
+        "answer": "queue",
+        "distractors": [
+          "recipe",
+          "budget",
+          "bargain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.parcel.n.1",
+      "lemma": "parcel",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːrsəl/",
+        "uk": "/ˈpɑːsəl/"
+      },
+      "def": {
+        "micro": "package sent by post",
+        "short": "a thing wrapped in paper or a box that you send by post",
+        "long": "A thing that is wrapped in paper or put in a box so that you can send it by post or carry it. Online shops send most orders as parcels."
+      },
+      "examples": [
+        {
+          "en": "A parcel arrived for you this morning.",
+          "tr": "Bu sabah sana bir paket geldi.",
+          "register": "neutral",
+          "focus": "parcel"
+        },
+        {
+          "en": "I need to send this parcel to my sister.",
+          "tr": "Bu paketi kız kardeşime göndermem lazım.",
+          "register": "neutral",
+          "focus": "parcel"
+        },
+        {
+          "en": "The delivery man left the parcel with the neighbor.",
+          "tr": "Kurye paketi komşuya bıraktı.",
+          "register": "neutral",
+          "focus": "parcel"
+        }
+      ],
+      "synonyms": [
+        "package"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "send a parcel",
+        "track a parcel",
+        "collect a parcel",
+        "a small parcel"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "paket",
+          "alt": [
+            "koli",
+            "kargo"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngiltere'de 'parcel', ABD'de daha çok 'package' denir. Zarfa sığan şey için 'letter' ya da 'envelope' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I sent a ______ to my brother. It has books and a sweater inside.",
+        "answer": "parcel",
+        "distractors": [
+          "recipe",
+          "receipt",
+          "budget"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.headache.n.1",
+      "lemma": "headache",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɛdeɪk/",
+        "uk": "/ˈhɛdeɪk/"
+      },
+      "def": {
+        "micro": "pain in your head",
+        "short": "a pain in your head",
+        "long": "A pain in your head. People often get one when they are tired, hungry, or worried. You can take a tablet for it."
+      },
+      "examples": [
+        {
+          "en": "I have a headache. I need to lie down.",
+          "tr": "Başım ağrıyor. Biraz uzanmam lazım.",
+          "register": "neutral",
+          "focus": "headache"
+        },
+        {
+          "en": "Mehmet took a pill for his headache.",
+          "tr": "Mehmet baş ağrısı için bir hap aldı.",
+          "register": "neutral",
+          "focus": "headache"
+        },
+        {
+          "en": "Too much screen time gives me a headache.",
+          "tr": "Ekrana çok bakmak başımı ağrıtıyor.",
+          "register": "neutral",
+          "focus": "headache"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a headache",
+        "get a headache",
+        "a bad headache",
+        "a slight headache"
+      ],
+      "word_family": [
+        {
+          "lemma": "ache",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "baş ağrısı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'başım ağrıyor' dersiniz; İngilizcede 'I have a headache' ya da 'My head hurts' denir.",
+          "mistakes": [
+            {
+              "wrong": "I have headache.",
+              "right": "I have a headache.",
+              "why": "Türkçede 'a/an' yoktur; 'headache' sayılabilir bir isimdir ve tekilse 'a' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My head hurts a lot. I have a bad ______.",
+        "answer": "headache",
+        "distractors": [
+          "towel",
+          "price",
+          "kettle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.medicine.n.1",
+      "lemma": "medicine",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "pills and liquids for illness",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛdɪsɪn/",
+        "uk": "/ˈmɛdsən/"
+      },
+      "def": {
+        "micro": "pills or liquid for illness",
+        "short": "pills or liquid that you take to feel better when you are ill",
+        "long": "Pills, liquids, or other things that you take to make you feel better when you are ill. It is uncountable: you take medicine."
+      },
+      "examples": [
+        {
+          "en": "Take this medicine twice a day.",
+          "tr": "Bu ilacı günde iki kez al.",
+          "register": "neutral",
+          "focus": "medicine"
+        },
+        {
+          "en": "Did you take your medicine this morning?",
+          "tr": "Bu sabah ilacını aldın mı?",
+          "register": "neutral",
+          "focus": "medicine"
+        },
+        {
+          "en": "You can buy this medicine at the pharmacy without a prescription.",
+          "tr": "Bu ilacı eczaneden reçetesiz alabilirsin.",
+          "register": "neutral",
+          "focus": "medicine"
+        }
+      ],
+      "synonyms": [
+        "medication"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take medicine",
+        "cough medicine",
+        "strong medicine",
+        "medicine for a cold"
+      ],
+      "word_family": [
+        {
+          "lemma": "medical",
+          "pos": "adj"
+        },
+        {
+          "lemma": "medication",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilaç",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Medicine' bilim dalı olarak 'tıp' anlamına da gelir (study medicine). Tek tek ilaç tabletleri için 'pill' ya da 'tablet' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I drink medicine twice a day.",
+              "right": "I take medicine twice a day.",
+              "why": "Türkçede 'ilaç içmek' dersiniz; İngilizcede ilaç için 'take' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctor said I should take this ______ three times a day.",
+        "answer": "medicine",
+        "distractors": [
+          "recipe",
+          "towel",
+          "menu"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hurt.v.1",
+      "lemma": "hurt",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "to be painful",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɜːrt/",
+        "uk": "/hɜːt/"
+      },
+      "def": {
+        "micro": "feel pain in the body",
+        "short": "to feel pain in a part of the body",
+        "long": "To feel pain in a part of your body. You can say \"My back hurts\" or \"It hurts here.\" The past form is also \"hurt\"."
+      },
+      "grammar": {
+        "pattern": "My + body part + hurts"
+      },
+      "examples": [
+        {
+          "en": "My back hurts after a long day.",
+          "tr": "Uzun bir günden sonra sırtım ağrıyor.",
+          "register": "neutral",
+          "focus": "hurts"
+        },
+        {
+          "en": "Does it hurt when you walk?",
+          "tr": "Yürürken acıyor mu?",
+          "register": "neutral",
+          "focus": "hurt"
+        },
+        {
+          "en": "My feet hurt because my shoes are too tight.",
+          "tr": "Ayakkabılarım dar olduğu için ayaklarım ağrıyor.",
+          "register": "neutral",
+          "focus": "hurt"
+        }
+      ],
+      "synonyms": [
+        "ache"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "where does it hurt",
+        "it hurts a lot",
+        "my back hurts",
+        "it doesn't hurt"
+      ],
+      "word_family": [
+        {
+          "lemma": "hurtful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağrımak",
+          "alt": [
+            "acımak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'başım ağrıyor' ve 'elim acıyor' dersiniz; İngilizcede ikisi de 'hurt'. Özne vücut parçasıdır: My head hurts.",
+          "mistakes": [
+            {
+              "wrong": "I have a hurt in my leg.",
+              "right": "My leg hurts.",
+              "why": "Bu anlamda 'hurt' fiildir; isimle kurulmaz. 'My leg hurts' ya da 'I have a pain in my leg' deyin."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My feet ______ after the long walk. I need to sit down.",
+        "answer": "hurt",
+        "distractors": [
+          "fix",
+          "wear",
+          "cook"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cold.n.1",
+      "lemma": "cold",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "illness",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/koʊld/",
+        "uk": "/kəʊld/"
+      },
+      "def": {
+        "micro": "small illness in the nose",
+        "short": "a small illness that makes your nose run and your throat hurt",
+        "long": "A small, common illness that makes your nose run, your throat hurt, and you cough or sneeze. You can also say you 'have a cold' or 'catch a cold'."
+      },
+      "examples": [
+        {
+          "en": "I have a cold, so I'm staying home.",
+          "tr": "Nezle oldum, o yüzden evde kalıyorum.",
+          "register": "neutral",
+          "focus": "cold"
+        },
+        {
+          "en": "Ayşe caught a cold at the weekend.",
+          "tr": "Ayşe hafta sonu nezle oldu.",
+          "register": "neutral",
+          "focus": "cold"
+        },
+        {
+          "en": "Wear a coat, or you will catch a cold.",
+          "tr": "Mont giy, yoksa üşütürsün.",
+          "register": "neutral",
+          "focus": "cold"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a cold",
+        "catch a cold",
+        "a bad cold",
+        "a heavy cold"
+      ],
+      "word_family": [
+        {
+          "lemma": "cold",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nezle",
+          "alt": [
+            "soğuk algınlığı",
+            "üşütme"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Flu' (grip) daha ağır bir hastalıktır. 'I am cold' ise 'üşüyorum' demektir; hastalık için 'I have a cold' denir.",
+          "mistakes": [
+            {
+              "wrong": "I am cold, so I will stay in bed.",
+              "right": "I have a cold, so I will stay in bed.",
+              "why": "'I am cold' üşüyorum demektir. 'Nezle olmak' için 'have a cold' ya da 'catch a cold' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a runny nose and a sore throat. I think I have a ______.",
+        "answer": "cold",
+        "distractors": [
+          "wallet",
+          "knee",
+          "towel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.flu.n.1",
+      "lemma": "flu",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fluː/",
+        "uk": "/fluː/"
+      },
+      "def": {
+        "micro": "bad illness with a fever",
+        "short": "an illness like a bad cold, with a fever, a headache, and body pain",
+        "long": "An illness like a bad cold, with a fever, a headache, and pain in the body. It spreads easily in winter, and you often need to stay in bed for a few days."
+      },
+      "examples": [
+        {
+          "en": "I think I have the flu. I have a fever.",
+          "tr": "Sanırım gribim. Ateşim var.",
+          "register": "neutral",
+          "focus": "flu"
+        },
+        {
+          "en": "Half of my class has the flu this week.",
+          "tr": "Sınıfımın yarısı bu hafta grip oldu.",
+          "register": "neutral",
+          "focus": "flu"
+        },
+        {
+          "en": "Ayşe stayed in bed for three days with the flu.",
+          "tr": "Ayşe grip yüzünden üç gün yatakta kaldı.",
+          "register": "neutral",
+          "focus": "flu"
+        }
+      ],
+      "synonyms": [
+        "influenza"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have the flu",
+        "catch the flu",
+        "flu season",
+        "a flu shot"
+      ],
+      "word_family": [
+        {
+          "lemma": "influenza",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "grip",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'grip' hem ağır hem hafif hastalık için kullanılır. İngilizcede hafif olana 'a cold', ağır olana 'the flu' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a high fever and my whole body hurts. I think it's the ______.",
+        "answer": "flu",
+        "distractors": [
+          "menu",
+          "shower",
+          "bill"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cough.v.1",
+      "lemma": "cough",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔːf/",
+        "uk": "/kɒf/"
+      },
+      "def": {
+        "micro": "push air out of the throat",
+        "short": "to push air out of your throat with a loud noise, often when you are ill",
+        "long": "To push air out of your throat with a loud noise, often when you are ill or when something is in your throat. Many people cough in winter."
+      },
+      "examples": [
+        {
+          "en": "I've been coughing all night.",
+          "tr": "Bütün gece öksürdüm.",
+          "register": "neutral",
+          "focus": "coughing"
+        },
+        {
+          "en": "Please cover your mouth when you cough.",
+          "tr": "Öksürürken lütfen ağzını kapat.",
+          "register": "neutral",
+          "focus": "cough"
+        },
+        {
+          "en": "Mehmet coughed because of the cold air.",
+          "tr": "Mehmet soğuk havadan dolayı öksürdü.",
+          "register": "neutral",
+          "focus": "coughed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cough a lot",
+        "cough all night",
+        "start to cough",
+        "cough loudly"
+      ],
+      "word_family": [
+        {
+          "lemma": "cough",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öksürmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'a cough' öksürüktür: I have a cough. Okunuşu 'kof' gibidir (ough = of); 'though' gibi değil.",
+          "mistakes": [
+            {
+              "wrong": "I am coughing since Monday.",
+              "right": "I have been coughing since Monday.",
+              "why": "Türkçede 'Pazartesiden beri öksürüyorum' dersiniz; İngilizcede 'since' ile süren durum için 'have been coughing' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a sore throat, and I ______ a lot at night.",
+        "answer": "cough",
+        "distractors": [
+          "wear",
+          "fix",
+          "iron"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

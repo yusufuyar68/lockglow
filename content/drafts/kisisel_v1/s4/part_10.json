@@ -1,0 +1,1082 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.warm_up.phv.1",
+      "lemma": "warm up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make cold food or drink hot again",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɔːrm ˈʌp/",
+        "uk": "/wɔːm ˈʌp/"
+      },
+      "def": {
+        "micro": "make cold food hot again",
+        "short": "make cold food or drink hot again",
+        "long": "To make food or a drink that has become cold hot again, for example in a microwave or a pan. People often do this with food from the day before."
+      },
+      "grammar": {
+        "pattern": "warm sth up / warm up sth (warm it up)"
+      },
+      "examples": [
+        {
+          "en": "Can you warm up my soup, please?",
+          "tr": "Çorbamı ısıtır mısın lütfen?",
+          "register": "neutral",
+          "focus": "warm up"
+        },
+        {
+          "en": "I'll warm the pizza up in the oven.",
+          "tr": "Pizzayı fırında ısıtacağım.",
+          "register": "neutral",
+          "focus": "warm the pizza up"
+        },
+        {
+          "en": "The tea is cold. Let me warm it up for you.",
+          "tr": "Çay soğumuş. Senin için ısıtayım.",
+          "register": "neutral",
+          "focus": "warm it up"
+        }
+      ],
+      "synonyms": [
+        "heat up",
+        "reheat"
+      ],
+      "antonyms": [
+        "cool down"
+      ],
+      "collocations": [
+        "warm up some soup",
+        "warm up food",
+        "warm it up",
+        "warm up in the microwave"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ısıtmak",
+          "alt": [
+            "tekrar ısıtmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Warm up' ayrıca spor öncesi ısınmak anlamına da gelir. Bu kartta soğumuş yemeği ya da içeceği yeniden ısıtmak var.",
+          "mistakes": [
+            {
+              "wrong": "Warm up it, please.",
+              "right": "Warm it up, please.",
+              "why": "Zamir (it, them) 'warm' ile 'up' arasına girer."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My dinner is cold. I'll ______ the soup in the microwave.",
+        "answer": "warm up",
+        "distractors": [
+          "turn down",
+          "put away",
+          "take out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fill_up.phv.1",
+      "lemma": "fill up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make a tank or glass full",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɪl ˈʌp/",
+        "uk": "/fɪl ˈʌp/"
+      },
+      "def": {
+        "micro": "make something full",
+        "short": "put in enough to make a tank or glass full",
+        "long": "To put so much into a container, such as a car's petrol tank or a glass, that it is completely full. People fill up the car with petrol, or fill up a bottle with water."
+      },
+      "grammar": {
+        "pattern": "fill sth up / fill up sth (fill it up)"
+      },
+      "examples": [
+        {
+          "en": "I need to fill up the car before the trip.",
+          "tr": "Yolculuktan önce arabanın deposunu doldurmam lazım.",
+          "register": "neutral",
+          "focus": "fill up"
+        },
+        {
+          "en": "Can you fill the water bottle up before we go?",
+          "tr": "Gitmeden önce su şişesini doldurur musun?",
+          "register": "neutral",
+          "focus": "fill the water bottle up"
+        },
+        {
+          "en": "We stopped to fill up with petrol.",
+          "tr": "Benzin doldurmak için durduk.",
+          "register": "neutral",
+          "focus": "fill up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "empty"
+      ],
+      "collocations": [
+        "fill up the car",
+        "fill up with petrol",
+        "fill up a bottle",
+        "fill up a glass"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doldurmak",
+          "alt": [
+            "depoyu doldurmak",
+            "tamamen doldurmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Form doldurmak için 'fill in' kullanılır. 'Fill up' bir kabı ya da depoyu tamamen doldurmaktır; Türkçede ikisi de 'doldurmak'.",
+          "mistakes": [
+            {
+              "wrong": "Fill up your name here.",
+              "right": "Fill in your name here.",
+              "why": "Form ve boşluk doldurmak için 'fill in' kullanılır. 'Fill up' kabı ağzına kadar doldurmaktır."
+            }
+          ],
+          "mnemonic": "Up = tepeye kadar: kabı ağzına kadar (up) doldurursun."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "cities_transport",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The car's tank is almost empty. We must ______ at the next station.",
+        "answer": "fill up",
+        "distractors": [
+          "fill in",
+          "set off",
+          "sign up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.count_on.phv.1",
+      "lemma": "count on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "trust sb to help",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kaʊnt ˈɑːn/",
+        "uk": "/kaʊnt ˈɒn/"
+      },
+      "def": {
+        "micro": "trust someone to help",
+        "short": "be sure that someone will help or do something",
+        "long": "To trust someone to help you or to do something, or to be sure that something will happen. 'You can count on me' means 'I will help you.'"
+      },
+      "grammar": {
+        "pattern": "count on + sb/sth (inseparable)"
+      },
+      "examples": [
+        {
+          "en": "You can count on me.",
+          "tr": "Bana güvenebilirsin.",
+          "register": "neutral",
+          "focus": "count on"
+        },
+        {
+          "en": "I'm counting on you to bring the tickets.",
+          "tr": "Biletleri getirmen konusunda sana güveniyorum.",
+          "register": "neutral",
+          "focus": "counting on"
+        },
+        {
+          "en": "Don't count on good weather this weekend.",
+          "tr": "Bu hafta sonu iyi havaya bel bağlama.",
+          "register": "neutral",
+          "focus": "count on"
+        }
+      ],
+      "synonyms": [
+        "rely on"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "count on sb",
+        "count on help",
+        "count on good weather",
+        "can count on me"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güvenmek",
+          "alt": [
+            "bel bağlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Count on' hem 'güvenmek' hem 'bel bağlamak' (olacağını varsaymak) demektir. 'Count' tek başına saymaktır; 'on' gelince anlam değişir.",
+          "mistakes": [
+            {
+              "wrong": "You can trust on me.",
+              "right": "You can count on me.",
+              "why": "'Trust' edatsız kullanılır ('trust me'). 'Bana güvenebilirsin' için 'count on me' ya da 'trust me' denir."
+            }
+          ],
+          "mnemonic": "Count = saymak, hesaba katmak: 'seni hesaba katıyorum' = sana güveniyorum."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I know you are a good friend. I can always ______ you.",
+        "answer": "count on",
+        "distractors": [
+          "look for",
+          "give up",
+          "carry on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deal_with.phv.1",
+      "lemma": "deal with",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "handle a problem or task",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdiːl wɪð/",
+        "uk": "/ˈdiːl wɪð/"
+      },
+      "def": {
+        "micro": "handle a problem or a task",
+        "short": "take action to solve a problem or do a task",
+        "long": "To take action to solve a problem, or to do a task or manage a situation. You can also deal with people: 'She deals with customers all day.'"
+      },
+      "grammar": {
+        "pattern": "deal with + sth/sb (inseparable)"
+      },
+      "examples": [
+        {
+          "en": "I have to deal with some emails first.",
+          "tr": "Önce birkaç e-postayla ilgilenmem lazım.",
+          "register": "neutral",
+          "focus": "deal with"
+        },
+        {
+          "en": "How do you deal with stress?",
+          "tr": "Stresle nasıl başa çıkıyorsun?",
+          "register": "neutral",
+          "focus": "deal with"
+        },
+        {
+          "en": "The manager deals with customer complaints.",
+          "tr": "Müdür müşteri şikâyetleriyle ilgileniyor.",
+          "register": "neutral",
+          "focus": "deals with"
+        }
+      ],
+      "synonyms": [
+        "handle"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "deal with a problem",
+        "deal with stress",
+        "deal with customers",
+        "deal with emails",
+        "deal with it"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilgilenmek, başa çıkmak",
+          "alt": [
+            "halletmek",
+            "uğraşmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Görev için 'ilgilenmek', zor bir duruma karşı 'başa çıkmak' denir. 'I'll deal with it' = 'Ben hallederim'. 'Deal' tek başına anlaşma ya da dağıtmak demektir.",
+          "mistakes": [
+            {
+              "wrong": "How do you deal stress?",
+              "right": "How do you deal with stress?",
+              "why": "'Stresle başa çıkmak' için 'with' şarttır. Türkçedeki '-le' eki İngilizcede 'with' ile karşılanır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a lot of stress at work. How do you ______ it?",
+        "answer": "deal with",
+        "distractors": [
+          "look up",
+          "show up",
+          "turn into"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.come_out.phv.1",
+      "lemma": "come out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "be released to the public",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌm ˈaʊt/",
+        "uk": "/kʌm ˈaʊt/"
+      },
+      "def": {
+        "micro": "be shown for the first time",
+        "short": "be shown or sold to people for the first time",
+        "long": "To be shown, sold or published for the first time, for example a film, a song, a book or a phone. People often ask: 'When does it come out?'"
+      },
+      "grammar": {
+        "pattern": "come out (no object)"
+      },
+      "examples": [
+        {
+          "en": "When does the new phone come out?",
+          "tr": "Yeni telefon ne zaman çıkıyor?",
+          "register": "neutral",
+          "focus": "come out"
+        },
+        {
+          "en": "Her new album comes out on Friday.",
+          "tr": "Yeni albümü cuma günü çıkıyor.",
+          "register": "neutral",
+          "focus": "comes out"
+        },
+        {
+          "en": "The film came out last summer, and everyone loved it.",
+          "tr": "Film geçen yaz vizyona girdi ve herkes çok sevdi.",
+          "register": "neutral",
+          "focus": "came out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "come out on Friday",
+        "come out next year",
+        "a new film comes out",
+        "when does it come out"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çıkmak, yayınlanmak",
+          "alt": [
+            "piyasaya çıkmak",
+            "vizyona girmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Film için 'vizyona girmek', ürün için 'piyasaya çıkmak', şarkı ve albüm için 'çıkmak' denir. 'Come out' ayrıca dışarı çıkmak anlamına da gelir; bu kartta yayınlanma var.",
+          "mistakes": [
+            {
+              "wrong": "The game will go out next month.",
+              "right": "The game will come out next month.",
+              "why": "Türkçede 'oyun çıkıyor' deriz. İngilizcede yayınlanmak için 'go out' değil 'come out' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "music_film",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't wait for the new game. It will ______ next month!",
+        "answer": "come out",
+        "distractors": [
+          "go out",
+          "take out",
+          "give up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sell_out.phv.1",
+      "lemma": "sell out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "all be sold, none left",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɛl ˈaʊt/",
+        "uk": "/sɛl ˈaʊt/"
+      },
+      "def": {
+        "micro": "be all sold",
+        "short": "be sold completely, so none is left to buy",
+        "long": "When all the tickets or things in a shop are sold and there are no more. We often say that a concert, a match or a product has sold out."
+      },
+      "grammar": {
+        "pattern": "sell out (no object); be sold out"
+      },
+      "examples": [
+        {
+          "en": "The tickets sold out in ten minutes.",
+          "tr": "Biletler on dakikada tükendi.",
+          "register": "neutral",
+          "focus": "sold out"
+        },
+        {
+          "en": "Sorry, the blue jackets have sold out.",
+          "tr": "Üzgünüm, mavi ceketler tükendi.",
+          "register": "neutral",
+          "focus": "sold out"
+        },
+        {
+          "en": "I'm sure the new phone will sell out quickly.",
+          "tr": "Yeni telefonun hızla tükeneceğinden eminim.",
+          "register": "neutral",
+          "focus": "sell out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sell out quickly",
+        "sell out in minutes",
+        "tickets sell out",
+        "sell out fast"
+      ],
+      "word_family": [
+        {
+          "lemma": "sold out",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tükenmek",
+          "alt": [
+            "satılıp bitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'biletler tükendi' denir. İngilizcede genellikle 'The tickets are sold out.' (hepsi satıldı) söylenir.",
+          "mistakes": [
+            {
+              "wrong": "The tickets finished.",
+              "right": "The tickets sold out.",
+              "why": "Türkçede 'biletler bitti, tükendi' deriz. İngilizcede 'finish' değil 'sell out' ya da 'be sold out' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "shopping_money",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everyone wanted tickets for the concert. They ______ in an hour.",
+        "answer": "sold out",
+        "distractors": [
+          "took off",
+          "set up",
+          "broke down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.look_out.phv.1",
+      "lemma": "look out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "be careful of danger",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lʊk ˈaʊt/",
+        "uk": "/lʊk ˈaʊt/"
+      },
+      "def": {
+        "micro": "be careful of danger",
+        "short": "be careful because something dangerous is near",
+        "long": "To be careful because there is danger. People shout 'Look out!' to warn someone, for example when a car is coming."
+      },
+      "grammar": {
+        "pattern": "look out (for sth); Look out!"
+      },
+      "examples": [
+        {
+          "en": "Look out! There's a car coming.",
+          "tr": "Dikkat! Araba geliyor.",
+          "register": "neutral",
+          "focus": "Look out"
+        },
+        {
+          "en": "Look out for ice on the road this morning.",
+          "tr": "Bu sabah yolda buzlanmaya dikkat et.",
+          "register": "neutral",
+          "focus": "Look out"
+        },
+        {
+          "en": "Look out! The floor is wet.",
+          "tr": "Dikkat et! Zemin ıslak.",
+          "register": "neutral",
+          "focus": "Look out"
+        }
+      ],
+      "synonyms": [
+        "watch out"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "Look out!",
+        "look out for ice",
+        "look out for cars"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dikkat etmek",
+          "alt": [
+            "sakınmak",
+            "gözünü açmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Look out!' ünlem olarak 'Dikkat!', 'Aman!' demektir. 'Look out for sth' bir şeye karşı dikkatli olmaktır. Pencereden dışarı bakmak için 'look out of the window' denir.",
+          "mistakes": [
+            {
+              "wrong": "Look out to the cars on this road.",
+              "right": "Look out for the cars on this road.",
+              "why": "'Dikkat etmek' için 'for' kullanılır, 'to' değil."
+            }
+          ],
+          "mnemonic": "Out = dışarı: gözünü dışarıya, tehlikenin geldiği yöne çevir."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "cities_transport",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Stop! ______! A bike is coming fast.",
+        "answer": "Look out",
+        "distractors": [
+          "Look up",
+          "Hurry up",
+          "Give up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hand_in.phv.1",
+      "lemma": "hand in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "give work or a form to sb in charge",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hænd ˈɪn/",
+        "uk": "/hænd ˈɪn/"
+      },
+      "def": {
+        "micro": "give to a teacher or boss",
+        "short": "give your work or a form to the person who asked for it",
+        "long": "To give your work, a form or a paper to a teacher, a boss or an office. Students hand in homework, and workers hand in reports."
+      },
+      "grammar": {
+        "pattern": "hand sth in / hand in sth (hand it in)"
+      },
+      "examples": [
+        {
+          "en": "Please hand in your homework on Monday.",
+          "tr": "Lütfen ödevlerinizi pazartesi teslim edin.",
+          "register": "neutral",
+          "focus": "hand in"
+        },
+        {
+          "en": "I forgot to hand in the form.",
+          "tr": "Formu teslim etmeyi unuttum.",
+          "register": "neutral",
+          "focus": "hand in"
+        },
+        {
+          "en": "Kenji handed his report in before the deadline.",
+          "tr": "Kenji raporunu son tarihten önce teslim etti.",
+          "register": "neutral",
+          "focus": "handed his report in"
+        }
+      ],
+      "synonyms": [
+        "submit"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "hand in homework",
+        "hand in a report",
+        "hand in your keys",
+        "hand in your notice"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teslim etmek",
+          "alt": [
+            "vermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Hand in' öğretmene, yöneticiye ya da bir ofise teslim etmektir. Arkadaşa vermek için 'give' denir. E-postayla göndermek için 'send' ya da 'submit' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Please give your homework on Monday.",
+              "right": "Please hand in your homework on Monday.",
+              "why": "Türkçede 'ödevi vermek' ('teslim etmek') deriz. İngilizcede resmî teslim için 'give' değil 'hand in' kullanılır."
+            },
+            {
+              "wrong": "I will hand in it tomorrow.",
+              "right": "I will hand it in tomorrow.",
+              "why": "Zamir (it, them) 'hand' ile 'in' arasına girer."
+            }
+          ],
+          "mnemonic": "Hand = el, in = içeri: elinle bir yerin içine teslim edersin."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "school_learning",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The exam is over. Please ______ your papers to the teacher.",
+        "answer": "hand in",
+        "distractors": [
+          "take off",
+          "get on",
+          "put on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_on.phv.1",
+      "lemma": "go on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "happen",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈɑːn/",
+        "uk": "/ɡəʊ ˈɒn/"
+      },
+      "def": {
+        "micro": "happen",
+        "short": "be happening at this moment",
+        "long": "To be happening, usually now. It is often used in questions: 'What's going on?' means 'What is happening?'"
+      },
+      "grammar": {
+        "pattern": "go on (no object); What's going on?"
+      },
+      "examples": [
+        {
+          "en": "What's going on? Why is everyone outside?",
+          "tr": "Neler oluyor? Herkes neden dışarıda?",
+          "register": "neutral",
+          "focus": "going on"
+        },
+        {
+          "en": "Something strange is going on in this building.",
+          "tr": "Bu binada tuhaf bir şeyler oluyor.",
+          "register": "neutral",
+          "focus": "going on"
+        },
+        {
+          "en": "A lot is going on at work this week.",
+          "tr": "Bu hafta işte çok şey oluyor.",
+          "register": "neutral",
+          "focus": "going on"
+        }
+      ],
+      "synonyms": [
+        "happen"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "What's going on?",
+        "a lot is going on",
+        "nothing is going on",
+        "what went on"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olmak, yaşanmak",
+          "alt": [
+            "olup bitmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'What's going on?' = 'Neler oluyor?'. Gündelik selamlaşmada 'Ne var ne yok?' anlamında da söylenir. 'Go on' ayrıca 'devam et' anlamına gelir; o ayrı bir kullanımdır.",
+          "mistakes": [
+            {
+              "wrong": "What is going?",
+              "right": "What is going on?",
+              "why": "'Neler oluyor?' demek için 'on' atlanmaz: What's going on?"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There are many people outside. What's ______?",
+        "answer": "going on",
+        "distractors": [
+          "going out",
+          "going back",
+          "getting off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "gloss_edited_by_editor_agent"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.plug_in.phv.1",
+      "lemma": "plug in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "connect to electricity",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/plʌɡ ˈɪn/",
+        "uk": "/plʌɡ ˈɪn/"
+      },
+      "def": {
+        "micro": "connect to electricity",
+        "short": "connect a machine to the power socket",
+        "long": "To connect a machine or a device to the electricity, or to another device, with a cable. People plug in a phone to charge it, or plug in a lamp."
+      },
+      "grammar": {
+        "pattern": "plug sth in / plug in sth (plug it in)"
+      },
+      "examples": [
+        {
+          "en": "Can you plug in my phone? The battery is low.",
+          "tr": "Telefonumu şarja takar mısın? Pil azaldı.",
+          "register": "neutral",
+          "focus": "plug in"
+        },
+        {
+          "en": "The TV doesn't work. Is it plugged in?",
+          "tr": "Televizyon çalışmıyor. Fişe takılı mı?",
+          "register": "neutral",
+          "focus": "plugged in"
+        },
+        {
+          "en": "Plug the laptop in and wait a minute.",
+          "tr": "Dizüstü bilgisayarı prize takıp bir dakika bekle.",
+          "register": "neutral",
+          "focus": "Plug the laptop in"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unplug"
+      ],
+      "collocations": [
+        "plug in a phone",
+        "plug in a charger",
+        "plug it in",
+        "plug in a lamp"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "prize takmak",
+          "alt": [
+            "fişe takmak",
+            "şarja takmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'prize takmak' ya da 'fişe takmak' denir. Zıttı 'unplug' (fişi çekmek). Telefonu şarja takmak için de 'plug in' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Please plug the charger to the socket.",
+              "right": "Please plug the charger into the socket.",
+              "why": "Türkçede 'prize takmak' deriz (-e hâli). İngilizcede 'to' değil 'into' kullanılır: plug sth into the socket."
+            },
+            {
+              "wrong": "Plug in it, please.",
+              "right": "Plug it in, please.",
+              "why": "Zamir (it, them) 'plug' ile 'in' arasına girer."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My laptop has no battery. Please ______ the charger.",
+        "answer": "plug in",
+        "distractors": [
+          "turn down",
+          "hang up",
+          "take off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

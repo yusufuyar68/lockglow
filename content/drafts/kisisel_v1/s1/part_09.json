@@ -1,0 +1,1028 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.cheap.adj.1",
+      "lemma": "cheap",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃiːp/",
+        "uk": "/tʃiːp/"
+      },
+      "def": {
+        "micro": "not costing much money",
+        "short": "not costing a lot of money",
+        "long": "Not costing a lot of money. People like cheap things because they are easy to pay for, but sometimes the word also means low quality."
+      },
+      "examples": [
+        {
+          "en": "This restaurant is cheap, and the food is good.",
+          "tr": "Bu restoran ucuz ve yemekleri güzel.",
+          "register": "neutral",
+          "focus": "cheap"
+        },
+        {
+          "en": "The tickets were cheap, so we bought four.",
+          "tr": "Biletler ucuzdu, o yüzden dört tane aldık.",
+          "register": "neutral",
+          "focus": "cheap"
+        },
+        {
+          "en": "That bag looks cheap. I think it's low quality.",
+          "tr": "O çanta ucuz görünüyor. Bence kalitesiz.",
+          "register": "neutral",
+          "focus": "cheap"
+        }
+      ],
+      "synonyms": [
+        "inexpensive"
+      ],
+      "antonyms": [
+        "expensive"
+      ],
+      "collocations": [
+        "a cheap restaurant",
+        "cheap clothes",
+        "cheap and good",
+        "dirt cheap",
+        "cheaper than"
+      ],
+      "word_family": [
+        {
+          "lemma": "cheaply",
+          "pos": "adv"
+        },
+        {
+          "lemma": "cheapen",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ucuz",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngilizcede 'cheap' bazen olumsuzdur: kalitesiz demektir. Olumlu söylemek için 'inexpensive' ya da 'affordable' (uygun fiyatlı) kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "The price is very cheap.",
+              "right": "The price is very low.",
+              "why": "Türkçede 'fiyatı ucuz' denir; İngilizcede fiyat 'low' ya da 'high' olur, 'cheap' ürün için kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't have much money, so I need something ______.",
+        "answer": "cheap",
+        "distractors": [
+          "heavy",
+          "tall",
+          "loud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.expensive.adj.1",
+      "lemma": "expensive",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspɛnsɪv/",
+        "uk": "/ɪkˈspɛnsɪv/"
+      },
+      "def": {
+        "micro": "costing a lot of money",
+        "short": "that costs a lot of money to buy or use",
+        "long": "Costing a lot of money. A phone, a car, or a hotel can be this way if the price is high."
+      },
+      "examples": [
+        {
+          "en": "This phone is too expensive for me.",
+          "tr": "Bu telefon benim için çok pahalı.",
+          "register": "neutral",
+          "focus": "expensive"
+        },
+        {
+          "en": "Living in a big city is very expensive.",
+          "tr": "Büyük bir şehirde yaşamak çok pahalı.",
+          "register": "neutral",
+          "focus": "expensive"
+        },
+        {
+          "en": "The coat was expensive, but it's very warm.",
+          "tr": "Mont pahalıydı ama çok sıcak tutuyor.",
+          "register": "neutral",
+          "focus": "expensive"
+        }
+      ],
+      "synonyms": [
+        "costly",
+        "pricey"
+      ],
+      "antonyms": [
+        "cheap"
+      ],
+      "collocations": [
+        "too expensive",
+        "very expensive",
+        "an expensive gift",
+        "expensive clothes"
+      ],
+      "word_family": [
+        {
+          "lemma": "expense",
+          "pos": "n"
+        },
+        {
+          "lemma": "expensively",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pahalı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ürün için 'expensive', fiyat için 'high' kullanılır: 'It is expensive' ya da 'The price is high'. 'Pricey' günlük konuşmada daha rahat bir sözcüktür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I love that bag, but it is too ______. I can't buy it.",
+        "answer": "expensive",
+        "distractors": [
+          "cheap",
+          "quiet",
+          "soft"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.price.n.1",
+      "lemma": "price",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/praɪs/",
+        "uk": "/praɪs/"
+      },
+      "def": {
+        "micro": "how much something costs",
+        "short": "the amount of money that you must pay for something",
+        "long": "The amount of money you must pay to buy something. Shops write it on a label or show it on a screen."
+      },
+      "examples": [
+        {
+          "en": "What is the price of this jacket?",
+          "tr": "Bu ceketin fiyatı ne kadar?",
+          "register": "neutral",
+          "focus": "price"
+        },
+        {
+          "en": "The price of bread went up again.",
+          "tr": "Ekmeğin fiyatı yine arttı.",
+          "register": "neutral",
+          "focus": "price"
+        },
+        {
+          "en": "Compare the prices before you buy anything.",
+          "tr": "Bir şey almadan önce fiyatları karşılaştır.",
+          "register": "neutral",
+          "focus": "prices"
+        }
+      ],
+      "synonyms": [
+        "cost"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the price of",
+        "a high price",
+        "a low price",
+        "full price",
+        "price tag"
+      ],
+      "word_family": [
+        {
+          "lemma": "priceless",
+          "pos": "adj"
+        },
+        {
+          "lemma": "pricey",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fiyat",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiyat 'high' ya da 'low' olur; 'pahalı' ve 'ucuz' ise ürün için 'expensive' ve 'cheap' ile söylenir.",
+          "mistakes": [
+            {
+              "wrong": "The price is too expensive.",
+              "right": "The price is too high.",
+              "why": "Türkçede 'fiyat çok pahalı' denir; İngilizcede fiyat 'high' ya da 'low' olur. 'Expensive' ürün için kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please tell me the ______ before I buy this.",
+        "answer": "price",
+        "distractors": [
+          "weather",
+          "recipe",
+          "guest"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pay.v.1",
+      "lemma": "pay",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/peɪ/",
+        "uk": "/peɪ/"
+      },
+      "def": {
+        "micro": "give money for something",
+        "short": "to give money for something you buy or use",
+        "long": "To give money for something you buy or use. You pay for things, pay a person, or pay a bill."
+      },
+      "grammar": {
+        "pattern": "pay for + sth / pay + sb"
+      },
+      "examples": [
+        {
+          "en": "Can I pay by card?",
+          "tr": "Kartla ödeyebilir miyim?",
+          "register": "neutral",
+          "focus": "pay"
+        },
+        {
+          "en": "Don't worry, I'll pay for the coffee this time.",
+          "tr": "Merak etme, bu sefer kahveyi ben ödeyeceğim.",
+          "register": "neutral",
+          "focus": "pay"
+        },
+        {
+          "en": "Please pay at the counter before you leave.",
+          "tr": "Lütfen ayrılmadan önce kasada ödeme yapın.",
+          "register": "neutral",
+          "focus": "pay"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay by card",
+        "pay cash",
+        "pay for",
+        "pay the bill",
+        "pay online"
+      ],
+      "word_family": [
+        {
+          "lemma": "payment",
+          "pos": "n"
+        },
+        {
+          "lemma": "paid",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ödemek",
+          "alt": [
+            "ödeme yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir şey için ödeme yaparken 'pay for' kullanılır; bir kişiye ödeme yaparken 'pay someone' denir.",
+          "mistakes": [
+            {
+              "wrong": "I paid the coffee.",
+              "right": "I paid for the coffee.",
+              "why": "Türkçede 'kahveyi ödedim' denir (-yi hâli); İngilizcede ödenen şeyden önce 'for' gerekir: pay for the coffee."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I forgot my wallet. Can I ______ by phone?",
+        "answer": "pay",
+        "distractors": [
+          "wear",
+          "cook",
+          "tidy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shopping.n.1",
+      "lemma": "shopping",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʃɑːpɪŋ/",
+        "uk": "/ˈʃɒpɪŋ/"
+      },
+      "def": {
+        "micro": "buying things in shops",
+        "short": "the activity of going to shops and buying things",
+        "long": "The activity of going to shops or going online to look at and buy things. In English you 'go shopping' or 'do the shopping'; you do not 'make shopping'."
+      },
+      "examples": [
+        {
+          "en": "I go shopping on Saturdays.",
+          "tr": "Cumartesi günleri alışverişe giderim.",
+          "register": "neutral",
+          "focus": "shopping"
+        },
+        {
+          "en": "Let's do the shopping before dinner.",
+          "tr": "Akşam yemeğinden önce alışverişi yapalım.",
+          "register": "neutral",
+          "focus": "shopping"
+        },
+        {
+          "en": "I like online shopping because it is fast.",
+          "tr": "Online alışverişi seviyorum çünkü hızlı.",
+          "register": "neutral",
+          "focus": "shopping"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go shopping",
+        "do the shopping",
+        "online shopping",
+        "shopping bag",
+        "shopping list"
+      ],
+      "word_family": [
+        {
+          "lemma": "shop",
+          "pos": "n"
+        },
+        {
+          "lemma": "shopper",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "alışveriş",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gezip bir şeyler almak için 'go shopping', ev ya da market alışverişi için 'do the shopping' denir.",
+          "mistakes": [
+            {
+              "wrong": "I made shopping yesterday.",
+              "right": "I went shopping yesterday.",
+              "why": "'Alışveriş yapmak' kelimesi kelimesine 'make shopping' olmaz; 'go shopping' ya da 'do the shopping' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need milk and bread, so I'll go ______ after work.",
+        "answer": "shopping",
+        "distractors": [
+          "cooking",
+          "working",
+          "cleaning"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wallet.n.1",
+      "lemma": "wallet",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɑːlɪt/",
+        "uk": "/ˈwɒlɪt/"
+      },
+      "def": {
+        "micro": "case for money and cards",
+        "short": "a small, flat case that you keep in your pocket or bag for money and cards",
+        "long": "A small, flat case that you keep in your pocket or bag. It holds money, bank cards, and your ID card."
+      },
+      "examples": [
+        {
+          "en": "I left my wallet at home.",
+          "tr": "Cüzdanımı evde unuttum.",
+          "register": "neutral",
+          "focus": "wallet"
+        },
+        {
+          "en": "Someone stole my wallet on the bus.",
+          "tr": "Biri otobüste cüzdanımı çaldı.",
+          "register": "neutral",
+          "focus": "wallet"
+        },
+        {
+          "en": "Mehmet opened his wallet and paid in cash.",
+          "tr": "Mehmet cüzdanını açıp nakit ödedi.",
+          "register": "neutral",
+          "focus": "wallet"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a leather wallet",
+        "lose my wallet",
+        "wallet and keys",
+        "an empty wallet"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "cüzdan",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiltere'de kadın cüzdanına bazen 'purse' denir; ABD'de 'purse' bir el çantasıdır. 'Wallet' her iki ülkede de anlaşılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't pay. I left my ______ at home.",
+        "answer": "wallet",
+        "distractors": [
+          "towel",
+          "sofa",
+          "pillow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.change.n.2",
+      "lemma": "change",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 2,
+      "sense_note": "money you get back",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃeɪndʒ/",
+        "uk": "/tʃeɪndʒ/"
+      },
+      "def": {
+        "micro": "money you get back",
+        "short": "the money that a shop gives back when you pay too much",
+        "long": "The money that a shop gives you back when you pay more than the price. You may also hear \"Keep the change.\""
+      },
+      "examples": [
+        {
+          "en": "Here is your change, sir.",
+          "tr": "Para üstünüz, efendim.",
+          "register": "formal",
+          "focus": "change"
+        },
+        {
+          "en": "Thank you very much. Please keep the change.",
+          "tr": "Çok teşekkürler. Üstü kalsın lütfen.",
+          "register": "neutral",
+          "focus": "change"
+        },
+        {
+          "en": "I gave him 100 lira, and he gave me 30 in change.",
+          "tr": "Ona 100 lira verdim, o da bana 30 lira para üstü verdi.",
+          "register": "neutral",
+          "focus": "change"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "keep the change",
+        "exact change",
+        "give someone change",
+        "get change back"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "para üstü",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Change' bozuk para için de kullanılır: 'Do you have change?' = Bozuk paranız var mı? Sayılamayan bir isimdir.",
+          "mistakes": [
+            {
+              "wrong": "Here is your rest.",
+              "right": "Here is your change.",
+              "why": "Türkçede 'para üstü' denir; İngilizcede 'kalan para' için 'rest' değil 'change' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The coffee was 20 lira. I gave him 50, so he gave me 30 lira ______.",
+        "answer": "change",
+        "distractors": [
+          "menu",
+          "size",
+          "recipe"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.receipt.n.1",
+      "lemma": "receipt",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈsiːt/",
+        "uk": "/rɪˈsiːt/"
+      },
+      "def": {
+        "micro": "paper that shows you paid",
+        "short": "a piece of paper that shows what you bought and how much you paid",
+        "long": "A piece of paper or a message on your phone that shows what you bought and how much you paid. Keep it if you want to return something to the shop."
+      },
+      "examples": [
+        {
+          "en": "Can I have a receipt, please?",
+          "tr": "Fiş alabilir miyim lütfen?",
+          "register": "neutral",
+          "focus": "receipt"
+        },
+        {
+          "en": "Keep the receipt in case you want to return it.",
+          "tr": "İade etmek isterseniz diye fişi saklayın.",
+          "register": "neutral",
+          "focus": "receipt"
+        },
+        {
+          "en": "The shop sent the receipt to my email.",
+          "tr": "Mağaza fişi e-postama gönderdi.",
+          "register": "neutral",
+          "focus": "receipt"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "keep the receipt",
+        "print a receipt",
+        "an email receipt",
+        "a receipt for payment"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fiş",
+          "alt": [
+            "makbuz"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Mağaza ya da market fişi için 'receipt'; elektrik faturası gibi ödenecek hesap için 'bill' denir. 'P' harfi okunmaz: ri-SİT.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please keep the ______. You need it if you want to return the shirt.",
+        "answer": "receipt",
+        "distractors": [
+          "recipe",
+          "menu",
+          "button"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.discount.n.1",
+      "lemma": "discount",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪskaʊnt/",
+        "uk": "/ˈdɪskaʊnt/"
+      },
+      "def": {
+        "micro": "lower price than usual",
+        "short": "an amount of money taken off the usual price",
+        "long": "An amount of money taken off the usual price of something. Shops often give a student discount, or a discount on old clothes at the end of the season."
+      },
+      "examples": [
+        {
+          "en": "Is there a discount for students?",
+          "tr": "Öğrencilere indirim var mı?",
+          "register": "neutral",
+          "focus": "discount"
+        },
+        {
+          "en": "They gave us a 20 percent discount.",
+          "tr": "Bize yüzde yirmi indirim yaptılar.",
+          "register": "neutral",
+          "focus": "discount"
+        },
+        {
+          "en": "I got a discount because I bought three shirts.",
+          "tr": "Üç gömlek aldığım için indirim aldım.",
+          "register": "neutral",
+          "focus": "discount"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a student discount",
+        "get a discount",
+        "give a discount",
+        "a big discount"
+      ],
+      "word_family": [
+        {
+          "lemma": "discount",
+          "pos": "v"
+        },
+        {
+          "lemma": "discounted",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "indirim",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Get a discount' = indirim almak. İndirimdeki ürün için 'on sale' denir; 'discount' ise düşülen miktardır.",
+          "mistakes": [
+            {
+              "wrong": "Can you make a discount?",
+              "right": "Can you give me a discount?",
+              "why": "Türkçede 'indirim yapmak' dersiniz; İngilizcede 'make a discount' denmez, 'give (me) a discount' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm a student, so I get a 10 percent ______.",
+        "answer": "discount",
+        "distractors": [
+          "receipt",
+          "wallet",
+          "size"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cash.n.1",
+      "lemma": "cash",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kæʃ/",
+        "uk": "/kæʃ/"
+      },
+      "def": {
+        "micro": "money in notes and coins",
+        "short": "money in the form of notes and coins, not a card",
+        "long": "Money in the form of notes and coins, not a card or a phone payment. Some small shops only accept it."
+      },
+      "examples": [
+        {
+          "en": "Do you take cash or only cards?",
+          "tr": "Nakit alıyor musunuz, yoksa sadece kart mı?",
+          "register": "neutral",
+          "focus": "cash"
+        },
+        {
+          "en": "I have no cash with me. Can I pay by card?",
+          "tr": "Yanımda nakit yok. Kartla ödeyebilir miyim?",
+          "register": "neutral",
+          "focus": "cash"
+        },
+        {
+          "en": "Mehmet paid in cash and got a small discount.",
+          "tr": "Mehmet nakit ödedi ve küçük bir indirim aldı.",
+          "register": "neutral",
+          "focus": "cash"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay in cash",
+        "cash only",
+        "some cash",
+        "cash or card"
+      ],
+      "word_family": [
+        {
+          "lemma": "cashier",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'caisse', a money box, from Latin 'capsa', a box. 'Cash' first meant the box, then the money inside it.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "nakit",
+          "alt": [
+            "peşin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Nakit için 'in cash', kart için 'by card' denir. 'Peşin' ödeme için ise 'upfront' ya da 'in full' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I'll pay by cash.",
+              "right": "I'll pay in cash.",
+              "why": "Kart için 'by card' denir; nakit için en doğal kalıp 'in cash' olur. 'By cash' anlaşılır ama daha az doğaldır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't have a card, so I'll pay in ______.",
+        "answer": "cash",
+        "distractors": [
+          "price",
+          "size",
+          "menu"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

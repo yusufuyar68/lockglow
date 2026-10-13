@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": ["tr"],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.get_up.phv.1",
+      "lemma": "get up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "leave your bed",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡɛt ˈʌp/", "uk": "/ɡɛt ˈʌp/"},
+      "def": {
+        "micro": "leave your bed",
+        "short": "leave your bed after you wake up",
+        "long": "To leave your bed after you wake up and start your day. We usually say what time we do it, or how early or late it is."
+      },
+      "grammar": {"pattern": "get up (no object)"},
+      "examples": [
+        {"en": "I get up at seven every morning.", "tr": "Her sabah yedide kalkarım.", "register": "neutral", "focus": "get up"},
+        {"en": "It's Sunday, so we don't have to get up early.", "tr": "Bugün pazar, o yüzden erken kalkmamıza gerek yok.", "register": "neutral", "focus": "get up"},
+        {"en": "Mehmet got up late and missed the bus.", "tr": "Mehmet geç kalktı ve otobüsü kaçırdı.", "register": "neutral", "focus": "got up"}
+      ],
+      "synonyms": [],
+      "antonyms": ["go to bed"],
+      "collocations": ["get up early", "get up late", "get up at six", "get up on time"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yataktan kalkmak",
+          "alt": ["kalkmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'kalkmak' hem yataktan hem sandalyeden kalkmak için kullanılır. İngilizcede yataktan kalkmak 'get up', ayağa kalkmak 'stand up' denir.",
+          "mistakes": [
+            {"wrong": "I stand up at seven every morning.", "right": "I get up at seven every morning.", "why": "Türkçede 'kalkmak' diye düşünüp 'stand up' demeyin; 'stand up' ayağa kalkmaktır. Yataktan kalkmak 'get up'tır."},
+            {"wrong": "I get up my kids at seven.", "right": "I wake my kids up at seven.", "why": "'Get up' kişinin kendi kalkmasıdır. Başkasını kaldırmak (uyandırmak) için 'wake sb up' denir."}
+          ],
+          "mnemonic": "'Up' yukarı demek: yatay yataktan dikey duruşa, yani yukarı doğru kalkıyorsun."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "I'm awake, but I don't want to ______ yet. My bed is so warm.", "answer": "get up", "distractors": ["wake up", "sit down", "give up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.wake_up.phv.1",
+      "lemma": "wake up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "stop sleeping",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/weɪk ˈʌp/", "uk": "/weɪk ˈʌp/"},
+      "def": {
+        "micro": "stop sleeping",
+        "short": "stop sleeping and open your eyes",
+        "long": "To stop sleeping, or to make someone stop sleeping. With a person you can say 'wake sb up': 'Please wake me up at six.'"
+      },
+      "grammar": {"pattern": "wake up; wake sb up / wake up sb"},
+      "examples": [
+        {"en": "I wake up at six every day.", "tr": "Her gün altıda uyanırım.", "register": "neutral", "focus": "wake up"},
+        {"en": "Please wake me up at seven tomorrow.", "tr": "Lütfen yarın beni yedide uyandır.", "register": "neutral", "focus": "wake me up"},
+        {"en": "The loud noise woke the baby up.", "tr": "Yüksek ses bebeği uyandırdı.", "register": "neutral", "focus": "woke the baby up"}
+      ],
+      "synonyms": [],
+      "antonyms": ["fall asleep"],
+      "collocations": ["wake up early", "wake up late", "wake up at six", "wake sb up"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uyanmak",
+          "alt": ["uyandırmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Nesneyle birlikte (wake sb up) 'uyandırmak' olur. 'Get up' (yataktan kalkmak) ile karıştırmayın: önce wake up, sonra get up.",
+          "mistakes": [
+            {"wrong": "She wakes up me at seven.", "right": "She wakes me up at seven.", "why": "Zamir (me, him, her) 'wake' ile 'up' arasına girer. 'Wake up me' yanlıştır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "Shh! Don't ______ the baby. She is sleeping.", "answer": "wake up", "distractors": ["get up", "stand up", "sit down"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.turn_on.phv.1",
+      "lemma": "turn on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "light, TV, phone, machine",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/tɜːrn ˈɑːn/", "uk": "/tɜːn ˈɒn/"},
+      "def": {
+        "micro": "start a light or machine",
+        "short": "make a light, TV, phone or machine start working",
+        "long": "To make a light, a TV, a phone or a machine start working, usually with a button or switch. The opposite is 'turn off'."
+      },
+      "grammar": {"pattern": "turn sth on / turn on sth (turn it on)"},
+      "examples": [
+        {"en": "Can you turn on the light, please?", "tr": "Işığı açar mısın lütfen?", "register": "neutral", "focus": "turn on"},
+        {"en": "It's cold. I'll turn the heating on.", "tr": "Hava soğuk. Isıtmayı açayım.", "register": "neutral", "focus": "turn the heating on"},
+        {"en": "My phone has no battery, so I can't turn it on.", "tr": "Telefonumun şarjı bitti, açamıyorum.", "register": "neutral", "focus": "turn it on"}
+      ],
+      "synonyms": ["switch on"],
+      "antonyms": ["turn off", "switch off"],
+      "collocations": ["turn on the light", "turn on the TV", "turn on the heating", "turn on the tap", "turn on your phone"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açmak",
+          "alt": ["çalıştırmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede ışık, televizyon, musluk, telefon hep 'açmak'tır. İngilizcede de tek kalıp yeter: turn on. Motor için 'çalıştırmak' da denir.",
+          "mistakes": [
+            {"wrong": "Turn on it, please.", "right": "Turn it on, please.", "why": "'it, them, him' gibi zamirler 'turn' ile 'on' arasına girer. 'Turn on it' yanlıştır."},
+            {"wrong": "Open the light, please.", "right": "Turn on the light, please.", "why": "Türkçede 'ışığı açmak' dersiniz ama İngilizcede ışık için 'open' kullanılmaz; 'turn on' denir."}
+          ],
+          "mnemonic": "Turn = çevirmek: eski radyonun düğmesini çevirip 'on' konumuna getirirsin."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "It's very dark in here. Please ______ the light.", "answer": "turn on", "distractors": ["turn off", "pick up", "take off"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.turn_off.phv.1",
+      "lemma": "turn off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "light, TV, phone, machine",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/tɜːrn ˈɔːf/", "uk": "/tɜːn ˈɒf/"},
+      "def": {
+        "micro": "stop a light or machine",
+        "short": "make a light, TV, phone or machine stop working",
+        "long": "To make a light, a TV, a phone or a machine stop working, usually with a button or switch. It is also used for a tap. The opposite is 'turn on'."
+      },
+      "grammar": {"pattern": "turn sth off / turn off sth (turn it off)"},
+      "examples": [
+        {"en": "Please turn off your phone in the cinema.", "tr": "Lütfen sinemada telefonunu kapat.", "register": "neutral", "focus": "turn off"},
+        {"en": "Don't forget to turn the lights off before you leave.", "tr": "Çıkmadan önce ışıkları kapatmayı unutma.", "register": "neutral", "focus": "turn the lights off"},
+        {"en": "This film is boring. Can you turn it off?", "tr": "Bu film sıkıcı. Kapatabilir misin?", "register": "neutral", "focus": "turn it off"}
+      ],
+      "synonyms": ["switch off"],
+      "antonyms": ["turn on", "switch on"],
+      "collocations": ["turn off the light", "turn off the TV", "turn off the tap", "turn off your phone", "turn off the alarm"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapatmak",
+          "alt": ["söndürmek"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Işık için 'söndürmek' de denir, ama İngilizcede ışık, televizyon, telefon ve musluk için aynı kalıp kullanılır: turn off.",
+          "mistakes": [
+            {"wrong": "Close the TV, please.", "right": "Turn off the TV, please.", "why": "Türkçede 'televizyonu kapatmak' dersiniz. İngilizcede 'close' kapı, pencere, kutu içindir; cihaz için 'turn off' denir."},
+            {"wrong": "Please turn off it.", "right": "Please turn it off.", "why": "Zamir (it, them) 'turn' ile 'off' arasına girer. 'Turn off it' yanlıştır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "The film is over. Please ______ the TV.", "answer": "turn off", "distractors": ["turn on", "put on", "take off"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.put_on.phv.1",
+      "lemma": "put on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "wear clothes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/pʊt ˈɑːn/", "uk": "/pʊt ˈɒn/"},
+      "def": {
+        "micro": "start wearing clothes",
+        "short": "start to wear clothes, shoes or glasses",
+        "long": "To take clothes, shoes, a hat or glasses and wear them on your body. The opposite is 'take off'. Do not confuse it with 'wear': 'wear' means the clothes are already on you."
+      },
+      "grammar": {"pattern": "put sth on / put on sth (put it on)"},
+      "examples": [
+        {"en": "It's cold. Put on your jacket.", "tr": "Hava soğuk. Montunu giy.", "register": "neutral", "focus": "Put on"},
+        {"en": "She put her shoes on and left the house.", "tr": "Ayakkabılarını giyip evden çıktı.", "register": "neutral", "focus": "put her shoes on"},
+        {"en": "Here are your glasses. Please put them on.", "tr": "İşte gözlüğün. Lütfen tak.", "register": "neutral", "focus": "put them on"}
+      ],
+      "synonyms": [],
+      "antonyms": ["take off"],
+      "collocations": ["put on a jacket", "put on your shoes", "put on a hat", "put on your coat", "put on glasses"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "giymek",
+          "alt": ["takmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gözlük, saat, şapka, eldiven için Türkçede 'takmak' da denir; İngilizcede hepsi put on. Giysi zaten üzerinizdeyse 'wear' kullanılır.",
+          "mistakes": [
+            {"wrong": "He is putting on a black coat in the photo.", "right": "He is wearing a black coat in the photo.", "why": "'Put on' giyme hareketidir. Üzerinde olma durumu ('siyah palto giymiş') için 'wear' kullanılır."},
+            {"wrong": "Put on it, please.", "right": "Put it on, please.", "why": "Zamir (it, them) 'put' ile 'on' arasına girer."}
+          ],
+          "mnemonic": "Put on = üstüne koymak: giysiyi bedenin üzerine (on) koyarsın."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "It's raining outside, so please ______ your coat.", "answer": "put on", "distractors": ["take off", "turn off", "give up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.take_off.phv.1",
+      "lemma": "take off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "remove clothes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/teɪk ˈɔːf/", "uk": "/teɪk ˈɒf/"},
+      "def": {
+        "micro": "remove clothes",
+        "short": "remove clothes, shoes or glasses from your body",
+        "long": "To remove clothes, shoes, a hat or glasses from your body. The opposite is 'put on'. In many homes, people take off their shoes at the door."
+      },
+      "grammar": {"pattern": "take sth off / take off sth (take it off)"},
+      "examples": [
+        {"en": "Please take off your shoes at the door.", "tr": "Lütfen ayakkabılarını kapıda çıkar.", "register": "neutral", "focus": "take off"},
+        {"en": "He took his wet jacket off and sat down.", "tr": "Islak montunu çıkarıp oturdu.", "register": "neutral", "focus": "took his wet jacket off"},
+        {"en": "It's hot in here. Can I take my sweater off?", "tr": "Burası çok sıcak. Kazağımı çıkarabilir miyim?", "register": "neutral", "focus": "take my sweater off"}
+      ],
+      "synonyms": ["remove"],
+      "antonyms": ["put on"],
+      "collocations": ["take off your shoes", "take off your coat", "take off your jacket", "take off your hat", "take off your mask"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çıkarmak",
+          "alt": ["üstünden çıkarmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gözlük, saat, şapka için de 'çıkarmak' denir. Uçağın havalanması için ayrı bir anlamı var (take off, 2. kart).",
+          "mistakes": [
+            {"wrong": "Please take out your shoes at the door.", "right": "Please take off your shoes at the door.", "why": "Türkçede 'çıkarmak' hem 'take out' (içinden dışarı almak) hem 'take off' (giysiyi çıkarmak) olur. Ayakkabı ve giysi için 'take off' denir."},
+            {"wrong": "Take off it, please.", "right": "Take it off, please.", "why": "Zamir (it, them) 'take' ile 'off' arasına girer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "It's hot in the house. I'm going to ______ my sweater.", "answer": "take off", "distractors": ["put on", "turn on", "get on"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.come_in.phv.1",
+      "lemma": "come in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "enter a room or house",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/kʌm ˈɪn/", "uk": "/kʌm ˈɪn/"},
+      "def": {
+        "micro": "enter a room or house",
+        "short": "go into a room or house where someone is",
+        "long": "To go into a room, a house or a building. We say it to invite someone inside: 'Come in!' The person outside can ask: 'Can I come in?'"
+      },
+      "grammar": {"pattern": "come in (no object)"},
+      "examples": [
+        {"en": "Come in! The door is open.", "tr": "İçeri gel! Kapı açık.", "register": "neutral", "focus": "Come in"},
+        {"en": "Can I come in? I have a question.", "tr": "İçeri gelebilir miyim? Bir sorum var.", "register": "neutral", "focus": "come in"},
+        {"en": "It started to rain, so we came in.", "tr": "Yağmur başlayınca içeri girdik.", "register": "neutral", "focus": "came in"}
+      ],
+      "synonyms": ["enter"],
+      "antonyms": ["go out"],
+      "collocations": ["Come in!", "come in and sit down", "come in from the cold", "please come in"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "içeri girmek",
+          "alt": ["girmek", "içeri gelmek"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Konuşan kişi içerideyse 'come in' denir (içeri gel). Dışarıdan bir yere girmeyi anlatırken 'go in' kullanılır.",
+          "mistakes": [
+            {"wrong": "Can I enter?", "right": "Can I come in?", "why": "'Girebilir miyim?' diye düşünüp 'enter' denir, ama bu çok resmî durur. Günlük konuşmada 'come in' kullanılır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "Knock, knock! \"______! The door is open.\"", "answer": "Come in", "distractors": ["Go out", "Get off", "Take off"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.sit_down.phv.1",
+      "lemma": "sit down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "move onto a chair or sofa",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/sɪt ˈdaʊn/", "uk": "/sɪt ˈdaʊn/"},
+      "def": {
+        "micro": "take a seat",
+        "short": "move onto a chair, sofa or the floor to rest",
+        "long": "To move your body from standing to resting on a chair or the floor. People often say 'Please sit down' or 'Take a seat' to guests."
+      },
+      "grammar": {"pattern": "sit down (no object)"},
+      "examples": [
+        {"en": "Please sit down. The doctor will see you soon.", "tr": "Lütfen oturun. Doktor birazdan sizi görecek.", "register": "neutral", "focus": "sit down"},
+        {"en": "We sat down at a table by the window.", "tr": "Pencere kenarındaki bir masaya oturduk.", "register": "neutral", "focus": "sat down"},
+        {"en": "Sit down and relax. You look very tired.", "tr": "Otur da dinlen. Çok yorgun görünüyorsun.", "register": "neutral", "focus": "Sit down"}
+      ],
+      "synonyms": ["take a seat"],
+      "antonyms": ["stand up"],
+      "collocations": ["sit down and relax", "sit down at the table", "sit down together", "sit down for dinner"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "oturmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'oturmak' hem hareketi hem durumu anlatır. İngilizcede hareket 'sit down', durum 'sit' ile söylenir: 'She is sitting on the sofa.'",
+          "mistakes": [
+            {"wrong": "We sat down to a table by the window.", "right": "We sat down at a table by the window.", "why": "Türkçede 'masaya oturmak' deriz (-e hâli). İngilizcede masa için 'to' değil 'at' kullanılır: sit down at a table."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "I'm tired. Let's ______ on that bench for a minute.", "answer": "sit down", "distractors": ["stand up", "go out", "get off"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.stand_up.phv.1",
+      "lemma": "stand up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "get onto your feet",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/stænd ˈʌp/", "uk": "/stænd ˈʌp/"},
+      "def": {
+        "micro": "get onto your feet",
+        "short": "move from sitting or lying to being on your feet",
+        "long": "To change from sitting or lying down to being on your feet. People do it to show respect, to leave, or when an important person comes in."
+      },
+      "grammar": {"pattern": "stand up (no object)"},
+      "examples": [
+        {"en": "Please stand up and say your name.", "tr": "Lütfen ayağa kalkıp adınızı söyleyin.", "register": "neutral", "focus": "stand up"},
+        {"en": "Everyone stood up when the teacher came in.", "tr": "Öğretmen girince herkes ayağa kalktı.", "register": "neutral", "focus": "stood up"},
+        {"en": "He stood up and walked to the window.", "tr": "Ayağa kalkıp pencereye yürüdü.", "register": "neutral", "focus": "stood up"}
+      ],
+      "synonyms": [],
+      "antonyms": ["sit down"],
+      "collocations": ["stand up slowly", "stand up straight", "stand up from the chair", "stand up and stretch"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayağa kalkmak",
+          "alt": ["kalkmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede yataktan da ayağa da 'kalkılır'. İngilizcede ayrı fiiller var: yataktan kalkmak 'get up', ayağa kalkmak 'stand up'.",
+          "mistakes": [
+            {"wrong": "I stand up at seven every morning.", "right": "I get up at seven every morning.", "why": "Sabah yataktan kalkmak 'get up'tır. 'Stand up' yalnızca ayağa kalkmak için kullanılır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "My back hurts after sitting all day. I need to ______ and walk.", "answer": "stand up", "distractors": ["sit down", "lie down", "turn off"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.come_back.phv.1",
+      "lemma": "come back",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "return to a place",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/kʌm ˈbæk/", "uk": "/kʌm ˈbæk/"},
+      "def": {
+        "micro": "return to a place",
+        "short": "go or arrive at a place again after leaving it",
+        "long": "To arrive at a place again after you have left it. It is often used with a time: 'I'll come back at six.'"
+      },
+      "grammar": {"pattern": "come back (no object)"},
+      "examples": [
+        {"en": "I'll come back at six.", "tr": "Altıda geri geleceğim.", "register": "neutral", "focus": "come back"},
+        {"en": "When did Ali come back from his trip?", "tr": "Ali geziden ne zaman döndü?", "register": "neutral", "focus": "come back"},
+        {"en": "Come back soon! We miss you.", "tr": "Çabuk dön! Seni özlüyoruz.", "register": "neutral", "focus": "Come back"}
+      ],
+      "synonyms": ["return"],
+      "antonyms": ["go away"],
+      "collocations": ["come back soon", "come back later", "come back home", "come back from work"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geri gelmek",
+          "alt": ["dönmek"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dönülen yer konuşanın bulunduğu ya da yöneldiği yerse 'come back'; başka bir yere dönülüyorsa 'go back' denir.",
+          "mistakes": [
+            {"wrong": "I will come back to home at six.", "right": "I will come back home at six.", "why": "'Home' önünde 'to' kullanılmaz. Türkçedeki '-e' hâli her zaman 'to' demek değildir."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "I'm going to the shop. I'll ______ in ten minutes.", "answer": "come back", "distractors": ["get up", "give up", "sit down"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    }
+  ]
+}

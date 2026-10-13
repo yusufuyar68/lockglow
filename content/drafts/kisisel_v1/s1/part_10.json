@@ -1,0 +1,1065 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.sale.n.1",
+      "lemma": "sale",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a time of low prices in shops",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪl/",
+        "uk": "/seɪl/"
+      },
+      "def": {
+        "micro": "special low prices in a shop",
+        "short": "a time when a shop sells things at lower prices than usual",
+        "long": "A time when a shop sells things at lower prices than usual. Many shops have a big one in January and in summer. If something is 'on sale', its price is lower now."
+      },
+      "examples": [
+        {
+          "en": "The summer sale starts tomorrow.",
+          "tr": "Yaz indirimi yarın başlıyor.",
+          "register": "neutral",
+          "focus": "sale"
+        },
+        {
+          "en": "These jeans are on sale this week.",
+          "tr": "Bu kot pantolon bu hafta indirimde.",
+          "register": "neutral",
+          "focus": "sale"
+        },
+        {
+          "en": "Ayşe waits for the sales before she buys winter clothes.",
+          "tr": "Ayşe kışlık kıyafet almadan önce indirimleri bekler.",
+          "register": "neutral",
+          "focus": "sales"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on sale",
+        "a summer sale",
+        "a big sale",
+        "the sales",
+        "sale price"
+      ],
+      "word_family": [
+        {
+          "lemma": "sell",
+          "pos": "v"
+        },
+        {
+          "lemma": "seller",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "indirimli satış",
+          "alt": [
+            "indirim",
+            "kampanya"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'On sale' = indirimde; 'for sale' = satılık (a house for sale). 'Sale' ayrıca 'satış işlemi' demektir.",
+          "mistakes": [
+            {
+              "wrong": "These shoes are in discount.",
+              "right": "These shoes are on sale.",
+              "why": "Türkçede 'indirimde' dersiniz; İngilizcede 'in discount' denmez, 'on sale' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "These shoes are half price. They are on ______ this week.",
+        "answer": "sale",
+        "distractors": [
+          "menu",
+          "size",
+          "wallet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spend.v.1",
+      "lemma": "spend",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "to use money",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/spɛnd/",
+        "uk": "/spɛnd/"
+      },
+      "def": {
+        "micro": "use money to buy things",
+        "short": "to use your money to buy things or pay for services",
+        "long": "To use money to buy things or pay for services. We say 'spend money on something', for example 'spend 100 lira on food'."
+      },
+      "grammar": {
+        "pattern": "spend + money + on + sth"
+      },
+      "examples": [
+        {
+          "en": "I spend too much money on coffee.",
+          "tr": "Kahveye çok fazla para harcıyorum.",
+          "register": "neutral",
+          "focus": "spend"
+        },
+        {
+          "en": "How much did you spend on your new phone?",
+          "tr": "Yeni telefonuna ne kadar harcadın?",
+          "register": "neutral",
+          "focus": "spend"
+        },
+        {
+          "en": "We spent 2,000 lira on the holiday.",
+          "tr": "Tatile 2.000 lira harcadık.",
+          "register": "neutral",
+          "focus": "spent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "save"
+      ],
+      "collocations": [
+        "spend money",
+        "spend too much",
+        "spend a lot",
+        "spend less on food"
+      ],
+      "word_family": [
+        {
+          "lemma": "spending",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "harcamak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Para için 'harcamak', zaman için de 'spend' kullanılır (spend time = zaman geçirmek). Para harcanan şeyden önce 'on' gelir.",
+          "mistakes": [
+            {
+              "wrong": "I spent 100 lira to shoes.",
+              "right": "I spent 100 lira on shoes.",
+              "why": "Türkçede 'ayakkabıya harcadım' (-e hâli) dersiniz; İngilizcede 'to' değil 'on' kullanılır: spend money on something."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I try not to ______ too much money on clothes.",
+        "answer": "spend",
+        "distractors": [
+          "cook",
+          "wear",
+          "tidy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cost.v.1",
+      "lemma": "cost",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔːst/",
+        "uk": "/kɒst/"
+      },
+      "def": {
+        "micro": "have a price of",
+        "short": "to need a certain amount of money to buy",
+        "long": "To have a certain price. We say 'It costs ten lira' and ask 'How much does it cost?' The past form is also 'cost'."
+      },
+      "grammar": {
+        "pattern": "sth costs + amount"
+      },
+      "examples": [
+        {
+          "en": "How much does this jacket cost?",
+          "tr": "Bu ceket kaç para?",
+          "register": "neutral",
+          "focus": "cost"
+        },
+        {
+          "en": "The ticket costs only ten lira.",
+          "tr": "Bilet sadece on lira.",
+          "register": "neutral",
+          "focus": "costs"
+        },
+        {
+          "en": "The repair cost me more than the phone.",
+          "tr": "Tamir bana telefondan daha pahalıya mal oldu.",
+          "register": "neutral",
+          "focus": "cost"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cost a lot",
+        "cost nothing",
+        "cost more than",
+        "how much does it cost"
+      ],
+      "word_family": [
+        {
+          "lemma": "cost",
+          "pos": "n"
+        },
+        {
+          "lemma": "costly",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mal olmak",
+          "alt": [
+            "tutmak",
+            "etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'Bu kaç para?' dersiniz; İngilizcede 'How much does it cost?' denir. Fiilin üç hâli aynıdır: cost, cost, cost.",
+          "mistakes": [
+            {
+              "wrong": "How much this costs?",
+              "right": "How much does this cost?",
+              "why": "Soruda 'does' gerekir ve özne 'does'tan sonra gelir; 'cost' fiili yalın kalır: How much does this cost?"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't buy it. It will ______ too much.",
+        "answer": "cost",
+        "distractors": [
+          "wear",
+          "boil",
+          "iron"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bill.n.1",
+      "lemma": "bill",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "what you must pay",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪl/",
+        "uk": "/bɪl/"
+      },
+      "def": {
+        "micro": "list of what you must pay",
+        "short": "a paper that shows how much you must pay for a meal or service",
+        "long": "A paper that shows how much money you must pay for a meal or a service, such as electricity or the internet. In the US, people often say 'check' in a restaurant."
+      },
+      "examples": [
+        {
+          "en": "Can we have the bill, please?",
+          "tr": "Hesabı alabilir miyiz lütfen?",
+          "register": "neutral",
+          "focus": "bill"
+        },
+        {
+          "en": "The electricity bill is higher this month.",
+          "tr": "Bu ay elektrik faturası daha yüksek.",
+          "register": "neutral",
+          "focus": "bill"
+        },
+        {
+          "en": "Mehmet paid the phone bill online.",
+          "tr": "Mehmet telefon faturasını internetten ödedi.",
+          "register": "neutral",
+          "focus": "bill"
+        }
+      ],
+      "synonyms": [
+        "check"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "pay the bill",
+        "the electricity bill",
+        "a phone bill",
+        "ask for the bill",
+        "split the bill"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fatura",
+          "alt": [
+            "hesap"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Evde ödenen fatura ve restoranda istenen 'hesap' İngilizcede 'bill' olur. Banka hesabı ise 'account' diye geçer.",
+          "mistakes": [
+            {
+              "wrong": "Can I have the account, please?",
+              "right": "Can I have the bill, please?",
+              "why": "Türkçede 'hesap' hem restoran hesabı hem banka hesabıdır; restoranda 'bill' denir, 'account' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The food was great. Can we have the ______, please?",
+        "answer": "bill",
+        "distractors": [
+          "recipe",
+          "size",
+          "towel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.delivery.n.1",
+      "lemma": "delivery",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "bringing orders to your home",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈlɪvəri/",
+        "uk": "/dɪˈlɪvəri/"
+      },
+      "def": {
+        "micro": "bringing things to your home",
+        "short": "the service of bringing food or things to your home",
+        "long": "The service of bringing food, shopping, or packages to your home or work. You can order food or clothes online and wait for them to arrive."
+      },
+      "examples": [
+        {
+          "en": "My delivery should arrive tomorrow.",
+          "tr": "Kargom yarın gelmeli.",
+          "register": "neutral",
+          "focus": "delivery"
+        },
+        {
+          "en": "Delivery is free for orders over 500 lira.",
+          "tr": "500 liranın üzerindeki siparişlerde teslimat ücretsiz.",
+          "register": "neutral",
+          "focus": "Delivery"
+        },
+        {
+          "en": "I ordered pizza, but the delivery took an hour.",
+          "tr": "Pizza sipariş ettim ama teslimat bir saat sürdü.",
+          "register": "neutral",
+          "focus": "delivery"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "free delivery",
+        "home delivery",
+        "fast delivery",
+        "delivery time",
+        "delivery address"
+      ],
+      "word_family": [
+        {
+          "lemma": "deliver",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teslimat",
+          "alt": [
+            "kargo",
+            "eve servis"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede paket için 'kargo', yemek için 'eve servis' dersiniz; İngilizcede hepsi 'delivery'.",
+          "mistakes": [
+            {
+              "wrong": "Is the cargo free?",
+              "right": "Is the delivery free?",
+              "why": "'Cargo' gemi ve uçak yükü demektir. Evinize gelen paket için 'delivery' ya da 'package' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Is ______ free if I order more than 500 lira?",
+        "answer": "delivery",
+        "distractors": [
+          "receipt",
+          "wallet",
+          "change"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.save.v.2",
+      "lemma": "save",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "to keep money",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪv/",
+        "uk": "/seɪv/"
+      },
+      "def": {
+        "micro": "keep money for later",
+        "short": "to keep money so that you can use it later",
+        "long": "To keep money and not spend it, so that you can use it later. People save money for a holiday, a phone, or a home."
+      },
+      "grammar": {
+        "pattern": "save (money) for + sth"
+      },
+      "examples": [
+        {
+          "en": "I'm saving for a new phone.",
+          "tr": "Yeni bir telefon için para biriktiriyorum.",
+          "register": "neutral",
+          "focus": "saving"
+        },
+        {
+          "en": "You can save money by cooking at home.",
+          "tr": "Evde yemek yaparak tasarruf edebilirsin.",
+          "register": "neutral",
+          "focus": "save"
+        },
+        {
+          "en": "Ayşe saves a little money every month.",
+          "tr": "Ayşe her ay biraz para biriktirir.",
+          "register": "neutral",
+          "focus": "saves"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "spend"
+      ],
+      "collocations": [
+        "save money",
+        "save for a holiday",
+        "save for the future",
+        "save a little"
+      ],
+      "word_family": [
+        {
+          "lemma": "savings",
+          "pos": "n"
+        },
+        {
+          "lemma": "saver",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "biriktirmek",
+          "alt": [
+            "tasarruf etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Para için 'biriktirmek' ya da 'tasarruf etmek' dersiniz. 'Save' ayrıca 'kurtarmak' ve 'kaydetmek' (save a file) anlamına da gelir.",
+          "mistakes": [
+            {
+              "wrong": "I am saving for buy a laptop.",
+              "right": "I am saving for a laptop. / I am saving to buy a laptop.",
+              "why": "'For' isimle (for a laptop), 'to' fiille (to buy) kullanılır; 'for buy' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to buy a car, so I ______ some money every month.",
+        "answer": "save",
+        "distractors": [
+          "wear",
+          "tidy",
+          "taste"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.refund.n.1",
+      "lemma": "refund",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈriːfʌnd/",
+        "uk": "/ˈriːfʌnd/"
+      },
+      "def": {
+        "micro": "money given back to you",
+        "short": "money that a shop gives back when you return something",
+        "long": "Money that a shop gives you back when you return something you bought, or when a service was not good. You usually need your receipt to get one."
+      },
+      "examples": [
+        {
+          "en": "I'd like a refund for this broken phone.",
+          "tr": "Bu bozuk telefon için para iadesi almak istiyorum.",
+          "register": "neutral",
+          "focus": "refund"
+        },
+        {
+          "en": "The shop gave me a full refund.",
+          "tr": "Mağaza bana paramın tamamını iade etti.",
+          "register": "neutral",
+          "focus": "refund"
+        },
+        {
+          "en": "You can get a refund within thirty days.",
+          "tr": "Otuz gün içinde para iadesi alabilirsiniz.",
+          "register": "neutral",
+          "focus": "refund"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get a refund",
+        "ask for a refund",
+        "a full refund",
+        "a refund policy"
+      ],
+      "word_family": [
+        {
+          "lemma": "refund",
+          "pos": "v"
+        },
+        {
+          "lemma": "refundable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "para iadesi",
+          "alt": [
+            "geri ödeme"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ürünü geri vermek 'return', parayı geri almak 'refund' olur: I returned the shirt and got a refund.",
+          "mistakes": [
+            {
+              "wrong": "I want to return my money.",
+              "right": "I want a refund. / I want my money back.",
+              "why": "'Return' ürün için kullanılır. Parayı geri almak için 'a refund' ya da 'my money back' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The shirt was too small, so I asked for a ______.",
+        "answer": "refund",
+        "distractors": [
+          "recipe",
+          "menu",
+          "pocket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.afford.v.1",
+      "lemma": "afford",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈfɔːrd/",
+        "uk": "/əˈfɔːd/"
+      },
+      "def": {
+        "micro": "have enough money to buy",
+        "short": "to have enough money to buy or pay for something",
+        "long": "To have enough money to buy or pay for something. We almost always use it with 'can' or 'can't': \"I can't afford a new phone.\""
+      },
+      "grammar": {
+        "pattern": "can afford + sth / can afford to + verb"
+      },
+      "examples": [
+        {
+          "en": "I can't afford a new phone right now.",
+          "tr": "Şu an yeni bir telefon alacak param yok.",
+          "register": "neutral",
+          "focus": "afford"
+        },
+        {
+          "en": "They can't afford to live in the city center.",
+          "tr": "Şehir merkezinde oturmaya paraları yetmiyor.",
+          "register": "neutral",
+          "focus": "afford"
+        },
+        {
+          "en": "Can we afford a holiday this year?",
+          "tr": "Bu yıl tatile gidecek paramız var mı?",
+          "register": "neutral",
+          "focus": "afford"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "can afford",
+        "can't afford",
+        "afford to buy",
+        "hardly afford"
+      ],
+      "word_family": [
+        {
+          "lemma": "affordable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gücü yetmek",
+          "alt": [
+            "parası yetmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Afford' neredeyse her zaman 'can' ile kullanılır: 'I can afford it' = Param yeter. 'Affordable' = uygun fiyatlı.",
+          "mistakes": [
+            {
+              "wrong": "I don't afford it.",
+              "right": "I can't afford it.",
+              "why": "'Afford' çoğunlukla 'can' ya da 'can't' ile kullanılır. Türkçedeki 'alamıyorum' anlamı 'can't afford' ile verilir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "That house is too expensive. We can't ______ it.",
+        "answer": "afford",
+        "distractors": [
+          "wear",
+          "taste",
+          "boil"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bargain.n.1",
+      "lemma": "bargain",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a good deal",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɑːrɡən/",
+        "uk": "/ˈbɑːɡən/"
+      },
+      "def": {
+        "micro": "good thing at a low price",
+        "short": "something that costs less than its usual or real value",
+        "long": "Something that you buy for much less than its usual or real price. We say a thing is 'a bargain' if the price is very good for its quality."
+      },
+      "examples": [
+        {
+          "en": "These shoes were only 200 lira. What a bargain!",
+          "tr": "Bu ayakkabılar sadece 200 liraydı. Ne kelepir!",
+          "register": "neutral",
+          "focus": "bargain"
+        },
+        {
+          "en": "I found a real bargain at the market today.",
+          "tr": "Bugün pazarda gerçek bir kelepir buldum.",
+          "register": "neutral",
+          "focus": "bargain"
+        },
+        {
+          "en": "At that price, the sofa is a bargain.",
+          "tr": "O fiyata o kanepe kelepir.",
+          "register": "neutral",
+          "focus": "bargain"
+        }
+      ],
+      "synonyms": [
+        "good deal"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a real bargain",
+        "find a bargain",
+        "a bargain price",
+        "bargain hunting"
+      ],
+      "word_family": [
+        {
+          "lemma": "bargain",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kelepir",
+          "alt": [
+            "fırsat"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'a bargain' kelepir demektir. Pazarlık etmek (fiyat tartışmak) için fiil olarak 'bargain' ya da 'haggle' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Let's make a bargain with the seller.",
+              "right": "Let's bargain with the seller.",
+              "why": "'Pazarlık yapmak' için 'make a bargain' denmez; fiil olarak 'bargain' ya da 'haggle' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The coat was half price. It was a real ______!",
+        "answer": "bargain",
+        "distractors": [
+          "receipt",
+          "size",
+          "wallet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.budget.n.1",
+      "lemma": "budget",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbʌdʒɪt/",
+        "uk": "/ˈbʌdʒɪt/"
+      },
+      "def": {
+        "micro": "plan for how to spend money",
+        "short": "the amount of money that you can spend, or a plan for spending it",
+        "long": "The amount of money that you have to spend, or a plan that shows how you will spend it. A family may have a monthly one for food, rent, and bills."
+      },
+      "examples": [
+        {
+          "en": "Our budget for the holiday is 20,000 lira.",
+          "tr": "Tatil bütçemiz 20.000 lira.",
+          "register": "neutral",
+          "focus": "budget"
+        },
+        {
+          "en": "I'm on a tight budget this month.",
+          "tr": "Bu ay bütçem kısıtlı.",
+          "register": "neutral",
+          "focus": "budget"
+        },
+        {
+          "en": "Ayşe makes a budget at the start of every month.",
+          "tr": "Ayşe her ayın başında bir bütçe yapar.",
+          "register": "neutral",
+          "focus": "budget"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a tight budget",
+        "on a budget",
+        "a monthly budget",
+        "stay within budget"
+      ],
+      "word_family": [
+        {
+          "lemma": "budget",
+          "pos": "v"
+        },
+        {
+          "lemma": "budgeting",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'bougette', a small leather bag or wallet. The meaning 'money plan' came later.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bütçe",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçe 'bütçe' ile aynı kelimedir. İngilizcede sıfat olarak 'budget' ucuz demektir: a budget hotel.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We don't have a big ______ for this trip, so we need to be careful.",
+        "answer": "budget",
+        "distractors": [
+          "wallet",
+          "receipt",
+          "bargain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

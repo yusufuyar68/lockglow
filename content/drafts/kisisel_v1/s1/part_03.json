@@ -1,0 +1,999 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.fridge.n.1",
+      "lemma": "fridge",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/frɪdʒ/",
+        "uk": "/frɪdʒ/"
+      },
+      "def": {
+        "micro": "machine that keeps food cold",
+        "short": "a big kitchen machine that keeps food and drinks cold",
+        "long": "A big kitchen machine that keeps food and drinks cold. Most people keep milk, eggs, cheese, and fruit in it. The word is short for 'refrigerator'."
+      },
+      "examples": [
+        {
+          "en": "There is some milk in the fridge.",
+          "tr": "Buzdolabında biraz süt var.",
+          "register": "neutral",
+          "focus": "fridge"
+        },
+        {
+          "en": "Please put the cheese back in the fridge.",
+          "tr": "Lütfen peyniri tekrar buzdolabına koy.",
+          "register": "neutral",
+          "focus": "fridge"
+        },
+        {
+          "en": "Our fridge is almost empty, so let's go shopping.",
+          "tr": "Buzdolabımız neredeyse boş, hadi alışverişe gidelim.",
+          "register": "neutral",
+          "focus": "fridge"
+        }
+      ],
+      "synonyms": [
+        "refrigerator"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in the fridge",
+        "open the fridge",
+        "fridge door",
+        "empty fridge"
+      ],
+      "word_family": [
+        {
+          "lemma": "refrigerator",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buzdolabı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'fridge', resmî yazıda 'refrigerator' kullanılır. Dondurucu bölüme 'freezer' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The milk is in the ______, on the second shelf.",
+        "answer": "fridge",
+        "distractors": [
+          "oven",
+          "sink",
+          "stove"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.towel.n.1",
+      "lemma": "towel",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtaʊəl/",
+        "uk": "/ˈtaʊəl/"
+      },
+      "def": {
+        "micro": "cloth for drying your body",
+        "short": "a soft piece of cloth that you use to dry your body or hands",
+        "long": "A soft piece of cloth that you use to dry your body, your hands, or dishes after washing. Hotels usually put clean ones in the bathroom."
+      },
+      "examples": [
+        {
+          "en": "Can I have a clean towel, please?",
+          "tr": "Temiz bir havlu alabilir miyim lütfen?",
+          "register": "neutral",
+          "focus": "towel"
+        },
+        {
+          "en": "Kenji dried his hands with a towel.",
+          "tr": "Kenji ellerini havluyla kuruladı.",
+          "register": "neutral",
+          "focus": "towel"
+        },
+        {
+          "en": "Don't forget to bring a towel to the pool.",
+          "tr": "Havuza havlu getirmeyi unutma.",
+          "register": "neutral",
+          "focus": "towel"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bath towel",
+        "hand towel",
+        "beach towel",
+        "paper towel",
+        "a clean towel"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "havlu",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Bath towel' banyo havlusu, 'hand towel' el havlusu, 'paper towel' kâğıt havludur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the shower, I dried my hair with a ______.",
+        "answer": "towel",
+        "distractors": [
+          "blanket",
+          "spoon",
+          "pillow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shower.n.1",
+      "lemma": "shower",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "washing yourself",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʃaʊər/",
+        "uk": "/ˈʃaʊə/"
+      },
+      "def": {
+        "micro": "washing under falling water",
+        "short": "a way to wash your body by standing under falling water",
+        "long": "A way to wash your body by standing under falling water. In English you take a shower or have a shower; you do not 'do' or 'make' one."
+      },
+      "examples": [
+        {
+          "en": "I take a shower every morning.",
+          "tr": "Her sabah duş alırım.",
+          "register": "neutral",
+          "focus": "shower"
+        },
+        {
+          "en": "Mehmet is in the shower right now.",
+          "tr": "Mehmet şu an duşta.",
+          "register": "neutral",
+          "focus": "shower"
+        },
+        {
+          "en": "Do you want to have a shower before dinner?",
+          "tr": "Akşam yemeğinden önce duş almak ister misin?",
+          "register": "neutral",
+          "focus": "shower"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take a shower",
+        "have a shower",
+        "a cold shower",
+        "a quick shower",
+        "in the shower"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "duş",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'duş almak' dersiniz; İngilizcede 'take a shower' veya 'have a shower' denir.",
+          "mistakes": [
+            {
+              "wrong": "I take shower every day.",
+              "right": "I take a shower every day.",
+              "why": "Türkçede 'bir' demeden 'duş alırım' dersiniz. İngilizcede 'shower' sayılabilir bir isimdir; tekil olduğu için önüne 'a' gelir: take a shower."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I take a ______ every morning before work.",
+        "answer": "shower",
+        "distractors": [
+          "towel",
+          "soap",
+          "mirror"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sofa.n.1",
+      "lemma": "sofa",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsoʊfə/",
+        "uk": "/ˈsəʊfə/"
+      },
+      "def": {
+        "micro": "soft seat for two or more",
+        "short": "a long soft seat with a back and arms, for two or more people",
+        "long": "A long, soft seat with a back and two arms, where two or more people can sit. It is usually in the living room, and people often watch TV on it."
+      },
+      "examples": [
+        {
+          "en": "Our living room has a new sofa.",
+          "tr": "Oturma odamızda yeni bir kanepe var.",
+          "register": "neutral",
+          "focus": "sofa"
+        },
+        {
+          "en": "The kids are watching TV on the sofa.",
+          "tr": "Çocuklar kanepede televizyon izliyor.",
+          "register": "neutral",
+          "focus": "sofa"
+        },
+        {
+          "en": "Sam fell asleep on the sofa after dinner.",
+          "tr": "Sam akşam yemeğinden sonra kanepede uyuyakaldı.",
+          "register": "neutral",
+          "focus": "sofa"
+        }
+      ],
+      "synonyms": [
+        "couch"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "on the sofa",
+        "sofa bed",
+        "a leather sofa",
+        "sit on the sofa",
+        "sofa cushion"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Turkish 'sofa', which comes from Arabic 'ṣuffa', a bench or raised place to sit on.",
+        "origin": "Arabic",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kanepe",
+          "alt": [
+            "koltuk"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "sofa",
+            "tr_means": "evde odaların açıldığı geniş ortak alan, hol",
+            "en_for_that": "hall"
+          },
+          "note": "Türkçede 'sofa' odaların açıldığı geniş holdür; İngilizcede 'sofa' oturulan kanepedir. İngilizcedeki sözcük Türkçeden ödünç alınmıştır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Let's sit on the ______ and watch a movie.",
+        "answer": "sofa",
+        "distractors": [
+          "shelf",
+          "fridge",
+          "window"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.apartment.n.1",
+      "lemma": "apartment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpɑːrtmənt/",
+        "uk": "/əˈpɑːtmənt/"
+      },
+      "def": {
+        "micro": "set of rooms in a building",
+        "short": "a home with several rooms on one floor of a big building",
+        "long": "A home with several rooms on one floor of a bigger building. In British English, people usually say 'flat' instead."
+      },
+      "examples": [
+        {
+          "en": "We live in a small apartment in Ankara.",
+          "tr": "Ankara'da küçük bir dairede yaşıyoruz.",
+          "register": "neutral",
+          "focus": "apartment"
+        },
+        {
+          "en": "Our apartment is on the third floor.",
+          "tr": "Dairemiz üçüncü katta.",
+          "register": "neutral",
+          "focus": "apartment"
+        },
+        {
+          "en": "Ayşe is looking for a two-bedroom apartment near work.",
+          "tr": "Ayşe işe yakın, iki yatak odalı bir daire arıyor.",
+          "register": "neutral",
+          "focus": "apartment"
+        }
+      ],
+      "synonyms": [
+        "flat"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "rent an apartment",
+        "a small apartment",
+        "apartment building",
+        "studio apartment",
+        "apartment block"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "daire",
+          "alt": [],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "apartman",
+            "tr_means": "içinde birçok daire olan bütün bina",
+            "en_for_that": "apartment building"
+          },
+          "note": "Türkçede 'apartman' koca binadır; İngilizcede 'apartment' o binadaki tek bir dairedir. Bina için 'apartment building' denir.",
+          "mistakes": [
+            {
+              "wrong": "I live in a big apartment with ten floors.",
+              "right": "I live in a big apartment building with ten floors.",
+              "why": "'Apartment' tek bir dairedir. Birçok daire içeren bina 'apartment building' (ya da block of flats) olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We live in a small ______ on the fourth floor.",
+        "answer": "apartment",
+        "distractors": [
+          "garden",
+          "garage",
+          "kitchen"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.kettle.n.1",
+      "lemma": "kettle",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɛtəl/",
+        "uk": "/ˈkɛtəl/"
+      },
+      "def": {
+        "micro": "pot for heating water",
+        "short": "a container with a lid and a handle for heating water",
+        "long": "A container with a lid, a handle, and a narrow top for pouring, used to heat water for tea or coffee. Many kitchens have an electric one that switches off when the water is hot."
+      },
+      "examples": [
+        {
+          "en": "There is no water in the kettle.",
+          "tr": "Su ısıtıcısında su yok.",
+          "register": "neutral",
+          "focus": "kettle"
+        },
+        {
+          "en": "The kettle is boiling. Please turn it off.",
+          "tr": "Su ısıtıcısı kaynıyor. Lütfen kapat.",
+          "register": "neutral",
+          "focus": "kettle"
+        },
+        {
+          "en": "Kenji bought an electric kettle for his new apartment.",
+          "tr": "Kenji yeni dairesi için elektrikli bir su ısıtıcısı aldı.",
+          "register": "neutral",
+          "focus": "kettle"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "an electric kettle",
+        "put the kettle on",
+        "the kettle is boiling",
+        "fill the kettle"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old Norse 'ketill', meaning a large cooking pot.",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "su ısıtıcısı",
+          "alt": [
+            "çaydanlık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Kettle' yalnızca su ısıtır; çay ayrı bir kapta (teapot) demlenir. Bu yüzden Türk çaydanlığı tam olarak 'kettle' değildir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need to fill the ______ before I make tea.",
+        "answer": "kettle",
+        "distractors": [
+          "oven",
+          "towel",
+          "sofa"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trash.n.1",
+      "lemma": "trash",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/træʃ/",
+        "uk": "/træʃ/"
+      },
+      "def": {
+        "micro": "things you throw away",
+        "short": "things that you do not want and throw away",
+        "long": "Things that you do not want any more and throw away, such as old paper, empty bottles, or food. It is uncountable. People in the UK often say 'rubbish' instead."
+      },
+      "examples": [
+        {
+          "en": "Can you take out the trash, please?",
+          "tr": "Çöpü çıkarır mısın lütfen?",
+          "register": "neutral",
+          "focus": "trash"
+        },
+        {
+          "en": "Please don't throw trash on the street.",
+          "tr": "Lütfen sokağa çöp atmayın.",
+          "register": "neutral",
+          "focus": "trash"
+        },
+        {
+          "en": "Sam put the empty bottles in the trash.",
+          "tr": "Sam boş şişeleri çöpe attı.",
+          "register": "neutral",
+          "focus": "trash"
+        }
+      ],
+      "synonyms": [
+        "rubbish",
+        "garbage"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take out the trash",
+        "trash can",
+        "trash bag",
+        "in the trash",
+        "pick up trash"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çöp",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "ABD'de 'trash' veya 'garbage', İngiltere'de 'rubbish' denir. Sayılamaz: 'trashes' demeyin, 'a piece of trash' deyin.",
+          "mistakes": [
+            {
+              "wrong": "Take out the trashes, please.",
+              "right": "Take out the trash, please.",
+              "why": "'Trash' sayılamayan bir isimdir; çoğul eki almaz. 'Çöpler' demek için de yalnızca 'the trash' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The kitchen smells bad. Please take out the ______.",
+        "answer": "trash",
+        "distractors": [
+          "towel",
+          "recipe",
+          "bill"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dishes.n.1",
+      "lemma": "dishes",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "plates and cups after a meal",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪʃɪz/",
+        "uk": "/ˈdɪʃɪz/"
+      },
+      "def": {
+        "micro": "plates and cups to wash",
+        "short": "the plates, cups, and pans that you use for a meal and then wash",
+        "long": "The plates, cups, bowls, and pans that you use for a meal and must wash after it. In English you 'do the dishes' or 'wash the dishes'."
+      },
+      "examples": [
+        {
+          "en": "I'll do the dishes after dinner.",
+          "tr": "Akşam yemeğinden sonra bulaşıkları ben yıkarım.",
+          "register": "neutral",
+          "focus": "dishes"
+        },
+        {
+          "en": "Whose turn is it to wash the dishes?",
+          "tr": "Bulaşıkları yıkama sırası kimde?",
+          "register": "neutral",
+          "focus": "dishes"
+        },
+        {
+          "en": "There are too many dirty dishes in the sink.",
+          "tr": "Evyede çok fazla kirli bulaşık var.",
+          "register": "neutral",
+          "focus": "dishes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do the dishes",
+        "wash the dishes",
+        "dry the dishes",
+        "dirty dishes",
+        "a pile of dishes"
+      ],
+      "word_family": [
+        {
+          "lemma": "dishwasher",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bulaşık",
+          "alt": [
+            "tabak çanak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'bulaşık' tek kelimedir; İngilizcede tüm kirli kaplar için çoğul 'the dishes' kullanılır. Bulaşık makinesine 'dishwasher' denir.",
+          "mistakes": [
+            {
+              "wrong": "Did you make the dishes?",
+              "right": "Did you do the dishes?",
+              "why": "'Bulaşık yapmak' denir ama İngilizcede 'make' kullanılmaz; 'do the dishes' ya da 'wash the dishes' denir."
+            },
+            {
+              "wrong": "I wash the dish every night.",
+              "right": "I wash the dishes every night.",
+              "why": "Tüm kirli kaplar için çoğul 'the dishes' kullanılır; tek 'dish' bir tabak ya da yemek anlamına gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural_only"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's my turn to do the ______ tonight.",
+        "answer": "dishes",
+        "distractors": [
+          "recipes",
+          "stairs",
+          "menus"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.laundry.n.1",
+      "lemma": "laundry",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "clothes to wash",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɔːndri/",
+        "uk": "/ˈlɔːndri/"
+      },
+      "def": {
+        "micro": "clothes that need washing",
+        "short": "clothes, towels, and sheets that you wash, or have just washed",
+        "long": "Clothes, towels, and sheets that need washing or have just been washed. It is uncountable. Many people do the laundry once or twice a week."
+      },
+      "examples": [
+        {
+          "en": "I need to do the laundry today.",
+          "tr": "Bugün çamaşır yıkamam lazım.",
+          "register": "neutral",
+          "focus": "laundry"
+        },
+        {
+          "en": "The laundry is still wet, so let's hang it outside.",
+          "tr": "Çamaşırlar hâlâ ıslak, dışarıya asalım.",
+          "register": "neutral",
+          "focus": "laundry"
+        },
+        {
+          "en": "There's a pile of dirty laundry on the floor.",
+          "tr": "Yerde bir yığın kirli çamaşır var.",
+          "register": "neutral",
+          "focus": "laundry"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do the laundry",
+        "fold the laundry",
+        "dirty laundry",
+        "a load of laundry",
+        "laundry basket"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çamaşır",
+          "alt": [
+            "yıkanacak çamaşır"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Çamaşır' iç çamaşırı da olabilir; İngilizcede 'laundry' yıkanacak ya da yıkanmış giysi yığınıdır. İç çamaşırına 'underwear' denir.",
+          "mistakes": [
+            {
+              "wrong": "I have a lot of laundries today.",
+              "right": "I have a lot of laundry today.",
+              "why": "'Laundry' sayılamayan isimdir; çoğul eki almaz. Miktar için 'a load of laundry' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't go out tonight. I have a lot of ______ to do.",
+        "answer": "laundry",
+        "distractors": [
+          "towel",
+          "sofa",
+          "kettle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.balcony.n.1",
+      "lemma": "balcony",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbælkəni/",
+        "uk": "/ˈbælkəni/"
+      },
+      "def": {
+        "micro": "small outdoor space upstairs",
+        "short": "a small area with a fence, outside an upstairs room",
+        "long": "A small area with a fence or low wall, outside a window or door on an upper floor of a building. People sit there, grow plants, or dry clothes on it."
+      },
+      "examples": [
+        {
+          "en": "We have breakfast on the balcony in summer.",
+          "tr": "Yazın kahvaltıyı balkonda yaparız.",
+          "register": "neutral",
+          "focus": "balcony"
+        },
+        {
+          "en": "Ayşe grows tomatoes and flowers on her balcony.",
+          "tr": "Ayşe balkonunda domates ve çiçek yetiştiriyor.",
+          "register": "neutral",
+          "focus": "balcony"
+        },
+        {
+          "en": "Our apartment has a small balcony with a nice view.",
+          "tr": "Dairemizin güzel manzaralı küçük bir balkonu var.",
+          "register": "neutral",
+          "focus": "balcony"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the balcony",
+        "a small balcony",
+        "balcony door",
+        "balcony view",
+        "step onto the balcony"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "balkon",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçe 'balkon' ile aynı kökten gelir. Vurgu farkına dikkat: İngilizcede ilk hecede söylenir (BAL-kuh-ni), 'balkon' gibi sonda değil.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's a nice evening. Let's sit on the ______.",
+        "answer": "balcony",
+        "distractors": [
+          "fridge",
+          "kettle",
+          "shower"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

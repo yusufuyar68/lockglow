@@ -1,0 +1,440 @@
+{
+"schema_version": "1.0",
+"l1_langs": ["tr"],
+"generated_on": "2026-10-11",
+"entries": [
+{
+  "id": "en.username.n.1",
+  "lemma": "username",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈjuːzərneɪm/", "uk": "/ˈjuːzəneɪm/"},
+  "def": {
+    "micro": "your name on an app",
+    "short": "the name you choose for an app, game, or website account",
+    "long": "The name you choose for your account on a website, an app, or a game. Other people may see it, and it is not the same as your real name."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "Enter your username and password.", "tr": "Kullanıcı adınızı ve şifrenizi girin.", "register": "neutral", "focus": "username"},
+    {"en": "I can't remember my username for that game.", "tr": "O oyundaki kullanıcı adımı hatırlayamıyorum.", "register": "neutral", "focus": "username"},
+    {"en": "Ayşe chose a funny username for her account.", "tr": "Ayşe hesabı için komik bir kullanıcı adı seçti.", "register": "neutral", "focus": "username"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["enter your username", "choose a username", "username and password", "a unique username"],
+  "word_family": [{"lemma": "user", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "kullanıcı adı",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'User name' iki kelime olarak da yazılır. 'Nickname' (takma ad) ile karıştırmayın: username hesaba girmek için, nickname arkadaşlar arasında kullanılan addır.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "To log in, you need your ______ and your password.", "answer": "username", "distractors": ["charger", "signal", "battery"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.signal.n.1",
+  "lemma": "signal",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "phone signal",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈsɪɡnəl/", "uk": "/ˈsɪɡnəl/"},
+  "def": {
+    "micro": "phone connection strength",
+    "short": "the connection that lets your phone call, text, or use the internet",
+    "long": "The radio connection that lets your phone make calls and use the internet. If it is weak, you cannot call, or the internet is slow."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "I have no signal in this building.", "tr": "Bu binada telefon çekmiyor.", "register": "neutral", "focus": "signal"},
+    {"en": "The signal is weak, so I can't hear you.", "tr": "Sinyal zayıf, seni duyamıyorum.", "register": "neutral", "focus": "signal"},
+    {"en": "Move closer to the window to get a better signal.", "tr": "Daha iyi çekmesi için pencereye yaklaş.", "register": "neutral", "focus": "signal"}
+  ],
+  "synonyms": ["reception"],
+  "antonyms": [],
+  "collocations": ["no signal", "a weak signal", "a strong signal", "lose the signal", "a phone signal"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "sinyal",
+      "alt": [],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede 'telefon çekmiyor' deriz; İngilizcede 'I have no signal'. 'Signal' ayrıca işaret demektir (traffic signal = trafik ışığı); bu kart telefon sinyalidir.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "I can't call you from here. There is no phone ______.", "answer": "signal", "distractors": ["ticket", "lesson", "street"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.text.v.1",
+  "lemma": "text",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": "send a text message",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/tɛkst/", "uk": "/tɛkst/"},
+  "def": {
+    "micro": "send a message by phone",
+    "short": "to send a short written message from your phone",
+    "long": "To send a short written message from your phone to someone's phone. People often do this instead of calling."
+  },
+  "grammar": {"pattern": "text + sb (+ sth)"},
+  "examples": [
+    {"en": "I'll text you when I arrive.", "tr": "Varınca sana mesaj atarım.", "register": "informal", "focus": "text"},
+    {"en": "She texted me a photo of the cake.", "tr": "Bana pastanın fotoğrafını mesajla gönderdi.", "register": "informal", "focus": "texted"},
+    {"en": "Please don't text while you are driving.", "tr": "Lütfen araba kullanırken mesaj yazmayın.", "register": "neutral", "focus": "text"}
+  ],
+  "synonyms": ["message"],
+  "antonyms": [],
+  "collocations": ["text me", "text back", "text a friend"],
+  "word_family": [{"lemma": "text", "pos": "n"}, {"lemma": "texting", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "mesaj atmak",
+      "alt": ["mesaj yazmak"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede 'mesaj atmak' deriz. İngilizcede 'text' hem fiildir hem isim: 'I'll text you' (sana mesaj atarım), 'a text' (bir mesaj).",
+      "mistakes": [
+        {"wrong": "I will text to you later.", "right": "I will text you later.", "why": "Türkçede 'sana' dediğimiz için 'to you' deriz; ama 'text' kişiyi doğrudan alır: text you, text her, text him."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "social_skills"], "exams": [], "register": "informal", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "My sister ______ me a photo of her new dress yesterday.", "answer": "texted", "distractors": ["said", "spoke", "told"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.jog.v.1",
+  "lemma": "jog",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/dʒɑːɡ/", "uk": "/dʒɒɡ/"},
+  "def": {
+    "micro": "run slowly for exercise",
+    "short": "to run at a slow, easy speed for exercise",
+    "long": "To run at a slow, easy speed, usually for exercise and not to race. Many people do it in the park in the morning."
+  },
+  "grammar": {"pattern": "go jogging / jog + place"},
+  "examples": [
+    {"en": "I jog in the park every morning.", "tr": "Her sabah parkta koşu yapıyorum.", "register": "neutral", "focus": "jog"},
+    {"en": "Do you want to jog with me after work?", "tr": "İş çıkışı benimle koşuya çıkmak ister misin?", "register": "neutral", "focus": "jog"},
+    {"en": "He jogged along the beach for half an hour.", "tr": "Yarım saat boyunca sahilde yavaş tempoda koştu.", "register": "neutral", "focus": "jogged"}
+  ],
+  "synonyms": [],
+  "antonyms": ["sprint"],
+  "collocations": ["go jogging", "jog in the park", "jog along the beach", "jog every morning"],
+  "word_family": [{"lemma": "jogger", "pos": "n"}, {"lemma": "jogging", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "hafif tempoda koşmak",
+      "alt": ["jogging yapmak"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Run' hızlı koşmaktır, 'jog' ise yavaş ve sağlık için koşmaktır. 'Go jogging' = koşuya çıkmak.",
+      "mistakes": [
+        {"wrong": "I make jogging every day.", "right": "I go jogging every day.", "why": "Türkçede 'jogging yapmak' deriz, ama İngilizcede 'make' veya 'do' değil 'go jogging' denir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "I don't run fast; I just ______ slowly in the park for exercise.", "answer": "jog", "distractors": ["sit", "sleep", "drive"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.fan.n.1",
+  "lemma": "fan",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "of a team or star",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/fæn/", "uk": "/fæn/"},
+  "def": {
+    "micro": "supporter of a team or star",
+    "short": "a person who likes a sports team, singer, or film star very much",
+    "long": "A person who likes a sports team, a singer, or an actor very much and often follows what they do. Many go to matches and concerts."
+  },
+  "grammar": {"pattern": "a fan of + team / singer"},
+  "examples": [
+    {"en": "I'm a big fan of this team.", "tr": "Bu takımın büyük bir taraftarıyım.", "register": "neutral", "focus": "fan"},
+    {"en": "Thousands of fans waited outside the stadium.", "tr": "Binlerce taraftar stadyumun önünde bekledi.", "register": "neutral", "focus": "fans"},
+    {"en": "My sister is a huge fan of that singer.", "tr": "Kız kardeşim o şarkıcının çok büyük bir hayranı.", "register": "neutral", "focus": "fan"}
+  ],
+  "synonyms": ["supporter"],
+  "antonyms": [],
+  "collocations": ["a big fan of", "a football fan", "a fan club", "a huge fan"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "hayran",
+      "alt": ["taraftar"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Spor takımı için 'taraftar', şarkıcı ve oyuncu için 'hayran' denir; İngilizcede ikisi de 'fan'. Aynı kelime vantilatör (electric fan) anlamına da gelir.",
+      "mistakes": [
+        {"wrong": "I'm fan of this team.", "right": "I'm a fan of this team.", "why": "'Fan' sayılabilir bir isimdir; Türkçede 'bir' demesek de İngilizcede 'a' gerekir."},
+        {"wrong": "I'm a fan from this singer.", "right": "I'm a fan of this singer.", "why": "'Şarkıcının hayranı' tamlaması 'fan of' ile kurulur; 'from' kullanılmaz."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports", "music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "She is a big ______ of that singer and goes to every concert.", "answer": "fan", "distractors": ["boss", "guest", "guide"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.puzzle.n.1",
+  "lemma": "puzzle",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "game",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈpʌzəl/", "uk": "/ˈpʌzl/"},
+  "def": {
+    "micro": "game to solve with your mind",
+    "short": "a game or problem where you put pieces together or find an answer",
+    "long": "A game or problem that you solve by thinking, for example by putting pieces together, finding words, or finding the answer to a question. Many people do one on a rainy day."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "We did a 500-piece puzzle on Sunday.", "tr": "Pazar günü 500 parçalık bir yapboz yaptık.", "register": "neutral", "focus": "puzzle"},
+    {"en": "My grandmother does a word puzzle every morning.", "tr": "Büyükannem her sabah bir kelime bulmacası çözer.", "register": "neutral", "focus": "puzzle"},
+    {"en": "This puzzle is too hard for the children.", "tr": "Bu bulmaca çocuklar için çok zor.", "register": "neutral", "focus": "puzzle"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["a jigsaw puzzle", "solve a puzzle", "a crossword puzzle", "a word puzzle", "do a puzzle"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "bulmaca",
+      "alt": ["yapboz"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede kelime ve zekâ oyunları 'bulmaca', parçaları birleştirilen oyun 'yapboz'dur. İngilizcede ikisi de 'puzzle' olur: crossword puzzle (kare bulmaca), jigsaw puzzle (yapboz).",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "It took us two hours to finish this 1,000-piece ______.", "answer": "puzzle", "distractors": ["ticket", "recipe", "match"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.board_game.phr.1",
+  "lemma": "board game",
+  "type": "collocation",
+  "pos": "phr",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈbɔːrd ɡeɪm/", "uk": "/ˈbɔːd ɡeɪm/"},
+  "def": {
+    "micro": "game with pieces and dice",
+    "short": "a game that people play on a table, with pieces, cards, or dice",
+    "long": "A game that people play together at a table, with pieces, cards, or dice and a flat playing area. Chess and backgammon are two examples."
+  },
+  "grammar": {"pattern": "play a board game"},
+  "examples": [
+    {"en": "We played a board game after dinner.", "tr": "Akşam yemeğinden sonra masa oyunu oynadık.", "register": "neutral", "focus": "board game"},
+    {"en": "Do you want to play a board game tonight?", "tr": "Bu akşam bir masa oyunu oynamak ister misin?", "register": "neutral", "focus": "board game"},
+    {"en": "Backgammon is a famous board game in Turkey.", "tr": "Tavla, Türkiye'de ünlü bir masa oyunudur.", "register": "neutral", "focus": "board game"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["play a board game", "a board game night", "a family board game"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "masa oyunu",
+      "alt": ["kutu oyunu"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'Board game' masa oyunu ya da kutu oyunudur. Tavla ve satranç klasik örnekleridir; İngilizcede tavla = backgammon, satranç = chess.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "Let's play a ______ tonight, with dice and cards.", "answer": "board game", "distractors": ["video call", "card trick", "sports bag"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.ride.v.1",
+  "lemma": "ride",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": "a bike or horse",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/raɪd/", "uk": "/raɪd/"},
+  "def": {
+    "micro": "travel on a bike or horse",
+    "short": "to sit on a bike or horse and make it move",
+    "long": "To sit on a bicycle, a motorbike, or a horse and control it as it moves. You can also ride in a car or bus, but then you do not drive."
+  },
+  "grammar": {"pattern": "ride + a bike / a horse"},
+  "examples": [
+    {"en": "I ride my bike to work every day.", "tr": "Her gün bisikletimle işe gidiyorum.", "register": "neutral", "focus": "ride"},
+    {"en": "Can you ride a horse?", "tr": "At binebiliyor musun?", "register": "neutral", "focus": "ride"},
+    {"en": "The kids rode their bikes around the park.", "tr": "Çocuklar parkta bisikletlerine binip dolaştı.", "register": "neutral", "focus": "rode"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["ride a bike", "ride a horse", "ride a motorbike", "go for a ride"],
+  "word_family": [{"lemma": "rider", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "binmek",
+      "alt": ["sürmek"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Düzensiz fiil: ride – rode – ridden. Bisiklet ve at için 'binmek / sürmek' denir. Kendi kullandığın araba için ise 'drive' kullanılır, 'ride' değil.",
+      "mistakes": [
+        {"wrong": "I ride a car to work.", "right": "I drive a car to work. / I go by car.", "why": "Türkçede 'arabaya binmek' dendiği için 'ride' denir. Arabayı sen kullanıyorsan 'drive', yolcuysan 'ride in a car' denir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "Can you ______ a bike without any help?", "answer": "ride", "distractors": ["swim", "fly", "sail"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.hike.v.1",
+  "lemma": "hike",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/haɪk/", "uk": "/haɪk/"},
+  "def": {
+    "micro": "walk far in nature",
+    "short": "to go for a long walk in the hills or forest",
+    "long": "To go for a long walk in nature, for example in the mountains or a forest, often on a path. People do it for fun and exercise."
+  },
+  "grammar": {"pattern": "go hiking / hike + place"},
+  "examples": [
+    {"en": "Let's hike to the waterfall tomorrow.", "tr": "Yarın şelaleye doğa yürüyüşüne çıkalım.", "register": "neutral", "focus": "hike"},
+    {"en": "Do you like to hike in the mountains?", "tr": "Dağlarda doğa yürüyüşü yapmayı sever misin?", "register": "neutral", "focus": "hike"},
+    {"en": "It's a nice day to go hiking.", "tr": "Doğa yürüyüşüne çıkmak için güzel bir gün.", "register": "neutral", "focus": "hiking"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["go hiking", "hike up a hill", "a long hike", "hiking boots", "hike in the mountains"],
+  "word_family": [{"lemma": "hiker", "pos": "n"}, {"lemma": "hiking", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "doğa yürüyüşü yapmak",
+      "alt": ["trekking yapmak"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Walk' genel yürümektir; 'hike' doğada, patikada ve uzun yürümektir. 'Go hiking' sık kullanılan kalıptır.",
+      "mistakes": [
+        {"wrong": "We went to hiking on Sunday.", "right": "We went hiking on Sunday.", "why": "'Go hiking' kalıbında 'to' kullanılmaz; Türkçedeki 'yürüyüşe' (-e) etkisiyle yanlış eklenir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports", "nature_animals"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "We put on our boots and decided to ______ up the mountain.", "answer": "hike", "distractors": ["shop", "cook", "study"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.subject.n.1",
+  "lemma": "subject",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "at school",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈsʌbdʒɪkt/", "uk": "/ˈsʌbdʒɪkt/"},
+  "def": {
+    "micro": "area you study at school",
+    "short": "an area of study at school, such as math, history, or science",
+    "long": "An area of study at school or university, such as math, history, or English. Students usually have several of them each day."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "Math is my favorite subject.", "tr": "Matematik en sevdiğim ders.", "register": "neutral", "focus": "subject"},
+    {"en": "How many subjects do you study this year?", "tr": "Bu yıl kaç ders görüyorsun?", "register": "neutral", "focus": "subjects"},
+    {"en": "Which subject is the hardest for you?", "tr": "Senin için en zor ders hangisi?", "register": "neutral", "focus": "subject"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["a school subject", "favorite subject", "a difficult subject", "study a subject"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "ders",
+      "alt": ["okul dersi"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Okulda okuduğun alan (matematik, tarih) 'subject' olur. 'Lesson' ise tek bir ders saatidir. 'Subject' ayrıca 'konu' demektir; bu kart okul dersi anlamını verir.",
+      "mistakes": [
+        {"wrong": "What is your favorite lesson?", "right": "What is your favorite subject?", "why": "Matematik, tarih gibi dersler için 'subject' kullanılır; 'lesson' tek bir ders saatidir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "My favorite school ______ is science because I love experiments.", "answer": "subject", "distractors": ["holiday", "uniform", "playground"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+}
+]
+}

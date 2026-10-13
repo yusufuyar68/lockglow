@@ -1,0 +1,1045 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.grandparent.n.1",
+      "lemma": "grandparent",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡrænˌpɛrənt/",
+        "uk": "/ˈɡrænˌpeərənt/"
+      },
+      "def": {
+        "micro": "your parent's parent",
+        "short": "the mother or father of your mother or father",
+        "long": "The mother or father of your mother or father. In English you usually say 'grandmother' or 'grandfather' for one person, and 'grandparents' for both."
+      },
+      "examples": [
+        {
+          "en": "My grandparents live in a small village.",
+          "tr": "Büyükannem ve büyükbabam küçük bir köyde yaşıyor.",
+          "register": "neutral",
+          "focus": "grandparents"
+        },
+        {
+          "en": "Sam visits his grandparents every Sunday.",
+          "tr": "Sam her pazar büyükannesi ve büyükbabasını ziyaret eder.",
+          "register": "neutral",
+          "focus": "grandparents"
+        },
+        {
+          "en": "Kids often spend the summer with their grandparents.",
+          "tr": "Çocuklar yazı çoğu zaman büyükanne ve büyükbabalarıyla geçirir.",
+          "register": "neutral",
+          "focus": "grandparents"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "my grandparents",
+        "visit my grandparents",
+        "live with grandparents",
+        "grandparents' house"
+      ],
+      "word_family": [
+        {
+          "lemma": "grandmother",
+          "pos": "n"
+        },
+        {
+          "lemma": "grandfather",
+          "pos": "n"
+        },
+        {
+          "lemma": "grandchild",
+          "pos": "n"
+        },
+        {
+          "lemma": "parent",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "büyükanne veya büyükbaba",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede anneanne, babaanne ve dede ayrı söylenir; İngilizcede anne ya da baba tarafı belirtilmez: grandmother, grandfather (günlükte grandma, grandpa).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My mother's mother and father are my ______.",
+        "answer": "grandparents",
+        "distractors": [
+          "parents",
+          "cousins",
+          "neighbors"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.twin.n.1",
+      "lemma": "twin",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/twɪn/",
+        "uk": "/twɪn/"
+      },
+      "def": {
+        "micro": "one of two born together",
+        "short": "one of two children who are born to the same mother at the same time",
+        "long": "One of two children who are born to the same mother at the same time. Twins can look the same, or they can look different."
+      },
+      "examples": [
+        {
+          "en": "My sister has twins, a boy and a girl.",
+          "tr": "Kız kardeşimin ikizleri var: bir erkek, bir kız.",
+          "register": "neutral",
+          "focus": "twins"
+        },
+        {
+          "en": "Maria and her twin brother look very different.",
+          "tr": "Maria ve ikiz erkek kardeşi birbirine hiç benzemiyor.",
+          "register": "neutral",
+          "focus": "twin"
+        },
+        {
+          "en": "Are you and Ali twins? You look the same!",
+          "tr": "Sen ve Ali ikiz misiniz? Birbirinize çok benziyorsunuz!",
+          "register": "neutral",
+          "focus": "twins"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "identical twins",
+        "twin brother",
+        "twin sister",
+        "a pair of twins",
+        "give birth to twins"
+      ],
+      "word_family": [
+        {
+          "lemma": "twin",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ikiz",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ikiz' tek kelimedir (ikiz kardeş). İngilizcede 'my twin' ya da 'my twin brother / twin sister' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister and I were born on the same day. We are ______.",
+        "answer": "twins",
+        "distractors": [
+          "cousins",
+          "parents",
+          "uncles"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.relative.n.1",
+      "lemma": "relative",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛlətɪv/",
+        "uk": "/ˈrɛlətɪv/"
+      },
+      "def": {
+        "micro": "a member of your family",
+        "short": "a person who is part of your family, like an uncle or a cousin",
+        "long": "A person who is part of your family, such as an uncle, a cousin, or a grandmother. We often say 'relatives' for the people you see at family parties."
+      },
+      "examples": [
+        {
+          "en": "Most of my relatives live in Izmir.",
+          "tr": "Akrabalarımın çoğu İzmir'de yaşıyor.",
+          "register": "neutral",
+          "focus": "relatives"
+        },
+        {
+          "en": "We are visiting relatives during the holiday.",
+          "tr": "Bayramda akrabaları ziyaret edeceğiz.",
+          "register": "neutral",
+          "focus": "relatives"
+        },
+        {
+          "en": "Is he a relative of yours?",
+          "tr": "O senin akraban mı?",
+          "register": "neutral",
+          "focus": "relative"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a close relative",
+        "a distant relative",
+        "visit relatives",
+        "a relative of mine"
+      ],
+      "word_family": [
+        {
+          "lemma": "relation",
+          "pos": "n"
+        },
+        {
+          "lemma": "relationship",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "akraba",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'akraba' toplu bir isim gibi kullanılır; İngilizcede tek kişi için 'a relative', çok kişi için 'relatives' denir.",
+          "mistakes": [
+            {
+              "wrong": "I have many relative in Ankara.",
+              "right": "I have many relatives in Ankara.",
+              "why": "Türkçede sayı ya da 'çok' sözcüğünden sonra çoğul eki gerekmez (çok akraba); İngilizcede 'many' ile çoğul -s gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My uncles, aunts, and cousins are all my ______.",
+        "answer": "relatives",
+        "distractors": [
+          "neighbors",
+          "classmates",
+          "teachers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.teenager.n.1",
+      "lemma": "teenager",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtiːnˌeɪdʒər/",
+        "uk": "/ˈtiːneɪdʒə/"
+      },
+      "def": {
+        "micro": "person aged 13 to 19",
+        "short": "a young person who is between thirteen and nineteen years old",
+        "long": "A young person who is between thirteen and nineteen years old. 'Teen' is a short form, and 'teenage' describes things for this age."
+      },
+      "examples": [
+        {
+          "en": "My son is a teenager now.",
+          "tr": "Oğlum artık ergenlik çağında.",
+          "register": "neutral",
+          "focus": "teenager"
+        },
+        {
+          "en": "Teenagers often spend a lot of time on their phones.",
+          "tr": "Gençler genellikle telefonlarında çok zaman geçirir.",
+          "register": "neutral",
+          "focus": "Teenagers"
+        },
+        {
+          "en": "Ayşe's daughter is a teenager and loves music.",
+          "tr": "Ayşe'nin kızı ergenlik çağında ve müziğe bayılıyor.",
+          "register": "neutral",
+          "focus": "teenager"
+        }
+      ],
+      "synonyms": [
+        "teen"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a typical teenager",
+        "a teenager's room",
+        "teenage years",
+        "when I was a teenager"
+      ],
+      "word_family": [
+        {
+          "lemma": "teen",
+          "pos": "n"
+        },
+        {
+          "lemma": "teenage",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ergen",
+          "alt": [
+            "genç",
+            "ergenlik çağındaki"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Teenager, -teen ile biten yaşlardır (13–19). Türkçede 'ergen' bazen olumsuz duyulabilir; 'genç' daha nötrdür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My brother is fifteen, so he is a ______.",
+        "answer": "teenager",
+        "distractors": [
+          "toddler",
+          "baby",
+          "grandparent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.marry.v.1",
+      "lemma": "marry",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛri/",
+        "uk": "/ˈmæri/"
+      },
+      "def": {
+        "micro": "take as a husband or wife",
+        "short": "to become the husband or wife of someone in a wedding",
+        "long": "To become the husband or wife of someone in a wedding. No word like 'with' follows it: you marry a person. 'Get married' is common when you talk about the event."
+      },
+      "grammar": {
+        "pattern": "marry + sb (no 'with')"
+      },
+      "examples": [
+        {
+          "en": "Mehmet wants to marry Ayşe next year.",
+          "tr": "Mehmet gelecek yıl Ayşe'yle evlenmek istiyor.",
+          "register": "neutral",
+          "focus": "marry"
+        },
+        {
+          "en": "She married a doctor from Ankara.",
+          "tr": "Ankaralı bir doktorla evlendi.",
+          "register": "neutral",
+          "focus": "married"
+        },
+        {
+          "en": "Kenji asked Maria, \"Will you marry me?\"",
+          "tr": "Kenji Maria'ya, \"Benimle evlenir misin?\" diye sordu.",
+          "register": "neutral",
+          "focus": "marry"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "marry someone",
+        "want to marry",
+        "marry young",
+        "marry for love"
+      ],
+      "word_family": [
+        {
+          "lemma": "married",
+          "pos": "adj"
+        },
+        {
+          "lemma": "marriage",
+          "pos": "n"
+        },
+        {
+          "lemma": "wedding",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "evlenmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'biriyle evlenmek' dersiniz (-le); İngilizcede 'with' kullanılmaz: marry someone. 'Get married (to someone)' de aynı anlama gelir.",
+          "mistakes": [
+            {
+              "wrong": "She married with a doctor.",
+              "right": "She married a doctor.",
+              "why": "Türkçedeki 'biriyle evlenmek' kalıbı yüzünden 'with' eklenir; İngilizcede 'marry' doğrudan nesne alır."
+            },
+            {
+              "wrong": "I married to her in 2020.",
+              "right": "I married her in 2020. / I got married to her in 2020.",
+              "why": "'Marry' ile 'to' kullanılmaz; 'get married to' kalıbında kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe will ______ her boyfriend next summer. The wedding is in July.",
+        "answer": "marry",
+        "distractors": [
+          "wash",
+          "fix",
+          "iron"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.neighbor.n.1",
+      "lemma": "neighbor",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈneɪbər/",
+        "uk": "/ˈneɪbə/"
+      },
+      "def": {
+        "micro": "person who lives next to you",
+        "short": "a person who lives in the next home or very near your home",
+        "long": "A person who lives next door or very near your home. In British English it is spelled 'neighbour'."
+      },
+      "examples": [
+        {
+          "en": "Our neighbor has a very friendly dog.",
+          "tr": "Komşumuzun çok dost canlısı bir köpeği var.",
+          "register": "neutral",
+          "focus": "neighbor"
+        },
+        {
+          "en": "My neighbors are noisy on weekends.",
+          "tr": "Komşularım hafta sonları gürültü yapıyor.",
+          "register": "neutral",
+          "focus": "neighbors"
+        },
+        {
+          "en": "Ayşe gave her neighbor some soup.",
+          "tr": "Ayşe komşusuna biraz çorba verdi.",
+          "register": "neutral",
+          "focus": "neighbor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "next-door neighbor",
+        "a good neighbor",
+        "noisy neighbors",
+        "our neighbors",
+        "the neighbor's dog"
+      ],
+      "word_family": [
+        {
+          "lemma": "neighborhood",
+          "pos": "n"
+        },
+        {
+          "lemma": "neighboring",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'nēahgebūr': 'nēah' (near) + 'gebūr' (a person who lives or farms nearby).",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "komşu",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ortadaki 'gh' okunmaz: 'ney-bır'. 'Neighborhood' mahalle demektir. İngiliz yazımı 'neighbour' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The people who live next to us are our ______.",
+        "answer": "neighbors",
+        "distractors": [
+          "teachers",
+          "guests",
+          "drivers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nephew.n.1",
+      "lemma": "nephew",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnɛfjuː/",
+        "uk": "/ˈnɛfjuː/"
+      },
+      "def": {
+        "micro": "brother's or sister's son",
+        "short": "the son of your brother or sister",
+        "long": "The son of your brother or sister. You can also use it for the son of your husband's or wife's brother or sister. The daughter is your niece."
+      },
+      "examples": [
+        {
+          "en": "My nephew is five years old.",
+          "tr": "Yeğenim beş yaşında.",
+          "register": "neutral",
+          "focus": "nephew"
+        },
+        {
+          "en": "Kenji bought a toy for his nephew.",
+          "tr": "Kenji erkek yeğeni için bir oyuncak aldı.",
+          "register": "neutral",
+          "focus": "nephew"
+        },
+        {
+          "en": "I have two nephews and one niece.",
+          "tr": "İki erkek yeğenim ve bir kız yeğenim var.",
+          "register": "neutral",
+          "focus": "nephews"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "my nephew",
+        "two nephews",
+        "nephews and nieces",
+        "her youngest nephew"
+      ],
+      "word_family": [
+        {
+          "lemma": "niece",
+          "pos": "n"
+        },
+        {
+          "lemma": "uncle",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "erkek yeğen",
+          "alt": [
+            "yeğen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'yeğen' erkek ya da kız olabilir; İngilizcede erkek yeğen 'nephew', kız yeğen 'niece' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister's son is my ______.",
+        "answer": "nephew",
+        "distractors": [
+          "uncle",
+          "cousin",
+          "grandson"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.niece.n.1",
+      "lemma": "niece",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/niːs/",
+        "uk": "/niːs/"
+      },
+      "def": {
+        "micro": "your sibling's daughter",
+        "short": "the daughter of your brother or sister",
+        "long": "The daughter of your brother or sister. You can also use it for the daughter of your husband's or wife's brother or sister. The son is your nephew."
+      },
+      "examples": [
+        {
+          "en": "My niece is learning to read.",
+          "tr": "Kız yeğenim okumayı öğreniyor.",
+          "register": "neutral",
+          "focus": "niece"
+        },
+        {
+          "en": "Maria's niece is visiting from Spain.",
+          "tr": "Maria'nın kız yeğeni İspanya'dan ziyarete geliyor.",
+          "register": "neutral",
+          "focus": "niece"
+        },
+        {
+          "en": "I bought a book for my niece's birthday.",
+          "tr": "Kız yeğenimin doğum günü için bir kitap aldım.",
+          "register": "neutral",
+          "focus": "niece"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "my niece",
+        "a niece and a nephew",
+        "her niece",
+        "a favorite niece"
+      ],
+      "word_family": [
+        {
+          "lemma": "nephew",
+          "pos": "n"
+        },
+        {
+          "lemma": "aunt",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kız yeğen",
+          "alt": [
+            "yeğen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede erkek ve kız çocuğu için ortak 'yeğen' kullanılır; İngilizcede kız yeğen 'niece' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My brother's daughter is my ______.",
+        "answer": "niece",
+        "distractors": [
+          "aunt",
+          "cousin",
+          "sister"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sibling.n.1",
+      "lemma": "sibling",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɪblɪŋ/",
+        "uk": "/ˈsɪblɪŋ/"
+      },
+      "def": {
+        "micro": "brother or sister",
+        "short": "your brother or your sister, with the same parents",
+        "long": "A brother or a sister. We use this word to talk about boys and girls together, or when we do not say which one. \"Do you have any siblings?\""
+      },
+      "examples": [
+        {
+          "en": "Do you have any siblings?",
+          "tr": "Kardeşin var mı?",
+          "register": "neutral",
+          "focus": "siblings"
+        },
+        {
+          "en": "Mehmet is the oldest of four siblings.",
+          "tr": "Mehmet dört kardeşin en büyüğü.",
+          "register": "neutral",
+          "focus": "siblings"
+        },
+        {
+          "en": "My siblings and I all live in different cities.",
+          "tr": "Kardeşlerim ve ben hepimiz farklı şehirlerde yaşıyoruz.",
+          "register": "neutral",
+          "focus": "siblings"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "an older sibling",
+        "a younger sibling",
+        "sibling rivalry",
+        "three siblings"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'sibb', meaning a relative. The word became rare in the Middle Ages and came back in the early 1900s.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kardeş",
+          "alt": [
+            "erkek ya da kız kardeş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'kardeş' zaten cinsiyetsizdir; 'sibling' ile aynıdır. İngilizcede günlük konuşmada çoğu kişi 'brother' ya da 'sister' der.",
+          "mistakes": [
+            {
+              "wrong": "I have two sibling.",
+              "right": "I have two siblings.",
+              "why": "Türkçede sayıdan sonra çoğul eki gelmez (iki kardeş); İngilizcede 'two siblings' demelisiniz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have one brother and one sister, so I have two ______.",
+        "answer": "siblings",
+        "distractors": [
+          "parents",
+          "cousins",
+          "twins"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.divorce.v.1",
+      "lemma": "divorce",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈvɔːrs/",
+        "uk": "/dɪˈvɔːs/"
+      },
+      "def": {
+        "micro": "end your marriage by law",
+        "short": "to end a marriage by law",
+        "long": "To end a marriage by law. In English, people usually say 'get divorced' or 'be divorced': \"They got divorced in 2020.\""
+      },
+      "grammar": {
+        "pattern": "get divorced / divorce + sb"
+      },
+      "examples": [
+        {
+          "en": "They got divorced two years ago.",
+          "tr": "İki yıl önce boşandılar.",
+          "register": "neutral",
+          "focus": "divorced"
+        },
+        {
+          "en": "She divorced him and moved to Izmir.",
+          "tr": "Ondan boşanıp İzmir'e taşındı.",
+          "register": "neutral",
+          "focus": "divorced"
+        },
+        {
+          "en": "Ali is divorced and has two children.",
+          "tr": "Ali boşanmış ve iki çocuğu var.",
+          "register": "neutral",
+          "focus": "divorced"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get divorced",
+        "a divorced man",
+        "a divorced woman",
+        "divorce rate"
+      ],
+      "word_family": [
+        {
+          "lemma": "divorce",
+          "pos": "n"
+        },
+        {
+          "lemma": "divorced",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "boşanmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ondan boşanmak' dersiniz; İngilizcede 'divorce him' ya da 'get divorced from him' denir. 'Be divorced' = boşanmış olmak.",
+          "mistakes": [
+            {
+              "wrong": "I divorced from my husband.",
+              "right": "I divorced my husband. / I got divorced from my husband.",
+              "why": "'Divorce' doğrudan nesne alır (divorce someone); 'from' yalnızca 'get divorced from' kalıbında kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After ten years of marriage, they decided to ______.",
+        "answer": "divorce",
+        "distractors": [
+          "marry",
+          "borrow",
+          "tidy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

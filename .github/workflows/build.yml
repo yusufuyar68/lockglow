@@ -1,0 +1,75 @@
+# Builds and tests everything on every push to main (and on demand).
+# - python: content pipeline tests + strict validation of the personal draft cards (Linux).
+# - ios: VocabKit package tests and an unsigned simulator build of the app + widget (macOS).
+#   macOS minutes count 10x against the private-repo Actions quota, so this job is kept short.
+name: build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: İçerik hattı (Python)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: content-pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Kurulum (README'deki komut)
+        run: python -m pip install -e ".[dev]"
+      - name: Testler
+        run: python -m pytest -q
+      - name: Taslak kartları katı doğrula
+        run: |
+          for d in ../content/drafts/kisisel_v1/*/; do
+            python -m vocabpipe.validate --strict "$d"
+          done
+
+  ios:
+    name: iOS (paket testleri + simülatör derlemesi)
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: En yeni Xcode'u seç
+        run: |
+          ls -d /Applications/Xcode*.app
+          XCODE="$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)"
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
+      - name: XcodeGen
+        run: brew install xcodegen
+      - name: VocabKit testleri
+        working-directory: ios/Packages/VocabKit
+        run: swift test
+      - name: Projeyi üret
+        working-directory: ios
+        run: xcodegen generate
+      - name: Uygulama + widget derle (imzasız, simülatör)
+        working-directory: ios
+        run: |
+          xcodebuild -project Lockglow.xcodeproj -scheme Lockglow -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO build > build.log 2>&1 || status=$?
+          grep -E "error:|warning:" build.log | sort -u | head -200 || true
+          tail -5 build.log
+          exit ${status:-0}
+      - name: Derleme günlüğünü sakla
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-build-log
+          path: ios/build.log
+          if-no-files-found: ignore
+          retention-days: 7

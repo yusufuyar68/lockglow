@@ -1,0 +1,445 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": ["tr"],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.give_back.phv.1",
+      "lemma": "give back",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "give to the owner again",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡɪv ˈbæk/", "uk": "/ɡɪv ˈbæk/"},
+      "def": {
+        "micro": "give to the owner again",
+        "short": "give something you borrowed or took to its owner again",
+        "long": "To give something to the person it belongs to after you borrowed or took it. You can give back a book, a coat or some money."
+      },
+      "grammar": {"pattern": "give sth back (to sb) / give sb sth back"},
+      "examples": [
+        {"en": "Can I borrow your pen? I'll give it back soon.", "tr": "Kalemini ödünç alabilir miyim? Yakında geri veririm.", "register": "neutral", "focus": "give it back"},
+        {"en": "Please give my book back by Friday.", "tr": "Lütfen kitabımı cumaya kadar geri ver.", "register": "neutral", "focus": "give my book back"},
+        {"en": "Maria gave the keys back to her neighbor.", "tr": "Maria anahtarları komşusuna geri verdi.", "register": "neutral", "focus": "gave the keys back"}
+      ],
+      "synonyms": ["return"],
+      "antonyms": [],
+      "collocations": ["give back a book", "give back the keys", "give it back", "give back the money"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geri vermek",
+          "alt": ["iade etmek"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'İade etmek' daha resmîdir ve çoğunlukla mağazaya yapılır (take back). 'Give back' arkadaşa ya da sahibine geri vermektir.",
+          "mistakes": [
+            {"wrong": "Give back it to me, please.", "right": "Give it back to me, please.", "why": "Zamir (it, them) 'give' ile 'back' arasına girer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "You borrowed my umbrella. Please ______ the umbrella today.", "answer": "give back", "distractors": ["take off", "turn up", "look for"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.take_back.phv.1",
+      "lemma": "take back",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "return something to a shop",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/teɪk ˈbæk/", "uk": "/teɪk ˈbæk/"},
+      "def": {
+        "micro": "bring to the shop again",
+        "short": "bring something you bought back to the shop",
+        "long": "To bring something that you bought back to the shop because it is wrong, broken or you do not want it. You often do this to get your money back."
+      },
+      "grammar": {"pattern": "take sth back / take back sth (take it back)"},
+      "examples": [
+        {"en": "This jacket is too small. I'll take it back.", "tr": "Bu ceket çok küçük. Geri götüreceğim.", "register": "neutral", "focus": "take it back"},
+        {"en": "Can I take this phone back if I don't like it?", "tr": "Beğenmezsem bu telefonu iade edebilir miyim?", "register": "neutral", "focus": "take this phone back"},
+        {"en": "She took the broken lamp back to the shop.", "tr": "Bozuk lambayı mağazaya geri götürdü.", "register": "neutral", "focus": "took the broken lamp back"}
+      ],
+      "synonyms": ["return"],
+      "antonyms": [],
+      "collocations": ["take it back", "take back a jacket", "take back to the shop", "take back a gift"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geri götürmek",
+          "alt": ["iade etmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Take back' ayrıca 'sözünü geri almak' ('I take it back!') anlamına da gelir. Bu kartta alışverişte ürünü mağazaya geri götürmek var.",
+          "mistakes": [
+            {"wrong": "Can I give back this phone to the shop?", "right": "Can I take this phone back to the shop?", "why": "Türkçede 'geri vermek' ile 'geri götürmek' karışır. Mağazaya geri götürmek 'take back'; sahibine geri vermek 'give back' demektir."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "The shoes don't fit. I'll ______ the shoes to the shop tomorrow.", "answer": "take back", "distractors": ["give up", "pick up", "put on"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.look_up.phv.1",
+      "lemma": "look up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "search for information",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/lʊk ˈʌp/", "uk": "/lʊk ˈʌp/"},
+      "def": {
+        "micro": "search for information",
+        "short": "search for a word or a fact in a book or online",
+        "long": "To search for a piece of information in a dictionary, a book or online, for example a word, a phone number or a time. Be careful: 'look up to' means 'admire'."
+      },
+      "grammar": {"pattern": "look sth up / look up sth (look it up)"},
+      "examples": [
+        {"en": "I don't know this word. I'll look it up.", "tr": "Bu kelimeyi bilmiyorum. Bir bakayım.", "register": "neutral", "focus": "look it up"},
+        {"en": "Can you look up the train times online?", "tr": "Tren saatlerine internetten bakar mısın?", "register": "neutral", "focus": "look up"},
+        {"en": "She looked the address up on her phone.", "tr": "Adrese telefonundan baktı.", "register": "neutral", "focus": "looked the address up"}
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": ["look up a word", "look up a number", "look up online", "look it up in a dictionary"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bakmak, araştırmak",
+          "alt": ["sözlüğe bakmak", "internette aramak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Look up to' (hayran olmak) ve 'look for' (aramak) ile karıştırmayın. 'Look up' sözlükte, internette ya da bir listede bir bilgiye bakmaktır.",
+          "mistakes": [
+            {"wrong": "I looked up to the word in the dictionary.", "right": "I looked up the word in the dictionary.", "why": "'Look up' bakıp bulmaktır. 'To' eklenince anlam tamamen değişir ('look up to' = hayran olmak)."},
+            {"wrong": "Look up it on the internet.", "right": "Look it up on the internet.", "why": "Zamir (it, them) 'look' ile 'up' arasına girer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "I don't know this word. I'll ______ the word in a dictionary.", "answer": "look up", "distractors": ["look after", "look around", "look forward to"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.come_over.phv.1",
+      "lemma": "come over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "visit someone's home",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/kʌm ˈoʊvər/", "uk": "/kʌm ˈəʊvə/"},
+      "def": {
+        "micro": "visit someone's home",
+        "short": "go to someone's home for a visit",
+        "long": "To visit someone at their home, often without much planning. It is a friendly, informal invitation: 'Why don't you come over tonight?'"
+      },
+      "grammar": {"pattern": "come over (to + sb's place)"},
+      "examples": [
+        {"en": "Do you want to come over tonight?", "tr": "Bu akşam bize gelmek ister misin?", "register": "informal", "focus": "come over"},
+        {"en": "My friends are coming over for dinner on Saturday.", "tr": "Arkadaşlarım cumartesi yemeğe bize geliyor.", "register": "informal", "focus": "coming over"},
+        {"en": "Come over to my place after work.", "tr": "İşten sonra bana gel.", "register": "informal", "focus": "Come over"}
+      ],
+      "synonyms": ["visit"],
+      "antonyms": [],
+      "collocations": ["come over tonight", "come over for dinner", "come over to my place", "come over and watch a film"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(birinin) evine gelmek",
+          "alt": ["bize gelmek", "uğramak", "ziyarete gelmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'bize gelmek', 'uğramak' denir. 'Come over' resmî bir ziyaret değil, rahat bir davettir.",
+          "mistakes": [
+            {"wrong": "Please come over my house on Sunday.", "right": "Please come over to my house on Sunday.", "why": "Yer adıyla 'to' gerekir: come over to + yer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "love_friendship"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "My house is near yours. ______ for dinner tonight!", "answer": "Come over", "distractors": ["Check out", "Get off", "Hang up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.drop_off.phv.1",
+      "lemma": "drop off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "take sb or sth somewhere and leave",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/drɑːp ˈɔːf/", "uk": "/drɒp ˈɒf/"},
+      "def": {
+        "micro": "take someone somewhere",
+        "short": "take someone or something to a place and leave them there",
+        "long": "To take someone or something to a place by car and leave them there. Parents often drop off their children at school. The opposite is 'pick up'."
+      },
+      "grammar": {"pattern": "drop sb off / drop off sb (drop me off)"},
+      "examples": [
+        {"en": "Can you drop me off at the station?", "tr": "Beni istasyonda bırakabilir misin?", "register": "neutral", "focus": "drop me off"},
+        {"en": "I drop the kids off at school every morning.", "tr": "Çocukları her sabah okula bırakıyorum.", "register": "neutral", "focus": "drop the kids off"},
+        {"en": "Maria dropped off a parcel at my door.", "tr": "Maria kapıma bir paket bıraktı.", "register": "neutral", "focus": "dropped off"}
+      ],
+      "synonyms": [],
+      "antonyms": ["pick up"],
+      "collocations": ["drop sb off at school", "drop off the kids", "drop me off", "drop off a parcel"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(arabayla) bırakmak",
+          "alt": ["bırakmak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'çocukları okula bırakmak' denir. Zıttı 'pick up' = almak. 'Drop off' ayrıca 'uyuyakalmak' anlamına da gelebilir; o ayrı bir kullanımdır.",
+          "mistakes": [
+            {"wrong": "Please leave me at the station.", "right": "Please drop me off at the station.", "why": "Türkçede 'bırakmak' deriz. İngilizcede birini arabayla bir yerde indirmek için 'leave' değil 'drop off' kullanılır; 'leave' terk etmek gibi duyulur."},
+            {"wrong": "Drop off me at the airport.", "right": "Drop me off at the airport.", "why": "Zamir (me, him, them) 'drop' ile 'off' arasına girer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "I'll ______ the kids at school, and then go to work.", "answer": "drop off", "distractors": ["look after", "take off", "give back"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.sleep_in.phv.1",
+      "lemma": "sleep in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "sleep later than usual",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/sliːp ˈɪn/", "uk": "/sliːp ˈɪn/"},
+      "def": {
+        "micro": "sleep later than usual",
+        "short": "stay in bed and sleep later in the morning than usual",
+        "long": "To stay in bed and sleep later in the morning than usual. People often sleep in on weekends or on holidays."
+      },
+      "grammar": {"pattern": "sleep in (no object)"},
+      "examples": [
+        {"en": "I like to sleep in on Sundays.", "tr": "Pazar günleri geç saate kadar uyumayı severim.", "register": "neutral", "focus": "sleep in"},
+        {"en": "We can sleep in tomorrow. There's no school.", "tr": "Yarın geç kalkabiliriz. Okul yok.", "register": "neutral", "focus": "sleep in"},
+        {"en": "I slept in and missed my first class.", "tr": "Geç kalkıp ilk dersi kaçırdım.", "register": "neutral", "focus": "slept in"}
+      ],
+      "synonyms": ["sleep late"],
+      "antonyms": ["get up"],
+      "collocations": ["sleep in on weekends", "sleep in late", "sleep in on Sunday", "love to sleep in"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geç saate kadar uyumak",
+          "alt": ["geç kalkmak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'geç saate kadar uyumak' ya da 'geç kalkmak' denir. 'Sleep in' çoğunlukla keyif için yapılır; istemeden uyuyup geç kalmak için 'oversleep' daha yaygındır.",
+          "mistakes": [],
+          "mnemonic": "Sleep in = yatağın içinde (in) kalıp uykuyu uzatmak."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "It's Saturday and I have no work. I want to ______ until ten.", "answer": "sleep in", "distractors": ["get up", "wake up", "stand up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.stay_up.phv.1",
+      "lemma": "stay up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "not go to bed until late",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/steɪ ˈʌp/", "uk": "/steɪ ˈʌp/"},
+      "def": {
+        "micro": "not go to bed",
+        "short": "not go to bed until late at night",
+        "long": "To not go to bed at your usual time and stay awake late at night. You can stay up to study, to watch a film, or to wait for someone."
+      },
+      "grammar": {"pattern": "stay up (+ late / to do sth)"},
+      "examples": [
+        {"en": "I stayed up late to finish my project.", "tr": "Projemi bitirmek için geç saate kadar uyanık kaldım.", "register": "neutral", "focus": "stayed up"},
+        {"en": "Don't stay up too late. You have school tomorrow.", "tr": "Çok geç yatma. Yarın okulun var.", "register": "neutral", "focus": "stay up"},
+        {"en": "We stayed up all night talking about our trip.", "tr": "Bütün gece gezimizi konuşarak sabahladık.", "register": "neutral", "focus": "stayed up"}
+      ],
+      "synonyms": [],
+      "antonyms": ["go to bed"],
+      "collocations": ["stay up late", "stay up all night", "stay up past midnight", "stay up to watch"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uyanık kalmak",
+          "alt": ["geç yatmak", "sabahlamak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bütün geceyi uyumadan geçirmek 'sabahlamak' (stay up all night). 'Stay up late' ise geç saate kadar uyumamak, geç yatmaktır.",
+          "mistakes": [],
+          "mnemonic": "Up = ayakta: yatmayıp ayakta (up) kalırsın."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "There's a good game on tonight. I'm going to ______ late to watch it.", "answer": "stay up", "distractors": ["get up", "wake up", "sit down"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.dress_up.phv.1",
+      "lemma": "dress up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "wear nicer or special clothes",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/drɛs ˈʌp/", "uk": "/drɛs ˈʌp/"},
+      "def": {
+        "micro": "wear nicer clothes",
+        "short": "wear nicer or special clothes for an event",
+        "long": "To wear nicer or more formal clothes than usual for a party or special event. Children also dress up in costumes for fun."
+      },
+      "grammar": {"pattern": "dress up (for sth / as sb)"},
+      "examples": [
+        {"en": "Do I need to dress up for the party?", "tr": "Parti için şık giyinmem gerekiyor mu?", "register": "neutral", "focus": "dress up"},
+        {"en": "Ayşe dressed up for her friend's wedding.", "tr": "Ayşe arkadaşının düğünü için şık giyindi.", "register": "neutral", "focus": "dressed up"},
+        {"en": "The kids dressed up as animals for the school show.", "tr": "Çocuklar okul gösterisi için hayvan kılığına girdi.", "register": "neutral", "focus": "dressed up"}
+      ],
+      "synonyms": [],
+      "antonyms": ["dress down"],
+      "collocations": ["dress up for a party", "dress up as a pirate", "dress up nicely", "dress up for dinner"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şık giyinmek",
+          "alt": ["süslenmek", "kılığa girmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kostüm giymek için 'kılığa girmek' ('hayvan kılığına girmek') denir. 'Dress up' bir etkinlik için günlükten daha şık giyinmektir.",
+          "mistakes": [
+            {"wrong": "I dressed up my blue shirt.", "right": "I put on my blue shirt.", "why": "'Dress up' giysi nesnesi almaz. Bir giysiyi giymek için 'put on' ya da 'wear' kullanılır."}
+          ],
+          "mnemonic": "Up = bir üst seviye: günlük giysinden bir seviye yukarı giyinirsin."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion", "culture_celebrations"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "The wedding is very formal, so we need to ______.", "answer": "dress up", "distractors": ["give up", "check in", "wake up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.set_off.phv.1",
+      "lemma": "set off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "start a journey",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/sɛt ˈɔːf/", "uk": "/sɛt ˈɒf/"},
+      "def": {
+        "micro": "start a journey",
+        "short": "leave a place to start a trip",
+        "long": "To start a journey or leave a place to go somewhere. People set off early in the morning, or set off for a place: 'We set off for the beach at eight.'"
+      },
+      "grammar": {"pattern": "set off (for + place)"},
+      "examples": [
+        {"en": "We set off at six in the morning.", "tr": "Sabah altıda yola çıktık.", "register": "neutral", "focus": "set off"},
+        {"en": "They set off for the mountains this morning.", "tr": "Bu sabah dağlara doğru yola çıktılar.", "register": "neutral", "focus": "set off"},
+        {"en": "If we set off now, we can arrive before dark.", "tr": "Şimdi yola çıkarsak hava kararmadan varırız.", "register": "neutral", "focus": "set off"}
+      ],
+      "synonyms": ["set out"],
+      "antonyms": ["arrive"],
+      "collocations": ["set off early", "set off on a trip", "set off for work", "set off at dawn"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yola çıkmak",
+          "alt": ["yola koyulmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Set off' ayrıca 'çalıştırmak, tetiklemek' anlamına da gelebilir ('set off the alarm'); o ayrı bir kullanımdır.",
+          "mistakes": [
+            {"wrong": "We set off Ankara at six.", "right": "We set off for Ankara at six.", "why": "Türkçede '-e' hâl eki yeter ('Ankara'ya yola çıktık'). İngilizcede gidilen yeri 'for' bağlar: set off for + yer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "The trip starts at dawn. We'll ______ at five.", "answer": "set off", "distractors": ["get off", "put off", "turn off"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.turn_around.phv.1",
+      "lemma": "turn around",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "face the other way",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/tɜːrn əˈraʊnd/", "uk": "/tɜːn əˈraʊnd/"},
+      "def": {
+        "micro": "face the other way",
+        "short": "move so that you face the other direction",
+        "long": "To move so that your front faces the opposite direction, or to go back the way you came. People say 'Turn around!' to someone behind them, and drivers turn around after a wrong turn."
+      },
+      "grammar": {"pattern": "turn around; turn sb/sth around"},
+      "examples": [
+        {"en": "Turn around. Someone is calling your name.", "tr": "Arkana dön. Biri ismini çağırıyor.", "register": "neutral", "focus": "Turn around"},
+        {"en": "We took the wrong road, so we turned around.", "tr": "Yanlış yola girdik, o yüzden geri döndük.", "register": "neutral", "focus": "turned around"},
+        {"en": "She turned the chair around and sat down.", "tr": "Sandalyeyi çevirip oturdu.", "register": "neutral", "focus": "turned the chair around"}
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": ["turn around slowly", "turn around and look", "turn the car around", "turn around and go back"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arkasını dönmek",
+          "alt": ["geri dönmek", "U dönüşü yapmak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kişi için 'arkasını dönmek', araç için 'geri dönmek' (U dönüşü yapmak) denir. Nesneyle ('turn sth around') 'çevirmek' olur.",
+          "mistakes": [
+            {"wrong": "Turn back, please.", "right": "Turn around, please.", "why": "'Turn back' geldiğin yoldan geri dönmektir. Vücudunu karşı yöne çevirmek için 'turn around' denir."}
+          ],
+          "mnemonic": "Around = çevre: kendi çevrende yarım tur atarsın."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "I think we're lost. Please ______ and go back.", "answer": "turn around", "distractors": ["turn off", "turn up", "give up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    }
+  ]
+}

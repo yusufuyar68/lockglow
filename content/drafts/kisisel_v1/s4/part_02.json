@@ -1,0 +1,454 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": ["tr"],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.go_out.phv.1",
+      "lemma": "go out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "leave home to go somewhere",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡoʊ ˈaʊt/", "uk": "/ɡəʊ ˈaʊt/"},
+      "def": {
+        "micro": "leave your home",
+        "short": "leave your home to go somewhere, often to have fun",
+        "long": "To leave your home or a building to go somewhere, often to have fun or meet people. We also say 'go out for dinner' or 'go out with friends'."
+      },
+      "grammar": {"pattern": "go out (no object); go out of + place"},
+      "examples": [
+        {"en": "Do you want to go out tonight?", "tr": "Bu akşam dışarı çıkmak ister misin?", "register": "neutral", "focus": "go out"},
+        {"en": "We went out for dinner on Friday.", "tr": "Cuma günü yemeğe çıktık.", "register": "neutral", "focus": "went out"},
+        {"en": "It's raining, so I don't want to go out.", "tr": "Yağmur yağıyor, o yüzden dışarı çıkmak istemiyorum.", "register": "neutral", "focus": "go out"}
+      ],
+      "synonyms": [],
+      "antonyms": ["stay in"],
+      "collocations": ["go out tonight", "go out for dinner", "go out with friends", "go out at night", "go out for a walk"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dışarı çıkmak",
+          "alt": ["çıkmak", "gezmeye çıkmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Go out with sb' ayrıca 'biriyle çıkmak' (flört etmek) anlamına gelir. Bu kartta evden dışarı çıkmak anlamı var.",
+          "mistakes": [
+            {"wrong": "I go out the house at eight.", "right": "I go out of the house at eight.", "why": "Türkçede 'evden çıkarım' deriz. İngilizcede yer adı varsa 'out of' gerekir: go out of the house (ya da 'leave the house')."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "It's a lovely evening. Let's ______ for a walk.", "answer": "go out", "distractors": ["come in", "stay in", "give up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.go_back.phv.1",
+      "lemma": "go back",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "return to a place",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡoʊ ˈbæk/", "uk": "/ɡəʊ ˈbæk/"},
+      "def": {
+        "micro": "go to a place again",
+        "short": "travel to a place where you were before",
+        "long": "To go again to a place where you were before, or to the place you came from. It is often used with 'home', 'to work' or 'to school'."
+      },
+      "grammar": {"pattern": "go back (to + place)"},
+      "examples": [
+        {"en": "I have to go back home. It's late.", "tr": "Eve dönmem lazım. Geç oldu.", "register": "neutral", "focus": "go back"},
+        {"en": "Let's go back to the hotel and rest.", "tr": "Otele dönüp dinlenelim.", "register": "neutral", "focus": "go back"},
+        {"en": "Kenji wants to go back to Istanbul next summer.", "tr": "Kenji önümüzdeki yaz İstanbul'a geri dönmek istiyor.", "register": "neutral", "focus": "go back"}
+      ],
+      "synonyms": ["return"],
+      "antonyms": [],
+      "collocations": ["go back home", "go back to work", "go back to school", "go back to sleep", "go back there"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geri gitmek",
+          "alt": ["geri dönmek", "dönmek"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dönülen yer konuşanın bulunduğu yer değilse 'go back'; konuşanın olduğu yere dönülüyorsa 'come back' denir.",
+          "mistakes": [
+            {"wrong": "I woke up and went back sleep.", "right": "I woke up and went back to sleep.", "why": "'Uyumaya geri dönmek' kalıbında 'to' atlanmaz: go back to sleep."},
+            {"wrong": "I will go back to home at six.", "right": "I will go back home at six.", "why": "'Home' önünde 'to' kullanılmaz. Türkçedeki '-e' hâlini her zaman 'to' ile karşılamayın."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "I forgot my keys. I have to ______ to my office.", "answer": "go back", "distractors": ["stay in", "get off", "put on"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.look_for.phv.1",
+      "lemma": "look for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "try to find",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ˈlʊk fər/", "uk": "/ˈlʊk fə/"},
+      "def": {
+        "micro": "try to find",
+        "short": "try to find something or someone",
+        "long": "To search because you want to find something or someone. It describes the search, not the result: you can look for your keys for a long time and still not find them."
+      },
+      "grammar": {"pattern": "look for + sb/sth (inseparable)"},
+      "examples": [
+        {"en": "I'm looking for my keys.", "tr": "Anahtarlarımı arıyorum.", "register": "neutral", "focus": "looking for"},
+        {"en": "Mehmet is looking for a new apartment near work.", "tr": "Mehmet iş yerine yakın yeni bir daire arıyor.", "register": "neutral", "focus": "looking for"},
+        {"en": "We looked for a café, but all of them were full.", "tr": "Bir kafe aradık ama hepsi doluydu.", "register": "neutral", "focus": "looked for"}
+      ],
+      "synonyms": ["search for"],
+      "antonyms": [],
+      "collocations": ["look for a job", "look for your keys", "look for an apartment", "look for information"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aramak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Look for' = aramak (bulmaya çalışmak). 'Look at' = bakmak, 'find' = bulmak. Üçünü karıştırmayın.",
+          "mistakes": [
+            {"wrong": "I'm looking my keys.", "right": "I'm looking for my keys.", "why": "Türkçede 'anahtarı arıyorum' için ayrı bir edat yok; İngilizcede 'for' şarttır. 'Look' tek başına nesne almaz."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "careers_interviews"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
+      "quiz": {"cloze": "I can't find my phone. I'm ______ it everywhere.", "answer": "looking for", "distractors": ["looking after", "looking at", "getting up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.look_after.phv.1",
+      "lemma": "look after",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "take care of",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/lʊk ˈæftər/", "uk": "/lʊk ˈɑːftə/"},
+      "def": {
+        "micro": "take care of someone",
+        "short": "take care of a person, an animal or a thing",
+        "long": "To take care of someone or something and make sure they are safe, healthy or in good condition. You can look after children, pets, an old person or your things."
+      },
+      "grammar": {"pattern": "look after + sb/sth (inseparable)"},
+      "examples": [
+        {"en": "Can you look after my cat this weekend?", "tr": "Bu hafta sonu kedime bakabilir misin?", "register": "neutral", "focus": "look after"},
+        {"en": "Ayşe looks after her grandmother every Sunday.", "tr": "Ayşe her pazar büyükannesine bakıyor.", "register": "neutral", "focus": "looks after"},
+        {"en": "Look after yourself and get some rest.", "tr": "Kendine iyi bak ve biraz dinlen.", "register": "neutral", "focus": "Look after"}
+      ],
+      "synonyms": ["take care of"],
+      "antonyms": [],
+      "collocations": ["look after the kids", "look after a pet", "look after yourself", "look after a baby", "look after your health"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bakmak, ilgilenmek",
+          "alt": ["göz kulak olmak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'çocuğa bakmak' = look after; 'resme bakmak' = look at. Aynı 'bakmak' fiili iki ayrı İngilizce kalıba karşılık gelir.",
+          "mistakes": [
+            {"wrong": "I look my little sister while my mother works.", "right": "I look after my little sister while my mother works.", "why": "'Kardeşime bakıyorum' demek için 'look after' gerekir. 'Look' tek başına gözle bakmaktır."},
+            {"wrong": "Who will look at the baby tonight?", "right": "Who will look after the baby tonight?", "why": "'Look at' gözle bakmaktır, 'look after' bakım yapmaktır. Türkçede ikisi de 'bakmak' olduğu için karışır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
+      "quiz": {"cloze": "I'm going away for a week. Who will ______ my plants?", "answer": "look after", "distractors": ["look for", "look up", "hang up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.find_out.phv.1",
+      "lemma": "find out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "learn a fact",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/faɪnd ˈaʊt/", "uk": "/faɪnd ˈaʊt/"},
+      "def": {
+        "micro": "learn a fact",
+        "short": "get information about something you did not know",
+        "long": "To learn a fact or get information that you did not have before, by asking, reading or searching. It is often followed by 'if', 'what', 'when' or 'who'."
+      },
+      "grammar": {"pattern": "find out + wh-word / if / about sth"},
+      "examples": [
+        {"en": "I want to find out the price.", "tr": "Fiyatı öğrenmek istiyorum.", "register": "neutral", "focus": "find out"},
+        {"en": "Did you find out what time the bus leaves?", "tr": "Otobüsün saat kaçta kalktığını öğrendin mi?", "register": "neutral", "focus": "find out"},
+        {"en": "She found out about the party from a friend.", "tr": "Partiyi bir arkadaşından öğrendi.", "register": "neutral", "focus": "found out"}
+      ],
+      "synonyms": ["learn", "discover"],
+      "antonyms": [],
+      "collocations": ["find out the truth", "find out about", "find out what", "find out if", "find out more"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öğrenmek",
+          "alt": ["bilgi edinmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Find' = bulmak; 'find out' = bir bilgiyi öğrenmek. İngilizcede 'learn' ders çalışarak ya da deneyimle öğrenmeyi de anlatır; 'find out' ise sadece bir gerçeği öğrenmektir.",
+          "mistakes": [
+            {"wrong": "I found out my keys under the sofa.", "right": "I found my keys under the sofa.", "why": "'Find out' yalnızca bilgi ya da gerçek için kullanılır. Kaybolan bir nesneyi bulmak için 'find' denir."},
+            {"wrong": "Can you find out where is the station?", "right": "Can you find out where the station is?", "why": "Dolaylı soruda özne fiilden önce gelir. Türkçedeki 'istasyon nerede' sırasını kopyalamayın."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
+      "quiz": {"cloze": "I don't know when the shop opens. I'll ______ online.", "answer": "find out", "distractors": ["look after", "give up", "put on"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.give_up.phv.1",
+      "lemma": "give up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "stop trying",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡɪv ˈʌp/", "uk": "/ɡɪv ˈʌp/"},
+      "def": {
+        "micro": "stop trying",
+        "short": "stop trying to do something because it is too hard",
+        "long": "To stop trying to do something because it is too difficult or because you think you cannot win. It is often used as a command: 'Don't give up!'"
+      },
+      "grammar": {"pattern": "give up (no object); give up on sth"},
+      "examples": [
+        {"en": "Don't give up! There is not much left.", "tr": "Pes etme! Az kaldı.", "register": "neutral", "focus": "give up"},
+        {"en": "The puzzle was hard, but Maria didn't give up.", "tr": "Bulmaca zordu ama Maria pes etmedi.", "register": "neutral", "focus": "give up"},
+        {"en": "After two hours, I gave up and asked for help.", "tr": "İki saat sonra pes edip yardım istedim.", "register": "neutral", "focus": "gave up"}
+      ],
+      "synonyms": ["quit"],
+      "antonyms": ["keep trying", "carry on"],
+      "collocations": ["never give up", "give up easily", "give up on", "refuse to give up"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pes etmek, vazgeçmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sigara gibi bir alışkanlığı bırakmak için ayrı bir kart var (give up, 2. anlam). Bu kartta 'denemeyi bırakmak, pes etmek' anlamı var.",
+          "mistakes": [
+            {"wrong": "I stop, it's too difficult.", "right": "I give up, it's too difficult.", "why": "Türkçede 'bırakıyorum, çok zor' deriz. İngilizcede pes etmek için 'stop' değil 'give up' kullanılır."},
+            {"wrong": "Never give up to your dreams.", "right": "Never give up on your dreams.", "why": "'Vazgeçmemek' için 'give up on sth' kalıbı kullanılır; 'to' değil 'on'."}
+          ],
+          "mnemonic": "Ellerini yukarı (up) kaldırıp teslim olmak gibi düşün: pes etmek."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "success_productivity"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "The test is hard, but I won't ______. I'll try again.", "answer": "give up", "distractors": ["get up", "pick up", "turn up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.pick_up.phv.1",
+      "lemma": "pick up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "lift from the floor or a table",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/pɪk ˈʌp/", "uk": "/pɪk ˈʌp/"},
+      "def": {
+        "micro": "lift from the floor",
+        "short": "take something in your hand and lift it",
+        "long": "To lift something or someone from the floor or a table with your hands. It is also used for taking a small thing in your hand: 'He picked up a pen.'"
+      },
+      "grammar": {"pattern": "pick sth up / pick up sth (pick it up)"},
+      "examples": [
+        {"en": "Please pick up your socks from the floor.", "tr": "Lütfen çoraplarını yerden al.", "register": "neutral", "focus": "pick up"},
+        {"en": "The baby dropped her toy, so I picked it up.", "tr": "Bebek oyuncağını düşürdü, ben de yerden aldım.", "register": "neutral", "focus": "picked it up"},
+        {"en": "Ali bent down and picked up a coin.", "tr": "Ali eğilip yerden bir bozuk para aldı.", "register": "neutral", "focus": "picked up"}
+      ],
+      "synonyms": ["lift"],
+      "antonyms": ["put down"],
+      "collocations": ["pick up a pen", "pick up your things", "pick up from the floor", "pick up a toy"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yerden almak",
+          "alt": ["kaldırmak", "eline almak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Başka bir anlamı 'birini almak' (pick up, 2. kart: arabayla almak). 'Yerden almak' ve 'eline almak' bu kartın anlamıdır.",
+          "mistakes": [
+            {"wrong": "She picked the toy from the floor.", "right": "She picked up the toy from the floor.", "why": "'Pick' tek başına seçmek ya da koparmak demektir. Yerden almak için 'up' şarttır."},
+            {"wrong": "I picked up it from the floor.", "right": "I picked it up from the floor.", "why": "Zamir (it, them) 'pick' ile 'up' arasına girer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "There is a coin on the floor. Can you ______ the coin?", "answer": "pick up", "distractors": ["put on", "turn off", "give up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.pick_up.phv.2",
+      "lemma": "pick up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 2,
+      "sense_note": "collect sb or sth",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/pɪk ˈʌp/", "uk": "/pɪk ˈʌp/"},
+      "def": {
+        "micro": "go and get someone",
+        "short": "go to a place and take someone or something away with you",
+        "long": "To go to a place and take someone or something away with you, often by car. People pick up children from school, friends from the station, or a parcel from a shop."
+      },
+      "grammar": {"pattern": "pick sb up / pick up sb (pick me up)"},
+      "examples": [
+        {"en": "Can you pick me up at the station?", "tr": "Beni istasyondan alabilir misin?", "register": "neutral", "focus": "pick me up"},
+        {"en": "Dad picks up the kids from school every day.", "tr": "Babam çocukları her gün okuldan alıyor.", "register": "neutral", "focus": "picks up"},
+        {"en": "I need to pick up a parcel from the post office.", "tr": "Postaneden bir paket almam gerekiyor.", "register": "neutral", "focus": "pick up"}
+      ],
+      "synonyms": ["collect"],
+      "antonyms": ["drop off"],
+      "collocations": ["pick up the kids", "pick up a parcel", "pick sb up at the station", "pick up from school"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(arabayla) almak",
+          "alt": ["almaya gitmek", "yoldan almak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'Seni havalimanından alırım' demek yeter. Aynı 'almak' fiili 'pick up 1' (yerden almak) için de kullanılır; bağlama bakın.",
+          "mistakes": [
+            {"wrong": "I will take you from the airport.", "right": "I will pick you up from the airport.", "why": "Türkçede 'havalimanından alırım' deriz. İngilizcede birini almak için 'take' değil 'pick up' kullanılır; 'take' götürmektir."},
+            {"wrong": "Pick up me at six, please.", "right": "Pick me up at six, please.", "why": "Zamir (me, him, them) 'pick' ile 'up' arasına girer."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "I finish work at six. Please ______ the kids from school.", "answer": "pick up", "distractors": ["drop off", "give up", "turn off"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.get_in.phv.1",
+      "lemma": "get in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "into a car or taxi",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡɛt ˈɪn/", "uk": "/ɡɛt ˈɪn/"},
+      "def": {
+        "micro": "enter a car",
+        "short": "go into a car, a taxi or another small vehicle",
+        "long": "To go into a car, a taxi or another small vehicle. For buses, trains and planes we say 'get on'. The opposite is 'get out'."
+      },
+      "grammar": {"pattern": "get in / get into + car, taxi"},
+      "examples": [
+        {"en": "Get in! I'll take you home.", "tr": "Bin! Seni eve bırakayım.", "register": "neutral", "focus": "Get in"},
+        {"en": "The taxi stopped, and we got in.", "tr": "Taksi durdu ve biz bindik.", "register": "neutral", "focus": "got in"},
+        {"en": "She got in the car and closed the door.", "tr": "Arabaya binip kapıyı kapattı.", "register": "neutral", "focus": "got in"}
+      ],
+      "synonyms": [],
+      "antonyms": ["get out"],
+      "collocations": ["get in the car", "get in a taxi", "get into the car", "get in the back"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arabaya binmek",
+          "alt": ["binmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Otobüs, tren ve uçak için 'get on' kullanılır. Araba ve taksi için 'get in' ya da 'get into' denir.",
+          "mistakes": [
+            {"wrong": "I got on the taxi.", "right": "I got in the taxi.", "why": "Türkçede hepsi 'binmek'. İngilizcede küçük araçlar (araba, taksi) için 'get in', büyük araçlar (otobüs, tren, uçak) için 'get on' kullanılır."}
+          ],
+          "mnemonic": "Araba küçüktür, içine (in) girersin. Otobüs büyüktür, üstüne (on) çıkarsın."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "The taxi is here. Let's ______ and go to the airport.", "answer": "get in", "distractors": ["get off", "get on", "get up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.get_out.phv.1",
+      "lemma": "get out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "out of a car or taxi",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡɛt ˈaʊt/", "uk": "/ɡɛt ˈaʊt/"},
+      "def": {
+        "micro": "leave a car",
+        "short": "go out of a car, a taxi or another small vehicle",
+        "long": "To leave a car, a taxi or another small vehicle. For buses, trains and planes we say 'get off'. With a place, add 'of': 'get out of the car'."
+      },
+      "grammar": {"pattern": "get out (of + car, taxi)"},
+      "examples": [
+        {"en": "Please get out of the car here.", "tr": "Lütfen burada arabadan inin.", "register": "neutral", "focus": "get out"},
+        {"en": "She paid the driver and got out.", "tr": "Şoföre parayı verip indi.", "register": "neutral", "focus": "got out"},
+        {"en": "Wait. Don't get out while the car is moving.", "tr": "Dur. Araba hareket hâlindeyken inme.", "register": "neutral", "focus": "get out"}
+      ],
+      "synonyms": [],
+      "antonyms": ["get in"],
+      "collocations": ["get out of the car", "get out of a taxi", "get out here"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arabadan inmek",
+          "alt": ["inmek", "dışarı çıkmak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Otobüs, tren ve uçaktan inmek için 'get off' denir. Araba ve taksiden inmek için 'get out (of)' kullanılır.",
+          "mistakes": [
+            {"wrong": "I got out the car.", "right": "I got out of the car.", "why": "Yer adı varsa 'out of' gerekir. Türkçedeki '-den' eki İngilizcede 'of' ile gelir."},
+            {"wrong": "He got off the taxi.", "right": "He got out of the taxi.", "why": "Taksi ve araba için 'get off' değil 'get out of' kullanılır. 'Get off' otobüs, tren, uçak içindir."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "We're at the hotel. Please ______ of the car here.", "answer": "get out", "distractors": ["get in", "get on", "get up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    }
+  ]
+}

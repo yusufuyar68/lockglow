@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.babysit.v.1",
+      "lemma": "babysit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbeɪbiˌsɪt/",
+        "uk": "/ˈbeɪbiˌsɪt/"
+      },
+      "def": {
+        "micro": "care for someone's kids",
+        "short": "to take care of someone's children while their parents are out",
+        "long": "To take care of someone's children for a few hours while their parents are out. Teenagers often do this to earn a little money."
+      },
+      "examples": [
+        {
+          "en": "Can you babysit on Friday night?",
+          "tr": "Cuma akşamı çocuklara bakabilir misin?",
+          "register": "neutral",
+          "focus": "babysit"
+        },
+        {
+          "en": "Ayşe babysits for her neighbors twice a month.",
+          "tr": "Ayşe ayda iki kez komşularının çocuklarına bakıyor.",
+          "register": "neutral",
+          "focus": "babysits"
+        },
+        {
+          "en": "My sister will babysit my daughter tonight.",
+          "tr": "Kız kardeşim bu akşam kızıma bakacak.",
+          "register": "neutral",
+          "focus": "babysit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "babysit the kids",
+        "babysit for a friend",
+        "babysit twice a week",
+        "a babysitting job"
+      ],
+      "word_family": [
+        {
+          "lemma": "babysitter",
+          "pos": "n"
+        },
+        {
+          "lemma": "babysitting",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çocuğa bakmak",
+          "alt": [
+            "çocuk bakıcılığı yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Babysit' birkaç saatliğine, genelde ücretle başkasının çocuğuna bakmaktır. Kendi çocuğunuza bakmak için 'look after' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ my kids tonight? We're going out for dinner.",
+        "answer": "babysit",
+        "distractors": [
+          "tidy",
+          "borrow",
+          "marry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.engaged.adj.1",
+      "lemma": "engaged",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "promised to marry",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈɡeɪdʒd/",
+        "uk": "/ɪnˈɡeɪdʒd/"
+      },
+      "def": {
+        "micro": "promised to marry someone",
+        "short": "having promised to marry someone, but not married yet",
+        "long": "Having promised to marry someone, but not married yet. An engaged couple often wears a ring and plans the wedding."
+      },
+      "examples": [
+        {
+          "en": "Ayşe and Mehmet got engaged last month.",
+          "tr": "Ayşe ile Mehmet geçen ay nişanlandı.",
+          "register": "neutral",
+          "focus": "engaged"
+        },
+        {
+          "en": "My sister is engaged to a very nice man.",
+          "tr": "Kız kardeşim çok iyi bir adamla nişanlı.",
+          "register": "neutral",
+          "focus": "engaged"
+        },
+        {
+          "en": "They are engaged and want to marry next summer.",
+          "tr": "Onlar nişanlı ve gelecek yaz evlenmek istiyorlar.",
+          "register": "neutral",
+          "focus": "engaged"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get engaged",
+        "engaged to someone",
+        "an engaged couple",
+        "an engagement ring",
+        "newly engaged"
+      ],
+      "word_family": [
+        {
+          "lemma": "engagement",
+          "pos": "n"
+        },
+        {
+          "lemma": "engage",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nişanlı",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Engaged' meşgul anlamına da gelir (engaged tone = meşgul sinyali). 'Get engaged' = nişanlanmak.",
+          "mistakes": [
+            {
+              "wrong": "She is engaged with him.",
+              "right": "She is engaged to him.",
+              "why": "Türkçede 'onunla nişanlı' dersiniz (-le); İngilizcede 'engaged to' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "They are ______ and will have the wedding next year.",
+        "answer": "engaged",
+        "distractors": [
+          "divorced",
+          "jealous",
+          "retired"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.coat.n.1",
+      "lemma": "coat",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/koʊt/",
+        "uk": "/kəʊt/"
+      },
+      "def": {
+        "micro": "warm top you wear outside",
+        "short": "a long, warm piece of clothing that you wear over your other clothes outside",
+        "long": "A long, warm piece of clothing with sleeves that you wear over your other clothes when it is cold or wet outside."
+      },
+      "examples": [
+        {
+          "en": "Take your coat. It's cold outside.",
+          "tr": "Montunu al. Dışarısı soğuk.",
+          "register": "neutral",
+          "focus": "coat"
+        },
+        {
+          "en": "Mehmet wore a long black coat.",
+          "tr": "Mehmet uzun siyah bir palto giyiyordu.",
+          "register": "neutral",
+          "focus": "coat"
+        },
+        {
+          "en": "Where can I hang my coat?",
+          "tr": "Montumu nereye asabilirim?",
+          "register": "neutral",
+          "focus": "coat"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a winter coat",
+        "a warm coat",
+        "raincoat",
+        "coat hanger",
+        "coat pocket"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mont",
+          "alt": [
+            "palto",
+            "kaban"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Uzun ve sıcak dış giysilerin hepsine (mont, palto, kaban) 'coat' denir. Daha kısa ve hafif olanlara 'jacket' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's snowing. Take a warm ______.",
+        "answer": "coat",
+        "distractors": [
+          "fork",
+          "spoon",
+          "towel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.jacket.n.1",
+      "lemma": "jacket",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒækɪt/",
+        "uk": "/ˈdʒækɪt/"
+      },
+      "def": {
+        "micro": "short coat with sleeves",
+        "short": "a short, light coat that you wear over a shirt or a dress",
+        "long": "A short, light coat with sleeves. People wear it over a shirt or a dress when it is not very cold. A suit also has a jacket."
+      },
+      "examples": [
+        {
+          "en": "I like your new jacket.",
+          "tr": "Yeni ceketini çok beğendim.",
+          "register": "neutral",
+          "focus": "jacket"
+        },
+        {
+          "en": "Ayşe wore a leather jacket to the party.",
+          "tr": "Ayşe partiye deri ceketle gitti.",
+          "register": "neutral",
+          "focus": "jacket"
+        },
+        {
+          "en": "It's a bit cold. Do you have a jacket?",
+          "tr": "Hava biraz soğuk. Ceketin var mı?",
+          "register": "neutral",
+          "focus": "jacket"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a leather jacket",
+        "a rain jacket",
+        "a denim jacket",
+        "a warm jacket",
+        "jacket pocket"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ceket",
+          "alt": [
+            "mont"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Takım elbisenin ceketi de İngilizcede 'jacket' olur. Günlük dış giysi olan mont için de kullanılır; çok kalın olanlara 'coat' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I wore a light ______ because it was a little cold.",
+        "answer": "jacket",
+        "distractors": [
+          "sock",
+          "belt",
+          "ring"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sock.n.1",
+      "lemma": "sock",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɑːk/",
+        "uk": "/sɒk/"
+      },
+      "def": {
+        "micro": "soft cover for your foot",
+        "short": "a soft piece of clothing that you wear on your foot inside a shoe",
+        "long": "A soft piece of clothing that covers your foot, and sometimes part of your leg. You wear it inside your shoes. Socks usually come in pairs."
+      },
+      "examples": [
+        {
+          "en": "I need a new pair of socks.",
+          "tr": "Yeni bir çift çoraba ihtiyacım var.",
+          "register": "neutral",
+          "focus": "socks"
+        },
+        {
+          "en": "These socks are warm, so I wear them in winter.",
+          "tr": "Bu çoraplar sıcak tutuyor, o yüzden kışın giyiyorum.",
+          "register": "neutral",
+          "focus": "socks"
+        },
+        {
+          "en": "Mehmet always loses one sock in the washing machine.",
+          "tr": "Mehmet her zaman bir çorabını çamaşır makinesinde kaybediyor.",
+          "register": "neutral",
+          "focus": "sock"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a pair of socks",
+        "warm socks",
+        "wool socks",
+        "ankle socks"
+      ],
+      "word_family": [
+        {
+          "lemma": "socks",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çorap",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çift için 'a pair of socks' denir; tek çorap ise 'a sock' olur. İnce kadın çorabı (külotlu çorap) için 'tights' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I bought a socks.",
+              "right": "I bought a pair of socks.",
+              "why": "'Socks' çoğul bir isimdir, 'a' ile kullanılmaz. Çift için 'a pair of socks' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My feet are cold. I need to wear warm ______.",
+        "answer": "socks",
+        "distractors": [
+          "gloves",
+          "hats",
+          "scarves"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wear.v.1",
+      "lemma": "wear",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɛr/",
+        "uk": "/weə/"
+      },
+      "def": {
+        "micro": "have clothes on your body",
+        "short": "to have clothes, shoes, or glasses on your body",
+        "long": "To have clothes, shoes, a watch, or glasses on your body. In English you wear all of these; you do not 'use' or 'carry' them."
+      },
+      "grammar": {
+        "pattern": "wear + clothes / glasses / a watch"
+      },
+      "examples": [
+        {
+          "en": "She is wearing a red dress today.",
+          "tr": "Bugün kırmızı bir elbise giyiyor.",
+          "register": "neutral",
+          "focus": "wearing"
+        },
+        {
+          "en": "I always wear glasses when I read.",
+          "tr": "Okurken hep gözlük takarım.",
+          "register": "neutral",
+          "focus": "wear"
+        },
+        {
+          "en": "What should I wear to the interview?",
+          "tr": "Mülakata ne giymeliyim?",
+          "register": "neutral",
+          "focus": "wear"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wear a coat",
+        "wear glasses",
+        "wear a watch",
+        "wear a uniform",
+        "what to wear"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "giymek",
+          "alt": [
+            "takmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede giysi için 'giymek', gözlük, saat, yüzük için 'takmak' dersiniz; İngilizcede hepsi için 'wear' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "She uses glasses.",
+              "right": "She wears glasses.",
+              "why": "Türkçede 'gözlük kullanıyor' denir; İngilizcede gözlük, saat, şapka gibi şeyler için 'wear' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It is cold, so I will ______ my warm coat.",
+        "answer": "wear",
+        "distractors": [
+          "eat",
+          "cook",
+          "tidy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.size.n.1",
+      "lemma": "size",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "clothes and shoes",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/saɪz/",
+        "uk": "/saɪz/"
+      },
+      "def": {
+        "micro": "how big clothes or shoes are",
+        "short": "a number or letter that shows how big clothes or shoes are",
+        "long": "A number or a letter, such as 38 or M, that shows how big a piece of clothing or a pair of shoes is. In a shop you can ask, 'Do you have this in a bigger size?'"
+      },
+      "examples": [
+        {
+          "en": "What size do you wear?",
+          "tr": "Kaç beden giyiyorsun?",
+          "register": "neutral",
+          "focus": "size"
+        },
+        {
+          "en": "Do you have this shirt in a bigger size?",
+          "tr": "Bu gömleğin daha büyük bir bedeni var mı?",
+          "register": "neutral",
+          "focus": "size"
+        },
+        {
+          "en": "These shoes are the wrong size. They're too small.",
+          "tr": "Bu ayakkabılar yanlış numara. Çok küçükler.",
+          "register": "neutral",
+          "focus": "size"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "what size",
+        "shoe size",
+        "a bigger size",
+        "a smaller size",
+        "my size"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "beden",
+          "alt": [
+            "numara",
+            "ölçü"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Giysi için 'beden', ayakkabı için 'numara' dersiniz; İngilizcede ikisine de 'size' denir: What size are you?",
+          "mistakes": [
+            {
+              "wrong": "What number do you wear?",
+              "right": "What size do you wear?",
+              "why": "Türkçede ayakkabı için 'kaç numara' dersiniz; İngilizcede 'number' değil 'size' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This shirt is too tight. Do you have a bigger ______?",
+        "answer": "size",
+        "distractors": [
+          "color",
+          "weather",
+          "kitchen"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pocket.n.1",
+      "lemma": "pocket",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːkɪt/",
+        "uk": "/ˈpɒkɪt/"
+      },
+      "def": {
+        "micro": "small bag sewn in clothes",
+        "short": "a small bag sewn into clothes where you can put things",
+        "long": "A small bag sewn into a piece of clothing, such as trousers or a jacket, where you can keep things like keys, a phone, or money."
+      },
+      "examples": [
+        {
+          "en": "My keys are in my coat pocket.",
+          "tr": "Anahtarlarım mont cebimde.",
+          "register": "neutral",
+          "focus": "pocket"
+        },
+        {
+          "en": "Kenji put his phone in his pocket.",
+          "tr": "Kenji telefonunu cebine koydu.",
+          "register": "neutral",
+          "focus": "pocket"
+        },
+        {
+          "en": "Many dresses now have big pockets.",
+          "tr": "Artık birçok elbisenin büyük cepleri var.",
+          "register": "neutral",
+          "focus": "pockets"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in my pocket",
+        "coat pocket",
+        "back pocket",
+        "pocket money",
+        "empty your pockets"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "cep",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Pocket money' harçlık demektir. 'Cep telefonu' kelimesi kelimesine çevrilmez; 'cell phone' (ABD) ya da 'mobile phone' (İngiltere) denir.",
+          "mistakes": [
+            {
+              "wrong": "I have a pocket phone.",
+              "right": "I have a cell phone.",
+              "why": "'Cep telefonu' kelimesi kelimesine çevrilmez; ABD'de 'cell phone', İngiltere'de 'mobile phone' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My keys are in my jacket ______.",
+        "answer": "pocket",
+        "distractors": [
+          "button",
+          "sleeve",
+          "collar"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trousers.n.1",
+      "lemma": "trousers",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtraʊzərz/",
+        "uk": "/ˈtraʊzəz/"
+      },
+      "def": {
+        "micro": "clothes for your legs",
+        "short": "a piece of clothing with two parts that cover your legs",
+        "long": "A piece of clothing with two parts that cover your legs. The word is always plural: say 'a pair of trousers'. Americans usually say 'pants'."
+      },
+      "examples": [
+        {
+          "en": "I need a new pair of trousers.",
+          "tr": "Yeni bir pantolona ihtiyacım var.",
+          "register": "neutral",
+          "focus": "trousers"
+        },
+        {
+          "en": "These trousers are too long for me.",
+          "tr": "Bu pantolon bana fazla uzun.",
+          "register": "neutral",
+          "focus": "trousers"
+        },
+        {
+          "en": "Mehmet wore black trousers and a white shirt.",
+          "tr": "Mehmet siyah pantolon ve beyaz gömlek giymişti.",
+          "register": "neutral",
+          "focus": "trousers"
+        }
+      ],
+      "synonyms": [
+        "pants"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a pair of trousers",
+        "black trousers",
+        "tight trousers",
+        "wear trousers"
+      ],
+      "word_family": [
+        {
+          "lemma": "trouser",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pantolon",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Her zaman çoğul kullanılır. İngiltere'de 'pants' iç çamaşırı (külot) demektir; pantolon için 'trousers' kullanın.",
+          "mistakes": [
+            {
+              "wrong": "My trousers is new.",
+              "right": "My trousers are new.",
+              "why": "'Trousers' çoğul bir isimdir ve çoğul fiil alır. Tek bir pantolon için 'a pair of trousers' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural_only"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I bought a new pair of ______ to wear with my shirt.",
+        "answer": "trousers",
+        "distractors": [
+          "scarves",
+          "shirts",
+          "jackets"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tight.adj.1",
+      "lemma": "tight",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "clothes that fit too closely",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/taɪt/",
+        "uk": "/taɪt/"
+      },
+      "def": {
+        "micro": "fitting close to the body",
+        "short": "fitting closely to your body, not loose or easy to move in",
+        "long": "Fitting closely to your body, so it is not loose. A shirt, trousers, or shoes can feel this way if they are too small."
+      },
+      "examples": [
+        {
+          "en": "These jeans are too tight for me.",
+          "tr": "Bu kot pantolon bana fazla dar.",
+          "register": "neutral",
+          "focus": "tight"
+        },
+        {
+          "en": "I don't like tight shirts. I like loose ones.",
+          "tr": "Dar gömlekleri sevmem; bol olanları severim.",
+          "register": "neutral",
+          "focus": "tight"
+        },
+        {
+          "en": "My shoes feel tight after a long walk.",
+          "tr": "Uzun bir yürüyüşten sonra ayakkabılarım dar geliyor.",
+          "register": "neutral",
+          "focus": "tight"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "loose"
+      ],
+      "collocations": [
+        "tight jeans",
+        "too tight",
+        "a tight shirt",
+        "tight shoes"
+      ],
+      "word_family": [
+        {
+          "lemma": "tightly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dar",
+          "alt": [
+            "sıkı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Giysi için 'dar' dersiniz; 'tight' ip ve kapak için 'sıkı' anlamında da kullanılır. Dar sokak için 'narrow' denir.",
+          "mistakes": [
+            {
+              "wrong": "This street is tight.",
+              "right": "This street is narrow.",
+              "why": "Dar sokak için 'narrow' kullanılır; 'tight' giysinin ya da bir şeyin sıkı oturmasıdır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't breathe in this shirt. It is too ______.",
+        "answer": "tight",
+        "distractors": [
+          "cheap",
+          "sweet",
+          "quiet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

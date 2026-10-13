@@ -1,0 +1,1039 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.fever.n.1",
+      "lemma": "fever",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "high body temperature",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfiːvər/",
+        "uk": "/ˈfiːvə/"
+      },
+      "def": {
+        "micro": "body heat that is too high",
+        "short": "a body temperature that is higher than normal because you are ill",
+        "long": "A body temperature that is higher than normal because you are ill. A person with one feels hot and tired, and may need to stay in bed."
+      },
+      "examples": [
+        {
+          "en": "My son has a fever, so he can't go to school.",
+          "tr": "Oğlumun ateşi var, o yüzden okula gidemiyor.",
+          "register": "neutral",
+          "focus": "fever"
+        },
+        {
+          "en": "She has a high fever and a bad cough.",
+          "tr": "Ateşi yüksek ve kötü bir öksürüğü var.",
+          "register": "neutral",
+          "focus": "fever"
+        },
+        {
+          "en": "The fever went down after he took the medicine.",
+          "tr": "İlacı aldıktan sonra ateşi düştü.",
+          "register": "neutral",
+          "focus": "fever"
+        }
+      ],
+      "synonyms": [
+        "high temperature"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a fever",
+        "a high fever",
+        "a slight fever",
+        "fever and cough"
+      ],
+      "word_family": [
+        {
+          "lemma": "feverish",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ateş",
+          "alt": [
+            "yüksek ateş"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'ateş' hem 'fire' hem 'fever' demektir. Vücut ısısı için 'fever' kullanılır; İngiltere'de 'a temperature' de denir.",
+          "mistakes": [
+            {
+              "wrong": "I have fire and my head hurts.",
+              "right": "I have a fever and my head hurts.",
+              "why": "Türkçede 'ateşim var' dersiniz ama 'fire' yangın demektir. Hastalıktaki yüksek ateş için 'fever' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He feels very hot and tired. He has a ______.",
+        "answer": "fever",
+        "distractors": [
+          "fire",
+          "wallet",
+          "sale"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sore.adj.1",
+      "lemma": "sore",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɔːr/",
+        "uk": "/sɔː/"
+      },
+      "def": {
+        "micro": "painful to touch or use",
+        "short": "painful in a part of the body, for example because of illness or hard work",
+        "long": "Painful in a part of the body, for example because of an illness or hard exercise. Your throat, your back, or your legs can feel this way."
+      },
+      "examples": [
+        {
+          "en": "I have a sore throat and a cough.",
+          "tr": "Boğazım ağrıyor ve öksürüyorum.",
+          "register": "neutral",
+          "focus": "sore"
+        },
+        {
+          "en": "My legs are sore after the long walk.",
+          "tr": "Uzun yürüyüşten sonra bacaklarım ağrıyor.",
+          "register": "neutral",
+          "focus": "sore"
+        },
+        {
+          "en": "His back is sore from carrying the boxes.",
+          "tr": "Kutuları taşıdığı için sırtı ağrıyor.",
+          "register": "neutral",
+          "focus": "sore"
+        }
+      ],
+      "synonyms": [
+        "painful"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a sore throat",
+        "a sore back",
+        "sore legs",
+        "feel sore"
+      ],
+      "word_family": [
+        {
+          "lemma": "soreness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağrıyan, ağrılı",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'boğaz ağrısı' dersiniz; İngilizcede vücut parçasının önüne 'sore' gelir: a sore throat, sore legs.",
+          "mistakes": [
+            {
+              "wrong": "I have a pain throat.",
+              "right": "I have a sore throat.",
+              "why": "Türkçedeki 'boğaz ağrısı' tamlamasını kelime kelime çevirince 'pain throat' çıkar. İngilizcede doğru kalıp 'sore throat'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't swallow well. I have a ______ throat.",
+        "answer": "sore",
+        "distractors": [
+          "tall",
+          "new",
+          "cheap"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sick.adj.1",
+      "lemma": "sick",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not healthy",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪk/",
+        "uk": "/sɪk/"
+      },
+      "def": {
+        "micro": "not well in your body",
+        "short": "having an illness; not healthy",
+        "long": "Having an illness; not healthy. In American English, 'sick' is the normal word for this. In British English, 'ill' is more common, and 'feel sick' means that your stomach feels bad."
+      },
+      "examples": [
+        {
+          "en": "I was sick last week, so I stayed home.",
+          "tr": "Geçen hafta hastaydım, o yüzden evde kaldım.",
+          "register": "neutral",
+          "focus": "sick"
+        },
+        {
+          "en": "My daughter is sick today and can't go to school.",
+          "tr": "Kızım bugün hasta, okula gidemiyor.",
+          "register": "neutral",
+          "focus": "sick"
+        },
+        {
+          "en": "Ali looked sick, so we took him to the doctor.",
+          "tr": "Ali hasta görünüyordu, biz de onu doktora götürdük.",
+          "register": "neutral",
+          "focus": "sick"
+        }
+      ],
+      "synonyms": [
+        "ill",
+        "unwell"
+      ],
+      "antonyms": [
+        "healthy",
+        "well"
+      ],
+      "collocations": [
+        "get sick",
+        "feel sick",
+        "a sick child",
+        "sick leave"
+      ],
+      "word_family": [
+        {
+          "lemma": "sickness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hasta",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Hasta' için ABD'de 'sick', İngiltere'de çoğunlukla 'ill' denir. 'I feel sick' ise genellikle 'midem bulanıyor' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My son is ______ today. He has a fever and can't go to school.",
+        "answer": "sick",
+        "distractors": [
+          "tight",
+          "ripe",
+          "cheap"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pain.n.1",
+      "lemma": "pain",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/peɪn/",
+        "uk": "/peɪn/"
+      },
+      "def": {
+        "micro": "a feeling of hurting",
+        "short": "the bad feeling in your body when you are hurt or ill",
+        "long": "The bad feeling in your body when you are hurt or ill. It can be small or very strong, and it can last a short or a long time."
+      },
+      "examples": [
+        {
+          "en": "I have a pain in my back.",
+          "tr": "Sırtımda bir ağrı var.",
+          "register": "neutral",
+          "focus": "pain"
+        },
+        {
+          "en": "Tell the doctor where you feel the pain.",
+          "tr": "Ağrıyı nerede hissettiğini doktora söyle.",
+          "register": "neutral",
+          "focus": "pain"
+        },
+        {
+          "en": "He took a tablet for the pain.",
+          "tr": "Ağrı için bir hap aldı.",
+          "register": "neutral",
+          "focus": "pain"
+        }
+      ],
+      "synonyms": [
+        "ache"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "back pain",
+        "a sharp pain",
+        "in pain",
+        "a pain in my leg"
+      ],
+      "word_family": [
+        {
+          "lemma": "painful",
+          "pos": "adj"
+        },
+        {
+          "lemma": "painless",
+          "pos": "adj"
+        },
+        {
+          "lemma": "painkiller",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağrı",
+          "alt": [
+            "acı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede vücut ağrısı için 'ağrı', duygusal acı için 'acı' dersiniz; İngilizcede ikisine de 'pain' denir. 'In pain' = acı çeken.",
+          "mistakes": [
+            {
+              "wrong": "I have pain on my leg.",
+              "right": "I have a pain in my leg.",
+              "why": "Türkçede 'bacağımda' (-de hâli) dersiniz; İngilizcede 'in' kullanılır, 'on' değil: a pain in my leg."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a sharp ______ in my knee when I walk.",
+        "answer": "pain",
+        "distractors": [
+          "price",
+          "size",
+          "menu"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.appointment.n.1",
+      "lemma": "appointment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a time to see a doctor",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpɔɪntmənt/",
+        "uk": "/əˈpɔɪntmənt/"
+      },
+      "def": {
+        "micro": "arranged time to see someone",
+        "short": "a time that you arrange to see a doctor or another person",
+        "long": "A time that you arrange to see a doctor, a dentist, or another person. You book one before you go, and you should arrive on time."
+      },
+      "examples": [
+        {
+          "en": "I have a doctor's appointment at three.",
+          "tr": "Saat üçte doktor randevum var.",
+          "register": "neutral",
+          "focus": "appointment"
+        },
+        {
+          "en": "Can I make an appointment for Monday?",
+          "tr": "Pazartesi için randevu alabilir miyim?",
+          "register": "neutral",
+          "focus": "appointment"
+        },
+        {
+          "en": "Mehmet missed his appointment because of the traffic.",
+          "tr": "Mehmet trafik yüzünden randevusunu kaçırdı.",
+          "register": "neutral",
+          "focus": "appointment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make an appointment",
+        "book an appointment",
+        "cancel an appointment",
+        "a doctor's appointment"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "randevu",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Doktor ya da resmî görüşme için 'appointment'. Türkçede 'randevu' romantik buluşma da olabilir; bunun için 'date' denir.",
+          "mistakes": [
+            {
+              "wrong": "I took an appointment for Friday.",
+              "right": "I made an appointment for Friday.",
+              "why": "Türkçede 'randevu almak' dersiniz; İngilizcede 'take an appointment' denmez, 'make' ya da 'book an appointment' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't come on Monday. I have a doctor's ______ at ten.",
+        "answer": "appointment",
+        "distractors": [
+          "recipe",
+          "discount",
+          "parcel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.diet.n.1",
+      "lemma": "diet",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "the food you usually eat",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdaɪət/",
+        "uk": "/ˈdaɪət/"
+      },
+      "def": {
+        "micro": "food you usually eat",
+        "short": "the kinds of food that a person usually eats",
+        "long": "The kinds of food that a person usually eats. A 'healthy diet' has fruit, vegetables, and little sugar. If you are 'on a diet', you eat less or eat special food to lose weight."
+      },
+      "examples": [
+        {
+          "en": "A healthy diet is good for your heart.",
+          "tr": "Sağlıklı beslenme kalp için iyidir.",
+          "register": "neutral",
+          "focus": "diet"
+        },
+        {
+          "en": "Ayşe is on a diet and doesn't eat sugar.",
+          "tr": "Ayşe diyette ve şeker yemiyor.",
+          "register": "neutral",
+          "focus": "diet"
+        },
+        {
+          "en": "The doctor told him to change his diet.",
+          "tr": "Doktor ona beslenme düzenini değiştirmesini söyledi.",
+          "register": "neutral",
+          "focus": "diet"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a healthy diet",
+        "a balanced diet",
+        "be on a diet",
+        "go on a diet"
+      ],
+      "word_family": [
+        {
+          "lemma": "dietary",
+          "pos": "adj"
+        },
+        {
+          "lemma": "dietitian",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Greek 'diaita', meaning 'way of living'. The word first covered your whole daily routine, including food.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "beslenme düzeni, diyet",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçe 'diyet' genelde kilo verme rejimidir; İngilizcede 'diet' önce yediklerinizin tümüdür. Rejim için 'be on a diet' denir.",
+          "mistakes": [
+            {
+              "wrong": "I am making a diet.",
+              "right": "I am on a diet.",
+              "why": "Türkçede 'diyet yapmak' dersiniz; İngilizcede 'make a diet' denmez, 'be on a diet' ya da 'go on a diet' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My doctor says I need to eat more fruit. I need a healthier ______.",
+        "answer": "diet",
+        "distractors": [
+          "wallet",
+          "pillow",
+          "sleeve"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exercise.n.1",
+      "lemma": "exercise",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "physical activity",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛksərsaɪz/",
+        "uk": "/ˈɛksəsaɪz/"
+      },
+      "def": {
+        "micro": "moving your body to stay fit",
+        "short": "physical activity that keeps your body strong and healthy",
+        "long": "Physical activity, such as running, swimming, or walking, that keeps your body strong and healthy. It is uncountable: you do exercise."
+      },
+      "examples": [
+        {
+          "en": "I try to do some exercise every day.",
+          "tr": "Her gün biraz egzersiz yapmaya çalışıyorum.",
+          "register": "neutral",
+          "focus": "exercise"
+        },
+        {
+          "en": "Walking is good exercise for your heart.",
+          "tr": "Yürüyüş kalbiniz için iyi bir egzersizdir.",
+          "register": "neutral",
+          "focus": "exercise"
+        },
+        {
+          "en": "Doctors say we need more exercise and less sugar.",
+          "tr": "Doktorlar daha çok egzersiz yapıp daha az şeker yememiz gerektiğini söylüyor.",
+          "register": "neutral",
+          "focus": "exercise"
+        }
+      ],
+      "synonyms": [
+        "workout"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "do exercise",
+        "get some exercise",
+        "regular exercise",
+        "lack of exercise"
+      ],
+      "word_family": [
+        {
+          "lemma": "exercise",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "egzersiz",
+          "alt": [
+            "spor",
+            "idman"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'spor yapmak' dersiniz; İngilizcede 'do exercise' denir. 'Sport' ise belirli bir oyundur (football, tennis).",
+          "mistakes": [
+            {
+              "wrong": "I make exercise every morning.",
+              "right": "I do exercise every morning.",
+              "why": "Türkçede 'egzersiz yapmak' dersiniz; İngilizcede 'make exercise' denmez, 'do exercise' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I walk to work every day. It's good ______ for me.",
+        "answer": "exercise",
+        "distractors": [
+          "sale",
+          "parcel",
+          "queue"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stomach.n.1",
+      "lemma": "stomach",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstʌmək/",
+        "uk": "/ˈstʌmək/"
+      },
+      "def": {
+        "micro": "the organ where food goes",
+        "short": "the part inside your body where food goes after you swallow it",
+        "long": "The part inside your body where food goes after you swallow it. People also use the word for the front of the body below the chest: \"My stomach hurts.\""
+      },
+      "examples": [
+        {
+          "en": "My stomach hurts after lunch.",
+          "tr": "Öğle yemeğinden sonra karnım ağrıyor.",
+          "register": "neutral",
+          "focus": "stomach"
+        },
+        {
+          "en": "Don't take this medicine on an empty stomach.",
+          "tr": "Bu ilacı aç karnına alma.",
+          "register": "neutral",
+          "focus": "stomach"
+        },
+        {
+          "en": "Spicy food is bad for my stomach.",
+          "tr": "Acılı yemek midem için kötü.",
+          "register": "neutral",
+          "focus": "stomach"
+        }
+      ],
+      "synonyms": [
+        "tummy"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "stomach ache",
+        "an upset stomach",
+        "on an empty stomach",
+        "stomach pain"
+      ],
+      "word_family": [
+        {
+          "lemma": "stomachache",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mide",
+          "alt": [
+            "karın"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'mide' (iç organ) ve 'karın' (gövdenin ön kısmı) ayrıdır; İngilizcede ikisi için de 'stomach' denir. 'Ch' burada /k/ okunur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't take this medicine on an empty ______.",
+        "answer": "stomach",
+        "distractors": [
+          "towel",
+          "kettle",
+          "pillow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prescription.n.1",
+      "lemma": "prescription",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈskrɪpʃən/",
+        "uk": "/prɪˈskrɪpʃən/"
+      },
+      "def": {
+        "micro": "doctor's note for medicine",
+        "short": "a paper from a doctor that lets you buy a medicine",
+        "long": "A paper or a message from a doctor that says which medicine you need. You usually take it to a pharmacy to get the medicine. Some medicines are sold without one."
+      },
+      "examples": [
+        {
+          "en": "The doctor gave me a prescription for my cough.",
+          "tr": "Doktor öksürüğüm için bana reçete yazdı.",
+          "register": "neutral",
+          "focus": "prescription"
+        },
+        {
+          "en": "You need a prescription to buy this medicine.",
+          "tr": "Bu ilacı almak için reçete gerekiyor.",
+          "register": "neutral",
+          "focus": "prescription"
+        },
+        {
+          "en": "Ayşe collected her prescription from the pharmacy.",
+          "tr": "Ayşe reçetesini eczaneden aldı.",
+          "register": "neutral",
+          "focus": "prescription"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a prescription for",
+        "write a prescription",
+        "without a prescription",
+        "by prescription"
+      ],
+      "word_family": [
+        {
+          "lemma": "prescribe",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'praescribere', meaning 'to write before'. A doctor writes the order first, then you get the medicine.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "reçete",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İlaç reçetesi 'prescription', yemek tarifi 'recipe' olur. Reçetesiz satılan ilaç için 'over-the-counter medicine' denir.",
+          "mistakes": [
+            {
+              "wrong": "The doctor wrote me a recipe.",
+              "right": "The doctor wrote me a prescription.",
+              "why": "'Recipe' yemek tarifidir; Türkçedeki 'reçete' ile karıştırılır. İlaç reçetesi için 'prescription' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't buy this medicine without a ______ from a doctor.",
+        "answer": "prescription",
+        "distractors": [
+          "recipe",
+          "receipt",
+          "refund"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.injury.n.1",
+      "lemma": "injury",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪndʒəri/",
+        "uk": "/ˈɪndʒəri/"
+      },
+      "def": {
+        "micro": "damage to the body",
+        "short": "harm to a part of your body, for example from an accident",
+        "long": "Harm to a part of your body, for example from an accident or from sport. A broken leg or a cut on your hand is an injury. Serious ones may need a hospital."
+      },
+      "examples": [
+        {
+          "en": "He missed the match because of a knee injury.",
+          "tr": "Diz sakatlığı yüzünden maça çıkamadı.",
+          "register": "neutral",
+          "focus": "injury"
+        },
+        {
+          "en": "Luckily, there were no serious injuries in the accident.",
+          "tr": "Neyse ki kazada ciddi bir yaralanma olmadı.",
+          "register": "neutral",
+          "focus": "injuries"
+        },
+        {
+          "en": "Wear a helmet to avoid head injuries.",
+          "tr": "Kafa yaralanmalarını önlemek için kask tak.",
+          "register": "neutral",
+          "focus": "injuries"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a knee injury",
+        "a serious injury",
+        "a sports injury",
+        "avoid injury"
+      ],
+      "word_family": [
+        {
+          "lemma": "injure",
+          "pos": "v"
+        },
+        {
+          "lemma": "injured",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaralanma",
+          "alt": [
+            "sakatlık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kaza ya da spor sonucu oluşan hasar için 'injury' (yaralanma, sakatlık); hastalık için 'illness' ya da 'disease' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He fell off his bike and has a bad ______ in his leg.",
+        "answer": "injury",
+        "distractors": [
+          "flu",
+          "cold",
+          "fever"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

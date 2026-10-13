@@ -1,0 +1,1012 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.mess.n.1",
+      "lemma": "mess",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mɛs/",
+        "uk": "/mɛs/"
+      },
+      "def": {
+        "micro": "a very untidy place",
+        "short": "a place where things are dirty or not in order",
+        "long": "A place or state where things are dirty or not in order. Children often make a mess when they eat or play. You can also say \"What a mess!\""
+      },
+      "examples": [
+        {
+          "en": "Sorry about the mess. I wasn't expecting guests.",
+          "tr": "Dağınıklık için kusura bakma. Misafir beklemiyordum.",
+          "register": "neutral",
+          "focus": "mess"
+        },
+        {
+          "en": "The kids made a mess in the kitchen.",
+          "tr": "Çocuklar mutfakta ortalığı dağıttı.",
+          "register": "neutral",
+          "focus": "mess"
+        },
+        {
+          "en": "My room is a mess. I'll clean it tonight.",
+          "tr": "Odam çok dağınık. Bu akşam toplayacağım.",
+          "register": "neutral",
+          "focus": "mess"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a mess",
+        "a real mess",
+        "in a mess",
+        "what a mess",
+        "a mess on the floor"
+      ],
+      "word_family": [
+        {
+          "lemma": "messy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dağınıklık",
+          "alt": [
+            "karışıklık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Be a mess' kişi ya da durum için 'berbat durumda' demek de olabilir: 'I'm a mess' = perişanım.",
+          "mistakes": [
+            {
+              "wrong": "My room is very mess.",
+              "right": "My room is a mess.",
+              "why": "'Mess' isimdir, sıfat değildir. Sıfat için 'messy' kullanılır: My room is messy."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry about the ______. I didn't have time to clean.",
+        "answer": "mess",
+        "distractors": [
+          "price",
+          "cheese",
+          "towel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tap.n.1",
+      "lemma": "tap",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "water tap in a kitchen or bathroom",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tæp/",
+        "uk": "/tæp/"
+      },
+      "def": {
+        "micro": "device that lets water out",
+        "short": "a thing that you turn to let water come out of a pipe",
+        "long": "A thing with a handle that you turn to let water come out of a pipe, for example in a kitchen or bathroom. Americans usually say 'faucet'."
+      },
+      "examples": [
+        {
+          "en": "Turn off the tap when you brush your teeth.",
+          "tr": "Dişlerini fırçalarken musluğu kapat.",
+          "register": "neutral",
+          "focus": "tap"
+        },
+        {
+          "en": "The kitchen tap is leaking again.",
+          "tr": "Mutfak musluğu yine damlatıyor.",
+          "register": "neutral",
+          "focus": "tap"
+        },
+        {
+          "en": "You can drink water straight from the tap here.",
+          "tr": "Burada suyu doğrudan musluktan içebilirsin.",
+          "register": "neutral",
+          "focus": "tap"
+        }
+      ],
+      "synonyms": [
+        "faucet"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "turn on the tap",
+        "turn off the tap",
+        "tap water",
+        "a leaking tap",
+        "cold tap"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "musluk",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "ABD'de 'faucet', İngiltere'de 'tap' denir. 'Tap water' musluk suyudur. 'Tap' fiil olarak 'hafifçe vurmak' da demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please turn off the ______. Water is running everywhere.",
+        "answer": "tap",
+        "distractors": [
+          "towel",
+          "pillow",
+          "blanket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.leak.v.1",
+      "lemma": "leak",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/liːk/",
+        "uk": "/liːk/"
+      },
+      "def": {
+        "micro": "let water out of a hole",
+        "short": "to let water or another liquid come out through a small hole or crack",
+        "long": "To let water or another liquid come out through a small hole or crack by mistake. A roof, a pipe, a tap, or a pen can leak."
+      },
+      "examples": [
+        {
+          "en": "The roof leaks when it rains hard.",
+          "tr": "Şiddetli yağmur yağınca çatıdan su sızıyor.",
+          "register": "neutral",
+          "focus": "leaks"
+        },
+        {
+          "en": "The bathroom tap is leaking, and the floor is wet.",
+          "tr": "Banyo musluğu damlatıyor, zemin ıslak.",
+          "register": "neutral",
+          "focus": "leaking"
+        },
+        {
+          "en": "My pen leaked in my bag, and now everything is blue.",
+          "tr": "Kalemim çantamda aktı, şimdi her şey mavi.",
+          "register": "neutral",
+          "focus": "leaked"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "leak water",
+        "a leaking tap",
+        "a leaking pipe",
+        "the roof leaks"
+      ],
+      "word_family": [
+        {
+          "lemma": "leak",
+          "pos": "n"
+        },
+        {
+          "lemma": "leaky",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sızdırmak",
+          "alt": [
+            "akmak",
+            "damlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'çatı akıyor' ya da 'musluk damlatıyor' dersiniz; İngilizcede hepsi için 'leak' kullanılır: The roof leaks. İsim olarak 'a leak' sızıntı demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The old roof will ______ if it rains heavily.",
+        "answer": "leak",
+        "distractors": [
+          "tidy",
+          "taste",
+          "wear"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.landlord.n.1",
+      "lemma": "landlord",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlændlɔːrd/",
+        "uk": "/ˈlændlɔːd/"
+      },
+      "def": {
+        "micro": "owner of a home you rent",
+        "short": "the person who owns a home and lets you live in it for rent",
+        "long": "The person who owns a house or an apartment and lets other people live in it for money. A woman who does this is sometimes called a landlady."
+      },
+      "examples": [
+        {
+          "en": "Our landlord is very friendly and helpful.",
+          "tr": "Ev sahibimiz çok cana yakın ve yardımsever.",
+          "register": "neutral",
+          "focus": "landlord"
+        },
+        {
+          "en": "I called the landlord because the heater is broken.",
+          "tr": "Kalorifer bozuk olduğu için ev sahibini aradım.",
+          "register": "neutral",
+          "focus": "landlord"
+        },
+        {
+          "en": "The landlord wants to raise the rent next year.",
+          "tr": "Ev sahibi gelecek yıl kirayı artırmak istiyor.",
+          "register": "neutral",
+          "focus": "landlord"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "call the landlord",
+        "a good landlord",
+        "talk to the landlord",
+        "landlord and tenant"
+      ],
+      "word_family": [
+        {
+          "lemma": "landlady",
+          "pos": "n"
+        },
+        {
+          "lemma": "tenant",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ev sahibi",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Ev sahibi' Türkçede misafir ağırlayan kişi için de kullanılır; İngilizcede kiraya veren kişi 'landlord', misafir ağırlayan 'host' olur.",
+          "mistakes": [
+            {
+              "wrong": "My house owner is very nice.",
+              "right": "My landlord is very nice.",
+              "why": "Kiraya veren kişi için 'house owner' denmez; 'landlord' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ said the rent will go up in January.",
+        "answer": "landlord",
+        "distractors": [
+          "doctor",
+          "waiter",
+          "tourist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ceiling.n.1",
+      "lemma": "ceiling",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsiːlɪŋ/",
+        "uk": "/ˈsiːlɪŋ/"
+      },
+      "def": {
+        "micro": "top inside surface of a room",
+        "short": "the flat surface above you at the top of a room",
+        "long": "The flat surface above you at the top of a room. People often put lights on it, and in many homes it is painted white."
+      },
+      "examples": [
+        {
+          "en": "There is a big spider on the ceiling.",
+          "tr": "Tavanda büyük bir örümcek var.",
+          "register": "neutral",
+          "focus": "ceiling"
+        },
+        {
+          "en": "Our apartment has high ceilings and big windows.",
+          "tr": "Dairemizin tavanları yüksek ve pencereleri büyük.",
+          "register": "neutral",
+          "focus": "ceilings"
+        },
+        {
+          "en": "We painted the ceiling white last weekend.",
+          "tr": "Geçen hafta sonu tavanı beyaza boyadık.",
+          "register": "neutral",
+          "focus": "ceiling"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "floor"
+      ],
+      "collocations": [
+        "a high ceiling",
+        "a low ceiling",
+        "on the ceiling",
+        "ceiling light",
+        "ceiling fan"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tavan",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Ceiling' odanın içindeki üst yüzeydir; dışarıdaki çatı 'roof' olur. 'Tavan' kelimesi bazen 'üst sınır' (price ceiling) anlamında da kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The light on the ______ doesn't work.",
+        "answer": "ceiling",
+        "distractors": [
+          "towel",
+          "cheese",
+          "blanket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.iron.v.1",
+      "lemma": "iron",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "to press clothes",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈaɪərn/",
+        "uk": "/ˈaɪən/"
+      },
+      "def": {
+        "micro": "make clothes flat with heat",
+        "short": "to make clothes flat and smooth with a hot tool",
+        "long": "To make clothes flat and smooth by pressing them with a hot, flat tool. Many people iron their shirts before work or school."
+      },
+      "grammar": {
+        "pattern": "iron + sth"
+      },
+      "examples": [
+        {
+          "en": "I need to iron my shirt for the meeting.",
+          "tr": "Toplantı için gömleğimi ütülemem lazım.",
+          "register": "neutral",
+          "focus": "iron"
+        },
+        {
+          "en": "Ayşe irons all the clothes on Sunday evening.",
+          "tr": "Ayşe bütün kıyafetleri pazar akşamı ütüler.",
+          "register": "neutral",
+          "focus": "irons"
+        },
+        {
+          "en": "This shirt is very wrinkled. Can you iron it?",
+          "tr": "Bu gömlek çok buruşuk. Ütüler misin?",
+          "register": "neutral",
+          "focus": "iron"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "iron a shirt",
+        "iron the clothes",
+        "iron your trousers",
+        "ironing board"
+      ],
+      "word_family": [
+        {
+          "lemma": "iron",
+          "pos": "n"
+        },
+        {
+          "lemma": "ironing",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ütülemek",
+          "alt": [
+            "ütü yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Aynı kelime isim olarak 'ütü aleti' ve 'demir' (metal) anlamına da gelir. 'Do the ironing' = ütü yapmak.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My shirt is all wrinkled. I need to ______ it.",
+        "answer": "iron",
+        "distractors": [
+          "boil",
+          "fry",
+          "taste"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.uncle.n.1",
+      "lemma": "uncle",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʌŋkəl/",
+        "uk": "/ˈʌŋkəl/"
+      },
+      "def": {
+        "micro": "your parent's brother",
+        "short": "the brother of your mother or father, or the husband of your aunt",
+        "long": "The brother of your mother or father, or the husband of your aunt. English uses one word for all of these men."
+      },
+      "examples": [
+        {
+          "en": "My uncle lives in Germany.",
+          "tr": "Amcam Almanya'da yaşıyor.",
+          "register": "neutral",
+          "focus": "uncle"
+        },
+        {
+          "en": "Maria's uncle owns a small bakery.",
+          "tr": "Maria'nın dayısının küçük bir fırını var.",
+          "register": "neutral",
+          "focus": "uncle"
+        },
+        {
+          "en": "We visit my uncle and aunt every holiday.",
+          "tr": "Her bayram amcamı ve yengemi ziyaret ederiz.",
+          "register": "neutral",
+          "focus": "uncle"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "my uncle",
+        "uncle and aunt",
+        "a favorite uncle",
+        "visit your uncle"
+      ],
+      "word_family": [
+        {
+          "lemma": "aunt",
+          "pos": "n"
+        },
+        {
+          "lemma": "nephew",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "amca, dayı",
+          "alt": [
+            "enişte"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede baba tarafı 'amca', anne tarafı 'dayı', teyze ya da halanın eşi 'enişte' diye ayrılır; İngilizcede hepsine 'uncle' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My mother's brother is my ______.",
+        "answer": "uncle",
+        "distractors": [
+          "cousin",
+          "nephew",
+          "grandfather"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.aunt.n.1",
+      "lemma": "aunt",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ænt/",
+        "uk": "/ɑːnt/"
+      },
+      "def": {
+        "micro": "your parent's sister",
+        "short": "the sister of your mother or father, or the wife of your uncle",
+        "long": "The sister of your mother or father, or the wife of your uncle. English uses one word for all of these women."
+      },
+      "examples": [
+        {
+          "en": "My aunt lives near us.",
+          "tr": "Teyzem bize yakın oturuyor.",
+          "register": "neutral",
+          "focus": "aunt"
+        },
+        {
+          "en": "Kenji's aunt sent him a birthday card.",
+          "tr": "Kenji'nin halası ona doğum günü kartı gönderdi.",
+          "register": "neutral",
+          "focus": "aunt"
+        },
+        {
+          "en": "Both of my aunts are coming for the holiday.",
+          "tr": "İki teyzem de bayrama geliyor.",
+          "register": "neutral",
+          "focus": "aunts"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "my aunt",
+        "aunt and uncle",
+        "visit my aunt"
+      ],
+      "word_family": [
+        {
+          "lemma": "uncle",
+          "pos": "n"
+        },
+        {
+          "lemma": "niece",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hala, teyze",
+          "alt": [
+            "yenge"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede baba tarafı 'hala', anne tarafı 'teyze', amca ya da dayının eşi 'yenge' denir; İngilizcede hepsine 'aunt' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My father's sister is my ______.",
+        "answer": "aunt",
+        "distractors": [
+          "uncle",
+          "niece",
+          "cousin"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cousin.n.1",
+      "lemma": "cousin",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌzən/",
+        "uk": "/ˈkʌzən/"
+      },
+      "def": {
+        "micro": "child of your uncle or aunt",
+        "short": "the son or daughter of your uncle or aunt",
+        "long": "The son or daughter of your uncle or aunt. In English, the word does not say if the person is a boy or a girl, or from your mother's or father's side."
+      },
+      "examples": [
+        {
+          "en": "My cousin is getting married in June.",
+          "tr": "Kuzenim Haziran'da evleniyor.",
+          "register": "neutral",
+          "focus": "cousin"
+        },
+        {
+          "en": "I grew up with my cousins in the same street.",
+          "tr": "Kuzenlerimle aynı sokakta büyüdüm.",
+          "register": "neutral",
+          "focus": "cousins"
+        },
+        {
+          "en": "Ayşe and her cousin have the same name.",
+          "tr": "Ayşe ile kuzeninin adı aynı.",
+          "register": "neutral",
+          "focus": "cousin"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "my cousin",
+        "first cousin",
+        "distant cousin",
+        "cousin's wedding"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'cosin', from Latin 'consobrinus', a child of your mother's sister.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kuzen",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede 'amca çocuğu', 'dayı çocuğu' gibi ayrı söylenen kişilerin hepsine İngilizcede 'cousin' denir. Cinsiyeti belirtmek gerekirse 'female cousin' dersiniz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My uncle's daughter is my ______.",
+        "answer": "cousin",
+        "distractors": [
+          "niece",
+          "aunt",
+          "sister"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.parent.n.1",
+      "lemma": "parent",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɛrənt/",
+        "uk": "/ˈpeərənt/"
+      },
+      "def": {
+        "micro": "mother or father",
+        "short": "a person's mother or father",
+        "long": "A person's mother or father. We usually use the plural, 'parents', for both of them: 'my parents' means my mother and my father."
+      },
+      "examples": [
+        {
+          "en": "My parents live in Bursa.",
+          "tr": "Annem babam Bursa'da yaşıyor.",
+          "register": "neutral",
+          "focus": "parents"
+        },
+        {
+          "en": "Her parents want her to study medicine.",
+          "tr": "Annesi babası onun tıp okumasını istiyor.",
+          "register": "neutral",
+          "focus": "parents"
+        },
+        {
+          "en": "Both of Sam's parents work in the same hospital.",
+          "tr": "Sam'in annesi de babası da aynı hastanede çalışıyor.",
+          "register": "neutral",
+          "focus": "parents"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "child"
+      ],
+      "collocations": [
+        "my parents",
+        "single parent",
+        "proud parents",
+        "new parents"
+      ],
+      "word_family": [
+        {
+          "lemma": "parenting",
+          "pos": "n"
+        },
+        {
+          "lemma": "parental",
+          "pos": "adj"
+        },
+        {
+          "lemma": "grandparent",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ebeveyn",
+          "alt": [
+            "anne baba"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğul 'parents' günlük konuşmada 'anne baba' demektir. Tekil 'parent' tek bir ebeveyni anlatır: He is a single parent.",
+          "mistakes": [
+            {
+              "wrong": "My parent live in Bursa.",
+              "right": "My parents live in Bursa.",
+              "why": "Türkçede 'annem babam' demek yeterlidir; İngilizcede anne ve baba birlikte kastediliyorsa çoğul 'parents' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My mother and father are my ______.",
+        "answer": "parents",
+        "distractors": [
+          "cousins",
+          "uncles",
+          "children"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

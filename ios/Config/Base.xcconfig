@@ -1,0 +1,24 @@
+// Lockglow build configuration.
+// Edit BUNDLE_ID_PREFIX and DEVELOPMENT_TEAM before running `xcodegen generate`.
+
+// Reverse-DNS prefix of YOUR bundle ids, e.g. com.yourname
+BUNDLE_ID_PREFIX = com.yusufuyar
+
+// Apple Developer Team ID (10 characters). Leave empty to pick the team in Xcode instead.
+DEVELOPMENT_TEAM = 3B57WU65P8
+
+// Name under the icon on the Home Screen and in the widget gallery (plan §4.4). The brand still needs
+// a TURKPATENT search and a trademark attorney's view; if it changes, change this one line.
+APP_DISPLAY_NAME = Lockglow
+
+// Brand-neutral part of the bundle ids and the App Group. Bundle ids can never change after the
+// first App Store upload, so they do not carry the brand. Decide before registering the App ID.
+APP_ID_SLUG = vocabwidget
+
+// App Group shared by the app and the widget. Must be registered in the Developer portal.
+APP_GROUP_ID = group.$(BUNDLE_ID_PREFIX).$(APP_ID_SLUG)
+
+MARKETING_VERSION = 0.1.0
+CURRENT_PROJECT_VERSION = 1
+
+CODE_SIGN_STYLE = Automatic

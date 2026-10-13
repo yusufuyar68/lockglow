@@ -1,0 +1,1096 @@
+{
+"schema_version": "1.0",
+"l1_langs": ["tr"],
+"generated_on": "2026-10-10",
+"entries": [
+{
+  "id": "en.breakfast.n.1",
+  "lemma": "breakfast",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":2426,"zipf":4.61},
+  "ipa": {"us":"/ˈbrɛkfəst/","uk":"/ˈbrɛkfəst/"},
+  "def": {
+    "micro": "first meal of the day",
+    "short": "the first meal of the day, eaten in the morning",
+    "long": "The first meal of the day, usually eaten in the morning before work or school. It can be light (tea and toast) or large (eggs, cheese, olives, and more)."
+  },
+  "examples": [
+    {"en":"I usually have breakfast at seven.","tr":"Genellikle yedide kahvaltı yaparım.","register":"neutral","focus":"breakfast"},
+    {"en":"Ayşe made breakfast for the whole family.","tr":"Ayşe bütün aile için kahvaltı hazırladı.","register":"neutral","focus":"breakfast"},
+    {"en":"Breakfast is included in the hotel price.","tr":"Kahvaltı otel fiyatına dâhildir.","register":"neutral","focus":"Breakfast"}
+  ],
+  "synonyms": ["morning meal"],
+  "antonyms": [],
+  "collocations": ["have breakfast","skip breakfast","make breakfast","breakfast in bed","a light breakfast"],
+  "word_family": [],
+  "etymology": {"text":"From 'break' + 'fast': the meal that breaks the long overnight fast since dinner.","origin":"English","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "kahvaltı",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Türkçedeki 'kahvaltı' da bir birleşik sözcüktür (kahve altı). İngilizcede öğün adlarından önce genellikle 'the' kullanılmaz.",
+      "mistakes": [
+        {"wrong":"I did breakfast at eight.","right":"I had breakfast at eight.","why":"'Kahvaltı yapmak' kalıbını 'do' ile kurmayın; İngilizcede 'have breakfast' denir ('make breakfast' = hazırlamak)."},
+        {"wrong":"I eat the breakfast at 8.","right":"I eat breakfast at 8.","why":"Öğün adlarının önüne genellikle 'the' gelmez."}
+      ],
+      "mnemonic": "Break + fast = orucu bozmak. İftar gibi, ama her sabah: gece boyu süren açlığı bozan öğün."
+    }
+  },
+  "tags": {"primary_topic":"food_drink","topics":["food_drink","time_routines"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"We usually eat ______ at 7 a.m., before school.","answer":"breakfast","distractors":["dinner","supper","lunch"]},
+  "meta": {"status":"sample","qa_flags":[]}
+},
+{
+  "id": "en.borrow.v.1",
+  "lemma": "borrow",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":7101,"zipf":4},
+  "ipa": {"us":"/ˈbɑːroʊ/","uk":"/ˈbɒrəʊ/"},
+  "def": {
+    "micro": "take and give back later",
+    "short": "take something from someone and give it back later",
+    "long": "To take something that belongs to someone else, with their permission, and return it after a time. You borrow FROM someone; the other person lends it TO you."
+  },
+  "grammar": {"pattern":"borrow + sth + from + sb"},
+  "examples": [
+    {"en":"Can I borrow your pen for a minute?","tr":"Kalemini bir dakikalığına ödünç alabilir miyim?","register":"neutral","focus":"borrow"},
+    {"en":"She borrowed some money from her brother.","tr":"Kardeşinden biraz para ödünç aldı.","register":"neutral","focus":"borrowed"},
+    {"en":"You can borrow up to five books from the library.","tr":"Kütüphaneden en fazla beş kitap ödünç alabilirsiniz.","register":"formal","focus":"borrow"}
+  ],
+  "synonyms": ["take on loan"],
+  "antonyms": ["lend"],
+  "collocations": ["borrow money","borrow a book","borrow from a friend","living on borrowed time","borrow an idea"],
+  "word_family": [{"lemma":"borrower","pos":"n"},{"lemma":"loan","pos":"n"}],
+  "etymology": {"text":"From Old English 'borgian' (to borrow, lend, give a pledge), from 'borg', a pledge: borrowing once meant leaving something as a guarantee.","origin":"Old English","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "ödünç almak",
+      "alt": ["borç almak"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede 'ödünç' hem alma hem verme için kullanılır (ödünç almak / ödünç vermek). İngilizcede iki ayrı fiil var: borrow = alan, lend = veren.",
+      "mistakes": [
+        {"wrong":"Can you borrow me your pen?","right":"Can you lend me your pen? / Can I borrow your pen?","why":"'Borrow' yalnızca alan kişi için; veren kişi 'lend' kullanır."},
+        {"wrong":"I borrowed him my book.","right":"I lent him my book.","why":"Kitabı veren kişi olarak 'lend' (lent) kullanılır."}
+      ],
+      "mnemonic": "Borrow ≈ BORÇ alırım. Borç alan 'borrow' der, borç veren 'lend'."
+    }
+  },
+  "tags": {"primary_topic":"confusing_words","topics":["confusing_words","shopping_money","school_learning"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:lend"],"sensitivity":0},
+  "quiz": {"cloze":"Could I ______ your charger? Mine is dead.","answer":"borrow","distractors":["lend","give","owe"]},
+  "meta": {"status":"sample","qa_flags":["ipa_us_regional_variant"]}
+},
+{
+  "id": "en.luggage.n.1",
+  "lemma": "luggage",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":9624,"zipf":3.8},
+  "ipa": {"us":"/ˈlʌɡɪdʒ/","uk":"/ˈlʌɡɪdʒ/"},
+  "def": {
+    "micro": "bags and cases for a trip",
+    "short": "the bags and suitcases you take with you when you travel",
+    "long": "All the bags, suitcases, and boxes a traveler takes on a journey. 'Baggage' means almost the same and is common in airline English. It is uncountable: never 'luggages'."
+  },
+  "examples": [
+    {"en":"Please keep your luggage with you at all times.","tr":"Lütfen bagajınızı her zaman yanınızda tutun.","register":"formal","focus":"luggage"},
+    {"en":"The airline lost our luggage on the way to Izmir.","tr":"Havayolu şirketi, İzmir'e giderken bagajımızı kaybetti.","register":"neutral","focus":"luggage"},
+    {"en":"Do you have any luggage to check in?","tr":"Teslim edeceğiniz bagajınız var mı?","register":"formal","focus":"luggage"}
+  ],
+  "synonyms": ["baggage"],
+  "antonyms": [],
+  "collocations": ["hand luggage","carry-on luggage","check in luggage","lost luggage","luggage allowance"],
+  "word_family": [],
+  "etymology": {"text":"From 'lug' (to drag or carry with effort) + '-age': literally, the things you have to lug around.","origin":"English","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "bagaj",
+      "alt": ["seyahat eşyası"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçedeki 'bagaj' arabanın bagajı anlamına da gelir; İngilizcede araba bagajı 'trunk' (ABD) veya 'boot' (İngiltere)'dir, 'luggage' değildir.",
+      "mistakes": [
+        {"wrong":"I have two luggages.","right":"I have two bags. / two pieces of luggage","why":"'Luggage' sayılamayan isimdir, çoğul eki almaz; sayı için 'bag' veya 'piece of luggage' kullanın."},
+        {"wrong":"My luggage are heavy.","right":"My luggage is heavy.","why":"Sayılamayan isimler tekil fiil alır."}
+      ],
+      "mnemonic": "'Lug' = sürükleyerek taşımak. Luggage = sürükleyip taşıdığın şeyler."
+    }
+  },
+  "tags": {"primary_topic":"travel_tourism","topics":["travel_tourism","cities_transport"],"exams":[],"register":"neutral","vibes":[],"flags":["uncountable"],"sensitivity":0},
+  "quiz": {"cloze":"The airline lost my ______, so I had no clothes for the trip.","answer":"luggage","distractors":["ticket","passport","flight"]},
+  "meta": {"status":"sample","qa_flags":[]}
+},
+{
+  "id": "en.actually.adv.1",
+  "lemma": "actually",
+  "type": "word",
+  "pos": "adv",
+  "sense_no": 1,
+  "sense_note": "in fact",
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":302,"zipf":5.49},
+  "ipa": {"us":"/ˈæktʃuəli/","uk":"/ˈæktʃuəli/"},
+  "def": {
+    "micro": "in fact; in reality",
+    "short": "used to say what is really true, often when it is not what people expect",
+    "long": "Used to show what is really true or what really happened, especially when it is surprising or different from what was expected. It does NOT mean 'at the moment' ('currently' or 'now' mean that)."
+  },
+  "examples": [
+    {"en":"I thought the test would be hard, but it was actually quite easy.","tr":"Sınavın zor olacağını sanıyordum ama aslında oldukça kolaymış.","register":"neutral","focus":"actually"},
+    {"en":"Actually, I'd prefer tea, if that's okay.","tr":"Aslında çay tercih ederim, sakıncası yoksa.","register":"neutral","focus":"Actually"},
+    {"en":"He looks shy, but he actually loves meeting new people.","tr":"Çekingen görünüyor ama aslında yeni insanlarla tanışmaya bayılıyor.","register":"neutral","focus":"actually"}
+  ],
+  "synonyms": ["in fact","in reality","really","in truth"],
+  "antonyms": [],
+  "collocations": ["actually quite","what actually happened","did you actually","but actually","actually, no"],
+  "word_family": [{"lemma":"actual","pos":"adj"}],
+  "etymology": {"text":"From 'actual', from Latin 'actus' (a doing, a deed): 'actually' = in deed, in real fact, not just in theory.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "aslında, gerçekte",
+      "alt": ["doğrusu","esasında"],
+      "equivalence": "false_friend",
+      "false_friend": {"tr_word":"aktüel","tr_means":"güncel, şu anki","en_for_that":"current / currently"},
+      "note": "Türkçedeki 'aktüel' = 'güncel'. İngilizce 'actual/actually' ise 'gerçek/aslında' demektir. 'Şu anda' için 'currently' veya 'at the moment' kullanılır.",
+      "mistakes": [
+        {"wrong":"The actual price of petrol is very high.","right":"The current price of petrol is very high.","why":"'Güncel' = 'current'; 'actual' = gerçek/asıl."},
+        {"wrong":"Actually I'm studying English. (= şu anda)","right":"I'm currently studying English.","why":"'Actually' zaman bildirmez; 'şu anda' için 'currently / at the moment'."}
+      ],
+      "mnemonic": "ACT = eylem: 'actually' = fiilen, gerçekte. 'Aktüel' (güncel) tuzağına düşme."
+    }
+  },
+  "tags": {"primary_topic":"confusing_words","topics":["confusing_words","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["false_friend_tr"],"sensitivity":0},
+  "quiz": {"cloze":"He looks young, but he is ______ forty.","answer":"actually","distractors":["currently","recently","fortunately"]},
+  "meta": {"status":"sample","qa_flags":[]}
+},
+{
+  "id": "en.deadline.n.1",
+  "lemma": "deadline",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":5871,"zipf":4.12},
+  "ipa": {"us":"/ˈdɛdlaɪn/","uk":"/ˈdɛdlaɪn/"},
+  "def": {
+    "micro": "last time to finish a task",
+    "short": "the latest date or time by which something must be finished",
+    "long": "A fixed date or time by which a task must be completed or handed in. Missing a deadline can have consequences, such as a penalty or a lost opportunity."
+  },
+  "examples": [
+    {"en":"The deadline for the report is Friday at noon.","tr":"Raporun son teslim tarihi cuma günü öğlen.","register":"neutral","focus":"deadline"},
+    {"en":"We worked all night to meet the deadline.","tr":"Son teslim tarihine yetişmek için bütün gece çalıştık.","register":"neutral","focus":"deadline"},
+    {"en":"She asked for a deadline extension.","tr":"Son teslim tarihinin uzatılmasını istedi.","register":"neutral","focus":"deadline"}
+  ],
+  "synonyms": ["due date","cutoff","time limit"],
+  "antonyms": [],
+  "collocations": ["meet a deadline","miss a deadline","tight deadline","set a deadline","extend the deadline"],
+  "word_family": [],
+  "etymology": {"text":"First a line around a US Civil War prison camp that prisoners could not cross. The 'time limit' sense came later (printing); the link between the two is only indirectly documented.","origin":"American English","confidence":"medium"},
+  "l1": {
+    "tr": {
+      "gloss": "son teslim tarihi",
+      "alt": ["son tarih","teslim süresi"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Gündelik iş dilinde Türkçede de 'deadline' aynen kullanılır; resmî yazıda 'son teslim tarihi' tercih edin.",
+      "mistakes": [
+        {"wrong":"The deadline is until Friday.","right":"The deadline is Friday. / We must finish by Friday.","why":"Türkçedeki 'cumaya kadar' kalıbı 'until' ile çevrilir; ama bitiş anı için 'by' kullanılır."}
+      ],
+      "mnemonic": "'Dead' (ölü) + 'line' (çizgi): bu çizgiyi geçersen iş 'ölür'."
+    }
+  },
+  "tags": {"primary_topic":"workplace_office","topics":["workplace_office","business_management","school_learning"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"The project is late, so we asked for a new ______.","answer":"deadline","distractors":["salary","holiday","uniform"]},
+  "meta": {"status":"sample","qa_flags":["etymology_link_debated"]}
+},
+{
+  "id": "en.look_up_to.phv.1",
+  "lemma": "look up to",
+  "type": "phrasal_verb",
+  "pos": "phv",
+  "sense_no": 1,
+  "sense_note": "admire",
+  "level": "B2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us":"/lʊk ˈʌp tu/","uk":"/lʊk ˈʌp tuː/"},
+  "def": {
+    "micro": "admire and respect",
+    "short": "admire and respect someone, often an older or more experienced person",
+    "long": "To feel great respect and admiration for someone and see them as a role model. The opposite is 'look down on'. Careful: 'look up' without 'to' means something different (search for information)."
+  },
+  "grammar": {"pattern":"look up to + sb (inseparable)"},
+  "examples": [
+    {"en":"I've always looked up to my older sister.","tr":"Ablamı hep örnek aldım.","register":"neutral","focus":"looked up to"},
+    {"en":"Many young players look up to him.","tr":"Birçok genç oyuncu onu kendine örnek alıyor.","register":"neutral","focus":"look up to"},
+    {"en":"Children look up to teachers who treat them fairly.","tr":"Çocuklar, kendilerine adil davranan öğretmenlere büyük saygı duyar.","register":"neutral","focus":"look up to"}
+  ],
+  "synonyms": ["admire","respect","idolize"],
+  "antonyms": ["look down on"],
+  "collocations": ["look up to a role model","always looked up to","someone to look up to","look up to your parents"],
+  "word_family": [],
+  "etymology": {"text":"Picture a child literally looking up at a taller person: 'up' = higher status. The opposite 'look down on' uses the same picture.","origin":"English","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "hayran olmak, örnek almak",
+      "alt": ["saygı duymak"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Tek sözcüklük bir karşılığı yok; bağlama göre 'hayran olmak', 'saygı duymak' veya 'örnek almak'. Zıttı 'look down on' = 'tepeden bakmak'.",
+      "mistakes": [
+        {"wrong":"I looked up to the word in the dictionary.","right":"I looked up the word in the dictionary.","why":"'Look up' = bakıp bulmak; 'to' eklenince anlam tamamen değişir."},
+        {"wrong":"I look up my father.","right":"I look up to my father.","why":"Saygı duymak için 'to' şarttır."}
+      ],
+      "mnemonic": "Yukarı (up) bakıyorsun çünkü karşındaki senden 'yüce': yukarı bakmak = hayran olmak."
+    }
+  },
+  "tags": {"primary_topic":"phrasal_verbs","topics":["phrasal_verbs","social_skills","family_relationships"],"exams":[],"register":"neutral","vibes":[],"flags":["inseparable"],"sensitivity":0},
+  "quiz": {"cloze":"I really ______ my grandfather. He taught me to work hard and be kind.","answer":"look up to","distractors":["look down on","look after","look into"]},
+  "meta": {"status":"sample","qa_flags":["cefr_estimate_check"]}
+},
+{
+  "id": "en.break_the_ice.idm.1",
+  "lemma": "break the ice",
+  "type": "idiom",
+  "pos": "idm",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us":"/breɪk ðə ˈaɪs/","uk":"/breɪk ðə ˈaɪs/"},
+  "def": {
+    "micro": "ease an awkward start",
+    "short": "do or say something to make people feel relaxed when they first meet",
+    "long": "To start a conversation or activity in a way that makes people who do not know each other feel more comfortable. It is often done with a joke, a question, or a small game."
+  },
+  "grammar": {"pattern":"break the ice (with sb)"},
+  "examples": [
+    {"en":"He told a funny story to break the ice at the meeting.","tr":"Toplantıda buzları eritmek için komik bir hikâye anlattı.","register":"neutral","focus":"break the ice"},
+    {"en":"A quick game helped break the ice on the first day of the course.","tr":"Kısa bir oyun, kursun ilk gününde buzları eritmeye yardımcı oldu.","register":"neutral","focus":"break the ice"},
+    {"en":"Offering her a coffee was a good way to break the ice.","tr":"Ona kahve ikram etmek, ortamı yumuşatmanın iyi bir yoluydu.","register":"neutral","focus":"break the ice"}
+  ],
+  "synonyms": ["ease the tension","get talking"],
+  "antonyms": [],
+  "collocations": ["an icebreaker","break the ice with sb","help break the ice","icebreaker question","a good way to break the ice"],
+  "word_family": [{"lemma":"icebreaker","pos":"n"}],
+  "etymology": {"text":"Probably from the literal image of breaking ice to open a path. The figurative sense ('make a first step') is recorded in the late 1500s; Shakespeare uses it in The Taming of the Shrew.","origin":"English","confidence":"medium"},
+  "l1": {
+    "tr": {
+      "gloss": "buzları eritmek",
+      "alt": ["ortamı yumuşatmak","ilk adımı atmak"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Türkçede de aynı imge var: 'buzları eritmek'. İngilizcede özellikle ilk tanışma anındaki gerginliği kırmak için kullanılır.",
+      "mistakes": [
+        {"wrong":"He broke ice at the party.","right":"He broke the ice at the party.","why":"Deyim kalıptır; 'the' eksik bırakılmaz."}
+      ],
+      "mnemonic": "Buz gibi soğuk ortam: 'buzu kır' = break the ice. Türkçedeki 'buzları eritmek' ile aynı görüntü."
+    }
+  },
+  "tags": {"primary_topic":"idioms_expressions","topics":["idioms_expressions","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"A short game is a great way to ______ at a new team's first meeting.","answer":"break the ice","distractors":["break the rules","break a leg","break down"]},
+  "meta": {"status":"sample","qa_flags":["etymology_medium_verify"]}
+},
+{
+  "id": "en.sympathetic.adj.1",
+  "lemma": "sympathetic",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": "understanding",
+  "level": "B2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":9549,"zipf":3.81},
+  "ipa": {"us":"/ˌsɪmpəˈθɛtɪk/","uk":"/ˌsɪmpəˈθɛtɪk/"},
+  "def": {
+    "micro": "understanding others' pain",
+    "short": "showing that you understand and care about someone's problems",
+    "long": "Showing that you understand and care about someone's problems or feelings. It does not mean 'nice' or 'likable': for that, use 'likeable', 'friendly', or 'charming'."
+  },
+  "examples": [
+    {"en":"The nurse was very sympathetic when I told her about my fears.","tr":"Hemşireye korkularımı anlattığımda çok anlayışlı davrandı.","register":"neutral","focus":"sympathetic"},
+    {"en":"Her boss was sympathetic and let her leave early.","tr":"Müdürü anlayış gösterip erken çıkmasına izin verdi.","register":"neutral","focus":"sympathetic"},
+    {"en":"I'm sympathetic to your situation, but the rules are the rules.","tr":"Durumuna anlayış gösteriyorum ama kurallar kurallardır.","register":"neutral","focus":"sympathetic"}
+  ],
+  "synonyms": ["understanding","compassionate","caring","kind"],
+  "antonyms": ["unsympathetic","heartless","indifferent"],
+  "collocations": ["a sympathetic ear","sympathetic to/towards","a sympathetic response","sympathetic nervous system"],
+  "word_family": [{"lemma":"sympathy","pos":"n"},{"lemma":"sympathize","pos":"v"}],
+  "etymology": {"text":"From Greek 'sympatheia', 'fellow feeling': syn 'together' + pathos 'feeling, suffering'.","origin":"Greek","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "anlayışlı, şefkatli",
+      "alt": ["merhametli","destekleyici"],
+      "equivalence": "false_friend",
+      "false_friend": {"tr_word":"sempatik","tr_means":"sevimli, cana yakın, hoş","en_for_that":"likeable / charming"},
+      "note": "'Sempatik' = sevimli, hoşa giden. İngilizce 'sympathetic' = acıyı/derdi anlayan. Tıpta 'sempatik sinir sistemi' = 'sympathetic nervous system' (orada eşleşir).",
+      "mistakes": [
+        {"wrong":"Your brother is a very sympathetic person. (= sevimli)","right":"Your brother is a very likeable person.","why":"'Sevimli' için 'likeable/charming'; 'sympathetic' = anlayışlı, derdini anlayan."}
+      ],
+      "mnemonic": "'Sempatik' diye okuma: sym-pa-THET-ik. Sym = birlikte + pathos = acı: derdini paylaşan."
+    }
+  },
+  "tags": {"primary_topic":"emotions_feelings","topics":["emotions_feelings","personality","confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["false_friend_tr"],"sensitivity":0},
+  "quiz": {"cloze":"When I lost my job, my manager was very ______ and offered to help.","answer":"sympathetic","distractors":["jealous","careless","strict"]},
+  "meta": {"status":"sample","qa_flags":[]}
+},
+{
+  "id": "en.phishing.n.1",
+  "lemma": "phishing",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":30917,"zipf":2.95},
+  "ipa": {"us":"/ˈfɪʃɪŋ/","uk":"/ˈfɪʃɪŋ/"},
+  "def": {
+    "micro": "scam emails that steal data",
+    "short": "tricking people into giving passwords or money, usually with fake emails",
+    "long": "A type of online fraud in which criminals send fake emails, texts, or websites that look real, to trick you into revealing passwords, card numbers, or other private information."
+  },
+  "examples": [
+    {"en":"Never click a link in an email you weren't expecting; it could be phishing.","tr":"Beklemediğin bir e-postadaki bağlantıya asla tıklama; kimlik avı olabilir.","register":"neutral","focus":"phishing"},
+    {"en":"The bank warned customers about a new phishing scam.","tr":"Banka, müşterileri yeni bir kimlik avı dolandırıcılığına karşı uyardı.","register":"neutral","focus":"phishing"},
+    {"en":"Our company runs phishing tests to train employees.","tr":"Şirketimiz, çalışanları eğitmek için oltalama testleri yapıyor.","register":"neutral","focus":"phishing"}
+  ],
+  "synonyms": ["email scam"],
+  "antonyms": [],
+  "collocations": ["phishing email","phishing attack","phishing scam","phishing link","fall for phishing"],
+  "word_family": [{"lemma":"phish","pos":"v"},{"lemma":"phisher","pos":"n"}],
+  "etymology": {"text":"A respelling of 'fishing': criminals 'fish' for passwords with bait. The 'ph' echoes older hacker slang 'phreaking'. In use since the mid-1990s.","origin":"English (hacker slang)","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "kimlik avı, oltalama",
+      "alt": ["dolandırıcılık e-postası"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Bankacılık ve resmî dilde 'oltalama', haberlerde 'kimlik avı' daha yaygın; ikisi de doğru. Fiil: 'phish' (oltalama yapmak).",
+      "mistakes": [
+        {"wrong":"I got a fishing email.","right":"I got a phishing email.","why":"'Fishing' (balık avı) ile aynı okunur; bilgisayar dolandırıcılığı 'ph' ile yazılır."}
+      ],
+      "mnemonic": "Ph-ishing = fishing: şifreni yakalamak için 'olta' atarlar. Türkçesi de zaten 'oltalama'."
+    }
+  },
+  "tags": {"primary_topic":"technology_internet","topics":["technology_internet","society_media","finance_economics"],"exams":[],"register":"neutral","vibes":[],"flags":["homophone:fishing"],"sensitivity":0},
+  "quiz": {"cloze":"Never enter your password on a page you reached from a ______ email.","answer":"phishing","distractors":["fishing","phasing","filming"]},
+  "meta": {"status":"sample","qa_flags":["tr_term_not_in_tdk_both_used"]}
+},
+{
+  "id": "en.chronic.adj.1",
+  "lemma": "chronic",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": "long-lasting (illness, problem)",
+  "level": "B2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":5110,"zipf":4.2},
+  "ipa": {"us":"/ˈkrɑːnɪk/","uk":"/ˈkrɒnɪk/"},
+  "def": {
+    "micro": "lasting a long time",
+    "short": "lasting a long time or constantly returning, especially an illness",
+    "long": "Describes a disease or problem that lasts a long time or keeps coming back. The opposite is 'acute' (sudden and short). It can also describe bad habits or problems: chronic lateness."
+  },
+  "examples": [
+    {"en":"She has suffered from chronic back pain for years.","tr":"Yıllardır kronik sırt ağrısı çekiyor.","register":"neutral","focus":"chronic"},
+    {"en":"Chronic stress can damage your health.","tr":"Kronik stres sağlığınıza zarar verebilir.","register":"neutral","focus":"Chronic"},
+    {"en":"The city has a chronic shortage of affordable housing.","tr":"Şehirde uygun fiyatlı konut sıkıntısı kronikleşmiş durumda.","register":"neutral","focus":"chronic"}
+  ],
+  "synonyms": ["long-term","persistent","ongoing","long-lasting"],
+  "antonyms": ["acute","short-term"],
+  "collocations": ["chronic pain","chronic illness","chronic disease","chronic fatigue","chronic shortage"],
+  "word_family": [{"lemma":"chronically","pos":"adv"},{"lemma":"chronicle","pos":"n"}],
+  "etymology": {"text":"From Greek 'khronos' (time): a chronic illness lasts through time. Same root as chronology and synchronize.","origin":"Greek","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "kronik",
+      "alt": ["müzmin","süreğen (TDK)"],
+      "equivalence": "cognate",
+      "false_friend": null,
+      "note": "Türkçedeki 'kronik' ile aynı anlam, kolay kelime. Dikkat: vurgu İngilizcede ilk hecede (KRON-ik), Türkçede son hecede (kro-NİK).",
+      "mistakes": [
+        {"wrong":"I had chronic pain yesterday.","right":"I had severe pain yesterday.","why":"'Chronic' şiddeti değil süreyi anlatır; 'dün' gibi kısa süre için 'severe' veya 'acute' kullanın."}
+      ],
+      "mnemonic": "Kronik = kronometre, kronoloji ile aynı kök (khronos = zaman): zamana yayılan hastalık."
+    }
+  },
+  "tags": {"primary_topic":"medicine_healthcare","topics":["medicine_healthcare","health_body"],"exams":[],"register":"neutral","vibes":[],"flags":["cognate_tr"],"sensitivity":0},
+  "quiz": {"cloze":"He has ______ asthma, so he always carries an inhaler.","answer":"chronic","distractors":["acute","sudden","brief"]},
+  "meta": {"status":"sample","qa_flags":[]}
+},
+{
+  "id": "en.procrastinate.v.1",
+  "lemma": "procrastinate",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":41321,"zipf":2.71},
+  "ipa": {"us":"/proʊˈkræstəneɪt/","uk":"/prəʊˈkræstɪneɪt/"},
+  "def": {
+    "micro": "delay things you should do",
+    "short": "delay doing something you should do, usually because you don't feel like it",
+    "long": "To keep putting off a task that needs to be done, often by doing something easier or more fun instead. It suggests an unhelpful habit, not a planned delay (for that, use 'postpone')."
+  },
+  "grammar": {"pattern":"procrastinate (about/over sth); person as subject"},
+  "examples": [
+    {"en":"I always procrastinate when I have to write an essay.","tr":"Kompozisyon yazmam gerektiğinde hep oyalanıp işi sonraya bırakıyorum.","register":"neutral","focus":"procrastinate"},
+    {"en":"Stop procrastinating and start your homework!","tr":"Oyalanmayı bırak da ödevine başla!","register":"informal","focus":"procrastinating"},
+    {"en":"He procrastinated for weeks before calling the dentist.","tr":"Diş hekimini aramayı haftalarca erteleyip durdu.","register":"neutral","focus":"procrastinated"}
+  ],
+  "synonyms": ["put off","delay","stall"],
+  "antonyms": ["act promptly"],
+  "collocations": ["tend to procrastinate","stop procrastinating","a chronic procrastinator","procrastinate about work","procrastinate for days"],
+  "word_family": [{"lemma":"procrastination","pos":"n"},{"lemma":"procrastinator","pos":"n"}],
+  "etymology": {"text":"From Latin 'pro' (forward) + 'crastinus' (of tomorrow, from 'cras' = tomorrow): literally, 'to push forward to tomorrow'.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "işi sürekli ertelemek",
+      "alt": ["oyalanmak","savsaklamak"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Ertelemek' (postpone) planlı olabilir; 'procrastinate' ise alışkanlık hâline gelmiş, zararlı erteleme/oyalanmadır ('sonra yaparım' tavrı).",
+      "mistakes": [
+        {"wrong":"The meeting was procrastinated until Monday.","right":"The meeting was postponed until Monday.","why":"Toplantı gibi planlı ertelemeler için 'postpone'; 'procrastinate' kişinin kendi alışkanlığıdır, nesne almaz."}
+      ],
+      "mnemonic": "Latince 'cras' = yarın: pro-CRAS-tinate = işi yarına doğru itmek."
+    }
+  },
+  "tags": {"primary_topic":"success_productivity","topics":["success_productivity","mind_psychology","school_learning"],"exams":[],"register":"neutral","vibes":["relatable"],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"I know I should study, but I keep ______ and scrolling on my phone.","answer":"procrastinating","distractors":["rushing","succeeding","cooperating"]},
+  "meta": {"status":"sample","qa_flags":["ipa_us_variant_prə"]}
+},
+{
+  "id": "en.resilient.adj.1",
+  "lemma": "resilient",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":15044,"zipf":3.5},
+  "ipa": {"us":"/rɪˈzɪliənt/","uk":"/rɪˈzɪliənt/"},
+  "def": {
+    "micro": "quick to recover",
+    "short": "able to recover quickly after problems, shocks, or illness",
+    "long": "Able to bounce back quickly after difficulties, or (of a material) able to return to its shape after being bent or stretched. Used for people, communities, economies, and materials."
+  },
+  "examples": [
+    {"en":"Children are often more resilient than adults expect.","tr":"Çocuklar çoğu zaman yetişkinlerin düşündüğünden daha dirençlidir.","register":"neutral","focus":"resilient"},
+    {"en":"The economy proved resilient despite the crisis.","tr":"Ekonomi, krize rağmen dirençli olduğunu kanıtladı.","register":"neutral","focus":"resilient"},
+    {"en":"Resilient teams learn from failure instead of blaming each other.","tr":"Dirençli ekipler birbirini suçlamak yerine başarısızlıktan ders çıkarır.","register":"neutral","focus":"Resilient"}
+  ],
+  "synonyms": ["tough","hardy","adaptable","strong"],
+  "antonyms": ["fragile","vulnerable"],
+  "collocations": ["highly resilient","remarkably resilient","resilient economy","resilient to stress","stay resilient"],
+  "word_family": [{"lemma":"resilience","pos":"n"}],
+  "etymology": {"text":"From Latin 'resilire', 'to jump back' (re- 'back' + salire 'to jump'): a resilient person 'springs back'.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "dirençli, çabuk toparlanan",
+      "alt": ["esnek","psikolojik olarak sağlam"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Psikolojide isim hâli 'resilience' için 'psikolojik dayanıklılık' (bazen 'psikolojik sağlamlık') denir. Vurgu 'toparlanma'dır, sadece katlanmak değil.",
+      "mistakes": [
+        {"wrong":"This phone is very resilient to water.","right":"This phone is very resistant to water.","why":"'Resilient' toparlanmayı anlatır; suya/darbeye karşı dayanıklılık için 'resistant' (water-resistant)."}
+      ],
+      "mnemonic": "Latince 'salire' = zıplamak: düşünce topun geri zıplaması gibi toparlanan."
+    }
+  },
+  "tags": {"primary_topic":"mind_psychology","topics":["mind_psychology","personality","success_productivity"],"exams":[],"register":"neutral","vibes":["inspiring"],"flags":["confusable:resistant"],"sensitivity":0},
+  "quiz": {"cloze":"After losing her job, she proved ______ and found a better one within months.","answer":"resilient","distractors":["fragile","reluctant","generous"]},
+  "meta": {"status":"sample","qa_flags":[]}
+},
+{
+  "id": "en.mitigate.v.1",
+  "lemma": "mitigate",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":14170,"zipf":3.54},
+  "ipa": {"us":"/ˈmɪtɪɡeɪt/","uk":"/ˈmɪtɪɡeɪt/"},
+  "def": {
+    "micro": "make less harmful",
+    "short": "make something bad less serious, harmful, or painful",
+    "long": "To reduce how serious, harmful, or painful something is, without removing it completely. Common in formal writing about risks, damage, and climate change: mitigate the effects, impact, or risk of something."
+  },
+  "grammar": {"pattern":"mitigate + the effects/risk/impact of sth"},
+  "examples": [
+    {"en":"Planting trees can help mitigate the effects of climate change.","tr":"Ağaç dikmek, iklim değişikliğinin etkilerini hafifletmeye yardımcı olabilir.","register":"formal","focus":"mitigate"},
+    {"en":"The company took steps to mitigate the risk of data loss.","tr":"Şirket, veri kaybı riskini azaltmak için önlemler aldı.","register":"formal","focus":"mitigate"},
+    {"en":"Good insulation mitigates heat loss in winter.","tr":"İyi yalıtım, kışın ısı kaybını azaltır.","register":"neutral","focus":"mitigates"}
+  ],
+  "synonyms": ["alleviate","reduce","lessen","ease"],
+  "antonyms": ["worsen","aggravate"],
+  "collocations": ["mitigate the risk","mitigate the impact","mitigate the effects","mitigate damage","mitigating circumstances"],
+  "word_family": [{"lemma":"mitigation","pos":"n"},{"lemma":"mitigating","pos":"adj"}],
+  "etymology": {"text":"From Latin 'mitigare', 'to soften': mitis 'mild, gentle' + agere 'to do, make': literally 'make mild'.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "hafifletmek, azaltmak",
+      "alt": ["etkisini azaltmak"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Sorunu tamamen ortadan kaldırmaz, şiddetini azaltır. 'Önlemek' (prevent) değildir.",
+      "mistakes": [
+        {"wrong":"We must mitigate against floods.","right":"We must mitigate the effects of floods.","why":"'Mitigate' doğrudan nesne alır; 'against' ile kullanılmaz ('militate against' ile karıştırılır)."},
+        {"wrong":"This law will mitigate crime completely.","right":"This law will reduce crime.","why":"'Mitigate' tamamen önlemek değil, hafifletmektir."}
+      ],
+      "mnemonic": "Latince 'mitis' = yumuşak: sert bir sorunu yumuşatmak."
+    }
+  },
+  "tags": {"primary_topic":"environment_climate","topics":["environment_climate","academic_core","business_management"],"exams":["ielts","toefl","sat"],"register":"formal","vibes":[],"flags":["confusable:militate"],"sensitivity":0},
+  "quiz": {"cloze":"Sandbags can ______ the damage caused by flooding.","answer":"mitigate","distractors":["ignore","predict","celebrate"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified"]}
+},
+{
+  "id": "en.eloquent.adj.1",
+  "lemma": "eloquent",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":22069,"zipf":3.21},
+  "ipa": {"us":"/ˈɛləkwənt/","uk":"/ˈɛləkwənt/"},
+  "def": {
+    "micro": "fluent and persuasive",
+    "short": "able to speak or write in a clear, fluent, and persuasive way",
+    "long": "Good at expressing ideas in a way that is clear, powerful, and moving. Used for people (an eloquent speaker) and for things such as speeches, writing, or even silence: 'an eloquent look'."
+  },
+  "examples": [
+    {"en":"She gave an eloquent speech about the importance of education.","tr":"Eğitimin önemi üzerine akıcı ve etkileyici bir konuşma yaptı.","register":"neutral","focus":"eloquent"},
+    {"en":"He was too nervous to be eloquent, but his honesty won everyone over.","tr":"Belagatli konuşamayacak kadar gergindi ama dürüstlüğüyle herkesi etkiledi.","register":"neutral","focus":"eloquent"},
+    {"en":"Her tears were more eloquent than any words.","tr":"Gözyaşları her sözden daha çok şey anlatıyordu.","register":"literary","focus":"eloquent"}
+  ],
+  "synonyms": ["articulate","fluent","persuasive","expressive"],
+  "antonyms": ["inarticulate","tongue-tied"],
+  "collocations": ["eloquent speech","eloquent speaker","eloquent plea","speak eloquently","eloquent silence"],
+  "word_family": [{"lemma":"eloquence","pos":"n"},{"lemma":"eloquently","pos":"adv"}],
+  "etymology": {"text":"From Latin 'eloqui', 'to speak out' (e- 'out' + loqui 'to speak'). Same root as 'loquacious' and 'colloquial'.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "belagatli, etkili konuşan",
+      "alt": ["akıcı","anlamlı (bakış)"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Belagatli' resmî/edebî bir sözcüktür; gündelik dilde 'iyi konuşan', 'etkileyici konuşan' denir. Bakış ve sessizlik için 'anlamlı, çok şey anlatan'.",
+      "mistakes": [
+        {"wrong":"He is very eloquent in English because he speaks fast.","right":"He is very fluent in English because he speaks fast.","why":"'Eloquent' sadece akıcılık değil, etkili ve ikna edici anlatımdır; hız/akıcılık için 'fluent'."}
+      ],
+      "mnemonic": "'Loqui' = konuşmak. E-loqui-ent: sözü 'dışarı' (e-) güzelce çıkaran."
+    }
+  },
+  "tags": {"primary_topic":"sound_smarter","topics":["sound_smarter","social_skills","literature_writing"],"exams":["sat","gre"],"register":"formal","vibes":["smart"],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"The lawyer's closing argument was so ______ that the jury was moved.","answer":"eloquent","distractors":["vague","brief","clumsy"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified"]}
+},
+{
+  "id": "en.pragmatic.adj.1",
+  "lemma": "pragmatic",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":15248,"zipf":3.49},
+  "ipa": {"us":"/præɡˈmætɪk/","uk":"/præɡˈmætɪk/"},
+  "def": {
+    "micro": "practical and realistic",
+    "short": "dealing with problems in a sensible, realistic way, not by theory",
+    "long": "Focused on what works in real situations rather than on ideals or theory. A pragmatic person or plan accepts limits and chooses practical solutions. Usually a compliment in English."
+  },
+  "examples": [
+    {"en":"We need a pragmatic solution, not a perfect one.","tr":"Mükemmel olmasa da pratik ve gerçekçi bir çözüme ihtiyacımız var.","register":"neutral","focus":"pragmatic"},
+    {"en":"She took a pragmatic approach and focused on small steps.","tr":"Pragmatik bir yaklaşım benimseyip küçük adımlara odaklandı.","register":"neutral","focus":"pragmatic"},
+    {"en":"Being pragmatic, he accepted the lower offer.","tr":"Gerçekçi davranıp daha düşük teklifi kabul etti.","register":"neutral","focus":"pragmatic"}
+  ],
+  "synonyms": ["practical","realistic","sensible","down-to-earth"],
+  "antonyms": ["idealistic","impractical"],
+  "collocations": ["pragmatic approach","pragmatic solution","pragmatic decision","take a pragmatic view","pragmatic about money"],
+  "word_family": [{"lemma":"pragmatism","pos":"n"},{"lemma":"pragmatist","pos":"n"},{"lemma":"pragmatically","pos":"adv"}],
+  "etymology": {"text":"From Greek 'pragmatikos', 'skilled in business', from 'pragma' (deed, action): related to the root of 'practice'.","origin":"Greek","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "pratik, gerçekçi",
+      "alt": ["pragmatik","sonuç odaklı"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede 'pragmatik' bazen 'çıkarcı' tonu taşır; İngilizcede genelde olumlu/nötrdür (TDK karşılığı 'yararcı', günlük dilde nadir).",
+      "mistakes": [
+        {"wrong":"He is pragmatic; he only thinks about his own benefit.","right":"He is opportunistic / self-serving.","why":"'Pragmatic' çıkarcı demek değildir; 'çıkarcı' için 'opportunistic, self-serving'."}
+      ],
+      "mnemonic": "Pragma = eylem (Yunanca); 'pratik' ile aynı kökten: iş gören, sonuç getiren."
+    }
+  },
+  "tags": {"primary_topic":"business_management","topics":["business_management","personality","philosophy_ethics"],"exams":["sat","gre","toefl"],"register":"neutral","vibes":["smart"],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"Rather than wait for the perfect plan, the manager took a ______ approach.","answer":"pragmatic","distractors":["romantic","theoretical","emotional"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified","tr_tone_note_verify"]}
+},
+{
+  "id": "en.ambiguous.adj.1",
+  "lemma": "ambiguous",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":13460,"zipf":3.57},
+  "ipa": {"us":"/æmˈbɪɡjuəs/","uk":"/æmˈbɪɡjuəs/"},
+  "def": {
+    "micro": "having more than one meaning",
+    "short": "unclear because it can be understood in more than one way",
+    "long": "Open to more than one interpretation, so the meaning is not clear. Used for words, sentences, rules, and situations: an ambiguous answer, an ambiguous ending. 'Vague' means not clear or detailed enough."
+  },
+  "examples": [
+    {"en":"The contract wording is ambiguous, so it can be read in two ways.","tr":"Sözleşmenin ifadesi muğlak olduğundan iki farklı şekilde okunabiliyor.","register":"neutral","focus":"ambiguous"},
+    {"en":"Her answer was ambiguous; I couldn't tell if she agreed.","tr":"Cevabı muğlaktı; katılıp katılmadığını anlayamadım.","register":"neutral","focus":"ambiguous"},
+    {"en":"The film has an ambiguous ending that fans still argue about.","tr":"Filmin hâlâ hayranları arasında tartışılan muğlak bir sonu var.","register":"neutral","focus":"ambiguous"}
+  ],
+  "synonyms": ["unclear","vague","equivocal","open to debate"],
+  "antonyms": ["clear","unambiguous","explicit"],
+  "collocations": ["highly ambiguous","ambiguous wording","ambiguous meaning","deliberately ambiguous","ambiguous situation"],
+  "word_family": [{"lemma":"ambiguity","pos":"n"},{"lemma":"ambiguously","pos":"adv"}],
+  "etymology": {"text":"From Latin 'ambiguus', 'going both ways', from 'ambigere' (to wander): ambi- 'around' + agere 'to drive'.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "belirsiz, muğlak",
+      "alt": ["çift anlamlı","iki anlama gelebilen"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'Ambiguous' (muğlak), 'ambitious' (hırslı) ve 'ambivalent' (kararsız, iki duygulu) ile sık karıştırılır.",
+      "mistakes": [
+        {"wrong":"I'm ambiguous about moving abroad.","right":"I'm ambivalent about moving abroad.","why":"Kişinin iki yönlü duygusu için 'ambivalent'; 'ambiguous' söz, cümle ve durumlar içindir."},
+        {"wrong":"He is a very ambiguous person. (= hırslı)","right":"He is a very ambitious person.","why":"'Ambiguous' muğlak, 'ambitious' hırslıdır."}
+      ],
+      "mnemonic": "Ambi- = iki taraflı (ambidextrous: iki elini de kullanan): iki yöne giden = ambiguous."
+    }
+  },
+  "tags": {"primary_topic":"academic_core","topics":["academic_core","society_media","literature_writing"],"exams":["ielts","toefl","sat"],"register":"neutral","vibes":[],"flags":["confusable:ambitious","confusable:ambivalent"],"sensitivity":0},
+  "quiz": {"cloze":"The sign was so ______ that half the drivers turned left and half turned right.","answer":"ambiguous","distractors":["ambitious","ambivalent","abundant"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified"]}
+},
+{
+  "id": "en.condescending.adj.1",
+  "lemma": "condescending",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C1",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":25327,"zipf":3.1},
+  "ipa": {"us":"/ˌkɑːndɪˈsɛndɪŋ/","uk":"/ˌkɒndɪˈsɛndɪŋ/"},
+  "def": {
+    "micro": "talking down to people",
+    "short": "behaving as if you are smarter or more important than other people",
+    "long": "Showing, usually by your tone, that you think you are better than someone and that they cannot understand easily. A condescending remark may sound polite but feels insulting."
+  },
+  "examples": [
+    {"en":"I hate his condescending tone; he explains things as if I were a child.","tr":"Beni çocuk yerine koyan o tepeden bakan tavrından nefret ediyorum.","register":"neutral","focus":"condescending"},
+    {"en":"She gave me a condescending smile and walked away.","tr":"Bana küçümseyici bir gülümsemeyle bakıp uzaklaştı.","register":"neutral","focus":"condescending"},
+    {"en":"Try not to be condescending when you teach beginners.","tr":"Yeni başlayanlara öğretirken tepeden bakmamaya çalış.","register":"neutral","focus":"condescending"}
+  ],
+  "synonyms": ["patronizing","superior","snooty"],
+  "antonyms": ["respectful","humble"],
+  "collocations": ["condescending tone","condescending attitude","a condescending smile","sound condescending","come across as condescending"],
+  "word_family": [{"lemma":"condescend","pos":"v"},{"lemma":"condescension","pos":"n"}],
+  "etymology": {"text":"From Latin 'condescendere' (to stoop down). Early English 'condescend' meant to graciously agree or deign, not to insult; the patronizing tone developed later.","origin":"Latin","confidence":"medium"},
+  "l1": {
+    "tr": {
+      "gloss": "küçümseyici, tepeden bakan",
+      "alt": ["üstten bakan","çocuk yerine koyan"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Türkçedeki 'tepeden bakmak' (TDK: küçümsemek) tam karşılığıdır. Her zaman olumsuzdur; iltifat olarak kullanılmaz.",
+      "mistakes": [
+        {"wrong":"My teacher is very condescending; she always thinks of us.","right":"My teacher is very considerate; she always thinks of us.","why":"'Considerate' = düşünceli; 'condescending' = küçümseyici. İkisi de 'con-' ile başladığı için karışır."}
+      ],
+      "mnemonic": "İçinde 'descend' (inmek) var: yüksekten inip sana 'lütfeden' biri."
+    }
+  },
+  "tags": {"primary_topic":"compliments_insults","topics":["compliments_insults","personality","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["mildly_negative"],"sensitivity":1},
+  "quiz": {"cloze":"Please don't be so ______; I understand the instructions perfectly.","answer":"condescending","distractors":["considerate","contented","convenient"]},
+  "meta": {"status":"sample","qa_flags":["etymology_medium_verify"]}
+},
+{
+  "id": "en.meticulous.adj.1",
+  "lemma": "meticulous",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":21284,"zipf":3.24},
+  "ipa": {"us":"/məˈtɪkjələs/","uk":"/məˈtɪkjələs/"},
+  "def": {
+    "micro": "very careful about details",
+    "short": "showing great care and attention to every small detail",
+    "long": "Very careful and precise, paying attention to even the smallest details. Usually praise: a meticulous planner, meticulous records. It can sound slightly critical if it suggests someone is too fussy."
+  },
+  "examples": [
+    {"en":"He is meticulous about keeping accurate records.","tr":"Kayıtları doğru tutma konusunda son derece titizdir.","register":"neutral","focus":"meticulous"},
+    {"en":"The chef prepared the dish with meticulous care.","tr":"Şef, yemeği büyük bir titizlikle hazırladı.","register":"neutral","focus":"meticulous"},
+    {"en":"Thanks to meticulous planning, the event ran without a single problem.","tr":"Titiz bir planlama sayesinde etkinlik tek bir aksaklık olmadan geçti.","register":"neutral","focus":"meticulous"}
+  ],
+  "synonyms": ["thorough","painstaking","careful","precise","fastidious"],
+  "antonyms": ["careless","sloppy"],
+  "collocations": ["meticulous attention","meticulous planning","meticulous research","meticulous detail","meticulously planned"],
+  "word_family": [{"lemma":"meticulously","pos":"adv"},{"lemma":"meticulousness","pos":"n"}],
+  "etymology": {"text":"From Latin 'meticulosus', 'fearful', from 'metus' (fear). English first used it for 'timid'; the 'careful about details' sense came via French in the 1800s.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "titiz, özenli",
+      "alt": ["çok dikkatli","detaycı"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'Titiz' bazen 'aşırı seçici, memnun edilmesi güç' tonu da taşır (TDK); İngilizce 'meticulous' ise çoğunlukla övgüdür.",
+      "mistakes": [
+        {"wrong":"me-ti-cu-LOUS (stress on the last syllable)","right":"meh-TIK-yuh-lus (stress on the 2nd syllable)","why":"Türkçede vurgu genelde sondadır; bu kelimede ikinci hece vurgulanır."},
+        {"wrong":"He is meticulous of details.","right":"He is meticulous about details.","why":"Edat 'of' değil, 'about' (veya 'in') olur."}
+      ],
+      "mnemonic": "Latince 'metus' = korku: hata yapmaktan korktuğu için her ayrıntıyı iki kez kontrol eden."
+    }
+  },
+  "tags": {"primary_topic":"personality","topics":["personality","workplace_office","sound_smarter"],"exams":["gre","sat"],"register":"neutral","vibes":["smart"],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"The editor was ______ and found a typo on every page.","answer":"meticulous","distractors":["careless","generous","lazy"]},
+  "meta": {"status":"sample","qa_flags":["ipa_uk_variant","exam_tags_unverified"]}
+},
+{
+  "id": "en.ubiquitous.adj.1",
+  "lemma": "ubiquitous",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":16814,"zipf":3.42},
+  "ipa": {"us":"/juˈbɪkwɪtəs/","uk":"/juːˈbɪkwɪtəs/"},
+  "def": {
+    "micro": "found everywhere",
+    "short": "seeming to be present everywhere at the same time",
+    "long": "Present, appearing, or found everywhere, often so common that people stop noticing it. Frequently used for technology and trends: ubiquitous smartphones, a ubiquitous logo. Formal."
+  },
+  "examples": [
+    {"en":"Smartphones have become ubiquitous in modern life.","tr":"Akıllı telefonlar modern hayatın her yerinde karşımıza çıkıyor.","register":"neutral","focus":"ubiquitous"},
+    {"en":"Coffee shops are ubiquitous in this neighborhood.","tr":"Bu mahallede kafelere her yerde rastlanıyor.","register":"neutral","focus":"ubiquitous"},
+    {"en":"The company's logo is ubiquitous; you see it on every street.","tr":"Şirketin logosu her yerde; her sokakta karşına çıkıyor.","register":"neutral","focus":"ubiquitous"}
+  ],
+  "synonyms": ["omnipresent","widespread","pervasive"],
+  "antonyms": ["rare","scarce"],
+  "collocations": ["ubiquitous presence","increasingly ubiquitous","ubiquitous technology","become ubiquitous","virtually ubiquitous"],
+  "word_family": [{"lemma":"ubiquity","pos":"n"}],
+  "etymology": {"text":"From Latin 'ubique', 'everywhere' (ubi 'where' + -que). The noun 'ubiquity' came first in English.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "her yerde bulunan, yaygın",
+      "alt": ["hemen her yerde görülen"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Tek sözcüklük Türkçe karşılığı yok. 'Yaygın' (common) ile karıştırma: 'ubiquitous' gerçekten 'her yerde' demektir.",
+      "mistakes": [
+        {"wrong":"u-bi-ki-TUS (starts like \"umut\")","right":"yoo-BIK-wi-tus","why":"Kelime /juː/ ('yu') ile başlar; 'ü/u' değil. Vurgu ikinci hecede."}
+      ],
+      "mnemonic": "Latince 'ubi' = nerede: 'nerede arasan orada'."
+    }
+  },
+  "tags": {"primary_topic":"technology_internet","topics":["technology_internet","sound_smarter","society_media"],"exams":["gre","sat","toefl"],"register":"formal","vibes":["smart"],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"In big cities, fast-food restaurants are ______; there is one on every corner.","answer":"ubiquitous","distractors":["rare","ancient","hidden"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified"]}
+},
+{
+  "id": "en.ephemeral.adj.1",
+  "lemma": "ephemeral",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":29260,"zipf":2.99},
+  "ipa": {"us":"/ɪˈfɛmərəl/","uk":"/ɪˈfɛmərəl/"},
+  "def": {
+    "micro": "lasting a very short time",
+    "short": "lasting only a short time, often with a sense of beauty or sadness",
+    "long": "Lasting for a very short time. Often used with a poetic feeling for beautiful things that disappear quickly: cherry blossoms, fame, a mood, a trend. Not the same as 'temporary', which is neutral."
+  },
+  "examples": [
+    {"en":"Social media fame is often ephemeral.","tr":"Sosyal medya şöhreti çoğu zaman geçicidir.","register":"neutral","focus":"ephemeral"},
+    {"en":"The cherry blossoms are beautiful but ephemeral.","tr":"Kiraz çiçekleri güzel ama kısa ömürlü.","register":"neutral","focus":"ephemeral"},
+    {"en":"She wrote about the ephemeral joy of a summer evening.","tr":"Bir yaz akşamının uçup giden mutluluğunu yazdı.","register":"literary","focus":"ephemeral"}
+  ],
+  "synonyms": ["fleeting","transient","short-lived","momentary"],
+  "antonyms": ["eternal","permanent","lasting"],
+  "collocations": ["ephemeral nature","ephemeral beauty","ephemeral pleasure","ephemeral fame","ephemeral art"],
+  "word_family": [{"lemma":"ephemera","pos":"n"},{"lemma":"ephemerality","pos":"n"}],
+  "etymology": {"text":"From Greek 'ephemeros', 'lasting a day' (epi 'on' + hemera 'day'). The mayfly, whose adult life lasts about a day, is the classic example.","origin":"Greek","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "geçici, kısa ömürlü",
+      "alt": ["uçup giden","gelip geçici"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Geçici' (temporary) nötrdür; 'ephemeral' çoğunlukla şiirsel bir hüzün ya da güzellik çağrıştırır: 'gelip geçici'.",
+      "mistakes": [
+        {"wrong":"'Ephemeral' means 'eternal'.","right":"'Ephemeral' = short-lived; 'eternal' is its opposite.","why":"'Eternal' (ebedî) ile sesi benzer ama anlamı tam zıttır."}
+      ],
+      "mnemonic": "Yunanca 'hemera' = gün: bir günlük ömür = ephemeral."
+    }
+  },
+  "tags": {"primary_topic":"rare_beautiful","topics":["rare_beautiful","sound_smarter","literature_writing"],"exams":["gre","sat"],"register":"literary","vibes":["beautiful","poetic"],"flags":["confusable:eternal"],"sensitivity":0},
+  "quiz": {"cloze":"Snowflakes are ______: they melt the moment they touch your hand.","answer":"ephemeral","distractors":["eternal","enormous","edible"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified"]}
+},
+{
+  "id": "en.serendipity.n.1",
+  "lemma": "serendipity",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "C2",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":40016,"zipf":2.74},
+  "ipa": {"us":"/ˌsɛrənˈdɪpɪti/","uk":"/ˌsɛrənˈdɪpɪti/"},
+  "def": {
+    "micro": "happy accident",
+    "short": "the lucky chance of discovering something good without looking for it",
+    "long": "The happy experience of finding something valuable or delightful by chance rather than by planning. Often used for lucky meetings, discoveries, and coincidences: 'a moment of pure serendipity'."
+  },
+  "examples": [
+    {"en":"We found this café by pure serendipity.","tr":"Bu kafeyi tam bir tesadüf eseri keşfettik.","register":"neutral","focus":"serendipity"},
+    {"en":"Many scientific discoveries were the result of serendipity.","tr":"Pek çok bilimsel keşif mutlu bir tesadüfün ürünüdür.","register":"neutral","focus":"serendipity"},
+    {"en":"It was serendipity that we sat next to each other on the train.","tr":"Trende yan yana oturmamız tam bir mutlu tesadüftü.","register":"neutral","focus":"serendipity"}
+  ],
+  "synonyms": ["luck","fluke","happy accident"],
+  "antonyms": ["misfortune"],
+  "collocations": ["pure serendipity","by serendipity","sheer serendipity","a moment of serendipity","serendipity strikes"],
+  "word_family": [{"lemma":"serendipitous","pos":"adj"},{"lemma":"serendipitously","pos":"adv"}],
+  "etymology": {"text":"Coined in 1754 by Horace Walpole after the Persian fairy tale 'The Three Princes of Serendip' (Serendip = old name of Sri Lanka), whose heroes kept making lucky discoveries.","origin":"English coinage (Persian tale)","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "mutlu tesadüf",
+      "alt": ["beklenmedik keşif","şans eseri bulma"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Tek sözcüklük karşılığı yok; 'mutlu tesadüf' en yaygın söyleyiş. 'Tesadüf' tek başına iyi ya da kötü olabilir; serendipity her zaman güzel bir sonuç taşır.",
+      "mistakes": [
+        {"wrong":"It was a serendipity.","right":"It was serendipity. / It was a serendipitous meeting.","why":"'Serendipity' sayılamayan isimdir, 'a' almaz; sayılabilir kullanım için 'serendipitous' sıfatı."}
+      ],
+      "mnemonic": "Serendip adasının üç prensi hep aradığından fazlasını buldu: serendipity."
+    }
+  },
+  "tags": {"primary_topic":"rare_beautiful","topics":["rare_beautiful","sound_smarter","love_friendship"],"exams":[],"register":"neutral","vibes":["beautiful","lucky"],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"Meeting my business partner at that random party was pure ______.","answer":"serendipity","distractors":["strategy","punishment","routine"]},
+  "meta": {"status":"sample","qa_flags":["ipa_us_variant_ə"]}
+},
+{
+  "id": "en.enervate.v.1",
+  "lemma": "enervate",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "S",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":231190,"zipf":1.26},
+  "ipa": {"us":"/ˈɛnərveɪt/","uk":"/ˈɛnəveɪt/"},
+  "def": {
+    "micro": "drain of energy",
+    "short": "make someone feel weak or drained of energy",
+    "long": "To weaken someone by taking away their energy or strength. Careful: although it looks like 'energy' or 'energize', it means the opposite. Formal and literary; common on GRE-style lists."
+  },
+  "grammar": {"pattern":"enervate + sb/sth (often passive: be enervated by)"},
+  "examples": [
+    {"en":"The long heat wave enervated the whole town.","tr":"Uzun süren sıcak hava dalgası bütün kasabayı hâlsiz bıraktı.","register":"formal","focus":"enervated"},
+    {"en":"She felt enervated after hours of pointless meetings.","tr":"Saatler süren anlamsız toplantıların ardından kendini bitkin hissetti.","register":"formal","focus":"enervated"},
+    {"en":"The humid weather enervates even the strongest runners.","tr":"Nemli hava, en güçlü koşucuları bile bitkin düşürür.","register":"formal","focus":"enervates"}
+  ],
+  "synonyms": ["drain","exhaust","weaken","sap"],
+  "antonyms": ["energize","invigorate"],
+  "collocations": ["feel enervated","enervating heat","enervating effect","utterly enervated"],
+  "word_family": [{"lemma":"enervation","pos":"n"},{"lemma":"enervating","pos":"adj"}],
+  "etymology": {"text":"From Latin 'enervare', 'to weaken': e- 'out' + nervus 'sinew': literally 'to cut out the sinews'.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "hâlsiz bırakmak",
+      "alt": ["güçten düşürmek","bitkin düşürmek"],
+      "equivalence": "false_friend",
+      "false_friend": {"tr_word":"enerji","tr_means":"güç, canlılık","en_for_that":"energize / invigorate"},
+      "note": "'Enerji' kökünü çağrıştırdığı için ters anlaşılır: enervate = enerjiyi AZALTMAK. Enerji vermek = 'energize'.",
+      "mistakes": [
+        {"wrong":"A cup of coffee enervates me in the morning.","right":"A cup of coffee energizes me in the morning.","why":"'Enervate' enerji vermek değil, almaktır."}
+      ],
+      "mnemonic": "e-NERV-ate: sinirleri (nerve) 'dışarı' çıkarılmış gibi hâlsiz. 'e-NERJİ' değil, 'e-NERV'."
+    }
+  },
+  "tags": {"primary_topic":"gre","topics":["gre","sound_smarter","health_body"],"exams":["gre","sat"],"register":"formal","vibes":["smart"],"flags":["commonly_misused","false_friend_tr"],"sensitivity":0},
+  "quiz": {"cloze":"The endless humidity ______ the travelers until they could barely walk.","answer":"enervated","distractors":["energized","inspired","refreshed"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified"]}
+},
+{
+  "id": "en.mellifluous.adj.1",
+  "lemma": "mellifluous",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "S",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":86508,"zipf":2.08},
+  "ipa": {"us":"/məˈlɪfluəs/","uk":"/məˈlɪfluəs/"},
+  "def": {
+    "micro": "sweet and smooth to hear",
+    "short": "sweet and smooth to the ear, like a beautiful voice or music",
+    "long": "Describes sounds, especially voices, music, or words, that are smooth, sweet, and pleasant to hear, as if flowing like honey. A literary word for a beautiful speaking or singing voice."
+  },
+  "examples": [
+    {"en":"The radio host's mellifluous voice made the late-night news feel soothing.","tr":"Radyo sunucusunun tatlı, akıcı sesi gece haberlerini bile rahatlatıcı kılıyordu.","register":"neutral","focus":"mellifluous"},
+    {"en":"A mellifluous melody drifted from the open window.","tr":"Açık pencereden kulağa hoş gelen bir melodi süzülüyordu.","register":"literary","focus":"mellifluous"},
+    {"en":"Her mellifluous Italian made even a simple order sound like poetry.","tr":"Ahenkli İtalyancası, sıradan bir siparişi bile şiir gibi dinletiyordu.","register":"literary","focus":"mellifluous"}
+  ],
+  "synonyms": ["melodious","dulcet","silvery","smooth"],
+  "antonyms": ["harsh","grating","raspy"],
+  "collocations": ["mellifluous voice","mellifluous tones","mellifluous sound","mellifluous prose"],
+  "word_family": [{"lemma":"mellifluously","pos":"adv"}],
+  "etymology": {"text":"From Late Latin 'mellifluus', 'flowing with honey': mel 'honey' + fluere 'to flow'.","origin":"Latin","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "tatlı sesli, ahenkli",
+      "alt": ["kulağa hoş gelen","akıcı ve tatlı"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Yazılı/edebî bir sözcüktür; yalnızca ses, müzik ve söz için kullanılır. Tat için kullanılmaz.",
+      "mistakes": [
+        {"wrong":"The cake was mellifluous.","right":"The cake was delicious. / The singer's voice was mellifluous.","why":"'Mel' (bal) kökü yüzünden tat için denemeyin; yalnızca ses ve söz için."}
+      ],
+      "mnemonic": "Latince 'mel' = bal: bal gibi akan ses."
+    }
+  },
+  "tags": {"primary_topic":"rare_beautiful","topics":["rare_beautiful","music_film","sound_smarter"],"exams":["gre"],"register":"literary","vibes":["beautiful","poetic"],"flags":[],"sensitivity":0},
+  "quiz": {"cloze":"The choir's ______ harmonies filled the old church.","answer":"mellifluous","distractors":["shrill","grating","muffled"]},
+  "meta": {"status":"sample","qa_flags":["exam_tags_unverified"]}
+},
+{
+  "id": "en.petrichor.n.1",
+  "lemma": "petrichor",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "S",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":152851,"zipf":1.6},
+  "ipa": {"us":"/ˈpɛtrɪˌkɔːr/","uk":"/ˈpɛtrɪkɔː/"},
+  "def": {
+    "micro": "smell of rain on dry earth",
+    "short": "the pleasant smell of the ground when rain falls after a dry spell",
+    "long": "The fresh, earthy smell that rises from dry soil when rain first falls on it. Scientists coined the word in 1964; the smell comes partly from plant oils and a compound called geosmin made by soil bacteria."
+  },
+  "examples": [
+    {"en":"After weeks of drought, the first rain filled the air with petrichor.","tr":"Haftalarca süren kuraklığın ardından ilk yağmur havayı toprak kokusuyla doldurdu.","register":"neutral","focus":"petrichor"},
+    {"en":"I opened the window to breathe in the petrichor.","tr":"Yağmur sonrası toprak kokusunu içime çekmek için pencereyi açtım.","register":"neutral","focus":"petrichor"},
+    {"en":"Many people say petrichor is their favorite smell.","tr":"Birçok kişi, yağmur sonrası toprak kokusunun en sevdiği koku olduğunu söyler.","register":"neutral","focus":"petrichor"}
+  ],
+  "synonyms": ["smell of rain"],
+  "antonyms": [],
+  "collocations": ["the scent of petrichor","a hint of petrichor","smell petrichor","petrichor and geosmin"],
+  "word_family": [],
+  "etymology": {"text":"Coined in 1964 by Australian scientists Isabel Joy Bear and Richard G. Thomas from Greek 'petra' (stone) + 'ichor' (the fluid in the veins of the gods).","origin":"Greek (modern coinage)","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "yağmur sonrası toprak kokusu",
+      "alt": ["petrikor"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Gündelik Türkçede tek sözcük yok; 'petrikor' bilim ve popüler yazıda kullanılır. 'Toprak kokusu' aynı imgeyi taşır.",
+      "mistakes": [
+        {"wrong":"I love the petrichor of fresh bread.","right":"I love the smell of fresh bread.","why":"'Petrichor' yalnızca yağmurun toprakta çıkardığı kokudur."}
+      ],
+      "mnemonic": "Petrol ile aynı kök (petra = taş): taşa/toprağa yağmur değince çıkan 'ilahi' koku."
+    }
+  },
+  "tags": {"primary_topic":"rare_beautiful","topics":["rare_beautiful","weather_seasons","nature_animals"],"exams":[],"register":"literary","vibes":["beautiful","calm"],"flags":["science_coinage"],"sensitivity":0},
+  "quiz": {"cloze":"The first rain after the drought released a wonderful ______ from the dry ground.","answer":"petrichor","distractors":["perfume","petroleum","pesticide"]},
+  "meta": {"status":"sample","qa_flags":["ipa_uncertain_us_uk_variants"]}
+},
+{
+  "id": "en.sonder.n.1",
+  "lemma": "sonder",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "coined word",
+  "level": "S",
+  "level_source": "editorial_estimate",
+  "freq": {"rank":104603,"zipf":1.92},
+  "ipa": {"us":"/ˈsɑːndər/","uk":"/ˈsɒndə/"},
+  "def": {
+    "micro": "everyone has a full life",
+    "short": "realizing that every stranger has a life as complex as your own",
+    "long": "A coined word for the sudden realization that every passerby has a life as rich and complicated as yours. Invented by John Koenig for 'The Dictionary of Obscure Sorrows'; treat it as informal and not standard."
+  },
+  "examples": [
+    {"en":"Watching the commuters rush by, I felt a wave of sonder.","tr":"Acele eden yolcuları izlerken içimi bir \"sonder\" duygusu kapladı.","register":"informal","focus":"sonder"},
+    {"en":"Sonder hit me as I looked at the strangers in the café.","tr":"Kafedeki yabancılara bakarken birden \"sonder\" hissine kapıldım.","register":"informal","focus":"Sonder"},
+    {"en":"'Sonder' is popular online, but you won't find it in every dictionary.","tr":"\"Sonder\" internette popüler ama her sözlükte bulamazsın.","register":"informal","focus":"Sonder"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["a wave of sonder","a moment of sonder","feel sonder"],
+  "word_family": [],
+  "etymology": {"text":"Coined in 2012 by John Koenig for his 'Dictionary of Obscure Sorrows' project, inspired by German 'sonder-' (special) and French 'sonder' (to probe).","origin":"English neologism","confidence":"high"},
+  "l1": {
+    "tr": {
+      "gloss": "herkesin hikâyesi var hissi",
+      "alt": ["sonder (yeni sözcük)"],
+      "equivalence": "none",
+      "false_friend": null,
+      "note": "Türkçede karşılığı yoktur; 'sonder' uydurma (neolojizm) bir sözcüktür, Türkçe metinlerde genellikle olduğu gibi kullanılır.",
+      "mistakes": [
+        {"wrong":"In my IELTS essay I used 'sonder' to describe empathy.","right":"Use 'empathy' or 'compassion' in exams.","why":"Yeni türetilmiş sözcükler sınavda ve resmî yazıda risklidir."}
+      ],
+      "mnemonic": "SON-der ≈ 'son derece': herkesin son derece dolu bir hayatı var."
+    }
+  },
+  "tags": {"primary_topic":"rare_beautiful","topics":["rare_beautiful","emotions_feelings","mind_psychology"],"exams":[],"register":"informal","vibes":["poetic","deep"],"flags":["coined","not_for_exams"],"sensitivity":0},
+  "quiz": {"cloze":"Looking at the crowded train, I had a strange moment of ______: every face had a whole story.","answer":"sonder","distractors":["sorrow","solitude","surprise"]},
+  "meta": {"status":"sample","qa_flags":["coined_word","ipa_uncertain_no_standard"]}
+}
+]
+}

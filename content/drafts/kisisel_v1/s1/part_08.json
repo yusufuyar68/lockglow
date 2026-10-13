@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.scarf.n.1",
+      "lemma": "scarf",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skɑːrf/",
+        "uk": "/skɑːf/"
+      },
+      "def": {
+        "micro": "long cloth for your neck",
+        "short": "a long piece of cloth that you wear around your neck or head",
+        "long": "A long piece of cloth that you wear around your neck to keep warm, or on your shoulders for style. In winter many people wear a wool one."
+      },
+      "examples": [
+        {
+          "en": "I forgot my scarf at home.",
+          "tr": "Atkımı evde unuttum.",
+          "register": "neutral",
+          "focus": "scarf"
+        },
+        {
+          "en": "Maria wore a bright yellow scarf.",
+          "tr": "Maria canlı sarı bir atkı takmıştı.",
+          "register": "neutral",
+          "focus": "scarf"
+        },
+        {
+          "en": "It's windy today. Wrap a scarf around your neck.",
+          "tr": "Bugün rüzgâr var. Boynuna bir atkı sar.",
+          "register": "neutral",
+          "focus": "scarf"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a wool scarf",
+        "a silk scarf",
+        "wear a scarf",
+        "a warm scarf",
+        "a long scarf"
+      ],
+      "word_family": [
+        {
+          "lemma": "scarves",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "atkı",
+          "alt": [
+            "eşarp",
+            "şal"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalın, boyna takılan 'atkı' ile ince 'eşarp' ya da 'şal' için İngilizcede 'scarf' denir. Çoğulu 'scarves' olur (scarfs da kabul edilir).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's very cold. I wrapped a ______ around my neck.",
+        "answer": "scarf",
+        "distractors": [
+          "belt",
+          "sock",
+          "button"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.button.n.1",
+      "lemma": "button",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "on clothes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbʌtən/",
+        "uk": "/ˈbʌtən/"
+      },
+      "def": {
+        "micro": "small round thing on clothes",
+        "short": "a small, round thing that you push through a hole to close clothes",
+        "long": "A small, round thing on clothes that you push through a hole to close them. A shirt usually has a row of them down the front."
+      },
+      "examples": [
+        {
+          "en": "I lost a button from my shirt.",
+          "tr": "Gömleğimin bir düğmesi düştü.",
+          "register": "neutral",
+          "focus": "button"
+        },
+        {
+          "en": "Sam sewed the button back on his coat.",
+          "tr": "Sam düğmeyi montuna geri dikti.",
+          "register": "neutral",
+          "focus": "button"
+        },
+        {
+          "en": "Your top button is open. Let me help you close it.",
+          "tr": "En üstteki düğmen açık. Kapatmana yardım edeyim.",
+          "register": "neutral",
+          "focus": "button"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a shirt button",
+        "lose a button",
+        "the top button",
+        "a missing button",
+        "a coat button"
+      ],
+      "word_family": [
+        {
+          "lemma": "button",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düğme",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede 'button' telefondaki ya da asansördeki düğme için de kullanılır (press a button).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My shirt has no ______ at the top, so I can't close it.",
+        "answer": "button",
+        "distractors": [
+          "pocket",
+          "sleeve",
+          "sock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pajamas.n.1",
+      "lemma": "pajamas",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pəˈdʒæməz/",
+        "uk": "/pəˈdʒɑːməz/"
+      },
+      "def": {
+        "micro": "clothes you wear in bed",
+        "short": "a soft top and trousers that you wear to sleep",
+        "long": "A soft shirt and trousers that you wear to sleep. The word is plural, so say 'a pair of pajamas'. In British English it is spelled 'pyjamas'."
+      },
+      "examples": [
+        {
+          "en": "I stay in my pajamas all weekend.",
+          "tr": "Hafta sonu boyunca pijamayla kalıyorum.",
+          "register": "neutral",
+          "focus": "pajamas"
+        },
+        {
+          "en": "The kids are already in their pajamas.",
+          "tr": "Çocuklar şimdiden pijamalarını giydi.",
+          "register": "neutral",
+          "focus": "pajamas"
+        },
+        {
+          "en": "I need to buy new pajamas for the winter.",
+          "tr": "Kış için yeni pijama almam lazım.",
+          "register": "neutral",
+          "focus": "pajamas"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a pair of pajamas",
+        "in my pajamas",
+        "pajama party",
+        "wear pajamas"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Hindi and Urdu 'pāyjāma', from Persian: 'pāy' (leg) + 'jāma' (clothing).",
+        "origin": "Persian",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "pijama",
+          "alt": [
+            "pijama takımı"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçe 'pijama' ile aynı kökten gelir. İngilizcede çoğul kullanılır: 'a pair of pajamas'; tek bir 'pajama' denmez.",
+          "mistakes": [
+            {
+              "wrong": "He is wearing a pajama.",
+              "right": "He is wearing pajamas.",
+              "why": "'Pajamas' çoğul bir isimdir; Türkçedeki gibi tekil kullanılmaz. Bir takım için 'a pair of pajamas' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural_only"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I wear soft ______ when I go to bed.",
+        "answer": "pajamas",
+        "distractors": [
+          "jeans",
+          "boots",
+          "suits"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.slipper.n.1",
+      "lemma": "slipper",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈslɪpər/",
+        "uk": "/ˈslɪpə/"
+      },
+      "def": {
+        "micro": "soft shoe for indoors",
+        "short": "a soft, light shoe that you wear at home",
+        "long": "A soft, light shoe that you wear inside the house. Many people keep a few pairs near the front door for guests."
+      },
+      "examples": [
+        {
+          "en": "Please wear slippers inside the house.",
+          "tr": "Lütfen evin içinde terlik giy.",
+          "register": "neutral",
+          "focus": "slippers"
+        },
+        {
+          "en": "I bought warm slippers for the winter.",
+          "tr": "Kış için sıcak tutan terlikler aldım.",
+          "register": "neutral",
+          "focus": "slippers"
+        },
+        {
+          "en": "Mehmet's slippers are by the front door.",
+          "tr": "Mehmet'in terlikleri ön kapının yanında.",
+          "register": "neutral",
+          "focus": "slippers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a pair of slippers",
+        "warm slippers",
+        "house slippers",
+        "guest slippers"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "terlik",
+          "alt": [
+            "ev terliği"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ev terliği 'slippers', plaj terliğine ise 'flip-flops' denir. Genellikle çift olarak, çoğul kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I take off my shoes and wear ______ at home.",
+        "answer": "slippers",
+        "distractors": [
+          "gloves",
+          "hats",
+          "scarves"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fit.v.1",
+      "lemma": "fit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "to be the right size",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɪt/",
+        "uk": "/fɪt/"
+      },
+      "def": {
+        "micro": "be the right size",
+        "short": "to be the right size and shape for someone or something",
+        "long": "To be the right size and shape for someone or something. If clothes or shoes fit, they are not too big or too small."
+      },
+      "grammar": {
+        "pattern": "fit + sb / fit in + sth"
+      },
+      "examples": [
+        {
+          "en": "This jacket doesn't fit me anymore.",
+          "tr": "Bu ceket artık bana olmuyor.",
+          "register": "neutral",
+          "focus": "fit"
+        },
+        {
+          "en": "Do these shoes fit you, or are they too small?",
+          "tr": "Bu ayakkabılar ayağına oluyor mu, yoksa küçük mü geldi?",
+          "register": "neutral",
+          "focus": "fit"
+        },
+        {
+          "en": "The suitcase is small, but everything fits.",
+          "tr": "Bavul küçük ama her şey sığıyor.",
+          "register": "neutral",
+          "focus": "fits"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fit well",
+        "fit perfectly",
+        "doesn't fit me",
+        "fit in my bag"
+      ],
+      "word_family": [
+        {
+          "lemma": "fit",
+          "pos": "adj"
+        },
+        {
+          "lemma": "fitting",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uymak, tam gelmek",
+          "alt": [
+            "sığmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Giysi için 'bana oluyor / uyuyor', bir yere sığma için 'sığmak' dersiniz; İngilizcede ikisi de 'fit'. 'Yakışmak' ise 'suit' olur.",
+          "mistakes": [
+            {
+              "wrong": "These shoes don't suit me. They are too small.",
+              "right": "These shoes don't fit me. They are too small.",
+              "why": "Beden olarak uymak 'fit', yakışmak ise 'suit' olur. Küçük geldiği için 'fit' demelisiniz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't wear this shirt anymore. It doesn't ______ me.",
+        "answer": "fit",
+        "distractors": [
+          "wear",
+          "tidy",
+          "taste"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wardrobe.n.1",
+      "lemma": "wardrobe",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɔːrdroʊb/",
+        "uk": "/ˈwɔːdrəʊb/"
+      },
+      "def": {
+        "micro": "tall cupboard for clothes",
+        "short": "a big, tall piece of furniture where you keep your clothes",
+        "long": "A tall piece of furniture with doors, where you hang or keep your clothes. In American English, people also say 'closet'."
+      },
+      "examples": [
+        {
+          "en": "My clothes are all in the wardrobe.",
+          "tr": "Kıyafetlerimin hepsi gardırobun içinde.",
+          "register": "neutral",
+          "focus": "wardrobe"
+        },
+        {
+          "en": "There is no space in my wardrobe for new shoes.",
+          "tr": "Gardırobumda yeni ayakkabılar için yer kalmadı.",
+          "register": "neutral",
+          "focus": "wardrobe"
+        },
+        {
+          "en": "Ayşe opened the wardrobe and chose a blue dress.",
+          "tr": "Ayşe gardırobu açıp mavi bir elbise seçti.",
+          "register": "neutral",
+          "focus": "wardrobe"
+        }
+      ],
+      "synonyms": [
+        "closet"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "open the wardrobe",
+        "a built-in wardrobe",
+        "wardrobe door",
+        "a big wardrobe"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old North French 'warderobe': 'warder' (to guard) + 'robe' (clothing). It first meant a room for keeping clothes.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "gardırop",
+          "alt": [
+            "elbise dolabı"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçe 'gardırop' ile aynı kökten gelir. Mutfak dolabı için 'cupboard' kullanılır; 'wardrobe' kıyafet dolabıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I hang my shirts and dresses in the ______.",
+        "answer": "wardrobe",
+        "distractors": [
+          "fridge",
+          "oven",
+          "kettle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.loose.adj.1",
+      "lemma": "loose",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "clothes that are not tight",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/luːs/",
+        "uk": "/luːs/"
+      },
+      "def": {
+        "micro": "not close to the body",
+        "short": "fitting in a free way, not close to your body",
+        "long": "Fitting in a free way, so that it is not tight and is easy to move in. People often wear loose clothes in hot weather."
+      },
+      "examples": [
+        {
+          "en": "I prefer loose shirts in the summer.",
+          "tr": "Yazın bol gömlekleri tercih ederim.",
+          "register": "neutral",
+          "focus": "loose"
+        },
+        {
+          "en": "These trousers are a little loose around the waist.",
+          "tr": "Bu pantolon belden biraz bol.",
+          "register": "neutral",
+          "focus": "loose"
+        },
+        {
+          "en": "He lost weight, so his clothes are loose now.",
+          "tr": "Kilo verdi, bu yüzden kıyafetleri artık bol.",
+          "register": "neutral",
+          "focus": "loose"
+        }
+      ],
+      "synonyms": [
+        "baggy"
+      ],
+      "antonyms": [
+        "tight"
+      ],
+      "collocations": [
+        "loose clothes",
+        "a loose shirt",
+        "too loose",
+        "loose jeans"
+      ],
+      "word_family": [
+        {
+          "lemma": "loosely",
+          "pos": "adv"
+        },
+        {
+          "lemma": "loosen",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bol",
+          "alt": [
+            "gevşek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Giysi için 'bol', vida ya da diş için 'gevşek' dersiniz; İngilizcede ikisi de 'loose'. 'Lose' (kaybetmek) ile karıştırmayın.",
+          "mistakes": [
+            {
+              "wrong": "I don't want to loose my keys.",
+              "right": "I don't want to lose my keys.",
+              "why": "'Loose' bol/gevşek anlamında sıfattır. 'Kaybetmek' fiili tek 'o' ile 'lose' yazılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's very hot. I'll wear a ______ shirt.",
+        "answer": "loose",
+        "distractors": [
+          "empty",
+          "angry",
+          "sweet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sleeve.n.1",
+      "lemma": "sleeve",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sliːv/",
+        "uk": "/sliːv/"
+      },
+      "def": {
+        "micro": "part of a shirt for your arm",
+        "short": "the part of a piece of clothing that covers your arm",
+        "long": "The part of a shirt, dress, or coat that covers your arm. Sleeves can be short, long, or missing, as in a sleeveless dress."
+      },
+      "examples": [
+        {
+          "en": "This shirt has very long sleeves.",
+          "tr": "Bu gömleğin kolları çok uzun.",
+          "register": "neutral",
+          "focus": "sleeves"
+        },
+        {
+          "en": "He rolled up his sleeves and started cooking.",
+          "tr": "Kollarını sıvadı ve yemek yapmaya başladı.",
+          "register": "neutral",
+          "focus": "sleeves"
+        },
+        {
+          "en": "I like T-shirts with short sleeves in summer.",
+          "tr": "Yazın kısa kollu tişörtleri seviyorum.",
+          "register": "neutral",
+          "focus": "sleeves"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "long sleeves",
+        "short sleeves",
+        "tight sleeves",
+        "sleeves are too long"
+      ],
+      "word_family": [
+        {
+          "lemma": "sleeveless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "giysi kolu",
+          "alt": [
+            "yen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Giysinin kolu 'sleeve', vücudunuzun kolu 'arm' olur. 'Kısa kollu' = short-sleeved; kolsuz = sleeveless.",
+          "mistakes": [
+            {
+              "wrong": "I like shirts with short arms.",
+              "right": "I like shirts with short sleeves.",
+              "why": "Türkçede giysi kolu da vücut kolu da 'kol' sözcüğüyle söylenir; İngilizcede giysinin kolu 'sleeve', vücudun kolu 'arm' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's cold. I want a shirt with long ______.",
+        "answer": "sleeves",
+        "distractors": [
+          "hats",
+          "legs",
+          "wallets"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fabric.n.1",
+      "lemma": "fabric",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfæbrɪk/",
+        "uk": "/ˈfæbrɪk/"
+      },
+      "def": {
+        "micro": "cloth used to make clothes",
+        "short": "cloth that is used to make clothes, curtains, or other things",
+        "long": "Cloth that is used to make clothes, curtains, and other things. Cotton, wool, and silk are three types. It is often sold by the meter in a shop."
+      },
+      "examples": [
+        {
+          "en": "This dress is made of soft fabric.",
+          "tr": "Bu elbise yumuşak bir kumaştan yapılmış.",
+          "register": "neutral",
+          "focus": "fabric"
+        },
+        {
+          "en": "I'm looking for blue fabric for the curtains.",
+          "tr": "Perdeler için mavi kumaş arıyorum.",
+          "register": "neutral",
+          "focus": "fabric"
+        },
+        {
+          "en": "Cotton is a good fabric for hot summer days.",
+          "tr": "Pamuk, sıcak yaz günleri için iyi bir kumaştır.",
+          "register": "neutral",
+          "focus": "fabric"
+        }
+      ],
+      "synonyms": [
+        "cloth",
+        "material"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "soft fabric",
+        "cotton fabric",
+        "thin fabric",
+        "a piece of fabric"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'fabrica', a workshop. Fabric first meant any made thing, and only later, cloth.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kumaş",
+          "alt": [],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "fabrika",
+            "tr_means": "ürünlerin üretildiği büyük işletme",
+            "en_for_that": "factory"
+          },
+          "note": "Türkçedeki 'fabrika' İngilizcede 'factory' olur. 'Fabric' kumaştır. İkisi aynı Latince köke (fabrica) dayanır.",
+          "mistakes": [
+            {
+              "wrong": "I work in a fabric.",
+              "right": "I work in a factory.",
+              "why": "'Fabrika' için 'fabric' değil 'factory' kullanılır. 'Fabric' kumaş demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need some blue ______ to make a new dress.",
+        "answer": "fabric",
+        "distractors": [
+          "factory",
+          "wallet",
+          "bottle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.outfit.n.1",
+      "lemma": "outfit",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈaʊtfɪt/",
+        "uk": "/ˈaʊtfɪt/"
+      },
+      "def": {
+        "micro": "clothes worn together",
+        "short": "a set of clothes that you wear together for a day or an event",
+        "long": "A set of clothes that you wear together, such as a shirt, trousers, and shoes. People choose one for work, a party, or a special day."
+      },
+      "examples": [
+        {
+          "en": "I love your outfit! Where did you buy it?",
+          "tr": "Kombinini çok beğendim! Nereden aldın?",
+          "register": "neutral",
+          "focus": "outfit"
+        },
+        {
+          "en": "Maria chose a simple outfit for the interview.",
+          "tr": "Maria mülakat için sade bir kombin seçti.",
+          "register": "neutral",
+          "focus": "outfit"
+        },
+        {
+          "en": "I can't decide on an outfit for tonight.",
+          "tr": "Bu akşam için bir kombine karar veremiyorum.",
+          "register": "neutral",
+          "focus": "outfit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a new outfit",
+        "choose an outfit",
+        "a casual outfit",
+        "a summer outfit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kombin",
+          "alt": [
+            "takım",
+            "kıyafet"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Outfit' birkaç parçanın birlikte giyilen takımıdır; tek parça için 'piece of clothing' ya da 'item' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She wore a nice ______ to the party: a white shirt, black trousers, and shoes.",
+        "answer": "outfit",
+        "distractors": [
+          "fabric",
+          "pocket",
+          "size"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

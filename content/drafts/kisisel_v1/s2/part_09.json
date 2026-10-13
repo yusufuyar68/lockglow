@@ -1,0 +1,433 @@
+{
+"schema_version": "1.0",
+"l1_langs": ["tr"],
+"generated_on": "2026-10-11",
+"entries": [
+{
+  "id": "en.commute.v.1",
+  "lemma": "commute",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": "to work or school",
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/kəˈmjuːt/", "uk": "/kəˈmjuːt/"},
+  "def": {
+    "micro": "travel to work every day",
+    "short": "to travel regularly between your home and your work or school",
+    "long": "To travel regularly between your home and your place of work or school. Some people do it by train for an hour each way."
+  },
+  "grammar": {"pattern": "commute to + place / by + transport"},
+  "examples": [
+    {"en": "I commute to work by train every day.", "tr": "Her gün işe trenle gidip geliyorum.", "register": "neutral", "focus": "commute"},
+    {"en": "She commutes two hours each way.", "tr": "Her gün gidişte de dönüşte de iki saat yol yapıyor.", "register": "neutral", "focus": "commutes"},
+    {"en": "Many people commute from the suburbs into the city.", "tr": "Birçok insan banliyölerden şehre işe gidip geliyor.", "register": "neutral", "focus": "commute"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["commute to work", "commute by train", "commute into the city"],
+  "word_family": [{"lemma": "commuter", "pos": "n"}],
+  "etymology": {"text": "From the 19th-century American 'commutation ticket': a cheaper ticket for people who traveled every day. 'Commute' comes from Latin 'commutare' ('to exchange').", "origin": "Latin", "confidence": "high"},
+  "l1": {
+    "tr": {
+      "gloss": "işe gidip gelmek",
+      "alt": ["gidip gelmek"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede tek kelimelik karşılığı yok. 'Commute' düzenli yapılan, genelde uzun gidiş-gelişi anlatır; tek seferlik yolculuk için 'travel' veya 'go' kullanılır.",
+      "mistakes": [
+        {"wrong": "I commute to work with the metro.", "right": "I commute to work by metro.", "why": "Türkçede 'metroyla' dendiği için 'with' kullanılır; ama araç için 'by' (the yok) denir: by metro, by bus."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "I ______ to work by train; it takes about an hour each way.", "answer": "commute", "distractors": ["retire", "arrive", "borrow"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.rush_hour.phr.1",
+  "lemma": "rush hour",
+  "type": "collocation",
+  "pos": "phr",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈrʌʃ aʊər/", "uk": "/ˈrʌʃ aʊə/"},
+  "def": {
+    "micro": "busiest time for traffic",
+    "short": "the time of day when most people travel to or from work",
+    "long": "The time of day, usually in the morning and early evening, when many people travel to or from work and the roads and trains are very full."
+  },
+  "grammar": {"pattern": "at / during rush hour"},
+  "examples": [
+    {"en": "Avoid the subway at rush hour if you can.", "tr": "Mümkünse yoğun saatlerde metroya binme.", "register": "neutral", "focus": "rush hour"},
+    {"en": "It's rush hour, so the roads are full.", "tr": "Şu an en yoğun saatler, o yüzden yollar dolu.", "register": "neutral", "focus": "rush hour"},
+    {"en": "We left at ten to miss the morning rush hour.", "tr": "Sabah trafiğine takılmamak için saat onda çıktık.", "register": "neutral", "focus": "rush hour"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["at rush hour", "morning rush hour", "evening rush hour", "during rush hour"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "yoğun saatler",
+      "alt": ["trafik yoğunluğu"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Genelde sabah 7-9 ve akşam 17-19 arasıdır. İngilizcede 'hour' dese de bir saatten uzun sürer. Çoğul 'rush hours' da kullanılır.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "The train is always crowded at ______ because everyone goes to work.", "answer": "rush hour", "distractors": ["bedtime", "midnight", "lunch"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.intersection.n.1",
+  "lemma": "intersection",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "road crossing",
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˌɪntərˈsɛkʃən/", "uk": "/ˌɪntəˈsɛkʃən/"},
+  "def": {
+    "micro": "place where two roads cross",
+    "short": "a place where two or more roads cross each other",
+    "long": "A place where two or more roads cross each other. Cars must slow down or stop here, and there are often traffic lights. British English also says 'junction'."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "Turn left at the next intersection.", "tr": "Bir sonraki kavşakta sola dönün.", "register": "neutral", "focus": "intersection"},
+    {"en": "There was an accident at the intersection.", "tr": "Kavşakta bir kaza oldu.", "register": "neutral", "focus": "intersection"},
+    {"en": "This is a dangerous intersection, so drive slowly.", "tr": "Burası tehlikeli bir kavşak, o yüzden yavaş sür.", "register": "neutral", "focus": "intersection"}
+  ],
+  "synonyms": ["junction"],
+  "antonyms": [],
+  "collocations": ["a busy intersection", "at the intersection", "the next intersection"],
+  "word_family": [{"lemma": "intersect", "pos": "v"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "kavşak",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "ABD'de 'intersection', İngiltere'de 'junction' denir. Daire şeklindeki dönel kavşak için 'roundabout' kullanılır.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "The traffic light at that ______ is always red when I'm late.", "answer": "intersection", "distractors": ["sidewalk", "platform", "elevator"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.pedestrian.n.1",
+  "lemma": "pedestrian",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/pəˈdɛstriən/", "uk": "/pəˈdɛstriən/"},
+  "def": {
+    "micro": "person walking on the street",
+    "short": "a person who is walking, not in a car or on a bike",
+    "long": "A person who walks in the street or on a road, and is not in a car or on a bus. Drivers must stop for them at a crossing."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "Drivers must stop for pedestrians.", "tr": "Sürücüler yayalar için durmak zorunda.", "register": "neutral", "focus": "pedestrians"},
+    {"en": "Pedestrians should use the bridge to cross the highway.", "tr": "Yayalar otoyolu geçmek için köprüyü kullanmalı.", "register": "neutral", "focus": "Pedestrians"},
+    {"en": "The street was full of pedestrians on Saturday.", "tr": "Sokak cumartesi günü yayalarla doluydu.", "register": "neutral", "focus": "pedestrians"}
+  ],
+  "synonyms": [],
+  "antonyms": ["driver"],
+  "collocations": ["a pedestrian crossing", "a pedestrian bridge", "a pedestrian zone"],
+  "word_family": [],
+  "etymology": {"text": "From Latin 'pedester' ('going on foot'), from 'pes, ped-' (foot). The same root is in 'pedal'.", "origin": "Latin", "confidence": "high"},
+  "l1": {
+    "tr": {
+      "gloss": "yaya",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'Yaya geçidi' = pedestrian crossing (İngiltere'de 'zebra crossing', ABD'de 'crosswalk').",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "Cars must stop at the crossing when a ______ is waiting.", "answer": "pedestrian", "distractors": ["passenger", "sidewalk", "platform"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.suburb.n.1",
+  "lemma": "suburb",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈsʌbɜːrb/", "uk": "/ˈsʌbɜːb/"},
+  "def": {
+    "micro": "area at the edge of a city",
+    "short": "a quiet area at the edge of a city, where many people live",
+    "long": "An area at the edge of a big city, usually with houses and gardens instead of tall buildings. Many people live there and travel into the city for work."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "We live in a quiet suburb of Ankara.", "tr": "Ankara'nın sakin bir banliyösünde yaşıyoruz.", "register": "neutral", "focus": "suburb"},
+    {"en": "Houses in the suburbs are cheaper than in the center.", "tr": "Banliyödeki evler merkezdekilerden daha ucuz.", "register": "neutral", "focus": "suburbs"},
+    {"en": "He drives from the suburbs to the city every day.", "tr": "Her gün banliyöden şehre arabayla gidiyor.", "register": "neutral", "focus": "suburbs"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["in the suburbs", "a quiet suburb", "a suburb of Istanbul", "live in the suburbs"],
+  "word_family": [{"lemma": "suburban", "pos": "adj"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "banliyö",
+      "alt": [],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Suburb' genelde evleri ve bahçeleri olan sakin bir bölgedir. Türkçedeki 'varoş' çoğu zaman düşük gelirli bölge çağrışımı taşır; 'suburb' bu anlamı taşımaz.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "We moved to a ______ because we wanted a house with a garden.", "answer": "suburb", "distractors": ["platform", "highway", "station"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.humid.adj.1",
+  "lemma": "humid",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈhjuːmɪd/", "uk": "/ˈhjuːmɪd/"},
+  "def": {
+    "micro": "warm and wet in the air",
+    "short": "with a lot of water in the air, so it feels warm and sticky",
+    "long": "With a lot of water in the air, so the weather feels hot and sticky. It is common near the sea in summer."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "It's very humid today. I'm sweating.", "tr": "Bugün hava çok nemli. Terliyorum.", "register": "neutral", "focus": "humid"},
+    {"en": "Summers in Antalya are hot and humid.", "tr": "Antalya'da yazlar sıcak ve nemlidir.", "register": "neutral", "focus": "humid"},
+    {"en": "The air was so humid that my shirt got wet.", "tr": "Hava o kadar nemliydi ki tişörtüm ıslandı.", "register": "neutral", "focus": "humid"}
+  ],
+  "synonyms": ["muggy"],
+  "antonyms": ["dry"],
+  "collocations": ["hot and humid", "humid weather", "very humid", "a humid day"],
+  "word_family": [{"lemma": "humidity", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "nemli",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'Humid' havadaki nemi anlatır. 'Wet' (ıslak) ve 'damp' (hafif ıslak, soğuk) ile karıştırmayın. Nem oranı = humidity.",
+      "mistakes": [
+        {"wrong": "It is very humidity today.", "right": "It is very humid today.", "why": "'Humidity' isimdir (nem). Hava durumunu anlatan sıfat 'humid'dir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "It's hot and ______ in summer, so my clothes feel sticky.", "answer": "humid", "distractors": ["frozen", "foggy", "icy"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.heatwave.n.1",
+  "lemma": "heatwave",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈhiːtweɪv/", "uk": "/ˈhiːtweɪv/"},
+  "def": {
+    "micro": "many very hot days",
+    "short": "a period of several days or weeks of very hot weather",
+    "long": "A period of several days or weeks when the weather is much hotter than normal. People are told to drink water and stay out of the sun."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "There is a heatwave this week, so drink a lot of water.", "tr": "Bu hafta sıcak hava dalgası var, bol su iç.", "register": "neutral", "focus": "heatwave"},
+    {"en": "The heatwave lasted ten days.", "tr": "Sıcak hava dalgası on gün sürdü.", "register": "neutral", "focus": "heatwave"},
+    {"en": "Many people stayed inside during the heatwave.", "tr": "Sıcak hava dalgası boyunca birçok kişi evde kaldı.", "register": "neutral", "focus": "heatwave"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["during a heatwave", "a summer heatwave", "a long heatwave", "a heatwave hits"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "sıcak hava dalgası",
+      "alt": ["aşırı sıcaklar"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Haberlerde 'sıcak hava dalgası', günlük dilde 'aşırı sıcaklar' denir. Soğuk için karşılığı 'cold snap' (soğuk hava dalgası) kullanılır.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "The ______ was so strong that many shops closed for a week.", "answer": "heatwave", "distractors": ["season", "timetable", "forecast"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.flood.n.1",
+  "lemma": "flood",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/flʌd/", "uk": "/flʌd/"},
+  "def": {
+    "micro": "water covering dry land",
+    "short": "a large amount of water that covers land that is usually dry",
+    "long": "A large amount of water that covers land that is usually dry, often after very heavy rain. It can damage houses, roads, and cars."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "The heavy rain caused a flood in the village.", "tr": "Şiddetli yağmur köyde sele neden oldu.", "register": "neutral", "focus": "flood"},
+    {"en": "The flood closed the main road for two days.", "tr": "Sel, ana yolu iki gün kapattı.", "register": "neutral", "focus": "flood"},
+    {"en": "They had to leave their house because of the flood.", "tr": "Sel yüzünden evlerini terk etmek zorunda kaldılar.", "register": "neutral", "focus": "flood"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["a flash flood", "a flood warning", "flood water", "heavy rain and floods"],
+  "word_family": [{"lemma": "flood", "pos": "v"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "sel",
+      "alt": ["su baskını"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'Sel' yağmurdan veya nehirden taşan su, 'su baskını' ise bodrum, ev veya yolun suyla dolmasıdır. İngilizcede ikisi için de 'flood' kullanılır.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons", "nature_animals"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "After three days of heavy rain, there was a ______ in the town.", "answer": "flood", "distractors": ["breeze", "sunshine", "forecast"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.chilly.adj.1",
+  "lemma": "chilly",
+  "type": "word",
+  "pos": "adj",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈtʃɪli/", "uk": "/ˈtʃɪli/"},
+  "def": {
+    "micro": "rather cold",
+    "short": "cold enough to feel uncomfortable, but not very cold",
+    "long": "Rather cold, so you feel uncomfortable without a jacket. It is colder than cool, but not as cold as freezing."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "It's a bit chilly tonight. Take a jacket.", "tr": "Bu gece hava biraz serin. Bir ceket al.", "register": "neutral", "focus": "chilly"},
+    {"en": "The water was too chilly to swim in.", "tr": "Su yüzmek için fazla soğuktu.", "register": "neutral", "focus": "chilly"},
+    {"en": "Mornings are chilly in October.", "tr": "Ekimde sabahlar serin olur.", "register": "neutral", "focus": "chilly"}
+  ],
+  "synonyms": ["cool"],
+  "antonyms": ["warm"],
+  "collocations": ["a chilly morning", "chilly weather", "a bit chilly", "feel chilly"],
+  "word_family": [{"lemma": "chill", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "serin",
+      "alt": ["biraz soğuk"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Serin' ile 'soğuk' arasında, üşütecek kadar serin demektir. Kişinin hissini de anlatır: 'I feel chilly' = Üşüyorum.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "Take a sweater with you. The evenings are ______ in autumn.", "answer": "chilly", "distractors": ["boiling", "sunny", "humid"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.oversleep.v.1",
+  "lemma": "oversleep",
+  "type": "word",
+  "pos": "v",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "B1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˌoʊvərˈsliːp/", "uk": "/ˌəʊvəˈsliːp/"},
+  "def": {
+    "micro": "wake up too late",
+    "short": "to wake up later than you planned",
+    "long": "To wake up later than you planned, usually because you slept too deeply or your alarm did not ring. It often makes people late for work or school."
+  },
+  "grammar": {"pattern": "oversleep – overslept – overslept"},
+  "examples": [
+    {"en": "I overslept and missed the bus.", "tr": "Uyuyakaldım ve otobüsü kaçırdım.", "register": "neutral", "focus": "overslept"},
+    {"en": "She overslept, so she was late for the exam.", "tr": "Uyuyakaldığı için sınava geç kaldı.", "register": "neutral", "focus": "overslept"},
+    {"en": "Set two alarms so you don't oversleep.", "tr": "Uyuyakalmamak için iki alarm kur.", "register": "neutral", "focus": "oversleep"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": [],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "uyuyakalmak",
+      "alt": ["geç uyanmak"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Düzensiz fiil: oversleep – overslept – overslept. 'Sleep in' ise bilerek geç kalkmaktır (pazar sabahı gibi); 'oversleep' istemeden olur.",
+      "mistakes": [
+        {"wrong": "I oversleeped this morning.", "right": "I overslept this morning.", "why": "Fiil düzensizdir: geçmiş zaman 'overslept' (sleep – slept gibi). '-ed' eklenmez."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "My alarm didn't ring, so I ______ and was late for work.", "answer": "overslept", "distractors": ["jogged", "booked", "packed"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+}
+]
+}

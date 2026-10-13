@@ -1,0 +1,109 @@
+{
+ "inputs": {
+  "h1_yds_academic.csv": {
+   "rows": 420,
+   "kept": 420,
+   "general_problems": []
+  },
+  "h2_phrasal_idioms_confusing.csv": {
+   "rows": 480,
+   "kept": 475,
+   "general_problems": []
+  },
+  "h3_emotions_smart_rare.csv": {
+   "rows": 420,
+   "kept": 397,
+   "general_problems": []
+  }
+ },
+ "rejected": [],
+ "duplicates": [
+  "h2_phrasal_idioms_confusing.csv:394 en.conserve.v.1 (+confusing_words)",
+  "h2_phrasal_idioms_confusing.csv:461 en.principal.adj.1 (+confusing_words)",
+  "h2_phrasal_idioms_confusing.csv:471 en.ensure.v.1 (+confusing_words,workplace_office)",
+  "h2_phrasal_idioms_confusing.csv:473 en.imply.v.1 (+confusing_words)",
+  "h2_phrasal_idioms_confusing.csv:474 en.infer.v.1 (+confusing_words)",
+  "h3_emotions_smart_rare.csv:8 en.bored.adj.1",
+  "h3_emotions_smart_rare.csv:112 en.pivotal.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:122 en.plausible.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:125 en.paramount.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:128 en.scrutinize.v.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:130 en.substantiate.v.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:131 en.corroborate.v.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:133 en.formidable.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:134 en.arbitrary.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:135 en.empirical.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:137 en.rigorous.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:139 en.prudent.adj.1 (+sound_smarter,personality)",
+  "h3_emotions_smart_rare.csv:145 en.exacerbate.v.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:148 en.bolster.v.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:150 en.inherent.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:153 en.pertinent.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:154 en.viable.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:157 en.stringent.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:158 en.conspicuous.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:164 en.tacit.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:165 en.overt.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:168 en.impartial.adj.1 (+sound_smarter)",
+  "h3_emotions_smart_rare.csv:169 en.spurious.adj.1 (+sound_smarter)"
+ ],
+ "already_planned": [],
+ "by_topic": {
+  "academic_core": {
+   "planned": 120,
+   "members": 120,
+   "mvp_target": 120
+  },
+  "confusing_words": {
+   "planned": 95,
+   "members": 100,
+   "mvp_target": 100
+  },
+  "emotions_feelings": {
+   "planned": 109,
+   "members": 135,
+   "mvp_target": 110
+  },
+  "idioms_expressions": {
+   "planned": 180,
+   "members": 180,
+   "mvp_target": 180
+  },
+  "phrasal_verbs": {
+   "planned": 200,
+   "members": 200,
+   "mvp_target": 200
+  },
+  "rare_beautiful": {
+   "planned": 150,
+   "members": 150,
+   "mvp_target": 150
+  },
+  "sound_smarter": {
+   "planned": 138,
+   "members": 160,
+   "mvp_target": 160
+  },
+  "yds_yokdil_core": {
+   "planned": 300,
+   "members": 300,
+   "mvp_target": 300
+  }
+ },
+ "by_level": {
+  "A1": 14,
+  "A2": 73,
+  "B1": 140,
+  "B2": 372,
+  "C1": 431,
+  "C2": 112,
+  "S": 150
+ },
+ "by_type": {
+  "word": 912,
+  "phrasal_verb": 200,
+  "idiom": 180
+ },
+ "total": 1292,
+ "output_problems": []
+}

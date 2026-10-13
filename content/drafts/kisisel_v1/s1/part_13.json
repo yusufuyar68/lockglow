@@ -1,0 +1,514 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.allergy.n.1",
+      "lemma": "allergy",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈælərdʒi/",
+        "uk": "/ˈælədʒi/"
+      },
+      "def": {
+        "micro": "body reaction to some things",
+        "short": "when your body reacts badly to a food, dust, or an animal",
+        "long": "A condition in which your body reacts badly to something, such as a food, dust, or an animal. It can cause a rash, a runny nose, or trouble with breathing."
+      },
+      "examples": [
+        {
+          "en": "I have an allergy to nuts.",
+          "tr": "Kuruyemişe alerjim var.",
+          "register": "neutral",
+          "focus": "allergy"
+        },
+        {
+          "en": "Tell the waiter about your food allergy.",
+          "tr": "Garsona yiyecek alerjinizi söyleyin.",
+          "register": "neutral",
+          "focus": "allergy"
+        },
+        {
+          "en": "Many people get allergies in spring.",
+          "tr": "Birçok insanda ilkbaharda alerji görülür.",
+          "register": "neutral",
+          "focus": "allergies"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "an allergy to",
+        "a food allergy",
+        "a nut allergy",
+        "allergy medicine"
+      ],
+      "word_family": [
+        {
+          "lemma": "allergic",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "alerji",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçe 'alerji' ile aynı kökten gelir; ilk hecede vurgulanır ve 'g' /dʒ/ okunur. Sıfatı 'allergic' olur: I'm allergic to milk.",
+          "mistakes": [
+            {
+              "wrong": "I have allergy on milk.",
+              "right": "I have an allergy to milk.",
+              "why": "Türkçede 'süte alerjim var' (-e hâli) dersiniz; İngilizcede 'allergy to' denir ve 'an' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't eat peanuts because I have a nut ______.",
+        "answer": "allergy",
+        "distractors": [
+          "recipe",
+          "budget",
+          "sale"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.symptom.n.1",
+      "lemma": "symptom",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɪmptəm/",
+        "uk": "/ˈsɪmptəm/"
+      },
+      "def": {
+        "micro": "sign that you are ill",
+        "short": "a change in your body that shows you have an illness",
+        "long": "A change in your body or in how you feel that shows you may have an illness. A cough, a fever, or a headache can be symptoms of a cold."
+      },
+      "examples": [
+        {
+          "en": "A cough and a fever are common symptoms of the flu.",
+          "tr": "Öksürük ve ateş, gribin yaygın belirtileridir.",
+          "register": "neutral",
+          "focus": "symptoms"
+        },
+        {
+          "en": "What symptoms do you have, and since when?",
+          "tr": "Hangi belirtilerin var ve ne zamandır var?",
+          "register": "neutral",
+          "focus": "symptoms"
+        },
+        {
+          "en": "If your symptoms don't get better, see a doctor.",
+          "tr": "Belirtilerin geçmezse doktora git.",
+          "register": "neutral",
+          "focus": "symptoms"
+        }
+      ],
+      "synonyms": [
+        "sign"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "common symptoms",
+        "mild symptoms",
+        "the first symptoms",
+        "symptoms of the flu"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belirti",
+          "alt": [
+            "semptom"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük Türkçede 'belirti' ya da 'semptom' dersiniz. 'Symptom' hastalığın işaretidir; hastalığın nedeni (cause) değildir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A sore throat is one ______ of a cold.",
+        "answer": "symptom",
+        "distractors": [
+          "receipt",
+          "budget",
+          "queue"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recover.v.1",
+      "lemma": "recover",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "to get well after illness",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈkʌvər/",
+        "uk": "/rɪˈkʌvə/"
+      },
+      "def": {
+        "micro": "get well again",
+        "short": "to become healthy again after being ill or hurt",
+        "long": "To become healthy again after an illness or an injury. You recover from something, and the time it takes is called recovery."
+      },
+      "grammar": {
+        "pattern": "recover from + sth"
+      },
+      "examples": [
+        {
+          "en": "She is recovering from a bad cold.",
+          "tr": "Kötü bir nezleden iyileşiyor.",
+          "register": "neutral",
+          "focus": "recovering"
+        },
+        {
+          "en": "Mehmet recovered quickly after the operation.",
+          "tr": "Mehmet ameliyattan sonra çabuk iyileşti.",
+          "register": "neutral",
+          "focus": "recovered"
+        },
+        {
+          "en": "It takes a few weeks to recover from a broken leg.",
+          "tr": "Kırık bir bacaktan iyileşmek birkaç hafta sürer.",
+          "register": "neutral",
+          "focus": "recover"
+        }
+      ],
+      "synonyms": [
+        "get better",
+        "heal"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "recover from",
+        "recover quickly",
+        "fully recover",
+        "recover from an illness"
+      ],
+      "word_family": [
+        {
+          "lemma": "recovery",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyileşmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'get better' daha yaygındır; 'recover' biraz daha resmîdir. 'Recover' kaybolan bir şeyi geri almak için de kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I recovered of the flu.",
+              "right": "I recovered from the flu.",
+              "why": "Türkçede 'gripten iyileştim' (-den hâli) dersiniz; İngilizcede 'recover from' kullanılır, 'of' değil."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It took him two weeks to ______ from the flu.",
+        "answer": "recover",
+        "distractors": [
+          "borrow",
+          "pay",
+          "marry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vaccine.n.1",
+      "lemma": "vaccine",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/vækˈsiːn/",
+        "uk": "/ˈvæksiːn/"
+      },
+      "def": {
+        "micro": "medicine that protects you",
+        "short": "a medicine, often given with a needle, that protects you from an illness",
+        "long": "A medicine, often given with a needle, that protects your body from a disease. Many children get vaccines when they are small, and adults get one for the flu each year."
+      },
+      "examples": [
+        {
+          "en": "Children get several vaccines in their first year.",
+          "tr": "Çocuklara hayatlarının ilk yılında birkaç aşı yapılır.",
+          "register": "neutral",
+          "focus": "vaccines"
+        },
+        {
+          "en": "I got the flu vaccine at the pharmacy.",
+          "tr": "Grip aşımı eczanede oldum.",
+          "register": "neutral",
+          "focus": "vaccine"
+        },
+        {
+          "en": "Scientists worked hard to develop a new vaccine.",
+          "tr": "Bilim insanları yeni bir aşı geliştirmek için çok çalıştı.",
+          "register": "neutral",
+          "focus": "vaccine"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get a vaccine",
+        "a flu vaccine",
+        "a new vaccine",
+        "develop a vaccine"
+      ],
+      "word_family": [
+        {
+          "lemma": "vaccinate",
+          "pos": "v"
+        },
+        {
+          "lemma": "vaccination",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'vaccinus', 'of cows', from 'vacca' (cow). The first vaccine used cowpox to protect people from smallpox.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "aşı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'aşı olmak' dersiniz; İngilizcede 'get a vaccine' ya da 'get vaccinated' denir. Aşı yapmak: 'give a vaccine'.",
+          "mistakes": [
+            {
+              "wrong": "I did the vaccine yesterday.",
+              "right": "I got the vaccine yesterday.",
+              "why": "Türkçede 'aşı oldum' ya da 'aşı yaptırdım' dersiniz; İngilizcede 'do' veya 'make' kullanılmaz, 'get a vaccine' ya da 'get vaccinated' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many people get a flu ______ every autumn.",
+        "answer": "vaccine",
+        "distractors": [
+          "recipe",
+          "pocket",
+          "bargain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.painkiller.n.1",
+      "lemma": "painkiller",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpeɪnˌkɪlər/",
+        "uk": "/ˈpeɪnˌkɪlə/"
+      },
+      "def": {
+        "micro": "medicine that stops pain",
+        "short": "a medicine that stops or reduces pain",
+        "long": "A medicine that stops or reduces pain, such as a tablet for a headache. Some are sold in shops, but strong ones need a prescription."
+      },
+      "examples": [
+        {
+          "en": "Do you have a painkiller? My head hurts.",
+          "tr": "Ağrı kesicin var mı? Başım ağrıyor.",
+          "register": "neutral",
+          "focus": "painkiller"
+        },
+        {
+          "en": "He took a painkiller and went to bed.",
+          "tr": "Bir ağrı kesici alıp yattı.",
+          "register": "neutral",
+          "focus": "painkiller"
+        },
+        {
+          "en": "Don't take two painkillers at the same time.",
+          "tr": "Aynı anda iki ağrı kesici alma.",
+          "register": "neutral",
+          "focus": "painkillers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take a painkiller",
+        "a strong painkiller",
+        "a mild painkiller",
+        "painkiller tablets"
+      ],
+      "word_family": [
+        {
+          "lemma": "pain",
+          "pos": "n"
+        },
+        {
+          "lemma": "kill",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağrı kesici",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçe 'ağrı kesici' ile aynı mantıkla kurulmuş bileşik sözcüktür. İngilizcede tek kelime yazılır: painkiller.",
+          "mistakes": [],
+          "mnemonic": "Pain + killer = ağrıyı öldüren. Türkçede ağrıyı 'keser', İngilizcede ağrıyı 'öldürür'."
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My back hurts. Do you have a ______?",
+        "answer": "painkiller",
+        "distractors": [
+          "recipe",
+          "receipt",
+          "budget"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

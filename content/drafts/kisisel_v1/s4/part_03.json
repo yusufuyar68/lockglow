@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": ["tr"],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.get_on.phv.1",
+      "lemma": "get on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "onto a bus, train or plane",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡɛt ˈɑːn/", "uk": "/ɡɛt ˈɒn/"},
+      "def": {
+        "micro": "go onto a bus or train",
+        "short": "go onto a bus, train, plane or ship to travel",
+        "long": "To go onto a bus, a train, a plane or a ship so you can travel. For cars and taxis we say 'get in'. The opposite is 'get off'."
+      },
+      "grammar": {"pattern": "get on + bus, train, plane"},
+      "examples": [
+        {"en": "Let's get on the next bus.", "tr": "Bir sonraki otobüse binelim.", "register": "neutral", "focus": "get on"},
+        {"en": "We got on the train at eight o'clock.", "tr": "Saat sekizde trene bindik.", "register": "neutral", "focus": "got on"},
+        {"en": "Passengers can get on the plane now.", "tr": "Yolcular artık uçağa binebilir.", "register": "neutral", "focus": "get on"}
+      ],
+      "synonyms": [],
+      "antonyms": ["get off"],
+      "collocations": ["get on the bus", "get on the train", "get on a plane", "get on the metro"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "binmek",
+          "alt": ["otobüse binmek", "trene binmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Büyük araçlara (otobüs, tren, uçak, vapur) 'get on' ile binilir. Araba ve taksiye 'get in' ile binilir.",
+          "mistakes": [
+            {"wrong": "I get in the bus every morning.", "right": "I get on the bus every morning.", "why": "Türkçede hepsi 'binmek'. İngilizcede otobüs, tren, uçak gibi büyük araçlar için 'get on' kullanılır."}
+          ],
+          "mnemonic": "Otobüs, tren, uçak: basamakla çıkılan büyük araçlar. Üstüne (on) çıkarsın."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "Our train is here. Let's ______ before it leaves.", "answer": "get on", "distractors": ["get off", "get up", "put on"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.get_off.phv.1",
+      "lemma": "get off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "leave a bus, train or plane",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ɡɛt ˈɔːf/", "uk": "/ɡɛt ˈɒf/"},
+      "def": {
+        "micro": "leave a bus or train",
+        "short": "leave a bus, train, plane or ship at a stop",
+        "long": "To leave a bus, a train, a plane or a ship at the end of a trip or at a stop. The opposite is 'get on'. For cars and taxis we say 'get out'."
+      },
+      "grammar": {"pattern": "get off + bus, train, plane"},
+      "examples": [
+        {"en": "I get off at the next stop.", "tr": "Bir sonraki durakta inerim.", "register": "neutral", "focus": "get off"},
+        {"en": "Where did you get off the bus?", "tr": "Otobüsten nerede indin?", "register": "neutral", "focus": "get off"},
+        {"en": "Ayşe got off the plane and called her mother.", "tr": "Ayşe uçaktan inip annesini aradı.", "register": "neutral", "focus": "got off"}
+      ],
+      "synonyms": [],
+      "antonyms": ["get on"],
+      "collocations": ["get off the bus", "get off the train", "get off at the next stop", "get off the plane"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "inmek",
+          "alt": ["otobüsten inmek", "trenden inmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Büyük araçlardan (otobüs, tren, uçak, vapur) inerken 'get off', araba ve taksiden inerken 'get out of' denir.",
+          "mistakes": [
+            {"wrong": "I got out of the bus at the station.", "right": "I got off the bus at the station.", "why": "Araç büyükse (otobüs, tren, uçak) 'get off', küçükse (araba, taksi) 'get out of' kullanılır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "I'm on the bus and this is my stop. I'll ______ here.", "answer": "get off", "distractors": ["get on", "get up", "go on"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.try_on.phv.1",
+      "lemma": "try on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "clothes in a shop",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/traɪ ˈɑːn/", "uk": "/traɪ ˈɒn/"},
+      "def": {
+        "micro": "wear to see if it fits",
+        "short": "put on clothes in a shop to see if they fit and look good",
+        "long": "To put on clothes or shoes in a shop to see if they fit you and look good before you buy them. You can also try on glasses or a hat."
+      },
+      "grammar": {"pattern": "try sth on / try on sth (try it on)"},
+      "examples": [
+        {"en": "Can I try on this jacket?", "tr": "Bu montu deneyebilir miyim?", "register": "neutral", "focus": "try on"},
+        {"en": "She tried three dresses on before she chose one.", "tr": "Birini seçmeden önce üç elbise denedi.", "register": "neutral", "focus": "tried three dresses on"},
+        {"en": "These shoes are nice. Can I try them on?", "tr": "Bu ayakkabılar güzel. Deneyebilir miyim?", "register": "neutral", "focus": "try them on"}
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": ["try on a jacket", "try on shoes", "try on a dress", "try on a size"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "giyip denemek",
+          "alt": ["denemek", "üstünde denemek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'denemek' yetiyor ('bu montu deneyebilir miyim?'), ama İngilizcede 'try' tek başına yemeği tatmak ya da bir şeyi denemek olur. Giysi için 'try on' gerekir.",
+          "mistakes": [
+            {"wrong": "Can I try this jacket?", "right": "Can I try on this jacket?", "why": "'Try' tek başına 'denemek, tatmak' demektir. Giysiyi giyip denemek için 'try on' kullanılır."},
+            {"wrong": "Can I try on them?", "right": "Can I try them on?", "why": "Zamir (it, them) 'try' ile 'on' arasına girer."}
+          ],
+          "mnemonic": "Try on = üzerinde (on) denemek."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "I like these jeans. Can I ______ a pair in the fitting room?", "answer": "try on", "distractors": ["take off", "turn on", "give up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.fill_in.phv.1",
+      "lemma": "fill in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "a form",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/fɪl ˈɪn/", "uk": "/fɪl ˈɪn/"},
+      "def": {
+        "micro": "write answers on a form",
+        "short": "write the needed information in the empty spaces on a form",
+        "long": "To write the information that is needed in the empty spaces of a form, a table or a test. British English often says 'fill in'; American English also says 'fill out'."
+      },
+      "grammar": {"pattern": "fill sth in / fill in sth (fill it in)"},
+      "examples": [
+        {"en": "Please fill in this form.", "tr": "Lütfen bu formu doldurun.", "register": "neutral", "focus": "fill in"},
+        {"en": "Fill in your name and phone number here.", "tr": "Adınızı ve telefon numaranızı buraya yazın.", "register": "neutral", "focus": "Fill in"},
+        {"en": "Ayşe filled the online form in and clicked send.", "tr": "Ayşe çevrimiçi formu doldurup Gönder düğmesine tıkladı.", "register": "neutral", "focus": "filled the online form in"}
+      ],
+      "synonyms": ["complete"],
+      "antonyms": [],
+      "collocations": ["fill in a form", "fill in the blanks", "fill in your details", "fill in an application"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doldurmak",
+          "alt": ["formu doldurmak", "yazmak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Form için 'doldurmak', boşluğa bilgi yazmak için de 'yazmak' denir. Bir kabı tamamen doldurmak için ayrı kalıp var: 'fill up'.",
+          "mistakes": [
+            {"wrong": "Please fill this form.", "right": "Please fill in this form.", "why": "'Fill' tek başına bir kabı doldurmaktır (fill a glass). Form doldurmak için 'fill in' (ya da 'fill out') gerekir."},
+            {"wrong": "Please fill up this form.", "right": "Please fill in this form.", "why": "'Fill up' bir kabı ya da depoyu tamamen doldurmaktır. Türkçede ikisi de 'doldurmak' olduğu için karışır."}
+          ],
+          "mnemonic": "Fill in = içini (in) doldurmak: formun boş kutularının içine yazarsın."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "To open an account, you must ______ this form first.", "answer": "fill in", "distractors": ["fill up", "turn on", "pick up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.check_in.phv.1",
+      "lemma": "check in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "at a hotel or airport",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/tʃɛk ˈɪn/", "uk": "/tʃɛk ˈɪn/"},
+      "def": {
+        "micro": "say you have arrived",
+        "short": "tell a hotel or airport that you have arrived",
+        "long": "To tell the staff at a hotel or an airport that you have arrived, so you can get your room or your boarding pass. The noun is 'check-in'."
+      },
+      "grammar": {"pattern": "check in (at a hotel / airport)"},
+      "examples": [
+        {"en": "We check in at the hotel at two.", "tr": "Otele saat ikide giriş yapıyoruz.", "register": "neutral", "focus": "check in"},
+        {"en": "You can check in online before you go to the airport.", "tr": "Havalimanına gitmeden önce internetten check-in yapabilirsin.", "register": "neutral", "focus": "check in"},
+        {"en": "Mehmet checked in and went straight to his room.", "tr": "Mehmet giriş işlemini yaptırıp doğrudan odasına gitti.", "register": "neutral", "focus": "checked in"}
+      ],
+      "synonyms": [],
+      "antonyms": ["check out"],
+      "collocations": ["check in online", "check in at the hotel", "check in at the airport", "check in early"],
+      "word_family": [{"lemma": "check-in", "pos": "n"}],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "check-in yapmak",
+          "alt": ["kayıt yaptırmak", "giriş yapmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede de 'check-in yapmak' denir. Otelde 'giriş yapmak', havalimanında 'bilet işlemi yaptırmak' da kullanılır. Zıttı 'check out' = otelden çıkış yapmak.",
+          "mistakes": [
+            {"wrong": "I will check in the hotel at three.", "right": "I will check in at the hotel at three.", "why": "Otel ya da havalimanı adıyla 'check in at' (veya 'check into') kullanılır. 'Check in the hotel' yanlıştır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "Our flight is at nine. We must ______ at the airport two hours before.", "answer": "check in", "distractors": ["check out", "get off", "fill up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.check_out.phv.1",
+      "lemma": "check out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "leave a hotel",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/tʃɛk ˈaʊt/", "uk": "/tʃɛk ˈaʊt/"},
+      "def": {
+        "micro": "leave a hotel",
+        "short": "pay and leave a hotel at the end of your stay",
+        "long": "To pay your bill and leave a hotel at the end of your stay. Most hotels have a time for it, for example 11 a.m."
+      },
+      "grammar": {"pattern": "check out (of a hotel)"},
+      "examples": [
+        {"en": "We check out at eleven tomorrow.", "tr": "Yarın saat on birde otelden çıkış yapıyoruz.", "register": "neutral", "focus": "check out"},
+        {"en": "Please check out before noon.", "tr": "Lütfen öğleden önce çıkış yapın.", "register": "neutral", "focus": "check out"},
+        {"en": "Maria checked out of the hotel and took a taxi.", "tr": "Maria otelden çıkış yapıp taksiye bindi.", "register": "neutral", "focus": "checked out"}
+      ],
+      "synonyms": [],
+      "antonyms": ["check in"],
+      "collocations": ["check out of a hotel", "check out at noon", "check out early", "check out late"],
+      "word_family": [{"lemma": "check-out", "pos": "n"}],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "check-out yapmak",
+          "alt": ["otelden çıkış yapmak", "odayı boşaltmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Başka bir anlamı 'göz atmak' (check out, 2. kart: 'Check this out!'). Alışveriş sitesindeki 'checkout' ise ödeme adımıdır.",
+          "mistakes": [
+            {"wrong": "We will check out the hotel at noon.", "right": "We will check out of the hotel at noon.", "why": "Otel adıyla 'check out of' kullanılır. 'Check out' + nesne başka bir anlama gelir (göz atmak, incelemek)."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "You can stay in the room until noon. You must ______ by 12:00.", "answer": "check out", "distractors": ["check in", "give up", "fill in"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.hurry_up.phv.1",
+      "lemma": "hurry up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "go or act faster",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/ˌhɜːri ˈʌp/", "uk": "/ˌhʌri ˈʌp/"},
+      "def": {
+        "micro": "go or act faster",
+        "short": "do something faster because there is not much time",
+        "long": "To go or do something faster because there is not much time left. People often say it to others: 'Hurry up, we're late!' It can sound a little impatient."
+      },
+      "grammar": {"pattern": "hurry up (no object); hurry sb up"},
+      "examples": [
+        {"en": "Hurry up! The bus is coming.", "tr": "Acele et! Otobüs geliyor.", "register": "neutral", "focus": "Hurry up"},
+        {"en": "We need to hurry up, or we'll miss the film.", "tr": "Acele etmeliyiz, yoksa filmi kaçıracağız.", "register": "neutral", "focus": "hurry up"},
+        {"en": "Can you hurry up? I'm waiting at the door.", "tr": "Acele eder misin? Kapıda bekliyorum.", "register": "neutral", "focus": "hurry up"}
+      ],
+      "synonyms": ["hurry"],
+      "antonyms": ["slow down"],
+      "collocations": ["Hurry up!", "need to hurry up", "hurry up and eat", "hurry up and get ready"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "acele etmek",
+          "alt": ["çabuk olmak", "hızlanmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Hurry up!' = 'Acele et!' ya da 'Hadi çabuk!'. Biraz sabırsız duyulabilir; daha nazik söylemek için 'We should hurry' denir.",
+          "mistakes": [
+            {"wrong": "Be fast, we are late!", "right": "Hurry up, we are late!", "why": "Türkçedeki 'çabuk ol' kalıbı 'be fast' diye çevrilir. İngilizcede doğal söyleyiş 'hurry up' ya da 'be quick'tir."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "The film starts in five minutes! ______!", "answer": "Hurry up", "distractors": ["Slow down", "Sit down", "Give up"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.slow_down.phv.1",
+      "lemma": "slow down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "go or act more slowly",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/sloʊ ˈdaʊn/", "uk": "/sləʊ ˈdaʊn/"},
+      "def": {
+        "micro": "go or act more slowly",
+        "short": "go, drive or work at a lower speed",
+        "long": "To go, drive or work more slowly. You can say 'Slow down!' to a driver, or to someone who speaks too fast."
+      },
+      "grammar": {"pattern": "slow down; slow sth down / slow down sth"},
+      "examples": [
+        {"en": "Slow down! The road is wet.", "tr": "Yavaşla! Yol ıslak.", "register": "neutral", "focus": "Slow down"},
+        {"en": "Could you slow down a bit? You're speaking very fast.", "tr": "Biraz yavaşlar mısın? Çok hızlı konuşuyorsun.", "register": "neutral", "focus": "slow down"},
+        {"en": "The bus slowed down and stopped at the light.", "tr": "Otobüs yavaşlayıp ışıkta durdu.", "register": "neutral", "focus": "slowed down"}
+      ],
+      "synonyms": [],
+      "antonyms": ["speed up", "hurry up"],
+      "collocations": ["slow down a bit", "slow down and relax", "slow down at the corner"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yavaşlamak",
+          "alt": ["yavaşlatmak", "hızını azaltmak"],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Nesneyle ('slow sth down') 'yavaşlatmak' olur. Konuşmayı yavaşlatmasını isterken de 'Slow down, please' denir.",
+          "mistakes": [
+            {"wrong": "Please slow down it a little.", "right": "Please slow it down a little.", "why": "Zamir (it, them) 'slow' ile 'down' arasına girer. 'Slow down it' yanlıştır."}
+          ],
+          "mnemonic": "Slow = yavaş, down = aşağı: hızı aşağı indirmek."
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "You are driving too fast! Please ______.", "answer": "slow down", "distractors": ["hurry up", "speed up", "stand up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.write_down.phv.1",
+      "lemma": "write down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "write so you remember",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/raɪt ˈdaʊn/", "uk": "/raɪt ˈdaʊn/"},
+      "def": {
+        "micro": "write so you remember",
+        "short": "write something on paper or a phone so you do not forget",
+        "long": "To write something on paper or on your phone so that you remember it later. People write down phone numbers, addresses, ideas and shopping lists."
+      },
+      "grammar": {"pattern": "write sth down / write down sth (write it down)"},
+      "examples": [
+        {"en": "Let me write down your number.", "tr": "Numaranı not edeyim.", "register": "neutral", "focus": "write down"},
+        {"en": "Can you write it down? I'll forget it.", "tr": "Yazar mısın? Yoksa unuturum.", "register": "neutral", "focus": "write it down"},
+        {"en": "She wrote the address down on a small piece of paper.", "tr": "Adresi küçük bir kâğıda yazdı.", "register": "neutral", "focus": "wrote the address down"}
+      ],
+      "synonyms": ["note down"],
+      "antonyms": [],
+      "collocations": ["write down a number", "write down the address", "write down your ideas", "write it down"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yazmak, not etmek",
+          "alt": ["not almak", "kaydetmek"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Write down' tek bir bilgiyi (numara, adres) unutmamak için yazmaktır. Derste ya da toplantıda sürekli not tutmak için 'take notes' denir.",
+          "mistakes": [
+            {"wrong": "Write down it, please.", "right": "Write it down, please.", "why": "Zamir (it, them) 'write' ile 'down' arasına girer. 'Write down it' yanlıştır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
+      "quiz": {"cloze": "The address is long. Please ______ the address so I don't forget.", "answer": "write down", "distractors": ["pick up", "take off", "look for"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    },
+    {
+      "id": "en.lie_down.phv.1",
+      "lemma": "lie down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "rest flat on a bed or sofa",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {"us": "/laɪ ˈdaʊn/", "uk": "/laɪ ˈdaʊn/"},
+      "def": {
+        "micro": "put your body flat",
+        "short": "put your body flat on a bed, sofa or floor to rest",
+        "long": "To put your body flat on a bed, a sofa or the floor, usually to rest or sleep. Doctors often say it: 'Lie down for a few minutes.'"
+      },
+      "grammar": {"pattern": "lie down (no object)"},
+      "examples": [
+        {"en": "I have a headache. I'm going to lie down.", "tr": "Başım ağrıyor. Biraz uzanacağım.", "register": "neutral", "focus": "lie down"},
+        {"en": "The cat likes to lie down in the sun.", "tr": "Kedi güneşte uzanmayı sever.", "register": "neutral", "focus": "lie down"},
+        {"en": "Lie down on your back and close your eyes.", "tr": "Sırt üstü uzan ve gözlerini kapat.", "register": "neutral", "focus": "Lie down"}
+      ],
+      "synonyms": [],
+      "antonyms": ["stand up", "get up"],
+      "collocations": ["lie down for a while", "lie down on the sofa", "lie down and rest", "lie down on your back"],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uzanmak",
+          "alt": ["yatmak"],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'yatmak' hem uzanmak hem uyumaya gitmek olabilir. 'Lie down' yalnızca vücudu yatay konuma getirmektir. Uyumaya gitmek 'go to bed' denir.",
+          "mistakes": [
+            {"wrong": "I want to lay down for a minute.", "right": "I want to lie down for a minute.", "why": "'Lay' nesne alır (lay a book down). Kendi vücudunuz için 'lie' kullanılır. Geçmiş hâli 'lay'dir: I lay down."},
+            {"wrong": "I lie down at eleven every night.", "right": "I go to bed at eleven every night.", "why": "Türkçede 'saat on birde yatarım' deriz. İngilizcede uyumaya gitmek 'go to bed'dir; 'lie down' sadece uzanmaktır."}
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "health_body", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
+      "quiz": {"cloze": "I feel dizzy. I need to ______ for a few minutes.", "answer": "lie down", "distractors": ["stand up", "give up", "go out"]},
+      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+    }
+  ]
+}

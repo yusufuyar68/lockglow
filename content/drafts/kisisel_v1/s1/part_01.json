@@ -1,0 +1,1035 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.spoon.n.1",
+      "lemma": "spoon",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/spuːn/",
+        "uk": "/spuːn/"
+      },
+      "def": {
+        "micro": "tool for eating soup",
+        "short": "a small tool with a round end, used to eat soup or stir tea",
+        "long": "A small tool with a handle and a round end. You use it to eat soup or dessert, or to stir tea and coffee. Bigger ones are used for serving food."
+      },
+      "examples": [
+        {
+          "en": "Can I have a spoon, please?",
+          "tr": "Bir kaşık alabilir miyim lütfen?",
+          "register": "neutral",
+          "focus": "spoon"
+        },
+        {
+          "en": "Maria stirred her coffee with a spoon.",
+          "tr": "Maria kahvesini bir kaşıkla karıştırdı.",
+          "register": "neutral",
+          "focus": "spoon"
+        },
+        {
+          "en": "Kenji ate his soup with a big spoon.",
+          "tr": "Kenji çorbasını büyük bir kaşıkla içti.",
+          "register": "neutral",
+          "focus": "spoon"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wooden spoon",
+        "soup spoon",
+        "spoon and fork",
+        "eat with a spoon"
+      ],
+      "word_family": [
+        {
+          "lemma": "spoonful",
+          "pos": "n"
+        },
+        {
+          "lemma": "teaspoon",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'spōn', meaning a chip or a thin piece of wood.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kaşık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'kaşık' küçük de büyük de olabilir; İngilizcede küçük çay kaşığına teaspoon, büyük yemek kaşığına tablespoon denir.",
+          "mistakes": [
+            {
+              "wrong": "Add two spoon of sugar.",
+              "right": "Add two spoons of sugar.",
+              "why": "Türkçede sayıdan sonra isim çoğul olmaz (iki kaşık); İngilizcede birden fazla ise -s gerekir: two spoons."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I eat soup with a ______, not with a fork.",
+        "answer": "spoon",
+        "distractors": [
+          "knife",
+          "plate",
+          "cup"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fork.n.1",
+      "lemma": "fork",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɔːrk/",
+        "uk": "/fɔːk/"
+      },
+      "def": {
+        "micro": "tool with points for food",
+        "short": "a tool with sharp points that you use to pick up and eat food",
+        "long": "A tool with a handle and sharp points at one end. You use it with a knife to cut food and put it in your mouth. People usually put it on the left side of the plate."
+      },
+      "examples": [
+        {
+          "en": "Can I have a clean fork, please?",
+          "tr": "Temiz bir çatal alabilir miyim lütfen?",
+          "register": "neutral",
+          "focus": "fork"
+        },
+        {
+          "en": "Sam ate the pasta with a fork.",
+          "tr": "Sam makarnayı çatalla yedi.",
+          "register": "neutral",
+          "focus": "fork"
+        },
+        {
+          "en": "The knife goes on the right and the fork on the left.",
+          "tr": "Bıçak sağa, çatal sola konur.",
+          "register": "neutral",
+          "focus": "fork"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "knife and fork",
+        "plastic fork",
+        "salad fork",
+        "dinner fork"
+      ],
+      "word_family": [
+        {
+          "lemma": "forks",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'furca', meaning a pitchfork: the farm tool with sharp points that lifts hay.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "çatal",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'çatal bıçak' dersiniz; İngilizcede sıra tersidir: knife and fork.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need a knife and a ______ for this steak.",
+        "answer": "fork",
+        "distractors": [
+          "spoon",
+          "cup",
+          "plate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.plate.n.1",
+      "lemma": "plate",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pleɪt/",
+        "uk": "/pleɪt/"
+      },
+      "def": {
+        "micro": "flat dish for food",
+        "short": "a flat round dish that you put your food on",
+        "long": "A flat, round dish that you eat from. It is usually bigger than a bowl and has no deep sides. After dinner, someone has to wash the plates."
+      },
+      "examples": [
+        {
+          "en": "Please put the plates on the table.",
+          "tr": "Lütfen tabakları masaya koy.",
+          "register": "neutral",
+          "focus": "plates"
+        },
+        {
+          "en": "Ayşe put more rice on my plate.",
+          "tr": "Ayşe tabağıma biraz daha pilav koydu.",
+          "register": "neutral",
+          "focus": "plate"
+        },
+        {
+          "en": "Don't leave dirty plates in the sink, please.",
+          "tr": "Lütfen kirli tabakları evyede bırakma.",
+          "register": "neutral",
+          "focus": "plates"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "dinner plate",
+        "paper plate",
+        "a plate of rice",
+        "wash the plates"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tabak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Plate' düz yemek tabağıdır. Çorba tabağı gibi derin kaplar için İngilizcede 'bowl' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet put the pizza on a ______ and took it to the table.",
+        "answer": "plate",
+        "distractors": [
+          "cup",
+          "spoon",
+          "bowl"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bowl.n.1",
+      "lemma": "bowl",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/boʊl/",
+        "uk": "/bəʊl/"
+      },
+      "def": {
+        "micro": "deep round dish for soup",
+        "short": "a deep round dish that you use for soup, rice, or cereal",
+        "long": "A round dish with deep sides. You use it for soup, rice, cereal, or salad. People also use a big one to mix food when they cook."
+      },
+      "examples": [
+        {
+          "en": "I'd like a bowl of soup, please.",
+          "tr": "Bir kase çorba istiyorum, lütfen.",
+          "register": "neutral",
+          "focus": "bowl"
+        },
+        {
+          "en": "Sam put some fruit in a big bowl.",
+          "tr": "Sam büyük bir kaseye biraz meyve koydu.",
+          "register": "neutral",
+          "focus": "bowl"
+        },
+        {
+          "en": "Mix the eggs and flour in a large bowl.",
+          "tr": "Yumurtayı ve unu büyük bir kasede karıştırın.",
+          "register": "neutral",
+          "focus": "bowl"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a bowl of soup",
+        "a bowl of rice",
+        "a large bowl",
+        "salad bowl",
+        "cereal bowl"
+      ],
+      "word_family": [
+        {
+          "lemma": "bowls",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kase",
+          "alt": [
+            "tas"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çorba için derin kap 'bowl', düz yemek tabağı 'plate' olur. Türkçede ikisine de 'tabak' denebildiği için karışır.",
+          "mistakes": [
+            {
+              "wrong": "He had a plate of soup.",
+              "right": "He had a bowl of soup.",
+              "why": "Türkçede 'bir tabak çorba' denir; İngilizcede çorba derin kaba konur, bu yüzden a bowl of soup dersiniz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She ate a ______ of hot soup.",
+        "answer": "bowl",
+        "distractors": [
+          "fork",
+          "glass",
+          "bag"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.snack.n.1",
+      "lemma": "snack",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/snæk/",
+        "uk": "/snæk/"
+      },
+      "def": {
+        "micro": "small food between meals",
+        "short": "a small amount of food that you eat between meals",
+        "long": "A small amount of food that you eat between meals, such as fruit, nuts, or a biscuit. Many people take a snack to school or work."
+      },
+      "examples": [
+        {
+          "en": "I always take a snack to work.",
+          "tr": "İşe hep atıştırmalık götürürüm.",
+          "register": "neutral",
+          "focus": "snack"
+        },
+        {
+          "en": "Can I have a snack before dinner?",
+          "tr": "Akşam yemeğinden önce bir şeyler atıştırabilir miyim?",
+          "register": "neutral",
+          "focus": "snack"
+        },
+        {
+          "en": "There are nuts and other snacks on the table.",
+          "tr": "Masada kuruyemiş ve başka atıştırmalıklar var.",
+          "register": "neutral",
+          "focus": "snacks"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a healthy snack",
+        "a quick snack",
+        "snack bar",
+        "afternoon snack",
+        "have a snack"
+      ],
+      "word_family": [
+        {
+          "lemma": "snack",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Middle Dutch 'snacken', meaning to snap or bite at something.",
+        "origin": "Middle Dutch",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "atıştırmalık",
+          "alt": [
+            "ara öğün"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Have a snack' = bir şeyler atıştırmak. Ana öğün (meal) değildir; öğünler arasında yenen küçük şeydir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm hungry. Do we have any ______ for the bus?",
+        "answer": "snacks",
+        "distractors": [
+          "menus",
+          "forks",
+          "bills"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recipe.n.1",
+      "lemma": "recipe",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛsəpi/",
+        "uk": "/ˈrɛsɪpi/"
+      },
+      "def": {
+        "micro": "steps for cooking a dish",
+        "short": "a list of food and steps that show you how to cook a dish",
+        "long": "A list of the food you need and the steps to follow when you cook a dish. You can find one in a book, on a website, or in a video."
+      },
+      "examples": [
+        {
+          "en": "This is my grandmother's recipe for soup.",
+          "tr": "Bu, büyükannemin çorba tarifi.",
+          "register": "neutral",
+          "focus": "recipe"
+        },
+        {
+          "en": "Can you send me the recipe for that cake?",
+          "tr": "O pastanın tarifini bana gönderir misin?",
+          "register": "neutral",
+          "focus": "recipe"
+        },
+        {
+          "en": "I found an easy recipe online and tried it.",
+          "tr": "İnternette kolay bir tarif buldum ve denedim.",
+          "register": "neutral",
+          "focus": "recipe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "follow a recipe",
+        "an easy recipe",
+        "a recipe for cake",
+        "family recipe",
+        "secret recipe"
+      ],
+      "word_family": [
+        {
+          "lemma": "recipes",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'recipe', meaning 'take!'. Doctors once began instructions for medicine with this word.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tarif",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Yol tarifi' İngilizcede directions'dır; 'recipe' yalnızca yemek (veya karışım) tarifidir. Doktor reçetesi ise prescription'dır.",
+          "mistakes": [
+            {
+              "wrong": "Can you tell me the recipe of this cake?",
+              "right": "Can you tell me the recipe for this cake?",
+              "why": "Türkçedeki 'pastanın tarifi' tamlaması 'of' dedirtir; oysa İngilizcede yemek için 'recipe for' kalıbı kullanılır."
+            }
+          ],
+          "mnemonic": "Reçete ve recipe aynı Latince kökten gelir; farkı: yemeğin reçetesi 'recipe', ilacın reçetesi 'prescription'."
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandma gave me her ______ for apple cake.",
+        "answer": "recipe",
+        "distractors": [
+          "menu",
+          "receipt",
+          "plate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.delicious.adj.1",
+      "lemma": "delicious",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈlɪʃəs/",
+        "uk": "/dɪˈlɪʃəs/"
+      },
+      "def": {
+        "micro": "tasting very good",
+        "short": "with a very good taste or smell",
+        "long": "Tasting or smelling very good. We use it for food and drink that we really enjoy, and it is stronger than 'good' or 'nice'."
+      },
+      "examples": [
+        {
+          "en": "This soup is delicious!",
+          "tr": "Bu çorba çok lezzetli!",
+          "register": "neutral",
+          "focus": "delicious"
+        },
+        {
+          "en": "My aunt makes delicious bread, and everyone loves it.",
+          "tr": "Teyzem çok lezzetli ekmek yapar, herkes bayılır.",
+          "register": "neutral",
+          "focus": "delicious"
+        },
+        {
+          "en": "The dinner smelled delicious, and everyone was hungry.",
+          "tr": "Akşam yemeği çok güzel kokuyordu, herkes acıkmıştı.",
+          "register": "neutral",
+          "focus": "delicious"
+        }
+      ],
+      "synonyms": [
+        "tasty",
+        "yummy"
+      ],
+      "antonyms": [
+        "disgusting"
+      ],
+      "collocations": [
+        "delicious food",
+        "smell delicious",
+        "taste delicious",
+        "look delicious",
+        "absolutely delicious"
+      ],
+      "word_family": [
+        {
+          "lemma": "deliciously",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "lezzetli",
+          "alt": [
+            "nefis",
+            "çok güzel"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Çok güzel' demek yeter ama İngilizcede yemek için 'delicious' çok doğaldır. 'Tasty' biraz daha hafif bir övgüdür.",
+          "mistakes": [
+            {
+              "wrong": "This cake is very delicious.",
+              "right": "This cake is really delicious.",
+              "why": "'Delicious' zaten 'çok güzel' demektir; 'very' ile pek kullanılmaz. Vurgu için 'really' ya da 'absolutely' kullanın."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thank you, dinner was ______!",
+        "answer": "delicious",
+        "distractors": [
+          "hungry",
+          "angry",
+          "empty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.boil.v.1",
+      "lemma": "boil",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɔɪl/",
+        "uk": "/bɔɪl/"
+      },
+      "def": {
+        "micro": "heat water until it bubbles",
+        "short": "to heat water until it bubbles, or cook food in water like this",
+        "long": "To heat water until it bubbles, or to cook food in water like this. People boil eggs, pasta, and rice, and they boil water for tea."
+      },
+      "grammar": {
+        "pattern": "boil + sth"
+      },
+      "examples": [
+        {
+          "en": "Boil the eggs for ten minutes.",
+          "tr": "Yumurtaları on dakika haşlayın.",
+          "register": "neutral",
+          "focus": "Boil"
+        },
+        {
+          "en": "Please boil some water for the tea.",
+          "tr": "Lütfen çay için biraz su kaynat.",
+          "register": "neutral",
+          "focus": "boil"
+        },
+        {
+          "en": "Mehmet boiled some potatoes for dinner last night.",
+          "tr": "Mehmet dün akşam yemek için biraz patates haşladı.",
+          "register": "neutral",
+          "focus": "boiled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "boil water",
+        "boil an egg",
+        "boil potatoes",
+        "boil rice",
+        "boil for ten minutes"
+      ],
+      "word_family": [
+        {
+          "lemma": "boiled",
+          "pos": "adj"
+        },
+        {
+          "lemma": "boiling",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaynatmak",
+          "alt": [
+            "haşlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Su için 'kaynatmak', yumurta veya patates için 'haşlamak' dersiniz; İngilizcede ikisi de 'boil'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ the eggs for ten minutes.",
+        "answer": "boil",
+        "distractors": [
+          "cut",
+          "wash",
+          "buy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fry.v.1",
+      "lemma": "fry",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fraɪ/",
+        "uk": "/fraɪ/"
+      },
+      "def": {
+        "micro": "cook in hot oil",
+        "short": "to cook food in a pan with hot oil or butter",
+        "long": "To cook food in a pan with hot oil or butter. People often fry eggs, potatoes, fish, or onions. Fried food is tasty, but it has a lot of oil."
+      },
+      "grammar": {
+        "pattern": "fry + sth"
+      },
+      "examples": [
+        {
+          "en": "I fry an egg for breakfast every day.",
+          "tr": "Her gün kahvaltıda yumurta kızartırım.",
+          "register": "neutral",
+          "focus": "fry"
+        },
+        {
+          "en": "Fry the onions until they are soft.",
+          "tr": "Soğanları yumuşayana kadar kavurun.",
+          "register": "neutral",
+          "focus": "Fry"
+        },
+        {
+          "en": "Maria fried some fish for dinner.",
+          "tr": "Maria akşam yemeği için balık kızarttı.",
+          "register": "neutral",
+          "focus": "fried"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fry an egg",
+        "fry onions",
+        "fry in butter",
+        "fry in oil",
+        "fry until golden"
+      ],
+      "word_family": [
+        {
+          "lemma": "fried",
+          "pos": "adj"
+        },
+        {
+          "lemma": "frying pan",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kızartmak",
+          "alt": [
+            "kavurmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bol yağda 'kızartmak', az yağda soğan gibi şeyleri 'kavurmak' dersiniz; İngilizcede ikisi de 'fry'. Bol yağda kızartmaya deep-fry denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't ______ the fish for too long, or it will burn.",
+        "answer": "fry",
+        "distractors": [
+          "wash",
+          "drink",
+          "pour"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.slice.n.1",
+      "lemma": "slice",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/slaɪs/",
+        "uk": "/slaɪs/"
+      },
+      "def": {
+        "micro": "flat piece cut from food",
+        "short": "a flat, thin piece that you cut from bread, cake, or meat",
+        "long": "A flat, thin piece that you cut from a bigger piece of food, such as bread, cheese, or pizza. In English you ask for a slice of cake or a slice of pizza."
+      },
+      "examples": [
+        {
+          "en": "Can I have a slice of pizza?",
+          "tr": "Bir dilim pizza alabilir miyim?",
+          "register": "neutral",
+          "focus": "slice"
+        },
+        {
+          "en": "She put a slice of cheese on the bread.",
+          "tr": "Ekmeğin üstüne bir dilim peynir koydu.",
+          "register": "neutral",
+          "focus": "slice"
+        },
+        {
+          "en": "Would you like another slice of cake?",
+          "tr": "Bir dilim daha pasta ister misin?",
+          "register": "neutral",
+          "focus": "slice"
+        }
+      ],
+      "synonyms": [
+        "piece"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a slice of bread",
+        "a slice of cake",
+        "a slice of pizza",
+        "a thin slice",
+        "a slice of lemon"
+      ],
+      "word_family": [
+        {
+          "lemma": "slice",
+          "pos": "v"
+        },
+        {
+          "lemma": "sliced",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dilim",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Dilim' ekmek, pasta ve pizza için kullanılır. Sayılabilirdir: a slice, two slices. 'Piece' daha genel bir parçadır.",
+          "mistakes": [
+            {
+              "wrong": "I'd like a slice cake.",
+              "right": "I'd like a slice of cake.",
+              "why": "Türkçede 'bir dilim pasta' dersiniz; İngilizcede araya 'of' girer: a slice of cake."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Would you like a ______ of cake?",
+        "answer": "slice",
+        "distractors": [
+          "glass",
+          "pair",
+          "bottle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

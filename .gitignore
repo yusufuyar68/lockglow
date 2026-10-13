@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# İçerik hattı çalışma çıktıları (onaylı kartlar content/cards/ altında tutulur)
+content-pipeline/runs/
+content-pipeline/build/
+content-pipeline/review/
+
+# Xcode / XcodeGen (proje dosyası project.yml'den üretilir)
+ios/*.xcodeproj/
+ios/*.xcworkspace/
+ios/DerivedData/
+ios/.build/
+ios/Packages/*/.build/
+ios/Packages/*/.swiftpm/
+xcuserdata/
+*.xcuserstate
+
+
+# Sistem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Gizli bilgiler (asla depoya girmesin)
+.env
+.env.*
+*.pem
+*.p12
+*.mobileprovision
+*.p8

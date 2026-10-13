@@ -1,0 +1,6 @@
+# Text files are stored and checked out with LF (the Mac build and shell scripts expect LF).
+* text=auto eol=lf
+*.sqlite binary
+*.png binary
+*.jpg binary
+*.jpeg binary

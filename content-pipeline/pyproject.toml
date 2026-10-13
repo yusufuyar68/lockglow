@@ -1,0 +1,26 @@
+[project]
+name = "vocabpipe"
+version = "0.1.0"
+description = "Lockglow içerik hattı: kart şeması, doğrulama, Claude ile üretim, SQLite paketleme"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.91",
+    "pydantic>=2.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# Only vocabpipe is a package; data/, plans/ and tests/ sit next to it (flat layout).
+[tool.setuptools]
+packages = ["vocabpipe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_default_fixture_loop_scope = "function"
+# Kendi modüllerimizdeki uyarılar hata sayılır (ör. pydantic alan gölgeleme).
+filterwarnings = ["error::UserWarning:vocabpipe.*"]

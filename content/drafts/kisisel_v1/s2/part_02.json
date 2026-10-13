@@ -1,0 +1,444 @@
+{
+"schema_version": "1.0",
+"l1_langs": ["tr"],
+"generated_on": "2026-10-11",
+"entries": [
+{
+  "id": "en.oclock.adv.1",
+  "lemma": "o'clock",
+  "type": "word",
+  "pos": "adv",
+  "sense_no": 1,
+  "sense_note": "exact hour",
+  "level": "A1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/əˈklɑːk/", "uk": "/əˈklɒk/"},
+  "def": {
+    "micro": "exactly on the hour",
+    "short": "used after a number to say it is exactly that hour",
+    "long": "Used after a number from one to twelve to say the time is exactly that hour, with no extra minutes. It is not used with minutes: say 'five thirty', not 'five thirty o'clock'."
+  },
+  "grammar": {"pattern": "number + o'clock"},
+  "examples": [
+    {"en": "The shop closes at six o'clock.", "tr": "Dükkân saat altıda kapanıyor.", "register": "neutral", "focus": "o'clock"},
+    {"en": "It's ten o'clock. Time for bed!", "tr": "Saat on oldu. Yatma vakti!", "register": "neutral", "focus": "o'clock"},
+    {"en": "My flight leaves at seven o'clock in the morning.", "tr": "Uçağım sabah yedide kalkıyor.", "register": "neutral", "focus": "o'clock"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["at six o'clock", "nine o'clock", "at five o'clock sharp", "five o'clock in the morning"],
+  "word_family": [],
+  "etymology": {"text": "Short for 'of the clock': 'six of the clock' became 'six o'clock' over time.", "origin": "English", "confidence": "high"},
+  "l1": {
+    "tr": {
+      "gloss": "tam saat",
+      "alt": [],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Saat altı' = 'six o'clock'. Yalnızca 6:00, 7:00 gibi tam saatlerde kullanılır; 6:30 veya 6:15 için kullanılmaz. 'Saat' kelimesini ayrıca çevirmeyin.",
+      "mistakes": [
+        {"wrong": "It's half past five o'clock.", "right": "It's half past five.", "why": "'O'clock' yalnızca tam saatlerde kullanılır; buçuk, çeyrek ve dakikalı saatlerde söylenmez."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "The movie starts at eight ______.", "answer": "o'clock", "distractors": ["clock", "hour", "time"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.twice.adv.1",
+  "lemma": "twice",
+  "type": "word",
+  "pos": "adv",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/twaɪs/", "uk": "/twaɪs/"},
+  "def": {
+    "micro": "two times",
+    "short": "two times, not just one time",
+    "long": "Two times, not just once. We often use it to say how often we do something, for example every day, every week, or every year."
+  },
+  "grammar": {"pattern": "twice a day / week / year"},
+  "examples": [
+    {"en": "I go to the gym twice a week.", "tr": "Haftada iki kez spor salonuna giderim.", "register": "neutral", "focus": "twice"},
+    {"en": "He called me twice this morning.", "tr": "Bu sabah beni iki kez aradı.", "register": "neutral", "focus": "twice"},
+    {"en": "Please read the message twice before you send it.", "tr": "Mesajı göndermeden önce lütfen iki kez oku.", "register": "neutral", "focus": "twice"}
+  ],
+  "synonyms": ["two times"],
+  "antonyms": ["once"],
+  "collocations": ["twice a day", "twice a week", "twice a year", "twice as much"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "iki kez",
+      "alt": ["iki defa", "iki kere"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "'Twice' tek kelimedir; 'two times' demek de doğrudur ama 'twice' daha doğaldır. Sıklık için 'a day / a week' kalıbı kullanılır: twice a week.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "I brush my teeth ______ a day: in the morning and at night.", "answer": "twice", "distractors": ["once", "never", "always"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.homework.n.1",
+  "lemma": "homework",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈhoʊmwɜːrk/", "uk": "/ˈhəʊmwɜːk/"},
+  "def": {
+    "micro": "school tasks to do at home",
+    "short": "school tasks that a teacher asks you to do at home",
+    "long": "Work that a teacher gives students to do at home, after the lesson. It is uncountable: say 'some homework' or 'a piece of homework', not 'homeworks'."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "I have a lot of homework tonight.", "tr": "Bu akşam çok ödevim var.", "register": "neutral", "focus": "homework"},
+    {"en": "Have you done your homework yet?", "tr": "Ödevini yaptın mı?", "register": "neutral", "focus": "homework"},
+    {"en": "Ayşe helps her son with his homework every evening.", "tr": "Ayşe her akşam oğluna ödevinde yardım eder.", "register": "neutral", "focus": "homework"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["do your homework", "homework help", "a lot of homework", "finish your homework", "give homework"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "ödev",
+      "alt": ["ev ödevi"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "'Homework' sayılamayan bir isimdir. Tek bir ödev için 'an assignment' veya 'a piece of homework' denir. 'Homeworks' kullanılmaz.",
+      "mistakes": [
+        {"wrong": "I made my homework.", "right": "I did my homework.", "why": "'Ödev yapmak' = 'do homework'. 'Make' kullanılmaz."},
+        {"wrong": "I have many homeworks.", "right": "I have a lot of homework.", "why": "'Homework' sayılamaz: çoğul eki almaz, 'many' ile kullanılmaz."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["uncountable"], "sensitivity": 0},
+  "quiz": {"cloze": "I can't go out. I must finish my ______ first.", "answer": "homework", "distractors": ["holiday", "uniform", "teacher"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.lesson.n.1",
+  "lemma": "lesson",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "class time",
+  "level": "A1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈlɛsən/", "uk": "/ˈlɛsən/"},
+  "def": {
+    "micro": "time when a teacher teaches",
+    "short": "a period of time when a teacher teaches you something",
+    "long": "A period of time when a teacher teaches a person or a group, at school or in a private class. Many people take swimming or guitar lessons after work."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "My English lesson starts at nine.", "tr": "İngilizce dersim dokuzda başlıyor.", "register": "neutral", "focus": "lesson"},
+    {"en": "Mehmet takes guitar lessons on Saturdays.", "tr": "Mehmet cumartesi günleri gitar dersi alıyor.", "register": "neutral", "focus": "lessons"},
+    {"en": "The lesson was short, so we went home early.", "tr": "Ders kısaydı, o yüzden eve erken gittik.", "register": "neutral", "focus": "lesson"}
+  ],
+  "synonyms": ["class"],
+  "antonyms": [],
+  "collocations": ["English lesson", "take lessons", "give a lesson", "a private lesson", "swimming lessons"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "ders",
+      "alt": ["ders saati"],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede 'ders' hem tek bir ders saati hem de okuduğunuz konu demektir. İngilizcede tek ders saati 'lesson', okul dersi (matematik gibi) 'subject' olur.",
+      "mistakes": [
+        {"wrong": "My favorite lesson is math.", "right": "My favorite subject is math.", "why": "'Favori ders' (matematik, tarih gibi bir alan) için 'subject' kullanılır; 'lesson' tek bir ders saatidir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "school_learning", "topics": ["school_learning", "hobbies_sports"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "I have a piano ______ every Tuesday after school.", "answer": "lesson", "distractors": ["window", "pencil", "answer"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.pet.n.1",
+  "lemma": "pet",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A1",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/pɛt/", "uk": "/pɛt/"},
+  "def": {
+    "micro": "animal you keep at home",
+    "short": "an animal that you keep at home and take care of",
+    "long": "An animal, such as a cat, a dog, or a bird, that a person keeps at home and takes care of. Pets live with the family like friends."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "Do you have any pets?", "tr": "Evcil hayvanın var mı?", "register": "neutral", "focus": "pets"},
+    {"en": "We have a pet cat called Pamuk.", "tr": "Pamuk adında bir evcil kedimiz var.", "register": "neutral", "focus": "pet"},
+    {"en": "Pets are not allowed in this building.", "tr": "Bu binada evcil hayvanlara izin verilmiyor.", "register": "neutral", "focus": "Pets"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["a pet cat", "have a pet", "pet food", "pet shop", "pet owner"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "evcil hayvan",
+      "alt": ["ev hayvanı"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "İngilizcede tek bir kısa kelime yeter: 'pet'. 'Domestic animal' çiftlik hayvanlarını da kapsar; 'pet' ise evde sevilen, bakılan hayvandır.",
+      "mistakes": [
+        {"wrong": "Do you have a domestic animal?", "right": "Do you have a pet?", "why": "'Evcil hayvan' sözcük sözcük çevrilmez; günlük konuşmada 'pet' denir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "A dog is a good ______ for a family with children.", "answer": "pet", "distractors": ["farm", "tool", "garden"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.traffic_jam.phr.1",
+  "lemma": "traffic jam",
+  "type": "collocation",
+  "pos": "phr",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈtræfɪk dʒæm/", "uk": "/ˈtræfɪk dʒæm/"},
+  "def": {
+    "micro": "too many cars on the road",
+    "short": "a long line of cars that cannot move or can only move slowly",
+    "long": "A long line of cars, buses, and trucks on a road that cannot move, or can only move very slowly. It is common in big cities at the start and end of the working day."
+  },
+  "grammar": {"pattern": "be stuck in a traffic jam"},
+  "examples": [
+    {"en": "I'm late because I was stuck in a traffic jam.", "tr": "Trafikte sıkışıp kaldığım için geç kaldım.", "register": "neutral", "focus": "traffic jam"},
+    {"en": "There is a big traffic jam on the bridge this morning.", "tr": "Bu sabah köprüde büyük bir trafik sıkışıklığı var.", "register": "neutral", "focus": "traffic jam"},
+    {"en": "We left early to avoid the traffic jam.", "tr": "Trafiğe takılmamak için erken çıktık.", "register": "neutral", "focus": "traffic jam"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["stuck in a traffic jam", "a huge traffic jam", "avoid a traffic jam"],
+  "word_family": [{"lemma": "traffic", "pos": "n"}],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "trafik sıkışıklığı",
+      "alt": ["yoğun trafik", "trafik"],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "Günlük Türkçede çoğu zaman sadece 'trafik' denir ('Trafik vardı'). İngilizcede 'traffic' sayılamaz, 'traffic jam' ise sayılabilir: a traffic jam, two traffic jams.",
+      "mistakes": [
+        {"wrong": "There was a heavy traffic.", "right": "There was heavy traffic.", "why": "'Traffic' sayılamaz bir isimdir; önüne 'a' gelmez. 'A traffic jam' ise sayılabilir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "I was an hour late because of a big ______.", "answer": "traffic jam", "distractors": ["bus stop", "road sign", "parking lot"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.elevator.n.1",
+  "lemma": "elevator",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈɛlɪveɪtər/", "uk": "/ˈɛlɪveɪtə/"},
+  "def": {
+    "micro": "machine that lifts people",
+    "short": "a small room that moves up and down to carry people between floors",
+    "long": "A machine like a small room that moves up and down in a building to carry people between floors. In British English, people usually say 'lift'."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "The elevator is broken, so we have to use the stairs.", "tr": "Asansör bozuk, o yüzden merdivenleri kullanmak zorundayız.", "register": "neutral", "focus": "elevator"},
+    {"en": "Take the elevator to the fifth floor.", "tr": "Asansörle beşinci kata çıkın.", "register": "neutral", "focus": "elevator"},
+    {"en": "Ayşe pressed the button and waited for the elevator.", "tr": "Ayşe düğmeye bastı ve asansörü bekledi.", "register": "neutral", "focus": "elevator"}
+  ],
+  "synonyms": ["lift"],
+  "antonyms": [],
+  "collocations": ["take the elevator", "wait for the elevator", "elevator button", "an elevator ride"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "asansör",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "ABD'de 'elevator', İngiltere'de 'lift' denir. 'Escalator' ise yürüyen merdivendir.",
+      "mistakes": [
+        {"wrong": "I went up with the elevator.", "right": "I went up in the elevator. / I took the elevator.", "why": "Türkçedeki '-le' eki İngilizcede 'with' olmaz: 'in the elevator' veya 'take the elevator' denir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "The ______ stopped between floors, and we were stuck for ten minutes.", "answer": "elevator", "distractors": ["staircase", "platform", "taxi"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.subway.n.1",
+  "lemma": "subway",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "underground train",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈsʌbweɪ/", "uk": "/ˈsʌbweɪ/"},
+  "def": {
+    "micro": "underground train system",
+    "short": "a train system that runs under the streets of a big city",
+    "long": "A railway system that runs under the streets of a big city. Americans say 'subway'; British people say 'the Underground' or 'the Tube'."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "I take the subway to work every day.", "tr": "Her gün işe metroyla giderim.", "register": "neutral", "focus": "subway"},
+    {"en": "The subway station is two blocks from here.", "tr": "Metro istasyonu buradan iki sokak ötede.", "register": "neutral", "focus": "subway"},
+    {"en": "The subway is faster than the bus at rush hour.", "tr": "Yoğun saatlerde metro otobüsten daha hızlı.", "register": "neutral", "focus": "subway"}
+  ],
+  "synonyms": ["metro", "underground"],
+  "antonyms": [],
+  "collocations": ["take the subway", "subway station", "subway line", "ride the subway", "subway map"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "metro",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "İngiltere'de 'subway' alt geçit (yolun altından geçen yaya yolu) demektir. Metro için orada 'the Underground' veya 'the Tube' denir.",
+      "mistakes": [
+        {"wrong": "I go to work with subway.", "right": "I go to work by subway. / on the subway.", "why": "'Metroyla' için 'with' kullanılmaz. 'By subway' (the yok) veya 'on the subway' (the var) denir."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "In New York, I take the ______ to go to work.", "answer": "subway", "distractors": ["sidewalk", "platform", "corner"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.platform.n.1",
+  "lemma": "platform",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": "at a train station",
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈplætfɔːrm/", "uk": "/ˈplætfɔːm/"},
+  "def": {
+    "micro": "where you wait for a train",
+    "short": "the raised place at a station where you get on and off trains",
+    "long": "The flat, raised area next to the railway tracks in a station, where people wait for a train. Big stations have numbered ones, for example number 3."
+  },
+  "grammar": {"pattern": "platform + number"},
+  "examples": [
+    {"en": "The train to Ankara leaves from platform 4.", "tr": "Ankara treni 4. perondan kalkıyor.", "register": "neutral", "focus": "platform"},
+    {"en": "Please stand behind the yellow line on the platform.", "tr": "Lütfen perondaki sarı çizginin gerisinde durun.", "register": "formal", "focus": "platform"},
+    {"en": "We waited on the platform for twenty minutes.", "tr": "Peronda yirmi dakika bekledik.", "register": "neutral", "focus": "platform"}
+  ],
+  "synonyms": [],
+  "antonyms": [],
+  "collocations": ["on the platform", "platform number", "platform 3", "a crowded platform", "train platform"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "peron",
+      "alt": [],
+      "equivalence": "partial",
+      "false_friend": null,
+      "note": "Türkçede istasyondaki 'peron' İngilizcede 'platform' olur. 'Platform' ayrıca uygulama veya yayın platformu anlamına da gelir; bu kart sadece peron anlamını verir.",
+      "mistakes": [
+        {"wrong": "The train arrives to platform 2.", "right": "The train arrives at platform 2.", "why": "Türkçede '-e' eki 'to' gibi gelir ama 'arrive' ile yer için 'at' kullanılır: arrive at platform 2."}
+      ],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "The train to Izmir leaves from ______ 3.", "answer": "platform", "distractors": ["street", "window", "corner"]},
+  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+},
+{
+  "id": "en.sidewalk.n.1",
+  "lemma": "sidewalk",
+  "type": "word",
+  "pos": "n",
+  "sense_no": 1,
+  "sense_note": null,
+  "level": "A2",
+  "level_source": "editorial_estimate",
+  "freq": null,
+  "ipa": {"us": "/ˈsaɪdwɔːk/", "uk": "/ˈsaɪdwɔːk/"},
+  "def": {
+    "micro": "path beside a road",
+    "short": "a hard path beside a road where people walk",
+    "long": "A hard path along the side of a road where people walk. British English uses 'pavement' for this. 'Sidewalk' is the American word."
+  },
+  "grammar": null,
+  "examples": [
+    {"en": "Please do not park on the sidewalk.", "tr": "Lütfen kaldırıma park etmeyin.", "register": "neutral", "focus": "sidewalk"},
+    {"en": "The children rode their bikes on the sidewalk.", "tr": "Çocuklar kaldırımda bisiklet sürdü.", "register": "neutral", "focus": "sidewalk"},
+    {"en": "Walk on the sidewalk, not in the road.", "tr": "Yolda değil, kaldırımda yürü.", "register": "neutral", "focus": "sidewalk"}
+  ],
+  "synonyms": ["pavement"],
+  "antonyms": [],
+  "collocations": ["on the sidewalk", "walk on the sidewalk", "a narrow sidewalk", "sidewalk café"],
+  "word_family": [],
+  "etymology": null,
+  "l1": {
+    "tr": {
+      "gloss": "kaldırım",
+      "alt": [],
+      "equivalence": "full",
+      "false_friend": null,
+      "note": "ABD'de 'sidewalk', İngiltere'de 'pavement' denir. Dikkat: ABD'de 'pavement' yolun asfaltı demektir, yaya yolu değil.",
+      "mistakes": [],
+      "mnemonic": null
+    }
+  },
+  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
+  "quiz": {"cloze": "Please walk on the ______, not in the middle of the road.", "answer": "sidewalk", "distractors": ["roof", "wall", "ceiling"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+}
+]
+}

@@ -1,0 +1,1225 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.fresh.adj.1",
+      "lemma": "fresh",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "food that is not old",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/frɛʃ/",
+        "uk": "/frɛʃ/"
+      },
+      "def": {
+        "micro": "made or picked not long ago",
+        "short": "made, picked, or bought a short time ago",
+        "long": "Made, picked, or bought a short time ago, so it is still good to eat. We often say fresh bread, fresh fruit, and fresh fish."
+      },
+      "examples": [
+        {
+          "en": "The bread is fresh. I bought it today.",
+          "tr": "Ekmek taze. Bugün aldım.",
+          "register": "neutral",
+          "focus": "fresh"
+        },
+        {
+          "en": "Ayşe only buys fresh fish from the market.",
+          "tr": "Ayşe sadece pazardan taze balık alır.",
+          "register": "neutral",
+          "focus": "fresh"
+        },
+        {
+          "en": "Is the milk still fresh, or should I throw it away?",
+          "tr": "Süt hâlâ taze mi, yoksa atmalı mıyım?",
+          "register": "neutral",
+          "focus": "fresh"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "stale",
+        "old"
+      ],
+      "collocations": [
+        "fresh bread",
+        "fresh fruit",
+        "fresh fish",
+        "fresh vegetables",
+        "fresh from the oven"
+      ],
+      "word_family": [
+        {
+          "lemma": "freshly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "freshness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "taze",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Zıtları: bayat ekmek = stale bread; bozulmuş süt = sour milk. 'Fresh air' (temiz hava) ayrı bir kullanımdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like ______ bread from the bakery, still warm.",
+        "answer": "fresh",
+        "distractors": [
+          "cold",
+          "angry",
+          "tall"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spicy.adj.1",
+      "lemma": "spicy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspaɪsi/",
+        "uk": "/ˈspaɪsi/"
+      },
+      "def": {
+        "micro": "with a strong hot taste",
+        "short": "with a hot taste from pepper or other strong flavors",
+        "long": "With a strong, hot taste from pepper or other flavors. Spicy food can make your mouth feel hot, so people often drink water or milk with it."
+      },
+      "examples": [
+        {
+          "en": "I don't like spicy food.",
+          "tr": "Acılı yemek sevmem.",
+          "register": "neutral",
+          "focus": "spicy"
+        },
+        {
+          "en": "This sauce is too spicy for me.",
+          "tr": "Bu sos benim için fazla acılı.",
+          "register": "neutral",
+          "focus": "spicy"
+        },
+        {
+          "en": "Would you like the chicken mild or spicy?",
+          "tr": "Tavuk acısız mı olsun, acılı mı?",
+          "register": "neutral",
+          "focus": "spicy"
+        }
+      ],
+      "synonyms": [
+        "hot"
+      ],
+      "antonyms": [
+        "mild",
+        "bland"
+      ],
+      "collocations": [
+        "spicy food",
+        "spicy sauce",
+        "spicy soup",
+        "too spicy",
+        "a little spicy"
+      ],
+      "word_family": [
+        {
+          "lemma": "spice",
+          "pos": "n"
+        },
+        {
+          "lemma": "spiciness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "acılı",
+          "alt": [
+            "baharatlı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'acı' hem biberin yakıcı tadı hem de buruk tat demektir. Biber gibi yakan tat 'spicy' ya da 'hot', buruk tat 'bitter' olur.",
+          "mistakes": [
+            {
+              "wrong": "This soup is very bitter.",
+              "right": "This soup is very spicy.",
+              "why": "Türkçede 'acı' iki ayrı tat için kullanılır. Biberden gelen acıya 'spicy' denir; 'bitter' kahve gibi buruk tattır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This curry is too ______ for me. My mouth is on fire!",
+        "answer": "spicy",
+        "distractors": [
+          "sleepy",
+          "cheap",
+          "quiet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dessert.n.1",
+      "lemma": "dessert",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈzɜːrt/",
+        "uk": "/dɪˈzɜːt/"
+      },
+      "def": {
+        "micro": "sweet food after dinner",
+        "short": "a sweet dish that you eat at the end of a meal",
+        "long": "A sweet dish that you eat at the end of a meal, such as cake, ice cream, or fruit. In a restaurant, the waiter often asks, \"Would you like dessert?\""
+      },
+      "examples": [
+        {
+          "en": "What's for dessert tonight?",
+          "tr": "Bu akşam tatlı olarak ne var?",
+          "register": "neutral",
+          "focus": "dessert"
+        },
+        {
+          "en": "We had ice cream for dessert.",
+          "tr": "Tatlı olarak dondurma yedik.",
+          "register": "neutral",
+          "focus": "dessert"
+        },
+        {
+          "en": "Would you like to see the dessert menu?",
+          "tr": "Tatlı menüsüne bakmak ister misiniz?",
+          "register": "formal",
+          "focus": "dessert"
+        }
+      ],
+      "synonyms": [
+        "pudding"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "for dessert",
+        "dessert menu",
+        "a sweet dessert",
+        "have dessert",
+        "order dessert"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'desservir', meaning to clear the table: dessert came after the main dishes were taken away.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tatlı",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Sweet' tat sıfatıdır (tatlı); yemeğin sonundaki tatlı ise 'dessert' olur. 'Desert' (çöl) ile karıştırmayın.",
+          "mistakes": [
+            {
+              "wrong": "We had a cake for desert.",
+              "right": "We had a cake for dessert.",
+              "why": "'Desert' çöl demektir. Yemek sonundaki tatlı iki 's' ile 'dessert' yazılır ve farklı okunur."
+            }
+          ],
+          "mnemonic": "Dessert iki 's' ile yazılır: tatlıdan iki kere istersin. Desert (çöl) tek 's'."
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After dinner, we had chocolate cake for ______.",
+        "answer": "dessert",
+        "distractors": [
+          "breakfast",
+          "lunch",
+          "supper"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.taste.v.1",
+      "lemma": "taste",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "to have a flavor",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪst/",
+        "uk": "/teɪst/"
+      },
+      "def": {
+        "micro": "have a certain flavor",
+        "short": "to have a certain flavor when you eat or drink it",
+        "long": "To have a certain flavor when you eat or drink something. We say that food tastes good, bad, sweet, or like something else."
+      },
+      "grammar": {
+        "pattern": "taste + adj / taste like + noun"
+      },
+      "examples": [
+        {
+          "en": "This soup tastes great!",
+          "tr": "Bu çorbanın tadı harika!",
+          "register": "neutral",
+          "focus": "tastes"
+        },
+        {
+          "en": "The tea tastes like apples and a little cinnamon.",
+          "tr": "Bu çayın tadı elma ve biraz da tarçın gibi.",
+          "register": "neutral",
+          "focus": "tastes"
+        },
+        {
+          "en": "It looks nice, but it tastes terrible.",
+          "tr": "Güzel görünüyor ama tadı berbat.",
+          "register": "neutral",
+          "focus": "tastes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "taste good",
+        "taste bad",
+        "taste like",
+        "taste sweet",
+        "taste delicious"
+      ],
+      "word_family": [
+        {
+          "lemma": "tasty",
+          "pos": "adj"
+        },
+        {
+          "lemma": "tasteless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tadı ... olmak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'tadı güzel' diye isim kullanırsınız; İngilizcede 'taste' bir bağ fiildir ve sıfat alır: tastes good.",
+          "mistakes": [
+            {
+              "wrong": "This soup tastes well.",
+              "right": "This soup tastes good.",
+              "why": "'Taste' bu anlamda bağ fiildir; ardından zarf (well) değil sıfat (good) gelir: tastes good, tastes sweet."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This coffee ______ bitter. Can I have some sugar?",
+        "answer": "tastes",
+        "distractors": [
+          "sounds",
+          "feels",
+          "wants"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ingredient.n.1",
+      "lemma": "ingredient",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈɡriːdiənt/",
+        "uk": "/ɪnˈɡriːdiənt/"
+      },
+      "def": {
+        "micro": "food used to make a dish",
+        "short": "one of the foods that you mix together to make a dish",
+        "long": "One of the different foods that you mix or cook together to make a dish. Flour, eggs, and sugar are the main ones for a simple cake."
+      },
+      "examples": [
+        {
+          "en": "Eggs are the main ingredient in this dish.",
+          "tr": "Bu yemeğin ana malzemesi yumurta.",
+          "register": "neutral",
+          "focus": "ingredient"
+        },
+        {
+          "en": "I don't have all the ingredients for the cake.",
+          "tr": "Pasta için gereken malzemelerin hepsi bende yok.",
+          "register": "neutral",
+          "focus": "ingredients"
+        },
+        {
+          "en": "Always read the ingredients if you have an allergy.",
+          "tr": "Alerjiniz varsa içindekileri her zaman okuyun.",
+          "register": "neutral",
+          "focus": "ingredients"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the main ingredient",
+        "fresh ingredients",
+        "a list of ingredients",
+        "secret ingredient",
+        "mix the ingredients"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "malzeme",
+          "alt": [
+            "içerik",
+            "bileşen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yemeğin malzemesi için 'ingredient', paketin üstündeki 'içindekiler' listesi için de 'ingredients' denir.",
+          "mistakes": [
+            {
+              "wrong": "I need some materials for the cake.",
+              "right": "I need some ingredients for the cake.",
+              "why": "Türkçede 'malzeme' hem yemek hem inşaat için kullanılır; İngilizcede yemeğin malzemesi 'ingredients', yapı veya okul malzemesi 'materials' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't cook it because I'm missing one ______.",
+        "answer": "ingredient",
+        "distractors": [
+          "menu",
+          "bill",
+          "window"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.leftovers.n.1",
+      "lemma": "leftovers",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɛftˌoʊvərz/",
+        "uk": "/ˈlɛftˌəʊvəz/"
+      },
+      "def": {
+        "micro": "food not eaten at a meal",
+        "short": "food that is not eaten at a meal and is kept for later",
+        "long": "Food that nobody ate at a meal and that you keep for later. Many people put it in the fridge and eat it the next day for lunch."
+      },
+      "examples": [
+        {
+          "en": "We had leftovers for lunch today.",
+          "tr": "Bugün öğle yemeğinde artan yemekleri yedik.",
+          "register": "neutral",
+          "focus": "leftovers"
+        },
+        {
+          "en": "Put the leftovers in the fridge, please.",
+          "tr": "Lütfen artan yemeği buzdolabına koy.",
+          "register": "neutral",
+          "focus": "leftovers"
+        },
+        {
+          "en": "Mehmet took his leftovers to work in a box.",
+          "tr": "Mehmet artan yemeğini bir kutuya koyup işe götürdü.",
+          "register": "neutral",
+          "focus": "leftovers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "eat leftovers",
+        "reheat leftovers",
+        "store leftovers",
+        "leftover rice"
+      ],
+      "word_family": [
+        {
+          "lemma": "leftover",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "artan yemek",
+          "alt": [
+            "yemek artığı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hemen her zaman çoğul kullanılır: leftovers. Türkçede tek bir kelime yoktur; 'dünden kalan yemek' ya da 'artan yemek' dersiniz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural_only"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We ordered too much, so we ate the ______ the next day.",
+        "answer": "leftovers",
+        "distractors": [
+          "recipes",
+          "menus",
+          "forks"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bake.v.1",
+      "lemma": "bake",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/beɪk/",
+        "uk": "/beɪk/"
+      },
+      "def": {
+        "micro": "cook in an oven",
+        "short": "to cook food, such as bread or cake, in an oven",
+        "long": "To cook food in an oven with dry heat. People bake bread, cakes, and biscuits, and sometimes fish or potatoes."
+      },
+      "grammar": {
+        "pattern": "bake + sth"
+      },
+      "examples": [
+        {
+          "en": "I'm going to bake a cake for her birthday.",
+          "tr": "Onun doğum günü için pasta yapacağım.",
+          "register": "neutral",
+          "focus": "bake"
+        },
+        {
+          "en": "Bake the bread for thirty minutes.",
+          "tr": "Ekmeği otuz dakika fırında pişirin.",
+          "register": "neutral",
+          "focus": "Bake"
+        },
+        {
+          "en": "Ayşe bakes fresh bread every Sunday morning.",
+          "tr": "Ayşe her pazar sabahı taze ekmek yapar.",
+          "register": "neutral",
+          "focus": "bakes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bake a cake",
+        "bake bread",
+        "bake cookies",
+        "bake for 30 minutes",
+        "bake in the oven"
+      ],
+      "word_family": [
+        {
+          "lemma": "baker",
+          "pos": "n"
+        },
+        {
+          "lemma": "bakery",
+          "pos": "n"
+        },
+        {
+          "lemma": "baked",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fırında pişirmek",
+          "alt": [
+            "pasta yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Pasta yapmak' İngilizcede 'bake a cake' olur. 'Bake' yalnızca fırında pişirmektir; tavada pişirmek 'fry', ızgarada pişirmek 'grill' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My mom will ______ a chocolate cake for my birthday.",
+        "answer": "bake",
+        "distractors": [
+          "boil",
+          "wash",
+          "drink"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.peel.v.1",
+      "lemma": "peel",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/piːl/",
+        "uk": "/piːl/"
+      },
+      "def": {
+        "micro": "take the skin off fruit",
+        "short": "to take the outer skin off a fruit or vegetable",
+        "long": "To take the thin outer skin off a fruit or vegetable, for example an apple, an orange, or a potato. You can use your hands or a small knife."
+      },
+      "grammar": {
+        "pattern": "peel + sth"
+      },
+      "examples": [
+        {
+          "en": "Can you peel the potatoes for me?",
+          "tr": "Patatesleri benim için soyar mısın?",
+          "register": "neutral",
+          "focus": "peel"
+        },
+        {
+          "en": "Peel the oranges and cut them into pieces.",
+          "tr": "Portakalları soyun ve parçalara kesin.",
+          "register": "neutral",
+          "focus": "Peel"
+        },
+        {
+          "en": "Kenji peeled a banana and ate it quickly.",
+          "tr": "Kenji bir muz soyup hemen yedi.",
+          "register": "neutral",
+          "focus": "peeled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "peel an orange",
+        "peel a banana",
+        "peel potatoes",
+        "peel and slice"
+      ],
+      "word_family": [
+        {
+          "lemma": "peel",
+          "pos": "n"
+        },
+        {
+          "lemma": "peeler",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "soymak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'peel' meyvenin kabuğudur (orange peel = portakal kabuğu). Fiil olarak kabuğu soymak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ the potatoes before you boil them.",
+        "answer": "peel",
+        "distractors": [
+          "pour",
+          "drink",
+          "paint"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.chop.v.1",
+      "lemma": "chop",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃɑːp/",
+        "uk": "/tʃɒp/"
+      },
+      "def": {
+        "micro": "cut into small pieces",
+        "short": "to cut food into small pieces with a knife",
+        "long": "To cut something, especially food, into small pieces with a knife. People often chop onions, garlic, nuts, and herbs before they cook them."
+      },
+      "grammar": {
+        "pattern": "chop + sth"
+      },
+      "examples": [
+        {
+          "en": "Chop the onions and the tomatoes.",
+          "tr": "Soğanları ve domatesleri doğrayın.",
+          "register": "neutral",
+          "focus": "Chop"
+        },
+        {
+          "en": "Could you chop some garlic for the sauce?",
+          "tr": "Sos için biraz sarımsak doğrar mısın?",
+          "register": "neutral",
+          "focus": "chop"
+        },
+        {
+          "en": "Maria chopped the vegetables into small pieces.",
+          "tr": "Maria sebzeleri küçük parçalara doğradı.",
+          "register": "neutral",
+          "focus": "chopped"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "chop onions",
+        "chop vegetables",
+        "finely chopped",
+        "roughly chopped",
+        "chopping board"
+      ],
+      "word_family": [
+        {
+          "lemma": "chopped",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doğramak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Chop' kabaca doğramaktır. İnce dilimlemek 'slice', küp küp doğramak 'dice' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ the onion into small pieces.",
+        "answer": "chop",
+        "distractors": [
+          "bake",
+          "taste",
+          "serve"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.raw.adj.1",
+      "lemma": "raw",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɔː/",
+        "uk": "/rɔː/"
+      },
+      "def": {
+        "micro": "not cooked",
+        "short": "not cooked or heated yet",
+        "long": "Not cooked. Some food, such as carrots and salad, is often eaten like this, but other food, such as chicken, is not safe until it is cooked."
+      },
+      "examples": [
+        {
+          "en": "Is this meat still raw inside?",
+          "tr": "Bu etin içi hâlâ çiğ mi?",
+          "register": "neutral",
+          "focus": "raw"
+        },
+        {
+          "en": "You can eat these carrots raw.",
+          "tr": "Bu havuçları çiğ yiyebilirsin.",
+          "register": "neutral",
+          "focus": "raw"
+        },
+        {
+          "en": "Don't use the same knife for raw chicken and bread.",
+          "tr": "Çiğ tavuk ve ekmek için aynı bıçağı kullanma.",
+          "register": "neutral",
+          "focus": "raw"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "cooked"
+      ],
+      "collocations": [
+        "raw meat",
+        "raw fish",
+        "raw vegetables",
+        "raw egg",
+        "eat it raw"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çiğ",
+          "alt": [
+            "pişmemiş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yeterince pişmemiş yemek için 'undercooked' denir; 'raw' hiç pişmemiş demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Careful! The chicken is still ______ in the middle.",
+        "answer": "raw",
+        "distractors": [
+          "ripe",
+          "sour",
+          "spicy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ripe.adj.1",
+      "lemma": "ripe",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/raɪp/",
+        "uk": "/raɪp/"
+      },
+      "def": {
+        "micro": "ready to eat, like fruit",
+        "short": "fully grown and ready to eat, usually said about fruit",
+        "long": "Fully grown and ready to be eaten. We usually say it about fruit, such as bananas, mangoes, and tomatoes. Fruit that is not ripe is hard and green."
+      },
+      "examples": [
+        {
+          "en": "These bananas are not ripe yet.",
+          "tr": "Bu muzlar henüz olgun değil.",
+          "register": "neutral",
+          "focus": "ripe"
+        },
+        {
+          "en": "Ripe tomatoes taste much better in summer.",
+          "tr": "Olgun domatesler yazın çok daha lezzetli olur.",
+          "register": "neutral",
+          "focus": "Ripe"
+        },
+        {
+          "en": "Is this avocado ripe, or is it still hard?",
+          "tr": "Bu avokado olgun mu, yoksa hâlâ sert mi?",
+          "register": "neutral",
+          "focus": "ripe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unripe"
+      ],
+      "collocations": [
+        "ripe fruit",
+        "ripe banana",
+        "ripe tomato",
+        "fully ripe",
+        "not ripe yet"
+      ],
+      "word_family": [
+        {
+          "lemma": "ripen",
+          "pos": "v"
+        },
+        {
+          "lemma": "unripe",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olgun",
+          "alt": [
+            "olmuş (meyve)"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Meyve için 'olgun'; daha sert ve yeşilse 'unripe' (olgunlaşmamış) denir. İnsan için olgun = mature.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This mango is soft and sweet. It is perfectly ______.",
+        "answer": "ripe",
+        "distractors": [
+          "raw",
+          "busy",
+          "cheap"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.homemade.adj.1",
+      "lemma": "homemade",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌhoʊmˈmeɪd/",
+        "uk": "/ˌhəʊmˈmeɪd/"
+      },
+      "def": {
+        "micro": "made at home",
+        "short": "made in the home, not bought in a shop",
+        "long": "Made at home, not bought from a shop. We often say it about food, but also about gifts and cards."
+      },
+      "examples": [
+        {
+          "en": "My grandmother makes homemade bread.",
+          "tr": "Büyükannem ev yapımı ekmek yapar.",
+          "register": "neutral",
+          "focus": "homemade"
+        },
+        {
+          "en": "Do you want some homemade lemonade?",
+          "tr": "Ev yapımı limonata ister misin?",
+          "register": "neutral",
+          "focus": "homemade"
+        },
+        {
+          "en": "Ayşe gave me a homemade card for my birthday.",
+          "tr": "Ayşe bana doğum günümde kendi yaptığı bir kart verdi.",
+          "register": "neutral",
+          "focus": "homemade"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "store-bought"
+      ],
+      "collocations": [
+        "homemade bread",
+        "homemade soup",
+        "homemade cake",
+        "homemade jam",
+        "a homemade gift"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ev yapımı",
+          "alt": [
+            "evde yapılmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yemek için 'ev yapımı' dersiniz. 'Handmade' ise elde yapılmış (el işi) anlamına gelir ve her tür ürün için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't buy jam. I only eat ______ jam from my aunt.",
+        "answer": "homemade",
+        "distractors": [
+          "frozen",
+          "broken",
+          "tired"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

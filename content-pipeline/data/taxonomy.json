@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "levels": [
+    {"id": "A1", "rank": 1, "name_en": "Starter", "name_tr": "Başlangıç", "mvp": 250, "full": 700},
+    {"id": "A2", "rank": 2, "name_en": "Elementary", "name_tr": "Temel", "mvp": 450, "full": 1200},
+    {"id": "B1", "rank": 3, "name_en": "Intermediate", "name_tr": "Orta", "mvp": 700, "full": 2200},
+    {"id": "B2", "rank": 4, "name_en": "Upper-Intermediate", "name_tr": "Orta-Üstü", "mvp": 800, "full": 3600},
+    {"id": "C1", "rank": 5, "name_en": "Advanced", "name_tr": "İleri", "mvp": 750, "full": 4300},
+    {"id": "C2", "rank": 6, "name_en": "Mastery", "name_tr": "Uzman", "mvp": 450, "full": 3500},
+    {"id": "S", "rank": 7, "name_en": "Fancy words", "name_tr": "Havalı kelimeler", "mvp": 600, "full": 4350}
+  ],
+  "access_rules": {
+    "F": "all cards free",
+    "S": "first 30% of cards (min 20) free, unless free_count is set",
+    "P": "first 10 cards free (taster), unless free_count is set"
+  },
+  "groups": {
+    "A": {"name_en": "Everyday Life", "name_tr": "Günlük Hayat"},
+    "B": {"name_en": "Travel & Culture", "name_tr": "Seyahat & Kültür"},
+    "C": {"name_en": "People, Feelings & Social", "name_tr": "İnsanlar, Duygular & Sosyal"},
+    "D": {"name_en": "Work, Money & Society", "name_tr": "İş, Para & Toplum"},
+    "E": {"name_en": "Science, Tech & Health", "name_tr": "Bilim, Teknoloji & Sağlık"},
+    "F": {"name_en": "Arts, Media & Ideas", "name_tr": "Sanat, Medya & Fikirler"},
+    "G": {"name_en": "Language Craft", "name_tr": "Dil Ustalığı"},
+    "H": {"name_en": "Sophisticated Words", "name_tr": "Havalı Kelimeler"},
+    "I": {"name_en": "Exam Packs", "name_tr": "Sınav Paketleri"}
+  },
+  "categories": [
+    {"id": "food_drink", "grp": "A", "name_en": "Food & Drink", "name_tr": "Yeme & İçme", "levels": ["A1", "B2"], "mvp": 100, "full": 400, "access": "F"},
+    {"id": "home_household", "grp": "A", "name_en": "Home & Household", "name_tr": "Ev & Ev İşleri", "levels": ["A1", "B2"], "mvp": 80, "full": 250, "access": "F"},
+    {"id": "family_relationships", "grp": "A", "name_en": "Family & Relationships", "name_tr": "Aile & İlişkiler", "levels": ["A1", "B2"], "mvp": 70, "full": 220, "access": "F"},
+    {"id": "clothes_fashion", "grp": "A", "name_en": "Clothes & Fashion", "name_tr": "Giyim & Moda", "levels": ["A1", "B2"], "mvp": 60, "full": 220, "access": "F"},
+    {"id": "shopping_money", "grp": "A", "name_en": "Shopping & Money", "name_tr": "Alışveriş & Para", "levels": ["A1", "B2"], "mvp": 70, "full": 220, "access": "F"},
+    {"id": "health_body", "grp": "A", "name_en": "Health & Body", "name_tr": "Sağlık & Vücut", "levels": ["A1", "B2"], "mvp": 80, "full": 300, "access": "F"},
+    {"id": "cities_transport", "grp": "A", "name_en": "Cities, Transport & Directions", "name_tr": "Şehir, Ulaşım & Yön", "levels": ["A1", "B2"], "mvp": 80, "full": 330, "access": "F"},
+    {"id": "weather_seasons", "grp": "A", "name_en": "Weather & Seasons", "name_tr": "Hava & Mevsimler", "levels": ["A1", "B1"], "mvp": 40, "full": 150, "access": "F"},
+    {"id": "time_routines", "grp": "A", "name_en": "Time, Dates & Daily Routines", "name_tr": "Zaman & Günlük Rutin", "levels": ["A1", "B1"], "mvp": 50, "full": 150, "access": "F"},
+    {"id": "hobbies_sports", "grp": "A", "name_en": "Hobbies, Sports & Games", "name_tr": "Hobiler, Spor & Oyunlar", "levels": ["A1", "C1"], "mvp": 80, "full": 300, "access": "S"},
+    {"id": "school_learning", "grp": "A", "name_en": "School & Learning", "name_tr": "Okul & Öğrenme", "levels": ["A1", "B2"], "mvp": 60, "full": 220, "access": "F"},
+    {"id": "nature_animals", "grp": "A", "name_en": "Nature, Animals & Outdoors", "name_tr": "Doğa & Hayvanlar", "levels": ["A1", "C1"], "mvp": 60, "full": 300, "access": "S"},
+
+    {"id": "travel_tourism", "grp": "B", "name_en": "Travel & Tourism", "name_tr": "Seyahat & Turizm", "levels": ["A2", "C1"], "mvp": 70, "full": 300, "access": "S"},
+    {"id": "culture_celebrations", "grp": "B", "name_en": "Countries, Culture & Celebrations", "name_tr": "Ülkeler, Kültür & Kutlamalar", "levels": ["A2", "C1"], "mvp": 50, "full": 250, "access": "S"},
+
+    {"id": "emotions_feelings", "grp": "C", "name_en": "Emotions & Feelings", "name_tr": "Duygular", "levels": ["A1", "C2"], "mvp": 110, "full": 350, "access": "F", "hero": true},
+    {"id": "personality", "grp": "C", "name_en": "Personality & Character", "name_tr": "Kişilik & Karakter", "levels": ["A2", "C2"], "mvp": 80, "full": 280, "access": "S"},
+    {"id": "social_skills", "grp": "C", "name_en": "Social Skills & Small Talk", "name_tr": "Sosyal Beceriler & Sohbet", "levels": ["A2", "C1"], "mvp": 60, "full": 200, "access": "S"},
+    {"id": "compliments_insults", "grp": "C", "name_en": "Compliments & Insults (PG)", "name_tr": "İltifatlar & Laf Sokmalar", "levels": ["B1", "C2"], "mvp": 60, "full": 220, "access": "S", "allows_sensitivity_1": true},
+    {"id": "love_friendship", "grp": "C", "name_en": "Love, Dating & Friendship", "name_tr": "Aşk & Arkadaşlık", "levels": ["A2", "C1"], "mvp": 40, "full": 180, "access": "S"},
+    {"id": "mind_psychology", "grp": "C", "name_en": "Mind, Psychology & Habits", "name_tr": "Zihin, Psikoloji & Alışkanlıklar", "levels": ["B2", "C2"], "mvp": 70, "full": 240, "access": "S"},
+    {"id": "opinions_debate", "grp": "C", "name_en": "Opinions, Debate & Persuasion", "name_tr": "Fikir, Tartışma & İkna", "levels": ["B1", "C2"], "mvp": 50, "full": 200, "access": "P"},
+    {"id": "success_productivity", "grp": "C", "name_en": "Success, Motivation & Productivity", "name_tr": "Başarı, Motivasyon & Verimlilik", "levels": ["B1", "C2"], "mvp": 50, "full": 200, "access": "S"},
+
+    {"id": "business_management", "grp": "D", "name_en": "Business & Management", "name_tr": "İş Dünyası & Yönetim", "levels": ["B1", "C2"], "mvp": 70, "full": 400, "access": "P"},
+    {"id": "workplace_office", "grp": "D", "name_en": "Workplace & Office English", "name_tr": "İş Yeri & Ofis İngilizcesi", "levels": ["B1", "C1"], "mvp": 60, "full": 300, "access": "S"},
+    {"id": "careers_interviews", "grp": "D", "name_en": "Careers & Job Interviews", "name_tr": "Kariyer & İş Mülakatı", "levels": ["B1", "C1"], "mvp": 40, "full": 200, "access": "S"},
+    {"id": "finance_economics", "grp": "D", "name_en": "Finance & Economics", "name_tr": "Finans & Ekonomi", "levels": ["B1", "C2"], "mvp": 50, "full": 350, "access": "P"},
+    {"id": "marketing_ecommerce", "grp": "D", "name_en": "Marketing, Sales & E-commerce", "name_tr": "Pazarlama, Satış & E-ticaret", "levels": ["B2", "C2"], "mvp": 20, "full": 200, "access": "P"},
+    {"id": "law_legal", "grp": "D", "name_en": "Law & Legal", "name_tr": "Hukuk", "levels": ["B2", "C2"], "mvp": 30, "full": 220, "access": "P"},
+    {"id": "politics_government", "grp": "D", "name_en": "Politics & Government", "name_tr": "Siyaset & Devlet", "levels": ["B2", "C2"], "mvp": 30, "full": 200, "access": "P"},
+    {"id": "society_media", "grp": "D", "name_en": "Society, Media & News", "name_tr": "Toplum, Medya & Haberler", "levels": ["B1", "C2"], "mvp": 40, "full": 220, "access": "S"},
+
+    {"id": "technology_internet", "grp": "E", "name_en": "Technology & Internet", "name_tr": "Teknoloji & İnternet", "levels": ["A2", "C2"], "mvp": 80, "full": 300, "access": "S"},
+    {"id": "ai_data_programming", "grp": "E", "name_en": "AI, Data & Programming", "name_tr": "Yapay Zekâ, Veri & Yazılım", "levels": ["B2", "C2"], "mvp": 40, "full": 280, "access": "P"},
+    {"id": "science_space", "grp": "E", "name_en": "Science & Space", "name_tr": "Bilim & Uzay", "levels": ["B1", "C2"], "mvp": 50, "full": 300, "access": "S"},
+    {"id": "medicine_healthcare", "grp": "E", "name_en": "Medicine & Healthcare (professional)", "name_tr": "Tıp & Sağlık Hizmetleri", "levels": ["B2", "C2"], "mvp": 50, "full": 350, "access": "P"},
+    {"id": "environment_climate", "grp": "E", "name_en": "Environment & Climate", "name_tr": "Çevre & İklim", "levels": ["B1", "C2"], "mvp": 50, "full": 200, "access": "S"},
+    {"id": "engineering_maths", "grp": "E", "name_en": "Engineering, Construction & Maths", "name_tr": "Mühendislik, İnşaat & Matematik", "levels": ["B2", "C2"], "mvp": 0, "full": 250, "access": "P"},
+
+    {"id": "literature_writing", "grp": "F", "name_en": "Literature & Writing", "name_tr": "Edebiyat & Yazı", "levels": ["B1", "C2"], "mvp": 40, "full": 220, "access": "S"},
+    {"id": "art_design_architecture", "grp": "F", "name_en": "Art, Design & Architecture", "name_tr": "Sanat, Tasarım & Mimari", "levels": ["B2", "C2"], "mvp": 20, "full": 200, "access": "P"},
+    {"id": "music_film", "grp": "F", "name_en": "Music, Film & Entertainment", "name_tr": "Müzik, Film & Eğlence", "levels": ["A2", "C1"], "mvp": 30, "full": 200, "access": "S"},
+    {"id": "history_mythology", "grp": "F", "name_en": "History & Mythology", "name_tr": "Tarih & Mitoloji", "levels": ["B2", "C2"], "mvp": 30, "full": 160, "access": "S"},
+    {"id": "philosophy_ethics", "grp": "F", "name_en": "Philosophy & Ethics", "name_tr": "Felsefe & Etik", "levels": ["C1", "S"], "mvp": 20, "full": 150, "access": "P"},
+
+    {"id": "phrasal_verbs", "grp": "G", "name_en": "Phrasal Verbs", "name_tr": "Phrasal Verb'ler", "levels": ["A2", "C1"], "mvp": 200, "full": 800, "access": "S", "free_count": 50, "hero": true},
+    {"id": "idioms_expressions", "grp": "G", "name_en": "Idioms & Expressions", "name_tr": "Deyimler & İfadeler", "levels": ["B1", "C2"], "mvp": 180, "full": 700, "access": "S", "free_count": 50, "hero": true},
+    {"id": "collocations", "grp": "G", "name_en": "Collocations & Word Partners", "name_tr": "Eşdizimler", "levels": ["B1", "C1"], "mvp": 60, "full": 550, "access": "P"},
+    {"id": "slang_informal", "grp": "G", "name_en": "Everyday Slang & Informal English", "name_tr": "Günlük Argo & Gündelik Dil", "levels": ["B1", "C1"], "mvp": 60, "full": 250, "access": "P", "allows_sensitivity_1": true},
+    {"id": "proverbs_sayings", "grp": "G", "name_en": "Proverbs & Sayings", "name_tr": "Atasözleri & Özdeyişler", "levels": ["B1", "C1"], "mvp": 30, "full": 120, "access": "S"},
+    {"id": "confusing_words", "grp": "G", "name_en": "Confusing Words & Turkish False Friends", "name_tr": "Karıştırılan Kelimeler & Tuzak Kelimeler", "levels": ["A2", "C1"], "mvp": 100, "full": 300, "access": "F", "hero": true},
+    {"id": "roots_word_families", "grp": "G", "name_en": "Roots, Prefixes & Word Families", "name_tr": "Kökler, Ekler & Kelime Aileleri", "levels": ["B2", "C2"], "mvp": 40, "full": 200, "access": "P"},
+    {"id": "stop_saying", "grp": "G", "name_en": "\"Stop Saying X\" Power Swaps", "name_tr": "\"Bunu Deme, Şunu De\"", "levels": ["B1", "C2"], "mvp": 50, "full": 200, "access": "S"},
+
+    {"id": "sound_smarter", "grp": "H", "name_en": "Words That Make You Sound Smarter", "name_tr": "Seni Daha Zeki Gösteren Kelimeler", "levels": ["C1", "S"], "mvp": 160, "full": 500, "access": "S", "hero": true},
+    {"id": "rare_beautiful", "grp": "H", "name_en": "Rare & Beautiful Words", "name_tr": "Nadir & Güzel Kelimeler", "levels": ["C2", "S"], "mvp": 150, "full": 400, "access": "S", "hero": true},
+    {"id": "literary_poetic", "grp": "H", "name_en": "Literary & Poetic Words", "name_tr": "Edebi & Şiirsel Kelimeler", "levels": ["C2", "S"], "mvp": 60, "full": 250, "access": "P"},
+
+    {"id": "academic_core", "grp": "I", "name_en": "Academic Core", "name_tr": "Akademik Çekirdek", "levels": ["B2", "C1"], "mvp": 120, "full": 600, "access": "S"},
+    {"id": "ielts", "grp": "I", "name_en": "IELTS Academic", "name_tr": "IELTS Academic", "levels": ["B2", "C2"], "mvp": 60, "full": 600, "access": "P"},
+    {"id": "toefl", "grp": "I", "name_en": "TOEFL iBT", "name_tr": "TOEFL iBT", "levels": ["B2", "C2"], "mvp": 50, "full": 500, "access": "P"},
+    {"id": "sat_act", "grp": "I", "name_en": "SAT / ACT", "name_tr": "SAT / ACT", "levels": ["C1", "C2"], "mvp": 80, "full": 500, "access": "P"},
+    {"id": "gre", "grp": "I", "name_en": "GRE", "name_tr": "GRE", "levels": ["C2", "S"], "mvp": 80, "full": 700, "access": "P"},
+    {"id": "yds_yokdil_core", "grp": "I", "name_en": "YDS / YÖKDİL Core", "name_tr": "YDS / YÖKDİL Çekirdek", "levels": ["B1", "C1"], "mvp": 300, "full": 1400, "access": "P", "hero": true},
+    {"id": "yokdil_fields", "grp": "I", "name_en": "YÖKDİL Fields (Science / Health / Social)", "name_tr": "YÖKDİL Alanları (Fen / Sağlık / Sosyal)", "levels": ["B2", "C2"], "mvp": 0, "full": 800, "access": "P"},
+    {"id": "toeic_business", "grp": "I", "name_en": "TOEIC / Business English Exams", "name_tr": "TOEIC / İş İngilizcesi Sınavları", "levels": ["B1", "C1"], "mvp": 0, "full": 300, "access": "P"}
+  ],
+  "exam_tags": ["ielts", "toefl", "sat", "act", "gre", "yds", "yokdil", "ydt", "toeic", "academic"]
+}

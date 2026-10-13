@@ -1,0 +1,1007 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.blanket.n.1",
+      "lemma": "blanket",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈblæŋkɪt/",
+        "uk": "/ˈblæŋkɪt/"
+      },
+      "def": {
+        "micro": "warm cover for a bed",
+        "short": "a big, warm cover that you put over you or on a bed",
+        "long": "A big, warm cover made of wool or soft cloth that you put over yourself or on a bed to stay warm. People also use one on the sofa on cold evenings."
+      },
+      "examples": [
+        {
+          "en": "It's cold. Can I have another blanket?",
+          "tr": "Hava soğuk. Bir battaniye daha alabilir miyim?",
+          "register": "neutral",
+          "focus": "blanket"
+        },
+        {
+          "en": "Maria put a blanket over the sleeping child.",
+          "tr": "Maria uyuyan çocuğun üstüne bir battaniye örttü.",
+          "register": "neutral",
+          "focus": "blanket"
+        },
+        {
+          "en": "We put a blanket on the grass and had a picnic.",
+          "tr": "Çimlerin üstüne battaniye serip piknik yaptık.",
+          "register": "neutral",
+          "focus": "blanket"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a warm blanket",
+        "an extra blanket",
+        "a wool blanket",
+        "wrapped in a blanket",
+        "under the blanket"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "battaniye",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalın yatak örtüsü olan 'yorgan' için İngilizcede 'duvet' ya da 'quilt' kullanılır; 'blanket' battaniyedir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm cold. Can you give me a ______?",
+        "answer": "blanket",
+        "distractors": [
+          "fridge",
+          "mirror",
+          "bill"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pillow.n.1",
+      "lemma": "pillow",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɪloʊ/",
+        "uk": "/ˈpɪləʊ/"
+      },
+      "def": {
+        "micro": "soft bag for your head",
+        "short": "a soft bag that you put under your head when you sleep",
+        "long": "A soft bag, filled with feathers or other soft material, that you rest your head on in bed. Most beds have two or more."
+      },
+      "examples": [
+        {
+          "en": "I need a softer pillow. This one is too hard.",
+          "tr": "Daha yumuşak bir yastığa ihtiyacım var. Bu çok sert.",
+          "register": "neutral",
+          "focus": "pillow"
+        },
+        {
+          "en": "Mehmet put the pillow under his head and slept.",
+          "tr": "Mehmet yastığı başının altına koyup uyudu.",
+          "register": "neutral",
+          "focus": "pillow"
+        },
+        {
+          "en": "The kids had a pillow fight before bedtime.",
+          "tr": "Çocuklar yatmadan önce yastık savaşı yaptı.",
+          "register": "neutral",
+          "focus": "pillow"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a soft pillow",
+        "an extra pillow",
+        "pillowcase",
+        "pillow fight",
+        "a hard pillow"
+      ],
+      "word_family": [
+        {
+          "lemma": "pillowcase",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yastık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Uyku yastığı 'pillow', kanepedeki süs yastığı (kırlent) ise 'cushion' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't sleep. My ______ is too hard.",
+        "answer": "pillow",
+        "distractors": [
+          "towel",
+          "carpet",
+          "shelf"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.furniture.n.1",
+      "lemma": "furniture",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɜːrnɪtʃər/",
+        "uk": "/ˈfɜːnɪtʃə/"
+      },
+      "def": {
+        "micro": "tables, chairs, and beds",
+        "short": "large things like tables, chairs, and beds that you put in a room",
+        "long": "Large things like tables, chairs, beds, and cupboards that you put in a home or office. It is uncountable: say 'a piece of furniture', not 'a furniture'."
+      },
+      "examples": [
+        {
+          "en": "We need to buy some new furniture.",
+          "tr": "Yeni mobilya almamız lazım.",
+          "register": "neutral",
+          "focus": "furniture"
+        },
+        {
+          "en": "This is a beautiful piece of furniture.",
+          "tr": "Bu çok güzel bir mobilya parçası.",
+          "register": "neutral",
+          "focus": "furniture"
+        },
+        {
+          "en": "Their apartment has almost no furniture yet.",
+          "tr": "Dairelerinde henüz neredeyse hiç mobilya yok.",
+          "register": "neutral",
+          "focus": "furniture"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a piece of furniture",
+        "new furniture",
+        "furniture store",
+        "garden furniture",
+        "office furniture"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mobilya",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'mobilyalar' diyebilirsiniz; İngilizcede 'furniture' sayılamaz ve çoğul olmaz. Tek bir parça için 'a piece of furniture' denir.",
+          "mistakes": [
+            {
+              "wrong": "We bought three new furnitures.",
+              "right": "We bought three new pieces of furniture.",
+              "why": "'Furniture' sayılamayan isimdir; -s almaz ve sayıyla doğrudan kullanılmaz. Sayı için 'pieces of furniture' denir."
+            },
+            {
+              "wrong": "The furniture are old.",
+              "right": "The furniture is old.",
+              "why": "Sayılamayan isimler tekil fiil alır: the furniture is."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We need new ______ for the living room: a table and chairs.",
+        "answer": "furniture",
+        "distractors": [
+          "luggage",
+          "laundry",
+          "trash"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.housework.n.1",
+      "lemma": "housework",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhaʊswɜːrk/",
+        "uk": "/ˈhaʊswɜːk/"
+      },
+      "def": {
+        "micro": "cleaning and other home jobs",
+        "short": "the jobs you do at home to keep it clean, such as washing and cleaning",
+        "long": "The jobs you do at home to keep it clean and tidy, such as washing dishes, cleaning, and doing laundry. It is uncountable. Many families share it."
+      },
+      "examples": [
+        {
+          "en": "I hate doing housework on weekends.",
+          "tr": "Hafta sonları ev işi yapmaktan nefret ediyorum.",
+          "register": "neutral",
+          "focus": "housework"
+        },
+        {
+          "en": "We share the housework in our family.",
+          "tr": "Ailemizde ev işlerini paylaşıyoruz.",
+          "register": "neutral",
+          "focus": "housework"
+        },
+        {
+          "en": "Ayşe does the housework before she goes to work.",
+          "tr": "Ayşe işe gitmeden önce ev işlerini yapar.",
+          "register": "neutral",
+          "focus": "housework"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do the housework",
+        "share the housework",
+        "hate housework",
+        "finish the housework",
+        "a lot of housework"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ev işleri",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ev işleri' çoğuldur; İngilizcede 'housework' sayılamaz ve -s almaz. Tek bir iş için 'chore' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I do my houseworks in the morning.",
+              "right": "I do my housework in the morning.",
+              "why": "'Housework' sayılamayan isimdir; çoğul eki almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Cleaning, washing, and cooking are all ______.",
+        "answer": "housework",
+        "distractors": [
+          "furniture",
+          "weather",
+          "luggage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.move.v.2",
+      "lemma": "move",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "to change your home",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/muːv/",
+        "uk": "/muːv/"
+      },
+      "def": {
+        "micro": "go to live in a new home",
+        "short": "to leave your home and start to live in a different one",
+        "long": "To leave the place where you live and start to live in a different house or city. We say 'move to' a place, or 'move house' in British English."
+      },
+      "grammar": {
+        "pattern": "move to + place"
+      },
+      "examples": [
+        {
+          "en": "We are moving to a bigger apartment next month.",
+          "tr": "Gelecek ay daha büyük bir daireye taşınıyoruz.",
+          "register": "neutral",
+          "focus": "moving"
+        },
+        {
+          "en": "Kenji moved to Istanbul for his new job.",
+          "tr": "Kenji yeni işi için İstanbul'a taşındı.",
+          "register": "neutral",
+          "focus": "moved"
+        },
+        {
+          "en": "Our neighbors moved here two years ago.",
+          "tr": "Komşularımız buraya iki yıl önce taşındı.",
+          "register": "neutral",
+          "focus": "moved"
+        }
+      ],
+      "synonyms": [
+        "relocate"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "move to a new city",
+        "move house",
+        "move abroad",
+        "move closer to work"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "taşınmak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Move' hareket etmek anlamına da gelir. Taşınmak için genelde 'move to' + yer ya da 'move house' denir.",
+          "mistakes": [
+            {
+              "wrong": "We changed our house last year.",
+              "right": "We moved to a new house last year.",
+              "why": "Türkçede 'ev değiştirdik' denir; İngilizcede 'change house' denmez, 'move' ya da 'move house' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We need more space, so we will ______ to a bigger apartment.",
+        "answer": "move",
+        "distractors": [
+          "fix",
+          "tidy",
+          "cook"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tidy.adj.1",
+      "lemma": "tidy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtaɪdi/",
+        "uk": "/ˈtaɪdi/"
+      },
+      "def": {
+        "micro": "neat and in order",
+        "short": "neat, with everything in its right place",
+        "long": "Neat and in good order, with everything in its right place. A room, a desk, or a person can be this way. Its opposite is 'messy'."
+      },
+      "examples": [
+        {
+          "en": "Please keep your room tidy.",
+          "tr": "Lütfen odanı derli toplu tut.",
+          "register": "neutral",
+          "focus": "tidy"
+        },
+        {
+          "en": "Her desk is always very tidy.",
+          "tr": "Onun masası her zaman çok derli toplu.",
+          "register": "neutral",
+          "focus": "tidy"
+        },
+        {
+          "en": "The apartment looks tidy because guests are coming.",
+          "tr": "Misafir geleceği için daire derli toplu görünüyor.",
+          "register": "neutral",
+          "focus": "tidy"
+        }
+      ],
+      "synonyms": [
+        "neat"
+      ],
+      "antonyms": [
+        "messy"
+      ],
+      "collocations": [
+        "keep it tidy",
+        "a tidy room",
+        "a tidy desk",
+        "neat and tidy",
+        "clean and tidy"
+      ],
+      "word_family": [
+        {
+          "lemma": "tidy",
+          "pos": "v"
+        },
+        {
+          "lemma": "tidiness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "derli toplu",
+          "alt": [
+            "düzenli",
+            "toplu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Tidy' her şeyin yerinde olması demektir, 'clean' (temiz) demek değildir. Oda temiz ama dağınık olabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister's room is always very ______. Nothing is on the floor.",
+        "answer": "tidy",
+        "distractors": [
+          "noisy",
+          "lazy",
+          "hungry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fix.v.1",
+      "lemma": "fix",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "to repair a broken thing",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɪks/",
+        "uk": "/fɪks/"
+      },
+      "def": {
+        "micro": "make something work again",
+        "short": "to make something that is broken work again",
+        "long": "To make something that is broken work again. You can fix a phone, a bike, a door, or a computer."
+      },
+      "grammar": {
+        "pattern": "fix + sth"
+      },
+      "examples": [
+        {
+          "en": "Can you fix my bike this weekend?",
+          "tr": "Bisikletimi bu hafta sonu tamir edebilir misin?",
+          "register": "neutral",
+          "focus": "fix"
+        },
+        {
+          "en": "My dad fixed the kitchen tap yesterday.",
+          "tr": "Babam dün mutfak musluğunu tamir etti.",
+          "register": "neutral",
+          "focus": "fixed"
+        },
+        {
+          "en": "The screen is broken, and the shop can't fix it.",
+          "tr": "Ekran kırık ve dükkân onu tamir edemiyor.",
+          "register": "neutral",
+          "focus": "fix"
+        }
+      ],
+      "synonyms": [
+        "repair",
+        "mend"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "fix a problem",
+        "fix the tap",
+        "fix a bike",
+        "get it fixed",
+        "easy to fix"
+      ],
+      "word_family": [
+        {
+          "lemma": "fixed",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tamir etmek",
+          "alt": [
+            "onarmak",
+            "düzeltmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'tamir etmek' en yaygın karşılıktır. 'Fix' hem bozuk bir şeyi onarmak hem de bir sorunu çözmek için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The tap is leaking. Can you ______ it?",
+        "answer": "fix",
+        "distractors": [
+          "wear",
+          "taste",
+          "slice"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rent.n.1",
+      "lemma": "rent",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money for a home",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɛnt/",
+        "uk": "/rɛnt/"
+      },
+      "def": {
+        "micro": "money paid to live in a home",
+        "short": "the money you pay each month to live in a home that is not yours",
+        "long": "The money you pay every month to the owner of a home so that you can live in it. In big cities, it can be very high."
+      },
+      "examples": [
+        {
+          "en": "How much is the rent for this apartment?",
+          "tr": "Bu dairenin kirası ne kadar?",
+          "register": "neutral",
+          "focus": "rent"
+        },
+        {
+          "en": "I pay the rent on the first day of every month.",
+          "tr": "Kirayı her ayın ilk günü öderim.",
+          "register": "neutral",
+          "focus": "rent"
+        },
+        {
+          "en": "Rent in big cities is going up every year.",
+          "tr": "Büyük şehirlerde kiralar her yıl artıyor.",
+          "register": "neutral",
+          "focus": "Rent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay the rent",
+        "monthly rent",
+        "high rent",
+        "rent increase",
+        "the rent is due"
+      ],
+      "word_family": [
+        {
+          "lemma": "rent",
+          "pos": "v"
+        },
+        {
+          "lemma": "rental",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kira",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kiracı 'tenant', ev sahibi 'landlord' olur. Fiil olarak 'rent' hem kiralamak hem kiraya vermek için kullanılabilir.",
+          "mistakes": [
+            {
+              "wrong": "I live in rent.",
+              "right": "I rent my apartment.",
+              "why": "Türkçede 'kirada oturuyorum' dersiniz; İngilizcede 'live in rent' denmez. 'I rent my apartment' ya da 'I live in a rented apartment' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I pay the ______ on the first day of every month.",
+        "answer": "rent",
+        "distractors": [
+          "menu",
+          "towel",
+          "recipe"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vacuum.v.1",
+      "lemma": "vacuum",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvækjuːm/",
+        "uk": "/ˈvækjuːm/"
+      },
+      "def": {
+        "micro": "clean floors with a machine",
+        "short": "to clean a floor or carpet with a machine that sucks up dirt",
+        "long": "To clean a floor or carpet with an electric machine that sucks up dust and dirt. In British English, people also say 'hoover'."
+      },
+      "grammar": {
+        "pattern": "vacuum + sth"
+      },
+      "examples": [
+        {
+          "en": "I need to vacuum the living room today.",
+          "tr": "Bugün oturma odasını süpürmem lazım.",
+          "register": "neutral",
+          "focus": "vacuum"
+        },
+        {
+          "en": "Kenji vacuums the carpet every Saturday.",
+          "tr": "Kenji halıyı her cumartesi süpürür.",
+          "register": "neutral",
+          "focus": "vacuums"
+        },
+        {
+          "en": "Can you vacuum before the guests arrive?",
+          "tr": "Misafirler gelmeden önce süpürür müsün?",
+          "register": "neutral",
+          "focus": "vacuum"
+        }
+      ],
+      "synonyms": [
+        "hoover"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "vacuum the floor",
+        "vacuum the carpet",
+        "vacuum the sofa",
+        "vacuum the stairs"
+      ],
+      "word_family": [
+        {
+          "lemma": "vacuum cleaner",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "süpürge çekmek",
+          "alt": [
+            "süpürmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede kısaca 'süpürmek' dersiniz. İngilizcede elektrikli süpürgeyle temizlemek 'vacuum', el süpürgesiyle süpürmek 'sweep' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ the carpet. There is dust everywhere.",
+        "answer": "vacuum",
+        "distractors": [
+          "boil",
+          "chop",
+          "peel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.chore.n.1",
+      "lemma": "chore",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃɔːr/",
+        "uk": "/tʃɔː/"
+      },
+      "def": {
+        "micro": "small job you must do often",
+        "short": "a small, boring job that you have to do regularly, especially at home",
+        "long": "A small, boring job that you must do regularly, especially at home, such as washing dishes or taking out the trash. Children often have chores to do."
+      },
+      "examples": [
+        {
+          "en": "Everyone in our family has weekly chores.",
+          "tr": "Ailemizde herkesin haftalık ev işleri var.",
+          "register": "neutral",
+          "focus": "chores"
+        },
+        {
+          "en": "Taking out the trash is Mehmet's chore.",
+          "tr": "Çöpü çıkarmak Mehmet'in işi.",
+          "register": "neutral",
+          "focus": "chore"
+        },
+        {
+          "en": "I have a lot of chores to finish before dinner.",
+          "tr": "Akşam yemeğinden önce bitirmem gereken bir sürü ev işi var.",
+          "register": "neutral",
+          "focus": "chores"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do the chores",
+        "household chores",
+        "a daily chore",
+        "weekly chores",
+        "finish my chores"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ev işi",
+          "alt": [
+            "rutin iş",
+            "angarya"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Genellikle sıkıcı ve tekrar eden ev işleri için kullanılır. Genel anlamda 'iş' için 'job' ya da 'task' kullanın.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Washing the car is my ______ this weekend.",
+        "answer": "chore",
+        "distractors": [
+          "recipe",
+          "sofa",
+          "towel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
