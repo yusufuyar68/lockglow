@@ -41,7 +41,7 @@ Yeniden çalıştırma güvenlidir: tamamlanmış kartlar tekrar gönderilmez, p
 `draft` (B sonrası) → `validated` (eleştirmen PASS) → `reviewed` (editör onayı) → `approved` (isteğe bağlı ikinci onay).
 `rejected` hiçbir aşamada veritabanına girmez. `build_db` varsayılan olarak yalnızca `reviewed` ve `approved` kartları alır.
 
-Eleştirmenin kararı ile kurala dayalı karar (≥18/22 ve kritik ölçütlerde 0 yok) karşılaştırılır; **katı olan uygulanır**.
+Eleştirmenin kararı ile kurala dayalı karar (≥20/24 ve kritik ölçütlerde 0 yok; `quiz_validity` dahil 5 kritik ölçüt) karşılaştırılır; **katı olan uygulanır**.
 
 ## Kişisel derleme (taslaklarla, yayın için değil)
 

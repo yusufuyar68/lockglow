@@ -8,7 +8,8 @@ from types import SimpleNamespace
 import pytest
 
 from vocabpipe import generate as g
-from vocabpipe.llm_schemas import CRITERIA
+from vocabpipe.llm_schemas import CRITERIA, CRITICAL_CRITERIA, MAX_TOTAL, PASS_THRESHOLD, STAGE_C_SCHEMA, StageCOut
+from vocabpipe.prompts import system_c
 from vocabpipe.validate import validate_cards
 
 PLAN_FIELDS = ["lemma", "pos", "type", "sense_no", "sense_hint", "target_level", "level_source", "primary_topic",
@@ -54,7 +55,8 @@ def _stage_a_output(c):
 def _stage_b_output(c):
     tr = c["l1"]["tr"]
     return {**{k: tr[k] for k in ("gloss", "alt", "equivalence", "false_friend", "note", "mistakes", "mnemonic")},
-            "examples_tr": [e["tr"] for e in c["examples"]], "backtranslation": [], "uncertain_fields": []}
+            "examples_tr": [e["tr"] for e in c["examples"]],
+            "backtranslation": [f"literal: {e['en']}" for e in c["examples"]], "uncertain_fields": []}
 
 
 def _stage_c_output(score=2, verdict="PASS"):
@@ -114,15 +116,42 @@ def test_full_pipeline_with_fake_batches(run, gold):
     assert all(d["meta"]["status"] == "draft" for d in drafts)
 
     reqs = _fake_submit(run, "c")
+    # Eleştirmen, tr_example'ı puanlarken B'nin geri çevirisini görmeli (karta yazılmıyor).
+    for _, cid, params in reqs:
+        back = params["messages"][0]["content"].split("same order as the examples:\n", 1)[1]
+        expected = run.read_output("b", cid)["backtranslation"]
+        assert expected and json.loads(back) == expected
     g.process_results(run, "c", [_result(reqs[0][0], _msg(_stage_c_output())),
                                  _result(reqs[1][0], _msg(_stage_c_output(score=1, verdict="PASS")))])
     statuses = {json.loads(p.read_text(encoding="utf-8"))["id"]: json.loads(p.read_text(encoding="utf-8"))["meta"]
                 for p in (run.dir / "drafts").glob("*.json")}
     first, second = reqs[0][1], reqs[1][1]
     assert statuses[first]["status"] == "validated"
-    # Model PASS dese de toplam 11/22 < 18 → kural FIX der; katı olan uygulanır.
+    # Model PASS dese de toplam 12/24 < 20 → kural FIX der; katı olan uygulanır.
     assert statuses[second]["status"] == "draft" and "critic_fix" in statuses[second]["qa_flags"]
     assert statuses[second]["critic"]["model_verdict"] == "PASS" and statuses[second]["critic"]["verdict"] == "FIX"
+
+
+def _review(**scores):
+    return StageCOut.model_validate({"scores": {k: {"score": scores.get(k, 2), "reason": "ok"} for k in CRITERIA},
+                                     "verdict": "PASS", "issues": []})
+
+
+def test_critic_threshold_and_quiz_gate():
+    assert (MAX_TOTAL, PASS_THRESHOLD) == (24, 20)
+    assert _review(widget_fit=0, learner_value=1, level_tags=1).computed_verdict() == "PASS"  # 20/24
+    assert _review(widget_fit=0, learner_value=0, level_tags=1).computed_verdict() == "FIX"  # 19/24
+    # Birden çok doğru cevaplı quiz tek başına (22/24) PASS'e yetmemeli: quiz_validity kritik.
+    assert _review(quiz_validity=0).computed_verdict() == "FIX"
+    assert _review(widget_fit=0).computed_verdict() == "PASS"
+
+
+def test_critic_prompt_matches_criteria():
+    text = system_c()
+    for name in CRITERIA:
+        assert (f"- {name} (critical):" if name in CRITICAL_CRITERIA else f"- {name}:") in text, name
+    assert f"at least {PASS_THRESHOLD} out of {MAX_TOTAL}" in text
+    assert STAGE_C_SCHEMA["properties"]["scores"]["required"] == CRITERIA
 
 
 def test_refusal_and_truncation_are_logged_not_crashing(run, gold):
