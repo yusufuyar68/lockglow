@@ -1,0 +1,100 @@
+# Manual: archives the app (Release, automatic signing with an App Store Connect API key) and
+# uploads it to App Store Connect, where it appears in TestFlight. Start it with:
+#   gh workflow run testflight.yml
+# Needs three repository secrets (see docs/testflight_kurulum.md):
+#   ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (the full text of the AuthKey_<id>.p8 file).
+# The build number is the workflow run number, so every upload is higher than the previous one.
+name: testflight
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: testflight
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    name: TestFlight'a yükle
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      KEY_PATH: ${{ github.workspace }}/.asc/AuthKey.p8
+      BUILD_NUMBER: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Gizli değişkenleri kontrol et
+        env:
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          missing=""
+          [ -n "$ASC_KEY_ID" ] || missing="$missing ASC_KEY_ID"
+          [ -n "$ASC_ISSUER_ID" ] || missing="$missing ASC_ISSUER_ID"
+          [ -n "$ASC_KEY_P8" ] || missing="$missing ASC_KEY_P8"
+          if [ -n "$missing" ]; then
+            echo "::error::Eksik gizli değişken:$missing (docs/testflight_kurulum.md)"
+            exit 1
+          fi
+          mkdir -p "$(dirname "$KEY_PATH")"
+          printf '%s\n' "$ASC_KEY_P8" > "$KEY_PATH"
+          chmod 600 "$KEY_PATH"
+      - name: En yeni Xcode'u seç
+        run: |
+          XCODE="$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)"
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
+      - name: XcodeGen
+        run: brew install xcodegen
+      - name: Projeyi üret
+        working-directory: ios
+        run: xcodegen generate
+      - name: Arşivle (Release, otomatik imza)
+        working-directory: ios
+        run: |
+          xcodebuild archive -project Lockglow.xcodeproj -scheme Lockglow-Release -configuration Release \
+            -destination 'generic/platform=iOS' -archivePath build/Lockglow.xcarchive \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$KEY_PATH" -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            CURRENT_PROJECT_VERSION="$BUILD_NUMBER" > build-archive.log 2>&1 || status=$?
+          grep -E "error:|warning:|\*\* ARCHIVE" build-archive.log | sort -u | head -100 || true
+          exit ${status:-0}
+      - name: App Store Connect'e yükle
+        working-directory: ios
+        run: |
+          TEAM_ID="$(sed -n 's/^DEVELOPMENT_TEAM *= *//p' Config/Base.xcconfig)"
+          cat > build/ExportOptions.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>destination</key><string>upload</string>
+            <key>teamID</key><string>${TEAM_ID}</string>
+            <key>signingStyle</key><string>automatic</string>
+            <key>manageAppVersionAndBuildNumber</key><false/>
+          </dict>
+          </plist>
+          EOF
+          xcodebuild -exportArchive -archivePath build/Lockglow.xcarchive \
+            -exportOptionsPlist build/ExportOptions.plist -exportPath build/export \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$KEY_PATH" -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" > build-export.log 2>&1 || status=$?
+          grep -E "error|Upload succeeded|EXPORT|Uploaded" build-export.log | sort -u | head -60 || true
+          exit ${status:-0}
+      - name: Anahtarı sil
+        if: always()
+        run: rm -rf "$(dirname "$KEY_PATH")"
+      - name: Günlükleri sakla
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testflight-logs
+          path: |
+            ios/build-archive.log
+            ios/build-export.log
+          if-no-files-found: ignore
+          retention-days: 7
