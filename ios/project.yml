@@ -59,6 +59,8 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        # iPhone only, portrait only: opt out of the all-orientations rule (Xcode archive warning).
+        UIRequiresFullScreen: true
         WGAppGroupID: $(APP_GROUP_ID)
         CFBundleURLTypes:
           - CFBundleURLName: $(PRODUCT_BUNDLE_IDENTIFIER)
