@@ -152,6 +152,8 @@ targets:
     platform: iOS
     sources:
       - path: WidgetSnapshots
+      # The Tekrar quiz card is rendered here too (it only needs SwiftUI and CoreModels).
+      - path: App/QuizCardView.swift
       - path: Widgets
         excludes:
           - "LockglowWidgetsBundle.swift"

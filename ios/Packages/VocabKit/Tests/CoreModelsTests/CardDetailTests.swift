@@ -44,6 +44,28 @@ final class CardDetailTests: XCTestCase {
         XCTAssertEqual(detail.falseFriend, CardDetail.FalseFriend(trWord: "aktüel", trMeans: "güncel", enForThat: "current"))
     }
 
+    func testQuizDecodesAndMixesOptionsStably() throws {
+        let json = """
+        {"quiz":{"cloze":"I eat soup with a ______, not with a fork.","answer":"spoon","distractors":["knife","plate","cup"]}}
+        """
+        let quiz = try XCTUnwrap(try decode(json).quiz)
+        XCTAssertEqual(quiz.answer, "spoon")
+        XCTAssertEqual(quiz.distractors, ["knife", "plate", "cup"])
+
+        let options = quiz.options(seed: 2)
+        XCTAssertEqual(Set(options), ["spoon", "knife", "plate", "cup"])
+        XCTAssertEqual(quiz.options(seed: 2), options, "same seed, same order")
+        // Across many seeds the answer must not sit in one fixed position.
+        let positions = Set((1...40).map { quiz.options(seed: $0).firstIndex(of: "spoon") ?? -1 })
+        XCTAssertGreaterThan(positions.count, 2)
+    }
+
+    func testQuizOptionsDropDuplicates() {
+        let quiz = CardDetail.Quiz(cloze: "a ______", answer: "x", distractors: ["y", "x", "y"])
+        XCTAssertEqual(Set(quiz.options(seed: 7)), ["x", "y"])
+        XCTAssertEqual(quiz.options(seed: 7).count, 2)
+    }
+
     func testMissingFieldsDecodeAsEmpty() throws {
         XCTAssertEqual(try decode("{}"), CardDetail())
         XCTAssertEqual(try decode(#"{"l1":{"en":{"alt":["x"]}}}"#), CardDetail())

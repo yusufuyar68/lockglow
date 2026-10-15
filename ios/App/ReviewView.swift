@@ -47,21 +47,33 @@ struct ReviewView: View {
             Text("\(index + 1) / \(session.words.count)")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            // The card scrolls on its own when the revealed side is taller than the space left
-            // (iPhone SE), so the answer buttons below always stay visible and tappable.
-            GeometryReader { proxy in
+            // A word that was already studied is tested with its fill-in-the-blank question
+            // (recall); a new word is shown as a flashcard first (learning).
+            if session.kind == .due, let quiz = model.detail(for: word)?.quiz, !quiz.distractors.isEmpty {
                 ScrollView {
-                    Button {
-                        isRevealed = true
-                    } label: {
-                        flashcard(for: word, minHeight: proxy.size.height)
+                    QuizCardView(word: word, quiz: quiz) { isRight in
+                        answer(isRight ? .good : .again, word: word)
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityHint(isRevealed ? "" : "Anlamını göstermek için çift dokun")
+                    .id(word.id)
                 }
                 .scrollBounceBehavior(.basedOnSize)
+            } else {
+                // The card scrolls on its own when the revealed side is taller than the space left
+                // (iPhone SE), so the answer buttons below always stay visible and tappable.
+                GeometryReader { proxy in
+                    ScrollView {
+                        Button {
+                            isRevealed = true
+                        } label: {
+                            flashcard(for: word, minHeight: proxy.size.height)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityHint(isRevealed ? "" : "Anlamını göstermek için çift dokun")
+                    }
+                    .scrollBounceBehavior(.basedOnSize)
+                }
+                answerArea(word: word)
             }
-            answerArea(word: word)
         }
         .padding(16)
         .toolbar {

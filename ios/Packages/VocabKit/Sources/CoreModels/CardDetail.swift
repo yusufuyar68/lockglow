@@ -44,6 +44,38 @@ public struct CardDetail: Decodable, Equatable, Sendable {
         }
     }
 
+    /// The card's fill-in-the-blank question: `cloze` contains a blank ("______"), `answer` fills
+    /// it, the distractors do not.
+    public struct Quiz: Decodable, Equatable, Sendable {
+        public let cloze: String
+        public let answer: String
+        public let distractors: [String]
+
+        public init(cloze: String, answer: String, distractors: [String]) {
+            self.cloze = cloze
+            self.answer = answer
+            self.distractors = distractors
+        }
+
+        /// The answer and the distractors in a stable mixed order: the same `seed` (the word id)
+        /// always gives the same order, on every device and launch. Duplicates are dropped.
+        public func options(seed: Int) -> [String] {
+            var seen = Set<String>()
+            let all = ([answer] + distractors).filter { seen.insert($0).inserted }
+            return all.sorted { Quiz.mixKey(seed: seed, $0) < Quiz.mixKey(seed: seed, $1) }
+        }
+
+        /// FNV-1a over "seed|option": deterministic, unlike Swift's per-process `Hasher`.
+        static func mixKey(seed: Int, _ option: String) -> UInt64 {
+            var hash: UInt64 = 0xcbf2_9ce4_8422_2325
+            for byte in "\(seed)|\(option)".utf8 {
+                hash ^= UInt64(byte)
+                hash = hash &* 0x0000_0100_0000_01b3
+            }
+            return hash
+        }
+    }
+
     public let examples: [Example]
     public let collocations: [String]
     /// Other Turkish equivalents besides the gloss (`l1.tr.alt`).
@@ -52,6 +84,7 @@ public struct CardDetail: Decodable, Equatable, Sendable {
     public let mistakes: [Mistake]
     public let falseFriend: FalseFriend?
     public let mnemonicTR: String?
+    public let quiz: Quiz?
 
     public init(
         examples: [Example] = [],
@@ -60,7 +93,8 @@ public struct CardDetail: Decodable, Equatable, Sendable {
         noteTR: String? = nil,
         mistakes: [Mistake] = [],
         falseFriend: FalseFriend? = nil,
-        mnemonicTR: String? = nil
+        mnemonicTR: String? = nil,
+        quiz: Quiz? = nil
     ) {
         self.examples = examples
         self.collocations = collocations
@@ -69,12 +103,14 @@ public struct CardDetail: Decodable, Equatable, Sendable {
         self.mistakes = mistakes
         self.falseFriend = falseFriend
         self.mnemonicTR = mnemonicTR
+        self.quiz = quiz
     }
 
     enum CodingKeys: String, CodingKey {
         case examples
         case collocations
         case l1
+        case quiz
     }
 
     private struct TurkishLayer: Decodable {
@@ -104,5 +140,6 @@ public struct CardDetail: Decodable, Equatable, Sendable {
         mistakes = turkish?.mistakes ?? []
         falseFriend = turkish?.falseFriend
         mnemonicTR = turkish?.mnemonic
+        quiz = try container.decodeIfPresent(Quiz.self, forKey: .quiz)
     }
 }
