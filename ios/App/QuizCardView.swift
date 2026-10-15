@@ -70,7 +70,8 @@ struct QuizCardView: View {
             .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
-        .disabled(picked != nil)
+        // Not `.disabled`: that would dim the options exactly when the answer is shown.
+        .allowsHitTesting(picked == nil)
     }
 
     private func mark(for option: String) -> (text: String, symbol: String)? {
