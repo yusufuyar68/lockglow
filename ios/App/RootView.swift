@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreModels
+import Learning
 
 struct RootView: View {
     enum AppTab: Hashable {
@@ -10,6 +11,7 @@ struct RootView: View {
     }
 
     @EnvironmentObject private var model: AppModel
+    @ObservedObject private var notifications = NotificationRouter.shared
     @Environment(\.scenePhase) private var scenePhase
     @State private var selectedTab: AppTab = .feed
     @State private var scrolledWordID: Int?
@@ -39,6 +41,11 @@ struct RootView: View {
             switch newPhase {
             case .background:
                 model.sceneDidEnterBackground()
+                // After the widget events were applied: the reminder counts use the latest progress.
+                let reminders = model.reminderPlan()
+                Task {
+                    await ReminderScheduler.replace(with: reminders)
+                }
             case .active:
                 model.sceneDidBecomeActive()
             default:
@@ -51,6 +58,21 @@ struct RootView: View {
         .onOpenURL { url in
             handle(url)
         }
+        .onAppear {
+            openReviewIfRequested()
+        }
+        .onChange(of: notifications.reviewRequested) { _, _ in
+            openReviewIfRequested()
+        }
+    }
+
+    /// A tapped reminder opens "Tekrar".
+    private func openReviewIfRequested() {
+        guard notifications.reviewRequested else {
+            return
+        }
+        selectedTab = .review
+        notifications.reviewRequested = false
     }
 
     /// `vocabwidget://word/<id>`, opened by tapping a widget.

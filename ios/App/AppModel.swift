@@ -28,6 +28,9 @@ final class AppModel: ObservableObject {
     @Published private(set) var rotationMinutes = AppPreferences.rotationMinutes
     /// Daily goal of new words; the widget queue holds twice as many (48 h horizon).
     @Published private(set) var dailyNewWords = AppPreferences.dailyNewWords
+    @Published private(set) var reminderEnabled = AppPreferences.reminderEnabled
+    /// Minutes after local midnight.
+    @Published private(set) var reminderMinuteOfDay = AppPreferences.reminderMinuteOfDay
     /// Set when the progress file was damaged at launch and the backup was used or progress
     /// started over; "Ayarlar" shows it until the user dismisses it.
     @Published private(set) var progressRecovery: ProgressStore.LoadOutcome?
@@ -121,6 +124,40 @@ final class AppModel: ObservableObject {
         dailyNewWords = count
         AppPreferences.dailyNewWords = count
         refreshWidgetPlan()
+    }
+
+    // MARK: Reminder
+
+    /// Only the setting; the caller schedules the notifications (`ReminderScheduler`).
+    func setReminderEnabled(_ enabled: Bool) {
+        reminderEnabled = enabled
+        AppPreferences.reminderEnabled = enabled
+    }
+
+    func setReminderMinuteOfDay(_ minute: Int) {
+        guard (0..<1440).contains(minute) else {
+            return
+        }
+        reminderMinuteOfDay = minute
+        AppPreferences.reminderMinuteOfDay = minute
+    }
+
+    /// The next week's reminders from the current progress; empty when reminders are off or
+    /// the content has not loaded yet.
+    func reminderPlan(now: Date = Date()) -> [Reminder] {
+        guard reminderEnabled, !words.isEmpty else {
+            return []
+        }
+        return ReminderPlanner.plan(
+            feed: words,
+            progress: progress,
+            now: now,
+            minuteOfDay: reminderMinuteOfDay,
+            days: 7,
+            dailyNewGoal: dailyNewWords,
+            newStudiedToday: AppPreferences.newWordsStudiedToday(now: now),
+            calendar: .current
+        )
     }
 
     // MARK: Card details

@@ -5,7 +5,10 @@ import Learning
 /// progress reset, and a notice when the progress file had to be recovered.
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.openURL) private var openURL
     @State private var showResetConfirmation = false
+    /// Notification permission was refused (now or earlier in iOS Settings).
+    @State private var notificationsDenied = false
 
     var body: some View {
         NavigationStack {
@@ -13,6 +16,7 @@ struct SettingsView: View {
                 recoverySection
                 rotationSection
                 goalSection
+                reminderSection
                 progressSection
                 resetSection
                 diagnosticsSection
@@ -29,6 +33,79 @@ struct SettingsView: View {
                 Button("Vazgeç", role: .cancel) {}
             } message: {
                 Text("Bildiğin ve öğrendiğin tüm kelimelerin kaydı silinir. Bu işlem geri alınamaz.")
+            }
+            .task {
+                notificationsDenied = await ReminderScheduler.isDenied()
+            }
+        }
+    }
+
+    private var reminderBinding: Binding<Bool> {
+        return Binding(
+            get: { model.reminderEnabled },
+            set: { isOn in
+                Task {
+                    await setReminder(isOn)
+                }
+            }
+        )
+    }
+
+    /// Today at the reminder time; only the hour and minute are used.
+    private var reminderTimeBinding: Binding<Date> {
+        return Binding(
+            get: {
+                let minute = model.reminderMinuteOfDay
+                return Calendar.current.date(
+                    bySettingHour: minute / 60,
+                    minute: minute % 60,
+                    second: 0,
+                    of: Date()
+                ) ?? Date()
+            },
+            set: { date in
+                let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+                model.setReminderMinuteOfDay((parts.hour ?? 20) * 60 + (parts.minute ?? 0))
+                let reminders = model.reminderPlan()
+                Task {
+                    await ReminderScheduler.replace(with: reminders)
+                }
+            }
+        )
+    }
+
+    /// Turning it on asks for notification permission; if that is refused the switch stays off.
+    private func setReminder(_ isOn: Bool) async {
+        if isOn {
+            let granted = await ReminderScheduler.requestPermission()
+            notificationsDenied = !granted
+            model.setReminderEnabled(granted)
+        } else {
+            model.setReminderEnabled(false)
+        }
+        await ReminderScheduler.replace(with: model.reminderPlan())
+    }
+
+    private var reminderSection: some View {
+        Section {
+            Toggle("Günlük hatırlatma", isOn: reminderBinding)
+            if model.reminderEnabled {
+                DatePicker("Saat", selection: reminderTimeBinding, displayedComponents: .hourAndMinute)
+            }
+            if notificationsDenied {
+                Button("Bildirim iznini aç") {
+                    if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
+                        openURL(url)
+                    }
+                }
+            }
+        } header: {
+            Text("Hatırlatma")
+        } footer: {
+            if notificationsDenied {
+                Text("Bildirimlere izin verilmemiş. iPhone Ayarları'nda Lockglow için bildirimleri aç.")
+            } else {
+                Text("Seçtiğin saatte, o gün kaç kelimenin tekrar beklediğini söyleyen bir bildirim gelir. O günün tekrarını ve yeni kelimelerini bitirdiysen gelmez.")
             }
         }
     }

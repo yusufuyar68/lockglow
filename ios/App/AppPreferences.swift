@@ -14,6 +14,34 @@ enum AppPreferences {
     private static let knownKey = "lockglow.knownWordIDs"
     private static let studiedDayKey = "lockglow.newWordsStudiedDay"
     private static let studiedCountKey = "lockglow.newWordsStudiedCount"
+    private static let reminderEnabledKey = "lockglow.reminderEnabled"
+    private static let reminderMinuteKey = "lockglow.reminderMinuteOfDay"
+
+    /// Daily "Tekrar" reminder: off until the user turns it on (it needs notification permission).
+    static var reminderEnabled: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: reminderEnabledKey)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: reminderEnabledKey)
+        }
+    }
+
+    static let defaultReminderMinuteOfDay = 20 * 60
+
+    /// Reminder time in minutes after local midnight (default 20:00).
+    static var reminderMinuteOfDay: Int {
+        get {
+            let stored = UserDefaults.standard.object(forKey: reminderMinuteKey) as? Int
+            if let stored = stored, (0..<1440).contains(stored) {
+                return stored
+            }
+            return defaultReminderMinuteOfDay
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: reminderMinuteKey)
+        }
+    }
 
     /// Minutes between word changes on the widget. Anything not in the choices reads as the default.
     static var rotationMinutes: Int {
