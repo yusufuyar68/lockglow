@@ -24,12 +24,19 @@ struct QuizCardView: View {
             Text("Boşluğa hangisi gelir?")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.secondary)
-            Text(quiz.cloze)
-                .font(.title3)
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity)
-                .padding(20)
-                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            // After the answer: the whole sentence, which can then be heard (before, the speaker
+            // would give the answer away).
+            VStack(spacing: 4) {
+                Text(picked == nil ? quiz.cloze : quiz.filledSentence)
+                    .font(.title3)
+                    .multilineTextAlignment(.center)
+                if picked != nil {
+                    SpeakButton(text: quiz.filledSentence, accessibilityName: "Cümleyi dinle")
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(20)
+            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             VStack(spacing: 10) {
                 ForEach(quiz.options(seed: word.id), id: \.self) { option in
                     optionButton(option)

@@ -66,6 +66,15 @@ final class CardDetailTests: XCTestCase {
         XCTAssertEqual(quiz.options(seed: 7).count, 2)
     }
 
+    func testFilledSentencePutsTheAnswerInTheBlank() {
+        let middle = CardDetail.Quiz(cloze: "We usually eat ______ at 7 a.m.", answer: "breakfast", distractors: ["x"])
+        XCTAssertEqual(middle.filledSentence, "We usually eat breakfast at 7 a.m.")
+        let start = CardDetail.Quiz(cloze: "___ is my favourite meal.", answer: "breakfast", distractors: ["x"])
+        XCTAssertEqual(start.filledSentence, "Breakfast is my favourite meal.")
+        let noBlank = CardDetail.Quiz(cloze: "No blank here.", answer: "x", distractors: ["y"])
+        XCTAssertEqual(noBlank.filledSentence, "No blank here.")
+    }
+
     func testMissingFieldsDecodeAsEmpty() throws {
         XCTAssertEqual(try decode("{}"), CardDetail())
         XCTAssertEqual(try decode(#"{"l1":{"en":{"alt":["x"]}}}"#), CardDetail())

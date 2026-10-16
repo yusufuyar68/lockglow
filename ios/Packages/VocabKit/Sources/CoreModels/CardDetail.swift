@@ -65,6 +65,20 @@ public struct CardDetail: Decodable, Equatable, Sendable {
             return all.sorted { Quiz.mixKey(seed: seed, $0) < Quiz.mixKey(seed: seed, $1) }
         }
 
+        /// The sentence with the answer in the blank (the first run of three or more
+        /// underscores), shown and read aloud after the question is answered. A blank at the very
+        /// start gets a capital letter. Without a blank the cloze is returned unchanged.
+        public var filledSentence: String {
+            guard let blank = cloze.range(of: "_{3,}", options: .regularExpression) else {
+                return cloze
+            }
+            var filler = answer
+            if blank.lowerBound == cloze.startIndex, let first = filler.first {
+                filler = first.uppercased() + filler.dropFirst()
+            }
+            return cloze.replacingCharacters(in: blank, with: filler)
+        }
+
         /// FNV-1a over "seed|option": deterministic, unlike Swift's per-process `Hasher`.
         static func mixKey(seed: Int, _ option: String) -> UInt64 {
             var hash: UInt64 = 0xcbf2_9ce4_8422_2325
