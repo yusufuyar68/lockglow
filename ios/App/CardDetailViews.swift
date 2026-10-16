@@ -4,22 +4,26 @@ import CoreModels
 // Pieces of a card's detail (from `CardDetail`) shared by the feed and the "Tekrar" cards.
 // Card text is shown verbatim (String, not LocalizedStringKey): no lookup, no Markdown.
 
-/// An English example with its Turkish translation under it.
+/// An English example with its Turkish translation under it, and a speaker button that reads
+/// the English sentence aloud.
 struct ExampleRow: View {
     let example: CardDetail.Example
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            Text(example.en)
-                .font(.body)
-                .italic()
-            if let tr = example.tr {
-                Text(tr)
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
+        HStack(alignment: .top, spacing: 4) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(example.en)
+                    .font(.body)
+                    .italic()
+                if let tr = example.tr {
+                    Text(tr)
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            SpeakButton(text: example.en, accessibilityName: "Cümleyi dinle")
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

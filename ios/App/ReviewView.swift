@@ -69,6 +69,12 @@ struct ReviewView: View {
                         }
                         .buttonStyle(.plain)
                         .accessibilityHint(isRevealed ? "" : "Anlamını göstermek için çift dokun")
+                        // On top of the card, not inside it: a button inside the reveal button's
+                        // label would also reveal the card.
+                        .overlay(alignment: .topTrailing) {
+                            SpeakButton(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                                .padding(8)
+                        }
                     }
                     .scrollBounceBehavior(.basedOnSize)
                 }

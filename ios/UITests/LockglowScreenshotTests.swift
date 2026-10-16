@@ -18,6 +18,12 @@ final class LockglowScreenshotTests: XCTestCase {
             .firstMatch
         XCTAssertTrue(firstCard.waitForExistence(timeout: 30), "feed did not show the first card")
         attachScreenshot(of: app, named: "1-akis")
+        // The speaker reads the word aloud; the app must survive it (CI simulators may be silent).
+        let listen = app.buttons["Kelimeyi dinle"].firstMatch
+        XCTAssertTrue(listen.waitForExistence(timeout: 5), "no speaker button on the feed card")
+        listen.tap()
+        sleep(1)
+        XCTAssertEqual(app.state, .runningForeground, "the app stopped after the speaker tap")
         app.swipeUp()
         sleep(1)
         attachScreenshot(of: app, named: "2-akis-ikinci-kart")

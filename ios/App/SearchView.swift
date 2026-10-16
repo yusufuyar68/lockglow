@@ -80,8 +80,11 @@ struct WordDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(word.lemma)
-                        .font(.largeTitle.bold())
+                    HStack(alignment: .center, spacing: 4) {
+                        Text(word.lemma)
+                            .font(.largeTitle.bold())
+                        SpeakButton(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                    }
                     if let ipa = word.ipaUS {
                         Text(ipa)
                             .font(.title3)

@@ -54,8 +54,11 @@ struct WordCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(word.lemma)
-                .font(.largeTitle.bold())
+            HStack(alignment: .center, spacing: 4) {
+                Text(word.lemma)
+                    .font(.largeTitle.bold())
+                SpeakButton(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+            }
             if let ipa = word.ipaUS {
                 Text(ipa)
                     .font(.title3)
@@ -81,6 +84,7 @@ struct WordCardView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .padding(16)
-        .accessibilityElement(children: .combine)
+        // Not combined into one element: the speaker buttons must stay reachable on their own.
+        .accessibilityElement(children: .contain)
     }
 }
