@@ -44,9 +44,20 @@ final class LockglowScreenshotTests: XCTestCase {
         sleep(1)
         attachScreenshot(of: app, named: "6-ayarlar")
 
-        app.tabBars.buttons["Widget Sağlığı"].tap()
+        // Sözlük: a Turkish prefix without Turkish letters must find the English word.
+        app.tabBars.buttons["Sözlük"].tap()
+        let field = app.searchFields.firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 5), "no search field")
+        field.tap()
+        field.typeText("kahv")
+        let hit = app.descendants(matching: .any)
+            .matching(NSPredicate(format: "label CONTAINS[c] %@", "breakfast"))
+            .firstMatch
+        XCTAssertTrue(hit.waitForExistence(timeout: 5), "searching 'kahv' did not find breakfast")
+        attachScreenshot(of: app, named: "7-sozluk-arama")
+        hit.tap()
         sleep(1)
-        attachScreenshot(of: app, named: "7-widget-sagligi")
+        attachScreenshot(of: app, named: "8-sozluk-kart")
     }
 
     private func attachScreenshot(of app: XCUIApplication, named name: String) {

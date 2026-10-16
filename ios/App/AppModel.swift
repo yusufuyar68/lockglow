@@ -139,6 +139,28 @@ final class AppModel: ObservableObject {
         }
     }
 
+    /// Words whose headword or Turkish gloss starts with the typed text (Turkish letters and
+    /// accents folded, so "kahv" finds "kahvaltı"). Uses the database's full-text index; without a
+    /// database (seed words only) a plain prefix match over the loaded words.
+    func search(_ query: String, limit: Int = 50) -> [WidgetWord] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.isEmpty {
+            return []
+        }
+        if contentSource == .database, let store = detailStore {
+            do {
+                return try store.search(trimmed, limit: limit)
+            } catch {
+                logger.error("search failed: \(error.localizedDescription, privacy: .public)")
+                return []
+            }
+        }
+        let needle = trimmed.lowercased()
+        return Array(words.filter { word in
+            word.lemma.lowercased().hasPrefix(needle) || (word.glossTR?.lowercased().hasPrefix(needle) ?? false)
+        }.prefix(limit))
+    }
+
     // MARK: Learning
 
     /// Known / learning / due-today counts for "Ayarlar" ("today" = until the end of the local day).

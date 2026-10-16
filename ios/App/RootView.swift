@@ -5,8 +5,8 @@ struct RootView: View {
     enum AppTab: Hashable {
         case feed
         case review
+        case search
         case settings
-        case health
     }
 
     @EnvironmentObject private var model: AppModel
@@ -24,12 +24,12 @@ struct RootView: View {
             ReviewView()
                 .tabItem { Label("Tekrar", systemImage: "arrow.triangle.2.circlepath") }
                 .tag(AppTab.review)
+            SearchView()
+                .tabItem { Label("Sözlük", systemImage: "magnifyingglass") }
+                .tag(AppTab.search)
             SettingsView()
                 .tabItem { Label("Ayarlar", systemImage: "gearshape") }
                 .tag(AppTab.settings)
-            WidgetHealthView()
-                .tabItem { Label("Widget Sağlığı", systemImage: "waveform.path.ecg") }
-                .tag(AppTab.health)
         }
         .task {
             await model.start()

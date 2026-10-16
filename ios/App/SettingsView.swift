@@ -12,6 +12,7 @@ struct SettingsView: View {
                 goalSection
                 progressSection
                 resetSection
+                diagnosticsSection
             }
             .navigationTitle("Ayarlar")
             .confirmationDialog(
@@ -85,6 +86,14 @@ struct SettingsView: View {
         Section {
             Button("İlerlemeyi sıfırla", role: .destructive) {
                 showResetConfirmation = true
+            }
+        }
+    }
+
+    private var diagnosticsSection: some View {
+        Section("Tanılama") {
+            NavigationLink("Widget sağlığı") {
+                WidgetHealthView()
             }
         }
     }

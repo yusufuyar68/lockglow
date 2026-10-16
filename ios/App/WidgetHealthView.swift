@@ -1,21 +1,20 @@
 import SwiftUI
 
 /// "Widget Sağlığı": what the widget can see right now. Meant for the widget spike tests.
+/// Pushed from "Ayarlar" (it has no NavigationStack of its own).
 struct WidgetHealthView: View {
     @EnvironmentObject private var model: AppModel
 
     var body: some View {
-        NavigationStack {
-            List {
-                widgetsSection
-                planSection
-                contentSection
-                actionsSection
-            }
-            .navigationTitle("Widget Sağlığı")
-            .refreshable {
-                await model.refreshHealth()
-            }
+        List {
+            widgetsSection
+            planSection
+            contentSection
+            actionsSection
+        }
+        .navigationTitle("Widget Sağlığı")
+        .refreshable {
+            await model.refreshHealth()
         }
         .task {
             await model.refreshHealth()
