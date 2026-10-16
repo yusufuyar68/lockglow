@@ -1,6 +1,8 @@
 import SwiftUI
+import Learning
 
-/// "Ayarlar": widget rotation interval, daily new words, progress counts, progress reset.
+/// "Ayarlar": widget rotation interval, daily new words, progress counts (and the known words),
+/// progress reset, and a notice when the progress file had to be recovered.
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
     @State private var showResetConfirmation = false
@@ -8,6 +10,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
+                recoverySection
                 rotationSection
                 goalSection
                 progressSection
@@ -76,7 +79,11 @@ struct SettingsView: View {
     private var progressSection: some View {
         let counts = model.progressCounts()
         return Section("İlerleme") {
-            LabeledContent("Bildiğim kelime", value: "\(counts.known)")
+            NavigationLink {
+                KnownWordsView()
+            } label: {
+                LabeledContent("Bildiğim kelime", value: "\(counts.known)")
+            }
             LabeledContent("Öğrenmekte olduğum", value: "\(counts.learning)")
             LabeledContent("Bugün tekrar edilecek", value: "\(counts.dueToday)")
         }
@@ -95,6 +102,39 @@ struct SettingsView: View {
             NavigationLink("Widget sağlığı") {
                 WidgetHealthView()
             }
+        }
+    }
+
+    @ViewBuilder
+    private var recoverySection: some View {
+        if let outcome = model.progressRecovery {
+            Section {
+                Label {
+                    Text(recoveryMessage(outcome))
+                } icon: {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .foregroundStyle(.orange)
+                }
+                Button("Anladım") {
+                    model.dismissProgressRecovery()
+                }
+            } header: {
+                Text("İlerleme dosyası")
+            }
+        }
+    }
+
+    private func recoveryMessage(_ outcome: ProgressStore.LoadOutcome) -> String {
+        switch outcome {
+        case let .restoredFromBackup(_, backupDate):
+            if let date = backupDate {
+                return "İlerleme dosyası okunamadı, \(date.formatted(date: .long, time: .shortened)) tarihli yedekten geri yüklendi. Ondan sonraki değişiklikler kaybolmuş olabilir."
+            }
+            return "İlerleme dosyası okunamadı, yedekten geri yüklendi. Son değişiklikler kaybolmuş olabilir."
+        case .startedOver:
+            return "İlerleme dosyası okunamadı ve yedek yoktu, ilerleme sıfırdan başladı. Eski dosya silinmedi; sonraki bir sürüm onu kurtarabilir."
+        case .fresh, .loaded:
+            return ""
         }
     }
 

@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreModels
+import Learning
 
 /// "Sözlük": look a word up in English or Turkish (prefix search, Turkish letters folded), then
 /// open the whole card.
@@ -103,6 +104,7 @@ struct WordDetailView: View {
                 }
                 Text(word.defShort)
                     .font(.title3)
+                LearningStatusRow(word: word)
                 Divider()
                 if let examples = detail?.examples, !examples.isEmpty {
                     sectionTitle("Örnekler")
@@ -140,5 +142,44 @@ struct WordDetailView: View {
     private func sectionTitle(_ title: String) -> some View {
         Text(title)
             .font(.headline)
+    }
+}
+
+/// Where the word stands (new / learning / known) and the one action that changes it.
+private struct LearningStatusRow: View {
+    @EnvironmentObject private var model: AppModel
+    let word: WidgetWord
+
+    var body: some View {
+        let state = model.learningState(of: word)
+        HStack(spacing: 12) {
+            Label(statusText(state), systemImage: state == .known ? "checkmark.circle.fill" : "circle.dashed")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(state == .known ? Color.green : Color.secondary)
+            Spacer(minLength: 0)
+            if state == .known {
+                Button("Öğrenmeye geri al") {
+                    model.undoKnown(word)
+                }
+                .buttonStyle(.bordered)
+            } else {
+                Button("Biliyorum") {
+                    model.markKnown(word)
+                }
+                .buttonStyle(.bordered)
+            }
+        }
+        .controlSize(.regular)
+    }
+
+    private func statusText(_ state: LearningState) -> String {
+        switch state {
+        case .new:
+            return "Yeni kelime"
+        case .learning:
+            return "Öğreniyorum"
+        case .known:
+            return "Biliyorum"
+        }
     }
 }

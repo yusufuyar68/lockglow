@@ -29,6 +29,7 @@ struct RootView: View {
                 .tag(AppTab.search)
             SettingsView()
                 .tabItem { Label("Ayarlar", systemImage: "gearshape") }
+                .badge(model.progressRecovery == nil ? 0 : 1)
                 .tag(AppTab.settings)
         }
         .task {

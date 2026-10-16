@@ -28,6 +28,9 @@ final class AppModel: ObservableObject {
     @Published private(set) var rotationMinutes = AppPreferences.rotationMinutes
     /// Daily goal of new words; the widget queue holds twice as many (48 h horizon).
     @Published private(set) var dailyNewWords = AppPreferences.dailyNewWords
+    /// Set when the progress file was damaged at launch and the backup was used or progress
+    /// started over; "Ayarlar" shows it until the user dismisses it.
+    @Published private(set) var progressRecovery: ProgressStore.LoadOutcome?
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? "lockglow",
@@ -92,6 +95,10 @@ final class AppModel: ObservableObject {
     func sceneDidBecomeActive() {
         if !hasStarted {
             return
+        }
+        if progressStore == nil {
+            // The file could not be read at launch (for example a locked device): try again.
+            loadProgress()
         }
         ingestWidgetEvents()
     }
@@ -213,6 +220,57 @@ final class AppModel: ObservableObject {
         refreshWidgetPlan()
     }
 
+    /// Known words (marked with "Biliyorum" or graduated), the most recently changed first.
+    func knownWords() -> [WidgetWord] {
+        let known = words.enumerated().filter { progress[$0.element.id]?.state == .known }
+        return known.sorted { lhs, rhs in
+            let left = progress[lhs.element.id]?.lastSeenAt ?? .distantPast
+            let right = progress[rhs.element.id]?.lastSeenAt ?? .distantPast
+            return left != right ? left > right : lhs.offset < rhs.offset
+        }.map { $0.element }
+    }
+
+    func learningState(of word: WidgetWord) -> LearningState {
+        return progress[word.id]?.state ?? .new
+    }
+
+    /// "Biliyorum" in the app: the same as the widget button (leaves the rotation, returns as a
+    /// refresher in 30 days).
+    func markKnown(_ word: WidgetWord) {
+        updateProgress(of: word) { current, now in
+            current.state == .known ? nil : Leitner.markKnown(current, at: now)
+        }
+    }
+
+    /// "Öğrenmeye geri al": a known word returns to the rotation (due now if it was ever
+    /// answered, otherwise new again). Undoes a "Biliyorum" tapped by mistake on the widget.
+    func undoKnown(_ word: WidgetWord) {
+        updateProgress(of: word) { current, now in
+            current.state == .known ? Leitner.undoKnown(current, at: now) : nil
+        }
+    }
+
+    /// Applies pending widget taps first (a "known" tap still in the mailbox must not undo this
+    /// change later), saves, then rewrites the widget queue. `change` returns nil for no change.
+    private func updateProgress(of word: WidgetWord, _ change: (WordProgress, Date) -> WordProgress?) {
+        ingestWidgetEvents()
+        let current = progress[word.id] ?? WordProgress(wordID: word.id)
+        guard let changed = change(current, Date()) else {
+            return
+        }
+        var updated = progress
+        updated[word.id] = changed
+        guard persistProgress(updated) else {
+            return
+        }
+        progress = updated
+        refreshWidgetPlan()
+    }
+
+    func dismissProgressRecovery() {
+        progressRecovery = nil
+    }
+
     /// "İlerlemeyi sıfırla": forgets all progress. Unprocessed widget events are discarded first,
     /// otherwise they would be applied right after the reset. The visible widget word stays.
     func resetProgress() {
@@ -233,7 +291,26 @@ final class AppModel: ObservableObject {
             return
         }
         let fileStore = ProgressStore(fileURL: url)
-        var loaded = fileStore.load()
+        var loaded: [Int: WordProgress]
+        do {
+            let result = try fileStore.load()
+            loaded = result.progress
+            switch result.outcome {
+            case .fresh, .loaded:
+                break
+            case let .restoredFromBackup(setAside, backupDate):
+                logger.error("progress file damaged (moved to \(setAside?.lastPathComponent ?? "-", privacy: .public)); restored the backup from \(backupDate?.description ?? "?", privacy: .public)")
+                progressRecovery = result.outcome
+            case let .startedOver(setAside):
+                logger.error("progress file damaged (moved to \(setAside.lastPathComponent, privacy: .public)); no backup, progress starts over")
+                progressRecovery = result.outcome
+            }
+        } catch {
+            // No store: nothing is saved over the file, and widget events wait in the mailbox.
+            // The next activation tries again.
+            logger.error("progress file unreadable, will retry: \(String(describing: error), privacy: .public)")
+            return
+        }
 
         // One-time migration: ids the old build kept in UserDefaults become known words. A word
         // that already has progress is newer than that list and is left alone.
