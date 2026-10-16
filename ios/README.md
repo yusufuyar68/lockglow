@@ -12,7 +12,7 @@ Veri sözleşmesi: [`../docs/contract/content-db.md`](../docs/contract/content-d
 ios/
 ├─ project.yml                 XcodeGen tanımı (.xcodeproj elle yazılmaz)
 ├─ Config/Base.xcconfig        BUNDLE_ID_PREFIX, DEVELOPMENT_TEAM, APP_GROUP_ID, sürüm
-├─ App/                        Lockglow (SwiftUI uygulaması): sekmeler Akış, Tekrar, Ayarlar, Widget Sağlığı
+├─ App/                        Lockglow (SwiftUI uygulaması): sekmeler Akış, Tekrar, Sözlük, Ayarlar (Widget Sağlığı: Ayarlar > Tanılama)
 │  ├─ Resources/               content.sqlite buraya (isteğe bağlı)
 │  ├─ Assets.xcassets/         AppIcon (1024 px, opak, yalnızca şekil; geçici ikon)
 │  └─ PrivacyInfo.xcprivacy
@@ -76,6 +76,7 @@ Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite
 - **Zaman çizelgesi:** en çok 48 saat ve 96 giriş, politika `.atEnd`, widget ağa çıkmaz. Tüm kelimeler bilinense widget boş kalmasın diye bilinenler yok sayılır.
 - **Aralık ayarı:** "Ayarlar" sekmesinden (5 dakika hızlı deneme içindir). Widget'ı düzenleme (yapılandırma) ekranı yok (`StaticConfiguration`).
 - **Gösterim sırası (A2 öğrenen):** widget'ta ve akış kartında kelime, sonra Türkçe karşılık (bir kademe iri ve kalın), sonra kısa İngilizce tanım, sonra örnek. Kilit ekranı dikdörtgeni: kelime, karşılık, `def_micro`.
+- **Sözlük:** İngilizce ya da Türkçe önekle arama (`ContentStore.search`, Türkçe harfler katlanır: "kahv" → breakfast); sonuca dokununca kartın tamamı (`WordDetailView`): tüm örnekler ve Türkçeleri, yaygın hatalar, not, ipucu, eşdizimler. UI testi aramayı ve kart açılışını da çeker.
 - **Tekrar sorusu:** zamanı gelen (daha önce çalışılmış) kelime kartla değil, kartın boşluk doldurma sorusuyla sorulur: cümle + 4 şık (`QuizCardView`, şık sırası kelime kimliğine göre sabit karışık). Doğru → `review(.good)`, yanlış → `review(.again)`; cevaptan sonra doğru şık ve Türkçe anlam gösterilir. Yeni kelime önce kart olarak öğrenilir. Görünüm `QuizSnapshotTests` ile çizilip bakıldı.
 - **Tekrar sekmesi:** önce zamanı gelen kelimeler (en çok 20 kart/tur, en çok gecikmiş önce), yoksa günlük hedef kadar yeni kelime (akış sırasıyla; bugün zaten çalışılanlar hedeften düşülür). "Bildim" → `review(.good)`, "Bilemedim" → `review(.again)`; her cevapta ilerleme kaydedilir, tur bitince (ya da "Bitir"e basılınca) plan yeniden yazılır. Bilemedim denen kelime 10 dakika sonra yeniden "zamanı gelmiş" olur (aynı turda tekrar sorulmaz). Hedef dolunca "bugünlük tamam" ekranı çıkar; isteyen "N yeni kelime daha" ile devam eder.
 - **İmleç anlamı (sözleşmeden sapma, §6'ya işlenmeli):** `widget_state.json`'a `cursor_anchor` (ISO 8601) eklendi; `cursor_offset` artık "`cursor_anchor` anında dönüşümün bulunduğu kuyruk sırası" demek, saf bir "+1" sayacı değil.
@@ -95,7 +96,7 @@ Gerekenler: Mac, Xcode 26 veya 27, iPhone (iOS 26), USB kablosu, Apple ID.
 5. **iPhone'u hazırla.** Kabloyla bağla, "Bu Bilgisayara Güven"i onayla. **Developer Mode:** Apple'ın belgesine göre bu anahtar, cihazı Mac'le eşleştirmeye başlayana ya da daha önce eşleştirene kadar Ayarlar'da görünmez. Görünce Ayarlar > Gizlilik ve Güvenlik içinde Güvenlik bölümündeki **Developer Mode**'u aç (Türkçe arayüzdeki adı doğrulanmadı), uyarıda "Yeniden Başlat"a bas; telefon açılınca çıkan onay penceresinde etkinleştirmeyi onayla ve parolanı gir.
 6. **Çalıştır.** Scheme: `Lockglow-Release` (kendi kullanımın için bu; widget yenileme bütçesi gerçekçi olur), hedef: iPhone'un, ⌘R. İlk kurulum birkaç dakika sürebilir.
 7. **Geliştiriciye güven.** İlk açılışta "Untrusted Developer" uyarısı çıkarsa: Ayarlar > Genel > VPN ve Aygıt Yönetimi > Apple ID'ni seç > güven. Apple bu yolu kurumsal uygulamalar sayfasında anlatıyor (iOS 18 ve sonrasında düğme "Allow & Restart"); Xcode'la imzalanmış kişisel uygulama için başlığın adı ve iOS 26'daki akış doğrulanmadı (geliştirici forumlarında aynı yolun işe yaradığı bildiriliyor). Apple, güven kurarken cihazın internete bağlı olması gerektiğini yazıyor.
-8. **Kontrol.** Uygulamayı aç (ilk plan yazılır), "Widget Sağlığı" sekmesinde App Group "Erişilebilir" olmalı. Ana ekrana uzun bas > "+" > Lockglow. Ardından yukarıdaki test kontrol listesini kullan.
+8. **Kontrol.** Uygulamayı aç (ilk plan yazılır), "Ayarlar > Widget sağlığı" ekranında App Group "Erişilebilir" olmalı. Ana ekrana uzun bas > "+" > Lockglow. Ardından yukarıdaki test kontrol listesini kullan.
 
 **Ücretsiz hesabın sınırları** (Apple'ın "Compare memberships" sayfası, 2026-10-11'de okundu):
 - Cihaza kurulumu sağlayan provisioning profile, verildiği günden **7 gün sonra** bitiyor; Apple: süre dolunca uygulamayı yeniden derleyip cihaza yeniden kurman gerekiyor ve uygulamaları cihaza zaman zaman yeniden provision etmen gerekecek. Pratikte: **haftada bir** iPhone'u Mac'e bağla ve Xcode'dan yeniden çalıştır (Apple ID Xcode'da girili olmalı).
@@ -157,7 +158,7 @@ macOS dakikaları özel depoda 10 kat sayılır; `build.yml` ~2, `screenshots.ym
 
 ## Widget spike test kontrol listesi
 
-Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Widget Sağlığı" sekmesinde App Group "Erişilebilir", kuyruk boyutu > 0 olmalı.
+Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Ayarlar > Widget sağlığı" ekranında App Group "Erişilebilir", kuyruk boyutu > 0 olmalı.
 
 - [ ] **Ekleme:** Ana ekrana küçük ve orta widget, kilit ekranına dikdörtgen ve satır içi widget ekle. Hepsinde kelime görünüyor, hiçbiri boş değil.
 - [ ] **Uygulama açılmadan ekleme:** Uygulamayı sil, yeniden kur, **açmadan** widget ekle. Tohum kelimeler (breakfast, borrow, actually...) görünmeli.
