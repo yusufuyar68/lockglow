@@ -1,7 +1,9 @@
-# Builds and tests everything on every push to main (and on demand).
+# Builds and tests on every push to main (and on demand).
 # - python: content pipeline tests + strict validation of the personal draft cards (Linux).
 # - ios: VocabKit package tests and an unsigned simulator build of the app + widget (macOS).
-#   macOS minutes count 10x against the private-repo Actions quota, so this job is kept short.
+#   ON DEMAND ONLY: macOS minutes count 10x against the private-repo Actions quota (2026-10-17:
+#   ~810 of 2000 used), and screenshots.yml / testflight.yml build the app anyway. Before pushing,
+#   run ios/Tools/linux_check.sh (package tests + app logic on Linux, free).
 name: build
 
 on:
@@ -46,6 +48,7 @@ jobs:
 
   ios:
     name: iOS (paket testleri + simülatör derlemesi)
+    if: github.event_name == 'workflow_dispatch'
     runs-on: macos-15
     timeout-minutes: 30
     steps:
