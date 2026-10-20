@@ -1,0 +1,1056 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.reservation.n.1",
+      "lemma": "reservation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌrɛzərˈveɪʃən/",
+        "uk": "/ˌrɛzəˈveɪʃən/"
+      },
+      "def": {
+        "micro": "a place kept for you",
+        "short": "a hotel room, table, or seat that is kept for you until you come",
+        "long": "A promise to keep a hotel room, a restaurant table, or a seat for you. You usually make it before you go, by phone or online, and give your name."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I have a reservation for tonight.",
+          "tr": "Bu gece için rezervasyonum var.",
+          "register": "neutral",
+          "focus": "reservation"
+        },
+        {
+          "en": "Kenji made a reservation for two at eight o'clock.",
+          "tr": "Kenji saat sekiz için iki kişilik rezervasyon yaptı.",
+          "register": "neutral",
+          "focus": "reservation"
+        },
+        {
+          "en": "Can I change my reservation to Friday?",
+          "tr": "Rezervasyonumu cuma gününe alabilir miyim?",
+          "register": "neutral",
+          "focus": "reservation"
+        }
+      ],
+      "synonyms": [
+        "booking"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "make a reservation",
+        "a reservation for two",
+        "cancel a reservation",
+        "have a reservation",
+        "confirm a reservation"
+      ],
+      "word_family": [
+        {
+          "lemma": "reserve",
+          "pos": "v"
+        },
+        {
+          "lemma": "reserved",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From the verb 'reserve', from Latin 'reservare', meaning to keep back or save for later.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "rezervasyon",
+          "alt": [
+            "yer ayırtma"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'rezervasyon' ile aynı sözcüktür. İngiltere'de 'booking' de çok kullanılır. 'Rezervasyon yapmak' İngilizcede 'make a reservation' olur; 'do' kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "I did a reservation for two.",
+              "right": "I made a reservation for two.",
+              "why": "Türkçede 'rezervasyon yapmak' denir ve 'yapmak' kolayca 'do' diye çevrilir. İngilizcede reservation ile 'make' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I called the hotel to make a ______ for Friday night.",
+        "answer": "reservation",
+        "distractors": [
+          "suitcase",
+          "souvenir",
+          "postcard"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.double_room.phr.1",
+      "lemma": "double room",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdʌbəl ˈruːm/",
+        "uk": "/ˌdʌbəl ˈruːm/"
+      },
+      "def": {
+        "micro": "bedroom for two people",
+        "short": "a hotel bedroom for two people, usually with one big bed",
+        "long": "A hotel bedroom for two people. It usually has one big bed. If you want two beds, ask for a twin room."
+      },
+      "grammar": {
+        "pattern": "a double room (for two nights)"
+      },
+      "examples": [
+        {
+          "en": "We'd like a double room, please.",
+          "tr": "İki kişilik bir oda istiyoruz, lütfen.",
+          "register": "neutral",
+          "focus": "double room"
+        },
+        {
+          "en": "Maria booked a double room for three nights.",
+          "tr": "Maria üç gece için iki kişilik bir oda ayırttı.",
+          "register": "neutral",
+          "focus": "double room"
+        },
+        {
+          "en": "Does the double room have a balcony?",
+          "tr": "İki kişilik odada balkon var mı?",
+          "register": "neutral",
+          "focus": "double room"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "single room"
+      ],
+      "collocations": [
+        "book a double room",
+        "a double room for two nights",
+        "a double room with a view"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iki kişilik oda",
+          "alt": [
+            "çift kişilik oda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'iki kişilik oda' hem tek geniş yataklı hem iki ayrı yataklı odayı anlatabilir. İngilizcede 'double room' genellikle tek geniş yataklıdır; iki ayrı yatak için 'twin room', tek kişilik için 'single room' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My wife and I want one big bed. Do you have a ______?",
+        "answer": "double room",
+        "distractors": [
+          "single room",
+          "twin room",
+          "waiting room"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reception.n.1",
+      "lemma": "reception",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "hotel desk",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈsɛpʃən/",
+        "uk": "/rɪˈsɛpʃən/"
+      },
+      "def": {
+        "micro": "a hotel desk for guests",
+        "short": "the desk in a hotel where guests arrive and ask for help",
+        "long": "The desk near the front door of a hotel. Guests go there when they arrive, and the workers give them keys, help, and information."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Please leave your key at reception.",
+          "tr": "Lütfen anahtarınızı resepsiyona bırakın.",
+          "register": "neutral",
+          "focus": "reception"
+        },
+        {
+          "en": "Ayşe called reception to ask for an extra towel.",
+          "tr": "Ayşe fazladan bir havlu istemek için resepsiyonu aradı.",
+          "register": "neutral",
+          "focus": "reception"
+        },
+        {
+          "en": "Reception is open all night, so you can arrive late.",
+          "tr": "Resepsiyon bütün gece açık, bu yüzden geç gelebilirsiniz.",
+          "register": "neutral",
+          "focus": "Reception"
+        }
+      ],
+      "synonyms": [
+        "front desk"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "at reception",
+        "reception desk",
+        "call reception",
+        "ask at reception",
+        "leave a key at reception"
+      ],
+      "word_family": [
+        {
+          "lemma": "receptionist",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'recipere', meaning to receive. The hotel desk is where a hotel receives its guests.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "resepsiyon",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'resepsiyon' ile aynı sözcüktür. İngilizcede 'reception' ya da 'reception desk' denir; ABD'de çoğunlukla 'front desk' söylenir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I lost my key, so I went to the hotel ______ for a new one.",
+        "answer": "reception",
+        "distractors": [
+          "balcony",
+          "elevator",
+          "garden"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.room_service.phr.1",
+      "lemma": "room service",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈruːm ˌsɜːrvɪs/",
+        "uk": "/ˈruːm ˌsɜːvɪs/"
+      },
+      "def": {
+        "micro": "hotel meals brought to you",
+        "short": "food and drinks that hotel workers bring to your door",
+        "long": "Food and drinks that hotel workers bring to your door. You order them by phone and eat in your room. You usually pay more for this."
+      },
+      "grammar": {
+        "pattern": "order room service"
+      },
+      "examples": [
+        {
+          "en": "Let's order room service tonight.",
+          "tr": "Bu akşam oda servisi sipariş edelim.",
+          "register": "neutral",
+          "focus": "room service"
+        },
+        {
+          "en": "Elif called room service and ordered breakfast.",
+          "tr": "Elif oda servisini arayıp kahvaltı sipariş etti.",
+          "register": "neutral",
+          "focus": "room service"
+        },
+        {
+          "en": "Room service costs more, but it is nice after a long flight.",
+          "tr": "Oda servisi daha pahalı ama uzun bir uçuştan sonra güzel oluyor.",
+          "register": "neutral",
+          "focus": "Room service"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "order room service",
+        "call room service",
+        "room service menu",
+        "room service breakfast"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "oda servisi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'oda servisi' ile aynıdır. İngilizcede genellikle 'a' ya da 'the' olmadan kullanılır: order room service.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We were too tired to go out, so we ordered ______ and had dinner in bed.",
+        "answer": "room service",
+        "distractors": [
+          "laundry service",
+          "taxi service",
+          "cleaning service"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fully_booked.phr.1",
+      "lemma": "fully booked",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfʊli ˈbʊkt/",
+        "uk": "/ˌfʊli ˈbʊkt/"
+      },
+      "def": {
+        "micro": "with no free places left",
+        "short": "with no free rooms, tables, or seats left",
+        "long": "Used when a hotel, a flight, or a restaurant has no free places left for the day you want. You must choose a different day or a different place."
+      },
+      "grammar": {
+        "pattern": "be fully booked"
+      },
+      "examples": [
+        {
+          "en": "Sorry, the hotel is fully booked.",
+          "tr": "Üzgünüm, otel tamamen dolu.",
+          "register": "neutral",
+          "focus": "fully booked"
+        },
+        {
+          "en": "The morning flight to Berlin is fully booked.",
+          "tr": "Berlin'e giden sabah uçuşu tamamen dolu.",
+          "register": "neutral",
+          "focus": "fully booked"
+        },
+        {
+          "en": "Mehmet tried three hotels, but all of them were fully booked.",
+          "tr": "Mehmet üç otel denedi ama hepsi tamamen doluydu.",
+          "register": "neutral",
+          "focus": "fully booked"
+        }
+      ],
+      "synonyms": [
+        "full",
+        "sold out"
+      ],
+      "antonyms": [
+        "available"
+      ],
+      "collocations": [
+        "a fully booked hotel",
+        "fully booked tonight",
+        "fully booked until Monday",
+        "almost fully booked"
+      ],
+      "word_family": [
+        {
+          "lemma": "booking",
+          "pos": "n"
+        },
+        {
+          "lemma": "book",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tamamen dolu",
+          "alt": [
+            "dolu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Otel, uçuş ya da restoranda hiç boş yer kalmadığını anlatır. Otel kapısındaki 'No vacancies' (boş oda yok) tabelası da aynı anlama gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There are no free tables on Saturday. The restaurant is ______.",
+        "answer": "fully booked",
+        "distractors": [
+          "half empty",
+          "almost empty",
+          "available"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.included.adj.1",
+      "lemma": "included",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "part of the price",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈkluːdɪd/",
+        "uk": "/ɪnˈkluːdɪd/"
+      },
+      "def": {
+        "micro": "already in the price",
+        "short": "already counted in the price, so you do not pay extra",
+        "long": "Already counted in the price, so you do not need to pay more for it. Many hotels say that breakfast is already in the price."
+      },
+      "grammar": {
+        "pattern": "be included (in the price)"
+      },
+      "examples": [
+        {
+          "en": "Breakfast is included.",
+          "tr": "Kahvaltı dâhil.",
+          "register": "neutral",
+          "focus": "included"
+        },
+        {
+          "en": "Is parking included in the price?",
+          "tr": "Otopark fiyata dâhil mi?",
+          "register": "neutral",
+          "focus": "included"
+        },
+        {
+          "en": "The tour costs fifty euros, and lunch is included.",
+          "tr": "Tur elli euro, öğle yemeği fiyata dâhil.",
+          "register": "neutral",
+          "focus": "included"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "extra"
+      ],
+      "collocations": [
+        "breakfast included",
+        "included in the price",
+        "tax included",
+        "all meals included"
+      ],
+      "word_family": [
+        {
+          "lemma": "include",
+          "pos": "v"
+        },
+        {
+          "lemma": "including",
+          "pos": "prep"
+        },
+        {
+          "lemma": "inclusive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'includere', meaning to shut in: 'in' + 'claudere', to close.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "dâhil",
+          "alt": [
+            "fiyata dâhil"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'dâhil' ile aynı kullanılır: kahvaltı dâhil = 'breakfast included'. Fiyata girmeyen şey için 'not included' ya da 'extra' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Do we pay extra for breakfast, or is it ______?",
+        "answer": "included",
+        "distractors": [
+          "cooked",
+          "missed",
+          "delayed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_advance.phr.1",
+      "lemma": "in advance",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ədˈvæns/",
+        "uk": "/ɪn ədˈvɑːns/"
+      },
+      "def": {
+        "micro": "before something happens",
+        "short": "before the day or the time when something happens",
+        "long": "Some time before something happens. People buy tickets, make plans, or pay in this way, so they are ready on the day."
+      },
+      "grammar": {
+        "pattern": "book / pay / plan + in advance"
+      },
+      "examples": [
+        {
+          "en": "You can buy tickets in advance.",
+          "tr": "Biletleri önceden alabilirsin.",
+          "register": "neutral",
+          "focus": "in advance"
+        },
+        {
+          "en": "Please tell us in advance if you cannot come.",
+          "tr": "Gelemeyeceksen lütfen bize önceden haber ver.",
+          "register": "neutral",
+          "focus": "in advance"
+        },
+        {
+          "en": "Ayşe paid for the trip a month in advance.",
+          "tr": "Ayşe gezinin parasını bir ay önceden ödedi.",
+          "register": "neutral",
+          "focus": "in advance"
+        }
+      ],
+      "synonyms": [
+        "beforehand",
+        "ahead of time"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "book in advance",
+        "pay in advance",
+        "plan in advance",
+        "a week in advance",
+        "thanks in advance"
+      ],
+      "word_family": [
+        {
+          "lemma": "advance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önceden",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Önceden' demektir ama yalnızca 'bir şey olmadan önce' anlamında kullanılır ve çoğunlukla cümlenin sonuna gelir: book in advance. 'Eskiden' anlamındaki 'önceden' için 'before' ya da 'in the past' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This hotel is very popular in summer, so you should book a room ______.",
+        "answer": "in advance",
+        "distractors": [
+          "in the past",
+          "too late",
+          "by mistake"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rent_a_car.phr.1",
+      "lemma": "rent a car",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌrɛnt ə ˈkɑːr/",
+        "uk": "/ˌrɛnt ə ˈkɑː/"
+      },
+      "def": {
+        "micro": "pay to use a car for a time",
+        "short": "pay a company to use its car for a few days or weeks",
+        "long": "To pay a company so that you can drive its car for a short time, like a weekend or a holiday. You usually need a driver's license."
+      },
+      "grammar": {
+        "pattern": "rent a car (for + time)"
+      },
+      "examples": [
+        {
+          "en": "We want to rent a car in Izmir.",
+          "tr": "İzmir'de araba kiralamak istiyoruz.",
+          "register": "neutral",
+          "focus": "rent a car"
+        },
+        {
+          "en": "Sam rented a car for the weekend.",
+          "tr": "Sam hafta sonu için bir araba kiraladı.",
+          "register": "neutral",
+          "focus": "rented a car"
+        },
+        {
+          "en": "Is it cheaper to rent a car or take the train?",
+          "tr": "Araba kiralamak mı yoksa trene binmek mi daha ucuz?",
+          "register": "neutral",
+          "focus": "rent a car"
+        }
+      ],
+      "synonyms": [
+        "hire a car"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "rent a car online",
+        "rent a car at the airport",
+        "rent a car for a week"
+      ],
+      "word_family": [
+        {
+          "lemma": "rent",
+          "pos": "v"
+        },
+        {
+          "lemma": "rental",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "araba kiralamak",
+          "alt": [
+            "araç kiralamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Burada arabayı kiralayan sensin; kiraya vermek için 'rent out' denir. Türkçede 'rent a car' şirket adı gibi kullanılır; İngilizcede bu iş için çoğunlukla 'car rental' (İngiltere'de 'car hire') denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We don't have a car, so we will ______ for the weekend.",
+        "answer": "rent a car",
+        "distractors": [
+          "sell a car",
+          "wash a car",
+          "park a car"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tourist.n.1",
+      "lemma": "tourist",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtʊrɪst/",
+        "uk": "/ˈtʊərɪst/"
+      },
+      "def": {
+        "micro": "a person visiting for fun",
+        "short": "a person who visits a place for a holiday and does not live there",
+        "long": "A person who visits a town or a country for fun and to see new places. Many of them take photos and buy small gifts."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Many tourists come to Istanbul in summer.",
+          "tr": "Yazın İstanbul'a birçok turist gelir.",
+          "register": "neutral",
+          "focus": "tourists"
+        },
+        {
+          "en": "Kenji is a tourist, so he needs a map of the city.",
+          "tr": "Kenji turist, bu yüzden şehrin haritasına ihtiyacı var.",
+          "register": "neutral",
+          "focus": "tourist"
+        },
+        {
+          "en": "In August the beach is full of tourists.",
+          "tr": "Ağustosta plaj turistlerle dolu.",
+          "register": "neutral",
+          "focus": "tourists"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "local"
+      ],
+      "collocations": [
+        "tourist attraction",
+        "tourist information",
+        "tourist season",
+        "tourist guide"
+      ],
+      "word_family": [
+        {
+          "lemma": "tourism",
+          "pos": "n"
+        },
+        {
+          "lemma": "tour",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From 'tour' + '-ist', a person who makes a tour. 'Tour' comes from Old French 'tour', meaning a turn.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "turist",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'turist' ile aynı sözcüktür. 'Turistik yer' İngilizcede 'tourist attraction' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She doesn't live here. She is a ______ on holiday for a week.",
+        "answer": "tourist",
+        "distractors": [
+          "neighbor",
+          "resident",
+          "local"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.destination.n.1",
+      "lemma": "destination",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdɛstəˈneɪʃən/",
+        "uk": "/ˌdɛstɪˈneɪʃən/"
+      },
+      "def": {
+        "micro": "place you are going to",
+        "short": "the place where someone is going or where a trip ends",
+        "long": "The place where a person, a bus, or a plane is going. It is the end of a trip, not the start."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "We reached our destination at midnight.",
+          "tr": "Gece yarısı varış noktamıza ulaştık.",
+          "register": "neutral",
+          "focus": "destination"
+        },
+        {
+          "en": "Paris is a popular holiday destination.",
+          "tr": "Paris popüler bir tatil yeri.",
+          "register": "neutral",
+          "focus": "destination"
+        },
+        {
+          "en": "The sign on the front of the bus shows its destination.",
+          "tr": "Otobüsün önündeki tabela gideceği yeri gösteriyor.",
+          "register": "neutral",
+          "focus": "destination"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "holiday destination",
+        "final destination",
+        "reach your destination",
+        "popular destination",
+        "travel destination"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'destinare', meaning to fix or decide. Your destination is the place you have decided to reach.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "varış noktası",
+          "alt": [
+            "gidilecek yer",
+            "destinasyon"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Turizmde 'destinasyon' da denir. 'Holiday destination' tatil için gidilen yerdir; 'final destination' yolculuğun son durağıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our flight stops in Istanbul, but our final ______ is Tokyo.",
+        "answer": "destination",
+        "distractors": [
+          "departure",
+          "journey",
+          "timetable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
