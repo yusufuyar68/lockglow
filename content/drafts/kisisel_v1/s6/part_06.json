@@ -131,6 +131,116 @@
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
       }
+    },
+    {
+      "id": "en.smell.v.2",
+      "lemma": "smell",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "have a particular smell",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/smɛl/",
+        "uk": "/smɛl/"
+      },
+      "def": {
+        "micro": "be good or bad to the nose",
+        "short": "have a good, bad, or special quality that you notice with your nose",
+        "long": "To have a quality that people notice with their nose. We usually use it with an adjective, like good, bad, or nice, or with 'like' and a noun."
+      },
+      "grammar": {
+        "pattern": "sth smells + adj / smells like sth"
+      },
+      "examples": [
+        {
+          "en": "This soup smells good.",
+          "tr": "Bu çorba güzel kokuyor.",
+          "register": "neutral",
+          "focus": "smells"
+        },
+        {
+          "en": "Your shoes smell bad, Emre! Please put them outside.",
+          "tr": "Ayakkabıların kötü kokuyor, Emre! Lütfen onları dışarı koy.",
+          "register": "informal",
+          "focus": "smell"
+        },
+        {
+          "en": "The kitchen smelled like fresh coffee this morning.",
+          "tr": "Bu sabah mutfak taze kahve kokuyordu.",
+          "register": "neutral",
+          "focus": "smelled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "smell good",
+        "smell bad",
+        "smell nice",
+        "smell like",
+        "smell strange"
+      ],
+      "word_family": [
+        {
+          "lemma": "smell",
+          "pos": "n"
+        },
+        {
+          "lemma": "smelly",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kokmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu anlamda sonra sıfat gelir: smells good, smells bad; 'smells well' denmez. Bir şeye benziyorsa 'smells like' denir: It smells like coffee. Tek başına 'It smells' de 'kötü kokuyor' demektir.",
+          "mistakes": [
+            {
+              "wrong": "The soup is smelling good.",
+              "right": "The soup smells good.",
+              "why": "Türkçede 'güzel kokuyor' şimdiki zamanla söylenir, bu yüzden 'is smelling' denir. İngilizcede 'kokmak' anlamındaki 'smell' genellikle -ing almaz; geniş zaman kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "These roses ______ lovely. Come and put your nose near them!",
+        "answer": "smell",
+        "distractors": [
+          "sound",
+          "taste",
+          "hear"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-20",
+        "model": "claude-opus (session coordinator)",
+        "source": "kisisel_v1"
+      }
     }
   ]
 }

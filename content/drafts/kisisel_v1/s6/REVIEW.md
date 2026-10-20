@@ -150,3 +150,11 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman.
 - Sonra: 51 soru, 76 farklı çeldirici; en sık: cook×4, bake×4, drive×4, chop×4, iron×4, shout×4. Doğrulayıcı sınırı (`QUIZ_DISTRACTOR_REPEAT`): 4.
 - Çeldiricisi değişen kart: 47 (`distractors_diversified`). Doğru cevaplar değişmedi.
 - Bu bölümü editör (Opus) yazdı: çeşitlendirme ajanı işini bitirip raporu yazamadan kullanım sınırına takıldı. Sayılar dosyalardan ölçüldü.
+
+## Ek kart: `en.smell.v.2` (2026-10-20)
+
+Yukarıdaki öneri üzerine "kokmak" anlamı ayrı kart olarak eklendi (`part_06.json`). Editör (Opus) yazdı ve kontrol etti, ayrı bir denetçi ajanı okumadı.
+- Örnekler: "This soup smells good.", "Your shoes smell bad, Emre!", "The kitchen smelled like fresh coffee this morning."
+- Hata: "The soup is smelling good." Türkçe "kokuyor" şimdiki zaman biçimiyle söylendiği için. Gerçek ve sık bir hata olduğunu düşünüyorum, ama anadili Türkçe birinin onayı iyi olur.
+- Quiz: "These roses ______ lovely. Come and put your nose near them!" (smell; çeldiriciler sound, taste, hear). "look" bilerek şık yapılmadı, çünkü o da doğru olurdu.
+- Doğrulayıcı: 52 kart · 0 hata · 0 uyarı.

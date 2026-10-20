@@ -18,7 +18,7 @@ Bu klasördeki kartlar editör onayından **geçmedi** (`meta.status: draft`). K
   - `s8`: kalıp ifadeler (by the way, never mind, it depends…)
   - `s9`: günlük isimler (people, news, glass, holiday…)
 
-  Her akışı ayrı bir denetçi okudu ve 123 kart düzeltildi. Sonra tüm akışlarda (s1–s9) quiz şıkları çeşitlendirildi: 318 kart (`distractors_diversified`). Toplam 752 kart: A1 179, A2 347, B1 226. Süreç ve kurallar: [`docs/icerik_uretimi/`](../../docs/icerik_uretimi/README.md).
+  Her akışı ayrı bir denetçi okudu ve 123 kart düzeltildi. Sonra tüm akışlarda (s1–s9) quiz şıkları çeşitlendirildi: 318 kart (`distractors_diversified`). Toplam 752 kart: A1 179, A2 347, B1 226. Aynı gün `en.smell.v.2` (kokmak) eklendi: 753 kart, A2 348. Süreç ve kurallar: [`docs/icerik_uretimi/`](../../docs/icerik_uretimi/README.md).
 
 Uygulamaya derlemek için: `content-pipeline/README.md` → "Kişisel derleme".
 Bir kartı yayına almak için `review` akışından geçirip `content/cards/`'a taşı (status `reviewed`).

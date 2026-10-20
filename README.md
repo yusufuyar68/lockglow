@@ -9,7 +9,7 @@ Türkçe konuşanlar başta olmak üzere İngilizce öğrenenler için kilit ekr
 | [`docs/contract/content-db.md`](docs/contract/content-db.md) | İçerik hattı ↔ uygulama veri sözleşmesi (SQLite şeması, widget dosyaları, döngü algoritması) | Referans |
 | [`content-pipeline/`](content-pipeline/) | Kart şeması, doğrulama, Claude ile üretim, insan denetimi, SQLite paketleme (Python) | Windows / Mac |
 | [`content/cards/`](content/cards/) | Editör onaylı kartlar: içeriğin kalıcı kaynağı | Veri |
-| [`content/drafts/`](content/drafts/) | Denetlenmemiş taslak kartlar (kişisel set: 752 kart) | Veri |
+| [`content/drafts/`](content/drafts/) | Denetlenmemiş taslak kartlar (kişisel set: 753 kart) | Veri |
 | [`ios/`](ios/) | SwiftUI uygulaması + WidgetKit widget'ları + VocabKit paketi (XcodeGen) | **Yalnızca Mac (Xcode)** |
 | [`docs/legal/`](docs/legal/) | Gizlilik politikası, KVKK aydınlatma + açık rıza, kullanım şartları (TR/EN), App Store gizlilik etiketi cevapları. **TASLAK, avukat onayı gerekir** | Okuma |
 | [`marketing/`](marketing/) | Faz 0 açılış sayfası (`landing/`) ve 30 videoluk kanca bankası (`icerik/`) | Web / Okuma |
@@ -34,6 +34,7 @@ cd content-pipeline && python -m pip install -e ".[dev]" && python -m pytest
 - ✅ **Kişisel sürüm:** A2 seviyesindeki kurucu için A1–B1 günlük İngilizce seti `content/drafts/kisisel_v1/` içinde. Uygulamaya `python -m vocabpipe.personal` ile derleniyor.
   - **1. tur (2026-10-12):** 479 kart, 100 phrasal verb dahil.
   - **2. tur (2026-10-20):** 273 temel kart eklendi (fiiller, sıfat ve zarflar, kalıp ifadeler, günlük isimler). Toplam **752 kart**, `content_version` `2026.10.20-kisisel-3`.
+  - **Ek (2026-10-20):** `en.smell.v.2` (kokmak, "It smells good") eklendi. Toplam **753 kart**, `content_version` `2026.10.20-kisisel-4`.
   - Süreç: `docs/icerik_uretimi/`.
 - ✅ Öğrenme motoru uygulamaya bağlandı: widget dokunuşları ilerlemeye işleniyor, "Tekrar" sekmesi (Bildim/Bilemedim), "Ayarlar" (değişim sıklığı, günlük yeni kelime, sıfırlama). Widget'ta Türkçe anlam önde.
 - ✅ Yasal metin taslakları (`docs/legal/`). Avukat için 30 maddelik [TEYİT] listesi README'de.

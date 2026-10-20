@@ -28,8 +28,8 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - `Packages/VocabKit` modülleri: CoreModels, TextFold, SharedState, Scheduler, ContentStore (GRDB), Learning.
   - Tanımlayıcılar: bundle `com.yusufuyar.vocabwidget` ve `.widgets`; App Group `group.com.yusufuyar.vocabwidget`; URL şeması `vocabwidget://`.
 - **İçerik hattı:** `content-pipeline/` (Python `vocabpipe`): şema, doğrulayıcı, derleyici.
-- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s9`, toplam 752 taslak kart.
-  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.20-kisisel-3`) ve `ios/Widgets/Resources/seed_words.json`.
+- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s9`, toplam 753 taslak kart.
+  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.20-kisisel-4`) ve `ios/Widgets/Resources/seed_words.json`.
   - Kart numaraları `content-pipeline/data/id_registry.json` içinde kalıcı. Uygulamadaki ilerleme bunlara bağlı, **elle düzenleme**.
 
 ## Durum
@@ -105,7 +105,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
 2. **Telefonda deneme ve düzeltmeler.** Gerçek widget yenilenmesi, bildirim zamanlaması ve ses kalitesi yalnızca cihazda görülür (`ios/README.md` → "Bilinen belirsizlikler").
 3. **İçerik:**
    - Her akışın `REVIEW.md` sonunda "anadili Türkçe birinin bakması gerekenler" listesi var. Kullanıcı isterse onunla birlikte geç.
-   - Önerilen eklemeler: `smell` için ikinci anlam ("It smells good"); yeni akışlar (ör. B1 iş, seyahat, sağlık kalıpları). Önce `docs/icerik_uretimi/README.md`'yi oku.
+   - Önerilen eklemeler: yeni akışlar (ör. B1 iş, seyahat, sağlık kalıpları). Önce `docs/icerik_uretimi/README.md`'yi oku.
    - Her derlemede `--content-version`'ı artır.
 4. **Uygulama:** FSRS (v1.2), "zor/kolay" cevapları, widget'tan çıkmadan ses.
 5. **Yayın işleri (kullanıcı):**
