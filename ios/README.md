@@ -12,7 +12,7 @@ Veri sözleşmesi: [`../docs/contract/content-db.md`](../docs/contract/content-d
 ios/
 ├─ project.yml                 XcodeGen tanımı (.xcodeproj elle yazılmaz)
 ├─ Config/Base.xcconfig        BUNDLE_ID_PREFIX, DEVELOPMENT_TEAM, APP_GROUP_ID, sürüm
-├─ App/                        Lockglow (SwiftUI uygulaması): sekmeler Akış, Tekrar, Sözlük, Ayarlar (Widget Sağlığı: Ayarlar > Tanılama)
+├─ App/                        Lockglow (SwiftUI uygulaması): ilk açılışta açılış akışı (OnboardingView); sekmeler Akış, Tekrar, Sözlük, Ayarlar (Widget Sağlığı: Ayarlar > Tanılama)
 │  ├─ Resources/               content.sqlite buraya (isteğe bağlı)
 │  ├─ Assets.xcassets/         AppIcon (1024 px, opak, yalnızca şekil; geçici ikon)
 │  └─ PrivacyInfo.xcprivacy
@@ -21,12 +21,12 @@ ios/
 │  └─ PrivacyInfo.xcprivacy
 ├─ Tools/                      linux_check.sh (Mac olmadan derleme + test), make_app_icon.py
 └─ Packages/VocabKit/          yerel Swift paketi (swift test Mac'te çalışır)
-   ├─ CoreModels               WidgetWord, Level, WidgetEventType, SeedWords, DeepLink, CardDetail (kartın tam JSON'undan örnekler + Türkçe notlar)
+   ├─ CoreModels               WidgetWord, Level, WidgetEventType, SeedWords, DeepLink, CardDetail (kartın tam JSON'undan örnekler + Türkçe notlar), ContentTopic (seçilebilir konu)
    ├─ TextFold                 fold() (sözleşme §4)
    ├─ SharedState              AppGroupStore, EventMailbox, WidgetPlan/State/Event
    ├─ Scheduler                TimelinePlanner, RotationInput, RotationCursor, QueueBuilder (saf fonksiyonlar)
    ├─ ContentStore             GRDB ile salt okunur content.sqlite (yalnızca uygulama)
-   └─ Learning                 Leitner (5 kutu), QueueComposer (6 tekrar : 3 yeni : 1 hatırlatma), ProgressIngest (widget olayları → ilerleme), ReviewPlanner (tekrar turu, sayılar), ProgressStore (yalnızca uygulama)
+   └─ Learning                 Leitner (5 kutu), QueueComposer (6 tekrar : 3 yeni : 1 hatırlatma), DeckFilter (konu ve seviye seçimi), ProgressIngest (widget olayları → ilerleme), ReviewPlanner (tekrar turu, sayılar), ProgressStore (yalnızca uygulama)
 ```
 
 Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite açmaz, `ContentStore`/`TextFold`/`Learning`/GRDB bağlamaz. `Learning` yalnızca uygulama hedefindedir.
@@ -81,7 +81,31 @@ Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite
 - **Tekrar sekmesi:** önce zamanı gelen kelimeler (en çok 20 kart/tur, en çok gecikmiş önce), yoksa günlük hedef kadar yeni kelime (akış sırasıyla; bugün zaten çalışılanlar hedeften düşülür). Kart cevabı dört düğmeyle (2×2, iPhone SE'de büyük yazıda da sığsın diye): "Bilemedim" → `review(.again)`, "Zor" → `.hard`, "Bildim" → `.good`, "Kolay" → `.easy` (kutu geçişleri aşağıda, "Zor ve Kolay notları"); her cevapta ilerleme kaydedilir, tur bitince (ya da "Bitir"e basılınca) plan yeniden yazılır. Bilemedim denen kelime 10 dakika sonra yeniden "zamanı gelmiş" olur (aynı turda tekrar sorulmaz). Hedef dolunca "bugünlük tamam" ekranı çıkar; isteyen "N yeni kelime daha" ile devam eder.
 - **İmleç anlamı (sözleşmeden sapma, §6'ya işlenmeli):** `widget_state.json`'a `cursor_anchor` (ISO 8601) eklendi; `cursor_offset` artık "`cursor_anchor` anında dönüşümün bulunduğu kuyruk sırası" demek, saf bir "+1" sayacı değil.
 - **Hizalama:** yerel saat dilimi ofseti kullanıldığı için "günlük" sınır yerel gece yarısına düşer (yoksa UTC gece yarısı = Türkiye'de 03:00 olurdu).
-- Derin bağlantı: widget'a dokunmak `vocabwidget://word/<id>` açar; uygulama akışta o karta kaydırır. Şema `CoreModels/DeepLink.swift` ve `project.yml` (`CFBundleURLSchemes`) içinde; ikisi aynı kalmalı. Markadan bağımsızdır, ad değişince bağlantılar bozulmaz.
+- **Açılış akışı (`OnboardingView`):** ilk açılışta bir kez, tam ekran. Ödeme duvarı yok. Dört sayfa:
+  1. **Seviye:** A1 "Yeni başlıyorum", A2 "Temel konuşabiliyorum", B1 "Günlük konuşmayı anlıyorum". Her seçenekte o seviyenin kelime sayısı yazar. Seçmeden "Devam" basılmaz.
+  2. **Konular:** "Tümü" ve gruplar altında konular, her birinde kelime sayısı. Hiç seçilmezse hepsi.
+  3. **Widget nasıl eklenir:** "Kilitli ekran" ve "Ana ekran" adımları (`WidgetGuideContent`). Düğme adları Apple'ın iOS 26 Türkçe iPhone kılavuzundan: iPhone'da widget'ın adı "araç takımı"; "Düzenle", "Araç Takımı Ekle", "Özelleştir", "Bitti".
+  4. **İlk kelime:** destenin ilk yeni kelimesi, Akış kartıyla (`WordCardView`). Tekrar sekmesinin ilk yeni kelimesi de bu.
+
+  Her sayfada "Atla" var: akışı bitirir, o ana kadar seçilenleri uygular. Bitince `lockglow.onboardingCompleted` yazılır, akış bir daha kendiliğinden açılmaz. Ayarlar > Yardım > "Açılış ekranlarını yeniden göster" yeniden açar; orada şimdiki seçim seçili gelir. UI testleri `-lockglow.onboardingCompleted YES` ya da `NO` başlatma argümanıyla akışı atlar ya da zorla açar.
+- **İlk plan ve açılış akışı:** yeni kurulumda (akış bitmemiş ve `widget_plan.json` yok) `AppModel.start` planı yazmaz. İlk planı akıştaki seçim yazar (konular sayfasından çıkınca ya da "Atla"da). O an eski plan olmadığı için sabitlenecek kelime yok; kuyruk destenin ilk kelimesiyle başlar. Böylece 3. sayfada eklenen widget hemen seçilen kelimeleri gösterir. Kullanıcı akış bitmeden uygulamadan çıkarsa plan yine yazılır (`sceneDidEnterBackground`). Planı olan kullanıcıda (güncelleme) her şey eskisi gibi: plan açılışta yazılır, seçim değişince görünen kelime sabitlenir.
+- **Deste (konu) seçimi:** konu, kartın `primary_topic`'i (`category` tablosu, sözleşme §3). Akışlar (s1–s13) veritabanında yok ve bir akışta birden çok konu var (ör. s11'de seyahat, şehir ve phrasal verb). Bu yüzden seçim akışa göre değil, konuya göre.
+  - `ContentStore.topics()`: en az bir ücretsiz ve hassas olmayan kartın birincil konusu olan kategoriler. Sıra `category.sort`, yanında kart sayısı. `primaryTopicByCard()`: kart kimliği → konu.
+  - 5'ten az kartı olan konu seçim listesinde yok (`AppModel.minimumTopicCards`). Tek başına seçilse widget aynı birkaç kelimeyi döndürürdü. O kartlar "Tümü"nde var.
+  - Konular `category.grp` harfine göre Türkçe başlıklar altında: A Günlük hayat, B Seyahat ve kültür, C İnsanlar ve duygular, D İş hayatı, E Bilim ve teknoloji, F Sanat ve eğlence, G Dil kalıpları, H Zengin kelimeler, I Sınavlar.
+  - Saklama: `UserDefaults` `lockglow.selectedTopicIDs` (boş = hepsi) ve `lockglow.startLevel`. "İlerlemeyi sıfırla" bunlara dokunmaz.
+  - Ayarlar > Öğrenme: "Başlangıç seviyesi" ve "Konular" (`TopicPickerView`). Konu seçimi ekran kapanınca bir kez uygulanır, her dokunuşta plan yazılmaz. Alt yazıda destedeki kelime sayısı görünür.
+- **Deste neyi etkiler (`DeckFilter`, saf ve testli):**
+  - `AppModel.words` bütün kelimeler, `feedWords` deste. `DeckFilter.feed` önce konuya göre süzer, sonra seviyeye göre sıralar.
+  - Süzgeç: seçilen konuların kelimeleri, eski sırasıyla. Seçim boşsa ya da hiçbir kelimeye uymuyorsa (içerikten kalkmış konu, tohum kelimeler) bütün kelimeler gelir. Seçim desteyi hiç boşaltmaz.
+  - Seviye sırası (kararlı): önce seçilen seviye, sonra üstündekiler (kolaydan zora), sonra altındakiler (yakından uzağa), en sonda seviyesi bilinmeyenler. A2 seçen kullanıcı A2, B1, sonra A1 görür. Hiçbir kelime düşmez. Seviye seçilmemişse sıra değişmez (A1 önce).
+  - Desteyi kullananlar: Akış sekmesi, widget kuyruğu, Tekrar'ın yeni kelimeleri, günlük hatırlatmadaki yeni kelime sayısı (`ReminderPlanner.plan(newWordFeed:)`).
+  - Bütün kelimeleri kullananlar: zamanı gelen tekrarlar (öğrenmeye başlanan kelimenin tekrarı konu değişince kesilmez), Ayarlar'daki sayılar, bildiğim kelimeler, Sözlük.
+- **Kuyruk ve süreklilik:** plan `QueueComposer.compose(deck:fallbackFeed:...)` ile kurulur. Seçim değişince plan, her ayar değişikliğindeki gibi hemen yeniden yazılır.
+  - `pinFirst` (şu an görünen kelime) desteden olmasa bile ilk sırada kalır. Görünen kelime sınıra kadar değişmez; sonraki sınırdan itibaren destenin kelimeleri döner.
+  - Destenin kendi kelimesi kalmamışsa (hepsi biliniyor ve zamanı gelmemiş) kuyruk bütün konulardan, aynı seviye sırasıyla kurulur. Widget boş kalmaz.
+  - Destede yalnızca zamanı gelmemiş öğrenilen kelimeler varsa onlar döner, yedeğe geçilmez.
+- Derin bağlantı: widget'a dokunmak `vocabwidget://word/<id>` açar; uygulama akışta o karta kaydırır. Kelime destede yoksa (konu değişiminden hemen sonra sabitlenen kelime) Akış olduğu yerde açılır. Şema `CoreModels/DeepLink.swift` ve `project.yml` (`CFBundleURLSchemes`) içinde; ikisi aynı kalmalı. Markadan bağımsızdır, ad değişince bağlantılar bozulmaz.
 
 ## Kişisel kurulum (ücretsiz Apple ID)
 
@@ -179,6 +203,8 @@ Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Ayarlar > Widget s
 - [ ] **Bellek/çökme:** Console'da widget extension'ın jetsam/0xDEAD10CC çökmesi yok.
 - [ ] **Tekrar sekmesi:** İlk açılışta "Bugünün yeni kelimeleri" önerilir. Karta dokun: Türkçe karşılık iri, altında tanım ve örnek. "Bilemedim"/"Zor"/"Bildim"/"Kolay" ile ilerle (SE'de dört düğme de kartın altında, sekme çubuğuna taşmadan görünmeli), tur sonunda özet çıkar ("bildin" = Bilemedim dışındaki cevaplar). İkinci turda quiz sorusunu doğru yanıtla: "Devam" altında "Zordu" ve "Kolaydı" çıkmalı, yanlışta çıkmamalı. Uygulamayı kapat-aç: cevapladığın kelimeler yeni kelime listesinde yok. Widget'ta "Biliyorum" dediğin kelime Tekrar'da yeni olarak çıkmaz.
 - [ ] **Ayarlar sekmesi:** Sıklığı 5 dakikaya çek: widget'taki kelime değişmez, sonraki sınırda yeni aralıkla ilerler. Günlük yeni kelimeyi değiştir: widget kuyruğu yeniden yazılır. Sayılar (bildiğim / öğrenmekte / bugün tekrar) Tekrar sekmesiyle tutarlı. "İlerlemeyi sıfırla" onay sorar, sonra sayılar 0 olur.
+- [ ] **Açılış akışı:** Uygulamayı sil, yeniden kur, aç. Dört sayfa görünmeli: seviye, konular, widget rehberi, ilk kelime. Seviye seçmeden "Devam" pasif. Rehberdeki adımlarla kilitli ekrana ve ana ekrana widget ekle; düğme adları (Özelleştir, Araç Takımı Ekle, Düzenle, Bitti) iPhone'dakilerle aynı mı, bak. Widget seçilen konunun kelimesini göstermeli. "Başla"dan sonra uygulamayı kapat-aç: akış bir daha açılmaz. Ayarlar > Yardım'dan yeniden açılır, şimdiki seçim seçili gelir. "Atla" her sayfada çalışır.
+- [ ] **Konu seçimi:** Ayarlar > Öğrenme > Konular'da yalnız "Seyahat & Turizm"i seç, geri dön. Widget'taki kelime sınıra kadar aynı kalır, sonra yalnız seyahat kelimeleri döner. Akış yalnız seyahat kartlarını gösterir. Tekrar'da başka konudan öğrenmeye başladığın kelimelerin tekrarı yine gelir, yeni kelimeler seyahatten gelir. "Tümü"ne dönünce her şey geri gelir. Seviyeyi B1 yap: Akış B1 kartlarıyla başlar.
 - [ ] **Yüzlerce kart:** `content.sqlite` ~550 kartla paketlenince Akış'ta A1 kartları önce gelir, sonra A2, B1... Akış sekmesi hızlı kayar.
 
 ## Bilinen belirsizlikler (derleyici veya cihaz itiraz edebilir)
@@ -237,6 +263,12 @@ Derleyici olmadan doğrulanamayanlar. Birincil şüpheliler en üstte.
 43. **Günlük hatırlatma (`ReminderScheduler.swift`, `Learning/ReminderPlanner`):** Ayarlar > Hatırlatma'dan açılır (varsayılan kapalı, 20:00). Açınca bildirim izni istenir; reddedilirse anahtar kapalı kalır ve iPhone Ayarları'na giden düğme çıkar. Yerel bildirim, yedi gün ileriye tek tek (tekrarlanmayan) kurulur ve uygulama her arka plana geçişinde baştan yazılır: metindeki sayı o anki ilerlemeden hesaplanır ("12 kelime tekrar, 5 yeni kelime..."). O günün tekrarı ve yeni kelime hedefi bittiyse o günün bildirimi kurulmaz. Uygulama 7 gün hiç açılmazsa bildirimler biter (bilerek: kullanılmayan uygulama rahatsız etmesin). Bildirime dokununca Tekrar sekmesi açılır. Gerçek cihazda bildirim zamanlaması ve dokunuşla açılış denenmedi.
 44. **Zor/Kolay düğmeleri (hiç derlenmedi, simülatörde bakılmadı):** Tekrar kartında 2×2 düğme alanı (`ReviewView.answerArea`) ve quiz'de "Zordu"/"Kolaydı" satırı (`QuizCardView.difficultyButtons`). SE'de kartın küçülen alanı ve düğmelerin sekme çubuğuna taşmaması ekran görüntüsünden (`screenshots.yml`) kontrol edilmeli. `tortoise` ve `hare` SF Symbols simgeleri (iOS 14+) kullanıldı; görünmezse yalnızca simge kaybolur, metin kalır. Aralıklar (zor = yarısı, kolay = iki kutu) sezgiyle seçildi, gerçek kullanımla ayarlanmalı (`Leitner.hardFactor`).
 
+46. **Açılış akışı ve deste seçimi (2026-10-20, Windows'ta yazıldı):** VocabKit testleri ve uygulama derlemesi `build.yml` ile denendi. Ekranlara simülatörde bakılmadı; `screenshots.yml` açılış sayfalarını `0a`–`0e` adlarıyla çeker. Bakılacaklar:
+    - SE'de ve en büyük yazıda seviye ve konu satırları sığıyor mu;
+    - "Kilitli ekran / Ana ekran" düğmeleri `ViewThatFits` ile yan yana ya da alt alta doğru geçiyor mu;
+    - tam ekran akış sekmelerin üstünde doğru açılıyor mu.
+
+    Renkler tasarım taslağındaki değerlerle kodda (`GlowStyle.swift`, `Palette`). Taslak Swift'e geçirilince Asset Catalog renkleriyle değiştirilmeli. iOS 26'da kilitli ekranda "Özelleştir"den sonra "Kilitli Ekran / Ana Ekran" seçimi sorulup sorulmadığı Apple'ın kılavuzunda yazmıyor; rehber "seçmeni isterse" diyor. Cihazda bakılmalı.
 
 ## Learning modülü (uygulamaya bağlı)
 

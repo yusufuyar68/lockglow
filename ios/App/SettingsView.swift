@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreModels
 import Learning
 
-/// "Ayarlar": widget rotation interval, daily new words, progress counts (and the known words),
-/// progress reset, and a notice when the progress file had to be recovered.
+/// "Ayarlar": start level and topics, widget rotation interval, daily new words, progress counts
+/// (and the known words), help (widget guide, onboarding again), progress reset, and a notice
+/// when the progress file had to be recovered.
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.openURL) private var openURL
@@ -14,10 +16,12 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 recoverySection
+                deckSection
                 rotationSection
                 goalSection
                 reminderSection
                 progressSection
+                helpSection
                 resetSection
                 diagnosticsSection
             }
@@ -122,6 +126,50 @@ struct SettingsView: View {
             get: { model.dailyNewWords },
             set: { model.setDailyNewWords($0) }
         )
+    }
+
+    private var levelBinding: Binding<Level> {
+        return Binding(
+            get: { model.deckChoice.startLevel ?? .a1 },
+            set: { model.setStartLevel($0) }
+        )
+    }
+
+    private var topicSummary: String {
+        let count = model.activeTopicIDs.count
+        return count == 0 ? "Tümü" : "\(count) konu"
+    }
+
+    private var deckSection: some View {
+        Section {
+            Picker("Başlangıç seviyesi", selection: levelBinding) {
+                ForEach(AppPreferences.startLevelChoices, id: \.self) { level in
+                    Text(level.rawValue).tag(level)
+                }
+            }
+            if !model.choosableTopics.isEmpty {
+                NavigationLink {
+                    TopicPickerView()
+                } label: {
+                    LabeledContent("Konular", value: topicSummary)
+                }
+            }
+        } header: {
+            Text("Öğrenme")
+        } footer: {
+            Text("Yeni kelimeler bu seviyeden başlar. Widget'ta, Akış'ta ve yeni kelimelerde yalnız seçtiğin konular döner (şu an \(model.feedWords.count) kelime). Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.")
+        }
+    }
+
+    private var helpSection: some View {
+        Section("Yardım") {
+            NavigationLink("Widget nasıl eklenir?") {
+                WidgetGuideScreen()
+            }
+            Button("Açılış ekranlarını yeniden göster") {
+                model.showOnboarding()
+            }
+        }
     }
 
     private var rotationSection: some View {

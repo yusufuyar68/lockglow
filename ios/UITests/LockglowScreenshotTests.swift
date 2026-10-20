@@ -10,6 +10,8 @@ final class LockglowScreenshotTests: XCTestCase {
 
     func testCaptureMainScreens() throws {
         let app = XCUIApplication()
+        // Straight to the tabs: the onboarding has its own test below.
+        app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
         app.launch()
 
         // Feed: the first card is "breakfast" (A1, it has a Turkish example and a mistake box).
@@ -74,6 +76,10 @@ final class LockglowScreenshotTests: XCTestCase {
 
         app.tabBars.buttons["Ayarlar"].tap()
         let knownRow = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Bildiğim kelime")).firstMatch
+        if !knownRow.waitForExistence(timeout: 2) {
+            // Below the "Öğrenme" and widget sections on a small screen.
+            app.swipeUp()
+        }
         XCTAssertTrue(knownRow.waitForExistence(timeout: 5), "no known-words row in Ayarlar")
         knownRow.tap()
         let knownWord = app.descendants(matching: .any)
@@ -87,6 +93,48 @@ final class LockglowScreenshotTests: XCTestCase {
         undo.tap()
         XCTAssertTrue(app.buttons["Biliyorum"].waitForExistence(timeout: 5), "undo did not take the word back")
         attachScreenshot(of: app, named: "10-geri-alindi")
+    }
+
+    /// The four onboarding pages. Chooses A1 and every topic, which keeps the curriculum order,
+    /// so the feed of the other test still starts with "breakfast" whatever order they run in.
+    func testCaptureOnboarding() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-lockglow.onboardingCompleted", "NO"]
+        app.launch()
+
+        let a1 = app.buttons["onboarding.level.A1"]
+        XCTAssertTrue(a1.waitForExistence(timeout: 30), "the onboarding did not open")
+        attachScreenshot(of: app, named: "0a-acilis-seviye")
+        a1.tap()
+        app.buttons["onboarding.next"].tap()
+
+        let everything = app.buttons["topics.all"]
+        XCTAssertTrue(everything.waitForExistence(timeout: 30), "no topic list")
+        let food = app.buttons["topics.food_drink"]
+        if food.waitForExistence(timeout: 2) {
+            food.tap()
+        }
+        attachScreenshot(of: app, named: "0b-acilis-konular")
+        everything.tap()
+        app.buttons["onboarding.next"].tap()
+
+        let homeScreen = app.buttons["Ana ekran"]
+        XCTAssertTrue(homeScreen.waitForExistence(timeout: 5), "no widget guide")
+        attachScreenshot(of: app, named: "0c-acilis-widget-kilit")
+        homeScreen.tap()
+        sleep(1)
+        attachScreenshot(of: app, named: "0d-acilis-widget-ana")
+        app.buttons["onboarding.next"].tap()
+
+        let start = app.buttons["onboarding.start"]
+        XCTAssertTrue(start.waitForExistence(timeout: 5), "no first word page")
+        let firstWord = app.descendants(matching: .any)
+            .matching(NSPredicate(format: "label CONTAINS[c] %@", "breakfast"))
+            .firstMatch
+        XCTAssertTrue(firstWord.waitForExistence(timeout: 5), "the first word is not breakfast")
+        attachScreenshot(of: app, named: "0e-acilis-ilk-kelime")
+        start.tap()
+        XCTAssertTrue(app.tabBars.buttons["Akış"].waitForExistence(timeout: 5), "the onboarding did not close")
     }
 
     private func attachScreenshot(of app: XCUIApplication, named name: String) {

@@ -52,8 +52,12 @@ struct RootView: View {
                 break
             }
         }
-        .onChange(of: model.words) { _, newWords in
+        .onChange(of: model.feedWords) { _, newWords in
             applyPendingWord(in: newWords)
+        }
+        .fullScreenCover(isPresented: onboardingBinding) {
+            OnboardingView()
+                .environmentObject(model)
         }
         .onOpenURL { url in
             handle(url)
@@ -66,6 +70,18 @@ struct RootView: View {
         }
     }
 
+    /// Shown on first launch and from "Ayarlar"; the onboarding closes itself through the model.
+    private var onboardingBinding: Binding<Bool> {
+        return Binding(
+            get: { model.showsOnboarding },
+            set: { isShown in
+                if !isShown && model.showsOnboarding {
+                    model.finishOnboarding()
+                }
+            }
+        )
+    }
+
     /// A tapped reminder opens "Tekrar".
     private func openReviewIfRequested() {
         guard notifications.reviewRequested else {
@@ -75,26 +91,28 @@ struct RootView: View {
         notifications.reviewRequested = false
     }
 
-    /// `vocabwidget://word/<id>`, opened by tapping a widget.
+    /// `vocabwidget://word/<id>`, opened by tapping a widget. A word outside the chosen deck (the
+    /// one kept on screen right after a topic change) is not in "Akış": the feed opens as it is.
     private func handle(_ url: URL) {
         guard let wordID = DeepLink.wordID(from: url) else {
             return
         }
         selectedTab = .feed
-        if model.words.contains(where: { $0.id == wordID }) {
+        if model.feedWords.contains(where: { $0.id == wordID }) {
             scrolledWordID = wordID
-        } else {
+        } else if model.contentSource == .loading {
             pendingWordID = wordID
         }
     }
 
+    /// The words arrived: scroll to the pending word if the deck has it, and forget it either way.
     private func applyPendingWord(in words: [WidgetWord]) {
-        guard let wordID = pendingWordID,
-              words.contains(where: { $0.id == wordID })
-        else {
+        guard let wordID = pendingWordID, !words.isEmpty else {
             return
         }
-        scrolledWordID = wordID
+        if words.contains(where: { $0.id == wordID }) {
+            scrolledWordID = wordID
+        }
         pendingWordID = nil
     }
 }
