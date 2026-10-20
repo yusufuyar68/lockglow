@@ -1,0 +1,47 @@
+# Manual: checks the App Store Connect secrets without printing them.
+# Shape of the .p8 / Issuer ID / Key ID, then one authenticated API call (HTTP status only).
+#   gh workflow run asc_check.yml
+name: asc-check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: App Store Connect anahtarını sına
+    runs-on: ubuntu-latest
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+    steps:
+      - name: Biçim kontrolü (değerler yazılmaz)
+        run: |
+          python3 - <<'EOF'
+          import os, re
+          kid = os.environ["ASC_KEY_ID"]; iss = os.environ["ASC_ISSUER_ID"]; p8 = os.environ["ASC_KEY_P8"]
+          print("key_id: uzunluk", len(kid), "| 10 büyük harf/rakam:", bool(re.fullmatch(r"[A-Z0-9]{10}", kid)))
+          print("issuer: uzunluk", len(iss), "| UUID biçimi:", bool(re.fullmatch(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", iss)))
+          print("p8: karakter", len(p8), "| satır", len(p8.splitlines()), "| CR var:", "\r" in p8, "| BOM var:", p8.startswith("﻿"),
+                "| NUL var:", "\x00" in p8)
+          print("p8: BEGIN PRIVATE KEY:", "-----BEGIN PRIVATE KEY-----" in p8, "| END PRIVATE KEY:", "-----END PRIVATE KEY-----" in p8)
+          EOF
+      - name: Apple'a deneme isteği
+        run: |
+          pip install -q pyjwt cryptography
+          python3 - <<'EOF'
+          import os, time, jwt, urllib.request, urllib.error, json
+          p8 = os.environ["ASC_KEY_P8"].replace("\r", "").lstrip("﻿")
+          tok = jwt.encode({"iss": os.environ["ASC_ISSUER_ID"].strip(), "iat": int(time.time()), "exp": int(time.time()) + 600,
+                            "aud": "appstoreconnect-v1"}, p8, algorithm="ES256",
+                           headers={"kid": os.environ["ASC_KEY_ID"].strip(), "typ": "JWT"})
+          req = urllib.request.Request("https://api.appstoreconnect.apple.com/v1/apps?limit=5&fields[apps]=bundleId",
+                                       headers={"Authorization": "Bearer " + tok})
+          try:
+              with urllib.request.urlopen(req) as r:
+                  data = json.load(r)
+                  print("HTTP", r.status, "| uygulamalar:", [a["attributes"]["bundleId"] for a in data["data"]])
+          except urllib.error.HTTPError as e:
+              body = json.loads(e.read() or b"{}")
+              print("HTTP", e.code, "|", [(x.get("code"), x.get("detail")) for x in body.get("errors", [])])
+          EOF
