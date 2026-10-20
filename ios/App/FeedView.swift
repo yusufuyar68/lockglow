@@ -1,13 +1,13 @@
 import SwiftUI
 import CoreModels
 
-/// Vertical paging feed: one full-page card per word (iOS 17 scroll APIs).
+/// Vertical paging feed: one full-page card per word of the user's deck (iOS 17 scroll APIs).
 struct FeedView: View {
     @EnvironmentObject private var model: AppModel
     @Binding var scrolledWordID: Int?
 
     var body: some View {
-        if model.words.isEmpty {
+        if model.feedWords.isEmpty {
             emptyState
         } else {
             pager
@@ -17,7 +17,7 @@ struct FeedView: View {
     private var pager: some View {
         ScrollView(.vertical) {
             LazyVStack(spacing: 0) {
-                ForEach(model.words) { word in
+                ForEach(model.feedWords) { word in
                     WordCardView(word: word, detail: model.detail(for: word))
                         .containerRelativeFrame([.horizontal, .vertical])
                 }

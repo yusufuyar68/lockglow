@@ -128,4 +128,47 @@ public enum QueueComposer {
         }
         return result
     }
+
+    /// `compose` over the user's deck (`DeckFilter.feed`). When the deck adds no word of its own
+    /// (every chosen word is known and not due), the queue comes from `fallbackFeed` (every topic)
+    /// instead, so a topic choice never leaves the widget without words.
+    ///
+    /// `pinFirst` stays first either way, even when it is outside the deck: changing the topics
+    /// rewrites the plan like any setting, and the word on screen must not change. The deck's
+    /// words follow from the next boundary on.
+    public static func compose(
+        deck: [WidgetWord],
+        fallbackFeed: [WidgetWord],
+        progress: [Int: WordProgress],
+        now: Date,
+        horizon: TimeInterval,
+        maxNew: Int,
+        limit: Int,
+        pinFirst: WidgetWord? = nil
+    ) -> [WidgetWord] {
+        let queue = compose(
+            feed: deck,
+            progress: progress,
+            now: now,
+            horizon: horizon,
+            maxNew: maxNew,
+            limit: limit,
+            pinFirst: pinFirst
+        )
+        // The same condition `compose(feed:...)` uses for the pin.
+        let isPinned = pinFirst.map { progress[$0.id]?.state != .known } ?? false
+        let deckWordCount = queue.count - (isPinned && !queue.isEmpty ? 1 : 0)
+        if deckWordCount > 0 || fallbackFeed.isEmpty {
+            return queue
+        }
+        return compose(
+            feed: fallbackFeed,
+            progress: progress,
+            now: now,
+            horizon: horizon,
+            maxNew: maxNew,
+            limit: limit,
+            pinFirst: pinFirst
+        )
+    }
 }

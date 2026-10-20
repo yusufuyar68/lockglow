@@ -64,6 +64,50 @@ final class ContentStoreTests: XCTestCase {
         XCTAssertEqual(upToA2.map { $0.id }, [8, 1, 5, 7])
     }
 
+    func testTopicsCountFreeNonSensitiveCardsByPrimaryTopic() throws {
+        let writer = try DatabaseQueue(path: databasePath)
+        try writer.write { db in
+            try db.execute(sql: """
+                INSERT INTO category (id, grp, name_en, name_tr, access, free_count, hero, sort) VALUES
+                  ('travel_tourism', 'B', 'Travel & Tourism', 'Seyahat & Turizm', 'S', 10, 0, 0),
+                  ('empty_topic', 'A', 'Empty', 'Boş', 'F', 0, 0, 2),
+                  ('workplace_office', 'D', 'Workplace', 'İş Yeri', 'P', 0, 0, 5);
+                """)
+            try self.insertCard(db, id: 6, lemma: "passport", level: "A2", levelRank: 2, freqRank: 900, sensitivity: 0, isFree: 1, ipa: nil, gloss: "pasaport", topic: "travel_tourism")
+            try self.insertCard(db, id: 7, lemma: "flight", level: "A2", levelRank: 2, freqRank: 800, sensitivity: 0, isFree: 1, ipa: nil, gloss: "uçuş", topic: "travel_tourism")
+            try self.insertCard(db, id: 8, lemma: "meeting", level: "B1", levelRank: 3, freqRank: 700, sensitivity: 0, isFree: 0, ipa: nil, gloss: "toplantı", topic: "workplace_office")
+            try self.insertCard(db, id: 9, lemma: "secret", level: "B1", levelRank: 3, freqRank: 600, sensitivity: 1, isFree: 1, ipa: nil, gloss: "sır", topic: "workplace_office")
+        }
+
+        let store = try ContentStore(path: databasePath)
+        let topics = try store.topics()
+        // Sort order: travel (0), general (1). "empty_topic" has no card; "workplace_office" only a
+        // locked and a sensitive one. "general" counts cards 1, 2 and 5 (3 is locked, 4 sensitive).
+        XCTAssertEqual(topics.map { $0.id }, ["travel_tourism", "general"])
+        XCTAssertEqual(topics.map { $0.cardCount }, [2, 3])
+        XCTAssertEqual(
+            topics.first,
+            ContentTopic(id: "travel_tourism", group: "B", nameEN: "Travel & Tourism", nameTR: "Seyahat & Turizm", sort: 0, cardCount: 2)
+        )
+    }
+
+    func testPrimaryTopicByCardCoversEveryCard() throws {
+        let writer = try DatabaseQueue(path: databasePath)
+        try writer.write { db in
+            try db.execute(sql: """
+                INSERT INTO category (id, grp, name_en, name_tr, access, free_count, hero, sort)
+                  VALUES ('travel_tourism', 'B', 'Travel & Tourism', 'Seyahat & Turizm', 'S', 10, 0, 0);
+                """)
+            try self.insertCard(db, id: 6, lemma: "passport", level: "A2", levelRank: 2, freqRank: 900, sensitivity: 0, isFree: 1, ipa: nil, gloss: "pasaport", topic: "travel_tourism")
+        }
+
+        let store = try ContentStore(path: databasePath)
+        XCTAssertEqual(
+            try store.primaryTopicByCard(),
+            [1: "general", 2: "general", 3: "general", 4: "general", 5: "general", 6: "travel_tourism"]
+        )
+    }
+
     func testCardDetailDecodesTheJSONColumn() throws {
         let writer = try DatabaseQueue(path: databasePath)
         try writer.write { db in
@@ -189,7 +233,8 @@ final class ContentStoreTests: XCTestCase {
         sensitivity: Int,
         isFree: Int,
         ipa: String?,
-        gloss: String?
+        gloss: String?,
+        topic: String = "general"
     ) throws {
         try db.execute(
             sql: """
@@ -197,9 +242,9 @@ final class ContentStoreTests: XCTestCase {
                                   ipa_us, def_micro, def_short, def_long, example_en,
                                   primary_topic, register, sensitivity, is_free, json)
                 VALUES (?, ?, ?, 'word', 'n', 1, ?, ?, ?, ?, 'micro', 'short', 'long', 'example',
-                        'general', 'neutral', ?, ?, '{}')
+                        ?, 'neutral', ?, ?, '{}')
                 """,
-            arguments: [id, "en.test.\(id)", lemma, level, levelRank, freqRank, ipa, sensitivity, isFree]
+            arguments: [id, "en.test.\(id)", lemma, level, levelRank, freqRank, ipa, topic, sensitivity, isFree]
         )
         var glossFold = ""
         if let gloss = gloss {

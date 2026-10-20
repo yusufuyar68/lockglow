@@ -49,6 +49,45 @@ public final class ContentStore {
         }
     }
 
+    /// Topics the user can choose: categories that are the primary topic of at least one free,
+    /// non-sensitive card (the cards `freeCards` returns), in `category.sort` order, with that count.
+    public func topics() throws -> [ContentTopic] {
+        let sql = """
+            SELECT cat.id AS id, cat.grp AS grp, cat.name_en AS name_en, cat.name_tr AS name_tr,
+                   cat.sort AS sort, COUNT(c.rowid) AS card_count
+            FROM category AS cat
+            JOIN card AS c ON c.primary_topic = cat.id
+            WHERE c.is_free = 1 AND c.sensitivity = 0
+            GROUP BY cat.id
+            ORDER BY cat.sort ASC, cat.id ASC
+            """
+        return try dbQueue.read { db -> [ContentTopic] in
+            let rows = try Row.fetchAll(db, sql: sql)
+            return rows.map { row -> ContentTopic in
+                let id: String = row["id"]
+                let group: String = row["grp"]
+                let nameEN: String = row["name_en"]
+                let nameTR: String = row["name_tr"]
+                let sort: Int = row["sort"]
+                let cardCount: Int = row["card_count"]
+                return ContentTopic(id: id, group: group, nameEN: nameEN, nameTR: nameTR, sort: sort, cardCount: cardCount)
+            }
+        }
+    }
+
+    /// `card.primary_topic` of every card, by card id (the deck filter's input).
+    public func primaryTopicByCard() throws -> [Int: String] {
+        return try dbQueue.read { db -> [Int: String] in
+            var result: [Int: String] = [:]
+            for row in try Row.fetchAll(db, sql: "SELECT rowid AS id, primary_topic AS topic FROM card") {
+                let id: Int = row["id"]
+                let topic: String = row["topic"]
+                result[id] = topic
+            }
+            return result
+        }
+    }
+
     /// The learner details of one card (every example with its Turkish, notes, typical mistakes),
     /// decoded from the full card JSON in `card.json`. Nil if no card has this id.
     public func cardDetail(id: Int) throws -> CardDetail? {

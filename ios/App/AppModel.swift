@@ -16,8 +16,24 @@ final class AppModel: ObservableObject {
     static let queueHorizon: TimeInterval = 48 * 3600
     /// Cards per "Tekrar" round; more due cards wait for the next round.
     static let reviewSessionLimit = 20
+    /// A topic needs this many cards to be offered on its own (`choosableTopics`).
+    static let minimumTopicCards = 5
 
+    /// Every loaded word: the dictionary, the progress counts, known words and due reviews.
     @Published private(set) var words: [WidgetWord] = []
+    /// The user's deck (`DeckFilter.feed` of `words`): "Akış", the widget queue and the new words
+    /// of "Tekrar". Same words as `words` when no topic is chosen; never empty unless `words` is.
+    @Published private(set) var feedWords: [WidgetWord] = []
+    /// Topics the user can choose (from content.sqlite; empty with seed words only).
+    @Published private(set) var topics: [ContentTopic] = []
+    /// Chosen topics and start level ("Ayarlar" and the onboarding).
+    @Published private(set) var deckChoice = DeckChoice(
+        topicIDs: AppPreferences.selectedTopicIDs,
+        startLevel: AppPreferences.startLevel
+    )
+    /// The onboarding is on screen: on first launch until finished or skipped, and when opened
+    /// again from "Ayarlar".
+    @Published private(set) var showsOnboarding = !AppPreferences.onboardingCompleted
     @Published private(set) var contentSource: ContentSource = .loading
     @Published private(set) var cardCount = 0
     @Published private(set) var contentVersion: String?
@@ -44,6 +60,8 @@ final class AppModel: ObservableObject {
     private var progressStore: ProgressStore?
     private var hasStarted = false
     private var lastReloadRequestedAt: Date?
+    /// Primary topic by word id, for the deck filter.
+    private var topicOf: [Int: String] = [:]
     /// Opened on first use for card details; stays nil when only seed words are available.
     private lazy var detailStore: ContentStore? = ContentLoader.openStore()
     /// Not published: filling it while a view is being drawn must not trigger a redraw.
@@ -74,11 +92,20 @@ final class AppModel: ObservableObject {
         }.value
 
         words = loaded.words
+        topics = loaded.topics
+        topicOf = loaded.topicOf
+        rebuildFeed()
         contentSource = loaded.source
         cardCount = loaded.cardCount
         contentVersion = loaded.contentVersion
 
-        refreshWidgetPlan()
+        // First launch: no plan yet, and the onboarding is about to choose the deck. Its choice
+        // writes the first plan, so the widget starts with the chosen words instead of keeping
+        // a default word on screen until the next boundary. Leaving the app before that writes
+        // a plan anyway (`sceneDidEnterBackground`).
+        if !showsOnboarding || store?.readPlan() != nil {
+            refreshWidgetPlan()
+        }
         await refreshHealth()
     }
 
@@ -126,6 +153,68 @@ final class AppModel: ObservableObject {
         refreshWidgetPlan()
     }
 
+    // MARK: Deck
+
+    /// Topics and start level of the feed. Like every setting, the plan is rewritten at once
+    /// and the word on the widget stays until the next boundary; the chosen words follow.
+    func setDeckChoice(_ choice: DeckChoice) {
+        guard choice != deckChoice else {
+            return
+        }
+        deckChoice = choice
+        AppPreferences.selectedTopicIDs = choice.topicIDs
+        AppPreferences.startLevel = choice.startLevel
+        rebuildFeed()
+        refreshWidgetPlan()
+    }
+
+    func setSelectedTopics(_ topicIDs: Set<String>) {
+        var choice = deckChoice
+        choice.topicIDs = topicIDs
+        setDeckChoice(choice)
+    }
+
+    func setStartLevel(_ level: Level?) {
+        var choice = deckChoice
+        choice.startLevel = level
+        setDeckChoice(choice)
+    }
+
+    /// The chosen topics that still exist in the content (a content update may drop one).
+    var activeTopicIDs: Set<String> {
+        return deckChoice.topicIDs.intersection(topics.map { $0.id })
+    }
+
+    /// Topics offered for choosing. One with only a handful of cards would make the widget
+    /// repeat the same few words; its cards still come with "Tümü".
+    var choosableTopics: [ContentTopic] {
+        return topics.filter { $0.cardCount >= AppModel.minimumTopicCards }
+    }
+
+    private func rebuildFeed() {
+        feedWords = DeckFilter.feed(words, topicOf: topicOf, choice: deckChoice)
+    }
+
+    // MARK: Onboarding
+
+    func showOnboarding() {
+        showsOnboarding = true
+    }
+
+    /// Finished or skipped: it does not open by itself again. The plan is written now (the
+    /// first one on a fresh install, see `start`).
+    func finishOnboarding() {
+        AppPreferences.onboardingCompleted = true
+        showsOnboarding = false
+        refreshWidgetPlan()
+    }
+
+    /// The first card the user will study: the first new word of the deck (what "Tekrar" offers
+    /// first), or the deck's first word when every word was already studied.
+    func firstDeckWord() -> WidgetWord? {
+        return ReviewPlanner.newWords(feed: feedWords, progress: progress, limit: 1).first ?? feedWords.first
+    }
+
     // MARK: Reminder
 
     /// Only the setting; the caller schedules the notifications (`ReminderScheduler`).
@@ -150,6 +239,7 @@ final class AppModel: ObservableObject {
         }
         return ReminderPlanner.plan(
             feed: words,
+            newWordFeed: feedWords,
             progress: progress,
             now: now,
             minuteOfDay: reminderMinuteOfDay,
@@ -215,10 +305,10 @@ final class AppModel: ObservableObject {
         return ReviewPlanner.counts(feed: words, progress: progress, dueBy: endOfToday)
     }
 
-    /// The next flashcard round: due words first (at most `reviewSessionLimit`); when nothing is
-    /// due, the first new words in feed order, up to what is left of today's goal. `extraNew`
-    /// skips the due check and the daily limit ("N more new words" after the goal is reached).
-    /// Nil when there is nothing to offer.
+    /// The next flashcard round: due words first (at most `reviewSessionLimit`, from every word
+    /// whatever the deck); when nothing is due, the first new words of the deck, up to what is
+    /// left of today's goal. `extraNew` skips the due check and the daily limit ("N more new
+    /// words" after the goal is reached). Nil when there is nothing to offer.
     func nextReviewSession(extraNew: Bool = false, now: Date = Date()) -> ReviewSession? {
         if !extraNew {
             let due = ReviewPlanner.dueWords(feed: words, progress: progress, now: now, limit: Int.max)
@@ -233,7 +323,7 @@ final class AppModel: ObservableObject {
         let allowance = extraNew
             ? dailyNewWords
             : max(0, dailyNewWords - AppPreferences.newWordsStudiedToday(now: now))
-        let fresh = ReviewPlanner.newWords(feed: words, progress: progress, limit: allowance)
+        let fresh = ReviewPlanner.newWords(feed: feedWords, progress: progress, limit: allowance)
         if fresh.isEmpty {
             return nil
         }
@@ -447,7 +537,7 @@ final class AppModel: ObservableObject {
     // MARK: Widget plan
 
     /// Ingests widget events into the progress, then writes a new `widget_plan.json` (fresh
-    /// plan_id) composed by `QueueComposer`, and asks WidgetKit to reload.
+    /// plan_id) composed by `QueueComposer` from the user's deck, and asks WidgetKit to reload.
     ///
     /// The new queue STARTS AT the word the old plan shows right now, so the visible word does
     /// not change and the rotation carries on from it. "Right now" is computed by the same pure
@@ -480,8 +570,10 @@ final class AppModel: ObservableObject {
             alignmentOffset: TimelinePlanner.localAlignmentOffset(for: rewriteTime)
         )
 
+        // The deck first; if it has nothing left to rotate, every topic (same level order).
         let queue = QueueComposer.compose(
-            feed: words,
+            deck: feedWords,
+            fallbackFeed: DeckFilter.ordered(words, startingAt: deckChoice.startLevel),
             progress: progress,
             now: rewriteTime,
             horizon: AppModel.queueHorizon,
