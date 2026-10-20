@@ -36,7 +36,7 @@ cd content-pipeline && python -m pip install -e ".[dev]" && python -m pytest
   - **2. tur (2026-10-20):** 273 temel kart eklendi (fiiller, sıfat ve zarflar, kalıp ifadeler, günlük isimler). Toplam **752 kart**, `content_version` `2026.10.20-kisisel-3`.
   - **Ek (2026-10-20):** `en.smell.v.2` (kokmak, "It smells good") eklendi. Toplam **753 kart**, `content_version` `2026.10.20-kisisel-4`.
   - Süreç: `docs/icerik_uretimi/`.
-- ✅ Öğrenme motoru uygulamaya bağlandı: widget dokunuşları ilerlemeye işleniyor, "Tekrar" sekmesi (Bildim/Bilemedim), "Ayarlar" (değişim sıklığı, günlük yeni kelime, sıfırlama). Widget'ta Türkçe anlam önde.
+- ✅ Öğrenme motoru uygulamaya bağlandı: widget dokunuşları ilerlemeye işleniyor, "Tekrar" sekmesi (Bilemedim/Zor/Bildim/Kolay), "Ayarlar" (değişim sıklığı, günlük yeni kelime, sıfırlama). Widget'ta Türkçe anlam önde.
 - ✅ Yasal metin taslakları (`docs/legal/`). Avukat için 30 maddelik [TEYİT] listesi README'de.
 - ✅ **Ad: Lockglow** (2026-10-11, 3. tur taraması: `raporlar/13b_sade_ingilizce_adlar.md`). Uygulama, açılış sayfası ve yasal taslaklar bu adla. ⚠️ Yayından önce: TÜRKPATENT araması (9, 41, 42. sınıflar) ve marka vekili görüşü. Bundle id'ler markadan bağımsız (`vocabwidget`). ~~Wordglance~~ marka taramasından geçemedi (`raporlar/11_isim_taramasi.md`).
 - ✅ iOS uygulaması GitHub Actions'ta Xcode 26.3 ile derleniyor. Mac gerekmiyor.
