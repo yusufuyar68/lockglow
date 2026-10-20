@@ -1,0 +1,1029 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.ashamed.adj.1",
+      "lemma": "ashamed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "bad about something you did",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈʃeɪmd/",
+        "uk": "/əˈʃeɪmd/"
+      },
+      "def": {
+        "micro": "bad about what you did",
+        "short": "feeling bad inside because you did something wrong or unkind",
+        "long": "Feeling very bad about yourself because you did something wrong or unkind. You are ashamed of an action, or of yourself, and you may not want other people to know."
+      },
+      "grammar": {
+        "pattern": "ashamed of sth / ashamed to do sth"
+      },
+      "examples": [
+        {
+          "en": "I was ashamed of what I said.",
+          "tr": "Söylediklerimden utandım.",
+          "register": "neutral",
+          "focus": "ashamed"
+        },
+        {
+          "en": "Emre felt ashamed after he lied to his teacher.",
+          "tr": "Emre öğretmenine yalan söyledikten sonra utandı.",
+          "register": "neutral",
+          "focus": "ashamed"
+        },
+        {
+          "en": "Sam was ashamed of the way he spoke to his brother.",
+          "tr": "Sam, kardeşiyle konuşma biçiminden utandı.",
+          "register": "neutral",
+          "focus": "ashamed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "proud"
+      ],
+      "collocations": [
+        "ashamed of yourself",
+        "feel ashamed",
+        "ashamed of what you did",
+        "deeply ashamed",
+        "nothing to be ashamed of"
+      ],
+      "word_family": [
+        {
+          "lemma": "shame",
+          "pos": "n"
+        },
+        {
+          "lemma": "shameful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "utanç duyan",
+          "alt": [
+            "utanmış"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'utanmak' hem 'ashamed' hem 'embarrassed' için kullanılır. 'Ashamed': yaptığın yanlış yüzünden kendinden utanırsın. 'Embarrassed': başkalarının yanında mahcup olursun. 'Guilty': suçlu hissedersin.",
+          "mistakes": [
+            {
+              "wrong": "I'm ashamed from my words.",
+              "right": "I'm ashamed of my words.",
+              "why": "Türkçede 'sözlerimden utandım' dersin; '-den' eki 'from' gibi geliyor. İngilizcede 'ashamed' ile 'of' kullanılır: ashamed of."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:embarrassed"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Deniz lied to her best friend. Now she feels ______ and cannot look at her.",
+        "answer": "ashamed",
+        "distractors": [
+          "relaxed",
+          "bored",
+          "curious"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_a_rain_check.idm.1",
+      "lemma": "take a rain check",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "say no now, do it another time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ə ˈreɪn tʃɛk/",
+        "uk": "/teɪk ə ˈreɪn tʃɛk/"
+      },
+      "def": {
+        "micro": "ask to do it another day",
+        "short": "politely say no to a plan now and ask to do it another day instead",
+        "long": "You cannot accept an invitation now, so you ask to do it on another day. It is informal and mostly American. People say 'Can I take a rain check?' to be polite."
+      },
+      "grammar": {
+        "pattern": "take a rain check (on sth)"
+      },
+      "examples": [
+        {
+          "en": "Thanks, but I'll have to take a rain check.",
+          "tr": "Teşekkürler ama başka zamana kalsın.",
+          "register": "informal",
+          "focus": "take a rain check"
+        },
+        {
+          "en": "Priya had a cold, so she took a rain check on dinner.",
+          "tr": "Priya'nın nezlesi vardı, o yüzden akşam yemeğini başka bir zamana bıraktı.",
+          "register": "informal",
+          "focus": "took a rain check"
+        },
+        {
+          "en": "“Do you want to get coffee after work, Omar?” “Sorry, can I take a rain check?”",
+          "tr": "“İşten sonra kahve içmek ister misin Omar?” “Kusura bakma, başka zamana bıraksak olur mu?”",
+          "register": "informal",
+          "focus": "take a rain check"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take a rain check on dinner",
+        "can I take a rain check",
+        "I'll take a rain check"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başka zamana bırakmak",
+          "alt": [
+            "sonraya bırakmak",
+            "ertelemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Daveti kesin olarak reddetmek değil; 'şimdi olmaz ama başka zaman olur' demektir. Daha çok Amerikan İngilizcesinde ve arkadaşlar arasında kullanılır.",
+          "mistakes": [],
+          "mnemonic": "Yağmurdan ertelenen maçın bileti başka bir güne geçerli olur: 'rain check' = ertelenen davet."
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Can you come to dinner tonight?” “I'm busy. Can I ______? Let's do it next week.”",
+        "answer": "take a rain check",
+        "distractors": [
+          "spill the beans",
+          "miss the boat",
+          "steal the show"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.let_down.phv.1",
+      "lemma": "let down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "disappoint someone",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɛt ˈdaʊn/",
+        "uk": "/lɛt ˈdaʊn/"
+      },
+      "def": {
+        "micro": "fail someone who trusts you",
+        "short": "make someone sad because you do not do what they hoped or what you promised",
+        "long": "To make someone feel sad or disappointed because you do not do what they hoped or what you promised. You can let a friend, a team, or your family down."
+      },
+      "grammar": {
+        "pattern": "let sb down (separable)"
+      },
+      "examples": [
+        {
+          "en": "I'm sorry I let you down.",
+          "tr": "Seni hayal kırıklığına uğrattığım için üzgünüm.",
+          "register": "neutral",
+          "focus": "let you down"
+        },
+        {
+          "en": "Ayşe promised to help, but she let us down.",
+          "tr": "Ayşe yardım edeceğine söz verdi ama bizi yüzüstü bıraktı.",
+          "register": "neutral",
+          "focus": "let us down"
+        },
+        {
+          "en": "Don't worry, Lena. I won't let you down.",
+          "tr": "Merak etme Lena, seni yüzüstü bırakmam.",
+          "register": "neutral",
+          "focus": "let you down"
+        }
+      ],
+      "synonyms": [
+        "disappoint"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "let you down",
+        "feel let down",
+        "never let me down",
+        "let the team down"
+      ],
+      "word_family": [
+        {
+          "lemma": "letdown",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hayal kırıklığına uğratmak",
+          "alt": [
+            "yüzüstü bırakmak",
+            "güvenini boşa çıkarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ayrılabilen phrasal verb: nesne zamirse araya girer, yani 'let me down' denir ('let down me' denmez). Söz tutmamak ya da beklentiyi karşılamamak için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Tom promised to call me, but he didn't. I felt so ______.",
+        "answer": "let down",
+        "distractors": [
+          "grown up",
+          "cheered up",
+          "dressed up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.my_bad.phr.1",
+      "lemma": "my bad",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "admit a small mistake",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/maɪ ˈbæd/",
+        "uk": "/maɪ ˈbæd/"
+      },
+      "def": {
+        "micro": "I am sorry; it was my fault",
+        "short": "a short, informal way to say that you made a small mistake and you are sorry",
+        "long": "You say this when you do something wrong, but it is only a small problem. It is very informal and friendly, so use it with friends. In a formal place, say 'I am very sorry'."
+      },
+      "examples": [
+        {
+          "en": "Oh, my bad. I thought it was your book.",
+          "tr": "Ay, benim hatam. Kitabı senin sandım.",
+          "register": "informal",
+          "focus": "my bad"
+        },
+        {
+          "en": "“Kenji, you sent it to the wrong person!” “My bad! I'll fix it now.”",
+          "tr": "“Kenji, yanlış kişiye göndermişsin!” “Benim yanlışım! Hemen düzeltiyorum.”",
+          "register": "informal",
+          "focus": "My bad"
+        },
+        {
+          "en": "I gave you the wrong time. My bad! The party is at eight.",
+          "tr": "Sana yanlış saati söyledim. Benim hatam! Parti sekizde.",
+          "register": "informal",
+          "focus": "My bad"
+        }
+      ],
+      "synonyms": [
+        "my mistake",
+        "my fault"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "oh, my bad"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "benim hatam",
+          "alt": [
+            "benim yanlışım",
+            "pardon"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çok gayriresmî ve kısa bir özürdür; arkadaşlar arasında söylenir. Resmî ortamda ya da iş yazışmasında 'I apologize' ya da 'I'm sorry' demek daha uygundur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "slang_informal",
+        "topics": [
+          "slang_informal",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“You gave me the wrong key.” “Oh, ______! Here is the right one.”",
+        "answer": "my bad",
+        "distractors": [
+          "get well soon",
+          "bless you",
+          "after you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stranger.n.1",
+      "lemma": "stranger",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person you do not know",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstreɪndʒər/",
+        "uk": "/ˈstreɪndʒə/"
+      },
+      "def": {
+        "micro": "a person you do not know",
+        "short": "someone you have never met before, or do not know at all",
+        "long": "A person you have never met or do not know. People say 'a complete stranger' for someone you know nothing about. It does not mean a person from another country."
+      },
+      "examples": [
+        {
+          "en": "Don't open the door to strangers.",
+          "tr": "Tanımadığın kimseye kapıyı açma.",
+          "register": "neutral",
+          "focus": "strangers"
+        },
+        {
+          "en": "A stranger smiled at Elif on the bus.",
+          "tr": "Otobüste tanımadığı biri Elif'e gülümsedi.",
+          "register": "neutral",
+          "focus": "stranger"
+        },
+        {
+          "en": "We were strangers a year ago, and now we are best friends.",
+          "tr": "Bir yıl önce birbirimize yabancıydık, şimdi en yakın arkadaşız.",
+          "register": "neutral",
+          "focus": "strangers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "friend"
+      ],
+      "collocations": [
+        "a complete stranger",
+        "talk to strangers",
+        "a perfect stranger"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tanımadık kişi, yabancı",
+          "alt": [
+            "tanımadık biri"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'yabancı' hem tanımadığın kişi hem başka ülkeden gelen kişi demektir. İngilizcede ikisi ayrıdır: 'stranger' tanımadığın biri, 'foreigner' başka ülkeden gelen kişidir.",
+          "mistakes": [
+            {
+              "wrong": "Many strangers visit Istanbul every year.",
+              "right": "Many foreigners visit Istanbul every year.",
+              "why": "Türkçede 'yabancı' iki anlamı da taşır. İngilizcede başka ülkeden gelen kişi 'foreigner', tanımadığın kişi 'stranger' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:foreigner"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "At the party, I knew nobody. They were all ______ to me.",
+        "answer": "strangers",
+        "distractors": [
+          "cousins",
+          "teachers",
+          "neighbors"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.congratulations_on.phr.1",
+      "lemma": "congratulations on",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "saying you are glad about good news",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˌɡrætʃəˈleɪʃənz ɑːn/",
+        "uk": "/kənˌɡrætʃʊˈleɪʃənz ɒn/"
+      },
+      "def": {
+        "micro": "I'm happy about your success",
+        "short": "said to someone who has good news, for example a new job or a passed exam",
+        "long": "You say this to a person to show that you are happy about their success or good news, like a new job or passing an exam. The thing comes after 'on': 'Congratulations on your new house!'"
+      },
+      "grammar": {
+        "pattern": "congratulations on + sth / -ing"
+      },
+      "examples": [
+        {
+          "en": "Congratulations on your new job!",
+          "tr": "Yeni işin için tebrikler!",
+          "register": "neutral",
+          "focus": "Congratulations on"
+        },
+        {
+          "en": "Congratulations on your graduation, Selin!",
+          "tr": "Mezuniyetin için tebrikler Selin!",
+          "register": "neutral",
+          "focus": "Congratulations on"
+        },
+        {
+          "en": "Congratulations on passing your driving test, Can!",
+          "tr": "Ehliyet sınavını geçtiğin için tebrikler Can!",
+          "register": "neutral",
+          "focus": "Congratulations on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "congratulations on your win",
+        "congratulations on passing"
+      ],
+      "word_family": [
+        {
+          "lemma": "congratulate",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tebrikler",
+          "alt": [
+            "tebrik ederim",
+            "kutlarım"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hep çoğul yazılır: 'congratulations'. Neyi kutladığını söylerken 'on' kullanılır: 'on your exam'. Gayriresmî kısaltması 'congrats' olur.",
+          "mistakes": [
+            {
+              "wrong": "Congratulations for your new job!",
+              "right": "Congratulations on your new job!",
+              "why": "Türkçede 'yeni işin için' dersin; 'için' sözünü 'for' diye çevirmek kolaydır. İngilizcede tebrik edilen şeyden önce 'on' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nora won the race today. I told her, “______ your win!”",
+        "answer": "Congratulations on",
+        "distractors": [
+          "Sorry about",
+          "Welcome to",
+          "Good luck with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stay_over.phv.1",
+      "lemma": "stay over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "sleep at someone's house",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/steɪ ˈoʊvər/",
+        "uk": "/steɪ ˈəʊvə/"
+      },
+      "def": {
+        "micro": "sleep at someone's house",
+        "short": "sleep for one night at another person's house",
+        "long": "To sleep at another person's home for a night, often because it is late or because you are visiting a friend. Children often stay over at a friend's house on the weekend."
+      },
+      "grammar": {
+        "pattern": "stay over (at sb's house)"
+      },
+      "examples": [
+        {
+          "en": "Can I stay over at your place tonight?",
+          "tr": "Bu gece sende kalabilir miyim?",
+          "register": "informal",
+          "focus": "stay over"
+        },
+        {
+          "en": "It was late, so Ayşe stayed over at her friend's house.",
+          "tr": "Geç olmuştu, o yüzden Ayşe geceyi arkadaşının evinde geçirdi.",
+          "register": "neutral",
+          "focus": "stayed over"
+        },
+        {
+          "en": "My cousins often stay over at our house on Fridays.",
+          "tr": "Kuzenlerim cuma günleri sık sık bizde yatıya kalıyor.",
+          "register": "neutral",
+          "focus": "stay over"
+        }
+      ],
+      "synonyms": [
+        "sleep over"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "stay over tonight",
+        "stay over at my place",
+        "stay over at a friend's"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yatıya kalmak",
+          "alt": [
+            "gece kalmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Başkasının evinde bir gece kalmak demektir. Otelde kalmak için 'stay at a hotel' denir; 'over' kelimesi geceyi geçirmeyi vurgular.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The last bus has gone. Can I ______ at your place tonight?",
+        "answer": "stay over",
+        "distractors": [
+          "hurry up",
+          "slow down",
+          "give up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.small_talk.phr.1",
+      "lemma": "small talk",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "light polite conversation",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsmɔːl tɔːk/",
+        "uk": "/ˈsmɔːl tɔːk/"
+      },
+      "def": {
+        "micro": "chat about easy things",
+        "short": "polite, friendly conversation about easy topics, like the weather",
+        "long": "Polite, friendly conversation about simple things, like the weather, the weekend, or food. People often have it with someone they do not know well, for example at a party or at work."
+      },
+      "grammar": {
+        "pattern": "make small talk (with sb)"
+      },
+      "examples": [
+        {
+          "en": "I'm not good at small talk with new people.",
+          "tr": "Yeni insanlarla havadan sudan konuşmakta pek iyi değilim.",
+          "register": "neutral",
+          "focus": "small talk"
+        },
+        {
+          "en": "We made small talk about the weather while we waited.",
+          "tr": "Beklerken laf olsun diye havadan konuştuk.",
+          "register": "neutral",
+          "focus": "small talk"
+        },
+        {
+          "en": "Nora asked about my weekend, but it was only small talk.",
+          "tr": "Nora hafta sonumu sordu ama bu sadece havadan sudan sohbetti.",
+          "register": "neutral",
+          "focus": "small talk"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make small talk",
+        "polite small talk",
+        "good at small talk",
+        "hate small talk"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "havadan sudan konuşma",
+          "alt": [
+            "hoşbeş",
+            "laf olsun diye konuşma"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Small talk' ile 'do' değil 'make' kullanılır: 'make small talk'. Hava durumu, hafta sonu gibi hafif konulardır; derin sohbet için 'deep conversation' denir.",
+          "mistakes": [
+            {
+              "wrong": "We did small talk at the party.",
+              "right": "We made small talk at the party.",
+              "why": "Türkçede 'yapmak' hem 'do' hem 'make' demektir ve çoğu zaman 'do' seçilir. Oysa 'small talk' ile 'make' kullanılır: make small talk."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't know my neighbor well, so we only make ______ about the weather.",
+        "answer": "small talk",
+        "distractors": [
+          "hard work",
+          "fresh coffee",
+          "loud music"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.disagree.v.1",
+      "lemma": "disagree",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have a different opinion",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdɪsəˈɡriː/",
+        "uk": "/ˌdɪsəˈɡriː/"
+      },
+      "def": {
+        "micro": "have a different opinion",
+        "short": "have a different opinion from someone else about something",
+        "long": "To think differently from another person about something. You disagree WITH a person and ABOUT or ON a topic. People use it politely: 'I see your point, but I disagree.'"
+      },
+      "grammar": {
+        "pattern": "disagree with sb / about sth"
+      },
+      "examples": [
+        {
+          "en": "I'm sorry, but I disagree.",
+          "tr": "Üzgünüm ama katılmıyorum.",
+          "register": "neutral",
+          "focus": "disagree"
+        },
+        {
+          "en": "Mehmet and his brother often disagree about music.",
+          "tr": "Mehmet ile kardeşi müzik konusunda sık sık aynı fikirde olmuyor.",
+          "register": "neutral",
+          "focus": "disagree"
+        },
+        {
+          "en": "Priya disagreed with the teacher, but she was polite.",
+          "tr": "Priya öğretmene katılmadı ama kibar davrandı.",
+          "register": "neutral",
+          "focus": "disagreed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "agree"
+      ],
+      "collocations": [
+        "disagree with sb",
+        "disagree about sth",
+        "strongly disagree",
+        "respectfully disagree"
+      ],
+      "word_family": [
+        {
+          "lemma": "disagreement",
+          "pos": "n"
+        },
+        {
+          "lemma": "agree",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aynı fikirde olmamak",
+          "alt": [
+            "katılmamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Disagree' bir fiildir, 'be' ile kullanılmaz. Kişiyle: 'disagree with'. Konuyla: 'disagree about' ya da 'disagree on'. Zıttı 'agree' de aynı kalıbı alır: 'I agree with you'.",
+          "mistakes": [
+            {
+              "wrong": "I am disagree with you.",
+              "right": "I disagree with you.",
+              "why": "Türkçede 'aynı fikirde değilim' dersin ve cümle 'ben ... değilim' diye kurulur; bu yüzden 'am' eklenir. 'Disagree' fiildir, 'am' gerekmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Zeynep says it's too hot, but I think it's fine. I ______ with her.",
+        "answer": "disagree",
+        "distractors": [
+          "agree",
+          "listen",
+          "leave"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_yourself_at_home.phr.1",
+      "lemma": "make yourself at home",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "welcome a guest",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌmeɪk jərˈsɛlf ət ˈhoʊm/",
+        "uk": "/ˌmeɪk jəˈsɛlf ət ˈhəʊm/"
+      },
+      "def": {
+        "micro": "feel comfortable in my house",
+        "short": "a friendly thing a host says to a guest: feel relaxed and free in my house",
+        "long": "A host says this to a guest to show that the guest is welcome. It means: sit down, relax, and use things in the house as you like. People often say it right after the guest comes in."
+      },
+      "examples": [
+        {
+          "en": "Come in, Sam. Make yourself at home.",
+          "tr": "İçeri gel Sam, kendi evin gibi rahat ol.",
+          "register": "neutral",
+          "focus": "Make yourself at home"
+        },
+        {
+          "en": "“Thank you for having me.” “Our pleasure. Make yourself at home!”",
+          "tr": "“Beni davet ettiğiniz için teşekkür ederim.” “Rica ederiz. Kendi eviniz gibi rahat olun!”",
+          "register": "neutral",
+          "focus": "Make yourself at home"
+        },
+        {
+          "en": "Take off your coat, sit down, and make yourself at home.",
+          "tr": "Montunu çıkar, otur ve kendi evin gibi rahat ol.",
+          "register": "neutral",
+          "focus": "make yourself at home"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kendi evin gibi rahat ol",
+          "alt": [
+            "rahatına bak",
+            "kendini evinde hisset"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ev sahibinin misafire söylediği sıcak bir cümledir. Birden fazla kişiye 'make yourselves at home' denir. Gerçekten her şeyi yapabilirsin demek değil, nezaket sözüdür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Welcome to our house, Nora! Sit down and ______.",
+        "answer": "make yourself at home",
+        "distractors": [
+          "wait for the bus",
+          "keep in touch",
+          "have a safe trip"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
