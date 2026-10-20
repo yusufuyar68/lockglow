@@ -6,110 +6,104 @@
   "generated_on": "2026-10-17",
   "entries": [
     {
-      "id": "en.cancel.v.1",
-      "lemma": "cancel",
+      "id": "en.company.n.1",
+      "lemma": "company",
       "type": "word",
-      "pos": "v",
+      "pos": "n",
       "sense_no": 1,
-      "sense_note": null,
+      "sense_note": "business",
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈkænsəl/",
-        "uk": "/ˈkænsəl/"
+        "us": "/ˈkʌmpəni/",
+        "uk": "/ˈkʌmpəni/"
       },
       "def": {
-        "micro": "stop a plan completely",
-        "short": "decide that something you planned will not happen at all",
-        "long": "To decide that something you planned will not happen at all, such as a meeting, a class or an order. If you only change the day or the time, you do not cancel it; you move it."
+        "micro": "a business that makes money",
+        "short": "a business that makes or sells things, or gives a service, to earn money",
+        "long": "A business that makes or sells things, or gives a service, to earn money. A company has a name and workers, and it can be very small or very big."
       },
       "grammar": {
-        "pattern": "cancel + meeting / class / order"
+        "pattern": "work for / at a company"
       },
       "examples": [
         {
-          "en": "Sorry, I have to cancel our meeting.",
-          "tr": "Üzgünüm, toplantımızı iptal etmem gerekiyor.",
+          "en": "Ali works for a big company in Istanbul.",
+          "tr": "Ali İstanbul'da büyük bir şirkette çalışıyor.",
           "register": "neutral",
-          "focus": "cancel"
+          "focus": "company"
         },
         {
-          "en": "Elif canceled her English class because she was ill.",
-          "tr": "Elif hasta olduğu için İngilizce dersini iptal etti.",
+          "en": "Burak started his own small company last year.",
+          "tr": "Burak geçen yıl kendi küçük şirketini kurdu.",
           "register": "neutral",
-          "focus": "canceled"
+          "focus": "company"
         },
         {
-          "en": "You can cancel your order for free within one hour.",
-          "tr": "Siparişinizi bir saat içinde ücretsiz iptal edebilirsiniz.",
+          "en": "Emma's company gives every worker a free lunch on Fridays.",
+          "tr": "Emma'nın şirketi cuma günleri her çalışana bedava öğle yemeği veriyor.",
           "register": "neutral",
-          "focus": "cancel"
+          "focus": "company"
         }
       ],
       "synonyms": [
-        "call off"
+        "firm",
+        "business"
       ],
-      "antonyms": [
-        "confirm"
-      ],
+      "antonyms": [],
       "collocations": [
-        "cancel a meeting",
-        "cancel a class",
-        "cancel an order",
-        "cancel a flight",
-        "cancel a booking"
+        "work for a company",
+        "a big company",
+        "start a company",
+        "a company car"
       ],
-      "word_family": [
-        {
-          "lemma": "cancellation",
-          "pos": "n"
-        }
-      ],
+      "word_family": [],
       "etymology": {
-        "text": "From Latin 'cancellare', meaning to cross out with lines that look like a lattice. People first used it for crossing out written words.",
-        "origin": "Latin",
+        "text": "From Old French 'compagnie', a group of people. The root is Late Latin 'companio', someone you share bread with: 'com' (with) + 'panis' (bread).",
+        "origin": "Old French",
         "confidence": "high"
       },
       "l1": {
         "tr": {
-          "gloss": "iptal etmek",
-          "alt": [],
+          "gloss": "şirket",
+          "alt": [
+            "firma"
+          ],
           "equivalence": "full",
           "false_friend": null,
-          "note": "'Cancel' bir planı tamamen kaldırır. Planı başka bir güne almak için 'postpone' (ertelemek) denir. İngiliz İngilizcesinde 'cancelled' (iki l), Amerikan İngilizcesinde 'canceled' yazılır.",
+          "note": "Bu kartta 'şirket' anlamındadır. 'I enjoy your company' cümlesinde ise 'arkadaşlık, birlikte olmak' demektir. 'Bir şirkette çalışmak' için en doğal söyleyiş 'work for a company' ya da 'work at a company' olur.",
           "mistakes": [],
           "mnemonic": null
         }
       },
       "tags": {
-        "primary_topic": "time_routines",
+        "primary_topic": "shopping_money",
         "topics": [
-          "time_routines",
-          "workplace_office"
+          "shopping_money",
+          "workplace_office",
+          "business_management"
         ],
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:postpone"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "The teacher is ill, so the school will ______ today's class.",
-        "answer": "cancel",
+        "cloze": "Yuki's ______ makes phones and laptops, and it has 300 workers.",
+        "answer": "company",
         "distractors": [
-          "repair",
-          "translate",
-          "borrow"
+          "hospital",
+          "museum",
+          "library"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [],
         "prompt_ver": "kisisel-2026-10-17",
-        "model": "claude-sonnet (in-session subagent)",
+        "model": "claude-opus (in-session coordinator)",
         "source": "kisisel_v1"
       }
     },

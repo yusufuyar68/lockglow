@@ -2,7 +2,7 @@
 
 Kapsam: `content/drafts/kisisel_v1/s10/part_01.json` … `part_05.json`. 45 kart: toplantı, e-posta, görev, mesai, izin, maaş, iş arama. Süreç (2026-10-20):
 
-1. **Yazım:** 5 yazar ajanı (Sonnet), her parçaya bir ajan.
+1. **Yazım:** 5 yazar ajanı (Sonnet), her parçaya bir ajan. Sonradan eklenen company kartını koordinatör yazdı (aşağıda, "Akışlar arası kimlik çakışması").
 2. **Denetim:** 5 denetçi (Opus), her parçaya bir denetçi. Ölçütler `SYSTEM_C` listesi ve A2 öğrenen gözü. Her Türkçe çeviri İngilizceye geri çevrildi, her quiz şıkkı boşluğa kondu.
 3. **Bağımsız doğrulama:** 6 doğrulayıcı (Opus) denetçinin kararlarını bilmeden çalıştı. 5'i kendi parçasının bütün alanlarına, 1'i 45 quiz'in hepsine toplu olarak baktı. Böylece her quiz iki ayrı gözden geçti. Bulguları koordinatör tek tek değerlendirip uyguladı. Uygulanan değişiklikleri ayrı bir doğrulayıcı yeniden kontrol etti.
 4. **Çeldirici kontrolü:** aşağıda, "Çeldirici çeşitlendirme" bölümünde.
@@ -12,7 +12,7 @@ Koordinatör (Opus) 45 kartın hepsini ayrıca baştan sona okudu.
 ## Özet
 
 - İncelenen kart: **45** (A2 16, B1 29). Tür: 19 kelime, 10 kalıp ifade (`phrase`), 6 eşdizim (`collocation`), 10 phrasal verb.
-  - A2: office, take a day off, manager, work from home, employee, let me know, email, job interview, print out, customer, in a meeting, reply, cancel, as soon as possible, part-time, take notes.
+  - A2: office, take a day off, manager, work from home, employee, let me know, email, job interview, print out, customer, in a meeting, reply, company, as soon as possible, part-time, take notes.
   - B1: get back to, call off, apply for a job, attachment, take over, be in charge of, CV, look into, call in sick, hire, point out, resign, go over, promotion, employer, meet a deadline, bring up, career, get a raise, shift, come up with, get fired, available, give a presentation, urgent, postpone, get in touch, clock in, out of the office.
 - Değişen kart: **40** (hepsine `critic_edited` eklendi).
   - Denetimde 35 kartta 106 alan değişti.
@@ -20,7 +20,9 @@ Koordinatör (Opus) 45 kartın hepsini ayrıca baştan sona okudu.
   - Toplam 130 alan; silinen her hata bir alan sayıldı.
 - Reddedilen kart (`critic_reject`): **0**
 - Seviye değişikliği: yok.
-- Kimlik değişikliği: `en.out_of_office.phr.1` → `en.out_of_the_office.phr.1`. Lemma "out of the office" oldu; kartın henüz kayıtlı numarası yoktu.
+- Kimlik değişiklikleri (ikisinin de henüz kayıtlı numarası yoktu):
+  - `en.out_of_office.phr.1` → `en.out_of_the_office.phr.1`; lemma "out of the office" oldu.
+  - `en.cancel.v.1` çıkarıldı, yerine `en.company.n.1` (A2) yazıldı. s11'de (seyahat) aynı kimlik ve aynı anlam var. Ayrıntı aşağıda, "Akışlar arası kimlik çakışması" bölümünde.
 - Doğrulayıcı (tüm klasör): `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`
 - En sık çeldirici: patients×2 (sınır 4).
 
@@ -62,6 +64,25 @@ Koordinatör (Opus) 45 kartın hepsini ayrıca baştan sona okudu.
   - Artikelsiz "out of office" siyasette "görevde değil" demek.
   - Örnekler ve quiz cevabı zaten "the" ile yazılmıştı.
 - **Phrasal verb bayrakları.** take over `separable` oldu (önce `inseparable`); clock in `intransitive` oldu (depodaki log in ve check in gibi).
+
+## Akışlar arası kimlik çakışması: cancel → company
+
+- Denetim bittikten sonra yapılan taramada `en.cancel.v.1` hem s10'da hem s11'de (seyahat, aynı gün paralel yazıldı) çıktı. Anlam da aynı: bir planın hiç olmayacağına karar vermek, "iptal etmek". Birleşik derlemede DUP_ID hatası verirdi.
+- s11 bu kelimeyi kendi listesinde saymıştı ve "cancel a flight" seyahat akışına çok uygun. Bu yüzden kart s10'dan çıkarıldı. s10'daki call off ve postpone kartları kalıyor; postpone kartının `confusable:cancel` bayrağı s11'deki karta işaret ediyor.
+- Yerine aynı yerde (part_03'ün ilk kartı) `en.company.n.1` yazıldı: A2, "şirket" anlamı. Bu karta denetimde `critic_edited` işareti eklenmedi, çünkü sonradan yazıldı.
+  - Kartı koordinatör yazdı; ayrı bir Opus doğrulayıcı bağımsız olarak kontrol etti (sonucu hemen aşağıda).
+  - Kelime s1–s13 akışlarında ve altın kartlarda yok. Örnek ve quiz cümleleri hiçbir akıştaki bir cümleye %85'ten fazla benzemiyor.
+  - Çıkarılan cancel kartı denetimden geçmişti ve hiçbir alanı değişmemişti; s11'deki kart yerine tercih edilirse git geçmişinde duruyor (commit 72da80d).
+- s11, s12 ve s13 ile başka kimlik ya da lemma çakışması yok (2026-10-20, üç akışın 45'er kartlık hâliyle tarandı).
+
+**company kartının bağımsız doğrulaması: 0 bulgu.** Doğrulayıcı şunları uygun buldu:
+
+- tanımlar: micro 27, short 72 karakter, başlık kelime yok;
+- örnekler ve Türkçe çeviriler: geri çeviride anlam birebir tutuyor;
+- IPA: /ˈkʌmpəni/;
+- etimoloji: Eski Fransızca compaignie < Geç Latince compāniō < com- "ile" + pānis "ekmek"; Wiktionary ile eşleşiyor;
+- quiz: dört şıktan yalnızca "company" uyuyor;
+- kategori: `shopping_money` (A1–B2), aynı akıştaki customer kartıyla aynı.
 
 ## Değişiklik tablosu
 
@@ -244,7 +265,7 @@ Alan adları kartın JSON yoludur; `l1.tr` Türkçe katmandır. Uzun metinler k�
   - get fired: aynı kartın örneğiyle isim çelişkisi;
   - be in charge of ve CV: yalnızca isim (part_02'de "Mehmet" 9 kez geçiyordu).
 - Sonraki çeşitlendirmelerde aşağıdaki şıklar ilgili karta **eklenmemeli**, çünkü boşluğa uyarlar:
-  - cancel: postpone, call off;
+  - company: firm, business, factory;
   - postpone: delay, put off, move, push back;
   - urgent: important, serious;
   - available: free;
@@ -288,7 +309,7 @@ Alan adları kartın JSON yoludur; `l1.tr` Türkçe katmandır. Uzun metinler k�
 
 ### Çeviriler: doğal mı?
 
-- **in a meeting, available:** "Sorry," için "Kusura bakmayın," kullanıldı. cancel ilk örneği ise "Üzgünüm, toplantımızı iptal etmem gerekiyor." Hangisi doğal?
+- **in a meeting, available:** Telefondaki "Sorry," için "Kusura bakmayın," kullanıldı. Doğal mı, yoksa "Maalesef" mi daha iyi?
 - **as soon as possible, get in touch:** as soon as possible ilk örneği "siz" ("cevap verin"), öbür örnekler "sen". get in touch ilk örneği "iletişime geç" (sen). İş bağlamında "geçin" daha mı doğal?
 - **take over:** "Sara ayrılınca kim devralacak?" Nesnesiz "devralmak" doğal mı, yoksa "yerine kim geçecek?" mi?
 - **customer:** "dükkân sahibi" (İngilizcede yalnızca "the owner").
