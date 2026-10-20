@@ -4,11 +4,19 @@ name: screenshots
 
 on:
   workflow_dispatch:
+    inputs:
+      runner:
+        # arm64 macOS runners can sit unacquired for a long time ("capacity constraints",
+        # 2026-10-20); fall back with -f runner=macos-15-intel.
+        description: macOS makinesi
+        type: choice
+        default: macos-15
+        options: [macos-15, macos-15-intel, macos-26]
 
 jobs:
   screens:
     name: Ekran görüntüleri (simülatör)
-    runs-on: macos-15
+    runs-on: ${{ inputs.runner || 'macos-15' }}
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
