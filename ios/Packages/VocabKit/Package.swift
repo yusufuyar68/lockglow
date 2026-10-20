@@ -17,6 +17,7 @@ let package = Package(
         .library(name: "Scheduler", type: .static, targets: ["Scheduler"]),
         .library(name: "ContentStore", type: .static, targets: ["ContentStore"]),
         .library(name: "Learning", type: .static, targets: ["Learning"]),
+        .library(name: "Pronunciation", type: .static, targets: ["Pronunciation"]),
     ],
     dependencies: [
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "7.0.0"),
@@ -28,6 +29,8 @@ let package = Package(
         .target(name: "Scheduler", dependencies: ["CoreModels", "SharedState"]),
         // Leitner scheduling, queue composition and the app-private progress file. App only.
         .target(name: "Learning", dependencies: ["CoreModels"]),
+        // "Söyle" practice: compares what the speech recognizer heard with the card. Pure. App only.
+        .target(name: "Pronunciation"),
         .target(
             name: "ContentStore",
             dependencies: [
@@ -41,6 +44,7 @@ let package = Package(
         .testTarget(name: "SharedStateTests", dependencies: ["SharedState", "CoreModels"]),
         .testTarget(name: "SchedulerTests", dependencies: ["Scheduler", "SharedState", "CoreModels"]),
         .testTarget(name: "LearningTests", dependencies: ["Learning", "CoreModels"]),
+        .testTarget(name: "PronunciationTests", dependencies: ["Pronunciation"]),
         .testTarget(
             name: "ContentStoreTests",
             dependencies: [

@@ -92,7 +92,14 @@ Lockglow does **not** collect your location, contacts, photos, camera, health da
 
 There is no AI chat in the app, and your personal data is not sent to third-party AI services.
 
-If we later add a feature that needs the microphone (such as pronunciation practice), the microphone permission will be requested only when you choose to use that feature, at that moment, and this policy will be updated beforehand.
+### 3.7 Pronunciation practice ("Söyle") and the microphone
+
+With "Söyle" you say a word or an example sentence aloud, and the app tells you in Turkish whether you said it right.
+
+- **Microphone permission** is requested only when you first tap "Söyle", at that moment. On older iOS versions (before iOS 26) **speech recognition permission** is requested as well. If you decline, the rest of the app (cards, read-aloud, widgets) works as before. You can withdraw the permission at any time in iPhone Settings.
+- **Your voice does not leave your device.** Your speech is turned into text only on your device, by Apple's on-device speech recognition, and compared right away. The app does not use server-based recognition.
+- **Nothing is recorded, stored or shared.** The audio is held in memory only during that attempt and is never written to a file. Neither the audio nor the recognized text is sent to us or to third parties (analytics included).
+- On iOS 26 and later, Apple's English speech model is downloaded once from Apple on first use. Your voice is not sent in that download; the model is stored on your iPhone and may be shared with other apps.
 
 ## 4. Why we use data
 

@@ -42,7 +42,7 @@
 | **Contacts** | **No** | – | – | – | Rehber erişimi yok. |
 | **User Content**: Emails or Text Messages | **No** | – | – | – | Yok. |
 | **User Content**: Photos or Videos | **No** | – | – | – | Fotoğraf erişimi yok (paylaşım kartı yalnızca dışa verilir). |
-| **User Content**: Audio Data | **No** | – | – | – | Mikrofon yok; seslendirme cihazdaki sentezle (AVSpeechSynthesizer). **Gelecekte telaffuz kaydı sunucuya gidiyorsa Yes; yalnızca cihazda işleniyorsa No.** İzin tam o anda (just-in-time) istenir. |
+| **User Content**: Audio Data | **No** | – | – | – | Seslendirme cihazdaki sentezle (AVSpeechSynthesizer). Mikrofon yalnızca "Söyle" telaffuz alıştırmasında, ilk kullanımda (just-in-time) istenir. Ses cihazda tanınır: iOS 26+ `SpeechAnalyzer` (Apple: sesi sunucuya göndermez), iOS 17–25 `SFSpeechRecognizer` + `requiresOnDeviceRecognition`. Dosyaya yazılmaz, cihazdan çıkmaz, analitiğe gitmez. Apple: "Data that is processed only on device is not 'collected'". **Ses ya da tanınan metin bir gün sunucuya giderse Yes.** |
 | **User Content**: Gameplay Content | **No** | – | – | – | Yok. |
 | **User Content**: Customer Support | **No** | – | – | – | Mailto (V6). Uygulama içi destek formu eklenirse Yes / Linked / App Functionality. |
 | **User Content**: Other User Content | **No** | – | – | – | Özel listeler cihazda kalır, analitiğe içeriği gönderilmez. (CloudKit v1.2'de verinin kullanıcının özel iCloud alanında olması ve geliştiricinin erişememesi nedeniyle "toplama" sayılmaması beklenir **[TEYİT]**.) |

@@ -26,10 +26,11 @@ ios/
    ├─ SharedState              AppGroupStore, EventMailbox, WidgetPlan/State/Event
    ├─ Scheduler                TimelinePlanner, RotationInput, RotationCursor, QueueBuilder (saf fonksiyonlar)
    ├─ ContentStore             GRDB ile salt okunur content.sqlite (yalnızca uygulama)
-   └─ Learning                 Leitner (5 kutu), QueueComposer (6 tekrar : 3 yeni : 1 hatırlatma), ProgressIngest (widget olayları → ilerleme), ReviewPlanner (tekrar turu, sayılar), ProgressStore (yalnızca uygulama)
+   ├─ Learning                 Leitner (5 kutu), QueueComposer (6 tekrar : 3 yeni : 1 hatırlatma), ProgressIngest (widget olayları → ilerleme), ReviewPlanner (tekrar turu, sayılar), ProgressStore (yalnızca uygulama)
+   └─ Pronunciation            PronunciationCheck: "Söyle" alıştırmasında duyulanı kartla karşılaştırır, Türkçe geri bildirim (saf, yalnızca uygulama)
 ```
 
-Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite açmaz, `ContentStore`/`TextFold`/`Learning`/GRDB bağlamaz. `Learning` yalnızca uygulama hedefindedir.
+Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite açmaz, `ContentStore`/`TextFold`/`Learning`/`Pronunciation`/GRDB bağlamaz. `Learning` ve `Pronunciation` yalnızca uygulama hedefindedir.
 
 ## Mac'te kurulum
 
@@ -180,6 +181,7 @@ Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Ayarlar > Widget s
 - [ ] **Tekrar sekmesi:** İlk açılışta "Bugünün yeni kelimeleri" önerilir. Karta dokun: Türkçe karşılık iri, altında tanım ve örnek. "Bilemedim"/"Zor"/"Bildim"/"Kolay" ile ilerle (SE'de dört düğme de kartın altında, sekme çubuğuna taşmadan görünmeli), tur sonunda özet çıkar ("bildin" = Bilemedim dışındaki cevaplar). İkinci turda quiz sorusunu doğru yanıtla: "Devam" altında "Zordu" ve "Kolaydı" çıkmalı, yanlışta çıkmamalı. Uygulamayı kapat-aç: cevapladığın kelimeler yeni kelime listesinde yok. Widget'ta "Biliyorum" dediğin kelime Tekrar'da yeni olarak çıkmaz.
 - [ ] **Ayarlar sekmesi:** Sıklığı 5 dakikaya çek: widget'taki kelime değişmez, sonraki sınırda yeni aralıkla ilerler. Günlük yeni kelimeyi değiştir: widget kuyruğu yeniden yazılır. Sayılar (bildiğim / öğrenmekte / bugün tekrar) Tekrar sekmesiyle tutarlı. "İlerlemeyi sıfırla" onay sorar, sonra sayılar 0 olur.
 - [ ] **Yüzlerce kart:** `content.sqlite` ~550 kartla paketlenince Akış'ta A1 kartları önce gelir, sonra A2, B1... Akış sekmesi hızlı kayar.
+- [ ] **Söyle (telaffuz alıştırması):** dosyanın sonundaki "Söyle: cihazda denenecekler" listesi.
 
 ## Bilinen belirsizlikler (derleyici veya cihaz itiraz edebilir)
 
@@ -268,3 +270,113 @@ Gerekçeler ve seçimler:
 - Widget "Bilemedim" (`unknown`) hâlâ yalnızca `again` üretir; widget'ta zor/kolay düğmesi yok.
 
 (`undoKnown` artık Bildiğim kelimeler listesinde ve Sözlük kartında kullanılıyor.)
+
+
+## Söyle: sesli telaffuz alıştırması (2026-10-20; hiç derlenmedi, cihazda denenmedi)
+
+Akış kartında ve Sözlük ayrıntısında kelimenin yanında **Söyle** düğmesi var (`PronunciationPracticeView.swift`). Basınca bir sayfa açılır:
+1. Kelimeyi (ya da "Örnek cümle" seçilirse kartın örneğini) dinle.
+2. Söyle.
+3. Telefon söyleneni cihazda tanır ve Türkçe geri bildirim verir: "Doğru!", "Neredeyse!", "Bir daha dene" ya da "Seni duyamadım".
+
+**Tanıma (`PronunciationRecognizer.swift`).** Yalnız cihazda çalışır, sunucu yok:
+- **iOS 26+:** `SpeechAnalyzer` + `DictationTranscriber`.
+  - Hazır ayar `.phrase` (kısa söz, noktalamasız). Alternatifler ve güven puanı açık.
+  - Apple'ın "Asking Permission to Use Speech Recognition" sayfası: `SpeechAnalyzer` modülleri sesi Apple sunucularına göndermez.
+  - İngilizce (ABD) modelini uygulama ilk kullanımda `AssetInventory` ile kendisi indirir: bir kez; sistem saklar, uygulama boyutu büyümez. Böylece Türkçe klavyeli telefonda da İngilizce dikte kurmak gerekmez.
+  - Mikrofon sesi `AVAudioEngine` ile alınır, `AVAudioConverter` ile analizcinin biçimine çevrilir. Hazır `AnalyzerInputConverter` ve `CaptureInputSequenceProvider` iOS 27 API'si, Xcode 26.3'te yok.
+- **iOS 17–25:** `SFSpeechRecognizer` (en-US) ve `requiresOnDeviceRecognition = true`.
+  - `supportsOnDeviceRecognition` false ise özellik çalışmaz, sunucuya düşülmez.
+  - Kullanıcıya İngilizce (ABD) klavye ekleyip Dikte'yi açması söylenir. Bu bilgi bir geliştirici forumundan (thread 731230), Apple belgesi değil.
+- Ses yalnız deneme sürerken bellekte tutulur; dosyaya yazılmaz.
+- Sayfa kapanınca, mod değişince ya da uygulama arka plana geçince kayıt iptal edilir.
+
+**İzinler (ilk "Söyle"ye basınca, o anda).**
+- **Mikrofon** (`NSMicrophoneUsageDescription`): her sürümde.
+- **Konuşma tanıma** (`NSSpeechRecognitionUsageDescription`): yalnız iOS 17–25'te istenir. iOS 26'da Apple'ın belgesine göre `SpeechAnalyzer` için gerekmiyor; Apple'ın örnekleri de yalnız mikrofon izni istiyor.
+- İki anahtar da Info.plist'te. Apple: Speech çerçevesini kullanan her uygulama eklemeli; anahtar yoksa `requestAuthorization` çöker. Metinler Türkçe (`project.yml`).
+
+**İzin reddedilirse.**
+- Mikrofon izni yoksa sistem yalnız sessizlik verir (`AVAudioApplication.requestRecordPermission` belgesi). Bu yüzden kayıttan önce izin kontrol edilir; Türkçe mesaj ve "Ayarları aç" düğmesi çıkar.
+- Konuşma tanıma reddinde de aynısı olur.
+- Ekran Süresi kısıtında yalnız bilgi mesajı çıkar.
+- Her durumda Dinle (hoparlör), kartlar ve widget'lar izinsiz de çalışır.
+
+**Kaydın bitişi (`TakeMonitor`).** Kayıt şu durumlardan biri olunca biter:
+- konuştuktan sonra yaklaşık 0,9 sn sessizlik;
+- hiç konuşma yoksa 5 sn;
+- en çok 5 sn (kelime) / 10 sn (cümle);
+- "Bitti" düğmesi.
+
+Ses eşiği (0,02 RMS) bir tahmin; cihazda ayarlanmalı.
+
+**Değerlendirme (`Packages/VocabKit/Sources/Pronunciation`).** Saf Swift; testleri `PronunciationTests`.
+- **Fark etmeyenler:**
+  - büyük-küçük harf, noktalama, aksan;
+  - kesme işareti, tire ve boşluk ("second-hand" = "secondhand", "log in" = "login");
+  - 0–99 arası rakam ya da yazı ("platform 4" = "platform four");
+  - küçük bir eş sesli listesi (write/right, for/four...);
+  - hedefin çevresindeki fazla kelimeler ("a spoon").
+- **Sonuçlar:**
+  - **Doğru:** en iyi sonuç hedefi içeriyor. Güven puanı 0,5'ten düşükse "Neredeyse" (`PronunciationCheck.lowConfidence`).
+  - **Neredeyse:** hedef yalnız alternatiflerde, ya da en az 3 kelimelik cümlenin en az %75'i duyuldu. Kaçan kelimeler yazılır.
+  - **Bir daha dene:** diğer her şey.
+  - **Seni duyamadım:** hiçbir şey tanınmadı.
+- **İpuçları:** yalnız fark tek bir kalıba tam uyunca verilir. Kelimede kartın IPA'sıyla, cümlede yazımla bakılır.
+  - **th** t/d/s/z/f/v gibi söylendi: think → sink, three → tree, birthday → bird day. IPA'da θ/ð yoksa ipucu yok ("Thomas").
+  - **w ↔ v:** wine → vine, vest → west. IPA'da o ses yoksa ipucu yok ("write"taki sessiz w).
+  - **Sondaki sesli ünsüz sertleşti:** bad → bat, dog → dock, bridge → britch ("'c' sesini 'ç' gibi"), rise → rice. IPA'nın son sesi ötümlü olmalı.
+  - **Son ses yutuldu:** asked → ask, card → car.
+  - Farklı kalıplar karışırsa ya da hiçbiri uymazsa genel mesaj çıkar: "'X' duydum. Önce hoparlör düğmesiyle dinle, sonra yavaş ve net söyle." Yanlış teşhis koymaktansa genel mesaj tercih edildi.
+- **Test beklentileri:** Swift çalıştırılmadan önce aynı mantığın Python kopyasıyla doğrulandı (36 durum).
+- **Sınır:** konuşma tanıyıcı bir telaffuz puanlayıcısı değil, en olası kelimeyi yazar.
+  - Aksanlı ama anlaşılır bir söyleyişi doğru sayabilir.
+  - Nadir bir kelimeyi doğru söylesen de başka kelime yazabilir.
+  - Hedef kelime bilerek `contextualStrings`'e verilmedi: tanıyıcıyı hedefe çeker ve kontrolü anlamsızlaştırır.
+
+**Gizlilik.**
+- Veri toplanmıyor. Apple'ın App Privacy tanımına göre cihazdan çıkmayan veri "toplanmış" sayılmaz; App Store etiketinde Audio Data "No".
+- Gizlilik manifestleri değişmedi: mikrofon ve konuşma tanıma "gerekçe istenen API" değil.
+- `docs/legal/` gizlilik politikalarına (TR/EN) "Söyle" bölümü eklendi.
+
+### Söyle: cihazda denenecekler
+
+- [ ] **İzin (iOS 26):** İlk "Söyle"de yalnız mikrofon izni sorulmalı. Konuşma tanıma izni de sorulursa ya da tanıma hep "Konuşma tanıma bu sefer çalışmadı (...)" diyorsa, parantez içindeki hatayı not al: Apple'ın belgesine göre bu izin gerekmiyor.
+- [ ] **Model indirme:**
+  - İlk kullanımda "İngilizce konuşma modeli iniyor" görünür mü, ne kadar sürer?
+  - İkinci seferde hemen başlamalı.
+  - İlk kullanım uçak modundaysa "indirilemedi" mesajı çıkmalı.
+  - Model indikten sonra uçak modunda da çalışmalı (cihaz içi).
+- [ ] **Doğru söyleyiş:** "think", "three", "breakfast", "turn on", "o'clock" ve bir örnek cümle → "Doğru!".
+- [ ] **Bilerek yanlış:**
+  - "think" yerine "sink", "wine" yerine "vine", "bad" yerine "bat", "asked" yerine "ask" de: ilgili Türkçe ipucu çıkıyor mu?
+  - Tanıyıcı bu yanlış kelimeleri gerçekten yazıyor mu? Yazmıyorsa ipucu yerine genel mesaj çıkar. Hangisinin çıktığını not al.
+- [ ] **Örnek cümle:** bir kelimeyi atla → "Neredeyse!" ve kaçan kelime.
+- [ ] **Kaydın bitişi:**
+  - Sessiz kal → 5 sn sonra "Seni duyamadım".
+  - Konuşup sus → yaklaşık 1 sn içinde kendiliğinden kontrol.
+  - Gürültülü odada kendiliğinden durmuyorsa ya da konuşurken kesiyorsa eşiği (`TakeMonitor.speechLevel`) not al.
+  - "Bitti" her zaman çalışmalı.
+- [ ] **Güven puanı:** doğru söylenen kelimelerde sık sık "Neredeyse" çıkıyorsa `PronunciationCheck.lowConfidence` (0,5) düşürülmeli.
+- [ ] **İzin reddi:** Ayarlar > Lockglow > Mikrofon'u kapat. Söyle'de Türkçe mesaj ve "Ayarları aç" çıkmalı; Dinle çalışmaya devam etmeli.
+- [ ] **Sesler birbirini bozmuyor:**
+  - Söyle'den sonra hoparlör (Dinle) normal seviyede ve sessiz modda duyuluyor (ses oturumu `.playAndRecord`'dan `.playback`'e dönüyor).
+  - Müzik çalarken Söyle → müzik kısılıp geri gelmeli.
+- [ ] **Arka plan:** kayıt sırasında uygulamayı arka plana al. Kayıt durmalı, durum çubuğundaki turuncu mikrofon noktası kaybolmalı.
+- [ ] **Kulaklık:** Bluetooth kulaklıkla telefon mikrofonu mu kulaklık mikrofonu mu kullanılıyor, tanıma çalışıyor mu? Bluetooth seçeneği bilerek eklenmedi.
+- [ ] **Düzen:** iPhone SE'de uzun kelimede ("get along with") başlık satırı (kelime, hoparlör, Söyle) taşmıyor. Sayfa orta yükseklikte rahat okunuyor.
+- [ ] **VoiceOver:** "Söyle" düğmesi okunuyor; sonuç başlığı ve mesajı birlikte okunuyor.
+
+### Söyle: bilinen belirsizlikler
+
+1. **Derlenmedi.** Aşağıdaki imzalar Apple belgesinden alındı, derleyiciyle sınanmadı:
+   - `DictationTranscriber(locale:contentHints:transcriptionOptions:reportingOptions:attributeOptions:)` ve `Preset.phrase`'in özellikleri;
+   - `run[AttributeScopes.SpeechAttributes.ConfidenceAttribute.self]` (değer tipi bilinmiyor, `Double(...)` ile çevriliyor);
+   - `AnalyzerInput(buffer:)`, `AsyncStream.makeStream`, `AVAudioApplication.shared.recordPermission`.
+   - `cancelAndFinishNow()` belgede bir yerde `async`, bir yerde `throws` görünüyor; bu yüzden hiç çağrılmıyor. Girdi akışını bitirmek yetiyor.
+2. **`AVAudioConverter` giriş bloğu** Apple'ın WWDC25 örneğindeki gibi yakalanan bir `var`'ı değiştiriyor. SDK bloğu `@Sendable` yaptıysa uyarı çıkabilir.
+3. **`installTap` bloğu** `nonisolated static` bir fonksiyonda kuruluyor. Ana aktörde kurulan kapanış ses iş parçacığında çağrılınca Swift 6 modunda çöker. Proje Swift 5 modunda; yine de ayrı tutuldu.
+4. **Tanıma kalitesi:** `.phrase` hazır ayarının tek kelimede ne kadar iyi tanıdığı, güven puanının ölçeği ve kaç alternatif geldiği bilinmiyor.
+5. **Simülatör:** mikrofon ve model güvenilir değil (Apple'ın örneği simülatörde çalışmıyor). Gerçek deneme yalnız telefonda.
+6. **Tekrar sekmesinde telaffuz turu yok** (isteğe bağlıydı). `QuizCardView` çizim testi hedefine de derlendiği için, oraya düğme eklemek `project.yml`'de o hedefe de bu dosyaları eklemeyi gerektirir.
+7. **Renkler:** tasarım önerisindeki (`docs/tasarim/`) renkler henüz uygulamada yok. Söyle düğmesi sistem stilini kullanıyor; renkler gelince ana düğme `glow` dolgu + `onGlow` yazı olmalı.

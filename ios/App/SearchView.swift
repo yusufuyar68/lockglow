@@ -84,6 +84,7 @@ struct WordDetailView: View {
                         Text(word.lemma)
                             .font(.largeTitle.bold())
                         SpeakButton(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                        SayButton(word: word, example: word.exampleEN)
                     }
                     if let ipa = word.ipaUS {
                         Text(ipa)
