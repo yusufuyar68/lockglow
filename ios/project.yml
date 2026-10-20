@@ -62,7 +62,7 @@ targets:
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         # The widget's speaker button (SpeakWordIntent, an AudioPlaybackIntent) starts speech while the
-        # app is launched in the background; the audio session cannot be activated there without this.
+        # app runs in the background; Apple: the .playback category needs this mode to play there.
         UIBackgroundModes:
           - audio
         # iPhone only, portrait only: opt out of the all-orientations rule (Xcode archive warning).

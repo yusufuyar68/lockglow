@@ -4,7 +4,8 @@ import AppIntents
 import CoreModels
 
 // Interactive buttons (iOS 17 `Button(intent:)`). Used on the home screen families only;
-// accessory (Lock Screen) widgets are not interactive while the device is locked.
+// accessory (Lock Screen) widgets could show buttons, but they do not work while the device is
+// locked, so those families have none.
 // All three buttons are icon-only with a text label for VoiceOver; meaning never depends on color.
 // Each one has a hit area of at least 44 x 44 pt.
 // Next and Know run in the widget extension (`WordActions`); the speaker button runs in the app's
@@ -55,5 +56,7 @@ struct SpeakWordButton: View {
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        // VoiceOver stays quiet while the word is being read.
+        .accessibilityAddTraits(.startsMediaSession)
     }
 }

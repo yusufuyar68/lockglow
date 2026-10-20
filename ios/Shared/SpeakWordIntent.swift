@@ -8,13 +8,18 @@ import Foundation
 /// it in the app's process, while an ordinary `AppIntent` runs in the widget extension. So this
 /// file is compiled into the app AND into the widget extension (`Shared/` in project.yml): the
 /// extension needs the type for `Button(intent:)`, the app needs it to run `perform()`. The app
-/// also declares the `audio` background mode; developers report that without it the audio session
-/// cannot be activated while the app is launched in the background (error 561015905).
+/// also declares the `audio` background mode: Apple documents that the `.playback` category needs
+/// it to play while the app is in the background (otherwise activation fails, `cannotStartPlaying`).
 ///
-/// Home screen families only: Lock Screen widgets are not interactive.
+/// Home screen families only (Lock Screen buttons would not work while the device is locked).
 struct SpeakWordIntent: AudioPlaybackIntent {
     static var title: LocalizedStringResource {
         "Kelimeyi seslendir"
+    }
+
+    /// Widget-only: not offered as a "speak any text" action in Shortcuts, Spotlight or Siri.
+    static var isDiscoverable: Bool {
+        false
     }
 
     @Parameter(title: "Okunacak metin")

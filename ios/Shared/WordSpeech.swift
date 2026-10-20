@@ -6,7 +6,7 @@ import os
 /// the device's own US English voice (offline), the best installed quality, a little slower than
 /// the default rate for an A2 learner, and a `.playback` audio session that ducks other audio.
 enum WordSpeech {
-    private static let logger = Logger(
+    static let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? "lockglow",
         category: "speech"
     )
@@ -41,7 +41,12 @@ enum WordSpeech {
     }
 
     static func deactivateSession() {
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        do {
+            try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        } catch {
+            // With audio still running the session is deactivated anyway and `isBusy` is reported.
+            logger.notice("audio session deactivation: \(error.localizedDescription, privacy: .public)")
+        }
     }
 
     private static func bestVoice() -> AVSpeechSynthesisVoice? {
@@ -91,13 +96,18 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         // If the app's own audio session cannot be activated (the system refuses it while the app
         // runs in the background), let the system manage the session for this utterance (WWDC20
         // session 10022: `usesApplicationAudioSession = false`) instead of staying silent.
-        synthesizer.usesApplicationAudioSession = WordSpeech.activateSession()
+        let appSession = WordSpeech.activateSession()
+        synthesizer.usesApplicationAudioSession = appSession
+        // For the device test: which process ran the widget intent, and which audio path it took.
+        WordSpeech.logger.notice(
+            "widget speech in \(Bundle.main.bundleIdentifier ?? "?", privacy: .public), app audio session: \(appSession, privacy: .public)"
+        )
         let utterance = WordSpeech.makeUtterance(spoken)
         let id = ObjectIdentifier(utterance)
         current = utterance
         await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             waiter = continuation
-            watchdog = Task { [weak self] in
+            watchdog = Task { @MainActor [weak self] in
                 do {
                     try await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
                 } catch {
@@ -111,6 +121,7 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
 
     private func timedOut(_ id: ObjectIdentifier) {
         guard let current, ObjectIdentifier(current) == id else { return }
+        WordSpeech.logger.notice("widget speech timed out")
         synthesizer.stopSpeaking(at: .immediate)
         end(id)
     }
@@ -121,8 +132,15 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         self.current = nil
         watchdog?.cancel()
         watchdog = nil
-        WordSpeech.deactivateSession()
-        resumeWaiter()
+        // `didFinish` can arrive while the last samples are still playing, and the app may be
+        // suspended right after the intent returns: give the end of the word a moment. A call that
+        // started meanwhile owns the session (and has already released this call's waiter).
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(nanoseconds: 250_000_000)
+            guard let self, self.current == nil else { return }
+            WordSpeech.deactivateSession()
+            self.resumeWaiter()
+        }
     }
 
     private func resumeWaiter() {
