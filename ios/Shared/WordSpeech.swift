@@ -85,16 +85,24 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         }
         // Release the call this one replaces; its cancel callback arrives with a stale utterance.
         current = nil
+        watchdog?.cancel()
         resumeWaiter()
 
-        WordSpeech.activateSession()
+        // If the app's own audio session cannot be activated (the system refuses it while the app
+        // runs in the background), let the system manage the session for this utterance (WWDC20
+        // session 10022: `usesApplicationAudioSession = false`) instead of staying silent.
+        synthesizer.usesApplicationAudioSession = WordSpeech.activateSession()
         let utterance = WordSpeech.makeUtterance(spoken)
         let id = ObjectIdentifier(utterance)
         current = utterance
         await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             waiter = continuation
             watchdog = Task { [weak self] in
-                try? await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
+                do {
+                    try await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
+                } catch {
+                    return
+                }
                 self?.timedOut(id)
             }
             synthesizer.speak(utterance)
