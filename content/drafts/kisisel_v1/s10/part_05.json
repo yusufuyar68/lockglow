@@ -1,0 +1,541 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.urgent.adj.1",
+      "lemma": "urgent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɜːrdʒənt/",
+        "uk": "/ˈɜːdʒənt/"
+      },
+      "def": {
+        "micro": "needing action very soon",
+        "short": "needing action very soon because it cannot wait",
+        "long": "Needing to be done right now, because waiting would cause a problem. We say it about emails, calls and jobs at work. 'Urgent' is not 'important': an important job matters a lot, but it can often wait."
+      },
+      "grammar": {
+        "pattern": "urgent + noun / be urgent"
+      },
+      "examples": [
+        {
+          "en": "I have an urgent email to send.",
+          "tr": "Göndermem gereken acil bir e-postam var.",
+          "register": "neutral",
+          "focus": "urgent"
+        },
+        {
+          "en": "Esra marked her message as urgent, so I read it first.",
+          "tr": "Esra mesajını acil olarak işaretledi, bu yüzden önce onu okudum.",
+          "register": "neutral",
+          "focus": "urgent"
+        },
+        {
+          "en": "Leila left the meeting early because of an urgent phone call.",
+          "tr": "Leila acil bir telefon yüzünden toplantıdan erken ayrıldı.",
+          "register": "neutral",
+          "focus": "urgent"
+        }
+      ],
+      "synonyms": [
+        "pressing"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "an urgent email",
+        "an urgent matter",
+        "an urgent call",
+        "urgent help",
+        "urgent action"
+      ],
+      "word_family": [
+        {
+          "lemma": "urgently",
+          "pos": "adv"
+        },
+        {
+          "lemma": "urgency",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'urgere', meaning to push or press. An urgent job pushes you to act now.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "acil",
+          "alt": [
+            "ivedi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Acil' hemen yapılması gereken iştir. 'Important' ise 'önemli' demektir; önemli bir iş her zaman acil değildir. 'Acil durum' ve 'acil çıkış' için 'emergency' kullanılır: emergency exit.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:important"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My boss needs this file in ten minutes. It is really ______!",
+        "answer": "urgent",
+        "distractors": [
+          "optional",
+          "friendly",
+          "relaxed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.postpone.v.1",
+      "lemma": "postpone",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/poʊstˈpoʊn/",
+        "uk": "/pəʊstˈpəʊn/"
+      },
+      "def": {
+        "micro": "move to a later time",
+        "short": "decide that something will happen at a later time",
+        "long": "To decide that something will happen at a later time, not at the planned time. It is not cancelled: it still happens, only later. We use it for meetings, trips and decisions."
+      },
+      "grammar": {
+        "pattern": "postpone + noun / -ing"
+      },
+      "examples": [
+        {
+          "en": "We have to postpone the meeting.",
+          "tr": "Toplantıyı ertelemek zorundayız.",
+          "register": "neutral",
+          "focus": "postpone"
+        },
+        {
+          "en": "Hakan postponed our meeting until next Monday.",
+          "tr": "Hakan toplantımızı gelecek pazartesiye erteledi.",
+          "register": "neutral",
+          "focus": "postponed"
+        },
+        {
+          "en": "Nina decided to postpone buying new chairs until next month.",
+          "tr": "Nina yeni sandalye almayı gelecek aya ertelemeye karar verdi.",
+          "register": "neutral",
+          "focus": "postpone"
+        }
+      ],
+      "synonyms": [
+        "put off"
+      ],
+      "antonyms": [
+        "bring forward"
+      ],
+      "collocations": [
+        "postpone a meeting",
+        "postpone a trip",
+        "postpone the decision",
+        "postpone until Monday"
+      ],
+      "word_family": [
+        {
+          "lemma": "postponement",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'postponere', meaning to put after: 'post' means after and 'ponere' means to put.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ertelemek",
+          "alt": [
+            "sonraya bırakmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Postpone' ertelemektir: etkinlik iptal edilmez, daha sonra yapılır. İptal için 'cancel' denir. Tersi, yani öne almak için 'bring forward' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "We postponed to buy new chairs.",
+              "right": "We postponed buying new chairs.",
+              "why": "Türkçede 'almayı ertelemek' deriz ve '-mayı' eki 'to buy' gibi çevrilir. Oysa 'postpone' fiilinden sonra 'to + fiil' gelmez, fiil -ing alır: postpone buying."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:cancel"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm sick today. Can we ______ our meeting until Friday, please?",
+        "answer": "postpone",
+        "distractors": [
+          "shorten",
+          "record",
+          "repeat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_in_touch.phr.1",
+      "lemma": "get in touch",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ɪn ˈtʌtʃ/",
+        "uk": "/ɡɛt ɪn ˈtʌtʃ/"
+      },
+      "def": {
+        "micro": "contact a person",
+        "short": "call, write to or message someone so that you can talk",
+        "long": "To call, write to or send a message to someone so that you can talk to them. We usually add 'with' before the person: 'get in touch with the manager'."
+      },
+      "grammar": {
+        "pattern": "get in touch (with + person)"
+      },
+      "examples": [
+        {
+          "en": "Please get in touch if you need any help.",
+          "tr": "Yardıma ihtiyacın olursa lütfen iletişime geç.",
+          "register": "neutral",
+          "focus": "get in touch"
+        },
+        {
+          "en": "Murat got in touch with the new client yesterday.",
+          "tr": "Murat dün yeni müşteriyle iletişime geçti.",
+          "register": "neutral",
+          "focus": "got in touch"
+        },
+        {
+          "en": "Elif will get in touch with you as soon as she has more information.",
+          "tr": "Elif daha fazla bilgi alır almaz seninle iletişime geçecek.",
+          "register": "neutral",
+          "focus": "get in touch"
+        }
+      ],
+      "synonyms": [
+        "contact"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "get in touch with someone",
+        "get in touch by email",
+        "get in touch by phone",
+        "get in touch soon"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iletişime geçmek",
+          "alt": [
+            "irtibata geçmek",
+            "ulaşmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kişiden önce 'with' gelir: get in touch with me. Eş anlamlı 'contact' ise 'with' almaz: contact me. 'Keep in touch' farklıdır: haberleşmeye devam etmek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The office is closed today, but you can ______ with us by email.",
+        "answer": "get in touch",
+        "distractors": [
+          "get in shape",
+          "get in trouble",
+          "get in the way"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.clock_in.phv.1",
+      "lemma": "clock in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "record your arrival at work",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/klɑːk ˈɪn/",
+        "uk": "/klɒk ˈɪn/"
+      },
+      "def": {
+        "micro": "record your arrival at work",
+        "short": "record the time you arrive at work, with a card or an app",
+        "long": "To record the time you arrive at work, with a card, a machine or an app. Many companies use it to count how many hours people work. When you leave, you do the opposite: 'clock out'."
+      },
+      "grammar": {
+        "pattern": "clock in (at + time)"
+      },
+      "examples": [
+        {
+          "en": "I clock in at nine every morning.",
+          "tr": "Her sabah dokuzda kart basıyorum.",
+          "register": "neutral",
+          "focus": "clock in"
+        },
+        {
+          "en": "Murat forgot to clock in this morning.",
+          "tr": "Murat bu sabah kart basmayı unuttu.",
+          "register": "neutral",
+          "focus": "clock in"
+        },
+        {
+          "en": "Esra clocked in at eight and went straight to her desk.",
+          "tr": "Esra sekizde kart basıp doğruca masasına gitti.",
+          "register": "neutral",
+          "focus": "clocked in"
+        }
+      ],
+      "synonyms": [
+        "punch in"
+      ],
+      "antonyms": [
+        "clock out"
+      ],
+      "collocations": [
+        "clock in at nine",
+        "clock in late",
+        "clock in on time",
+        "clock in and out"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kart basmak",
+          "alt": [
+            "kart okutmak",
+            "mesaiye giriş yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'kart basmak' ya da 'mesaiye giriş yapmak' denir. Çıkarken 'clock out' kullanılır. Bu fiil nesne almaz; kartı söylemek için 'with' eklenir: clock in with my card.",
+          "mistakes": [],
+          "mnemonic": "Clock 'saat' demektir. İşe gelince çalışma saatinin başladığını kaydedersin."
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "phrasal_verbs",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I arrive at work in the morning, I ______ with my card.",
+        "answer": "clock in",
+        "distractors": [
+          "clock out",
+          "log off",
+          "hand over"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.out_of_the_office.phr.1",
+      "lemma": "out of the office",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "away from work",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aʊt əv ði ˈɔːfɪs/",
+        "uk": "/aʊt əv ði ˈɒfɪs/"
+      },
+      "def": {
+        "micro": "away from work",
+        "short": "away from your place of work for a time",
+        "long": "Away from your place of work for a time, for example on holiday or on a trip. An automatic email that says this is often called an 'out-of-office' reply."
+      },
+      "grammar": {
+        "pattern": "be out of the office"
+      },
+      "examples": [
+        {
+          "en": "I'm out of the office until Monday.",
+          "tr": "Pazartesiye kadar ofiste değilim.",
+          "register": "neutral",
+          "focus": "out of the office"
+        },
+        {
+          "en": "Hakan is out of the office this week, so please call Leila.",
+          "tr": "Hakan bu hafta ofiste değil, o yüzden lütfen Leila'yı ara.",
+          "register": "neutral",
+          "focus": "out of the office"
+        },
+        {
+          "en": "Sofia will be out of the office next week, so she set up an automatic email reply.",
+          "tr": "Sofia gelecek hafta ofis dışında olacak, bu yüzden otomatik e-posta yanıtı ayarladı.",
+          "register": "neutral",
+          "focus": "out of the office"
+        }
+      ],
+      "synonyms": [
+        "away"
+      ],
+      "antonyms": [
+        "in the office"
+      ],
+      "collocations": [
+        "out-of-office reply",
+        "out-of-office message",
+        "out of the office today",
+        "out of the office this week"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ofis dışında",
+          "alt": [
+            "ofiste değil",
+            "izinde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Cümlede 'the' ile kullanılır: I'm out of the office. Otomatik e-posta yanıtının adı 'Out of Office' ya da 'out-of-office reply' olur. 'İzinde' yalnızca izni anlatır; İngilizce ifade iş gezisi için de kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hakan is ______ until Friday, so he can't answer your email today.",
+        "answer": "out of the office",
+        "distractors": [
+          "out of order",
+          "out of breath",
+          "out of stock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

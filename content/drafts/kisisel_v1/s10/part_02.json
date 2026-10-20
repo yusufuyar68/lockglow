@@ -1,0 +1,1060 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.print_out.phv.1",
+      "lemma": "print out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make a paper copy",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪnt ˈaʊt/",
+        "uk": "/prɪnt ˈaʊt/"
+      },
+      "def": {
+        "micro": "make a paper copy of a file",
+        "short": "make a paper copy of a document that is on your computer",
+        "long": "To make a paper copy of a document, a ticket or an email that is on your computer or phone. You can say 'print out the file' or 'print it out'."
+      },
+      "grammar": {
+        "pattern": "print sth out / print out sth (print it out)"
+      },
+      "examples": [
+        {
+          "en": "Can you print out this page for me?",
+          "tr": "Bu sayfanın çıktısını benim için alabilir misin?",
+          "register": "neutral",
+          "focus": "print out"
+        },
+        {
+          "en": "Sara printed out the slides before the meeting.",
+          "tr": "Sara toplantıdan önce slaytların çıktısını aldı.",
+          "register": "neutral",
+          "focus": "printed out"
+        },
+        {
+          "en": "Zeynep needs the form on paper, so I'll print it out.",
+          "tr": "Zeynep'e formun kâğıt hâli lazım, ben de çıktısını alırım.",
+          "register": "neutral",
+          "focus": "print it out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "print out a document",
+        "print out a ticket",
+        "print out a copy",
+        "print out the report"
+      ],
+      "word_family": [
+        {
+          "lemma": "printout",
+          "pos": "n"
+        },
+        {
+          "lemma": "printer",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çıktı almak",
+          "alt": [
+            "yazdırmak",
+            "çıktısını almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'çıktı almak' ya da 'yazdırmak' denir. 'Print out' ayrılabilir: 'print the file out' ya da 'print it out' olur. 'It' gibi zamir ortada durur; 'print out it' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need a paper copy. Can you ______ this form for me?",
+        "answer": "print out",
+        "distractors": [
+          "plug in",
+          "dress up",
+          "warm up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.customer.n.1",
+      "lemma": "customer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌstəmər/",
+        "uk": "/ˈkʌstəmə/"
+      },
+      "def": {
+        "micro": "someone who buys things",
+        "short": "a person who buys things or services from a shop or company",
+        "long": "A person who buys things or services from a shop, a restaurant or a company. A company wants happy customers, so it tries to give them good service."
+      },
+      "examples": [
+        {
+          "en": "Our first customer arrives at nine.",
+          "tr": "İlk müşterimiz dokuzda geliyor.",
+          "register": "neutral",
+          "focus": "customer"
+        },
+        {
+          "en": "Jonas works at a bank and helps customers every day.",
+          "tr": "Jonas bir bankada çalışıyor ve her gün müşterilere yardım ediyor.",
+          "register": "neutral",
+          "focus": "customers"
+        },
+        {
+          "en": "Dina is a regular customer, so the owner knows her name.",
+          "tr": "Dina devamlı müşteri olduğu için dükkân sahibi onun adını biliyor.",
+          "register": "neutral",
+          "focus": "customer"
+        }
+      ],
+      "synonyms": [
+        "client",
+        "buyer"
+      ],
+      "antonyms": [
+        "seller"
+      ],
+      "collocations": [
+        "regular customer",
+        "customer service",
+        "new customer",
+        "serve a customer",
+        "happy customer"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From 'custom', which comes from a Latin word for 'habit'. In the 1400s, a customer was a person who often bought from the same seller.",
+        "origin": "Old French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "müşteri",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Müşteri' mağaza, restoran ve banka için de olur. Avukat ya da danışman gibi uzman hizmeti alan kişiye çoğunlukla 'client' denir.",
+          "mistakes": [],
+          "mnemonic": "Custom = gelenek, alışkanlık. Eskiden 'customer', aynı dükkândan alışkanlıkla alışveriş yapan kişiydi."
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "business_management",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This new bakery is very popular. It gets a lot of ______ every morning.",
+        "answer": "customers",
+        "distractors": [
+          "patients",
+          "players",
+          "readers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_a_meeting.phr.1",
+      "lemma": "in a meeting",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ə ˈmiːtɪŋ/",
+        "uk": "/ɪn ə ˈmiːtɪŋ/"
+      },
+      "def": {
+        "micro": "busy with a group at work",
+        "short": "busy because you are at a planned talk with other people at work",
+        "long": "Busy because you are at a planned talk with other people, at work or online. You say it when you cannot answer a call or come and talk: 'Sorry, she's in a meeting.'"
+      },
+      "grammar": {
+        "pattern": "be in a meeting"
+      },
+      "examples": [
+        {
+          "en": "Sorry, Mehmet is in a meeting right now.",
+          "tr": "Kusura bakmayın, Mehmet şu anda toplantıda.",
+          "register": "neutral",
+          "focus": "in a meeting"
+        },
+        {
+          "en": "I'm in a meeting until three. I'll text you after that.",
+          "tr": "Üçe kadar toplantıdayım. Sonra sana mesaj atarım.",
+          "register": "neutral",
+          "focus": "in a meeting"
+        },
+        {
+          "en": "Raj was in a meeting all morning and missed your call.",
+          "tr": "Raj bütün sabah toplantıdaydı ve aramanı kaçırdı.",
+          "register": "neutral",
+          "focus": "in a meeting"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in a meeting right now",
+        "in a meeting all day",
+        "in a meeting with a client"
+      ],
+      "word_family": [
+        {
+          "lemma": "meeting",
+          "pos": "n"
+        },
+        {
+          "lemma": "meet",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "toplantıda olmak",
+          "alt": [
+            "toplantıda",
+            "görüşmede"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Toplantıdayım' = 'I'm in a meeting'. Bu söz 'şu anda meşgulüm, konuşamam' demenin kibar yoludur. 'Toplantıya gitmek' için 'go to a meeting' denir.",
+          "mistakes": [
+            {
+              "wrong": "I'm in meeting now.",
+              "right": "I'm in a meeting now.",
+              "why": "Türkçede 'bir' gibi bir sözcük gerekmez ('toplantıdayım'); bu yüzden 'a' atlanıp 'in meeting' denir. İngilizcede 'a meeting' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please call later. Zeynep is ______ with the team about the new plan.",
+        "answer": "in a meeting",
+        "distractors": [
+          "in a queue",
+          "in a taxi",
+          "in a bakery"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.apply_for_a_job.phr.1",
+      "lemma": "apply for a job",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˌplaɪ fər ə ˈdʒɑːb/",
+        "uk": "/əˌplaɪ fər ə ˈdʒɒb/"
+      },
+      "def": {
+        "micro": "ask a company for work",
+        "short": "ask a company in a formal way to give you work",
+        "long": "To ask a company in a formal way to give you work, usually by sending a CV or filling in a form. The company may then ask you to come for an interview."
+      },
+      "grammar": {
+        "pattern": "apply for + job / apply to + company"
+      },
+      "examples": [
+        {
+          "en": "I want to apply for a job at a hotel.",
+          "tr": "Bir otelde işe başvurmak istiyorum.",
+          "register": "neutral",
+          "focus": "apply for a job"
+        },
+        {
+          "en": "Elif applied for a job at a school last week.",
+          "tr": "Elif geçen hafta bir okulda işe başvurdu.",
+          "register": "neutral",
+          "focus": "applied for a job"
+        },
+        {
+          "en": "Raj is applying for a job in another city.",
+          "tr": "Raj başka bir şehirde işe başvuruyor.",
+          "register": "neutral",
+          "focus": "applying for a job"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "apply for a new job",
+        "apply for a job online"
+      ],
+      "word_family": [
+        {
+          "lemma": "apply",
+          "pos": "v"
+        },
+        {
+          "lemma": "application",
+          "pos": "n"
+        },
+        {
+          "lemma": "applicant",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "işe başvurmak",
+          "alt": [
+            "iş başvurusu yapmak",
+            "iş için başvurmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'işe başvurmak' kalıbı akla 'to' getirebilir. İngilizcede iş için genellikle 'for' gelir: apply for a job. Şirket ya da okul için 'to' gelir: apply to a company. ABD'de 'apply to a job' da duyulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet has no work now. He wants to ______ at the new bakery.",
+        "answer": "apply for a job",
+        "distractors": [
+          "quit a job",
+          "lose a job",
+          "keep a job"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.attachment.n.1",
+      "lemma": "attachment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "file sent with email",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈtætʃmənt/",
+        "uk": "/əˈtætʃmənt/"
+      },
+      "def": {
+        "micro": "a file sent with an email",
+        "short": "a file, such as a photo or a document, that you send together with an email",
+        "long": "A file, such as a photo, a form or a document, that you send together with an email message. The person who gets the email can open it or save it on their computer."
+      },
+      "examples": [
+        {
+          "en": "I sent you the report as an attachment.",
+          "tr": "Raporu sana ek olarak gönderdim.",
+          "register": "neutral",
+          "focus": "attachment"
+        },
+        {
+          "en": "Please open the attachment and check the dates.",
+          "tr": "Lütfen eki açın ve tarihleri kontrol edin.",
+          "register": "neutral",
+          "focus": "attachment"
+        },
+        {
+          "en": "Mehmet forgot the attachment, so he sent a second email.",
+          "tr": "Mehmet eki unuttu, bu yüzden ikinci bir e-posta gönderdi.",
+          "register": "neutral",
+          "focus": "attachment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "open an attachment",
+        "send an attachment",
+        "email attachment",
+        "add an attachment",
+        "see the attachment"
+      ],
+      "word_family": [
+        {
+          "lemma": "attach",
+          "pos": "v"
+        },
+        {
+          "lemma": "attached",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ek dosya",
+          "alt": [
+            "ek",
+            "e-posta eki"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "E-postaya eklenen dosyaya 'ek' denir. 'Attachment' isimdir; 'attached' sıfattır: 'Please see the attached file.' (Ekteki dosyaya bakın.)",
+          "mistakes": [
+            {
+              "wrong": "The file is in attachment.",
+              "right": "The file is attached.",
+              "why": "Türkçede 'Dosya ekte' denir ve '-te' eki 'in' diye çevrilir. İngilizcede 'The file is attached.' denir; gönderirken 'as an attachment' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I added my CV to the email. Please open the ______ to read it.",
+        "answer": "attachment",
+        "distractors": [
+          "subject",
+          "signature",
+          "greeting"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_over.phv.1",
+      "lemma": "take over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "start doing someone's job",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ˈoʊvər/",
+        "uk": "/teɪk ˈəʊvə/"
+      },
+      "def": {
+        "micro": "start doing someone's job",
+        "short": "begin to do a job or be in charge after someone else has stopped",
+        "long": "To begin to do a job, or to be in charge of something, after another person has stopped. You can say who you take over from: 'Sara took over from Mehmet when he left.'"
+      },
+      "grammar": {
+        "pattern": "take over sth / take sth over (from sb)"
+      },
+      "examples": [
+        {
+          "en": "Who will take over when Sara leaves?",
+          "tr": "Sara ayrılınca kim devralacak?",
+          "register": "neutral",
+          "focus": "take over"
+        },
+        {
+          "en": "Jonas took over the project from Dina last month.",
+          "tr": "Jonas geçen ay projeyi Dina'dan devraldı.",
+          "register": "neutral",
+          "focus": "took over"
+        },
+        {
+          "en": "Maria is going on holiday, so Zeynep will take over her tasks next week.",
+          "tr": "Maria tatile çıkıyor, bu yüzden Zeynep gelecek hafta onun işlerini devralacak.",
+          "register": "neutral",
+          "focus": "take over"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take over from someone",
+        "take over the project",
+        "take over a business",
+        "take over a job"
+      ],
+      "word_family": [
+        {
+          "lemma": "takeover",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "devralmak",
+          "alt": [
+            "işi devralmak",
+            "yerine geçmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Devralmak' çoğu zaman bir işi ya da sorumluluğu başkasından almaktır. İngilizcede kimden devraldığını 'from' ile söylersin: take over from Sara.",
+          "mistakes": [],
+          "mnemonic": "'Over' üstünde demektir. İşi 'üzerine almak' gibi düşün: take over."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif is on holiday, so Mehmet will ______ her work this week.",
+        "answer": "take over",
+        "distractors": [
+          "take off",
+          "take out",
+          "hang up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.be_in_charge_of.phr.1",
+      "lemma": "be in charge of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bi ɪn ˈtʃɑːrdʒ əv/",
+        "uk": "/bi ɪn ˈtʃɑːdʒ əv/"
+      },
+      "def": {
+        "micro": "have control of something",
+        "short": "be the person who controls or looks after something or someone",
+        "long": "To be the person who controls something or looks after people, a job or a place. The person in charge decides what to do and is responsible if something goes wrong."
+      },
+      "grammar": {
+        "pattern": "be in charge of + noun / -ing"
+      },
+      "examples": [
+        {
+          "en": "Who is in charge of this project?",
+          "tr": "Bu projeden kim sorumlu?",
+          "register": "neutral",
+          "focus": "is in charge of"
+        },
+        {
+          "en": "Mehmet was in charge of the shop while his father was away.",
+          "tr": "Babası yokken Mehmet dükkândan sorumluydu.",
+          "register": "neutral",
+          "focus": "was in charge of"
+        },
+        {
+          "en": "Ayşe is in charge of ordering lunch for the team.",
+          "tr": "Ayşe ekibin öğle yemeğini sipariş etmekten sorumlu.",
+          "register": "neutral",
+          "focus": "is in charge of"
+        }
+      ],
+      "synonyms": [
+        "responsible for"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in charge of a team",
+        "in charge of the budget",
+        "put someone in charge of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sorumlu olmak",
+          "alt": [
+            "başında olmak",
+            "yönetmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kalıp 'sorumlu olmak' demektir, ama 'başında olmak, yönetmek' anlamı daha güçlüdür. Türkçedeki '-den sorumlu' kalıbında '-den' yerine 'of' gelir: in charge of the shop.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Daniel ______ the kitchen, so the cooks ask him before they start.",
+        "answer": "is in charge of",
+        "distractors": [
+          "is afraid of",
+          "is tired of",
+          "is in front of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reply.v.1",
+      "lemma": "reply",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "answer a message",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈplaɪ/",
+        "uk": "/rɪˈplaɪ/"
+      },
+      "def": {
+        "micro": "say or write an answer",
+        "short": "say or write something back when someone sends you a message",
+        "long": "To say or write something back when someone sends you a message, an email or a question. You reply to a person or to a message: 'Please reply to my email.'"
+      },
+      "grammar": {
+        "pattern": "reply to + message / person"
+      },
+      "examples": [
+        {
+          "en": "Please reply to my email today.",
+          "tr": "Lütfen bugün e-postama cevap ver.",
+          "register": "neutral",
+          "focus": "reply"
+        },
+        {
+          "en": "Dina replied to the message five minutes later.",
+          "tr": "Dina mesaja beş dakika sonra cevap verdi.",
+          "register": "neutral",
+          "focus": "replied to"
+        },
+        {
+          "en": "Raj didn't reply, so I called him.",
+          "tr": "Raj cevap vermedi, ben de onu aradım.",
+          "register": "neutral",
+          "focus": "reply"
+        }
+      ],
+      "synonyms": [
+        "respond",
+        "answer"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "reply to an email",
+        "reply to a message",
+        "reply to a text",
+        "reply all"
+      ],
+      "word_family": [
+        {
+          "lemma": "reply",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "cevap vermek",
+          "alt": [
+            "yanıt vermek",
+            "yanıtlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'e-postaya cevap vermek' denir; İngilizcede 'reply' fiilinden sonra 'to' gelir: reply to an email. 'Answer' ise doğrudan nesne alır: answer an email.",
+          "mistakes": [
+            {
+              "wrong": "Please reply me soon.",
+              "right": "Please reply to me soon.",
+              "why": "Türkçede 'bana cevap ver' denir; 'bana' tek sözcük olduğu için 'me' diye çevrilir ve 'to' atlanır. İngilizcede 'reply to me' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Jonas sent me an email. I will ______ to it after lunch.",
+        "answer": "reply",
+        "distractors": [
+          "listen",
+          "talk",
+          "belong"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cv.n.1",
+      "lemma": "CV",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsiː ˈviː/",
+        "uk": "/ˌsiː ˈviː/"
+      },
+      "def": {
+        "micro": "your work and school history",
+        "short": "a short paper or file that lists your school, jobs and skills",
+        "long": "A short paper or file that lists your school, your jobs and your skills. You send it to a company when you want a job. In American English it is usually called a résumé."
+      },
+      "examples": [
+        {
+          "en": "Please send me your CV by Friday.",
+          "tr": "Lütfen CV'nizi cumaya kadar bana gönderin.",
+          "register": "neutral",
+          "focus": "CV"
+        },
+        {
+          "en": "Mehmet updated his CV before the interview.",
+          "tr": "Mehmet mülakattan önce CV'sini güncelledi.",
+          "register": "neutral",
+          "focus": "CV"
+        },
+        {
+          "en": "Sara needs help writing her first CV.",
+          "tr": "Sara'nın ilk CV'sini yazmak için yardıma ihtiyacı var.",
+          "register": "neutral",
+          "focus": "CV"
+        }
+      ],
+      "synonyms": [
+        "résumé"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "send your CV",
+        "update your CV",
+        "write a CV",
+        "attach a CV"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Short for the Latin phrase 'curriculum vitae', which means 'the course of a life'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "CV, özgeçmiş",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede de 'CV' denir; resmî adı özgeçmiştir. Amerikan İngilizcesinde çoğunlukla 'résumé' kullanılır. Okunuşu 'si-vi' olur, 'ce-ve' olmaz.",
+          "mistakes": [],
+          "mnemonic": "CV = Latince 'curriculum vitae', yani 'hayat yolu'. Kısa bir hayat hikâyesi gibi düşün."
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kerem is looking for a new job, so he is updating his ______ tonight.",
+        "answer": "CV",
+        "distractors": [
+          "passport",
+          "recipe",
+          "invoice"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.look_into.phv.1",
+      "lemma": "look into",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "find out the facts",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlʊk ɪntu/",
+        "uk": "/ˈlʊk ɪntə/"
+      },
+      "def": {
+        "micro": "try to find out the facts",
+        "short": "try to find out the facts about a problem, a question or a complaint",
+        "long": "To try to find out the facts about a problem or a question, so that you can understand it or fix it. A company often says it will look into a complaint."
+      },
+      "grammar": {
+        "pattern": "look into + problem / question"
+      },
+      "examples": [
+        {
+          "en": "I'll look into the problem and call you back.",
+          "tr": "Sorunu araştırıp seni geri arayacağım.",
+          "register": "neutral",
+          "focus": "look into"
+        },
+        {
+          "en": "Kenji is looking into why the report is late.",
+          "tr": "Kenji raporun neden geciktiğini araştırıyor.",
+          "register": "neutral",
+          "focus": "looking into"
+        },
+        {
+          "en": "The bank promised to look into my complaint.",
+          "tr": "Banka şikâyetimi inceleyeceğine söz verdi.",
+          "register": "neutral",
+          "focus": "look into"
+        }
+      ],
+      "synonyms": [
+        "investigate"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "look into a problem",
+        "look into a complaint",
+        "look into the matter",
+        "look into the cause"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "araştırmak",
+          "alt": [
+            "incelemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir sorunun ya da şikâyetin gerçeğini araştırmaktır. 'Look at' sadece bakmak demektir. Zamir sonda kalır: look into it; 'look it into' denmez.",
+          "mistakes": [],
+          "mnemonic": "'Into' içine demektir. Bir sorunun içine bakarsın: look into."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A customer says her order is missing. Raj will ______ it and call her tomorrow.",
+        "answer": "look into",
+        "distractors": [
+          "run into",
+          "turn into",
+          "count on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

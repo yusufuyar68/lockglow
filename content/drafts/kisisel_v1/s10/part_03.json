@@ -1,0 +1,1071 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.cancel.v.1",
+      "lemma": "cancel",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkænsəl/",
+        "uk": "/ˈkænsəl/"
+      },
+      "def": {
+        "micro": "stop a plan completely",
+        "short": "decide that something you planned will not happen at all",
+        "long": "To decide that something you planned will not happen at all, such as a meeting, a class or an order. If you only change the day or the time, you do not cancel it; you move it."
+      },
+      "grammar": {
+        "pattern": "cancel + meeting / class / order"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I have to cancel our meeting.",
+          "tr": "Üzgünüm, toplantımızı iptal etmem gerekiyor.",
+          "register": "neutral",
+          "focus": "cancel"
+        },
+        {
+          "en": "Elif canceled her English class because she was ill.",
+          "tr": "Elif hasta olduğu için İngilizce dersini iptal etti.",
+          "register": "neutral",
+          "focus": "canceled"
+        },
+        {
+          "en": "You can cancel your order for free within one hour.",
+          "tr": "Siparişinizi bir saat içinde ücretsiz iptal edebilirsiniz.",
+          "register": "neutral",
+          "focus": "cancel"
+        }
+      ],
+      "synonyms": [
+        "call off"
+      ],
+      "antonyms": [
+        "confirm"
+      ],
+      "collocations": [
+        "cancel a meeting",
+        "cancel a class",
+        "cancel an order",
+        "cancel a flight",
+        "cancel a booking"
+      ],
+      "word_family": [
+        {
+          "lemma": "cancellation",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'cancellare', meaning to cross out with lines that look like a lattice. People first used it for crossing out written words.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "iptal etmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Cancel' bir planı tamamen kaldırır. Planı başka bir güne almak için 'postpone' (ertelemek) denir. İngiliz İngilizcesinde 'cancelled' (iki l), Amerikan İngilizcesinde 'canceled' yazılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:postpone"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The teacher is ill, so the school will ______ today's class.",
+        "answer": "cancel",
+        "distractors": [
+          "repair",
+          "translate",
+          "borrow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.call_in_sick.phr.1",
+      "lemma": "call in sick",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔːl ɪn ˈsɪk/",
+        "uk": "/kɔːl ɪn ˈsɪk/"
+      },
+      "def": {
+        "micro": "say you are too ill to work",
+        "short": "tell your workplace by phone or message that you are ill and cannot come",
+        "long": "To tell your workplace by phone or message that you are ill and cannot come to work today. People usually do it early in the morning, before work starts."
+      },
+      "grammar": {
+        "pattern": "call in sick"
+      },
+      "examples": [
+        {
+          "en": "Emma called in sick this morning.",
+          "tr": "Emma bu sabah iş yerine hasta olduğunu bildirdi.",
+          "register": "neutral",
+          "focus": "called in sick"
+        },
+        {
+          "en": "Burak has a fever, so he will call in sick today.",
+          "tr": "Burak'ın ateşi var, bu yüzden bugün iş yerine hasta olduğunu bildirecek.",
+          "register": "neutral",
+          "focus": "call in sick"
+        },
+        {
+          "en": "Yuki forgot to call in sick, so her boss was worried.",
+          "tr": "Yuki hasta olduğunu bildirmeyi unuttu, bu yüzden patronu endişelendi.",
+          "register": "neutral",
+          "focus": "call in sick"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "call in sick today",
+        "call in sick to work"
+      ],
+      "word_family": [
+        {
+          "lemma": "sick",
+          "pos": "adj"
+        },
+        {
+          "lemma": "sick day",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hasta olduğunu bildirmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kalıp doktor raporunu anlatmaz; iş yerini arayıp ya da mesaj atıp o gün hasta olduğunuzu söylemektir. Hastalık nedeniyle alınan izne 'sick leave' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Pedro woke up with a sore throat and a headache, so he decided to ______.",
+        "answer": "call in sick",
+        "distractors": [
+          "work late",
+          "come in early",
+          "stay out late"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hire.v.1",
+      "lemma": "hire",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give sb a job",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haɪr/",
+        "uk": "/haɪə/"
+      },
+      "def": {
+        "micro": "give someone a job",
+        "short": "give a person a job in your company or team",
+        "long": "To give someone a job in your company or team. A company can hire new people when it needs more workers; the person then becomes one of its employees."
+      },
+      "grammar": {
+        "pattern": "hire + person"
+      },
+      "examples": [
+        {
+          "en": "The shop wants to hire two new workers.",
+          "tr": "Dükkân iki yeni çalışan işe almak istiyor.",
+          "register": "neutral",
+          "focus": "hire"
+        },
+        {
+          "en": "Selin hired a new assistant last month.",
+          "tr": "Selin geçen ay yeni bir asistan işe aldı.",
+          "register": "neutral",
+          "focus": "hired"
+        },
+        {
+          "en": "They hired Pedro as a designer after the interview.",
+          "tr": "Mülakattan sonra Pedro'yu tasarımcı olarak işe aldılar.",
+          "register": "neutral",
+          "focus": "hired"
+        }
+      ],
+      "synonyms": [
+        "employ"
+      ],
+      "antonyms": [
+        "fire"
+      ],
+      "collocations": [
+        "hire new staff",
+        "hire a worker",
+        "hire and fire"
+      ],
+      "word_family": [
+        {
+          "lemma": "rehire",
+          "pos": "v"
+        },
+        {
+          "lemma": "hiring",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'hyrian', to hire. It comes from the noun 'hyr', which meant pay for work.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "işe almak",
+          "alt": [
+            "istihdam etmek",
+            "eleman almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Hire' bu kartta birini işe almaktır; işveren çıkarırsa 'fire', kişi kendisi ayrılırsa 'resign' denir. İngiliz İngilizcesinde 'hire a car' (araba kiralamak) gibi kullanımlarda 'kiralamak' anlamına da gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:employ"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The shop is very busy, so the owner wants to ______ two more workers.",
+        "answer": "hire",
+        "distractors": [
+          "fire",
+          "sell",
+          "visit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.point_out.phv.1",
+      "lemma": "point out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "tell sb a fact or mistake",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pɔɪnt ˈaʊt/",
+        "uk": "/pɔɪnt ˈaʊt/"
+      },
+      "def": {
+        "micro": "make someone notice a fact",
+        "short": "tell someone about a fact or mistake that they did not notice",
+        "long": "To tell someone about a fact or a mistake that they did not notice before. You can use it to help, for example in a meeting: 'Can I point out one problem?'"
+      },
+      "grammar": {
+        "pattern": "point sth out / point out sth (point it out)"
+      },
+      "examples": [
+        {
+          "en": "Can I point out a small mistake?",
+          "tr": "Küçük bir hataya dikkat çekebilir miyim?",
+          "register": "neutral",
+          "focus": "point out"
+        },
+        {
+          "en": "Mehmet pointed out that the price was too high.",
+          "tr": "Mehmet fiyatın çok yüksek olduğuna dikkat çekti.",
+          "register": "neutral",
+          "focus": "pointed out"
+        },
+        {
+          "en": "There was a mistake in the report, and Selin pointed it out.",
+          "tr": "Raporda bir hata vardı ve Selin buna dikkat çekti.",
+          "register": "neutral",
+          "focus": "pointed it out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "point out a mistake",
+        "point out a problem",
+        "point out the difference",
+        "point out that"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dikkat çekmek",
+          "alt": [
+            "belirtmek",
+            "fark ettirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Point out' sadece 'göstermek' değildir: birinin fark etmediği bir şeyi ona söylemektir. Elinizle bir yeri göstermek için 'point at' ya da 'point to' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Yuki read the whole report and ______ two small mistakes.",
+        "answer": "pointed out",
+        "distractors": [
+          "put away",
+          "dropped off",
+          "sold out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.as_soon_as_possible.phr.1",
+      "lemma": "as soon as possible",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əz ˈsuːn əz ˈpɑːsəbəl/",
+        "uk": "/əz ˈsuːn əz ˈpɒsəbəl/"
+      },
+      "def": {
+        "micro": "at the first chance you have",
+        "short": "very quickly, at the first chance you have",
+        "long": "It means very quickly, at the first chance you have. People often use it in emails and messages at work, and the short form is ASAP."
+      },
+      "grammar": {
+        "pattern": "please + verb + as soon as possible"
+      },
+      "examples": [
+        {
+          "en": "Please reply as soon as possible.",
+          "tr": "Lütfen en kısa sürede cevap verin.",
+          "register": "neutral",
+          "focus": "as soon as possible"
+        },
+        {
+          "en": "Ali, I need your answer as soon as possible.",
+          "tr": "Ali, cevabına en kısa sürede ihtiyacım var.",
+          "register": "neutral",
+          "focus": "as soon as possible"
+        },
+        {
+          "en": "Yuki will send the file as soon as possible.",
+          "tr": "Yuki dosyayı en kısa sürede gönderecek.",
+          "register": "neutral",
+          "focus": "as soon as possible"
+        }
+      ],
+      "synonyms": [
+        "ASAP"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "call you as soon as possible",
+        "reply as soon as possible"
+      ],
+      "word_family": [
+        {
+          "lemma": "soon",
+          "pos": "adv"
+        },
+        {
+          "lemma": "possible",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "en kısa sürede",
+          "alt": [
+            "bir an önce",
+            "en kısa zamanda"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yazışmalarda kısaltması 'ASAP' çok kullanılır. Sert duyulmasın diye 'please' ekleyin. İş e-postalarında 'by Friday' gibi bir gün belirtmek de nazik olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The client is waiting, so I will call him ______.",
+        "answer": "as soon as possible",
+        "distractors": [
+          "as late as I can",
+          "as far as I can",
+          "as hard as I can"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.resign.v.1",
+      "lemma": "resign",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈzaɪn/",
+        "uk": "/rɪˈzaɪn/"
+      },
+      "def": {
+        "micro": "leave your job by choice",
+        "short": "tell your boss that you are leaving your job",
+        "long": "To tell your boss that you are leaving your job, often in a letter or an email. It is your own choice; if the company ends your job, you do not resign."
+      },
+      "grammar": {
+        "pattern": "resign (from + a job)"
+      },
+      "examples": [
+        {
+          "en": "Pedro resigned from his job last week.",
+          "tr": "Pedro geçen hafta işinden istifa etti.",
+          "register": "neutral",
+          "focus": "resigned"
+        },
+        {
+          "en": "I want to resign, but I don't have another job yet.",
+          "tr": "İstifa etmek istiyorum ama henüz başka bir işim yok.",
+          "register": "neutral",
+          "focus": "resign"
+        },
+        {
+          "en": "Emma resigned as team leader after five years.",
+          "tr": "Emma beş yıl sonra ekip liderliğinden istifa etti.",
+          "register": "neutral",
+          "focus": "resigned"
+        }
+      ],
+      "synonyms": [
+        "quit"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "resign from a job",
+        "resign as manager",
+        "resign from the company",
+        "threaten to resign"
+      ],
+      "word_family": [
+        {
+          "lemma": "resignation",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'resignare', which could mean to unseal, to cancel or to give up. It came into English through French.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "istifa etmek",
+          "alt": [
+            "işten ayrılmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Resign' kişinin kendi isteğiyle ayrılmasıdır. İşveren çıkarıyorsa 'be fired' ya da 'be laid off' denir. 'Quit' günlük konuşmada daha sık duyulur; 'resign' daha resmîdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Burak found a better job, so he ______ from his old one.",
+        "answer": "resigned",
+        "distractors": [
+          "graduated",
+          "recovered",
+          "arrived"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.part_time.adj.1",
+      "lemma": "part-time",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "as in 'a part-time job'",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌpɑːrt ˈtaɪm/",
+        "uk": "/ˌpɑːt ˈtaɪm/"
+      },
+      "def": {
+        "micro": "with fewer hours than usual",
+        "short": "for only some hours of the normal working day or week",
+        "long": "Describing a job or work that takes fewer hours than a normal full week. A part-time worker may work only in the mornings, or two or three days a week."
+      },
+      "grammar": {
+        "pattern": "part-time + job / worker / student"
+      },
+      "examples": [
+        {
+          "en": "I have a part-time job in a café.",
+          "tr": "Bir kafede yarı zamanlı bir işim var.",
+          "register": "neutral",
+          "focus": "part-time"
+        },
+        {
+          "en": "Yuki's part-time job at the bookshop ends at two.",
+          "tr": "Yuki'nin kitapçıdaki yarı zamanlı işi saat ikide bitiyor.",
+          "register": "neutral",
+          "focus": "part-time"
+        },
+        {
+          "en": "Burak wants a part-time job because he is still a student.",
+          "tr": "Burak hâlâ öğrenci olduğu için yarı zamanlı bir iş istiyor.",
+          "register": "neutral",
+          "focus": "part-time"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "full-time"
+      ],
+      "collocations": [
+        "part-time job",
+        "part-time worker",
+        "part-time student",
+        "part-time work",
+        "part-time course"
+      ],
+      "word_family": [
+        {
+          "lemma": "full-time",
+          "pos": "adj"
+        },
+        {
+          "lemma": "part-timer",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yarı zamanlı",
+          "alt": [
+            "kısmi zamanlı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Part-time' işlerde çalışma saatleri azdır; tam gün çalışmaya 'full-time' denir. Tire ile yazılır. 'I work part-time' (yarı zamanlı çalışıyorum) cümlesinde ise zarf gibi kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Emma is a student, so she has a ______ job and works only two days a week.",
+        "answer": "part-time",
+        "distractors": [
+          "full-time",
+          "one-way",
+          "homemade"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_over.phv.1",
+      "lemma": "go over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "check sth carefully again",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈoʊvər/",
+        "uk": "/ɡəʊ ˈəʊvə/"
+      },
+      "def": {
+        "micro": "check something carefully",
+        "short": "read or check something carefully, often one more time",
+        "long": "To read or check something carefully, often one more time, to find mistakes or to be sure it is good. You can go over a report, a plan or an email before you send it."
+      },
+      "grammar": {
+        "pattern": "go over + noun (inseparable)"
+      },
+      "examples": [
+        {
+          "en": "Let's go over the plan again.",
+          "tr": "Planı bir kez daha gözden geçirelim.",
+          "register": "neutral",
+          "focus": "go over"
+        },
+        {
+          "en": "Emma went over the report before the meeting.",
+          "tr": "Emma toplantıdan önce raporu gözden geçirdi.",
+          "register": "neutral",
+          "focus": "went over"
+        },
+        {
+          "en": "Ali always goes over his email twice before he sends it.",
+          "tr": "Ali e-postasını göndermeden önce her zaman iki kez gözden geçirir.",
+          "register": "neutral",
+          "focus": "goes over"
+        }
+      ],
+      "synonyms": [
+        "review",
+        "check"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go over the details",
+        "go over a plan",
+        "go over the report",
+        "go over your notes"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gözden geçirmek",
+          "alt": [
+            "üzerinden geçmek",
+            "tekrar kontrol etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ayrılmaz bir phrasal verb: nesne hep arkadan gelir ('go over it', 'go over the report'). 'Look into' araştırmak, 'point out' dikkat çekmek demektir; 'go over' ise bir şeyi tekrar kontrol etmektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before the meeting, Selin wants to ______ the numbers one more time.",
+        "answer": "go over",
+        "distractors": [
+          "run out of",
+          "get along with",
+          "give up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_notes.phr.1",
+      "lemma": "take notes",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ˈnoʊts/",
+        "uk": "/teɪk ˈnəʊts/"
+      },
+      "def": {
+        "micro": "write down main points",
+        "short": "write short points about what someone says, so you can remember",
+        "long": "To write short points while someone is talking, for example in a class or a meeting, so you can read them later. You can take notes with a pen and paper or on a phone or laptop."
+      },
+      "grammar": {
+        "pattern": "take notes (on + noun)"
+      },
+      "examples": [
+        {
+          "en": "Please take notes during the meeting.",
+          "tr": "Toplantı sırasında lütfen not alın.",
+          "register": "neutral",
+          "focus": "take notes"
+        },
+        {
+          "en": "Maria took notes while the teacher was talking.",
+          "tr": "Maria öğretmen konuşurken not aldı.",
+          "register": "neutral",
+          "focus": "took notes"
+        },
+        {
+          "en": "I always take notes on my phone, not on paper.",
+          "tr": "Her zaman kâğıda değil, telefonuma not alırım.",
+          "register": "neutral",
+          "focus": "take notes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take notes in class",
+        "take notes in a meeting",
+        "take notes on",
+        "take good notes"
+      ],
+      "word_family": [
+        {
+          "lemma": "note",
+          "pos": "n"
+        },
+        {
+          "lemma": "notebook",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "not almak",
+          "alt": [
+            "not tutmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil genellikle 'take' olur: 'take notes'. Tek bir şeyi not etmek için 'make a note of sth' denir. Ders ya da toplantıda bir not değil, birçok kısa not alırsınız; bu yüzden 'notes' çoğuldur.",
+          "mistakes": [
+            {
+              "wrong": "I got a good note in the exam.",
+              "right": "I got a good grade in the exam.",
+              "why": "Türkçede 'not' sınav puanı da demektir ('iyi not aldım'). İngilizcede 'note' yazılan kısa nottur; sınav notu için 'grade' ya da 'mark' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The teacher talks fast, so I ______ in class to remember everything.",
+        "answer": "take notes",
+        "distractors": [
+          "make friends",
+          "have lunch",
+          "pay bills"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.promotion.n.1",
+      "lemma": "promotion",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "move to a better job",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prəˈmoʊʃən/",
+        "uk": "/prəˈməʊʃən/"
+      },
+      "def": {
+        "micro": "a move to a better job",
+        "short": "a move to a higher, better job in the same company",
+        "long": "A move to a higher, better job in the same company, often with more money and more important work. You can get a promotion after doing good work for a long time."
+      },
+      "grammar": {
+        "pattern": "get a promotion / give sb a promotion"
+      },
+      "examples": [
+        {
+          "en": "Congratulations on your promotion!",
+          "tr": "Terfin için tebrikler!",
+          "register": "neutral",
+          "focus": "promotion"
+        },
+        {
+          "en": "Selin worked hard and got a promotion last year.",
+          "tr": "Selin çok çalıştı ve geçen yıl terfi aldı.",
+          "register": "neutral",
+          "focus": "promotion"
+        },
+        {
+          "en": "Ali wants a promotion, but he also wants more free time.",
+          "tr": "Ali terfi istiyor ama daha fazla boş zaman da istiyor.",
+          "register": "neutral",
+          "focus": "promotion"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "demotion"
+      ],
+      "collocations": [
+        "get a promotion",
+        "ask for a promotion",
+        "a big promotion",
+        "deserve a promotion"
+      ],
+      "word_family": [
+        {
+          "lemma": "promote",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'promovere', meaning to move forward. A promotion moves you forward in your career.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "terfi",
+          "alt": [
+            "görevde yükselme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Promotion' iş yerinde bir üst göreve geçmektir: terfi. Aynı sözcük reklam ve indirim anlamında da kullanılır (Türkçede promosyon), ama bu kartta yalnızca terfi anlamı var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After two years of good work, Elif got a ______ and a better job title.",
+        "answer": "promotion",
+        "distractors": [
+          "discount",
+          "complaint",
+          "ticket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
