@@ -1,0 +1,974 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.by_the_way.phr.1",
+      "lemma": "by the way",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "adding a new point",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/baɪ ðə ˈweɪ/",
+        "uk": "/baɪ ðə ˈweɪ/"
+      },
+      "def": {
+        "micro": "to add a new small point",
+        "short": "used to add something new or something you just remembered",
+        "long": "People say this to add a new point, often something small that they just remembered. The new point is usually not the main topic."
+      },
+      "grammar": {
+        "pattern": "By the way, + sentence"
+      },
+      "examples": [
+        {
+          "en": "By the way, I like your new bag.",
+          "tr": "Bu arada, yeni çantanı beğendim.",
+          "register": "neutral",
+          "focus": "By the way"
+        },
+        {
+          "en": "We can eat at six. By the way, do you like fish?",
+          "tr": "Altıda yemek yiyebiliriz. Bu arada, balık sever misin?",
+          "register": "neutral",
+          "focus": "By the way"
+        },
+        {
+          "en": "Thanks for the ride. By the way, Mehmet says hello.",
+          "tr": "Beni bıraktığın için sağ ol. Bu arada, Mehmet'in selamı var.",
+          "register": "neutral",
+          "focus": "By the way"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "oh, by the way",
+        "and by the way"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu arada",
+          "alt": [
+            "aklıma gelmişken"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Konuşmada ve mesajlarda yeni bir konu açar. Mesajlarda kısaca 'btw' yazılır. Türkçedeki 'bu arada' bazen 'meanwhile' anlamında da kullanılır; o zaman İngilizcesi farklıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'll see you at six. ______, can you bring my book?",
+        "answer": "By the way",
+        "distractors": [
+          "Well done",
+          "Of course",
+          "Happy birthday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.never_mind.phr.1",
+      "lemma": "never mind",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "it is not important",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnɛvər ˈmaɪnd/",
+        "uk": "/ˌnɛvə ˈmaɪnd/"
+      },
+      "def": {
+        "micro": "it is not important",
+        "short": "used to say that something is not important, or to stop asking for something",
+        "long": "You say this when a small problem is not important, or when you do not want an answer to your question any more. You can also use it to comfort a friend."
+      },
+      "examples": [
+        {
+          "en": "“Sorry, I'm late.” “Never mind. We have time.”",
+          "tr": "“Geç kaldım, özür dilerim.” “Boş ver. Vaktimiz var.”",
+          "register": "neutral",
+          "focus": "Never mind"
+        },
+        {
+          "en": "Where is my pen? Oh, never mind. I found it.",
+          "tr": "Kalemim nerede? Ha, boş ver. Buldum.",
+          "register": "neutral",
+          "focus": "never mind"
+        },
+        {
+          "en": "Never mind, Ayşe. You can try again tomorrow.",
+          "tr": "Boş ver Ayşe, yarın tekrar deneyebilirsin.",
+          "register": "neutral",
+          "focus": "Never mind"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "oh, never mind"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "boş ver",
+          "alt": [
+            "önemli değil",
+            "neyse"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Boş ver' ve 'neyse' çoğu zaman bu işi görür. Biri özür dilediğinde 'önemli değil' demek de 'never mind' ile anlatılabilir. Soru sorup vazgeçerken de 'never mind' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't find my keys. Oh, ______. They are in my bag.",
+        "answer": "never mind",
+        "distractors": [
+          "good morning",
+          "go ahead",
+          "see you later"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.no_problem.phr.1",
+      "lemma": "no problem",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "reply to thanks or sorry",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/noʊ ˈprɑːbləm/",
+        "uk": "/nəʊ ˈprɒbləm/"
+      },
+      "def": {
+        "micro": "it is fine, happy to help",
+        "short": "used to answer thanks or sorry, or to say you are happy to do something",
+        "long": "People say this after someone says thank you or sorry. It means you were happy to help, or that the small mistake is fine. You can also say it when you agree to a request."
+      },
+      "examples": [
+        {
+          "en": "“Thanks for your help!” “No problem.”",
+          "tr": "“Yardımın için sağ ol!” “Sorun değil.”",
+          "register": "neutral",
+          "focus": "No problem"
+        },
+        {
+          "en": "“Sorry, I'm late.” “No problem. We just started.”",
+          "tr": "“Geç kaldım, kusura bakma.” “Sorun değil. Daha yeni başladık.”",
+          "register": "neutral",
+          "focus": "No problem"
+        },
+        {
+          "en": "“Maria, can you close the door?” “No problem.”",
+          "tr": "“Maria, kapıyı kapatır mısın?” “Sorun değil.”",
+          "register": "neutral",
+          "focus": "No problem"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "no problem at all"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sorun değil",
+          "alt": [
+            "önemli değil",
+            "bir şey değil"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Teşekkürden sonra Türkçede 'rica ederim' dersin. İngilizcede ise 'no problem' günlük konuşmada 'you're welcome' kadar yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Thank you for the coffee!” “______. Enjoy it!”",
+        "answer": "No problem",
+        "distractors": [
+          "Good morning",
+          "Good night",
+          "Happy birthday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.of_course.phr.1",
+      "lemma": "of course",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "yes, certainly",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əv ˈkɔːrs/",
+        "uk": "/əv ˈkɔːs/"
+      },
+      "def": {
+        "micro": "yes, for sure",
+        "short": "used to say yes in a strong, friendly way, or to say that something is clear",
+        "long": "You say this to answer 'yes' to a question or a request, often with a friendly voice. It can also show that something is clear and not a surprise."
+      },
+      "examples": [
+        {
+          "en": "“Can I sit here?” “Of course!”",
+          "tr": "“Buraya oturabilir miyim?” “Tabii ki!”",
+          "register": "neutral",
+          "focus": "Of course"
+        },
+        {
+          "en": "“Do you like pizza?” “Of course, I love it.”",
+          "tr": "“Pizza sever misin?” “Tabii ki, bayılırım.”",
+          "register": "neutral",
+          "focus": "Of course"
+        },
+        {
+          "en": "Of course I remember you, Sam. We were in the same class.",
+          "tr": "Seni tabii ki hatırlıyorum Sam. Aynı sınıftaydık.",
+          "register": "neutral",
+          "focus": "Of course"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "of course not",
+        "yes, of course"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tabii ki",
+          "alt": [
+            "elbette",
+            "tabii"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gülümseyerek söylersen sıcak bir 'evet' olur. Sert söylersen 'bunu bilmiyor musun?' gibi duyulabilir. 'Hayır, tabii ki hayır' demek için 'of course not' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Can you help me with this?” “______, I'm happy to help.”",
+        "answer": "Of course",
+        "distractors": [
+          "Well done",
+          "Good night",
+          "Happy birthday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.it_depends.phr.1",
+      "lemma": "it depends",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "the answer is not always the same",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪt dɪˈpɛndz/",
+        "uk": "/ɪt dɪˈpɛndz/"
+      },
+      "def": {
+        "micro": "not always the same answer",
+        "short": "used when you cannot say yes or no because the answer changes with the situation",
+        "long": "You say this when you cannot give a simple 'yes' or 'no' answer. The answer changes with the weather, the price, the person or something else. Say what it changes with after 'on'."
+      },
+      "grammar": {
+        "pattern": "It depends (on + noun)"
+      },
+      "examples": [
+        {
+          "en": "“Is the bus faster?” “It depends on the traffic.”",
+          "tr": "“Otobüs daha mı hızlı?” “Trafiğe bağlı.”",
+          "register": "neutral",
+          "focus": "It depends on"
+        },
+        {
+          "en": "“Will you come to the party?” “It depends. I may have to work.”",
+          "tr": "“Partiye gelecek misin?” “Duruma göre. Çalışmam gerekebilir.”",
+          "register": "neutral",
+          "focus": "It depends"
+        },
+        {
+          "en": "“How much is a taxi to the airport?” “It depends on the time.”",
+          "tr": "“Havalimanına taksi ne kadar?” “Saate bağlı.”",
+          "register": "neutral",
+          "focus": "It depends on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "it depends on the weather",
+        "that depends"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "duruma bağlı",
+          "alt": [
+            "duruma göre",
+            "değişir",
+            "ona göre"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'It depends' tek başına da söylenir. Neye bağlı olduğunu söylemek için 'on' eklenir: 'It depends on the weather' = 'Havaya bağlı'.",
+          "mistakes": [
+            {
+              "wrong": "It depends the weather.",
+              "right": "It depends on the weather.",
+              "why": "Türkçede 'havaya bağlı' derken -a eki yeter. İngilizcede ise ek yerine 'on' gerekir: depends on."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Are you free on Sunday?” “______ on my work schedule.”",
+        "answer": "It depends",
+        "distractors": [
+          "Sounds good",
+          "Come on",
+          "Take care"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.how_about.phr.1",
+      "lemma": "how about",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "making a suggestion",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haʊ əˈbaʊt/",
+        "uk": "/haʊ əˈbaʊt/"
+      },
+      "def": {
+        "micro": "used to suggest an idea",
+        "short": "used to offer an idea or to ask what someone thinks of a plan, place or time",
+        "long": "You use this to offer an idea or a plan, for example a place to go or a time to meet. A noun or an -ing word comes after it. It is friendly and not too strong."
+      },
+      "grammar": {
+        "pattern": "How about + noun / -ing?"
+      },
+      "examples": [
+        {
+          "en": "How about pizza for dinner?",
+          "tr": "Akşam yemeği için pizza nasıl olur?",
+          "register": "neutral",
+          "focus": "How about"
+        },
+        {
+          "en": "We are free on Friday. How about going to the beach?",
+          "tr": "Cuma günü boşuz. Plaja gitmeye ne dersin?",
+          "register": "neutral",
+          "focus": "How about"
+        },
+        {
+          "en": "How about we start at nine, Elif?",
+          "tr": "Dokuzda başlasak nasıl olur Elif?",
+          "register": "neutral",
+          "focus": "How about"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "how about you",
+        "how about tomorrow"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne dersin?",
+          "alt": [
+            "nasıl olur?",
+            "olur mu?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Öneri yaparken kullanılır; arkasından isim ya da '-ing' gelir: 'How about tea?', 'How about going out?'. Soru işaretiyle biter ve sohbet havasında söylenir.",
+          "mistakes": [
+            {
+              "wrong": "How about to go to the park?",
+              "right": "How about going to the park?",
+              "why": "Türkçede 'parka gitmeye ne dersin?' deriz ve '-meye' eki 'to go' gibi gelir. 'How about' ifadesinden sonra 'to' gelmez; '-ing' gelir: going."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We have no plans tonight. ______ going to the cinema?",
+        "answer": "How about",
+        "distractors": [
+          "Of course",
+          "How often",
+          "Good luck"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.what_about.phr.1",
+      "lemma": "what about",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking about something else",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wʌt əˈbaʊt/",
+        "uk": "/wɒt əˈbaʊt/"
+      },
+      "def": {
+        "micro": "asking about another thing",
+        "short": "used to ask about someone or something new, or to remind people of a thing",
+        "long": "You use this to ask about another person or thing in a conversation, often to keep it going. You can also use it to remind people of something they forgot."
+      },
+      "grammar": {
+        "pattern": "What about + noun / pronoun?"
+      },
+      "examples": [
+        {
+          "en": "I like tea. What about you?",
+          "tr": "Ben çayı severim. Ya sen?",
+          "register": "neutral",
+          "focus": "What about"
+        },
+        {
+          "en": "We have the tickets. What about the hotel?",
+          "tr": "Biletler bizde. Peki ya otel?",
+          "register": "neutral",
+          "focus": "What about"
+        },
+        {
+          "en": "“I'm going home.” “What about the party, Sam?”",
+          "tr": "“Eve gidiyorum.” “Peki ya parti, Sam?”",
+          "register": "neutral",
+          "focus": "What about"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "what about you",
+        "what about me"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ya …?",
+          "alt": [
+            "peki ya …?",
+            "… ne olacak?"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'What about you?' = 'Ya sen?'. Öneri için de kullanılır: 'What about Friday?' = 'Cumaya ne dersin?'. Arkasından isim ya da zamir gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have the tickets, but ______ the hotel? Is it ready?",
+        "answer": "what about",
+        "distractors": [
+          "of course",
+          "good luck",
+          "excuse me"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_time.phr.1",
+      "lemma": "on time",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "at the planned time",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ˈtaɪm/",
+        "uk": "/ɒn ˈtaɪm/"
+      },
+      "def": {
+        "micro": "when it was planned",
+        "short": "not late; at the moment that was planned",
+        "long": "Not late: when it was agreed or planned. A bus, a train or a person can arrive on time, and you can finish your work on time too."
+      },
+      "grammar": {
+        "pattern": "be / arrive / finish on time"
+      },
+      "examples": [
+        {
+          "en": "The train arrived on time.",
+          "tr": "Tren zamanında geldi.",
+          "register": "neutral",
+          "focus": "on time"
+        },
+        {
+          "en": "Please be on time for the meeting tomorrow.",
+          "tr": "Lütfen yarınki toplantıya zamanında gel.",
+          "register": "neutral",
+          "focus": "on time"
+        },
+        {
+          "en": "Mehmet always finishes his homework on time.",
+          "tr": "Mehmet ödevini her zaman vaktinde bitirir.",
+          "register": "neutral",
+          "focus": "on time"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "late"
+      ],
+      "collocations": [
+        "arrive on time",
+        "finish on time",
+        "right on time"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zamanında",
+          "alt": [
+            "vaktinde",
+            "tam zamanında"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'On time' planlanan saatte demektir. 'In time' ise geç kalmadan, yetişecek kadar erken demektir. Türkçede ikisine de 'zamanında' dediğimiz için karışır.",
+          "mistakes": [
+            {
+              "wrong": "The bus is never in time.",
+              "right": "The bus is never on time.",
+              "why": "Türkçede ikisi de 'zamanında' olduğu için 'in time' denir. Saate ve plana uymak için 'on time' kullanılır; 'in time' yetişmek içindir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The train was never late. It always came ______ at 8:15.",
+        "answer": "on time",
+        "distractors": [
+          "by car",
+          "for a while",
+          "in a hurry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_time.phr.1",
+      "lemma": "in time",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "early enough for something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈtaɪm/",
+        "uk": "/ɪn ˈtaɪm/"
+      },
+      "def": {
+        "micro": "early enough to do it",
+        "short": "not too late for something; early enough to catch it or do it",
+        "long": "Early enough for something to happen, or early enough for you to do something before it is too late. You often use 'for' or 'to' after it."
+      },
+      "grammar": {
+        "pattern": "in time for + noun / to + verb"
+      },
+      "examples": [
+        {
+          "en": "We arrived in time for the movie.",
+          "tr": "Filme zamanında yetiştik.",
+          "register": "neutral",
+          "focus": "in time"
+        },
+        {
+          "en": "Run, Elif! You can still get there in time.",
+          "tr": "Koş Elif! Hâlâ yetişebilirsin.",
+          "register": "neutral",
+          "focus": "in time"
+        },
+        {
+          "en": "The doctor came in time to help the boy.",
+          "tr": "Doktor zamanında yetişip çocuğa yardım edebildi.",
+          "register": "neutral",
+          "focus": "in time"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "too late"
+      ],
+      "collocations": [
+        "just in time",
+        "in time for dinner"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yetişecek kadar erken",
+          "alt": [
+            "zamanında",
+            "geç kalmadan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'zamanında' hem 'on time' hem 'in time' demek. 'In time' bir şeye yetişmektir ('in time for the bus'). 'On time' ise saatinde olmaktır.",
+          "mistakes": [
+            {
+              "wrong": "I arrived on time to see the end.",
+              "right": "I arrived in time to see the end.",
+              "why": "Geç kalmadan yetişmeyi anlatırken 'in time' kullanılır. Türkçede ikisi de 'zamanında' olduğu için 'on time' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hurry up! We can still get to the station ______ to catch the train.",
+        "answer": "in time",
+        "distractors": [
+          "for a while",
+          "by the way",
+          "at last"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.at_least.phr.1",
+      "lemma": "at least",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "not less than",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æt ˈliːst/",
+        "uk": "/æt ˈliːst/"
+      },
+      "def": {
+        "micro": "not less than",
+        "short": "used before a number to show the smallest amount that is true; it can be more",
+        "long": "You use it before a number or an amount to show the smallest number that is true. It can be more, but it cannot be less."
+      },
+      "examples": [
+        {
+          "en": "I need at least two hours to finish this.",
+          "tr": "Bunu bitirmek için en az iki saate ihtiyacım var.",
+          "register": "neutral",
+          "focus": "at least"
+        },
+        {
+          "en": "You should drink at least two liters of water a day.",
+          "tr": "Günde en az iki litre su içmelisin.",
+          "register": "neutral",
+          "focus": "at least"
+        },
+        {
+          "en": "There were at least fifty people at Ayşe's party.",
+          "tr": "Ayşe'nin partisinde en az elli kişi vardı.",
+          "register": "neutral",
+          "focus": "at least"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "at most"
+      ],
+      "collocations": [
+        "at least two",
+        "at least once"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "en az",
+          "alt": [
+            "en azından"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayıdan önce 'en az' demektir. Zıttı 'at most' = 'en fazla'. 'At last' (sonunda) ile sesi çok benzer; yazarken ve dinlerken dikkat et.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The trip is long. You need ______ three hours by car.",
+        "answer": "at least",
+        "distractors": [
+          "at last",
+          "at the moment",
+          "in the end"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

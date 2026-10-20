@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 from collections import Counter
@@ -362,7 +363,35 @@ def validate_cards(raw_cards: list[dict], *, l1_langs: tuple[str, ...] = ("tr",)
                 issues.append(Issue(card.id, "warning", "DUP_EXAMPLE", "examples", f"{example_owner[k]} ile aynı örnek"))
             else:
                 example_owner[k] = card.id
+    issues.extend(distractor_repeat_issues(cards))
     return cards, issues
+
+
+# Bir çeldirici veri setindeki soruların en fazla bu kadarında geçebilir: max(4, %5). Daha sık
+# tekrar eden bir şıkkın cevap olmadığını öğrenci ezberler ve soru bir şey sınamaz.
+DISTRACTOR_REPEAT_MIN = 4
+DISTRACTOR_REPEAT_SHARE = 0.05
+
+
+def distractor_repeat_issues(cards: list[Card]) -> list[Issue]:
+    users: dict[str, list[str]] = {}
+    quiz_count = 0
+    for card in cards:
+        if card.quiz is None:
+            continue
+        quiz_count += 1
+        for d in {d.strip().lower() for d in card.quiz.distractors}:
+            users.setdefault(d, []).append(card.id)
+    limit = max(DISTRACTOR_REPEAT_MIN, math.ceil(quiz_count * DISTRACTOR_REPEAT_SHARE))
+    issues: list[Issue] = []
+    for d, ids in sorted(users.items()):
+        if len(ids) > limit:
+            sample = ", ".join(ids[:3])
+            issues.append(Issue(
+                ids[0], "warning", "QUIZ_DISTRACTOR_REPEAT", "quiz.distractors",
+                f"'{d}' {len(ids)} soruda çeldirici (sınır {limit}; ör. {sample})",
+            ))
+    return issues
 
 
 def load_raw_cards(path: Path) -> tuple[list[dict], tuple[str, ...]]:

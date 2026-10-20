@@ -88,8 +88,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm on the bus and this is my stop. I'll ______ here.", "answer": "get off", "distractors": ["get on", "get up", "go on"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'm on the bus and this is my stop. I'll ______ here.", "answer": "get off", "distractors": ["log in", "move out", "go on"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.try_on.phv.1",
@@ -133,8 +133,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I like these jeans. Can I ______ a pair in the fitting room?", "answer": "try on", "distractors": ["take off", "turn on", "give up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I like these jeans. Can I ______ a pair in the fitting room?", "answer": "try on", "distractors": ["throw away", "hand in", "give up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.fill_in.phv.1",
@@ -178,8 +178,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "To open an account, you must ______ this form first.", "answer": "fill in", "distractors": ["fill up", "turn on", "pick up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "To open an account, you must ______ this form first.", "answer": "fill in", "distractors": ["fill up", "log in", "pick up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.check_in.phv.1",
@@ -222,8 +222,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Our flight is at nine. We must ______ at the airport two hours before.", "answer": "check in", "distractors": ["check out", "get off", "fill up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "Our flight is at nine. We must ______ at the airport two hours before.", "answer": "check in", "distractors": ["check out", "move in", "fill up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.check_out.phv.1",
@@ -266,8 +266,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "You can stay in the room until noon. You must ______ by 12:00.", "answer": "check out", "distractors": ["check in", "give up", "fill in"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "You can stay in the room until noon. You must ______ by 12:00.", "answer": "check out", "distractors": ["grow up", "speak up", "fill in"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.hurry_up.phv.1",
@@ -310,8 +310,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The film starts in five minutes! ______!", "answer": "Hurry up", "distractors": ["Slow down", "Sit down", "Give up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The film starts in five minutes! ______!", "answer": "Hurry up", "distractors": ["Slow down", "Turn around", "Look out"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.slow_down.phv.1",
@@ -354,8 +354,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "You are driving too fast! Please ______.", "answer": "slow down", "distractors": ["hurry up", "speed up", "stand up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "You are driving too fast! Please ______.", "answer": "slow down", "distractors": ["carry on", "speed up", "stand up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.write_down.phv.1",
@@ -398,8 +398,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "The address is long. Please ______ the address so I don't forget.", "answer": "write down", "distractors": ["pick up", "take off", "look for"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The address is long. Please ______ the address so I don't forget.", "answer": "write down", "distractors": ["throw away", "take off", "look for"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.lie_down.phv.1",
@@ -443,8 +443,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "health_body", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I feel dizzy. I need to ______ for a few minutes.", "answer": "lie down", "distractors": ["stand up", "give up", "go out"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I feel dizzy. I need to ______ for a few minutes.", "answer": "lie down", "distractors": ["stand up", "sign up", "speak up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     }
   ]
 }

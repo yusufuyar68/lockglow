@@ -1,0 +1,941 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.station.n.1",
+      "lemma": "station",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsteɪʃən/",
+        "uk": "/ˈsteɪʃən/"
+      },
+      "def": {
+        "micro": "place for trains or buses",
+        "short": "a place where trains or buses stop so that people can get on and off",
+        "long": "A place where trains or buses stop so that people can get on and off. A big station has shops, cafés, and a place to buy tickets."
+      },
+      "examples": [
+        {
+          "en": "The station is five minutes from here.",
+          "tr": "İstasyon buradan beş dakika uzaklıkta.",
+          "register": "neutral",
+          "focus": "station"
+        },
+        {
+          "en": "Mehmet waited for his friend at the train station.",
+          "tr": "Mehmet arkadaşını tren istasyonunda bekledi.",
+          "register": "neutral",
+          "focus": "station"
+        },
+        {
+          "en": "Which bus goes to the central station?",
+          "tr": "Hangi otobüs merkez istasyona gidiyor?",
+          "register": "neutral",
+          "focus": "station"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "train station",
+        "bus station",
+        "at the station",
+        "subway station"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'statio', meaning 'a standing' or 'a place to stand', from 'stare' (to stand).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "istasyon",
+          "alt": [
+            "gar",
+            "otogar"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede tren için 'gar', şehirlerarası otobüs için 'otogar' dersiniz; İngilizcede ikisine de 'station' denir: train station, bus station. Metro durağı da 'subway station' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The train leaves at five, so let's meet at the ______ at half past four.",
+        "answer": "station",
+        "distractors": [
+          "garden",
+          "bedroom",
+          "pharmacy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hotel.n.1",
+      "lemma": "hotel",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hoʊˈtɛl/",
+        "uk": "/həʊˈtɛl/"
+      },
+      "def": {
+        "micro": "place to stay and sleep",
+        "short": "a building where you pay to stay and sleep when you are away from home",
+        "long": "A building with many rooms where people pay to sleep for one or more nights, usually when they travel. Many hotels also have a restaurant."
+      },
+      "examples": [
+        {
+          "en": "Our hotel is next to the station.",
+          "tr": "Otelimiz istasyonun hemen yanında.",
+          "register": "neutral",
+          "focus": "hotel"
+        },
+        {
+          "en": "Zeynep booked a hotel room for two nights.",
+          "tr": "Zeynep iki gece için bir otel odası ayırttı.",
+          "register": "neutral",
+          "focus": "hotel"
+        },
+        {
+          "en": "The hotel has a pool, a gym, and a restaurant.",
+          "tr": "Otelde havuz, spor salonu ve restoran var.",
+          "register": "neutral",
+          "focus": "hotel"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "book a hotel",
+        "hotel room",
+        "stay at a hotel",
+        "a five-star hotel"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'hôtel', meaning 'a large house'. It is related to 'hospital' and 'hospitality'.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "otel",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'otel' ile aynı kökten gelir. Küçük, aile işletmesi konaklama yerine 'guesthouse' ya da 'bed and breakfast' denir; Türkçedeki 'pansiyon' bunlara yakındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We need a room for two nights, so we are going to book a ______.",
+        "answer": "hotel",
+        "distractors": [
+          "menu",
+          "bottle",
+          "umbrella"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.beach.n.1",
+      "lemma": "beach",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/biːtʃ/",
+        "uk": "/biːtʃ/"
+      },
+      "def": {
+        "micro": "sandy land by the sea",
+        "short": "an area of sand or small stones next to the sea or a lake",
+        "long": "An area of sand or small stones next to the sea or a lake. People go there in summer to swim, sit in the sun, and play games."
+      },
+      "examples": [
+        {
+          "en": "Let's go to the beach today!",
+          "tr": "Bugün plaja gidelim!",
+          "register": "neutral",
+          "focus": "beach"
+        },
+        {
+          "en": "The beach is full of people in August.",
+          "tr": "Ağustosta plaj insanla dolu.",
+          "register": "neutral",
+          "focus": "beach"
+        },
+        {
+          "en": "Maria and her son built a sandcastle on the beach.",
+          "tr": "Maria ile oğlu plajda kumdan bir kale yaptı.",
+          "register": "neutral",
+          "focus": "beach"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go to the beach",
+        "on the beach",
+        "beach towel",
+        "a sandy beach"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "plaj",
+          "alt": [
+            "sahil"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Plaj' denizin yanındaki kumlu ya da çakıllı yerdir; 'sahil' ise kıyı şeridinin tamamıdır ve İngilizcede 'coast' ya da 'seaside' denir. Yüzülen yer için 'beach' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "We go to the sea every weekend in summer.",
+              "right": "We go to the beach every weekend in summer.",
+              "why": "Türkçede 'denize gitmek' dersiniz. İngilizcede 'go to the sea' mümkündür ama denize doğru gitmek gibi duyulur; yüzmek ve güneşlenmek için doğal söyleyiş 'go to the beach' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "travel_tourism",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In summer, we swim in the sea and lie on the sand at the ______.",
+        "answer": "beach",
+        "distractors": [
+          "kitchen",
+          "office",
+          "station"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hand.n.1",
+      "lemma": "hand",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hænd/",
+        "uk": "/hænd/"
+      },
+      "def": {
+        "micro": "part at the end of an arm",
+        "short": "the part of the body at the end of the arm, with fingers and a thumb",
+        "long": "The part of the body at the end of your arm. It has four fingers and a thumb, and you use it to hold, carry, and touch things."
+      },
+      "examples": [
+        {
+          "en": "Wash your hands before you eat.",
+          "tr": "Yemekten önce ellerini yıka.",
+          "register": "neutral",
+          "focus": "hands"
+        },
+        {
+          "en": "Zeynep has a small bag in her hand.",
+          "tr": "Zeynep'in elinde küçük bir çanta var.",
+          "register": "neutral",
+          "focus": "hand"
+        },
+        {
+          "en": "Please raise your hand if you have a question.",
+          "tr": "Sorunuz varsa lütfen elinizi kaldırın.",
+          "register": "neutral",
+          "focus": "hand"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wash your hands",
+        "shake hands",
+        "raise your hand",
+        "hold hands",
+        "left hand"
+      ],
+      "word_family": [
+        {
+          "lemma": "handy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "el",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Hand' bileğin ucundaki kısımdır; omuzdan bileğe kadar olan kısım 'arm' (kol) olur. 'Shake hands' el sıkışmak demektir. Çoğulu düzenli olarak 'hands' biçimindedir.",
+          "mistakes": [
+            {
+              "wrong": "I shook hand with the manager.",
+              "right": "I shook hands with the manager.",
+              "why": "Türkçede 'el sıkışmak' derken 'el' tekil söylenir. İngilizcede iki kişinin elleri birleştiği için 'shake hands' çoğul kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You have two ______, and each one has five fingers.",
+        "answer": "hands",
+        "distractors": [
+          "heads",
+          "noses",
+          "mouths"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.back.n.1",
+      "lemma": "back",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "body part",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bæk/",
+        "uk": "/bæk/"
+      },
+      "def": {
+        "micro": "body part behind the chest",
+        "short": "the part of the body between the neck and the waist, behind the chest",
+        "long": "The part of the body between the neck and the waist, on the side behind the chest. A back can hurt after sitting or carrying heavy bags for a long time."
+      },
+      "examples": [
+        {
+          "en": "My back hurts today.",
+          "tr": "Bugün sırtım ağrıyor.",
+          "register": "neutral",
+          "focus": "back"
+        },
+        {
+          "en": "Ayşe lay on her back and looked at the sky.",
+          "tr": "Ayşe sırtüstü yatıp gökyüzüne baktı.",
+          "register": "neutral",
+          "focus": "back"
+        },
+        {
+          "en": "Don't carry heavy bags. It is bad for your back.",
+          "tr": "Ağır çanta taşıma. Sırtına zarar verir.",
+          "register": "neutral",
+          "focus": "back"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "front"
+      ],
+      "collocations": [
+        "back pain",
+        "a bad back",
+        "lie on your back",
+        "behind your back"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sırt",
+          "alt": [
+            "bel"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'sırt' omuzların altındaki üst kısımdır, 'bel' ise alt kısımdır; İngilizcede ikisine de çoğu zaman 'back' denir (lower back = bel). 'Back' ayrıca 'arka' ve 'geri' anlamına da gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After a long day at the computer, my ______ hurts, so I need to stretch.",
+        "answer": "back",
+        "distractors": [
+          "keyboard",
+          "menu",
+          "desk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tooth.n.1",
+      "lemma": "tooth",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tuːθ/",
+        "uk": "/tuːθ/"
+      },
+      "def": {
+        "micro": "hard white part in the mouth",
+        "short": "one of the hard white parts in your mouth that you use to bite and chew food",
+        "long": "One of the hard white parts in your mouth that you use to bite and chew food. The plural is irregular: one tooth, two teeth."
+      },
+      "examples": [
+        {
+          "en": "I brush my teeth twice a day.",
+          "tr": "Dişlerimi günde iki kez fırçalarım.",
+          "register": "neutral",
+          "focus": "teeth"
+        },
+        {
+          "en": "Ali's tooth hurts, so he is going to the dentist.",
+          "tr": "Ali'nin dişi ağrıyor, bu yüzden dişçiye gidiyor.",
+          "register": "neutral",
+          "focus": "tooth"
+        },
+        {
+          "en": "Babies get their first tooth at about six months.",
+          "tr": "Bebekler ilk dişlerini yaklaşık altı aylıkken çıkarır.",
+          "register": "neutral",
+          "focus": "tooth"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "brush your teeth",
+        "a baby tooth",
+        "a wisdom tooth",
+        "lose a tooth"
+      ],
+      "word_family": [
+        {
+          "lemma": "toothache",
+          "pos": "n"
+        },
+        {
+          "lemma": "toothbrush",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'tōþ'. The plural 'teeth' comes from an old sound change, like 'foot' and 'feet'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "diş",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğulu düzensizdir: 'tooth' tek, 'teeth' çoğuldur. Dişçi 'dentist', diş fırçası 'toothbrush' olur. Diş ağrısına 'toothache' denir.",
+          "mistakes": [
+            {
+              "wrong": "I brush my tooths every morning.",
+              "right": "I brush my teeth every morning.",
+              "why": "Türkçede çoğul eki düzenlidir (diş, dişler). İngilizcede 'tooth' düzensizdir: çoğulu 'teeth' olur, 'tooths' diye bir sözcük yoktur."
+            },
+            {
+              "wrong": "Brush your tooth after every meal.",
+              "right": "Brush your teeth after every meal.",
+              "why": "Türkçede 'dişini fırçala' dersiniz ve 'diş' tekil kalır. İngilizcede bütün dişler için çoğul gerekir: teeth."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A dentist looks at your ______, so open your mouth wide.",
+        "answer": "teeth",
+        "distractors": [
+          "hands",
+          "ears",
+          "hair"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hair.n.1",
+      "lemma": "hair",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "hair on the head",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɛr/",
+        "uk": "/hɛə/"
+      },
+      "def": {
+        "micro": "thin threads on your head",
+        "short": "the thin threads that grow on the head and body of people and animals",
+        "long": "The thin threads that grow on the head and body of people and animals. On the head, it is uncountable: say 'her hair is long', not 'her hairs are long'."
+      },
+      "examples": [
+        {
+          "en": "She has long black hair.",
+          "tr": "Onun uzun siyah saçları var.",
+          "register": "neutral",
+          "focus": "hair"
+        },
+        {
+          "en": "Ayşe washes her hair every two days.",
+          "tr": "Ayşe saçını iki günde bir yıkıyor.",
+          "register": "neutral",
+          "focus": "hair"
+        },
+        {
+          "en": "I need to cut my hair. It is too long.",
+          "tr": "Saçımı kestirmem lazım. Çok uzun.",
+          "register": "neutral",
+          "focus": "hair"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "brush your hair",
+        "long hair",
+        "short hair",
+        "cut your hair",
+        "dark hair"
+      ],
+      "word_family": [
+        {
+          "lemma": "haircut",
+          "pos": "n"
+        },
+        {
+          "lemma": "hairdresser",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "saç",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede başın üstündeki 'saç' ile vücuttaki 'tüy' ve 'kıl' ayrıdır; İngilizcede hepsine 'hair' denir. Saç için 'hair' sayılamaz: 'hairs' tek tek telleri anlatır.",
+          "mistakes": [
+            {
+              "wrong": "Her hairs are very long.",
+              "right": "Her hair is very long.",
+              "why": "Türkçede 'saçları' çoğul söylenir. İngilizcede saç için 'hair' sayılamaz: -s almaz ve tekil fiil ister (hair is)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hana has long, dark ______, and she brushes it every morning.",
+        "answer": "hair",
+        "distractors": [
+          "shampoo",
+          "soap",
+          "milk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.weather.n.1",
+      "lemma": "weather",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɛðər/",
+        "uk": "/ˈwɛðə/"
+      },
+      "def": {
+        "micro": "heat, cold, rain, and wind",
+        "short": "what it is like outside, for example hot, cold, sunny, or rainy",
+        "long": "What it is like outside at a certain time, for example hot, cold, sunny, or rainy. It is uncountable: say 'the weather is nice', not 'the weathers are nice'."
+      },
+      "grammar": {
+        "pattern": "the weather is / nice weather"
+      },
+      "examples": [
+        {
+          "en": "The weather is nice today.",
+          "tr": "Bugün hava güzel.",
+          "register": "neutral",
+          "focus": "weather"
+        },
+        {
+          "en": "What is the weather like in Istanbul in May?",
+          "tr": "İstanbul'da mayıs ayında hava nasıl?",
+          "register": "neutral",
+          "focus": "weather"
+        },
+        {
+          "en": "We can't go to the park in this weather.",
+          "tr": "Bu havada parka gidemeyiz.",
+          "register": "neutral",
+          "focus": "weather"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "nice weather",
+        "bad weather",
+        "weather forecast",
+        "hot weather",
+        "cold weather"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hava",
+          "alt": [
+            "hava durumu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'hava' hem 'air' hem 'weather' demektir. İngilizcede dışarıdaki hava durumu için 'weather', soluduğumuz hava için 'air' denir. 'Weather' sayılamaz.",
+          "mistakes": [
+            {
+              "wrong": "How is the air today?",
+              "right": "How is the weather today?",
+              "why": "Türkçede 'Bugün hava nasıl?' dersiniz ve 'hava' sözcüğü 'air' sanılır. İngilizcede hava durumunu sorarken 'weather' kullanılır; 'air' soluduğumuz havadır."
+            },
+            {
+              "wrong": "It is a beautiful weather today.",
+              "right": "It is beautiful weather today.",
+              "why": "Türkçede 'güzel bir hava' dersiniz, bu yüzden 'a weather' denir. İngilizcede 'weather' sayılamaz ve 'a' almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Is it going to rain tomorrow? Let's check the ______ forecast.",
+        "answer": "weather",
+        "distractors": [
+          "bus",
+          "jacket",
+          "hotel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rain.n.1",
+      "lemma": "rain",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/reɪn/",
+        "uk": "/reɪn/"
+      },
+      "def": {
+        "micro": "water that falls from clouds",
+        "short": "drops of water that fall from the clouds to the ground",
+        "long": "Drops of water that fall from the clouds to the ground. We say 'heavy rain', 'a lot of rain', and 'in the rain'."
+      },
+      "examples": [
+        {
+          "en": "I don't like walking in the rain.",
+          "tr": "Yağmurda yürümeyi sevmem.",
+          "register": "neutral",
+          "focus": "rain"
+        },
+        {
+          "en": "There was heavy rain all night.",
+          "tr": "Bütün gece şiddetli yağmur yağdı.",
+          "register": "neutral",
+          "focus": "rain"
+        },
+        {
+          "en": "The rain stopped, so we went outside.",
+          "tr": "Yağmur durdu, biz de dışarı çıktık.",
+          "register": "neutral",
+          "focus": "rain"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "heavy rain",
+        "light rain",
+        "in the rain",
+        "a lot of rain"
+      ],
+      "word_family": [
+        {
+          "lemma": "rainy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "raincoat",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yağmur",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil olarak 'yağmur yağıyor' için 'It is raining' denir; öznesi 'rain' değil 'it' olur. 'Yağmurluk' ise 'raincoat' demektir.",
+          "mistakes": [
+            {
+              "wrong": "Rain is raining now.",
+              "right": "It is raining now.",
+              "why": "Türkçede 'yağmur yağıyor' dersiniz ve özne 'yağmur' olur. İngilizcede hava olaylarında özne 'it' olur: It is raining."
+            },
+            {
+              "wrong": "It is rain today.",
+              "right": "It is rainy today.",
+              "why": "Türkçede 'yağmurlu' bir sıfattır. İngilizcede 'rain' isimdir; 'yağmurlu' için 'rainy' denir: It is rainy today."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Take your umbrella. There will be heavy ______ this afternoon.",
+        "answer": "rain",
+        "distractors": [
+          "sunshine",
+          "music",
+          "paper"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mistake_restored_by_editor_agent"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

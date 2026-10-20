@@ -1,0 +1,1001 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.pay_attention.phr.1",
+      "lemma": "pay attention",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "listen or watch carefully",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/peɪ əˈtɛnʃən/",
+        "uk": "/peɪ əˈtɛnʃən/"
+      },
+      "def": {
+        "micro": "listen or look carefully",
+        "short": "watch or listen carefully and think about what is happening or being said",
+        "long": "To listen to or watch something carefully, and to think about it, so that you do not miss anything. Teachers often ask students to do this in class."
+      },
+      "grammar": {
+        "pattern": "pay attention (to + noun)"
+      },
+      "examples": [
+        {
+          "en": "Please pay attention to the teacher.",
+          "tr": "Lütfen öğretmeni dikkatle dinle.",
+          "register": "neutral",
+          "focus": "pay attention"
+        },
+        {
+          "en": "Pay attention, Mehmet! I am explaining something important.",
+          "tr": "Dikkatini ver Mehmet! Önemli bir şey anlatıyorum.",
+          "register": "neutral",
+          "focus": "Pay attention"
+        },
+        {
+          "en": "I didn't pay attention, so I missed my stop.",
+          "tr": "Dikkat etmedim, o yüzden durağımı kaçırdım.",
+          "register": "neutral",
+          "focus": "pay attention"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay attention to",
+        "pay close attention"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dikkat etmek",
+          "alt": [
+            "dikkatle dinlemek",
+            "dikkatini vermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Pay attention' ifadesinden sonra 'to' gelir: 'pay attention to the teacher'. Birini uyarmak için 'Dikkat!' demek istersen 'Be careful!' ya da 'Watch out!' denir.",
+          "mistakes": [
+            {
+              "wrong": "Pay attention the teacher.",
+              "right": "Pay attention to the teacher.",
+              "why": "Türkçede 'öğretmene dikkat et' derken -e eki yeter. İngilizcede ek yerine 'to' gerekir: pay attention to."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ in class. This part is important.",
+        "answer": "pay attention",
+        "distractors": [
+          "keep in touch",
+          "change your mind",
+          "take a break"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_a_decision.phr.1",
+      "lemma": "make a decision",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "choose what to do",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ə dɪˈsɪʒən/",
+        "uk": "/meɪk ə dɪˈsɪʒən/"
+      },
+      "def": {
+        "micro": "choose what to do",
+        "short": "think about different choices and then choose one",
+        "long": "To think about the different things you can do and then choose one. We often say it about important things, like a job, a school or a home."
+      },
+      "examples": [
+        {
+          "en": "It's hard to make a decision.",
+          "tr": "Karar vermek zor.",
+          "register": "neutral",
+          "focus": "make a decision"
+        },
+        {
+          "en": "Take your time. You don't have to make a decision today.",
+          "tr": "Acele etme. Bugün karar vermek zorunda değilsin.",
+          "register": "neutral",
+          "focus": "make a decision"
+        },
+        {
+          "en": "Mehmet made a decision about his new school last week.",
+          "tr": "Mehmet geçen hafta yeni okulu hakkında bir karar verdi.",
+          "register": "neutral",
+          "focus": "made a decision"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a big decision",
+        "make a decision about"
+      ],
+      "word_family": [
+        {
+          "lemma": "decide",
+          "pos": "v"
+        },
+        {
+          "lemma": "decision",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karar vermek",
+          "alt": [
+            "karar almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'karar vermek' dediğimiz için 'give a decision' denir; doğrusu 'make a decision'. İngiliz İngilizcesinde bazen 'take a decision' denir.",
+          "mistakes": [
+            {
+              "wrong": "I gave a decision.",
+              "right": "I made a decision.",
+              "why": "Türkçede 'karar vermek' deriz ve 'vermek' sözü 'give' diye çevrilir. İngilizcede 'make a decision' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't ______. Should I take the red bag or the blue one?",
+        "answer": "make a decision",
+        "distractors": [
+          "do a decision",
+          "give a decision",
+          "have a decision"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_a_mistake.phr.1",
+      "lemma": "make a mistake",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "do something wrong",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ə mɪˈsteɪk/",
+        "uk": "/meɪk ə mɪˈsteɪk/"
+      },
+      "def": {
+        "micro": "do something wrong",
+        "short": "do or say something wrong without wanting to",
+        "long": "To do, write or say something that is wrong, without wanting to. Everyone does this, and you can learn from it."
+      },
+      "examples": [
+        {
+          "en": "Sorry, I made a mistake.",
+          "tr": "Üzgünüm, bir hata yaptım.",
+          "register": "neutral",
+          "focus": "made a mistake"
+        },
+        {
+          "en": "Don't be afraid to make a mistake in class.",
+          "tr": "Sınıfta hata yapmaktan korkma.",
+          "register": "neutral",
+          "focus": "make a mistake"
+        },
+        {
+          "en": "Ayşe made a mistake on the last question.",
+          "tr": "Ayşe son soruda bir hata yaptı.",
+          "register": "neutral",
+          "focus": "made a mistake"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a big mistake",
+        "make a few mistakes"
+      ],
+      "word_family": [
+        {
+          "lemma": "mistake",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hata yapmak",
+          "alt": [
+            "yanlış yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'hata yapmak' deriz; İngilizcede fiil 'do' değil 'make' olur: make a mistake. 'Mistake' sayılabilir bir isimdir: a mistake, two mistakes.",
+          "mistakes": [
+            {
+              "wrong": "I did a mistake.",
+              "right": "I made a mistake.",
+              "why": "Türkçede 'hata yapmak' (yapmak = do) dediğimiz için 'do' denir. İngilizcede 'make a mistake' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry, I ______ on the last question. The answer is B.",
+        "answer": "made a mistake",
+        "distractors": [
+          "did a mistake",
+          "took a mistake",
+          "gave a mistake"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_a_photo.phr.1",
+      "lemma": "take a photo",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "use a camera",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ə ˈfoʊtoʊ/",
+        "uk": "/teɪk ə ˈfəʊtəʊ/"
+      },
+      "def": {
+        "micro": "use a camera on something",
+        "short": "use a camera or phone to make a picture of someone or something",
+        "long": "To use a camera or a phone to make a picture of a person, a place or a thing. People do this on holidays, at parties and in daily life."
+      },
+      "examples": [
+        {
+          "en": "Can you take a photo of us, please?",
+          "tr": "Bizim fotoğrafımızı çeker misin lütfen?",
+          "register": "neutral",
+          "focus": "take a photo"
+        },
+        {
+          "en": "I took a photo of the sunset from my balcony.",
+          "tr": "Balkonumdan gün batımının fotoğrafını çektim.",
+          "register": "neutral",
+          "focus": "took a photo"
+        },
+        {
+          "en": "Don't take a photo here, Mehmet. It's not allowed.",
+          "tr": "Burada fotoğraf çekme Mehmet. Yasak.",
+          "register": "neutral",
+          "focus": "take a photo"
+        }
+      ],
+      "synonyms": [
+        "take a picture"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take a photo of",
+        "take a lot of photos"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fotoğraf çekmek",
+          "alt": [
+            "resim çekmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede fotoğraf 'çekilir'; İngilizcede ise 'take' (almak) denir. Aynı anlamda 'take a picture' denir. 'Make' ve 'do' kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "Can you make a photo of us?",
+              "right": "Can you take a photo of us?",
+              "why": "Türkçedeki 'çekmek' hiçbir İngilizce fiille birebir örtüşmez; bu yüzden tanıdık 'make' ya da 'do' seçilir. İngilizcede fotoğraf için 'take' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Smile! I want to ______ of you in front of the castle.",
+        "answer": "take a photo",
+        "distractors": [
+          "make a photo",
+          "do a photo",
+          "give a photo"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_a_seat.phr.1",
+      "lemma": "take a seat",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "sit down (polite)",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ə ˈsiːt/",
+        "uk": "/teɪk ə ˈsiːt/"
+      },
+      "def": {
+        "micro": "sit down politely",
+        "short": "a polite way to ask or tell someone to sit down",
+        "long": "A polite way to tell a person to sit down, for example a guest, a patient or a student. You often hear it in offices, at the doctor and at home."
+      },
+      "examples": [
+        {
+          "en": "Please take a seat. The doctor will see you soon.",
+          "tr": "Lütfen oturun. Doktor birazdan sizi alacak.",
+          "register": "neutral",
+          "focus": "take a seat"
+        },
+        {
+          "en": "Take a seat, Ayşe. Would you like some tea?",
+          "tr": "Otur Ayşe. Çay ister misin?",
+          "register": "neutral",
+          "focus": "Take a seat"
+        },
+        {
+          "en": "Everyone took a seat and the class began.",
+          "tr": "Herkes yerine oturdu ve ders başladı.",
+          "register": "neutral",
+          "focus": "took a seat"
+        }
+      ],
+      "synonyms": [
+        "have a seat",
+        "sit down"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "please take a seat"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "oturmak",
+          "alt": [
+            "buyurun oturun"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Aslında 'oturmak' demektir ama 'sit down' sözünden daha kibardır. Misafire, hastaya ve müşteriye söylenir. Aynı anlamda 'have a seat' denir.",
+          "mistakes": [
+            {
+              "wrong": "Please take a sit.",
+              "right": "Please take a seat.",
+              "why": "Türkçede kısa ve uzun 'i' ayrımı olmadığı için 'sit' (oturmak) ve 'seat' (koltuk, yer) karışır. Doğrusu: take a seat."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hello, Mr. Kaya. Please ______. I'll be with you in a minute.",
+        "answer": "take a seat",
+        "distractors": [
+          "take a photo",
+          "keep in touch",
+          "catch a cold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.keep_in_touch.phr.1",
+      "lemma": "keep in touch",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "stay in contact",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kiːp ɪn ˈtʌtʃ/",
+        "uk": "/kiːp ɪn ˈtʌtʃ/"
+      },
+      "def": {
+        "micro": "stay in contact",
+        "short": "talk, call or write to someone often, so you do not lose contact",
+        "long": "To call, write or message a person often enough so that you do not lose contact, especially when you live far away. People often say it when they say goodbye."
+      },
+      "grammar": {
+        "pattern": "keep in touch (with + person)"
+      },
+      "examples": [
+        {
+          "en": "Let's keep in touch!",
+          "tr": "Haberleşelim!",
+          "register": "neutral",
+          "focus": "keep in touch"
+        },
+        {
+          "en": "I moved to Berlin, but I keep in touch with my old friends.",
+          "tr": "Berlin'e taşındım ama eski arkadaşlarımla görüşmeye devam ediyorum.",
+          "register": "neutral",
+          "focus": "keep in touch"
+        },
+        {
+          "en": "Maria and Ayşe kept in touch after the course by email.",
+          "tr": "Maria ile Ayşe kurstan sonra e-postayla görüşmeye devam etti.",
+          "register": "neutral",
+          "focus": "kept in touch"
+        }
+      ],
+      "synonyms": [
+        "stay in touch"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "keep in touch with",
+        "stay in touch"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "haberleşmek",
+          "alt": [
+            "görüşmeye devam etmek",
+            "irtibatta kalmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Vedalaşırken 'Keep in touch!' ya da 'Stay in touch!' denir. Buradaki 'touch' dokunmak değil, bağlantı demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I will move to another city, but I want to ______. Please call me often.",
+        "answer": "keep in touch",
+        "distractors": [
+          "get lost",
+          "take a photo",
+          "pay attention"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_ready.phr.1",
+      "lemma": "get ready",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "prepare yourself",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈrɛdi/",
+        "uk": "/ɡɛt ˈrɛdi/"
+      },
+      "def": {
+        "micro": "prepare yourself",
+        "short": "prepare yourself for something, for example by dressing, packing or planning",
+        "long": "To do what you need to do before an event or a trip, such as put on clothes, pack a bag or plan something. You often say 'for' and then the event."
+      },
+      "grammar": {
+        "pattern": "get ready (for + noun / to + verb)"
+      },
+      "examples": [
+        {
+          "en": "Get ready! We leave in ten minutes.",
+          "tr": "Hazırlan! On dakikaya çıkıyoruz.",
+          "register": "neutral",
+          "focus": "Get ready"
+        },
+        {
+          "en": "Elif is getting ready for the party.",
+          "tr": "Elif partiye hazırlanıyor.",
+          "register": "neutral",
+          "focus": "getting ready"
+        },
+        {
+          "en": "The kids got ready for school and ate breakfast.",
+          "tr": "Çocuklar okula hazırlandı ve kahvaltı yaptı.",
+          "register": "neutral",
+          "focus": "got ready"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get ready for",
+        "get ready to go"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hazırlanmak",
+          "alt": [
+            "hazır olmak",
+            "hazırlık yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Get ready' kendin hazırlanmaktır. Bir şeyi hazırlamak için 'prepare' ya da 'make' denir: 'prepare dinner'. Hazır olma durumu ise 'be ready' ile söylenir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We leave for the airport in an hour, so we need to ______ now.",
+        "answer": "get ready",
+        "distractors": [
+          "make a mistake",
+          "catch a cold",
+          "get lost"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_lost.phr.1",
+      "lemma": "get lost",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "lose your way",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈlɔːst/",
+        "uk": "/ɡɛt ˈlɒst/"
+      },
+      "def": {
+        "micro": "not know where you are",
+        "short": "not know where you are or how to go to the place you want",
+        "long": "To be in a place and not know how to reach the place you want, for example in a big city or a forest. A phone map can help."
+      },
+      "examples": [
+        {
+          "en": "We got lost in the old city.",
+          "tr": "Eski şehirde kaybolduk.",
+          "register": "neutral",
+          "focus": "got lost"
+        },
+        {
+          "en": "Take a map so you don't get lost.",
+          "tr": "Kaybolmamak için harita al.",
+          "register": "neutral",
+          "focus": "get lost"
+        },
+        {
+          "en": "Kenji got lost on the way to the station, so he called me.",
+          "tr": "Kenji istasyona giderken yolunu kaybetti, bu yüzden beni aradı.",
+          "register": "neutral",
+          "focus": "got lost"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get lost in"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaybolmak",
+          "alt": [
+            "yolunu kaybetmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Emir olarak 'Get lost!' kaba bir 'Defol!' demektir; kimseye söyleme. Kaybolmak için 'I got lost' denir.",
+          "mistakes": [
+            {
+              "wrong": "I lost in Istanbul.",
+              "right": "I got lost in Istanbul.",
+              "why": "Türkçede 'kayboldum' tek sözcüktür, bu yüzden 'I lost' denir. Ama 'I lost' 'bir şeyi kaybettim' demektir. Kaybolmak için 'I got lost' ya da 'I am lost' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't know this city. I'm afraid I'll ______.",
+        "answer": "get lost",
+        "distractors": [
+          "take a seat",
+          "keep in touch",
+          "make a decision"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_better.phr.1",
+      "lemma": "get better",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "improve",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈbɛtər/",
+        "uk": "/ɡɛt ˈbɛtə/"
+      },
+      "def": {
+        "micro": "improve or feel well again",
+        "short": "improve, for example when you feel well again after an illness or when you learn",
+        "long": "To improve, or to feel well again after being ill. People say it about a person, a skill, a situation or the weather."
+      },
+      "examples": [
+        {
+          "en": "I hope you get better soon.",
+          "tr": "Umarım yakında iyileşirsin.",
+          "register": "neutral",
+          "focus": "get better"
+        },
+        {
+          "en": "My English is getting better every day.",
+          "tr": "İngilizcem her gün daha iyi oluyor.",
+          "register": "neutral",
+          "focus": "getting better"
+        },
+        {
+          "en": "Ayşe had a fever, but she got better after two days.",
+          "tr": "Ayşe'nin ateşi vardı ama iki gün sonra iyileşti.",
+          "register": "neutral",
+          "focus": "got better"
+        }
+      ],
+      "synonyms": [
+        "improve",
+        "recover"
+      ],
+      "antonyms": [
+        "get worse"
+      ],
+      "collocations": [
+        "get better soon",
+        "get better at"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyileşmek",
+          "alt": [
+            "düzelmek",
+            "daha iyi olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hastalık için 'iyileşmek', beceri için 'gelişmek' ya da 'daha iyi olmak' denir; İngilizcede ikisi de 'get better'. 'Better' kelimesinin önüne 'more' gelmez.",
+          "mistakes": [
+            {
+              "wrong": "Your English will get more good.",
+              "right": "Your English will get better.",
+              "why": "Türkçede 'daha iyi' = 'daha' + 'iyi' olduğu için 'more good' denir. İngilizcede 'good' kelimesinin üstünlük hali 'better' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif had a fever last week, but now she is starting to ______.",
+        "answer": "get better",
+        "distractors": [
+          "take a photo",
+          "make a mistake",
+          "take a seat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.catch_a_cold.phr.1",
+      "lemma": "catch a cold",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "become ill with a cold",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kætʃ ə ˈkoʊld/",
+        "uk": "/kætʃ ə ˈkəʊld/"
+      },
+      "def": {
+        "micro": "get a mild illness",
+        "short": "become ill with a mild illness that gives you a runny nose and a sore throat",
+        "long": "To become ill with a common, mild illness that gives you a runny nose, a sore throat and a cough. You often get it when the weather is bad or when other people around you are ill."
+      },
+      "examples": [
+        {
+          "en": "Wear a jacket or you'll catch a cold.",
+          "tr": "Ceket giy, yoksa soğuk alırsın.",
+          "register": "neutral",
+          "focus": "catch a cold"
+        },
+        {
+          "en": "I caught a cold last week, so I stayed home.",
+          "tr": "Geçen hafta soğuk aldım, o yüzden evde kaldım.",
+          "register": "neutral",
+          "focus": "caught a cold"
+        },
+        {
+          "en": "Mehmet caught a cold after the rainy football game.",
+          "tr": "Mehmet yağmurlu futbol maçından sonra soğuk aldı.",
+          "register": "neutral",
+          "focus": "caught a cold"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "catch a bad cold",
+        "catch the flu"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "soğuk almak",
+          "alt": [
+            "üşütmek",
+            "nezle olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Catch' = yakalamak. Mikrop ve hastalık 'yakalanır', o yüzden 'catch' kullanılır. 'Have a cold' ise şu anda nezle olmak demektir.",
+          "mistakes": [
+            {
+              "wrong": "I took a cold.",
+              "right": "I caught a cold.",
+              "why": "Türkçede 'soğuk almak' (almak = take) dediğimiz için 'take' denir. İngilizcede hastalık 'catch' ile yakalanır: caught a cold."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's raining and cold. Wear a jacket or you will ______.",
+        "answer": "catch a cold",
+        "distractors": [
+          "take a seat",
+          "make a decision",
+          "have a look"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

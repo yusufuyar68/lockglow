@@ -1,0 +1,1098 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.get.v.1",
+      "lemma": "get",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "receive",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt/",
+        "uk": "/ɡɛt/"
+      },
+      "def": {
+        "micro": "receive something",
+        "short": "to be given or sent something by someone",
+        "long": "To be given or sent something, such as a message, a gift, or a letter. It is one of the most common verbs in English, and it has many other meanings too."
+      },
+      "grammar": {
+        "pattern": "get + sth (from sb)"
+      },
+      "examples": [
+        {
+          "en": "I got a message from Ayşe.",
+          "tr": "Ayşe'den bir mesaj aldım.",
+          "register": "neutral",
+          "focus": "got"
+        },
+        {
+          "en": "Did you get my email this morning?",
+          "tr": "Bu sabah e-postamı aldın mı?",
+          "register": "neutral",
+          "focus": "get"
+        },
+        {
+          "en": "Kaan got a nice gift from his boss.",
+          "tr": "Kaan patronundan güzel bir hediye aldı.",
+          "register": "neutral",
+          "focus": "got"
+        }
+      ],
+      "synonyms": [
+        "receive"
+      ],
+      "antonyms": [
+        "give",
+        "send"
+      ],
+      "collocations": [
+        "get a message",
+        "get a gift",
+        "get an email",
+        "get a letter",
+        "get a phone call"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old Norse 'geta', meaning 'to obtain'. It came into English around the year 1200.",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "almak",
+          "alt": [
+            "elde etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Get' çok anlamlıdır: almak, olmak, gelmek, ulaşmak… Bu kart 'almak' anlamını anlatır. Düzensiz: get - got - got (ABD'de bazen gotten).",
+          "mistakes": [
+            {
+              "wrong": "I took a message from my sister.",
+              "right": "I got a message from my sister.",
+              "why": "Türkçede 'almak' hem 'take' hem 'get' hem 'buy' demektir. Sana gelen bir şeyi almak için 'get', bir şeyi eline alıp götürmek için 'take' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:take"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Look! I ______ a new phone from my parents for my birthday.",
+        "answer": "got",
+        "distractors": [
+          "gave",
+          "sent",
+          "lent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "ipa_dress_normalized"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.have.v.1",
+      "lemma": "have",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "eat or drink",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv/",
+        "uk": "/hæv/"
+      },
+      "def": {
+        "micro": "eat or drink something",
+        "short": "to eat or drink something, usually at a meal or a break",
+        "long": "To eat or drink something. People use it for meals like breakfast, lunch, and dinner, and for drinks like tea or coffee. It sounds natural and friendly in everyday talk."
+      },
+      "grammar": {
+        "pattern": "have + meal / drink"
+      },
+      "examples": [
+        {
+          "en": "Let's have lunch together.",
+          "tr": "Birlikte öğle yemeği yiyelim.",
+          "register": "neutral",
+          "focus": "have"
+        },
+        {
+          "en": "Do you want to have a cup of tea?",
+          "tr": "Bir fincan çay içmek ister misin?",
+          "register": "neutral",
+          "focus": "have"
+        },
+        {
+          "en": "Elif has breakfast at seven every day.",
+          "tr": "Elif her gün saat yedide kahvaltı yapar.",
+          "register": "neutral",
+          "focus": "has"
+        }
+      ],
+      "synonyms": [
+        "eat",
+        "drink"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have lunch",
+        "have breakfast",
+        "have dinner",
+        "have a cup of tea",
+        "have a coffee"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yemek, içmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yemek ve içecek için 'eat' ya da 'drink' yerine sık sık 'have' denir: kahvaltı yapmak = have breakfast. 'Sahip olmak' (I have a car) ayrı bir anlamdır. Düzensiz: have - had - had.",
+          "mistakes": [
+            {
+              "wrong": "Every day I do breakfast at seven.",
+              "right": "Every day I have breakfast at seven.",
+              "why": "Türkçede 'kahvaltı yapmak' dediğimiz için 'do' ya da 'make' denir. İngilizcede öğün ve içecekle 'have' kullanılır: have breakfast, have lunch."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I usually ______ a cup of coffee in the morning.",
+        "answer": "have",
+        "distractors": [
+          "do",
+          "wait",
+          "go"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go.v.1",
+      "lemma": "go",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move to a place",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ/",
+        "uk": "/ɡəʊ/"
+      },
+      "def": {
+        "micro": "move to another place",
+        "short": "to move or travel from one place to another",
+        "long": "To move or travel from one place to another. We use it for walking, driving, and every other kind of travel. We say 'go to' a place, but 'go home' has no 'to'."
+      },
+      "grammar": {
+        "pattern": "go to + place / go home"
+      },
+      "examples": [
+        {
+          "en": "I go to work by bus.",
+          "tr": "İşe otobüsle giderim.",
+          "register": "neutral",
+          "focus": "go"
+        },
+        {
+          "en": "Let's go to the supermarket after work.",
+          "tr": "İşten sonra markete gidelim.",
+          "register": "neutral",
+          "focus": "go"
+        },
+        {
+          "en": "Ali went home early because he was tired.",
+          "tr": "Ali yorgun olduğu için eve erken gitti.",
+          "register": "neutral",
+          "focus": "went"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "come",
+        "stay"
+      ],
+      "collocations": [
+        "go to work",
+        "go home",
+        "go to school",
+        "go by bus",
+        "go to bed"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gitmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Go' konuşanın bulunduğu yerden uzağa gitmeyi anlatır. Konuşana ya da dinleyene doğru gelmek için 'come' kullanılır. Düzensiz: go - went - gone.",
+          "mistakes": [
+            {
+              "wrong": "I go to home after work.",
+              "right": "I go home after work.",
+              "why": "Türkçede 'eve gitmek' denir ve 'eve' -e hâlidir; bu yüzden 'to home' denir. İngilizcede 'home' bir zarf gibi davranır: 'go home', 'to' gelmez."
+            },
+            {
+              "wrong": "I go to work with bus.",
+              "right": "I go to work by bus.",
+              "why": "Türkçede 'otobüsle' (-le = ile) dediğimiz için 'with' denir. İngilizcede araç için 'by' kullanılır: by bus, by car."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:come"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sofia and I ______ to school by bus every morning.",
+        "answer": "go",
+        "distractors": [
+          "walk",
+          "run",
+          "fly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.come.v.1",
+      "lemma": "come",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move toward the speaker",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌm/",
+        "uk": "/kʌm/"
+      },
+      "def": {
+        "micro": "move toward this place",
+        "short": "to move or travel toward the person who is speaking or listening",
+        "long": "To move or travel toward the place where the speaker or the listener is. We often use it for invitations: 'Come to my party!' It can also mean to arrive at a place."
+      },
+      "grammar": {
+        "pattern": "come to + place"
+      },
+      "examples": [
+        {
+          "en": "Can you come to the party on Saturday?",
+          "tr": "Cumartesi partiye gelebilir misin?",
+          "register": "neutral",
+          "focus": "come"
+        },
+        {
+          "en": "My friends come to my house every Sunday.",
+          "tr": "Arkadaşlarım her pazar evime gelir.",
+          "register": "neutral",
+          "focus": "come"
+        },
+        {
+          "en": "Sam came home late last night.",
+          "tr": "Sam dün gece eve geç geldi.",
+          "register": "neutral",
+          "focus": "came"
+        }
+      ],
+      "synonyms": [
+        "arrive"
+      ],
+      "antonyms": [
+        "go"
+      ],
+      "collocations": [
+        "come home",
+        "come here",
+        "come with me",
+        "come to the party",
+        "come on time"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gelmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Come' konuşana ya da dinleyene doğru hareketi anlatır. Karşıdaki kişinin yanına giderken de 'I'm coming!' (Geliyorum!) denir. Düzensiz: come - came - come.",
+          "mistakes": [
+            {
+              "wrong": "Come to here, please.",
+              "right": "Come here, please.",
+              "why": "Türkçede 'buraya gel' dediğimiz için 'to here' denir. İngilizcede 'here' bir zarftır; 'to' ile kullanılmaz: 'come here'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:go"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bus ______ every ten minutes, so you don't wait long.",
+        "answer": "comes",
+        "distractors": [
+          "waits",
+          "opens",
+          "sits"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.give.v.1",
+      "lemma": "give",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "hand something to someone",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɪv/",
+        "uk": "/ɡɪv/"
+      },
+      "def": {
+        "micro": "hand something to someone",
+        "short": "to hand or offer something to another person",
+        "long": "To hand something to another person so that they have it. You can give a gift, some advice, or your phone number. We say 'give me' or 'give her' with no 'to'."
+      },
+      "grammar": {
+        "pattern": "give + sb + sth / give sth to sb"
+      },
+      "examples": [
+        {
+          "en": "Can you give me a pen, please?",
+          "tr": "Bana bir kalem verebilir misin lütfen?",
+          "register": "neutral",
+          "focus": "give"
+        },
+        {
+          "en": "Burak gave his sister a nice gift.",
+          "tr": "Burak kız kardeşine güzel bir hediye verdi.",
+          "register": "neutral",
+          "focus": "gave"
+        },
+        {
+          "en": "Please give your phone number to the teacher.",
+          "tr": "Lütfen telefon numaranı öğretmene ver.",
+          "register": "neutral",
+          "focus": "give"
+        }
+      ],
+      "synonyms": [
+        "hand"
+      ],
+      "antonyms": [
+        "take",
+        "get"
+      ],
+      "collocations": [
+        "give a gift",
+        "give advice",
+        "give me a call",
+        "give a hand",
+        "give an answer"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "vermek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Give' iki biçimde kurulur: 'give me a pen' ya da 'give a pen to me'. Kişi önce gelirse 'to' gerekmez. Düzensiz: give - gave - given.",
+          "mistakes": [
+            {
+              "wrong": "Can you give to me your phone number?",
+              "right": "Can you give me your phone number?",
+              "why": "Türkçede 'bana ver' (-a hâli) dediğimiz için 'to me' denir. İngilizcede kişi fiilden hemen sonra gelirse 'to' kullanılmaz: 'give me'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ me your phone number? I want to call you later.",
+        "answer": "give",
+        "distractors": [
+          "say",
+          "keep",
+          "speak"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.put.v.1",
+      "lemma": "put",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "place something somewhere",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pʊt/",
+        "uk": "/pʊt/"
+      },
+      "def": {
+        "micro": "place something somewhere",
+        "short": "to place something in a particular position or place",
+        "long": "To place something in a position or place. We usually say where: 'put it on the table', 'put your keys in your bag'. In the past it does not change: put, put, put."
+      },
+      "grammar": {
+        "pattern": "put + sth + on/in + place"
+      },
+      "examples": [
+        {
+          "en": "Put your bag on the chair.",
+          "tr": "Çantanı sandalyenin üstüne koy.",
+          "register": "neutral",
+          "focus": "Put"
+        },
+        {
+          "en": "Where did you put my keys?",
+          "tr": "Anahtarlarımı nereye koydun?",
+          "register": "neutral",
+          "focus": "put"
+        },
+        {
+          "en": "Anna put the milk in the fridge.",
+          "tr": "Anna sütü buzdolabına koydu.",
+          "register": "neutral",
+          "focus": "put"
+        }
+      ],
+      "synonyms": [
+        "place"
+      ],
+      "antonyms": [
+        "take"
+      ],
+      "collocations": [
+        "put it on the table",
+        "put sugar in tea",
+        "put it in the bag",
+        "put it back"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "koymak",
+          "alt": [
+            "yerleştirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Put' hep bir yer ister: 'put it on the table'. Yer söylenmezse cümle eksik kalır. Geçmişte de 'put' kalır: put - put - put.",
+          "mistakes": [
+            {
+              "wrong": "Put the book to the table.",
+              "right": "Put the book on the table.",
+              "why": "Türkçede 'masaya koy' (-a hâli) dediğimiz için 'to' denir. İngilizcede yere göre 'on' (üstüne) ya da 'in' (içine) gelir."
+            },
+            {
+              "wrong": "I putted my phone in my bag.",
+              "right": "I put my phone in my bag.",
+              "why": "Türkçede düzensiz fiil yoktur; bu yüzden '-ed' eklenir. 'Put' geçmişte de aynı kalır: put - put - put."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ some sugar in my tea, please?",
+        "answer": "put",
+        "distractors": [
+          "give",
+          "drink",
+          "wash"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.keep.v.1",
+      "lemma": "keep",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "continue to have something",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kiːp/",
+        "uk": "/kiːp/"
+      },
+      "def": {
+        "micro": "continue to have something",
+        "short": "to have something and not give it away or lose it",
+        "long": "To have something and not give it back, throw it away, or lose it. You can keep a gift, a receipt, or a secret. At a shop, 'Keep the change' means you can have the extra money."
+      },
+      "grammar": {
+        "pattern": "keep + sth"
+      },
+      "examples": [
+        {
+          "en": "Maria keeps her keys in a small bag.",
+          "tr": "Maria anahtarlarını küçük bir çantada saklar.",
+          "register": "neutral",
+          "focus": "keeps"
+        },
+        {
+          "en": "Mehmet kept all his old photos.",
+          "tr": "Mehmet eski fotoğraflarının hepsini sakladı.",
+          "register": "neutral",
+          "focus": "kept"
+        },
+        {
+          "en": "Kenji wants to keep the old guitar his father gave him.",
+          "tr": "Kenji babasının ona verdiği eski gitarı saklamak istiyor.",
+          "register": "neutral",
+          "focus": "keep"
+        }
+      ],
+      "synonyms": [
+        "save"
+      ],
+      "antonyms": [
+        "lose",
+        "give away",
+        "throw away"
+      ],
+      "collocations": [
+        "keep the receipt",
+        "keep the change",
+        "keep a secret",
+        "keep it safe",
+        "keep old photos"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "saklamak",
+          "alt": [
+            "tutmak",
+            "elinde tutmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Keep' sende kalsın demektir: verme, atma, kaybetme. 'Keep the change' = üstü kalsın. Karşıtı 'give back' (geri vermek). Düzensiz: keep - kept - kept.",
+          "mistakes": [
+            {
+              "wrong": "I keeped all her letters.",
+              "right": "I kept all her letters.",
+              "why": "Türkçede düzensiz fiil yoktur; bu yüzden '-ed' eklenir. 'Keep' düzensizdir: keep - kept - kept."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You will need your ticket later, so please ______ it.",
+        "answer": "keep",
+        "distractors": [
+          "throw",
+          "wear",
+          "lose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.leave.v.1",
+      "lemma": "leave",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go away from a place",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/liːv/",
+        "uk": "/liːv/"
+      },
+      "def": {
+        "micro": "go away from a place",
+        "short": "to go away from a place, usually to go somewhere else",
+        "long": "To go away from a place or a person. You can leave home, leave work, or leave a party. We say 'leave for' the place that you are going to."
+      },
+      "grammar": {
+        "pattern": "leave + place / leave for + place"
+      },
+      "examples": [
+        {
+          "en": "I leave home at eight every morning.",
+          "tr": "Her sabah sekizde evden çıkarım.",
+          "register": "neutral",
+          "focus": "leave"
+        },
+        {
+          "en": "Selin left the office early today.",
+          "tr": "Selin bugün ofisten erken ayrıldı.",
+          "register": "neutral",
+          "focus": "left"
+        },
+        {
+          "en": "My train leaves at seven, so I must go now.",
+          "tr": "Trenim yedide kalkıyor, o yüzden şimdi gitmem lazım.",
+          "register": "neutral",
+          "focus": "leaves"
+        }
+      ],
+      "synonyms": [
+        "go away"
+      ],
+      "antonyms": [
+        "arrive",
+        "stay"
+      ],
+      "collocations": [
+        "leave home",
+        "leave work",
+        "leave early",
+        "leave the room",
+        "leave at five"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayrılmak",
+          "alt": [
+            "çıkmak",
+            "kalkmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Leave' bir yerden ayrılmaktır. Gideceğin yer 'for' ile söylenir: 'leave for Ankara'. Bir şeyi bir yerde bırakmak için de 'leave' denir. Düzensiz: leave - left - left.",
+          "mistakes": [
+            {
+              "wrong": "I will leave to Istanbul tomorrow.",
+              "right": "I will leave for Istanbul tomorrow.",
+              "why": "Türkçede 'İstanbul'a gitmek' -e hâliyle söylenir; bu yüzden 'to' denir. 'Leave' ile gidilen yer 'for' ile bağlanır."
+            },
+            {
+              "wrong": "I left from home at eight.",
+              "right": "I left home at eight.",
+              "why": "Türkçede 'evden çıktım' (-den hâli) dediğimiz için 'from' denir. İngilizcede 'leave' doğrudan yer alır: 'leave home'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The film is over. Let's ______ the cinema and get dinner.",
+        "answer": "leave",
+        "distractors": [
+          "buy",
+          "watch",
+          "wash"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.find.v.1",
+      "lemma": "find",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "locate something you looked for",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/faɪnd/",
+        "uk": "/faɪnd/"
+      },
+      "def": {
+        "micro": "get or discover something",
+        "short": "to see or get something that you were looking for",
+        "long": "To see or get something after looking for it. You can find your keys, an address, or the answer to a question. It can also mean to learn something by chance."
+      },
+      "grammar": {
+        "pattern": "find + sth"
+      },
+      "examples": [
+        {
+          "en": "I can't find my keys.",
+          "tr": "Anahtarlarımı bulamıyorum.",
+          "register": "neutral",
+          "focus": "find"
+        },
+        {
+          "en": "Did you find the restaurant easily?",
+          "tr": "Restoranı kolayca buldunuz mu?",
+          "register": "neutral",
+          "focus": "find"
+        },
+        {
+          "en": "Carlos found a good flat near his office.",
+          "tr": "Carlos ofisinin yakınında iyi bir daire buldu.",
+          "register": "neutral",
+          "focus": "found"
+        }
+      ],
+      "synonyms": [
+        "discover"
+      ],
+      "antonyms": [
+        "lose"
+      ],
+      "collocations": [
+        "find my keys",
+        "find a job",
+        "find the answer",
+        "find a flat",
+        "find a seat"
+      ],
+      "word_family": [
+        {
+          "lemma": "finding",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bulmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Find' bulmaktır; aramak için 'look for' denir. 'Look for' arama eylemidir, 'find' sonuçtur: I looked for my keys, but I couldn't find them. Düzensiz: find - found - found.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:look"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't ______ my keys. Can you help me look for them?",
+        "answer": "find",
+        "distractors": [
+          "lose",
+          "visit",
+          "call"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.try.v.1",
+      "lemma": "try",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "attempt",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/traɪ/",
+        "uk": "/traɪ/"
+      },
+      "def": {
+        "micro": "make an effort to do it",
+        "short": "to make an effort to do something, even if it may be hard",
+        "long": "To make an effort to do something that may be difficult. We often say 'try to' and a verb: 'I will try to call you.' You can also try new food to see if you like it."
+      },
+      "grammar": {
+        "pattern": "try to + verb / try + noun"
+      },
+      "examples": [
+        {
+          "en": "I will try again tomorrow.",
+          "tr": "Yarın tekrar deneyeceğim.",
+          "register": "neutral",
+          "focus": "try"
+        },
+        {
+          "en": "Leila tried to call you, but your phone was off.",
+          "tr": "Leila seni aramaya çalıştı ama telefonun kapalıydı.",
+          "register": "neutral",
+          "focus": "tried"
+        },
+        {
+          "en": "Please try to arrive before nine.",
+          "tr": "Lütfen dokuzdan önce varmaya çalış.",
+          "register": "neutral",
+          "focus": "try"
+        }
+      ],
+      "synonyms": [
+        "attempt"
+      ],
+      "antonyms": [
+        "give up"
+      ],
+      "collocations": [
+        "try again",
+        "try hard",
+        "try to help",
+        "try your best",
+        "try one more time"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'trier', meaning 'to sift' or 'to pick out'. Later it came to mean 'to test', and then 'to make an effort'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "denemek, çalışmak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Try to' + fiil = yapmaya çalışmak (I tried to call). 'Try' + isim = denemek (try this soup). Geçmiş zaman: tried (y harfi ied olur).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It is a difficult exam, but I will ______ my best.",
+        "answer": "try",
+        "distractors": [
+          "make",
+          "take",
+          "have"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

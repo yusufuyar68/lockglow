@@ -1,0 +1,1193 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.belong.v.1",
+      "lemma": "belong",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be owned by someone",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪˈlɔːŋ/",
+        "uk": "/bɪˈlɒŋ/"
+      },
+      "def": {
+        "micro": "be owned by someone",
+        "short": "be owned by a person or a group",
+        "long": "To be owned by someone. We ask 'Who does this belong to?' when we find something and do not know whose it is."
+      },
+      "grammar": {
+        "pattern": "belong to sb / belong to a group"
+      },
+      "examples": [
+        {
+          "en": "This bag belongs to me.",
+          "tr": "Bu çanta bana ait.",
+          "register": "neutral",
+          "focus": "belongs"
+        },
+        {
+          "en": "Who does this umbrella belong to?",
+          "tr": "Bu şemsiye kime ait?",
+          "register": "neutral",
+          "focus": "belong"
+        },
+        {
+          "en": "The red car belongs to my neighbor, Ayşe.",
+          "tr": "Kırmızı araba komşum Ayşe'ye ait.",
+          "register": "neutral",
+          "focus": "belongs"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "belong to sb",
+        "belong to a club",
+        "belong together",
+        "belong here",
+        "belong to a team"
+      ],
+      "word_family": [
+        {
+          "lemma": "belongings",
+          "pos": "n"
+        },
+        {
+          "lemma": "belonging",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ait olmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'bana ait' dersiniz; İngilizcede 'belong to me' denir. 'Belong' durum bildiren bir fiildir, '-ing' ile kullanılmaz: 'It is belonging to me' denmez.",
+          "mistakes": [
+            {
+              "wrong": "This phone is belong to my brother.",
+              "right": "This phone belongs to my brother.",
+              "why": "Türkçede 'bu telefon kardeşime aittir' dersiniz, 'ait' sıfat gibidir. İngilizcede 'belong' zaten fiildir; 'is' eklenmez: it belongs to."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I found this pen on the floor. Does it ______ to you?",
+        "answer": "belong",
+        "distractors": [
+          "drop",
+          "push",
+          "hold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recognize.v.1",
+      "lemma": "recognize",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "know again",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛkəɡnaɪz/",
+        "uk": "/ˈrɛkəɡnaɪz/"
+      },
+      "def": {
+        "micro": "know someone from before",
+        "short": "know who or what someone or something is because you saw it before",
+        "long": "To see or hear a person or thing and know who or what it is, because you have met it or seen it before. You can recognize a face, a voice, a song, or a place."
+      },
+      "grammar": {
+        "pattern": "recognize sb/sth"
+      },
+      "examples": [
+        {
+          "en": "I didn't recognize you with short hair.",
+          "tr": "Kısa saçla seni tanıyamadım.",
+          "register": "neutral",
+          "focus": "recognize"
+        },
+        {
+          "en": "Do you recognize this song? It was very popular last year.",
+          "tr": "Bu şarkıyı tanıdın mı? Geçen yıl çok popülerdi.",
+          "register": "neutral",
+          "focus": "recognize"
+        },
+        {
+          "en": "Ayşe recognized her old teacher at the station.",
+          "tr": "Ayşe eski öğretmenini istasyonda tanıdı.",
+          "register": "neutral",
+          "focus": "recognized"
+        }
+      ],
+      "synonyms": [
+        "know again"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "recognize a face",
+        "recognize a voice",
+        "recognize a song",
+        "hard to recognize",
+        "not recognize"
+      ],
+      "word_family": [
+        {
+          "lemma": "recognition",
+          "pos": "n"
+        },
+        {
+          "lemma": "recognizable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "unrecognizable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'recognoscere', meaning 'to know again': 're-' (again) + 'cognoscere' (to get to know).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tanımak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Recognize' daha önce görüp tanımaktır: 'Seni tanıdım'. Zaten tanıdığınız biri (arkadaş, komşu) için 'know' denir: 'I know him.' İngiltere'de yazılışı 'recognise' olur.",
+          "mistakes": [
+            {
+              "wrong": "I recognize your brother. We study together.",
+              "right": "I know your brother. We study together.",
+              "why": "Türkçede 'tanımak' hem 'recognize' hem 'know (a person)' demektir ('Ali'yi tanıyorum'). Tanıdık biri için 'know', yüzünden ya da sesinden anlamak için 'recognize' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:know"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I haven't seen Sam for ten years. I didn't ______ him at the airport.",
+        "answer": "recognize",
+        "distractors": [
+          "wash",
+          "teach",
+          "cook"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.plan.v.1",
+      "lemma": "plan",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "decide what to do",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/plæn/",
+        "uk": "/plæn/"
+      },
+      "def": {
+        "micro": "decide what to do later",
+        "short": "think about what you will do and decide how to do it",
+        "long": "To think carefully about what you will do and decide how you will do it. People plan a trip, a party, or their day."
+      },
+      "grammar": {
+        "pattern": "plan sth / plan to do sth"
+      },
+      "examples": [
+        {
+          "en": "We are planning a trip to Italy.",
+          "tr": "İtalya'ya bir gezi planlıyoruz.",
+          "register": "neutral",
+          "focus": "planning"
+        },
+        {
+          "en": "David plans to study medicine next year.",
+          "tr": "David gelecek yıl tıp okumayı planlıyor.",
+          "register": "neutral",
+          "focus": "plans"
+        },
+        {
+          "en": "Ayşe is planning a surprise party for her sister.",
+          "tr": "Ayşe kız kardeşi için sürpriz bir parti planlıyor.",
+          "register": "neutral",
+          "focus": "planning"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "plan a trip",
+        "plan a party",
+        "plan to do sth",
+        "plan ahead",
+        "plan your day"
+      ],
+      "word_family": [
+        {
+          "lemma": "plan",
+          "pos": "n"
+        },
+        {
+          "lemma": "planner",
+          "pos": "n"
+        },
+        {
+          "lemma": "planning",
+          "pos": "n"
+        },
+        {
+          "lemma": "unplanned",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'plan', 'a flat drawing of a building or a map', from Latin 'planus' (flat).",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "planlamak",
+          "alt": [
+            "plan yapmak"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "İngilizcede 'plan' hem isimdir hem fiildir: 'plan a trip' (gezi planlamak). İsim kalıbı 'make a plan' olur; 'do a plan' denmez: 'Let's make a plan.'",
+          "mistakes": [
+            {
+              "wrong": "We did a plan for the trip.",
+              "right": "We made a plan for the trip.",
+              "why": "Türkçede 'plan yapmak' dersiniz ve 'yapmak' çoğu zaman 'do' diye çevrilir. İngilizcede plan 'make a plan' ile söylenir; fiil olarak da 'plan' kullanılır."
+            },
+            {
+              "wrong": "I'm planning going to Izmir.",
+              "right": "I'm planning to go to Izmir.",
+              "why": "Türkçedeki 'gitmeyi planlıyorum' ('-meyi' eki) '-ing' gibi çevrilir. 'Plan' fiilinden sonra 'to + fiil' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We want to visit Rome in May, so we need to ______ our trip.",
+        "answer": "plan",
+        "distractors": [
+          "cross",
+          "board",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.order.v.1",
+      "lemma": "order",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "ask for food or drink",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːrdər/",
+        "uk": "/ˈɔːdə/"
+      },
+      "def": {
+        "micro": "ask for food or a drink",
+        "short": "ask for food or a drink in a restaurant or café",
+        "long": "To ask for food or a drink in a restaurant or café. The waiter comes to your table, and you say what you want."
+      },
+      "grammar": {
+        "pattern": "order sth (from sb) / order sb sth"
+      },
+      "examples": [
+        {
+          "en": "Are you ready to order?",
+          "tr": "Sipariş vermeye hazır mısınız?",
+          "register": "neutral",
+          "focus": "order"
+        },
+        {
+          "en": "I'll order the chicken soup and a glass of water, please.",
+          "tr": "Tavuk çorbası ve bir bardak su sipariş edeceğim, lütfen.",
+          "register": "neutral",
+          "focus": "order"
+        },
+        {
+          "en": "Elif ordered a pizza and a salad for dinner.",
+          "tr": "Elif akşam yemeği için pizza ve salata sipariş etti.",
+          "register": "neutral",
+          "focus": "ordered"
+        }
+      ],
+      "synonyms": [
+        "ask for"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "order food",
+        "order a drink",
+        "order a pizza",
+        "order online",
+        "ready to order"
+      ],
+      "word_family": [
+        {
+          "lemma": "order",
+          "pos": "n"
+        },
+        {
+          "lemma": "reorder",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'ordre', from Latin 'ordo', meaning a row or a rank.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sipariş vermek",
+          "alt": [
+            "ısmarlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'sipariş vermek' dersiniz ama İngilizcede 'give an order' emir vermek demektir. Yemek için 'order' ya da 'place an order' denir: 'I'd like to order.'",
+          "mistakes": [
+            {
+              "wrong": "Let's give an order for two pizzas.",
+              "right": "Let's order two pizzas.",
+              "why": "Türkçedeki 'sipariş vermek' sözcüğü sözcüğüne 'give an order' olur; bu İngilizcede 'emir vermek' demektir. Sipariş için 'order' fiili ya da 'place an order' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The waiter is here. Are you ready to ______?",
+        "answer": "order",
+        "distractors": [
+          "fry",
+          "boil",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.return.v.1",
+      "lemma": "return",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "come or go back",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈtɜːrn/",
+        "uk": "/rɪˈtɜːn/"
+      },
+      "def": {
+        "micro": "go or come back",
+        "short": "go or come back to a place where you were before",
+        "long": "To go or come back to a place where you were before. You can return home after work, or return to a city after a long time."
+      },
+      "grammar": {
+        "pattern": "return (to) a place / return home"
+      },
+      "examples": [
+        {
+          "en": "We return home on Sunday.",
+          "tr": "Pazar günü eve dönüyoruz.",
+          "register": "neutral",
+          "focus": "return"
+        },
+        {
+          "en": "Ayşe returned to her office after lunch.",
+          "tr": "Ayşe öğle yemeğinden sonra ofisine döndü.",
+          "register": "neutral",
+          "focus": "returned"
+        },
+        {
+          "en": "After two years abroad, Kenji returned to Japan.",
+          "tr": "Kenji yurtdışında iki yıl kaldıktan sonra Japonya'ya döndü.",
+          "register": "neutral",
+          "focus": "returned"
+        }
+      ],
+      "synonyms": [
+        "come back",
+        "go back"
+      ],
+      "antonyms": [
+        "leave"
+      ],
+      "collocations": [
+        "return home",
+        "return to work",
+        "return to school",
+        "return from a trip"
+      ],
+      "word_family": [
+        {
+          "lemma": "return",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'retourner': 're-' (back) + 'tourner' (to turn), which comes from Latin 'tornare'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "geri dönmek",
+          "alt": [
+            "dönmek",
+            "geri gelmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Aynı fiil 'bir şeyi geri vermek' de demektir: 'return a book' (kitabı iade etmek). 'Return' sonrasında 'to home' denmez, 'return home' denir.",
+          "mistakes": [
+            {
+              "wrong": "She returned to home at six.",
+              "right": "She returned home at six.",
+              "why": "Türkçede 'eve dönmek' dersiniz ('-e' hâli), bu yüzden 'to' eklenir. İngilizcede 'home' zarf gibi davranır: return home, go home, come home."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm on holiday now, but I ______ to work on Monday.",
+        "answer": "return",
+        "distractors": [
+          "drop",
+          "hold",
+          "knock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.drop.v.1",
+      "lemma": "drop",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "let something fall",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/drɑːp/",
+        "uk": "/drɒp/"
+      },
+      "def": {
+        "micro": "let something fall down",
+        "short": "let something fall from your hand, often by mistake",
+        "long": "To let something fall from your hand, usually by mistake. Phones, glasses, and plates are easy to drop on a hard floor."
+      },
+      "grammar": {
+        "pattern": "drop sth"
+      },
+      "examples": [
+        {
+          "en": "Oops! I dropped my keys.",
+          "tr": "Eyvah! Anahtarlarımı düşürdüm.",
+          "register": "neutral",
+          "focus": "dropped"
+        },
+        {
+          "en": "Elif dropped a plate and it broke.",
+          "tr": "Elif bir tabağı düşürdü ve tabak kırıldı.",
+          "register": "neutral",
+          "focus": "dropped"
+        },
+        {
+          "en": "Don't drop the ball! Hold it with both hands.",
+          "tr": "Topu düşürme! İki elinle tut.",
+          "register": "neutral",
+          "focus": "drop"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "hold"
+      ],
+      "collocations": [
+        "drop a plate",
+        "drop your keys",
+        "drop your phone",
+        "drop the ball",
+        "drop sth on the floor"
+      ],
+      "word_family": [
+        {
+          "lemma": "drop",
+          "pos": "n"
+        },
+        {
+          "lemma": "droplet",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düşürmek",
+          "alt": [
+            "bırakmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Düşürmek' = 'drop'; 'düşmek' = 'fall'. Düzenli fiil: drop - dropped - dropped (p ikilenir). 'Drop' isim olarak 'damla' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:fall"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Be careful with the glass! Don't ______ it on the floor.",
+        "answer": "drop",
+        "distractors": [
+          "fall",
+          "peel",
+          "shout"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hold.v.1",
+      "lemma": "hold",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have in your hands",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hoʊld/",
+        "uk": "/həʊld/"
+      },
+      "def": {
+        "micro": "have in your hands",
+        "short": "have something in your hand or arms and not let it go",
+        "long": "To have something in your hand or arms and not let it go. You can hold a bag, a baby, a phone, or another person's hand."
+      },
+      "grammar": {
+        "pattern": "hold sth / hold sb's hand"
+      },
+      "examples": [
+        {
+          "en": "Can you hold my bag for a minute?",
+          "tr": "Çantamı bir dakika tutar mısın?",
+          "register": "neutral",
+          "focus": "hold"
+        },
+        {
+          "en": "Maria held the baby carefully in her arms.",
+          "tr": "Maria bebeği dikkatle kollarında tuttu.",
+          "register": "neutral",
+          "focus": "held"
+        },
+        {
+          "en": "Hold my hand when we cross the street.",
+          "tr": "Caddeden karşıya geçerken elimi tut.",
+          "register": "neutral",
+          "focus": "Hold"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "let go"
+      ],
+      "collocations": [
+        "hold a bag",
+        "hold hands",
+        "hold sb's hand",
+        "hold the door open"
+      ],
+      "word_family": [
+        {
+          "lemma": "holder",
+          "pos": "n"
+        },
+        {
+          "lemma": "hold",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'healdan', meaning to keep, guard, or hold.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tutmak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'tutmak' çok anlamlıdır: elinde tutmak (hold), yakalamak (catch), sözünü tutmak (keep a promise). Bu anlamda 'hold' elinde ya da kollarında tutmaktır. Düzensiz fiil: hold - held - held.",
+          "mistakes": [
+            {
+              "wrong": "She always holds her promises.",
+              "right": "She always keeps her promises.",
+              "why": "Türkçede 'sözünü tutmak' dersiniz ve 'tutmak' 'hold' diye çevrilir. İngilizcede söz 'keep a promise' ile tutulur; 'hold' elde tutmaktır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:keep"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My hands are full. Can you ______ my coffee for a second?",
+        "answer": "hold",
+        "distractors": [
+          "peel",
+          "fry",
+          "chop"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.grow.v.1",
+      "lemma": "grow",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get bigger",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡroʊ/",
+        "uk": "/ɡrəʊ/"
+      },
+      "def": {
+        "micro": "get bigger over time",
+        "short": "become bigger or taller as time passes, like plants and children",
+        "long": "To become bigger, taller, or longer as time goes by. Children, plants, and hair grow, and so do cities."
+      },
+      "grammar": {
+        "pattern": "grow (+ adj) / grow up"
+      },
+      "examples": [
+        {
+          "en": "Tomatoes grow well in warm weather.",
+          "tr": "Domatesler sıcak havada iyi büyür.",
+          "register": "neutral",
+          "focus": "grow"
+        },
+        {
+          "en": "My son is growing fast. He needs new shoes.",
+          "tr": "Oğlum hızla büyüyor. Yeni ayakkabılara ihtiyacı var.",
+          "register": "neutral",
+          "focus": "growing"
+        },
+        {
+          "en": "The town grew quickly after the new factory opened.",
+          "tr": "Yeni fabrika açılınca kasaba hızla büyüdü.",
+          "register": "neutral",
+          "focus": "grew"
+        }
+      ],
+      "synonyms": [
+        "get bigger"
+      ],
+      "antonyms": [
+        "shrink"
+      ],
+      "collocations": [
+        "grow fast",
+        "grow taller",
+        "grow well",
+        "grow bigger"
+      ],
+      "word_family": [
+        {
+          "lemma": "growth",
+          "pos": "n"
+        },
+        {
+          "lemma": "grown",
+          "pos": "adj"
+        },
+        {
+          "lemma": "grown-up",
+          "pos": "n"
+        },
+        {
+          "lemma": "overgrown",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'grōwan', related to 'green' and 'grass': all three words come from the same old root about plants.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "büyümek",
+          "alt": [
+            "yetişmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Düzensiz fiil: grow - grew - grown. 'Grow' çocuklar ve bitkiler için 'büyümek' demektir. 'Büyüdüm' (çocukluğumu geçirdim) için 'grow up' denir: 'I grew up in Izmir.'",
+          "mistakes": [
+            {
+              "wrong": "I grew in a small town near Bursa.",
+              "right": "I grew up in a small town near Bursa.",
+              "why": "Türkçede 'küçük bir kasabada büyüdüm' dersiniz ve 'büyümek' 'grow' diye çevrilir. İngilizcede çocukluğunuzu bir yerde geçirmek için 'grow up' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Plants need water and sun to ______.",
+        "answer": "grow",
+        "distractors": [
+          "wear",
+          "lock",
+          "knock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.seem.v.1",
+      "lemma": "seem",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give the feeling that",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/siːm/",
+        "uk": "/siːm/"
+      },
+      "def": {
+        "micro": "look or feel like something",
+        "short": "give the feeling that something is true, from what you see or hear",
+        "long": "To give the feeling that something is true or is a certain way, from what you see, hear, or know. She seems happy today."
+      },
+      "grammar": {
+        "pattern": "seem + adj / seem to + verb / it seems that"
+      },
+      "examples": [
+        {
+          "en": "Mehmet seems tired today.",
+          "tr": "Mehmet bugün yorgun görünüyor.",
+          "register": "neutral",
+          "focus": "seems"
+        },
+        {
+          "en": "It seems that the shop is closed.",
+          "tr": "Mağaza kapalı gibi görünüyor.",
+          "register": "neutral",
+          "focus": "seems"
+        },
+        {
+          "en": "Your new teacher seems to be very kind.",
+          "tr": "Yeni öğretmeniniz çok nazik biri gibi görünüyor.",
+          "register": "neutral",
+          "focus": "seems"
+        }
+      ],
+      "synonyms": [
+        "appear"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "seem tired",
+        "seem happy",
+        "seem to be",
+        "it seems that",
+        "seem like"
+      ],
+      "word_family": [
+        {
+          "lemma": "seeming",
+          "pos": "adj"
+        },
+        {
+          "lemma": "seemingly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gibi görünmek",
+          "alt": [
+            "görünmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Seem' sonrasında sıfat doğrudan gelir: 'seems tired'. 'Seem like' ise isimle gelir: 'It seems like a good idea.' 'Seems like tired' denmez.",
+          "mistakes": [
+            {
+              "wrong": "Mehmet seems like tired today.",
+              "right": "Mehmet seems tired today.",
+              "why": "Türkçede 'yorgun gibi görünüyor' dersiniz ve 'gibi' çoğu zaman 'like' diye çevrilir. 'Seem' sıfatla doğrudan kullanılır; 'like' yalnızca isim ya da cümleyle gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet didn't sleep well. He ______ very tired today.",
+        "answer": "seems",
+        "distractors": [
+          "washes",
+          "locks",
+          "counts"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.allow.v.1",
+      "lemma": "allow",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "let someone do something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈlaʊ/",
+        "uk": "/əˈlaʊ/"
+      },
+      "def": {
+        "micro": "let someone do something",
+        "short": "say that someone can do something, or not stop them from doing it",
+        "long": "To say that someone can do something, or to not stop them. Many parks allow dogs but not bicycles."
+      },
+      "grammar": {
+        "pattern": "allow sb to do sth / allow + -ing / be allowed to"
+      },
+      "examples": [
+        {
+          "en": "Dogs are not allowed here.",
+          "tr": "Burada köpeklere izin verilmiyor.",
+          "register": "neutral",
+          "focus": "allowed"
+        },
+        {
+          "en": "My parents don't allow me to stay out late.",
+          "tr": "Ailem geç saate kadar dışarıda kalmama izin vermiyor.",
+          "register": "neutral",
+          "focus": "allow"
+        },
+        {
+          "en": "The school allows students to use phones at lunch.",
+          "tr": "Okul öğrencilerin öğle arasında telefon kullanmasına izin veriyor.",
+          "register": "neutral",
+          "focus": "allows"
+        }
+      ],
+      "synonyms": [
+        "let",
+        "permit"
+      ],
+      "antonyms": [
+        "forbid",
+        "ban"
+      ],
+      "collocations": [
+        "allow sb to do sth",
+        "not allowed",
+        "allow time",
+        "allow photos",
+        "be allowed to"
+      ],
+      "word_family": [
+        {
+          "lemma": "allowance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "izin vermek",
+          "alt": [
+            "müsaade etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Allow' sonrasında kişi ve 'to' gelir: 'allow me to go'. '-ing' ile de olur: 'They allow smoking here'. 'Let' aynı anlamdadır ama 'to' almaz: 'let me go'.",
+          "mistakes": [
+            {
+              "wrong": "They don't allow to take photos here.",
+              "right": "They don't allow you to take photos here.",
+              "why": "Türkçede 'fotoğraf çekmeye izin vermiyorlar' dersiniz; kişi söylenmez. İngilizcede 'allow' ile 'to' arasına kişi gelir: allow sb to do sth. Ya da 'allow photos' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can't park here. The police don't ______ parking on this street.",
+        "answer": "allow",
+        "distractors": [
+          "hope",
+          "decide",
+          "agree"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

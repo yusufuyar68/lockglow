@@ -92,15 +92,16 @@
         "cloze": "I can't eat peanuts because I have a nut ______.",
         "answer": "allergy",
         "distractors": [
-          "recipe",
           "budget",
-          "sale"
+          "sale",
+          "ticket"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -398,15 +399,16 @@
         "cloze": "Many people get a flu ______ every autumn.",
         "answer": "vaccine",
         "distractors": [
-          "recipe",
           "pocket",
-          "bargain"
+          "bargain",
+          "basket"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -497,14 +499,16 @@
         "cloze": "My back hurts. Do you have a ______?",
         "answer": "painkiller",
         "distractors": [
-          "recipe",
           "receipt",
-          "budget"
+          "budget",
+          "passport"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

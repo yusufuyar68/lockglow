@@ -44,8 +44,8 @@
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["uncountable"], "sensitivity": 0},
-  "quiz": {"cloze": "I can't take more photos because my phone ______ is full.", "answer": "storage", "distractors": ["password", "charger", "settings"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I can't take more photos because my phone ______ is full.", "answer": "storage", "distractors": ["case", "link", "settings"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.device.n.1",
@@ -86,8 +86,8 @@
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "You can log in on your phone, tablet, or any other ______.", "answer": "device", "distractors": ["signal", "password", "battery"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "You can log in on your phone, tablet, or any other ______.", "answer": "device", "distractors": ["signal", "keyboard", "battery"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.crash.v.1",
@@ -172,8 +172,8 @@
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My phone makes a sound every time I get a new ______.", "answer": "notification", "distractors": ["ticket", "street", "lesson"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "My phone makes a sound every time I get a new ______.", "answer": "notification", "distractors": ["neighbor", "street", "lesson"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.score.v.1",

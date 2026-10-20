@@ -45,8 +45,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm awake, but I don't want to ______ yet. My bed is so warm.", "answer": "get up", "distractors": ["wake up", "sit down", "give up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'm awake, but I don't want to ______ yet. My bed is so warm.", "answer": "get up", "distractors": ["catch up", "sit down", "lie down"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.wake_up.phv.1",
@@ -89,8 +89,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "Shh! Don't ______ the baby. She is sleeping.", "answer": "wake up", "distractors": ["get up", "stand up", "sit down"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "Shh! Don't ______ the baby. She is sleeping.", "answer": "wake up", "distractors": ["lie down", "stay in", "show up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.turn_on.phv.1",
@@ -134,8 +134,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "It's very dark in here. Please ______ the light.", "answer": "turn on", "distractors": ["turn off", "pick up", "take off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "It's very dark in here. Please ______ the light.", "answer": "turn on", "distractors": ["slow down", "come in", "come back"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.turn_off.phv.1",
@@ -179,8 +179,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "The film is over. Please ______ the TV.", "answer": "turn off", "distractors": ["turn on", "put on", "take off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The film is over. Please ______ the TV.", "answer": "turn off", "distractors": ["hold on", "stay up", "take off"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.put_on.phv.1",
@@ -224,8 +224,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "It's raining outside, so please ______ your coat.", "answer": "put on", "distractors": ["take off", "turn off", "give up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "It's raining outside, so please ______ your coat.", "answer": "put on", "distractors": ["come in", "eat out", "show up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.take_off.phv.1",
@@ -269,8 +269,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "It's hot in the house. I'm going to ______ my sweater.", "answer": "take off", "distractors": ["put on", "turn on", "get on"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "It's hot in the house. I'm going to ______ my sweater.", "answer": "take off", "distractors": ["hold on", "catch up", "get on"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.come_in.phv.1",
@@ -313,8 +313,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Knock, knock! \"______! The door is open.\"", "answer": "Come in", "distractors": ["Go out", "Get off", "Take off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "Knock, knock! \"______! The door is open.\"", "answer": "Come in", "distractors": ["Go out", "Turn around", "Look out"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.sit_down.phv.1",
@@ -357,8 +357,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm tired. Let's ______ on that bench for a minute.", "answer": "sit down", "distractors": ["stand up", "go out", "get off"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'm tired. Let's ______ on that bench for a minute.", "answer": "sit down", "distractors": ["come in", "go out", "turn around"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.stand_up.phv.1",
@@ -401,8 +401,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "My back hurts after sitting all day. I need to ______ and walk.", "answer": "stand up", "distractors": ["sit down", "lie down", "turn off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "My back hurts after sitting all day. I need to ______ and walk.", "answer": "stand up", "distractors": ["log in", "lie down", "move in"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.come_back.phv.1",
@@ -445,8 +445,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm going to the shop. I'll ______ in ten minutes.", "answer": "come back", "distractors": ["get up", "give up", "sit down"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'm going to the shop. I'll ______ in ten minutes.", "answer": "come back", "distractors": ["sign up", "break down", "sit down"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     }
   ]
 }

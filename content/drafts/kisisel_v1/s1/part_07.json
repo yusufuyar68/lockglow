@@ -91,14 +91,16 @@
         "cloze": "Can you ______ my kids tonight? We're going out for dinner.",
         "answer": "babysit",
         "distractors": [
-          "tidy",
+          "fix",
           "borrow",
           "marry"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -292,13 +294,14 @@
         "distractors": [
           "fork",
           "spoon",
-          "towel"
+          "mirror"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -588,12 +591,14 @@
         "distractors": [
           "eat",
           "cook",
-          "tidy"
+          "drink"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

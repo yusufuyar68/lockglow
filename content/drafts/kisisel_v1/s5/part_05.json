@@ -1,0 +1,1179 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.buy.v.1",
+      "lemma": "buy",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/baɪ/",
+        "uk": "/baɪ/"
+      },
+      "def": {
+        "micro": "get something for money",
+        "short": "to get something by giving money for it",
+        "long": "To get something by giving money for it. You can buy food in a supermarket, clothes in a shop, or a ticket online. The opposite is 'sell'."
+      },
+      "grammar": {
+        "pattern": "buy + sth (from sb / for sb)"
+      },
+      "examples": [
+        {
+          "en": "I want to buy a new phone.",
+          "tr": "Yeni bir telefon almak istiyorum.",
+          "register": "neutral",
+          "focus": "buy"
+        },
+        {
+          "en": "Cem bought bread and milk at the market.",
+          "tr": "Cem pazardan ekmek ve süt aldı.",
+          "register": "neutral",
+          "focus": "bought"
+        },
+        {
+          "en": "Can I buy you a coffee?",
+          "tr": "Sana bir kahve ısmarlayabilir miyim?",
+          "register": "neutral",
+          "focus": "buy"
+        }
+      ],
+      "synonyms": [
+        "purchase"
+      ],
+      "antonyms": [
+        "sell"
+      ],
+      "collocations": [
+        "buy a ticket",
+        "buy food",
+        "buy a gift",
+        "buy online",
+        "buy a coffee"
+      ],
+      "word_family": [
+        {
+          "lemma": "buyer",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "satın almak",
+          "alt": [
+            "almak",
+            "ısmarlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'almak' hem 'buy' hem 'get' hem 'take' demektir. Para vererek almak için 'buy' denir. Düzensiz: buy - bought - bought.",
+          "mistakes": [
+            {
+              "wrong": "I took a new phone yesterday.",
+              "right": "I bought a new phone yesterday.",
+              "why": "Türkçede 'yeni telefon aldım' denir ve 'almak' = 'take' gibi düşünülür. Para vererek almak için 'buy' kullanılır."
+            },
+            {
+              "wrong": "I bought to my mother a gift.",
+              "right": "I bought my mother a gift.",
+              "why": "Türkçede 'anneme hediye aldım' (-e hâli) dediğimiz için 'to' denir. İngilizcede kişi doğrudan gelirse 'to' kullanılmaz: buy my mother a gift."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:take"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need milk, so I will ______ some at the shop.",
+        "answer": "buy",
+        "distractors": [
+          "break",
+          "cook",
+          "wash"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sell.v.1",
+      "lemma": "sell",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɛl/",
+        "uk": "/sɛl/"
+      },
+      "def": {
+        "micro": "give something for money",
+        "short": "to give something to someone who pays you money for it",
+        "long": "To give something to someone who pays you money for it. Shops sell food, clothes, and phones, and people can sell their old things online."
+      },
+      "grammar": {
+        "pattern": "sell + sth (to sb)"
+      },
+      "examples": [
+        {
+          "en": "This shop sells fresh bread.",
+          "tr": "Bu dükkân taze ekmek satıyor.",
+          "register": "neutral",
+          "focus": "sells"
+        },
+        {
+          "en": "Paul sold his old bike for fifty euros.",
+          "tr": "Paul eski bisikletini elli avroya sattı.",
+          "register": "neutral",
+          "focus": "sold"
+        },
+        {
+          "en": "I want to sell my old phone online.",
+          "tr": "Eski telefonumu internetten satmak istiyorum.",
+          "register": "neutral",
+          "focus": "sell"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "buy"
+      ],
+      "collocations": [
+        "sell online",
+        "sell a car",
+        "sell food",
+        "sell at a market",
+        "sell for ten euros"
+      ],
+      "word_family": [
+        {
+          "lemma": "seller",
+          "pos": "n"
+        },
+        {
+          "lemma": "sale",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'sellan', meaning 'to give' or 'to hand over'. The meaning 'give for money' came later.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "satmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Sell' = satmak, 'buy' = satın almak. Düzensiz: sell - sold - sold. Bir dükkânda 'for sale' yazısı 'satılık' demektir.",
+          "mistakes": [
+            {
+              "wrong": "I selled my bike last year.",
+              "right": "I sold my bike last year.",
+              "why": "Türkçede düzensiz fiil yoktur; bu yüzden geçmiş zaman için '-ed' eklenir. 'Sell' düzensizdir: sell - sold - sold."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:buy"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't use my old bike, so I want to ______ it for fifty euros.",
+        "answer": "sell",
+        "distractors": [
+          "buy",
+          "lose",
+          "break"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "ipa_dress_normalized"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.become.v.1",
+      "lemma": "become",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "begin to be",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪˈkʌm/",
+        "uk": "/bɪˈkʌm/"
+      },
+      "def": {
+        "micro": "start to be something",
+        "short": "to begin to be something that you were not before",
+        "long": "To begin to be something that you were not before. You can become a doctor, a parent, or a friend. We also use it with adjectives: 'It became dark.'"
+      },
+      "grammar": {
+        "pattern": "become + noun / adjective"
+      },
+      "examples": [
+        {
+          "en": "Aylin wants to become a pilot.",
+          "tr": "Aylin pilot olmak istiyor.",
+          "register": "neutral",
+          "focus": "become"
+        },
+        {
+          "en": "They became friends at school.",
+          "tr": "Okulda arkadaş oldular.",
+          "register": "neutral",
+          "focus": "became"
+        },
+        {
+          "en": "My English is becoming better every week.",
+          "tr": "İngilizcem her hafta daha iyi oluyor.",
+          "register": "neutral",
+          "focus": "becoming"
+        }
+      ],
+      "synonyms": [
+        "get"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "become a doctor",
+        "become friends",
+        "become famous",
+        "become better",
+        "become popular"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'becuman', meaning 'to come about' or 'to arrive'. It is built from 'be-' and 'cuman' (to come).",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "olmak",
+          "alt": [
+            "haline gelmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'olmak' hem 'be' hem 'become' hem 'happen' demektir. 'Become' değişimi anlatır: doktor olmak = become a doctor. Düzensiz: become - became - become.",
+          "mistakes": [
+            {
+              "wrong": "It became eight o'clock, so we left.",
+              "right": "It was eight o'clock, so we left.",
+              "why": "Türkçede 'saat sekiz oldu' denir ve 'olmak' = 'become' gibi düşünülür. İngilizcede saat için 'be' kullanılır: It was eight o'clock."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:be"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After ten years of hard work, she finally ______ a doctor.",
+        "answer": "became",
+        "distractors": [
+          "opened",
+          "sold",
+          "felt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.happen.v.1",
+      "lemma": "happen",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take place",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhæpən/",
+        "uk": "/ˈhæpən/"
+      },
+      "def": {
+        "micro": "take place, often by chance",
+        "short": "to take place, often without a plan",
+        "long": "To take place, often without a plan. We use it for events: 'What happened?' We often ask about a problem with 'What happened to you?'"
+      },
+      "grammar": {
+        "pattern": "What happened (to + sb)?"
+      },
+      "examples": [
+        {
+          "en": "What happened? Are you okay?",
+          "tr": "Ne oldu? İyi misin?",
+          "register": "neutral",
+          "focus": "happened"
+        },
+        {
+          "en": "The accident happened near the station.",
+          "tr": "Kaza istasyonun yakınında oldu.",
+          "register": "neutral",
+          "focus": "happened"
+        },
+        {
+          "en": "Something strange happens here every night.",
+          "tr": "Burada her gece garip bir şey oluyor.",
+          "register": "neutral",
+          "focus": "happens"
+        }
+      ],
+      "synonyms": [
+        "occur"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "what happened",
+        "happen again",
+        "happen to me",
+        "happen every day",
+        "happen last night"
+      ],
+      "word_family": [
+        {
+          "lemma": "happening",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Middle English 'hap', meaning 'luck' or 'chance', from Old Norse 'happ'. 'Hap' also gave us 'happy' and 'perhaps'.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "olmak, meydana gelmek",
+          "alt": [
+            "gerçekleşmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'olmak' hem 'be' hem 'become' hem 'happen' demektir. Bir olay için 'happen' kullanılır: Ne oldu? = What happened? Edilgen yapılmaz: 'was happened' denmez.",
+          "mistakes": [
+            {
+              "wrong": "The accident was happened last night.",
+              "right": "The accident happened last night.",
+              "why": "Türkçede 'kaza oldu' için 'oldu' = 'was' gibi düşünülür. 'Happen' kendiliğinden olan bir olayı anlatır ve edilgen yapılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Why is everybody crying? What ______?",
+        "answer": "happened",
+        "distractors": [
+          "learned",
+          "visited",
+          "wanted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.let.v.1",
+      "lemma": "let",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "allow",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɛt/",
+        "uk": "/lɛt/"
+      },
+      "def": {
+        "micro": "allow someone to do it",
+        "short": "to allow someone to do something, or to not stop it",
+        "long": "To allow someone to do something, or to not stop it from happening. We say 'let me', 'let him', or 'let us' and then a verb with no 'to': 'Let me help you.'"
+      },
+      "grammar": {
+        "pattern": "let + sb + verb (no to)"
+      },
+      "examples": [
+        {
+          "en": "Let me help you with your bag.",
+          "tr": "İzin ver, çantana yardım edeyim.",
+          "register": "neutral",
+          "focus": "Let"
+        },
+        {
+          "en": "My parents don't let me stay out late.",
+          "tr": "Annemle babam geç saate kadar dışarıda kalmama izin vermiyor.",
+          "register": "neutral",
+          "focus": "let"
+        },
+        {
+          "en": "Please let Leo use your phone for a minute.",
+          "tr": "Lütfen telefonunu bir dakika Leo'nun kullanmasına izin ver.",
+          "register": "neutral",
+          "focus": "let"
+        }
+      ],
+      "synonyms": [
+        "allow"
+      ],
+      "antonyms": [
+        "stop"
+      ],
+      "collocations": [
+        "let me know",
+        "let me help",
+        "let me go",
+        "let him in",
+        "let us try"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "izin vermek",
+          "alt": [
+            "bırakmak",
+            "müsaade etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Let' + kişi + yalın fiil: let me go (gitmeme izin ver). 'To' gelmez. 'Let's' = 'let us': ...-elim. Düzensiz: let - let - let.",
+          "mistakes": [
+            {
+              "wrong": "My mother doesn't let me to go out at night.",
+              "right": "My mother doesn't let me go out at night.",
+              "why": "Türkçede 'çıkmama izin vermiyor' denir ve fiil -mek/-mak biçimindedir; bu yüzden 'to go' denir. 'Let' ile yalın fiil kullanılır, 'to' gelmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:make"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My dad is strict. He doesn't ______ me stay out after ten.",
+        "answer": "let",
+        "distractors": [
+          "want",
+          "hope",
+          "ask"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified",
+          "ipa_dress_normalized"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.worry.v.1",
+      "lemma": "worry",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "feel anxious",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɜːri/",
+        "uk": "/ˈwʌri/"
+      },
+      "def": {
+        "micro": "feel afraid about problems",
+        "short": "to keep thinking about problems or bad things that may happen",
+        "long": "To keep thinking about problems or bad things that may happen, and to feel nervous because of it. You can worry about an exam, about money, or about a friend."
+      },
+      "grammar": {
+        "pattern": "worry about + sth / sb"
+      },
+      "examples": [
+        {
+          "en": "Don't worry. Everything is fine.",
+          "tr": "Merak etme. Her şey yolunda.",
+          "register": "neutral",
+          "focus": "worry"
+        },
+        {
+          "en": "Zehra worries about her grandmother. She lives alone.",
+          "tr": "Zehra büyükannesi için endişeleniyor. Tek başına yaşıyor.",
+          "register": "neutral",
+          "focus": "worries"
+        },
+        {
+          "en": "Jun worries too much about small things.",
+          "tr": "Jun küçük şeyler için çok fazla endişeleniyor.",
+          "register": "neutral",
+          "focus": "worries"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "relax"
+      ],
+      "collocations": [
+        "don't worry",
+        "worry about money",
+        "worry too much",
+        "worry about exams",
+        "worry about me"
+      ],
+      "word_family": [
+        {
+          "lemma": "worry",
+          "pos": "n"
+        },
+        {
+          "lemma": "worried",
+          "pos": "adj"
+        },
+        {
+          "lemma": "worrying",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'wyrgan', meaning 'to strangle'. Over time the meaning changed to 'to annoy', and then to 'to feel anxious'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "endişelenmek",
+          "alt": [
+            "merak etmek",
+            "kaygılanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'merak etmek' hem endişelenmek (Merak etme!) hem 'wonder' (Ne yaptığını merak ediyorum) demektir. Endişe için 'worry', merak için 'wonder' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Don't worry for me.",
+              "right": "Don't worry about me.",
+              "why": "Türkçede 'benim için endişelenme' denir ve 'için' = 'for' gibi çevrilir. 'Worry' ile 'about' kullanılır."
+            },
+            {
+              "wrong": "I am worry about my exam.",
+              "right": "I am worried about my exam.",
+              "why": "Türkçede 'endişeliyim' sıfattır ve 'I am' ile birlikte düşünülür. İngilizcede 'am' ile sıfat gerekir: 'worried'; 'worry' fiildir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't ______ about the test. You studied a lot, so you will pass.",
+        "answer": "worry",
+        "distractors": [
+          "wait",
+          "hurry",
+          "dance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.agree.v.1",
+      "lemma": "agree",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have the same opinion",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈɡriː/",
+        "uk": "/əˈɡriː/"
+      },
+      "def": {
+        "micro": "have the same opinion",
+        "short": "to have the same opinion as another person",
+        "long": "To have the same opinion as another person. We say 'I agree' or 'I agree with you'. We also agree to do something when we say yes to a plan."
+      },
+      "grammar": {
+        "pattern": "agree with + sb / agree on + sth"
+      },
+      "examples": [
+        {
+          "en": "I agree with you.",
+          "tr": "Sana katılıyorum.",
+          "register": "neutral",
+          "focus": "agree"
+        },
+        {
+          "en": "Okan and Julia agree about the price.",
+          "tr": "Okan ile Julia fiyat konusunda aynı fikirde.",
+          "register": "neutral",
+          "focus": "agree"
+        },
+        {
+          "en": "I don't agree. I think it's too expensive.",
+          "tr": "Katılmıyorum. Bence çok pahalı.",
+          "register": "neutral",
+          "focus": "agree"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "disagree"
+      ],
+      "collocations": [
+        "I agree with you",
+        "agree on a price",
+        "agree to help",
+        "strongly agree",
+        "completely agree"
+      ],
+      "word_family": [
+        {
+          "lemma": "agreement",
+          "pos": "n"
+        },
+        {
+          "lemma": "disagree",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'agreer', meaning 'to please', from Latin 'ad gratum', 'to one's liking'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "aynı fikirde olmak",
+          "alt": [
+            "katılmak",
+            "kabul etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Agree' bir fiildir; 'am/is/are' ile kullanılmaz: 'I agree'. Kişi için 'agree with', plan ve öneri için 'agree to' gelir.",
+          "mistakes": [
+            {
+              "wrong": "I am agree with you.",
+              "right": "I agree with you.",
+              "why": "Türkçede 'aynı fikirdeyim' denir ve bu 'I am ...' gibi çevrilir. İngilizcede 'agree' fiildir; 'am' ile birlikte kullanılmaz."
+            },
+            {
+              "wrong": "I agree to you about the price.",
+              "right": "I agree with you about the price.",
+              "why": "Türkçede 'sana katılıyorum' (-a hâli) dediğimiz için 'to' denir. Kişi için 'with' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A: This film is boring. B: I ______ with you. It is very slow.",
+        "answer": "agree",
+        "distractors": [
+          "think",
+          "know",
+          "feel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.believe.v.1",
+      "lemma": "believe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "think something is true",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪˈliːv/",
+        "uk": "/bɪˈliːv/"
+      },
+      "def": {
+        "micro": "think something is true",
+        "short": "to think that something is true or that someone is telling the truth",
+        "long": "To think that something is true, or that a person is telling the truth. You can believe a story, a friend, or a news report. We say 'I believe you' with no 'in'."
+      },
+      "grammar": {
+        "pattern": "believe + sb / sth"
+      },
+      "examples": [
+        {
+          "en": "I believe you.",
+          "tr": "Sana inanıyorum.",
+          "register": "neutral",
+          "focus": "believe"
+        },
+        {
+          "en": "Do you believe this story?",
+          "tr": "Bu hikâyeye inanıyor musun?",
+          "register": "neutral",
+          "focus": "believe"
+        },
+        {
+          "en": "Adam didn't believe the news at first.",
+          "tr": "Adam habere önce inanmadı.",
+          "register": "neutral",
+          "focus": "believe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "doubt"
+      ],
+      "collocations": [
+        "believe me",
+        "I believe you",
+        "I can't believe it",
+        "hard to believe"
+      ],
+      "word_family": [
+        {
+          "lemma": "belief",
+          "pos": "n"
+        },
+        {
+          "lemma": "believable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "inanmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'inanmak' -a hâli ister ('sana inanıyorum'); İngilizcede 'believe' kişiyi doğrudan alır. 'Believe in yourself' = kendine inanmak.",
+          "mistakes": [
+            {
+              "wrong": "I don't believe to him.",
+              "right": "I don't believe him.",
+              "why": "Türkçede 'ona inanmıyorum' (-a hâli) dediğimiz için 'to' denir. İngilizcede 'believe' kişiyi doğrudan alır."
+            },
+            {
+              "wrong": "I am believing you.",
+              "right": "I believe you.",
+              "why": "Türkçede 'inanıyorum' -yor ekiyle (şimdiki zaman) söylenir; bu yüzden 'I'm believing' denir. 'Believe' durum fiilidir ve genelde -ing almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:trust"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Emir told me a funny story. I don't ______ it, because it can't be true.",
+        "answer": "believe",
+        "distractors": [
+          "wear",
+          "sell",
+          "open"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.forget.v.1",
+      "lemma": "forget",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fərˈɡɛt/",
+        "uk": "/fəˈɡɛt/"
+      },
+      "def": {
+        "micro": "not remember something",
+        "short": "to not remember something, or to not do something that you should do",
+        "long": "To not remember something, or to not do something that you planned to do. You can forget a name, a password, or your keys. We say 'forget to' and a verb: 'Don't forget to call me.'"
+      },
+      "grammar": {
+        "pattern": "forget + sth / forget to + verb"
+      },
+      "examples": [
+        {
+          "en": "I forgot my password.",
+          "tr": "Şifremi unuttum.",
+          "register": "neutral",
+          "focus": "forgot"
+        },
+        {
+          "en": "Don't forget to call your mother.",
+          "tr": "Annene telefon etmeyi unutma.",
+          "register": "neutral",
+          "focus": "forget"
+        },
+        {
+          "en": "Lara forgot her keys at the office.",
+          "tr": "Lara anahtarlarını ofiste unuttu.",
+          "register": "neutral",
+          "focus": "forgot"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "remember"
+      ],
+      "collocations": [
+        "forget a name",
+        "forget a password",
+        "forget to call",
+        "forget my keys",
+        "never forget"
+      ],
+      "word_family": [
+        {
+          "lemma": "forgetful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'forgietan'. It is built from 'for-' and 'gietan', which is related to the word 'get'.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "unutmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Unutmak iki yolla kurulur: forget + isim (şifremi unuttum) ya da forget to + fiil (aramayı unuttum). Düzensiz: forget - forgot - forgotten.",
+          "mistakes": [
+            {
+              "wrong": "I forgot buying milk, so we have none.",
+              "right": "I forgot to buy milk, so we have none.",
+              "why": "Türkçede 'süt almayı unuttum' tek yapıdır; '-mayı' eki çoğu zaman '-ing' gibi çevrilir. 'Forget to buy' yapılmayan işi, 'forget buying' yapılmış ama unutulmuş işi anlatır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:leave"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't open my phone. I ______ my password.",
+        "answer": "forgot",
+        "distractors": [
+          "missed",
+          "opened",
+          "wore"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "ipa_dress_normalized"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.decide.v.1",
+      "lemma": "decide",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make a choice",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈsaɪd/",
+        "uk": "/dɪˈsaɪd/"
+      },
+      "def": {
+        "micro": "make a choice",
+        "short": "to choose what to do after thinking about it",
+        "long": "To choose what to do after thinking about different choices. You can decide where to eat, what to buy, or when to leave. We often say 'decide to' and a verb."
+      },
+      "grammar": {
+        "pattern": "decide + to + verb / decide + wh-word"
+      },
+      "examples": [
+        {
+          "en": "I decided to learn English.",
+          "tr": "İngilizce öğrenmeye karar verdim.",
+          "register": "neutral",
+          "focus": "decided"
+        },
+        {
+          "en": "We can't decide where to eat tonight.",
+          "tr": "Bu akşam nerede yemek yiyeceğimize karar veremiyoruz.",
+          "register": "neutral",
+          "focus": "decide"
+        },
+        {
+          "en": "Sophie decided to take the train instead of the bus.",
+          "tr": "Sophie otobüs yerine trene binmeye karar verdi.",
+          "register": "neutral",
+          "focus": "decided"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "decide to go",
+        "decide to stay",
+        "decide quickly",
+        "can't decide",
+        "decide together"
+      ],
+      "word_family": [
+        {
+          "lemma": "decision",
+          "pos": "n"
+        },
+        {
+          "lemma": "decided",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'decidere', meaning 'to cut off'. It combines 'de-' (off) and 'caedere' (to cut), so you cut off the other options.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "karar vermek",
+          "alt": [
+            "karar almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'karar vermek' iki sözcüktür; İngilizcede 'decide' tek fiildir. Kendi kararın için 'give a decision' denmez: 'decide' ya da 'make a decision' denir.",
+          "mistakes": [
+            {
+              "wrong": "I gave a decision to learn English.",
+              "right": "I decided to learn English.",
+              "why": "Türkçede 'karar verdim' deriz ve 'vermek' = 'give' gibi çevrilir. İngilizcede 'decide' tek fiildir ya da 'make a decision' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't ______ what to eat. The menu has too many things.",
+        "answer": "decide",
+        "distractors": [
+          "forget",
+          "finish",
+          "stop"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

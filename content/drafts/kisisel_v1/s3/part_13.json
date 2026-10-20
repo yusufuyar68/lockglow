@@ -718,14 +718,15 @@
     "distractors": [
      "sensitive",
      "careless",
-     "lazy"
+     "silly"
     ]
    },
    "meta": {
     "status": "draft",
     "qa_flags": [
      "l1_edited_by_editor_agent",
-     "critic_edited"
+     "critic_edited",
+     "distractors_diversified"
     ],
     "prompt_ver": "kisisel-2026-10-11",
     "model": "claude-sonnet (in-session subagent)",

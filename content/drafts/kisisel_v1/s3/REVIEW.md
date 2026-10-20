@@ -118,3 +118,10 @@ Alan adlarında `examples[n]` sıfır tabanlıdır (`examples[0]` = ilk örnek).
 - Yanlış dost: yalnızca `actual` (aktüel) ve `eventually` (eventüel) gerçek. Başka kartta `false_friend` kullanılmamış.
 - IPA ve vurgu: schedule, frustrated, advice (düzeltildi), mature, introduce, interrupt kontrol edildi; ABD/İngiliz farkları doğru.
 - Romantik kartlar (date, crush, couple, ex, hug, engaged) temiz ve nötr.
+
+## Çeldirici çeşitlendirme (2026-10-19)
+
+- Önce: 123 soru, 180 farklı çeldirici; en sık: lazy×15, proud×12, angry×11, rude×9, price×9, lesson×8.
+- Sonra: 123 soru, 192 farklı çeldirici; en sık: bored×6, tired×6, salary×6, happy×5, lucky×5, excited×5. Doğrulayıcı sınırı (`QUIZ_DISTRACTOR_REPEAT`): 7.
+- Çeldiricisi değişen kart: 33 (`distractors_diversified`). Doğru cevaplar değişmedi.
+- Bu bölümü editör (Opus) yazdı: çeşitlendirme ajanı işini bitirip raporu yazamadan kullanım sınırına takıldı. Sayılar dosyalardan ölçüldü.

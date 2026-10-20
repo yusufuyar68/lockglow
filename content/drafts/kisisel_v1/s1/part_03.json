@@ -276,15 +276,16 @@
         "cloze": "I take a ______ every morning before work.",
         "answer": "shower",
         "distractors": [
-          "towel",
           "soap",
-          "mirror"
+          "mirror",
+          "sink"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -576,14 +577,15 @@
         "answer": "kettle",
         "distractors": [
           "oven",
-          "towel",
-          "sofa"
+          "sofa",
+          "shelf"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -677,14 +679,16 @@
         "cloze": "The kitchen smells bad. Please take out the ______.",
         "answer": "trash",
         "distractors": [
-          "towel",
-          "recipe",
-          "bill"
+          "bill",
+          "garden",
+          "stairs"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

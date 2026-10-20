@@ -2,7 +2,7 @@
 
 `content.sqlite` here is produced by the content pipeline and bundled into the app (read-only, opened straight from the bundle).
 
-Current file: **personal build** (`content_version` `2026.10.12-kisisel-2`): 479 A1–B1 everyday cards written in-session as drafts (`content/drafts/kisisel_v1/`) and checked once by critic agents, all free, not reviewed by a human editor. Rebuild it after editing the drafts:
+Current file: **personal build** (`content_version` `2026.10.20-kisisel-3`): 752 A1–B1 everyday cards written in-session as drafts (`content/drafts/kisisel_v1/`, streams s0–s9) and checked by critic agents, all free, not reviewed by a human editor. All 752 card JSONs were decoded with the Swift `CardDetail` on 2026-10-20 (752/752, every quiz has 4 distinct options). Rebuild it after editing the drafts:
 
 ```bash
 cd content-pipeline

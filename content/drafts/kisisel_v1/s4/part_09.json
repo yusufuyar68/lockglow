@@ -104,14 +104,16 @@
         "cloze": "My room is a mess. This weekend I'll ______ the mess.",
         "answer": "sort out",
         "distractors": [
-          "turn up",
+          "look after",
           "take off",
           "give back"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -216,12 +218,14 @@
         "distractors": [
           "cheer up",
           "grow up",
-          "check in"
+          "sell out"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -318,16 +322,17 @@
         "cloze": "We haven't met for months. Let's ______ over coffee.",
         "answer": "catch up",
         "distractors": [
-          "give up",
+          "log out",
           "set off",
-          "turn up"
+          "sell out"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
           "gloss_edited_by_editor_agent",
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -535,14 +540,16 @@
         "cloze": "He likes Zeynep a lot. Tomorrow he wants to ______ Zeynep for dinner.",
         "answer": "ask out",
         "distractors": [
-          "turn down",
+          "get together",
           "break up",
           "hang out"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -646,14 +653,16 @@
         "cloze": "I miss my cousins. Let's ______ this weekend.",
         "answer": "get together",
         "distractors": [
-          "set off",
-          "give up",
+          "calm down",
+          "slow down",
           "break down"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -752,12 +761,14 @@
         "distractors": [
           "move out",
           "set off",
-          "get off"
+          "stand up"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -962,14 +973,16 @@
         "cloze": "The kids are playing football. Do you want to ______?",
         "answer": "join in",
         "distractors": [
-          "give up",
+          "calm down",
           "show up",
-          "turn up"
+          "speak up"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -1064,7 +1077,7 @@
         "cloze": "I can't hear you. Could you ______ a little?",
         "answer": "speak up",
         "distractors": [
-          "sit down",
+          "grow up",
           "hang up",
           "give up"
         ]
@@ -1072,7 +1085,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

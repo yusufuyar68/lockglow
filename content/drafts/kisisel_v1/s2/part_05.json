@@ -42,8 +42,8 @@
     }
   },
   "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "cities_transport", "school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I checked the bus ______ and saw that the next bus is at 9:15.", "answer": "timetable", "distractors": ["ticket", "platform", "passenger"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I checked the bus ______ and saw that the next bus is at 9:15.", "answer": "timetable", "distractors": ["ticket", "fare", "passenger"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.weekday.n.1",

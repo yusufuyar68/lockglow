@@ -207,13 +207,15 @@
         "answer": "turn down",
         "distractors": [
           "turn on",
-          "put on",
+          "come back",
           "pick up"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -314,14 +316,16 @@
         "cloze": "We need to split the bill. Can you ______ how much each person pays?",
         "answer": "work out",
         "distractors": [
-          "give up",
+          "look after",
           "take off",
           "show up"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -428,12 +432,14 @@
         "distractors": [
           "pick up",
           "turn up",
-          "put on"
+          "go back"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -534,14 +540,16 @@
         "cloze": "We're having a party. Can you ______ some music?",
         "answer": "put on",
         "distractors": [
-          "take off",
-          "get off",
+          "throw away",
+          "hand in",
           "hang up"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -641,13 +649,15 @@
         "answer": "check out",
         "distractors": [
           "check in",
-          "give up",
+          "catch up",
           "fill in"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -748,12 +758,14 @@
         "distractors": [
           "put off",
           "turn down",
-          "take off"
+          "hand in"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -852,14 +864,15 @@
         "distractors": [
           "got up",
           "gave up",
-          "set up"
+          "hung up"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
           "gloss_edited_by_editor_agent",
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -961,12 +974,14 @@
         "distractors": [
           "turn on",
           "turn off",
-          "turn up"
+          "come back"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -1067,14 +1082,15 @@
         "answer": "cut down on",
         "distractors": [
           "turn on",
-          "pick up",
+          "pay back",
           "look after"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

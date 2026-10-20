@@ -1,0 +1,1031 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.bathroom.n.1",
+      "lemma": "bathroom",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbæθruːm/",
+        "uk": "/ˈbɑːθruːm/"
+      },
+      "def": {
+        "micro": "room for washing yourself",
+        "short": "the room in a home where you wash, and often where the toilet is",
+        "long": "The room in a home where you take a bath or a shower and wash your hands. In American English it is also a polite word for the room with the toilet."
+      },
+      "examples": [
+        {
+          "en": "The bathroom is next to my bedroom.",
+          "tr": "Banyo yatak odamın yanında.",
+          "register": "neutral",
+          "focus": "bathroom"
+        },
+        {
+          "en": "Mehmet is in the bathroom. He is brushing his teeth.",
+          "tr": "Mehmet banyoda. Dişlerini fırçalıyor.",
+          "register": "neutral",
+          "focus": "bathroom"
+        },
+        {
+          "en": "Our hotel room has a big bathroom with a bath.",
+          "tr": "Otel odamızın küvetli büyük bir banyosu var.",
+          "register": "neutral",
+          "focus": "bathroom"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the bathroom",
+        "use the bathroom",
+        "bathroom sink",
+        "clean the bathroom"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "banyo",
+          "alt": [
+            "tuvalet"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde 'bathroom' tuvalet yerine de kullanılır: 'Where is the bathroom?' tuvalet nerede demektir. İngiliz İngilizcesinde bunun için 'toilet' denir.",
+          "mistakes": [
+            {
+              "wrong": "Ali is in bathroom. Please wait.",
+              "right": "Ali is in the bathroom. Please wait.",
+              "why": "Türkçede 'banyoda' dersiniz; 'the' gibi bir sözcük yoktur. İngilizcede bilinen bir yer için 'the bathroom' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I brush my teeth and take a shower in the ______ every morning.",
+        "answer": "bathroom",
+        "distractors": [
+          "kitchen",
+          "garden",
+          "classroom"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.garden.n.1",
+      "lemma": "garden",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡɑːrdən/",
+        "uk": "/ˈɡɑːdən/"
+      },
+      "def": {
+        "micro": "land by a house with plants",
+        "short": "a piece of land next to a house where people grow flowers, plants, or food",
+        "long": "A piece of land next to a house where people grow flowers, trees, or vegetables, or sit outside. Many people have a small garden behind their house."
+      },
+      "examples": [
+        {
+          "en": "The children are playing in the garden.",
+          "tr": "Çocuklar bahçede oynuyor.",
+          "register": "neutral",
+          "focus": "garden"
+        },
+        {
+          "en": "Ayşe grows tomatoes in her garden.",
+          "tr": "Ayşe bahçesinde domates yetiştiriyor.",
+          "register": "neutral",
+          "focus": "garden"
+        },
+        {
+          "en": "We had dinner in the garden on a warm night.",
+          "tr": "Sıcak bir gecede akşam yemeğini bahçede yedik.",
+          "register": "neutral",
+          "focus": "garden"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the garden",
+        "back garden",
+        "vegetable garden",
+        "garden chair"
+      ],
+      "word_family": [
+        {
+          "lemma": "gardener",
+          "pos": "n"
+        },
+        {
+          "lemma": "gardening",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old North French 'gardin'. It comes from a Germanic word for a fenced area and is related to 'yard'.",
+        "origin": "Old North French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bahçe",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngiltere'de ev bahçesine 'garden' denir. Amerikan İngilizcesinde ev bahçesi 'yard', çiçek ve sebze ekilen yer ise 'garden' olur. Halka açık yeşil alan 'park' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We sat outside in the ______ and ate under the trees.",
+        "answer": "garden",
+        "distractors": [
+          "kitchen",
+          "bedroom",
+          "bathroom"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.window.n.1",
+      "lemma": "window",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɪndoʊ/",
+        "uk": "/ˈwɪndəʊ/"
+      },
+      "def": {
+        "micro": "opening in a wall with glass",
+        "short": "an opening in a wall or a car, usually with glass, that lets in light and air",
+        "long": "An opening in the wall of a building, or in a car, usually filled with glass. You open it to let in air and close it when it is cold or noisy."
+      },
+      "examples": [
+        {
+          "en": "Our kitchen has a big window.",
+          "tr": "Mutfağımızın büyük bir penceresi var.",
+          "register": "neutral",
+          "focus": "window"
+        },
+        {
+          "en": "Elif sat by the window and looked at the rain.",
+          "tr": "Elif pencerenin yanında oturup yağmura baktı.",
+          "register": "neutral",
+          "focus": "window"
+        },
+        {
+          "en": "I always close the window before I go to bed.",
+          "tr": "Her gece yatmadan önce pencereyi kapatırım.",
+          "register": "neutral",
+          "focus": "window"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "open the window",
+        "close the window",
+        "window seat",
+        "look out of the window"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old Norse 'vindauga', which means 'wind eye': 'vindr' (wind) + 'auga' (eye).",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "pencere",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Mağaza vitrini 'shop window', bilgisayardaki pencere de 'window' olur. Trende ya da uçakta cam kenarı koltuğa 'window seat' denir.",
+          "mistakes": [
+            {
+              "wrong": "She looked from the window.",
+              "right": "She looked out of the window.",
+              "why": "Türkçede 'pencereden baktı' (çıkma hâli, -den) dersiniz, bu yüzden 'from' denir. İngilizcede 'look out of the window' (ya da 'look out the window') denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She sat next to the ______ on the train and watched the fields go by.",
+        "answer": "window",
+        "distractors": [
+          "passport",
+          "sandwich",
+          "newspaper"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "example_dedup_by_editor_agent"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bread.n.1",
+      "lemma": "bread",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/brɛd/",
+        "uk": "/brɛd/"
+      },
+      "def": {
+        "micro": "baked food made from flour",
+        "short": "a common food made from flour, water, and yeast that is baked in an oven",
+        "long": "A common food made from flour and water that is baked in an oven. It is uncountable: say 'a slice of bread' or 'a loaf of bread', not 'a bread'."
+      },
+      "grammar": {
+        "pattern": "a slice / loaf of bread"
+      },
+      "examples": [
+        {
+          "en": "I'd like some bread with my soup.",
+          "tr": "Çorbamla biraz ekmek istiyorum.",
+          "register": "neutral",
+          "focus": "bread"
+        },
+        {
+          "en": "Mehmet buys fresh bread every morning.",
+          "tr": "Mehmet her sabah taze ekmek alıyor.",
+          "register": "neutral",
+          "focus": "bread"
+        },
+        {
+          "en": "Please cut two slices of bread for me.",
+          "tr": "Lütfen benim için iki dilim ekmek kes.",
+          "register": "neutral",
+          "focus": "bread"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a slice of bread",
+        "a loaf of bread",
+        "fresh bread",
+        "bread and butter",
+        "white bread"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ekmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'bir ekmek', 'iki ekmek' dersiniz; İngilizcede 'bread' sayılamaz. Bir somun için 'a loaf of bread', bir dilim için 'a slice of bread' denir.",
+          "mistakes": [
+            {
+              "wrong": "I bought two breads.",
+              "right": "I bought two loaves of bread.",
+              "why": "Türkçede 'iki ekmek' dersiniz; İngilizcede 'bread' sayılamaz, -s almaz. Sayı için 'loaf' (somun) ya da 'slice' (dilim) kullanılır: two loaves of bread."
+            },
+            {
+              "wrong": "Can I have a bread, please?",
+              "right": "Can I have some bread, please?",
+              "why": "Türkçede 'bir ekmek' dersiniz, bu yüzden 'a bread' denir. İngilizcede 'bread' sayılamaz, 'a' almaz: some bread, a slice of bread."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We need some ______ for breakfast, so Ayşe is buying a loaf at the bakery.",
+        "answer": "bread",
+        "distractors": [
+          "rice",
+          "water",
+          "fruit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rice.n.1",
+      "lemma": "rice",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/raɪs/",
+        "uk": "/raɪs/"
+      },
+      "def": {
+        "micro": "grains you cook and eat",
+        "short": "small grains that you cook in water and eat as food",
+        "long": "Small white or brown grains that are cooked in water and eaten with meat, fish, or vegetables. It is uncountable: we say 'a bowl of rice', not 'a rice'."
+      },
+      "grammar": {
+        "pattern": "a bowl / cup of rice"
+      },
+      "examples": [
+        {
+          "en": "I'd like chicken and rice, please.",
+          "tr": "Tavuk ve pilav istiyorum lütfen.",
+          "register": "neutral",
+          "focus": "rice"
+        },
+        {
+          "en": "Elif cooks a big pot of rice on Sundays.",
+          "tr": "Elif pazar günleri büyük bir tencere pilav pişiriyor.",
+          "register": "neutral",
+          "focus": "rice"
+        },
+        {
+          "en": "We need to buy rice and sugar at the market.",
+          "tr": "Pazardan pirinç ve şeker almamız lazım.",
+          "register": "neutral",
+          "focus": "rice"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a bowl of rice",
+        "cook rice",
+        "white rice",
+        "fried rice"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'ris', which came from Italian 'riso'. The Italian word comes from Latin and Greek 'oryza'.",
+        "origin": "Old French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "pirinç",
+          "alt": [
+            "pilav"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede çiğ taneye 'pirinç', pişmiş yemeğe 'pilav' dersiniz; İngilizcede ikisi de 'rice' olur. Sayılamaz bir isimdir: 'a rice' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We cook small white grains in water and eat them with chicken. This food is ______.",
+        "answer": "rice",
+        "distractors": [
+          "bread",
+          "meat",
+          "fruit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.meat.n.1",
+      "lemma": "meat",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/miːt/",
+        "uk": "/miːt/"
+      },
+      "def": {
+        "micro": "the part of an animal we eat",
+        "short": "the soft part of an animal that people eat as food, such as beef or lamb",
+        "long": "The soft part of an animal's body that people eat, such as beef, lamb, or chicken. It is uncountable: say 'some meat' or 'a piece of meat', not 'a meat'."
+      },
+      "grammar": {
+        "pattern": "a piece of meat"
+      },
+      "examples": [
+        {
+          "en": "I don't eat meat, but I eat fish.",
+          "tr": "Et yemiyorum ama balık yiyorum.",
+          "register": "neutral",
+          "focus": "meat"
+        },
+        {
+          "en": "Mehmet cooked the meat with onions and tomatoes.",
+          "tr": "Mehmet eti soğan ve domatesle pişirdi.",
+          "register": "neutral",
+          "focus": "meat"
+        },
+        {
+          "en": "The butcher on our street sells very good meat.",
+          "tr": "Sokağımızdaki kasap çok iyi et satıyor.",
+          "register": "neutral",
+          "focus": "meat"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "red meat",
+        "cook meat",
+        "a piece of meat",
+        "meat and vegetables",
+        "raw meat"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'mete', which once meant any food, not only animal flesh.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "et",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Meat' sayılamaz: 'meats' denmez. Balık 'fish' olarak ayrı sayılır, 'meat' içine girmez. Sığır eti 'beef', kuzu eti 'lamb', koyun eti 'mutton' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hasan is a vegetarian, so he doesn't eat ______ or fish.",
+        "answer": "meat",
+        "distractors": [
+          "bread",
+          "rice",
+          "fruit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.chicken.n.1",
+      "lemma": "chicken",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "bird and its meat",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtʃɪkɪn/",
+        "uk": "/ˈtʃɪkɪn/"
+      },
+      "def": {
+        "micro": "bird kept for eggs and meat",
+        "short": "a farm bird that gives us eggs and meat; also the meat from this bird",
+        "long": "A farm bird that gives us eggs and meat. The word also means the meat of this bird: as food it is uncountable, so say 'some chicken' or 'chicken soup'."
+      },
+      "examples": [
+        {
+          "en": "We're having chicken for dinner.",
+          "tr": "Akşam yemeğinde tavuk yiyoruz.",
+          "register": "neutral",
+          "focus": "chicken"
+        },
+        {
+          "en": "Ali's grandmother keeps ten chickens in her garden.",
+          "tr": "Ali'nin büyükannesi bahçesinde on tavuk besliyor.",
+          "register": "neutral",
+          "focus": "chickens"
+        },
+        {
+          "en": "Elif made chicken soup because her son was sick.",
+          "tr": "Elif oğlu hasta olduğu için tavuk çorbası yaptı.",
+          "register": "neutral",
+          "focus": "chicken"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "grilled chicken",
+        "fried chicken",
+        "chicken soup",
+        "roast chicken",
+        "chicken breast"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tavuk",
+          "alt": [
+            "piliç"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yemek olarak 'chicken' sayılamaz: 'some chicken'. Hayvan olarak sayılabilir: 'a chicken', 'two chickens'. Horoza 'rooster', civcive 'chick' denir.",
+          "mistakes": [
+            {
+              "wrong": "Two chicken are in the yard.",
+              "right": "Two chickens are in the yard.",
+              "why": "Türkçede sayıdan sonra çoğul eki gelmez ('iki tavuk'). Hayvan olan 'chicken' sayılabilir olduğu için İngilizcede 'two chickens' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It is a farm bird. It gives us eggs, and we also eat its meat. It is a ______.",
+        "answer": "chicken",
+        "distractors": [
+          "cow",
+          "horse",
+          "fish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fruit.n.1",
+      "lemma": "fruit",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fruːt/",
+        "uk": "/fruːt/"
+      },
+      "def": {
+        "micro": "sweet food from plants",
+        "short": "the sweet food that grows on trees or plants, such as apples and oranges",
+        "long": "The sweet food that grows on trees and plants, such as apples, oranges, and bananas. It is usually uncountable: say 'some fruit' or 'a piece of fruit'."
+      },
+      "grammar": {
+        "pattern": "some fruit / a piece of fruit"
+      },
+      "examples": [
+        {
+          "en": "I eat fruit every day.",
+          "tr": "Her gün meyve yerim.",
+          "register": "neutral",
+          "focus": "fruit"
+        },
+        {
+          "en": "Mehmet bought some fresh fruit at the market.",
+          "tr": "Mehmet pazardan taze meyve aldı.",
+          "register": "neutral",
+          "focus": "fruit"
+        },
+        {
+          "en": "Apples, bananas, and oranges are my favorite fruit.",
+          "tr": "Elma, muz ve portakal en sevdiğim meyveler.",
+          "register": "neutral",
+          "focus": "fruit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fresh fruit",
+        "dried fruit",
+        "fruit juice",
+        "fruit salad",
+        "a piece of fruit"
+      ],
+      "word_family": [
+        {
+          "lemma": "fruity",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'fruit', which came from Latin 'fructus', meaning 'enjoyment' or 'produce'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "meyve",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'meyveler' çoğul olarak sık söylenir; İngilizcede 'fruit' genelde sayılamaz ve tekil kalır: 'I like fruit.' Tek bir meyve için 'a piece of fruit' denir.",
+          "mistakes": [
+            {
+              "wrong": "I like fruits very much.",
+              "right": "I like fruit very much.",
+              "why": "Türkçede 'meyveleri severim' diyebilirsiniz, bu yüzden 'fruits' denir. İngilizcede genel anlamda 'fruit' kullanılır; 'fruits' yalnızca farklı meyve türleri için söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Apples, oranges, and bananas are all ______, and they are good for you.",
+        "answer": "fruit",
+        "distractors": [
+          "meat",
+          "bread",
+          "vegetables"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vegetable.n.1",
+      "lemma": "vegetable",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɛdʒtəbəl/",
+        "uk": "/ˈvɛdʒtəbəl/"
+      },
+      "def": {
+        "micro": "plant you eat, like carrots",
+        "short": "a plant or part of a plant that you eat, such as carrots, potatoes, or onions",
+        "long": "A plant or part of a plant that people eat, usually with the main part of a meal. Carrots, potatoes, onions, and spinach are common vegetables."
+      },
+      "examples": [
+        {
+          "en": "Eat your vegetables, Ali.",
+          "tr": "Sebzelerini ye, Ali.",
+          "register": "neutral",
+          "focus": "vegetables"
+        },
+        {
+          "en": "Ayşe cooks rice with fresh vegetables.",
+          "tr": "Ayşe taze sebzelerle pilav pişiriyor.",
+          "register": "neutral",
+          "focus": "vegetables"
+        },
+        {
+          "en": "Carrots are my favorite vegetable.",
+          "tr": "Havuç en sevdiğim sebzedir.",
+          "register": "neutral",
+          "focus": "vegetable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fresh vegetables",
+        "grow vegetables",
+        "vegetable soup",
+        "green vegetables",
+        "cooked vegetables"
+      ],
+      "word_family": [
+        {
+          "lemma": "vegetarian",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sebze",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede domates ve salatalık sebze sayılır. İngilizcede 'fruit' sayılamazken 'vegetable' sayılabilirdir: 'a vegetable', 'vegetables'.",
+          "mistakes": [
+            {
+              "wrong": "I like vegetable very much.",
+              "right": "I like vegetables very much.",
+              "why": "Türkçede 'sebze severim' dersiniz, çoğul eki yoktur. İngilizcede 'vegetable' sayılabilirdir; genel olarak konuşurken 'vegetables' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Carrots, potatoes, and onions are all ______.",
+        "answer": "vegetables",
+        "distractors": [
+          "fruits",
+          "meats",
+          "drinks"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.meal.n.1",
+      "lemma": "meal",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/miːl/",
+        "uk": "/miːl/"
+      },
+      "def": {
+        "micro": "food you eat at one time",
+        "short": "the food that you eat at one time, such as breakfast, lunch, or dinner",
+        "long": "The food that you eat at one time, for example in the morning, at midday, or in the evening. Most people have three meals a day."
+      },
+      "examples": [
+        {
+          "en": "Dinner is my favorite meal of the day.",
+          "tr": "Akşam yemeği günün en sevdiğim öğünü.",
+          "register": "neutral",
+          "focus": "meal"
+        },
+        {
+          "en": "Hana cooked a big meal for all her friends.",
+          "tr": "Hana bütün arkadaşları için büyük bir yemek pişirdi.",
+          "register": "neutral",
+          "focus": "meal"
+        },
+        {
+          "en": "Don't eat between meals. It is bad for your teeth.",
+          "tr": "Öğünler arasında bir şey yeme. Dişlerine zararlı.",
+          "register": "neutral",
+          "focus": "meals"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a big meal",
+        "have a meal",
+        "the main meal",
+        "a hot meal"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'mǣl', which meant 'a fixed time'. A meal was the food you ate at a fixed time.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "öğün",
+          "alt": [
+            "yemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Öğün' kahvaltı, öğle ve akşam yemeği gibi bir kerede yenen yemektir. İngilizcede 'meal' sayılabilir: 'three meals a day'. Genel olarak yiyecekler için 'food' denir.",
+          "mistakes": [
+            {
+              "wrong": "I eat three meal a day.",
+              "right": "I eat three meals a day.",
+              "why": "Türkçede 'günde üç öğün' dersiniz; sayıdan sonra çoğul eki yoktur. İngilizcede 'three meals' gerekir."
+            },
+            {
+              "wrong": "I love Turkish meals.",
+              "right": "I love Turkish food.",
+              "why": "Türkçede 'yemek' hem tek bir öğünü hem yiyecekleri anlatır ('Türk yemekleri'). İngilizcede 'meal' bir öğündür; yiyecekler için 'food' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Breakfast, lunch, and dinner are the three main ______ of the day.",
+        "answer": "meals",
+        "distractors": [
+          "drinks",
+          "rooms",
+          "games"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

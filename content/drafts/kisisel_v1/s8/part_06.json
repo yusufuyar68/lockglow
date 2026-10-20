@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.a_few.phr.1",
+      "lemma": "a few",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a small number",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ə ˈfjuː/",
+        "uk": "/ə ˈfjuː/"
+      },
+      "def": {
+        "micro": "a small number of",
+        "short": "used before a plural noun to say there are some, but not many",
+        "long": "You use it before a plural noun to talk about a small number of people or things. It is a positive idea: you have some, and that is enough."
+      },
+      "grammar": {
+        "pattern": "a few + plural noun"
+      },
+      "examples": [
+        {
+          "en": "I have a few questions.",
+          "tr": "Birkaç sorum var.",
+          "register": "neutral",
+          "focus": "a few"
+        },
+        {
+          "en": "Mehmet bought a few apples at the market.",
+          "tr": "Mehmet pazardan birkaç elma aldı.",
+          "register": "neutral",
+          "focus": "a few"
+        },
+        {
+          "en": "We need a few more minutes, Elif.",
+          "tr": "Bize birkaç dakika daha lazım Elif.",
+          "register": "neutral",
+          "focus": "a few"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a few days",
+        "a few minutes"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "birkaç",
+          "alt": [
+            "birkaç tane",
+            "bir iki"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'A few' olumlu anlam taşır: birkaç var ve yeter. 'Few' ise (a olmadan) 'neredeyse hiç yok' demektir. Yalnızca çoğul sayılabilen isimlerle kullanılır: 'a few books'.",
+          "mistakes": [
+            {
+              "wrong": "I have few questions.",
+              "right": "I have a few questions.",
+              "why": "Türkçede 'birkaç' ve 'az' ayrı sözlerdir. 'Few' (a olmadan) 'neredeyse hiç' demektir; 'birkaç' için 'a few' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm not hungry. I only want ______ crackers.",
+        "answer": "a few",
+        "distractors": [
+          "a lot of",
+          "a little",
+          "much"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_front_of.phr.1",
+      "lemma": "in front of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "at the front of; before (place)",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈfrʌnt əv/",
+        "uk": "/ɪn ˈfrʌnt əv/"
+      },
+      "def": {
+        "micro": "ahead of; facing something",
+        "short": "ahead of someone or something, or facing it, not behind or beside it",
+        "long": "In the place that someone or something faces, not behind it or at its side. You use it for people, buildings and objects."
+      },
+      "examples": [
+        {
+          "en": "The bus stop is in front of the school.",
+          "tr": "Otobüs durağı okulun önünde.",
+          "register": "neutral",
+          "focus": "in front of"
+        },
+        {
+          "en": "Mehmet is standing in front of the mirror.",
+          "tr": "Mehmet aynanın önünde duruyor.",
+          "register": "neutral",
+          "focus": "in front of"
+        },
+        {
+          "en": "Please don't park your car in front of my house.",
+          "tr": "Lütfen arabanı evimin önüne park etme.",
+          "register": "neutral",
+          "focus": "in front of"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "behind"
+      ],
+      "collocations": [
+        "right in front of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önünde",
+          "alt": [
+            "önüne"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'In front of' yalnızca 'önünde' demektir. Yolun karşı tarafında olan şey için 'opposite' denir: 'the bank is opposite the school' = 'banka okulun karşısında'.",
+          "mistakes": [
+            {
+              "wrong": "The cafe is in front of my house, across the street.",
+              "right": "The cafe is opposite my house.",
+              "why": "Türkçede 'evimin karşısında' ile 'evimin önünde' birbirine karışır. Yolun öbür tarafı için 'opposite' denir; 'in front of' aynı yerin önü demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The teacher stands ______ the class, and the students sit and listen.",
+        "answer": "in front of",
+        "distractors": [
+          "all the time",
+          "out of order",
+          "as well"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.next_to.phr.1",
+      "lemma": "next to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "beside",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnɛkst tə/",
+        "uk": "/ˈnɛkst tə/"
+      },
+      "def": {
+        "micro": "at the side of",
+        "short": "at the side of someone or something, very near them",
+        "long": "In a place very near the side of a person or thing, usually with nothing between them. You use it to say where something is."
+      },
+      "examples": [
+        {
+          "en": "The bank is next to the post office.",
+          "tr": "Banka postanenin yanında.",
+          "register": "neutral",
+          "focus": "next to"
+        },
+        {
+          "en": "Sit next to me, Maria.",
+          "tr": "Yanıma otur Maria.",
+          "register": "neutral",
+          "focus": "next to"
+        },
+        {
+          "en": "Kenji lives next to a big park.",
+          "tr": "Kenji büyük bir parkın yanında oturuyor.",
+          "register": "neutral",
+          "focus": "next to"
+        }
+      ],
+      "synonyms": [
+        "beside",
+        "by"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "right next to",
+        "next to each other"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yanında",
+          "alt": [
+            "bitişiğinde",
+            "yanına"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Next to' hemen yanında, bitişik demektir. 'Near' ise yakın demektir ve bitişik olması gerekmez. Aynı anlamda 'beside' ve 'by' denir.",
+          "mistakes": [
+            {
+              "wrong": "The bank is next the post office.",
+              "right": "The bank is next to the post office.",
+              "why": "Türkçede 'yanında' tek sözcüktür; bu yüzden 'next' yeter sanılır. İngilizcede ise iki sözcüktür: next to."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The library is ______ the cinema. They share a wall.",
+        "answer": "next to",
+        "distractors": [
+          "as well",
+          "a few",
+          "all the time"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_foot.phr.1",
+      "lemma": "on foot",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "by walking",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ˈfʊt/",
+        "uk": "/ɒn ˈfʊt/"
+      },
+      "def": {
+        "micro": "by walking",
+        "short": "walking, not using a car, bus, bike or other vehicle",
+        "long": "Going somewhere by walking and not by car, bus or bike. We use it with verbs like 'go', 'come' or 'get there'."
+      },
+      "grammar": {
+        "pattern": "go / come / get there on foot"
+      },
+      "examples": [
+        {
+          "en": "I go to school on foot.",
+          "tr": "Okula yürüyerek gidiyorum.",
+          "register": "neutral",
+          "focus": "on foot"
+        },
+        {
+          "en": "It's only ten minutes on foot from here.",
+          "tr": "Buradan yürüyerek sadece on dakika.",
+          "register": "neutral",
+          "focus": "on foot"
+        },
+        {
+          "en": "Ayşe came on foot because the buses were full.",
+          "tr": "Ayşe otobüsler dolu olduğu için yürüyerek geldi.",
+          "register": "neutral",
+          "focus": "on foot"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go on foot",
+        "travel on foot"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yürüyerek",
+          "alt": [
+            "yaya olarak",
+            "yaya"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Otobüsle gitmek 'by bus', arabayla gitmek 'by car' olur; yürüyerek gitmek ise 'on foot' olur. 'By foot' yerine 'on foot' denir.",
+          "mistakes": [
+            {
+              "wrong": "I go to school by foot.",
+              "right": "I go to school on foot.",
+              "why": "'Otobüsle', 'arabayla' sözleri 'by bus', 'by car' olduğu için yürümek de 'by foot' sanılır. Yürümek için 'on foot' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My house is near the school, so I go ______ every day.",
+        "answer": "on foot",
+        "distractors": [
+          "by mistake",
+          "next to",
+          "in front of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -60,8 +60,8 @@
 "word_family":[{"lemma":"gratitude","pos":"n"},{"lemma":"gratefully","pos":"adv"}],"etymology":null,
 "l1":{"tr":{"gloss":"minnettar","alt":["müteşekkir"],"equivalence":"full","false_friend":null,"note":"'Grateful' içten ve biraz resmi bir teşekkürdür. Günlük konuşmada kısa teşekkür için 'thank you' ya da 'thanks' çok daha yaygındır.","mistakes":[{"wrong":"I'm grateful to your help.","right":"I'm grateful for your help.","why":"Yardım gibi şeyler için 'for', kişi için 'to' kullanılır: grateful to you for your help."}],"mnemonic":null}},
 "tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I'm very ______ for your advice. It really helped.","answer":"grateful","distractors":["angry","sorry","afraid"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"I'm very ______ for your advice. It really helped.","answer":"grateful","distractors":["angry","jealous","afraid"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.stressed.adj.1","lemma":"stressed","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/strɛst/","uk":"/strɛst/"},
@@ -90,8 +90,8 @@
 "word_family":[{"lemma":"moody","pos":"adj"}],"etymology":null,
 "l1":{"tr":{"gloss":"ruh hali","alt":["keyif","modu"],"equivalence":"partial","false_friend":null,"note":"Türkçede 'modum yok' dediğimiz yerde İngilizce 'I'm not in the mood (for it)' denir. 'Moody' = huysuz, ruh hali sık değişen.","mistakes":[{"wrong":"She is with a good mood.","right":"She is in a good mood.","why":"'İyi bir ruh halinde olmak' için 'in a good mood' denir; 'with' kullanılmaz."}],"mnemonic":null}},
 "tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"She's in a good ______ because it's Friday.","answer":"mood","distractors":["habit","price","voice"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"She's in a good ______ because it's Friday.","answer":"mood","distractors":["habit","plan","voice"]},
+"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.homesick.adj.1","lemma":"homesick","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ˈhoʊmsɪk/","uk":"/ˈhəʊmsɪk/"},

@@ -1,0 +1,1184 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.rest.v.1",
+      "lemma": "rest",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "stop and relax",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɛst/",
+        "uk": "/rɛst/"
+      },
+      "def": {
+        "micro": "stop working and relax",
+        "short": "stop working or moving so that your body can get strong again",
+        "long": "To stop working or moving for a while so that your body feels fresh again. You can rest for five minutes or for a whole day."
+      },
+      "grammar": {
+        "pattern": "rest (for a while / after sth)"
+      },
+      "examples": [
+        {
+          "en": "I need to rest for a few minutes.",
+          "tr": "Birkaç dakika dinlenmem gerek.",
+          "register": "neutral",
+          "focus": "rest"
+        },
+        {
+          "en": "The doctor told Zeynep to rest at home for three days.",
+          "tr": "Doktor Zeynep'e üç gün evde dinlenmesini söyledi.",
+          "register": "neutral",
+          "focus": "rest"
+        },
+        {
+          "en": "We walked for hours, so we rested under a tree.",
+          "tr": "Saatlerce yürüdük, bu yüzden bir ağacın altında dinlendik.",
+          "register": "neutral",
+          "focus": "rested"
+        }
+      ],
+      "synonyms": [
+        "relax"
+      ],
+      "antonyms": [
+        "work"
+      ],
+      "collocations": [
+        "rest for a while",
+        "rest your legs",
+        "rest in bed",
+        "rest at home"
+      ],
+      "word_family": [
+        {
+          "lemma": "restful",
+          "pos": "adj"
+        },
+        {
+          "lemma": "restless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dinlenmek",
+          "alt": [
+            "istirahat etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Dinlenmek' hem 'rest' hem 'relax' olabilir. 'Rest' çalışmayı ya da hareketi bırakıp gücünü toplamaktır; 'relax' keyifle rahatlamaktır. 'The rest' ise 'geri kalan' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm very tired. I want to sit down and ______ for a while.",
+        "answer": "rest",
+        "distractors": [
+          "explain",
+          "choose",
+          "jog"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wash.v.1",
+      "lemma": "wash",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "clean with water",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɑːʃ/",
+        "uk": "/wɒʃ/"
+      },
+      "def": {
+        "micro": "clean with water",
+        "short": "make something clean with water and soap",
+        "long": "To make something clean with water, and usually soap. We wash our hands, hair, clothes, dishes, and cars."
+      },
+      "grammar": {
+        "pattern": "wash sth (with sth)"
+      },
+      "examples": [
+        {
+          "en": "Please wash your hands before dinner.",
+          "tr": "Lütfen yemekten önce ellerini yıka.",
+          "register": "neutral",
+          "focus": "wash"
+        },
+        {
+          "en": "Elif washes the dishes by hand after every meal.",
+          "tr": "Elif her yemekten sonra bulaşıkları elde yıkıyor.",
+          "register": "neutral",
+          "focus": "washes"
+        },
+        {
+          "en": "My brother washed his car on Saturday morning.",
+          "tr": "Kardeşim cumartesi sabahı arabasını yıkadı.",
+          "register": "neutral",
+          "focus": "washed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wash your hands",
+        "wash the dishes",
+        "wash your hair",
+        "wash clothes",
+        "wash the car"
+      ],
+      "word_family": [
+        {
+          "lemma": "washing",
+          "pos": "n"
+        },
+        {
+          "lemma": "washable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yıkamak",
+          "alt": [
+            "yıkanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Wash' suyla yıkamaktır. Kendini yıkamak için 'wash' ya da 'have a wash' denir; duş için 'take a shower', banyo için 'have a bath' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The dishes are dirty. Please ______ them before dinner.",
+        "answer": "wash",
+        "distractors": [
+          "cook",
+          "bake",
+          "wear"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cook.v.1",
+      "lemma": "cook",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "prepare food with heat",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʊk/",
+        "uk": "/kʊk/"
+      },
+      "def": {
+        "micro": "make food ready to eat",
+        "short": "make food ready to eat by heating it, for example on a stove",
+        "long": "To make food ready to eat by heating it, for example by boiling, frying, or baking. Many people cook dinner at home after work."
+      },
+      "grammar": {
+        "pattern": "cook sth / cook for sb"
+      },
+      "examples": [
+        {
+          "en": "Can you cook rice for dinner?",
+          "tr": "Akşam yemeği için pilav pişirebilir misin?",
+          "register": "neutral",
+          "focus": "cook"
+        },
+        {
+          "en": "David cooks for his family on weekends.",
+          "tr": "David hafta sonları ailesi için yemek yapar.",
+          "register": "neutral",
+          "focus": "cooks"
+        },
+        {
+          "en": "Maria cooked fish with lemon and potatoes last night.",
+          "tr": "Maria dün gece limon ve patatesle balık pişirdi.",
+          "register": "neutral",
+          "focus": "cooked"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cook dinner",
+        "cook a meal",
+        "cook rice",
+        "cook for sb",
+        "cook at home"
+      ],
+      "word_family": [
+        {
+          "lemma": "cooking",
+          "pos": "n"
+        },
+        {
+          "lemma": "cooker",
+          "pos": "n"
+        },
+        {
+          "lemma": "cookbook",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "The verb comes from the noun 'cook', from Old English 'cōc', which came from Latin 'coquus', a cook.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "pişirmek",
+          "alt": [
+            "yemek yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Yemek yapmak' İngilizcede de 'cook' olur. Yemek yapan kişiye de 'cook' denir: 'She is a good cook.' 'Cooker' ise ocak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to ______ rice for dinner tonight.",
+        "answer": "cook",
+        "distractors": [
+          "drive",
+          "chop",
+          "walk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.clean.v.1",
+      "lemma": "clean",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "remove dirt",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kliːn/",
+        "uk": "/kliːn/"
+      },
+      "def": {
+        "micro": "make free of dirt",
+        "short": "take dirt away from something so it is not dirty",
+        "long": "To take dirt away from something so that it looks and feels nice again. People clean their rooms, windows, and kitchens with a cloth or a brush."
+      },
+      "grammar": {
+        "pattern": "clean sth"
+      },
+      "examples": [
+        {
+          "en": "Please clean your room today.",
+          "tr": "Lütfen bugün odanı temizle.",
+          "register": "neutral",
+          "focus": "clean"
+        },
+        {
+          "en": "Ayşe cleans the kitchen every Sunday morning.",
+          "tr": "Ayşe her pazar sabahı mutfağı temizler.",
+          "register": "neutral",
+          "focus": "cleans"
+        },
+        {
+          "en": "We cleaned the windows before our guests came.",
+          "tr": "Misafirlerimiz gelmeden önce pencereleri temizledik.",
+          "register": "neutral",
+          "focus": "cleaned"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "clean the house",
+        "clean your room",
+        "clean the windows",
+        "clean the kitchen",
+        "clean your teeth"
+      ],
+      "word_family": [
+        {
+          "lemma": "cleaner",
+          "pos": "n"
+        },
+        {
+          "lemma": "cleaning",
+          "pos": "n"
+        },
+        {
+          "lemma": "clean",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'clǣne', meaning clear, pure, or free from dirt.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "temizlemek",
+          "alt": [
+            "temizlik yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfat olarak da kullanılır: 'a clean room' (temiz oda). Ortalığı toplamak için ayrı kalıp olan 'clean up' vardır.",
+          "mistakes": [
+            {
+              "wrong": "I make cleaning every Saturday.",
+              "right": "I do the cleaning every Saturday.",
+              "why": "Türkçede 'temizlik yapmak' dersiniz ve 'yapmak' çoğu zaman 'make' diye çevrilir. İngilizcede ev işi için 'do the cleaning' ya da 'clean the house' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need to ______ the floor. It's very dirty.",
+        "answer": "clean",
+        "distractors": [
+          "iron",
+          "chop",
+          "bake"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.drive.v.1",
+      "lemma": "drive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "control a car",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/draɪv/",
+        "uk": "/draɪv/"
+      },
+      "def": {
+        "micro": "control a car or bus",
+        "short": "control a car, bus, or truck so that it goes where you want",
+        "long": "To control a car, bus, or truck and make it move. We drive to work, to the shops, or to another city."
+      },
+      "grammar": {
+        "pattern": "drive (a car) / drive sb to + place"
+      },
+      "examples": [
+        {
+          "en": "Mehmet can drive, but he doesn't have a car.",
+          "tr": "Mehmet araba kullanabiliyor ama arabası yok.",
+          "register": "neutral",
+          "focus": "drive"
+        },
+        {
+          "en": "Elif drives her children to school every morning.",
+          "tr": "Elif her sabah çocuklarını okula arabayla götürüyor.",
+          "register": "neutral",
+          "focus": "drives"
+        },
+        {
+          "en": "We drove for six hours to get to the sea.",
+          "tr": "Denize varmak için altı saat araba kullandık.",
+          "register": "neutral",
+          "focus": "drove"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "drive a car",
+        "drive to work",
+        "drive fast",
+        "drive slowly",
+        "drive home"
+      ],
+      "word_family": [
+        {
+          "lemma": "driver",
+          "pos": "n"
+        },
+        {
+          "lemma": "driving",
+          "pos": "n"
+        },
+        {
+          "lemma": "drive",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'drīfan', meaning to push or force something to move. People first drove animals, then carts, and later cars.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "araba kullanmak",
+          "alt": [
+            "sürmek",
+            "kullanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'araba kullanmak' ve 'araç sürmek' dersiniz. İngilizcede araba, otobüs ve kamyon için 'drive', bisiklet ve at için 'ride' denir. Düzensiz fiil: drive - drove - driven.",
+          "mistakes": [
+            {
+              "wrong": "Kenji drives a bicycle to school.",
+              "right": "Kenji rides a bicycle to school.",
+              "why": "Türkçede 'bisiklet sürmek' dersiniz ve 'sürmek' 'drive' diye çevrilir. İngilizcede bisiklet, motosiklet ve at için 'ride' denir; 'drive' araba, otobüs, kamyon gibi araçlar içindir."
+            },
+            {
+              "wrong": "I go to work with my car.",
+              "right": "I drive to work. / I go to work by car.",
+              "why": "Türkçedeki '-la/-le' eki ('arabayla') 'with' diye çevrilir. İngilizcede araç için 'by car' denir ya da kısaca 'drive' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I learned to ______ a car when I was eighteen.",
+        "answer": "drive",
+        "distractors": [
+          "jog",
+          "shout",
+          "hike"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.walk.v.1",
+      "lemma": "walk",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go on foot",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɔːk/",
+        "uk": "/wɔːk/"
+      },
+      "def": {
+        "micro": "go on foot",
+        "short": "move along on your feet at a normal speed",
+        "long": "To move along on your feet at a normal speed, one step after another. People walk to school, walk in the park, or walk their dog."
+      },
+      "grammar": {
+        "pattern": "walk to + place / walk home"
+      },
+      "examples": [
+        {
+          "en": "I walk to school every day.",
+          "tr": "Her gün okula yürüyerek gidiyorum.",
+          "register": "neutral",
+          "focus": "walk"
+        },
+        {
+          "en": "Sam walked slowly because his shoes were too tight.",
+          "tr": "Sam ayakkabıları çok dar olduğu için yavaş yürüdü.",
+          "register": "neutral",
+          "focus": "walked"
+        },
+        {
+          "en": "It's only ten minutes from here, so let's walk.",
+          "tr": "Buradan sadece on dakika, hadi yürüyelim.",
+          "register": "neutral",
+          "focus": "walk"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "walk to school",
+        "walk to work",
+        "walk the dog",
+        "walk home",
+        "walk slowly"
+      ],
+      "word_family": [
+        {
+          "lemma": "walker",
+          "pos": "n"
+        },
+        {
+          "lemma": "walking",
+          "pos": "n"
+        },
+        {
+          "lemma": "walk",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'wealcan', which meant to roll or toss around. The meaning 'to go on foot' came later.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yürümek",
+          "alt": [
+            "yürüyerek gitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Walk' hem 'yürümek' hem 'yürüyerek gitmek' demektir. Yürüyüş yapmak için 'go for a walk' denir.",
+          "mistakes": [
+            {
+              "wrong": "I go to work by foot.",
+              "right": "I go to work on foot. / I walk to work.",
+              "why": "Türkçede 'yürüyerek' dersiniz; İngilizcede araçlar 'by bus', 'by car' gibi 'by' ile söylenir, o yüzden 'by foot' denir sanılır. Doğrusu 'on foot' ya da 'walk'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't have a car, so I ______ to work every day.",
+        "answer": "walk",
+        "distractors": [
+          "drive",
+          "cross",
+          "laugh"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.choose.v.1",
+      "lemma": "choose",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "pick from two or more",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃuːz/",
+        "uk": "/tʃuːz/"
+      },
+      "def": {
+        "micro": "pick what you want",
+        "short": "decide which one of two or more things or people you want",
+        "long": "To decide which thing or person you want from two or more. You can choose from a menu, between two phones, or one gift out of many."
+      },
+      "grammar": {
+        "pattern": "choose between A and B / choose from sth"
+      },
+      "examples": [
+        {
+          "en": "Please choose a color.",
+          "tr": "Lütfen bir renk seç.",
+          "register": "neutral",
+          "focus": "choose"
+        },
+        {
+          "en": "Emma couldn't choose between the blue shirt and the black one.",
+          "tr": "Emma mavi gömlekle siyah olan arasında seçim yapamadı.",
+          "register": "neutral",
+          "focus": "choose"
+        },
+        {
+          "en": "You can choose any dessert from the menu.",
+          "tr": "Menüden istediğin tatlıyı seçebilirsin.",
+          "register": "neutral",
+          "focus": "choose"
+        }
+      ],
+      "synonyms": [
+        "pick",
+        "select"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "choose a color",
+        "choose from a list",
+        "choose between two",
+        "choose a gift",
+        "choose carefully"
+      ],
+      "word_family": [
+        {
+          "lemma": "choice",
+          "pos": "n"
+        },
+        {
+          "lemma": "chosen",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'cēosan', which meant 'to choose' and also 'to taste or test'. It is related to Latin 'gustare', to taste.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "seçmek",
+          "alt": [
+            "seçim yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Düzensiz fiil: choose - chose - chosen. 'Choose' /tʃuːz/ (uzun u, sonda z), 'chose' ise /tʃoʊz/ okunur. İsim hâli 'choice' /tʃɔɪs/ okunur.",
+          "mistakes": [
+            {
+              "wrong": "Yesterday I choosed the red one.",
+              "right": "Yesterday I chose the red one.",
+              "why": "Türkçede fiil çekimi hep düzenlidir; 'choose' ise düzensizdir: choose - chose - chosen. 'Choosed' diye bir şekil yoktur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like both coats. It is hard to ______ one.",
+        "answer": "choose",
+        "distractors": [
+          "spend",
+          "pay",
+          "shout"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.check.v.1",
+      "lemma": "check",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make sure it is right",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃɛk/",
+        "uk": "/tʃɛk/"
+      },
+      "def": {
+        "micro": "look to see if it is right",
+        "short": "look at something to make sure that it is correct or safe",
+        "long": "To look at something to make sure that it is correct, safe, or working well. People check the time, their phone, a bill, or their answers."
+      },
+      "grammar": {
+        "pattern": "check sth / check (that) ... / check if ..."
+      },
+      "examples": [
+        {
+          "en": "Please check your answers again.",
+          "tr": "Lütfen cevaplarını bir kez daha kontrol et.",
+          "register": "neutral",
+          "focus": "check"
+        },
+        {
+          "en": "Ayşe checked her phone for new messages.",
+          "tr": "Ayşe yeni mesaj var mı diye telefonuna baktı.",
+          "register": "neutral",
+          "focus": "checked"
+        },
+        {
+          "en": "Can you check if the door is locked?",
+          "tr": "Kapının kilitli olup olmadığına bakar mısın?",
+          "register": "neutral",
+          "focus": "check"
+        }
+      ],
+      "synonyms": [
+        "make sure"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "check the time",
+        "check your email",
+        "check your phone",
+        "check the weather",
+        "check your answers"
+      ],
+      "word_family": [
+        {
+          "lemma": "checklist",
+          "pos": "n"
+        },
+        {
+          "lemma": "checkup",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'eschec', the chess word 'check', which came from Persian 'shāh' (king). The meaning 'test or make sure' developed later.",
+        "origin": "Persian",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kontrol etmek",
+          "alt": [
+            "bakmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'kontrol etmek' İngilizcede 'check' olur. 'Control' ise bir şeyi yönetmek, denetimde tutmak demektir. Kontrol etmek için 'control' kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "Can you control my homework, please?",
+              "right": "Can you check my homework, please?",
+              "why": "Türkçede 'kontrol etmek' dersiniz ve İngilizce 'control' akla gelir. Ama 'control' yönetmek demektir; bakıp doğru mu diye görmek 'check' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:control"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm not sure the shop is open. I'll ______ online.",
+        "answer": "check",
+        "distractors": [
+          "download",
+          "stream",
+          "cry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.share.v.1",
+      "lemma": "share",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "use or have together",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃɛr/",
+        "uk": "/ʃeə/"
+      },
+      "def": {
+        "micro": "use or have together",
+        "short": "use or have something together with someone else",
+        "long": "To use something together with other people, or to give some of it to them. You can share a room, a pizza, a story, or a photo on your phone."
+      },
+      "grammar": {
+        "pattern": "share sth (with sb)"
+      },
+      "examples": [
+        {
+          "en": "Let's share a pizza.",
+          "tr": "Hadi bir pizza paylaşalım.",
+          "register": "neutral",
+          "focus": "share"
+        },
+        {
+          "en": "Elif shares a small room with her sister.",
+          "tr": "Elif küçük bir odayı kız kardeşiyle paylaşıyor.",
+          "register": "neutral",
+          "focus": "shares"
+        },
+        {
+          "en": "Mehmet shared the photos with all his friends.",
+          "tr": "Mehmet fotoğrafları bütün arkadaşlarıyla paylaştı.",
+          "register": "neutral",
+          "focus": "shared"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "keep"
+      ],
+      "collocations": [
+        "share a room",
+        "share a photo",
+        "share food",
+        "share with sb",
+        "share an idea"
+      ],
+      "word_family": [
+        {
+          "lemma": "sharing",
+          "pos": "n"
+        },
+        {
+          "lemma": "shared",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'scearu', meaning a cutting or a part. It is related to 'shear' (to cut), because a share is a piece cut off.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "paylaşmak",
+          "alt": [
+            "bölüşmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Share' hem eşyayı ya da yemeği paylaşmak hem de sosyal medyada paylaşmak demektir. Kiminle paylaşıldığı 'with' ile söylenir: 'share it with me'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We only have one cake, so let's ______ it.",
+        "answer": "share",
+        "distractors": [
+          "fry",
+          "boil",
+          "peel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.enjoy.v.1",
+      "lemma": "enjoy",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "like doing or having",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈdʒɔɪ/",
+        "uk": "/ɪnˈdʒɔɪ/"
+      },
+      "def": {
+        "micro": "have fun with something",
+        "short": "like something and feel happy while you do it or have it",
+        "long": "To like something and feel happy while you do it or have it. You can enjoy a film, a meal, or a quiet weekend."
+      },
+      "grammar": {
+        "pattern": "enjoy sth / enjoy + -ing / enjoy yourself"
+      },
+      "examples": [
+        {
+          "en": "Did you enjoy the film?",
+          "tr": "Filmden keyif aldın mı?",
+          "register": "neutral",
+          "focus": "enjoy"
+        },
+        {
+          "en": "Tom enjoys cooking for his friends on Sunday evenings.",
+          "tr": "Tom pazar akşamları arkadaşları için yemek yapmaktan keyif alıyor.",
+          "register": "neutral",
+          "focus": "enjoys"
+        },
+        {
+          "en": "Don't work too hard. Relax and enjoy yourself at the party!",
+          "tr": "Fazla çalışma. Rahatla ve partide eğlen!",
+          "register": "neutral",
+          "focus": "enjoy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "dislike"
+      ],
+      "collocations": [
+        "enjoy the weather",
+        "enjoy yourself",
+        "enjoy your meal",
+        "enjoy doing sth",
+        "enjoy a film"
+      ],
+      "word_family": [
+        {
+          "lemma": "enjoyable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "enjoyment",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'enjoir', 'to rejoice', made from 'en-' and 'joir' (to be glad). It is related to 'joy'.",
+        "origin": "Old French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "keyif almak",
+          "alt": [
+            "zevk almak",
+            "hoşlanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngilizcede 'enjoy' bir nesne ister: 'I enjoyed it'. Nesne yoksa 'enjoy yourself' (eğlenmek) denir. Fiilden sonra '-ing' gelir: 'I enjoy swimming'.",
+          "mistakes": [
+            {
+              "wrong": "The film was great. I enjoyed very much.",
+              "right": "The film was great. I enjoyed it very much.",
+              "why": "Türkçede 'çok keyif aldım' demek yeter, nesne gerekmez. İngilizcede 'enjoy' nesnesiz kullanılmaz: 'I enjoyed it' ya da 'I enjoyed myself' denir."
+            },
+            {
+              "wrong": "We enjoyed a lot in Antalya.",
+              "right": "We enjoyed ourselves a lot in Antalya.",
+              "why": "Türkçede 'çok eğlendik' nesnesizdir. İngilizcede 'enjoy' bir nesne ister; kendimiz için 'ourselves' gelir. Kısaca 'We had a great time' da denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I love music. I ______ listening to songs on my way to work.",
+        "answer": "enjoy",
+        "distractors": [
+          "want",
+          "hope",
+          "decide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

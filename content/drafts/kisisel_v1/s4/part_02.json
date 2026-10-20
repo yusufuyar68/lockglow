@@ -44,8 +44,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "It's a lovely evening. Let's ______ for a walk.", "answer": "go out", "distractors": ["come in", "stay in", "give up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "It's a lovely evening. Let's ______ for a walk.", "answer": "go out", "distractors": ["come in", "stay in", "sleep in"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.go_back.phv.1",
@@ -89,8 +89,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I forgot my keys. I have to ______ to my office.", "answer": "go back", "distractors": ["stay in", "get off", "put on"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I forgot my keys. I have to ______ to my office.", "answer": "go back", "distractors": ["stay in", "calm down", "stand up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.look_for.phv.1",
@@ -223,8 +223,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
-      "quiz": {"cloze": "I don't know when the shop opens. I'll ______ online.", "answer": "find out", "distractors": ["look after", "give up", "put on"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I don't know when the shop opens. I'll ______ online.", "answer": "find out", "distractors": ["look after", "give up", "break down"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.give_up.phv.1",
@@ -268,8 +268,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "success_productivity"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The test is hard, but I won't ______. I'll try again.", "answer": "give up", "distractors": ["get up", "pick up", "turn up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The test is hard, but I won't ______. I'll try again.", "answer": "give up", "distractors": ["get up", "move out", "turn up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.pick_up.phv.1",
@@ -313,8 +313,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "There is a coin on the floor. Can you ______ the coin?", "answer": "pick up", "distractors": ["put on", "turn off", "give up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "There is a coin on the floor. Can you ______ the coin?", "answer": "pick up", "distractors": ["set up", "turn off", "eat out"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.pick_up.phv.2",
@@ -358,8 +358,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I finish work at six. Please ______ the kids from school.", "answer": "pick up", "distractors": ["drop off", "give up", "turn off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I finish work at six. Please ______ the kids from school.", "answer": "pick up", "distractors": ["drop off", "go back", "turn off"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.get_in.phv.1",
@@ -402,8 +402,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The taxi is here. Let's ______ and go to the airport.", "answer": "get in", "distractors": ["get off", "get on", "get up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The taxi is here. Let's ______ and go to the airport.", "answer": "get in", "distractors": ["stay in", "get on", "move in"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.get_out.phv.1",

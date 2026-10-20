@@ -44,8 +44,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Wait! ______ a second. I forgot my bag.", "answer": "Hold on", "distractors": ["Hurry up", "Give up", "Get off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "Wait! ______ a second. I forgot my bag.", "answer": "Hold on", "distractors": ["Hurry up", "Move out", "Cheer up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.run_out_of.phv.1",
@@ -134,8 +134,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "environment_climate"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "That box is empty. We can ______ the box now.", "answer": "throw away", "distractors": ["turn off", "fill in", "get off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "That box is empty. We can ______ the box now.", "answer": "throw away", "distractors": ["come back", "fill in", "go back"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.take_out.phv.1",
@@ -179,8 +179,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "The bin is full. Please ______ the rubbish.", "answer": "take out", "distractors": ["put on", "turn up", "look for"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The bin is full. Please ______ the rubbish.", "answer": "take out", "distractors": ["put on", "hold on", "look for"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.clean_up.phv.1",
@@ -268,8 +268,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "Playtime is over. Please ______ the toys.", "answer": "put away", "distractors": ["turn on", "sit down", "get on"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "Playtime is over. Please ______ the toys.", "answer": "put away", "distractors": ["sign up", "sit down", "get on"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.eat_out.phv.1",
@@ -312,8 +312,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "food_drink"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm too tired to cook. Let's ______ tonight.", "answer": "eat out", "distractors": ["give up", "pick up", "check in"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'm too tired to cook. Let's ______ tonight.", "answer": "eat out", "distractors": ["move out", "pick up", "check in"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.log_in.phv.1",
@@ -446,8 +446,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "She isn't here now. Please ______ in an hour.", "answer": "call back", "distractors": ["sit down", "get out", "turn off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "She isn't here now. Please ______ in an hour.", "answer": "call back", "distractors": ["sit down", "get out", "calm down"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     }
   ]
 }

@@ -61,8 +61,8 @@
 "word_family":[],"etymology":null,
 "l1":{"tr":{"gloss":"maaş","alt":["aylık"],"equivalence":"full","false_friend":null,"note":"'Salary' aylık sabit maaştır. Saat ya da günlük ücret için 'wage' kullanılır. Genel olarak 'pay', iş karşılığı alınan paradır.","mistakes":[{"wrong":"I take a good salary.","right":"I earn a good salary. / I get a good salary.","why":"Maaş için 'earn' ya da 'get' kullanılır; 'take' kullanılmaz."}],"mnemonic":null}},
 "tags":{"primary_topic":"workplace_office","topics":["workplace_office","finance_economics"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:wage"],"sensitivity":0},
-"quiz":{"cloze":"She earns a good ______ as a nurse.","answer":"salary","distractors":["price","ticket","address"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"She earns a good ______ as a nurse.","answer":"salary","distractors":["report","ticket","address"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.schedule.n.1","lemma":"schedule","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ˈskɛdʒuːl/","uk":"/ˈʃɛdjuːl/"},

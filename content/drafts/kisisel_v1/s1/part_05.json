@@ -96,13 +96,14 @@
         "distractors": [
           "price",
           "cheese",
-          "towel"
+          "weather"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -187,14 +188,16 @@
         "cloze": "Please turn off the ______. Water is running everywhere.",
         "answer": "tap",
         "distractors": [
-          "towel",
-          "pillow",
-          "blanket"
+          "shelf",
+          "mirror",
+          "carpet"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -287,15 +290,16 @@
         "cloze": "The old roof will ______ if it rains heavily.",
         "answer": "leak",
         "distractors": [
-          "tidy",
-          "taste",
-          "wear"
+          "paint",
+          "sleep",
+          "swim"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

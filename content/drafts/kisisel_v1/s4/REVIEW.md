@@ -90,3 +90,25 @@ Kapsam: `content/drafts/kisisel_v1/s4/part_01..10.json`. Her kart tek tek okundu
 - Zamirli ayrılabilir fiiller: bayraklar ve kalıplar doğru. Quiz'de 'pick up them' / 'try on them' çıkaran iki cümle düzeltildi.
 - IPA: tüm kartlarda vurgu doğru (ikinci hece / edat üzerinde).
 - Seviye: A2 ve B1 uygun. A1 yok.
+
+## Çeldirici çeşitlendirme (2026-10-19)
+
+Akış: s4 (100 phrasal verb sorusu). Hedef: hiçbir çeldirici 5'ten fazla soruda geçmesin.
+
+- **Önce:** 100 soru, 73 farklı çeldirici; en sık: give up×32, get off×17, take off×15, put on×14, pick up×13, turn on×13 (5'ten fazla geçen 16 çeldirici; doğrulayıcı 16 `QUIZ_DISTRACTOR_REPEAT` uyarısı veriyordu).
+- **Sonra:** 100 soru, 94 farklı çeldirici; en sık: sit down×5, slow down×5, take off×5, get on×5, sign up×5, calm down×5 (hiçbiri 5'i geçmiyor). Doğrulayıcı `--strict`: 0 hata, 0 uyarı.
+- **Değişen kart:** 81 (her birine `distractors_diversified` işareti eklendi). Değişmeyen 19 kartın çeldiricileri zaten sorunsuzdu.
+- **Cloze'u değiştirilen kart:** yok. Doğru cevaplar ve cümleler aynı; yalnızca `quiz.distractors` ve `meta.qa_flags` değişti.
+
+Nasıl seçildi:
+
+- Yeni çeldiricilerin hepsi s4'ün kendi phrasal verb'lerinden; cevabın biçimiyle aynı (geçmiş zaman için geçmiş, `-ing` için `-ing`, "We've ____ paper" için üçüncü hâl, emir cümlesi için büyük harf).
+- Her yeni şık boşluğa konup okundu. Boşluktan sonra nesne gelen cümlelerde (`the light`, `your coat`, `the volume`...) nesne almayan phrasal verb'ler (`come back`, `stay up`, `lie down`, `catch up`...) tercih edildi; dilbilgisi açısından açıkça yanlıştırlar. Anlamca uyabilen şıklar (örn. `put on` giysi cümlesinde, `turn on` müzik cümlesinde, `look for` bir arama cümlesinde, `find out` / `look up` bilgi cümlesinde) kullanılmadı.
+- Eski çeldiricilerden cümleye uyabilen veya doğal duyulanlar da değiştirildi: `get_in` ("Let's get up and go to the airport" doğal), `lie_down` ("go out for a few minutes" baş dönmesinde doğal), `get_together` ("Let's set off this weekend"), `eat_out` ("Let's give up tonight"), `drop_off` ("I'll look after the kids at school" doğal), `hang_out` ("check in with my friends"), `turn_around` ("give up and go back"), `get_off` ("get up here").
+
+Editör için işaretler (değişmeyen eski çeldiriciler):
+
+- `fill_in`: çeldirici `fill up this form`; bazı İngilizce çeşitlerinde duyuluyor, ama standart değil. Eski haliyle bırakıldı.
+- `get_on`: çeldirici `get up before it leaves`; doğal değil ama dilbilgisi olarak mümkün. Bırakıldı.
+- `work_out` (1): çeldirici `sit down for an hour`; "spor salonuna gidip oturmak" mümkün ama tuhaf. Bırakıldı.
+- `warm_up`: çeldiriciler `take out` / `put away the soup in the microwave`; dilbilgisi olarak mümkün, cümleye uymuyor. Bırakıldı.

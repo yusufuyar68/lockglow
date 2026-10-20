@@ -89,8 +89,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "success_productivity"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm tired, but I must ______ working until six.", "answer": "carry on", "distractors": ["give up", "turn off", "get off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'm tired, but I must ______ working until six.", "answer": "carry on", "distractors": ["break down", "turn off", "get off"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.hang_out.phv.1",
@@ -133,8 +133,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "love_friendship"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I have no plans today. I'll just ______ with my friends.", "answer": "hang out", "distractors": ["give up", "put off", "check in"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I have no plans today. I'll just ______ with my friends.", "answer": "hang out", "distractors": ["break up", "put off", "speak up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.show_up.phv.1",
@@ -177,8 +177,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "workplace_office"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The party started at eight, but my friend didn't ______ until ten.", "answer": "show up", "distractors": ["give up", "hang up", "set up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The party started at eight, but my friend didn't ______ until ten.", "answer": "show up", "distractors": ["give up", "look out", "set up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.break_down.phv.1",
@@ -221,8 +221,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Our bus stopped on the road. It ______ and we had to wait.", "answer": "broke down", "distractors": ["set off", "took off", "got off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "Our bus stopped on the road. It ______ and we had to wait.", "answer": "broke down", "distractors": ["stood up", "took off", "got off"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.look_forward_to.phv.1",
@@ -310,8 +310,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
-      "quiz": {"cloze": "My sister and I are good friends. We ______ really well.", "answer": "get along", "distractors": ["get over", "get off", "get out"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "My sister and I are good friends. We ______ really well.", "answer": "get along", "distractors": ["get over", "hang out", "get out"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.top_up.phv.1",
@@ -354,8 +354,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "shopping_money", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I have no credit left. I need to ______ my phone.", "answer": "top up", "distractors": ["turn up", "hang up", "pick up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I have no credit left. I need to ______ my phone.", "answer": "top up", "distractors": ["stay up", "hang up", "eat out"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.pay_back.phv.1",
@@ -398,8 +398,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "shopping_money", "finance_economics"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "You paid for my ticket. I'll ______ the money tomorrow.", "answer": "pay back", "distractors": ["give up", "take off", "look up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "You paid for my ticket. I'll ______ the money tomorrow.", "answer": "pay back", "distractors": ["hold on", "fill up", "look up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.put_off.phv.1",
@@ -443,8 +443,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "success_productivity", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm too tired today. Let's ______ the meeting until tomorrow.", "answer": "put off", "distractors": ["turn on", "pick up", "cheer up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'm too tired today. Let's ______ the meeting until tomorrow.", "answer": "put off", "distractors": ["turn on", "hand in", "cheer up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     }
   ]
 }

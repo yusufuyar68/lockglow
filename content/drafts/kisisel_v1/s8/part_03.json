@@ -1,0 +1,959 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.excuse_me.phr.1",
+      "lemma": "excuse me",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "getting attention politely",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈskjuːz mi/",
+        "uk": "/ɪkˈskjuːz miː/"
+      },
+      "def": {
+        "micro": "to get attention politely",
+        "short": "used to politely get someone's attention, or to ask to pass them",
+        "long": "You say this to politely get the attention of someone you do not know, for example to ask a question. You also say it to a person when you need to walk past them."
+      },
+      "examples": [
+        {
+          "en": "Excuse me, where is the bus stop?",
+          "tr": "Affedersiniz, otobüs durağı nerede?",
+          "register": "neutral",
+          "focus": "Excuse me"
+        },
+        {
+          "en": "Excuse me, is this seat free?",
+          "tr": "Affedersiniz, bu yer boş mu?",
+          "register": "neutral",
+          "focus": "Excuse me"
+        },
+        {
+          "en": "Excuse me, Ayşe. I need to get past.",
+          "tr": "Pardon Ayşe, geçmem gerekiyor.",
+          "register": "neutral",
+          "focus": "Excuse me"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "excuse me, please"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "affedersiniz",
+          "alt": [
+            "pardon",
+            "bakar mısınız"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Dikkat çekerken 'affedersiniz' ya da 'bakar mısınız', yanından geçerken 'pardon' deriz. İngilizcede hepsi 'excuse me' olur. Yükselen sesle söylenen 'Excuse me?' ise 'Efendim?' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______, is this seat free? I would like to sit down.",
+        "answer": "Excuse me",
+        "distractors": [
+          "Good luck",
+          "Have fun",
+          "No problem"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_ahead.phr.1",
+      "lemma": "go ahead",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "giving permission",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ əˈhɛd/",
+        "uk": "/ɡəʊ əˈhɛd/"
+      },
+      "def": {
+        "micro": "yes, you may start",
+        "short": "used to tell someone that they can do or say something now",
+        "long": "You say this to give someone permission to do or say something, or to tell them to start. It sounds friendly and polite when someone asks if they can begin."
+      },
+      "examples": [
+        {
+          "en": "“Can I ask a question?” “Sure, go ahead.”",
+          "tr": "“Bir soru sorabilir miyim?” “Tabii, buyur.”",
+          "register": "neutral",
+          "focus": "go ahead"
+        },
+        {
+          "en": "“May I sit here?” “Go ahead.”",
+          "tr": "“Buraya oturabilir miyim?” “Buyurun.”",
+          "register": "neutral",
+          "focus": "Go ahead"
+        },
+        {
+          "en": "We are ready, so you can go ahead and start, Kenji.",
+          "tr": "Hazırız, buyur başlayabilirsin Kenji.",
+          "register": "neutral",
+          "focus": "go ahead"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go ahead and start"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buyur",
+          "alt": [
+            "devam et",
+            "buyrun",
+            "başla"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İzin verirken 'buyur', 'buyrun' ya da 'başla' gibi söylenir. Telefonda ya da toplantıda 'go ahead' ise 'söyle, seni dinliyorum' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Can I borrow your pen?” “Yes, ______.”",
+        "answer": "go ahead",
+        "distractors": [
+          "never mind",
+          "have fun",
+          "no way"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.come_on.phr.1",
+      "lemma": "come on",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "hurry up or encourage",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌm ˈɑːn/",
+        "uk": "/kʌm ˈɒn/"
+      },
+      "def": {
+        "micro": "to hurry or encourage",
+        "short": "used to tell someone to be quick, or to say you believe they can do it",
+        "long": "You say this to make a person go faster, or to give them courage when something is hard. It is friendly and informal, so you say it to friends and family."
+      },
+      "examples": [
+        {
+          "en": "Come on, we're late!",
+          "tr": "Hadi, geç kalıyoruz!",
+          "register": "informal",
+          "focus": "Come on"
+        },
+        {
+          "en": "Come on, Elif! You can do it!",
+          "tr": "Hadi Elif! Yapabilirsin!",
+          "register": "informal",
+          "focus": "Come on"
+        },
+        {
+          "en": "Come on, Mehmet. Let's go home. It's getting dark.",
+          "tr": "Hadi Mehmet, eve gidelim. Hava kararıyor.",
+          "register": "informal",
+          "focus": "Come on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "oh, come on"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hadi",
+          "alt": [
+            "haydi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Come on' hem acele ettirmek hem cesaret vermek için kullanılır. Ses tonuna göre 'Hadi ya!' gibi inanmamak anlamına da gelir. Arkadaşlar arasında söylenir; resmî ortamda kullanılmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______, Mehmet! The bus leaves in five minutes!",
+        "answer": "Come on",
+        "distractors": [
+          "Take care",
+          "Well done",
+          "No problem"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.no_way.phr.1",
+      "lemma": "no way",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "strong refusal",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/noʊ ˈweɪ/",
+        "uk": "/nəʊ ˈweɪ/"
+      },
+      "def": {
+        "micro": "definitely not",
+        "short": "used to say no very strongly, or to say something is impossible",
+        "long": "You say this to refuse something or to say that something cannot happen. It is informal and strong, so you use it with friends, not in formal situations."
+      },
+      "examples": [
+        {
+          "en": "“Can I borrow your phone?” “No way!”",
+          "tr": "“Telefonunu ödünç alabilir miyim?” “Hiç olmaz!”",
+          "register": "informal",
+          "focus": "No way"
+        },
+        {
+          "en": "No way! I'm not going there alone at night.",
+          "tr": "Olmaz! Geceleyin oraya tek başıma gitmem.",
+          "register": "informal",
+          "focus": "No way"
+        },
+        {
+          "en": "“Will you clean my room?” “No way, Sam. Do it yourself.”",
+          "tr": "“Odamı temizler misin?” “Hiç olmaz Sam. Kendin yap.”",
+          "register": "informal",
+          "focus": "No way"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "absolutely no way"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hiç olmaz",
+          "alt": [
+            "asla",
+            "olmaz"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çok kesin bir 'hayır'dır ve konuşma diline aittir. Yabancıya ya da patrona söylersen kaba duyulur. 'No way!' şaşırırken de 'Yok artık!' anlamında söylenir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "slang_informal",
+        "topics": [
+          "slang_informal",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Can I borrow your new phone?” “______! I never lend it.”",
+        "answer": "No way",
+        "distractors": [
+          "Take your time",
+          "Go ahead",
+          "No problem"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.as_soon_as.phr.1",
+      "lemma": "as soon as",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "immediately after something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əz ˈsuːn əz/",
+        "uk": "/əz ˈsuːn əz/"
+      },
+      "def": {
+        "micro": "right after",
+        "short": "used to say that one thing happens right after another, with no waiting",
+        "long": "You use this to say that the second thing happens right after the first thing, with no waiting. A subject and a verb come after it."
+      },
+      "grammar": {
+        "pattern": "as soon as + present verb"
+      },
+      "examples": [
+        {
+          "en": "Call me as soon as you arrive.",
+          "tr": "Varır varmaz beni ara.",
+          "register": "neutral",
+          "focus": "as soon as"
+        },
+        {
+          "en": "I'll send the photos as soon as I get home.",
+          "tr": "Eve varır varmaz fotoğrafları göndereceğim.",
+          "register": "neutral",
+          "focus": "as soon as"
+        },
+        {
+          "en": "As soon as Ayşe opened the door, the cat ran out.",
+          "tr": "Ayşe kapıyı açar açmaz kedi dışarı koştu.",
+          "register": "neutral",
+          "focus": "As soon as"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "as soon as possible",
+        "as soon as you can"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-ir -mez (varır varmaz)",
+          "alt": [
+            "-ince",
+            "-diği anda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'varır varmaz' gibi iki fiil arka arkaya gelir. İngilizcede gelecek için bile geniş zaman kullanılır: 'as soon as I arrive'; 'as soon as I will arrive' denmez.",
+          "mistakes": [
+            {
+              "wrong": "I'll call you as soon as I will arrive.",
+              "right": "I'll call you as soon as I arrive.",
+              "why": "İş gelecekte olacağı için 'will' eklenir. Oysa 'as soon as' ve 'when' gibi bağlaçlardan sonra gelecek için bile geniş zaman kullanılır: I arrive."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I will call you ______ I get to the hotel.",
+        "answer": "as soon as",
+        "distractors": [
+          "as well",
+          "at least",
+          "in the end"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.as_well.phr.1",
+      "lemma": "as well",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "also, too",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əz ˈwɛl/",
+        "uk": "/əz ˈwɛl/"
+      },
+      "def": {
+        "micro": "also; in addition",
+        "short": "used at the end of a sentence to add another thing to what you said",
+        "long": "You use this at the end of a sentence to add something to what you just said. It means the same as 'too', and it is common in speaking and writing."
+      },
+      "examples": [
+        {
+          "en": "I like tea, and I like coffee as well.",
+          "tr": "Çayı severim, kahveyi de severim.",
+          "register": "neutral",
+          "focus": "as well"
+        },
+        {
+          "en": "“I'm hungry.” “Me as well.”",
+          "tr": "“Acıktım.” “Ben de.”",
+          "register": "neutral",
+          "focus": "as well"
+        },
+        {
+          "en": "Mehmet speaks English, and he speaks German as well.",
+          "tr": "Mehmet İngilizce konuşur, Almanca da konuşur.",
+          "register": "neutral",
+          "focus": "as well"
+        }
+      ],
+      "synonyms": [
+        "too",
+        "also"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "me as well",
+        "you as well"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "de / da",
+          "alt": [
+            "ayrıca",
+            "aynı zamanda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'As well' çoğunlukla cümlenin sonuna gelir: 'I like it as well'. 'Also' ise fiilin önüne gelir: 'I also like it'. 'Too' ile hemen hemen aynı anlamdadır.",
+          "mistakes": [
+            {
+              "wrong": "I don't like coffee as well.",
+              "right": "I don't like coffee either.",
+              "why": "Türkçede olumsuz cümlede de 'de/da' kullanırız: 'Ben de sevmem'. İngilizcede olumsuz cümlede 'as well' olmaz; 'either' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe speaks English, and she speaks French ______.",
+        "answer": "as well",
+        "distractors": [
+          "at last",
+          "on foot",
+          "out of order"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_the_end.phr.1",
+      "lemma": "in the end",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "finally, after a process",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ði ˈɛnd/",
+        "uk": "/ɪn ði ˈɛnd/"
+      },
+      "def": {
+        "micro": "finally, after everything",
+        "short": "used to say what happened after a long time or after many changes",
+        "long": "You use this to tell the result after a long time or after many things happened or changed. It often follows a plan, a wait or a hard story."
+      },
+      "examples": [
+        {
+          "en": "We wanted to go to the beach, but in the end we stayed home.",
+          "tr": "Plaja gitmek istedik ama sonunda evde kaldık.",
+          "register": "neutral",
+          "focus": "in the end"
+        },
+        {
+          "en": "Elif was nervous, but in the end the exam was easy.",
+          "tr": "Elif gergindi ama sonunda sınav kolay çıktı.",
+          "register": "neutral",
+          "focus": "in the end"
+        },
+        {
+          "en": "In the end, Kenji bought the blue jacket.",
+          "tr": "Sonunda Kenji mavi ceketi aldı.",
+          "register": "neutral",
+          "focus": "In the end"
+        }
+      ],
+      "synonyms": [
+        "finally"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "but in the end"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonunda",
+          "alt": [
+            "nihayetinde",
+            "en sonunda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'In the end' bir sürecin sonucunu söyler. 'At the end' ise bir şeyin son noktasını gösterir: 'at the end of the film'. Türkçede ikisi de 'sonunda' olabilir.",
+          "mistakes": [
+            {
+              "wrong": "At the end, we stayed home.",
+              "right": "In the end, we stayed home.",
+              "why": "Türkçede ikisi de 'sonunda'. Sonuç için 'in the end' denir; 'at the end' ise yanında 'of' ister: at the end of the film."
+            },
+            {
+              "wrong": "In the end of the film, he cries.",
+              "right": "At the end of the film, he cries.",
+              "why": "Türkçede 'filmin sonunda' deriz; İngilizcede bu 'at the end of the film' olur. 'In the end' ise sonucu anlatır, bir şeyin son kısmı için kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I wanted a red bag, but ______ I bought a black one.",
+        "answer": "in the end",
+        "distractors": [
+          "by the way",
+          "for example",
+          "as well"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_purpose.phr.1",
+      "lemma": "on purpose",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "deliberately",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ˈpɜːrpəs/",
+        "uk": "/ɒn ˈpɜːpəs/"
+      },
+      "def": {
+        "micro": "not by accident",
+        "short": "in a way that you plan or want, not by accident",
+        "long": "Doing something because you want to, and not by chance. The person knows what they are doing."
+      },
+      "examples": [
+        {
+          "en": "I didn't break it on purpose.",
+          "tr": "Bunu kasten kırmadım.",
+          "register": "neutral",
+          "focus": "on purpose"
+        },
+        {
+          "en": "Did you leave the door open on purpose, Sam?",
+          "tr": "Kapıyı bilerek mi açık bıraktın Sam?",
+          "register": "neutral",
+          "focus": "on purpose"
+        },
+        {
+          "en": "Elif came early on purpose to get a good seat.",
+          "tr": "Elif iyi bir yer bulmak için bilerek erken geldi.",
+          "register": "neutral",
+          "focus": "on purpose"
+        }
+      ],
+      "synonyms": [
+        "deliberately"
+      ],
+      "antonyms": [
+        "by accident",
+        "by mistake"
+      ],
+      "collocations": [
+        "not on purpose"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kasten",
+          "alt": [
+            "bilerek",
+            "bile bile"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Kasten' ve 'bilerek' ikisi de olur. Zıttı 'by mistake' yani yanlışlıkla demektir. Günlük konuşmada 'I didn't do it on purpose' sık duyulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She knew the answer, but she gave a wrong one ______ to make us laugh.",
+        "answer": "on purpose",
+        "distractors": [
+          "on time",
+          "at the moment",
+          "in a hurry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mistake_removed_by_editor_agent",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.by_mistake.phr.1",
+      "lemma": "by mistake",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "not on purpose",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/baɪ mɪˈsteɪk/",
+        "uk": "/baɪ mɪˈsteɪk/"
+      },
+      "def": {
+        "micro": "without meaning to",
+        "short": "because of an error, not because you wanted to do it",
+        "long": "Doing or taking something wrongly because you did not know or did not notice. You did not plan it."
+      },
+      "examples": [
+        {
+          "en": "I took your umbrella by mistake.",
+          "tr": "Şemsiyeni yanlışlıkla aldım.",
+          "register": "neutral",
+          "focus": "by mistake"
+        },
+        {
+          "en": "Sorry, I sent you that message by mistake.",
+          "tr": "Üzgünüm, o mesajı sana yanlışlıkla gönderdim.",
+          "register": "neutral",
+          "focus": "by mistake"
+        },
+        {
+          "en": "Kenji deleted the file by mistake and lost his work.",
+          "tr": "Kenji dosyayı yanlışlıkla sildi ve işini kaybetti.",
+          "register": "neutral",
+          "focus": "by mistake"
+        }
+      ],
+      "synonyms": [
+        "by accident"
+      ],
+      "antonyms": [
+        "on purpose"
+      ],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yanlışlıkla",
+          "alt": [
+            "kazara",
+            "istemeden"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Zıttı 'on purpose' yani kasten demektir. Kalıp hep 'by mistake' olarak söylenir; 'in mistake' ya da 'with mistake' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I took your coat ______. It looks just like mine.",
+        "answer": "by mistake",
+        "distractors": [
+          "on time",
+          "for example",
+          "at least"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.out_of_order.phr.1",
+      "lemma": "out of order",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "not working (machines)",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aʊt əv ˈɔːrdər/",
+        "uk": "/aʊt əv ˈɔːdə/"
+      },
+      "def": {
+        "micro": "not working, broken",
+        "short": "not working; used for a machine or a public thing like an elevator or a toilet",
+        "long": "Used about a machine or a public thing that is broken and cannot be used now. You often see it on a sign: 'OUT OF ORDER'."
+      },
+      "examples": [
+        {
+          "en": "The elevator is out of order.",
+          "tr": "Asansör arızalı.",
+          "register": "neutral",
+          "focus": "out of order"
+        },
+        {
+          "en": "Sorry, the coffee machine is out of order today.",
+          "tr": "Üzgünüm, kahve makinesi bugün arızalı.",
+          "register": "neutral",
+          "focus": "out of order"
+        },
+        {
+          "en": "The toilet was out of order, so we used the one downstairs.",
+          "tr": "Tuvalet arızalıydı, biz de alt kattakini kullandık.",
+          "register": "neutral",
+          "focus": "out of order"
+        }
+      ],
+      "synonyms": [
+        "broken"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arızalı",
+          "alt": [
+            "bozuk",
+            "çalışmıyor"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde asansör, tuvalet, otomat gibi herkesin kullandığı şeyler için kullanılır. Kendi telefonun için 'broken' demek daha doğaldır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please use the stairs. The elevator is ______ today.",
+        "answer": "out of order",
+        "distractors": [
+          "on time",
+          "on purpose",
+          "in a hurry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

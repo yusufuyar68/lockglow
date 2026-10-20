@@ -170,8 +170,8 @@
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Cars must stop at the crossing when a ______ is waiting.", "answer": "pedestrian", "distractors": ["passenger", "sidewalk", "platform"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "Cars must stop at the crossing when a ______ is waiting.", "answer": "pedestrian", "distractors": ["passenger", "sidewalk", "tunnel"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.suburb.n.1",

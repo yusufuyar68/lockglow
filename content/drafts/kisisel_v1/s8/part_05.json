@@ -1,0 +1,967 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.have_a_look.phr.1",
+      "lemma": "have a look",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "see something for a short time",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv ə ˈlʊk/",
+        "uk": "/hæv ə ˈlʊk/"
+      },
+      "def": {
+        "micro": "see something quickly",
+        "short": "to see or check something for a short time",
+        "long": "To check or see something for a short time, often because you are interested or want to help. You can use it to ask to see something, or to offer to check a problem."
+      },
+      "examples": [
+        {
+          "en": "Can I have a look at your photos?",
+          "tr": "Fotoğraflarına bir göz atabilir miyim?",
+          "register": "neutral",
+          "focus": "have a look"
+        },
+        {
+          "en": "Let me have a look. Maybe I can fix it.",
+          "tr": "Bir bakayım. Belki tamir edebilirim.",
+          "register": "neutral",
+          "focus": "have a look"
+        },
+        {
+          "en": "Maria had a look at the menu and ordered soup.",
+          "tr": "Maria menüye bir göz attı ve çorba sipariş etti.",
+          "register": "neutral",
+          "focus": "had a look"
+        }
+      ],
+      "synonyms": [
+        "take a look"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a look at",
+        "have a quick look"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir göz atmak",
+          "alt": [
+            "bir bakmak",
+            "göz gezdirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kısa bir bakıştır ve yumuşak durur. 'Take a look' aynı anlama gelir ve Amerikan İngilizcesinde çok yaygındır. Fiil olarak 'have' ya da 'take' kullanılır, 'do' ya da 'make' kullanılmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This phone doesn't work. Can I ______ at it?",
+        "answer": "have a look",
+        "distractors": [
+          "take a break",
+          "make a decision",
+          "get lost"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.change_your_mind.phr.1",
+      "lemma": "change your mind",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "decide something different",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃeɪndʒ jər ˈmaɪnd/",
+        "uk": "/tʃeɪndʒ jə ˈmaɪnd/"
+      },
+      "def": {
+        "micro": "choose differently",
+        "short": "decide to do something different from what you decided before",
+        "long": "To decide something different from what you decided before. You may want a different thing, or you may not want to do something any more."
+      },
+      "grammar": {
+        "pattern": "change + my / your / her mind"
+      },
+      "examples": [
+        {
+          "en": "I changed my mind. I want tea, not coffee.",
+          "tr": "Fikrimi değiştirdim. Kahve değil, çay istiyorum.",
+          "register": "neutral",
+          "focus": "changed my mind"
+        },
+        {
+          "en": "If you change your mind, just call me.",
+          "tr": "Fikrini değiştirirsen beni ara.",
+          "register": "neutral",
+          "focus": "change your mind"
+        },
+        {
+          "en": "Elif changed her mind and stayed home.",
+          "tr": "Elif fikrini değiştirdi ve evde kaldı.",
+          "register": "neutral",
+          "focus": "changed her mind"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "change my mind",
+        "changed her mind"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fikrini değiştirmek",
+          "alt": [
+            "vazgeçmek",
+            "caymak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'fikrimi değiştirdim' deriz; İngilizcede de iyelik sıfatı gelir: change my / your / her mind. 'Change the mind' denmez.",
+          "mistakes": [
+            {
+              "wrong": "I changed my idea.",
+              "right": "I changed my mind.",
+              "why": "Türkçede 'fikrimi değiştirdim' dediğimiz için 'idea' denir. İngilizcede bu kalıp 'mind' ile kurulur: change my mind."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "collocations",
+        "topics": [
+          "collocations",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I said yes at first, but now I ______. I don't want to go.",
+        "answer": "changed my mind",
+        "distractors": [
+          "took a seat",
+          "had fun",
+          "got ready"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.see_you_later.phr.1",
+      "lemma": "see you later",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a friendly goodbye",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/siː ju ˈleɪtər/",
+        "uk": "/siː ju ˈleɪtə/"
+      },
+      "def": {
+        "micro": "goodbye for now",
+        "short": "used to say goodbye when you think you will meet or talk again soon",
+        "long": "A friendly way to say goodbye when you plan to meet or talk to the person again, maybe today or in a few days. It does not mean a fixed time."
+      },
+      "examples": [
+        {
+          "en": "See you later, Ayşe!",
+          "tr": "Sonra görüşürüz Ayşe!",
+          "register": "neutral",
+          "focus": "See you later"
+        },
+        {
+          "en": "I have class now. See you later!",
+          "tr": "Şimdi dersim var. Sonra görüşürüz!",
+          "register": "neutral",
+          "focus": "See you later"
+        },
+        {
+          "en": "“Bye, Mehmet!” “See you later, Sam!”",
+          "tr": "“Hoşça kal Mehmet!” “Sonra görüşürüz Sam!”",
+          "register": "neutral",
+          "focus": "See you later"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonra görüşürüz",
+          "alt": [
+            "görüşürüz",
+            "görüşmek üzere"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kısaca 'See you' ya da 'Later!' denir. Belli bir zaman için 'See you at five' ya da 'See you tomorrow' denir.",
+          "mistakes": [
+            {
+              "wrong": "See you after!",
+              "right": "See you later!",
+              "why": "Türkçede 'sonra' sözü 'after' gibi görünür. Tek başına 'sonra' demek için 'later' kullanılır; 'after' yanında bir şey ister: after lunch."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have to go to class now. ______, Mehmet!",
+        "answer": "See you later",
+        "distractors": [
+          "Sounds good",
+          "No way",
+          "How about"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sounds_good.phr.1",
+      "lemma": "sounds good",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "agreeing to an idea",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/saʊndz ˈɡʊd/",
+        "uk": "/saʊndz ˈɡʊd/"
+      },
+      "def": {
+        "micro": "I like that idea",
+        "short": "used to say that you like an idea or a plan and you agree with it",
+        "long": "You say this to show that you like a plan or an idea that someone just told you. It is friendly and informal, and it means that you agree."
+      },
+      "examples": [
+        {
+          "en": "“Let's have pizza for dinner.” “Sounds good!”",
+          "tr": "“Akşam yemeğinde pizza yiyelim.” “Olur, güzel fikir!”",
+          "register": "informal",
+          "focus": "Sounds good"
+        },
+        {
+          "en": "“Let's meet at seven.” “Sounds good to me.”",
+          "tr": "“Yedide buluşalım.” “Bana uyar.”",
+          "register": "informal",
+          "focus": "Sounds good"
+        },
+        {
+          "en": "A walk by the sea sounds good, Elif.",
+          "tr": "Deniz kenarında yürüyüş güzel olur Elif.",
+          "register": "informal",
+          "focus": "sounds good"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sounds good to me",
+        "that sounds good"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olur, güzel fikir",
+          "alt": [
+            "kulağa hoş geliyor",
+            "bana uyar",
+            "iyi olur"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Sounds good' kısa bir onay cevabıdır; 'That sounds good' cümlesinin kısaltmasıdır. 'Sounds great' ise daha coşkulu bir onaydır.",
+          "mistakes": [
+            {
+              "wrong": "That sounds well.",
+              "right": "That sounds good.",
+              "why": "Türkçede 'iyi' hem sıfat hem zarftır. İngilizcede 'sounds' gibi fiillerden sonra sıfat gelir: good. 'Well' burada kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Let's have pizza for dinner.” “______! I love pizza.”",
+        "answer": "Sounds good",
+        "distractors": [
+          "Have fun",
+          "Take care",
+          "Never mind"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_your_time.phr.1",
+      "lemma": "take your time",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "no need to hurry",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk jər ˈtaɪm/",
+        "uk": "/teɪk jə ˈtaɪm/"
+      },
+      "def": {
+        "micro": "do not hurry",
+        "short": "used to tell someone that they do not need to be fast; you can wait",
+        "long": "You say this to a person to show that there is no hurry and you can wait. It is kind and polite, for example when someone chooses food or does a hard job."
+      },
+      "grammar": {
+        "pattern": "take your / his / her time"
+      },
+      "examples": [
+        {
+          "en": "Take your time. I'm not in a hurry.",
+          "tr": "Acele etme. Benim acelem yok.",
+          "register": "neutral",
+          "focus": "Take your time"
+        },
+        {
+          "en": "Please take your time with the menu.",
+          "tr": "Menüye bakmak için acele etmeyin, lütfen.",
+          "register": "neutral",
+          "focus": "take your time"
+        },
+        {
+          "en": "Take your time, Elif. We have all day.",
+          "tr": "Acele etme Elif. Bütün günümüz var.",
+          "register": "neutral",
+          "focus": "Take your time"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take your time with"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "acele etme",
+          "alt": [
+            "rahat ol",
+            "vaktini al"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Karşındakine nazikçe 'acele etme' demenin yoludur. 'He took his time' ise 'Hiç acele etmedi, oyalandı' gibi eleştirel de olabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Sorry, I'm slow.” “______. We have all day.”",
+        "answer": "Take your time",
+        "distractors": [
+          "No way",
+          "Good night",
+          "Excuse me"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.right_now.phr.1",
+      "lemma": "right now",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "at this exact moment",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/raɪt ˈnaʊ/",
+        "uk": "/raɪt ˈnaʊ/"
+      },
+      "def": {
+        "micro": "at this exact moment",
+        "short": "at this very moment, not before or later",
+        "long": "At this exact moment, not before or later. People use it to be clear about the present, or to say that something must happen immediately."
+      },
+      "examples": [
+        {
+          "en": "I'm busy right now. Can I call you back?",
+          "tr": "Şu anda meşgulüm. Seni geri arayabilir miyim?",
+          "register": "neutral",
+          "focus": "right now"
+        },
+        {
+          "en": "It's raining right now, so let's wait.",
+          "tr": "Şu anda yağmur yağıyor, o yüzden bekleyelim.",
+          "register": "neutral",
+          "focus": "right now"
+        },
+        {
+          "en": "Right now, Kenji is working in Tokyo.",
+          "tr": "Kenji şu anda Tokyo'da çalışıyor.",
+          "register": "neutral",
+          "focus": "Right now"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şu anda",
+          "alt": [
+            "tam şu anda",
+            "şimdi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'At the moment' ile hemen hemen aynıdır ama daha vurguludur. Emirde 'hemen' anlamına da gelir: 'Come here right now!' = 'Hemen buraya gel!'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't talk ______. I'm driving. I'll call you later.",
+        "answer": "right now",
+        "distractors": [
+          "by mistake",
+          "on purpose",
+          "in the end"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.from_time_to_time.phr.1",
+      "lemma": "from time to time",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "sometimes",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/frəm ˌtaɪm tə ˈtaɪm/",
+        "uk": "/frəm ˌtaɪm tə ˈtaɪm/"
+      },
+      "def": {
+        "micro": "sometimes, not often",
+        "short": "sometimes, but not often or on a fixed day",
+        "long": "Used for things that happen sometimes, but not often and not on a fixed day. It is about the same as 'sometimes'. You can use it in speaking and in writing."
+      },
+      "examples": [
+        {
+          "en": "I visit my grandparents from time to time.",
+          "tr": "Büyükanne ve büyükbabamı ara sıra ziyaret ederim.",
+          "register": "neutral",
+          "focus": "from time to time"
+        },
+        {
+          "en": "From time to time, Ayşe and I go to the cinema.",
+          "tr": "Ayşe'yle ara sıra sinemaya gideriz.",
+          "register": "neutral",
+          "focus": "From time to time"
+        },
+        {
+          "en": "Mehmet still calls me from time to time.",
+          "tr": "Mehmet hâlâ ara sıra beni arıyor.",
+          "register": "neutral",
+          "focus": "from time to time"
+        }
+      ],
+      "synonyms": [
+        "sometimes",
+        "now and then"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ara sıra",
+          "alt": [
+            "zaman zaman",
+            "ara ara"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Ara sıra' ve 'zaman zaman' aynı anlamda kullanılır. 'From time to time' cümlenin başında, ortasında ya da sonunda olabilir. Çok sık olan şeyler için 'often' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't eat fast food often. I only have it ______.",
+        "answer": "from time to time",
+        "distractors": [
+          "all the time",
+          "in time",
+          "every day"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.all_the_time.phr.1",
+      "lemma": "all the time",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "very often; again and again",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɔːl ðə ˈtaɪm/",
+        "uk": "/ɔːl ðə ˈtaɪm/"
+      },
+      "def": {
+        "micro": "very often; again and again",
+        "short": "very often, or again and again, sometimes in a way that is annoying",
+        "long": "Used for something that happens again and again, or that does not stop. It can be a good or a bad thing, and it is often used when you complain about something."
+      },
+      "examples": [
+        {
+          "en": "My brother plays games all the time.",
+          "tr": "Kardeşim sürekli oyun oynuyor.",
+          "register": "neutral",
+          "focus": "all the time"
+        },
+        {
+          "en": "I'm tired all the time because I sleep late.",
+          "tr": "Sürekli yorgunum, çünkü geç yatıyorum.",
+          "register": "neutral",
+          "focus": "all the time"
+        },
+        {
+          "en": "Elif talks about her cat all the time.",
+          "tr": "Elif sürekli kedisinden bahsediyor.",
+          "register": "neutral",
+          "focus": "all the time"
+        }
+      ],
+      "synonyms": [
+        "constantly"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sürekli",
+          "alt": [
+            "hep",
+            "her zaman"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'All the time' çoğu zaman 'always' gibidir ama daha vurguludur ve konuşma diline yakındır. Şikâyet ederken sık kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I am tired every time.",
+              "right": "I am tired all the time.",
+              "why": "Türkçede 'her zaman' dediğimiz için 'every time' denir. 'Every time' 'her seferinde' demektir; sürekli olan şey için 'all the time' ya da 'always' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He is always on his phone. He looks at it ______.",
+        "answer": "all the time",
+        "distractors": [
+          "once a week",
+          "in time",
+          "on time"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.how_often.phr.1",
+      "lemma": "how often",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking about frequency",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haʊ ˈɔːfən/",
+        "uk": "/haʊ ˈɒfən/"
+      },
+      "def": {
+        "micro": "asking how many times",
+        "short": "used to ask how many times something happens in a week, a month or a year",
+        "long": "A question that asks how many times something happens in a period of time. Common answers are 'every day', 'twice a week' or 'never'."
+      },
+      "grammar": {
+        "pattern": "How often + do / does + subject + verb?"
+      },
+      "examples": [
+        {
+          "en": "How often do you go to the gym?",
+          "tr": "Spor salonuna ne sıklıkla gidiyorsun?",
+          "register": "neutral",
+          "focus": "How often"
+        },
+        {
+          "en": "How often does the bus come, Mehmet?",
+          "tr": "Otobüs ne sıklıkla geliyor Mehmet?",
+          "register": "neutral",
+          "focus": "How often"
+        },
+        {
+          "en": "“How often do you call your mother?” “Every Sunday.”",
+          "tr": "“Annene ne sıklıkla telefon edersin?” “Her pazar.”",
+          "register": "neutral",
+          "focus": "How often"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "how often do you"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne sıklıkla",
+          "alt": [
+            "ne kadar sık",
+            "kaç kere"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Cevapta 'every day', 'twice a week', 'once a month' ya da 'never' söylenir. 'How long' ise süreyi sorar; ikisi karıştırılmamalıdır.",
+          "mistakes": [
+            {
+              "wrong": "How long do you go to the gym?",
+              "right": "How often do you go to the gym?",
+              "why": "Türkçede 'ne kadar sık' ve 'ne kadar süre' sorularının ikisi de 'ne kadar' ile başlar. Sıklık için 'how often', süre için 'how long' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______ do you play football? Once a week or twice a week?",
+        "answer": "How often",
+        "distractors": [
+          "How long",
+          "How about",
+          "What about"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.a_lot_of.phr.1",
+      "lemma": "a lot of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a large number or amount",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ə ˈlɑːt əv/",
+        "uk": "/ə ˈlɒt əv/"
+      },
+      "def": {
+        "micro": "a large number or amount",
+        "short": "used before a noun to show a large amount or number",
+        "long": "You use it before a noun to talk about a large number or amount of people or things. It is very common in speaking, and it works with both countable and uncountable nouns."
+      },
+      "examples": [
+        {
+          "en": "I don't have a lot of money.",
+          "tr": "Çok param yok.",
+          "register": "neutral",
+          "focus": "a lot of"
+        },
+        {
+          "en": "Ayşe has a lot of friends in Izmir.",
+          "tr": "Ayşe'nin İzmir'de çok arkadaşı var.",
+          "register": "neutral",
+          "focus": "a lot of"
+        },
+        {
+          "en": "There was a lot of traffic, so we were late.",
+          "tr": "Çok trafik vardı, o yüzden geç kaldık.",
+          "register": "neutral",
+          "focus": "a lot of"
+        }
+      ],
+      "synonyms": [
+        "lots of",
+        "plenty of"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a lot of people",
+        "a lot of money"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok",
+          "alt": [
+            "bir sürü",
+            "birçok"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sayılabilen ve sayılamayan isimlerle kullanılır: 'a lot of friends', 'a lot of money'. İsim olmadan 'of' düşer: 'I like it a lot'.",
+          "mistakes": [
+            {
+              "wrong": "I have a lot friends.",
+              "right": "I have a lot of friends.",
+              "why": "Türkçede 'çok arkadaş' derken araya ek girmez. İngilizcede 'a lot' ile isim arasına 'of' gelir."
+            },
+            {
+              "wrong": "I have lot of friends.",
+              "right": "I have a lot of friends.",
+              "why": "Türkçede 'bir' kullanılmadan 'çok arkadaş' denir; bu yüzden 'a' atlanır. Kalıp 'a lot of' biçimindedir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The room is full. There are ______ people here.",
+        "answer": "a lot of",
+        "distractors": [
+          "a few",
+          "no",
+          "one"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1009 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.lunch.n.1",
+      "lemma": "lunch",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lʌntʃ/",
+        "uk": "/lʌntʃ/"
+      },
+      "def": {
+        "micro": "meal you eat at midday",
+        "short": "the meal that people eat in the middle of the day",
+        "long": "The meal that people eat in the middle of the day, usually between twelve and two o'clock. A lunch can be small, like a sandwich, or big, like a hot meal."
+      },
+      "examples": [
+        {
+          "en": "What would you like for lunch?",
+          "tr": "Öğle yemeğinde ne yemek istersin?",
+          "register": "neutral",
+          "focus": "lunch"
+        },
+        {
+          "en": "Let's have lunch together on Friday.",
+          "tr": "Cuma günü birlikte öğle yemeği yiyelim.",
+          "register": "neutral",
+          "focus": "lunch"
+        },
+        {
+          "en": "Kenji eats a sandwich and an apple for lunch.",
+          "tr": "Kenji öğle yemeğinde sandviç ve elma yiyor.",
+          "register": "neutral",
+          "focus": "lunch"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have lunch",
+        "for lunch",
+        "lunch break",
+        "school lunch"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öğle yemeği",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'öğle yemeği' dersiniz; 'öğle' tek başına 'noon' demektir. Öğün adlarının önüne genellikle 'the' gelmez: have lunch. Geç kahvaltı ile öğle yemeğinin birleşimine 'brunch' denir.",
+          "mistakes": [
+            {
+              "wrong": "I eat the lunch at school.",
+              "right": "I eat lunch at school.",
+              "why": "İngilizcede öğün adlarının önüne genellikle 'the' gelmez: have lunch, eat lunch. Türkçede 'öğle yemeğini yerim' dersiniz; belirtme eki 'the' gibi duyulabilir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many people eat a sandwich in the middle of the day. This meal is called ______.",
+        "answer": "lunch",
+        "distractors": [
+          "breakfast",
+          "supper",
+          "dessert"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dinner.n.1",
+      "lemma": "dinner",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪnər/",
+        "uk": "/ˈdɪnə/"
+      },
+      "def": {
+        "micro": "main meal in the evening",
+        "short": "the main meal of the day, usually eaten in the evening",
+        "long": "The main meal of the day, which most people eat in the evening. You can have dinner at home, with friends, or in a restaurant."
+      },
+      "examples": [
+        {
+          "en": "What's for dinner tonight?",
+          "tr": "Bu akşam yemekte ne var?",
+          "register": "neutral",
+          "focus": "dinner"
+        },
+        {
+          "en": "Ayşe invited us to dinner at her house.",
+          "tr": "Ayşe bizi evinde akşam yemeğine davet etti.",
+          "register": "neutral",
+          "focus": "dinner"
+        },
+        {
+          "en": "Sam cooks dinner for his family every Sunday.",
+          "tr": "Sam her pazar ailesi için akşam yemeği pişiriyor.",
+          "register": "neutral",
+          "focus": "dinner"
+        }
+      ],
+      "synonyms": [
+        "supper"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have dinner",
+        "cook dinner",
+        "dinner party",
+        "dinner time",
+        "for dinner"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'disner', which meant 'to break one's fast'. So 'dinner' and 'breakfast' share a similar idea.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "akşam yemeği",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Dinner' günün ana yemeğidir ve çoğunlukla akşam yenir; hafif akşam yemeğine 'supper' denir. İngiltere'nin bazı yerlerinde öğle yemeğine de 'dinner' diyenler vardır.",
+          "mistakes": [
+            {
+              "wrong": "I will do dinner tonight.",
+              "right": "I will make dinner tonight.",
+              "why": "Türkçede 'akşam yemeği yapmak' dersiniz ve 'yapmak' çoğu zaman 'do' sanılır. İngilizcede yemek hazırlamak için 'make' ya da 'cook' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We usually have ______ at 7 p.m., after work, and then we watch TV.",
+        "answer": "dinner",
+        "distractors": [
+          "breakfast",
+          "lunch",
+          "brunch"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.menu.n.1",
+      "lemma": "menu",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛnjuː/",
+        "uk": "/ˈmɛnjuː/"
+      },
+      "def": {
+        "micro": "list of food in a restaurant",
+        "short": "a list of the food and drinks that you can order in a restaurant",
+        "long": "A list of the food and drinks that you can order in a restaurant or café. It can be on paper, on a board, or on your phone."
+      },
+      "examples": [
+        {
+          "en": "Can I see the menu, please?",
+          "tr": "Menüye bakabilir miyim lütfen?",
+          "register": "neutral",
+          "focus": "menu"
+        },
+        {
+          "en": "The menu has fish, pasta, and a few salads.",
+          "tr": "Menüde balık, makarna ve birkaç salata var.",
+          "register": "neutral",
+          "focus": "menu"
+        },
+        {
+          "en": "Ayşe read the menu and ordered a soup.",
+          "tr": "Ayşe menüyü okudu ve bir çorba sipariş etti.",
+          "register": "neutral",
+          "focus": "menu"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the menu",
+        "see the menu",
+        "lunch menu",
+        "kids' menu"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'menu', which meant 'small' or 'detailed'.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "menü",
+          "alt": [
+            "yemek listesi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'menü' hem yemek listesini hem hızlı yemek zincirlerindeki hazır paketi ('hamburger menü') anlatır. İngilizcede 'menu' genellikle listedir; hazır paket için 'combo' ya da 'value meal' denir.",
+          "mistakes": [
+            {
+              "wrong": "Can I take the menu, please?",
+              "right": "Can I see the menu, please?",
+              "why": "Türkçede 'menüyü alabilir miyim?' dersiniz; 'almak' çoğu zaman 'take' sanılır. İngilizcede menü istemek için 'Can I see the menu?' ya da 'Can I have the menu?' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The waiter gave us the ______, and we chose soup and fish.",
+        "answer": "menu",
+        "distractors": [
+          "ticket",
+          "map",
+          "key"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.holiday.n.1",
+      "lemma": "holiday",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "time off; UK: trip",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɑːlədeɪ/",
+        "uk": "/ˈhɒlədeɪ/"
+      },
+      "def": {
+        "micro": "time without work or school",
+        "short": "a day or more when you do not have to work or go to school",
+        "long": "A day or a longer time when you do not have to work or go to school. In British English, 'a holiday' is also a trip for fun: people say 'go on holiday'. Americans say 'vacation'."
+      },
+      "examples": [
+        {
+          "en": "Tomorrow is a holiday, so we don't work.",
+          "tr": "Yarın tatil, o yüzden çalışmıyoruz.",
+          "register": "neutral",
+          "focus": "holiday"
+        },
+        {
+          "en": "We are going on holiday to Spain in August.",
+          "tr": "Ağustosta tatile İspanya'ya gidiyoruz.",
+          "register": "neutral",
+          "focus": "holiday"
+        },
+        {
+          "en": "The school holidays start next week.",
+          "tr": "Okul tatili gelecek hafta başlıyor.",
+          "register": "neutral",
+          "focus": "holidays"
+        }
+      ],
+      "synonyms": [
+        "time off"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "on holiday",
+        "go on holiday",
+        "public holiday",
+        "school holidays",
+        "summer holiday"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'hāligdæg', meaning 'holy day': 'holy' + 'day'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tatil",
+          "alt": [
+            "bayram"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'tatil' hem boş günü hem seyahati anlatır. İngiliz İngilizcesinde 'on holiday', Amerikan İngilizcesinde 'on vacation' denir. Resmî tatile 'public holiday' denir.",
+          "mistakes": [
+            {
+              "wrong": "We go to holiday every summer.",
+              "right": "We go on holiday every summer.",
+              "why": "Türkçede 'tatile gitmek' (yönelme hâli, -e) dersiniz, bu yüzden 'to' denir. İngilizcede 'go on holiday' kalıbı kullanılır."
+            },
+            {
+              "wrong": "We will make holiday in Bodrum.",
+              "right": "We will have a holiday in Bodrum.",
+              "why": "Türkçede 'tatil yapmak' dersiniz; 'yapmak' çoğu zaman 'make' ya da 'do' sanılır. İngilizcede 'have a holiday' ya da 'go on holiday' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "travel_tourism",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Tomorrow is a public ______, so schools and banks are closed.",
+        "answer": "holiday",
+        "distractors": [
+          "lesson",
+          "bottle",
+          "address"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vacation.n.1",
+      "lemma": "vacation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "US: time off",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/veɪˈkeɪʃən/",
+        "uk": "/veɪˈkeɪʃən/"
+      },
+      "def": {
+        "micro": "time away for rest or travel",
+        "short": "a time when you do not work or study and often travel for fun",
+        "long": "A time away from work or school when you rest or travel for fun. Americans say 'go on vacation'; in British English people usually say 'go on holiday'."
+      },
+      "examples": [
+        {
+          "en": "We are on vacation this week.",
+          "tr": "Bu hafta tatildeyiz.",
+          "register": "neutral",
+          "focus": "vacation"
+        },
+        {
+          "en": "Maria is planning a vacation in Italy.",
+          "tr": "Maria İtalya'da bir tatil planlıyor.",
+          "register": "neutral",
+          "focus": "vacation"
+        },
+        {
+          "en": "Mehmet has two weeks of vacation every year.",
+          "tr": "Mehmet'in her yıl iki haftalık tatili var.",
+          "register": "neutral",
+          "focus": "vacation"
+        }
+      ],
+      "synonyms": [
+        "holiday"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "on vacation",
+        "go on vacation",
+        "summer vacation",
+        "take a vacation",
+        "vacation days"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'vacatio', meaning 'freedom from work'. It is related to 'vacant' (empty).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tatil",
+          "alt": [
+            "izin"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde 'vacation' tatildir; İngiliz İngilizcesinde aynı şey için 'holiday' denir. İngiltere'de 'vacation' çoğunlukla üniversite tatilleri için kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "We go to vacation in July.",
+              "right": "We go on vacation in July.",
+              "why": "Türkçede 'tatile gitmek' (yönelme hâli, -e) dersiniz, bu yüzden 'to' denir. İngilizcede 'go on vacation' kalıbı kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My family and I are going on ______ to the beach for two weeks.",
+        "answer": "vacation",
+        "distractors": [
+          "mistake",
+          "problem",
+          "lesson"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.library.n.1",
+      "lemma": "library",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlaɪbrɛri/",
+        "uk": "/ˈlaɪbrəri/"
+      },
+      "def": {
+        "micro": "place where you borrow books",
+        "short": "a building or room with many books that you can read or borrow",
+        "long": "A building or room with many books that people can read there or borrow for free. You can also study, use a computer, or find information in a library."
+      },
+      "examples": [
+        {
+          "en": "I borrow books from the library.",
+          "tr": "Kitapları kütüphaneden ödünç alıyorum.",
+          "register": "neutral",
+          "focus": "library"
+        },
+        {
+          "en": "The library is quiet, so it's a good place to study.",
+          "tr": "Kütüphane sessiz, bu yüzden çalışmak için iyi bir yer.",
+          "register": "neutral",
+          "focus": "library"
+        },
+        {
+          "en": "Mehmet returned three books to the library today.",
+          "tr": "Mehmet bugün üç kitabı kütüphaneye geri verdi.",
+          "register": "neutral",
+          "focus": "library"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "public library",
+        "school library",
+        "library card",
+        "library book"
+      ],
+      "word_family": [
+        {
+          "lemma": "librarian",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'librarium', a place for books, from 'liber' (book).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kütüphane",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede evdeki kitap dolabına da 'kütüphane' denir; İngilizcede ona 'bookcase' denir. 'Library' kitap ödünç verilen yerdir; kitap satılan yere 'bookstore' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't want to buy this book. I will borrow it from the ______.",
+        "answer": "library",
+        "distractors": [
+          "supermarket",
+          "hotel",
+          "pharmacy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.museum.n.1",
+      "lemma": "museum",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mjuˈziːəm/",
+        "uk": "/mjuˈziːəm/"
+      },
+      "def": {
+        "micro": "place that shows old things",
+        "short": "a building where you can see art, old objects, or other interesting things",
+        "long": "A building where people can look at art, old objects, or other interesting things from history or science. Many cities have a museum for art, for history, or for science."
+      },
+      "examples": [
+        {
+          "en": "The museum opens at nine o'clock.",
+          "tr": "Müze saat dokuzda açılıyor.",
+          "register": "neutral",
+          "focus": "museum"
+        },
+        {
+          "en": "Is the museum open on Mondays?",
+          "tr": "Müze pazartesi günleri açık mı?",
+          "register": "neutral",
+          "focus": "museum"
+        },
+        {
+          "en": "Kenji took his children to the science museum.",
+          "tr": "Kenji çocuklarını bilim müzesine götürdü.",
+          "register": "neutral",
+          "focus": "museum"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "art museum",
+        "science museum",
+        "visit a museum",
+        "museum ticket",
+        "history museum"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Greek 'mouseion', meaning 'a place for the Muses', the goddesses of arts and learning.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "müze",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'müze' ile aynı kökten gelir; İngilizcede üç heceli ve vurgu ortadadır: mju-ZEE-um. Yazarken 'z' değil 's' kullanılır: museum.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism",
+          "art_design_architecture"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We saw old paintings, statues, and tools at the ______ yesterday.",
+        "answer": "museum",
+        "distractors": [
+          "supermarket",
+          "airport",
+          "bathroom"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pharmacy.n.1",
+      "lemma": "pharmacy",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɑːrməsi/",
+        "uk": "/ˈfɑːməsi/"
+      },
+      "def": {
+        "micro": "shop that sells medicine",
+        "short": "a shop where you can buy medicine and other health products",
+        "long": "A shop where you can buy medicine, including the medicine that your doctor tells you to take. It also sells things like soap and vitamins."
+      },
+      "examples": [
+        {
+          "en": "Is there a pharmacy near here?",
+          "tr": "Buraya yakın bir eczane var mı?",
+          "register": "neutral",
+          "focus": "pharmacy"
+        },
+        {
+          "en": "I need to go to the pharmacy for my medicine.",
+          "tr": "İlacım için eczaneye gitmem gerekiyor.",
+          "register": "neutral",
+          "focus": "pharmacy"
+        },
+        {
+          "en": "The pharmacy on the corner is open all night.",
+          "tr": "Köşedeki eczane bütün gece açık.",
+          "register": "neutral",
+          "focus": "pharmacy"
+        }
+      ],
+      "synonyms": [
+        "drugstore",
+        "chemist"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go to the pharmacy",
+        "a local pharmacy",
+        "the pharmacy counter"
+      ],
+      "word_family": [
+        {
+          "lemma": "pharmacist",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Greek 'pharmakon', meaning 'drug' or 'medicine'.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "eczane",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde 'drugstore' ya da 'pharmacy', İngiliz İngilizcesinde 'chemist' ya da 'pharmacy' denir. 'Nöbetçi eczane' için 'late-night pharmacy' gibi bir açıklama kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a headache, so I'm going to the ______ to buy some medicine.",
+        "answer": "pharmacy",
+        "distractors": [
+          "library",
+          "museum",
+          "station"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.supermarket.n.1",
+      "lemma": "supermarket",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsuːpərˌmɑːrkɪt/",
+        "uk": "/ˈsuːpəˌmɑːkɪt/"
+      },
+      "def": {
+        "micro": "big shop that sells food",
+        "short": "a large shop where you choose food and other things and pay at the end",
+        "long": "A large shop where you take food, drinks, and things for the home from shelves and pay for them before you leave. Many people go to the supermarket once a week."
+      },
+      "examples": [
+        {
+          "en": "I need to go to the supermarket.",
+          "tr": "Süpermarkete gitmem gerekiyor.",
+          "register": "neutral",
+          "focus": "supermarket"
+        },
+        {
+          "en": "The supermarket closes at ten o'clock tonight.",
+          "tr": "Süpermarket bu gece saat onda kapanıyor.",
+          "register": "neutral",
+          "focus": "supermarket"
+        },
+        {
+          "en": "Ayşe buys milk, eggs, and bread at the supermarket.",
+          "tr": "Ayşe süpermarketten süt, yumurta ve ekmek alıyor.",
+          "register": "neutral",
+          "focus": "supermarket"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go to the supermarket",
+        "at the supermarket",
+        "a local supermarket",
+        "supermarket shelves"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "A compound of 'super' (big, great) and 'market'.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "süpermarket",
+          "alt": [
+            "market"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede bakkal ve küçük dükkânlara da 'market' dersiniz. İngilizcede 'market' çoğunlukla açık hava pazarıdır (ABD'de bazen süpermarket de olur); büyük mağazaya 'supermarket' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We buy milk, eggs, and vegetables at the ______ every Saturday.",
+        "answer": "supermarket",
+        "distractors": [
+          "pharmacy",
+          "museum",
+          "library"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.airport.n.1",
+      "lemma": "airport",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛrpɔːrt/",
+        "uk": "/ˈɛəpɔːt/"
+      },
+      "def": {
+        "micro": "place where planes land",
+        "short": "a place where planes take off and land, and where passengers wait",
+        "long": "A place with long roads where planes take off and land, and with buildings where passengers wait and check in. Big cities often have more than one airport."
+      },
+      "examples": [
+        {
+          "en": "The airport is far from the city center.",
+          "tr": "Havalimanı şehir merkezine uzak.",
+          "register": "neutral",
+          "focus": "airport"
+        },
+        {
+          "en": "We arrived at the airport two hours before the flight.",
+          "tr": "Uçuştan iki saat önce havalimanına vardık.",
+          "register": "neutral",
+          "focus": "airport"
+        },
+        {
+          "en": "Ali's mother is waiting for him at the airport.",
+          "tr": "Ali'nin annesi onu havalimanında bekliyor.",
+          "register": "neutral",
+          "focus": "airport"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "at the airport",
+        "airport bus",
+        "airport security",
+        "go to the airport"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "havalimanı",
+          "alt": [
+            "havaalanı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'havalimanı' ve 'havaalanı' aynı anlama gelir; İngilizcede tek sözcük vardır: 'airport'. Büyük havalimanlarında 'terminal' denen ayrı binalar bulunur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My plane leaves at six, so I must be at the ______ at four.",
+        "answer": "airport",
+        "distractors": [
+          "supermarket",
+          "library",
+          "museum"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

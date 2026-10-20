@@ -1,0 +1,1158 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.pass.v.1",
+      "lemma": "pass",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "succeed in an exam",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pæs/",
+        "uk": "/pɑːs/"
+      },
+      "def": {
+        "micro": "get enough points in a test",
+        "short": "reach the score you need in a test and not fail",
+        "long": "To get the score or result you need in a test or exam. If you do well enough, you pass; if you do not, you fail."
+      },
+      "grammar": {
+        "pattern": "pass a test / an exam / a course"
+      },
+      "examples": [
+        {
+          "en": "I passed my driving test!",
+          "tr": "Ehliyet sınavını geçtim!",
+          "register": "neutral",
+          "focus": "passed"
+        },
+        {
+          "en": "Lina studied hard and passed the English exam.",
+          "tr": "Lina çok çalıştı ve İngilizce sınavını geçti.",
+          "register": "neutral",
+          "focus": "passed"
+        },
+        {
+          "en": "You need sixty points to pass this test.",
+          "tr": "Bu sınavı geçmek için altmış puan gerekiyor.",
+          "register": "neutral",
+          "focus": "pass"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "fail"
+      ],
+      "collocations": [
+        "pass an exam",
+        "pass a test",
+        "pass a driving test",
+        "pass first time"
+      ],
+      "word_family": [
+        {
+          "lemma": "passing",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınavı geçmek",
+          "alt": [
+            "başarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Pass' sınavda başarılı olmak demektir; karşıtı 'fail'. Tatil ya da zaman geçirmek için genellikle 'pass' değil 'spend' kullanılır: 'spend the holiday', 'spend time'.",
+          "mistakes": [
+            {
+              "wrong": "I passed my summer holiday in Izmir.",
+              "right": "I spent my summer holiday in Izmir.",
+              "why": "Türkçede 'tatil geçirmek', 'zaman geçirmek' dersiniz ve 'geçirmek' çoğu zaman 'pass' diye çevrilir. İngilizcede zaman, tatil ve para için 'spend' kullanılır."
+            },
+            {
+              "wrong": "Ali passed from the exam.",
+              "right": "Ali passed the exam.",
+              "why": "Türkçede 'sınavdan geçmek' dersiniz ('-dan' eki). İngilizcede 'pass' doğrudan nesne alır; 'from' gerekmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I studied hard and I ______ the exam! I got 90 out of 100.",
+        "answer": "passed",
+        "distractors": [
+          "failed",
+          "missed",
+          "forgot"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.push.v.1",
+      "lemma": "push",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "press to move away",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pʊʃ/",
+        "uk": "/pʊʃ/"
+      },
+      "def": {
+        "micro": "press something to move it",
+        "short": "use your hands or body to press something so that it moves away from you",
+        "long": "To press something with your hands or body so that it moves away from you. You push a door, a button, a cart, or a car that will not start."
+      },
+      "grammar": {
+        "pattern": "push sth / push sb"
+      },
+      "examples": [
+        {
+          "en": "Please push the door.",
+          "tr": "Lütfen kapıyı itin.",
+          "register": "neutral",
+          "focus": "push"
+        },
+        {
+          "en": "Ayşe pushed the shopping cart into the store.",
+          "tr": "Ayşe alışveriş arabasını mağazaya itti.",
+          "register": "neutral",
+          "focus": "pushed"
+        },
+        {
+          "en": "Please don't push! There is enough space for everyone on the bus.",
+          "tr": "Lütfen itmeyin! Otobüste herkese yetecek kadar yer var.",
+          "register": "neutral",
+          "focus": "push"
+        }
+      ],
+      "synonyms": [
+        "press"
+      ],
+      "antonyms": [
+        "pull"
+      ],
+      "collocations": [
+        "push the door",
+        "push a button",
+        "push a cart",
+        "push a bike"
+      ],
+      "word_family": [
+        {
+          "lemma": "pushy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "pushchair",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'pousser', from Latin 'pulsare', meaning 'to beat' or 'to strike'. 'Pulse' comes from the same Latin family.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "itmek",
+          "alt": [
+            "itelemek",
+            "basmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kapılarda 'PUSH' yazısı 'itin', 'PULL' yazısı 'çekin' demektir. 'Basmak' (düğmeye basmak) için de 'push' ya da 'press' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My car won't start. Can you help me ______ it to the side of the road?",
+        "answer": "push",
+        "distractors": [
+          "cry",
+          "fry",
+          "bake"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pull.v.1",
+      "lemma": "pull",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move toward you",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pʊl/",
+        "uk": "/pʊl/"
+      },
+      "def": {
+        "micro": "move something toward you",
+        "short": "hold something and move it toward yourself",
+        "long": "To hold something and move it toward you, or to make it follow you. You pull a door, a rope, a suitcase, or a chair."
+      },
+      "grammar": {
+        "pattern": "pull sth / pull sth toward you"
+      },
+      "examples": [
+        {
+          "en": "Pull the door, don't push it.",
+          "tr": "Kapıyı çek, itme.",
+          "register": "neutral",
+          "focus": "Pull"
+        },
+        {
+          "en": "Kenji pulled his suitcase down the street.",
+          "tr": "Kenji bavulunu sokak boyunca çekti.",
+          "register": "neutral",
+          "focus": "pulled"
+        },
+        {
+          "en": "Mehmet pulled a chair out and sat down at the table.",
+          "tr": "Mehmet bir sandalye çekip masaya oturdu.",
+          "register": "neutral",
+          "focus": "pulled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "push"
+      ],
+      "collocations": [
+        "pull the door",
+        "pull a rope",
+        "pull a chair",
+        "pull a suitcase",
+        "pull hard"
+      ],
+      "word_family": [
+        {
+          "lemma": "pullover",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çekmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'çekmek' çok anlamlıdır: fotoğraf çekmek, para çekmek, acı çekmek. 'Pull' bunların hiçbiri için kullanılmaz; yalnızca bir şeyi kendine doğru çekmek içindir. Kapıda 'PULL' = çekin.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The door won't open when I push it. Maybe I need to ______ it.",
+        "answer": "pull",
+        "distractors": [
+          "lock",
+          "cook",
+          "cry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.throw.v.1",
+      "lemma": "throw",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "send through the air",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/θroʊ/",
+        "uk": "/θrəʊ/"
+      },
+      "def": {
+        "micro": "send through the air",
+        "short": "use your arm to make something go through the air",
+        "long": "To use your arm and hand to send something through the air. You can throw a ball to a friend, or throw something in the bin when you do not want it."
+      },
+      "grammar": {
+        "pattern": "throw sth to sb / throw sth at sth"
+      },
+      "examples": [
+        {
+          "en": "Can you throw me the ball?",
+          "tr": "Topu bana atar mısın?",
+          "register": "neutral",
+          "focus": "throw"
+        },
+        {
+          "en": "Sam threw his empty cup into the bin.",
+          "tr": "Sam boş bardağını çöp kutusuna attı.",
+          "register": "neutral",
+          "focus": "threw"
+        },
+        {
+          "en": "Elif threw the ball so far that nobody could catch it.",
+          "tr": "Elif topu o kadar uzağa attı ki kimse yakalayamadı.",
+          "register": "neutral",
+          "focus": "threw"
+        }
+      ],
+      "synonyms": [
+        "toss"
+      ],
+      "antonyms": [
+        "catch"
+      ],
+      "collocations": [
+        "throw a ball",
+        "throw a stone",
+        "throw sth in the bin",
+        "throw to sb",
+        "throw hard"
+      ],
+      "word_family": [
+        {
+          "lemma": "thrower",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'thrāwan', which first meant 'to twist or turn'. The meaning 'to send through the air' came later.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "atmak",
+          "alt": [
+            "fırlatmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Düzensiz fiil: throw - threw - thrown. Çöpe atmak için 'throw away' ya da 'throw in the bin' denir. 'Throw at' bir şeye çarpsın diye atmak; 'throw to' birinin yakalaması için atmaktır.",
+          "mistakes": [
+            {
+              "wrong": "Don't throw the ball to the window!",
+              "right": "Don't throw the ball at the window!",
+              "why": "Türkçede 'pencereye at' dersiniz ('-e' hâli), bu yüzden 'to' akla gelir. 'Throw to' birinin yakalaması için atmaktır; bir şeye çarpsın diye atılırsa 'throw at' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ me the keys. I'll catch them.",
+        "answer": "throw",
+        "distractors": [
+          "sell",
+          "buy",
+          "count"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.catch.v.1",
+      "lemma": "catch",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take or get something moving",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kætʃ/",
+        "uk": "/kætʃ/"
+      },
+      "def": {
+        "micro": "get something that is moving",
+        "short": "take hold of something that is moving, or get on a bus or train in time",
+        "long": "To take hold of something that is moving through the air, such as a ball. We also catch a bus or train: we get there in time and get on it."
+      },
+      "grammar": {
+        "pattern": "catch sth / catch the bus"
+      },
+      "examples": [
+        {
+          "en": "Can you catch the ball?",
+          "tr": "Topu yakalayabilir misin?",
+          "register": "neutral",
+          "focus": "catch"
+        },
+        {
+          "en": "Ravi runs to catch the bus every morning.",
+          "tr": "Ravi her sabah otobüse yetişmek için koşuyor.",
+          "register": "neutral",
+          "focus": "catch"
+        },
+        {
+          "en": "She jumped up and caught the ball with one hand.",
+          "tr": "Zıplayıp topu tek eliyle yakaladı.",
+          "register": "neutral",
+          "focus": "caught"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "throw",
+        "miss"
+      ],
+      "collocations": [
+        "catch a ball",
+        "catch the bus",
+        "catch a train",
+        "catch a flight",
+        "catch a fish"
+      ],
+      "word_family": [
+        {
+          "lemma": "catcher",
+          "pos": "n"
+        },
+        {
+          "lemma": "catchy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old North French 'cachier', 'to chase', from Latin 'captare', to try to seize. 'Chase' comes from the same word.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yakalamak",
+          "alt": [
+            "tutmak",
+            "yetişmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Otobüse ya da trene yetişmek için 'catch' denir; kaçırmak için 'miss'. Düzensiz fiil: catch - caught - caught.",
+          "mistakes": [
+            {
+              "wrong": "I catched the ball with one hand.",
+              "right": "I caught the ball with one hand.",
+              "why": "Türkçede fiil çekimi hep düzenlidir ('yakaladı'); 'catch' ise düzensizdir: catch - caught - caught. 'Catched' diye bir şekil yoktur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:miss"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He threw the ball, and I ______ it with both hands.",
+        "answer": "caught",
+        "distractors": [
+          "taught",
+          "locked",
+          "cooked"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fall.v.1",
+      "lemma": "fall",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "drop to the ground",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɔːl/",
+        "uk": "/fɔːl/"
+      },
+      "def": {
+        "micro": "go down to the ground",
+        "short": "go down suddenly to the ground or a lower place without wanting to",
+        "long": "To go down suddenly to the ground, or to a lower place, without wanting to. People can fall off a bike, and rain and leaves fall from the sky or trees."
+      },
+      "grammar": {
+        "pattern": "fall (down / off / over)"
+      },
+      "examples": [
+        {
+          "en": "Be careful! You'll fall.",
+          "tr": "Dikkat et! Düşeceksin.",
+          "register": "neutral",
+          "focus": "fall"
+        },
+        {
+          "en": "Kenji fell off his bike and hurt his knee.",
+          "tr": "Kenji bisikletinden düştü ve dizini incitti.",
+          "register": "neutral",
+          "focus": "fell"
+        },
+        {
+          "en": "The leaves fall from the trees in autumn.",
+          "tr": "Sonbaharda yapraklar ağaçlardan düşer.",
+          "register": "neutral",
+          "focus": "fall"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "rise"
+      ],
+      "collocations": [
+        "fall down",
+        "fall off a bike",
+        "fall over",
+        "fall on the floor",
+        "leaves fall"
+      ],
+      "word_family": [
+        {
+          "lemma": "fallen",
+          "pos": "adj"
+        },
+        {
+          "lemma": "falling",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düşmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Düzensiz fiil: fall - fell - fallen. 'Fell' (düştü) ile 'felt' (hissetti) karışır. 'Fall' nesne almaz; bir şeyi düşürmek için 'drop' denir.",
+          "mistakes": [
+            {
+              "wrong": "Oops, I fell my phone on the floor.",
+              "right": "Oops, I dropped my phone on the floor.",
+              "why": "Türkçede 'telefonumu düşürdüm' ve 'telefonum düştü' aynı kökten gelir. İngilizcede 'fall' nesne almaz; 'düşürmek' için 'drop' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:drop"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't stand on that chair. You might ______ and hurt yourself.",
+        "answer": "fall",
+        "distractors": [
+          "wash",
+          "shout",
+          "count"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.break.v.1",
+      "lemma": "break",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make into pieces",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/breɪk/",
+        "uk": "/breɪk/"
+      },
+      "def": {
+        "micro": "make something go to pieces",
+        "short": "make something come apart in pieces or stop working",
+        "long": "To make something come apart into pieces, or to damage it so it does not work. You can break a glass, a plate, a window, or your phone if you drop it."
+      },
+      "grammar": {
+        "pattern": "break sth / sth breaks"
+      },
+      "examples": [
+        {
+          "en": "Careful! You'll break the glass.",
+          "tr": "Dikkat! Bardağı kıracaksın.",
+          "register": "neutral",
+          "focus": "break"
+        },
+        {
+          "en": "Zeynep dropped her phone and broke the screen.",
+          "tr": "Zeynep telefonunu düşürüp ekranını kırdı.",
+          "register": "neutral",
+          "focus": "broke"
+        },
+        {
+          "en": "The window broke when the ball hit it.",
+          "tr": "Top çarpınca cam kırıldı.",
+          "register": "neutral",
+          "focus": "broke"
+        }
+      ],
+      "synonyms": [
+        "smash"
+      ],
+      "antonyms": [
+        "fix",
+        "mend"
+      ],
+      "collocations": [
+        "break a glass",
+        "break a window",
+        "break your phone",
+        "break into pieces",
+        "break in half"
+      ],
+      "word_family": [
+        {
+          "lemma": "broken",
+          "pos": "adj"
+        },
+        {
+          "lemma": "breakable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kırmak",
+          "alt": [
+            "kırılmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Düzensiz fiil: break - broke - broken. Türkçede 'kırmak' ve 'kırılmak' ayrı fiillerdir; İngilizcede ikisi de 'break' olur. 'Break' isim olarak 'mola' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Be careful with that plate. If you drop it, it will ______.",
+        "answer": "break",
+        "distractors": [
+          "laugh",
+          "sleep",
+          "cry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sleep.v.1",
+      "lemma": "sleep",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "rest with eyes closed",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sliːp/",
+        "uk": "/sliːp/"
+      },
+      "def": {
+        "micro": "rest with your eyes closed",
+        "short": "rest your body and mind with your eyes closed, usually at night",
+        "long": "To rest your body and mind with your eyes closed, usually at night. Most adults sleep for seven or eight hours."
+      },
+      "grammar": {
+        "pattern": "sleep (well / badly / for + time)"
+      },
+      "examples": [
+        {
+          "en": "I sleep eight hours every night.",
+          "tr": "Her gece sekiz saat uyurum.",
+          "register": "neutral",
+          "focus": "sleep"
+        },
+        {
+          "en": "The baby slept all afternoon, so the house was very quiet.",
+          "tr": "Bebek bütün öğleden sonra uyudu, bu yüzden ev çok sessizdi.",
+          "register": "neutral",
+          "focus": "slept"
+        },
+        {
+          "en": "Ayşe couldn't sleep last night because of the noise.",
+          "tr": "Ayşe dün gece gürültü yüzünden uyuyamadı.",
+          "register": "neutral",
+          "focus": "sleep"
+        }
+      ],
+      "synonyms": [
+        "be asleep"
+      ],
+      "antonyms": [
+        "wake up"
+      ],
+      "collocations": [
+        "sleep well",
+        "sleep late",
+        "sleep badly",
+        "sleep all day",
+        "can't sleep"
+      ],
+      "word_family": [
+        {
+          "lemma": "sleepy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "asleep",
+          "pos": "adj"
+        },
+        {
+          "lemma": "sleeper",
+          "pos": "n"
+        },
+        {
+          "lemma": "sleepless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uyumak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Düzensiz fiil: sleep - slept - slept. Yatağa gitmek için 'go to bed' denir; 'sleep' uyuma durumunun kendisidir. Uykuya dalmak ise 'fall asleep'.",
+          "mistakes": [
+            {
+              "wrong": "I usually sleep at eleven o'clock.",
+              "right": "I usually go to bed at eleven.",
+              "why": "Türkçede 'saat 11'de yatarım' dersiniz ve 'yatmak' 'sleep' diye çevrilir. İngilizcede yatağa gitmek 'go to bed', uyumak 'sleep' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm very tired. I want to ______ for ten hours.",
+        "answer": "sleep",
+        "distractors": [
+          "jog",
+          "hike",
+          "walk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dream.v.1",
+      "lemma": "dream",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "see things while asleep",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/driːm/",
+        "uk": "/driːm/"
+      },
+      "def": {
+        "micro": "see pictures while asleep",
+        "short": "see or feel things in your mind while you are asleep",
+        "long": "To see pictures and events in your mind while you sleep. Most people dream every night, but many forget their dreams when they wake up."
+      },
+      "grammar": {
+        "pattern": "dream about / of sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Last night I dreamed about my old school.",
+          "tr": "Dün gece rüyamda eski okulumu gördüm.",
+          "register": "neutral",
+          "focus": "dreamed"
+        },
+        {
+          "en": "Mehmet dreams about the sea almost every night.",
+          "tr": "Mehmet hemen her gece rüyasında denizi görüyor.",
+          "register": "neutral",
+          "focus": "dreams"
+        },
+        {
+          "en": "Maria dreamed that she was flying over the city.",
+          "tr": "Maria şehrin üzerinde uçtuğunu rüyasında gördü.",
+          "register": "neutral",
+          "focus": "dreamed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "dream about sb",
+        "dream of sth",
+        "dream that ..."
+      ],
+      "word_family": [
+        {
+          "lemma": "dream",
+          "pos": "n"
+        },
+        {
+          "lemma": "dreamer",
+          "pos": "n"
+        },
+        {
+          "lemma": "dreamy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rüya görmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'rüya görmek' dersiniz; İngilizcede 'dream' fiilin kendisidir ('I dreamed about you') ya da 'have a dream' denir. Geçmiş: dreamed ya da dreamt. 'Hayal kurmak' için de 'dream' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I saw a strange dream last night.",
+              "right": "I had a strange dream last night.",
+              "why": "Türkçede 'rüya görmek' dersiniz ve 'görmek' 'see' diye çevrilir. İngilizcede rüya 'see' ile değil, 'have a dream' ya da 'dream about' ile söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I sleep, I often ______ about my family.",
+        "answer": "dream",
+        "distractors": [
+          "chop",
+          "clean",
+          "pack"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shout.v.1",
+      "lemma": "shout",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say very loudly",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃaʊt/",
+        "uk": "/ʃaʊt/"
+      },
+      "def": {
+        "micro": "say something very loudly",
+        "short": "say something in a very loud voice",
+        "long": "To speak in a very loud voice. People shout when they are angry, when they want someone far away to hear them, or when they are excited at a game."
+      },
+      "grammar": {
+        "pattern": "shout at sb (angry) / shout to sb (far away)"
+      },
+      "examples": [
+        {
+          "en": "Please don't shout. The baby is sleeping.",
+          "tr": "Lütfen bağırma. Bebek uyuyor.",
+          "register": "neutral",
+          "focus": "shout"
+        },
+        {
+          "en": "Ayşe shouted to her friend across the street.",
+          "tr": "Ayşe caddenin karşısındaki arkadaşına bağırdı.",
+          "register": "neutral",
+          "focus": "shouted"
+        },
+        {
+          "en": "The coach shouted at the players when they made a mistake.",
+          "tr": "Antrenör hata yapan oyunculara bağırdı.",
+          "register": "neutral",
+          "focus": "shouted"
+        }
+      ],
+      "synonyms": [
+        "yell"
+      ],
+      "antonyms": [
+        "whisper"
+      ],
+      "collocations": [
+        "shout at sb",
+        "shout to sb",
+        "shout for help",
+        "shout loudly"
+      ],
+      "word_family": [
+        {
+          "lemma": "shout",
+          "pos": "n"
+        },
+        {
+          "lemma": "shouting",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağırmak",
+          "alt": [
+            "haykırmak",
+            "seslenmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kızarak bağırmak için 'shout at', uzaktaki birine seslenmek için 'shout to' kullanılır. Türkçede ikisi de 'bağırmak' olabilir, ama 'at' sert bir tondur.",
+          "mistakes": [
+            {
+              "wrong": "Don't shout to me! I'm right here.",
+              "right": "Don't shout at me! I'm right here.",
+              "why": "Türkçede 'bana bağırma' dersiniz ('-e' hâli), bu yüzden 'to' akla gelir. Kızarak bağırmak için 'shout at' kullanılır; 'shout to' uzaktaki birine seslenmektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The music is loud. We have to ______ to hear each other.",
+        "answer": "shout",
+        "distractors": [
+          "whisper",
+          "sleep",
+          "laugh"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

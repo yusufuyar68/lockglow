@@ -1,0 +1,933 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.even.adv.1",
+      "lemma": "even",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "used to show surprise",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈiːvən/",
+        "uk": "/ˈiːvən/"
+      },
+      "def": {
+        "micro": "used to show surprise",
+        "short": "used to show that something is surprising or more than you expect",
+        "long": "Used to show that something is surprising or more than people expect. It goes before the word it is about: 'Even my grandma can use this app.' 'Even if' and 'even though' are common too."
+      },
+      "examples": [
+        {
+          "en": "Even a child can use this app.",
+          "tr": "Bu uygulamayı bir çocuk bile kullanabilir.",
+          "register": "neutral",
+          "focus": "Even"
+        },
+        {
+          "en": "It was so cold that even the river froze.",
+          "tr": "O kadar soğuktu ki nehir bile dondu.",
+          "register": "neutral",
+          "focus": "even"
+        },
+        {
+          "en": "Ayşe doesn't eat meat, not even fish.",
+          "tr": "Ayşe et yemez, balık bile yemez.",
+          "register": "neutral",
+          "focus": "even"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "even if",
+        "even though",
+        "not even",
+        "even better",
+        "even more"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bile",
+          "alt": [
+            "hatta",
+            "dahi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Even' = bile, hatta. Türkçede 'bile' kelimeden sonra gelir (çocuk bile); İngilizcede 'even' kelimeden önce gelir: even a child. 'Even if' = olsa bile.",
+          "mistakes": [
+            {
+              "wrong": "A child even can use this app.",
+              "right": "Even a child can use this app.",
+              "why": "Türkçede 'bile' kelimeden sonra gelir (çocuk bile). İngilizcede 'even' vurguladığı kelimeden önce gelir: even a child."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The test was so easy that ______ a small child could pass it.",
+        "answer": "even",
+        "distractors": [
+          "ever",
+          "far",
+          "ago"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.only.adv.1",
+      "lemma": "only",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "no more than",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈoʊnli/",
+        "uk": "/ˈəʊnli/"
+      },
+      "def": {
+        "micro": "no more than",
+        "short": "no more than; not many or not much",
+        "long": "No more than a number or an amount, or nobody and nothing else. 'I have only two brothers.' 'Only Ali knows the answer.' It usually goes before the word it is about."
+      },
+      "examples": [
+        {
+          "en": "I have only two brothers.",
+          "tr": "Sadece iki kardeşim var.",
+          "register": "neutral",
+          "focus": "only"
+        },
+        {
+          "en": "The shop is open only on weekdays.",
+          "tr": "Dükkân sadece hafta içi açık.",
+          "register": "neutral",
+          "focus": "only"
+        },
+        {
+          "en": "It costs only ten lira, so I bought two.",
+          "tr": "Sadece on lira tutuyor, o yüzden iki tane aldım.",
+          "register": "neutral",
+          "focus": "only"
+        }
+      ],
+      "synonyms": [
+        "just"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "only one",
+        "the only one",
+        "only a few",
+        "only a little"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'ānlīc', made from 'ān' (one) and '-līc' (like). So 'only' first meant 'one and no other'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sadece",
+          "alt": [
+            "yalnızca",
+            "ancak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Only' = sadece, yalnızca. Anlamı değişmesin diye vurguladığı kelimenin hemen önüne konur: I have only two brothers. Sıfat olarak 'tek' demektir: the only one (tek olan).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The shop sells shoes ______ on Saturdays. On other days it is closed.",
+        "answer": "only",
+        "distractors": [
+          "also",
+          "yet",
+          "soon"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.just.adv.1",
+      "lemma": "just",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "a very short time ago",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dʒʌst/",
+        "uk": "/dʒʌst/"
+      },
+      "def": {
+        "micro": "a very short time ago",
+        "short": "a very short time ago, only a few minutes before now",
+        "long": "A very short time ago, often only a few minutes before now. It is common with the present perfect: 'I have just arrived.' It goes between 'have' and the past participle."
+      },
+      "grammar": {
+        "pattern": "have + just + past participle"
+      },
+      "examples": [
+        {
+          "en": "I have just woken up.",
+          "tr": "Daha yeni uyandım.",
+          "register": "neutral",
+          "focus": "just"
+        },
+        {
+          "en": "Sam has just left. You can still catch him.",
+          "tr": "Sam az önce çıktı. Hâlâ yetişebilirsin.",
+          "register": "neutral",
+          "focus": "just"
+        },
+        {
+          "en": "The bus has just gone, so we must wait.",
+          "tr": "Otobüs yeni gitti, bu yüzden beklemek zorundayız.",
+          "register": "neutral",
+          "focus": "just"
+        }
+      ],
+      "synonyms": [
+        "just now"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "just now",
+        "have just arrived",
+        "just finished",
+        "just left"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "az önce",
+          "alt": [
+            "yeni",
+            "daha yeni"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Have just + V3' = daha yeni …dı: I have just arrived (daha yeni geldim). 'Just now' = az önce. 'Just' başka anlamlarda da kullanılır (sadece, tam); bu kart yalnızca 'az önce' anlamını anlatır.",
+          "mistakes": [
+            {
+              "wrong": "I just have arrived.",
+              "right": "I have just arrived.",
+              "why": "Türkçede 'yeni geldim' dersiniz, zarf fiilden önce gelir. İngilizcede 'just' yardımcı fiilden sonra, ana fiilden önce gelir: have just + V3."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet left the office two minutes ago. He has ______ left.",
+        "answer": "just",
+        "distractors": [
+          "often",
+          "today",
+          "soon"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.soon.adv.1",
+      "lemma": "soon",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in a short time",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/suːn/",
+        "uk": "/suːn/"
+      },
+      "def": {
+        "micro": "in a short time",
+        "short": "in a short time from now; before long",
+        "long": "In a short time from now, or a short time after something else. People say 'See you soon!' when they will meet again in a short time."
+      },
+      "examples": [
+        {
+          "en": "See you soon!",
+          "tr": "Yakında görüşürüz!",
+          "register": "neutral",
+          "focus": "soon"
+        },
+        {
+          "en": "Dinner will be ready soon.",
+          "tr": "Akşam yemeği birazdan hazır olur.",
+          "register": "neutral",
+          "focus": "soon"
+        },
+        {
+          "en": "Elif will start her new job soon.",
+          "tr": "Elif yakında yeni işine başlayacak.",
+          "register": "neutral",
+          "focus": "soon"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "see you soon",
+        "very soon",
+        "as soon as possible",
+        "too soon",
+        "soon after"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'sōna', meaning 'at once'. Today it means 'in a short time', not 'at once'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yakında",
+          "alt": [
+            "birazdan",
+            "çok geçmeden"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Soon' = yakında, birazdan. 'Erken' için 'early' kullanılır: get up early (erken kalkmak). 'As soon as' = -ir -mez (gelir gelmez).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:early"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The movie starts in five minutes. Please sit down. It will begin ______.",
+        "answer": "soon",
+        "distractors": [
+          "yesterday",
+          "ago",
+          "back"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.later.adv.1",
+      "lemma": "later",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "after now",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈleɪtər/",
+        "uk": "/ˈleɪtə/"
+      },
+      "def": {
+        "micro": "at a time after now",
+        "short": "at a time after now or after another time",
+        "long": "At a time after now, or after another time that we talked about. People say 'See you later!' or 'I'll call you later' for a time that is not fixed yet."
+      },
+      "examples": [
+        {
+          "en": "I'll call you later.",
+          "tr": "Seni sonra ararım.",
+          "register": "neutral",
+          "focus": "later"
+        },
+        {
+          "en": "Can we talk later? I'm busy now.",
+          "tr": "Sonra konuşabilir miyiz? Şu an meşgulüm.",
+          "register": "neutral",
+          "focus": "later"
+        },
+        {
+          "en": "Maria came home at six, and Sam came later.",
+          "tr": "Maria altıda eve geldi, Sam ise daha sonra geldi.",
+          "register": "neutral",
+          "focus": "later"
+        }
+      ],
+      "synonyms": [
+        "afterwards"
+      ],
+      "antonyms": [
+        "earlier"
+      ],
+      "collocations": [
+        "see you later",
+        "later today",
+        "later this week",
+        "a year later"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "The comparative form of 'late': 'late' + '-er'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sonra",
+          "alt": [
+            "daha sonra",
+            "sonraları"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Later' = sonra, daha sonra. 'After' bir şeyin önünde kullanılır: after lunch (öğle yemeğinden sonra). Tek başına 'sonra' için 'later' denir: See you later.",
+          "mistakes": [
+            {
+              "wrong": "I will call you after, okay?",
+              "right": "I will call you later, okay?",
+              "why": "Türkçede 'sonra' hem 'later' hem 'after' demektir. Tek başına 'sonra' için 'later' denir; 'after' bir şeyin önünde gelir: after lunch."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:after"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm busy now, but I will call you ______, after dinner.",
+        "answer": "later",
+        "distractors": [
+          "usually",
+          "before",
+          "ago"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.together.adv.1",
+      "lemma": "together",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "with each other",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/təˈɡɛðər/",
+        "uk": "/təˈɡɛðə/"
+      },
+      "def": {
+        "micro": "with each other",
+        "short": "with another person or with other people",
+        "long": "With another person or with other people, in the same place or at the same time. Friends can eat together, study together or go on holiday together."
+      },
+      "examples": [
+        {
+          "en": "Let's study together tonight.",
+          "tr": "Bu akşam birlikte çalışalım.",
+          "register": "neutral",
+          "focus": "together"
+        },
+        {
+          "en": "We have lunch together every Friday.",
+          "tr": "Her cuma birlikte öğle yemeği yeriz.",
+          "register": "neutral",
+          "focus": "together"
+        },
+        {
+          "en": "Kenji and Elif traveled together across Turkey.",
+          "tr": "Kenji ile Elif Türkiye'yi birlikte dolaştı.",
+          "register": "neutral",
+          "focus": "together"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "alone",
+        "apart"
+      ],
+      "collocations": [
+        "work together",
+        "live together",
+        "together with",
+        "all together"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'tōgædere', related to the verb 'gather'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "birlikte",
+          "alt": [
+            "beraber",
+            "bir arada"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Together' = birlikte, beraber. 'With' ile de kullanılır: together with my friends (arkadaşlarımla birlikte). 'Get together' = bir araya gelmek, buluşmak.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali and I are best friends. We go to school, eat lunch and play football ______.",
+        "answer": "together",
+        "distractors": [
+          "alone",
+          "apart",
+          "far"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.instead.adv.1",
+      "lemma": "instead",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in place of that",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈstɛd/",
+        "uk": "/ɪnˈstɛd/"
+      },
+      "def": {
+        "micro": "in place of that",
+        "short": "used for something that you do or have in place of another thing",
+        "long": "In place of something that was just said or that you expected. It is used at the end of a sentence: 'We stayed home. We watched a film instead.' With a noun, we say 'instead of'."
+      },
+      "examples": [
+        {
+          "en": "I don't want tea. Can I have coffee instead?",
+          "tr": "Çay istemiyorum. Onun yerine kahve alabilir miyim?",
+          "register": "neutral",
+          "focus": "instead"
+        },
+        {
+          "en": "It's raining, so let's stay home and watch a film instead.",
+          "tr": "Yağmur yağıyor, o yüzden evde kalıp bunun yerine film izleyelim.",
+          "register": "neutral",
+          "focus": "instead"
+        },
+        {
+          "en": "Mehmet didn't go to the gym. He walked in the park instead.",
+          "tr": "Mehmet spor salonuna gitmedi. Onun yerine parkta yürüdü.",
+          "register": "neutral",
+          "focus": "instead"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "instead of",
+        "do that instead",
+        "try this instead"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From the old phrase 'in stead of', where 'stead' meant 'place'. 'Instead of' = 'in the place of'.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "onun yerine",
+          "alt": [
+            "bunun yerine",
+            "yerine"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Instead' tek başına çoğunlukla cümle sonunda olur; 'instead of' ise isim ya da -ing ile kullanılır: instead of coffee, instead of walking. Türkçede 'kahve yerine' tek yapıdır.",
+          "mistakes": [
+            {
+              "wrong": "I drank tea instead coffee.",
+              "right": "I drank tea instead of coffee.",
+              "why": "Türkçede 'kahve yerine' dersiniz, 'of' gibi bir kelime yoktur. İngilizcede isimden önce 'instead of' gerekir; 'instead' tek başına çoğunlukla cümle sonunda gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:instead_of"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't go out on Saturday. I stayed home and read a book ______.",
+        "answer": "instead",
+        "distractors": [
+          "tomorrow",
+          "ever",
+          "ago"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.anyway.adv.1",
+      "lemma": "anyway",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in spite of that",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛniweɪ/",
+        "uk": "/ˈɛniweɪ/"
+      },
+      "def": {
+        "micro": "in spite of that",
+        "short": "even so; used when something happens in spite of a problem",
+        "long": "Even so; in spite of something that was said or that could stop you. It is common at the end of a sentence: 'It is raining, but we will go anyway.'"
+      },
+      "examples": [
+        {
+          "en": "It's raining, but we will go anyway.",
+          "tr": "Yağmur yağıyor ama biz yine de gideceğiz.",
+          "register": "neutral",
+          "focus": "anyway"
+        },
+        {
+          "en": "The film was long, but I enjoyed it anyway.",
+          "tr": "Film uzundu ama yine de keyif aldım.",
+          "register": "neutral",
+          "focus": "anyway"
+        },
+        {
+          "en": "Thanks for the invitation. I can't come, but thanks anyway.",
+          "tr": "Davet için teşekkürler. Gelemiyorum ama yine de teşekkürler.",
+          "register": "neutral",
+          "focus": "anyway"
+        }
+      ],
+      "synonyms": [
+        "anyhow",
+        "even so"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "thanks anyway",
+        "go anyway",
+        "do it anyway",
+        "but anyway"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yine de",
+          "alt": [
+            "her halükârda",
+            "neyse"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Konuşmada konuyu değiştirirken 'neyse' anlamına da gelir: Anyway, let's start (Neyse, başlayalım). Türkçedeki 'zaten' bazen 'anyway', bazen 'already' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I know it is cold, but I want to swim. I'm going to swim ______.",
+        "answer": "anyway",
+        "distractors": [
+          "yet",
+          "very",
+          "ever"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.else.adv.1",
+      "lemma": "else",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "other, different",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɛls/",
+        "uk": "/ɛls/"
+      },
+      "def": {
+        "micro": "other than this",
+        "short": "other or different; used after words like something, anyone, nothing",
+        "long": "Other, or different from what was said. It comes after words like something, anything, someone, nobody, somewhere and what. 'Would you like anything else?' means 'Do you want more?'"
+      },
+      "grammar": {
+        "pattern": "something / anyone / where + else"
+      },
+      "examples": [
+        {
+          "en": "Would you like anything else?",
+          "tr": "Başka bir şey ister misiniz?",
+          "register": "neutral",
+          "focus": "else"
+        },
+        {
+          "en": "I'm tired. Let's do something else tomorrow.",
+          "tr": "Yorgunum. Yarın başka bir şey yapalım.",
+          "register": "neutral",
+          "focus": "else"
+        },
+        {
+          "en": "Ali isn't here, so ask someone else.",
+          "tr": "Ali burada değil, o yüzden başka birine sor.",
+          "register": "neutral",
+          "focus": "else"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "something else",
+        "anything else",
+        "someone else",
+        "nothing else",
+        "what else"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'elles', meaning 'otherwise' or 'in another way'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "başka",
+          "alt": [
+            "başka bir",
+            "diğer"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Else' kelimenin sonuna gelir: something else (başka bir şey), someone else (başka biri). 'Else' tek başına isimden önce gelmez: 'else thing' denmez.",
+          "mistakes": [
+            {
+              "wrong": "Would you like anything other?",
+              "right": "Would you like anything else?",
+              "why": "Türkçede 'başka bir şey' dersiniz; 'başka' için 'other' akla gelir. 'Something, anything, someone' gibi kelimelerden sonra 'else' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Is that all, or would you like anything ______?",
+        "answer": "else",
+        "distractors": [
+          "other",
+          "another",
+          "still"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1059 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.bottle.n.1",
+      "lemma": "bottle",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɑːtəl/",
+        "uk": "/ˈbɒtəl/"
+      },
+      "def": {
+        "micro": "container with a narrow neck",
+        "short": "a container with a narrow top, used for water, milk, or other drinks",
+        "long": "A container with a narrow neck, made of glass or plastic, that holds water, milk, juice, or other liquids. You can buy water in a bottle or carry your own."
+      },
+      "examples": [
+        {
+          "en": "Can I have a bottle of water?",
+          "tr": "Bir şişe su alabilir miyim?",
+          "register": "neutral",
+          "focus": "bottle"
+        },
+        {
+          "en": "Ayşe put a bottle of milk in the fridge.",
+          "tr": "Ayşe bir şişe sütü buzdolabına koydu.",
+          "register": "neutral",
+          "focus": "bottle"
+        },
+        {
+          "en": "Sam always carries a water bottle in his bag.",
+          "tr": "Sam çantasında her zaman bir su şişesi taşır.",
+          "register": "neutral",
+          "focus": "bottle"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a bottle of water",
+        "water bottle",
+        "plastic bottle",
+        "baby bottle",
+        "open a bottle"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'botele', which came from Medieval Latin 'butticula', a small barrel.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "şişe",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede cam da plastik de olsa 'bottle' denir. Bebek biberonuna 'baby bottle' denir. Miktar için 'a bottle of water' (bir şişe su) kalıbı kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I bought two bottle water.",
+              "right": "I bought two bottles of water.",
+              "why": "Türkçede 'iki şişe su' dersiniz: sayıdan sonra çoğul eki ve 'of' karşılığı yoktur. İngilizcede 'bottles' (çoğul) ve 'of' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I filled a plastic ______ with water and took it to school.",
+        "answer": "bottle",
+        "distractors": [
+          "fork",
+          "pencil",
+          "table"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.glass.n.1",
+      "lemma": "glass",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "drinking glass",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡlæs/",
+        "uk": "/ɡlɑːs/"
+      },
+      "def": {
+        "micro": "a clear cup for drinks",
+        "short": "a clear container without a handle, used for drinking water, juice, or milk",
+        "long": "A clear container without a handle that you drink from. You say 'a glass of water'; the same word also means the clear material in a window."
+      },
+      "examples": [
+        {
+          "en": "I'd like a glass of water, please.",
+          "tr": "Bir bardak su istiyorum lütfen.",
+          "register": "neutral",
+          "focus": "glass"
+        },
+        {
+          "en": "Mehmet filled his glass with orange juice.",
+          "tr": "Mehmet bardağını portakal suyuyla doldurdu.",
+          "register": "neutral",
+          "focus": "glass"
+        },
+        {
+          "en": "Be careful! That glass is on the edge of the table.",
+          "tr": "Dikkat et! O bardak masanın kenarında.",
+          "register": "neutral",
+          "focus": "glass"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a glass of water",
+        "a glass of milk",
+        "wine glass",
+        "fill a glass",
+        "empty glass"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bardak",
+          "alt": [
+            "kadeh"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'bardak' ile 'cam' ayrı sözcüklerdir; İngilizcede ikisi de 'glass' olur. Bardak sayılabilir (a glass, two glasses); cam maddesi sayılamaz. 'Glasses' ise gözlük demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He poured some juice into a tall ______ and drank it.",
+        "answer": "glass",
+        "distractors": [
+          "plate",
+          "fork",
+          "bag"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.umbrella.n.1",
+      "lemma": "umbrella",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʌmˈbrɛlə/",
+        "uk": "/ʌmˈbrɛlə/"
+      },
+      "def": {
+        "micro": "thing that keeps you dry",
+        "short": "a round cover on a stick that you hold over your head when it rains",
+        "long": "A round cover on a long stick that you hold over your head to stay dry. You open it in the rain and close it when you go inside."
+      },
+      "examples": [
+        {
+          "en": "Take an umbrella. It's raining outside.",
+          "tr": "Şemsiye al. Dışarıda yağmur yağıyor.",
+          "register": "neutral",
+          "focus": "umbrella"
+        },
+        {
+          "en": "Ayşe forgot her umbrella on the bus.",
+          "tr": "Ayşe şemsiyesini otobüste unuttu.",
+          "register": "neutral",
+          "focus": "umbrella"
+        },
+        {
+          "en": "Can I share your umbrella to the station?",
+          "tr": "İstasyona kadar şemsiyeni paylaşabilir miyim?",
+          "register": "neutral",
+          "focus": "umbrella"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "open an umbrella",
+        "take an umbrella",
+        "a black umbrella",
+        "beach umbrella"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Italian 'ombrella', which came from Latin 'umbra' (shade). It first meant a cover against the sun.",
+        "origin": "Italian",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "şemsiye",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'şemsiye' güneşten korunmak için de kullanılır; İngilizcede plaj şemsiyesine 'beach umbrella', küçük güneş şemsiyesine 'parasol' denir.",
+          "mistakes": [
+            {
+              "wrong": "I bought a umbrella yesterday.",
+              "right": "I bought an umbrella yesterday.",
+              "why": "'Umbrella' ünlü bir sesle (ʌ) başlar, bu yüzden 'an' gelir. Türkçedeki 'bir' her sözcükten önce aynı kaldığı için 'a umbrella' demek kolay olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Take your ______ with you. It will rain this afternoon.",
+        "answer": "umbrella",
+        "distractors": [
+          "sunglasses",
+          "sandals",
+          "swimsuit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ticket.n.1",
+      "lemma": "ticket",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɪkɪt/",
+        "uk": "/ˈtɪkɪt/"
+      },
+      "def": {
+        "micro": "paper for a trip or a show",
+        "short": "a small paper or file that lets you travel or go into a place",
+        "long": "A small piece of paper, or a file on your phone, that shows you have paid. You need one to take a train or a plane, or to go to a film, a concert, or a match."
+      },
+      "examples": [
+        {
+          "en": "I have two tickets for the concert.",
+          "tr": "Konser için iki biletim var.",
+          "register": "neutral",
+          "focus": "tickets"
+        },
+        {
+          "en": "Mehmet bought a train ticket to Ankara online.",
+          "tr": "Mehmet internetten Ankara'ya tren bileti aldı.",
+          "register": "neutral",
+          "focus": "ticket"
+        },
+        {
+          "en": "How much is a bus ticket to the airport?",
+          "tr": "Havalimanına otobüs bileti ne kadar?",
+          "register": "neutral",
+          "focus": "ticket"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "buy a ticket",
+        "plane ticket",
+        "train ticket",
+        "ticket office"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'estiquet', a small note or label. It comes from a verb meaning 'to stick', so it is related to 'stick'.",
+        "origin": "Old French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bilet",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ulaşım, sinema ve konser biletlerinin hepsi 'ticket' olur. Trafik cezası da 'a parking ticket' ya da 'a speeding ticket' diye geçer; alışveriş fişi ise 'receipt' olur.",
+          "mistakes": [
+            {
+              "wrong": "Two ticket to Izmir, please.",
+              "right": "Two tickets to Izmir, please.",
+              "why": "Türkçede sayıdan sonra çoğul eki gelmez ('iki bilet'). İngilizcede iki ve daha fazlası için -s gerekir: two tickets."
+            },
+            {
+              "wrong": "I took two tickets for the concert.",
+              "right": "I bought two tickets for the concert.",
+              "why": "Türkçede 'bilet almak' dersiniz; 'almak' hem satın almak hem almak demektir. İngilizcede satın almak için 'buy' (ya da 'get') kullanılır, 'take' değil."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Show your ______ to the driver before you get on the bus.",
+        "answer": "ticket",
+        "distractors": [
+          "umbrella",
+          "pencil",
+          "pillow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.map.n.1",
+      "lemma": "map",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mæp/",
+        "uk": "/mæp/"
+      },
+      "def": {
+        "micro": "drawing of a place",
+        "short": "a drawing of a town, country, or other place that shows where things are",
+        "long": "A drawing of a town, a country, or the world that shows where things are, such as roads, rivers, and cities. Today many people use a map on their phone."
+      },
+      "examples": [
+        {
+          "en": "Look at the map. We are here.",
+          "tr": "Haritaya bak. Biz buradayız.",
+          "register": "neutral",
+          "focus": "map"
+        },
+        {
+          "en": "Ayşe opened a map on her phone to find the museum.",
+          "tr": "Ayşe müzeyi bulmak için telefonunda harita açtı.",
+          "register": "neutral",
+          "focus": "map"
+        },
+        {
+          "en": "There is a big map of Turkey on the classroom wall.",
+          "tr": "Sınıfın duvarında büyük bir Türkiye haritası var.",
+          "register": "neutral",
+          "focus": "map"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a map of",
+        "road map",
+        "city map",
+        "world map",
+        "read a map"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'mappa mundi', meaning 'cloth of the world'. 'Mappa' was a cloth or napkin.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "harita",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Map' bir yerin haritasıdır. Metro ya da otobüs hattı şemasına 'route map', binanın kat planına 'floor plan' denir.",
+          "mistakes": [
+            {
+              "wrong": "Look to the map.",
+              "right": "Look at the map.",
+              "why": "Türkçede 'haritaya bak' (yönelme hâli, -a) dersiniz, bu yüzden 'to' denir. İngilizcede 'bakmak' için 'look at' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We are lost. Let's look at the ______ to find the hotel.",
+        "answer": "map",
+        "distractors": [
+          "menu",
+          "bottle",
+          "glass"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.money.n.1",
+      "lemma": "money",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmʌni/",
+        "uk": "/ˈmʌni/"
+      },
+      "def": {
+        "micro": "coins and notes you pay with",
+        "short": "the coins and notes that people use to buy things and get paid for work",
+        "long": "The coins and notes that you use to buy things, and the amount you have in the bank. It is uncountable: say 'some money' or 'a lot of money', never 'a money' or 'moneys'."
+      },
+      "grammar": {
+        "pattern": "much money / a lot of money"
+      },
+      "examples": [
+        {
+          "en": "I don't have much money today.",
+          "tr": "Bugün fazla param yok.",
+          "register": "neutral",
+          "focus": "money"
+        },
+        {
+          "en": "How much money do you need for the trip?",
+          "tr": "Gezi için ne kadar paraya ihtiyacın var?",
+          "register": "neutral",
+          "focus": "money"
+        },
+        {
+          "en": "Mehmet saves some money every month.",
+          "tr": "Mehmet her ay biraz para biriktiriyor.",
+          "register": "neutral",
+          "focus": "money"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "save money",
+        "spend money",
+        "make money",
+        "pocket money"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'moneta'. In ancient Rome, coins were made in the temple of the goddess Juno Moneta.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "para",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Money' sayılamaz bir isimdir: 'moneys' ya da 'a money' denmez. Türkçede 'paralar' diyebilirsiniz, ama İngilizcede 'money' hep tekil kalır. Bozuk para için 'coins' denir.",
+          "mistakes": [
+            {
+              "wrong": "How many money do you have?",
+              "right": "How much money do you have?",
+              "why": "Türkçede 'Kaç para?' dersiniz ve 'kaç' sözcüğünü 'how many' sanırsınız. 'Money' sayılamaz olduğu için İngilizcede 'how much' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to buy a car, but I don't have enough ______ in the bank.",
+        "answer": "money",
+        "distractors": [
+          "rain",
+          "bread",
+          "music"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.news.n.1",
+      "lemma": "news",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nuːz/",
+        "uk": "/njuːz/"
+      },
+      "def": {
+        "micro": "information about new events",
+        "short": "reports about things that have just happened, on TV, online, or in newspapers",
+        "long": "Reports about things that have just happened, in the world or in your own life. It is uncountable and takes a singular verb: say 'the news is good' and 'a piece of news'."
+      },
+      "grammar": {
+        "pattern": "the news is / a piece of news"
+      },
+      "examples": [
+        {
+          "en": "I have good news for you!",
+          "tr": "Sana güzel bir haberim var!",
+          "register": "neutral",
+          "focus": "news"
+        },
+        {
+          "en": "Ayşe watches the news every evening.",
+          "tr": "Ayşe her akşam haberleri izliyor.",
+          "register": "neutral",
+          "focus": "news"
+        },
+        {
+          "en": "The news about the storm is not good.",
+          "tr": "Fırtınayla ilgili haber iyi değil.",
+          "register": "neutral",
+          "focus": "news"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "good news",
+        "bad news",
+        "breaking news",
+        "watch the news",
+        "a piece of news"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "haber",
+          "alt": [
+            "haberler"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'bir haber' ve 'haberler' dersiniz; İngilizcede 'news' sayılamaz ve tekildir, sonundaki -s çoğul değildir. Bir haber için 'a piece of news' ya da 'some news' denir.",
+          "mistakes": [
+            {
+              "wrong": "I have a good news.",
+              "right": "I have good news.",
+              "why": "Türkçede 'bir haber' dersiniz, bu yüzden 'a news' denir. İngilizcede 'news' sayılamaz, 'a' almaz: good news, some news, a piece of news."
+            },
+            {
+              "wrong": "The news are bad today.",
+              "right": "The news is bad today.",
+              "why": "'News' sonunda -s olsa da tekil sayılır: the news is. Türkçede 'haberler' çoğul olduğu için 'are' demek kolay olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have some good ______ for you: we passed the exam!",
+        "answer": "news",
+        "distractors": [
+          "weather",
+          "homework",
+          "furniture"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.information.n.1",
+      "lemma": "information",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɪnfərˈmeɪʃən/",
+        "uk": "/ˌɪnfəˈmeɪʃən/"
+      },
+      "def": {
+        "micro": "facts about something",
+        "short": "facts or details that tell you about something or someone",
+        "long": "Facts or details that tell you about something. It is uncountable: say 'some information' or 'a piece of information', never 'an information' or 'informations'."
+      },
+      "grammar": {
+        "pattern": "some information / a piece of information"
+      },
+      "examples": [
+        {
+          "en": "I need some information about the course.",
+          "tr": "Kurs hakkında biraz bilgiye ihtiyacım var.",
+          "register": "neutral",
+          "focus": "information"
+        },
+        {
+          "en": "The tourist office gave us a lot of useful information.",
+          "tr": "Turizm bürosu bize çok faydalı bilgiler verdi.",
+          "register": "neutral",
+          "focus": "information"
+        },
+        {
+          "en": "Please write your contact information on this form.",
+          "tr": "Lütfen iletişim bilgilerinizi bu forma yazın.",
+          "register": "neutral",
+          "focus": "information"
+        }
+      ],
+      "synonyms": [
+        "info",
+        "details"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a piece of information",
+        "useful information",
+        "tourist information",
+        "contact information",
+        "get information"
+      ],
+      "word_family": [
+        {
+          "lemma": "inform",
+          "pos": "v"
+        },
+        {
+          "lemma": "informative",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'informare', meaning 'to give form to' or 'to teach'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bilgi",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'bir bilgi' ve 'bilgiler' dersiniz; İngilizcede 'information' sayılamaz: 'an information' ya da 'informations' denmez. Tek bir bilgi için 'a piece of information' denir.",
+          "mistakes": [
+            {
+              "wrong": "I need more informations about the course.",
+              "right": "I need more information about the course.",
+              "why": "Türkçede 'bilgiler' diyebilirsiniz, bu yüzden -s eklenir. İngilizcede 'information' sayılamaz ve -s almaz."
+            },
+            {
+              "wrong": "I want to get an information.",
+              "right": "I want to get some information.",
+              "why": "Türkçede 'bir bilgi' dersiniz, bu yüzden 'an information' denir. 'Information' sayılamaz; 'an' almaz: some information, a piece of information."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want some ______ about train times. Who can help me?",
+        "answer": "information",
+        "distractors": [
+          "rice",
+          "furniture",
+          "luggage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.idea.n.1",
+      "lemma": "idea",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪˈdiːə/",
+        "uk": "/aɪˈdɪə/"
+      },
+      "def": {
+        "micro": "a thought or a plan",
+        "short": "a thought, plan, or suggestion about what to do",
+        "long": "A thought, plan, or suggestion about what to do or how to do something. You can have an idea, give an idea, or like an idea."
+      },
+      "examples": [
+        {
+          "en": "That's a good idea!",
+          "tr": "Bu iyi bir fikir!",
+          "register": "neutral",
+          "focus": "idea"
+        },
+        {
+          "en": "I have an idea. Let's go to the beach.",
+          "tr": "Bir fikrim var. Hadi plaja gidelim.",
+          "register": "neutral",
+          "focus": "idea"
+        },
+        {
+          "en": "Elif's idea was to make a cake for the teacher.",
+          "tr": "Elif'in fikri öğretmen için bir pasta yapmaktı.",
+          "register": "neutral",
+          "focus": "idea"
+        }
+      ],
+      "synonyms": [
+        "suggestion"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a good idea",
+        "have an idea",
+        "a great idea",
+        "a bad idea",
+        "no idea"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Greek 'idea', meaning a form or a pattern seen in the mind.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "fikir",
+          "alt": [
+            "düşünce"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'I have no idea.' tek başına 'Hiçbir fikrim yok.' demektir. 'Good idea!' ise 'Güzel fikir!' anlamında kısa bir cevap olarak kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I don't have idea.",
+              "right": "I have no idea.",
+              "why": "Türkçede 'fikrim yok' dersiniz; sözcük sözcük çevirince 'a' ya da 'any' unutulur. İngilizcede 'I have no idea' ya da 'I don't have any idea' denir."
+            },
+            {
+              "wrong": "I have a idea.",
+              "right": "I have an idea.",
+              "why": "'Idea' ünlü bir sesle (aɪ) başlar, bu yüzden 'an' gelir. Türkçedeki 'bir' her sözcükten önce aynı kaldığı için 'a idea' demek kolay olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Let's have a picnic by the lake! That is a really good ______.",
+        "answer": "idea",
+        "distractors": [
+          "pillow",
+          "jacket",
+          "spoon"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.question.n.1",
+      "lemma": "question",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkwɛstʃən/",
+        "uk": "/ˈkwɛstʃən/"
+      },
+      "def": {
+        "micro": "something you ask someone",
+        "short": "words that you say or write to ask for information or an answer",
+        "long": "Words that you say or write to ask for an answer. You ask a question, and the other person answers it."
+      },
+      "examples": [
+        {
+          "en": "That's a good question.",
+          "tr": "Bu iyi bir soru.",
+          "register": "neutral",
+          "focus": "question"
+        },
+        {
+          "en": "The teacher answered every question from the class.",
+          "tr": "Öğretmen sınıfın her sorusuna cevap verdi.",
+          "register": "neutral",
+          "focus": "question"
+        },
+        {
+          "en": "I have a question about the homework.",
+          "tr": "Ödevle ilgili bir sorum var.",
+          "register": "neutral",
+          "focus": "question"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "answer"
+      ],
+      "collocations": [
+        "ask a question",
+        "answer a question",
+        "a simple question",
+        "any questions"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'quaestio', which came from 'quaerere', meaning 'to ask' or 'to search'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "soru",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'soru sormak' dersiniz; İngilizcede 'ask a question' denir. Sınav sorusu da 'question' olur (exam question). 'Soru işareti' ise 'question mark' demektir.",
+          "mistakes": [
+            {
+              "wrong": "Can I ask a question to you?",
+              "right": "Can I ask you a question?",
+              "why": "Türkçede 'sana soru sormak' dersiniz (yönelme hâli, -a), bu yüzden 'to you' denir. İngilizcede 'ask' kişiyi doğrudan alır: ask you a question."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet, I have a ______ about the homework. Can you help me?",
+        "answer": "question",
+        "distractors": [
+          "table",
+          "window",
+          "garden"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "example_dedup_by_editor_agent"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

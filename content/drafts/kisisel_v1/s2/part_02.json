@@ -307,8 +307,8 @@
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The ______ stopped between floors, and we were stuck for ten minutes.", "answer": "elevator", "distractors": ["staircase", "platform", "taxi"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "The ______ stopped between floors, and we were stuck for ten minutes.", "answer": "elevator", "distractors": ["staircase", "tram", "taxi"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.subway.n.1",

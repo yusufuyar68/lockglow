@@ -1,0 +1,1050 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.people.n.1",
+      "lemma": "people",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpiːpəl/",
+        "uk": "/ˈpiːpəl/"
+      },
+      "def": {
+        "micro": "more than one person",
+        "short": "men, women, and children when you talk about more than one person",
+        "long": "Men, women, and children, when you talk about more than one person. It is a plural word: say 'people are' and 'many people', not 'people is' or 'peoples'."
+      },
+      "examples": [
+        {
+          "en": "Many people live in this city.",
+          "tr": "Bu şehirde birçok insan yaşıyor.",
+          "register": "neutral",
+          "focus": "people"
+        },
+        {
+          "en": "Mehmet knows a lot of people at work.",
+          "tr": "Mehmet işyerinde birçok insanı tanıyor.",
+          "register": "neutral",
+          "focus": "people"
+        },
+        {
+          "en": "The people in our street are very friendly.",
+          "tr": "Sokağımızdaki insanlar çok cana yakın.",
+          "register": "neutral",
+          "focus": "people"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a lot of people",
+        "young people",
+        "most people",
+        "old people",
+        "other people"
+      ],
+      "word_family": [
+        {
+          "lemma": "person",
+          "pos": "n"
+        },
+        {
+          "lemma": "personal",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'peuple', which came from Latin 'populus' (a nation or a crowd).",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "insanlar",
+          "alt": [
+            "kişiler",
+            "halk"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'People' çoğul bir sözcüktür; tekili 'person' (bir kişi) olur. 'Peoples' yalnızca 'halklar, uluslar' anlamında ve nadiren kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "There are many peoples in the park.",
+              "right": "There are many people in the park.",
+              "why": "'People' zaten çoğuldur (person sözcüğünün çoğulu). Türkçedeki 'insanlar' gibi bir de -s eklemeyin; 'peoples' yalnızca 'halklar' demektir."
+            },
+            {
+              "wrong": "People is very kind here.",
+              "right": "People are very kind here.",
+              "why": "Türkçede 'insanlar geliyor' derken çoğul özneye genellikle tekil fiil gelir. İngilizcede 'people' çoğuldur, bu yüzden 'be' de çoğul olur: People are, People were."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural_only"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A lot of ______ came to my party and danced all night.",
+        "answer": "people",
+        "distractors": [
+          "cakes",
+          "chairs",
+          "presents"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.child.n.1",
+      "lemma": "child",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃaɪld/",
+        "uk": "/tʃaɪld/"
+      },
+      "def": {
+        "micro": "a young boy or girl",
+        "short": "a young boy or girl who is not yet an adult",
+        "long": "A young boy or girl. The plural is irregular: one child, two children. The word can also mean someone's son or daughter, at any age."
+      },
+      "examples": [
+        {
+          "en": "The child is playing in the garden.",
+          "tr": "Çocuk bahçede oynuyor.",
+          "register": "neutral",
+          "focus": "child"
+        },
+        {
+          "en": "Elif has two children, a boy and a girl.",
+          "tr": "Elif'in iki çocuğu var; bir erkek, bir kız.",
+          "register": "neutral",
+          "focus": "children"
+        },
+        {
+          "en": "Many children walk to school in this village.",
+          "tr": "Bu köyde birçok çocuk okula yürüyerek gidiyor.",
+          "register": "neutral",
+          "focus": "children"
+        }
+      ],
+      "synonyms": [
+        "kid"
+      ],
+      "antonyms": [
+        "adult"
+      ],
+      "collocations": [
+        "an only child",
+        "a young child",
+        "small children",
+        "have a child"
+      ],
+      "word_family": [
+        {
+          "lemma": "childhood",
+          "pos": "n"
+        },
+        {
+          "lemma": "childish",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'cild'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "çocuk",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğulu düzensizdir: 'child' tek, 'children' çoğuldur. Günlük konuşmada 'kid' de çok kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I have two childs.",
+              "right": "I have two children.",
+              "why": "Türkçede çoğul eki düzenlidir (çocuk, çocuklar). İngilizcede 'child' düzensizdir: çoğulu 'children' olur, 'childs' diye bir sözcük yoktur."
+            },
+            {
+              "wrong": "Childrens are playing outside.",
+              "right": "Children are playing outside.",
+              "why": "'Children' zaten çoğuldur; üstüne bir de -s eklenmez. 'Childrens' yazmayın."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ are only six years old, so they go to primary school.",
+        "answer": "children",
+        "distractors": [
+          "teachers",
+          "doctors",
+          "drivers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.baby.n.1",
+      "lemma": "baby",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbeɪbi/",
+        "uk": "/ˈbeɪbi/"
+      },
+      "def": {
+        "micro": "a very young child",
+        "short": "a very young child who cannot walk or talk yet",
+        "long": "A very young child, often less than one year old. It cannot walk or talk yet and needs adults to look after it."
+      },
+      "examples": [
+        {
+          "en": "The baby is sleeping. Please be quiet.",
+          "tr": "Bebek uyuyor. Lütfen sessiz olun.",
+          "register": "neutral",
+          "focus": "baby"
+        },
+        {
+          "en": "Zeynep is going to have a baby in May.",
+          "tr": "Zeynep'in mayısta bebeği olacak.",
+          "register": "neutral",
+          "focus": "baby"
+        },
+        {
+          "en": "The baby smiled at us on the bus.",
+          "tr": "Bebek otobüste bize gülümsedi.",
+          "register": "neutral",
+          "focus": "baby"
+        }
+      ],
+      "synonyms": [
+        "infant"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a newborn baby",
+        "baby boy",
+        "baby girl",
+        "have a baby",
+        "baby food"
+      ],
+      "word_family": [
+        {
+          "lemma": "babysit",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bebek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'bebek' oyuncak bebeği de anlatır; İngilizcede oyuncak bebeğe 'doll' denir, 'baby' yalnızca gerçek bebektir. Konuşmada 'baby' sevgiliye hitap olarak da kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "The little girl is playing with her baby.",
+              "right": "The little girl is playing with her doll.",
+              "why": "Türkçede 'bebek' oyuncak bebek için de kullanılır. İngilizcede 'baby' gerçek bir bebektir; oyuncak bebeğe 'doll' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ is only two months old. She cannot walk or talk yet.",
+        "answer": "baby",
+        "distractors": [
+          "grandmother",
+          "teenager",
+          "student"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.husband.n.1",
+      "lemma": "husband",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhʌzbənd/",
+        "uk": "/ˈhʌzbənd/"
+      },
+      "def": {
+        "micro": "a man who is married",
+        "short": "the man that someone is married to",
+        "long": "The man that a person is married to. If two people are not married, we usually say 'boyfriend' or 'partner' instead."
+      },
+      "examples": [
+        {
+          "en": "My husband works at a bank.",
+          "tr": "Kocam bankada çalışıyor.",
+          "register": "neutral",
+          "focus": "husband"
+        },
+        {
+          "en": "Ayşe and her husband have a small shop.",
+          "tr": "Ayşe ile kocasının küçük bir dükkânı var.",
+          "register": "neutral",
+          "focus": "husband"
+        },
+        {
+          "en": "Elena's husband cooks dinner every Friday.",
+          "tr": "Elena'nın kocası her cuma akşam yemeği yapıyor.",
+          "register": "neutral",
+          "focus": "husband"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "wife"
+      ],
+      "collocations": [
+        "husband and wife",
+        "ex-husband",
+        "future husband",
+        "late husband"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old Norse 'húsbóndi', meaning the master of a house: 'hús' (house) + 'bóndi' (householder).",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "koca",
+          "alt": [
+            "eş"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'eşim' hem kadın hem erkek için söylenir; İngilizcede erkek eş 'husband', kadın eş 'wife' olur. Resmî dilde cinsiyetsiz 'spouse' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali is Elif's ______. They got married last year.",
+        "answer": "husband",
+        "distractors": [
+          "brother",
+          "uncle",
+          "son"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wife.n.1",
+      "lemma": "wife",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/waɪf/",
+        "uk": "/waɪf/"
+      },
+      "def": {
+        "micro": "a woman who is married",
+        "short": "the woman that someone is married to",
+        "long": "The woman that a person is married to. The plural is irregular: one wife, two wives."
+      },
+      "examples": [
+        {
+          "en": "This is my wife, Anna.",
+          "tr": "Bu karım, Anna.",
+          "register": "neutral",
+          "focus": "wife"
+        },
+        {
+          "en": "Mehmet and his wife are visiting Izmir.",
+          "tr": "Mehmet ile eşi İzmir'i ziyaret ediyorlar.",
+          "register": "neutral",
+          "focus": "wife"
+        },
+        {
+          "en": "Kenji's wife is a doctor at the city hospital.",
+          "tr": "Kenji'nin karısı şehir hastanesinde doktor.",
+          "register": "neutral",
+          "focus": "wife"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "husband"
+      ],
+      "collocations": [
+        "husband and wife",
+        "ex-wife",
+        "future wife",
+        "late wife"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'wīf', which meant 'woman'. The same old word is inside 'housewife' and 'midwife'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "eş (kadın)",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Resmî dilde 'eş' kadınlar için de erkekler için de söylenir; günlük dilde 'karım' ve 'eşim' denir. İngilizcede kadın eş 'wife', erkek eş 'husband' olur. Çoğulu 'wives' biçimindedir.",
+          "mistakes": [
+            {
+              "wrong": "Their wifes met at the party.",
+              "right": "Their wives met at the party.",
+              "why": "'Wife' sözcüğünün çoğulunda f harfi v olur: wives. Türkçede çoğul eki hep aynı olduğu için 'wifes' demek kolaydır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Murat's ______ is called Selin. They have been married for ten years.",
+        "answer": "wife",
+        "distractors": [
+          "sister",
+          "mother",
+          "daughter"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.age.n.1",
+      "lemma": "age",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/eɪdʒ/",
+        "uk": "/eɪdʒ/"
+      },
+      "def": {
+        "micro": "how old a person is",
+        "short": "the number of years a person has lived",
+        "long": "The number of years a person has lived. We usually ask 'How old are you?' instead of 'What is your age?'. We also say 'at the age of ten'."
+      },
+      "grammar": {
+        "pattern": "at the age of + number"
+      },
+      "examples": [
+        {
+          "en": "Hana started school at the age of six.",
+          "tr": "Hana okula altı yaşında başladı.",
+          "register": "neutral",
+          "focus": "age"
+        },
+        {
+          "en": "Please write your name and age on the form.",
+          "tr": "Lütfen adınızı ve yaşınızı forma yazın.",
+          "register": "neutral",
+          "focus": "age"
+        },
+        {
+          "en": "Mehmet and his sister are the same age.",
+          "tr": "Mehmet ile kız kardeşi aynı yaşta.",
+          "register": "neutral",
+          "focus": "age"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "at the age of",
+        "the same age",
+        "age group",
+        "old age"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'aage', which came from Latin 'aetas' (a period of life).",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yaş",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede '25 yaşındayım' ya da '25 yaşım var' dersiniz. İngilizcede 'I am 25' ya da 'I am 25 years old' denir; yaş için 'have' kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "I have 25 years old.",
+              "right": "I am 25 years old.",
+              "why": "Türkçede 'Kaç yaşın var?' ve '25 yaşım var' denir, bu yüzden 'have' denir. İngilizcede yaş 'have' ile değil 'be' (am, is, are) ile söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandfather learned to swim at the ______ of seventy.",
+        "answer": "age",
+        "distractors": [
+          "year",
+          "time",
+          "end"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.birthday.n.1",
+      "lemma": "birthday",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɜːrθdeɪ/",
+        "uk": "/ˈbɜːθdeɪ/"
+      },
+      "def": {
+        "micro": "the day you were born",
+        "short": "the same day every year as the day you were born",
+        "long": "The day each year that is the same date as the day you were born. People often have a party, get presents, and eat cake on this day."
+      },
+      "examples": [
+        {
+          "en": "Happy birthday, Sam!",
+          "tr": "Doğum günün kutlu olsun, Sam!",
+          "register": "neutral",
+          "focus": "birthday"
+        },
+        {
+          "en": "My birthday is on the fifth of May.",
+          "tr": "Doğum günüm 5 Mayıs'ta.",
+          "register": "neutral",
+          "focus": "birthday"
+        },
+        {
+          "en": "Elif made a big cake for her mother's birthday.",
+          "tr": "Elif annesinin doğum günü için büyük bir pasta yaptı.",
+          "register": "neutral",
+          "focus": "birthday"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "happy birthday",
+        "birthday party",
+        "birthday cake",
+        "birthday present",
+        "birthday card"
+      ],
+      "word_family": [
+        {
+          "lemma": "birth",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "A compound of 'birth' and 'day': the day of your birth.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "doğum günü",
+          "alt": [
+            "yaş günü"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Doğum günü' ve 'yaş günü' aynı anlama gelir. İngilizcede belirli bir gün için 'on' (on May 5), ay için 'in' (in May) kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "My birthday is in 5 May.",
+              "right": "My birthday is on 5 May.",
+              "why": "Türkçede '5 Mayıs'ta' ve 'Mayıs'ta' aynı ekle söylenir. İngilizcede ay için 'in' (in May), belirli bir gün için 'on' (on 5 May) gerekir."
+            },
+            {
+              "wrong": "I will do a birthday party on Friday.",
+              "right": "I will have a birthday party on Friday.",
+              "why": "Türkçede 'parti yapmak' dersiniz, bu yüzden 'do' ya da 'make' demek kolay olur. İngilizcede parti için 'have' (ya da 'throw') kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "culture_celebrations",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I am thirty today! It is my ______, so my friends are bringing a cake.",
+        "answer": "birthday",
+        "distractors": [
+          "holiday",
+          "lesson",
+          "ticket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.address.n.1",
+      "lemma": "address",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈædrɛs/",
+        "uk": "/əˈdrɛs/"
+      },
+      "def": {
+        "micro": "where someone lives",
+        "short": "the street, number, and town where someone lives or works",
+        "long": "The street, number, and town that show where a house or building is. You write it on a letter or a package. An email also has one: your email address."
+      },
+      "examples": [
+        {
+          "en": "What's your address, please?",
+          "tr": "Adresiniz nedir, lütfen?",
+          "register": "neutral",
+          "focus": "address"
+        },
+        {
+          "en": "Please write your name and address here.",
+          "tr": "Lütfen adınızı ve adresinizi buraya yazın.",
+          "register": "neutral",
+          "focus": "address"
+        },
+        {
+          "en": "Zeynep sent the package to the wrong address.",
+          "tr": "Zeynep paketi yanlış adrese gönderdi.",
+          "register": "neutral",
+          "focus": "address"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "home address",
+        "email address",
+        "street address",
+        "web address",
+        "change of address"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "adres",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'adres' ile aynı kökten gelir. İngilizcede yazılışı farklıdır: iki d ve iki s ile 'address' yazılır. Fiil olarak 'hitap etmek' anlamına da gelir.",
+          "mistakes": [
+            {
+              "wrong": "My address is Atatürk Street 12.",
+              "right": "My address is 12 Atatürk Street.",
+              "why": "Türkçede önce cadde adı, sonra numara yazılır (Atatürk Caddesi 12). İngilizcede numara önce gelir: 12 Atatürk Street."
+            },
+            {
+              "wrong": "What is your adress?",
+              "right": "What is your address?",
+              "why": "Türkçede 'adres' tek d ve tek s ile yazılır. İngilizcede 'address' iki d ve iki s ister; Türkçe yazıma göre yazınca harf eksik kalır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The delivery man cannot find our house. We gave him the wrong ______.",
+        "answer": "address",
+        "distractors": [
+          "menu",
+          "song",
+          "price"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.key.n.1",
+      "lemma": "key",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kiː/",
+        "uk": "/kiː/"
+      },
+      "def": {
+        "micro": "thing that opens a lock",
+        "short": "a small metal object that you use to open or close a lock",
+        "long": "A small metal object that you put in a lock to open or close a door, a car, or a box. Many people keep their keys in a pocket, in a bag, or on a key ring."
+      },
+      "examples": [
+        {
+          "en": "I have two keys for this door.",
+          "tr": "Bu kapı için iki anahtarım var.",
+          "register": "neutral",
+          "focus": "keys"
+        },
+        {
+          "en": "Mehmet locked the door and put the key in his pocket.",
+          "tr": "Mehmet kapıyı kilitledi ve anahtarı cebine koydu.",
+          "register": "neutral",
+          "focus": "key"
+        },
+        {
+          "en": "Please leave the room key at the front desk.",
+          "tr": "Lütfen oda anahtarını resepsiyonda bırakın.",
+          "register": "neutral",
+          "focus": "key"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "car key",
+        "house key",
+        "key ring",
+        "spare key",
+        "lose a key"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anahtar",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Klavyedeki ve piyanodaki 'key' için Türkçede 'tuş' denir; kapı anahtarı ise 'anahtar' olur. 'Anahtar kelime' İngilizcede 'keyword' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't open the door because I lost my ______.",
+        "answer": "key",
+        "distractors": [
+          "hat",
+          "spoon",
+          "pencil"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "example_dedup_by_editor_agent"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bag.n.1",
+      "lemma": "bag",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bæɡ/",
+        "uk": "/bæɡ/"
+      },
+      "def": {
+        "micro": "something to carry things in",
+        "short": "a soft container made of cloth, leather, plastic, or paper for carrying things",
+        "long": "A container made of cloth, leather, plastic, or paper that you use to carry things. People take a bag to school or work, and to the shop to carry what they buy."
+      },
+      "examples": [
+        {
+          "en": "Please put your bag here.",
+          "tr": "Lütfen çantanızı buraya koyun.",
+          "register": "neutral",
+          "focus": "bag"
+        },
+        {
+          "en": "Ali carried two heavy bags up the stairs.",
+          "tr": "Ali iki ağır çantayı merdivenlerden yukarı taşıdı.",
+          "register": "neutral",
+          "focus": "bags"
+        },
+        {
+          "en": "Do you need a bag for your shopping?",
+          "tr": "Alışverişiniz için poşet ister misiniz?",
+          "register": "neutral",
+          "focus": "bag"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "plastic bag",
+        "shopping bag",
+        "school bag",
+        "pack a bag"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çanta",
+          "alt": [
+            "torba",
+            "poşet"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede el çantası, okul çantası, torba ve poşet ayrı sözcüklerdir; İngilizcede hepsine 'bag' denir. Bavul ise 'suitcase' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "clothes_fashion",
+        "topics": [
+          "clothes_fashion",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Zeynep put her books and her lunch in her ______ and went to school.",
+        "answer": "bag",
+        "distractors": [
+          "plate",
+          "shoe",
+          "hat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

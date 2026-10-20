@@ -1,0 +1,1198 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.finish.v.1",
+      "lemma": "finish",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "come to the end",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɪnɪʃ/",
+        "uk": "/ˈfɪnɪʃ/"
+      },
+      "def": {
+        "micro": "reach the end of something",
+        "short": "to reach the end of something, or to do the last part of it",
+        "long": "To reach the end of something, or to do the last part of it. You can finish your homework, a book, or your lunch. Classes and films finish at a certain time too."
+      },
+      "grammar": {
+        "pattern": "finish + sth / finish + -ing"
+      },
+      "examples": [
+        {
+          "en": "I finished my homework.",
+          "tr": "Ödevimi bitirdim.",
+          "register": "neutral",
+          "focus": "finished"
+        },
+        {
+          "en": "Let's wait until Ravi finishes his lunch.",
+          "tr": "Ravi öğle yemeğini bitirene kadar bekleyelim.",
+          "register": "neutral",
+          "focus": "finishes"
+        },
+        {
+          "en": "The film finishes at ten, so we can have dinner after it.",
+          "tr": "Film saat onda bitiyor, bu yüzden sonrasında akşam yemeği yiyebiliriz.",
+          "register": "neutral",
+          "focus": "finishes"
+        }
+      ],
+      "synonyms": [
+        "end",
+        "complete"
+      ],
+      "antonyms": [
+        "start",
+        "begin"
+      ],
+      "collocations": [
+        "finish work",
+        "finish homework",
+        "finish a book",
+        "finish lunch",
+        "finish on time"
+      ],
+      "word_family": [
+        {
+          "lemma": "finish",
+          "pos": "n"
+        },
+        {
+          "lemma": "finished",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'finir', from Latin 'finire', 'to end'. It is related to Latin 'finis', meaning 'end' or 'border'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bitirmek",
+          "alt": [
+            "tamamlamak",
+            "bitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Finish' hem 'bitirmek' (I finished my homework) hem 'bitmek' (The film finishes at ten) demektir. Arkasından fiil gelirse -ing alır: finish reading = okumayı bitirmek.",
+          "mistakes": [
+            {
+              "wrong": "I finished to read the book.",
+              "right": "I finished reading the book.",
+              "why": "Türkçede 'okumayı bitirdim' denir; 'okumak' (to read) akla geldiği için 'to read' denir. İngilizcede 'finish' ile fiil -ing alır: finish reading."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have only one page left, so I will ______ the book tonight.",
+        "answer": "finish",
+        "distractors": [
+          "sell",
+          "buy",
+          "lose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.open.v.1",
+      "lemma": "open",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make something not closed",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈoʊpən/",
+        "uk": "/ˈəʊpən/"
+      },
+      "def": {
+        "micro": "make something not closed",
+        "short": "to move a door, window, or box so that it is not closed",
+        "long": "To move a door, a window, a box, or a bag so that it is not closed. You can open a door with a key. A shop or a bank opens at a certain time too."
+      },
+      "grammar": {
+        "pattern": "open + sth"
+      },
+      "examples": [
+        {
+          "en": "Can you open the window, please?",
+          "tr": "Pencereyi açabilir misin lütfen?",
+          "register": "neutral",
+          "focus": "open"
+        },
+        {
+          "en": "The bank opens at nine.",
+          "tr": "Banka dokuzda açılır.",
+          "register": "neutral",
+          "focus": "opens"
+        },
+        {
+          "en": "Ayşe opened the box and smiled.",
+          "tr": "Ayşe kutuyu açtı ve gülümsedi.",
+          "register": "neutral",
+          "focus": "opened"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "close",
+        "shut"
+      ],
+      "collocations": [
+        "open the door",
+        "open the window",
+        "open a box",
+        "open a bank account",
+        "open at nine"
+      ],
+      "word_family": [
+        {
+          "lemma": "open",
+          "pos": "adj"
+        },
+        {
+          "lemma": "opening",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açmak",
+          "alt": [
+            "açılmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Işık, televizyon, telefon, musluk gibi aletler için 'open' denmez; 'turn on' denir: turn on the TV. 'Open' kapı, pencere, kutu, çanta için kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Can you open the TV?",
+              "right": "Can you turn on the TV?",
+              "why": "Türkçede televizyonu, müziği, ışığı 'açmak' deriz. İngilizcede 'open' kapı, pencere, kutu içindir; aletleri çalıştırmak için 'turn on' denir."
+            },
+            {
+              "wrong": "Open the light, please.",
+              "right": "Turn on the light, please.",
+              "why": "Türkçede 'ışığı aç' deriz; İngilizcede ışık 'open' ile değil 'turn on' ile açılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:turn on"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It is very hot in here, so can you ______ the window?",
+        "answer": "open",
+        "distractors": [
+          "wash",
+          "break",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.close.v.1",
+      "lemma": "close",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "shut",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kloʊz/",
+        "uk": "/kləʊz/"
+      },
+      "def": {
+        "micro": "make something not open",
+        "short": "to move a door, window, or box so that it is shut",
+        "long": "To move a door, a window, a box, or a bag so that it is shut. A shop or a bank closes when the working day ends. This verb ends with a 'z' sound, like 'nose'."
+      },
+      "grammar": {
+        "pattern": "close + sth"
+      },
+      "examples": [
+        {
+          "en": "Please close the door.",
+          "tr": "Lütfen kapıyı kapat.",
+          "register": "neutral",
+          "focus": "close"
+        },
+        {
+          "en": "The bank closes at five o'clock.",
+          "tr": "Banka saat beşte kapanır.",
+          "register": "neutral",
+          "focus": "closes"
+        },
+        {
+          "en": "Hana closed her laptop and went home.",
+          "tr": "Hana dizüstü bilgisayarını kapatıp eve gitti.",
+          "register": "neutral",
+          "focus": "closed"
+        }
+      ],
+      "synonyms": [
+        "shut"
+      ],
+      "antonyms": [
+        "open"
+      ],
+      "collocations": [
+        "close the door",
+        "close the window",
+        "close your eyes",
+        "close a bag",
+        "close at five"
+      ],
+      "word_family": [
+        {
+          "lemma": "closed",
+          "pos": "adj"
+        },
+        {
+          "lemma": "closing",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'clos' and Latin 'clausus', meaning 'shut'. Latin 'claudere' also gave English 'clause' and 'include'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kapatmak",
+          "alt": [
+            "kapanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kapı, pencere, kutu için 'close' denir. Işık, televizyon, telefon gibi aletleri kapatmak için 'turn off' kullanılır. Fiil /kloʊz/ (z sesi); 'yakın' anlamındaki sıfat /kloʊs/ (s sesi).",
+          "mistakes": [
+            {
+              "wrong": "Please close the light.",
+              "right": "Please turn off the light.",
+              "why": "Türkçede 'ışığı kapat' deriz; bu yüzden 'close' denir. İngilizcede 'close' kapı, pencere, kutu içindir; ışık ve aletler 'turn off' ile kapatılır."
+            },
+            {
+              "wrong": "Can you close the TV?",
+              "right": "Can you turn off the TV?",
+              "why": "Türkçede televizyonu da 'kapatırız'. İngilizcede aletler 'close' ile değil 'turn off' ile kapatılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:turn off"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The shop is open until six. It ______ at six, so we must hurry.",
+        "answer": "closes",
+        "distractors": [
+          "opens",
+          "starts",
+          "arrives"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wait.v.1",
+      "lemma": "wait",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "stay until something happens",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/weɪt/",
+        "uk": "/weɪt/"
+      },
+      "def": {
+        "micro": "stay until something comes",
+        "short": "to stay in a place until someone comes or something happens",
+        "long": "To stay in a place until someone comes or something happens. You wait for a bus, a friend, or an answer. We always say 'wait for' before the person or thing."
+      },
+      "grammar": {
+        "pattern": "wait for + sb/sth"
+      },
+      "examples": [
+        {
+          "en": "I'm waiting for the bus.",
+          "tr": "Otobüsü bekliyorum.",
+          "register": "neutral",
+          "focus": "waiting"
+        },
+        {
+          "en": "Please wait for me. I'll be there in five minutes.",
+          "tr": "Lütfen beni bekle. Beş dakikaya orada olacağım.",
+          "register": "neutral",
+          "focus": "wait"
+        },
+        {
+          "en": "We waited for an hour, but Murat didn't come.",
+          "tr": "Bir saat bekledik ama Murat gelmedi.",
+          "register": "neutral",
+          "focus": "waited"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wait for the bus",
+        "wait for me",
+        "wait a minute",
+        "wait in line",
+        "wait for an answer"
+      ],
+      "word_family": [
+        {
+          "lemma": "wait",
+          "pos": "n"
+        },
+        {
+          "lemma": "waiter",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old North French 'waitier', meaning 'to watch' or 'to be on guard'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "beklemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'otobüsü beklemek' denir (-i hâli). İngilizcede 'wait' ile beklenen şey arasına 'for' gelir: wait for the bus, wait for me.",
+          "mistakes": [
+            {
+              "wrong": "I'm waiting you at the station.",
+              "right": "I'm waiting for you at the station.",
+              "why": "Türkçede 'seni bekliyorum' (-i hâli) denir ve edat yoktur; bu yüzden 'wait you' denir. İngilizcede beklenen kişiden önce 'for' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:stop"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ for me. I will be there in five minutes.",
+        "answer": "wait",
+        "distractors": [
+          "hurry",
+          "sleep",
+          "dance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.call.v.1",
+      "lemma": "call",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "phone someone",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔːl/",
+        "uk": "/kɔːl/"
+      },
+      "def": {
+        "micro": "phone someone",
+        "short": "to use a phone to speak to someone",
+        "long": "To use a phone to speak to someone. You can call a friend, a doctor, or a shop. People also say 'give someone a call'."
+      },
+      "grammar": {
+        "pattern": "call + sb"
+      },
+      "examples": [
+        {
+          "en": "I will call you tonight.",
+          "tr": "Seni bu gece arayacağım.",
+          "register": "neutral",
+          "focus": "call"
+        },
+        {
+          "en": "Can you call me after work?",
+          "tr": "İş çıkışı beni arayabilir misin?",
+          "register": "neutral",
+          "focus": "call"
+        },
+        {
+          "en": "Elena called the doctor and made an appointment.",
+          "tr": "Elena doktoru aradı ve randevu aldı.",
+          "register": "neutral",
+          "focus": "called"
+        }
+      ],
+      "synonyms": [
+        "phone",
+        "ring"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "call a friend",
+        "call me later",
+        "call a taxi",
+        "call the doctor",
+        "call the office"
+      ],
+      "word_family": [
+        {
+          "lemma": "call",
+          "pos": "n"
+        },
+        {
+          "lemma": "caller",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old Norse 'kalla', meaning 'to cry out loudly'.",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "aramak",
+          "alt": [
+            "telefon etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Telefonla aramak için 'call' denir. Türkçede 'aramak' hem telefon etmek hem bulmaya çalışmak demektir; ikincisi 'look for' olur: look for my keys.",
+          "mistakes": [
+            {
+              "wrong": "I will call to you tonight.",
+              "right": "I will call you tonight.",
+              "why": "Türkçede 'sana telefon edeceğim' (-a hâli) denir; bu yüzden 'to' denir. İngilizcede 'call' kişiyi doğrudan alır."
+            },
+            {
+              "wrong": "I will search you tonight.",
+              "right": "I will call you tonight.",
+              "why": "Türkçede 'aramak' hem telefon etmek hem bulmaya çalışmak demektir; bu yüzden 'search' denir. Telefon için 'call' gerekir; 'search' bir yeri ya da internette bir şeyi aramaktır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:look for"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't talk now. I will ______ you after work.",
+        "answer": "call",
+        "distractors": [
+          "wait",
+          "look",
+          "stay"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ask.v.1",
+      "lemma": "ask",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "put a question",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æsk/",
+        "uk": "/ɑːsk/"
+      },
+      "def": {
+        "micro": "put a question to someone",
+        "short": "to say a question to someone because you want an answer",
+        "long": "To say or write a question to someone because you want an answer. You ask a person a question: 'Can I ask you something?' We also say 'ask for' when we want a thing."
+      },
+      "grammar": {
+        "pattern": "ask + sb + a question / ask for + sth"
+      },
+      "examples": [
+        {
+          "en": "Can I ask you a question?",
+          "tr": "Sana bir soru sorabilir miyim?",
+          "register": "neutral",
+          "focus": "ask"
+        },
+        {
+          "en": "Mehmet asked the teacher about the homework.",
+          "tr": "Mehmet öğretmene ödev hakkında sordu.",
+          "register": "neutral",
+          "focus": "asked"
+        },
+        {
+          "en": "Ask Fatma. She knows the way.",
+          "tr": "Fatma'ya sor. O yolu biliyor.",
+          "register": "neutral",
+          "focus": "Ask"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "answer"
+      ],
+      "collocations": [
+        "ask a question",
+        "ask a friend",
+        "ask the way",
+        "ask for help",
+        "ask about prices"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sormak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Ask' = sormak. Bir şeyi istemek için 'ask for' denir: ask for help, ask for the bill. 'Ask' kişiyi doğrudan alır: ask him.",
+          "mistakes": [
+            {
+              "wrong": "She asked to me where the bank was.",
+              "right": "She asked me where the bank was.",
+              "why": "Türkçede 'bana sordu' (-a hâli) dediğimiz için 'to me' denir. İngilizcede 'ask' kişiyi doğrudan alır."
+            },
+            {
+              "wrong": "Can I ask a question to you?",
+              "right": "Can I ask you a question?",
+              "why": "Türkçede 'sana bir soru sorabilir miyim' sırası 'ask a question to you' gibi çevrilir. İngilizcede kişi önce gelir: ask you a question."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:ask for"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Excuse me, can I ______ you a question?",
+        "answer": "ask",
+        "distractors": [
+          "say",
+          "tell",
+          "speak"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.answer.v.1",
+      "lemma": "answer",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "reply to a question",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈænsər/",
+        "uk": "/ˈɑːnsə/"
+      },
+      "def": {
+        "micro": "reply to a question",
+        "short": "to say or write something when someone asks you a question",
+        "long": "To say or write something when someone asks you a question. You can also reply to a phone call, a message, or a letter. We say 'answer the phone' and 'answer a question' with no 'to'."
+      },
+      "grammar": {
+        "pattern": "answer + sth / sb"
+      },
+      "examples": [
+        {
+          "en": "Please answer the question.",
+          "tr": "Lütfen soruyu cevaplayın.",
+          "register": "neutral",
+          "focus": "answer"
+        },
+        {
+          "en": "Ece didn't answer my message.",
+          "tr": "Ece mesajıma cevap vermedi.",
+          "register": "neutral",
+          "focus": "answer"
+        },
+        {
+          "en": "Can you answer the phone? I'm cooking.",
+          "tr": "Telefonu açar mısın? Yemek yapıyorum.",
+          "register": "neutral",
+          "focus": "answer"
+        }
+      ],
+      "synonyms": [
+        "reply"
+      ],
+      "antonyms": [
+        "ask"
+      ],
+      "collocations": [
+        "answer a question",
+        "answer the phone",
+        "answer a message",
+        "answer the door",
+        "answer an email"
+      ],
+      "word_family": [
+        {
+          "lemma": "answer",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'andswaru', a reply to a charge. It joins 'and-' (against) and a word related to 'swear'.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "cevaplamak",
+          "alt": [
+            "yanıtlamak",
+            "cevap vermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Soruya cevap vermek' denir ama İngilizcede 'answer' doğrudan nesne alır: answer the question. 'Telefonu açmak' = answer the phone.",
+          "mistakes": [
+            {
+              "wrong": "He didn't answer to my message.",
+              "right": "He didn't answer my message.",
+              "why": "Türkçede 'mesajıma cevap vermedi' (-a hâli) dediğimiz için 'to' denir. İngilizcede 'answer' doğrudan nesne alır."
+            },
+            {
+              "wrong": "I opened the phone, but nobody spoke.",
+              "right": "I answered the phone, but nobody spoke.",
+              "why": "Türkçede 'telefonu açmak' deriz; bu yüzden 'open' denir. Gelen aramayı yanıtlamak için 'answer the phone' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:ask"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Omar didn't ______ my message. Maybe he is busy.",
+        "answer": "answer",
+        "distractors": [
+          "ask",
+          "say",
+          "teach"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.help.v.1",
+      "lemma": "help",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make a task easier",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɛlp/",
+        "uk": "/hɛlp/"
+      },
+      "def": {
+        "micro": "make it easier for someone",
+        "short": "to do something for someone so that their work or problem is easier",
+        "long": "To do something for someone so that their work or problem is easier. You can help a friend, a neighbor, or a customer. We say 'help me' or 'help me with' a task."
+      },
+      "grammar": {
+        "pattern": "help + sb (with sth)"
+      },
+      "examples": [
+        {
+          "en": "Can you help me, please?",
+          "tr": "Bana yardım edebilir misin lütfen?",
+          "register": "neutral",
+          "focus": "help"
+        },
+        {
+          "en": "Hugo helps his mother with the shopping.",
+          "tr": "Hugo annesine alışverişte yardım eder.",
+          "register": "neutral",
+          "focus": "helps"
+        },
+        {
+          "en": "Thank you for helping me with my homework.",
+          "tr": "Ödevimde bana yardım ettiğin için teşekkürler.",
+          "register": "neutral",
+          "focus": "helping"
+        }
+      ],
+      "synonyms": [
+        "assist"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "help me",
+        "help with homework",
+        "ask for help",
+        "need help",
+        "help a friend"
+      ],
+      "word_family": [
+        {
+          "lemma": "help",
+          "pos": "n"
+        },
+        {
+          "lemma": "helpful",
+          "pos": "adj"
+        },
+        {
+          "lemma": "helper",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yardım etmek",
+          "alt": [
+            "yardımcı olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Help' kişiyi doğrudan alır: help me. Türkçede 'bana yardım et' (-a hâli) denir ama İngilizcede 'to' gelmez. 'Help me carry this bag' gibi fiille de kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Can you help to me?",
+              "right": "Can you help me?",
+              "why": "Türkçede 'bana yardım et' (-a hâli) dediğimiz için 'to me' denir. İngilizcede 'help' kişiyi doğrudan alır."
+            },
+            {
+              "wrong": "Can you help me for my homework?",
+              "right": "Can you help me with my homework?",
+              "why": "Türkçede 'ödevim için yardım et' denir; bu yüzden 'for' kullanılır. İngilizcede görev için 'help with' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My bag is very heavy. Can you ______ me carry it?",
+        "answer": "help",
+        "distractors": [
+          "tell",
+          "show",
+          "give"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "ipa_dress_normalized"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.meet.v.1",
+      "lemma": "meet",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "meet a person",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/miːt/",
+        "uk": "/miːt/"
+      },
+      "def": {
+        "micro": "come together with someone",
+        "short": "to see someone for the first time, or to come together by plan",
+        "long": "To see and talk to someone for the first time, or to come together with someone by plan. We say 'Nice to meet you' the first time. Friends also meet at a café or at the station."
+      },
+      "grammar": {
+        "pattern": "meet + sb / meet at + place"
+      },
+      "examples": [
+        {
+          "en": "Nice to meet you.",
+          "tr": "Tanıştığımıza memnun oldum.",
+          "register": "neutral",
+          "focus": "meet"
+        },
+        {
+          "en": "Let's meet at the station at six.",
+          "tr": "Saat altıda istasyonda buluşalım.",
+          "register": "neutral",
+          "focus": "meet"
+        },
+        {
+          "en": "Berk met Nora at a friend's party.",
+          "tr": "Berk, Nora ile bir arkadaşının partisinde tanıştı.",
+          "register": "neutral",
+          "focus": "met"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "meet a friend",
+        "meet at six",
+        "meet new people",
+        "nice to meet you",
+        "meet at the station"
+      ],
+      "word_family": [
+        {
+          "lemma": "meeting",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tanışmak",
+          "alt": [
+            "buluşmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'tanışmak' (ilk kez görmek) ve 'tanımak' (zaten bilmek) ayrıdır. İlki 'meet', ikincisi 'know' olur. 'Buluşmak' için de 'meet' denir. Düzensiz: meet - met - met.",
+          "mistakes": [
+            {
+              "wrong": "Nice to know you.",
+              "right": "Nice to meet you.",
+              "why": "Türkçede 'tanımak' ile 'tanışmak' birbirine çok yakındır ('tanıştığımıza memnun oldum'). Biriyle ilk kez karşılaşırken 'know' değil 'meet' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:know"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Let's ______ at the café at four o'clock.",
+        "answer": "meet",
+        "distractors": [
+          "know",
+          "mean",
+          "feel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.visit.v.1",
+      "lemma": "visit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go to see a person or place",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɪzɪt/",
+        "uk": "/ˈvɪzɪt/"
+      },
+      "def": {
+        "micro": "go to see a person or place",
+        "short": "to go to see a person or a place, and stay for a short time",
+        "long": "To go to see a person or a place and stay for a short time. You can visit a friend, a museum, or a new city. We say 'visit' and the place directly, with no 'to'."
+      },
+      "grammar": {
+        "pattern": "visit + sb / place"
+      },
+      "examples": [
+        {
+          "en": "We visit my grandmother every Sunday.",
+          "tr": "Her pazar büyükannemi ziyaret ederiz.",
+          "register": "neutral",
+          "focus": "visit"
+        },
+        {
+          "en": "Did you visit the museum in Ankara?",
+          "tr": "Ankara'daki müzeyi ziyaret ettin mi?",
+          "register": "neutral",
+          "focus": "visit"
+        },
+        {
+          "en": "Elif visited her aunt in Izmir last summer.",
+          "tr": "Elif geçen yaz İzmir'deki teyzesini ziyaret etti.",
+          "register": "neutral",
+          "focus": "visited"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "visit a friend",
+        "visit a museum",
+        "visit family",
+        "visit a city",
+        "visit the website"
+      ],
+      "word_family": [
+        {
+          "lemma": "visit",
+          "pos": "n"
+        },
+        {
+          "lemma": "visitor",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'visitare', meaning 'to go to see'. It comes from Latin 'videre', 'to see'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ziyaret etmek",
+          "alt": [
+            "gezmek",
+            "görmeye gitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Visit' kişiyi ya da yeri doğrudan alır: visit my aunt, visit Istanbul. Günlük Türkçede 'ziyaret etmek' yerine sık sık 'görmeye gitmek' ya da 'gezmek' denir.",
+          "mistakes": [
+            {
+              "wrong": "We visited to Istanbul last summer.",
+              "right": "We visited Istanbul last summer.",
+              "why": "Türkçede 'İstanbul'a gittik' (-a hâli) dediğimiz için 'to' denir. İngilizcede 'visit' doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Daniel wants to ______ the museum on Saturday. He loves old things.",
+        "answer": "visit",
+        "distractors": [
+          "meet",
+          "know",
+          "wait"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

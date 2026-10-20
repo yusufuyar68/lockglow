@@ -1,0 +1,1117 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.early.adj.1",
+      "lemma": "early",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "before the usual time",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɜːrli/",
+        "uk": "/ˈɜːli/"
+      },
+      "def": {
+        "micro": "before the usual time",
+        "short": "before the usual or planned time; near the start of something",
+        "long": "Before the usual or planned time, or near the start of a day or a period. You can be early for a bus, or you can get up early in the morning."
+      },
+      "examples": [
+        {
+          "en": "You are early! The film starts in an hour.",
+          "tr": "Erken geldin! Film bir saat sonra başlıyor.",
+          "register": "neutral",
+          "focus": "early"
+        },
+        {
+          "en": "Mehmet gets up early to run before work.",
+          "tr": "Mehmet işe gitmeden önce koşmak için erken kalkar.",
+          "register": "neutral",
+          "focus": "early"
+        },
+        {
+          "en": "We took an early train, so we arrived before lunch.",
+          "tr": "Erken bir trene bindik, bu yüzden öğle yemeğinden önce vardık.",
+          "register": "neutral",
+          "focus": "early"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "late"
+      ],
+      "collocations": [
+        "early morning",
+        "get up early",
+        "an early train",
+        "too early",
+        "early in the week"
+      ],
+      "word_family": [
+        {
+          "lemma": "earlier",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'ǣrlīce', built on 'ǣr', meaning 'before'. The old word 'ere' ('before') comes from the same root.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "erken",
+          "alt": [
+            "erkenden"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Early' hem sıfat (an early train) hem zarftır (get up early). Zarf olarak '-ly' almaz. Karşıtı 'late' (geç) kelimesidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We got to the airport at 4 a.m., but our flight is at 10 a.m. We are very ______.",
+        "answer": "early",
+        "distractors": [
+          "late",
+          "tall",
+          "heavy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.late.adj.1",
+      "lemma": "late",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "after the planned time",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/leɪt/",
+        "uk": "/leɪt/"
+      },
+      "def": {
+        "micro": "after the planned time",
+        "short": "after the usual or planned time; not on time",
+        "long": "After the usual or planned time. A person, a bus or a train can be late. A late dinner or a late film starts near the end of the day."
+      },
+      "examples": [
+        {
+          "en": "Sorry, I'm late. There was a lot of traffic.",
+          "tr": "Üzgünüm, geç kaldım. Çok trafik vardı.",
+          "register": "neutral",
+          "focus": "late"
+        },
+        {
+          "en": "Ayşe is never late for work.",
+          "tr": "Ayşe işe asla geç kalmaz.",
+          "register": "neutral",
+          "focus": "late"
+        },
+        {
+          "en": "It was late, so we took a taxi home.",
+          "tr": "Geç olmuştu, bu yüzden eve taksiyle gittik.",
+          "register": "neutral",
+          "focus": "late"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "early",
+        "on time"
+      ],
+      "collocations": [
+        "arrive late",
+        "late for work",
+        "late at night",
+        "a late dinner",
+        "running late"
+      ],
+      "word_family": [
+        {
+          "lemma": "later",
+          "pos": "adv"
+        },
+        {
+          "lemma": "lately",
+          "pos": "adv"
+        },
+        {
+          "lemma": "lateness",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'læt', meaning 'slow' or 'tardy'. Something slow arrives after the time you expect.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "geç",
+          "alt": [
+            "gecikmiş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Late' (geç) ile 'lately' (son zamanlarda) farklı kelimelerdir. 'Geç kaldım' için 'I'm late' denir. Zarf olarak da 'late' kullanılır: 'He came late'.",
+          "mistakes": [
+            {
+              "wrong": "He came lately to the party.",
+              "right": "He came late to the party.",
+              "why": "Türkçede 'geç geldi' dersiniz; 'geç' hem sıfat hem zarf olur. İngilizcede de 'late' zarf olarak aynen kalır. Zarf diye '-ly' eklemek akla gelir; ama 'lately' 'son zamanlarda' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:lately"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The class began at nine, but Ali came at half past nine. He was 30 minutes ______.",
+        "answer": "late",
+        "distractors": [
+          "early",
+          "busy",
+          "sorry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.busy.adj.1",
+      "lemma": "busy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having a lot to do",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɪzi/",
+        "uk": "/ˈbɪzi/"
+      },
+      "def": {
+        "micro": "having a lot to do",
+        "short": "having a lot of work or things to do right now",
+        "long": "Having a lot of work or things to do, so you have no time for other things. A street or a shop can be busy too when it is full of people."
+      },
+      "examples": [
+        {
+          "en": "I'm busy right now. Can I call you later?",
+          "tr": "Şu an meşgulüm. Seni sonra arayabilir miyim?",
+          "register": "neutral",
+          "focus": "busy"
+        },
+        {
+          "en": "Elif is busy with her homework tonight.",
+          "tr": "Elif bu akşam ödeviyle meşgul.",
+          "register": "neutral",
+          "focus": "busy"
+        },
+        {
+          "en": "The shopping street is very busy on Saturdays.",
+          "tr": "Alışveriş caddesi cumartesi günleri çok işlek.",
+          "register": "neutral",
+          "focus": "busy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "free"
+      ],
+      "collocations": [
+        "a busy day",
+        "a busy week",
+        "a busy street",
+        "busy with work",
+        "too busy"
+      ],
+      "word_family": [
+        {
+          "lemma": "business",
+          "pos": "n"
+        },
+        {
+          "lemma": "busily",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'bisig', meaning 'careful' or 'occupied with something'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "meşgul",
+          "alt": [
+            "yoğun",
+            "işlek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'I'm busy' = işim var, müsait değilim. Yoğun bir gün, işlek bir cadde de 'busy' olur. Telefon için 'The line is busy' denir (hat meşgul).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't talk now. I'm very ______ at the moment.",
+        "answer": "busy",
+        "distractors": [
+          "free",
+          "early",
+          "sure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.free.adj.1",
+      "lemma": "free",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "costing no money",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/friː/",
+        "uk": "/friː/"
+      },
+      "def": {
+        "micro": "costing no money",
+        "short": "that you do not have to pay for",
+        "long": "Something you do not have to pay for. Some museums, apps and games cost nothing to enter or use. People also say 'for free' after a verb: I got it for free."
+      },
+      "examples": [
+        {
+          "en": "The coffee is free today.",
+          "tr": "Kahve bugün bedava.",
+          "register": "neutral",
+          "focus": "free"
+        },
+        {
+          "en": "Children under six can enter the museum for free.",
+          "tr": "Altı yaşın altındaki çocuklar müzeye bedava girebilir.",
+          "register": "neutral",
+          "focus": "free"
+        },
+        {
+          "en": "Maria got a free ticket because it was her birthday.",
+          "tr": "Maria doğum günü olduğu için bedava bir bilet aldı.",
+          "register": "neutral",
+          "focus": "free"
+        }
+      ],
+      "synonyms": [
+        "free of charge"
+      ],
+      "antonyms": [
+        "paid"
+      ],
+      "collocations": [
+        "free ticket",
+        "free Wi-Fi",
+        "free of charge",
+        "for free",
+        "free trial"
+      ],
+      "word_family": [
+        {
+          "lemma": "freely",
+          "pos": "adv"
+        },
+        {
+          "lemma": "freedom",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'frēo', meaning 'not a slave, not in chains'. It comes from the same old root as 'friend'. 'Costing no money' came much later.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bedava",
+          "alt": [
+            "ücretsiz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Bedava' ve 'ücretsiz' aynı anlama gelir. 'For free' = bedavaya, 'free of charge' = ücretsiz. 'Free' kelimesinin 'boş, müsait' anlamı ayrı kartta.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The museum does not cost anything on Sundays. Entry is ______.",
+        "answer": "free",
+        "distractors": [
+          "expensive",
+          "heavy",
+          "cold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.free.adj.2",
+      "lemma": "free",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 2,
+      "sense_note": "not busy, available",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/friː/",
+        "uk": "/friː/"
+      },
+      "def": {
+        "micro": "with no plans or work",
+        "short": "not busy; having time to do something",
+        "long": "Having no work or plans at a certain time, so you can meet someone or do something. People ask 'Are you free on Friday?' when they want to make a plan."
+      },
+      "examples": [
+        {
+          "en": "Are you free tomorrow?",
+          "tr": "Yarın müsait misin?",
+          "register": "neutral",
+          "focus": "free"
+        },
+        {
+          "en": "Sam is free after six, so we can meet then.",
+          "tr": "Sam altıdan sonra müsait, bu yüzden o saatte buluşabiliriz.",
+          "register": "neutral",
+          "focus": "free"
+        },
+        {
+          "en": "I'm free on Sunday morning. Do you want to have breakfast?",
+          "tr": "Pazar sabahı boşum. Kahvaltı yapmak ister misin?",
+          "register": "neutral",
+          "focus": "free"
+        }
+      ],
+      "synonyms": [
+        "available"
+      ],
+      "antonyms": [
+        "busy"
+      ],
+      "collocations": [
+        "free time",
+        "free tonight",
+        "free on Friday",
+        "a free day",
+        "free this weekend"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "müsait",
+          "alt": [
+            "boş",
+            "vakti olan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Free' = zamanın var, işin yok. Türkçedeki 'boş' kelimesi İngilizcede ikiye ayrılır: müsait olmak 'free', içi boş olmak 'empty' olur.",
+          "mistakes": [
+            {
+              "wrong": "Are you empty on Saturday?",
+              "right": "Are you free on Saturday?",
+              "why": "Türkçede 'yarın boşum' (müsaitim) dersiniz ve 'boş' kelimesi 'empty' diye öğrenilir. İngilizcede müsait olmak için 'free' denir; 'empty' yalnızca içi boş şeyler için kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Are you ______ on Friday? Let's have lunch together.",
+        "answer": "free",
+        "distractors": [
+          "empty",
+          "full",
+          "tall"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ready.adj.1",
+      "lemma": "ready",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "prepared",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛdi/",
+        "uk": "/ˈrɛdi/"
+      },
+      "def": {
+        "micro": "prepared and able to start",
+        "short": "prepared for something and able to start now",
+        "long": "Prepared for something and able to start now. Food is ready when it is cooked, and a person is ready when they have everything they need."
+      },
+      "examples": [
+        {
+          "en": "Are you ready to go?",
+          "tr": "Gitmeye hazır mısın?",
+          "register": "neutral",
+          "focus": "ready"
+        },
+        {
+          "en": "Dinner will be ready in ten minutes.",
+          "tr": "Akşam yemeği on dakika sonra hazır olur.",
+          "register": "neutral",
+          "focus": "ready"
+        },
+        {
+          "en": "Kenji studied all week, so he was ready for the test.",
+          "tr": "Kenji bütün hafta çalıştı, bu yüzden sınava hazırdı.",
+          "register": "neutral",
+          "focus": "ready"
+        }
+      ],
+      "synonyms": [
+        "prepared"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "get ready",
+        "ready to go",
+        "ready for school",
+        "ready to eat",
+        "dinner is ready"
+      ],
+      "word_family": [
+        {
+          "lemma": "readily",
+          "pos": "adv"
+        },
+        {
+          "lemma": "readiness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hazır",
+          "alt": [
+            "hazırlıklı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Ready for' isimle (sınava hazır), 'ready to' fiille (gitmeye hazır) kullanılır. 'Get ready' = hazırlanmak. Yemek için de kullanılır: Dinner is ready (yemek hazır).",
+          "mistakes": [
+            {
+              "wrong": "I'm ready to the test.",
+              "right": "I'm ready for the test.",
+              "why": "Türkçede 'sınava hazırım' dersiniz (-e hali), bu yüzden 'to' akla gelir. İsimden önce 'for' gerekir. Fiilden önce 'to' gelir: ready to go."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please wait. Dinner is not ______ yet.",
+        "answer": "ready",
+        "distractors": [
+          "early",
+          "free",
+          "sure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sure.adj.1",
+      "lemma": "sure",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "certain",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃʊr/",
+        "uk": "/ʃɔː/"
+      },
+      "def": {
+        "micro": "having no doubt",
+        "short": "knowing that something is true or will happen",
+        "long": "Having no doubt about something. You say 'I'm sure' when you think a thing is true, and 'I'm not sure' when you do not know."
+      },
+      "examples": [
+        {
+          "en": "I'm sure he is at home.",
+          "tr": "Onun evde olduğundan eminim.",
+          "register": "neutral",
+          "focus": "sure"
+        },
+        {
+          "en": "Are you sure this is the right bus?",
+          "tr": "Bunun doğru otobüs olduğundan emin misin?",
+          "register": "neutral",
+          "focus": "sure"
+        },
+        {
+          "en": "Elif wasn't sure about the answer, so she asked the teacher.",
+          "tr": "Elif cevaptan emin değildi, bu yüzden öğretmene sordu.",
+          "register": "neutral",
+          "focus": "sure"
+        }
+      ],
+      "synonyms": [
+        "certain"
+      ],
+      "antonyms": [
+        "unsure"
+      ],
+      "collocations": [
+        "I'm sure",
+        "not sure",
+        "sure about",
+        "make sure"
+      ],
+      "word_family": [
+        {
+          "lemma": "surely",
+          "pos": "adv"
+        },
+        {
+          "lemma": "unsure",
+          "pos": "adj"
+        },
+        {
+          "lemma": "ensure",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'seur', from Latin 'securus', meaning 'free from worry'. 'Secure' comes from the same Latin word.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "emin",
+          "alt": [
+            "kesin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'eminim' tek kelimedir. İngilizcede 'be' fiili ayrı yazılır: I am sure, I'm not sure. 'Sure' sıfattır, 'am / is / are' ile kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I am sure from my answer.",
+              "right": "I am sure about my answer.",
+              "why": "Türkçede 'cevabımdan eminim' dersiniz (-dan eki), bu yüzden 'from' akla gelir. İngilizcede 'sure about' ya da 'sure of' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm not ______ where my keys are. Can you help me look?",
+        "answer": "sure",
+        "distractors": [
+          "ready",
+          "busy",
+          "early"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fast.adj.1",
+      "lemma": "fast",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "moving at high speed",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fæst/",
+        "uk": "/fɑːst/"
+      },
+      "def": {
+        "micro": "moving at high speed",
+        "short": "moving or happening at high speed, taking little time",
+        "long": "Moving or happening at high speed, so it takes little time. A car, a train, a runner or a computer can be fast. It is also an adverb: She runs fast."
+      },
+      "examples": [
+        {
+          "en": "This train is very fast.",
+          "tr": "Bu tren çok hızlı.",
+          "register": "neutral",
+          "focus": "fast"
+        },
+        {
+          "en": "Don't walk so fast! I can't keep up.",
+          "tr": "O kadar hızlı yürüme! Yetişemiyorum.",
+          "register": "neutral",
+          "focus": "fast"
+        },
+        {
+          "en": "We need a fast internet connection for work.",
+          "tr": "İş için hızlı bir internet bağlantısına ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "fast"
+        }
+      ],
+      "synonyms": [
+        "quick"
+      ],
+      "antonyms": [
+        "slow"
+      ],
+      "collocations": [
+        "fast food",
+        "a fast car",
+        "fast internet",
+        "run fast",
+        "a fast learner"
+      ],
+      "word_family": [
+        {
+          "lemma": "faster",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'fæst', meaning 'firm' or 'fixed'. The meaning 'quick' came later, from the idea of moving 'firmly' or 'strongly'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hızlı",
+          "alt": [
+            "çabuk",
+            "süratli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Fast' hem sıfat hem zarftır: a fast car, drive fast. Zarf için '-ly' eklenmez; 'fastly' kullanılmaz. 'Quick' = çabuk, kısa sürede.",
+          "mistakes": [
+            {
+              "wrong": "He drives very fastly.",
+              "right": "He drives very fast.",
+              "why": "Türkçede 'hızlı' sıfat da zarf da olur (hızlı gitti); İngilizcede de 'fast' böyledir. 'Quickly', 'slowly' gibi zarflar '-ly' aldığı için 'fastly' denir, ama bu yanlıştır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The train takes only one hour to go to the city, so it is very ______.",
+        "answer": "fast",
+        "distractors": [
+          "slow",
+          "heavy",
+          "dirty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.slow.adj.1",
+      "lemma": "slow",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not moving quickly",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sloʊ/",
+        "uk": "/sləʊ/"
+      },
+      "def": {
+        "micro": "not moving quickly",
+        "short": "taking a long time, or moving with little speed",
+        "long": "Taking a long time, or moving with little speed. A bus in heavy traffic or an old computer can be slow. Slow is the opposite of fast."
+      },
+      "examples": [
+        {
+          "en": "The bus is very slow today.",
+          "tr": "Otobüs bugün çok yavaş.",
+          "register": "neutral",
+          "focus": "slow"
+        },
+        {
+          "en": "My old laptop is slow, so I need a new one.",
+          "tr": "Eski dizüstü bilgisayarım yavaş, o yüzden yenisine ihtiyacım var.",
+          "register": "neutral",
+          "focus": "slow"
+        },
+        {
+          "en": "Our internet is slow when it rains.",
+          "tr": "Yağmur yağdığında internetimiz yavaş oluyor.",
+          "register": "neutral",
+          "focus": "slow"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "fast",
+        "quick"
+      ],
+      "collocations": [
+        "a slow walker",
+        "slow internet",
+        "slow traffic",
+        "a slow start",
+        "slow and steady"
+      ],
+      "word_family": [
+        {
+          "lemma": "slowly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "slowness",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'slāw', meaning 'sluggish' or 'dull'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yavaş",
+          "alt": [
+            "ağır"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Slow' sıfattır (a slow bus). Fiili anlatan zarf genellikle 'slowly' (yavaşça) olur. 'Slow down' = yavaşlamak. Karşıtı 'fast' (hızlı).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bus is stuck in traffic, so the trip is very ______.",
+        "answer": "slow",
+        "distractors": [
+          "fast",
+          "quick",
+          "loud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.easy.adj.1",
+      "lemma": "easy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not difficult",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈiːzi/",
+        "uk": "/ˈiːzi/"
+      },
+      "def": {
+        "micro": "not hard to do",
+        "short": "not difficult; you can do it without trouble",
+        "long": "Not difficult. You can do it or understand it without much trouble. A short test or a simple question is easy for most students."
+      },
+      "examples": [
+        {
+          "en": "The test was very easy.",
+          "tr": "Sınav çok kolaydı.",
+          "register": "neutral",
+          "focus": "easy"
+        },
+        {
+          "en": "It is easy to find our house.",
+          "tr": "Evimizi bulmak kolay.",
+          "register": "neutral",
+          "focus": "easy"
+        },
+        {
+          "en": "Maria thinks English is easy, but she studies every day.",
+          "tr": "Maria İngilizcenin kolay olduğunu düşünüyor ama her gün çalışıyor.",
+          "register": "neutral",
+          "focus": "easy"
+        }
+      ],
+      "synonyms": [
+        "simple"
+      ],
+      "antonyms": [
+        "difficult",
+        "hard"
+      ],
+      "collocations": [
+        "an easy test",
+        "easy to use",
+        "easy to learn",
+        "an easy job"
+      ],
+      "word_family": [
+        {
+          "lemma": "easily",
+          "pos": "adv"
+        },
+        {
+          "lemma": "ease",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'aisié', meaning 'comfortable' or 'at ease'. English 'ease' comes from the same family.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kolay",
+          "alt": [
+            "basit"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'It is easy to + fiil' (…mek kolay). 'Take it easy' ise ayrı bir kalıptır: rahat ol, telaşlanma. Karşıtı 'difficult' ya da 'hard'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I finished the whole test in ten minutes because it was so ______.",
+        "answer": "easy",
+        "distractors": [
+          "difficult",
+          "hard",
+          "long"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

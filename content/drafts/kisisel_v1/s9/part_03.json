@@ -1,0 +1,1056 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.problem.n.1",
+      "lemma": "problem",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɑːbləm/",
+        "uk": "/ˈprɒbləm/"
+      },
+      "def": {
+        "micro": "something difficult or wrong",
+        "short": "a situation that is difficult or causes trouble and needs to be fixed",
+        "long": "Something that is difficult or wrong, and that you need to fix or solve. A broken car, a lost key, or too little money can be a problem."
+      },
+      "examples": [
+        {
+          "en": "I have a problem with my phone.",
+          "tr": "Telefonumla ilgili bir sorunum var.",
+          "register": "neutral",
+          "focus": "problem"
+        },
+        {
+          "en": "No problem, I can carry your bag.",
+          "tr": "Sorun değil, çantanı taşıyabilirim.",
+          "register": "neutral",
+          "focus": "problem"
+        },
+        {
+          "en": "The biggest problem in this city is traffic.",
+          "tr": "Bu şehrin en büyük sorunu trafik.",
+          "register": "neutral",
+          "focus": "problem"
+        }
+      ],
+      "synonyms": [
+        "issue"
+      ],
+      "antonyms": [
+        "solution"
+      ],
+      "collocations": [
+        "have a problem",
+        "solve a problem",
+        "no problem",
+        "a big problem",
+        "a problem with"
+      ],
+      "word_family": [
+        {
+          "lemma": "problematic",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Greek 'problema', meaning 'something put forward' to be solved.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sorun",
+          "alt": [
+            "problem"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'problem' ile aynı kökten gelir; günlük dilde 'sorun' daha yaygındır. 'Sorun değil' demek için 'No problem' denir.",
+          "mistakes": [
+            {
+              "wrong": "I have problem with my computer.",
+              "right": "I have a problem with my computer.",
+              "why": "Türkçede 'bir' demeden 'sorunum var' dersiniz. İngilizcede 'problem' sayılabilir olduğu için 'a problem' ya da 'problems' gerekir."
+            },
+            {
+              "wrong": "There is a problem in my phone.",
+              "right": "There is a problem with my phone.",
+              "why": "Türkçede 'telefonumda sorun var' (bulunma hâli, -da) dersiniz, bu yüzden 'in' ya da 'on' denir. İngilizcede sorun için 'with' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The car is broken, and we have no time. This is a big ______.",
+        "answer": "problem",
+        "distractors": [
+          "holiday",
+          "tooth",
+          "garden"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mistake.n.1",
+      "lemma": "mistake",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mɪˈsteɪk/",
+        "uk": "/mɪˈsteɪk/"
+      },
+      "def": {
+        "micro": "something you do wrong",
+        "short": "something that you do or think that is not right",
+        "long": "Something you do or say that is not correct, usually without wanting to. Everyone makes mistakes when they learn a new language."
+      },
+      "examples": [
+        {
+          "en": "Everyone makes mistakes.",
+          "tr": "Herkes hata yapar.",
+          "register": "neutral",
+          "focus": "mistakes"
+        },
+        {
+          "en": "There is a spelling mistake in this email.",
+          "tr": "Bu e-postada bir yazım hatası var.",
+          "register": "neutral",
+          "focus": "mistake"
+        },
+        {
+          "en": "Zeynep learns from her mistakes.",
+          "tr": "Zeynep hatalarından ders alıyor.",
+          "register": "neutral",
+          "focus": "mistakes"
+        }
+      ],
+      "synonyms": [
+        "error"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "make a mistake",
+        "a big mistake",
+        "spelling mistake",
+        "by mistake",
+        "a silly mistake"
+      ],
+      "word_family": [
+        {
+          "lemma": "mistaken",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old Norse 'mistaka', meaning 'to take wrongly'. It is 'mis-' (wrongly) + 'taka' (take).",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hata",
+          "alt": [
+            "yanlış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'hata yapmak' dersiniz; İngilizcede 'make a mistake' denir. 'By mistake' ise 'yanlışlıkla' demektir.",
+          "mistakes": [
+            {
+              "wrong": "I did a mistake in the exam.",
+              "right": "I made a mistake in the exam.",
+              "why": "Türkçede 'hata yapmak' dersiniz ve 'yapmak' çoğu zaman 'do' sanılır. İngilizcede hata için 'make' kullanılır: make a mistake."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm sorry, I wrote the wrong date. It was my ______.",
+        "answer": "mistake",
+        "distractors": [
+          "ticket",
+          "dictionary",
+          "holiday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "example_dedup_by_editor_agent"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.way.n.1",
+      "lemma": "way",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "route",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/weɪ/",
+        "uk": "/weɪ/"
+      },
+      "def": {
+        "micro": "the road you take to a place",
+        "short": "the road or path you take to get from one place to another",
+        "long": "The road or path you follow to get from one place to another. If you don't know it, you can ask someone the way."
+      },
+      "examples": [
+        {
+          "en": "Can you tell me the way to the station?",
+          "tr": "Bana istasyona giden yolu söyleyebilir misiniz?",
+          "register": "neutral",
+          "focus": "way"
+        },
+        {
+          "en": "Ali asked a woman the way to the museum.",
+          "tr": "Ali bir kadına müzenin yolunu sordu.",
+          "register": "neutral",
+          "focus": "way"
+        },
+        {
+          "en": "I know a faster way to the airport.",
+          "tr": "Havalimanına giden daha hızlı bir yol biliyorum.",
+          "register": "neutral",
+          "focus": "way"
+        }
+      ],
+      "synonyms": [
+        "route",
+        "path"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the way to",
+        "on the way",
+        "ask the way",
+        "lose your way",
+        "the wrong way"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yol",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'yol' hem 'road' hem 'way' hem 'path' demektir. 'The way to' bir yere giden güzergâhtır; 'road' ise asfalt yolun kendisidir. 'On the way' yolda, yol üstünde demektir.",
+          "mistakes": [
+            {
+              "wrong": "Can you tell me the way of the station?",
+              "right": "Can you tell me the way to the station?",
+              "why": "Türkçede 'istasyonun yolu' (tamlama) dersiniz, bu yüzden 'of' denir. İngilizcede varılacak yer için 'to' kullanılır: the way to the station."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Excuse me, can you tell me the ______ to the station? I am lost.",
+        "answer": "way",
+        "distractors": [
+          "color",
+          "weather",
+          "age"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.place.n.1",
+      "lemma": "place",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a particular area",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pleɪs/",
+        "uk": "/pleɪs/"
+      },
+      "def": {
+        "micro": "a particular area or spot",
+        "short": "a particular area, town, building, or spot",
+        "long": "A particular area, town, building, or spot, such as a shop, a park, or a city. We often say 'a nice place' or 'a place to eat'."
+      },
+      "examples": [
+        {
+          "en": "This is a nice place for lunch.",
+          "tr": "Burası öğle yemeği için güzel bir yer.",
+          "register": "neutral",
+          "focus": "place"
+        },
+        {
+          "en": "Kenji is looking for a quiet place to study.",
+          "tr": "Kenji çalışmak için sessiz bir yer arıyor.",
+          "register": "neutral",
+          "focus": "place"
+        },
+        {
+          "en": "My favorite place in the city is the old market.",
+          "tr": "Şehirdeki en sevdiğim yer eski çarşı.",
+          "register": "neutral",
+          "focus": "place"
+        }
+      ],
+      "synonyms": [
+        "spot"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a nice place",
+        "a place to live",
+        "a quiet place",
+        "a place to eat"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'platea', meaning a wide street, which came from Greek 'plateia'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yer",
+          "alt": [
+            "mekân"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Place' hem 'yer' hem 'mekân' demektir. Otobüste ya da arabada boş yer için 'seat' ya da 'room' denir. 'Take place' ise 'gerçekleşmek' anlamına gelir.",
+          "mistakes": [
+            {
+              "wrong": "Is there any place for me in the car?",
+              "right": "Is there room for me in the car?",
+              "why": "Türkçede 'yer var mı?' dersiniz. İngilizcede boş yer, alan için 'room' ya da 'space' denir; 'place' ise belirli bir yerdir (bir şehir, bir dükkân)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This café is a nice ______ to meet friends.",
+        "answer": "place",
+        "distractors": [
+          "spoon",
+          "shirt",
+          "pencil"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.kind.n.1",
+      "lemma": "kind",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "type",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kaɪnd/",
+        "uk": "/kaɪnd/"
+      },
+      "def": {
+        "micro": "one type of something",
+        "short": "a group of things that are alike; a sort or type",
+        "long": "A group of things or people that are alike in some way. We ask 'What kind of music do you like?' and answer 'I like all kinds of music.'"
+      },
+      "examples": [
+        {
+          "en": "What kind of music do you like?",
+          "tr": "Ne tür müzik seversin?",
+          "register": "neutral",
+          "focus": "kind"
+        },
+        {
+          "en": "Mehmet likes all kinds of food.",
+          "tr": "Mehmet her türlü yemeği sever.",
+          "register": "neutral",
+          "focus": "kinds"
+        },
+        {
+          "en": "This is a special kind of tea from Rize.",
+          "tr": "Bu, Rize'nin özel bir çay çeşidi.",
+          "register": "neutral",
+          "focus": "kind"
+        }
+      ],
+      "synonyms": [
+        "type",
+        "sort"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "what kind of",
+        "all kinds of",
+        "a kind of",
+        "some kind of",
+        "this kind of"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'cynd', meaning 'nature' or 'race'. It is related to the word 'kin'.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tür",
+          "alt": [
+            "çeşit",
+            "cins"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Kind' sıfat olarak 'nazik, iyi kalpli' demektir (She is very kind); isim olarak 'tür, çeşit' anlamına gelir. 'What kind of ...' kalıbında 'of' unutulmamalıdır.",
+          "mistakes": [
+            {
+              "wrong": "What kind music do you like?",
+              "right": "What kind of music do you like?",
+              "why": "Türkçede 'ne tür müzik' dersiniz; araya 'of' gibi bir sözcük girmez. İngilizcede 'kind' ile isim arasında 'of' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "What ______ of food do you like? I like Italian and Turkish.",
+        "answer": "kind",
+        "distractors": [
+          "name",
+          "color",
+          "price"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.half.n.1",
+      "lemma": "half",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæf/",
+        "uk": "/hɑːf/"
+      },
+      "def": {
+        "micro": "one of two equal parts",
+        "short": "one of two equal parts of something",
+        "long": "One of two equal parts of something. You can say 'half an hour', 'half of the cake', or 'half past two'."
+      },
+      "examples": [
+        {
+          "en": "I'll be there in half an hour.",
+          "tr": "Yarım saat içinde orada olurum.",
+          "register": "neutral",
+          "focus": "half"
+        },
+        {
+          "en": "Ayşe ate half of the pizza.",
+          "tr": "Ayşe pizzanın yarısını yedi.",
+          "register": "neutral",
+          "focus": "half"
+        },
+        {
+          "en": "The movie starts at half past seven.",
+          "tr": "Film saat yedi buçukta başlıyor.",
+          "register": "neutral",
+          "focus": "half"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "whole"
+      ],
+      "collocations": [
+        "half an hour",
+        "half of",
+        "half past",
+        "half price",
+        "half a kilo"
+      ],
+      "word_family": [
+        {
+          "lemma": "halve",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'healf', meaning 'half' and also 'side'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yarım",
+          "alt": [
+            "yarı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Saat için 'buçuk' denir: 'half past two' iki buçuk demektir. Miktar için 'yarım' (yarım saat) ve 'yarı' (pizzanın yarısı) kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I waited one hour and half.",
+              "right": "I waited an hour and a half.",
+              "why": "Türkçede 'bir buçuk saat' dersiniz. İngilizcede 'an hour and a half' denir; 'half' sözcüğünün önünde de 'a' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I cut the pizza into two equal pieces and ate one. I ate ______ of it.",
+        "answer": "half",
+        "distractors": [
+          "all",
+          "none",
+          "most"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.light.n.1",
+      "lemma": "light",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "lamp",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/laɪt/",
+        "uk": "/laɪt/"
+      },
+      "def": {
+        "micro": "lamp in a room or street",
+        "short": "a lamp or other electric thing that makes a room or place bright",
+        "long": "A lamp or another electric thing that makes a room or street bright. You turn on the light when it is dark and turn it off when you leave."
+      },
+      "examples": [
+        {
+          "en": "Please turn on the light.",
+          "tr": "Lütfen ışığı aç.",
+          "register": "neutral",
+          "focus": "light"
+        },
+        {
+          "en": "Mehmet turned off the light and went to sleep.",
+          "tr": "Mehmet ışığı kapatıp uyudu.",
+          "register": "neutral",
+          "focus": "light"
+        },
+        {
+          "en": "The light in the kitchen doesn't work.",
+          "tr": "Mutfaktaki ışık yanmıyor.",
+          "register": "neutral",
+          "focus": "light"
+        }
+      ],
+      "synonyms": [
+        "lamp"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "turn on the light",
+        "turn off the light",
+        "switch on the light",
+        "a bright light",
+        "light switch"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ışık",
+          "alt": [
+            "lamba"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede ışığı 'açmak' ve 'kapatmak' dersiniz; İngilizcede 'turn on' ve 'turn off' denir. 'Light' sıfat olarak 'hafif' ve 'açık renkli' anlamına da gelir.",
+          "mistakes": [
+            {
+              "wrong": "Please close the light.",
+              "right": "Please turn off the light.",
+              "why": "Türkçede 'ışığı kapat' dersiniz. İngilizcede 'close' kapı, pencere gibi şeyler içindir; ışık için 'turn off' (ya da 'switch off') denir."
+            },
+            {
+              "wrong": "Open the light, please.",
+              "right": "Turn on the light, please.",
+              "why": "Türkçede 'ışığı aç' dersiniz. İngilizcede ışık 'open' edilmez; 'turn on' ya da 'switch on' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's very dark in here. Please turn on the ______.",
+        "answer": "light",
+        "distractors": [
+          "door",
+          "window",
+          "chair"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.floor.n.1",
+      "lemma": "floor",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "level of a building",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/flɔːr/",
+        "uk": "/flɔː/"
+      },
+      "def": {
+        "micro": "one level of a building",
+        "short": "one level of a building, with rooms on it",
+        "long": "One level of a building. People say 'the second floor' or 'the top floor'. In the US the first floor is the ground level; in the UK it is the level above."
+      },
+      "examples": [
+        {
+          "en": "My office is on the third floor.",
+          "tr": "Ofisim üçüncü katta.",
+          "register": "neutral",
+          "focus": "floor"
+        },
+        {
+          "en": "Kenji lives on the top floor of the building.",
+          "tr": "Kenji binanın en üst katında oturuyor.",
+          "register": "neutral",
+          "focus": "floor"
+        },
+        {
+          "en": "Which floor is the restaurant on?",
+          "tr": "Restoran hangi katta?",
+          "register": "neutral",
+          "focus": "floor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the ground floor",
+        "the top floor",
+        "the first floor",
+        "on the second floor"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kat",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "ABD İngilizcesinde 'first floor' zemin kattır; İngiliz İngilizcesinde 'ground floor' zemin, 'first floor' ise bir üst kattır. Odanın zemini de 'floor' olur.",
+          "mistakes": [
+            {
+              "wrong": "My office is in the third floor.",
+              "right": "My office is on the third floor.",
+              "why": "Türkçede 'üçüncü katta' (-da) dersiniz, bu yüzden 'in' denir. İngilizcede kat numarasıyla 'on' kullanılır: on the third floor."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our apartment is on the third ______ of the building, so we climb many stairs.",
+        "answer": "floor",
+        "distractors": [
+          "door",
+          "wall",
+          "key"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.room.n.1",
+      "lemma": "room",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "part of a building",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ruːm/",
+        "uk": "/ruːm/"
+      },
+      "def": {
+        "micro": "space with walls in a home",
+        "short": "a part of a building with its own walls, floor, and ceiling",
+        "long": "A part of a building with its own walls, floor, and ceiling. A house can have a bedroom, a living room, a kitchen, and a bathroom."
+      },
+      "examples": [
+        {
+          "en": "My room is small, but I like it.",
+          "tr": "Odam küçük ama onu seviyorum.",
+          "register": "neutral",
+          "focus": "room"
+        },
+        {
+          "en": "Is there a free room in this hotel?",
+          "tr": "Bu otelde boş oda var mı?",
+          "register": "neutral",
+          "focus": "room"
+        },
+        {
+          "en": "Ali's room is full of books and posters.",
+          "tr": "Ali'nin odası kitap ve posterle dolu.",
+          "register": "neutral",
+          "focus": "room"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "living room",
+        "dining room",
+        "hotel room",
+        "waiting room",
+        "a room for two"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'rūm', which meant 'space'. This is why 'room' also means space, as in 'room for more'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "oda",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Room' sayılabilir olarak 'oda' demektir. Sayılamaz olarak 'yer, boşluk' anlamı da vardır: 'There is no room' yer yok demektir; bu anlamda 'a room' ya da 'rooms' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our apartment has three ______: one for sleeping, one for cooking, and one for washing.",
+        "answer": "rooms",
+        "distractors": [
+          "doors",
+          "gardens",
+          "windows"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.kitchen.n.1",
+      "lemma": "kitchen",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɪtʃən/",
+        "uk": "/ˈkɪtʃən/"
+      },
+      "def": {
+        "micro": "room where you cook food",
+        "short": "the room in a home or restaurant where people cook food",
+        "long": "The room in a home, restaurant, or hotel where food is cooked. A kitchen usually has an oven, a fridge, a sink, and a table."
+      },
+      "examples": [
+        {
+          "en": "Mom is cooking in the kitchen.",
+          "tr": "Annem mutfakta yemek pişiriyor.",
+          "register": "neutral",
+          "focus": "kitchen"
+        },
+        {
+          "en": "Our kitchen is small, but it has a big window.",
+          "tr": "Mutfağımız küçük ama büyük bir penceresi var.",
+          "register": "neutral",
+          "focus": "kitchen"
+        },
+        {
+          "en": "Please wash the dishes and clean the kitchen.",
+          "tr": "Lütfen bulaşıkları yıkayıp mutfağı temizle.",
+          "register": "neutral",
+          "focus": "kitchen"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the kitchen",
+        "kitchen table",
+        "kitchen sink",
+        "clean the kitchen"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'cycene', which came from Latin 'coquina', from 'coquere' (to cook).",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "mutfak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'mutfak' yemek kültürü için de kullanılır (Türk mutfağı); bu anlamda İngilizcede 'cuisine' denir: Turkish cuisine. 'Kitchen' yalnızca yemek yapılan odadır.",
+          "mistakes": [
+            {
+              "wrong": "My mother is in kitchen.",
+              "right": "My mother is in the kitchen.",
+              "why": "Türkçede 'mutfakta' dersiniz; 'the' gibi bir sözcük yoktur. İngilizcede bilinen bir yer için 'the kitchen' denir."
+            },
+            {
+              "wrong": "Turkish kitchen is very famous.",
+              "right": "Turkish cuisine is very famous.",
+              "why": "Türkçede 'Türk mutfağı' dersiniz; 'mutfak' yemek kültürü demektir. İngilizcede 'kitchen' yalnızca odadır; yemek kültürü 'cuisine' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She is washing the dishes and cooking dinner in the ______.",
+        "answer": "kitchen",
+        "distractors": [
+          "bathroom",
+          "bedroom",
+          "classroom"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

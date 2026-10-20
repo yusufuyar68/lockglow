@@ -44,8 +44,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "You borrowed my umbrella. Please ______ the umbrella today.", "answer": "give back", "distractors": ["take off", "turn up", "look for"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "You borrowed my umbrella. Please ______ the umbrella today.", "answer": "give back", "distractors": ["go back", "turn up", "look for"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.take_back.phv.1",
@@ -88,8 +88,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "The shoes don't fit. I'll ______ the shoes to the shop tomorrow.", "answer": "take back", "distractors": ["give up", "pick up", "put on"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The shoes don't fit. I'll ______ the shoes to the shop tomorrow.", "answer": "take back", "distractors": ["eat out", "throw away", "put on"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.look_up.phv.1",
@@ -177,8 +177,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "love_friendship"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "My house is near yours. ______ for dinner tonight!", "answer": "Come over", "distractors": ["Check out", "Get off", "Hang up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "My house is near yours. ______ for dinner tonight!", "answer": "Come over", "distractors": ["Check out", "Look out", "Log out"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.drop_off.phv.1",
@@ -222,8 +222,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I'll ______ the kids at school, and then go to work.", "answer": "drop off", "distractors": ["look after", "take off", "give back"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I'll ______ the kids at school, and then go to work.", "answer": "drop off", "distractors": ["put away", "hand in", "give back"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.sleep_in.phv.1",
@@ -264,8 +264,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "It's Saturday and I have no work. I want to ______ until ten.", "answer": "sleep in", "distractors": ["get up", "wake up", "stand up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "It's Saturday and I have no work. I want to ______ until ten.", "answer": "sleep in", "distractors": ["slow down", "wake up", "stand up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.stay_up.phv.1",
@@ -306,8 +306,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "There's a good game on tonight. I'm going to ______ late to watch it.", "answer": "stay up", "distractors": ["get up", "wake up", "sit down"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "There's a good game on tonight. I'm going to ______ late to watch it.", "answer": "stay up", "distractors": ["get up", "wake up", "break up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.dress_up.phv.1",
@@ -350,8 +350,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "clothes_fashion", "culture_celebrations"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The wedding is very formal, so we need to ______.", "answer": "dress up", "distractors": ["give up", "check in", "wake up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The wedding is very formal, so we need to ______.", "answer": "dress up", "distractors": ["break up", "check in", "wake up"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.set_off.phv.1",
@@ -394,8 +394,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The trip starts at dawn. We'll ______ at five.", "answer": "set off", "distractors": ["get off", "put off", "turn off"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "The trip starts at dawn. We'll ______ at five.", "answer": "set off", "distractors": ["get off", "put off", "slow down"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.turn_around.phv.1",
@@ -438,8 +438,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I think we're lost. Please ______ and go back.", "answer": "turn around", "distractors": ["turn off", "turn up", "give up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "I think we're lost. Please ______ and go back.", "answer": "turn around", "distractors": ["sign up", "turn up", "log out"]},
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     }
   ]
 }

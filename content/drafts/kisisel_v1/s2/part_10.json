@@ -44,8 +44,8 @@
     }
   },
   "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I was tired, so I lay down and took a short ______ on the sofa.", "answer": "nap", "distractors": ["exam", "lesson", "ticket"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I was tired, so I lay down and took a short ______ on the sofa.", "answer": "nap", "distractors": ["exam", "lesson", "shower"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited","distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.recently.adv.1",
@@ -258,8 +258,8 @@
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I always buy a small ______ from every city I visit.", "answer": "souvenir", "distractors": ["passport", "timetable", "platform"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I always buy a small ______ from every city I visit.", "answer": "souvenir", "distractors": ["passport", "timetable", "airport"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited","distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.sightseeing.n.1",
@@ -346,8 +346,8 @@
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "After we landed, we went through ______ and showed our passports and bags.", "answer": "customs", "distractors": ["platform", "elevator", "highway"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "After we landed, we went through ______ and showed our passports and bags.", "answer": "customs", "distractors": ["traffic", "elevator", "highway"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.currency.n.1",

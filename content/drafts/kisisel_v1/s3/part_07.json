@@ -15,8 +15,8 @@
 "word_family":[{"lemma":"excuse","pos":"v"}],"etymology":null,
 "l1":{"tr":{"gloss":"bahane","alt":["mazeret"],"equivalence":"full","false_friend":null,"note":"İsim 'excuse' /ɪkˈskjuːs/ = bahane, mazeret. Fiil 'excuse' /ɪkˈskjuːz/ = bağışlamak; 'Excuse me' = Affedersiniz / Pardon.","mistakes":[],"mnemonic":null}},
 "tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:reason"],"sensitivity":0},
-"quiz":{"cloze":"That is not a good ______ for being late.","answer":"excuse","distractors":["price","plan","trip"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"That is not a good ______ for being late.","answer":"excuse","distractors":["song","plan","trip"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.blame.v.1","lemma":"blame","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/bleɪm/","uk":"/bleɪm/"},
@@ -150,7 +150,7 @@
 "word_family":[{"lemma":"loyalty","pos":"n"},{"lemma":"loyally","pos":"adv"}],"etymology":null,
 "l1":{"tr":{"gloss":"sadık","alt":["vefalı","bağlı"],"equivalence":"full","false_friend":null,"note":"'Loyal' yanında durmak ve bağlı kalmaktır. Türkçede 'vefalı' (iyiliği unutmayan) ve 'sadık' (bağlı) ikisini de karşılar.","mistakes":[{"wrong":"He is loyal with his friends.","right":"He is loyal to his friends.","why":"'-e sadık olmak' için 'loyal TO'; 'with' kullanılmaz."}],"mnemonic":null}},
 "tags":{"primary_topic":"love_friendship","topics":["love_friendship","personality"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"A ______ friend always stays with you in bad times.","answer":"loyal","distractors":["rude","lazy","shy"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
+"quiz":{"cloze":"A ______ friend always stays with you in bad times.","answer":"loyal","distractors":["selfish","mean","rude"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
 ]
 }

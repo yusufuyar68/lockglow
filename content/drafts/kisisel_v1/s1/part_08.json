@@ -489,15 +489,16 @@
         "cloze": "I can't wear this shirt anymore. It doesn't ______ me.",
         "answer": "fit",
         "distractors": [
-          "wear",
-          "tidy",
-          "taste"
+          "iron",
+          "wash",
+          "borrow"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -1000,12 +1001,14 @@
         "distractors": [
           "fabric",
           "pocket",
-          "size"
+          "button"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

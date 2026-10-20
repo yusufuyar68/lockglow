@@ -1,0 +1,1149 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.need.v.1",
+      "lemma": "need",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "must have or do something",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/niːd/",
+        "uk": "/niːd/"
+      },
+      "def": {
+        "micro": "must have or do something",
+        "short": "to be in a situation where you must have or do something",
+        "long": "To be in a situation where you must have something or do something. We say 'need' and a thing ('I need a pen') or 'need to' and a verb ('I need to go'). It is stronger than 'want'."
+      },
+      "grammar": {
+        "pattern": "need + sth / need to + verb"
+      },
+      "examples": [
+        {
+          "en": "I need a new phone.",
+          "tr": "Yeni bir telefona ihtiyacım var.",
+          "register": "neutral",
+          "focus": "need"
+        },
+        {
+          "en": "Do you need any help with your bags?",
+          "tr": "Çantalarınız için yardıma ihtiyacınız var mı?",
+          "register": "neutral",
+          "focus": "need"
+        },
+        {
+          "en": "Deniz needs to leave early today.",
+          "tr": "Deniz'in bugün erken çıkması gerekiyor.",
+          "register": "neutral",
+          "focus": "needs"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "need help",
+        "need a break",
+        "need time",
+        "need to go",
+        "need some water"
+      ],
+      "word_family": [
+        {
+          "lemma": "need",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ihtiyacı olmak, gerekmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'ihtiyacım var', 'lazım' ve 'gerek' denir; İngilizcede hepsi 'need' ile söylenir: I need a pen = Bir kalem lazım. 'Need to' + fiil: I need to go = Gitmem gerek.",
+          "mistakes": [
+            {
+              "wrong": "I need go to the bank.",
+              "right": "I need to go to the bank.",
+              "why": "Türkçede 'gitmem gerek' tek bir yapıdır, ayrı bir 'to' yoktur. İngilizcede 'need' ile fiil arasında 'to' gerekir: need to go."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:want"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctor says I ______ to rest for two days.",
+        "answer": "need",
+        "distractors": [
+          "hope",
+          "plan",
+          "decide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.want.v.1",
+      "lemma": "want",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɑːnt/",
+        "uk": "/wɒnt/"
+      },
+      "def": {
+        "micro": "wish to have or do something",
+        "short": "to feel that you would like to have or do something",
+        "long": "To feel that you would like to have something or do something. We say 'want' and a thing ('I want a coffee') or 'want to' and a verb ('I want to sleep'). It is more direct than 'would like'."
+      },
+      "grammar": {
+        "pattern": "want + sth / want to + verb"
+      },
+      "examples": [
+        {
+          "en": "I want a cup of coffee.",
+          "tr": "Bir fincan kahve istiyorum.",
+          "register": "neutral",
+          "focus": "want"
+        },
+        {
+          "en": "Do you want to go to the cinema tonight?",
+          "tr": "Bu akşam sinemaya gitmek ister misin?",
+          "register": "neutral",
+          "focus": "want"
+        },
+        {
+          "en": "Tom doesn't want to cook tonight.",
+          "tr": "Tom bu akşam yemek yapmak istemiyor.",
+          "register": "neutral",
+          "focus": "want"
+        }
+      ],
+      "synonyms": [
+        "would like"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "want a coffee",
+        "want to go",
+        "want some help",
+        "want more time",
+        "want to know"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old Norse 'vanta', meaning 'to lack'. The meaning slowly changed from 'lack something' to 'wish for something'.",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "istemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Want' ile fiil kullanırken 'to' gerekir: I want to go. Kibar isteklerde 'would like' daha uygundur: I'd like a coffee, please.",
+          "mistakes": [
+            {
+              "wrong": "I am wanting a cup of tea.",
+              "right": "I want a cup of tea.",
+              "why": "Türkçede 'istiyorum' -yor ekiyle (şimdiki zaman) söylenir; bu yüzden 'I'm wanting' denir. 'Want' durum bildiren bir fiildir ve genellikle -ing almaz."
+            },
+            {
+              "wrong": "I want that you help me.",
+              "right": "I want you to help me.",
+              "why": "Türkçede 'yardım etmeni istiyorum' denir ve fiil ayrı bir ek alır; bu yüzden 'want that' denir. İngilizcede bu yapı 'want' + kişi + to + fiil olur, 'that' ile kurulmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:need"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister ______ a new bike for her birthday.",
+        "answer": "wants",
+        "distractors": [
+          "hopes",
+          "asks",
+          "wishes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.know.v.1",
+      "lemma": "know",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have facts or know a person",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/noʊ/",
+        "uk": "/nəʊ/"
+      },
+      "def": {
+        "micro": "have facts or information",
+        "short": "to have information in your mind, or to be familiar with a person",
+        "long": "To have facts or information in your mind, or to be familiar with a person or a place. You know a phone number or an answer. You meet someone first, and after that you know them."
+      },
+      "grammar": {
+        "pattern": "know + sth / sb / that-clause"
+      },
+      "examples": [
+        {
+          "en": "I don't know the answer.",
+          "tr": "Cevabı bilmiyorum.",
+          "register": "neutral",
+          "focus": "know"
+        },
+        {
+          "en": "Do you know Zeynep? She works in my office.",
+          "tr": "Zeynep'i tanıyor musun? Benim ofisimde çalışıyor.",
+          "register": "neutral",
+          "focus": "know"
+        },
+        {
+          "en": "Mehmet knows three languages.",
+          "tr": "Mehmet üç dil biliyor.",
+          "register": "neutral",
+          "focus": "knows"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "know the answer",
+        "know a lot",
+        "know each other",
+        "know how to cook",
+        "let me know"
+      ],
+      "word_family": [
+        {
+          "lemma": "knowledge",
+          "pos": "n"
+        },
+        {
+          "lemma": "known",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bilmek",
+          "alt": [
+            "tanımak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede iki fiil var: bilmek (bilgi) ve tanımak (kişi, yer). İngilizcede ikisi de 'know'. 'Tanışmak' ise 'meet' demektir. Düzensiz: know - knew - known.",
+          "mistakes": [
+            {
+              "wrong": "I am knowing his name.",
+              "right": "I know his name.",
+              "why": "Türkçede 'biliyorum' -yor ekiyle (şimdiki zaman) söylenir; bu yüzden 'I'm knowing' denir. 'Know' durum fiilidir ve -ing almaz."
+            },
+            {
+              "wrong": "I don't know to swim.",
+              "right": "I don't know how to swim.",
+              "why": "Türkçede 'yüzmeyi bilmiyorum' denir. İngilizcede bir beceri için 'know how to' + fiil gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:meet"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry, I don't ______ the answer. Please ask your teacher.",
+        "answer": "know",
+        "distractors": [
+          "open",
+          "visit",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.think.v.1",
+      "lemma": "think",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have an opinion",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/θɪŋk/",
+        "uk": "/θɪŋk/"
+      },
+      "def": {
+        "micro": "have an idea or opinion",
+        "short": "to have an opinion or an idea about something",
+        "long": "To have an opinion or an idea about something. We often say 'I think' and then a sentence: 'I think it is a good idea.' To talk about a plan in your mind, we say 'think about' it."
+      },
+      "grammar": {
+        "pattern": "think (that) + clause / think about + sth"
+      },
+      "examples": [
+        {
+          "en": "I think it is a good idea.",
+          "tr": "Bence bu iyi bir fikir.",
+          "register": "neutral",
+          "focus": "think"
+        },
+        {
+          "en": "What do you think about this plan?",
+          "tr": "Bu plan hakkında ne düşünüyorsun?",
+          "register": "neutral",
+          "focus": "think"
+        },
+        {
+          "en": "Emma thinks the film is too long.",
+          "tr": "Emma filmin çok uzun olduğunu düşünüyor.",
+          "register": "neutral",
+          "focus": "thinks"
+        }
+      ],
+      "synonyms": [
+        "believe"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "I think so",
+        "I don't think so",
+        "think about it",
+        "think of an idea",
+        "think twice"
+      ],
+      "word_family": [
+        {
+          "lemma": "thought",
+          "pos": "n"
+        },
+        {
+          "lemma": "thoughtful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düşünmek",
+          "alt": [
+            "sanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Think' görüş bildirir: I think it's good = Bence güzel. 'Think about' bir konuyu düşünmektir; 'think of' bir fikir bulmaktır. Düzensiz: think - thought - thought.",
+          "mistakes": [
+            {
+              "wrong": "I am thinking it is a good idea.",
+              "right": "I think it is a good idea.",
+              "why": "Türkçede 'düşünüyorum' -yor ekiyle (şimdiki zaman) söylenir. Fikir bildirirken İngilizce 'I think' der; 'I'm thinking' bir şeyi kafada çevirmektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:believe"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Lucas ______ the movie is boring. He keeps looking at his phone.",
+        "answer": "thinks",
+        "distractors": [
+          "wants",
+          "likes",
+          "watches"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.understand.v.1",
+      "lemma": "understand",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌʌndərˈstænd/",
+        "uk": "/ˌʌndəˈstænd/"
+      },
+      "def": {
+        "micro": "see what something means",
+        "short": "to know what a person or a word means",
+        "long": "To know what a word, a sentence, or a person means. You can understand a language, a problem, or a person's feelings. It is used with the person or thing directly, with no 'to'."
+      },
+      "grammar": {
+        "pattern": "understand + sth / sb"
+      },
+      "examples": [
+        {
+          "en": "I don't understand this word.",
+          "tr": "Bu kelimeyi anlamıyorum.",
+          "register": "neutral",
+          "focus": "understand"
+        },
+        {
+          "en": "Can you speak slowly? I can't understand you.",
+          "tr": "Yavaş konuşabilir misin? Seni anlayamıyorum.",
+          "register": "neutral",
+          "focus": "understand"
+        },
+        {
+          "en": "Yuki understands Spanish, but she can't speak it well.",
+          "tr": "Yuki İspanyolca anlıyor ama iyi konuşamıyor.",
+          "register": "neutral",
+          "focus": "understands"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "misunderstand"
+      ],
+      "collocations": [
+        "understand the question",
+        "understand English",
+        "I don't understand",
+        "understand each other",
+        "understand why"
+      ],
+      "word_family": [
+        {
+          "lemma": "understanding",
+          "pos": "n"
+        },
+        {
+          "lemma": "understandable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'understandan'. Here 'under' probably meant 'among' or 'between', so the idea was 'to stand in the middle of' something.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "anlamak",
+          "alt": [
+            "kavramak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Understand' kişiyi ya da şeyi doğrudan alır: 'understand you' (seni anlamak). Durum fiilidir, genelde -ing almaz. Düzensiz: understand - understood - understood.",
+          "mistakes": [
+            {
+              "wrong": "I am understand you.",
+              "right": "I understand you.",
+              "why": "Türkçede 'anlıyorum' tek kelimedir ve sondaki -um 'ben'i taşır; bu yüzden 'I am' + fiil denir. İngilizcede 'am' ile yalın fiil birlikte kullanılmaz."
+            },
+            {
+              "wrong": "I don't understand nothing.",
+              "right": "I don't understand anything.",
+              "why": "Türkçede 'hiçbir şey anlamıyorum' denir; 'hiçbir şey' ile birlikte fiil de olumsuzdur. İngilizcede olumsuz fiilden sonra 'nothing' değil 'anything' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't ______ the teacher because she speaks too fast.",
+        "answer": "understand",
+        "distractors": [
+          "speak",
+          "visit",
+          "call"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mean.v.1",
+      "lemma": "mean",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have a meaning",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/miːn/",
+        "uk": "/miːn/"
+      },
+      "def": {
+        "micro": "say or show a certain idea",
+        "short": "to give a certain idea or sense, as a word, a sign, or a sentence does",
+        "long": "To give a certain idea or sense, as a word, a sign, or a sentence does. We use it to ask about words: 'What does this word mean?' The answer is an explanation, or the same word in another language."
+      },
+      "grammar": {
+        "pattern": "What does + sth + mean?"
+      },
+      "examples": [
+        {
+          "en": "What does this word mean?",
+          "tr": "Bu kelime ne demek?",
+          "register": "neutral",
+          "focus": "mean"
+        },
+        {
+          "en": "A red light means stop.",
+          "tr": "Kırmızı ışık dur demektir.",
+          "register": "neutral",
+          "focus": "means"
+        },
+        {
+          "en": "In Turkish, 'merhaba' means 'hello'.",
+          "tr": "Türkçede 'merhaba', 'hello' demektir.",
+          "register": "neutral",
+          "focus": "means"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "what does it mean",
+        "mean the same",
+        "mean nothing",
+        "mean something"
+      ],
+      "word_family": [
+        {
+          "lemma": "meaning",
+          "pos": "n"
+        },
+        {
+          "lemma": "meaningful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "demek, anlamına gelmek",
+          "alt": [
+            "anlamı olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'Bu ne demek?' deriz; İngilizcede soru 'What does ... mean?' biçimindedir ve 'does' gerekir. Düzensiz: mean - meant - meant (okunuşu /ment/).",
+          "mistakes": [
+            {
+              "wrong": "What means this word?",
+              "right": "What does this word mean?",
+              "why": "Türkçede 'Bu kelime ne demek?' tek parçadır ve yardımcı fiil yoktur. İngilizcede soru yapmak için 'does' gerekir ve 'mean' sona gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "What does the Turkish word 'ucuz' ______ in English?",
+        "answer": "mean",
+        "distractors": [
+          "talk",
+          "speak",
+          "tell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feel.v.1",
+      "lemma": "feel",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have a feeling",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fiːl/",
+        "uk": "/fiːl/"
+      },
+      "def": {
+        "micro": "have a certain feeling",
+        "short": "to have a certain feeling in your mind or body",
+        "long": "To have a certain feeling in your mind or body. You can feel happy, tired, cold, or sick. We say 'I feel' and then an adjective: 'I feel tired.'"
+      },
+      "grammar": {
+        "pattern": "feel + adjective"
+      },
+      "examples": [
+        {
+          "en": "I feel tired today.",
+          "tr": "Bugün yorgun hissediyorum.",
+          "register": "neutral",
+          "focus": "feel"
+        },
+        {
+          "en": "Do you feel better now?",
+          "tr": "Şimdi kendini daha iyi hissediyor musun?",
+          "register": "neutral",
+          "focus": "feel"
+        },
+        {
+          "en": "Mia felt nervous before her exam.",
+          "tr": "Mia sınavdan önce gergin hissetti.",
+          "register": "neutral",
+          "focus": "felt"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "feel tired",
+        "feel better",
+        "feel sick",
+        "feel happy",
+        "feel cold"
+      ],
+      "word_family": [
+        {
+          "lemma": "feeling",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hissetmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Feel' sıfatla kullanılır: I feel tired = Yorgun hissediyorum. 'Üşümek' için 'I feel cold' ya da 'I'm cold' denir. Düzensiz: feel - felt - felt.",
+          "mistakes": [
+            {
+              "wrong": "I feel myself bad.",
+              "right": "I feel bad.",
+              "why": "Türkçede 'kendimi kötü hissediyorum' denir ve 'kendimi' (= myself) söylenir. İngilizcede 'feel' kendiliğinden yeter: 'myself' eklenmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It is freezing in here. I ______ cold. Can you close the window?",
+        "answer": "feel",
+        "distractors": [
+          "want",
+          "need",
+          "know"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.look.v.1",
+      "lemma": "look",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "seem",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lʊk/",
+        "uk": "/lʊk/"
+      },
+      "def": {
+        "micro": "seem to be a certain way",
+        "short": "to seem a certain way to the person who sees you or the thing",
+        "long": "To seem a certain way to the person who sees you or a thing. We use it with an adjective: 'You look tired' or 'This cake looks delicious.' It is about the outside, what we can see."
+      },
+      "grammar": {
+        "pattern": "look + adjective / look like + noun"
+      },
+      "examples": [
+        {
+          "en": "You look tired. Are you okay?",
+          "tr": "Yorgun görünüyorsun. İyi misin?",
+          "register": "neutral",
+          "focus": "look"
+        },
+        {
+          "en": "This soup looks delicious!",
+          "tr": "Bu çorba çok lezzetli görünüyor!",
+          "register": "neutral",
+          "focus": "looks"
+        },
+        {
+          "en": "Kenji looked happy after the exam.",
+          "tr": "Kenji sınavdan sonra mutlu görünüyordu.",
+          "register": "neutral",
+          "focus": "looked"
+        }
+      ],
+      "synonyms": [
+        "seem"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "look tired",
+        "look happy",
+        "look good",
+        "look great",
+        "look different"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görünmek",
+          "alt": [
+            "gözükmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Look' + sıfat = görünmek: You look tired. Bir şeye bakmak için 'look at', aramak için 'look for' denir. 'Benzemek' için 'look like' + isim kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "You look like tired.",
+              "right": "You look tired.",
+              "why": "Türkçede 'yorgun gibi görünüyorsun' diyebiliriz ve 'gibi' = 'like' olarak çevrilir. Sıfattan önce 'like' gelmez; 'like' isimle kullanılır: look like a student."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:feel"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You ______ great in that blue shirt!",
+        "answer": "look",
+        "distractors": [
+          "wear",
+          "buy",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.start.v.1",
+      "lemma": "start",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "begin",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stɑːrt/",
+        "uk": "/stɑːt/"
+      },
+      "def": {
+        "micro": "begin to do or happen",
+        "short": "to begin to do something, or to begin to happen",
+        "long": "To begin to do something, or to begin to happen. Classes, films, and work all start at a certain time. We can say 'start to' or 'start' and a verb with -ing."
+      },
+      "grammar": {
+        "pattern": "start + sth / start to + verb"
+      },
+      "examples": [
+        {
+          "en": "The film starts at eight.",
+          "tr": "Film sekizde başlıyor.",
+          "register": "neutral",
+          "focus": "starts"
+        },
+        {
+          "en": "I start work at nine every day.",
+          "tr": "Her gün dokuzda işe başlarım.",
+          "register": "neutral",
+          "focus": "start"
+        },
+        {
+          "en": "It started to rain, so we went inside.",
+          "tr": "Yağmur yağmaya başladı, biz de içeri girdik.",
+          "register": "neutral",
+          "focus": "started"
+        }
+      ],
+      "synonyms": [
+        "begin"
+      ],
+      "antonyms": [
+        "stop",
+        "finish"
+      ],
+      "collocations": [
+        "start work",
+        "start a new job",
+        "start again",
+        "start to rain",
+        "start the engine"
+      ],
+      "word_family": [
+        {
+          "lemma": "start",
+          "pos": "n"
+        },
+        {
+          "lemma": "starter",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Middle English 'sterten', meaning 'to jump or move suddenly'. The meaning 'begin' came later.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "başlamak",
+          "alt": [
+            "başlatmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hem 'başlamak' hem 'başlatmak' için 'start' denir: The film starts / I start the car. 'Begin' daha resmî durur.",
+          "mistakes": [
+            {
+              "wrong": "I started to the English course last week.",
+              "right": "I started the English course last week.",
+              "why": "Türkçede 'kursa başladım' (-a hâli) dediğimiz için 'to' denir. İngilizcede 'start' doğrudan nesne alır: start a course."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The English lesson ______ at nine o'clock. Don't be late!",
+        "answer": "starts",
+        "distractors": [
+          "sells",
+          "wears",
+          "teaches"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stop.v.1",
+      "lemma": "stop",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "end a movement or action",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stɑːp/",
+        "uk": "/stɒp/"
+      },
+      "def": {
+        "micro": "end a movement or action",
+        "short": "to end an action or a movement, or to not go on any more",
+        "long": "To end an action or a movement, or to not go on any more. Buses and trains stop at stations. We say 'stop' and a verb with -ing: 'Please stop talking.'"
+      },
+      "grammar": {
+        "pattern": "stop + -ing / stop at + place"
+      },
+      "examples": [
+        {
+          "en": "Please stop the music.",
+          "tr": "Lütfen müziği durdur.",
+          "register": "neutral",
+          "focus": "stop"
+        },
+        {
+          "en": "The bus stops in front of my house.",
+          "tr": "Otobüs evimin önünde durur.",
+          "register": "neutral",
+          "focus": "stops"
+        },
+        {
+          "en": "Stop talking, please. The baby is sleeping.",
+          "tr": "Konuşmayı bırak lütfen. Bebek uyuyor.",
+          "register": "neutral",
+          "focus": "Stop"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "start",
+        "continue"
+      ],
+      "collocations": [
+        "stop talking",
+        "stop the car",
+        "stop here",
+        "stop at the lights",
+        "stop the music"
+      ],
+      "word_family": [
+        {
+          "lemma": "stop",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'forstoppian', 'to block up, to plug a hole'. The meaning 'cease moving' appeared much later.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "durmak, durdurmak",
+          "alt": [
+            "bırakmak",
+            "kesmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Stop' + -ing = bir işi bırakmak: stop talking = konuşmayı bırakmak. Ama 'durmak' bazen 'beklemek' demektir: 'bir dakika dur' için 'wait' denir. Geçmiş zaman: stopped (p ikilenir).",
+          "mistakes": [
+            {
+              "wrong": "Please stop to talk. The baby is sleeping.",
+              "right": "Please stop talking. The baby is sleeping.",
+              "why": "Türkçede 'konuşmayı bırak' denir; 'konuşmak' (to talk) akla geldiği için 'stop to talk' denir. 'Stop to talk' konuşmak için durmak demektir. Bırakmak için 'stop talking' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:wait"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The traffic light is red, so the car must ______.",
+        "answer": "stop",
+        "distractors": [
+          "start",
+          "go",
+          "sleep"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1126 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.dirty.adj.1",
+      "lemma": "dirty",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not clean",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɜːrti/",
+        "uk": "/ˈdɜːti/"
+      },
+      "def": {
+        "micro": "not clean",
+        "short": "covered with mud, dust or other marks",
+        "long": "Covered with mud, dust or other marks, so it needs washing. Dirty clothes go in the washing machine, and dirty dishes go in the sink. The opposite is clean."
+      },
+      "examples": [
+        {
+          "en": "Your shoes are dirty.",
+          "tr": "Ayakkabıların kirli.",
+          "register": "neutral",
+          "focus": "dirty"
+        },
+        {
+          "en": "Put the dirty clothes in the washing machine.",
+          "tr": "Kirli çamaşırları çamaşır makinesine at.",
+          "register": "neutral",
+          "focus": "dirty"
+        },
+        {
+          "en": "The kitchen was dirty, so Mehmet cleaned it for two hours.",
+          "tr": "Mutfak kirliydi, bu yüzden Mehmet onu iki saat temizledi.",
+          "register": "neutral",
+          "focus": "dirty"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "clean"
+      ],
+      "collocations": [
+        "dirty clothes",
+        "dirty hands",
+        "dirty dishes",
+        "a dirty window",
+        "dirty water"
+      ],
+      "word_family": [
+        {
+          "lemma": "dirt",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kirli",
+          "alt": [
+            "pis"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'clean' (temiz). Kirli çamaşır = dirty clothes, kirli bulaşık = dirty dishes. 'Dirt' isimdir (kir, toprak); sıfatı 'dirty' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet played football in the rain, so his shoes are very ______.",
+        "answer": "dirty",
+        "distractors": [
+          "clean",
+          "dry",
+          "new"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.safe.adj.1",
+      "lemma": "safe",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not in danger",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪf/",
+        "uk": "/seɪf/"
+      },
+      "def": {
+        "micro": "not in danger",
+        "short": "not in danger and not likely to hurt you",
+        "long": "Not in danger, or not likely to hurt anyone. A quiet street, a strong car or a locked door can make you feel safe. Safe is the opposite of dangerous."
+      },
+      "examples": [
+        {
+          "en": "Is this water safe to drink?",
+          "tr": "Bu suyu içmek güvenli mi?",
+          "register": "neutral",
+          "focus": "safe"
+        },
+        {
+          "en": "I feel safe in this neighborhood.",
+          "tr": "Bu mahallede kendimi güvende hissediyorum.",
+          "register": "neutral",
+          "focus": "safe"
+        },
+        {
+          "en": "Elif always wears a helmet to stay safe on her bike.",
+          "tr": "Elif bisikletinde güvende kalmak için her zaman kask takar.",
+          "register": "neutral",
+          "focus": "safe"
+        }
+      ],
+      "synonyms": [
+        "secure"
+      ],
+      "antonyms": [
+        "dangerous",
+        "unsafe"
+      ],
+      "collocations": [
+        "feel safe",
+        "a safe place",
+        "safe to drink",
+        "safe and sound",
+        "stay safe"
+      ],
+      "word_family": [
+        {
+          "lemma": "safely",
+          "pos": "adv"
+        },
+        {
+          "lemma": "safety",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'sauf', from Latin 'salvus', meaning 'whole' or 'unhurt'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "güvenli",
+          "alt": [
+            "emniyetli",
+            "güvende"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Safe' = güvenli ya da güvende. Kişi için 'feel safe' (güvende hissetmek) denir. İsmi 'safety' (güvenlik), karşıtı 'dangerous' (tehlikeli).",
+          "mistakes": [
+            {
+              "wrong": "I feel myself safe in this city.",
+              "right": "I feel safe in this city.",
+              "why": "Türkçede 'kendimi güvende hissediyorum' dersiniz, bu yüzden 'myself' eklenir. İngilizcede 'feel' fiilinden sonra 'myself' konmaz: I feel safe."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There are police and cameras on every street, so the city is very ______.",
+        "answer": "safe",
+        "distractors": [
+          "dangerous",
+          "slow",
+          "poor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dangerous.adj.1",
+      "lemma": "dangerous",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "able to cause harm",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdeɪndʒərəs/",
+        "uk": "/ˈdeɪndʒərəs/"
+      },
+      "def": {
+        "micro": "likely to cause harm",
+        "short": "likely to hurt people or cause problems",
+        "long": "Likely to hurt people or cause serious problems. A fast car, a strong storm or a deep river can be dangerous. Signs say 'Danger' to warn you."
+      },
+      "examples": [
+        {
+          "en": "Don't swim here. It is dangerous.",
+          "tr": "Burada yüzme. Tehlikeli.",
+          "register": "neutral",
+          "focus": "dangerous"
+        },
+        {
+          "en": "It is dangerous to drive fast in the rain.",
+          "tr": "Yağmurda hızlı araba kullanmak tehlikelidir.",
+          "register": "neutral",
+          "focus": "dangerous"
+        },
+        {
+          "en": "Ayşe says this road is dangerous for children.",
+          "tr": "Ayşe bu yolun çocuklar için tehlikeli olduğunu söylüyor.",
+          "register": "neutral",
+          "focus": "dangerous"
+        }
+      ],
+      "synonyms": [
+        "risky"
+      ],
+      "antonyms": [
+        "safe"
+      ],
+      "collocations": [
+        "a dangerous road",
+        "a dangerous animal",
+        "very dangerous",
+        "dangerous for children"
+      ],
+      "word_family": [
+        {
+          "lemma": "danger",
+          "pos": "n"
+        },
+        {
+          "lemma": "dangerously",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tehlikeli",
+          "alt": [
+            "riskli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim 'danger' (tehlike), sıfat 'dangerous' (tehlikeli). Karşıtı 'safe'. 'Be in danger' = tehlikede olmak.",
+          "mistakes": [
+            {
+              "wrong": "Don't swim here. It is danger.",
+              "right": "Don't swim here. It is dangerous.",
+              "why": "Türkçede 'tehlike' ve 'tehlikeli' ayrı sözcüklerdir; '-li' eki İngilizcede çoğu zaman '-ous' olur. 'Danger' isimdir (tehlike), 'dangerous' sıfattır (tehlikeli)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't touch that wire. It is ______ and can hurt you.",
+        "answer": "dangerous",
+        "distractors": [
+          "safe",
+          "free",
+          "ready"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.healthy.adj.1",
+      "lemma": "healthy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not ill, or good for the body",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɛlθi/",
+        "uk": "/ˈhɛlθi/"
+      },
+      "def": {
+        "micro": "not ill; fit and well",
+        "short": "not ill, or good for your body",
+        "long": "Not ill, with a body that works well. Healthy food, like fruit and vegetables, is good for your body. Sport and sleep help you stay healthy too."
+      },
+      "examples": [
+        {
+          "en": "Fruit and vegetables are healthy.",
+          "tr": "Meyve ve sebze sağlıklıdır.",
+          "register": "neutral",
+          "focus": "healthy"
+        },
+        {
+          "en": "My grandfather is eighty, but he is still very healthy.",
+          "tr": "Dedem seksen yaşında ama hâlâ çok sağlıklı.",
+          "register": "neutral",
+          "focus": "healthy"
+        },
+        {
+          "en": "Kenji eats a healthy breakfast before school.",
+          "tr": "Kenji okuldan önce sağlıklı bir kahvaltı yapar.",
+          "register": "neutral",
+          "focus": "healthy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unhealthy"
+      ],
+      "collocations": [
+        "healthy food",
+        "a healthy diet",
+        "healthy habits",
+        "stay healthy",
+        "a healthy lifestyle"
+      ],
+      "word_family": [
+        {
+          "lemma": "health",
+          "pos": "n"
+        },
+        {
+          "lemma": "healthily",
+          "pos": "adv"
+        },
+        {
+          "lemma": "unhealthy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From 'health', which comes from Old English 'hǣlth' and the old word 'hāl', meaning 'whole'. 'Whole' and 'heal' come from the same root.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sağlıklı",
+          "alt": [
+            "sağlam",
+            "zinde"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Healthy' = sağlıklı. Hem insan hem yiyecek için kullanılır. İsmi 'health' (sağlık). Sağlıklı yemek = healthy food.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Fruit, vegetables and water are very ______ for your body.",
+        "answer": "healthy",
+        "distractors": [
+          "dirty",
+          "loud",
+          "thin"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.strong.adj.1",
+      "lemma": "strong",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "with great physical power",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/strɔːŋ/",
+        "uk": "/strɒŋ/"
+      },
+      "def": {
+        "micro": "with a lot of power",
+        "short": "able to lift heavy things or to not break easily",
+        "long": "Having a lot of power in the body, or not easy to break. A strong man can lift heavy boxes, and a strong rope does not break. Coffee or wind can be strong too."
+      },
+      "examples": [
+        {
+          "en": "My father is strong. He can lift this table.",
+          "tr": "Babam güçlü. Bu masayı kaldırabilir.",
+          "register": "neutral",
+          "focus": "strong"
+        },
+        {
+          "en": "Use a strong bag, because these books are heavy.",
+          "tr": "Sağlam bir çanta kullan, çünkü bu kitaplar ağır.",
+          "register": "neutral",
+          "focus": "strong"
+        },
+        {
+          "en": "There was a strong wind last night.",
+          "tr": "Dün gece kuvvetli bir rüzgâr vardı.",
+          "register": "neutral",
+          "focus": "strong"
+        }
+      ],
+      "synonyms": [
+        "powerful"
+      ],
+      "antonyms": [
+        "weak"
+      ],
+      "collocations": [
+        "a strong wind",
+        "strong coffee",
+        "a strong man",
+        "a strong bag"
+      ],
+      "word_family": [
+        {
+          "lemma": "strength",
+          "pos": "n"
+        },
+        {
+          "lemma": "strongly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "strengthen",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'strang', meaning 'strong'. The noun 'strength' comes from the same root.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "güçlü",
+          "alt": [
+            "kuvvetli",
+            "sağlam"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Strong' = güçlü, kuvvetli. Kişi, rüzgâr, kahve ve çay için kullanılır. Eşya için 'sağlam' anlamı da vardır: a strong bag. Karşıtı 'weak' (zayıf).",
+          "mistakes": [
+            {
+              "wrong": "We had strong rain yesterday.",
+              "right": "We had heavy rain yesterday.",
+              "why": "Türkçede 'kuvvetli yağmur' denebilir, bu yüzden 'strong' akla gelir. İngilizcede yağmur 'heavy' olur; 'strong' rüzgâr, kahve ve çay için kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali lifts the heavy box easily because he is very ______.",
+        "answer": "strong",
+        "distractors": [
+          "weak",
+          "slow",
+          "quiet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.young.adj.1",
+      "lemma": "young",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not old",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/jʌŋ/",
+        "uk": "/jʌŋ/"
+      },
+      "def": {
+        "micro": "not old; born not long ago",
+        "short": "having lived for only a short time; not old",
+        "long": "Having lived for only a short time, so not old. A baby, a child and a teenager are young. We can also say a young man, a young woman or a young animal."
+      },
+      "examples": [
+        {
+          "en": "My sister is very young. She is six.",
+          "tr": "Kız kardeşim çok küçük. Altı yaşında.",
+          "register": "neutral",
+          "focus": "young"
+        },
+        {
+          "en": "Sam became a doctor when he was very young.",
+          "tr": "Sam çok genç yaşta doktor oldu.",
+          "register": "neutral",
+          "focus": "young"
+        },
+        {
+          "en": "Many young people want to work in other countries.",
+          "tr": "Birçok genç başka ülkelerde çalışmak istiyor.",
+          "register": "neutral",
+          "focus": "young"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "old"
+      ],
+      "collocations": [
+        "a young man",
+        "young people",
+        "a young child",
+        "too young",
+        "look young"
+      ],
+      "word_family": [
+        {
+          "lemma": "youth",
+          "pos": "n"
+        },
+        {
+          "lemma": "younger",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'geong', meaning 'young'. The word 'youth' comes from the same root.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "genç",
+          "alt": [
+            "küçük"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede yaşça küçük olana 'küçük' denir; İngilizcede 'young' (yaşça küçük) ve 'small' (boyca küçük) ayrıdır. 'Genç' yetişkinler için de kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "My small brother is ten years old.",
+              "right": "My younger brother is ten years old.",
+              "why": "Türkçede 'küçük kardeşim' dersiniz; 'küçük' hem 'small' hem 'young' demektir. Yaşça küçük için 'young / younger / little brother' denir; 'small' boyu anlatır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our grandmother is eighty, but our cousin is only two. She is very ______.",
+        "answer": "young",
+        "distractors": [
+          "old",
+          "sure",
+          "free"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.famous.adj.1",
+      "lemma": "famous",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "known by many people",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfeɪməs/",
+        "uk": "/ˈfeɪməs/"
+      },
+      "def": {
+        "micro": "known by many people",
+        "short": "known by a lot of people in many places",
+        "long": "Known by a lot of people. Singers, football players and old cities can be famous. A person or a place can be famous for something, such as a song or a food."
+      },
+      "examples": [
+        {
+          "en": "She is a famous singer.",
+          "tr": "O ünlü bir şarkıcı.",
+          "register": "neutral",
+          "focus": "famous"
+        },
+        {
+          "en": "Gaziantep is famous for its baklava.",
+          "tr": "Gaziantep baklavasıyla ünlüdür.",
+          "register": "neutral",
+          "focus": "famous"
+        },
+        {
+          "en": "This small village is famous for its beautiful beach.",
+          "tr": "Bu küçük köy güzel plajıyla ünlü.",
+          "register": "neutral",
+          "focus": "famous"
+        }
+      ],
+      "synonyms": [
+        "well-known"
+      ],
+      "antonyms": [
+        "unknown"
+      ],
+      "collocations": [
+        "a famous singer",
+        "famous for",
+        "world famous",
+        "a famous place",
+        "become famous"
+      ],
+      "word_family": [
+        {
+          "lemma": "fame",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'fama', meaning 'what people say about someone'. The English word 'fame' comes from the same Latin word.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ünlü",
+          "alt": [
+            "meşhur",
+            "tanınmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ünlü olduğu şey 'for' ile söylenir: famous for baklava (baklavasıyla ünlü). İnsan, yer ve yemek için kullanılır. 'Ünlü olmak' = become famous.",
+          "mistakes": [
+            {
+              "wrong": "Gaziantep is famous with baklava.",
+              "right": "Gaziantep is famous for baklava.",
+              "why": "Türkçede 'baklavasıyla ünlü' dersiniz (-la/-le), bu yüzden 'with' akla gelir. İngilizcede ünlü olunan şey 'for' ile söylenir: famous for."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everybody in the country knows her songs, so she is very ______.",
+        "answer": "famous",
+        "distractors": [
+          "quiet",
+          "shy",
+          "poor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.popular.adj.1",
+      "lemma": "popular",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "liked by many people",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːpjələr/",
+        "uk": "/ˈpɒpjələ/"
+      },
+      "def": {
+        "micro": "liked by many people",
+        "short": "liked or used by a lot of people",
+        "long": "Liked or used by a lot of people. A song, a game or a restaurant can be popular when many people enjoy it."
+      },
+      "examples": [
+        {
+          "en": "This game is very popular.",
+          "tr": "Bu oyun çok popüler.",
+          "register": "neutral",
+          "focus": "popular"
+        },
+        {
+          "en": "Football is popular in many countries.",
+          "tr": "Futbol birçok ülkede popülerdir.",
+          "register": "neutral",
+          "focus": "popular"
+        },
+        {
+          "en": "Elif is popular at school because she is kind to everyone.",
+          "tr": "Elif okulda popüler, çünkü herkese iyi davranıyor.",
+          "register": "neutral",
+          "focus": "popular"
+        }
+      ],
+      "synonyms": [
+        "well-liked"
+      ],
+      "antonyms": [
+        "unpopular"
+      ],
+      "collocations": [
+        "very popular",
+        "a popular song",
+        "popular with",
+        "a popular place",
+        "become popular"
+      ],
+      "word_family": [
+        {
+          "lemma": "popularity",
+          "pos": "n"
+        },
+        {
+          "lemma": "unpopular",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'popularis', from 'populus', meaning 'the people'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "popüler",
+          "alt": [
+            "sevilen",
+            "gözde"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'popüler' ile aynı kökten gelir. 'Popular with' denir: popular with students (öğrenciler arasında sevilen). 'Famous' = ünlü; 'popular' = çok sevilen.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Millions of people listen to this song every day, so it is very ______.",
+        "answer": "popular",
+        "distractors": [
+          "quiet",
+          "unpopular",
+          "short"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wrong.adj.1",
+      "lemma": "wrong",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not correct",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɔːŋ/",
+        "uk": "/rɒŋ/"
+      },
+      "def": {
+        "micro": "not correct",
+        "short": "not true, or with a mistake in it",
+        "long": "Not true, or with a mistake in it. An answer, a date or a phone number can be wrong. You can also say 'You are wrong' to tell someone they made a mistake."
+      },
+      "examples": [
+        {
+          "en": "Sorry, you have the wrong number.",
+          "tr": "Üzgünüm, yanlış numara aradınız.",
+          "register": "neutral",
+          "focus": "wrong"
+        },
+        {
+          "en": "Your answer is wrong. Try again.",
+          "tr": "Cevabın yanlış. Tekrar dene.",
+          "register": "neutral",
+          "focus": "wrong"
+        },
+        {
+          "en": "Kenji took the wrong bus and arrived late.",
+          "tr": "Kenji yanlış otobüse bindi ve geç vardı.",
+          "register": "neutral",
+          "focus": "wrong"
+        }
+      ],
+      "synonyms": [
+        "incorrect"
+      ],
+      "antonyms": [
+        "right",
+        "correct"
+      ],
+      "collocations": [
+        "the wrong answer",
+        "the wrong number",
+        "the wrong bus",
+        "the wrong way"
+      ],
+      "word_family": [
+        {
+          "lemma": "wrongly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Old Norse 'rangr', meaning 'crooked' or 'twisted'. A crooked path is not the straight, right one.",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yanlış",
+          "alt": [
+            "hatalı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'right' (doğru). 'You are wrong' = yanılıyorsun, haksızsın. 'Something is wrong' = bir sorun var; 'What's wrong?' = Sorun ne?",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Two plus two is not five. Five is the ______ answer.",
+        "answer": "wrong",
+        "distractors": [
+          "right",
+          "same",
+          "thin"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.right.adj.1",
+      "lemma": "right",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "correct",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/raɪt/",
+        "uk": "/raɪt/"
+      },
+      "def": {
+        "micro": "correct; with no mistakes",
+        "short": "with no mistakes; correct or true",
+        "long": "With no mistakes, or true. An answer, a number or a decision can be right. You can say 'You're right' when you agree that someone is correct."
+      },
+      "examples": [
+        {
+          "en": "Your answer is right.",
+          "tr": "Cevabın doğru.",
+          "register": "neutral",
+          "focus": "right"
+        },
+        {
+          "en": "Is this the right bus for the airport?",
+          "tr": "Havalimanı için doğru otobüs bu mu?",
+          "register": "neutral",
+          "focus": "right"
+        },
+        {
+          "en": "Ayşe was right about the weather. It rained all day.",
+          "tr": "Ayşe hava konusunda haklıydı. Bütün gün yağmur yağdı.",
+          "register": "neutral",
+          "focus": "right"
+        }
+      ],
+      "synonyms": [
+        "correct"
+      ],
+      "antonyms": [
+        "wrong"
+      ],
+      "collocations": [
+        "the right answer",
+        "the right bus",
+        "the right way",
+        "You're right"
+      ],
+      "word_family": [
+        {
+          "lemma": "rightly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'riht', meaning 'straight', 'correct' or 'fair'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "doğru",
+          "alt": [
+            "haklı",
+            "yerinde"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Right' = doğru. Kişi için 'haklı' demektir: 'You are right' = Haklısın. Karşıtı 'wrong' (yanlış). 'Right' bir de 'sağ' (yön) demektir.",
+          "mistakes": [
+            {
+              "wrong": "You have right.",
+              "right": "You are right.",
+              "why": "Türkçede 'hakkın var' da denir, bu yüzden 'have' ile kurulur. İngilizcede 'haklı olmak' için 'be right' kullanılır: I am right, you are right."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The teacher says, 'Yes, that is correct.' So your answer is ______.",
+        "answer": "right",
+        "distractors": [
+          "wrong",
+          "thin",
+          "wide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

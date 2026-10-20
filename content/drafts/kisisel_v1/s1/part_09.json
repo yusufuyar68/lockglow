@@ -309,14 +309,15 @@
         "answer": "price",
         "distractors": [
           "weather",
-          "recipe",
-          "guest"
+          "guest",
+          "ceiling"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -613,14 +614,16 @@
         "cloze": "I can't pay. I left my ______ at home.",
         "answer": "wallet",
         "distractors": [
-          "towel",
           "sofa",
-          "pillow"
+          "lamp",
+          "window"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -709,14 +712,16 @@
         "cloze": "The coffee was 20 lira. I gave him 50, so he gave me 30 lira ______.",
         "answer": "change",
         "distractors": [
-          "menu",
           "size",
-          "recipe"
+          "price",
+          "queue"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -902,14 +907,16 @@
         "cloze": "I'm a student, so I get a 10 percent ______.",
         "answer": "discount",
         "distractors": [
-          "receipt",
-          "wallet",
-          "size"
+          "parcel",
+          "pocket",
+          "ticket"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -1009,15 +1016,16 @@
         "cloze": "I don't have a card, so I'll pay in ______.",
         "answer": "cash",
         "distractors": [
-          "price",
           "size",
-          "menu"
+          "basket",
+          "kitchen"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

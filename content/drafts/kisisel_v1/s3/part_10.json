@@ -105,8 +105,8 @@
 "word_family":[{"lemma":"funnily","pos":"adv"}],"etymology":null,
 "l1":{"tr":{"gloss":"komik","alt":["espirili","güldüren"],"equivalence":"partial","false_friend":null,"note":"'Funny' = komik, güldüren. 'Fun' = eğlenceli. 'Funny' bazen 'tuhaf' anlamında da kullanılır ('a funny smell'), ama bu kartta komik anlamı var.","mistakes":[{"wrong":"The trip was very funny. We loved it.","right":"The trip was great fun. We loved it.","why":"Çok güzel vakit geçirdiyseniz 'fun' kullanılır; 'funny' yalnızca güldüren şey için kullanılır."}],"mnemonic":null}},
 "tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:fun"],"sensitivity":0},
-"quiz":{"cloze":"He tells jokes all the time. He is so ______.","answer":"funny","distractors":["shy","sad","lazy"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"He tells jokes all the time. He is so ______.","answer":"funny","distractors":["shy","serious","quiet"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.bored.adj.1","lemma":"bored","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/bɔːrd/","uk":"/bɔːd/"},
@@ -120,7 +120,7 @@
 "word_family":[{"lemma":"bore","pos":"v"},{"lemma":"boredom","pos":"n"},{"lemma":"boring","pos":"adj"}],"etymology":null,
 "l1":{"tr":{"gloss":"sıkılmış","alt":["bıkmış"],"equivalence":"full","false_friend":null,"note":"Sıkılan kişi 'bored'; sıkan şey ya da kişi 'boring'. 'I'm bored' = Sıkıldım; 'It's boring' = Sıkıcı.","mistakes":[{"wrong":"I'm boring in class.","right":"I'm bored in class.","why":"Sıkılan kişi için -ed (bored); 'I'm boring' = 'Ben sıkıcı biriyim' demektir."},{"wrong":"I'm bored from this film.","right":"I'm bored with this film.","why":"'-den sıkılmak' için 'bored with / of' kullanılır; 'from' kullanılmaz."}],"mnemonic":null}},
 "tags":{"primary_topic":"confusing_words","topics":["confusing_words","emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:boring"],"sensitivity":0},
-"quiz":{"cloze":"There is nothing to do here. I'm so ______.","answer":"bored","distractors":["boring","happy","proud"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
+"quiz":{"cloze":"There is nothing to do here. I'm so ______.","answer":"bored","distractors":["boring","happy","busy"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
 ]
 }

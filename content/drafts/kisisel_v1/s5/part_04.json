@@ -1,0 +1,1154 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.stay.v.1",
+      "lemma": "stay",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "remain in a place",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/steɪ/",
+        "uk": "/steɪ/"
+      },
+      "def": {
+        "micro": "be in a place for a time",
+        "short": "to be in a place for a time and not leave, for example at a hotel",
+        "long": "To be in a place for a time and not leave it. You can stay at home, stay at a hotel, or stay with a friend. It is for a short time; for the place where your home is, we use 'live'."
+      },
+      "grammar": {
+        "pattern": "stay at / in + place / stay with + sb"
+      },
+      "examples": [
+        {
+          "en": "We stayed at a small hotel by the sea.",
+          "tr": "Deniz kenarında küçük bir otelde kaldık.",
+          "register": "neutral",
+          "focus": "stayed"
+        },
+        {
+          "en": "I'm tired, so I'll stay at home tonight.",
+          "tr": "Yorgunum, o yüzden bu gece evde kalacağım.",
+          "register": "neutral",
+          "focus": "stay"
+        },
+        {
+          "en": "Maria is staying with her cousin this week.",
+          "tr": "Maria bu hafta kuzeninin yanında kalıyor.",
+          "register": "neutral",
+          "focus": "staying"
+        }
+      ],
+      "synonyms": [
+        "remain"
+      ],
+      "antonyms": [
+        "leave",
+        "go"
+      ],
+      "collocations": [
+        "stay at home",
+        "stay at a hotel",
+        "stay with a friend",
+        "stay the night",
+        "stay here"
+      ],
+      "word_family": [
+        {
+          "lemma": "stay",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kalmak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'kalmak' hem geçici kalmak hem de yaşamak gibi kullanılır ('İzmir'de kalıyorum'). İngilizcede kısa süre kalmak 'stay', sürekli yaşamak 'live' olur.",
+          "mistakes": [
+            {
+              "wrong": "I stay in a small town. I was born here.",
+              "right": "I live in a small town. I was born here.",
+              "why": "Türkçede 'kalıyorum' hem 'stay' hem 'live' anlamında kullanılır. İngilizcede evinin olduğu yer için 'live', kısa süre kalınan yer için 'stay' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:live"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We are on holiday for a week. We ______ in a small hotel near the beach.",
+        "answer": "stay",
+        "distractors": [
+          "live",
+          "arrive",
+          "visit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.live.v.1",
+      "lemma": "live",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have your home somewhere",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɪv/",
+        "uk": "/lɪv/"
+      },
+      "def": {
+        "micro": "have your home in a place",
+        "short": "to have your home in a place for a long time",
+        "long": "To have your home in a place for a long time. You can live in a city, in a flat, or with your family. This verb sounds like 'give'; the adjective 'live' (a live show) sounds different."
+      },
+      "grammar": {
+        "pattern": "live in + city / live with + sb"
+      },
+      "examples": [
+        {
+          "en": "I live in Izmir.",
+          "tr": "İzmir'de yaşıyorum.",
+          "register": "neutral",
+          "focus": "live"
+        },
+        {
+          "en": "Emre lives with his parents.",
+          "tr": "Emre anne babasıyla birlikte yaşıyor.",
+          "register": "neutral",
+          "focus": "lives"
+        },
+        {
+          "en": "My brother has lived in Berlin since 2020.",
+          "tr": "Erkek kardeşim 2020'den beri Berlin'de yaşıyor.",
+          "register": "neutral",
+          "focus": "lived"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "live in a city",
+        "live alone",
+        "live with family",
+        "live near here",
+        "live abroad"
+      ],
+      "word_family": [
+        {
+          "lemma": "life",
+          "pos": "n"
+        },
+        {
+          "lemma": "alive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaşamak",
+          "alt": [
+            "oturmak",
+            "ikamet etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sürekli oturulan yer için 'live', kısa süre kalmak için 'stay' kullanılır. Fiil /lɪv/ okunur ('give' gibi); 'canlı' anlamındaki sıfat /laɪv/ okunur.",
+          "mistakes": [
+            {
+              "wrong": "I live in Ankara since 2020.",
+              "right": "I have lived in Ankara since 2020.",
+              "why": "Türkçede 'yaşıyorum' ve 'beri' ile şimdiki zaman kullanılır. İngilizcede 'since' ile geçmişten şimdiye süren durum için 'have lived' gerekir."
+            },
+            {
+              "wrong": "I live at Izmir.",
+              "right": "I live in Izmir.",
+              "why": "Türkçede 'İzmir'de' (-de hâli) hem 'in' hem 'at' olabilir. Şehir ve ülke için 'in' kullanılır: live in Izmir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:stay"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Do you ______ with your parents, or do you have your own flat?",
+        "answer": "live",
+        "distractors": [
+          "want",
+          "need",
+          "open"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.study.v.1",
+      "lemma": "study",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "learn about a subject",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstʌdi/",
+        "uk": "/ˈstʌdi/"
+      },
+      "def": {
+        "micro": "learn about a subject",
+        "short": "to spend time learning about a subject, for example at school",
+        "long": "To spend time learning about a subject, usually by reading and writing. You can study for an exam, or study English at a school. Students study at school and at home."
+      },
+      "grammar": {
+        "pattern": "study + subject / study for + exam"
+      },
+      "examples": [
+        {
+          "en": "I study English every evening.",
+          "tr": "Her akşam İngilizce çalışıyorum.",
+          "register": "neutral",
+          "focus": "study"
+        },
+        {
+          "en": "Eren is studying for his exam tomorrow.",
+          "tr": "Eren yarınki sınavına çalışıyor.",
+          "register": "neutral",
+          "focus": "studying"
+        },
+        {
+          "en": "Defne studied medicine in Istanbul.",
+          "tr": "Defne İstanbul'da tıp okudu.",
+          "register": "neutral",
+          "focus": "studied"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "study English",
+        "study for an exam",
+        "study hard",
+        "study at home",
+        "study medicine"
+      ],
+      "word_family": [
+        {
+          "lemma": "student",
+          "pos": "n"
+        },
+        {
+          "lemma": "study",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'studium', meaning 'eagerness' or 'effort', through Old French 'estudier'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ders çalışmak",
+          "alt": [
+            "okumak",
+            "öğrenim görmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'çalışmak' hem 'work' hem 'study' demektir. Ders için 'study', iş için 'work' denir. Üniversitede okumak da 'study' olur.",
+          "mistakes": [
+            {
+              "wrong": "I am working for my exam tonight.",
+              "right": "I am studying for my exam tonight.",
+              "why": "Türkçede 'sınava çalışmak' deriz ve 'çalışmak' hem 'work' hem 'study' demektir. Ders ya da sınav için 'work' değil 'study' kullanılır."
+            },
+            {
+              "wrong": "I'm studying to the exam tomorrow.",
+              "right": "I'm studying for the exam tomorrow.",
+              "why": "Türkçede 'sınava çalışıyorum' (-a hâli) dediğimiz için 'to' denir. İngilizcede sınav için 'for' kullanılır: study for an exam."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:work"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have an exam tomorrow. I'm going to ______ at the library tonight.",
+        "answer": "study",
+        "distractors": [
+          "sell",
+          "wear",
+          "cook"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.learn.v.1",
+      "lemma": "learn",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get new knowledge or a skill",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɜːrn/",
+        "uk": "/lɜːn/"
+      },
+      "def": {
+        "micro": "get new knowledge or skills",
+        "short": "to get new knowledge or a new skill by study, practice, or experience",
+        "long": "To get new knowledge or a new skill by study, practice, or experience. You can learn a language, a song, or how to drive. We say 'learn to' and a verb: 'learn to swim'."
+      },
+      "grammar": {
+        "pattern": "learn + sth / learn to + verb"
+      },
+      "examples": [
+        {
+          "en": "I want to learn English.",
+          "tr": "İngilizce öğrenmek istiyorum.",
+          "register": "neutral",
+          "focus": "learn"
+        },
+        {
+          "en": "Jonas learned to swim when he was six.",
+          "tr": "Jonas altı yaşındayken yüzmeyi öğrendi.",
+          "register": "neutral",
+          "focus": "learned"
+        },
+        {
+          "en": "We learn ten new words every week.",
+          "tr": "Her hafta on yeni kelime öğreniriz.",
+          "register": "neutral",
+          "focus": "learn"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "forget"
+      ],
+      "collocations": [
+        "learn English",
+        "learn to swim",
+        "learn new words",
+        "learn a lot",
+        "learn from mistakes"
+      ],
+      "word_family": [
+        {
+          "lemma": "learner",
+          "pos": "n"
+        },
+        {
+          "lemma": "learning",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öğrenmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Learn' = öğrenmek; öğretmek 'teach' olur. Türkçede 'öğren-' ve 'öğret-' çok benzer, İngilizcede ise farklı kelimelerdir. İngiliz İngilizcesinde 'learnt' da kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:teach"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I am thirty years old, but I can't swim. I want to ______ to swim.",
+        "answer": "learn",
+        "distractors": [
+          "teach",
+          "forget",
+          "finish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.teach.v.1",
+      "lemma": "teach",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "help someone learn",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tiːtʃ/",
+        "uk": "/tiːtʃ/"
+      },
+      "def": {
+        "micro": "help someone learn",
+        "short": "to help someone learn about a subject or how to do something",
+        "long": "To help someone learn about a subject or how to do something. A teacher teaches classes at a school, and a parent can teach a child to ride a bike."
+      },
+      "grammar": {
+        "pattern": "teach + sb + sth / teach + sb + to + verb"
+      },
+      "examples": [
+        {
+          "en": "Elif teaches English at a high school.",
+          "tr": "Elif bir lisede İngilizce öğretiyor.",
+          "register": "neutral",
+          "focus": "teaches"
+        },
+        {
+          "en": "Can you teach me this game?",
+          "tr": "Bana bu oyunu öğretir misin?",
+          "register": "neutral",
+          "focus": "teach"
+        },
+        {
+          "en": "My father taught me to drive.",
+          "tr": "Babam bana araba kullanmayı öğretti.",
+          "register": "neutral",
+          "focus": "taught"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "learn"
+      ],
+      "collocations": [
+        "teach English",
+        "teach a class",
+        "teach children",
+        "teach me how to drive",
+        "teach yourself"
+      ],
+      "word_family": [
+        {
+          "lemma": "teacher",
+          "pos": "n"
+        },
+        {
+          "lemma": "teaching",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'tǣcan', meaning 'to show' or 'to point out'. It is related to the word 'token'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "öğretmek",
+          "alt": [
+            "ders vermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Teach' = öğretmek, 'learn' = öğrenmek. 'Teach' kişiyi doğrudan alır: teach me. Düzensiz: teach - taught - taught.",
+          "mistakes": [
+            {
+              "wrong": "Can you teach to me this game?",
+              "right": "Can you teach me this game?",
+              "why": "Türkçede 'bana öğret' (-a hâli) dediğimiz için 'to me' denir. İngilizcede 'teach' kişiyi doğrudan alır."
+            },
+            {
+              "wrong": "My uncle learned me to drive.",
+              "right": "My uncle taught me to drive.",
+              "why": "Türkçede 'öğren-' ve 'öğret-' birbirine çok benzer; bu yüzden karıştırılır. Başkasına öğretmek için 'teach', kendin öğrenmek için 'learn' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:learn"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ms. Kaya is a good teacher. She ______ us math on Mondays.",
+        "answer": "teaches",
+        "distractors": [
+          "learns",
+          "studies",
+          "asks"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.speak.v.1",
+      "lemma": "speak",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "use your voice or a language",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/spiːk/",
+        "uk": "/spiːk/"
+      },
+      "def": {
+        "micro": "say words with your voice",
+        "short": "to say words with your voice, or to know and use a language",
+        "long": "To say words with your voice, or to be able to use a language. You can speak to a person, speak about a subject, or speak English. We say 'Do you speak English?' to ask about a language."
+      },
+      "grammar": {
+        "pattern": "speak + language / speak to + sb"
+      },
+      "examples": [
+        {
+          "en": "Do you speak English?",
+          "tr": "İngilizce konuşuyor musun?",
+          "register": "neutral",
+          "focus": "speak"
+        },
+        {
+          "en": "Please speak slowly. I'm learning English.",
+          "tr": "Lütfen yavaş konuş. İngilizce öğreniyorum.",
+          "register": "neutral",
+          "focus": "speak"
+        },
+        {
+          "en": "Kenji speaks Turkish very well.",
+          "tr": "Kenji Türkçeyi çok iyi konuşuyor.",
+          "register": "neutral",
+          "focus": "speaks"
+        }
+      ],
+      "synonyms": [
+        "talk"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "speak English",
+        "speak slowly",
+        "speak loudly",
+        "speak a language",
+        "speak to the manager"
+      ],
+      "word_family": [
+        {
+          "lemma": "speaker",
+          "pos": "n"
+        },
+        {
+          "lemma": "speech",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "konuşmak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Speak' dil ve daha resmî konuşma için kullanılır; 'talk' sohbet içindir: speak English, talk to a friend. Türkçede ikisi de 'konuşmak'. Düzensiz: speak - spoke - spoken.",
+          "mistakes": [
+            {
+              "wrong": "I speak English good.",
+              "right": "I speak English well.",
+              "why": "Türkçede 'iyi' hem sıfat hem zarf olarak kullanılır: 'iyi konuşuyorum'. İngilizcede fiili anlatan sözcük zarf olur: 'well'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:talk"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My teacher is from Spain. She ______ Spanish and English.",
+        "answer": "speaks",
+        "distractors": [
+          "says",
+          "tells",
+          "opens"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.talk.v.1",
+      "lemma": "talk",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have a conversation",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɔːk/",
+        "uk": "/tɔːk/"
+      },
+      "def": {
+        "micro": "speak with someone",
+        "short": "to speak with someone about something, often in a friendly way",
+        "long": "To speak with someone about something, often in a friendly way. You can talk to a friend, talk about your day, or talk on the phone. We say 'talk to' a person and 'talk about' a subject."
+      },
+      "grammar": {
+        "pattern": "talk to + sb / talk about + sth"
+      },
+      "examples": [
+        {
+          "en": "Can I talk to you for a minute?",
+          "tr": "Seninle bir dakika konuşabilir miyim?",
+          "register": "neutral",
+          "focus": "talk"
+        },
+        {
+          "en": "Nina and I talk on the phone every night.",
+          "tr": "Nina'yla ben her gece telefonda konuşuruz.",
+          "register": "neutral",
+          "focus": "talk"
+        },
+        {
+          "en": "Let's talk about the plan after lunch.",
+          "tr": "Planı öğle yemeğinden sonra konuşalım.",
+          "register": "neutral",
+          "focus": "talk"
+        }
+      ],
+      "synonyms": [
+        "chat"
+      ],
+      "antonyms": [
+        "listen"
+      ],
+      "collocations": [
+        "talk to me",
+        "talk about it",
+        "talk on the phone",
+        "talk for hours",
+        "talk to a friend"
+      ],
+      "word_family": [
+        {
+          "lemma": "talk",
+          "pos": "n"
+        },
+        {
+          "lemma": "talkative",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "konuşmak",
+          "alt": [
+            "sohbet etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Talk' günlük sohbet içindir: talk to a friend. Türkçede 'planı konuşmak' dediğimiz için 'about' atlanır; İngilizcede 'talk about' gerekir.",
+          "mistakes": [
+            {
+              "wrong": "Let's talk the plan.",
+              "right": "Let's talk about the plan.",
+              "why": "Türkçede 'planı konuşalım' (-i hâli) denir ve edat yoktur. İngilizcede konuyu bağlamak için 'about' gerekir."
+            },
+            {
+              "wrong": "I talked my teacher yesterday.",
+              "right": "I talked to my teacher yesterday.",
+              "why": "Türkçede 'öğretmenimle konuştum' denir. İngilizcede konuşulan kişiden önce 'to' (ya da 'with') gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:speak"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have to ______ to my boss about my holiday. Let me go to his office.",
+        "answer": "talk",
+        "distractors": [
+          "say",
+          "tell",
+          "ask"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.use.v.1",
+      "lemma": "use",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "do a job with something",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/juːz/",
+        "uk": "/juːz/"
+      },
+      "def": {
+        "micro": "do a job with something",
+        "short": "to do a job or reach a goal with a tool, a machine, or a thing",
+        "long": "To do a job or reach a goal with a tool, a machine, or a thing. You can use a phone, a key, or a computer. The verb sounds like 'yooz' and the noun sounds like 'yoos'."
+      },
+      "grammar": {
+        "pattern": "use + sth (for + -ing / to + verb)"
+      },
+      "examples": [
+        {
+          "en": "Can I use your phone, please?",
+          "tr": "Telefonunu kullanabilir miyim lütfen?",
+          "register": "neutral",
+          "focus": "use"
+        },
+        {
+          "en": "Selma uses her laptop for work.",
+          "tr": "Selma dizüstü bilgisayarını iş için kullanıyor.",
+          "register": "neutral",
+          "focus": "uses"
+        },
+        {
+          "en": "We used a map to find the hotel.",
+          "tr": "Oteli bulmak için harita kullandık.",
+          "register": "neutral",
+          "focus": "used"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "use a phone",
+        "use a computer",
+        "use a key",
+        "use a map",
+        "use the internet"
+      ],
+      "word_family": [
+        {
+          "lemma": "use",
+          "pos": "n"
+        },
+        {
+          "lemma": "useful",
+          "pos": "adj"
+        },
+        {
+          "lemma": "user",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kullanmak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'kullanmak' hem 'use' hem araç sürmek demektir ('araba kullanmak'). Araç sürmek için 'drive' denir. Fiil /juːz/ (z sesi), isim /juːs/ (s sesi) okunur.",
+          "mistakes": [
+            {
+              "wrong": "Can you use a car?",
+              "right": "Can you drive a car?",
+              "why": "Türkçede 'araba kullanmak' deriz ve 'kullanmak' = 'use'. İngilizcede araç sürmek için 'drive' denir: drive a car."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:drive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can I ______ your pen? I forgot mine at home.",
+        "answer": "use",
+        "distractors": [
+          "lend",
+          "give",
+          "sell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.carry.v.1",
+      "lemma": "carry",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take something from place to place",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkæri/",
+        "uk": "/ˈkæri/"
+      },
+      "def": {
+        "micro": "hold and take something",
+        "short": "to hold something and take it from one place to another",
+        "long": "To hold something in your hands or on your back and take it with you. You can carry a bag, a box, or a baby. Cars and trucks carry things too."
+      },
+      "grammar": {
+        "pattern": "carry + sth (+ to + place)"
+      },
+      "examples": [
+        {
+          "en": "Can you carry this bag for me?",
+          "tr": "Bu çantayı benim için taşıyabilir misin?",
+          "register": "neutral",
+          "focus": "carry"
+        },
+        {
+          "en": "Tariq carried the box up the stairs.",
+          "tr": "Tariq kutuyu merdivenlerden yukarı taşıdı.",
+          "register": "neutral",
+          "focus": "carried"
+        },
+        {
+          "en": "I always carry a bottle of water in my bag.",
+          "tr": "Çantamda her zaman bir şişe su taşırım.",
+          "register": "neutral",
+          "focus": "carry"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "carry a bag",
+        "carry a box",
+        "carry a baby",
+        "carry a phone",
+        "carry water"
+      ],
+      "word_family": [
+        {
+          "lemma": "carrier",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old North French 'carier', from Latin 'carrus', meaning 'cart'. To carry first meant 'to take by cart'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "taşımak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Carry' elinde ya da sırtında taşımaktır ve yön belirtmez. 'Bring' getirmek, 'take' götürmek demektir. Geçmiş zaman: carried (y harfi ied olur).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This box is very heavy. Can you help me ______ it to the car?",
+        "answer": "carry",
+        "distractors": [
+          "break",
+          "open",
+          "finish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.send.v.1",
+      "lemma": "send",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make something go to someone",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɛnd/",
+        "uk": "/sɛnd/"
+      },
+      "def": {
+        "micro": "make something go to someone",
+        "short": "to make a message, letter, or thing go to another person",
+        "long": "To make a message, a letter, or a thing go to another person. You can send an email, a text, or a parcel. We say 'send me' or 'send her' with no 'to'."
+      },
+      "grammar": {
+        "pattern": "send + sb + sth / send sth to + sb"
+      },
+      "examples": [
+        {
+          "en": "I'll send you the photos tonight.",
+          "tr": "Fotoğrafları sana bu gece göndereceğim.",
+          "register": "neutral",
+          "focus": "send"
+        },
+        {
+          "en": "Irem sent me a message this morning.",
+          "tr": "İrem bu sabah bana bir mesaj gönderdi.",
+          "register": "neutral",
+          "focus": "sent"
+        },
+        {
+          "en": "Can you send this parcel to my sister in Izmir?",
+          "tr": "Bu paketi İzmir'deki kız kardeşime gönderebilir misin?",
+          "register": "neutral",
+          "focus": "send"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "receive",
+        "get"
+      ],
+      "collocations": [
+        "send a message",
+        "send an email",
+        "send a photo",
+        "send a parcel",
+        "send money"
+      ],
+      "word_family": [
+        {
+          "lemma": "sender",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "göndermek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Send' iki biçimde kurulur: send me a message ya da send a message to me. Kişi önce gelirse 'to' gerekmez. Düzensiz: send - sent - sent.",
+          "mistakes": [
+            {
+              "wrong": "Please send to me the file.",
+              "right": "Please send me the file.",
+              "why": "Türkçede 'bana gönder' (-a hâli) dediğimiz için 'to me' denir. İngilizcede kişi fiilden hemen sonra gelirse 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I took some photos yesterday. I will ______ them to you by email.",
+        "answer": "send",
+        "distractors": [
+          "bring",
+          "carry",
+          "walk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "ipa_dress_normalized"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

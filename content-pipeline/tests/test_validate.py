@@ -79,6 +79,26 @@ def test_dataset_level_duplicates(card):
     assert "DUP_ID" in codes([card, twin])
 
 
+def test_distractor_repeated_across_many_quizzes_is_a_warning(card):
+    import copy
+
+    def variant(n: int) -> dict:
+        c = copy.deepcopy(card)
+        c["id"] = f"en.mitigate{n}.v.1"
+        c["def"]["short"] = f"{c['def']['short']} {n}"
+        for i, ex in enumerate(c["examples"]):
+            ex["en"] = f"{ex['en']} ({n}.{i})"
+        return c
+
+    cards = [variant(n) for n in range(5)]
+    # Four quizzes sharing a distractor are within the minimum limit of 4.
+    assert "QUIZ_DISTRACTOR_REPEAT" not in codes(cards[:4], severity="warning")
+    # Five out of five are not: the learner would learn that this option is never right.
+    assert "QUIZ_DISTRACTOR_REPEAT" in codes(cards, severity="warning")
+    cards[4]["quiz"]["distractors"] = [d + "x" for d in cards[4]["quiz"]["distractors"]]
+    assert "QUIZ_DISTRACTOR_REPEAT" not in codes(cards, severity="warning")
+
+
 def test_turkish_verb_gloss_form_is_a_warning(card):
     card["l1"]["tr"]["gloss"] = "hafifletme"
     assert "TR_VERB_FORM" in codes([card], severity="warning")

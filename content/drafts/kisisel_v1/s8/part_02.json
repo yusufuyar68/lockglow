@@ -1,0 +1,967 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.at_last.phr.1",
+      "lemma": "at last",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "finally, after a long wait",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æt ˈlæst/",
+        "uk": "/æt ˈlɑːst/"
+      },
+      "def": {
+        "micro": "finally, after a long time",
+        "short": "used when something you waited for happens after a long time",
+        "long": "You say this when something you waited for or wanted finally happens, often with a feeling of relief. The wait was long or hard."
+      },
+      "examples": [
+        {
+          "en": "At last, the bus is here!",
+          "tr": "Sonunda otobüs geldi!",
+          "register": "neutral",
+          "focus": "At last"
+        },
+        {
+          "en": "We walked for two hours and at last found the hotel.",
+          "tr": "İki saat yürüdük ve sonunda oteli bulduk.",
+          "register": "neutral",
+          "focus": "at last"
+        },
+        {
+          "en": "At last, it's Friday! I'm so tired.",
+          "tr": "Sonunda cuma! Çok yorgunum.",
+          "register": "neutral",
+          "focus": "At last"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "at long last"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonunda",
+          "alt": [
+            "nihayet",
+            "en sonunda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'At last' uzun bir beklemeden sonra gelen rahatlamayı ya da sevinci anlatır. 'In the end' ise bir sürecin sonucunu söyler. İkisi de Türkçede 'sonunda' olabilir ama aynı şey değildir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We looked for the hotel for two hours. ______ we found it.",
+        "answer": "At last",
+        "distractors": [
+          "For a while",
+          "For example",
+          "By the way"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.at_the_moment.phr.1",
+      "lemma": "at the moment",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "now, at this time",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æt ðə ˈmoʊmənt/",
+        "uk": "/æt ðə ˈməʊmənt/"
+      },
+      "def": {
+        "micro": "now, at this time",
+        "short": "used to say what is true or happening now, not before or later",
+        "long": "You use this to talk about the present time: what is happening or true now. It often comes with a verb like 'am working' or 'is studying'. It is not about the past or the future."
+      },
+      "examples": [
+        {
+          "en": "I'm busy at the moment. Can I call you later?",
+          "tr": "Şu an meşgulüm. Seni sonra arayabilir miyim?",
+          "register": "neutral",
+          "focus": "at the moment"
+        },
+        {
+          "en": "Ayşe is studying for her exam at the moment.",
+          "tr": "Ayşe şu anda sınavına çalışıyor.",
+          "register": "neutral",
+          "focus": "at the moment"
+        },
+        {
+          "en": "“Where is Mehmet?” “He's in a meeting at the moment.”",
+          "tr": "“Mehmet nerede?” “Şu anda toplantıda.”",
+          "register": "neutral",
+          "focus": "at the moment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şu anda",
+          "alt": [
+            "şu an",
+            "şimdi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde 'I'm working at the moment' gibi sürmekte olan eylemle kullanılır. 'For the moment' ise 'şimdilik' demektir ve farklıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Can I talk to Elif?” “Sorry, she is in a meeting ______.”",
+        "answer": "at the moment",
+        "distractors": [
+          "in time",
+          "on foot",
+          "out of order"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.for_a_while.phr.1",
+      "lemma": "for a while",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "for some time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fər ə ˈwaɪl/",
+        "uk": "/fər ə ˈwaɪl/"
+      },
+      "def": {
+        "micro": "for some time",
+        "short": "during a period of time that is not very short and not very long",
+        "long": "We use this for a period of time that is not long and not short, and we do not say exactly how long. It can be some minutes, hours or days."
+      },
+      "examples": [
+        {
+          "en": "Let's sit here for a while.",
+          "tr": "Burada bir süre oturalım.",
+          "register": "neutral",
+          "focus": "for a while"
+        },
+        {
+          "en": "I lived in Izmir for a while when I was young.",
+          "tr": "Gençken bir süre İzmir'de yaşadım.",
+          "register": "neutral",
+          "focus": "for a while"
+        },
+        {
+          "en": "Wait for a while, Kenji. The doctor is busy.",
+          "tr": "Bir süre bekle Kenji. Doktor meşgul.",
+          "register": "neutral",
+          "focus": "for a while"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wait for a while",
+        "stay for a while"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir süre",
+          "alt": [
+            "bir müddet",
+            "biraz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Süre belirsizdir. Süre belliyse 'for' ile söylenir: 'for two hours'. 'In a while' ise 'birazdan' demektir ve gelecekle ilgilidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm tired. Can we sit down ______ and rest?",
+        "answer": "for a while",
+        "distractors": [
+          "on foot",
+          "on purpose",
+          "by mistake"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_a_hurry.phr.1",
+      "lemma": "in a hurry",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "needing to be fast",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ə ˈhɜːri/",
+        "uk": "/ɪn ə ˈhʌri/"
+      },
+      "def": {
+        "micro": "needing to be fast",
+        "short": "wanting to do something quickly because you have little time",
+        "long": "Having little time and wanting to do things fast. People often use it when they must be somewhere soon."
+      },
+      "grammar": {
+        "pattern": "be in a hurry (to + verb)"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I can't talk. I'm in a hurry.",
+          "tr": "Üzgünüm, konuşamam. Acelem var.",
+          "register": "neutral",
+          "focus": "in a hurry"
+        },
+        {
+          "en": "Mehmet was in a hurry, so he didn't eat breakfast.",
+          "tr": "Mehmet'in acelesi vardı, o yüzden kahvaltı yapmadı.",
+          "register": "neutral",
+          "focus": "in a hurry"
+        },
+        {
+          "en": "Are you in a hurry? We can walk slowly.",
+          "tr": "Acelen var mı? Yavaş yürüyebiliriz.",
+          "register": "neutral",
+          "focus": "in a hurry"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in a big hurry",
+        "in no hurry"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "acelesi olmak",
+          "alt": [
+            "acele etmek",
+            "aceleyle"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'acelem var' deriz; İngilizcede 'I'm in a hurry' denir. 'Hurry up' ise 'acele et!' demektir.",
+          "mistakes": [
+            {
+              "wrong": "I have a hurry.",
+              "right": "I'm in a hurry.",
+              "why": "Türkçede 'acelem var' dediğimiz için 'have' denir. İngilizcede bu durum 'in a hurry' ile anlatılır: I am in a hurry."
+            },
+            {
+              "wrong": "I am in hurry.",
+              "right": "I am in a hurry.",
+              "why": "Türkçede 'bir' kullanmayız ('acele içindeyim'). İngilizcede 'a' gerekir: in a hurry."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't have coffee now. I'm ______ because my bus leaves soon.",
+        "answer": "in a hurry",
+        "distractors": [
+          "out of order",
+          "on foot",
+          "at last"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_the_way.phr.1",
+      "lemma": "on the way",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "while going to a place",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ðə ˈweɪ/",
+        "uk": "/ɒn ðə ˈweɪ/"
+      },
+      "def": {
+        "micro": "while going somewhere",
+        "short": "during the trip to a place, before you arrive there",
+        "long": "While you are travelling from one place to another, before you get there. You can also say that a person or thing is coming to you: 'The pizza is on the way'."
+      },
+      "grammar": {
+        "pattern": "on the way (to + place / home)"
+      },
+      "examples": [
+        {
+          "en": "I'm on my way. See you soon!",
+          "tr": "Yoldayım. Birazdan görüşürüz!",
+          "register": "neutral",
+          "focus": "on my way"
+        },
+        {
+          "en": "We bought some bread on the way to school.",
+          "tr": "Okula giderken yolda ekmek aldık.",
+          "register": "neutral",
+          "focus": "on the way"
+        },
+        {
+          "en": "On the way home, Maria saw an old friend.",
+          "tr": "Eve dönerken Maria eski bir arkadaşını gördü.",
+          "register": "neutral",
+          "focus": "On the way"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the way home",
+        "on the way to work",
+        "on my way"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yolda",
+          "alt": [
+            "giderken",
+            "yol üstünde"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'On the way' hem 'yolda' hem 'giderken' demektir. Yer söylerken 'on the way to school' denir; 'home' ile 'to' kullanılmaz: on the way home.",
+          "mistakes": [
+            {
+              "wrong": "On the way to home, I bought bread.",
+              "right": "On the way home, I bought bread.",
+              "why": "Türkçede 'eve giderken' deriz ve '-e' eki 'to' gibi gelir. 'Home' sözcüğünden önce 'to' gelmez: on the way home."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I bought some milk ______ home from work.",
+        "answer": "on the way",
+        "distractors": [
+          "in front of",
+          "next to",
+          "at the moment"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_sure.phr.1",
+      "lemma": "make sure",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "check; be certain",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈʃʊr/",
+        "uk": "/meɪk ˈʃɔː/"
+      },
+      "def": {
+        "micro": "check that it is done",
+        "short": "check or do something so that you are certain a thing is true or will happen",
+        "long": "To check something, or to do something, so that you are certain it is true or that it will happen. A clause often follows it: 'Make sure the door is locked.'"
+      },
+      "grammar": {
+        "pattern": "make sure (that) + clause / make sure to + verb"
+      },
+      "examples": [
+        {
+          "en": "Make sure you lock the door.",
+          "tr": "Kapıyı kilitlediğinden emin ol.",
+          "register": "neutral",
+          "focus": "Make sure"
+        },
+        {
+          "en": "Please make sure the oven is off before you leave.",
+          "tr": "Çıkmadan önce lütfen fırının kapalı olduğundan emin ol.",
+          "register": "neutral",
+          "focus": "make sure"
+        },
+        {
+          "en": "Elif made sure that all the windows were closed.",
+          "tr": "Elif tüm pencerelerin kapalı olduğundan emin oldu.",
+          "register": "neutral",
+          "focus": "made sure"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make sure that",
+        "make sure to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "emin olmak",
+          "alt": [
+            "kontrol etmek",
+            "garantiye almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Make sure' kendin kontrol etmek ya da bir şeyin olmasını sağlamak demektir. 'Be sure' ise kafandaki duyguyu, yani 'emin olmak' halini anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ you have your passport before you leave.",
+        "answer": "make sure",
+        "distractors": [
+          "say hello",
+          "get better",
+          "take a break"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_care.phr.1",
+      "lemma": "take care",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a friendly goodbye",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ˈkɛr/",
+        "uk": "/teɪk ˈkeə/"
+      },
+      "def": {
+        "micro": "a friendly goodbye",
+        "short": "used to say goodbye and wish someone to stay safe and well",
+        "long": "People say this at the end of a conversation or a message when someone goes away. It shows you like the person and want them to stay safe and well."
+      },
+      "examples": [
+        {
+          "en": "Bye, Sam! Take care.",
+          "tr": "Hoşça kal Sam! Kendine iyi bak.",
+          "register": "neutral",
+          "focus": "Take care"
+        },
+        {
+          "en": "“See you next week, Ayşe.” “Thanks! Take care.”",
+          "tr": "“Haftaya görüşürüz Ayşe.” “Sağ ol! Kendine iyi bak.”",
+          "register": "neutral",
+          "focus": "Take care"
+        },
+        {
+          "en": "Thanks for the call, Mom. Take care, and say hi to Dad.",
+          "tr": "Aradığın için sağ ol anne. Kendine iyi bak, babama selam söyle.",
+          "register": "neutral",
+          "focus": "Take care"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take care of yourself"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kendine iyi bak",
+          "alt": [
+            "kendine dikkat et"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Vedalaşırken söylenir, mesajın sonuna da yazılır. 'Dikkat et!' diye uyarmak için 'Be careful!' denir. 'Take care of' ise 'bakmak, ilgilenmek' demektir: 'take care of a baby'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was nice to see you, Elif. ______ and see you soon!",
+        "answer": "Take care",
+        "distractors": [
+          "How about",
+          "At least",
+          "Never mind"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_a_break.phr.1",
+      "lemma": "take a break",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "stop to rest",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ə ˈbreɪk/",
+        "uk": "/teɪk ə ˈbreɪk/"
+      },
+      "def": {
+        "micro": "stop work to rest",
+        "short": "stop what you are doing for a short time to rest",
+        "long": "To stop working or studying for a short time so that you can rest, eat or drink something. It is usually short, from a few minutes to an hour."
+      },
+      "grammar": {
+        "pattern": "take a break (from + noun)"
+      },
+      "examples": [
+        {
+          "en": "Let's take a break. I'm tired.",
+          "tr": "Mola verelim. Yoruldum.",
+          "register": "neutral",
+          "focus": "take a break"
+        },
+        {
+          "en": "You have been working for hours. Take a break, Mehmet.",
+          "tr": "Saatlerdir çalışıyorsun. Mola ver Mehmet.",
+          "register": "neutral",
+          "focus": "Take a break"
+        },
+        {
+          "en": "We take a break at eleven and drink some tea.",
+          "tr": "Saat on birde mola verip çay içiyoruz.",
+          "register": "neutral",
+          "focus": "take a break"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take a short break",
+        "take a break from work"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mola vermek",
+          "alt": [
+            "ara vermek",
+            "dinlenmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Mola vermek' ve 'ara vermek' ikisi de olur. İngilizcede fiil 'take' olur. 'Have a break' demek de mümkündür ama 'make a break' denmez.",
+          "mistakes": [
+            {
+              "wrong": "Let's give a break.",
+              "right": "Let's take a break.",
+              "why": "Türkçede 'mola vermek' deriz ve 'vermek' sözü 'give' diye düşünülür. İngilizcede 'take a break' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We have studied for three hours. Let's ______ and drink some tea.",
+        "answer": "take a break",
+        "distractors": [
+          "make a mistake",
+          "catch a cold",
+          "pay attention"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.have_fun.phr.1",
+      "lemma": "have fun",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "enjoy yourself",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv ˈfʌn/",
+        "uk": "/hæv ˈfʌn/"
+      },
+      "def": {
+        "micro": "enjoy yourself",
+        "short": "enjoy what you are doing and feel happy",
+        "long": "To enjoy an activity and feel happy while you do it. People also say it to wish someone a good time, as in 'Have fun!'."
+      },
+      "examples": [
+        {
+          "en": "Have fun at the party, Ayşe!",
+          "tr": "Partide iyi eğlenceler Ayşe!",
+          "register": "neutral",
+          "focus": "Have fun"
+        },
+        {
+          "en": "The kids had fun at the beach.",
+          "tr": "Çocuklar plajda eğlendi.",
+          "register": "neutral",
+          "focus": "had fun"
+        },
+        {
+          "en": "We always have fun when Kenji visits us.",
+          "tr": "Kenji bize geldiğinde hep eğleniriz.",
+          "register": "neutral",
+          "focus": "have fun"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have fun with friends",
+        "have a lot of fun"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eğlenmek",
+          "alt": [
+            "iyi eğlenceler",
+            "keyif almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Have fun!' giden birine 'iyi eğlenceler!' demektir. 'Fun' sayılamayan bir isimdir; 'have a fun' denmez.",
+          "mistakes": [
+            {
+              "wrong": "Have a fun!",
+              "right": "Have fun!",
+              "why": "Türkçede 'bir eğlence' diyebiliriz. İngilizcede 'fun' sayılamaz, önüne 'a' gelmez: have fun."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's your birthday party tonight! I hope you ______ there.",
+        "answer": "have fun",
+        "distractors": [
+          "make sure",
+          "change your mind",
+          "pay attention"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.good_luck.phr.1",
+      "lemma": "good luck",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "wishing someone success",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡʊd ˈlʌk/",
+        "uk": "/ɡʊd ˈlʌk/"
+      },
+      "def": {
+        "micro": "I hope it goes well",
+        "short": "used to wish someone success before a test, a trip or a hard thing",
+        "long": "People say this to someone who is going to do something hard or important, like a test or an interview. It shows you hope that the person will do well."
+      },
+      "examples": [
+        {
+          "en": "Good luck on your exam tomorrow!",
+          "tr": "Yarınki sınavında bol şans!",
+          "register": "neutral",
+          "focus": "Good luck"
+        },
+        {
+          "en": "“I have an interview today.” “Good luck, Mehmet!”",
+          "tr": "“Bugün bir mülakatım var.” “Bol şans Mehmet!”",
+          "register": "neutral",
+          "focus": "Good luck"
+        },
+        {
+          "en": "Good luck with your new job, Maria. You will do well!",
+          "tr": "Yeni işinde bol şanslar Maria. Başaracaksın!",
+          "register": "neutral",
+          "focus": "Good luck"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "good luck with",
+        "good luck on"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bol şans",
+          "alt": [
+            "iyi şanslar",
+            "başarılar"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Bol şans', 'iyi şanslar' ve 'başarılar' İngilizcede 'good luck' olur. 'Luck' sayılamaz: çoğul yapılmaz ve önüne 'a' gelmez.",
+          "mistakes": [
+            {
+              "wrong": "Good lucks!",
+              "right": "Good luck!",
+              "why": "Türkçede 'iyi şanslar' diye çoğul söyleriz. İngilizcede 'luck' sayılamaz, çoğul olmaz: Good luck!"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Your exam is tomorrow, Ayşe. ______!",
+        "answer": "Good luck",
+        "distractors": [
+          "Excuse me",
+          "Right now",
+          "Sounds good"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

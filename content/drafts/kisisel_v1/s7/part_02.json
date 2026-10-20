@@ -1,0 +1,1116 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.difficult.adj.1",
+      "lemma": "difficult",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not easy",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪfɪkəlt/",
+        "uk": "/ˈdɪfɪkəlt/"
+      },
+      "def": {
+        "micro": "not easy to do",
+        "short": "needing a lot of effort to do or understand",
+        "long": "Needing a lot of effort to do or to understand. A long exam, a new language or a big problem can be difficult. The opposite is easy."
+      },
+      "examples": [
+        {
+          "en": "This question is difficult.",
+          "tr": "Bu soru zor.",
+          "register": "neutral",
+          "focus": "difficult"
+        },
+        {
+          "en": "It is difficult to find a parking space here.",
+          "tr": "Burada park yeri bulmak zor.",
+          "register": "neutral",
+          "focus": "difficult"
+        },
+        {
+          "en": "Ayşe found the exam difficult, but she passed.",
+          "tr": "Ayşe sınavı zor buldu ama geçti.",
+          "register": "neutral",
+          "focus": "difficult"
+        }
+      ],
+      "synonyms": [
+        "hard"
+      ],
+      "antonyms": [
+        "easy"
+      ],
+      "collocations": [
+        "a difficult question",
+        "difficult to understand",
+        "a difficult decision",
+        "find it difficult"
+      ],
+      "word_family": [
+        {
+          "lemma": "difficulty",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zor",
+          "alt": [
+            "güç",
+            "zahmetli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Difficult' ile 'hard' çoğu zaman aynı anlama gelir. Kalıp: 'It is difficult to + fiil' (…mek zor). Kişi için 'for' kullanılır: difficult for me (benim için zor).",
+          "mistakes": [
+            {
+              "wrong": "English is difficult to me.",
+              "right": "English is difficult for me.",
+              "why": "Türkçede 'bana zor geliyor' (-e hali) dersiniz, bu yüzden 'to me' akla gelir. 'Kim için zor' demek istiyorsanız İngilizcede 'for me / for him' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This puzzle has 5,000 pieces. It is very ______ and takes weeks to finish.",
+        "answer": "difficult",
+        "distractors": [
+          "easy",
+          "safe",
+          "loud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hard.adj.1",
+      "lemma": "hard",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "difficult",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɑːrd/",
+        "uk": "/hɑːd/"
+      },
+      "def": {
+        "micro": "needing much effort",
+        "short": "needing a lot of effort or work; not easy",
+        "long": "Needing a lot of effort or work to do. A job, a test or a day can be hard when it takes a lot of energy. It is also an adverb: She works hard."
+      },
+      "examples": [
+        {
+          "en": "This exercise is hard for me.",
+          "tr": "Bu alıştırma benim için zor.",
+          "register": "neutral",
+          "focus": "hard"
+        },
+        {
+          "en": "It was a hard day, and I'm tired.",
+          "tr": "Zor bir gündü ve yorgunum.",
+          "register": "neutral",
+          "focus": "hard"
+        },
+        {
+          "en": "The first week of the new job was very hard.",
+          "tr": "Yeni işin ilk haftası çok zordu.",
+          "register": "neutral",
+          "focus": "hard"
+        }
+      ],
+      "synonyms": [
+        "difficult",
+        "tough"
+      ],
+      "antonyms": [
+        "easy"
+      ],
+      "collocations": [
+        "a hard question",
+        "hard work",
+        "hard to say",
+        "a hard day",
+        "a hard time"
+      ],
+      "word_family": [
+        {
+          "lemma": "hardly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "hardship",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'heard', meaning 'solid, firm' or 'severe'. The meaning 'difficult' came later.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "zor",
+          "alt": [
+            "güç",
+            "çetin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Hard' ile 'hardly' ayrı kelimelerdir: 'hard' = zor, sıkı; 'hardly' = neredeyse hiç. 'Sıkı çalışmak' için 'work hard' denir, 'work hardly' denmez.",
+          "mistakes": [
+            {
+              "wrong": "He studies hardly for exams.",
+              "right": "He studies hard for exams.",
+              "why": "Türkçede 'sıkı' sıfat da zarf da olur (sıkı çalıştı); İngilizcede de 'hard' böyledir. '-ly' eklenirse anlam değişir: 'hardly' = neredeyse hiç. He hardly studies = neredeyse hiç çalışmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:hardly"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet finished only one question in an hour. The test was too ______ for him.",
+        "answer": "hard",
+        "distractors": [
+          "easy",
+          "cheap",
+          "tall"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.possible.adj.1",
+      "lemma": "possible",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "can happen or be done",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːsəbəl/",
+        "uk": "/ˈpɒsəbəl/"
+      },
+      "def": {
+        "micro": "able to happen or be done",
+        "short": "something that can happen or can be done",
+        "long": "Something that can happen or can be done. If a thing is possible, nothing stops it. 'As soon as possible' means 'very soon, without waiting'."
+      },
+      "examples": [
+        {
+          "en": "Is it possible to pay by card?",
+          "tr": "Kartla ödemek mümkün mü?",
+          "register": "neutral",
+          "focus": "possible"
+        },
+        {
+          "en": "Please call me as soon as possible.",
+          "tr": "Lütfen beni mümkün olan en kısa sürede ara.",
+          "register": "neutral",
+          "focus": "possible"
+        },
+        {
+          "en": "It is possible that Mehmet will be late.",
+          "tr": "Mehmet'in geç kalması mümkün.",
+          "register": "neutral",
+          "focus": "possible"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "impossible"
+      ],
+      "collocations": [
+        "as soon as possible",
+        "if possible",
+        "very possible",
+        "make it possible"
+      ],
+      "word_family": [
+        {
+          "lemma": "possibly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "possibility",
+          "pos": "n"
+        },
+        {
+          "lemma": "impossible",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'possibilis', from 'posse', meaning 'to be able'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "mümkün",
+          "alt": [
+            "olası",
+            "olabilir"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'It is possible to + fiil' (…mek mümkün), 'if possible' (mümkünse), 'as soon as possible' (en kısa zamanda; kısaltması ASAP). Karşıtı 'impossible' (imkânsız).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Is it ______ to pay by card here? I have no cash.",
+        "answer": "possible",
+        "distractors": [
+          "ready",
+          "sure",
+          "busy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.important.adj.1",
+      "lemma": "important",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "mattering a lot",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈpɔːrtənt/",
+        "uk": "/ɪmˈpɔːtənt/"
+      },
+      "def": {
+        "micro": "of great value or meaning",
+        "short": "something you must think about or not forget because it matters a lot",
+        "long": "Something that matters a lot, so you must think about it or not forget it. Your health, a test or a meeting can be important. A person can be important too, like a boss."
+      },
+      "examples": [
+        {
+          "en": "Sleep is important for your health.",
+          "tr": "Uyku sağlığın için önemlidir.",
+          "register": "neutral",
+          "focus": "important"
+        },
+        {
+          "en": "The meeting is very important, so please don't be late.",
+          "tr": "Toplantı çok önemli, o yüzden lütfen geç kalma.",
+          "register": "neutral",
+          "focus": "important"
+        },
+        {
+          "en": "It is important to drink water when it is hot.",
+          "tr": "Hava sıcakken su içmek önemlidir.",
+          "register": "neutral",
+          "focus": "important"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unimportant"
+      ],
+      "collocations": [
+        "very important",
+        "an important meeting",
+        "important to me",
+        "most important"
+      ],
+      "word_family": [
+        {
+          "lemma": "importance",
+          "pos": "n"
+        },
+        {
+          "lemma": "unimportant",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önemli",
+          "alt": [
+            "mühim"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Vurgu ikinci hecede: im-POR-tant. Kalıp: 'It is important to + fiil' (…mek önemlidir). 'Important' kişi için de kullanılır: an important person (önemli biri).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our final exam is on Monday, so studying this weekend is very ______.",
+        "answer": "important",
+        "distractors": [
+          "cheap",
+          "wet",
+          "dirty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.different.adj.1",
+      "lemma": "different",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not the same",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪfrənt/",
+        "uk": "/ˈdɪfrənt/"
+      },
+      "def": {
+        "micro": "not the same",
+        "short": "not like another person or thing",
+        "long": "Not the same as another person or thing. Twins can look the same, but they are often different in character. We say 'different from' something."
+      },
+      "examples": [
+        {
+          "en": "My brother and I are very different.",
+          "tr": "Kardeşim ve ben çok farklıyız.",
+          "register": "neutral",
+          "focus": "different"
+        },
+        {
+          "en": "This phone is different from my old one.",
+          "tr": "Bu telefon eski telefonumdan farklı.",
+          "register": "neutral",
+          "focus": "different"
+        },
+        {
+          "en": "Kenji tried many different kinds of tea in Turkey.",
+          "tr": "Kenji Türkiye'de birçok farklı çeşit çay denedi.",
+          "register": "neutral",
+          "focus": "different"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "same"
+      ],
+      "collocations": [
+        "very different",
+        "different from",
+        "a different kind",
+        "completely different"
+      ],
+      "word_family": [
+        {
+          "lemma": "difference",
+          "pos": "n"
+        },
+        {
+          "lemma": "differently",
+          "pos": "adv"
+        },
+        {
+          "lemma": "differ",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'differre', meaning 'to carry apart', and so 'to be unlike'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "farklı",
+          "alt": [
+            "değişik",
+            "başka"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Different from' denir ('-den farklı'); bazıları 'different to' ya da 'different than' de der. Sıfat 'different', isim 'difference' (fark) olur.",
+          "mistakes": [
+            {
+              "wrong": "What is the different between them?",
+              "right": "What is the difference between them?",
+              "why": "Türkçede 'fark' (isim) ve 'farklı' (sıfat) ayrı kelimelerdir. İngilizcede de öyledir: isim 'difference', sıfat 'different'. 'The difference' denir, 'the different' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister loves loud music, but I like quiet music. We are very ______.",
+        "answer": "different",
+        "distractors": [
+          "same",
+          "ready",
+          "wet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.same.adj.1",
+      "lemma": "same",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not different",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪm/",
+        "uk": "/seɪm/"
+      },
+      "def": {
+        "micro": "alike in every way",
+        "short": "exactly like another thing or person; not different",
+        "long": "Exactly like another person or thing. You usually need 'the' before it: the same bag, the same day. 'The same as' compares two things."
+      },
+      "examples": [
+        {
+          "en": "We are in the same class.",
+          "tr": "Biz aynı sınıftayız.",
+          "register": "neutral",
+          "focus": "same"
+        },
+        {
+          "en": "Ali and I have the same phone.",
+          "tr": "Ali ile benim telefonum aynı.",
+          "register": "neutral",
+          "focus": "same"
+        },
+        {
+          "en": "Maria wears the same coat every winter.",
+          "tr": "Maria her kış aynı paltoyu giyer.",
+          "register": "neutral",
+          "focus": "same"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "different"
+      ],
+      "collocations": [
+        "the same as",
+        "at the same time",
+        "the same age",
+        "in the same way"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "English took it from Old Norse 'samr', meaning 'same', in the Middle Ages.",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "aynı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'aynı' tek başına kullanılır; İngilizcede 'same' önünde hemen her zaman 'the' olur: the same. 'The same as' = …ile aynı. Karşıtı 'different'.",
+          "mistakes": [
+            {
+              "wrong": "We have same teacher.",
+              "right": "We have the same teacher.",
+              "why": "Türkçede 'aynı' önüne bir şey almaz (aynı öğretmen). İngilizcede 'same' önünde hemen her zaman 'the' gerekir: the same teacher."
+            },
+            {
+              "wrong": "My bag is same with yours.",
+              "right": "My bag is the same as yours.",
+              "why": "Türkçede 'seninkiyle aynı' dersiniz (-le), bu yüzden 'with' akla gelir. İngilizcede karşılaştırma 'the same as' ile yapılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet and I are in the ______ class, so we see each other every day.",
+        "answer": "same",
+        "distractors": [
+          "different",
+          "empty",
+          "tall"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.empty.adj.1",
+      "lemma": "empty",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "with nothing inside",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛmpti/",
+        "uk": "/ˈɛmpti/"
+      },
+      "def": {
+        "micro": "with nothing inside",
+        "short": "having nothing or nobody in it",
+        "long": "Having nothing or nobody inside. A glass, a box, a street or a room can be empty. When you finish all your coffee, your cup is empty."
+      },
+      "examples": [
+        {
+          "en": "The fridge is empty. Let's go shopping.",
+          "tr": "Buzdolabı boş. Alışverişe çıkalım.",
+          "register": "neutral",
+          "focus": "empty"
+        },
+        {
+          "en": "The streets were empty at six in the morning.",
+          "tr": "Sabah altıda sokaklar bomboştu.",
+          "register": "neutral",
+          "focus": "empty"
+        },
+        {
+          "en": "My bottle is empty. Is there any water here?",
+          "tr": "Şişem boş. Burada su var mı?",
+          "register": "neutral",
+          "focus": "empty"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "full"
+      ],
+      "collocations": [
+        "an empty room",
+        "an empty glass",
+        "an empty street",
+        "an empty seat"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'ǣmtig', which first meant 'free from work' or 'unoccupied'. It comes from 'ǣmetta', meaning 'leisure'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "boş",
+          "alt": [
+            "bomboş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'boş' hem 'empty' hem 'free' demektir: boş şişe = empty bottle; boş vaktim var = I have free time. Boş koltuk için 'empty seat' ya da 'free seat' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm hungry, but the fridge is ______. There is no food at all.",
+        "answer": "empty",
+        "distractors": [
+          "full",
+          "small",
+          "noisy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.full.adj.1",
+      "lemma": "full",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "with no space left",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fʊl/",
+        "uk": "/fʊl/"
+      },
+      "def": {
+        "micro": "with no space left",
+        "short": "holding as much as it can; with nothing more fitting in",
+        "long": "Holding as much as possible, with no space for more. A bus, a bag or a hotel can be full. When you have eaten enough food, you can say 'I'm full'."
+      },
+      "examples": [
+        {
+          "en": "The bus is full. We have to wait.",
+          "tr": "Otobüs dolu. Beklemek zorundayız.",
+          "register": "neutral",
+          "focus": "full"
+        },
+        {
+          "en": "My bag is full of books.",
+          "tr": "Çantam kitaplarla dolu.",
+          "register": "neutral",
+          "focus": "full"
+        },
+        {
+          "en": "Thanks, no more rice for me. I'm full.",
+          "tr": "Teşekkürler, daha fazla pilav istemem. Tokum.",
+          "register": "neutral",
+          "focus": "full"
+        }
+      ],
+      "synonyms": [
+        "packed"
+      ],
+      "antonyms": [
+        "empty"
+      ],
+      "collocations": [
+        "full of",
+        "a full bus",
+        "a full glass",
+        "I'm full"
+      ],
+      "word_family": [
+        {
+          "lemma": "fully",
+          "pos": "adv"
+        },
+        {
+          "lemma": "fill",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'full', meaning 'holding all it can hold'. It is related to the verb 'fill'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "dolu",
+          "alt": [
+            "tok",
+            "dopdolu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'dolu' ve 'tok' İngilizcede aynı kelimedir: 'The bus is full' (otobüs dolu), 'I'm full' (tokum). Dolu olan şey için 'full of' denir.",
+          "mistakes": [
+            {
+              "wrong": "The bag is full with books.",
+              "right": "The bag is full of books.",
+              "why": "Türkçede 'kitaplarla dolu' dersiniz (-la/-le), bu yüzden 'with' akla gelir. İngilizcede 'dolu' için 'full of' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody can get on the bus because it is completely ______.",
+        "answer": "full",
+        "distractors": [
+          "empty",
+          "slow",
+          "clean"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.quiet.adj.1",
+      "lemma": "quiet",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "making little noise",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkwaɪət/",
+        "uk": "/ˈkwaɪət/"
+      },
+      "def": {
+        "micro": "making little noise",
+        "short": "with little or no noise",
+        "long": "With little or no noise. A room, a street, a child or a night can be quiet. Teachers often say 'Be quiet!' when students talk too much."
+      },
+      "examples": [
+        {
+          "en": "Please be quiet. The baby is sleeping.",
+          "tr": "Lütfen sessiz ol. Bebek uyuyor.",
+          "register": "neutral",
+          "focus": "quiet"
+        },
+        {
+          "en": "I need a quiet place to study.",
+          "tr": "Ders çalışmak için sessiz bir yere ihtiyacım var.",
+          "register": "neutral",
+          "focus": "quiet"
+        },
+        {
+          "en": "Our street is very quiet at night.",
+          "tr": "Sokağımız geceleri çok sessiz.",
+          "register": "neutral",
+          "focus": "quiet"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "loud",
+        "noisy"
+      ],
+      "collocations": [
+        "a quiet place",
+        "a quiet street",
+        "keep quiet",
+        "a quiet person"
+      ],
+      "word_family": [
+        {
+          "lemma": "quietly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'quietus', meaning 'at rest'. The English word 'quite' comes from the same Latin word.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sessiz",
+          "alt": [
+            "sakin",
+            "dingin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Quiet' (sessiz) ile 'quite' (oldukça) yazılışta karışır; ikisi ayrı kelimelerdir. 'Quiet' iki hecelidir: kwa-yet. Karşıtı 'loud' ya da 'noisy' (gürültülü).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:quite"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody talks in the library, so it is very ______ there.",
+        "answer": "quiet",
+        "distractors": [
+          "loud",
+          "dirty",
+          "busy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.loud.adj.1",
+      "lemma": "loud",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "making a lot of noise",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/laʊd/",
+        "uk": "/laʊd/"
+      },
+      "def": {
+        "micro": "making a lot of noise",
+        "short": "making a lot of sound; easy to hear",
+        "long": "Making a lot of sound, so it is easy to hear, sometimes too easy. Music, a voice, a car or a party can be loud. Neighbors may ask you to turn the music down if it is too loud."
+      },
+      "examples": [
+        {
+          "en": "The music is too loud.",
+          "tr": "Müziğin sesi çok yüksek.",
+          "register": "neutral",
+          "focus": "loud"
+        },
+        {
+          "en": "Ayşe has a loud voice, so everybody hears her.",
+          "tr": "Ayşe'nin sesi yüksek, bu yüzden herkes onu duyar.",
+          "register": "neutral",
+          "focus": "loud"
+        },
+        {
+          "en": "A loud noise came from outside, and the dog woke up.",
+          "tr": "Dışarıdan yüksek bir ses geldi ve köpek uyandı.",
+          "register": "neutral",
+          "focus": "loud"
+        }
+      ],
+      "synonyms": [
+        "noisy"
+      ],
+      "antonyms": [
+        "quiet",
+        "soft"
+      ],
+      "collocations": [
+        "loud music",
+        "a loud noise",
+        "a loud voice",
+        "too loud",
+        "loud and clear"
+      ],
+      "word_family": [
+        {
+          "lemma": "loudly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "loudspeaker",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'hlūd', meaning 'loud'. The first letter 'h' was lost in speech long ago.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yüksek sesli",
+          "alt": [
+            "gürültülü",
+            "gür"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ses yüksek' denir; İngilizcede sesin şiddeti için 'loud' kullanılır. 'High' perdenin yüksek olmasıdır (high voice = ince ses). 'Gürültülü' için 'noisy' de denir.",
+          "mistakes": [
+            {
+              "wrong": "The music is too high. Turn it down.",
+              "right": "The music is too loud. Turn it down.",
+              "why": "Türkçede 'müziğin sesi yüksek' dersiniz, bu yüzden 'high' akla gelir. İngilizcede ses şiddeti 'loud' ile anlatılır; 'high' ince, tiz ses demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't sleep because my neighbors are playing very ______ music.",
+        "answer": "loud",
+        "distractors": [
+          "quiet",
+          "safe",
+          "empty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

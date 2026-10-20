@@ -90,8 +90,8 @@
 "word_family":[{"lemma":"anger","pos":"n"},{"lemma":"angrily","pos":"adv"}],"etymology":null,
 "l1":{"tr":{"gloss":"kızgın","alt":["öfkeli","sinirli"],"equivalence":"full","false_friend":null,"note":"Günlük Türkçedeki 'sinirli' çoğu zaman 'angry' demektir; 'nervous' (gergin, heyecanlı) ile karıştırma.","mistakes":[{"wrong":"I am angry to my boss.","right":"I am angry with my boss.","why":"Birine kızmak için 'angry with' (ya da 'at') kullanılır; 'to' kullanılmaz."}],"mnemonic":null}},
 "tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:nervous"],"sensitivity":0},
-"quiz":{"cloze":"He was ______ because someone broke his phone.","answer":"angry","distractors":["proud","lucky","glad"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"He was ______ because someone broke his phone.","answer":"angry","distractors":["excited","pleased","glad"]},
+"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.afraid.adj.1","lemma":"afraid","type":"word","pos":"adj","sense_no":1,"sense_note":"feeling fear","level":"A1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/əˈfreɪd/","uk":"/əˈfreɪd/"},
@@ -105,8 +105,8 @@
 "word_family":[],"etymology":null,
 "l1":{"tr":{"gloss":"korkmuş","alt":["korkan","çekinen"],"equivalence":"partial","false_friend":null,"note":"'Afraid' isimden önce kullanılmaz: 'an afraid man' denmez, 'a scared man' denir. 'Be afraid of' = -den korkmak.","mistakes":[{"wrong":"She is afraid from spiders.","right":"She is afraid of spiders.","why":"Türkçedeki '-den korkmak' İngilizcede 'afraid of' olur; 'from' kullanılmaz."}],"mnemonic":null}},
 "tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:scared"],"sensitivity":0},
-"quiz":{"cloze":"Many children are ______ of the dark.","answer":"afraid","distractors":["angry","happy","kind"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"Many children are ______ of the dark.","answer":"afraid","distractors":["hungry","happy","kind"]},
+"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.excited.adj.1","lemma":"excited","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ɪkˈsaɪtɪd/","uk":"/ɪkˈsaɪtɪd/"},
@@ -120,8 +120,8 @@
 "word_family":[{"lemma":"excitement","pos":"n"},{"lemma":"exciting","pos":"adj"}],"etymology":null,
 "l1":{"tr":{"gloss":"heyecanlı","alt":[],"equivalence":"partial","false_friend":null,"note":"Türkçe 'heyecanlı' hem güzel hem stresli heyecan için kullanılır. 'Excited' yalnızca güzel heyecandır; sınav öncesi gerginlik için 'nervous' denir.","mistakes":[{"wrong":"I'm excited about my exam tomorrow. (= stresli)","right":"I'm nervous about my exam tomorrow.","why":"Stresli ya da gergin heyecan için 'nervous' kullanılır; 'excited' sadece güzel bir heyecandır."}],"mnemonic":null}},
 "tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:nervous"],"sensitivity":0},
-"quiz":{"cloze":"We can't wait! We are ______ about the concert on Friday.","answer":"excited","distractors":["angry","sorry","bored"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"We can't wait! We are ______ about the concert on Friday.","answer":"excited","distractors":["upset","sorry","bored"]},
+"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.surprised.adj.1","lemma":"surprised","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/sərˈpraɪzd/","uk":"/səˈpraɪzd/"},
@@ -150,7 +150,7 @@
 "word_family":[],"etymology":null,
 "l1":{"tr":{"gloss":"üzgün, pişman","alt":["özür dileyen"],"equivalence":"partial","false_friend":null,"note":"'I'm sorry' = özür dilerim / üzgünüm. Kötü bir habere karşı 'I'm sorry to hear that' = Buna üzüldüm.","mistakes":[{"wrong":"I'm sorry for I'm late.","right":"I'm sorry I'm late. / Sorry for being late.","why":"'For' kelimesinden sonra cümle gelmez; ya 'for' kullanmadan cümle kur ya da 'for + -ing' kullan."}],"mnemonic":null}},
 "tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I'm ______ I broke your cup. I'll buy a new one.","answer":"sorry","distractors":["glad","proud","ready"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
+"quiz":{"cloze":"I'm ______ I broke your cup. I'll buy a new one.","answer":"sorry","distractors":["glad","pleased","ready"]},
+"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
 ]
 }

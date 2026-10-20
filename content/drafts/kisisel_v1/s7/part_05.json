@@ -1,0 +1,1080 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.sometimes.adv.1",
+      "lemma": "sometimes",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "not always, not never",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌmtaɪmz/",
+        "uk": "/ˈsʌmtaɪmz/"
+      },
+      "def": {
+        "micro": "on some days, not every day",
+        "short": "on some days or at some times, but not always",
+        "long": "On some days or at some times, but not always. It means less often than 'usually' and more often than 'rarely'. It can go before the main verb or at the start: 'Sometimes I walk.'"
+      },
+      "grammar": {
+        "pattern": "subject + sometimes + verb"
+      },
+      "examples": [
+        {
+          "en": "I sometimes walk to work.",
+          "tr": "Bazen işe yürüyerek giderim.",
+          "register": "neutral",
+          "focus": "sometimes"
+        },
+        {
+          "en": "Sometimes my brother calls me late at night.",
+          "tr": "Bazen kardeşim gece geç saatte beni arar.",
+          "register": "neutral",
+          "focus": "Sometimes"
+        },
+        {
+          "en": "Maria sometimes forgets her keys, so she keeps a spare one.",
+          "tr": "Maria bazen anahtarlarını unutur, bu yüzden yedek bir tane saklar.",
+          "register": "neutral",
+          "focus": "sometimes"
+        }
+      ],
+      "synonyms": [
+        "at times",
+        "now and then"
+      ],
+      "antonyms": [
+        "always",
+        "never"
+      ],
+      "collocations": [
+        "sometimes I think",
+        "only sometimes",
+        "sometimes late",
+        "sometimes busy"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Made from 'some' + 'time' + the adverb ending '-s', meaning 'at some times'.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bazen",
+          "alt": [
+            "ara sıra",
+            "arada sırada"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Sometimes' = bazen. Sondaki 's' önemlidir: 'sometime' = bir gün (zamanı belli değil), 'sometimes' = bazen. Cümle başında ya da fiilden önce gelir.",
+          "mistakes": [
+            {
+              "wrong": "I sometime play chess with my dad.",
+              "right": "I sometimes play chess with my dad.",
+              "why": "Türkçede 'bazen' tek bir kelimedir ve ek almaz. İngilizcede ise 'sometimes' sonunda 's' ister. 'Sometime' (bir gün) ayrı bir kelimedir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I walk to work on some days, but on other days I take the bus. I ______ walk to work.",
+        "answer": "sometimes",
+        "distractors": [
+          "always",
+          "never",
+          "very"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.never.adv.1",
+      "lemma": "never",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "not at any time",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnɛvər/",
+        "uk": "/ˈnɛvə/"
+      },
+      "def": {
+        "micro": "not at any time",
+        "short": "at no time; not even one time",
+        "long": "At no time, not even once. It already has a negative meaning, so we do not use 'not' with it: 'I never eat meat.' It goes before the main verb."
+      },
+      "grammar": {
+        "pattern": "subject + never + verb"
+      },
+      "examples": [
+        {
+          "en": "I never drink coffee at night.",
+          "tr": "Geceleri hiç kahve içmem.",
+          "register": "neutral",
+          "focus": "never"
+        },
+        {
+          "en": "Mehmet has never been to Izmir.",
+          "tr": "Mehmet İzmir'e hiç gitmedi.",
+          "register": "neutral",
+          "focus": "never"
+        },
+        {
+          "en": "My sister never forgets a birthday.",
+          "tr": "Kız kardeşim hiçbir doğum gününü unutmaz.",
+          "register": "neutral",
+          "focus": "never"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "always"
+      ],
+      "collocations": [
+        "never again",
+        "almost never",
+        "never mind",
+        "I've never been"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'nǣfre', made from 'ne' (not) and 'ǣfre' (ever).",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "asla",
+          "alt": [
+            "hiç",
+            "hiçbir zaman"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'hiç yemem' (hiç + olumsuz fiil) dersiniz. İngilizcede 'never' zaten olumsuzdur, fiil olumlu kalır: I never eat. 'Don't' eklenmez.",
+          "mistakes": [
+            {
+              "wrong": "I don't never eat meat.",
+              "right": "I never eat meat.",
+              "why": "Türkçede 'hiç' ile olumsuz fiil birlikte kullanılır (hiç yemem). İngilizcede 'never' zaten olumsuzdur; yanına 'don't' eklenmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali hates fish. He ______ eats it, not even on his birthday.",
+        "answer": "never",
+        "distractors": [
+          "always",
+          "often",
+          "usually"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.maybe.adv.1",
+      "lemma": "maybe",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "perhaps",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmeɪbi/",
+        "uk": "/ˈmeɪbi/"
+      },
+      "def": {
+        "micro": "perhaps; it is possible",
+        "short": "used when you are not sure; it may be true or may happen",
+        "long": "Used when you are not sure about something. It may be true, or it may not. It usually goes at the start of a sentence: 'Maybe it will rain.'"
+      },
+      "examples": [
+        {
+          "en": "Maybe we can meet tomorrow.",
+          "tr": "Belki yarın buluşabiliriz.",
+          "register": "neutral",
+          "focus": "Maybe"
+        },
+        {
+          "en": "I'm not sure. Maybe it will rain this afternoon.",
+          "tr": "Emin değilim. Belki bu öğleden sonra yağmur yağar.",
+          "register": "neutral",
+          "focus": "Maybe"
+        },
+        {
+          "en": "Maybe Kenji is at the library. Let's look there.",
+          "tr": "Belki Kenji kütüphanededir. Orada bakalım.",
+          "register": "neutral",
+          "focus": "Maybe"
+        }
+      ],
+      "synonyms": [
+        "perhaps"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "maybe not",
+        "maybe later",
+        "maybe tomorrow",
+        "maybe next week"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Made from the phrase 'it may be', joined into one word in the Middle Ages.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "belki",
+          "alt": [
+            "olabilir"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Maybe' = belki; çoğunlukla cümle başında gelir: Maybe I will go. 'May be' (iki kelime) fiildir: 'It may be true' = Doğru olabilir. 'Probably' (muhtemelen) kadar güçlü değildir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I will come to your party, but ______ I will be a little late.",
+        "answer": "maybe",
+        "distractors": [
+          "always",
+          "yesterday",
+          "hardly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.probably.adv.1",
+      "lemma": "probably",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "very likely",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɑːbəbli/",
+        "uk": "/ˈprɒbəbli/"
+      },
+      "def": {
+        "micro": "very likely",
+        "short": "used when something is very likely, but not sure",
+        "long": "Very likely, but not certain. We use it when we think something is true or will happen. It goes before the main verb: 'He will probably come.'"
+      },
+      "grammar": {
+        "pattern": "will + probably + verb"
+      },
+      "examples": [
+        {
+          "en": "It will probably rain tomorrow.",
+          "tr": "Yarın büyük olasılıkla yağmur yağacak.",
+          "register": "neutral",
+          "focus": "probably"
+        },
+        {
+          "en": "Elif is probably at home now.",
+          "tr": "Elif şu an muhtemelen evde.",
+          "register": "neutral",
+          "focus": "probably"
+        },
+        {
+          "en": "We probably won't come, because Ali is ill.",
+          "tr": "Muhtemelen gelmeyeceğiz, çünkü Ali hasta.",
+          "register": "neutral",
+          "focus": "probably"
+        }
+      ],
+      "synonyms": [
+        "most likely"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "will probably",
+        "probably not",
+        "most probably",
+        "probably the best"
+      ],
+      "word_family": [
+        {
+          "lemma": "probable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "probability",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'probabilis', meaning 'able to be proved', from 'probare' (to test, to prove).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "muhtemelen",
+          "alt": [
+            "büyük ihtimalle",
+            "herhalde"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Probably' = muhtemelen, büyük ihtimalle. 'Maybe' (belki) kadar belirsiz değil, 'definitely' (kesinlikle) kadar kesin değildir. Fiilden önce gelir: He will probably come.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The sky is full of black clouds. It will ______ rain soon.",
+        "answer": "probably",
+        "distractors": [
+          "hardly",
+          "often",
+          "here"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.especially.adv.1",
+      "lemma": "especially",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "more than others",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈspɛʃəli/",
+        "uk": "/ɪˈspɛʃəli/"
+      },
+      "def": {
+        "micro": "most of all",
+        "short": "more than the others; used to point to one special thing",
+        "long": "More than the others, or more than usual. We use it to point to one special thing or person in a group: 'I like fruit, especially apples.'"
+      },
+      "examples": [
+        {
+          "en": "I like fruit, especially apples.",
+          "tr": "Meyveyi severim, özellikle elmayı.",
+          "register": "neutral",
+          "focus": "especially"
+        },
+        {
+          "en": "It is very cold here, especially at night.",
+          "tr": "Burası çok soğuk, özellikle geceleri.",
+          "register": "neutral",
+          "focus": "especially"
+        },
+        {
+          "en": "Kenji is good at languages, especially English.",
+          "tr": "Kenji dillerde iyidir, özellikle İngilizcede.",
+          "register": "neutral",
+          "focus": "especially"
+        }
+      ],
+      "synonyms": [
+        "particularly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "especially good",
+        "especially when",
+        "especially for",
+        "not especially"
+      ],
+      "word_family": [
+        {
+          "lemma": "special",
+          "pos": "adj"
+        },
+        {
+          "lemma": "specially",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'especial', which comes from Latin 'specialis', meaning 'of a particular kind'. 'Special' comes from the same word.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "özellikle",
+          "alt": [
+            "bilhassa",
+            "en çok"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Especially' (özellikle, en çok) ile 'specially' (özel olarak, bu iş için) ayrı kelimelerdir. 'Özellikle' demek istiyorsanız çoğu zaman 'especially' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I love summer, specially July.",
+              "right": "I love summer, especially July.",
+              "why": "Türkçede 'özellikle' kelimesi 'özel' (special) kökünden gelir, bu yüzden 'specially' akla gelir. 'Özellikle, en çok' için 'especially' denir; 'specially' = özel olarak, bu iş için."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:specially"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like many sports, ______ football. I play it every weekend.",
+        "answer": "especially",
+        "distractors": [
+          "already",
+          "there",
+          "rarely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exactly.adv.1",
+      "lemma": "exactly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "with no difference",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzæktli/",
+        "uk": "/ɪɡˈzæktli/"
+      },
+      "def": {
+        "micro": "in every small detail",
+        "short": "just right, with no mistakes or differences",
+        "long": "In every small detail, with no mistakes or differences. We use it for numbers, times and ideas: 'It is exactly five o'clock.' People also say 'Exactly!' to mean 'You are completely right.'"
+      },
+      "examples": [
+        {
+          "en": "It is exactly five o'clock.",
+          "tr": "Saat tam beş.",
+          "register": "neutral",
+          "focus": "exactly"
+        },
+        {
+          "en": "I don't know exactly where he lives.",
+          "tr": "Onun tam olarak nerede yaşadığını bilmiyorum.",
+          "register": "neutral",
+          "focus": "exactly"
+        },
+        {
+          "en": "That's exactly what I wanted to say!",
+          "tr": "Tam da söylemek istediğim buydu!",
+          "register": "neutral",
+          "focus": "exactly"
+        }
+      ],
+      "synonyms": [
+        "precisely"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "exactly the same",
+        "exactly right",
+        "not exactly",
+        "exactly what I need"
+      ],
+      "word_family": [
+        {
+          "lemma": "exact",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'exactus', meaning 'precise'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tam olarak",
+          "alt": [
+            "tam",
+            "aynen"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Exactly!' konuşmada 'Aynen!' ya da 'Kesinlikle öyle!' demektir. 'Not exactly' = tam olarak değil. Saat için: exactly five = tam beş.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The clock shows 5:00, not one minute more. It is ______ five o'clock.",
+        "answer": "exactly",
+        "distractors": [
+          "tomorrow",
+          "here",
+          "away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.quite.adv.1",
+      "lemma": "quite",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "fairly, rather",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kwaɪt/",
+        "uk": "/kwaɪt/"
+      },
+      "def": {
+        "micro": "fairly, but not extremely",
+        "short": "more than a little, but less than very",
+        "long": "More than a little, but less than very. It goes before an adjective or an adverb: quite good, quite slowly. With 'a', it goes before it: quite a nice day."
+      },
+      "examples": [
+        {
+          "en": "The film was quite good.",
+          "tr": "Film oldukça iyiydi.",
+          "register": "neutral",
+          "focus": "quite"
+        },
+        {
+          "en": "It is quite cold today, so wear a coat.",
+          "tr": "Bugün hava oldukça soğuk, o yüzden mont giy.",
+          "register": "neutral",
+          "focus": "quite"
+        },
+        {
+          "en": "Ayşe speaks English quite well after one year.",
+          "tr": "Ayşe bir yıl sonra oldukça iyi İngilizce konuşuyor.",
+          "register": "neutral",
+          "focus": "quite"
+        }
+      ],
+      "synonyms": [
+        "fairly",
+        "rather"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "quite good",
+        "quite a lot",
+        "quite often",
+        "quite well"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "oldukça",
+          "alt": [
+            "epey",
+            "hayli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Quite' = oldukça. İngiliz İngilizcesinde 'very' (çok) kadar güçlü değildir; ABD'de bazen daha güçlü anlamda kullanılır. Sıfattan önce gelir: quite good. 'Quiet' (sessiz) ayrı kelimedir. 'Not quite' = tam değil.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:quiet"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like this restaurant. The food is ______ good, but it is not the best in town.",
+        "answer": "quite",
+        "distractors": [
+          "rarely",
+          "today",
+          "far"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.really.adv.1",
+      "lemma": "really",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "very, truly",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈriːəli/",
+        "uk": "/ˈrɪəli/"
+      },
+      "def": {
+        "micro": "very much; truly",
+        "short": "very, or very much; used to make a word stronger",
+        "long": "Very, or very much. We use it to make a word stronger: really good, I really like it. In a question, it shows surprise: 'Really?'"
+      },
+      "examples": [
+        {
+          "en": "I really like this song.",
+          "tr": "Bu şarkıyı gerçekten seviyorum.",
+          "register": "neutral",
+          "focus": "really"
+        },
+        {
+          "en": "It's really hot today. Let's go swimming.",
+          "tr": "Bugün hava gerçekten sıcak. Hadi yüzmeye gidelim.",
+          "register": "neutral",
+          "focus": "really"
+        },
+        {
+          "en": "Kenji is really good at drawing.",
+          "tr": "Kenji resim yapmakta gerçekten iyi.",
+          "register": "neutral",
+          "focus": "really"
+        }
+      ],
+      "synonyms": [
+        "truly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "really good",
+        "really like",
+        "really want",
+        "not really"
+      ],
+      "word_family": [
+        {
+          "lemma": "real",
+          "pos": "adj"
+        },
+        {
+          "lemma": "reality",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From 'real' + '-ly'. 'Real' comes from Latin 'res', meaning 'thing'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "gerçekten",
+          "alt": [
+            "cidden",
+            "çok"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Really' = gerçekten, cidden. 'Very' gibi sıfattan önce gelir: really good. Soru olarak 'Really?' = Gerçekten mi? 'Not really' = pek değil, aslında hayır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I love this song. I ______ like it. It's my favorite.",
+        "answer": "really",
+        "distractors": [
+          "hardly",
+          "rarely",
+          "away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.too.adv.1",
+      "lemma": "too",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "more than needed",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tuː/",
+        "uk": "/tuː/"
+      },
+      "def": {
+        "micro": "more than you need",
+        "short": "more than you want or need, so it is a problem",
+        "long": "More than you want or need, so there is a problem. It goes before an adjective or an adverb: too hot, too fast. We often say 'too' + adjective + 'to' + verb: 'It is too hot to eat.'"
+      },
+      "grammar": {
+        "pattern": "too + adjective (+ to + verb)"
+      },
+      "examples": [
+        {
+          "en": "This tea is too hot.",
+          "tr": "Bu çay fazla sıcak.",
+          "register": "neutral",
+          "focus": "too"
+        },
+        {
+          "en": "It is too late to call him now.",
+          "tr": "Şimdi onu aramak için çok geç.",
+          "register": "neutral",
+          "focus": "too"
+        },
+        {
+          "en": "These shoes are too small for me.",
+          "tr": "Bu ayakkabılar bana fazla küçük.",
+          "register": "neutral",
+          "focus": "too"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "enough"
+      ],
+      "collocations": [
+        "too much",
+        "too many",
+        "too late",
+        "too expensive",
+        "too hot"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'tō', the same word as 'to'. The spelling with 'oo' appeared in the 1500s.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "fazla",
+          "alt": [
+            "çok fazla",
+            "aşırı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'çok' hem 'very' hem 'too' demektir. 'Too' = gereğinden fazla, bir sorun var: too hot (içilemeyecek kadar sıcak). Güzel bir şey için 'very' denir.",
+          "mistakes": [
+            {
+              "wrong": "Your cake is too good. Thank you!",
+              "right": "Your cake is very good. Thank you!",
+              "why": "Türkçede 'çok güzel' hem 'very' hem 'too' için kullanılır. İngilizcede 'too' = gereğinden fazla, bir sorun var. Güzel bir şey için 'very' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:very"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe is ______ tired to cook dinner tonight.",
+        "answer": "too",
+        "distractors": [
+          "very",
+          "so",
+          "quite"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.also.adv.1",
+      "lemma": "also",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in addition",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːlsoʊ/",
+        "uk": "/ˈɔːlsəʊ/"
+      },
+      "def": {
+        "micro": "in addition; as well",
+        "short": "as well; used to add one more thing",
+        "long": "As well, or in addition. We use it to add one more thing or idea. It usually goes before the main verb, but after 'am / is / are': 'She also speaks French.'"
+      },
+      "grammar": {
+        "pattern": "subject + also + verb"
+      },
+      "examples": [
+        {
+          "en": "I like tea. I also like coffee.",
+          "tr": "Çayı severim. Kahveyi de severim.",
+          "register": "neutral",
+          "focus": "also"
+        },
+        {
+          "en": "Maria speaks Spanish and also a little Turkish.",
+          "tr": "Maria İspanyolca ve ayrıca biraz Türkçe konuşuyor.",
+          "register": "neutral",
+          "focus": "also"
+        },
+        {
+          "en": "The hotel is cheap, and it is also very clean.",
+          "tr": "Otel ucuz, aynı zamanda çok temiz.",
+          "register": "neutral",
+          "focus": "also"
+        }
+      ],
+      "synonyms": [
+        "as well",
+        "too"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "also known as",
+        "I also like",
+        "is also",
+        "can also"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'eallswā', meaning 'all so' or 'just so'. The word 'as' comes from the same older word.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ayrıca",
+          "alt": [
+            "aynı zamanda",
+            "bir de"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'de/da' ekiyle söylenir: 'Ben de' = me too. İngilizcede 'also' genellikle fiilden önce gelir; 'too' ise cümle sonunda olur: I like it too.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Maria speaks French. She ______ speaks Italian, so she knows two languages.",
+        "answer": "also",
+        "distractors": [
+          "yet",
+          "here",
+          "far"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

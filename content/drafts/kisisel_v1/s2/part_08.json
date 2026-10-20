@@ -304,8 +304,8 @@
     }
   },
   "tags": {"primary_topic": "music_film", "topics": ["music_film", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I made a new ______ with all my favorite songs for the trip.", "answer": "playlist", "distractors": ["recipe", "timetable", "password"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I made a new ______ with all my favorite songs for the trip.", "answer": "playlist", "distractors": ["recipe", "map", "menu"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited","distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.series.n.1",
@@ -390,8 +390,8 @@
     }
   },
   "tags": {"primary_topic": "music_film", "topics": ["music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I can't wait for the next ______ of my favorite show!", "answer": "episode", "distractors": ["recipe", "ticket", "window"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I can't wait for the next ______ of my favorite show!", "answer": "episode", "distractors": ["recipe", "channel", "window"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.band.n.1",

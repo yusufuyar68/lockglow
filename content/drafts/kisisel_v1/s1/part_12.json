@@ -410,13 +410,14 @@
         "distractors": [
           "price",
           "size",
-          "menu"
+          "color"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -613,14 +614,16 @@
         "cloze": "My doctor says I need to eat more fruit. I need a healthier ______.",
         "answer": "diet",
         "distractors": [
-          "wallet",
           "pillow",
-          "sleeve"
+          "sleeve",
+          "carpet"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

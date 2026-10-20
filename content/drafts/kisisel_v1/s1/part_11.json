@@ -298,14 +298,16 @@
         "cloze": "I waited in a long ______ at the supermarket.",
         "answer": "queue",
         "distractors": [
-          "recipe",
           "budget",
-          "bargain"
+          "bargain",
+          "passport"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -392,13 +394,15 @@
         "answer": "parcel",
         "distractors": [
           "recipe",
-          "receipt",
-          "budget"
+          "budget",
+          "ticket"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -600,13 +604,15 @@
         "answer": "medicine",
         "distractors": [
           "recipe",
-          "towel",
-          "menu"
+          "menu",
+          "parcel"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -706,14 +712,15 @@
         "answer": "hurt",
         "distractors": [
           "fix",
-          "wear",
-          "cook"
+          "cook",
+          "paint"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -904,15 +911,16 @@
         "cloze": "I have a high fever and my whole body hurts. I think it's the ______.",
         "answer": "flu",
         "distractors": [
-          "menu",
           "shower",
-          "bill"
+          "bill",
+          "garden"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

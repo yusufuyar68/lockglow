@@ -1,0 +1,1184 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.prefer.v.1",
+      "lemma": "prefer",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "like one more than another",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈfɜːr/",
+        "uk": "/prɪˈfɜː/"
+      },
+      "def": {
+        "micro": "like one more than another",
+        "short": "like one thing or person better than another and choose it if you can",
+        "long": "To like one thing better than another when you have two choices. We say 'I prefer tea to coffee.'"
+      },
+      "grammar": {
+        "pattern": "prefer A to B / prefer to do sth"
+      },
+      "examples": [
+        {
+          "en": "I prefer tea to coffee.",
+          "tr": "Çayı kahveye tercih ederim.",
+          "register": "neutral",
+          "focus": "prefer"
+        },
+        {
+          "en": "Kenji prefers to walk to work when the weather is nice.",
+          "tr": "Kenji hava güzelken işe yürümeyi tercih ediyor.",
+          "register": "neutral",
+          "focus": "prefers"
+        },
+        {
+          "en": "Would you prefer to sit inside or outside?",
+          "tr": "İçeride mi dışarıda mı oturmayı tercih edersiniz?",
+          "register": "neutral",
+          "focus": "prefer"
+        }
+      ],
+      "synonyms": [
+        "like better"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "prefer A to B",
+        "would prefer",
+        "prefer to stay home",
+        "prefer the first one"
+      ],
+      "word_family": [
+        {
+          "lemma": "preference",
+          "pos": "n"
+        },
+        {
+          "lemma": "preferable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "preferred",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'praeferre', meaning to carry in front: 'prae' (before) + 'ferre' (carry). To prefer is to put one thing before another.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tercih etmek",
+          "alt": [
+            "yeğlemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Prefer' ile iki şeyi karşılaştırırken 'to' kullanılır, 'than' değil: 'prefer tea to coffee'. Kibar istek için 'I would prefer…' (tercih ederim) denir.",
+          "mistakes": [
+            {
+              "wrong": "I prefer tea than coffee.",
+              "right": "I prefer tea to coffee.",
+              "why": "Türkçede karşılaştırma '-den' ekiyle yapılır ('kahveden çok çayı severim'), bu yüzden 'than' akla gelir. 'Prefer' ile 'than' değil, 'to' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like tea and coffee, but I ______ tea in the morning.",
+        "answer": "prefer",
+        "distractors": [
+          "pull",
+          "throw",
+          "push"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.explain.v.1",
+      "lemma": "explain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make clear",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspleɪn/",
+        "uk": "/ɪkˈspleɪn/"
+      },
+      "def": {
+        "micro": "make something clear",
+        "short": "tell someone about something so that they can understand it",
+        "long": "To tell someone about something in a clear way so that they can understand it. Teachers explain lessons, and you can explain why something happened."
+      },
+      "grammar": {
+        "pattern": "explain sth to sb / explain how/why ..."
+      },
+      "examples": [
+        {
+          "en": "Can you explain this word to me?",
+          "tr": "Bu kelimeyi bana açıklar mısın?",
+          "register": "neutral",
+          "focus": "explain"
+        },
+        {
+          "en": "The teacher explained the rules before the game.",
+          "tr": "Öğretmen oyundan önce kuralları açıkladı.",
+          "register": "neutral",
+          "focus": "explained"
+        },
+        {
+          "en": "Deniz explained why she was late for the meeting.",
+          "tr": "Deniz toplantıya neden geç kaldığını açıkladı.",
+          "register": "neutral",
+          "focus": "explained"
+        }
+      ],
+      "synonyms": [
+        "make clear"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "explain the rules",
+        "explain why",
+        "explain how it works",
+        "explain sth to sb",
+        "explain a word"
+      ],
+      "word_family": [
+        {
+          "lemma": "explanation",
+          "pos": "n"
+        },
+        {
+          "lemma": "unexplained",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'explanare', meaning 'to make flat or smooth', from 'ex-' (out) + 'planus' (flat). To explain is to make a thing clear.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "açıklamak",
+          "alt": [
+            "anlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Explain' bir şeyi anlaşılır kılmaktır. Bir olayı ya da hikâyeyi anlatmak için 'tell' kullanılır. Kişi 'to' ile gelir: 'explain it to me'.",
+          "mistakes": [
+            {
+              "wrong": "Can you explain me this word?",
+              "right": "Can you explain this word to me?",
+              "why": "Türkçede kişi '-a/-e' ekiyle söylenir ('bana açıkla'), edat gerekmez. İngilizcede 'explain' kişiyi doğrudan almaz; kişi 'to' ile gelir: explain sth to sb."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't understand this grammar. Can you ______ it to me?",
+        "answer": "explain",
+        "distractors": [
+          "apologise",
+          "argue",
+          "interrupt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.repeat.v.1",
+      "lemma": "repeat",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say or do again",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈpiːt/",
+        "uk": "/rɪˈpiːt/"
+      },
+      "def": {
+        "micro": "say or do again",
+        "short": "say or do something one more time",
+        "long": "To say or do something again, one or more times. In class, a teacher may ask you to repeat a word, a sentence, or a number."
+      },
+      "grammar": {
+        "pattern": "repeat sth (after sb)"
+      },
+      "examples": [
+        {
+          "en": "Sorry, can you repeat that, please?",
+          "tr": "Pardon, bunu tekrar eder misin lütfen?",
+          "register": "neutral",
+          "focus": "repeat"
+        },
+        {
+          "en": "Please repeat the new words after me.",
+          "tr": "Lütfen yeni kelimeleri benden sonra tekrarla.",
+          "register": "neutral",
+          "focus": "repeat"
+        },
+        {
+          "en": "Ayşe repeated the number slowly so I could write it down.",
+          "tr": "Ayşe numarayı yazabileyim diye yavaşça tekrarladı.",
+          "register": "neutral",
+          "focus": "repeated"
+        }
+      ],
+      "synonyms": [
+        "say again",
+        "do again"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "repeat after me",
+        "repeat the word",
+        "repeat the question",
+        "repeat a mistake"
+      ],
+      "word_family": [
+        {
+          "lemma": "repetition",
+          "pos": "n"
+        },
+        {
+          "lemma": "repeated",
+          "pos": "adj"
+        },
+        {
+          "lemma": "repeatedly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'repetere', meaning 'to seek again': 're-' (again) + 'petere' (to seek or go toward).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tekrarlamak",
+          "alt": [
+            "tekrar etmek",
+            "yinelemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Tekrar söyler misin?' demek için 'Can you repeat that?' denir. 'Again' kendi başına 'tekrar' demektir; 'repeat' fiilinin içinde zaten bu anlam vardır.",
+          "mistakes": [
+            {
+              "wrong": "Can you repeat again, please?",
+              "right": "Can you repeat that, please?",
+              "why": "Türkçede 'tekrar söyler misin?' dersiniz; 'tekrar' = again. 'Repeat' fiilinde 'again' anlamı zaten vardır, bu yüzden 'repeat again' gereksizdir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't hear you. Can you ______ that, please?",
+        "answer": "repeat",
+        "distractors": [
+          "chat",
+          "blame",
+          "apologise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.practice.v.1",
+      "lemma": "practice",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "do again to get better",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpræktɪs/",
+        "uk": "/ˈpræktɪs/"
+      },
+      "def": {
+        "micro": "do again to get better",
+        "short": "do or play something again and again so that you get better at it",
+        "long": "To do something many times so that you can do it better. People practice the piano, a sport, or a language."
+      },
+      "grammar": {
+        "pattern": "practice sth / practice + -ing"
+      },
+      "examples": [
+        {
+          "en": "I practice English every day.",
+          "tr": "Her gün İngilizce pratik yapıyorum.",
+          "register": "neutral",
+          "focus": "practice"
+        },
+        {
+          "en": "Maria practices the piano for an hour after school.",
+          "tr": "Maria okuldan sonra bir saat piyano çalışıyor.",
+          "register": "neutral",
+          "focus": "practices"
+        },
+        {
+          "en": "Let's practice speaking before the job interview tomorrow.",
+          "tr": "Yarınki iş görüşmesinden önce konuşma pratiği yapalım.",
+          "register": "neutral",
+          "focus": "practice"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "practice English",
+        "practice the piano",
+        "practice speaking",
+        "practice every day",
+        "practice a sport"
+      ],
+      "word_family": [
+        {
+          "lemma": "practice",
+          "pos": "n"
+        },
+        {
+          "lemma": "practical",
+          "pos": "adj"
+        },
+        {
+          "lemma": "practically",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Greek 'praktikos', meaning 'concerned with doing', through Latin and French. It comes from the Greek verb 'prassein', to do or act.",
+        "origin": "Greek",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "pratik yapmak",
+          "alt": [
+            "alıştırma yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "ABD'de fiil ve isim 'practice' yazılır; İngiltere'de fiil 'practise' olur. Türkçedeki 'pratik' bazen 'kolay, kullanışlı' demektir; bunun İngilizcesi 'practical' ya da 'handy' olur.",
+          "mistakes": [
+            {
+              "wrong": "I practice to speak English every day.",
+              "right": "I practice speaking English every day.",
+              "why": "Türkçedeki '-mek/-mak' hâli ('konuşmak') 'to speak' diye çevrilir. 'Practice' fiilinden sonra '-ing' gelir: practice speaking."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to speak better, so I ______ English every day.",
+        "answer": "practice",
+        "distractors": [
+          "forget",
+          "fall",
+          "ignore"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prepare.v.1",
+      "lemma": "prepare",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make ready",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈpɛr/",
+        "uk": "/prɪˈpeə/"
+      },
+      "def": {
+        "micro": "make ready for later",
+        "short": "get something or someone ready for a later time or event",
+        "long": "To make something or someone ready for a later time or event. People prepare food, a meeting, a trip, or an exam: 'prepare a meal', 'prepare for a test'."
+      },
+      "grammar": {
+        "pattern": "prepare sth / prepare for sth"
+      },
+      "examples": [
+        {
+          "en": "Mom is preparing breakfast.",
+          "tr": "Annem kahvaltı hazırlıyor.",
+          "register": "neutral",
+          "focus": "preparing"
+        },
+        {
+          "en": "Ayşe is preparing for her English exam next week.",
+          "tr": "Ayşe gelecek haftaki İngilizce sınavına hazırlanıyor.",
+          "register": "neutral",
+          "focus": "preparing"
+        },
+        {
+          "en": "Sam prepared a short speech for the wedding.",
+          "tr": "Sam düğün için kısa bir konuşma hazırladı.",
+          "register": "neutral",
+          "focus": "prepared"
+        }
+      ],
+      "synonyms": [
+        "get ready"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "prepare a meal",
+        "prepare for an exam",
+        "prepare a speech",
+        "prepare for a trip",
+        "prepare breakfast"
+      ],
+      "word_family": [
+        {
+          "lemma": "preparation",
+          "pos": "n"
+        },
+        {
+          "lemma": "prepared",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'praeparare', meaning 'to make ready beforehand': 'prae' (before) + 'parare' (to make ready).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hazırlamak",
+          "alt": [
+            "hazırlanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir şeyi hazırlamak 'prepare sth'; kendin hazırlanmak ise 'prepare for sth' ya da 'get ready' olur. Türkçede ikisi de 'hazır' kökünden gelir.",
+          "mistakes": [
+            {
+              "wrong": "Wait, I'm preparing. I'll be there in five minutes.",
+              "right": "Wait, I'm getting ready. I'll be there in five minutes.",
+              "why": "Türkçede 'hazırlanıyorum' nesnesiz söylenir. İngilizcede 'prepare' bir nesne ya da 'for' ister; çıkmaya hazırlanmak (giyinmek) için 'get ready' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The exam is tomorrow, so I must ______ for it tonight.",
+        "answer": "prepare",
+        "distractors": [
+          "fail",
+          "miss",
+          "forget"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.describe.v.1",
+      "lemma": "describe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say what it is like",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈskraɪb/",
+        "uk": "/dɪˈskraɪb/"
+      },
+      "def": {
+        "micro": "say what it is like",
+        "short": "say or write what a person, place, or thing is like",
+        "long": "To say or write what a person, place, or thing looks like, sounds like, or feels like. You can describe your house, a friend, or a problem to someone."
+      },
+      "grammar": {
+        "pattern": "describe sb/sth to sb"
+      },
+      "examples": [
+        {
+          "en": "Can you describe your house?",
+          "tr": "Evini tarif edebilir misin?",
+          "register": "neutral",
+          "focus": "describe"
+        },
+        {
+          "en": "Kenji described his new job to us over dinner.",
+          "tr": "Kenji yeni işini bize akşam yemeğinde anlattı.",
+          "register": "neutral",
+          "focus": "described"
+        },
+        {
+          "en": "She described the man as tall, with short dark hair.",
+          "tr": "Adamı uzun boylu ve kısa siyah saçlı biri olarak tarif etti.",
+          "register": "neutral",
+          "focus": "described"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "describe a person",
+        "describe a place",
+        "describe a picture",
+        "describe how you feel",
+        "describe sth to sb"
+      ],
+      "word_family": [
+        {
+          "lemma": "description",
+          "pos": "n"
+        },
+        {
+          "lemma": "descriptive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'describere', meaning 'to write down': 'de-' (down) + 'scribere' (to write). It is related to 'script'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tarif etmek",
+          "alt": [
+            "anlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'tarif' yemek tarifi (recipe) ve yol tarifi (directions) için de kullanılır; bunlar için 'describe' denmez. 'Describe' bir kişinin ya da şeyin nasıl olduğunu anlatır.",
+          "mistakes": [
+            {
+              "wrong": "Describe me your best friend.",
+              "right": "Describe your best friend to me.",
+              "why": "Türkçede kişi '-a/-e' ekiyle söylenir ('bana tarif et'), edat gerekmez. İngilizcede 'describe' kişiyi doğrudan almaz; kişi 'to' ile gelir: describe sb/sth to sb."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ your new flat? How many rooms does it have?",
+        "answer": "describe",
+        "distractors": [
+          "move",
+          "drop",
+          "pack"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.follow.v.1",
+      "lemma": "follow",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go or come after",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɑːloʊ/",
+        "uk": "/ˈfɒləʊ/"
+      },
+      "def": {
+        "micro": "go behind someone",
+        "short": "go or come after someone or something that is in front",
+        "long": "To go or come after someone or something that is in front of you. You can also follow a road, a sign, a rule, or an instruction by doing what it says."
+      },
+      "grammar": {
+        "pattern": "follow sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Please follow me.",
+          "tr": "Lütfen beni takip edin.",
+          "register": "neutral",
+          "focus": "follow"
+        },
+        {
+          "en": "The dog followed Elif all the way home.",
+          "tr": "Köpek Elif'i eve kadar takip etti.",
+          "register": "neutral",
+          "focus": "followed"
+        },
+        {
+          "en": "Follow the signs to the station, and you will see the bus stop.",
+          "tr": "İstasyona giden tabelaları takip et, otobüs durağını göreceksin.",
+          "register": "neutral",
+          "focus": "Follow"
+        }
+      ],
+      "synonyms": [
+        "go after"
+      ],
+      "antonyms": [
+        "lead"
+      ],
+      "collocations": [
+        "follow me",
+        "follow the signs",
+        "follow the rules",
+        "follow the road",
+        "follow instructions"
+      ],
+      "word_family": [
+        {
+          "lemma": "follower",
+          "pos": "n"
+        },
+        {
+          "lemma": "following",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takip etmek",
+          "alt": [
+            "izlemek",
+            "peşinden gitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Follow' hem 'takip etmek' hem 'izlemek' demektir: kuralı ya da yolu izlemek. Sosyal medyada da 'follow' denir. Bir filmi izlemek için 'watch' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I know the way. Please ______ me, and I'll show you.",
+        "answer": "follow",
+        "distractors": [
+          "knock",
+          "sleep",
+          "count"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.join.v.1",
+      "lemma": "join",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become part of",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dʒɔɪn/",
+        "uk": "/dʒɔɪn/"
+      },
+      "def": {
+        "micro": "become part of a group",
+        "short": "become part of a group, club, or team",
+        "long": "To become part of a group, club, or team, or to do something together with other people. You can join a gym, join a class, or join friends for dinner."
+      },
+      "grammar": {
+        "pattern": "join sb/sth (no 'to')"
+      },
+      "examples": [
+        {
+          "en": "Would you like to join us for lunch?",
+          "tr": "Bizimle öğle yemeğine katılmak ister misin?",
+          "register": "neutral",
+          "focus": "join"
+        },
+        {
+          "en": "Mehmet wants to join a football club.",
+          "tr": "Mehmet bir futbol kulübüne katılmak istiyor.",
+          "register": "neutral",
+          "focus": "join"
+        },
+        {
+          "en": "Maria joined the class in September and made many new friends.",
+          "tr": "Maria eylülde sınıfa katıldı ve birçok yeni arkadaş edindi.",
+          "register": "neutral",
+          "focus": "joined"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "leave"
+      ],
+      "collocations": [
+        "join a club",
+        "join a team",
+        "join us",
+        "join a gym",
+        "join the class"
+      ],
+      "word_family": [
+        {
+          "lemma": "joint",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'joindre', from Latin 'iungere', meaning 'to join or connect'. It is related to 'junction'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "katılmak",
+          "alt": [
+            "üye olmak",
+            "birleşmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Join' 'katılmak' demektir ama 'to' almaz: 'join the team'. Toplantıya ya da yarışmaya katılmak için 'attend' ve 'take part in' da kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Can I join to your team?",
+              "right": "Can I join your team?",
+              "why": "Türkçede 'katılmak' fiili '-e' hâli alır ('takıma katılmak'), o yüzden 'to' eklenir. İngilizcede 'join' doğrudan nesne alır: join the team."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We need one more player. Do you want to ______ our team?",
+        "answer": "join",
+        "distractors": [
+          "win",
+          "lose",
+          "score"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.show.v.1",
+      "lemma": "show",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "let someone see",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃoʊ/",
+        "uk": "/ʃəʊ/"
+      },
+      "def": {
+        "micro": "let someone see something",
+        "short": "put something where someone can see it, or let them look at it",
+        "long": "To let someone see something. You can show a photo, a ticket, or a way to do something."
+      },
+      "grammar": {
+        "pattern": "show sb sth / show sth to sb"
+      },
+      "examples": [
+        {
+          "en": "Can you show me your photos?",
+          "tr": "Bana fotoğraflarını gösterir misin?",
+          "register": "neutral",
+          "focus": "show"
+        },
+        {
+          "en": "Please show your ticket at the door.",
+          "tr": "Lütfen biletinizi kapıda gösterin.",
+          "register": "neutral",
+          "focus": "show"
+        },
+        {
+          "en": "Ayşe showed us how to use the new coffee machine.",
+          "tr": "Ayşe yeni kahve makinesini nasıl kullanacağımızı bize gösterdi.",
+          "register": "neutral",
+          "focus": "showed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "hide"
+      ],
+      "collocations": [
+        "show sb sth",
+        "show a ticket",
+        "show a photo",
+        "show the way",
+        "show how to do sth"
+      ],
+      "word_family": [
+        {
+          "lemma": "show",
+          "pos": "n"
+        },
+        {
+          "lemma": "showroom",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'scēawian', meaning 'to look at'. Over time it changed to mean 'to let someone look at'.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "göstermek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiilin hâlleri: show - showed - shown. 'Show me the photo' ya da 'show the photo to me' denir. 'Show' isim olarak da 'gösteri, TV programı' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I lost my way. Can you ______ me the way to the station?",
+        "answer": "show",
+        "distractors": [
+          "hold",
+          "cross",
+          "board"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.change.v.1",
+      "lemma": "change",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make or become different",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃeɪndʒ/",
+        "uk": "/tʃeɪndʒ/"
+      },
+      "def": {
+        "micro": "make or become different",
+        "short": "become different, or make something different from before",
+        "long": "To become different, or to make something different. The weather can change, and people can change their plans, clothes, or jobs."
+      },
+      "grammar": {
+        "pattern": "change sth / change from A to B"
+      },
+      "examples": [
+        {
+          "en": "The weather changes fast here.",
+          "tr": "Burada hava çabuk değişir.",
+          "register": "neutral",
+          "focus": "changes"
+        },
+        {
+          "en": "Elif changed her plans and stayed at home.",
+          "tr": "Elif planlarını değiştirip evde kaldı.",
+          "register": "neutral",
+          "focus": "changed"
+        },
+        {
+          "en": "I need to change my shirt before the party.",
+          "tr": "Partiden önce gömleğimi değiştirmem gerek.",
+          "register": "neutral",
+          "focus": "change"
+        }
+      ],
+      "synonyms": [
+        "alter"
+      ],
+      "antonyms": [
+        "stay the same"
+      ],
+      "collocations": [
+        "change your mind",
+        "change clothes",
+        "change plans",
+        "change the subject",
+        "change a lot"
+      ],
+      "word_family": [
+        {
+          "lemma": "change",
+          "pos": "n"
+        },
+        {
+          "lemma": "changeable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "unchanged",
+          "pos": "adj"
+        },
+        {
+          "lemma": "changing",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'changier', from Latin 'cambiare', meaning 'to exchange or barter'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "değiştirmek, değişmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'değiştirmek' (bir şeyi) ve 'değişmek' (kendiliğinden) ayrı fiillerdir; İngilizcede ikisi de 'change' olur. 'Change' isim olarak para üstü demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was sunny this morning, but now the weather has ______.",
+        "answer": "changed",
+        "distractors": [
+          "washed",
+          "sold",
+          "sent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1164 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.smell.v.1",
+      "lemma": "smell",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "notice with the nose",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/smɛl/",
+        "uk": "/smɛl/"
+      },
+      "def": {
+        "micro": "notice with your nose",
+        "short": "notice something with your nose",
+        "long": "To notice something with your nose. You can smell flowers, food, or smoke."
+      },
+      "grammar": {
+        "pattern": "smell sth / can smell sth"
+      },
+      "examples": [
+        {
+          "en": "I can smell fresh bread.",
+          "tr": "Taze ekmeğin kokusunu alıyorum.",
+          "register": "neutral",
+          "focus": "smell"
+        },
+        {
+          "en": "Come and smell these flowers. They're so nice!",
+          "tr": "Gel şu çiçekleri kokla. Çok güzeller!",
+          "register": "neutral",
+          "focus": "smell"
+        },
+        {
+          "en": "Maria smelled something burning in the kitchen.",
+          "tr": "Maria mutfakta yanık kokusu aldı.",
+          "register": "neutral",
+          "focus": "smelled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "smell food",
+        "smell smoke",
+        "smell flowers",
+        "smell gas",
+        "can smell"
+      ],
+      "word_family": [
+        {
+          "lemma": "smell",
+          "pos": "n"
+        },
+        {
+          "lemma": "smelly",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kokusunu almak",
+          "alt": [
+            "koklamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Smell' iki ayrı şey anlatır: kokusunu almak ('I can smell coffee') ve kokmak ('It smells good'). Kokmak anlamında sonra sıfat gelir: smells good, smells bad; 'smells well' denmez.",
+          "mistakes": [
+            {
+              "wrong": "I feel the smell of coffee.",
+              "right": "I can smell coffee.",
+              "why": "Türkçede 'kokuyu hissetmek' dersiniz ve 'hissetmek' 'feel' diye çevrilir. İngilizcede koku 'smell' ile algılanır; genellikle 'can smell' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mmm, I can ______ coffee. Is someone making some?",
+        "answer": "smell",
+        "distractors": [
+          "listen",
+          "push",
+          "touch"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.touch.v.1",
+      "lemma": "touch",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "put your hand on",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʌtʃ/",
+        "uk": "/tʌtʃ/"
+      },
+      "def": {
+        "micro": "put your hand on something",
+        "short": "put your hand or finger on something for a moment",
+        "long": "To put your hand or finger on something. In shops and museums, signs often say 'Please do not touch.'"
+      },
+      "grammar": {
+        "pattern": "touch sth/sb (no 'to')"
+      },
+      "examples": [
+        {
+          "en": "Please don't touch the food.",
+          "tr": "Lütfen yemeğe dokunma.",
+          "register": "neutral",
+          "focus": "touch"
+        },
+        {
+          "en": "The baby touched the dog's nose and laughed.",
+          "tr": "Bebek köpeğin burnuna dokundu ve güldü.",
+          "register": "neutral",
+          "focus": "touched"
+        },
+        {
+          "en": "Don't touch the oven. It is very hot!",
+          "tr": "Fırına dokunma. Çok sıcak!",
+          "register": "neutral",
+          "focus": "touch"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "touch the screen",
+        "touch your face",
+        "don't touch",
+        "touch sb's arm",
+        "touch the ground"
+      ],
+      "word_family": [
+        {
+          "lemma": "touch",
+          "pos": "n"
+        },
+        {
+          "lemma": "touching",
+          "pos": "adj"
+        },
+        {
+          "lemma": "touchy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "touchscreen",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dokunmak",
+          "alt": [
+            "el sürmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'dokunmak' '-e' hâli ister ('ekrana dokunmak'); İngilizcede 'touch' doğrudan nesne alır: touch the screen. Dokunmatik ekran = 'touchscreen'.",
+          "mistakes": [
+            {
+              "wrong": "Please don't touch to the paintings.",
+              "right": "Please don't touch the paintings.",
+              "why": "Türkçede 'dokunmak' fiili '-e' hâli alır ('tablolara dokunma'), o yüzden 'to' eklenir. İngilizcede 'touch' doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The sign says: Do not ______ the paintings.",
+        "answer": "touch",
+        "distractors": [
+          "listen",
+          "hear",
+          "smell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.knock.v.1",
+      "lemma": "knock",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "hit a door to be let in",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nɑːk/",
+        "uk": "/nɒk/"
+      },
+      "def": {
+        "micro": "hit a door to ask to come in",
+        "short": "hit a door or window with your hand to ask someone to open it",
+        "long": "To hit a door or window with your hand, usually a few times, so that people inside hear you. Always knock before you enter someone's room."
+      },
+      "grammar": {
+        "pattern": "knock on/at the door"
+      },
+      "examples": [
+        {
+          "en": "Please knock before you come in.",
+          "tr": "Lütfen içeri girmeden önce kapıyı çal.",
+          "register": "neutral",
+          "focus": "knock"
+        },
+        {
+          "en": "Someone is knocking on the door. Can you open it?",
+          "tr": "Biri kapıyı çalıyor. Açar mısın?",
+          "register": "neutral",
+          "focus": "knocking"
+        },
+        {
+          "en": "Mehmet knocked twice, but nobody came to the door.",
+          "tr": "Mehmet iki kez kapıyı çaldı ama kimse kapıya gelmedi.",
+          "register": "neutral",
+          "focus": "knocked"
+        }
+      ],
+      "synonyms": [
+        "tap"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "knock on the door",
+        "knock twice",
+        "knock loudly",
+        "knock before entering",
+        "knock on the window"
+      ],
+      "word_family": [
+        {
+          "lemma": "knock",
+          "pos": "n"
+        },
+        {
+          "lemma": "knocker",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'cnocian', a word that was probably made to imitate the sound of knocking.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kapıyı çalmak",
+          "alt": [
+            "tıklatmak",
+            "vurmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kapıyı çalmak 'knock on the door'; zili çalmak ise 'ring the bell' olur. Baştaki 'k' okunmaz: 'knock' /nɑːk/.",
+          "mistakes": [
+            {
+              "wrong": "Knock the door before you come in.",
+              "right": "Knock on the door before you come in.",
+              "why": "Türkçede 'kapıyı çalmak' dersiniz ('-yı' hâli), bu yüzden edat unutulur. İngilizcede kapıya 'on' ya da 'at' ile vurulur: knock on the door."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I rang the bell, then I ______ on the door, but nobody came.",
+        "answer": "knocked",
+        "distractors": [
+          "washed",
+          "drove",
+          "slept"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lock.v.1",
+      "lemma": "lock",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "close with a key",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɑːk/",
+        "uk": "/lɒk/"
+      },
+      "def": {
+        "micro": "close with a key",
+        "short": "close something with a key so that no one can open it",
+        "long": "To close a door, car, or box with a key so that other people cannot open it. Many people lock the door when they leave home."
+      },
+      "grammar": {
+        "pattern": "lock sth"
+      },
+      "examples": [
+        {
+          "en": "Don't forget to lock the door.",
+          "tr": "Kapıyı kilitlemeyi unutma.",
+          "register": "neutral",
+          "focus": "lock"
+        },
+        {
+          "en": "Ayşe locked her bike before she went into the shop.",
+          "tr": "Ayşe dükkâna girmeden önce bisikletini kilitledi.",
+          "register": "neutral",
+          "focus": "locked"
+        },
+        {
+          "en": "I locked my keys in the car by mistake.",
+          "tr": "Anahtarlarımı yanlışlıkla arabanın içinde kilitledim.",
+          "register": "neutral",
+          "focus": "locked"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unlock"
+      ],
+      "collocations": [
+        "lock the door",
+        "lock the car",
+        "lock a bike",
+        "lock your phone"
+      ],
+      "word_family": [
+        {
+          "lemma": "lock",
+          "pos": "n"
+        },
+        {
+          "lemma": "locked",
+          "pos": "adj"
+        },
+        {
+          "lemma": "locker",
+          "pos": "n"
+        },
+        {
+          "lemma": "unlock",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kilitlemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Close the door' kapıyı kapatmak, 'lock the door' kapıyı kilitlemek demektir; ikisi aynı şey değildir. Kilidi açmak için 'unlock', kilitli için 'locked' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ the door when you leave. I have the key.",
+        "answer": "lock",
+        "distractors": [
+          "wash",
+          "throw",
+          "count"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.count.v.1",
+      "lemma": "count",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "find how many",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kaʊnt/",
+        "uk": "/kaʊnt/"
+      },
+      "def": {
+        "micro": "find how many there are",
+        "short": "say numbers one by one to find out the total",
+        "long": "To say numbers one after another, or to find out how many things or people there are. A child learns to count from one to ten."
+      },
+      "grammar": {
+        "pattern": "count sth / count to + number"
+      },
+      "examples": [
+        {
+          "en": "Let's count the chairs.",
+          "tr": "Hadi sandalyeleri sayalım.",
+          "register": "neutral",
+          "focus": "count"
+        },
+        {
+          "en": "Tom counted his money twice to be sure.",
+          "tr": "Tom emin olmak için parasını iki kez saydı.",
+          "register": "neutral",
+          "focus": "counted"
+        },
+        {
+          "en": "Can you count from one to twenty in English?",
+          "tr": "İngilizce birden yirmiye kadar sayabilir misin?",
+          "register": "neutral",
+          "focus": "count"
+        }
+      ],
+      "synonyms": [
+        "add up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "count to ten",
+        "count the money",
+        "count the days",
+        "count backwards",
+        "count the people"
+      ],
+      "word_family": [
+        {
+          "lemma": "counting",
+          "pos": "n"
+        },
+        {
+          "lemma": "countable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "countless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'conter', from Latin 'computare', meaning 'to add up or work out'. It is related to 'compute'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "saymak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'saymak' 'saygı duymak' anlamına da gelir ('Seni çok sayarım'); 'count' bu anlamda kullanılmaz. 'Count' sayı saymak ve toplamını bulmaktır. 'Count on' (güvenmek) ayrı bir kalıptır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm going to ______ the people in the room: one, two, three…",
+        "answer": "count",
+        "distractors": [
+          "iron",
+          "sleep",
+          "knock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mind.v.1",
+      "lemma": "mind",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be bothered by something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/maɪnd/",
+        "uk": "/maɪnd/"
+      },
+      "def": {
+        "micro": "feel bothered by something",
+        "short": "feel annoyed or unhappy about something; used mostly in questions",
+        "long": "To feel annoyed or unhappy about something. We use it to ask politely: 'Do you mind if I sit here?'"
+      },
+      "grammar": {
+        "pattern": "Do you mind if + sentence? / mind + -ing"
+      },
+      "examples": [
+        {
+          "en": "Do you mind if I sit here?",
+          "tr": "Buraya oturmamın bir sakıncası var mı?",
+          "register": "neutral",
+          "focus": "mind"
+        },
+        {
+          "en": "I don't mind waiting. I have lots of time.",
+          "tr": "Beklemekten rahatsız olmam. Çok zamanım var.",
+          "register": "neutral",
+          "focus": "mind"
+        },
+        {
+          "en": "Would you mind closing the window? It's cold.",
+          "tr": "Pencereyi kapatmanızın sakıncası var mı? Hava soğuk.",
+          "register": "neutral",
+          "focus": "mind"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "Do you mind if...?",
+        "Would you mind...?",
+        "don't mind",
+        "never mind",
+        "mind waiting"
+      ],
+      "word_family": [
+        {
+          "lemma": "mindful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From the noun 'mind', which comes from Old English 'gemynd', meaning memory or thought.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sakınca görmek",
+          "alt": [
+            "umursamak",
+            "rahatsız olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Do you mind if I…?' Türkçede 'Sakıncası var mı?' demektir. 'No, not at all' = 'Hayır, hiç sorun değil.' 'Mind' fiilinden sonra '-ing' gelir: 'I don't mind waiting'.",
+          "mistakes": [
+            {
+              "wrong": "Do you mind to open the window?",
+              "right": "Do you mind opening the window?",
+              "why": "Türkçedeki '-mak/-mek' hâli ('açmak') 'to open' diye çevrilir. 'Mind' fiilinden sonra '-ing' gelir: mind opening."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's very hot in here. Would you ______ if I opened the window?",
+        "answer": "mind",
+        "distractors": [
+          "wash",
+          "drive",
+          "iron"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.guess.v.1",
+      "lemma": "guess",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say what you think without knowing",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛs/",
+        "uk": "/ɡɛs/"
+      },
+      "def": {
+        "micro": "say without being sure",
+        "short": "give an answer when you do not know for sure",
+        "long": "To say what you think the answer is when you cannot be sure. We guess a number, a price, or somebody's age."
+      },
+      "grammar": {
+        "pattern": "guess sth / guess (that) ... / I guess ..."
+      },
+      "examples": [
+        {
+          "en": "Can you guess my age?",
+          "tr": "Yaşımı tahmin edebilir misin?",
+          "register": "neutral",
+          "focus": "guess"
+        },
+        {
+          "en": "I guess the film starts at eight.",
+          "tr": "Sanırım film sekizde başlıyor.",
+          "register": "neutral",
+          "focus": "guess"
+        },
+        {
+          "en": "Guess what? Elif got the job!",
+          "tr": "Tahmin et ne oldu? Elif işi aldı!",
+          "register": "neutral",
+          "focus": "Guess"
+        }
+      ],
+      "synonyms": [
+        "suppose"
+      ],
+      "antonyms": [
+        "know"
+      ],
+      "collocations": [
+        "guess the answer",
+        "guess right",
+        "guess wrong",
+        "guess what",
+        "I guess so"
+      ],
+      "word_family": [
+        {
+          "lemma": "guess",
+          "pos": "n"
+        },
+        {
+          "lemma": "guesswork",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tahmin etmek",
+          "alt": [
+            "sanmak",
+            "tahminde bulunmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'I guess' günlük konuşmada 'sanırım' ya da 'galiba' demektir ('I guess so' = Sanırım öyle). 'Guess what?' ise bir haber vermeden önce söylenir: 'Tahmin et ne oldu?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't see the price. Let me ______: maybe ten dollars.",
+        "answer": "guess",
+        "distractors": [
+          "cook",
+          "lock",
+          "drive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wonder.v.1",
+      "lemma": "wonder",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "ask yourself",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwʌndər/",
+        "uk": "/ˈwʌndə/"
+      },
+      "def": {
+        "micro": "want to know something",
+        "short": "think about something and want to know the answer",
+        "long": "To think about something and want to know more about it. People often use it for polite questions: 'I wonder if you can help me.'"
+      },
+      "grammar": {
+        "pattern": "wonder if / whether / why / what ..."
+      },
+      "examples": [
+        {
+          "en": "I wonder what time it is.",
+          "tr": "Acaba saat kaç?",
+          "register": "neutral",
+          "focus": "wonder"
+        },
+        {
+          "en": "Ayşe wondered if the shop was still open.",
+          "tr": "Ayşe mağazanın hâlâ açık olup olmadığını merak etti.",
+          "register": "neutral",
+          "focus": "wondered"
+        },
+        {
+          "en": "I wonder why Kenji didn't come to the party.",
+          "tr": "Kenji partiye neden gelmedi acaba?",
+          "register": "neutral",
+          "focus": "wonder"
+        }
+      ],
+      "synonyms": [
+        "ask yourself"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "I wonder if",
+        "I wonder why",
+        "I wonder what",
+        "wonder about sth"
+      ],
+      "word_family": [
+        {
+          "lemma": "wonder",
+          "pos": "n"
+        },
+        {
+          "lemma": "wonderful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'wundor', meaning 'a marvel' or 'a strange and amazing thing'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "merak etmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'I wonder…' Türkçede 'acaba' demektir ('Acaba yağmur yağacak mı?'). 'Merak etmek' 'endişelenmek' anlamına da gelir; o anlam için 'worry' kullanılır, 'wonder' değil.",
+          "mistakes": [
+            {
+              "wrong": "Don't wonder, I'm fine.",
+              "right": "Don't worry, I'm fine.",
+              "why": "Türkçede 'merak etme' hem 'endişelenme' hem 'acaba deme' demektir. İngilizcede 'wonder' yalnızca 'acaba diye düşünmek' içindir; 'endişelenmek' için 'worry' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't know where Mehmet is. I ______ if he is at home.",
+        "answer": "wonder",
+        "distractors": [
+          "wear",
+          "hold",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.notice.v.1",
+      "lemma": "notice",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "see or hear something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnoʊtɪs/",
+        "uk": "/ˈnəʊtɪs/"
+      },
+      "def": {
+        "micro": "see or hear something",
+        "short": "see, hear, or feel something and understand that it is there",
+        "long": "To see, hear, or feel something and know that it is there. You may notice a change in a person, a sign on a wall, or a noise at night."
+      },
+      "grammar": {
+        "pattern": "notice sth / notice (that) ..."
+      },
+      "examples": [
+        {
+          "en": "Did you notice the new sign?",
+          "tr": "Yeni tabelayı fark ettin mi?",
+          "register": "neutral",
+          "focus": "notice"
+        },
+        {
+          "en": "Elif didn't notice that her bag was open.",
+          "tr": "Elif çantasının açık olduğunu fark etmedi.",
+          "register": "neutral",
+          "focus": "notice"
+        },
+        {
+          "en": "Mehmet noticed a strange noise coming from the kitchen.",
+          "tr": "Mehmet mutfaktan gelen tuhaf bir sesi fark etti.",
+          "register": "neutral",
+          "focus": "noticed"
+        }
+      ],
+      "synonyms": [
+        "spot"
+      ],
+      "antonyms": [
+        "miss"
+      ],
+      "collocations": [
+        "notice a change",
+        "notice a sign",
+        "notice the difference",
+        "not notice",
+        "notice sb doing sth"
+      ],
+      "word_family": [
+        {
+          "lemma": "notice",
+          "pos": "n"
+        },
+        {
+          "lemma": "noticeable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "unnoticed",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'notitia', meaning 'being known' or 'knowledge', which comes from 'notus' (known).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "fark etmek",
+          "alt": [
+            "farkına varmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Notice' bir şeyi görüp ya da duyup fark etmektir. Aynı sözcük isim olarak 'duyuru, uyarı yazısı' demektir: 'a notice on the door'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like your new hair. Did anyone else ______ it?",
+        "answer": "notice",
+        "distractors": [
+          "peel",
+          "bake",
+          "throw"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.expect.v.1",
+      "lemma": "expect",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "think something will happen",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspɛkt/",
+        "uk": "/ɪkˈspɛkt/"
+      },
+      "def": {
+        "micro": "think something will happen",
+        "short": "think that something will happen or that someone will come",
+        "long": "To think that something will happen, or that someone will come. We expect good weather on holiday, and we expect friends to arrive on time."
+      },
+      "grammar": {
+        "pattern": "expect sth / expect sb to do sth"
+      },
+      "examples": [
+        {
+          "en": "We expect rain tomorrow.",
+          "tr": "Yarın yağmur bekliyoruz.",
+          "register": "neutral",
+          "focus": "expect"
+        },
+        {
+          "en": "Ayşe is expecting a letter from her school.",
+          "tr": "Ayşe okulundan bir mektup bekliyor.",
+          "register": "neutral",
+          "focus": "expecting"
+        },
+        {
+          "en": "I didn't expect so many people at the party.",
+          "tr": "Partide bu kadar çok insan beklemiyordum.",
+          "register": "neutral",
+          "focus": "expect"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "expect rain",
+        "expect a call",
+        "expect to see sb",
+        "expect the worst",
+        "as expected"
+      ],
+      "word_family": [
+        {
+          "lemma": "expectation",
+          "pos": "n"
+        },
+        {
+          "lemma": "expected",
+          "pos": "adj"
+        },
+        {
+          "lemma": "unexpected",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'exspectare', meaning 'to look out for': 'ex-' (out) + 'spectare' (to look at).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "beklemek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'beklemek' hem 'wait' hem 'expect' demektir. 'Wait for' orada durup beklemektir; 'expect' olacağını düşünmek ya da umut etmektir: 'I expect a letter'.",
+          "mistakes": [
+            {
+              "wrong": "We are expecting the bus.",
+              "right": "We are waiting for the bus.",
+              "why": "Türkçede 'otobüsü bekliyoruz' dersiniz; 'beklemek' hem 'wait' hem 'expect' demektir. İngilizcede orada durup beklemek 'wait for' olur; 'expect' olacağını düşünmektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:wait"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The sky is dark and grey. I ______ it will rain soon.",
+        "answer": "expect",
+        "distractors": [
+          "iron",
+          "lock",
+          "pull"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

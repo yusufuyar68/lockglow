@@ -312,13 +312,15 @@
         "answer": "count on",
         "distractors": [
           "look for",
-          "give up",
+          "stay up",
           "carry on"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -419,13 +421,15 @@
         "answer": "deal with",
         "distractors": [
           "look up",
-          "show up",
+          "put off",
           "turn into"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -524,12 +528,14 @@
         "distractors": [
           "go out",
           "take out",
-          "give up"
+          "set off"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -631,13 +637,15 @@
         "answer": "sold out",
         "distractors": [
           "took off",
-          "set up",
+          "logged out",
           "broke down"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -737,12 +745,14 @@
         "distractors": [
           "Look up",
           "Hurry up",
-          "Give up"
+          "Cheer up"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -845,14 +855,16 @@
         "cloze": "The exam is over. Please ______ your papers to the teacher.",
         "answer": "hand in",
         "distractors": [
-          "take off",
+          "throw away",
           "get on",
           "put on"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -1064,14 +1076,15 @@
         "answer": "plug in",
         "distractors": [
           "turn down",
-          "hang up",
+          "fill up",
           "take off"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

@@ -42,8 +42,8 @@
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "To log in, you need your ______ and your password.", "answer": "username", "distractors": ["charger", "signal", "battery"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "To log in, you need your ______ and your password.", "answer": "username", "distractors": ["ringtone", "signal", "battery"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.signal.n.1",
@@ -259,8 +259,8 @@
     }
   },
   "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "It took us two hours to finish this 1,000-piece ______.", "answer": "puzzle", "distractors": ["ticket", "recipe", "match"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "It took us two hours to finish this 1,000-piece ______.", "answer": "puzzle", "distractors": ["film", "recipe", "match"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.board_game.phr.1",

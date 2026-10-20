@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.improve.v.1",
+      "lemma": "improve",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get better",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈpruːv/",
+        "uk": "/ɪmˈpruːv/"
+      },
+      "def": {
+        "micro": "make or become better",
+        "short": "become better than before, or make something better",
+        "long": "To become better, or to make something better than it was before. You can improve your English by speaking and reading every day."
+      },
+      "grammar": {
+        "pattern": "improve sth / sth improves"
+      },
+      "examples": [
+        {
+          "en": "I want to improve my English.",
+          "tr": "İngilizcemi geliştirmek istiyorum.",
+          "register": "neutral",
+          "focus": "improve"
+        },
+        {
+          "en": "Kenji's speaking improved a lot after the summer course.",
+          "tr": "Kenji'nin konuşması yaz kursundan sonra çok gelişti.",
+          "register": "neutral",
+          "focus": "improved"
+        },
+        {
+          "en": "Reading every day can improve your vocabulary.",
+          "tr": "Her gün okumak kelime dağarcığınızı geliştirebilir.",
+          "register": "neutral",
+          "focus": "improve"
+        }
+      ],
+      "synonyms": [
+        "get better"
+      ],
+      "antonyms": [
+        "get worse"
+      ],
+      "collocations": [
+        "improve your English",
+        "improve a lot",
+        "improve quickly",
+        "improve your skills",
+        "improve your health"
+      ],
+      "word_family": [
+        {
+          "lemma": "improvement",
+          "pos": "n"
+        },
+        {
+          "lemma": "improved",
+          "pos": "adj"
+        },
+        {
+          "lemma": "improving",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Anglo-French 'emprouwer', 'to turn to profit', built on Old French 'prou' (profit). Later it came to mean 'make better'.",
+        "origin": "Anglo-French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "geliştirmek, gelişmek",
+          "alt": [
+            "iyileştirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'geliştirmek' İngilizcede çoğu zaman 'improve' olur; 'develop' daha çok yeni bir şey (plan, ürün) geliştirmek içindir. 'Improve my English' denir; 'develop my English' pek duyulmaz.",
+          "mistakes": [
+            {
+              "wrong": "I want to develop my English.",
+              "right": "I want to improve my English.",
+              "why": "Türkçede 'İngilizcemi geliştirmek' dersiniz ve 'geliştirmek' 'develop' diye çevrilir. Var olan bir beceriyi daha iyi yapmak için 'improve' denir; 'develop' yeni bir şey ortaya çıkarmaktır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:develop"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My English is getting better. I want to ______ it more.",
+        "answer": "improve",
+        "distractors": [
+          "forget",
+          "ignore",
+          "lose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

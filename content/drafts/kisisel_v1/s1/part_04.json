@@ -175,15 +175,16 @@
         "cloze": "I can't sleep. My ______ is too hard.",
         "answer": "pillow",
         "distractors": [
-          "towel",
           "carpet",
-          "shelf"
+          "shelf",
+          "lamp"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -686,14 +687,16 @@
         "cloze": "The tap is leaking. Can you ______ it?",
         "answer": "fix",
         "distractors": [
-          "wear",
-          "taste",
-          "slice"
+          "slice",
+          "drink",
+          "borrow"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -791,15 +794,16 @@
         "cloze": "I pay the ______ on the first day of every month.",
         "answer": "rent",
         "distractors": [
-          "menu",
-          "towel",
-          "recipe"
+          "sofa",
+          "garden",
+          "window"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -988,15 +992,16 @@
         "cloze": "Washing the car is my ______ this weekend.",
         "answer": "chore",
         "distractors": [
-          "recipe",
           "sofa",
-          "towel"
+          "window",
+          "garage"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

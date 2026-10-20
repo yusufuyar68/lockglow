@@ -102,12 +102,14 @@
         "distractors": [
           "menu",
           "size",
-          "wallet"
+          "ticket"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -415,15 +417,16 @@
         "cloze": "The food was great. Can we have the ______, please?",
         "answer": "bill",
         "distractors": [
-          "recipe",
-          "size",
-          "towel"
+          "weather",
+          "color",
+          "queue"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -738,15 +741,16 @@
         "cloze": "The shirt was too small, so I asked for a ______.",
         "answer": "refund",
         "distractors": [
-          "recipe",
-          "menu",
-          "pocket"
+          "pocket",
+          "belt",
+          "ticket"
         ]
       },
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "distractors_diversified"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -844,14 +848,16 @@
         "cloze": "That house is too expensive. We can't ______ it.",
         "answer": "afford",
         "distractors": [
-          "wear",
           "taste",
-          "boil"
+          "boil",
+          "eat"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -947,14 +953,16 @@
         "cloze": "The coat was half price. It was a real ______!",
         "answer": "bargain",
         "distractors": [
-          "receipt",
           "size",
-          "wallet"
+          "basket",
+          "queue"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -1049,13 +1057,15 @@
         "answer": "budget",
         "distractors": [
           "wallet",
-          "receipt",
-          "bargain"
+          "bargain",
+          "price"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "distractors_diversified"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

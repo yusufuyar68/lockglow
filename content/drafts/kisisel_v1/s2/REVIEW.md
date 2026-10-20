@@ -94,3 +94,10 @@ Düzenlenen her kartın `meta.qa_flags` alanına `critic_edited` eklendi. `id`, 
 13. `en.ago.adv.1` quiz: Çeldirici "before" ("two years before") cümle bağlamsız olduğu için yanlış sayıldı. Çok sıkı bir okuyucu itiraz edebilir.
 14. `en.battery.n.1`: "Pil" mi "batarya" mı demeli? Not iki kullanımı da kabul ediyor.
 15. `en.pet.n.1` 3. örnek: "evcil hayvanlara izin verilmiyor". "Evcil hayvan beslemek yasak" da yaygın ama bilgi ekliyor.
+
+## Çeldirici çeşitlendirme (2026-10-19)
+
+- Önce: 125 soru, 212 farklı çeldirici; en sık: platform×11, password×9, ticket×7, charger×7, timetable×7, borrow×6.
+- Sonra: 125 soru, 227 farklı çeldirici; en sık: borrow×6, corner×5, holiday×5, window×5, sidewalk×5, street×5. Doğrulayıcı sınırı (`QUIZ_DISTRACTOR_REPEAT`): 7.
+- Çeldiricisi değişen kart: 17 (`distractors_diversified`). Doğru cevaplar değişmedi.
+- Bu bölümü editör (Opus) yazdı: çeşitlendirme ajanı işini bitirip raporu yazamadan kullanım sınırına takıldı. Sayılar dosyalardan ölçüldü.

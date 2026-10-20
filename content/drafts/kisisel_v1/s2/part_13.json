@@ -130,8 +130,8 @@
     }
   },
   "tags": {"primary_topic": "music_film", "topics": ["music_film", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I listen to a ______ about cooking every morning.", "answer": "podcast", "distractors": ["password", "platform", "timetable"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I listen to a ______ about cooking every morning.", "answer": "podcast", "distractors": ["magazine", "camera", "menu"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.subtitles.n.1",
@@ -216,8 +216,8 @@
     }
   },
   "tags": {"primary_topic": "music_film", "topics": ["music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I watched the ______ online, and now I want to see the whole film.", "answer": "trailer", "distractors": ["menu", "password", "timetable"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I watched the ______ online, and now I want to see the whole film.", "answer": "trailer", "distractors": ["menu", "signal", "keyboard"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 }
 ]
 }

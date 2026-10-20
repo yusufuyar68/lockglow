@@ -121,3 +121,12 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman.
 | Düzenlenen alan | 67 |
 | Reddedilen kart | 0 |
 | Doğrulayıcı sonucu | 0 hata, 0 uyarı |
+
+## Çeldirici çeşitlendirme (2026-10-19)
+
+- Önce: 127 quizzes, 166 distinct distractors; top: towel×17, recipe×16, menu×11, wear×10, receipt×9, tidy×9
+- Sonra: 127 quizzes, 173 distinct distractors; top: menu×5, receipt×5, wash×5, drink×5, cheap×5, window×5 (hiçbir çeldirici 5'ten fazla değil; hedef 6)
+- Değişen kart: 38 (yalnızca `quiz.distractors` ve `meta.qa_flags`; her birine `"distractors_diversified"` eklendi).
+- `quiz.cloze` değiştirilen kart: yok. Doğru cevaplar ve cümleler aynı kaldı.
+- `recipe`/`menu`/`receipt` üçlüsü (karıştırılan sözcükler) yalnızca `recipe`, `receipt`, `prescription`, `medicine`, `parcel`, `ingredient`, `sale` gibi sınav değeri olan kartlarda bırakıldı; diğer yerlerde konuya yakın ama cümleye uymayan sözcüklerle (mutfak, ev, alışveriş, sağlık) değiştirildi.
+- Doğrulayıcı: `python -m vocabpipe.validate --strict` → 0 hata · 0 uyarı.

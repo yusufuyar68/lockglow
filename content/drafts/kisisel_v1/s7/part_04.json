@@ -1,0 +1,1107 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.lucky.adj.1",
+      "lemma": "lucky",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having good luck",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlʌki/",
+        "uk": "/ˈlʌki/"
+      },
+      "def": {
+        "micro": "having good things happen",
+        "short": "having good things happen to you by chance",
+        "long": "Having good things happen to you by chance, not because of your work. A person who wins a prize or finds a lost wallet is lucky."
+      },
+      "examples": [
+        {
+          "en": "You are so lucky!",
+          "tr": "Ne şanslısın!",
+          "register": "neutral",
+          "focus": "lucky"
+        },
+        {
+          "en": "I was lucky, and I found a seat on the bus.",
+          "tr": "Şanslıydım, otobüste bir yer buldum.",
+          "register": "neutral",
+          "focus": "lucky"
+        },
+        {
+          "en": "Maria is lucky to have such good neighbors.",
+          "tr": "Maria böyle iyi komşuları olduğu için şanslı.",
+          "register": "neutral",
+          "focus": "lucky"
+        }
+      ],
+      "synonyms": [
+        "fortunate"
+      ],
+      "antonyms": [
+        "unlucky"
+      ],
+      "collocations": [
+        "a lucky day",
+        "a lucky number",
+        "lucky to be here",
+        "very lucky"
+      ],
+      "word_family": [
+        {
+          "lemma": "luck",
+          "pos": "n"
+        },
+        {
+          "lemma": "luckily",
+          "pos": "adv"
+        },
+        {
+          "lemma": "unlucky",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şanslı",
+          "alt": [
+            "talihli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Lucky' = şanslı. 'Good luck!' = Bol şans! İsmi 'luck' (şans), zarfı 'luckily' (şans eseri, neyse ki). Karşıtı 'unlucky' (şanssız).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif won the game without any practice, so she is very ______.",
+        "answer": "lucky",
+        "distractors": [
+          "unlucky",
+          "sorry",
+          "sick"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.careful.adj.1",
+      "lemma": "careful",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "paying attention",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɛrfəl/",
+        "uk": "/ˈkeəfəl/"
+      },
+      "def": {
+        "micro": "paying close attention",
+        "short": "paying attention to what you do, so there are no mistakes or accidents",
+        "long": "Paying attention to what you do, so you do not make mistakes or have accidents. You must be careful when you cross a road or carry hot tea."
+      },
+      "examples": [
+        {
+          "en": "Be careful! The floor is wet.",
+          "tr": "Dikkatli ol! Zemin ıslak.",
+          "register": "neutral",
+          "focus": "careful"
+        },
+        {
+          "en": "Ayşe is a careful driver, so I feel safe with her.",
+          "tr": "Ayşe dikkatli bir sürücü, bu yüzden onunla kendimi güvende hissediyorum.",
+          "register": "neutral",
+          "focus": "careful"
+        },
+        {
+          "en": "Be careful with this glass. It is very old.",
+          "tr": "Bu bardağa dikkat et. Çok eski.",
+          "register": "neutral",
+          "focus": "careful"
+        }
+      ],
+      "synonyms": [
+        "cautious"
+      ],
+      "antonyms": [
+        "careless"
+      ],
+      "collocations": [
+        "be careful",
+        "careful with",
+        "a careful driver",
+        "careful about",
+        "very careful"
+      ],
+      "word_family": [
+        {
+          "lemma": "care",
+          "pos": "n"
+        },
+        {
+          "lemma": "carefully",
+          "pos": "adv"
+        },
+        {
+          "lemma": "careless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "Made from 'care' + 'full'. In Old English 'care' meant 'worry' or 'sadness', so 'careful' first meant 'full of worry'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "dikkatli",
+          "alt": [
+            "özenli",
+            "tedbirli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Be careful!' = Dikkat et! / Dikkatli ol! 'Careful with' isimle kullanılır: careful with your phone (telefonuna dikkat et). Zarfı 'carefully', karşıtı 'careless'.",
+          "mistakes": [
+            {
+              "wrong": "Drive careful in the rain.",
+              "right": "Drive carefully in the rain.",
+              "why": "Türkçede sıfat zarf gibi de kullanılır (dikkatli sür). İngilizcede fiili anlatan zarf '-ly' alır: carefully. 'Careful' ise kişiyi ya da durumu anlatan sıfattır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The road is wet. Please be very ______ when you drive.",
+        "answer": "careful",
+        "distractors": [
+          "lazy",
+          "rude",
+          "noisy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.alone.adj.1",
+      "lemma": "alone",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "without other people",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈloʊn/",
+        "uk": "/əˈləʊn/"
+      },
+      "def": {
+        "micro": "without other people",
+        "short": "with no other person near you",
+        "long": "With no other person near you. You can be alone at home, or you can live alone. Being alone is not always sad: some people like it."
+      },
+      "examples": [
+        {
+          "en": "I'm alone at home today.",
+          "tr": "Bugün evde yalnızım.",
+          "register": "neutral",
+          "focus": "alone"
+        },
+        {
+          "en": "My grandmother lives alone in a small village.",
+          "tr": "Büyükannem küçük bir köyde tek başına yaşıyor.",
+          "register": "neutral",
+          "focus": "alone"
+        },
+        {
+          "en": "Don't go out alone at night. Take a friend with you.",
+          "tr": "Geceleri tek başına dışarı çıkma. Yanına bir arkadaş al.",
+          "register": "neutral",
+          "focus": "alone"
+        }
+      ],
+      "synonyms": [
+        "on your own"
+      ],
+      "antonyms": [
+        "together"
+      ],
+      "collocations": [
+        "live alone",
+        "home alone",
+        "alone at home",
+        "all alone"
+      ],
+      "word_family": [
+        {
+          "lemma": "lonely",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From the Middle English phrase 'al one', meaning 'all one', or completely by yourself.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yalnız",
+          "alt": [
+            "tek başına",
+            "yapayalnız"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Alone' = tek başına olmak; yalnızlık hissetmek ise 'lonely' olur. Türkçede 'yalnız' ikisini de karşılar. 'Alone' isimden önce gelmez: 'an alone man' denmez.",
+          "mistakes": [
+            {
+              "wrong": "My grandmother lives lonely in the village.",
+              "right": "My grandmother lives alone in the village.",
+              "why": "Türkçede 'yalnız' hem 'tek başına' hem 'yalnızlık duyan' demektir. 'Alone' = tek başına (durum), 'lonely' = yalnızlık hissetmek (duygu)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:lonely"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody else lives in my flat. I live ______.",
+        "answer": "alone",
+        "distractors": [
+          "together",
+          "tired",
+          "wide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.enough.det.1",
+      "lemma": "enough",
+      "type": "word",
+      "pos": "det",
+      "sense_no": 1,
+      "sense_note": "as much as needed",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈnʌf/",
+        "uk": "/ɪˈnʌf/"
+      },
+      "def": {
+        "micro": "as much as you need",
+        "short": "as much or as many as you need",
+        "long": "As much or as many as you need, not less. You can have enough money, time or food. After an adjective it goes behind it: old enough to drive means 'as old as you need to be'."
+      },
+      "grammar": {
+        "pattern": "adjective + enough + to + verb"
+      },
+      "examples": [
+        {
+          "en": "Do we have enough chairs for everyone?",
+          "tr": "Herkes için yeterince sandalyemiz var mı?",
+          "register": "neutral",
+          "focus": "enough"
+        },
+        {
+          "en": "I don't have enough money for a taxi.",
+          "tr": "Taksi için yeterli param yok.",
+          "register": "neutral",
+          "focus": "enough"
+        },
+        {
+          "en": "Elif is old enough to travel alone.",
+          "tr": "Elif tek başına seyahat etmek için yeterince büyük.",
+          "register": "neutral",
+          "focus": "enough"
+        }
+      ],
+      "synonyms": [
+        "sufficient"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "enough money",
+        "enough time",
+        "good enough",
+        "old enough",
+        "big enough"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yeterince",
+          "alt": [
+            "yeterli",
+            "kâfi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'yeterince büyük' dersiniz (yeterince sıfattan önce). İngilizcede sıfattan sonra gelir: big enough, old enough. İsimden önce gelir: enough money.",
+          "mistakes": [
+            {
+              "wrong": "She is enough old to drive.",
+              "right": "She is old enough to drive.",
+              "why": "Türkçede 'yeterince' sıfattan önce gelir (yeterince büyük). İngilizcede 'enough' sıfat ve zarftan sonra gelir: old enough, big enough."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We have ______ chairs for everyone, so please sit down.",
+        "answer": "enough",
+        "distractors": [
+          "every",
+          "each",
+          "another"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.still.adv.1",
+      "lemma": "still",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "up to now, without stopping",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stɪl/",
+        "uk": "/stɪl/"
+      },
+      "def": {
+        "micro": "continuing up to now",
+        "short": "up to now or then, without stopping or changing",
+        "long": "Used when something began in the past and has not stopped. It usually goes before the main verb: 'I still live here.' It can also show surprise."
+      },
+      "grammar": {
+        "pattern": "subject + still + verb"
+      },
+      "examples": [
+        {
+          "en": "I still live with my parents.",
+          "tr": "Hâlâ annemle babamla yaşıyorum.",
+          "register": "neutral",
+          "focus": "still"
+        },
+        {
+          "en": "Is it still raining outside?",
+          "tr": "Dışarıda hâlâ yağmur yağıyor mu?",
+          "register": "neutral",
+          "focus": "still"
+        },
+        {
+          "en": "It's midnight, but Mehmet is still working.",
+          "tr": "Gece yarısı oldu ama Mehmet hâlâ çalışıyor.",
+          "register": "neutral",
+          "focus": "still"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "no longer",
+        "not any more"
+      ],
+      "collocations": [
+        "still here",
+        "still waiting",
+        "still working",
+        "still raining"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hâlâ",
+          "alt": [
+            "hâlen"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Still' = hâlâ. Fiilden önce gelir: I still live here. Olumsuzda 'not' kelimesinden önce gelir: I still haven't finished. 'Yet' = henüz, cümle sonunda olur; ikisini karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "Is she yet at work?",
+              "right": "Is she still at work?",
+              "why": "Türkçede 'hâlâ' ve 'henüz / daha' yakın kullanılır ('Daha uyuyor' = hâlâ uyuyor), bu yüzden 'yet' seçilir. İngilizcede 'hâlâ' için 'still', 'henüz' için 'yet' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:yet",
+          "confusable:already"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It began to rain at noon and has not stopped. It is evening now, and it is ______ raining.",
+        "answer": "still",
+        "distractors": [
+          "never",
+          "here",
+          "tomorrow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.already.adv.1",
+      "lemma": "already",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "before now, sooner than expected",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɔːlˈrɛdi/",
+        "uk": "/ɔːlˈrɛdi/"
+      },
+      "def": {
+        "micro": "earlier than expected",
+        "short": "before now, or sooner than you thought",
+        "long": "Before now, or sooner than someone thought. It shows that something has happened before the time we talk about: 'I have already eaten.'"
+      },
+      "grammar": {
+        "pattern": "have + already + past participle"
+      },
+      "examples": [
+        {
+          "en": "I have already eaten, thanks.",
+          "tr": "Çoktan yedim, teşekkürler.",
+          "register": "neutral",
+          "focus": "already"
+        },
+        {
+          "en": "It is only 8 a.m., and Ali is already at work.",
+          "tr": "Saat daha sekiz ve Ali çoktan işte.",
+          "register": "neutral",
+          "focus": "already"
+        },
+        {
+          "en": "The film has already started. Let's go in quietly.",
+          "tr": "Film çoktan başladı. Sessizce içeri girelim.",
+          "register": "neutral",
+          "focus": "already"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "not yet"
+      ],
+      "collocations": [
+        "already here",
+        "already done",
+        "already late",
+        "I already know"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Made from 'all' + 'ready': 'all ready' first meant 'completely prepared'.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "çoktan",
+          "alt": [
+            "zaten",
+            "daha şimdiden"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Olumlu cümlede 'already' (çoktan) kullanılır; olumsuz cümlede 'yet' (henüz) denir. Türkçede 'zaten' hem 'already' hem 'anyway' demektir; anlama bakın.",
+          "mistakes": [
+            {
+              "wrong": "I haven't done my homework already.",
+              "right": "I haven't done my homework yet.",
+              "why": "Türkçede 'henüz' ile 'zaten / çoktan' karışır. Olumsuz cümlede 'henüz' demek istiyorsanız 'yet' kullanılır; 'already' olumlu cümlede 'çoktan' anlamında gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:yet",
+          "confusable:all_ready"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We can go in now. Ayşe has ______ bought the tickets.",
+        "answer": "already",
+        "distractors": [
+          "soon",
+          "there",
+          "yesterday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.yet.adv.1",
+      "lemma": "yet",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "up to now (negatives, questions)",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/jɛt/",
+        "uk": "/jɛt/"
+      },
+      "def": {
+        "micro": "up to now",
+        "short": "up to now; used in questions and negative sentences",
+        "long": "Up to now. We use it in questions and negative sentences, usually at the end, about things that we expect to happen: 'Have you finished yet?'"
+      },
+      "grammar": {
+        "pattern": "haven't + past participle + yet"
+      },
+      "examples": [
+        {
+          "en": "I haven't finished my homework yet.",
+          "tr": "Ödevimi henüz bitirmedim.",
+          "register": "neutral",
+          "focus": "yet"
+        },
+        {
+          "en": "Have you eaten yet?",
+          "tr": "Yemek yedin mi henüz?",
+          "register": "neutral",
+          "focus": "yet"
+        },
+        {
+          "en": "Sam isn't here yet. Let's wait a little.",
+          "tr": "Sam henüz burada değil. Biraz bekleyelim.",
+          "register": "neutral",
+          "focus": "yet"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "already"
+      ],
+      "collocations": [
+        "not yet",
+        "haven't done it yet",
+        "isn't ready yet",
+        "Have you finished yet?"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "henüz",
+          "alt": [
+            "daha",
+            "şimdiye kadar"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Yet' = henüz. Cümle sonunda olur: I haven't finished yet. Olumsuz ve soru cümlelerinde kullanılır. Olumlu cümlede 'already' (çoktan) denir.",
+          "mistakes": [
+            {
+              "wrong": "I yet haven't finished my homework.",
+              "right": "I haven't finished my homework yet.",
+              "why": "Türkçede 'henüz' fiilden önce gelir (henüz bitirmedim). İngilizcede 'yet' cümlenin sonuna gider: I haven't finished yet."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:already",
+          "confusable:still"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet has not arrived ______. Let's wait for him.",
+        "answer": "yet",
+        "distractors": [
+          "never",
+          "very",
+          "away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.almost.adv.1",
+      "lemma": "almost",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "nearly",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːlmoʊst/",
+        "uk": "/ˈɔːlməʊst/"
+      },
+      "def": {
+        "micro": "nearly, but not completely",
+        "short": "very close to something, but not completely",
+        "long": "Very close to something, but not completely. It is used before an adjective, a number or a verb: almost ready, almost ten o'clock, I almost fell."
+      },
+      "grammar": {
+        "pattern": "almost + adjective / number / verb"
+      },
+      "examples": [
+        {
+          "en": "Dinner is almost ready.",
+          "tr": "Akşam yemeği neredeyse hazır.",
+          "register": "neutral",
+          "focus": "almost"
+        },
+        {
+          "en": "It's almost ten o'clock. We must go.",
+          "tr": "Saat neredeyse on. Gitmemiz lazım.",
+          "register": "neutral",
+          "focus": "almost"
+        },
+        {
+          "en": "I almost missed the bus this morning.",
+          "tr": "Bu sabah neredeyse otobüsü kaçırıyordum.",
+          "register": "neutral",
+          "focus": "almost"
+        }
+      ],
+      "synonyms": [
+        "nearly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "almost ready",
+        "almost there",
+        "almost always",
+        "almost never",
+        "almost everyone"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'ealmǣst', made from 'eall' (all) and 'mǣst' (most), meaning 'nearly all'.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "neredeyse",
+          "alt": [
+            "hemen hemen",
+            "az kalsın"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Almost' = neredeyse. 'Most' ile karıştırma: 'most people' = çoğu insan, 'almost people' denmez. Fiille: 'I almost fell' = az kalsın düşüyordum. 'Nearly' ile aynı anlamdadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The cake is ______ finished. Only one small piece is left.",
+        "answer": "almost",
+        "distractors": [
+          "hardly",
+          "often",
+          "tomorrow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.again.adv.1",
+      "lemma": "again",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "one more time",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈɡɛn/",
+        "uk": "/əˈɡɛn/"
+      },
+      "def": {
+        "micro": "one more time",
+        "short": "one more time, after doing it before",
+        "long": "One more time. You do something again when you have already done it before. People say 'Say that again, please' when they want you to repeat."
+      },
+      "examples": [
+        {
+          "en": "Can you say that again, please?",
+          "tr": "Bunu tekrar söyleyebilir misin lütfen?",
+          "register": "neutral",
+          "focus": "again"
+        },
+        {
+          "en": "Please try again later.",
+          "tr": "Lütfen daha sonra tekrar deneyin.",
+          "register": "neutral",
+          "focus": "again"
+        },
+        {
+          "en": "Elif loved the film, so she watched it again.",
+          "tr": "Elif filmi çok sevdi, bu yüzden onu bir kez daha izledi.",
+          "register": "neutral",
+          "focus": "again"
+        }
+      ],
+      "synonyms": [
+        "once more"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "try again",
+        "again and again",
+        "say it again",
+        "see you again",
+        "once again"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'ongēan', meaning 'back' or 'against'. The meaning 'once more' came in the Middle Ages.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tekrar",
+          "alt": [
+            "yine",
+            "bir daha"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Again' çoğunlukla cümlenin sonunda olur: try again, say it again. 'Geri' için 'back' kullanılır: come back (geri gelmek). 'Again and again' = defalarca.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't hear you. Can you say that ______, please?",
+        "answer": "again",
+        "distractors": [
+          "yesterday",
+          "ever",
+          "away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.usually.adv.1",
+      "lemma": "usually",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "most of the time",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈjuːʒuəli/",
+        "uk": "/ˈjuːʒuəli/"
+      },
+      "def": {
+        "micro": "most of the time",
+        "short": "most of the time; on most days",
+        "long": "Most of the time, or on most days. It tells us what happens often, but not always. It goes before the main verb: 'I usually walk to work.'"
+      },
+      "grammar": {
+        "pattern": "subject + usually + verb"
+      },
+      "examples": [
+        {
+          "en": "I usually walk to school.",
+          "tr": "Genellikle okula yürüyerek giderim.",
+          "register": "neutral",
+          "focus": "usually"
+        },
+        {
+          "en": "Ayşe usually drinks tea in the morning.",
+          "tr": "Ayşe genellikle sabahları çay içer.",
+          "register": "neutral",
+          "focus": "usually"
+        },
+        {
+          "en": "We usually have dinner at seven, but today it is later.",
+          "tr": "Genellikle akşam yemeğini yedide yeriz ama bugün daha geç.",
+          "register": "neutral",
+          "focus": "usually"
+        }
+      ],
+      "synonyms": [
+        "normally"
+      ],
+      "antonyms": [
+        "rarely",
+        "never"
+      ],
+      "collocations": [
+        "I usually walk",
+        "usually get up",
+        "usually busy",
+        "not usually"
+      ],
+      "word_family": [
+        {
+          "lemma": "usual",
+          "pos": "adj"
+        },
+        {
+          "lemma": "unusual",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From 'usual', which comes from Latin 'usus', meaning 'use' or 'habit'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "genellikle",
+          "alt": [
+            "genelde",
+            "çoğunlukla"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Usually' = genellikle. Fiilden önce gelir: I usually go. 'Be' fiilinden sonra gelir: I am usually busy. Sıklık sırası: always > usually > often > sometimes > rarely > never.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I get up at seven on most days, but not on Sundays. So I ______ get up at seven.",
+        "answer": "usually",
+        "distractors": [
+          "always",
+          "never",
+          "rarely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

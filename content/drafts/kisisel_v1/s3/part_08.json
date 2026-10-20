@@ -45,8 +45,8 @@
 "word_family":[{"lemma":"festive","pos":"adj"}],"etymology":null,
 "l1":{"tr":{"gloss":"festival","alt":["şenlik"],"equivalence":"cognate","false_friend":null,"note":"Türkçedeki 'festival' ile aynı anlamda; müzik, film, yemek gibi etkinlikler için kullanılır. 'Şenlik' daha çok halk eğlencesi, açık hava kutlaması demektir.","mistakes":[],"mnemonic":null}},
 "tags":{"primary_topic":"culture_celebrations","topics":["culture_celebrations","music_film"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Thousands of people go to the music ______ every summer.","answer":"festival","distractors":["lesson","office","menu"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"Thousands of people go to the music ______ every summer.","answer":"festival","distractors":["ticket","office","menu"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.wedding.n.1","lemma":"wedding","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ˈwɛdɪŋ/","uk":"/ˈwɛdɪŋ/"},
@@ -60,8 +60,8 @@
 "word_family":[{"lemma":"wed","pos":"v"}],"etymology":null,
 "l1":{"tr":{"gloss":"düğün","alt":["evlenme töreni"],"equivalence":"full","false_friend":null,"note":"'Wedding' = düğün (tören ve parti); 'marriage' = evlilik (durum). 'Get married' = evlenmek. Nişan için 'engagement' denir.","mistakes":[{"wrong":"I will make a wedding next year.","right":"I will have a wedding next year. / I will get married next year.","why":"'Düğün yapmak' için 'have a wedding' ya da 'get married' denir; 'make a wedding' denmez."}],"mnemonic":null}},
 "tags":{"primary_topic":"culture_celebrations","topics":["culture_celebrations","love_friendship"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:marriage"],"sensitivity":0},
-"quiz":{"cloze":"The bride and groom danced at their ______.","answer":"wedding","distractors":["lesson","interview","meeting"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"The bride and groom danced at their ______.","answer":"wedding","distractors":["exam","interview","meeting"]},
+"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.guest.n.1","lemma":"guest","type":"word","pos":"n","sense_no":1,"sense_note":"invited person","level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ɡɛst/","uk":"/ɡɛst/"},
@@ -75,8 +75,8 @@
 "word_family":[],"etymology":null,
 "l1":{"tr":{"gloss":"misafir","alt":["konuk","davetli"],"equivalence":"full","false_friend":null,"note":"'Guest' davet edilen kişidir. Davetsiz gelen ziyaretçi, turist için 'visitor' kullanılır.","mistakes":[],"mnemonic":null}},
 "tags":{"primary_topic":"culture_celebrations","topics":["culture_celebrations","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:visitor"],"sensitivity":0},
-"quiz":{"cloze":"The first ______ arrived at the party at six.","answer":"guest","distractors":["price","lesson","report"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"quiz":{"cloze":"The first ______ arrived at the party at six.","answer":"guest","distractors":["habit","holiday","report"]},
+"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.gift.n.1","lemma":"gift","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ɡɪft/","uk":"/ɡɪft/"},

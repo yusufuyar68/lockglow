@@ -174,8 +174,8 @@
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The plane left two hours late because of a ______ at the airport.", "answer": "delay", "distractors": ["souvenir", "passport", "platform"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "The plane left two hours late because of a ______ at the airport.", "answer": "delay", "distractors": ["souvenir", "passport", "hotel"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.subscription.n.1",
@@ -218,8 +218,8 @@
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I pay ten euros a month for my music ______.", "answer": "subscription", "distractors": ["timetable", "charger", "souvenir"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I pay ten euros a month for my music ______.", "answer": "subscription", "distractors": ["cable", "screen", "souvenir"]},
+  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.install.v.1",
