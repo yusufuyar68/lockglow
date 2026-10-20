@@ -128,6 +128,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
 | `content-pipeline/README.md` | Doğrulama, derleme ("Kişisel derleme") |
 | `.github/workflows/` | `build.yml`, `screenshots.yml`, `testflight.yml` |
 
-## Yeni Claude oturumuna ilk mesaj (kopyala-yapıştır)
+## Yeni Claude oturumuna ilk mesaj
 
-> Lockglow projesine devam ediyoruz. Depo bu klasörde ve github.com/yusuf68435/lockglow'da. Önce `git pull` yap. Sonra `DEVIR.md`'yi baştan sona oku ve oradaki çalışma kurallarına uy. Alt ajanlar Sonnet olsun, sen koordine et. Bana sade Türkçeyle yaz. İlk iş: TestFlight anahtarının GitHub'a eklenip eklenmediğini kontrol et. Eklenmediyse bana adım adım yardım et.
+- Kökteki [`CLAUDE.md`](CLAUDE.md) her oturumda kendiliğinden okunur ve buraya yönlendirir. Kullanıcının yalnızca "klasörü detaylıca incele" yazması yeter.
+- Daha ayrıntılı ilk mesaj [`YENI_OTURUM_MESAJI.md`](YENI_OTURUM_MESAJI.md) dosyasında.
