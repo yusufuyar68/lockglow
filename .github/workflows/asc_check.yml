@@ -48,7 +48,10 @@ jobs:
           get("/v1/apps?limit=10&fields[apps]=bundleId", lambda a: a["bundleId"])
           get("/v1/bundleIds?filter[identifier]=com.yusufuyar.vocabwidget,com.yusufuyar.vocabwidget.widgets",
               lambda a: (a["identifier"], a["platform"]))
-          get("/v1/certificates?limit=20", lambda a: (a["certificateType"], a["expirationDate"][:10]))
+          get("/v1/certificates?limit=20", lambda a: (a["certificateType"], a.get("displayName"), a.get("name"), a["expirationDate"][:10]))
+          get("/v1/devices?limit=50&fields[devices]=platform,status,deviceClass", lambda a: (a["platform"], a["deviceClass"], a["status"]))
+          get("/v1/profiles?limit=50&filter[name]=vocabwidget&fields[profiles]=name,profileType,profileState",
+              lambda a: (a["name"], a["profileType"], a["profileState"]))
           get("/v1/profiles?limit=50&fields[profiles]=name,profileType,profileState",
               lambda a: (a["name"], a["profileType"], a["profileState"]))
           EOF
