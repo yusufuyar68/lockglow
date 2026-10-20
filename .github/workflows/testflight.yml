@@ -107,6 +107,7 @@ jobs:
             -authenticationKeyIssuerID "$ASC_ISSUER_ID" > build-export.log 2>&1 || status=$?
           grep -E "error|Upload succeeded|EXPORT|Uploaded" build-export.log | sort -u | head -60 || true
           [ -z "${status:-}" ] || tail -40 build-export.log
+          cp -R "${TMPDIR:-/tmp}"/*.xcdistributionlogs "$RUNNER_TEMP"/ 2>/dev/null || true
           exit ${status:-0}
       - name: Anahtarı sil
         if: always()
@@ -119,5 +120,6 @@ jobs:
           path: |
             ios/build-archive.log
             ios/build-export.log
+            ${{ runner.temp }}/*.xcdistributionlogs
           if-no-files-found: ignore
           retention-days: 7
