@@ -32,6 +32,16 @@ gh secret set ASC_KEY_P8 -R yusufuyar68/lockglow < AuthKey_XXXXXXXXXX.p8
 
 Gizli değişkenler GitHub'da şifreli tutulur; iş akışı anahtarı yalnızca derleme sırasında kullanır ve sonunda siler.
 
+## 2b. Dağıtım sertifikasını GitHub'a ekle (2026-10-20'den beri gerekli)
+
+Xcode'un API anahtarıyla otomatik imzası App Groups'u okuyamıyor (`/xcbuild/v1/appGroups` → 401), bu yüzden iş akışı elle imzalar. Bunun için bir iOS dağıtım sertifikası (`.p12`) gerekir. Hesapta Apple'ın sınırı olan 3 dağıtım sertifikası zaten var (Expo'nun oluşturdukları); yenisini açmak yerine Expo'dakini kullanıyoruz:
+
+1. Bir Expo projesinde (bu bilgisayarda: `Desktop\sürpriz claude\surprise-planner`) `npx eas-cli credentials -p ios` → **production** → **credentials.json: Upload/Download credentials…** → **Download credentials from EAS to credentials.json**.
+2. Lockglow klasöründe: `powershell -ExecutionPolicy Bypass -File tools\dagitim_sertifikasi_ekle.ps1` → `DIST_P12_BASE64` ve `DIST_P12_PASSWORD` eklenir.
+3. Expo klasöründeki `credentials.json` ve `credentials\` klasörünü sil ya da güvenli bir yere taşı.
+
+İş akışı App Store profillerini (`IOS_APP_STORE`, iki bundle id) API ile kendisi bulur ya da oluşturur (`ios/Tools/asc_profiles.py`).
+
 ## 3. App Store Connect'te uygulama kaydı aç
 
 Önce Claude iş akışını bir kez çalıştırır: bu ilk çalıştırma bundle id'yi (`com.yusufuyar.vocabwidget`) Apple'a kaydeder. Kayıt yoksa yükleme adımı hata verir, bu beklenen bir durumdur. Sonra:
@@ -56,6 +66,7 @@ Uygulama yayınlanmaz; yalnızca TestFlight için kayıt açılır.
 ## Sorun çıkarsa
 
 İş akışının günlükleri `testflight-logs` adıyla saklanır; Claude bunları okuyup düzeltebilir. Sık görülenler:
-- `No profiles for 'com.yusufuyar.vocabwidget'` → anahtarın erişimi Admin değil.
+- `No profiles for 'com.yusufuyar.vocabwidget'` + `Authentication failed` → otomatik imza App Groups'u okuyamıyor; adım 2b (elle imza) gerekir.
+- `Bu .p12 sertifikası App Store Connect'te yok` → Expo'daki sertifika iptal edilmiş; başka bir projeden indir.
 - `Cannot determine the Apple ID from Bundle ID` / uygulama bulunamadı → adım 3 henüz yapılmadı.
 - `The bundle version must be higher` → iş akışını yeniden çalıştır (build numarası her çalıştırmada artar).
