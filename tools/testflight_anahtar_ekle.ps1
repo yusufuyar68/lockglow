@@ -7,7 +7,7 @@
 # Önce App Store Connect > Users and Access > Integrations > App Store Connect API sayfasında
 # Admin yetkili bir anahtar oluşturup .p8 dosyasını indir (İndirilenler klasörüne düşer).
 
-$repo = "yusuf68435/lockglow"
+$repo = "yusufuyar68/lockglow"
 $downloads = Join-Path $env:USERPROFILE "Downloads"
 $key = Get-ChildItem -Path $downloads -Filter "AuthKey_*.p8" -ErrorAction SilentlyContinue |
     Sort-Object LastWriteTime -Descending | Select-Object -First 1

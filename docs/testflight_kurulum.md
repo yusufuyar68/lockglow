@@ -19,16 +19,16 @@ Senin yapman gerekenler (yaklaşık 10 dakika, bir kez): **1–3**. Claude geris
 **Terminalden** (indirdiğin klasörde; her komut değeri senden ister, yapıştırıp Enter'a bas):
 
 ```bash
-gh secret set ASC_KEY_ID -R yusuf68435/lockglow
+gh secret set ASC_KEY_ID -R yusufuyar68/lockglow
 ```
 ```bash
-gh secret set ASC_ISSUER_ID -R yusuf68435/lockglow
+gh secret set ASC_ISSUER_ID -R yusufuyar68/lockglow
 ```
 ```bash
-gh secret set ASC_KEY_P8 -R yusuf68435/lockglow < AuthKey_XXXXXXXXXX.p8
+gh secret set ASC_KEY_P8 -R yusufuyar68/lockglow < AuthKey_XXXXXXXXXX.p8
 ```
 
-**ya da tarayıcıdan:** github.com/yusuf68435/lockglow → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**. Adlar: `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (sonuncusuna `.p8` dosyasını bir metin düzenleyicide açıp **tüm içeriğini** yapıştır).
+**ya da tarayıcıdan:** github.com/yusufuyar68/lockglow → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**. Adlar: `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (sonuncusuna `.p8` dosyasını bir metin düzenleyicide açıp **tüm içeriğini** yapıştır).
 
 Gizli değişkenler GitHub'da şifreli tutulur; iş akışı anahtarı yalnızca derleme sırasında kullanır ve sonunda siler.
 

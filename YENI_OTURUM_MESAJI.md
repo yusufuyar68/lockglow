@@ -6,7 +6,7 @@ Kısa yol: yalnızca **"klasörü detaylıca incele"** yazman da yeter. Claude b
 
 ---
 
-Lockglow projesine devam ediyoruz. Bu klasörü detaylıca incele: depo bu klasörde ve github.com/yusuf68435/lockglow'da.
+Lockglow projesine devam ediyoruz. Bu klasörü detaylıca incele: depo bu klasörde ve github.com/yusufuyar68/lockglow'da.
 
 Önce şunları yap:
 1. `git pull`.
@@ -16,4 +16,4 @@ Lockglow projesine devam ediyoruz. Bu klasörü detaylıca incele: depo bu klas�
 
 Alt ajanlar Sonnet olsun, sen koordine et.
 
-İlk iş: TestFlight anahtarının GitHub'a eklenip eklenmediğini kontrol et (`gh api repos/yusuf68435/lockglow/actions/secrets -q .total_count`). Eklenmediyse bana adım adım yardım et. Anahtar Admin erişimli olmalı.
+İlk iş: TestFlight anahtarının GitHub'a eklenip eklenmediğini kontrol et (`gh api repos/yusufuyar68/lockglow/actions/secrets -q .total_count`). Eklenmediyse bana adım adım yardım et. Anahtar Admin erişimli olmalı.

@@ -4,7 +4,7 @@ Bu depo **Lockglow** projesi: kilit ekranında İngilizce kelime gösteren, Tür
 
 ## Her yeni oturumda önce
 
-1. `git pull` (depo: `github.com/yusuf68435/lockglow`, özel).
+1. `git pull` (depo: `github.com/yusufuyar68/lockglow`, özel).
 2. **[`DEVIR.md`](DEVIR.md)'yi baştan sona oku.** Kullanıcı tanıtımı, projenin durumu, sıradaki işler ve çalışma kuralları orada.
 3. Kullanıcı "klasörü incele", "devam" ya da benzeri bir şey yazarsa:
    - `DEVIR.md`'yi oku;

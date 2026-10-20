@@ -21,7 +21,7 @@ Bu projeye başka bir Claude hesabı ya da oturumu devam edecekse **önce bu dos
 
 Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe açıklamalı bir iPhone uygulaması. "Widget Vocabulary: Learn Words" uygulamasının incelemesinden doğdu (`Widget_Vocabulary_Analiz_ve_Plan.md`, `raporlar/`).
 
-- **Depo:** `github.com/yusuf68435/lockglow` (özel). `gh` CLI bu bilgisayarda `yusuf68435` olarak oturum açmış.
+- **Depo:** `github.com/yusufuyar68/lockglow` (özel). 2026-10-20'de eski `yusuf68435/lockglow` deposundan taşındı (eski adres git'te `eski` adıyla duruyor). `gh` CLI bu bilgisayarda `yusufuyar68` olarak oturum açmış.
 - **iOS:** `ios/`.
   - XcodeGen projesi (`project.yml`).
   - SwiftUI uygulama ve WidgetKit widget'ları.
@@ -44,7 +44,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - Sesli telaffuz cihazın kendi sesiyle (AVSpeechSynthesizer).
   - İlerleme dosyasının günlük yedeği alınıyor; bozuk dosya kenara alınıyor.
 - **Testler:**
-  - 113 Swift testi (Linux, Docker): `bash ios/Tools/linux_check.sh`.
+  - 113 Swift testi (Linux, Docker): `bash ios/Tools/linux_check.sh`. **Bu bilgisayarda Docker yok** (BIOS'ta sanallaştırma kapalı); bu kontrol burada çalışmaz.
   - 72 Python testi.
   - Her akış `--strict` doğrulamadan 0 uyarıyla geçiyor.
 - **Apple kayıtları:** App Group, iki App ID ve App Store Connect uygulama kaydı oluşturuldu (Yusuf Uyar ekibi).
@@ -63,9 +63,9 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
    Betik, İndirilenler'deki en yeni `AuthKey_*.p8` dosyasını alır.
    - Orada Temmuz 2026 tarihli eski bir anahtar dosyası da var, başka ekipten olabilir.
    - Yeni anahtar indirildiyse betik onu seçer.
-3. Kontrol: `gh api repos/yusuf68435/lockglow/actions/secrets -q .total_count` sonucu 3 olmalı. Sonra:
+3. Kontrol: `gh api repos/yusufuyar68/lockglow/actions/secrets -q .total_count` sonucu 3 olmalı. Sonra:
    ```
-   gh workflow run testflight.yml -R yusuf68435/lockglow --ref main
+   gh workflow run testflight.yml -R yusufuyar68/lockglow --ref main
    ```
    Günlükleri izle. Hata olursa `docs/testflight_kurulum.md` → sorun giderme.
 4. Yükleme App Store Connect'te göründükten sonra, **kullanıcıdan açık izin alıp** bir dahili test grubu oluştur ve onu ekle. Kullanıcı iPhone'a TestFlight uygulamasını kurar ve daveti kabul eder.
@@ -88,7 +88,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
     git worktree add --detach <geçici-klasör> origin/main
     ```
 - **GitHub Actions kotası:**
-  - Özel depoda macOS dakikaları **10 kat** sayılıyor. Ekim'de ~91 macOS dakikası, yani ≈910/2000 kullanıldı (tahmin).
+  - Özel depoda macOS dakikaları **10 kat** sayılıyor. Depo 20 Ekim'de `yusufuyar68` hesabına taşındı; kota bu hesabın kotası (ücretsiz planda ayda 2000 dakika).
   - `build.yml`'nin macOS işi yalnızca elle çalışır.
   - Push'tan önce `ios/Tools/linux_check.sh` (bedava) çalıştır.
   - Değişiklikleri biriktir; `screenshots.yml`'yi tur başına bir kez çalıştır (~12 dk).

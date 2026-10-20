@@ -149,7 +149,7 @@ bash ios/Tools/linux_check.sh
 
 ## GitHub Actions (Mac olmadan tam derleme)
 
-Depo: `github.com/yusuf68435/lockglow` (özel). İki iş akışı var:
+Depo: `github.com/yusufuyar68/lockglow` (özel). İki iş akışı var:
 
 - **`build.yml`** (`main`'e her push'ta): Python testleri ve taslak kartların katı doğrulaması (Linux); VocabKit testleri (GRDB'li `ContentStore` dahil) ve uygulama + widget'ın **imzasız simülatör derlemesi** (macOS, en yeni Xcode). Derleme günlüğü `ios-build-log` adıyla saklanır.
 - **`screenshots.yml`** (elle: `gh workflow run screenshots.yml`): `LockglowUITests` ana ekranları gezip ekran görüntüsü alır; iPhone SE ve Pro Max simülatöründe çalışır, görüntüler `screenshots` adıyla yüklenir. Widget'ları ana ekrana ekleyemez, onlar cihazda bakılır.
