@@ -32,15 +32,15 @@ gh secret set ASC_KEY_P8 -R yusufuyar68/lockglow < AuthKey_XXXXXXXXXX.p8
 
 Gizli değişkenler GitHub'da şifreli tutulur; iş akışı anahtarı yalnızca derleme sırasında kullanır ve sonunda siler.
 
-## 2b. Dağıtım sertifikasını GitHub'a ekle (2026-10-20'den beri gerekli)
+## 2b. İmza nasıl yapılıyor (kullanıcıdan bir şey gerekmez)
 
-Xcode'un API anahtarıyla otomatik imzası App Groups'u okuyamıyor (`/xcbuild/v1/appGroups` → 401), bu yüzden iş akışı elle imzalar. Bunun için bir iOS dağıtım sertifikası (`.p12`) gerekir. Hesapta Apple'ın sınırı olan 3 dağıtım sertifikası zaten var (Expo'nun oluşturdukları); yenisini açmak yerine Expo'dakini kullanıyoruz:
+Xcode'un API anahtarıyla otomatik imzası App Groups'u okuyamıyor (`/xcbuild/v1/appGroups` → 401). Hesaptaki 3 dağıtım sertifikası da Expo'ya ait (özel anahtarları burada yok). Bu yüzden her çalıştırmada:
 
-1. Bir Expo projesinde (bu bilgisayarda: `Desktop\sürpriz claude\surprise-planner`) `npx eas-cli credentials -p ios` → **production** → **credentials.json: Upload/Download credentials…** → **Download credentials from EAS to credentials.json**.
-2. Lockglow klasöründe: `powershell -ExecutionPolicy Bypass -File tools\dagitim_sertifikasi_ekle.ps1` → `DIST_P12_BASE64` ve `DIST_P12_PASSWORD` eklenir.
-3. Expo klasöründeki `credentials.json` ve `credentials\` klasörünü sil ya da güvenli bir yere taşı.
+1. `ios/Tools/asc_signing.py setup` bulut makinesinde yeni bir anahtar üretir, API ile **geçici** bir dağıtım sertifikası ve iki `IOS_APP_STORE` profili (`Lockglow CI <run> <bundle id>`) oluşturur;
+2. arşiv bu profillerle elle imzalanıp yüklenir;
+3. `cleanup` işi (Linux) App Store Connect build'i işleyene kadar bekler (en çok 60 dk), sonra **yalnızca o çalıştırmanın** profillerini siler ve sertifikasını iptal eder.
 
-İş akışı App Store profillerini (`IOS_APP_STORE`, iki bundle id) API ile kendisi bulur ya da oluşturur (`ios/Tools/asc_profiles.py`).
+Kullanıcı bu geçici sertifika/profil yöntemine 2026-10-20'de izin verdi. Başka sertifika ve profillere dokunulmaz ('Created via API' adlı iki eski geliştirme sertifikası bilerek bırakıldı).
 
 ## 3. App Store Connect'te uygulama kaydı aç
 
@@ -66,7 +66,8 @@ Uygulama yayınlanmaz; yalnızca TestFlight için kayıt açılır.
 ## Sorun çıkarsa
 
 İş akışının günlükleri `testflight-logs` adıyla saklanır; Claude bunları okuyup düzeltebilir. Sık görülenler:
-- `No profiles for 'com.yusufuyar.vocabwidget'` + `Authentication failed` → otomatik imza App Groups'u okuyamıyor; adım 2b (elle imza) gerekir.
-- `Bu .p12 sertifikası App Store Connect'te yok` → Expo'daki sertifika iptal edilmiş; başka bir projeden indir.
+- `No profiles for 'com.yusufuyar.vocabwidget'` + `Authentication failed` → otomatik imza App Groups'u okuyamıyor; iş akışı bu yüzden elle imzalar (adım 2b).
+- `Geçici dağıtım sertifikası oluşturulamadı` → Apple'ın sertifika sınırı dolu; önce yer açmak gerekir (kullanıcıya sor).
+- `cleanup` işi hata verdiyse: Apple hesabında `Lockglow CI` ile başlayan profilleri ve o gün oluşan dağıtım sertifikasını kontrol et.
 - `Cannot determine the Apple ID from Bundle ID` / uygulama bulunamadı → adım 3 henüz yapılmadı.
 - `The bundle version must be higher` → iş akışını yeniden çalıştır (build numarası her çalıştırmada artar).
