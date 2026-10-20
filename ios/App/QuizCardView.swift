@@ -1,18 +1,33 @@
 import SwiftUI
 import CoreModels
 
+/// How a quiz question went, as reported by `QuizCardView.onContinue`. `ReviewView` turns it into
+/// a `ReviewGrade` (this file is also compiled into the snapshot bundle, which does not link
+/// Learning, so it cannot use that type itself).
+enum QuizOutcome: Equatable {
+    /// A wrong pick.
+    case wrong
+    /// A right pick that was hard ("Zordu").
+    case hard
+    /// A right pick ("Devam").
+    case right
+    /// A right pick that was easy ("Kolaydı").
+    case easy
+}
+
 /// "Tekrar" question for a word that was already studied: the card's fill-in-the-blank sentence
 /// and four options. After a tap the right option is marked "Doğru cevap" and a wrong pick
-/// "Yanlış" (icons and words, never color alone); `onContinue` reports whether the pick was right.
+/// "Yanlış" (icons and words, never color alone); `onContinue` reports how it went. After a right
+/// pick the learner can also say it was hard or easy, otherwise "Devam" is a plain right answer.
 /// Give each word its own identity (`.id(word.id)`) so the pick resets between cards.
 struct QuizCardView: View {
     let word: WidgetWord
     let quiz: CardDetail.Quiz
-    let onContinue: (Bool) -> Void
+    let onContinue: (QuizOutcome) -> Void
     @State private var picked: String?
 
     /// `initialPick` is for snapshot tests: renders the answered state directly.
-    init(word: WidgetWord, quiz: CardDetail.Quiz, initialPick: String? = nil, onContinue: @escaping (Bool) -> Void) {
+    init(word: WidgetWord, quiz: CardDetail.Quiz, initialPick: String? = nil, onContinue: @escaping (QuizOutcome) -> Void) {
         self.word = word
         self.quiz = quiz
         self.onContinue = onContinue
@@ -43,15 +58,48 @@ struct QuizCardView: View {
                 }
             }
             if let picked = picked {
-                feedback(isRight: picked == quiz.answer)
+                let isRight = picked == quiz.answer
+                feedback(isRight: isRight)
                 Button {
-                    onContinue(picked == quiz.answer)
+                    onContinue(isRight ? .right : .wrong)
                 } label: {
                     Text("Devam")
                         .frame(maxWidth: .infinity, minHeight: 44)
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
+                if isRight {
+                    difficultyButtons
+                }
+            }
+        }
+    }
+
+    /// Only after a right pick: the word comes back sooner ("Zordu") or later ("Kolaydı").
+    private var difficultyButtons: some View {
+        VStack(spacing: 8) {
+            Text("Ya da bu soru nasıl geldi?")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+            HStack(spacing: 12) {
+                Button {
+                    onContinue(.hard)
+                } label: {
+                    Text("Zordu")
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                .accessibilityHint("Kelime daha erken tekrar gelir")
+                Button {
+                    onContinue(.easy)
+                } label: {
+                    Text("Kolaydı")
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                .accessibilityHint("Kelime daha geç tekrar gelir")
             }
         }
     }

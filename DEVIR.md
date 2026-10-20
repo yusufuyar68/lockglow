@@ -107,7 +107,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
    - Her akışın `REVIEW.md` sonunda "anadili Türkçe birinin bakması gerekenler" listesi var. Kullanıcı isterse onunla birlikte geç.
    - Önerilen eklemeler: yeni akışlar (ör. B1 iş, seyahat, sağlık kalıpları). Önce `docs/icerik_uretimi/README.md`'yi oku.
    - Her derlemede `--content-version`'ı artır.
-4. **Uygulama:** FSRS (v1.2), "zor/kolay" cevapları, widget'tan çıkmadan ses.
+4. **Uygulama:** FSRS (v1.2), widget'tan çıkmadan ses. ("Zor"/"Kolay" cevapları yapıldı: `ios/README.md` → "Zor ve Kolay notları"; SE ekranı henüz görülmedi.)
 5. **Yayın işleri (kullanıcı):**
    - TÜRKPATENT "Lockglow" araması (sınıf 9, 41, 42);
    - lockglow.com/.app alan adları;

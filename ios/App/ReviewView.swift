@@ -4,7 +4,8 @@ import Learning
 
 /// "Tekrar": a short flashcard round. Due words come first; when nothing is due the tab offers
 /// the next new words (up to the daily goal). Front of a card: the English word. Tap: the Turkish
-/// meaning first (large), then the short definition and the example.
+/// meaning first (large), then the short definition and the example. A card is answered with one
+/// of four grades: Bilemedim, Zor, Bildim, Kolay.
 struct ReviewView: View {
     @EnvironmentObject private var model: AppModel
 
@@ -13,13 +14,14 @@ struct ReviewView: View {
     @State private var index = 0
     @State private var isRevealed = false
     @State private var answeredCount = 0
-    @State private var goodCount = 0
+    /// Answers that were not "Bilemedim" (hard, good and easy all count as known).
+    @State private var knownCount = 0
     /// Result of the round that just ended, shown on the start screen.
     @State private var lastRound: RoundResult?
 
     private struct RoundResult {
         let answered: Int
-        let good: Int
+        let known: Int
     }
 
     var body: some View {
@@ -51,8 +53,8 @@ struct ReviewView: View {
             // (recall); a new word is shown as a flashcard first (learning).
             if session.kind == .due, let quiz = model.detail(for: word)?.quiz, !quiz.distractors.isEmpty {
                 ScrollView {
-                    QuizCardView(word: word, quiz: quiz) { isRight in
-                        answer(isRight ? .good : .again, word: word)
+                    QuizCardView(word: word, quiz: quiz) { outcome in
+                        answer(ReviewView.grade(for: outcome), word: word)
                     }
                     .id(word.id)
                 }
@@ -145,26 +147,20 @@ struct ReviewView: View {
         .contentShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
     }
 
+    /// Four answers in two rows of two: four across would not fit an iPhone SE at larger text sizes.
+    /// Reading order is worst to best; "Bildim" is the highlighted default.
     @ViewBuilder
     private func answerArea(word: WidgetWord) -> some View {
         if isRevealed {
-            HStack(spacing: 12) {
-                Button {
-                    answer(.again, word: word)
-                } label: {
-                    Label("Bilemedim", systemImage: "xmark")
-                        .frame(maxWidth: .infinity, minHeight: 44)
+            VStack(spacing: 12) {
+                HStack(spacing: 12) {
+                    gradeButton("Bilemedim", symbol: "xmark", grade: .again, word: word)
+                    gradeButton("Zor", symbol: "tortoise", grade: .hard, word: word)
                 }
-                .buttonStyle(.bordered)
-                .controlSize(.large)
-                Button {
-                    answer(.good, word: word)
-                } label: {
-                    Label("Bildim", systemImage: "checkmark")
-                        .frame(maxWidth: .infinity, minHeight: 44)
+                HStack(spacing: 12) {
+                    gradeButton("Bildim", symbol: "checkmark", grade: .good, word: word, isDefault: true)
+                    gradeButton("Kolay", symbol: "hare", grade: .easy, word: word)
                 }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
             }
         } else {
             Button {
@@ -178,11 +174,69 @@ struct ReviewView: View {
         }
     }
 
+    @ViewBuilder
+    private func gradeButton(
+        _ title: String,
+        symbol: String,
+        grade: ReviewGrade,
+        word: WidgetWord,
+        isDefault: Bool = false
+    ) -> some View {
+        if isDefault {
+            Button {
+                answer(grade, word: word)
+            } label: {
+                Label(title, systemImage: symbol)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .accessibilityHint(ReviewView.hint(for: grade))
+        } else {
+            Button {
+                answer(grade, word: word)
+            } label: {
+                Label(title, systemImage: symbol)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+            .accessibilityHint(ReviewView.hint(for: grade))
+        }
+    }
+
+    /// What the answer does to the schedule, read out by VoiceOver.
+    private static func hint(for grade: ReviewGrade) -> String {
+        switch grade {
+        case .again:
+            return "Kelime 10 dakika sonra yeniden tekrar gelir"
+        case .hard:
+            return "Kelime aynı kutuda kalır, daha erken tekrar gelir"
+        case .good:
+            return "Kelime bir kutu ilerler"
+        case .easy:
+            return "Kelime iki kutu ilerler, daha geç tekrar gelir"
+        }
+    }
+
+    private static func grade(for outcome: QuizOutcome) -> ReviewGrade {
+        switch outcome {
+        case .wrong:
+            return .again
+        case .hard:
+            return .hard
+        case .right:
+            return .good
+        case .easy:
+            return .easy
+        }
+    }
+
     private func answer(_ grade: ReviewGrade, word: WidgetWord) {
         model.recordReview(word, grade: grade)
         answeredCount += 1
-        if grade == .good {
-            goodCount += 1
+        if grade != .again {
+            knownCount += 1
         }
         isRevealed = false
         if let session = session, index + 1 < session.words.count {
@@ -197,18 +251,18 @@ struct ReviewView: View {
         index = 0
         isRevealed = false
         answeredCount = 0
-        goodCount = 0
+        knownCount = 0
         lastRound = nil
     }
 
     /// Ends the round (all cards done, or "Bitir"): the widget queue is rebuilt from the new progress.
     private func finishRound() {
-        lastRound = answeredCount > 0 ? RoundResult(answered: answeredCount, good: goodCount) : nil
+        lastRound = answeredCount > 0 ? RoundResult(answered: answeredCount, known: knownCount) : nil
         session = nil
         index = 0
         isRevealed = false
         answeredCount = 0
-        goodCount = 0
+        knownCount = 0
         model.finishReviewSession()
     }
 
@@ -249,7 +303,7 @@ struct ReviewView: View {
         VStack(spacing: 4) {
             Text("Güzel iş!")
                 .font(.headline)
-            Text("\(round.answered) kelime çalıştın, \(round.good) tanesini bildin.")
+            Text("\(round.answered) kelime çalıştın, \(round.known) tanesini bildin.")
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
         }
