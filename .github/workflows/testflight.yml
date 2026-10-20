@@ -68,13 +68,19 @@ jobs:
         if: steps.keys.outputs.signed == 'true'
         working-directory: ios
         run: |
+          # Automatic signing at archive time asks for development profiles and failed with
+          # "Authentication failed ... bearer token" (2026-10-20). The archive is therefore signed
+          # locally ("-", entitlements such as the App Group stay embedded) and the real App Store
+          # signing happens in the export step below (cloud-managed distribution certificate).
           xcodebuild archive -project Lockglow.xcodeproj -scheme Lockglow-Release -configuration Release \
             -destination 'generic/platform=iOS' -archivePath build/Lockglow.xcarchive \
-            -allowProvisioningUpdates \
-            -authenticationKeyPath "$KEY_PATH" -authenticationKeyID "$ASC_KEY_ID" \
-            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="-" PROVISIONING_PROFILE_SPECIFIER="" \
+            CODE_SIGNING_REQUIRED=NO AD_HOC_CODE_SIGNING_ALLOWED=YES \
             CURRENT_PROJECT_VERSION="$BUILD_NUMBER" > build-archive.log 2>&1 || status=$?
           grep -E "error:|warning:|\*\* ARCHIVE" build-archive.log | sort -u | head -100 || true
+          for app in build/Lockglow.xcarchive/Products/Applications/*.app build/Lockglow.xcarchive/Products/Applications/*.app/PlugIns/*.appex; do
+            echo "== $app"; codesign -d --entitlements - --xml "$app" 2>/dev/null | plutil -p - 2>/dev/null || true
+          done
           exit ${status:-0}
       - name: App Store Connect'e yükle
         if: steps.keys.outputs.signed == 'true'
@@ -100,6 +106,7 @@ jobs:
             -authenticationKeyPath "$KEY_PATH" -authenticationKeyID "$ASC_KEY_ID" \
             -authenticationKeyIssuerID "$ASC_ISSUER_ID" > build-export.log 2>&1 || status=$?
           grep -E "error|Upload succeeded|EXPORT|Uploaded" build-export.log | sort -u | head -60 || true
+          [ -z "${status:-}" ] || tail -40 build-export.log
           exit ${status:-0}
       - name: Anahtarı sil
         if: always()
