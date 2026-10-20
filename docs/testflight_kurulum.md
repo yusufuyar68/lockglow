@@ -36,9 +36,13 @@ Gizli değişkenler GitHub'da şifreli tutulur; iş akışı anahtarı yalnızca
 
 Xcode'un API anahtarıyla otomatik imzası App Groups'u okuyamıyor (`/xcbuild/v1/appGroups` → 401). Hesaptaki 3 dağıtım sertifikası da Expo'ya ait (özel anahtarları burada yok). Bu yüzden her çalıştırmada:
 
-1. `ios/Tools/asc_signing.py setup` bulut makinesinde yeni bir anahtar üretir, API ile **geçici** bir dağıtım sertifikası ve iki `IOS_APP_STORE` profili (`Lockglow CI <run> <bundle id>`) oluşturur;
+1. `ios/Tools/asc_signing.py setup` bulut makinesinde yeni bir anahtar üretir, API ile **geçici** bir dağıtım sertifikası ve iki `IOS_APP_STORE` profili (`Lockglow CI <run>-<deneme> <bundle id>`) oluşturur. Profiller App Group içermezse iş erkenden durur;
 2. arşiv bu profillerle elle imzalanıp yüklenir;
-3. `cleanup` işi (Linux) App Store Connect build'i işleyene kadar bekler (en çok 60 dk), sonra **yalnızca o çalıştırmanın** profillerini siler ve sertifikasını iptal eder.
+3. `cleanup` işi (Linux) **nöbet değişimi** yapar. Apple, iptal edilen dağıtım sertifikasıyla imzalanmış ve incelemeye gönderilmemiş derlemeleri "Invalid Binary" sayabilir. Bu yüzden:
+   - yeni derleme App Store Connect'te işlenince (`VALID`) **yalnızca eski** `Lockglow CI` profilleri silinir ve onların sertifikaları iptal edilir; son derlemeyi imzalayan sertifika korunur (eski TestFlight derlemeleri bu yüzden geçersiz olabilir, önemli olan en yenisi);
+   - yükleme hiç denenmediyse o çalıştırmanın sertifikası ve profilleri hemen silinir;
+   - yükleme yarım kaldıysa ya da iş iptal edildiyse hiçbir şey silinmez, bir sonraki başarılı çalıştırma toplar;
+   - `Lockglow CI` dışındaki bir profilin kullandığı sertifika (Expo, diğer uygulamalar) asla iptal edilmez.
 
 Kullanıcı bu geçici sertifika/profil yöntemine 2026-10-20'de izin verdi. Başka sertifika ve profillere dokunulmaz ('Created via API' adlı iki eski geliştirme sertifikası bilerek bırakıldı).
 
@@ -68,6 +72,6 @@ Uygulama yayınlanmaz; yalnızca TestFlight için kayıt açılır.
 İş akışının günlükleri `testflight-logs` adıyla saklanır; Claude bunları okuyup düzeltebilir. Sık görülenler:
 - `No profiles for 'com.yusufuyar.vocabwidget'` + `Authentication failed` → otomatik imza App Groups'u okuyamıyor; iş akışı bu yüzden elle imzalar (adım 2b).
 - `Geçici dağıtım sertifikası oluşturulamadı` → Apple'ın sertifika sınırı dolu; önce yer açmak gerekir (kullanıcıya sor).
-- `cleanup` işi hata verdiyse: Apple hesabında `Lockglow CI` ile başlayan profilleri ve o gün oluşan dağıtım sertifikasını kontrol et.
+- `cleanup` işi hata verdiyse: bir sonraki başarılı çalıştırma eski `Lockglow CI` neslini toplar; acelesi yoksa elle bir şey yapma.
 - `Cannot determine the Apple ID from Bundle ID` / uygulama bulunamadı → adım 3 henüz yapılmadı.
 - `The bundle version must be higher` → iş akışını yeniden çalıştır (build numarası her çalıştırmada artar).

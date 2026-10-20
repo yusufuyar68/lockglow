@@ -6,8 +6,10 @@
 # Signing: Xcode's automatic signing with an API key cannot read App Groups
 # (`/xcbuild/v1/appGroups` answers 401, 2026-10-20). Each run therefore creates a temporary
 # distribution certificate and two IOS_APP_STORE profiles through the API
-# (ios/Tools/asc_signing.py), signs manually, and the `cleanup` job deletes exactly those
-# after App Store Connect has processed the build. The user allowed this on 2026-10-20.
+# (ios/Tools/asc_signing.py) and signs manually. The `cleanup` job rotates generations: the
+# certificate that signed the newest upload is kept (Apple may mark builds signed with a revoked
+# certificate Invalid Binary); older 'Lockglow CI' generations are retired once the new build is
+# VALID. The user allowed temporary certificates and profiles on 2026-10-20.
 # The build number is the workflow run number, so every upload is higher than the previous one.
 name: testflight
 
@@ -30,6 +32,7 @@ jobs:
     outputs:
       signing_state: ${{ steps.state.outputs.json }}
       uploaded: ${{ steps.upload.outputs.uploaded }}
+      export_attempted: ${{ steps.upload.outputs.attempted }}
     env:
       ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
       ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
@@ -93,7 +96,7 @@ jobs:
         run: |
           "$RUNNER_TEMP/venv/bin/python" ios/Tools/asc_signing.py setup \
             --state "$SIGN_DIR/state.json" --p12 "$SIGN_DIR/dist.p12" --p12-password "$SIGN_DIR/dist.pass" \
-            --export-info "$SIGN_DIR/export.json" --run-id "${{ github.run_id }}" \
+            --export-info "$SIGN_DIR/export.json" --run-tag "${{ github.run_id }}-${{ github.run_attempt }}" \
             --app-group "group.$APP_BUNDLE_ID" "$APP_BUNDLE_ID" "$WIDGET_BUNDLE_ID"
           for f in ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision; do
             echo "== $(basename "$f")"
@@ -116,8 +119,10 @@ jobs:
           security create-keychain -p "$KC_PASS" "$KEYCHAIN"
           security set-keychain-settings -lut 3600 "$KEYCHAIN"
           security unlock-keychain -p "$KC_PASS" "$KEYCHAIN"
-          curl -fsSL https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer -o "$RUNNER_TEMP/wwdr.cer"
-          security import "$RUNNER_TEMP/wwdr.cer" -k "$KEYCHAIN" -T /usr/bin/codesign || true
+          # The runner image normally has the WWDR intermediate already; a download failure is not fatal.
+          if curl -fsSL --retry 3 https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer -o "$RUNNER_TEMP/wwdr.cer"; then
+            security import "$RUNNER_TEMP/wwdr.cer" -k "$KEYCHAIN" -T /usr/bin/codesign || true
+          fi
           security import "$SIGN_DIR/dist.p12" -k "$KEYCHAIN" -P "$(cat "$SIGN_DIR/dist.pass")" \
             -T /usr/bin/codesign -T /usr/bin/security
           security set-key-partition-list -S apple-tool:,apple: -k "$KC_PASS" "$KEYCHAIN" > /dev/null
@@ -128,6 +133,8 @@ jobs:
         if: steps.signing.outcome == 'success'
         working-directory: ios
         run: |
+          # From here on the binary may reach Apple, so cleanup must keep this run's certificate.
+          echo "attempted=true" >> "$GITHUB_OUTPUT"
           TEAM_ID="$(sed -n 's/^DEVELOPMENT_TEAM *= *//p' Config/Base.xcconfig)"
           python3 - "$SIGN_DIR/export.json" "$TEAM_ID" build/ExportOptions.plist <<'EOF'
           import json, plistlib, sys
@@ -168,8 +175,9 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-  # Linux (1x minutes): waits for App Store Connect to finish processing the upload, then deletes
-  # the temporary profiles and revokes the temporary certificate created by this run only.
+  # Linux (1x minutes): waits for App Store Connect to finish processing the upload, then retires
+  # older 'Lockglow CI' generations (see ios/Tools/asc_signing.py cleanup). Cancelling it is safe:
+  # nothing is deleted then, and the next successful run catches up.
   cleanup:
     name: Geçici sertifikayı temizle
     needs: upload
@@ -186,13 +194,17 @@ jobs:
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
           SIGNING_STATE: ${{ needs.upload.outputs.signing_state }}
           UPLOADED: ${{ needs.upload.outputs.uploaded }}
+          EXPORT_ATTEMPTED: ${{ needs.upload.outputs.export_attempted }}
           KEY_PATH: ${{ runner.temp }}/AuthKey.p8
         run: |
           printf '%s\n' "$ASC_KEY_P8" > "$KEY_PATH"
           chmod 600 "$KEY_PATH"
-          python3 -m pip install -q pyjwt cryptography
-          python3 ios/Tools/asc_signing.py cleanup --state-json "$SIGNING_STATE" \
-            --uploaded "${UPLOADED:-false}" --app-bundle-id "$APP_BUNDLE_ID" \
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install -q pyjwt cryptography
+          "$RUNNER_TEMP/venv/bin/python" ios/Tools/asc_signing.py cleanup --state-json "$SIGNING_STATE" \
+            --run-tag "${{ github.run_id }}-${{ github.run_attempt }}" \
+            --uploaded "${UPLOADED:-false}" --export-attempted "${EXPORT_ATTEMPTED:-false}" \
+            --app-bundle-id "$APP_BUNDLE_ID" \
             --build-number "${{ github.run_number }}" --wait-minutes 60 || status=$?
           rm -f "$KEY_PATH"
           exit ${status:-0}

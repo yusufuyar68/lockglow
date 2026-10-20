@@ -5,13 +5,15 @@ Xcode's automatic signing with an App Store Connect API key cannot read App Grou
 number of distribution certificates in long-term use elsewhere (Expo). So every TestFlight
 run signs with throwaway credentials that exist only on the CI runner:
 
-  setup    new RSA key + CSR -> distribution certificate -> IOS_APP_STORE profile per bundle id;
-           writes the .p12, its password, the export options input and a state file (ids only)
-  cleanup  waits until App Store Connect has processed the uploaded build (if one was uploaded),
-           then deletes exactly the profiles and the certificate listed in the state file
+  setup    new RSA key + CSR -> distribution certificate -> IOS_APP_STORE profile per bundle id
+           named 'Lockglow CI <run tag> <bundle id>'; writes the .p12, its password, the export
+           options input and a state file (ids only)
+  cleanup  generation rotation, see cleanup(): the certificate that signed the newest upload is
+           kept (Apple may mark builds signed with a revoked certificate Invalid Binary); older
+           'Lockglow CI' generations are retired once the new build is VALID
 
-The user allowed this on 2026-10-20 ("geçici sertifika ve profil, sonra sil"); other
-certificates and profiles of the team are never touched.
+The user allowed temporary certificates and profiles on 2026-10-20. Certificates used by any
+profile outside the 'Lockglow CI' generations (Expo, other apps) are never revoked.
 
 Environment: ASC_KEY_ID, ASC_ISSUER_ID, KEY_PATH (path of the .p8 file).
 """
@@ -39,6 +41,7 @@ from cryptography.hazmat.primitives.serialization import pkcs12
 from cryptography.x509.oid import NameOID
 
 API = "https://api.appstoreconnect.apple.com"
+PROFILE_PREFIX = "Lockglow CI "
 
 
 class ApiError(Exception):
@@ -162,7 +165,7 @@ def setup(a: argparse.Namespace) -> None:
     chosen: dict[str, str] = {}
     missing_group = []
     for bid in a.bundle_ids:
-        name = f"Lockglow CI {a.run_id} {bid}"
+        name = f"{PROFILE_PREFIX}{a.run_tag} {bid}"
         prof = call("POST", "/v1/profiles", {"data": {
             "type": "profiles",
             "attributes": {"name": name, "profileType": "IOS_APP_STORE"},
@@ -191,60 +194,129 @@ def setup(a: argparse.Namespace) -> None:
         {"sha1": cert.fingerprint(hashes.SHA1()).hex().upper(), "profiles": chosen}, indent=2))
 
 
-def wait_for_processing(a: argparse.Namespace) -> None:
+def wait_for_processing(a: argparse.Namespace) -> str:
+    """Poll this run's build until App Store Connect finishes processing it. Returns the last state."""
     apps = call("GET", f"/v1/apps?filter[bundleId]={q(a.app_bundle_id)}&fields[apps]=bundleId")["data"]
     apps = [x for x in apps if x["attributes"]["bundleId"] == a.app_bundle_id]
     if not apps:
-        print("::warning::Uygulama kaydı bulunamadı; işleme beklenmeden temizleniyor.")
-        return
+        return "UYGULAMA KAYDI YOK"
     app_id = apps[0]["id"]
     deadline = time.time() + a.wait_minutes * 60
-    state = None
+    state = "HENÜZ YOK"
     while time.time() < deadline:
         builds = call("GET", f"/v1/builds?filter[app]={app_id}&filter[version]={q(a.build_number)}"
-                             "&fields[builds]=version,processingState&limit=5")["data"]
+                             "&sort=-uploadedDate&fields[builds]=version,processingState,uploadedDate&limit=5")["data"]
         state = builds[0]["attributes"]["processingState"] if builds else "HENÜZ YOK"
         print(time.strftime("%H:%M:%S"), "build", a.build_number, "durum:", state, flush=True)
         if state in ("VALID", "FAILED", "INVALID"):
             break
         time.sleep(60)
-    else:
-        print(f"::warning::Build {a.build_number} {a.wait_minutes} dakikada işlenmedi (son durum: {state}); yine de temizleniyor.")
-    if state in ("FAILED", "INVALID"):
-        print(f"::warning::App Store Connect build {a.build_number} için '{state}' dedi. E-postanı kontrol et.")
+    return state
+
+
+def all_profiles() -> list[dict]:
+    """Every profile of the team with its certificate ids (follows pagination)."""
+    out: list[dict] = []
+    path = "/v1/profiles?limit=200&fields[profiles]=name,certificates&include=certificates&limit[certificates]=50"
+    while path:
+        r = call("GET", path)
+        out += r.get("data", [])
+        nxt = (r.get("links") or {}).get("next")
+        path = nxt[len(API):] if nxt and nxt.startswith(API) else None
+    return out
+
+
+def cert_ids(profile: dict) -> set[str]:
+    return {c["id"] for c in ((profile.get("relationships") or {}).get("certificates") or {}).get("data") or []}
+
+
+def delete(kind: str, rid: str, done: str) -> bool:
+    try:
+        call("DELETE", f"/v1/{kind}/{rid}")
+        print(f"{done}: {rid}")
+    except ApiError as e:
+        if e.status != 404:
+            print(f"::error::{kind}/{rid} silinemedi: {e}")
+            return False
+        print(f"{done} (zaten yoktu): {rid}")
+    except Exception as e:
+        print(f"::error::{kind}/{rid} silinemedi: {e}")
+        return False
+    return True
+
+
+def retire(profiles: list[dict], certs: set[str]) -> bool:
+    """Revoke certificates first, then delete profiles: if a revoke fails, its profiles stay
+    behind and keep pointing at it, so the next run finds and retries it."""
+    ok = all([delete("certificates", c, "Eski geçici sertifika iptal edildi") for c in sorted(certs)])
+    if ok:
+        ok = all([delete("profiles", p["id"], "Eski geçici profil silindi") for p in profiles])
+    return ok
 
 
 def cleanup(a: argparse.Namespace) -> None:
+    """Generation rotation (Apple: builds signed with a revoked distribution certificate may be
+    marked Invalid Binary, so the certificate that signed the newest upload is never revoked):
+
+      uploaded, build VALID     -> retire every OLDER 'Lockglow CI' generation, keep this one
+      upload never attempted    -> nothing was signed with this run's certificate: retire this run
+      anything else             -> touch nothing; the next successful run retires it
+
+    A certificate is retired only if no profile outside the retired 'Lockglow CI' generations
+    uses it, so Expo's and other apps' certificates are never revoked.
+    """
     try:
         state = json.loads(a.state_json or "{}")
     except ValueError:
-        sys.exit("Durum bilgisi okunamadı; Apple hesabında 'Lockglow CI' adlı profilleri elle sil.")
-    if not state.get("certificate") and not state.get("profiles"):
-        print("Silinecek geçici sertifika ya da profil yok.")
-        return
+        state = {}
+    current_cert = state.get("certificate")
+    current_profiles = set(state.get("profiles") or [])
+    current_prefix = f"{PROFILE_PREFIX}{a.run_tag} "
+
     if a.uploaded == "true":
         try:
-            wait_for_processing(a)
-        except Exception as e:  # never let waiting stop the deletes below
-            print(f"::warning::Build işlemesi beklenemedi ({e}); yine de temizleniyor.")
-    failed = False
-    targets = [("profiles", pid, "Geçici profil silindi", "Profil") for pid in state.get("profiles", [])]
-    if state.get("certificate"):
-        targets.append(("certificates", state["certificate"], "Geçici sertifika iptal edildi", "Sertifika"))
-    for kind, rid, done, label in targets:
-        try:
-            call("DELETE", f"/v1/{kind}/{rid}")
-            print(done + ":", rid)
-        except ApiError as e:
-            if e.status == 404:
-                print(done + " (zaten yoktu):", rid)
-            else:
-                failed = True
-                print(f"::error::{label} {rid} silinemedi: {e}")
+            processing = wait_for_processing(a)
         except Exception as e:
-            failed = True
-            print(f"::error::{label} {rid} silinemedi: {e}")
-    if failed:
+            processing = f"beklenemedi ({e})"
+        if processing != "VALID":
+            print(f"::warning::Build {a.build_number} durumu: {processing}. Hiçbir sertifika/profil silinmedi; "
+                  "bir sonraki başarılı çalıştırma eskileri temizler.")
+            return
+        print(f"Build {a.build_number} işlendi (VALID). Bu çalıştırmanın sertifikası korunuyor: {current_cert}")
+        profiles = all_profiles()
+        old = [p for p in profiles if p["attributes"]["name"].startswith(PROFILE_PREFIX)
+               and not p["attributes"]["name"].startswith(current_prefix) and p["id"] not in current_profiles]
+    elif a.export_attempted != "true":
+        if not current_cert and not current_profiles:
+            print("Bu çalıştırma geçici sertifika/profil oluşturmamış; silinecek bir şey yok.")
+            return
+        print("Yükleme hiç denenmedi; bu çalıştırmanın geçici sertifikası ve profilleri siliniyor.")
+        profiles = all_profiles()
+        old = [p for p in profiles if p["id"] in current_profiles or p["attributes"]["name"].startswith(current_prefix)]
+        if current_cert:
+            # Profiles of this run may be missing from the listing if setup stopped halfway.
+            old_certs = {current_cert}
+            others = set().union(*[cert_ids(p) for p in profiles if p not in old]) if profiles else set()
+            if current_cert in others:
+                print(f"::warning::Sertifika {current_cert} başka bir profilde de kullanılıyor; iptal edilmedi.")
+                old_certs = set()
+            if not retire(old, old_certs):
+                sys.exit(1)
+            return
+    else:
+        print("::warning::Yükleme denendi ama başarısız ya da yarım kaldı; bu çalıştırmanın sertifikası korunuyor "
+              "(yüklenmiş olabilir). Bir sonraki başarılı çalıştırma temizler.")
+        return
+
+    keep = set().union(*[cert_ids(p) for p in profiles if p not in old]) if profiles else set()
+    if current_cert:
+        keep.add(current_cert)
+    old_certs = set().union(*[cert_ids(p) for p in old]) - keep if old else set()
+    if not old:
+        print("Temizlenecek eski 'Lockglow CI' profili yok.")
+        return
+    print(f"Eski nesil: {len(old)} profil, {len(old_certs)} sertifika.")
+    if not retire(old, old_certs):
         sys.exit(1)
 
 
@@ -256,12 +328,14 @@ def main() -> None:
     s.add_argument("--p12", required=True)
     s.add_argument("--p12-password", required=True)
     s.add_argument("--export-info", required=True)
-    s.add_argument("--run-id", required=True)
+    s.add_argument("--run-tag", required=True, help="unique per run attempt, e.g. <run_id>-<run_attempt>")
     s.add_argument("--app-group", default="", help="profiles must contain this App Group, else stop early")
     s.add_argument("bundle_ids", nargs="+")
     c = sub.add_parser("cleanup")
     c.add_argument("--state-json", default="")
+    c.add_argument("--run-tag", required=True)
     c.add_argument("--uploaded", default="false")
+    c.add_argument("--export-attempted", default="false")
     c.add_argument("--app-bundle-id", required=True)
     c.add_argument("--build-number", required=True)
     c.add_argument("--wait-minutes", type=int, default=60)
