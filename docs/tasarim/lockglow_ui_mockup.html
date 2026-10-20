@@ -1564,7 +1564,9 @@ let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTime
 /* ───────── Başlangıç ───────── */
 (function init() {
   document.documentElement.lang = 'tr';
-  S.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Görüntüleyici temayı zaten seçtiyse onu kullan, yoksa sistem ayarını.
+  const preset = document.documentElement.dataset.theme;
+  S.theme = preset === 'dark' || preset === 'light' ? preset : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   const h = location.hash.replace('#', '');
   const map = { akis: ['app', 'feed'], tekrar: ['app', 'review'], sozluk: ['app', 'search'], ayarlar: ['app', 'settings'], widgetlar: ['widgets'], marka: ['brand'] };
   if (map[h]) { S.view = map[h][0]; if (map[h][1]) S.tab = map[h][1]; }
