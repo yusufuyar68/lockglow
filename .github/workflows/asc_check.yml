@@ -35,13 +35,20 @@ jobs:
           tok = jwt.encode({"iss": os.environ["ASC_ISSUER_ID"].strip(), "iat": int(time.time()), "exp": int(time.time()) + 600,
                             "aud": "appstoreconnect-v1"}, p8, algorithm="ES256",
                            headers={"kid": os.environ["ASC_KEY_ID"].strip(), "typ": "JWT"})
-          req = urllib.request.Request("https://api.appstoreconnect.apple.com/v1/apps?limit=5&fields[apps]=bundleId",
-                                       headers={"Authorization": "Bearer " + tok})
-          try:
-              with urllib.request.urlopen(req) as r:
-                  data = json.load(r)
-                  print("HTTP", r.status, "| uygulamalar:", [a["attributes"]["bundleId"] for a in data["data"]])
-          except urllib.error.HTTPError as e:
-              body = json.loads(e.read() or b"{}")
-              print("HTTP", e.code, "|", [(x.get("code"), x.get("detail")) for x in body.get("errors", [])])
+          def get(path, show):
+              req = urllib.request.Request("https://api.appstoreconnect.apple.com" + path,
+                                           headers={"Authorization": "Bearer " + tok})
+              try:
+                  with urllib.request.urlopen(req) as r:
+                      data = json.load(r)
+                      print("HTTP", r.status, path.split("?")[0], "|", [show(a["attributes"]) for a in data["data"]])
+              except urllib.error.HTTPError as e:
+                  body = json.loads(e.read() or b"{}")
+                  print("HTTP", e.code, path.split("?")[0], "|", [(x.get("code"), x.get("detail")) for x in body.get("errors", [])])
+          get("/v1/apps?limit=10&fields[apps]=bundleId", lambda a: a["bundleId"])
+          get("/v1/bundleIds?filter[identifier]=com.yusufuyar.vocabwidget,com.yusufuyar.vocabwidget.widgets",
+              lambda a: (a["identifier"], a["platform"]))
+          get("/v1/certificates?limit=20", lambda a: (a["certificateType"], a["expirationDate"][:10]))
+          get("/v1/profiles?limit=50&fields[profiles]=name,profileType,profileState",
+              lambda a: (a["name"], a["profileType"], a["profileState"]))
           EOF
