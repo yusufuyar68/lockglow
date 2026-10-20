@@ -1,0 +1,1065 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.thrilled.adj.1",
+      "lemma": "thrilled",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very happy and excited",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/θrɪld/",
+        "uk": "/θrɪld/"
+      },
+      "def": {
+        "micro": "very happy and excited",
+        "short": "feeling extremely happy and excited about something good",
+        "long": "Feeling very happy and excited because something good has happened or will happen. You can be thrilled about something, thrilled with a result, or thrilled to do something."
+      },
+      "grammar": {
+        "pattern": "thrilled to do sth / about sth / with sth"
+      },
+      "examples": [
+        {
+          "en": "I'm thrilled to see you!",
+          "tr": "Seni gördüğüme çok sevindim!",
+          "register": "neutral",
+          "focus": "thrilled"
+        },
+        {
+          "en": "Elif was thrilled about her new job.",
+          "tr": "Elif yeni işi için çok mutlu ve heyecanlıydı.",
+          "register": "neutral",
+          "focus": "thrilled"
+        },
+        {
+          "en": "Kenji was thrilled with his birthday gift.",
+          "tr": "Kenji doğum günü hediyesine çok sevindi.",
+          "register": "neutral",
+          "focus": "thrilled"
+        }
+      ],
+      "synonyms": [
+        "delighted",
+        "overjoyed"
+      ],
+      "antonyms": [
+        "disappointed"
+      ],
+      "collocations": [
+        "thrilled to bits",
+        "thrilled to hear",
+        "absolutely thrilled",
+        "thrilled about"
+      ],
+      "word_family": [
+        {
+          "lemma": "thrill",
+          "pos": "n"
+        },
+        {
+          "lemma": "thrill",
+          "pos": "v"
+        },
+        {
+          "lemma": "thrilling",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok mutlu ve heyecanlı",
+          "alt": [
+            "çok sevinçli",
+            "çok sevinmiş"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sıradan 'happy' kelimesinden çok daha güçlü bir sevinç ve heyecan anlatır. Kalıplar: 'thrilled to + fiil', 'thrilled about / with + isim'. 'Thrilling' ise 'heyecan verici' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe got the job she wanted. She was ______ to tell her family.",
+        "answer": "thrilled",
+        "distractors": [
+          "sleepy",
+          "furious",
+          "lonely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_friends.phr.1",
+      "lemma": "make friends",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "start new friendships",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈfrɛndz/",
+        "uk": "/meɪk ˈfrɛndz/"
+      },
+      "def": {
+        "micro": "become close to new people",
+        "short": "meet new people and start to like and trust them",
+        "long": "To meet new people and start a close, happy relationship with them. You can make friends at school, at work or on a trip. Use 'with' before the other person."
+      },
+      "grammar": {
+        "pattern": "make friends (with + person)"
+      },
+      "examples": [
+        {
+          "en": "It is easy to make friends at this school.",
+          "tr": "Bu okulda arkadaş edinmek kolay.",
+          "register": "neutral",
+          "focus": "make friends"
+        },
+        {
+          "en": "Nora made friends with her new neighbor.",
+          "tr": "Nora yeni komşusuyla arkadaş oldu.",
+          "register": "neutral",
+          "focus": "made friends"
+        },
+        {
+          "en": "Children make friends quickly when they play together.",
+          "tr": "Çocuklar birlikte oynayınca çabuk arkadaş olur.",
+          "register": "neutral",
+          "focus": "make friends"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make friends with",
+        "make new friends",
+        "make friends easily",
+        "hard to make friends"
+      ],
+      "word_family": [
+        {
+          "lemma": "friend",
+          "pos": "n"
+        },
+        {
+          "lemma": "friendly",
+          "pos": "adj"
+        },
+        {
+          "lemma": "friendship",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arkadaş edinmek",
+          "alt": [
+            "arkadaş olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'arkadaş edinmek' tekil söylenir. İngilizcede 'make friends' çoğuldur; tek kişi için 'make a friend' denir. Kişiyi 'with' ile bağlarsın: make friends with Nora.",
+          "mistakes": [
+            {
+              "wrong": "I want to make friend in London.",
+              "right": "I want to make friends in London.",
+              "why": "Türkçede 'arkadaş edinmek' tekil söylenir ('arkadaş'). İngilizcede ya çoğul 'make friends' ya da 'make a friend' dersin; 'make friend' olmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Lena is lonely in her new town. She hopes to ______ soon.",
+        "answer": "make friends",
+        "distractors": [
+          "catch a cold",
+          "pay a fine",
+          "miss a train"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fall_out_with.phv.1",
+      "lemma": "fall out with",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "stop being friends after a fight",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɔːl ˈaʊt wɪð/",
+        "uk": "/fɔːl ˈaʊt wɪð/"
+      },
+      "def": {
+        "micro": "stop being friends",
+        "short": "stop talking to a friend after an argument",
+        "long": "To argue with someone and then stop being friendly with them. People often fall out over money, plans or small things. The opposite is 'make up'."
+      },
+      "grammar": {
+        "pattern": "fall out with + person (over sth)"
+      },
+      "examples": [
+        {
+          "en": "I fell out with my best friend last week.",
+          "tr": "Geçen hafta en yakın arkadaşımla bozuştum.",
+          "register": "neutral",
+          "focus": "fell out with"
+        },
+        {
+          "en": "Zeynep fell out with her sister over a small thing.",
+          "tr": "Zeynep küçük bir şey yüzünden kız kardeşiyle bozuştu.",
+          "register": "neutral",
+          "focus": "fell out with"
+        },
+        {
+          "en": "Please don't fall out with your friends over a silly game.",
+          "tr": "Lütfen saçma bir oyun yüzünden arkadaşlarınla bozuşma.",
+          "register": "neutral",
+          "focus": "fall out with"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "make up"
+      ],
+      "collocations": [
+        "fall out with a friend",
+        "fall out over money",
+        "fall out with your family"
+      ],
+      "word_family": [
+        {
+          "lemma": "falling-out",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bozuşmak, küsmek",
+          "alt": [
+            "arası bozulmak",
+            "darılmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Burada 'fall out' düşmek değil, tartışıp arası bozulmak demektir. Kişi için 'with', konu için 'over' ya da 'about' gelir: fall out with Ali over money. Zıttı 'make up' = barışmak.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "love_friendship",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Jonas ______ his neighbor over a parking space. Now they don't even say hello.",
+        "answer": "fell out with",
+        "distractors": [
+          "came up with",
+          "got away with",
+          "kept up with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.id_love_to.phr.1",
+      "lemma": "I'd love to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "politely accepting an invitation",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪd ˈlʌv tuː/",
+        "uk": "/aɪd ˈlʌv tuː/"
+      },
+      "def": {
+        "micro": "yes, I would really like to",
+        "short": "a polite way to say yes when someone invites you to do something",
+        "long": "You say this to accept an invitation or an offer in a friendly, polite way. It means that you would really like to do it. Be careful: 'I'd love to, but...' is a polite way to say no."
+      },
+      "grammar": {
+        "pattern": "I'd love to (+ verb)"
+      },
+      "examples": [
+        {
+          "en": "“Would you like to come?” “I'd love to!”",
+          "tr": "“Gelmek ister misin?” “Çok isterim!”",
+          "register": "neutral",
+          "focus": "I'd love to"
+        },
+        {
+          "en": "“Do you want to have dinner with us?” “Yes, I'd love to.”",
+          "tr": "“Bizimle akşam yemeği yemek ister misin?” “Evet, çok isterim.”",
+          "register": "neutral",
+          "focus": "I'd love to"
+        },
+        {
+          "en": "I'd love to come to your party, Mehmet. Thanks for inviting me!",
+          "tr": "Partine gelmeyi çok isterim Mehmet. Davet ettiğin için sağ ol!",
+          "register": "neutral",
+          "focus": "I'd love to"
+        }
+      ],
+      "synonyms": [
+        "I'd be happy to",
+        "with pleasure"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "I'd love to, but",
+        "I'd love to come",
+        "yes, I'd love to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok isterim",
+          "alt": [
+            "çok memnun olurum",
+            "seve seve"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Daveti kibarca kabul etmenin yaygın yoludur. Fiil sonradan gelirse 'I'd love to come' denir; kısa cevapta fiil düşer: 'I'd love to.' 'I'd love to, but...' ise nazik bir ret başlangıcıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Do you want to see a movie tonight?” “Yes, ______!”",
+        "answer": "I'd love to",
+        "distractors": [
+          "nice to meet you",
+          "I'm afraid not",
+          "not at all"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.friendly.adj.1",
+      "lemma": "friendly",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "kind and easy to talk to",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfrɛndli/",
+        "uk": "/ˈfrɛndli/"
+      },
+      "def": {
+        "micro": "kind and easy to talk to",
+        "short": "kind and warm to other people, so they feel comfortable talking to you",
+        "long": "Kind, warm and happy to talk to other people. A friendly person smiles, says hello and makes new people feel welcome. This word ends in -ly, but it is an adjective, not an adverb."
+      },
+      "grammar": {
+        "pattern": "be friendly to / with + person"
+      },
+      "examples": [
+        {
+          "en": "Our new neighbors are very friendly.",
+          "tr": "Yeni komşularımız çok arkadaş canlısı.",
+          "register": "neutral",
+          "focus": "friendly"
+        },
+        {
+          "en": "Omar is always friendly to new students.",
+          "tr": "Omar yeni öğrencilere her zaman güler yüzlü davranır.",
+          "register": "neutral",
+          "focus": "friendly"
+        },
+        {
+          "en": "The staff at the hotel were warm and friendly.",
+          "tr": "Otel çalışanları sıcakkanlı ve güler yüzlüydü.",
+          "register": "neutral",
+          "focus": "friendly"
+        }
+      ],
+      "synonyms": [
+        "kind",
+        "warm",
+        "welcoming"
+      ],
+      "antonyms": [
+        "unfriendly",
+        "cold"
+      ],
+      "collocations": [
+        "friendly smile",
+        "friendly staff",
+        "friendly face",
+        "friendly atmosphere"
+      ],
+      "word_family": [
+        {
+          "lemma": "friend",
+          "pos": "n"
+        },
+        {
+          "lemma": "friendship",
+          "pos": "n"
+        },
+        {
+          "lemma": "unfriendly",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arkadaş canlısı",
+          "alt": [
+            "cana yakın",
+            "sıcakkanlı",
+            "güler yüzlü"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sonu '-ly' ile bittiği için zarf sanılır, ama sıfattır. Zarf anlamı için 'in a friendly way' denir. Kişi için 'friendly to / with' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "She spoke to me friendly.",
+              "right": "She spoke to me in a friendly way.",
+              "why": "Türkçede 'arkadaşça' hem sıfat hem zarf olur. 'Friendly' ise yalnızca sıfattır; zarf için 'in a friendly way' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our new teacher is very ______. She smiles and says hello to everyone.",
+        "answer": "friendly",
+        "distractors": [
+          "cold",
+          "silent",
+          "unhappy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_to_know.phr.1",
+      "lemma": "get to know",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "learn about a person over time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt tə ˈnoʊ/",
+        "uk": "/ɡɛt tə ˈnəʊ/"
+      },
+      "def": {
+        "micro": "learn what someone is like",
+        "short": "spend time with someone to learn what they are like",
+        "long": "To spend time with a person and slowly learn what they are like. You can also get to know a place, like a new city. It is different from meeting someone, which is only the first step."
+      },
+      "grammar": {
+        "pattern": "get to know + sb / sth"
+      },
+      "examples": [
+        {
+          "en": "I want to get to know my new classmates.",
+          "tr": "Yeni sınıf arkadaşlarımı tanımak istiyorum.",
+          "register": "neutral",
+          "focus": "get to know"
+        },
+        {
+          "en": "Tom and Priya got to know each other at a language course.",
+          "tr": "Tom ile Priya bir dil kursunda birbirlerini yakından tanıdılar.",
+          "register": "neutral",
+          "focus": "got to know"
+        },
+        {
+          "en": "It takes time to get to know a new city.",
+          "tr": "Yeni bir şehri tanımak zaman alır.",
+          "register": "neutral",
+          "focus": "get to know"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get to know each other",
+        "get to know someone better",
+        "get to know a city"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yakından tanımak",
+          "alt": [
+            "tanımak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Meet' ilk tanışmadır, 'know' zaten tanıyor olmaktır. 'Get to know' ise zamanla tanıma sürecidir. Yer ve konular için de olur: get to know a city.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kenji is new here. Let's invite him so we can ______ him better.",
+        "answer": "get to know",
+        "distractors": [
+          "get rid of",
+          "give up on",
+          "keep away from"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.no_worries.phr.1",
+      "lemma": "no worries",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "friendly reply to thanks or sorry",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnoʊ ˈwɜːriz/",
+        "uk": "/ˌnəʊ ˈwʌriz/"
+      },
+      "def": {
+        "micro": "it is OK, it is fine",
+        "short": "a friendly way to say it is OK when someone thanks you or says sorry",
+        "long": "You say this when someone thanks you or says sorry, and you want to show that it is fine. It is friendly and informal, and people often use it with friends and in shops."
+      },
+      "examples": [
+        {
+          "en": "“Sorry I'm late!” “No worries. We just sat down.”",
+          "tr": "“Geç kaldım, kusura bakma!” “Önemli değil. Daha yeni oturduk.”",
+          "register": "informal",
+          "focus": "No worries"
+        },
+        {
+          "en": "“Thanks for helping me move.” “No worries, Deniz!”",
+          "tr": "“Taşınmama yardım ettiğin için sağ ol.” “Önemli değil Deniz!”",
+          "register": "informal",
+          "focus": "No worries"
+        },
+        {
+          "en": "If you can't come tonight, no worries. We can meet next week.",
+          "tr": "Bu akşam gelemezsen sorun değil. Haftaya buluşuruz.",
+          "register": "informal",
+          "focus": "no worries"
+        }
+      ],
+      "synonyms": [
+        "no problem",
+        "that's OK",
+        "it's fine"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "oh, no worries",
+        "no worries at all"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önemli değil",
+          "alt": [
+            "sorun değil",
+            "rica ederim"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Biri teşekkür ettiğinde ya da özür dilediğinde söylenen gayriresmî bir cevaptır; arkadaşlarla ve günlük konuşmada kullanılır. Daha resmî ortamda teşekküre 'You're welcome', özre 'That's all right' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Sorry, I broke your cup.” “______. It was old anyway.”",
+        "answer": "No worries",
+        "distractors": [
+          "You're welcome",
+          "My pleasure",
+          "Same to you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.open_up.phv.1",
+      "lemma": "open up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "start to share your feelings",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌoʊpən ˈʌp/",
+        "uk": "/ˌəʊpən ˈʌp/"
+      },
+      "def": {
+        "micro": "start to talk about feelings",
+        "short": "start to talk about your real thoughts and feelings with someone",
+        "long": "To begin to tell someone your private thoughts and feelings, usually because you now trust them. A shy person may open up slowly. You open up to a person or about a problem."
+      },
+      "grammar": {
+        "pattern": "open up (to sb / about sth)"
+      },
+      "examples": [
+        {
+          "en": "It took Sam a long time to open up to us.",
+          "tr": "Sam'in bize açılması uzun zaman aldı.",
+          "register": "neutral",
+          "focus": "open up"
+        },
+        {
+          "en": "You can open up to me. I won't tell anyone.",
+          "tr": "Bana açılabilirsin. Kimseye söylemem.",
+          "register": "neutral",
+          "focus": "open up"
+        },
+        {
+          "en": "Selin finally opened up about her problems at school.",
+          "tr": "Selin sonunda okulda yaşadığı sorunlar konusunda açıldı.",
+          "register": "neutral",
+          "focus": "opened up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "clam up"
+      ],
+      "collocations": [
+        "open up to someone",
+        "open up about",
+        "slowly open up",
+        "start to open up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açılmak, içini açmak",
+          "alt": [
+            "içini dökmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Burada 'open up' kapı ya da kutu açmak değil, duygularını anlatmaya başlamaktır. Kişi için 'to', konu için 'about' gelir: open up to a friend about a problem.",
+          "mistakes": [
+            {
+              "wrong": "Ece opened up me about her problems.",
+              "right": "Ece opened up to me about her problems.",
+              "why": "Türkçede 'bana açıldı' derken '-a' eki yeter. İngilizcede kişiden önce 'to' gelir ve atlanamaz: open up to + kişi."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet is shy, but today he finally decided to ______ about his feelings.",
+        "answer": "open up",
+        "distractors": [
+          "wash up",
+          "stand by",
+          "call off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.invitation.n.1",
+      "lemma": "invitation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "request to come to an event",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɪnvɪˈteɪʃən/",
+        "uk": "/ˌɪnvɪˈteɪʃən/"
+      },
+      "def": {
+        "micro": "a request to join an event",
+        "short": "a spoken or written request for you to come to a party or other event",
+        "long": "A message or a question that asks you to come to a party, a wedding or another event. You can get one on paper, by text or online, and you can accept it or say no."
+      },
+      "grammar": {
+        "pattern": "invitation to + event / from + person"
+      },
+      "examples": [
+        {
+          "en": "Thank you for the invitation!",
+          "tr": "Davet için teşekkür ederim!",
+          "register": "neutral",
+          "focus": "invitation"
+        },
+        {
+          "en": "Ana sent us an invitation to her wedding.",
+          "tr": "Ana düğünü için bize davetiye gönderdi.",
+          "register": "neutral",
+          "focus": "invitation"
+        },
+        {
+          "en": "I got an invitation to Tom's birthday party, but I can't go.",
+          "tr": "Tom'un doğum günü partisine davet aldım ama gidemiyorum.",
+          "register": "neutral",
+          "focus": "invitation"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "accept an invitation",
+        "decline an invitation",
+        "send an invitation",
+        "wedding invitation",
+        "invitation to a party"
+      ],
+      "word_family": [
+        {
+          "lemma": "invite",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "davet",
+          "alt": [
+            "davetiye"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kâğıt, kart ya da mesaj olarak gelen davetiye de 'invitation' olur. 'Accept an invitation' daveti kabul etmek, 'decline an invitation' nazikçe geri çevirmek demektir. Etkinlik için 'to' gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I said yes to Elif's ______ to dinner on Friday.",
+        "answer": "invitation",
+        "distractors": [
+          "balcony",
+          "schedule",
+          "photo"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hows_it_going.phr.1",
+      "lemma": "how's it going",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "informal greeting",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haʊz ɪt ˈɡoʊɪŋ/",
+        "uk": "/haʊz ɪt ˈɡəʊɪŋ/"
+      },
+      "def": {
+        "micro": "how are things with you",
+        "short": "a friendly question you ask to find out how someone is doing",
+        "long": "A casual way to greet someone and ask how they are or how things are. People usually answer with a short reply such as 'Good, thanks' or 'Not bad'."
+      },
+      "examples": [
+        {
+          "en": "“Hey, how's it going?” “Not bad, thanks. You?”",
+          "tr": "“Selam, nasıl gidiyor?” “Fena değil, sağ ol. Sen?”",
+          "register": "informal",
+          "focus": "how's it going"
+        },
+        {
+          "en": "Hi, Maria! How's it going at your new job?",
+          "tr": "Merhaba Maria! Yeni işte işler nasıl gidiyor?",
+          "register": "informal",
+          "focus": "How's it going"
+        },
+        {
+          "en": "“How's it going, Can?” “Pretty good. I just finished my exam.”",
+          "tr": "“Nasıl gidiyor Can?” “Gayet iyi. Sınavım daha yeni bitti.”",
+          "register": "informal",
+          "focus": "How's it going"
+        }
+      ],
+      "synonyms": [
+        "how are things",
+        "how's life"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "how's it going with",
+        "how's it going so far"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nasıl gidiyor?",
+          "alt": [
+            "ne haber?",
+            "işler nasıl?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşlar arasında günlük bir selamlamadır. 'How are you?' ile hemen hemen aynıdır, ama daha rahattır. Uzun cevap beklenmez: 'Good, thanks', 'Not bad', 'Pretty good' yeter.",
+          "mistakes": [
+            {
+              "wrong": "How is going?",
+              "right": "How's it going?",
+              "why": "Türkçede 'Nasıl gidiyor?' öznesizdir. İngilizcede özne gerekir: 'it'. 'How is going?' demek yanlış olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Hi, Lena! ______?” “Great, thanks! I just started a new job.”",
+        "answer": "How's it going",
+        "distractors": [
+          "How old is it",
+          "Where's it from",
+          "What's it for"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

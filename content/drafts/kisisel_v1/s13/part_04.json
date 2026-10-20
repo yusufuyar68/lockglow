@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.misunderstanding.n.1",
+      "lemma": "misunderstanding",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "wrong idea between people",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌmɪsˌʌndərˈstændɪŋ/",
+        "uk": "/ˌmɪsˌʌndəˈstændɪŋ/"
+      },
+      "def": {
+        "micro": "a mix-up about what you mean",
+        "short": "a small problem when someone gets the wrong idea about what you mean",
+        "long": "A small problem that happens when a person gets the wrong idea about what someone said or did. Most of the time, people can fix it by talking. People often say 'There was a misunderstanding.'"
+      },
+      "examples": [
+        {
+          "en": "It was just a misunderstanding. I'm sorry.",
+          "tr": "Sadece bir yanlış anlaşılmaydı, özür dilerim.",
+          "register": "neutral",
+          "focus": "misunderstanding"
+        },
+        {
+          "en": "There was a misunderstanding about the time, so Selin came early.",
+          "tr": "Saat konusunda bir yanlış anlaşılma oldu, bu yüzden Selin erken geldi.",
+          "register": "neutral",
+          "focus": "misunderstanding"
+        },
+        {
+          "en": "Most misunderstandings happen when people don't ask questions.",
+          "tr": "Yanlış anlaşılmaların çoğu, insanlar soru sormadığında olur.",
+          "register": "neutral",
+          "focus": "misunderstandings"
+        }
+      ],
+      "synonyms": [
+        "mix-up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a big misunderstanding",
+        "clear up a misunderstanding",
+        "cause misunderstandings",
+        "avoid misunderstandings"
+      ],
+      "word_family": [
+        {
+          "lemma": "misunderstand",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yanlış anlaşılma",
+          "alt": [
+            "yanlış anlama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Anlaşmazlık' fikir ayrılığıdır (disagreement). 'Misunderstanding' ise yanlış anlamadır ve çoğu zaman konuşarak çözülen küçük bir sorundur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Maria thought I was angry with her, but I wasn't. It was a small ______.",
+        "answer": "misunderstanding",
+        "distractors": [
+          "present",
+          "holiday",
+          "dinner"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_didnt_mean_to.phr.1",
+      "lemma": "I didn't mean to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "it was an accident",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˌdɪdnt ˈmiːn tuː/",
+        "uk": "/aɪ ˌdɪdnt ˈmiːn tuː/"
+      },
+      "def": {
+        "micro": "it was not on purpose",
+        "short": "used to say sorry for something you did by accident, not because you wanted to",
+        "long": "You say this when you do something that hurts or bothers someone, but you did it by accident. It shows that you are sorry and that it was not your plan. A verb can come after 'to'."
+      },
+      "grammar": {
+        "pattern": "I didn't mean to + verb"
+      },
+      "examples": [
+        {
+          "en": "Sorry! I didn't mean to scare you.",
+          "tr": "Kusura bakma! Seni korkutmak istemedim.",
+          "register": "neutral",
+          "focus": "I didn't mean to"
+        },
+        {
+          "en": "“Ouch! You stepped on my foot.” “I'm sorry. I didn't mean to.”",
+          "tr": "“Ay! Ayağıma bastın.” “Özür dilerim. İstemeden oldu.”",
+          "register": "neutral",
+          "focus": "I didn't mean to"
+        },
+        {
+          "en": "Ali, I didn't mean to hurt you. I was just joking.",
+          "tr": "Ali, seni kırmak istemedim. Sadece şaka yapıyordum.",
+          "register": "neutral",
+          "focus": "I didn't mean to"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "didn't mean to hurt you",
+        "didn't mean to be rude"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "istemeden oldu",
+          "alt": [
+            "bilerek yapmadım",
+            "kastım bu değildi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Burada 'mean' yapmayı planlamak, kastetmek demektir. Fiil söylenmeden kısa cevap olarak da kullanılır: 'I'm sorry. I didn't mean to.' Bilerek yapılan şey için 'on purpose' denir: I did it on purpose.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“You broke my cup!” “I'm so sorry. ______ break it.”",
+        "answer": "I didn't mean to",
+        "distractors": [
+          "I meant to",
+          "I forgot to",
+          "I used to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.drop_by.phv.1",
+      "lemma": "drop by",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "visit for a short time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/drɑːp ˈbaɪ/",
+        "uk": "/drɒp ˈbaɪ/"
+      },
+      "def": {
+        "micro": "visit for a short time",
+        "short": "visit a person or a place for a short time, often without planning it",
+        "long": "To visit someone's home or a place for a short time, often without a plan. You can drop by to say hello, to bring something, or to have a coffee."
+      },
+      "grammar": {
+        "pattern": "drop by (sb's place / for sth)"
+      },
+      "examples": [
+        {
+          "en": "Can I drop by your place after work?",
+          "tr": "İş çıkışı evine uğrayabilir miyim?",
+          "register": "neutral",
+          "focus": "drop by"
+        },
+        {
+          "en": "Nora dropped by to return my book.",
+          "tr": "Nora kitabımı geri vermek için uğradı.",
+          "register": "neutral",
+          "focus": "dropped by"
+        },
+        {
+          "en": "Drop by for a coffee when you are in town, Tom!",
+          "tr": "Şehre gelirsen bir kahve içmeye uğra Tom!",
+          "register": "neutral",
+          "focus": "Drop by"
+        }
+      ],
+      "synonyms": [
+        "drop in",
+        "stop by"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "drop by anytime",
+        "drop by for a coffee",
+        "drop by my place"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uğramak",
+          "alt": [
+            "kısa süreliğine gelmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Drop by' kısa ve çoğu zaman plansız bir ziyarettir. 'Drop off' ise bir şeyi ya da birini bir yere bırakmak demektir; ikisini karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm near your house, so I'll ______ for a few minutes and say hello.",
+        "answer": "drop by",
+        "distractors": [
+          "give up",
+          "calm down",
+          "go away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_my_opinion.phr.1",
+      "lemma": "in my opinion",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "giving your own view",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn maɪ əˈpɪnjən/",
+        "uk": "/ɪn maɪ əˈpɪnjən/"
+      },
+      "def": {
+        "micro": "this is what I think",
+        "short": "used before you say what you think about something, as your own view",
+        "long": "You say this before you give your own idea or view. It shows that this is only what you think, so it sounds polite. You usually put it at the start of the sentence: 'In my opinion, it is too long.'"
+      },
+      "grammar": {
+        "pattern": "In my opinion, + sentence"
+      },
+      "examples": [
+        {
+          "en": "In my opinion, this soup needs more salt.",
+          "tr": "Bence bu çorbaya biraz daha tuz lazım.",
+          "register": "neutral",
+          "focus": "In my opinion"
+        },
+        {
+          "en": "In my opinion, Kenji is the best player on our team.",
+          "tr": "Bence Kenji takımımızın en iyi oyuncusu.",
+          "register": "neutral",
+          "focus": "In my opinion"
+        },
+        {
+          "en": "The film was fun, but in my opinion the ending was weak.",
+          "tr": "Film eğlenceliydi ama bence sonu zayıftı.",
+          "register": "neutral",
+          "focus": "in my opinion"
+        }
+      ],
+      "synonyms": [
+        "in my view",
+        "I think"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in my honest opinion",
+        "in my personal opinion"
+      ],
+      "word_family": [
+        {
+          "lemma": "opinion",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bence",
+          "alt": [
+            "bana göre",
+            "benim fikrimce"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Cümlenin başında, ortasında ya da sonunda söylenebilir. Türkçede 'bana göre' dersin ama İngilizcede 'according to me' denmez; 'according to' başkasının sözünü aktarırken kullanılır: 'according to the news'.",
+          "mistakes": [
+            {
+              "wrong": "According to me, this film is boring.",
+              "right": "In my opinion, this film is boring.",
+              "why": "Türkçede 'bana göre' dersin ve 'göre' sözünü 'according to' diye çevirmek kolaydır. İngilizcede kendi görüşün için 'in my opinion' ya da 'I think' dersin."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many people love this film, but ______, it is too long.",
+        "answer": "in my opinion",
+        "distractors": [
+          "for example",
+          "at last",
+          "as well"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.appreciate.v.1",
+      "lemma": "appreciate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "feel thankful for something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpriːʃieɪt/",
+        "uk": "/əˈpriːʃieɪt/"
+      },
+      "def": {
+        "micro": "feel thankful for something",
+        "short": "feel thankful for something that someone did or gave to you",
+        "long": "To feel thankful for what someone did for you. People often say 'I really appreciate it' or 'I appreciate your help' to thank someone in a polite and warm way."
+      },
+      "grammar": {
+        "pattern": "appreciate sth / sb doing sth"
+      },
+      "examples": [
+        {
+          "en": "I really appreciate your help.",
+          "tr": "Yardımın için gerçekten minnettarım.",
+          "register": "neutral",
+          "focus": "appreciate"
+        },
+        {
+          "en": "Thanks for the ride, Priya. I appreciate it.",
+          "tr": "Beni bıraktığın için sağ ol Priya. Minnettarım.",
+          "register": "neutral",
+          "focus": "appreciate"
+        },
+        {
+          "en": "We appreciate you coming so early, Mr. Chen.",
+          "tr": "Bu kadar erken geldiğiniz için minnettarız Bay Chen.",
+          "register": "neutral",
+          "focus": "appreciate"
+        }
+      ],
+      "synonyms": [
+        "be grateful for"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "really appreciate it",
+        "appreciate your help",
+        "much appreciated",
+        "greatly appreciate"
+      ],
+      "word_family": [
+        {
+          "lemma": "appreciation",
+          "pos": "n"
+        },
+        {
+          "lemma": "appreciative",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "minnettar olmak",
+          "alt": [
+            "teşekkür etmek",
+            "takdir etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Nesne genellikle kişi değil, yapılan iyilik ya da emektir: 'I appreciate your help'. Kısa bir teşekkür olarak 'I appreciate it' de denir.",
+          "mistakes": [
+            {
+              "wrong": "I appreciate for your help.",
+              "right": "I appreciate your help.",
+              "why": "Türkçede 'yardımın için minnettarım' dersin; 'için' sözünü 'for' diye çevirmek kolaydır. İngilizcede 'appreciate' nesneyi doğrudan alır, 'for' gerekmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thank you for your help with my homework. I really ______ it.",
+        "answer": "appreciate",
+        "distractors": [
+          "forget",
+          "borrow",
+          "ignore"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_owe_you_one.idm.1",
+      "lemma": "I owe you one",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "thanks for a favor",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˈoʊ ju ˌwʌn/",
+        "uk": "/aɪ ˈəʊ ju ˌwʌn/"
+      },
+      "def": {
+        "micro": "thanks, I'll help you later",
+        "short": "used to thank someone for a favor and promise to help them in the future",
+        "long": "You say this after someone does you a favor. It means that you are very thankful and that you will help them in return one day. It is informal and friendly."
+      },
+      "grammar": {
+        "pattern": "I owe you one / you owe me one"
+      },
+      "examples": [
+        {
+          "en": "Thanks for helping me move. I owe you one!",
+          "tr": "Taşınmama yardım ettiğin için sağ ol. Bu iyiliğini unutmam!",
+          "register": "informal",
+          "focus": "I owe you one"
+        },
+        {
+          "en": "“I can drive you to the airport.” “Wow, thanks! I owe you one.”",
+          "tr": "“Seni havaalanına ben bırakabilirim.” “Vay, sağ ol! Bunu unutmam.”",
+          "register": "informal",
+          "focus": "I owe you one"
+        },
+        {
+          "en": "You fixed my bike for free, Omar. I owe you one!",
+          "tr": "Bisikletimi ücretsiz tamir ettin Omar. Sana bir iyilik borcum var!",
+          "register": "informal",
+          "focus": "I owe you one"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "owe sb a favor"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir iyilik borcum var",
+          "alt": [
+            "iyiliğini unutmam"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gerçek bir borç değil, 'iyiliğin karşılığını bir gün öderim' demektir. Yalnızca 'I owe you' demek para borcu anlamına da gelebilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Thank you so much for fixing my laptop, Mehmet. ______!”",
+        "answer": "I owe you one",
+        "distractors": [
+          "Don't mention it",
+          "Anytime",
+          "It's nothing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fit_in.phv.1",
+      "lemma": "fit in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "belong in a group",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɪt ˈɪn/",
+        "uk": "/fɪt ˈɪn/"
+      },
+      "def": {
+        "micro": "feel part of a group",
+        "short": "feel that you belong in a group and that other people accept you",
+        "long": "To feel accepted and comfortable in a group, because you are like the other people or you act like them. A new student may worry about whether he or she will fit in at a new school."
+      },
+      "grammar": {
+        "pattern": "fit in (with sb / at a place)"
+      },
+      "examples": [
+        {
+          "en": "Ana felt that she did not fit in at her new school.",
+          "tr": "Ana yeni okuluna uyum sağlayamadığını hissediyordu.",
+          "register": "neutral",
+          "focus": "fit in"
+        },
+        {
+          "en": "It was easy for Jonas to fit in with his new classmates.",
+          "tr": "Jonas'ın yeni sınıf arkadaşlarına uyum sağlaması kolay oldu.",
+          "register": "neutral",
+          "focus": "fit in"
+        },
+        {
+          "en": "Don't worry, Sam. You will fit in soon.",
+          "tr": "Merak etme Sam, yakında uyum sağlarsın.",
+          "register": "neutral",
+          "focus": "fit in"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "stand out"
+      ],
+      "collocations": [
+        "fit in well",
+        "try to fit in",
+        "fit in with the group"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uyum sağlamak",
+          "alt": [
+            "ortama uymak",
+            "kaynaşmak",
+            "kendini ait hissetmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Fit' tek başına 'sığmak, uymak' demektir: 'These shoes fit me.' (Bu ayakkabılar ayağıma oluyor.) 'Fit in' ise bir gruba ya da ortama uyum sağlamaktır; yeni okul ya da yeni iş gibi durumlarda kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Emre is new at school and wants to ______ and make friends.",
+        "answer": "fit in",
+        "distractors": [
+          "hang up",
+          "log out",
+          "take off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_hope_so.phr.1",
+      "lemma": "I hope so",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "I want that to be true",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˈhoʊp soʊ/",
+        "uk": "/aɪ ˈhəʊp səʊ/"
+      },
+      "def": {
+        "micro": "I want that to be true",
+        "short": "used as a reply when you want something to be true but you are not sure",
+        "long": "You say this when someone asks if something good will happen and you are not sure, but you want it to be true. The opposite is 'I hope not', for something you do not want."
+      },
+      "grammar": {
+        "pattern": "I hope so / I hope not"
+      },
+      "examples": [
+        {
+          "en": "“Will it be sunny tomorrow?” “I hope so.”",
+          "tr": "“Yarın hava güneşli olacak mı?” “Umarım öyle olur.”",
+          "register": "neutral",
+          "focus": "I hope so"
+        },
+        {
+          "en": "“Is Ayşe coming to the party?” “I hope so!”",
+          "tr": "“Ayşe partiye gelecek mi?” “Umarım gelir!”",
+          "register": "neutral",
+          "focus": "I hope so"
+        },
+        {
+          "en": "“Will the bakery still be open at nine?” “I hope so. I need bread.”",
+          "tr": "“Fırın dokuzda hâlâ açık olur mu?” “Umarım. Ekmeğe ihtiyacım var.”",
+          "register": "neutral",
+          "focus": "I hope so"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "I hope not"
+      ],
+      "collocations": [
+        "I really hope so",
+        "I hope so too"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "umarım öyle olur",
+          "alt": [
+            "umarım",
+            "umarım öyledir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Buradaki 'so' önceki cümlenin yerini tutar. 'I hope' tek başına cevap olmaz: 'I hope so' ya da 'I hope not' dersin. İstemediğin şey için 'I hope not' (umarım olmaz) denir.",
+          "mistakes": [
+            {
+              "wrong": "“Will she come?” “I hope.”",
+              "right": "“Will she come?” “I hope so.”",
+              "why": "Türkçede 'Umarım.' tek sözcükle cevap verilir. İngilizcede 'I hope' tek başına eksik kalır; 'so' ya da 'not' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Will it snow on Saturday?” “______. I love snow!”",
+        "answer": "I hope so",
+        "distractors": [
+          "I hope not",
+          "I'm afraid so",
+          "Thanks a lot"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.show_off.phv.1",
+      "lemma": "show off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "act to impress people",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃoʊ ˈɔːf/",
+        "uk": "/ʃəʊ ˈɒf/"
+      },
+      "def": {
+        "micro": "try to impress people",
+        "short": "do or say things so that people notice you and think you are great",
+        "long": "To let people see your skills or things you own, so that they will be impressed. It is informal and can sound negative, as if the person is too proud. A person who does this is a 'show-off'."
+      },
+      "grammar": {
+        "pattern": "show off / show sth off (to sb)"
+      },
+      "examples": [
+        {
+          "en": "Stop showing off, Tom. We know you can swim fast.",
+          "tr": "Gösteriş yapmayı bırak Tom. Hızlı yüzebildiğini biliyoruz.",
+          "register": "informal",
+          "focus": "showing off"
+        },
+        {
+          "en": "Sam always shows off his new phone at school.",
+          "tr": "Sam yeni telefonuyla okulda hep hava atıyor.",
+          "register": "informal",
+          "focus": "shows off"
+        },
+        {
+          "en": "She wore her new dress to show it off at the party.",
+          "tr": "Partide hava atmak için yeni elbisesini giydi.",
+          "register": "informal",
+          "focus": "show it off"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "show off your skills",
+        "like to show off",
+        "just showing off"
+      ],
+      "word_family": [
+        {
+          "lemma": "show-off",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gösteriş yapmak",
+          "alt": [
+            "hava atmak",
+            "caka satmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Show off' çoğu zaman olumsuzdur; yeteneğini ya da eşyanı kibirle gösterirsin. Gösteriş yapan kişiye 'show-off' denir. Tek başına 'show' ise sadece göstermek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [
+          "intransitive",
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Lena sang very loudly just to ______. She wanted everyone to notice her.",
+        "answer": "show off",
+        "distractors": [
+          "clean up",
+          "hold on",
+          "fill in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.my_treat.phr.1",
+      "lemma": "my treat",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "I will pay",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/maɪ ˈtriːt/",
+        "uk": "/maɪ ˈtriːt/"
+      },
+      "def": {
+        "micro": "I will pay for this",
+        "short": "used to say that you will pay for a meal or a drink for your friends",
+        "long": "You say this to offer to pay for someone else's food, drink, or ticket as a gift. It is friendly: the other person does not need to pay or share the bill."
+      },
+      "examples": [
+        {
+          "en": "Dinner is my treat tonight.",
+          "tr": "Bu akşamki yemek benden olsun.",
+          "register": "neutral",
+          "focus": "my treat"
+        },
+        {
+          "en": "“Let's split the bill.” “No, no. It's my treat!”",
+          "tr": "“Hesabı bölüşelim.” “Yok yok, benden olsun!”",
+          "register": "neutral",
+          "focus": "my treat"
+        },
+        {
+          "en": "Put your wallet away, Elif. Coffee is my treat.",
+          "tr": "Cüzdanını kaldır Elif, kahve benden olsun.",
+          "register": "neutral",
+          "focus": "my treat"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "it's my treat",
+        "dinner is my treat"
+      ],
+      "word_family": [
+        {
+          "lemma": "treat",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "benden olsun",
+          "alt": [
+            "hesap bende",
+            "ben ısmarlıyorum"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hesabı sen ödeyeceğini söylemenin samimi yoludur: 'It's my treat'. Karşı taraf kabul ederken 'Thanks, that's very kind of you' diyebilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You paid last time, Deniz. Today lunch is ______.",
+        "answer": "my treat",
+        "distractors": [
+          "my fault",
+          "my bad",
+          "my secret"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
