@@ -1,0 +1,525 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.see_off.phv.1",
+      "lemma": "see off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "say goodbye to a traveler",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/siː ˈɔːf/",
+        "uk": "/siː ˈɒf/"
+      },
+      "def": {
+        "micro": "say goodbye to a traveler",
+        "short": "go to the airport or station to say goodbye to someone who is leaving",
+        "long": "To go to the airport or station when someone is starting a trip, and say goodbye there. Put words like 'him' or 'me' in the middle: 'see her off'."
+      },
+      "grammar": {
+        "pattern": "see sb off (at the airport / station)"
+      },
+      "examples": [
+        {
+          "en": "We saw him off at the airport.",
+          "tr": "Onu havalimanında uğurladık.",
+          "register": "neutral",
+          "focus": "saw him off"
+        },
+        {
+          "en": "Ayşe came to the station to see me off.",
+          "tr": "Ayşe beni uğurlamak için istasyona geldi.",
+          "register": "neutral",
+          "focus": "see me off"
+        },
+        {
+          "en": "I'm going to see my sister off at the airport on Friday.",
+          "tr": "Cuma günü kız kardeşimi havalimanında uğurlayacağım.",
+          "register": "neutral",
+          "focus": "see my sister off"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "see sb off at the airport",
+        "see sb off at the station",
+        "come to see sb off"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uğurlamak",
+          "alt": [
+            "yolcu etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'uğurlamak' denir. Nesne bir isimse 'see off the team' ya da 'see the team off' denir; zamirse hep ortaya girer: 'see him off'. Karşılamak için 'meet' ya da 'pick up' denir.",
+          "mistakes": [
+            {
+              "wrong": "I saw off him at the airport.",
+              "right": "I saw him off at the airport.",
+              "why": "Zamir (him, her, me, us) 'see' ile 'off' arasına girer. Türkçede 'uğurlamak' tek parça olduğu için 'see off' ifadesini de tek parça sanıp zamiri sona koyabilirsin."
+            }
+          ],
+          "mnemonic": "'Off' burada 'kapalı' değil, ayrılıp gitmeyi anlatır: gideni yola çıkarken görürsün, yani uğurlarsın."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The team flies to Rome today. Many fans came to the airport to ______ the players.",
+        "answer": "see off",
+        "distractors": [
+          "set off",
+          "get off",
+          "pack up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_away.phv.1",
+      "lemma": "get away",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "go away for a break",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt əˈweɪ/",
+        "uk": "/ɡɛt əˈweɪ/"
+      },
+      "def": {
+        "micro": "go on a short trip to rest",
+        "short": "leave home or work for a short break in another place",
+        "long": "To leave your home, your city or your work for a short time to rest or have a holiday. You can say 'I need to get away' when you feel tired or stressed."
+      },
+      "grammar": {
+        "pattern": "get away (from + place / for + time)"
+      },
+      "examples": [
+        {
+          "en": "I need to get away for the weekend.",
+          "tr": "Hafta sonu bir yerlere kaçmam lazım.",
+          "register": "neutral",
+          "focus": "get away"
+        },
+        {
+          "en": "Last month, we got away to the coast for three days.",
+          "tr": "Geçen ay üç günlüğüne sahile kaçtık.",
+          "register": "neutral",
+          "focus": "got away"
+        },
+        {
+          "en": "Sam wants to get away from the city for a while.",
+          "tr": "Sam bir süreliğine şehirden kaçmak istiyor.",
+          "register": "neutral",
+          "focus": "get away"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get away for the weekend",
+        "get away from it all",
+        "get away for a few days",
+        "get away from the city"
+      ],
+      "word_family": [
+        {
+          "lemma": "getaway",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir yerlere kaçmak",
+          "alt": [
+            "tatile kaçmak",
+            "kafa dinlemeye gitmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kartta 'get away' kısa bir tatil ya da mola için bir yerlere gitmektir. 'The thief got away' gibi 'kaçıp kurtulmak' anlamı ayrıdır. İsim olarak 'getaway' kısa tatil demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I am tired of the city. This weekend I want to ______ and relax at the beach.",
+        "answer": "get away",
+        "distractors": [
+          "stay in",
+          "see off",
+          "break down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_around.phv.1",
+      "lemma": "get around",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "move around a place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt əˈraʊnd/",
+        "uk": "/ɡɛt əˈraʊnd/"
+      },
+      "def": {
+        "micro": "travel from place to place",
+        "short": "go from one place to another in a city or an area",
+        "long": "To move or travel from place to place in a city or an area. You can get around on foot, by bus, by metro or by bike. People often use it to say how easy or hard it is to travel in a place."
+      },
+      "grammar": {
+        "pattern": "get around (+ place) (by bus / on foot)"
+      },
+      "examples": [
+        {
+          "en": "It's easy to get around Istanbul by metro.",
+          "tr": "İstanbul'da metroyla dolaşmak kolay.",
+          "register": "neutral",
+          "focus": "get around"
+        },
+        {
+          "en": "Can you get around the city without a car?",
+          "tr": "Şehirde arabasız dolaşılabilir mi?",
+          "register": "neutral",
+          "focus": "get around"
+        },
+        {
+          "en": "Kenji got around Rome by bike all week.",
+          "tr": "Kenji bütün hafta Roma'da bisikletle dolaştı.",
+          "register": "neutral",
+          "focus": "got around"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get around the city",
+        "get around by bus",
+        "get around on foot",
+        "easy to get around"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dolaşmak",
+          "alt": [
+            "gidip gelmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Get around' yalnızca gezmek değildir; bir şehirde metroyla, otobüsle, bisikletle ya da yürüyerek bir yerden bir yere gitmektir. 'Word gets around' gibi 'yayılmak' anlamı ayrı bir kullanımdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Taxis are expensive here, so most people ______ the city by bus.",
+        "answer": "get around",
+        "distractors": [
+          "get on",
+          "get away",
+          "show around"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.show_around.phv.1",
+      "lemma": "show around",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "guide a visitor in a place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃoʊ əˈraʊnd/",
+        "uk": "/ʃəʊ əˈraʊnd/"
+      },
+      "def": {
+        "micro": "guide a visitor in a place",
+        "short": "take a visitor to see the interesting parts of a place",
+        "long": "To go with a visitor through a place, like a town, a school or an office, and let them see the main parts. Friends, hosts and guides often do this when you arrive somewhere new."
+      },
+      "grammar": {
+        "pattern": "show sb around (+ place)"
+      },
+      "examples": [
+        {
+          "en": "Elif showed us around the old town.",
+          "tr": "Elif bize eski şehri gezdirdi.",
+          "register": "neutral",
+          "focus": "showed us around"
+        },
+        {
+          "en": "My cousin lives in Berlin, so he will show us around.",
+          "tr": "Kuzenim Berlin'de yaşıyor, o yüzden bizi gezdirecek.",
+          "register": "neutral",
+          "focus": "show us around"
+        },
+        {
+          "en": "The new students were shown around the school on Monday.",
+          "tr": "Yeni öğrencilere pazartesi günü okul gezdirildi.",
+          "register": "neutral",
+          "focus": "shown around"
+        }
+      ],
+      "synonyms": [
+        "show round"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "show sb around the city",
+        "show sb around the office",
+        "show visitors around",
+        "show me around"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gezdirmek",
+          "alt": [
+            "etrafı göstermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Gezdirmek' diye çevrilir. Gezdirilen kişi 'show' ile 'around' arasına girer: 'show us around'. İngiliz İngilizcesinde 'show round' da denir. Kendi başına gezip bakmak için 'look around' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Can you show around me?",
+              "right": "Can you show me around?",
+              "why": "Zamir (us, me, him, them) 'show' ile 'around' arasına girer. Türkçede 'gezdirmek' tek fiil olduğu için 'show around' ifadesini de tek parça sanıp zamiri sona koyabilirsin."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Welcome to Izmir! I'm free tomorrow, so I can ______ the city.",
+        "answer": "show you around",
+        "distractors": [
+          "see you off",
+          "pick you up",
+          "drop you off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.head_for.phv.1",
+      "lemma": "head for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "go towards a place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɛd fər/",
+        "uk": "/ˈhɛd fə/"
+      },
+      "def": {
+        "micro": "go towards a place",
+        "short": "go in the direction of a place",
+        "long": "To go in the direction of a place, usually a place you plan to reach. You say the place after it: 'head for the station'. Many people also say 'head to'."
+      },
+      "grammar": {
+        "pattern": "head for / head to + place"
+      },
+      "examples": [
+        {
+          "en": "We're heading for the airport.",
+          "tr": "Havalimanına doğru gidiyoruz.",
+          "register": "neutral",
+          "focus": "heading for"
+        },
+        {
+          "en": "After the meeting, Mehmet headed for the station.",
+          "tr": "Toplantıdan sonra Mehmet istasyona doğru gitti.",
+          "register": "neutral",
+          "focus": "headed for"
+        },
+        {
+          "en": "When the rain started, everyone headed for home.",
+          "tr": "Yağmur başlayınca herkes evinin yolunu tuttu.",
+          "register": "neutral",
+          "focus": "headed for"
+        }
+      ],
+      "synonyms": [
+        "head to"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "head for home",
+        "head for the exit",
+        "head for the door",
+        "head for the airport"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir yere doğru gitmek",
+          "alt": [
+            "yönelmek",
+            "yolunu tutmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede '-e doğru gitmek' denir. 'Head for' ile 'head to' aynı anlamdadır. Ev için edatsız da denir: 'Let's head home.'",
+          "mistakes": [],
+          "mnemonic": "'Head' baş demektir: başını bir yere doğru çevirir ve oraya doğru gidersin."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The film is over. Everyone is ______ the exit.",
+        "answer": "heading for",
+        "distractors": [
+          "getting off",
+          "setting off",
+          "getting away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

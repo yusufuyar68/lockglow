@@ -1,0 +1,1040 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.awkward.adj.1",
+      "lemma": "awkward",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "uncomfortable in a social way",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːkwərd/",
+        "uk": "/ˈɔːkwəd/"
+      },
+      "def": {
+        "micro": "socially uncomfortable",
+        "short": "uncomfortable and a little embarrassing, especially with other people",
+        "long": "Not relaxed and a bit embarrassing, especially when you are with other people. An awkward silence is a moment when nobody knows what to say. You can also feel awkward yourself."
+      },
+      "grammar": {
+        "pattern": "feel awkward (about sth / with sb)"
+      },
+      "examples": [
+        {
+          "en": "There was an awkward silence after his joke.",
+          "tr": "Şakasından sonra garip bir sessizlik oldu.",
+          "register": "neutral",
+          "focus": "awkward"
+        },
+        {
+          "en": "Emre felt awkward at the party because he didn't know anyone.",
+          "tr": "Emre partide kimseyi tanımadığı için kendini garip hissetti.",
+          "register": "neutral",
+          "focus": "awkward"
+        },
+        {
+          "en": "Meeting my boss at the gym was a bit awkward.",
+          "tr": "Spor salonunda patronumla karşılaşmak biraz garipti.",
+          "register": "neutral",
+          "focus": "awkward"
+        }
+      ],
+      "synonyms": [
+        "uncomfortable",
+        "uneasy"
+      ],
+      "antonyms": [
+        "comfortable",
+        "relaxed"
+      ],
+      "collocations": [
+        "awkward silence",
+        "awkward moment",
+        "feel awkward",
+        "awkward situation",
+        "awkward question"
+      ],
+      "word_family": [
+        {
+          "lemma": "awkwardly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "awkwardness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "garip, tuhaf",
+          "alt": [
+            "rahatsız",
+            "sıkıntılı",
+            "gergin"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kartta 'beceriksiz, sakar' anlamı yok. 'Awkward' ortamı ya da duyguyu anlatır: 'awkward silence' = kimsenin ne diyeceğini bilemediği sessizlik, 'feel awkward' = kendini rahat hissedememek.",
+          "mistakes": [
+            {
+              "wrong": "I felt myself awkward at the party.",
+              "right": "I felt awkward at the party.",
+              "why": "Türkçede 'kendimi garip hissettim' deriz, bu yüzden 'myself' eklenir. İngilizcede 'feel' fiilinden sonra sıfat doğrudan gelir: I felt awkward."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody said a word, and the silence was very ______.",
+        "answer": "awkward",
+        "distractors": [
+          "noisy",
+          "cheerful",
+          "generous"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.count_me_in.idm.1",
+      "lemma": "count me in",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "I want to join in",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkaʊnt mi ˈɪn/",
+        "uk": "/ˌkaʊnt mi ˈɪn/"
+      },
+      "def": {
+        "micro": "I want to take part too",
+        "short": "used to say that you want to take part in a plan or an activity",
+        "long": "You say this to tell friends that you want to join their plan, game or trip. It is friendly and informal. The opposite is 'count me out', which means 'I will not take part'."
+      },
+      "grammar": {
+        "pattern": "count me in (for + sth)"
+      },
+      "examples": [
+        {
+          "en": "“We're going to the beach on Sunday.” “Count me in!”",
+          "tr": "“Pazar günü plaja gidiyoruz.” “Ben de varım!”",
+          "register": "informal",
+          "focus": "Count me in"
+        },
+        {
+          "en": "“Who wants to play football after work?” “Count me in.”",
+          "tr": "“İş çıkışı kim futbol oynamak ister?” “Ben varım.”",
+          "register": "informal",
+          "focus": "Count me in"
+        },
+        {
+          "en": "Count me in for the trip, Priya. I'll bring snacks.",
+          "tr": "Gezi için ben de varım Priya. Atıştırmalık getiririm.",
+          "register": "informal",
+          "focus": "Count me in"
+        }
+      ],
+      "synonyms": [
+        "I'm in",
+        "I'm up for it"
+      ],
+      "antonyms": [
+        "count me out"
+      ],
+      "collocations": [
+        "count me in for",
+        "count me in too"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ben de varım",
+          "alt": [
+            "beni de say",
+            "ben de geliyorum"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Beni de say' ya da 'ben de varım' ile aynıdır. Biri plan yaptığında katılmak istediğini gayriresmî söylersin. Zıttı 'count me out' = beni sayma, ben yokum.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“We are having a game night on Friday.” “Great idea! ______!”",
+        "answer": "Count me in",
+        "distractors": [
+          "Count me out",
+          "Leave me out",
+          "Take me home"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_up.phv.1",
+      "lemma": "make up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "become friends again",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈʌp/",
+        "uk": "/meɪk ˈʌp/"
+      },
+      "def": {
+        "micro": "be friends again",
+        "short": "become friends again after an argument or a fight",
+        "long": "To end an argument and become friendly again. Often one person says sorry first. You make up with a friend, a brother or a partner."
+      },
+      "grammar": {
+        "pattern": "make up (with + person)"
+      },
+      "examples": [
+        {
+          "en": "They had an argument, but they made up quickly.",
+          "tr": "Tartıştılar ama çabucak barıştılar.",
+          "register": "neutral",
+          "focus": "made up"
+        },
+        {
+          "en": "Did you make up with Ece after the argument?",
+          "tr": "Tartışmadan sonra Ece ile barıştın mı?",
+          "register": "neutral",
+          "focus": "make up"
+        },
+        {
+          "en": "Jonas called his brother to say sorry, and they made up.",
+          "tr": "Jonas özür dilemek için kardeşini aradı ve barıştılar.",
+          "register": "neutral",
+          "focus": "made up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "fall out with"
+      ],
+      "collocations": [
+        "make up with",
+        "kiss and make up",
+        "make up after an argument"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "barışmak",
+          "alt": [
+            "aralarını düzeltmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta yalnızca 'tartışmadan sonra barışmak' var. 'Make up' ayrıca 'uydurmak' ve 'makyaj yapmak' anlamına da gelir; bu kartta onlar yok. Zıttı 'fall out with' = bozuşmak.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the argument, Mert said sorry, and the two friends ______ the same day.",
+        "answer": "made up",
+        "distractors": [
+          "grew up",
+          "woke up",
+          "dressed up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_cant_make_it.phr.1",
+      "lemma": "I can't make it",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "cannot come to a meeting",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˌkænt ˈmeɪk ɪt/",
+        "uk": "/aɪ ˌkɑːnt ˈmeɪk ɪt/"
+      },
+      "def": {
+        "micro": "I am not able to come",
+        "short": "used to say politely that you cannot come to a meeting or an event",
+        "long": "You say this when someone invites you, but you are not free. It is a polite way to say no. People often add 'Sorry' and a short reason."
+      },
+      "grammar": {
+        "pattern": "I can't make it (to + place / event)"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I can't make it tonight.",
+          "tr": "Üzgünüm, bu akşam gelemiyorum.",
+          "register": "neutral",
+          "focus": "I can't make it"
+        },
+        {
+          "en": "I'm sorry, Nora. I can't make it to dinner because I have to work.",
+          "tr": "Üzgünüm Nora. Çalışmam gerektiği için akşam yemeğine gelemiyorum.",
+          "register": "neutral",
+          "focus": "I can't make it"
+        },
+        {
+          "en": "“Are you coming to the movie?” “Sorry, I can't make it.”",
+          "tr": "“Filme geliyor musun?” “Üzgünüm, gelemiyorum.”",
+          "register": "neutral",
+          "focus": "I can't make it"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "I'll be there"
+      ],
+      "collocations": [
+        "can't make it to",
+        "can't make it tonight",
+        "sorry, I can't make it"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gelemiyorum",
+          "alt": [
+            "katılamıyorum",
+            "gelemeyeceğim"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Make it' burada 'yapmak' değil, 'yetişmek, gelebilmek' demektir. Nazik bir ret kalıbıdır; genelde 'Sorry' ve kısa bir sebep eklenir. Olumlu hâli: 'I can make it' = gelebilirim.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Are you coming to dinner?” “Sorry, ______. I have to work late.”",
+        "answer": "I can't make it",
+        "distractors": [
+          "I can't find it",
+          "I can't stand it",
+          "I can't hear it"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.kind.adj.1",
+      "lemma": "kind",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "good to other people",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kaɪnd/",
+        "uk": "/kaɪnd/"
+      },
+      "def": {
+        "micro": "good and helpful to others",
+        "short": "caring about other people and ready to help them",
+        "long": "Good to other people and ready to help them. A kind person is gentle and thinks about how others feel. You can be kind to someone, or say 'It's kind of you' when someone helps you."
+      },
+      "grammar": {
+        "pattern": "kind to + sb / kind of you to + verb"
+      },
+      "examples": [
+        {
+          "en": "My neighbor is very kind to everyone.",
+          "tr": "Komşum herkese karşı çok iyi.",
+          "register": "neutral",
+          "focus": "kind"
+        },
+        {
+          "en": "Please be kind to your little brother.",
+          "tr": "Lütfen küçük kardeşine iyi davran.",
+          "register": "neutral",
+          "focus": "kind"
+        },
+        {
+          "en": "It was very kind of you to carry my bag, Omar.",
+          "tr": "Çantamı taşıman çok nazik bir davranıştı Omar.",
+          "register": "neutral",
+          "focus": "kind"
+        }
+      ],
+      "synonyms": [
+        "nice",
+        "caring",
+        "good-hearted"
+      ],
+      "antonyms": [
+        "unkind",
+        "cruel"
+      ],
+      "collocations": [
+        "be kind to",
+        "kind words",
+        "kind gesture",
+        "very kind of you"
+      ],
+      "word_family": [
+        {
+          "lemma": "kindness",
+          "pos": "n"
+        },
+        {
+          "lemma": "unkind",
+          "pos": "adj"
+        },
+        {
+          "lemma": "kindly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyi kalpli, nazik",
+          "alt": [
+            "iyi huylu",
+            "şefkatli"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Kind' kalpten gelen iyiliktir; 'polite' ise kibar davranış kurallarıdır. İsim olan 'kind' (tür) başka bir kartta; burada yalnızca sıfat anlamı var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe always helps old people with their bags. She is a very ______ person.",
+        "answer": "kind",
+        "distractors": [
+          "selfish",
+          "greedy",
+          "mean"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.have_a_lot_in_common.phr.1",
+      "lemma": "have a lot in common",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "share interests and traits",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv ə ˌlɑːt ɪn ˈkɑːmən/",
+        "uk": "/hæv ə ˌlɒt ɪn ˈkɒmən/"
+      },
+      "def": {
+        "micro": "share the same interests",
+        "short": "be alike because you like the same things or share the same ideas",
+        "long": "To like the same things or be similar in some way. Friends and couples often talk about how much they have in common, for example the same music, jobs or hobbies."
+      },
+      "grammar": {
+        "pattern": "have a lot in common (with + person)"
+      },
+      "examples": [
+        {
+          "en": "We have a lot in common.",
+          "tr": "Birçok ortak yönümüz var.",
+          "register": "neutral",
+          "focus": "have a lot in common"
+        },
+        {
+          "en": "Chen and I have a lot in common. We both love hiking.",
+          "tr": "Chen ile benim çok ortak yönümüz var. İkimiz de doğa yürüyüşünü seviyoruz.",
+          "register": "neutral",
+          "focus": "have a lot in common"
+        },
+        {
+          "en": "Ana has a lot in common with her new roommate.",
+          "tr": "Ana'nın yeni ev arkadaşıyla birçok ortak noktası var.",
+          "register": "neutral",
+          "focus": "has a lot in common"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a lot in common with",
+        "have nothing in common",
+        "have much in common",
+        "have little in common"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ortak yönleri çok olmak",
+          "alt": [
+            "ortak noktası olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kişi için 'with' gelir: have a lot in common with Ana. Hiç benzerlik yoksa 'nothing' kullanılır: We have nothing in common (hiç ortak yönümüz yok).",
+          "mistakes": [
+            {
+              "wrong": "We have many common points.",
+              "right": "We have a lot in common.",
+              "why": "Türkçede 'ortak noktalarımız çok' dediğimiz için 'common points' denir. İngilizcede bu söylenmez; kalıp 'have a lot in common' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mia and Ben both love jazz and hiking, so they ______.",
+        "answer": "have a lot in common",
+        "distractors": [
+          "have a lot to do",
+          "have a bad cold",
+          "have a big house"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.im_sorry_to_hear_that.phr.1",
+      "lemma": "I'm sorry to hear that",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "showing sadness at bad news",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪm ˌsɑːri tə ˈhɪr ðæt/",
+        "uk": "/aɪm ˌsɒri tə ˈhɪə ðæt/"
+      },
+      "def": {
+        "micro": "I feel sad about your news",
+        "short": "used to show that you feel sad when someone tells you bad news",
+        "long": "You say this when a friend tells you bad news, for example about illness, a lost job or a problem. It shows that you care. It is polite in both formal and informal situations."
+      },
+      "examples": [
+        {
+          "en": "“My grandma is in the hospital.” “I'm sorry to hear that.”",
+          "tr": "“Büyükannem hastanede.” “Buna çok üzüldüm.”",
+          "register": "neutral",
+          "focus": "I'm sorry to hear that"
+        },
+        {
+          "en": "I'm sorry to hear that your cat is sick, Kaan.",
+          "tr": "Kedinin hasta olduğunu duyduğuma üzüldüm Kaan.",
+          "register": "neutral",
+          "focus": "I'm sorry to hear that"
+        },
+        {
+          "en": "“I failed my driving test again.” “Oh no, I'm sorry to hear that.”",
+          "tr": "“Direksiyon sınavında yine kaldım.” “Tüh, buna çok üzüldüm.”",
+          "register": "neutral",
+          "focus": "I'm sorry to hear that"
+        }
+      ],
+      "synonyms": [
+        "that's too bad"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "sorry to hear that",
+        "sorry to hear about"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buna üzüldüm",
+          "alt": [
+            "bunu duyduğuma üzüldüm",
+            "çok üzüldüm"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kötü haber duyunca kullanılır. Buradaki 'sorry' özür değil, üzüntü anlatır. 'Geçmiş olsun' hastalık ve kazalar için daha dardır; bu kalıp her kötü haber için uygundur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“My dog is very sick.” “Oh no! ______.”",
+        "answer": "I'm sorry to hear that",
+        "distractors": [
+          "Good to hear",
+          "Sorry I'm late",
+          "Happy to help"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.look_up_to.phv.1",
+      "lemma": "look up to",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "respect and want to be like",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lʊk ˈʌp tə/",
+        "uk": "/lʊk ˈʌp tə/"
+      },
+      "def": {
+        "micro": "see as a good example",
+        "short": "have great respect for someone and want to be like them",
+        "long": "To respect a person very much because of how they live or what they do, and to hope you can be like them. People often feel this about a parent, an older friend or a coach."
+      },
+      "grammar": {
+        "pattern": "look up to + person (as a role model)"
+      },
+      "examples": [
+        {
+          "en": "My little brother looks up to me.",
+          "tr": "Küçük kardeşim beni örnek alıyor.",
+          "register": "neutral",
+          "focus": "looks up to"
+        },
+        {
+          "en": "Zeynep looks up to her aunt, a nurse who helps people every day.",
+          "tr": "Zeynep, her gün insanlara yardım eden hemşire teyzesine hayran.",
+          "register": "neutral",
+          "focus": "looks up to"
+        },
+        {
+          "en": "At work, Kenji is someone everyone looks up to.",
+          "tr": "İş yerinde Kenji herkesin saygı duyduğu biri.",
+          "register": "neutral",
+          "focus": "looks up to"
+        }
+      ],
+      "synonyms": [
+        "admire",
+        "respect"
+      ],
+      "antonyms": [
+        "look down on"
+      ],
+      "collocations": [
+        "really look up to",
+        "someone to look up to",
+        "be looked up to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "örnek almak, saygı duymak",
+          "alt": [
+            "hayran olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Genellikle bir kişiyle kullanılır: look up to + kişi. Türkçede 'örnek alıyorum' deriz ama İngilizcede çoğunlukla geniş zaman gelir: I look up to her. Birini küçük görmek ise 'look down on' olur.",
+          "mistakes": [
+            {
+              "wrong": "He looks up his uncle.",
+              "right": "He looks up to his uncle.",
+              "why": "Türkçede 'amcasını örnek alıyor' deriz; 'amcasını' doğrudan nesnedir, arada edat yoktur. İngilizcede 'to' düşerse 'look up' (bilgi aramak) olur ve anlam değişir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Leyla wants to be a pilot like her mother one day. She ______ her a lot.",
+        "answer": "looks up to",
+        "distractors": [
+          "looks down on",
+          "looks for",
+          "looks into"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.friendship.n.1",
+      "lemma": "friendship",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "close bond between people",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfrɛndʃɪp/",
+        "uk": "/ˈfrɛndʃɪp/"
+      },
+      "def": {
+        "micro": "a close, happy relationship",
+        "short": "the relationship between people who like and trust each other",
+        "long": "A close, happy relationship between people who like, trust and help each other. It can start at school, at work or anywhere, and some last for many years."
+      },
+      "grammar": {
+        "pattern": "friendship with / between"
+      },
+      "examples": [
+        {
+          "en": "Their friendship started at school.",
+          "tr": "Arkadaşlıkları okulda başladı.",
+          "register": "neutral",
+          "focus": "friendship"
+        },
+        {
+          "en": "Lena and Omar have a very strong friendship.",
+          "tr": "Lena ile Omar'ın çok güçlü bir arkadaşlığı var.",
+          "register": "neutral",
+          "focus": "friendship"
+        },
+        {
+          "en": "True friendship is more important than money.",
+          "tr": "Gerçek arkadaşlık paradan daha önemlidir.",
+          "register": "neutral",
+          "focus": "friendship"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "close friendship",
+        "strong friendship",
+        "lifelong friendship",
+        "build a friendship"
+      ],
+      "word_family": [
+        {
+          "lemma": "friend",
+          "pos": "n"
+        },
+        {
+          "lemma": "friendly",
+          "pos": "adj"
+        },
+        {
+          "lemma": "befriend",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arkadaşlık",
+          "alt": [
+            "dostluk"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'dostluk' daha güçlü ve derin, 'arkadaşlık' ise daha günlük hissedilir. İngilizcede ikisi için de 'friendship' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Priya and Sam met at school, and their ______ is still strong after ten years.",
+        "answer": "friendship",
+        "distractors": [
+          "invitation",
+          "small talk",
+          "misunderstanding"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.long_time_no_see.idm.1",
+      "lemma": "long time no see",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "greeting after a long time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌlɔːŋ ˌtaɪm ˌnoʊ ˈsiː/",
+        "uk": "/ˌlɒŋ ˌtaɪm ˌnəʊ ˈsiː/"
+      },
+      "def": {
+        "micro": "hello after months or years",
+        "short": "used to say hello to someone you have not met for months or years",
+        "long": "A friendly, informal way to say hello to someone you have not met for many months or years. It is not a full sentence, but people often use it with friends and family."
+      },
+      "examples": [
+        {
+          "en": "“Hi, Jonas! Long time no see!” “I know! How are you?”",
+          "tr": "“Selam Jonas! Uzun zamandır görüşemedik!” “Evet ya! Nasılsın?”",
+          "register": "informal",
+          "focus": "Long time no see"
+        },
+        {
+          "en": "Long time no see, Mehmet! You look great.",
+          "tr": "Uzun zamandır görüşemedik Mehmet! Çok iyi görünüyorsun.",
+          "register": "informal",
+          "focus": "Long time no see"
+        },
+        {
+          "en": "Long time no see. Do you still live near the park?",
+          "tr": "Çok oldu görüşmeyeli. Hâlâ parkın yakınında mı oturuyorsun?",
+          "register": "informal",
+          "focus": "Long time no see"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uzun zamandır görüşemedik",
+          "alt": [
+            "çok oldu görüşmeyeli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dilbilgisi kuralına uymayan ama herkesin kullandığı sabit bir kalıptır; sözcükleri değiştirilmez. Türkçedeki karşılığı 'Uzun zamandır görüşemedik' olur. Arkadaşlar arasında kullanılır, resmî ortamda uygun olmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ana and Tom met at the station after three years. Ana smiled and said, “______!”",
+        "answer": "Long time no see",
+        "distractors": [
+          "Sweet dreams",
+          "Take it easy",
+          "See you soon"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

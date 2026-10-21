@@ -1,0 +1,1056 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.employer.n.1",
+      "lemma": "employer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈplɔɪər/",
+        "uk": "/ɪmˈplɔɪə/"
+      },
+      "def": {
+        "micro": "person or company paying you",
+        "short": "a person or company that pays people to do a job for them",
+        "long": "A person or company that pays people to work for them. Your employer pays you every month and decides your working hours."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My employer lets us work from home on Fridays.",
+          "tr": "İşverenim cuma günleri evden çalışmamıza izin veriyor.",
+          "register": "neutral",
+          "focus": "employer"
+        },
+        {
+          "en": "Liam's employer paid for his English course.",
+          "tr": "Liam'ın işvereni İngilizce kursunun ücretini ödedi.",
+          "register": "neutral",
+          "focus": "employer"
+        },
+        {
+          "en": "Omar thanked his old employer for everything he learned there.",
+          "tr": "Omar eski işverenine, orada öğrendiği her şey için teşekkür etti.",
+          "register": "neutral",
+          "focus": "employer"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "employee"
+      ],
+      "collocations": [
+        "current employer",
+        "former employer",
+        "potential employer",
+        "a good employer"
+      ],
+      "word_family": [
+        {
+          "lemma": "employ",
+          "pos": "v"
+        },
+        {
+          "lemma": "employee",
+          "pos": "n"
+        },
+        {
+          "lemma": "employment",
+          "pos": "n"
+        },
+        {
+          "lemma": "unemployed",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From 'employ' + '-er'. 'Employ' came into English from French and goes back to Latin 'implicare', meaning 'to fold in' or 'to involve'.",
+        "origin": "French, Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "işveren",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Employer' hem kişi hem şirket olabilir; 'boss' ise yalnızca kişidir. Çalışan için 'employee' denir. İki sözcük çok benzediği için sık karışır.",
+          "mistakes": [],
+          "mnemonic": "Sonu -er olan işi verir, -ee olan işi alır: employer işveren, employee çalışan."
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:employee"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I work for a small shop, and my ______ pays me every Friday.",
+        "answer": "employer",
+        "distractors": [
+          "employee",
+          "classmate",
+          "dentist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.meet_a_deadline.phr.1",
+      "lemma": "meet a deadline",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/miːt ə ˈdɛdlaɪn/",
+        "uk": "/miːt ə ˈdɛdlaɪn/"
+      },
+      "def": {
+        "micro": "finish work by the last day",
+        "short": "finish a piece of work by the last day or time that you were given",
+        "long": "To finish a piece of work by the last day or time that someone gave you. The opposite is to miss a deadline: you finish too late."
+      },
+      "grammar": {
+        "pattern": "meet a deadline"
+      },
+      "examples": [
+        {
+          "en": "We can still meet the deadline.",
+          "tr": "Son teslim tarihine hâlâ yetişebiliriz.",
+          "register": "neutral",
+          "focus": "meet the deadline"
+        },
+        {
+          "en": "Elif asked her team for help so she could meet the deadline.",
+          "tr": "Elif son teslim tarihine yetişebilmek için ekibinden yardım istedi.",
+          "register": "neutral",
+          "focus": "meet the deadline"
+        },
+        {
+          "en": "Ayşe always meets her deadlines, so her boss trusts her.",
+          "tr": "Ayşe son teslim tarihlerine her zaman yetişir, bu yüzden patronu ona güvenir.",
+          "register": "neutral",
+          "focus": "meets her deadlines"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "miss a deadline"
+      ],
+      "collocations": [
+        "meet a tight deadline",
+        "meet the deadline",
+        "fail to meet a deadline",
+        "meet project deadlines"
+      ],
+      "word_family": [
+        {
+          "lemma": "deadline",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "son tarihe yetişmek",
+          "alt": [
+            "teslim tarihine yetişmek",
+            "zamanında bitirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Son teslim tarihine yetişmek için 'meet a deadline', kaçırmak için 'miss a deadline' denir. Buradaki 'meet' tanışmak değil, tutturmak anlamındadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "success_productivity",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The team worked all weekend to ______ on Monday morning.",
+        "answer": "meet a deadline",
+        "distractors": [
+          "miss a deadline",
+          "skip a deadline",
+          "catch a deadline"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bring_up.phv.1",
+      "lemma": "bring up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "mention a subject",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/brɪŋ ˈʌp/",
+        "uk": "/brɪŋ ˈʌp/"
+      },
+      "def": {
+        "micro": "start talking about a topic",
+        "short": "start to talk about a subject, for example in a meeting or a chat",
+        "long": "To start talking about a subject, often one that people did not expect or do not like to discuss. You can bring up a topic, or bring it up."
+      },
+      "grammar": {
+        "pattern": "bring up + topic / bring sth up"
+      },
+      "examples": [
+        {
+          "en": "I'll bring it up at the meeting tomorrow.",
+          "tr": "Bunu yarınki toplantıda gündeme getireceğim.",
+          "register": "neutral",
+          "focus": "bring it up"
+        },
+        {
+          "en": "Liam brought up the problem with the new schedule.",
+          "tr": "Liam yeni programla ilgili sorunu gündeme getirdi.",
+          "register": "neutral",
+          "focus": "brought up"
+        },
+        {
+          "en": "Cem brought his idea up during lunch.",
+          "tr": "Cem fikrini öğle yemeğinde ortaya attı.",
+          "register": "neutral",
+          "focus": "brought his idea up"
+        }
+      ],
+      "synonyms": [
+        "mention",
+        "raise"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "bring up a topic",
+        "bring up a problem",
+        "bring up the subject",
+        "bring it up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gündeme getirmek",
+          "alt": [
+            "konuyu açmak",
+            "ortaya atmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Burada 'bring up' bir konudan söz açmaktır. Çocuk yetiştirmek anlamı (bring up a child) ayrı bir anlamdır. Zamirler araya girer: bring it up.",
+          "mistakes": [],
+          "mnemonic": "Bring up = yukarı getirmek: konuyu gündeme, yani masanın üstüne getirirsin."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Omar always ______ the same old problem in every meeting.",
+        "answer": "brings up",
+        "distractors": [
+          "puts on",
+          "fills in",
+          "gets off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.career.n.1",
+      "lemma": "career",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "working life",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈrɪr/",
+        "uk": "/kəˈrɪə/"
+      },
+      "def": {
+        "micro": "jobs you do over many years",
+        "short": "the jobs a person does in their working life, or the work they choose to do",
+        "long": "The jobs that a person does in their working life, or the kind of work they choose to do for many years. People talk about a career in teaching, a career change or the start of a career."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Deniz wants a career in design.",
+          "tr": "Deniz tasarım alanında kariyer yapmak istiyor.",
+          "register": "neutral",
+          "focus": "career"
+        },
+        {
+          "en": "Fatma has had a long and happy career at the same bank.",
+          "tr": "Fatma'nın aynı bankada uzun ve mutlu bir kariyeri oldu.",
+          "register": "neutral",
+          "focus": "career"
+        },
+        {
+          "en": "Kenji decided to change careers and become a nurse.",
+          "tr": "Kenji kariyerini değiştirip hemşire olmaya karar verdi.",
+          "register": "neutral",
+          "focus": "careers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a successful career",
+        "a career change",
+        "start a career",
+        "a career in teaching"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'carrière', a road or race track. It goes back to Latin 'carrus', a wheeled cart. The idea is the 'course' of your working life.",
+        "origin": "French, Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kariyer",
+          "alt": [
+            "meslek hayatı",
+            "iş yaşamı"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'kariyer' ile aynı kökten gelir ve anlamı çok yakındır. 'Career' meslek hayatının tamamıdır; tek bir iş için 'job' denir. 'Kariyer yapmak' için 'have a career' ya da 'make a career' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Anna started her ______ as a nurse and later became a hospital director.",
+        "answer": "career",
+        "distractors": [
+          "salary",
+          "uniform",
+          "interview"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_a_raise.phr.1",
+      "lemma": "get a raise",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ə ˈreɪz/",
+        "uk": "/ɡɛt ə ˈreɪz/"
+      },
+      "def": {
+        "micro": "start earning more money",
+        "short": "start to receive more money for the same job that you already do",
+        "long": "To start to receive more money for the same job. In American English this extra money is called 'a raise'; in British English people usually say 'a pay rise'."
+      },
+      "grammar": {
+        "pattern": "get a raise (UK: get a pay rise)"
+      },
+      "examples": [
+        {
+          "en": "I hope I get a raise this year.",
+          "tr": "Umarım bu yıl zam alırım.",
+          "register": "neutral",
+          "focus": "get a raise"
+        },
+        {
+          "en": "Fatma got a raise after her first year at the company.",
+          "tr": "Fatma şirkette geçirdiği ilk yılın ardından zam aldı.",
+          "register": "neutral",
+          "focus": "got a raise"
+        },
+        {
+          "en": "Liam wants to get a raise, so he will talk to his manager on Monday.",
+          "tr": "Liam zam almak istiyor, bu yüzden pazartesi günü yöneticisiyle konuşacak.",
+          "register": "neutral",
+          "focus": "get a raise"
+        }
+      ],
+      "synonyms": [
+        "get a pay rise"
+      ],
+      "antonyms": [
+        "take a pay cut"
+      ],
+      "collocations": [
+        "ask for a raise",
+        "a pay raise",
+        "a five percent raise",
+        "give someone a raise"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zam almak",
+          "alt": [
+            "maaş zammı almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde 'a raise', İngiliz İngilizcesinde 'a pay rise' denir. 'Terfi' (promotion) ile karıştırma: raise yalnızca maaş artışıdır, görev değişmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Fatma has worked hard for two years, so she hopes to ______ soon and earn more money.",
+        "answer": "get a raise",
+        "distractors": [
+          "get a cold",
+          "get dressed",
+          "get a haircut"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shift.n.1",
+      "lemma": "shift",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "work period",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃɪft/",
+        "uk": "/ʃɪft/"
+      },
+      "def": {
+        "micro": "a fixed part of the work day",
+        "short": "one of the fixed periods in a day when a group of workers does its job",
+        "long": "One of the fixed periods in a day when a group of workers does its job. People talk about the morning shift or the night shift, and nurses, drivers and factory workers often work in shifts."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I start my shift at seven o'clock.",
+          "tr": "Vardiyam saat yedide başlıyor.",
+          "register": "neutral",
+          "focus": "shift"
+        },
+        {
+          "en": "Omar works the night shift at the hospital.",
+          "tr": "Omar hastanede gece vardiyasında çalışıyor.",
+          "register": "neutral",
+          "focus": "shift"
+        },
+        {
+          "en": "Anna is tired because she worked a double shift yesterday.",
+          "tr": "Anna dün çift vardiya çalıştığı için yorgun.",
+          "register": "neutral",
+          "focus": "shift"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "night shift",
+        "morning shift",
+        "work a shift",
+        "a double shift"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'sciftan', meaning 'to arrange or divide'. Later it also meant 'a change' and then 'a turn of work done by a group'.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "vardiya",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Shift' Türkçedeki 'vardiya' demektir: morning shift (sabah vardiyası), night shift (gece vardiyası). Genel çalışma saatleri için 'working hours' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Fatma works at night. Her ______ starts at ten in the evening and ends at six in the morning.",
+        "answer": "shift",
+        "distractors": [
+          "weekend",
+          "contract",
+          "birthday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.come_up_with.phv.1",
+      "lemma": "come up with",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "think of an idea or plan",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌm ˈʌp wɪð/",
+        "uk": "/kʌm ˈʌp wɪð/"
+      },
+      "def": {
+        "micro": "think of an idea or plan",
+        "short": "think of a new idea, plan or answer, usually when you need one",
+        "long": "To think of an idea, a plan, a name or an answer, often because you need one. The thing you think of always comes after 'with'."
+      },
+      "grammar": {
+        "pattern": "come up with + idea / plan / answer"
+      },
+      "examples": [
+        {
+          "en": "Can you come up with a better idea?",
+          "tr": "Daha iyi bir fikir bulabilir misin?",
+          "register": "neutral",
+          "focus": "come up with"
+        },
+        {
+          "en": "Fatma came up with a name for the new project.",
+          "tr": "Fatma yeni proje için bir isim buldu.",
+          "register": "neutral",
+          "focus": "came up with"
+        },
+        {
+          "en": "We need to come up with a plan by Monday.",
+          "tr": "Pazartesiye kadar bir plan ortaya koymamız gerekiyor.",
+          "register": "neutral",
+          "focus": "come up with"
+        }
+      ],
+      "synonyms": [
+        "think of",
+        "think up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "come up with an idea",
+        "come up with a plan",
+        "come up with a solution",
+        "come up with a name"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bulmak, akıl etmek",
+          "alt": [
+            "ortaya koymak",
+            "düşünüp bulmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Come up with' düşünerek bir fikir, plan ya da çözüm bulmaktır. Üç parça birlikte kalır; 'with' unutulursa anlam değişir: 'come up' ortaya çıkmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "success_productivity",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody knew what to do, but Liam quickly ______ a good plan.",
+        "answer": "came up with",
+        "distractors": [
+          "turned off",
+          "gave back",
+          "woke up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_fired.phr.1",
+      "lemma": "get fired",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈfaɪərd/",
+        "uk": "/ɡɛt ˈfaɪəd/"
+      },
+      "def": {
+        "micro": "be told to leave your job",
+        "short": "be told by your company to leave your job because of your work or behavior",
+        "long": "To be told by your boss or company to leave your job, often because of bad work or bad behavior. When you choose to leave a job yourself, you 'resign' or 'quit' instead."
+      },
+      "grammar": {
+        "pattern": "get fired (from a job)"
+      },
+      "examples": [
+        {
+          "en": "I'm afraid I'll get fired if I'm late again.",
+          "tr": "Bir daha geç kalırsam kovulacağımdan korkuyorum.",
+          "register": "neutral",
+          "focus": "get fired"
+        },
+        {
+          "en": "Omar got fired because he often missed work.",
+          "tr": "Omar sık sık işe gelmediği için kovuldu.",
+          "register": "neutral",
+          "focus": "got fired"
+        },
+        {
+          "en": "Cem didn't get fired. He left because he found a better job.",
+          "tr": "Cem kovulmadı. Daha iyi bir iş bulduğu için kendisi ayrıldı.",
+          "register": "neutral",
+          "focus": "get fired"
+        }
+      ],
+      "synonyms": [
+        "be dismissed",
+        "be sacked"
+      ],
+      "antonyms": [
+        "get hired"
+      ],
+      "collocations": [
+        "get fired from a job",
+        "get fired for being late",
+        "risk getting fired"
+      ],
+      "word_family": [
+        {
+          "lemma": "fire",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kovulmak",
+          "alt": [
+            "işten çıkarılmak",
+            "işten atılmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'işten çıkarılmak' kovulmak, 'işten ayrılmak' ise kendi isteğinle gitmektir. İngilizcede kendi isteğinle ayrılmak için 'resign' ya da 'quit' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:resign"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Emre was often late and made many mistakes, so he ______ last month.",
+        "answer": "got fired",
+        "distractors": [
+          "got promoted",
+          "got hired",
+          "got a bonus"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.available.adj.1",
+      "lemma": "available",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "free to meet or work",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈveɪləbəl/",
+        "uk": "/əˈveɪləbəl/"
+      },
+      "def": {
+        "micro": "not busy and able to meet",
+        "short": "not busy, so you can meet someone, talk or work at a certain time",
+        "long": "Not busy and able to meet someone, talk to them or do some work at a certain time. People ask 'Are you available on Monday?' when they want to plan a meeting."
+      },
+      "grammar": {
+        "pattern": "be available (at / on / for)"
+      },
+      "examples": [
+        {
+          "en": "Are you available on Friday afternoon?",
+          "tr": "Cuma öğleden sonra müsait misin?",
+          "register": "neutral",
+          "focus": "available"
+        },
+        {
+          "en": "Sorry, Fatma is not available right now.",
+          "tr": "Kusura bakmayın, Fatma şu anda müsait değil.",
+          "register": "neutral",
+          "focus": "available"
+        },
+        {
+          "en": "Liam will be available for a call after lunch.",
+          "tr": "Liam öğle yemeğinden sonra bir telefon görüşmesi için müsait olacak.",
+          "register": "neutral",
+          "focus": "available"
+        }
+      ],
+      "synonyms": [
+        "free"
+      ],
+      "antonyms": [
+        "busy",
+        "unavailable"
+      ],
+      "collocations": [
+        "available on Monday",
+        "available for a call",
+        "not available right now",
+        "available to talk"
+      ],
+      "word_family": [
+        {
+          "lemma": "availability",
+          "pos": "n"
+        },
+        {
+          "lemma": "unavailable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From 'avail' + '-able'. 'Avail' came through French from Latin 'valere', meaning 'to be worth' or 'to be strong'.",
+        "origin": "French, Latin",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "müsait",
+          "alt": [
+            "uygun",
+            "boş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kişi için 'available' müsait demektir; 'free' günlük konuşmada aynı anlamda kullanılır. İş yerinde 'Are you available?' daha kibar durur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:free"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you join the meeting at ten? Sorry, I'm not ______ then.",
+        "answer": "available",
+        "distractors": [
+          "famous",
+          "curious",
+          "cheerful"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.give_a_presentation.phr.1",
+      "lemma": "give a presentation",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɪv ə ˌprɛzənˈteɪʃən/",
+        "uk": "/ɡɪv ə ˌprɛzənˈteɪʃən/"
+      },
+      "def": {
+        "micro": "stand and talk to a group",
+        "short": "stand and talk to a group of people to share information, often with slides",
+        "long": "To stand in front of a group and talk to them about a subject, often showing slides, to share information or new ideas. You can do it at work, at school or at a conference."
+      },
+      "grammar": {
+        "pattern": "give a presentation (on / about)"
+      },
+      "examples": [
+        {
+          "en": "I have to give a presentation on Monday.",
+          "tr": "Pazartesi günü bir sunum yapmam gerekiyor.",
+          "register": "neutral",
+          "focus": "give a presentation"
+        },
+        {
+          "en": "Deniz gave a presentation about the new sales plan.",
+          "tr": "Deniz yeni satış planı hakkında bir sunum yaptı.",
+          "register": "neutral",
+          "focus": "gave a presentation"
+        },
+        {
+          "en": "Mehmet practiced a lot before giving a presentation to the whole team.",
+          "tr": "Mehmet tüm ekibe sunum yapmadan önce çok prova yaptı.",
+          "register": "neutral",
+          "focus": "giving a presentation"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "give a short presentation",
+        "give a presentation on",
+        "prepare a presentation"
+      ],
+      "word_family": [
+        {
+          "lemma": "present",
+          "pos": "v"
+        },
+        {
+          "lemma": "presenter",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sunum yapmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'sunum yapmak' için en yaygın söyleyiş 'give a presentation' olur. 'Do a presentation' ve 'make a presentation' da doğrudur; 'give' biraz daha standart ve resmîdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Liam is nervous. Tomorrow he has to ______ with slides to the whole team.",
+        "answer": "give a presentation",
+        "distractors": [
+          "take a test",
+          "sign a contract",
+          "pay a bill"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

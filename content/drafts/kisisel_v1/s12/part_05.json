@@ -1,0 +1,507 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.ambulance.n.1",
+      "lemma": "ambulance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæmbjələns/",
+        "uk": "/ˈæmbjələns/"
+      },
+      "def": {
+        "micro": "special car for sick people",
+        "short": "a special car that takes sick or hurt people to the hospital",
+        "long": "A special car that takes sick or hurt people to the hospital. It has bright lights and makes a loud sound, so other cars move out of its way."
+      },
+      "examples": [
+        {
+          "en": "The ambulance arrived quickly.",
+          "tr": "Ambulans çabuk geldi.",
+          "register": "neutral",
+          "focus": "ambulance"
+        },
+        {
+          "en": "When an ambulance comes, cars on the road move to the side.",
+          "tr": "Ambulans gelince yoldaki arabalar kenara çekilir.",
+          "register": "neutral",
+          "focus": "ambulance"
+        },
+        {
+          "en": "Kenji's mother is an ambulance driver, and she often works at night.",
+          "tr": "Kenji'nin annesi ambulans şoförü ve sık sık gece çalışıyor.",
+          "register": "neutral",
+          "focus": "ambulance"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "call an ambulance",
+        "ambulance driver",
+        "by ambulance",
+        "ambulance service"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'ambulance', from 'hôpital ambulant', a 'walking hospital' that could move from place to place. Latin 'ambulare' means 'to walk'.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ambulans",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'ambulans' ile aynı sözcüktür, ama İngilizcede vurgu ilk hecededir: AM-bu-lance. Yazılışta sonda 'ce' vardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our neighbor fell and hurt his leg, so we called 112 and waited for the ______.",
+        "answer": "ambulance",
+        "distractors": [
+          "tram",
+          "tractor",
+          "scooter"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.emergency.n.1",
+      "lemma": "emergency",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈmɜːrdʒənsi/",
+        "uk": "/ɪˈmɜːdʒənsi/"
+      },
+      "def": {
+        "micro": "sudden need for quick help",
+        "short": "a sudden situation in which people need help straight away",
+        "long": "A sudden situation in which someone needs help right away. People often say 'in an emergency' or 'for emergencies'."
+      },
+      "examples": [
+        {
+          "en": "In an emergency, stay calm and ask for help.",
+          "tr": "Acil durumda sakin ol ve yardım iste.",
+          "register": "neutral",
+          "focus": "emergency"
+        },
+        {
+          "en": "In Turkey, you can call 112 in an emergency.",
+          "tr": "Türkiye'de acil durumda 112'yi arayabilirsin.",
+          "register": "neutral",
+          "focus": "emergency"
+        },
+        {
+          "en": "Ayşe keeps a small flashlight in her car for emergencies.",
+          "tr": "Ayşe arabasında acil durumlar için küçük bir el feneri bulundurur.",
+          "register": "neutral",
+          "focus": "emergencies"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in an emergency",
+        "emergency number",
+        "emergency exit",
+        "emergency room",
+        "emergency services"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'emergere', 'to rise up or come out'. The English word 'emerge' comes from the same Latin verb.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "acil durum",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'acil durum' ile aynıdır. Sayılabilir bir isimdir: an emergency, two emergencies. Hastanedeki acil servise ABD'de 'emergency room' ya da 'ER', İngiltere'de 'A&E' denir.",
+          "mistakes": [
+            {
+              "wrong": "Stay calm in emergency.",
+              "right": "Stay calm in an emergency.",
+              "why": "Türkçede 'bir' gerekmez ('acil durumda'). İngilizcede sayılabilir tekil isimden önce a ya da an gelir: in an emergency. Tabelalardaki 'in case of emergency' kalıbında ise 'an' olmayabilir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Call 112 only for a real ______, not for a small problem.",
+        "answer": "emergency",
+        "distractors": [
+          "appointment",
+          "holiday",
+          "present"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.first_aid_kit.phr.1",
+      "lemma": "first aid kit",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfɜːrst ˈeɪd ˌkɪt/",
+        "uk": "/ˌfɜːst ˈeɪd ˌkɪt/"
+      },
+      "def": {
+        "micro": "bag of things for small cuts",
+        "short": "a small bag or box with bandages and cream for small injuries",
+        "long": "A small bag or box with things for looking after small injuries, such as bandages and cream. Many homes, cars and offices keep one in case someone gets a small cut."
+      },
+      "examples": [
+        {
+          "en": "We keep a first aid kit in the kitchen.",
+          "tr": "Mutfakta bir ilk yardım çantamız var.",
+          "register": "neutral",
+          "focus": "first aid kit"
+        },
+        {
+          "en": "Deniz's mother took a bandage out of the first aid kit.",
+          "tr": "Deniz'in annesi ilk yardım çantasından bir sargı çıkardı.",
+          "register": "neutral",
+          "focus": "first aid kit"
+        },
+        {
+          "en": "Before the trip, Sam checked that the first aid kit was in the car.",
+          "tr": "Yolculuktan önce Sam ilk yardım çantasının arabada olduğundan emin oldu.",
+          "register": "neutral",
+          "focus": "first aid kit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "basic first aid kit",
+        "travel first aid kit",
+        "pack a first aid kit"
+      ],
+      "word_family": [
+        {
+          "lemma": "first aid",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilk yardım çantası",
+          "alt": [
+            "ilk yardım seti",
+            "ilk yardım kutusu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'First aid' = ilk yardım. 'Kit' belli bir iş için bir arada duran şeylerin takımı demektir; çanta ya da kutu olabilir.",
+          "mistakes": [
+            {
+              "wrong": "We need a first help kit.",
+              "right": "We need a first aid kit.",
+              "why": "'Yardım' genelde 'help' diye öğrenildiği için 'ilk yardım' kolayca 'first help' diye çevrilir. İngilizcede bu kalıpta 'aid' kullanılır: first aid."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kenji cut his hand while cooking, so Maria opened the ______.",
+        "answer": "first aid kit",
+        "distractors": [
+          "sewing kit",
+          "tool kit",
+          "lunch box"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.accident.n.1",
+      "lemma": "accident",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "unplanned bad event",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæksɪdənt/",
+        "uk": "/ˈæksɪdənt/"
+      },
+      "def": {
+        "micro": "bad event nobody wanted",
+        "short": "a bad event that nobody planned or wanted, such as a crash or a fall",
+        "long": "A bad event that nobody planned or wanted. Someone may get hurt, or something may break. Accidents often happen on the road or at home."
+      },
+      "examples": [
+        {
+          "en": "I had a small accident on my bike.",
+          "tr": "Bisikletimle küçük bir kaza yaptım.",
+          "register": "neutral",
+          "focus": "accident"
+        },
+        {
+          "en": "We were late because there was an accident on the road.",
+          "tr": "Yolda bir kaza olduğu için geç kaldık.",
+          "register": "neutral",
+          "focus": "accident"
+        },
+        {
+          "en": "Drive slowly in the rain to avoid accidents.",
+          "tr": "Kaza yapmamak için yağmurda yavaş sür.",
+          "register": "neutral",
+          "focus": "accidents"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "car accident",
+        "have an accident",
+        "road accident",
+        "accident at work"
+      ],
+      "word_family": [
+        {
+          "lemma": "accidental",
+          "pos": "adj"
+        },
+        {
+          "lemma": "accidentally",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'accidere', which means 'to happen'. Long ago the English word meant any chance event, not only a bad one.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kaza",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'kaza' gibi hem yoldaki kazalar hem de evde düşmek, elini kesmek gibi olaylar için kullanılır. Sayılabilir bir isimdir: an accident, two accidents.",
+          "mistakes": [
+            {
+              "wrong": "I made an accident on my bike.",
+              "right": "I had an accident on my bike.",
+              "why": "Türkçede 'kaza yapmak' denir ve 'yapmak' make ya da do diye çevrilir. İngilizcede kaza 'have' ile söylenir: have an accident. Kazaya sebep olan kişi için 'cause an accident' de denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Two cars hit each other at the traffic light. It was a small ______, and nobody was hurt.",
+        "answer": "accident",
+        "distractors": [
+          "storm",
+          "picnic",
+          "holiday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.twist_your_ankle.phr.1",
+      "lemma": "twist your ankle",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/twɪst jər ˈæŋkəl/",
+        "uk": "/twɪst jə ˈæŋkl/"
+      },
+      "def": {
+        "micro": "hurt your foot by turning it",
+        "short": "hurt the part between your foot and your leg by moving it the wrong way",
+        "long": "To hurt the part between your foot and your leg when you step or land in the wrong way. It can happen on a rough road, in sport or on stairs, and it usually gets better with rest."
+      },
+      "examples": [
+        {
+          "en": "I twisted my ankle on the stairs.",
+          "tr": "Merdivende ayak bileğimi burktum.",
+          "register": "neutral",
+          "focus": "twisted my ankle"
+        },
+        {
+          "en": "Mehmet twisted his ankle while playing football, so he stayed home.",
+          "tr": "Mehmet futbol oynarken ayak bileğini burktu, bu yüzden evde kaldı.",
+          "register": "neutral",
+          "focus": "twisted his ankle"
+        },
+        {
+          "en": "Be careful on the wet steps, or you might twist your ankle.",
+          "tr": "Islak basamaklarda dikkatli ol, yoksa ayak bileğini burkabilirsin.",
+          "register": "neutral",
+          "focus": "twist your ankle"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "twisted ankle",
+        "twist an ankle",
+        "twist your knee"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayak bileğini burkmak",
+          "alt": [
+            "ayağını burkmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ayağını burkmak' denir ama İngilizcede genelde 'foot' değil 'ankle' (ayak bileği) kullanılır. 'Your' yerine kişiye göre my, his, her denir: I twisted my ankle.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When you play basketball, you can easily ______ if you land badly.",
+        "answer": "twist your ankle",
+        "distractors": [
+          "clap your hands",
+          "shake your head",
+          "tie your shoes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
