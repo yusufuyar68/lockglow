@@ -16,14 +16,18 @@ struct TopicPickerView: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(verbatim: "\(TopicPickerView.intro) Öğrendiğin kelimelerin tekrarı her konuda sürer.")
                     .font(.subheadline)
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 4)
                 if model.choosableTopics.isEmpty {
                     Text("Konu listesi yok (içerik veritabanı yüklenmedi). Bütün kelimeler gösteriliyor.")
                         .font(.body)
+                        .foregroundStyle(Theme.ink)
                 } else {
                     // Largest text sizes: no pinned bar, the summary leads the list.
                     if dynamicTypeSize.isAccessibilitySize {
                         summaryLine
+                            .padding(.horizontal, 4)
                     }
                     TopicChoiceList(
                         topics: model.choosableTopics,
@@ -32,20 +36,33 @@ struct TopicPickerView: View {
                     )
                     Text("Bir kelime birden çok konuda yer alabilir. Toplam her kelimeyi bir kez sayar.")
                         .font(.footnote)
-                        .foregroundStyle(Palette.ink2)
+                        .foregroundStyle(Theme.ink2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.horizontal, 4)
+                        .padding(.top, 4)
                 }
             }
-            .padding(16)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .padding(.bottom, 20)
         }
+        // The summary stays in sight while the list scrolls (as on the onboarding's topics page):
+        // an opaque strip of page background with a hairline, not a material (rule 6).
         .safeAreaInset(edge: .bottom) {
             if !model.choosableTopics.isEmpty && !dynamicTypeSize.isAccessibilitySize {
                 summaryLine
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(.thinMaterial)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 12)
+                    .padding(.bottom, 12)
+                    .background(Theme.bg)
+                    .overlay(alignment: .top) {
+                        Rectangle()
+                            .fill(Theme.line)
+                            .frame(height: 1)
+                    }
             }
         }
-        .background(Palette.background.ignoresSafeArea())
+        .background(Theme.bg.ignoresSafeArea())
         .navigationTitle("Konular")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
@@ -92,6 +109,7 @@ struct TopicChoiceList: View {
     var body: some View {
         // "Tümü" also when only topics that are no longer listed are in the selection.
         let isEverything = !topics.contains { selection.contains($0.id) }
+        // Mockup `.choices`: 8 pt between rows, the group titles (`.grp-t`) 12 pt above their rows.
         LazyVStack(alignment: .leading, spacing: 8) {
             ChoiceRow(isSelected: isEverything) {
                 selection = []
@@ -102,7 +120,7 @@ struct TopicChoiceList: View {
             ForEach(TopicGroup.groups(of: topics)) { group in
                 Text(group.title)
                     .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(Theme.ink2)
                     .padding(.top, 12)
                     .padding(.leading, 4)
                     .accessibilityAddTraits(.isHeader)
@@ -135,10 +153,11 @@ private struct TopicRowLabel: View {
         VStack(alignment: .leading, spacing: 2) {
             Text(verbatim: title)
                 .font(.body.weight(.semibold))
-                .foregroundStyle(Color.primary)
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
             Text(verbatim: detail)
                 .font(.footnote)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
         }
     }
 }

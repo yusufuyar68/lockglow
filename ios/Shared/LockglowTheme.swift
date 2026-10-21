@@ -31,6 +31,7 @@ import CoreModels
 //     Text(example).exampleStyle()                                // .body serif, ink
 //     Text(translation).exampleTranslationStyle()                 // .callout, ink2
 //     Text(word.lemma).widgetWordStyle().phosphorBand(.widget)    // widgets: .title3 bold serif
+//     Text(example).englishVoice()                                // VoiceOver: English voice
 //   The same fonts without color: Theme.Fonts.englishWord(size:), meaning, definition, example,
 //   exampleTranslation, widgetWord.
 //
@@ -277,6 +278,13 @@ extension View {
             .minimumScaleFactor(0.6)
             .widgetAccentable()
     }
+
+    /// English text (README point 14, `accessibilitySpeechLanguage = "en-US"`). SwiftUI has no
+    /// speech-language modifier; VoiceOver takes a text's language from the environment's locale.
+    /// Apply it to English text only: Turkish text must keep the Turkish voice.
+    func englishVoice() -> some View {
+        environment(\.locale, Locale(identifier: "en_US"))
+    }
 }
 
 private struct EnglishWordStyle: ViewModifier {
@@ -451,20 +459,9 @@ private enum SerifMetrics {
 /// stay unmarked.
 enum ExampleMark {
     /// The first place where `lemma` (each of its words, plus any ending) occurs as whole words.
+    /// The same matcher picks the widget plan's example (`LemmaMatch`, CoreModels).
     static func range(of lemma: String, in sentence: String) -> Range<String.Index>? {
-        let parts = lemma.split(separator: " ").map { NSRegularExpression.escapedPattern(for: String($0)) + "\\w*" }
-        guard !parts.isEmpty,
-              let regex = try? NSRegularExpression(
-                  pattern: "\\b" + parts.joined(separator: "\\s+") + "\\b",
-                  options: [.caseInsensitive]
-              ) else {
-            return nil
-        }
-        let whole = NSRange(sentence.startIndex..<sentence.endIndex, in: sentence)
-        guard let match = regex.firstMatch(in: sentence, options: [], range: whole) else {
-            return nil
-        }
-        return Range(match.range, in: sentence)
+        return LemmaMatch.range(of: lemma, in: sentence)
     }
 
     /// `sentence` with the word bold and, when `highlighted`, marked. Use `highlighted: false`

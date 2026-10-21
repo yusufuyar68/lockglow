@@ -38,6 +38,9 @@ final class AppModel: ObservableObject {
     @Published private(set) var cardCount = 0
     @Published private(set) var contentVersion: String?
     @Published private(set) var health = WidgetHealthSnapshot()
+    /// The word every Lock Screen widget shows as of the last check (same pure rotation as the
+    /// widget). Nil without a plan.
+    @Published private(set) var lockScreenWordID: Int?
     /// Learning progress by word id. Single writer: this model (widget events, reviews, reset).
     @Published private(set) var progress: [Int: WordProgress] = [:]
     /// Minutes between word changes on the widget (global; written into every plan).
@@ -137,6 +140,8 @@ final class AppModel: ObservableObject {
             loadProgress()
         }
         ingestWidgetEvents()
+        // Time and widget taps ("Sonraki", "Biliyorum") may have moved the rotation on.
+        updateLockScreenWord()
     }
 
     // MARK: Settings
@@ -414,6 +419,8 @@ final class AppModel: ObservableObject {
         persistProgress(progress)
         if wasNew {
             AppPreferences.addNewWordsStudied(1, now: now)
+        } else {
+            AppPreferences.addReviewsDone(1, now: now)
         }
         return updated
     }
@@ -444,6 +451,11 @@ final class AppModel: ObservableObject {
     /// New words studied today (the ring on the "Tekrar" start screen).
     func newWordsStudiedToday(now: Date = Date()) -> Int {
         return AppPreferences.newWordsStudiedToday(now: now)
+    }
+
+    /// Reviews of already-studied words today ("Bugün: … tekrar" on the "Tekrar" screens).
+    func reviewsDoneToday(now: Date = Date()) -> Int {
+        return AppPreferences.reviewsDoneToday(now: now)
     }
 
     /// A flashcard round ended (or was ended early): the queue changes with the new progress.
@@ -510,6 +522,7 @@ final class AppModel: ObservableObject {
         persistProgress(progress)
         AppPreferences.clearKnownWordIDs()
         AppPreferences.resetNewWordsStudied()
+        AppPreferences.resetReviewsDone()
         refreshWidgetPlan()
     }
 
@@ -690,13 +703,34 @@ final class AppModel: ObservableObject {
             return
         }
 
+        // The medium widget's example is the card's shortest example that contains the word
+        // (docs/tasarim/README.md "Widget'lar"), not always its first. Only the text changes: the
+        // queue and the pinned word stay id-based. Seed words have no detail and keep theirs.
+        let planQueue = queue.map { word -> WidgetWord in
+            guard let shortest = detail(for: word)?.shortestExample(containing: word.lemma),
+                  shortest != word.exampleEN else {
+                return word
+            }
+            return WidgetWord(
+                id: word.id,
+                lemma: word.lemma,
+                pos: word.pos,
+                level: word.level,
+                ipaUS: word.ipaUS,
+                defMicro: word.defMicro,
+                defShort: word.defShort,
+                exampleEN: shortest,
+                glossTR: word.glossTR
+            )
+        }
+
         // The interval is global (all widget instances). The app owns it; changing it keeps the
         // visible word, because `currentWord` above was computed with the OLD plan's interval.
         let plan = WidgetPlan(
             planID: UUID().uuidString,
             isPremium: false,
             intervalSeconds: rotationMinutes * 60,
-            queue: queue,
+            queue: planQueue,
             updatedAt: rewriteTime
         )
         do {
@@ -705,7 +739,29 @@ final class AppModel: ObservableObject {
             logger.error("could not write the widget plan: \(error.localizedDescription, privacy: .public)")
             return
         }
+        // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
+        updateLockScreenWord()
         reloadWidgets()
+    }
+
+    /// Works out `lockScreenWordID` from the plan and the widget's state on disk, with the same
+    /// function the widget's timeline uses.
+    private func updateLockScreenWord() {
+        guard let store = store else {
+            lockScreenWordID = nil
+            return
+        }
+        let now = Date()
+        let rotation = RotationInput.resolve(plan: store.readPlan(), state: store.readState(), seedWords: [])
+        lockScreenWordID = TimelinePlanner.wordAt(
+            now,
+            queue: rotation.queue,
+            knownIDs: rotation.knownIDs,
+            cursorOffset: rotation.cursorOffset,
+            cursorAnchor: rotation.cursorAnchor,
+            interval: rotation.interval,
+            alignmentOffset: TimelinePlanner.localAlignmentOffset(for: now)
+        )?.id
     }
 
     func reloadWidgets() {
@@ -733,11 +789,28 @@ final class AppModel: ObservableObject {
             snapshot.planID = plan?.planID
             snapshot.planUpdatedAt = plan?.updatedAt
             snapshot.queueSize = plan?.queue.count ?? 0
+            if let plan = plan, !plan.queue.isEmpty {
+                // The widget's next entry date: boundaries depend only on the interval and the
+                // local offset, so the cursor and the known ids do not matter here.
+                let now = Date()
+                let planned = TimelinePlanner.plan(
+                    queue: plan.queue,
+                    knownIDs: [],
+                    cursorOffset: 0,
+                    cursorAnchor: plan.updatedAt,
+                    now: now,
+                    interval: TimeInterval(plan.intervalSeconds),
+                    maxEntries: 2,
+                    alignmentOffset: TimelinePlanner.localAlignmentOffset(for: now)
+                )
+                snapshot.nextChangeAt = planned.count > 1 ? planned[1].date : nil
+            }
             let state = store.readState()
             snapshot.cursorOffset = state?.cursorOffset
             snapshot.knownCount = state?.knownIDs.count
             snapshot.pendingEventCount = (try? store.eventMailbox.list().count) ?? 0
         }
         health = snapshot
+        updateLockScreenWord()
     }
 }

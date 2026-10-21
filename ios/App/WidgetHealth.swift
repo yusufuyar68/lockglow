@@ -12,6 +12,8 @@ struct WidgetHealthSnapshot {
     var instances: [WidgetInstance] = []
     var planID: String?
     var planUpdatedAt: Date?
+    /// The next interval boundary, when the widget shows a new word. Nil without a plan.
+    var nextChangeAt: Date?
     var queueSize = 0
     var cursorOffset: Int?
     var knownCount: Int?

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import CoreModels
 
 /// How a quiz question went, as reported by `QuizCardView.onContinue`. `ReviewView` turns it into
@@ -27,7 +28,8 @@ enum QuizOutcome: Hashable {
 /// Uses only `Theme` and the Shared types (no `Palette`): the snapshot bundle compiles it too.
 struct QuizCardView: View {
     /// `.scrolling` (the "Tekrar" tab): the question scrolls and the buttons sit in an opaque bar
-    /// at the bottom (`safeAreaInset`); after the answer the feedback is scrolled into view.
+    /// at the bottom (`safeAreaInset`), or at accessibility sizes under the feedback, scrolling
+    /// with it; after the answer the feedback is scrolled into view.
     /// `.stacked` (snapshot tests, which cannot render a scroll view): everything in one column.
     enum Layout {
         case stacked
@@ -86,30 +88,41 @@ struct QuizCardView: View {
             case .scrolling:
                 ScrollViewReader { proxy in
                     ScrollView {
-                        question
-                            .padding(.horizontal, 16)
-                            .padding(.top, 4)
-                            .padding(.bottom, 16)
+                        VStack(alignment: .leading, spacing: 20) {
+                            question
+                            // At accessibility sizes a fixed bar would leave almost no room for the
+                            // feedback: the buttons scroll with it instead (rule 5).
+                            if dynamicTypeSize.isAccessibilitySize, let picked = picked {
+                                actions(isRight: picked == quiz.answer)
+                            }
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.top, 4)
+                        .padding(.bottom, 20)
                     }
                     .scrollBounceBehavior(.basedOnSize)
+                    // Opaque (rule 6): the answer buttons never sit on glass.
                     .safeAreaInset(edge: .bottom, spacing: 0) {
-                        if let picked = picked {
+                        if !dynamicTypeSize.isAccessibilitySize, let picked = picked {
                             actions(isRight: picked == quiz.answer)
                                 .padding(.horizontal, 16)
                                 .padding(.top, 10)
                                 .padding(.bottom, 8)
                                 .frame(maxWidth: .infinity)
                                 .background(Theme.bg)
+                                .transition(.opacity)
                         }
                     }
                     .onChange(of: picked) { _, newValue in
                         guard newValue != nil else {
                             return
                         }
-                        // On the next turn of the main actor, once the options collapsed and the
-                        // feedback was laid out.
+                        // A moment later, once the options have collapsed and the feedback and the
+                        // bottom bar have been laid out: the feedback must never stay hidden under
+                        // the bar (README point 6).
                         let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.3)
                         Task { @MainActor in
+                            try? await Task.sleep(nanoseconds: 60_000_000)
                             withAnimation(animation) {
                                 proxy.scrollTo(QuizCardView.feedbackID, anchor: .bottom)
                             }
@@ -118,8 +131,12 @@ struct QuizCardView: View {
                 }
             }
         }
-        // The speaker buttons are borderless: ink, never the system blue (rule 2).
+        // The speaker buttons are ink, never the system blue (rule 2).
         .tint(Theme.ink)
+        // A light haptic on a right answer only (mockup "Hareket"); a wrong pick stays silent.
+        .sensoryFeedback(.success, trigger: picked) { oldValue, newValue in
+            oldValue == nil && newValue == quiz.answer
+        }
     }
 
     // MARK: Question
@@ -133,7 +150,7 @@ struct QuizCardView: View {
                     .accessibilityAddTraits(.isHeader)
             }
             sentenceCard
-            VStack(spacing: 10) {
+            VStack(spacing: 9) {
                 ForEach(shownOptions, id: \.self) { option in
                     optionButton(option)
                         .transition(.opacity)
@@ -157,9 +174,9 @@ struct QuizCardView: View {
         return options.filter { $0 == quiz.answer || $0 == picked }
     }
 
-    /// The sentence with its blank; after the answer the whole sentence with the answer marked
-    /// like the word in an example (rule 1), which can then be heard (before, the speaker would
-    /// give the answer away).
+    /// The sentence with its blank; after the answer the whole sentence with the answer in bold
+    /// (mockup `.filled`, no yellow mark), which can then be heard (before, the speaker would give
+    /// the answer away). Read with an English voice.
     private var sentenceCard: some View {
         VStack(alignment: .leading, spacing: 2) {
             Group {
@@ -167,25 +184,32 @@ struct QuizCardView: View {
                     Text(verbatim: quiz.cloze)
                         .accessibilityLabel(QuizCardView.spokenCloze(quiz.cloze))
                 } else {
-                    Text(ExampleMark.attributed(quiz.filledSentence, lemma: quiz.answer, colorScheme: colorScheme))
+                    Text(ExampleMark.attributed(
+                        quiz.filledSentence,
+                        lemma: quiz.answer,
+                        colorScheme: colorScheme,
+                        highlighted: false
+                    ))
                 }
             }
             .font(.system(.title2, design: .serif))
             .foregroundStyle(Theme.ink)
+            .englishVoice()
             .lineSpacing(4)
             .fixedSize(horizontal: false, vertical: true)
             .frame(maxWidth: .infinity, alignment: .leading)
             if picked != nil {
                 HStack {
                     Spacer(minLength: 0)
-                    SpeakButton(text: quiz.filledSentence, accessibilityName: "Cümleyi dinle")
+                    ReviewSpeakerButton(text: quiz.filledSentence, accessibilityName: "Cümleyi dinle")
                 }
-                .padding(.trailing, -10)
+                // The 44 pt target reaches into the card's padding instead of making it taller.
+                .padding(.trailing, -6)
                 .padding(.bottom, -8)
             }
         }
-        .padding(.horizontal, 18)
-        .padding(.vertical, picked == nil ? 20 : 14)
+        .padding(.horizontal, picked == nil ? 18 : 16)
+        .padding(.vertical, picked == nil ? 18 : 12)
         .cardSurface(cornerRadius: Theme.Radius.card)
     }
 
@@ -197,7 +221,7 @@ struct QuizCardView: View {
     // MARK: Options
 
     private func optionButton(_ option: String) -> some View {
-        let optionMark = self.mark(for: option)
+        let optionMark = mark(for: option)
         let shape = RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous)
         // At accessibility sizes the mark goes under the option instead of squeezing it.
         let rowLayout = dynamicTypeSize.isAccessibilitySize
@@ -211,6 +235,8 @@ struct QuizCardView: View {
                     .font(Theme.Fonts.definition)
                     .foregroundStyle(Theme.ink)
                     .multilineTextAlignment(.leading)
+                    // Only the English option: the mark next to it keeps the Turkish voice.
+                    .englishVoice()
                     .frame(maxWidth: .infinity, alignment: .leading)
                 if let optionMark = optionMark {
                     HStack(spacing: 4) {
@@ -265,34 +291,18 @@ struct QuizCardView: View {
             picked = option
         }
         let verdict = option == quiz.answer ? "Doğru!" : "Doğrusu: " + quiz.answer
-        AccessibilityNotification.Announcement(verdict).post()
+        UIAccessibility.post(notification: .announcement, argument: verdict)
     }
 
     // MARK: Feedback
 
+    /// Mockup `.fb`: the verdict, the word with its meaning, and on a wrong pick what the picked
+    /// word means and, when the card explains it, why.
     @ViewBuilder
     private func feedback(picked: String) -> some View {
         let isRight = picked == quiz.answer
         VStack(alignment: .leading, spacing: 10) {
-            if isRight {
-                Label {
-                    Text("Doğru!")
-                } icon: {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundStyle(Theme.good)
-                }
-                .font(.body.weight(.bold))
-                .foregroundStyle(Theme.ink)
-            } else {
-                Label {
-                    Text("Doğrusu: \(Text(verbatim: quiz.answer).font(.system(.body, design: .serif).weight(.bold)))")
-                } icon: {
-                    Image(systemName: "lightbulb")
-                        .foregroundStyle(Theme.ink2)
-                }
-                .font(.body.weight(.bold))
-                .foregroundStyle(Theme.ink)
-            }
+            verdict(isRight: isRight)
             wordLine
             if !isRight {
                 pickedLine(picked)
@@ -302,6 +312,7 @@ struct QuizCardView: View {
                             .font(.subheadline.weight(.bold))
                         Text(verbatim: reason.why)
                             .font(.subheadline)
+                            .lineSpacing(1)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .foregroundStyle(Theme.ink)
@@ -322,36 +333,46 @@ struct QuizCardView: View {
         .accessibilityElement(children: .combine)
     }
 
-    /// The learned word with the phosphor band (the one band on the screen) and its meaning.
-    /// Side by side when they fit, otherwise the meaning goes under the word.
+    /// "Doğru!" with a check in `good`, or "Doğrusu: borrow" with a light bulb: the word, never
+    /// the color alone, says how it went (rule 4).
+    @ViewBuilder
+    private func verdict(isRight: Bool) -> some View {
+        if isRight {
+            Label {
+                Text("Doğru!")
+            } icon: {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundStyle(Theme.good)
+            }
+            .font(.body.weight(.bold))
+            .foregroundStyle(Theme.ink)
+        } else {
+            Label {
+                Text("Doğrusu: \(Text(verbatim: quiz.answer).font(.system(.body, design: .serif).weight(.bold)))")
+            } icon: {
+                Image(systemName: "lightbulb")
+                    .foregroundStyle(Theme.ink2)
+            }
+            .font(.body.weight(.bold))
+            .foregroundStyle(Theme.ink)
+        }
+    }
+
+    /// Mockup `.fb .m`: "borrow = ödünç almak", the word in bold serif, the meaning in the UI face.
+    /// One line under the verdict, never larger than it (the quiz screen has no band).
     @ViewBuilder
     private var wordLine: some View {
-        let headword = Text(verbatim: word.lemma)
-            .englishWordStyle(size: 24, maxSize: 34)
-            .phosphorBand()
+        let headword: Text = Text(verbatim: word.lemma)
+            .font(.system(.callout, design: .serif).weight(.bold))
         if let gloss = word.glossTR {
-            ViewThatFits(in: .horizontal) {
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
-                    headword
-                    Text(verbatim: "= " + gloss)
-                        .font(.body.weight(.semibold))
-                        .foregroundStyle(Theme.ink)
-                        .fixedSize()
-                }
-                VStack(alignment: .leading, spacing: 10) {
-                    headword
-                    Text(verbatim: gloss)
-                        .font(.body.weight(.semibold))
-                        .foregroundStyle(Theme.ink)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-            }
-            .padding(.bottom, 6)
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel(word.lemma + ", Türkçesi: " + gloss)
+            Text("\(headword) = \(gloss)")
+                .font(.callout)
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityLabel(word.lemma + ", Türkçesi: " + gloss)
         } else {
             headword
-                .padding(.bottom, 6)
+                .foregroundStyle(Theme.ink)
         }
     }
 
@@ -388,6 +409,11 @@ struct QuizCardView: View {
     @ViewBuilder
     private func actions(isRight: Bool) -> some View {
         if isRight {
+            // Side by side, stacked at accessibility sizes (like the options): half a phone's
+            // width would break "Kolaydı" in the middle of the word.
+            let pairLayout = dynamicTypeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(spacing: 8))
+                : AnyLayout(HStackLayout(spacing: 8))
             VStack(spacing: 8) {
                 Button("Devam") {
                     onContinue(.right)
@@ -397,19 +423,20 @@ struct QuizCardView: View {
                 Text("Ya da bu soru nasıl geldi?")
                     .font(.footnote.weight(.medium))
                     .foregroundStyle(Theme.ink2)
+                    .multilineTextAlignment(.center)
                     .padding(.top, 2)
-                HStack(spacing: 8) {
+                pairLayout {
                     Button {
                         onContinue(.hard)
                     } label: {
-                        Label("Zordu", systemImage: "tortoise")
+                        gradeLabel("Zordu", symbol: "tortoise")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
                     .accessibilityHint(hint(for: .hard, fallback: "Kelime daha erken tekrar gelir"))
                     Button {
                         onContinue(.easy)
                     } label: {
-                        Label("Kolaydı", systemImage: "hare")
+                        gradeLabel("Kolaydı", symbol: "hare")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
                     .accessibilityHint(hint(for: .easy, fallback: "Kelime daha geç tekrar gelir"))
@@ -432,6 +459,16 @@ struct QuizCardView: View {
                 }
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
             }
+        }
+    }
+
+    /// The icon goes at the largest text sizes, as on the flashcard's answers (`GradeLabel`).
+    @ViewBuilder
+    private func gradeLabel(_ title: String, symbol: String) -> some View {
+        if dynamicTypeSize < .xxxLarge {
+            Label(title, systemImage: symbol)
+        } else {
+            Text(title)
         }
     }
 
@@ -460,5 +497,35 @@ private struct QuizOptionPressBody: View {
             .opacity(configuration.isPressed ? 0.85 : 1)
             .scaleEffect(configuration.isPressed && !reduceMotion ? 0.985 : 1)
             .animation(reduceMotion ? nil : .easeOut(duration: 0.12), value: configuration.isPressed)
+    }
+}
+
+/// The round speaker of the "Tekrar" tab (mockup `.spk`): a 34 pt `surface2` circle in a 44 pt
+/// target that reads `text` aloud; a second tap stops it. The speaker waves while it reads,
+/// unless Reduce Motion is on. Lives here because the snapshot bundle compiles this file (and
+/// Speaker.swift) but not the card pieces; `ReviewView` uses it too.
+struct ReviewSpeakerButton: View {
+    @ObservedObject private var speaker = Speaker.shared
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @ScaledMetric(relativeTo: .subheadline) private var circleSize: CGFloat = 34
+    let text: String
+    var accessibilityName = "Dinle"
+
+    var body: some View {
+        let isSpeaking = speaker.speakingText == text
+        Button {
+            speaker.toggle(text)
+        } label: {
+            Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
+                .font(.subheadline.weight(.semibold))
+                .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
+                .foregroundStyle(Theme.ink)
+                .frame(width: circleSize, height: circleSize)
+                .background(Theme.surface2, in: Circle())
+                .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(isSpeaking ? "Durdur" : accessibilityName)
     }
 }

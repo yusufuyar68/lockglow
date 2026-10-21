@@ -11,7 +11,7 @@ struct FeedView: View {
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     /// The whole card, opened from a shortened card's "Dikkat" or "Kartın devamı" row.
-    @State private var detailWord: WidgetWord?
+    @State private var detailWord: WidgetWord? = nil
 
     var body: some View {
         VStack(spacing: 0) {
@@ -38,18 +38,21 @@ struct FeedView: View {
                         }
                     }
             }
+            // Rule 2: no blue link color on "Kapat" or the card's buttons.
+            .tint(Theme.ink)
             .environmentObject(model)
         }
     }
 
-    /// Mockup `.hdr`: the screen's name, small, so the card keeps the room.
+    /// Mockup `.hdr`: the screen's name, small, so the card keeps the room (same height and
+    /// margin as the "Tekrar" header).
     private var header: some View {
         Text("Akış")
             .font(.headline.weight(.bold))
             .foregroundStyle(Theme.ink)
             .accessibilityAddTraits(.isHeader)
-            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-            .padding(.horizontal, 20)
+            .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+            .padding(.horizontal, 16)
     }
 
     private var pager: some View {
@@ -74,6 +77,8 @@ struct FeedView: View {
             word: word,
             detail: model.detail(for: word),
             fillsPage: true,
+            // Only while a Lockglow widget is on the Lock Screen (last health check).
+            isOnLockScreen: model.hasLockScreenWidget && word.id == model.lockScreenWordID,
             known: knownControl(for: word),
             showsSwipeHint: words.count > 1 && word.id == words.first?.id,
             openDetail: {
@@ -136,9 +141,8 @@ private struct FeedPagingModifier: ViewModifier {
 /// then one typical mistake ("Dikkat"). `detail` is nil for seed words: the card then shows the
 /// example without a translation and no "Dikkat".
 ///
-/// In the feed (`fillsPage`) the card fills its page and, where there is room, adds the word's
-/// further examples at the end. Where there is not, it shortens itself from the end (rule 5,
-/// "kart sondan kısalır"): first smaller text without the Lock Screen label and "Ayrıca", then
+/// In the feed (`fillsPage`) the card fills its page. Where the page is too short, it shortens
+/// itself from the end (rule 5, "kart sondan kısalır"): first smaller text without the Lock Screen label and "Ayrıca", then
 /// no Dikkat explanation, then Dikkat as one row, then the example in that row too; the rows open
 /// the whole card (`openDetail`). At accessibility text sizes it always shows everything at its
 /// natural height. Elsewhere (the onboarding) it is as tall as its content.
@@ -156,7 +160,7 @@ struct WordCardView: View {
     var showsSay = true
     var fillsPage = false
     /// "Şu an kilitli ekranda" above the word: only for the word the Lock Screen widget shows
-    /// (README "Akış").
+    /// right now (README "Akış", `AppModel.lockScreenWordID`).
     var isOnLockScreen = false
     /// nil: no "Biliyorum" row (the onboarding).
     var known: KnownControl? = nil
@@ -196,14 +200,9 @@ struct WordCardView: View {
         return detail?.mistakes.first
     }
 
-    /// The widget's example (`example_en` is the card's first example) with its translation.
+    /// The card's first example (`example_en`) with its translation.
     private var firstExample: CardDetail.Example {
         return CardDetail.Example(en: word.exampleEN, tr: detail?.examples.first?.tr)
-    }
-
-    /// Further examples for a card with room to spare: at most two.
-    private var moreExamples: [CardDetail.Example] {
-        return Array((detail?.examples ?? []).dropFirst().prefix(2))
     }
 
     private var alternatives: [String] {
@@ -234,12 +233,6 @@ struct WordCardView: View {
         if isPaged {
             // The first step whose height fits the page wins; the last one is used regardless.
             ViewThatFits(in: .vertical) {
-                if moreExamples.count > 1 {
-                    cardContent(.full, extraExamples: 2)
-                }
-                if !moreExamples.isEmpty {
-                    cardContent(.full, extraExamples: 1)
-                }
                 cardContent(.full)
                 cardContent(.smaller)
                 if mistake != nil {
@@ -253,12 +246,15 @@ struct WordCardView: View {
                 }
             }
             .frame(maxHeight: .infinity, alignment: .top)
+            // Only if even the last step is too tall (very small screen, largest non-accessibility
+            // size): the text ends at the card's edge instead of running under "Biliyorum".
+            .clipped()
         } else {
             cardContent(.full)
         }
     }
 
-    private func cardContent(_ step: FitStep, extraExamples: Int = 0) -> some View {
+    private func cardContent(_ step: FitStep) -> some View {
         VStack(alignment: .leading, spacing: step.isSmaller ? 8 : 12) {
             if isOnLockScreen && !step.isSmaller {
                 WordCardLockScreenChip()
@@ -295,46 +291,25 @@ struct WordCardView: View {
                         MistakeBox(mistake: mistake, showsWhy: step.rawValue < FitStep.noWhy.rawValue)
                     }
                 }
-                if extraExamples > 0 {
-                    moreExamplesBlock(Array(moreExamples.prefix(extraExamples)))
-                }
             }
         }
+        // Mockup `.inner`: 18 / 20 / 12 above the footer ("Biliyorum"), 20 without one.
         .padding(.top, 18)
         .padding(.horizontal, 20)
-        .padding(.bottom, known == nil ? 20 : 8)
+        .padding(.bottom, known == nil ? 20 : 12)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: Parts
 
-    /// Pronunciation, part of speech and level, then "Dinle" and "Söyle" (mockup `.wmeta`). When
-    /// they do not fit on one line the buttons move to a second line, then the facts break up too.
+    /// Pronunciation, part of speech and level, then "Dinle" and "Söyle" (mockup `.wmeta`): the
+    /// facts wrap when the line is full; the buttons always keep to the trailing edge.
     private var metaRow: some View {
-        ViewThatFits(in: .horizontal) {
-            HStack(spacing: 8) {
-                ipa
-                partOfSpeech
-                LevelBadge(code: word.level)
-                Spacer(minLength: 4)
-                actions
-            }
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 8) {
-                    ipa
-                    partOfSpeech
-                    LevelBadge(code: word.level)
-                }
-                actions
-            }
-            VStack(alignment: .leading, spacing: 6) {
-                ipa
-                HStack(spacing: 8) {
-                    partOfSpeech
-                    LevelBadge(code: word.level)
-                }
-                actions
-            }
+        WordCardMetaLayout(itemSpacing: 8, lineSpacing: 4) {
+            ipa
+            partOfSpeech
+            LevelBadge(code: word.level)
+            actions
         }
     }
 
@@ -390,6 +365,7 @@ struct WordCardView: View {
             HStack(spacing: 8) {
                 sectionLabel("Örnek")
                 Spacer(minLength: 8)
+                // The 44 pt target reaches past the label row instead of making it taller.
                 CardSentenceSpeaker(text: example.en, accessibilityName: "Cümleyi dinle")
                     .padding(.vertical, -6)
             }
@@ -402,23 +378,6 @@ struct WordCardView: View {
             if let tr = example.tr {
                 Text(tr)
                     .exampleTranslationStyle()
-            }
-        }
-    }
-
-    /// The further examples (only on a card with room left): the word bold, not marked.
-    private func moreExamplesBlock(_ examples: [CardDetail.Example]) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            WordCardRule()
-            sectionLabel("Başka örnekler")
-                .frame(minHeight: 32, alignment: .leading)
-                .padding(.top, 6)
-            ForEach(Array(examples.enumerated()), id: \.offset) { index, example in
-                if index > 0 {
-                    WordCardRule()
-                        .padding(.vertical, 4)
-                }
-                ExampleRow(example: example, lemma: word.lemma)
             }
         }
     }
@@ -562,6 +521,76 @@ private struct WordCardHeadline: View {
             }
         }
         return best
+    }
+}
+
+/// Mockup `.wmeta` (`flex-wrap: wrap`, the buttons with `margin-left: auto`): subviews flow from
+/// the leading edge and wrap to a new line when the line is full; the last subview (the buttons)
+/// keeps to the trailing edge of its line. Each subview is centered on its line's height.
+private struct WordCardMetaLayout: Layout {
+    /// Between two subviews on a line.
+    var itemSpacing: CGFloat
+    /// Between two lines.
+    var lineSpacing: CGFloat
+
+    private struct Line {
+        var items: [(index: Int, size: CGSize)] = []
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+    }
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let lines = arrange(subviews, maxWidth: proposal.width ?? .infinity)
+        let gaps = lineSpacing * CGFloat(max(lines.count - 1, 0))
+        let height = lines.reduce(CGFloat(0)) { $0 + $1.height } + gaps
+        let usedWidth = lines.reduce(CGFloat(0)) { max($0, $1.width) }
+        // The row spans the card (the buttons sit on its trailing edge).
+        if let width = proposal.width, width.isFinite {
+            return CGSize(width: max(width, 0), height: height)
+        }
+        return CGSize(width: usedWidth, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        let lines = arrange(subviews, maxWidth: bounds.width)
+        let trailingIndex = subviews.count > 1 ? subviews.count - 1 : -1
+        var y = bounds.minY
+        for line in lines {
+            var x = bounds.minX
+            for item in line.items {
+                let itemX = item.index == trailingIndex ? max(x, bounds.maxX - item.size.width) : x
+                subviews[item.index].place(
+                    at: CGPoint(x: itemX, y: y + (line.height - item.size.height) / 2),
+                    anchor: .topLeading,
+                    proposal: ProposedViewSize(item.size)
+                )
+                x = itemX + item.size.width + itemSpacing
+            }
+            y += line.height + lineSpacing
+        }
+    }
+
+    private func arrange(_ subviews: Subviews, maxWidth: CGFloat) -> [Line] {
+        var lines: [Line] = []
+        var line = Line()
+        for index in subviews.indices {
+            var size = subviews[index].sizeThatFits(.unspecified)
+            if size.width > maxWidth {
+                // A long pronunciation wraps inside the card instead of running off it.
+                size = subviews[index].sizeThatFits(ProposedViewSize(width: maxWidth, height: nil))
+            }
+            if !line.items.isEmpty && line.width + itemSpacing + size.width > maxWidth {
+                lines.append(line)
+                line = Line()
+            }
+            line.width += (line.items.isEmpty ? 0 : itemSpacing) + size.width
+            line.height = max(line.height, size.height)
+            line.items.append((index: index, size: size))
+        }
+        if !line.items.isEmpty {
+            lines.append(line)
+        }
+        return lines
     }
 }
 

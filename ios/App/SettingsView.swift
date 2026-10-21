@@ -2,29 +2,41 @@ import SwiftUI
 import CoreModels
 import Learning
 
-/// "Ayarlar": start level and topics, widget rotation interval, daily new words, progress counts
-/// (and the known words), help (widget guide, onboarding again), progress reset, and a notice
-/// when the progress file had to be recovered.
+/// "Ayarlar": the widget (its health and how often the word changes), start level and topics,
+/// daily new words, the reminder, progress (and the known words), help (widget guide, onboarding
+/// again), progress reset, and a notice when the progress file had to be recovered.
+///
+/// Plain groups on the page background (mockup `#ayarlar`) instead of a `Form`: every option is
+/// an always-visible 46 pt segment (`SegmentButtons`), never a menu or a 32 pt segmented picker,
+/// and every row exists without scrolling a lazy list (the UI tests look rows up by label).
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.openURL) private var openURL
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var showResetConfirmation = false
     /// Notification permission was refused (now or earlier in iOS Settings).
     @State private var notificationsDenied = false
 
     var body: some View {
         NavigationStack {
-            Form {
-                recoverySection
-                deckSection
-                rotationSection
-                goalSection
-                reminderSection
-                progressSection
-                helpSection
-                resetSection
-                diagnosticsSection
+            ScrollView {
+                VStack(alignment: .leading, spacing: 28) {
+                    recoverySection
+                    widgetSection
+                    deckSection
+                    goalSection
+                    reminderSection
+                    progressSection
+                    helpSection
+                    resetSection
+                    versionLine
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 4)
+                .padding(.bottom, 32)
             }
+            .background(Theme.bg.ignoresSafeArea())
             .navigationTitle("Ayarlar")
             .confirmationDialog(
                 "İlerleme sıfırlansın mı?",
@@ -39,10 +51,148 @@ struct SettingsView: View {
                 Text("Bildiğin ve öğrendiğin tüm kelimelerin kaydı silinir. Bu işlem geri alınamaz.")
             }
             .task {
-                notificationsDenied = await ReminderScheduler.isDenied()
+                await refreshStatus()
+            }
+            // Back from iOS Settings (notification permission) or from placing a widget.
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active {
+                    Task {
+                        await refreshStatus()
+                    }
+                }
             }
         }
     }
+
+    private func refreshStatus() async {
+        notificationsDenied = await ReminderScheduler.isDenied()
+        await model.refreshHealth()
+    }
+
+    // MARK: Widget
+
+    private var healthStatus: WidgetHealthStatus {
+        return WidgetHealthStatus(model.health, isLoading: model.contentSource == .loading)
+    }
+
+    private var rotationBinding: Binding<Int> {
+        return Binding(
+            get: { model.rotationMinutes },
+            set: { model.setRotationMinutes($0) }
+        )
+    }
+
+    /// "Widget sağlığı ✓ Çalışıyor" first (the details are one tap away), then how often the
+    /// word changes.
+    private var widgetSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            SettingsSectionHeader("Widget")
+            SettingsGroup {
+                NavigationLink {
+                    WidgetHealthView()
+                } label: {
+                    SettingsRow("Widget sağlığı", systemImage: "waveform.path.ecg") {
+                        WidgetHealthBadge(status: healthStatus)
+                    }
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+            }
+            SettingsQuestion("Kelime ne sıklıkla değişsin?")
+            SegmentButtons(
+                options: AppPreferences.rotationMinuteChoices.map { minutes in
+                    SegmentOption(value: minutes, title: intervalLabel(minutes))
+                },
+                selection: rotationBinding
+            )
+            Text("Değiştirince şu an görünen kelime aynı kalır. iPhone, pili korumak için yenilemeyi biraz geciktirebilir.")
+                .settingsFootnote()
+        }
+    }
+
+    /// "5 dk", "1 saat": short enough for five segments side by side.
+    private func intervalLabel(_ minutes: Int) -> String {
+        if minutes >= 60 && minutes % 60 == 0 {
+            return "\(minutes / 60) saat"
+        }
+        return "\(minutes) dk"
+    }
+
+    // MARK: Learning
+
+    private var levelBinding: Binding<Level> {
+        return Binding(
+            get: { model.deckChoice.startLevel ?? .a1 },
+            set: { model.setStartLevel($0) }
+        )
+    }
+
+    private var topicSummary: String {
+        let count = model.activeTopicIDs.count
+        return count == 0 ? "Tümü" : "\(count) konu"
+    }
+
+    private var deckSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            SettingsSectionHeader("Öğrenme")
+            SettingsQuestion("Başlangıç seviyesi")
+            SegmentButtons(
+                options: AppPreferences.startLevelChoices.map { level in
+                    SegmentOption(value: level, title: level.rawValue)
+                },
+                selection: levelBinding
+            )
+            if !model.choosableTopics.isEmpty {
+                SettingsGroup {
+                    NavigationLink {
+                        TopicPickerView()
+                    } label: {
+                        SettingsRow("Konular") {
+                            Text(verbatim: topicSummary)
+                        }
+                    }
+                    .buttonStyle(SettingsRowButtonStyle())
+                }
+                .padding(.top, 4)
+            }
+            Group {
+                if model.newWordsComeFromAllTopics {
+                    Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.\nSeçtiğin konuların yeni kelimeleri bitti; yeni kelimeler diğer konulardan geliyor.")
+                } else {
+                    Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.")
+                }
+            }
+            .settingsFootnote()
+        }
+    }
+
+    // MARK: Daily goal
+
+    private var dailyBinding: Binding<Int> {
+        return Binding(
+            get: { model.dailyNewWords },
+            set: { model.setDailyNewWords($0) }
+        )
+    }
+
+    private var goalSection: some View {
+        let goal = model.dailyNewWords
+        return VStack(alignment: .leading, spacing: 8) {
+            SettingsSectionHeader("Günlük hedef")
+            SegmentButtons(
+                options: AppPreferences.dailyNewWordChoices.map { count in
+                    SegmentOption(value: count, title: "\(count)")
+                },
+                selection: dailyBinding
+            )
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("Günlük yeni kelime")
+            // An honest pace: at this goal, about this many words a month.
+            Text("Tekrar sekmesi günde **\(goal)** yeni kelime önerir. Bu hızla bir ayda yaklaşık \(goal * 30) kelime.")
+                .settingsFootnote()
+        }
+    }
+
+    // MARK: Reminder
 
     private var reminderBinding: Binding<Bool> {
         return Binding(
@@ -91,165 +241,205 @@ struct SettingsView: View {
     }
 
     private var reminderSection: some View {
-        Section {
-            Toggle("Günlük hatırlatma", isOn: reminderBinding)
-            if model.reminderEnabled {
-                DatePicker("Saat", selection: reminderTimeBinding, displayedComponents: .hourAndMinute)
-            }
-            if notificationsDenied {
-                Button("Bildirim iznini aç") {
-                    if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
-                        openURL(url)
+        VStack(alignment: .leading, spacing: 8) {
+            SettingsSectionHeader("Hatırlatma")
+            SettingsGroup {
+                Toggle(isOn: reminderBinding) {
+                    Text("Günlük hatırlatma")
+                        .settingsRowTitle()
+                }
+                // A switch is on in `good` green, as in iOS (never yellow, never ink).
+                .tint(Theme.good)
+                .settingsRowPadding()
+                if model.reminderEnabled {
+                    SettingsDivider()
+                    DatePicker(selection: reminderTimeBinding, displayedComponents: .hourAndMinute) {
+                        Text("Saat")
+                            .settingsRowTitle()
                     }
+                    .settingsRowPadding()
+                }
+                if notificationsDenied {
+                    SettingsDivider()
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Bildirimlere izin verilmemiş. iPhone Ayarları'nda Lockglow için bildirimleri aç.")
+                            .font(.subheadline)
+                            .foregroundStyle(Theme.ink2)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Button {
+                            if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
+                                openURL(url)
+                            }
+                        } label: {
+                            Label("Bildirim iznini aç", systemImage: "bell")
+                        }
+                        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
+                    }
+                    .padding(14)
                 }
             }
-        } header: {
-            Text("Hatırlatma")
-        } footer: {
-            if notificationsDenied {
-                Text("Bildirimlere izin verilmemiş. iPhone Ayarları'nda Lockglow için bildirimleri aç.")
-            } else {
-                Text("Seçtiğin saatte, o gün kaç kelimenin tekrar beklediğini söyleyen bir bildirim gelir. O günün tekrarını ve yeni kelimelerini bitirdiysen gelmez.")
-            }
+            Text("Seçtiğin saatte, o gün kaç kelimenin tekrar beklediğini söyleyen bir bildirim gelir. O günün tekrarını ve yeni kelimelerini bitirdiysen gelmez.")
+                .settingsFootnote()
         }
     }
 
-    private var rotationBinding: Binding<Int> {
-        return Binding(
-            get: { model.rotationMinutes },
-            set: { model.setRotationMinutes($0) }
-        )
-    }
-
-    private var dailyBinding: Binding<Int> {
-        return Binding(
-            get: { model.dailyNewWords },
-            set: { model.setDailyNewWords($0) }
-        )
-    }
-
-    private var levelBinding: Binding<Level> {
-        return Binding(
-            get: { model.deckChoice.startLevel ?? .a1 },
-            set: { model.setStartLevel($0) }
-        )
-    }
-
-    private var topicSummary: String {
-        let count = model.activeTopicIDs.count
-        return count == 0 ? "Tümü" : "\(count) konu"
-    }
-
-    private var deckSection: some View {
-        Section {
-            Picker("Başlangıç seviyesi", selection: levelBinding) {
-                ForEach(AppPreferences.startLevelChoices, id: \.self) { level in
-                    Text(level.rawValue).tag(level)
-                }
-            }
-            if !model.choosableTopics.isEmpty {
-                NavigationLink {
-                    TopicPickerView()
-                } label: {
-                    LabeledContent("Konular", value: topicSummary)
-                }
-            }
-        } header: {
-            Text("Öğrenme")
-        } footer: {
-            if model.newWordsComeFromAllTopics {
-                Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.\nSeçtiğin konuların yeni kelimeleri bitti; yeni kelimeler diğer konulardan geliyor.")
-            } else {
-                Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.")
-            }
-        }
-    }
-
-    private var helpSection: some View {
-        Section("Yardım") {
-            NavigationLink("Widget nasıl eklenir?") {
-                WidgetGuideScreen()
-            }
-            Button("Açılış ekranlarını yeniden göster") {
-                model.showOnboarding()
-            }
-        }
-    }
-
-    private var rotationSection: some View {
-        Section {
-            Picker("Kelime değişim sıklığı", selection: rotationBinding) {
-                ForEach(AppPreferences.rotationMinuteChoices, id: \.self) { minutes in
-                    Text(intervalLabel(minutes)).tag(minutes)
-                }
-            }
-        } header: {
-            Text("Widget")
-        } footer: {
-            Text("Widget'taki kelime bu sıklıkla değişir. Değiştirince şu an görünen kelime aynı kalır.")
-        }
-    }
-
-    private var goalSection: some View {
-        Section {
-            Picker("Günlük yeni kelime", selection: dailyBinding) {
-                ForEach(AppPreferences.dailyNewWordChoices, id: \.self) { count in
-                    Text("\(count)").tag(count)
-                }
-            }
-            .pickerStyle(.segmented)
-        } header: {
-            Text("Günlük hedef")
-        } footer: {
-            Text("Tekrar sekmesi günde bu kadar yeni kelime önerir.")
-        }
-    }
+    // MARK: Progress
 
     private var progressSection: some View {
         let counts = model.progressCounts()
-        return Section("İlerleme") {
-            NavigationLink {
-                KnownWordsView()
-            } label: {
-                LabeledContent("Bildiğim kelime", value: "\(counts.known)")
+        let tileLayout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(spacing: 8))
+            : AnyLayout(HStackLayout(alignment: .top, spacing: 8))
+        let levels = levelProgress
+        return VStack(alignment: .leading, spacing: 8) {
+            SettingsSectionHeader("İlerleme")
+            VStack(spacing: 16) {
+                tileLayout {
+                    ProgressTile(value: counts.known, caption: "bildiğim kelime")
+                    ProgressTile(value: counts.learning, caption: "öğreniyorum")
+                    ProgressTile(value: counts.dueToday, caption: "bugün tekrar edilecek")
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                if !levels.isEmpty {
+                    VStack(spacing: 10) {
+                        ForEach(levels) { item in
+                            LevelProgressRow(item: item)
+                        }
+                    }
+                    .padding(.horizontal, 2)
+                    .padding(.bottom, 2)
+                }
             }
-            LabeledContent("Öğrenmekte olduğum", value: "\(counts.learning)")
-            LabeledContent("Bugün tekrar edilecek", value: "\(counts.dueToday)")
+            .padding(12)
+            .frame(maxWidth: .infinity)
+            .settingsGroupBackground()
+            SettingsGroup {
+                NavigationLink {
+                    KnownWordsView()
+                } label: {
+                    SettingsRow("Bildiğim kelimeler") {
+                        Text(verbatim: "\(counts.known)")
+                            .monospacedDigit()
+                    }
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+            }
+            .padding(.top, 4)
+        }
+    }
+
+    /// Known words of each offered level out of all its words; levels without words are left out.
+    private var levelProgress: [LevelProgress] {
+        var totals: [Level: Int] = [:]
+        var known: [Level: Int] = [:]
+        for word in model.words {
+            guard let level = word.levelValue else {
+                continue
+            }
+            totals[level, default: 0] += 1
+            if model.progress[word.id]?.state == .known {
+                known[level, default: 0] += 1
+            }
+        }
+        return AppPreferences.startLevelChoices.compactMap { level in
+            guard let total = totals[level], total > 0 else {
+                return nil
+            }
+            return LevelProgress(level: level, known: known[level] ?? 0, total: total)
+        }
+    }
+
+    // MARK: Help and reset
+
+    private var helpSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            SettingsSectionHeader("Yardım")
+            SettingsGroup {
+                NavigationLink {
+                    WidgetGuideScreen()
+                } label: {
+                    SettingsRow("Widget nasıl eklenir?")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                Button {
+                    model.showOnboarding()
+                } label: {
+                    SettingsRow("Açılış ekranlarını yeniden göster")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+            }
         }
     }
 
     private var resetSection: some View {
-        Section {
-            Button("İlerlemeyi sıfırla", role: .destructive) {
+        SettingsGroup {
+            Button(role: .destructive) {
                 showResetConfirmation = true
+            } label: {
+                Text("İlerlemeyi sıfırla")
+                    .font(.body.weight(.bold))
+                    .foregroundStyle(Theme.bad)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 8)
+                    .frame(maxWidth: .infinity, minHeight: 52)
+                    .contentShape(Rectangle())
             }
+            .buttonStyle(SettingsRowButtonStyle())
         }
     }
 
-    private var diagnosticsSection: some View {
-        Section("Tanılama") {
-            NavigationLink("Widget sağlığı") {
-                WidgetHealthView()
-            }
+    /// "Lockglow 1.0 · içerik 2026.10.21 (933 kart)".
+    private var versionLine: some View {
+        var text = "Lockglow"
+        if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
+            text += " \(version)"
         }
+        if let content = model.contentVersion {
+            text += " · içerik \(content)"
+        }
+        if model.cardCount > 0 {
+            text += " (\(model.cardCount) kart)"
+        }
+        return Text(verbatim: text)
+            .font(.footnote)
+            .foregroundStyle(Theme.ink2)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: .infinity)
+            .padding(.top, -8)
     }
 
+    // MARK: Recovery
+
+    /// The progress file had to be recovered (mockup `.banner`): above everything until "Anladım".
     @ViewBuilder
     private var recoverySection: some View {
         if let outcome = model.progressRecovery {
-            Section {
-                Label {
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .font(.title3)
+                    .foregroundStyle(Theme.caution)
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 10) {
                     Text(recoveryMessage(outcome))
-                } icon: {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundStyle(.orange)
+                        .font(.subheadline)
+                        .foregroundStyle(Theme.ink)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Button("Anladım") {
+                        model.dismissProgressRecovery()
+                    }
+                    .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
                 }
-                Button("Anladım") {
-                    model.dismissProgressRecovery()
-                }
-            } header: {
-                Text("İlerleme dosyası")
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 14)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous)
+                    .strokeBorder(Theme.caution, lineWidth: 1.5)
+            )
         }
     }
 
@@ -266,11 +456,301 @@ struct SettingsView: View {
             return ""
         }
     }
+}
 
-    private func intervalLabel(_ minutes: Int) -> String {
-        if minutes >= 60 && minutes % 60 == 0 {
-            return "\(minutes / 60) saat"
+// MARK: - Progress parts
+
+/// Known words of one level for the "İlerleme" bars.
+private struct LevelProgress: Identifiable {
+    let level: Level
+    let known: Int
+    let total: Int
+
+    var id: Level { level }
+}
+
+/// One count of "İlerleme" (mockup `.tile`): a large number over a short caption.
+private struct ProgressTile: View {
+    let value: Int
+    let caption: String
+    @ScaledMetric(relativeTo: .title) private var numberSize: CGFloat = 26
+
+    var body: some View {
+        VStack(spacing: 3) {
+            Text(verbatim: "\(value)")
+                // Grows with the text size, but not past 34 pt: three tiles share one row.
+                .font(.system(size: min(numberSize, 34), weight: .bold))
+                .monospacedDigit()
+                .foregroundStyle(Theme.ink)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+            Text(verbatim: caption)
+                .font(.caption.weight(.medium))
+                .foregroundStyle(Theme.ink2)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
         }
-        return "\(minutes) dakika"
+        .padding(.vertical, 12)
+        .padding(.horizontal, 8)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: "\(caption): \(value)"))
+    }
+}
+
+/// "A2 ▬▬▬──── 34 / 418" (mockup `.lvb`): known words of one level, the bar in `tint`.
+private struct LevelProgressRow: View {
+    let item: LevelProgress
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Text(verbatim: item.level.rawValue)
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(Theme.ink)
+                .frame(minWidth: 30, alignment: .leading)
+            GeometryReader { proxy in
+                Capsule()
+                    .fill(Theme.surface2)
+                    .overlay(alignment: .leading) {
+                        Capsule()
+                            .fill(Theme.tint)
+                            .frame(width: filledWidth(in: proxy.size.width))
+                    }
+            }
+            .frame(height: 8)
+            Text(verbatim: "\(item.known) / \(item.total)")
+                .font(.caption.weight(.medium))
+                .monospacedDigit()
+                .foregroundStyle(Theme.ink2)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: "\(item.level.rawValue): \(item.total) kelimeden \(item.known) kelimeyi biliyorsun"))
+    }
+
+    /// At least a dot once one word is known, so a small start still shows.
+    private func filledWidth(in width: CGFloat) -> CGFloat {
+        guard item.total > 0, item.known > 0 else {
+            return 0
+        }
+        let fraction = min(1, CGFloat(item.known) / CGFloat(item.total))
+        return max(8, width * fraction)
+    }
+}
+
+// MARK: - Settings components (also used by "Widget sağlığı")
+
+/// A group heading (mockup `.sgroup > h3`): sentence case, never upper-cased, a VoiceOver heading.
+struct SettingsSectionHeader: View {
+    let title: String
+
+    init(_ title: String) {
+        self.title = title
+    }
+
+    var body: some View {
+        Text(verbatim: title)
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(Theme.ink2)
+            .textCase(nil)
+            .padding(.horizontal, 4)
+            .accessibilityAddTraits(.isHeader)
+    }
+}
+
+/// The question above a row of options (mockup `.swrap .lab`): "Kelime ne sıklıkla değişsin?".
+struct SettingsQuestion: View {
+    let title: String
+
+    init(_ title: String) {
+        self.title = title
+    }
+
+    var body: some View {
+        Text(verbatim: title)
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(Theme.ink)
+            .textCase(nil)
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.horizontal, 4)
+            .padding(.top, 6)
+            .accessibilityAddTraits(.isHeader)
+    }
+}
+
+/// A white group of rows (mockup `.group`): `surface`, 20 pt corners, a `line` border. Rows are
+/// separated with `SettingsDivider()`.
+struct SettingsGroup<Content: View>: View {
+    private let content: Content
+
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            content
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .settingsGroupBackground()
+    }
+}
+
+/// A hairline between the rows of a group, inset like iOS lists.
+struct SettingsDivider: View {
+    var inset: CGFloat = 14
+
+    var body: some View {
+        Rectangle()
+            .fill(Theme.line)
+            .frame(height: 1)
+            .padding(.leading, inset)
+            .accessibilityHidden(true)
+    }
+}
+
+/// One row of a group (mockup `.row`): at least 52 pt, a title (with an optional icon), a value
+/// in `ink2` and a chevron. At accessibility text sizes the value moves under the title.
+struct SettingsRow<Value: View>: View {
+    let title: String
+    let systemImage: String?
+    let showsChevron: Bool
+    let value: Value
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    init(
+        _ title: String,
+        systemImage: String? = nil,
+        showsChevron: Bool = true,
+        @ViewBuilder value: () -> Value
+    ) {
+        self.title = title
+        self.systemImage = systemImage
+        self.showsChevron = showsChevron
+        self.value = value()
+    }
+
+    var body: some View {
+        let stacked = dynamicTypeSize.isAccessibilitySize
+        let layout = stacked
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(spacing: 12))
+        HStack(spacing: 12) {
+            layout {
+                titleLabel
+                if !stacked {
+                    Spacer(minLength: 0)
+                }
+                value
+                    .font(.body)
+                    .foregroundStyle(Theme.ink2)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            if showsChevron {
+                Image(systemName: "chevron.right")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.ink3)
+                    .accessibilityHidden(true)
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+        .contentShape(Rectangle())
+    }
+
+    private var titleLabel: some View {
+        HStack(spacing: 10) {
+            if let systemImage = systemImage {
+                Image(systemName: systemImage)
+                    .font(.body)
+                    .foregroundStyle(Theme.ink2)
+                    .frame(minWidth: 22)
+                    .accessibilityHidden(true)
+            }
+            Text(verbatim: title)
+                .settingsRowTitle()
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+}
+
+extension SettingsRow where Value == EmptyView {
+    init(_ title: String, systemImage: String? = nil, showsChevron: Bool = true) {
+        self.init(title, systemImage: systemImage, showsChevron: showsChevron) {
+            EmptyView()
+        }
+    }
+}
+
+/// Rows that are buttons or navigation links: ink text (never the blue default) and a soft
+/// highlight while pressed.
+struct SettingsRowButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundStyle(Theme.ink)
+            .background(configuration.isPressed ? Theme.tintSoft : Color.clear)
+    }
+}
+
+/// "Widget sağlığı ✓ Çalışıyor" / "⚠ Güncellemiyor" (README "Ayarlar"): icon and word together,
+/// the color only repeats them (rule 4).
+struct WidgetHealthBadge: View {
+    let status: WidgetHealthStatus
+
+    var body: some View {
+        switch status {
+        case .unknown:
+            EmptyView()
+        case .working:
+            badge("Çalışıyor", systemImage: "checkmark.circle.fill", color: Theme.good)
+        case .notUpdating:
+            badge("Güncellemiyor", systemImage: "exclamationmark.triangle.fill", color: Theme.bad)
+        case .notAdded:
+            Text("Eklenmedi")
+                .foregroundStyle(Theme.ink2)
+        }
+    }
+
+    private func badge(_ title: String, systemImage: String, color: Color) -> some View {
+        HStack(spacing: 5) {
+            Image(systemName: systemImage)
+                .accessibilityHidden(true)
+            Text(verbatim: title)
+                .fontWeight(.medium)
+        }
+        .foregroundStyle(color)
+    }
+}
+
+extension View {
+    /// The `surface` card of a settings group: 20 pt continuous corners and a `line` border.
+    func settingsGroupBackground() -> some View {
+        let shape = RoundedRectangle(cornerRadius: Theme.Radius.group, style: .continuous)
+        return background(Theme.surface, in: shape)
+            .clipShape(shape)
+            .overlay(shape.strokeBorder(Theme.line, lineWidth: 1))
+    }
+
+    /// The title of a settings row: `.body` medium, ink.
+    func settingsRowTitle() -> some View {
+        font(.body.weight(.medium))
+            .foregroundStyle(Theme.ink)
+    }
+
+    /// Padding of a row that is a control itself (a switch, a time picker): 52 pt high.
+    func settingsRowPadding() -> some View {
+        padding(.horizontal, 14)
+            .padding(.vertical, 6)
+            .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+    }
+
+    /// The explanation under a group (mockup `.foot-t`): footnote, `ink2`.
+    func settingsFootnote() -> some View {
+        font(.footnote)
+            .foregroundStyle(Theme.ink2)
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.horizontal, 6)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

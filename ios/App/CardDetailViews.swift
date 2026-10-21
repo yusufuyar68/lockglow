@@ -237,6 +237,8 @@ enum CardPartOfSpeech {
             return "deyim"
         case "det":
             return "belirleyici"
+        case "prep":
+            return "edat"
         default:
             return code
         }

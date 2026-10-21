@@ -36,6 +36,9 @@ struct RootView: View {
                 .badge(model.progressRecovery == nil ? 0 : 1)
                 .tag(AppTab.settings)
         }
+        // The selected tab is ink, never yellow and never the blue default (README `tint`);
+        // the tint also reaches every control below. The iOS 26 tab bar is glass by itself.
+        .tint(Theme.tint)
         .task {
             await model.start()
         }
@@ -72,6 +75,8 @@ struct RootView: View {
                         }
                     }
             }
+            // A sheet starts its own hierarchy: "Kapat" and the card's controls stay ink.
+            .tint(Theme.ink)
             .environmentObject(model)
         }
         .onOpenURL { url in

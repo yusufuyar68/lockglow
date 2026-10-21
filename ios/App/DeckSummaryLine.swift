@@ -13,22 +13,28 @@ struct DeckSummaryLine: View {
     /// No topic chosen: every topic.
     let isEverything: Bool
 
+    /// Mockup `.deck-sum`: the count in ink, the new words in `ink2`, the warning with a
+    /// `caution` icon (the sentence says it; the color only repeats it).
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(verbatim: wordLine)
                 .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink)
             Text(verbatim: newWordLine)
                 .font(.footnote)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
+                .fixedSize(horizontal: false, vertical: true)
             if !isEverything && summary.wordCount < DeckSummaryLine.smallDeck {
-                Label {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    Image(systemName: "info.circle")
+                        .foregroundStyle(Theme.caution)
+                        .accessibilityHidden(true)
                     Text(verbatim: "Kelime az olduğu için widget aynı kelimeleri sık gösterir.")
-                } icon: {
-                    Image(systemName: "exclamationmark.circle")
-                        .foregroundStyle(Palette.glowInk)
+                        .foregroundStyle(Theme.ink2)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 .font(.footnote)
-                .foregroundStyle(Palette.ink2)
+                .padding(.top, 2)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -26,8 +26,11 @@ struct WordWidget: Widget {
 
 /// Picks the layout for the widget family. `containerBackground` is required on every family;
 /// the system removes or replaces it in tinted, vibrant and StandBy rendering.
-/// Content margins are disabled (see `WordWidget`): the Lock Screen families get the default
-/// margins back as plain padding, the home families place them themselves (HomeWordViews.swift).
+/// Content margins are disabled (see `WordWidget`): the home families place them themselves
+/// (HomeWordViews.swift), the rectangular family uses them as a minimum inner padding, the inline
+/// family gets them back as plain padding.
+/// Tapping anywhere outside a button opens the app on this word (`widgetURL`); the word itself is
+/// not a button.
 struct WordWidgetView: View {
     @Environment(\.widgetFamily) private var family
     @Environment(\.widgetContentMargins) private var margins
@@ -36,7 +39,9 @@ struct WordWidgetView: View {
     var body: some View {
         content
             .widgetURL(DeepLink.wordURL(id: entry.word.id))
-            .containerBackground(.fill.tertiary, for: .widget)
+            .containerBackground(for: .widget) {
+                containerFill
+            }
     }
 
     @ViewBuilder
@@ -47,13 +52,27 @@ struct WordWidgetView: View {
         case .systemMedium:
             MediumWordView(entry: entry, margins: margins)
         case .accessoryRectangular:
-            RectangularWordView(entry: entry)
-                .padding(margins)
+            RectangularWordView(entry: entry, margins: margins)
         case .accessoryInline:
             InlineWordView(entry: entry)
                 .padding(margins)
         default:
             SmallWordView(entry: entry, margins: margins)
+        }
+    }
+
+    /// Paper for the home widgets (mockup `.mode-color .wg`: `surface`, white by day and
+    /// near-black at night), the system's Lock Screen plate for the rectangular family; the inline
+    /// family draws none.
+    @ViewBuilder
+    private var containerFill: some View {
+        switch family {
+        case .accessoryRectangular:
+            AccessoryWidgetBackground()
+        case .accessoryInline:
+            Color.clear
+        default:
+            Theme.surface
         }
     }
 }

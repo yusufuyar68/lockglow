@@ -30,7 +30,7 @@ struct OnboardingView: View {
             ScrollView {
                 pageContent
                     .padding(.horizontal, 20)
-                    .padding(.top, 8)
+                    .padding(.top, 6)
                     .padding(.bottom, 24)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -39,14 +39,18 @@ struct OnboardingView: View {
             bottomBar
         }
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.25), value: page)
-        .background(Palette.background.ignoresSafeArea())
+        .background(Theme.bg.ignoresSafeArea())
+        // A full-screen cover starts its own hierarchy: no blue anywhere inside.
+        .tint(Theme.ink)
         .onAppear(perform: loadChoice)
     }
 
     // MARK: Bars
 
+    /// Mockup `.ob-top`: "geri" and "Atla" are control-layer capsules (glass on iOS 26, rule 6);
+    /// the step bar between them is ink, never yellow, also at night.
     private var topBar: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 10) {
             if page == .level {
                 Color.clear
                     .frame(width: 44, height: 44)
@@ -55,11 +59,10 @@ struct OnboardingView: View {
                     go(to: Page(rawValue: page.rawValue - 1) ?? .level)
                 } label: {
                     Image(systemName: "chevron.left")
-                        .font(.title3.weight(.semibold))
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
+                        .font(.body.weight(.semibold))
+                        .frame(minWidth: 20, minHeight: 30)
                 }
-                .tint(Palette.glowInk)
+                .glassControl()
                 .accessibilityLabel("Geri")
             }
             progressBar
@@ -67,24 +70,27 @@ struct OnboardingView: View {
                 Color.clear
                     .frame(width: 60, height: 44)
             } else {
-                Button("Atla") {
+                Button {
                     finish()
+                } label: {
+                    Text("Atla")
+                        .font(.body.weight(.semibold))
+                        .frame(minHeight: 30)
                 }
-                .font(.body.weight(.semibold))
-                .tint(Palette.glowInk)
-                .frame(minWidth: 60, minHeight: 44)
+                .glassControl()
                 .accessibilityIdentifier("onboarding.skip")
             }
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal, 12)
         .padding(.top, 4)
+        .frame(minHeight: 52)
     }
 
     private var progressBar: some View {
         HStack(spacing: 6) {
             ForEach(Page.allCases, id: \.self) { item in
                 Capsule()
-                    .fill(item.rawValue <= page.rawValue ? Palette.glow : Palette.surface2)
+                    .fill(item.rawValue <= page.rawValue ? Theme.tint : Theme.surface3)
                     .frame(height: 6)
             }
         }
@@ -93,14 +99,16 @@ struct OnboardingView: View {
         .accessibilityLabel("Adım \(page.rawValue + 1) / \(Page.allCases.count)")
     }
 
+    /// Mockup `.ob-foot`: the deck summary over the one filled button of the page.
     private var bottomBar: some View {
-        VStack(spacing: 10) {
+        VStack(alignment: .leading, spacing: 10) {
             if page == .topics && chosenTopicCount > 0 {
                 DeckSummaryLine(
                     summary: model.deckSummary(for: topicIDs),
                     dailyGoal: model.dailyNewWords,
                     isEverything: false
                 )
+                .padding(.horizontal, 4)
             }
             Button(primaryTitle) {
                 advance()
@@ -111,7 +119,8 @@ struct OnboardingView: View {
         }
         .padding(.horizontal, 20)
         .padding(.top, 8)
-        .padding(.bottom, 12)
+        .padding(.bottom, 10)
+        .background(Theme.bg)
     }
 
     /// Topics still loading: leaving the page would apply the choice before there are words,
@@ -167,17 +176,20 @@ struct OnboardingView: View {
                 title: "İngilizcen ne düzeyde?",
                 subtitle: "Yeni kelimeler bu seviyeden başlar. Daha kolay kelimeler sona kalır, hiçbiri kaybolmaz."
             )
-            ForEach(AppPreferences.startLevelChoices, id: \.self) { choice in
-                ChoiceRow(isSelected: level == choice) {
-                    level = choice
-                } label: {
-                    LevelOptionLabel(level: choice, wordCount: wordCount(at: choice))
+            VStack(spacing: 8) {
+                ForEach(AppPreferences.startLevelChoices, id: \.self) { choice in
+                    ChoiceRow(isSelected: level == choice) {
+                        level = choice
+                    } label: {
+                        LevelOptionLabel(level: choice, wordCount: wordCount(at: choice))
+                    }
+                    .accessibilityIdentifier("onboarding.level.\(choice.rawValue)")
                 }
-                .accessibilityIdentifier("onboarding.level.\(choice.rawValue)")
             }
             Text("İstediğin zaman Ayarlar'dan değiştirebilirsin.")
                 .font(.footnote)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
+                .padding(.horizontal, 4)
         }
     }
 
@@ -194,6 +206,7 @@ struct OnboardingView: View {
             } else if model.choosableTopics.isEmpty {
                 Text("Konu listesi yok. Şimdilik bütün kelimeler gösterilecek.")
                     .font(.body)
+                    .foregroundStyle(Theme.ink)
             } else {
                 TopicChoiceList(
                     topics: model.choosableTopics,
@@ -213,16 +226,18 @@ struct OnboardingView: View {
             WidgetGuideContent()
             Text("Ekledikten sonra buraya dönebilirsin. Bu rehber Ayarlar > Yardım'da da var.")
                 .font(.footnote)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
+                .padding(.horizontal, 4)
         }
     }
 
     @ViewBuilder
     private var firstWordPage: some View {
         VStack(alignment: .leading, spacing: 4) {
+            // The card plays the word with its "Dinle" capsule (README "Açık sorular").
             PageTitle(
                 title: "İlk kelimen",
-                subtitle: "Öğrenmeye bu kelimeyle başlıyorsun. Hoparlöre dokunup dinleyebilirsin."
+                subtitle: "Öğrenmeye bu kelimeyle başlıyorsun. Dinle'ye dokunup dinleyebilirsin."
             )
             if let word = model.firstDeckWord() {
                 // No "Söyle" button here: the onboarding never asks for the microphone.
@@ -231,10 +246,12 @@ struct OnboardingView: View {
             } else if model.contentSource == .loading {
                 Text("Kelimeler yükleniyor...")
                     .font(.body)
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(Theme.ink2)
             } else {
-                Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç. Sorun sürerse Ayarlar > Tanılama'ya bak.")
+                // The old "Tanılama" section is the "Widget sağlığı" row of Ayarlar now.
+                Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç. Sorun sürerse Ayarlar > Widget sağlığı ekranına bak.")
                     .font(.body)
+                    .foregroundStyle(Theme.ink)
             }
         }
     }
@@ -282,6 +299,8 @@ struct OnboardingView: View {
     }
 }
 
+/// Mockup `.ob-title` / `.ob-sub`: a large SF Pro title (no rounded design, README point 3) over
+/// a calm `ink2` sentence.
 private struct PageTitle: View {
     let title: String
     let subtitle: String
@@ -289,35 +308,39 @@ private struct PageTitle: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(verbatim: title)
-                .font(.largeTitle.weight(.heavy))
-                .fontDesign(.rounded)
+                .font(.largeTitle.weight(.bold))
+                .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityAddTraits(.isHeader)
             Text(verbatim: subtitle)
                 .font(.body)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
+                .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(.bottom, 8)
+        .padding(.top, 4)
+        .padding(.bottom, 6)
     }
 }
 
 /// "A2 ●●○  Temel konuşabiliyorum" with what the level covers and how many words it has.
+/// Mockup `.lvc`: the code over its dots (rule 4: never color alone), ink on, `surface3` off.
 private struct LevelOptionLabel: View {
     let level: Level
     let wordCount: Int
+    @ScaledMetric(relativeTo: .body) private var dotSize: CGFloat = 5
 
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
-            VStack(spacing: 3) {
-                Text(level.rawValue)
-                    .font(.headline.weight(.heavy))
-                    .fontDesign(.rounded)
+            VStack(spacing: 4) {
+                Text(verbatim: level.rawValue)
+                    .font(.body.weight(.bold))
+                    .foregroundStyle(Theme.ink)
                 HStack(spacing: 3) {
                     ForEach(1...3, id: \.self) { dot in
                         Circle()
-                            .fill(dot <= level.rank ? Palette.glowInk : Palette.surface2)
-                            .frame(width: 5, height: 5)
+                            .fill(dot <= level.rank ? Theme.ink : Theme.surface3)
+                            .frame(width: dotSize, height: dotSize)
                     }
                 }
             }
@@ -326,10 +349,11 @@ private struct LevelOptionLabel: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(verbatim: title)
                     .font(.body.weight(.semibold))
-                    .foregroundStyle(Color.primary)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
                 Text(verbatim: detail)
                     .font(.footnote)
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

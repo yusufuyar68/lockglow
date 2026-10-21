@@ -17,6 +17,8 @@ enum AppPreferences {
     private static let knownKey = "lockglow.knownWordIDs"
     private static let studiedDayKey = "lockglow.newWordsStudiedDay"
     private static let studiedCountKey = "lockglow.newWordsStudiedCount"
+    private static let reviewsDoneDayKey = "lockglow.reviewsDoneDay"
+    private static let reviewsDoneCountKey = "lockglow.reviewsDoneCount"
     private static let reminderEnabledKey = "lockglow.reminderEnabled"
     private static let reminderMinuteKey = "lockglow.reminderMinuteOfDay"
     private static let topicsKey = "lockglow.selectedTopicIDs"
@@ -154,5 +156,31 @@ enum AppPreferences {
     static func resetNewWordsStudied() {
         UserDefaults.standard.removeObject(forKey: studiedDayKey)
         UserDefaults.standard.removeObject(forKey: studiedCountKey)
+    }
+
+    // MARK: Reviews done today
+
+    /// How many answers today were for words already studied before (local calendar day): the
+    /// "M tekrar" of "Bugün: N yeni kelime, M tekrar." on the "Tekrar" screens.
+    static func reviewsDoneToday(now: Date = Date()) -> Int {
+        let defaults = UserDefaults.standard
+        let today = Calendar.current.startOfDay(for: now).timeIntervalSince1970
+        if defaults.double(forKey: reviewsDoneDayKey) != today {
+            return 0
+        }
+        return defaults.integer(forKey: reviewsDoneCountKey)
+    }
+
+    static func addReviewsDone(_ count: Int, now: Date = Date()) {
+        let defaults = UserDefaults.standard
+        let today = Calendar.current.startOfDay(for: now).timeIntervalSince1970
+        let total = reviewsDoneToday(now: now) + count
+        defaults.set(today, forKey: reviewsDoneDayKey)
+        defaults.set(total, forKey: reviewsDoneCountKey)
+    }
+
+    static func resetReviewsDone() {
+        UserDefaults.standard.removeObject(forKey: reviewsDoneDayKey)
+        UserDefaults.standard.removeObject(forKey: reviewsDoneCountKey)
     }
 }
