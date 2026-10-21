@@ -52,6 +52,16 @@ final class LockglowScreenshotTests: XCTestCase {
         sleep(1)
         attachScreenshot(of: app, named: "6-ayarlar")
 
+        // Konular: the topic list with its summary line, then back to Ayarlar without choosing
+        // anything (the choice is kept in UserDefaults). The row's label is "Konular, Tümü".
+        let topicsRow = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Konular")).firstMatch
+        XCTAssertTrue(topicsRow.waitForExistence(timeout: 5), "no Konular row in Ayarlar")
+        topicsRow.tap()
+        XCTAssertTrue(app.buttons["topics.all"].waitForExistence(timeout: 5), "no topic list")
+        attachScreenshot(of: app, named: "6b-konular")
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        sleep(1)
+
         // Sözlük: a Turkish prefix without Turkish letters must find the English word.
         app.tabBars.buttons["Sözlük"].tap()
         let field = app.searchFields.firstMatch
@@ -135,6 +145,20 @@ final class LockglowScreenshotTests: XCTestCase {
         attachScreenshot(of: app, named: "0e-acilis-ilk-kelime")
         start.tap()
         XCTAssertTrue(app.tabBars.buttons["Akış"].waitForExistence(timeout: 5), "the onboarding did not close")
+    }
+
+    /// "Atla" on the first page closes the onboarding without a level.
+    func testSkipOnboarding() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-lockglow.onboardingCompleted", "NO"]
+        app.launch()
+
+        let skip = app.buttons["onboarding.skip"]
+        XCTAssertTrue(skip.waitForExistence(timeout: 30), "the onboarding did not open")
+        skip.tap()
+        XCTAssertTrue(app.tabBars.buttons["Akış"].waitForExistence(timeout: 5), "no tabs after Atla")
+        sleep(1)
+        XCTAssertFalse(skip.exists, "Atla did not close the onboarding")
     }
 
     private func attachScreenshot(of app: XCUIApplication, named name: String) {

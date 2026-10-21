@@ -51,18 +51,18 @@ struct WidgetGuideContent: View {
             return [
                 "Yan düğmeye bas ve kilitli ekranı aç. Telefonun kilidi Face ID ya da parolayla açılmış olmalı.",
                 "Kilitli ekranda boş bir yeri basılı tut. Parola sorarsa gir.",
-                "Alttaki **Özelleştir**'e dokun. Seçmeni isterse kilitli ekranı seç.",
-                "**Araç Takımı Ekle**'ye dokun.",
-                "Listede **Lockglow**'u bul ve bir widget'a dokun.",
-                "**Bitti**'ye dokun.",
+                "Alttaki **Özelleştir**'e (Customize) dokun. Seçmeni isterse kilitli ekranı seç.",
+                "**Araç Takımı Ekle**'ye (Add Widgets) dokun.",
+                "Listede **Lockglow**'u bul ve dikdörtgen widget'a dokun. Tek satırlık widget için bunun yerine saatin üstündeki tarih satırına dokun.",
+                "**Bitti**'ye (Done) dokun.",
             ]
         case .homeScreen:
             return [
                 "Ana ekranda boş bir yeri basılı tut. Uygulamalar titremeye başlar.",
-                "Ekranın üstündeki **Düzenle**'ye, sonra **Araç Takımı Ekle**'ye dokun.",
+                "Ekranın üstündeki **Düzenle**'ye (Edit), sonra **Araç Takımı Ekle**'ye (Add Widget) dokun.",
                 "Arama kutusuna **Lockglow** yaz ve ona dokun.",
-                "Boyutlar arasında kaydır. İstediğin boyutta **Araç Takımı Ekle**'ye dokun.",
-                "Widget'ı istediğin yere taşı, sonra **Bitti**'ye dokun.",
+                "Boyutlar arasında kaydır (küçük ya da orta). İstediğin boyutta **Araç Takımı Ekle**'ye dokun.",
+                "Widget'ı istediğin yere taşı, sonra **Bitti**'ye (Done) dokun.",
             ]
         }
     }
@@ -70,9 +70,9 @@ struct WidgetGuideContent: View {
     private var note: String {
         switch place {
         case .lockScreen:
-            return "iPhone'da widget'ın adı \"araç takımı\". Kilitli ekrandaki widget'ta düğme yok; kelime kendiliğinden değişir."
+            return "iPhone'da widget'ın adı \"araç takımı\". Telefonun dili İngilizceyse parantezdeki adlara bak. Kilitli ekrandaki widget'ta düğme yok; kelime kendiliğinden değişir."
         case .homeScreen:
-            return "iPhone'da widget'ın adı \"araç takımı\". Küçük ve orta boyda \"Sonraki\" ve \"Biliyorum\" düğmeleri var."
+            return "iPhone'da widget'ın adı \"araç takımı\". Telefonun dili İngilizceyse parantezdeki adlara bak. Küçük ve orta boyda \"Sonraki\", \"Biliyorum\" ve hoparlör düğmeleri var."
         }
     }
 }

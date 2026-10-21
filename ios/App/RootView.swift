@@ -17,6 +17,8 @@ struct RootView: View {
     @State private var scrolledWordID: Int?
     /// Deep link received before the words finished loading.
     @State private var pendingWordID: Int?
+    /// A widget word that is not in the deck, shown as its full card in a sheet.
+    @State private var detailWord: WidgetWord?
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -59,6 +61,19 @@ struct RootView: View {
             OnboardingView()
                 .environmentObject(model)
         }
+        .sheet(item: $detailWord) { word in
+            NavigationStack {
+                WordDetailView(word: word)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Kapat") {
+                                detailWord = nil
+                            }
+                        }
+                    }
+            }
+            .environmentObject(model)
+        }
         .onOpenURL { url in
             handle(url)
         }
@@ -91,28 +106,41 @@ struct RootView: View {
         notifications.reviewRequested = false
     }
 
-    /// `vocabwidget://word/<id>`, opened by tapping a widget. A word outside the chosen deck (the
-    /// one kept on screen right after a topic change) is not in "Akış": the feed opens as it is.
+    /// `vocabwidget://word/<id>`, opened by tapping a widget. A word of the deck: "Akış" scrolls
+    /// to it. A word outside the deck (the one kept on screen right after a topic change, or one
+    /// from the every-topic fallback): its card opens in a sheet.
     private func handle(_ url: URL) {
         guard let wordID = DeepLink.wordID(from: url) else {
             return
         }
-        selectedTab = .feed
-        if model.feedWords.contains(where: { $0.id == wordID }) {
-            scrolledWordID = wordID
-        } else if model.contentSource == .loading {
+        if model.contentSource == .loading {
+            selectedTab = .feed
             pendingWordID = wordID
+        } else {
+            open(wordID, in: model.feedWords)
         }
     }
 
-    /// The words arrived: scroll to the pending word if the deck has it, and forget it either way.
+    /// The words arrived: open the pending word, then forget it.
     private func applyPendingWord(in words: [WidgetWord]) {
         guard let wordID = pendingWordID, !words.isEmpty else {
             return
         }
-        if words.contains(where: { $0.id == wordID }) {
-            scrolledWordID = wordID
-        }
         pendingWordID = nil
+        open(wordID, in: words)
+    }
+
+    private func open(_ wordID: Int, in feed: [WidgetWord]) {
+        if feed.contains(where: { $0.id == wordID }) {
+            selectedTab = .feed
+            scrolledWordID = wordID
+            return
+        }
+        // Not over the onboarding: two presentations at once do not work.
+        guard !model.showsOnboarding, let word = model.word(id: wordID) else {
+            selectedTab = .feed
+            return
+        }
+        detailWord = word
     }
 }

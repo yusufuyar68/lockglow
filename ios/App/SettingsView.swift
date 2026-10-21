@@ -157,7 +157,11 @@ struct SettingsView: View {
         } header: {
             Text("Öğrenme")
         } footer: {
-            Text("Yeni kelimeler bu seviyeden başlar. Widget'ta, Akış'ta ve yeni kelimelerde yalnız seçtiğin konular döner (şu an \(model.feedWords.count) kelime). Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.")
+            if model.newWordsComeFromAllTopics {
+                Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.\nSeçtiğin konuların yeni kelimeleri bitti; yeni kelimeler diğer konulardan geliyor.")
+            } else {
+                Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.")
+            }
         }
     }
 

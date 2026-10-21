@@ -1,31 +1,49 @@
 import SwiftUI
 import CoreModels
 
-/// "Ayarlar > Konular": the same choice as the onboarding's second page. The selection is
-/// applied when the screen closes, so the widget plan is rewritten once, not on every tap.
+/// "Ayarlar > Konular": the same choice as the onboarding's second page, with the summary line.
+/// The selection is applied when the screen closes or the app stops being active (no debounce;
+/// applying the same choice twice does nothing), so the widget plan is not rewritten per tap.
 struct TopicPickerView: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var selection: Set<String> = []
     @State private var hasLoaded = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Text("Widget'ta, Akış'ta ve Tekrar'ın yeni kelimelerinde yalnız seçtiğin konular döner. Öğrenmeye başladığın kelimelerin tekrarı her konuda sürer.")
+                Text(verbatim: "\(TopicPickerView.intro) Öğrendiğin kelimelerin tekrarı her konuda sürer.")
                     .font(.subheadline)
                     .foregroundStyle(Palette.ink2)
                 if model.choosableTopics.isEmpty {
                     Text("Konu listesi yok (içerik veritabanı yüklenmedi). Bütün kelimeler gösteriliyor.")
                         .font(.body)
                 } else {
+                    // Largest text sizes: no pinned bar, the summary leads the list.
+                    if dynamicTypeSize.isAccessibilitySize {
+                        summaryLine
+                    }
                     TopicChoiceList(
                         topics: model.choosableTopics,
                         totalWordCount: model.words.count,
                         selection: $selection
                     )
+                    Text("Bir kelime birden çok konuda yer alabilir. Toplam her kelimeyi bir kez sayar.")
+                        .font(.footnote)
+                        .foregroundStyle(Palette.ink2)
                 }
             }
             .padding(16)
+        }
+        .safeAreaInset(edge: .bottom) {
+            if !model.choosableTopics.isEmpty && !dynamicTypeSize.isAccessibilitySize {
+                summaryLine
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+                    .background(.thinMaterial)
+            }
         }
         .background(Palette.background.ignoresSafeArea())
         .navigationTitle("Konular")
@@ -36,10 +54,30 @@ struct TopicPickerView: View {
                 hasLoaded = true
             }
         }
-        .onDisappear {
-            if hasLoaded {
-                model.setSelectedTopics(selection)
+        .onChange(of: scenePhase) { _, phase in
+            if phase != .active {
+                apply()
             }
+        }
+        .onDisappear {
+            apply()
+        }
+    }
+
+    /// The first three sentences are also the onboarding's topics page text.
+    static let intro = "Widget'ta, Akış'ta ve Tekrar'ın yeni kelimelerinde seçtiğin konular döner. Hiç seçmezsen hepsi gelir. Seçtiğin konuların yeni kelimeleri bitince diğer konulardan devam edilir."
+
+    private var summaryLine: some View {
+        DeckSummaryLine(
+            summary: model.deckSummary(for: selection),
+            dailyGoal: model.dailyNewWords,
+            isEverything: selection.isDisjoint(with: model.topics.map { $0.id })
+        )
+    }
+
+    private func apply() {
+        if hasLoaded {
+            model.setSelectedTopics(selection)
         }
     }
 }
@@ -72,7 +110,7 @@ struct TopicChoiceList: View {
                     ChoiceRow(isSelected: selection.contains(topic.id)) {
                         toggle(topic.id)
                     } label: {
-                        TopicRowLabel(title: topic.nameTR, detail: "\(topic.cardCount) kelime")
+                        TopicRowLabel(title: topic.displayName, detail: "\(topic.cardCount) kelime")
                     }
                     .accessibilityIdentifier("topics.\(topic.id)")
                 }
@@ -101,6 +139,18 @@ private struct TopicRowLabel: View {
             Text(verbatim: detail)
                 .font(.footnote)
                 .foregroundStyle(Palette.ink2)
+        }
+    }
+}
+
+extension ContentTopic {
+    /// The name shown in the app. Two category names are heavy for an A2 learner; the content
+    /// (`category.name_tr`) stays as it is.
+    var displayName: String {
+        switch id {
+        case "phrasal_verbs": return "İki kelimeli fiiller"
+        case "confusing_words": return "Karıştırılan kelimeler"
+        default: return nameTR
         }
     }
 }

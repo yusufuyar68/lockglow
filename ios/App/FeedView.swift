@@ -51,6 +51,9 @@ struct FeedView: View {
 struct WordCardView: View {
     let word: WidgetWord
     let detail: CardDetail?
+    /// The "Söyle" pronunciation button (`ios/telaffuz`) once it is merged. The onboarding's
+    /// first-word page passes false: the tour never asks for the microphone.
+    var showsSay = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {

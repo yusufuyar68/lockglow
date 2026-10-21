@@ -94,15 +94,41 @@ struct OnboardingView: View {
     }
 
     private var bottomBar: some View {
-        Button(primaryTitle) {
-            advance()
+        VStack(spacing: 10) {
+            if page == .topics && chosenTopicCount > 0 {
+                DeckSummaryLine(
+                    summary: model.deckSummary(for: topicIDs),
+                    dailyGoal: model.dailyNewWords,
+                    isEverything: false
+                )
+            }
+            Button(primaryTitle) {
+                advance()
+            }
+            .buttonStyle(GlowButtonStyle())
+            .disabled(isNextDisabled)
+            .accessibilityIdentifier(page == .firstWord ? "onboarding.start" : "onboarding.next")
         }
-        .buttonStyle(GlowButtonStyle())
-        .disabled(page == .level && level == nil)
-        .accessibilityIdentifier(page == .firstWord ? "onboarding.start" : "onboarding.next")
         .padding(.horizontal, 20)
         .padding(.top, 8)
         .padding(.bottom, 12)
+    }
+
+    /// Topics still loading: leaving the page would apply the choice before there are words,
+    /// and no plan would be written ("Atla" still works).
+    private var isNextDisabled: Bool {
+        switch page {
+        case .level:
+            return level == nil
+        case .topics:
+            return model.contentSource == .loading
+        case .widget, .firstWord:
+            return false
+        }
+    }
+
+    private var chosenTopicCount: Int {
+        return model.choosableTopics.filter { topicIDs.contains($0.id) }.count
     }
 
     private var primaryTitle: String {
@@ -110,8 +136,10 @@ struct OnboardingView: View {
         case .level, .widget:
             return "Devam"
         case .topics:
-            let count = model.choosableTopics.filter { topicIDs.contains($0.id) }.count
-            return count == 0 ? "Tüm konularla devam" : "\(count) konuyla devam"
+            if model.contentSource == .loading {
+                return "Konular hazırlanıyor…"
+            }
+            return chosenTopicCount == 0 ? "Tüm konularla devam" : "\(chosenTopicCount) konuyla devam"
         case .firstWord:
             return "Başla"
         }
@@ -158,7 +186,7 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 12) {
             PageTitle(
                 title: "Hangi konuları öğrenmek istersin?",
-                subtitle: "Widget'ta ve Akış'ta yalnız seçtiğin konuların kelimeleri döner. Hiç seçmezsen hepsi gelir."
+                subtitle: TopicPickerView.intro
             )
             if model.contentSource == .loading {
                 ProgressView()
@@ -197,12 +225,16 @@ struct OnboardingView: View {
                 subtitle: "Öğrenmeye bu kelimeyle başlıyorsun. Hoparlöre dokunup dinleyebilirsin."
             )
             if let word = model.firstDeckWord() {
-                WordCardView(word: word, detail: model.detail(for: word))
+                // No "Söyle" button here: the onboarding never asks for the microphone.
+                WordCardView(word: word, detail: model.detail(for: word), showsSay: false)
                     .padding(.horizontal, -16)
-            } else {
+            } else if model.contentSource == .loading {
                 Text("Kelimeler yükleniyor...")
                     .font(.body)
                     .foregroundStyle(Palette.ink2)
+            } else {
+                Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç. Sorun sürerse Ayarlar > Tanılama'ya bak.")
+                    .font(.body)
             }
         }
     }
