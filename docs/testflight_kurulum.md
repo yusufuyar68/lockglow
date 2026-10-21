@@ -43,6 +43,7 @@ Xcode'un API anahtarıyla otomatik imzası App Groups'u okuyamıyor (`/xcbuild/v
    - yükleme hiç denenmediyse o çalıştırmanın sertifikası ve profilleri hemen silinir;
    - yükleme yarım kaldıysa ya da iş iptal edildiyse hiçbir şey silinmez, bir sonraki başarılı çalıştırma toplar;
    - `Lockglow CI` dışındaki bir profilin kullandığı sertifika (Expo, diğer uygulamalar) asla iptal edilmez.
+   - **Ekipte aynı anda yalnızca bir Apple Distribution sertifikası olabiliyor** (2026-10-21, Apple 409: "You already have a current Distribution certificate"; iOS Distribution yerleri Expo'da dolu). Önceki neslin özel anahtarı bulut makinesiyle gittiği için o sertifika yeniden kullanılamaz; bu yüzden `setup` sertifika yeri doluysa önce eski `Lockglow CI` neslini emekliye ayırır, sonra yenisini oluşturur. Bedeli: bir önceki TestFlight derlemesi Invalid Binary olabilir (yerine yenisi gelir).
 
 Kullanıcı bu geçici sertifika/profil yöntemine 2026-10-20'de izin verdi. Başka sertifika ve profillere dokunulmaz ('Created via API' adlı iki eski geliştirme sertifikası bilerek bırakıldı).
 

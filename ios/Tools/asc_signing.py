@@ -126,17 +126,38 @@ def setup(a: argparse.Namespace) -> None:
            .sign(key, hashes.SHA256()))
     csr_pem = csr.public_bytes(serialization.Encoding.PEM).decode()
 
-    cert_res = None
-    failures = []
-    for ctype in ("DISTRIBUTION", "IOS_DISTRIBUTION"):
-        try:
-            cert_res = call("POST", "/v1/certificates", {"data": {
-                "type": "certificates", "attributes": {"certificateType": ctype, "csrContent": csr_pem}}})["data"]
-            break
-        except ApiError as e:
-            failures.append(f"{ctype}: {e}")
-            if not 400 <= e.status < 500:
-                break  # unknown outcome (network/5xx): do not risk creating a second certificate
+    def create_certificate() -> tuple[dict | None, list[str], bool]:
+        failures, slot_full = [], False
+        for ctype in ("DISTRIBUTION", "IOS_DISTRIBUTION"):
+            try:
+                res = call("POST", "/v1/certificates", {"data": {
+                    "type": "certificates", "attributes": {"certificateType": ctype, "csrContent": csr_pem}}})["data"]
+                return res, failures, slot_full
+            except ApiError as e:
+                failures.append(f"{ctype}: {e}")
+                slot_full = slot_full or e.status == 409
+                if not 400 <= e.status < 500:
+                    break  # unknown outcome (network/5xx): do not risk creating a second certificate
+        return None, failures, slot_full
+
+    cert_res, failures, slot_full = create_certificate()
+    if cert_res is None and slot_full:
+        # The team may hold only one Apple Distribution certificate (409 "You already have a current
+        # Distribution certificate", 2026-10-21) and Expo fills the iOS Distribution slots. The one
+        # slot is held by the previous 'Lockglow CI' generation, whose private key is gone with its
+        # runner. Retire that generation (never a certificate used by any other profile) and retry.
+        # Cost: the previous Lockglow TestFlight build may be marked Invalid Binary; this run replaces it.
+        profiles = all_profiles()
+        old = [p for p in profiles if p["attributes"]["name"].startswith(PROFILE_PREFIX)]
+        keep = set().union(*[cert_ids(p) for p in profiles if p not in old]) if profiles else set()
+        old_certs = (set().union(*[cert_ids(p) for p in old]) - keep) if old else set()
+        if old_certs:
+            print(f"Sertifika yeri dolu; eski Lockglow CI nesli emekliye ayrılıyor: {len(old)} profil, {len(old_certs)} sertifika.")
+            if retire(old, old_certs):
+                cert_res, more, _ = create_certificate()
+                failures += more
+        else:
+            print("Sertifika yeri dolu ama iptal edilebilecek eski bir Lockglow CI sertifikası yok.")
     if cert_res is None:
         sys.exit("Geçici dağıtım sertifikası oluşturulamadı (Apple'ın sertifika sınırı dolu olabilir):\n  "
                  + "\n  ".join(failures))
