@@ -1,143 +1,240 @@
-# Lockglow arayüz önerisi (20 Ekim 2026)
+# Lockglow arayüz önerisi (birleşik tasarım, 21 Ekim 2026)
 
-[`lockglow_ui_mockup.html`](lockglow_ui_mockup.html) tarayıcıda açılan, tıklanabilir bir tasarım önerisi. Swift kodu değişmedi; bu dosya uygulamaya geçirmeden önce bakılacak bir taslak.
+[`lockglow_ui_mockup.html`](lockglow_ui_mockup.html) tarayıcıda açılan, tıklanabilir bir tasarım önerisi. Swift kodu değişmedi. Karşılaştırma 21 Ekim main'ine göre yapıldı; o tarihte açılış akışı, Söyle ve widget hoparlörü main'de.
 
-- **Gezinme:** üstte *Uygulama*, *Widget'lar*, *Marka ve sistem*; *Açık/Koyu* tema; *Düz/Cam (iOS 26)*. Telefonun içinde sekme çubuğu çalışır.
+## Nasıl gezilir
+
+- **Üst çubuk:**
+  - görünümler: *Açılış*, *Uygulama*, *Widget'lar*, *Marka ve sistem*;
+  - tema: *Açık / Koyu*;
+  - sürüm: *iOS 26 (cam) / iOS 17–25*. Sekme çubuğu ve üst düğmeler cam ya da materyal görünür.
 - **Sağ panel:**
   - cihaz (390 × 844 ya da iPhone SE 375 × 667);
   - yazı boyutu (Dinamik Tür, 5 kademe);
   - 44 pt alanlarını gösterme ve otomatik denetim;
-  - her sekmenin ekran durumları;
-  - o ekranın tasarım notu.
-- **Doğrudan bağlantılar:** `#akis`, `#tekrar`, `#sozluk`, `#ayarlar`, `#widgetlar`, `#marka`.
-- **İçerik:** kartlar `content/drafts/kisisel_v1` içinden olduğu gibi alındı (breakfast, borrow, lend, actually, date, appointment, spoon, bread, break, break down, break up, lunch, dinner, currently).
-- **Örnek sayılar:** 124 bildiğim kelime, 48 öğreniyorum gibi sayılar örnektir.
-- **Bağımlılık:** dış kod yok. Mac dışında SF Pro'ya benzesin diye yalnız Google Fonts'tan Inter ve Nunito yükleniyor; internet yoksa sistem yazısına düşer.
+  - her ekranın durumları (ör. "Quiz · yanlış cevap", "Widget güncellemiyor", "Bildirim izni yok");
+  - o ekranın tasarım notu ve Swift notu.
+  - Widget görünümünde ayrıca: tam renk, renklendirilmiş, cam ve kilitli ekranda "Her zaman açık".
+- **Doğrudan bağlantılar:** `#acilis`, `#akis`, `#tekrar`, `#sozluk`, `#ayarlar`, `#widgetlar`, `#marka`.
+- **Yerelde ekran görüntüsü için adres parametreleri:** örneğin `?bare=1&state=quiz-wrong&theme=dark&device=se&dt=3`.
+- **İçerik:** kartlar `content/drafts/kisisel_v1` içinden olduğu gibi alındı. Seviye ve konu sayıları 21 Ekim main taslaklarından (933 kart). "124 bildiğim kelime" gibi sayılar örnektir.
+- **Bağımlılık:** dış kod yok. Mac dışında New York ve SF Pro'ya benzesin diye yalnız Google Fonts'tan Source Serif 4 ve Inter yüklenir.
 
-## Kimlik: "kilit ekranında parlayan kelime"
+## Bu tasarım nasıl seçildi?
 
-Karanlık ekranda ışık yayan bir kelime. Gece için mor-siyah mürekkep, ışık için amber. Amber yalnız önemli yerde yanar:
-- Türkçe karşılığın kutusu;
-- ekrandaki tek ana düğme;
-- seçili öğe;
-- ilerleme.
+Üç tasarımcı aynı brief'le, birbirinden habersiz çalıştı:
+- **A:** okunabilirlik önce;
+- **B:** marka ve kimlik önce;
+- **C:** iOS 26 yerel görünüm önce.
 
-| Ad | Token | Açık | Koyu | Kullanım |
+20 Ekim'deki ilk taslakla (v1) birlikte dört aday, isimsiz olarak üç hakeme gitti. Puanlar 10 üzerinden, ağırlıklı: okunabilirlik %25, erişilebilirlik %20, marka %20, iOS uyumu %20, widget %15.
+
+| Aday | J1 · A2 ve erişilebilirlik | J2 · marka | J3 · iOS ve widget | Ortalama |
 |---|---|---|---|---|
-| Işık | `glow` | `#FFB321` | `#FFBD3F` | Dolgu: ana düğme, seçili düğme, ilerleme. Üstünde yazı **her zaman** `onGlow` (`#1B1200`), 10:1 üstü |
-| Işık yazısı | `glowInk` | `#955000` | `#FFC862` | Bağlantı, seçili sekme, hoparlör, simge. Zeminde 5,6:1 / 12,8:1 |
-| Işık kutusu | `glowTint` | `#FFF1D2` | amber %14 | Türkçe karşılık kutusu, arama vurgusu |
-| Mürekkep | `ink` | `#15131F` | `#F6F3FC` | Ana yazı |
-| İkincil yazı | `ink2` | `#4F4A63` | `#BDB7CF` | Okunuş, çeviri, açıklama (7,7:1 / 10,2:1) |
-| Zemin / yüzey | `bg` / `surface` | `#F5F4F9` / `#FFFFFF` | `#0C0A12` / `#171420` | Hafif mor gri; saf beyaz-siyah değil |
-| Bilemedim | `bad` | `#B42318` | `#FF9D94` | Yanlış şık, Bilemedim |
-| Zor | `hard` | `#9A4A00` | `#FFB27A` | Zor |
-| Doğru | `good` | `#0C6B49` | `#63E3B0` | Doğru şık, "Widget'lar çalışıyor" |
-| Kolay | `easy` | `#1D55C9` | `#93BFFF` | Kolay |
+| **A · Okunabilirlik önce** | 8,25 | 8,51 | 8,53 | **8,43** |
+| C · iOS 26 yerel | 8,09 | 7,82 | 8,40 | 8,10 |
+| B · Marka önce | 8,10 | 8,12 | 7,98 | 8,07 |
+| İlk taslak (v1) | 5,66 | 5,37 | 5,75 | 5,59 |
 
-Bütün yazı/zemin çiftleri WCAG AA'yı (4,5:1) geçiyor; oranlar *Marka ve sistem* sayfasında. **Amber'in iki tonu var:** parlak amber yalnız dolgu içindir, açık temada yazı olarak okunmaz. Yazı ve simgede `glowInk` kullanılır.
+İki hakem A'yı temel önerdi. Birleşik tasarım her adaydan şunları aldı:
+- **A'dan:**
+  - okuma düzeni;
+  - "İngilizce serif, Türkçe SF";
+  - italik ve soluk gri çevirinin kalkması;
+  - "kart sondan kısalır";
+  - etiketli "Dinle" düğmesi;
+  - "Senin seçtiğin: lend = ödünç vermek";
+  - kelime kelime tur özeti.
+- **B'den:**
+  - **fosfor şeridi**, tek marka işareti olarak;
+  - Dikkat'te farkın gösterilmesi;
+  - "Neden?" kutusu;
+  - "Zor da bilinmiş sayılır" ve "Kilitli ekranın yeni kelimeleri…" metinleri.
+- **C'den:**
+  - cam yalnız kontrollerde;
+  - tur sırasında sekme çubuğu gizli;
+  - widget düğme sırası;
+  - satır içi widget'ın kısalma basamakları.
+- **v1'den:**
+  - seviye noktaları;
+  - "Dene" örnekleri;
+  - Ayarlar'ın soru biçimli başlıkları;
+  - anahtar deliği ikonu.
 
-**Yazı:**
-- Kelime ve başlıklar: SF Pro Rounded, Heavy.
-- Diğer her şey: SF Pro.
-- Lisans gerekmez, Dinamik Tür ile büyür.
+**Son eleştirmen turu** "henüz değil" dedi; bulduklarının hepsi bu sürümde düzeltildi:
+- quiz geri bildirimi ekranın altında kalıyordu;
+- koyu temada şerit kuyruklu harflere biniyordu;
+- koyu temada fazla sarı vardı;
+- Dikkat farkı ve "Neden?" mantığı bazı kartlarda yanlıştı;
+- kart, yer varken örneği atıyordu;
+- açılış metinleri main'den farklıydı.
+
+## Kimlik: fosfor şeridi
+
+Lockglow "kilit ekranında parlayan kelime" demek. Türkçede "fosforlu kalem" zaten ışıyan kalemdir. Sarı yalnız **öğrenilecek İngilizce kelimede** durur; geri kalan her şey kâğıt ve mürekkep.
+
+- **Gündüz:** şerit kelimenin alt yarısının arkasındadır (fosforlu kalem çizgisi). Ana düğme mürekkeptir.
+- **Gece:** şerit harflerin arkasından çıkar ve kuyruklu harflerin (y, p, g) de altından geçen, eğik uçlu, hafif ışıyan kalın bir çizgi olur. Hiçbir harf sarının üstüne binmez. Ana düğme fosfor sarısıdır.
+- **Seçili öğeler:** sekme, adım çubuğu, ilerleme, seçili seçenek gece de mürekkep (açık renk) kalır, sarı olmaz.
+
+| Ad | Token | Açık | Koyu | Kullanım | Kontrast (açık / koyu) |
+|---|---|---|---|---|---|
+| Fosfor şeridi | `band` | `#F5E829` | `#E9E040` (alt çizgi) | Yalnız İngilizce kelime ve örnekteki aynı kelime | mürekkep 14:1 |
+| Mürekkep | `ink` | `#15181B` | `#F3F4F0` | Ana yazı | 17,8 / 15,5 |
+| İkincil / üçüncül yazı | `ink2` / `ink3` | `#4E555B` / `#626A71` | `#B7BDC2` / `#8E959B` | Çeviri, IPA, açıklama / yardımcı | 7,6 / 9,0 ; 5,5 / 5,6 |
+| Ana düğme | `primary` / `onPrimary` | `#15181B` / `#FFFFFF` | `#E9E040` / `#15181B` | Ekranın tek dolu düğmesi | 17,8 / 12,9 |
+| Seçili, ilerleme | `tint` / `tintSoft` | `#15181B` / mürekkep %8 | `#F3F4F0` / beyaz %10 | Seçili sekme ve seçenek, adım çubuğu, ilerleme | — |
+| Zemin | `bg`, `surface`, `surface2`, `surface3` | `#F3F3EE`, `#FFFFFF`, `#EBEBE4`, `#DEDED6` | `#0D0F11`, `#191C20`, `#24282D`, `#30353B` | Sayfa, kart, kapsül, iz | — |
+| Çizgi | `line` / `lineStrong` | mürekkep %10 / %22 | beyaz %9 / %18 | Ayırıcı, kenar | — |
+| Doğru | `good` / `goodTint` | `#17703F` / `#DFF2E6` | `#5BD08F` / %16 | Doğru şık, "Çalışıyor" | 4,6 / 6,4 |
+| Yanlış | `bad` / `badTint` | `#B3261E` / `#FBE5E2` | `#FF8C80` / %16 | Yanlış şık, sıfırla | 5,4 / 5,7 |
+| Uyarı | `caution` | `#8F5600` | `#FF9E5A` | Yalnız Dikkat üçgeni | 5,0 / 7,3 |
+
+**Yazı** (ikisi de iOS'ta hazır, lisans gerekmez):
 
 | Rol | Boyut | SwiftUI |
 |---|---|---|
-| Kelime | 44 pt | `.system(size: 44, weight: .heavy, design: .rounded)` + `@ScaledMetric(relativeTo: .largeTitle)` |
-| Türkçe karşılık | 28 pt bold | `.title.weight(.bold)` |
-| Tanım | 20 pt | `.title3` |
-| Örnek / Türkçesi | 17 italik / 16 | `.body.italic()` / `.callout` + `.secondary` |
-| Widget kelimesi | 21 pt | `.title3.weight(.heavy)` + `.fontDesign(.rounded)` |
-| En küçük | 11 pt | `.caption2` (widget alt sınırı) |
+| Kelime (İngilizce) | 40 pt bold, serif | `.system(size: 40, weight: .bold, design: .serif)` + `@ScaledMetric(relativeTo: .largeTitle)`, `.lineLimit(1)` + `.minimumScaleFactor(0.6)` |
+| Türkçe anlam | 28 pt bold | `.title.weight(.bold)` |
+| Tanım (İngilizce) | 20 pt | `.title3` + `.fontDesign(.serif)` |
+| Örnek (İngilizce) / Türkçesi | 17 / 16 pt | `.body` serif, italik yok / `.callout` + ink2 |
+| Widget kelimesi | 20 pt bold, serif | `.title3.bold()` + `.fontDesign(.serif)`, `.widgetAccentable()` |
+| Satır içi widget | sistem yazısı | yazı tipi ayarı uygulanmaz |
+| En küçük | 11 pt | `.caption2` |
 
-**İkon:** A önerisi "anahtar deliğinden sızan ışık": harfsiz, 29 pt'de de seçiliyor. iOS 26 için dört görünüm çizildi: varsayılan, koyu, renklendirilmiş, cam. Icon Composer'da üç katman olur: zemin, hale, anahtar deliği. B önerisi ("Aa" kilidi) yedek. Mağazadan önce TÜRKPATENT ve marka vekili görüşü bekleniyor (DEVIR.md).
+**İkon:** fosfor şeridinden oyulmuş bir anahtar deliği; kilit ve ışık tek şekilde.
+- iOS 26 Icon Composer katmanları: zemin, şerit, anahtar deliği.
+- Varyantlar: varsayılan, koyu, renklendirilmiş, cam.
+- Yedek: şeritte serif "l".
+- Mağazadan önce TÜRKPATENT ve marka vekili görüşü bekleniyor (DEVIR.md).
 
-## Ekran ekran kararlar
+## Altı kural
 
-"Yeni öneri" yazanlar bugünkü kodda yok.
+1. **Şerit = öğrenilecek kelime.** Sarı yalnız kelimenin şeridinde ve örnekteki aynı kelimede olur. Gece ana düğme de sarıdır. Arama eşleşmesi ve Dikkat farkı sarı değil, kalın ve çizgilidir. Seçili öğeler mürekkeptir.
+2. **Kapsül = dokunulur.** Dokunulan her şey dolu ya da kenarlı bir kapsüldür. Mavi bağlantı rengi yoktur.
+3. **Yazı tipi dili gösterir.** İngilizce serif, Türkçe ve arayüz SF Pro. Üçüncü bir aile (ör. SF Rounded) yok.
+4. **Renk tek başına anlam taşımaz.** Doğru ve yanlış hep simge ve kelimeyle gösterilir; seviye rozetinde nokta sayısı vardır.
+5. **Kart sondan kısalır.** Sıra şöyle:
+   1. yazı küçülür, etiket ve "Ayrıca" gizlenir;
+   2. Dikkat açıklaması gizlenir;
+   3. Dikkat tek satıra iner;
+   4. örnek de tek satıra iner.
+
+   Erişilebilirlik boyutlarında sayfalama kapanır ve kart akışla birlikte kayar. Kart içinde ayrıca kaydırma yoktur.
+6. **Cam yalnız kontrol katmanında.** Sekme çubuğu ve Bitir, geri, Kapat düğmeleri camdır. Kartlar, şıklar, cevap düğmeleri, Devam ve Başla opaktır.
+
+## Ekran ekran (21 Ekim main'ine göre)
+
+Etiketler: **main** = main'de aynısı var; **değişiklik** = main'de farklı; **yeni** = main'de yok.
+
+**Açılış.** Metinler main'deki `OnboardingView`, `TopicPickerView.intro`, `displayName` ve `WidgetGuideContent` ile birebir aynı.
+- *Değişiklik:* yalnız görünüm.
+- *Yeni:* rehberde widget'ın yerini gösteren küçük önizleme.
+- Konular sayfasında main'deki `DeckSummaryLine` var ("Seçili: N kelime", yeni kelime sayısı, küçük destede uyarı).
+- İlk kelime kartında Söyle gizli (main'deki `showsSay: false`).
 
 **Akış**
-- Okuma sırası değişmedi: kelime → Türkçe karşılık → kısa tanım → örnek ve Türkçesi → Dikkat. Türkçe karşılık amber kutuda.
-- Seviye rozetinde nokta sayısı da var (A1 bir, A2 iki, B1 üç).
-- Dikkat kutusunda "Yanlış/Doğru" etiketi, simge ve üstü çizili yazı birlikte; anlam renge bağlı değil.
-- Uzun kart kendi içinde kayar, sayfa geçişi bozulmaz.
-- *Yeni öneri:* kart altında "Biliyorum" düğmesi.
+- *Main:*
+  - okuma sırası; Söyle (mikrofon) düğmesi;
+  - Söyle sayfasının durumları: Dinliyorum → Kontrol ediliyor → Doğru! / Neredeyse! / Bir daha dene / Seni duyamadım. İzin kapalıysa "Söyle şu an çalışmıyor" ve "Ayarları aç". Metinler `PronunciationPracticeView` ve `PronunciationFeedback`'ten.
+- *Değişiklik:*
+  - kelimenin sesi için hoparlör simgesi yerine "Dinle" kapsülü. Kapsül ve mikrofon aynı satırdadır;
+  - Söyle sonucunda yeşil, turuncu ve kırmızı yerine tema renkleri (`good`, `caution`, `bad`) ve aynı tonda açık zemin.
+- *Yeni:*
+  - sondan kısalma basamakları;
+  - kart altında "Biliyorum" (bildiğin kelimede "Bildiğin kelime ✓" ve "Geri al");
+  - ilk kartta "Şu an kilitli ekranda". Bu etiket yalnız kilitli ekranda widget varsa çıkar (`WidgetCenter.getCurrentConfigurations`).
+- Sayaç ve sayfa noktası yok.
 
 **Tekrar**
-- Başlangıç: günlük hedef halkası (6/10), tek amber "Başla" düğmesi. Seri ve puan yok.
-- Yeni kelime: ön yüzde yalnız kelime ve okunuş; kartın tamamı ve "Anlamı göster" anlamı açar.
-- Cevaplar 2×2: Bilemedim, Zor, Bildim, Kolay. Bu düzen, simgeler (tortoise, hare) ve sıra Zor/Kolay oturumunun koduyla aynı. Bildim amber ve varsayılan.
-- *Yeni öneri:* her cevap düğmesinin altında ne olacağı ("10 dk sonra", "1 gün sonra"). Mockup'taki süreler örnek; gerçek değer `Leitner.review` ile önceden hesaplanmalı.
-- Boşluk doldurma:
-  - boşluk amber çizgi;
-  - cevaptan sonra kelime cümlenin içinde vurgulu yazılır ve cümle dinlenir;
-  - doğru şık yeşil + "Doğru cevap" + ✓, yanlış seçim kırmızı + "Yanlış" + ✕;
-  - doğru cevapta "Devam" ve isteğe bağlı "Zordu / Kolaydı".
-- *Yeni öneri:* yanlış cevapta kartın Dikkat kutusu çıkar.
-- *Yeni öneri:* tur sonunda ayrı özet ekranı: bildiğin/toplam halkası, dört cevabın sayısı, "Yakında yeniden gelecek" listesi.
-- Bugünlük tamam: ışıklı mühür, bugünün üç sayısı, ikincil "5 yeni kelime daha". *Yeni öneri:* yarının kısa özeti ve hedefe giden bağlantı.
+- *Main:* 2×2 cevaplar; quiz'de doğruda "Devam" + "Zordu / Kolaydı", yanlışta yalnız "Devam".
+- *Değişiklik:* yeni kelime turunun alt yazısı "sonra bildin mi işaretle." yerine "sonra ne kadar bildiğini seç." Artık dört cevap var.
+- *Yeni:*
+  - cevap düğmelerinde süre ("10 dakika sonra", "12 saat sonra", "yarın", "2 gün sonra");
+  - tur sırasında sekme çubuğu gizli;
+  - quiz'de cevaptan sonra yalnız doğru şık ve yanlış seçim kalır ve geri bildirim görünür alana kayar;
+  - yanlışta "Senin seçtiğin: lend = ödünç vermek" (kart yoksa yalnız kelime), seçilen kelime kartın Dikkat cümlelerinde geçiyorsa "Neden?" ve "Bu kelime 10 dakika sonra yine gelir";
+  - kelime kelime tur özeti;
+  - bugünlük tamam ekranında sıradaki tekrar (en erken `dueAt`, ör. "bugün 21:40"), "Hatırlatma: 20:00" ve kilitli ekran notu.
+- Başlangıçta halka yalnız yeni kelime turunda görünür.
 
 **Sözlük**
-- Arama kutusu hep görünür (52 pt). Boş ekranda "Dene" örnekleri var: kahv, odunc, randevu, break.
-- Türkçe harfsiz yazınca da bulur: "odunc" → ödünç.
-- Eşleşen kısım vurgulanır. Türkçeden bulunan satırda "Türkçe eşleşme" yazar.
-- *Öneri:* "Ayrıca" karşılıkları da aransın ("randevu" → date). Şimdiki `ContentStore.search` bunu yapıyor mu, bakılmalı.
-- Kart ayrıntısı:
-  - tüm örnekler, her birinde hoparlör;
-  - tüm Dikkat kutuları, not, hafıza ipucu, birlikte kullanılanlar;
-  - durum satırı ve tek düğme ("Biliyorum" / "Öğrenmeye geri al").
+- *Main:* arama ve Söyle.
+- *Yeni:*
+  - boş kutuda "Dene" örnekleri;
+  - eşleşen kısım kalın ve çizgili;
+  - "Türkçe harfleri yazmasan da bulur" ipucu.
+- Ayrıntı ekranında Durum en sonda: ayrı bir satır ve kenarlı düğme ("Biliyorum olarak işaretle" / "Öğrenmeye geri al").
 
 **Ayarlar**
-- En üstte widget durumu: "Widget'ların çalışıyor". Teknik ekran (Widget sağlığı) bir dokunuş ötede.
-- Sıklık (5 dk – 2 saat) ve günlük hedef: açılır menü yerine hepsi görünen düğmeler. En büyük yazıda alt alta dizilir.
-- Hatırlatma: anahtar ve saat. İzin reddedildiyse açıklama ve "Bildirim iznini aç".
-- İlerleme: üç sayı. *Yeni öneri:* seviye çubukları (kart sayıları A1 179, A2 348, B1 227).
-- Bildiğim kelimeler: her satırda görünür "Geri al" düğmesi; kaydırma da çalışır. Geri alınca alt bildirim çıkar, "Vazgeç" ile geri döner.
-- Widget sağlığı: terimler sade Türkçe ("Veri paylaşımı açık", "Sıradaki kelime sayısı"). Eski etiketler "Teknik bilgiler" altında.
-- "İlerlemeyi sıfırla" en altta ve ayrı; onay sayfası sorar.
-- Yedekten kurtarma uyarısı da çizildi.
+- *Main:* "Öğrenme" ve "Yardım" bölümleri; hatırlatma saati (`DatePicker`, kompakt). İzin reddedilince anahtar kapalı kalır ve "Bildirim iznini aç" çıkar.
+- *Yeni:*
+  - Widget bölümünde "Widget sağlığı ✓ Çalışıyor" satırı; bozuksa "⚠ Güncellemiyor";
+  - soru biçimli başlıklar;
+  - 46 pt seçenek düğmeleri;
+  - "bir ayda yaklaşık 300 kelime" açıklaması.
 
 **Widget'lar**
-- **Okuma sırası:** sıra aynı. Sığmazsa önce tanım kısalır: `ViewThatFits` sırası `HomeWordViews.swift` ile aynı. Mockup sığan düzeni gerçekten ölçerek seçiyor; SE'deki 141 pt widget'ta da deneyebilirsin.
-- **Ses önerisi:** kelime satırının tamamı düğme (yükseklik 44 pt, görünen hoparlör 16 pt).
-  - Küçük widget'ta üçüncü bir düğmeye yer yok: 3 × 44 = 132 pt, içerik alanı 126 pt; SE'de 109 pt.
-  - Bu yerleşim yeni yer istemiyor.
-  - Riski var: kelimeye dokunup uygulamayı açmak isteyen sesi çalabilir. Cihazda denenmeli.
-- **Renklendirilmiş / Cam modları:** arka plan gider. Kimliği yuvarlak kalın kelime ve `.widgetAccentable()` taşır. Renkli modda sağ üst köşede hafif amber ışık var.
-- **Kilit ekranı:** renk yok (vibrant). Hiyerarşi kalınlıkla kurulur.
-- **Satır içi widget:** *yeni öneri:* yalnız ilk karşılık gösterilsin. "actually · aslında, gerçekte" sığmaz; "actually · aslında" sığar.
-
-**Cam (iOS 26).** Önerim: yalnız yüzen parçalar cam olsun (sekme çubuğu, üst düğmeler, sabit alt düğme). İçerik kartı düz kalsın; uzun metin camın üstünde zor okunur. "Cam" düğmesi her şeyi camlaştırıp farkı gösteriyor.
+- *Main:* hoparlör (`SpeakWordButton`) ve 8 pt taşan düğme grubu; sıra **Sonraki · hoparlör · Biliyorum**.
+- *Değişiklik:* sıra **Biliyorum · Dinle · Sonraki**. Böylece "Sonraki" kolay köşede (küçükte sağ alt, ortada en alt) olur ve "Biliyorum" yanlışlıkla basılmaz (ios/README madde 34). Orta boyda "Sonraki 10:00" yerine "Yeni kelime: 10:00".
+- *Yeni:*
+  - orta boyda örnek, kelimeyi içeren en kısa cümle (kelimeden önce kesilmez);
+  - renklendirilmiş, cam ve kilitli ekranda şerit, harflerin altından geçen ince tek renk çizgi; yalnız kelime ve çizgisi renk alır;
+  - satır içi widget kısalır: "actually · aslında, gerçekte" → "actually · aslında" → "actually".
 
 ## Swift'e geçirirken dikkat
 
-1. **Renkler:** Asset Catalog'da "Any / Dark" görünümleriyle: `Glow`, `GlowInk`, `GlowTint`, `OnGlow`, `Ink2`, `Bad`, `Hard`, `Good`, `Easy`. Widget hedefi de aynı renkleri görmeli: katalog iki hedefe de eklenmeli.
-2. **Amber düğme:** `.borderedProminent` + `.tint(Color("Glow"))` etiketi beyaz yapar ve okunmaz. `.foregroundStyle(Color("OnGlow"))` ekle.
-3. **Seçili sekme:** `TabView` için `.tint(Color("GlowInk"))`. Parlak amber açık temada sekme yazısında okunmaz.
-4. **Kelime boyutu:** `@ScaledMetric(relativeTo: .largeTitle) var headword: CGFloat = 44`, `.lineLimit(1)` + `.minimumScaleFactor(0.7)`. Mockup'ta kelime 58 pt'de duruyor; çok uzun kelimeler en büyük boyutta kart dışına taşmasın.
-5. **Dinamik Tür:** `@Environment(\.dynamicTypeSize)`.
-   - `isAccessibilitySize` iken seçim düğmeleri `VStack`'e geçer, cevap simgeleri ve alt yazıları gizlenir.
-   - Basit yol: `ViewThatFits { HStack {…}; VStack {…} }`.
-6. **44 pt:** `.frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())`.
-   - Widget kelime satırını düğme yaparken yükseklik 44 pt olmalı ama düzeni itmemeli.
-   - Yöntem: `.padding(.vertical, 9)` + `.padding(.vertical, -9)` ya da `overlay` içinde şeffaf düğme.
-7. **Büyük harf:** Türkçe metni büyük harfe çevirme. "i" → "I" olur, "İ" olmaz. `Section` başlıklarına güvence için `.textCase(nil)` ver.
-8. **Cam:** `if #available(iOS 26, *) { .glassEffect(…) } else { .background(.thinMaterial) }`. Proje iOS 17'yi hedefliyor.
-9. **Widget görünüm modları:**
-   - `@Environment(\.widgetRenderingMode)` `.accented` iken yalnız metin.
-   - `containerBackground` zorunlu.
-   - Kilit ekranı dikdörtgeninde `AccessoryWidgetBackground()`.
-   - Satır içi için `glossTR.split(separator: ",").first`.
-10. **Hareket:** `@Environment(\.accessibilityReduceMotion)` açıkken halka, nabız ve kart geçişi animasyonsuz. Cevapta `.sensoryFeedback(.success / .error, trigger:)`.
-11. **Diğer oturumlarla uyum:**
-    - Cevap düğmeleri ve quiz sonrası "Ya da bu soru nasıl geldi?" Zor/Kolay oturumunun yaptığıyla aynı. Bu tasarım yalnız renk, alt yazı ve yerleşim ayrıntısı ekliyor.
-    - Widget ses düğmesinin yeri yalnız öneri. Widget oturumunun kararı geçerli.
+1. **Renkler:** yukarıdaki tablonun hepsi Asset Catalog'a "Any / Dark" (ve "Yüksek kontrast") olarak girer, widget hedefi dahil.
+2. **`GlowStyle.swift` (main) eşlemesi:**
+
+   | Şimdi | Yeni |
+   |---|---|
+   | `Palette.glow` (dolgu) | `primary` |
+   | `onGlow` | `onPrimary` |
+   | `glowInk` | `tint` |
+   | `glowTint` | kaldırılır; Türkçe anlam kutusuz |
+   | diğerleri | tablodaki yeni değerler |
+
+   Bileşenlerde:
+   - `GlowButtonStyle` → `Capsule()`.
+   - `ChoiceRow` seçili hâli: dolgu `surface`, 2 pt `tint` çerçeve, simge `tint`.
+   - `SegmentButtons` seçili düğme: dolgu `surface`, yazı `ink`, 1,5 pt `tint` iç çerçeve. Adı değiştirmekle bırakılırsa yeni beyaz dolgu üstünde beyaz yazı çıkar.
+3. **Yuvarlak yazıyı kaldır:**
+   - `.fontDesign(.rounded)`: `OnboardingView.swift:293`, `:315`, `WidgetGuideView.swift:88`.
+   - `.italic()`: `CardDetailViews.swift:17`, `ReviewView.swift:125`, `HomeWordViews.swift:167`, `PronunciationPracticeView.swift:131`.
+4. **Şerit:**
+   - Açık temada `Text` arkasında eğik kenarlı bir `Path` (alt %60).
+   - Koyu temada ve `widgetRenderingMode` `.accented` / `.vibrant` iken: kalınlık 0,13 em (widget'ta 0,1 em). Üst kenar `font.descender` + 2 pt aşağıda, uçlar eğik. Koyu temada arkasında bulanık sarı ışıma.
+   - Kelime ve şerit `.widgetAccentable()`.
+5. **Dikkat farkı:** doğru cümle " / " ile bölünür; yanlış cümle ilk seçenekle kelime kelime karşılaştırılır (en uzun ortak dizi). Farklı kelime yanlışta `.underline(pattern: .dot, color: bad)`, doğruda `.underline()` + bold.
+6. **Quiz:**
+   - Seçilen kelimenin anlamı için yeni bir `model.lookup(lemma:)` gerekir (main'de yok).
+   - "Neden?" yalnız seçilen kelime Dikkat'in yanlış ya da doğru cümlesinde **tam kelime olarak** geçiyorsa gösterilir.
+   - Cevaptan sonra `ScrollViewReader.scrollTo(…, anchor: .bottom)`.
+7. **Kart sondan kısalır:** `ViewThatFits(in: .vertical)` ile 5 basamak (kural 5). `dynamicTypeSize.isAccessibilitySize` iken sayfalama (`.scrollTargetBehavior(.paging)`) kapanır.
+8. **Cevap süreleri:** `Leitner.review(progress, grade:, at: now).dueAt` ile hesaplanır, elle yazılmaz. Zamanı gelmiş kelimede değerler kutuya göre değişir (kutu 1: Bildim 2 gün, Kolay 4 gün). `ReviewView.hint(for:)` bugün yalnız kutu değişimini söylüyor; ipucu da `dueAt`'ten kurulmalı. AX boyutlarında süre görünmez, ipucunda kalır.
+9. **Tur sırasında:** `.toolbar(.hidden, for: .tabBar)`. Cevaplar ve Devam `.safeAreaInset(edge: .bottom)` içinde, opak (`.borderedProminent` / `.bordered`).
+10. **Cam:** tek yardımcı yalnız Bitir, geri ve Kapat için. `if #available(iOS 26, *) { .glass } else { .bordered }`.
+11. **Widget:**
+    - `HomeWordViews.swift`'te küçük ve orta overlay'lerde `NextWordButton` ile `KnowWordButton` yer değiştirir.
+    - ios/README madde 45 ve `WidgetSnapshotTests` referansları güncellenir.
+    - `widgetURL` gövde dokunuşunda kalır; kelimenin kendisi düğme değildir.
+12. **Arama vurgusu:** `TextFold.fold` NFKD kullanır ve boşlukları birleştirir, yani konumlar kayar. Harf harf katlayıp bir konum eşlemesi tutulmalı.
+13. **Saat yazımı:** Türkçe ek gerektiren "20:00'de" yerine "Hatırlatma: 20:00", "Yeni kelime: 10:00".
+14. **Erişilebilirlik:**
+    - İngilizce metinde `accessibilitySpeechLanguage = "en-US"`, IPA `.accessibilityHidden(true)`.
+    - Anlam "Türkçesi: …" diye okunur; bölüm başlıklarına `.isHeader`; `Section` başlıklarında `.textCase(nil)`.
+    - `accessibilityReduceMotion` açıkken nabız ve geçişler kapanır.
+15. **Söyle sonucu:** `FeedbackPanel`'de `.green` / `.orange` / `.red` yerine `good` / `caution` / `bad`. Panelin zemini `goodTint`, %14 `caution` ya da `badTint`. Başlık ve simge kalır; renk tek başına anlam taşımaz (kural 4).
 
 ## Açık sorular
 
-- Yeni kelimede "Zor" ne yapacak, alt yazıda ne yazmalı? (Mockup "yakında" diyor.)
-- Akış'a "Biliyorum" düğmesi eklensin mi? Widget'taki gibi sınamadan "bilinen" yapar.
-- Tur özeti ayrı ekran mı olsun, yoksa bugünkü gibi başlangıç ekranının üstünde kutu mu kalsın?
-- İkon A mı, B mi?
-- Hepsi cihazda denenmeli. Özellikle widget kelime satırının ses düğmesi olması ve kilit ekranında okunabilirlik.
+- Akış'a "Biliyorum" düğmesi eklensin mi? Widget'taki gibi, sınamadan "bilinen" yapar.
+- Tur özeti ayrı ekran mı olsun, yoksa bugünkü gibi başlangıç ekranında kutu mu kalsın?
+- İkon: anahtar deliği mi, şeritte "l" mi?
+- "Dinle" kapsülü alınırsa açılıştaki "Hoparlöre dokunup dinleyebilirsin" cümlesi "Dinle'ye dokunup…" olmalı.
+- Cihazda denenmeli:
+  - gece şeridinin ve kilitli ekrandaki çizginin okunması;
+  - widget sesinin uygulama açılmadan çalması;
+  - yeni düğme sırasının alışkanlığa etkisi;
+  - kenar boşluğu hesabı.
