@@ -50,10 +50,10 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
 
 ## Hemen sıradaki iş
 
-1. **Dahili test grubu:** App Store Connect → Lockglow → TestFlight → Internal Testing'de grup açıp kullanıcıyı (hesap sahibi) ekle, en yeni build'i ver. Kullanıcı izin verdi (2026-10-21); **App Store Connect girişini kullanıcı yapar** (tarayıcı paneli).
-2. Söyle + açılış akışını içeren yeni build: `gh workflow run testflight.yml -R yusufuyar68/lockglow --ref main -f runner=macos-15-intel`.
+1. **Dahili test grubu hazır** ("Ben", bütün derlemeler; hesap sahibi test eden): `gh workflow run testflight_group.yml`. Kullanıcı iPhone'a TestFlight'ı kurup daveti kabul eder.
+2. Build 23 (21 Ekim, bütün özellikler) VALID. Yeni build: `gh workflow run testflight.yml -R yusufuyar68/lockglow --ref main -f runner=macos-15-intel`.
 3. Kullanıcı iPhone'a TestFlight'ı kurar; ilk deneme `ios/README.md` → kontrol listesi. Gelen geri bildirimle düzelt.
-4. Arayüz tasarımı (`tasarim/arayuz-mockup` dalı, `docs/tasarim/`) bitince main'e birleştir ve uygulamaya renk/tipografi olarak taşı.
+4. Arayüz tasarımı `docs/tasarim/` (main'de, 2026-10-21): renk ve tipografiyi uygulamaya taşı; tasarım oturumunun son düzeltmeleri gelirse onları da birleştir.
 
 ## Çalışma kuralları (önemli)
 
@@ -67,11 +67,8 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
 - **Kişisel bilgiler:** Apple sayfalarında görünen telefon ya da adres bilgilerini hiçbir yere yazma. Kullanıcının e-postasını dış servislere gönderme.
 - **Git:**
   - Bu özel depoya push için onay var. Commit mesajları Türkçe.
-  - Ana çalışma klasörü bazen başka bir oturumun dalında olabilir: `pipeline/critic-quiz-backtranslation`. O dalda içerik hattı istem kuralları var: eleştirmen rubriği, tek doğru cevap kuralı. Henüz main'e birleşmedi; birleştirmeden önce kullanıcıya sor.
-  - `main` üzerinde çalışırken o dala dokunma; geçici bir worktree kullan:
-    ```
-    git worktree add --detach <geçici-klasör> origin/main
-    ```
+  - `pipeline/critic-quiz-backtranslation` (eleştirmen rubriği, tek doğru cevap kuralı) 2026-10-21'de main'e birleşti.
+  - Paralel oturumlar ana klasörde dal değiştirmez; kendi worktree'lerinde çalışır (`git worktree add -b <dal> <yol> origin/main`). Dallarını koordinatör oturum kontrol edip main'e birleştirir (kullanıcı izni 2026-10-21).
 - **GitHub Actions kotası:**
   - Özel depoda macOS dakikaları **10 kat** sayılıyor. Depo 20 Ekim'de `yusufuyar68` hesabına taşındı; kota bu hesabın kotası (ücretsiz planda ayda 2000 dakika).
   - `build.yml`'nin macOS işi yalnızca elle çalışır; Linux Swift testleri her push'ta bedava.
@@ -86,7 +83,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
 
 ## Açık işler (öncelik sırasıyla)
 
-1. **TestFlight test grubu** (yukarıda; kullanıcının App Store Connect girişini bekliyor).
+1. **Telefonda ilk deneme** (TestFlight hazır; kullanıcı daveti kabul edecek).
 2. **Telefonda deneme ve düzeltmeler.** Gerçek widget yenilenmesi, bildirim zamanlaması ve ses kalitesi yalnızca cihazda görülür (`ios/README.md` → "Bilinen belirsizlikler").
 3. **İçerik:**
    - Her akışın `REVIEW.md` sonunda "anadili Türkçe birinin bakması gerekenler" listesi var. Kullanıcı isterse onunla birlikte geç.
