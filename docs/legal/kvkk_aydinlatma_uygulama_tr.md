@@ -34,7 +34,7 @@ Uygulama hesap gerektirmez; öğrenme verileriniz (seviye, kaydedilen kelimeler,
 | **Diğer: hata kaydı** ([SEÇENEKLİ — Sentry kullanılacaksa], yalnızca açık rızanızla) | Çökme ve hata raporu: uygulama/iOS sürümü, cihaz modeli, hatanın teknik izi | Çökmeleri bulmak ve gidermek | **Hayır, isteğe bağlı** (açık rıza) |
 | **Hukuki işlem** | Uyuşmazlık veya yasal talep hâlinde ilgili kayıtlar | Hukuki yükümlülükleri yerine getirmek, hakkın tesisi, kullanılması veya korunması | Hukuki gerekliliğe bağlı |
 
-**Özel nitelikli kişisel veri işlenmez.** Konum, rehber, fotoğraf, kamera, mikrofon, sağlık verisi, ödeme kartı bilgisi ve reklam kimliği (IDFA) toplanmaz. Uygulamada reklam yoktur ve uygulamalar arası izleme yapılmaz. Verileriniz otomatik karar verme sistemleriyle hakkınızda hukuki sonuç doğuracak biçimde değerlendirilmez.
+**Özel nitelikli kişisel veri işlenmez.** Konum, rehber, fotoğraf, kamera, sağlık verisi, ödeme kartı bilgisi ve reklam kimliği (IDFA) toplanmaz. Mikrofon yalnızca Söyle (telaffuz) alıştırması sırasında, izninizle ve cihaz içinde kullanılır; ses kaydedilmez, saklanmaz ve aktarılmaz. **[TEYİT: avukat; yalnız cihazda işlenen sesin KVKK anlamında "işleme" sayılıp sayılmadığı, `README.md` §6 soru 20.]** Uygulamada reklam yoktur ve uygulamalar arası izleme yapılmaz. Verileriniz otomatik karar verme sistemleriyle hakkınızda hukuki sonuç doğuracak biçimde değerlendirilmez.
 
 ## 3. Kişisel verilerin kimlere ve hangi amaçla aktarılabileceği
 

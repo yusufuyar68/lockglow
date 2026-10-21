@@ -256,6 +256,16 @@ def user_a(row: PlanRow) -> str:
     )
 
 
+def user_c(row: PlanRow, card: dict, b: dict | None) -> str:
+    """Geri çeviri karta yazılmaz (yayın öncesi atılan öz denetim alanı); eleştirmene yalnızca burada gider."""
+    return USER_C.format(
+        ipa_us_ref=row.ipa_us_ref or "none",
+        ipa_uk_ref=row.ipa_uk_ref or "none",
+        entry_json=json.dumps(card, ensure_ascii=False, indent=1),
+        backtranslation_json=json.dumps((b or {}).get("backtranslation", []), ensure_ascii=False, indent=1),
+    )
+
+
 def build_requests(run: Run, stage: str, model: str, effort: str) -> list[tuple[str, str, dict]]:
     """(custom_id, card_id, params) listesi. Önceki aşaması başarılı olan ve bu aşaması eksik kartlar."""
     reqs: list[tuple[str, str, dict]] = []
@@ -276,9 +286,7 @@ def build_requests(run: Run, stage: str, model: str, effort: str) -> list[tuple[
             card = _read_draft(run, cid)
             if card is None or card.get("meta", {}).get("status") != "draft" or "det_errors" in card["meta"].get("qa_flags", []):
                 continue
-            params = _params(model, effort, system_c(),
-                             USER_C.format(ipa_us_ref=row.ipa_us_ref or "none", ipa_uk_ref=row.ipa_uk_ref or "none",
-                                           entry_json=json.dumps(card, ensure_ascii=False, indent=1)), STAGE_C_SCHEMA)
+            params = _params(model, effort, system_c(), user_c(row, card, run.read_output("b", cid)), STAGE_C_SCHEMA)
         else:
             raise ValueError(stage)
         # custom_id yalnızca [A-Za-z0-9_-] ve ≤64 karakter olabilir; kart ID'sinde nokta var.

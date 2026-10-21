@@ -1,13 +1,13 @@
 import SwiftUI
 import CoreModels
 
-/// Vertical paging feed: one full-page card per word (iOS 17 scroll APIs).
+/// Vertical paging feed: one full-page card per word of the user's deck (iOS 17 scroll APIs).
 struct FeedView: View {
     @EnvironmentObject private var model: AppModel
     @Binding var scrolledWordID: Int?
 
     var body: some View {
-        if model.words.isEmpty {
+        if model.feedWords.isEmpty {
             emptyState
         } else {
             pager
@@ -17,7 +17,7 @@ struct FeedView: View {
     private var pager: some View {
         ScrollView(.vertical) {
             LazyVStack(spacing: 0) {
-                ForEach(model.words) { word in
+                ForEach(model.feedWords) { word in
                     WordCardView(word: word, detail: model.detail(for: word))
                         .containerRelativeFrame([.horizontal, .vertical])
                 }
@@ -48,16 +48,22 @@ struct FeedView: View {
 /// English definition, then the example with its Turkish translation, then one typical mistake.
 /// `detail` is nil for seed words: the card then shows the example without a translation.
 /// Only the first example and the first mistake are shown so that a page never overflows.
+/// `showsSay: false` hides the microphone (a card shown where no permission prompt may appear).
 struct WordCardView: View {
     let word: WidgetWord
     let detail: CardDetail?
+    var showsSay = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .center, spacing: 4) {
                 Text(word.lemma)
                     .font(.largeTitle.bold())
+                    .layoutPriority(1)
                 SpeakButton(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                if showsSay {
+                    SayButton(word: word, example: word.exampleEN)
+                }
             }
             if let ipa = word.ipaUS {
                 Text(ipa)

@@ -83,7 +83,9 @@ struct WordDetailView: View {
                     HStack(alignment: .center, spacing: 4) {
                         Text(word.lemma)
                             .font(.largeTitle.bold())
+                            .layoutPriority(1)
                         SpeakButton(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                        SayButton(word: word, example: word.exampleEN)
                     }
                     if let ipa = word.ipaUS {
                         Text(ipa)

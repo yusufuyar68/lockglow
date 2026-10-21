@@ -295,8 +295,9 @@ Turkish-specific tech note: uppercasing must be locale-aware (`uppercased(with: 
 | sensible | hassas | duyarlı | mantıklı |
 | eventually | eventüel | olası (**marginal**: not in TDK, used in formal/commercial Turkish and via French/German) | sonunda |
 
-### 5.6 Quality rubric (score 0/1/2 each, max 22)
-Critical (must be 2, or 1 with a reviewer note): sense accuracy; Turkish gloss correctness and sense match; safety/inclusivity; etymology truthfulness. **PASS = 18 or more and no 0.**
+### 5.6 Quality rubric (score 0/1/2 each, max 24)
+Critical (must be 2, or 1 with a reviewer note): sense accuracy; Turkish gloss correctness and sense match; safety/inclusivity; etymology truthfulness; quiz validity. **PASS = 20 or more and no 0.**
+(2026-10-13: criterion 12 added after the 474-card review, where multi-answer cloze quizzes were the most frequent problem. Previously 11 criteria, max 22, PASS 18.)
 
 | # | Criterion |
 |---|---|
@@ -311,6 +312,7 @@ Critical (must be 2, or 1 with a reviewer note): sense accuracy; Turkish gloss c
 | 9 | Etymology truthfulness, null allowed (critical) |
 | 10 | Level and tags plausible (CEFR, topics; exam tags only from curated lists) |
 | 11 | Pronunciation (IPA and stress verified) |
+| 12 | Quiz validity: exactly one option fits the blank, no distractor also works (critical) |
 
 ---
 
@@ -337,7 +339,7 @@ RULES
 4 etymology.text (<=200 chars): one verifiable, interesting fact in plain words. NEVER folk etymologies or acronym myths. If disputed, say so; if unsure return null. confidence: high|medium|low.
 5 ipa: broad phonemic, US and UK, with stress marks. Prefer {{ipa_ref}} if supplied; otherwise null + uncertain.
 6 level: CEFR estimate (+level_confidence 0-1). "S" only for rare/literary/"fancy" words beyond C2 or outside learner lists. Recent coinages: tags.flags ["coined"].
-7 quiz.cloze (<=100 chars, one ______), answer = exact form, 3 distractors (<=16 chars) that are clearly wrong in context.
+7 quiz.cloze (<=100 chars, one ______), answer = exact form, 3 distractors (<=16 chars) that are clearly wrong in context. Exactly one option may fit: no distractor may also complete the sentence correctly or naturally.
 8 If the word is offensive, sexual, violent or a slur: set tags.sensitivity (1 mild, 2 strong), write NO examples, return {"skip_reason": "..."}.
 
 INPUT
@@ -372,13 +374,13 @@ FALSE_FRIEND_SEED: {{ff_list}}
 ### Prompt C: QA critic
 ```
 SYSTEM
-You are a strict QA editor for a bilingual EN->TR vocabulary app. Be skeptical: LLM entries often contain (a) invented or folk etymologies, (b) examples that define the word, (c) a gloss for the wrong sense, (d) over-literal Turkish, (e) CEFR levels too low for rare words, (f) wrong IPA stress, (g) invented false friends.
-Score each RUBRIC criterion 0/1/2 with a one-line reason, then give a verdict: PASS (total >= 18/22, no critical 0), FIX (list exact field edits) or REJECT.
-Explicitly verify: lemma not in definitions; every example contains its "focus"; Turkish examples faithful to the backtranslation; etymology not in MYTHS and plausible; lengths within limits; false_friend claim is real; example 1 is lock-screen safe; IPA stress matches IPA_REF if given.
+You are a strict QA editor for a bilingual EN->TR vocabulary app. Be skeptical: LLM entries often contain (a) invented or folk etymologies, (b) examples that define the word, (c) a gloss for the wrong sense, (d) over-literal Turkish, (e) CEFR levels too low for rare words, (f) wrong IPA stress, (g) invented false friends, (h) quiz blanks that more than one option could fill.
+Score each RUBRIC criterion 0/1/2 with a one-line reason, then give a verdict: PASS (total >= 20/24, no critical 0), FIX (list exact field edits) or REJECT. A quiz problem alone is FIX, never REJECT.
+Explicitly verify: lemma not in definitions; every example contains its "focus"; Turkish examples faithful to the backtranslation; etymology not in MYTHS and plausible; lengths within limits; false_friend claim is real; example 1 is lock-screen safe; IPA stress matches IPA_REF if given; exactly one quiz option fits the blank.
 Return JSON: {"scores":{...},"total":n,"verdict":"PASS|FIX|REJECT","issues":[{"field","severity","problem","suggested_fix"}]}
 
 INPUT
-ENTRY: {{entry_json}}   RUBRIC: {{rubric}}   IPA_REF: {{ipa_ref}}   MYTHS: {{etym_myth_list}}
+ENTRY: {{entry_json}}   BACKTRANSLATION: {{backtranslation}} (from Prompt B; not stored on the card)   RUBRIC: {{rubric}}   IPA_REF: {{ipa_ref}}   MYTHS: {{etym_myth_list}}
 ```
 
 ### Validation checklist
@@ -558,7 +560,7 @@ All 25 entries passed my validator (limits, `focus` found in the English example
       "mnemonic": "ACT = eylem: 'actually' = fiilen, gerçekte. 'Aktüel' (güncel) tuzağına düşme."
   }},
   "tags": {"primary_topic":"confusing_words","topics":["confusing_words","social_skills"],"flags":["false_friend_tr"]},
-  "quiz": {"cloze":"He looks young, but he is ______ forty.","answer":"actually","distractors":["currently","recently","fortunately"]}
+  "quiz": {"cloze":"He looks young, but he is ______ forty.","answer":"actually","distractors":["rarely","recently","fortunately"]}
 },
 {
   "id": "en.deadline.n.1",

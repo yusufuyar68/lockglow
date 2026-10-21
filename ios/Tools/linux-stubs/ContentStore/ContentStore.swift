@@ -6,6 +6,8 @@ public final class ContentStore {
     public func cardCount() throws -> Int { 0 }
     public func meta(_ key: String) throws -> String? { nil }
     public func freeCards(maxLevelRank: Int, limit: Int) throws -> [WidgetWord] { [] }
+    public func topics() throws -> [ContentTopic] { [] }
+    public func topicsByCard() throws -> [Int: Set<String>] { [:] }
     public func cardDetail(id: Int) throws -> CardDetail? { nil }
     public func search(_ query: String, limit: Int) throws -> [WidgetWord] { [] }
     public static func ftsMatchExpression(for query: String) -> String? { nil }

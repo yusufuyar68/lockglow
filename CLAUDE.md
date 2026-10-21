@@ -16,7 +16,7 @@ Bu depo **Lockglow** projesi: kilit ekranında İngilizce kelime gösteren, Tür
 ## Değişmeyen kurallar (ayrıntısı DEVIR.md'de)
 
 - Kullanıcıyla **sade Türkçe** konuş. İngilizcesi A2 ve altı.
-- Alt ajanlar **Sonnet**, koordinasyon ve son kontrol sende.
+- Oturumlar ve alt ajanlar **Opus 5.5**, çok ajanlı denetim ve doğrulamayla (kullanıcının 2026-10-21 isteği); koordinasyon ve son kontrol sende.
 - **Kimlik bilgilerine dokunma:**
   - parola, API anahtarı ya da token girmezsin, oluşturmazsın;
   - `.p8` dosyasını okumazsın;
@@ -24,7 +24,7 @@ Bu depo **Lockglow** projesi: kilit ekranında İngilizce kelime gösteren, Tür
   Bunları kullanıcı yapar.
 - **İzin al:** Apple hesabında her değişiklik ve her form gönderimi için önce açık izin al.
 - **macOS dakikaları 10 kat sayılıyor:**
-  - push öncesi `bash ios/Tools/linux_check.sh` çalıştır;
+  - Swift testleri her push'ta ücretsiz Linux işinde koşar (bu PC'de Docker yok); macOS işini yalnızca gerektiğinde, `-f runner=macos-15-intel` ile çalıştır (arm64 kuyruğu takılabiliyor);
   - `screenshots.yml`'yi az çalıştır;
   - TestFlight için kota bırak.
 - **Kart numaraları:** `content-pipeline/data/id_registry.json`'ı elle düzenleme; uygulamadaki ilerleme bu numaralara bağlı.

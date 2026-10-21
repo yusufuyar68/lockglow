@@ -69,7 +69,8 @@ Tüm belgelerde bulk "bul-değiştir" yapın. Parantezli sayısal değerler (`[1
 4. **RevenueCat zorunlu ve ilk açılışta başlatılır** varsayımı (en geniş senaryo). Yalnızca paywall/geri yükleme anında başlatmak mümkünse veri azalır ve metinler sadeleşir **[TEYİT]**.
 5. **Hata bildir:** e-posta taslağı açar (uygulama içi form yok).
 6. **EULA:** Önce Apple standart EULA + tamamlayıcı Kullanım Şartları (Seçenek A+).
-7. **Yok:** hesap, ATT/IDFA, reklam, konum, rehber, mikrofon (MVP), uzaktan push, yapay zekâ özellikleri, CloudKit (v1.2) ve CDN içerik güncellemesi (v1.1). Bunlar eklenmeden önce belgeler güncellenir.
+7. **Yok:** hesap, ATT/IDFA, reklam, konum, rehber, uzaktan push, yapay zekâ özellikleri, CloudKit (v1.2) ve CDN içerik güncellemesi (v1.1). Bunlar eklenmeden önce belgeler güncellenir.
+8. **Mikrofon (Söyle telaffuz alıştırması):** yalnız kullanıcı "Söyle"ye dokununca, izinle ve cihaz içinde. Ses kaydedilmez, saklanmaz, aktarılmaz; App Store etiketinde "Audio Data" = No. Ayrıntı: gizlilik politikası §3.7 (TR/EN), KVKK aydınlatma §2 son paragraf.
 
 ## 5. Mühendislik bağımlılıkları (belgelerde söz verilenler uygulamada olmalı)
 
@@ -115,7 +116,7 @@ Aşağıdakiler yapılmazsa belgeler gerçeği yansıtmaz ve Apple/KVKK riski do
 17. **Sentry** kullanılacak mı; kullanılacaksa bölge, saklama süresi, `sendDefaultPii` ayarı, DPF/SCC durumu.
 18. "Analitik verilerimi sil" iş akışı: sunucu tarafı silmenin el ile yapılması ve [30] gün taahhüdü gerçekçi mi.
 19. "Hata bildir" kanalı (mailto mu, uygulama içi form mu): form olursa politika ve etiket değişir.
-20. Gelecek özellikler (CloudKit, CDN, mikrofon/telaffuz, hesap, push, AdServices) için belgelerin güncellenme zamanı.
+20. Gelecek özellikler (CloudKit, CDN, hesap, push, AdServices) için belgelerin güncellenme zamanı. Mikrofon/telaffuz ("Söyle") eklendi ve metinlere işlendi: yalnız cihazda işlenen, kaydedilmeyen ve bize ulaşmayan sesin KVKK anlamında bizim "işlememiz" sayılıp sayılmadığı ve aydınlatma metnindeki cümlenin yeterliliği.
 
 **D. Kullanım şartları / tüketici**
 

@@ -1,4 +1,4 @@
-# Devir notu: Lockglow (2026-10-20)
+# Devir notu: Lockglow (2026-10-21)
 
 Bu projeye başka bir Claude hesabı ya da oturumu devam edecekse **önce bu dosyayı baştan sona oku.** Ekran görüntülü durum özeti: [`docs/lockglow_ilerleme.html`](docs/lockglow_ilerleme.html). Tarayıcıda açılır.
 
@@ -9,7 +9,7 @@ Bu projeye başka bir Claude hesabı ya da oturumu devam edecekse **önce bu dos
   - İngilizcesi **A2 ve altı**. Hedefi günlük İngilizce.
   - Uygulamayı **önce kendisi için** yapıyor; mağaza sonra.
   - İşi çoğunlukla Claude'a bırakır ("devam", "sen hallet her şeyi"). Kısa ilerleme mesajları ve net sonraki adım bekler.
-- **Ajan kullanımı:** Alt ajanlar **Sonnet**, koordinasyon ve son kontrol **Opus**.
+- **Ajan kullanımı:** 2026-10-21'den beri kullanıcı oturumların ve alt ajanların **Opus 5.5** ile, çok ajanlı denetim/doğrulamayla (ultracode) çalışmasını istiyor. Koordinasyon ve son kontrol ana oturumda.
 - **Donanım:** Windows PC'de çalışıyor; Mac var ama kullanılmıyor, bütün iOS derlemeleri GitHub Actions'ta. iPhone'u iOS 26+.
 - **Apple hesabı:** Ücretli Apple Developer hesabı var.
   - Ekip **Yusuf Uyar**, Team ID `3B57WU65P8`.
@@ -28,48 +28,32 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - `Packages/VocabKit` modülleri: CoreModels, TextFold, SharedState, Scheduler, ContentStore (GRDB), Learning.
   - Tanımlayıcılar: bundle `com.yusufuyar.vocabwidget` ve `.widgets`; App Group `group.com.yusufuyar.vocabwidget`; URL şeması `vocabwidget://`.
 - **İçerik hattı:** `content-pipeline/` (Python `vocabpipe`): şema, doğrulayıcı, derleyici.
-- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s9`, toplam 753 taslak kart.
-  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.20-kisisel-4`) ve `ios/Widgets/Resources/seed_words.json`.
+- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s13`, toplam 933 taslak kart.
+  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.21-kisisel-5`) ve `ios/Widgets/Resources/seed_words.json`.
   - Kart numaraları `content-pipeline/data/id_registry.json` içinde kalıcı. Uygulamadaki ilerleme bunlara bağlı, **elle düzenleme**.
 
 ## Durum
 
-- **Uygulama:** CI'da Xcode 26.3 ile derleniyor. Simülatörde ekran görüntüleriyle denendi.
+- **Uygulama:** CI'da Xcode 26.3 ile derleniyor (Intel macOS makinesi, aşağıya bak).
   - Sekmeler:
-    - **Akış**
-    - **Tekrar:** Leitner aralıklı tekrar; zamanı gelen kelimede 4 şıklı boşluk doldurma
+    - **Akış:** kelime kartları; "Söyle" mikrofon düğmesi (cihaz içi telaffuz alıştırması)
+    - **Tekrar:** Leitner; yeni kartta Bilemedim / Zor / Bildim / Kolay; zamanı gelen kelimede 4 şıklı boşluk doldurma
     - **Sözlük:** Türkçe harf katlamalı arama
-    - **Ayarlar:** widget sıklığı, günlük hedef, günlük hatırlatma, bildiğim kelimeler ve geri alma, widget sağlığı
-  - Widget'lar: küçük, orta, kilit ekranı. "Sonraki" ve "Biliyorum" düğmeleri etkileşimli.
-  - Sesli telaffuz cihazın kendi sesiyle (AVSpeechSynthesizer).
-  - İlerleme dosyasının günlük yedeği alınıyor; bozuk dosya kenara alınıyor.
-- **Testler:**
-  - 113 Swift testi (Linux, Docker): `bash ios/Tools/linux_check.sh`. **Bu bilgisayarda Docker yok** (BIOS'ta sanallaştırma kapalı); bu kontrol burada çalışmaz.
-  - 72 Python testi.
-  - Her akış `--strict` doğrulamadan 0 uyarıyla geçiyor.
-- **Apple kayıtları:** App Group, iki App ID ve App Store Connect uygulama kaydı oluşturuldu (Yusuf Uyar ekibi).
-- **TestFlight:** `.github/workflows/testflight.yml` hazır. GitHub gizli değişkenleri (`ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8`) eklenmedikçe imzasız kuru çalıştırma yapar. **20 Ekim itibarıyla gizli değişken sayısı 0.**
+    - **Ayarlar:** widget sıklığı, günlük hedef, konular (deste seçimi), günlük hatırlatma, bildiğim kelimeler, widget sağlığı
+  - **Açılış akışı:** ilk açılışta seviye, konu, widget kurma rehberi, ilk kelime (mevcut kullanıcıya gösterilmez).
+  - Widget'lar: küçük, orta, kilit ekranı. "Sonraki", "Biliyorum" ve **hoparlör** (AudioPlaybackIntent, uygulama açılmadan okur).
+  - İlerleme dosyasının günlük yedeği alınıyor; gizlilik manifestinde UserDefaults (CA92.1) ve FileTimestamp (C617.1).
+- **İçerik:** 933 kart (`2026.10.21-kisisel-5`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat.
+- **Testler:** her push'ta ücretsiz Linux Swift işi (`build.yml` → `swift-linux`, `linux_check.sh` Docker'da) ve 72 Python testi + `--strict` doğrulama. macOS işi elle: ~170 paket testi + uygulama/widget derlemesi.
+- **Apple:** App Group (`group.com.yusufuyar.vocabwidget`) iki App ID'ye **atandı** (2026-10-20, Developer portalı). App Store Connect API anahtarı (`ZLU4D5GWLX`, Admin) GitHub'da.
+- **TestFlight:** çalışıyor. Build 18 (20 Ekim) ve **build 22** (21 Ekim: 933 kart, Zor/Kolay, widget sesi) yüklendi. İmza her çalıştırmada geçici sertifika + profillerle (`docs/testflight_kurulum.md` → 2b).
 
-## Hemen sıradaki iş: TestFlight
+## Hemen sıradaki iş
 
-1. **Kullanıcı** App Store Connect'te bir API anahtarı oluşturur. Adımlar `docs/testflight_kurulum.md`'de:
-   - Users and Access → Integrations → App Store Connect API → Team Keys → "+";
-   - erişim **Admin**: bulut imza sertifikası için gerekli; App Manager "No profiles" hatası verir;
-   - Generate, sonra Download.
-2. **Kullanıcı** depo kökünde şunu çalıştırır ve Issuer ID sorulunca yapıştırır:
-   ```
-   powershell -ExecutionPolicy Bypass -File tools\testflight_anahtar_ekle.ps1
-   ```
-   Betik, İndirilenler'deki en yeni `AuthKey_*.p8` dosyasını alır.
-   - Orada Temmuz 2026 tarihli eski bir anahtar dosyası da var, başka ekipten olabilir.
-   - Yeni anahtar indirildiyse betik onu seçer.
-3. Kontrol: `gh api repos/yusufuyar68/lockglow/actions/secrets -q .total_count` sonucu 3 olmalı. Sonra:
-   ```
-   gh workflow run testflight.yml -R yusufuyar68/lockglow --ref main
-   ```
-   Günlükleri izle. Hata olursa `docs/testflight_kurulum.md` → sorun giderme.
-4. Yükleme App Store Connect'te göründükten sonra, **kullanıcıdan açık izin alıp** bir dahili test grubu oluştur ve onu ekle. Kullanıcı iPhone'a TestFlight uygulamasını kurar ve daveti kabul eder.
-5. Telefondaki ilk deneme: `ios/README.md` → kontrol listesi (süreklilik, widget düğmeleri, hatırlatma saati, ses). Gelen geri bildirimle düzelt.
+1. **Dahili test grubu hazır** ("Ben", bütün derlemeler; hesap sahibi test eden): `gh workflow run testflight_group.yml`. Kullanıcı iPhone'a TestFlight'ı kurup daveti kabul eder.
+2. Build 23 (21 Ekim, bütün özellikler) VALID. Yeni build: `gh workflow run testflight.yml -R yusufuyar68/lockglow --ref main -f runner=macos-15-intel`.
+3. Kullanıcı iPhone'a TestFlight'ı kurar; ilk deneme `ios/README.md` → kontrol listesi. Gelen geri bildirimle düzelt.
+4. Arayüz tasarımı `docs/tasarim/` (main'de, 2026-10-21): renk ve tipografiyi uygulamaya taşı; tasarım oturumunun son düzeltmeleri gelirse onları da birleştir.
 
 ## Çalışma kuralları (önemli)
 
@@ -78,19 +62,17 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - `.p8` dosyasının içeriğini okumaz.
   - Apple hesabına giriş yapmaz.
   - Bunları kullanıcı yapar. Anahtar yalnızca kullanıcının çalıştırdığı betikle GitHub'a gider.
-- **Apple hesabında değişiklik ve form gönderme:** Her seferinde açık izin al. Önceki izinler yalnızca App Group, iki App ID ve uygulama kaydı içindi.
+- **Apple hesabında değişiklik ve form gönderme:** Her seferinde açık izin al. Verilmiş izinler: App Group, iki App ID, uygulama kaydı (eski); TestFlight iş akışının geçici dağıtım sertifikası ve profilleri oluşturup emekliye ayırması (2026-10-20); App Group'un iki App ID'ye atanması (yapıldı); dahili test grubu (2026-10-21).
+- **Sertifikalar:** Ekipte aynı anda yalnızca bir Apple Distribution sertifikası olabiliyor; iOS Distribution'ın 3 yeri Expo'da. Expo sertifikalarına ve 'Created via API' adlı iki eski geliştirme sertifikasına dokunma.
 - **Kişisel bilgiler:** Apple sayfalarında görünen telefon ya da adres bilgilerini hiçbir yere yazma. Kullanıcının e-postasını dış servislere gönderme.
 - **Git:**
   - Bu özel depoya push için onay var. Commit mesajları Türkçe.
-  - Ana çalışma klasörü bazen başka bir oturumun dalında olabilir: `pipeline/critic-quiz-backtranslation`. O dalda içerik hattı istem kuralları var: eleştirmen rubriği, tek doğru cevap kuralı. Henüz main'e birleşmedi; birleştirmeden önce kullanıcıya sor.
-  - `main` üzerinde çalışırken o dala dokunma; geçici bir worktree kullan:
-    ```
-    git worktree add --detach <geçici-klasör> origin/main
-    ```
+  - `pipeline/critic-quiz-backtranslation` (eleştirmen rubriği, tek doğru cevap kuralı) 2026-10-21'de main'e birleşti.
+  - Paralel oturumlar ana klasörde dal değiştirmez; kendi worktree'lerinde çalışır (`git worktree add -b <dal> <yol> origin/main`). Dallarını koordinatör oturum kontrol edip main'e birleştirir (kullanıcı izni 2026-10-21).
 - **GitHub Actions kotası:**
   - Özel depoda macOS dakikaları **10 kat** sayılıyor. Depo 20 Ekim'de `yusufuyar68` hesabına taşındı; kota bu hesabın kotası (ücretsiz planda ayda 2000 dakika).
-  - `build.yml`'nin macOS işi yalnızca elle çalışır.
-  - Push'tan önce `ios/Tools/linux_check.sh` (bedava) çalıştır.
+  - `build.yml`'nin macOS işi yalnızca elle çalışır; Linux Swift testleri her push'ta bedava.
+  - **arm64 macOS kuyruğu** 20–21 Ekim'de saatlerce iş almadı ("not acquired by Runner"). Bütün iş akışlarında `-f runner=macos-15-intel` seçeneği var; Intel makine hemen başlıyor.
   - Değişiklikleri biriktir; `screenshots.yml`'yi tur başına bir kez çalıştır (~12 dk).
   - TestFlight için mutlaka kota bırak (~10 dk/çalıştırma).
 - **Marka:** Tanıtım sayfasını (`marketing/landing/`) TÜRKPATENT araması ve marka vekili görüşünden önce yayımlama.
@@ -101,13 +83,13 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
 
 ## Açık işler (öncelik sırasıyla)
 
-1. **TestFlight** (yukarıda; kullanıcının adımını bekliyor).
+1. **Telefonda ilk deneme** (TestFlight hazır; kullanıcı daveti kabul edecek).
 2. **Telefonda deneme ve düzeltmeler.** Gerçek widget yenilenmesi, bildirim zamanlaması ve ses kalitesi yalnızca cihazda görülür (`ios/README.md` → "Bilinen belirsizlikler").
 3. **İçerik:**
    - Her akışın `REVIEW.md` sonunda "anadili Türkçe birinin bakması gerekenler" listesi var. Kullanıcı isterse onunla birlikte geç.
-   - Önerilen eklemeler: yeni akışlar (ör. B1 iş, seyahat, sağlık kalıpları). Önce `docs/icerik_uretimi/README.md`'yi oku.
+   - s10–s13 eklendi (2026-10-21). Yeni akış eklerken önce `docs/icerik_uretimi/README.md`'yi oku.
    - Her derlemede `--content-version`'ı artır.
-4. **Uygulama:** FSRS (v1.2), "zor/kolay" cevapları, widget'tan çıkmadan ses.
+4. **Uygulama:** FSRS (v1.2); `raporlar/14_guncel_fark_raporu.md` ve `docs/ozellik_planlari/` içindeki kalan öneriler (kendi kelimeni ekleme, Denetim Merkezi/StandBy, iCloud yedeği). Yapılanlar: Zor/Kolay, widget sesi, Söyle, açılış + deste (ekranları cihazda henüz görülmedi).
 5. **Yayın işleri (kullanıcı):**
    - TÜRKPATENT "Lockglow" araması (sınıf 9, 41, 42);
    - lockglow.com/.app alan adları;

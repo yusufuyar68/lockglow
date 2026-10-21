@@ -94,6 +94,7 @@ CREATE VIRTUAL TABLE card_fts USING fts5(
 - `is_free = 0` olan kart, abonelik yoksa widget kuyruğuna girmez ve akışta kilitli olarak gösterilir.
 - `sensitivity = 1` kartlar, kullanıcı ilgili kategoriyi açmadıkça hiçbir yerde gösterilmez. `sensitivity = 2` veritabanına hiç girmez.
 - Kategori içi `rank`, ücretsiz kartları belirler: `rank < category.free_count` ise kart o kategoride ücretsizdir. `card.is_free`, kartın birincil kategorisine göre hesaplanmış sonuçtur.
+- **Konu (deste) süzgeci** `card_category` üyeliğini okur, `is_primary` ne olursa olsun: bir kart üyesi olduğu her konuda sayılır ve seçilen konulardan birinde olması yeter (birden çok seçilen konuda olan kart bir kez gelir). Konu sayımına yalnız `is_free = 1 AND sensitivity = 0` kartlar girer. Akış sorgusu (`freeCards`) `card_category` ile birleştirilmez, yoksa kartlar tekrarlanır. Grup başlıkları (`category.grp` harfinin Türkçe adı) ve bazı sade görünen adlar (ör. `phrasal_verbs` → "İki kelimeli fiiller") veritabanında değil, uygulamada durur; `category.name_tr` değişmez. Şema değişmedi, `schema_version` artmaz.
 
 ## 4. Arama normalizasyonu: `fold()`
 

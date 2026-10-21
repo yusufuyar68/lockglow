@@ -101,6 +101,23 @@ final class ReminderPlannerTests: XCTestCase {
         XCTAssertEqual(reminders.map(\.newCount), [2, 2, 2])
     }
 
+    func testNewWordsComeFromTheDeckAndReviewsFromEveryWord() {
+        // Word 1 is outside the chosen deck (words 11 and 12) but due: it still counts.
+        let reminders = ReminderPlanner.plan(
+            feed: feed(1...20),
+            newWordFeed: feed(11...12),
+            progress: [1: learning(1, due: date(day: 12, hour: 9))],
+            now: date(day: 12, hour: 10),
+            minuteOfDay: evening,
+            days: 2,
+            dailyNewGoal: 5,
+            newStudiedToday: 0,
+            calendar: calendar
+        )
+        XCTAssertEqual(reminders.map(\.dueCount), [1, 1])
+        XCTAssertEqual(reminders.map(\.newCount), [2, 2])
+    }
+
     func testInvalidInputGivesNoReminders() {
         XCTAssertTrue(plan(feed: feed(1...5), now: date(day: 12, hour: 10), days: 0).isEmpty)
         let late = ReminderPlanner.plan(

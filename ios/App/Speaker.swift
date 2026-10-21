@@ -2,8 +2,8 @@ import AVFoundation
 import SwiftUI
 
 /// Reads English text aloud with the device's own voice (offline; nothing leaves the phone).
-/// The best installed US English voice is used (an enhanced or premium voice when the user has
-/// downloaded one), a little slower than the default rate for an A2 learner.
+/// Voice, rate and audio session come from `WordSpeech` (Shared/), the same ones the widget's
+/// speaker button uses.
 @MainActor
 final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     static let shared = Speaker()
@@ -13,7 +13,6 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
     private let synthesizer = AVSpeechSynthesizer()
     private var current: ObjectIdentifier?
-    private lazy var voice: AVSpeechSynthesisVoice? = Speaker.bestVoice()
 
     override init() {
         super.init()
@@ -30,23 +29,32 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             finish()
             return
         }
-        let session = AVAudioSession.sharedInstance()
-        // Playback, so a tap on "Dinle" is heard even with the silent switch on; other audio dips.
-        try? session.setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
-        try? session.setActive(true)
-
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = voice
-        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 0.9
+        WordSpeech.activateSession()
+        let utterance = WordSpeech.makeUtterance(text)
         current = ObjectIdentifier(utterance)
         speakingText = text
         synthesizer.speak(utterance)
     }
 
+    /// Stops reading at once (nothing happens when silent) and releases the audio session.
+    func stop() {
+        guard current != nil else { return }
+        synthesizer.stopSpeaking(at: .immediate)
+        finish()
+    }
+
+    /// Silences everything that reads aloud in the app's process: the speaker buttons and the
+    /// widget's speaker button (`SpeakWordIntent` runs here, through `WordSpeechPlayer`). The "Söyle"
+    /// microphone calls this before it takes the audio session.
+    static func stopAll() {
+        shared.stop()
+        WordSpeechPlayer.shared.stop()
+    }
+
     private func finish() {
         current = nil
         speakingText = nil
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        WordSpeech.deactivateSession()
     }
 
     /// Only the utterance started last may clear the state: a cancelled one reports back after
@@ -69,16 +77,6 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         Task { @MainActor in
             self.utteranceEnded(id)
         }
-    }
-
-    private static func bestVoice() -> AVSpeechSynthesisVoice? {
-        let candidates = AVSpeechSynthesisVoice.speechVoices().filter { voice in
-            voice.language == "en-US"
-                && !voice.voiceTraits.contains(.isNoveltyVoice)
-                && !voice.voiceTraits.contains(.isPersonalVoice)
-        }
-        let best = candidates.max { $0.quality.rawValue < $1.quality.rawValue }
-        return best ?? AVSpeechSynthesisVoice(language: "en-US")
     }
 }
 

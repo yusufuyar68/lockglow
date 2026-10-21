@@ -12,7 +12,7 @@ Veri sözleşmesi: [`../docs/contract/content-db.md`](../docs/contract/content-d
 ios/
 ├─ project.yml                 XcodeGen tanımı (.xcodeproj elle yazılmaz)
 ├─ Config/Base.xcconfig        BUNDLE_ID_PREFIX, DEVELOPMENT_TEAM, APP_GROUP_ID, sürüm
-├─ App/                        Lockglow (SwiftUI uygulaması): sekmeler Akış, Tekrar, Sözlük, Ayarlar (Widget Sağlığı: Ayarlar > Tanılama)
+├─ App/                        Lockglow (SwiftUI uygulaması): ilk açılışta açılış akışı (OnboardingView); sekmeler Akış, Tekrar, Sözlük, Ayarlar (Widget Sağlığı: Ayarlar > Tanılama)
 │  ├─ Resources/               content.sqlite buraya (isteğe bağlı)
 │  ├─ Assets.xcassets/         AppIcon (1024 px, opak, yalnızca şekil; geçici ikon)
 │  └─ PrivacyInfo.xcprivacy
@@ -21,15 +21,16 @@ ios/
 │  └─ PrivacyInfo.xcprivacy
 ├─ Tools/                      linux_check.sh (Mac olmadan derleme + test), make_app_icon.py
 └─ Packages/VocabKit/          yerel Swift paketi (swift test Mac'te çalışır)
-   ├─ CoreModels               WidgetWord, Level, WidgetEventType, SeedWords, DeepLink, CardDetail (kartın tam JSON'undan örnekler + Türkçe notlar)
+   ├─ CoreModels               WidgetWord, Level, WidgetEventType, SeedWords, DeepLink, CardDetail (kartın tam JSON'undan örnekler + Türkçe notlar), ContentTopic (seçilebilir konu)
    ├─ TextFold                 fold() (sözleşme §4)
    ├─ SharedState              AppGroupStore, EventMailbox, WidgetPlan/State/Event
    ├─ Scheduler                TimelinePlanner, RotationInput, RotationCursor, QueueBuilder (saf fonksiyonlar)
    ├─ ContentStore             GRDB ile salt okunur content.sqlite (yalnızca uygulama)
-   └─ Learning                 Leitner (5 kutu), QueueComposer (6 tekrar : 3 yeni : 1 hatırlatma), ProgressIngest (widget olayları → ilerleme), ReviewPlanner (tekrar turu, sayılar), ProgressStore (yalnızca uygulama)
+   ├─ Learning                 Leitner (5 kutu), QueueComposer (6 tekrar : 3 yeni : 1 hatırlatma), DeckFilter (konu ve seviye seçimi), ProgressIngest (widget olayları → ilerleme), ReviewPlanner (tekrar turu, sayılar), ProgressStore (yalnızca uygulama)
+   └─ Pronunciation            PronunciationCheck: "Söyle" alıştırmasında duyulanı kartla karşılaştırır, Türkçe geri bildirim (saf, yalnızca uygulama)
 ```
 
-Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite açmaz, `ContentStore`/`TextFold`/`Learning`/GRDB bağlamaz. `Learning` yalnızca uygulama hedefindedir.
+Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite açmaz, `ContentStore`/`TextFold`/`Learning`/`Pronunciation`/GRDB bağlamaz. `Learning` ve `Pronunciation` yalnızca uygulama hedefindedir.
 
 ## Mac'te kurulum
 
@@ -77,11 +78,43 @@ Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite
 - **Aralık ayarı:** "Ayarlar" sekmesinden (5 dakika hızlı deneme içindir). Widget'ı düzenleme (yapılandırma) ekranı yok (`StaticConfiguration`).
 - **Gösterim sırası (A2 öğrenen):** widget'ta ve akış kartında kelime, sonra Türkçe karşılık (bir kademe iri ve kalın), sonra kısa İngilizce tanım, sonra örnek. Kilit ekranı dikdörtgeni: kelime, karşılık, `def_micro`.
 - **Sözlük:** İngilizce ya da Türkçe önekle arama (`ContentStore.search`, Türkçe harfler katlanır: "kahv" → breakfast); sonuca dokununca kartın tamamı (`WordDetailView`): tüm örnekler ve Türkçeleri, yaygın hatalar, not, ipucu, eşdizimler. UI testi aramayı ve kart açılışını da çeker.
-- **Tekrar sorusu:** zamanı gelen (daha önce çalışılmış) kelime kartla değil, kartın boşluk doldurma sorusuyla sorulur: cümle + 4 şık (`QuizCardView`, şık sırası kelime kimliğine göre sabit karışık). Doğru → `review(.good)`, yanlış → `review(.again)`; cevaptan sonra doğru şık ve Türkçe anlam gösterilir. Yeni kelime önce kart olarak öğrenilir. Görünüm `QuizSnapshotTests` ile çizilip bakıldı.
-- **Tekrar sekmesi:** önce zamanı gelen kelimeler (en çok 20 kart/tur, en çok gecikmiş önce), yoksa günlük hedef kadar yeni kelime (akış sırasıyla; bugün zaten çalışılanlar hedeften düşülür). "Bildim" → `review(.good)`, "Bilemedim" → `review(.again)`; her cevapta ilerleme kaydedilir, tur bitince (ya da "Bitir"e basılınca) plan yeniden yazılır. Bilemedim denen kelime 10 dakika sonra yeniden "zamanı gelmiş" olur (aynı turda tekrar sorulmaz). Hedef dolunca "bugünlük tamam" ekranı çıkar; isteyen "N yeni kelime daha" ile devam eder.
+- **Tekrar sorusu:** zamanı gelen (daha önce çalışılmış) kelime kartla değil, kartın boşluk doldurma sorusuyla sorulur: cümle + 4 şık (`QuizCardView`, şık sırası kelime kimliğine göre sabit karışık). Yanlış → `review(.again)`; doğru → `review(.good)` ("Devam"). Doğru cevaptan sonra "Zordu" (`.hard`) ve "Kolaydı" (`.easy`) düğmeleri de çıkar; yanlışta çıkmaz. Böylece ilk çalışmadan sonraki tekrarlar da zor/kolay notu alabilir (ilk çalışma kartla yapıldığı için yalnızca orada 4 düğme vardı). Cevaptan sonra doğru şık ve Türkçe anlam gösterilir. `QuizCardView` sonucu kendi `QuizOutcome` türüyle bildirir, `ReviewView` bunu `ReviewGrade`'e çevirir (dosya `LockglowWidgetSnapshots`'a da derlendiği ve orada `Learning` bağlı olmadığı için). Yeni kelime önce kart olarak öğrenilir. Görünüm `QuizSnapshotTests` ile çizilip bakıldı.
+- **Tekrar sekmesi:** önce zamanı gelen kelimeler (en çok 20 kart/tur, en çok gecikmiş önce), yoksa günlük hedef kadar yeni kelime (akış sırasıyla; bugün zaten çalışılanlar hedeften düşülür). Kart cevabı dört düğmeyle (2×2, iPhone SE'de büyük yazıda da sığsın diye): "Bilemedim" → `review(.again)`, "Zor" → `.hard`, "Bildim" → `.good`, "Kolay" → `.easy` (kutu geçişleri aşağıda, "Zor ve Kolay notları"); her cevapta ilerleme kaydedilir, tur bitince (ya da "Bitir"e basılınca) plan yeniden yazılır. Bilemedim denen kelime 10 dakika sonra yeniden "zamanı gelmiş" olur (aynı turda tekrar sorulmaz). Hedef dolunca "bugünlük tamam" ekranı çıkar; isteyen "N yeni kelime daha" ile devam eder.
 - **İmleç anlamı (sözleşmeden sapma, §6'ya işlenmeli):** `widget_state.json`'a `cursor_anchor` (ISO 8601) eklendi; `cursor_offset` artık "`cursor_anchor` anında dönüşümün bulunduğu kuyruk sırası" demek, saf bir "+1" sayacı değil.
 - **Hizalama:** yerel saat dilimi ofseti kullanıldığı için "günlük" sınır yerel gece yarısına düşer (yoksa UTC gece yarısı = Türkiye'de 03:00 olurdu).
-- Derin bağlantı: widget'a dokunmak `vocabwidget://word/<id>` açar; uygulama akışta o karta kaydırır. Şema `CoreModels/DeepLink.swift` ve `project.yml` (`CFBundleURLSchemes`) içinde; ikisi aynı kalmalı. Markadan bağımsızdır, ad değişince bağlantılar bozulmaz.
+- **Açılış akışı (`OnboardingView`):** ilk açılışta bir kez, tam ekran. Ödeme duvarı yok. Dört sayfa:
+  1. **Seviye:** A1 "Yeni başlıyorum", A2 "Temel konuşabiliyorum", B1 "Günlük konuşmayı anlıyorum". Her seçenekte o seviyenin kelime sayısı yazar. Seçmeden "Devam" basılmaz.
+  2. **Konular:** "Tümü" ve gruplar altında konular, her birinde kelime sayısı. Hiç seçilmezse hepsi.
+  3. **Widget nasıl eklenir:** "Kilitli ekran" ve "Ana ekran" adımları (`WidgetGuideContent`). Düğme adları Apple'ın iOS 26 Türkçe iPhone kılavuzundan: iPhone'da widget'ın adı "araç takımı"; "Düzenle", "Araç Takımı Ekle", "Özelleştir", "Bitti".
+  4. **İlk kelime:** destenin ilk yeni kelimesi, Akış kartıyla (`WordCardView`). Tekrar sekmesinin ilk yeni kelimesi de bu.
+
+  Her sayfada "Atla" var: akışı bitirir, o ana kadar seçilenleri uygular (seçilmeyen seviye yazılmaz). Konular yüklenirken 2. sayfanın düğmesi pasif ("Konular hazırlanıyor…"), çünkü o an seçim uygulanırsa plan yazılmazdı. İçerik hiç yüklenemediyse 4. sayfa hata metni gösterir. Bitince `lockglow.onboardingCompleted` yazılır, akış bir daha kendiliğinden açılmaz. Ayarlar > Yardım > "Açılış ekranlarını yeniden göster" yeniden açar; orada şimdiki seçim seçili gelir. UI testleri `-lockglow.onboardingCompleted YES` ya da `NO` başlatma argümanıyla akışı atlar ya da zorla açar.
+- **Güncelleyen kullanıcıya açılış akışı yok (`OnboardingGate`, saf ve testli):** karar `AppModel` oluşurken bir kez verilir (`shouldShowOnboardingAtLaunch`).
+  - `lockglow.onboardingCompleted` yazılmışsa o karar verir.
+  - Yazılmamışsa ve eski bir kurulumun izi varsa (`widget_plan.json`, `progress.json` ya da eski sürümün `UserDefaults`'taki bilinen kelimeleri) akış açılmaz, bayrak "bitti" yazılır. Sahibin TestFlight güncellemesinde akış görünmez.
+  - Hiç iz yoksa (yeni kurulum) akış açılır ve bayrak hemen "bitmedi" yazılır. Böylece akış yarıda bırakılıp uygulamadan çıkılınca yazılan plan, sonraki açılışta "eski kurulum" sayılmaz; akış yeniden açılır.
+  - App Group erişilemiyorsa plan izi yok sayılır; `progress.json` yine bakılır.
+- **İlk plan ve açılış akışı:** yeni kurulumda (akış bitmemiş ve `widget_plan.json` yok) `AppModel.start` planı yazmaz. İlk planı akıştaki seçim yazar (konular sayfasından çıkınca ya da "Atla"da). O an eski plan olmadığı için sabitlenecek kelime yok; kuyruk destenin ilk kelimesiyle başlar. Böylece 3. sayfada eklenen widget hemen seçilen kelimeleri gösterir. Kullanıcı akış bitmeden uygulamadan çıkarsa plan yine yazılır (`sceneDidEnterBackground`). Planı olan kullanıcıda (güncelleme) her şey eskisi gibi: plan açılışta yazılır, seçim değişince görünen kelime sabitlenir.
+- **Deste (konu) seçimi:** konu, kartın üyesi olduğu kategorilerdir (`card_category`, ana konu olsun olmasın; sözleşme §3 "Konu (deste) süzgeci"). Bir kart birden çok konuda olabilir; seçilen konulardan birinde olması yeter, deste her kartı bir kez alır. Akışlar (s1–s13) veritabanında yok ve bir akışta birden çok konu var (ör. s11'de seyahat, şehir ve phrasal verb); bu yüzden seçim akışa göre değil, konuya göre. Ana konuya göre sayınca Seyahat 93 değil 52 kelime olurdu (`2026.10.21-kisisel-5`).
+  - `ContentStore.topics()`: en az bir ücretsiz ve hassas olmayan üye kartı olan kategoriler, `category.sort` sırasıyla, üye sayısıyla. `topicsByCard()`: kart kimliği → konular kümesi.
+  - 5'ten az kartı olan konu seçim listesinde yok (`AppModel.minimumTopicCards`); kartları "Tümü"nde var. Seçilecek konu sayısında alt sınır yok: küçük deste için özet satırı uyarır (aşağıda).
+  - Konular `category.grp` harfine göre Türkçe başlıklar altında: A Günlük hayat, B Seyahat ve kültür, C İnsanlar ve duygular, D İş hayatı, E Bilim ve teknoloji, F Sanat ve eğlence, G Dil kalıpları, H Zengin kelimeler, I Sınavlar.
+  - Görünen ad (`ContentTopic.displayName`, uygulamada): "Phrasal Verb'ler" → "İki kelimeli fiiller", "Karıştırılan Kelimeler & Tuzak Kelimeler" → "Karıştırılan kelimeler". Veritabanındaki `name_tr` değişmedi.
+  - Saklama: `UserDefaults` `lockglow.selectedTopicIDs` (boş = hepsi) ve `lockglow.startLevel`. "İlerlemeyi sıfırla" bunlara dokunmaz.
+  - Ayarlar > Öğrenme: "Başlangıç seviyesi" ve "Konular" (`TopicPickerView`). Konu seçimi ekran kapanınca ya da uygulama etkin olmaktan çıkınca (`scenePhase`) uygulanır, her dokunuşta plan yazılmaz. Aynı seçimi iki kez uygulamak bir şey yapmaz.
+  - **Özet satırı (`DeckSummaryLine`, tek hesap `DeckFilter.summary`):** Konular ekranında altta sabit çubuk (en büyük yazı boyutlarında listenin üstünde), açılış akışının 2. sayfasında konu seçiliyken düğmenin üstünde. "Seçili: N kelime" (seçim yoksa "Tüm konular: N kelime"), altında yeni kelime sayısı ("Bu konularda X yeni kelime var" / günlük hedeften azsa "kaldı" / "yeni kelime kalmadı"). Seçili deste 30 kelimeden azsa: "Kelime az olduğu için widget aynı kelimeleri sık gösterir." Gün tahmini yok.
+- **Deste neyi etkiler (`DeckFilter`, saf ve testli):**
+  - `AppModel.words` bütün kelimeler, `feedWords` deste. `DeckFilter.feed` önce konuya göre süzer, sonra seviyeye göre sıralar.
+  - Süzgeç: seçilen konuların kelimeleri, eski sırasıyla. Seçim boşsa ya da hiçbir kelimeye uymuyorsa (içerikten kalkmış konu, tohum kelimeler) bütün kelimeler gelir. Seçim desteyi hiç boşaltmaz.
+  - Seviye sırası (kararlı): önce seçilen seviye, sonra üstündekiler (kolaydan zora), sonra altındakiler (yakından uzağa), en sonda seviyesi bilinmeyenler. A2 seçen kullanıcı A2, B1, sonra A1 görür. Hiçbir kelime düşmez. Seviye seçilmemişse sıra değişmez (A1 önce).
+  - Desteyi kullananlar: Akış sekmesi, widget kuyruğu, Tekrar'ın yeni kelimeleri, günlük hatırlatmadaki yeni kelime sayısı (`ReminderPlanner.plan(newWordFeed:)`).
+  - **Deste bitince:** seçilen konuların yeni kelimesi kalmayınca Tekrar'ın ve hatırlatmanın yeni kelimeleri bütün konulardan gelir (`DeckFilter.newWordFeed`, aynı seviye sırasıyla `AppModel.allTopicsFeed`). Ayarlar > Öğrenme altbilgisi bunu söyler (`newWordsComeFromAllTopics`). Akış seçilen konuları göstermeye devam eder. Ayrı bir "başka konulardan devam et" düğmesi yok.
+  - Bütün kelimeleri kullananlar: zamanı gelen tekrarlar (öğrenmeye başlanan kelimenin tekrarı konu değişince kesilmez), Ayarlar'daki sayılar, bildiğim kelimeler, Sözlük.
+- **Kuyruk ve süreklilik:** plan `QueueComposer.compose(deck:fallbackFeed:...)` ile kurulur. Seçim değişince plan, her ayar değişikliğindeki gibi hemen yeniden yazılır.
+  - `pinFirst` (şu an görünen kelime) desteden olmasa bile ilk sırada kalır. Görünen kelime sınıra kadar değişmez; sonraki sınırdan itibaren destenin kelimeleri döner.
+  - Destenin kendi kelimesi kalmamışsa (hepsi biliniyor ve zamanı gelmemiş) kuyruk bütün konulardan, aynı seviye sırasıyla kurulur. Widget boş kalmaz.
+  - Destede yalnızca zamanı gelmemiş öğrenilen kelimeler varsa onlar döner, yedeğe geçilmez.
+- Derin bağlantı: widget'a dokunmak `vocabwidget://word/<id>` açar; uygulama akışta o karta kaydırır. Kelime destede yoksa (konu değişiminden hemen sonra sabitlenen kelime ya da bütün konulardan gelen yedek kelime) kartın tamamı (`WordDetailView`) bir sayfada (sheet) açılır, "Kapat" ile kapanır. Açılış akışı ekrandayken sayfa açılmaz (iki sunum çakışır); içerik yüklenirken gelen bağlantı yüklenince açılır. Şema `CoreModels/DeepLink.swift` ve `project.yml` (`CFBundleURLSchemes`) içinde; ikisi aynı kalmalı. Markadan bağımsızdır, ad değişince bağlantılar bozulmaz.
 
 ## Kişisel kurulum (ücretsiz Apple ID)
 
@@ -168,6 +201,7 @@ Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Ayarlar > Widget s
 - [ ] **Orta widget etiketi:** "Sonraki HH:mm" doğru saati gösteriyor (sığmazsa gizlenmesi normal).
 - [ ] **Sonraki:** Küçük ve orta widget'ta "sonraki" okuna dokun. Kelime hemen değişir, geri atlamaz; sonraki sınırda bir sonrakine geçer. "Widget Sağlığı"nda widget imleci değişir, bekleyen olay sayısı artar. Düğmeler rahat basılıyor (44 pt).
 - [ ] **Biliyorum:** Onay işaretine dokun. Kelime kaybolur ve bir daha çıkmaz, sıra bozulmaz. Bekleyen olay artar.
+- [ ] **Seslendirme (widget):** Küçük ve orta widget'ta hoparlöre (ortadaki düğme) dokun: uygulama **açılmaz**, kelime ABD İngilizcesiyle okunur. Üç durumda dene: uygulama açıkken, uygulama arka plandayken, uygulama kapatıldıktan sonra (görev değiştiriciden kaydır; ilk dokunuş birkaç saniye geç kalabilir). Sessiz modda da duyulmalı; çalan müzik kısılıp sonra geri gelmeli; kelimenin sonu kesilmemeli. Xcode > Console'da `speech` kategorisinde `widget speech in com.yusufuyar.vocabwidget, app audio session: true` görünmeli (`.widgets` ya da `false` görünürse, ya da `audio session not activated` / `widget speech timed out` çıkarsa madde 45'teki sıraya bak). Üç düğme SE'de ve büyük ekranda rahat basılıyor mu (uçtaki düğmelerin dış kenarına da dokun)? Kilit ekranı widget'ları ve StandBy eskisi gibi görünüyor mu (kenar boşlukları artık elle uygulanıyor)?
 - [ ] **Kilit ekranı:** Dikdörtgen/satır içi widget'ta buton yok. Cihaz kilitliyken küçük widget butonları çalışmaz (beklenen).
 - [ ] **Arka plana alma:** Birkaç "sonraki/biliyorum" sonrası uygulamayı aç, sonra ana ekrana dön. Konsolda (Xcode > Console, `widget event` ara) olaylar loglanır, bekleyen olay 0 olur (uygulama öne gelince de 0 olur), yeni plan_id yazılır, widget güncellenir, "biliyorum" denen kelimeler artık yok. Görünen kelime aynı kalır ve dönüşüm oradan devam eder.
 - [ ] **Dokunma:** Widget gövdesine dokun: uygulama açılır ve akışta o kelimeye kayar (soğuk açılışta da).
@@ -177,9 +211,13 @@ Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Ayarlar > Widget s
 - [ ] **Görünüm modları:** Tinted/clear ana ekran (iOS 18/26), kilit ekranı vurgulu modu, StandBy: metin okunuyor, kelime vurgulu, anlam renge bağlı değil.
 - [ ] **Yazı boyutu:** Dinamik Tür'ü en büyük ve en küçük yap: küçük widget'ta buton satırı kesilmiyor mu?
 - [ ] **Bellek/çökme:** Console'da widget extension'ın jetsam/0xDEAD10CC çökmesi yok.
-- [ ] **Tekrar sekmesi:** İlk açılışta "Bugünün yeni kelimeleri" önerilir. Karta dokun: Türkçe karşılık iri, altında tanım ve örnek. "Bildim"/"Bilemedim" ile ilerle, tur sonunda özet çıkar. Uygulamayı kapat-aç: cevapladığın kelimeler yeni kelime listesinde yok. Widget'ta "Biliyorum" dediğin kelime Tekrar'da yeni olarak çıkmaz.
+- [ ] **Tekrar sekmesi:** İlk açılışta "Bugünün yeni kelimeleri" önerilir. Karta dokun: Türkçe karşılık iri, altında tanım ve örnek. "Bilemedim"/"Zor"/"Bildim"/"Kolay" ile ilerle (SE'de dört düğme de kartın altında, sekme çubuğuna taşmadan görünmeli), tur sonunda özet çıkar ("bildin" = Bilemedim dışındaki cevaplar). İkinci turda quiz sorusunu doğru yanıtla: "Devam" altında "Zordu" ve "Kolaydı" çıkmalı, yanlışta çıkmamalı. Uygulamayı kapat-aç: cevapladığın kelimeler yeni kelime listesinde yok. Widget'ta "Biliyorum" dediğin kelime Tekrar'da yeni olarak çıkmaz.
 - [ ] **Ayarlar sekmesi:** Sıklığı 5 dakikaya çek: widget'taki kelime değişmez, sonraki sınırda yeni aralıkla ilerler. Günlük yeni kelimeyi değiştir: widget kuyruğu yeniden yazılır. Sayılar (bildiğim / öğrenmekte / bugün tekrar) Tekrar sekmesiyle tutarlı. "İlerlemeyi sıfırla" onay sorar, sonra sayılar 0 olur.
+- [ ] **Güncellemede açılış akışı yok:** Eski sürümün üstüne TestFlight güncellemesi kur ve aç: açılış akışı görünmez, Akış sırası aynı. Ayarlar > Yardım > "Açılış ekranlarını yeniden göster" çalışır.
+- [ ] **Açılış akışı:** Uygulamayı sil, yeniden kur, aç. Dört sayfa görünmeli: seviye, konular, widget rehberi, ilk kelime. Seviye seçmeden "Devam" pasif. 1. sayfada uygulamayı kapat-aç: akış yeniden açılır. Rehberdeki adımlarla kilitli ekrana ve ana ekrana widget ekle; düğme adları (Özelleştir, Araç Takımı Ekle, Düzenle, Bitti) iPhone'dakilerle aynı mı, bak. Widget seçilen konunun kelimesini göstermeli. "Başla"dan sonra uygulamayı kapat-aç: akış bir daha açılmaz. Ayarlar > Yardım'dan yeniden açılır, şimdiki seçim seçili gelir. "Atla" her sayfada çalışır.
+- [ ] **Konu seçimi:** Ayarlar > Öğrenme > Konular'da özet satırı seçime göre değişir; yalnız "Hava & Mevsimler" seçilince "Kelime az olduğu için..." uyarısı çıkar. Yalnız "Seyahat & Turizm"i seç, geri dön. Widget'taki kelime sınıra kadar aynı kalır, sonra yalnız seyahat kelimeleri döner. Akış yalnız seyahat kartlarını gösterir. Tekrar'da başka konudan öğrenmeye başladığın kelimelerin tekrarı yine gelir, yeni kelimeler seyahatten gelir. "Tümü"ne dönünce her şey geri gelir. Seviyeyi B1 yap: Akış B1 kartlarıyla başlar. Konu değişiminden hemen sonra widget'taki (destede olmayan) kelimeye dokun: kartı bir sayfada açılır, "Kapat" çalışır.
 - [ ] **Yüzlerce kart:** `content.sqlite` ~550 kartla paketlenince Akış'ta A1 kartları önce gelir, sonra A2, B1... Akış sekmesi hızlı kayar.
+- [ ] **Söyle (telaffuz alıştırması):** dosyanın sonundaki "Söyle: cihazda denenecekler" listesi.
 
 ## Bilinen belirsizlikler (derleyici veya cihaz itiraz edebilir)
 
@@ -207,7 +245,7 @@ Derleyici olmadan doğrulanamayanlar. Birincil şüpheliler en üstte.
 15. Süreklilik doğruluğu cihazda ölçülmeli (kontrol listesindeki "Süreklilik" maddesi). Algoritma saf ve testli, ama gerçek sistemde zaman çizelgesi yeniden üretme anları, `.atEnd` ve `reloadAllTimelines()` zamanlaması doğrulanmadı.
 16. Dokunuştan sonra yalnızca dokunulan widget'ın zaman çizelgesi hemen yenilenir. Kilit ekranı gibi diğer örnekler yeni imleci kendi yeniden yüklemelerinde (en geç uygulama arka plana geçince) görür; o zamana kadar eski girişlerini gösterebilir. `reloadTimelines(ofKind:)` çağrısı bütçeyi yer mi bilmiyorum, eklemedim.
 17. Saat dilimi / yaz saati / cihaz saati değişince sınırlar kayar (ofset her hesapta o anki saat diliminden alınır). Dönüşüm tutarlı kalır ama kelime beklenmedik bir anda değişebilir. Cihaz saati 2026-01-01'den önceyse tohum dönüşümü ilk kelimede kalır.
-18. **Widget düzeni (2026-10-13, `WidgetSnapshotTests` çizimleriyle bakıldı):** metin bloğu `ViewThatFits` ile sığan en dolu düzeni seçiyor. Küçük: kelime + seviye, Türkçe karşılık (2 satır), sığarsa `def_micro` (1–2 satır); orta: kelime + IPA + seviye, karşılık, tanım (2 satır), örnek (1 satır), sığarsa "Sonraki HH:mm". En uzun kelime/karşılık/tanım/örnek kartlarıyla SE ve 6.1" boyutlarında kesilme yok, düğmeler yerinde. Çizimler yaklaşık: WidgetKit'in kendi kenar boşlukları, kilit ekranı canlılığı (vibrancy) ve renklendirme cihazda ayrıca bakılmalı.
+18. **Widget düzeni (2026-10-13, `WidgetSnapshotTests` çizimleriyle bakıldı):** metin bloğu `ViewThatFits` ile sığan en dolu düzeni seçiyor. Küçük: kelime + seviye, Türkçe karşılık (2 satır), sığarsa `def_micro` (1–2 satır); orta: kelime + IPA + seviye, karşılık, tanım (2 satır), örnek (1 satır), sığarsa "Sonraki HH:mm". En uzun kelime/karşılık/tanım/örnek kartlarıyla SE ve 6.1" boyutlarında kesilme yok, düğmeler yerinde. Çizimler yaklaşık: WidgetKit'in kendi kenar boşlukları, kilit ekranı canlılığı (vibrancy) ve renklendirme cihazda ayrıca bakılmalı. Hoparlör düğmesi eklenince (2026-10-21) metin düzeni değişmedi; düğmeler bir katmanda, kenar boşluğuna uzanıyor: madde 45.
 19. Vurgulu/tinted/clear modlarda okunabilirlik ve `.fill.tertiary` arka planı iOS 26 Liquid Glass'ta gerçek cihazda görülmeli.
 20. Gizlilik manifestleri: uygulama `UserDefaults` için `CA92.1` bildirir, widget hiçbir gerekçeli API bildirmez. Archive > Privacy Report ile doğrula; widget `FileManager`/`Data` üzerinden bir "dosya zaman damgası" API'sine dokunduğu çıkarsa `C617.1` ekle.
 21. `getCurrentConfigurations` simülatörde/Debug'da boş dönebilir; "Widget Sağlığı" sayısı yalnızca bilgilendiricidir.
@@ -235,16 +273,185 @@ Derleyici olmadan doğrulanamayanlar. Birincil şüpheliler en üstte.
 41. Kart ayrıntısı (`AppModel.detail(for:)`) ana iş parçacığında, görünüm çizilirken veritabanından tek satır okur ve önbelleğe alır. Satır başına çok kısa sürmesi beklenir, ölçülmedi.
 42. **Sesli telaffuz (`Speaker.swift`):** kelimenin ve örnek cümlelerin yanındaki hoparlör, cihazın kendi ABD İngilizcesi sesiyle (çevrimdışı) okur; yüklüyse geliştirilmiş/premium ses seçilir (Ayarlar > Erişilebilirlik > Sözlü İçerik > Sesler'den indirilebilir). Hız varsayılanın 0,9 katı. Ses oturumu `.playback`: sessiz modda da duyulur, diğer sesleri kısar. Tekrar kartında hoparlör kartın üstünde (kartın içindeki düğme kartı da açardı). Quiz sorusunda yok, cevabı söylerdi. Cihazda ses kalitesi ve gecikme denenmedi; CI simülatöründe yalnızca dokunuşta çökmediği sınanıyor.
 43. **Günlük hatırlatma (`ReminderScheduler.swift`, `Learning/ReminderPlanner`):** Ayarlar > Hatırlatma'dan açılır (varsayılan kapalı, 20:00). Açınca bildirim izni istenir; reddedilirse anahtar kapalı kalır ve iPhone Ayarları'na giden düğme çıkar. Yerel bildirim, yedi gün ileriye tek tek (tekrarlanmayan) kurulur ve uygulama her arka plana geçişinde baştan yazılır: metindeki sayı o anki ilerlemeden hesaplanır ("12 kelime tekrar, 5 yeni kelime..."). O günün tekrarı ve yeni kelime hedefi bittiyse o günün bildirimi kurulmaz. Uygulama 7 gün hiç açılmazsa bildirimler biter (bilerek: kullanılmayan uygulama rahatsız etmesin). Bildirime dokununca Tekrar sekmesi açılır. Gerçek cihazda bildirim zamanlaması ve dokunuşla açılış denenmedi.
+44. **Zor/Kolay düğmeleri (hiç derlenmedi, simülatörde bakılmadı):** Tekrar kartında 2×2 düğme alanı (`ReviewView.answerArea`) ve quiz'de "Zordu"/"Kolaydı" satırı (`QuizCardView.difficultyButtons`). SE'de kartın küçülen alanı ve düğmelerin sekme çubuğuna taşmaması ekran görüntüsünden (`screenshots.yml`) kontrol edilmeli. `tortoise` ve `hare` SF Symbols simgeleri (iOS 14+) kullanıldı; görünmezse yalnızca simge kaybolur, metin kalır. Aralıklar (zor = yarısı, kolay = iki kutu) sezgiyle seçildi, gerçek kullanımla ayarlanmalı (`Leitner.hardFactor`).
+45. **Widget'ta hoparlör düğmesi (2026-10-21; CI'da derlendi, cihazda denenmedi):** Küçük ve orta ana ekran widget'ında hoparlör, kelimeyi (başlık sözcüğü) **uygulamayı açmadan** okur. Kilit ekranı widget'larına eklenmedi (cihaz kilitliyken düğmeler çalışmaz). Derleme: `build.yml` yeşil, Xcode 26.3, uyarısız (https://github.com/yusufuyar68/lockglow/actions/runs/39517676248, `macos-15-intel`). `WidgetSnapshotTests` çizimleri bu düzenle henüz üretilmedi: bir sonraki `screenshots.yml` turunda bak.
+    - **Nasıl çalışıyor:** `Shared/SpeakWordIntent.swift` bir `AudioPlaybackIntent`. Apple'ın "Adding interactivity to widgets and Live Activities" belgesi: bu protokolü uygulayan intent widget eklentisinde değil **uygulamanın sürecinde** çalışır, intent uygulama hedefine de eklenmelidir (`NextWordIntent` gibi sıradan bir `AppIntent` widget eklentisinde çalışır). Bu yüzden `Shared/` klasörü uygulamaya, widget'a ve çizim testi paketine birlikte giriyor: widget `Button(intent:)` için tipi bilmeli, uygulama `perform()`'ü çalıştırıyor. Uygulama kapalıysa sistem onu arka planda başlatır (bunu `AudioPlaybackIntent` için Apple belgesi değil, geliştirici forumunda bir Apple mühendisi söylüyor). `perform()` konuşma bitene kadar (en çok 8 sn) bekler, 0,25 sn sonra ses oturumunu kapatır, sonra döner; dönünce uygulama yeniden askıya alınır. Apple, arka plandaki işlere 30 sn tanındığını yazıyor; bu yetiyor. `isDiscoverable = false`: Kestirmeler, Spotlight ve Siri'de "her metni oku" eylemi olarak görünmez, widget'tan çalışır (Apple belgesi).
+    - **Ayar:** uygulamaya `UIBackgroundModes: audio` eklendi (`project.yml`). Apple: `.playback` kategorisi arka planda çalmak için bu modu ister; mod yoksa etkinleştirme `cannotStartPlaying` (561015905) ile düşer. Yalnızca Info.plist anahtarı; yetki (entitlement), profil ya da izin metni gerekmez. Eklentiye eklenmez.
+    - **Ses:** `Shared/WordSpeech.swift`, `Speaker.swift`'in eski mantığıyla aynı: en-US, kurulu en iyi kalite (geliştirilmiş/premium varsa o), hız 0,9, oturum `.playback` + `.spokenAudio` + diğer sesleri kıs. `Speaker.swift` artık bunu kullanıyor, uygulamadaki davranış aynı. Widget tarafında `WordSpeechPlayer` konuşmayı bekler; ikinci dokunuş birincinin yerine geçer. Uygulamanın kendi ses oturumu etkinleşmezse yedek yol: `usesApplicationAudioSession = false` (oturumu sistem yönetir; WWDC20 10022). Bu yolun arka planda ses çıkarıp çıkarmadığı belgelenmemiş. İleride düşünülebilir: Apple'ın metin okuma için önerdiği `.voicePrompt` modu (podcast'i üstüne konuşmak yerine duraklatır); şimdilik uygulamayla aynı kalsın diye değiştirilmedi.
+    - **Günlükler (cihaz denemesi için):** Xcode > Console, kategori `speech`. `widget speech in com.yusufuyar.vocabwidget, app audio session: true` = intent uygulamada çalıştı, normal yol. Paket adı `...widgets` ise intent eklentide çalışmıştır (beklenmez, ses çıkmaz). `app audio session: false` = yedek yol. Ayrıca `audio session not activated`, `widget speech timed out`, `audio session deactivation: ...` satırları sorunu gösterir.
+    - **Düzen:** üç düğme 3 x 44 = 132 pt. Küçük widget'ın içerik genişliği SE'de 116, 6,1" telefonda 126 pt; orta widget'ın içerik yüksekliği 126 pt (SE'de 116). Bu yüzden widget'ın sistem kenar boşlukları kapatıldı (`WordWidget`: `contentMarginsDisabled()`); görünümler boşlukları `widgetContentMargins` ile kendileri uyguluyor. Apple boşlukları seçerek uygulamak için bu yolu belgeliyor. Düğmeler bir katmanda (`overlay`) çiziliyor ve her yandan en çok 8 pt boşluğa uzanıyor (`buttonGroupOverflow`). Böylece dokunma alanları 44 x 44 pt kalıyor ve widget'ın kök görünümünün içinde. Metin eski yerini koruyor (düğmelerin yerinde 44 pt'lik boş bir yer tutucu var), madde 18'deki bulgular geçerli. Sıra iki widget'ta da Sonraki, hoparlör, Biliyorum: durum değiştiren iki düğmenin arasında zararsız hoparlör var. Küçükte alt satırda, ortada sağ sütunda. Simgeler ilk erişilebilirlik yazı boyutundan sonra büyümüyor (`dynamicTypeSize(...accessibility1)`); grup 132 pt kalıyor, metni itmiyor. Hoparlörde `startsMediaSession` özelliği var: VoiceOver okuma sırasında susar. Kilit ekranı aileleri kapatılan boşlukları düz `padding` olarak geri alıyor; görünüşleri değişmemeli (cihazda bak). Bir düğmenin dışına dokunmak eskisi gibi uygulamayı açar.
+    - **Gizlilik manifestleri değişmedi:** `AVSpeechSynthesizer` ve `AVAudioSession` Apple'ın "gerekçe istenen API" kategorilerinde (dosya zaman damgası, sistem açılış zamanı, disk alanı, etkin klavyeler, `UserDefaults`) yok; yeni veri toplanmıyor. Uygulamanın mevcut `CA92.1` bildirimi yeterli.
+    - **Mağazaya gönderirken (TestFlight için gerekmez):** `audio` arka plan modu inceleme yönergesi 2.5.4 açısından sorulabilir (arka plan hizmetleri amacına uygun kullanılmalı). Burada kullanıcının dokunuşuyla kısa bir telaffuz için kullanılıyor. Forumda, inceleyen kişi sesi tetikleyemediği için reddedilen bir uygulama bildirildi; App Review notlarına widget adımlarını ve kısa bir ekran kaydını ekle.
+    - **iOS 27 (ileride):** Apple'ın iOS 27 belgelerinde `allowedExecutionTargets` var; aynı belgeler sistemin arka plan intent'lerini uygulama eklentisinden çalıştırmayı tercih ettiğini yazıyor. CI Xcode 27'ye geçince bu intent'in yalnızca uygulamada çalışmasını açıkça seç ve günlükteki paket adına bak.
+    - **Apple'ın belgelemediği, cihazda görülecekler:** (a) `AVSpeechSynthesizer`'ın `AudioPlaybackIntent` ile arka planda başlatılan uygulamada gerçekten ses çıkarması (Apple bu birleşimi anlatmıyor; navigasyon uygulamaları arka planda sesli komutu aynı API'yle, `audio` moduyla veriyor), (b) uygulama kapalıyken ilk dokunuşun gecikmesi (forumda "birkaç saniye" bildirildi; uygulamanın açılış hızına bağlı), (c) okurken ekran kilitlenirse konuşmanın yarıda kesilmesi (forumda uzun cümlelerde bildirildi), (d) sessiz modda duyulma, (e) çalan müziğin kısılıp geri gelmesi, (f) kilit ekranı, StandBy ve renklendirilmiş ana ekranda kenar boşlukları. **Sessiz kalırsa sırayla:** `AVSpeechSynthesizer.write` ile arabelleğe yazıp `AVAudioPlayer` ile çalmak; kelime sesini önceden kaydedip pakete koymak; son çare düğmeyi `openAppWhenRun` yapıp uygulamayı açarak okutmak.
+46. **Açılış akışı ve deste seçimi (2026-10-20/21, Windows'ta yazıldı):** İlk sürüm CI'da (`build.yml`, 2026-10-20, Xcode 26.3) 151 paket testiyle yeşil. 21 Ekim'de üyelik süzgeci, özet satırı, `OnboardingGate`, yedek yeni kelime akışı ve detay sayfası eklendi. CI (21 Ekim, `build.yml`, macos-15-intel, Xcode 26.3): 159 paket testi geçti, uygulama ve widget derlemesi hatasız ve uyarısız; Linux işi (`linux_check.sh`) 147 testle yeşil. Ekranlara simülatörde bakılmadı; `screenshots.yml` açılış sayfalarını `0a`–`0e` adlarıyla çeker. Bakılacaklar:
+    - SE'de ve en büyük yazıda seviye ve konu satırları sığıyor mu;
+    - "Kilitli ekran / Ana ekran" düğmeleri `ViewThatFits` ile yan yana ya da alt alta doğru geçiyor mu;
+    - tam ekran akış sekmelerin üstünde doğru açılıyor mu.
 
+    Renkler tasarım taslağındaki değerlerle kodda (`GlowStyle.swift`, `Palette`). Taslak Swift'e geçirilince Asset Catalog renkleriyle değiştirilmeli. iOS 26'da kilitli ekranda "Özelleştir"den sonra "Kilitli Ekran / Ana Ekran" seçimi sorulup sorulmadığı Apple'ın kılavuzunda yazmıyor; rehber "seçmeni isterse" diyor. Cihazda bakılmalı.
 
 ## Learning modülü (uygulamaya bağlı)
 
-`Packages/VocabKit/Sources/Learning` saf Swift'tir; `swift test` ile `LearningTests` çalışır (yeni testler `ProgressIngestTests`, `ReviewPlannerTests`; beklenen değerler elle hesaplandı, hiç çalıştırılmadı). Kuyruk algoritmasının test beklentileri ayrıca bir Python kopyasıyla doğrulanmıştı.
+`Packages/VocabKit/Sources/Learning` saf Swift'tir; `swift test` ile `LearningTests` çalışır (yeni testler `ProgressIngestTests`, `ReviewPlannerTests`, `LeitnerHardEasyTests`; beklenen değerler elle hesaplandı, hiç çalıştırılmadı). Kuyruk algoritmasının test beklentileri ayrıca bir Python kopyasıyla doğrulanmıştı.
 
 Uygulamaya bağlandı (yalnızca uygulama hedefi, widget'a eklenmedi):
 1. `project.yml`: uygulama hedefine `package: VocabKit, product: Learning`.
 2. `AppModel.refreshWidgetPlan`: widget olayları `LearningEvent`'e çevrilip `ProgressIngest.apply` ile işlenir (`known` → `Leitner.markKnown`, `next`/`reveal` → `markExposure`, `unknown` → `review(.again)`), `ProgressStore` ile kaydedilir, olay dosyaları silinir; kuyruk `QueueComposer.compose(feed:progress:now:horizon: 48 saat, maxNew: günlük hedef × 2, limit: 96, pinFirst: şu an gösterilen kelime)` ile kurulur. `QueueBuilder` artık uygulamada kullanılmıyor (Scheduler testleri hâlâ onu kapsıyor).
-3. Tekrar sekmesi cevapları `Leitner.review(.again / .good)` ile işler; `ReviewPlanner` tur kelimelerini ve Ayarlar'daki sayıları hesaplar.
+3. Tekrar sekmesi cevapları `Leitner.review(.again / .hard / .good / .easy)` ile işler; `ReviewPlanner` tur kelimelerini ve Ayarlar'daki sayıları hesaplar.
 4. Tek seferlik geçiş: `AppPreferences.knownWordIDs` içindekiler `markKnown` ile ilerleme dosyasına taşınır, sonra eski anahtar silinir.
 
-Sırada: FSRS (v1.2, aynı çağrıların arkasında), `hard`/`easy` notları. (`undoKnown` artık Bildiğim kelimeler listesinde ve Sözlük kartında kullanılıyor.)
+### Zor ve Kolay notları (`Leitner.review`)
+
+| Not | Düğme | Yeni kelime (kutu 0) | Kutudaki kelime | Biten (`known`) kelime |
+|---|---|---|---|---|
+| `again` | Bilemedim | kutu 1, 10 dk sonra | kutu 1, 10 dk sonra (yanlış sayılır) | öğrenmeye döner, kutu 1, 10 dk |
+| `hard` | Zor / Zordu | kutu 1, **12 saat** sonra | kutu **aynı**, o kutunun aralığının yarısı (kutu 1: 12 sa, 2: 1 g, 3: 2 g, 4: 4 g, 5: 8 g) | `known` kalır, hatırlatma 15 gün sonra |
+| `good` | Bildim / Devam | kutu 1, 1 gün | bir kutu ileri, yeni kutunun aralığı (1, 2, 4, 8, 16 gün) | `known` kalır, hatırlatma 30 gün sonra |
+| `easy` | Kolay / Kolaydı | kutu 2, 2 gün | **iki** kutu ileri, 5'i aşmaz (kutu 4 → 5, 16 gün) | `known` kalır, hatırlatma 30 gün sonra |
+
+Gerekçeler ve seçimler:
+- Sıra hep `again` < `hard` < `good` < `easy` (testle doğrulanır, her kutu için).
+- `hard` ve `easy` yanlış sayılmaz (`lapses` artmaz); `reviews` her cevapta artar.
+- Son kutuda (5) `good` ya da `easy` kelimeyi bitirir (`known`). `hard` bitirmez: kutu 5'te 8 gün sonra yeniden sorulur.
+- Kutu 4'te `easy` bitirmez, kutu 5'e geçirir: "en üst kutuyu aşmaz". Bitirmek için son kutuda bir doğru cevap daha gerekir.
+- `known` kelimede (bitmiş ya da "Biliyorum" denmiş) `easy` ile `good` aynıdır, çünkü hatırlatmanın üstünde kutu yok. `hard` hatırlatmayı yarıya (15 güne) indirir ve kelime `known` kalır, yani Ayarlar'daki "bildiğim" sayısı değişmez.
+- Yeni kelimeye `hard` kutu 1'e sokar (aksi hâlde kelime yeni kalır ve "yeni kelime" listesinde sonsuza dek çıkardı). 12 saatlik aralık sabah çalışılan kelimeyi aynı akşam "zamanı gelmiş" yapabilir; Ayarlar'daki "bugün tekrar" sayısı ve günlük hatırlatma bunu zaten `dueAt`'ten okuyor, ayrı bir ayar gerekmedi (`LeitnerHardEasyTests.testPlannersSeeAHardAnswerTwelveHoursLater`).
+- `progress.json` biçimi değişmedi: `ReviewGrade` dosyaya yazılmaz, `WordProgress` alanları aynı. Eski bir dosya olduğu gibi açılır (testli).
+- Widget "Bilemedim" (`unknown`) hâlâ yalnızca `again` üretir; widget'ta zor/kolay düğmesi yok.
+
+(`undoKnown` artık Bildiğim kelimeler listesinde ve Sözlük kartında kullanılıyor.)
+
+
+## Söyle: sesli telaffuz alıştırması (2026-10-20/21; CI'da derlendi ve testler geçti, cihazda denenmedi)
+
+Akış kartında ve Sözlük ayrıntısında kelimenin yanında bir **mikrofon simgesi** var (`mic.circle`, 44 pt; VoiceOver: "Söyle: telaffuzunu dene"; `PronunciationPracticeView.swift`). Basınca "Söyle" sayfası açılır:
+1. Kelimeyi (ya da "Örnek cümle" seçilirse kartın örneğini) dinle.
+2. Alttaki Söyle düğmesine bas (sayfa orta yükseklikteyken de kaydırmadan görünür) ve söyle.
+3. Telefon söyleneni cihazda tanır ve Türkçe geri bildirim verir: "Doğru!", "Neredeyse!", "Bir daha dene" ya da "Seni duyamadım".
+
+**v1 kararları (2026-10-21, `docs/ozellik_planlari/soyle_telaffuz.md`):**
+- Söyle, Leitner'ı ve ilerlemeyi etkilemez.
+- Kalıcı Söyle sayısı yok: dosya, UserDefaults ve App Group'a yazım yok.
+- Tekrar sekmesinde tur yok; yalnız bu sayfa.
+- Öncelik iOS 26+. iOS 17–25 yolu yalnız derlenir.
+- `WordCardView(word:detail:showsSay:)`: izin penceresi çıkmaması gereken bir yerde (açılış turunun "İlk kelime" sayfası) `showsSay: false` mikrofonu gizler.
+
+**Tanıma (`PronunciationRecognizer.swift`).** Yalnız cihazda çalışır, sunucu yok:
+- **iOS 26+:** `SpeechAnalyzer` + `DictationTranscriber`.
+  - Hazır ayar `.phrase` (kısa söz, noktalamasız). Alternatifler ve güven puanı açık.
+  - Apple'ın "Asking Permission to Use Speech Recognition" sayfası: `SpeechAnalyzer` modülleri sesi Apple sunucularına göndermez.
+  - İngilizce (ABD) modelini uygulama ilk kullanımda `AssetInventory` ile kendisi indirir: bir kez; sistem saklar, uygulama boyutu büyümez. Böylece Türkçe klavyeli telefonda da İngilizce dikte kurmak gerekmez.
+  - Mikrofon sesi `AVAudioEngine` ile alınır, `AVAudioConverter` ile analizcinin biçimine çevrilir. Hazır `AnalyzerInputConverter` ve `CaptureInputSequenceProvider` iOS 27 API'si, Xcode 26.3'te yok.
+- **iOS 17–25:** `SFSpeechRecognizer` (en-US) ve `requiresOnDeviceRecognition = true`.
+  - `supportsOnDeviceRecognition` false ise özellik çalışmaz, sunucuya düşülmez.
+  - Kullanıcıya İngilizce (ABD) klavye ekleyip Dikte'yi açması söylenir. Bu bilgi bir geliştirici forumundan (thread 731230), Apple belgesi değil.
+- Ses yalnız deneme sürerken bellekte tutulur; dosyaya yazılmaz.
+- Kayıt şu durumlarda iptal edilir:
+  - sayfa kapanınca ya da mod değişince;
+  - uygulama arka plana geçince;
+  - ses oturumu kesilince (arama, Siri, alarm; `AVAudioSession.interruptionNotification`);
+  - medya servisleri sıfırlanınca.
+- **Ses oturumu:** dinlemeden önce `Speaker.stopAll()`, okuyan her şeyi susturur ve oturumu bırakır:
+  - uygulamanın hoparlör düğmeleri (`Speaker`);
+  - widget'ın hoparlör düğmesi (`WordSpeechPlayer.stop()`; `SpeakWordIntent` uygulama sürecinde çalışır).
+  - Dinlerken oturum `.playAndRecord` + `.measurement` olur ve denemeden sonra kapatılır. Sonraki "Dinle" kendi `.playback` oturumunu kurar.
+
+**İzinler (ilk "Söyle"ye basınca, o anda).**
+- **Mikrofon** (`NSMicrophoneUsageDescription`): her sürümde.
+- **Konuşma tanıma** (`NSSpeechRecognitionUsageDescription`): yalnız iOS 17–25'te istenir. iOS 26'da Apple'ın belgesine göre `SpeechAnalyzer` için gerekmiyor; Apple'ın örnekleri de yalnız mikrofon izni istiyor.
+- İki anahtar da Info.plist'te. Apple: Speech çerçevesini kullanan her uygulama eklemeli; anahtar yoksa `requestAuthorization` çöker. Metinler Türkçe (`project.yml`).
+
+**İzin reddedilirse.**
+- Mikrofon izni yoksa sistem yalnız sessizlik verir (`AVAudioApplication.requestRecordPermission` belgesi). Bu yüzden kayıttan önce izin kontrol edilir; Türkçe mesaj ve "Ayarları aç" düğmesi çıkar.
+- Konuşma tanıma reddinde de aynısı olur.
+- Ekran Süresi kısıtında yalnız bilgi mesajı çıkar.
+- Her durumda Dinle (hoparlör), kartlar ve widget'lar izinsiz de çalışır.
+
+**Kaydın bitişi (`TakeMonitor`).** Kayıt şu durumlardan biri olunca biter:
+- konuştuktan sonra yaklaşık 0,9 sn sessizlik;
+- hiç konuşma yoksa 5 sn;
+- en çok 5 sn (kelime) / 10 sn (cümle);
+- "Bitti" düğmesi.
+
+Ses eşiği (0,02 RMS) bir tahmin; cihazda ayarlanmalı.
+
+**Değerlendirme (`Packages/VocabKit/Sources/Pronunciation`).** Saf Swift; testleri `PronunciationTests`.
+- **Fark etmeyenler:**
+  - büyük-küçük harf, noktalama, aksan;
+  - kesme işareti, tire ve boşluk ("second-hand" = "secondhand", "log in" = "login");
+  - 0–99 arası rakam ya da yazı ("platform 4" = "platform four");
+  - Genel Amerikan İngilizcesinde aynı okunan eş sesliler (`PronunciationCheck.homophoneGroups`: write/right, for/four, do/due, board/bored, need/knead...). Her grupta en az bir kelime destede var.
+  - hedefin çevresindeki fazla kelimeler ("a spoon").
+- **Sonuçlar:**
+  - **Doğru:** en iyi sonuç hedefi içeriyor. Güven puanı 0,5'ten düşükse "Neredeyse" (`PronunciationCheck.lowConfidence`).
+  - **Neredeyse:** şu üç durumdan biri; kaçan kelimeler yazılır:
+    - hedef yalnız alternatiflerde;
+    - birden çok kelimeli hedefin tek bir kelimesi duyulmadı ve yanlış duyulan kelime yok ("get up" yerine "get", "look forward to" yerine "forward to"). Yanlış edat "Bir daha dene" kalır ("turn on" yerine "turn off", "check in" yerine "check out");
+    - en az 3 kelimelik cümlenin en az %75'i duyuldu.
+  - **Bir daha dene:** diğer her şey.
+  - **Seni duyamadım:** hiçbir şey tanınmadı.
+- **İpuçları:** yalnız fark tek bir kalıba tam uyunca verilir. Kelimede kartın IPA'sıyla, cümlede yazımla bakılır.
+  - **th** t/d/s/z/f/v gibi söylendi: think → sink, three → tree, birthday → bird day. IPA'da θ/ð yoksa ipucu yok ("Thomas").
+  - **w ↔ v:** wine → vine, vest → west. IPA'da o ses yoksa ipucu yok ("write"taki sessiz w).
+  - **Sondaki sesli ünsüz sertleşti:** bad → bat, dog → dock, bridge → britch ("'c' sesini 'ç' gibi"), rise → rice. IPA'nın son sesi ötümlü olmalı.
+  - **Son ses yutuldu:** asked → ask, card → car.
+  - Farklı kalıplar karışırsa ya da hiçbiri uymazsa genel mesaj çıkar: "'X' duydum. Önce hoparlör düğmesiyle dinle, sonra yavaş ve net söyle." Yanlış teşhis koymaktansa genel mesaj tercih edildi.
+- **Test beklentileri:** önce aynı mantığın Python kopyasıyla doğrulandı. Buna planın 16 satırlık tablosu da dahil: edatlar, eş sesliler, eksik kelime. Sonra CI'da Swift'te geçti.
+- **Sınır:** konuşma tanıyıcı bir telaffuz puanlayıcısı değil, en olası kelimeyi yazar.
+  - Aksanlı ama anlaşılır bir söyleyişi doğru sayabilir.
+  - Nadir bir kelimeyi doğru söylesen de başka kelime yazabilir.
+  - Hedef kelime bilerek `contextualStrings`'e verilmedi: tanıyıcıyı hedefe çeker ve kontrolü anlamsızlaştırır.
+
+**Gizlilik.**
+- Veri toplanmıyor. Apple'ın App Privacy tanımına göre cihazdan çıkmayan veri "toplanmış" sayılmaz; App Store etiketinde Audio Data "No".
+- Gizlilik manifestleri değişmedi: mikrofon ve konuşma tanıma "gerekçe istenen API" değil.
+- `docs/legal/` gizlilik politikalarına (TR/EN) "Söyle" bölümü eklendi.
+
+### Söyle: cihazda denenecekler
+
+- [ ] **İzin (iOS 26):** İlk "Söyle"de yalnız mikrofon izni sorulmalı. Konuşma tanıma izni de sorulursa ya da tanıma hep "Konuşma tanıma bu sefer çalışmadı (...)" diyorsa, parantez içindeki hatayı not al: Apple'ın belgesine göre bu izin gerekmiyor.
+- [ ] **Model indirme:**
+  - İlk kullanımda "İngilizce konuşma modeli iniyor" görünür mü, ne kadar sürer?
+  - İkinci seferde hemen başlamalı.
+  - İlk kullanım uçak modundaysa "indirilemedi" mesajı çıkmalı.
+  - Model indikten sonra uçak modunda da çalışmalı (cihaz içi).
+- [ ] **Doğru söyleyiş:** "think", "three", "breakfast", "turn on", "o'clock" ve bir örnek cümle → "Doğru!".
+- [ ] **Bilerek yanlış:**
+  - "think" yerine "sink", "wine" yerine "vine", "bad" yerine "bat", "asked" yerine "ask" de: ilgili Türkçe ipucu çıkıyor mu?
+  - Tanıyıcı bu yanlış kelimeleri gerçekten yazıyor mu? Yazmıyorsa ipucu yerine genel mesaj çıkar. Hangisinin çıktığını not al.
+- [ ] **Örnek cümle:** bir kelimeyi atla → "Neredeyse!" ve kaçan kelime.
+- [ ] **Kaydın bitişi:**
+  - Sessiz kal → 5 sn sonra "Seni duyamadım".
+  - Konuşup sus → yaklaşık 1 sn içinde kendiliğinden kontrol.
+  - Gürültülü odada kendiliğinden durmuyorsa ya da konuşurken kesiyorsa eşiği (`TakeMonitor.speechLevel`) not al.
+  - "Bitti" her zaman çalışmalı.
+- [ ] **Güven puanı:** doğru söylenen kelimelerde sık sık "Neredeyse" çıkıyorsa `PronunciationCheck.lowConfidence` (0,5) düşürülmeli.
+- [ ] **İzin reddi:** Ayarlar > Lockglow > Mikrofon'u kapat. Söyle'de Türkçe mesaj ve "Ayarları aç" çıkmalı; Dinle çalışmaya devam etmeli.
+- [ ] **Sesler birbirini bozmuyor:**
+  - Söyle'den sonra hoparlör (Dinle) normal seviyede ve sessiz modda duyuluyor (ses oturumu `.playAndRecord`'dan `.playback`'e dönüyor).
+  - Müzik çalarken Söyle → müzik kısılıp geri gelmeli.
+  - Akış'ta "Dinle"ye dokunup hemen mikrofona dokun: okuma kesilmeli, kayıt başlamalı.
+- [ ] **Widget hoparlörü + Söyle (bulgu 5):** ana ekran widget'ında uzun bir kelimenin hoparlörüne dokun, hemen uygulamayı açıp Söyle'ye bas. Widget'ın sesi kesilmeli, kayıt başlamalı, "Mikrofon başlatılamadı" çıkmamalı.
+- [ ] **Arka plan ve kesinti:** kayıt sırasında uygulamayı arka plana al, ayrıca kayıt sırasında Siri'yi çağır ya da kendini aratır. İkisinde de kayıt durmalı ve durum çubuğundaki turuncu mikrofon noktası kaybolmalı.
+- [ ] **Kulaklık:** Bluetooth kulaklıkla telefon mikrofonu mu kulaklık mikrofonu mu kullanılıyor, tanıma çalışıyor mu? Bluetooth seçeneği bilerek eklenmedi.
+- [ ] **Düzen:** iPhone SE'de uzun kelimede ("look forward to") başlık satırı (kelime, hoparlör, mikrofon) taşmıyor. Sayfa orta yükseklikte açılınca alttaki Söyle düğmesi kaydırmadan görünüyor.
+- [ ] **VoiceOver:** mikrofon simgesi "Söyle: telaffuzunu dene" diye okunuyor. Söyle'ye basınca hafif titreşim hissediliyor. Sonuç başlığı ve mesajı birlikte okunuyor.
+- [ ] **Edatlar:** "get up" de ama "up"ı yut → "Neredeyse! Şunlar duyulmadı: up." "turn on" yerine "turn off" de → "Bir daha dene".
+
+### Söyle: bilinen belirsizlikler
+
+1. **Derlendi ama çalışırken görülmedi.** iOS 26 API imzaları Apple belgesinden alındı ve CI'da Xcode 26.3 ile derlendi (2026-10-20, uyarısız). Şunlar cihazda görülecek:
+   - güven niteliğinin (`ConfidenceAttribute`) gerçekten dolu gelip gelmediği;
+   - alternatiflerin sayısı;
+   - modelin indirme süresi.
+   - `cancelAndFinishNow()` belgede bir yerde `async`, bir yerde `throws` görünüyor; bu yüzden hiç çağrılmıyor. Girdi akışını bitirmek yetiyor.
+2. **`AVAudioConverter` giriş bloğu** Apple'ın WWDC25 örneğindeki gibi yakalanan bir `var`'ı değiştiriyor. SDK bloğu `@Sendable` yaptıysa uyarı çıkabilir.
+3. **`installTap` bloğu** `nonisolated static` bir fonksiyonda kuruluyor. Ana aktörde kurulan kapanış ses iş parçacığında çağrılınca Swift 6 modunda çöker. Proje Swift 5 modunda; yine de ayrı tutuldu.
+4. **Tanıma kalitesi:** `.phrase` hazır ayarının tek kelimede ne kadar iyi tanıdığı, güven puanının ölçeği ve kaç alternatif geldiği bilinmiyor.
+5. **Simülatör:** mikrofon ve model güvenilir değil (Apple'ın örneği simülatörde çalışmıyor). Gerçek deneme yalnız telefonda.
+6. **Tekrar sekmesinde telaffuz turu yok** (2026-10-21 kararı; plan Aşama 2). `QuizCardView` çizim testi hedefine de derlendiği için, oraya düğme eklemek `project.yml`'de o hedefe de bu dosyaları eklemeyi gerektirir.
+7. **Renkler:** tasarım önerisindeki (`docs/tasarim/`) renkler henüz uygulamada yok. Söyle düğmesi sistem stilini kullanıyor; renkler gelince ana düğme `glow` dolgu + `onGlow` yazı olmalı.
+8. **iOS 17–25 yolu yalnız derleniyor.** Planın G1 maddesi yapılmadı: 1110 dışındaki tanıma hatalarını `onDeviceUnavailable` olarak göstermek. Bu yolda her hata "Seni duyamadım" olur. Mağazaya eski iOS sürümleriyle çıkılacaksa yapılmalı.
+9. **`stopAll` ile widget sesi:** `WordSpeechPlayer.stop()` oturumu hemen bırakır. Widget konuşması `stop()`'tan en çok 250 ms önce kendiliğinden bittiyse, `end`'in gecikmeli oturum kapatması yine çalışır ve yeni başlayan kaydın oturumunu kapatabilir. Pratikte widget'tan uygulamaya geçip mikrofona basmak bu süreden uzun sürer.
+10. **UI testi eklenmedi:** planın "8b-soyle-sayfasi" ve "11-sozluk-uzun-lemma" ekran görüntüleri yok. Mikrofon düğmesinin SE'deki yerleşimi `screenshots.yml` ile ya da cihazda görülmeli.

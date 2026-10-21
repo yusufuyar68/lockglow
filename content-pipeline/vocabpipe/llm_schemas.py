@@ -25,9 +25,12 @@ CRITERIA = [
     "etymology",
     "level_tags",
     "pronunciation",
+    "quiz_validity",
 ]
-CRITICAL_CRITERIA = {"sense_accuracy", "example_safety", "tr_gloss", "etymology"}
-PASS_THRESHOLD = 18
+# quiz_validity kritik: kritik olmasaydı tek başına 0 alan bir quiz 22/24 ile PASS olurdu.
+CRITICAL_CRITERIA = {"sense_accuracy", "example_safety", "tr_gloss", "etymology", "quiz_validity"}
+MAX_TOTAL = 2 * len(CRITERIA)
+PASS_THRESHOLD = MAX_TOTAL - 4  # 20/24; eski 18/22 ile aynı pay: en fazla 4 puan kayıp
 
 
 def _obj(props: dict) -> dict:

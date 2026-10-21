@@ -1,33 +1,51 @@
 # Manual: archives the app (Release) and uploads it to App Store Connect, where it appears in
 # TestFlight. Start it with:
 #   gh workflow run testflight.yml
-# Needs five repository secrets (see docs/testflight_kurulum.md):
+# Needs three repository secrets (see docs/testflight_kurulum.md):
 #   ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8   App Store Connect API key (Admin), tools/testflight_anahtar_ekle.ps1
-#   DIST_P12_BASE64, DIST_P12_PASSWORD      iOS distribution certificate, tools/dagitim_sertifikasi_ekle.ps1
-# Signing is manual: Xcode's automatic signing with an API key cannot read App Groups
-# (`/xcbuild/v1/appGroups` answers 401, 2026-10-20), so ios/Tools/asc_profiles.py prepares
-# App Store profiles through the API and the export step signs with them.
+# Signing: Xcode's automatic signing with an API key cannot read App Groups
+# (`/xcbuild/v1/appGroups` answers 401, 2026-10-20). Each run therefore creates a temporary
+# distribution certificate and two IOS_APP_STORE profiles through the API
+# (ios/Tools/asc_signing.py) and signs manually. The `cleanup` job rotates generations: the
+# certificate that signed the newest upload is kept (Apple may mark builds signed with a revoked
+# certificate Invalid Binary); older 'Lockglow CI' generations are retired once the new build is
+# VALID. The user allowed temporary certificates and profiles on 2026-10-20.
 # The build number is the workflow run number, so every upload is higher than the previous one.
 name: testflight
 
 on:
   workflow_dispatch:
+    inputs:
+      runner:
+        # 2026-10-20: arm64 macOS runners were not acquired for ~1 hour ("capacity constraints");
+        # the Intel image is the fallback (gh workflow run testflight.yml -f runner=macos-15-intel).
+        description: macOS makinesi
+        type: choice
+        default: macos-15
+        options: [macos-15, macos-15-intel, macos-26]
 
 concurrency:
   group: testflight
   cancel-in-progress: false
 
+env:
+  APP_BUNDLE_ID: com.yusufuyar.vocabwidget
+  WIDGET_BUNDLE_ID: com.yusufuyar.vocabwidget.widgets
+
 jobs:
   upload:
     name: TestFlight'a yükle
-    runs-on: macos-15
+    runs-on: ${{ inputs.runner || 'macos-15' }}
     timeout-minutes: 45
+    outputs:
+      signing_state: ${{ steps.state.outputs.json }}
+      uploaded: ${{ steps.upload.outputs.uploaded }}
+      export_attempted: ${{ steps.upload.outputs.attempted }}
     env:
       ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
       ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
       KEY_PATH: ${{ github.workspace }}/.asc/AuthKey.p8
-      P12_PATH: ${{ github.workspace }}/.asc/dist.p12
-      KEYCHAIN: ${{ runner.temp }}/lockglow.keychain-db
+      SIGN_DIR: ${{ github.workspace }}/.asc
       BUILD_NUMBER: ${{ github.run_number }}
     steps:
       - uses: actions/checkout@v4
@@ -36,11 +54,9 @@ jobs:
         id: keys
         env:
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
-          DIST_P12_BASE64: ${{ secrets.DIST_P12_BASE64 }}
-          DIST_P12_PASSWORD: ${{ secrets.DIST_P12_PASSWORD }}
         run: |
           missing=""
-          for v in ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8 DIST_P12_BASE64 DIST_P12_PASSWORD; do
+          for v in ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8; do
             [ -n "${!v}" ] || missing="$missing $v"
           done
           if [ -n "$missing" ]; then
@@ -48,10 +64,9 @@ jobs:
             echo "signed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          mkdir -p "$(dirname "$KEY_PATH")"
+          mkdir -p "$SIGN_DIR"
           printf '%s\n' "$ASC_KEY_P8" > "$KEY_PATH"
-          printf '%s' "$DIST_P12_BASE64" | tr -d '\r\n ' | base64 --decode > "$P12_PATH"
-          chmod 600 "$KEY_PATH" "$P12_PATH"
+          chmod 600 "$KEY_PATH"
           echo "signed=true" >> "$GITHUB_OUTPUT"
       - name: En yeni Xcode'u seç
         run: |
@@ -78,39 +93,58 @@ jobs:
             echo "== $app"; codesign -d --entitlements - --xml "$app" 2>/dev/null | plutil -p - 2>/dev/null || true
           done
           exit ${status:-0}
-      - name: Dağıtım sertifikasını anahtarlığa koy
+      - name: Python ortamı
         if: steps.keys.outputs.signed == 'true'
-        env:
-          DIST_P12_PASSWORD: ${{ secrets.DIST_P12_PASSWORD }}
         run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install -q pyjwt cryptography
+      - name: Geçici sertifika ve profiller
+        id: signing
+        if: steps.keys.outputs.signed == 'true'
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" ios/Tools/asc_signing.py setup \
+            --state "$SIGN_DIR/state.json" --p12 "$SIGN_DIR/dist.p12" --p12-password "$SIGN_DIR/dist.pass" \
+            --export-info "$SIGN_DIR/export.json" --run-tag "${{ github.run_id }}-${{ github.run_attempt }}" \
+            --app-group "group.$APP_BUNDLE_ID" "$APP_BUNDLE_ID" "$WIDGET_BUNDLE_ID"
+          for f in ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision; do
+            echo "== $(basename "$f")"
+            security cms -D -i "$f" | plutil -extract Entitlements xml1 -o - - | plutil -p - \
+              | grep -E "application-identifier|application-groups|group\.|beta-reports" || true
+          done
+      # Runs even if the step above failed halfway, so the cleanup job knows what was created.
+      - name: Oluşturulanları kaydet
+        id: state
+        if: always() && steps.keys.outputs.signed == 'true'
+        run: |
+          if [ -f "$SIGN_DIR/state.json" ]; then
+            echo "json=$(tr -d '\n' < "$SIGN_DIR/state.json")" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Sertifikayı anahtarlığa koy
+        if: steps.signing.outcome == 'success'
+        run: |
+          KEYCHAIN="$RUNNER_TEMP/lockglow.keychain-db"
           KC_PASS="$(uuidgen)"
           security create-keychain -p "$KC_PASS" "$KEYCHAIN"
           security set-keychain-settings -lut 3600 "$KEYCHAIN"
           security unlock-keychain -p "$KC_PASS" "$KEYCHAIN"
-          security import "$P12_PATH" -k "$KEYCHAIN" -P "$(printf '%s' "$DIST_P12_PASSWORD" | tr -d '\r\n')" \
+          # The runner image normally has the WWDR intermediate already; a download failure is not fatal.
+          if curl -fsSL --retry 3 https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer -o "$RUNNER_TEMP/wwdr.cer"; then
+            security import "$RUNNER_TEMP/wwdr.cer" -k "$KEYCHAIN" -T /usr/bin/codesign || true
+          fi
+          security import "$SIGN_DIR/dist.p12" -k "$KEYCHAIN" -P "$(cat "$SIGN_DIR/dist.pass")" \
             -T /usr/bin/codesign -T /usr/bin/security
           security set-key-partition-list -S apple-tool:,apple: -k "$KC_PASS" "$KEYCHAIN" > /dev/null
           security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
           security find-identity -v -p codesigning "$KEYCHAIN" | sed -E 's/[0-9A-F]{40}/<sha1>/'
-      - name: App Store profillerini hazırla
-        if: steps.keys.outputs.signed == 'true'
-        env:
-          P12_PASSWORD: ${{ secrets.DIST_P12_PASSWORD }}
-        run: |
-          python3 -m venv "$RUNNER_TEMP/venv"
-          "$RUNNER_TEMP/venv/bin/pip" install -q pyjwt cryptography
-          "$RUNNER_TEMP/venv/bin/python" ios/Tools/asc_profiles.py "$RUNNER_TEMP/profiles.json" \
-            com.yusufuyar.vocabwidget com.yusufuyar.vocabwidget.widgets
-          for f in ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision; do
-            echo "== $(basename "$f")"
-            security cms -D -i "$f" | plutil -extract Entitlements xml1 -o - - | plutil -p - | grep -E "application-identifier|application-groups|group\." || true
-          done
       - name: App Store Connect'e yükle
-        if: steps.keys.outputs.signed == 'true'
+        id: upload
+        if: steps.signing.outcome == 'success'
         working-directory: ios
         run: |
+          # From here on the binary may reach Apple, so cleanup must keep this run's certificate.
+          echo "attempted=true" >> "$GITHUB_OUTPUT"
           TEAM_ID="$(sed -n 's/^DEVELOPMENT_TEAM *= *//p' Config/Base.xcconfig)"
-          python3 - "$RUNNER_TEMP/profiles.json" "$TEAM_ID" build/ExportOptions.plist <<'EOF'
+          python3 - "$SIGN_DIR/export.json" "$TEAM_ID" build/ExportOptions.plist <<'EOF'
           import json, plistlib, sys
           info = json.load(open(sys.argv[1]))
           plistlib.dump({
@@ -130,12 +164,13 @@ jobs:
           grep -E "error|Upload succeeded|EXPORT|Uploaded" build-export.log | sort -u | head -60 || true
           [ -z "${status:-}" ] || tail -40 build-export.log
           cp -R "${TMPDIR:-/tmp}"/*.xcdistributionlogs "$RUNNER_TEMP"/ 2>/dev/null || true
+          [ -z "${status:-}" ] && echo "uploaded=true" >> "$GITHUB_OUTPUT"
           exit ${status:-0}
       - name: Anahtarları sil
         if: always()
         run: |
-          rm -rf "$(dirname "$KEY_PATH")"
-          security delete-keychain "$KEYCHAIN" 2>/dev/null || true
+          rm -rf "$SIGN_DIR"
+          security delete-keychain "$RUNNER_TEMP/lockglow.keychain-db" 2>/dev/null || true
       - name: Günlükleri sakla
         if: always()
         uses: actions/upload-artifact@v4
@@ -147,3 +182,37 @@ jobs:
             ${{ runner.temp }}/*.xcdistributionlogs
           if-no-files-found: ignore
           retention-days: 7
+
+  # Linux (1x minutes): waits for App Store Connect to finish processing the upload, then retires
+  # older 'Lockglow CI' generations (see ios/Tools/asc_signing.py cleanup). Cancelling it is safe:
+  # nothing is deleted then, and the next successful run catches up.
+  cleanup:
+    name: Geçici sertifikayı temizle
+    needs: upload
+    if: always() && needs.upload.outputs.signing_state != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Temizle
+        env:
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          SIGNING_STATE: ${{ needs.upload.outputs.signing_state }}
+          UPLOADED: ${{ needs.upload.outputs.uploaded }}
+          EXPORT_ATTEMPTED: ${{ needs.upload.outputs.export_attempted }}
+          KEY_PATH: ${{ runner.temp }}/AuthKey.p8
+        run: |
+          printf '%s\n' "$ASC_KEY_P8" > "$KEY_PATH"
+          chmod 600 "$KEY_PATH"
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install -q pyjwt cryptography
+          "$RUNNER_TEMP/venv/bin/python" ios/Tools/asc_signing.py cleanup --state-json "$SIGNING_STATE" \
+            --run-tag "${{ github.run_id }}-${{ github.run_attempt }}" \
+            --uploaded "${UPLOADED:-false}" --export-attempted "${EXPORT_ATTEMPTED:-false}" \
+            --app-bundle-id "$APP_BUNDLE_ID" \
+            --build-number "${{ github.run_number }}" --wait-minutes 60 || status=$?
+          rm -f "$KEY_PATH"
+          exit ${status:-0}
