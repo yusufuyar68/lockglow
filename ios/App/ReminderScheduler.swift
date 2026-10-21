@@ -4,9 +4,11 @@ import Learning
 
 /// Turns `ReminderPlanner` reminders into local notifications (nothing leaves the phone).
 /// The plan is replaced as a whole every time: when the app goes to the background and when the
-/// reminder setting changes, so the counts in tomorrow's text follow today's studying.
+/// reminder setting changes, so the word and counts in tomorrow's text follow today's studying.
+/// The wording is `ReminderText` (pure, tested on Linux).
 enum ReminderScheduler {
     static let identifierPrefix = "lockglow.reminder."
+    static let threadIdentifier = "lockglow.reminder"
 
     /// Asks for permission the first time; false when the user said no now or earlier.
     static func requestPermission() async -> Bool {
@@ -44,26 +46,18 @@ enum ReminderScheduler {
         }
         let calendar = Calendar.current
         for (index, reminder) in reminders.enumerated() {
+            let message = ReminderText.message(for: reminder)
             let content = UNMutableNotificationContent()
-            content.title = "Tekrar zamanı"
-            content.body = message(for: reminder)
+            content.title = message.title
+            content.body = message.body
             content.sound = .default
+            // One stack in Notification Center if earlier days' reminders were not opened.
+            content.threadIdentifier = threadIdentifier
             let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: reminder.fireDate)
             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
             // Same identifiers every time: adding one replaces the request with that identifier.
             let request = UNNotificationRequest(identifier: identifierPrefix + "\(index)", content: content, trigger: trigger)
             try? await center.add(request)
-        }
-    }
-
-    static func message(for reminder: Reminder) -> String {
-        switch (reminder.dueCount, reminder.newCount) {
-        case (0, let fresh):
-            return "Bugünün \(fresh) yeni kelimesi hazır. İki dakikanı ayır."
-        case (let due, 0):
-            return "\(due) kelime tekrar bekliyor. Unutmadan pekiştir."
-        case (let due, let fresh):
-            return "\(due) kelime tekrar, \(fresh) yeni kelime seni bekliyor."
         }
     }
 }
