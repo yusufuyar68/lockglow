@@ -23,6 +23,15 @@ enum AppPreferences {
     private static let startLevelKey = "lockglow.startLevel"
     private static let onboardingKey = "lockglow.onboardingCompleted"
 
+    /// The flag as stored, nil when it was never written (`OnboardingGate`). Read with
+    /// `bool(forKey:)`, not `as? Bool`: a launch argument arrives as the text "YES" / "NO".
+    static var onboardingCompletedStored: Bool? {
+        if UserDefaults.standard.object(forKey: onboardingKey) == nil {
+            return nil
+        }
+        return UserDefaults.standard.bool(forKey: onboardingKey)
+    }
+
     /// The onboarding was finished or skipped; after that it opens only from "Ayarlar".
     /// UI tests pass `-lockglow.onboardingCompleted YES` to start on the tabs.
     static var onboardingCompleted: Bool {

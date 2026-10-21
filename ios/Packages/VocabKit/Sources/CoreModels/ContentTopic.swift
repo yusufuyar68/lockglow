@@ -1,5 +1,5 @@
-/// One topic the user can choose to study: a `category` row (contract section 3) that is the
-/// primary topic (`card.primary_topic`) of at least one card the app shows.
+/// One topic the user can choose to study: a `category` row (contract section 3) with at least
+/// one card the app shows among its members (`card_category`).
 public struct ContentTopic: Hashable, Sendable, Identifiable {
     /// `category.id`, for example "travel_tourism".
     public let id: String
@@ -9,7 +9,7 @@ public struct ContentTopic: Hashable, Sendable, Identifiable {
     public let nameTR: String
     /// `category.sort`: display order.
     public let sort: Int
-    /// Free, non-sensitive cards whose primary topic this is.
+    /// Free, non-sensitive member cards (main topic or not; a card can be in several topics).
     public let cardCount: Int
 
     public init(id: String, group: String, nameEN: String, nameTR: String, sort: Int, cardCount: Int) {

@@ -49,14 +49,16 @@ public final class ContentStore {
         }
     }
 
-    /// Topics the user can choose: categories that are the primary topic of at least one free,
-    /// non-sensitive card (the cards `freeCards` returns), in `category.sort` order, with that count.
+    /// Topics the user can choose: categories with at least one free, non-sensitive card (the
+    /// cards `freeCards` returns) among their members (`card_category`, main topic or not), in
+    /// `category.sort` order, with that count. A card in several categories counts in each.
     public func topics() throws -> [ContentTopic] {
         let sql = """
             SELECT cat.id AS id, cat.grp AS grp, cat.name_en AS name_en, cat.name_tr AS name_tr,
                    cat.sort AS sort, COUNT(c.rowid) AS card_count
             FROM category AS cat
-            JOIN card AS c ON c.primary_topic = cat.id
+            JOIN card_category AS cc ON cc.category_id = cat.id
+            JOIN card AS c ON c.rowid = cc.card_rowid
             WHERE c.is_free = 1 AND c.sensitivity = 0
             GROUP BY cat.id
             ORDER BY cat.sort ASC, cat.id ASC
@@ -75,14 +77,16 @@ public final class ContentStore {
         }
     }
 
-    /// `card.primary_topic` of every card, by card id (the deck filter's input).
-    public func primaryTopicByCard() throws -> [Int: String] {
-        return try dbQueue.read { db -> [Int: String] in
-            var result: [Int: String] = [:]
-            for row in try Row.fetchAll(db, sql: "SELECT rowid AS id, primary_topic AS topic FROM card") {
+    /// Every category each card belongs to (`card_category`), by card id: the deck filter's
+    /// input. The feed query never joins this table, so a card is never listed twice.
+    public func topicsByCard() throws -> [Int: Set<String>] {
+        return try dbQueue.read { db -> [Int: Set<String>] in
+            var result: [Int: Set<String>] = [:]
+            let sql = "SELECT card_rowid AS id, category_id AS topic FROM card_category"
+            for row in try Row.fetchAll(db, sql: sql) {
                 let id: Int = row["id"]
                 let topic: String = row["topic"]
-                result[id] = topic
+                result[id, default: []].insert(topic)
             }
             return result
         }

@@ -5,13 +5,24 @@ import CoreModels
 /// level new words start from. No topic means every topic; no level keeps the curriculum
 /// order (A1 first).
 public struct DeckChoice: Equatable, Sendable {
-    /// `category.id` values (the cards' `primary_topic`).
+    /// `category.id` values (the categories a card belongs to, `card_category`).
     public var topicIDs: Set<String>
     public var startLevel: Level?
 
     public init(topicIDs: Set<String> = [], startLevel: Level? = nil) {
         self.topicIDs = topicIDs
         self.startLevel = startLevel
+    }
+}
+
+/// How many words a topic choice gives, and how many of them were never studied.
+public struct DeckSummary: Equatable, Sendable {
+    public var wordCount: Int
+    public var newCount: Int
+
+    public init(wordCount: Int, newCount: Int) {
+        self.wordCount = wordCount
+        self.newCount = newCount
     }
 }
 
@@ -22,22 +33,23 @@ public struct DeckChoice: Equatable, Sendable {
 /// word, and the progress counts cover every word.
 public enum DeckFilter {
     /// The user's feed: `filtered` by topic, then `ordered` by level.
-    public static func feed(_ words: [WidgetWord], topicOf: [Int: String], choice: DeckChoice) -> [WidgetWord] {
-        return ordered(filtered(words, topicOf: topicOf, topicIDs: choice.topicIDs), startingAt: choice.startLevel)
+    public static func feed(_ words: [WidgetWord], topicsOf: [Int: Set<String>], choice: DeckChoice) -> [WidgetWord] {
+        return ordered(filtered(words, topicsOf: topicsOf, topicIDs: choice.topicIDs), startingAt: choice.startLevel)
     }
 
-    /// Words whose primary topic is chosen, in their original order. Every word when no topic is
-    /// chosen, and also when the choice matches no word (topics that left the content, or seed
-    /// words, which have no topic): a topic choice never empties the feed.
-    public static func filtered(_ words: [WidgetWord], topicOf: [Int: String], topicIDs: Set<String>) -> [WidgetWord] {
+    /// Words in at least one chosen topic (a card can belong to several), each once, in their
+    /// original order. Every word when no topic is chosen, and also when the choice matches no
+    /// word (topics that left the content, or seed words, which have no topic): a topic choice
+    /// never empties the feed.
+    public static func filtered(_ words: [WidgetWord], topicsOf: [Int: Set<String>], topicIDs: Set<String>) -> [WidgetWord] {
         if topicIDs.isEmpty {
             return words
         }
         let kept = words.filter { word in
-            guard let topic = topicOf[word.id] else {
+            guard let topics = topicsOf[word.id] else {
                 return false
             }
-            return topicIDs.contains(topic)
+            return !topics.isDisjoint(with: topicIDs)
         }
         return kept.isEmpty ? words : kept
     }
@@ -63,5 +75,34 @@ public enum DeckFilter {
             let right = band(b.element)
             return left != right ? left < right : a.offset < b.offset
         }.map { $0.element }
+    }
+
+    /// The words "Akış" would get for this choice (`filtered`, so an empty or unmatched choice
+    /// counts every word) and how many of them are new. The one count behind every summary line.
+    public static func summary(
+        _ words: [WidgetWord],
+        topicsOf: [Int: Set<String>],
+        topicIDs: Set<String>,
+        progress: [Int: WordProgress]
+    ) -> DeckSummary {
+        let deck = filtered(words, topicsOf: topicsOf, topicIDs: topicIDs)
+        let newCount = deck.filter { isNew($0, progress: progress) }.count
+        return DeckSummary(wordCount: deck.count, newCount: newCount)
+    }
+
+    /// True when at least one word of the deck was never studied (the same rule as
+    /// `ReviewPlanner.newWords`: a word only seen on the widget is still new).
+    public static func hasNewWords(_ deck: [WidgetWord], progress: [Int: WordProgress]) -> Bool {
+        return deck.contains { isNew($0, progress: progress) }
+    }
+
+    /// Where new words come from in "Tekrar" and the reminder: the deck while it has new words,
+    /// then `fallback` (every topic), so finishing the chosen topics does not stop the daily goal.
+    public static func newWordFeed(deck: [WidgetWord], fallback: [WidgetWord], progress: [Int: WordProgress]) -> [WidgetWord] {
+        return hasNewWords(deck, progress: progress) ? deck : fallback
+    }
+
+    private static func isNew(_ word: WidgetWord, progress: [Int: WordProgress]) -> Bool {
+        return (progress[word.id]?.state ?? .new) == .new
     }
 }
