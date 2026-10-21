@@ -6,7 +6,8 @@ import CoreModels
 /// Renders the widget views (compiled into this bundle from Widgets/) at real widget sizes and
 /// attaches the images, so the layouts can be reviewed in CI without placing a widget on a home
 /// screen. An approximation: WidgetKit's own chrome, tinting and Lock Screen vibrancy are not
-/// reproduced; home widgets get WidgetKit's default 16 pt content margin.
+/// reproduced; home widgets get WidgetKit's default 16 pt content margin. The widget disables
+/// the system margins and the views apply them, so the margins are passed in as on a device.
 @MainActor
 final class WidgetSnapshotTests: XCTestCase {
     private struct Family {
@@ -30,28 +31,32 @@ final class WidgetSnapshotTests: XCTestCase {
         for word in SnapshotWords.all {
             let entry = WordEntry(date: now, word: word, nextChange: now.addingTimeInterval(3600))
             for family in families {
-                render(view(for: family.name, entry: entry), family: family, name: "\(family.name)-\(word.lemma)")
+                render(view(for: family, entry: entry), family: family, name: "\(family.name)-\(word.lemma)")
             }
         }
     }
 
     @ViewBuilder
-    private func view(for family: String, entry: WordEntry) -> some View {
-        switch family {
+    private func view(for family: Family, entry: WordEntry) -> some View {
+        let margins = EdgeInsets(
+            top: family.margin, leading: family.margin, bottom: family.margin, trailing: family.margin
+        )
+        switch family.name {
         case "small", "small-se":
-            SmallWordView(entry: entry)
+            SmallWordView(entry: entry, margins: margins)
         case "medium", "medium-se":
-            MediumWordView(entry: entry)
+            MediumWordView(entry: entry, margins: margins)
         case "rect":
             RectangularWordView(entry: entry)
+                .padding(margins)
         default:
             InlineWordView(entry: entry)
+                .padding(margins)
         }
     }
 
     private func render<V: View>(_ view: V, family: Family, name: String) {
         let content = view
-            .padding(family.margin)
             .frame(width: family.size.width, height: family.size.height)
             .background(Color(white: 0.93))
             .clipShape(RoundedRectangle(cornerRadius: family.margin > 0 ? 22 : 6, style: .continuous))
