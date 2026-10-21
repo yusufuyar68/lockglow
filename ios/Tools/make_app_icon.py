@@ -1,4 +1,5 @@
-"""Lockglow app icon: a keyhole carved out of the highlighter band. Shapes only, no fonts.
+"""Lockglow app icon: a keyhole carved out of the highlighter band. The icons are shapes only (fonts are
+used just for the preview labels).
 
 Concept and colours: docs/tasarim/README.md ("Kimlik: fosfor şeridi", "İkon") and appIcon() in
 docs/tasarim/lockglow_ui_mockup.html. Drawn on the mockup's 120-unit grid; the band is taller and the
@@ -12,6 +13,7 @@ next to the given AppIcon.png:
   AppIcon-Dark.png    iOS 18+ dark: night-yellow band with a faint glow on a transparent background,
                       so the system's dark background shows around it and through the keyhole.
   AppIcon-Tinted.png  iOS 18+ tinted: light-gray band on a transparent background; the system tints it.
+                      Gray pixels stored as RGBA (R = G = B), the format Xcode's own icons use.
 Apple, "Configuring your app icon using an asset catalog": "Provide your tinted app icon as a grayscale
 image. Provide your dark app icon with a transparent background so the system-provided background can
 show through."
@@ -89,15 +91,16 @@ def make_default(paper=False):
 
 def make_dark():
     band = carved_band()
-    # Faint glow that follows the band ("Gece: şerit hafif ışır"); it never fills the keyhole.
-    glow = band_mask().filter(ImageFilter.GaussianBlur(4 * U)).point(lambda v: int(v * 0.30))
+    # Faint, tight glow that follows the band ("Gece: şerit hafif ışır"); it never fills the keyhole.
+    # Kept small: the HIG discourages custom glows and feathered edges.
+    glow = band_mask().filter(ImageFilter.GaussianBlur(2 * U)).point(lambda v: int(v * 0.30))
     img = Image.new("RGBA", (S, S), BAND_NIGHT + (0,))
     img.putalpha(ImageChops.subtract(ImageChops.lighter(glow, band), keyhole_mask()))
     return shrink(img)
 
 
 def make_tinted():
-    img = Image.new("LA", (S, S), (TINT_BAND, 0))
+    img = Image.new("RGBA", (S, S), (TINT_BAND, TINT_BAND, TINT_BAND, 0))
     img.putalpha(carved_band())
     return shrink(img)
 
@@ -116,14 +119,15 @@ def font(size, bold=False):
 
 
 def on_home_screen(icon, kind, size, tint=None):
-    """The icon as iOS would draw it at `size` px: a stand-in system background, then the rounded mask."""
+    """Roughly how iOS draws the icon at `size` px: a stand-in system background, then a rounded mask.
+    Approximate: iOS uses a continuous corner, its own dark backdrop and its own tint mapping."""
     small = icon.resize((size, size), Image.LANCZOS)
     if kind == "dark":
         bg = vertical_gradient(INK_TOP, INK_BOTTOM, size)
         bg.paste(small.convert("RGB"), (0, 0), small.getchannel("A"))
         small = bg
     elif kind == "tinted":
-        lum, a = small.getchannel("L"), small.getchannel("A")
+        lum, a = small.convert("L"), small.getchannel("A")
         bg = Image.new("RGB", (size, size), tuple(int(c * 0.14) for c in tint))
         fg = Image.merge("RGB", [lum.point(lambda v, c=c: v * c // 255) for c in tint])
         bg.paste(fg, (0, 0), a)
@@ -149,8 +153,8 @@ def make_preview(icons, path):
 
     rows = [
         ("Varsayılan", light, on_light, sizes("default")),
-        ("Koyu (iOS 18+)", dark, on_dark, sizes("dark")),
-        ("Renklendirilmiş (iOS 18+), örnek renkle", dark, on_dark, sizes("tinted", (0xFF, 0xB3, 0x40))),
+        ("Koyu (iOS 18+), sistem zemini yaklaşık", dark, on_dark, sizes("dark")),
+        ("Renklendirilmiş (iOS 18+), örnek renkle, yaklaşık", dark, on_dark, sizes("tinted", (0xFF, 0xB3, 0x40))),
         ("Neden mürekkep zemin: 29 pt, renkli ve gri tonda", light, on_light, [
             (on_home_screen(icons["default"], "default", 87), "seçilen"),
             (gray(on_home_screen(icons["default"], "default", 87)), "seçilen, gri"),
