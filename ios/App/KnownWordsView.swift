@@ -5,6 +5,7 @@ import CoreModels
 /// "Bildiğim kelimeler": every known word, the most recent first (mockup `st-known`). A word
 /// marked known by mistake (for example the widget's "Biliyorum" tapped by accident) goes back
 /// to learning with the row's "Geri al" or a swipe; a short notice at the bottom offers "Vazgeç".
+/// What "Geri al" does is said once, above the list, where a long list does not hide it.
 struct KnownWordsView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.colorScheme) private var colorScheme
@@ -65,14 +66,16 @@ struct KnownWordsView: View {
                         }
                 }
             } header: {
-                Text(verbatim: "\(known.count) kelime")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Theme.ink2)
-                    .textCase(nil)
-            } footer: {
-                Text("Yanlışlıkla \"Biliyorum\" dediysen \"Geri al\"a dokun. Kelime widget'a ve tekrara geri döner. Satırı sola kaydırmak da olur.")
-                    .font(.footnote)
-                    .foregroundStyle(Theme.ink2)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(verbatim: "\(known.count) kelime")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Theme.ink)
+                    Text("\"Geri al\" kelimeyi yeniden tekrara ve widget'a getirir.")
+                        .font(.footnote)
+                        .foregroundStyle(Theme.ink2)
+                }
+                .textCase(nil)
+                .padding(.bottom, 4)
             }
         }
         .listStyle(.insetGrouped)
@@ -137,7 +140,8 @@ struct KnownWordsView: View {
 }
 
 /// Mockup `.kw`: the serif word and its meaning open the whole card; "Geri al" sits on the row
-/// in plain sight. At accessibility text sizes the button goes under the word.
+/// in plain sight. At accessibility text sizes the button goes under the word. VoiceOver hints
+/// say what each of the two buttons does.
 private struct KnownWordRow: View {
     let word: WidgetWord
     let open: () -> Void
@@ -166,11 +170,15 @@ private struct KnownWordRow: View {
             }
             // Not the list's default button style: the row must not also fire "Geri al".
             .buttonStyle(KnownWordOpenButtonStyle())
+            .accessibilityHint("Kartı açar")
+            // The label stays "Geri al" (no word in it): LockglowScreenshotTests opens the card
+            // through the first element whose label contains the word.
             Button(action: undo) {
                 Label("Geri al", systemImage: "arrow.uturn.backward")
                     .font(.subheadline.weight(.semibold))
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
+            .accessibilityHint("Kelime yeniden tekrara ve widget'a gelir.")
         }
         .padding(.vertical, 2)
     }
@@ -184,13 +192,18 @@ private struct KnownWordOpenButtonStyle: ButtonStyle {
     }
 }
 
-/// Mockup `.toast`: an ink bar over the list with the result and "Vazgeç".
+/// Mockup `.toast`: an ink bar over the list with the result and "Vazgeç". At accessibility text
+/// sizes "Vazgeç" goes under the message.
 private struct KnownWordsUndoNotice: View {
     let message: String
     let undo: () -> Void
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(spacing: 10) {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+            : AnyLayout(HStackLayout(spacing: 10))
+        layout {
             Text(message)
                 .font(.subheadline.weight(.semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)

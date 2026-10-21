@@ -4,15 +4,21 @@ import Learning
 import TextFold
 
 /// "Sözlük": look a word up in English or Turkish (prefix search, Turkish letters folded), then
-/// open the whole card (mockup `#sozluk`). An empty field offers "Dene" examples; in the results
-/// the typed part is bold and underlined, never yellow (rule 1).
+/// open the whole card (mockup `#sozluk`). An empty field offers "Dene" examples and the
+/// Turkish-letters tip; in the results the typed part is bold and underlined, never yellow
+/// (rule 1); a search that finds nothing says what to try and offers a shorter search.
 struct SearchView: View {
     @EnvironmentObject private var model: AppModel
     @State private var query = ""
 
     /// "Dene" examples (mockup `.try`): a Turkish start, the same kind without Turkish letters,
     /// a Turkish word and an English start.
-    private static let tryQueries = ["kahv", "odunc", "randevu", "break"]
+    private static let tryQueries = [
+        SearchTryExample(text: "kahv"),
+        SearchTryExample(text: "odunc"),
+        SearchTryExample(text: "randevu"),
+        SearchTryExample(text: "break", isEnglish: true),
+    ]
 
     var body: some View {
         NavigationStack {
@@ -43,51 +49,85 @@ struct SearchView: View {
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmed.isEmpty {
             VStack(alignment: .leading, spacing: 0) {
-                tryRow
+                tryRow(SearchView.tryQueries)
                 WordListEmptyState(
                     systemImage: "character.book.closed",
                     title: "Kelime ara",
-                    message: WordListEmptyState.message(
-                        "İngilizce bir kelime ya da Türkçe anlamını yaz. ", "kahv", " yazınca ", "breakfast", " çıkar."
-                    )
+                    message: AttributedString("İngilizce bir kelime ya da Türkçe anlamını yaz."),
+                    tip: SearchView.turkishLettersTip
                 )
             }
         } else {
             let results = model.search(trimmed)
             if results.isEmpty {
-                WordListEmptyState(
-                    systemImage: "magnifyingglass",
-                    title: "\"\(trimmed)\" bulunamadı",
-                    message: WordListEmptyState.message(
-                        "Kelimenin başını yazmayı dene. Türkçe harfler gerekmez: ", "odunc", " da ", "ödünç", " bulur."
-                    )
-                )
+                noResults(for: trimmed)
             } else {
                 resultList(results, terms: SearchHighlight.terms(of: trimmed))
             }
         }
     }
 
-    /// "Dene:" and the example chips, in one line that scrolls sideways at large text sizes.
-    private var tryRow: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 8) {
-                Text("Dene:")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Theme.ink2)
-                ForEach(SearchView.tryQueries, id: \.self) { example in
-                    Button {
-                        query = example
-                    } label: {
-                        Text(verbatim: example)
+    /// "Türkçe harfleri yazmasan da bulur" (README "Sözlük"), with its example in bold.
+    private static let turkishLettersTip = WordListEmptyState.message(
+        "Türkçe harfleri yazmasan da bulur: ", "odunc", " yazınca ", "ödünç", " çıkar."
+    )
+
+    /// "Dene:" and the example capsules; at large text sizes they wrap onto more lines instead of
+    /// running off the screen.
+    private func tryRow(_ examples: [SearchTryExample]) -> some View {
+        // No line spacing: the chips already reach 44 pt with transparent margins.
+        DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 0) {
+            Text("Dene:")
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(Theme.ink2)
+            ForEach(examples, id: \.self) { example in
+                Button {
+                    query = example.text
+                } label: {
+                    if example.isEnglish {
+                        Text(verbatim: example.text)
+                            .cardEnglishVoice()
+                    } else {
+                        Text(verbatim: example.text)
                     }
-                    .buttonStyle(ChipButtonStyle())
                 }
+                .buttonStyle(ChipButtonStyle())
+                .accessibilityHint("Bunu arar")
             }
-            .padding(.horizontal, 16)
         }
-        .scrollIndicators(.hidden)
+        .padding(.horizontal, 16)
         .padding(.top, 4)
+    }
+
+    /// Nothing found: what to try, and as "Dene" a shorter search that does find something (a
+    /// misspelled word usually starts right: "brekfast" → "bre"), or the usual examples.
+    private func noResults(for query: String) -> some View {
+        let shorter = shorterQuery(for: query)
+        let message = shorter.map { start in
+            WordListEmptyState.message("Yazım hatası olabilir. Daha kısa yazmayı dene: ", start, ".")
+        } ?? WordListEmptyState.message(
+            "Kelimenin başını yazmayı dene. Türkçe harfler gerekmez: ", "odunc", " da ", "ödünç", " bulur."
+        )
+        return VStack(alignment: .leading, spacing: 0) {
+            tryRow(shorter.map { [SearchTryExample(text: $0)] } ?? SearchView.tryQueries)
+            WordListEmptyState(
+                systemImage: "magnifyingglass",
+                title: "\"\(query)\" bulunamadı",
+                message: message
+            )
+        }
+    }
+
+    /// The query's first word (when the query has more) or its first three letters, whichever
+    /// comes first that finds a word; nil when neither does.
+    private func shorterQuery(for query: String) -> String? {
+        guard let firstWord = query.split(whereSeparator: { $0.isWhitespace }).first else {
+            return nil
+        }
+        let candidates = [String(firstWord), String(firstWord.prefix(3))]
+        return candidates.first { candidate in
+            candidate.count < query.count && !model.search(candidate, limit: 1).isEmpty
+        }
     }
 
     /// Mockup `.res`: the count, the rows in one rounded group, the Turkish-letters tip under it.
@@ -128,7 +168,7 @@ struct SearchView: View {
             Image(systemName: "lightbulb")
                 .foregroundStyle(Theme.ink2)
                 .accessibilityHidden(true)
-            Text(WordListEmptyState.message("Türkçe harfleri yazmasan da bulur: ", "odunc", " yazınca ", "ödünç", " çıkar."))
+            Text(SearchView.turkishLettersTip)
                 .foregroundStyle(Theme.ink2)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -138,11 +178,18 @@ struct SearchView: View {
     }
 }
 
+/// A "Dene" example: what it types into the field, and whether VoiceOver reads it in English.
+private struct SearchTryExample: Hashable {
+    let text: String
+    var isEnglish = false
+}
+
 /// One result (mockup `.rrow`): the serif word with its level (and a check when it is known),
 /// the Turkish meaning in ink, then the short English definition, or the other Turkish meanings
-/// when the search matched one of those.
+/// when the search matched one of those. At accessibility sizes the level goes under the word.
 private struct SearchResultRow: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let word: WidgetWord
     let terms: [String]
 
@@ -154,10 +201,13 @@ private struct SearchResultRow: View {
         let marksLemma = lemmaMatch.coversAll || !(glossMatch?.coversAll ?? false)
         let marksGloss = !lemmaMatch.coversAll
         let alternatives = lemmaMatch.isEmpty && (glossMatch?.isEmpty ?? true) ? matchedAlternatives : nil
+        let headLayout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(spacing: 8))
 
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 2) {
-                HStack(spacing: 8) {
+                headLayout {
                     Text(SearchHighlight.attributed(
                         word.lemma,
                         marking: marksLemma ? lemmaMatch.ranges : [],
@@ -166,13 +216,15 @@ private struct SearchResultRow: View {
                     .font(.system(.title3, design: .serif).weight(.bold))
                     .foregroundStyle(Theme.ink)
                     .cardEnglishVoice()
-                    LevelBadge(code: word.level)
-                        .fixedSize()
-                    if model.learningState(of: word) == .known {
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.good)
-                            .accessibilityLabel("Biliyorsun")
+                    HStack(spacing: 8) {
+                        LevelBadge(code: word.level)
+                            .fixedSize()
+                        if model.learningState(of: word) == .known {
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.subheadline)
+                                .foregroundStyle(Theme.good)
+                                .accessibilityLabel("Biliyorsun")
+                        }
                     }
                 }
                 if let gloss = word.glossTR, let glossMatch = glossMatch {
@@ -351,12 +403,14 @@ private struct FoldedText {
     }
 }
 
-/// An empty list (mockup `.empty`): an icon in a soft circle, a title, and a sentence whose
-/// examples are bold. Used by "Sözlük" and "Bildiğim kelimeler".
+/// An empty list (mockup `.empty`): an icon in a soft circle, a title, a sentence whose examples
+/// are bold, and optionally a tip after a light bulb. Used by "Sözlük" and "Bildiğim kelimeler".
 struct WordListEmptyState: View {
     let systemImage: String
     let title: String
     let message: AttributedString
+    /// A hint under the message (Sözlük: "Türkçe harfleri yazmasan da bulur").
+    var tip: AttributedString? = nil
     @ScaledMetric(relativeTo: .title2) private var circleSize: CGFloat = 76
 
     var body: some View {
@@ -377,6 +431,16 @@ struct WordListEmptyState: View {
                 .font(.callout)
                 .foregroundStyle(Theme.ink2)
                 .lineSpacing(2)
+            if let tip = tip {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    Image(systemName: "lightbulb")
+                        .accessibilityHidden(true)
+                    Text(tip)
+                }
+                .font(.footnote)
+                .foregroundStyle(Theme.ink2)
+                .padding(.top, 8)
+            }
         }
         .multilineTextAlignment(.center)
         .padding(.horizontal, 28)
@@ -410,13 +474,76 @@ private struct DictionaryRule: View {
     }
 }
 
+/// Capsules from the leading edge, wrapping to a new line when the line is full (mockup
+/// `flex-wrap: wrap`): the "Dene" examples and the word partners. A capsule wider than the line
+/// gets the line's width, so its text wraps inside it. Each subview is centered on its line.
+private struct DictionaryFlowLayout: Layout {
+    /// Between two subviews on a line.
+    var itemSpacing: CGFloat
+    /// Between two lines.
+    var lineSpacing: CGFloat
+
+    private struct Line {
+        var items: [(index: Int, size: CGSize)] = []
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+    }
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let lines = arrange(subviews, maxWidth: proposal.width ?? .infinity)
+        let gaps = lineSpacing * CGFloat(max(lines.count - 1, 0))
+        let height = lines.reduce(CGFloat(0)) { $0 + $1.height } + gaps
+        let usedWidth = lines.reduce(CGFloat(0)) { max($0, $1.width) }
+        return CGSize(width: usedWidth, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var y = bounds.minY
+        for line in arrange(subviews, maxWidth: bounds.width) {
+            var x = bounds.minX
+            for item in line.items {
+                subviews[item.index].place(
+                    at: CGPoint(x: x, y: y + (line.height - item.size.height) / 2),
+                    anchor: .topLeading,
+                    proposal: ProposedViewSize(item.size)
+                )
+                x += item.size.width + itemSpacing
+            }
+            y += line.height + lineSpacing
+        }
+    }
+
+    private func arrange(_ subviews: Subviews, maxWidth: CGFloat) -> [Line] {
+        var lines: [Line] = []
+        var line = Line()
+        for index in subviews.indices {
+            var size = subviews[index].sizeThatFits(.unspecified)
+            if size.width > maxWidth {
+                size = subviews[index].sizeThatFits(ProposedViewSize(width: maxWidth, height: nil))
+            }
+            if !line.items.isEmpty && line.width + itemSpacing + size.width > maxWidth {
+                lines.append(line)
+                line = Line()
+            }
+            line.width += (line.items.isEmpty ? 0 : itemSpacing) + size.width
+            line.height = max(line.height, size.height)
+            line.items.append((index: index, size: size))
+        }
+        if !line.items.isEmpty {
+            lines.append(line)
+        }
+        return lines
+    }
+}
+
 // MARK: - The whole card
 
-/// The whole card (mockup `sz-detail`): the word on its band, pronunciation, part of speech,
-/// level, "Dinle" and "Söyle"; the Turkish meaning (and alternatives) and the definition; then
-/// sections in sentence case: every example with its Turkish, typical mistakes, the note and
-/// memory hook, common word partners, and last the learning status with the one action that
-/// changes it. Opened from "Sözlük", "Bildiğim kelimeler" and the feed (in a sheet).
+/// The whole card as a word page (mockup `sz-detail`), read top to bottom: the word on its band
+/// with pronunciation, part of speech, level, "Dinle" and "Söyle"; the Turkish meaning (and
+/// "Ayrıca"); the definition; every example with its Turkish; the "Dikkat" boxes with the note
+/// and memory hook; the word partners as capsules that read themselves aloud; last the learning
+/// status with the one button that changes it. Few, quiet section titles: the Dikkat boxes carry
+/// their own. Opened from "Sözlük", "Bildiğim kelimeler" and the feed (in a sheet).
 struct WordDetailView: View {
     @EnvironmentObject private var model: AppModel
     let word: WidgetWord
@@ -434,10 +561,7 @@ struct WordDetailView: View {
                     .lineSpacing(2)
                     .cardEnglishVoice()
                 examplesSection(detail?.examples ?? [])
-                if let mistakes = detail?.mistakes, !mistakes.isEmpty {
-                    mistakesSection(mistakes)
-                }
-                notesSection(note: detail?.noteTR, mnemonic: detail?.mnemonicTR)
+                cautionSection(detail)
                 if let collocations = detail?.collocations, !collocations.isEmpty {
                     collocationsSection(collocations)
                 }
@@ -445,7 +569,9 @@ struct WordDetailView: View {
             }
             .padding(.horizontal, 20)
             .padding(.top, 8)
-            .padding(.bottom, 32)
+            // The scroll view already keeps clear of the tab bar; this is the page's own margin
+            // under the last button.
+            .padding(.bottom, 40)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .background {
@@ -469,11 +595,12 @@ struct WordDetailView: View {
                         .foregroundStyle(Theme.ink2)
                 }
             }
+            .padding(.top, 4)
         }
     }
 
-    /// Every example (mockup `.exrow`), the word bold but not yellow: the band is the screen's
-    /// one yellow mark. Without card details, the word's own example.
+    /// Every example (mockup `.exrow`) with its Turkish, the word bold but not yellow: the band
+    /// is the screen's one yellow mark. Without card details, the word's own example.
     private func examplesSection(_ examples: [CardDetail.Example]) -> some View {
         let shown = examples.isEmpty ? [CardDetail.Example(en: word.exampleEN)] : examples
         return WordDetailSection(title: "Örnekler") {
@@ -489,55 +616,48 @@ struct WordDetailView: View {
         }
     }
 
-    private func mistakesSection(_ mistakes: [CardDetail.Mistake]) -> some View {
-        WordDetailSection(title: "Sık yapılan hatalar") {
-            VStack(alignment: .leading, spacing: 10) {
+    /// The typical mistakes, each in its own "Dikkat" box with the difference marked (README
+    /// point 5), then the note and the memory hook (mockup `.info`). No section title: every box
+    /// is titled "Dikkat" itself.
+    @ViewBuilder
+    private func cautionSection(_ detail: CardDetail?) -> some View {
+        let mistakes = detail?.mistakes ?? []
+        let note = WordDetailView.nonEmpty(detail?.noteTR)
+        let mnemonic = WordDetailView.nonEmpty(detail?.mnemonicTR)
+        if !mistakes.isEmpty || note != nil || mnemonic != nil {
+            VStack(alignment: .leading, spacing: 12) {
                 ForEach(Array(mistakes.enumerated()), id: \.offset) { _, mistake in
                     MistakeBox(mistake: mistake)
                 }
-            }
-        }
-    }
-
-    /// Mockup `.info` rows. The title names what the card has: almost every card has a note,
-    /// few a memory hook.
-    @ViewBuilder
-    private func notesSection(note: String?, mnemonic: String?) -> some View {
-        if note != nil || mnemonic != nil {
-            let hasBoth = note != nil && mnemonic != nil
-            WordDetailSection(title: hasBoth ? "Not ve hafıza ipucu" : (note != nil ? "Not" : "Hafıza ipucu")) {
-                VStack(alignment: .leading, spacing: 12) {
-                    if let note = note {
-                        WordDetailInfoRow(systemImage: "info.circle", text: note)
-                    }
-                    if let mnemonic = mnemonic {
-                        WordDetailInfoRow(systemImage: "lightbulb", title: hasBoth ? "Hafıza ipucu" : nil, text: mnemonic)
-                    }
+                if let note = note {
+                    WordDetailInfoRow(systemImage: "info.circle", text: note)
+                }
+                if let mnemonic = mnemonic {
+                    WordDetailInfoRow(systemImage: "lightbulb", title: "Hafıza ipucu", text: mnemonic)
                 }
             }
+            .padding(.top, 12)
         }
     }
 
-    /// Mockup `.colls`: one phrase per line in a soft box. Not capsules: they are not tappable
-    /// (rule 2).
+    /// Word partners as capsules that wrap onto more lines (rule 2: a capsule is tappable; a tap
+    /// reads the phrase aloud).
     private func collocationsSection(_ collocations: [String]) -> some View {
         WordDetailSection(title: "Birlikte kullanılır") {
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(Array(collocations.enumerated()), id: \.offset) { index, phrase in
-                    if index > 0 {
-                        DictionaryRule()
-                    }
-                    Text(phrase)
-                        .font(.system(.callout, design: .serif))
-                        .foregroundStyle(Theme.ink)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 10)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .cardEnglishVoice()
+            // No line spacing: the chips already reach 44 pt with transparent margins.
+            DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 0) {
+                ForEach(Array(collocations.enumerated()), id: \.offset) { _, phrase in
+                    WordDetailCollocationCapsule(phrase: phrase)
                 }
             }
-            .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
         }
+    }
+
+    private static func nonEmpty(_ text: String?) -> String? {
+        guard let text = text, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return nil
+        }
+        return text
     }
 }
 
@@ -656,21 +776,21 @@ private struct WordDetailMetaRow: View {
     }
 }
 
-/// A titled part of the whole card (mockup `.sect`): the title in sentence case, a heading for
-/// VoiceOver, a little more room above than below.
+/// A titled part of the word page (mockup `.sect`), kept quiet: a small ink2 title in sentence
+/// case, a heading for VoiceOver, more room above than below.
 private struct WordDetailSection<Content: View>: View {
     let title: String
     @ViewBuilder let content: () -> Content
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             Text(title)
-                .font(.body.weight(.bold))
-                .foregroundStyle(Theme.ink)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink2)
                 .accessibilityAddTraits(.isHeader)
             content()
         }
-        .padding(.top, 8)
+        .padding(.top, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
@@ -702,6 +822,35 @@ private struct WordDetailInfoRow: View {
     }
 }
 
+/// A word partner ("have breakfast"): a chip in serif (English) with a small speaker; a tap reads
+/// the phrase aloud, a second tap stops it. The speaker waves while it reads, unless Reduce
+/// Motion is on.
+private struct WordDetailCollocationCapsule: View {
+    @ObservedObject private var speaker = Speaker.shared
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    let phrase: String
+
+    var body: some View {
+        let isSpeaking = speaker.speakingText == phrase
+        Button {
+            speaker.toggle(phrase)
+        } label: {
+            HStack(spacing: 6) {
+                Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Theme.ink2)
+                    .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
+                    .accessibilityHidden(true)
+                Text(phrase)
+                    .font(.system(.subheadline, design: .serif).weight(.semibold))
+                    .cardEnglishVoice()
+            }
+        }
+        .buttonStyle(ChipButtonStyle())
+        .accessibilityHint(Text(isSpeaking ? "Durdurur" : "Sesli okur"))
+    }
+}
+
 /// "Durum", last on the card (README "Sözlük"): where the word stands, on a line of its own,
 /// and under it the one outlined button that changes it. Not a segment: nothing looks selected.
 private struct WordDetailStatusSection: View {
@@ -719,8 +868,8 @@ private struct WordDetailStatusSection: View {
                 } icon: {
                     Image(systemName: statusSymbol(state))
                 }
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(state == .known ? Theme.good : Theme.ink2)
+                .font(.body.weight(.semibold))
+                .foregroundStyle(state == .known ? Theme.good : Theme.ink)
                 if state == .known {
                     Button {
                         change {
@@ -731,6 +880,7 @@ private struct WordDetailStatusSection: View {
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle())
                     .accessibilityLabel("Öğrenmeye geri al")
+                    .accessibilityHint("Kelime yeniden widget'a ve tekrara gelir.")
                 } else {
                     Button {
                         change {
@@ -741,6 +891,7 @@ private struct WordDetailStatusSection: View {
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle())
                     .accessibilityLabel("Biliyorum olarak işaretle")
+                    .accessibilityHint("Kelime widget'tan çıkar, 30 gün sonra hatırlatma olarak döner.")
                     // LockglowScreenshotTests looks this button up as "Biliyorum".
                     .accessibilityIdentifier("Biliyorum")
                 }
