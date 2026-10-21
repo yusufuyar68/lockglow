@@ -1,0 +1,1032 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.boarding_pass.phr.1",
+      "lemma": "boarding pass",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɔːrdɪŋ pæs/",
+        "uk": "/ˈbɔːdɪŋ pɑːs/"
+      },
+      "def": {
+        "micro": "paper to get on a plane",
+        "short": "a paper or phone code that you show to get on a plane",
+        "long": "A paper or a phone code that you show at the gate before you get on a plane. It has your name, your seat number, and the time of your flight."
+      },
+      "grammar": {
+        "pattern": "show your boarding pass"
+      },
+      "examples": [
+        {
+          "en": "Here is my boarding pass.",
+          "tr": "İşte biniş kartım.",
+          "register": "neutral",
+          "focus": "boarding pass"
+        },
+        {
+          "en": "Elif showed her boarding pass at the gate.",
+          "tr": "Elif biniş kartını kapıda gösterdi.",
+          "register": "neutral",
+          "focus": "boarding pass"
+        },
+        {
+          "en": "I printed my boarding pass, but Kenji has his on his phone.",
+          "tr": "Biniş kartımı yazdırdım, ama Kenji'ninki telefonunda.",
+          "register": "neutral",
+          "focus": "boarding pass"
+        }
+      ],
+      "synonyms": [
+        "boarding card"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "show your boarding pass",
+        "print your boarding pass",
+        "scan your boarding pass",
+        "mobile boarding pass"
+      ],
+      "word_family": [
+        {
+          "lemma": "board",
+          "pos": "v"
+        },
+        {
+          "lemma": "boarding",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "biniş kartı",
+          "alt": [
+            "uçağa biniş kartı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'biniş kartı' denir. Bilet yolculuk hakkını, biniş kartı uçağa binme iznini gösterir ve kapıda istenir. İngiltere'de 'boarding card' sözü de kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "At the gate, a worker scanned my ______ and told me my seat number.",
+        "answer": "boarding pass",
+        "distractors": [
+          "hotel key",
+          "bus map",
+          "seat belt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.passport.n.1",
+      "lemma": "passport",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpæspɔːrt/",
+        "uk": "/ˈpɑːspɔːt/"
+      },
+      "def": {
+        "micro": "ID book for travel abroad",
+        "short": "an official book that shows who you are when you travel to other countries",
+        "long": "A small official book from your country. It shows your name, your photo, and where you are from, and you must show it when you travel to another country."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Don't forget your passport.",
+          "tr": "Pasaportunu unutma.",
+          "register": "neutral",
+          "focus": "passport"
+        },
+        {
+          "en": "Maria keeps her passport in a safe place.",
+          "tr": "Maria pasaportunu güvenli bir yerde saklıyor.",
+          "register": "neutral",
+          "focus": "passport"
+        },
+        {
+          "en": "I left my passport at the hotel by mistake.",
+          "tr": "Pasaportumu yanlışlıkla otelde bıraktım.",
+          "register": "neutral",
+          "focus": "passport"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a valid passport",
+        "renew your passport",
+        "passport photo",
+        "passport number",
+        "show your passport"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From 15th-century French 'passeport', from 'passer' (to pass) and 'port'. Sources differ on whether 'port' meant a harbor or a way through.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "pasaport",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'pasaport' ile aynı sözcüktür. İngilizcede vurgu ilk hecededir: PAS-port. Yazılışta s harfi iki kez geçer: passport.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The officer looked at the photo in my ______ and then at my face.",
+        "answer": "passport",
+        "distractors": [
+          "suitcase",
+          "ticket",
+          "boarding pass"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.passport_control.phr.1",
+      "lemma": "passport control",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpæspɔːrt kənˌtroʊl/",
+        "uk": "/ˈpɑːspɔːt kənˌtrəʊl/"
+      },
+      "def": {
+        "micro": "where officers check papers",
+        "short": "the place at an airport where officers look at your travel papers",
+        "long": "The place at an airport or border where officers check your papers when you enter or leave a country. You usually wait in a line before you reach the desk."
+      },
+      "grammar": {
+        "pattern": "go through passport control"
+      },
+      "examples": [
+        {
+          "en": "The line at passport control is long.",
+          "tr": "Pasaport kontrolündeki kuyruk uzun.",
+          "register": "neutral",
+          "focus": "passport control"
+        },
+        {
+          "en": "Ayşe waited twenty minutes at passport control.",
+          "tr": "Ayşe pasaport kontrolünde yirmi dakika bekledi.",
+          "register": "neutral",
+          "focus": "passport control"
+        },
+        {
+          "en": "After passport control, you can collect your bags.",
+          "tr": "Pasaport kontrolünden sonra bagajlarınızı alabilirsiniz.",
+          "register": "neutral",
+          "focus": "passport control"
+        }
+      ],
+      "synonyms": [
+        "immigration"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go through passport control",
+        "wait at passport control",
+        "passport control desk",
+        "the passport control line"
+      ],
+      "word_family": [
+        {
+          "lemma": "passport",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pasaport kontrolü",
+          "alt": [
+            "pasaport kontrol noktası"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'pasaport kontrolü' denir. Aynı yer için 'immigration' sözcüğü de kullanılır. Çantaların arandığı güvenlik kontrolü ayrı bir yerdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I arrived in London, an officer at ______ asked how long I was staying.",
+        "answer": "passport control",
+        "distractors": [
+          "departures",
+          "baggage claim",
+          "duty-free"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.security_check.phr.1",
+      "lemma": "security check",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪˈkjʊrəti tʃɛk/",
+        "uk": "/sɪˈkjʊərəti tʃɛk/"
+      },
+      "def": {
+        "micro": "search of bags at an airport",
+        "short": "a search of people and their bags at an airport, to keep everyone safe",
+        "long": "A search of people and their bags at an airport before they go to their gate, to make sure no one is carrying anything dangerous. You often put your bag, phone, and coat in a tray."
+      },
+      "grammar": {
+        "pattern": "go through the security check"
+      },
+      "examples": [
+        {
+          "en": "The security check was quick today.",
+          "tr": "Güvenlik kontrolü bugün hızlıydı.",
+          "register": "neutral",
+          "focus": "security check"
+        },
+        {
+          "en": "Please take off your coat before the security check.",
+          "tr": "Lütfen güvenlik kontrolünden önce montunuzu çıkarın.",
+          "register": "neutral",
+          "focus": "security check"
+        },
+        {
+          "en": "Maria had to wait forty minutes at the security check.",
+          "tr": "Maria güvenlik kontrolünde kırk dakika beklemek zorunda kaldı.",
+          "register": "neutral",
+          "focus": "security check"
+        }
+      ],
+      "synonyms": [
+        "airport security"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "pass the security check",
+        "a long security check",
+        "wait at the security check",
+        "airport security check"
+      ],
+      "word_family": [
+        {
+          "lemma": "security",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güvenlik kontrolü",
+          "alt": [
+            "güvenlik araması"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'güvenlik kontrolü' denir. İngilizcede çoğu zaman kısaca 'security' denir: 'go through security'. Pasaport kontrolü ayrı bir yerdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "At the airport, I put my bag and my coat in a tray at the ______.",
+        "answer": "security check",
+        "distractors": [
+          "gift shop",
+          "ticket desk",
+          "baggage claim"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.flight.n.1",
+      "lemma": "flight",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "trip by plane",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/flaɪt/",
+        "uk": "/flaɪt/"
+      },
+      "def": {
+        "micro": "trip on a plane",
+        "short": "a trip in a plane from one place to another",
+        "long": "A trip in a plane from one place to another. Each one has a number, and it can be short or very long."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My flight is at seven tonight.",
+          "tr": "Bu akşam saat yedide uçuşum var.",
+          "register": "neutral",
+          "focus": "flight"
+        },
+        {
+          "en": "Ayşe has a flight to Rome on Friday.",
+          "tr": "Ayşe'nin cuma günü Roma'ya uçuşu var.",
+          "register": "neutral",
+          "focus": "flight"
+        },
+        {
+          "en": "The flight from Berlin to Izmir takes about three hours.",
+          "tr": "Berlin'den İzmir'e uçuş yaklaşık üç saat sürüyor.",
+          "register": "neutral",
+          "focus": "flight"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "book a flight",
+        "catch a flight",
+        "miss a flight",
+        "flight number",
+        "a long flight"
+      ],
+      "word_family": [
+        {
+          "lemma": "fly",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'flyht', meaning the act of flying. It is related to the verb 'fly'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "uçuş",
+          "alt": [
+            "uçak yolculuğu",
+            "sefer"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Aracın kendisine 'plane' (uçak), yolculuğa 'flight' (uçuş) denir. 'Flight' sayılabilir bir isimdir: a flight, two flights.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I slept for most of the ______, so I did not see the movie.",
+        "answer": "flight",
+        "distractors": [
+          "airport",
+          "hotel",
+          "terminal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.departure.n.1",
+      "lemma": "departure",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "leaving a place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈpɑːrtʃər/",
+        "uk": "/dɪˈpɑːtʃə/"
+      },
+      "def": {
+        "micro": "the act of leaving a place",
+        "short": "the act of leaving a place, especially by plane, train, or bus",
+        "long": "The act of leaving a place, especially when a plane, train, or bus starts its trip. At an airport, a big screen shows when and where each plane leaves."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The departure time is nine o'clock.",
+          "tr": "Kalkış saati dokuz.",
+          "register": "neutral",
+          "focus": "departure"
+        },
+        {
+          "en": "Emre got to the airport two hours before departure.",
+          "tr": "Emre kalkıştan iki saat önce havalimanına vardı.",
+          "register": "neutral",
+          "focus": "departure"
+        },
+        {
+          "en": "Look at the departures board to find your gate.",
+          "tr": "Kapınızı bulmak için kalkış ekranına bakın.",
+          "register": "neutral",
+          "focus": "departures"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "arrival"
+      ],
+      "collocations": [
+        "departure time",
+        "departure gate",
+        "departures board",
+        "on departure",
+        "early departure"
+      ],
+      "word_family": [
+        {
+          "lemma": "depart",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kalkış",
+          "alt": [
+            "hareket",
+            "yola çıkış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Havalimanında 'departures' gidiş (kalkış), 'arrivals' geliş bölümüdür. 'Depart' fiili resmî bir sözcüktür; günlük konuşmada 'leave' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our ______ is at 8:15, so we must leave home before 7.",
+        "answer": "departure",
+        "distractors": [
+          "platform",
+          "seat",
+          "station"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.arrival.n.1",
+      "lemma": "arrival",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "reaching a place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈraɪvəl/",
+        "uk": "/əˈraɪvəl/"
+      },
+      "def": {
+        "micro": "getting to a place",
+        "short": "the act of getting to a place, especially at the end of a trip",
+        "long": "The act of getting to a place at the end of a trip, for example when a plane, train, or bus comes in. At an airport, a big screen shows when each plane will get there."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Our arrival time is 6 p.m.",
+          "tr": "Varış saatimiz akşam altı.",
+          "register": "neutral",
+          "focus": "arrival"
+        },
+        {
+          "en": "On arrival, Elif called her parents.",
+          "tr": "Varır varmaz Elif anne babasını aradı.",
+          "register": "neutral",
+          "focus": "arrival"
+        },
+        {
+          "en": "Sam waited in the arrivals hall to meet his sister.",
+          "tr": "Sam, kız kardeşini karşılamak için geliş salonunda bekledi.",
+          "register": "neutral",
+          "focus": "arrivals"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "departure"
+      ],
+      "collocations": [
+        "arrival time",
+        "on arrival",
+        "arrivals hall",
+        "late arrival",
+        "arrival date"
+      ],
+      "word_family": [
+        {
+          "lemma": "arrive",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "varış",
+          "alt": [
+            "geliş",
+            "varma"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'On arrival' varınca, varışta demektir. Havalimanında 'arrivals' gelen yolcuların bölümüdür. Zıttı 'departure' (kalkış).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please tell me your ______ time, so I can wait for you at the airport.",
+        "answer": "arrival",
+        "distractors": [
+          "lunch",
+          "school",
+          "breakfast"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.terminal.n.1",
+      "lemma": "terminal",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "airport building",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɜːrmɪnəl/",
+        "uk": "/ˈtɜːmɪnəl/"
+      },
+      "def": {
+        "micro": "building at an airport",
+        "short": "a big building or part of an airport where passengers wait and get on planes",
+        "long": "A big building, or one part of an airport, where passengers wait and get on planes. Big airports often have several of them, such as Terminal 1 and Terminal 2."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Our flight leaves from Terminal 2.",
+          "tr": "Uçuşumuz Terminal 2'den kalkıyor.",
+          "register": "neutral",
+          "focus": "Terminal"
+        },
+        {
+          "en": "The free bus goes between the two terminals.",
+          "tr": "Ücretsiz otobüs iki terminal arasında gidip geliyor.",
+          "register": "neutral",
+          "focus": "terminals"
+        },
+        {
+          "en": "Kenji walked from one terminal to the other with his heavy bag.",
+          "tr": "Kenji ağır çantasıyla bir terminalden ötekine yürüdü.",
+          "register": "neutral",
+          "focus": "terminal"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "airport terminal",
+        "main terminal",
+        "international terminal",
+        "terminal building"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'terminalis' (of the end), from 'terminus' (end, limit). It meant a station at the end of a railway line before it meant an airport building.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "terminal",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede 'terminal' otogar için de kullanılır; İngilizcede otogara çoğu zaman 'bus station' denir. Havalimanında ise 'terminal', yolcuların uçağa bindiği bina bölümüdür: Terminal 2.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The airport has two big buildings. Our plane leaves from the second ______.",
+        "answer": "terminal",
+        "distractors": [
+          "airline",
+          "suitcase",
+          "passport"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.announcement.n.1",
+      "lemma": "announcement",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "public message",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈnaʊnsmənt/",
+        "uk": "/əˈnaʊnsmənt/"
+      },
+      "def": {
+        "micro": "message said to everyone",
+        "short": "a message that someone says out loud to everyone in a place",
+        "long": "A message that someone says out loud to all the people in a place, such as an airport or a train station. It is often made over a loudspeaker."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Please listen to the announcement.",
+          "tr": "Lütfen anonsu dinleyin.",
+          "register": "neutral",
+          "focus": "announcement"
+        },
+        {
+          "en": "There was an announcement about a gate change.",
+          "tr": "Kapı değişikliğiyle ilgili bir anons yapıldı.",
+          "register": "neutral",
+          "focus": "announcement"
+        },
+        {
+          "en": "Mehmet did not understand the announcement because it was in German.",
+          "tr": "Anons Almanca olduğu için Mehmet anlamadı.",
+          "register": "neutral",
+          "focus": "announcement"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make an announcement",
+        "listen to the announcement",
+        "a public announcement",
+        "an airport announcement"
+      ],
+      "word_family": [
+        {
+          "lemma": "announce",
+          "pos": "v"
+        },
+        {
+          "lemma": "announcer",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'annoncement'. The verb 'announce' goes back to Latin 'annuntiare', literally 'to bring news to', from 'nuntius' (a messenger).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "anons",
+          "alt": [
+            "duyuru"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hoparlörden yapılan sözlü duyuruya Türkçede 'anons' denir. İngilizcede 'announcement' yazılı ya da sözlü her duyuru için de kullanılabilir.",
+          "mistakes": [
+            {
+              "wrong": "They did an announcement about the gate change.",
+              "right": "They made an announcement about the gate change.",
+              "why": "Türkçede 'anons yapmak' deriz, bu yüzden akla 'do' gelir. Oysa 'announcement' sözcüğüyle 'make' fiili kullanılır: make an announcement."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I could not hear the ______ because the station was very noisy.",
+        "answer": "announcement",
+        "distractors": [
+          "timetable",
+          "platform",
+          "ticket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.visa.n.1",
+      "lemma": "visa",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈviːzə/",
+        "uk": "/ˈviːzə/"
+      },
+      "def": {
+        "micro": "paper to enter a country",
+        "short": "official permission to enter a country, often a stamp in your passport",
+        "long": "Official permission to enter a country or to live there for some time. You often get it from an embassy or online before you travel, and it can be a stamp in your passport."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Do I need a visa for Japan?",
+          "tr": "Japonya için vize gerekiyor mu?",
+          "register": "neutral",
+          "focus": "visa"
+        },
+        {
+          "en": "Ayşe applied for a tourist visa online.",
+          "tr": "Ayşe internetten turist vizesi için başvurdu.",
+          "register": "neutral",
+          "focus": "visa"
+        },
+        {
+          "en": "My visa is valid for three months.",
+          "tr": "Vizem üç ay geçerli.",
+          "register": "neutral",
+          "focus": "visa"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "apply for a visa",
+        "tourist visa",
+        "student visa",
+        "work visa",
+        "visa application"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'visa', from Latin 'charta visa' (a paper that has been seen), from 'videre' (to see). It first meant an official signature on a passport.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "vize",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'vize' ile aynı sözcüktür; İngilizcede 'visa' yazılır, 'viza' gibi okunur. Pasaporta damga ya da elektronik belge olabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The embassy gave me a ______, so now I can enter the country.",
+        "answer": "visa",
+        "distractors": [
+          "map",
+          "hotel",
+          "boarding pass"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

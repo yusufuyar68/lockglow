@@ -1,0 +1,1057 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.could_you_tell_me_the_way_to.phr.1",
+      "lemma": "Could you tell me the way to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʊdju ˌtɛl mi ðə ˈweɪ tə/",
+        "uk": "/kʊdju ˌtɛl mi ðə ˈweɪ tə/"
+      },
+      "def": {
+        "micro": "ask how to get to a place",
+        "short": "a polite question to find out how to get to a place",
+        "long": "A polite question that you ask when you do not know how to get to a place. After it, you say the name of the place."
+      },
+      "grammar": {
+        "pattern": "Could you tell me the way to + place?"
+      },
+      "examples": [
+        {
+          "en": "Could you tell me the way to the museum, please?",
+          "tr": "Müzeye giden yolu tarif eder misiniz, lütfen?",
+          "register": "neutral",
+          "focus": "Could you tell me the way to"
+        },
+        {
+          "en": "Hi, could you tell me the way to the nearest pharmacy?",
+          "tr": "Merhaba, en yakın eczaneye giden yolu tarif eder misiniz?",
+          "register": "neutral",
+          "focus": "could you tell me the way to"
+        },
+        {
+          "en": "Maria asked a woman, \"Could you tell me the way to the beach?\"",
+          "tr": "Maria bir kadına sordu: \"Plaja giden yolu tarif eder misiniz?\"",
+          "register": "neutral",
+          "focus": "Could you tell me the way to"
+        }
+      ],
+      "synonyms": [
+        "How do I get to"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the way to the station",
+        "the way to the airport",
+        "ask for directions"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "… yolunu tarif eder misiniz?",
+          "alt": [
+            "… nasıl gidilir?",
+            "… giden yol hangisi?"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'müzenin yolu' ya da 'müzeye giden yol' denir; İngilizcede 'of' değil 'to' kullanılır: the way to the museum. Kısaca 'How do I get to…?' diye de sorulur.",
+          "mistakes": [
+            {
+              "wrong": "Could you tell me the way to station?",
+              "right": "Could you tell me the way to the station?",
+              "why": "Türkçede 'the' karşılığı bir sözcük yoktur ('istasyona'). İngilizcede 'station', 'museum' gibi sözcüklerin önüne genellikle 'the' gelir; şehir adlarına gelmez: the way to Izmir."
+            },
+            {
+              "wrong": "Could you tell me where is the station?",
+              "right": "Could you tell me where the station is?",
+              "why": "Türkçede soruyu olduğu gibi söyleyebiliriz: 'İstasyon nerede, söyler misiniz?' İngilizcede 'Could you tell me' sonrasında soru sırası değil, düz cümle sırası gelir: where the station is."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm lost. ______ the station, please?",
+        "answer": "Could you tell me the way to",
+        "distractors": [
+          "Could you say me",
+          "Could you help",
+          "How can I go"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.how_far_is_it.phr.1",
+      "lemma": "How far is it",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haʊ ˈfɑːr ɪz ɪt/",
+        "uk": "/haʊ ˈfɑː ɪz ɪt/"
+      },
+      "def": {
+        "micro": "ask the distance to a place",
+        "short": "a question you ask to find out the distance to a place",
+        "long": "A question that asks how much distance there is between two places. The answer can be a distance, like two kilometers, or a time, like ten minutes."
+      },
+      "grammar": {
+        "pattern": "How far is it (to + place)?"
+      },
+      "examples": [
+        {
+          "en": "How far is it to the beach?",
+          "tr": "Plaj ne kadar uzak?",
+          "register": "neutral",
+          "focus": "How far is it"
+        },
+        {
+          "en": "How far is it from Izmir to Bodrum?",
+          "tr": "Bodrum, İzmir'den ne kadar uzak?",
+          "register": "neutral",
+          "focus": "How far is it"
+        },
+        {
+          "en": "Ayşe asked the driver, \"How far is it to the city center?\"",
+          "tr": "Ayşe şoföre sordu: \"Şehir merkezi ne kadar uzak?\"",
+          "register": "neutral",
+          "focus": "How far is it"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "how far is it to",
+        "how far is it from",
+        "how far away"
+      ],
+      "word_family": [
+        {
+          "lemma": "far",
+          "pos": "adv"
+        },
+        {
+          "lemma": "distance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne kadar uzak?",
+          "alt": [
+            "ne kadar var?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Cevap 'two kilometers' (mesafe) ya da 'ten minutes' (süre) olabilir. Süreyi özellikle sormak için 'How long does it take?' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to walk to the museum. ______ from here?",
+        "answer": "How far is it",
+        "distractors": [
+          "How old is it",
+          "How big is it",
+          "How heavy is it"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_straight.phr.1",
+      "lemma": "go straight",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈstreɪt/",
+        "uk": "/ɡəʊ ˈstreɪt/"
+      },
+      "def": {
+        "micro": "continue without turning",
+        "short": "keep walking or driving in the same direction and do not turn",
+        "long": "To keep walking or driving in the same direction, without turning left or right. People say it a lot when they tell someone how to get to a place."
+      },
+      "grammar": {
+        "pattern": "go straight (on / for + distance)"
+      },
+      "examples": [
+        {
+          "en": "Go straight for two blocks, then turn left.",
+          "tr": "İki sokak dümdüz git, sonra sola dön.",
+          "register": "neutral",
+          "focus": "Go straight"
+        },
+        {
+          "en": "Just go straight, and the station is on your right.",
+          "tr": "Dümdüz git, istasyon sağ tarafında.",
+          "register": "neutral",
+          "focus": "go straight"
+        },
+        {
+          "en": "Maria told us to go straight until the traffic lights.",
+          "tr": "Maria bize trafik ışıklarına kadar dümdüz gitmemizi söyledi.",
+          "register": "neutral",
+          "focus": "go straight"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "turn left",
+        "turn right"
+      ],
+      "collocations": [
+        "go straight ahead",
+        "go straight on",
+        "go straight for two blocks",
+        "go straight until the lights"
+      ],
+      "word_family": [
+        {
+          "lemma": "straight",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dümdüz gitmek",
+          "alt": [
+            "düz gitmek",
+            "doğru gitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yol tarifinde çok kullanılır. 'Go straight on' ve 'go straight ahead' da söylenir. Dönmeden devam etmek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bank is on this street. ______ for about 200 meters and you'll see it on your left.",
+        "answer": "Go straight",
+        "distractors": [
+          "Turn left",
+          "Turn right",
+          "Cross the road"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bus_stop.phr.1",
+      "lemma": "bus stop",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbʌs ˌstɑːp/",
+        "uk": "/ˈbʌs ˌstɒp/"
+      },
+      "def": {
+        "micro": "place to wait for a bus",
+        "short": "a place by the road where people get on and off a bus",
+        "long": "A place by the road with a sign or a small roof. A bus stops there so that people can get on or off. You wait there for the next bus."
+      },
+      "grammar": {
+        "pattern": "at the bus stop"
+      },
+      "examples": [
+        {
+          "en": "The bus stop is next to the bank.",
+          "tr": "Otobüs durağı bankanın yanında.",
+          "register": "neutral",
+          "focus": "bus stop"
+        },
+        {
+          "en": "Elif waits at the bus stop every morning.",
+          "tr": "Elif her sabah otobüs durağında bekler.",
+          "register": "neutral",
+          "focus": "bus stop"
+        },
+        {
+          "en": "Excuse me, where is the nearest bus stop?",
+          "tr": "Affedersiniz, en yakın otobüs durağı nerede?",
+          "register": "neutral",
+          "focus": "bus stop"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wait at the bus stop",
+        "the nearest bus stop",
+        "the next bus stop"
+      ],
+      "word_family": [
+        {
+          "lemma": "bus",
+          "pos": "n"
+        },
+        {
+          "lemma": "stop",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "otobüs durağı",
+          "alt": [
+            "durak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Bus stop' yol kenarındaki küçük duraktır. Şehirler arası otobüslerin kalktığı büyük otogar ise 'bus station' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We are standing at the ______ in the rain. The bus is late.",
+        "answer": "bus stop",
+        "distractors": [
+          "bus driver",
+          "bus ticket",
+          "bus seat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fare.n.1",
+      "lemma": "fare",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɛr/",
+        "uk": "/feə/"
+      },
+      "def": {
+        "micro": "money paid to travel",
+        "short": "the money you pay to travel by bus, train, taxi, or plane",
+        "long": "The money that you pay to travel on a bus, a train, a taxi, or a plane. Children and students often pay a lower one."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The bus fare is two euros.",
+          "tr": "Otobüs ücreti iki euro.",
+          "register": "neutral",
+          "focus": "fare"
+        },
+        {
+          "en": "Kenji paid his taxi fare and got out.",
+          "tr": "Kenji taksi ücretini ödeyip indi.",
+          "register": "neutral",
+          "focus": "fare"
+        },
+        {
+          "en": "Children pay a lower fare on the train.",
+          "tr": "Çocuklar trende daha düşük bir ücret öder.",
+          "register": "neutral",
+          "focus": "fare"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bus fare",
+        "taxi fare",
+        "train fare",
+        "pay the fare",
+        "half fare"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'fær', meaning a journey or a road. Later the word came to mean the money you pay for a journey.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ulaşım ücreti",
+          "alt": [
+            "bilet ücreti",
+            "yol parası"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede araca göre 'otobüs ücreti', 'taksi ücreti' denir. 'Fare' yolculuk için ödenen paradır, 'ticket' ise biletin kendisidir. Konser ya da müze için 'fare' değil 'ticket price' denir. 'Fair' (adil) ile aynı okunur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "How much is the train ______ to Berlin? I only have 20 euros.",
+        "answer": "fare",
+        "distractors": [
+          "route",
+          "stop",
+          "platform"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.route.n.1",
+      "lemma": "route",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ruːt/",
+        "uk": "/ruːt/"
+      },
+      "def": {
+        "micro": "road you take to a place",
+        "short": "the roads or paths you choose to go from one place to another",
+        "long": "The roads or paths that you take to go from one place to another. A bus uses the same one every day, but a car driver can often choose."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The bus route goes past the museum.",
+          "tr": "Otobüs güzergâhı müzenin önünden geçiyor.",
+          "register": "neutral",
+          "focus": "route"
+        },
+        {
+          "en": "Mehmet checked the map to find the fastest route.",
+          "tr": "Mehmet en hızlı güzergâhı bulmak için haritaya baktı.",
+          "register": "neutral",
+          "focus": "route"
+        },
+        {
+          "en": "We took a different route home because of the traffic.",
+          "tr": "Trafik yüzünden eve farklı bir yoldan gittik.",
+          "register": "neutral",
+          "focus": "route"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bus route",
+        "the fastest route",
+        "scenic route",
+        "plan a route",
+        "route map"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'route', meaning a road. It comes from Latin 'rupta via', a road broken through the land.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "güzergâh",
+          "alt": [
+            "rota",
+            "yol"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'güzergâh' ya da 'rota' denir. 'Route' çoğunlukla 'root' (kök) gibi okunur: /ruːt/. ABD'de 'raut' (/raʊt/) diye okuyanlar da vardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The map on my phone shows the shortest ______ from the hotel to the beach.",
+        "answer": "route",
+        "distractors": [
+          "stop",
+          "fare",
+          "terminal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.walking_distance.phr.1",
+      "lemma": "walking distance",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɔːkɪŋ ˌdɪstəns/",
+        "uk": "/ˈwɔːkɪŋ ˌdɪstəns/"
+      },
+      "def": {
+        "micro": "near enough to go on foot",
+        "short": "so near that you can get there on foot",
+        "long": "When a place is so near that you can get there on foot, without a bus or a taxi. Hotels often use this phrase to say that shops and places to visit are close."
+      },
+      "grammar": {
+        "pattern": "within walking distance (of)"
+      },
+      "examples": [
+        {
+          "en": "The hotel is within walking distance of the beach.",
+          "tr": "Otel, plaja yürüme mesafesinde.",
+          "register": "neutral",
+          "focus": "walking distance"
+        },
+        {
+          "en": "Everything in the old town is within walking distance.",
+          "tr": "Eski şehirde her şey yürüme mesafesinde.",
+          "register": "neutral",
+          "focus": "walking distance"
+        },
+        {
+          "en": "Mehmet lives within walking distance of his office.",
+          "tr": "Mehmet, ofisine yürüme mesafesinde bir yerde oturuyor.",
+          "register": "neutral",
+          "focus": "walking distance"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "within walking distance",
+        "walking distance of",
+        "within easy walking distance"
+      ],
+      "word_family": [
+        {
+          "lemma": "walk",
+          "pos": "v"
+        },
+        {
+          "lemma": "distance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yürüme mesafesi",
+          "alt": [
+            "yürüyüş mesafesi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'yürüme mesafesinde' denir. İngilizcede genellikle 'within' ile kurulur ve yerden önce 'of' gelir: within walking distance of the beach. Konuşmada 'It's walking distance from here' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everything is within ______ of our hotel, so we do not need a car.",
+        "answer": "walking distance",
+        "distractors": [
+          "waiting time",
+          "opening hours",
+          "driving distance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lost_and_found.phr.1",
+      "lemma": "lost and found",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌlɔːst ən ˈfaʊnd/",
+        "uk": "/ˌlɒst ən ˈfaʊnd/"
+      },
+      "def": {
+        "micro": "place for things left behind",
+        "short": "the place where things that people left behind are kept for their owners",
+        "long": "A place, often an office, where things that people have left behind are kept. If you leave your bag on a train, you can ask there."
+      },
+      "grammar": {
+        "pattern": "the lost and found (office)"
+      },
+      "examples": [
+        {
+          "en": "I left my phone on the train, so I called the lost and found.",
+          "tr": "Telefonumu trende unuttum, bu yüzden kayıp eşya bürosunu aradım.",
+          "register": "neutral",
+          "focus": "lost and found"
+        },
+        {
+          "en": "The lost and found office is next to the main entrance.",
+          "tr": "Kayıp eşya bürosu ana girişin yanında.",
+          "register": "neutral",
+          "focus": "lost and found"
+        },
+        {
+          "en": "Maria found her scarf at the lost and found.",
+          "tr": "Maria atkısını kayıp eşya bürosunda buldu.",
+          "register": "neutral",
+          "focus": "lost and found"
+        }
+      ],
+      "synonyms": [
+        "lost property"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "lost and found office",
+        "check the lost and found",
+        "lost and found box"
+      ],
+      "word_family": [
+        {
+          "lemma": "lose",
+          "pos": "v"
+        },
+        {
+          "lemma": "find",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kayıp eşya bürosu",
+          "alt": [
+            "kayıp eşya"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'kayıp eşya' denir. ABD'de 'lost and found', İngiltere'de 'lost property' kullanılır. 'Lost and found' eşyaların saklandığı yeri anlatır; 'lost property' ise kaybolan eşyalar için de kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali left his jacket at the airport. He went to the ______ to look for it.",
+        "answer": "lost and found",
+        "distractors": [
+          "post office",
+          "box office",
+          "tax office"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "verifier_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_past.phv.1",
+      "lemma": "go past",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "pass a place on the way",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈpæst/",
+        "uk": "/ɡəʊ ˈpɑːst/"
+      },
+      "def": {
+        "micro": "walk or drive by a place",
+        "short": "move along a road near a place without stopping there",
+        "long": "To walk or drive along a road, near a building or place, and then keep going. People use it a lot when they give directions."
+      },
+      "grammar": {
+        "pattern": "go past + place"
+      },
+      "examples": [
+        {
+          "en": "Go past the bank and turn left.",
+          "tr": "Bankanın önünden geçip sola dön.",
+          "register": "neutral",
+          "focus": "Go past"
+        },
+        {
+          "en": "The bus goes past my house every ten minutes.",
+          "tr": "Otobüs evimin önünden her on dakikada bir geçiyor.",
+          "register": "neutral",
+          "focus": "goes past"
+        },
+        {
+          "en": "We went past the post office twice, but we could not find the bakery.",
+          "tr": "Postanenin önünden iki kez geçtik ama fırını bulamadık.",
+          "register": "neutral",
+          "focus": "went past"
+        }
+      ],
+      "synonyms": [
+        "pass"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go past the bank",
+        "go past the school",
+        "go past the traffic lights"
+      ],
+      "word_family": [
+        {
+          "lemma": "past",
+          "pos": "prep"
+        },
+        {
+          "lemma": "pass",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önünden geçmek",
+          "alt": [
+            "yanından geçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Geçmek' deyince 'pass' akla gelir; ama 'go' fiilinden sonra 'past' kullanılır: go past the bank. Tek fiil istersen 'pass the bank' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You will see a school on your left. ______ it and take the next street on the right.",
+        "answer": "Go past",
+        "distractors": [
+          "Go into",
+          "Wait for",
+          "Get over"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_back.phv.1",
+      "lemma": "get back",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "return from a trip",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈbæk/",
+        "uk": "/ɡɛt ˈbæk/"
+      },
+      "def": {
+        "micro": "arrive home after a trip",
+        "short": "arrive at home or at a place again after being away from it",
+        "long": "To arrive at your home or another place again after you have been away for some time. People often say it with a time or a place, like 'get back on Friday'."
+      },
+      "grammar": {
+        "pattern": "get back (from a trip / to a place)"
+      },
+      "examples": [
+        {
+          "en": "We get back on Sunday.",
+          "tr": "Pazar günü dönüyoruz.",
+          "register": "neutral",
+          "focus": "get back"
+        },
+        {
+          "en": "When do you get back from Rome?",
+          "tr": "Roma'dan ne zaman dönüyorsun?",
+          "register": "neutral",
+          "focus": "get back"
+        },
+        {
+          "en": "Mehmet got back home at midnight after the long bus ride.",
+          "tr": "Mehmet uzun otobüs yolculuğundan sonra gece yarısı eve döndü.",
+          "register": "neutral",
+          "focus": "got back"
+        }
+      ],
+      "synonyms": [
+        "return"
+      ],
+      "antonyms": [
+        "leave"
+      ],
+      "collocations": [
+        "get back home",
+        "get back late",
+        "get back from a trip"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geri dönmek",
+          "alt": [
+            "eve dönmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Seyahatten dönüp bir yere varmayı anlatır; 'come back' ve 'go back' ile benzerdir. 'Get back from' kalıbı sık kullanılır: When do you get back from the trip?",
+          "mistakes": [
+            {
+              "wrong": "We got back to home at midnight.",
+              "right": "We got back home at midnight.",
+              "why": "Türkçede 'eve döndük' denir ve '-e' eki 'to' gibi çevrilir. Ama 'home' önüne 'to' gelmez: get back home, go home, come home."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our trip to Rome is over. We ______ home tomorrow.",
+        "answer": "get back",
+        "distractors": [
+          "check in",
+          "pack up",
+          "look around"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
