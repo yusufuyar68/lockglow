@@ -63,12 +63,17 @@ public enum PronunciationCheck {
             return PronunciationFeedback(verdict: .almost, heard: heard)
         }
 
-        let missedIndexes = steps.compactMap { step -> Int? in
+        var substituted = 0
+        var missedIndexes: [Int] = []
+        for step in steps {
             switch step {
-            case .substitute(let i, _), .missing(let i):
-                return i
+            case .substitute(let i, _):
+                substituted += 1
+                missedIndexes.append(i)
+            case .missing(let i):
+                missedIndexes.append(i)
             case .match, .extra:
-                return nil
+                break
             }
         }
         var missedWords: [String] = []
@@ -76,8 +81,11 @@ public enum PronunciationCheck {
             missedWords.append(targetTokens[i].display)
         }
         let tip = findTip(target: target, targetTokens: targetTokens, heardTokens: best.tokens, steps: steps)
+        // "get up" heard as "get": one word of a phrase not heard, nothing heard wrong. A wrong
+        // particle ("turn off" for "turn on") is a substitution and stays "try again".
+        let onlyOneWordMissing = targetTokens.count >= 2 && substituted == 0 && missedIndexes.count == 1
         let heardShare = Double(targetTokens.count - missedIndexes.count) / Double(targetTokens.count)
-        if targetTokens.count >= 3, heardShare >= sentenceAlmostRatio {
+        if onlyOneWordMissing || (targetTokens.count >= 3 && heardShare >= sentenceAlmostRatio) {
             return PronunciationFeedback(verdict: .almost, tip: tip, heard: heard, missedWords: missedWords)
         }
         return PronunciationFeedback(verdict: .tryAgain, tip: tip, heard: heard, missedWords: missedWords)
@@ -165,9 +173,10 @@ public enum PronunciationCheck {
 
     // MARK: - Comparison
 
-    /// Words a recognizer writes interchangeably for the same sound. The first one of each group
-    /// stands for the group.
-    private static let homophoneGroups: [[String]] = [
+    /// Words a recognizer writes interchangeably for the same sound (the same in General American).
+    /// The first one of each group stands for the group. Lowercase, apostrophes dropped, and no
+    /// word in two groups.
+    public static let homophoneGroups: [[String]] = [
         ["write", "right", "rite"], ["see", "sea"], ["two", "to", "too"], ["four", "for"],
         ["hear", "here"], ["know", "no"], ["knew", "new"], ["buy", "by", "bye"],
         ["their", "there", "theyre"], ["your", "youre"], ["whose", "whos"], ["weather", "whether"],
@@ -178,6 +187,11 @@ public enum PronunciationCheck {
         ["pair", "pear"], ["steal", "steel"], ["stair", "stare"], ["blue", "blew"], ["night", "knight"],
         ["not", "knot"], ["would", "wood"], ["aloud", "allowed"], ["sell", "cell"], ["sent", "cent", "scent"],
         ["okay", "ok"],
+        ["do", "due", "dew"], ["board", "bored"], ["key", "quay"], ["need", "knead", "kneed"],
+        ["leak", "leek"], ["lesson", "lessen"], ["peel", "peal"], ["rest", "wrest"], ["slow", "sloe"],
+        ["sore", "soar"], ["flu", "flew", "flue"], ["guest", "guessed"], ["browse", "brows"],
+        ["cash", "cache"], ["check", "cheque"], ["choose", "chews"], ["find", "fined"], ["hair", "hare"],
+        ["mind", "mined"], ["pain", "pane"], ["rain", "reign", "rein"], ["seem", "seam"], ["bread", "bred"],
     ]
 
     private static let canonicalSpelling: [String: String] = {
@@ -442,7 +456,8 @@ public struct PronunciationTip: Equatable, Sendable {
 public struct PronunciationFeedback: Equatable, Sendable {
     public enum Verdict: String, Equatable, Sendable {
         case correct
-        /// Understood but not clearly, heard only as an alternative, or most of a sentence.
+        /// Understood but not clearly, heard only as an alternative, one word of a phrase missing,
+        /// or most of a sentence.
         case almost
         case tryAgain
         /// Nothing usable was heard.

@@ -137,10 +137,9 @@ final class PronunciationRecognizer: ObservableObject {
 
     /// Asks for what is missing, just in time, and sets up the backend. Nil when ready.
     private func prepare() async -> Problem? {
-        // The speaker and the microphone share the audio session: stop any word being read.
-        if let text = Speaker.shared.speakingText {
-            Speaker.shared.toggle(text)
-        }
+        // The speakers and the microphone share the audio session: stop anything being read,
+        // the widget's speaker button included.
+        Speaker.stopAll()
         switch AVAudioApplication.shared.recordPermission {
         case .denied:
             return .microphoneDenied

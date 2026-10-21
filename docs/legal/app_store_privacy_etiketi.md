@@ -141,7 +141,7 @@
 
 - SDK eklendi/çıkarıldı/yükseltildi (RevenueCat, PostHog, Sentry, GRDB, yeni analitik/atıf aracı),
 - Analitiğe yeni olay veya özellik eklendi; PostHog/Sentry ayarı (GeoIP, replay, autocapture, tracing) değişti,
-- **Yeni özellik:** CloudKit senkronu (v1.2), içerik güncellemeleri için CDN (IP adresi sunucu günlüğüne düşer), telaffuz kaydı (mikrofon/ses), hesap/giriş, uzaktan push (bildirim anahtarı), Apple Ads AdServices atıfı, uygulama içi destek formu, yapay zekâ özellikleri (5.1.2(i): üçüncü taraf yapay zekâya veri gönderme için açık izin),
+- **Yeni özellik:** CloudKit senkronu (v1.2), içerik güncellemeleri için CDN (IP adresi sunucu günlüğüne düşer), Söyle'de ses ya da tanınan metnin cihazdan çıkması (sunucuya giderse Audio Data = Yes), hesap/giriş, uzaktan push (bildirim anahtarı), Apple Ads AdServices atıfı, uygulama içi destek formu, yapay zekâ özellikleri (5.1.2(i): üçüncü taraf yapay zekâya veri gönderme için açık izin),
 - RevenueCat entegrasyonları veya paywall deneyleri değişti.
 
 ### SDK değişiklik kaydı (doldurulacak)

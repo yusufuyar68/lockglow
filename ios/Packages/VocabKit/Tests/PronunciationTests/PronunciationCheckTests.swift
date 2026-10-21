@@ -109,6 +109,50 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertTrue(feedback.message.hasPrefix("Şunlar duyulmadı: think. 'think' yerine 'sink' duydum."), feedback.message)
     }
 
+    func testOneWordOfAPhraseMissingIsAlmost() {
+        let vectors: [(target: String, heard: String, missed: String)] = [
+            ("get up", "get", "up"),
+            ("run out of", "run out", "of"),
+            ("look forward to", "forward to", "look"),
+            ("get along with", "get along", "with"),
+        ]
+        for vector in vectors {
+            let feedback = check(vector.target, heard: [vector.heard])
+            XCTAssertEqual(feedback.verdict, .almost, "target: \(vector.target)")
+            XCTAssertEqual(feedback.missedWords, [vector.missed], "target: \(vector.target)")
+        }
+        XCTAssertEqual(check("get up", heard: ["get"]).message, "Şunlar duyulmadı: up. Bir daha dene.")
+    }
+
+    func testWrongParticleIsTryAgain() {
+        let pairs: [(target: String, heard: String)] = [
+            ("turn on", "turn off"), ("get in", "get on"), ("put on", "put off"), ("take off", "take out"),
+            ("check in", "check out"), ("look for", "look after"), ("go out", "go on"),
+            ("get along with", "get on with"),
+        ]
+        for pair in pairs {
+            XCTAssertEqual(check(pair.target, heard: [pair.heard]).verdict, .tryAgain, "target: \(pair.target)")
+        }
+    }
+
+    func testDeckHomophonesAreCorrect() {
+        XCTAssertEqual(check("do", heard: ["due"]).verdict, .correct)
+        XCTAssertEqual(check("bored", heard: ["board"]).verdict, .correct)
+        XCTAssertEqual(check("need", heard: ["knead"]).verdict, .correct)
+        XCTAssertEqual(check("bag", heard: ["bug"]).verdict, .tryAgain)
+    }
+
+    func testHomophoneGroupsAreLowercaseAndDisjoint() {
+        var seen = Set<String>()
+        for group in PronunciationCheck.homophoneGroups {
+            XCTAssertGreaterThanOrEqual(group.count, 2)
+            for word in group {
+                XCTAssertEqual(word, word.lowercased())
+                XCTAssertTrue(seen.insert(word).inserted, "in two groups: \(word)")
+            }
+        }
+    }
+
     // MARK: - Tips
 
     func testThSaidAsAnotherSound() {

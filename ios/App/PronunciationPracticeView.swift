@@ -1,8 +1,11 @@
+import AVFoundation
 import SwiftUI
 import CoreModels
 import Pronunciation
 
-/// "Söyle" button next to a word: opens the pronunciation practice for that word and its example.
+/// Microphone icon next to a word (44 pt target, like `SpeakButton`): opens the "Söyle"
+/// pronunciation practice for that word and its example. An icon, not a label, so long phrases
+/// ("look forward to") keep their room on an iPhone SE.
 struct SayButton: View {
     let word: WidgetWord
     let example: String
@@ -12,9 +15,9 @@ struct SayButton: View {
         Button {
             isPresented = true
         } label: {
-            Label("Söyle", systemImage: "mic")
-                .font(.subheadline.weight(.semibold))
-                .frame(minHeight: 44)
+            Image(systemName: "mic.circle")
+                .font(.title3)
+                .frame(minWidth: 44, minHeight: 44)
                 .contentShape(Rectangle())
         }
         .buttonStyle(.borderless)
@@ -68,12 +71,18 @@ struct PronunciationPracticeView: View {
                     targetView
                     statusView
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    micButton
                     Text("Ses telefondan çıkmaz ve kaydedilmez.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
                 .padding(20)
+            }
+            // Outside the scroll view: reachable without scrolling at the medium height.
+            .safeAreaInset(edge: .bottom) {
+                micButton
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 12)
+                    .background(.bar)
             }
             .navigationTitle("Söyle")
             .navigationBarTitleDisplayMode(.inline)
@@ -93,6 +102,15 @@ struct PronunciationPracticeView: View {
             if scenePhase != .active, recognizer.isBusy {
                 recognizer.cancel()
             }
+        }
+        // A call, Siri or an alarm takes the audio session: drop the take.
+        .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.interruptionNotification)) { _ in
+            if recognizer.isBusy {
+                recognizer.cancel()
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.mediaServicesWereResetNotification)) { _ in
+            recognizer.cancel()
         }
         .onDisappear {
             recognizer.cancel()
@@ -162,6 +180,9 @@ struct PronunciationPracticeView: View {
             if listening {
                 recognizer.finish()
             } else {
+                // A light tap tells a VoiceOver user that listening starts; it comes before the
+                // recording session is active (haptics are muted while recording).
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 recognizer.start(target, maxSeconds: mode == .word ? 5 : 10)
             }
         } label: {
