@@ -84,6 +84,47 @@ final class QueueComposerTests: XCTestCase {
         XCTAssertEqual(Set(ids(queue)), Set([1, 2, 3, 4, 6, 7, 8, 9, 10]))
     }
 
+    // MARK: Deck (topic choice)
+
+    func testDeckQueueKeepsThePinnedWordThenUsesOnlyTheDeck() {
+        // The word on screen (15) is outside the chosen deck (1...10): it stays first, the rest
+        // come from the deck. Slots: new 1, new 2, new 3, then extra new 4 and 5.
+        let pinned = words(15...15)[0]
+        let queue = QueueComposer.compose(deck: words(1...10), fallbackFeed: words(1...20), progress: [:], now: now, horizon: 0, maxNew: 3, limit: 6, pinFirst: pinned)
+        XCTAssertEqual(ids(queue), [15, 1, 2, 3, 4, 5])
+    }
+
+    func testDeckWithNothingLeftFallsBackToEveryWord() {
+        // Every deck word (1...3) is known and not due. The pinned word (7) stays first, then
+        // the new words of the whole feed: 4, 5 (maxNew 2), then extra new 6, 8.
+        var progress: [Int: WordProgress] = [:]
+        for id in 1...3 {
+            progress[id] = known(id, due: now.addingTimeInterval(20 * day))
+        }
+        let pinned = words(7...7)[0]
+        let queue = QueueComposer.compose(deck: words(1...3), fallbackFeed: words(1...10), progress: progress, now: now, horizon: 0, maxNew: 2, limit: 5, pinFirst: pinned)
+        XCTAssertEqual(ids(queue), [7, 4, 5, 6, 8])
+
+        let unpinned = QueueComposer.compose(deck: words(1...3), fallbackFeed: words(1...10), progress: progress, now: now, horizon: 0, maxNew: 2, limit: 5)
+        XCTAssertEqual(ids(unpinned), [4, 5, 6, 7, 8])
+    }
+
+    func testDeckWithOnlyNotYetDueWordsDoesNotFallBack() {
+        // Word 1 is learning (due in 3 days) and still rotates as a top-up; word 2 is known.
+        let progress = [
+            1: learning(1, due: now.addingTimeInterval(3 * day)),
+            2: known(2, due: now.addingTimeInterval(20 * day)),
+        ]
+        let queue = QueueComposer.compose(deck: words(1...2), fallbackFeed: words(1...10), progress: progress, now: now, horizon: 0, maxNew: 2, limit: 5)
+        XCTAssertEqual(ids(queue), [1])
+    }
+
+    func testDeckQueueEqualsThePlainQueueWhenTheDeckIsEverything() {
+        let plain = QueueComposer.compose(feed: words(1...30), progress: mixedProgress(), now: now, horizon: day, maxNew: 5, limit: 20, pinFirst: words(4...4)[0])
+        let deck = QueueComposer.compose(deck: words(1...30), fallbackFeed: words(1...30), progress: mixedProgress(), now: now, horizon: day, maxNew: 5, limit: 20, pinFirst: words(4...4)[0])
+        XCTAssertEqual(ids(deck), ids(plain))
+    }
+
     func testZeroLimitAndDeterminism() {
         XCTAssertTrue(QueueComposer.compose(feed: words(1...5), progress: [:], now: now, horizon: 0, maxNew: 2, limit: 0).isEmpty)
         let first = QueueComposer.compose(feed: words(1...30), progress: mixedProgress(), now: now, horizon: day, maxNew: 5, limit: 20)

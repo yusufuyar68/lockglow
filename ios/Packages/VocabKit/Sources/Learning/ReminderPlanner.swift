@@ -25,8 +25,12 @@ public enum ReminderPlanner {
     ///
     /// Counts come from the current progress, as if nothing were studied until then. Studying
     /// only lowers them, so the app plans again each time it goes to the background.
+    ///
+    /// Reviews come from `feed` (every word); new words from `newWordFeed`, the user's deck
+    /// (`DeckFilter.feed`), as in "Tekrar". Nil means `feed`.
     public static func plan(
         feed: [WidgetWord],
+        newWordFeed: [WidgetWord]? = nil,
         progress: [Int: WordProgress],
         now: Date,
         minuteOfDay: Int,
@@ -39,7 +43,7 @@ public enum ReminderPlanner {
             return []
         }
         let goal = max(dailyNewGoal, 0)
-        let newLeft = ReviewPlanner.newWords(feed: feed, progress: progress, limit: goal).count
+        let newLeft = ReviewPlanner.newWords(feed: newWordFeed ?? feed, progress: progress, limit: goal).count
         let startOfToday = calendar.startOfDay(for: now)
 
         var result: [Reminder] = []

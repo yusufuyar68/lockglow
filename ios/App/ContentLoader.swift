@@ -15,6 +15,9 @@ struct LoadedContent: Sendable {
     let source: ContentSource
     let cardCount: Int
     let contentVersion: String?
+    /// Topics the user can choose and every topic of each card; empty for seed words.
+    let topics: [ContentTopic]
+    let topicsOf: [Int: Set<String>]
 }
 
 /// Reads the feed words: the bundled `content.sqlite` (opened read-only, straight from the app
@@ -46,7 +49,15 @@ enum ContentLoader {
                 let count = try store.cardCount()
                 let version = try store.meta("content_version")
                 if !words.isEmpty {
-                    return LoadedContent(words: words, source: .database, cardCount: count, contentVersion: version)
+                    let topics = loadTopics(from: store)
+                    return LoadedContent(
+                        words: words,
+                        source: .database,
+                        cardCount: count,
+                        contentVersion: version,
+                        topics: topics.topics,
+                        topicsOf: topics.topicsOf
+                    )
                 }
                 logger.error("content.sqlite has no free cards; using seed words")
             } catch {
@@ -56,8 +67,20 @@ enum ContentLoader {
 
         let seed = SeedWords.load()
         if seed.isEmpty {
-            return LoadedContent(words: [], source: .empty, cardCount: 0, contentVersion: nil)
+            return LoadedContent(words: [], source: .empty, cardCount: 0, contentVersion: nil, topics: [], topicsOf: [:])
         }
-        return LoadedContent(words: seed, source: .seed, cardCount: seed.count, contentVersion: nil)
+        return LoadedContent(words: seed, source: .seed, cardCount: seed.count, contentVersion: nil, topics: [], topicsOf: [:])
+    }
+
+    /// The topic choice is optional: if the topics cannot be read, every word stays in the feed.
+    private static func loadTopics(from store: ContentStore) -> (topics: [ContentTopic], topicsOf: [Int: Set<String>]) {
+        do {
+            let topics = try store.topics()
+            let topicsOf = try store.topicsByCard()
+            return (topics, topicsOf)
+        } catch {
+            logger.error("topics unreadable: \(error.localizedDescription, privacy: .public)")
+            return ([], [:])
+        }
     }
 }

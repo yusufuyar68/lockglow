@@ -49,6 +49,49 @@ public final class ContentStore {
         }
     }
 
+    /// Topics the user can choose: categories with at least one free, non-sensitive card (the
+    /// cards `freeCards` returns) among their members (`card_category`, main topic or not), in
+    /// `category.sort` order, with that count. A card in several categories counts in each.
+    public func topics() throws -> [ContentTopic] {
+        let sql = """
+            SELECT cat.id AS id, cat.grp AS grp, cat.name_en AS name_en, cat.name_tr AS name_tr,
+                   cat.sort AS sort, COUNT(c.rowid) AS card_count
+            FROM category AS cat
+            JOIN card_category AS cc ON cc.category_id = cat.id
+            JOIN card AS c ON c.rowid = cc.card_rowid
+            WHERE c.is_free = 1 AND c.sensitivity = 0
+            GROUP BY cat.id
+            ORDER BY cat.sort ASC, cat.id ASC
+            """
+        return try dbQueue.read { db -> [ContentTopic] in
+            let rows = try Row.fetchAll(db, sql: sql)
+            return rows.map { row -> ContentTopic in
+                let id: String = row["id"]
+                let group: String = row["grp"]
+                let nameEN: String = row["name_en"]
+                let nameTR: String = row["name_tr"]
+                let sort: Int = row["sort"]
+                let cardCount: Int = row["card_count"]
+                return ContentTopic(id: id, group: group, nameEN: nameEN, nameTR: nameTR, sort: sort, cardCount: cardCount)
+            }
+        }
+    }
+
+    /// Every category each card belongs to (`card_category`), by card id: the deck filter's
+    /// input. The feed query never joins this table, so a card is never listed twice.
+    public func topicsByCard() throws -> [Int: Set<String>] {
+        return try dbQueue.read { db -> [Int: Set<String>] in
+            var result: [Int: Set<String>] = [:]
+            let sql = "SELECT card_rowid AS id, category_id AS topic FROM card_category"
+            for row in try Row.fetchAll(db, sql: sql) {
+                let id: Int = row["id"]
+                let topic: String = row["topic"]
+                result[id, default: []].insert(topic)
+            }
+            return result
+        }
+    }
+
     /// The learner details of one card (every example with its Turkish, notes, typical mistakes),
     /// decoded from the full card JSON in `card.json`. Nil if no card has this id.
     public func cardDetail(id: Int) throws -> CardDetail? {

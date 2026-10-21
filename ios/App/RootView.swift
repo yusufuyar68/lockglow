@@ -17,6 +17,8 @@ struct RootView: View {
     @State private var scrolledWordID: Int?
     /// Deep link received before the words finished loading.
     @State private var pendingWordID: Int?
+    /// A widget word that is not in the deck, shown as its full card in a sheet.
+    @State private var detailWord: WidgetWord?
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -52,8 +54,25 @@ struct RootView: View {
                 break
             }
         }
-        .onChange(of: model.words) { _, newWords in
+        .onChange(of: model.feedWords) { _, newWords in
             applyPendingWord(in: newWords)
+        }
+        .fullScreenCover(isPresented: onboardingBinding) {
+            OnboardingView()
+                .environmentObject(model)
+        }
+        .sheet(item: $detailWord) { word in
+            NavigationStack {
+                WordDetailView(word: word)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Kapat") {
+                                detailWord = nil
+                            }
+                        }
+                    }
+            }
+            .environmentObject(model)
         }
         .onOpenURL { url in
             handle(url)
@@ -66,6 +85,18 @@ struct RootView: View {
         }
     }
 
+    /// Shown on first launch and from "Ayarlar"; the onboarding closes itself through the model.
+    private var onboardingBinding: Binding<Bool> {
+        return Binding(
+            get: { model.showsOnboarding },
+            set: { isShown in
+                if !isShown && model.showsOnboarding {
+                    model.finishOnboarding()
+                }
+            }
+        )
+    }
+
     /// A tapped reminder opens "Tekrar".
     private func openReviewIfRequested() {
         guard notifications.reviewRequested else {
@@ -75,26 +106,41 @@ struct RootView: View {
         notifications.reviewRequested = false
     }
 
-    /// `vocabwidget://word/<id>`, opened by tapping a widget.
+    /// `vocabwidget://word/<id>`, opened by tapping a widget. A word of the deck: "Akış" scrolls
+    /// to it. A word outside the deck (the one kept on screen right after a topic change, or one
+    /// from the every-topic fallback): its card opens in a sheet.
     private func handle(_ url: URL) {
         guard let wordID = DeepLink.wordID(from: url) else {
             return
         }
-        selectedTab = .feed
-        if model.words.contains(where: { $0.id == wordID }) {
-            scrolledWordID = wordID
-        } else {
+        if model.contentSource == .loading {
+            selectedTab = .feed
             pendingWordID = wordID
+        } else {
+            open(wordID, in: model.feedWords)
         }
     }
 
+    /// The words arrived: open the pending word, then forget it.
     private func applyPendingWord(in words: [WidgetWord]) {
-        guard let wordID = pendingWordID,
-              words.contains(where: { $0.id == wordID })
-        else {
+        guard let wordID = pendingWordID, !words.isEmpty else {
             return
         }
-        scrolledWordID = wordID
         pendingWordID = nil
+        open(wordID, in: words)
+    }
+
+    private func open(_ wordID: Int, in feed: [WidgetWord]) {
+        if feed.contains(where: { $0.id == wordID }) {
+            selectedTab = .feed
+            scrolledWordID = wordID
+            return
+        }
+        // Not over the onboarding: two presentations at once do not work.
+        guard !model.showsOnboarding, let word = model.word(id: wordID) else {
+            selectedTab = .feed
+            return
+        }
+        detailWord = word
     }
 }

@@ -1,4 +1,5 @@
 import Foundation
+import CoreModels
 
 /// App-private persisted settings (UserDefaults). Learning progress itself lives in
 /// `ProgressStore` (Application Support/progress.json), not here.
@@ -8,6 +9,8 @@ enum AppPreferences {
     static let dailyNewWordChoices = [5, 10, 15, 20]
     static let defaultRotationMinutes = 60
     static let defaultDailyNewWords = 10
+    /// Start levels offered in the onboarding and in "Ayarlar" (the content has A1-B1 cards).
+    static let startLevelChoices: [Level] = [.a1, .a2, .b1]
 
     private static let rotationKey = "lockglow.rotationMinutes"
     private static let dailyNewWordsKey = "lockglow.dailyNewWords"
@@ -16,6 +19,57 @@ enum AppPreferences {
     private static let studiedCountKey = "lockglow.newWordsStudiedCount"
     private static let reminderEnabledKey = "lockglow.reminderEnabled"
     private static let reminderMinuteKey = "lockglow.reminderMinuteOfDay"
+    private static let topicsKey = "lockglow.selectedTopicIDs"
+    private static let startLevelKey = "lockglow.startLevel"
+    private static let onboardingKey = "lockglow.onboardingCompleted"
+
+    /// The flag as stored, nil when it was never written (`OnboardingGate`). Read with
+    /// `bool(forKey:)`, not `as? Bool`: a launch argument arrives as the text "YES" / "NO".
+    static var onboardingCompletedStored: Bool? {
+        if UserDefaults.standard.object(forKey: onboardingKey) == nil {
+            return nil
+        }
+        return UserDefaults.standard.bool(forKey: onboardingKey)
+    }
+
+    /// The onboarding was finished or skipped; after that it opens only from "Ayarlar".
+    /// UI tests pass `-lockglow.onboardingCompleted YES` to start on the tabs.
+    static var onboardingCompleted: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: onboardingKey)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: onboardingKey)
+        }
+    }
+
+    /// Topics (`category.id`) whose words rotate on the widget and in "Akış". Empty = every topic.
+    static var selectedTopicIDs: Set<String> {
+        get {
+            return Set(UserDefaults.standard.stringArray(forKey: topicsKey) ?? [])
+        }
+        set {
+            UserDefaults.standard.set(newValue.sorted(), forKey: topicsKey)
+        }
+    }
+
+    /// The level new words start from. Nil (never chosen, or an unknown value) keeps the
+    /// curriculum order, A1 first.
+    static var startLevel: Level? {
+        get {
+            guard let stored = UserDefaults.standard.string(forKey: startLevelKey) else {
+                return nil
+            }
+            return Level(rawValue: stored)
+        }
+        set {
+            if let level = newValue {
+                UserDefaults.standard.set(level.rawValue, forKey: startLevelKey)
+            } else {
+                UserDefaults.standard.removeObject(forKey: startLevelKey)
+            }
+        }
+    }
 
     /// Daily "Tekrar" reminder: off until the user turns it on (it needs notification permission).
     static var reminderEnabled: Bool {

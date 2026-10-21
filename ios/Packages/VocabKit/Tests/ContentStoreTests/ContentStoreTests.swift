@@ -64,6 +64,64 @@ final class ContentStoreTests: XCTestCase {
         XCTAssertEqual(upToA2.map { $0.id }, [8, 1, 5, 7])
     }
 
+    func testTopicsCountFreeNonSensitiveMembers() throws {
+        let writer = try DatabaseQueue(path: databasePath)
+        try writer.write { db in
+            try db.execute(sql: """
+                INSERT INTO category (id, grp, name_en, name_tr, access, free_count, hero, sort) VALUES
+                  ('travel_tourism', 'B', 'Travel & Tourism', 'Seyahat & Turizm', 'S', 10, 0, 0),
+                  ('empty_topic', 'A', 'Empty', 'Boş', 'F', 0, 0, 2),
+                  ('workplace_office', 'D', 'Workplace', 'İş Yeri', 'P', 0, 0, 5),
+                  ('success_productivity', 'C', 'Success', 'Başarı', 'S', 10, 0, 7);
+                """)
+            try self.insertCard(db, id: 6, lemma: "passport", level: "A2", levelRank: 2, freqRank: 900, sensitivity: 0, isFree: 1, ipa: nil, gloss: "pasaport", topic: "travel_tourism")
+            try self.insertCard(db, id: 7, lemma: "flight", level: "A2", levelRank: 2, freqRank: 800, sensitivity: 0, isFree: 1, ipa: nil, gloss: "uçuş", topic: "travel_tourism")
+            try self.insertCard(db, id: 8, lemma: "meeting", level: "B1", levelRank: 3, freqRank: 700, sensitivity: 0, isFree: 0, ipa: nil, gloss: "toplantı", topic: "workplace_office")
+            try self.insertCard(db, id: 9, lemma: "secret", level: "B1", levelRank: 3, freqRank: 600, sensitivity: 1, isFree: 1, ipa: nil, gloss: "sır", topic: "workplace_office")
+            // Second topics: card 1 ("general") is also a travel card; card 7 is also a success
+            // card, a topic that is no card's main topic.
+            try self.addTopic(db, card: 1, topic: "travel_tourism")
+            try self.addTopic(db, card: 7, topic: "success_productivity")
+        }
+
+        let store = try ContentStore(path: databasePath)
+        let topics = try store.topics()
+        // Sort order: travel (0), general (1), success (7). "empty_topic" has no card;
+        // "workplace_office" only a locked and a sensitive one. "general" counts cards 1, 2 and 5
+        // (3 is locked, 4 sensitive); travel counts 6, 7 and card 1 through its second topic.
+        XCTAssertEqual(topics.map { $0.id }, ["travel_tourism", "general", "success_productivity"])
+        XCTAssertEqual(topics.map { $0.cardCount }, [3, 3, 1])
+        XCTAssertEqual(
+            topics.first,
+            ContentTopic(id: "travel_tourism", group: "B", nameEN: "Travel & Tourism", nameTR: "Seyahat & Turizm", sort: 0, cardCount: 3)
+        )
+    }
+
+    func testTopicsByCardListsEveryMembership() throws {
+        let writer = try DatabaseQueue(path: databasePath)
+        try writer.write { db in
+            try db.execute(sql: """
+                INSERT INTO category (id, grp, name_en, name_tr, access, free_count, hero, sort)
+                  VALUES ('travel_tourism', 'B', 'Travel & Tourism', 'Seyahat & Turizm', 'S', 10, 0, 0);
+                """)
+            try self.insertCard(db, id: 6, lemma: "passport", level: "A2", levelRank: 2, freqRank: 900, sensitivity: 0, isFree: 1, ipa: nil, gloss: "pasaport", topic: "travel_tourism")
+            try self.addTopic(db, card: 2, topic: "travel_tourism")
+        }
+
+        let store = try ContentStore(path: databasePath)
+        XCTAssertEqual(
+            try store.topicsByCard(),
+            [
+                1: ["general"],
+                2: ["general", "travel_tourism"],
+                3: ["general"],
+                4: ["general"],
+                5: ["general"],
+                6: ["travel_tourism"],
+            ]
+        )
+    }
+
     func testCardDetailDecodesTheJSONColumn() throws {
         let writer = try DatabaseQueue(path: databasePath)
         try writer.write { db in
@@ -162,6 +220,12 @@ final class ContentStoreTests: XCTestCase {
                   gloss TEXT NOT NULL, equivalence TEXT NOT NULL, example_tr TEXT,
                   PRIMARY KEY (card_rowid, lang)
                 );
+                CREATE TABLE card_category (
+                  card_rowid INTEGER NOT NULL REFERENCES card(rowid),
+                  category_id TEXT NOT NULL REFERENCES category(id),
+                  is_primary INTEGER NOT NULL, rank INTEGER NOT NULL,
+                  PRIMARY KEY (card_rowid, category_id)
+                );
                 CREATE VIRTUAL TABLE card_fts USING fts5(
                   lemma_fold, gloss_fold, content='', tokenize='unicode61 remove_diacritics 2'
                 );
@@ -179,6 +243,14 @@ final class ContentStoreTests: XCTestCase {
         }
     }
 
+    /// A second (not main) topic for a card.
+    private func addTopic(_ db: Database, card: Int, topic: String) throws {
+        try db.execute(
+            sql: "INSERT INTO card_category (card_rowid, category_id, is_primary, rank) VALUES (?, ?, 0, 0)",
+            arguments: [card, topic]
+        )
+    }
+
     private func insertCard(
         _ db: Database,
         id: Int,
@@ -189,7 +261,8 @@ final class ContentStoreTests: XCTestCase {
         sensitivity: Int,
         isFree: Int,
         ipa: String?,
-        gloss: String?
+        gloss: String?,
+        topic: String = "general"
     ) throws {
         try db.execute(
             sql: """
@@ -197,9 +270,14 @@ final class ContentStoreTests: XCTestCase {
                                   ipa_us, def_micro, def_short, def_long, example_en,
                                   primary_topic, register, sensitivity, is_free, json)
                 VALUES (?, ?, ?, 'word', 'n', 1, ?, ?, ?, ?, 'micro', 'short', 'long', 'example',
-                        'general', 'neutral', ?, ?, '{}')
+                        ?, 'neutral', ?, ?, '{}')
                 """,
-            arguments: [id, "en.test.\(id)", lemma, level, levelRank, freqRank, ipa, sensitivity, isFree]
+            arguments: [id, "en.test.\(id)", lemma, level, levelRank, freqRank, ipa, topic, sensitivity, isFree]
+        )
+        // Like the pipeline: the main topic is also a membership row.
+        try db.execute(
+            sql: "INSERT INTO card_category (card_rowid, category_id, is_primary, rank) VALUES (?, ?, 1, 0)",
+            arguments: [id, topic]
         )
         var glossFold = ""
         if let gloss = gloss {
