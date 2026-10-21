@@ -10,9 +10,10 @@ from __future__ import annotations
 import json
 from functools import lru_cache
 
+from .llm_schemas import MAX_TOTAL, PASS_THRESHOLD
 from .taxonomy import DATA_DIR
 
-PROMPT_VERSION = "2026-10-11.1"
+PROMPT_VERSION = "2026-10-13.2"
 
 FOLK_ETYMOLOGY_MYTHS = [
     "posh = 'port out, starboard home'",
@@ -64,7 +65,7 @@ Other fields:
 - extra_topics: optional extra category ids from the allowed list below (never invent ids). Exam tags are curated by editors; do not add them.
 - flags: short machine tags such as "uncountable", "inseparable", "confusable:<word>", "coined", "not_for_exams", "false_friend_tr".
 - sensitivity: 0 clean, 1 mildly negative or rude (e.g. "condescending"), 2 offensive, sexual, violent or a slur.
-- quiz: a cloze sentence (at most 100 characters) with exactly one blank written as "______", the exact answer form, and 3 distractors (each at most 16 characters) of the same part of speech that are clearly wrong in context. The answer must not appear anywhere in the cloze sentence.
+- quiz: a cloze sentence (at most 100 characters) with exactly one blank written as "______", the exact answer form, and 3 distractors (each at most 16 characters) of the same part of speech that are clearly wrong in context. Exactly one option may fit: no distractor may also complete the sentence correctly or naturally, and the sentence must give enough context to choose without guessing. The answer must not appear anywhere in the cloze sentence.
 - If the word is offensive, sexual, violent or a slur, set sensitivity to 2, write a short skip_reason and keep every other field minimal. Otherwise skip_reason is null.
 - uncertain_fields: list every field you are not confident about. Being honest here is more useful than guessing; an editor reviews every flagged field.
 
@@ -118,7 +119,7 @@ USER_B = """Write the Turkish layer for this card.
 
 {entry_json}"""
 
-SYSTEM_C = """You are a strict QA editor for a bilingual English-Turkish vocabulary app. Be skeptical: drafted entries often contain (a) invented or folk etymologies, (b) examples that define the word, (c) a Turkish gloss for the wrong sense, (d) over-literal Turkish, (e) CEFR levels that are too low for rare words, (f) wrong IPA stress, (g) invented false friends.
+SYSTEM_C = """You are a strict QA editor for a bilingual English-Turkish vocabulary app. Be skeptical: drafted entries often contain (a) invented or folk etymologies, (b) examples that define the word, (c) a Turkish gloss for the wrong sense, (d) over-literal Turkish, (e) CEFR levels that are too low for rare words, (f) wrong IPA stress, (g) invented false friends, (h) quiz blanks that more than one option could fill.
 
 Score each criterion 0, 1 or 2 with a one-line reason:
 - sense_accuracy (critical): definitions and examples are correct for one single sense.
@@ -127,13 +128,14 @@ Score each criterion 0, 1 or 2 with a one-line reason:
 - example_naturalness: natural, typical, current usage.
 - example_safety (critical): inclusive and safe; the first example is safe on a public lock screen.
 - tr_gloss (critical): the Turkish gloss is correct and matches this sense.
-- tr_example: Turkish translations are natural and faithful (compare with the back-translation).
+- tr_example: Turkish translations are natural and faithful (compare with the back-translation given after the card).
 - learner_value: collocations, notes and mistakes are genuine, not padding.
 - etymology (critical): true and not a known myth; score 2 if it is null.
 - level_tags: CEFR level and categories are plausible.
 - pronunciation: IPA and stress are correct (score 2 if they match the supplied reference).
+- quiz_validity (critical): exactly one option fits the blank. The answer is the right form for this sense; no distractor could also complete the sentence correctly or naturally; distractors are the same part of speech and clearly wrong in context; the sentence gives enough context to choose without guessing. Score 0 if more than one option fits or the answer is wrong.
 
-Then give a verdict: PASS (total of at least 18 out of 22 and no critical criterion at 0), FIX (fixable problems; list exact field edits in issues) or REJECT (wrong sense, unsafe, or not worth fixing). Each issue names the field, a severity (critical, major, minor), the problem and a concrete suggested fix.
+Then give a verdict: PASS (total of at least {pass_threshold} out of {max_total} and no critical criterion at 0), FIX (fixable problems; list exact field edits in issues) or REJECT (wrong sense, unsafe, or not worth fixing). Each issue names the field, a severity (critical, major, minor), the problem and a concrete suggested fix. A quiz problem alone never justifies REJECT: list it as a major issue with a corrected cloze or distractors.
 
 Folk etymologies that must be rejected:
 {myths}
@@ -143,7 +145,10 @@ USER_C = """Review this card.
 
 IPA reference (US / UK): {ipa_us_ref} / {ipa_uk_ref}
 
-{entry_json}"""
+{entry_json}
+
+Literal back-translation of the Turkish examples, in the same order as the examples:
+{backtranslation_json}"""
 
 
 @lru_cache(maxsize=1)
@@ -175,4 +180,4 @@ def system_b() -> str:
 @lru_cache(maxsize=1)
 def system_c() -> str:
     myths = "\n".join(f"- {m}" for m in FOLK_ETYMOLOGY_MYTHS)
-    return SYSTEM_C.format(myths=myths)
+    return SYSTEM_C.format(myths=myths, pass_threshold=PASS_THRESHOLD, max_total=MAX_TOTAL)
