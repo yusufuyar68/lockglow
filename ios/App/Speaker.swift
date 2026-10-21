@@ -36,6 +36,21 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         synthesizer.speak(utterance)
     }
 
+    /// Stops reading at once (nothing happens when silent) and releases the audio session.
+    func stop() {
+        guard current != nil else { return }
+        synthesizer.stopSpeaking(at: .immediate)
+        finish()
+    }
+
+    /// Silences everything that reads aloud in the app's process: the speaker buttons and the
+    /// widget's speaker button (`SpeakWordIntent` runs here, through `WordSpeechPlayer`). The "Söyle"
+    /// microphone calls this before it takes the audio session.
+    static func stopAll() {
+        shared.stop()
+        WordSpeechPlayer.shared.stop()
+    }
+
     private func finish() {
         current = nil
         speakingText = nil

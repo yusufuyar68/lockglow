@@ -48,16 +48,22 @@ struct FeedView: View {
 /// English definition, then the example with its Turkish translation, then one typical mistake.
 /// `detail` is nil for seed words: the card then shows the example without a translation.
 /// Only the first example and the first mistake are shown so that a page never overflows.
+/// `showsSay: false` hides the microphone (a card shown where no permission prompt may appear).
 struct WordCardView: View {
     let word: WidgetWord
     let detail: CardDetail?
+    var showsSay = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .center, spacing: 4) {
                 Text(word.lemma)
                     .font(.largeTitle.bold())
+                    .layoutPriority(1)
                 SpeakButton(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                if showsSay {
+                    SayButton(word: word, example: word.exampleEN)
+                }
             }
             if let ipa = word.ipaUS {
                 Text(ipa)

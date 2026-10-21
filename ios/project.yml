@@ -57,6 +57,10 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSRequiresIPhoneOS: true
+        # "Söyle" (pronunciation practice): asked on first use only; recognition runs on the device.
+        # Apple: the speech key is required for any app using the Speech framework (on-device too).
+        NSMicrophoneUsageDescription: "Söyle alıştırmasında söylediğin kelimeyi dinlemek için mikrofon kullanılır. Ses kaydedilmez ve telefondan çıkmaz."
+        NSSpeechRecognitionUsageDescription: "Kelimeyi doğru söyleyip söylemediğini anlamak için konuşma tanıma yalnızca telefonda çalışır. Sesin Apple'a ya da başka bir sunucuya gönderilmez."
         ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
@@ -94,6 +98,9 @@ targets:
       # App only: the widget extension must not link Learning.
       - package: VocabKit
         product: Learning
+      # App only: the "Söyle" pronunciation check.
+      - package: VocabKit
+        product: Pronunciation
 
   LockglowWidgets:
     type: app-extension

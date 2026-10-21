@@ -90,7 +90,16 @@ Lockglow; konumunuzu, rehberinizi, fotoğraflarınızı, kameranızı, sağlık 
 
 Uygulamada yapay zekâ sohbeti yoktur; kişisel verileriniz üçüncü taraf yapay zekâ hizmetlerine gönderilmez.
 
-Gelecekte telaffuz çalışması gibi mikrofon gerektiren bir özellik eklenirse mikrofon izni yalnızca o özelliği kullanmak istediğinizde, o anda istenir ve bu politika önceden güncellenir.
+### 3.7 Telaffuz alıştırması ("Söyle") ve mikrofon
+
+"Söyle" özelliğinde kelimeyi ya da örnek cümleyi sesli söylersiniz; uygulama doğru söyleyip söylemediğinizi Türkçe olarak bildirir.
+
+- **Mikrofon izni** yalnızca "Söyle"ye ilk bastığınızda, o anda istenir. Eski iOS sürümlerinde (iOS 26 öncesi) ayrıca **konuşma tanıma izni** istenir. İzni vermezseniz uygulamanın geri kalanı (kartlar, sesli okuma, widget'lar) aynen çalışır. İzni istediğiniz zaman iPhone Ayarları'ndan geri alabilirsiniz.
+- **Sesiniz cihazınızdan çıkmaz.** Konuşmanız, Apple'ın iPhone'unuzda çalışan konuşma tanıma özelliğiyle yalnızca cihazınızda yazıya çevrilir ve hemen karşılaştırılır. Uygulama, sunucuya gönderen tanımayı kullanmaz.
+- **Kaydedilmez, saklanmaz, paylaşılmaz.** Ses yalnızca o deneme sürerken bellekte tutulur; dosyaya yazılmaz. Ses veya söylediğiniz metin bize ya da üçüncü taraflara (analitik dahil) gönderilmez.
+- iOS 26 ve sonrasında, ilk kullanımda Apple'ın İngilizce konuşma modeli Apple'dan bir kez indirilir. Bu indirmede sesiniz gönderilmez; model iPhone'unuzda saklanır ve başka uygulamalarla paylaşılabilir.
+
+**[TEYİT: Ses yalnızca kullanıcının cihazında işlendiği ve bize ulaşmadığı için bunun KVKK anlamında bizim tarafımızdan "işleme" sayılıp sayılmadığı ve aydınlatma metnine eklenmesi gerekip gerekmediği avukatla netleştirilmeli.]**
 
 ## 4. Verileri neden işliyoruz?
 

@@ -119,6 +119,19 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         }
     }
 
+    /// Stops the widget speech at once (nothing happens when silent) and releases the audio session
+    /// now, without `end`'s grace period: the caller (the "Söyle" microphone, via
+    /// `Speaker.stopAll()`) takes the session over right after. The waiting intent returns.
+    func stop() {
+        guard current != nil else { return }
+        current = nil
+        watchdog?.cancel()
+        watchdog = nil
+        synthesizer.stopSpeaking(at: .immediate)
+        WordSpeech.deactivateSession()
+        resumeWaiter()
+    }
+
     private func timedOut(_ id: ObjectIdentifier) {
         guard let current, ObjectIdentifier(current) == id else { return }
         WordSpeech.logger.notice("widget speech timed out")
