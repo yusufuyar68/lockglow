@@ -1,0 +1,1008 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.nurse.n.1",
+      "lemma": "nurse",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "health worker",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nɜːrs/",
+        "uk": "/nɜːs/"
+      },
+      "def": {
+        "micro": "person who helps sick people",
+        "short": "a person who works with doctors and takes care of sick people",
+        "long": "A person whose job is to take care of people who are ill or hurt. Nurses work in hospitals, clinics and schools, and they help doctors."
+      },
+      "examples": [
+        {
+          "en": "The nurse smiled and said hello.",
+          "tr": "Hemşire gülümsedi ve merhaba dedi.",
+          "register": "neutral",
+          "focus": "nurse"
+        },
+        {
+          "en": "A nurse called my name, and I went in.",
+          "tr": "Bir hemşire adımı çağırdı, ben de içeri girdim.",
+          "register": "neutral",
+          "focus": "nurse"
+        },
+        {
+          "en": "Elif wants to be a nurse because she likes helping people.",
+          "tr": "Elif, insanlara yardım etmeyi sevdiği için hemşire olmak istiyor.",
+          "register": "neutral",
+          "focus": "nurse"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "school nurse",
+        "night nurse",
+        "head nurse"
+      ],
+      "word_family": [
+        {
+          "lemma": "nursing",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'norrice', from Latin 'nutrix', a woman who feeds a baby. It comes from 'nutrire', to feed.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hemşire",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede 'nurse' kadın da erkek de olabilir: 'He is a nurse.' Cinsiyeti ayrıca belirtmeye genellikle gerek yoktur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctor makes the plan, and the ______ takes care of the patients all day.",
+        "answer": "nurse",
+        "distractors": [
+          "babysitter",
+          "lifeguard",
+          "waiter"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dentist.n.1",
+      "lemma": "dentist",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɛntɪst/",
+        "uk": "/ˈdɛntɪst/"
+      },
+      "def": {
+        "micro": "doctor for your teeth",
+        "short": "a doctor who looks after your teeth and mouth",
+        "long": "A doctor who checks and cleans your teeth and fixes them when something is wrong. Many people go twice a year, even when nothing hurts."
+      },
+      "examples": [
+        {
+          "en": "I have an appointment with the dentist today.",
+          "tr": "Bugün diş hekimiyle randevum var.",
+          "register": "neutral",
+          "focus": "dentist"
+        },
+        {
+          "en": "Kerem goes to the dentist every six months.",
+          "tr": "Kerem altı ayda bir diş hekimine gidiyor.",
+          "register": "neutral",
+          "focus": "dentist"
+        },
+        {
+          "en": "The dentist said my teeth look healthy.",
+          "tr": "Diş hekimi dişlerimin sağlıklı göründüğünü söyledi.",
+          "register": "neutral",
+          "focus": "dentist"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go to the dentist",
+        "see the dentist",
+        "dentist's office"
+      ],
+      "word_family": [
+        {
+          "lemma": "dental",
+          "pos": "adj"
+        },
+        {
+          "lemma": "dentistry",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'dentiste', from 'dent', meaning tooth, which comes from Latin 'dens'.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "diş hekimi",
+          "alt": [
+            "dişçi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'dişçi' günlük konuşmada, 'diş hekimi' resmî dilde daha yaygındır; İngilizcede ikisi için de 'dentist' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe has a bad tooth, so she is going to the ______ today.",
+        "answer": "dentist",
+        "distractors": [
+          "hairdresser",
+          "mechanic",
+          "vet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hospital.n.1",
+      "lemma": "hospital",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɑːspɪtəl/",
+        "uk": "/ˈhɒspɪtəl/"
+      },
+      "def": {
+        "micro": "place with doctors and beds",
+        "short": "a big building where doctors and nurses take care of sick or hurt people",
+        "long": "A big building where doctors and nurses look after people who are ill or hurt. Some people stay there at night, and others go home the same day."
+      },
+      "examples": [
+        {
+          "en": "My neighbor works at the city hospital.",
+          "tr": "Komşum şehir hastanesinde çalışıyor.",
+          "register": "neutral",
+          "focus": "hospital"
+        },
+        {
+          "en": "The hospital is next to the train station.",
+          "tr": "Hastane tren istasyonunun yanında.",
+          "register": "neutral",
+          "focus": "hospital"
+        },
+        {
+          "en": "Visiting hours at the hospital start at two o'clock.",
+          "tr": "Hastanede ziyaret saatleri saat ikide başlıyor.",
+          "register": "neutral",
+          "focus": "hospital"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go to the hospital",
+        "hospital bed",
+        "city hospital",
+        "private hospital"
+      ],
+      "word_family": [
+        {
+          "lemma": "hospitalize",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'hospitalis', meaning 'of a guest', from 'hospes', a guest or host. It shares a root with 'hotel' and 'hospitality'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hastane",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiliz İngilizcesinde 'in hospital' (the olmadan), Amerikan İngilizcesinde 'in the hospital' denir. İkisi de doğrudur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctors and nurses at the ______ were very kind to us.",
+        "answer": "hospital",
+        "distractors": [
+          "library",
+          "bakery",
+          "museum"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.clinic.n.1",
+      "lemma": "clinic",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "small health center",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈklɪnɪk/",
+        "uk": "/ˈklɪnɪk/"
+      },
+      "def": {
+        "micro": "small place for medical care",
+        "short": "a small place where you see a doctor but do not stay the night",
+        "long": "A small place where people go to see a doctor, a nurse or another health worker. It is smaller than a hospital, and people usually go home on the same day."
+      },
+      "examples": [
+        {
+          "en": "The clinic opens at eight in the morning.",
+          "tr": "Klinik sabah sekizde açılıyor.",
+          "register": "neutral",
+          "focus": "clinic"
+        },
+        {
+          "en": "Maria took her son to the clinic near their house.",
+          "tr": "Maria oğlunu evlerinin yakınındaki kliniğe götürdü.",
+          "register": "neutral",
+          "focus": "clinic"
+        },
+        {
+          "en": "A new clinic opened in our neighborhood last month.",
+          "tr": "Geçen ay mahallemizde yeni bir klinik açıldı.",
+          "register": "neutral",
+          "focus": "clinic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "health clinic",
+        "dental clinic",
+        "private clinic"
+      ],
+      "word_family": [
+        {
+          "lemma": "clinical",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'clinique', from Greek 'klinikos', meaning 'of a bed' (from 'klinē', a bed).",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "klinik",
+          "alt": [
+            "sağlık merkezi",
+            "muayenehane"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'klinik' hastanedeki yataklı bir bölüm de olabilir (kardiyoloji kliniği). İngilizcede 'clinic' genellikle gece kalınmayan bir yerdir: küçük bir sağlık merkezi ya da hastanedeki poliklinik.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our family doctor works in a small ______ near the bus stop.",
+        "answer": "clinic",
+        "distractors": [
+          "kiosk",
+          "garage",
+          "cinema"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.patient.n.1",
+      "lemma": "patient",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "noun: person who gets care",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpeɪʃənt/",
+        "uk": "/ˈpeɪʃənt/"
+      },
+      "def": {
+        "micro": "person who gets medical care",
+        "short": "a person who is being looked after by a doctor or a nurse",
+        "long": "A person who is ill or hurt and gets care from a doctor, a nurse or a hospital. Doctors and nurses call the people they look after their patients."
+      },
+      "examples": [
+        {
+          "en": "The doctor will see the next patient now.",
+          "tr": "Doktor şimdi sıradaki hastayı muayene edecek.",
+          "register": "neutral",
+          "focus": "patient"
+        },
+        {
+          "en": "Dr. Kaya has thirty patients to see today.",
+          "tr": "Dr. Kaya'nın bugün bakacağı otuz hasta var.",
+          "register": "neutral",
+          "focus": "patients"
+        },
+        {
+          "en": "The nurse asked the patient to sit down and wait.",
+          "tr": "Hemşire hastadan oturup beklemesini istedi.",
+          "register": "neutral",
+          "focus": "patient"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "new patient",
+        "next patient",
+        "hospital patient"
+      ],
+      "word_family": [
+        {
+          "lemma": "patient",
+          "pos": "adj"
+        },
+        {
+          "lemma": "outpatient",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'patiens', meaning 'suffering', from 'pati', to suffer. The adjective 'patient' (calm while waiting) comes from the same word.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hasta",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'hasta' hem kişi hem durumdur. Doktorun baktığı kişiye 'patient' denir; hasta olmak ise 'be sick' ya da 'be ill' olur. Aynı yazılan sıfat 'patient' ise 'sabırlı' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:patient (adj)"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctor is ready, so she calls her next ______ into the room.",
+        "answer": "patient",
+        "distractors": [
+          "passenger",
+          "customer",
+          "tourist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pharmacist.n.1",
+      "lemma": "pharmacist",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɑːrməsɪst/",
+        "uk": "/ˈfɑːməsɪst/"
+      },
+      "def": {
+        "micro": "person who sells medicine",
+        "short": "a trained person who gives you medicine and tells you how to take it",
+        "long": "A trained person who gives people the medicine that their doctor says they need. You can also ask this person for advice about small problems like a cold or a cough."
+      },
+      "examples": [
+        {
+          "en": "The pharmacist explained how to take the tablets.",
+          "tr": "Eczacı hapların nasıl kullanılacağını anlattı.",
+          "register": "neutral",
+          "focus": "pharmacist"
+        },
+        {
+          "en": "Ask the pharmacist if you have a question about your medicine.",
+          "tr": "İlacınızla ilgili bir sorunuz varsa eczacıya sorun.",
+          "register": "neutral",
+          "focus": "pharmacist"
+        },
+        {
+          "en": "Kenji's sister works as a pharmacist in a small town.",
+          "tr": "Kenji'nin kız kardeşi küçük bir kasabada eczacı olarak çalışıyor.",
+          "register": "neutral",
+          "focus": "pharmacist"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ask the pharmacist",
+        "local pharmacist",
+        "talk to a pharmacist"
+      ],
+      "word_family": [
+        {
+          "lemma": "pharmacy",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Greek 'pharmakon', meaning drug or medicine. 'Pharmacy' and 'pharmacist' both come from this word.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "eczacı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiltere'de 'chemist' sözcüğü hem eczacı hem eczane (the chemist's) için kullanılır. Ama 'chemist' kimyager anlamına da gelir; 'pharmacist' her yerde eczacı demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctor wrote down the name of my medicine, and I took the paper to the ______.",
+        "answer": "pharmacist",
+        "distractors": [
+          "barber",
+          "florist",
+          "plumber"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.waiting_room.phr.1",
+      "lemma": "waiting room",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "at a doctor or dentist",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈweɪtɪŋ ruːm/",
+        "uk": "/ˈweɪtɪŋ ruːm/"
+      },
+      "def": {
+        "micro": "room to sit until your turn",
+        "short": "a room in a clinic or office where you sit until the doctor is ready",
+        "long": "A room in a clinic, a hospital or a dentist's office where people sit until it is their turn. It usually has chairs and magazines, and sometimes a TV."
+      },
+      "examples": [
+        {
+          "en": "Please sit in the waiting room.",
+          "tr": "Lütfen bekleme salonunda oturun.",
+          "register": "neutral",
+          "focus": "waiting room"
+        },
+        {
+          "en": "There were ten people in the waiting room.",
+          "tr": "Bekleme salonunda on kişi vardı.",
+          "register": "neutral",
+          "focus": "waiting room"
+        },
+        {
+          "en": "Omar read a magazine in the dentist's waiting room.",
+          "tr": "Omar, diş hekiminin bekleme salonunda bir dergi okudu.",
+          "register": "neutral",
+          "focus": "waiting room"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the waiting room",
+        "sit in the waiting room",
+        "doctor's waiting room"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bekleme salonu",
+          "alt": [
+            "bekleme odası"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Doktorda, diş hekiminde ya da tren istasyonunda beklediğiniz odaya 'waiting room' denir. Havaalanında uçağı beklediğiniz alana ise çoğunlukla 'departure lounge' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The clinic is very busy today. All the chairs in the ______ are full.",
+        "answer": "waiting room",
+        "distractors": [
+          "dining room",
+          "bathroom",
+          "classroom"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_an_appointment.phr.1",
+      "lemma": "make an appointment",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ən əˈpɔɪntmənt/",
+        "uk": "/meɪk ən əˈpɔɪntmənt/"
+      },
+      "def": {
+        "micro": "book a time to see someone",
+        "short": "arrange a day and time to see a doctor, a dentist or another person",
+        "long": "To arrange a day and a time when you will see a doctor, a dentist or someone else. You can do it by phone, online or in person."
+      },
+      "examples": [
+        {
+          "en": "I need to make an appointment with the dentist.",
+          "tr": "Diş hekiminden randevu almam gerekiyor.",
+          "register": "neutral",
+          "focus": "make an appointment"
+        },
+        {
+          "en": "I'd like to make an appointment, please.",
+          "tr": "Randevu almak istiyorum, lütfen.",
+          "register": "neutral",
+          "focus": "make an appointment"
+        },
+        {
+          "en": "Elif made an appointment online for Monday at ten.",
+          "tr": "Elif internetten pazartesi günü saat ona randevu aldı.",
+          "register": "neutral",
+          "focus": "made an appointment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "book an appointment",
+        "cancel an appointment",
+        "appointment with a doctor"
+      ],
+      "word_family": [
+        {
+          "lemma": "appointment",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "randevu almak",
+          "alt": [
+            "randevu ayarlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'randevu almak' dersiniz ama İngilizcede 'take' değil 'make' ya da 'book' kullanılır. Randevunuz varsa 'I have an appointment' dersiniz.",
+          "mistakes": [
+            {
+              "wrong": "I want to take an appointment.",
+              "right": "I want to make an appointment.",
+              "why": "Türkçedeki 'randevu almak' yüzünden 'take' (almak) akla gelir. İngilizcede 'take an appointment' denmez; 'make' ya da 'book an appointment' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My tooth hurts, so I called the dentist to ______ for Friday.",
+        "answer": "make an appointment",
+        "distractors": [
+          "make a promise",
+          "book a table",
+          "buy a ticket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.see_a_doctor.phr.1",
+      "lemma": "see a doctor",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "visit a doctor",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/siː ə ˈdɑːktər/",
+        "uk": "/siː ə ˈdɒktə/"
+      },
+      "def": {
+        "micro": "get medical help",
+        "short": "go to a doctor because you feel ill or have a health problem",
+        "long": "To go to a doctor when you feel ill or have a health problem, so that the doctor can check you. People often use it as advice: 'You should see a doctor.'"
+      },
+      "examples": [
+        {
+          "en": "You should see a doctor about that cough.",
+          "tr": "O öksürük için bir doktora görünmelisin.",
+          "register": "neutral",
+          "focus": "see a doctor"
+        },
+        {
+          "en": "If the pain does not go away, see a doctor.",
+          "tr": "Ağrı geçmezse bir doktora görün.",
+          "register": "neutral",
+          "focus": "see a doctor"
+        },
+        {
+          "en": "Mehmet saw a doctor yesterday and now he feels better.",
+          "tr": "Mehmet dün bir doktora göründü ve şimdi kendini daha iyi hissediyor.",
+          "register": "neutral",
+          "focus": "saw a doctor"
+        }
+      ],
+      "synonyms": [
+        "go to the doctor",
+        "visit a doctor"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "should see a doctor",
+        "see a doctor about",
+        "see a doctor soon"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doktora görünmek",
+          "alt": [
+            "doktora gitmek",
+            "muayene olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'See a doctor' daha çok muayene olmayı, 'go to the doctor' ise doktora gitmeyi anlatır; çoğu zaman ikisi de kullanılabilir. 'You should see a doctor' çok kullanılan bir öneridir.",
+          "mistakes": [
+            {
+              "wrong": "You should see doctor.",
+              "right": "You should see a doctor.",
+              "why": "Türkçede 'doktora görünmelisin' derken 'bir' kullanmak gerekmez. İngilizcede tekil, sayılabilir bir isimden önce 'a', 'an', 'the' ya da 'my' gibi bir sözcük gerekir: see a doctor."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Your cough is getting worse, so you should ______ soon.",
+        "answer": "see a doctor",
+        "distractors": [
+          "go a doctor",
+          "take a doctor",
+          "see doctor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.check_up.n.1",
+      "lemma": "check-up",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtʃɛkʌp/",
+        "uk": "/ˈtʃɛkʌp/"
+      },
+      "def": {
+        "micro": "visit to see if you are well",
+        "short": "a visit to a doctor or dentist to make sure you are healthy",
+        "long": "A visit to a doctor or a dentist to make sure that you are healthy. Many people have one every year, even when they feel well."
+      },
+      "examples": [
+        {
+          "en": "I have a check-up at the clinic on Friday.",
+          "tr": "Cuma günü klinikte sağlık kontrolüm var.",
+          "register": "neutral",
+          "focus": "check-up"
+        },
+        {
+          "en": "Children should have a dental check-up twice a year.",
+          "tr": "Çocuklar yılda iki kez diş kontrolüne gitmeli.",
+          "register": "neutral",
+          "focus": "check-up"
+        },
+        {
+          "en": "After the check-up, the doctor said everything looked normal.",
+          "tr": "Sağlık kontrolünden sonra doktor her şeyin normal göründüğünü söyledi.",
+          "register": "neutral",
+          "focus": "check-up"
+        }
+      ],
+      "synonyms": [
+        "health check",
+        "medical exam"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a check-up",
+        "regular check-up",
+        "annual check-up",
+        "dental check-up"
+      ],
+      "word_family": [
+        {
+          "lemma": "check",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sağlık kontrolü",
+          "alt": [
+            "genel muayene",
+            "check-up"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede de 'check-up' denir. İsim 'check-up' ya da ABD'de çoğunlukla 'checkup' diye yazılır; ayrı yazılan 'check up' ise fiildir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe feels fine, but she goes to the clinic every year for a ______.",
+        "answer": "check-up",
+        "distractors": [
+          "sandwich",
+          "haircut",
+          "souvenir"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

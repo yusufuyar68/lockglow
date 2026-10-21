@@ -1,0 +1,984 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.take_your_temperature.phr.1",
+      "lemma": "take your temperature",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "measure body heat",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk jər ˈtɛmpərətʃər/",
+        "uk": "/teɪk jə ˈtɛmprətʃə/"
+      },
+      "def": {
+        "micro": "check if you have a fever",
+        "short": "measure how hot your body is to see if you have a fever",
+        "long": "To measure how hot your body is, usually with a small tool, to see if you have a fever. You can also do it for another person, such as a child."
+      },
+      "examples": [
+        {
+          "en": "The nurse took my temperature.",
+          "tr": "Hemşire ateşimi ölçtü.",
+          "register": "neutral",
+          "focus": "took my temperature"
+        },
+        {
+          "en": "Maria feels hot, so she is going to take her temperature.",
+          "tr": "Maria kendini sıcak hissediyor, bu yüzden ateşini ölçecek.",
+          "register": "neutral",
+          "focus": "take her temperature"
+        },
+        {
+          "en": "Please sit down. I will take your temperature first.",
+          "tr": "Lütfen oturun. Önce ateşinizi ölçeceğim.",
+          "register": "neutral",
+          "focus": "take your temperature"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take someone's temperature",
+        "high temperature",
+        "normal temperature"
+      ],
+      "word_family": [
+        {
+          "lemma": "temperature",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ateşini ölçmek",
+          "alt": [
+            "ateş ölçmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ateşini ölçmek' dersiniz; İngilizcede 'measure' yerine genellikle 'take' kullanılır: take your temperature. 'Ateşim var' için 'I have a fever' denir; İngiltere'de 'I have a temperature' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My mother uses a small thermometer to ______ when I feel hot.",
+        "answer": "take my temperature",
+        "distractors": [
+          "take my time",
+          "take my seat",
+          "take my coat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.blood_test.phr.1",
+      "lemma": "blood test",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈblʌd tɛst/",
+        "uk": "/ˈblʌd tɛst/"
+      },
+      "def": {
+        "micro": "doctor's check of your blood",
+        "short": "a medical check where a laboratory looks at a small amount of your blood",
+        "long": "A medical check of a small amount of your blood. A laboratory looks at it and tells the doctor about your health. Many people have one as part of a regular check-up."
+      },
+      "examples": [
+        {
+          "en": "I have a blood test on Monday morning.",
+          "tr": "Pazartesi sabahı kan tahlilim var.",
+          "register": "neutral",
+          "focus": "blood test"
+        },
+        {
+          "en": "The doctor wants me to have a blood test.",
+          "tr": "Doktor kan tahlili yaptırmamı istiyor.",
+          "register": "neutral",
+          "focus": "blood test"
+        },
+        {
+          "en": "Elif's blood test results were normal, so she was happy.",
+          "tr": "Elif'in kan tahlili sonuçları normaldi, bu yüzden mutluydu.",
+          "register": "neutral",
+          "focus": "blood test"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a blood test",
+        "blood test results",
+        "routine blood test"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kan tahlili",
+          "alt": [
+            "kan testi",
+            "kan tetkiki"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Kan tahlili yaptırmak' İngilizcede 'have a blood test' olur; 'make' denmez. Sonuçlar için 'blood test results' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To check my vitamin levels, the doctor is sending me for a ______.",
+        "answer": "blood test",
+        "distractors": [
+          "driving test",
+          "spelling test",
+          "history test"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.x_ray.n.1",
+      "lemma": "X-ray",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛksreɪ/",
+        "uk": "/ˈɛksreɪ/"
+      },
+      "def": {
+        "micro": "picture of inside the body",
+        "short": "a special picture of the inside of your body, such as your bones or teeth",
+        "long": "A special picture that shows the inside of your body, for example your bones or teeth. A machine takes it, and a doctor or a dentist looks at it. It does not hurt."
+      },
+      "examples": [
+        {
+          "en": "The dentist took an X-ray of my teeth.",
+          "tr": "Diş hekimi dişlerimin röntgenini çekti.",
+          "register": "neutral",
+          "focus": "X-ray"
+        },
+        {
+          "en": "Mehmet had an X-ray because his wrist hurt.",
+          "tr": "Bileği ağrıdığı için Mehmet röntgen çektirdi.",
+          "register": "neutral",
+          "focus": "X-ray"
+        },
+        {
+          "en": "The X-ray shows that my ankle is fine.",
+          "tr": "Röntgen, ayak bileğimde bir sorun olmadığını gösteriyor.",
+          "register": "neutral",
+          "focus": "X-ray"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take an X-ray",
+        "have an X-ray",
+        "dental X-ray"
+      ],
+      "word_family": [
+        {
+          "lemma": "X-ray",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "Named in 1895 by the German scientist Wilhelm Röntgen, who used 'X' because he did not know what the rays were.",
+        "origin": "German",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "röntgen",
+          "alt": [
+            "röntgen filmi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'röntgen' sözcüğü, bu ışınları bulan Wilhelm Röntgen'in adından gelir. İngilizcede 'X-ray' denir; 'röntgen çektirmek' = have an X-ray.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ shows the bones inside your hand.",
+        "answer": "X-ray",
+        "distractors": [
+          "mirror",
+          "bandage",
+          "thermometer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.have_a_headache.phr.1",
+      "lemma": "have a headache",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv ə ˈhɛdeɪk/",
+        "uk": "/hæv ə ˈhɛdeɪk/"
+      },
+      "def": {
+        "micro": "feel pain in your head",
+        "short": "feel pain in your head, for example when you are tired or hungry",
+        "long": "To feel pain in your head. It is a common problem, and people often get it when they are tired, hungry or in a very loud place."
+      },
+      "examples": [
+        {
+          "en": "Sam has a headache, so he's not coming tonight.",
+          "tr": "Sam'in başı ağrıyor, o yüzden bu akşam gelmiyor.",
+          "register": "neutral",
+          "focus": "has a headache"
+        },
+        {
+          "en": "Ayşe had a headache after the loud concert.",
+          "tr": "Gürültülü konserden sonra Ayşe'nin başı ağrıdı.",
+          "register": "neutral",
+          "focus": "had a headache"
+        },
+        {
+          "en": "Do you have a headache? You should drink some water.",
+          "tr": "Başın ağrıyor mu? Biraz su içmelisin.",
+          "register": "neutral",
+          "focus": "have a headache"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bad headache",
+        "terrible headache",
+        "get a headache"
+      ],
+      "word_family": [
+        {
+          "lemma": "headache",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başı ağrımak",
+          "alt": [
+            "baş ağrısı çekmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'başım ağrıyor' (fiil) dersiniz; İngilizcede isim kullanılır ve 'a' unutulmaz: I have a headache. Ağrı yeni başlıyorsa 'I'm getting a headache' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______, so could you turn the music down, please?",
+        "answer": "have a headache",
+        "distractors": [
+          "have a haircut",
+          "have a picnic",
+          "have a party"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feel_dizzy.phr.1",
+      "lemma": "feel dizzy",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fiːl ˈdɪzi/",
+        "uk": "/fiːl ˈdɪzi/"
+      },
+      "def": {
+        "micro": "feel that the room is moving",
+        "short": "feel as if the room is turning round and you might fall",
+        "long": "To feel that the room is turning round and that you might fall. It can happen when you stand up too fast, when you are hungry or when it is very hot."
+      },
+      "examples": [
+        {
+          "en": "I feel dizzy when I stand up too fast.",
+          "tr": "Çok hızlı ayağa kalkınca başım dönüyor.",
+          "register": "neutral",
+          "focus": "feel dizzy"
+        },
+        {
+          "en": "Maria felt dizzy because she had not eaten all day.",
+          "tr": "Bütün gün yemek yemediği için Maria'nın başı döndü.",
+          "register": "neutral",
+          "focus": "felt dizzy"
+        },
+        {
+          "en": "Do you feel dizzy? Come and sit down here.",
+          "tr": "Başın dönüyor mu? Gel, buraya otur.",
+          "register": "neutral",
+          "focus": "feel dizzy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "feel a bit dizzy",
+        "feel dizzy and weak",
+        "dizzy spell"
+      ],
+      "word_family": [
+        {
+          "lemma": "dizzy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "dizziness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başı dönmek",
+          "alt": [
+            "baş dönmesi hissetmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'başım dönüyor' derken fiil kullanırız; İngilizcede sıfat kullanılır: I feel dizzy. 'I am dizzy' de doğrudur ama 'feel' daha yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet stood up too fast, and suddenly he began to ______.",
+        "answer": "feel dizzy",
+        "distractors": [
+          "feel thirsty",
+          "feel cheerful",
+          "feel shy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sore_throat.phr.1",
+      "lemma": "sore throat",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɔːr ˈθroʊt/",
+        "uk": "/sɔː ˈθrəʊt/"
+      },
+      "def": {
+        "micro": "pain when you swallow",
+        "short": "a painful feeling at the back of your mouth, often when you have a cold",
+        "long": "A painful feeling at the back of your mouth and neck. It hurts when you eat or talk, and it often comes with a cold or the flu."
+      },
+      "examples": [
+        {
+          "en": "I woke up with a sore throat.",
+          "tr": "Boğaz ağrısıyla uyandım.",
+          "register": "neutral",
+          "focus": "sore throat"
+        },
+        {
+          "en": "Ayşe drank hot tea with honey for her sore throat.",
+          "tr": "Ayşe, boğaz ağrısı için ballı sıcak çay içti.",
+          "register": "neutral",
+          "focus": "sore throat"
+        },
+        {
+          "en": "Mehmet has a sore throat, so he cannot sing today.",
+          "tr": "Mehmet'in boğazı ağrıdığı için bugün şarkı söyleyemiyor.",
+          "register": "neutral",
+          "focus": "sore throat"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bad sore throat",
+        "sore throat and cough",
+        "get a sore throat"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "boğaz ağrısı",
+          "alt": [
+            "boğazı ağrımak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'boğazım ağrıyor' (fiil) dersiniz; İngilizcede 'I have a sore throat' denir. 'My throat hurts' da aynı anlama gelir.",
+          "mistakes": [
+            {
+              "wrong": "I have sore throat.",
+              "right": "I have a sore throat.",
+              "why": "Türkçede 'boğaz ağrım var' derken 'bir' gerekmez. İngilizcede 'sore throat' sayılabilir bir isimdir; 'a sore throat' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our teacher talked all day, and now she has a ______.",
+        "answer": "sore throat",
+        "distractors": [
+          "sore knee",
+          "broken nail",
+          "cut finger"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.runny_nose.phr.1",
+      "lemma": "runny nose",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌrʌni ˈnoʊz/",
+        "uk": "/ˌrʌni ˈnəʊz/"
+      },
+      "def": {
+        "micro": "nose with liquid coming out",
+        "short": "a nose that keeps making a lot of liquid, for example when you have a cold",
+        "long": "A nose that keeps making a lot of clear liquid, so you need to wipe it or use tissues all the time. It often happens when you have a cold or an allergy."
+      },
+      "examples": [
+        {
+          "en": "I have a runny nose and I need a tissue.",
+          "tr": "Burnum akıyor ve mendile ihtiyacım var.",
+          "register": "neutral",
+          "focus": "runny nose"
+        },
+        {
+          "en": "Kenji has a runny nose every spring.",
+          "tr": "Her ilkbaharda Kenji'nin burnu akar.",
+          "register": "neutral",
+          "focus": "runny nose"
+        },
+        {
+          "en": "The cold weather gave Maria a runny nose.",
+          "tr": "Soğuk hava yüzünden Maria'nın burnu aktı.",
+          "register": "neutral",
+          "focus": "runny nose"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a runny nose",
+        "get a runny nose",
+        "runny nose and cough"
+      ],
+      "word_family": [
+        {
+          "lemma": "runny",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "burun akıntısı",
+          "alt": [
+            "burnu akmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'burnum akıyor' dersiniz; İngilizcede 'I have a runny nose' ya da 'My nose is running' denir. 'Run' = akmak, 'nose' = burun.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I keep using tissues because I have a ______.",
+        "answer": "runny nose",
+        "distractors": [
+          "bad back",
+          "sore elbow",
+          "stiff neck"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stomachache.n.1",
+      "lemma": "stomachache",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstʌməkeɪk/",
+        "uk": "/ˈstʌməkeɪk/"
+      },
+      "def": {
+        "micro": "pain in your belly",
+        "short": "a pain in the middle part of your body where your food goes",
+        "long": "A pain in the middle part of your body, where your food goes after you eat. You can get it when you eat too much, eat something bad or feel worried."
+      },
+      "examples": [
+        {
+          "en": "I have a stomachache.",
+          "tr": "Karnım ağrıyor.",
+          "register": "neutral",
+          "focus": "stomachache"
+        },
+        {
+          "en": "Elif ate too much cake and got a stomachache.",
+          "tr": "Elif çok fazla pasta yedi ve karnı ağrıdı.",
+          "register": "neutral",
+          "focus": "stomachache"
+        },
+        {
+          "en": "Do you have a stomachache? Maybe you should lie down.",
+          "tr": "Karnın ağrıyor mu? Belki biraz uzanmalısın.",
+          "register": "neutral",
+          "focus": "stomachache"
+        }
+      ],
+      "synonyms": [
+        "tummy ache"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a stomachache",
+        "bad stomachache",
+        "get a stomachache"
+      ],
+      "word_family": [
+        {
+          "lemma": "stomach",
+          "pos": "n"
+        },
+        {
+          "lemma": "ache",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karın ağrısı",
+          "alt": [
+            "mide ağrısı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'mide' ve 'karın' ayrıdır; İngilizcede 'stomachache' ikisini de karşılar. Samimi dilde, özellikle çocuklarla, 'tummy ache' de denir. İngiltere'de genellikle ayrı yazılır: stomach ache.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ate some bad fish last night, and now I have a terrible ______.",
+        "answer": "stomachache",
+        "distractors": [
+          "black eye",
+          "sunburn",
+          "backache"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.toothache.n.1",
+      "lemma": "toothache",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtuːθeɪk/",
+        "uk": "/ˈtuːθeɪk/"
+      },
+      "def": {
+        "micro": "pain that a dentist can fix",
+        "short": "a pain in your mouth that a dentist can often help with",
+        "long": "A pain in your mouth, caused by a problem with a tooth. You may feel it when you eat or drink something very hot, very cold or sweet. A dentist can usually help."
+      },
+      "examples": [
+        {
+          "en": "I have a toothache.",
+          "tr": "Dişim ağrıyor.",
+          "register": "neutral",
+          "focus": "toothache"
+        },
+        {
+          "en": "Maria has had a toothache since yesterday.",
+          "tr": "Maria'nın dünden beri dişi ağrıyor.",
+          "register": "neutral",
+          "focus": "toothache"
+        },
+        {
+          "en": "Kenji couldn't sleep because of his toothache.",
+          "tr": "Kenji diş ağrısı yüzünden uyuyamadı.",
+          "register": "neutral",
+          "focus": "toothache"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a toothache",
+        "bad toothache",
+        "get a toothache"
+      ],
+      "word_family": [
+        {
+          "lemma": "tooth",
+          "pos": "n"
+        },
+        {
+          "lemma": "ache",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "diş ağrısı",
+          "alt": [
+            "dişi ağrımak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu sözcük İngiliz İngilizcesinde 'a' olmadan da sık kullanılır: I've got toothache. Amerikan İngilizcesinde genellikle 'a toothache' denir. 'Headache' ise 'a' ile kullanılır: I have a headache.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A dentist can help you when you have a ______.",
+        "answer": "toothache",
+        "distractors": [
+          "bad cold",
+          "cough",
+          "sore finger"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sneeze.v.1",
+      "lemma": "sneeze",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sniːz/",
+        "uk": "/sniːz/"
+      },
+      "def": {
+        "micro": "push air out of your nose",
+        "short": "suddenly push air out of your nose and mouth, often when you have a cold",
+        "long": "To suddenly push air out of your nose and mouth in a loud way that you cannot control. People do it when they have a cold, an allergy or something in their nose, such as dust."
+      },
+      "examples": [
+        {
+          "en": "I sneeze a lot in spring.",
+          "tr": "İlkbaharda çok hapşırıyorum.",
+          "register": "neutral",
+          "focus": "sneeze"
+        },
+        {
+          "en": "Black pepper always makes me sneeze.",
+          "tr": "Karabiber beni hep hapşırtır.",
+          "register": "neutral",
+          "focus": "sneeze"
+        },
+        {
+          "en": "Everyone said 'Bless you!' when Elif sneezed.",
+          "tr": "Elif hapşırınca herkes 'Çok yaşa!' dedi.",
+          "register": "neutral",
+          "focus": "sneezed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sneeze loudly",
+        "start to sneeze",
+        "sneeze and cough"
+      ],
+      "word_family": [
+        {
+          "lemma": "sneeze",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hapşırmak",
+          "alt": [
+            "aksırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hapşıran birine İngilizcede 'Bless you!' denir; Türkçedeki 'Çok yaşa!' ile aynı işi görür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When dust gets into my nose, I often ______.",
+        "answer": "sneeze",
+        "distractors": [
+          "yawn",
+          "whisper",
+          "stretch"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
