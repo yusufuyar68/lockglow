@@ -1,33 +1,21 @@
 import SwiftUI
 
-/// The one-line verdict on the widget (README "Ayarlar": "Widget sağlığı ✓ Çalışıyor" /
-/// "⚠ Güncellemiyor"), read from the last `WidgetHealthSnapshot`.
-enum WidgetHealthStatus: Equatable {
-    /// The content is still loading: no health check has run yet.
-    case unknown
-    /// The shared container holds a plan with words, and a Lockglow widget is placed.
-    case working
-    /// The widget cannot get the user's words: no shared container, no plan or an empty queue.
-    case notUpdating
-    /// The words are ready but no Lockglow widget is placed.
-    case notAdded
-
-    init(_ health: WidgetHealthSnapshot, isLoading: Bool) {
-        if isLoading {
-            self = .unknown
-        } else if !health.appGroupAvailable || health.planID == nil || health.queueSize == 0 {
-            self = .notUpdating
-        } else if health.instances.isEmpty {
-            self = .notAdded
-        } else {
-            self = .working
-        }
+extension WidgetHealthStatus {
+    /// The verdict on the model's last health check, as "Ayarlar" and "Widget sağlığı" show it.
+    @MainActor
+    init(of model: AppModel) {
+        self.init(
+            model.health,
+            isLoading: model.contentSource == .loading,
+            emptyListIsReliable: WidgetProbe.emptyListIsReliable
+        )
     }
 }
 
 /// "Widget sağlığı" (mockup `st-health`): one sentence on top, the placed widgets and the shared
-/// state, one main action ("Widget'ları yenile"), and the raw values for the widget spike tests
-/// under "Teknik bilgiler". Pushed from "Ayarlar" (it has no NavigationStack of its own).
+/// state, one main action, and the raw values for the widget spike tests under "Teknik bilgiler".
+/// The main action follows the verdict: "Widget nasıl eklenir?" when no widget is placed,
+/// otherwise "Widget'ları yenile". Pushed from "Ayarlar" (it has no NavigationStack of its own).
 struct WidgetHealthView: View {
     @EnvironmentObject private var model: AppModel
     @State private var showsTechnicalDetails = false
@@ -35,14 +23,18 @@ struct WidgetHealthView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
-                WidgetHealthCard(status: status, lastUpdate: health.planUpdatedAt)
-                widgetsSection
+                WidgetHealthCard(status: status, problem: health.planProblem, lastUpdate: health.planUpdatedAt)
+                // With no widget listed the card above already says so.
+                if !health.instances.isEmpty {
+                    widgetsSection
+                }
                 stateSection
                 actionsSection
             }
             .padding(.horizontal, 16)
             .padding(.top, 8)
-            .padding(.bottom, 32)
+            // Room above the tab bar for the last row.
+            .padding(.bottom, 40)
         }
         .background(Theme.bg.ignoresSafeArea())
         .navigationTitle("Widget sağlığı")
@@ -60,7 +52,7 @@ struct WidgetHealthView: View {
     }
 
     private var status: WidgetHealthStatus {
-        return WidgetHealthStatus(health, isLoading: model.contentSource == .loading)
+        return WidgetHealthStatus(of: model)
     }
 
     // MARK: Sections
@@ -68,17 +60,12 @@ struct WidgetHealthView: View {
     private var widgetsSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader("Yerleştirilmiş widget'lar")
-            if health.instances.isEmpty {
-                Text("Yerleştirilmiş widget yok. Nasıl eklendiği Ayarlar > Yardım'da anlatılıyor.")
-                    .settingsFootnote()
-            } else {
-                SettingsGroup {
-                    ForEach(Array(health.instances.enumerated()), id: \.offset) { index, instance in
-                        if index > 0 {
-                            SettingsDivider()
-                        }
-                        HealthValueRow(title: name(of: instance), value: place(of: instance))
+            SettingsGroup {
+                ForEach(Array(health.instances.enumerated()), id: \.offset) { index, instance in
+                    if index > 0 {
+                        SettingsDivider()
                     }
+                    HealthValueRow(title: name(of: instance), value: place(of: instance))
                 }
             }
         }
@@ -109,28 +96,53 @@ struct WidgetHealthView: View {
     }
 
     /// The one filled button of the screen, then the technical details with the two narrower
-    /// actions.
+    /// actions. No widget: the guide is the main action (refreshing would change nothing). Not
+    /// sure (`unknown`): refresh first, the guide as a bordered capsule under it.
     private var actionsSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Button {
-                model.refreshWidgetPlan()
-                Task {
-                    await model.refreshHealth()
+            if status == .notAdded {
+                guideLink
+                    .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+            } else {
+                refreshButton
+                    .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                Text("Sırayı yeniden yazar ve widget'lara haber verir. Görünen kelime değişmez.")
+                    .settingsFootnote()
+                if status == .unknown {
+                    guideLink
+                        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
+                        .padding(.top, 4)
                 }
-            } label: {
-                Label("Widget'ları yenile", systemImage: "arrow.triangle.2.circlepath")
             }
-            .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
-            Text("Sırayı yeniden yazar ve widget'lara haber verir. Görünen kelime değişmez.")
-                .settingsFootnote()
             technicalDetails
                 .padding(.top, 8)
+        }
+    }
+
+    private var refreshButton: some View {
+        Button {
+            model.refreshWidgetPlan()
+            Task {
+                await model.refreshHealth()
+            }
+        } label: {
+            Label("Widget'ları yenile", systemImage: "arrow.triangle.2.circlepath")
+        }
+    }
+
+    /// The same guide as "Ayarlar > Widget nasıl eklenir?" and the onboarding.
+    private var guideLink: some View {
+        NavigationLink {
+            WidgetGuideScreen()
+        } label: {
+            Label("Widget nasıl eklenir?", systemImage: "plus.circle")
         }
     }
 
     private var technicalDetails: some View {
         DisclosureGroup(isExpanded: $showsTechnicalDetails) {
             VStack(alignment: .leading, spacing: 0) {
+                TechnicalRow(title: "Widget listesi", value: widgetListDescription)
                 TechnicalRow(title: "App Group", value: health.appGroupAvailable ? "Erişilebilir" : "Erişilemiyor")
                 TechnicalRow(title: "Plan kimliği", value: health.planID.map { String($0.prefix(8)) } ?? "yok")
                 TechnicalRow(title: "Plan güncellendi", value: format(health.planUpdatedAt, seconds: true))
@@ -200,6 +212,17 @@ struct WidgetHealthView: View {
         return ""
     }
 
+    /// "2 widget", or why an empty list proves nothing (ios/README point 21).
+    private var widgetListDescription: String {
+        if WidgetProbe.lastQueryFailed {
+            return "alınamadı"
+        }
+        if health.instances.isEmpty && !WidgetProbe.emptyListIsReliable {
+            return "boş (Debug/simülatör)"
+        }
+        return "\(health.instances.count) widget"
+    }
+
     private var sourceDescription: String {
         switch model.contentSource {
         case .loading: return "Yükleniyor"
@@ -218,9 +241,11 @@ struct WidgetHealthView: View {
 }
 
 /// The verdict on top (mockup `.hstat`): an icon in a filled circle, one sentence and what to do.
-/// The sentence carries the meaning; the color only repeats it (rule 4).
+/// The sentence carries the meaning; the color only repeats it (rule 4). Red only for a placed
+/// widget that gets no words; no widget and "not sure" stay calm on `surface`.
 private struct WidgetHealthCard: View {
     let status: WidgetHealthStatus
+    let problem: WidgetPlanProblem?
     let lastUpdate: Date?
 
     var body: some View {
@@ -254,36 +279,53 @@ private struct WidgetHealthCard: View {
 
     private var title: String {
         switch status {
-        case .unknown: return "Kontrol ediliyor"
+        case .checking: return "Kontrol ediliyor"
         case .working: return "Her şey yolunda"
         case .notUpdating: return "Widget kelimeleri güncellemiyor"
-        case .notAdded: return "Widget eklenmemiş"
+        case .notAdded: return "Widget ekli değil"
+        case .unknown: return "Widget listesi alınamadı"
         }
     }
 
     private var detail: String {
         switch status {
-        case .unknown:
+        case .checking:
             return "Kelimeler yükleniyor."
         case .working:
             return "Uygulama ve widget veri paylaşabiliyor. Kelimeler sırayla değişiyor."
         case .notUpdating:
-            let advice = "\"Widget'ları yenile\"ye dokun; düzelmezse widget'ı kaldırıp yeniden ekle."
-            if let date = lastUpdate {
-                return "Son güncelleme: \(date.formatted(date: .abbreviated, time: .shortened)). " + advice
+            var parts: [String] = []
+            if let reason = reason {
+                parts.append(reason)
             }
-            return advice
+            if let date = lastUpdate {
+                parts.append("Son güncelleme: \(date.formatted(date: .abbreviated, time: .shortened)).")
+            }
+            parts.append("\"Widget'ları yenile\"ye dokun; düzelmezse widget'ı kaldırıp yeniden ekle.")
+            return parts.joined(separator: " ")
         case .notAdded:
-            return "Uygulama hazır. Widget'ı kilitli ekrana ya da ana ekrana ekleyince kelimeler orada değişir."
+            return "Kelimeler hazır. Widget'ı kilitli ekrana ya da ana ekrana ekleyince kelimeler orada değişir."
+        case .unknown:
+            return "iPhone eklediğin widget'ları şu an bildirmiyor. Widget'taki kelime değişiyorsa her şey yolunda."
+        }
+    }
+
+    private var reason: String? {
+        switch problem {
+        case .noSharedContainer?: return "Uygulama widget'la veri paylaşamıyor."
+        case .noPlan?: return "Widget'ın kelime listesi henüz yazılmadı."
+        case .emptyQueue?: return "Widget'ın kelime listesi boş."
+        case nil: return nil
         }
     }
 
     private var symbol: String {
         switch status {
-        case .unknown: return "hourglass"
+        case .checking: return "hourglass"
         case .working: return "checkmark"
         case .notUpdating: return "xmark"
         case .notAdded: return "plus"
+        case .unknown: return "questionmark"
         }
     }
 
@@ -291,14 +333,14 @@ private struct WidgetHealthCard: View {
         switch status {
         case .working: return Theme.good
         case .notUpdating: return Theme.bad
-        case .unknown, .notAdded: return Theme.surface2
+        case .checking, .notAdded, .unknown: return Theme.surface2
         }
     }
 
     private var symbolColor: Color {
         switch status {
         case .working, .notUpdating: return Theme.surface
-        case .unknown, .notAdded: return Theme.ink
+        case .checking, .notAdded, .unknown: return Theme.ink
         }
     }
 
@@ -306,7 +348,7 @@ private struct WidgetHealthCard: View {
         switch status {
         case .working: return Theme.goodTint
         case .notUpdating: return Theme.badTint
-        case .unknown, .notAdded: return Theme.surface
+        case .checking, .notAdded, .unknown: return Theme.surface
         }
     }
 
@@ -314,7 +356,7 @@ private struct WidgetHealthCard: View {
         switch status {
         case .working: return Theme.good.opacity(0.35)
         case .notUpdating: return Theme.bad.opacity(0.35)
-        case .unknown, .notAdded: return Theme.line
+        case .checking, .notAdded, .unknown: return Theme.line
         }
     }
 }

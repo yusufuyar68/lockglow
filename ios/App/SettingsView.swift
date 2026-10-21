@@ -2,13 +2,16 @@ import SwiftUI
 import CoreModels
 import Learning
 
-/// "Ayarlar": the widget (its health and how often the word changes), start level and topics,
-/// daily new words, the reminder, progress (and the known words), help (widget guide, onboarding
-/// again), progress reset, and a notice when the progress file had to be recovered.
+/// "Ayarlar": the widget (its health and how often the word changes), learning (start level,
+/// topics, new words a day), the reminder, progress (and the known words), help (widget guide,
+/// onboarding again, version), progress reset at the very bottom, and a notice when the progress
+/// file had to be recovered.
 ///
 /// Plain groups on the page background (mockup `#ayarlar`) instead of a `Form`: every option is
-/// an always-visible 46 pt segment (`SegmentButtons`), never a menu or a 32 pt segmented picker,
-/// and every row exists without scrolling a lazy list (the UI tests look rows up by label).
+/// an always-visible 46 pt segment (`SegmentButtons`) under a question ("Günde kaç yeni
+/// kelime?") with a short, concrete footnote ("bir ayda yaklaşık 300 kelime"), never a menu or a
+/// 32 pt segmented picker, and every row exists without scrolling a lazy list (the UI tests look
+/// rows up by label).
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.openURL) private var openURL
@@ -24,17 +27,16 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 28) {
                     recoverySection
                     widgetSection
-                    deckSection
-                    goalSection
+                    learningSection
                     reminderSection
                     progressSection
                     helpSection
                     resetSection
-                    versionLine
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 4)
-                .padding(.bottom, 32)
+                // Room above the tab bar (floating glass on iOS 26) for the last button.
+                .padding(.bottom, 40)
             }
             .background(Theme.bg.ignoresSafeArea())
             .navigationTitle("Ayarlar")
@@ -71,10 +73,6 @@ struct SettingsView: View {
 
     // MARK: Widget
 
-    private var healthStatus: WidgetHealthStatus {
-        return WidgetHealthStatus(model.health, isLoading: model.contentSource == .loading)
-    }
-
     private var rotationBinding: Binding<Int> {
         return Binding(
             get: { model.rotationMinutes },
@@ -82,20 +80,17 @@ struct SettingsView: View {
         )
     }
 
-    /// "Widget sağlığı ✓ Çalışıyor" first (the details are one tap away), then how often the
-    /// word changes.
+    /// The widget's state first (the details are one tap away), then how often the word changes.
     private var widgetSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        let status = WidgetHealthStatus(of: model)
+        return VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader("Widget")
             SettingsGroup {
-                NavigationLink {
-                    WidgetHealthView()
-                } label: {
-                    SettingsRow("Widget sağlığı", systemImage: "waveform.path.ecg") {
-                        WidgetHealthBadge(status: healthStatus)
-                    }
-                }
-                .buttonStyle(SettingsRowButtonStyle())
+                widgetStatusRow(status)
+            }
+            if status == .notUpdating {
+                Text("Dokun ve \"Widget'ları yenile\"yi dene. Düzelmezse widget'ı kaldırıp yeniden ekle.")
+                    .settingsFootnote()
             }
             SettingsQuestion("Kelime ne sıklıkla değişsin?")
             SegmentButtons(
@@ -104,8 +99,34 @@ struct SettingsView: View {
                 },
                 selection: rotationBinding
             )
-            Text("Değiştirince şu an görünen kelime aynı kalır. iPhone, pili korumak için yenilemeyi biraz geciktirebilir.")
-                .settingsFootnote()
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("Kelime değişim sıklığı")
+            rotationFootnote
+        }
+    }
+
+    /// No widget: a calm row to the widget guide ("Widget ekli değil · Nasıl eklenir?"), never a
+    /// warning. Otherwise "Widget sağlığı" with its verdict, to the details.
+    @ViewBuilder
+    private func widgetStatusRow(_ status: WidgetHealthStatus) -> some View {
+        if status == .notAdded {
+            NavigationLink {
+                WidgetGuideScreen()
+            } label: {
+                SettingsRow("Widget ekli değil", systemImage: "plus.circle") {
+                    Text("Nasıl eklenir?")
+                }
+            }
+            .buttonStyle(SettingsRowButtonStyle())
+        } else {
+            NavigationLink {
+                WidgetHealthView()
+            } label: {
+                SettingsRow("Widget sağlığı", systemImage: "waveform.path.ecg") {
+                    WidgetHealthBadge(status: status)
+                }
+            }
+            .buttonStyle(SettingsRowButtonStyle())
         }
     }
 
@@ -117,11 +138,30 @@ struct SettingsView: View {
         return "\(minutes) dk"
     }
 
+    /// What the choice means in a day ("Kelime günde 24 kez değişir."). The battery note only for
+    /// the short intervals, where iOS is most likely to delay a change.
+    private var rotationFootnote: some View {
+        let minutes = model.rotationMinutes
+        let changesPerDay = 24 * 60 / max(1, minutes)
+        return Group {
+            if minutes < 30 {
+                Text("Kelime günde **\(changesPerDay)** kez değişir. Değiştirince şu an görünen kelime aynı kalır. iPhone, pili korumak için bunu biraz geciktirebilir.")
+            } else {
+                Text("Kelime günde **\(changesPerDay)** kez değişir. Değiştirince şu an görünen kelime aynı kalır.")
+            }
+        }
+        .settingsFootnote()
+    }
+
     // MARK: Learning
+
+    private var startLevel: Level {
+        return model.deckChoice.startLevel ?? .a1
+    }
 
     private var levelBinding: Binding<Level> {
         return Binding(
-            get: { model.deckChoice.startLevel ?? .a1 },
+            get: { startLevel },
             set: { model.setStartLevel($0) }
         )
     }
@@ -131,16 +171,32 @@ struct SettingsView: View {
         return count == 0 ? "Tümü" : "\(count) konu"
     }
 
-    private var deckSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
+    private var dailyBinding: Binding<Int> {
+        return Binding(
+            get: { model.dailyNewWords },
+            set: { model.setDailyNewWords($0) }
+        )
+    }
+
+    /// The start level and topics, then the daily goal. Each footnote says what the choice
+    /// means: what the level covers, and an honest pace ("bir ayda yaklaşık 300 kelime"). The
+    /// level footnote sits under "Konular" (mockup), which keeps that row high enough on an
+    /// iPhone SE for the UI test to tap it above the tab bar.
+    private var learningSection: some View {
+        let goal = model.dailyNewWords
+        let code = startLevel.rawValue
+        let summary = levelSummary(startLevel)
+        return VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader("Öğrenme")
-            SettingsQuestion("Başlangıç seviyesi")
+            SettingsQuestion("Hangi seviyeden başlayalım?")
             SegmentButtons(
                 options: AppPreferences.startLevelChoices.map { level in
                     SegmentOption(value: level, title: level.rawValue)
                 },
                 selection: levelBinding
             )
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("Başlangıç seviyesi")
             if !model.choosableTopics.isEmpty {
                 SettingsGroup {
                     NavigationLink {
@@ -156,28 +212,15 @@ struct SettingsView: View {
             }
             Group {
                 if model.newWordsComeFromAllTopics {
-                    Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.\nSeçtiğin konuların yeni kelimeleri bitti; yeni kelimeler diğer konulardan geliyor.")
+                    Text("**\(code)** · \(summary) Yeni kelimeler bu seviyeden başlar.\nSeçtiğin konuların yeni kelimeleri bitti; yeni kelimeler diğer konulardan geliyor.")
                 } else {
-                    Text("Yeni kelimeler bu seviyeden başlar. Değiştirince widget'taki kelime bir sonraki değişime kadar aynı kalır.")
+                    Text("**\(code)** · \(summary) Yeni kelimeler bu seviyeden başlar.")
                 }
             }
             .settingsFootnote()
-        }
-    }
 
-    // MARK: Daily goal
-
-    private var dailyBinding: Binding<Int> {
-        return Binding(
-            get: { model.dailyNewWords },
-            set: { model.setDailyNewWords($0) }
-        )
-    }
-
-    private var goalSection: some View {
-        let goal = model.dailyNewWords
-        return VStack(alignment: .leading, spacing: 8) {
-            SettingsSectionHeader("Günlük hedef")
+            SettingsQuestion("Günde kaç yeni kelime?")
+                .padding(.top, 12)
             SegmentButtons(
                 options: AppPreferences.dailyNewWordChoices.map { count in
                     SegmentOption(value: count, title: "\(count)")
@@ -186,9 +229,19 @@ struct SettingsView: View {
             )
             .accessibilityElement(children: .contain)
             .accessibilityLabel("Günlük yeni kelime")
-            // An honest pace: at this goal, about this many words a month.
-            Text("Tekrar sekmesi günde **\(goal)** yeni kelime önerir. Bu hızla bir ayda yaklaşık \(goal * 30) kelime.")
+            // An honest pace: at this goal, about this many words a month, and what each costs.
+            Text("Tekrar sekmesi günde **\(goal)** yeni kelime önerir; bir ayda yaklaşık **\(goal * 30)** kelime. Her yeni kelime sonraki günlerde birkaç kısa tekrar ister.")
                 .settingsFootnote()
+        }
+    }
+
+    /// What a start level covers, in the words of the onboarding's level page.
+    private func levelSummary(_ level: Level) -> String {
+        switch level {
+        case .a1: return "Ev, yemek, aile gibi en temel kelimeler."
+        case .a2: return "Alışveriş, yol, randevu: günlük hayat."
+        case .b1: return "İş, seyahat, duygular; daha uzun cümleler."
+        default: return ""
         }
     }
 
@@ -242,10 +295,11 @@ struct SettingsView: View {
 
     private var reminderSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            SettingsSectionHeader("Hatırlatma")
+            SettingsSectionHeader("Bildirim")
+            SettingsQuestion("Ne zaman hatırlatayım?")
             SettingsGroup {
                 Toggle(isOn: reminderBinding) {
-                    Text("Günlük hatırlatma")
+                    Text("Her gün hatırlat")
                         .settingsRowTitle()
                 }
                 // A switch is on in `good` green, as in iOS (never yellow, never ink).
@@ -278,7 +332,7 @@ struct SettingsView: View {
                     .padding(14)
                 }
             }
-            Text("Seçtiğin saatte, o gün kaç kelimenin tekrar beklediğini söyleyen bir bildirim gelir. O günün tekrarını ve yeni kelimelerini bitirdiysen gelmez.")
+            Text("Seçtiğin saatte, o gün kaç kelimenin seni beklediğini söyleyen bir bildirim gelir. O günün tekrarını ve yeni kelimelerini bitirdiysen gelmez.")
                 .settingsFootnote()
         }
     }
@@ -369,25 +423,22 @@ struct SettingsView: View {
                 }
                 .buttonStyle(SettingsRowButtonStyle())
             }
+            versionLine
         }
     }
 
+    /// The only dangerous action, last on the page and apart from the rest: a calm bordered
+    /// capsule with `bad` text (the word says it, the color repeats it), never a filled red
+    /// button. It only opens the confirmation; nothing is deleted without "İlerlemeyi sıfırla".
     private var resetSection: some View {
-        SettingsGroup {
-            Button(role: .destructive) {
-                showResetConfirmation = true
-            } label: {
-                Text("İlerlemeyi sıfırla")
-                    .font(.body.weight(.bold))
-                    .foregroundStyle(Theme.bad)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
-                    .frame(maxWidth: .infinity, minHeight: 52)
-                    .contentShape(Rectangle())
-            }
-            .buttonStyle(SettingsRowButtonStyle())
+        Button(role: .destructive) {
+            showResetConfirmation = true
+        } label: {
+            Label("İlerlemeyi sıfırla", systemImage: "arrow.counterclockwise")
+                .foregroundStyle(Theme.bad)
         }
+        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
+        .padding(.top, 8)
     }
 
     /// "Lockglow 1.0 · içerik 2026.10.21 (933 kart)".
@@ -403,11 +454,7 @@ struct SettingsView: View {
             text += " (\(model.cardCount) kart)"
         }
         return Text(verbatim: text)
-            .font(.footnote)
-            .foregroundStyle(Theme.ink2)
-            .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity)
-            .padding(.top, -8)
+            .settingsFootnote()
     }
 
     // MARK: Recovery
@@ -610,7 +657,9 @@ struct SettingsDivider: View {
 }
 
 /// One row of a group (mockup `.row`): at least 52 pt, a title (with an optional icon), a value
-/// in `ink2` and a chevron. At accessibility text sizes the value moves under the title.
+/// in `ink2` and a chevron. Title and value share one line while both fit on it; otherwise (an
+/// iPhone SE with a long value, large and accessibility text sizes) the value moves under the
+/// title instead of squeezing the title into two lines.
 struct SettingsRow<Value: View>: View {
     let title: String
     let systemImage: String?
@@ -631,19 +680,16 @@ struct SettingsRow<Value: View>: View {
     }
 
     var body: some View {
-        let stacked = dynamicTypeSize.isAccessibilitySize
-        let layout = stacked
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
-            : AnyLayout(HStackLayout(spacing: 12))
         HStack(spacing: 12) {
-            layout {
-                titleLabel
-                if !stacked {
-                    Spacer(minLength: 0)
+            Group {
+                if dynamicTypeSize.isAccessibilitySize {
+                    stacked
+                } else {
+                    ViewThatFits(in: .horizontal) {
+                        sideBySide
+                        stacked
+                    }
                 }
-                value
-                    .font(.body)
-                    .foregroundStyle(Theme.ink2)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             if showsChevron {
@@ -657,6 +703,27 @@ struct SettingsRow<Value: View>: View {
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
         .contentShape(Rectangle())
+    }
+
+    private var sideBySide: some View {
+        HStack(spacing: 12) {
+            titleLabel
+            Spacer(minLength: 0)
+            styledValue
+        }
+    }
+
+    private var stacked: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            titleLabel
+            styledValue
+        }
+    }
+
+    private var styledValue: some View {
+        value
+            .font(.body)
+            .foregroundStyle(Theme.ink2)
     }
 
     private var titleLabel: some View {
@@ -693,21 +760,25 @@ struct SettingsRowButtonStyle: ButtonStyle {
     }
 }
 
-/// "Widget sağlığı ✓ Çalışıyor" / "⚠ Güncellemiyor" (README "Ayarlar"): icon and word together,
-/// the color only repeats them (rule 4).
+/// The verdict after "Widget sağlığı": "✓ Çalışıyor" in `good`, "⚠ Güncellemiyor" in `bad` (a
+/// placed widget that gets no words), otherwise a calm word in `ink2`. Icon and word together,
+/// the color only repeats them (rule 4). The row without a widget is "Widget ekli değil" instead.
 struct WidgetHealthBadge: View {
     let status: WidgetHealthStatus
 
     var body: some View {
         switch status {
-        case .unknown:
+        case .checking:
             EmptyView()
         case .working:
             badge("Çalışıyor", systemImage: "checkmark.circle.fill", color: Theme.good)
         case .notUpdating:
             badge("Güncellemiyor", systemImage: "exclamationmark.triangle.fill", color: Theme.bad)
         case .notAdded:
-            Text("Eklenmedi")
+            Text("Ekli değil")
+                .foregroundStyle(Theme.ink2)
+        case .unknown:
+            Text("Bilinmiyor")
                 .foregroundStyle(Theme.ink2)
         }
     }
