@@ -1,5 +1,6 @@
 # Builds and tests on every push to main (and on demand).
 # - python: content pipeline tests + strict validation of the personal draft cards (Linux).
+# - swift-linux: VocabKit + app logic compiled and tested on Linux (Docker swift:6.2), free.
 # - ios: VocabKit package tests and an unsigned simulator build of the app + widget (macOS).
 #   ON DEMAND ONLY: macOS minutes count 10x against the private-repo Actions quota (2026-10-17:
 #   ~810 of 2000 used), and screenshots.yml / testflight.yml build the app anyway. Before pushing,
@@ -8,7 +9,9 @@ name: build
 
 on:
   push:
-    branches: [main]
+    # Every branch: the Linux jobs are cheap, and the session branches get Swift tests on push.
+    # The macOS job below still runs only on demand.
+    branches: ["**"]
     # Documentation-only pushes do not need a (10x billed) macOS build.
     paths-ignore:
       - "**/*.md"
@@ -53,6 +56,18 @@ jobs:
           for d in ../content/drafts/kisisel_v1/*/; do
             python -m vocabpipe.validate --strict "$d"
           done
+
+  # Free (1x Linux minutes): VocabKit + the app's non-UI files compiled with Swift 6.2 in Docker
+  # and the package tests run (ios/Tools/linux_check.sh). The Windows PC has no Docker, so this is
+  # the only place the Swift tests run before a (10x billed) macOS build.
+  swift-linux:
+    name: Swift paket testleri (Linux, ücretsiz)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: linux_check.sh
+        run: bash ios/Tools/linux_check.sh
 
   ios:
     name: iOS (paket testleri + simülatör derlemesi)
