@@ -18,6 +18,16 @@
 				<string>CA92.1</string>
 			</array>
 		</dict>
+		<!-- ProgressStore reads/sets the modification date of progress.backup.json in the app's
+		     Application Support folder (daily backup): file metadata inside the app container. -->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

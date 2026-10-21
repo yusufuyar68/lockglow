@@ -1,0 +1,985 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.wear_off.phv.1",
+      "lemma": "wear off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "slowly stop, as an effect does",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɛr ˈɔːf/",
+        "uk": "/weə ˈɒf/"
+      },
+      "def": {
+        "micro": "slowly get weaker and stop",
+        "short": "slowly become weaker and then stop, as the effect of a medicine does",
+        "long": "To slowly become weaker and then stop completely. The effect of a medicine often does this after a few hours; a pain or a feeling can do it too."
+      },
+      "grammar": {
+        "pattern": "wear off (no object)"
+      },
+      "examples": [
+        {
+          "en": "Don't worry. The pain will wear off soon.",
+          "tr": "Merak etme. Ağrı yakında geçer.",
+          "register": "neutral",
+          "focus": "wear off"
+        },
+        {
+          "en": "The painkiller wore off after about four hours.",
+          "tr": "Ağrı kesicinin etkisi yaklaşık dört saat sonra geçti.",
+          "register": "neutral",
+          "focus": "wore off"
+        },
+        {
+          "en": "The effect of the cough syrup wore off in the evening.",
+          "tr": "Öksürük şurubunun etkisi akşam geçti.",
+          "register": "neutral",
+          "focus": "wore off"
+        }
+      ],
+      "synonyms": [
+        "fade"
+      ],
+      "antonyms": [
+        "kick in"
+      ],
+      "collocations": [
+        "the effect wears off",
+        "the pain wears off",
+        "wear off slowly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etkisi geçmek",
+          "alt": [
+            "dinmek",
+            "geçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yavaş yavaş azalıp bitmeyi anlatır. İlaç, ağrı ya da his özne olur: 'The pain wore off.' Fiil nesne almaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I took a pill for my headache, but after a few hours the effect started to ______.",
+        "answer": "wear off",
+        "distractors": [
+          "burn down",
+          "stand out",
+          "sit up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trip_over.phv.1",
+      "lemma": "trip over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "hit your foot and nearly fall",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trɪp ˈoʊvər/",
+        "uk": "/trɪp ˈəʊvə/"
+      },
+      "def": {
+        "micro": "hit your foot and fall",
+        "short": "hit your foot against something and fall, or almost fall, to the ground",
+        "long": "To hit your foot against something on the ground, so that you fall or nearly fall. You can trip over a step, a toy, a cable or your own feet."
+      },
+      "grammar": {
+        "pattern": "trip over + sth (inseparable)"
+      },
+      "examples": [
+        {
+          "en": "Be careful. Don't trip over the bag.",
+          "tr": "Dikkat et. Çantaya takılıp düşme.",
+          "register": "neutral",
+          "focus": "trip over"
+        },
+        {
+          "en": "Ayşe tripped over a toy and hurt her knee a little.",
+          "tr": "Ayşe bir oyuncağa takılıp düştü ve dizini biraz incitti.",
+          "register": "neutral",
+          "focus": "tripped over"
+        },
+        {
+          "en": "Mehmet tripped over a cable in the dark room.",
+          "tr": "Mehmet karanlık odada bir kabloya takılıp tökezledi.",
+          "register": "neutral",
+          "focus": "tripped over"
+        }
+      ],
+      "synonyms": [
+        "stumble"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "trip over a step",
+        "trip over a toy",
+        "trip over a cable",
+        "trip over your own feet"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takılıp düşmek",
+          "alt": [
+            "tökezlemek",
+            "takılmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'takılmak' ve 'tökezlemek' ayrı sözcüklerdir; 'trip over' ikisini de karşılar. Takıldığın şey 'over' ile bağlanır: 'trip over a step'. Aynı anlamda 'trip on' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Zeynep did not see the step, so she ______ it and almost fell.",
+        "answer": "tripped over",
+        "distractors": [
+          "found out",
+          "looked after",
+          "came down with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.breathe.v.1",
+      "lemma": "breathe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/briːð/",
+        "uk": "/briːð/"
+      },
+      "def": {
+        "micro": "take air in and let it out",
+        "short": "take air into your body through your nose or mouth and let it out again",
+        "long": "To take air into your body through your nose or mouth and let it out again. In a check-up, a doctor may ask you to do this slowly: 'Breathe in... breathe out.'"
+      },
+      "examples": [
+        {
+          "en": "Breathe in slowly, please.",
+          "tr": "Lütfen yavaşça nefes alın.",
+          "register": "neutral",
+          "focus": "Breathe"
+        },
+        {
+          "en": "I can't breathe through my nose because of my cold.",
+          "tr": "Nezlem yüzünden burnumdan nefes alamıyorum.",
+          "register": "neutral",
+          "focus": "breathe"
+        },
+        {
+          "en": "Open the window. It's hard to breathe in here.",
+          "tr": "Pencereyi aç. Burada nefes almak zor.",
+          "register": "neutral",
+          "focus": "breathe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "breathe in",
+        "breathe out",
+        "breathe deeply",
+        "breathe through your nose"
+      ],
+      "word_family": [
+        {
+          "lemma": "breath",
+          "pos": "n"
+        },
+        {
+          "lemma": "breathing",
+          "pos": "n"
+        },
+        {
+          "lemma": "breathless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nefes almak",
+          "alt": [
+            "soluk almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil 'breathe' /briːð/ okunur ve sonunda 'e' vardır. İsim 'breath' ise /brɛθ/ okunur: 'take a deep breath'. 'Breathe in' nefes almak, 'breathe out' nefes vermektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When you swim, you lift your head out of the water to ______.",
+        "answer": "breathe",
+        "distractors": [
+          "chew",
+          "giggle",
+          "blink"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tablet.n.1",
+      "lemma": "tablet",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "medicine",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtæblɪt/",
+        "uk": "/ˈtæblɪt/"
+      },
+      "def": {
+        "micro": "small hard piece of medicine",
+        "short": "a small, hard piece of medicine that you swallow with water",
+        "long": "A small, hard piece of medicine that you swallow with water. It is often round and white, and it comes in a box or a bottle."
+      },
+      "examples": [
+        {
+          "en": "Mehmet swallowed the tablet with some water.",
+          "tr": "Mehmet hapı biraz suyla yuttu.",
+          "register": "neutral",
+          "focus": "tablet"
+        },
+        {
+          "en": "Ayşe keeps her tablets in a small box.",
+          "tr": "Ayşe haplarını küçük bir kutuda saklıyor.",
+          "register": "neutral",
+          "focus": "tablets"
+        },
+        {
+          "en": "This tablet is big, so it is hard to swallow.",
+          "tr": "Bu hap büyük, bu yüzden yutması zor.",
+          "register": "neutral",
+          "focus": "tablet"
+        }
+      ],
+      "synonyms": [
+        "pill"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take a tablet",
+        "headache tablet",
+        "a box of tablets",
+        "swallow a tablet"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'tablete', a small flat piece, from Latin 'tabula', meaning a board.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hap",
+          "alt": [
+            "tablet"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede olduğu gibi İngilizcede de 'tablet' hem ilaç hem bilgisayar olabilir; bu kartta ilaç anlamındadır. Günlük konuşmada 'pill' de çok yaygındır. 'Hap içmek' İngilizcede 'take a tablet' olur.",
+          "mistakes": [
+            {
+              "wrong": "I drink a tablet every morning.",
+              "right": "I take a tablet every morning.",
+              "why": "Türkçede 'hap içmek' dendiği için 'drink' akla gelir. İngilizcede hap için 'take' kullanılır; 'drink' yalnızca su, çay gibi sıvılar içindir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The pharmacist said, 'Take one ______ after breakfast with a glass of water.'",
+        "answer": "tablet",
+        "distractors": [
+          "bandage",
+          "thermometer",
+          "plaster"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cough_syrup.phr.1",
+      "lemma": "cough syrup",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɔːf ˌsɪrəp/",
+        "uk": "/ˈkɒf ˌsɪrəp/"
+      },
+      "def": {
+        "micro": "sweet liquid for a cough",
+        "short": "a sweet liquid medicine that you drink to feel better when you have a cough",
+        "long": "A sweet, thick liquid medicine that you drink when you have a cough. You usually measure it with a small spoon or cup."
+      },
+      "examples": [
+        {
+          "en": "I need some cough syrup, please.",
+          "tr": "Bir öksürük şurubu lazım, lütfen.",
+          "register": "neutral",
+          "focus": "cough syrup"
+        },
+        {
+          "en": "Mehmet took some cough syrup before he went to bed.",
+          "tr": "Mehmet yatmadan önce biraz öksürük şurubu içti.",
+          "register": "neutral",
+          "focus": "cough syrup"
+        },
+        {
+          "en": "This cough syrup tastes like cherries.",
+          "tr": "Bu öksürük şurubunun tadı kiraz gibi.",
+          "register": "neutral",
+          "focus": "cough syrup"
+        }
+      ],
+      "synonyms": [
+        "cough medicine"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take cough syrup",
+        "a bottle of cough syrup",
+        "cough syrup for kids"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öksürük şurubu",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede şurup 'içilir'. İngilizcede 'drink' de olur, ama ilaçlar için en doğal fiil 'take' olur: 'take some cough syrup'. Çoğunlukla sayılamaz; 'some' ya da 'a spoonful of' ile kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My little brother has a bad cold, so our mother gives him a spoonful of ______.",
+        "answer": "cough syrup",
+        "distractors": [
+          "eye drops",
+          "hand cream",
+          "lip balm"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bandage.n.1",
+      "lemma": "bandage",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbændɪdʒ/",
+        "uk": "/ˈbændɪdʒ/"
+      },
+      "def": {
+        "micro": "strip of cloth for an injury",
+        "short": "a long strip of soft cloth that you wrap around a hurt arm, leg or finger",
+        "long": "A long strip of soft cloth that you wrap around a hurt arm, leg or finger. It keeps the place clean and still. You can buy bandages at the pharmacy."
+      },
+      "examples": [
+        {
+          "en": "I need a bandage for my finger.",
+          "tr": "Parmağım için bir sargı bezi lazım.",
+          "register": "neutral",
+          "focus": "bandage"
+        },
+        {
+          "en": "The nurse put a clean bandage on Mehmet's arm.",
+          "tr": "Hemşire Mehmet'in koluna temiz bir sargı sardı.",
+          "register": "neutral",
+          "focus": "bandage"
+        },
+        {
+          "en": "Ayşe had a bandage on her ankle for a week.",
+          "tr": "Ayşe'nin ayak bileğinde bir hafta boyunca sargı vardı.",
+          "register": "neutral",
+          "focus": "bandage"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a clean bandage",
+        "put on a bandage",
+        "an elastic bandage"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'bandage', from 'bande', meaning a strip of cloth.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sargı bezi",
+          "alt": [
+            "sargı",
+            "bandaj"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'bandaj' da aynı Fransızca sözcükten gelir. 'Bandage' incinen yere sarılan bezdir. Küçük yapışkan yara bandına İngiltere'de 'plaster' denir; ABD'de ona da 'bandage' denebilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ahmet hurt his finger a little, so Elif put a ______ on it.",
+        "answer": "bandage",
+        "distractors": [
+          "thermometer",
+          "candle",
+          "ladder"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.thermometer.n.1",
+      "lemma": "thermometer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/θərˈmɑːmɪtər/",
+        "uk": "/θəˈmɒmɪtə/"
+      },
+      "def": {
+        "micro": "tool that measures heat",
+        "short": "a tool that measures how hot or cold something is, for example your body",
+        "long": "A small tool that measures how hot or cold something is. At home, people put one in the mouth, ear or under the arm to check for a fever."
+      },
+      "examples": [
+        {
+          "en": "Where is the thermometer? My daughter's forehead is hot.",
+          "tr": "Termometre nerede? Kızımın alnı sıcak.",
+          "register": "neutral",
+          "focus": "thermometer"
+        },
+        {
+          "en": "Elif put the thermometer under her arm and waited a minute.",
+          "tr": "Elif termometreyi koltuğunun altına koydu ve bir dakika bekledi.",
+          "register": "neutral",
+          "focus": "thermometer"
+        },
+        {
+          "en": "The thermometer showed 38 degrees, so Leo stayed home.",
+          "tr": "Termometre 38 derece gösterdi, bu yüzden Leo evde kaldı.",
+          "register": "neutral",
+          "focus": "thermometer"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "digital thermometer",
+        "use a thermometer",
+        "ear thermometer",
+        "room thermometer"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Greek 'thermos' (hot) and 'metron' (measure), through French.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "termometre",
+          "alt": [
+            "derece"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede günlük dilde termometreye 'derece' de denir; İngilizcede 'degree' ise termometre değil, ölçü birimidir: 38 degrees. Vurgu 'mom' hecesindedir: /θərˈmɑːmɪtər/.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The nurse looked at the ______ and said, 'You have a fever.'",
+        "answer": "thermometer",
+        "distractors": [
+          "scale",
+          "ruler",
+          "clock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_medicine.phr.1",
+      "lemma": "take medicine",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "use medicine",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ˈmɛdɪsɪn/",
+        "uk": "/teɪk ˈmɛdsən/"
+      },
+      "def": {
+        "micro": "swallow a pill to get well",
+        "short": "swallow a pill or drink a liquid that helps you get well",
+        "long": "To swallow a pill or drink a liquid that helps your body get well when you are ill. People usually do this with water, at the times the doctor or the box says."
+      },
+      "examples": [
+        {
+          "en": "Don't forget to take your medicine.",
+          "tr": "İlacını içmeyi unutma.",
+          "register": "neutral",
+          "focus": "take your medicine"
+        },
+        {
+          "en": "Elif took some medicine and went to bed early.",
+          "tr": "Elif ilaç içti ve erken yattı.",
+          "register": "neutral",
+          "focus": "took some medicine"
+        },
+        {
+          "en": "Burak takes medicine for his cough twice a day.",
+          "tr": "Burak öksürüğü için günde iki kez ilaç içiyor.",
+          "register": "neutral",
+          "focus": "takes medicine"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take your medicine",
+        "forget to take medicine",
+        "take medicine with water",
+        "take medicine twice a day"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilaç içmek",
+          "alt": [
+            "ilaç almak",
+            "ilaç kullanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ilaç içmek' dersiniz; İngilizcede ilaçlar için genel fiil 'take' olur: 'take medicine', 'take a tablet'. Sıvı ilaçlarda 'drink' de duyulur, ama 'take' her zaman doğrudur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandmother has to ______ every morning, so she keeps her pills next to her bed.",
+        "answer": "take medicine",
+        "distractors": [
+          "make medicine",
+          "catch medicine",
+          "do medicine"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_some_rest.phr.1",
+      "lemma": "get some rest",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "relax and recover",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt səm ˈrɛst/",
+        "uk": "/ɡɛt səm ˈrɛst/"
+      },
+      "def": {
+        "micro": "sleep or relax for a while",
+        "short": "spend time sleeping or relaxing, often because you are tired or ill",
+        "long": "To sleep or relax for a while so that you feel better. People often say it to someone who is tired or a bit ill."
+      },
+      "examples": [
+        {
+          "en": "You look tired. Go home and get some rest.",
+          "tr": "Yorgun görünüyorsun. Eve git ve biraz dinlen.",
+          "register": "neutral",
+          "focus": "get some rest"
+        },
+        {
+          "en": "Ayşe has a cold, so she is staying home to get some rest.",
+          "tr": "Ayşe'nin nezlesi var, bu yüzden biraz dinlenmek için evde kalıyor.",
+          "register": "neutral",
+          "focus": "get some rest"
+        },
+        {
+          "en": "After the long trip, Kenji got some rest before dinner.",
+          "tr": "Uzun yolculuktan sonra Kenji akşam yemeğinden önce biraz dinlendi.",
+          "register": "neutral",
+          "focus": "got some rest"
+        }
+      ],
+      "synonyms": [
+        "have a rest"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "try to get some rest",
+        "get plenty of rest",
+        "get enough rest",
+        "need some rest"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "biraz dinlenmek",
+          "alt": [
+            "dinlenmek",
+            "istirahat etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Burada 'rest' isimdir ve 'some' ile kullanılır: 'get some rest'. 'Get some sleep' ise 'biraz uyumak' demektir. Hasta ya da yorgun birine öneri olarak sık söylenir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The football match was very hard. The players need to ______ before the next game.",
+        "answer": "get some rest",
+        "distractors": [
+          "make some rest",
+          "do some rest",
+          "put some rest"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stay_in_bed.phr.1",
+      "lemma": "stay in bed",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "not get up when ill",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/steɪ ɪn ˈbɛd/",
+        "uk": "/steɪ ɪn ˈbɛd/"
+      },
+      "def": {
+        "micro": "not get up when you feel ill",
+        "short": "not get up from where you sleep, for example because you are ill",
+        "long": "To keep lying down where you sleep, and not get up. People do this when they are ill or very tired, or when they want to relax on a Sunday morning."
+      },
+      "examples": [
+        {
+          "en": "I have a fever, so I will stay in bed today.",
+          "tr": "Ateşim var, bu yüzden bugün yatakta kalacağım.",
+          "register": "neutral",
+          "focus": "stay in bed"
+        },
+        {
+          "en": "If you have the flu, it's best to stay in bed.",
+          "tr": "Grip olduysan en iyisi yatakta kalmaktır.",
+          "register": "neutral",
+          "focus": "stay in bed"
+        },
+        {
+          "en": "Sofia stayed in bed all day and felt better in the evening.",
+          "tr": "Sofia bütün gün yatakta kaldı ve akşam kendini daha iyi hissetti.",
+          "register": "neutral",
+          "focus": "stayed in bed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "get up"
+      ],
+      "collocations": [
+        "stay in bed all day",
+        "stay in bed and rest",
+        "stay in bed for two days"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yatakta kalmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kalıpta 'bed' önüne 'the' ya da 'a' gelmez: 'in bed'. Yataktan çıkmamak için 'stay in bed', evden çıkmamak için 'stay home' ya da 'stay at home' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali is too weak to get up this morning. He wants to ______ until lunch.",
+        "answer": "stay in bed",
+        "distractors": [
+          "stay in touch",
+          "stay in line",
+          "stay in shape"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1096 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-17",
+  "entries": [
+    {
+      "id": "en.office.n.1",
+      "lemma": "office",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "room or building for desk work",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːfɪs/",
+        "uk": "/ˈɒfɪs/"
+      },
+      "def": {
+        "micro": "a place for desk work",
+        "short": "a room or building where people do their work at a desk",
+        "long": "A room or building where people do their work, usually at a desk with a computer. Many companies have an office in the city, and some people also have a small one at home."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Our office is open from nine to five.",
+          "tr": "Ofisimiz dokuzdan beşe kadar açık.",
+          "register": "neutral",
+          "focus": "office"
+        },
+        {
+          "en": "Tom walks to the office every morning.",
+          "tr": "Tom her sabah ofise yürüyerek gider.",
+          "register": "neutral",
+          "focus": "office"
+        },
+        {
+          "en": "Kemal left his phone at the office, so he went back.",
+          "tr": "Kemal telefonunu ofiste unuttu, bu yüzden geri döndü.",
+          "register": "neutral",
+          "focus": "office"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go to the office",
+        "work in an office",
+        "office building",
+        "office hours",
+        "office worker"
+      ],
+      "word_family": [
+        {
+          "lemma": "officer",
+          "pos": "n"
+        },
+        {
+          "lemma": "official",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'officium', meaning duty or service. In English it also came to mean the place where such duties are done.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ofis",
+          "alt": [
+            "büro"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'ofis' ile aynı kelimedir. 'Ofise gitmek' = go to the office; 'işe gitmek' ise go to work olur ve 'work' önünde 'the' kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "I go to office by bus.",
+              "right": "I go to the office by bus.",
+              "why": "Türkçede 'the' diye bir sözcük yoktur, bu yüzden unutulur. Belirli bir ofis için 'the office' denir; 'go to work' ve 'go to school' gibi kalıplarda ise 'the' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Every weekday, Carlos takes the train to his ______ and works at a computer.",
+        "answer": "office",
+        "distractors": [
+          "stadium",
+          "beach",
+          "playground"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_a_day_off.phr.1",
+      "lemma": "take a day off",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ə ˌdeɪ ˈɔːf/",
+        "uk": "/teɪk ə ˌdeɪ ˈɒf/"
+      },
+      "def": {
+        "micro": "not go to work for a day",
+        "short": "stay away from work for one day, with permission",
+        "long": "To stay away from work for one day because you have permission to do so. People do this to rest, visit a doctor or do something important. You can also say 'take Friday off'."
+      },
+      "grammar": {
+        "pattern": "take a day off (take Friday off)"
+      },
+      "examples": [
+        {
+          "en": "I'm taking a day off on Friday.",
+          "tr": "Cuma günü izin alıyorum.",
+          "register": "neutral",
+          "focus": "taking a day off"
+        },
+        {
+          "en": "Elif took a day off to go to the dentist.",
+          "tr": "Elif dişçiye gitmek için bir gün izin aldı.",
+          "register": "neutral",
+          "focus": "took a day off"
+        },
+        {
+          "en": "Mei asked her manager if she could take Monday off.",
+          "tr": "Mei müdürüne pazartesi izin alıp alamayacağını sordu.",
+          "register": "neutral",
+          "focus": "take Monday off"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take a day off work",
+        "take Friday off",
+        "ask for a day off",
+        "need a day off"
+      ],
+      "word_family": [
+        {
+          "lemma": "day off",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir gün izin almak",
+          "alt": [
+            "izin kullanmak",
+            "izinli olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'izin almak' dersin; İngilizcede fiil 'take' olur. 'Take a break' kısa bir moladır, 'take a day off' ise bir gün işe gitmemektir.",
+          "mistakes": [
+            {
+              "wrong": "I will take permission on Friday.",
+              "right": "I will take Friday off.",
+              "why": "Türkçede 'izin' hem 'permission' hem de işten izin demektir. İşe gitmediğin gün için 'permission' kullanılmaz; 'take a day off' ya da 'take Friday off' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe is very tired, so she asked her manager if she could ______ on Monday.",
+        "answer": "take a day off",
+        "distractors": [
+          "take a seat",
+          "take a bath",
+          "take a photo"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_back_to.phv.1",
+      "lemma": "get back to",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "reply to someone later",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈbæk tu/",
+        "uk": "/ɡɛt ˈbæk tuː/"
+      },
+      "def": {
+        "micro": "reply to someone later",
+        "short": "talk or write to someone again later, usually to give an answer",
+        "long": "To contact someone again later, usually because you did not have an answer when they asked. People say 'I'll get back to you' when they need time to check something first."
+      },
+      "grammar": {
+        "pattern": "get back to + person (about sth)"
+      },
+      "examples": [
+        {
+          "en": "I'll get back to you tomorrow.",
+          "tr": "Yarın sana döneceğim.",
+          "register": "neutral",
+          "focus": "get back to"
+        },
+        {
+          "en": "Sam checked the price and got back to Mei an hour later.",
+          "tr": "Sam fiyata baktı ve bir saat sonra Mei'ye dönüş yaptı.",
+          "register": "neutral",
+          "focus": "got back to"
+        },
+        {
+          "en": "Can you ask your manager and get back to me by Friday?",
+          "tr": "Müdürüne sorup cumaya kadar bana dönebilir misin?",
+          "register": "neutral",
+          "focus": "get back to"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get back to you",
+        "get back to me",
+        "get back to you soon",
+        "get back to you later"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geri dönüş yapmak",
+          "alt": [
+            "sonra haber vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Get back to' ertelenmiş cevaptır: şimdi cevabın yok, sonra vereceksin. 'Return to' ise çoğunlukla bir yere geri dönmektir; cevap vermek anlamı taşımaz.",
+          "mistakes": [
+            {
+              "wrong": "I will return to you after the meeting.",
+              "right": "I will get back to you after the meeting.",
+              "why": "Türkçede 'sana döneceğim' deriz ve 'dönmek' sözü 'return' diye çevrilir. Ama 'return to you' cevap vermek anlamına gelmez; bunun için 'get back to you' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't answer now. Let me ask my boss, and I'll ______ you this afternoon.",
+        "answer": "get back to",
+        "distractors": [
+          "put up with",
+          "look up to",
+          "give up on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.manager.n.1",
+      "lemma": "manager",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person in charge of a team",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmænɪdʒər/",
+        "uk": "/ˈmænɪdʒə/"
+      },
+      "def": {
+        "micro": "a person in charge of a team",
+        "short": "a person who is in charge of a team, shop or department",
+        "long": "A person who leads a team, a shop or a department. A manager decides who does which job and checks that the work is done well."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My manager is very kind and helpful.",
+          "tr": "Müdürüm çok nazik ve yardımsever.",
+          "register": "neutral",
+          "focus": "manager"
+        },
+        {
+          "en": "Ayşe is the manager of a small hotel.",
+          "tr": "Ayşe küçük bir otelin müdürü.",
+          "register": "neutral",
+          "focus": "manager"
+        },
+        {
+          "en": "Carlos has a short meeting with his manager every Monday.",
+          "tr": "Carlos her pazartesi müdürüyle kısa bir toplantı yapıyor.",
+          "register": "neutral",
+          "focus": "manager"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "store manager",
+        "project manager",
+        "bank manager",
+        "sales manager",
+        "talk to the manager"
+      ],
+      "word_family": [
+        {
+          "lemma": "manage",
+          "pos": "v"
+        },
+        {
+          "lemma": "management",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From 'manage', which came from Italian 'maneggiare', meaning to handle or train a horse. The root is Latin 'manus', meaning hand.",
+        "origin": "Italian",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "müdür, yönetici",
+          "alt": [
+            "amir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Manager' bir ekibi, mağazayı ya da bölümü yöneten kişidir. Türkçede 'müdür' ya da 'yönetici' denir. 'Boss' günlük konuşmada kullanılan genel sözcüktür; 'manager' ise bir iş unvanıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:boss"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our ______ decides who does each job and checks the team's work.",
+        "answer": "manager",
+        "distractors": [
+          "waiter",
+          "driver",
+          "singer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.work_from_home.phr.1",
+      "lemma": "work from home",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwɜːrk frəm ˈhoʊm/",
+        "uk": "/ˌwɜːk frəm ˈhəʊm/"
+      },
+      "def": {
+        "micro": "do your job at your house",
+        "short": "do your job at your house, and not in your company's building",
+        "long": "To do your job at your house and not in the building of your company. You use a computer and the internet to talk with your team. Many people do this one or two days a week."
+      },
+      "grammar": {
+        "pattern": "work from home"
+      },
+      "examples": [
+        {
+          "en": "I work from home on Fridays.",
+          "tr": "Cuma günleri evden çalışıyorum.",
+          "register": "neutral",
+          "focus": "work from home"
+        },
+        {
+          "en": "Mei likes to work from home because it saves travel time.",
+          "tr": "Mei evden çalışmayı seviyor çünkü yolda zaman kaybetmiyor.",
+          "register": "neutral",
+          "focus": "work from home"
+        },
+        {
+          "en": "Tom had a cold, so he worked from home all week.",
+          "tr": "Tom'un nezlesi vardı, bu yüzden bütün hafta evden çalıştı.",
+          "register": "neutral",
+          "focus": "worked from home"
+        }
+      ],
+      "synonyms": [
+        "work remotely",
+        "telecommute"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "work from home today",
+        "work from home full-time",
+        "allowed to work from home",
+        "work from home on Fridays"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "evden çalışmak",
+          "alt": [
+            "uzaktan çalışmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'evden' sözü burada da 'from' olur: work from home. 'Work at home' kalıbı da doğrudur; ama 'work in home' denmez.",
+          "mistakes": [
+            {
+              "wrong": "I work in home on Mondays.",
+              "right": "I work from home on Mondays.",
+              "why": "Türkçede 'evde' deriz ve '-de' eki 'in' diye çevrilir. Ama 'in home' denmez; 'at home' ya da 'from home' denir. Evden çalışmak için en yaygın kalıp 'work from home'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't go to the office on Mondays. I ______ and use my laptop.",
+        "answer": "work from home",
+        "distractors": [
+          "work in home",
+          "work to home",
+          "work on home"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.employee.n.1",
+      "lemma": "employee",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈplɔɪi/",
+        "uk": "/ɪmˈplɔɪiː/"
+      },
+      "def": {
+        "micro": "a worker paid by a company",
+        "short": "a person who gets money from a company for doing a job",
+        "long": "A person who gets regular pay from a company for doing a job. An employee has a contract and usually works set hours. The company that pays an employee is called the employer."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Ayşe is a new employee at the bank.",
+          "tr": "Ayşe bankada yeni bir çalışan.",
+          "register": "neutral",
+          "focus": "employee"
+        },
+        {
+          "en": "All employees must wear a name badge at work.",
+          "tr": "Bütün çalışanlar işte yaka kartı takmak zorunda.",
+          "register": "neutral",
+          "focus": "employees"
+        },
+        {
+          "en": "The company has about fifty employees, and Kemal is one of them.",
+          "tr": "Şirketin yaklaşık elli çalışanı var ve Kemal de onlardan biri.",
+          "register": "neutral",
+          "focus": "employees"
+        }
+      ],
+      "synonyms": [
+        "worker"
+      ],
+      "antonyms": [
+        "employer"
+      ],
+      "collocations": [
+        "full-time employee",
+        "part-time employee",
+        "new employee",
+        "employee benefits"
+      ],
+      "word_family": [
+        {
+          "lemma": "employ",
+          "pos": "v"
+        },
+        {
+          "lemma": "employer",
+          "pos": "n"
+        },
+        {
+          "lemma": "employment",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'employé', meaning 'employed'. The ending '-ee' marks the person who receives an action: the employer employs, the employee is employed.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "çalışan",
+          "alt": [
+            "personel"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Employee' çalışan kişidir, 'employer' ise çalıştıran kişi ya da şirkettir. Kolay hatırlamak için: '-er' işe alan, '-ee' işe alınan kişidir. Aynı ayrım interviewer ve interviewee çiftinde de var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:employer"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mei's company has fifty ______, and it pays all of them every month.",
+        "answer": "employees",
+        "distractors": [
+          "tourists",
+          "patients",
+          "employers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.let_me_know.phr.1",
+      "lemma": "let me know",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɛt mi ˈnoʊ/",
+        "uk": "/lɛt miː ˈnəʊ/"
+      },
+      "def": {
+        "micro": "tell me",
+        "short": "ask someone to tell you something, such as an answer or news, later",
+        "long": "A polite way to ask someone to give you an answer, a time or some news later. For example: 'Let me know if you need help' or 'Let me know when you are ready.'"
+      },
+      "grammar": {
+        "pattern": "let me know (if / when / what ...)"
+      },
+      "examples": [
+        {
+          "en": "Let me know if you need help.",
+          "tr": "Yardıma ihtiyacın olursa haber ver.",
+          "register": "neutral",
+          "focus": "Let me know"
+        },
+        {
+          "en": "Please let me know when you finish the report.",
+          "tr": "Raporu bitirince lütfen bana haber ver.",
+          "register": "neutral",
+          "focus": "let me know"
+        },
+        {
+          "en": "Elif, let me know what time the meeting starts.",
+          "tr": "Elif, toplantının kaçta başlayacağını bana haber ver.",
+          "register": "neutral",
+          "focus": "let me know"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "let me know if",
+        "let me know when",
+        "please let me know",
+        "let me know what",
+        "let me know soon"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bana haber ver",
+          "alt": [
+            "bana bildir",
+            "haberim olsun"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'bana haber ver' gibidir; 'tell me' demekten daha yumuşak duyulur. 'Let' fiilinden sonra 'to' gelmez. Ardından çoğunlukla 'if', 'when' ya da 'what' ile bir cümle gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't have the address yet. Please ______ when you find it.",
+        "answer": "let me know",
+        "distractors": [
+          "let me in",
+          "let me go",
+          "let me sit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.call_off.phv.1",
+      "lemma": "call off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "cancel something planned",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔːl ˈɔːf/",
+        "uk": "/kɔːl ˈɒf/"
+      },
+      "def": {
+        "micro": "cancel something planned",
+        "short": "decide that a planned event or meeting will not happen",
+        "long": "To decide that something planned, such as a meeting, a trip or a game, will not happen. You can say 'call off the meeting' or 'call it off'. The reason is often bad weather, sickness or a problem."
+      },
+      "grammar": {
+        "pattern": "call sth off / call off sth (call it off)"
+      },
+      "examples": [
+        {
+          "en": "Ayşe called off today's meeting.",
+          "tr": "Ayşe bugünkü toplantıyı iptal etti.",
+          "register": "neutral",
+          "focus": "called off"
+        },
+        {
+          "en": "Kemal called the picnic off because of the rain.",
+          "tr": "Kemal yağmur yüzünden pikniği iptal etti.",
+          "register": "neutral",
+          "focus": "called the picnic off"
+        },
+        {
+          "en": "The match was called off because of heavy snow.",
+          "tr": "Maç yoğun kar yüzünden iptal edildi.",
+          "register": "neutral",
+          "focus": "called off"
+        }
+      ],
+      "synonyms": [
+        "cancel"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "call off a meeting",
+        "call off a trip",
+        "call off the game",
+        "call off the wedding"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iptal etmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Call off' planı iptal etmektir; ertelemek (postpone) değildir. Plan artık yoktur. 'Call' tek başına ise aramak ya da çağırmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The singer is sick, so the organizers will ______ tonight's concert.",
+        "answer": "call off",
+        "distractors": [
+          "come across",
+          "hand out",
+          "give back"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.email.n.1",
+      "lemma": "email",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈiːmeɪl/",
+        "uk": "/ˈiːmeɪl/"
+      },
+      "def": {
+        "micro": "a message sent by computer",
+        "short": "a message that you write and send with a computer or phone",
+        "long": "A message that you write and send to someone with a computer or phone. People use it for work and for personal messages, and you can also send pictures and documents with it."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I'll send you an email tomorrow.",
+          "tr": "Sana yarın bir e-posta göndereceğim.",
+          "register": "neutral",
+          "focus": "email"
+        },
+        {
+          "en": "Carlos checks his email first thing in the morning.",
+          "tr": "Carlos sabah ilk iş e-postalarına bakar.",
+          "register": "neutral",
+          "focus": "email"
+        },
+        {
+          "en": "Mei got an email from her manager about the new schedule.",
+          "tr": "Mei'ye müdüründen yeni programla ilgili bir e-posta geldi.",
+          "register": "neutral",
+          "focus": "email"
+        }
+      ],
+      "synonyms": [
+        "e-mail"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "send an email",
+        "get an email",
+        "reply to an email",
+        "email address",
+        "check your email"
+      ],
+      "word_family": [
+        {
+          "lemma": "email",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "A short form of 'electronic mail': a letter that travels by computer instead of by post.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "e-posta",
+          "alt": [
+            "mail",
+            "elektronik posta"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük Türkçede 'mail' ya da 'e-posta' denir. İngilizcede bilgisayardaki mesaj 'email' olur; 'mail' ise çoğunlukla postayla gelen mektup ve paketlerdir.",
+          "mistakes": [
+            {
+              "wrong": "I'll send you a mail tonight.",
+              "right": "I'll send you an email tonight.",
+              "why": "Türkçede 'mail atmak' deriz. İngilizcede 'mail' çoğunlukla posta demektir ve tek bir mesaj için 'a mail' pek denmez; doğal söyleyiş 'an email' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mei typed a message on her laptop and clicked 'send'. Tom got the ______ a minute later.",
+        "answer": "email",
+        "distractors": [
+          "envelope",
+          "postcard",
+          "newspaper"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.job_interview.phr.1",
+      "lemma": "job interview",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒɑːb ˌɪntərvjuː/",
+        "uk": "/ˈdʒɒb ˌɪntəvjuː/"
+      },
+      "def": {
+        "micro": "a meeting to choose a worker",
+        "short": "a meeting where a company asks you questions to choose a new worker",
+        "long": "A meeting where a company asks you questions to see if you are right for the work. It can take place in an office, by phone or online. You usually wear smart clothes and prepare your answers before it."
+      },
+      "grammar": {
+        "pattern": "have a job interview (for + sth)"
+      },
+      "examples": [
+        {
+          "en": "I have a job interview tomorrow.",
+          "tr": "Yarın bir iş görüşmem var.",
+          "register": "neutral",
+          "focus": "job interview"
+        },
+        {
+          "en": "Elif wore a nice shirt to her job interview.",
+          "tr": "Elif iş görüşmesine güzel bir gömlek giydi.",
+          "register": "neutral",
+          "focus": "job interview"
+        },
+        {
+          "en": "Kemal was nervous before the job interview, but it went well.",
+          "tr": "Kemal iş görüşmesinden önce gergindi ama iyi geçti.",
+          "register": "neutral",
+          "focus": "job interview"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a job interview",
+        "go to a job interview",
+        "prepare for a job interview",
+        "get a job interview"
+      ],
+      "word_family": [
+        {
+          "lemma": "interview",
+          "pos": "n"
+        },
+        {
+          "lemma": "interview",
+          "pos": "v"
+        },
+        {
+          "lemma": "interviewer",
+          "pos": "n"
+        },
+        {
+          "lemma": "interviewee",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iş görüşmesi",
+          "alt": [
+            "iş mülakatı",
+            "mülakat"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'iş görüşmesi' ya da 'iş mülakatı' denir. 'Görüşme yapmak' için 'make' değil 'have' kullanılır: have a job interview.",
+          "mistakes": [
+            {
+              "wrong": "I made a job interview yesterday.",
+              "right": "I had a job interview yesterday.",
+              "why": "Türkçede 'görüşme yapmak' deriz ve 'yapmak' sözü 'make' diye çevrilir. Ama 'make a job interview' denmez; görüşmeye giren kişi 'have a job interview' der."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mei wore a smart suit and answered a company's questions at her ______.",
+        "answer": "job interview",
+        "distractors": [
+          "birthday party",
+          "driving test",
+          "swimming lesson"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

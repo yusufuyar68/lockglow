@@ -1,0 +1,536 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-20",
+  "entries": [
+    {
+      "id": "en.me_neither.phr.1",
+      "lemma": "me neither",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "agreeing with a negative",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌmiː ˈniːðər/",
+        "uk": "/ˌmiː ˈnaɪðə/"
+      },
+      "def": {
+        "micro": "agree with a negative",
+        "short": "used to say that you also do not do, like or want something",
+        "long": "You say this after someone says something with 'not', 'don't', 'can't' or 'never', when the same is true for you. For 'yes' sentences, say 'me too'. The long form changes with the verb: 'Neither do I', 'Neither am I'."
+      },
+      "examples": [
+        {
+          "en": "“I don't like coffee.” “Me neither.”",
+          "tr": "“Kahve sevmem.” “Ben de.”",
+          "register": "informal",
+          "focus": "Me neither"
+        },
+        {
+          "en": "“I'm not ready yet.” “Me neither. We still have time.”",
+          "tr": "“Henüz hazır değilim.” “Ben de değilim. Hâlâ vaktimiz var.”",
+          "register": "informal",
+          "focus": "Me neither"
+        },
+        {
+          "en": "“I didn't sleep well.” “Me neither, Zeynep. It was too hot.”",
+          "tr": "“İyi uyuyamadım.” “Ben de, Zeynep. Çok sıcaktı.”",
+          "register": "informal",
+          "focus": "Me neither"
+        }
+      ],
+      "synonyms": [
+        "neither do I",
+        "me either"
+      ],
+      "antonyms": [
+        "me too"
+      ],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ben de",
+          "alt": [
+            "ben de değilim",
+            "ben de öyle"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'ben de' hem olumlu hem olumsuz cümleye cevap olur. İngilizcede olumlu cümleye 'me too', olumsuz cümleye 'me neither' denir. Daha resmî biçimi fiile göre değişir: 'Neither do I', 'Neither am I'.",
+          "mistakes": [
+            {
+              "wrong": "“I don't like fish.” “Me too.”",
+              "right": "“I don't like fish.” “Me neither.”",
+              "why": "Türkçede 'ben de' hem olumlu hem olumsuz cümleye uyar, bu yüzden 'me too' denir. İngilizcede olumsuz cümleye 'me neither' ile cevap verilir; 'me too' olumlu cümleler içindir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“I don't like horror films.” “______. I never watch them.”",
+        "answer": "Me neither",
+        "distractors": [
+          "So do I",
+          "Same to you",
+          "Here you are"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_fun_of.phr.1",
+      "lemma": "make fun of",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "laugh at someone unkindly",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈfʌn əv/",
+        "uk": "/meɪk ˈfʌn əv/"
+      },
+      "def": {
+        "micro": "laugh at someone unkindly",
+        "short": "laugh at someone or copy them in a way that is not kind",
+        "long": "To laugh at a person, or to copy the way they speak or act, so that they feel bad. People often laugh at someone's clothes, voice or accent. It is not nice to do this to a friend."
+      },
+      "grammar": {
+        "pattern": "make fun of + sb / sth"
+      },
+      "examples": [
+        {
+          "en": "The kids made fun of Emre's big hat.",
+          "tr": "Çocuklar Emre'nin büyük şapkasıyla dalga geçti.",
+          "register": "neutral",
+          "focus": "made fun of"
+        },
+        {
+          "en": "Maria's brother makes fun of her when she sings.",
+          "tr": "Maria şarkı söyleyince erkek kardeşi onunla dalga geçiyor.",
+          "register": "neutral",
+          "focus": "makes fun of"
+        },
+        {
+          "en": "Selin felt bad because her classmates made fun of her.",
+          "tr": "Sınıf arkadaşları onunla dalga geçtiği için Selin üzüldü.",
+          "register": "neutral",
+          "focus": "made fun of"
+        }
+      ],
+      "synonyms": [
+        "laugh at",
+        "mock"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "make fun of someone",
+        "don't make fun of me"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dalga geçmek",
+          "alt": [
+            "alay etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Biriyle dalga geçmek' İngilizcede 'make fun of someone' olur. Kırıcı olduğu için 'Don't make fun of me!' gibi bir uyarı olarak sık duyulur.",
+          "mistakes": [
+            {
+              "wrong": "They made fun with my accent.",
+              "right": "They made fun of my accent.",
+              "why": "Türkçede 'aksanımla dalga geçtiler' deriz; '-la' eki 'with' gibi görünür. İngilizcede 'make fun of' denir, 'with' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "compliments_insults"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please don't ______ my English. I'm still learning.",
+        "answer": "make fun of",
+        "distractors": [
+          "get rid of",
+          "run out of",
+          "take care of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_cant_wait.phr.1",
+      "lemma": "I can't wait",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "very excited about the future",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˌkænt ˈweɪt/",
+        "uk": "/aɪ ˌkɑːnt ˈweɪt/"
+      },
+      "def": {
+        "micro": "excited about a coming event",
+        "short": "used to say that you are very excited and want something to happen soon",
+        "long": "You say this when you are very excited about something that will happen soon, like a trip or a party. After it, use 'to' + a verb, or 'for' + a noun."
+      },
+      "grammar": {
+        "pattern": "I can't wait to + verb / for + noun"
+      },
+      "examples": [
+        {
+          "en": "I can't wait for the weekend!",
+          "tr": "Hafta sonu için sabırsızlanıyorum!",
+          "register": "neutral",
+          "focus": "I can't wait"
+        },
+        {
+          "en": "Priya arrives on Friday. I can't wait to see her!",
+          "tr": "Priya cuma günü geliyor. Onu görmek için sabırsızlanıyorum!",
+          "register": "neutral",
+          "focus": "I can't wait"
+        },
+        {
+          "en": "“Our holiday starts on Monday!” “I know! I can't wait.”",
+          "tr": "“Tatilimiz pazartesi başlıyor!” “Biliyorum! Sabırsızlanıyorum.”",
+          "register": "neutral",
+          "focus": "I can't wait"
+        }
+      ],
+      "synonyms": [
+        "can hardly wait"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "can't wait to see you",
+        "can't wait for Friday"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sabırsızlanıyorum",
+          "alt": [
+            "dört gözle bekliyorum",
+            "iple çekiyorum",
+            "heyecanla bekliyorum"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'I can't wait' olumsuz görünür ama anlamı olumludur: çok heyecanlısın. Arkasından 'to' + fiil ya da 'for' + isim gelir.",
+          "mistakes": [
+            {
+              "wrong": "I can't wait for see you!",
+              "right": "I can't wait to see you!",
+              "why": "Türkçede 'seni görmek için' deriz; '-mek için' kalıbı 'for' gibi göründüğünden 'for see' denir. İngilizcede fiilden önce 'to', isimden önce 'for' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif's flight arrives tomorrow. I'm so happy! ______ to hug her.",
+        "answer": "I can't wait",
+        "distractors": [
+          "I don't want",
+          "I forgot",
+          "I hate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.leave_out.phv.1",
+      "lemma": "leave out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "not include a person or thing",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/liːv ˈaʊt/",
+        "uk": "/liːv ˈaʊt/"
+      },
+      "def": {
+        "micro": "not put in a group or list",
+        "short": "not put a person or thing in a group, a list or an activity",
+        "long": "To not include a person or thing in a group, a list or an activity, on purpose or by mistake. A person who is left out may feel sad and alone."
+      },
+      "grammar": {
+        "pattern": "leave sb / sth out (of sth)"
+      },
+      "examples": [
+        {
+          "en": "Don't leave Jonas out of the game.",
+          "tr": "Jonas'ı oyunun dışında bırakma.",
+          "register": "neutral",
+          "focus": "leave Jonas out"
+        },
+        {
+          "en": "Sorry, I left your name out of the list by mistake.",
+          "tr": "Kusura bakma, adını yanlışlıkla listeye almamışım.",
+          "register": "neutral",
+          "focus": "left your name out"
+        },
+        {
+          "en": "Kenji felt left out because his friends didn't ask him to the party.",
+          "tr": "Arkadaşları onu partiye çağırmadığı için Kenji kendini dışlanmış hissetti.",
+          "register": "neutral",
+          "focus": "left out"
+        }
+      ],
+      "synonyms": [
+        "exclude",
+        "omit"
+      ],
+      "antonyms": [
+        "include"
+      ],
+      "collocations": [
+        "feel left out",
+        "leave out a word",
+        "left out of the group"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dışarıda bırakmak",
+          "alt": [
+            "dışlamak",
+            "hariç tutmak",
+            "atlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Birini gruptan dışlamak için de, listeden bir şeyi atlamak için de kullanılır. 'Feel left out' = 'kendini dışlanmış hissetmek'. Zamir araya girer: 'leave me out', 'leave him out'.",
+          "mistakes": [
+            {
+              "wrong": "Please don't leave out me.",
+              "right": "Please don't leave me out.",
+              "why": "'Leave out' ayrılabilen bir phrasal verb'dür. Nesne zamirse (me, him, it) 'leave' ile 'out' arasına girmelidir."
+            }
+          ],
+          "mnemonic": "Leave = bırakmak, out = dışarı: birini dışarıda bırakırsın."
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We need ten players. Please don't ______ Mehmet. He wants to play too.",
+        "answer": "leave out",
+        "distractors": [
+          "wake up",
+          "cheer up",
+          "put on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cheerful.adj.1",
+      "lemma": "cheerful",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "showing a happy mood",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtʃɪrfəl/",
+        "uk": "/ˈtʃɪəfəl/"
+      },
+      "def": {
+        "micro": "happy and positive",
+        "short": "happy and positive, and showing it to other people",
+        "long": "Happy and positive, and showing it in the way you speak and act. A cheerful person smiles a lot and makes other people feel good."
+      },
+      "grammar": {
+        "pattern": "a cheerful person / voice / smile"
+      },
+      "examples": [
+        {
+          "en": "Chen is always cheerful, even on Monday mornings.",
+          "tr": "Chen pazartesi sabahları bile hep neşelidir.",
+          "register": "neutral",
+          "focus": "cheerful"
+        },
+        {
+          "en": "Lena has a cheerful voice and a big smile.",
+          "tr": "Lena'nın neşeli bir sesi ve kocaman bir gülümsemesi var.",
+          "register": "neutral",
+          "focus": "cheerful"
+        },
+        {
+          "en": "Omar stayed cheerful even though it rained all day.",
+          "tr": "Bütün gün yağmur yağdı ama Omar yine de neşeliydi.",
+          "register": "neutral",
+          "focus": "cheerful"
+        }
+      ],
+      "synonyms": [
+        "cheery",
+        "upbeat"
+      ],
+      "antonyms": [
+        "gloomy",
+        "grumpy"
+      ],
+      "collocations": [
+        "cheerful smile",
+        "cheerful voice",
+        "cheerful person"
+      ],
+      "word_family": [
+        {
+          "lemma": "cheerfully",
+          "pos": "adv"
+        },
+        {
+          "lemma": "cheerfulness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "neşeli",
+          "alt": [
+            "güler yüzlü",
+            "şen"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Cheerful' mutluluğun dışarıdan görünmesini anlatır: güler yüz, neşeli bir ses. 'Happy' ise daha çok içte hissedilen duygudur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nora sings and smiles all day, so she is very ______.",
+        "answer": "cheerful",
+        "distractors": [
+          "shy",
+          "lazy",
+          "rude"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

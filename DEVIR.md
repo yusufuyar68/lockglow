@@ -28,8 +28,8 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - `Packages/VocabKit` modülleri: CoreModels, TextFold, SharedState, Scheduler, ContentStore (GRDB), Learning.
   - Tanımlayıcılar: bundle `com.yusufuyar.vocabwidget` ve `.widgets`; App Group `group.com.yusufuyar.vocabwidget`; URL şeması `vocabwidget://`.
 - **İçerik hattı:** `content-pipeline/` (Python `vocabpipe`): şema, doğrulayıcı, derleyici.
-- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s9`, toplam 753 taslak kart.
-  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.20-kisisel-4`) ve `ios/Widgets/Resources/seed_words.json`.
+- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s13`, toplam 933 taslak kart.
+  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.21-kisisel-5`) ve `ios/Widgets/Resources/seed_words.json`.
   - Kart numaraları `content-pipeline/data/id_registry.json` içinde kalıcı. Uygulamadaki ilerleme bunlara bağlı, **elle düzenleme**.
 
 ## Durum
