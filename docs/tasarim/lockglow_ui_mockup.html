@@ -718,6 +718,19 @@ details.tech .dl .r{border-color:var(--line-strong);font:500 var(--fs-f) var(--f
 .saysheet .verdict b{display:flex;align-items:center;gap:6px;color:var(--good);font:700 var(--fs-b) var(--font-ui)}
 .saysheet .verdict b svg{width:22px;height:22px}
 .saysheet .verdict span{font:400 var(--fs-s) var(--font-ui);color:var(--ink)}
+.saysheet .verdict small{font:400 var(--fs-f) var(--font-ui);color:var(--ink-2)}
+.saysheet .verdict.mid{background:color-mix(in srgb,var(--caution) 14%,var(--surface))}
+.saysheet .verdict.mid b{color:var(--caution)}
+.saysheet .verdict.no{background:var(--bad-tint)}
+.saysheet .verdict.no b{color:var(--bad)}
+.saysheet .problem{border-radius:18px;padding:12px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;box-shadow:inset 0 0 0 1.5px var(--line-strong)}
+.saysheet .problem b{display:flex;align-items:center;gap:6px;font:700 var(--fs-b) var(--font-ui)}
+.saysheet .problem b svg{width:22px;height:22px;flex:none}
+.saysheet .problem span{font:400 var(--fs-s)/1.42 var(--font-ui)}
+.saysheet .spin{width:18px;height:18px;flex:none;border-radius:50%;border:2.5px solid var(--surface-3);border-top-color:var(--ink-2);animation:spin .8s linear infinite}
+.saysheet .bigmic:disabled{opacity:.45}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.saysheet .spin{animation:none;border-top-color:var(--surface-3)}}
 </style>
 </head>
 <body>
@@ -849,7 +862,12 @@ const I = {
   chat: '<path d="M20.5 11.5a8.5 8 0 0 1-12.3 7.2L3.5 20l1.4-4.2A8.5 8 0 1 1 20.5 11.5z"/>',
   music: '<path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
   minus: '<path d="M5 12h14"/>',
-  plus: '<path d="M12 5v14M5 12h14"/>'
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  stop: '<rect x="6" y="6" width="12" height="12" rx="2.5" fill="currentColor"/>',
+  excl: '<circle cx="12" cy="12" r="10.5" fill="currentColor" stroke="none"/><path d="M12 6.8v6.4M12 16.8h.01" style="stroke:var(--surface)" stroke-width="2.6"/>',
+  retry: '<circle cx="12" cy="12" r="10.5" fill="currentColor" stroke="none"/><g style="stroke:var(--surface)" stroke-width="2.2"><path d="M7.4 7.6v4.2h4.2"/><path d="M7.8 11.4a4.7 4.7 0 1 1 1.4 4.4"/></g>',
+  ear: '<path d="M6.5 9.5a5.5 5.5 0 0 1 11 0c0 3.2-2.6 4.3-3.3 6.6-.6 2-1.8 3.4-3.8 3.4a2.9 2.9 0 0 1-2.9-2.9"/><path d="M9.8 10a2.2 2.2 0 0 1 4.4 0c0 1.3-1.1 1.8-1.6 2.7"/>',
+  micx: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M3.5 3.5l17 17"/>'
 };
 const ic = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`;
 
@@ -1188,21 +1206,43 @@ function renderDetail(c) {
   </div></div>`;
 }
 /* Söyle yarım sayfası: main'deki PronunciationPracticeView'in metinleriyle. */
+/* Söyle: main'deki PronunciationPracticeView durumları. Bir anda tek durum satırı görünür.
+   Sonuç başlıkları ve iletileri PronunciationFeedback'ten; renk yalnız başlığı tekrar eder. */
+const SAY_VERDICT = {
+  correct: { cls: 'ok', i: 'checkcf', t: 'Doğru!', m: () => 'Anlaşılır söyledin.' },
+  almost: { cls: 'mid', i: 'excl', t: 'Neredeyse!', m: () => 'Anlaşıldı ama tam net değildi. Bir kez daha söyle.' },
+  tryAgain: { cls: 'no', i: 'retry', t: 'Bir daha dene', m: s => `'${s.heard}' duydum. Önce hoparlör düğmesiyle dinle, sonra yavaş ve net söyle.` },
+  notHeard: { cls: 'no', i: 'ear', t: 'Seni duyamadım', m: () => 'Mikrofona yakın, net bir sesle söyle.' }
+};
+/* "Bir daha dene" örneği için tanıyıcının yazabileceği gerçek kelimeler */
+const MISHEARD = { breakfast: 'brick fast', borrow: 'barrow', actually: 'actual', date: 'eight' };
+function sayStatus(s, sentence, text) {
+  switch (s.state) {
+    case 'listening': return `<div class="listen">${ic('wave')}Dinliyorum... Bitince sus ya da Bitti'ye bas.</div>`;
+    case 'checking': return `<div class="listen"><span class="spin" aria-hidden="true"></span>Kontrol ediliyor</div>`;
+    case 'done': {
+      const v = SAY_VERDICT[s.verdict || 'correct'];
+      // main: genel "Bir daha dene" iletisi duyulanı zaten söyler, ayrıca yazılmaz
+      const heard = v.cls === 'no' ? '' : `<small>Duyulan: ${esc(s.heard || text)}</small>`;
+      return `<div class="verdict ${v.cls}" aria-live="polite"><b>${ic(v.i)}${v.t}</b><span>${esc(v.m(s))}</span>${heard}</div>`;
+    }
+    case 'denied': return `<div class="problem"><b>${ic('micx')}Söyle şu an çalışmıyor</b><span>Mikrofon izni kapalı. Ayarlar'dan Lockglow'a mikrofon izni verirsen Söyle çalışır. Dinle ve kartlar izinsiz de çalışır.</span><button type="button" class="btn btn-bordered" data-act="say-settings">Ayarları aç</button></div>`;
+    default: return `<p class="t-sub" style="margin:0">Önce dinle. Sonra Söyle'ye bas ve ${sentence ? 'cümleyi' : 'kelimeyi'} yüksek sesle söyle.</p>`;
+  }
+}
 function sayHTML() {
   const s = S.say;
   if (!s || S.view !== 'app') return '';
   const c = CARD[s.id], sentence = s.mode === 'sentence', text = sentence ? c.ex[0].en : c.lemma;
-  const btn = s.state === 'listening' ? `${ic('minus')}Bitti` : s.state === 'done' ? `${ic('micf')}Bir daha söyle` : `${ic('micf')}Söyle`;
+  const btn = s.state === 'listening' ? `${ic('stop')}Bitti` : s.state === 'done' || s.state === 'denied' ? `${ic('micf')}Bir daha söyle` : `${ic('micf')}Söyle`;
   return `<div class="saybd" data-act="say-bg"><div class="saysheet" role="dialog" aria-modal="true" aria-label="Söyle">
     <div class="grab"></div>
     <div class="sh-top"><b>Söyle</b><button type="button" class="btn-cap" data-act="say-close">Kapat</button></div>
     ${seg('say-mode', [['word', 'Kelime'], ['sentence', 'Örnek cümle']], s.mode, 'Ne söyleyeceksin?')}
     <div class="target"><span class="${sentence ? 's' : 'w'}" lang="en">${esc(text)}</span>${spk(text, sentence ? 'Cümleyi dinle' : 'Kelimeyi dinle')}</div>
     ${sentence ? '' : `<div class="t-sub">${esc(c.ipa)}</div>`}
-    <p class="t-sub" style="margin:0">Önce dinle. Sonra Söyle'ye bas ve ${sentence ? 'cümleyi' : 'kelimeyi'} yüksek sesle söyle.</p>
-    ${s.state === 'listening' ? `<div class="listen">${ic('wave')}Dinliyorum... Bitince sus ya da Bitti'ye bas.</div>` : ''}
-    ${s.state === 'done' ? `<div class="verdict"><b>${ic('checkcf')}Doğru!</b><span>Duyulan: ${esc(text)}</span></div>` : ''}
-    <button type="button" class="btn btn-primary bigmic block" data-act="say-go">${btn}</button>
+    ${sayStatus(s, sentence, text)}
+    <button type="button" class="btn btn-primary bigmic block" data-act="say-go"${s.state === 'checking' ? ' disabled' : ''}>${btn}</button>
     <p class="t-foot" style="margin:0;text-align:center">Ses telefondan çıkmaz ve kaydedilmez.</p>
   </div></div>`;
 }
@@ -1590,8 +1630,9 @@ const NOTES = {
     'Okuma sırası: kelime → Türkçe anlam (28 pt kalın) → kısa tanım → örnek ve Türkçesi → Dikkat. Sayaç ve sayfa noktası yok (sakin akış).',
     'Sarı şerit yalnız İngilizce kelimede; örnekte aynı kelime kalın ve işaretli (B). İngilizce serif, Türkçe SF (A).',
     'Kart sondan kısalır: önce yazı küçülür ve etiketle "Ayrıca" gizlenir, sonra Dikkat açıklaması, sonra Dikkat ve örnek satıra iner. Erişilebilirlik boyutunda sayfalama kapanır, kart akışla kayar.',
-    'Dinle\'nin yanında main\'deki Söyle (mikrofon) düğmesi; dokununca telaffuz alıştırması açılır. İlk kartta "Şu an kilitli ekranda" (B), yalnız kilitli ekranda widget varsa.'],
-    s: 'Kelime: <b>.system(size: 40, weight: .bold, design: .serif)</b> + @ScaledMetric, .lineLimit(1) + .minimumScaleFactor(0.6). Şerit: arka planda eğik kenarlı şekil (Path). Kısalma: ViewThatFits(in: .vertical) { tam; dikkatKısa; örnekKısa }. Etiket: wordAt(now).' },
+    'Dinle\'nin yanında main\'deki Söyle (mikrofon) düğmesi; dokununca telaffuz alıştırması açılır. İlk kartta "Şu an kilitli ekranda" (B), yalnız kilitli ekranda widget varsa.',
+    'Söyle sayfası main\'deki durumları izler: Dinliyorum → Kontrol ediliyor → Doğru! / Neredeyse! / Bir daha dene / Seni duyamadım. Bir anda tek durum satırı görünür; renk başlığı yalnız tekrar eder. İzin kapalıysa "Söyle şu an çalışmıyor" ve "Ayarları aç".'],
+    s: 'Kelime: <b>.system(size: 40, weight: .bold, design: .serif)</b> + @ScaledMetric, .lineLimit(1) + .minimumScaleFactor(0.6). Şerit: arka planda eğik kenarlı şekil (Path). Kısalma: ViewThatFits(in: .vertical) { tam; dikkatKısa; örnekKısa }. Etiket: wordAt(now). Söyle sonucu (FeedbackPanel): .green/.orange/.red yerine good/caution/bad, zemin goodTint / caution %14 / badTint.' },
   'rv-start': { t: 'Tekrar · başlangıç', b: [
     'Halka günlük hedefi gösterir (6/10). Tek dolu düğme: Başla.',
     'Başlık durumu söyler: "tekrar bekliyor" ya da "yeni kelimeler".',
@@ -1680,7 +1721,7 @@ function renderNotes() {
 
 /* ───────── Panel: ekran durumları ───────── */
 const JUMPS = {
-  feed: [['Önceki kart', 'feedprev'], ['Sonraki kart', 'feednext']],
+  feed: [['Önceki kart', 'feedprev'], ['Sonraki kart', 'feednext'], ['Söyle', 'say'], ['Söyle · Neredeyse', 'say-almost'], ['Söyle · Bir daha dene', 'say-try'], ['Söyle · mikrofon izni yok', 'say-denied']],
   review: [['Başlangıç · tekrar', 'start-due'], ['Başlangıç · yeni', 'start-new'], ['Yeni kart · ön yüz', 'card'], ['Yeni kart · cevaplar', 'card-rev'], ['Quiz · soru', 'quiz'], ['Quiz · yanlış cevap', 'quiz-wrong'], ['Quiz · doğru cevap', 'quiz-right'], ['Tur özeti', 'sum'], ['Bugünlük tamam', 'done']],
   search: [['Boş arama', 's-empty'], ['"kahv" araması', 's-kahv'], ['"odunc" araması', 's-odunc'], ['Sonuç yok', 's-none'], ['Kart ayrıntısı', 's-detail']],
   settings: [['Ayarlar', 'st'], ['Konular', 'st-topics'], ['Widget ekleme', 'st-guide'], ['Bildiğim kelimeler', 'st-known'], ['Widget sağlığı', 'st-health'], ['Widget güncellemiyor', 'st-health-bad'], ['Sıfırlama onayı', 'st-reset'], ['Bildirim izni yok', 'st-denied'], ['Yedekten kurtarıldı', 'st-recovery']],
@@ -1711,6 +1752,15 @@ function jump(j) {
       S.feedIndex = Math.max(0, Math.min(FEED.length - 1, S.feedIndex + (j === 'feednext' ? 1 : -1)));
       f.scrollTo({ top: S.feedIndex * f.clientHeight, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       return;
+    }
+    case 'say': case 'say-almost': case 'say-try': case 'say-denied': {
+      go('feed');
+      const id = FEED[S.feedIndex] || FEED[0];
+      S.say = { id, mode: 'word', state: 'idle' };
+      if (j === 'say-almost') Object.assign(S.say, { state: 'done', verdict: 'almost' });
+      if (j === 'say-try') Object.assign(S.say, { state: 'done', verdict: 'tryAgain', heard: MISHEARD[id] || 'break fast' });
+      if (j === 'say-denied') S.say.state = 'denied';
+      break;
     }
     case 'start-due': go('review'); Object.assign(r, { phase: 'start', kind: 'due' }); break;
     case 'start-new': go('review'); Object.assign(r, { phase: 'start', kind: 'new' }); break;
@@ -1882,10 +1932,16 @@ function toast(text, undo) {
   const el = document.createElement('div');
   el.className = 'toast'; el.setAttribute('role', 'status');
   if (S.view === 'widgets') el.style.bottom = 'calc(var(--safe-bottom) + 110px)';
+  if (S.say) Object.assign(el.style, { top: '60px', bottom: 'auto', zIndex: 80 });
   el.innerHTML = `<span>${esc(text)}</span>${undo ? `<button type="button" data-act="${undo}">Vazgeç</button>` : ''}`;
   host.appendChild(el);
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.remove(), 4000);
+}
+/* Söyle: dinleme bitince kısa bir "Kontrol ediliyor", sonra sonuç (taslakta hep "Doğru!") */
+function sayCheck(s) {
+  s.state = 'checking'; render();
+  setTimeout(() => { if (S.say === s && s.state === 'checking') { s.state = 'done'; s.verdict = 'correct'; render(); } }, 700);
 }
 function say(text, el) {
   try {
@@ -1931,11 +1987,16 @@ document.addEventListener('click', e => {
     case 'say-close': S.say = null; render(); return;
     case 'say-bg': if (e.target === el) { S.say = null; render(); } return;
     case 'say-mode': S.say.mode = v; S.say.state = 'idle'; render(); return;
-    case 'say-go':
-      if (S.say.state === 'listening') { S.say.state = 'done'; render(); return; }
-      S.say.state = 'listening'; render();
-      setTimeout(() => { if (S.say && S.say.state === 'listening') { S.say.state = 'done'; render(); } }, 1400);
+    case 'say-go': {
+      const s = S.say;
+      if (s.state === 'checking') return;
+      if (s.state === 'listening') { sayCheck(s); return; }
+      Object.assign(s, { state: 'listening', verdict: null, heard: null, take: (s.take || 0) + 1 }); render();
+      const take = s.take;
+      setTimeout(() => { if (S.say === s && s.state === 'listening' && s.take === take) sayCheck(s); }, 1400);
       return;
+    }
+    case 'say-settings': toast("Burada iPhone Ayarları'nda Lockglow açılır."); return;
     case 'waod': S.wg.aod = v === '1'; render(); return;
     case 'jump': jump(el.dataset.j); return;
     case 'feedknow': {

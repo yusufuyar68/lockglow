@@ -134,8 +134,12 @@ Etiketler: **main** = main'de aynısı var; **değişiklik** = main'de farklı; 
 - İlk kelime kartında Söyle gizli (main'deki `showsSay: false`).
 
 **Akış**
-- *Main:* okuma sırası; Söyle (mikrofon) düğmesi.
-- *Değişiklik:* kelimenin sesi için hoparlör simgesi yerine "Dinle" kapsülü. Kapsül ve mikrofon aynı satırdadır.
+- *Main:*
+  - okuma sırası; Söyle (mikrofon) düğmesi;
+  - Söyle sayfasının durumları: Dinliyorum → Kontrol ediliyor → Doğru! / Neredeyse! / Bir daha dene / Seni duyamadım. İzin kapalıysa "Söyle şu an çalışmıyor" ve "Ayarları aç". Metinler `PronunciationPracticeView` ve `PronunciationFeedback`'ten.
+- *Değişiklik:*
+  - kelimenin sesi için hoparlör simgesi yerine "Dinle" kapsülü. Kapsül ve mikrofon aynı satırdadır;
+  - Söyle sonucunda yeşil, turuncu ve kırmızı yerine tema renkleri (`good`, `caution`, `bad`) ve aynı tonda açık zemin.
 - *Yeni:*
   - sondan kısalma basamakları;
   - kart altında "Biliyorum" (bildiğin kelimede "Bildiğin kelime ✓" ve "Geri al");
@@ -144,6 +148,7 @@ Etiketler: **main** = main'de aynısı var; **değişiklik** = main'de farklı; 
 
 **Tekrar**
 - *Main:* 2×2 cevaplar; quiz'de doğruda "Devam" + "Zordu / Kolaydı", yanlışta yalnız "Devam".
+- *Değişiklik:* yeni kelime turunun alt yazısı "sonra bildin mi işaretle." yerine "sonra ne kadar bildiğini seç." Artık dört cevap var.
 - *Yeni:*
   - cevap düğmelerinde süre ("10 dakika sonra", "12 saat sonra", "yarın", "2 gün sonra");
   - tur sırasında sekme çubuğu gizli;
@@ -220,6 +225,7 @@ Etiketler: **main** = main'de aynısı var; **değişiklik** = main'de farklı; 
     - İngilizce metinde `accessibilitySpeechLanguage = "en-US"`, IPA `.accessibilityHidden(true)`.
     - Anlam "Türkçesi: …" diye okunur; bölüm başlıklarına `.isHeader`; `Section` başlıklarında `.textCase(nil)`.
     - `accessibilityReduceMotion` açıkken nabız ve geçişler kapanır.
+15. **Söyle sonucu:** `FeedbackPanel`'de `.green` / `.orange` / `.red` yerine `good` / `caution` / `bad`. Panelin zemini `goodTint`, %14 `caution` ya da `badTint`. Başlık ve simge kalır; renk tek başına anlam taşımaz (kural 4).
 
 ## Açık sorular
 
