@@ -8,9 +8,13 @@ import Learning
 /// the Turkish meaning first (large), then the short definition, the example and the Dikkat box.
 /// A flashcard is answered with one of four grades (Bilemedim, Zor, Bildim, Kolay), each showing
 /// when the word comes back. During a round the tab bar is hidden, the round has its own header
-/// with "Bitir", and the answers sit in an opaque bar at the bottom. A round ends with a
-/// word-by-word summary; with nothing left for today the tab says when the next review is due.
+/// with "Bitir", and the answers sit in an opaque bar at the bottom (at accessibility sizes they
+/// scroll with the card). A round ends with a word-by-word summary; with nothing left for today
+/// the tab says when the next review is due.
 struct ReviewView: View {
+    /// Switches to "Ayarlar" (the shortcut to the daily goal on the done screen).
+    var openSettings: () -> Void = {}
+
     @EnvironmentObject private var model: AppModel
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
@@ -20,6 +24,8 @@ struct ReviewView: View {
     @State private var session: ReviewSession?
     @State private var index = 0
     @State private var isRevealed = false
+    /// The flashcard runs past the bottom of its scroll view ("Devamı ↓").
+    @State private var cardHasMore = false
     /// Answers of the running round, in order.
     @State private var answers: [RoundAnswer] = []
     /// Answers of the round that just ended: the summary stays until "Tamam".
@@ -141,28 +147,62 @@ struct ReviewView: View {
     }
 
     /// The card fills the space between the header and the answers, with the content centered;
-    /// it scrolls on its own when the revealed side is taller (iPhone SE, large text), so the
-    /// answers below always stay visible and tappable.
+    /// it scrolls on its own when the revealed side is taller (iPhone SE, large text), with a
+    /// "Devamı ↓" cue until its end is reached, and the answers below stay visible and tappable.
+    /// At accessibility sizes the revealed card's answers scroll with it instead, one per row
+    /// (rule 5): a fixed bar of grades would leave almost no room for the card.
     private func flashcardRound(word: WidgetWord, detail: CardDetail?) -> some View {
-        GeometryReader { proxy in
+        let answersInline = isRevealed && dynamicTypeSize.isAccessibilitySize
+        return GeometryReader { proxy in
+            let viewportHeight = proxy.size.height
             ScrollView {
-                flashcard(word: word, detail: detail, minHeight: max(0, proxy.size.height - 16))
-                    .padding(.horizontal, 16)
-                    .padding(.top, 4)
-                    .padding(.bottom, 12)
+                VStack(spacing: 16) {
+                    flashcard(word: word, detail: detail, minHeight: answersInline ? 0 : max(0, viewportHeight - 16))
+                    if answersInline {
+                        gradeAnswers(word: word, column: true)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 4)
+                .padding(.bottom, 12)
+                // Mockup markOverflow(): more below while the content's end is past the visible
+                // area (the front is exactly as tall as the area, so it never counts).
+                .onGeometryChange(for: Bool.self) { geometry in
+                    geometry.frame(in: .named("reviewCard")).maxY - viewportHeight > 4
+                } action: { hasMore in
+                    cardHasMore = hasMore
+                }
             }
+            .coordinateSpace(.named("reviewCard"))
             .scrollBounceBehavior(.basedOnSize)
+        }
+        // Mockup `.wcard.scrolls.more`: a cue that more of the card waits below. Above the
+        // answers' bar, never on it; visual only (VoiceOver reads on by itself).
+        .overlay(alignment: .bottom) {
+            if isRevealed && cardHasMore {
+                Text("Devamı ↓")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Theme.ink2)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 3)
+                    .background(Theme.surface2, in: Capsule())
+                    .padding(.bottom, 8)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+            }
         }
         // Every card starts at the top.
         .id(word.id)
         // Opaque (rule 6): the answers never sit on glass.
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            flashcardActions(word: word)
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-                .padding(.bottom, 8)
-                .frame(maxWidth: .infinity)
-                .background(Theme.bg)
+            if !answersInline {
+                flashcardActions(word: word)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                    .padding(.bottom, 8)
+                    .frame(maxWidth: .infinity)
+                    .background(Theme.bg)
+            }
         }
     }
 
@@ -185,6 +225,8 @@ struct ReviewView: View {
             }
             .buttonStyle(.plain)
             .accessibilityLabel(word.lemma)
+            // Between the label and the hint: the word is English, the hint keeps the Turkish voice.
+            .englishVoice()
             .accessibilityHint("Anlamını göstermek için çift dokun")
             // On top of the card, not inside it: a button inside the reveal button's label
             // would also reveal the card.
@@ -226,11 +268,11 @@ struct ReviewView: View {
                 HStack(spacing: 8) {
                     metaItems(word)
                     Spacer(minLength: 8)
-                    ListenCapsule(text: word.lemma)
+                    CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
                 }
                 VStack(alignment: .leading, spacing: 8) {
                     wordMeta(word, alignment: .leading)
-                    ListenCapsule(text: word.lemma)
+                    CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
                 }
             }
             if let gloss = word.glossTR {
@@ -251,6 +293,7 @@ struct ReviewView: View {
                 .definitionStyle()
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
+                .englishVoice()
             exampleBlock(word: word, translation: detail?.examples.first?.tr)
             if let mistake = detail?.mistakes.first {
                 MistakeBox(mistake: mistake)
@@ -281,7 +324,7 @@ struct ReviewView: View {
                 .foregroundStyle(Theme.ink2)
                 .accessibilityHidden(true)
         }
-        Text(verbatim: ReviewView.partOfSpeech(word.pos))
+        Text(verbatim: CardPartOfSpeech.turkish(word.pos))
             .font(.subheadline.weight(.medium))
             .foregroundStyle(Theme.ink2)
         LevelBadge(code: word.level)
@@ -307,6 +350,7 @@ struct ReviewView: View {
                 .exampleStyle()
                 .lineSpacing(3)
                 .fixedSize(horizontal: false, vertical: true)
+                .englishVoice()
             if let translation = translation {
                 Text(verbatim: translation)
                     .exampleTranslationStyle()
@@ -321,17 +365,12 @@ struct ReviewView: View {
         }
     }
 
+    /// The bottom bar: "Anlamı göster", then the grades (at accessibility sizes the revealed
+    /// card's grades scroll with it instead, see `flashcardRound`).
     @ViewBuilder
     private func flashcardActions(word: WidgetWord) -> some View {
         if isRevealed {
-            VStack(spacing: 8) {
-                Text("Bu kelimeyi ne kadar bildin?")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(Theme.ink2)
-                    .multilineTextAlignment(.center)
-                    .accessibilityAddTraits(.isHeader)
-                gradeGrid(word: word)
-            }
+            gradeAnswers(word: word, column: false)
         } else {
             Button("Anlamı göster") {
                 reveal()
@@ -340,8 +379,43 @@ struct ReviewView: View {
         }
     }
 
-    /// Four answers in two rows of two (mockup `.grades`): four across would not fit an iPhone SE
-    /// at larger text sizes. Reading order is worst to best; "Bildim" is the one filled button.
+    /// The question and the four answers: in the bar a 2 x 2 grid; with `column` (accessibility
+    /// sizes, under the card) one full-width answer per row, where "Bilemedim" keeps to one line.
+    private func gradeAnswers(word: WidgetWord, column: Bool) -> some View {
+        VStack(spacing: 8) {
+            Text("Bu kelimeyi ne kadar bildin?")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink2)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityAddTraits(.isHeader)
+            if column {
+                gradeColumn(word: word)
+            } else {
+                gradeGrid(word: word)
+            }
+        }
+    }
+
+    /// The four answers stacked, worst to best (accessibility sizes): half an iPhone SE's width
+    /// would break "Bilemedim" in the middle of the word.
+    private func gradeColumn(word: WidgetWord) -> some View {
+        let now = Date()
+        return VStack(spacing: 8) {
+            gradeButton(.again, word: word, now: now)
+                .fixedSize(horizontal: false, vertical: true)
+            gradeButton(.hard, word: word, now: now)
+                .fixedSize(horizontal: false, vertical: true)
+            gradeButton(.good, word: word, now: now)
+                .fixedSize(horizontal: false, vertical: true)
+            gradeButton(.easy, word: word, now: now)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    /// Four answers in two rows of two (mockup `.grades`) in the bottom bar: four across would
+    /// not fit an iPhone SE at larger text sizes (at accessibility sizes `gradeColumn` under the
+    /// card). Reading order is worst to best; "Bildim" is the one filled button.
     /// Each says when the word comes back, from the same schedule the answer will write (README
     /// point 8): for a new word "10 dakika sonra", "12 saat sonra", "yarın", "2 gün sonra".
     private func gradeGrid(word: WidgetWord) -> some View {
@@ -426,6 +500,8 @@ struct ReviewView: View {
         let updated = model.recordReview(word, grade: grade)
         answers.append(RoundAnswer(word: word, grade: grade, dueAt: updated.dueAt))
         isRevealed = false
+        // The next card measures itself again.
+        cardHasMore = false
         if let session = session, index + 1 < session.words.count {
             index += 1
         } else {
@@ -437,6 +513,7 @@ struct ReviewView: View {
         session = next
         index = 0
         isRevealed = false
+        cardHasMore = false
         answers = []
         summary = nil
     }
@@ -525,6 +602,8 @@ struct ReviewView: View {
                 VStack(spacing: 14) {
                     if let offer = offer {
                         offerCard(offer)
+                        todayLine(withKnown: true)
+                            .padding(.horizontal, 6)
                     } else {
                         doneContent
                     }
@@ -578,8 +657,9 @@ struct ReviewView: View {
         .cardSurface(cornerRadius: Theme.Radius.wordCard)
     }
 
-    /// Mockup `reviewDone`: nothing due and today's goal reached. When the next review comes,
-    /// the reminder, the Lock Screen, and more new words for whoever wants them.
+    /// Mockup `reviewDone`: nothing due and today's goal reached. Today's counts, when the next
+    /// review comes, the reminder, the Lock Screen, more new words for whoever wants them, and
+    /// the way to the daily goal.
     private var doneContent: some View {
         let now = Date()
         let next = model.nextReviewDate(after: now)
@@ -599,6 +679,7 @@ struct ReviewView: View {
                     .multilineTextAlignment(.center)
                     .lineSpacing(2)
                     .fixedSize(horizontal: false, vertical: true)
+                todayLine(withKnown: false)
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 22)
@@ -630,7 +711,30 @@ struct ReviewView: View {
                 }
                 .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 54, tonal: true))
             }
+            // The short way to the goal (mockup "goto-goal"): smaller, centered, chevron after.
+            Button(action: openSettings) {
+                HStack(spacing: 4) {
+                    Text("Günlük hedefi değiştir")
+                    Image(systemName: "chevron.right")
+                        .imageScale(.small)
+                        .accessibilityHidden(true)
+                }
+            }
+            .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
         }
+    }
+
+    /// Mockup `.t-sub` "Bugün: 3 yeni kelime, 12 tekrar." (start screen: also the known words).
+    private func todayLine(withKnown: Bool) -> some View {
+        var line = "Bugün: \(model.newWordsStudiedToday()) yeni kelime, \(model.reviewsDoneToday()) tekrar."
+        if withKnown {
+            line += " Bildiğin kelime: \(model.progressCounts().known)."
+        }
+        return Text(verbatim: line)
+            .font(.subheadline)
+            .foregroundStyle(Theme.ink2)
+            .multilineTextAlignment(.center)
+            .fixedSize(horizontal: false, vertical: true)
     }
 
     // MARK: Text
@@ -696,32 +800,6 @@ struct ReviewView: View {
         formatter.dateFormat = "d MMMM"
         return formatter
     }()
-
-    /// The part of speech in Turkish ("n" → "isim"); an unknown code is shown as it is.
-    private static func partOfSpeech(_ code: String) -> String {
-        switch code {
-        case "n":
-            return "isim"
-        case "v":
-            return "fiil"
-        case "adj":
-            return "sıfat"
-        case "adv":
-            return "zarf"
-        case "phv":
-            return "iki kelimeli fiil"
-        case "phr":
-            return "kalıp"
-        case "idm":
-            return "deyim"
-        case "det":
-            return "belirleyici"
-        case "prep":
-            return "edat"
-        default:
-            return code
-        }
-    }
 }
 
 // MARK: - Pieces
@@ -759,6 +837,7 @@ private struct GradeInfo {
 
 /// The English word with the phosphor band (rule 1): one line at `size`; a long phrase that does
 /// not fit drops to a smaller size first, then shrinks with `englishWordStyle`'s scale factor.
+/// VoiceOver reads it with an English voice.
 private struct WordHeadline: View {
     let lemma: String
     let size: CGFloat
@@ -770,35 +849,13 @@ private struct WordHeadline: View {
             word(size: size * 0.7, maxSize: maxSize * 0.7)
         }
         .accessibilityAddTraits(.isHeader)
+        .englishVoice()
     }
 
     private func word(size: CGFloat, maxSize: CGFloat) -> some View {
         Text(verbatim: lemma)
             .englishWordStyle(size: size, maxSize: maxSize)
             .phosphorBand()
-    }
-}
-
-/// "Dinle" (mockup `.pill-btn`): a labelled `surface2` capsule that reads the word aloud; a second
-/// tap stops it. The speaker waves while it reads, unless Reduce Motion is on.
-private struct ListenCapsule: View {
-    @ObservedObject private var speaker = Speaker.shared
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    let text: String
-
-    var body: some View {
-        let isSpeaking = speaker.speakingText == text
-        Button {
-            speaker.toggle(text)
-        } label: {
-            Label("Dinle", systemImage: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
-                .font(.subheadline.weight(.semibold))
-                .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
-                .lineLimit(1)
-        }
-        .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
-        .fixedSize()
-        .accessibilityLabel(isSpeaking ? "Durdur" : "Kelimeyi dinle")
     }
 }
 
@@ -1044,6 +1101,8 @@ private struct SummaryRow: View {
                 Text(verbatim: answer.word.lemma)
                     .font(.system(.body, design: .serif).weight(.bold))
                     .foregroundStyle(Theme.ink)
+                    // Only the word: the meaning under it keeps the Turkish voice.
+                    .englishVoice()
                 if let gloss = answer.word.glossTR {
                     Text(verbatim: gloss)
                         .font(.subheadline)

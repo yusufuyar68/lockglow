@@ -25,7 +25,8 @@ struct RootView: View {
             FeedView(scrolledWordID: $scrolledWordID)
                 .tabItem { Label("Akış", systemImage: "rectangle.stack") }
                 .tag(AppTab.feed)
-            ReviewView()
+            // "Günlük hedefi değiştir" on the done screen opens Ayarlar.
+            ReviewView(openSettings: { selectedTab = .settings })
                 .tabItem { Label("Tekrar", systemImage: "arrow.triangle.2.circlepath") }
                 .tag(AppTab.review)
             SearchView()
