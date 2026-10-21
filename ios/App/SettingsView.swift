@@ -332,7 +332,8 @@ struct SettingsView: View {
                     .padding(14)
                 }
             }
-            Text("Seçtiğin saatte, o gün kaç kelimenin seni beklediğini söyleyen bir bildirim gelir. O günün tekrarını ve yeni kelimelerini bitirdiysen gelmez.")
+            // The reminder shows one word, not counts (ui2-bildirim: `Learning/ReminderText`).
+            Text("Seçtiğin saatte, tekrarı gelen bir kelimeyi ya da sıradaki yeni kelimeyi gösteren kısa bir bildirim gelir. O günün işini bitirdiysen gelmez.")
                 .settingsFootnote()
         }
     }
