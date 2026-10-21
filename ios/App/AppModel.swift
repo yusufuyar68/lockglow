@@ -69,6 +69,8 @@ final class AppModel: ObservableObject {
     private lazy var detailStore: ContentStore? = ContentLoader.openStore()
     /// Not published: filling it while a view is being drawn must not trigger a redraw.
     private var detailCache: [Int: CardDetail] = [:]
+    /// Loaded words by lowercased headword (`lookup(lemma:)`); the first card of a headword wins.
+    private var wordsByLemma: [String: WidgetWord] = [:]
 
     // MARK: Lifecycle
 
@@ -95,6 +97,7 @@ final class AppModel: ObservableObject {
         }.value
 
         words = loaded.words
+        wordsByLemma = AppModel.lemmaIndex(loaded.words)
         topics = loaded.topics
         topicsOf = loaded.topicsOf
         rebuildFeed()
@@ -322,6 +325,25 @@ final class AppModel: ObservableObject {
         }
     }
 
+    /// The Turkish meaning of the loaded card whose headword is `lemma` ("lend" → "ödünç vermek"),
+    /// for the quiz's "Senin seçtiğin" line. Case and surrounding spaces are ignored; nil when no
+    /// card has that headword (a distractor such as "owe" or "lent") or the card has no gloss.
+    func lookup(lemma: String) -> String? {
+        let key = lemma.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        return wordsByLemma[key]?.glossTR
+    }
+
+    private static func lemmaIndex(_ words: [WidgetWord]) -> [String: WidgetWord] {
+        var index: [String: WidgetWord] = [:]
+        for word in words {
+            let key = word.lemma.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            if index[key] == nil {
+                index[key] = word
+            }
+        }
+        return index
+    }
+
     /// Words whose headword or Turkish gloss starts with the typed text (Turkish letters and
     /// accents folded, so "kahv" finds "kahvaltı"). Uses the database's full-text index; without a
     /// database (seed words only) a plain prefix match over the loaded words.
@@ -380,16 +402,48 @@ final class AppModel: ObservableObject {
         return ReviewSession(kind: .new, words: fresh, totalCount: fresh.count)
     }
 
-    /// Records one flashcard answer and saves the progress right away.
-    func recordReview(_ word: WidgetWord, grade: ReviewGrade) {
+    /// Records one flashcard answer and saves the progress right away. Returns the word's new
+    /// progress (the round summary shows when it comes back).
+    @discardableResult
+    func recordReview(_ word: WidgetWord, grade: ReviewGrade) -> WordProgress {
         let now = Date()
         let current = progress[word.id] ?? WordProgress(wordID: word.id)
         let wasNew = current.state == .new
-        progress[word.id] = Leitner.review(current, grade: grade, at: now)
+        let updated = Leitner.review(current, grade: grade, at: now)
+        progress[word.id] = updated
         persistProgress(progress)
         if wasNew {
             AppPreferences.addNewWordsStudied(1, now: now)
         }
+        return updated
+    }
+
+    /// When `word` would come back if it were answered with `grade` at `now`: the same
+    /// `Leitner.review` that `recordReview` runs, on a copy of the progress (the times on the
+    /// answer buttons, README point 8). Nothing is saved.
+    func dueDate(ifAnswering grade: ReviewGrade, for word: WidgetWord, now: Date = Date()) -> Date? {
+        let current = progress[word.id] ?? WordProgress(wordID: word.id)
+        return Leitner.review(current, grade: grade, at: now).dueAt
+    }
+
+    /// The earliest review or refresher of a loaded word that falls due after `now` ("Sıradaki
+    /// tekrar" on the done screen); nil when nothing is scheduled.
+    func nextReviewDate(after now: Date = Date()) -> Date? {
+        var earliest: Date?
+        for word in words {
+            guard let p = progress[word.id], p.state != .new, let due = p.dueAt, due > now else {
+                continue
+            }
+            if earliest.map({ due < $0 }) ?? true {
+                earliest = due
+            }
+        }
+        return earliest
+    }
+
+    /// New words studied today (the ring on the "Tekrar" start screen).
+    func newWordsStudiedToday(now: Date = Date()) -> Int {
+        return AppPreferences.newWordsStudiedToday(now: now)
     }
 
     /// A flashcard round ended (or was ended early): the queue changes with the new progress.
@@ -660,6 +714,12 @@ final class AppModel: ObservableObject {
     }
 
     // MARK: Health
+
+    /// A Lockglow widget is on the Lock Screen (an accessory family) as of the last health check:
+    /// only then do screens say the Lock Screen keeps showing words.
+    var hasLockScreenWidget: Bool {
+        return health.instances.contains { $0.family.hasPrefix("accessory") }
+    }
 
     func refreshHealth() async {
         let instances = await WidgetProbe.currentInstances()
