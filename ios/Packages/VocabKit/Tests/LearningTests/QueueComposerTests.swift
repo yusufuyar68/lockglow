@@ -109,14 +109,31 @@ final class QueueComposerTests: XCTestCase {
         XCTAssertEqual(ids(unpinned), [4, 5, 6, 7, 8])
     }
 
-    func testDeckWithOnlyNotYetDueWordsDoesNotFallBack() {
-        // Word 1 is learning (due in 3 days) and still rotates as a top-up; word 2 is known.
+    func testFinishedDeckBorrowsNewWordsFromEveryTopic() {
+        // The deck (1...2) has no new word left: word 1 is learning (due in 3 days), word 2 is
+        // known. Like "Tekrar", new words now come from every topic (3, 4, ...), and word 1 still
+        // rotates as a top-up; the known, not-due word 2 does not.
         let progress = [
             1: learning(1, due: now.addingTimeInterval(3 * day)),
             2: known(2, due: now.addingTimeInterval(20 * day)),
         ]
         let queue = QueueComposer.compose(deck: words(1...2), fallbackFeed: words(1...10), progress: progress, now: now, horizon: 0, maxNew: 2, limit: 5)
-        XCTAssertEqual(ids(queue), [1])
+        let got = ids(queue)
+        XCTAssertTrue(got.contains(1))
+        XCTAssertTrue(got.contains(3) && got.contains(4))
+        XCTAssertFalse(got.contains(2))
+        XCTAssertEqual(Set(got).count, got.count)
+        XCTAssertGreaterThan(got.count, 1)
+    }
+
+    func testDeckWithNewWordsDoesNotBorrow() {
+        // Word 3 of the deck is still new: nothing outside the deck (4...10) enters the queue.
+        let progress = [
+            1: learning(1, due: now.addingTimeInterval(3 * day)),
+            2: known(2, due: now.addingTimeInterval(20 * day)),
+        ]
+        let queue = QueueComposer.compose(deck: words(1...3), fallbackFeed: words(1...10), progress: progress, now: now, horizon: 0, maxNew: 2, limit: 5)
+        XCTAssertTrue(Set(ids(queue)).isSubset(of: [1, 3]))
     }
 
     func testDeckQueueEqualsThePlainQueueWhenTheDeckIsEverything() {
