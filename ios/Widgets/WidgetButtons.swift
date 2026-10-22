@@ -46,7 +46,7 @@ struct KnowWordButton: View {
     var colors = WidgetColors.tokens
 
     /// The VoiceOver hint; the widget cannot read the two waits from `Leitner`.
-    static let hint = "Kelime widget'tan çıkar. 3 gün sonra bir kez sorarız; bilirsen 30 günde bir gelir."
+    static let hint = "Kelime widget'tan çıkar. 3 gün sonra bir kez sorarız; bilirsen 30 günde bir yine sorarız."
 
     var body: some View {
         Button(intent: KnowWordIntent(wordID: wordID, source: source.rawValue)) {

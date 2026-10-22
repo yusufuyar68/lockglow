@@ -12,7 +12,9 @@ import CoreModels
 /// line under it, and the Turkish meaning in SF semibold (15 pt) in a darker gray. No third row:
 /// the English definition is not shown here. The family is 160 x 72 pt (153 x 68 on an iPhone SE).
 /// As on the home widgets, every line is shown whole or not at all: the meaning first tries its
-/// shorter forms (`WidgetGloss`), and only when none fits is it left out. On the Always-On display
+/// shorter forms (`WidgetGloss`), and only when none fits is it left out. From xLarge to xxxLarge a
+/// meaning that does not fit at the person's text size is shown at the default size instead; in the
+/// accessibility sizes the word may stand alone (ogrenme_ilkeleri 2.1). On the Always-On display
 /// the text keeps its gray levels; the system dims the screen.
 struct RectangularWordView: View {
     let entry: WordEntry
@@ -20,8 +22,15 @@ struct RectangularWordView: View {
     var margins = EdgeInsets()
     /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
     var renderingMode: WidgetRenderingMode? = nil
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private var word: WidgetWord { entry.word }
     private var colors: WidgetColors { WidgetColors.lockScreen }
+    /// From xLarge to xxxLarge, the default text size when the person's size leaves no room for
+    /// the meaning; in the accessibility sizes the person's own size, where the word stands alone
+    /// when the meaning does not fit (ogrenme_ilkeleri 2.1).
+    private var fallbackTextSize: DynamicTypeSize {
+        dynamicTypeSize.isAccessibilitySize ? dynamicTypeSize : .large
+    }
 
     var body: some View {
         ViewThatFits(in: .vertical) {
@@ -33,8 +42,14 @@ struct RectangularWordView: View {
             rows(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.semibold), lines: [1])
             rows(WidgetWordStep.homeFloor, meaning: .footnote.weight(.semibold), lines: [1, 2])
             rows(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.semibold), lines: [1])
-            // Large text sizes and phrases whose meaning fits in no form: the word alone, never
-            // taller than the widget.
+            // A large standard text size that leaves no room for the meaning: the default size,
+            // so the word and its meaning stay together.
+            rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(fallbackTextSize)
+            rows(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(fallbackTextSize)
+            // The accessibility sizes, and phrases whose meaning fits in no form: the word alone,
+            // never taller than the widget.
             WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
