@@ -293,6 +293,30 @@ final class CustomWordsTests: XCTestCase {
         let feed = DeckFilter.prepending(custom, to: cards)
         XCTAssertEqual(ReviewPlanner.newWords(feed: feed, progress: [:], limit: 2).map { $0.id }, [1_000_000, 1])
     }
+
+    /// Why `AppModel.introCandidates` exists: "Hatırla" takes options from words of the asked
+    /// word's part of speech and level, which a user's word does not have. Given the cards as
+    /// words of its kind, it gets a question with options from their meanings.
+    func testUsersWordGetsHatirlaOptionsOnlyFromCardsOfItsKind() throws {
+        let mine = try list("awkward").words[0].widgetWord
+        let glosses = ["kahvaltı", "kaşık", "köprü", "tabak"]
+        let cards = glosses.enumerated().map { index, gloss in
+            WidgetWord(id: index + 1, lemma: "w\(index)", pos: "n", level: "A1", defMicro: "m", defShort: "s", exampleEN: "e", glossTR: gloss)
+        }
+        XCTAssertNil(
+            ReviewPlanner.introQuestion(for: mine, direction: .pickMeaning, attempt: 1, writtenDistractors: [], candidates: cards, topicsOf: [:]),
+            "no card shares its empty part of speech and level"
+        )
+        let asItsKind = cards.map { card in
+            WidgetWord(id: card.id, lemma: card.lemma, pos: mine.pos, level: mine.level, defMicro: card.defMicro, defShort: card.defShort, exampleEN: card.exampleEN, glossTR: card.glossTR)
+        }
+        let question = try XCTUnwrap(
+            ReviewPlanner.introQuestion(for: mine, direction: .pickMeaning, attempt: 1, writtenDistractors: [], candidates: asItsKind, topicsOf: [:])
+        )
+        XCTAssertEqual(question.answer, "anlam")
+        XCTAssertEqual(question.options.count, ReviewPlanner.choiceCount)
+        XCTAssertTrue(question.options.allSatisfy { $0 == "anlam" || glosses.contains($0) })
+    }
 }
 
 final class CustomWordStoreTests: XCTestCase {
