@@ -980,6 +980,12 @@ private struct WordDetailStatusSection: View {
                 }
                 .font(.body.weight(.semibold))
                 .foregroundStyle(state == .known ? Theme.good : Theme.ink)
+                // A "Biliyorum" still waiting for its one check question (ogrenme_ilkeleri 2.2).
+                if state == .known, let check = checkLine {
+                    Text(check)
+                        .font(.footnote)
+                        .foregroundStyle(Theme.ink2)
+                }
                 if state == .known {
                     Button {
                         change {
@@ -1002,21 +1008,38 @@ private struct WordDetailStatusSection: View {
                             model.markKnown(word)
                         }
                         if model.learningState(of: word) == .known {
-                            SozlukSpeech.announce([.turkish("Bildiğin kelimelere eklendi: "), .english(word.lemma)])
+                            // As the feed's "Tamam. 3 gün sonra bir kez soracağız." (`KnownUndo`).
+                            var runs: [SozlukSpeech.Run] = [.turkish("Biliyorum olarak işaretlendi: "), .english(word.lemma)]
+                            if let check = checkLine {
+                                runs.append(.turkish(". " + check))
+                            }
+                            SozlukSpeech.announce(runs)
                         }
                     } label: {
                         Label("Biliyorum olarak işaretle", systemImage: "checkmark")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle())
                     .accessibilityLabel("Biliyorum olarak işaretle")
-                    // `Leitner.markKnown`: one check question in 3 days (ogrenme_ilkeleri 2.2).
-                    .accessibilityHint("Kelime widget'tan çıkar. 3 gün sonra bir kez soracağız.")
+                    // `Leitner.markKnown`: one check question later (ogrenme_ilkeleri 2.2).
+                    .accessibilityHint(Text(verbatim: "Kelime widget'tan çıkar. \(WordDetailStatusSection.checkDays) gün sonra bir kez soracağız."))
                     .accessibilityFocused($buttonHasFocus)
                     // LockglowScreenshotTests looks this button up as "Biliyorum".
                     .accessibilityIdentifier("Biliyorum")
                 }
             }
         }
+    }
+
+    /// Days until the check question of a new "Biliyorum" (`Leitner.knownCheckDelay`).
+    private static let checkDays = Int((Leitner.knownCheckDelay / 86_400).rounded())
+
+    /// "3 gün sonra bir kez soracağız." while the word waits for its check, from its due date
+    /// (`FeedView.checkLine`); nil for a word learned in "Tekrar".
+    private var checkLine: String? {
+        guard let progress = model.progress[word.id], progress.awaitsKnownCheck else {
+            return nil
+        }
+        return FeedView.checkLine(due: progress.dueAt)
     }
 
     /// The change, then VoiceOver's focus on the button that replaced the tapped one, once it is

@@ -1,12 +1,13 @@
 import SwiftUI
 import UIKit
 import CoreModels
+import Learning
 
 /// "Bildiğin kelimeler" (docs/tasarim/terimler.md): every known word, the most recent first
 /// (mockup `st-known`). A word marked known by mistake (for example the widget's "Biliyorum" tapped
 /// by accident) goes back to learning with the row's "Geri al" or a swipe; a short notice at the
-/// bottom offers "Vazgeç". What "Geri al" does is said once, above the list, where a long list
-/// does not hide it.
+/// bottom offers "Vazgeç", which puts the word's progress back exactly. What "Geri al" does is
+/// said once, above the list, where a long list does not hide it.
 struct KnownWordsView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.colorScheme) private var colorScheme
@@ -14,7 +15,7 @@ struct KnownWordsView: View {
     /// The word whose whole card is open.
     @State private var openedWord: WidgetWord?
     /// The word just taken back to learning, while its notice is on screen.
-    @State private var undoneWord: WidgetWord?
+    @State private var undone: KnownWordsUndone?
     /// VoiceOver is on the notice's "Vazgeç": the notice stays.
     @AccessibilityFocusState private var noticeHasFocus: Bool
 
@@ -49,7 +50,7 @@ struct KnownWordsView: View {
         .navigationDestination(item: $openedWord) { word in
             WordDetailView(word: word)
         }
-        .task(id: undoneWord?.id) {
+        .task(id: undone?.word.id) {
             await hideNoticeLater()
         }
     }
@@ -93,10 +94,10 @@ struct KnownWordsView: View {
 
     @ViewBuilder
     private var undoNotice: some View {
-        if let word = undoneWord {
+        if let undone = undone {
             let transition: AnyTransition = reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity)
-            KnownWordsUndoNotice(lemma: word.lemma, undoHasFocus: $noticeHasFocus) {
-                redo(word)
+            KnownWordsUndoNotice(lemma: undone.word.lemma, undoHasFocus: $noticeHasFocus) {
+                redo(undone)
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 10)
@@ -106,18 +107,27 @@ struct KnownWordsView: View {
 
     /// "Geri al": the word returns to the widget and to "Tekrar".
     private func undo(_ word: WidgetWord) {
+        let before = model.progress[word.id]
         withAnimation(reduceMotion ? nil : .default) {
             model.undoKnown(word)
-            undoneWord = word
+            undone = KnownWordsUndone(word: word, before: before, after: model.progress[word.id])
         }
         SozlukSpeech.announce(KnownWordsUndoNotice.message(lemma: word.lemma))
     }
 
-    /// "Vazgeç": the word is known again (back at the top of the list).
-    private func redo(_ word: WidgetWord) {
+    /// "Vazgeç": the word's progress as it was before "Geri al" (`AppModel.restoreProgress`), so a
+    /// learned word stays learned and keeps its place in the list. Only when the word changed in
+    /// between, a plain "Biliyorum".
+    private func redo(_ undone: KnownWordsUndone) {
         withAnimation(reduceMotion ? nil : .default) {
-            model.markKnown(word)
-            undoneWord = nil
+            var restored = false
+            if let before = undone.before, let after = undone.after {
+                restored = model.restoreProgress(of: undone.word, to: before, ifStill: after)
+            }
+            if !restored {
+                model.markKnown(undone.word)
+            }
+            self.undone = nil
         }
     }
 
@@ -125,7 +135,7 @@ struct KnownWordsView: View {
     /// stays longer, so "Vazgeç" can still be reached, and never while VoiceOver is on it (WCAG
     /// 2.2.1, as the feed's notice).
     private func hideNoticeLater() async {
-        guard undoneWord != nil else {
+        guard undone != nil else {
             return
         }
         let seconds = UIAccessibility.isVoiceOverRunning || UIAccessibility.isSwitchControlRunning ? 10 : 4
@@ -137,9 +147,16 @@ struct KnownWordsView: View {
             return
         }
         withAnimation(reduceMotion ? nil : .easeOut(duration: 0.25)) {
-            undoneWord = nil
+            undone = nil
         }
     }
+}
+
+/// One "Geri al" on "Bildiğin kelimeler": the word and its progress before and right after it.
+private struct KnownWordsUndone {
+    let word: WidgetWord
+    let before: WordProgress?
+    let after: WordProgress?
 }
 
 /// Mockup `.kw`: the serif word and its meaning open the whole card; "Geri al" sits on the row

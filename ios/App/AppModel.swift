@@ -667,6 +667,17 @@ final class AppModel: ObservableObject {
         knownUndo = nil
     }
 
+    /// "Vazgeç" after "Geri al" in "Bildiğin kelimeler": the word's progress is `previous` again
+    /// (box, due date and check exactly as before), while it still is `undone` (nothing changed it
+    /// since). Not `markKnown`, which would turn a learned word into an unchecked "Biliyorum".
+    /// False when the word changed meanwhile or the save failed.
+    @discardableResult
+    func restoreProgress(of word: WidgetWord, to previous: WordProgress, ifStill undone: WordProgress) -> Bool {
+        return updateProgress(of: word) { current, _ in
+            current == undone ? previous : nil
+        } != nil
+    }
+
     /// The screen's "Geri al" for `word` is still showing (for example VoiceOver is on it): the
     /// exact undo of its last "Biliyorum" lasts until `date`. No change once the window has ended
     /// or another tap replaced it.
