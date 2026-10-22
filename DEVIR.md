@@ -43,7 +43,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - **Açılış akışı:** ilk açılışta seviye, konu, widget kurma rehberi, ilk kelime (mevcut kullanıcıya gösterilmez).
   - Widget'lar: küçük, orta, kilit ekranı. "Sonraki", "Biliyorum" ve **hoparlör** (AudioPlaybackIntent, uygulama açılmadan okur).
   - İlerleme dosyasının günlük yedeği alınıyor; gizlilik manifestinde UserDefaults (CA92.1) ve FileTimestamp (C617.1).
-- **İçerik:** 933 kart (`2026.10.22-kisisel-6`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat.
+- **İçerik:** 1.068 kart (`2026.10.22-kisisel-6`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat, s14 ev, s15 alışveriş ve para, s16 zaman, hava ve doğa; 273 kartta hafıza ipucu.
 - **Testler:** her push'ta ücretsiz Linux Swift işi (`build.yml` → `swift-linux`, `linux_check.sh` Docker'da) ve 72 Python testi + `--strict` doğrulama. macOS işi elle: ~170 paket testi + uygulama/widget derlemesi.
 - **Apple:** App Group (`group.com.yusufuyar.vocabwidget`) iki App ID'ye **atandı** (2026-10-20, Developer portalı). App Store Connect API anahtarı (`ZLU4D5GWLX`, Admin) GitHub'da.
 - **TestFlight:** çalışıyor. Build 18 (20 Ekim) ve **build 22** (21 Ekim: 933 kart, Zor/Kolay, widget sesi) yüklendi. İmza her çalıştırmada geçici sertifika + profillerle (`docs/testflight_kurulum.md` → 2b).
