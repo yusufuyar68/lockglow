@@ -549,8 +549,9 @@ final class AppModel: ObservableObject {
     }
 
     /// The confusable partners of `word` the user has not settled yet (new, or still in box 1):
-    /// they are kept out of its "Hatırla" options, where the pair would only teach the mix-up.
-    private func unsettledConfusables(of word: WidgetWord) -> Set<Int> {
+    /// they are kept out of its "Hatırla" options and its fill-in-the-blank question
+    /// (`clozeQuiz`, AppModel+Review.swift), where the pair would only teach the mix-up.
+    func unsettledConfusables(of word: WidgetWord) -> Set<Int> {
         let partners = word.confusableIDs ?? []
         return Set(partners.filter { id in
             guard let p = progress[id] else {

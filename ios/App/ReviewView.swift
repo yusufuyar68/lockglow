@@ -5,9 +5,10 @@ import Learning
 
 /// "Tekrar": a short round. Due words come first, each asked by its box (`AppModel.questionKind`,
 /// docs/tasarim/ogrenme_ilkeleri.md 2.4): in boxes 1–3 with the card's fill-in-the-blank question
-/// (`QuizCardView`); in boxes 4–5, for refreshers and for the check 3 days after "Biliyorum" with
-/// the recall screen ("İngilizcesini hatırla": the Turkish meaning, "Göster", then "Göstermeden
-/// önce aklına geldi mi?" and two equal answers, "Bulamadım" and "Buldum").
+/// (`QuizCardView`, without a confusable partner not learned yet: `AppModel.clozeQuiz`); in
+/// boxes 4–5, for refreshers and for the check 3 days after "Biliyorum" with the recall screen
+/// ("İngilizcesini hatırla": the Turkish meaning, "Göster", then "Göstermeden önce aklına geldi
+/// mi?" and two equal answers, "Bulamadım" and "Buldum").
 ///
 /// When nothing is due the tab offers new words in rounds of five, "Tanış + Hatırla"
 /// (`IntroRound`, 2.3). "Tanış": the word with its band and sound, the meaning hidden; one bottom
@@ -168,7 +169,8 @@ struct ReviewView: View {
                 return nil
             }
             let word = session.words[index]
-            if model.questionKind(for: word) == .cloze, let quiz = model.detail(for: word)?.quiz {
+            // Without a confusable partner not settled yet; too few options left: recall instead.
+            if model.questionKind(for: word) == .cloze, let quiz = model.clozeQuiz(for: word) {
                 return .cloze(word, quiz)
             }
             return .recall(word)
