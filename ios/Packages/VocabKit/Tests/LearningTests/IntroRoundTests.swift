@@ -222,11 +222,12 @@ final class IntroRoundTests: XCTestCase {
     }
 
     func testIntroWordsTakeReturnedWordsFirstThenTheFeedsNewWords() {
-        var returned = Leitner.review(Leitner.markKnown(WordProgress(wordID: 2), at: now), grade: .again, at: now)
+        let returned = Leitner.review(Leitner.markKnown(WordProgress(wordID: 2), at: now), grade: .again, at: now)
         XCTAssertTrue(returned.returnsToIntro)
-        returned.lastSeenAt = now
-        var older = Leitner.review(Leitner.markKnown(WordProgress(wordID: 9), at: now), grade: .again, at: now)
-        older.lastSeenAt = now.addingTimeInterval(-day)
+        // Its check failed a day earlier; a widget tap since then does not change that.
+        let checkedEarlier = now.addingTimeInterval(-day)
+        var older = Leitner.review(Leitner.markKnown(WordProgress(wordID: 9), at: checkedEarlier), grade: .again, at: checkedEarlier)
+        older = Leitner.markExposure(older, at: now.addingTimeInterval(60))
         var learning = WordProgress(wordID: 3)
         learning.state = .learning
         learning.box = 1

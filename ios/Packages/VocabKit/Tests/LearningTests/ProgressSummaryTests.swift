@@ -122,25 +122,40 @@ final class ProgressSummaryTests: XCTestCase {
 
     // MARK: Reading the last answer
 
+    /// The same word as an earlier build wrote it: no recorded answer times or grade.
+    private func legacy(_ p: WordProgress) -> WordProgress {
+        var old = p
+        old.lastReviewedAt = nil
+        old.lastGrade = nil
+        old.firstReviewedAt = nil
+        old.refresherStep = nil
+        return old
+    }
+
     func testLastAnswerReadsTheGap() {
+        // Each word as recorded now (exact) and as an earlier build wrote it (read from the gap):
+        // both give the same answer.
         let good = word(1, [(.good, date(27))])
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: good)?.kind, .movedUp)
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: good)?.date, date(27))
-
         let hard = word(2, [(.good, date(26)), (.hard, date(27))])
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: hard)?.kind, .stayed)
-
         let forgot = word(3, [(.good, date(26)), (.again, date(27))])
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: forgot)?.kind, .forgot)
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: forgot)?.date, date(27))
-
         let graduated = climb(4, from: daysBefore(31, date(27)), answers: 6)
         XCTAssertEqual(graduated.state, .known)
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: graduated)?.kind, .recalledOnTop)
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: graduated)?.date, date(27))
+        let readers: [(WordProgress) -> WordProgress] = [{ $0 }, { self.legacy($0) }]
+        for read in readers {
+            XCTAssertEqual(ProgressSummary.lastAnswer(of: read(good))?.kind, .movedUp)
+            XCTAssertEqual(ProgressSummary.lastAnswer(of: read(good))?.date, date(27))
+            XCTAssertEqual(ProgressSummary.lastAnswer(of: read(hard))?.kind, .stayed)
+            XCTAssertEqual(ProgressSummary.lastAnswer(of: read(forgot))?.kind, .forgot)
+            XCTAssertEqual(ProgressSummary.lastAnswer(of: read(forgot))?.date, date(27))
+            XCTAssertEqual(ProgressSummary.lastAnswer(of: read(graduated))?.kind, .recalledOnTop)
+            XCTAssertEqual(ProgressSummary.lastAnswer(of: read(graduated))?.date, date(27))
+        }
 
-        // A widget tap since then moves `lastSeenAt`: the answer can't be told any more.
-        XCTAssertNil(ProgressSummary.lastAnswer(of: Leitner.markExposure(good, at: date(27, 18))))
+        // A widget tap since then moves `lastSeenAt`. The recorded answer stays exact; an
+        // earlier build's word can't be told any more.
+        let tapped = Leitner.markExposure(good, at: date(27, 18))
+        XCTAssertEqual(ProgressSummary.lastAnswer(of: tapped), ProgressSummary.LastAnswer(date: date(27), kind: .movedUp))
+        XCTAssertNil(ProgressSummary.lastAnswer(of: legacy(tapped)))
         // "Biliyorum" is not an answer.
         XCTAssertNil(ProgressSummary.lastAnswer(of: Leitner.markKnown(WordProgress(wordID: 5), at: date(27))))
         XCTAssertNil(ProgressSummary.lastAnswer(of: WordProgress(wordID: 6)))
@@ -265,12 +280,18 @@ final class ProgressSummaryTests: XCTestCase {
     }
 
     func testSentenceWithoutAKnownDay() {
-        // Met on Monday, then tapped on the widget: the day can't be told, the word still counts.
+        // Met on Monday, then tapped on the widget. An earlier build's word: the day can't be
+        // told, the word still counts.
         let p = Leitner.markExposure(word(1, [(.good, date(26))]), at: date(26, 18))
-        let s = summary([1: p], now: date(28, 12))
+        let s = summary([1: legacy(p)], now: date(28, 12))
         XCTAssertEqual(s.thisWeek.studyDays, 0)
         XCTAssertEqual(s.note.text, "Bu hafta 1 yeni kelimeyle tanıştın.")
         assertNoZero(s.note.text)
+
+        // The answer time on record keeps the day.
+        let exact = summary([1: p], now: date(28, 12))
+        XCTAssertEqual(exact.thisWeek.studyDays, 1)
+        XCTAssertEqual(exact.note.text, "Bu hafta 1 gün çalıştın. 1 yeni kelimeyle tanıştın.")
     }
 
     func testQuietWeekNeverSaysZero() {
