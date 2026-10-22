@@ -661,11 +661,9 @@ enum WidgetGloss {
         return trimmed.isEmpty ? gloss : trimmed
     }
 
-    /// The card's short form (`l1.tr.gloss_short`). The content change that adds it (branch
-    /// is3-icerik) names it `WidgetWord.glossShortTR`; once both are merged, return
-    /// `word.glossShortTR` here.
+    /// The card's short form (`l1.tr.gloss_short`, `WidgetWord.glossShortTR`).
     static func short(of word: WidgetWord) -> String? {
-        return nil
+        return word.glossShortTR
     }
 }
 

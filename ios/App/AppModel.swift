@@ -126,9 +126,11 @@ final class AppModel: ObservableObject {
 
     /// Called when the scene goes to the background: one last plan write and reload.
     func sceneDidEnterBackground() {
+        LocalMetricsRecorder.shared.appDidEnterBackground()
         if !hasStarted {
             return
         }
+        LocalMetricsRecorder.shared.recordBoxes(progress)
         refreshWidgetPlan()
         Task {
             await self.refreshHealth()
@@ -138,6 +140,8 @@ final class AppModel: ObservableObject {
     /// Called when the scene becomes active again: taps made on the widget while the app was
     /// away reach the progress now (no plan rewrite; that happens when the app goes to the background).
     func sceneDidBecomeActive() {
+        // Counted from the first launch on, before the content is ready.
+        LocalMetricsRecorder.shared.appDidBecomeActive()
         if !hasStarted {
             return
         }
@@ -181,6 +185,8 @@ final class AppModel: ObservableObject {
         deckChoice = choice
         AppPreferences.selectedTopicIDs = choice.topicIDs
         AppPreferences.startLevel = choice.startLevel
+        // A goal the user never chose follows the level (`SettingsRules`): A1–A2 5, B1 10.
+        dailyNewWords = AppPreferences.dailyNewWords
         rebuildFeed()
         refreshWidgetPlan()
     }
@@ -309,7 +315,9 @@ final class AppModel: ObservableObject {
             days: 7,
             dailyNewGoal: dailyNewWords,
             newStudiedToday: AppPreferences.newWordsStudiedToday(now: now),
-            calendar: .current
+            calendar: .current,
+            recent: ReminderLog.recentlySent(now: now),
+            detail: { self.detail(for: $0) }
         )
     }
 
@@ -408,7 +416,13 @@ final class AppModel: ObservableObject {
         let allowance = extraNew
             ? dailyNewWords
             : max(0, dailyNewWords - AppPreferences.newWordsStudiedToday(now: now))
-        let fresh = ReviewPlanner.introWords(feed: newWordFeed, all: words, progress: progress, limit: allowance)
+        let fresh = ReviewPlanner.introWords(
+            feed: newWordFeed,
+            all: words,
+            progress: progress,
+            limit: allowance,
+            confusables: confusables
+        )
         if fresh.isEmpty {
             return nil
         }
@@ -422,14 +436,28 @@ final class AppModel: ObservableObject {
     /// Records one answer and saves the progress right away. Returns the word's new progress (the
     /// round summary shows when it comes back). A new word counts for today's goal only when it
     /// was recalled: a "Hatırla" missed twice (`again`) leaves room for another new word.
+    ///
+    /// The local metrics (`LocalMetricsRecorder`) get the answer too: `firstTryCorrect` is the
+    /// first pick of a question with options (nil: `grade != .again`), `seconds` the time from
+    /// the question to the answer.
     @discardableResult
-    func recordReview(_ word: WidgetWord, grade: ReviewGrade) -> WordProgress {
+    func recordReview(
+        _ word: WidgetWord,
+        grade: ReviewGrade,
+        firstTryCorrect: Bool? = nil,
+        seconds: TimeInterval? = nil
+    ) -> WordProgress {
         let now = Date()
         let current = progress[word.id] ?? WordProgress(wordID: word.id)
         let wasNew = current.state == .new
         let updated = Leitner.review(current, grade: grade, at: now)
         progress[word.id] = updated
         persistProgress(progress)
+        let metrics = LocalMetricsRecorder.shared
+        metrics.recordAnswer(isNew: wasNew, firstTryCorrect: firstTryCorrect ?? (grade != .again), seconds: seconds, at: now)
+        if current.awaitsKnownCheck {
+            metrics.recordKnownCheck(passed: grade != .again, at: now)
+        }
         if wasNew {
             if grade != .again {
                 AppPreferences.addNewWordsStudied(1, now: now)
@@ -444,8 +472,8 @@ final class AppModel: ObservableObject {
     /// is `good`, "Bulamadım" `again`. A failed check sends the word back to "Tanış"
     /// (`WordProgress.returnsToIntro` on the result).
     @discardableResult
-    func recordRecall(_ word: WidgetWord, found: Bool) -> WordProgress {
-        return recordReview(word, grade: found ? .good : .again)
+    func recordRecall(_ word: WidgetWord, found: Bool, seconds: TimeInterval? = nil) -> WordProgress {
+        return recordReview(word, grade: found ? .good : .again, seconds: seconds)
     }
 
     /// How a due word is asked (`ReviewPlanner.questionKind`): its fill-in-the-blank question in
@@ -467,8 +495,33 @@ final class AppModel: ObservableObject {
             attempt: attempt,
             writtenDistractors: detail(for: word)?.quiz?.distractors ?? [],
             candidates: words,
-            topicsOf: topicsOf
+            topicsOf: topicsOf,
+            excludedIDs: unsettledConfusables(of: word)
         )
+    }
+
+    /// Confusable words by word id (`WidgetWord.confusableIDs`, both directions in the content):
+    /// "Tanış" never puts two of them in one round.
+    private var confusables: [Int: Set<Int>] {
+        var result: [Int: Set<Int>] = [:]
+        for word in words {
+            if let ids = word.confusableIDs, !ids.isEmpty {
+                result[word.id] = Set(ids)
+            }
+        }
+        return result
+    }
+
+    /// The confusable partners of `word` the user has not settled yet (new, or still in box 1):
+    /// they are kept out of its "Hatırla" options, where the pair would only teach the mix-up.
+    private func unsettledConfusables(of word: WidgetWord) -> Set<Int> {
+        let partners = word.confusableIDs ?? []
+        return Set(partners.filter { id in
+            guard let p = progress[id] else {
+                return true
+            }
+            return p.state == .new || p.box < 2
+        })
     }
 
     /// Whether the user already met `word` on the widget: a widget tap on it, or it is on the
@@ -510,8 +563,10 @@ final class AppModel: ObservableObject {
         return AppPreferences.reviewsDoneToday(now: now)
     }
 
-    /// A flashcard round ended (or was ended early): the queue changes with the new progress.
-    func finishReviewSession() {
+    /// A flashcard round ended (`endedEarly`: by "Bitir" before its last card): the queue changes
+    /// with the new progress, and the round's length goes to the local metrics.
+    func finishReviewSession(endedEarly: Bool = false) {
+        LocalMetricsRecorder.shared.finishRound(endedEarly: endedEarly)
         refreshWidgetPlan()
     }
 
@@ -616,6 +671,8 @@ final class AppModel: ObservableObject {
         AppPreferences.clearKnownWordIDs()
         AppPreferences.resetNewWordsStudied()
         AppPreferences.resetReviewsDone()
+        LocalMetricsRecorder.shared.reset()
+        FeedEncounterStore.clearAll()
         refreshWidgetPlan()
     }
 

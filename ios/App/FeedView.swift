@@ -186,8 +186,10 @@ struct FeedView: View {
     /// Marks the word known, then shows "Tamam" with "Geri al" for 5 seconds and tells VoiceOver
     /// what happened (audit V7): the button stays where it was, now selected.
     private func markKnown(_ word: WidgetWord) {
+        // "Geri al" restores the word exactly as long as the notice stays.
+        let isAssisted = UIAccessibility.isVoiceOverRunning || UIAccessibility.isSwitchControlRunning
         withAnimation(changeAnimation) {
-            model.markKnown(word)
+            model.markKnown(word, undoWindow: isAssisted ? 10 : KnownUndo.window)
         }
         guard model.learningState(of: word) == .known else {
             // Not saved: nothing changed on screen either.
@@ -323,12 +325,14 @@ private struct FeedKnownNotice {
 /// (`reviews`, `exposures`). The feed is not in `WordProgress`, so the first day each card was on
 /// screen is kept here: UserDefaults `lockglow.feedFirstSeen`, word id → the start of that day
 /// (seconds since 1970). A card first seen today stays a first encounter all day, so it never
-/// changes while the user looks at it. Not cleared by "İlerlemeyi sıfırla".
+/// changes while the user looks at it. "İlerlemeyi sıfırla" clears it (`clearAll`).
 final class FeedEncounterStore: ObservableObject {
     static let defaultsKey = "lockglow.feedFirstSeen"
+    private static let clearedNotification = Notification.Name("lockglow.feedFirstSeen.cleared")
 
     private let defaults: UserDefaults
     private var firstSeen: [Int: Date]
+    private var clearObserver: NSObjectProtocol?
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -340,6 +344,26 @@ final class FeedEncounterStore: ObservableObject {
             }
         }
         firstSeen = days
+        clearObserver = NotificationCenter.default.addObserver(
+            forName: FeedEncounterStore.clearedNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.objectWillChange.send()
+            self?.firstSeen = [:]
+        }
+    }
+
+    deinit {
+        if let observer = clearObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+    }
+
+    /// "İlerlemeyi sıfırla": every card is a first encounter again, also in a feed on screen.
+    static func clearAll(defaults: UserDefaults = .standard) {
+        defaults.removeObject(forKey: defaultsKey)
+        NotificationCenter.default.post(name: clearedNotification, object: nil)
     }
 
     /// The card is on screen at `now`; only its first day is kept.

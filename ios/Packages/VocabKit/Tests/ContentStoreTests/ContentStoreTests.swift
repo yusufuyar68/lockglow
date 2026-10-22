@@ -165,6 +165,22 @@ final class ContentStoreTests: XCTestCase {
         let noShort = try XCTUnwrap(cards.first(where: { $0.id == 2 }))
         XCTAssertEqual(noShort.glossTR, "direncli")
         XCTAssertNil(noShort.glossShortTR)
+        XCTAssertNil(noShort.confusableIDs)
+    }
+
+    func testConfusablePartnersAreRead() throws {
+        let writer = try DatabaseQueue(path: databasePath)
+        try writer.write { db in
+            // Both directions, as the pipeline writes them.
+            try db.execute(sql: """
+                INSERT INTO card_confusable (card_rowid, other_rowid) VALUES (1, 5), (5, 1), (1, 2), (2, 1);
+                """)
+        }
+        let store = try ContentStore(path: databasePath)
+        let cards = try store.freeCards(maxLevelRank: 7, limit: 10)
+        XCTAssertEqual(cards.first(where: { $0.id == 1 })?.confusableIDs, [2, 5])
+        XCTAssertEqual(cards.first(where: { $0.id == 5 })?.confusableIDs, [1])
+        XCTAssertEqual(try store.search("resilient", limit: 10).first?.confusableIDs, [1])
     }
 
     func testSearchUsesFoldedPrefixMatch() throws {
@@ -248,6 +264,11 @@ final class ContentStoreTests: XCTestCase {
                   card_rowid INTEGER NOT NULL REFERENCES card(rowid), lang TEXT NOT NULL,
                   gloss TEXT NOT NULL, gloss_short TEXT, equivalence TEXT NOT NULL, example_tr TEXT,
                   PRIMARY KEY (card_rowid, lang)
+                );
+                CREATE TABLE card_confusable (
+                  card_rowid INTEGER NOT NULL REFERENCES card(rowid),
+                  other_rowid INTEGER NOT NULL REFERENCES card(rowid),
+                  PRIMARY KEY (card_rowid, other_rowid)
                 );
                 CREATE TABLE card_category (
                   card_rowid INTEGER NOT NULL REFERENCES card(rowid),

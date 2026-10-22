@@ -51,6 +51,7 @@ enum ReminderScheduler {
         center.removePendingNotificationRequests(withIdentifiers: ours)
         guard !reminders.isEmpty, await isAuthorized() else {
             ReminderLog.replaceScheduled(with: [])
+            LocalMetricsRecorder.shared.recordReminderPlan([])
             return
         }
         let calendar = Calendar.current
@@ -78,6 +79,7 @@ enum ReminderScheduler {
             }
         }
         ReminderLog.replaceScheduled(with: scheduled)
+        LocalMetricsRecorder.shared.recordReminderPlan(scheduled.map(\.fireDate))
     }
 }
 
@@ -99,6 +101,7 @@ final class NotificationRouter: NSObject, ObservableObject, UNUserNotificationCe
     ) {
         let request = response.notification.request
         if request.identifier.hasPrefix(ReminderScheduler.identifierPrefix) {
+            LocalMetricsRecorder.shared.recordReminderOpened(deliveredAt: response.notification.date)
             let wordID = request.content.userInfo[ReminderScheduler.wordIDKey] as? Int
             Task { @MainActor in
                 NotificationRouter.shared.requestedWordID = wordID

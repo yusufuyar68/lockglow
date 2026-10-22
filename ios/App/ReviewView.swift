@@ -48,6 +48,10 @@ struct ReviewView: View {
     @State private var summary: [RoundAnswer]?
     /// Counts "Bulamadım / Buldum" answers: one light tick each, nothing else.
     @State private var answerTick = 0
+    /// When the card on screen came (the answer time in the local metrics).
+    @State private var cardShownAt = Date()
+    /// Taps on each new word's cards in this round, until its "Hatırla" is decided (local metrics).
+    @State private var newWordTaps: [Int: Int] = [:]
     /// The word this tab took out with "Bunu zaten biliyorum"; its "Geri al" shows while
     /// `AppModel.knownUndo` still holds it.
     @State private var skippedWordID: Int?
@@ -775,6 +779,9 @@ struct ReviewView: View {
         guard picked == nil else {
             return
         }
+        if let running = session, let word = currentCard(in: running)?.word {
+            noteNewWordTap(word)
+        }
         let isRight = option == question.answer
         withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
             picked = option
@@ -979,6 +986,7 @@ struct ReviewView: View {
     /// Turns a "Tanış" card: a short fade (none with Reduce Motion), no flip and no haptic.
     /// VoiceOver goes to the Turkish meaning.
     private func reveal(_ word: WidgetWord) {
+        noteNewWordTap(word)
         cardHasMore = false
         withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
             isRevealed = true
@@ -1006,13 +1014,13 @@ struct ReviewView: View {
     /// A due word answered (quiz or recall): saved at once, then the next card.
     private func answerDue(word: WidgetWord, grade: ReviewGrade, label: AnswerLabel) {
         let wasNew = (model.progress[word.id]?.state ?? .new) == .new
-        let updated = model.recordReview(word, grade: grade)
+        let updated = model.recordReview(word, grade: grade, seconds: secondsOnCard)
         answers.append(RoundAnswer(word: word, grade: grade, dueAt: updated.dueAt, wasNew: wasNew, label: label))
         nextDueCard()
     }
 
     private func answerRecall(word: WidgetWord, found: Bool) {
-        let updated = model.recordRecall(word, found: found)
+        let updated = model.recordRecall(word, found: found, seconds: secondsOnCard)
         var answer = RoundAnswer(
             word: word,
             grade: found ? .good : .again,
@@ -1040,6 +1048,9 @@ struct ReviewView: View {
 
     /// "Sonraki" on a "Tanış" card.
     private func nextMeet() {
+        if let running = session, let word = currentCard(in: running)?.word {
+            noteNewWordTap(word)
+        }
         intro?.next()
         afterIntroStep()
     }
@@ -1085,14 +1096,22 @@ struct ReviewView: View {
     /// "Devam" on a "Hatırla" question (or an answer on its recall fallback). A decided word is
     /// saved at once; a first wrong answer comes back a few cards later.
     private func continueIntro(word: WidgetWord, right: Bool) {
+        noteNewWordTap(word)
         if let result = intro?.answer(right: right) {
-            recordIntro(result, word: word)
+            recordIntro(result, word: word, seconds: secondsOnCard)
+            LocalMetricsRecorder.shared.recordNewWord(taps: newWordTaps[word.id] ?? 0)
+            newWordTaps[word.id] = nil
         }
         afterIntroStep()
     }
 
-    private func recordIntro(_ result: IntroRound.Result, word: WidgetWord) {
-        let updated = model.recordReview(word, grade: result.grade)
+    private func recordIntro(_ result: IntroRound.Result, word: WidgetWord, seconds: TimeInterval? = nil) {
+        let updated = model.recordReview(
+            word,
+            grade: result.grade,
+            firstTryCorrect: result == .firstTry,
+            seconds: seconds
+        )
         answers.append(RoundAnswer(
             word: word,
             grade: result.grade,
@@ -1117,6 +1136,7 @@ struct ReviewView: View {
         guard let session = session, let card = currentCard(in: session) else {
             return
         }
+        cardShownAt = Date()
         switch card {
         case .meet:
             moveFocus(to: .word)
@@ -1136,8 +1156,24 @@ struct ReviewView: View {
         resetCard()
         answers = []
         summary = nil
+        newWordTaps = [:]
+        LocalMetricsRecorder.shared.startRound()
         // "Başla" is gone with the start screen.
         focusCurrentCard()
+    }
+
+    /// Seconds since the card on screen came.
+    private var secondsOnCard: TimeInterval {
+        return Date().timeIntervalSince(cardShownAt)
+    }
+
+    /// One tap on a new word's card ("Anlamını göster", "Sonraki", an option, "Devam"); the
+    /// local metrics keep the taps it took to learn each new word (ogrenme_ilkeleri 2.13).
+    private func noteNewWordTap(_ word: WidgetWord) {
+        guard session?.kind == .new else {
+            return
+        }
+        newWordTaps[word.id, default: 0] += 1
     }
 
     /// Ends the round (all cards done, or "Bitir"): every answer is already saved; a "Hatırla"
@@ -1145,11 +1181,21 @@ struct ReviewView: View {
     /// as missed. The widget queue is rebuilt from the new progress, and the summary follows when
     /// anything was answered.
     private func finishRound() {
+        // "Bitir" before the last card: a due word left unanswered, or a new word not decided.
+        let endedEarly: Bool
+        switch session?.kind {
+        case .new?:
+            endedEarly = !(intro?.isFinished ?? true)
+        case .due?:
+            endedEarly = answers.count < (session?.words.count ?? 0)
+        case nil:
+            endedEarly = false
+        }
         if let running = session, running.kind == .new {
             if let pick = picked, let card = currentCard(in: running), case let .choice(word, attempt, direction) = card,
                let question = model.introQuestion(for: word, direction: direction, attempt: attempt) {
                 if let result = intro?.answer(right: pick == question.answer) {
-                    recordIntro(result, word: word)
+                    recordIntro(result, word: word, seconds: secondsOnCard)
                 }
             }
             for id in intro?.awaitingRetry ?? [] {
@@ -1164,7 +1210,8 @@ struct ReviewView: View {
         index = 0
         resetCard()
         answers = []
-        model.finishReviewSession()
+        newWordTaps = [:]
+        model.finishReviewSession(endedEarly: endedEarly)
         // "Bitir" is gone with the round: the summary, or the start screen when nothing was
         // answered.
         moveFocus(to: summary != nil ? .summary : .start)

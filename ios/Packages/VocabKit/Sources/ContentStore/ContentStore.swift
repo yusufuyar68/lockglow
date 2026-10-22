@@ -107,8 +107,8 @@ public final class ContentStore {
     }
 
     /// Prefix search over `card_fts` (lemma and Turkish gloss). The query goes through
-    /// `TextFold.fold` like the indexed text. Sensitive cards are never returned; locked
-    /// (non-free) cards are, so the UI can show them as locked.
+    /// `TextFold.fold` like the indexed text. Offensive cards (sensitivity 2) are never returned;
+    /// personal-topic cards and locked (non-free) cards are, so the UI can show them as locked.
     public func search(_ query: String, limit: Int) throws -> [WidgetWord] {
         guard let match = ContentStore.ftsMatchExpression(for: query) else {
             return []
@@ -153,7 +153,9 @@ public final class ContentStore {
 private let selectColumns = """
     c.rowid AS id, c.lemma AS lemma, c.pos AS pos, c.level AS level, c.ipa_us AS ipa_us, \
     c.def_micro AS def_micro, c.def_short AS def_short, c.example_en AS example_en, \
-    l.gloss AS gloss_tr, l.gloss_short AS gloss_short_tr, c.sensitivity AS sensitivity
+    l.gloss AS gloss_tr, l.gloss_short AS gloss_short_tr, c.sensitivity AS sensitivity, \
+    (SELECT group_concat(cf.other_rowid) FROM card_confusable AS cf WHERE cf.card_rowid = c.rowid) \
+    AS confusable_ids
     """
 
 private let fromClause = """
@@ -178,6 +180,11 @@ private func makeWord(from row: Row) -> WidgetWord {
     let glossTR: String? = row["gloss_tr"]
     let glossShortTR: String? = row["gloss_short_tr"]
     let sensitivity: Int = row["sensitivity"]
+    // "12,45": the cards often mixed up with this one (`card_confusable`, both directions).
+    let confusableList: String? = row["confusable_ids"]
+    let confusableIDs = confusableList.map { list in
+        list.split(separator: ",").compactMap { Int($0) }.sorted()
+    }
     return WidgetWord(
         id: id,
         lemma: lemma,
@@ -189,6 +196,7 @@ private func makeWord(from row: Row) -> WidgetWord {
         exampleEN: exampleEN,
         glossTR: glossTR,
         glossShortTR: glossShortTR,
-        sensitivity: sensitivity
+        sensitivity: sensitivity,
+        confusableIDs: confusableIDs
     )
 }
