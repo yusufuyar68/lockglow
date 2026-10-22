@@ -28,8 +28,8 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - `Packages/VocabKit` modülleri: CoreModels, TextFold, SharedState, Scheduler, ContentStore (GRDB), Learning.
   - Tanımlayıcılar: bundle `com.yusufuyar.vocabwidget` ve `.widgets`; App Group `group.com.yusufuyar.vocabwidget`; URL şeması `vocabwidget://`.
 - **İçerik hattı:** `content-pipeline/` (Python `vocabpipe`): şema, doğrulayıcı, derleyici.
-- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s13`, toplam 933 taslak kart.
-  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.21-kisisel-5`) ve `ios/Widgets/Resources/seed_words.json`.
+- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s16`, toplam 1.068 taslak kart.
+  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.22-kisisel-6`) ve `ios/Widgets/Resources/seed_words.json`.
   - Kart numaraları `content-pipeline/data/id_registry.json` içinde kalıcı. Uygulamadaki ilerleme bunlara bağlı, **elle düzenleme**.
 
 ## Durum
@@ -43,7 +43,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - **Açılış akışı:** ilk açılışta seviye, konu, widget kurma rehberi, ilk kelime (mevcut kullanıcıya gösterilmez).
   - Widget'lar: küçük, orta, kilit ekranı. "Sonraki", "Biliyorum" ve **hoparlör** (AudioPlaybackIntent, uygulama açılmadan okur).
   - İlerleme dosyasının günlük yedeği alınıyor; gizlilik manifestinde UserDefaults (CA92.1) ve FileTimestamp (C617.1).
-- **İçerik:** 933 kart (`2026.10.21-kisisel-5`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat.
+- **İçerik:** 933 kart (`2026.10.22-kisisel-6`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat.
 - **Testler:** her push'ta ücretsiz Linux Swift işi (`build.yml` → `swift-linux`, `linux_check.sh` Docker'da) ve 72 Python testi + `--strict` doğrulama. macOS işi elle: ~170 paket testi + uygulama/widget derlemesi.
 - **Apple:** App Group (`group.com.yusufuyar.vocabwidget`) iki App ID'ye **atandı** (2026-10-20, Developer portalı). App Store Connect API anahtarı (`ZLU4D5GWLX`, Admin) GitHub'da.
 - **TestFlight:** çalışıyor. Build 18 (20 Ekim) ve **build 22** (21 Ekim: 933 kart, Zor/Kolay, widget sesi) yüklendi. İmza her çalıştırmada geçici sertifika + profillerle (`docs/testflight_kurulum.md` → 2b).

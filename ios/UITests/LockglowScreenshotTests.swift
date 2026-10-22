@@ -179,6 +179,27 @@ final class LockglowScreenshotTests: XCTestCase {
         attachScreenshot(of: app, named: "8b-soyle-sayfasi")
     }
 
+    /// Ayarlar > Yardım > "Nasıl öğrenirim?" (the learning guide).
+    func testCaptureLearningGuide() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
+        app.launch()
+
+        XCTAssertTrue(app.tabBars.buttons["Ayarlar"].waitForExistence(timeout: 30), "no tabs")
+        app.tabBars.buttons["Ayarlar"].tap()
+        let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Nasıl öğrenirim")).firstMatch
+        for _ in 0..<4 where !(row.exists && row.isHittable) {
+            app.swipeUp()
+        }
+        XCTAssertTrue(row.waitForExistence(timeout: 5), "no learning guide row in Ayarlar")
+        row.tap()
+        sleep(1)
+        attachScreenshot(of: app, named: "12-nasil-ogrenirim")
+        app.swipeUp()
+        sleep(1)
+        attachScreenshot(of: app, named: "12b-nasil-ogrenirim-devam")
+    }
+
     /// "Atla" on the first page closes the onboarding without a level.
     func testSkipOnboarding() throws {
         let app = XCUIApplication()

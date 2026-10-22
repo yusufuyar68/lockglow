@@ -411,6 +411,13 @@ struct SettingsView: View {
             SettingsSectionHeader("Yardım")
             SettingsGroup {
                 NavigationLink {
+                    LearningGuideView(dailyNewWords: model.dailyNewWords, rotationMinutes: model.rotationMinutes)
+                } label: {
+                    SettingsRow("Nasıl öğrenirim?")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                NavigationLink {
                     WidgetGuideScreen()
                 } label: {
                     SettingsRow("Widget nasıl eklenir?")
