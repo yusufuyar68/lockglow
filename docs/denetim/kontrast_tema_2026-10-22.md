@@ -1,5 +1,7 @@
 # Tema kontrastı: K1 düzeltmesi, yazı tonları, gece 1. adım (22 Ekim 2026)
 
+> **Sonradan değişti (`is4-tema`):** Gece ana düğmesi artık **C** (mürekkep %12 dolgu, kalın mürekkep yazı, 2 pt tam mürekkep kenar; YK ya da Düğme Şekilleri açıkken 3 pt). Aşağıda ana düğmeyi anlatan satırlar (bölüm 1, 2'nin son satırı, 4, 5) bu dalın uyguladığı **A**'yı (tonal sarı) anlatıyor. Güncel ölçüm: [`kontrast_gece_c_2026-10-22.md`](kontrast_gece_c_2026-10-22.md). Tekrar'daki cevap düğmelerinde artık dolu varsayılan düğme yok (`is3-tekrar`); 5. bölümdeki `isDefault` notu geçersiz.
+
 **Ne:** Ortak tasarım sisteminin renk değerleri ve iç çizimi değişti. Adlar ve imzalar (API) aynı.
 - Dal: `is3-tema`.
 - Dosyalar: `ios/Shared/LockglowTheme.swift`, `ios/App/GlowStyle.swift`.
@@ -92,6 +94,8 @@ Kenar pikseli = düğmenin dolgusu + üstündeki kenar rengi. Komşu = düğmeni
 - Bütün yazı çiftleri (raporun 50 çiftinden yazı olanlar) dört görünümde eşiğin üstünde kaldı.
 
 ## 4. Gece: daha az ışık (gece_oled.md 1. adım)
+
+> Ana düğme satırları A içindir. C'nin değerleri (yazı / dolgu 15,22, kenar / sayfa 19,01, ikincil kenardan 4,08): [`kontrast_gece_c_2026-10-22.md`](kontrast_gece_c_2026-10-22.md).
 
 | Öğe | Eski | Yeni |
 |---|---|---|
