@@ -1049,7 +1049,10 @@ struct ReviewView: View {
         model.markKnown(word, undoWindow: window)
         skippedWordID = word.id
         intro?.skipCurrent()
-        ReviewView.announce([(KnownUndo.message, false)])
+        // Only when "Geri al" is there (a word known already, e.g. by a widget tap, has none).
+        if model.knownUndo?.word.id == word.id {
+            ReviewView.announce([(KnownUndo.message, false)])
+        }
         afterIntroStep()
     }
 
@@ -1173,7 +1176,7 @@ struct ReviewView: View {
     private func summaryScreen(_ answers: [RoundAnswer]) -> some View {
         let now = Date()
         let next = model.nextReviewDate(after: now)
-        let hasHard = answers.contains { $0.label.title == "Zor" }
+        let hasHard = answers.contains { $0.grade == .hard }
         let another = model.nextReviewSession()
         return ScrollView {
             VStack(alignment: .leading, spacing: 14) {
@@ -1705,8 +1708,9 @@ private struct AnswerLabel {
             title = "Bildim"
             symbol = "checkmark"
         case .secondTry:
-            title = "İkinci denemede"
-            symbol = "arrow.uturn.forward"
+            // Right after a wrong answer: "Zor" (2.3), back in 12 hours.
+            title = "Zor"
+            symbol = "tortoise"
         case .missed:
             title = "Bilemedim"
             symbol = "xmark"
