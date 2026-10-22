@@ -298,33 +298,34 @@ final class LockglowScreenshotTests: XCTestCase {
         attachScreenshot(of: app, named: "15a-kendi-kelime-bos")
         addFirst.tap()
 
-        let lemma = app.textFields["İngilizce kelime"]
-        XCTAssertTrue(lemma.waitForExistence(timeout: 5), "the add form did not open")
-        sleep(1)
-        lemma.tap()
+        let save = app.buttons["Kelimeyi ekle"]
+        if !save.waitForExistence(timeout: 10) {
+            print("Kendi kelime: no form after İlk kelimeni ekle:\n\(app.debugDescription)")
+            XCTFail("the add form did not open")
+            return
+        }
+        // The form focuses the word field by itself after a moment, and return moves on to the
+        // meaning and then the example: the text goes in through the keyboard focus. (The 22 Oct
+        // run found no text field labelled "İngilizce kelime"; the labels are logged here.)
+        sleep(2)
+        print("Kendi kelime form fields: \(app.textFields.allElementsBoundByIndex.map { "\($0.label) | \($0.placeholderValue ?? "")" })")
+        if !app.keyboards.firstMatch.exists {
+            app.textFields.firstMatch.tap()
+        }
         // A word that is on a card: the form says so and still lets it be added.
-        lemma.typeText("breakfast")
+        app.typeText("breakfast")
         let onCards = app.descendants(matching: .any)
             .matching(NSPredicate(format: "label BEGINSWITH %@", "Bu kelime kartlarda zaten var"))
             .firstMatch
         XCTAssertTrue(onCards.waitForExistence(timeout: 5), "no note for a word that is on the cards")
         attachScreenshot(of: app, named: "15b-kendi-kelime-kartlarda-var")
-        lemma.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: "breakfast".count))
+        app.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: "breakfast".count))
         // Not on any card; plain a-z text, so typing needs no Turkish keyboard.
-        lemma.typeText("binge-watch")
-        let meaning = app.textFields["Türkçe anlamı"]
-        XCTAssertTrue(meaning.waitForExistence(timeout: 5), "no Türkçe anlamı field")
-        meaning.tap()
-        meaning.typeText("dizi maratonu yapmak")
-        // A vertical TextField: a text view to XCUITest.
-        let exampleField = app.textViews["Örnek cümle"].exists ? app.textViews["Örnek cümle"] : app.textFields["Örnek cümle"]
-        if exampleField.exists && exampleField.isHittable {
-            exampleField.tap()
-            exampleField.typeText("We binge-watched the whole series this weekend.")
-        }
+        app.typeText("binge-watch\n")
+        app.typeText("dizi maratonu yapmak\n")
+        app.typeText("We binge-watched the whole series this weekend.")
+        sleep(1)
         attachScreenshot(of: app, named: "15c-kendi-kelime-form")
-        let save = app.buttons["Kelimeyi ekle"]
-        XCTAssertTrue(save.waitForExistence(timeout: 5), "no Kelimeyi ekle button")
         save.tap()
 
         let added = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "binge-watch")).firstMatch
@@ -353,7 +354,19 @@ final class LockglowScreenshotTests: XCTestCase {
         let field = app.searchFields.firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 5), "no search field")
         // The earlier tests opened cards found with "kahv" and "look forward": recent searches.
-        XCTAssertTrue(app.buttons["Sil: kahv"].waitForExistence(timeout: 5), "kahv is not under Son aramalar")
+        // If they did not get that far, one search is sent here (return records it) and the app
+        // starts again on an empty Sözlük.
+        let recent = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Sil: ")).firstMatch
+        if !recent.waitForExistence(timeout: 5) {
+            field.tap()
+            field.typeText("kahv\n")
+            sleep(1)
+            app.terminate()
+            app.launch()
+            XCTAssertTrue(app.tabBars.buttons["Sözlük"].waitForExistence(timeout: 30), "no tabs")
+            app.tabBars.buttons["Sözlük"].tap()
+        }
+        XCTAssertTrue(recent.waitForExistence(timeout: 5), "nothing under Son aramalar")
         sleep(1)
         attachScreenshot(of: app, named: "16a-sozluk-baslangic")
 
