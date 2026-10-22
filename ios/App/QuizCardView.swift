@@ -8,11 +8,11 @@ import CoreModels
 enum QuizOutcome: Hashable {
     /// A wrong pick.
     case wrong
-    /// A right pick that was hard ("Zordu").
+    /// A right pick that was hard ("Zor").
     case hard
     /// A right pick ("Devam").
     case right
-    /// A right pick that was easy ("Kolaydı").
+    /// A right pick that was easy ("Kolay").
     case easy
 }
 
@@ -48,8 +48,9 @@ struct QuizCardView: View {
     let mistakes: [CardDetail.Mistake]
     /// Turkish meanings of the options that are headwords of other cards (`AppModel.lookup`).
     let optionMeanings: [String: String]
-    /// When the word comes back after each outcome ("10 dakika sonra"), computed by the caller
-    /// from the schedule; an outcome without a time shows no time.
+    /// When the word comes back after each outcome ("2 gün sonra"), computed by the caller from
+    /// the schedule; an outcome without a time shows no time. A wrong answer due again within the
+    /// hour is `nextRoundTime`.
     let returnTimes: [QuizOutcome: String]
     let onContinue: (QuizOutcome) -> Void
     @State private var picked: String?
@@ -87,9 +88,13 @@ struct QuizCardView: View {
     }
 
     private static let feedbackID = "quiz.feedback"
-    /// A right pick, on screen and for VoiceOver: about the answer, not the learner (learning
-    /// principles 1 item 12, mockup `.fb .h.ok`).
-    private static let praise = "Doğru!"
+    /// A right pick, on screen and for VoiceOver: about the answer, not the learner, and no
+    /// exclamation mark (learning principles 1 item 12, text audit #1).
+    private static let praise = "Doğru."
+    /// The return time of a wrong answer that is due again within the hour: the app does not call
+    /// the learner back in ten minutes, so no time in minutes is promised (learning principles 2.3).
+    /// `ReviewView` uses the same words on its answers and in the summary.
+    static let nextRoundTime = "bir sonraki turda"
 
     var body: some View {
         Group {
@@ -299,8 +304,24 @@ struct QuizCardView: View {
         .buttonStyle(QuizOptionButtonStyle())
         // Not `.disabled`: that would dim the options exactly when the answer is shown.
         .allowsHitTesting(picked == nil)
-        // After the answer the options only show the result.
-        .accessibilityRemoveTraits(picked == nil ? [] : .isButton)
+        // One element has one voice, and a button's label merges its texts ("spoon, Doğru cevap"
+        // loses the English voice, measured on iOS 26.2). Before the answer the button with the
+        // English word alone; after it only the result, not a button: the word in an English
+        // voice, then the mark in Turkish.
+        .accessibilityRepresentation {
+            if let optionMark = optionMark {
+                Text(verbatim: option)
+                    .englishVoice()
+                Text(optionMark.text)
+            } else {
+                Button {
+                    choose(option)
+                } label: {
+                    Text(verbatim: option)
+                        .englishVoice()
+                }
+            }
+        }
     }
 
     private struct Mark {
@@ -355,7 +376,7 @@ struct QuizCardView: View {
 
     /// VoiceOver hears how it went, queued after the tap's own speech and at high priority, so
     /// the options changing under the finger do not cut it off (audit V8):
-    /// "Doğru! spoon, Türkçesi: kaşık" or "Doğrusu: spoon, Türkçesi: kaşık", the English word in
+    /// "Doğru. spoon, Türkçesi: kaşık" or "Doğrusu: spoon, Türkçesi: kaşık", the English word in
     /// an English voice. No "Yanlış": the feedback is about the answer (learning principles 2.4).
     private func announce(isRight: Bool) {
         let answer = quiz.answer
@@ -518,13 +539,15 @@ struct QuizCardView: View {
 
     // MARK: Actions
 
-    /// Right: "Devam", then "Zordu" / "Kolaydı" for a word that came back sooner or later than
-    /// it should. Wrong: when the word comes back, then "Devam".
+    /// Right: "Devam", then "Zor muydu, kolay mı?" with "Zor" / "Kolay" for a word that came back
+    /// sooner or later than it should (the names of the summary and the guide). Wrong: when the
+    /// word comes back, then "Devam". When each answer brings the word back is a value, not a
+    /// hint: hints come late and many people turn them off (audit V9).
     @ViewBuilder
     private func actions(isRight: Bool) -> some View {
         if isRight {
             // Side by side, stacked at accessibility sizes (like the options): half a phone's
-            // width would break "Kolaydı" in the middle of the word.
+            // width would break the labels in the middle of a word.
             let pairLayout = dynamicTypeSize.isAccessibilitySize
                 ? AnyLayout(VStackLayout(spacing: 8))
                 : AnyLayout(HStackLayout(spacing: 8))
@@ -533,8 +556,8 @@ struct QuizCardView: View {
                     onContinue(.right)
                 }
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
-                .accessibilityHint(hint(for: .right, fallback: ""))
-                Text("Ya da bu soru nasıl geldi?")
+                .accessibilityValue(returnValue(for: .right))
+                Text("Zor muydu, kolay mı?")
                     .font(.footnote.weight(.medium))
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.center)
@@ -543,24 +566,28 @@ struct QuizCardView: View {
                     Button {
                         onContinue(.hard)
                     } label: {
-                        gradeLabel("Zordu", symbol: "tortoise")
+                        gradeLabel("Zor", symbol: "tortoise")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
-                    .accessibilityHint(hint(for: .hard, fallback: "Kelime daha erken tekrar gelir"))
+                    .accessibilityValue(returnValue(for: .hard))
+                    .accessibilityHint(returnTimes[.hard] == nil ? "Kelime daha erken yine gelir" : "")
                     Button {
                         onContinue(.easy)
                     } label: {
-                        gradeLabel("Kolaydı", symbol: "hare")
+                        gradeLabel("Kolay", symbol: "hare")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
-                    .accessibilityHint(hint(for: .easy, fallback: "Kelime daha geç tekrar gelir"))
+                    .accessibilityValue(returnValue(for: .easy))
+                    .accessibilityHint(returnTimes[.easy] == nil ? "Kelime daha geç yine gelir" : "")
                 }
             }
         } else {
             VStack(spacing: 10) {
                 if let time = returnTimes[.wrong] {
                     Label {
-                        Text(verbatim: "Bu kelime \(time) yine gelir.")
+                        Text(verbatim: time == QuizCardView.nextRoundTime
+                             ? "Bu kelimeyi bir sonraki turda yine soracağız."
+                             : "Bu kelime \(time) yine gelir.")
                     } icon: {
                         Image(systemName: "clock")
                     }
@@ -586,12 +613,9 @@ struct QuizCardView: View {
         }
     }
 
-    /// "Kelime 2 gün sonra yeniden gelir" from the caller's times; `fallback` without one.
-    private func hint(for outcome: QuizOutcome, fallback: String) -> String {
-        guard let time = returnTimes[outcome] else {
-            return fallback
-        }
-        return "Kelime \(time) yeniden gelir"
+    /// "2 gün sonra yine gelir" from the caller's times; empty without one.
+    private func returnValue(for outcome: QuizOutcome) -> String {
+        return returnTimes[outcome].map { "\($0) yine gelir" } ?? ""
     }
 }
 
@@ -703,20 +727,28 @@ private struct QuizOptionPressBody: View {
 /// What VoiceOver reads for a feedback line ("Doğrusu: spoon = kaşık") instead of the line: one
 /// element is read in one voice, so the English word is an element of its own in an English
 /// voice (audit V3) between the Turkish parts ("Doğrusu:", "Türkçesi: kaşık"). On screen the
-/// line stays one `Text` that wraps as a sentence.
-private struct FeedbackSpeech: View {
+/// line stays one `Text` that wraps as a sentence. `ReviewView` uses it for "Hatırla" too.
+struct FeedbackSpeech: View {
     var lead: String?
     let english: String
     let meaning: String?
+    /// The meaning is an English definition (a seed word without a Turkish meaning): read as it
+    /// is, in an English voice.
+    var meaningIsEnglish = false
 
     var body: some View {
         if let lead = lead {
-            Text(lead)
+            Text(verbatim: lead)
         }
         Text(verbatim: english)
             .englishVoice()
         if let meaning = meaning {
-            Text("Türkçesi: " + meaning)
+            if meaningIsEnglish {
+                Text(verbatim: meaning)
+                    .englishVoice()
+            } else {
+                Text(verbatim: "Türkçesi: " + meaning)
+            }
         }
     }
 }
@@ -745,6 +777,8 @@ private struct QuizListenButton: View {
         }
         .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
         .accessibilityLabel(isSpeaking ? "Durdur" : "Cümleyi dinle")
+        // Voice Control: "Dinle'ye dokun" works as well as the spoken name (audit V12).
+        .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle"), Text(isSpeaking ? "Durdur" : "Cümleyi dinle")])
     }
 }
 

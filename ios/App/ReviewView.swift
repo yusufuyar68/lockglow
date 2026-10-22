@@ -26,6 +26,8 @@ struct ReviewView: View {
     var openSettings: () -> Void = {}
 
     @EnvironmentObject private var model: AppModel
+    /// "Ara verdin" is a system card: at most one per opening (`SystemCardQueue`, RootView).
+    @EnvironmentObject private var systemCards: SystemCardQueue
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -46,6 +48,8 @@ struct ReviewView: View {
     @State private var answers: [RoundAnswer] = []
     /// Answers of the round that just ended: the summary stays until "Tamam".
     @State private var summary: [RoundAnswer]?
+    /// That round ended with "Bitir" before its last card: the summary says the rest is waiting.
+    @State private var summaryEndedEarly = false
     /// Counts "Bulamadım / Buldum" answers: one light tick each, nothing else.
     @State private var answerTick = 0
     /// When the card on screen came (the answer time in the local metrics).
@@ -61,6 +65,18 @@ struct ReviewView: View {
     /// Where VoiceOver goes when the card turns, the next card comes or the round ends: the
     /// pressed button is gone by then, and the focus would be left nowhere (audit V1).
     @AccessibilityFocusState private var focus: ReviewFocus?
+    /// The tab is on screen (TabView keeps it alive in the background).
+    @State private var isOnScreen = false
+    /// The start card says "Ara verdin, sorun değil." in this opening (`updateBreakLines`).
+    @State private var showsBreakLines = false
+    /// A round started in this opening: "Ara verdin" is over until the next opening.
+    @State private var startedThisOpening = false
+    /// The one word of a "Tanış" round whose card invites to say it aloud (2.3: one card in five).
+    @State private var sayInviteWordID: Int?
+    /// The reminder question after a round (`ReminderOfferSheet`, 2.8).
+    @State private var showsReminderOffer = false
+    /// The reminder question came once: it never comes again, whatever the answer (2.8).
+    @AppStorage("lockglow.reminderOfferShown") private var reminderOfferShown = false
 
     private var isInRound: Bool {
         return session != nil
@@ -81,6 +97,30 @@ struct ReviewView: View {
         // Borderless controls are ink, never the system blue (rule 2).
         .tint(Theme.ink)
         .sensoryFeedback(.selection, trigger: answerTick)
+        .onAppear {
+            isOnScreen = true
+            updateBreakLines()
+        }
+        .onDisappear {
+            isOnScreen = false
+        }
+        .onChange(of: systemCards.isDecided) { _, isDecided in
+            if isDecided {
+                if isOnScreen {
+                    updateBreakLines()
+                }
+            } else {
+                // The opening ended (background). What is on screen stays until the next opening
+                // has decided: it claims again, or the plain card comes back.
+                startedThisOpening = false
+            }
+        }
+        .sheet(isPresented: $showsReminderOffer) {
+            ReminderOfferSheet(initialMinute: model.reminderMinuteOfDay) { minute in
+                acceptReminder(at: minute)
+            }
+            .tint(Theme.ink)
+        }
     }
 
     @ViewBuilder
@@ -365,11 +405,11 @@ struct ReviewView: View {
                 HStack(spacing: 8) {
                     metaItems(word)
                     Spacer(minLength: 8)
-                    CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                    listenAndSay(word)
                 }
                 VStack(alignment: .leading, spacing: 8) {
                     wordMeta(word, alignment: .leading)
-                    CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                    listenAndSay(word)
                 }
             }
             if let gloss = word.glossTR {
@@ -398,6 +438,14 @@ struct ReviewView: View {
                     // A card without a Turkish meaning: the definition is the answer.
                     .accessibilityFocused($focus, equals: .definition)
             }
+            if word.id == sayInviteWordID {
+                // Saying the word aloud helps when only some words are said (MacLeod and others
+                // 2010): one card in a round, the microphone optional (2.3).
+                Label("Bir kez sesli söyle. Mikrofon isteğe bağlı.", systemImage: "mic")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
             if !word.exampleEN.isEmpty {
                 exampleBlock(word: word, translation: detail?.examples.first?.tr)
             }
@@ -411,6 +459,14 @@ struct ReviewView: View {
         .padding(.horizontal, 20)
         .padding(.top, 18)
         .padding(.bottom, 20)
+    }
+
+    /// "Dinle" and the "Söyle" microphone, on every "Tanış" card (2.3).
+    private func listenAndSay(_ word: WidgetWord) -> some View {
+        HStack(spacing: 4) {
+            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+            SayButton(word: word, example: word.exampleEN)
+        }
     }
 
     /// IPA, part of speech and level on one line, or stacked when they do not fit.
@@ -682,8 +738,31 @@ struct ReviewView: View {
         .buttonStyle(PressFadeButtonStyle())
         // Not `.disabled`: that would dim the options exactly when the answer is shown.
         .allowsHitTesting(picked == nil)
-        // After the answer the options only show the result.
-        .accessibilityRemoveTraits(picked == nil ? [] : .isButton)
+        // As in the quiz (`QuizCardView.optionButton`): a button's label merges its texts and an
+        // English option would lose its voice next to the Turkish mark. Before the answer the
+        // button with the option alone; after it only the result, not a button.
+        .accessibilityRepresentation {
+            if let mark = mark {
+                if isEnglish {
+                    Text(verbatim: option)
+                        .englishVoice()
+                } else {
+                    Text(verbatim: option)
+                }
+                Text(mark.text)
+            } else {
+                Button {
+                    choose(option, question: question)
+                } label: {
+                    if isEnglish {
+                        Text(verbatim: option)
+                            .englishVoice()
+                    } else {
+                        Text(verbatim: option)
+                    }
+                }
+            }
+        }
     }
 
     private struct ChoiceMark {
@@ -726,7 +805,8 @@ struct ReviewView: View {
 
     /// About the task, never the person (rule 12): "borrow = ödünç almak"; after a wrong pick
     /// "Doğrusu: …" and what the picked option means, then when the word comes back. After the
-    /// second wrong pick the card's example closes the word's round.
+    /// second wrong pick the card's example closes the word's round. VoiceOver reads each line in
+    /// parts, the English word in an English voice (`FeedbackSpeech`; one element has one voice).
     private func choiceFeedback(
         word: WidgetWord,
         question: ChoiceQuestion,
@@ -737,23 +817,18 @@ struct ReviewView: View {
         let isRight = picked == question.answer
         let headword: Text = Text(verbatim: word.lemma).bold()
         let meaning = word.glossTR ?? word.defShort
+        let lead = isRight ? "Doğru:" : "Doğrusu:"
         return VStack(alignment: .leading, spacing: 10) {
-            if isRight {
-                Text("Doğru: \(headword) = \(meaning)")
-                    .font(.body)
-                    .foregroundStyle(Theme.ink)
-                    .fixedSize(horizontal: false, vertical: true)
-            } else {
-                Text("Doğrusu: \(headword) = \(meaning)")
-                    .font(.body)
-                    .foregroundStyle(Theme.ink)
-                    .fixedSize(horizontal: false, vertical: true)
-                if let line = ReviewView.pickedLine(picked, question: question) {
-                    Text(verbatim: line)
-                        .font(.subheadline)
-                        .foregroundStyle(Theme.ink2)
-                        .fixedSize(horizontal: false, vertical: true)
+            Text("\(lead) \(headword) = \(meaning)")
+                .font(.body)
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityRepresentation {
+                    // A seed word without a Turkish meaning: its English definition, in English.
+                    FeedbackSpeech(lead: lead, english: word.lemma, meaning: meaning, meaningIsEnglish: word.glossTR == nil)
                 }
+            if !isRight {
+                pickedFeedback(picked, question: question)
                 Label(ReviewView.retryNote(attempt: attempt), systemImage: "arrow.uturn.forward")
                 .font(.subheadline.weight(.medium))
                 .foregroundStyle(Theme.ink)
@@ -776,15 +851,24 @@ struct ReviewView: View {
     }
 
     /// "Senin seçtiğin: lend = ödünç vermek" (English option) or "Senin seçtiğin: ödünç vermek =
-    /// lend" (Turkish option); only the option when no card has it.
-    private static func pickedLine(_ picked: String, question: ChoiceQuestion) -> String? {
-        guard picked != question.answer else {
-            return nil
-        }
-        if let other = question.counterparts[picked] {
-            return "Senin seçtiğin: \(picked) = \(other)"
-        }
-        return "Senin seçtiğin: \(picked)"
+    /// lend" (Turkish option); only the option when no card has it. VoiceOver: the Turkish part,
+    /// then the English word in an English voice.
+    private func pickedFeedback(_ picked: String, question: ChoiceQuestion) -> some View {
+        let other = question.counterparts[picked]
+        let isEnglishOption = question.direction == .pickEnglish
+        return Text(verbatim: "Senin seçtiğin: " + (other.map { "\(picked) = \($0)" } ?? picked))
+            .font(.subheadline)
+            .foregroundStyle(Theme.ink2)
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityRepresentation {
+                if isEnglishOption {
+                    FeedbackSpeech(lead: "Senin seçtiğin:", english: picked, meaning: other)
+                } else if let english = other {
+                    FeedbackSpeech(lead: "Senin seçtiğin: \(picked). İngilizcesi:", english: english, meaning: nil)
+                } else {
+                    Text(verbatim: "Senin seçtiğin: " + picked)
+                }
+            }
     }
 
     private func choose(_ option: String, question: ChoiceQuestion) {
@@ -937,7 +1021,7 @@ struct ReviewView: View {
         .buttonStyle(GradeButtonStyle())
         .accessibilityLabel(info.title)
         // A value, not a hint: hints come late and many people turn them off (audit V9).
-        .accessibilityValue(when.map { "\($0) yeniden gelir" } ?? "")
+        .accessibilityValue(when.map { $0 == ReviewView.backToIntroText ? $0 : "\($0) yine gelir" } ?? "")
     }
 
     /// When the word comes back after "Bulamadım" and "Buldum". A word waiting for its
@@ -946,7 +1030,7 @@ struct ReviewView: View {
         let now = Date()
         let awaitsCheck = model.progress[word.id]?.awaitsKnownCheck ?? false
         let notFound = awaitsCheck
-            ? "yeniden tanışacaksın"
+            ? ReviewView.backToIntroText
             : model.dueDate(ifAnswering: .again, for: word, now: now).map { ReviewView.againText(until: $0, from: now) }
         let found = model.dueDate(ifAnswering: .good, for: word, now: now).map { ReviewView.returnText(until: $0, from: now) }
         return (notFound, found)
@@ -1167,6 +1251,9 @@ struct ReviewView: View {
         intro = next.kind == .new
             ? IntroRound(wordIDs: next.words.map { $0.id }, seed: Int(Date().timeIntervalSince1970))
             : nil
+        sayInviteWordID = next.kind == .new ? next.words.randomElement()?.id : nil
+        startedThisOpening = true
+        showsBreakLines = false
         resetCard()
         answers = []
         summary = nil
@@ -1219,6 +1306,7 @@ struct ReviewView: View {
             }
         }
         summary = answers.isEmpty ? nil : answers
+        summaryEndedEarly = endedEarly
         session = nil
         intro = nil
         index = 0
@@ -1249,6 +1337,13 @@ struct ReviewView: View {
                         .foregroundStyle(Theme.ink)
                         .fixedSize(horizontal: false, vertical: true)
                         .accessibilityFocused($focus, equals: .summary)
+                    // "Bitir" before the end: nothing is lost, the rest waits here (2.3).
+                    if summaryEndedEarly && another != nil {
+                        Text("Kalanlar burada seni bekliyor.")
+                            .font(.body)
+                            .foregroundStyle(Theme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                     if let again = ReviewView.againLine(answers) {
                         Text(verbatim: again)
                             .font(.body)
@@ -1307,15 +1402,16 @@ struct ReviewView: View {
                     Button {
                         startRound(another)
                     } label: {
-                        Text(another.kind == .new
-                             ? "Bir tur daha (\(another.words.count) kelime)"
-                             : "Bir tur daha (\(another.words.count) kart)")
+                        // "kelime", never "kart": a card is not a unit to count (text audit, terms 4).
+                        Text("Bir tur daha (\(another.words.count) kelime)")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 54, tonal: true))
                 }
                 Button("Tamam") {
                     summary = nil
                     moveFocus(to: .start)
+                    updateBreakLines()
+                    offerReminderIfFirstTime()
                 }
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
             }
@@ -1329,7 +1425,7 @@ struct ReviewView: View {
 
     private func summaryWhen(_ answer: RoundAnswer, now: Date) -> String? {
         if answer.returnsToIntro {
-            return "yeniden tanışacaksın"
+            return ReviewView.backToIntroText
         }
         guard let due = answer.dueAt else {
             return nil
@@ -1378,7 +1474,7 @@ struct ReviewView: View {
                 ContentUnavailableView(
                     "İçerik bulunamadı",
                     systemImage: "tray",
-                    description: Text("content.sqlite ve seed_words.json pakete eklenmemiş.")
+                    description: Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç.")
                 )
             }
         } else {
@@ -1387,6 +1483,15 @@ struct ReviewView: View {
                 VStack(spacing: 14) {
                     if let offer = offer {
                         offerCard(offer)
+                        if isBreak(offer) {
+                            // Not as a barrier (2.3): new words wait while the reviews pile up.
+                            Text("Yeni kelimeler, tekrarlar azalınca geri geliyor.")
+                                .font(.subheadline)
+                                .foregroundStyle(Theme.ink2)
+                                .multilineTextAlignment(.center)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding(.horizontal, 6)
+                        }
                         todayLine(withKnown: true)
                             .padding(.horizontal, 6)
                         libraryLink
@@ -1413,19 +1518,28 @@ struct ReviewView: View {
         }
     }
 
-    /// Mockup `.hero`. Due words: how many wait. New words: the ring of today's goal (only here,
+    /// Mockup `.hero`. Due words: the round's words, never the whole pile (a large number after a
+    /// break reads as a debt, text audit #6). After a break (`isBreak`): "Ara verdin, sorun değil."
+    /// with a calm sun instead of the number. New words: the ring of today's goal (only here,
     /// README "Tekrar"), what is left of it, and the round of at most five.
     private func offerCard(_ offer: ReviewSession) -> some View {
         let isDue = offer.kind == .due
+        let afterBreak = isBreak(offer)
         return VStack(spacing: 12) {
-            if isDue {
-                CountBadge(count: offer.totalCount)
+            if afterBreak {
+                Image(systemName: "sun.max")
+                    .font(.system(size: 44, weight: .regular))
+                    .foregroundStyle(Theme.ink2)
+                    .frame(height: 76)
+                    .accessibilityHidden(true)
+            } else if isDue {
+                CountBadge(count: offer.words.count)
             } else {
                 GoalRing(done: model.newWordsStudiedToday(), goal: model.dailyNewWords)
                 // The ring's text stops growing at its largest size: at accessibility sizes the
                 // goal is also said in plain text (audit D7).
                 if dynamicTypeSize.isAccessibilitySize {
-                    Text(verbatim: "Bugünkü hedef: \(model.newWordsStudiedToday()) / \(model.dailyNewWords) yeni kelime")
+                    Text(verbatim: "Günlük hedef: \(model.newWordsStudiedToday()) / \(model.dailyNewWords) yeni kelime")
                         .font(.body.weight(.semibold))
                         .foregroundStyle(Theme.ink2)
                         .multilineTextAlignment(.center)
@@ -1435,7 +1549,7 @@ struct ReviewView: View {
                 }
             }
             Text(isDue
-                 ? "\(offer.totalCount) kelime tekrar bekliyor"
+                 ? (afterBreak ? "Ara verdin, sorun değil." : "Tekrar zamanı")
                  : "Bugünün yeni kelimeleri: \(offer.totalCount)")
                 .font(.title.bold())
                 .foregroundStyle(Theme.ink)
@@ -1444,7 +1558,9 @@ struct ReviewView: View {
                 .accessibilityAddTraits(.isHeader)
                 .accessibilityFocused($focus, equals: .start)
             Text(isDue
-                 ? "Önce öğrendiğin kelimeleri pekiştirelim."
+                 ? (afterBreak
+                    ? "Unutulmaya en yakın \(offer.words.count) kelimeyle başlayalım."
+                    : "Önce öğrendiğin kelimeleri hatırlayalım.")
                  : "Önce tanış, sonra hemen bir kez hatırla.")
                 .font(.callout)
                 .foregroundStyle(Theme.ink2)
@@ -1454,7 +1570,7 @@ struct ReviewView: View {
             Button {
                 startRound(offer)
             } label: {
-                Text(isDue ? "Başla (\(offer.words.count) kart)" : "Başla (\(offer.words.count) kelime)")
+                Text("Başla (\(offer.words.count) kelime)")
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
             .padding(.top, 6)
@@ -1509,7 +1625,7 @@ struct ReviewView: View {
                 )
                 // Only when a Lockglow widget is on the Lock Screen (last health check).
                 if model.hasLockScreenWidget {
-                    NoteRow(symbol: "lock", text: "Kilitli ekranın yeni kelimeleri göstermeye devam ediyor.")
+                    NoteRow(symbol: "lock", text: "Kilitli ekranda yeni kelimeler görünmeye devam eder.")
                 }
             }
             .padding(16)
@@ -1601,6 +1717,69 @@ struct ReviewView: View {
         return parts.isEmpty ? nil : parts.joined(separator: " ")
     }
 
+    // MARK: After a break
+
+    /// More due words than this: the start card is "Ara verdin, sorun değil." (2.3).
+    private static let breakBacklog = 20
+
+    /// The start card says "Ara verdin" for `offer`: a pile of more than `breakBacklog` due
+    /// words, and this opening's system card is "Tekrar"'s (`updateBreakLines`).
+    private func isBreak(_ offer: ReviewSession) -> Bool {
+        return showsBreakLines && offer.kind == .due && offer.totalCount > ReviewView.breakBacklog
+    }
+
+    /// "Ara verdin" is a system card (2.10): only once RootView has picked this opening's card
+    /// and none came first (`SystemCardQueue.claim`), only while "Tekrar" is on screen (a hidden
+    /// tab must not take the opening's card from "Akış") and only until a round of this opening
+    /// has started. Otherwise the plain start card stays: "Tekrar zamanı", "Başla (10 kelime)".
+    private func updateBreakLines() {
+        guard systemCards.isDecided, isOnScreen, !startedThisOpening, session == nil, summary == nil,
+              let offer = model.nextReviewSession(), offer.kind == .due,
+              offer.totalCount > ReviewView.breakBacklog else {
+            showsBreakLines = false
+            return
+        }
+        showsBreakLines = systemCards.claim(.breakStart)
+    }
+
+    // MARK: Reminder question
+
+    /// After a round, once (2.8: never at the opening, when the feature is first used): "Her
+    /// gün 1 hatırlatma gönderelim mi?". Only while the reminder is off and iOS has never asked
+    /// (a "no" in iOS, or a switch turned off in "Ayarlar", is an answer), and not after another
+    /// system card of this opening (2.10). Whatever the answer, it never comes again.
+    private func offerReminderIfFirstTime() {
+        guard !reminderOfferShown, !model.reminderEnabled, !model.showsOnboarding else {
+            return
+        }
+        if let card = systemCards.current, card != .breakStart {
+            return
+        }
+        Task { @MainActor in
+            let isAuthorized = await ReminderScheduler.isAuthorized()
+            let isDenied = await ReminderScheduler.isDenied()
+            guard !isAuthorized, !isDenied, !reminderOfferShown, !model.reminderEnabled, session == nil else {
+                return
+            }
+            reminderOfferShown = true
+            showsReminderOffer = true
+        }
+    }
+
+    /// "Evet, gönder": iOS asks for permission now. With it the daily reminder is on at the
+    /// chosen time and the week's reminders are planned; without it nothing changes ("Ayarlar"
+    /// then says how to allow notifications).
+    private func acceptReminder(at minute: Int) {
+        Task { @MainActor in
+            guard await ReminderScheduler.requestPermission() else {
+                return
+            }
+            model.setReminderMinuteOfDay(minute)
+            model.setReminderEnabled(true)
+            await ReminderScheduler.replace(with: model.reminderPlan())
+        }
+    }
+
     // MARK: Words met today
 
     /// The words studied for the first time in this tab today, in order. A word whose progress
@@ -1667,8 +1846,11 @@ struct ReviewView: View {
     /// one reminder a day and a round ends after its cards; a time in minutes is a promise nothing
     /// keeps, 2.3), otherwise the time as in `returnText`.
     private static func againText(until due: Date, from now: Date) -> String {
-        return due.timeIntervalSince(now) <= 3600 ? "bir sonraki turda" : returnText(until: due, from: now)
+        return due.timeIntervalSince(now) <= 3600 ? QuizCardView.nextRoundTime : returnText(until: due, from: now)
     }
+
+    /// Instead of a time: a failed "Biliyorum" check sends the word back to "Tanış" (2.2).
+    private static let backToIntroText = "yeniden tanışacaksın"
 
     /// When a word comes back, in words (README "Tekrar"): "10 dakika sonra", "12 saat sonra",
     /// "yarın", "2 gün sonra", "1 ay sonra". Under a day it is counted in hours; after that in
@@ -2068,7 +2250,146 @@ private struct KnownUndoNotice: View {
     }
 }
 
-/// How many due words wait (mockup `.count-badge`): a number in a thin ring, no color.
+/// The reminder question after the first round (ogrenme_ilkeleri 2.8), as a short sheet like the
+/// system cards: a "when" plan ("Ne zaman bakarsın?", four usual moments; the chosen time is filled
+/// in and can be changed) and two answers of the same size. "Şimdi değil" blames no one; swiping
+/// the sheet away is "Şimdi değil" too. iOS asks for permission only after "Evet, gönder".
+private struct ReminderOfferSheet: View {
+    /// "Evet, gönder" with the chosen minute after midnight; the sheet closes itself.
+    let accept: (Int) -> Void
+
+    @Environment(\.dismiss) private var dismiss
+    @State private var minute: Int
+    @State private var height: CGFloat = 0
+
+    private struct Moment {
+        let title: String
+        /// Minutes after midnight.
+        let minute: Int
+    }
+
+    private static let moments = [
+        Moment(title: "Sabah kahvesiyle", minute: 8 * 60),
+        Moment(title: "İşe giderken", minute: 8 * 60 + 30),
+        Moment(title: "Akşam", minute: 20 * 60),
+        Moment(title: "Yatmadan önce", minute: 22 * 60 + 30),
+    ]
+
+    /// `initialMinute`: what the "when" plan starts with, the reminder time already saved (20:00
+    /// by default).
+    init(initialMinute: Int, accept: @escaping (Int) -> Void) {
+        self.accept = accept
+        _minute = State(initialValue: initialMinute)
+    }
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: "bell")
+                        .font(.title2)
+                        .foregroundStyle(Theme.ink)
+                        .frame(width: 32)
+                        .accessibilityHidden(true)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Her gün 1 hatırlatma gönderelim mi?")
+                            .font(.title3.weight(.semibold))
+                            .foregroundStyle(Theme.ink)
+                            .accessibilityAddTraits(.isHeader)
+                        Text("Bildirim bir kelimeyi anlamıyla gösterir. O günün işini bitirdiysen gelmez.")
+                            .font(.body)
+                            .foregroundStyle(Theme.ink2)
+                    }
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Ne zaman bakarsın?")
+                        .font(.headline)
+                        .foregroundStyle(Theme.ink)
+                        .accessibilityAddTraits(.isHeader)
+                    ForEach(ReminderOfferSheet.moments, id: \.minute) { moment in
+                        ChoiceRow(isSelected: minute == moment.minute) {
+                            minute = moment.minute
+                        } label: {
+                            Text(verbatim: "\(moment.title) (\(ReminderOfferSheet.clockTime(moment.minute)))")
+                                .font(.body.weight(.medium))
+                                .foregroundStyle(Theme.ink)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                    DatePicker(selection: timeBinding, displayedComponents: .hourAndMinute) {
+                        Text("Saat")
+                            .font(.body.weight(.medium))
+                            .foregroundStyle(Theme.ink)
+                    }
+                    .padding(.horizontal, 4)
+                    .padding(.top, 2)
+                }
+                VStack(spacing: 10) {
+                    Text("iPhone bir kez izin soracak. Ayarlar'dan her zaman değiştirebilirsin.")
+                        .font(.footnote)
+                        .foregroundStyle(Theme.ink2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    // The same height for both (2.8): "Şimdi değil" is never the smaller one.
+                    Button("Evet, gönder") {
+                        accept(minute)
+                        dismiss()
+                    }
+                    .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 50))
+                    Button("Şimdi değil") {
+                        dismiss()
+                    }
+                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 28)
+            .padding(.bottom, 16)
+            .onGeometryChange(for: CGFloat.self) { geometry in
+                geometry.size.height
+            } action: { newHeight in
+                height = newHeight
+            }
+        }
+        .scrollBounceBehavior(.basedOnSize)
+        .presentationDetents(detents)
+        .presentationDragIndicator(.visible)
+        .presentationBackground(Theme.bg)
+    }
+
+    /// As tall as the content plus the home indicator's strip (like `SystemCardSheet`); it
+    /// scrolls when the text is larger than the screen.
+    private var detents: Set<PresentationDetent> {
+        if height > 0 {
+            return [.height(height + 34)]
+        }
+        return [.large]
+    }
+
+    /// The picker edits the chosen minute; a moment row then shows as chosen again only when the
+    /// time is its own.
+    private var timeBinding: Binding<Date> {
+        Binding(
+            get: {
+                Calendar.current.date(bySettingHour: minute / 60, minute: minute % 60, second: 0, of: Date()) ?? Date()
+            },
+            set: { date in
+                let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+                minute = (parts.hour ?? 20) * 60 + (parts.minute ?? 0)
+            }
+        )
+    }
+
+    /// "08:30", never followed by a suffix (README point 13).
+    private static func clockTime(_ minuteOfDay: Int) -> String {
+        return String(format: "%02d:%02d", minuteOfDay / 60, minuteOfDay % 60)
+    }
+}
+
+/// How many words the due round has (mockup `.count-badge`), never the whole pile: a number in a
+/// thin ring, no color.
 private struct CountBadge: View {
     let count: Int
     @ScaledMetric(relativeTo: .title) private var diameter: CGFloat = 96
@@ -2092,17 +2413,19 @@ private struct CountBadge: View {
             Circle()
                 .strokeBorder(Theme.lineStrong, lineWidth: 2)
         }
-        // The title under it says the same number.
+        // "Başla (10 kelime)" under it says the same number.
         .accessibilityHidden(true)
     }
 }
 
-/// Today's new-word goal (mockup `.pring`): a `surface3` track and a `tint` arc (never yellow).
-/// Only words recalled in "Hatırla" count (2.3).
+/// Today's new-word goal (mockup `.pring`): a `surface3` track and a `tint` arc (never yellow);
+/// with Increase Contrast the empty track gets edges (audit K2). Only words recalled in "Hatırla"
+/// count (2.3). VoiceOver hears words, not "2 / 5" ("bölü", text audit #9).
 private struct GoalRing: View {
     let done: Int
     let goal: Int
     @ScaledMetric(relativeTo: .title) private var diameter: CGFloat = 132
+    @Environment(\.colorSchemeContrast) private var contrast
 
     var body: some View {
         let size = min(diameter, 172)
@@ -2112,6 +2435,13 @@ private struct GoalRing: View {
             Circle()
                 .inset(by: lineWidth / 2)
                 .stroke(Theme.surface3, lineWidth: lineWidth)
+            if contrast == .increased {
+                Circle()
+                    .strokeBorder(Theme.lineStrong, lineWidth: 1)
+                Circle()
+                    .inset(by: lineWidth)
+                    .strokeBorder(Theme.lineStrong, lineWidth: 1)
+            }
             if fraction > 0 {
                 Circle()
                     .inset(by: lineWidth / 2)
@@ -2128,7 +2458,7 @@ private struct GoalRing: View {
                 }
                 .font(.system(size: size * 0.24, weight: .bold))
                 .monospacedDigit()
-                Text("bugünkü hedef")
+                Text("günlük hedef")
                     .font(.system(size: size * 0.1, weight: .medium))
                     .foregroundStyle(Theme.ink2)
             }
@@ -2138,24 +2468,36 @@ private struct GoalRing: View {
         }
         .frame(width: size, height: size)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Bugünkü hedef: \(done) / \(goal) yeni kelime")
+        .accessibilityLabel(Text(verbatim: spokenGoal))
+    }
+
+    /// "Günlük hedef 5 yeni kelime. Bugün 2 tanesini çalıştın." (no "0 tanesini" before the first).
+    private var spokenGoal: String {
+        let goalText = "Günlük hedef \(goal) yeni kelime."
+        return done > 0 ? goalText + " Bugün \(done) tanesini çalıştın." : goalText
     }
 }
 
 /// The done screen's check on a phosphor stroke (mockup `.bandcheck`): by day the check sits on
-/// the highlighter, at night the band is a glowing line under it, so the check never stands on
-/// yellow. Still, no motion: the day is done, not won.
+/// the highlighter, at night the band is a line under it, so the check never stands on yellow;
+/// its faint glow follows the band's rule (none with Increase Contrast, Reduce Transparency or
+/// the dimmed Always-On display). Still, no motion: the day is done, not won.
 private struct DoneMark: View {
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.isLuminanceReduced) private var isLuminanceReduced
 
     var body: some View {
         ZStack {
             if colorScheme == .dark {
-                Capsule()
-                    .fill(Theme.bandGlow)
-                    .frame(width: 104, height: 20)
-                    .blur(radius: 8)
-                    .offset(y: 22)
+                if contrast != .increased && !reduceTransparency && !isLuminanceReduced {
+                    Capsule()
+                        .fill(Theme.bandGlow)
+                        .frame(width: 104, height: 20)
+                        .blur(radius: 8)
+                        .offset(y: 22)
+                }
                 RoundedRectangle(cornerRadius: 4, style: .continuous)
                     .fill(Theme.bandDark)
                     .frame(width: 104, height: 12)
@@ -2255,7 +2597,13 @@ private struct SummaryRow: View {
             .fixedSize(horizontal: !isLarge, vertical: false)
         }
         .padding(.vertical, 10)
-        .accessibilityElement(children: .combine)
+        // Not `.combine`: one element has one voice, and the word needs its English one (audit
+        // V5). Two stops: "borrow", then "ödünç almak, yarın, Bildim".
+        .accessibilityRepresentation {
+            Text(verbatim: answer.word.lemma)
+                .englishVoice()
+            Text(verbatim: [answer.word.glossTR, when, answer.label.title].compactMap { $0 }.joined(separator: ", "))
+        }
     }
 }
 
@@ -2280,7 +2628,8 @@ private struct WordMeaningRow: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.vertical, 9)
-        .accessibilityElement(children: .combine)
+        // Not `.combine`: the word keeps its English voice, the meaning its Turkish one (audit V5).
+        .accessibilityElement(children: .contain)
     }
 
     private var lemma: some View {
