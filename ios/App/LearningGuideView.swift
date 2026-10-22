@@ -38,10 +38,10 @@ import Learning
 /// its own):
 /// - `dailyNewWords`: the daily new-word goal (`AppModel.dailyNewWords`; Ayarlar offers 5, 10,
 ///   15, 20). "Günde kaç kelime yeter?" multiplies it by 30 days.
-/// - `rotationMinutes`: how often the widget word changes (`AppModel.rotationMinutes`; 5 to 120),
+/// - `rotationMinutes`: how often the widget word changes (`AppModel.rotationMinutes`; 30 to 240),
 ///   quoted in "Widget'ı iyi kullan".
 ///
-/// Every wait in the text ("10 dakika sonra", "1 gün, 2 gün, 4 gün…", "30 günde bir") comes from
+/// Every wait in the text ("12 saat sonra", "1 gün, 2 gün, 4 gün…", "30 günde bir") comes from
 /// `Leitner`, so the guide follows the real schedule when the intervals change. Design system
 /// only (`Theme`, `SecondaryCapsuleButtonStyle`, `ExampleMark`, `MistakeDiff`); the page has one
 /// phosphor band (the word to try) and one marked example sentence (rule 1).
@@ -93,18 +93,18 @@ struct LearningGuideContent: View {
 
     private var spacedRepetition: some View {
         GuideSection(title: "Aralıklı tekrar", systemImage: "clock.arrow.circlepath") {
-            GuideParagraph("Bilemediğin bir kelime \(GuideText.newWordWait(.again)) sonra yine gelir. Bildiğin bir kelime ise en az \(GuideText.newWordWait(.good)) sonra gelir. Neden? Unutmaya başladığın bir kelimeyi hatırlamak, onu daha kalıcı yapar.")
+            GuideParagraph("Bilemediğin bir kelime bir sonraki turda yine gelir. Bildiğin bir kelime ise en az \(GuideText.newWordWait(.good)) sonra gelir. Neden? Unutmaya başladığın bir kelimeyi hatırlamak, onu daha kalıcı yapar.")
             GuideParagraph("Her doğru cevapta kelime bir basamak çıkar ve ara uzar:")
             GuideIntervalLadder(waits: GuideText.boxWaits)
             GuideNote("Son basamakta da bilirsen kelime öğrenilmiş sayılır. Sonra yalnızca \(GuideText.refresherInterval) sorulur.", systemImage: "checkmark.seal")
-            GuideSubheading("Tekrar'daki dört düğme ne demek?")
-            // Symbols and names of the answer buttons (ReviewView), worst to best.
+            GuideSubheading("Tekrar'daki cevaplar ne demek?")
+            // Symbols and names of the answers in the round summary (ReviewView), worst to best.
             VStack(alignment: .leading, spacing: 12) {
                 GuideIconRow(
                     systemImage: "xmark",
                     title: "Bilemedim",
-                    detail: "Sorun değil. Kelime ilk basamağa döner.",
-                    trailing: GuideText.newWordWait(.again) + " sonra"
+                    detail: "Sorun değil. Kelime \(Leitner.lapseDrop) basamak iner, baştan başlamaz.",
+                    trailing: "sonraki turda"
                 )
                 GuideIconRow(
                     systemImage: "tortoise",
@@ -125,7 +125,7 @@ struct LearningGuideContent: View {
                     trailing: GuideText.newWordWait(.easy) + " sonra"
                 )
             }
-            GuideNote("Bu süreler yeni bir kelime için. Basamak yükseldikçe süreler uzar.")
+            GuideNote("Bu süreler yeni bir kelime için. Basamak yükseldikçe süreler uzar. Zor ya da kolay olduğunu doğru cevaptan sonra sen söylersin; söylemezsen Bildim sayılır.")
         }
     }
 
@@ -166,7 +166,7 @@ struct LearningGuideContent: View {
                 GuideIconRow(
                     systemImage: "checkmark",
                     title: "Biliyorum",
-                    detail: "Kelimeyi zaten iyi biliyorsan bas. Kelime sıradan çıkar ve yalnızca \(GuideText.refresherInterval) sorulur. Emin değilsen basma."
+                    detail: "Kelimeyi zaten iyi biliyorsan bas. Kelime sıradan çıkar ve \(GuideText.duration(Leitner.knownCheckDelay)) sonra Tekrar'da bir kez sorulur. Bilirsen yalnızca \(GuideText.refresherInterval) gelir; bilemezsen yeniden öğrenirsin."
                 )
                 GuideIconRow(
                     systemImage: "speaker.wave.2",
@@ -965,7 +965,7 @@ private struct GuideMistakeExample: View {
 
 #Preview("Gece, en büyük yazı") {
     NavigationStack {
-        LearningGuideView(dailyNewWords: 20, rotationMinutes: 15)
+        LearningGuideView(dailyNewWords: 20, rotationMinutes: 30)
     }
     .preferredColorScheme(.dark)
     .dynamicTypeSize(.accessibility5)
