@@ -6,7 +6,9 @@ import CoreModels
 /// gloss also has a comma for the inline line's steps). Added for the 2026-10-21 design: the
 /// longest headword and inline line ("Could you tell me the way to"), the word that comes latest
 /// in its example ("lost and found": the example starts a few words before the word), the longest
-/// gloss without a comma ("under the weather").
+/// gloss without a comma ("under the weather"). Added on 2026-10-22: the longest single word
+/// ("misunderstanding", which cannot go onto two lines) and the longest one-word gloss
+/// ("sabırsızlanıyorum").
 enum SnapshotWords {
     static let all: [WidgetWord] = [
         WidgetWord(
@@ -53,6 +55,16 @@ enum SnapshotWords {
             id: 882, lemma: "under the weather", pos: "idm", level: "B1", ipaUS: "/ˌʌndər ðə ˈwɛðər/",
             defMicro: "feeling a little ill", defShort: "feeling a little unwell, with low energy, but not very ill",
             exampleEN: "I feel a bit under the weather today.", glossTR: "kendini pek iyi hissetmemek"
+        ),
+        WidgetWord(
+            id: 899, lemma: "misunderstanding", pos: "n", level: "B1", ipaUS: "/ˌmɪsˌʌndərˈstændɪŋ/",
+            defMicro: "a mix-up about what you mean", defShort: "a small problem when someone gets the wrong idea about what you mean",
+            exampleEN: "It was just a misunderstanding. I'm sorry.", glossTR: "yanlış anlaşılma"
+        ),
+        WidgetWord(
+            id: 820, lemma: "I can't wait", pos: "phr", level: "A2", ipaUS: "/aɪ ˌkænt ˈweɪt/",
+            defMicro: "excited about a coming event", defShort: "used to say that you are very excited and want something to happen soon",
+            exampleEN: "I can't wait for the weekend!", glossTR: "sabırsızlanıyorum"
         ),
     ]
 }

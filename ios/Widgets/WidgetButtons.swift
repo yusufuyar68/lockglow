@@ -11,7 +11,9 @@ import CoreModels
 // marks a word known without a test, is the farthest from it, and the harmless speaker sits
 // between the two buttons that change state.
 // All three buttons are icon-only with a text label for VoiceOver; meaning never depends on color.
-// Each one is a 34 pt circle (mockup `.wb`) centred in a hit area of at least 44 x 44 pt.
+// Each one is a 34 pt circle (mockup `.wb`) centred in a hit area of exactly 44 x 44 pt, so the
+// group is always 132 pt long and the views can keep its place free of text (HomeWordViews.swift).
+// The glyphs share one font size, weight and image scale; Next is the filled one (mockup `.wb`).
 // Next and Know run in the widget extension (`WordActions`); the speaker button runs in the app's
 // process (`SpeakWordIntent` is an `AudioPlaybackIntent`).
 
@@ -60,7 +62,8 @@ struct SpeakWordButton: View {
 }
 
 /// A widget button's look: the icon in a 34 pt circle (`surface2` in full color, a faint wash
-/// when the system tints the widget), centred in a 44 x 44 pt hit area that is all tappable.
+/// when the system tints the widget or removes its paper), centred in a 44 x 44 pt hit area that
+/// is all tappable.
 private struct WidgetButtonFace: View {
     let title: LocalizedStringKey
     let systemImage: String
@@ -70,10 +73,11 @@ private struct WidgetButtonFace: View {
         Label(title, systemImage: systemImage)
             .labelStyle(.iconOnly)
             .font(.subheadline.weight(.semibold))
+            .imageScale(.medium)
             .foregroundStyle(colors.ink)
             .frame(width: 34, height: 34)
             .background(colors.buttonFill, in: Circle())
-            .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
+            .frame(width: Theme.minHitSize, height: Theme.minHitSize)
             .contentShape(Rectangle())
     }
 }

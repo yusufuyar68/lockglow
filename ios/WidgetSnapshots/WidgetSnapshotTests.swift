@@ -9,9 +9,11 @@ import CoreModels
 /// screen. An approximation: WidgetKit's own chrome, tinting and Lock Screen vibrancy are not
 /// reproduced; home widgets get WidgetKit's default 16 pt content margin. The widget disables
 /// the system margins and the views apply them, so the margins are passed in as on a device.
-/// The views are told the rendering mode (the environment's own value cannot be set here), so the
-/// tinted images show the thin band line and the system text styles, on a dark stand-in for the
-/// tinted background.
+/// The views are told the rendering mode, whether the system shows their paper and whether the
+/// display is dimmed (the environment's own values cannot be set here), so the tinted images show
+/// the thin band line and the system text styles on a dark stand-in for the tinted background,
+/// the StandBy images the small widget without its paper on black, and the Always-On images the
+/// rectangular widget without its definition row.
 @MainActor
 final class WidgetSnapshotTests: XCTestCase {
     private enum Kind {
@@ -26,7 +28,8 @@ final class WidgetSnapshotTests: XCTestCase {
         let kind: Kind
         let size: CGSize
         let margin: CGFloat
-        /// Also rendered at night and tinted (the 393 pt sizes; the SE sizes check the fit only).
+        /// Also rendered at night, tinted and (small) in StandBy: the 393 pt sizes; the SE sizes
+        /// check the fit only.
         let allLooks: Bool
     }
 
@@ -35,6 +38,10 @@ final class WidgetSnapshotTests: XCTestCase {
         let suffix: String
         let colorScheme: ColorScheme
         let renderingMode: WidgetRenderingMode
+        /// False in StandBy: the system removes the widget's paper.
+        var showsBackground = true
+        /// The Always-On display.
+        var luminanceReduced = false
     }
 
     // Point sizes on a 393 pt wide iPhone (15/16/17) and on the 375 pt iPhone SE.
@@ -50,8 +57,12 @@ final class WidgetSnapshotTests: XCTestCase {
     private let day = Look(suffix: "", colorScheme: .light, renderingMode: .fullColor)
     private let night = Look(suffix: "-koyu", colorScheme: .dark, renderingMode: .fullColor)
     private let tinted = Look(suffix: "-renkli", colorScheme: .dark, renderingMode: .accented)
+    /// StandBy by day: full color without the widget's paper.
+    private let standBy = Look(suffix: "-standby", colorScheme: .dark, renderingMode: .fullColor, showsBackground: false)
     /// The Lock Screen: light text on a dark wallpaper.
     private let lockScreen = Look(suffix: "", colorScheme: .dark, renderingMode: .vibrant)
+    /// The Always-On display: the Lock Screen dimmed.
+    private let alwaysOn = Look(suffix: "-aod", colorScheme: .dark, renderingMode: .vibrant, luminanceReduced: true)
 
     func testRenderWidgetFamiliesForStressWords() throws {
         let now = Date(timeIntervalSince1970: 1_800_000_000)
@@ -70,11 +81,36 @@ final class WidgetSnapshotTests: XCTestCase {
         }
     }
 
+    /// "Yeni kelime: 09:00" whatever the simulator's language (en-US wrote "9:00 AM").
+    func testNextChangeClockIsTwentyFourHour() throws {
+        let timeZone = try XCTUnwrap(TimeZone(identifier: "Europe/Istanbul"))
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = timeZone
+        let morning = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 10, day: 22, hour: 9, minute: 0)))
+        let evening = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 10, day: 22, hour: 21, minute: 5)))
+        XCTAssertEqual(WidgetTime.clock(morning, timeZone: timeZone), "09:00")
+        XCTAssertEqual(WidgetTime.clock(evening, timeZone: timeZone), "21:05")
+    }
+
+    /// Phrases and meanings that do not fit on one line break between words into two lines of
+    /// about the same length; a single word is never broken.
+    func testBalancedLines() {
+        XCTAssertEqual(WidgetText.balancedLines("Could you tell me the way to"), ["Could you tell", "me the way to"])
+        XCTAssertEqual(WidgetText.balancedLines("kendini pek iyi hissetmemek"), ["kendini pek iyi", "hissetmemek"])
+        XCTAssertEqual(WidgetText.balancedLines("sonunda kendini ... bulmak"), ["sonunda kendini", "... bulmak"])
+        XCTAssertEqual(WidgetText.balancedLines("aslında, gerçekte"), ["aslında,", "gerçekte"])
+        XCTAssertEqual(WidgetText.balancedLines("sabırsızlanıyorum"), ["sabırsızlanıyorum"])
+    }
+
     private func looks(for family: Family) -> [Look] {
         switch family.kind {
-        case .small, .medium:
+        case .small:
+            return family.allLooks ? [day, night, tinted, standBy] : [day]
+        case .medium:
             return family.allLooks ? [day, night, tinted] : [day]
-        case .rectangular, .inline:
+        case .rectangular:
+            return [lockScreen, alwaysOn]
+        case .inline:
             return [lockScreen]
         }
     }
@@ -86,33 +122,51 @@ final class WidgetSnapshotTests: XCTestCase {
         )
         switch family.kind {
         case .small:
-            SmallWordView(entry: entry, margins: margins, renderingMode: look.renderingMode)
+            SmallWordView(
+                entry: entry,
+                margins: margins,
+                renderingMode: look.renderingMode,
+                showsBackground: look.showsBackground,
+                luminanceReduced: look.luminanceReduced
+            )
         case .medium:
-            MediumWordView(entry: entry, margins: margins, renderingMode: look.renderingMode)
+            MediumWordView(
+                entry: entry,
+                margins: margins,
+                renderingMode: look.renderingMode,
+                showsBackground: look.showsBackground
+            )
         case .rectangular:
-            RectangularWordView(entry: entry, margins: margins, renderingMode: look.renderingMode)
+            RectangularWordView(
+                entry: entry,
+                margins: margins,
+                renderingMode: look.renderingMode,
+                luminanceReduced: look.luminanceReduced
+            )
         case .inline:
             InlineWordView(entry: entry)
                 .padding(margins)
         }
     }
 
-    /// What WidgetKit would draw behind the view: the widget's `surface` in full color, a dark
-    /// tinted panel, the Lock Screen plate (`AccessoryWidgetBackground`) on a dark wallpaper, or
-    /// just the wallpaper behind the inline line.
+    /// What WidgetKit would draw behind the view: the widget's `surface` in full color, black in
+    /// StandBy, a dark tinted panel, the Lock Screen plate (`AccessoryWidgetBackground`) on a dark
+    /// wallpaper (fainter on the Always-On display), or just the wallpaper behind the inline line.
     @ViewBuilder
     private func backdrop(for family: Family, look: Look) -> some View {
         switch family.kind {
         case .small, .medium:
-            if look.renderingMode == .fullColor {
+            if look.renderingMode == .fullColor && look.showsBackground {
                 Theme.surface
+            } else if look.renderingMode == .fullColor {
+                Color.black
             } else {
                 Color(red: 0.09, green: 0.10, blue: 0.12)
             }
         case .rectangular:
             ZStack {
-                Color(white: 0.16)
-                Color.white.opacity(0.14)
+                Color(white: look.luminanceReduced ? 0.04 : 0.16)
+                Color.white.opacity(look.luminanceReduced ? 0.06 : 0.14)
             }
         case .inline:
             Color(white: 0.16)
