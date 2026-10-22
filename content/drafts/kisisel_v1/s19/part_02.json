@@ -1,0 +1,1009 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.team.n.1",
+      "lemma": "team",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a sports team",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tiːm/",
+        "uk": "/tiːm/"
+      },
+      "def": {
+        "micro": "a group that plays together",
+        "short": "a group of people who play a sport or work together",
+        "long": "A group of people who play a sport together against another group. People who work together on a job can also be called a team."
+      },
+      "grammar": {
+        "pattern": "play for a team"
+      },
+      "examples": [
+        {
+          "en": "Murat plays for a local football team.",
+          "tr": "Murat yerel bir futbol takımında oynuyor.",
+          "register": "neutral",
+          "focus": "team"
+        },
+        {
+          "en": "A basketball team has five players on the court at one time.",
+          "tr": "Bir basketbol takımının sahada aynı anda beş oyuncusu olur.",
+          "register": "neutral",
+          "focus": "team"
+        },
+        {
+          "en": "Selin's team at work finished the new project two days early.",
+          "tr": "Selin'in iş yerindeki ekibi yeni projeyi iki gün erken bitirdi.",
+          "register": "neutral",
+          "focus": "team"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "football team",
+        "national team",
+        "team captain",
+        "play for a team"
+      ],
+      "word_family": [
+        {
+          "lemma": "teammate",
+          "pos": "n"
+        },
+        {
+          "lemma": "teamwork",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takım",
+          "alt": [
+            "ekip"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir takımda oynamak 'play for a team' ya da 'be in a team' (ABD'de 'be on a team') olur. İş yerindeki ekip için de 'team' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Barış is the captain of the school basketball ______.",
+        "answer": "team",
+        "distractors": [
+          "court",
+          "bench",
+          "trophy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.match.n.1",
+      "lemma": "match",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a sports game",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mætʃ/",
+        "uk": "/mætʃ/"
+      },
+      "def": {
+        "micro": "a game between two sides",
+        "short": "a sports game in which two players or two teams play against each other",
+        "long": "A sports event where two players or two groups play against each other, for example in football or tennis. In American English, people often say 'game'."
+      },
+      "grammar": {
+        "pattern": "a match against someone"
+      },
+      "examples": [
+        {
+          "en": "The tennis match lasted almost three hours.",
+          "tr": "Tenis maçı neredeyse üç saat sürdü.",
+          "register": "neutral",
+          "focus": "match"
+        },
+        {
+          "en": "We watched the match at a café near the stadium.",
+          "tr": "Maçı stadın yakınındaki bir kafede izledik.",
+          "register": "neutral",
+          "focus": "match"
+        },
+        {
+          "en": "Our next match is against the best team in the city, so we are training every day.",
+          "tr": "Bir sonraki maçımız şehrin en iyi takımına karşı, bu yüzden her gün antrenman yapıyoruz.",
+          "register": "neutral",
+          "focus": "match"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "football match",
+        "tennis match",
+        "watch a match",
+        "home match",
+        "match against"
+      ],
+      "word_family": [],
+      "confusables": [
+        "game"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "maç",
+          "alt": [
+            "karşılaşma"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta 'maç' anlamı. 'Match' kibrit anlamına da gelir: a box of matches. ABD'de futbol ve basketbol maçına çoğunlukla 'game' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The tennis ______ started at five and finished after dark.",
+        "answer": "match",
+        "distractors": [
+          "racket",
+          "net",
+          "ball"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.goal.n.1",
+      "lemma": "goal",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a point in football",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊl/",
+        "uk": "/ɡəʊl/"
+      },
+      "def": {
+        "micro": "a point in football",
+        "short": "a point a team gets when a player puts the ball into the net",
+        "long": "A point in a game like football or hockey, when a player sends the ball into the net. People say 'score a goal'."
+      },
+      "grammar": {
+        "pattern": "score a goal"
+      },
+      "examples": [
+        {
+          "en": "That was the best goal of the whole season!",
+          "tr": "Bu, bütün sezonun en güzel golüydü!",
+          "register": "neutral",
+          "focus": "goal"
+        },
+        {
+          "en": "Diego scored the winning goal in the last minute.",
+          "tr": "Diego son dakikada galibiyet golünü attı.",
+          "register": "neutral",
+          "focus": "goal"
+        },
+        {
+          "en": "Everyone in the café jumped and shouted when the first goal went in.",
+          "tr": "İlk gol girince kafedeki herkes zıplayıp bağırdı.",
+          "register": "neutral",
+          "focus": "goal"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "score a goal",
+        "the winning goal",
+        "an own goal",
+        "a great goal"
+      ],
+      "word_family": [
+        {
+          "lemma": "goalkeeper",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gol",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta 'gol' anlamı. 'Goal' aynı zamanda 'hedef' demektir: My goal is to speak English. Gol atmak 'score a goal' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our team is winning 2-0 because Omar scored a second ______.",
+        "answer": "goal",
+        "distractors": [
+          "card",
+          "shirt",
+          "glove"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.coach.n.1",
+      "lemma": "coach",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "sports trainer",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/koʊtʃ/",
+        "uk": "/kəʊtʃ/"
+      },
+      "def": {
+        "micro": "a person who trains players",
+        "short": "a person who trains a sports player or team and helps them get better",
+        "long": "A person whose job is to train players or a sports group, plan how they play and help them improve. In British English, the word also means a long-distance bus."
+      },
+      "grammar": {
+        "pattern": "a football / tennis coach"
+      },
+      "examples": [
+        {
+          "en": "My tennis coach is strict, but she is very kind.",
+          "tr": "Tenis antrenörüm katı ama çok nazik biri.",
+          "register": "neutral",
+          "focus": "coach"
+        },
+        {
+          "en": "The coach changed two players at half-time.",
+          "tr": "Antrenör devre arasında iki oyuncuyu değiştirdi.",
+          "register": "neutral",
+          "focus": "coach"
+        },
+        {
+          "en": "Kerem's coach told him to rest his knee for a week before the next race.",
+          "tr": "Kerem'in antrenörü, bir sonraki yarıştan önce dizini bir hafta dinlendirmesini söyledi.",
+          "register": "neutral",
+          "focus": "coach"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "football coach",
+        "tennis coach",
+        "head coach",
+        "swimming coach"
+      ],
+      "word_family": [
+        {
+          "lemma": "coach",
+          "pos": "v"
+        },
+        {
+          "lemma": "coaching",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Kocs, a village in Hungary where a kind of carriage was first made. In the 1800s, Oxford students used 'coach' for a private teacher; later it meant a sports trainer.",
+        "origin": "Hungarian",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "antrenör",
+          "alt": [
+            "koç",
+            "çalıştırıcı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'koç' da denir. İngiltere'de 'coach' şehirlerarası otobüs anlamına da gelir: travel by coach.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ plans the training and decides which players start the game.",
+        "answer": "coach",
+        "distractors": [
+          "referee",
+          "goalkeeper",
+          "player"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.referee.n.1",
+      "lemma": "referee",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌrɛfəˈriː/",
+        "uk": "/ˌrɛfəˈriː/"
+      },
+      "def": {
+        "micro": "the judge in a sports game",
+        "short": "the person who makes sure the players follow the rules during a game",
+        "long": "The person who watches a game such as football or basketball and makes sure the players follow the rules. In tennis, this person is usually called an 'umpire'."
+      },
+      "grammar": {
+        "pattern": "the referee blows the whistle"
+      },
+      "examples": [
+        {
+          "en": "The referee blew his whistle, and the game started.",
+          "tr": "Hakem düdüğünü çaldı ve oyun başladı.",
+          "register": "neutral",
+          "focus": "referee"
+        },
+        {
+          "en": "The players argued with the referee about the penalty.",
+          "tr": "Oyuncular penaltı yüzünden hakemle tartıştı.",
+          "register": "neutral",
+          "focus": "referee"
+        },
+        {
+          "en": "Gül wants to become a football referee, so she is taking a course this year.",
+          "tr": "Gül futbol hakemi olmak istiyor, bu yüzden bu yıl bir kursa gidiyor.",
+          "register": "neutral",
+          "focus": "referee"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "football referee",
+        "the referee's whistle",
+        "argue with the referee"
+      ],
+      "word_family": [
+        {
+          "lemma": "referee",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hakem",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Vurgu son hecededir: re-fe-REE. Teniste ve krikette hakeme 'umpire' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ showed the player a red card and sent him off the field.",
+        "answer": "referee",
+        "distractors": [
+          "coach",
+          "captain",
+          "fan"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.beat.v.1",
+      "lemma": "beat",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "win against someone",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/biːt/",
+        "uk": "/biːt/"
+      },
+      "def": {
+        "micro": "win against someone",
+        "short": "win against a person or team in a game or competition",
+        "long": "To win against another person or team in a game, race or competition. You beat a person or a team, but you win a game or a prize."
+      },
+      "grammar": {
+        "pattern": "beat someone (3-0); beat - beat - beaten"
+      },
+      "examples": [
+        {
+          "en": "My little sister always beats me at chess.",
+          "tr": "Küçük kız kardeşim satrançta beni hep yener.",
+          "register": "neutral",
+          "focus": "beats"
+        },
+        {
+          "en": "Our team beat the champions 2-1 last night.",
+          "tr": "Takımımız dün akşam şampiyonu 2-1 yendi.",
+          "register": "neutral",
+          "focus": "beat"
+        },
+        {
+          "en": "Jack ran very fast, but he couldn't beat Tolga in the race.",
+          "tr": "Jack çok hızlı koştu ama yarışta Tolga'yı yenemedi.",
+          "register": "neutral",
+          "focus": "beat"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "beat someone at chess",
+        "easily beat",
+        "beat the champions"
+      ],
+      "word_family": [],
+      "confusables": [
+        "win"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yenmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Düzensiz fiil: beat - beat - beaten. Rakibi yenmek 'beat', maçı ya da ödülü kazanmak 'win' olur. 'Beat' vurmak ya da (kalp) atmak da demektir.",
+          "mistakes": [
+            {
+              "wrong": "We won them 3-0.",
+              "right": "We beat them 3-0.",
+              "why": "Türkçede 'onları yendik' denir ve 'yenmek' çoğu zaman 'win' sanılır. Ama 'win' rakibi nesne almaz: rakip kişi ya da takımsa 'beat', maç ya da ödülse 'win' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody can ______ Hakan at table tennis; he never loses.",
+        "answer": "beat",
+        "distractors": [
+          "win",
+          "lose",
+          "throw"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.draw.n.1",
+      "lemma": "draw",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "equal score",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/drɔː/",
+        "uk": "/drɔː/"
+      },
+      "def": {
+        "micro": "a game with an equal score",
+        "short": "the end of a game when both teams or players have the same score",
+        "long": "The result of a game when both sides have the same number of points or goals, so nobody wins. In American English, people usually say 'tie'."
+      },
+      "grammar": {
+        "pattern": "end in a draw"
+      },
+      "examples": [
+        {
+          "en": "Last night's game ended in a 1-1 draw.",
+          "tr": "Dün akşamki maç 1-1 berabere bitti.",
+          "register": "neutral",
+          "focus": "draw"
+        },
+        {
+          "en": "A draw is not bad for us, but we really need a win.",
+          "tr": "Beraberlik bizim için kötü değil ama gerçekten bir galibiyete ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "draw"
+        },
+        {
+          "en": "After two hours of chess, Yuki and Ozan agreed to a draw.",
+          "tr": "İki saat satranç oynadıktan sonra Yuki ile Ozan berabere kalmayı kabul etti.",
+          "register": "neutral",
+          "focus": "draw"
+        }
+      ],
+      "synonyms": [
+        "tie"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "end in a draw",
+        "a 1-1 draw",
+        "a goalless draw"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "beraberlik",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta isim. Fiil olarak 'draw' çizmek demektir, ama maçta 'berabere kalmak' da olur: We drew 2-2. ABD'de beraberliğe 'tie' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Neither team scored, so the game ended in a 0-0 ______.",
+        "answer": "draw",
+        "distractors": [
+          "victory",
+          "defeat",
+          "penalty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.support.v.2",
+      "lemma": "support",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "be a fan of a team",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈpɔːrt/",
+        "uk": "/səˈpɔːt/"
+      },
+      "def": {
+        "micro": "be a fan of a team",
+        "short": "like a sports team and want it to win",
+        "long": "To like a sports team, usually for many years, and want it to win. People often ask 'Which team do you support?' when they first meet."
+      },
+      "grammar": {
+        "pattern": "support a team"
+      },
+      "examples": [
+        {
+          "en": "My whole family supports the same football team.",
+          "tr": "Bütün ailem aynı futbol takımını tutuyor.",
+          "register": "neutral",
+          "focus": "supports"
+        },
+        {
+          "en": "Deniz has supported her local team since she was a child.",
+          "tr": "Deniz çocukluğundan beri yerel takımını tutuyor.",
+          "register": "neutral",
+          "focus": "supported"
+        },
+        {
+          "en": "I don't watch much football, but I support my dad's team to keep him happy.",
+          "tr": "Pek futbol izlemem ama babamı mutlu etmek için onun takımını tutarım.",
+          "register": "neutral",
+          "focus": "support"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "support a team",
+        "support the same team"
+      ],
+      "word_family": [
+        {
+          "lemma": "supporter",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takım tutmak",
+          "alt": [
+            "desteklemek",
+            "taraftarı olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'takım tutmak' İngilizcede 'support a team' olur: Which team do you support? Genel anlamı 'desteklemek'tir; bu kartta spor anlamı.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My uncle has ______ the same football team for forty years.",
+        "answer": "supported",
+        "distractors": [
+          "joined",
+          "scored",
+          "kicked"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.live.adj.1",
+      "lemma": "live",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "happening now, not recorded",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/laɪv/",
+        "uk": "/laɪv/"
+      },
+      "def": {
+        "micro": "seen or heard as it happens",
+        "short": "shown on TV at the same time as it happens, or played in front of people",
+        "long": "Shown on TV or the internet at the same time as it happens, or played by musicians in front of people, not recorded earlier."
+      },
+      "grammar": {
+        "pattern": "live music / a live match"
+      },
+      "examples": [
+        {
+          "en": "This café has live music on Friday nights.",
+          "tr": "Bu kafede cuma akşamları canlı müzik var.",
+          "register": "neutral",
+          "focus": "live"
+        },
+        {
+          "en": "The channel shows a live match every Sunday afternoon.",
+          "tr": "Kanal her pazar öğleden sonra canlı bir maç yayınlıyor.",
+          "register": "neutral",
+          "focus": "live"
+        },
+        {
+          "en": "Is this a live show, or did they record it last week?",
+          "tr": "Bu canlı bir program mı, yoksa geçen hafta mı kaydettiler?",
+          "register": "neutral",
+          "focus": "live"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "recorded"
+      ],
+      "collocations": [
+        "live music",
+        "a live match",
+        "live broadcast",
+        "a live show"
+      ],
+      "word_family": [],
+      "confusables": [
+        "alive"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "canlı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu sıfat /laɪv/ okunur ('five' gibi). 'Yaşamak' anlamındaki fiil 'live' ise /lɪv/ okunur ('give' gibi). Canlı (ölü değil) için 'alive' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This isn't a recording; it's a ______ broadcast, so we see the match as it happens.",
+        "answer": "live",
+        "distractors": [
+          "short",
+          "famous",
+          "quiet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.race.n.1",
+      "lemma": "race",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a competition of speed",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/reɪs/",
+        "uk": "/reɪs/"
+      },
+      "def": {
+        "micro": "a contest of speed",
+        "short": "a competition to see who can run, swim, drive or ride the fastest",
+        "long": "A competition between people, animals, cars or bikes to see which one is the fastest. Everyone starts together and tries to finish first."
+      },
+      "grammar": {
+        "pattern": "run / win a race"
+      },
+      "examples": [
+        {
+          "en": "Esra came second in the running race at school.",
+          "tr": "Esra okuldaki koşu yarışında ikinci oldu.",
+          "register": "neutral",
+          "focus": "race"
+        },
+        {
+          "en": "More than two thousand people took part in the charity race on Sunday.",
+          "tr": "Pazar günkü yardım yarışına iki binden fazla kişi katıldı.",
+          "register": "neutral",
+          "focus": "race"
+        },
+        {
+          "en": "Tom fell at the start of the race, but he got up and still finished it.",
+          "tr": "Tom yarışın başında düştü ama kalktı ve yine de yarışı bitirdi.",
+          "register": "neutral",
+          "focus": "race"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "run a race",
+        "win a race",
+        "car race",
+        "bike race",
+        "charity race"
+      ],
+      "word_family": [
+        {
+          "lemma": "race",
+          "pos": "v"
+        },
+        {
+          "lemma": "racing",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yarış",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta 'yarış'. 'Yarışalım!' demek için 'Let's have a race!' denir. 'Race' başka bir bağlamda 'ırk' anlamına da gelir.",
+          "mistakes": [
+            {
+              "wrong": "Let's make a race to the park!",
+              "right": "Let's have a race to the park!",
+              "why": "Türkçe 'yarış yapmak' kelime kelime çevrilince 'make a race' oluyor. İngilizcede 'have a race' ya da kısaca 'race' (fiil) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hundreds of runners started the ______ at the same time near the bridge.",
+        "answer": "race",
+        "distractors": [
+          "match",
+          "stadium",
+          "whistle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

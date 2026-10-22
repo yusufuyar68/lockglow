@@ -174,3 +174,7 @@ Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
 
 - en.spell.v.1: Dikkat silindi ('How do you write your name?' kabul edilebilir); anadili Türkçe biri 'spell' vurgusunun notta yeterli olduğuna bakabilir.
 - en.temperature.n.1 ve en.meanwhile.adv.1: Dikkat maddesi silinince liste boş kalıyor.
+
+## Bakım (2026-10-22, s19 oturumu)
+
+- `en.grade.n.1`: `false_friend` kaldırıldı (`equivalence` "full", `false_friend_tr` bayrağı silindi, `critic_edited`). Türkçe "not" bu kartın kendi karşılığıydı; uygulama sahte dost satırını "not ≠ grade" diye gösterdiği için yanlış okunuyordu (is3-akis bulgusu). Asıl karışıklık İngilizce "note" ile; bu `confusables` ["note"], Türkçe not ve "I got a high note" hatasında zaten anlatılıyor.

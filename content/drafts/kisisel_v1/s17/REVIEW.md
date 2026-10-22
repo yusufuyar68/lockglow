@@ -209,11 +209,11 @@ Uygulanmayan öneriler: `restart` gloss "yeniden başlatmak" (17 grafem, sınır
 
 ## Anadili Türkçe birinin bakması gerekenler
 
-1. `restart` gloss "tekrar başlatmak" (menüde "Yeniden Başlat"; 16 grafem sınırı yüzünden). "kapatıp açmak" mı daha iyi?
+1. ~~`restart` gloss "tekrar başlatmak" (menüde "Yeniden Başlat"; 16 grafem sınırı yüzünden).~~ **Çözüldü (2026-10-22):** gloss artık menüdeki gibi "yeniden başlatmak", kilit ekranı için `gloss_short` "tekrar başlatmak". "kapatıp açmak" alt'ta kalıyor.
 2. `dead` hatası "My charge is finished." ve alt "şarjsız": yaygın mı?
 3. `missed call` hatası "Why didn't you open the phone?": gerçek ve yaygın olduğu düşünülüyor; yine de bakılsın.
 4. `volume` hatası: yaygın biçim "open the sound" mu, "open the volume" mu? (s4 `turn up` kartında "open the volume" var.)
-5. `save` hatası "I recorded your number" ve 3. örnekteki "bastırabilmek" ("çıktısını alabilmek" daha mı doğal?).
+5. `save` hatası "I recorded your number": yaygın mı? (3. örnekteki "bastırabilmek" **2026-10-22'de karara bağlandı:** fotoğraf için "fotoğraf bastırmak" yerleşik ve doğal; "çıktısını almak" daha çok belge için. Değişmedi.)
 6. `hack` hatası "My account hacked yesterday." ve alt "ele geçirmek" ("hesabı ele geçirmek" mi?).
 7. `power bank`: gloss "taşınabilir şarj", çevirilerde "powerbank". İkisi de yaygın mı, gloss "powerbank" mı olmalı?
 8. `on speaker` gloss "hoparlörde": "hoparlörü açık" gibi bir karşılık mı daha anlaşılır?
@@ -221,5 +221,12 @@ Uygulanmayan öneriler: `restart` gloss "yeniden başlatmak" (17 grafem, sınır
 10. `addicted` alt "müptela" (doğru ama eskice), `online` gloss "çevrimiçi" ile alt "internetten" sırası (örneklerin ikisi "internetten").
 11. `up to date` 3. örnek: "gelişmelerden haberdar olmak" mı, "gündemi takip etmek" mi?
 12. `verification code` alt "SMS kodu" (konuşma dili, terim değil) ve "tek kullanımlık şifre"; `scam` alt'ta yalnızca "sahtekârlık" var.
-13. `block` 3. örnek "artık o Defne'nin paylaşımlarını göremiyor" doğal mı?
+13. ~~`block` 3. örnek "artık o Defne'nin paylaşımlarını göremiyor" doğal mı?~~ **Çözüldü (2026-10-22):** "o Defne'nin" "şu Defne'nin" gibi okunabiliyordu; çeviri "Defne eski sevgilisini sosyal medyada engelledi; eski sevgilisi artık onun paylaşımlarını göremiyor." oldu.
 14. `voice message`: "voice record" ("ses kaydı at"tan) gerçek bir hata olabilir; emin olunmadığı için eklenmedi.
+
+## Bakım (2026-10-22, s19 oturumu)
+
+- Eski biçim `confusable:` bayrakları yeni `confusables` alanına taşındı ve bayraklar silindi (5 kart): down → crash, swipe → scroll, post → share, comment → review, secure → safe. Beşi de ölçüte uyuyor (Türkçede aynı karşılık ya da bilinen kullanım farkı). Eşler destede kart olarak var; derleyici çifti iki yönlü bağlıyor, öteki kartlara ayrıca yazılmadı.
+- `restart`: gloss "yeniden başlatmak", `gloss_short` "tekrar başlatmak", alt ["kapatıp açmak"] (gloss_short ile aynı olan "tekrar başlatmak" alt'tan çıktı). Yukarıda "uygulanmayan öneriler"deki 16 grafem engeli `gloss_short` alanıyla kalktı.
+- `block`: 3. örnek çevirisi (anadil listesi madde 13).
+- Değişen 7 karta `critic_edited` eklendi; Türkçe katmanı bağımsız bir doğrulayıcı ve son kontrol ajanı okudu (zaten olanlarda tekrar edilmedi). Doğrulayıcı: `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`.

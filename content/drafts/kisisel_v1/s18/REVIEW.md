@@ -161,7 +161,7 @@ Uygulanmayan doğrulayıcı önerileri: brush up on ve cheat quiz cümlelerinin 
 
 1. **"class friend"** (classmate) ve **"special lessons"** (private lesson): Türkçeden aktarım olarak inandırıcı, ama yaygınlıkları derlemle doğrulanmadı.
 2. **"I go to English course"** (course): hata gerçek ama "I go to English class" doğru olduğu için sınırda.
-3. **native speaker** gloss "ana dili olarak konuşan kişi", alt "ana dili İngilizce olan": kilit ekranında doğal duruyor mu? "ana dili" ayrı yazım (TDK güncel sözlük) doğru mu, "anadili" mi?
+3. **native speaker** gloss "ana dili olarak konuşan kişi", alt "ana dili İngilizce olan": kilit ekranında doğal duruyor mu? "ana dili" ayrı yazım (TDK güncel sözlük) doğru mu, "anadili" mi? (2026-10-22: kilit ekranı için `gloss_short` "ana dili olan" eklendi; aşağıdaki Bakım bölümüne bakın.)
 4. **pick up** gloss "(bir dili) kapmak": "kapmak" A2 öğrencisine fazla gayriresmî mi?
 5. **catch up on** gloss "eksiğini kapatmak": "ödevlerimi yetiştirmek" ve "uykumu telafi etmek" ile birlikte doğru mu?
 6. **major** gloss "bölüm" (alt "ana dal"): öğrenci ağzında doğru, terim olarak "ana dal" daha kesin.
@@ -174,7 +174,7 @@ Uygulanmayan doğrulayıcı önerileri: brush up on ve cheat quiz cümlelerinin 
 13. **be good at** 1. örnek "Leyla dillerde iyidir." mi, "Leyla'nın dile yatkınlığı var." mı?
 14. **brush up on** 3. örnek "dil bilgisinin üzerinden geçti" mi, "gramerini tazeledi" mi?
 15. **accent** alt "şive": "Fransız şivesi" doğal mı?
-16. **certificate** notu "derece için 'degree' denir" anlaşılır mı?
+16. ~~**certificate** notu "derece için 'degree' denir" anlaşılır mı?~~ **Çözüldü (2026-10-22):** not "Üniversite diploması için ise genelde 'degree' denir." oldu (degree kartının anlamıyla aynı söz).
 
 ## Çeldirici kontrolü (2026-10-22)
 
@@ -184,3 +184,10 @@ Uygulanmayan doğrulayıcı önerileri: brush up on ve cheat quiz cümlelerinin 
 - Biçim kuralı: geçmiş zaman (raised his hand, fell behind, did well, graduated, got into, dropped out, picked up), -ing (making) ve phrasal verb cevaplarında şıklar aynı biçimde. Küçük istisna graduate'teki "failed" ("from" ile kurulamıyor ama geçmiş zaman).
 - Bağımsız quiz doğrulayıcısı 45 sorunun her şıkkını boşluğa koyarak okudu: ikinci doğru cevap yok (YÜKSEK 0). Doğrulamada değişen 6 quiz'i son kontrol ajanı ayrıca sınadı.
 - Doğrulayıcı: `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`
+
+## Bakım (2026-10-22, s19 oturumu)
+
+- **`gloss_short` (6 kart):** entegrasyon dalındaki doğrulayıcı, anlamı 16 grafemi geçen kartlarda kısa anlam istiyor (GLOSS_SHORT_MISSING); s18 bu kural birleşmeden önce yazıldığı için 6 uyarı veriyordu. Eklenenler: catch up on "eksiği kapatmak", degree (2) "diploma", native speaker "ana dili olan", make progress "ilerlemek", be good at "başarılı olmak", pick up (3) "bir dili kapmak". native speaker için önce "yerli konuşmacı" yazıldı; bağımsız Türkçe doğrulayıcı bunu çeviri kokan ve "toplantıdaki konuşmacı" gibi okunan bir söz buldu, "ana dili olan" ile değişti ("ana dil konuşuru": TDK'ye göre "ana dil" ata dil demek; "doğuştan konuşan": kalıplaşmış değil).
+- **`confusables`:** confusing kartındaki eski `confusable:confused` bayrağı yeni alana taşındı (confused kartı zaten ["confusing"] diyor).
+- **certificate notu:** anadil listesi madde 16.
+- Değişen 8 karta `critic_edited` eklendi (zaten olanlarda tekrar edilmedi). Türkçe katmanı bağımsız bir doğrulayıcı ve son kontrol ajanı okudu. Doğrulayıcı: `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`.
