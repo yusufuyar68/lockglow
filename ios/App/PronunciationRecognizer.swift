@@ -46,6 +46,17 @@ final class PronunciationRecognizer: ObservableObject {
     private var deadline: Task<Void, Never>?
     /// Bumped by every start and cancel, so late callbacks of an older take do nothing.
     private var generation = 0
+    /// The take in progress as "Söyle tanılama" sees it (never what was said).
+    private var take: SayDiagnostics.Attempt?
+    private var listeningSince: Date?
+    private var downloadSince: Date?
+
+    private static var engine: SayDiagnostics.Engine {
+        if #available(iOS 26.0, *) {
+            return .analyzer
+        }
+        return .recognizer
+    }
 
     var isBusy: Bool {
         switch phase {
@@ -62,11 +73,17 @@ final class PronunciationRecognizer: ObservableObject {
         cancel()
         self.target = target
         let current = generation
+        take = SayDiagnostics.Attempt(
+            date: Date(),
+            engine: Self.engine,
+            targetWords: target.text.split(separator: " ").count
+        )
         work = Task {
-            if let problem = await self.prepare() {
+            if let problem = await self.prepare(generation: current) {
                 if current == self.generation {
                     self.backend = nil
                     self.phase = .failed(problem)
+                    self.logTake(.failed(problem))
                 }
                 return
             }
@@ -80,6 +97,7 @@ final class PronunciationRecognizer: ObservableObject {
                 }
                 try self.startAudio(feeding: backend, maxSeconds: maxSeconds, generation: current)
                 self.phase = .listening
+                self.listeningSince = Date()
                 self.deadline = Task {
                     try? await Task.sleep(for: .seconds(maxSeconds + 2))
                     if current == self.generation {
@@ -93,7 +111,9 @@ final class PronunciationRecognizer: ObservableObject {
                 self.stopAudio()
                 backend.cancel()
                 self.backend = nil
+                self.take?.errorCode = SayDiagnostics.code(of: error)
                 self.phase = .failed(.audioFailed)
+                self.logTake(.failed(.audioFailed))
             }
         }
     }
@@ -105,13 +125,19 @@ final class PronunciationRecognizer: ObservableObject {
         }
         phase = .checking
         stopAudio()
+        if let since = listeningSince {
+            take?.listeningSeconds = Date().timeIntervalSince(since)
+        }
         let current = generation
         work = Task {
             let outcome: Phase
+            var hypotheses: [Hypothesis] = []
+            var failure: Error?
             do {
-                let hypotheses = try await backend.finish()
+                hypotheses = try await backend.finish()
                 outcome = .finished(PronunciationCheck.evaluate(target: target, hypotheses: hypotheses))
             } catch {
+                failure = error
                 outcome = .failed(.recognitionFailed(error.localizedDescription))
             }
             guard current == self.generation else {
@@ -119,11 +145,32 @@ final class PronunciationRecognizer: ObservableObject {
             }
             self.backend = nil
             self.phase = outcome
+            self.take?.candidates = hypotheses.count
+            self.take?.confidence = hypotheses.first?.confidence
+            if let failure {
+                self.take?.errorCode = SayDiagnostics.code(of: failure)
+            } else if hypotheses.isEmpty {
+                self.take?.errorCode = backend.failureCode
+            }
+            switch outcome {
+            case .finished(let feedback):
+                self.logTake(.verdict(feedback.verdict))
+            case .failed(let problem):
+                self.logTake(.failed(problem))
+            default:
+                break
+            }
         }
     }
 
     /// Stops everything without a result (sheet closed, other mode chosen).
     func cancel() {
+        if isBusy {
+            logTake(.cancelled)
+        }
+        take = nil
+        listeningSince = nil
+        downloadSince = nil
         generation += 1
         work?.cancel()
         work = nil
@@ -133,10 +180,21 @@ final class PronunciationRecognizer: ObservableObject {
         phase = .idle
     }
 
+    /// Hands the take to "Söyle tanılama" and forgets it.
+    private func logTake(_ outcome: SayDiagnostics.Outcome) {
+        guard var attempt = take else {
+            return
+        }
+        take = nil
+        attempt.outcome = outcome
+        SayDiagnostics.shared.add(attempt)
+    }
+
     // MARK: - Permissions and model
 
     /// Asks for what is missing, just in time, and sets up the backend. Nil when ready.
-    private func prepare() async -> Problem? {
+    /// `current`: the take's generation, so a late answer never fills in a newer take.
+    private func prepare(generation current: Int) async -> Problem? {
         // The speakers and the microphone share the audio session: stop anything being read,
         // the widget's speaker button included.
         Speaker.stopAll()
@@ -155,9 +213,18 @@ final class PronunciationRecognizer: ObservableObject {
             // microphone permission is asked here.
             do {
                 backend = try await AnalyzerBackend.make(locale: Self.locale) { [weak self] in
-                    self?.phase = .preparing
+                    guard let self, self.generation == current else {
+                        return
+                    }
+                    self.phase = .preparing
+                    self.downloadSince = Date()
                 }
+                noteDownloadTime(generation: current)
             } catch {
+                noteDownloadTime(generation: current)
+                if current == generation {
+                    take?.errorCode = SayDiagnostics.code(of: error)
+                }
                 return .modelUnavailable
             }
         } else {
@@ -175,6 +242,14 @@ final class PronunciationRecognizer: ObservableObject {
             backend = RecognizerBackend(recognizer: recognizer)
         }
         return nil
+    }
+
+    /// How long the English model took to download (first use only).
+    private func noteDownloadTime(generation current: Int) {
+        guard current == generation, let since = downloadSince else {
+            return
+        }
+        take?.modelDownloadSeconds = Date().timeIntervalSince(since)
     }
 
     private static func speechAuthorization() async -> SFSpeechRecognizerAuthorizationStatus {
@@ -307,6 +382,15 @@ protocol SpeechBackend: AnyObject {
     /// Ends the audio and returns the transcriptions, best first (empty when nothing was heard).
     func finish() async throws -> [Hypothesis]
     func cancel()
+    /// Why the last `finish()` came back empty, as "domain code" ("Söyle tanılama"); nil when
+    /// nothing went wrong or the backend throws instead.
+    var failureCode: String? { get }
+}
+
+extension SpeechBackend {
+    var failureCode: String? {
+        return nil
+    }
 }
 
 /// iOS 26+: SpeechAnalyzer with a DictationTranscriber (same on-device model as system dictation)
@@ -463,7 +547,14 @@ final class RecognizerBackend: SpeechBackend {
     private var task: SFSpeechRecognitionTask?
     private let lock = NSLock()
     private var outcome: [Hypothesis]?
+    private var outcomeCode: String?
     private var waiter: CheckedContinuation<[Hypothesis], Never>?
+
+    var failureCode: String? {
+        lock.lock()
+        defer { lock.unlock() }
+        return outcomeCode
+    }
 
     init(recognizer: SFSpeechRecognizer) {
         self.recognizer = recognizer
@@ -481,8 +572,8 @@ final class RecognizerBackend: SpeechBackend {
                     Hypothesis(text: $0.formattedString, confidence: RecognizerBackend.confidence(of: $0))
                 }
                 self?.deliver(hypotheses)
-            } else if error != nil {
-                self?.deliver([])
+            } else if let error {
+                self?.deliver([], failureCode: SayDiagnostics.code(of: error))
             }
         }
     }
@@ -496,7 +587,7 @@ final class RecognizerBackend: SpeechBackend {
         // Safety net in case the recognizer never reports back.
         Task { [weak self] in
             try? await Task.sleep(for: .seconds(4))
-            self?.deliver([])
+            self?.deliver([], failureCode: "timeout")
         }
         return await withCheckedContinuation { continuation in
             lock.lock()
@@ -517,13 +608,14 @@ final class RecognizerBackend: SpeechBackend {
     }
 
     /// The first outcome wins; a waiting `finish()` gets it.
-    private func deliver(_ hypotheses: [Hypothesis]) {
+    private func deliver(_ hypotheses: [Hypothesis], failureCode: String? = nil) {
         lock.lock()
         guard outcome == nil else {
             lock.unlock()
             return
         }
         outcome = hypotheses
+        outcomeCode = failureCode
         let waiting = waiter
         waiter = nil
         lock.unlock()
@@ -534,5 +626,73 @@ final class RecognizerBackend: SpeechBackend {
     private static func confidence(of transcription: SFTranscription) -> Double? {
         let values = transcription.segments.map { Double($0.confidence) }.filter { $0 > 0 }
         return values.isEmpty ? nil : values.reduce(0, +) / Double(values.count)
+    }
+}
+
+// MARK: - Diagnostics
+
+/// "Söyle tanılama" (Ayarlar > Widget sağlığı): the last 20 takes, to see on the phone what README
+/// "Söyle: bilinen belirsizlikler" 1 and 4 leave open: does a confidence come and on what scale,
+/// how many alternatives, how long the model download takes, which error codes.
+/// Never what was said: only the engine, counts, durations and error codes. In memory only, gone
+/// when the app quits. Off (nothing recorded) when `DiagnosticsSwitch.isOn` is false.
+@MainActor
+final class SayDiagnostics: ObservableObject {
+    static let shared = SayDiagnostics()
+    static let capacity = 20
+
+    enum Engine: String {
+        /// iOS 26+.
+        case analyzer = "SpeechAnalyzer"
+        /// iOS 17–25.
+        case recognizer = "SFSpeechRecognizer"
+    }
+
+    enum Outcome: Equatable {
+        case verdict(PronunciationFeedback.Verdict)
+        case failed(PronunciationRecognizer.Problem)
+        /// Stopped before a result: page closed, mode changed, app in the background, a call.
+        case cancelled
+    }
+
+    struct Attempt: Identifiable, Equatable {
+        let id = UUID()
+        let date: Date
+        let engine: Engine
+        /// Words in what was to be said (the card's word or example), not in what was heard.
+        let targetWords: Int
+        /// First use on iOS 26+: how long the English model took to download.
+        var modelDownloadSeconds: Double?
+        var listeningSeconds: Double?
+        /// Transcriptions handed to the check: the best one and its alternatives.
+        var candidates = 0
+        /// The best transcription's confidence (0...1); nil when the engine gave none.
+        var confidence: Double?
+        /// "domain code" of the error, when there was one ("timeout": the recognizer never answered).
+        var errorCode: String?
+        var outcome = Outcome.cancelled
+    }
+
+    /// Newest first, at most `capacity`.
+    @Published private(set) var attempts: [Attempt] = []
+
+    func add(_ attempt: Attempt) {
+        guard DiagnosticsSwitch.isOn else {
+            return
+        }
+        attempts.insert(attempt, at: 0)
+        if attempts.count > SayDiagnostics.capacity {
+            attempts.removeLast(attempts.count - SayDiagnostics.capacity)
+        }
+    }
+
+    func clear() {
+        attempts.removeAll()
+    }
+
+    /// "kAFAssistantErrorDomain 1110": enough to look the error up, nothing the learner said.
+    nonisolated static func code(of error: Error) -> String {
+        let nsError = error as NSError
+        return "\(nsError.domain) \(nsError.code)"
     }
 }
