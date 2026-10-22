@@ -61,7 +61,7 @@ private struct SaySheetDetent: CustomPresentationDetent {
 }
 
 /// The learner says the word (or the example sentence); the phone checks it on the device and
-/// answers in Turkish ("Doğru!", "Bir daha dene" with what it heard and a tip).
+/// answers in Turkish ("Anlaşıldı!", "Bir daha dene" with a tip), what it heard in its own row.
 /// Mockup `.saysheet`, in three steps: Dinle → Söyle → Sonuç. Each step has one filled button in
 /// the bottom bar (listen, then speak, then speak again); the speaker stays next to it as a tonal
 /// capsule once listening is no longer the main action. A step bar and one short line say where
@@ -111,6 +111,8 @@ struct PronunciationPracticeView: View {
 
     private static let statusID = "say.status"
     private static let preparingText = "İngilizce konuşma modeli iniyor. Bu yalnız ilk seferde olur."
+    /// Short: listening starts once it has been said (`PronunciationRecognizer.downloadAnnouncementSeconds`).
+    private static let preparingAnnouncement = "İngilizce konuşma modeli iniyor."
 
     var body: some View {
         NavigationStack {
@@ -170,7 +172,13 @@ struct PronunciationPracticeView: View {
                     default:
                         break
                     }
-                    announce(phase)
+                    if phase == .preparing {
+                        announce([.turkish(PronunciationPracticeView.preparingAnnouncement)], while: .phase(phase))
+                    }
+                }
+                // The result, or why the take could not run (audit V7).
+                .onChange(of: recognizer.endedTakes) {
+                    announceEndOfTake()
                 }
                 .navigationTitle("Söyle")
                 .navigationBarTitleDisplayMode(.inline)
@@ -191,13 +199,12 @@ struct PronunciationPracticeView: View {
         .onChange(of: mode) {
             recognizer.cancel()
         }
-        // VoiceOver hears why "Söyle" cannot run and what to do, and when a permission is back on.
-        .onChange(of: shownProblem) { old, new in
+        // A permission turned off or back on in iPhone Settings (audit V7).
+        .onChange(of: blockedBy) { old, new in
             if let new {
-                announce(ProblemPanel.spoken(new))
-            } else if let old, PronunciationPracticeView.opensSettings(old),
-                      PronunciationPracticeView.currentPermissionProblem() == nil {
-                announce([.turkish("İzin açık. Söyle artık çalışır.")])
+                announce(ProblemPanel.spoken(new), while: .permission(new))
+            } else if old != nil {
+                announce([.turkish("İzin açık. Söyle artık çalışır.")], while: .permission(nil))
             }
         }
         // Step 1 is done once the target has been read aloud (to the end, or stopped).
@@ -412,7 +419,7 @@ struct PronunciationPracticeView: View {
         .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 64))
         .disabled(action == .wait)
         .accessibilityLabel(spoken)
-        .accessibilityInputLabels([Text(visible), Text(spoken)])
+        .accessibilityInputLabels(visible == spoken ? [Text(visible)] : [Text(visible), Text(spoken)])
     }
 
     private var listenAgainButton: some View {
@@ -521,14 +528,24 @@ struct PronunciationPracticeView: View {
 
     // MARK: - VoiceOver announcements
 
-    /// The model download and the result; a problem is announced when `shownProblem` changes.
-    private func announce(_ phase: PronunciationRecognizer.Phase) {
+    /// What must still be true when an announcement goes out, a moment after it was made.
+    private enum StillTrue {
+        /// No other take has started or ended.
+        case phase(PronunciationRecognizer.Phase)
+        /// The permission is still off (nil: still on), and no take has just failed for it: that
+        /// take's own announcement says it already (the first "no" to the system's question).
+        case permission(PronunciationRecognizer.Problem?)
+    }
+
+    /// The take's result, or why it could not run: a permission that is off first, as on the page.
+    private func announceEndOfTake() {
+        let phase = recognizer.phase
         switch phase {
-        case .preparing:
-            announce([.turkish(PronunciationPracticeView.preparingText)])
         case .finished(let feedback):
-            announce(FeedbackPanel.spokenResult(feedback))
-        case .idle, .listening, .checking, .failed:
+            announce(FeedbackPanel.spokenResult(feedback), while: .phase(phase))
+        case .failed(let problem):
+            announce(ProblemPanel.spoken(blockedBy ?? problem), while: .phase(phase))
+        case .idle, .preparing, .listening, .checking:
             break
         }
     }
@@ -536,16 +553,25 @@ struct PronunciationPracticeView: View {
     /// Says what just changed, so that a VoiceOver user does not have to look for it (audit V7):
     /// what happened and what to do. Never when listening starts: the microphone would hear it (a
     /// light tap says that instead). Posted a moment later, once the page has scrolled, so that
-    /// VoiceOver does not drop it, and only if no other take has started by then. Default
-    /// priority, never `.high`: an announcement that cannot be cut off would still be speaking
-    /// when the learner taps "Bir daha söyle", and the microphone would hear it.
-    private func announce(_ runs: [FeedbackRun]) {
+    /// VoiceOver does not drop it, and only if `still` holds then. Default priority, never
+    /// `.high`: an announcement that cannot be cut off would still be speaking when the learner
+    /// taps "Bir daha söyle", and the microphone would hear it.
+    private func announce(_ runs: [FeedbackRun], while still: StillTrue) {
         let recognizer = self.recognizer
-        let phase = recognizer.phase
         Task { @MainActor in
             try? await Task.sleep(nanoseconds: 300_000_000)
-            guard recognizer.phase == phase else {
-                return
+            switch still {
+            case .phase(let phase):
+                guard recognizer.phase == phase else {
+                    return
+                }
+            case .permission(let problem):
+                guard PronunciationPracticeView.currentPermissionProblem() == problem else {
+                    return
+                }
+                if let problem, recognizer.phase == .failed(problem) {
+                    return
+                }
             }
             UIAccessibility.post(notification: .announcement, argument: SpeechLanguage.attributed(runs))
         }
@@ -854,9 +880,9 @@ private struct ProblemPanel: View {
     static func message(_ problem: Problem) -> String {
         switch problem {
         case .microphoneDenied:
-            return "Söyle için mikrofon gerekiyor. iPhone Ayarları'nda Lockglow için mikrofon iznini açabilirsin. Dinle ve kartlar izinsiz de çalışır."
+            return "iPhone Ayarları'nda Lockglow için mikrofon iznini açabilirsin. Dinle ve kartlar izinsiz de çalışır."
         case .speechDenied:
-            return "Söyle için konuşma tanıma gerekiyor. iPhone Ayarları'nda Lockglow için bu izni açabilirsin. Dinle ve kartlar izinsiz de çalışır."
+            return "iPhone Ayarları'nda Lockglow için konuşma tanıma iznini açabilirsin. Dinle ve kartlar izinsiz de çalışır."
         case .speechRestricted:
             return "Konuşma tanıma bu telefonda kısıtlı. Ekran Süresi ya da telefonu yöneten kurum bunu kapatmış olabilir."
         case .modelUnavailable:

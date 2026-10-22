@@ -511,9 +511,9 @@ public struct PronunciationFeedback: Equatable, Sendable {
                 messageRuns = [.turkish("Anlaşıldı ama tam net değildi. Bir kez daha söyle.")]
             } else {
                 messageRuns = [
-                    .turkish("Çok yaklaştın. Tam duyulmayan: "),
+                    .turkish("Şunlar duyulmadı: "),
                     .english(missedWords.joined(separator: ", ")),
-                    .turkish("."),
+                    .turkish(". Bir daha dene."),
                 ]
             }
         case .tryAgain:

@@ -38,6 +38,15 @@ final class PronunciationRecognizer: ObservableObject {
     static let locale = Locale(identifier: "en-US")
 
     @Published private(set) var phase: Phase = .idle
+    /// Takes that ended with a result or a problem. The page announces each end, also one that
+    /// looks like the last (the same problem again right after "Bir daha dene", too quick for the
+    /// page to see the phase change).
+    @Published private(set) var endedTakes = 0
+
+    /// First use with VoiceOver on: the page announces the model download; listening starts no
+    /// sooner than this after the download began, so that the microphone does not hear the end of
+    /// the announcement.
+    static let downloadAnnouncementSeconds = 4.0
 
     private let engine = AVAudioEngine()
     private var tapInstalled = false
@@ -87,9 +96,16 @@ final class PronunciationRecognizer: ObservableObject {
                 if current == self.generation {
                     self.backend = nil
                     self.phase = .failed(problem)
+                    self.endedTakes += 1
                     self.logTake(.failed(problem))
                 }
                 return
+            }
+            if let since = self.downloadSince, UIAccessibility.isVoiceOverRunning {
+                let left = PronunciationRecognizer.downloadAnnouncementSeconds - Date().timeIntervalSince(since)
+                if left > 0 {
+                    try? await Task.sleep(for: .seconds(left))
+                }
             }
             guard current == self.generation, let backend = self.backend else {
                 return
@@ -117,6 +133,7 @@ final class PronunciationRecognizer: ObservableObject {
                 self.backend = nil
                 self.take?.errorCode = SayDiagnostics.code(of: error)
                 self.phase = .failed(.audioFailed)
+                self.endedTakes += 1
                 self.logTake(.failed(.audioFailed))
             }
         }
@@ -148,10 +165,11 @@ final class PronunciationRecognizer: ObservableObject {
                 return
             }
             // iOS 17–25 (README "Söyle: bilinen belirsizlikler" 8): failed takes in a row mean that
-            // on-device English recognition is not set up; the page then says how to set it up.
+            // on-device English recognition is not set up; the page then says how to set it up. A
+            // recognizer that did not answer in time is slow, not a sign of that.
             if Self.engine == .recognizer {
                 if failure != nil {
-                    if Self.failureStreak.recordFailure() {
+                    if backend.failureCode != RecognizerBackend.timeoutCode, Self.failureStreak.recordFailure() {
                         outcome = .failed(.onDeviceUnavailable)
                     }
                 } else if !hypotheses.isEmpty {
@@ -160,6 +178,7 @@ final class PronunciationRecognizer: ObservableObject {
             }
             self.backend = nil
             self.phase = outcome
+            self.endedTakes += 1
             self.take?.candidates = hypotheses.count
             self.take?.confidence = hypotheses.first?.confidence
             // The recognizer's own code first: on iOS 17–25 the error thrown only says "failed".
@@ -562,6 +581,9 @@ final class AnalyzerBackend: SpeechBackend {
 /// with nothing heard; any other error, or no answer at all, makes `finish()` throw
 /// (`RecognitionFailures`).
 final class RecognizerBackend: SpeechBackend {
+    /// `failureCode` when the recognizer did not answer within 4 s of the end of the audio.
+    static let timeoutCode = "timeout"
+
     /// What the recognizer answered; `failed`: it did not run (see `RecognitionFailures`).
     private struct Outcome {
         let hypotheses: [Hypothesis]
@@ -615,7 +637,7 @@ final class RecognizerBackend: SpeechBackend {
         // Safety net in case the recognizer never reports back.
         Task { [weak self] in
             try? await Task.sleep(for: .seconds(4))
-            self?.deliver([], failureCode: "timeout", failed: true)
+            self?.deliver([], failureCode: RecognizerBackend.timeoutCode, failed: true)
         }
         let answer: Outcome = await withCheckedContinuation { continuation in
             lock.lock()

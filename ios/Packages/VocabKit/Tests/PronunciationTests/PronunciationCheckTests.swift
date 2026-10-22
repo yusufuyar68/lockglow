@@ -99,8 +99,8 @@ final class PronunciationCheckTests: XCTestCase {
         let feedback = check("Can I have a spoon, please?", heard: ["can I have a spoon"])
         XCTAssertEqual(feedback.verdict, .almost)
         XCTAssertEqual(feedback.missedWords, ["please"])
-        XCTAssertEqual(feedback.message, "Çok yaklaştın. Tam duyulmayan: please.")
-        XCTAssertEqual(feedback.messageRuns, [.turkish("Çok yaklaştın. Tam duyulmayan: "), .english("please"), .turkish(".")])
+        XCTAssertEqual(feedback.message, "Şunlar duyulmadı: please. Bir daha dene.")
+        XCTAssertEqual(feedback.messageRuns, [.turkish("Şunlar duyulmadı: "), .english("please"), .turkish(". Bir daha dene.")])
     }
 
     func testSentenceAlmostKeepsTheTip() {
@@ -108,7 +108,7 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(feedback.verdict, .almost)
         XCTAssertEqual(feedback.tip?.kind, .th)
         XCTAssertEqual(feedback.missedWords, ["think"])
-        XCTAssertEqual(feedback.message, "Çok yaklaştın. Tam duyulmayan: think.")
+        XCTAssertEqual(feedback.message, "Şunlar duyulmadı: think. Bir daha dene.")
     }
 
     func testOneWordOfAPhraseMissingIsAlmost() {
@@ -123,7 +123,7 @@ final class PronunciationCheckTests: XCTestCase {
             XCTAssertEqual(feedback.verdict, .almost, "target: \(vector.target)")
             XCTAssertEqual(feedback.missedWords, [vector.missed], "target: \(vector.target)")
         }
-        XCTAssertEqual(check("get up", heard: ["get"]).message, "Çok yaklaştın. Tam duyulmayan: up.")
+        XCTAssertEqual(check("get up", heard: ["get"]).message, "Şunlar duyulmadı: up. Bir daha dene.")
     }
 
     func testWrongParticleIsTryAgain() {
