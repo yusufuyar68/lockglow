@@ -1,6 +1,10 @@
 # Lockglow Yasal Belgeler: Dizin ve Yayın Rehberi
 
 > **TASLAK PAKET.** Bu belgeler avukat değil, taslak hazırlama asistanı tarafından yazılmıştır ve **hukuki görüş değildir.** Hepsi avukat incelemesi içindir. Belirsiz noktalar **[TEYİT]** ile işaretlidir (aşağıda toplu liste var). Hazırlanma tarihi: 11 Ekim 2026. Marka adı değişeceği için her yerde **Lockglow** yer tutucusu kullanıldı.
+>
+> **taslak-2 (22 Ekim 2026):** Söyle (mikrofon, cihaz içi konuşma tanıma) ve widget'tan sesli okuma koda bakılarak işlendi: gizlilik politikası §3.7–3.8 (TR/EN), KVKK aydınlatma §2, `app_store_privacy_etiketi.md` (V7, V9, V10, §2A, §5.4a, §5.6), bu dosyada §4 madde 7–10, §4.1, §5 ve §6-F. Değişen her yer **[TEYİT]** ile işaretli. Mağaza metinleri: `docs/magaza/`.
+>
+> **Marka uyarısı:** "Lockglow" adı için **TÜRKPATENT araması ve marka vekili görüşü henüz yapılmadı** (22 Ekim 2026). Ad kesin değildir; yayından önce bu iki adım tamamlanmalı.
 
 Dayandığı kararlar ve bilgiler: `Widget_Vocabulary_Analiz_ve_Plan.md` §8 (teknik yığın), §9 (planlar), §11 (KVKK/GDPR), `raporlar/09_turkiye_hukuk_vergi_butce.md` §3 (KVKK, Apple 5.1.1/5.1.2/3.1.2) ve `marketing/landing/aydinlatma.html` (erken erişim listesi aydınlatması; üslup aynı tutuldu).
 
@@ -28,7 +32,7 @@ Tüm belgelerde bulk "bul-değiştir" yapın. Parantezli sayısal değerler (`[1
 
 | Yer tutucu | Açıklama |
 |---|---|
-| Marka adı | Belgelere **Lockglow** yazıldı (2026-10-11, plan §4.4). TÜRKPATENT araması veya vekil görüşü adı değiştirirse "Lockglow" ve Türkçe ek "Lockglow'un" aranıp değiştirilmeli. |
+| Marka adı | Belgelere **Lockglow** yazıldı (2026-10-11, plan §4.4). TÜRKPATENT araması veya vekil görüşü adı değiştirirse "Lockglow" ve Türkçe ek "Lockglow'un" aranıp değiştirilmeli. **22 Ekim 2026 itibarıyla arama ve vekil görüşü yapılmadı.** **[TEYİT]** |
 | `[AD SOYAD]` / `[FULL NAME]` | Veri sorumlusunun tam adı. App Store satıcı adı ve Apple kaydıyla **birebir aynı** yazım. |
 | `[E-POSTA]` / `[EMAIL]` | Destek ve KVKK başvuru adresi (ör. `privacy@...`). Aynı adres hem belgelerde hem App Store'da. |
 | `[ADRES]` / `[ADDRESS]` | Kamuya açık adres. **Ev adresini yazmayın:** belgeli ofis/coworking veya KEP adresi tercih edin; ayrıca AB DSA "trader" beyanında adres 27 AB ülkesinde herkese açık görünür (plan §11.2). **[TEYİT]** |
@@ -57,7 +61,7 @@ Tüm belgelerde bulk "bul-değiştir" yapın. Parantezli sayısal değerler (`[1
 | **Onboarding 2. adım (hoş geldin sonrası): rıza ekranı** | `acik_riza_metni_analitik_tr` / `analytics_consent_en` sonundaki ekran metni; altta **Aydınlatma Metni** ve **Açık Rıza Metni** bağlantıları | Düğmeler eşit ağırlıkta; ekran cevaplanmadan analitik/hata SDK'sı başlamaz |
 | **Uygulama içi Ayarlar > Gizlilik** | Gizlilik Politikası, KVKK Aydınlatma Metni, Açık Rıza Metni, **Analitik tercihim** anahtarı, **Analitik verilerimi sil / kimliğimi sıfırla**, (Sentry varsa) **Hata raporları** anahtarı | Apple 5.1.1(i): politika uygulamada kolay erişilebilir |
 | **Uygulama içi Ayarlar > Hakkında** | Kullanım Şartları, Lisanslar ve Atıflar | Açık lisanslı kaynakların atıfları |
-| **App Review Information > Notes** | Rıza ekranının yeri, widget ekleme adımları, "Şimdi değil" ile her şeyin çalıştığı | İnceleme tarafını bilgilendirir |
+| **App Review Information > Notes** | Rıza ekranının yeri, widget ekleme adımları, "Şimdi değil" ile her şeyin çalıştığı; Söyle'nin mikrofonu yalnız dokununca ve cihaz içinde kullandığı; `UIBackgroundModes: audio`'nun yalnız widget'taki "Kelimeyi dinle" düğmesi için olduğu (App Review 2.5.4) **[TEYİT: taslak-2]**. Hazır metin: `docs/magaza/` | İnceleme tarafını bilgilendirir |
 | **Web sitesi altbilgisi** | Dört herkese açık belge | Erken erişim listesi için mevcut `aydinlatma.html` **ayrı kalır**; bu belgeler yalnızca uygulamayı kapsar. Bu sayfa da Lockglow adına güncellendi |
 | **Çevrimdışı kopya** (uygulama paketinde) | Politika + aydınlatma + rıza (TR/EN) | İnternet yokken de erişim için **[TEYİT]** |
 
@@ -69,8 +73,24 @@ Tüm belgelerde bulk "bul-değiştir" yapın. Parantezli sayısal değerler (`[1
 4. **RevenueCat zorunlu ve ilk açılışta başlatılır** varsayımı (en geniş senaryo). Yalnızca paywall/geri yükleme anında başlatmak mümkünse veri azalır ve metinler sadeleşir **[TEYİT]**.
 5. **Hata bildir:** e-posta taslağı açar (uygulama içi form yok).
 6. **EULA:** Önce Apple standart EULA + tamamlayıcı Kullanım Şartları (Seçenek A+).
-7. **Yok:** hesap, ATT/IDFA, reklam, konum, rehber, uzaktan push, yapay zekâ özellikleri, CloudKit (v1.2) ve CDN içerik güncellemesi (v1.1). Bunlar eklenmeden önce belgeler güncellenir.
-8. **Mikrofon (Söyle telaffuz alıştırması):** yalnız kullanıcı "Söyle"ye dokununca, izinle ve cihaz içinde. Ses kaydedilmez, saklanmaz, aktarılmaz; App Store etiketinde "Audio Data" = No. Ayrıntı: gizlilik politikası §3.7 (TR/EN), KVKK aydınlatma §2 son paragraf.
+7. **Yok:** hesap, ATT/IDFA, reklam, konum, rehber, uzaktan push, yapay zekâ özellikleri, sunucu tabanlı konuşma tanıma, bulut seslendirme (TTS), CloudKit (v1.2) ve CDN içerik güncellemesi (v1.1). Bunlar eklenmeden önce belgeler güncellenir. **[TEYİT: taslak-2'de konuşma tanıma ve seslendirme maddeleri eklendi]**
+8. **Mikrofon (Söyle telaffuz alıştırması):** yalnız kullanıcı "Söyle"ye dokununca, izinle, yalnız dinleme süresince ve cihaz içinde. iOS 26+: `SpeechAnalyzer` + `DictationTranscriber`; iOS 17–25: `SFSpeechRecognizer` + `requiresOnDeviceRecognition = true`, sunucuya düşme yok. Ses kaydedilmez, saklanmaz, aktarılmaz; tanınan metin ve sonuç da kaydedilmez; arka planda dinleme yok. App Store etiketinde "Audio Data" = No. Kodda doğrulandı (2026-10-22, `ios/App/PronunciationRecognizer.swift`). Ayrıntı: gizlilik politikası §3.7 (TR/EN), KVKK aydınlatma §2 "Mikrofon ve sesli okuma". **[TEYİT: taslak-2]**
+9. **Widget'tan sesli okuma:** ana ekran widget'ındaki "Kelimeyi dinle" düğmesi (`SpeakWordIntent`, `AudioPlaybackIntent`) iOS tarafından uygulamanın sürecinde, uygulama ekrana gelmeden çalıştırılır; cihazın en-US sesiyle okur, ağ kullanmaz, dokunuş kaydedilmez. Bunun için uygulamada `UIBackgroundModes: audio` var. Ayrıntı: gizlilik politikası §3.8. **[TEYİT: taslak-2]**
+10. **Şimdiki derleme SDK'sız:** RevenueCat, PostHog, Sentry ve paywall henüz yok (2026-10-22). Madde 2–4 ileriki ticari sürüm içindir; ilk ücretsiz sürüm için §4.1. **[TEYİT: taslak-2]**
+
+### 4.1 İlk ücretsiz sürüm için sadeleştirme **[TEYİT: taslak-2, 22 Ekim 2026]**
+
+Bu paket en geniş senaryoya (abonelik + analitik + isteğe bağlı Sentry) göre yazıldı. 22 Ekim 2026'daki kodda RevenueCat, PostHog, Sentry ve paywall **yok**, uygulama hiçbir sunucuya bağlanmıyor (`app_store_privacy_etiketi.md` §2A). İlk mağaza sürümü ücretsiz ve satın almasız çıkarsa:
+
+| Belge | Ne yapılır |
+|---|---|
+| `app_store_privacy_etiketi.md` | §2A: "Data Not Collected" |
+| Gizlilik politikası (TR/EN) | §3.2 (abonelik), §3.3 (analitik), §3.4'teki Sentry maddesi, §5'teki abonelik/analitik/Sentry satırları, §6'daki RevenueCat/PostHog/Sentry satırları, §7 (yurt dışı aktarım: yalnızca e-posta sağlayıcısı kalır), §8'deki ilgili satırlar ve §10'daki "Analitik tercihim / Analitik verilerimi sil" maddeleri çıkar. "Kısaca"daki RevenueCat ve analitik maddeleri çıkar. §3.1, §3.5, §3.6, §3.7, §3.8 kalır. |
+| KVKK aydınlatma | §2 tablosunda "Müşteri işlem", "İşlem güvenliği", analitik ve hata kaydı satırları çıkar; §3'te RevenueCat/PostHog/Sentry satırları çıkar; "açık rıza" atıfları çıkar. İletişim ve hukuki işlem satırları kalır. |
+| Açık rıza metinleri (TR/EN) | Gerekmez (analitik yok); onboarding'de rıza ekranı da gerekmez. |
+| Kullanım şartları (TR/EN) | Abonelik ve paywall bölümleri çıkar; Apple standart EULA yeterli olabilir **[TEYİT]**. |
+
+Sadeleştirilmiş metin, SDK eklenen sürümden **önce** bu tam pakete geri döner (§4 madde 2–4).
 
 ## 5. Mühendislik bağımlılıkları (belgelerde söz verilenler uygulamada olmalı)
 
@@ -86,6 +106,17 @@ Aşağıdakiler yapılmazsa belgeler gerçeği yansıtmaz ve Apple/KVKK riski do
 - [ ] Paywall'da fiyat, süre, yenileme, iptal ve bağlantılar (Kullanım Şartları + Gizlilik) var; deneme bitiş tarihi gösteriliyor.
 - [ ] Manifestler ve etiketler `app_store_privacy_etiketi.md` ile uyumlu; her SDK değişikliğinde yeniden kontrol.
 - [ ] Rıza dışı kullanıcı kimlikleri (ör. destek e-postası) için başvuru süreci (30 gün) ve silme iş akışı sahipli.
+
+**Söyle ve widget sesi (taslak-2; 2026-10-22'de kodda bakıldı) [TEYİT]:**
+
+- [x] Söyle iOS 17–25'te `requiresOnDeviceRecognition = true` kullanıyor; cihaz içi tanıma yoksa sunucuya düşmeden uyarı veriyor (`PronunciationRecognizer.swift:470`, `:172–174`). iOS 26+'da `SpeechAnalyzer` + `DictationTranscriber` (`:153–162`).
+- [x] Ses yalnızca bellekte tampon olarak tanıyıcıya veriliyor, dosyaya yazılmıyor (`:192–213`, `:374–378`); sonuç ilerleme kaydına yazılmıyor.
+- [x] İzinler yalnız ilk kullanımda isteniyor (`prepare()`, `:139–178`); konuşma tanıma izni yalnız iOS 17–25'te.
+- [x] Arka plana geçişte, ses kesintisinde ve sayfa kapanınca dinleme iptal (`PronunciationPracticeView.swift:140–160`).
+- [x] Widget hoparlörü: `SpeakWordIntent` (`isDiscoverable = false`), `AVSpeechSynthesizer`, en-US cihaz sesi, Personal Voice hariç (`Shared/WordSpeech.swift:52–59`); ağ kodu yok.
+- [ ] **Telefonda:** Söyle'yi ve widget hoparlörünü uçak modunda deneyin; trafik aracında Apple dışı istek olmadığını görün.
+- [ ] Info.plist izin metinlerine İngilizce karşılık ve "kelime ya da cümle" düzeltmesi (`app_store_privacy_etiketi.md` §5.6). `ios/project.yml`'de yapılır; bu pakette yapılmadı.
+- [ ] Analitik eklenirse Söyle'nin tanınan metni ve sesi olaylara **eklenmez**; yalnızca sayı (deneme sayısı) gönderilebilir ve etiket yeniden kontrol edilir.
 
 ## 6. [TEYİT]: Avukata sorulacaklar (toplu liste)
 
@@ -118,6 +149,14 @@ Aşağıdakiler yapılmazsa belgeler gerçeği yansıtmaz ve Apple/KVKK riski do
 19. "Hata bildir" kanalı (mailto mu, uygulama içi form mu): form olursa politika ve etiket değişir.
 20. Gelecek özellikler (CloudKit, CDN, hesap, push, AdServices) için belgelerin güncellenme zamanı. Mikrofon/telaffuz ("Söyle") eklendi ve metinlere işlendi: yalnız cihazda işlenen, kaydedilmeyen ve bize ulaşmayan sesin KVKK anlamında bizim "işlememiz" sayılıp sayılmadığı ve aydınlatma metnindeki cümlenin yeterliliği.
 
+**F. Söyle ve widget sesi (taslak-2, 22 Ekim 2026)**
+
+31. **Ses ve biyometrik veri:** Söyle'de ses ses izi çıkarmadan, kimlik doğrulamadan, yalnızca yazıya çevirmek için ve yalnız cihazda işleniyor; kaydedilmiyor. Bunun KVKK m.6 anlamında biyometrik (özel nitelikli) veri sayılmayacağı varsayımı doğru mu? GDPR m.9 için aynı soru. *(gizlilik politikası §3.7, aydınlatma §2)*
+32. **Aydınlatma metninde ses için tablo satırı:** Ses bize ulaşmadığı için tabloya satır konmadı, yalnızca açıklama paragrafı var. Bu yeterli mi? *(aydınlatma §2)*
+33. **Kullanım şartlarında Söyle uyarısı:** `kullanim_sartlari_tr.md:73` (ve EN karşılığı) telaffuzdan söz ediyor, ama Söyle'nin geri bildiriminin cihaz içi tanımaya dayalı ve **yaklaşık** olduğu (aksanı, gürültüyü yanlış değerlendirebileceği) yazmıyor. Böyle bir cümle eklensin mi?
+34. **İzin metinlerinin dili:** Info.plist izin metinleri yalnızca Türkçe (`app_store_privacy_etiketi.md` §5.6). İngilizce mağaza yerelleştirmesinde İngilizce karşılık şart mı (Apple 5.1.1(ii): amaç açıkça anlatılmalı)?
+35. **Arka plan ses modu (App Review 2.5.4):** `UIBackgroundModes: audio` yalnızca widget'tan sesli okuma için. İnceleme notu yeterli mi; kullanıcıya ayrıca anlatmak gerekir mi? *(gizlilik politikası §3.8)*
+
 **D. Kullanım şartları / tüketici**
 
 21. **Apple standart EULA mı, özel EULA mı;** özel EULA'da Apple asgari şartlarının güncel PLA metnine göre kontrolü; Apple EULA'sı ile tamamlayıcı şartlar arasında çelişki hâlinde hangisinin geçerli olacağı.
@@ -142,6 +181,7 @@ Aşağıdakiler kısa web taramasıyla bakıldı; **kesin kaynak olarak kullanı
 - PostHog: iOS SDK'da `optOut()/optIn()` var ve durumu kalıcı; IP verisi proje ayarından atılabilir; AB bulutu Frankfurt'ta (ikincil kaynaklar); alt işleyenlerde ABD konumları görünüyor.
 - Sentry: `sendDefaultPii` kapalıyken IP varsayılan olarak gönderilmez; AB barındırma seçeneği ve DPF/SCC mevcut (resmi sayfalar); şehir adı doğrulanamadı.
 - 18.02.2026/347 sayılı Kurul İlke Kararı'nın tam metni **okunmadı**; plan raporundaki özetlere dayanıldı.
+- **Söyle (taslak-2, ikincil not):** telaffuz araştırması oturumunun Apple belgelerinden aktardığı iki cümleye dayanıldı: `SFSpeechRecognitionRequest.requiresOnDeviceRecognition` isteğin sesi ağ üzerinden göndermesini engeller; "SpeechAnalyzer transcriber modules don't send audio data of the user's voice to Apple's servers" (Apple, *Asking permission to use speech recognition*). Yayından önce bu iki sayfa yeniden okunmalı **[TEYİT]**.
 
 ## 8. Kullanım notları
 

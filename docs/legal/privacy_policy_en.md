@@ -1,8 +1,10 @@
 # Lockglow Privacy Policy
 
 > **DRAFT:** Not a lawyer-reviewed document. Do not publish before legal review. Fill in all bracketed fields and resolve every **[TEYİT]** item (Turkish for "to be confirmed by counsel"). Delete this box before publishing.
+>
+> **draft-2 (22 October 2026):** the "Söyle" (microphone, on-device speech recognition) and read-aloud / widget speaker sections were updated after checking the app's code. Every changed place is marked **[TEYİT]**. The text is written for the later version with a subscription and analytics; for a first free version, see `README.md` §4.1 (simplification).
 
-**Last updated:** [DATE] · **Version:** draft-1
+**Last updated:** [DATE] · **Version:** draft-2
 
 ---
 
@@ -10,6 +12,7 @@
 
 - Lockglow does not ask you to create an account. You never give us your name, email or phone number to use it.
 - Your learning progress, saved words and settings stay **on your device only**.
+- For **Söyle** (pronunciation practice) the microphone turns on only when you tap it and allow it. Your voice is turned into text on your phone; it is not recorded and not sent to us or anyone else. The speaker buttons that read words aloud (including the widget's) also use the phone's own voice. **[TEYİT]**
 - We show no ads, we do not track you across other apps or websites, and we do not sell your data.
 - Usage statistics (analytics) are collected **only if you say yes**. Saying no does not limit any feature of the app.
 - We use RevenueCat to check your subscription status. We never see your card details; Apple handles the payment.
@@ -48,7 +51,7 @@ The following is stored on your device and is **not sent to us**:
 
 This data lives in storage shared between the app and its widgets, and it is deleted when you delete the app. If you back up your device to iCloud or a computer, Apple's backup service may include this data. That depends on your Apple settings and on Apple's own policy; we have no access to those backups.
 
-Reminders are scheduled locally on your device (local notifications). We do not send a push token to any server. Word pronunciation uses your device's built-in speech synthesis.
+Reminders are scheduled locally on your device (local notifications). We do not send a push token to any server. Words are read aloud with your device's own voice (see Section 3.8). **[TEYİT]**
 
 ### 3.2 Subscription and purchase information (required)
 
@@ -88,18 +91,35 @@ If you email us for support or use "Report a mistake", we process your email add
 
 ### 3.6 Data we do not handle
 
-Lockglow does **not** collect your location, contacts, photos, camera, health data, payment card details or advertising identifier (IDFA). It does **not** track you across other apps or websites, shows **no ads**, does **not sell** your data and does not share it for advertising.
+Lockglow does **not** collect your location, contacts, photos, camera, health data, payment card details or advertising identifier (IDFA). The microphone is used only for Söyle, on the device; no audio is collected (see Section 3.7) **[TEYİT]**. It does **not** track you across other apps or websites, shows **no ads**, does **not sell** your data and does not share it for advertising.
 
 There is no AI chat in the app, and your personal data is not sent to third-party AI services.
 
 ### 3.7 Pronunciation practice ("Söyle") and the microphone
 
-With "Söyle" you say a word or an example sentence aloud, and the app tells you in Turkish whether you said it right.
+**[TEYİT: rewritten in draft-2 (22 October 2026) after checking the app's code.]**
 
-- **Microphone permission** is requested only when you first tap "Söyle", at that moment. On older iOS versions (before iOS 26) **speech recognition permission** is requested as well. If you decline, the rest of the app (cards, read-aloud, widgets) works as before. You can withdraw the permission at any time in iPhone Settings.
-- **Your voice does not leave your device.** Your speech is turned into text only on your device, by Apple's on-device speech recognition, and compared right away. The app does not use server-based recognition.
-- **Nothing is recorded, stored or shared.** The audio is held in memory only during that attempt and is never written to a file. Neither the audio nor the recognized text is sent to us or to third parties (analytics included).
-- On iOS 26 and later, Apple's English speech model is downloaded once from Apple on first use. Your voice is not sent in that download; the model is stored on your iPhone and may be shared with other apps.
+With "Söyle" ("Say it") you say the card's word or its example sentence aloud, and the app tells you in Turkish whether you said it right (for example "Doğru!" (right), "Neredeyse!" (almost), "Bir daha dene" (try again)).
+
+- **Permission is asked only when you use it.** Microphone permission is requested the first time you tap "Söyle", at that moment, never at app launch. On iOS 17–25 **speech recognition permission** is requested as well; on iOS 26 and later only the microphone permission is requested. If you decline, the rest of the app (cards, review, read-aloud, widgets) works as before. You can turn the permissions off at any time in iPhone Settings under Lockglow.
+- **The microphone is on only while listening.** Listening stops by itself when you finish speaking, after a few seconds if you say nothing, when the time limit is reached, or when you tap "Bitti" (done). It stops at once if the app goes to the background, if an interruption such as a phone call occurs, or if you close the Söyle screen. The app never listens in the background.
+- **Your voice does not leave your device.** Your speech is turned into text only on your device, by Apple's on-device speech recognition, and compared with the target word or sentence. On iOS 17–25 the app requires recognition to run on the device: if your phone has no on-device English recognition, Söyle does not work and shows a message; your voice is never sent to a server instead. On iOS 26 and later, the Apple component the app uses does not send audio to Apple's servers either.
+- **Nothing is recorded, stored or shared.** The audio is held in memory only during that attempt and is never written to a file. The recognized text and the result are only shown on screen; they are not saved to your learning progress, to the backup or anywhere else. Neither the audio, nor the recognized text, nor the result is sent to us or to third parties (analytics included).
+- **Your voice is not used to identify you.** The app creates no voiceprint and does not verify identity by voice; it only turns the words you say into text.
+- **Model download:** On iOS 26 and later, Apple's English speech model is downloaded once from Apple on first use. Your voice is not sent in that download; the model is managed by iOS, stored on your iPhone and may be shared with other apps.
+
+If Söyle ever changes so that audio or recognized text would leave your device, we will update this policy first and ask for your permission again.
+
+**[TEYİT: whether purely on-device audio that never reaches us counts as "processing" by us under KVKK; the assumption that voice used only for transcription, not identification, is not biometric (special category) data. README §6 questions 20 and 31.]**
+
+### 3.8 Read-aloud and the widget's speaker button
+
+**[TEYİT: added in draft-2 (22 October 2026).]**
+
+- The speaker buttons in the app and the **"Kelimeyi dinle"** (listen to the word) button on the Home Screen widgets read the English word or sentence **with the iPhone's own US English voice, on the device**. No internet connection is used, and the text is not sent to any server.
+- The widget button works without bringing the app to the screen. For this, iOS runs Lockglow briefly in the background to read the word; the app's "audio in the background" capability is used only for this read-aloud. The microphone is never turned on in the background.
+- The text read aloud is the card's own word, not something you typed. Taps on the button are not recorded and not sent to us.
+- Apple's Personal Voice is not used. If you downloaded a higher-quality English voice in iPhone Settings, the app may use it; that download is between you and Apple.
 
 ## 4. Why we use data
 
@@ -199,6 +219,6 @@ We may update this policy. For an important change (for example a new provider, 
 
 ---
 
-*Last updated: [DATE] · Version: draft-1*
+*Last updated: [DATE] · Version: draft-2*
 
 *Turkish version: gizlilik_politikasi_tr.md (the Turkish text prevails for users in Türkiye **[TEYİT]**)*
