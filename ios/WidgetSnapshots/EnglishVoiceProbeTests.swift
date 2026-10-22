@@ -1,3 +1,4 @@
+import Darwin
 import SwiftUI
 import UIKit
 import XCTest
@@ -7,8 +8,22 @@ import XCTest
 /// each accessibility element's label, language and attributed-label attributes and attaches
 /// the same text as "ses-probe".
 final class EnglishVoiceProbeTests: XCTestCase {
+    /// SwiftUI builds its accessibility tree only while an assistive client is active; turn on
+    /// the automation client in-process (the KIF approach) so the hosting views expose it.
+    private static let accessibilityEnabled: Bool = {
+        guard let handle = dlopen("/usr/lib/libAccessibility.dylib", RTLD_NOW),
+              let symbol = dlsym(handle, "_AXSSetAutomationEnabled") else {
+            return false
+        }
+        typealias SetEnabled = @convention(c) (Int32) -> Void
+        unsafeBitCast(symbol, to: SetEnabled.self)(1)
+        return true
+    }()
+
     @MainActor
     func testEnglishVoiceProbe() throws {
+        let enabled = EnglishVoiceProbeTests.accessibilityEnabled
+        RunLoop.main.run(until: Date().addingTimeInterval(1))
         let cases: [(String, AnyView)] = [
             ("01 Text(verbatim:) + englishVoice", AnyView(Text(verbatim: "breakfast").englishVoice())),
             ("02 Text(String) + englishVoice", AnyView(Text(String("breakfast")).englishVoice())),
@@ -46,7 +61,7 @@ final class EnglishVoiceProbeTests: XCTestCase {
             )),
             ("11 Turkish Text(verbatim:)", AnyView(Text(verbatim: "kahvaltı"))),
         ]
-        var report = ["iOS \(UIDevice.current.systemVersion), preferred \(Locale.preferredLanguages)"]
+        var report = ["iOS \(UIDevice.current.systemVersion), preferred \(Locale.preferredLanguages), automation \(enabled)"]
         for (name, view) in cases {
             report.append("== \(name)")
             report.append(contentsOf: describe(view))
@@ -68,6 +83,8 @@ final class EnglishVoiceProbeTests: XCTestCase {
         window.makeKeyAndVisible()
         host.view.setNeedsLayout()
         host.view.layoutIfNeeded()
+        RunLoop.main.run(until: Date().addingTimeInterval(0.8))
+        _ = host.view.accessibilityElements
         RunLoop.main.run(until: Date().addingTimeInterval(0.3))
         var lines: [String] = []
         walk(host.view, depth: 0, into: &lines)
