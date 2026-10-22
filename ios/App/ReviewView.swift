@@ -388,14 +388,22 @@ struct ReviewView: View {
                     }
                 }
             }
-            Text(verbatim: word.defShort)
-                .definitionStyle()
-                .lineSpacing(2)
-                .fixedSize(horizontal: false, vertical: true)
-                .englishVoice()
-                // A card without a Turkish meaning: the definition is the answer.
-                .accessibilityFocused($focus, equals: .definition)
-            exampleBlock(word: word, translation: detail?.examples.first?.tr)
+            // A user's word has no English definition (and maybe no example).
+            if !word.defShort.isEmpty {
+                Text(verbatim: word.defShort)
+                    .definitionStyle()
+                    .lineSpacing(2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .englishVoice()
+                    // A card without a Turkish meaning: the definition is the answer.
+                    .accessibilityFocused($focus, equals: .definition)
+            }
+            if !word.exampleEN.isEmpty {
+                exampleBlock(word: word, translation: detail?.examples.first?.tr)
+            }
+            if word.isUserAdded, let note = detail?.noteTR {
+                NoteRow(symbol: "note.text", text: note)
+            }
             if let mistake = detail?.mistakes.first {
                 MistakeBox(mistake: mistake)
             }
@@ -425,10 +433,14 @@ struct ReviewView: View {
                 .foregroundStyle(Theme.ink2)
                 .accessibilityHidden(true)
         }
-        Text(verbatim: CardPartOfSpeech.turkish(word.pos))
-            .font(.subheadline.weight(.medium))
-            .foregroundStyle(Theme.ink2)
-        LevelBadge(code: word.level)
+        if word.isUserAdded {
+            CustomWordTag()
+        } else {
+            Text(verbatim: CardPartOfSpeech.turkish(word.pos))
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(Theme.ink2)
+            LevelBadge(code: word.level)
+        }
     }
 
     /// The example as in the feed (`ExampleRow`): the sentence with the learned word marked
@@ -746,7 +758,7 @@ struct ReviewView: View {
                 .font(.subheadline.weight(.medium))
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
-                if attempt >= IntroRound.maxAttempts {
+                if attempt >= IntroRound.maxAttempts && !word.exampleEN.isEmpty {
                     exampleBlock(word: word, translation: detail?.examples.first?.tr)
                 }
             }
@@ -860,7 +872,9 @@ struct ReviewView: View {
                 WordHeadline(lemma: word.lemma, size: 40, maxSize: 56, alignment: .leading)
                     .accessibilityFocused($focus, equals: .word)
                 CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
-                exampleBlock(word: word, translation: detail?.examples.first?.tr)
+                if !word.exampleEN.isEmpty {
+                    exampleBlock(word: word, translation: detail?.examples.first?.tr)
+                }
             } else {
                 Text("İngilizcesini aklından bulmaya çalış. Sonra Göster'e dokun.")
                     .font(.subheadline)

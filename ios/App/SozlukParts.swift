@@ -255,7 +255,8 @@ struct SozlukWordLink: View {
                 lemma: lemma ?? AttributedString(word.lemma),
                 gloss: gloss ?? word.glossTR.map { AttributedString($0) },
                 note: note,
-                level: showsLevel ? word.level : nil,
+                // A user's word has no level.
+                level: showsLevel && !word.isUserAdded ? word.level : nil,
                 state: state
             )
         }
@@ -269,7 +270,9 @@ struct SozlukWordLink: View {
         if let gloss = word.glossTR {
             turkish += ", " + gloss
         }
-        if showsLevel {
+        if word.isUserAdded {
+            turkish += ", Senin kelimen"
+        } else if showsLevel {
             turkish += ", Seviye " + word.level
         }
         if state != .new {

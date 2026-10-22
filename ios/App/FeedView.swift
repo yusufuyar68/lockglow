@@ -591,22 +591,28 @@ struct WordCardView: View {
                 metaRow(showsLockScreen: isOnLockScreen && !step.isSmaller)
                 actionRow
                 meaning(step)
-                Text(definition)
-                    .font(step.isSmaller ? Theme.Fonts.example : Theme.Fonts.definition)
-                    .foregroundStyle(Theme.ink)
-                    // About 1.45 line height (ogrenme_ilkeleri 2.2), tighter on a short page.
-                    .lineSpacing(step.isSmaller ? 2 : 5)
-                    .lineLimit(step.rawValue >= FitStep.exampleRow.rawValue ? 3 : nil)
-                    .cardEnglishVoice()
+                // A user's word has no English definition (and maybe no example).
+                if !definition.isEmpty {
+                    Text(definition)
+                        .font(step.isSmaller ? Theme.Fonts.example : Theme.Fonts.definition)
+                        .foregroundStyle(Theme.ink)
+                        // About 1.45 line height (ogrenme_ilkeleri 2.2), tighter on a short page.
+                        .lineSpacing(step.isSmaller ? 2 : 5)
+                        .lineLimit(step.rawValue >= FitStep.exampleRow.rawValue ? 3 : nil)
+                        .cardEnglishVoice()
+                }
             }
             partGap(spacing)
             if step == .allRow {
                 detailRow(title: WordCardView.rowTitle(for: warnings.first), showsCaution: false)
             } else {
-                if step == .exampleRow {
-                    detailRow(title: "Örnek cümle", showsCaution: false)
-                } else {
-                    exampleBlock(step)
+                // A user's word without an example has nothing here.
+                if !firstExample.en.isEmpty {
+                    if step == .exampleRow {
+                        detailRow(title: "Örnek cümle", showsCaution: false)
+                    } else {
+                        exampleBlock(step)
+                    }
                 }
                 if !warnings.isEmpty {
                     partGap(spacing)
@@ -637,8 +643,12 @@ struct WordCardView: View {
     private func metaRow(showsLockScreen: Bool) -> some View {
         CardFlowLayout(itemSpacing: 8, lineSpacing: 4) {
             ipa
-            partOfSpeech
-            LevelBadge(code: word.level)
+            if word.isUserAdded {
+                CustomWordTag()
+            } else {
+                partOfSpeech
+                LevelBadge(code: word.level)
+            }
             if showsLockScreen {
                 WordCardLockScreenNote()
             }

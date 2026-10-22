@@ -560,16 +560,19 @@ private struct MetWordCard: View {
 
     private var back: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if word.exampleEN.isEmpty {
+            if !word.exampleEN.isEmpty {
+                Text(ExampleMark.attributed(word.exampleEN, lemma: word.lemma, colorScheme: colorScheme, highlighted: false))
+                    .exampleStyle()
+                    .fixedSize(horizontal: false, vertical: true)
+                    .englishVoice()
+            } else if !word.defShort.isEmpty {
                 Text(verbatim: word.defShort)
                     .definitionStyle()
                     .fixedSize(horizontal: false, vertical: true)
                     .englishVoice()
             } else {
-                Text(ExampleMark.attributed(word.exampleEN, lemma: word.lemma, colorScheme: colorScheme, highlighted: false))
-                    .exampleStyle()
-                    .fixedSize(horizontal: false, vertical: true)
-                    .englishVoice()
+                // A user's word with neither: "Senin kelimen".
+                CustomWordTag()
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -946,7 +949,11 @@ private struct ShelfWordSheet: View {
                             .meaningStyle()
                             .fixedSize(horizontal: false, vertical: true)
                     }
-                    LevelBadge(code: word.level)
+                    if word.isUserAdded {
+                        CustomWordTag()
+                    } else {
+                        LevelBadge(code: word.level)
+                    }
                     if let shelf {
                         VStack(alignment: .leading, spacing: 6) {
                             ShelfMeter(shelf: shelf)

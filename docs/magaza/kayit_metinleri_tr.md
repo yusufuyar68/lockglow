@@ -119,7 +119,7 @@ Kullanım Şartları (EULA): https://www.apple.com/legal/internet-services/itune
 3244 karakter (sınır 4000; yaklaşık 750 karakter boş). Notlar:
 
 - **Doğrulanan iddialar:** kart, seviye, tür, örnek ve "Dikkat" sayıları veritabanından; widget düğmeleri `ios/Widgets/WidgetButtons.swift`; sıklık seçenekleri (5, 15, 30, 60, 120 dk) ve günlük hedef (5, 10, 15, 20) `ios/App/AppPreferences.swift:8–9`; Söyle mesajları `PronunciationCheck.swift:484–495`; sözlük harf katlaması `card_fts` (`lemma_fold`, `gloss_fold`); iOS 17 `ios/project.yml:5`.
-- **Kullanılmayan iddialar** (bugün yok, yazmayın): YDS/YÖKDİL/IELTS, C1–C2, günlük seri, temalar, iCloud yedeği, kendi kelimeni ekleme, iPad, "10.000+ kelime", "yapay zekâ".
+- **Kullanılmayan iddialar** (bugün yok, yazmayın): YDS/YÖKDİL/IELTS, C1–C2, günlük seri, temalar, iCloud yedeği, iPad, "10.000+ kelime", "yapay zekâ".
 - **"Ücretsiz" kelimesi** açıklamaya bilerek yazılmadı: abonelik eklenirse metin yanlış kalır. İlk sürüm ücretsizse fiyat zaten mağazada "Al" (Get) olarak görünür.
 - **Gizlilik cümleleri** `docs/legal/` taslak-2 ile aynı; App Privacy cevabı "Data Not Collected" (`docs/legal/app_store_privacy_etiketi.md` §2A). Analitik ya da abonelik eklenirse "hiçbir sunucuya göndermez" cümlesi **değişmelidir**.
 - Gizlilik politikası web adresi henüz yok (alan adı alınmadı; `marketing/landing/` marka kontrolünden önce yayımlanmayacak).

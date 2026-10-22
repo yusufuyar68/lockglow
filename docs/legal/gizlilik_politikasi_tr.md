@@ -45,6 +45,7 @@ Türkiye'de yaşıyorsanız ayrıca 6698 sayılı Kişisel Verilerin Korunması 
 - seçtiğiniz seviye, hedef ve ayarlar,
 - kaydettiğiniz kelimeler, "biliyorum" işaretleri, öğrenme durumu, quiz sonuçları ve seriniz,
 - oluşturduğunuz özel listeler,
+- kendi eklediğiniz kelimeler (İngilizce kelime, Türkçe anlamı, isteğe bağlı örnek cümle ve notunuz),
 - widget ayarlarınız ve bildirim saatleriniz.
 
 Bu veriler uygulama ile widget'ların ortak kullandığı cihaz içi alanda tutulur. Uygulamayı sildiğinizde silinir. Cihazınızı iCloud veya bilgisayara yedekliyorsanız bu veriler Apple'ın yedekleme hizmetine dahil olabilir. Bu, Apple ayarlarınıza ve Apple'ın politikasına bağlıdır; biz bu yedeklere erişmeyiz.
@@ -116,7 +117,7 @@ Söyle, sesi ya da tanınan metni cihaz dışına gönderecek biçimde değişir
 
 - Uygulamadaki hoparlör düğmeleri ve ana ekran widget'larındaki **"Kelimeyi dinle"** düğmesi, İngilizce kelimeyi ya da cümleyi **iPhone'un kendi İngilizce (ABD) sesiyle, cihaz içinde** okur. Okuma için internet bağlantısı kullanılmaz; okunan metin hiçbir sunucuya gönderilmez.
 - Widget'taki düğme uygulamayı ekrana getirmeden çalışır. Bunun için iOS, Lockglow'u kısa bir süre arka planda çalıştırır ve kelimeyi okutur; uygulamanın "arka planda ses çalma" yetkisi yalnızca bu sesli okuma içindir. Mikrofon arka planda açılmaz.
-- Okunan metin kartın kendi kelimesidir, sizin yazdığınız bir metin değildir. Düğmeye bastığınız bilgisi kaydedilmez ve bize gönderilmez.
+- Okunan metin kartın kelimesi ya da cümlesidir. Kendi eklediğiniz bir kelimede (Bölüm 3.1) sizin yazdığınız kelime ve örnek cümle okunur; okuma yine cihaz içinde yapılır ve metin hiçbir yere gönderilmez. Düğmeye bastığınız bilgisi kaydedilmez ve bize gönderilmez.
 - Apple'ın "Kişisel Ses" (Personal Voice) özelliği kullanılmaz. iPhone Ayarları'ndan daha kaliteli bir İngilizce ses indirdiyseniz uygulama onu kullanabilir; bu indirme sizinle Apple arasındadır.
 
 ## 4. Verileri neden işliyoruz?
