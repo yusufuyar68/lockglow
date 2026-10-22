@@ -109,11 +109,20 @@ jobs:
             xcrun simctl boot "$udid" || true
             xcrun simctl bootstatus "$udid" -b > /dev/null || true
             xcrun simctl ui "$udid" appearance "$appearance" || echo "could not set appearance $appearance"
+            # One override per group: on 22 Oct the single call with every flag was refused
+            # ("Invalid argument"), so each group is tried on its own and the result is listed.
             xcrun simctl status_bar "$udid" override --time "$TIME" \
-              --dataNetwork wifi --wifiMode active --wifiBars 3 \
-              --cellularMode active --cellularBars 4 --operatorName '' \
-              --batteryState charged --batteryLevel 100 \
-              || echo "could not override the status bar"
+              || xcrun simctl status_bar "$udid" override --time "9:41" \
+              || echo "status bar: time refused"
+            xcrun simctl status_bar "$udid" override --batteryState charged --batteryLevel 100 \
+              || echo "status bar: battery refused"
+            xcrun simctl status_bar "$udid" override --dataNetwork wifi --wifiMode active --wifiBars 3 \
+              || echo "status bar: wifi refused"
+            xcrun simctl status_bar "$udid" override --cellularMode active --cellularBars 4 \
+              || echo "status bar: cellular refused"
+            xcrun simctl status_bar "$udid" override --operatorName '' \
+              || echo "status bar: operator name refused"
+            xcrun simctl status_bar "$udid" list || true
           }
           run_pass() {
             name="$1"
@@ -157,6 +166,8 @@ jobs:
             run_pass "$pass"
           done
           # Copy each screenshot under its attachment name ("1-akis_0_<uuid>.png" -> "1-akis.png").
+          # Images only: XCTest's own attachments on a failure have names with quotes, which the
+          # artifact upload refuses.
           python3 - <<'PY'
           import json, pathlib, re, shutil
           for manifest in pathlib.Path("shots").glob("*/manifest.json"):
@@ -166,7 +177,8 @@ jobs:
                   for item in test.get("attachments", []):
                       source = manifest.parent / item["exportedFileName"]
                       name = re.sub(r"_\d+_[0-9A-F-]{36}(?=\.\w+$)", "", item["suggestedHumanReadableName"])
-                      if source.exists():
+                      name = re.sub(r'[\\/"<>:|*?\r\n]', "_", name)
+                      if source.exists() and source.suffix.lower() in (".png", ".jpg", ".jpeg"):
                           shutil.copyfile(source, target / name)
           PY
           find named -type f | sort || true
