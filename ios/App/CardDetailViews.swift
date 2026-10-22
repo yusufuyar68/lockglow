@@ -255,7 +255,7 @@ struct MistakeSnippet: Equatable {
         let pairs = MistakeSnippet.matchedPairs(wrongTokens, rightTokens)
         // The matched words, with one before the start and one after the end: a gap between
         // two neighbours is a difference.
-        let anchors = [(wrong: -1, right: -1)] + pairs + [(wrong: wrongTokens.count, right: rightTokens.count)]
+        let anchors: [(wrong: Int, right: Int)] = [(wrong: -1, right: -1)] + pairs + [(wrong: wrongTokens.count, right: rightTokens.count)]
         var firstGap: Int?
         var lastGap = 0
         for index in 0..<(anchors.count - 1) {
@@ -656,9 +656,12 @@ struct CardWhySheet: View {
         return (detail?.mistakes ?? []).filter { $0 != lead }
     }
 
-    /// Every example but the card's own (`exampleEN`).
+    /// Every example but the one on the card (`exampleEN`, else the detail's first, as
+    /// `WordCardView` picks it).
     private var otherExamples: [CardDetail.Example] {
-        return (detail?.examples ?? []).filter { $0.en != word.exampleEN }
+        let examples = detail?.examples ?? []
+        let shown = examples.first { $0.en == word.exampleEN }?.en ?? examples.first?.en
+        return examples.filter { $0.en != shown }
     }
 }
 

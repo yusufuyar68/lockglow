@@ -272,7 +272,7 @@ struct FeedView: View {
             .accessibilityElement(children: .contain)
             .padding(.horizontal, 16)
             .padding(.bottom, FeedView.pageBottomGap + 8)
-            .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
+            .transition(reduceMotion ? AnyTransition.opacity : AnyTransition.move(edge: .bottom).combined(with: .opacity))
         }
     }
 
@@ -678,7 +678,7 @@ struct WordCardView: View {
         .buttonStyle(CardCapsuleButtonStyle(isSelected: known.isKnown))
         .accessibilityLabel("Biliyorum")
         .accessibilityAddTraits(known.isKnown ? .isSelected : [])
-        .accessibilityHint(known.isKnown ? "Kelimeyi öğrenmeye geri alır." : "")
+        .accessibilityHint(Text(known.isKnown ? "Kelimeyi öğrenmeye geri alır." : ""))
     }
 
     /// The Turkish meaning only: other meanings ("Ayrıca") are on the whole card in "Sözlük".
