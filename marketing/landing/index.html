@@ -282,6 +282,7 @@
   .example .en { font-size: 1.125rem; }
   .example .tr { color: var(--ink2); }
   .warn { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; padding: 12px 14px; border-radius: 16px; background: var(--surface2); font-size: var(--step--1); }
+  .warn .part { display: inline-block; max-width: 100%; }
   .warn .lab { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
   .warn .lab svg { width: 18px; height: 18px; fill: none; stroke: var(--caution); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
   .wrong { text-decoration: underline dotted var(--bad); text-decoration-thickness: 2px; text-underline-offset: .2em; }
@@ -322,7 +323,7 @@
   .calm span { color: var(--ink2); font-size: var(--step--1); }
 
   /* Söyle */
-  .quote { font-size: var(--step-3); font-weight: 750; letter-spacing: -.02em; line-height: 1.15; text-wrap: balance; }
+  .quote { font-size: var(--step-2); font-weight: 700; letter-spacing: -.01em; line-height: 1.25; text-wrap: balance; padding-left: 18px; border-left: 3px solid var(--ink); }
   .flow { list-style: none; display: grid; gap: 14px; counter-reset: flow; }
   .flow li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; align-items: start; counter-increment: flow; }
   .flow li::before { content: counter(flow); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; border: 1.5px solid var(--line-strong); font-size: var(--step--1); }
@@ -332,7 +333,7 @@
 
   /* Sahte dostlar */
   .ff { list-style: none; display: grid; gap: 0; border-radius: var(--radius); background: var(--surface); box-shadow: var(--shot-shadow); overflow: hidden; }
-  .ff li { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 6px 20px; padding: 16px 20px; align-items: baseline; }
+  .ff li { display: grid; gap: 4px; padding: 16px 20px; }
   .ff li + li { border-top: 1px solid var(--line); }
   .ff .pair { font-size: 1.25rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; }
   .ff .pair .en { font-weight: 700; }
@@ -388,7 +389,6 @@
     .phone { width: min(290px, 100%); border-radius: 46px; padding: 12px; }
     .screen { border-radius: 35px; padding-top: 42px; }
     .calm { grid-template-columns: minmax(0, 1fr); }
-    .ff li { grid-template-columns: minmax(0, 1fr); }
     .widgets { grid-template-columns: minmax(0, 1fr); }
     .widgets figure:last-child { max-width: 220px; }
     .demo { padding: 20px; }
@@ -540,7 +540,8 @@
                 </div>
                 <p class="warn">
                   <span class="lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg>Dikkat</span>
-                  <span><span class="sr">Yanlış: </span><span aria-hidden="true">✕ </span><span lang="en" class="en">Can you <span class="wrong">borrow</span> me your pen?</span> <span aria-hidden="true">→ ✓ </span><span class="sr">Doğru: </span><span lang="en" class="en">Can you <span class="right">lend</span> me your pen?</span></span>
+                  <span class="part"><span class="sr">Yanlış: </span><span aria-hidden="true">✕ </span><span lang="en" class="en">Can you <span class="wrong">borrow</span> me your pen?</span></span>
+                  <span class="part"><span aria-hidden="true">→ ✓ </span><span class="sr">Doğru: </span><span lang="en" class="en">Can you <span class="right">lend</span> me your pen?</span></span>
                 </p>
               </div>
             </div>

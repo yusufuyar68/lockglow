@@ -3,56 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aydınlatma Metni: Lockglow Erken Erişim</title>
-<meta name="robots" content="noindex">
+<title>Aydınlatma Metni: Lockglow Bekleme Listesi</title>
+<meta name="robots" content="noindex, nofollow">
 <style>
-  :root { --bg: #f7f5f0; --surface: #ffffff; --ink: #14213d; --muted: #5b6475; --line: #e3dfd6; --warn: #92400e; --warn-bg: #fef3c7; }
+  /* Renkler docs/tasarim/README.md'den (Kâğıt / Gece). */
+  :root {
+    --bg: #F3F3EE; --surface: #FFFFFF; --surface2: #EBEBE4; --ink: #15181B; --ink2: #4E555B;
+    --line: rgba(21, 24, 27, .14); --caution: #8F5600;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+  }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg: #0e1422; --surface: #161e30; --ink: #eef2f8; --muted: #a3adbf; --line: #283247; --warn: #fde68a; --warn-bg: #3b2f0b; }
+    :root:not([data-theme="light"]) {
+      --bg: #0D0F11; --surface: #191C20; --surface2: #24282D; --ink: #F3F4F0; --ink2: #B7BDC2;
+      --line: rgba(255, 255, 255, .14); --caution: #FF9E5A; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0D0F11; --surface: #191C20; --surface2: #24282D; --ink: #F3F4F0; --ink2: #B7BDC2;
+    --line: rgba(255, 255, 255, .14); --caution: #FF9E5A; color-scheme: dark;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
-  h1 { font-size: 30px; letter-spacing: -.02em; line-height: 1.15; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); }
+  main {
+    max-width: 760px; margin: 0 auto; padding-block: 24px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  h1 { font-size: 30px; letter-spacing: -.02em; line-height: 1.15; text-wrap: balance; }
   h2 { font-size: 20px; margin-top: 32px; }
-  .draft { background: var(--warn-bg); color: var(--warn); border-radius: 12px; padding: 12px 14px; font-weight: 600; }
-  table { width: 100%; border-collapse: collapse; background: var(--surface); }
+  a { color: inherit; text-underline-offset: .18em; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .note { border-radius: 16px; padding: 12px 16px; font-weight: 600; }
+  .draft { background: var(--surface2); border-left: 4px solid var(--caution); }
+  .demo { border: 1.5px dashed var(--line); }
+  .table { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 12px; }
   th, td { text-align: left; vertical-align: top; border: 1px solid var(--line); padding: 8px 10px; font-size: 15px; }
-  .muted { color: var(--muted); font-size: 15px; }
-  a { color: inherit; }
+  .muted { color: var(--ink2); font-size: 15px; }
 </style>
 </head>
 <body>
 <main>
-  <p><a href="index.html">← Ana sayfa</a></p>
+  <p><a href="index.html">← Tanıtım sayfası</a></p>
 
-  <p class="draft">TASLAK: Bu metin hukuki görüş alınmadan yayınlanmamalıdır. Köşeli parantez içindeki alanlar doldurulmalıdır.</p>
+  <p class="note demo">Şu an hiçbir veri toplanmıyor: bekleme listesi formu demo modunda ve hiçbir yere bağlı değil. Bu metin, form ileride gerçek bir servise bağlanırsa kullanılacak taslaktır.</p>
+  <p class="note draft">TASLAK: Bu metin hukuki görüş alınmadan yayımlanmamalıdır. Köşeli parantez içindeki alanlar doldurulmalıdır.</p>
 
-  <h1>Kişisel Verilerin Korunması Hakkında Aydınlatma Metni<br><span class="muted">Lockglow Erken Erişim Listesi</span></h1>
+  <h1>Kişisel Verilerin Korunması Hakkında Aydınlatma Metni<br><span class="muted">Lockglow Bekleme Listesi</span></h1>
 
-  <p>Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi uyarınca, erken erişim listesine kaydolurken paylaştığınız kişisel verilerin nasıl işlendiği hakkında sizi bilgilendirmek için hazırlanmıştır.</p>
+  <p>Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi uyarınca, bekleme listesine kaydolurken paylaştığınız kişisel verilerin nasıl işlendiği hakkında sizi bilgilendirmek için hazırlanmıştır.</p>
 
   <h2>1. Veri sorumlusu</h2>
   <p>[AD SOYAD] (bundan sonra "Lockglow" olarak anılacaktır). İletişim: [E-POSTA ADRESİ] · [ADRES]</p>
 
   <h2>2. İşlenen kişisel veriler</h2>
-  <table>
-    <tr><th>Veri</th><th>Açıklama</th></tr>
-    <tr><td>İletişim</td><td>E-posta adresi</td></tr>
-    <tr><td>Tercih</td><td>Hazırlandığınız sınav/amaç (isteğe bağlı), ilgilendiğiniz plan, sayfa dili</td></tr>
-    <tr><td>İşlem güvenliği / pazarlama ölçümü</td><td>Kayıt tarihi ve saati, onay metni, sayfaya hangi kampanya bağlantısıyla geldiğiniz (ör. utm_source=tiktok) ve yönlendiren sayfa</td></tr>
-  </table>
+  <div class="table">
+    <table>
+      <tr><th>Veri</th><th>Açıklama</th></tr>
+      <tr><td>İletişim</td><td>E-posta adresi</td></tr>
+      <tr><td>İşlem güvenliği</td><td>Kayıt tarihi ve saati, onay metni</td></tr>
+    </table>
+  </div>
   <p class="muted">Ad, telefon, konum, ödeme bilgisi veya özel nitelikli kişisel veri toplanmaz. Sayfada çerez ya da üçüncü taraf takip aracı kullanılmaz.</p>
 
   <h2>3. İşleme amaçları</h2>
   <ul>
-    <li>Uygulama yayına girdiğinde size lansman duyurusu ve erken erişim daveti göndermek,</li>
-    <li>Uygulamaya olan ilgiyi, hangi sınav ve planlara talep olduğunu toplu ve istatistiksel olarak ölçmek,</li>
+    <li>Uygulama yayına girdiğinde size lansman duyurusu göndermek,</li>
+    <li>Uygulamaya olan ilgiyi, kayıt sayısı üzerinden toplu ve istatistiksel olarak ölçmek,</li>
     <li>Kötüye kullanımı (sahte veya otomatik kayıtları) önlemek.</li>
   </ul>
 
   <h2>4. Hukuki sebep ve toplama yöntemi</h2>
-  <p>Verileriniz, bu sayfadaki form aracılığıyla elektronik ortamda, KVKK m.5/1 uyarınca formdaki onay kutusuyla verdiğiniz <b>açık rızaya</b> dayanılarak işlenir. Kayıt tarihi ve kampanya bilgisi, KVKK m.5/2-f kapsamında veri sorumlusunun meşru menfaati için işlenir. Açık rızanızı dilediğiniz zaman geri alabilirsiniz; bu durumda verileriniz silinir.</p>
+  <p>Verileriniz, bu sayfadaki form aracılığıyla elektronik ortamda, KVKK m.5/1 uyarınca formdaki onay kutusuyla verdiğiniz <b>açık rızaya</b> dayanılarak işlenir. Kayıt tarihi ve onay metni, KVKK m.5/2-f kapsamında veri sorumlusunun meşru menfaati için işlenir. [TEYİT: avukatla netleştirilecek.] Açık rızanızı dilediğiniz zaman geri alabilirsiniz; bu durumda verileriniz silinir.</p>
 
   <h2>5. Aktarım</h2>
   <p>Kayıtlar, form ve e-posta hizmeti sağlayıcısı olan [HİZMET SAĞLAYICI ADI, ÜLKESİ] tarafından barındırılır. Sağlayıcının sunucuları yurt dışındaysa aktarım KVKK m.9 kapsamında [standart sözleşme / ilgili güvence] ile yapılır. [TEYİT: avukatla netleştirilecek; standart sözleşme imzalanırsa 5 iş günü içinde Kurum'a bildirim yapılır.] Verileriniz satılmaz ve reklam amacıyla üçüncü kişilerle paylaşılmaz.</p>
@@ -65,9 +86,9 @@
   <p>Başvurularınızı [E-POSTA ADRESİ] adresine iletebilirsiniz. Başvurular en geç 30 gün içinde ücretsiz olarak sonuçlandırılır.</p>
 
   <h2 lang="en">Privacy notice (English summary)</h2>
-  <p lang="en">We store your email address, optional exam/goal choice, plan interest, page language, signup time and campaign parameters only to announce the launch of the Lockglow app and to measure interest. Legal basis: your consent (GDPR Art. 6(1)(a) / KVKK Art. 5(1)). No cookies or third-party trackers are used on this page. Data is hosted by [PROVIDER, COUNTRY]. We keep it for up to 12 months after launch or until you withdraw consent. To access, correct or delete your data, email [EMAIL ADDRESS].</p>
+  <p lang="en">We store your email address, signup time and the consent text only to announce the launch of the Lockglow app and to count how many people are interested. Legal basis: your consent (GDPR Art. 6(1)(a) / KVKK Art. 5(1)). No cookies or third-party trackers are used on this page. Data is hosted by [PROVIDER, COUNTRY]. We keep it for up to 12 months after launch or until you withdraw consent. To access, correct or delete your data, email [EMAIL ADDRESS].</p>
 
-  <p class="muted">Son güncelleme: [TARİH] · Sürüm: taslak-1</p>
+  <p class="muted">Son güncelleme: [TARİH] · Sürüm: taslak-2 (22 Ekim 2026: form yalnız e-posta ve onay kutusuna indi; sınav, plan ve kampanya alanları çıktı)</p>
 </main>
 </body>
 </html>
