@@ -452,7 +452,25 @@ public struct PronunciationTip: Equatable, Sendable {
     public let advice: String
 }
 
-/// The result shown after the learner speaks: a verdict, a Turkish title and message.
+/// A piece of a line shown and read to the learner: Turkish words, or English words (from the card
+/// or from what was heard) that VoiceOver should read in an English voice.
+public enum FeedbackRun: Equatable, Sendable {
+    case turkish(String)
+    case english(String)
+
+    public var text: String {
+        switch self {
+        case .turkish(let text), .english(let text):
+            return text
+        }
+    }
+}
+
+/// The result shown after the learner speaks: a verdict, a Turkish title and the line under it.
+/// The phone is the one that hears, so the lines say what it understood, never that the learner
+/// was right ("Anlaşıldı!", not "Doğru!"; ilkeler 2.7, terimler §1). The line does not repeat what
+/// was heard: the page shows that in its own English row ("Duyulan"), which VoiceOver reads in an
+/// English voice (audit V2, V5). The tip, when there is one, says what to do.
 public struct PronunciationFeedback: Equatable, Sendable {
     public enum Verdict: String, Equatable, Sendable {
         case correct
@@ -471,32 +489,43 @@ public struct PronunciationFeedback: Equatable, Sendable {
     /// Target words that were not heard, as written in the target.
     public let missedWords: [String]
     public let title: String
-    public let message: String
+    /// The line under the title, in pieces: the words not heard are English.
+    public let messageRuns: [FeedbackRun]
+
+    public var message: String {
+        return messageRuns.map(\.text).joined()
+    }
 
     init(verdict: Verdict, tip: PronunciationTip? = nil, heard: String = "", missedWords: [String] = []) {
         self.verdict = verdict
         self.tip = tip
         self.heard = heard
         self.missedWords = missedWords
-        let tipLine = tip.map { "'\($0.expected)' yerine '\($0.heard)' duydum. \($0.advice)" }
         switch verdict {
         case .correct:
-            title = "Doğru!"
-            message = "Anlaşılır söyledin."
+            title = "Anlaşıldı!"
+            messageRuns = [.turkish("Telefon seni anladı.")]
         case .almost:
             title = "Neredeyse!"
             if missedWords.isEmpty {
-                message = "Anlaşıldı ama tam net değildi. Bir kez daha söyle."
+                messageRuns = [.turkish("Anlaşıldı ama tam net değildi. Bir kez daha söyle.")]
             } else {
-                let missed = "Şunlar duyulmadı: " + missedWords.joined(separator: ", ") + "."
-                message = [missed, tipLine ?? "Bir daha dene."].joined(separator: " ")
+                messageRuns = [
+                    .turkish("Çok yaklaştın. Tam duyulmayan: "),
+                    .english(missedWords.joined(separator: ", ")),
+                    .turkish("."),
+                ]
             }
         case .tryAgain:
             title = "Bir daha dene"
-            message = tipLine ?? "'\(heard)' duydum. Önce hoparlör düğmesiyle dinle, sonra yavaş ve net söyle."
+            if tip == nil {
+                messageRuns = [.turkish("Telefon farklı bir şey anladı. Önce Dinle'ye dokunup dinle, sonra yavaş ve net söyle.")]
+            } else {
+                messageRuns = [.turkish("Telefon farklı bir şey anladı.")]
+            }
         case .notHeard:
             title = "Seni duyamadım"
-            message = "Mikrofona yakın, net bir sesle söyle."
+            messageRuns = [.turkish("Mikrofona yakın, net bir sesle söyle.")]
         }
     }
 }
