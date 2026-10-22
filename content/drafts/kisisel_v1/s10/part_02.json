@@ -77,7 +77,7 @@
           "false_friend": null,
           "note": "Türkçede 'çıktı almak' ya da 'yazdırmak' denir. 'Print out' ayrılabilir: 'print the file out' ya da 'print it out' olur. 'It' gibi zamir ortada durur; 'print out it' denmez.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Kâğıt yazıcıdan dışarı (out) çıkar: Türkçede de buna 'çıktı' denir."
         }
       },
       "tags": {
@@ -107,7 +107,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

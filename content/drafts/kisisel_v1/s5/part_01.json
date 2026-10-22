@@ -736,7 +736,7 @@
               "why": "Türkçede düzensiz fiil yoktur; bu yüzden '-ed' eklenir. 'Keep' düzensizdir: keep - kept - kept."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Futboldaki 'goalkeeper' (kaleci) topu kaptırmaz, elinde tutar: 'keep' = vermemek, elinde tutmak."
         }
       },
       "tags": {
@@ -766,7 +766,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -853,7 +854,7 @@
               "why": "Türkçede 'evden çıktım' (-den hâli) dediğimiz için 'from' denir. İngilizcede 'leave' doğrudan yer alır: 'leave home'."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Geçmişi 'left', yani 'sol' ile aynı yazılır. 'He left' = gitti; sola dönmek değil!"
         }
       },
       "tags": {
@@ -881,7 +882,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -958,7 +960,7 @@
           "false_friend": null,
           "note": "'Find' bulmaktır; aramak için 'look for' denir. 'Look for' arama eylemidir, 'find' sonuçtur: I looked for my keys, but I couldn't find them. Düzensiz: find - found - found.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Havalimanındaki 'Lost and Found' kayıp eşya bürosudur: kaybolan ve bulunan. 'Found', 'find' fiilinin geçmişi."
         }
       },
       "tags": {
@@ -987,7 +989,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

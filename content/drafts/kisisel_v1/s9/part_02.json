@@ -167,7 +167,7 @@
           "false_friend": null,
           "note": "Türkçede 'bardak' ile 'cam' ayrı sözcüklerdir; İngilizcede ikisi de 'glass' olur. Bardak sayılabilir (a glass, two glasses); cam maddesi sayılamaz. 'Glasses' ise gözlük demektir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Bardak camdan yapılır, bu yüzden ikisi de 'glass'. İki camlı gözlüğe de 'glasses' denir."
         }
       },
       "tags": {
@@ -194,7 +194,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -235,7 +236,7 @@
         },
         {
           "en": "Can I share your umbrella to the station?",
-          "tr": "İstasyona kadar şemsiyeni paylaşabilir miyim?",
+          "tr": "İstasyona kadar şemsiyenin altına girebilir miyim?",
           "register": "neutral",
           "focus": "umbrella"
         }
@@ -268,7 +269,7 @@
               "why": "'Umbrella' ünlü bir sesle (ʌ) başlar, bu yüzden 'an' gelir. Türkçedeki 'bir' her sözcükten önce aynı kaldığı için 'a umbrella' demek kolay olur."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Latincede 'umbra' gölge demektir: 'umbrella' seni gölgede tutar."
         }
       },
       "tags": {
@@ -294,7 +295,10 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -372,7 +376,7 @@
               "why": "Türkçede 'bilet almak' dersiniz; 'almak' hem satın almak hem almak demektir. İngilizcede satın almak için 'buy' (ya da 'get') kullanılır, 'take' değil."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Ticket' ile Türkçedeki 'etiket' aynı Fransızca kelimeden gelir: ikisi de üstünde yazı olan küçük kâğıt."
         }
       },
       "tags": {
@@ -399,7 +403,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -685,7 +690,7 @@
               "why": "'News' sonunda -s olsa da tekil sayılır: the news is. Türkçede 'haberler' çoğul olduğu için 'are' demek kolay olur."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'News' kelimesi 'new' (yeni) kelimesinden gelir: haber, yeni olan şeydir."
         }
       },
       "tags": {
@@ -713,7 +718,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -807,7 +814,7 @@
               "why": "Türkçede 'bir bilgi' dersiniz, bu yüzden 'an information' denir. 'Information' sayılamaz; 'an' almaz: some information, a piece of information."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Türkçedeki 'enformasyon' ile aynı kelime: enformasyon masası, bilgi aldığın yerdir."
         }
       },
       "tags": {
@@ -835,7 +842,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

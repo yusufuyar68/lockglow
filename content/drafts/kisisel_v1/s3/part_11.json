@@ -88,10 +88,10 @@
 {"en":"Don't lose your ticket. You need it at the gate.","tr":"Biletini kaybetme. Kapıda lazım olacak.","register":"neutral","focus":"lose"}],
 "synonyms":["misplace"],"antonyms":["find","keep"],"collocations":["lose your keys","lose your way","lose weight","lose touch","lose a game"],
 "word_family":[{"lemma":"loss","pos":"n"},{"lemma":"lost","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"kaybetmek","alt":["yitirmek"],"equivalence":"partial","false_friend":null,"note":"'Lose' = kaybetmek. 'Miss' = kaçırmak (otobüs, uçak, fırsat). Düzensiz: lose - lost - lost. 'Loose' (/luːs/, gevşek) farklı bir sıfattır; yazılışı sık karıştırılır.","mistakes":[{"wrong":"I lost the bus.","right":"I missed the bus.","why":"Otobüsü kaçırmak için 'miss' kullanılır; 'lose' bir şeyi kaybetmektir."},{"wrong":"I loosed my keys.","right":"I lost my keys.","why":"Fiil 'lose', geçmişi 'lost'tur. 'Loose' gevşek anlamında sıfattır."}],"mnemonic":null}},
+"l1":{"tr":{"gloss":"kaybetmek","alt":["yitirmek"],"equivalence":"partial","false_friend":null,"note":"'Lose' = kaybetmek. 'Miss' = kaçırmak (otobüs, uçak, fırsat). Düzensiz: lose - lost - lost. 'Loose' (/luːs/, gevşek) farklı bir sıfattır; yazılışı sık karıştırılır.","mistakes":[{"wrong":"I lost the bus.","right":"I missed the bus.","why":"Otobüsü kaçırmak için 'miss' kullanılır; 'lose' bir şeyi kaybetmektir."},{"wrong":"I loosed my keys.","right":"I lost my keys.","why":"Fiil 'lose', geçmişi 'lost'tur. 'Loose' gevşek anlamında sıfattır."}],"mnemonic":"'Lose' kelimesi bir 'o' harfini kaybetmiş gibi: tek 'o' var. Gevşek anlamındaki 'loose' iki 'o' ile yazılır."}},
 "tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["irregular","confusable:miss"],"sensitivity":0},
 "quiz":{"cloze":"I can't find my glasses. I think I ______ them.","answer":"lost","distractors":["missed","won","earned"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.miss.v.1","lemma":"miss","type":"word","pos":"v","sense_no":1,"sense_note":"fail to catch","level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/mɪs/","uk":"/mɪs/"},

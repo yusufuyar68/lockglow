@@ -167,7 +167,7 @@
           "false_friend": null,
           "note": "İngilizcede 'button' telefondaki ya da asansördeki düğme için de kullanılır (press a button).",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Ekrandaki 'buton' ile aynı kökten: gömlekteki düğme de, asansördeki tuş da 'button'."
         }
       },
       "tags": {
@@ -192,7 +192,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -360,7 +362,7 @@
           "false_friend": null,
           "note": "Ev terliği 'slippers', plaj terliğine ise 'flip-flops' denir. Genellikle çift olarak, çoğul kullanılır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Slip' kaymak demek: ayağını içine kaydırıp giydiğin ev ayakkabısı 'slipper'."
         }
       },
       "tags": {
@@ -387,7 +389,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -471,7 +474,7 @@
               "why": "Beden olarak uymak 'fit', yakışmak ise 'suit' olur. Küçük geldiği için 'fit' demelisiniz."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Yapboz parçası yerine tam oturunca 'It fits!' denir; ayakkabı ayağına tam olunca da öyle."
         }
       },
       "tags": {
@@ -498,7 +501,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -570,7 +574,7 @@
           "false_friend": null,
           "note": "Türkçe 'gardırop' ile aynı kökten gelir. Mutfak dolabı için 'cupboard' kullanılır; 'wardrobe' kıyafet dolabıdır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Ward (korumak) + robe (elbise): elbiseleri koruyan dolap. Türkçedeki 'gardırop' da aynı kelimeden."
         }
       },
       "tags": {
@@ -596,7 +600,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

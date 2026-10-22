@@ -28,10 +28,10 @@
 {"en":"Please don't laugh at me!","tr":"Lütfen bana gülme!","register":"neutral","focus":"laugh"}],
 "synonyms":["giggle","chuckle"],"antonyms":["cry"],"collocations":["laugh at a joke","laugh out loud","burst out laughing","laugh with sb"],
 "word_family":[{"lemma":"laughter","pos":"n"},{"lemma":"laugh","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"gülmek","alt":[],"equivalence":"full","false_friend":null,"note":"'Laugh at sb' hem 'birine/bir şeye gülmek' hem 'alay etmek' olabilir. Birlikte gülmek için 'laugh with sb' denir.","mistakes":[{"wrong":"I laughed to his joke.","right":"I laughed at his joke.","why":"'Şakasına gülmek' derken İngilizcede 'laugh at' kullanılır; 'to' kullanılmaz."}],"mnemonic":null}},
+"l1":{"tr":{"gloss":"gülmek","alt":[],"equivalence":"full","false_friend":null,"note":"'Laugh at sb' hem 'birine/bir şeye gülmek' hem 'alay etmek' olabilir. Birlikte gülmek için 'laugh with sb' denir.","mistakes":[{"wrong":"I laughed to his joke.","right":"I laughed at his joke.","why":"'Şakasına gülmek' derken İngilizcede 'laugh at' kullanılır; 'to' kullanılmaz."}],"mnemonic":"'Laugh' kelimesinde 'gh' 'f' gibi okunur: 'laf' denir. Komik bir lafa gülersin!"}},
 "tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
 "quiz":{"cloze":"My brother tells funny stories, and we all ______.","answer":"laugh","distractors":["cry","shout","sleep"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.smile.v.1","lemma":"smile","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/smaɪl/","uk":"/smaɪl/"},

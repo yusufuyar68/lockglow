@@ -78,7 +78,7 @@
           "false_friend": null,
           "note": "Türkçede 'biniş kartı' denir. Bilet yolculuk hakkını, biniş kartı uçağa binme iznini gösterir ve kapıda istenir. İngiltere'de 'boarding card' sözü de kullanılır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Board' uçağa binmek demek: kapıda 'Now boarding' anonsunu duyunca biniş başlar. 'Boarding pass' bu binişin kartı."
         }
       },
       "tags": {
@@ -104,7 +104,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -483,7 +484,7 @@
           "false_friend": null,
           "note": "Aracın kendisine 'plane' (uçak), yolculuğa 'flight' (uçuş) denir. 'Flight' sayılabilir bir isimdir: a flight, two flights.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Fly' (uçmak) fiilinden gelir. İçindeki 'gh' okunmaz: 'night', 'light' gibi 'flayt' denir."
         }
       },
       "tags": {
@@ -509,7 +510,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

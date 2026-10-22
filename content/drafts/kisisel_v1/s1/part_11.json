@@ -39,7 +39,7 @@
         },
         {
           "en": "Kenji sold his old phone to a second-hand shop.",
-          "tr": "Kenji eski telefonunu ikinci el bir dükkâna sattı.",
+          "tr": "Kenji eski telefonunu bir ikinci el dükkânına sattı.",
           "register": "neutral",
           "focus": "second-hand"
         }
@@ -93,7 +93,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -476,7 +478,7 @@
               "why": "Türkçede 'a/an' yoktur; 'headache' sayılabilir bir isimdir ve tekilse 'a' gerekir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Head (baş) + ache (ağrı). 'Ache' içindeki 'ch' k gibi okunur: 'hed-eyk'. Toothache = diş ağrısı."
         }
       },
       "tags": {
@@ -502,7 +504,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -893,7 +896,7 @@
           "false_friend": null,
           "note": "Türkçede 'grip' hem ağır hem hafif hastalık için kullanılır. İngilizcede hafif olana 'a cold', ağır olana 'the flu' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Flu', 'influenza' kelimesinin kısa hâli; gribin tıptaki adı Türkçede de 'enflüanza'."
         }
       },
       "tags": {
@@ -920,7 +923,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

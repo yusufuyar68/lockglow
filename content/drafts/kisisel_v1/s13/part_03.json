@@ -483,7 +483,7 @@
               "why": "Türkçede 'yabancı' iki anlamı da taşır. İngilizcede başka ülkeden gelen kişi 'foreigner', tanımadığın kişi 'stranger' olur."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "İçinde 'strange' (garip, tanıdık olmayan) var: 'stranger' sana tanıdık gelmeyen kişi. Başka ülkeden gelen ise 'foreigner'."
         }
       },
       "tags": {
@@ -511,7 +511,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -905,7 +906,7 @@
               "why": "Türkçede 'aynı fikirde değilim' dersin ve cümle 'ben ... değilim' diye kurulur; bu yüzden 'am' eklenir. 'Disagree' fiildir, 'am' gerekmez."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Dis-' kelimeyi tersine çevirir: 'agree' katılmak, 'disagree' katılmamak. 'Like' ve 'dislike' gibi."
         }
       },
       "tags": {
@@ -931,7 +932,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

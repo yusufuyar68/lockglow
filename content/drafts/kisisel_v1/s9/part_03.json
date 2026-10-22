@@ -198,7 +198,7 @@
               "why": "Türkçede 'hata yapmak' dersiniz ve 'yapmak' çoğu zaman 'do' sanılır. İngilizcede hata için 'make' kullanılır: make a mistake."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Mis' yanlış, 'take' almak demek: bir şeyi yanlış alırsan hata yaparsın."
         }
       },
       "tags": {
@@ -226,7 +226,8 @@
         "status": "draft",
         "qa_flags": [
           "distractors_diversified",
-          "example_dedup_by_editor_agent"
+          "example_dedup_by_editor_agent",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -620,7 +621,7 @@
               "why": "Türkçede 'bir buçuk saat' dersiniz. İngilizcede 'an hour and a half' denir; 'half' sözcüğünün önünde de 'a' gerekir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Half' kelimesinde 'l' okunmaz: 'haf' dersin. Tıpkı 'walk' ve 'talk' kelimelerindeki gibi."
         }
       },
       "tags": {
@@ -646,7 +647,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

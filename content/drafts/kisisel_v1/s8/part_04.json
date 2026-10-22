@@ -376,7 +376,7 @@
               "why": "Türkçedeki 'çekmek' hiçbir İngilizce fiille birebir örtüşmez; bu yüzden tanıdık 'make' ya da 'do' seçilir. İngilizcede fotoğraf için 'take' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Fotoğraf makinesi o anı alıp saklar: fotoğrafı 'çekmezsin', alırsın (take)."
         }
       },
       "tags": {
@@ -403,7 +403,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -475,7 +476,7 @@
               "why": "Türkçede kısa ve uzun 'i' ayrımı olmadığı için 'sit' (oturmak) ve 'seat' (koltuk, yer) karışır. Doğrusu: take a seat."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Uçak biletinde 'Seat 14A' yazar: 'seat' koltuk demek. Kendine bir koltuk alırsın: take a seat."
         }
       },
       "tags": {
@@ -503,7 +504,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

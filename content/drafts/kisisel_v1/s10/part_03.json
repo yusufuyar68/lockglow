@@ -74,7 +74,7 @@
           "false_friend": null,
           "note": "Bu kartta 'şirket' anlamındadır. 'I enjoy your company' cümlesinde ise 'arkadaşlık, birlikte olmak' demektir. 'Bir şirkette çalışmak' için en doğal söyleyiş 'work for a company' ya da 'work at a company' olur.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Latince 'com' birlikte, 'panis' ekmek demek: 'company' ekmeğini birlikte paylaşan insanlar."
         }
       },
       "tags": {
@@ -101,7 +101,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session coordinator)",
         "source": "kisisel_v1"

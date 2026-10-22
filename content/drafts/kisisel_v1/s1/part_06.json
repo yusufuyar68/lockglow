@@ -79,7 +79,7 @@
           "false_friend": null,
           "note": "Türkçede anneanne, babaanne ve dede ayrı söylenir; İngilizcede anne ya da baba tarafı belirtilmez: grandmother, grandfather (günlükte grandma, grandpa).",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Grand' büyük demek: grand + mother = büyükanne, grand + father = büyükbaba. Tıpkı Türkçedeki gibi."
         }
       },
       "tags": {
@@ -104,7 +104,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -598,7 +600,7 @@
           "false_friend": null,
           "note": "Ortadaki 'gh' okunmaz: 'ney-bır'. 'Neighborhood' mahalle demektir. İngiliz yazımı 'neighbour' olur.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Neigh-' eski İngilizcede 'yakın' demekti (bugünkü 'near' ile akraba): yakında oturan kişi, komşu."
         }
       },
       "tags": {
@@ -625,7 +627,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

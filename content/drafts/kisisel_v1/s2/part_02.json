@@ -40,12 +40,12 @@
       "mistakes": [
         {"wrong": "It's half past five o'clock.", "right": "It's half past five.", "why": "'O'clock' yalnızca tam saatlerde kullanılır; buçuk, çeyrek ve dakikalı saatlerde söylenmez."}
       ],
-      "mnemonic": null
+      "mnemonic": "O'clock aslında 'of the clock' sözünün kısası: six o'clock = saate göre tam altı."
     }
   },
   "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "The movie starts at eight ______.", "answer": "o'clock", "distractors": ["clock", "hour", "time"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.twice.adv.1",
@@ -82,12 +82,12 @@
       "false_friend": null,
       "note": "'Twice' tek kelimedir; 'two times' demek de doğrudur ama 'twice' daha doğaldır. Sıklık için 'a day / a week' kalıbı kullanılır: twice a week.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "'Two' (iki), 'twin' (ikiz), 'twice' (iki kez): hepsi 'tw' ile başlar, hepsinde iki var."
     }
   },
   "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I brush my teeth ______ a day: in the morning and at night.", "answer": "twice", "distractors": ["once", "never", "always"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.homework.n.1",
@@ -127,12 +127,12 @@
         {"wrong": "I made my homework.", "right": "I did my homework.", "why": "'Ödev yapmak' = 'do homework'. 'Make' kullanılmaz."},
         {"wrong": "I have many homeworks.", "right": "I have a lot of homework.", "why": "'Homework' sayılamaz: çoğul eki almaz, 'many' ile kullanılmaz."}
       ],
-      "mnemonic": null
+      "mnemonic": "Home + work = evde yapılan iş. İş (work) gibi ödev de sayılmaz: 'homeworks' denmez."
     }
   },
   "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["uncountable"], "sensitivity": 0},
   "quiz": {"cloze": "I can't go out. I must finish my ______ first.", "answer": "homework", "distractors": ["holiday", "uniform", "teacher"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.lesson.n.1",
@@ -259,12 +259,12 @@
       "mistakes": [
         {"wrong": "There was a heavy traffic.", "right": "There was heavy traffic.", "why": "'Traffic' sayılamaz bir isimdir; önüne 'a' gelmez. 'A traffic jam' ise sayılabilir."}
       ],
-      "mnemonic": null
+      "mnemonic": "'Jam' aynı zamanda reçel demek: arabalar kavanozdaki reçel gibi sıkışmış, akmıyor."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I was an hour late because of a big ______.", "answer": "traffic jam", "distractors": ["bus stop", "road sign", "parking lot"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.elevator.n.1",
@@ -347,12 +347,12 @@
       "mistakes": [
         {"wrong": "I go to work with subway.", "right": "I go to work by subway. / on the subway.", "why": "'Metroyla' için 'with' kullanılmaz. 'By subway' (the yok) veya 'on the subway' (the var) denir."}
       ],
-      "mnemonic": null
+      "mnemonic": "Sub = alt ('submarine' denizaltı demek) + way = yol: şehrin altındaki yol, yani metro."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "In New York, I take the ______ to go to work.", "answer": "subway", "distractors": ["sidewalk", "platform", "corner"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.platform.n.1",
@@ -433,12 +433,12 @@
       "false_friend": null,
       "note": "ABD'de 'sidewalk', İngiltere'de 'pavement' denir. Dikkat: ABD'de 'pavement' yolun asfaltı demektir, yaya yolu değil.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "Side + walk: yolun yanında (side) yürünen (walk) yer, yani kaldırım."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "Please walk on the ______, not in the middle of the road.", "answer": "sidewalk", "distractors": ["roof", "wall", "ceiling"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 }
 ]
 }

@@ -158,3 +158,48 @@ Yukarıdaki öneri üzerine "kokmak" anlamı ayrı kart olarak eklendi (`part_06
 - Hata: "The soup is smelling good." Türkçe "kokuyor" şimdiki zaman biçimiyle söylendiği için. Gerçek ve sık bir hata olduğunu düşünüyorum, ama anadili Türkçe birinin onayı iyi olur.
 - Quiz: "These roses ______ lovely. Come and put your nose near them!" (smell; çeldiriciler sound, taste, hear). "look" bilerek şık yapılmadı, çünkü o da doğru olurdu.
 - Doğrulayıcı: 52 kart · 0 hata · 0 uyarı.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 16 ipucu önerdi. Şüpheci doğrulayıcı 1 tanesini reddetti, 3 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 15** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yazarın 1 önerisinden doğrulayıcının onayladığı 1 tanesi uygulandı (çeviri 1). Düzeltilen kartlara `critic_edited` eklendi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `52 kart · 52 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.check.v.1 | Havalimanında 'check-in' yaparken biletini ve pasaportunu kontrol ederler: 'check' = kontrol etmek. |
+| en.cook.v.1 | 'Cook' hem pişirmek hem aşçı demek. '-er' ekleyince insan değil alet olur: 'cooker' = ocak! |
+| en.drive.v.1 | Direksiyon başındaysan 'drive'. Bisiklete ya da ata bacakların iki yanda binersen 'ride'. |
+| en.choose.v.1 | 'Choose' içindeki çift 'oo', 'food' ve 'school' gibi uzun 'u' okunur. Tek 'o' olan 'chose' geçmiştir. |
+| en.enjoy.v.1 | 'Enjoy' içinde 'joy' (neşe, sevinç) saklı: bir şeyden keyif alınca içine neşe dolar. |
+| en.repeat.v.1 | Baştaki 're-' 'yeniden' demek: 'replay' yeniden oynat, 'restart' yeniden başlat. 'Repeat' de bir daha söylemek. |
+| en.show.v.1 | Türkçedeki 'şov' ile aynı kelime: şov yapan kişi bir şeyi gösterir. 'Show' = göstermek. |
+| en.throw.v.1 | 'Throw - threw - thrown', tıpkı 'know - knew - known' ve 'grow - grew - grown' gibi çekilir. |
+| en.catch.v.1 | 'Catch - caught', tıpkı 'teach - taught' gibi: ikisinin de geçmişi '-aught' ile biter, sonları aynı okunur. |
+| en.fall.v.1 | Amerikalılar sonbahara 'fall' der: yaprakların ağaçtan düştüğü mevsim. |
+| en.break.v.1 | 'Breakfast' = 'break' + 'fast': gecenin orucunu kırmak, yani kahvaltı. 'Break' = kırmak. |
+| en.lock.v.1 | Bu uygulama kelimeleri telefonunun 'lock screen' yani kilit ekranında gösterir: 'lock' = kilitlemek. |
+| en.count.v.1 | Yılbaşı gecesi 'countdown' (geri sayım) yapılır: 10, 9, 8… 'Count' = saymak. |
+| en.guess.v.1 | 'Guess' içindeki 'u' okunmaz; 'guest' ve 'guitar' kelimelerinde de öyle. |
+| en.return.v.1 | 'Re' (geri) + 'turn' (dönmek, 'turn left' gibi): 'return' = geri dönmek. |
+
+### Düzeltmeler
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| en.shout.v.1 | examples[1].tr | Ayşe caddenin karşısındaki arkadaşına bağırdı. → Ayşe caddenin karşısındaki arkadaşına bağırarak seslendi. | 'Shout to' uzaktakine seslenmek, ama 'shout' yüksek sesi de içeriyor; 'bağırarak seslendi' iki anlamı da koruyor ve kızgınlık çağrıştırmıyor. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `drop`: Damla kendi kendine 'düşer' (fall); kanca kartın asıl ayrımı olan düşürmek (drop) / düşmek (fall) farkını bulanıklaştırıyor.
+
+### Anadili Türkçe birinin bakması gerekenler
+
+- en.fall.v.1 ex[2]: 'yapraklar ağaçlardan düşer' yerine Türkçede 'yapraklar dökülür' daha doğal; ama kelimenin karşılığı görünsün diye dokunulmadı.
+- en.grow.v.1 ex[0]: 'Domatesler ... iyi büyür' yerine 'iyi yetişir' daha doğal olabilir (dokunulmadı).
+- en.walk.v.1 Dikkat[0]: 'by foot' bazı sözlüklerde kabul ediliyor; 'on foot' daha yaygın. Bariz hata sayılmadı, dokunulmadı.

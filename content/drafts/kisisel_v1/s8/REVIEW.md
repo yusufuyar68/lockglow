@@ -134,3 +134,34 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman.
 - Sonra: 54 soru, 75 farklı çeldirici; en sık: at last×4, on foot×4, out of order×4, as well×4, on time×4, well done×3. Doğrulayıcı sınırı (`QUIZ_DISTRACTOR_REPEAT`): 4.
 - Çeldiricisi değişen kart: 36 (`distractors_diversified`). Doğru cevaplar değişmedi.
 - Bu bölümü editör (Opus) yazdı: çeşitlendirme ajanı işini bitirip raporu yazamadan kullanım sınırına takıldı. Sayılar dosyalardan ölçüldü.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 14 ipucu önerdi. Şüpheci doğrulayıcı 3 tanesini reddetti, 2 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 11** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yok. Yazar bütün kartlarda çevirileri, Dikkat kutularını ve quiz şıklarını tek tek denedi; bariz bir hata bulmadı.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `54 kart · 54 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.by_the_way.phr.1 | Kelimesi kelimesine 'yol kenarında': sohbet yolunda ilerlerken aklına gelen yan bir şeyi eklersin. |
+| en.never_mind.phr.1 | 'Mind' burada 'kafaya takmak' demek ('Do you mind?' gibi): never mind = hiç kafana takma, boş ver. |
+| en.it_depends.phr.1 | 'Depend', 'pandantif' ile aynı 'asılı durmak' kökünden: cevap bir şeye asılıdır, o yüzden 'depends on' denir. |
+| en.on_time.phr.1 | 'On' noktanın üstü gibi: tren tam 8.15'te, saati saatine gelir. 'In time' = süre bitmeden içeri yetişmek. |
+| en.at_least.phr.1 | 'Least' şu sıranın sonu: little, less, least (az, daha az, en az). 'At last' ise 'son' (last) demek. |
+| en.take_a_break.phr.1 | 'Break' kırmak demek: çalışmayı kısa bir süre kırarsın. Molayı vermezsin, alırsın: take a break. |
+| en.take_a_photo.phr.1 | Fotoğraf makinesi o anı alıp saklar: fotoğrafı 'çekmezsin', alırsın (take). |
+| en.take_a_seat.phr.1 | Uçak biletinde 'Seat 14A' yazar: 'seat' koltuk demek. Kendine bir koltuk alırsın: take a seat. |
+| en.how_often.phr.1 | 'Often' kelimesinde 't' çoğu zaman okunmaz (ofın). 'Listen' kelimesindeki 't' gibi. |
+| en.a_few.phr.1 | 'A' gidince elde neredeyse hiç kalmaz: 'a few' = birkaç tane var, 'few' = neredeyse hiç. |
+| en.on_foot.phr.1 | Yürürken ayaklarının üstünde (on) gidersin: bu yüzden 'by foot' değil, 'on foot'. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `make sure`: Sözcük sözcük çeviriden ibaret; not zaten aynı şeyi söylüyor.
+- `excuse me`: Yalnızca sözcük sözcük çeviri; A1 düzeyinde zaten çok bilinen bir kalıp.
+- `of course`: Köken gerçek ama soyut; A1 öğrencinin zaten bildiği bir kalıba bir şey katmıyor.

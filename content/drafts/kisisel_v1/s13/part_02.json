@@ -915,7 +915,7 @@
           "false_friend": null,
           "note": "Türkçede 'dostluk' daha güçlü ve derin, 'arkadaşlık' ise daha günlük hissedilir. İngilizcede ikisi için de 'friendship' kullanılır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Buradaki '-ship' gemi değil, Türkçedeki '-lik' gibi bir ek: friend-ship = arkadaş-lık."
         }
       },
       "tags": {
@@ -941,7 +941,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

@@ -274,3 +274,29 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman. Önce denetçileri
 - en.take_a_rain_check.idm.1 · `examples[2].tr`: 'Kusura bakma, başka zamana bıraksak olur mu?' doğal mı?
 - en.make_yourself_at_home.phr.1 · `examples[0].tr`: 'İçeri gel Sam, …' mi, 'Buyur Sam, …' mu?
 - en.my_bad.phr.1 · `examples[0].tr`: 'Ay, benim hatam.' 'Ay' herkesin ağzına uyuyor mu, yoksa 'Ah' ya da 'Pardon' mu daha nötr?
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 9 ipucu önerdi. Şüpheci doğrulayıcı 2 tanesini reddetti, 1 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 7** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yok. Yazar bütün kartlarda çevirileri, Dikkat kutularını ve quiz şıklarını tek tek denedi; bariz bir hata bulmadı.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.stranger.n.1 | İçinde 'strange' (garip, tanıdık olmayan) var: 'stranger' sana tanıdık gelmeyen kişi. Başka ülkeden gelen ise 'foreigner'. |
+| en.friendship.n.1 | Buradaki '-ship' gemi değil, Türkçedeki '-lik' gibi bir ek: friend-ship = arkadaş-lık. |
+| en.disagree.v.1 | 'Dis-' kelimeyi tersine çevirir: 'agree' katılmak, 'disagree' katılmamak. 'Like' ve 'dislike' gibi. |
+| en.me_neither.phr.1 | Birçok olumsuz söz 'n' ile başlar: 'no', 'not', 'never'. Olumsuz bir cümleye 'ben de' derken de 'n' ile: 'Me neither'. |
+| en.i_didnt_mean_to.phr.1 | 'What do you mean?' (Ne demek istiyorsun?) sorusundaki 'mean' ile aynı: istemek, niyet etmek. Yani 'bunu istemedim, niyetim bu değildi'. |
+| en.no_worries.phr.1 | 'Worry' endişe, dert demek: 'No worries' kelimesi kelimesine 'dert yok', yani 'dert etme, sorun değil'. |
+| en.make_friends.phr.1 | Arkadaşlık iki kişiyle olur, el sıkışmak gibi: 'make friends' ve 'shake hands' hep çoğul söylenir. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `I hope so`: Gloss 'umarım öyle olur' ve not ('so' önceki cümlenin yerini tutar) zaten aynı şeyi söylüyor; yeni kanca yok.
+- `I can't wait`: Not 'olumsuz görünür ama anlamı olumlu' diyor, alt 'iple çekiyorum'u veriyor; ipucu ikisini tekrar ediyor.

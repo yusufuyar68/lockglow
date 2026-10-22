@@ -101,3 +101,76 @@ Düzenlenen her kartın `meta.qa_flags` alanına `critic_edited` eklendi. `id`, 
 - Sonra: 125 soru, 227 farklı çeldirici; en sık: borrow×6, corner×5, holiday×5, window×5, sidewalk×5, street×5. Doğrulayıcı sınırı (`QUIZ_DISTRACTOR_REPEAT`): 7.
 - Çeldiricisi değişen kart: 17 (`distractors_diversified`). Doğru cevaplar değişmedi.
 - Bu bölümü editör (Opus) yazdı: çeşitlendirme ajanı işini bitirip raporu yazamadan kullanım sınırına takıldı. Sayılar dosyalardan ölçüldü.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 39 ipucu önerdi. Şüpheci doğrulayıcı 8 tanesini reddetti, 2 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 31** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yazarın 7 önerisinden doğrulayıcının onayladığı 7 tanesi uygulandı (çeviri 2, Dikkat 3, mevcut ipucu 1, quiz 1). Düzeltilen kartlara `critic_edited` eklendi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `125 kart · 125 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.autumn.n.1 | 'Autumn' sonundaki 'n' sonbaharda yaprak gibi düşer: yazılır ama okunmaz. |
+| en.tonight.adv.1 | 'Today', 'tonight', 'tomorrow' üçlüsü: hepsi 'to' ile başlar. Bugün, bu akşam, yarın. |
+| en.oclock.adv.1 | O'clock aslında 'of the clock' sözünün kısası: six o'clock = saate göre tam altı. |
+| en.twice.adv.1 | 'Two' (iki), 'twin' (ikiz), 'twice' (iki kez): hepsi 'tw' ile başlar, hepsinde iki var. |
+| en.homework.n.1 | Home + work = evde yapılan iş. İş (work) gibi ödev de sayılmaz: 'homeworks' denmez. |
+| en.traffic_jam.phr.1 | 'Jam' aynı zamanda reçel demek: arabalar kavanozdaki reçel gibi sıkışmış, akmıyor. |
+| en.subway.n.1 | Sub = alt ('submarine' denizaltı demek) + way = yol: şehrin altındaki yol, yani metro. |
+| en.sidewalk.n.1 | Side + walk: yolun yanında (side) yürünen (walk) yer, yani kaldırım. |
+| en.roundabout.n.1 | Round (yuvarlak) + about (etrafında): arabalar yuvarlak göbeğin etrafında döner. |
+| en.neighborhood.n.1 | Neighbor (komşu) + -hood: komşuların hepsi bir arada, yani mahalle. 'Childhood' (çocukluk) gibi. |
+| en.downtown.adv.1 | 'Go home' gibi düşün: araya 'to' girmez. 'I'm going downtown' = merkeze gidiyorum. |
+| en.abroad.adv.1 | Kelimenin içinde 'broad' (geniş) var: evinden çıkıp geniş dünyaya, yurt dışına. 'Go home' gibi 'go abroad' denir. |
+| en.directions.n.1 | Yol tarifi tek yön değildir: 'düz git, sağa dön, sonra sola…' Birçok yön, bu yüzden 'directions' çoğul. |
+| en.forecast.n.1 | 'Fore' önce demek ('before' içinde de var): forecast = önceden yapılan tahmin. |
+| en.storm.n.1 | Türkçedeki 'beyin fırtınası' sözü İngilizce 'brainstorm' çevirisidir: brain = beyin, storm = fırtına. |
+| en.freezing.adj.1 | Buzdolabının 'freezer' bölümünü düşün: dışarısı 'freezing' ise hava orası kadar soğuk. |
+| en.sunrise.n.1 | Sun + rise (yükselmek): sabah güneş ufuktan yükselir. Akşam güneş batar (set): sunset. |
+| en.nowadays.adv.1 | Now + a + days: ortadaki 'a' eskiden 'on' (-de) demekti. '-de' zaten içinde, önüne 'in' koyma. |
+| en.arrive.v.1 | Latince 'ad ripam' = 'kıyıya': kelime ilk önce geminin kıyıya varması demekti. |
+| en.book.v.1 | Eskiden rezervasyonlar bir deftere (book) yazılırdı: 'book a table' = masayı deftere yazdırmak. |
+| en.pack.v.1 | Türkçedeki 'paket' ile akraba: eşyalarını bavula koyup paket yapmak gibi düşün. |
+| en.journey.n.1 | 'Bonjour' sözündeki 'jour' gün demek: 'journey' önceleri bir günde gidilen yol demekti. |
+| en.download.v.1 | Down = aşağı: dosya buluttan (internetten) telefonuna iner. Tersi 'upload': telefondan buluta çıkar. |
+| en.upload.v.1 | Up = yukarı: fotoğraf telefonundan buluta (internete) çıkar. Tersi 'download': buluttan telefona iner. |
+| en.text.v.1 | 'I'll call you' gibi 'I'll text you' denir: ikisinde de araya 'to' girmez. |
+| en.fan.n.1 | Türkçedeki 'fanatik' taraftarı düşün: 'fan' takımını ya da şarkıcısını çok seven kişi. |
+| en.board_game.phr.1 | Board = tahta: oyun bir tahtanın üstünde oynanır. Satranç tahtasına 'chessboard' denir. |
+| en.island.n.1 | 'Island' içindeki 's' sonradan, 'isle' kelimesine benzesin diye eklendi. O yüzden okunmaz: 'aylınd'. |
+| en.insect.n.1 | Latince 'insectum' = 'çentikli, bölünmüş': karıncaya bak, gövdesi boğum boğum bölümlere ayrılmış. |
+| en.series.n.1 | Türkçedeki 'seri' ile aynı kelime: bölümler seri hâlinde, art arda gelir. |
+| en.windy.adj.1 | Wind + y = windy. Hava sıfatlarının çoğu böyle: rain → rainy, cloud → cloudy, sun → sunny. |
+
+### Düzeltmeler
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| en.ferry.n.1 | l1.tr.mnemonic | Feribot kelimesi zaten 'ferry'den geliyor: ferry + boat. → Feribot kelimesi zaten 'ferry boat' sözünden gelir: ferry + boat. | Mevcut ipucunda İngilizce sözcüğe ek getirilmiş ('ferry' + 'den'); rehberde yasak. Anlam aynı. |
+| en.temperature.n.1 | l1.tr.mistakes[0] | ✗ How many degrees is it outside? ✓ What's the temperature outside? (Türkçede 'kaç derece?' diye sorarız. İngilizcede doğal soru 'What's the temperature?' sorusudur.) → (silindi) | 'How many degrees is it outside?' dilbilgisi olarak doğru ve konuşmada kullanılır; hata değil, yalnızca bir alternatif. |
+| en.meanwhile.adv.1 | l1.tr.mistakes[0] | ✗ In the meanwhile, we can talk. ✓ In the meantime, we can talk. / Meanwhile, we can talk. (Doğru kalıplar 'in the meantime' veya sadece 'meanwhile'dır; 'in the meanwhile' modern İngilizcede doğal değildir.) → (silindi) | 'In the meanwhile' sözlüklerde (Merriam-Webster, Collins) geçen, kabul edilebilir bir kalıp; Türkçe konuşanlara özgü bir hata da değil. |
+| en.spell.v.1 | l1.tr.mistakes[0] | ✗ How do you write your name? ✓ How do you spell your name? (Harfleri sormak için 'spell' kullanılır. 'Write' ise kalemle yazmak veya metin yazmak demektir.) → (silindi) | 'How do you write your name?' yazılışı sormak için kabul edilebilir; ana dili İngilizce olanlar da kullanır. 'spell' daha yaygın ama 'write' yanlış değil. |
+| en.crowded.adj.1 | examples[2].tr | Pazar cumartesi günleri çok kalabalık olur. → Cumartesi günleri pazar yeri çok kalabalık olur. | 'Pazar cumartesi günleri' önce 'pazar günü / cumartesi' diye okunuyor, karışık. Anlam aynı, belirsizlik gidiyor. |
+| en.layover.n.1 | examples[0].tr | Frankfurt'ta dört saatlik aktarma bekleyeceğiz. → Frankfurt'ta dört saatlik bir aktarmamız var. | 'Dört saatlik aktarma bekleyeceğiz' doğal Türkçe değil; 'We have a four-hour layover' = 'dört saatlik bir aktarmamız var'. |
+| en.series.n.1 | quiz.distractors[2] | lesson → pillow | 'I stayed up all night to finish the whole lesson on my laptop' de anlamlı (çevrim içi ders). 'pillow' açıkça yanlış. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `weekday`: Şeffaf bileşik, öğrenci week ve day'i zaten bilir; weekday/weekend gerçek bir karışıklık değil, kanca eklemiyor.
+- `ago`: Not zaten 'iki yıl önce' ile sıra benzerliğini ve 'before' yerine 'ago'yu söylüyor; tekrar.
+- `subject`: Not ve Dikkat subject/lesson farkını zaten veriyor; parça-bütün cümlesi yeni bir kanca kurmuyor.
+- `elevator`: A2 öğrenci 'elevate' fiilini bilmez, bağ kurulamaz; 'lift' adı zaten notta var.
+- `midnight`: Midnight zaten çok bilinen, şeffaf bir kelime; ipucuna gerek yok.
+- `password`: 'Password' Türkiye'de her giriş ekranında görülen, zaten bilinen bir kelime; ipucuna gerek yok.
+- `update`: 'Update' günlük Türkçede bile kullanılan, zaten bilinen bir kelime; 'yukarı çekmek' benzetmesi de zorlama.
+- `episode`: 'Epizot' günlük Türkçede az bilinen bir kelime; A2 öğrenci için bağ kurulmaz.
+
+### Anadili Türkçe birinin bakması gerekenler
+
+- en.spell.v.1: Dikkat silindi ('How do you write your name?' kabul edilebilir); anadili Türkçe biri 'spell' vurgusunun notta yeterli olduğuna bakabilir.
+- en.temperature.n.1 ve en.meanwhile.adv.1: Dikkat maddesi silinince liste boş kalıyor.

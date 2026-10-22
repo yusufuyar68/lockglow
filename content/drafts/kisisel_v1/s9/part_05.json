@@ -165,13 +165,7 @@
           "equivalence": "partial",
           "false_friend": null,
           "note": "'Dinner' günün ana yemeğidir ve çoğunlukla akşam yenir; hafif akşam yemeğine 'supper' denir. İngiltere'nin bazı yerlerinde öğle yemeğine de 'dinner' diyenler vardır.",
-          "mistakes": [
-            {
-              "wrong": "I will do dinner tonight.",
-              "right": "I will make dinner tonight.",
-              "why": "Türkçede 'akşam yemeği yapmak' dersiniz ve 'yapmak' çoğu zaman 'do' sanılır. İngilizcede yemek hazırlamak için 'make' ya da 'cook' kullanılır."
-            }
-          ],
+          "mistakes": [],
           "mnemonic": null
         }
       },
@@ -198,7 +192,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -383,7 +379,7 @@
               "why": "Türkçede 'tatil yapmak' dersiniz; 'yapmak' çoğu zaman 'make' ya da 'do' sanılır. İngilizcede 'have a holiday' ya da 'go on holiday' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Holiday' = 'holy' (kutsal) + 'day' (gün). İlk anlamı 'kutsal gün', yani bayram."
         }
       },
       "tags": {
@@ -410,7 +406,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -586,7 +584,7 @@
           "false_friend": null,
           "note": "Türkçede evdeki kitap dolabına da 'kütüphane' denir; İngilizcede ona 'bookcase' denir. 'Library' kitap ödünç verilen yerdir; kitap satılan yere 'bookstore' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Library' 'LAY-bre-ri' diye okunur, 'li' değil. Latincede 'liber' kitap demektir: kitapların yeri."
         }
       },
       "tags": {
@@ -613,7 +611,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -783,7 +782,7 @@
           "false_friend": null,
           "note": "Amerikan İngilizcesinde 'drugstore' ya da 'pharmacy', İngiliz İngilizcesinde 'chemist' ya da 'pharmacy' denir. 'Nöbetçi eczane' için 'late-night pharmacy' gibi bir açıklama kullanılır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Ph' harfleri 'f' okunur: 'FAR-mı-si'. İlaç bilimi 'farmakoloji' de aynı Yunanca kökten gelir."
         }
       },
       "tags": {
@@ -810,7 +809,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -973,7 +973,7 @@
           "false_friend": null,
           "note": "Türkçede 'havalimanı' ve 'havaalanı' aynı anlama gelir; İngilizcede tek sözcük vardır: 'airport'. Büyük havalimanlarında 'terminal' denen ayrı binalar bulunur.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Air' hava, 'port' liman demek: 'airport' tıpkı Türkçedeki gibi hava + liman."
         }
       },
       "tags": {
@@ -999,7 +999,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

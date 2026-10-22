@@ -339,3 +339,22 @@ Kurallar: `docs/icerik_uretimi/3_celdirici_kurallari.md`. Kontrol 2026-10-21'de 
 - **en.waiting_room.phr.1 · l1.tr.gloss:** Doktor muayenehanesindeki oda için "bekleme salonu" mu, "bekleme odası" mı daha yaygın? (Şimdi gloss 'bekleme salonu', alt 'bekleme odası'.)
 - **en.see_a_doctor.phr.1 · quiz.distractors:** "go a doctor" ve "take a doctor" Türk öğrencinin aklına gelebilecek biçimler mi? İkisi de kesin yanlış; tek cevap kuralı sağlam.
 - **en.have_a_headache.phr.1 · l1.tr.note (yeni):** "Ağrı yeni başlıyorsa 'I'm getting a headache' denir." eklemesi öğrenci için yararlı ve anlaşılır mı?
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 7 ipucu önerdi. Şüpheci doğrulayıcı 0 tanesini reddetti, 0 tanesini küçük düzeltmeyle kabul etti; koordinatör son okumada 1 ipucunun ifadesini düzeltti. **Eklenen: 7** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yok. Yazar bütün kartlarda çevirileri, Dikkat kutularını ve quiz şıklarını tek tek denedi; bariz bir hata bulmadı.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.dentist.n.1 | Latincede 'dens' diş demek. Sondaki '-ist' de 'artist', 'pianist' gibi meslek anlatır: dentist, dişlerle uğraşan kişi. |
+| en.hospital.n.1 | 'Hospital' ile 'hotel' aynı Latince kökten gelir; kök 'misafir' demek: ikisinde de bir süre misafir gibi kalırsın. |
+| en.see_a_doctor.phr.1 | Türkçede 'doktora görünmek', İngilizcede 'see a doctor' (doktoru görmek) denir: ikisi de 'görmek' fiilinden. |
+| en.have_a_headache.phr.1 | 'Head' baş, 'ache' ağrı demek. 'Ache' kelimesinde 'ch' harfleri 'k' gibi okunur: 'hed-eyk'. |
+| en.stomachache.n.1 | 'Stomach' ve 'ache' kelimelerinin ikisinde de 'ch' harfleri 'k' gibi okunur: 'stamık-eyk'. |
+| en.runny_nose.phr.1 | Burnun koşmuyor, akıyor! 'Run' sıvılar için 'akmak' demek: musluktan akan suya da 'running water' denir. |
+| en.accident.n.1 | 'Accident' kelimesindeki iki 'c' farklı okunur: ilki 'k', ikincisi 's'. Yani 'aksidınt'. |

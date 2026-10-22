@@ -618,7 +618,7 @@
               "why": "'For' isimle (for a laptop), 'to' fiille (to buy) kullanılır; 'for buy' denmez."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Bilgisayarda dosya kaybolmasın diye 'save' tuşuna basarsın; parayı harcamayıp saklamak da 'save'."
         }
       },
       "tags": {
@@ -643,7 +643,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

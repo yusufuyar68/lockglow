@@ -359,7 +359,7 @@
               "why": "'Housework' sayılamayan isimdir; çoğul eki almaz."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Housework' evin (house) işi: temizlik, ütü. 'Homework' ise okul ödevi: evde (home) yapılan ders işi."
         }
       },
       "tags": {
@@ -387,7 +387,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -775,7 +777,7 @@
               "why": "Türkçede 'kirada oturuyorum' dersiniz; İngilizcede 'live in rent' denmez. 'I rent my apartment' ya da 'I live in a rented apartment' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Tatil yerlerindeki 'Rent a Car' tabelalarını hatırla: araba kiralama. 'Rent' kira demek."
         }
       },
       "tags": {
@@ -803,7 +805,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

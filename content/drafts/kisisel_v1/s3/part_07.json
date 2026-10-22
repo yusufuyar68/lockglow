@@ -43,10 +43,10 @@
 {"en":"How was your date with Elif?","tr":"Elif'le randevun nasıldı?","register":"neutral","focus":"date"}],
 "synonyms":[],"antonyms":[],"collocations":["go on a date","first date","on a date","a date night","blind date"],
 "word_family":[{"lemma":"date","pos":"v"},{"lemma":"dating","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"romantik buluşma","alt":["randevu"],"equivalence":"partial","false_friend":null,"note":"Türkçe 'randevu' hem doktor randevusu hem romantik buluşma demektir. İngilizcede doktor randevusu 'appointment', romantik buluşma 'date' olur.","mistakes":[{"wrong":"I have a date at the dentist.","right":"I have an appointment at the dentist.","why":"'Date' romantik buluşmadır; doktor, diş hekimi gibi randevular için 'appointment' kullanılır."}],"mnemonic":null}},
+"l1":{"tr":{"gloss":"romantik buluşma","alt":["randevu"],"equivalence":"partial","false_friend":null,"note":"Türkçe 'randevu' hem doktor randevusu hem romantik buluşma demektir. İngilizcede doktor randevusu 'appointment', romantik buluşma 'date' olur.","mistakes":[{"wrong":"I have a date at the dentist.","right":"I have an appointment at the dentist.","why":"'Date' romantik buluşmadır; doktor, diş hekimi gibi randevular için 'appointment' kullanılır."}],"mnemonic":"'Date' tarih demek. Takvimde günü belirlenen romantik buluşmaya da zamanla 'date' denmeye başlandı."}},
 "tags":{"primary_topic":"love_friendship","topics":["love_friendship"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:appointment"],"sensitivity":0},
 "quiz":{"cloze":"Tomorrow night I'm going on a ______ with Elif. I really like her.","answer":"date","distractors":["lesson","meeting","salary"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"meta":{"status":"draft","qa_flags":["critic_edited","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.hug.v.1","lemma":"hug","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/hʌɡ/","uk":"/hʌɡ/"},

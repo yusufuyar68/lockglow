@@ -190,7 +190,7 @@
               "why": "Türkçede 'kendimi güvende hissediyorum' dersiniz, bu yüzden 'myself' eklenir. İngilizcede 'feel' fiilinden sonra 'myself' konmaz: I feel safe."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Bankadaki çelik kasaya da 'safe' denir: içindeki para orada güvende."
         }
       },
       "tags": {
@@ -216,7 +216,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -645,7 +646,7 @@
             {
               "wrong": "My small brother is ten years old.",
               "right": "My younger brother is ten years old.",
-              "why": "Türkçede 'küçük kardeşim' dersiniz; 'küçük' hem 'small' hem 'young' demektir. Yaşça küçük için 'young / younger / little brother' denir; 'small' boyu anlatır."
+              "why": "Türkçede 'küçük kardeşim' dersiniz; 'küçük' hem 'small' hem 'young' demektir. Yaşça küçük kardeş için 'younger brother' ya da 'little brother' denir; 'small' boyu anlatır."
             }
           ],
           "mnemonic": null
@@ -673,7 +674,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -977,7 +980,7 @@
           "false_friend": null,
           "note": "Karşıtı 'right' (doğru). 'You are wrong' = yanılıyorsun, haksızsın. 'Something is wrong' = bir sorun var; 'What's wrong?' = Sorun ne?",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Wrong' kelimesinde 'w' okunmaz: rong. 'Write' (yazmak) kelimesinde de 'w' okunmaz."
         }
       },
       "tags": {
@@ -1003,7 +1006,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

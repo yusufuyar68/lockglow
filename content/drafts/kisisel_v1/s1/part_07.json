@@ -368,7 +368,7 @@
           "false_friend": null,
           "note": "Takım elbisenin ceketi de İngilizcede 'jacket' olur. Günlük dış giysi olan mont için de kullanılır; çok kalın olanlara 'coat' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Türkçedeki 'ceket' ile aynı kökten gelir; okunuşu 'CEK-it'."
         }
       },
       "tags": {
@@ -394,7 +394,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -671,7 +672,7 @@
               "why": "Türkçede ayakkabı için 'kaç numara' dersiniz; İngilizcede 'number' değil 'size' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Türkçedeki 'size' ile aynı yazılır: mağazada 'Size hangi beden lazım?' diye düşün. Okunuşu 'sayz'."
         }
       },
       "tags": {
@@ -698,7 +699,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

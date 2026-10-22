@@ -14,10 +14,10 @@
 "synonyms":["courteous","respectful"],"antonyms":["rude","impolite"],"collocations":["polite to sb","a polite reply","polite request","polite conversation"],
 "word_family":[{"lemma":"politely","pos":"adv"},{"lemma":"impolite","pos":"adj"},{"lemma":"politeness","pos":"n"}],
 "etymology":{"text":"From Latin 'politus', meaning 'polished' (from 'polire', to polish): a polite person has smooth, polished manners.","origin":"Latin","confidence":"high"},
-"l1":{"tr":{"gloss":"kibar","alt":["nazik","saygılı"],"equivalence":"full","false_friend":null,"note":"'Polite' davranışla ilgilidir (kibarca konuşmak, teşekkür etmek). Kalpten gelen iyilik için 'kind' kullanılır; ikisini karıştırma.","mistakes":[{"wrong":"She is polite person.","right":"She is a polite person.","why":"Türkçede 'bir' zorunlu değil ama İngilizcede tekil sayılabilir isimden önce 'a/an' gerekir."}],"mnemonic":null}},
+"l1":{"tr":{"gloss":"kibar","alt":["nazik","saygılı"],"equivalence":"full","false_friend":null,"note":"'Polite' davranışla ilgilidir (kibarca konuşmak, teşekkür etmek). Kalpten gelen iyilik için 'kind' kullanılır; ikisini karıştırma.","mistakes":[{"wrong":"She is polite person.","right":"She is a polite person.","why":"Türkçede 'bir' zorunlu değil ama İngilizcede tekil sayılabilir isimden önce 'a/an' gerekir."}],"mnemonic":"'Polite' ile 'polish' (cilalamak) aynı kökten: kibar insanın tavırları cilalı gibi pürüzsüzdür."}},
 "tags":{"primary_topic":"personality","topics":["personality","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:kind"],"sensitivity":0},
 "quiz":{"cloze":"Be ______ to the guests and say hello.","answer":"polite","distractors":["rude","mean","bossy"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"meta":{"status":"draft","qa_flags":["distractors_diversified","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.rude.adj.1","lemma":"rude","type":"word","pos":"adj","sense_no":1,"sense_note":"not polite","level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ruːd/","uk":"/ruːd/"},

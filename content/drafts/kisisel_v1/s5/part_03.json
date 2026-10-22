@@ -451,7 +451,7 @@
               "why": "Türkçede 'seni bekliyorum' (-i hâli) denir ve edat yoktur; bu yüzden 'wait you' denir. İngilizcede beklenen kişiden önce 'for' gerekir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Restorandaki 'waiter' (garson) masanın yanında bekler: 'wait' + '-er'. Beklediğin şeyden önce 'for': wait for me."
         }
       },
       "tags": {
@@ -479,7 +479,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -575,7 +577,7 @@
               "why": "Türkçede 'aramak' hem telefon etmek hem bulmaya çalışmak demektir; bu yüzden 'search' denir. Telefon için 'call' gerekir; 'search' bir yeri ya da internette bir şeyi aramaktır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Call center' telefonla aradığın yerdir: 'call' = telefonla aramak. Kayıp anahtarı aramak ise 'look for'."
         }
       },
       "tags": {
@@ -604,7 +606,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -807,7 +810,7 @@
               "why": "Türkçede 'telefonu açmak' deriz; bu yüzden 'open' denir. Gelen aramayı yanıtlamak için 'answer the phone' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Answer' kelimesindeki 'w' yazılır ama okunmaz, tıpkı 'two' kelimesindeki 'w' gibi."
         }
       },
       "tags": {
@@ -837,7 +840,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -1042,7 +1046,7 @@
               "why": "Türkçede 'tanımak' ile 'tanışmak' birbirine çok yakındır ('tanıştığımıza memnun oldum'). Biriyle ilk kez karşılaşırken 'know' değil 'meet' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Türkçedeki 'miting' ile aynı kelime: 'meeting', insanların bir araya gelmesi. 'Meet' = buluşmak, tanışmak."
         }
       },
       "tags": {
@@ -1072,7 +1076,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

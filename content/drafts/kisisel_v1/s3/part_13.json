@@ -937,7 +937,7 @@
        "why": "Televizyon gibi hareketli şeyleri bir süre izlemek için 'watch' kullanılır; 'see' kısa bir bakıştır."
       }
      ],
-     "mnemonic": null
+     "mnemonic": "Bekçiye 'watchman' denir: gece boyunca dikkatle izler. Film ve maç da böyle, uzun uzun 'watch' ile izlenir."
     }
    },
    "tags": {
@@ -965,7 +965,7 @@
    },
    "meta": {
     "status": "draft",
-    "qa_flags": [],
+    "qa_flags": ["mnemonic_added"],
     "prompt_ver": "kisisel-2026-10-11",
     "model": "claude-sonnet (in-session subagent)",
     "source": "kisisel_v1"

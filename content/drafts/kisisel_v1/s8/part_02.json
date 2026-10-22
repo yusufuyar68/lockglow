@@ -733,7 +733,7 @@
               "why": "Türkçede 'mola vermek' deriz ve 'vermek' sözü 'give' diye düşünülür. İngilizcede 'take a break' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Break' kırmak demek: çalışmayı kısa bir süre kırarsın. Molayı vermezsin, alırsın: take a break."
         }
       },
       "tags": {
@@ -760,7 +760,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

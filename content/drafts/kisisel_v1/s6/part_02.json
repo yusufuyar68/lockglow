@@ -334,7 +334,7 @@
               "why": "Türkçede 'tekrar söyler misin?' dersiniz; 'tekrar' = again. 'Repeat' fiilinde 'again' anlamı zaten vardır, bu yüzden 'repeat again' gereksizdir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Baştaki 're-' 'yeniden' demek: 'replay' yeniden oynat, 'restart' yeniden başlat. 'Repeat' de bir daha söylemek."
         }
       },
       "tags": {
@@ -360,7 +360,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -1026,7 +1027,7 @@
           "false_friend": null,
           "note": "Fiilin hâlleri: show - showed - shown. 'Show me the photo' ya da 'show the photo to me' denir. 'Show' isim olarak da 'gösteri, TV programı' demektir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Türkçedeki 'şov' ile aynı kelime: şov yapan kişi bir şeyi gösterir. 'Show' = göstermek."
         }
       },
       "tags": {
@@ -1053,7 +1054,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

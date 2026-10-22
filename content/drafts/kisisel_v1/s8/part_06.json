@@ -72,7 +72,7 @@
               "why": "Türkçede 'birkaç' ve 'az' ayrı sözlerdir. 'Few' (a olmadan) 'neredeyse hiç' demektir; 'birkaç' için 'a few' gerekir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'A' gidince elde neredeyse hiç kalmaz: 'a few' = birkaç tane var, 'few' = neredeyse hiç."
         }
       },
       "tags": {
@@ -98,7 +98,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -372,7 +373,7 @@
               "why": "'Otobüsle', 'arabayla' sözleri 'by bus', 'by car' olduğu için yürümek de 'by foot' sanılır. Yürümek için 'on foot' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Yürürken ayaklarının üstünde (on) gidersin: bu yüzden 'by foot' değil, 'on foot'."
         }
       },
       "tags": {
@@ -400,7 +401,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
