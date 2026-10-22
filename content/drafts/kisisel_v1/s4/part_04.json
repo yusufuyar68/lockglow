@@ -1,6 +1,8 @@
 {
   "schema_version": "1.0",
-  "l1_langs": ["tr"],
+  "l1_langs": [
+    "tr"
+  ],
   "generated_on": "2026-10-11",
   "entries": [
     {
@@ -13,39 +15,103 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/hoʊld ˈɑːn/", "uk": "/həʊld ˈɒn/"},
+      "ipa": {
+        "us": "/hoʊld ˈɑːn/",
+        "uk": "/həʊld ˈɒn/"
+      },
       "def": {
         "micro": "wait a moment",
         "short": "ask someone to wait for a short time",
         "long": "To wait for a short time. People say 'Hold on' when they need a moment, or on the phone when they ask you to stay on the line. It is informal."
       },
-      "grammar": {"pattern": "hold on (no object)"},
+      "grammar": {
+        "pattern": "hold on (no object)"
+      },
       "examples": [
-        {"en": "Hold on, I'll be there in a minute.", "tr": "Bir dakika, hemen geliyorum.", "register": "informal", "focus": "Hold on"},
-        {"en": "Hold on a second. I need to find my phone.", "tr": "Bir saniye. Telefonumu bulmam lazım.", "register": "informal", "focus": "Hold on"},
-        {"en": "Can you hold on, please? I'll check for you.", "tr": "Bir dakika bekler misiniz? Hemen bakıyorum.", "register": "neutral", "focus": "hold on"}
+        {
+          "en": "Hold on, I'll be there in a minute.",
+          "tr": "Bir dakika, hemen geliyorum.",
+          "register": "informal",
+          "focus": "Hold on"
+        },
+        {
+          "en": "Hold on a second. I need to find my phone.",
+          "tr": "Bir saniye. Telefonumu bulmam lazım.",
+          "register": "informal",
+          "focus": "Hold on"
+        },
+        {
+          "en": "Can you hold on, please? I'll check for you.",
+          "tr": "Bir dakika bekler misiniz? Hemen bakıyorum.",
+          "register": "neutral",
+          "focus": "hold on"
+        }
       ],
-      "synonyms": ["wait"],
+      "synonyms": [
+        "wait"
+      ],
       "antonyms": [],
-      "collocations": ["Hold on!", "hold on a second", "hold on a minute", "hold on, please"],
+      "collocations": [
+        "Hold on!",
+        "hold on a second",
+        "hold on a minute",
+        "hold on, please"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "bir dakika beklemek",
-          "alt": ["durmak", "hatta kalmak"],
+          "alt": [
+            "durmak",
+            "hatta kalmak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "'Hold on!' = 'Bir dakika!' ya da 'Dur bir dakika!'. Telefonda 'Hold on, please' = 'Hatta kalın, bir saniye.' Konuşma dilidir; resmî ortamda 'Please wait' daha uygundur.",
           "mistakes": [
-            {"wrong": "Hold a minute, please.", "right": "Hold on a minute, please.", "why": "'Hold' tek başına tutmak demektir. Beklemek için 'hold on' gerekir."}
+            {
+              "wrong": "Hold a minute, please.",
+              "right": "Hold on a minute, please.",
+              "why": "'Hold' tek başına tutmak demektir. Beklemek için 'hold on' gerekir."
+            }
           ],
           "mnemonic": "'Hold' tutmak demek: telefonda hattı tutup kapatmadan beklersin. Telefonda 'Hold the line' (hatta kalın) da denir."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Wait! ______ a second. I forgot my bag.", "answer": "Hold on", "distractors": ["Hurry up", "Move out", "Cheer up"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Wait! ______ a second. I forgot my bag.",
+        "answer": "Hold on",
+        "distractors": [
+          "Hurry up",
+          "Move out",
+          "Cheer up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.run_out_of.phv.1",
@@ -57,40 +123,106 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/rʌn ˈaʊt əv/", "uk": "/rʌn ˈaʊt əv/"},
+      "ipa": {
+        "us": "/rʌn ˈaʊt əv/",
+        "uk": "/rʌn ˈaʊt əv/"
+      },
       "def": {
         "micro": "use all of something",
         "short": "use all of something so that there is none left",
         "long": "To use all of something so that there is no more. It can be time, money, milk, battery or patience. The subject is the person who has none left: 'We ran out of milk.'"
       },
-      "grammar": {"pattern": "run out of + sth (inseparable)"},
+      "grammar": {
+        "pattern": "run out of + sth (inseparable)"
+      },
       "examples": [
-        {"en": "We've run out of milk.", "tr": "Sütümüz bitti.", "register": "neutral", "focus": "run out of"},
-        {"en": "I'm running out of battery. Do you have a charger?", "tr": "Şarjım bitmek üzere. Şarj aletin var mı?", "register": "neutral", "focus": "running out of"},
-        {"en": "Ayşe ran out of time and couldn't finish the test.", "tr": "Ayşe'nin zamanı bitti ve sınavı bitiremedi.", "register": "neutral", "focus": "ran out of"}
+        {
+          "en": "We've run out of milk.",
+          "tr": "Sütümüz bitti.",
+          "register": "neutral",
+          "focus": "run out of"
+        },
+        {
+          "en": "I'm running out of battery. Do you have a charger?",
+          "tr": "Şarjım bitmek üzere. Şarj aletin var mı?",
+          "register": "neutral",
+          "focus": "running out of"
+        },
+        {
+          "en": "Ayşe ran out of time and couldn't finish the test.",
+          "tr": "Ayşe'nin zamanı bitti ve sınavı bitiremedi.",
+          "register": "neutral",
+          "focus": "ran out of"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["run out of time", "run out of money", "run out of battery", "run out of milk", "run out of ideas"],
+      "collocations": [
+        "run out of time",
+        "run out of money",
+        "run out of battery",
+        "run out of milk",
+        "run out of ideas"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "bitmek, kalmamak",
-          "alt": ["tükenmek"],
+          "alt": [
+            "tükenmek"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Türkçede özne şeydir ('Sütümüz bitti'), İngilizcede özne kişidir ('We ran out of milk' = biz sütsüz kaldık). Cümleyi kişiyle kurun.",
           "mistakes": [
-            {"wrong": "The sugar is finished.", "right": "We've run out of sugar.", "why": "Türkçede 'şeker bitti' deriz. İngilizcede 'finish' bir işi bitirmektir; bir şeyin kalmaması için 'run out of' kullanılır."},
-            {"wrong": "We ran out milk.", "right": "We ran out of milk.", "why": "'Of' atlanmaz: run out of + isim."}
+            {
+              "wrong": "The sugar is finished.",
+              "right": "We've run out of sugar.",
+              "why": "Türkçede 'şeker bitti' deriz. İngilizcede 'finish' bir işi bitirmektir; bir şeyin kalmaması için 'run out of' kullanılır."
+            },
+            {
+              "wrong": "We ran out milk.",
+              "right": "We ran out of milk.",
+              "why": "'Of' atlanmaz: run out of + isim."
+            }
           ],
           "mnemonic": "Kum saatini düşün: kum akar (run), dışarı (out) çıkar ve sonunda hiç kalmaz. 'We ran out of time' de böyle."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
-      "quiz": {"cloze": "I can't print this. We've ______ paper.", "answer": "run out of", "distractors": ["looked after", "taken off", "turned off"]},
-      "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't print this. We've ______ paper.",
+        "answer": "run out of",
+        "distractors": [
+          "looked after",
+          "taken off",
+          "turned off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.throw_away.phv.1",
@@ -102,40 +234,109 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/θroʊ əˈweɪ/", "uk": "/θrəʊ əˈweɪ/"},
+      "ipa": {
+        "us": "/θroʊ əˈweɪ/",
+        "uk": "/θrəʊ əˈweɪ/"
+      },
       "def": {
         "micro": "put in the bin",
         "short": "put something in the bin because you do not want it",
         "long": "To put something in the rubbish bin because you do not want or need it any more. Rubbish that you throw away goes in the bin."
       },
-      "grammar": {"pattern": "throw sth away / throw away sth (throw it away)"},
+      "grammar": {
+        "pattern": "throw sth away / throw away sth (throw it away)"
+      },
       "examples": [
-        {"en": "Please throw away the old newspapers.", "tr": "Lütfen eski gazeteleri at.", "register": "neutral", "focus": "throw away"},
-        {"en": "This milk is bad. I'll throw it away.", "tr": "Bu süt bozulmuş. Atacağım.", "register": "neutral", "focus": "throw it away"},
-        {"en": "Don't throw those boxes away. I can use them.", "tr": "O kutuları atma. Onları kullanabilirim.", "register": "neutral", "focus": "throw those boxes away"}
+        {
+          "en": "Please throw away the old newspapers.",
+          "tr": "Lütfen eski gazeteleri at.",
+          "register": "neutral",
+          "focus": "throw away"
+        },
+        {
+          "en": "This milk is bad. I'll throw it away.",
+          "tr": "Bu süt bozulmuş. Atacağım.",
+          "register": "neutral",
+          "focus": "throw it away"
+        },
+        {
+          "en": "Don't throw those boxes away. I can use them.",
+          "tr": "O kutuları atma. Onları kullanabilirim.",
+          "register": "neutral",
+          "focus": "throw those boxes away"
+        }
       ],
-      "synonyms": ["throw out"],
-      "antonyms": ["keep"],
-      "collocations": ["throw away rubbish", "throw away old clothes", "throw away food", "throw away a bottle"],
+      "synonyms": [
+        "throw out"
+      ],
+      "antonyms": [
+        "keep"
+      ],
+      "collocations": [
+        "throw away rubbish",
+        "throw away old clothes",
+        "throw away food",
+        "throw away a bottle"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "çöpe atmak",
-          "alt": ["atmak"],
+          "alt": [
+            "atmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçede 'atmak' tek başına da yeter. İngilizcede 'throw' tek başına fırlatmaktır; çöp için 'away' (uzağa) eklenir.",
           "mistakes": [
-            {"wrong": "I threw the paper to the rubbish.", "right": "I threw the paper away.", "why": "'Çöpe attım' derken 'to' kullanmayın. 'Throw sth away' ya da 'throw sth in the bin' denir."},
-            {"wrong": "Throw away it, please.", "right": "Throw it away, please.", "why": "Zamir (it, them) 'throw' ile 'away' arasına girer."}
+            {
+              "wrong": "I threw the paper to the rubbish.",
+              "right": "I threw the paper away.",
+              "why": "'Çöpe attım' derken 'to' kullanmayın. 'Throw sth away' ya da 'throw sth in the bin' denir."
+            },
+            {
+              "wrong": "Throw away it, please.",
+              "right": "Throw it away, please.",
+              "why": "Zamir (it, them) 'throw' ile 'away' arasına girer."
+            }
           ],
           "mnemonic": "Away = uzağa: çöpü kendinden uzağa atarsın."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "environment_climate"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "That box is empty. We can ______ the box now.", "answer": "throw away", "distractors": ["come back", "fill in", "go back"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "That box is empty. We can ______ the box now.",
+        "answer": "throw away",
+        "distractors": [
+          "come back",
+          "fill in",
+          "go back"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.take_out.phv.1",
@@ -147,40 +348,108 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/teɪk ˈaʊt/", "uk": "/teɪk ˈaʊt/"},
+      "ipa": {
+        "us": "/teɪk ˈaʊt/",
+        "uk": "/teɪk ˈaʊt/"
+      },
       "def": {
         "micro": "bring or move out",
         "short": "move something from inside a place to the outside",
         "long": "To move something from inside a place, a bag or a pocket to the outside. People take out the rubbish, money from a bank, or a phone from a pocket."
       },
-      "grammar": {"pattern": "take sth out / take out sth (take it out)"},
+      "grammar": {
+        "pattern": "take sth out / take out sth (take it out)"
+      },
       "examples": [
-        {"en": "Can you take out the rubbish, please?", "tr": "Çöpü çıkarır mısın lütfen?", "register": "neutral", "focus": "take out"},
-        {"en": "He took his phone out of his pocket.", "tr": "Telefonunu cebinden çıkardı.", "register": "neutral", "focus": "took his phone out"},
-        {"en": "I need to take out some money at the bank.", "tr": "Bankadan biraz para çekmem lazım.", "register": "neutral", "focus": "take out"}
+        {
+          "en": "Can you take out the rubbish, please?",
+          "tr": "Çöpü çıkarır mısın lütfen?",
+          "register": "neutral",
+          "focus": "take out"
+        },
+        {
+          "en": "He took his phone out of his pocket.",
+          "tr": "Telefonunu cebinden çıkardı.",
+          "register": "neutral",
+          "focus": "took his phone out"
+        },
+        {
+          "en": "I need to take out some money at the bank.",
+          "tr": "Bankadan biraz para çekmem lazım.",
+          "register": "neutral",
+          "focus": "take out"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["put in"],
-      "collocations": ["take out the rubbish", "take out your phone", "take out money", "take sth out of a bag"],
+      "antonyms": [
+        "put in"
+      ],
+      "collocations": [
+        "take out the rubbish",
+        "take out your phone",
+        "take out money",
+        "take sth out of a bag"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "dışarı çıkarmak",
-          "alt": ["çıkarmak", "çöpü çıkarmak"],
+          "alt": [
+            "çıkarmak",
+            "çöpü çıkarmak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Çöp için 'çöpü çıkarmak', cüzdandan 'çıkarmak', bankadan para için 'para çekmek' denir. Üstten giysi çıkarmak için 'take off' kullanılır.",
           "mistakes": [
-            {"wrong": "Please take out your jacket.", "right": "Please take off your jacket.", "why": "Üzerinizden giysi çıkarmak 'take off'tur. 'Take out' bir şeyi içinden dışarı çıkarmaktır; Türkçede ikisi de 'çıkarmak'."},
-            {"wrong": "Take out it of the bag.", "right": "Take it out of the bag.", "why": "Zamir (it, them) 'take' ile 'out' arasına girer."}
+            {
+              "wrong": "Please take out your jacket.",
+              "right": "Please take off your jacket.",
+              "why": "Üzerinizden giysi çıkarmak 'take off'tur. 'Take out' bir şeyi içinden dışarı çıkarmaktır; Türkçede ikisi de 'çıkarmak'."
+            },
+            {
+              "wrong": "Take out it of the bag.",
+              "right": "Take it out of the bag.",
+              "why": "Zamir (it, them) 'take' ile 'out' arasına girer."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "The bin is full. Please ______ the rubbish.", "answer": "take out", "distractors": ["put on", "hold on", "look for"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bin is full. Please ______ the rubbish.",
+        "answer": "take out",
+        "distractors": [
+          "put on",
+          "hold on",
+          "look for"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.clean_up.phv.1",
@@ -192,39 +461,102 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/kliːn ˈʌp/", "uk": "/kliːn ˈʌp/"},
+      "ipa": {
+        "us": "/kliːn ˈʌp/",
+        "uk": "/kliːn ˈʌp/"
+      },
       "def": {
         "micro": "remove dirt or mess",
         "short": "remove dirt or mess from a place and make it nice again",
         "long": "To remove dirt or mess from a place after a party, a meal or an accident. It is often used for the last job: 'Let's clean up before we go.'"
       },
-      "grammar": {"pattern": "clean up; clean sth up / clean up sth"},
+      "grammar": {
+        "pattern": "clean up; clean sth up / clean up sth"
+      },
       "examples": [
-        {"en": "Please clean up your room before dinner.", "tr": "Lütfen akşam yemeğinden önce odanı topla.", "register": "neutral", "focus": "clean up"},
-        {"en": "After the party, we cleaned up together.", "tr": "Partiden sonra birlikte ortalığı topladık.", "register": "neutral", "focus": "cleaned up"},
-        {"en": "The dog made a mess. Can you clean it up?", "tr": "Köpek ortalığı dağıttı. Temizler misin?", "register": "neutral", "focus": "clean it up"}
+        {
+          "en": "Please clean up your room before dinner.",
+          "tr": "Lütfen akşam yemeğinden önce odanı topla.",
+          "register": "neutral",
+          "focus": "clean up"
+        },
+        {
+          "en": "After the party, we cleaned up together.",
+          "tr": "Partiden sonra birlikte ortalığı topladık.",
+          "register": "neutral",
+          "focus": "cleaned up"
+        },
+        {
+          "en": "The dog made a mess. Can you clean it up?",
+          "tr": "Köpek ortalığı dağıttı. Temizler misin?",
+          "register": "neutral",
+          "focus": "clean it up"
+        }
       ],
-      "synonyms": ["tidy up"],
-      "antonyms": ["make a mess"],
-      "collocations": ["clean up the mess", "clean up your room", "clean up the kitchen", "clean up after"],
+      "synonyms": [
+        "tidy up"
+      ],
+      "antonyms": [
+        "make a mess"
+      ],
+      "collocations": [
+        "clean up the mess",
+        "clean up your room",
+        "clean up the kitchen",
+        "clean up after"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "toplamak, temizlemek",
-          "alt": ["ortalığı toplamak", "düzenlemek"],
+          "alt": [
+            "ortalığı toplamak",
+            "düzenlemek"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Türkçede 'odayı toplamak', 'ortalığı temizlemek' denir. 'Clean' tek başına temizlemektir; 'clean up' dağınıklık ya da pislikten sonra toparlama işidir.",
           "mistakes": [
-            {"wrong": "I cleaned up the window.", "right": "I cleaned the window.", "why": "'Clean up' dağınıklığı ve pisliği toplamaktır. Cam, masa gibi şeyleri silmek için 'clean' yeter."}
+            {
+              "wrong": "I cleaned up the window.",
+              "right": "I cleaned the window.",
+              "why": "'Clean up' dağınıklığı ve pisliği toplamaktır. Cam, masa gibi şeyleri silmek için 'clean' yeter."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "The kids made a big mess. Please help me ______.", "answer": "clean up", "distractors": ["turn on", "give up", "check in"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The kids made a big mess. Please help me ______.",
+        "answer": "clean up",
+        "distractors": [
+          "turn on",
+          "give up",
+          "check in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.put_away.phv.1",
@@ -236,40 +568,108 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/pʊt əˈweɪ/", "uk": "/pʊt əˈweɪ/"},
+      "ipa": {
+        "us": "/pʊt əˈweɪ/",
+        "uk": "/pʊt əˈweɪ/"
+      },
       "def": {
         "micro": "put back in its place",
         "short": "put something in the place where it is kept",
         "long": "To put something back in the place where it belongs after you finish using it. People put away toys, clothes, shopping and dishes."
       },
-      "grammar": {"pattern": "put sth away / put away sth (put it away)"},
+      "grammar": {
+        "pattern": "put sth away / put away sth (put it away)"
+      },
       "examples": [
-        {"en": "Put away your toys before dinner.", "tr": "Akşam yemeğinden önce oyuncaklarını yerine kaldır.", "register": "neutral", "focus": "Put away"},
-        {"en": "Ali put his clean clothes away in the wardrobe.", "tr": "Ali temiz kıyafetlerini dolaba kaldırdı.", "register": "neutral", "focus": "put his clean clothes away"},
-        {"en": "Can you help me put the dishes away?", "tr": "Tabakları yerine kaldırmama yardım eder misin?", "register": "neutral", "focus": "put the dishes away"}
+        {
+          "en": "Put away your toys before dinner.",
+          "tr": "Akşam yemeğinden önce oyuncaklarını yerine kaldır.",
+          "register": "neutral",
+          "focus": "Put away"
+        },
+        {
+          "en": "Ali put his clean clothes away in the wardrobe.",
+          "tr": "Ali temiz kıyafetlerini dolaba kaldırdı.",
+          "register": "neutral",
+          "focus": "put his clean clothes away"
+        },
+        {
+          "en": "Can you help me put the dishes away?",
+          "tr": "Tabakları yerine kaldırmama yardım eder misin?",
+          "register": "neutral",
+          "focus": "put the dishes away"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["take out"],
-      "collocations": ["put away the toys", "put away the dishes", "put away your clothes", "put away the groceries"],
+      "antonyms": [
+        "take out"
+      ],
+      "collocations": [
+        "put away the toys",
+        "put away the dishes",
+        "put away your clothes",
+        "put away the groceries"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "yerine koymak",
-          "alt": ["kaldırmak", "toplamak"],
+          "alt": [
+            "kaldırmak",
+            "toplamak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Türkçede 'kaldırmak' bu anlamda çok yaygındır ('Oyuncakları kaldır'). Ama 'put away' atmak değildir; bir şeyi yerine koymaktır.",
           "mistakes": [
-            {"wrong": "Please put away the old bottles in the bin.", "right": "Please throw away the old bottles.", "why": "Türkçedeki 'kaldır' hem yerine koymak hem atmak olabilir. 'Put away' yerine koymaktır; çöpe atmak için 'throw away' denir."},
-            {"wrong": "Put away it, please.", "right": "Put it away, please.", "why": "Zamir (it, them) 'put' ile 'away' arasına girer."}
+            {
+              "wrong": "Please put away the old bottles in the bin.",
+              "right": "Please throw away the old bottles.",
+              "why": "Türkçedeki 'kaldır' hem yerine koymak hem atmak olabilir. 'Put away' yerine koymaktır; çöpe atmak için 'throw away' denir."
+            },
+            {
+              "wrong": "Put away it, please.",
+              "right": "Put it away, please.",
+              "why": "Zamir (it, them) 'put' ile 'away' arasına girer."
+            }
           ],
           "mnemonic": "İkisinde de 'away' var ama 'put' koymak, 'throw' fırlatmak: 'put away' yerine kaldır, 'throw away' çöpe at."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "Playtime is over. Please ______ the toys.", "answer": "put away", "distractors": ["sign up", "sit down", "get on"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Playtime is over. Please ______ the toys.",
+        "answer": "put away",
+        "distractors": [
+          "sign up",
+          "sit down",
+          "get on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.eat_out.phv.1",
@@ -281,39 +681,101 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/iːt ˈaʊt/", "uk": "/iːt ˈaʊt/"},
+      "ipa": {
+        "us": "/iːt ˈaʊt/",
+        "uk": "/iːt ˈaʊt/"
+      },
       "def": {
         "micro": "eat at a restaurant",
         "short": "have a meal in a restaurant instead of at home",
         "long": "To have a meal in a restaurant or café instead of at home. People often eat out on weekends or on special days."
       },
-      "grammar": {"pattern": "eat out (no object)"},
+      "grammar": {
+        "pattern": "eat out (no object)"
+      },
       "examples": [
-        {"en": "Let's eat out tonight.", "tr": "Bu akşam dışarıda yiyelim.", "register": "neutral", "focus": "eat out"},
-        {"en": "We eat out once a week.", "tr": "Haftada bir dışarıda yemek yeriz.", "register": "neutral", "focus": "eat out"},
-        {"en": "It's cheaper to cook at home than to eat out every day.", "tr": "Evde yemek yapmak, her gün dışarıda yemekten daha ucuzdur.", "register": "neutral", "focus": "eat out"}
+        {
+          "en": "Let's eat out tonight.",
+          "tr": "Bu akşam dışarıda yiyelim.",
+          "register": "neutral",
+          "focus": "eat out"
+        },
+        {
+          "en": "We eat out once a week.",
+          "tr": "Haftada bir dışarıda yemek yeriz.",
+          "register": "neutral",
+          "focus": "eat out"
+        },
+        {
+          "en": "It's cheaper to cook at home than to eat out every day.",
+          "tr": "Evde yemek yapmak, her gün dışarıda yemekten daha ucuzdur.",
+          "register": "neutral",
+          "focus": "eat out"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["eat in"],
-      "collocations": ["eat out tonight", "eat out with friends", "eat out a lot", "love to eat out"],
+      "antonyms": [
+        "eat in"
+      ],
+      "collocations": [
+        "eat out tonight",
+        "eat out with friends",
+        "eat out a lot",
+        "love to eat out"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "dışarıda yemek yemek",
-          "alt": ["dışarıda yemek"],
+          "alt": [
+            "dışarıda yemek"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçede 'dışarıda yemek', 'restoranda yemek' denir. 'Eat out' tek bir kalıptır; 'outside' eklemeyin.",
           "mistakes": [
-            {"wrong": "Let's eat outside tonight.", "right": "Let's eat out tonight.", "why": "'Eat outside' bahçede ya da açık havada yemektir. Restoranda yemek için 'eat out' denir."}
+            {
+              "wrong": "Let's eat outside tonight.",
+              "right": "Let's eat out tonight.",
+              "why": "'Eat outside' bahçede ya da açık havada yemektir. Restoranda yemek için 'eat out' denir."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "food_drink"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm too tired to cook. Let's ______ tonight.", "answer": "eat out", "distractors": ["move out", "pick up", "check in"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm too tired to cook. Let's ______ tonight.",
+        "answer": "eat out",
+        "distractors": [
+          "move out",
+          "pick up",
+          "check in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.log_in.phv.1",
@@ -325,40 +787,114 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/lɔːɡ ˈɪn/", "uk": "/lɒɡ ˈɪn/"},
+      "ipa": {
+        "us": "/lɔːɡ ˈɪn/",
+        "uk": "/lɒɡ ˈɪn/"
+      },
       "def": {
         "micro": "open your account online",
         "short": "enter your name and password to use a website or app",
         "long": "To enter your name and password so you can use a website, an app or a computer. The opposite is 'log out'. The noun is 'login'."
       },
-      "grammar": {"pattern": "log in (to a site or app)"},
+      "grammar": {
+        "pattern": "log in (to a site or app)"
+      },
       "examples": [
-        {"en": "I can't log in. I forgot my password.", "tr": "Giriş yapamıyorum. Şifremi unuttum.", "register": "neutral", "focus": "log in"},
-        {"en": "Please log in to your account first.", "tr": "Lütfen önce hesabına giriş yap.", "register": "neutral", "focus": "log in"},
-        {"en": "She logged in and checked her messages.", "tr": "Giriş yapıp mesajlarına baktı.", "register": "neutral", "focus": "logged in"}
+        {
+          "en": "I can't log in. I forgot my password.",
+          "tr": "Giriş yapamıyorum. Şifremi unuttum.",
+          "register": "neutral",
+          "focus": "log in"
+        },
+        {
+          "en": "Please log in to your account first.",
+          "tr": "Lütfen önce hesabına giriş yap.",
+          "register": "neutral",
+          "focus": "log in"
+        },
+        {
+          "en": "She logged in and checked her messages.",
+          "tr": "Giriş yapıp mesajlarına baktı.",
+          "register": "neutral",
+          "focus": "logged in"
+        }
       ],
-      "synonyms": ["sign in", "log on"],
-      "antonyms": ["log out"],
-      "collocations": ["log in to an account", "log in with a password", "log in online", "log in again"],
-      "word_family": [{"lemma": "login", "pos": "n"}],
+      "synonyms": [
+        "sign in",
+        "log on"
+      ],
+      "antonyms": [
+        "log out"
+      ],
+      "collocations": [
+        "log in to an account",
+        "log in with a password",
+        "log in online",
+        "log in again"
+      ],
+      "word_family": [
+        {
+          "lemma": "login",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "giriş yapmak",
-          "alt": ["oturum açmak"],
+          "alt": [
+            "oturum açmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçede 'hesaba giriş yapmak' ve 'oturum açmak' denir. İngilizcede fiil 'log in' (iki sözcük), ad 'login' (tek sözcük) yazılır.",
           "mistakes": [
-            {"wrong": "I can't login.", "right": "I can't log in.", "why": "Fiil olarak iki ayrı sözcük yazılır: log in. 'Login' bir addır (login page)."},
-            {"wrong": "I logged in my account.", "right": "I logged in to my account.", "why": "'Hesaba' için 'to' gerekir: log in to."}
+            {
+              "wrong": "I can't login.",
+              "right": "I can't log in.",
+              "why": "Fiil olarak iki ayrı sözcük yazılır: log in. 'Login' bir addır (login page)."
+            },
+            {
+              "wrong": "I logged in my account.",
+              "right": "I logged in to my account.",
+              "why": "'Hesaba' için 'to' gerekir: log in to."
+            }
           ],
           "mnemonic": "'Log' kayıt defteri demek (gemilerin seyir defterine 'logbook' denir): giriş yapınca adın sisteme kaydedilir ve içeri (in) girersin."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "To see your messages, you must first ______.", "answer": "log in", "distractors": ["log out", "check out", "hang up"]},
-      "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To see your messages, you must first ______.",
+        "answer": "log in",
+        "distractors": [
+          "log out",
+          "check out",
+          "hang up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.log_out.phv.1",
@@ -370,27 +906,63 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/lɔːɡ ˈaʊt/", "uk": "/lɒɡ ˈaʊt/"},
+      "ipa": {
+        "us": "/lɔːɡ ˈaʊt/",
+        "uk": "/lɒɡ ˈaʊt/"
+      },
       "def": {
         "micro": "leave your online account",
         "short": "close your account on a website or app when you finish",
         "long": "To leave your account on a website, an app or a computer when you finish, so that nobody else can use it. The opposite is 'log in'."
       },
-      "grammar": {"pattern": "log out (of a site or app)"},
+      "grammar": {
+        "pattern": "log out (of a site or app)"
+      },
       "examples": [
-        {"en": "Don't forget to log out on a shared computer.", "tr": "Ortak bir bilgisayarda çıkış yapmayı unutma.", "register": "neutral", "focus": "log out"},
-        {"en": "I logged out and turned off my laptop.", "tr": "Çıkış yapıp dizüstü bilgisayarımı kapattım.", "register": "neutral", "focus": "logged out"},
-        {"en": "Ayşe logged out of the app and went to bed.", "tr": "Ayşe uygulamadan çıkış yapıp yattı.", "register": "neutral", "focus": "logged out"}
+        {
+          "en": "Don't forget to log out on a shared computer.",
+          "tr": "Ortak bir bilgisayarda çıkış yapmayı unutma.",
+          "register": "neutral",
+          "focus": "log out"
+        },
+        {
+          "en": "I logged out and turned off my laptop.",
+          "tr": "Çıkış yapıp dizüstü bilgisayarımı kapattım.",
+          "register": "neutral",
+          "focus": "logged out"
+        },
+        {
+          "en": "Ayşe logged out of the app and went to bed.",
+          "tr": "Ayşe uygulamadan çıkış yapıp yattı.",
+          "register": "neutral",
+          "focus": "logged out"
+        }
       ],
-      "synonyms": ["sign out"],
-      "antonyms": ["log in"],
-      "collocations": ["log out of an account", "log out of the app", "log out first", "log out and log in again"],
-      "word_family": [{"lemma": "logout", "pos": "n"}],
+      "synonyms": [
+        "sign out"
+      ],
+      "antonyms": [
+        "log in"
+      ],
+      "collocations": [
+        "log out of an account",
+        "log out of the app",
+        "log out first",
+        "log out and log in again"
+      ],
+      "word_family": [
+        {
+          "lemma": "logout",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "çıkış yapmak",
-          "alt": ["oturumu kapatmak"],
+          "alt": [
+            "oturumu kapatmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "'Log out' yalnızca hesaptan çıkmaktır. Cihazı kapatmak 'turn off', telefonu kapatmak 'hang up' demektir; Türkçede hepsi 'kapatmak' olabilir.",
@@ -398,9 +970,38 @@
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm done with my email. Let me ______ before I leave.", "answer": "log out", "distractors": ["log in", "turn up", "get in"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm done with my email. Let me ______ before I leave.",
+        "answer": "log out",
+        "distractors": [
+          "log in",
+          "turn up",
+          "get in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.call_back.phv.1",
@@ -412,40 +1013,108 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/kɔːl ˈbæk/", "uk": "/kɔːl ˈbæk/"},
+      "ipa": {
+        "us": "/kɔːl ˈbæk/",
+        "uk": "/kɔːl ˈbæk/"
+      },
       "def": {
         "micro": "phone someone again",
         "short": "phone someone who called you, or phone again later",
         "long": "To phone someone who phoned you earlier, or to phone someone again later. People say 'I'll call you back' when they cannot talk now."
       },
-      "grammar": {"pattern": "call sb back / call back sb (call me back)"},
+      "grammar": {
+        "pattern": "call sb back / call back sb (call me back)"
+      },
       "examples": [
-        {"en": "I'm busy now. I'll call you back later.", "tr": "Şu an meşgulüm. Seni sonra geri ararım.", "register": "neutral", "focus": "call you back"},
-        {"en": "Please ask him to call me back.", "tr": "Lütfen ona beni geri aramasını söyle.", "register": "neutral", "focus": "call me back"},
-        {"en": "Ali called back an hour later.", "tr": "Ali bir saat sonra geri aradı.", "register": "neutral", "focus": "called back"}
+        {
+          "en": "I'm busy now. I'll call you back later.",
+          "tr": "Şu an meşgulüm. Seni sonra geri ararım.",
+          "register": "neutral",
+          "focus": "call you back"
+        },
+        {
+          "en": "Please ask him to call me back.",
+          "tr": "Lütfen ona beni geri aramasını söyle.",
+          "register": "neutral",
+          "focus": "call me back"
+        },
+        {
+          "en": "Ali called back an hour later.",
+          "tr": "Ali bir saat sonra geri aradı.",
+          "register": "neutral",
+          "focus": "called back"
+        }
       ],
-      "synonyms": ["ring back"],
+      "synonyms": [
+        "ring back"
+      ],
       "antonyms": [],
-      "collocations": ["call you back", "call me back", "call back later", "call back tomorrow", "please call back"],
+      "collocations": [
+        "call you back",
+        "call me back",
+        "call back later",
+        "call back tomorrow",
+        "please call back"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "geri aramak",
-          "alt": ["tekrar aramak"],
+          "alt": [
+            "tekrar aramak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Hem seni arayanı aramak hem de daha sonra yeniden aramak için kullanılır. Türkçede 'geri aramak' ya da 'tekrar aramak' denir.",
           "mistakes": [
-            {"wrong": "I will call to you later.", "right": "I will call you back later.", "why": "'Call to' seslenmek demektir. Telefon etmek için 'call sb' kullanılır; geri aramak için 'call sb back'."},
-            {"wrong": "I'll call back you.", "right": "I'll call you back.", "why": "Zamir (you, me, him) 'call' ile 'back' arasına girer."}
+            {
+              "wrong": "I will call to you later.",
+              "right": "I will call you back later.",
+              "why": "'Call to' seslenmek demektir. Telefon etmek için 'call sb' kullanılır; geri aramak için 'call sb back'."
+            },
+            {
+              "wrong": "I'll call back you.",
+              "right": "I'll call you back.",
+              "why": "Zamir (you, me, him) 'call' ile 'back' arasına girer."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "She isn't here now. Please ______ in an hour.", "answer": "call back", "distractors": ["sit down", "get out", "calm down"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She isn't here now. Please ______ in an hour.",
+        "answer": "call back",
+        "distractors": [
+          "sit down",
+          "get out",
+          "calm down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
   ]
 }

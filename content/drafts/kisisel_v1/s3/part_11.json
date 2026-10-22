@@ -1,126 +1,970 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-12",
-"entries": [
-{"id":"en.boring.adj.1","lemma":"boring","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈbɔːrɪŋ/","uk":"/ˈbɔːrɪŋ/"},
-"def":{"micro":"not interesting at all","short":"not interesting, so that you feel tired and want to do something else","long":"Not interesting at all, so that you want to do something else. A boring film or lesson makes you feel bored."},
-"grammar":null,
-"examples":[
-{"en":"The film was so boring that I fell asleep.","tr":"Film o kadar sıkıcıydı ki uyuyakaldım.","register":"neutral","focus":"boring"},
-{"en":"I have a boring job, but the salary is good.","tr":"İşim sıkıcı ama maaşı iyi.","register":"neutral","focus":"boring"},
-{"en":"Don't be boring. Let's go out!","tr":"Sıkıcı olma. Hadi dışarı çıkalım!","register":"neutral","focus":"boring"}],
-"synonyms":["dull","tiresome"],"antonyms":["interesting","exciting"],"collocations":["a boring job","boring lesson","really boring","boring and slow","find sth boring"],
-"word_family":[{"lemma":"bore","pos":"v"},{"lemma":"bored","pos":"adj"},{"lemma":"boredom","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"sıkıcı","alt":["can sıkıcı","tekdüze"],"equivalence":"full","false_friend":null,"note":"'Boring' sıkan şey ya da kişidir; 'bored' ise sıkılan kişidir. 'He is boring' = O sıkıcı biri; 'He is bored' = O sıkılmış.","mistakes":[{"wrong":"The lesson was bored.","right":"The lesson was boring.","why":"Sıkan şey için -ing (boring); sıkılan kişi için -ed (bored) kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:bored"],"sensitivity":0},
-"quiz":{"cloze":"The meeting lasted three hours, and it was really ______.","answer":"boring","distractors":["bored","excited","tired"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.interested.adj.1","lemma":"interested","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈɪntrəstɪd/","uk":"/ˈɪntrəstɪd/"},
-"def":{"micro":"wanting to know more","short":"wanting to learn about or do something because it seems good or exciting","long":"Wanting to know more about something or to give it your attention. You are interested IN something; the thing that makes you interested is interesting."},
-"grammar":{"pattern":"interested in sth / in + -ing"},
-"examples":[
-{"en":"I'm interested in learning English.","tr":"İngilizce öğrenmekle ilgileniyorum.","register":"neutral","focus":"interested"},
-{"en":"Are you interested in joining our club?","tr":"Kulübümüze katılmak ister misin?","register":"neutral","focus":"interested"},
-{"en":"She looked interested in the story.","tr":"Hikâyeyle ilgileniyor gibiydi.","register":"neutral","focus":"interested"}],
-"synonyms":["curious","keen"],"antonyms":["bored","uninterested"],"collocations":["interested in","very interested","get interested","look interested","not interested"],
-"word_family":[{"lemma":"interest","pos":"n"},{"lemma":"interesting","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"ilgilenen","alt":["meraklı","ilgili"],"equivalence":"partial","false_friend":null,"note":"İlgi duyan kişi 'interested IN'; ilgi çeken şey 'interesting'. 'Interested' her zaman 'in' ile kullanılır: 'interested in music' = müzikle ilgilenmek.","mistakes":[{"wrong":"I'm interested about music.","right":"I'm interested in music.","why":"'-le ilgilenmek' için 'interested IN'; 'about' ya da 'with' kullanılmaz."},{"wrong":"I'm interesting in sports.","right":"I'm interested in sports.","why":"İlgi duyan kişi için -ed (interested); ilgi çeken şey için -ing (interesting) kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:interesting"],"sensitivity":0},
-"quiz":{"cloze":"She is very ______ in art and visits museums often.","answer":"interested","distractors":["interesting","bored","tired"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.interesting.adj.1","lemma":"interesting","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈɪntrəstɪŋ/","uk":"/ˈɪntrəstɪŋ/"},
-"def":{"micro":"making you want to know more","short":"so unusual or exciting that you want to learn more about it","long":"Holding your attention because it is new, unusual, or exciting. An interesting book or person makes you want to learn more."},
-"grammar":null,
-"examples":[
-{"en":"That's an interesting idea.","tr":"Bu ilginç bir fikir.","register":"neutral","focus":"interesting"},
-{"en":"My new teacher is very interesting.","tr":"Yeni öğretmenim çok ilginç biri.","register":"neutral","focus":"interesting"},
-{"en":"I read an interesting article about sleep.","tr":"Uyku hakkında ilginç bir makale okudum.","register":"neutral","focus":"interesting"}],
-"synonyms":["fascinating","exciting"],"antonyms":["boring","dull"],"collocations":["an interesting idea","very interesting","interesting story","find sth interesting","how interesting"],
-"word_family":[{"lemma":"interest","pos":"n"},{"lemma":"interested","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"ilginç","alt":["ilgi çekici","merak uyandıran"],"equivalence":"full","false_friend":null,"note":"'Interesting' ilgi çeken şey ya da kişidir; ilgi duyan kişi 'interested'. 'That's interesting' bazen kibarca 'pek beğenmedim' demenin yolu da olabilir.","mistakes":[{"wrong":"I'm very interesting in football.","right":"I'm very interested in football.","why":"İlgi duyan kişi için -ed (interested); ilgi çeken şey için -ing (interesting) kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:interested"],"sensitivity":0},
-"quiz":{"cloze":"The museum was really ______, so we stayed all day.","answer":"interesting","distractors":["interested","bored","tired"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.steal.v.1","lemma":"steal","type":"word","pos":"v","sense_no":1,"sense_note":"take what is not yours","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/stiːl/","uk":"/stiːl/"},
-"def":{"micro":"take what is not yours","short":"take something that is not yours, without the owner knowing","long":"To take something that belongs to someone else without permission and without the owner knowing. You steal a THING, like a phone or money; you rob a PERSON or PLACE."},
-"grammar":{"pattern":"steal sth (from sb/sth)"},
-"examples":[
-{"en":"Someone stole my bike last night.","tr":"Dün gece biri bisikletimi çaldı.","register":"neutral","focus":"stole"},
-{"en":"The thief stole her phone on the bus.","tr":"Hırsız otobüste telefonunu çaldı.","register":"neutral","focus":"stole"},
-{"en":"Never leave your bag open. Things get stolen here.","tr":"Çantanı asla açık bırakma. Burada eşyalar çalınıyor.","register":"neutral","focus":"stolen"}],
-"synonyms":["take","pinch"],"antonyms":["return","give back"],"collocations":["steal money","steal a car","steal from sb","stolen goods","have sth stolen"],
-"word_family":[{"lemma":"thief","pos":"n"},{"lemma":"theft","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"çalmak","alt":["aşırmak"],"equivalence":"partial","false_friend":null,"note":"'Steal' çalınan eşyayı nesne alır; soyulan kişi ya da yer için 'rob' kullanılır. Düzensiz fiil: steal - stole - stolen. (Müzik çalmak = 'play'.)","mistakes":[{"wrong":"He stole the bank.","right":"He robbed the bank. / He stole money from the bank.","why":"Banka, dükkân ya da kişi 'rob' ile soyulur; 'steal' çalınan şeyi (para, telefon) nesne alır."},{"wrong":"My phone was stealed.","right":"My phone was stolen.","why":"'Steal' düzensiz fiildir: steal - stole - stolen."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["irregular","confusable:rob"],"sensitivity":0},
-"quiz":{"cloze":"Someone ______ my wallet on the train.","answer":"stole","distractors":["robbed","won","earned"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.rob.v.1","lemma":"rob","type":"word","pos":"v","sense_no":1,"sense_note":"take from a person or place","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/rɑːb/","uk":"/rɒb/"},
-"def":{"micro":"steal from a person or place","short":"take money or things from a bank, shop, or person by force","long":"To take money or things from a person or place illegally, often by using force or fear. You rob a PERSON or PLACE; you steal a THING."},
-"grammar":{"pattern":"rob sb / rob a place"},
-"examples":[
-{"en":"The bank was robbed in the middle of the day.","tr":"Banka öğle vakti soyuldu.","register":"neutral","focus":"robbed"},
-{"en":"Two men robbed a small shop last night.","tr":"Dün gece iki kişi küçük bir dükkânı soydu.","register":"neutral","focus":"robbed"},
-{"en":"She was robbed on her way home, but she wasn't hurt.","tr":"Eve giderken soyuldu ama yaralanmadı.","register":"neutral","focus":"robbed"}],
-"synonyms":["hold up","mug"],"antonyms":[],"collocations":["rob a bank","rob a shop","get robbed","rob sb of sth"],
-"word_family":[{"lemma":"robber","pos":"n"},{"lemma":"robbery","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"soymak","alt":["soygun yapmak"],"equivalence":"partial","false_friend":null,"note":"'Rob' = soymak: nesne kişi ya da yerdir (bir bankayı soymak). 'Steal' = çalmak: nesne eşyadır. Soyguncu = 'robber', hırsız = 'thief'.","mistakes":[{"wrong":"Someone robbed my bag.","right":"Someone stole my bag.","why":"Çalınan eşya için 'steal'; 'rob' kişiyi ya da yeri soymak içindir."},{"wrong":"They robbed money from the bank.","right":"They stole money from the bank. / They robbed the bank.","why":"'Rob' bankayı nesne alır, parayı değil; para için 'steal' kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:steal"],"sensitivity":0},
-"quiz":{"cloze":"Two men with masks ______ the bank and ran away with the money.","answer":"robbed","distractors":["stole","lost","missed"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.lose.v.1","lemma":"lose","type":"word","pos":"v","sense_no":1,"sense_note":"no longer have","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/luːz/","uk":"/luːz/"},
-"def":{"micro":"no longer have something","short":"not be able to find something, or not have it any more","long":"To not be able to find something you had, or to not have it any more. Do not use it for a bus or train that you did not catch: for that, say 'miss'."},
-"grammar":{"pattern":"lose sth"},
-"examples":[
-{"en":"I lost my keys again this morning.","tr":"Bu sabah yine anahtarlarımı kaybettim.","register":"neutral","focus":"lost"},
-{"en":"She lost her phone on the bus.","tr":"Telefonunu otobüste kaybetti.","register":"neutral","focus":"lost"},
-{"en":"Don't lose your ticket. You need it at the gate.","tr":"Biletini kaybetme. Kapıda lazım olacak.","register":"neutral","focus":"lose"}],
-"synonyms":["misplace"],"antonyms":["find","keep"],"collocations":["lose your keys","lose your way","lose weight","lose touch","lose a game"],
-"word_family":[{"lemma":"loss","pos":"n"},{"lemma":"lost","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"kaybetmek","alt":["yitirmek"],"equivalence":"partial","false_friend":null,"note":"'Lose' = kaybetmek. 'Miss' = kaçırmak (otobüs, uçak, fırsat). Düzensiz: lose - lost - lost. 'Loose' (/luːs/, gevşek) farklı bir sıfattır; yazılışı sık karıştırılır.","mistakes":[{"wrong":"I lost the bus.","right":"I missed the bus.","why":"Otobüsü kaçırmak için 'miss' kullanılır; 'lose' bir şeyi kaybetmektir."},{"wrong":"I loosed my keys.","right":"I lost my keys.","why":"Fiil 'lose', geçmişi 'lost'tur. 'Loose' gevşek anlamında sıfattır."}],"mnemonic":"'Lose' kelimesi bir 'o' harfini kaybetmiş gibi: tek 'o' var. Gevşek anlamındaki 'loose' iki 'o' ile yazılır."}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["irregular","confusable:miss"],"sensitivity":0},
-"quiz":{"cloze":"I can't find my glasses. I think I ______ them.","answer":"lost","distractors":["missed","won","earned"]},
-"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.miss.v.1","lemma":"miss","type":"word","pos":"v","sense_no":1,"sense_note":"fail to catch","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/mɪs/","uk":"/mɪs/"},
-"def":{"micro":"fail to catch or reach","short":"fail to catch something or arrive in time for it","long":"To fail to catch a bus, train, or ball, or to arrive too late for something. You can also miss a class or a chance to do something."},
-"grammar":{"pattern":"miss the bus / train / class"},
-"examples":[
-{"en":"I missed the last bus, so I walked home.","tr":"Son otobüsü kaçırdım, bu yüzden eve yürüdüm.","register":"neutral","focus":"missed"},
-{"en":"Hurry up, or we'll miss the train.","tr":"Acele et, yoksa treni kaçıracağız.","register":"neutral","focus":"miss"},
-{"en":"She missed the class because she was sick.","tr":"Hasta olduğu için dersi kaçırdı.","register":"neutral","focus":"missed"}],
-"synonyms":["be late for"],"antonyms":["catch"],"collocations":["miss the bus","miss a flight","miss a class","miss a chance","miss the point"],
-"word_family":[{"lemma":"missing","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"kaçırmak","alt":["ıskalamak","yetişememek"],"equivalence":"partial","false_friend":null,"note":"'Miss' = kaçırmak (otobüs, uçak, ders, fırsat). Aynı fiil 'özlemek' de demektir ('I miss you' = Seni özlüyorum); bu kart 'kaçırmak' anlamını anlatır. Karşıtı 'catch'.","mistakes":[{"wrong":"I lost my flight.","right":"I missed my flight.","why":"Uçak, otobüs, tren gibi araçları kaçırmak için 'miss' kullanılır; 'lose' bir şeyi kaybetmektir."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:lose"],"sensitivity":0},
-"quiz":{"cloze":"We got there late and ______ the beginning of the film.","answer":"missed","distractors":["lost","won","earned"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.earn.v.1","lemma":"earn","type":"word","pos":"v","sense_no":1,"sense_note":"get paid","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ɜːrn/","uk":"/ɜːn/"},
-"def":{"micro":"get money for your work","short":"get money for the work that you do","long":"To get money for the work that you do. You earn money by working; you win a prize or a game."},
-"grammar":{"pattern":"earn money / earn a living"},
-"examples":[
-{"en":"How much do you earn per month?","tr":"Ayda ne kadar kazanıyorsun?","register":"neutral","focus":"earn"},
-{"en":"He earns money by walking dogs.","tr":"Köpek gezdirerek para kazanıyor.","register":"neutral","focus":"earns"},
-{"en":"I want to earn enough to buy a car.","tr":"Araba alacak kadar para kazanmak istiyorum.","register":"neutral","focus":"earn"}],
-"synonyms":["make","get paid"],"antonyms":["spend"],"collocations":["earn money","earn a living","earn a salary","earn a lot","earn extra"],
-"word_family":[{"lemma":"earnings","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"çalışarak kazanmak","alt":["para kazanmak"],"equivalence":"partial","false_friend":null,"note":"Türkçe 'kazanmak' iki fiile bölünür: çalışarak para kazanmak = 'earn'; yarışma, maç, ödül kazanmak = 'win'.","mistakes":[{"wrong":"He earned the match.","right":"He won the match.","why":"Maç, yarışma ya da ödül kazanmak için 'win' kullanılır; 'earn' çalışarak para ya da hak kazanmaktır."},{"wrong":"She wins 3,000 lira a month.","right":"She earns 3,000 lira a month.","why":"Çalışarak aylık para kazanmak için 'earn' kullanılır; 'win' yarışma ve oyun içindir."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:win"],"sensitivity":0},
-"quiz":{"cloze":"How much do you ______ a month in your new job?","answer":"earn","distractors":["win","lose","miss"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-12",
+  "entries": [
+    {
+      "id": "en.boring.adj.1",
+      "lemma": "boring",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɔːrɪŋ/",
+        "uk": "/ˈbɔːrɪŋ/"
+      },
+      "def": {
+        "micro": "not interesting at all",
+        "short": "not interesting, so that you feel tired and want to do something else",
+        "long": "Not interesting at all, so that you want to do something else. A boring film or lesson makes you feel bored."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The film was so boring that I fell asleep.",
+          "tr": "Film o kadar sıkıcıydı ki uyuyakaldım.",
+          "register": "neutral",
+          "focus": "boring"
+        },
+        {
+          "en": "I have a boring job, but the salary is good.",
+          "tr": "İşim sıkıcı ama maaşı iyi.",
+          "register": "neutral",
+          "focus": "boring"
+        },
+        {
+          "en": "Don't be boring. Let's go out!",
+          "tr": "Sıkıcı olma. Hadi dışarı çıkalım!",
+          "register": "neutral",
+          "focus": "boring"
+        }
+      ],
+      "synonyms": [
+        "dull",
+        "tiresome"
+      ],
+      "antonyms": [
+        "interesting",
+        "exciting"
+      ],
+      "collocations": [
+        "a boring job",
+        "boring lesson",
+        "really boring",
+        "boring and slow",
+        "find sth boring"
+      ],
+      "word_family": [
+        {
+          "lemma": "bore",
+          "pos": "v"
+        },
+        {
+          "lemma": "bored",
+          "pos": "adj"
+        },
+        {
+          "lemma": "boredom",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sıkıcı",
+          "alt": [
+            "can sıkıcı",
+            "tekdüze"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Boring' sıkan şey ya da kişidir; 'bored' ise sıkılan kişidir. 'He is boring' = O sıkıcı biri; 'He is bored' = O sıkılmış.",
+          "mistakes": [
+            {
+              "wrong": "The lesson was bored.",
+              "right": "The lesson was boring.",
+              "why": "Sıkan şey için -ing (boring); sıkılan kişi için -ed (bored) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:bored"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The meeting lasted three hours, and it was really ______.",
+        "answer": "boring",
+        "distractors": [
+          "bored",
+          "excited",
+          "tired"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.interested.adj.1",
+      "lemma": "interested",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪntrəstɪd/",
+        "uk": "/ˈɪntrəstɪd/"
+      },
+      "def": {
+        "micro": "wanting to know more",
+        "short": "wanting to learn about or do something because it seems good or exciting",
+        "long": "Wanting to know more about something or to give it your attention. You are interested IN something; the thing that makes you interested is interesting."
+      },
+      "grammar": {
+        "pattern": "interested in sth / in + -ing"
+      },
+      "examples": [
+        {
+          "en": "I'm interested in learning English.",
+          "tr": "İngilizce öğrenmekle ilgileniyorum.",
+          "register": "neutral",
+          "focus": "interested"
+        },
+        {
+          "en": "Are you interested in joining our club?",
+          "tr": "Kulübümüze katılmak ister misin?",
+          "register": "neutral",
+          "focus": "interested"
+        },
+        {
+          "en": "She looked interested in the story.",
+          "tr": "Hikâyeyle ilgileniyor gibiydi.",
+          "register": "neutral",
+          "focus": "interested"
+        }
+      ],
+      "synonyms": [
+        "curious",
+        "keen"
+      ],
+      "antonyms": [
+        "bored",
+        "uninterested"
+      ],
+      "collocations": [
+        "interested in",
+        "very interested",
+        "get interested",
+        "look interested",
+        "not interested"
+      ],
+      "word_family": [
+        {
+          "lemma": "interest",
+          "pos": "n"
+        },
+        {
+          "lemma": "interesting",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilgilenen",
+          "alt": [
+            "meraklı",
+            "ilgili"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İlgi duyan kişi 'interested IN'; ilgi çeken şey 'interesting'. 'Interested' her zaman 'in' ile kullanılır: 'interested in music' = müzikle ilgilenmek.",
+          "mistakes": [
+            {
+              "wrong": "I'm interested about music.",
+              "right": "I'm interested in music.",
+              "why": "'-le ilgilenmek' için 'interested IN'; 'about' ya da 'with' kullanılmaz."
+            },
+            {
+              "wrong": "I'm interesting in sports.",
+              "right": "I'm interested in sports.",
+              "why": "İlgi duyan kişi için -ed (interested); ilgi çeken şey için -ing (interesting) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:interesting"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She is very ______ in art and visits museums often.",
+        "answer": "interested",
+        "distractors": [
+          "interesting",
+          "bored",
+          "tired"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.interesting.adj.1",
+      "lemma": "interesting",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪntrəstɪŋ/",
+        "uk": "/ˈɪntrəstɪŋ/"
+      },
+      "def": {
+        "micro": "making you want to know more",
+        "short": "so unusual or exciting that you want to learn more about it",
+        "long": "Holding your attention because it is new, unusual, or exciting. An interesting book or person makes you want to learn more."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "That's an interesting idea.",
+          "tr": "Bu ilginç bir fikir.",
+          "register": "neutral",
+          "focus": "interesting"
+        },
+        {
+          "en": "My new teacher is very interesting.",
+          "tr": "Yeni öğretmenim çok ilginç biri.",
+          "register": "neutral",
+          "focus": "interesting"
+        },
+        {
+          "en": "I read an interesting article about sleep.",
+          "tr": "Uyku hakkında ilginç bir makale okudum.",
+          "register": "neutral",
+          "focus": "interesting"
+        }
+      ],
+      "synonyms": [
+        "fascinating",
+        "exciting"
+      ],
+      "antonyms": [
+        "boring",
+        "dull"
+      ],
+      "collocations": [
+        "an interesting idea",
+        "very interesting",
+        "interesting story",
+        "find sth interesting",
+        "how interesting"
+      ],
+      "word_family": [
+        {
+          "lemma": "interest",
+          "pos": "n"
+        },
+        {
+          "lemma": "interested",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilginç",
+          "alt": [
+            "ilgi çekici",
+            "merak uyandıran"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Interesting' ilgi çeken şey ya da kişidir; ilgi duyan kişi 'interested'. 'That's interesting' bazen kibarca 'pek beğenmedim' demenin yolu da olabilir.",
+          "mistakes": [
+            {
+              "wrong": "I'm very interesting in football.",
+              "right": "I'm very interested in football.",
+              "why": "İlgi duyan kişi için -ed (interested); ilgi çeken şey için -ing (interesting) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:interested"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The museum was really ______, so we stayed all day.",
+        "answer": "interesting",
+        "distractors": [
+          "interested",
+          "bored",
+          "tired"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.steal.v.1",
+      "lemma": "steal",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take what is not yours",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stiːl/",
+        "uk": "/stiːl/"
+      },
+      "def": {
+        "micro": "take what is not yours",
+        "short": "take something that is not yours, without the owner knowing",
+        "long": "To take something that belongs to someone else without permission and without the owner knowing. You steal a THING, like a phone or money; you rob a PERSON or PLACE."
+      },
+      "grammar": {
+        "pattern": "steal sth (from sb/sth)"
+      },
+      "examples": [
+        {
+          "en": "Someone stole my bike last night.",
+          "tr": "Dün gece biri bisikletimi çaldı.",
+          "register": "neutral",
+          "focus": "stole"
+        },
+        {
+          "en": "The thief stole her phone on the bus.",
+          "tr": "Hırsız otobüste telefonunu çaldı.",
+          "register": "neutral",
+          "focus": "stole"
+        },
+        {
+          "en": "Never leave your bag open. Things get stolen here.",
+          "tr": "Çantanı asla açık bırakma. Burada eşyalar çalınıyor.",
+          "register": "neutral",
+          "focus": "stolen"
+        }
+      ],
+      "synonyms": [
+        "take",
+        "pinch"
+      ],
+      "antonyms": [
+        "return",
+        "give back"
+      ],
+      "collocations": [
+        "steal money",
+        "steal a car",
+        "steal from sb",
+        "stolen goods",
+        "have sth stolen"
+      ],
+      "word_family": [
+        {
+          "lemma": "thief",
+          "pos": "n"
+        },
+        {
+          "lemma": "theft",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çalmak",
+          "alt": [
+            "aşırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Steal' çalınan eşyayı nesne alır; soyulan kişi ya da yer için 'rob' kullanılır. Düzensiz fiil: steal - stole - stolen. (Müzik çalmak = 'play'.)",
+          "mistakes": [
+            {
+              "wrong": "He stole the bank.",
+              "right": "He robbed the bank. / He stole money from the bank.",
+              "why": "Banka, dükkân ya da kişi 'rob' ile soyulur; 'steal' çalınan şeyi (para, telefon) nesne alır."
+            },
+            {
+              "wrong": "My phone was stealed.",
+              "right": "My phone was stolen.",
+              "why": "'Steal' düzensiz fiildir: steal - stole - stolen."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:rob"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Someone ______ my wallet on the train.",
+        "answer": "stole",
+        "distractors": [
+          "robbed",
+          "won",
+          "earned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rob.v.1",
+      "lemma": "rob",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take from a person or place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɑːb/",
+        "uk": "/rɒb/"
+      },
+      "def": {
+        "micro": "steal from a person or place",
+        "short": "take money or things from a bank, shop, or person by force",
+        "long": "To take money or things from a person or place illegally, often by using force or fear. You rob a PERSON or PLACE; you steal a THING."
+      },
+      "grammar": {
+        "pattern": "rob sb / rob a place"
+      },
+      "examples": [
+        {
+          "en": "The bank was robbed in the middle of the day.",
+          "tr": "Banka öğle vakti soyuldu.",
+          "register": "neutral",
+          "focus": "robbed"
+        },
+        {
+          "en": "Two men robbed a small shop last night.",
+          "tr": "Dün gece iki kişi küçük bir dükkânı soydu.",
+          "register": "neutral",
+          "focus": "robbed"
+        },
+        {
+          "en": "She was robbed on her way home, but she wasn't hurt.",
+          "tr": "Eve giderken soyuldu ama yaralanmadı.",
+          "register": "neutral",
+          "focus": "robbed"
+        }
+      ],
+      "synonyms": [
+        "hold up",
+        "mug"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "rob a bank",
+        "rob a shop",
+        "get robbed",
+        "rob sb of sth"
+      ],
+      "word_family": [
+        {
+          "lemma": "robber",
+          "pos": "n"
+        },
+        {
+          "lemma": "robbery",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "soymak",
+          "alt": [
+            "soygun yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Rob' = soymak: nesne kişi ya da yerdir (bir bankayı soymak). 'Steal' = çalmak: nesne eşyadır. Soyguncu = 'robber', hırsız = 'thief'.",
+          "mistakes": [
+            {
+              "wrong": "Someone robbed my bag.",
+              "right": "Someone stole my bag.",
+              "why": "Çalınan eşya için 'steal'; 'rob' kişiyi ya da yeri soymak içindir."
+            },
+            {
+              "wrong": "They robbed money from the bank.",
+              "right": "They stole money from the bank. / They robbed the bank.",
+              "why": "'Rob' bankayı nesne alır, parayı değil; para için 'steal' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:steal"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Two men with masks ______ the bank and ran away with the money.",
+        "answer": "robbed",
+        "distractors": [
+          "stole",
+          "lost",
+          "missed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lose.v.1",
+      "lemma": "lose",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "no longer have",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/luːz/",
+        "uk": "/luːz/"
+      },
+      "def": {
+        "micro": "no longer have something",
+        "short": "not be able to find something, or not have it any more",
+        "long": "To not be able to find something you had, or to not have it any more. Do not use it for a bus or train that you did not catch: for that, say 'miss'."
+      },
+      "grammar": {
+        "pattern": "lose sth"
+      },
+      "examples": [
+        {
+          "en": "I lost my keys again this morning.",
+          "tr": "Bu sabah yine anahtarlarımı kaybettim.",
+          "register": "neutral",
+          "focus": "lost"
+        },
+        {
+          "en": "She lost her phone on the bus.",
+          "tr": "Telefonunu otobüste kaybetti.",
+          "register": "neutral",
+          "focus": "lost"
+        },
+        {
+          "en": "Don't lose your ticket. You need it at the gate.",
+          "tr": "Biletini kaybetme. Kapıda lazım olacak.",
+          "register": "neutral",
+          "focus": "lose"
+        }
+      ],
+      "synonyms": [
+        "misplace"
+      ],
+      "antonyms": [
+        "find",
+        "keep"
+      ],
+      "collocations": [
+        "lose your keys",
+        "lose your way",
+        "lose weight",
+        "lose touch",
+        "lose a game"
+      ],
+      "word_family": [
+        {
+          "lemma": "loss",
+          "pos": "n"
+        },
+        {
+          "lemma": "lost",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaybetmek",
+          "alt": [
+            "yitirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Lose' = kaybetmek. 'Miss' = kaçırmak (otobüs, uçak, fırsat). Düzensiz: lose - lost - lost. 'Loose' (/luːs/, gevşek) farklı bir sıfattır; yazılışı sık karıştırılır.",
+          "mistakes": [
+            {
+              "wrong": "I lost the bus.",
+              "right": "I missed the bus.",
+              "why": "Otobüsü kaçırmak için 'miss' kullanılır; 'lose' bir şeyi kaybetmektir."
+            },
+            {
+              "wrong": "I loosed my keys.",
+              "right": "I lost my keys.",
+              "why": "Fiil 'lose', geçmişi 'lost'tur. 'Loose' gevşek anlamında sıfattır."
+            }
+          ],
+          "mnemonic": "'Lose' kelimesi bir 'o' harfini kaybetmiş gibi: tek 'o' var. Gevşek anlamındaki 'loose' iki 'o' ile yazılır."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular",
+          "confusable:miss"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't find my glasses. I think I ______ them.",
+        "answer": "lost",
+        "distractors": [
+          "missed",
+          "won",
+          "earned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.miss.v.1",
+      "lemma": "miss",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "fail to catch",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mɪs/",
+        "uk": "/mɪs/"
+      },
+      "def": {
+        "micro": "fail to catch or reach",
+        "short": "fail to catch something or arrive in time for it",
+        "long": "To fail to catch a bus, train, or ball, or to arrive too late for something. You can also miss a class or a chance to do something."
+      },
+      "grammar": {
+        "pattern": "miss the bus / train / class"
+      },
+      "examples": [
+        {
+          "en": "I missed the last bus, so I walked home.",
+          "tr": "Son otobüsü kaçırdım, bu yüzden eve yürüdüm.",
+          "register": "neutral",
+          "focus": "missed"
+        },
+        {
+          "en": "Hurry up, or we'll miss the train.",
+          "tr": "Acele et, yoksa treni kaçıracağız.",
+          "register": "neutral",
+          "focus": "miss"
+        },
+        {
+          "en": "She missed the class because she was sick.",
+          "tr": "Hasta olduğu için dersi kaçırdı.",
+          "register": "neutral",
+          "focus": "missed"
+        }
+      ],
+      "synonyms": [
+        "be late for"
+      ],
+      "antonyms": [
+        "catch"
+      ],
+      "collocations": [
+        "miss the bus",
+        "miss a flight",
+        "miss a class",
+        "miss a chance",
+        "miss the point"
+      ],
+      "word_family": [
+        {
+          "lemma": "missing",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaçırmak",
+          "alt": [
+            "ıskalamak",
+            "yetişememek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Miss' = kaçırmak (otobüs, uçak, ders, fırsat). Aynı fiil 'özlemek' de demektir ('I miss you' = Seni özlüyorum); bu kart 'kaçırmak' anlamını anlatır. Karşıtı 'catch'.",
+          "mistakes": [
+            {
+              "wrong": "I lost my flight.",
+              "right": "I missed my flight.",
+              "why": "Uçak, otobüs, tren gibi araçları kaçırmak için 'miss' kullanılır; 'lose' bir şeyi kaybetmektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:lose"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We got there late and ______ the beginning of the film.",
+        "answer": "missed",
+        "distractors": [
+          "lost",
+          "won",
+          "earned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.earn.v.1",
+      "lemma": "earn",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get paid",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɜːrn/",
+        "uk": "/ɜːn/"
+      },
+      "def": {
+        "micro": "get money for your work",
+        "short": "get money for the work that you do",
+        "long": "To get money for the work that you do. You earn money by working; you win a prize or a game."
+      },
+      "grammar": {
+        "pattern": "earn money / earn a living"
+      },
+      "examples": [
+        {
+          "en": "How much do you earn per month?",
+          "tr": "Ayda ne kadar kazanıyorsun?",
+          "register": "neutral",
+          "focus": "earn"
+        },
+        {
+          "en": "He earns money by walking dogs.",
+          "tr": "Köpek gezdirerek para kazanıyor.",
+          "register": "neutral",
+          "focus": "earns"
+        },
+        {
+          "en": "I want to earn enough to buy a car.",
+          "tr": "Araba alacak kadar para kazanmak istiyorum.",
+          "register": "neutral",
+          "focus": "earn"
+        }
+      ],
+      "synonyms": [
+        "make",
+        "get paid"
+      ],
+      "antonyms": [
+        "spend"
+      ],
+      "collocations": [
+        "earn money",
+        "earn a living",
+        "earn a salary",
+        "earn a lot",
+        "earn extra"
+      ],
+      "word_family": [
+        {
+          "lemma": "earnings",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çalışarak kazanmak",
+          "alt": [
+            "para kazanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçe 'kazanmak' iki fiile bölünür: çalışarak para kazanmak = 'earn'; yarışma, maç, ödül kazanmak = 'win'.",
+          "mistakes": [
+            {
+              "wrong": "He earned the match.",
+              "right": "He won the match.",
+              "why": "Maç, yarışma ya da ödül kazanmak için 'win' kullanılır; 'earn' çalışarak para ya da hak kazanmaktır."
+            },
+            {
+              "wrong": "She wins 3,000 lira a month.",
+              "right": "She earns 3,000 lira a month.",
+              "why": "Çalışarak aylık para kazanmak için 'earn' kullanılır; 'win' yarışma ve oyun içindir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:win"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "How much do you ______ a month in your new job?",
+        "answer": "earn",
+        "distractors": [
+          "win",
+          "lose",
+          "miss"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

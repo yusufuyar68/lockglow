@@ -1,445 +1,1067 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.timetable.n.1",
-  "lemma": "timetable",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈtaɪmteɪbəl/", "uk": "/ˈtaɪmteɪbl/"},
-  "def": {
-    "micro": "list of when things happen",
-    "short": "a list that shows the times of buses, trains, or school classes",
-    "long": "A list or table that shows the times when buses and trains leave, or when classes happen at school. In American English, 'schedule' is more common."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Let me check the bus timetable.", "tr": "Otobüs saatlerine bir bakayım.", "register": "neutral", "focus": "timetable"},
-    {"en": "The timetable shows a train to Ankara every hour.", "tr": "Tren tarifesine göre Ankara'ya her saat bir tren var.", "register": "neutral", "focus": "timetable"},
-    {"en": "My timetable is full on Mondays: I have six lessons.", "tr": "Pazartesi günleri ders programım dolu: altı dersim var.", "register": "neutral", "focus": "timetable"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": ["schedule"],
-  "antonyms": [],
-  "collocations": ["bus timetable", "train timetable", "check the timetable", "school timetable"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "tarife",
-      "alt": ["ders programı", "sefer saatleri"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede ulaşımda 'tarife / sefer saatleri', okulda 'ders programı' denir; İngilizcede ikisi de 'timetable'. ABD'de aynı şey 'schedule' olur.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "cities_transport", "school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I checked the bus ______ and saw that the next bus is at 9:15.", "answer": "timetable", "distractors": ["ticket", "fare", "passenger"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.weekday.n.1",
-  "lemma": "weekday",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈwiːkdeɪ/", "uk": "/ˈwiːkdeɪ/"},
-  "def": {
-    "micro": "a day from Monday to Friday",
-    "short": "any day from Monday to Friday, not Saturday or Sunday",
-    "long": "Any day from Monday to Friday, not Saturday or Sunday. Offices, schools, and banks are usually open on these days."
-  },
-  "grammar": {"pattern": "on weekdays"},
-  "examples": [
-    {"en": "The museum is open every weekday from nine to five.", "tr": "Müze hafta içi her gün dokuzdan beşe kadar açık.", "register": "neutral", "focus": "weekday"},
-    {"en": "On weekdays, I wake up at six.", "tr": "Hafta içi altıda kalkarım.", "register": "neutral", "focus": "weekdays"},
-    {"en": "Trains are cheaper on weekdays than at weekends.", "tr": "Trenler hafta içi, hafta sonundan daha ucuz.", "register": "neutral", "focus": "weekdays"}
-  ],
-  "synonyms": [],
-  "antonyms": ["weekend"],
-  "collocations": ["on weekdays", "every weekday", "a weekday morning", "weekday evenings"],
-  "word_family": [{"lemma": "weekend", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "hafta içi",
-      "alt": ["iş günü"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'hafta içi' bir zaman ifadesidir. İngilizcede tek bir gün için 'a weekday' (hafta içi bir gün), çoğul 'weekdays' (hafta içi günler) denir.",
-      "mistakes": [
-        {"wrong": "I work in weekdays.", "right": "I work on weekdays.", "why": "Türkçedeki '-de' eki yüzünden 'in' denir, ama günler için 'on' kullanılır: on weekdays, on Monday."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.timetable.n.1",
+      "lemma": "timetable",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtaɪmteɪbəl/",
+        "uk": "/ˈtaɪmteɪbl/"
+      },
+      "def": {
+        "micro": "list of when things happen",
+        "short": "a list that shows the times of buses, trains, or school classes",
+        "long": "A list or table that shows the times when buses and trains leave, or when classes happen at school. In American English, 'schedule' is more common."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Let me check the bus timetable.",
+          "tr": "Otobüs saatlerine bir bakayım.",
+          "register": "neutral",
+          "focus": "timetable"
+        },
+        {
+          "en": "The timetable shows a train to Ankara every hour.",
+          "tr": "Tren tarifesine göre Ankara'ya her saat bir tren var.",
+          "register": "neutral",
+          "focus": "timetable"
+        },
+        {
+          "en": "My timetable is full on Mondays: I have six lessons.",
+          "tr": "Pazartesi günleri ders programım dolu: altı dersim var.",
+          "register": "neutral",
+          "focus": "timetable"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Banks are open on ______, but they are closed on Saturday and Sunday.", "answer": "weekdays", "distractors": ["weekends", "holidays", "birthdays"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.abroad.adv.1",
-  "lemma": "abroad",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/əˈbrɔːd/", "uk": "/əˈbrɔːd/"},
-  "def": {
-    "micro": "in or to another country",
-    "short": "in or to a foreign country, not your own country",
-    "long": "In or to another country, especially one across the sea. We say 'go abroad' or 'live abroad', without 'to' or 'in'."
-  },
-  "grammar": {"pattern": "go / live / study + abroad"},
-  "examples": [
-    {"en": "She has lived abroad for five years.", "tr": "Beş yıldır yurt dışında yaşıyor.", "register": "neutral", "focus": "abroad"},
-    {"en": "Have you ever traveled abroad?", "tr": "Hiç yurt dışına çıktın mı?", "register": "neutral", "focus": "abroad"},
-    {"en": "We want to study abroad next year.", "tr": "Seneye yurt dışında okumak istiyoruz.", "register": "neutral", "focus": "abroad"}
-  ],
-  "synonyms": ["overseas"],
-  "antonyms": [],
-  "collocations": ["go abroad", "live abroad", "study abroad", "work abroad", "travel abroad"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yurt dışında",
-      "alt": ["yurt dışına"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Abroad' hem 'yurt dışında' hem 'yurt dışına' demektir. Zaten yer ve yön bildirdiği için önüne 'to' veya 'in' gelmez.",
-      "mistakes": [
-        {"wrong": "I want to go to abroad.", "right": "I want to go abroad.", "why": "Türkçede '-e' eki vardır ('yurt dışına'), ama 'abroad' tek başına yön bildirir; 'to' kullanılmaz."},
-        {"wrong": "My brother lives in abroad.", "right": "My brother lives abroad.", "why": "'Yurt dışında' için 'in abroad' denmez; sadece 'abroad' yeterlidir."}
+      "synonyms": [
+        "schedule"
       ],
-      "mnemonic": "Kelimenin içinde 'broad' (geniş) var: evinden çıkıp geniş dünyaya, yurt dışına. 'Go home' gibi 'go abroad' denir."
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My sister lives ______; she works in Germany.", "answer": "abroad", "distractors": ["upstairs", "nearby", "indoors"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.arrive.v.1",
-  "lemma": "arrive",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/əˈraɪv/", "uk": "/əˈraɪv/"},
-  "def": {
-    "micro": "reach a place",
-    "short": "to get to a place at the end of a trip",
-    "long": "To get to a place at the end of a trip. We say 'arrive in' for cities and countries, and 'arrive at' for smaller places like a station or an airport."
-  },
-  "grammar": {"pattern": "arrive in + city / at + place"},
-  "examples": [
-    {"en": "What time does your train arrive?", "tr": "Trenin saat kaçta varıyor?", "register": "neutral", "focus": "arrive"},
-    {"en": "We arrived at the hotel at midnight.", "tr": "Otele gece yarısı vardık.", "register": "neutral", "focus": "arrived"},
-    {"en": "She arrives in Istanbul on Friday.", "tr": "Cuma günü İstanbul'a varıyor.", "register": "neutral", "focus": "arrives"}
-  ],
-  "synonyms": ["get to", "reach"],
-  "antonyms": ["leave", "depart"],
-  "collocations": ["arrive late", "arrive on time", "arrive at the airport", "arrive in London", "arrive home"],
-  "word_family": [{"lemma": "arrival", "pos": "n"}],
-  "etymology": {"text": "From Old French 'ariver', from Latin 'ad ripam' ('to the shore'). The word first meant a ship reaching land.", "origin": "Latin", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "varmak",
-      "alt": ["ulaşmak", "gelmek"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Arrive' ile 'to' kullanılmaz: şehir ve ülke için 'in', istasyon, otel, havalimanı için 'at' gelir. 'Arrive home' (eve varmak) edatsızdır.",
-      "mistakes": [
-        {"wrong": "We arrived to Ankara at night.", "right": "We arrived in Ankara at night.", "why": "Türkçede '-e' (Ankara'ya) olduğu için 'to' denir; ama 'arrive' ile 'in' (şehir) veya 'at' (küçük yer) kullanılır."},
-        {"wrong": "I arrived to home at nine.", "right": "I arrived home at nine.", "why": "'Home' bir zarf gibi davranır; 'arrive home' denir, edat gelmez."}
+      "antonyms": [],
+      "collocations": [
+        "bus timetable",
+        "train timetable",
+        "check the timetable",
+        "school timetable"
       ],
-      "mnemonic": "Latince 'ad ripam' = 'kıyıya': kelime ilk önce geminin kıyıya varması demekti."
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Our train will ______ in Ankara at nine o'clock.", "answer": "arrive", "distractors": ["pass", "leave", "travel"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.book.v.1",
-  "lemma": "book",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "reserve",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/bʊk/", "uk": "/bʊk/"},
-  "def": {
-    "micro": "arrange for a room or seat",
-    "short": "to arrange and pay for a room, ticket, or table before you use it",
-    "long": "To arrange to have a room, ticket, or table at a certain time, often on a website or by phone. It is best to book early if you want a good price."
-  },
-  "grammar": {"pattern": "book + sth (+ for + date)"},
-  "examples": [
-    {"en": "I booked a hotel for the weekend.", "tr": "Hafta sonu için otel rezervasyonu yaptım.", "register": "neutral", "focus": "booked"},
-    {"en": "Can you book a table for four at eight?", "tr": "Saat sekize dört kişilik bir masa ayırtabilir misin?", "register": "neutral", "focus": "book"},
-    {"en": "We booked our flights online last month.", "tr": "Uçak biletlerimizi geçen ay internetten aldık.", "register": "neutral", "focus": "booked"}
-  ],
-  "synonyms": ["reserve"],
-  "antonyms": ["cancel"],
-  "collocations": ["book a room", "book a flight", "book a table", "book online", "book in advance"],
-  "word_family": [{"lemma": "booking", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "rezervasyon yapmak",
-      "alt": ["ayırtmak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Kitap (book) ile aynı yazılır ama burada fiildir: yer ayırtmak. 'Reserve' ile aynı anlamdadır; otel, bilet ve masa için günlük dilde 'book' daha yaygındır.",
-      "mistakes": [
-        {"wrong": "I did a reservation at the hotel.", "right": "I made a reservation. / I booked a room.", "why": "Türkçede 'rezervasyon yapmak' deriz, ama İngilizcede 'do' değil 'make' kullanılır. Kısaca 'book' demek daha doğaldır."}
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tarife",
+          "alt": [
+            "ders programı",
+            "sefer saatleri"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede ulaşımda 'tarife / sefer saatleri', okulda 'ders programı' denir; İngilizcede ikisi de 'timetable'. ABD'de aynı şey 'schedule' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "cities_transport",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I checked the bus ______ and saw that the next bus is at 9:15.",
+        "answer": "timetable",
+        "distractors": [
+          "ticket",
+          "fare",
+          "passenger"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.weekday.n.1",
+      "lemma": "weekday",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwiːkdeɪ/",
+        "uk": "/ˈwiːkdeɪ/"
+      },
+      "def": {
+        "micro": "a day from Monday to Friday",
+        "short": "any day from Monday to Friday, not Saturday or Sunday",
+        "long": "Any day from Monday to Friday, not Saturday or Sunday. Offices, schools, and banks are usually open on these days."
+      },
+      "grammar": {
+        "pattern": "on weekdays"
+      },
+      "examples": [
+        {
+          "en": "The museum is open every weekday from nine to five.",
+          "tr": "Müze hafta içi her gün dokuzdan beşe kadar açık.",
+          "register": "neutral",
+          "focus": "weekday"
+        },
+        {
+          "en": "On weekdays, I wake up at six.",
+          "tr": "Hafta içi altıda kalkarım.",
+          "register": "neutral",
+          "focus": "weekdays"
+        },
+        {
+          "en": "Trains are cheaper on weekdays than at weekends.",
+          "tr": "Trenler hafta içi, hafta sonundan daha ucuz.",
+          "register": "neutral",
+          "focus": "weekdays"
+        }
       ],
-      "mnemonic": "Eskiden rezervasyonlar bir deftere (book) yazılırdı: 'book a table' = masayı deftere yazdırmak."
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I'd like to ______ a table for two at seven o'clock.", "answer": "book", "distractors": ["borrow", "carry", "wear"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.pack.v.1",
-  "lemma": "pack",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "for a trip",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/pæk/", "uk": "/pæk/"},
-  "def": {
-    "micro": "put things in a bag",
-    "short": "to put your clothes and things into a bag or suitcase for a trip",
-    "long": "To put your clothes and other things into a bag or suitcase before you travel. It is often the last thing people do before they leave home."
-  },
-  "grammar": {"pattern": "pack + sth / pack for + trip"},
-  "examples": [
-    {"en": "I haven't packed my suitcase yet.", "tr": "Henüz bavulumu hazırlamadım.", "register": "neutral", "focus": "packed"},
-    {"en": "Don't forget to pack your charger.", "tr": "Şarj aletini bavuluna koymayı unutma.", "register": "neutral", "focus": "pack"},
-    {"en": "We packed our bags and left at six.", "tr": "Çantalarımızı toplayıp altıda yola çıktık.", "register": "neutral", "focus": "packed"}
-  ],
-  "synonyms": [],
-  "antonyms": ["unpack"],
-  "collocations": ["pack a suitcase", "pack your bags", "pack light", "pack for a trip"],
-  "word_family": [{"lemma": "unpack", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bavul hazırlamak",
-      "alt": ["çantayı toplamak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'bavul hazırlamak' deriz. İngilizcede tek fiil yeter: 'pack a suitcase' veya 'pack for a trip'.",
-      "mistakes": [
-        {"wrong": "I prepared my suitcase last night.", "right": "I packed my suitcase last night.", "why": "'Prepare' genel bir 'hazırlamak'tır; bavul veya çanta için doğal fiil 'pack'tir."}
+      "synonyms": [],
+      "antonyms": [
+        "weekend"
       ],
-      "mnemonic": "Türkçedeki 'paket' ile akraba: eşyalarını bavula koyup paket yapmak gibi düşün."
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I need to ______ my suitcase tonight because our flight is at 6 a.m.", "answer": "pack", "distractors": ["cancel", "borrow", "guess"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.ferry.n.1",
-  "lemma": "ferry",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈfɛri/", "uk": "/ˈfɛri/"},
-  "def": {
-    "micro": "boat for people and cars",
-    "short": "a boat that carries people and cars across a river or sea",
-    "long": "A boat that carries people, cars, and sometimes trains across a river, a lake, or a short part of the sea. In Istanbul, many people go to work on one every day."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "We took the ferry to the island.", "tr": "Adaya vapurla gittik.", "register": "neutral", "focus": "ferry"},
-    {"en": "The ferry leaves every thirty minutes.", "tr": "Vapur yarım saatte bir kalkıyor.", "register": "neutral", "focus": "ferry"},
-    {"en": "Can we take the car on the ferry?", "tr": "Arabayı feribota alabilir miyiz?", "register": "neutral", "focus": "ferry"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["take the ferry", "catch a ferry", "ferry ticket", "ferry terminal", "a car ferry"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "vapur",
-      "alt": ["feribot"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede insan taşıyan şehir hattı gemisine 'vapur', araç taşıyan büyük gemiye 'feribot' denir. 'Feribot' da 'ferry-boat'tan gelir. İngilizcede ikisi için de 'ferry' kullanılır.",
-      "mistakes": [
-        {"wrong": "I went to the island with ferry.", "right": "I went to the island by ferry. / on the ferry.", "why": "Türkçede 'vapurla' dendiği için 'with' denir; İngilizcede araç için 'by ferry' (the yok) veya 'on the ferry' kullanılır."}
+      "collocations": [
+        "on weekdays",
+        "every weekday",
+        "a weekday morning",
+        "weekday evenings"
       ],
-      "mnemonic": "Feribot kelimesi zaten 'ferry boat' sözünden gelir: ferry + boat."
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "To go to the island, you must take the ______ from the harbor.", "answer": "ferry", "distractors": ["subway", "highway", "elevator"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.gate.n.1",
-  "lemma": "gate",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "at an airport",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ɡeɪt/", "uk": "/ɡeɪt/"},
-  "def": {
-    "micro": "door to your plane",
-    "short": "the place in an airport where you wait to get on your plane",
-    "long": "A numbered exit in an airport where people wait and then get on their plane. The number is shown on your boarding pass and on the screens."
-  },
-  "grammar": {"pattern": "gate + number / letter"},
-  "examples": [
-    {"en": "Your flight leaves from gate 12.", "tr": "Uçağınız 12. kapıdan kalkıyor.", "register": "neutral", "focus": "gate"},
-    {"en": "The gate closes forty minutes before the flight.", "tr": "Kapı, uçuştan kırk dakika önce kapanıyor.", "register": "neutral", "focus": "gate"},
-    {"en": "We waited at the gate for two hours.", "tr": "Kapıda iki saat bekledik.", "register": "neutral", "focus": "gate"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["gate number", "boarding gate", "departure gate", "at the gate", "a gate change"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "biniş kapısı",
-      "alt": ["kapı"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Havalimanında 'gate' uçağa bindiğiniz numaralı kapıdır. Bahçe kapısı veya şehir kapısı için de aynı kelime kullanılır ama bu kart havalimanı anlamını verir.",
-      "mistakes": [
-        {"wrong": "My flight leaves from the gate number 12.", "right": "My flight leaves from gate 12.", "why": "Numaradan önce 'the' kullanılmaz: gate 12, platform 4, room 5."}
+      "word_family": [
+        {
+          "lemma": "weekend",
+          "pos": "n"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Your plane leaves from ______ 12; please be there at 8:30.", "answer": "gate", "distractors": ["street", "corner", "bridge"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.journey.n.1",
-  "lemma": "journey",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈdʒɜːrni/", "uk": "/ˈdʒɜːni/"},
-  "def": {
-    "micro": "a trip between places",
-    "short": "the time you spend traveling from one place to another",
-    "long": "A trip from one place to another, especially a long one by car, train, plane, or ship. It is about the time and distance of the travel, not the place you visit."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "The journey to Antalya takes about six hours.", "tr": "Antalya yolculuğu yaklaşık altı saat sürüyor.", "register": "neutral", "focus": "journey"},
-    {"en": "Have a safe journey!", "tr": "İyi yolculuklar!", "register": "neutral", "focus": "journey"},
-    {"en": "The train journey was long, but the views were great.", "tr": "Tren yolculuğu uzundu ama manzara harikaydı.", "register": "neutral", "focus": "journey"}
-  ],
-  "synonyms": ["trip"],
-  "antonyms": [],
-  "collocations": ["a long journey", "a train journey", "the journey home", "a safe journey", "journey time"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yolculuk",
-      "alt": ["seyahat"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'Journey' yolda geçen süre ve yoldur; gidilen yerdeki gezi veya tatil için 'trip' kullanılır. 'Seyahat' daha resmî, 'yolculuk' daha günlüktür.",
-      "mistakes": [
-        {"wrong": "Our journey in Paris was great.", "right": "Our trip to Paris was great.", "why": "Gidilen yerdeki gezi 'trip' olur; 'journey' sadece yolda geçen yolculuğu anlatır."}
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hafta içi",
+          "alt": [
+            "iş günü"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'hafta içi' bir zaman ifadesidir. İngilizcede tek bir gün için 'a weekday' (hafta içi bir gün), çoğul 'weekdays' (hafta içi günler) denir.",
+          "mistakes": [
+            {
+              "wrong": "I work in weekdays.",
+              "right": "I work on weekdays.",
+              "why": "Türkçedeki '-de' eki yüzünden 'in' denir, ama günler için 'on' kullanılır: on weekdays, on Monday."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Banks are open on ______, but they are closed on Saturday and Sunday.",
+        "answer": "weekdays",
+        "distractors": [
+          "weekends",
+          "holidays",
+          "birthdays"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.abroad.adv.1",
+      "lemma": "abroad",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈbrɔːd/",
+        "uk": "/əˈbrɔːd/"
+      },
+      "def": {
+        "micro": "in or to another country",
+        "short": "in or to a foreign country, not your own country",
+        "long": "In or to another country, especially one across the sea. We say 'go abroad' or 'live abroad', without 'to' or 'in'."
+      },
+      "grammar": {
+        "pattern": "go / live / study + abroad"
+      },
+      "examples": [
+        {
+          "en": "She has lived abroad for five years.",
+          "tr": "Beş yıldır yurt dışında yaşıyor.",
+          "register": "neutral",
+          "focus": "abroad"
+        },
+        {
+          "en": "Have you ever traveled abroad?",
+          "tr": "Hiç yurt dışına çıktın mı?",
+          "register": "neutral",
+          "focus": "abroad"
+        },
+        {
+          "en": "We want to study abroad next year.",
+          "tr": "Seneye yurt dışında okumak istiyoruz.",
+          "register": "neutral",
+          "focus": "abroad"
+        }
       ],
-      "mnemonic": "'Bonjour' sözündeki 'jour' gün demek: 'journey' önceleri bir günde gidilen yol demekti."
+      "synonyms": [
+        "overseas"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go abroad",
+        "live abroad",
+        "study abroad",
+        "work abroad",
+        "travel abroad"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yurt dışında",
+          "alt": [
+            "yurt dışına"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Abroad' hem 'yurt dışında' hem 'yurt dışına' demektir. Zaten yer ve yön bildirdiği için önüne 'to' veya 'in' gelmez.",
+          "mistakes": [
+            {
+              "wrong": "I want to go to abroad.",
+              "right": "I want to go abroad.",
+              "why": "Türkçede '-e' eki vardır ('yurt dışına'), ama 'abroad' tek başına yön bildirir; 'to' kullanılmaz."
+            },
+            {
+              "wrong": "My brother lives in abroad.",
+              "right": "My brother lives abroad.",
+              "why": "'Yurt dışında' için 'in abroad' denmez; sadece 'abroad' yeterlidir."
+            }
+          ],
+          "mnemonic": "Kelimenin içinde 'broad' (geniş) var: evinden çıkıp geniş dünyaya, yurt dışına. 'Go home' gibi 'go abroad' denir."
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister lives ______; she works in Germany.",
+        "answer": "abroad",
+        "distractors": [
+          "upstairs",
+          "nearby",
+          "indoors"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.arrive.v.1",
+      "lemma": "arrive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈraɪv/",
+        "uk": "/əˈraɪv/"
+      },
+      "def": {
+        "micro": "reach a place",
+        "short": "to get to a place at the end of a trip",
+        "long": "To get to a place at the end of a trip. We say 'arrive in' for cities and countries, and 'arrive at' for smaller places like a station or an airport."
+      },
+      "grammar": {
+        "pattern": "arrive in + city / at + place"
+      },
+      "examples": [
+        {
+          "en": "What time does your train arrive?",
+          "tr": "Trenin saat kaçta varıyor?",
+          "register": "neutral",
+          "focus": "arrive"
+        },
+        {
+          "en": "We arrived at the hotel at midnight.",
+          "tr": "Otele gece yarısı vardık.",
+          "register": "neutral",
+          "focus": "arrived"
+        },
+        {
+          "en": "She arrives in Istanbul on Friday.",
+          "tr": "Cuma günü İstanbul'a varıyor.",
+          "register": "neutral",
+          "focus": "arrives"
+        }
+      ],
+      "synonyms": [
+        "get to",
+        "reach"
+      ],
+      "antonyms": [
+        "leave",
+        "depart"
+      ],
+      "collocations": [
+        "arrive late",
+        "arrive on time",
+        "arrive at the airport",
+        "arrive in London",
+        "arrive home"
+      ],
+      "word_family": [
+        {
+          "lemma": "arrival",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'ariver', from Latin 'ad ripam' ('to the shore'). The word first meant a ship reaching land.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "varmak",
+          "alt": [
+            "ulaşmak",
+            "gelmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Arrive' ile 'to' kullanılmaz: şehir ve ülke için 'in', istasyon, otel, havalimanı için 'at' gelir. 'Arrive home' (eve varmak) edatsızdır.",
+          "mistakes": [
+            {
+              "wrong": "We arrived to Ankara at night.",
+              "right": "We arrived in Ankara at night.",
+              "why": "Türkçede '-e' (Ankara'ya) olduğu için 'to' denir; ama 'arrive' ile 'in' (şehir) veya 'at' (küçük yer) kullanılır."
+            },
+            {
+              "wrong": "I arrived to home at nine.",
+              "right": "I arrived home at nine.",
+              "why": "'Home' bir zarf gibi davranır; 'arrive home' denir, edat gelmez."
+            }
+          ],
+          "mnemonic": "Latince 'ad ripam' = 'kıyıya': kelime ilk önce geminin kıyıya varması demekti."
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our train will ______ in Ankara at nine o'clock.",
+        "answer": "arrive",
+        "distractors": [
+          "pass",
+          "leave",
+          "travel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.book.v.1",
+      "lemma": "book",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "reserve",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bʊk/",
+        "uk": "/bʊk/"
+      },
+      "def": {
+        "micro": "arrange for a room or seat",
+        "short": "to arrange and pay for a room, ticket, or table before you use it",
+        "long": "To arrange to have a room, ticket, or table at a certain time, often on a website or by phone. It is best to book early if you want a good price."
+      },
+      "grammar": {
+        "pattern": "book + sth (+ for + date)"
+      },
+      "examples": [
+        {
+          "en": "I booked a hotel for the weekend.",
+          "tr": "Hafta sonu için otel rezervasyonu yaptım.",
+          "register": "neutral",
+          "focus": "booked"
+        },
+        {
+          "en": "Can you book a table for four at eight?",
+          "tr": "Saat sekize dört kişilik bir masa ayırtabilir misin?",
+          "register": "neutral",
+          "focus": "book"
+        },
+        {
+          "en": "We booked our flights online last month.",
+          "tr": "Uçak biletlerimizi geçen ay internetten aldık.",
+          "register": "neutral",
+          "focus": "booked"
+        }
+      ],
+      "synonyms": [
+        "reserve"
+      ],
+      "antonyms": [
+        "cancel"
+      ],
+      "collocations": [
+        "book a room",
+        "book a flight",
+        "book a table",
+        "book online",
+        "book in advance"
+      ],
+      "word_family": [
+        {
+          "lemma": "booking",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rezervasyon yapmak",
+          "alt": [
+            "ayırtmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kitap (book) ile aynı yazılır ama burada fiildir: yer ayırtmak. 'Reserve' ile aynı anlamdadır; otel, bilet ve masa için günlük dilde 'book' daha yaygındır.",
+          "mistakes": [
+            {
+              "wrong": "I did a reservation at the hotel.",
+              "right": "I made a reservation. / I booked a room.",
+              "why": "Türkçede 'rezervasyon yapmak' deriz, ama İngilizcede 'do' değil 'make' kullanılır. Kısaca 'book' demek daha doğaldır."
+            }
+          ],
+          "mnemonic": "Eskiden rezervasyonlar bir deftere (book) yazılırdı: 'book a table' = masayı deftere yazdırmak."
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'd like to ______ a table for two at seven o'clock.",
+        "answer": "book",
+        "distractors": [
+          "borrow",
+          "carry",
+          "wear"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pack.v.1",
+      "lemma": "pack",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "for a trip",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pæk/",
+        "uk": "/pæk/"
+      },
+      "def": {
+        "micro": "put things in a bag",
+        "short": "to put your clothes and things into a bag or suitcase for a trip",
+        "long": "To put your clothes and other things into a bag or suitcase before you travel. It is often the last thing people do before they leave home."
+      },
+      "grammar": {
+        "pattern": "pack + sth / pack for + trip"
+      },
+      "examples": [
+        {
+          "en": "I haven't packed my suitcase yet.",
+          "tr": "Henüz bavulumu hazırlamadım.",
+          "register": "neutral",
+          "focus": "packed"
+        },
+        {
+          "en": "Don't forget to pack your charger.",
+          "tr": "Şarj aletini bavuluna koymayı unutma.",
+          "register": "neutral",
+          "focus": "pack"
+        },
+        {
+          "en": "We packed our bags and left at six.",
+          "tr": "Çantalarımızı toplayıp altıda yola çıktık.",
+          "register": "neutral",
+          "focus": "packed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unpack"
+      ],
+      "collocations": [
+        "pack a suitcase",
+        "pack your bags",
+        "pack light",
+        "pack for a trip"
+      ],
+      "word_family": [
+        {
+          "lemma": "unpack",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bavul hazırlamak",
+          "alt": [
+            "çantayı toplamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'bavul hazırlamak' deriz. İngilizcede tek fiil yeter: 'pack a suitcase' veya 'pack for a trip'.",
+          "mistakes": [
+            {
+              "wrong": "I prepared my suitcase last night.",
+              "right": "I packed my suitcase last night.",
+              "why": "'Prepare' genel bir 'hazırlamak'tır; bavul veya çanta için doğal fiil 'pack'tir."
+            }
+          ],
+          "mnemonic": "Türkçedeki 'paket' ile akraba: eşyalarını bavula koyup paket yapmak gibi düşün."
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need to ______ my suitcase tonight because our flight is at 6 a.m.",
+        "answer": "pack",
+        "distractors": [
+          "cancel",
+          "borrow",
+          "guess"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ferry.n.1",
+      "lemma": "ferry",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɛri/",
+        "uk": "/ˈfɛri/"
+      },
+      "def": {
+        "micro": "boat for people and cars",
+        "short": "a boat that carries people and cars across a river or sea",
+        "long": "A boat that carries people, cars, and sometimes trains across a river, a lake, or a short part of the sea. In Istanbul, many people go to work on one every day."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "We took the ferry to the island.",
+          "tr": "Adaya vapurla gittik.",
+          "register": "neutral",
+          "focus": "ferry"
+        },
+        {
+          "en": "The ferry leaves every thirty minutes.",
+          "tr": "Vapur yarım saatte bir kalkıyor.",
+          "register": "neutral",
+          "focus": "ferry"
+        },
+        {
+          "en": "Can we take the car on the ferry?",
+          "tr": "Arabayı feribota alabilir miyiz?",
+          "register": "neutral",
+          "focus": "ferry"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take the ferry",
+        "catch a ferry",
+        "ferry ticket",
+        "ferry terminal",
+        "a car ferry"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "vapur",
+          "alt": [
+            "feribot"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede insan taşıyan şehir hattı gemisine 'vapur', araç taşıyan büyük gemiye 'feribot' denir. 'Feribot' da 'ferry-boat'tan gelir. İngilizcede ikisi için de 'ferry' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I went to the island with ferry.",
+              "right": "I went to the island by ferry. / on the ferry.",
+              "why": "Türkçede 'vapurla' dendiği için 'with' denir; İngilizcede araç için 'by ferry' (the yok) veya 'on the ferry' kullanılır."
+            }
+          ],
+          "mnemonic": "Feribot kelimesi zaten 'ferry boat' sözünden gelir: ferry + boat."
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To go to the island, you must take the ______ from the harbor.",
+        "answer": "ferry",
+        "distractors": [
+          "subway",
+          "highway",
+          "elevator"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.gate.n.1",
+      "lemma": "gate",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "at an airport",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡeɪt/",
+        "uk": "/ɡeɪt/"
+      },
+      "def": {
+        "micro": "door to your plane",
+        "short": "the place in an airport where you wait to get on your plane",
+        "long": "A numbered exit in an airport where people wait and then get on their plane. The number is shown on your boarding pass and on the screens."
+      },
+      "grammar": {
+        "pattern": "gate + number / letter"
+      },
+      "examples": [
+        {
+          "en": "Your flight leaves from gate 12.",
+          "tr": "Uçağınız 12. kapıdan kalkıyor.",
+          "register": "neutral",
+          "focus": "gate"
+        },
+        {
+          "en": "The gate closes forty minutes before the flight.",
+          "tr": "Kapı, uçuştan kırk dakika önce kapanıyor.",
+          "register": "neutral",
+          "focus": "gate"
+        },
+        {
+          "en": "We waited at the gate for two hours.",
+          "tr": "Kapıda iki saat bekledik.",
+          "register": "neutral",
+          "focus": "gate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "gate number",
+        "boarding gate",
+        "departure gate",
+        "at the gate",
+        "a gate change"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "biniş kapısı",
+          "alt": [
+            "kapı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Havalimanında 'gate' uçağa bindiğiniz numaralı kapıdır. Bahçe kapısı veya şehir kapısı için de aynı kelime kullanılır ama bu kart havalimanı anlamını verir.",
+          "mistakes": [
+            {
+              "wrong": "My flight leaves from the gate number 12.",
+              "right": "My flight leaves from gate 12.",
+              "why": "Numaradan önce 'the' kullanılmaz: gate 12, platform 4, room 5."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Your plane leaves from ______ 12; please be there at 8:30.",
+        "answer": "gate",
+        "distractors": [
+          "street",
+          "corner",
+          "bridge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.journey.n.1",
+      "lemma": "journey",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒɜːrni/",
+        "uk": "/ˈdʒɜːni/"
+      },
+      "def": {
+        "micro": "a trip between places",
+        "short": "the time you spend traveling from one place to another",
+        "long": "A trip from one place to another, especially a long one by car, train, plane, or ship. It is about the time and distance of the travel, not the place you visit."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The journey to Antalya takes about six hours.",
+          "tr": "Antalya yolculuğu yaklaşık altı saat sürüyor.",
+          "register": "neutral",
+          "focus": "journey"
+        },
+        {
+          "en": "Have a safe journey!",
+          "tr": "İyi yolculuklar!",
+          "register": "neutral",
+          "focus": "journey"
+        },
+        {
+          "en": "The train journey was long, but the views were great.",
+          "tr": "Tren yolculuğu uzundu ama manzara harikaydı.",
+          "register": "neutral",
+          "focus": "journey"
+        }
+      ],
+      "synonyms": [
+        "trip"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a long journey",
+        "a train journey",
+        "the journey home",
+        "a safe journey",
+        "journey time"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yolculuk",
+          "alt": [
+            "seyahat"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Journey' yolda geçen süre ve yoldur; gidilen yerdeki gezi veya tatil için 'trip' kullanılır. 'Seyahat' daha resmî, 'yolculuk' daha günlüktür.",
+          "mistakes": [
+            {
+              "wrong": "Our journey in Paris was great.",
+              "right": "Our trip to Paris was great.",
+              "why": "Gidilen yerdeki gezi 'trip' olur; 'journey' sadece yolda geçen yolculuğu anlatır."
+            }
+          ],
+          "mnemonic": "'Bonjour' sözündeki 'jour' gün demek: 'journey' önceleri bir günde gidilen yol demekti."
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ from Istanbul to Izmir by bus takes about nine hours.",
+        "answer": "journey",
+        "distractors": [
+          "ticket",
+          "station",
+          "luggage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.one_way.adj.1",
+      "lemma": "one-way",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "ticket or street",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwʌn ˈweɪ/",
+        "uk": "/ˌwʌn ˈweɪ/"
+      },
+      "def": {
+        "micro": "in one direction only",
+        "short": "for travel in one direction only, to a place but not back",
+        "long": "Used for a trip, ticket, or street that goes in one direction only. A one-way ticket takes you to a place but not back again."
+      },
+      "grammar": {
+        "pattern": "one-way + ticket / flight / street"
+      },
+      "examples": [
+        {
+          "en": "I need a one-way ticket to Izmir.",
+          "tr": "İzmir'e bir gidiş bileti lazım.",
+          "register": "neutral",
+          "focus": "one-way"
+        },
+        {
+          "en": "A one-way flight is sometimes cheaper than a return.",
+          "tr": "Tek yön uçuş bazen gidiş-dönüşten daha ucuz olur.",
+          "register": "neutral",
+          "focus": "one-way"
+        },
+        {
+          "en": "Be careful, this is a one-way street.",
+          "tr": "Dikkat et, burası tek yönlü bir sokak.",
+          "register": "neutral",
+          "focus": "one-way"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "round-trip"
+      ],
+      "collocations": [
+        "one-way ticket",
+        "one-way flight",
+        "one-way street",
+        "one-way trip"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tek yönlü",
+          "alt": [
+            "gidiş bileti"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bilet için günlük Türkçede 'gidiş bileti' denir. Gidiş-dönüş için ABD'de 'round-trip', İngiltere'de 'return' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm not coming back, so I only need a ______ ticket.",
+        "answer": "one-way",
+        "distractors": [
+          "round-trip",
+          "free",
+          "double"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The ______ from Istanbul to Izmir by bus takes about nine hours.", "answer": "journey", "distractors": ["ticket", "station", "luggage"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.one_way.adj.1",
-  "lemma": "one-way",
-  "type": "word",
-  "pos": "adj",
-  "sense_no": 1,
-  "sense_note": "ticket or street",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˌwʌn ˈweɪ/", "uk": "/ˌwʌn ˈweɪ/"},
-  "def": {
-    "micro": "in one direction only",
-    "short": "for travel in one direction only, to a place but not back",
-    "long": "Used for a trip, ticket, or street that goes in one direction only. A one-way ticket takes you to a place but not back again."
-  },
-  "grammar": {"pattern": "one-way + ticket / flight / street"},
-  "examples": [
-    {"en": "I need a one-way ticket to Izmir.", "tr": "İzmir'e bir gidiş bileti lazım.", "register": "neutral", "focus": "one-way"},
-    {"en": "A one-way flight is sometimes cheaper than a return.", "tr": "Tek yön uçuş bazen gidiş-dönüşten daha ucuz olur.", "register": "neutral", "focus": "one-way"},
-    {"en": "Be careful, this is a one-way street.", "tr": "Dikkat et, burası tek yönlü bir sokak.", "register": "neutral", "focus": "one-way"}
-  ],
-  "synonyms": [],
-  "antonyms": ["round-trip"],
-  "collocations": ["one-way ticket", "one-way flight", "one-way street", "one-way trip"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "tek yönlü",
-      "alt": ["gidiş bileti"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Bilet için günlük Türkçede 'gidiş bileti' denir. Gidiş-dönüş için ABD'de 'round-trip', İngiltere'de 'return' kullanılır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I'm not coming back, so I only need a ______ ticket.", "answer": "one-way", "distractors": ["round-trip", "free", "double"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

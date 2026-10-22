@@ -1,433 +1,1015 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.roundabout.n.1",
-  "lemma": "roundabout",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "road junction",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈraʊndəbaʊt/", "uk": "/ˈraʊndəbaʊt/"},
-  "def": {
-    "micro": "circle where roads meet",
-    "short": "a round place where roads meet and cars drive around it",
-    "long": "A round area where several roads meet. Cars drive around it in one direction and then turn onto the road they want. Americans often say 'traffic circle'."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Take the second exit at the roundabout.", "tr": "Dönel kavşakta ikinci çıkıştan çıkın.", "register": "neutral", "focus": "roundabout"},
-    {"en": "There is a small roundabout near my house.", "tr": "Evimin yakınında küçük bir dönel kavşak var.", "register": "neutral", "focus": "roundabout"},
-    {"en": "In the UK, drivers go around a roundabout clockwise.", "tr": "İngiltere'de sürücüler dönel kavşakta saat yönünde döner.", "register": "neutral", "focus": "roundabout"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": ["traffic circle"],
-  "antonyms": [],
-  "collocations": ["at the roundabout", "go around the roundabout", "a busy roundabout", "turn left at the roundabout"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "dönel kavşak",
-      "alt": ["göbekli kavşak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Günlük Türkçede çoğu kişi sadece 'kavşak' der. İngilizcede düz kavşak 'junction' veya 'intersection', daire şeklinde olan ise 'roundabout' olur.",
-      "mistakes": [],
-      "mnemonic": "Round (yuvarlak) + about (etrafında): arabalar yuvarlak göbeğin etrafında döner."
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Go straight and turn right at the ______.", "answer": "roundabout", "distractors": ["sidewalk", "kitchen", "elevator"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.passenger.n.1",
-  "lemma": "passenger",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈpæsɪndʒər/", "uk": "/ˈpæsɪndʒə/"},
-  "def": {
-    "micro": "traveler who is not driving",
-    "short": "a person who travels in a car, bus, train, or plane but does not drive it",
-    "long": "A person who travels in a car, bus, train, plane, or ship but is not the driver or one of the workers. The word is also used for taxis."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "The bus was full of passengers.", "tr": "Otobüs yolcularla doluydu.", "register": "neutral", "focus": "passengers"},
-    {"en": "Passengers must show their tickets at the gate.", "tr": "Yolcuların kapıda biletlerini göstermesi gerekir.", "register": "formal", "focus": "Passengers"},
-    {"en": "I sat in the passenger seat while my brother drove.", "tr": "Kardeşim araba sürerken ben ön koltukta oturdum.", "register": "neutral", "focus": "passenger"}
-  ],
-  "synonyms": [],
-  "antonyms": ["driver"],
-  "collocations": ["passenger seat", "passengers on board", "a train passenger", "airline passengers", "passenger train"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yolcu",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Passenger' aracı kullanmayan kişidir. Gezmek için seyahat eden kişi ise 'traveler' veya 'tourist' olur. 'Passenger seat' ön yolcu koltuğudur.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Please wait for all ______ to get off the train first.", "answer": "passengers", "distractors": ["drivers", "tickets", "stations"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.highway.n.1",
-  "lemma": "highway",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈhaɪweɪ/", "uk": "/ˈhaɪweɪ/"},
-  "def": {
-    "micro": "wide road for fast cars",
-    "short": "a wide main road where cars can drive fast between cities",
-    "long": "A wide, fast road that connects cities and towns, often with several lanes. In the UK, people usually say 'motorway'."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "The highway is closed because of an accident.", "tr": "Otoyol bir kaza yüzünden kapalı.", "register": "neutral", "focus": "highway"},
-    {"en": "We drove along the highway for three hours.", "tr": "Üç saat otoyolda gittik.", "register": "neutral", "focus": "highway"},
-    {"en": "Take the next exit off the highway.", "tr": "Otoyoldan bir sonraki çıkıştan çıkın.", "register": "neutral", "focus": "highway"}
-  ],
-  "synonyms": ["motorway", "freeway"],
-  "antonyms": [],
-  "collocations": ["on the highway", "highway exit", "a busy highway", "drive on the highway"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "otoyol",
-      "alt": ["karayolu"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "ABD'de 'highway', İngiltere'de 'motorway' denir. Her 'highway' otoyol olmayabilir; bazen sadece büyük bir ana yoldur.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Cars can drive very fast on the ______ between the two cities.", "answer": "highway", "distractors": ["sidewalk", "corner", "platform"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.neighborhood.n.1",
-  "lemma": "neighborhood",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈneɪbərhʊd/", "uk": "/ˈneɪbəhʊd/"},
-  "def": {
-    "micro": "part of a town",
-    "short": "a part of a town where people live, with its own streets and shops",
-    "long": "A small area of a town or city, and the people who live there. People often say 'my neighborhood' for the streets near their home."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "It's a quiet neighborhood with a lot of trees.", "tr": "Ağaçları bol, sakin bir mahalle.", "register": "neutral", "focus": "neighborhood"},
-    {"en": "Is there a pharmacy in this neighborhood?", "tr": "Bu mahallede eczane var mı?", "register": "neutral", "focus": "neighborhood"},
-    {"en": "Our neighborhood has a small market every Saturday.", "tr": "Mahallemizde her cumartesi küçük bir pazar kurulur.", "register": "neutral", "focus": "neighborhood"}
-  ],
-  "synonyms": ["area"],
-  "antonyms": [],
-  "collocations": ["a quiet neighborhood", "in the neighborhood", "a safe neighborhood", "a nice neighborhood", "neighborhood school"],
-  "word_family": [{"lemma": "neighbor", "pos": "n"}],
-  "etymology": {"text": "'Neighbor' comes from Old English 'neah' (near) + 'gebur' (dweller): a 'near dweller'. '-hood' marks a state or a group, as in 'childhood'.", "origin": "Old English", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "mahalle",
-      "alt": ["semt"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "İngiltere'de yazılışı 'neighbourhood'. Türkçede 'mahalle' resmî bir bölüm, 'semt' ise bir bölge hissidir; İngilizcede ikisi için de 'neighborhood' denir.",
-      "mistakes": [],
-      "mnemonic": "Neighbor (komşu) + -hood: komşuların hepsi bir arada, yani mahalle. 'Childhood' (çocukluk) gibi."
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I know most people in my ______ because I have lived here for ten years.", "answer": "neighborhood", "distractors": ["airport", "elevator", "highway"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.downtown.adv.1",
-  "lemma": "downtown",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": "to or in the city center",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˌdaʊnˈtaʊn/", "uk": "/ˌdaʊnˈtaʊn/"},
-  "def": {
-    "micro": "to the city center",
-    "short": "to or in the main business and shopping area of a city",
-    "long": "To or in the busiest part of a city, where the main shops, offices, and restaurants are. It is mostly American English; British English says 'town centre' or 'city centre'."
-  },
-  "grammar": {"pattern": "go / work / live + downtown"},
-  "examples": [
-    {"en": "I'm going downtown to buy a new phone.", "tr": "Yeni bir telefon almak için şehir merkezine gidiyorum.", "register": "neutral", "focus": "downtown"},
-    {"en": "Parking downtown is very expensive.", "tr": "Şehir merkezinde park etmek çok pahalı.", "register": "neutral", "focus": "downtown"},
-    {"en": "She works downtown, near the train station.", "tr": "Şehir merkezinde, tren istasyonunun yakınında çalışıyor.", "register": "neutral", "focus": "downtown"}
-  ],
-  "synonyms": ["city center", "in town"],
-  "antonyms": [],
-  "collocations": ["go downtown", "work downtown", "live downtown", "downtown area"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "şehir merkezi",
-      "alt": ["merkez", "çarşı"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Daha çok ABD İngilizcesidir; İngiltere'de 'town centre' veya 'city centre' denir. 'Downtown' yön bildirdiği için önüne 'to' gelmez.",
-      "mistakes": [
-        {"wrong": "I'm going to downtown.", "right": "I'm going downtown.", "why": "Türkçedeki '-e' eki yüzünden 'to' eklenir, ama 'downtown' zaten 'şehir merkezine' demektir; 'to' gerekmez."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.roundabout.n.1",
+      "lemma": "roundabout",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "road junction",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈraʊndəbaʊt/",
+        "uk": "/ˈraʊndəbaʊt/"
+      },
+      "def": {
+        "micro": "circle where roads meet",
+        "short": "a round place where roads meet and cars drive around it",
+        "long": "A round area where several roads meet. Cars drive around it in one direction and then turn onto the road they want. Americans often say 'traffic circle'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Take the second exit at the roundabout.",
+          "tr": "Dönel kavşakta ikinci çıkıştan çıkın.",
+          "register": "neutral",
+          "focus": "roundabout"
+        },
+        {
+          "en": "There is a small roundabout near my house.",
+          "tr": "Evimin yakınında küçük bir dönel kavşak var.",
+          "register": "neutral",
+          "focus": "roundabout"
+        },
+        {
+          "en": "In the UK, drivers go around a roundabout clockwise.",
+          "tr": "İngiltere'de sürücüler dönel kavşakta saat yönünde döner.",
+          "register": "neutral",
+          "focus": "roundabout"
+        }
       ],
-      "mnemonic": "'Go home' gibi düşün: araya 'to' girmez. 'I'm going downtown' = merkeze gidiyorum."
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The main shops and offices are ______, near the central square.", "answer": "downtown", "distractors": ["upstairs", "outdoors", "overseas"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.crowded.adj.1",
-  "lemma": "crowded",
-  "type": "word",
-  "pos": "adj",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈkraʊdɪd/", "uk": "/ˈkraʊdɪd/"},
-  "def": {
-    "micro": "full of people",
-    "short": "with too many people in one place",
-    "long": "Full of people, with very little free space. Buses, markets, and beaches can be like this in summer or at rush hour."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "The bus was so crowded that I had to stand.", "tr": "Otobüs o kadar kalabalıktı ki ayakta durmak zorunda kaldım.", "register": "neutral", "focus": "crowded"},
-    {"en": "I don't like crowded places.", "tr": "Kalabalık yerleri sevmem.", "register": "neutral", "focus": "crowded"},
-    {"en": "The market is very crowded on Saturdays.", "tr": "Cumartesi günleri pazar yeri çok kalabalık olur.", "register": "neutral", "focus": "crowded"}
-  ],
-  "synonyms": ["packed"],
-  "antonyms": ["empty", "quiet"],
-  "collocations": ["a crowded bus", "crowded streets", "very crowded", "too crowded", "a crowded beach"],
-  "word_family": [{"lemma": "crowd", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "kalabalık",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Türkçede 'kalabalık' hem sıfat hem isimdir. İngilizcede sıfat 'crowded', isim 'crowd' olur.",
-      "mistakes": [
-        {"wrong": "The beach was very crowd today.", "right": "The beach was very crowded today.", "why": "'Kalabalık' sıfat olarak kullanılacaksa 'crowded' denir; 'crowd' isimdir (kalabalık = bir grup insan)."}
+      "synonyms": [
+        "traffic circle"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The bus was so ______ that I could not find a seat.", "answer": "crowded", "distractors": ["empty", "quiet", "lonely"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.directions.n.1",
-  "lemma": "directions",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "how to get to a place",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/dəˈrɛkʃənz/", "uk": "/dɪˈrɛkʃənz/"},
-  "def": {
-    "micro": "how to get somewhere",
-    "short": "words or a map that show you the way to a place",
-    "long": "Words or a map that show you how to get to a place. You ask for them when you are lost, and you usually say the plural form."
-  },
-  "grammar": {"pattern": "ask for / give + directions"},
-  "examples": [
-    {"en": "Excuse me, can you give me directions to the station?", "tr": "Affedersiniz, istasyona giden yolu tarif eder misiniz?", "register": "neutral", "focus": "directions"},
-    {"en": "I asked a man in the street for directions.", "tr": "Sokakta bir adama yolu sordum.", "register": "neutral", "focus": "directions"},
-    {"en": "My phone gave me wrong directions, so we got lost.", "tr": "Telefonum bize yanlış yol tarifi verdi, o yüzden kaybolduk.", "register": "neutral", "focus": "directions"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["ask for directions", "give directions", "get directions", "follow the directions", "directions to the station"],
-  "word_family": [{"lemma": "direction", "pos": "n"}, {"lemma": "direct", "pos": "adj"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yol tarifi",
-      "alt": ["tarif"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'yol sormak' ve 'yol tarif etmek' denir. İngilizcede 'directions' çoğul kullanılır: ask for directions. Tek 'direction' ise 'yön' demektir.",
-      "mistakes": [
-        {"wrong": "Can you tell me the direction to the station?", "right": "Can you give me directions to the station?", "why": "Yol tarifi için çoğul 'directions' kullanılır; tekil 'direction' sadece yön (sağ, sol, kuzey) bildirir."}
+      "antonyms": [],
+      "collocations": [
+        "at the roundabout",
+        "go around the roundabout",
+        "a busy roundabout",
+        "turn left at the roundabout"
       ],
-      "mnemonic": "Yol tarifi tek yön değildir: 'düz git, sağa dön, sonra sola…' Birçok yön, bu yüzden 'directions' çoğul."
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dönel kavşak",
+          "alt": [
+            "göbekli kavşak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük Türkçede çoğu kişi sadece 'kavşak' der. İngilizcede düz kavşak 'junction' veya 'intersection', daire şeklinde olan ise 'roundabout' olur.",
+          "mistakes": [],
+          "mnemonic": "Round (yuvarlak) + about (etrafında): arabalar yuvarlak göbeğin etrafında döner."
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Go straight and turn right at the ______.",
+        "answer": "roundabout",
+        "distractors": [
+          "sidewalk",
+          "kitchen",
+          "elevator"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.passenger.n.1",
+      "lemma": "passenger",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpæsɪndʒər/",
+        "uk": "/ˈpæsɪndʒə/"
+      },
+      "def": {
+        "micro": "traveler who is not driving",
+        "short": "a person who travels in a car, bus, train, or plane but does not drive it",
+        "long": "A person who travels in a car, bus, train, plane, or ship but is not the driver or one of the workers. The word is also used for taxis."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The bus was full of passengers.",
+          "tr": "Otobüs yolcularla doluydu.",
+          "register": "neutral",
+          "focus": "passengers"
+        },
+        {
+          "en": "Passengers must show their tickets at the gate.",
+          "tr": "Yolcuların kapıda biletlerini göstermesi gerekir.",
+          "register": "formal",
+          "focus": "Passengers"
+        },
+        {
+          "en": "I sat in the passenger seat while my brother drove.",
+          "tr": "Kardeşim araba sürerken ben ön koltukta oturdum.",
+          "register": "neutral",
+          "focus": "passenger"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "driver"
+      ],
+      "collocations": [
+        "passenger seat",
+        "passengers on board",
+        "a train passenger",
+        "airline passengers",
+        "passenger train"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yolcu",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Passenger' aracı kullanmayan kişidir. Gezmek için seyahat eden kişi ise 'traveler' veya 'tourist' olur. 'Passenger seat' ön yolcu koltuğudur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please wait for all ______ to get off the train first.",
+        "answer": "passengers",
+        "distractors": [
+          "drivers",
+          "tickets",
+          "stations"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.highway.n.1",
+      "lemma": "highway",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhaɪweɪ/",
+        "uk": "/ˈhaɪweɪ/"
+      },
+      "def": {
+        "micro": "wide road for fast cars",
+        "short": "a wide main road where cars can drive fast between cities",
+        "long": "A wide, fast road that connects cities and towns, often with several lanes. In the UK, people usually say 'motorway'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The highway is closed because of an accident.",
+          "tr": "Otoyol bir kaza yüzünden kapalı.",
+          "register": "neutral",
+          "focus": "highway"
+        },
+        {
+          "en": "We drove along the highway for three hours.",
+          "tr": "Üç saat otoyolda gittik.",
+          "register": "neutral",
+          "focus": "highway"
+        },
+        {
+          "en": "Take the next exit off the highway.",
+          "tr": "Otoyoldan bir sonraki çıkıştan çıkın.",
+          "register": "neutral",
+          "focus": "highway"
+        }
+      ],
+      "synonyms": [
+        "motorway",
+        "freeway"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "on the highway",
+        "highway exit",
+        "a busy highway",
+        "drive on the highway"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "otoyol",
+          "alt": [
+            "karayolu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "ABD'de 'highway', İngiltere'de 'motorway' denir. Her 'highway' otoyol olmayabilir; bazen sadece büyük bir ana yoldur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Cars can drive very fast on the ______ between the two cities.",
+        "answer": "highway",
+        "distractors": [
+          "sidewalk",
+          "corner",
+          "platform"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.neighborhood.n.1",
+      "lemma": "neighborhood",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈneɪbərhʊd/",
+        "uk": "/ˈneɪbəhʊd/"
+      },
+      "def": {
+        "micro": "part of a town",
+        "short": "a part of a town where people live, with its own streets and shops",
+        "long": "A small area of a town or city, and the people who live there. People often say 'my neighborhood' for the streets near their home."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "It's a quiet neighborhood with a lot of trees.",
+          "tr": "Ağaçları bol, sakin bir mahalle.",
+          "register": "neutral",
+          "focus": "neighborhood"
+        },
+        {
+          "en": "Is there a pharmacy in this neighborhood?",
+          "tr": "Bu mahallede eczane var mı?",
+          "register": "neutral",
+          "focus": "neighborhood"
+        },
+        {
+          "en": "Our neighborhood has a small market every Saturday.",
+          "tr": "Mahallemizde her cumartesi küçük bir pazar kurulur.",
+          "register": "neutral",
+          "focus": "neighborhood"
+        }
+      ],
+      "synonyms": [
+        "area"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a quiet neighborhood",
+        "in the neighborhood",
+        "a safe neighborhood",
+        "a nice neighborhood",
+        "neighborhood school"
+      ],
+      "word_family": [
+        {
+          "lemma": "neighbor",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "'Neighbor' comes from Old English 'neah' (near) + 'gebur' (dweller): a 'near dweller'. '-hood' marks a state or a group, as in 'childhood'.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "mahalle",
+          "alt": [
+            "semt"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiltere'de yazılışı 'neighbourhood'. Türkçede 'mahalle' resmî bir bölüm, 'semt' ise bir bölge hissidir; İngilizcede ikisi için de 'neighborhood' denir.",
+          "mistakes": [],
+          "mnemonic": "Neighbor (komşu) + -hood: komşuların hepsi bir arada, yani mahalle. 'Childhood' (çocukluk) gibi."
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I know most people in my ______ because I have lived here for ten years.",
+        "answer": "neighborhood",
+        "distractors": [
+          "airport",
+          "elevator",
+          "highway"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.downtown.adv.1",
+      "lemma": "downtown",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "to or in the city center",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdaʊnˈtaʊn/",
+        "uk": "/ˌdaʊnˈtaʊn/"
+      },
+      "def": {
+        "micro": "to the city center",
+        "short": "to or in the main business and shopping area of a city",
+        "long": "To or in the busiest part of a city, where the main shops, offices, and restaurants are. It is mostly American English; British English says 'town centre' or 'city centre'."
+      },
+      "grammar": {
+        "pattern": "go / work / live + downtown"
+      },
+      "examples": [
+        {
+          "en": "I'm going downtown to buy a new phone.",
+          "tr": "Yeni bir telefon almak için şehir merkezine gidiyorum.",
+          "register": "neutral",
+          "focus": "downtown"
+        },
+        {
+          "en": "Parking downtown is very expensive.",
+          "tr": "Şehir merkezinde park etmek çok pahalı.",
+          "register": "neutral",
+          "focus": "downtown"
+        },
+        {
+          "en": "She works downtown, near the train station.",
+          "tr": "Şehir merkezinde, tren istasyonunun yakınında çalışıyor.",
+          "register": "neutral",
+          "focus": "downtown"
+        }
+      ],
+      "synonyms": [
+        "city center",
+        "in town"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go downtown",
+        "work downtown",
+        "live downtown",
+        "downtown area"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şehir merkezi",
+          "alt": [
+            "merkez",
+            "çarşı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Daha çok ABD İngilizcesidir; İngiltere'de 'town centre' veya 'city centre' denir. 'Downtown' yön bildirdiği için önüne 'to' gelmez.",
+          "mistakes": [
+            {
+              "wrong": "I'm going to downtown.",
+              "right": "I'm going downtown.",
+              "why": "Türkçedeki '-e' eki yüzünden 'to' eklenir, ama 'downtown' zaten 'şehir merkezine' demektir; 'to' gerekmez."
+            }
+          ],
+          "mnemonic": "'Go home' gibi düşün: araya 'to' girmez. 'I'm going downtown' = merkeze gidiyorum."
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The main shops and offices are ______, near the central square.",
+        "answer": "downtown",
+        "distractors": [
+          "upstairs",
+          "outdoors",
+          "overseas"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.crowded.adj.1",
+      "lemma": "crowded",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkraʊdɪd/",
+        "uk": "/ˈkraʊdɪd/"
+      },
+      "def": {
+        "micro": "full of people",
+        "short": "with too many people in one place",
+        "long": "Full of people, with very little free space. Buses, markets, and beaches can be like this in summer or at rush hour."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The bus was so crowded that I had to stand.",
+          "tr": "Otobüs o kadar kalabalıktı ki ayakta durmak zorunda kaldım.",
+          "register": "neutral",
+          "focus": "crowded"
+        },
+        {
+          "en": "I don't like crowded places.",
+          "tr": "Kalabalık yerleri sevmem.",
+          "register": "neutral",
+          "focus": "crowded"
+        },
+        {
+          "en": "The market is very crowded on Saturdays.",
+          "tr": "Cumartesi günleri pazar yeri çok kalabalık olur.",
+          "register": "neutral",
+          "focus": "crowded"
+        }
+      ],
+      "synonyms": [
+        "packed"
+      ],
+      "antonyms": [
+        "empty",
+        "quiet"
+      ],
+      "collocations": [
+        "a crowded bus",
+        "crowded streets",
+        "very crowded",
+        "too crowded",
+        "a crowded beach"
+      ],
+      "word_family": [
+        {
+          "lemma": "crowd",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kalabalık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'kalabalık' hem sıfat hem isimdir. İngilizcede sıfat 'crowded', isim 'crowd' olur.",
+          "mistakes": [
+            {
+              "wrong": "The beach was very crowd today.",
+              "right": "The beach was very crowded today.",
+              "why": "'Kalabalık' sıfat olarak kullanılacaksa 'crowded' denir; 'crowd' isimdir (kalabalık = bir grup insan)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bus was so ______ that I could not find a seat.",
+        "answer": "crowded",
+        "distractors": [
+          "empty",
+          "quiet",
+          "lonely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.directions.n.1",
+      "lemma": "directions",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "how to get to a place",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dəˈrɛkʃənz/",
+        "uk": "/dɪˈrɛkʃənz/"
+      },
+      "def": {
+        "micro": "how to get somewhere",
+        "short": "words or a map that show you the way to a place",
+        "long": "Words or a map that show you how to get to a place. You ask for them when you are lost, and you usually say the plural form."
+      },
+      "grammar": {
+        "pattern": "ask for / give + directions"
+      },
+      "examples": [
+        {
+          "en": "Excuse me, can you give me directions to the station?",
+          "tr": "Affedersiniz, istasyona giden yolu tarif eder misiniz?",
+          "register": "neutral",
+          "focus": "directions"
+        },
+        {
+          "en": "I asked a man in the street for directions.",
+          "tr": "Sokakta bir adama yolu sordum.",
+          "register": "neutral",
+          "focus": "directions"
+        },
+        {
+          "en": "My phone gave me wrong directions, so we got lost.",
+          "tr": "Telefonum bize yanlış yol tarifi verdi, o yüzden kaybolduk.",
+          "register": "neutral",
+          "focus": "directions"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ask for directions",
+        "give directions",
+        "get directions",
+        "follow the directions",
+        "directions to the station"
+      ],
+      "word_family": [
+        {
+          "lemma": "direction",
+          "pos": "n"
+        },
+        {
+          "lemma": "direct",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yol tarifi",
+          "alt": [
+            "tarif"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'yol sormak' ve 'yol tarif etmek' denir. İngilizcede 'directions' çoğul kullanılır: ask for directions. Tek 'direction' ise 'yön' demektir.",
+          "mistakes": [
+            {
+              "wrong": "Can you tell me the direction to the station?",
+              "right": "Can you give me directions to the station?",
+              "why": "Yol tarifi için çoğul 'directions' kullanılır; tekil 'direction' sadece yön (sağ, sol, kuzey) bildirir."
+            }
+          ],
+          "mnemonic": "Yol tarifi tek yön değildir: 'düz git, sağa dön, sonra sola…' Birçok yön, bu yüzden 'directions' çoğul."
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm lost. Can I ask you for ______ to the museum?",
+        "answer": "directions",
+        "distractors": [
+          "tickets",
+          "reasons",
+          "prices"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.forecast.n.1",
+      "lemma": "forecast",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "weather report",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɔːrkæst/",
+        "uk": "/ˈfɔːkɑːst/"
+      },
+      "def": {
+        "micro": "what weather will be like",
+        "short": "a report that says what the weather will be like in the next days",
+        "long": "A report that says what the weather will probably be like in the next hours or days. You can check one on TV or on your phone before you go out."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The forecast says it will rain tomorrow.",
+          "tr": "Hava durumuna göre yarın yağmur yağacak.",
+          "register": "neutral",
+          "focus": "forecast"
+        },
+        {
+          "en": "Did you check the weather forecast before you left?",
+          "tr": "Çıkmadan önce hava durumuna baktın mı?",
+          "register": "neutral",
+          "focus": "forecast"
+        },
+        {
+          "en": "According to the forecast, it will be sunny all week.",
+          "tr": "Tahmine göre bütün hafta hava güneşli olacak.",
+          "register": "neutral",
+          "focus": "forecast"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "weather forecast",
+        "check the forecast",
+        "the forecast says",
+        "according to the forecast",
+        "an accurate forecast"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hava durumu",
+          "alt": [
+            "tahmin"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'hava durumu' denir; İngilizcede bu 'weather forecast' veya kısaca 'the forecast'tır. 'Forecast' aslında 'tahmin' demektir ve hava dışında da kullanılır.",
+          "mistakes": [],
+          "mnemonic": "'Fore' önce demek ('before' içinde de var): forecast = önceden yapılan tahmin."
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The weather ______ says it will be sunny on Sunday.",
+        "answer": "forecast",
+        "distractors": [
+          "window",
+          "season",
+          "umbrella"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.temperature.n.1",
+      "lemma": "temperature",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "how hot or cold",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɛmpərətʃər/",
+        "uk": "/ˈtɛmprətʃə/"
+      },
+      "def": {
+        "micro": "how hot or cold it is",
+        "short": "a number that shows how hot or cold the air or a room is",
+        "long": "A number that shows how hot or cold something is, for example the air, the water, or a room. We measure it in degrees."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "What's the temperature outside?",
+          "tr": "Dışarıda hava kaç derece?",
+          "register": "neutral",
+          "focus": "temperature"
+        },
+        {
+          "en": "The temperature will drop to five degrees tonight.",
+          "tr": "Sıcaklık bu gece beş dereceye düşecek.",
+          "register": "neutral",
+          "focus": "temperature"
+        },
+        {
+          "en": "Set the room temperature to twenty-two degrees.",
+          "tr": "Oda sıcaklığını yirmi iki dereceye ayarla.",
+          "register": "neutral",
+          "focus": "temperature"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "high temperature",
+        "low temperature",
+        "room temperature",
+        "the temperature drops",
+        "the temperature rises"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sıcaklık",
+          "alt": [
+            "hava sıcaklığı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hasta biri için 'have a temperature' = 'ateşi olmak' demektir. Hava ve oda için 'sıcaklık', hasta için 'ateş' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ is minus five today, so wear a warm coat.",
+        "answer": "temperature",
+        "distractors": [
+          "season",
+          "sunshine",
+          "umbrella"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.storm.n.1",
+      "lemma": "storm",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stɔːrm/",
+        "uk": "/stɔːm/"
+      },
+      "def": {
+        "micro": "very bad weather",
+        "short": "a period of very strong wind, heavy rain, or snow",
+        "long": "A period of very bad weather with strong wind and heavy rain, snow, or thunder. It can last for hours and often causes problems for travel."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "A big storm is coming tonight.",
+          "tr": "Bu gece büyük bir fırtına geliyor.",
+          "register": "neutral",
+          "focus": "storm"
+        },
+        {
+          "en": "The storm knocked down several trees in our street.",
+          "tr": "Fırtına sokağımızdaki birkaç ağacı devirdi.",
+          "register": "neutral",
+          "focus": "storm"
+        },
+        {
+          "en": "All flights were delayed because of the storm.",
+          "tr": "Fırtına yüzünden bütün uçuşlar gecikti.",
+          "register": "neutral",
+          "focus": "storm"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a big storm",
+        "a storm is coming",
+        "a snowstorm",
+        "a thunderstorm",
+        "storm warning"
+      ],
+      "word_family": [
+        {
+          "lemma": "stormy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "thunderstorm",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fırtına",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Storm' yağmurlu, rüzgârlı veya gök gürültülü her türlü şiddetli hava olabilir. Hortum 'tornado', kasırga 'hurricane' ile söylenir.",
+          "mistakes": [],
+          "mnemonic": "Türkçedeki 'beyin fırtınası' sözü İngilizce 'brainstorm' çevirisidir: brain = beyin, storm = fırtına."
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A big ______ is coming, so stay at home tonight.",
+        "answer": "storm",
+        "distractors": [
+          "season",
+          "forecast",
+          "spring"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I'm lost. Can I ask you for ______ to the museum?", "answer": "directions", "distractors": ["tickets", "reasons", "prices"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.forecast.n.1",
-  "lemma": "forecast",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "weather report",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈfɔːrkæst/", "uk": "/ˈfɔːkɑːst/"},
-  "def": {
-    "micro": "what weather will be like",
-    "short": "a report that says what the weather will be like in the next days",
-    "long": "A report that says what the weather will probably be like in the next hours or days. You can check one on TV or on your phone before you go out."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "The forecast says it will rain tomorrow.", "tr": "Hava durumuna göre yarın yağmur yağacak.", "register": "neutral", "focus": "forecast"},
-    {"en": "Did you check the weather forecast before you left?", "tr": "Çıkmadan önce hava durumuna baktın mı?", "register": "neutral", "focus": "forecast"},
-    {"en": "According to the forecast, it will be sunny all week.", "tr": "Tahmine göre bütün hafta hava güneşli olacak.", "register": "neutral", "focus": "forecast"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["weather forecast", "check the forecast", "the forecast says", "according to the forecast", "an accurate forecast"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "hava durumu",
-      "alt": ["tahmin"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'hava durumu' denir; İngilizcede bu 'weather forecast' veya kısaca 'the forecast'tır. 'Forecast' aslında 'tahmin' demektir ve hava dışında da kullanılır.",
-      "mistakes": [],
-      "mnemonic": "'Fore' önce demek ('before' içinde de var): forecast = önceden yapılan tahmin."
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The weather ______ says it will be sunny on Sunday.", "answer": "forecast", "distractors": ["window", "season", "umbrella"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.temperature.n.1",
-  "lemma": "temperature",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "how hot or cold",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈtɛmpərətʃər/", "uk": "/ˈtɛmprətʃə/"},
-  "def": {
-    "micro": "how hot or cold it is",
-    "short": "a number that shows how hot or cold the air or a room is",
-    "long": "A number that shows how hot or cold something is, for example the air, the water, or a room. We measure it in degrees."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "What's the temperature outside?", "tr": "Dışarıda hava kaç derece?", "register": "neutral", "focus": "temperature"},
-    {"en": "The temperature will drop to five degrees tonight.", "tr": "Sıcaklık bu gece beş dereceye düşecek.", "register": "neutral", "focus": "temperature"},
-    {"en": "Set the room temperature to twenty-two degrees.", "tr": "Oda sıcaklığını yirmi iki dereceye ayarla.", "register": "neutral", "focus": "temperature"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["high temperature", "low temperature", "room temperature", "the temperature drops", "the temperature rises"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "sıcaklık",
-      "alt": ["hava sıcaklığı"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Hasta biri için 'have a temperature' = 'ateşi olmak' demektir. Hava ve oda için 'sıcaklık', hasta için 'ateş' denir.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The ______ is minus five today, so wear a warm coat.", "answer": "temperature", "distractors": ["season", "sunshine", "umbrella"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.storm.n.1",
-  "lemma": "storm",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/stɔːrm/", "uk": "/stɔːm/"},
-  "def": {
-    "micro": "very bad weather",
-    "short": "a period of very strong wind, heavy rain, or snow",
-    "long": "A period of very bad weather with strong wind and heavy rain, snow, or thunder. It can last for hours and often causes problems for travel."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "A big storm is coming tonight.", "tr": "Bu gece büyük bir fırtına geliyor.", "register": "neutral", "focus": "storm"},
-    {"en": "The storm knocked down several trees in our street.", "tr": "Fırtına sokağımızdaki birkaç ağacı devirdi.", "register": "neutral", "focus": "storm"},
-    {"en": "All flights were delayed because of the storm.", "tr": "Fırtına yüzünden bütün uçuşlar gecikti.", "register": "neutral", "focus": "storm"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["a big storm", "a storm is coming", "a snowstorm", "a thunderstorm", "storm warning"],
-  "word_family": [{"lemma": "stormy", "pos": "adj"}, {"lemma": "thunderstorm", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "fırtına",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Storm' yağmurlu, rüzgârlı veya gök gürültülü her türlü şiddetli hava olabilir. Hortum 'tornado', kasırga 'hurricane' ile söylenir.",
-      "mistakes": [],
-      "mnemonic": "Türkçedeki 'beyin fırtınası' sözü İngilizce 'brainstorm' çevirisidir: brain = beyin, storm = fırtına."
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "A big ______ is coming, so stay at home tonight.", "answer": "storm", "distractors": ["season", "forecast", "spring"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

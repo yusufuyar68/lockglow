@@ -1,6 +1,8 @@
 {
   "schema_version": "1.0",
-  "l1_langs": ["tr"],
+  "l1_langs": [
+    "tr"
+  ],
   "generated_on": "2026-10-11",
   "entries": [
     {
@@ -13,40 +15,104 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/hæŋ ˈʌp/", "uk": "/hæŋ ˈʌp/"},
+      "ipa": {
+        "us": "/hæŋ ˈʌp/",
+        "uk": "/hæŋ ˈʌp/"
+      },
       "def": {
         "micro": "end a phone call",
         "short": "end a phone call, often by pressing a button",
         "long": "To end a phone call, usually by pressing a button. 'Hang up on someone' means to end the call suddenly while they are still speaking, which is rude."
       },
-      "grammar": {"pattern": "hang up (on sb); hang up the phone"},
+      "grammar": {
+        "pattern": "hang up (on sb); hang up the phone"
+      },
       "examples": [
-        {"en": "I'll hang up now. I have to go.", "tr": "Şimdi kapatıyorum. Gitmem gerek.", "register": "neutral", "focus": "hang up"},
-        {"en": "Don't hang up! I need to tell you something.", "tr": "Kapatma! Sana bir şey söylemem lazım.", "register": "neutral", "focus": "hang up"},
-        {"en": "He got angry and hung up on me.", "tr": "Sinirlenip yüzüme kapattı.", "register": "neutral", "focus": "hung up"}
+        {
+          "en": "I'll hang up now. I have to go.",
+          "tr": "Şimdi kapatıyorum. Gitmem gerek.",
+          "register": "neutral",
+          "focus": "hang up"
+        },
+        {
+          "en": "Don't hang up! I need to tell you something.",
+          "tr": "Kapatma! Sana bir şey söylemem lazım.",
+          "register": "neutral",
+          "focus": "hang up"
+        },
+        {
+          "en": "He got angry and hung up on me.",
+          "tr": "Sinirlenip yüzüme kapattı.",
+          "register": "neutral",
+          "focus": "hung up"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["hang up the phone", "hang up on sb", "don't hang up", "hang up first"],
+      "collocations": [
+        "hang up the phone",
+        "hang up on sb",
+        "don't hang up",
+        "hang up first"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "telefonu kapatmak",
-          "alt": ["kapatmak"],
+          "alt": [
+            "kapatmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "'Hang up on sb' = birinin yüzüne kapatmak. Cihazı kapatmak 'turn off', görüşmeyi bitirmek 'hang up' demektir; Türkçede ikisi de 'kapatmak'.",
           "mistakes": [
-            {"wrong": "I closed the phone and went to sleep.", "right": "I hung up and went to sleep.", "why": "Türkçedeki 'telefonu kapattım' İngilizcede 'close the phone' olmaz. Görüşmeyi bitirmek için 'hang up', cihazı kapatmak için 'turn off' denir."},
-            {"wrong": "He hanged up the phone.", "right": "He hung up the phone.", "why": "'Hang' düzensiz bir fiildir: hang - hung - hung. 'Hanged' yalnızca idam için kullanılır."}
+            {
+              "wrong": "I closed the phone and went to sleep.",
+              "right": "I hung up and went to sleep.",
+              "why": "Türkçedeki 'telefonu kapattım' İngilizcede 'close the phone' olmaz. Görüşmeyi bitirmek için 'hang up', cihazı kapatmak için 'turn off' denir."
+            },
+            {
+              "wrong": "He hanged up the phone.",
+              "right": "He hung up the phone.",
+              "why": "'Hang' düzensiz bir fiildir: hang - hung - hung. 'Hanged' yalnızca idam için kullanılır."
+            }
           ],
           "mnemonic": "Eski telefonlarda ahize bir çatala asılırdı (hang): asmak = görüşmeyi bitirmek."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Our call is over. Goodbye! I'm going to ______ now.", "answer": "hang up", "distractors": ["call back", "calm down", "grow up"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our call is over. Goodbye! I'm going to ______ now.",
+        "answer": "hang up",
+        "distractors": [
+          "call back",
+          "calm down",
+          "grow up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.turn_up.phv.1",
@@ -58,40 +124,110 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/tɜːrn ˈʌp/", "uk": "/tɜːn ˈʌp/"},
+      "ipa": {
+        "us": "/tɜːrn ˈʌp/",
+        "uk": "/tɜːn ˈʌp/"
+      },
       "def": {
         "micro": "make louder or stronger",
         "short": "make a sound louder or heat stronger",
         "long": "To make the volume of a sound louder, or the heat or light stronger, with a button or switch. The opposite is 'turn down'."
       },
-      "grammar": {"pattern": "turn sth up / turn up sth (turn it up)"},
+      "grammar": {
+        "pattern": "turn sth up / turn up sth (turn it up)"
+      },
       "examples": [
-        {"en": "Can you turn up the music?", "tr": "Müziğin sesini açar mısın?", "register": "neutral", "focus": "turn up"},
-        {"en": "I can't hear. Please turn the volume up.", "tr": "Duyamıyorum. Lütfen sesi aç.", "register": "neutral", "focus": "turn the volume up"},
-        {"en": "It's cold in here. Let's turn the heating up.", "tr": "Burası soğuk. Isıtmayı biraz artıralım.", "register": "neutral", "focus": "turn the heating up"}
+        {
+          "en": "Can you turn up the music?",
+          "tr": "Müziğin sesini açar mısın?",
+          "register": "neutral",
+          "focus": "turn up"
+        },
+        {
+          "en": "I can't hear. Please turn the volume up.",
+          "tr": "Duyamıyorum. Lütfen sesi aç.",
+          "register": "neutral",
+          "focus": "turn the volume up"
+        },
+        {
+          "en": "It's cold in here. Let's turn the heating up.",
+          "tr": "Burası soğuk. Isıtmayı biraz artıralım.",
+          "register": "neutral",
+          "focus": "turn the heating up"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["turn down"],
-      "collocations": ["turn up the volume", "turn up the music", "turn up the heat", "turn up the TV", "turn it up"],
+      "antonyms": [
+        "turn down"
+      ],
+      "collocations": [
+        "turn up the volume",
+        "turn up the music",
+        "turn up the heat",
+        "turn up the TV",
+        "turn it up"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "sesi açmak",
-          "alt": ["yükseltmek", "artırmak"],
+          "alt": [
+            "yükseltmek",
+            "artırmak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Türkçede ses için 'açmak' ('sesi aç'), ısı için 'artırmak' denir. 'Turn up' bir kişi için 'gelmek' anlamına da gelebilir; o ayrı bir kullanımdır (bkz. show up).",
           "mistakes": [
-            {"wrong": "Please open the volume.", "right": "Please turn up the volume.", "why": "Türkçede 'sesi aç' deriz ama İngilizcede ses için 'open' kullanılmaz; 'turn up' denir."},
-            {"wrong": "Turn up it, please.", "right": "Turn it up, please.", "why": "Zamir (it, them) 'turn' ile 'up' arasına girer."}
+            {
+              "wrong": "Please open the volume.",
+              "right": "Please turn up the volume.",
+              "why": "Türkçede 'sesi aç' deriz ama İngilizcede ses için 'open' kullanılmaz; 'turn up' denir."
+            },
+            {
+              "wrong": "Turn up it, please.",
+              "right": "Turn it up, please.",
+              "why": "Zamir (it, them) 'turn' ile 'up' arasına girer."
+            }
           ],
           "mnemonic": "Up = yukarı: ses ya da ısı göstergesini yukarı çevirirsin."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I can't hear the TV. Please ______ the volume.", "answer": "turn up", "distractors": ["turn off", "turn down", "lie down"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't hear the TV. Please ______ the volume.",
+        "answer": "turn up",
+        "distractors": [
+          "turn off",
+          "turn down",
+          "lie down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.turn_down.phv.1",
@@ -103,39 +239,104 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/tɜːrn ˈdaʊn/", "uk": "/tɜːn ˈdaʊn/"},
+      "ipa": {
+        "us": "/tɜːrn ˈdaʊn/",
+        "uk": "/tɜːn ˈdaʊn/"
+      },
       "def": {
         "micro": "make quieter or weaker",
         "short": "make a sound quieter or heat weaker",
         "long": "To make the volume of a sound quieter, or the heat or light weaker, with a button or switch. The opposite is 'turn up'. It also has a different meaning: to say no to an offer."
       },
-      "grammar": {"pattern": "turn sth down / turn down sth (turn it down)"},
+      "grammar": {
+        "pattern": "turn sth down / turn down sth (turn it down)"
+      },
       "examples": [
-        {"en": "Please turn down the music. The baby is asleep.", "tr": "Lütfen müziğin sesini kısın. Bebek uyuyor.", "register": "neutral", "focus": "turn down"},
-        {"en": "It's too hot. Can you turn the heating down?", "tr": "Çok sıcak. Isıtmayı kısar mısın?", "register": "neutral", "focus": "turn the heating down"},
-        {"en": "Turn it down a little. I'm trying to study.", "tr": "Biraz kıs. Ders çalışmaya çalışıyorum.", "register": "neutral", "focus": "Turn it down"}
+        {
+          "en": "Please turn down the music. The baby is asleep.",
+          "tr": "Lütfen müziğin sesini kısın. Bebek uyuyor.",
+          "register": "neutral",
+          "focus": "turn down"
+        },
+        {
+          "en": "It's too hot. Can you turn the heating down?",
+          "tr": "Çok sıcak. Isıtmayı kısar mısın?",
+          "register": "neutral",
+          "focus": "turn the heating down"
+        },
+        {
+          "en": "Turn it down a little. I'm trying to study.",
+          "tr": "Biraz kıs. Ders çalışmaya çalışıyorum.",
+          "register": "neutral",
+          "focus": "Turn it down"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["turn up"],
-      "collocations": ["turn down the music", "turn down the volume", "turn down the heat", "turn it down"],
+      "antonyms": [
+        "turn up"
+      ],
+      "collocations": [
+        "turn down the music",
+        "turn down the volume",
+        "turn down the heat",
+        "turn it down"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "sesi kısmak",
-          "alt": ["kısmak", "azaltmak"],
+          "alt": [
+            "kısmak",
+            "azaltmak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Ses için 'kısmak' ('sesi kıs'), ısı için 'kısmak' ya da 'azaltmak' denir. Bir teklifi reddetmek için ayrı kart var (turn down, 2. kart).",
           "mistakes": [
-            {"wrong": "Please turn down it a little.", "right": "Please turn it down a little.", "why": "Zamir (it, them) 'turn' ile 'down' arasına girer. 'Turn down it' yanlıştır."}
+            {
+              "wrong": "Please turn down it a little.",
+              "right": "Please turn it down a little.",
+              "why": "Zamir (it, them) 'turn' ile 'down' arasına girer. 'Turn down it' yanlıştır."
+            }
           ],
           "mnemonic": "Down = aşağı: ses göstergesini aşağı çevirirsin."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "The music is too loud. Please ______ the volume.", "answer": "turn down", "distractors": ["stay up", "catch up", "hurry up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The music is too loud. Please ______ the volume.",
+        "answer": "turn down",
+        "distractors": [
+          "stay up",
+          "catch up",
+          "hurry up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.work_out.phv.1",
@@ -147,39 +348,110 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/wɜːrk ˈaʊt/", "uk": "/wɜːk ˈaʊt/"},
+      "ipa": {
+        "us": "/wɜːrk ˈaʊt/",
+        "uk": "/wɜːk ˈaʊt/"
+      },
       "def": {
         "micro": "do exercise",
         "short": "do exercise to keep your body strong and healthy",
         "long": "To do physical exercise to keep your body strong and healthy, for example at a gym or at home. A 'workout' is one session of exercise."
       },
-      "grammar": {"pattern": "work out (no object)"},
+      "grammar": {
+        "pattern": "work out (no object)"
+      },
       "examples": [
-        {"en": "I work out three times a week.", "tr": "Haftada üç kez spor yapıyorum.", "register": "neutral", "focus": "work out"},
-        {"en": "Mehmet works out at the gym every morning.", "tr": "Mehmet her sabah spor salonunda antrenman yapıyor.", "register": "neutral", "focus": "works out"},
-        {"en": "I feel great after I work out.", "tr": "Spor yaptıktan sonra kendimi harika hissediyorum.", "register": "neutral", "focus": "work out"}
+        {
+          "en": "I work out three times a week.",
+          "tr": "Haftada üç kez spor yapıyorum.",
+          "register": "neutral",
+          "focus": "work out"
+        },
+        {
+          "en": "Mehmet works out at the gym every morning.",
+          "tr": "Mehmet her sabah spor salonunda antrenman yapıyor.",
+          "register": "neutral",
+          "focus": "works out"
+        },
+        {
+          "en": "I feel great after I work out.",
+          "tr": "Spor yaptıktan sonra kendimi harika hissediyorum.",
+          "register": "neutral",
+          "focus": "work out"
+        }
       ],
-      "synonyms": ["exercise", "train"],
+      "synonyms": [
+        "exercise",
+        "train"
+      ],
       "antonyms": [],
-      "collocations": ["work out at the gym", "work out at home", "work out every day", "work out regularly"],
-      "word_family": [{"lemma": "workout", "pos": "n"}],
+      "collocations": [
+        "work out at the gym",
+        "work out at home",
+        "work out every day",
+        "work out regularly"
+      ],
+      "word_family": [
+        {
+          "lemma": "workout",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "spor yapmak",
-          "alt": ["egzersiz yapmak", "idman yapmak"],
+          "alt": [
+            "egzersiz yapmak",
+            "idman yapmak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "'Work out' bir eylemdir; antrenmanın kendisi için 'a workout' denir. 'Çözmek, hesaplamak' anlamı (work out, 2. kart) bundan tamamen farklıdır.",
           "mistakes": [
-            {"wrong": "I make sport three times a week.", "right": "I work out three times a week.", "why": "Türkçedeki 'spor yapmak' için 'make sport' denmez. Genel antrenman için 'work out', belirli sporlar için 'play football' ya da 'do yoga' denir."}
+            {
+              "wrong": "I make sport three times a week.",
+              "right": "I work out three times a week.",
+              "why": "Türkçedeki 'spor yapmak' için 'make sport' denmez. Genel antrenman için 'work out', belirli sporlar için 'play football' ya da 'do yoga' denir."
+            }
           ],
           "mnemonic": "'Work' çalışmak demek: Türkçedeki 'kas çalıştırmak' gibi, spor salonunda bedenini çalıştırırsın."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "hobbies_sports", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I go to the gym and ______ for an hour every morning.", "answer": "work out", "distractors": ["sleep in", "dress up", "sit down"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "hobbies_sports",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I go to the gym and ______ for an hour every morning.",
+        "answer": "work out",
+        "distractors": [
+          "sleep in",
+          "dress up",
+          "sit down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.grow_up.phv.1",
@@ -191,40 +463,109 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/ɡroʊ ˈʌp/", "uk": "/ɡrəʊ ˈʌp/"},
+      "ipa": {
+        "us": "/ɡroʊ ˈʌp/",
+        "uk": "/ɡrəʊ ˈʌp/"
+      },
       "def": {
         "micro": "become an adult",
         "short": "change from a child into an adult",
         "long": "To change from a child into an adult. People say where they grew up (the place of their childhood), and children say: 'When I grow up, I want to be a doctor.'"
       },
-      "grammar": {"pattern": "grow up (no object)"},
+      "grammar": {
+        "pattern": "grow up (no object)"
+      },
       "examples": [
-        {"en": "I grew up in a small town.", "tr": "Küçük bir kasabada büyüdüm.", "register": "neutral", "focus": "grew up"},
-        {"en": "What do you want to be when you grow up?", "tr": "Büyüyünce ne olmak istiyorsun?", "register": "neutral", "focus": "grow up"},
-        {"en": "Kids grow up so fast these days.", "tr": "Çocuklar bugünlerde çok çabuk büyüyor.", "register": "neutral", "focus": "grow up"}
+        {
+          "en": "I grew up in a small town.",
+          "tr": "Küçük bir kasabada büyüdüm.",
+          "register": "neutral",
+          "focus": "grew up"
+        },
+        {
+          "en": "What do you want to be when you grow up?",
+          "tr": "Büyüyünce ne olmak istiyorsun?",
+          "register": "neutral",
+          "focus": "grow up"
+        },
+        {
+          "en": "Kids grow up so fast these days.",
+          "tr": "Çocuklar bugünlerde çok çabuk büyüyor.",
+          "register": "neutral",
+          "focus": "grow up"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["grow up fast", "grow up in a small town", "where you grew up", "when I grow up"],
-      "word_family": [{"lemma": "grown-up", "pos": "n"}],
+      "collocations": [
+        "grow up fast",
+        "grow up in a small town",
+        "where you grew up",
+        "when I grow up"
+      ],
+      "word_family": [
+        {
+          "lemma": "grown-up",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "büyümek",
-          "alt": ["yetişmek"],
+          "alt": [
+            "yetişmek"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçede 'büyümek' hem boy atmak hem yetişmek demektir. 'Doğup büyüdüm' kalıbı İngilizcede 'I was born and grew up' olur.",
           "mistakes": [
-            {"wrong": "I was born and grown in Bursa.", "right": "I was born and grew up in Bursa.", "why": "'Doğup büyüdüm' için 'grew up' kullanılır. 'Grown' tek başına bu anlamda edilgen kurulmaz."},
-            {"wrong": "I grown up in a village.", "right": "I grew up in a village.", "why": "'Grow' düzensizdir: grow - grew - grown. Geçmiş zaman 'grew'; 'grown' yardımcı fiille kullanılır (have grown)."}
+            {
+              "wrong": "I was born and grown in Bursa.",
+              "right": "I was born and grew up in Bursa.",
+              "why": "'Doğup büyüdüm' için 'grew up' kullanılır. 'Grown' tek başına bu anlamda edilgen kurulmaz."
+            },
+            {
+              "wrong": "I grown up in a village.",
+              "right": "I grew up in a village.",
+              "why": "'Grow' düzensizdir: grow - grew - grown. Geçmiş zaman 'grew'; 'grown' yardımcı fiille kullanılır (have grown)."
+            }
           ],
           "mnemonic": "Grow = büyümek, up = yukarı: boyun yukarı doğru uzar."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "My family lived in Izmir when I was young. I ______ there.", "answer": "grew up", "distractors": ["got up", "gave up", "sat down"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My family lived in Izmir when I was young. I ______ there.",
+        "answer": "grew up",
+        "distractors": [
+          "got up",
+          "gave up",
+          "sat down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.cheer_up.phv.1",
@@ -236,39 +577,101 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/tʃɪr ˈʌp/", "uk": "/tʃɪə ˈʌp/"},
+      "ipa": {
+        "us": "/tʃɪr ˈʌp/",
+        "uk": "/tʃɪə ˈʌp/"
+      },
       "def": {
         "micro": "become happier",
         "short": "become happier, or make someone feel happier",
         "long": "To start to feel happier after feeling sad, or to make someone feel happier. People say 'Cheer up!' to a friend who looks sad."
       },
-      "grammar": {"pattern": "cheer up; cheer sb up / cheer up sb"},
+      "grammar": {
+        "pattern": "cheer up; cheer sb up / cheer up sb"
+      },
       "examples": [
-        {"en": "Cheer up! Tomorrow will be a better day.", "tr": "Neşelen! Yarın daha güzel bir gün olacak.", "register": "neutral", "focus": "Cheer up"},
-        {"en": "I called Ayşe to cheer her up.", "tr": "Ayşe'yi neşelendirmek için aradım.", "register": "neutral", "focus": "cheer her up"},
-        {"en": "She cheered up when she saw her friends.", "tr": "Arkadaşlarını görünce neşelendi.", "register": "neutral", "focus": "cheered up"}
+        {
+          "en": "Cheer up! Tomorrow will be a better day.",
+          "tr": "Neşelen! Yarın daha güzel bir gün olacak.",
+          "register": "neutral",
+          "focus": "Cheer up"
+        },
+        {
+          "en": "I called Ayşe to cheer her up.",
+          "tr": "Ayşe'yi neşelendirmek için aradım.",
+          "register": "neutral",
+          "focus": "cheer her up"
+        },
+        {
+          "en": "She cheered up when she saw her friends.",
+          "tr": "Arkadaşlarını görünce neşelendi.",
+          "register": "neutral",
+          "focus": "cheered up"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["Cheer up!", "cheer sb up", "cheer up a friend", "try to cheer up"],
+      "collocations": [
+        "Cheer up!",
+        "cheer sb up",
+        "cheer up a friend",
+        "try to cheer up"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "neşelenmek",
-          "alt": ["neşelendirmek", "moral vermek"],
+          "alt": [
+            "neşelendirmek",
+            "moral vermek"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Nesneyle ('cheer sb up') 'neşelendirmek' olur. 'Cheer up!' = 'Neşelen!', 'Hadi, üzülme!'.",
           "mistakes": [
-            {"wrong": "Cheer up me, please.", "right": "Cheer me up, please.", "why": "Zamir (me, him, her) 'cheer' ile 'up' arasına girer."}
+            {
+              "wrong": "Cheer up me, please.",
+              "right": "Cheer me up, please.",
+              "why": "Zamir (me, him, her) 'cheer' ile 'up' arasına girer."
+            }
           ],
           "mnemonic": "Cheer = sevinç çığlığı, up = yukarı: ruh hâlin yukarı çıkar."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "emotions_feelings", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "You look sad. ______! Everything will be fine.", "answer": "Cheer up", "distractors": ["Hurry up", "Turn around", "Wake up"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You look sad. ______! Everything will be fine.",
+        "answer": "Cheer up",
+        "distractors": [
+          "Hurry up",
+          "Turn around",
+          "Wake up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.calm_down.phv.1",
@@ -280,40 +683,108 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/kɑːm ˈdaʊn/", "uk": "/kɑːm ˈdaʊn/"},
+      "ipa": {
+        "us": "/kɑːm ˈdaʊn/",
+        "uk": "/kɑːm ˈdaʊn/"
+      },
       "def": {
         "micro": "become less angry or upset",
         "short": "become quiet and relaxed after feeling angry or afraid",
         "long": "To become quiet and relaxed after feeling angry, upset or afraid, or to help someone do this. 'Calm down!' can sound rude if you say it to an angry person."
       },
-      "grammar": {"pattern": "calm down; calm sb down / calm down sb"},
+      "grammar": {
+        "pattern": "calm down; calm sb down / calm down sb"
+      },
       "examples": [
-        {"en": "Calm down. Everything is OK.", "tr": "Sakin ol. Her şey yolunda.", "register": "neutral", "focus": "Calm down"},
-        {"en": "Take a deep breath and calm down.", "tr": "Derin bir nefes al ve sakinleş.", "register": "neutral", "focus": "calm down"},
-        {"en": "The teacher calmed the children down.", "tr": "Öğretmen çocukları sakinleştirdi.", "register": "neutral", "focus": "calmed the children down"}
+        {
+          "en": "Calm down. Everything is OK.",
+          "tr": "Sakin ol. Her şey yolunda.",
+          "register": "neutral",
+          "focus": "Calm down"
+        },
+        {
+          "en": "Take a deep breath and calm down.",
+          "tr": "Derin bir nefes al ve sakinleş.",
+          "register": "neutral",
+          "focus": "calm down"
+        },
+        {
+          "en": "The teacher calmed the children down.",
+          "tr": "Öğretmen çocukları sakinleştirdi.",
+          "register": "neutral",
+          "focus": "calmed the children down"
+        }
       ],
-      "synonyms": ["relax"],
+      "synonyms": [
+        "relax"
+      ],
       "antonyms": [],
-      "collocations": ["Calm down!", "calm down a bit", "calm sb down", "try to calm down"],
+      "collocations": [
+        "Calm down!",
+        "calm down a bit",
+        "calm sb down",
+        "try to calm down"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "sakinleşmek",
-          "alt": ["sakinleştirmek", "yatışmak"],
+          "alt": [
+            "sakinleştirmek",
+            "yatışmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Kızgın birine 'Calm down!' demek onu daha da kızdırabilir. Daha nazik söylemek için 'Take a deep breath.' (Derin bir nefes al.) denir.",
           "mistakes": [
-            {"wrong": "Be calm!", "right": "Calm down!", "why": "Türkçedeki 'sakin ol' kalıbını 'be calm' diye çevirmek anlaşılır ama doğal değildir. 'Calm down' kullanılır."},
-            {"wrong": "I calmed down him.", "right": "I calmed him down.", "why": "Zamir (him, her, them) 'calm' ile 'down' arasına girer."}
+            {
+              "wrong": "Be calm!",
+              "right": "Calm down!",
+              "why": "Türkçedeki 'sakin ol' kalıbını 'be calm' diye çevirmek anlaşılır ama doğal değildir. 'Calm down' kullanılır."
+            },
+            {
+              "wrong": "I calmed down him.",
+              "right": "I calmed him down.",
+              "why": "Zamir (him, her, them) 'calm' ile 'down' arasına girer."
+            }
           ],
           "mnemonic": "Down = aşağı: yükselmiş sinirin aşağı inmesi."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "emotions_feelings", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "You are very angry. Please ______ and talk slowly.", "answer": "calm down", "distractors": ["cheer up", "hurry up", "wake up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You are very angry. Please ______ and talk slowly.",
+        "answer": "calm down",
+        "distractors": [
+          "cheer up",
+          "hurry up",
+          "wake up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.stay_in.phv.1",
@@ -325,39 +796,103 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/steɪ ˈɪn/", "uk": "/steɪ ˈɪn/"},
+      "ipa": {
+        "us": "/steɪ ˈɪn/",
+        "uk": "/steɪ ˈɪn/"
+      },
       "def": {
         "micro": "not go out",
         "short": "be at home instead of going out",
         "long": "To be at home or inside a building and not go out, often because of the weather, because you are tired, or because you want to relax. The opposite is 'go out'."
       },
-      "grammar": {"pattern": "stay in (no object)"},
+      "grammar": {
+        "pattern": "stay in (no object)"
+      },
       "examples": [
-        {"en": "I'm tired. Let's stay in tonight.", "tr": "Yorgunum. Bu akşam evde kalalım.", "register": "neutral", "focus": "stay in"},
-        {"en": "It was raining, so we stayed in and watched a film.", "tr": "Yağmur yağıyordu, biz de evde kalıp film izledik.", "register": "neutral", "focus": "stayed in"},
-        {"en": "Do you want to go out or stay in?", "tr": "Dışarı çıkmak mı istersin, evde kalmak mı?", "register": "neutral", "focus": "stay in"}
+        {
+          "en": "I'm tired. Let's stay in tonight.",
+          "tr": "Yorgunum. Bu akşam evde kalalım.",
+          "register": "neutral",
+          "focus": "stay in"
+        },
+        {
+          "en": "It was raining, so we stayed in and watched a film.",
+          "tr": "Yağmur yağıyordu, biz de evde kalıp film izledik.",
+          "register": "neutral",
+          "focus": "stayed in"
+        },
+        {
+          "en": "Do you want to go out or stay in?",
+          "tr": "Dışarı çıkmak mı istersin, evde kalmak mı?",
+          "register": "neutral",
+          "focus": "stay in"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["go out"],
-      "collocations": ["stay in tonight", "stay in bed", "stay in and relax", "stay in and watch a film"],
+      "antonyms": [
+        "go out"
+      ],
+      "collocations": [
+        "stay in tonight",
+        "stay in bed",
+        "stay in and relax",
+        "stay in and watch a film"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "evde kalmak",
-          "alt": ["içeride kalmak"],
+          "alt": [
+            "içeride kalmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "'Stay in a hotel' (otelde kalmak) başka bir kullanımdır. Bu kartta 'dışarı çıkmayıp evde ya da içeride kalmak' anlamı var.",
           "mistakes": [
-            {"wrong": "I'm staying in the home today.", "right": "I'm staying at home today.", "why": "Türkçede 'evde' tek sözcüktür. İngilizcede 'at home' (the olmadan) ya da kısaca 'stay in' denir."}
+            {
+              "wrong": "I'm staying in the home today.",
+              "right": "I'm staying at home today.",
+              "why": "Türkçede 'evde' tek sözcüktür. İngilizcede 'at home' (the olmadan) ya da kısaca 'stay in' denir."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "time_routines", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "It's very cold outside. Let's ______ and drink tea at home.", "answer": "stay in", "distractors": ["go out", "sell out", "check out"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "time_routines",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's very cold outside. Let's ______ and drink tea at home.",
+        "answer": "stay in",
+        "distractors": [
+          "go out",
+          "sell out",
+          "check out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.sign_up.phv.1",
@@ -369,40 +904,114 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/saɪn ˈʌp/", "uk": "/saɪn ˈʌp/"},
+      "ipa": {
+        "us": "/saɪn ˈʌp/",
+        "uk": "/saɪn ˈʌp/"
+      },
       "def": {
         "micro": "put your name on a list",
         "short": "put your name on a list to join a class, site or event",
         "long": "To put your name and details on a list or a website so you can join a class, a service or an event. The noun is 'sign-up'. On a website it also means to create an account."
       },
-      "grammar": {"pattern": "sign up (for sth); sign sb up"},
+      "grammar": {
+        "pattern": "sign up (for sth); sign sb up"
+      },
       "examples": [
-        {"en": "I want to sign up for a swimming class.", "tr": "Yüzme kursuna kaydolmak istiyorum.", "register": "neutral", "focus": "sign up"},
-        {"en": "Maria signed up for a free online course.", "tr": "Maria ücretsiz bir çevrimiçi kursa kaydoldu.", "register": "neutral", "focus": "signed up"},
-        {"en": "You need to sign up before you can watch the videos.", "tr": "Videoları izleyebilmek için önce kayıt olman gerekiyor.", "register": "neutral", "focus": "sign up"}
+        {
+          "en": "I want to sign up for a swimming class.",
+          "tr": "Yüzme kursuna kaydolmak istiyorum.",
+          "register": "neutral",
+          "focus": "sign up"
+        },
+        {
+          "en": "Maria signed up for a free online course.",
+          "tr": "Maria ücretsiz bir çevrimiçi kursa kaydoldu.",
+          "register": "neutral",
+          "focus": "signed up"
+        },
+        {
+          "en": "You need to sign up before you can watch the videos.",
+          "tr": "Videoları izleyebilmek için önce kayıt olman gerekiyor.",
+          "register": "neutral",
+          "focus": "sign up"
+        }
       ],
-      "synonyms": ["register"],
+      "synonyms": [
+        "register"
+      ],
       "antonyms": [],
-      "collocations": ["sign up for a class", "sign up online", "sign up for free", "sign up with your email"],
-      "word_family": [{"lemma": "sign-up", "pos": "n"}],
+      "collocations": [
+        "sign up for a class",
+        "sign up online",
+        "sign up for free",
+        "sign up with your email"
+      ],
+      "word_family": [
+        {
+          "lemma": "sign-up",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "kayıt olmak",
-          "alt": ["kaydolmak", "üye olmak"],
+          "alt": [
+            "kaydolmak",
+            "üye olmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçede 'kayıt olmak' hem kursa hem siteye yazılmak için kullanılır. 'Log in' var olan hesaba girmektir; 'sign up' yeni kayıt olmaktır.",
           "mistakes": [
-            {"wrong": "I signed up to my account.", "right": "I logged in to my account.", "why": "'Sign up' yeni kayıt olmaktır. Var olan hesaba girmek için 'log in' kullanılır; Türkçede 'giriş' ve 'kayıt' karışabilir."},
-            {"wrong": "I want to sign up the course.", "right": "I want to sign up for the course.", "why": "'Kursa kaydolmak' için 'for' gerekir: sign up for."}
+            {
+              "wrong": "I signed up to my account.",
+              "right": "I logged in to my account.",
+              "why": "'Sign up' yeni kayıt olmaktır. Var olan hesaba girmek için 'log in' kullanılır; Türkçede 'giriş' ve 'kayıt' karışabilir."
+            },
+            {
+              "wrong": "I want to sign up the course.",
+              "right": "I want to sign up for the course.",
+              "why": "'Kursa kaydolmak' için 'for' gerekir: sign up for."
+            }
           ],
           "mnemonic": "'Sign' imzalamak demek: listeye adını yazıp yeni kayıt olursun. Hesabın zaten varsa 'log in' ile girersin."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet", "school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The class is free, but you must ______ first.", "answer": "sign up", "distractors": ["log out", "get off", "get out"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The class is free, but you must ______ first.",
+        "answer": "sign up",
+        "distractors": [
+          "log out",
+          "get off",
+          "get out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.look_around.phv.1",
@@ -414,27 +1023,55 @@
       "level": "A2",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/lʊk əˈraʊnd/", "uk": "/lʊk əˈraʊnd/"},
+      "ipa": {
+        "us": "/lʊk əˈraʊnd/",
+        "uk": "/lʊk əˈraʊnd/"
+      },
       "def": {
         "micro": "see what is in a place",
         "short": "look at the things in a place without a plan",
         "long": "To look at the things or places around you, often without a clear plan. In a shop you say 'I'm just looking around' when you do not need help."
       },
-      "grammar": {"pattern": "look around (+ a place)"},
+      "grammar": {
+        "pattern": "look around (+ a place)"
+      },
       "examples": [
-        {"en": "I'm just looking around, thanks.", "tr": "Sadece bakıyorum, teşekkürler.", "register": "neutral", "focus": "looking around"},
-        {"en": "Let's look around the old town before lunch.", "tr": "Öğle yemeğinden önce eski şehri gezip görelim.", "register": "neutral", "focus": "look around"},
-        {"en": "She looked around the room, but nobody was there.", "tr": "Odaya göz gezdirdi ama kimse yoktu.", "register": "neutral", "focus": "looked around"}
+        {
+          "en": "I'm just looking around, thanks.",
+          "tr": "Sadece bakıyorum, teşekkürler.",
+          "register": "neutral",
+          "focus": "looking around"
+        },
+        {
+          "en": "Let's look around the old town before lunch.",
+          "tr": "Öğle yemeğinden önce eski şehri gezip görelim.",
+          "register": "neutral",
+          "focus": "look around"
+        },
+        {
+          "en": "She looked around the room, but nobody was there.",
+          "tr": "Odaya göz gezdirdi ama kimse yoktu.",
+          "register": "neutral",
+          "focus": "looked around"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["look around the shop", "look around the city", "just looking around", "look around you"],
+      "collocations": [
+        "look around the shop",
+        "look around the city",
+        "just looking around",
+        "look around you"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "etrafa bakmak",
-          "alt": ["göz gezdirmek", "gezip görmek"],
+          "alt": [
+            "göz gezdirmek",
+            "gezip görmek"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Mağazada satıcıya 'Sadece bakıyorum' demek için 'I'm just looking around' (ya da 'just browsing') denir. 'Look at' ise belirli bir şeye bakmaktır.",
@@ -442,9 +1079,39 @@
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "shopping_money", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Can I help you? — No, thanks. I'm just ______.", "answer": "looking around", "distractors": ["looking after", "looking for", "looking up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "shopping_money",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can I help you? — No, thanks. I'm just ______.",
+        "answer": "looking around",
+        "distractors": [
+          "looking after",
+          "looking for",
+          "looking up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
   ]
 }

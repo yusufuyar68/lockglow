@@ -1,156 +1,1151 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{"id":"en.embarrassed.adj.1","lemma":"embarrassed","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ɪmˈbærəst/","uk":"/ɪmˈbærəst/"},
-"def":{"micro":"feeling silly in public","short":"feeling shy and silly because other people saw something you did","long":"Feeling shy, silly, or uncomfortable because of something that happened in front of other people, such as a mistake. Your face may go red."},
-"grammar":{"pattern":"embarrassed (about / by sth)"},
-"examples":[
-{"en":"I was so embarrassed when I forgot his name.","tr":"Adını unuttuğumda çok utandım.","register":"neutral","focus":"embarrassed"},
-{"en":"She looked embarrassed when her phone rang in class.","tr":"Derste telefonu çalınca mahcup göründü.","register":"neutral","focus":"embarrassed"},
-{"en":"Don't be embarrassed. Everyone makes mistakes.","tr":"Utanma. Herkes hata yapar.","register":"neutral","focus":"embarrassed"}],
-"synonyms":["red-faced","mortified"],"antonyms":["proud"],"collocations":["feel embarrassed","embarrassed about","totally embarrassed","look embarrassed"],
-"word_family":[{"lemma":"embarrass","pos":"v"},{"lemma":"embarrassing","pos":"adj"},{"lemma":"embarrassment","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"utanmış","alt":["mahcup","rezil olmuş"],"equivalence":"partial","false_friend":null,"note":"'Embarrassed' = başkalarının önünde mahcup olmak. Kötü bir şey yaptığın için duyduğun suçluluk utancı için 'ashamed' daha uygundur.","mistakes":[{"wrong":"I was embarrassing in front of everyone.","right":"I was embarrassed in front of everyone.","why":"Utanan kişi için -ed (embarrassed); utandıran şey için -ing (embarrassing) kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:embarrassing"],"sensitivity":0},
-"quiz":{"cloze":"I called my teacher 'mom' by mistake and felt so ______.","answer":"embarrassed","distractors":["proud","grateful","relaxed"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.disappointed.adj.1","lemma":"disappointed","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˌdɪsəˈpɔɪntɪd/","uk":"/ˌdɪsəˈpɔɪntɪd/"},
-"def":{"micro":"unhappy about a bad result","short":"feeling unhappy because something was not as good as you hoped","long":"Feeling unhappy because something was not as good as you hoped, or because someone did not do what you wanted. You can be disappointed WITH a thing or a person."},
-"grammar":{"pattern":"disappointed with / in / by sb/sth"},
-"examples":[
-{"en":"I was disappointed with my test results.","tr":"Sınav sonuçlarımdan hayal kırıklığına uğradım.","register":"neutral","focus":"disappointed"},
-{"en":"The food was cold, and we were disappointed.","tr":"Yemek soğuktu, hayal kırıklığına uğradık.","register":"neutral","focus":"disappointed"},
-{"en":"He felt disappointed that she didn't call.","tr":"Aramadığı için hayal kırıklığı yaşadı.","register":"neutral","focus":"disappointed"}],
-"synonyms":["let down","unhappy"],"antonyms":["pleased","satisfied"],"collocations":["disappointed with","bitterly disappointed","feel disappointed","disappointed in sb"],
-"word_family":[{"lemma":"disappoint","pos":"v"},{"lemma":"disappointing","pos":"adj"},{"lemma":"disappointment","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"hayal kırıklığına uğramış","alt":["umudu kırılmış","canı sıkkın"],"equivalence":"full","false_friend":null,"note":"'Disappointed' = hayal kırıklığına uğrayan kişi; 'disappointing' = hayal kırıcı şey (a disappointing film). Konuşmada 'I'm disappointed' çok yaygındır.","mistakes":[{"wrong":"I'm disappointed from him.","right":"I'm disappointed with him.","why":"'-den hayal kırıklığına uğramak' İngilizcede 'disappointed with / in / by' olur; 'from' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:disappointing"],"sensitivity":0},
-"quiz":{"cloze":"We waited an hour, and the show was bad. I was so ______.","answer":"disappointed","distractors":["excited","grateful","relieved"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.annoyed.adj.1","lemma":"annoyed","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/əˈnɔɪd/","uk":"/əˈnɔɪd/"},
-"def":{"micro":"a little angry at something","short":"a little angry because of something that keeps happening","long":"A little angry because someone or something keeps bothering you. A loud noise, slow internet, or a friend who is always late can make you annoyed."},
-"grammar":{"pattern":"annoyed with sb / about sth"},
-"examples":[
-{"en":"I'm annoyed because the Wi-Fi keeps stopping.","tr":"Wi-Fi sürekli kesildiği için canım sıkıldı.","register":"neutral","focus":"annoyed"},
-{"en":"She was annoyed with him for being late again.","tr":"Yine geç kaldığı için ona sinirlendi.","register":"neutral","focus":"annoyed"},
-{"en":"He gets annoyed when people talk loudly in the cinema.","tr":"İnsanlar sinemada yüksek sesle konuşunca sinirleniyor.","register":"neutral","focus":"annoyed"}],
-"synonyms":["irritated","bothered"],"antonyms":["pleased"],"collocations":["feel annoyed","annoyed with","annoyed about","slightly annoyed"],
-"word_family":[{"lemma":"annoy","pos":"v"},{"lemma":"annoying","pos":"adj"},{"lemma":"annoyance","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"sinirli","alt":["canı sıkkın","rahatsız"],"equivalence":"partial","false_friend":null,"note":"'Annoyed', 'angry'den daha hafiftir: sinirlenmek, canı sıkılmak. 'Annoying' ise sinir bozucu şey ya da kişidir.","mistakes":[{"wrong":"The noise is very annoyed.","right":"The noise is very annoying.","why":"Sinir bozucu şey için -ing (annoying); sinirlenen kişi için -ed (annoyed) kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:annoying"],"sensitivity":0},
-"quiz":{"cloze":"I was ______ when he didn't reply to my message for days.","answer":"annoyed","distractors":["grateful","proud","relaxed"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.grateful.adj.1","lemma":"grateful","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈɡreɪtfəl/","uk":"/ˈɡreɪtfəl/"},
-"def":{"micro":"thankful for help","short":"feeling thankful to someone because they helped you or gave you something","long":"Feeling thankful to someone because they helped you or gave you something. You are grateful TO a person FOR something."},
-"grammar":{"pattern":"grateful (to sb) for sth"},
-"examples":[
-{"en":"I'm so grateful for your help.","tr":"Yardımın için çok minnettarım.","register":"neutral","focus":"grateful"},
-{"en":"We are grateful to our neighbors for the food.","tr":"Yemek için komşularımıza minnettarız.","register":"neutral","focus":"grateful"},
-{"en":"She was grateful that he stayed with her.","tr":"Yanında kaldığı için ona minnettardı.","register":"neutral","focus":"grateful"}],
-"synonyms":["thankful","appreciative"],"antonyms":["ungrateful"],"collocations":["grateful for","deeply grateful","grateful to sb","be grateful that"],
-"word_family":[{"lemma":"gratitude","pos":"n"},{"lemma":"gratefully","pos":"adv"}],"etymology":null,
-"l1":{"tr":{"gloss":"minnettar","alt":["müteşekkir"],"equivalence":"full","false_friend":null,"note":"'Grateful' içten ve biraz resmi bir teşekkürdür. Günlük konuşmada kısa teşekkür için 'thank you' ya da 'thanks' çok daha yaygındır.","mistakes":[{"wrong":"I'm grateful to your help.","right":"I'm grateful for your help.","why":"Yardım gibi şeyler için 'for', kişi için 'to' kullanılır: grateful to you for your help."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I'm very ______ for your advice. It really helped.","answer":"grateful","distractors":["angry","jealous","afraid"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.stressed.adj.1","lemma":"stressed","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/strɛst/","uk":"/strɛst/"},
-"def":{"micro":"feeling too much pressure","short":"feeling worried and tense because you have too much to do","long":"Feeling worried and tense because of problems or because you have too much to do. A person may find it hard to sleep or to think clearly."},
-"grammar":{"pattern":"stressed (about / out)"},
-"examples":[
-{"en":"I'm so stressed about work this week.","tr":"Bu hafta işim yüzünden çok stresliyim.","register":"neutral","focus":"stressed"},
-{"en":"She felt stressed before the big exam.","tr":"Büyük sınavdan önce stres altındaydı.","register":"neutral","focus":"stressed"},
-{"en":"Are you stressed? Let's go for a walk.","tr":"Stresli misin? Hadi yürüyüşe çıkalım.","register":"neutral","focus":"stressed"}],
-"synonyms":["tense","anxious","under pressure"],"antonyms":["relaxed","calm"],"collocations":["feel stressed","stressed out","get stressed","stressed about"],
-"word_family":[{"lemma":"stress","pos":"n"},{"lemma":"stress","pos":"v"},{"lemma":"stressful","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"stresli","alt":["gergin","stres altında"],"equivalence":"full","false_friend":null,"note":"Türkçede 'stresli' hem stres yaşayan kişi hem stres veren durum için kullanılır. İngilizcede ayrıdır: 'stressed' (kişi), 'stressful' (durum).","mistakes":[{"wrong":"My job is very stressed.","right":"My job is very stressful.","why":"Stres veren iş ya da durum için 'stressful'; stres yaşayan kişi için 'stressed' kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:stressful"],"sensitivity":0},
-"quiz":{"cloze":"I have three exams this week, so I feel really ______.","answer":"stressed","distractors":["relaxed","glad","proud"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.mood.n.1","lemma":"mood","type":"word","pos":"n","sense_no":1,"sense_note":"how you feel","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/muːd/","uk":"/muːd/"},
-"def":{"micro":"how you feel at a time","short":"the way you feel at one time, for example happy or angry","long":"The way you feel at a particular time, for example happy, sad, or angry. A person's mood can change quickly, and it can be good or bad."},
-"grammar":{"pattern":"in a good / bad mood"},
-"examples":[
-{"en":"Ayşe is in a good mood today.","tr":"Ayşe bugün keyifli.","register":"neutral","focus":"mood"},
-{"en":"He's in a bad mood because he didn't sleep.","tr":"Uyumadığı için keyfi kötü.","register":"neutral","focus":"mood"},
-{"en":"Music can change your mood in a few minutes.","tr":"Müzik ruh halini birkaç dakikada değiştirebilir.","register":"neutral","focus":"mood"}],
-"synonyms":["spirits"],"antonyms":[],"collocations":["in a good mood","in a bad mood","mood swings","not in the mood"],
-"word_family":[{"lemma":"moody","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"ruh hali","alt":["keyif","mod"],"equivalence":"partial","false_friend":null,"note":"Türkçede 'modum yok' dediğimiz yerde İngilizce 'I'm not in the mood (for it)' denir. 'Moody' = huysuz, ruh hali sık değişen.","mistakes":[{"wrong":"She is with a good mood.","right":"She is in a good mood.","why":"'İyi bir ruh halinde olmak' için 'in a good mood' denir; 'with' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"She's in a good ______ because it's Friday.","answer":"mood","distractors":["habit","plan","voice"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.homesick.adj.1","lemma":"homesick","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈhoʊmsɪk/","uk":"/ˈhəʊmsɪk/"},
-"def":{"micro":"sad when far from home","short":"sad because you are away from your home, family, or country","long":"Sad because you are far away from your home, family, or country and you miss them. Students who study abroad often feel this at the start."},
-"grammar":{"pattern":"feel / get homesick"},
-"examples":[
-{"en":"He felt homesick in his first week at university.","tr":"Üniversitedeki ilk haftasında evini çok özledi.","register":"neutral","focus":"homesick"},
-{"en":"I get homesick when I'm away for a long time.","tr":"Uzun süre uzaktayken evimi özlüyorum.","register":"neutral","focus":"homesick"},
-{"en":"Do you ever feel homesick living abroad?","tr":"Yurt dışında yaşarken hiç evini özlüyor musun?","register":"neutral","focus":"homesick"}],
-"synonyms":[],"antonyms":[],"collocations":["feel homesick","get homesick","a bit homesick","terribly homesick"],
-"word_family":[{"lemma":"homesickness","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"evini özleyen","alt":["gurbet çeken","memleket hasreti"],"equivalence":"partial","false_friend":null,"note":"Türkçede tek kelime karşılığı yok: 'evini özlemek', 'gurbet çekmek' ya da 'memleket hasreti' denir. İngilizcede genelde 'feel homesick' kalıbı kullanılır.","mistakes":[],"mnemonic":"Home + sick: ev hasreti, yani 'eve hasta' olmak."}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"After two weeks in London, she started to feel ______.","answer":"homesick","distractors":["lucky","sleepy","busy"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.relieved.adj.1","lemma":"relieved","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/rɪˈliːvd/","uk":"/rɪˈliːvd/"},
-"def":{"micro":"glad a worry has ended","short":"happy and calm because a bad thing did not happen or has ended","long":"Feeling happy and calm because something bad did not happen or a worry has gone away. You may say 'What a relief!' after you hear good news."},
-"grammar":{"pattern":"relieved (that) / relieved to do sth"},
-"examples":[
-{"en":"I was so relieved when I found my keys.","tr":"Anahtarlarımı bulunca çok rahatladım.","register":"neutral","focus":"relieved"},
-{"en":"She felt relieved that the test was over.","tr":"Sınavın bittiğine çok rahatladı.","register":"neutral","focus":"relieved"},
-{"en":"We're relieved that nobody got hurt.","tr":"Kimse yaralanmadığı için rahatladık.","register":"neutral","focus":"relieved"}],
-"synonyms":["reassured"],"antonyms":["worried","anxious"],"collocations":["feel relieved","relieved to hear","greatly relieved","breathe a sigh of relief"],
-"word_family":[{"lemma":"relieve","pos":"v"},{"lemma":"relief","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"içi rahatlamış","alt":["rahat bir nefes alan"],"equivalence":"partial","false_friend":null,"note":"'Relieved' = bir endişe bitince 'oh, çok şükür' hissi. 'Relaxed' ise zaten rahat, stressiz olmaktır.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:relaxed"],"sensitivity":0},
-"quiz":{"cloze":"I was ______ when the doctor said it was nothing serious.","answer":"relieved","distractors":["upset","jealous","bored"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.frustrated.adj.1","lemma":"frustrated","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈfrʌstreɪtɪd/","uk":"/frʌˈstreɪtɪd/"},
-"def":{"micro":"angry about being stuck","short":"angry or unhappy because you cannot do or change something","long":"Feeling angry or unhappy because you cannot do something or change a bad situation, even when you try hard."},
-"grammar":{"pattern":"frustrated (with / about sth)"},
-"examples":[
-{"en":"I'm so frustrated! My laptop keeps freezing.","tr":"Çok sinirim bozuldu! Laptopum sürekli donuyor.","register":"neutral","focus":"frustrated"},
-{"en":"He gets frustrated when he can't find a parking spot.","tr":"Park yeri bulamayınca sinirleniyor.","register":"neutral","focus":"frustrated"},
-{"en":"The students were frustrated with the slow lesson.","tr":"Öğrenciler ağır ilerleyen dersten bunaldı.","register":"neutral","focus":"frustrated"}],
-"synonyms":["fed up","annoyed"],"antonyms":["satisfied","pleased"],"collocations":["feel frustrated","get frustrated","frustrated with","deeply frustrated"],
-"word_family":[{"lemma":"frustrate","pos":"v"},{"lemma":"frustrating","pos":"adj"},{"lemma":"frustration","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"sinirleri bozulmuş","alt":["bunalmış","çaresiz kalmış"],"equivalence":"partial","false_friend":null,"note":"'Frustrated' = istediğini yapamamaktan doğan sinir ve bıkkınlık. 'Angry'den farkı: genelde bir engelden ya da başarısızlıktan kaynaklanır.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:frustrating"],"sensitivity":0},
-"quiz":{"cloze":"I tried the app five times, and it failed. I'm so ______.","answer":"frustrated","distractors":["pleased","proud","calm"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.guilty.adj.1","lemma":"guilty","type":"word","pos":"adj","sense_no":1,"sense_note":"feeling bad","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈɡɪlti/","uk":"/ˈɡɪlti/"},
-"def":{"micro":"bad about something you did","short":"feeling bad because you know you did something wrong","long":"Feeling bad and a little ashamed because you know you did something wrong. You can feel this even about a small thing, like eating the last cake."},
-"grammar":{"pattern":"feel guilty about sth"},
-"examples":[
-{"en":"I feel guilty about forgetting her birthday.","tr":"Doğum gününü unuttuğum için suçluluk duyuyorum.","register":"neutral","focus":"guilty"},
-{"en":"He felt guilty after eating the whole cake.","tr":"Bütün pastayı yedikten sonra kendini suçlu hissetti.","register":"neutral","focus":"guilty"},
-{"en":"Don't feel guilty. You did your best.","tr":"Suçluluk duyma. Elinden geleni yaptın.","register":"neutral","focus":"guilty"}],
-"synonyms":["ashamed","remorseful"],"antonyms":["innocent"],"collocations":["feel guilty","guilty about","guilty conscience","guilty feeling"],
-"word_family":[{"lemma":"guilt","pos":"n"},{"lemma":"guiltily","pos":"adv"}],"etymology":null,
-"l1":{"tr":{"gloss":"kendini suçlu hisseden","alt":["vicdan azabı çeken"],"equivalence":"partial","false_friend":null,"note":"Burada 'guilty' bir duygudur: 'feel guilty' = vicdan azabı çekmek. Mahkemede 'suçlu bulunmak' için de aynı kelime kullanılır ('found guilty').","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I ate my sister's chocolate, and now I feel ______.","answer":"guilty","distractors":["proud","bored","lucky"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.embarrassed.adj.1",
+      "lemma": "embarrassed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈbærəst/",
+        "uk": "/ɪmˈbærəst/"
+      },
+      "def": {
+        "micro": "feeling silly in public",
+        "short": "feeling shy and silly because other people saw something you did",
+        "long": "Feeling shy, silly, or uncomfortable because of something that happened in front of other people, such as a mistake. Your face may go red."
+      },
+      "grammar": {
+        "pattern": "embarrassed (about / by sth)"
+      },
+      "examples": [
+        {
+          "en": "I was so embarrassed when I forgot his name.",
+          "tr": "Adını unuttuğumda çok utandım.",
+          "register": "neutral",
+          "focus": "embarrassed"
+        },
+        {
+          "en": "She looked embarrassed when her phone rang in class.",
+          "tr": "Derste telefonu çalınca mahcup göründü.",
+          "register": "neutral",
+          "focus": "embarrassed"
+        },
+        {
+          "en": "Don't be embarrassed. Everyone makes mistakes.",
+          "tr": "Utanma. Herkes hata yapar.",
+          "register": "neutral",
+          "focus": "embarrassed"
+        }
+      ],
+      "synonyms": [
+        "red-faced",
+        "mortified"
+      ],
+      "antonyms": [
+        "proud"
+      ],
+      "collocations": [
+        "feel embarrassed",
+        "embarrassed about",
+        "totally embarrassed",
+        "look embarrassed"
+      ],
+      "word_family": [
+        {
+          "lemma": "embarrass",
+          "pos": "v"
+        },
+        {
+          "lemma": "embarrassing",
+          "pos": "adj"
+        },
+        {
+          "lemma": "embarrassment",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "utanmış",
+          "alt": [
+            "mahcup",
+            "rezil olmuş"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Embarrassed' = başkalarının önünde mahcup olmak. Kötü bir şey yaptığın için duyduğun suçluluk utancı için 'ashamed' daha uygundur.",
+          "mistakes": [
+            {
+              "wrong": "I was embarrassing in front of everyone.",
+              "right": "I was embarrassed in front of everyone.",
+              "why": "Utanan kişi için -ed (embarrassed); utandıran şey için -ing (embarrassing) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:embarrassing"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I called my teacher 'mom' by mistake and felt so ______.",
+        "answer": "embarrassed",
+        "distractors": [
+          "proud",
+          "grateful",
+          "relaxed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.disappointed.adj.1",
+      "lemma": "disappointed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdɪsəˈpɔɪntɪd/",
+        "uk": "/ˌdɪsəˈpɔɪntɪd/"
+      },
+      "def": {
+        "micro": "unhappy about a bad result",
+        "short": "feeling unhappy because something was not as good as you hoped",
+        "long": "Feeling unhappy because something was not as good as you hoped, or because someone did not do what you wanted. You can be disappointed WITH a thing or a person."
+      },
+      "grammar": {
+        "pattern": "disappointed with / in / by sb/sth"
+      },
+      "examples": [
+        {
+          "en": "I was disappointed with my test results.",
+          "tr": "Sınav sonuçlarımdan hayal kırıklığına uğradım.",
+          "register": "neutral",
+          "focus": "disappointed"
+        },
+        {
+          "en": "The food was cold, and we were disappointed.",
+          "tr": "Yemek soğuktu, hayal kırıklığına uğradık.",
+          "register": "neutral",
+          "focus": "disappointed"
+        },
+        {
+          "en": "He felt disappointed that she didn't call.",
+          "tr": "Aramadığı için hayal kırıklığı yaşadı.",
+          "register": "neutral",
+          "focus": "disappointed"
+        }
+      ],
+      "synonyms": [
+        "let down",
+        "unhappy"
+      ],
+      "antonyms": [
+        "pleased",
+        "satisfied"
+      ],
+      "collocations": [
+        "disappointed with",
+        "bitterly disappointed",
+        "feel disappointed",
+        "disappointed in sb"
+      ],
+      "word_family": [
+        {
+          "lemma": "disappoint",
+          "pos": "v"
+        },
+        {
+          "lemma": "disappointing",
+          "pos": "adj"
+        },
+        {
+          "lemma": "disappointment",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hayal kırıklığına uğramış",
+          "alt": [
+            "umudu kırılmış",
+            "canı sıkkın"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Disappointed' = hayal kırıklığına uğrayan kişi; 'disappointing' = hayal kırıcı şey (a disappointing film). Konuşmada 'I'm disappointed' çok yaygındır.",
+          "mistakes": [
+            {
+              "wrong": "I'm disappointed from him.",
+              "right": "I'm disappointed with him.",
+              "why": "'-den hayal kırıklığına uğramak' İngilizcede 'disappointed with / in / by' olur; 'from' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:disappointing"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We waited an hour, and the show was bad. I was so ______.",
+        "answer": "disappointed",
+        "distractors": [
+          "excited",
+          "grateful",
+          "relieved"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.annoyed.adj.1",
+      "lemma": "annoyed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈnɔɪd/",
+        "uk": "/əˈnɔɪd/"
+      },
+      "def": {
+        "micro": "a little angry at something",
+        "short": "a little angry because of something that keeps happening",
+        "long": "A little angry because someone or something keeps bothering you. A loud noise, slow internet, or a friend who is always late can make you annoyed."
+      },
+      "grammar": {
+        "pattern": "annoyed with sb / about sth"
+      },
+      "examples": [
+        {
+          "en": "I'm annoyed because the Wi-Fi keeps stopping.",
+          "tr": "Wi-Fi sürekli kesildiği için canım sıkıldı.",
+          "register": "neutral",
+          "focus": "annoyed"
+        },
+        {
+          "en": "She was annoyed with him for being late again.",
+          "tr": "Yine geç kaldığı için ona sinirlendi.",
+          "register": "neutral",
+          "focus": "annoyed"
+        },
+        {
+          "en": "He gets annoyed when people talk loudly in the cinema.",
+          "tr": "İnsanlar sinemada yüksek sesle konuşunca sinirleniyor.",
+          "register": "neutral",
+          "focus": "annoyed"
+        }
+      ],
+      "synonyms": [
+        "irritated",
+        "bothered"
+      ],
+      "antonyms": [
+        "pleased"
+      ],
+      "collocations": [
+        "feel annoyed",
+        "annoyed with",
+        "annoyed about",
+        "slightly annoyed"
+      ],
+      "word_family": [
+        {
+          "lemma": "annoy",
+          "pos": "v"
+        },
+        {
+          "lemma": "annoying",
+          "pos": "adj"
+        },
+        {
+          "lemma": "annoyance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sinirli",
+          "alt": [
+            "canı sıkkın",
+            "rahatsız"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Annoyed', 'angry'den daha hafiftir: sinirlenmek, canı sıkılmak. 'Annoying' ise sinir bozucu şey ya da kişidir.",
+          "mistakes": [
+            {
+              "wrong": "The noise is very annoyed.",
+              "right": "The noise is very annoying.",
+              "why": "Sinir bozucu şey için -ing (annoying); sinirlenen kişi için -ed (annoyed) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:annoying"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I was ______ when he didn't reply to my message for days.",
+        "answer": "annoyed",
+        "distractors": [
+          "grateful",
+          "proud",
+          "relaxed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.grateful.adj.1",
+      "lemma": "grateful",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡreɪtfəl/",
+        "uk": "/ˈɡreɪtfəl/"
+      },
+      "def": {
+        "micro": "thankful for help",
+        "short": "feeling thankful to someone because they helped you or gave you something",
+        "long": "Feeling thankful to someone because they helped you or gave you something. You are grateful TO a person FOR something."
+      },
+      "grammar": {
+        "pattern": "grateful (to sb) for sth"
+      },
+      "examples": [
+        {
+          "en": "I'm so grateful for your help.",
+          "tr": "Yardımın için çok minnettarım.",
+          "register": "neutral",
+          "focus": "grateful"
+        },
+        {
+          "en": "We are grateful to our neighbors for the food.",
+          "tr": "Yemek için komşularımıza minnettarız.",
+          "register": "neutral",
+          "focus": "grateful"
+        },
+        {
+          "en": "She was grateful that he stayed with her.",
+          "tr": "Yanında kaldığı için ona minnettardı.",
+          "register": "neutral",
+          "focus": "grateful"
+        }
+      ],
+      "synonyms": [
+        "thankful",
+        "appreciative"
+      ],
+      "antonyms": [
+        "ungrateful"
+      ],
+      "collocations": [
+        "grateful for",
+        "deeply grateful",
+        "grateful to sb",
+        "be grateful that"
+      ],
+      "word_family": [
+        {
+          "lemma": "gratitude",
+          "pos": "n"
+        },
+        {
+          "lemma": "gratefully",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "minnettar",
+          "alt": [
+            "müteşekkir"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Grateful' içten ve biraz resmi bir teşekkürdür. Günlük konuşmada kısa teşekkür için 'thank you' ya da 'thanks' çok daha yaygındır.",
+          "mistakes": [
+            {
+              "wrong": "I'm grateful to your help.",
+              "right": "I'm grateful for your help.",
+              "why": "Yardım gibi şeyler için 'for', kişi için 'to' kullanılır: grateful to you for your help."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm very ______ for your advice. It really helped.",
+        "answer": "grateful",
+        "distractors": [
+          "angry",
+          "jealous",
+          "afraid"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stressed.adj.1",
+      "lemma": "stressed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/strɛst/",
+        "uk": "/strɛst/"
+      },
+      "def": {
+        "micro": "feeling too much pressure",
+        "short": "feeling worried and tense because you have too much to do",
+        "long": "Feeling worried and tense because of problems or because you have too much to do. A person may find it hard to sleep or to think clearly."
+      },
+      "grammar": {
+        "pattern": "stressed (about / out)"
+      },
+      "examples": [
+        {
+          "en": "I'm so stressed about work this week.",
+          "tr": "Bu hafta işim yüzünden çok stresliyim.",
+          "register": "neutral",
+          "focus": "stressed"
+        },
+        {
+          "en": "She felt stressed before the big exam.",
+          "tr": "Büyük sınavdan önce stres altındaydı.",
+          "register": "neutral",
+          "focus": "stressed"
+        },
+        {
+          "en": "Are you stressed? Let's go for a walk.",
+          "tr": "Stresli misin? Hadi yürüyüşe çıkalım.",
+          "register": "neutral",
+          "focus": "stressed"
+        }
+      ],
+      "synonyms": [
+        "tense",
+        "anxious",
+        "under pressure"
+      ],
+      "antonyms": [
+        "relaxed",
+        "calm"
+      ],
+      "collocations": [
+        "feel stressed",
+        "stressed out",
+        "get stressed",
+        "stressed about"
+      ],
+      "word_family": [
+        {
+          "lemma": "stress",
+          "pos": "n"
+        },
+        {
+          "lemma": "stress",
+          "pos": "v"
+        },
+        {
+          "lemma": "stressful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "stresli",
+          "alt": [
+            "gergin",
+            "stres altında"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'stresli' hem stres yaşayan kişi hem stres veren durum için kullanılır. İngilizcede ayrıdır: 'stressed' (kişi), 'stressful' (durum).",
+          "mistakes": [
+            {
+              "wrong": "My job is very stressed.",
+              "right": "My job is very stressful.",
+              "why": "Stres veren iş ya da durum için 'stressful'; stres yaşayan kişi için 'stressed' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:stressful"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have three exams this week, so I feel really ______.",
+        "answer": "stressed",
+        "distractors": [
+          "relaxed",
+          "glad",
+          "proud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mood.n.1",
+      "lemma": "mood",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "how you feel",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/muːd/",
+        "uk": "/muːd/"
+      },
+      "def": {
+        "micro": "how you feel at a time",
+        "short": "the way you feel at one time, for example happy or angry",
+        "long": "The way you feel at a particular time, for example happy, sad, or angry. A person's mood can change quickly, and it can be good or bad."
+      },
+      "grammar": {
+        "pattern": "in a good / bad mood"
+      },
+      "examples": [
+        {
+          "en": "Ayşe is in a good mood today.",
+          "tr": "Ayşe bugün keyifli.",
+          "register": "neutral",
+          "focus": "mood"
+        },
+        {
+          "en": "He's in a bad mood because he didn't sleep.",
+          "tr": "Uyumadığı için keyfi kötü.",
+          "register": "neutral",
+          "focus": "mood"
+        },
+        {
+          "en": "Music can change your mood in a few minutes.",
+          "tr": "Müzik ruh halini birkaç dakikada değiştirebilir.",
+          "register": "neutral",
+          "focus": "mood"
+        }
+      ],
+      "synonyms": [
+        "spirits"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in a good mood",
+        "in a bad mood",
+        "mood swings",
+        "not in the mood"
+      ],
+      "word_family": [
+        {
+          "lemma": "moody",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ruh hali",
+          "alt": [
+            "keyif",
+            "mod"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'modum yok' dediğimiz yerde İngilizce 'I'm not in the mood (for it)' denir. 'Moody' = huysuz, ruh hali sık değişen.",
+          "mistakes": [
+            {
+              "wrong": "She is with a good mood.",
+              "right": "She is in a good mood.",
+              "why": "'İyi bir ruh halinde olmak' için 'in a good mood' denir; 'with' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She's in a good ______ because it's Friday.",
+        "answer": "mood",
+        "distractors": [
+          "habit",
+          "plan",
+          "voice"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.homesick.adj.1",
+      "lemma": "homesick",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhoʊmsɪk/",
+        "uk": "/ˈhəʊmsɪk/"
+      },
+      "def": {
+        "micro": "sad when far from home",
+        "short": "sad because you are away from your home, family, or country",
+        "long": "Sad because you are far away from your home, family, or country and you miss them. Students who study abroad often feel this at the start."
+      },
+      "grammar": {
+        "pattern": "feel / get homesick"
+      },
+      "examples": [
+        {
+          "en": "He felt homesick in his first week at university.",
+          "tr": "Üniversitedeki ilk haftasında evini çok özledi.",
+          "register": "neutral",
+          "focus": "homesick"
+        },
+        {
+          "en": "I get homesick when I'm away for a long time.",
+          "tr": "Uzun süre uzaktayken evimi özlüyorum.",
+          "register": "neutral",
+          "focus": "homesick"
+        },
+        {
+          "en": "Do you ever feel homesick living abroad?",
+          "tr": "Yurt dışında yaşarken hiç evini özlüyor musun?",
+          "register": "neutral",
+          "focus": "homesick"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "feel homesick",
+        "get homesick",
+        "a bit homesick",
+        "terribly homesick"
+      ],
+      "word_family": [
+        {
+          "lemma": "homesickness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "evini özleyen",
+          "alt": [
+            "gurbet çeken",
+            "memleket hasreti"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede tek kelime karşılığı yok: 'evini özlemek', 'gurbet çekmek' ya da 'memleket hasreti' denir. İngilizcede genelde 'feel homesick' kalıbı kullanılır.",
+          "mistakes": [],
+          "mnemonic": "Home + sick: ev hasreti, yani 'eve hasta' olmak."
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After two weeks in London, she started to feel ______.",
+        "answer": "homesick",
+        "distractors": [
+          "lucky",
+          "sleepy",
+          "busy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.relieved.adj.1",
+      "lemma": "relieved",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈliːvd/",
+        "uk": "/rɪˈliːvd/"
+      },
+      "def": {
+        "micro": "glad a worry has ended",
+        "short": "happy and calm because a bad thing did not happen or has ended",
+        "long": "Feeling happy and calm because something bad did not happen or a worry has gone away. You may say 'What a relief!' after you hear good news."
+      },
+      "grammar": {
+        "pattern": "relieved (that) / relieved to do sth"
+      },
+      "examples": [
+        {
+          "en": "I was so relieved when I found my keys.",
+          "tr": "Anahtarlarımı bulunca çok rahatladım.",
+          "register": "neutral",
+          "focus": "relieved"
+        },
+        {
+          "en": "She felt relieved that the test was over.",
+          "tr": "Sınavın bittiğine çok rahatladı.",
+          "register": "neutral",
+          "focus": "relieved"
+        },
+        {
+          "en": "We're relieved that nobody got hurt.",
+          "tr": "Kimse yaralanmadığı için rahatladık.",
+          "register": "neutral",
+          "focus": "relieved"
+        }
+      ],
+      "synonyms": [
+        "reassured"
+      ],
+      "antonyms": [
+        "worried",
+        "anxious"
+      ],
+      "collocations": [
+        "feel relieved",
+        "relieved to hear",
+        "greatly relieved",
+        "breathe a sigh of relief"
+      ],
+      "word_family": [
+        {
+          "lemma": "relieve",
+          "pos": "v"
+        },
+        {
+          "lemma": "relief",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "içi rahatlamış",
+          "alt": [
+            "rahat bir nefes alan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Relieved' = bir endişe bitince 'oh, çok şükür' hissi. 'Relaxed' ise zaten rahat, stressiz olmaktır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:relaxed"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I was ______ when the doctor said it was nothing serious.",
+        "answer": "relieved",
+        "distractors": [
+          "upset",
+          "jealous",
+          "bored"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.frustrated.adj.1",
+      "lemma": "frustrated",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfrʌstreɪtɪd/",
+        "uk": "/frʌˈstreɪtɪd/"
+      },
+      "def": {
+        "micro": "angry about being stuck",
+        "short": "angry or unhappy because you cannot do or change something",
+        "long": "Feeling angry or unhappy because you cannot do something or change a bad situation, even when you try hard."
+      },
+      "grammar": {
+        "pattern": "frustrated (with / about sth)"
+      },
+      "examples": [
+        {
+          "en": "I'm so frustrated! My laptop keeps freezing.",
+          "tr": "Çok sinirim bozuldu! Laptopum sürekli donuyor.",
+          "register": "neutral",
+          "focus": "frustrated"
+        },
+        {
+          "en": "He gets frustrated when he can't find a parking spot.",
+          "tr": "Park yeri bulamayınca sinirleniyor.",
+          "register": "neutral",
+          "focus": "frustrated"
+        },
+        {
+          "en": "The students were frustrated with the slow lesson.",
+          "tr": "Öğrenciler ağır ilerleyen dersten bunaldı.",
+          "register": "neutral",
+          "focus": "frustrated"
+        }
+      ],
+      "synonyms": [
+        "fed up",
+        "annoyed"
+      ],
+      "antonyms": [
+        "satisfied",
+        "pleased"
+      ],
+      "collocations": [
+        "feel frustrated",
+        "get frustrated",
+        "frustrated with",
+        "deeply frustrated"
+      ],
+      "word_family": [
+        {
+          "lemma": "frustrate",
+          "pos": "v"
+        },
+        {
+          "lemma": "frustrating",
+          "pos": "adj"
+        },
+        {
+          "lemma": "frustration",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sinirleri bozulmuş",
+          "alt": [
+            "bunalmış",
+            "çaresiz kalmış"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Frustrated' = istediğini yapamamaktan doğan sinir ve bıkkınlık. 'Angry'den farkı: genelde bir engelden ya da başarısızlıktan kaynaklanır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:frustrating"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I tried the app five times, and it failed. I'm so ______.",
+        "answer": "frustrated",
+        "distractors": [
+          "pleased",
+          "proud",
+          "calm"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.guilty.adj.1",
+      "lemma": "guilty",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "feeling bad",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡɪlti/",
+        "uk": "/ˈɡɪlti/"
+      },
+      "def": {
+        "micro": "bad about something you did",
+        "short": "feeling bad because you know you did something wrong",
+        "long": "Feeling bad and a little ashamed because you know you did something wrong. You can feel this even about a small thing, like eating the last cake."
+      },
+      "grammar": {
+        "pattern": "feel guilty about sth"
+      },
+      "examples": [
+        {
+          "en": "I feel guilty about forgetting her birthday.",
+          "tr": "Doğum gününü unuttuğum için suçluluk duyuyorum.",
+          "register": "neutral",
+          "focus": "guilty"
+        },
+        {
+          "en": "He felt guilty after eating the whole cake.",
+          "tr": "Bütün pastayı yedikten sonra kendini suçlu hissetti.",
+          "register": "neutral",
+          "focus": "guilty"
+        },
+        {
+          "en": "Don't feel guilty. You did your best.",
+          "tr": "Suçluluk duyma. Elinden geleni yaptın.",
+          "register": "neutral",
+          "focus": "guilty"
+        }
+      ],
+      "synonyms": [
+        "ashamed",
+        "remorseful"
+      ],
+      "antonyms": [
+        "innocent"
+      ],
+      "collocations": [
+        "feel guilty",
+        "guilty about",
+        "guilty conscience",
+        "guilty feeling"
+      ],
+      "word_family": [
+        {
+          "lemma": "guilt",
+          "pos": "n"
+        },
+        {
+          "lemma": "guiltily",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kendini suçlu hisseden",
+          "alt": [
+            "vicdan azabı çeken"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Burada 'guilty' bir duygudur: 'feel guilty' = vicdan azabı çekmek. Mahkemede 'suçlu bulunmak' için de aynı kelime kullanılır ('found guilty').",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ate my sister's chocolate, and now I feel ______.",
+        "answer": "guilty",
+        "distractors": [
+          "proud",
+          "bored",
+          "lucky"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

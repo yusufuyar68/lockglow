@@ -1,6 +1,8 @@
 {
   "schema_version": "1.0",
-  "l1_langs": ["tr"],
+  "l1_langs": [
+    "tr"
+  ],
   "generated_on": "2026-10-11",
   "entries": [
     {
@@ -13,40 +15,112 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/sɛt ˈʌp/", "uk": "/sɛt ˈʌp/"},
+      "ipa": {
+        "us": "/sɛt ˈʌp/",
+        "uk": "/sɛt ˈʌp/"
+      },
       "def": {
         "micro": "make ready to use",
         "short": "make a phone, account or machine ready to use",
         "long": "To prepare something so that it is ready to use, such as a phone, an app, an account or a piece of equipment. The noun is 'setup'."
       },
-      "grammar": {"pattern": "set sth up / set up sth (set it up)"},
+      "grammar": {
+        "pattern": "set sth up / set up sth (set it up)"
+      },
       "examples": [
-        {"en": "I need to set up my new phone.", "tr": "Yeni telefonumu kurmam gerekiyor.", "register": "neutral", "focus": "set up"},
-        {"en": "Can you help me set up the Wi-Fi?", "tr": "Wi-Fi'yi kurmama yardım eder misin?", "register": "neutral", "focus": "set up"},
-        {"en": "Ali set the printer up in five minutes.", "tr": "Ali yazıcıyı beş dakikada kurdu.", "register": "neutral", "focus": "set the printer up"}
+        {
+          "en": "I need to set up my new phone.",
+          "tr": "Yeni telefonumu kurmam gerekiyor.",
+          "register": "neutral",
+          "focus": "set up"
+        },
+        {
+          "en": "Can you help me set up the Wi-Fi?",
+          "tr": "Wi-Fi'yi kurmama yardım eder misin?",
+          "register": "neutral",
+          "focus": "set up"
+        },
+        {
+          "en": "Ali set the printer up in five minutes.",
+          "tr": "Ali yazıcıyı beş dakikada kurdu.",
+          "register": "neutral",
+          "focus": "set the printer up"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["set up an account", "set up a phone", "set up Wi-Fi", "set up the printer", "set up a password"],
-      "word_family": [{"lemma": "setup", "pos": "n"}],
+      "collocations": [
+        "set up an account",
+        "set up a phone",
+        "set up Wi-Fi",
+        "set up the printer",
+        "set up a password"
+      ],
+      "word_family": [
+        {
+          "lemma": "setup",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "kurmak",
-          "alt": ["ayarlamak", "kurulum yapmak"],
+          "alt": [
+            "ayarlamak",
+            "kurulum yapmak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Cihaz ve hesap için 'kurmak', ayarlarını yapmak için 'ayarlamak' denir. 'Set up' ayrıca toplantı ya da şirket kurmak için de kullanılır.",
           "mistakes": [
-            {"wrong": "Please set up the alarm at six.", "right": "Please set the alarm for six.", "why": "Alarm için 'set the alarm' denir. 'Set up' bir cihazı ya da hesabı ilk kez hazırlamaktır."},
-            {"wrong": "Set up it, please.", "right": "Set it up, please.", "why": "Zamir (it, them) 'set' ile 'up' arasına girer."}
+            {
+              "wrong": "Please set up the alarm at six.",
+              "right": "Please set the alarm for six.",
+              "why": "Alarm için 'set the alarm' denir. 'Set up' bir cihazı ya da hesabı ilk kez hazırlamaktır."
+            },
+            {
+              "wrong": "Set up it, please.",
+              "right": "Set it up, please.",
+              "why": "Zamir (it, them) 'set' ile 'up' arasına girer."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I bought a new router. Can you ______ the Wi-Fi for me?", "answer": "set up", "distractors": ["turn down", "pick up", "fill in"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I bought a new router. Can you ______ the Wi-Fi for me?",
+        "answer": "set up",
+        "distractors": [
+          "turn down",
+          "pick up",
+          "fill in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.carry_on.phv.1",
@@ -58,39 +132,106 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/ˌkæri ˈɑːn/", "uk": "/ˌkæri ˈɒn/"},
+      "ipa": {
+        "us": "/ˌkæri ˈɑːn/",
+        "uk": "/ˌkæri ˈɒn/"
+      },
       "def": {
         "micro": "keep going",
         "short": "keep doing something and not stop",
         "long": "To keep doing something, or to keep going on your way. It is often used to tell someone to continue politely: 'Sorry to interrupt. Please carry on.'"
       },
-      "grammar": {"pattern": "carry on (+ -ing / with sth)"},
+      "grammar": {
+        "pattern": "carry on (+ -ing / with sth)"
+      },
       "examples": [
-        {"en": "Sorry to interrupt. Please carry on.", "tr": "Bölüyorum, özür dilerim. Lütfen devam edin.", "register": "neutral", "focus": "carry on"},
-        {"en": "We carried on walking in the rain.", "tr": "Yağmurda yürümeye devam ettik.", "register": "neutral", "focus": "carried on"},
-        {"en": "Carry on with your work. I'll be back soon.", "tr": "İşine devam et. Birazdan döneceğim.", "register": "neutral", "focus": "Carry on"}
+        {
+          "en": "Sorry to interrupt. Please carry on.",
+          "tr": "Bölüyorum, özür dilerim. Lütfen devam edin.",
+          "register": "neutral",
+          "focus": "carry on"
+        },
+        {
+          "en": "We carried on walking in the rain.",
+          "tr": "Yağmurda yürümeye devam ettik.",
+          "register": "neutral",
+          "focus": "carried on"
+        },
+        {
+          "en": "Carry on with your work. I'll be back soon.",
+          "tr": "İşine devam et. Birazdan döneceğim.",
+          "register": "neutral",
+          "focus": "Carry on"
+        }
       ],
-      "synonyms": ["continue", "keep going"],
-      "antonyms": ["stop", "give up"],
-      "collocations": ["carry on working", "carry on talking", "carry on as usual", "carry on with sth"],
+      "synonyms": [
+        "continue",
+        "keep going"
+      ],
+      "antonyms": [
+        "stop",
+        "give up"
+      ],
+      "collocations": [
+        "carry on working",
+        "carry on talking",
+        "carry on as usual",
+        "carry on with sth"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "devam etmek",
-          "alt": ["sürdürmek"],
+          "alt": [
+            "sürdürmek"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "'Carry on' + fiil-ing ('carry on working') ya da 'carry on with' + isim ('carry on with your work') kalıbıyla kullanılır. 'Keep on' ve 'go on' benzer anlamdadır.",
           "mistakes": [
-            {"wrong": "I will carry on to study.", "right": "I will carry on studying.", "why": "Türkçedeki '-meye devam etmek' İngilizcede 'carry on + -ing' olur. 'To + fiil' kullanılmaz."}
+            {
+              "wrong": "I will carry on to study.",
+              "right": "I will carry on studying.",
+              "why": "Türkçedeki '-meye devam etmek' İngilizcede 'carry on + -ing' olur. 'To + fiil' kullanılmaz."
+            }
           ],
           "mnemonic": "Carry = taşımak, on = devam (go on, keep on gibi): yükü bırakmadan taşımaya devam edersin."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "success_productivity"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm tired, but I must ______ working until six.", "answer": "carry on", "distractors": ["break down", "turn off", "get off"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm tired, but I must ______ working until six.",
+        "answer": "carry on",
+        "distractors": [
+          "break down",
+          "turn off",
+          "get off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified",
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.hang_out.phv.1",
@@ -102,39 +243,102 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/hæŋ ˈaʊt/", "uk": "/hæŋ ˈaʊt/"},
+      "ipa": {
+        "us": "/hæŋ ˈaʊt/",
+        "uk": "/hæŋ ˈaʊt/"
+      },
       "def": {
         "micro": "spend free time",
         "short": "spend free time with friends in a relaxed way",
         "long": "To spend free time in a place or with someone, without a special plan. It is informal and very common among friends: 'We hang out at the café after school.'"
       },
-      "grammar": {"pattern": "hang out (with sb / at a place)"},
+      "grammar": {
+        "pattern": "hang out (with sb / at a place)"
+      },
       "examples": [
-        {"en": "I usually hang out with my friends on Saturdays.", "tr": "Cumartesileri genelde arkadaşlarımla takılırım.", "register": "informal", "focus": "hang out"},
-        {"en": "Do you want to hang out this weekend?", "tr": "Bu hafta sonu takılmak ister misin?", "register": "informal", "focus": "hang out"},
-        {"en": "Kids hang out at the mall after school.", "tr": "Çocuklar okuldan sonra alışveriş merkezinde takılıyor.", "register": "informal", "focus": "hang out"}
+        {
+          "en": "I usually hang out with my friends on Saturdays.",
+          "tr": "Cumartesileri genelde arkadaşlarımla takılırım.",
+          "register": "informal",
+          "focus": "hang out"
+        },
+        {
+          "en": "Do you want to hang out this weekend?",
+          "tr": "Bu hafta sonu takılmak ister misin?",
+          "register": "informal",
+          "focus": "hang out"
+        },
+        {
+          "en": "Kids hang out at the mall after school.",
+          "tr": "Çocuklar okuldan sonra alışveriş merkezinde takılıyor.",
+          "register": "informal",
+          "focus": "hang out"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["hang out with friends", "hang out at home", "hang out after school", "just hang out"],
+      "collocations": [
+        "hang out with friends",
+        "hang out at home",
+        "hang out after school",
+        "just hang out"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "takılmak",
-          "alt": ["vakit geçirmek", "buluşmak"],
+          "alt": [
+            "vakit geçirmek",
+            "buluşmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçedeki gündelik 'takılmak' ile çok benzerdir: özel bir plan yapmadan arkadaşlarla vakit geçirmek. Resmî ortamda kullanılmaz.",
           "mistakes": [
-            {"wrong": "I hang out my friends on Sundays.", "right": "I hang out with my friends on Sundays.", "why": "Türkçede '-la' eki kelimeye yapışır (arkadaşlarımla). İngilizcede 'with' ayrı sözcüktür ve atlanamaz: hang out with + kişi."}
+            {
+              "wrong": "I hang out my friends on Sundays.",
+              "right": "I hang out with my friends on Sundays.",
+              "why": "Türkçede '-la' eki kelimeye yapışır (arkadaşlarımla). İngilizcede 'with' ayrı sözcüktür ve atlanamaz: hang out with + kişi."
+            }
           ],
           "mnemonic": "Hang = asılmak, out = dışarıda: ortalıkta sallanıp 'takılmak'."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "love_friendship"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "I have no plans today. I'll just ______ with my friends.", "answer": "hang out", "distractors": ["break up", "put off", "speak up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have no plans today. I'll just ______ with my friends.",
+        "answer": "hang out",
+        "distractors": [
+          "break up",
+          "put off",
+          "speak up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.show_up.phv.1",
@@ -146,39 +350,104 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/ʃoʊ ˈʌp/", "uk": "/ʃəʊ ˈʌp/"},
+      "ipa": {
+        "us": "/ʃoʊ ˈʌp/",
+        "uk": "/ʃəʊ ˈʌp/"
+      },
       "def": {
         "micro": "arrive where expected",
         "short": "arrive at a place where people are waiting for you",
         "long": "To arrive at a place where people expect you to be, for example at a meeting, a party or work. It is informal and often used in the negative: 'He didn't show up.'"
       },
-      "grammar": {"pattern": "show up (no object)"},
+      "grammar": {
+        "pattern": "show up (no object)"
+      },
       "examples": [
-        {"en": "Everyone came, but Sam didn't show up.", "tr": "Herkes geldi ama Sam gelmedi.", "register": "informal", "focus": "show up"},
-        {"en": "The guests started to show up at eight.", "tr": "Misafirler sekizde gelmeye başladı.", "register": "informal", "focus": "show up"},
-        {"en": "Ali showed up late, as usual.", "tr": "Ali her zamanki gibi geç geldi.", "register": "informal", "focus": "showed up"}
+        {
+          "en": "Everyone came, but Sam didn't show up.",
+          "tr": "Herkes geldi ama Sam gelmedi.",
+          "register": "informal",
+          "focus": "show up"
+        },
+        {
+          "en": "The guests started to show up at eight.",
+          "tr": "Misafirler sekizde gelmeye başladı.",
+          "register": "informal",
+          "focus": "show up"
+        },
+        {
+          "en": "Ali showed up late, as usual.",
+          "tr": "Ali her zamanki gibi geç geldi.",
+          "register": "informal",
+          "focus": "showed up"
+        }
       ],
-      "synonyms": ["turn up", "arrive"],
+      "synonyms": [
+        "turn up",
+        "arrive"
+      ],
       "antonyms": [],
-      "collocations": ["show up late", "show up on time", "show up at work", "fail to show up"],
+      "collocations": [
+        "show up late",
+        "show up on time",
+        "show up at work",
+        "fail to show up"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "gelmek, ortaya çıkmak",
-          "alt": ["görünmek", "boy göstermek"],
+          "alt": [
+            "görünmek",
+            "boy göstermek"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Beklenen bir yere gelmeyi anlatır; 'didn't show up' en doğal Türkçe karşılıkla 'gelmedi'dir. 'Boy göstermek' daha çok geç ya da sürpriz gelenler için kullanılır.",
           "mistakes": [
-            {"wrong": "I showed up my photos to him.", "right": "I showed him my photos.", "why": "'Show up' göstermek değil, ortaya çıkmaktır. Bir şeyi göstermek için 'show' kullanılır."}
+            {
+              "wrong": "I showed up my photos to him.",
+              "right": "I showed him my photos.",
+              "why": "'Show up' göstermek değil, ortaya çıkmaktır. Bir şeyi göstermek için 'show' kullanılır."
+            }
           ],
           "mnemonic": "Show = göstermek: kendini ortaya gösterirsin, yani 'boy gösterirsin'."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "workplace_office"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "The party started at eight, but my friend didn't ______ until ten.", "answer": "show up", "distractors": ["give up", "look out", "set up"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The party started at eight, but my friend didn't ______ until ten.",
+        "answer": "show up",
+        "distractors": [
+          "give up",
+          "look out",
+          "set up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.break_down.phv.1",
@@ -190,39 +459,106 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/breɪk ˈdaʊn/", "uk": "/breɪk ˈdaʊn/"},
+      "ipa": {
+        "us": "/breɪk ˈdaʊn/",
+        "uk": "/breɪk ˈdaʊn/"
+      },
       "def": {
         "micro": "stop working",
         "short": "stop working, usually because something is broken",
         "long": "To suddenly stop working because of a problem. It is used for cars, machines and computers: 'Our car broke down on the way home.'"
       },
-      "grammar": {"pattern": "break down (no object)"},
+      "grammar": {
+        "pattern": "break down (no object)"
+      },
       "examples": [
-        {"en": "My car broke down on the way to work.", "tr": "Arabam işe giderken yolda bozuldu.", "register": "neutral", "focus": "broke down"},
-        {"en": "The washing machine has broken down again.", "tr": "Çamaşır makinesi yine bozuldu.", "register": "neutral", "focus": "broken down"},
-        {"en": "If the elevator breaks down, use the stairs.", "tr": "Asansör bozulursa merdiveni kullan.", "register": "neutral", "focus": "breaks down"}
+        {
+          "en": "My car broke down on the way to work.",
+          "tr": "Arabam işe giderken yolda bozuldu.",
+          "register": "neutral",
+          "focus": "broke down"
+        },
+        {
+          "en": "The washing machine has broken down again.",
+          "tr": "Çamaşır makinesi yine bozuldu.",
+          "register": "neutral",
+          "focus": "broken down"
+        },
+        {
+          "en": "If the elevator breaks down, use the stairs.",
+          "tr": "Asansör bozulursa merdiveni kullan.",
+          "register": "neutral",
+          "focus": "breaks down"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["car breaks down", "break down on the road", "machine breaks down", "break down again"],
-      "word_family": [{"lemma": "breakdown", "pos": "n"}],
+      "collocations": [
+        "car breaks down",
+        "break down on the road",
+        "machine breaks down",
+        "break down again"
+      ],
+      "word_family": [
+        {
+          "lemma": "breakdown",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "bozulmak",
-          "alt": ["arızalanmak", "yolda kalmak"],
+          "alt": [
+            "arızalanmak",
+            "yolda kalmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Araba için 'yolda kalmak' da denir. İnsan için 'break down' ağlamaya başlamak anlamına da gelebilir; o ayrı bir kullanımdır.",
           "mistakes": [
-            {"wrong": "The car is broke down.", "right": "The car has broken down.", "why": "Geçmiş ortaç 'broken'dır; 'broke' geçmiş zamandır. 'Has broken down' ya da 'broke down' denir."}
+            {
+              "wrong": "The car is broke down.",
+              "right": "The car has broken down.",
+              "why": "Geçmiş ortaç 'broken'dır; 'broke' geçmiş zamandır. 'Has broken down' ya da 'broke down' denir."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
-      "quiz": {"cloze": "Our bus stopped on the road. It ______ and we had to wait.", "answer": "broke down", "distractors": ["stood up", "took off", "got off"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "cities_transport",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our bus stopped on the road. It ______ and we had to wait.",
+        "answer": "broke down",
+        "distractors": [
+          "stood up",
+          "took off",
+          "got off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.look_forward_to.phv.1",
@@ -234,40 +570,105 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/lʊk ˈfɔːrwərd tə/", "uk": "/lʊk ˈfɔːwəd tə/"},
+      "ipa": {
+        "us": "/lʊk ˈfɔːrwərd tə/",
+        "uk": "/lʊk ˈfɔːwəd tə/"
+      },
       "def": {
         "micro": "wait happily for something",
         "short": "feel happy and excited about something that will happen",
         "long": "To feel happy and excited about something that will happen soon. Here 'to' is a preposition, so a verb after it ends in -ing: 'I'm looking forward to seeing you.'"
       },
-      "grammar": {"pattern": "look forward to + noun / -ing"},
+      "grammar": {
+        "pattern": "look forward to + noun / -ing"
+      },
       "examples": [
-        {"en": "I'm looking forward to the weekend.", "tr": "Hafta sonunu dört gözle bekliyorum.", "register": "neutral", "focus": "looking forward to"},
-        {"en": "We're looking forward to seeing you again.", "tr": "Seni tekrar görmeyi dört gözle bekliyoruz.", "register": "neutral", "focus": "looking forward to"},
-        {"en": "Kenji looks forward to his holiday every year.", "tr": "Kenji her yıl tatilini sabırsızlıkla bekler.", "register": "neutral", "focus": "looks forward to"}
+        {
+          "en": "I'm looking forward to the weekend.",
+          "tr": "Hafta sonunu dört gözle bekliyorum.",
+          "register": "neutral",
+          "focus": "looking forward to"
+        },
+        {
+          "en": "We're looking forward to seeing you again.",
+          "tr": "Seni tekrar görmeyi dört gözle bekliyoruz.",
+          "register": "neutral",
+          "focus": "looking forward to"
+        },
+        {
+          "en": "Kenji looks forward to his holiday every year.",
+          "tr": "Kenji her yıl tatilini sabırsızlıkla bekler.",
+          "register": "neutral",
+          "focus": "looks forward to"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["dread"],
-      "collocations": ["look forward to the weekend", "look forward to seeing you", "look forward to a holiday", "look forward to a reply"],
+      "antonyms": [
+        "dread"
+      ],
+      "collocations": [
+        "look forward to the weekend",
+        "look forward to seeing you",
+        "look forward to a holiday",
+        "look forward to a reply"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "dört gözle beklemek",
-          "alt": ["sabırsızlıkla beklemek"],
+          "alt": [
+            "sabırsızlıkla beklemek"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "E-posta sonunda 'I look forward to hearing from you' = 'Yanıtınızı bekliyorum' (resmî). Buradaki 'to' bir edattır; arkasından isim ya da fiil-ing gelir.",
           "mistakes": [
-            {"wrong": "I look forward to see you.", "right": "I look forward to seeing you.", "why": "Buradaki 'to' bir edattır, fiilin başındaki 'to' değil. Bu yüzden fiil -ing alır."},
-            {"wrong": "I'm looking forward for the holiday.", "right": "I'm looking forward to the holiday.", "why": "Edat 'for' değil 'to' olmalıdır."}
+            {
+              "wrong": "I look forward to see you.",
+              "right": "I look forward to seeing you.",
+              "why": "Buradaki 'to' bir edattır, fiilin başındaki 'to' değil. Bu yüzden fiil -ing alır."
+            },
+            {
+              "wrong": "I'm looking forward for the holiday.",
+              "right": "I'm looking forward to the holiday.",
+              "why": "Edat 'for' değil 'to' olmalıdır."
+            }
           ],
           "mnemonic": "Look forward = ileriye bakmak: geleceğe bakıp dört gözle beklersin."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "emotions_feelings", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
-      "quiz": {"cloze": "Next week we go to the sea! I'm really ______ it.", "answer": "looking forward to", "distractors": ["looking after", "looking for", "looking up to"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "emotions_feelings",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Next week we go to the sea! I'm really ______ it.",
+        "answer": "looking forward to",
+        "distractors": [
+          "looking after",
+          "looking for",
+          "looking up to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.get_along_with.phv.1",
@@ -279,39 +680,103 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/ɡɛt əˈlɔːŋ wɪð/", "uk": "/ɡɛt əˈlɒŋ wɪð/"},
+      "ipa": {
+        "us": "/ɡɛt əˈlɔːŋ wɪð/",
+        "uk": "/ɡɛt əˈlɒŋ wɪð/"
+      },
       "def": {
         "micro": "be friendly with someone",
         "short": "be friends with someone and not argue",
         "long": "To have a friendly relationship with someone, so that you do not argue. You can say 'I get along well with my boss.' British English often says 'get on with'."
       },
-      "grammar": {"pattern": "get along with + sb (inseparable)"},
+      "grammar": {
+        "pattern": "get along with + sb (inseparable)"
+      },
       "examples": [
-        {"en": "I get along well with my new colleagues.", "tr": "Yeni iş arkadaşlarımla iyi anlaşıyorum.", "register": "neutral", "focus": "get along well with"},
-        {"en": "Do you get along with your brother?", "tr": "Kardeşinle iyi anlaşıyor musun?", "register": "neutral", "focus": "get along with"},
-        {"en": "The two cats don't get along at all.", "tr": "İki kedi hiç anlaşamıyor.", "register": "neutral", "focus": "get along"}
+        {
+          "en": "I get along well with my new colleagues.",
+          "tr": "Yeni iş arkadaşlarımla iyi anlaşıyorum.",
+          "register": "neutral",
+          "focus": "get along well with"
+        },
+        {
+          "en": "Do you get along with your brother?",
+          "tr": "Kardeşinle iyi anlaşıyor musun?",
+          "register": "neutral",
+          "focus": "get along with"
+        },
+        {
+          "en": "The two cats don't get along at all.",
+          "tr": "İki kedi hiç anlaşamıyor.",
+          "register": "neutral",
+          "focus": "get along"
+        }
       ],
       "synonyms": [],
-      "antonyms": ["argue with"],
-      "collocations": ["get along well", "get along with sb", "get along with your family", "get along great"],
+      "antonyms": [
+        "argue with"
+      ],
+      "collocations": [
+        "get along well",
+        "get along with sb",
+        "get along with your family",
+        "get along great"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "iyi anlaşmak",
-          "alt": ["geçinmek", "anlaşmak"],
+          "alt": [
+            "geçinmek",
+            "anlaşmak"
+          ],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Türkçede 'geçinmek' ve 'iyi anlaşmak' denir. 'Agree' (aynı fikirde olmak) ile karıştırmayın: 'We get along' = iyi geçiniriz, 'We agree' = aynı şeyi düşünürüz.",
           "mistakes": [
-            {"wrong": "I agree with my sister very well.", "right": "I get along with my sister very well.", "why": "Türkçede 'anlaşmak' hem 'get along' hem 'agree' için kullanılır. İnsanlarla iyi geçinmek 'get along with'tir."}
+            {
+              "wrong": "I agree with my sister very well.",
+              "right": "I get along with my sister very well.",
+              "why": "Türkçede 'anlaşmak' hem 'get along' hem 'agree' için kullanılır. İnsanlarla iyi geçinmek 'get along with'tir."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
-      "quiz": {"cloze": "My sister and I are good friends. We ______ really well.", "answer": "get along", "distractors": ["get over", "hang out", "get out"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister and I are good friends. We ______ really well.",
+        "answer": "get along",
+        "distractors": [
+          "get over",
+          "hang out",
+          "get out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.top_up.phv.1",
@@ -323,39 +788,107 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/tɑːp ˈʌp/", "uk": "/tɒp ˈʌp/"},
+      "ipa": {
+        "us": "/tɑːp ˈʌp/",
+        "uk": "/tɒp ˈʌp/"
+      },
       "def": {
         "micro": "add more money",
         "short": "add more money to a phone, card or account",
         "long": "To add more money to a phone plan, a travel card or an account when it is almost empty. The noun is 'top-up'. It is more common in British English."
       },
-      "grammar": {"pattern": "top sth up / top up sth (top it up)"},
+      "grammar": {
+        "pattern": "top sth up / top up sth (top it up)"
+      },
       "examples": [
-        {"en": "I need to top up my phone.", "tr": "Telefonuma bakiye yüklemem lazım.", "register": "neutral", "focus": "top up"},
-        {"en": "You can top up your travel card at the machine.", "tr": "Ulaşım kartına makineden bakiye yükleyebilirsin.", "register": "neutral", "focus": "top up"},
-        {"en": "Ayşe topped up her account online.", "tr": "Ayşe hesabına internetten bakiye yükledi.", "register": "neutral", "focus": "topped up"}
+        {
+          "en": "I need to top up my phone.",
+          "tr": "Telefonuma bakiye yüklemem lazım.",
+          "register": "neutral",
+          "focus": "top up"
+        },
+        {
+          "en": "You can top up your travel card at the machine.",
+          "tr": "Ulaşım kartına makineden bakiye yükleyebilirsin.",
+          "register": "neutral",
+          "focus": "top up"
+        },
+        {
+          "en": "Ayşe topped up her account online.",
+          "tr": "Ayşe hesabına internetten bakiye yükledi.",
+          "register": "neutral",
+          "focus": "topped up"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["top up your phone", "top up a card", "top up your account", "top up online", "top up credit"],
-      "word_family": [{"lemma": "top-up", "pos": "n"}],
+      "collocations": [
+        "top up your phone",
+        "top up a card",
+        "top up your account",
+        "top up online",
+        "top up credit"
+      ],
+      "word_family": [
+        {
+          "lemma": "top-up",
+          "pos": "n"
+        }
+      ],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "bakiye yüklemek",
-          "alt": ["kontör yüklemek", "doldurmak"],
+          "alt": [
+            "kontör yüklemek",
+            "doldurmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçede 'bakiye yüklemek' ya da 'kontör yüklemek' denir. Özellikle İngiliz İngilizcesinde yaygındır; ABD'de 'add money' ya da 'reload' da kullanılır.",
           "mistakes": [
-            {"wrong": "I need to fill up my phone.", "right": "I need to top up my phone.", "why": "Türkçede 'doldurmak' dediğiniz için 'fill up' demeyin. Telefon ya da kart bakiyesi için 'top up' denir."}
+            {
+              "wrong": "I need to fill up my phone.",
+              "right": "I need to top up my phone.",
+              "why": "Türkçede 'doldurmak' dediğiniz için 'fill up' demeyin. Telefon ya da kart bakiyesi için 'top up' denir."
+            }
           ],
           "mnemonic": "Top = tepe: kartı ya da bardağı tepeye kadar yeniden doldurursun."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "shopping_money", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I have no credit left. I need to ______ my phone.", "answer": "top up", "distractors": ["stay up", "hang up", "eat out"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have no credit left. I need to ______ my phone.",
+        "answer": "top up",
+        "distractors": [
+          "stay up",
+          "hang up",
+          "eat out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.pay_back.phv.1",
@@ -367,39 +900,100 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/peɪ ˈbæk/", "uk": "/peɪ ˈbæk/"},
+      "ipa": {
+        "us": "/peɪ ˈbæk/",
+        "uk": "/peɪ ˈbæk/"
+      },
       "def": {
         "micro": "give money back to someone",
         "short": "give back money that you borrowed from someone",
         "long": "To give back money that you borrowed from someone. You can pay back a person, or pay the money back: 'I'll pay you back on Friday.'"
       },
-      "grammar": {"pattern": "pay sb back; pay sth back (to sb)"},
+      "grammar": {
+        "pattern": "pay sb back; pay sth back (to sb)"
+      },
       "examples": [
-        {"en": "Thanks for lunch. I'll pay you back tomorrow.", "tr": "Öğle yemeği için sağ ol. Yarın sana geri öderim.", "register": "neutral", "focus": "pay you back"},
-        {"en": "Mehmet paid back the money last week.", "tr": "Mehmet parayı geçen hafta geri ödedi.", "register": "neutral", "focus": "paid back"},
-        {"en": "I borrowed 100 lira and paid it back on Friday.", "tr": "100 lira borç aldım ve cuma günü geri ödedim.", "register": "neutral", "focus": "paid it back"}
+        {
+          "en": "Thanks for lunch. I'll pay you back tomorrow.",
+          "tr": "Öğle yemeği için sağ ol. Yarın sana geri öderim.",
+          "register": "neutral",
+          "focus": "pay you back"
+        },
+        {
+          "en": "Mehmet paid back the money last week.",
+          "tr": "Mehmet parayı geçen hafta geri ödedi.",
+          "register": "neutral",
+          "focus": "paid back"
+        },
+        {
+          "en": "I borrowed 100 lira and paid it back on Friday.",
+          "tr": "100 lira borç aldım ve cuma günü geri ödedim.",
+          "register": "neutral",
+          "focus": "paid it back"
+        }
       ],
       "synonyms": [],
       "antonyms": [],
-      "collocations": ["pay back the money", "pay you back", "pay back a loan", "pay back a friend"],
+      "collocations": [
+        "pay back the money",
+        "pay you back",
+        "pay back a loan",
+        "pay back a friend"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "geri ödemek",
-          "alt": ["borcunu ödemek"],
+          "alt": [
+            "borcunu ödemek"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "Kişiyi de parayı da nesne alabilir: 'pay you back' (sana geri ödemek), 'pay the money back'. 'Pay sb back for sth' ise 'intikam almak' anlamına da gelir; bu kartta yok.",
           "mistakes": [
-            {"wrong": "I will pay back you tomorrow.", "right": "I will pay you back tomorrow.", "why": "Zamir (you, him, her) 'pay' ile 'back' arasına girer."}
+            {
+              "wrong": "I will pay back you tomorrow.",
+              "right": "I will pay you back tomorrow.",
+              "why": "Zamir (you, him, her) 'pay' ile 'back' arasına girer."
+            }
           ],
           "mnemonic": null
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "shopping_money", "finance_economics"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "You paid for my ticket. I'll ______ the money tomorrow.", "answer": "pay back", "distractors": ["hold on", "fill up", "look up"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You paid for my ticket. I'll ______ the money tomorrow.",
+        "answer": "pay back",
+        "distractors": [
+          "hold on",
+          "fill up",
+          "look up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     },
     {
       "id": "en.put_off.phv.1",
@@ -411,40 +1005,108 @@
       "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
-      "ipa": {"us": "/pʊt ˈɔːf/", "uk": "/pʊt ˈɒf/"},
+      "ipa": {
+        "us": "/pʊt ˈɔːf/",
+        "uk": "/pʊt ˈɒf/"
+      },
       "def": {
         "micro": "move to a later time",
         "short": "do something at a later time, not now",
         "long": "To decide to do something later than you planned, often because you do not want to do it now. It is also used for events: 'The match was put off until Sunday.'"
       },
-      "grammar": {"pattern": "put sth off / put off sth (put it off)"},
+      "grammar": {
+        "pattern": "put sth off / put off sth (put it off)"
+      },
       "examples": [
-        {"en": "I always put off cleaning the bathroom.", "tr": "Banyoyu temizlemeyi hep erteliyorum.", "register": "neutral", "focus": "put off"},
-        {"en": "Let's put the meeting off until Monday.", "tr": "Toplantıyı pazartesiye erteleyelim.", "register": "neutral", "focus": "put the meeting off"},
-        {"en": "Don't put it off. Call the dentist today.", "tr": "Erteleme. Bugün dişçiyi ara.", "register": "neutral", "focus": "put it off"}
+        {
+          "en": "I always put off cleaning the bathroom.",
+          "tr": "Banyoyu temizlemeyi hep erteliyorum.",
+          "register": "neutral",
+          "focus": "put off"
+        },
+        {
+          "en": "Let's put the meeting off until Monday.",
+          "tr": "Toplantıyı pazartesiye erteleyelim.",
+          "register": "neutral",
+          "focus": "put the meeting off"
+        },
+        {
+          "en": "Don't put it off. Call the dentist today.",
+          "tr": "Erteleme. Bugün dişçiyi ara.",
+          "register": "neutral",
+          "focus": "put it off"
+        }
       ],
-      "synonyms": ["delay", "postpone"],
+      "synonyms": [
+        "delay",
+        "postpone"
+      ],
       "antonyms": [],
-      "collocations": ["put off a meeting", "put off until tomorrow", "put it off", "keep putting it off"],
+      "collocations": [
+        "put off a meeting",
+        "put off until tomorrow",
+        "put it off",
+        "keep putting it off"
+      ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "ertelemek",
-          "alt": ["sonraya bırakmak"],
+          "alt": [
+            "sonraya bırakmak"
+          ],
           "equivalence": "full",
           "false_friend": null,
           "note": "'Put off' ayrıca 'caydırmak, soğutmak' anlamına da gelir ('The smell put me off'); o ayrı bir kullanımdır. Bu kartta 'ertelemek' var.",
           "mistakes": [
-            {"wrong": "Put off the TV, please.", "right": "Turn off the TV, please.", "why": "'Put off' ertelemektir, kapatmak değil. Cihazı kapatmak 'turn off' demektir; 'off' görünce karışır."},
-            {"wrong": "I put off to do my homework.", "right": "I put off doing my homework.", "why": "'Put off' arkasından fiil-ing alır; 'to + fiil' kullanılmaz."}
+            {
+              "wrong": "Put off the TV, please.",
+              "right": "Turn off the TV, please.",
+              "why": "'Put off' ertelemektir, kapatmak değil. Cihazı kapatmak 'turn off' demektir; 'off' görünce karışır."
+            },
+            {
+              "wrong": "I put off to do my homework.",
+              "right": "I put off doing my homework.",
+              "why": "'Put off' arkasından fiil-ing alır; 'to + fiil' kullanılmaz."
+            }
           ],
           "mnemonic": "Put off = işi bugünden uzağa (off) koymak."
         }
       },
-      "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "success_productivity", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "I'm too tired today. Let's ______ the meeting until tomorrow.", "answer": "put off", "distractors": ["turn on", "hand in", "cheer up"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "success_productivity",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm too tired today. Let's ______ the meeting until tomorrow.",
+        "answer": "put off",
+        "distractors": [
+          "turn on",
+          "hand in",
+          "cheer up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
   ]
 }

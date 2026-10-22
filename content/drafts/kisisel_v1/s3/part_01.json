@@ -1,156 +1,1124 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{"id":"en.cry.v.1","lemma":"cry","type":"word","pos":"v","sense_no":1,"sense_note":"have tears","level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/kraɪ/","uk":"/kraɪ/"},
-"def":{"micro":"have tears in your eyes","short":"have tears coming from your eyes, usually because you are sad or hurt","long":"To have tears come from your eyes, usually because you feel sad, hurt, or very happy. Many people cry at weddings and at sad films."},
-"grammar":{"pattern":"cry (about / over sth)"},
-"examples":[
-{"en":"The baby started to cry in the middle of the night.","tr":"Bebek gecenin ortasında ağlamaya başladı.","register":"neutral","focus":"cry"},
-{"en":"I cried when I watched the last episode.","tr":"Son bölümü izlerken ağladım.","register":"neutral","focus":"cried"},
-{"en":"Don't cry. Everything will be okay.","tr":"Ağlama. Her şey yoluna girecek.","register":"neutral","focus":"cry"}],
-"synonyms":["weep","sob"],"antonyms":["laugh"],"collocations":["cry for help","cry with joy","burst out crying","cry over sth"],
-"word_family":[{"lemma":"crying","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"ağlamak","alt":[],"equivalence":"full","false_friend":null,"note":"'Cry' bağırmak anlamına da gelebilir ('cry out'), ama günlük konuşmada neredeyse hep 'ağlamak' demektir.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I always ______ at sad movies.","answer":"cry","distractors":["sing","jump","wait"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.laugh.v.1","lemma":"laugh","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/læf/","uk":"/lɑːf/"},
-"def":{"micro":"make happy sounds at a joke","short":"make happy sounds with your voice because something is funny","long":"To make a happy sound with your voice because something is funny. We often laugh at jokes, or laugh with friends."},
-"grammar":{"pattern":"laugh (at sb/sth)"},
-"examples":[
-{"en":"We laughed all night at his silly jokes.","tr":"Bütün gece onun saçma şakalarına güldük.","register":"neutral","focus":"laughed"},
-{"en":"Everyone laughed when the cat jumped on the table.","tr":"Kedi masaya atlayınca herkes güldü.","register":"neutral","focus":"laughed"},
-{"en":"Please don't laugh at me!","tr":"Lütfen bana gülme!","register":"neutral","focus":"laugh"}],
-"synonyms":["giggle","chuckle"],"antonyms":["cry"],"collocations":["laugh at a joke","laugh out loud","burst out laughing","laugh with sb"],
-"word_family":[{"lemma":"laughter","pos":"n"},{"lemma":"laugh","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"gülmek","alt":[],"equivalence":"full","false_friend":null,"note":"'Laugh at sb' hem 'birine/bir şeye gülmek' hem 'alay etmek' olabilir. Birlikte gülmek için 'laugh with sb' denir.","mistakes":[{"wrong":"I laughed to his joke.","right":"I laughed at his joke.","why":"'Şakasına gülmek' derken İngilizcede 'laugh at' kullanılır; 'to' kullanılmaz."}],"mnemonic":"'Laugh' kelimesinde 'gh' 'f' gibi okunur: 'laf' denir. Komik bir lafa gülersin!"}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"My brother tells funny stories, and we all ______.","answer":"laugh","distractors":["cry","shout","sleep"]},
-"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.smile.v.1","lemma":"smile","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/smaɪl/","uk":"/smaɪl/"},
-"def":{"micro":"look happy with your mouth","short":"turn up the corners of your mouth to show you are happy or friendly","long":"To move your mouth into a happy or friendly shape. People smile when they are glad, when they are polite, or when they say hello."},
-"grammar":{"pattern":"smile (at sb)"},
-"examples":[
-{"en":"She smiled and said good morning.","tr":"Gülümsedi ve günaydın dedi.","register":"neutral","focus":"smiled"},
-{"en":"He always smiles when he sees his dog.","tr":"Köpeğini gördüğünde hep gülümser.","register":"neutral","focus":"smiles"},
-{"en":"Smile! I'm taking a photo.","tr":"Gülümse! Fotoğraf çekiyorum.","register":"neutral","focus":"Smile"}],
-"synonyms":["grin"],"antonyms":["frown"],"collocations":["smile at sb","smile back","smile politely","smile from ear to ear"],
-"word_family":[{"lemma":"smile","pos":"n"},{"lemma":"smiley","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"gülümsemek","alt":[],"equivalence":"full","false_friend":null,"note":"Sesli gülmek = 'laugh'; sessizce gülümsemek = 'smile'. İkisini karıştırma.","mistakes":[{"wrong":"She smiled to me.","right":"She smiled at me.","why":"'Birine gülümsemek' için 'smile at' kullanılır, 'to' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"The waiter ______ at us and brought the menu.","answer":"smiled","distractors":["cried","ran","slept"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.hope.v.1","lemma":"hope","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/hoʊp/","uk":"/həʊp/"},
-"def":{"micro":"want good things to happen","short":"want something good to happen and think it may happen","long":"To want something good to happen and think that it may happen. We use it for the future: you can say 'I hope it is sunny tomorrow'."},
-"grammar":{"pattern":"hope (that) + clause / hope to + verb"},
-"examples":[
-{"en":"I hope you feel better soon.","tr":"Umarım yakında daha iyi hissedersin.","register":"neutral","focus":"hope"},
-{"en":"We hope to visit you next summer.","tr":"Önümüzdeki yaz sizi ziyaret etmeyi umuyoruz.","register":"neutral","focus":"hope"},
-{"en":"Ayşe hopes that she gets the job.","tr":"Ayşe işi alacağını umuyor.","register":"neutral","focus":"hopes"}],
-"synonyms":[],"antonyms":["fear"],"collocations":["hope for the best","hope so","hope not","hope to see you"],
-"word_family":[{"lemma":"hope","pos":"n"},{"lemma":"hopeful","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"ummak","alt":["umut etmek","dilemek"],"equivalence":"partial","false_friend":null,"note":"Gerçekleşebilecek şeyler için 'hope', gerçekleşmesi zor ya da imkânsız şeyler için 'wish' kullanılır. 'I hope you like it' = Umarım beğenirsin.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:wish"],"sensitivity":0},
-"quiz":{"cloze":"I ______ you have a great weekend!","answer":"hope","distractors":["fear","hate","doubt"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.tired.adj.1","lemma":"tired","type":"word","pos":"adj","sense_no":1,"sense_note":"needing rest","level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/taɪrd/","uk":"/taɪəd/"},
-"def":{"micro":"needing sleep or rest","short":"feeling that you need to sleep or rest","long":"Feeling that you need to sleep or rest, for example after a long day. You can also feel very tired after a lot of work or a long walk."},
-"grammar":{"pattern":"be / feel / look tired"},
-"examples":[
-{"en":"I'm so tired after work today.","tr":"Bugün işten sonra çok yorgunum.","register":"neutral","focus":"tired"},
-{"en":"The kids were tired, so we went home early.","tr":"Çocuklar yorgundu, biz de eve erken döndük.","register":"neutral","focus":"tired"},
-{"en":"She looks tired. Did she sleep well?","tr":"Yorgun görünüyor. İyi uyudu mu?","register":"neutral","focus":"tired"}],
-"synonyms":["exhausted","worn out"],"antonyms":["rested","energetic"],"collocations":["feel tired","look tired","tired eyes","tired and hungry"],
-"word_family":[{"lemma":"tire","pos":"v"},{"lemma":"tiring","pos":"adj"},{"lemma":"tiredness","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"yorgun","alt":["bitkin"],"equivalence":"full","false_friend":null,"note":"'Tired' yorgunluk demektir; uykun geldiyse 'sleepy' (uykulu) de denir.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings","health_body"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:sleepy"],"sensitivity":0},
-"quiz":{"cloze":"I only slept three hours, so I feel very ______.","answer":"tired","distractors":["happy","lucky","early"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.angry.adj.1","lemma":"angry","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈæŋɡri/","uk":"/ˈæŋɡri/"},
-"def":{"micro":"having strong bad feelings","short":"having strong bad feelings about something unfair or wrong","long":"Having strong bad feelings about something unfair or wrong, or about a person who did it. You are angry WITH a person and angry ABOUT a thing."},
-"grammar":{"pattern":"angry with sb / angry about sth"},
-"examples":[
-{"en":"Dad was angry because I came home late.","tr":"Babam geç geldiğim için kızgındı.","register":"neutral","focus":"angry"},
-{"en":"Don't be angry with me. It was an accident.","tr":"Bana kızma. Kaza oldu.","register":"neutral","focus":"angry"},
-{"en":"She got angry about the noise upstairs.","tr":"Üst kattaki gürültüye çok kızdı.","register":"neutral","focus":"angry"}],
-"synonyms":["mad","furious","cross"],"antonyms":["calm","pleased"],"collocations":["get angry","angry with sb","angry about sth","make sb angry"],
-"word_family":[{"lemma":"anger","pos":"n"},{"lemma":"angrily","pos":"adv"}],"etymology":null,
-"l1":{"tr":{"gloss":"kızgın","alt":["öfkeli","sinirli"],"equivalence":"full","false_friend":null,"note":"Günlük Türkçedeki 'sinirli' çoğu zaman 'angry' demektir; 'nervous' (gergin, heyecanlı) ile karıştırma.","mistakes":[{"wrong":"I am angry to my boss.","right":"I am angry with my boss.","why":"Birine kızmak için 'angry with' (ya da 'at') kullanılır; 'to' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:nervous"],"sensitivity":0},
-"quiz":{"cloze":"He was ______ because someone broke his phone.","answer":"angry","distractors":["excited","pleased","glad"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.afraid.adj.1","lemma":"afraid","type":"word","pos":"adj","sense_no":1,"sense_note":"feeling fear","level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/əˈfreɪd/","uk":"/əˈfreɪd/"},
-"def":{"micro":"scared of something","short":"feeling fear because you think something bad may happen","long":"Feeling fear because you think something bad may happen to you. You are afraid OF a thing or a person, or afraid TO do something."},
-"grammar":{"pattern":"afraid of sth / afraid to do sth"},
-"examples":[
-{"en":"My little sister is afraid of the dark.","tr":"Küçük kardeşim karanlıktan korkuyor.","register":"neutral","focus":"afraid"},
-{"en":"Don't be afraid. The dog is friendly.","tr":"Korkma. Köpek cana yakın.","register":"neutral","focus":"afraid"},
-{"en":"Are you afraid of flying?","tr":"Uçmaktan korkuyor musun?","register":"neutral","focus":"afraid"}],
-"synonyms":["scared","frightened"],"antonyms":["brave","fearless"],"collocations":["afraid of the dark","afraid of heights","afraid to ask","be afraid of failing"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"korkmuş","alt":["korkan","çekinen"],"equivalence":"partial","false_friend":null,"note":"'Afraid' isimden önce kullanılmaz: 'an afraid man' denmez, 'a scared man' denir. 'Be afraid of' = -den korkmak.","mistakes":[{"wrong":"She is afraid from spiders.","right":"She is afraid of spiders.","why":"Türkçedeki '-den korkmak' İngilizcede 'afraid of' olur; 'from' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:scared"],"sensitivity":0},
-"quiz":{"cloze":"Many children are ______ of the dark.","answer":"afraid","distractors":["hungry","happy","kind"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.excited.adj.1","lemma":"excited","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ɪkˈsaɪtɪd/","uk":"/ɪkˈsaɪtɪd/"},
-"def":{"micro":"happy and full of energy","short":"very happy and full of energy because something good is coming","long":"Feeling very happy and full of energy because something good is happening or will happen soon. You are excited ABOUT something."},
-"grammar":{"pattern":"excited about sth / excited to do sth"},
-"examples":[
-{"en":"I'm so excited about our trip tomorrow!","tr":"Yarınki gezimiz için çok heyecanlıyım!","register":"neutral","focus":"excited"},
-{"en":"The kids were too excited to sleep.","tr":"Çocuklar uyuyamayacak kadar heyecanlıydı.","register":"neutral","focus":"excited"},
-{"en":"Are you excited to see your cousins?","tr":"Kuzenlerini görmek için heyecanlı mısın?","register":"neutral","focus":"excited"}],
-"synonyms":["thrilled","eager"],"antonyms":["bored"],"collocations":["excited about","excited to see","get excited","so excited"],
-"word_family":[{"lemma":"excitement","pos":"n"},{"lemma":"exciting","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"heyecanlı","alt":[],"equivalence":"partial","false_friend":null,"note":"Türkçe 'heyecanlı' hem güzel hem stresli heyecan için kullanılır. 'Excited' yalnızca güzel heyecandır; sınav öncesi gerginlik için 'nervous' denir.","mistakes":[{"wrong":"I'm excited about my exam tomorrow. (= stresli)","right":"I'm nervous about my exam tomorrow.","why":"Stresli ya da gergin heyecan için 'nervous' kullanılır; 'excited' sadece güzel bir heyecandır."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:nervous"],"sensitivity":0},
-"quiz":{"cloze":"We can't wait! We are ______ about the concert on Friday.","answer":"excited","distractors":["upset","sorry","bored"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.surprised.adj.1","lemma":"surprised","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/sərˈpraɪzd/","uk":"/səˈpraɪzd/"},
-"def":{"micro":"not expecting what happened","short":"having a feeling because something happened that you did not expect","long":"Having a feeling in your mind because something happened that you did not expect. The news can be good or bad."},
-"grammar":{"pattern":"surprised (at / by / that)"},
-"examples":[
-{"en":"I was surprised to see Ali at the gym.","tr":"Ali'yi spor salonunda görünce şaşırdım.","register":"neutral","focus":"surprised"},
-{"en":"She looked surprised when we sang happy birthday.","tr":"İyi ki doğdun şarkısını söyleyince şaşırmış görünüyordu.","register":"neutral","focus":"surprised"},
-{"en":"Are you surprised by the news?","tr":"Habere şaşırdın mı?","register":"neutral","focus":"surprised"}],
-"synonyms":["amazed","shocked"],"antonyms":[],"collocations":["look surprised","surprised at","surprised to see","not surprised"],
-"word_family":[{"lemma":"surprise","pos":"n"},{"lemma":"surprising","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"şaşırmış","alt":["şaşkın"],"equivalence":"full","false_friend":null,"note":"'Surprised' = şaşıran kişi; 'surprising' = şaşırtıcı olay veya şey.","mistakes":[{"wrong":"I was surprising when I saw him.","right":"I was surprised when I saw him.","why":"Duyguyu yaşayan kişi için -ed (surprised); şaşırtan şey için -ing (surprising) kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:surprising"],"sensitivity":0},
-"quiz":{"cloze":"I was ______ to get a gift from my teacher.","answer":"surprised","distractors":["tired","angry","hungry"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.sorry.adj.1","lemma":"sorry","type":"word","pos":"adj","sense_no":1,"sense_note":"feeling bad","level":"A1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈsɑːri/","uk":"/ˈsɒri/"},
-"def":{"micro":"feeling bad about a mistake","short":"feeling bad because you hurt someone or did something wrong","long":"Feeling bad because you did something wrong or caused a problem for someone. We say 'I'm sorry' to tell them this."},
-"grammar":{"pattern":"be sorry (that) / sorry for + -ing"},
-"examples":[
-{"en":"I'm sorry I'm late. The bus was slow.","tr":"Geç kaldığım için özür dilerim. Otobüs yavaştı.","register":"neutral","focus":"sorry"},
-{"en":"He was sorry that he forgot her birthday.","tr":"Doğum gününü unuttuğu için çok pişmandı.","register":"neutral","focus":"sorry"},
-{"en":"Sorry! I didn't see you there.","tr":"Pardon! Seni orada görmedim.","register":"neutral","focus":"Sorry"}],
-"synonyms":["apologetic"],"antonyms":[],"collocations":["I'm sorry","feel sorry","sorry about that","sorry for being late"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"üzgün, pişman","alt":["özür dileyen"],"equivalence":"partial","false_friend":null,"note":"'I'm sorry' = özür dilerim / üzgünüm. Kötü bir habere karşı 'I'm sorry to hear that' = Buna üzüldüm.","mistakes":[{"wrong":"I'm sorry for I'm late.","right":"I'm sorry I'm late. / Sorry for being late.","why":"'For' kelimesinden sonra cümle gelmez; ya 'for' kullanmadan cümle kur ya da 'for + -ing' kullan."}],"mnemonic":null}},
-"tags":{"primary_topic":"emotions_feelings","topics":["emotions_feelings"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I'm ______ I broke your cup. I'll buy a new one.","answer":"sorry","distractors":["glad","pleased","ready"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.cry.v.1",
+      "lemma": "cry",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have tears",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kraɪ/",
+        "uk": "/kraɪ/"
+      },
+      "def": {
+        "micro": "have tears in your eyes",
+        "short": "have tears coming from your eyes, usually because you are sad or hurt",
+        "long": "To have tears come from your eyes, usually because you feel sad, hurt, or very happy. Many people cry at weddings and at sad films."
+      },
+      "grammar": {
+        "pattern": "cry (about / over sth)"
+      },
+      "examples": [
+        {
+          "en": "The baby started to cry in the middle of the night.",
+          "tr": "Bebek gecenin ortasında ağlamaya başladı.",
+          "register": "neutral",
+          "focus": "cry"
+        },
+        {
+          "en": "I cried when I watched the last episode.",
+          "tr": "Son bölümü izlerken ağladım.",
+          "register": "neutral",
+          "focus": "cried"
+        },
+        {
+          "en": "Don't cry. Everything will be okay.",
+          "tr": "Ağlama. Her şey yoluna girecek.",
+          "register": "neutral",
+          "focus": "cry"
+        }
+      ],
+      "synonyms": [
+        "weep",
+        "sob"
+      ],
+      "antonyms": [
+        "laugh"
+      ],
+      "collocations": [
+        "cry for help",
+        "cry with joy",
+        "burst out crying",
+        "cry over sth"
+      ],
+      "word_family": [
+        {
+          "lemma": "crying",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağlamak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Cry' bağırmak anlamına da gelebilir ('cry out'), ama günlük konuşmada neredeyse hep 'ağlamak' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I always ______ at sad movies.",
+        "answer": "cry",
+        "distractors": [
+          "sing",
+          "jump",
+          "wait"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.laugh.v.1",
+      "lemma": "laugh",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/læf/",
+        "uk": "/lɑːf/"
+      },
+      "def": {
+        "micro": "make happy sounds at a joke",
+        "short": "make happy sounds with your voice because something is funny",
+        "long": "To make a happy sound with your voice because something is funny. We often laugh at jokes, or laugh with friends."
+      },
+      "grammar": {
+        "pattern": "laugh (at sb/sth)"
+      },
+      "examples": [
+        {
+          "en": "We laughed all night at his silly jokes.",
+          "tr": "Bütün gece onun saçma şakalarına güldük.",
+          "register": "neutral",
+          "focus": "laughed"
+        },
+        {
+          "en": "Everyone laughed when the cat jumped on the table.",
+          "tr": "Kedi masaya atlayınca herkes güldü.",
+          "register": "neutral",
+          "focus": "laughed"
+        },
+        {
+          "en": "Please don't laugh at me!",
+          "tr": "Lütfen bana gülme!",
+          "register": "neutral",
+          "focus": "laugh"
+        }
+      ],
+      "synonyms": [
+        "giggle",
+        "chuckle"
+      ],
+      "antonyms": [
+        "cry"
+      ],
+      "collocations": [
+        "laugh at a joke",
+        "laugh out loud",
+        "burst out laughing",
+        "laugh with sb"
+      ],
+      "word_family": [
+        {
+          "lemma": "laughter",
+          "pos": "n"
+        },
+        {
+          "lemma": "laugh",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gülmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Laugh at sb' hem 'birine/bir şeye gülmek' hem 'alay etmek' olabilir. Birlikte gülmek için 'laugh with sb' denir.",
+          "mistakes": [
+            {
+              "wrong": "I laughed to his joke.",
+              "right": "I laughed at his joke.",
+              "why": "'Şakasına gülmek' derken İngilizcede 'laugh at' kullanılır; 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": "'Laugh' kelimesinde 'gh' 'f' gibi okunur: 'laf' denir. Komik bir lafa gülersin!"
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My brother tells funny stories, and we all ______.",
+        "answer": "laugh",
+        "distractors": [
+          "cry",
+          "shout",
+          "sleep"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.smile.v.1",
+      "lemma": "smile",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/smaɪl/",
+        "uk": "/smaɪl/"
+      },
+      "def": {
+        "micro": "look happy with your mouth",
+        "short": "turn up the corners of your mouth to show you are happy or friendly",
+        "long": "To move your mouth into a happy or friendly shape. People smile when they are glad, when they are polite, or when they say hello."
+      },
+      "grammar": {
+        "pattern": "smile (at sb)"
+      },
+      "examples": [
+        {
+          "en": "She smiled and said good morning.",
+          "tr": "Gülümsedi ve günaydın dedi.",
+          "register": "neutral",
+          "focus": "smiled"
+        },
+        {
+          "en": "He always smiles when he sees his dog.",
+          "tr": "Köpeğini gördüğünde hep gülümser.",
+          "register": "neutral",
+          "focus": "smiles"
+        },
+        {
+          "en": "Smile! I'm taking a photo.",
+          "tr": "Gülümse! Fotoğraf çekiyorum.",
+          "register": "neutral",
+          "focus": "Smile"
+        }
+      ],
+      "synonyms": [
+        "grin"
+      ],
+      "antonyms": [
+        "frown"
+      ],
+      "collocations": [
+        "smile at sb",
+        "smile back",
+        "smile politely",
+        "smile from ear to ear"
+      ],
+      "word_family": [
+        {
+          "lemma": "smile",
+          "pos": "n"
+        },
+        {
+          "lemma": "smiley",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gülümsemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sesli gülmek = 'laugh'; sessizce gülümsemek = 'smile'. İkisini karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "She smiled to me.",
+              "right": "She smiled at me.",
+              "why": "'Birine gülümsemek' için 'smile at' kullanılır, 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The waiter ______ at us and brought the menu.",
+        "answer": "smiled",
+        "distractors": [
+          "cried",
+          "ran",
+          "slept"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hope.v.1",
+      "lemma": "hope",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hoʊp/",
+        "uk": "/həʊp/"
+      },
+      "def": {
+        "micro": "want good things to happen",
+        "short": "want something good to happen and think it may happen",
+        "long": "To want something good to happen and think that it may happen. We use it for the future: you can say 'I hope it is sunny tomorrow'."
+      },
+      "grammar": {
+        "pattern": "hope (that) + clause / hope to + verb"
+      },
+      "examples": [
+        {
+          "en": "I hope you feel better soon.",
+          "tr": "Umarım yakında daha iyi hissedersin.",
+          "register": "neutral",
+          "focus": "hope"
+        },
+        {
+          "en": "We hope to visit you next summer.",
+          "tr": "Önümüzdeki yaz sizi ziyaret etmeyi umuyoruz.",
+          "register": "neutral",
+          "focus": "hope"
+        },
+        {
+          "en": "Ayşe hopes that she gets the job.",
+          "tr": "Ayşe işi alacağını umuyor.",
+          "register": "neutral",
+          "focus": "hopes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "fear"
+      ],
+      "collocations": [
+        "hope for the best",
+        "hope so",
+        "hope not",
+        "hope to see you"
+      ],
+      "word_family": [
+        {
+          "lemma": "hope",
+          "pos": "n"
+        },
+        {
+          "lemma": "hopeful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ummak",
+          "alt": [
+            "umut etmek",
+            "dilemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gerçekleşebilecek şeyler için 'hope', gerçekleşmesi zor ya da imkânsız şeyler için 'wish' kullanılır. 'I hope you like it' = Umarım beğenirsin.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:wish"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______ you have a great weekend!",
+        "answer": "hope",
+        "distractors": [
+          "fear",
+          "hate",
+          "doubt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tired.adj.1",
+      "lemma": "tired",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "needing rest",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/taɪrd/",
+        "uk": "/taɪəd/"
+      },
+      "def": {
+        "micro": "needing sleep or rest",
+        "short": "feeling that you need to sleep or rest",
+        "long": "Feeling that you need to sleep or rest, for example after a long day. You can also feel very tired after a lot of work or a long walk."
+      },
+      "grammar": {
+        "pattern": "be / feel / look tired"
+      },
+      "examples": [
+        {
+          "en": "I'm so tired after work today.",
+          "tr": "Bugün işten sonra çok yorgunum.",
+          "register": "neutral",
+          "focus": "tired"
+        },
+        {
+          "en": "The kids were tired, so we went home early.",
+          "tr": "Çocuklar yorgundu, biz de eve erken döndük.",
+          "register": "neutral",
+          "focus": "tired"
+        },
+        {
+          "en": "She looks tired. Did she sleep well?",
+          "tr": "Yorgun görünüyor. İyi uyudu mu?",
+          "register": "neutral",
+          "focus": "tired"
+        }
+      ],
+      "synonyms": [
+        "exhausted",
+        "worn out"
+      ],
+      "antonyms": [
+        "rested",
+        "energetic"
+      ],
+      "collocations": [
+        "feel tired",
+        "look tired",
+        "tired eyes",
+        "tired and hungry"
+      ],
+      "word_family": [
+        {
+          "lemma": "tire",
+          "pos": "v"
+        },
+        {
+          "lemma": "tiring",
+          "pos": "adj"
+        },
+        {
+          "lemma": "tiredness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yorgun",
+          "alt": [
+            "bitkin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Tired' yorgunluk demektir; uykun geldiyse 'sleepy' (uykulu) de denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:sleepy"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I only slept three hours, so I feel very ______.",
+        "answer": "tired",
+        "distractors": [
+          "happy",
+          "lucky",
+          "early"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.angry.adj.1",
+      "lemma": "angry",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæŋɡri/",
+        "uk": "/ˈæŋɡri/"
+      },
+      "def": {
+        "micro": "having strong bad feelings",
+        "short": "having strong bad feelings about something unfair or wrong",
+        "long": "Having strong bad feelings about something unfair or wrong, or about a person who did it. You are angry WITH a person and angry ABOUT a thing."
+      },
+      "grammar": {
+        "pattern": "angry with sb / angry about sth"
+      },
+      "examples": [
+        {
+          "en": "Dad was angry because I came home late.",
+          "tr": "Babam geç geldiğim için kızgındı.",
+          "register": "neutral",
+          "focus": "angry"
+        },
+        {
+          "en": "Don't be angry with me. It was an accident.",
+          "tr": "Bana kızma. Kaza oldu.",
+          "register": "neutral",
+          "focus": "angry"
+        },
+        {
+          "en": "She got angry about the noise upstairs.",
+          "tr": "Üst kattaki gürültüye çok kızdı.",
+          "register": "neutral",
+          "focus": "angry"
+        }
+      ],
+      "synonyms": [
+        "mad",
+        "furious",
+        "cross"
+      ],
+      "antonyms": [
+        "calm",
+        "pleased"
+      ],
+      "collocations": [
+        "get angry",
+        "angry with sb",
+        "angry about sth",
+        "make sb angry"
+      ],
+      "word_family": [
+        {
+          "lemma": "anger",
+          "pos": "n"
+        },
+        {
+          "lemma": "angrily",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kızgın",
+          "alt": [
+            "öfkeli",
+            "sinirli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük Türkçedeki 'sinirli' çoğu zaman 'angry' demektir; 'nervous' (gergin, heyecanlı) ile karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "I am angry to my boss.",
+              "right": "I am angry with my boss.",
+              "why": "Birine kızmak için 'angry with' (ya da 'at') kullanılır; 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:nervous"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He was ______ because someone broke his phone.",
+        "answer": "angry",
+        "distractors": [
+          "excited",
+          "pleased",
+          "glad"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.afraid.adj.1",
+      "lemma": "afraid",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "feeling fear",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈfreɪd/",
+        "uk": "/əˈfreɪd/"
+      },
+      "def": {
+        "micro": "scared of something",
+        "short": "feeling fear because you think something bad may happen",
+        "long": "Feeling fear because you think something bad may happen to you. You are afraid OF a thing or a person, or afraid TO do something."
+      },
+      "grammar": {
+        "pattern": "afraid of sth / afraid to do sth"
+      },
+      "examples": [
+        {
+          "en": "My little sister is afraid of the dark.",
+          "tr": "Küçük kardeşim karanlıktan korkuyor.",
+          "register": "neutral",
+          "focus": "afraid"
+        },
+        {
+          "en": "Don't be afraid. The dog is friendly.",
+          "tr": "Korkma. Köpek cana yakın.",
+          "register": "neutral",
+          "focus": "afraid"
+        },
+        {
+          "en": "Are you afraid of flying?",
+          "tr": "Uçmaktan korkuyor musun?",
+          "register": "neutral",
+          "focus": "afraid"
+        }
+      ],
+      "synonyms": [
+        "scared",
+        "frightened"
+      ],
+      "antonyms": [
+        "brave",
+        "fearless"
+      ],
+      "collocations": [
+        "afraid of the dark",
+        "afraid of heights",
+        "afraid to ask",
+        "be afraid of failing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "korkmuş",
+          "alt": [
+            "korkan",
+            "çekinen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Afraid' isimden önce kullanılmaz: 'an afraid man' denmez, 'a scared man' denir. 'Be afraid of' = -den korkmak.",
+          "mistakes": [
+            {
+              "wrong": "She is afraid from spiders.",
+              "right": "She is afraid of spiders.",
+              "why": "Türkçedeki '-den korkmak' İngilizcede 'afraid of' olur; 'from' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:scared"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many children are ______ of the dark.",
+        "answer": "afraid",
+        "distractors": [
+          "hungry",
+          "happy",
+          "kind"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.excited.adj.1",
+      "lemma": "excited",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈsaɪtɪd/",
+        "uk": "/ɪkˈsaɪtɪd/"
+      },
+      "def": {
+        "micro": "happy and full of energy",
+        "short": "very happy and full of energy because something good is coming",
+        "long": "Feeling very happy and full of energy because something good is happening or will happen soon. You are excited ABOUT something."
+      },
+      "grammar": {
+        "pattern": "excited about sth / excited to do sth"
+      },
+      "examples": [
+        {
+          "en": "I'm so excited about our trip tomorrow!",
+          "tr": "Yarınki gezimiz için çok heyecanlıyım!",
+          "register": "neutral",
+          "focus": "excited"
+        },
+        {
+          "en": "The kids were too excited to sleep.",
+          "tr": "Çocuklar uyuyamayacak kadar heyecanlıydı.",
+          "register": "neutral",
+          "focus": "excited"
+        },
+        {
+          "en": "Are you excited to see your cousins?",
+          "tr": "Kuzenlerini görmek için heyecanlı mısın?",
+          "register": "neutral",
+          "focus": "excited"
+        }
+      ],
+      "synonyms": [
+        "thrilled",
+        "eager"
+      ],
+      "antonyms": [
+        "bored"
+      ],
+      "collocations": [
+        "excited about",
+        "excited to see",
+        "get excited",
+        "so excited"
+      ],
+      "word_family": [
+        {
+          "lemma": "excitement",
+          "pos": "n"
+        },
+        {
+          "lemma": "exciting",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "heyecanlı",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçe 'heyecanlı' hem güzel hem stresli heyecan için kullanılır. 'Excited' yalnızca güzel heyecandır; sınav öncesi gerginlik için 'nervous' denir.",
+          "mistakes": [
+            {
+              "wrong": "I'm excited about my exam tomorrow. (= stresli)",
+              "right": "I'm nervous about my exam tomorrow.",
+              "why": "Stresli ya da gergin heyecan için 'nervous' kullanılır; 'excited' sadece güzel bir heyecandır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:nervous"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We can't wait! We are ______ about the concert on Friday.",
+        "answer": "excited",
+        "distractors": [
+          "upset",
+          "sorry",
+          "bored"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.surprised.adj.1",
+      "lemma": "surprised",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sərˈpraɪzd/",
+        "uk": "/səˈpraɪzd/"
+      },
+      "def": {
+        "micro": "not expecting what happened",
+        "short": "having a feeling because something happened that you did not expect",
+        "long": "Having a feeling in your mind because something happened that you did not expect. The news can be good or bad."
+      },
+      "grammar": {
+        "pattern": "surprised (at / by / that)"
+      },
+      "examples": [
+        {
+          "en": "I was surprised to see Ali at the gym.",
+          "tr": "Ali'yi spor salonunda görünce şaşırdım.",
+          "register": "neutral",
+          "focus": "surprised"
+        },
+        {
+          "en": "She looked surprised when we sang happy birthday.",
+          "tr": "İyi ki doğdun şarkısını söyleyince şaşırmış görünüyordu.",
+          "register": "neutral",
+          "focus": "surprised"
+        },
+        {
+          "en": "Are you surprised by the news?",
+          "tr": "Habere şaşırdın mı?",
+          "register": "neutral",
+          "focus": "surprised"
+        }
+      ],
+      "synonyms": [
+        "amazed",
+        "shocked"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "look surprised",
+        "surprised at",
+        "surprised to see",
+        "not surprised"
+      ],
+      "word_family": [
+        {
+          "lemma": "surprise",
+          "pos": "n"
+        },
+        {
+          "lemma": "surprising",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şaşırmış",
+          "alt": [
+            "şaşkın"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Surprised' = şaşıran kişi; 'surprising' = şaşırtıcı olay veya şey.",
+          "mistakes": [
+            {
+              "wrong": "I was surprising when I saw him.",
+              "right": "I was surprised when I saw him.",
+              "why": "Duyguyu yaşayan kişi için -ed (surprised); şaşırtan şey için -ing (surprising) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:surprising"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I was ______ to get a gift from my teacher.",
+        "answer": "surprised",
+        "distractors": [
+          "tired",
+          "angry",
+          "hungry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sorry.adj.1",
+      "lemma": "sorry",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "feeling bad",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɑːri/",
+        "uk": "/ˈsɒri/"
+      },
+      "def": {
+        "micro": "feeling bad about a mistake",
+        "short": "feeling bad because you hurt someone or did something wrong",
+        "long": "Feeling bad because you did something wrong or caused a problem for someone. We say 'I'm sorry' to tell them this."
+      },
+      "grammar": {
+        "pattern": "be sorry (that) / sorry for + -ing"
+      },
+      "examples": [
+        {
+          "en": "I'm sorry I'm late. The bus was slow.",
+          "tr": "Geç kaldığım için özür dilerim. Otobüs yavaştı.",
+          "register": "neutral",
+          "focus": "sorry"
+        },
+        {
+          "en": "He was sorry that he forgot her birthday.",
+          "tr": "Doğum gününü unuttuğu için çok pişmandı.",
+          "register": "neutral",
+          "focus": "sorry"
+        },
+        {
+          "en": "Sorry! I didn't see you there.",
+          "tr": "Pardon! Seni orada görmedim.",
+          "register": "neutral",
+          "focus": "Sorry"
+        }
+      ],
+      "synonyms": [
+        "apologetic"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "I'm sorry",
+        "feel sorry",
+        "sorry about that",
+        "sorry for being late"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üzgün, pişman",
+          "alt": [
+            "özür dileyen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'I'm sorry' = özür dilerim / üzgünüm. Kötü bir habere karşı 'I'm sorry to hear that' = Buna üzüldüm.",
+          "mistakes": [
+            {
+              "wrong": "I'm sorry for I'm late.",
+              "right": "I'm sorry I'm late. / Sorry for being late.",
+              "why": "'For' kelimesinden sonra cümle gelmez; ya 'for' kullanmadan cümle kur ya da 'for + -ing' kullan."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm ______ I broke your cup. I'll buy a new one.",
+        "answer": "sorry",
+        "distractors": [
+          "glad",
+          "pleased",
+          "ready"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

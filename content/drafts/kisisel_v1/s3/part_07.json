@@ -1,156 +1,1103 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{"id":"en.excuse.n.1","lemma":"excuse","type":"word","pos":"n","sense_no":1,"sense_note":"reason you give","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ɪkˈskjuːs/","uk":"/ɪkˈskjuːs/"},
-"def":{"micro":"a reason for a mistake","short":"a reason you give for something wrong you did or did not do","long":"A reason you give, true or not, to explain why you did something wrong or did not do something. People often say 'That's just an excuse!' when they do not believe it."},
-"grammar":{"pattern":"an excuse for (doing) sth"},
-"examples":[
-{"en":"That's not a good excuse for being late.","tr":"Bu, geç kalmak için iyi bir bahane değil.","register":"neutral","focus":"excuse"},
-{"en":"He always has an excuse for not doing homework.","tr":"Ödev yapmamak için hep bir bahanesi var.","register":"neutral","focus":"excuse"},
-{"en":"I need an excuse to leave this boring party.","tr":"Bu sıkıcı partiden çıkmak için bir bahaneye ihtiyacım var.","register":"neutral","focus":"excuse"}],
-"synonyms":["reason","pretext"],"antonyms":[],"collocations":["a good excuse","make an excuse","a poor excuse","no excuse for"],
-"word_family":[{"lemma":"excuse","pos":"v"}],"etymology":null,
-"l1":{"tr":{"gloss":"bahane","alt":["mazeret"],"equivalence":"full","false_friend":null,"note":"İsim 'excuse' /ɪkˈskjuːs/ = bahane, mazeret. Fiil 'excuse' /ɪkˈskjuːz/ = bağışlamak; 'Excuse me' = Affedersiniz / Pardon.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:reason"],"sensitivity":0},
-"quiz":{"cloze":"That is not a good ______ for being late.","answer":"excuse","distractors":["song","plan","trip"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.blame.v.1","lemma":"blame","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/bleɪm/","uk":"/bleɪm/"},
-"def":{"micro":"say someone caused a problem","short":"say that someone or something did a bad thing or caused a problem","long":"To say or think that a person or thing caused something bad. You blame someone FOR a problem, or you blame a problem ON someone."},
-"grammar":{"pattern":"blame sb for sth / blame sth on sb"},
-"examples":[
-{"en":"Don't blame me. I wasn't there.","tr":"Beni suçlama. Orada değildim.","register":"neutral","focus":"blame"},
-{"en":"He blamed the traffic for being late.","tr":"Geç kaldığı için trafiği suçladı.","register":"neutral","focus":"blamed"},
-{"en":"She blames herself for the accident.","tr":"Kaza için kendini suçluyor.","register":"neutral","focus":"blames"}],
-"synonyms":["accuse","hold responsible"],"antonyms":["forgive"],"collocations":["blame sb for sth","blame it on","blame yourself","to blame"],
-"word_family":[{"lemma":"blame","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"suçlamak","alt":["suçu atmak","sorumlu tutmak"],"equivalence":"full","false_friend":null,"note":"'Blame sb FOR sth' = birini bir şey yüzünden suçlamak; 'blame sth ON sb' = suçu birine atmak. Türkçedeki '-den dolayı suçlamak' için 'for' kullanılır.","mistakes":[{"wrong":"She blamed me about the mistake.","right":"She blamed me for the mistake.","why":"'Bir şey yüzünden suçlamak' için 'blame FOR'; 'about' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Don't ______ me for the mistake. I didn't do it.","answer":"blame","distractors":["thank","invite","tell"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.date.n.1","lemma":"date","type":"word","pos":"n","sense_no":1,"sense_note":"romantic meeting","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/deɪt/","uk":"/deɪt/"},
-"def":{"micro":"a romantic meeting","short":"a planned time when two people meet because they like each other romantically","long":"A planned time when two people meet and spend time together because they like each other in a romantic way, for example at a restaurant or the cinema."},
-"grammar":{"pattern":"go on a date (with sb)"},
-"examples":[
-{"en":"I have a date on Friday night.","tr":"Cuma akşamı bir randevum var.","register":"neutral","focus":"date"},
-{"en":"They went on a date to the cinema.","tr":"Randevu için sinemaya gittiler.","register":"neutral","focus":"date"},
-{"en":"How was your date with Elif?","tr":"Elif'le randevun nasıldı?","register":"neutral","focus":"date"}],
-"synonyms":[],"antonyms":[],"collocations":["go on a date","first date","on a date","a date night","blind date"],
-"word_family":[{"lemma":"date","pos":"v"},{"lemma":"dating","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"romantik buluşma","alt":["randevu"],"equivalence":"partial","false_friend":null,"note":"Türkçe 'randevu' hem doktor randevusu hem romantik buluşma demektir. İngilizcede doktor randevusu 'appointment', romantik buluşma 'date' olur.","mistakes":[{"wrong":"I have a date at the dentist.","right":"I have an appointment at the dentist.","why":"'Date' romantik buluşmadır; doktor, diş hekimi gibi randevular için 'appointment' kullanılır."}],"mnemonic":"'Date' tarih demek. Takvimde günü belirlenen romantik buluşmaya da zamanla 'date' denmeye başlandı."}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:appointment"],"sensitivity":0},
-"quiz":{"cloze":"Tomorrow night I'm going on a ______ with Elif. I really like her.","answer":"date","distractors":["lesson","meeting","salary"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.hug.v.1","lemma":"hug","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/hʌɡ/","uk":"/hʌɡ/"},
-"def":{"micro":"hold someone in your arms","short":"put your arms around someone to show love or friendship","long":"To put your arms around someone and hold them close, to show love, friendship, or comfort. People often hug when they meet or say goodbye."},
-"grammar":{"pattern":"hug sb"},
-"examples":[
-{"en":"She hugged her mother at the airport.","tr":"Havalimanında annesine sarıldı.","register":"neutral","focus":"hugged"},
-{"en":"Can I hug you? I missed you so much.","tr":"Sana sarılabilir miyim? Seni çok özledim.","register":"neutral","focus":"hug"},
-{"en":"The kids hugged their grandpa and said goodbye.","tr":"Çocuklar dedelerine sarılıp vedalaştı.","register":"neutral","focus":"hugged"}],
-"synonyms":["embrace","cuddle"],"antonyms":[],"collocations":["hug tightly","hug sb goodbye","hug each other","hug a friend"],
-"word_family":[{"lemma":"hug","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"sarılmak","alt":["kucaklamak"],"equivalence":"full","false_friend":null,"note":"'Hug' = sarılmak. Öpmek için 'kiss' kullanılır. 'Hug' isim olarak da kullanılır: 'Give me a hug!' = Bana sarıl!","mistakes":[{"wrong":"She hugged to her friend.","right":"She hugged her friend.","why":"Türkçede 'birine sarılmak' deriz ama 'hug' doğrudan nesne alır; 'to' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship","family_relationships"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"When I came home, my daughter ran to me and ______ me.","answer":"hugged","distractors":["painted","cooked","wore"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.couple.n.1","lemma":"couple","type":"word","pos":"n","sense_no":1,"sense_note":"two partners","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈkʌpəl/","uk":"/ˈkʌpəl/"},
-"def":{"micro":"two people in a relationship","short":"two people who are married or in a romantic relationship","long":"Two people who are married or who have a romantic relationship. A couple may live together, or they may not."},
-"grammar":null,
-"examples":[
-{"en":"They are a lovely young couple.","tr":"Çok sevimli genç bir çift.","register":"neutral","focus":"couple"},
-{"en":"The couple next door has two cats.","tr":"Yan dairedeki çiftin iki kedisi var.","register":"neutral","focus":"couple"},
-{"en":"Ali and Elif have been a couple for three years.","tr":"Ali ile Elif üç yıldır birlikteler.","register":"neutral","focus":"couple"}],
-"synonyms":["pair"],"antonyms":[],"collocations":["a married couple","a young couple","an elderly couple","a happy couple"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"çift","alt":["sevgililer","karı koca"],"equivalence":"partial","false_friend":null,"note":"'A couple of' = birkaç / iki (a couple of days = birkaç gün); bu kartta 'couple' evli ya da sevgili olan iki kişidir.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship","family_relationships"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:pair"],"sensitivity":0},
-"quiz":{"cloze":"That ______ has been married for fifty years.","answer":"couple","distractors":["team","crowd","family"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.crush.n.1","lemma":"crush","type":"word","pos":"n","sense_no":1,"sense_note":"romantic feeling","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/krʌʃ/","uk":"/krʌʃ/"},
-"def":{"micro":"strong feelings for someone","short":"a strong feeling of love for someone, often secret and not for long","long":"A strong feeling of love for someone, usually not for long, often when you are young. You usually do not tell the person about it."},
-"grammar":{"pattern":"have a crush on sb"},
-"examples":[
-{"en":"I have a crush on my classmate.","tr":"Sınıf arkadaşımdan hoşlanıyorum.","register":"informal","focus":"crush"},
-{"en":"Everyone knows he has a crush on Elif.","tr":"Herkes onun Elif'ten hoşlandığını biliyor.","register":"informal","focus":"crush"},
-{"en":"Sam was my first crush in high school.","tr":"Sam, lisedeki ilk platonik aşkımdı.","register":"informal","focus":"crush"}],
-"synonyms":["infatuation"],"antonyms":[],"collocations":["have a crush on","a secret crush","a big crush","my crush"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"hoşlanma","alt":["platonik aşk","göz ağrısı"],"equivalence":"partial","false_friend":null,"note":"'Have a crush on sb' = birinden hoşlanmak, ona platonik âşık olmak. 'My crush' = hoşlandığım kişi. Sevgili (boyfriend / girlfriend) değildir.","mistakes":[{"wrong":"I have a crush for him.","right":"I have a crush on him.","why":"'Crush' ile 'on' kullanılır; 'for' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship"],"exams":[],"register":"informal","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I've had a ______ on my coworker for months.","answer":"crush","distractors":["plan","laugh","cold"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.trust.v.1","lemma":"trust","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/trʌst/","uk":"/trʌst/"},
-"def":{"micro":"believe someone is honest","short":"believe that someone is honest and will not hurt you or let you down","long":"To believe that someone is honest and good, and that they will not hurt you or let you down. You can trust a person, or trust what they say."},
-"grammar":{"pattern":"trust sb / trust sb to do sth"},
-"examples":[
-{"en":"I trust my best friend completely.","tr":"En yakın arkadaşıma tamamen güveniyorum.","register":"neutral","focus":"trust"},
-{"en":"You can trust me. I won't tell anyone.","tr":"Bana güvenebilirsin. Kimseye söylemem.","register":"neutral","focus":"trust"},
-{"en":"Don't trust everything you read online.","tr":"İnternette okuduğun her şeye güvenme.","register":"neutral","focus":"trust"}],
-"synonyms":["believe","rely on"],"antonyms":["doubt","distrust"],"collocations":["trust sb completely","trust your instincts","trust sb with sth","can't trust"],
-"word_family":[{"lemma":"trust","pos":"n"},{"lemma":"trustworthy","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"güvenmek","alt":["inanmak"],"equivalence":"full","false_friend":null,"note":"'Trust' isim olarak da 'güven' demektir: 'I have trust in you'. 'Güvenilir' = 'reliable' ya da 'trustworthy'.","mistakes":[{"wrong":"I trust to him.","right":"I trust him.","why":"'Ona güveniyorum' derken 'trust' doğrudan nesne alır; 'to' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship","personality"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I can't ______ him with my money. He lies all the time.","answer":"trust","distractors":["ask","miss","follow"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.engaged.adj.1","lemma":"engaged","type":"word","pos":"adj","sense_no":1,"sense_note":"going to marry","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ɪnˈɡeɪdʒd/","uk":"/ɪnˈɡeɪdʒd/"},
-"def":{"micro":"promised to get married","short":"having agreed to marry someone, before the wedding","long":"Having formally agreed to marry someone. An engaged couple often wears rings and starts to plan a wedding."},
-"grammar":{"pattern":"engaged (to sb)"},
-"examples":[
-{"en":"My sister got engaged last month.","tr":"Kız kardeşim geçen ay nişanlandı.","register":"neutral","focus":"engaged"},
-{"en":"They are engaged and plan to marry next summer.","tr":"Nişanlılar ve önümüzdeki yaz evlenmeyi planlıyorlar.","register":"neutral","focus":"engaged"},
-{"en":"Are you engaged? That's a beautiful ring!","tr":"Nişanlı mısın? Çok güzel bir yüzük!","register":"neutral","focus":"engaged"}],
-"synonyms":["betrothed"],"antonyms":["single"],"collocations":["get engaged","engaged to","engaged couple","recently engaged"],
-"word_family":[{"lemma":"engagement","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"nişanlı","alt":[],"equivalence":"full","false_friend":null,"note":"'Engaged' nişanlı, 'married' evli demektir. 'The line is engaged' gibi bir kullanımda 'meşgul' anlamına da gelir (İngiliz İngilizcesi), ama bu başka bir anlamdır.","mistakes":[{"wrong":"I'm engaged with my boyfriend.","right":"I'm engaged to my boyfriend.","why":"'Biriyle nişanlı olmak' için 'engaged TO sb'; 'with' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship","culture_celebrations"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Ayşe and Kerem are ______ and will marry in June.","answer":"engaged","distractors":["divorced","single","retired"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.forgive.v.1","lemma":"forgive","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/fərˈɡɪv/","uk":"/fəˈɡɪv/"},
-"def":{"micro":"stop being angry at someone","short":"stop being angry with someone who did something wrong","long":"To stop being angry with someone who did something wrong, and not want to punish them. People often say 'I forgive you' after someone says sorry."},
-"grammar":{"pattern":"forgive sb (for sth)"},
-"examples":[
-{"en":"Please forgive me. I didn't mean it.","tr":"Lütfen beni affet. Kastım bu değildi.","register":"neutral","focus":"forgive"},
-{"en":"She forgave her brother for breaking her phone.","tr":"Telefonunu kırdığı için kardeşini affetti.","register":"neutral","focus":"forgave"},
-{"en":"I can't forgive him for lying to me.","tr":"Bana yalan söylediği için onu affedemem.","register":"neutral","focus":"forgive"}],
-"synonyms":["pardon"],"antonyms":["blame"],"collocations":["forgive sb for sth","forgive and forget","hard to forgive","never forgive"],
-"word_family":[{"lemma":"forgiveness","pos":"n"},{"lemma":"forgiving","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"affetmek","alt":["bağışlamak"],"equivalence":"full","false_friend":null,"note":"Düzensiz fiil: forgive - forgave - forgiven. 'Excuse me' = Affedersiniz (nezaket); 'forgive' ise gerçek bir hatayı affetmektir.","mistakes":[{"wrong":"I forgave him about the lie.","right":"I forgave him for the lie.","why":"'Bir şey için affetmek' → 'forgive sb FOR sth'; 'about' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I'm sorry I forgot your birthday. Please ______ me.","answer":"forgive","distractors":["invite","teach","follow"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.loyal.adj.1","lemma":"loyal","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈlɔɪəl/","uk":"/ˈlɔɪəl/"},
-"def":{"micro":"always on your side","short":"always supporting your friends, family, or team, even when it is difficult","long":"Always supporting your friends, family, country, or team, even when times are hard. A loyal friend stays with you, and a loyal customer keeps coming back."},
-"grammar":{"pattern":"loyal (to sb/sth)"},
-"examples":[
-{"en":"Dogs are loyal to their owners.","tr":"Köpekler sahiplerine sadıktır.","register":"neutral","focus":"loyal"},
-{"en":"Ali has been a loyal friend for many years.","tr":"Ali yıllardır sadık bir dost.","register":"neutral","focus":"loyal"},
-{"en":"She is loyal to her company, so she never left.","tr":"Şirketine sadık, bu yüzden hiç ayrılmadı.","register":"neutral","focus":"loyal"}],
-"synonyms":["faithful","devoted"],"antonyms":["disloyal"],"collocations":["loyal to","a loyal friend","loyal customer","fiercely loyal"],
-"word_family":[{"lemma":"loyalty","pos":"n"},{"lemma":"loyally","pos":"adv"}],"etymology":null,
-"l1":{"tr":{"gloss":"sadık","alt":["vefalı","bağlı"],"equivalence":"full","false_friend":null,"note":"'Loyal' yanında durmak ve bağlı kalmaktır. Türkçede 'vefalı' (iyiliği unutmayan) ve 'sadık' (bağlı) ikisini de karşılar.","mistakes":[{"wrong":"He is loyal with his friends.","right":"He is loyal to his friends.","why":"'-e sadık olmak' için 'loyal TO'; 'with' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"love_friendship","topics":["love_friendship","personality"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"A ______ friend always stays with you in bad times.","answer":"loyal","distractors":["selfish","mean","rude"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.excuse.n.1",
+      "lemma": "excuse",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "reason you give",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈskjuːs/",
+        "uk": "/ɪkˈskjuːs/"
+      },
+      "def": {
+        "micro": "a reason for a mistake",
+        "short": "a reason you give for something wrong you did or did not do",
+        "long": "A reason you give, true or not, to explain why you did something wrong or did not do something. People often say 'That's just an excuse!' when they do not believe it."
+      },
+      "grammar": {
+        "pattern": "an excuse for (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "That's not a good excuse for being late.",
+          "tr": "Bu, geç kalmak için iyi bir bahane değil.",
+          "register": "neutral",
+          "focus": "excuse"
+        },
+        {
+          "en": "He always has an excuse for not doing homework.",
+          "tr": "Ödev yapmamak için hep bir bahanesi var.",
+          "register": "neutral",
+          "focus": "excuse"
+        },
+        {
+          "en": "I need an excuse to leave this boring party.",
+          "tr": "Bu sıkıcı partiden çıkmak için bir bahaneye ihtiyacım var.",
+          "register": "neutral",
+          "focus": "excuse"
+        }
+      ],
+      "synonyms": [
+        "reason",
+        "pretext"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a good excuse",
+        "make an excuse",
+        "a poor excuse",
+        "no excuse for"
+      ],
+      "word_family": [
+        {
+          "lemma": "excuse",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bahane",
+          "alt": [
+            "mazeret"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim 'excuse' /ɪkˈskjuːs/ = bahane, mazeret. Fiil 'excuse' /ɪkˈskjuːz/ = bağışlamak; 'Excuse me' = Affedersiniz / Pardon.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:reason"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "That is not a good ______ for being late.",
+        "answer": "excuse",
+        "distractors": [
+          "song",
+          "plan",
+          "trip"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.blame.v.1",
+      "lemma": "blame",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bleɪm/",
+        "uk": "/bleɪm/"
+      },
+      "def": {
+        "micro": "say someone caused a problem",
+        "short": "say that someone or something did a bad thing or caused a problem",
+        "long": "To say or think that a person or thing caused something bad. You blame someone FOR a problem, or you blame a problem ON someone."
+      },
+      "grammar": {
+        "pattern": "blame sb for sth / blame sth on sb"
+      },
+      "examples": [
+        {
+          "en": "Don't blame me. I wasn't there.",
+          "tr": "Beni suçlama. Orada değildim.",
+          "register": "neutral",
+          "focus": "blame"
+        },
+        {
+          "en": "He blamed the traffic for being late.",
+          "tr": "Geç kaldığı için trafiği suçladı.",
+          "register": "neutral",
+          "focus": "blamed"
+        },
+        {
+          "en": "She blames herself for the accident.",
+          "tr": "Kaza için kendini suçluyor.",
+          "register": "neutral",
+          "focus": "blames"
+        }
+      ],
+      "synonyms": [
+        "accuse",
+        "hold responsible"
+      ],
+      "antonyms": [
+        "forgive"
+      ],
+      "collocations": [
+        "blame sb for sth",
+        "blame it on",
+        "blame yourself",
+        "to blame"
+      ],
+      "word_family": [
+        {
+          "lemma": "blame",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "suçlamak",
+          "alt": [
+            "suçu atmak",
+            "sorumlu tutmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Blame sb FOR sth' = birini bir şey yüzünden suçlamak; 'blame sth ON sb' = suçu birine atmak. Türkçedeki '-den dolayı suçlamak' için 'for' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "She blamed me about the mistake.",
+              "right": "She blamed me for the mistake.",
+              "why": "'Bir şey yüzünden suçlamak' için 'blame FOR'; 'about' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't ______ me for the mistake. I didn't do it.",
+        "answer": "blame",
+        "distractors": [
+          "thank",
+          "invite",
+          "tell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.date.n.1",
+      "lemma": "date",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "romantic meeting",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/deɪt/",
+        "uk": "/deɪt/"
+      },
+      "def": {
+        "micro": "a romantic meeting",
+        "short": "a planned time when two people meet because they like each other romantically",
+        "long": "A planned time when two people meet and spend time together because they like each other in a romantic way, for example at a restaurant or the cinema."
+      },
+      "grammar": {
+        "pattern": "go on a date (with sb)"
+      },
+      "examples": [
+        {
+          "en": "I have a date on Friday night.",
+          "tr": "Cuma akşamı bir randevum var.",
+          "register": "neutral",
+          "focus": "date"
+        },
+        {
+          "en": "They went on a date to the cinema.",
+          "tr": "Randevu için sinemaya gittiler.",
+          "register": "neutral",
+          "focus": "date"
+        },
+        {
+          "en": "How was your date with Elif?",
+          "tr": "Elif'le randevun nasıldı?",
+          "register": "neutral",
+          "focus": "date"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go on a date",
+        "first date",
+        "on a date",
+        "a date night",
+        "blind date"
+      ],
+      "word_family": [
+        {
+          "lemma": "date",
+          "pos": "v"
+        },
+        {
+          "lemma": "dating",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "romantik buluşma",
+          "alt": [
+            "randevu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçe 'randevu' hem doktor randevusu hem romantik buluşma demektir. İngilizcede doktor randevusu 'appointment', romantik buluşma 'date' olur.",
+          "mistakes": [
+            {
+              "wrong": "I have a date at the dentist.",
+              "right": "I have an appointment at the dentist.",
+              "why": "'Date' romantik buluşmadır; doktor, diş hekimi gibi randevular için 'appointment' kullanılır."
+            }
+          ],
+          "mnemonic": "'Date' tarih demek. Takvimde günü belirlenen romantik buluşmaya da zamanla 'date' denmeye başlandı."
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:appointment"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Tomorrow night I'm going on a ______ with Elif. I really like her.",
+        "answer": "date",
+        "distractors": [
+          "lesson",
+          "meeting",
+          "salary"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hug.v.1",
+      "lemma": "hug",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hʌɡ/",
+        "uk": "/hʌɡ/"
+      },
+      "def": {
+        "micro": "hold someone in your arms",
+        "short": "put your arms around someone to show love or friendship",
+        "long": "To put your arms around someone and hold them close, to show love, friendship, or comfort. People often hug when they meet or say goodbye."
+      },
+      "grammar": {
+        "pattern": "hug sb"
+      },
+      "examples": [
+        {
+          "en": "She hugged her mother at the airport.",
+          "tr": "Havalimanında annesine sarıldı.",
+          "register": "neutral",
+          "focus": "hugged"
+        },
+        {
+          "en": "Can I hug you? I missed you so much.",
+          "tr": "Sana sarılabilir miyim? Seni çok özledim.",
+          "register": "neutral",
+          "focus": "hug"
+        },
+        {
+          "en": "The kids hugged their grandpa and said goodbye.",
+          "tr": "Çocuklar dedelerine sarılıp vedalaştı.",
+          "register": "neutral",
+          "focus": "hugged"
+        }
+      ],
+      "synonyms": [
+        "embrace",
+        "cuddle"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "hug tightly",
+        "hug sb goodbye",
+        "hug each other",
+        "hug a friend"
+      ],
+      "word_family": [
+        {
+          "lemma": "hug",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sarılmak",
+          "alt": [
+            "kucaklamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Hug' = sarılmak. Öpmek için 'kiss' kullanılır. 'Hug' isim olarak da kullanılır: 'Give me a hug!' = Bana sarıl!",
+          "mistakes": [
+            {
+              "wrong": "She hugged to her friend.",
+              "right": "She hugged her friend.",
+              "why": "Türkçede 'birine sarılmak' deriz ama 'hug' doğrudan nesne alır; 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I came home, my daughter ran to me and ______ me.",
+        "answer": "hugged",
+        "distractors": [
+          "painted",
+          "cooked",
+          "wore"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.couple.n.1",
+      "lemma": "couple",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "two partners",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌpəl/",
+        "uk": "/ˈkʌpəl/"
+      },
+      "def": {
+        "micro": "two people in a relationship",
+        "short": "two people who are married or in a romantic relationship",
+        "long": "Two people who are married or who have a romantic relationship. A couple may live together, or they may not."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "They are a lovely young couple.",
+          "tr": "Çok sevimli genç bir çift.",
+          "register": "neutral",
+          "focus": "couple"
+        },
+        {
+          "en": "The couple next door has two cats.",
+          "tr": "Yan dairedeki çiftin iki kedisi var.",
+          "register": "neutral",
+          "focus": "couple"
+        },
+        {
+          "en": "Ali and Elif have been a couple for three years.",
+          "tr": "Ali ile Elif üç yıldır birlikteler.",
+          "register": "neutral",
+          "focus": "couple"
+        }
+      ],
+      "synonyms": [
+        "pair"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a married couple",
+        "a young couple",
+        "an elderly couple",
+        "a happy couple"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çift",
+          "alt": [
+            "sevgililer",
+            "karı koca"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'A couple of' = birkaç / iki (a couple of days = birkaç gün); bu kartta 'couple' evli ya da sevgili olan iki kişidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:pair"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "That ______ has been married for fifty years.",
+        "answer": "couple",
+        "distractors": [
+          "team",
+          "crowd",
+          "family"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.crush.n.1",
+      "lemma": "crush",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "romantic feeling",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/krʌʃ/",
+        "uk": "/krʌʃ/"
+      },
+      "def": {
+        "micro": "strong feelings for someone",
+        "short": "a strong feeling of love for someone, often secret and not for long",
+        "long": "A strong feeling of love for someone, usually not for long, often when you are young. You usually do not tell the person about it."
+      },
+      "grammar": {
+        "pattern": "have a crush on sb"
+      },
+      "examples": [
+        {
+          "en": "I have a crush on my classmate.",
+          "tr": "Sınıf arkadaşımdan hoşlanıyorum.",
+          "register": "informal",
+          "focus": "crush"
+        },
+        {
+          "en": "Everyone knows he has a crush on Elif.",
+          "tr": "Herkes onun Elif'ten hoşlandığını biliyor.",
+          "register": "informal",
+          "focus": "crush"
+        },
+        {
+          "en": "Sam was my first crush in high school.",
+          "tr": "Sam, lisedeki ilk platonik aşkımdı.",
+          "register": "informal",
+          "focus": "crush"
+        }
+      ],
+      "synonyms": [
+        "infatuation"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a crush on",
+        "a secret crush",
+        "a big crush",
+        "my crush"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hoşlanma",
+          "alt": [
+            "platonik aşk",
+            "göz ağrısı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Have a crush on sb' = birinden hoşlanmak, ona platonik âşık olmak. 'My crush' = hoşlandığım kişi. Sevgili (boyfriend / girlfriend) değildir.",
+          "mistakes": [
+            {
+              "wrong": "I have a crush for him.",
+              "right": "I have a crush on him.",
+              "why": "'Crush' ile 'on' kullanılır; 'for' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I've had a ______ on my coworker for months.",
+        "answer": "crush",
+        "distractors": [
+          "plan",
+          "laugh",
+          "cold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trust.v.1",
+      "lemma": "trust",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trʌst/",
+        "uk": "/trʌst/"
+      },
+      "def": {
+        "micro": "believe someone is honest",
+        "short": "believe that someone is honest and will not hurt you or let you down",
+        "long": "To believe that someone is honest and good, and that they will not hurt you or let you down. You can trust a person, or trust what they say."
+      },
+      "grammar": {
+        "pattern": "trust sb / trust sb to do sth"
+      },
+      "examples": [
+        {
+          "en": "I trust my best friend completely.",
+          "tr": "En yakın arkadaşıma tamamen güveniyorum.",
+          "register": "neutral",
+          "focus": "trust"
+        },
+        {
+          "en": "You can trust me. I won't tell anyone.",
+          "tr": "Bana güvenebilirsin. Kimseye söylemem.",
+          "register": "neutral",
+          "focus": "trust"
+        },
+        {
+          "en": "Don't trust everything you read online.",
+          "tr": "İnternette okuduğun her şeye güvenme.",
+          "register": "neutral",
+          "focus": "trust"
+        }
+      ],
+      "synonyms": [
+        "believe",
+        "rely on"
+      ],
+      "antonyms": [
+        "doubt",
+        "distrust"
+      ],
+      "collocations": [
+        "trust sb completely",
+        "trust your instincts",
+        "trust sb with sth",
+        "can't trust"
+      ],
+      "word_family": [
+        {
+          "lemma": "trust",
+          "pos": "n"
+        },
+        {
+          "lemma": "trustworthy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güvenmek",
+          "alt": [
+            "inanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Trust' isim olarak da 'güven' demektir: 'I have trust in you'. 'Güvenilir' = 'reliable' ya da 'trustworthy'.",
+          "mistakes": [
+            {
+              "wrong": "I trust to him.",
+              "right": "I trust him.",
+              "why": "'Ona güveniyorum' derken 'trust' doğrudan nesne alır; 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't ______ him with my money. He lies all the time.",
+        "answer": "trust",
+        "distractors": [
+          "ask",
+          "miss",
+          "follow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.engaged.adj.1",
+      "lemma": "engaged",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "going to marry",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈɡeɪdʒd/",
+        "uk": "/ɪnˈɡeɪdʒd/"
+      },
+      "def": {
+        "micro": "promised to get married",
+        "short": "having agreed to marry someone, before the wedding",
+        "long": "Having formally agreed to marry someone. An engaged couple often wears rings and starts to plan a wedding."
+      },
+      "grammar": {
+        "pattern": "engaged (to sb)"
+      },
+      "examples": [
+        {
+          "en": "My sister got engaged last month.",
+          "tr": "Kız kardeşim geçen ay nişanlandı.",
+          "register": "neutral",
+          "focus": "engaged"
+        },
+        {
+          "en": "They are engaged and plan to marry next summer.",
+          "tr": "Nişanlılar ve önümüzdeki yaz evlenmeyi planlıyorlar.",
+          "register": "neutral",
+          "focus": "engaged"
+        },
+        {
+          "en": "Are you engaged? That's a beautiful ring!",
+          "tr": "Nişanlı mısın? Çok güzel bir yüzük!",
+          "register": "neutral",
+          "focus": "engaged"
+        }
+      ],
+      "synonyms": [
+        "betrothed"
+      ],
+      "antonyms": [
+        "single"
+      ],
+      "collocations": [
+        "get engaged",
+        "engaged to",
+        "engaged couple",
+        "recently engaged"
+      ],
+      "word_family": [
+        {
+          "lemma": "engagement",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nişanlı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Engaged' nişanlı, 'married' evli demektir. 'The line is engaged' gibi bir kullanımda 'meşgul' anlamına da gelir (İngiliz İngilizcesi), ama bu başka bir anlamdır.",
+          "mistakes": [
+            {
+              "wrong": "I'm engaged with my boyfriend.",
+              "right": "I'm engaged to my boyfriend.",
+              "why": "'Biriyle nişanlı olmak' için 'engaged TO sb'; 'with' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe and Kerem are ______ and will marry in June.",
+        "answer": "engaged",
+        "distractors": [
+          "divorced",
+          "single",
+          "retired"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.forgive.v.1",
+      "lemma": "forgive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fərˈɡɪv/",
+        "uk": "/fəˈɡɪv/"
+      },
+      "def": {
+        "micro": "stop being angry at someone",
+        "short": "stop being angry with someone who did something wrong",
+        "long": "To stop being angry with someone who did something wrong, and not want to punish them. People often say 'I forgive you' after someone says sorry."
+      },
+      "grammar": {
+        "pattern": "forgive sb (for sth)"
+      },
+      "examples": [
+        {
+          "en": "Please forgive me. I didn't mean it.",
+          "tr": "Lütfen beni affet. Kastım bu değildi.",
+          "register": "neutral",
+          "focus": "forgive"
+        },
+        {
+          "en": "She forgave her brother for breaking her phone.",
+          "tr": "Telefonunu kırdığı için kardeşini affetti.",
+          "register": "neutral",
+          "focus": "forgave"
+        },
+        {
+          "en": "I can't forgive him for lying to me.",
+          "tr": "Bana yalan söylediği için onu affedemem.",
+          "register": "neutral",
+          "focus": "forgive"
+        }
+      ],
+      "synonyms": [
+        "pardon"
+      ],
+      "antonyms": [
+        "blame"
+      ],
+      "collocations": [
+        "forgive sb for sth",
+        "forgive and forget",
+        "hard to forgive",
+        "never forgive"
+      ],
+      "word_family": [
+        {
+          "lemma": "forgiveness",
+          "pos": "n"
+        },
+        {
+          "lemma": "forgiving",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "affetmek",
+          "alt": [
+            "bağışlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Düzensiz fiil: forgive - forgave - forgiven. 'Excuse me' = Affedersiniz (nezaket); 'forgive' ise gerçek bir hatayı affetmektir.",
+          "mistakes": [
+            {
+              "wrong": "I forgave him about the lie.",
+              "right": "I forgave him for the lie.",
+              "why": "'Bir şey için affetmek' → 'forgive sb FOR sth'; 'about' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm sorry I forgot your birthday. Please ______ me.",
+        "answer": "forgive",
+        "distractors": [
+          "invite",
+          "teach",
+          "follow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.loyal.adj.1",
+      "lemma": "loyal",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɔɪəl/",
+        "uk": "/ˈlɔɪəl/"
+      },
+      "def": {
+        "micro": "always on your side",
+        "short": "always supporting your friends, family, or team, even when it is difficult",
+        "long": "Always supporting your friends, family, country, or team, even when times are hard. A loyal friend stays with you, and a loyal customer keeps coming back."
+      },
+      "grammar": {
+        "pattern": "loyal (to sb/sth)"
+      },
+      "examples": [
+        {
+          "en": "Dogs are loyal to their owners.",
+          "tr": "Köpekler sahiplerine sadıktır.",
+          "register": "neutral",
+          "focus": "loyal"
+        },
+        {
+          "en": "Ali has been a loyal friend for many years.",
+          "tr": "Ali yıllardır sadık bir dost.",
+          "register": "neutral",
+          "focus": "loyal"
+        },
+        {
+          "en": "She is loyal to her company, so she never left.",
+          "tr": "Şirketine sadık, bu yüzden hiç ayrılmadı.",
+          "register": "neutral",
+          "focus": "loyal"
+        }
+      ],
+      "synonyms": [
+        "faithful",
+        "devoted"
+      ],
+      "antonyms": [
+        "disloyal"
+      ],
+      "collocations": [
+        "loyal to",
+        "a loyal friend",
+        "loyal customer",
+        "fiercely loyal"
+      ],
+      "word_family": [
+        {
+          "lemma": "loyalty",
+          "pos": "n"
+        },
+        {
+          "lemma": "loyally",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sadık",
+          "alt": [
+            "vefalı",
+            "bağlı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Loyal' yanında durmak ve bağlı kalmaktır. Türkçede 'vefalı' (iyiliği unutmayan) ve 'sadık' (bağlı) ikisini de karşılar.",
+          "mistakes": [
+            {
+              "wrong": "He is loyal with his friends.",
+              "right": "He is loyal to his friends.",
+              "why": "'-e sadık olmak' için 'loyal TO'; 'with' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "love_friendship",
+        "topics": [
+          "love_friendship",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A ______ friend always stays with you in bad times.",
+        "answer": "loyal",
+        "distractors": [
+          "selfish",
+          "mean",
+          "rude"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

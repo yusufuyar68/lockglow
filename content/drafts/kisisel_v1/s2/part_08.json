@@ -1,437 +1,1014 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.exam.n.1",
-  "lemma": "exam",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ɪɡˈzæm/", "uk": "/ɪɡˈzæm/"},
-  "def": {
-    "micro": "big test at school",
-    "short": "a big test at school or university to show what you know",
-    "long": "A big test at school or university that shows how much you know about a subject. Students usually take them at the end of the year."
-  },
-  "grammar": {"pattern": "take / pass / fail an exam"},
-  "examples": [
-    {"en": "I have an exam on Monday.", "tr": "Pazartesi sınavım var.", "register": "neutral", "focus": "exam"},
-    {"en": "She passed her driving exam on the first try.", "tr": "Ehliyet sınavını ilk denemede geçti.", "register": "neutral", "focus": "exam"},
-    {"en": "The English exam was easier than I expected.", "tr": "İngilizce sınavı beklediğimden kolaydı.", "register": "neutral", "focus": "exam"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": ["test"],
-  "antonyms": [],
-  "collocations": ["take an exam", "pass an exam", "fail an exam", "study for an exam", "exam results"],
-  "word_family": [{"lemma": "examination", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "sınav",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Exam' önemli, resmî bir sınavdır. Kısa yazılı veya küçük sınavlar için 'test' veya 'quiz' denir. 'Sınava girmek' = take an exam.",
-      "mistakes": [
-        {"wrong": "I will enter the exam tomorrow.", "right": "I will take the exam tomorrow.", "why": "Türkçede 'sınava girmek' deriz, ama İngilizcede 'enter' değil 'take (an exam)' kullanılır."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.exam.n.1",
+      "lemma": "exam",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzæm/",
+        "uk": "/ɪɡˈzæm/"
+      },
+      "def": {
+        "micro": "big test at school",
+        "short": "a big test at school or university to show what you know",
+        "long": "A big test at school or university that shows how much you know about a subject. Students usually take them at the end of the year."
+      },
+      "grammar": {
+        "pattern": "take / pass / fail an exam"
+      },
+      "examples": [
+        {
+          "en": "I have an exam on Monday.",
+          "tr": "Pazartesi sınavım var.",
+          "register": "neutral",
+          "focus": "exam"
+        },
+        {
+          "en": "She passed her driving exam on the first try.",
+          "tr": "Ehliyet sınavını ilk denemede geçti.",
+          "register": "neutral",
+          "focus": "exam"
+        },
+        {
+          "en": "The English exam was easier than I expected.",
+          "tr": "İngilizce sınavı beklediğimden kolaydı.",
+          "register": "neutral",
+          "focus": "exam"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I must study tonight because my ______ is tomorrow.", "answer": "exam", "distractors": ["holiday", "picnic", "party"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.fail.v.1",
-  "lemma": "fail",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "an exam or test",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/feɪl/", "uk": "/feɪl/"},
-  "def": {
-    "micro": "not pass a test",
-    "short": "to not get a good enough result in an exam or test",
-    "long": "To not get a good enough result in an exam or test, so you do not pass it. Students who do this often have to take it again."
-  },
-  "grammar": {"pattern": "fail + an exam / a test"},
-  "examples": [
-    {"en": "He failed the driving test twice.", "tr": "Direksiyon sınavında iki kez kaldı.", "register": "neutral", "focus": "failed"},
-    {"en": "I studied hard because I didn't want to fail.", "tr": "Kalmak istemediğim için çok çalıştım.", "register": "neutral", "focus": "fail"},
-    {"en": "She failed her English exam, but she will try again.", "tr": "İngilizce sınavından kaldı ama tekrar deneyecek.", "register": "neutral", "focus": "failed"}
-  ],
-  "synonyms": [],
-  "antonyms": ["pass"],
-  "collocations": ["fail an exam", "fail a test", "fail the driving test"],
-  "word_family": [{"lemma": "failure", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "sınavdan kalmak",
-      "alt": ["başarısız olmak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'Fail' genel olarak 'başarısız olmak' da demektir; bu kart sınav anlamındadır. Karşıtı 'pass' (geçmek).",
-      "mistakes": [
-        {"wrong": "I failed from the exam.", "right": "I failed the exam.", "why": "Türkçede 'sınavdan kalmak' dediğimiz için 'from' eklenir; ama 'fail' doğrudan nesne alır: fail the exam."}
+      "synonyms": [
+        "test"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "He didn't study at all, so he is afraid he will ______ the exam.", "answer": "fail", "distractors": ["pass", "win", "borrow"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.spell.v.1",
-  "lemma": "spell",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/spɛl/", "uk": "/spɛl/"},
-  "def": {
-    "micro": "say or write the letters",
-    "short": "to say or write the letters of a word in the right order",
-    "long": "To say or write the letters of a word in the right order. People ask 'How do you spell it?' when they do not know the letters."
-  },
-  "grammar": {"pattern": "spell + a word / your name"},
-  "examples": [
-    {"en": "How do you spell your name?", "tr": "Adın nasıl yazılıyor?", "register": "neutral", "focus": "spell"},
-    {"en": "Can you spell that for me, please?", "tr": "Bunu bana harf harf söyler misiniz?", "register": "neutral", "focus": "spell"},
-    {"en": "Many people spell 'necessary' wrong.", "tr": "Birçok kişi 'necessary' kelimesini yanlış yazar.", "register": "neutral", "focus": "spell"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["spell a word", "spell your name", "spell correctly"],
-  "word_family": [{"lemma": "spelling", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "hecelemek",
-      "alt": ["harf harf söylemek"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçedeki 'hecelemek' heceleri ayırır (ka-pı); 'spell' ise harfleri tek tek söyler (K-A-P-I). 'Nasıl yazılıyor?' = 'How do you spell it?'",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Can you ______ your last name, please? I need to write it.", "answer": "spell", "distractors": ["count", "cook", "carry"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.island.n.1",
-  "lemma": "island",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈaɪlənd/", "uk": "/ˈaɪlənd/"},
-  "def": {
-    "micro": "land with water all around",
-    "short": "a piece of land with water all around it",
-    "long": "A piece of land with water on all sides. It can be very small, with only a few trees, or large enough for a whole country."
-  },
-  "grammar": {"pattern": "on an island"},
-  "examples": [
-    {"en": "We spent a week on a small island.", "tr": "Küçük bir adada bir hafta geçirdik.", "register": "neutral", "focus": "island"},
-    {"en": "You can only get to the island by boat.", "tr": "Adaya sadece tekneyle gidilebilir.", "register": "neutral", "focus": "island"},
-    {"en": "Büyükada is an island near Istanbul.", "tr": "Büyükada, İstanbul'un yakınında bir adadır.", "register": "neutral", "focus": "island"}
-  ],
-  "synonyms": ["isle"],
-  "antonyms": [],
-  "collocations": ["a small island", "a desert island", "island hopping", "on an island"],
-  "word_family": [{"lemma": "islander", "pos": "n"}],
-  "etymology": {"text": "From Old English 'ieġland' ('water-land'). The 's' was added later, by mistake, from the unrelated word 'isle'. That is why it is silent.", "origin": "Old English", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "ada",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Okunuşu 'aylınd' gibidir; 's' harfi okunmaz. Adada olmak için 'on an island' denir.",
-      "mistakes": [
-        {"wrong": "We stayed in a small island.", "right": "We stayed on a small island.", "why": "Türkçede '-da' eki 'in' gibi gelir, ama adalar için 'on' kullanılır: on an island."}
+      "antonyms": [],
+      "collocations": [
+        "take an exam",
+        "pass an exam",
+        "fail an exam",
+        "study for an exam",
+        "exam results"
       ],
-      "mnemonic": "'Island' içindeki 's' sonradan, 'isle' kelimesine benzesin diye eklendi. O yüzden okunmaz: 'aylınd'."
-    }
-  },
-  "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "You can only reach the ______ by boat; there is no bridge.", "answer": "island", "distractors": ["highway", "station", "airport"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.leaf.n.1",
-  "lemma": "leaf",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/liːf/", "uk": "/liːf/"},
-  "def": {
-    "micro": "flat green part of a plant",
-    "short": "a flat, usually green part of a tree or plant",
-    "long": "A flat, usually green part that grows on a tree or plant. In autumn, the leaves of many trees turn yellow, red, or brown and fall to the ground."
-  },
-  "grammar": {"pattern": "leaf (sing.) / leaves (pl.)"},
-  "examples": [
-    {"en": "The leaves turn yellow in autumn.", "tr": "Yapraklar sonbaharda sararır.", "register": "neutral", "focus": "leaves"},
-    {"en": "A leaf fell into my coffee.", "tr": "Kahvemin içine bir yaprak düştü.", "register": "neutral", "focus": "leaf"},
-    {"en": "We raked the leaves in the garden.", "tr": "Bahçedeki yaprakları tırmıkla topladık.", "register": "neutral", "focus": "leaves"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["green leaves", "fallen leaves", "autumn leaves", "tea leaves"],
-  "word_family": [{"lemma": "leafy", "pos": "adj"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yaprak",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Çoğulu düzensizdir: leaf → leaves ('leafs' denmez). 'Leaf' kitap yaprağı için de kullanılabilir, ama bu kart bitki yaprağını anlatır.",
-      "mistakes": [
-        {"wrong": "There are many leafs on the ground.", "right": "There are many leaves on the ground.", "why": "'Leaf' kelimesinin çoğulu 'leaves'tir. -f ile biten bazı isimlerde f, v olur (leaf-leaves, knife-knives)."}
+      "word_family": [
+        {
+          "lemma": "examination",
+          "pos": "n"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals", "weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "In autumn, the ______ fall from the trees.", "answer": "leaves", "distractors": ["roots", "stones", "waves"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.insect.n.1",
-  "lemma": "insect",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈɪnsɛkt/", "uk": "/ˈɪnsɛkt/"},
-  "def": {
-    "micro": "small animal with six legs",
-    "short": "a very small animal with six legs, like an ant, a bee, or a fly",
-    "long": "A very small animal with six legs and often wings, such as a bee, an ant, or a fly. Some insects are helpful; others bite or eat plants."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "There are a lot of insects near the lake in summer.", "tr": "Yazın gölün yakınında çok böcek oluyor.", "register": "neutral", "focus": "insects"},
-    {"en": "This spray keeps insects away.", "tr": "Bu sprey böcekleri uzak tutar.", "register": "neutral", "focus": "insects"},
-    {"en": "Bees are important insects because they help flowers grow.", "tr": "Arılar önemli böceklerdir, çünkü çiçeklerin büyümesine yardım eder.", "register": "neutral", "focus": "insects"}
-  ],
-  "synonyms": ["bug"],
-  "antonyms": [],
-  "collocations": ["an insect bite", "insect spray", "a flying insect", "insect repellent"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "böcek",
-      "alt": [],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'böcek' her küçük canlıyı kapsayabilir. İngilizcede 'insect' altı bacaklı hayvandır; örümcek (spider) sekiz bacaklıdır, bu yüzden insect sayılmaz. Günlük dilde 'bug' da denir.",
-      "mistakes": [],
-      "mnemonic": "Latince 'insectum' = 'çentikli, bölünmüş': karıncaya bak, gövdesi boğum boğum bölümlere ayrılmış."
-    }
-  },
-  "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "A bee is a small ______ that makes honey.", "answer": "insect", "distractors": ["bird", "fish", "plant"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.playlist.n.1",
-  "lemma": "playlist",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈpleɪlɪst/", "uk": "/ˈpleɪlɪst/"},
-  "def": {
-    "micro": "group of chosen songs",
-    "short": "a group of songs that you choose to hear one after another",
-    "long": "A group of songs or videos that you choose and put together, so they come one after another. You can make one for the gym, for a party, or for a long trip."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I made a new playlist for the gym.", "tr": "Spor salonu için yeni bir çalma listesi hazırladım.", "register": "neutral", "focus": "playlist"},
-    {"en": "Can you share your playlist with me?", "tr": "Çalma listeni benimle paylaşır mısın?", "register": "neutral", "focus": "playlist"},
-    {"en": "This playlist is perfect for a long drive.", "tr": "Bu çalma listesi uzun bir araba yolculuğu için mükemmel.", "register": "neutral", "focus": "playlist"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["make a playlist", "share a playlist", "add to a playlist", "a workout playlist"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "çalma listesi",
-      "alt": ["playlist"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Günlük dilde çoğu kişi 'playlist' der; müzik uygulamalarında 'Çalma listesi' yazar.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I made a new ______ with all my favorite songs for the trip.", "answer": "playlist", "distractors": ["recipe", "map", "menu"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited","distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.series.n.1",
-  "lemma": "series",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "TV show",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈsɪriːz/", "uk": "/ˈsɪəriːz/"},
-  "def": {
-    "micro": "TV show with many episodes",
-    "short": "a TV story shown in many parts, one after another",
-    "long": "A TV or streaming show made of many parts that follow each other. The word is the same for one show and many shows: one series, two series."
-  },
-  "grammar": {"pattern": "a series / two series"},
-  "examples": [
-    {"en": "Have you seen the new series?", "tr": "Yeni diziyi izledin mi?", "register": "neutral", "focus": "series"},
-    {"en": "We watched a whole series in one weekend.", "tr": "Bütün bir diziyi tek hafta sonunda izledik.", "register": "neutral", "focus": "series"},
-    {"en": "My favorite series has five seasons.", "tr": "En sevdiğim dizinin beş sezonu var.", "register": "neutral", "focus": "series"}
-  ],
-  "synonyms": ["TV show"],
-  "antonyms": [],
-  "collocations": ["a TV series", "watch a series", "a new series", "a crime series"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "dizi",
-      "alt": ["TV dizisi"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Tekil ve çoğul aynıdır: one series, two series ('serieses' denmez). Tek bir film için 'movie' veya 'film' kullanılır.",
-      "mistakes": [
-        {"wrong": "I watched two serieses this month.", "right": "I watched two series this month.", "why": "'Series' kelimesinin çoğulu da 'series'tir; sonuna -es eklenmez."}
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınav",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Exam' önemli, resmî bir sınavdır. Kısa yazılı veya küçük sınavlar için 'test' veya 'quiz' denir. 'Sınava girmek' = take an exam.",
+          "mistakes": [
+            {
+              "wrong": "I will enter the exam tomorrow.",
+              "right": "I will take the exam tomorrow.",
+              "why": "Türkçede 'sınava girmek' deriz, ama İngilizcede 'enter' değil 'take (an exam)' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I must study tonight because my ______ is tomorrow.",
+        "answer": "exam",
+        "distractors": [
+          "holiday",
+          "picnic",
+          "party"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fail.v.1",
+      "lemma": "fail",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "an exam or test",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/feɪl/",
+        "uk": "/feɪl/"
+      },
+      "def": {
+        "micro": "not pass a test",
+        "short": "to not get a good enough result in an exam or test",
+        "long": "To not get a good enough result in an exam or test, so you do not pass it. Students who do this often have to take it again."
+      },
+      "grammar": {
+        "pattern": "fail + an exam / a test"
+      },
+      "examples": [
+        {
+          "en": "He failed the driving test twice.",
+          "tr": "Direksiyon sınavında iki kez kaldı.",
+          "register": "neutral",
+          "focus": "failed"
+        },
+        {
+          "en": "I studied hard because I didn't want to fail.",
+          "tr": "Kalmak istemediğim için çok çalıştım.",
+          "register": "neutral",
+          "focus": "fail"
+        },
+        {
+          "en": "She failed her English exam, but she will try again.",
+          "tr": "İngilizce sınavından kaldı ama tekrar deneyecek.",
+          "register": "neutral",
+          "focus": "failed"
+        }
       ],
-      "mnemonic": "Türkçedeki 'seri' ile aynı kelime: bölümler seri hâlinde, art arda gelir."
+      "synonyms": [],
+      "antonyms": [
+        "pass"
+      ],
+      "collocations": [
+        "fail an exam",
+        "fail a test",
+        "fail the driving test"
+      ],
+      "word_family": [
+        {
+          "lemma": "failure",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınavdan kalmak",
+          "alt": [
+            "başarısız olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Fail' genel olarak 'başarısız olmak' da demektir; bu kart sınav anlamındadır. Karşıtı 'pass' (geçmek).",
+          "mistakes": [
+            {
+              "wrong": "I failed from the exam.",
+              "right": "I failed the exam.",
+              "why": "Türkçede 'sınavdan kalmak' dediğimiz için 'from' eklenir; ama 'fail' doğrudan nesne alır: fail the exam."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He didn't study at all, so he is afraid he will ______ the exam.",
+        "answer": "fail",
+        "distractors": [
+          "pass",
+          "win",
+          "borrow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spell.v.1",
+      "lemma": "spell",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/spɛl/",
+        "uk": "/spɛl/"
+      },
+      "def": {
+        "micro": "say or write the letters",
+        "short": "to say or write the letters of a word in the right order",
+        "long": "To say or write the letters of a word in the right order. People ask 'How do you spell it?' when they do not know the letters."
+      },
+      "grammar": {
+        "pattern": "spell + a word / your name"
+      },
+      "examples": [
+        {
+          "en": "How do you spell your name?",
+          "tr": "Adın nasıl yazılıyor?",
+          "register": "neutral",
+          "focus": "spell"
+        },
+        {
+          "en": "Can you spell that for me, please?",
+          "tr": "Bunu bana harf harf söyler misiniz?",
+          "register": "neutral",
+          "focus": "spell"
+        },
+        {
+          "en": "Many people spell 'necessary' wrong.",
+          "tr": "Birçok kişi 'necessary' kelimesini yanlış yazar.",
+          "register": "neutral",
+          "focus": "spell"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "spell a word",
+        "spell your name",
+        "spell correctly"
+      ],
+      "word_family": [
+        {
+          "lemma": "spelling",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hecelemek",
+          "alt": [
+            "harf harf söylemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'hecelemek' heceleri ayırır (ka-pı); 'spell' ise harfleri tek tek söyler (K-A-P-I). 'Nasıl yazılıyor?' = 'How do you spell it?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ your last name, please? I need to write it.",
+        "answer": "spell",
+        "distractors": [
+          "count",
+          "cook",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.island.n.1",
+      "lemma": "island",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈaɪlənd/",
+        "uk": "/ˈaɪlənd/"
+      },
+      "def": {
+        "micro": "land with water all around",
+        "short": "a piece of land with water all around it",
+        "long": "A piece of land with water on all sides. It can be very small, with only a few trees, or large enough for a whole country."
+      },
+      "grammar": {
+        "pattern": "on an island"
+      },
+      "examples": [
+        {
+          "en": "We spent a week on a small island.",
+          "tr": "Küçük bir adada bir hafta geçirdik.",
+          "register": "neutral",
+          "focus": "island"
+        },
+        {
+          "en": "You can only get to the island by boat.",
+          "tr": "Adaya sadece tekneyle gidilebilir.",
+          "register": "neutral",
+          "focus": "island"
+        },
+        {
+          "en": "Büyükada is an island near Istanbul.",
+          "tr": "Büyükada, İstanbul'un yakınında bir adadır.",
+          "register": "neutral",
+          "focus": "island"
+        }
+      ],
+      "synonyms": [
+        "isle"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a small island",
+        "a desert island",
+        "island hopping",
+        "on an island"
+      ],
+      "word_family": [
+        {
+          "lemma": "islander",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'ieġland' ('water-land'). The 's' was added later, by mistake, from the unrelated word 'isle'. That is why it is silent.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ada",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Okunuşu 'aylınd' gibidir; 's' harfi okunmaz. Adada olmak için 'on an island' denir.",
+          "mistakes": [
+            {
+              "wrong": "We stayed in a small island.",
+              "right": "We stayed on a small island.",
+              "why": "Türkçede '-da' eki 'in' gibi gelir, ama adalar için 'on' kullanılır: on an island."
+            }
+          ],
+          "mnemonic": "'Island' içindeki 's' sonradan, 'isle' kelimesine benzesin diye eklendi. O yüzden okunmaz: 'aylınd'."
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can only reach the ______ by boat; there is no bridge.",
+        "answer": "island",
+        "distractors": [
+          "highway",
+          "station",
+          "airport"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.leaf.n.1",
+      "lemma": "leaf",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/liːf/",
+        "uk": "/liːf/"
+      },
+      "def": {
+        "micro": "flat green part of a plant",
+        "short": "a flat, usually green part of a tree or plant",
+        "long": "A flat, usually green part that grows on a tree or plant. In autumn, the leaves of many trees turn yellow, red, or brown and fall to the ground."
+      },
+      "grammar": {
+        "pattern": "leaf (sing.) / leaves (pl.)"
+      },
+      "examples": [
+        {
+          "en": "The leaves turn yellow in autumn.",
+          "tr": "Yapraklar sonbaharda sararır.",
+          "register": "neutral",
+          "focus": "leaves"
+        },
+        {
+          "en": "A leaf fell into my coffee.",
+          "tr": "Kahvemin içine bir yaprak düştü.",
+          "register": "neutral",
+          "focus": "leaf"
+        },
+        {
+          "en": "We raked the leaves in the garden.",
+          "tr": "Bahçedeki yaprakları tırmıkla topladık.",
+          "register": "neutral",
+          "focus": "leaves"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "green leaves",
+        "fallen leaves",
+        "autumn leaves",
+        "tea leaves"
+      ],
+      "word_family": [
+        {
+          "lemma": "leafy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaprak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğulu düzensizdir: leaf → leaves ('leafs' denmez). 'Leaf' kitap yaprağı için de kullanılabilir, ama bu kart bitki yaprağını anlatır.",
+          "mistakes": [
+            {
+              "wrong": "There are many leafs on the ground.",
+              "right": "There are many leaves on the ground.",
+              "why": "'Leaf' kelimesinin çoğulu 'leaves'tir. -f ile biten bazı isimlerde f, v olur (leaf-leaves, knife-knives)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In autumn, the ______ fall from the trees.",
+        "answer": "leaves",
+        "distractors": [
+          "roots",
+          "stones",
+          "waves"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.insect.n.1",
+      "lemma": "insect",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪnsɛkt/",
+        "uk": "/ˈɪnsɛkt/"
+      },
+      "def": {
+        "micro": "small animal with six legs",
+        "short": "a very small animal with six legs, like an ant, a bee, or a fly",
+        "long": "A very small animal with six legs and often wings, such as a bee, an ant, or a fly. Some insects are helpful; others bite or eat plants."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "There are a lot of insects near the lake in summer.",
+          "tr": "Yazın gölün yakınında çok böcek oluyor.",
+          "register": "neutral",
+          "focus": "insects"
+        },
+        {
+          "en": "This spray keeps insects away.",
+          "tr": "Bu sprey böcekleri uzak tutar.",
+          "register": "neutral",
+          "focus": "insects"
+        },
+        {
+          "en": "Bees are important insects because they help flowers grow.",
+          "tr": "Arılar önemli böceklerdir, çünkü çiçeklerin büyümesine yardım eder.",
+          "register": "neutral",
+          "focus": "insects"
+        }
+      ],
+      "synonyms": [
+        "bug"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "an insect bite",
+        "insect spray",
+        "a flying insect",
+        "insect repellent"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "böcek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'böcek' her küçük canlıyı kapsayabilir. İngilizcede 'insect' altı bacaklı hayvandır; örümcek (spider) sekiz bacaklıdır, bu yüzden insect sayılmaz. Günlük dilde 'bug' da denir.",
+          "mistakes": [],
+          "mnemonic": "Latince 'insectum' = 'çentikli, bölünmüş': karıncaya bak, gövdesi boğum boğum bölümlere ayrılmış."
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A bee is a small ______ that makes honey.",
+        "answer": "insect",
+        "distractors": [
+          "bird",
+          "fish",
+          "plant"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.playlist.n.1",
+      "lemma": "playlist",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpleɪlɪst/",
+        "uk": "/ˈpleɪlɪst/"
+      },
+      "def": {
+        "micro": "group of chosen songs",
+        "short": "a group of songs that you choose to hear one after another",
+        "long": "A group of songs or videos that you choose and put together, so they come one after another. You can make one for the gym, for a party, or for a long trip."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I made a new playlist for the gym.",
+          "tr": "Spor salonu için yeni bir çalma listesi hazırladım.",
+          "register": "neutral",
+          "focus": "playlist"
+        },
+        {
+          "en": "Can you share your playlist with me?",
+          "tr": "Çalma listeni benimle paylaşır mısın?",
+          "register": "neutral",
+          "focus": "playlist"
+        },
+        {
+          "en": "This playlist is perfect for a long drive.",
+          "tr": "Bu çalma listesi uzun bir araba yolculuğu için mükemmel.",
+          "register": "neutral",
+          "focus": "playlist"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a playlist",
+        "share a playlist",
+        "add to a playlist",
+        "a workout playlist"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çalma listesi",
+          "alt": [
+            "playlist"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük dilde çoğu kişi 'playlist' der; müzik uygulamalarında 'Çalma listesi' yazar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I made a new ______ with all my favorite songs for the trip.",
+        "answer": "playlist",
+        "distractors": [
+          "recipe",
+          "map",
+          "menu"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.series.n.1",
+      "lemma": "series",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "TV show",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɪriːz/",
+        "uk": "/ˈsɪəriːz/"
+      },
+      "def": {
+        "micro": "TV show with many episodes",
+        "short": "a TV story shown in many parts, one after another",
+        "long": "A TV or streaming show made of many parts that follow each other. The word is the same for one show and many shows: one series, two series."
+      },
+      "grammar": {
+        "pattern": "a series / two series"
+      },
+      "examples": [
+        {
+          "en": "Have you seen the new series?",
+          "tr": "Yeni diziyi izledin mi?",
+          "register": "neutral",
+          "focus": "series"
+        },
+        {
+          "en": "We watched a whole series in one weekend.",
+          "tr": "Bütün bir diziyi tek hafta sonunda izledik.",
+          "register": "neutral",
+          "focus": "series"
+        },
+        {
+          "en": "My favorite series has five seasons.",
+          "tr": "En sevdiğim dizinin beş sezonu var.",
+          "register": "neutral",
+          "focus": "series"
+        }
+      ],
+      "synonyms": [
+        "TV show"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a TV series",
+        "watch a series",
+        "a new series",
+        "a crime series"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dizi",
+          "alt": [
+            "TV dizisi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tekil ve çoğul aynıdır: one series, two series ('serieses' denmez). Tek bir film için 'movie' veya 'film' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I watched two serieses this month.",
+              "right": "I watched two series this month.",
+              "why": "'Series' kelimesinin çoğulu da 'series'tir; sonuna -es eklenmez."
+            }
+          ],
+          "mnemonic": "Türkçedeki 'seri' ile aynı kelime: bölümler seri hâlinde, art arda gelir."
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I stayed up all night to finish the whole ______ on my laptop.",
+        "answer": "series",
+        "distractors": [
+          "street",
+          "battery",
+          "pillow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.episode.n.1",
+      "lemma": "episode",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "of a show",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛpɪsoʊd/",
+        "uk": "/ˈɛpɪsəʊd/"
+      },
+      "def": {
+        "micro": "one part of a TV show",
+        "short": "one part of a TV series, podcast, or other show",
+        "long": "One part of a TV series, podcast, or radio show. Each one tells part of the story, and new ones often come out every week."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I watched two episodes last night.",
+          "tr": "Dün gece iki bölüm izledim.",
+          "register": "neutral",
+          "focus": "episodes"
+        },
+        {
+          "en": "The last episode of the season was amazing.",
+          "tr": "Sezonun son bölümü harikaydı.",
+          "register": "neutral",
+          "focus": "episode"
+        },
+        {
+          "en": "A new episode comes out every Friday.",
+          "tr": "Her cuma yeni bir bölüm yayınlanıyor.",
+          "register": "neutral",
+          "focus": "episode"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a new episode",
+        "the first episode",
+        "watch an episode",
+        "the final episode"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bölüm",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dizilerde 'bölüm' = episode, 'sezon' = season: 'Season 2, Episode 5' = 2. sezon 5. bölüm.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't wait for the next ______ of my favorite show!",
+        "answer": "episode",
+        "distractors": [
+          "recipe",
+          "channel",
+          "window"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.band.n.1",
+      "lemma": "band",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "music group",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bænd/",
+        "uk": "/bænd/"
+      },
+      "def": {
+        "micro": "group of musicians",
+        "short": "a group of people who play music together",
+        "long": "A group of musicians who play and often sing together, for example with guitars and drums. Many bands start in a garage or at school."
+      },
+      "grammar": {
+        "pattern": "play in a band"
+      },
+      "examples": [
+        {
+          "en": "My brother plays the drums in a band.",
+          "tr": "Kardeşim bir grupta bateri çalıyor.",
+          "register": "neutral",
+          "focus": "band"
+        },
+        {
+          "en": "What is your favorite band?",
+          "tr": "En sevdiğin müzik grubu hangisi?",
+          "register": "neutral",
+          "focus": "band"
+        },
+        {
+          "en": "The band played all their old songs at the concert.",
+          "tr": "Grup, konserde bütün eski şarkılarını çaldı.",
+          "register": "neutral",
+          "focus": "band"
+        }
+      ],
+      "synonyms": [
+        "group"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "join a band",
+        "a rock band",
+        "play in a band",
+        "a live band",
+        "a famous band"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "müzik grubu",
+          "alt": [
+            "grup"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük Türkçede kısaca 'grup' denir. 'Band' ayrıca lastik veya şerit (rubber band) anlamına da gelir; bu kart müzik grubunu anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She sings and plays the guitar in a ______ with her friends.",
+        "answer": "band",
+        "distractors": [
+          "song",
+          "stage",
+          "radio"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I stayed up all night to finish the whole ______ on my laptop.", "answer": "series", "distractors": ["street", "battery", "pillow"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.episode.n.1",
-  "lemma": "episode",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "of a show",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈɛpɪsoʊd/", "uk": "/ˈɛpɪsəʊd/"},
-  "def": {
-    "micro": "one part of a TV show",
-    "short": "one part of a TV series, podcast, or other show",
-    "long": "One part of a TV series, podcast, or radio show. Each one tells part of the story, and new ones often come out every week."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I watched two episodes last night.", "tr": "Dün gece iki bölüm izledim.", "register": "neutral", "focus": "episodes"},
-    {"en": "The last episode of the season was amazing.", "tr": "Sezonun son bölümü harikaydı.", "register": "neutral", "focus": "episode"},
-    {"en": "A new episode comes out every Friday.", "tr": "Her cuma yeni bir bölüm yayınlanıyor.", "register": "neutral", "focus": "episode"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["a new episode", "the first episode", "watch an episode", "the final episode"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bölüm",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Dizilerde 'bölüm' = episode, 'sezon' = season: 'Season 2, Episode 5' = 2. sezon 5. bölüm.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I can't wait for the next ______ of my favorite show!", "answer": "episode", "distractors": ["recipe", "channel", "window"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.band.n.1",
-  "lemma": "band",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "music group",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/bænd/", "uk": "/bænd/"},
-  "def": {
-    "micro": "group of musicians",
-    "short": "a group of people who play music together",
-    "long": "A group of musicians who play and often sing together, for example with guitars and drums. Many bands start in a garage or at school."
-  },
-  "grammar": {"pattern": "play in a band"},
-  "examples": [
-    {"en": "My brother plays the drums in a band.", "tr": "Kardeşim bir grupta bateri çalıyor.", "register": "neutral", "focus": "band"},
-    {"en": "What is your favorite band?", "tr": "En sevdiğin müzik grubu hangisi?", "register": "neutral", "focus": "band"},
-    {"en": "The band played all their old songs at the concert.", "tr": "Grup, konserde bütün eski şarkılarını çaldı.", "register": "neutral", "focus": "band"}
-  ],
-  "synonyms": ["group"],
-  "antonyms": [],
-  "collocations": ["join a band", "a rock band", "play in a band", "a live band", "a famous band"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "müzik grubu",
-      "alt": ["grup"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Günlük Türkçede kısaca 'grup' denir. 'Band' ayrıca lastik veya şerit (rubber band) anlamına da gelir; bu kart müzik grubunu anlatır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "She sings and plays the guitar in a ______ with her friends.", "answer": "band", "distractors": ["song", "stage", "radio"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

@@ -1,156 +1,1150 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{"id":"en.advice.n.1","lemma":"advice","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ədˈvaɪs/","uk":"/ədˈvaɪs/"},
-"def":{"micro":"words that help you decide","short":"an opinion that helps someone decide what to do","long":"An opinion you give someone to help them decide what to do. It is uncountable: say 'a piece of advice', never 'an advice'."},
-"grammar":{"pattern":"advice on / about sth"},
-"examples":[
-{"en":"Can I ask you for some advice?","tr":"Senden biraz tavsiye isteyebilir miyim?","register":"neutral","focus":"advice"},
-{"en":"She gave me good advice about my job.","tr":"İşim hakkında bana iyi bir tavsiye verdi.","register":"neutral","focus":"advice"},
-{"en":"That's great advice. Thank you!","tr":"Bu çok iyi bir tavsiye. Teşekkürler!","register":"neutral","focus":"advice"}],
-"synonyms":["tip","guidance","suggestion"],"antonyms":[],"collocations":["ask for advice","give advice","take advice","a piece of advice","good advice"],
-"word_family":[{"lemma":"advise","pos":"v"},{"lemma":"advisor","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"tavsiye","alt":["öğüt","nasihat"],"equivalence":"partial","false_friend":null,"note":"'Advice' sayılamaz bir isimdir: 'an advice' ya da 'advices' denmez. Fiili 'advise' (z sesiyle okunur): 'I advise you to wait.'","mistakes":[{"wrong":"He gave me many advices.","right":"He gave me a lot of advice.","why":"'Advice' sayılamaz; çoğul eki almaz ve 'many' yerine 'a lot of / some' kullanılır."},{"wrong":"I need an advice.","right":"I need some advice. / a piece of advice","why":"Sayılamayan isimden önce 'an' gelmez; 'some advice' ya da 'a piece of advice' denir."}],"mnemonic":"'Advice' sonu 'ice' (buz) gibi okunur ve buz gibi sayılmaz: 'an advice' ya da 'advices' denmez."}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["uncountable","confusable:advise"],"sensitivity":0},
-"quiz":{"cloze":"Can I ask you for some ______ about my project?","answer":"advice","distractors":["habit","price","rule"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.chat.v.1","lemma":"chat","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/tʃæt/","uk":"/tʃæt/"},
-"def":{"micro":"talk in a friendly way","short":"talk with someone in a friendly, relaxed way","long":"To talk with someone in a friendly, relaxed way about ordinary things. People chat with neighbors, with coworkers, or online."},
-"grammar":{"pattern":"chat (with sb) (about sth)"},
-"examples":[
-{"en":"We chatted for an hour after class.","tr":"Dersten sonra bir saat sohbet ettik.","register":"neutral","focus":"chatted"},
-{"en":"Ali is chatting with his friend on the phone.","tr":"Ali telefonda arkadaşıyla sohbet ediyor.","register":"neutral","focus":"chatting"},
-{"en":"Let's chat over coffee this weekend.","tr":"Bu hafta sonu kahve içip sohbet edelim.","register":"neutral","focus":"chat"}],
-"synonyms":["talk","natter"],"antonyms":[],"collocations":["chat with sb","chat online","chat on the phone","stop to chat"],
-"word_family":[{"lemma":"chat","pos":"n"},{"lemma":"chatty","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"sohbet etmek","alt":["konuşmak","yazışmak"],"equivalence":"partial","false_friend":null,"note":"'Chat' hafif, samimi, resmî olmayan konuşmadır; internet üzerinden yazışmak için de kullanılır. İsim hali: 'have a chat' = sohbet etmek.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"informal","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"We sat in the garden and ______ about our holiday plans.","answer":"chatted","distractors":["paid","slept","painted"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.secret.n.1","lemma":"secret","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈsiːkrɪt/","uk":"/ˈsiːkrɪt/"},
-"def":{"micro":"something others don't know","short":"something that only a few people know and that is not told to others","long":"Something that only one person or a few people know and that you do not tell other people. Friends often tell each other their secrets."},
-"grammar":{"pattern":"keep / tell a secret"},
-"examples":[
-{"en":"Can you keep a secret?","tr":"Sır saklayabilir misin?","register":"neutral","focus":"secret"},
-{"en":"It's a secret. Please don't tell anyone.","tr":"Bu bir sır. Lütfen kimseye söyleme.","register":"neutral","focus":"secret"},
-{"en":"My sister told me her biggest secret last night.","tr":"Kız kardeşim dün gece bana en büyük sırrını anlattı.","register":"neutral","focus":"secret"}],
-"synonyms":[],"antonyms":[],"collocations":["keep a secret","tell a secret","a big secret","a family secret","top secret"],
-"word_family":[{"lemma":"secret","pos":"adj"},{"lemma":"secretly","pos":"adv"}],"etymology":null,
-"l1":{"tr":{"gloss":"sır","alt":["giz"],"equivalence":"full","false_friend":null,"note":"'Secret' sıfat olarak da 'gizli' demektir: a secret door (gizli kapı), top secret (çok gizli).","mistakes":[],"mnemonic":"'Secret' ile 'secretary' (sekreter) aynı kökten: sekreter, eskiden sırlar emanet edilen kişi demekti."}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills","love_friendship"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I have a ______ to tell you, but please don't tell anyone.","answer":"secret","distractors":["reason","rule","gift"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.argue.v.1","lemma":"argue","type":"word","pos":"v","sense_no":1,"sense_note":"quarrel","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈɑːrɡjuː/","uk":"/ˈɑːɡjuː/"},
-"def":{"micro":"speak angrily with someone","short":"speak angrily with someone because you do not agree","long":"To speak angrily with someone because you do not agree with them. Friends, couples, and families sometimes argue about small things."},
-"grammar":{"pattern":"argue (with sb) (about sth)"},
-"examples":[
-{"en":"My parents never argue in front of us.","tr":"Annemle babam bizim yanımızda hiç tartışmaz.","register":"neutral","focus":"argue"},
-{"en":"We argued about money again last night.","tr":"Dün gece yine para yüzünden tartıştık.","register":"neutral","focus":"argued"},
-{"en":"Please don't argue with your sister.","tr":"Lütfen kız kardeşinle tartışma.","register":"neutral","focus":"argue"}],
-"synonyms":["quarrel","fight"],"antonyms":["agree"],"collocations":["argue with sb","argue about","argue over","argue all the time"],
-"word_family":[{"lemma":"argument","pos":"n"},{"lemma":"argumentative","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"tartışmak","alt":["kavga etmek","atışmak"],"equivalence":"partial","false_friend":null,"note":"Türkçe 'tartışmak' sakin görüş alışverişi de olabilir; 'argue' ise kızgın, sinirli tartışmadır. Sakin konuşmak için 'discuss' kullan.","mistakes":[{"wrong":"We argued the problem.","right":"We argued about the problem.","why":"'Bir konuda tartışmak' için 'argue ABOUT'; 'argue' bu anlamda doğrudan nesne almaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills","love_friendship"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:discuss"],"sensitivity":0},
-"quiz":{"cloze":"My brothers always ______ and shout about who washes the dishes.","answer":"argue","distractors":["agree","forget","enjoy"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.suggest.v.1","lemma":"suggest","type":"word","pos":"v","sense_no":1,"sense_note":"offer an idea","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/səɡˈdʒɛst/","uk":"/səˈdʒɛst/"},
-"def":{"micro":"offer an idea or plan","short":"say an idea or plan that someone can think about","long":"To say an idea or plan for other people to think about or accept. After 'suggest' we use an -ing form or a that-clause, not 'to + verb'."},
-"grammar":{"pattern":"suggest + -ing / that + clause"},
-"examples":[
-{"en":"I suggest we leave before it rains.","tr":"Yağmur başlamadan çıkmayı öneriyorum.","register":"neutral","focus":"suggest"},
-{"en":"She suggested going to the cinema.","tr":"Sinemaya gitmeyi önerdi.","register":"neutral","focus":"suggested"},
-{"en":"What do you suggest for dinner?","tr":"Akşam yemeği için ne önerirsin?","register":"neutral","focus":"suggest"}],
-"synonyms":["propose","recommend"],"antonyms":[],"collocations":["suggest a plan","suggest doing sth","suggest that","I'd suggest"],
-"word_family":[{"lemma":"suggestion","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"önermek","alt":["teklif etmek"],"equivalence":"full","false_friend":null,"note":"'Suggest' + kişi + 'to do' kalıbı yoktur. 'Suggest doing sth' ya da 'suggest that we do sth' denir. 'Recommend' (tavsiye etmek) daha güçlü bir öneridir.","mistakes":[{"wrong":"He suggested me to go home.","right":"He suggested that I go home. / He suggested going home.","why":"'Suggest' kişi + 'to + fiil' almaz; -ing ya da 'that' cümlesi alır."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:recommend"],"sensitivity":0},
-"quiz":{"cloze":"I ______ we take a taxi. The bus is too slow.","answer":"suggest","distractors":["ask","enjoy","wonder"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.gossip.n.1","lemma":"gossip","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈɡɑːsɪp/","uk":"/ˈɡɒsɪp/"},
-"def":{"micro":"talk about other people","short":"talk about other people's private lives, often unkind or not true","long":"Talk about other people's private lives, often including things that may not be true or kind. Neighbors and coworkers often share the latest gossip."},
-"grammar":{"pattern":"gossip about sb"},
-"examples":[
-{"en":"I don't like office gossip.","tr":"Ofis dedikodusunu sevmem.","register":"neutral","focus":"gossip"},
-{"en":"Have you heard the latest gossip about Mehmet?","tr":"Mehmet'le ilgili son dedikoduyu duydun mu?","register":"informal","focus":"gossip"},
-{"en":"The neighbors love gossip, so be careful what you say.","tr":"Komşular dedikoduyu sever, o yüzden ne söylediğine dikkat et.","register":"neutral","focus":"gossip"}],
-"synonyms":["rumors","chatter"],"antonyms":[],"collocations":["office gossip","juicy gossip","spread gossip","a piece of gossip"],
-"word_family":[{"lemma":"gossip","pos":"v"},{"lemma":"gossipy","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"dedikodu","alt":[],"equivalence":"full","false_friend":null,"note":"'Gossip' hem isim (dedikodu) hem fiil (dedikodu yapmak) olur: 'They gossip about everyone.' Kişi için de kullanılır: 'He's a gossip' = dedikoducu.","mistakes":[{"wrong":"She is making gossip all day.","right":"She is gossiping all day.","why":"'Dedikodu yapmak' için 'make gossip' denmez; 'gossip' fiil olarak ya da 'spread gossip' kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills","workplace_office"],"exams":[],"register":"neutral","vibes":[],"flags":["uncountable"],"sensitivity":0},
-"quiz":{"cloze":"I don't believe the office ______. It is often not true.","answer":"gossip","distractors":["salary","meeting","schedule"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.compliment.n.1","lemma":"compliment","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈkɑːmpləmənt/","uk":"/ˈkɒmplɪmənt/"},
-"def":{"micro":"kind words about someone","short":"a nice thing you say to show you like something about someone","long":"A kind thing you say to someone to show that you like or admire something about them, such as their work or clothes. 'Thank you' is the usual answer."},
-"grammar":{"pattern":"give / pay sb a compliment"},
-"examples":[
-{"en":"Thanks for the compliment!","tr":"İltifatın için teşekkürler!","register":"neutral","focus":"compliment"},
-{"en":"My boss paid me a nice compliment after the meeting.","tr":"Müdürüm toplantıdan sonra bana güzel bir iltifat etti.","register":"neutral","focus":"compliment"},
-{"en":"That's the nicest compliment I've ever had.","tr":"Bu şimdiye kadar aldığım en güzel iltifat.","register":"neutral","focus":"compliment"}],
-"synonyms":["praise"],"antonyms":["insult"],"collocations":["give a compliment","pay a compliment","a nice compliment","take it as a compliment"],
-"word_family":[{"lemma":"compliment","pos":"v"},{"lemma":"complimentary","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"iltifat","alt":["kompliman","güzel söz"],"equivalence":"full","false_friend":null,"note":"Günlük Türkçede 'kompliman' da denir. 'Complement' (tamamlayıcı) ile aynı okunur ama farklı yazılır ve farklı anlamdadır.","mistakes":[{"wrong":"She made me a compliment.","right":"She gave me a compliment. / She paid me a compliment.","why":"'İltifat etmek' için 'give / pay a compliment' denir; 'make a compliment' denmez."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills","compliments_insults"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:complement"],"sensitivity":0},
-"quiz":{"cloze":"He gave me a nice ______ about my English.","answer":"compliment","distractors":["complaint","excuse","argument"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.manners.n.1","lemma":"manners","type":"word","pos":"n","sense_no":1,"sense_note":"polite behavior","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈmænərz/","uk":"/ˈmænəz/"},
-"def":{"micro":"polite ways of acting","short":"the usual polite ways of behaving with other people","long":"The polite ways of speaking and acting that people expect in a place or situation, such as saying please and thank you. Children learn manners from their parents."},
-"grammar":{"pattern":"good / bad manners"},
-"examples":[
-{"en":"Where are your manners? Say thank you.","tr":"Terbiyen nerede? Teşekkür et.","register":"neutral","focus":"manners"},
-{"en":"She has very good manners.","tr":"Çok kibar, görgülü biri.","register":"neutral","focus":"manners"},
-{"en":"In some countries, it's bad manners to eat while walking.","tr":"Bazı ülkelerde yürürken yemek yemek kaba sayılır.","register":"neutral","focus":"manners"}],
-"synonyms":["etiquette","politeness"],"antonyms":[],"collocations":["good manners","bad manners","table manners","have manners","teach sb manners"],
-"word_family":[{"lemma":"mannerly","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"görgü kuralları","alt":["adap","terbiye"],"equivalence":"partial","false_friend":null,"note":"Bu anlamda hep çoğul kullanılır. 'Table manners' = yemek adabı, 'bad manners' = kabalık. Tekil 'a manner' = tarz, biçim demektir.","mistakes":[{"wrong":"He has no manner.","right":"He has no manners.","why":"'Görgü kuralları' anlamında her zaman çoğul 'manners' kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills","culture_celebrations"],"exams":[],"register":"neutral","vibes":[],"flags":["plural_only"],"sensitivity":0},
-"quiz":{"cloze":"Don't talk with your mouth full. It is bad ______.","answer":"manners","distractors":["prices","seats","lessons"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.interrupt.v.1","lemma":"interrupt","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˌɪntəˈrʌpt/","uk":"/ˌɪntəˈrʌpt/"},
-"def":{"micro":"stop someone from talking","short":"start talking or acting while someone else is speaking or working","long":"To say or do something while another person is speaking or working, so that they have to stop. It is not polite to interrupt people."},
-"grammar":{"pattern":"interrupt sb / sth"},
-"examples":[
-{"en":"Sorry to interrupt, but dinner is ready.","tr":"Kusura bakmayın, sözünüzü kesiyorum ama yemek hazır.","register":"neutral","focus":"interrupt"},
-{"en":"Please don't interrupt me when I'm speaking.","tr":"Ben konuşurken lütfen sözümü kesme.","register":"neutral","focus":"interrupt"},
-{"en":"The phone rang and interrupted our meeting.","tr":"Telefon çaldı ve toplantımızı böldü.","register":"neutral","focus":"interrupted"}],
-"synonyms":["cut in","disturb"],"antonyms":[],"collocations":["sorry to interrupt","interrupt a meeting","interrupt sb's work","keep interrupting"],
-"word_family":[{"lemma":"interruption","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"sözünü kesmek, bölmek","alt":["araya girmek"],"equivalence":"partial","false_friend":null,"note":"Kişi için 'sözünü kesmek', toplantı ya da iş için 'bölmek' denir. İngilizcede ikisi de 'interrupt'.","mistakes":[{"wrong":"Don't interrupt to me.","right":"Don't interrupt me.","why":"'Interrupt' doğrudan nesne alır; 'to' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Please don't ______ me while I'm talking. Wait until I finish.","answer":"interrupt","distractors":["follow","teach","thank"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.ignore.v.1","lemma":"ignore","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ɪɡˈnɔːr/","uk":"/ɪɡˈnɔː/"},
-"def":{"micro":"pay no attention to","short":"not listen to or look at someone or something on purpose","long":"To pay no attention to someone or something on purpose. If you ignore a message or a person, they may feel hurt."},
-"grammar":{"pattern":"ignore sb / sth"},
-"examples":[
-{"en":"He saw me, but he ignored me.","tr":"Beni gördü ama görmezden geldi.","register":"neutral","focus":"ignored"},
-{"en":"Don't ignore the warning on the screen.","tr":"Ekrandaki uyarıyı görmezden gelme.","register":"neutral","focus":"ignore"},
-{"en":"She ignored all my messages for a week.","tr":"Bir hafta boyunca bütün mesajlarımı görmezden geldi.","register":"neutral","focus":"ignored"}],
-"synonyms":["disregard","overlook"],"antonyms":["notice","listen to"],"collocations":["ignore a message","ignore advice","ignore a warning","completely ignore"],
-"word_family":[{"lemma":"ignorance","pos":"n"},{"lemma":"ignorant","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"görmezden gelmek","alt":["aldırmamak","umursamamak"],"equivalence":"partial","false_friend":null,"note":"Günlük Türkçede 'ignore etmek' de denir. 'Ignorant' ile karıştırma: o 'cahil, bilgisiz' demektir ve 'ignore' ile aynı kökten gelse de anlamı farklıdır.","mistakes":[{"wrong":"He is ignoring about my problem.","right":"He is ignoring my problem.","why":"'Ignore' doğrudan nesne alır; 'about' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:ignorant"],"sensitivity":0},
-"quiz":{"cloze":"Don't ______ your doctor's advice about sleep.","answer":"ignore","distractors":["invite","wear","visit"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.advice.n.1",
+      "lemma": "advice",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ədˈvaɪs/",
+        "uk": "/ədˈvaɪs/"
+      },
+      "def": {
+        "micro": "words that help you decide",
+        "short": "an opinion that helps someone decide what to do",
+        "long": "An opinion you give someone to help them decide what to do. It is uncountable: say 'a piece of advice', never 'an advice'."
+      },
+      "grammar": {
+        "pattern": "advice on / about sth"
+      },
+      "examples": [
+        {
+          "en": "Can I ask you for some advice?",
+          "tr": "Senden biraz tavsiye isteyebilir miyim?",
+          "register": "neutral",
+          "focus": "advice"
+        },
+        {
+          "en": "She gave me good advice about my job.",
+          "tr": "İşim hakkında bana iyi bir tavsiye verdi.",
+          "register": "neutral",
+          "focus": "advice"
+        },
+        {
+          "en": "That's great advice. Thank you!",
+          "tr": "Bu çok iyi bir tavsiye. Teşekkürler!",
+          "register": "neutral",
+          "focus": "advice"
+        }
+      ],
+      "synonyms": [
+        "tip",
+        "guidance",
+        "suggestion"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "ask for advice",
+        "give advice",
+        "take advice",
+        "a piece of advice",
+        "good advice"
+      ],
+      "word_family": [
+        {
+          "lemma": "advise",
+          "pos": "v"
+        },
+        {
+          "lemma": "advisor",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tavsiye",
+          "alt": [
+            "öğüt",
+            "nasihat"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Advice' sayılamaz bir isimdir: 'an advice' ya da 'advices' denmez. Fiili 'advise' (z sesiyle okunur): 'I advise you to wait.'",
+          "mistakes": [
+            {
+              "wrong": "He gave me many advices.",
+              "right": "He gave me a lot of advice.",
+              "why": "'Advice' sayılamaz; çoğul eki almaz ve 'many' yerine 'a lot of / some' kullanılır."
+            },
+            {
+              "wrong": "I need an advice.",
+              "right": "I need some advice. / a piece of advice",
+              "why": "Sayılamayan isimden önce 'an' gelmez; 'some advice' ya da 'a piece of advice' denir."
+            }
+          ],
+          "mnemonic": "'Advice' sonu 'ice' (buz) gibi okunur ve buz gibi sayılmaz: 'an advice' ya da 'advices' denmez."
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable",
+          "confusable:advise"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can I ask you for some ______ about my project?",
+        "answer": "advice",
+        "distractors": [
+          "habit",
+          "price",
+          "rule"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.chat.v.1",
+      "lemma": "chat",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃæt/",
+        "uk": "/tʃæt/"
+      },
+      "def": {
+        "micro": "talk in a friendly way",
+        "short": "talk with someone in a friendly, relaxed way",
+        "long": "To talk with someone in a friendly, relaxed way about ordinary things. People chat with neighbors, with coworkers, or online."
+      },
+      "grammar": {
+        "pattern": "chat (with sb) (about sth)"
+      },
+      "examples": [
+        {
+          "en": "We chatted for an hour after class.",
+          "tr": "Dersten sonra bir saat sohbet ettik.",
+          "register": "neutral",
+          "focus": "chatted"
+        },
+        {
+          "en": "Ali is chatting with his friend on the phone.",
+          "tr": "Ali telefonda arkadaşıyla sohbet ediyor.",
+          "register": "neutral",
+          "focus": "chatting"
+        },
+        {
+          "en": "Let's chat over coffee this weekend.",
+          "tr": "Bu hafta sonu kahve içip sohbet edelim.",
+          "register": "neutral",
+          "focus": "chat"
+        }
+      ],
+      "synonyms": [
+        "talk",
+        "natter"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "chat with sb",
+        "chat online",
+        "chat on the phone",
+        "stop to chat"
+      ],
+      "word_family": [
+        {
+          "lemma": "chat",
+          "pos": "n"
+        },
+        {
+          "lemma": "chatty",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sohbet etmek",
+          "alt": [
+            "konuşmak",
+            "yazışmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Chat' hafif, samimi, resmî olmayan konuşmadır; internet üzerinden yazışmak için de kullanılır. İsim hali: 'have a chat' = sohbet etmek.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We sat in the garden and ______ about our holiday plans.",
+        "answer": "chatted",
+        "distractors": [
+          "paid",
+          "slept",
+          "painted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.secret.n.1",
+      "lemma": "secret",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsiːkrɪt/",
+        "uk": "/ˈsiːkrɪt/"
+      },
+      "def": {
+        "micro": "something others don't know",
+        "short": "something that only a few people know and that is not told to others",
+        "long": "Something that only one person or a few people know and that you do not tell other people. Friends often tell each other their secrets."
+      },
+      "grammar": {
+        "pattern": "keep / tell a secret"
+      },
+      "examples": [
+        {
+          "en": "Can you keep a secret?",
+          "tr": "Sır saklayabilir misin?",
+          "register": "neutral",
+          "focus": "secret"
+        },
+        {
+          "en": "It's a secret. Please don't tell anyone.",
+          "tr": "Bu bir sır. Lütfen kimseye söyleme.",
+          "register": "neutral",
+          "focus": "secret"
+        },
+        {
+          "en": "My sister told me her biggest secret last night.",
+          "tr": "Kız kardeşim dün gece bana en büyük sırrını anlattı.",
+          "register": "neutral",
+          "focus": "secret"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "keep a secret",
+        "tell a secret",
+        "a big secret",
+        "a family secret",
+        "top secret"
+      ],
+      "word_family": [
+        {
+          "lemma": "secret",
+          "pos": "adj"
+        },
+        {
+          "lemma": "secretly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sır",
+          "alt": [
+            "giz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Secret' sıfat olarak da 'gizli' demektir: a secret door (gizli kapı), top secret (çok gizli).",
+          "mistakes": [],
+          "mnemonic": "'Secret' ile 'secretary' (sekreter) aynı kökten: sekreter, eskiden sırlar emanet edilen kişi demekti."
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a ______ to tell you, but please don't tell anyone.",
+        "answer": "secret",
+        "distractors": [
+          "reason",
+          "rule",
+          "gift"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.argue.v.1",
+      "lemma": "argue",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "quarrel",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːrɡjuː/",
+        "uk": "/ˈɑːɡjuː/"
+      },
+      "def": {
+        "micro": "speak angrily with someone",
+        "short": "speak angrily with someone because you do not agree",
+        "long": "To speak angrily with someone because you do not agree with them. Friends, couples, and families sometimes argue about small things."
+      },
+      "grammar": {
+        "pattern": "argue (with sb) (about sth)"
+      },
+      "examples": [
+        {
+          "en": "My parents never argue in front of us.",
+          "tr": "Annemle babam bizim yanımızda hiç tartışmaz.",
+          "register": "neutral",
+          "focus": "argue"
+        },
+        {
+          "en": "We argued about money again last night.",
+          "tr": "Dün gece yine para yüzünden tartıştık.",
+          "register": "neutral",
+          "focus": "argued"
+        },
+        {
+          "en": "Please don't argue with your sister.",
+          "tr": "Lütfen kız kardeşinle tartışma.",
+          "register": "neutral",
+          "focus": "argue"
+        }
+      ],
+      "synonyms": [
+        "quarrel",
+        "fight"
+      ],
+      "antonyms": [
+        "agree"
+      ],
+      "collocations": [
+        "argue with sb",
+        "argue about",
+        "argue over",
+        "argue all the time"
+      ],
+      "word_family": [
+        {
+          "lemma": "argument",
+          "pos": "n"
+        },
+        {
+          "lemma": "argumentative",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tartışmak",
+          "alt": [
+            "kavga etmek",
+            "atışmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçe 'tartışmak' sakin görüş alışverişi de olabilir; 'argue' ise kızgın, sinirli tartışmadır. Sakin konuşmak için 'discuss' kullan.",
+          "mistakes": [
+            {
+              "wrong": "We argued the problem.",
+              "right": "We argued about the problem.",
+              "why": "'Bir konuda tartışmak' için 'argue ABOUT'; 'argue' bu anlamda doğrudan nesne almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:discuss"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My brothers always ______ and shout about who washes the dishes.",
+        "answer": "argue",
+        "distractors": [
+          "agree",
+          "forget",
+          "enjoy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.suggest.v.1",
+      "lemma": "suggest",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "offer an idea",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səɡˈdʒɛst/",
+        "uk": "/səˈdʒɛst/"
+      },
+      "def": {
+        "micro": "offer an idea or plan",
+        "short": "say an idea or plan that someone can think about",
+        "long": "To say an idea or plan for other people to think about or accept. After 'suggest' we use an -ing form or a that-clause, not 'to + verb'."
+      },
+      "grammar": {
+        "pattern": "suggest + -ing / that + clause"
+      },
+      "examples": [
+        {
+          "en": "I suggest we leave before it rains.",
+          "tr": "Yağmur başlamadan çıkmayı öneriyorum.",
+          "register": "neutral",
+          "focus": "suggest"
+        },
+        {
+          "en": "She suggested going to the cinema.",
+          "tr": "Sinemaya gitmeyi önerdi.",
+          "register": "neutral",
+          "focus": "suggested"
+        },
+        {
+          "en": "What do you suggest for dinner?",
+          "tr": "Akşam yemeği için ne önerirsin?",
+          "register": "neutral",
+          "focus": "suggest"
+        }
+      ],
+      "synonyms": [
+        "propose",
+        "recommend"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "suggest a plan",
+        "suggest doing sth",
+        "suggest that",
+        "I'd suggest"
+      ],
+      "word_family": [
+        {
+          "lemma": "suggestion",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önermek",
+          "alt": [
+            "teklif etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Suggest' + kişi + 'to do' kalıbı yoktur. 'Suggest doing sth' ya da 'suggest that we do sth' denir. 'Recommend' (tavsiye etmek) daha güçlü bir öneridir.",
+          "mistakes": [
+            {
+              "wrong": "He suggested me to go home.",
+              "right": "He suggested that I go home. / He suggested going home.",
+              "why": "'Suggest' kişi + 'to + fiil' almaz; -ing ya da 'that' cümlesi alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:recommend"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______ we take a taxi. The bus is too slow.",
+        "answer": "suggest",
+        "distractors": [
+          "ask",
+          "enjoy",
+          "wonder"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.gossip.n.1",
+      "lemma": "gossip",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡɑːsɪp/",
+        "uk": "/ˈɡɒsɪp/"
+      },
+      "def": {
+        "micro": "talk about other people",
+        "short": "talk about other people's private lives, often unkind or not true",
+        "long": "Talk about other people's private lives, often including things that may not be true or kind. Neighbors and coworkers often share the latest gossip."
+      },
+      "grammar": {
+        "pattern": "gossip about sb"
+      },
+      "examples": [
+        {
+          "en": "I don't like office gossip.",
+          "tr": "Ofis dedikodusunu sevmem.",
+          "register": "neutral",
+          "focus": "gossip"
+        },
+        {
+          "en": "Have you heard the latest gossip about Mehmet?",
+          "tr": "Mehmet'le ilgili son dedikoduyu duydun mu?",
+          "register": "informal",
+          "focus": "gossip"
+        },
+        {
+          "en": "The neighbors love gossip, so be careful what you say.",
+          "tr": "Komşular dedikoduyu sever, o yüzden ne söylediğine dikkat et.",
+          "register": "neutral",
+          "focus": "gossip"
+        }
+      ],
+      "synonyms": [
+        "rumors",
+        "chatter"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "office gossip",
+        "juicy gossip",
+        "spread gossip",
+        "a piece of gossip"
+      ],
+      "word_family": [
+        {
+          "lemma": "gossip",
+          "pos": "v"
+        },
+        {
+          "lemma": "gossipy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dedikodu",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Gossip' hem isim (dedikodu) hem fiil (dedikodu yapmak) olur: 'They gossip about everyone.' Kişi için de kullanılır: 'He's a gossip' = dedikoducu.",
+          "mistakes": [
+            {
+              "wrong": "She is making gossip all day.",
+              "right": "She is gossiping all day.",
+              "why": "'Dedikodu yapmak' için 'make gossip' denmez; 'gossip' fiil olarak ya da 'spread gossip' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't believe the office ______. It is often not true.",
+        "answer": "gossip",
+        "distractors": [
+          "salary",
+          "meeting",
+          "schedule"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.compliment.n.1",
+      "lemma": "compliment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːmpləmənt/",
+        "uk": "/ˈkɒmplɪmənt/"
+      },
+      "def": {
+        "micro": "kind words about someone",
+        "short": "a nice thing you say to show you like something about someone",
+        "long": "A kind thing you say to someone to show that you like or admire something about them, such as their work or clothes. 'Thank you' is the usual answer."
+      },
+      "grammar": {
+        "pattern": "give / pay sb a compliment"
+      },
+      "examples": [
+        {
+          "en": "Thanks for the compliment!",
+          "tr": "İltifatın için teşekkürler!",
+          "register": "neutral",
+          "focus": "compliment"
+        },
+        {
+          "en": "My boss paid me a nice compliment after the meeting.",
+          "tr": "Müdürüm toplantıdan sonra bana güzel bir iltifat etti.",
+          "register": "neutral",
+          "focus": "compliment"
+        },
+        {
+          "en": "That's the nicest compliment I've ever had.",
+          "tr": "Bu şimdiye kadar aldığım en güzel iltifat.",
+          "register": "neutral",
+          "focus": "compliment"
+        }
+      ],
+      "synonyms": [
+        "praise"
+      ],
+      "antonyms": [
+        "insult"
+      ],
+      "collocations": [
+        "give a compliment",
+        "pay a compliment",
+        "a nice compliment",
+        "take it as a compliment"
+      ],
+      "word_family": [
+        {
+          "lemma": "compliment",
+          "pos": "v"
+        },
+        {
+          "lemma": "complimentary",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iltifat",
+          "alt": [
+            "kompliman",
+            "güzel söz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük Türkçede 'kompliman' da denir. 'Complement' (tamamlayıcı) ile aynı okunur ama farklı yazılır ve farklı anlamdadır.",
+          "mistakes": [
+            {
+              "wrong": "She made me a compliment.",
+              "right": "She gave me a compliment. / She paid me a compliment.",
+              "why": "'İltifat etmek' için 'give / pay a compliment' denir; 'make a compliment' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "compliments_insults"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:complement"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He gave me a nice ______ about my English.",
+        "answer": "compliment",
+        "distractors": [
+          "complaint",
+          "excuse",
+          "argument"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.manners.n.1",
+      "lemma": "manners",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "polite behavior",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmænərz/",
+        "uk": "/ˈmænəz/"
+      },
+      "def": {
+        "micro": "polite ways of acting",
+        "short": "the usual polite ways of behaving with other people",
+        "long": "The polite ways of speaking and acting that people expect in a place or situation, such as saying please and thank you. Children learn manners from their parents."
+      },
+      "grammar": {
+        "pattern": "good / bad manners"
+      },
+      "examples": [
+        {
+          "en": "Where are your manners? Say thank you.",
+          "tr": "Terbiyen nerede? Teşekkür et.",
+          "register": "neutral",
+          "focus": "manners"
+        },
+        {
+          "en": "She has very good manners.",
+          "tr": "Çok kibar, görgülü biri.",
+          "register": "neutral",
+          "focus": "manners"
+        },
+        {
+          "en": "In some countries, it's bad manners to eat while walking.",
+          "tr": "Bazı ülkelerde yürürken yemek yemek kaba sayılır.",
+          "register": "neutral",
+          "focus": "manners"
+        }
+      ],
+      "synonyms": [
+        "etiquette",
+        "politeness"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "good manners",
+        "bad manners",
+        "table manners",
+        "have manners",
+        "teach sb manners"
+      ],
+      "word_family": [
+        {
+          "lemma": "mannerly",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görgü kuralları",
+          "alt": [
+            "adap",
+            "terbiye"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu anlamda hep çoğul kullanılır. 'Table manners' = yemek adabı, 'bad manners' = kabalık. Tekil 'a manner' = tarz, biçim demektir.",
+          "mistakes": [
+            {
+              "wrong": "He has no manner.",
+              "right": "He has no manners.",
+              "why": "'Görgü kuralları' anlamında her zaman çoğul 'manners' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural_only"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't talk with your mouth full. It is bad ______.",
+        "answer": "manners",
+        "distractors": [
+          "prices",
+          "seats",
+          "lessons"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.interrupt.v.1",
+      "lemma": "interrupt",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɪntəˈrʌpt/",
+        "uk": "/ˌɪntəˈrʌpt/"
+      },
+      "def": {
+        "micro": "stop someone from talking",
+        "short": "start talking or acting while someone else is speaking or working",
+        "long": "To say or do something while another person is speaking or working, so that they have to stop. It is not polite to interrupt people."
+      },
+      "grammar": {
+        "pattern": "interrupt sb / sth"
+      },
+      "examples": [
+        {
+          "en": "Sorry to interrupt, but dinner is ready.",
+          "tr": "Kusura bakmayın, sözünüzü kesiyorum ama yemek hazır.",
+          "register": "neutral",
+          "focus": "interrupt"
+        },
+        {
+          "en": "Please don't interrupt me when I'm speaking.",
+          "tr": "Ben konuşurken lütfen sözümü kesme.",
+          "register": "neutral",
+          "focus": "interrupt"
+        },
+        {
+          "en": "The phone rang and interrupted our meeting.",
+          "tr": "Telefon çaldı ve toplantımızı böldü.",
+          "register": "neutral",
+          "focus": "interrupted"
+        }
+      ],
+      "synonyms": [
+        "cut in",
+        "disturb"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "sorry to interrupt",
+        "interrupt a meeting",
+        "interrupt sb's work",
+        "keep interrupting"
+      ],
+      "word_family": [
+        {
+          "lemma": "interruption",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sözünü kesmek, bölmek",
+          "alt": [
+            "araya girmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kişi için 'sözünü kesmek', toplantı ya da iş için 'bölmek' denir. İngilizcede ikisi de 'interrupt'.",
+          "mistakes": [
+            {
+              "wrong": "Don't interrupt to me.",
+              "right": "Don't interrupt me.",
+              "why": "'Interrupt' doğrudan nesne alır; 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please don't ______ me while I'm talking. Wait until I finish.",
+        "answer": "interrupt",
+        "distractors": [
+          "follow",
+          "teach",
+          "thank"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ignore.v.1",
+      "lemma": "ignore",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈnɔːr/",
+        "uk": "/ɪɡˈnɔː/"
+      },
+      "def": {
+        "micro": "pay no attention to",
+        "short": "not listen to or look at someone or something on purpose",
+        "long": "To pay no attention to someone or something on purpose. If you ignore a message or a person, they may feel hurt."
+      },
+      "grammar": {
+        "pattern": "ignore sb / sth"
+      },
+      "examples": [
+        {
+          "en": "He saw me, but he ignored me.",
+          "tr": "Beni gördü ama görmezden geldi.",
+          "register": "neutral",
+          "focus": "ignored"
+        },
+        {
+          "en": "Don't ignore the warning on the screen.",
+          "tr": "Ekrandaki uyarıyı görmezden gelme.",
+          "register": "neutral",
+          "focus": "ignore"
+        },
+        {
+          "en": "She ignored all my messages for a week.",
+          "tr": "Bir hafta boyunca bütün mesajlarımı görmezden geldi.",
+          "register": "neutral",
+          "focus": "ignored"
+        }
+      ],
+      "synonyms": [
+        "disregard",
+        "overlook"
+      ],
+      "antonyms": [
+        "notice",
+        "listen to"
+      ],
+      "collocations": [
+        "ignore a message",
+        "ignore advice",
+        "ignore a warning",
+        "completely ignore"
+      ],
+      "word_family": [
+        {
+          "lemma": "ignorance",
+          "pos": "n"
+        },
+        {
+          "lemma": "ignorant",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görmezden gelmek",
+          "alt": [
+            "aldırmamak",
+            "umursamamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük Türkçede 'ignore etmek' de denir. 'Ignorant' ile karıştırma: o 'cahil, bilgisiz' demektir ve 'ignore' ile aynı kökten gelse de anlamı farklıdır.",
+          "mistakes": [
+            {
+              "wrong": "He is ignoring about my problem.",
+              "right": "He is ignoring my problem.",
+              "why": "'Ignore' doğrudan nesne alır; 'about' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:ignorant"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't ______ your doctor's advice about sleep.",
+        "answer": "ignore",
+        "distractors": [
+          "invite",
+          "wear",
+          "visit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

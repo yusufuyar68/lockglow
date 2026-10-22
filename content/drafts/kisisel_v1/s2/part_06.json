@@ -1,439 +1,1022 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.download.v.1",
-  "lemma": "download",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈdaʊnloʊd/", "uk": "/ˌdaʊnˈləʊd/"},
-  "def": {
-    "micro": "copy from the internet",
-    "short": "to copy a file, app, or song from the internet to your phone or computer",
-    "long": "To copy a file, an app, a song, or a video from the internet to your own phone or computer. You usually press a button and wait for a bar to fill."
-  },
-  "grammar": {"pattern": "download + file / app (from + site)"},
-  "examples": [
-    {"en": "I downloaded the app, but I can't log in.", "tr": "Uygulamayı indirdim ama giriş yapamıyorum.", "register": "neutral", "focus": "downloaded"},
-    {"en": "You can download the ticket from your email.", "tr": "Bileti e-postandan indirebilirsin.", "register": "neutral", "focus": "download"},
-    {"en": "It takes a long time to download big files on slow Wi-Fi.", "tr": "Yavaş Wi-Fi'da büyük dosyaları indirmek uzun sürüyor.", "register": "neutral", "focus": "download"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": [],
-  "antonyms": ["upload"],
-  "collocations": ["download an app", "download a file", "download a song", "download speed"],
-  "word_family": [{"lemma": "download", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "indirmek",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Türkçede 'yüklemek' hem upload hem install için kullanıldığından karışır. Download = indirmek: internetten kendi telefonuna veya bilgisayarına almak.",
-      "mistakes": [
-        {"wrong": "I downloaded my photo to my profile page.", "right": "I uploaded my photo to my profile page.", "why": "Telefondan internete göndermek 'upload'dır (fotoğrafı profile yüklemek). Download ise internetten telefonuna almaktır (indirmek)."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.download.v.1",
+      "lemma": "download",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdaʊnloʊd/",
+        "uk": "/ˌdaʊnˈləʊd/"
+      },
+      "def": {
+        "micro": "copy from the internet",
+        "short": "to copy a file, app, or song from the internet to your phone or computer",
+        "long": "To copy a file, an app, a song, or a video from the internet to your own phone or computer. You usually press a button and wait for a bar to fill."
+      },
+      "grammar": {
+        "pattern": "download + file / app (from + site)"
+      },
+      "examples": [
+        {
+          "en": "I downloaded the app, but I can't log in.",
+          "tr": "Uygulamayı indirdim ama giriş yapamıyorum.",
+          "register": "neutral",
+          "focus": "downloaded"
+        },
+        {
+          "en": "You can download the ticket from your email.",
+          "tr": "Bileti e-postandan indirebilirsin.",
+          "register": "neutral",
+          "focus": "download"
+        },
+        {
+          "en": "It takes a long time to download big files on slow Wi-Fi.",
+          "tr": "Yavaş Wi-Fi'da büyük dosyaları indirmek uzun sürüyor.",
+          "register": "neutral",
+          "focus": "download"
+        }
       ],
-      "mnemonic": "Down = aşağı: dosya buluttan (internetten) telefonuna iner. Tersi 'upload': telefondan buluta çıkar."
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I need to ______ this app before I can use it.", "answer": "download", "distractors": ["delete", "charge", "scan"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.upload.v.1",
-  "lemma": "upload",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈʌploʊd/", "uk": "/ʌpˈləʊd/"},
-  "def": {
-    "micro": "send a file to the internet",
-    "short": "to send a photo, video, or file from your phone to the internet",
-    "long": "To send a photo, video, or file from your phone or computer to a website or an app. After that, other people can see it or get it."
-  },
-  "grammar": {"pattern": "upload + file (to + site)"},
-  "examples": [
-    {"en": "I uploaded the photos to the shared folder.", "tr": "Fotoğrafları ortak klasöre yükledim.", "register": "neutral", "focus": "uploaded"},
-    {"en": "She uploads a new video every Friday.", "tr": "Her cuma yeni bir video yüklüyor.", "register": "neutral", "focus": "uploads"},
-    {"en": "Please upload your CV to our website.", "tr": "Lütfen özgeçmişinizi web sitemize yükleyin.", "register": "formal", "focus": "upload"}
-  ],
-  "synonyms": [],
-  "antonyms": ["download"],
-  "collocations": ["upload a photo", "upload a video", "upload a file", "upload speed"],
-  "word_family": [{"lemma": "upload", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yüklemek",
-      "alt": ["karşıya yüklemek"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'yüklemek' hem 'upload' (internete göndermek) hem 'install' (programı kurmak) için kullanılır. 'Upload' her zaman senden internete doğrudur.",
-      "mistakes": [
-        {"wrong": "I uploaded the app on my phone.", "right": "I downloaded the app on my phone.", "why": "Telefona uygulama almak 'download' (veya 'install') olur. 'Upload' dosyayı telefondan internete göndermektir."}
+      "synonyms": [],
+      "antonyms": [
+        "upload"
       ],
-      "mnemonic": "Up = yukarı: fotoğraf telefonundan buluta (internete) çıkar. Tersi 'download': buluttan telefona iner."
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I took some photos and want to ______ them to my website.", "answer": "upload", "distractors": ["delete", "download", "print"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.password.n.1",
-  "lemma": "password",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈpæswɜːrd/", "uk": "/ˈpɑːswɜːd/"},
-  "def": {
-    "micro": "secret word or code",
-    "short": "a secret word or set of letters and numbers that lets you open an account",
-    "long": "A secret word or set of letters, numbers, and signs that you type to open your phone, email, or an account. You should never share it with other people."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I forgot my password again.", "tr": "Şifremi yine unuttum.", "register": "neutral", "focus": "password"},
-    {"en": "Your password must have at least eight letters and numbers.", "tr": "Şifreniz en az sekiz harf ve rakamdan oluşmalı.", "register": "neutral", "focus": "password"},
-    {"en": "Don't share your password with anyone.", "tr": "Şifreni kimseyle paylaşma.", "register": "neutral", "focus": "password"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["forget your password", "reset your password", "change your password", "a strong password", "enter your password"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "şifre",
-      "alt": ["parola"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Günlük Türkçede 'şifre', yazılı ve resmî dilde 'parola' denir. 'Şifre' kelimesinin gizli yazı anlamı İngilizcede 'code' veya 'cipher'dır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Enter your ______ to open your email account.", "answer": "password", "distractors": ["screen", "battery", "charger"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.charger.n.1",
-  "lemma": "charger",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "for phones",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈtʃɑːrdʒər/", "uk": "/ˈtʃɑːdʒə/"},
-  "def": {
-    "micro": "cable for phone power",
-    "short": "a device and cable that put power into a phone or laptop",
-    "long": "A small device or cable that you plug in to put power into the battery of a phone, laptop, or other device. Many people carry one in their bag."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Do you have a phone charger I can borrow?", "tr": "Ödünç alabileceğim bir şarj aletin var mı?", "register": "neutral", "focus": "charger"},
-    {"en": "I left my charger at the office.", "tr": "Şarj aletimi ofiste unuttum.", "register": "neutral", "focus": "charger"},
-    {"en": "This charger is too slow; it needs three hours.", "tr": "Bu şarj aleti çok yavaş; üç saat sürüyor.", "register": "neutral", "focus": "charger"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["a phone charger", "a laptop charger", "a wireless charger", "a fast charger"],
-  "word_family": [{"lemma": "charge", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "şarj aleti",
-      "alt": ["şarj cihazı", "adaptör"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçedeki 'şarj' de aynı kökten gelir (charge). 'Şarj aleti' = charger. 'Şarjım bitti' ise 'My battery is dead' olur.",
-      "mistakes": [
-        {"wrong": "Do you have a charge for my phone?", "right": "Do you have a charger for my phone?", "why": "Şarj aleti 'charger'dır. 'Charge' fiil (şarj etmek) veya isim olarak ücret / elektrik yükü demektir, alet değil."}
+      "collocations": [
+        "download an app",
+        "download a file",
+        "download a song",
+        "download speed"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My phone is almost dead. Do you have a ______?", "answer": "charger", "distractors": ["screen", "password", "signal"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.battery.n.1",
-  "lemma": "battery",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈbætəri/", "uk": "/ˈbætəri/"},
-  "def": {
-    "micro": "power store in a phone",
-    "short": "the part inside a phone, car, or toy that stores power",
-    "long": "The part inside a phone, laptop, car, or toy that stores electricity so it can work without a plug. Small ones are used in remote controls and clocks."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "My phone battery is almost dead.", "tr": "Telefonumun şarjı bitmek üzere.", "register": "neutral", "focus": "battery"},
-    {"en": "How long does the battery last?", "tr": "Pil ne kadar dayanıyor?", "register": "neutral", "focus": "battery"},
-    {"en": "The remote doesn't work. We need new batteries.", "tr": "Kumanda çalışmıyor. Yeni pil lazım.", "register": "neutral", "focus": "batteries"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["battery life", "low battery", "a dead battery", "change the batteries"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "pil",
-      "alt": ["batarya"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Küçük pillere 'pil'; telefon ve laptop için hem 'pil' hem 'batarya' denir; arabada 'akü'dür. Telefonun 'şarjı' dediğimiz şey İngilizcede 'battery'dir: 'My battery is low.'",
-      "mistakes": [
-        {"wrong": "My phone's battery is finished.", "right": "My phone's battery is dead.", "why": "Türkçede 'bitti' deriz, ama İngilizcede pil bitince 'dead' (veya 'ran out') denir; 'finished' kullanılmaz."}
+      "word_family": [
+        {
+          "lemma": "download",
+          "pos": "n"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My phone turned off because the ______ was dead.", "answer": "battery", "distractors": ["password", "link", "message"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.screenshot.n.1",
-  "lemma": "screenshot",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈskriːnʃɑːt/", "uk": "/ˈskriːnʃɒt/"},
-  "def": {
-    "micro": "picture of your phone screen",
-    "short": "a photo of what you see on your phone or computer screen",
-    "long": "A picture that your phone or computer takes of what is on its screen at that moment. People use it to save messages, tickets, or maps."
-  },
-  "grammar": {"pattern": "take a screenshot (of + sth)"},
-  "examples": [
-    {"en": "Can you send me a screenshot of the message?", "tr": "Mesajın ekran görüntüsünü bana gönderir misin?", "register": "neutral", "focus": "screenshot"},
-    {"en": "I took a screenshot of the ticket.", "tr": "Biletin ekran görüntüsünü aldım.", "register": "neutral", "focus": "screenshot"},
-    {"en": "Send a screenshot of the error to the support team.", "tr": "Hatanın ekran görüntüsünü destek ekibine gönderin.", "register": "neutral", "focus": "screenshot"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["take a screenshot", "send a screenshot", "a screenshot of"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "ekran görüntüsü",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Gençler günlük dilde kısaca 'ss' der ('ss at'). İngilizcede 'screen grab' ve 'screencap' de denir ama en yaygını 'screenshot'tır.",
-      "mistakes": [
-        {"wrong": "I took screenshot of the map.", "right": "I took a screenshot of the map.", "why": "Türkçede 'bir' çoğu zaman söylenmez. İngilizcede tekil sayılabilir isimden önce 'a' gerekir: a screenshot."}
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "indirmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'yüklemek' hem upload hem install için kullanıldığından karışır. Download = indirmek: internetten kendi telefonuna veya bilgisayarına almak.",
+          "mistakes": [
+            {
+              "wrong": "I downloaded my photo to my profile page.",
+              "right": "I uploaded my photo to my profile page.",
+              "why": "Telefondan internete göndermek 'upload'dır (fotoğrafı profile yüklemek). Download ise internetten telefonuna almaktır (indirmek)."
+            }
+          ],
+          "mnemonic": "Down = aşağı: dosya buluttan (internetten) telefonuna iner. Tersi 'upload': telefondan buluta çıkar."
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need to ______ this app before I can use it.",
+        "answer": "download",
+        "distractors": [
+          "delete",
+          "charge",
+          "scan"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.upload.v.1",
+      "lemma": "upload",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʌploʊd/",
+        "uk": "/ʌpˈləʊd/"
+      },
+      "def": {
+        "micro": "send a file to the internet",
+        "short": "to send a photo, video, or file from your phone to the internet",
+        "long": "To send a photo, video, or file from your phone or computer to a website or an app. After that, other people can see it or get it."
+      },
+      "grammar": {
+        "pattern": "upload + file (to + site)"
+      },
+      "examples": [
+        {
+          "en": "I uploaded the photos to the shared folder.",
+          "tr": "Fotoğrafları ortak klasöre yükledim.",
+          "register": "neutral",
+          "focus": "uploaded"
+        },
+        {
+          "en": "She uploads a new video every Friday.",
+          "tr": "Her cuma yeni bir video yüklüyor.",
+          "register": "neutral",
+          "focus": "uploads"
+        },
+        {
+          "en": "Please upload your CV to our website.",
+          "tr": "Lütfen özgeçmişinizi web sitemize yükleyin.",
+          "register": "formal",
+          "focus": "upload"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I took a ______ of the map, so I can use it without internet.", "answer": "screenshot", "distractors": ["password", "charger", "notification"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.update.n.1",
-  "lemma": "update",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "new software version",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈʌpdeɪt/", "uk": "/ˈʌpdeɪt/"},
-  "def": {
-    "micro": "new version of an app",
-    "short": "a new version of an app or phone system that fixes problems or adds things",
-    "long": "A new version of an app, a phone, or a computer program that fixes problems or adds new things. Your phone often asks you to get one."
-  },
-  "grammar": {"pattern": "a software / app update"},
-  "examples": [
-    {"en": "There is a new update for this app.", "tr": "Bu uygulama için yeni bir güncelleme var.", "register": "neutral", "focus": "update"},
-    {"en": "My phone needs an update, but the storage is full.", "tr": "Telefonumun güncellenmesi gerekiyor ama depolama alanı dolu.", "register": "neutral", "focus": "update"},
-    {"en": "The update took twenty minutes to finish.", "tr": "Güncelleme yirmi dakikada bitti.", "register": "neutral", "focus": "update"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["a software update", "install an update", "an update is available", "a new update"],
-  "word_family": [{"lemma": "update", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "güncelleme",
-      "alt": ["yeni sürüm"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Fiil olarak 'update' = güncellemek, isim olarak 'an update' = bir güncelleme. Haber dilinde 'son gelişme' anlamı da vardır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My phone says there is a new software ______ to install.", "answer": "update", "distractors": ["charger", "password", "screen"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.delete.v.1",
-  "lemma": "delete",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/dɪˈliːt/", "uk": "/dɪˈliːt/"},
-  "def": {
-    "micro": "remove from a device",
-    "short": "to remove a file, photo, or message from a phone or computer",
-    "long": "To remove a file, photo, message, or app from a phone or computer, so that it is no longer there. Be careful: some things cannot come back after this."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I deleted all the old photos from my phone.", "tr": "Telefondaki bütün eski fotoğrafları sildim.", "register": "neutral", "focus": "deleted"},
-    {"en": "Please delete this message after you read it.", "tr": "Lütfen bu mesajı okuduktan sonra sil.", "register": "neutral", "focus": "delete"},
-    {"en": "She deleted the app because it used too much battery.", "tr": "Çok pil harcadığı için uygulamayı sildi.", "register": "neutral", "focus": "deleted"}
-  ],
-  "synonyms": ["remove", "erase"],
-  "antonyms": [],
-  "collocations": ["delete a file", "delete a message", "delete an app", "delete an account"],
-  "word_family": [{"lemma": "deletion", "pos": "n"}],
-  "etymology": {"text": "From Latin 'delere', meaning 'to wipe out' or 'to destroy'.", "origin": "Latin", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "silmek",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Dosya, fotoğraf ve mesaj silmek için 'delete' kullanılır; uygulama için 'delete' veya 'uninstall' denir. Kalıcı olarak silmek için 'permanently delete' denir.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I need more space, so I will ______ some old apps.", "answer": "delete", "distractors": ["download", "charge", "scan"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.link.n.1",
-  "lemma": "link",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "on a web page",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/lɪŋk/", "uk": "/lɪŋk/"},
-  "def": {
-    "micro": "web address you can tap",
-    "short": "a word, picture, or address that you click to open another web page",
-    "long": "A word, picture, or address on a screen that opens another page when you tap or click it. People often send one by message or email."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Click the link to reset your password.", "tr": "Şifrenizi sıfırlamak için bağlantıya tıklayın.", "register": "neutral", "focus": "link"},
-    {"en": "Can you send me the link to the video?", "tr": "Videonun linkini bana gönderir misin?", "register": "neutral", "focus": "link"},
-    {"en": "The link doesn't work. Can you send it again?", "tr": "Link çalışmıyor. Tekrar gönderir misin?", "register": "neutral", "focus": "link"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["click a link", "send a link", "share a link", "a broken link", "the link below"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bağlantı",
-      "alt": ["link"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Günlük dilde çoğu kişi 'link' der, yazılı dilde 'bağlantı' kullanılır. İngilizcede 'link' iki şey arasındaki bağ anlamına da gelir; bu kart tıkladığınız web bağlantısını anlatır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I'll send you the ______ to the website in a message.", "answer": "link", "distractors": ["battery", "charger", "screen"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.settings.n.1",
-  "lemma": "settings",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "plural: phone options",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈsɛtɪŋz/", "uk": "/ˈsɛtɪŋz/"},
-  "def": {
-    "micro": "options you can change",
-    "short": "the options on a phone or app that you can change",
-    "long": "The options on a phone, an app, or a device that you can change to make it work the way you like. You usually find them under a small gear icon."
-  },
-  "grammar": {"pattern": "open / change + the settings"},
-  "examples": [
-    {"en": "Open the settings and turn on dark mode.", "tr": "Ayarları açıp koyu modu aç.", "register": "neutral", "focus": "settings"},
-    {"en": "I changed the privacy settings on my account.", "tr": "Hesabımın gizlilik ayarlarını değiştirdim.", "register": "neutral", "focus": "settings"},
-    {"en": "Go to settings and check the Wi-Fi.", "tr": "Ayarlar'a gidip Wi-Fi'ı kontrol et.", "register": "neutral", "focus": "settings"}
-  ],
-  "synonyms": ["options"],
-  "antonyms": [],
-  "collocations": ["change the settings", "open settings", "privacy settings", "phone settings", "default settings"],
-  "word_family": [{"lemma": "set", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "ayarlar",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Telefondaki 'Ayarlar' menüsü İngilizcede 'Settings'tir ve çoğul kullanılır. Tekil 'setting' ise tek bir ayar veya bir olayın geçtiği ortam demektir.",
-      "mistakes": [
-        {"wrong": "Go to the setting and change the language.", "right": "Go to settings and change the language.", "why": "'Ayarlar' çoğuldur: 'settings'. Menü adı olarak çoğu zaman 'the' bile gerekmez."}
+      "synonyms": [],
+      "antonyms": [
+        "download"
       ],
-      "mnemonic": null
+      "collocations": [
+        "upload a photo",
+        "upload a video",
+        "upload a file",
+        "upload speed"
+      ],
+      "word_family": [
+        {
+          "lemma": "upload",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yüklemek",
+          "alt": [
+            "karşıya yüklemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'yüklemek' hem 'upload' (internete göndermek) hem 'install' (programı kurmak) için kullanılır. 'Upload' her zaman senden internete doğrudur.",
+          "mistakes": [
+            {
+              "wrong": "I uploaded the app on my phone.",
+              "right": "I downloaded the app on my phone.",
+              "why": "Telefona uygulama almak 'download' (veya 'install') olur. 'Upload' dosyayı telefondan internete göndermektir."
+            }
+          ],
+          "mnemonic": "Up = yukarı: fotoğraf telefonundan buluta (internete) çıkar. Tersi 'download': buluttan telefona iner."
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I took some photos and want to ______ them to my website.",
+        "answer": "upload",
+        "distractors": [
+          "delete",
+          "download",
+          "print"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.password.n.1",
+      "lemma": "password",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpæswɜːrd/",
+        "uk": "/ˈpɑːswɜːd/"
+      },
+      "def": {
+        "micro": "secret word or code",
+        "short": "a secret word or set of letters and numbers that lets you open an account",
+        "long": "A secret word or set of letters, numbers, and signs that you type to open your phone, email, or an account. You should never share it with other people."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I forgot my password again.",
+          "tr": "Şifremi yine unuttum.",
+          "register": "neutral",
+          "focus": "password"
+        },
+        {
+          "en": "Your password must have at least eight letters and numbers.",
+          "tr": "Şifreniz en az sekiz harf ve rakamdan oluşmalı.",
+          "register": "neutral",
+          "focus": "password"
+        },
+        {
+          "en": "Don't share your password with anyone.",
+          "tr": "Şifreni kimseyle paylaşma.",
+          "register": "neutral",
+          "focus": "password"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "forget your password",
+        "reset your password",
+        "change your password",
+        "a strong password",
+        "enter your password"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şifre",
+          "alt": [
+            "parola"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük Türkçede 'şifre', yazılı ve resmî dilde 'parola' denir. 'Şifre' kelimesinin gizli yazı anlamı İngilizcede 'code' veya 'cipher'dır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Enter your ______ to open your email account.",
+        "answer": "password",
+        "distractors": [
+          "screen",
+          "battery",
+          "charger"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.charger.n.1",
+      "lemma": "charger",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "for phones",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtʃɑːrdʒər/",
+        "uk": "/ˈtʃɑːdʒə/"
+      },
+      "def": {
+        "micro": "cable for phone power",
+        "short": "a device and cable that put power into a phone or laptop",
+        "long": "A small device or cable that you plug in to put power into the battery of a phone, laptop, or other device. Many people carry one in their bag."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Do you have a phone charger I can borrow?",
+          "tr": "Ödünç alabileceğim bir şarj aletin var mı?",
+          "register": "neutral",
+          "focus": "charger"
+        },
+        {
+          "en": "I left my charger at the office.",
+          "tr": "Şarj aletimi ofiste unuttum.",
+          "register": "neutral",
+          "focus": "charger"
+        },
+        {
+          "en": "This charger is too slow; it needs three hours.",
+          "tr": "Bu şarj aleti çok yavaş; üç saat sürüyor.",
+          "register": "neutral",
+          "focus": "charger"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a phone charger",
+        "a laptop charger",
+        "a wireless charger",
+        "a fast charger"
+      ],
+      "word_family": [
+        {
+          "lemma": "charge",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şarj aleti",
+          "alt": [
+            "şarj cihazı",
+            "adaptör"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'şarj' de aynı kökten gelir (charge). 'Şarj aleti' = charger. 'Şarjım bitti' ise 'My battery is dead' olur.",
+          "mistakes": [
+            {
+              "wrong": "Do you have a charge for my phone?",
+              "right": "Do you have a charger for my phone?",
+              "why": "Şarj aleti 'charger'dır. 'Charge' fiil (şarj etmek) veya isim olarak ücret / elektrik yükü demektir, alet değil."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone is almost dead. Do you have a ______?",
+        "answer": "charger",
+        "distractors": [
+          "screen",
+          "password",
+          "signal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.battery.n.1",
+      "lemma": "battery",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbætəri/",
+        "uk": "/ˈbætəri/"
+      },
+      "def": {
+        "micro": "power store in a phone",
+        "short": "the part inside a phone, car, or toy that stores power",
+        "long": "The part inside a phone, laptop, car, or toy that stores electricity so it can work without a plug. Small ones are used in remote controls and clocks."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My phone battery is almost dead.",
+          "tr": "Telefonumun şarjı bitmek üzere.",
+          "register": "neutral",
+          "focus": "battery"
+        },
+        {
+          "en": "How long does the battery last?",
+          "tr": "Pil ne kadar dayanıyor?",
+          "register": "neutral",
+          "focus": "battery"
+        },
+        {
+          "en": "The remote doesn't work. We need new batteries.",
+          "tr": "Kumanda çalışmıyor. Yeni pil lazım.",
+          "register": "neutral",
+          "focus": "batteries"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "battery life",
+        "low battery",
+        "a dead battery",
+        "change the batteries"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pil",
+          "alt": [
+            "batarya"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Küçük pillere 'pil'; telefon ve laptop için hem 'pil' hem 'batarya' denir; arabada 'akü'dür. Telefonun 'şarjı' dediğimiz şey İngilizcede 'battery'dir: 'My battery is low.'",
+          "mistakes": [
+            {
+              "wrong": "My phone's battery is finished.",
+              "right": "My phone's battery is dead.",
+              "why": "Türkçede 'bitti' deriz, ama İngilizcede pil bitince 'dead' (veya 'ran out') denir; 'finished' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone turned off because the ______ was dead.",
+        "answer": "battery",
+        "distractors": [
+          "password",
+          "link",
+          "message"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.screenshot.n.1",
+      "lemma": "screenshot",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskriːnʃɑːt/",
+        "uk": "/ˈskriːnʃɒt/"
+      },
+      "def": {
+        "micro": "picture of your phone screen",
+        "short": "a photo of what you see on your phone or computer screen",
+        "long": "A picture that your phone or computer takes of what is on its screen at that moment. People use it to save messages, tickets, or maps."
+      },
+      "grammar": {
+        "pattern": "take a screenshot (of + sth)"
+      },
+      "examples": [
+        {
+          "en": "Can you send me a screenshot of the message?",
+          "tr": "Mesajın ekran görüntüsünü bana gönderir misin?",
+          "register": "neutral",
+          "focus": "screenshot"
+        },
+        {
+          "en": "I took a screenshot of the ticket.",
+          "tr": "Biletin ekran görüntüsünü aldım.",
+          "register": "neutral",
+          "focus": "screenshot"
+        },
+        {
+          "en": "Send a screenshot of the error to the support team.",
+          "tr": "Hatanın ekran görüntüsünü destek ekibine gönderin.",
+          "register": "neutral",
+          "focus": "screenshot"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take a screenshot",
+        "send a screenshot",
+        "a screenshot of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ekran görüntüsü",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gençler günlük dilde kısaca 'ss' der ('ss at'). İngilizcede 'screen grab' ve 'screencap' de denir ama en yaygını 'screenshot'tır.",
+          "mistakes": [
+            {
+              "wrong": "I took screenshot of the map.",
+              "right": "I took a screenshot of the map.",
+              "why": "Türkçede 'bir' çoğu zaman söylenmez. İngilizcede tekil sayılabilir isimden önce 'a' gerekir: a screenshot."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I took a ______ of the map, so I can use it without internet.",
+        "answer": "screenshot",
+        "distractors": [
+          "password",
+          "charger",
+          "notification"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.update.n.1",
+      "lemma": "update",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "new software version",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʌpdeɪt/",
+        "uk": "/ˈʌpdeɪt/"
+      },
+      "def": {
+        "micro": "new version of an app",
+        "short": "a new version of an app or phone system that fixes problems or adds things",
+        "long": "A new version of an app, a phone, or a computer program that fixes problems or adds new things. Your phone often asks you to get one."
+      },
+      "grammar": {
+        "pattern": "a software / app update"
+      },
+      "examples": [
+        {
+          "en": "There is a new update for this app.",
+          "tr": "Bu uygulama için yeni bir güncelleme var.",
+          "register": "neutral",
+          "focus": "update"
+        },
+        {
+          "en": "My phone needs an update, but the storage is full.",
+          "tr": "Telefonumun güncellenmesi gerekiyor ama depolama alanı dolu.",
+          "register": "neutral",
+          "focus": "update"
+        },
+        {
+          "en": "The update took twenty minutes to finish.",
+          "tr": "Güncelleme yirmi dakikada bitti.",
+          "register": "neutral",
+          "focus": "update"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a software update",
+        "install an update",
+        "an update is available",
+        "a new update"
+      ],
+      "word_family": [
+        {
+          "lemma": "update",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güncelleme",
+          "alt": [
+            "yeni sürüm"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil olarak 'update' = güncellemek, isim olarak 'an update' = bir güncelleme. Haber dilinde 'son gelişme' anlamı da vardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone says there is a new software ______ to install.",
+        "answer": "update",
+        "distractors": [
+          "charger",
+          "password",
+          "screen"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.delete.v.1",
+      "lemma": "delete",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈliːt/",
+        "uk": "/dɪˈliːt/"
+      },
+      "def": {
+        "micro": "remove from a device",
+        "short": "to remove a file, photo, or message from a phone or computer",
+        "long": "To remove a file, photo, message, or app from a phone or computer, so that it is no longer there. Be careful: some things cannot come back after this."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I deleted all the old photos from my phone.",
+          "tr": "Telefondaki bütün eski fotoğrafları sildim.",
+          "register": "neutral",
+          "focus": "deleted"
+        },
+        {
+          "en": "Please delete this message after you read it.",
+          "tr": "Lütfen bu mesajı okuduktan sonra sil.",
+          "register": "neutral",
+          "focus": "delete"
+        },
+        {
+          "en": "She deleted the app because it used too much battery.",
+          "tr": "Çok pil harcadığı için uygulamayı sildi.",
+          "register": "neutral",
+          "focus": "deleted"
+        }
+      ],
+      "synonyms": [
+        "remove",
+        "erase"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "delete a file",
+        "delete a message",
+        "delete an app",
+        "delete an account"
+      ],
+      "word_family": [
+        {
+          "lemma": "deletion",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'delere', meaning 'to wipe out' or 'to destroy'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "silmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dosya, fotoğraf ve mesaj silmek için 'delete' kullanılır; uygulama için 'delete' veya 'uninstall' denir. Kalıcı olarak silmek için 'permanently delete' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need more space, so I will ______ some old apps.",
+        "answer": "delete",
+        "distractors": [
+          "download",
+          "charge",
+          "scan"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.link.n.1",
+      "lemma": "link",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "on a web page",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɪŋk/",
+        "uk": "/lɪŋk/"
+      },
+      "def": {
+        "micro": "web address you can tap",
+        "short": "a word, picture, or address that you click to open another web page",
+        "long": "A word, picture, or address on a screen that opens another page when you tap or click it. People often send one by message or email."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Click the link to reset your password.",
+          "tr": "Şifrenizi sıfırlamak için bağlantıya tıklayın.",
+          "register": "neutral",
+          "focus": "link"
+        },
+        {
+          "en": "Can you send me the link to the video?",
+          "tr": "Videonun linkini bana gönderir misin?",
+          "register": "neutral",
+          "focus": "link"
+        },
+        {
+          "en": "The link doesn't work. Can you send it again?",
+          "tr": "Link çalışmıyor. Tekrar gönderir misin?",
+          "register": "neutral",
+          "focus": "link"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "click a link",
+        "send a link",
+        "share a link",
+        "a broken link",
+        "the link below"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağlantı",
+          "alt": [
+            "link"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük dilde çoğu kişi 'link' der, yazılı dilde 'bağlantı' kullanılır. İngilizcede 'link' iki şey arasındaki bağ anlamına da gelir; bu kart tıkladığınız web bağlantısını anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'll send you the ______ to the website in a message.",
+        "answer": "link",
+        "distractors": [
+          "battery",
+          "charger",
+          "screen"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.settings.n.1",
+      "lemma": "settings",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "plural: phone options",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɛtɪŋz/",
+        "uk": "/ˈsɛtɪŋz/"
+      },
+      "def": {
+        "micro": "options you can change",
+        "short": "the options on a phone or app that you can change",
+        "long": "The options on a phone, an app, or a device that you can change to make it work the way you like. You usually find them under a small gear icon."
+      },
+      "grammar": {
+        "pattern": "open / change + the settings"
+      },
+      "examples": [
+        {
+          "en": "Open the settings and turn on dark mode.",
+          "tr": "Ayarları açıp koyu modu aç.",
+          "register": "neutral",
+          "focus": "settings"
+        },
+        {
+          "en": "I changed the privacy settings on my account.",
+          "tr": "Hesabımın gizlilik ayarlarını değiştirdim.",
+          "register": "neutral",
+          "focus": "settings"
+        },
+        {
+          "en": "Go to settings and check the Wi-Fi.",
+          "tr": "Ayarlar'a gidip Wi-Fi'ı kontrol et.",
+          "register": "neutral",
+          "focus": "settings"
+        }
+      ],
+      "synonyms": [
+        "options"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "change the settings",
+        "open settings",
+        "privacy settings",
+        "phone settings",
+        "default settings"
+      ],
+      "word_family": [
+        {
+          "lemma": "set",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayarlar",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefondaki 'Ayarlar' menüsü İngilizcede 'Settings'tir ve çoğul kullanılır. Tekil 'setting' ise tek bir ayar veya bir olayın geçtiği ortam demektir.",
+          "mistakes": [
+            {
+              "wrong": "Go to the setting and change the language.",
+              "right": "Go to settings and change the language.",
+              "why": "'Ayarlar' çoğuldur: 'settings'. Menü adı olarak çoğu zaman 'the' bile gerekmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To make the text bigger, open your phone ______.",
+        "answer": "settings",
+        "distractors": [
+          "passwords",
+          "chargers",
+          "batteries"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "To make the text bigger, open your phone ______.", "answer": "settings", "distractors": ["passwords", "chargers", "batteries"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }
