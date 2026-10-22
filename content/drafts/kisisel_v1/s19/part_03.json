@@ -1,0 +1,1074 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.gym.n.1",
+      "lemma": "gym",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dʒɪm/",
+        "uk": "/dʒɪm/"
+      },
+      "def": {
+        "micro": "a place to exercise",
+        "short": "a building or big room with machines where people go to do exercise",
+        "long": "A building or big room where people go to do exercise, often with machines and weights. Many people pay every month to use one."
+      },
+      "grammar": {
+        "pattern": "go to the gym / at the gym"
+      },
+      "examples": [
+        {
+          "en": "Tolga goes to the gym before work.",
+          "tr": "Tolga işten önce spor salonuna gidiyor.",
+          "register": "neutral",
+          "focus": "gym"
+        },
+        {
+          "en": "The gym near my office is open 24 hours, so I can go late at night.",
+          "tr": "Ofisimin yakınındaki spor salonu 24 saat açık, bu yüzden gece geç saatte gidebiliyorum.",
+          "register": "neutral",
+          "focus": "gym"
+        },
+        {
+          "en": "After work the gym is very crowded, so Omar prefers to go early in the morning.",
+          "tr": "İşten sonra spor salonu çok kalabalık oluyor, bu yüzden Omar sabah erkenden gitmeyi tercih ediyor.",
+          "register": "neutral",
+          "focus": "gym"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go to the gym",
+        "at the gym",
+        "join a gym",
+        "gym membership",
+        "gym bag"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Short for 'gymnasium', from Greek 'gymnasion', a place where people trained their bodies.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "spor salonu",
+          "alt": [
+            "salon",
+            "fitness salonu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Spor salonuna giderken 'the' kullanılır: 'go to the gym'. ABD'de okuldaki beden eğitimi dersine ve okulun spor salonuna da 'gym' denir.",
+          "mistakes": [
+            {
+              "wrong": "I go to gym every evening.",
+              "right": "I go to the gym every evening.",
+              "why": "Türkçede 'the' gibi bir tanımlık olmadığı için atlanıyor; spor salonuna gitmek için 'go to the gym' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hakan lifts weights at the ______ three evenings a week.",
+        "answer": "gym",
+        "distractors": [
+          "pool",
+          "library",
+          "bakery"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fit.adj.1",
+      "lemma": "fit",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "healthy and strong",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɪt/",
+        "uk": "/fɪt/"
+      },
+      "def": {
+        "micro": "healthy and strong",
+        "short": "healthy and strong in your body, usually because you do sport often",
+        "long": "Healthy and strong in your body, usually because you do sport or exercise often. People often say 'keep fit' or 'get fit'."
+      },
+      "grammar": {
+        "pattern": "keep / stay / get fit"
+      },
+      "examples": [
+        {
+          "en": "Tom is over 60, but he is fit enough to climb mountains.",
+          "tr": "Tom 60 yaşını geçti ama dağlara tırmanacak kadar zinde.",
+          "register": "neutral",
+          "focus": "fit"
+        },
+        {
+          "en": "Esra cycles to work every day to stay fit.",
+          "tr": "Esra formda kalmak için her gün işe bisikletle gidiyor.",
+          "register": "neutral",
+          "focus": "fit"
+        },
+        {
+          "en": "I want to get fit before summer, so I've started swimming twice a week.",
+          "tr": "Yazdan önce forma girmek istiyorum, bu yüzden haftada iki kez yüzmeye başladım.",
+          "register": "neutral",
+          "focus": "fit"
+        }
+      ],
+      "synonyms": [
+        "in shape"
+      ],
+      "antonyms": [
+        "unfit",
+        "out of shape"
+      ],
+      "collocations": [
+        "keep fit",
+        "get fit",
+        "stay fit",
+        "very fit"
+      ],
+      "word_family": [
+        {
+          "lemma": "fitness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "formda, zinde",
+          "alt": [
+            "sağlıklı",
+            "dinç"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil olarak 'fit' beden olarak uymak demektir: 'This jacket fits me.' (Bu ceket bana tam oluyor.) Sıfat olarak 'I'm fit' formdayım demektir. 'get fit' forma girmek, 'keep fit' formda kalmak olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ozan runs every morning and eats well, so he is very ______.",
+        "answer": "fit",
+        "distractors": [
+          "lazy",
+          "weak",
+          "sick"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sweat.v.1",
+      "lemma": "sweat",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/swɛt/",
+        "uk": "/swɛt/"
+      },
+      "def": {
+        "micro": "lose water through your skin",
+        "short": "have water come out of your skin because you are hot, nervous or working hard",
+        "long": "To have water come out of your skin because you are hot, nervous or doing hard exercise. It happens a lot in summer and during sport."
+      },
+      "grammar": {
+        "pattern": "sweat a lot"
+      },
+      "examples": [
+        {
+          "en": "I always sweat a lot in summer.",
+          "tr": "Yazın hep çok terlerim.",
+          "register": "neutral",
+          "focus": "sweat"
+        },
+        {
+          "en": "Burak was sweating after twenty minutes on the running machine.",
+          "tr": "Burak koşu bandında yirmi dakikanın sonunda terliyordu.",
+          "register": "neutral",
+          "focus": "sweating"
+        },
+        {
+          "en": "Take a towel to your yoga class; you will sweat more than you think.",
+          "tr": "Yoga dersine havlu götür; sandığından daha çok terleyeceksin.",
+          "register": "neutral",
+          "focus": "sweat"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "sweet"
+      ],
+      "collocations": [
+        "sweat a lot",
+        "start to sweat",
+        "sweat heavily"
+      ],
+      "word_family": [
+        {
+          "lemma": "sweat",
+          "pos": "n"
+        },
+        {
+          "lemma": "sweaty",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "terlemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Okunuşu 'suet' gibidir (tek hece). Tatlı anlamındaki 'sweet' /swiːt/ ile karıştırma. İsim olarak 'ter' demektir: 'covered in sweat' (ter içinde).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was 38 degrees, and everyone on the bus was starting to ______.",
+        "answer": "sweat",
+        "distractors": [
+          "freeze",
+          "shiver",
+          "sneeze"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stretch.v.1",
+      "lemma": "stretch",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make your body long, e.g. before sport",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/strɛtʃ/",
+        "uk": "/strɛtʃ/"
+      },
+      "def": {
+        "micro": "make your muscles longer",
+        "short": "make your arms, legs or body long and straight so your muscles feel loose",
+        "long": "To make your arms, legs or body as long as you can, so your muscles feel loose. People do this before or after sport, or when they wake up."
+      },
+      "grammar": {
+        "pattern": "stretch (your legs / arms)"
+      },
+      "examples": [
+        {
+          "en": "Always stretch before you go for a run.",
+          "tr": "Koşuya çıkmadan önce mutlaka esneme hareketleri yap.",
+          "register": "neutral",
+          "focus": "stretch"
+        },
+        {
+          "en": "Yuki woke up, stretched her arms and opened the curtains.",
+          "tr": "Yuki uyandı, kollarını uzatıp gerindi ve perdeleri açtı.",
+          "register": "neutral",
+          "focus": "stretched"
+        },
+        {
+          "en": "Our coach makes us stretch for ten minutes at the end of every training session.",
+          "tr": "Antrenörümüz her antrenmanın sonunda bize on dakika esneme yaptırıyor.",
+          "register": "neutral",
+          "focus": "stretch"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "yawn"
+      ],
+      "collocations": [
+        "stretch your legs",
+        "stretch your arms",
+        "stretch before running"
+      ],
+      "word_family": [
+        {
+          "lemma": "stretch",
+          "pos": "n"
+        },
+        {
+          "lemma": "stretching",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "esneme hareketi yapmak",
+          "gloss_short": "esneme yapmak",
+          "alt": [
+            "gerinmek",
+            "kaslarını esnetmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dikkat: uykusu gelince esnemek 'yawn' olur. Gerinmek ya da spordan önce esneme hareketi yapmak ise 'stretch' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To avoid an injury, Nina always ______ for five minutes before she runs.",
+        "answer": "stretches",
+        "distractors": [
+          "showers",
+          "sings",
+          "shouts"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.out_of_breath.phr.1",
+      "lemma": "out of breath",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌaʊt əv ˈbrɛθ/",
+        "uk": "/ˌaʊt əv ˈbrɛθ/"
+      },
+      "def": {
+        "micro": "needing more air",
+        "short": "not able to get enough air because you ran, climbed or worked hard",
+        "long": "Needing more air than usual, usually after you run, climb a lot of stairs or do hard exercise. You often have to stop for a moment."
+      },
+      "grammar": {
+        "pattern": "be / get out of breath"
+      },
+      "examples": [
+        {
+          "en": "I'm out of breath. Can we walk for a minute?",
+          "tr": "Nefes nefese kaldım. Biraz yürüyebilir miyiz?",
+          "register": "neutral",
+          "focus": "out of breath"
+        },
+        {
+          "en": "Gül climbed to the fifth floor and arrived out of breath.",
+          "tr": "Gül beşinci kata kadar çıktı ve nefes nefese kaldı.",
+          "register": "neutral",
+          "focus": "out of breath"
+        },
+        {
+          "en": "Jack ran to catch the bus and sat down, completely out of breath.",
+          "tr": "Jack otobüse yetişmek için koştu ve nefes nefese oturdu.",
+          "register": "neutral",
+          "focus": "out of breath"
+        }
+      ],
+      "synonyms": [
+        "breathless"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "be out of breath",
+        "get out of breath",
+        "completely out of breath"
+      ],
+      "word_family": [
+        {
+          "lemma": "breath",
+          "pos": "n"
+        },
+        {
+          "lemma": "breathe",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nefes nefese",
+          "alt": [
+            "soluk soluğa"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde 'be' ile kullanılır: 'I'm out of breath.' (Nefes nefese kaldım.) İsim 'breath' /brɛθ/, fiil 'breathe' /briːð/ okunur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After running up the hill, Leyla had to stop because she was ______.",
+        "answer": "out of breath",
+        "distractors": [
+          "out of order",
+          "out of date",
+          "out of stock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exhausted.adj.1",
+      "lemma": "exhausted",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzɑːstɪd/",
+        "uk": "/ɪɡˈzɔːstɪd/"
+      },
+      "def": {
+        "micro": "very, very tired",
+        "short": "so tired that you have no energy left",
+        "long": "So tired that you have no energy left and you need to rest or sleep. It is much stronger than 'tired'."
+      },
+      "grammar": {
+        "pattern": "be / feel exhausted"
+      },
+      "examples": [
+        {
+          "en": "I'm exhausted. I need a long sleep.",
+          "tr": "Bitkinim. Uzun bir uykuya ihtiyacım var.",
+          "register": "neutral",
+          "focus": "exhausted"
+        },
+        {
+          "en": "Priya worked a twelve-hour shift and came home exhausted.",
+          "tr": "Priya on iki saatlik bir vardiyada çalıştı ve eve bitkin geldi.",
+          "register": "neutral",
+          "focus": "exhausted"
+        },
+        {
+          "en": "The players were exhausted after 120 minutes of football, but they kept running.",
+          "tr": "Oyuncular 120 dakikalık futboldan sonra bitkindi ama koşmaya devam ettiler.",
+          "register": "neutral",
+          "focus": "exhausted"
+        }
+      ],
+      "synonyms": [
+        "worn out"
+      ],
+      "antonyms": [
+        "energetic"
+      ],
+      "confusables": [
+        "exhausting"
+      ],
+      "collocations": [
+        "completely exhausted",
+        "feel exhausted",
+        "come home exhausted"
+      ],
+      "word_family": [
+        {
+          "lemma": "exhausting",
+          "pos": "adj"
+        },
+        {
+          "lemma": "exhaust",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bitkin",
+          "alt": [
+            "çok yorgun",
+            "yorgun argın"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kişi 'exhausted' (bitkin), yorucu iş 'exhausting' olur: 'The trip was exhausting.' Zaten çok güçlü olduğu için 'very' yerine 'really' ya da 'completely' ile kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I'm so exhausting after work.",
+              "right": "I'm so exhausted after work.",
+              "why": "Yorulan kişi için -ed (exhausted), yoran şey için -ing (exhausting) kullanılır. 'I'm exhausting' 'Ben çok yorucu biriyim' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hana didn't sleep at all last night, and now she is completely ______.",
+        "answer": "exhausted",
+        "distractors": [
+          "exhausting",
+          "relaxed",
+          "rested"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lose_weight.phr.1",
+      "lemma": "lose weight",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌluːz ˈweɪt/",
+        "uk": "/ˌluːz ˈweɪt/"
+      },
+      "def": {
+        "micro": "become thinner",
+        "short": "become thinner and lighter, for example by eating less or doing sport",
+        "long": "To become thinner and lighter, for example by eating less, choosing healthier food or doing more sport."
+      },
+      "grammar": {
+        "pattern": "lose weight / lose 3 kilos"
+      },
+      "examples": [
+        {
+          "en": "Murat wants to lose weight before his wedding.",
+          "tr": "Murat düğününden önce kilo vermek istiyor.",
+          "register": "neutral",
+          "focus": "lose weight"
+        },
+        {
+          "en": "Zeynep lost weight by walking for an hour every evening.",
+          "tr": "Zeynep her akşam bir saat yürüyerek kilo verdi.",
+          "register": "neutral",
+          "focus": "lost weight"
+        },
+        {
+          "en": "If you want to lose weight, drink water instead of fizzy drinks.",
+          "tr": "Kilo vermek istiyorsan gazlı içecekler yerine su iç.",
+          "register": "neutral",
+          "focus": "lose weight"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "put on weight",
+        "gain weight"
+      ],
+      "collocations": [
+        "try to lose weight",
+        "lose a lot of weight",
+        "help you lose weight"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kilo vermek",
+          "alt": [
+            "zayıflamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kilo sayısıyla da kullanılır: 'I lost 3 kilos.' (3 kilo verdim.) Zıttı 'put on weight' ya da 'gain weight' olur.",
+          "mistakes": [
+            {
+              "wrong": "I gave three kilos last month.",
+              "right": "I lost three kilos last month.",
+              "why": "Türkçe 'kilo vermek' kelime kelime çevrilince 'give' kullanılıyor. İngilizcede kilo 'kaybedilir': 'lose weight', 'lose 3 kilos'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nazlı eats less bread and walks every day because she wants to ______.",
+        "answer": "lose weight",
+        "distractors": [
+          "put on weight",
+          "lose her job",
+          "miss the bus"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.put_on_weight.phr.1",
+      "lemma": "put on weight",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌpʊt ɑːn ˈweɪt/",
+        "uk": "/ˌpʊt ɒn ˈweɪt/"
+      },
+      "def": {
+        "micro": "become heavier",
+        "short": "become heavier and fatter, usually because you eat more or move less",
+        "long": "To become heavier, usually because you eat more than before or do less exercise. 'Gain weight' means the same."
+      },
+      "grammar": {
+        "pattern": "put on weight / put on 2 kilos"
+      },
+      "examples": [
+        {
+          "en": "I put on weight during the holiday.",
+          "tr": "Tatilde kilo aldım.",
+          "register": "neutral",
+          "focus": "put on weight"
+        },
+        {
+          "en": "Deniz put on weight after he started working from home.",
+          "tr": "Deniz evden çalışmaya başladıktan sonra kilo aldı.",
+          "register": "neutral",
+          "focus": "put on weight"
+        },
+        {
+          "en": "Many people put on a bit of weight in winter because they eat more and go out less.",
+          "tr": "Birçok insan kışın daha çok yiyip daha az dışarı çıktığı için biraz kilo alır.",
+          "register": "neutral",
+          "focus": "put on a bit of weight"
+        }
+      ],
+      "synonyms": [
+        "gain weight"
+      ],
+      "antonyms": [
+        "lose weight"
+      ],
+      "collocations": [
+        "put on a lot of weight",
+        "put on a few kilos"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kilo almak",
+          "alt": [
+            "şişmanlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kilo sayısıyla 'put on 2 kilos' denir. Aynı anlamda 'gain weight' de kullanılır. 'put on' tek başına giymek demektir: 'put on a coat'.",
+          "mistakes": [
+            {
+              "wrong": "I took two kilos on holiday.",
+              "right": "I put on two kilos on holiday.",
+              "why": "Türkçe 'kilo almak' kelime kelime çevrilince 'take' kullanılıyor. İngilizcede 'put on' ya da 'gain' olur: 'put on 2 kilos'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Emre eats chocolate every night, so he has ______ recently.",
+        "answer": "put on weight",
+        "distractors": [
+          "lost weight",
+          "got fit",
+          "become thinner"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.membership.n.1",
+      "lemma": "membership",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛmbərʃɪp/",
+        "uk": "/ˈmɛmbəʃɪp/"
+      },
+      "def": {
+        "micro": "being part of a club",
+        "short": "the state of belonging to a club or group, often by paying money",
+        "long": "Being part of a club, gym or group, usually because you pay money every month or year. With it you can use the place or get lower prices."
+      },
+      "grammar": {
+        "pattern": "a gym / club membership"
+      },
+      "examples": [
+        {
+          "en": "My gym membership ends next month.",
+          "tr": "Spor salonu üyeliğim gelecek ay bitiyor.",
+          "register": "neutral",
+          "focus": "membership"
+        },
+        {
+          "en": "Diego bought a museum membership, so he can visit for free all year.",
+          "tr": "Diego müze üyeliği aldı, böylece bütün yıl ücretsiz gezebilir.",
+          "register": "neutral",
+          "focus": "membership"
+        },
+        {
+          "en": "The swimming club offers cheaper membership to students and people over 65.",
+          "tr": "Yüzme kulübü öğrencilere ve 65 yaş üstü kişilere daha ucuz üyelik sunuyor.",
+          "register": "neutral",
+          "focus": "membership"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "gym membership",
+        "membership card",
+        "membership fee",
+        "cancel a membership"
+      ],
+      "word_family": [
+        {
+          "lemma": "member",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üyelik",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Üye olan kişiye 'member', üye olma durumuna 'membership' denir. Üye olmak için 'become a member' ya da 'join' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to cancel my gym ______ because I never go.",
+        "answer": "membership",
+        "distractors": [
+          "towel",
+          "shower",
+          "mirror"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.train.v.1",
+      "lemma": "train",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "practise a sport",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/treɪn/",
+        "uk": "/treɪn/"
+      },
+      "def": {
+        "micro": "practise a sport a lot",
+        "short": "prepare for a sport or race by doing exercise again and again",
+        "long": "To prepare for a sport, game or race by practising and doing exercise often. Players and runners usually do this many times a week."
+      },
+      "grammar": {
+        "pattern": "train for a race / train hard"
+      },
+      "examples": [
+        {
+          "en": "Elif is training for a marathon.",
+          "tr": "Elif bir maraton için antrenman yapıyor.",
+          "register": "neutral",
+          "focus": "training"
+        },
+        {
+          "en": "Our basketball team trains twice a week in the school gym.",
+          "tr": "Basketbol takımımız okulun spor salonunda haftada iki kez antrenman yapıyor.",
+          "register": "neutral",
+          "focus": "trains"
+        },
+        {
+          "en": "Chloe trained hard all winter, and in spring she won her first race.",
+          "tr": "Chloe bütün kış sıkı antrenman yaptı ve baharda ilk yarışını kazandı.",
+          "register": "neutral",
+          "focus": "trained"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "train hard",
+        "train for a race",
+        "train every day"
+      ],
+      "word_family": [
+        {
+          "lemma": "training",
+          "pos": "n"
+        },
+        {
+          "lemma": "trainer",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "antrenman yapmak",
+          "alt": [
+            "idman yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'train' tren demektir. Fiil olarak birini bir iş için eğitmek de olabilir: 'train new staff'. Antrenmanın kendisine 'training' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet ______ at the pool every morning because he wants to swim in next month's race.",
+        "answer": "trains",
+        "distractors": [
+          "sunbathes",
+          "relaxes",
+          "naps"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1070 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.hobby.n.1",
+      "lemma": "hobby",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɑːbi/",
+        "uk": "/ˈhɒbi/"
+      },
+      "def": {
+        "micro": "something you do for fun",
+        "short": "an activity you enjoy doing when you are not working",
+        "long": "An activity that you do for pleasure when you are not working, like painting or playing the guitar. People often ask: What are your hobbies?"
+      },
+      "grammar": {
+        "pattern": "have a hobby · my hobby is + -ing"
+      },
+      "examples": [
+        {
+          "en": "My new hobby is baking bread.",
+          "tr": "Yeni hobim ekmek yapmak.",
+          "register": "neutral",
+          "focus": "hobby"
+        },
+        {
+          "en": "Elif has a lot of hobbies, but painting is her favourite.",
+          "tr": "Elif'in birçok hobisi var ama en sevdiği resim yapmak.",
+          "register": "neutral",
+          "focus": "hobbies"
+        },
+        {
+          "en": "Tom started fixing old bikes as a hobby, and now he sells them.",
+          "tr": "Tom eski bisikletleri tamir etmeye hobi olarak başladı, şimdi de onları satıyor.",
+          "register": "neutral",
+          "focus": "hobby"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a new hobby",
+        "as a hobby",
+        "have a hobby",
+        "take up a hobby"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hobi",
+          "alt": [
+            "uğraş"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Çoğulu 'hobbies' olur (y → ies). Tanışırken sık sorulur: 'What are your hobbies?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't play the guitar for money. It's just a ______.",
+        "answer": "hobby",
+        "distractors": [
+          "job",
+          "career",
+          "salary"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spare_time.phr.1",
+      "lemma": "spare time",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌspɛr ˈtaɪm/",
+        "uk": "/ˌspeə ˈtaɪm/"
+      },
+      "def": {
+        "micro": "hours when you are not busy",
+        "short": "the hours when you are not working or studying and can do what you like",
+        "long": "The hours when you do not have to work, study or do jobs at home, so you can do things you enjoy. People often say 'in my spare time'."
+      },
+      "grammar": {
+        "pattern": "in your spare time"
+      },
+      "examples": [
+        {
+          "en": "What do you do in your spare time?",
+          "tr": "Boş zamanlarında ne yaparsın?",
+          "register": "neutral",
+          "focus": "spare time"
+        },
+        {
+          "en": "Zeynep reads detective stories in her spare time.",
+          "tr": "Zeynep boş zamanlarında polisiye öyküler okur.",
+          "register": "neutral",
+          "focus": "spare time"
+        },
+        {
+          "en": "I work six days a week, so I don't have much spare time for sport.",
+          "tr": "Haftada altı gün çalışıyorum, bu yüzden spora ayıracak pek boş zamanım yok.",
+          "register": "neutral",
+          "focus": "spare time"
+        }
+      ],
+      "synonyms": [
+        "free time",
+        "leisure time"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in my spare time",
+        "not much spare time",
+        "a lot of spare time"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "boş zaman",
+          "alt": [
+            "boş vakit"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Free time' ile aynı anlamdadır. 'Spare' burada 'artan, fazla' demektir; 'spare key' (yedek anahtar) gibi.",
+          "mistakes": [
+            {
+              "wrong": "I play tennis in my spare times.",
+              "right": "I play tennis in my spare time.",
+              "why": "Türkçede 'boş zamanlarımda' diye çoğul söylenir. İngilizcede bu anlamda 'time' sayılamaz ve tekil kalır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Esra works long hours, so she has very little ______ for her friends.",
+        "answer": "spare time",
+        "distractors": [
+          "overtime",
+          "rush hour",
+          "deadline"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.be_into.phr.1",
+      "lemma": "be into",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "be very interested in; like",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bi ˈɪntuː/",
+        "uk": "/bi ˈɪntuː/"
+      },
+      "def": {
+        "micro": "like something very much",
+        "short": "be very interested in an activity or a subject and enjoy it",
+        "long": "To be very interested in an activity, a subject or a kind of music and enjoy it a lot. It is informal and very common in speaking."
+      },
+      "grammar": {
+        "pattern": "be into + noun / -ing"
+      },
+      "examples": [
+        {
+          "en": "I'm really into jazz at the moment.",
+          "tr": "Şu sıralar caza çok meraklıyım.",
+          "register": "informal",
+          "focus": "into"
+        },
+        {
+          "en": "Omar is into cooking, so he always tries new recipes.",
+          "tr": "Omar yemek yapmaya meraklı, bu yüzden hep yeni tarifler dener.",
+          "register": "informal",
+          "focus": "into"
+        },
+        {
+          "en": "My son loved cartoons when he was small, but now he is only into football.",
+          "tr": "Oğlum küçükken çizgi filmlere bayılırdı ama artık sadece futbola meraklı.",
+          "register": "informal",
+          "focus": "into"
+        }
+      ],
+      "synonyms": [
+        "be keen on"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "be really into",
+        "be into music",
+        "not be into"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "meraklısı olmak",
+          "alt": [
+            "bir şeye meraklı olmak",
+            "çok sevmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gündelik konuşma dilidir. Olumsuzu çok yaygındır: 'I'm not into horror films.' (Korku filmlerini pek sevmem.)",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Yuki is really ______ old cameras; she buys one every month.",
+        "answer": "into",
+        "distractors": [
+          "onto",
+          "about",
+          "with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_up.phv.1",
+      "lemma": "take up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "start a new hobby",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌteɪk ˈʌp/",
+        "uk": "/ˌteɪk ˈʌp/"
+      },
+      "def": {
+        "micro": "start a new hobby or sport",
+        "short": "start doing a new activity, sport or hobby regularly",
+        "long": "To start doing a new activity, sport or hobby and continue doing it. You can say 'take up yoga' or 'take it up'."
+      },
+      "grammar": {
+        "pattern": "take up + noun / -ing · take it up"
+      },
+      "examples": [
+        {
+          "en": "Burak took up swimming last year.",
+          "tr": "Burak geçen yıl yüzmeye başladı.",
+          "register": "neutral",
+          "focus": "took up"
+        },
+        {
+          "en": "My doctor told me to take up a sport, so I joined a tennis club.",
+          "tr": "Doktorum bir spora başlamamı söyledi, ben de bir tenis kulübüne yazıldım.",
+          "register": "neutral",
+          "focus": "take up"
+        },
+        {
+          "en": "Hana always wanted to play the violin, so she finally took it up at forty.",
+          "tr": "Hana hep keman çalmak istiyordu, sonunda kırk yaşında kemana başladı.",
+          "register": "neutral",
+          "focus": "took it up"
+        }
+      ],
+      "synonyms": [
+        "start"
+      ],
+      "antonyms": [
+        "give up"
+      ],
+      "collocations": [
+        "take up a sport",
+        "take up a hobby",
+        "take up yoga"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir hobiye başlamak",
+          "gloss_short": "hobiye başlamak",
+          "alt": [
+            "bir spora başlamak",
+            "yeni bir uğraşa başlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ayrılabilir: 'take up yoga' ya da 'take yoga up'; zamirle yalnızca 'take it up' olur. Bırakmak için 'give up' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Selin wanted a new hobby, so she ______ painting.",
+        "answer": "took up",
+        "distractors": [
+          "took off",
+          "turned down",
+          "put away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.collect.v.1",
+      "lemma": "collect",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep things as a hobby",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈlɛkt/",
+        "uk": "/kəˈlɛkt/"
+      },
+      "def": {
+        "micro": "keep many things as a hobby",
+        "short": "find and keep many things of the same kind because you like them",
+        "long": "To find, buy and keep many things of the same kind, like stamps, coins or old records, because you enjoy it."
+      },
+      "grammar": {
+        "pattern": "collect + plural noun"
+      },
+      "examples": [
+        {
+          "en": "My grandfather collects old coins.",
+          "tr": "Dedem eski paralar biriktirir.",
+          "register": "neutral",
+          "focus": "collects"
+        },
+        {
+          "en": "Diego has collected football shirts since he was ten.",
+          "tr": "Diego on yaşından beri futbol formaları biriktiriyor.",
+          "register": "neutral",
+          "focus": "collected"
+        },
+        {
+          "en": "Nazlı collects postcards from every city she visits and keeps them in a big box.",
+          "tr": "Nazlı gittiği her şehirden kartpostal biriktirir ve onları büyük bir kutuda saklar.",
+          "register": "neutral",
+          "focus": "collects"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "collect stamps",
+        "collect coins",
+        "collect records"
+      ],
+      "word_family": [
+        {
+          "lemma": "collection",
+          "pos": "n"
+        },
+        {
+          "lemma": "collector",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'colligere', meaning 'to gather together'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "biriktirmek",
+          "alt": [
+            "koleksiyon yapmak",
+            "toplamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu anlamda pul, plak, kart gibi şeyler biriktirmektir. Koleksiyonun adı 'collection', biriktiren kişi 'collector' olur.",
+          "mistakes": [
+            {
+              "wrong": "I'm collecting money for a new car.",
+              "right": "I'm saving money for a new car.",
+              "why": "Türkçede hem pul hem para 'biriktirilir'. İngilizcede kendi paranı biriktirmek 'save money' olur; 'collect money' başkalarından para toplamak (bağış, aidat) demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "save"
+      ],
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Barış loves stamps. He has ______ them since he was a child and now has 500.",
+        "answer": "collected",
+        "distractors": [
+          "posted",
+          "torn",
+          "lost"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.knit.v.1",
+      "lemma": "knit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nɪt/",
+        "uk": "/nɪt/"
+      },
+      "def": {
+        "micro": "make clothes from wool",
+        "short": "make clothes such as hats or scarves from wool, using two long needles",
+        "long": "To make clothes such as scarves, hats or jumpers from wool, using two long needles. Many people do it at home to relax."
+      },
+      "grammar": {
+        "pattern": "knit + noun · knit sb sth"
+      },
+      "examples": [
+        {
+          "en": "My grandmother knits warm socks every winter.",
+          "tr": "Babaannem her kış sıcak çoraplar örer.",
+          "register": "neutral",
+          "focus": "knits"
+        },
+        {
+          "en": "Chloe is knitting a scarf for her brother's birthday.",
+          "tr": "Chloe erkek kardeşinin doğum günü için bir atkı örüyor.",
+          "register": "neutral",
+          "focus": "knitting"
+        },
+        {
+          "en": "Ayşe learned to knit from online videos, and now she sells the hats she makes.",
+          "tr": "Ayşe internetteki videolardan örgü örmeyi öğrendi, şimdi de ördüğü bereleri satıyor.",
+          "register": "neutral",
+          "focus": "knit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "knit a scarf",
+        "knit a sweater",
+        "learn to knit"
+      ],
+      "word_family": [
+        {
+          "lemma": "knitting",
+          "pos": "n"
+        },
+        {
+          "lemma": "knitted",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'cnyttan', meaning 'to tie with a knot'; 'knit' and 'knot' are related.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "örgü örmek",
+          "alt": [
+            "örmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Baştaki 'k' okunmaz: /nɪt/, tıpkı 'knife' ve 'know' gibi. Geçmiş zamanı 'knitted' olur; örgü işinin adı 'knitting'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She bought some wool and two needles because she wants to ______ a sweater.",
+        "answer": "knit",
+        "distractors": [
+          "iron",
+          "fold",
+          "borrow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.gardening.n.1",
+      "lemma": "gardening",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡɑːrdnɪŋ/",
+        "uk": "/ˈɡɑːdnɪŋ/"
+      },
+      "def": {
+        "micro": "growing plants as a hobby",
+        "short": "the work of growing flowers and vegetables and looking after plants",
+        "long": "The work or hobby of growing flowers, fruit and vegetables and looking after the plants outside your house or on your balcony."
+      },
+      "grammar": {
+        "pattern": "do some gardening"
+      },
+      "examples": [
+        {
+          "en": "Gardening makes me happy.",
+          "tr": "Bahçe işleri beni mutlu ediyor.",
+          "register": "neutral",
+          "focus": "Gardening"
+        },
+        {
+          "en": "Mia does some gardening every Saturday morning.",
+          "tr": "Mia her cumartesi sabahı biraz bahçe işi yapar.",
+          "register": "neutral",
+          "focus": "gardening"
+        },
+        {
+          "en": "After he retired, Hakan got interested in gardening, and now he grows his own tomatoes.",
+          "tr": "Hakan emekli olduktan sonra bahçe işlerine merak sardı, şimdi kendi domateslerini yetiştiriyor.",
+          "register": "neutral",
+          "focus": "gardening"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do some gardening",
+        "gardening gloves",
+        "gardening tools"
+      ],
+      "word_family": [
+        {
+          "lemma": "garden",
+          "pos": "n"
+        },
+        {
+          "lemma": "gardener",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bahçe işleri",
+          "alt": [
+            "bahçıvanlık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz: 'a gardening' denmez. 'Do some gardening' yaygın kalıptır. Bahçıvan ise 'gardener' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Deniz loves ______: she grows roses and mint on her balcony.",
+        "answer": "gardening",
+        "distractors": [
+          "cooking",
+          "sewing",
+          "fishing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.photography.n.1",
+      "lemma": "photography",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fəˈtɑːɡrəfi/",
+        "uk": "/fəˈtɒɡrəfi/"
+      },
+      "def": {
+        "micro": "taking pictures as a hobby",
+        "short": "the art, hobby or job of taking pictures with a camera",
+        "long": "The art, hobby or job of taking pictures with a camera or a phone. Many people learn it on short courses or from online videos."
+      },
+      "grammar": {
+        "pattern": "a photography course · nature photography"
+      },
+      "examples": [
+        {
+          "en": "Leyla is taking a photography course.",
+          "tr": "Leyla bir fotoğrafçılık kursuna gidiyor.",
+          "register": "neutral",
+          "focus": "photography"
+        },
+        {
+          "en": "Jack bought a new camera because he wants to get better at photography.",
+          "tr": "Jack fotoğrafçılıkta daha iyi olmak istediği için yeni bir fotoğraf makinesi aldı.",
+          "register": "neutral",
+          "focus": "photography"
+        },
+        {
+          "en": "Kerem's hobby is nature photography, so he often walks in the forest with his camera.",
+          "tr": "Kerem'in hobisi doğa fotoğrafçılığı, bu yüzden fotoğraf makinesiyle sık sık ormanda yürür.",
+          "register": "neutral",
+          "focus": "photography"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "nature photography",
+        "a photography course",
+        "street photography"
+      ],
+      "word_family": [
+        {
+          "lemma": "photograph",
+          "pos": "n"
+        },
+        {
+          "lemma": "photographer",
+          "pos": "n"
+        },
+        {
+          "lemma": "photographic",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fotoğrafçılık",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Vurgu yer değiştirir: PHOtograph (fotoğraf), phoTOgrapher (fotoğrafçı), phoTOgraphy (fotoğrafçılık).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "art_design_architecture"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Priya bought an expensive camera because ______ is her favourite hobby.",
+        "answer": "photography",
+        "distractors": [
+          "pottery",
+          "cycling",
+          "sailing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_fishing.phr.1",
+      "lemma": "go fishing",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈfɪʃɪŋ/",
+        "uk": "/ɡəʊ ˈfɪʃɪŋ/"
+      },
+      "def": {
+        "micro": "go out to catch fish",
+        "short": "go to a river, a lake or the sea and try to catch fish",
+        "long": "To go to a river, a lake or the sea and spend time trying to catch fish, for fun or for food."
+      },
+      "grammar": {
+        "pattern": "go fishing (with sb) · went fishing"
+      },
+      "examples": [
+        {
+          "en": "On Sundays, my dad and I go fishing.",
+          "tr": "Pazar günleri babamla balığa gideriz.",
+          "register": "neutral",
+          "focus": "go fishing"
+        },
+        {
+          "en": "Lucas went fishing at the lake, but he didn't catch anything.",
+          "tr": "Lucas göle balığa gitti ama hiçbir şey tutamadı.",
+          "register": "neutral",
+          "focus": "went fishing"
+        },
+        {
+          "en": "Every summer, Tolga and his uncle get up at five to go fishing before it gets hot.",
+          "tr": "Tolga ve amcası her yaz, hava ısınmadan balığa gitmek için saat beşte kalkar.",
+          "register": "neutral",
+          "focus": "go fishing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go fishing with",
+        "went fishing",
+        "go fishing at the lake"
+      ],
+      "word_family": [
+        {
+          "lemma": "fish",
+          "pos": "v"
+        },
+        {
+          "lemma": "fishing",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "balığa gitmek",
+          "alt": [
+            "balık tutmaya gitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Boş zaman etkinliklerinde 'go + -ing' kalıbı kullanılır: go swimming, go shopping, go skiing.",
+          "mistakes": [
+            {
+              "wrong": "We go to fishing every weekend.",
+              "right": "We go fishing every weekend.",
+              "why": "Türkçede 'balığa gitmek' yönelme ekiyle söylendiği için 'to' ekleniyor. 'go + -ing' kalıbında 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Murat loves to ______, but today he sat by the lake for hours and caught nothing.",
+        "answer": "go fishing",
+        "distractors": [
+          "go skiing",
+          "go jogging",
+          "go dancing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.relax.v.1",
+      "lemma": "relax",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈlæks/",
+        "uk": "/rɪˈlæks/"
+      },
+      "def": {
+        "micro": "feel calm and stop worrying",
+        "short": "stop working or worrying and let your body and mind rest",
+        "long": "To stop working or worrying and let your body and mind become calm, for example by listening to music or taking a warm bath."
+      },
+      "grammar": {
+        "pattern": "relax · relax by + -ing"
+      },
+      "examples": [
+        {
+          "en": "I like to relax with a good book.",
+          "tr": "İyi bir kitapla rahatlamayı severim.",
+          "register": "neutral",
+          "focus": "relax"
+        },
+        {
+          "en": "After work, Gül relaxes by listening to soft music.",
+          "tr": "Gül işten sonra hafif müzik dinleyerek rahatlar.",
+          "register": "neutral",
+          "focus": "relaxes"
+        },
+        {
+          "en": "On holiday, Nina just wants to lie on the beach and relax, not visit museums.",
+          "tr": "Nina tatilde müze gezmek istemiyor, sadece plajda uzanıp dinlenmek istiyor.",
+          "register": "neutral",
+          "focus": "relax"
+        }
+      ],
+      "synonyms": [
+        "unwind",
+        "chill out"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "relax at home",
+        "try to relax",
+        "relax and enjoy"
+      ],
+      "word_family": [
+        {
+          "lemma": "relaxed",
+          "pos": "adj"
+        },
+        {
+          "lemma": "relaxing",
+          "pos": "adj"
+        },
+        {
+          "lemma": "relaxation",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'relaxare', meaning 'to loosen' or 'to make loose again'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "rahatlamak",
+          "alt": [
+            "dinlenmek",
+            "gevşemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Rest' daha çok yorulunca durup dinlenmektir; 'relax' ise kafayı dağıtıp gevşemektir. Tek başına 'Relax!' 'Sakin ol!' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "rest"
+      ],
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A hot bath helps me ______ after a long day at work.",
+        "answer": "relax",
+        "distractors": [
+          "hurry",
+          "worry",
+          "argue"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
