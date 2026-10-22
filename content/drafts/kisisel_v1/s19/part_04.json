@@ -1,0 +1,994 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.turn.n.1",
+      "lemma": "turn",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "time for one person to play/act",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɜːrn/",
+        "uk": "/tɜːn/"
+      },
+      "def": {
+        "micro": "your time to play or do it",
+        "short": "the time when one person in a group can play or do something, one after another",
+        "long": "The time when one person in a group can play or do something, when people do it one after another. People say \"It's your turn\" or \"take turns\"."
+      },
+      "grammar": {
+        "pattern": "it's my/your turn (to do sth)"
+      },
+      "examples": [
+        {
+          "en": "Roll the dice, Zeynep. It's your turn.",
+          "tr": "Zarı at Zeynep. Sıra sende.",
+          "register": "neutral",
+          "focus": "turn"
+        },
+        {
+          "en": "The kids took turns on the swing in the park.",
+          "tr": "Çocuklar parkta salıncağa sırayla bindi.",
+          "register": "neutral",
+          "focus": "took turns"
+        },
+        {
+          "en": "It's Esra's turn to choose the film tonight.",
+          "tr": "Bu akşam filmi seçme sırası Esra'da.",
+          "register": "neutral",
+          "focus": "turn"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "queue"
+      ],
+      "collocations": [
+        "it's your turn",
+        "take turns",
+        "wait your turn",
+        "miss a turn"
+      ],
+      "word_family": [
+        {
+          "lemma": "turn",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sıra",
+          "alt": [
+            "oyun sırası"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçe 'sıra' iki şeydir: oyunda ya da bir işte birinin zamanı 'turn', insanların arka arkaya dizildiği sıra ise 'queue' (ABD'de 'line') olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You went first last time, so it's my ______ to start.",
+        "answer": "turn",
+        "distractors": [
+          "queue",
+          "row",
+          "seat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rule.n.1",
+      "lemma": "rule",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ruːl/",
+        "uk": "/ruːl/"
+      },
+      "def": {
+        "micro": "what you must or can't do",
+        "short": "something that tells you what you can or cannot do in a game, a school or a home",
+        "long": "Something that tells people what they are allowed or not allowed to do, for example in a game, a school or a home. You can follow it or break it."
+      },
+      "grammar": {
+        "pattern": "the rules of sth; follow/break a rule"
+      },
+      "examples": [
+        {
+          "en": "Can you explain the rules of this game?",
+          "tr": "Bu oyunun kurallarını açıklayabilir misin?",
+          "register": "neutral",
+          "focus": "rules"
+        },
+        {
+          "en": "In our house, the rule is simple: no phones at dinner.",
+          "tr": "Bizim evde kural basit: akşam yemeğinde telefon yok.",
+          "register": "neutral",
+          "focus": "rule"
+        },
+        {
+          "en": "Murat broke the rules, so the other players didn't want to play with him again.",
+          "tr": "Murat kuralları çiğnedi, bu yüzden diğer oyuncular onunla bir daha oynamak istemedi.",
+          "register": "neutral",
+          "focus": "broke the rules"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the rules of the game",
+        "follow the rules",
+        "break the rules",
+        "a simple rule"
+      ],
+      "word_family": [
+        {
+          "lemma": "rule",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kural",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Kurala uymak' İngilizcede 'follow the rules', 'kuralı çiğnemek' ise 'break the rules' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can't move that piece there. It's against the ______!",
+        "answer": "rules",
+        "distractors": [
+          "scores",
+          "pieces",
+          "points"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.chess.n.1",
+      "lemma": "chess",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃɛs/",
+        "uk": "/tʃɛs/"
+      },
+      "def": {
+        "micro": "a black and white board game",
+        "short": "a game for two on a black and white board, with kings, queens and other pieces",
+        "long": "A game for two players on a board of black and white squares. Each player moves pieces and tries to trap the other player's king."
+      },
+      "grammar": {
+        "pattern": "play chess"
+      },
+      "examples": [
+        {
+          "en": "My grandfather taught me how to play chess.",
+          "tr": "Dedem bana satranç oynamayı öğretti.",
+          "register": "neutral",
+          "focus": "chess"
+        },
+        {
+          "en": "Hana and Lucas play chess online every evening.",
+          "tr": "Hana ile Lucas her akşam internette satranç oynuyor.",
+          "register": "neutral",
+          "focus": "chess"
+        },
+        {
+          "en": "Elif joined the chess club at school, and now she often beats her dad.",
+          "tr": "Elif okuldaki satranç kulübüne katıldı ve artık babasını sık sık yeniyor.",
+          "register": "neutral",
+          "focus": "chess"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "play chess",
+        "a game of chess",
+        "chess club",
+        "chess player",
+        "chessboard"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "satranç",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Oyun adlarının önüne 'the' gelmez: 'play chess'. Taşlara 'pieces', şaha 'king', vezire 'queen' denir. 'Şah mat' ise 'checkmate' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Do you want to play ______? You can have the white pieces, and I'll be black.",
+        "answer": "chess",
+        "distractors": [
+          "tennis",
+          "bowling",
+          "golf"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.video_game.phr.1",
+      "lemma": "video game",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɪdioʊ ɡeɪm/",
+        "uk": "/ˈvɪdiəʊ ɡeɪm/"
+      },
+      "def": {
+        "micro": "a game on a screen",
+        "short": "a game you play on a screen, like on a computer, a phone or a TV",
+        "long": "A game that you play on a screen, like a computer, a phone or a TV. You control the people or things in it with buttons, a keyboard or by touching the screen."
+      },
+      "grammar": {
+        "pattern": "play video games"
+      },
+      "examples": [
+        {
+          "en": "My son plays video games after his homework.",
+          "tr": "Oğlum ödevinden sonra video oyunu oynuyor.",
+          "register": "neutral",
+          "focus": "video games"
+        },
+        {
+          "en": "Diego spent all of Saturday playing a new video game.",
+          "tr": "Diego bütün cumartesiyi yeni bir video oyunu oynayarak geçirdi.",
+          "register": "neutral",
+          "focus": "video game"
+        },
+        {
+          "en": "Some video games are more fun when you play them with friends online.",
+          "tr": "Bazı video oyunları internette arkadaşlarla oynayınca daha eğlenceli oluyor.",
+          "register": "neutral",
+          "focus": "video games"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "play video games",
+        "a video game console",
+        "a new video game"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "video oyunu",
+          "alt": [
+            "bilgisayar oyunu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bilgisayarda oynanana 'computer game' de denir. Günlük dilde çoğu zaman kısaca 'game' yeterlidir: 'What games do you play?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kerem uses a controller to play ______ on the big TV.",
+        "answer": "video games",
+        "distractors": [
+          "marbles",
+          "crosswords",
+          "jigsaws"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.play_cards.phr.1",
+      "lemma": "play cards",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌpleɪ ˈkɑːrdz/",
+        "uk": "/ˌpleɪ ˈkɑːdz/"
+      },
+      "def": {
+        "micro": "have a game with a deck",
+        "short": "have a game with a set of 52 small paper pieces with numbers and pictures",
+        "long": "To have a game using a set of 52 small, thin pieces of paper with numbers and pictures on them. People often do this with family or friends."
+      },
+      "grammar": {
+        "pattern": "play cards (with sb)"
+      },
+      "examples": [
+        {
+          "en": "We often play cards at my aunt's house.",
+          "tr": "Teyzemin evinde sık sık kâğıt oynarız.",
+          "register": "neutral",
+          "focus": "play cards"
+        },
+        {
+          "en": "On the long train journey, Yuki and Omar played cards to pass the time.",
+          "tr": "Uzun tren yolculuğunda Yuki ile Omar vakit geçirmek için kâğıt oynadı.",
+          "register": "neutral",
+          "focus": "played cards"
+        },
+        {
+          "en": "Do you know how to play cards? We need a fourth player.",
+          "tr": "Kâğıt oynamayı biliyor musun? Dördüncü bir oyuncuya ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "play cards"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "play cards with friends",
+        "a deck of cards",
+        "shuffle the cards",
+        "deal the cards"
+      ],
+      "word_family": [
+        {
+          "lemma": "card",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kâğıt oynamak",
+          "alt": [
+            "iskambil oynamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bütün desteye 'a deck of cards' (İngiltere'de 'a pack of cards') denir. Kâğıtları karmak 'shuffle', dağıtmak ise 'deal' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After dinner, Grandpa took out a deck and said, \"Let's ______!\"",
+        "answer": "play cards",
+        "distractors": [
+          "play darts",
+          "play tag",
+          "play hockey"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.backgammon.n.1",
+      "lemma": "backgammon",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbækˌɡæmən/",
+        "uk": "/ˈbækɡæmən/"
+      },
+      "def": {
+        "micro": "a dice game for two",
+        "short": "a game for two players who throw dice and move round pieces around a board",
+        "long": "A game for two players. They throw dice and move round pieces around a board, and the first player to take all their pieces off the board wins."
+      },
+      "grammar": {
+        "pattern": "play backgammon"
+      },
+      "examples": [
+        {
+          "en": "My dad plays backgammon with his friends at the café.",
+          "tr": "Babam kahvede arkadaşlarıyla tavla oynar.",
+          "register": "neutral",
+          "focus": "backgammon"
+        },
+        {
+          "en": "Leyla threw a double six and won at backgammon.",
+          "tr": "Leyla düşeş attı ve tavlada kazandı.",
+          "register": "neutral",
+          "focus": "backgammon"
+        },
+        {
+          "en": "In summer, people play backgammon outside, and you can hear the dice everywhere.",
+          "tr": "Yazın insanlar dışarıda tavla oynar ve her yerden zar sesi duyulur.",
+          "register": "neutral",
+          "focus": "backgammon"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "play backgammon",
+        "a game of backgammon",
+        "a backgammon board"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tavla",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Zara 'dice' denir; tek zar resmî dilde 'a die', günlük dilde 'a dice' olur. Pullar 'pieces' ya da 'checkers', 'düşeş' ise 'double six' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hakan threw the dice and moved two pieces. He loves playing ______.",
+        "answer": "backgammon",
+        "distractors": [
+          "chess",
+          "volleyball",
+          "squash"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.binge_watch.v.1",
+      "lemma": "binge-watch",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɪndʒ ˌwɑːtʃ/",
+        "uk": "/ˈbɪndʒ ˌwɒtʃ/"
+      },
+      "def": {
+        "micro": "see many episodes at once",
+        "short": "see many episodes of a TV show one after another, often in one day",
+        "long": "To see many episodes of a TV series one after another, often in one day or one weekend. It is an informal word."
+      },
+      "grammar": {
+        "pattern": "binge-watch a series/show"
+      },
+      "examples": [
+        {
+          "en": "I binge-watched six episodes last night.",
+          "tr": "Dün gece art arda altı bölüm izledim.",
+          "register": "informal",
+          "focus": "binge-watched"
+        },
+        {
+          "en": "Sara stayed home on Sunday and binge-watched a crime show.",
+          "tr": "Sara pazar günü evde kaldı ve bir polisiye diziyi art arda izledi.",
+          "register": "informal",
+          "focus": "binge-watched"
+        },
+        {
+          "en": "Let's not binge-watch tonight; we both have to get up early tomorrow.",
+          "tr": "Bu akşam art arda dizi izlemeyelim; ikimiz de yarın erken kalkmak zorundayız.",
+          "register": "informal",
+          "focus": "binge-watch"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "binge-watch a series",
+        "binge-watch a show"
+      ],
+      "word_family": [
+        {
+          "lemma": "binge",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "art arda izlemek",
+          "alt": [
+            "peş peşe izlemek",
+            "dizi maratonu yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gündelik bir sözcüktür. Geçmiş zamanı 'binge-watched' olur. Türkçedeki 'dizi maratonu yapmak' ifadesine yakındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It rained all weekend, so we stayed on the sofa and ______ eight episodes.",
+        "answer": "binge-watched",
+        "distractors": [
+          "directed",
+          "acted",
+          "filmed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.remote.n.1",
+      "lemma": "remote",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "TV remote control",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈmoʊt/",
+        "uk": "/rɪˈməʊt/"
+      },
+      "def": {
+        "micro": "small box to control the TV",
+        "short": "a small device with buttons that you use to control a TV from your seat",
+        "long": "A small device with buttons that you hold in your hand. You use it to turn on a TV, change channels or make the sound louder."
+      },
+      "grammar": {
+        "pattern": "the TV remote"
+      },
+      "examples": [
+        {
+          "en": "Can you pass me the remote, please?",
+          "tr": "Kumandayı uzatır mısın lütfen?",
+          "register": "neutral",
+          "focus": "remote"
+        },
+        {
+          "en": "Nina lost the remote again; it was under a sofa cushion.",
+          "tr": "Nina kumandayı yine kaybetti; bir koltuk minderinin altındaymış.",
+          "register": "neutral",
+          "focus": "remote"
+        },
+        {
+          "en": "When there's a match on, my kids always argue about who gets the remote.",
+          "tr": "Maç olduğunda çocuklarım kumandanın kimde olacağı konusunda hep tartışır.",
+          "register": "neutral",
+          "focus": "remote"
+        }
+      ],
+      "synonyms": [
+        "remote control"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the TV remote",
+        "pass the remote",
+        "lose the remote"
+      ],
+      "word_family": [
+        {
+          "lemma": "remote",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kumanda",
+          "alt": [
+            "uzaktan kumanda"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tam adı 'remote control'. Klima kumandası için de kullanılır. Sıfat olarak 'remote' 'uzak, ıssız' demektir: 'a remote village'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to change the channel, but I can't find the ______.",
+        "answer": "remote",
+        "distractors": [
+          "charger",
+          "speaker",
+          "sofa"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.season.n.2",
+      "lemma": "season",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 2,
+      "sense_note": "of a TV series",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsiːzən/",
+        "uk": "/ˈsiːzən/"
+      },
+      "def": {
+        "micro": "a set of episodes of a show",
+        "short": "a group of episodes of a TV series that come out one after another",
+        "long": "A group of episodes of a TV series that come out one after another, usually once a year. A popular series can go on for many years."
+      },
+      "grammar": {
+        "pattern": "season one/two; the first/last season"
+      },
+      "examples": [
+        {
+          "en": "The second season of the show starts in May.",
+          "tr": "Dizinin ikinci sezonu mayısta başlıyor.",
+          "register": "neutral",
+          "focus": "season"
+        },
+        {
+          "en": "Deniz loved the first season, but the second one was boring.",
+          "tr": "Deniz ilk sezonu çok sevdi ama ikincisi sıkıcıydı.",
+          "register": "neutral",
+          "focus": "season"
+        },
+        {
+          "en": "They are filming season three now, so we have to wait until next year.",
+          "tr": "Şu an üçüncü sezonu çekiyorlar, bu yüzden seneye kadar beklememiz gerekiyor.",
+          "register": "neutral",
+          "focus": "season"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "series"
+      ],
+      "collocations": [
+        "the first season",
+        "the final season",
+        "season two",
+        "a new season"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sezon",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Aynı kelime 'mevsim' demektir. İngiltere'de dizi sezonuna 'series' de denir: 'series two'. Ama 'series' asıl olarak dizinin kendisidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The show is back! Its new ______ has ten episodes.",
+        "answer": "season",
+        "distractors": [
+          "trailer",
+          "channel",
+          "actor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ending.n.1",
+      "lemma": "ending",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "of a film or story",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛndɪŋ/",
+        "uk": "/ˈɛndɪŋ/"
+      },
+      "def": {
+        "micro": "the last part of a story",
+        "short": "the last part of a film, book or story",
+        "long": "The last part of a film, book or story, where you learn what happens to the people in it. People often talk about a happy or a sad one."
+      },
+      "grammar": {
+        "pattern": "a happy/sad ending"
+      },
+      "examples": [
+        {
+          "en": "The film had a happy ending.",
+          "tr": "Filmin sonu mutluydu.",
+          "register": "neutral",
+          "focus": "ending"
+        },
+        {
+          "en": "Don't tell me the ending! I haven't finished the book yet.",
+          "tr": "Sonunu söyleme! Kitabı daha bitirmedim.",
+          "register": "neutral",
+          "focus": "ending"
+        },
+        {
+          "en": "Chloe cried at the ending of the last episode.",
+          "tr": "Chloe son bölümün finalini izlerken ağladı.",
+          "register": "neutral",
+          "focus": "ending"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "beginning"
+      ],
+      "confusables": [
+        "end"
+      ],
+      "collocations": [
+        "a happy ending",
+        "a sad ending",
+        "a surprise ending",
+        "the ending of a film"
+      ],
+      "word_family": [
+        {
+          "lemma": "end",
+          "pos": "n"
+        },
+        {
+          "lemma": "end",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "son, final",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir filmin ya da kitabın nasıl bittiğini anlatırken 'ending' kullanılır. Filmin sonunu önceden anlatan bilgiye 'spoiler' denir.",
+          "mistakes": [
+            {
+              "wrong": "The film has a happy end.",
+              "right": "The film has a happy ending.",
+              "why": "Türkçede filmler için 'happy end' denir; İngilizcede doğrusu 'happy ending' olur. 'End' tek başına bir şeyin bittiği yer ya da an demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Most fairy tales have a happy ______: everyone lives happily ever after.",
+        "answer": "ending",
+        "distractors": [
+          "beginning",
+          "title",
+          "cover"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

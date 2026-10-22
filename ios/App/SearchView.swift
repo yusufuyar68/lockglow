@@ -563,7 +563,7 @@ private struct FoldedText {
 }
 
 /// An empty list (mockup `.empty`): an icon in a soft circle, a title, a sentence whose examples
-/// are bold, and optionally a tip after a light bulb. Used by "Sözlük" and "Bildiğim kelimeler".
+/// are bold, and optionally a tip after a light bulb. Used by "Sözlük" and "Bildiğin kelimeler".
 struct WordListEmptyState: View {
     let systemImage: String
     let title: String
@@ -630,7 +630,7 @@ struct WordListEmptyState: View {
 /// "Ayrıca"); the definition; every example with its Turkish; the "Dikkat" boxes with the note
 /// and memory hook; the word partners as capsules that read themselves aloud; last the learning
 /// status with the one button that changes it. Few, quiet section titles: the Dikkat boxes carry
-/// their own. Opened from "Sözlük", "Bildiğim kelimeler" and the feed (in a sheet).
+/// their own. Opened from "Sözlük", "Bildiğin kelimeler" and the feed (in a sheet).
 struct WordDetailView: View {
     @EnvironmentObject private var model: AppModel
     let word: WidgetWord

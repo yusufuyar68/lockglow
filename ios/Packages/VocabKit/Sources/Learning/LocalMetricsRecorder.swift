@@ -126,7 +126,9 @@ public final class LocalMetricsRecorder: @unchecked Sendable {
         change { $0.recordAppActive(at: now, calendar: calendar) }
     }
 
-    /// The app went to the background: an open round stops counting time.
+    /// The app went to the background: an open round stops counting time. The app was in use
+    /// until now, so a reminder that fired while it was on screen was not ignored either (like
+    /// `ReminderLog.recordUse`, which counts leaving the app as a use).
     public func appDidEnterBackground(at now: Date = Date()) {
         lock.lock()
         if var round = openRound, let since = round.runningSince {
@@ -135,6 +137,8 @@ public final class LocalMetricsRecorder: @unchecked Sendable {
             openRound = round
         }
         lock.unlock()
+        let calendar = self.calendar
+        change { $0.recordAppActive(at: now, calendar: calendar) }
     }
 
     // MARK: Reading and reset

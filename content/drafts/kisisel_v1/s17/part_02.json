@@ -1,0 +1,982 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.missed_call.phr.1",
+      "lemma": "missed call",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a call you did not answer",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌmɪst ˈkɔːl/",
+        "uk": "/ˌmɪst ˈkɔːl/"
+      },
+      "def": {
+        "micro": "a call you did not answer",
+        "short": "a phone call that you did not answer; your phone shows it later",
+        "long": "A phone call that you did not answer, maybe because you were busy or did not hear it. Your phone shows a list of these calls, so you can call back later."
+      },
+      "grammar": {
+        "pattern": "have / get a missed call from sb"
+      },
+      "examples": [
+        {
+          "en": "I have three missed calls from my mom.",
+          "tr": "Annemden üç cevapsız arama var.",
+          "register": "neutral",
+          "focus": "missed calls"
+        },
+        {
+          "en": "Sorry, I saw your missed call too late.",
+          "tr": "Kusura bakma, cevapsız aramanı çok geç gördüm.",
+          "register": "neutral",
+          "focus": "missed call"
+        },
+        {
+          "en": "My phone was in my bag, so I had five missed calls from Kerem.",
+          "tr": "Telefonum çantamdaydı, Kerem'den beş cevapsız arama vardı.",
+          "register": "neutral",
+          "focus": "missed calls"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a missed call from",
+        "have a missed call",
+        "see a missed call"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "cevapsız arama",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Missed' burada 'kaçırılmış' demek. 'I missed your call' (Aramanı kaçırdım) da çok kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Why didn't you open the phone?",
+              "right": "Why didn't you answer the phone?",
+              "why": "Türkçede gelen aramaya cevap vermeye 'telefonu açmak' denir; 'açmak' 'open' diye çevrilince hata çıkar. İngilizcede aramaya 'answer' ya da 'pick up' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't hear my phone ring. Now I have a ______ from Selin.",
+        "answer": "missed call",
+        "distractors": [
+          "phone case",
+          "low battery",
+          "phone bill"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.video_call.phr.1",
+      "lemma": "video call",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a call where you see each other",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɪdioʊ ˌkɔːl/",
+        "uk": "/ˈvɪdiəʊ ˌkɔːl/"
+      },
+      "def": {
+        "micro": "a talk where you see faces",
+        "short": "a talk on a phone or computer where you can see and hear each other",
+        "long": "A talk on a phone or computer where people can see and hear each other through a camera. People use it to talk with family far away or to have meetings from home."
+      },
+      "grammar": {
+        "pattern": "have / make a video call (with sb)"
+      },
+      "examples": [
+        {
+          "en": "Let's have a video call tonight.",
+          "tr": "Bu akşam görüntülü konuşalım.",
+          "register": "neutral",
+          "focus": "video call"
+        },
+        {
+          "en": "Grandma loves video calls with her grandchildren.",
+          "tr": "Büyükannem torunlarıyla görüntülü aramayı çok seviyor.",
+          "register": "neutral",
+          "focus": "video calls"
+        },
+        {
+          "en": "Deniz's camera didn't work, so we couldn't make a video call.",
+          "tr": "Deniz'in kamerası çalışmadı, o yüzden görüntülü arama yapamadık.",
+          "register": "neutral",
+          "focus": "video call"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a video call",
+        "make a video call",
+        "join a video call",
+        "a video call with"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görüntülü arama",
+          "alt": [
+            "görüntülü konuşma"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Normal sesli aramaya 'voice call' ya da sadece 'call' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to see your new haircut! Can we have a ______ tonight?",
+        "answer": "video call",
+        "distractors": [
+          "phone call",
+          "voicemail",
+          "phone number"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.voice_message.phr.1",
+      "lemma": "voice message",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "recorded spoken message in a chat app",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɔɪs ˌmɛsɪdʒ/",
+        "uk": "/ˈvɔɪs ˌmɛsɪdʒ/"
+      },
+      "def": {
+        "micro": "spoken note sent in an app",
+        "short": "a short recording of your words that you send to someone in a chat app",
+        "long": "A short recording of your words that you send to someone in a chat app. The other person can listen to it when they have time."
+      },
+      "grammar": {
+        "pattern": "send / leave sb a voice message"
+      },
+      "examples": [
+        {
+          "en": "I sent you a voice message.",
+          "tr": "Sana sesli mesaj gönderdim.",
+          "register": "neutral",
+          "focus": "voice message"
+        },
+        {
+          "en": "Can you listen to my voice message? It's about tomorrow.",
+          "tr": "Sesli mesajımı dinler misin? Yarınla ilgili.",
+          "register": "neutral",
+          "focus": "voice message"
+        },
+        {
+          "en": "Mira sends voice messages because typing is slow for her.",
+          "tr": "Mira sesli mesaj gönderiyor, çünkü yazmak ona uzun sürüyor.",
+          "register": "neutral",
+          "focus": "voice messages"
+        }
+      ],
+      "synonyms": [
+        "voice note"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "send a voice message",
+        "leave a voice message",
+        "listen to a voice message"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sesli mesaj",
+          "alt": [
+            "ses kaydı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telesekreterde bırakılan mesaja 'voicemail' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm carrying heavy bags and can't type. I'll send you a ______ instead.",
+        "answer": "voice message",
+        "distractors": [
+          "text message",
+          "comment",
+          "shopping list"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.group_chat.phr.1",
+      "lemma": "group chat",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a chat with many people in an app",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡruːp ˌtʃæt/",
+        "uk": "/ˈɡruːp ˌtʃæt/"
+      },
+      "def": {
+        "micro": "messaging with many people",
+        "short": "a place in a messaging app where many people can send messages together",
+        "long": "A place in a messaging app where three or more people send messages to each other. Families, classes and friends often have one."
+      },
+      "grammar": {
+        "pattern": "in the group chat; add sb to the group chat"
+      },
+      "examples": [
+        {
+          "en": "I'll share the photos in the group chat.",
+          "tr": "Fotoğrafları grup sohbetinde paylaşırım.",
+          "register": "neutral",
+          "focus": "group chat"
+        },
+        {
+          "en": "Our family group chat is very busy today.",
+          "tr": "Aile grubumuzda bugün çok mesaj var.",
+          "register": "neutral",
+          "focus": "group chat"
+        },
+        {
+          "en": "Can you add Lucas to the group chat? He's coming to the party.",
+          "tr": "Lucas'ı gruba ekler misin? Partiye geliyor.",
+          "register": "neutral",
+          "focus": "group chat"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the group chat",
+        "add to the group chat",
+        "a family group chat",
+        "leave the group chat"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "grup sohbeti",
+          "alt": [
+            "mesaj grubu",
+            "grup"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede çoğu zaman kısaca 'grup' denir: 'gruba attım'. İngilizcede de 'I posted it in the group' denebilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our class has a ______. We use it to share homework and news.",
+        "answer": "group chat",
+        "distractors": [
+          "video game",
+          "ringtone",
+          "phone bill"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_silent.phr.1",
+      "lemma": "on silent",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "of a phone: set to make no ring sound",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ˈsaɪlənt/",
+        "uk": "/ɒn ˈsaɪlənt/"
+      },
+      "def": {
+        "micro": "set to make no ring sound",
+        "short": "set so that it does not ring or make sounds when a call or message comes",
+        "long": "Set so that it does not ring or make any sound when a call or message comes. People use it in meetings, at the cinema or at night."
+      },
+      "grammar": {
+        "pattern": "be / put sth / keep sth on silent"
+      },
+      "examples": [
+        {
+          "en": "Sorry, my phone was on silent.",
+          "tr": "Kusura bakma, telefonum sessizdeydi.",
+          "register": "neutral",
+          "focus": "on silent"
+        },
+        {
+          "en": "Please put your phones on silent during the film.",
+          "tr": "Lütfen film sırasında telefonlarınızı sessize alın.",
+          "register": "neutral",
+          "focus": "on silent"
+        },
+        {
+          "en": "I keep my phone on silent at night, so calls don't wake me up.",
+          "tr": "Aramalar beni uyandırmasın diye geceleri telefonumu sessizde tutuyorum.",
+          "register": "neutral",
+          "focus": "on silent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "put on silent",
+        "keep on silent",
+        "be on silent"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sessizde",
+          "alt": [
+            "sessiz modda"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'In silent mode' da doğrudur. Titreşimde olmak için 'on vibrate' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody heard the phone ring because it was ______.",
+        "answer": "on silent",
+        "distractors": [
+          "on sale",
+          "on time",
+          "on speaker"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_speaker.phr.1",
+      "lemma": "on speaker",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "of a call: sound from the loudspeaker",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ˈspiːkər/",
+        "uk": "/ɒn ˈspiːkə/"
+      },
+      "def": {
+        "micro": "so people nearby can hear",
+        "short": "with the sound coming out loud from the phone so people nearby can hear",
+        "long": "With the sound of a call coming out loud from the phone, so you do not hold it to your ear and people nearby can hear too."
+      },
+      "grammar": {
+        "pattern": "put sb / a call on speaker"
+      },
+      "examples": [
+        {
+          "en": "Put me on speaker, please.",
+          "tr": "Beni hoparlöre al lütfen.",
+          "register": "neutral",
+          "focus": "on speaker"
+        },
+        {
+          "en": "I'm cooking, so I'll put you on speaker.",
+          "tr": "Yemek yapıyorum, o yüzden seni hoparlöre alıyorum.",
+          "register": "neutral",
+          "focus": "on speaker"
+        },
+        {
+          "en": "Mom had the call on speaker, so the whole family heard the news.",
+          "tr": "Annem telefonu hoparlöre almıştı, haberi bütün aile duydu.",
+          "register": "neutral",
+          "focus": "on speaker"
+        }
+      ],
+      "synonyms": [
+        "on speakerphone"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "put on speaker",
+        "be on speaker",
+        "take off speaker"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hoparlörde",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'hoparlöre almak' denir; İngilizcede 'put someone on speaker' kalıbı kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My hands are wet. Can you take the call and put it ______?",
+        "answer": "on speaker",
+        "distractors": [
+          "on display",
+          "in danger",
+          "by heart"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.type.v.1",
+      "lemma": "type",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "write with a keyboard",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/taɪp/",
+        "uk": "/taɪp/"
+      },
+      "def": {
+        "micro": "write with keys",
+        "short": "write words using a keyboard or the keys on a phone screen",
+        "long": "To write words by pressing keys on a keyboard or on a phone screen. People do this to write messages, emails or searches."
+      },
+      "grammar": {
+        "pattern": "type sth (in / into sth)"
+      },
+      "examples": [
+        {
+          "en": "I type fast on my phone.",
+          "tr": "Telefonda hızlı yazıyorum.",
+          "register": "neutral",
+          "focus": "type"
+        },
+        {
+          "en": "Type your name in the box.",
+          "tr": "Adını kutuya yaz.",
+          "register": "neutral",
+          "focus": "Type"
+        },
+        {
+          "en": "Kaan's screen was cracked, so typing a message took a long time.",
+          "tr": "Kaan'ın ekranı çatlaktı, bu yüzden mesaj yazmak uzun sürdü.",
+          "register": "neutral",
+          "focus": "typing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "type a message",
+        "type fast",
+        "type in a password",
+        "type your name"
+      ],
+      "word_family": [
+        {
+          "lemma": "typing",
+          "pos": "n"
+        },
+        {
+          "lemma": "typo",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yazmak",
+          "alt": [
+            "klavyede yazmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede ikisi de 'yazmak'. 'Write' kalemle de olur; 'type' yalnızca klavye ya da tuşlarla yazmaktır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The keyboard on this tablet is very small, so I ______ slowly.",
+        "answer": "type",
+        "distractors": [
+          "read",
+          "speak",
+          "listen"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.forward.v.1",
+      "lemma": "forward",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "send on a message you received",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɔːrwərd/",
+        "uk": "/ˈfɔːwəd/"
+      },
+      "def": {
+        "micro": "send on to another person",
+        "short": "send a message or an email that you got to another person",
+        "long": "To send a message, email or photo that you got from someone to another person. You do not write it again; you send the same one."
+      },
+      "grammar": {
+        "pattern": "forward sth to sb / forward sb sth"
+      },
+      "examples": [
+        {
+          "en": "Can you forward me that email?",
+          "tr": "O e-postayı bana iletebilir misin?",
+          "register": "neutral",
+          "focus": "forward"
+        },
+        {
+          "en": "I forwarded the photo to the family group chat.",
+          "tr": "Fotoğrafı aile grubuna ilettim.",
+          "register": "neutral",
+          "focus": "forwarded"
+        },
+        {
+          "en": "Please don't forward this message to anyone. It's only for you.",
+          "tr": "Lütfen bu mesajı kimseye iletme, sadece sana özel.",
+          "register": "neutral",
+          "focus": "forward"
+        }
+      ],
+      "synonyms": [
+        "pass on",
+        "send on"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "forward an email",
+        "forward a message",
+        "forward to sb"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iletmek",
+          "alt": [
+            "yönlendirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'forwardlamak' da duyulur. Uygulamalarda düğmenin adı 'İlet' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali didn't get the invitation, so I ______ him the email that I got.",
+        "answer": "forwarded",
+        "distractors": [
+          "deleted",
+          "answered",
+          "borrowed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mute.v.1",
+      "lemma": "mute",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "turn off sound",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mjuːt/",
+        "uk": "/mjuːt/"
+      },
+      "def": {
+        "micro": "turn off the sound of",
+        "short": "turn off the sound of something, like a chat, a video or your microphone",
+        "long": "To turn off the sound of something, like a video, a chat or your microphone in an online meeting. You can turn the sound back on later."
+      },
+      "grammar": {
+        "pattern": "mute sth / mute yourself"
+      },
+      "examples": [
+        {
+          "en": "I muted the group chat.",
+          "tr": "Grup sohbetini sessize aldım.",
+          "register": "neutral",
+          "focus": "muted"
+        },
+        {
+          "en": "Please mute your microphone when you aren't speaking.",
+          "tr": "Konuşmadığınızda lütfen mikrofonunuzu kapatın.",
+          "register": "neutral",
+          "focus": "mute"
+        },
+        {
+          "en": "The video was very loud, so Lena muted it on the bus.",
+          "tr": "Video çok sesliydi, o yüzden Lena otobüste videonun sesini kapattı.",
+          "register": "neutral",
+          "focus": "muted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unmute"
+      ],
+      "collocations": [
+        "mute a chat",
+        "mute the sound",
+        "mute your microphone",
+        "mute yourself"
+      ],
+      "word_family": [
+        {
+          "lemma": "unmute",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sessize almak",
+          "alt": [
+            "sesini kapatmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Toplantıda sık duyulur: 'You're on mute!' (Sesin kapalı!).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We can hear your dog in the meeting. Please ______ your microphone.",
+        "answer": "mute",
+        "distractors": [
+          "update",
+          "upload",
+          "unmute"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.block.v.2",
+      "lemma": "block",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "stop someone contacting you online",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/blɑːk/",
+        "uk": "/blɒk/"
+      },
+      "def": {
+        "micro": "stop someone contacting you",
+        "short": "stop a person from calling you, messaging you or seeing your posts online",
+        "long": "To stop a person from calling you, sending you messages or seeing your posts on social media. People do this when someone is rude or annoying."
+      },
+      "grammar": {
+        "pattern": "block sb (on sth)"
+      },
+      "examples": [
+        {
+          "en": "I blocked that number.",
+          "tr": "O numarayı engelledim.",
+          "register": "neutral",
+          "focus": "blocked"
+        },
+        {
+          "en": "If someone is rude to you online, you can block them.",
+          "tr": "İnternette biri sana kaba davranırsa onu engelleyebilirsin.",
+          "register": "neutral",
+          "focus": "block"
+        },
+        {
+          "en": "Defne blocked her ex on social media, so he can't see her posts.",
+          "tr": "Defne eski sevgilisini sosyal medyada engelledi; eski sevgilisi artık onun paylaşımlarını göremiyor.",
+          "register": "neutral",
+          "focus": "blocked"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unblock"
+      ],
+      "collocations": [
+        "block a number",
+        "block someone",
+        "block and report"
+      ],
+      "word_family": [
+        {
+          "lemma": "unblock",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "engellemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir kişinin engelini kaldırmak için 'unblock' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A stranger keeps sending me rude messages, so I'm going to ______ him.",
+        "answer": "block",
+        "distractors": [
+          "follow",
+          "invite",
+          "thank"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -118,6 +118,23 @@ final class RotationCursorTests: XCTestCase {
         XCTAssertEqual(TimelinePlanner.cursorAfterKnow(shownWordID: 99, input: negative, now: t0).offset, 2)
     }
 
+    /// A damaged `widget_state.json` can hold any `cursor_offset`. In the fallback above, Next used
+    /// to compute `Int.max + 1` and trap; the offset is now wrapped before the step.
+    func testFallbackWithAnExtremeStoredOffsetDoesNotOverflow() {
+        // Int.max mod 3 = 1 (2^63 mod 3 = 2): Next (1 + 1) mod 3 = 2, Know 1.
+        let maxInput = makeInput(queueIDs: [1, 2, 3], known: [1, 2, 3], cursor: Int.max)
+        XCTAssertEqual(TimelinePlanner.cursorAfterNext(shownWordID: 99, input: maxInput, now: t0).offset, 2)
+        XCTAssertEqual(TimelinePlanner.cursorAfterKnow(shownWordID: 99, input: maxInput, now: t0).offset, 1)
+        // Int.min % 3 = -2, positive modulo 1: Next 2, Know 1.
+        let minInput = makeInput(queueIDs: [1, 2, 3], known: [1, 2, 3], cursor: Int.min)
+        XCTAssertEqual(TimelinePlanner.cursorAfterNext(shownWordID: 99, input: minInput, now: t0).offset, 2)
+        XCTAssertEqual(TimelinePlanner.cursorAfterKnow(shownWordID: 99, input: minInput, now: t0).offset, 1)
+        // One-word queue: every step stays on index 0.
+        let single = makeInput(queueIDs: [1], known: [1], cursor: Int.max)
+        XCTAssertEqual(TimelinePlanner.cursorAfterNext(shownWordID: 99, input: single, now: t0).offset, 0)
+        XCTAssertEqual(TimelinePlanner.cursorAfterKnow(shownWordID: 99, input: single, now: t0).offset, 0)
+    }
+
     func testFallbackUsesTheSameAlignmentOffsetAsTheTimeline() {
         let input = makeInput(queueIDs: Array(1...10))
         // Tap at 22:30:05 UTC on a word that is not in the queue.

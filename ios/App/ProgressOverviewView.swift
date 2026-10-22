@@ -6,7 +6,7 @@ import Learning
 /// (docs/tasarim/alternatifler/sakin_ilerleme.md; ogrenme_ilkeleri.md 1.11 and 2.5). From the top:
 /// the week's calm sentence, two counts, the words met this week as cards that turn over to their
 /// example, the library's shelves (Yerleşti on top, Raf 1 at the bottom) with the self-marked words
-/// apart, "Raflar nasıl çalışır?" and the topics. No streak, no percentage, no ranking, no praise,
+/// apart, "Basamaklar nasıl çalışır?" and the topics. No streak, no percentage, no ranking, no praise,
 /// no zero: an empty part is left out or says "boş".
 ///
 /// How to call it
@@ -81,7 +81,7 @@ struct ProgressOverviewView: View {
 
     // MARK: Counts
 
-    /// "86 kelime kitaplığında" and, once there are any, "22 kelime üst raflarda".
+    /// "86 kelime kitaplığında" and, once there are any, "22 kelime üst basamaklarda".
     private var counts: some View {
         let layout = dynamicTypeSize.isAccessibilitySize
             ? AnyLayout(VStackLayout(spacing: 8))
@@ -96,8 +96,8 @@ struct ProgressOverviewView: View {
             if longTerm > 0 {
                 CountTile(
                     value: longTerm,
-                    caption: "kelime üst raflarda",
-                    voiceLabel: "\(longTerm) kelime üst raflarda: Raf 4, Raf 5 ya da Yerleşti."
+                    caption: "kelime üst basamaklarda",
+                    voiceLabel: "\(longTerm) kelime üst basamaklarda: Basamak 4, Basamak 5 ya da Yerleşti."
                 )
             }
         }
@@ -158,7 +158,7 @@ struct ProgressOverviewView: View {
         return VStack(alignment: .leading, spacing: 12) {
             SectionHeading(
                 title: "Kitaplığın",
-                subtitle: "Her doğru cevapta kelime bir üst rafa çıkar. Ara versen de raflar boşalmaz."
+                subtitle: "Bildim ya da Kolay dediğinde kelime yukarı çıkar. Ara versen de kelimeler yerinde kalır."
             )
             VStack(spacing: 0) {
                 ForEach(Array(shelves.enumerated()), id: \.element) { index, shelf in
@@ -190,7 +190,7 @@ struct ProgressOverviewView: View {
                         toggle: { toggle(.selfMarked) },
                         open: { openedWord = $0 }
                     )
-                    Text("Widget'ta ya da Akış'ta “Biliyorum” dediğin kelimeler. Henüz sorulmadılar. Bir kez sorulurlar; bilirsen Yerleşti rafına geçerler.")
+                    Text("“Biliyorum” dediğin kelimeler. Henüz sorulmadılar. Bir kez sorulurlar; bilirsen Yerleşti basamağına geçerler.")
                         .font(.footnote)
                         .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
@@ -208,7 +208,7 @@ struct ProgressOverviewView: View {
         }
     }
 
-    /// "Raflar nasıl çalışır?": the answers' rules and the waits, from `Leitner`.
+    /// "Basamaklar nasıl çalışır?": the answers' rules and the waits, from `Leitner`.
     private var howItWorks: some View {
         VStack(alignment: .leading, spacing: 12) {
             Button {
@@ -217,12 +217,14 @@ struct ProgressOverviewView: View {
                 }
             } label: {
                 Label(
-                    showsHowItWorks ? "Kapat" : "Raflar nasıl çalışır?",
+                    showsHowItWorks ? "Kapat" : "Basamaklar nasıl çalışır?",
                     systemImage: showsHowItWorks ? "chevron.up" : "questionmark.circle"
                 )
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
-            .accessibilityLabel(Text(verbatim: "Raflar nasıl çalışır?"))
+            .accessibilityLabel(Text(verbatim: "Basamaklar nasıl çalışır?"))
+            // Voice Control: the visible title too.
+            .accessibilityInputLabels([Text(verbatim: "Basamaklar nasıl çalışır?"), Text(verbatim: "Kapat")])
             .accessibilityValue(Text(verbatim: showsHowItWorks ? "açık" : "kapalı"))
             if showsHowItWorks {
                 HowShelvesWork()
@@ -268,7 +270,7 @@ struct ProgressOverviewView: View {
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.ink)
                 .accessibilityAddTraits(.isHeader)
-            Text("İlk tekrar turunda tanıştığın kelimeler en alt rafa gelir. Her doğru cevapta bir üst rafa çıkarlar.")
+            Text("Tekrar'da cevapladığın kelimeler burada görünür. Bildikçe bir üst basamağa çıkarlar.")
                 .font(.body)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
@@ -326,7 +328,7 @@ private extension ProgressSummary.Shelf {
     /// The shelf's own name ("Güçleniyor").
     var name: String {
         switch self {
-        case .box1: return "Yeni"
+        case .box1: return "Başlangıç"
         case .box2: return "Tanıdık"
         case .box3: return "Güçleniyor"
         case .box4: return "Sağlam"
@@ -336,18 +338,19 @@ private extension ProgressSummary.Shelf {
         }
     }
 
-    /// "Raf 3 · Güçleniyor", "Yerleşti".
+    /// "Basamak 3 · Güçleniyor", "Yerleşti". The user hears of the Leitner boxes only as
+    /// "basamak" (docs/tasarim/terimler.md), never "raf" or "kutu".
     var title: String {
         if let box {
-            return "Raf \(box) · \(name)"
+            return "Basamak \(box) · \(name)"
         }
         return name
     }
 
-    /// For VoiceOver: "Raf 3, Güçleniyor".
+    /// For VoiceOver: "Basamak 3, Güçleniyor".
     var voiceTitle: String {
         if let box {
-            return "Raf \(box), \(name)"
+            return "Basamak \(box), \(name)"
         }
         return name
     }
@@ -365,6 +368,24 @@ private extension ProgressSummary.Shelf {
         default:
             return "bir kez sorulur"
         }
+    }
+
+    /// `rhythm` as a sentence for VoiceOver: "4 günde bir sorulur.", "Bir kez sorulur."
+    var voiceRhythm: String {
+        switch self {
+        case .settled:
+            let refresher = rhythm.replacingOccurrences(of: "tazeleme", with: "tazelemeyle")
+            return sentenceCase(refresher) + " sorulur."
+        case .selfMarked:
+            return sentenceCase(rhythm) + "."
+        default:
+            return sentenceCase(rhythm) + " sorulur."
+        }
+    }
+
+    /// The first letter upper case, the Turkish way ("i" → "İ").
+    private func sentenceCase(_ text: String) -> String {
+        return text.prefix(1).uppercased(with: Locale(identifier: "tr_TR")) + text.dropFirst()
     }
 
     /// Ink strength of the book spines: pale on Raf 1, full ink on Yerleşti.
@@ -514,13 +535,17 @@ private struct MetWordCard: View {
     @State private var showsExample = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @ScaledMetric(relativeTo: .title2) private var lemmaSize: CGFloat = 24
 
     var body: some View {
         Button {
+            let turnsToExample = !showsExample
             withAnimation(reduceMotion ? .easeOut(duration: 0.15) : .easeInOut(duration: 0.35)) {
-                showsExample.toggle()
+                showsExample = turnsToExample
             }
+            // The card turns under the VoiceOver cursor: say the new face.
+            SozlukSpeech.announce(turnsToExample ? backRuns : frontRuns)
         } label: {
             // Both faces are laid out, so the card keeps its height when it turns.
             ZStack(alignment: .topLeading) {
@@ -539,7 +564,36 @@ private struct MetWordCard: View {
             .contentShape(RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
         }
         .buttonStyle(.plain)
+        // One label in two voices (an English locale inside the button would switch all of it).
+        .accessibilityLabel(SozlukSpeech.label(showsExample ? backRuns : frontRuns))
         .accessibilityHint(Text(verbatim: showsExample ? "Kelimeye döner." : "Örnek cümleyi gösterir."))
+    }
+
+    /// The front for VoiceOver: "breakfast", then "Türkçesi: kahvaltı, Basamak 2, Tanıdık".
+    private var frontRuns: [SozlukSpeech.Run] {
+        var turkish = ""
+        if let gloss = word.glossTR, !gloss.isEmpty {
+            turkish += ", Türkçesi: " + gloss
+        }
+        if let shelf {
+            turkish += ", " + shelf.voiceTitle
+        }
+        var runs: [SozlukSpeech.Run] = [.english(word.lemma)]
+        if !turkish.isEmpty {
+            runs.append(.turkish(turkish))
+        }
+        return runs
+    }
+
+    /// The back for VoiceOver: the example (or the definition) in English.
+    private var backRuns: [SozlukSpeech.Run] {
+        if !word.exampleEN.isEmpty {
+            return [.english(word.exampleEN)]
+        }
+        if !word.defShort.isEmpty {
+            return [.english(word.defShort)]
+        }
+        return [.turkish("Senin kelimen")]
     }
 
     private var front: some View {
@@ -547,10 +601,11 @@ private struct MetWordCard: View {
             Text(verbatim: word.lemma)
                 .font(Theme.Fonts.englishWord(size: lemmaSize))
                 .foregroundStyle(Theme.ink)
-                .lineLimit(2)
+                // Two lines in the narrow card; at accessibility sizes the card is full width and
+                // a long phrase takes the lines it needs.
+                .lineLimit(dynamicTypeSize.isAccessibilitySize ? nil : 2)
                 .minimumScaleFactor(0.75)
                 .fixedSize(horizontal: false, vertical: true)
-                .englishVoice()
             if let gloss = word.glossTR, !gloss.isEmpty {
                 Text(verbatim: gloss)
                     .font(.callout)
@@ -578,12 +633,10 @@ private struct MetWordCard: View {
                 Text(ExampleMark.attributed(word.exampleEN, lemma: word.lemma, colorScheme: colorScheme, highlighted: false))
                     .exampleStyle()
                     .fixedSize(horizontal: false, vertical: true)
-                    .englishVoice()
             } else if !word.defShort.isEmpty {
                 Text(verbatim: word.defShort)
                     .definitionStyle()
                     .fixedSize(horizontal: false, vertical: true)
-                    .englishVoice()
             } else {
                 // A user's word with neither: "Senin kelimen".
                 CustomWordTag()
@@ -664,6 +717,7 @@ private struct ShelfRow: View {
             .buttonStyle(.plain)
             .disabled(count == 0)
             .accessibilityLabel(Text(verbatim: voiceLabel))
+            .accessibilityValue(Text(verbatim: count == 0 ? "" : (isOpen ? "açık" : "kapalı")))
             .accessibilityHint(Text(verbatim: count == 0 ? "" : (isOpen ? "Kelimeleri gizler." : "Kelimeleri gösterir.")))
 
             if count > 0 && !dynamicTypeSize.isAccessibilitySize {
@@ -687,7 +741,7 @@ private struct ShelfRow: View {
         if count == 0 {
             return "\(shelf.voiceTitle): boş."
         }
-        return "\(shelf.voiceTitle): \(count) kelime. \(shelf.rhythm.prefix(1).uppercased() + shelf.rhythm.dropFirst()) sorulur."
+        return "\(shelf.voiceTitle): \(count) kelime. \(shelf.voiceRhythm)"
     }
 
     private var wordChips: some View {
@@ -699,14 +753,18 @@ private struct ShelfRow: View {
                     open(word)
                 } label: {
                     Text(verbatim: word.lemma)
-                        .englishVoice()
                 }
                 .buttonStyle(ChipButtonStyle())
+                // The word in an English voice through the label's language, so the Turkish
+                // hint keeps the Turkish voice (an English locale would switch the whole button).
+                .accessibilityLabel(SozlukSpeech.english(word.lemma))
                 .accessibilityHint(Text(verbatim: "Anlamını ve örneğini gösterir."))
             }
             if hidden > 0 {
                 Button {
                     showsAllWords = true
+                    // The button goes away under the VoiceOver cursor.
+                    SozlukSpeech.announce([.turkish("\(hidden) kelime daha gösterildi.")])
                 } label: {
                     Text(verbatim: "+\(hidden) kelime daha")
                 }
@@ -761,20 +819,20 @@ private struct BookSpines: View {
     }
 }
 
-/// "Raflar nasıl çalışır?": what each answer does, the waits and why the top shelf is not called
+/// "Basamaklar nasıl çalışır?": what each answer does, the waits and why the top shelf is not called
 /// "kalıcı". Every number comes from `Leitner`.
 private struct HowShelvesWork: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("**Bildim:** bir üst raf.")
-                Text("**Kolay:** iki üst raf.")
-                Text("**Zor:** aynı raf, ara yarıya iner.")
-                Text("**Bilemedim:** kelime aşağı bir rafa iner ve kısa süre sonra yine gelir.")
+                Text("**Bildim:** bir basamak çıkar.")
+                Text("**Kolay:** iki basamak çıkar.")
+                Text("**Zor:** aynı basamakta kalır, ara yarıya iner.")
+                Text("**Bilemedim:** aşağı iner, sonraki turda yine sorulur.")
             }
             .font(.subheadline)
             .foregroundStyle(Theme.ink)
-            Text(verbatim: "Aralar her rafta iki katına çıkar: \(waits) gün. \(Leitner.maxBox). raftan sonra, \(lastWait) gün aradan sonra da hatırladığın kelime Yerleşti rafına geçer.")
+            Text(verbatim: "Aralar her basamakta iki katına çıkar: \(waits) gün. Son basamakta da hatırladığın kelime Yerleşti basamağına geçer.")
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink)
             VStack(alignment: .leading, spacing: 4) {
@@ -782,11 +840,11 @@ private struct HowShelvesWork: View {
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.ink)
                     .accessibilityAddTraits(.isHeader)
-                Text("Unutma hiç tamamen durmaz. Bu yüzden yerleşen kelimeler de ayda bir kısa bir tazelemeyle sorulur.")
+                Text("Unutmak hiçbir zaman tamamen durmaz. Bu yüzden yerleşen kelimeler de ayda bir kısaca sorulur.")
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
             }
-            Text("Unuttuğun kelime aşağı rafa iner. Bu bir ceza değil: bir kelimeyi ikinci kez öğrenmek ilkinden kısa sürer.")
+            Text("Unuttuğun kelime aşağı basamağa iner. Bu bir ceza değil: ikinci kez öğrenmek ilkinden kısa sürer.")
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
         }
@@ -800,25 +858,29 @@ private struct HowShelvesWork: View {
     private var waits: String {
         return Leitner.intervalDays.map { String(Int($0.rounded())) }.joined(separator: ", ")
     }
-
-    private var lastWait: Int {
-        return Int((Leitner.intervalDays.last ?? 16).rounded())
-    }
 }
 
 /// One topic: its name, word count, a three-part bar (known, learning, not met) and the numbers
 /// in words. No percentage and no order by score.
 private struct TopicRow: View {
     let topic: ProgressSummary.GroupProgress
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
+        // At accessibility text sizes the word count goes under the topic's name.
+        let isLarge = dynamicTypeSize.isAccessibilitySize
+        let layout = isLarge
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 8))
         VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .firstTextBaseline, spacing: 8) {
+            layout {
                 Text(verbatim: topic.title)
                     .font(.headline)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
-                Spacer(minLength: 8)
+                if !isLarge {
+                    Spacer(minLength: 8)
+                }
                 Text(verbatim: "\(topic.total) kelime")
                     .font(.subheadline)
                     .monospacedDigit()
@@ -833,25 +895,31 @@ private struct TopicRow: View {
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: "\(topic.title): \(topic.total) kelime. \(caption)"))
+        .accessibilityLabel(Text(verbatim: "\(topic.title): \(topic.total) kelime. \(captionText(separator: ", "))"))
     }
 
-    /// "7 bildiğin · 11 öğreniliyor · 40 yeni"; parts with nothing are left out.
     private var caption: String {
+        return captionText(separator: " · ")
+    }
+
+    /// "Bildiğin kelime: 7 · Öğreniyorsun: 11 · Yeni kelime: 40", with the state names of
+    /// docs/tasarim/terimler.md; parts with nothing are left out. VoiceOver gets commas, not "·".
+    private func captionText(separator: String) -> String {
         if topic.everyWordMet {
-            return "Bu konunun bütün kelimeleriyle tanıştın. Tekrarlar sürüyor; yeni kelimeler diğer konulardan gelir."
+            // Whether new words come from other topics depends on the chosen topics: not said.
+            return "Bu konunun bütün kelimeleriyle tanıştın. Tekrarlar sürüyor."
         }
         var parts: [String] = []
         if topic.known > 0 {
-            parts.append("\(topic.known) bildiğin")
+            parts.append("Bildiğin kelime: \(topic.known)")
         }
         if topic.learning > 0 {
-            parts.append("\(topic.learning) öğreniliyor")
+            parts.append("Öğreniyorsun: \(topic.learning)")
         }
         if topic.notStarted > 0 {
-            parts.append("\(topic.notStarted) yeni")
+            parts.append("Yeni kelime: \(topic.notStarted)")
         }
-        return parts.joined(separator: " · ")
+        return parts.joined(separator: separator)
     }
 }
 
@@ -957,11 +1025,13 @@ private struct ShelfWordSheet: View {
                         .englishWordStyle()
                         .phosphorBand()
                         .englishVoice()
+                        .accessibilityAddTraits(.isHeader)
                         .padding(.bottom, 8)
                     if let gloss = word.glossTR, !gloss.isEmpty {
                         Text(verbatim: gloss)
                             .meaningStyle()
                             .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityLabel(Text(verbatim: "Türkçesi: " + gloss))
                     }
                     if word.isUserAdded {
                         CustomWordTag()
@@ -977,7 +1047,7 @@ private struct ShelfWordSheet: View {
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                         .accessibilityElement(children: .ignore)
-                        .accessibilityLabel(Text(verbatim: "\(shelf.voiceTitle). \(shelf.rhythm)."))
+                        .accessibilityLabel(Text(verbatim: "\(shelf.voiceTitle). \(shelf.voiceRhythm)"))
                     }
                     if !word.exampleEN.isEmpty {
                         Text(ExampleMark.attributed(word.exampleEN, lemma: word.lemma, colorScheme: colorScheme))
@@ -1062,8 +1132,8 @@ private enum ProgressOverviewPreview {
         progress[9] = Leitner.markExposure(WordProgress(wordID: 9), at: now)
         progress[10] = Leitner.markKnown(WordProgress(wordID: 10), at: now.addingTimeInterval(-3 * day))
         let topics = [
-            ProgressSummary.WordGroup(id: "food", title: "Yiyecek & İçecek", wordIDs: [1, 2, 7, 8, 9]),
-            ProgressSummary.WordGroup(id: "daily", title: "Günlük Hayat", wordIDs: [3, 4, 5, 6, 10, 11, 12]),
+            ProgressSummary.WordGroup(id: "food", title: "Yemek ve içecek", wordIDs: [1, 2, 7, 8, 9]),
+            ProgressSummary.WordGroup(id: "daily", title: "Günlük hayat", wordIDs: [3, 4, 5, 6, 10, 11, 12]),
         ]
         return ProgressSummary.make(progress: progress, now: now, topics: topics)
     }

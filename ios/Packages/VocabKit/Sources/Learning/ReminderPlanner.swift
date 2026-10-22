@@ -116,6 +116,10 @@ public enum ReminderPlanner {
     ///     `repeatGapDays` days.
     ///   - detail: a word's full card (examples, mistakes, memory hint...). Without it only the
     ///     kinds `WidgetWord` can fill are used (`.meaning`, `.newWord`).
+    ///   - confusables: when given, new words come in the order "Tanış" offers them
+    ///     (`ReviewPlanner.introWords` over `all`, which keeps confusable partners apart and puts
+    ///     words a failed "Biliyorum" check sent back first). Nil: the deck's new words in order.
+    ///   - all: every loaded word (`introWords`' returning words); nil means `feed`.
     public static func plan(
         feed: [WidgetWord],
         newWordFeed: [WidgetWord]? = nil,
@@ -127,13 +131,18 @@ public enum ReminderPlanner {
         newStudiedToday: Int,
         calendar: Calendar,
         recent: [SentReminder] = [],
-        detail: (WidgetWord) -> CardDetail? = { _ in nil }
+        detail: (WidgetWord) -> CardDetail? = { _ in nil },
+        confusables: [Int: Set<Int>]? = nil,
+        all: [WidgetWord]? = nil
     ) -> [Reminder] {
         guard days > 0, (0..<1440).contains(minuteOfDay) else {
             return []
         }
         let goal = max(dailyNewGoal, 0)
-        let upcoming = ReviewPlanner.newWords(feed: newWordFeed ?? feed, progress: progress, limit: Int.max)
+        let deck = newWordFeed ?? feed
+        let upcoming = confusables.map {
+            ReviewPlanner.introWords(feed: deck, all: all ?? feed, progress: progress, limit: Int.max, confusables: $0)
+        } ?? ReviewPlanner.newWords(feed: deck, progress: progress, limit: Int.max)
         let newWords = upcoming.prefix(goal)
         let startOfToday = calendar.startOfDay(for: now)
         var picker = WordPicker(feed: feed, upcoming: upcoming, progress: progress, goal: goal, calendar: calendar, history: recent)
@@ -321,10 +330,15 @@ public enum ReminderText {
     public static let plain = Message(title: "Kelimeler hazır", body: "Birkaç dakikan olduğunda bakabilirsin.")
 
     /// The text of `kind` about `word`, or nil when the word lacks what the kind needs, the text
-    /// does not fit, or it touches a private topic (shown on the Lock Screen). `detail` is the
-    /// word's full card; without it only `.meaning` and `.newWord` can be written.
+    /// does not fit, or it touches a private topic (shown on the Lock Screen): a personal-topic
+    /// card (`WidgetWord.isSensitive`: divorce, crush, get fired…) is never named, whatever its
+    /// text. `detail` is the word's full card; without it only `.meaning` and `.newWord` can be
+    /// written.
     public static func message(_ kind: ReminderKind, word: WidgetWord, detail: CardDetail?) -> Message? {
-        guard let lemma = shownWord(word.lemma) else {
+        if kind == .plain {
+            return plain
+        }
+        guard !word.isSensitive, let lemma = shownWord(word.lemma) else {
             return nil
         }
         let gloss = shownWord(word.glossTR)
@@ -381,8 +395,9 @@ public enum ReminderText {
         return line
     }
 
-    /// Words of a personal topic a Lock Screen should not show by default (2.1: the stopgap filter
-    /// until the cards' `tags.sensitivity` is filled in).
+    /// Words of a personal topic a Lock Screen should not show by default (2.1). The cards carry
+    /// `sensitivity` now (`message` checks it first); this text filter still catches the same
+    /// topics in other cards' examples and in the user's own words, which have no sensitivity.
     public static func isPrivate(_ text: String) -> Bool {
         let words = text.lowercased().split { !$0.isLetter }.map(String.init)
         let flagged: Set<String> = ["ex", "crush", "divorce", "divorced", "breakup", "drunk"]

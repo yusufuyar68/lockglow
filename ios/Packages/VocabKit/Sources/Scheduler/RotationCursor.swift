@@ -32,7 +32,8 @@ extension TimelinePlanner {
             now: now,
             alignmentOffset: alignmentOffset
         ) ?? input.cursorOffset
-        return RotationCursor(offset: positiveModulo(index + 1, count), anchor: anchor)
+        // The fallback is the stored offset, any integer up to Int.max: wrap it before adding 1.
+        return RotationCursor(offset: (positiveModulo(index, count) + 1) % count, anchor: anchor)
     }
 
     /// "Know" on `shownWordID` at `now`: the cursor moves onto that word. The caller adds the id

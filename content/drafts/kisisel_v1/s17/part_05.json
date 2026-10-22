@@ -1,0 +1,553 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.scam.n.1",
+      "lemma": "scam",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a dishonest plan to get money",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skæm/",
+        "uk": "/skæm/"
+      },
+      "def": {
+        "micro": "a trick to take your money",
+        "short": "a dishonest plan to trick people and take their money",
+        "long": "A dishonest plan to trick people and take their money, often by phone, text message or email. People often say \"It's a scam\" about a fake offer."
+      },
+      "grammar": {
+        "pattern": "a scam; fall for a scam"
+      },
+      "examples": [
+        {
+          "en": "Many 'You won a prize!' messages are scams.",
+          "tr": "Birçok 'Ödül kazandınız!' mesajı dolandırıcılıktır.",
+          "register": "neutral",
+          "focus": "scams"
+        },
+        {
+          "en": "The text said my parcel was waiting, but it was a scam.",
+          "tr": "Mesajda kargomun beklediği yazıyordu ama dolandırıcılık çıktı.",
+          "register": "neutral",
+          "focus": "scam"
+        },
+        {
+          "en": "Kerem lost 2,000 lira in an online shopping scam.",
+          "tr": "Kerem bir internet alışverişi dolandırıcılığında 2.000 lira kaybetti.",
+          "register": "neutral",
+          "focus": "scam"
+        }
+      ],
+      "synonyms": [
+        "con"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "online scam",
+        "phone scam",
+        "fall for a scam",
+        "scam email"
+      ],
+      "word_family": [
+        {
+          "lemma": "scammer",
+          "pos": "n"
+        },
+        {
+          "lemma": "scam",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "First recorded in American English in the 1960s. Where the word came from is not known.",
+        "origin": "American English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "dolandırıcılık",
+          "alt": [
+            "sahtekârlık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Konuşmada sık sık 'It's a scam!' (Bu dolandırıcılık!) denir. Dolandırıcıya 'scammer' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The \"free phone\" message asked for my card number, so I knew it was a ______.",
+        "answer": "scam",
+        "distractors": [
+          "receipt",
+          "discount",
+          "parcel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hack.v.1",
+      "lemma": "hack",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "break into an account or computer",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæk/",
+        "uk": "/hæk/"
+      },
+      "def": {
+        "micro": "break into someone's account",
+        "short": "get into someone's computer, phone or account without permission",
+        "long": "To get into someone's computer, phone or online account without permission, often to steal information or money. It is often passive: \"My account was hacked.\""
+      },
+      "grammar": {
+        "pattern": "hack (into) something; be / get hacked"
+      },
+      "examples": [
+        {
+          "en": "Someone tried to hack my account.",
+          "tr": "Biri hesabımı hacklemeye çalıştı.",
+          "register": "neutral",
+          "focus": "hack"
+        },
+        {
+          "en": "Someone hacked Mehmet's email and sent strange messages to his friends.",
+          "tr": "Biri Mehmet'in e-postasını hackleyip arkadaşlarına tuhaf mesajlar gönderdi.",
+          "register": "neutral",
+          "focus": "hacked"
+        },
+        {
+          "en": "If you use the same password for every app, it's easier to get hacked.",
+          "tr": "Her uygulamada aynı şifreyi kullanırsan hacklenmen daha kolay olur.",
+          "register": "neutral",
+          "focus": "hacked"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get hacked",
+        "hack into",
+        "hacked account"
+      ],
+      "word_family": [
+        {
+          "lemma": "hacker",
+          "pos": "n"
+        },
+        {
+          "lemma": "hacking",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hacklemek",
+          "alt": [
+            "ele geçirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'hesabım çalındı' da denir; İngilizcede bunun için 'My account was hacked' kullanılır. Bunu yapan kişiye 'hacker' denir.",
+          "mistakes": [
+            {
+              "wrong": "My account hacked yesterday.",
+              "right": "My account was hacked yesterday.",
+              "why": "Türkçede edilgenlik tek bir ekle yapılır: 'hacklendi'. İngilizcede ise 'was' gerekir; 'My account hacked' cümlesi eksik kalır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Someone found my password, and my account was ______.",
+        "answer": "hacked",
+        "distractors": [
+          "muted",
+          "tagged",
+          "downloaded"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.suspicious.adj.1",
+      "lemma": "suspicious",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "seeming wrong or dishonest",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈspɪʃəs/",
+        "uk": "/səˈspɪʃəs/"
+      },
+      "def": {
+        "micro": "seeming wrong or dangerous",
+        "short": "seeming wrong or dishonest, so it may be dangerous",
+        "long": "Seeming wrong or dishonest, so you think it may be dangerous. We often talk about a suspicious email, link or website."
+      },
+      "grammar": {
+        "pattern": "a suspicious + noun; look / seem suspicious"
+      },
+      "examples": [
+        {
+          "en": "Don't open suspicious emails.",
+          "tr": "Şüpheli e-postaları açma.",
+          "register": "neutral",
+          "focus": "suspicious"
+        },
+        {
+          "en": "I got a suspicious message about a parcel I never ordered.",
+          "tr": "Hiç sipariş etmediğim bir kargoyla ilgili şüpheli bir mesaj aldım.",
+          "register": "neutral",
+          "focus": "suspicious"
+        },
+        {
+          "en": "The bank called Zeynep about a suspicious payment on her card.",
+          "tr": "Banka, kartındaki şüpheli bir ödeme için Zeynep'i aradı.",
+          "register": "neutral",
+          "focus": "suspicious"
+        }
+      ],
+      "synonyms": [
+        "fishy",
+        "dodgy"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "suspicious email",
+        "suspicious link",
+        "suspicious activity",
+        "look suspicious"
+      ],
+      "word_family": [
+        {
+          "lemma": "suspect",
+          "pos": "v"
+        },
+        {
+          "lemma": "suspicion",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şüpheli",
+          "alt": [
+            "kuşku verici"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir kişi için 'suspicious of' denirse 'şüphelenen' anlamına gelir: She was suspicious of the email. Bu kartta 'şüphe uyandıran' anlamı var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My bank never asks for my PIN by text, so this message looks ______.",
+        "answer": "suspicious",
+        "distractors": [
+          "safe",
+          "normal",
+          "official"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.verification_code.phr.1",
+      "lemma": "verification code",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a code that proves it is you",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌvɛrɪfɪˈkeɪʃən koʊd/",
+        "uk": "/ˌvɛrɪfɪˈkeɪʃən kəʊd/"
+      },
+      "def": {
+        "micro": "a number to prove it's you",
+        "short": "a short number sent to your phone or email to show it is really you",
+        "long": "A short number that a website or app sends to your phone or email. You type it in to show that it is really you."
+      },
+      "grammar": {
+        "pattern": "send / get / enter a verification code"
+      },
+      "examples": [
+        {
+          "en": "Never share your verification code with anyone.",
+          "tr": "Doğrulama kodunu asla kimseyle paylaşma.",
+          "register": "neutral",
+          "focus": "verification code"
+        },
+        {
+          "en": "Enter the verification code we sent to your phone.",
+          "tr": "Telefonunuza gönderdiğimiz doğrulama kodunu girin.",
+          "register": "neutral",
+          "focus": "verification code"
+        },
+        {
+          "en": "A man called and asked for my verification code, so I ended the call.",
+          "tr": "Bir adam arayıp doğrulama kodumu istedi, ben de telefonu kapattım.",
+          "register": "neutral",
+          "focus": "verification code"
+        }
+      ],
+      "synonyms": [
+        "one-time code"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "get a verification code",
+        "enter a verification code",
+        "send a verification code"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doğrulama kodu",
+          "alt": [
+            "onay kodu",
+            "SMS kodu",
+            "tek kullanımlık şifre"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bankalar ve uygulamalar bu kodu genelde SMS ile gönderir. Gerçek bir banka çalışanı bu kodu senden asla istemez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The app sent a six-digit ______ to my phone. Please type it here.",
+        "answer": "verification code",
+        "distractors": [
+          "area code",
+          "price tag",
+          "dress code"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.secure.adj.1",
+      "lemma": "secure",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "safe from hackers and thieves",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪˈkjʊr/",
+        "uk": "/sɪˈkjʊə/"
+      },
+      "def": {
+        "micro": "well protected from thieves",
+        "short": "protected so that hackers and thieves cannot get in or steal anything",
+        "long": "Protected so that hackers or thieves cannot get in or steal information. We often talk about a secure website, payment or password."
+      },
+      "grammar": {
+        "pattern": "a secure + noun; keep something secure"
+      },
+      "examples": [
+        {
+          "en": "Is this payment page secure?",
+          "tr": "Bu ödeme sayfası güvenli mi?",
+          "register": "neutral",
+          "focus": "secure"
+        },
+        {
+          "en": "Only enter your card details on a secure website.",
+          "tr": "Kart bilgilerini yalnızca güvenli bir siteye gir.",
+          "register": "neutral",
+          "focus": "secure"
+        },
+        {
+          "en": "Use a long password with numbers and symbols to keep your account secure.",
+          "tr": "Hesabını güvende tutmak için rakam ve sembol içeren uzun bir şifre kullan.",
+          "register": "neutral",
+          "focus": "secure"
+        }
+      ],
+      "synonyms": [
+        "safe",
+        "protected"
+      ],
+      "antonyms": [
+        "insecure"
+      ],
+      "confusables": [
+        "safe"
+      ],
+      "collocations": [
+        "secure website",
+        "secure payment",
+        "secure connection",
+        "keep it secure"
+      ],
+      "word_family": [
+        {
+          "lemma": "security",
+          "pos": "n"
+        },
+        {
+          "lemma": "securely",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'securus', meaning free from worry: 'se-' (without) + 'cura' (care).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "güvenli",
+          "alt": [
+            "korumalı",
+            "emniyetli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Safe' ve 'secure' ikisi de 'güvenli' olur. 'Secure' daha çok site, ödeme, şifre ve bağlantı için kullanılır (korumalı, içine girilemez). Genel tehlike için 'safe' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Look for the lock icon next to the address. It shows the website is ______.",
+        "answer": "secure",
+        "distractors": [
+          "broken",
+          "slow",
+          "expensive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

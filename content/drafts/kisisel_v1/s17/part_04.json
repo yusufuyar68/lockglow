@@ -1,0 +1,1029 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.online.adv.1",
+      "lemma": "online",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "on or using the internet",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɑːnˈlaɪn/",
+        "uk": "/ˌɒnˈlaɪn/"
+      },
+      "def": {
+        "micro": "on or using the internet",
+        "short": "on the internet, or by using the internet",
+        "long": "On the internet, or by using the internet. You can buy, pay, study or talk to people this way, and you can also 'be online' when you are connected."
+      },
+      "grammar": {
+        "pattern": "buy / pay / study / go online"
+      },
+      "examples": [
+        {
+          "en": "I bought these shoes online.",
+          "tr": "Bu ayakkabıları internetten aldım.",
+          "register": "neutral",
+          "focus": "online"
+        },
+        {
+          "en": "We had our English class online today.",
+          "tr": "Bugün İngilizce dersimizi çevrimiçi yaptık.",
+          "register": "informal",
+          "focus": "online"
+        },
+        {
+          "en": "Kerem pays all his bills online, so he rarely goes to the bank.",
+          "tr": "Kerem bütün faturalarını internetten ödüyor, bu yüzden bankaya nadiren gidiyor.",
+          "register": "neutral",
+          "focus": "online"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "offline"
+      ],
+      "collocations": [
+        "buy online",
+        "pay online",
+        "be online",
+        "go online"
+      ],
+      "word_family": [
+        {
+          "lemma": "offline",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çevrimiçi",
+          "alt": [
+            "internetten",
+            "online"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'İnternetten almak' İngilizcede 'buy online' olur; 'from' gerekmez. 'Online' isimden önce sıfat olarak da kullanılır: 'online shopping' (internet alışverişi).",
+          "mistakes": [
+            {
+              "wrong": "I bought it from internet.",
+              "right": "I bought it online.",
+              "why": "Türkçedeki 'internetten aldım' kelime kelime çevrilince 'from internet' çıkıyor. İngilizcede doğal olanı 'online'; 'internet' kullanılırsa önüne 'the' gelir: 'on the internet'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our Wi-Fi isn't working, so I can't go ______ to check my email.",
+        "answer": "online",
+        "distractors": [
+          "offline",
+          "abroad",
+          "outside"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.account.n.2",
+      "lemma": "account",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 2,
+      "sense_note": "on a website or app",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkaʊnt/",
+        "uk": "/əˈkaʊnt/"
+      },
+      "def": {
+        "micro": "your place on an app or site",
+        "short": "your personal place on a website or app, with a username and password",
+        "long": "Your personal place on a website or app. You open it with a username and a password, and it keeps your information, photos or messages."
+      },
+      "grammar": {
+        "pattern": "create / open / delete an account"
+      },
+      "examples": [
+        {
+          "en": "Create an account to save your photos.",
+          "tr": "Fotoğraflarını kaydetmek için bir hesap oluştur.",
+          "register": "neutral",
+          "focus": "account"
+        },
+        {
+          "en": "Selin has two accounts: one for work and one for her friends.",
+          "tr": "Selin'in iki hesabı var: biri iş için, biri arkadaşları için.",
+          "register": "neutral",
+          "focus": "accounts"
+        },
+        {
+          "en": "I never use that app anymore, so I'm going to delete my account.",
+          "tr": "O uygulamayı artık hiç kullanmıyorum, o yüzden hesabımı sileceğim.",
+          "register": "neutral",
+          "focus": "account"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "create an account",
+        "delete an account",
+        "email account",
+        "fake account"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hesap",
+          "alt": [
+            "kullanıcı hesabı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Banka hesabına da 'account' denir ('bank account'). Uygulamada 'create an account' (hesap oluşturmak), 'log in to your account' (hesabına girmek) denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I forgot my password, so I can't get into my ______.",
+        "answer": "account",
+        "distractors": [
+          "battery",
+          "ringtone",
+          "username"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.post.v.2",
+      "lemma": "post",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "put on social media",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/poʊst/",
+        "uk": "/pəʊst/"
+      },
+      "def": {
+        "micro": "put on social media",
+        "short": "put a photo, video or message on social media or a website",
+        "long": "To put a photo, video or message on social media or a website so other people can see it. In British English it can also mean to send a letter."
+      },
+      "grammar": {
+        "pattern": "post something (on social media)"
+      },
+      "examples": [
+        {
+          "en": "Ayşe posted a photo of her cat.",
+          "tr": "Ayşe kedisinin bir fotoğrafını paylaştı.",
+          "register": "neutral",
+          "focus": "posted"
+        },
+        {
+          "en": "Don't post your home address on social media.",
+          "tr": "Ev adresini sosyal medyada paylaşma.",
+          "register": "neutral",
+          "focus": "post"
+        },
+        {
+          "en": "Tom posts a short video every morning, and his friends always watch it.",
+          "tr": "Tom her sabah kısa bir video paylaşıyor, arkadaşları da hep izliyor.",
+          "register": "neutral",
+          "focus": "posts"
+        }
+      ],
+      "synonyms": [
+        "share"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "share"
+      ],
+      "collocations": [
+        "post a photo",
+        "post a video",
+        "post online",
+        "post a comment"
+      ],
+      "word_family": [
+        {
+          "lemma": "post",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "paylaşmak",
+          "alt": [
+            "atmak",
+            "yayınlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Post' kendi fotoğrafını, videonu ya da yazını sosyal medyaya koymaktır. 'Share' de bu anlamda kullanılır, ama başkasının gönderisini paylaşmak da olabilir. Gönderinin kendisine 'a post' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I took a nice photo at the beach and ______ it on social media last night.",
+        "answer": "posted",
+        "distractors": [
+          "downloaded",
+          "charged",
+          "unlocked"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.follower.n.1",
+      "lemma": "follower",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "on social media",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɑːloʊər/",
+        "uk": "/ˈfɒləʊə/"
+      },
+      "def": {
+        "micro": "a person who sees your posts",
+        "short": "a person who chooses to see your posts on social media",
+        "long": "A person who chooses to see your photos, videos and messages on social media. Popular people and pages can have thousands of them."
+      },
+      "grammar": {
+        "pattern": "have / get / lose followers"
+      },
+      "examples": [
+        {
+          "en": "My cooking page has 500 followers.",
+          "tr": "Yemek sayfamın 500 takipçisi var.",
+          "register": "neutral",
+          "focus": "followers"
+        },
+        {
+          "en": "Elif lost some followers after she stopped posting.",
+          "tr": "Elif paylaşım yapmayı bırakınca birkaç takipçi kaybetti.",
+          "register": "neutral",
+          "focus": "followers"
+        },
+        {
+          "en": "Kenji's dog has its own page, and it has more followers than Kenji does!",
+          "tr": "Kenji'nin köpeğinin kendi sayfası var ve Kenji'den daha çok takipçisi var!",
+          "register": "informal",
+          "focus": "followers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have followers",
+        "get followers",
+        "lose followers"
+      ],
+      "word_family": [
+        {
+          "lemma": "follow",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takipçi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil 'follow' (takip etmek): 'I follow her' = Onu takip ediyorum. Sayfanın takipçileri 'followers', senin takip ettiklerin 'following' olarak görünür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Her travel videos are very popular, and now she has ten thousand ______.",
+        "answer": "followers",
+        "distractors": [
+          "passwords",
+          "chargers",
+          "headphones"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.comment.n.1",
+      "lemma": "comment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "under a post or video",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːmɛnt/",
+        "uk": "/ˈkɒmɛnt/"
+      },
+      "def": {
+        "micro": "a short note under a post",
+        "short": "something you write under a post, photo or video to say what you think",
+        "long": "Something you write under a post, photo or video on the internet to say what you think. You can write, leave or read comments."
+      },
+      "grammar": {
+        "pattern": "write / leave / read a comment"
+      },
+      "examples": [
+        {
+          "en": "Thanks for all your nice comments!",
+          "tr": "Bütün güzel yorumlarınız için teşekkürler!",
+          "register": "informal",
+          "focus": "comments"
+        },
+        {
+          "en": "Mehmet left a funny comment under my photo.",
+          "tr": "Mehmet fotoğrafımın altına komik bir yorum bıraktı.",
+          "register": "neutral",
+          "focus": "comment"
+        },
+        {
+          "en": "Please read the comments first, because someone may already have the answer.",
+          "tr": "Lütfen önce yorumları oku, belki biri zaten cevabı yazmıştır.",
+          "register": "neutral",
+          "focus": "comments"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "review"
+      ],
+      "collocations": [
+        "leave a comment",
+        "write a comment",
+        "read the comments",
+        "nice comment"
+      ],
+      "word_family": [
+        {
+          "lemma": "comment",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yorum",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gönderi, fotoğraf ya da video altına yazılan yoruma 'comment' denir. Bir ürün, otel ya da restoran hakkındaki değerlendirmeye ise 'review' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Lots of people wrote kind ______ under her new video.",
+        "answer": "comments",
+        "distractors": [
+          "settings",
+          "downloads",
+          "screenshots"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tag.v.1",
+      "lemma": "tag",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "name someone in a photo or post",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tæɡ/",
+        "uk": "/tæɡ/"
+      },
+      "def": {
+        "micro": "name someone in a post",
+        "short": "put someone's name on a photo or post so it links to their account",
+        "long": "To put someone's name on a photo or post on social media so that it links to their page. The person usually gets a message about it."
+      },
+      "grammar": {
+        "pattern": "tag someone in a photo / post"
+      },
+      "examples": [
+        {
+          "en": "Can you tag me in that photo?",
+          "tr": "Beni o fotoğrafta etiketler misin?",
+          "register": "informal",
+          "focus": "tag"
+        },
+        {
+          "en": "Leyla tagged all her friends in the holiday pictures.",
+          "tr": "Leyla tatil fotoğraflarında bütün arkadaşlarını etiketledi.",
+          "register": "neutral",
+          "focus": "tagged"
+        },
+        {
+          "en": "Please don't tag me in that video; I look really tired in it.",
+          "tr": "Lütfen beni o videoda etiketleme; çok yorgun görünüyorum.",
+          "register": "informal",
+          "focus": "tag"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "untag"
+      ],
+      "collocations": [
+        "tag someone in a photo",
+        "tag a friend"
+      ],
+      "word_family": [
+        {
+          "lemma": "tag",
+          "pos": "n"
+        },
+        {
+          "lemma": "untag",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etiketlemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'tag someone in a photo' (birini fotoğrafta etiketlemek). Fotoğraf, video ve gönderi için 'in' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ me in the photo so my friends can find it?",
+        "answer": "tag",
+        "distractors": [
+          "block",
+          "mute",
+          "scroll"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_viral.idm.1",
+      "lemma": "go viral",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "become very popular online quickly",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈvaɪrəl/",
+        "uk": "/ɡəʊ ˈvaɪrəl/"
+      },
+      "def": {
+        "micro": "become popular online fast",
+        "short": "become very popular on the internet very quickly",
+        "long": "To become very popular on the internet very quickly, because many people share it. People say it about videos, photos and posts."
+      },
+      "grammar": {
+        "pattern": "something goes viral"
+      },
+      "examples": [
+        {
+          "en": "Her funny video went viral.",
+          "tr": "Komik videosu viral oldu.",
+          "register": "informal",
+          "focus": "went viral"
+        },
+        {
+          "en": "The photo of the sleeping cat went viral in one day.",
+          "tr": "Uyuyan kedinin fotoğrafı bir günde viral oldu.",
+          "register": "informal",
+          "focus": "went viral"
+        },
+        {
+          "en": "Nobody expected Sam's song to go viral, but now millions of people know it.",
+          "tr": "Kimse Sam'in şarkısının viral olmasını beklemiyordu ama artık milyonlarca kişi onu biliyor.",
+          "register": "informal",
+          "focus": "go viral"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go viral on social media",
+        "a video goes viral"
+      ],
+      "word_family": [
+        {
+          "lemma": "viral",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "viral olmak",
+          "alt": [
+            "hızla yayılmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede de aynı ifade kullanılır: 'viral olmak'. Geçmiş zamanda 'went viral' denir. Sıfat olarak da kullanılır: 'a viral video'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "idioms_expressions"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Millions of people watched the dancing dog video in two days. It ______.",
+        "answer": "went viral",
+        "distractors": [
+          "went bad",
+          "went cold",
+          "went wrong"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.screen_time.phr.1",
+      "lemma": "screen time",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "time spent on devices",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskriːn taɪm/",
+        "uk": "/ˈskriːn taɪm/"
+      },
+      "def": {
+        "micro": "time on phones and computers",
+        "short": "the time you spend looking at a phone, computer or TV",
+        "long": "The amount of time you spend looking at a phone, computer, tablet or TV. Many phones show it in the settings every day or week."
+      },
+      "grammar": {
+        "pattern": "too much / reduce your screen time"
+      },
+      "examples": [
+        {
+          "en": "My screen time was six hours yesterday!",
+          "tr": "Dün ekran sürem altı saatti!",
+          "register": "informal",
+          "focus": "screen time"
+        },
+        {
+          "en": "Many parents worry about their children's screen time.",
+          "tr": "Birçok anne baba, çocuklarının ekran süresi konusunda endişeleniyor.",
+          "register": "neutral",
+          "focus": "screen time"
+        },
+        {
+          "en": "Deniz checks her screen time every Sunday and tries to use her phone less.",
+          "tr": "Deniz her pazar ekran süresine bakıyor ve telefonunu daha az kullanmaya çalışıyor.",
+          "register": "neutral",
+          "focus": "screen time"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "too much screen time",
+        "reduce screen time",
+        "daily screen time"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ekran süresi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz bir isimdir: 'a screen time' denmez. 'Çok fazla ekran süresi' için 'too much screen time' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone says I spent five hours on it today. My ______ is too high.",
+        "answer": "screen time",
+        "distractors": [
+          "home screen",
+          "battery life",
+          "phone case"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.addicted.adj.1",
+      "lemma": "addicted",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "unable to stop doing something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈdɪktɪd/",
+        "uk": "/əˈdɪktɪd/"
+      },
+      "def": {
+        "micro": "not able to stop doing it",
+        "short": "not able to stop doing or using something, even when you want to",
+        "long": "Not able to stop doing or using something, even when you want to. In daily talk, people often say it about phones, games or TV series."
+      },
+      "grammar": {
+        "pattern": "be / get addicted to something / doing something"
+      },
+      "examples": [
+        {
+          "en": "I think I'm addicted to my phone.",
+          "tr": "Sanırım telefonuma bağımlıyım.",
+          "register": "informal",
+          "focus": "addicted"
+        },
+        {
+          "en": "My little brother is addicted to this new game.",
+          "tr": "Küçük kardeşim bu yeni oyuna bağımlı.",
+          "register": "neutral",
+          "focus": "addicted"
+        },
+        {
+          "en": "Burak got addicted to the series and watched every episode in two days.",
+          "tr": "Burak diziye bağımlı oldu ve bütün bölümleri iki günde izledi.",
+          "register": "informal",
+          "focus": "addicted"
+        }
+      ],
+      "synonyms": [
+        "hooked"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "addicted to games",
+        "get addicted",
+        "totally addicted"
+      ],
+      "word_family": [
+        {
+          "lemma": "addiction",
+          "pos": "n"
+        },
+        {
+          "lemma": "addictive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağımlı",
+          "alt": [
+            "müptela"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ardından 'to' gelir: 'addicted to my phone'. Fiil gelirse '-ing' alır: 'addicted to playing games'. Bağımlı yapan şeye 'addictive' denir: 'This game is addictive.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali plays that game all day and can't stop. He's ______ to it.",
+        "answer": "addicted",
+        "distractors": [
+          "allergic",
+          "polite",
+          "similar"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fake.adj.1",
+      "lemma": "fake",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not real, made to trick people",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/feɪk/",
+        "uk": "/feɪk/"
+      },
+      "def": {
+        "micro": "not real; made to trick you",
+        "short": "not real, but made to look real so people believe it",
+        "long": "Not real, but made to look real so that people believe it. People often talk about fake accounts, fake news and fake websites."
+      },
+      "grammar": {
+        "pattern": "a fake account / website / news"
+      },
+      "examples": [
+        {
+          "en": "That account is fake.",
+          "tr": "O hesap sahte.",
+          "register": "neutral",
+          "focus": "fake"
+        },
+        {
+          "en": "Don't believe everything you read; some news is fake.",
+          "tr": "Okuduğun her şeye inanma; bazı haberler sahte.",
+          "register": "neutral",
+          "focus": "fake"
+        },
+        {
+          "en": "The website looked real, but it was fake, so Maria closed it right away.",
+          "tr": "Site gerçek gibi görünüyordu ama sahteydi, Maria da hemen kapattı.",
+          "register": "neutral",
+          "focus": "fake"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "real",
+        "genuine"
+      ],
+      "collocations": [
+        "fake account",
+        "fake news",
+        "fake website",
+        "fake photo"
+      ],
+      "word_family": [
+        {
+          "lemma": "fake",
+          "pos": "n"
+        },
+        {
+          "lemma": "fake",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sahte",
+          "alt": [
+            "uydurma"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gerçek gibi görünen ama gerçek olmayan şeyler için kullanılır: 'fake account' (sahte hesap), 'fake news' (sahte haber, yalan haber).",
+          "mistakes": [
+            {
+              "wrong": "This is a fake news.",
+              "right": "This is fake news.",
+              "why": "Türkçede 'sahte bir haber' denir, ama İngilizcede 'news' sayılamaz; 'a' almaz. Tek haber için 'a piece of fake news' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Be careful! This account uses someone else's name and photos. It's ______.",
+        "answer": "fake",
+        "distractors": [
+          "real",
+          "safe",
+          "verified"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

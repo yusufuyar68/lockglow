@@ -32,6 +32,9 @@ struct OnboardingView: View {
     /// The first word whose meaning was shown; another first word (a new level or topic) starts
     /// hidden again.
     @State private var shownMeaningWordID: Int?
+    /// VoiceOver's focus on the page title: a new page starts there, not on the button that
+    /// stayed (audit V7).
+    @AccessibilityFocusState private var isTitleFocused: Bool
 
     var body: some View {
         VStack(spacing: 0) {
@@ -104,7 +107,8 @@ struct OnboardingView: View {
         }
         .frame(maxWidth: .infinity)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Adım \(page.rawValue + 1) / \(Page.allCases.count)")
+        // "/" would be read as "bölü" (terimler §1).
+        .accessibilityLabel("Adım \(page.rawValue + 1), toplam \(Page.allCases.count)")
     }
 
     /// Mockup `.ob-foot`: on the topics page the deck summary (always there, so the bar does
@@ -174,13 +178,15 @@ struct OnboardingView: View {
         return model.choosableTopics.filter { topicIDs.contains($0.id) }.count
     }
 
+    /// While the topics load the page says so above the list; the dimmed button only says
+    /// "Devam" (audit K3: a disabled button is too faint to carry a status).
     private var primaryTitle: String {
         switch page {
         case .level, .widget:
             return "Devam"
         case .topics:
             if model.contentSource == .loading {
-                return "Konular hazırlanıyor…"
+                return "Devam"
             }
             return chosenTopicCount == 0 ? "Tüm konularla devam" : "\(chosenTopicCount) konuyla devam"
         case .firstWord:
@@ -207,8 +213,9 @@ struct OnboardingView: View {
     private var levelPage: some View {
         VStack(alignment: .leading, spacing: 12) {
             PageTitle(
-                title: "İngilizcen ne düzeyde?",
-                subtitle: "Yeni kelimeler bu seviyeden başlar. Sonra Ayarlar'dan değiştirebilirsin."
+                title: "İngilizcen hangi seviyede?",
+                subtitle: "Yeni kelimeler bu seviyeden başlar. Sonra Ayarlar'dan değiştirebilirsin.",
+                focus: $isTitleFocused
             )
             VStack(spacing: 8) {
                 ForEach(AppPreferences.startLevelChoices, id: \.self) { choice in
@@ -237,13 +244,21 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 12) {
             PageTitle(
                 title: "Hangi konular ilgini çekiyor?",
-                subtitle: "İstediğin kadar seç. Hiç seçmezsen hepsi gelir."
+                subtitle: "İstediğin kadar seç. Hiç seçmezsen hepsi gelir.",
+                focus: $isTitleFocused
             )
             if model.contentSource == .loading {
-                ProgressView()
-                    .frame(maxWidth: .infinity, minHeight: 120)
+                VStack(spacing: 12) {
+                    ProgressView()
+                    Text("Konular hazırlanıyor…")
+                        .font(.body)
+                        .foregroundStyle(Theme.ink2)
+                }
+                .frame(maxWidth: .infinity, minHeight: 120)
+                .accessibilityElement(children: .combine)
             } else if model.choosableTopics.isEmpty {
-                Text("Konu listesi yok. Şimdilik bütün kelimeler gösterilecek.")
+                // The same words as "Ayarlar"'s topic list.
+                Text("Konu listesi yüklenemedi. Şimdilik bütün kelimeler gelir.")
                     .font(.body)
                     .foregroundStyle(Theme.ink)
             } else {
@@ -264,10 +279,13 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 12) {
             PageTitle(
                 title: "Widget'ı ekle",
-                subtitle: "Kelimeler kilitli ekranında kendiliğinden değişir. Uygulamayı açman gerekmez."
+                subtitle: "Kelimeler kilitli ekranında kendiliğinden değişir. Uygulamayı açman gerekmez.",
+                focus: $isTitleFocused
             )
-            WidgetGuideContent()
-            Text("Sonra da ekleyebilirsin: Ayarlar > Yardım.")
+            // The drawn widget shows the first word of the level and topics just chosen (§2.8).
+            WidgetGuideContent(word: model.firstDeckWord())
+            // No ">" path: VoiceOver may read it as "büyüktür" (terimler §1).
+            Text("Bu rehber Ayarlar'da da var: Yardım bölümünde.")
                 .font(.footnote)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
@@ -286,7 +304,8 @@ struct OnboardingView: View {
                 title: "İlk kelimen",
                 subtitle: isMeaningShown
                     ? "Kelimeyi önce widget'ta görürsün. Sonra Tekrar'da hatırlamaya çalışırsın."
-                    : "Anlamını tahmin et, sonra dokun."
+                    : "Anlamını tahmin et, sonra dokun.",
+                focus: $isTitleFocused
             )
             if let word = word {
                 // No "Söyle" button here: the onboarding never asks for the microphone.
@@ -306,7 +325,7 @@ struct OnboardingView: View {
                     .foregroundStyle(Theme.ink2)
             } else {
                 // The old "Tanılama" section is the "Widget sağlığı" row of Ayarlar now.
-                Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç. Sorun sürerse Ayarlar > Widget sağlığı ekranına bak.")
+                Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç. Sorun sürerse Ayarlar'da Widget sağlığı ekranına bak.")
                     .font(.body)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
@@ -329,8 +348,16 @@ struct OnboardingView: View {
         return model.words.filter { $0.levelValue == level }.count
     }
 
+    /// VoiceOver moves to the new page's title once the page has changed; without it the focus
+    /// would stay on "Devam", and a second double tap would skip a page unread.
     private func go(to target: Page) {
         page = target
+        // From false, so the change is seen even when the old title still had the focus.
+        isTitleFocused = false
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(reduceMotion ? 100 : 350))
+            isTitleFocused = true
+        }
     }
 
     private func advance() {
@@ -386,6 +413,8 @@ struct OnboardingView: View {
 private struct PageTitle: View {
     let title: String
     let subtitle: String
+    /// Where VoiceOver goes when the page changes.
+    let focus: AccessibilityFocusState<Bool>.Binding
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -395,6 +424,7 @@ private struct PageTitle: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 .accessibilityAddTraits(.isHeader)
+                .accessibilityFocused(focus)
             Text(verbatim: subtitle)
                 .font(.body)
                 .foregroundStyle(Theme.ink2)

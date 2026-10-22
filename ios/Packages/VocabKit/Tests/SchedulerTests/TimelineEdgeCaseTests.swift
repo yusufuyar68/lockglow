@@ -167,6 +167,67 @@ final class TimelineEdgeCaseTests: XCTestCase {
         XCTAssertEqual(shownID(at: t0, queue: queue, cursor: Int.min, anchor: t0), 2)
     }
 
+    /// `now` (or the offset) off the boundary grid used to hang `plan`: the boundary index was
+    /// clamped to 0, so no boundary date was ever after `now`. Now only the entry at `now` comes back.
+    func testNowOffTheBoundaryGridGivesOnlyTheEntryAtNow() {
+        let queue = makeWords([1, 2, 3])
+        func entries(now: Date, offset: TimeInterval = 0) -> [TimelinePlanner.PlannedEntry] {
+            return TimelinePlanner.plan(
+                queue: queue,
+                knownIDs: [],
+                cursorOffset: 0,
+                cursorAnchor: t0,
+                now: now,
+                interval: hour,
+                alignmentOffset: offset
+            )
+        }
+        // Not finite, or beyond 1e15 hours from 1970 (3.6e18 s). Entry 0 shows what `wordAt` shows:
+        // the date counts as index 0, before the anchor's 472_222, so elapsed 0 -> word 1.
+        for seconds: TimeInterval in [.infinity, -.infinity, .nan, 1e19, -1e19, 1e300] {
+            let planned = entries(now: utc(seconds))
+            XCTAssertEqual(planned.count, 1, "\(seconds)")
+            XCTAssertEqual(planned.first?.word.id, 1, "\(seconds)")
+            XCTAssertEqual(shownID(at: utc(seconds), queue: queue, anchor: t0), 1, "\(seconds)")
+        }
+        // The same through an unusable alignment offset (callers pass secondsFromGMT, always finite).
+        for offset: TimeInterval in [.infinity, -.infinity, .nan, 1e300] {
+            XCTAssertEqual(entries(now: t0, offset: offset).count, 1, "offset \(offset)")
+        }
+
+        // Far but on the grid: a full 48 hour timeline. 1e17 s is 27_777_777_777_777.8 hours (inside
+        // 1e15), and every value here is a multiple of 16, so the doubles are exact.
+        // Index 27_777_777_777_777 -> first boundary at 1e17 + 800 s, the 48th at + 170_000 s
+        // (inside the 172_800 s horizon), the 49th at + 173_600 s (outside): now + 48 entries.
+        let far = entries(now: utc(1e17))
+        XCTAssertEqual(far.count, 49)
+        XCTAssertEqual(far.dropFirst().first?.date, utc(1e17 + 800))
+        XCTAssertTrue(zip(far, far.dropFirst()).allSatisfy { $0.date < $1.date })
+        // Date.distantFuture (year 4001) and Date.distantPast (year 1) are whole hours since 1970:
+        // 64_092_211_200 / 3600 = 17_803_392 and -62_135_769_600 / 3600 = -17_259_936.
+        // On a boundary, so now + 48 boundaries (the last equals the horizon end).
+        XCTAssertEqual(entries(now: Date.distantFuture).count, 49)
+        XCTAssertEqual(entries(now: Date.distantPast).count, 49)
+    }
+
+    func testNotANumberHorizonAllowsNothingAfterNowAndAnInfiniteOneStopsAtTheEntryLimit() {
+        let queue = makeWords([1, 2, 3])
+        func count(horizon: TimeInterval) -> Int {
+            return TimelinePlanner.plan(
+                queue: queue,
+                knownIDs: [],
+                cursorOffset: 0,
+                cursorAnchor: t0,
+                now: t0.addingTimeInterval(10),
+                interval: hour,
+                horizon: horizon
+            ).count
+        }
+        XCTAssertEqual(count(horizon: .nan), 1)
+        XCTAssertEqual(count(horizon: .infinity), TimelinePlanner.defaultMaxEntries)
+        XCTAssertEqual(count(horizon: -.infinity), 1)
+    }
+
     func testUnusableIntervalsAreClampedToFiveMinutes() {
         XCTAssertEqual(TimelinePlanner.clampedInterval(.nan), 300)
         XCTAssertEqual(TimelinePlanner.clampedInterval(-.infinity), 300)

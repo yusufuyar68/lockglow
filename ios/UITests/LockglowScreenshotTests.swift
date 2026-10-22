@@ -105,7 +105,7 @@ final class LockglowScreenshotTests: XCTestCase {
         sleep(1)
         attachScreenshot(of: app, named: "8-sozluk-kart")
 
-        // "Biliyorum" on the card, then the word shows up under Ayarlar > Bildiğim kelime and
+        // "Biliyorum" on the card, then the word shows up under Ayarlar > Bildiğin kelime and
         // "Öğrenmeye geri al" takes it back out.
         let know = app.buttons["Biliyorum"]
         XCTAssertTrue(know.waitForExistence(timeout: 5), "no Biliyorum button on the card")
@@ -113,7 +113,7 @@ final class LockglowScreenshotTests: XCTestCase {
         XCTAssertTrue(app.buttons["Öğrenmeye geri al"].waitForExistence(timeout: 5), "card did not switch to known")
 
         app.tabBars.buttons["Ayarlar"].tap()
-        let knownRow = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Bildiğim kelime")).firstMatch
+        let knownRow = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Bildiğin kelime")).firstMatch
         if !knownRow.waitForExistence(timeout: 2) {
             // Below the "Öğrenme" and widget sections on a small screen.
             app.swipeUp()

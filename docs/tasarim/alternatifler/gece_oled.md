@@ -258,7 +258,7 @@ Her maddenin kaynağı yanında. Notlar:
    | İlkeler: dolu açık mürekkep | `#F3F4F0` | — | — | %90 | 1 |
    | A: tonal sarı (`is3-tema` cfdd806) | `band` %16 / `band` %45, 1,5 pt | 3,5:1 | 1,3:1 (yalnız renk tonuyla ayrılır) | %2,4 | 2 |
    | B: tonal mürekkep | `ink` %12 / `ink` %45, 1,5 pt | 4,1:1 | 1,1:1: ikincil düğmeden ayırt edilmez (`is3-tema` ölçümü) | %2,1 | 1 |
-   | **C: B + parlak kenar (önerilen)** | `ink` %12 / `ink` %100, **2 pt**, **kalın yazı** | 19:1 | **4,1:1** | %8,6 | 1 |
+   | **C: B + parlak kenar (uygulandı, `is4-tema`)** | `ink` %12 / `ink` %100, **2 pt** (YK / Düğme Şekilleri 3 pt), **kalın yazı** | 19:1 | **4,1:1** (YK 2,8:1) | %8,6 | 1 |
 
    - C, "ekranın tek ana düğmesi"ni parlaklıkla ayırır: kenarı ikincil düğmenin gri kenarından 4:1 daha açık. Yazı da kalın.
    - Işık: C, dolu açık mürekkep düğmenin (ilkeler) yaklaşık onda biri, eski dolu sarının sekizde biri. A'nın yaklaşık 3,7 katı.
@@ -339,7 +339,8 @@ Her adım kendi başına bir PR olabilir. Önce 1. adım: en az risk, en çok ı
 - Kalanlar:
   - `ReviewView` → `GradeButtonBody`'nin varsayılan düğmesinde gece kenarı yok (o dosyaya `is3-tema` dokunmadı; `is3-tekrar` da aynı dosyada çalışıyor);
   - `DoneMark` ışıması koşulsuz;
-  - A mı C mi kararı (aşağıda "Mevcut koyu temaya" 2. madde; B tek başına ikincil düğmeden ayırt edilmiyor) ve buna göre `ogrenme_ilkeleri.md`'deki "koyu temada ana düğme açık mürekkep" satırının güncellenmesi. `is3-tema` B için iki satırlık hazır değişiklik yazdı; C buna kenar kalınlığı, kenar opaklığı ve yazı kalınlığı ekler.
+  - ~~A mı C mi kararı~~: **C uygulandı** (`is4-tema`, 22 Ekim gecesi). Ölçüm: [`../../denetim/kontrast_gece_c_2026-10-22.md`](../../denetim/kontrast_gece_c_2026-10-22.md). Fark: Kontrastı Artır ya da Düğme Şekilleri açıkken kenar 3 pt (YK'de ikincil düğmenin kenarı da parlıyor; parlaklık farkı 2,6–2,8:1'e iniyor, kalınlık farkı bunu karşılıyor). Kalan: `ogrenme_ilkeleri.md`'deki "koyu temada ana düğme açık mürekkep" satırının C'ye göre güncellenmesi.
+  - `GradeButtonBody` artık dolu varsayılan düğme çizmiyor (`is3-tekrar`: iki cevap eşit, `surface2` + `lineStrong` kenar); yukarıdaki ilk madde geçersiz.
 - `is3-kilit` 2. adımın bir kısmını yaptı: dikdörtgen kilit ekranı widget'ı artık hep iki satır (kelime + anlam), tanım satırı yok, `AccessoryWidgetBackground` kalktı (zemini sistem çiziyor). Aşağıdaki 2. adım tablosunda bu yüzden yalnız şerit (Her zaman açık ekranda 1 pt) ve StandBy kalıyor.
 
 ### Adım 1: Koyu modda ışık bütçesi (yalnız mevcut koyu tema)

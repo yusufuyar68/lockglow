@@ -1,0 +1,1008 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.app.n.1",
+      "lemma": "app",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "program on a phone",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æp/",
+        "uk": "/æp/"
+      },
+      "def": {
+        "micro": "a program on a phone",
+        "short": "a program you use on a phone, tablet or computer",
+        "long": "A small program that you put on a phone, tablet or computer to do one job, like maps, games or banking. 'App' is short for 'application'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I use this app to learn new words.",
+          "tr": "Yeni kelimeler öğrenmek için bu uygulamayı kullanıyorum.",
+          "register": "neutral",
+          "focus": "app"
+        },
+        {
+          "en": "Deniz paid for her coffee with an app on her phone.",
+          "tr": "Deniz kahvesini telefonundaki bir uygulamayla ödedi.",
+          "register": "neutral",
+          "focus": "app"
+        },
+        {
+          "en": "Kenji opened the weather app to see if it would rain in the afternoon.",
+          "tr": "Kenji öğleden sonra yağmur yağıp yağmayacağını görmek için hava durumu uygulamasını açtı.",
+          "register": "neutral",
+          "focus": "app"
+        }
+      ],
+      "synonyms": [
+        "application"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "download an app",
+        "open an app",
+        "free app",
+        "weather app",
+        "use an app"
+      ],
+      "word_family": [
+        {
+          "lemma": "application",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "A short form of 'application', which in computing means a program made for one job.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "uygulama",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada hep 'app' denir; 'application' daha resmîdir ve iş başvurusu anlamına da gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can order food with this ______ on your phone.",
+        "answer": "app",
+        "distractors": [
+          "speaker",
+          "keyboard",
+          "headset"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.screen.n.1",
+      "lemma": "screen",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "glass part of a device",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skriːn/",
+        "uk": "/skriːn/"
+      },
+      "def": {
+        "micro": "flat glass part of a phone",
+        "short": "the flat glass part of a phone, TV or computer where you see pictures and words",
+        "long": "The flat glass part on the front of a phone, TV or computer. You see pictures, videos and words on it."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Try not to look at a screen before bed.",
+          "tr": "Yatmadan önce ekrana bakmamaya çalış.",
+          "register": "neutral",
+          "focus": "screen"
+        },
+        {
+          "en": "My phone has a big screen, so I watch films on it.",
+          "tr": "Telefonumun ekranı büyük, o yüzden filmleri telefonda izliyorum.",
+          "register": "neutral",
+          "focus": "screen"
+        },
+        {
+          "en": "Maria cleaned the screen of her laptop with a soft, dry cloth.",
+          "tr": "Maria dizüstü bilgisayarının ekranını yumuşak, kuru bir bezle temizledi.",
+          "register": "neutral",
+          "focus": "screen"
+        }
+      ],
+      "synonyms": [
+        "display"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "phone screen",
+        "big screen",
+        "touch screen",
+        "on the screen",
+        "home screen"
+      ],
+      "word_family": [
+        {
+          "lemma": "screenshot",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ekran",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Turn up the brightness. The ______ is too dark to read.",
+        "answer": "screen",
+        "distractors": [
+          "plug",
+          "ringtone",
+          "cable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.charge.v.2",
+      "lemma": "charge",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "put power into a battery",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃɑːrdʒ/",
+        "uk": "/tʃɑːdʒ/"
+      },
+      "def": {
+        "micro": "fill a battery with power",
+        "short": "put electricity into a phone or other device so that it works again",
+        "long": "To put electricity into a phone, laptop or other device by connecting it to power. We say 'charge my phone' and 'my phone is charging'."
+      },
+      "grammar": {
+        "pattern": "charge + phone / laptop; be charging"
+      },
+      "examples": [
+        {
+          "en": "I always charge my phone at night next to my bed.",
+          "tr": "Telefonumu hep geceleri yatağımın yanında şarj ederim.",
+          "register": "neutral",
+          "focus": "charge"
+        },
+        {
+          "en": "Can I charge my phone in your car?",
+          "tr": "Telefonumu arabanda şarj edebilir miyim?",
+          "register": "neutral",
+          "focus": "charge"
+        },
+        {
+          "en": "Mehmet's laptop is charging, so he is working at the desk near the socket.",
+          "tr": "Mehmet'in dizüstü bilgisayarı şarj oluyor, o yüzden prizin yanındaki masada çalışıyor.",
+          "register": "neutral",
+          "focus": "is charging"
+        }
+      ],
+      "synonyms": [
+        "recharge"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "charge a phone",
+        "fully charged",
+        "charge overnight",
+        "fast charging"
+      ],
+      "word_family": [
+        {
+          "lemma": "charger",
+          "pos": "n"
+        },
+        {
+          "lemma": "charge",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'chargier', meaning 'to load'. Putting power into a battery is like loading it.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "şarj etmek",
+          "alt": [
+            "şarj olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefonu şarja koymak 'charge' olur; prize takılan alete ise 'charger' denir. 'My phone is charging' = 'Telefonum şarj oluyor'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone is at 5%. I need to ______ it now.",
+        "answer": "charge",
+        "distractors": [
+          "scroll",
+          "share",
+          "print"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dead.adj.2",
+      "lemma": "dead",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 2,
+      "sense_note": "no power left",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɛd/",
+        "uk": "/dɛd/"
+      },
+      "def": {
+        "micro": "with no battery power left",
+        "short": "of a phone or battery: with no power left, so it does not work",
+        "long": "Used about a phone or battery that has no power left and does not turn on. People also say 'My phone died.'"
+      },
+      "grammar": {
+        "pattern": "be dead; my phone / my battery is dead"
+      },
+      "examples": [
+        {
+          "en": "My phone is dead. Can I use yours?",
+          "tr": "Telefonumun şarjı bitti. Seninkini kullanabilir miyim?",
+          "register": "informal",
+          "focus": "dead"
+        },
+        {
+          "en": "Sorry I didn't answer. My battery was dead.",
+          "tr": "Kusura bakma, cevap veremedim. Şarjım bitmişti.",
+          "register": "informal",
+          "focus": "dead"
+        },
+        {
+          "en": "Elif's phone was dead, so she couldn't call a taxi from the airport.",
+          "tr": "Elif'in telefonunun şarjı bitmişti, bu yüzden havalimanından taksi çağıramadı.",
+          "register": "informal",
+          "focus": "dead"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "fully charged"
+      ],
+      "collocations": [
+        "dead battery",
+        "completely dead",
+        "almost dead"
+      ],
+      "word_family": [
+        {
+          "lemma": "die",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şarjı bitmiş",
+          "alt": [
+            "şarjsız"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefon için 'ölü' diye çevirme; 'My phone is dead' = 'Telefonumun şarjı bitti'. 'My phone died' de denir. İngiliz İngilizcesinde pil için 'flat' da kullanılır: 'My battery is flat.'",
+          "mistakes": [
+            {
+              "wrong": "My charge is finished.",
+              "right": "My phone is dead.",
+              "why": "Türkçede 'Şarjım bitti' dendiği için 'charge' sözcüğüyle kurmak kolaydır. İngilizcede telefon ya da pil 'dead' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone was ______, so I charged it for an hour.",
+        "answer": "dead",
+        "distractors": [
+          "locked",
+          "clean",
+          "wet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.power_bank.phr.1",
+      "lemma": "power bank",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "portable battery",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpaʊər bæŋk/",
+        "uk": "/ˈpaʊə bæŋk/"
+      },
+      "def": {
+        "micro": "small battery for a phone",
+        "short": "a small battery you carry with you to give power to your phone",
+        "long": "A small battery that you can carry in a bag or pocket. You use it to give power to your phone when you are not near a socket."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I always carry a power bank in my bag.",
+          "tr": "Çantamda hep bir taşınabilir şarj olur.",
+          "register": "neutral",
+          "focus": "power bank"
+        },
+        {
+          "en": "Can I borrow your power bank? My phone is at 3%.",
+          "tr": "Powerbankini alabilir miyim? Telefonum %3'te.",
+          "register": "neutral",
+          "focus": "power bank"
+        },
+        {
+          "en": "Before long trips, Sam charges his power bank so his phone never dies.",
+          "tr": "Sam uzun yolculuklardan önce powerbankini şarj eder, böylece telefonunun şarjı hiç bitmez.",
+          "register": "neutral",
+          "focus": "power bank"
+        }
+      ],
+      "synonyms": [
+        "portable charger"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "carry a power bank",
+        "charge a power bank"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "taşınabilir şarj",
+          "alt": [
+            "powerbank"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede bitişik 'powerbank' de denir; İngilizcede iki ayrı sözcükle yazılır: 'power bank'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There's no socket on the bus, but I can charge my phone with my ______.",
+        "answer": "power bank",
+        "distractors": [
+          "mouse",
+          "headset",
+          "selfie stick"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.restart.v.1",
+      "lemma": "restart",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "turn off and on again",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌriːˈstɑːrt/",
+        "uk": "/ˌriːˈstɑːt/"
+      },
+      "def": {
+        "micro": "turn off and on again",
+        "short": "turn a phone or computer off and then on again",
+        "long": "To turn a phone, computer or other device off and then on again. People often do this when something is slow or not working."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "If your phone is slow, try restarting it.",
+          "tr": "Telefonun yavaşsa yeniden başlatmayı dene.",
+          "register": "neutral",
+          "focus": "restarting"
+        },
+        {
+          "en": "The computer will restart by itself after the update.",
+          "tr": "Bilgisayar güncellemeden sonra kendi kendine yeniden başlayacak.",
+          "register": "neutral",
+          "focus": "restart"
+        },
+        {
+          "en": "Ayşe restarted the router, and the Wi-Fi worked again two minutes later.",
+          "tr": "Ayşe modemi yeniden başlattı, iki dakika sonra Wi-Fi tekrar çalışmaya başladı.",
+          "register": "neutral",
+          "focus": "restarted"
+        }
+      ],
+      "synonyms": [
+        "reboot"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "restart your phone",
+        "restart the computer"
+      ],
+      "word_family": [
+        {
+          "lemma": "start",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yeniden başlatmak",
+          "gloss_short": "tekrar başlatmak",
+          "alt": [
+            "kapatıp açmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefon menüsündeki 'Yeniden Başlat' İngilizcede 'Restart' olur. Ayarları sıfırlamaya ise 'reset' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone is frozen. Just ______ it. That often fixes the problem.",
+        "answer": "restart",
+        "distractors": [
+          "lock",
+          "mute",
+          "delete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.unlock.v.1",
+      "lemma": "unlock",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "open a phone with a code",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʌnˈlɑːk/",
+        "uk": "/ʌnˈlɒk/"
+      },
+      "def": {
+        "micro": "open a phone with a code",
+        "short": "open a phone or computer with a code, your finger or your face",
+        "long": "To open a phone, tablet or computer with a code, your finger or your face, so you can use it. The word is also used for doors."
+      },
+      "grammar": {
+        "pattern": "unlock + phone / screen"
+      },
+      "examples": [
+        {
+          "en": "I unlock my phone with my finger, not a code.",
+          "tr": "Telefonumun kilidini şifreyle değil, parmağımla açıyorum.",
+          "register": "neutral",
+          "focus": "unlock"
+        },
+        {
+          "en": "Can you unlock your phone and show me the photo?",
+          "tr": "Telefonunun kilidini açıp bana fotoğrafı gösterebilir misin?",
+          "register": "neutral",
+          "focus": "unlock"
+        },
+        {
+          "en": "Daniel forgot his code and couldn't unlock his new tablet all weekend.",
+          "tr": "Daniel şifresini unuttu ve bütün hafta sonu yeni tabletinin kilidini açamadı.",
+          "register": "neutral",
+          "focus": "unlock"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "lock"
+      ],
+      "collocations": [
+        "unlock your phone",
+        "unlock the screen",
+        "unlock with your face"
+      ],
+      "word_family": [
+        {
+          "lemma": "lock",
+          "pos": "v"
+        },
+        {
+          "lemma": "unlocked",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kilidini açmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'kilidini açmak' iki sözcüktür; İngilizcede tek fiil: 'unlock my phone'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Look at your phone to ______ it with your face.",
+        "answer": "unlock",
+        "distractors": [
+          "lock",
+          "delete",
+          "repair"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lock_screen.phr.1",
+      "lemma": "lock screen",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "first screen before you open the phone",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɑːk skriːn/",
+        "uk": "/ˈlɒk skriːn/"
+      },
+      "def": {
+        "micro": "what a phone shows first",
+        "short": "what your phone shows before you put in your code or use your face",
+        "long": "The first thing you see when you wake up your phone, before you open it with a code or your face. It often shows the time and new messages."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I see a new English word on my lock screen every day.",
+          "tr": "Her gün kilit ekranımda yeni bir İngilizce kelime görüyorum.",
+          "register": "neutral",
+          "focus": "lock screen"
+        },
+        {
+          "en": "Zeynep put a photo of her cat on her lock screen.",
+          "tr": "Zeynep kilit ekranına kedisinin fotoğrafını koydu.",
+          "register": "neutral",
+          "focus": "lock screen"
+        },
+        {
+          "en": "You can hide your messages so people can't read them on your lock screen.",
+          "tr": "Mesajlarını gizleyebilirsin, böylece başkaları onları kilit ekranında okuyamaz.",
+          "register": "neutral",
+          "focus": "lock screen"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the lock screen",
+        "lock screen wallpaper"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kilit ekranı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartı da şu an büyük olasılıkla kilit ekranında görüyorsun. Kilidi açınca gelen ekran ise 'home screen' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can see the time on the ______ without opening your phone.",
+        "answer": "lock screen",
+        "distractors": [
+          "playlist",
+          "inbox",
+          "keypad"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cracked.adj.1",
+      "lemma": "cracked",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "with a thin broken line",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/krækt/",
+        "uk": "/krækt/"
+      },
+      "def": {
+        "micro": "with a thin broken line",
+        "short": "of glass or a phone: with a thin broken line in it, but still in one piece",
+        "long": "Used about glass, a phone or a plate that has a thin broken line in it but is still in one piece."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I dropped my phone, and now the screen is cracked.",
+          "tr": "Telefonumu düşürdüm, ekranı çatladı.",
+          "register": "neutral",
+          "focus": "cracked"
+        },
+        {
+          "en": "Can you still use a phone with a cracked screen?",
+          "tr": "Ekranı çatlak bir telefon hâlâ kullanılabilir mi?",
+          "register": "neutral",
+          "focus": "cracked"
+        },
+        {
+          "en": "Emma's tablet has a cracked corner, but the screen still works fine.",
+          "tr": "Emma'nın tabletinin bir köşesi çatlak ama ekranı hâlâ sorunsuz çalışıyor.",
+          "register": "neutral",
+          "focus": "cracked"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cracked screen",
+        "cracked glass"
+      ],
+      "word_family": [
+        {
+          "lemma": "crack",
+          "pos": "n"
+        },
+        {
+          "lemma": "crack",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çatlak",
+          "alt": [
+            "kırık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'ekranım kırıldı' denir; ekran parçalanmadıysa İngilizcede çoğu zaman 'cracked' kullanılır: 'My screen is cracked.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Be careful with your finger. The glass on this phone is ______.",
+        "answer": "cracked",
+        "distractors": [
+          "smooth",
+          "thick",
+          "waterproof"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.down.adj.2",
+      "lemma": "down",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 2,
+      "sense_note": "not working for a time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/daʊn/",
+        "uk": "/daʊn/"
+      },
+      "def": {
+        "micro": "not working for a time",
+        "short": "of a website, the internet or a system: not working for a period of time",
+        "long": "Used about a website, the internet or a computer system that is not working for some time. When it works again, people say it is 'back up'."
+      },
+      "grammar": {
+        "pattern": "be down; go down"
+      },
+      "examples": [
+        {
+          "en": "The website is down, so try again later.",
+          "tr": "Site çalışmıyor, sonra tekrar dene.",
+          "register": "neutral",
+          "focus": "down"
+        },
+        {
+          "en": "The internet was down all morning at the office.",
+          "tr": "Ofiste internet bütün sabah çalışmadı.",
+          "register": "neutral",
+          "focus": "down"
+        },
+        {
+          "en": "The bank's app was down for two hours, so Hakan couldn't send any money.",
+          "tr": "Bankanın uygulaması iki saat çalışmadı, bu yüzden Hakan hiç para gönderemedi.",
+          "register": "neutral",
+          "focus": "down"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "up"
+      ],
+      "confusables": [
+        "crash"
+      ],
+      "collocations": [
+        "be down",
+        "go down",
+        "the internet is down"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çalışmıyor",
+          "alt": [
+            "çökmüş",
+            "erişilemiyor"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Crash' bir anda çökmek, durmaktır; 'down' ise bir süre çalışmamak. 'The site crashed, and it was down for an hour.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't buy the tickets right now because the website is ______.",
+        "answer": "down",
+        "distractors": [
+          "open",
+          "fast",
+          "safe"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

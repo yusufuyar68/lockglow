@@ -1,0 +1,548 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.recommend.v.1",
+      "lemma": "recommend",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say something is good to try",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌrɛkəˈmɛnd/",
+        "uk": "/ˌrɛkəˈmɛnd/"
+      },
+      "def": {
+        "micro": "say a thing is worth trying",
+        "short": "tell someone that something is good and that they should try it",
+        "long": "To tell someone that a film, book, place or product is good and that they should try it, often because you liked it yourself. Doctors and experts also recommend things."
+      },
+      "grammar": {
+        "pattern": "recommend sth (to sb) / recommend + -ing / that"
+      },
+      "examples": [
+        {
+          "en": "Nina recommended a great series to me.",
+          "tr": "Nina bana harika bir dizi tavsiye etti.",
+          "register": "neutral",
+          "focus": "recommended"
+        },
+        {
+          "en": "Which book would you recommend for a long flight?",
+          "tr": "Uzun bir uçuş için hangi kitabı tavsiye edersin?",
+          "register": "neutral",
+          "focus": "recommend"
+        },
+        {
+          "en": "I recommend booking a table, because the place is always full on Fridays.",
+          "tr": "Masa ayırtmanı tavsiye ederim, çünkü orası cuma günleri hep dolu oluyor.",
+          "register": "neutral",
+          "focus": "recommend"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "suggest",
+        "advise"
+      ],
+      "collocations": [
+        "highly recommend",
+        "recommend a film",
+        "recommend + -ing",
+        "recommend that"
+      ],
+      "word_family": [
+        {
+          "lemma": "recommendation",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Medieval Latin 'recommendare', from 're-' and Latin 'commendare' (to praise, to give into someone's care).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tavsiye etmek",
+          "alt": [
+            "önermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Recommend' çoğu zaman denediğin ve beğendiğin bir şeyi önermektir: film, kitap, restoran. En doğal kalıplar: 'I recommend watching it.', 'I recommend that you watch it.' 'Suggest' ise daha çok bir fikir ortaya atmaktır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The waiter ______ the fish soup, so we ordered it.",
+        "answer": "recommended",
+        "distractors": [
+          "hated",
+          "refused",
+          "dropped"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.instrument.n.1",
+      "lemma": "instrument",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "musical instrument",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪnstrəmənt/",
+        "uk": "/ˈɪnstrəmənt/"
+      },
+      "def": {
+        "micro": "a thing you play music on",
+        "short": "an object like a guitar, piano or drum that you use to make music",
+        "long": "An object that you use to make music, for example a guitar, a piano, a violin or a drum. Some people play an instrument as a hobby, and some play in a band."
+      },
+      "grammar": {
+        "pattern": "play an instrument"
+      },
+      "examples": [
+        {
+          "en": "Do you play an instrument?",
+          "tr": "Bir enstrüman çalıyor musun?",
+          "register": "neutral",
+          "focus": "instrument"
+        },
+        {
+          "en": "Hana's favourite instrument is the violin, but she also plays the piano a little.",
+          "tr": "Hana'nın en sevdiği çalgı keman, ama biraz da piyano çalıyor.",
+          "register": "neutral",
+          "focus": "instrument"
+        },
+        {
+          "en": "Burak wants to learn an instrument, so he watches free piano videos every evening.",
+          "tr": "Burak bir enstrüman öğrenmek istiyor, bu yüzden her akşam ücretsiz piyano videoları izliyor.",
+          "register": "neutral",
+          "focus": "instrument"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "play an instrument",
+        "musical instrument",
+        "learn an instrument",
+        "string instrument"
+      ],
+      "word_family": [
+        {
+          "lemma": "instrumental",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'instrumentum' (tool, equipment), from 'instruere' (to prepare, to equip).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "enstrüman",
+          "alt": [
+            "çalgı",
+            "müzik aleti"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'çalmak' dense de İngilizcede çalgı için 'play' kullanılır: 'play the guitar'. 'Instrument' ayrıca doktorların ya da bilim insanlarının kullandığı alet demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Tom can play three ______: the guitar, the drums and the piano.",
+        "answer": "instruments",
+        "distractors": [
+          "songs",
+          "concerts",
+          "albums"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sing_along.phv.1",
+      "lemma": "sing along",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "sing with music you hear",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɪŋ əˈlɔːŋ/",
+        "uk": "/ˌsɪŋ əˈlɒŋ/"
+      },
+      "def": {
+        "micro": "sing with the music you hear",
+        "short": "sing a song at the same time as a singer, a recording or other people",
+        "long": "To sing a song together with a singer you hear on the radio, at a concert or in a recording, or together with other people. People often do it at concerts, at parties and in the car."
+      },
+      "grammar": {
+        "pattern": "sing along (to/with sth)"
+      },
+      "examples": [
+        {
+          "en": "Everyone sang along at the concert.",
+          "tr": "Konserde herkes şarkıya eşlik etti.",
+          "register": "neutral",
+          "focus": "sang along"
+        },
+        {
+          "en": "Selin always sings along to the radio when she drives to work.",
+          "tr": "Selin işe arabayla giderken hep radyodaki şarkılara eşlik eder.",
+          "register": "neutral",
+          "focus": "sings along"
+        },
+        {
+          "en": "I don't know all the words, but I always sing along to the chorus.",
+          "tr": "Sözlerin hepsini bilmiyorum, ama nakarata hep eşlik ediyorum.",
+          "register": "neutral",
+          "focus": "sing along"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sing along to a song",
+        "sing along with sb",
+        "everyone sang along"
+      ],
+      "word_family": [
+        {
+          "lemma": "sing",
+          "pos": "v"
+        },
+        {
+          "lemma": "singalong",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şarkıya eşlik etmek",
+          "gloss_short": "beraber söylemek",
+          "alt": [
+            "birlikte söylemek",
+            "eşlik etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Neye eşlik ettiğini söylerken 'to' ya da 'with' gelir: 'sing along to the radio', 'sing along with the band'. Bitişik yazılan 'singalong' ise herkesin birlikte şarkı söylediği eğlence demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My dad knows every word of this old song, so he always ______ when it plays.",
+        "answer": "sings along",
+        "distractors": [
+          "gives up",
+          "sells out",
+          "turns down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exhibition.n.1",
+      "lemma": "exhibition",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a public show of art",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɛksəˈbɪʃən/",
+        "uk": "/ˌɛksɪˈbɪʃən/"
+      },
+      "def": {
+        "micro": "a public show of art",
+        "short": "an event where people can go and look at paintings, photos or other objects",
+        "long": "An event, usually in a museum or gallery, where people can look at paintings, photos or other interesting objects for a period of time. Some exhibitions are free and some need a ticket."
+      },
+      "grammar": {
+        "pattern": "an exhibition of sth / at an exhibition"
+      },
+      "examples": [
+        {
+          "en": "We saw a great photo exhibition today.",
+          "tr": "Bugün harika bir fotoğraf sergisi gördük.",
+          "register": "neutral",
+          "focus": "exhibition"
+        },
+        {
+          "en": "The new exhibition at the art gallery is free on Thursdays.",
+          "tr": "Sanat galerisindeki yeni sergi perşembeleri ücretsiz.",
+          "register": "neutral",
+          "focus": "exhibition"
+        },
+        {
+          "en": "Gül is a painter, and next month she is opening her first exhibition in Kadıköy.",
+          "tr": "Gül ressam ve gelecek ay Kadıköy'de ilk sergisini açıyor.",
+          "register": "neutral",
+          "focus": "exhibition"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "art exhibition",
+        "photo exhibition",
+        "open an exhibition",
+        "visit an exhibition"
+      ],
+      "word_family": [
+        {
+          "lemma": "exhibit",
+          "pos": "v"
+        },
+        {
+          "lemma": "exhibit",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'exhibitio', from 'exhibere' (to show, to hold out).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sergi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ortadaki 'h' okunmaz: 'eksıbişın'. ABD'de sanat sergisine çoğu zaman 'exhibit' de denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "culture_celebrations",
+        "topics": [
+          "culture_celebrations",
+          "art_design_architecture",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The museum has a new ______ of photos from old Istanbul.",
+        "answer": "exhibition",
+        "distractors": [
+          "audience",
+          "entrance",
+          "souvenir"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.audience.n.1",
+      "lemma": "audience",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "people watching a show",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːdiəns/",
+        "uk": "/ˈɔːdiəns/"
+      },
+      "def": {
+        "micro": "people who watch a show",
+        "short": "the group of people who watch or listen to a concert, film, play or talk",
+        "long": "The group of people who watch or listen to a concert, a film, a play, a talk or a TV programme. It can be people in a hall, a cinema or a theatre, or people watching at home."
+      },
+      "grammar": {
+        "pattern": "the audience / a big audience"
+      },
+      "examples": [
+        {
+          "en": "The audience clapped for a long time.",
+          "tr": "Seyirciler uzun süre alkışladı.",
+          "register": "neutral",
+          "focus": "audience"
+        },
+        {
+          "en": "There was a small audience at the jazz night, but the music was wonderful.",
+          "tr": "Caz gecesinde az sayıda dinleyici vardı, ama müzik harikaydı.",
+          "register": "neutral",
+          "focus": "audience"
+        },
+        {
+          "en": "The comedian asked someone from the audience to come up on stage.",
+          "tr": "Komedyen seyircilerden birinden sahneye çıkmasını istedi.",
+          "register": "neutral",
+          "focus": "audience"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "crowd"
+      ],
+      "collocations": [
+        "a big audience",
+        "a live audience",
+        "in the audience",
+        "the audience clapped"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'audientia' (hearing, listening), from 'audire' (to hear).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "seyirci",
+          "alt": [
+            "izleyici",
+            "dinleyici"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçe 'seyirci' iki kelimeye denk gelir: konser, film ya da tiyatroda oturan izleyicilere 'audience', stadyumdaki ya da sokaktaki kalabalığa daha çok 'crowd' denir.",
+          "mistakes": [
+            {
+              "wrong": "The audiences loved the film.",
+              "right": "The audience loved the film.",
+              "why": "Türkçede 'seyirciler' diye çoğul söyleriz; 'audience' ise salondaki insanların tamamını anlatan bir grup adıdır, bir salon için tekil kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The singer smiled and waved to the ______ before the first song.",
+        "answer": "audience",
+        "distractors": [
+          "stage",
+          "microphone",
+          "playlist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

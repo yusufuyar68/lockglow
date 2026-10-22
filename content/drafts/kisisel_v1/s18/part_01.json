@@ -1,0 +1,1058 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.classroom.n.1",
+      "lemma": "classroom",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈklæsˌruːm/",
+        "uk": "/ˈklɑːsruːm/"
+      },
+      "def": {
+        "micro": "a room where lessons happen",
+        "short": "a room in a school where a teacher gives lessons to students",
+        "long": "A room in a school where a teacher gives lessons to a group of students. It usually has desks, chairs and a board."
+      },
+      "grammar": {
+        "pattern": "in the classroom"
+      },
+      "examples": [
+        {
+          "en": "Our classroom has big windows.",
+          "tr": "Sınıfımızın büyük pencereleri var.",
+          "register": "neutral",
+          "focus": "classroom"
+        },
+        {
+          "en": "Kerem left his bag in the classroom after the math lesson.",
+          "tr": "Kerem matematik dersinden sonra çantasını sınıfta unuttu.",
+          "register": "neutral",
+          "focus": "classroom"
+        },
+        {
+          "en": "Please don't eat in the classroom; you can have your snack in the garden.",
+          "tr": "Lütfen sınıfta yemek yemeyin; atıştırmalığınızı bahçede yiyebilirsiniz.",
+          "register": "neutral",
+          "focus": "classroom"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the classroom",
+        "classroom door",
+        "a quiet classroom",
+        "leave the classroom"
+      ],
+      "word_family": [
+        {
+          "lemma": "class",
+          "pos": "n"
+        },
+        {
+          "lemma": "room",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınıf",
+          "alt": [
+            "derslik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçe 'sınıf' üç şey olabilir: oda 'classroom', öğrenci grubu ya da ders 'class', okul yılı (3. sınıf) ise ABD'de 'grade', İngiltere'de 'year' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The students sat at their desks in the ______ and waited for the lesson to start.",
+        "answer": "classroom",
+        "distractors": [
+          "corridor",
+          "playground",
+          "car park"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.classmate.n.1",
+      "lemma": "classmate",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈklæsˌmeɪt/",
+        "uk": "/ˈklɑːsmeɪt/"
+      },
+      "def": {
+        "micro": "a student in your class",
+        "short": "someone who is in the same class as you at school",
+        "long": "Someone who studies in the same class or group as you at school or on a course. You often see them every day."
+      },
+      "grammar": {
+        "pattern": "a classmate of mine"
+      },
+      "examples": [
+        {
+          "en": "Lily is my classmate and my best friend.",
+          "tr": "Lily sınıf arkadaşım ve en iyi arkadaşım.",
+          "register": "neutral",
+          "focus": "classmate"
+        },
+        {
+          "en": "Omar asked a classmate for help with his homework.",
+          "tr": "Omar ödevi için bir sınıf arkadaşından yardım istedi.",
+          "register": "neutral",
+          "focus": "classmate"
+        },
+        {
+          "en": "I met some of my old classmates at a café last weekend.",
+          "tr": "Geçen hafta sonu bir kafede eski sınıf arkadaşlarımdan bazılarıyla karşılaştım.",
+          "register": "neutral",
+          "focus": "classmates"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a new classmate",
+        "old classmates",
+        "my classmates"
+      ],
+      "word_family": [
+        {
+          "lemma": "class",
+          "pos": "n"
+        },
+        {
+          "lemma": "mate",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınıf arkadaşı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tek bir kelimedir: 'classmate'. Dil kursunda ya da üniversitede aynı derste olan biri için de kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "He is my class friend.",
+              "right": "He is my classmate.",
+              "why": "Türkçe 'sınıf arkadaşı' kelime kelime 'class friend' diye çevriliyor; İngilizcede tek kelime 'classmate' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ece and I are in the same class, so she is my ______.",
+        "answer": "classmate",
+        "distractors": [
+          "teacher",
+          "boss",
+          "landlord"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.high_school.phr.1",
+      "lemma": "high school",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhaɪ ˌskuːl/",
+        "uk": "/ˈhaɪ ˌskuːl/"
+      },
+      "def": {
+        "micro": "school for ages 14 to 18",
+        "short": "the school that teenagers go to, usually from about age 14 to 18",
+        "long": "The school that teenagers go to after middle school, usually from about age 14 to 18 in the US. After it, many students go to college or start work."
+      },
+      "grammar": {
+        "pattern": "in high school / go to high school"
+      },
+      "examples": [
+        {
+          "en": "Zeynep is in her last year of high school.",
+          "tr": "Zeynep lisenin son yılında.",
+          "register": "neutral",
+          "focus": "high school"
+        },
+        {
+          "en": "Tom and Lily met in high school and are still friends.",
+          "tr": "Tom ve Lily lisede tanıştılar ve hâlâ arkadaşlar.",
+          "register": "neutral",
+          "focus": "high school"
+        },
+        {
+          "en": "After high school, Elif wants to study engineering at a university.",
+          "tr": "Elif liseden sonra üniversitede mühendislik okumak istiyor.",
+          "register": "neutral",
+          "focus": "high school"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in high school",
+        "go to high school",
+        "high school student",
+        "finish high school"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "lise",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kelimesi kelimesine 'yüksekokul' gibi görünür ama 'lise' demektir. Türkçedeki 'yüksekokul' üniversite düzeyidir; İngilizcede 'college' olur. İngiltere'de lise için çoğu zaman 'secondary school' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mert is 16, so he goes to ______.",
+        "answer": "high school",
+        "distractors": [
+          "kindergarten",
+          "university",
+          "day care"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.raise_your_hand.phr.1",
+      "lemma": "raise your hand",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/reɪz jʊr ˈhænd/",
+        "uk": "/reɪz jɔː ˈhænd/"
+      },
+      "def": {
+        "micro": "lift your arm to ask to talk",
+        "short": "put your arm up in class to show you want to speak or answer",
+        "long": "To put your arm up, for example in class, to show the teacher that you want to speak or answer. People also do it to vote or say yes in a group."
+      },
+      "grammar": {
+        "pattern": "raise your hand (to + verb)"
+      },
+      "examples": [
+        {
+          "en": "Who wants to read first? Raise your hand.",
+          "tr": "Kim önce okumak istiyor? Parmak kaldırsın.",
+          "register": "neutral",
+          "focus": "Raise your hand"
+        },
+        {
+          "en": "Ayşe raised her hand and gave the right answer.",
+          "tr": "Ayşe parmak kaldırdı ve doğru cevabı verdi.",
+          "register": "neutral",
+          "focus": "raised her hand"
+        },
+        {
+          "en": "Mr. Clark asked us to raise our hands before we speak, not shout.",
+          "tr": "Clark Bey, konuşmadan önce bağırmak yerine parmak kaldırmamızı istedi.",
+          "register": "neutral",
+          "focus": "raise our hands"
+        }
+      ],
+      "synonyms": [
+        "put your hand up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "raise your hand to speak",
+        "raise your hand to answer"
+      ],
+      "word_family": [
+        {
+          "lemma": "raise",
+          "pos": "v"
+        },
+        {
+          "lemma": "hand",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "parmak kaldırmak",
+          "alt": [
+            "el kaldırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiltere'de 'put your hand up' da çok yaygındır. Kişiye göre değişir: 'raise my hand', 'raise her hand'.",
+          "mistakes": [
+            {
+              "wrong": "I raised my finger to answer.",
+              "right": "I raised my hand to answer.",
+              "why": "Türkçede derste 'parmak kaldırmak' deriz, ama İngilizcede kaldırılan şey 'hand' (el) olur; 'raise your finger' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kaan knew the answer, so he ______ and waited for the teacher to call his name.",
+        "answer": "raised his hand",
+        "distractors": [
+          "left the room",
+          "fell asleep",
+          "shook his head"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.report_card.phr.1",
+      "lemma": "report card",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈpɔːrt ˌkɑːrd/",
+        "uk": "/rɪˈpɔːt ˌkɑːd/"
+      },
+      "def": {
+        "micro": "a paper with school grades",
+        "short": "a paper from school that shows a student's grades for a term or year",
+        "long": "A paper from school that shows a student's grades and how well they did in a term or a year. Parents usually read and sign it."
+      },
+      "grammar": {
+        "pattern": "get a report card"
+      },
+      "examples": [
+        {
+          "en": "Omar got a great report card this year.",
+          "tr": "Omar bu yıl çok iyi bir karne aldı.",
+          "register": "neutral",
+          "focus": "report card"
+        },
+        {
+          "en": "Ece showed her report card to her parents after school.",
+          "tr": "Ece okuldan sonra karnesini anne babasına gösterdi.",
+          "register": "neutral",
+          "focus": "report card"
+        },
+        {
+          "en": "My report card says I need to work harder in science.",
+          "tr": "Karneme göre fen dersinde daha çok çalışmam gerekiyor.",
+          "register": "neutral",
+          "focus": "report card"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get a report card",
+        "a good report card",
+        "sign a report card"
+      ],
+      "word_family": [
+        {
+          "lemma": "report",
+          "pos": "n"
+        },
+        {
+          "lemma": "card",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karne",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kullanım ABD'de yaygındır. İngiltere'de genellikle 'school report' denir. Karnedeki notlar için 'grades' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "At the end of the term, every student gets a ______ with their grades.",
+        "answer": "report card",
+        "distractors": [
+          "birthday card",
+          "bus ticket",
+          "library card"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.private_lesson.phr.1",
+      "lemma": "private lesson",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌpraɪvət ˈlɛsən/",
+        "uk": "/ˌpraɪvət ˈlɛsən/"
+      },
+      "def": {
+        "micro": "a lesson for one student",
+        "short": "a paid lesson where a teacher works with only one student",
+        "long": "A lesson where a teacher works with only one student, or a very small group, and the student pays for it. People take them for music, languages or school subjects."
+      },
+      "grammar": {
+        "pattern": "take / have private lessons (in sth)"
+      },
+      "examples": [
+        {
+          "en": "Sara takes private lessons after school.",
+          "tr": "Sara okuldan sonra özel ders alıyor.",
+          "register": "neutral",
+          "focus": "private lessons"
+        },
+        {
+          "en": "Kerem's math grades went up after a few private lessons.",
+          "tr": "Kerem'in matematik notları birkaç özel dersten sonra yükseldi.",
+          "register": "neutral",
+          "focus": "private lessons"
+        },
+        {
+          "en": "Private lessons are expensive, so Deniz studies English online with free videos.",
+          "tr": "Özel dersler pahalı, bu yüzden Deniz internette ücretsiz videolarla İngilizce çalışıyor.",
+          "register": "neutral",
+          "focus": "Private lessons"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take private lessons",
+        "give private lessons",
+        "private English lessons"
+      ],
+      "word_family": [
+        {
+          "lemma": "private",
+          "pos": "adj"
+        },
+        {
+          "lemma": "lesson",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özel ders",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dersi alan öğrenci 'take/have private lessons', veren öğretmen 'give private lessons' der. Bu tür öğretmene 'tutor', bu işe 'tutoring' de denir.",
+          "mistakes": [
+            {
+              "wrong": "I take special lessons in English.",
+              "right": "I take private lessons in English.",
+              "why": "Türkçe 'özel' hem 'special' hem 'private' demek. Birebir, ücretli ders için 'private lesson' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe pays a teacher for a ______ at home every Saturday.",
+        "answer": "private lesson",
+        "distractors": [
+          "school trip",
+          "sports day",
+          "free class"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.skip_class.phr.1",
+      "lemma": "skip class",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌskɪp ˈklæs/",
+        "uk": "/ˌskɪp ˈklɑːs/"
+      },
+      "def": {
+        "micro": "miss a lesson on purpose",
+        "short": "stay away from a lesson on purpose, without a good reason",
+        "long": "To not go to a lesson on purpose, without a good reason, often to do something more fun. Teachers and parents are usually not happy about it."
+      },
+      "grammar": {
+        "pattern": "skip class / skip a class"
+      },
+      "examples": [
+        {
+          "en": "Tom never skips class, even on Fridays.",
+          "tr": "Tom cuma günleri bile dersi hiç asmaz.",
+          "register": "informal",
+          "focus": "skips class"
+        },
+        {
+          "en": "Zeynep skipped class to go to the beach with her friends.",
+          "tr": "Zeynep arkadaşlarıyla plaja gitmek için dersi astı.",
+          "register": "informal",
+          "focus": "skipped class"
+        },
+        {
+          "en": "If you skip class too often, the school will call your parents.",
+          "tr": "Dersi çok sık asarsan okul aileni arar.",
+          "register": "informal",
+          "focus": "skip class"
+        }
+      ],
+      "synonyms": [
+        "cut class"
+      ],
+      "antonyms": [
+        "go to class"
+      ],
+      "collocations": [
+        "skip class",
+        "skip a class",
+        "skip school"
+      ],
+      "word_family": [
+        {
+          "lemma": "skip",
+          "pos": "v"
+        },
+        {
+          "lemma": "class",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dersi asmak",
+          "alt": [
+            "dersi kırmak",
+            "dersi ekmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gayriresmî bir söyleyiştir. Bütün gün okula gitmemek için 'skip school' denir. Bu kalıpta 'class' genellikle 'the' almaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "slang_informal"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mia felt fine, but she wanted to ______ and play games at home.",
+        "answer": "skip class",
+        "distractors": [
+          "join a club",
+          "pass the test",
+          "clean the board"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.quiz.n.1",
+      "lemma": "quiz",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kwɪz/",
+        "uk": "/kwɪz/"
+      },
+      "def": {
+        "micro": "a short school test",
+        "short": "a short, easy test that a teacher gives in class",
+        "long": "A short test that a teacher gives in class to check what students remember. It is smaller and less important than an exam."
+      },
+      "grammar": {
+        "pattern": "have / give a quiz (on sth)"
+      },
+      "examples": [
+        {
+          "en": "We have a vocabulary quiz tomorrow.",
+          "tr": "Yarın kısa bir kelime sınavımız var.",
+          "register": "neutral",
+          "focus": "quiz"
+        },
+        {
+          "en": "Mr. Clark gave us a quiz on the new words.",
+          "tr": "Clark Bey bize yeni kelimelerden kısa bir sınav yaptı.",
+          "register": "neutral",
+          "focus": "quiz"
+        },
+        {
+          "en": "The quiz only has ten questions, so it takes about five minutes.",
+          "tr": "Kısa sınavda sadece on soru var, bu yüzden yaklaşık beş dakika sürüyor.",
+          "register": "neutral",
+          "focus": "quiz"
+        }
+      ],
+      "synonyms": [
+        "test"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a pop quiz",
+        "a quiz on",
+        "take a quiz",
+        "give a quiz"
+      ],
+      "word_family": [
+        {
+          "lemma": "quiz",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kısa sınav",
+          "alt": [
+            "quiz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Okulda küçük, kısa bir sınavdır; büyük, önemli sınava 'exam' denir. Habersiz yapılan kısa sınava 'pop quiz' denir. TV'deki bilgi yarışması ise 'quiz show' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Close your books and take out a pen. You have ten minutes for this ______.",
+        "answer": "quiz",
+        "distractors": [
+          "break",
+          "picnic",
+          "nap"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.correct.v.1",
+      "lemma": "correct",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "fix mistakes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈrɛkt/",
+        "uk": "/kəˈrɛkt/"
+      },
+      "def": {
+        "micro": "fix mistakes",
+        "short": "show or fix the mistakes in something, like homework or speech",
+        "long": "To show or fix the mistakes in something, for example homework or the way someone speaks. Teachers do this to help students learn."
+      },
+      "grammar": {
+        "pattern": "correct sth / correct sb"
+      },
+      "examples": [
+        {
+          "en": "Can you correct my English, please?",
+          "tr": "Lütfen İngilizcemi düzeltir misin?",
+          "register": "neutral",
+          "focus": "correct"
+        },
+        {
+          "en": "Our teacher corrects our homework every evening.",
+          "tr": "Öğretmenimiz her akşam ödevlerimizi düzeltiyor.",
+          "register": "neutral",
+          "focus": "corrects"
+        },
+        {
+          "en": "Selin was happy when her friend corrected her mistake in a kind way.",
+          "tr": "Selin, arkadaşı hatasını nazik bir şekilde düzeltince mutlu oldu.",
+          "register": "neutral",
+          "focus": "corrected"
+        }
+      ],
+      "synonyms": [
+        "fix"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "correct a mistake",
+        "correct homework",
+        "correct me if I'm wrong"
+      ],
+      "word_family": [
+        {
+          "lemma": "correct",
+          "pos": "adj"
+        },
+        {
+          "lemma": "correction",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düzeltmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Konuşurken 'Please correct me if I make a mistake.' (Hata yaparsam lütfen düzeltin) demek çok yararlıdır. 'Correct' sıfat olarak 'doğru' da demektir: 'the correct answer'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to learn, so please ______ me when I say a word wrong.",
+        "answer": "correct",
+        "distractors": [
+          "thank",
+          "invite",
+          "follow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_an_exam.phr.1",
+      "lemma": "take an exam",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌteɪk ən ɪɡˈzæm/",
+        "uk": "/ˌteɪk ən ɪɡˈzæm/"
+      },
+      "def": {
+        "micro": "do a test as a student",
+        "short": "answer the questions of an important test as a student",
+        "long": "To answer the questions of an important test as a student, usually at a set time and place. The teacher who writes the exam gives it; the student takes it."
+      },
+      "grammar": {
+        "pattern": "take an exam (in + subject)"
+      },
+      "examples": [
+        {
+          "en": "Ken is taking an exam today.",
+          "tr": "Ken bugün sınava giriyor.",
+          "register": "neutral",
+          "focus": "taking an exam"
+        },
+        {
+          "en": "Ali took an English exam last week and is waiting for the results.",
+          "tr": "Ali geçen hafta bir İngilizce sınavına girdi ve sonuçları bekliyor.",
+          "register": "neutral",
+          "focus": "took an English exam"
+        },
+        {
+          "en": "Before you take an exam, try to sleep well the night before.",
+          "tr": "Sınava girmeden önceki gece iyi uyumaya çalış.",
+          "register": "neutral",
+          "focus": "take an exam"
+        }
+      ],
+      "synonyms": [
+        "sit an exam"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take an exam",
+        "take a test",
+        "take a driving test"
+      ],
+      "word_family": [
+        {
+          "lemma": "exam",
+          "pos": "n"
+        },
+        {
+          "lemma": "examine",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınava girmek",
+          "alt": [
+            "sınav olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sınava giren öğrenci için 'take an exam' (İngiltere'de 'sit an exam' kalıbı da kullanılır), sınavı yapan öğretmen için 'give an exam' denir. Sınavı geçmek 'pass', sınavdan kalmak 'fail' olur.",
+          "mistakes": [
+            {
+              "wrong": "I will enter the exam on Monday.",
+              "right": "I will take the exam on Monday.",
+              "why": "Türkçe 'sınava girmek' yüzünden 'enter' kullanılıyor; İngilizcede sınava girmek için 'take' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Leo didn't study enough, and now he has to ______ in math tomorrow morning.",
+        "answer": "take an exam",
+        "distractors": [
+          "join an exam",
+          "make an exam",
+          "win an exam"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

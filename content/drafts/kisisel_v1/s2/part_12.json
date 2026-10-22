@@ -688,13 +688,9 @@
           "alt": [
             "karne notu"
           ],
-          "equivalence": "false_friend",
-          "false_friend": {
-            "tr_word": "not",
-            "tr_means": "okul notu, puan",
-            "en_for_that": "grade (ABD) / mark (İngiltere)"
-          },
-          "note": "Türkçedeki 'not' (okul notu) İngilizcede 'grade' veya 'mark'tır. İngilizce 'note' ise kısa yazılı not, hatırlatma demektir. ABD'de 'grade' aynı zamanda sınıf düzeyi (9th grade) olarak da kullanılır.",
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Okul notu İngilizcede 'grade' ya da 'mark' olur. İngilizce 'note' ise kısa yazılı not, hatırlatma demektir. ABD'de 'grade' sınıf düzeyi için de kullanılır: 9th grade.",
           "mistakes": [
             {
               "wrong": "I got a high note in math.",
@@ -713,9 +709,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "false_friend_tr"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -729,7 +723,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

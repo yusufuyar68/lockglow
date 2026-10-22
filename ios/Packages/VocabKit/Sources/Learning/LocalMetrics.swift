@@ -139,7 +139,8 @@ public struct LocalMetrics: Codable, Equatable, Sendable {
         trim(now: deliveredAt, calendar: calendar)
     }
 
-    /// The app came to the front: a reminder that fired earlier the same day was not ignored.
+    /// The app was in use at `now` (it came to the front, or left it): a reminder that fired
+    /// earlier the same day was not ignored.
     public mutating func recordAppActive(at now: Date, calendar: Calendar) {
         let key = LocalMetrics.dayKey(now, calendar: calendar)
         for index in reminders.indices where reminders[index].fireDate <= now
