@@ -145,6 +145,8 @@ struct ReviewView: View {
                 QuizCardView(
                     word: word,
                     quiz: quiz,
+                    // Each attempt puts the answer in another place (2.4): the answers so far.
+                    attempt: model.progress[word.id]?.reviews ?? 0,
                     layout: .scrolling,
                     mistakes: detail?.mistakes ?? [],
                     optionMeanings: optionMeanings(for: quiz, word: word),
