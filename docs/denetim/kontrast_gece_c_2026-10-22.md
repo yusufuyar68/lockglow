@@ -132,7 +132,7 @@ Her katman ayrı ayrı saydamlaşır (yaklaşık). İkincil düğme basılı de�
 
 ## 6. Kontrastı Artır ve Düğme Şekilleri: kenar kalınlıkları
 
-Kod okuması (`contrast == .increased || showsButtonShapes`). Ekranda görülen: bölüm 8.
+Kod okuması (`contrast == .increased || showsButtonShapes`). Ekranda piksel ölçümüyle doğrulandı: bölüm 8.
 
 | Öğe | Dosya | Normal | YK ya da DŞ | Kalınlaşıyor mu |
 |---|---|---|---|---|
@@ -166,7 +166,26 @@ Kod okuması (`contrast == .increased || showsButtonShapes`). Ekranda görülen:
 
 ## 8. Ekran görüntüleri
 
-*(screenshots çalıştırması bitince doldurulacak)*
+- **Kaynak:** [screenshots çalıştırması](https://github.com/yusufuyar68/lockglow/actions/runs/39803205312), Intel, iPhone SE (3. nesil), 98b2ba5'in teması. Atılacak `is4-tema-ekran` dalında; iş akışı küçük iPhone'u üç kez koyu modda çalıştırdı:
+  - düz;
+  - Düğme Şekilleri açık (`defaults write com.apple.Accessibility ButtonShapesEnabled`; sistem geri düğmesi ve sekme çubuğu da şekil aldı, yani ayar tuttu);
+  - Kontrastı Artır açık (`simctl ui … increase_contrast enabled`).
+- **Önce / sonra:** oturumların ortak not klasöründe, `is4-tema-ekran/`. Her görüntüde dört sütun: önce (A, `is3-tema` turu), C, C + Düğme Şekilleri, C + Kontrastı Artır. Depoya konmadı.
+- **Piksel ölçümü** (`0b-acilis-konular`, 2x görüntü, kenarın tam ortasından dikey kesit; 1 pt = 2 piksel):
+
+  | Tur | Çip kenarı (kalınlık, gri değeri) | Ana düğme kenarı | Ana düğme dolgusu |
+  |---|---|---|---|
+  | Koyu | 2 px (1 pt), 126 | 4 px (2 pt), 243 (#F3) | 29 (#1D) |
+  | Koyu + Düğme Şekilleri | **3 px (1,5 pt)**, 126 | **6 px (3 pt)**, 243 | 29 |
+  | Koyu + Kontrastı Artır | **3 px (1,5 pt)**, 160 (`lineStrong` %56) | **6 px (3 pt)**, 255 (#FF) | 31 (#1F) |
+
+  - Kenarlar iki ayarda da kalınlaşıyor. Değerler hesapla aynı: dolgu #1D1D1D / #1F1F1F, çip kenarı beyaz %40 / %56 `surface2` üstünde.
+  - Ekrandaki piksellerden ana kenar ile çip kenarı arası 3,65:1 (hesap: kenarsız ikincilden 3,69).
+- **Görülen:**
+  - "1 konuyla devam", "Başla (5 kelime)", ilk kelimedeki "Başla": sarı yok, beyaz kenarlı koyu kapsül. Aynı ekrandaki kenarlı ikincil düğmeden ("Anlamını göster") açıkça ayrılıyor: kenar daha parlak ve daha kalın.
+  - Kelimenin sarı şeridi ekrandaki tek sarı.
+  - **Yazı kalın değildi.** `.headline.bold()` hiçbir şey değiştirmedi: harflerin genişliği ve mürekkep miktarı gündüzdeki yarı kalın yazıyla aynı çıktı (123–251 px, 375 pt ölçeğinde). Neden: `.headline` zaten yarı kalın ve sistem onu "kalın" sayıyor; `.bold()` yeni bir şey eklemiyor. Düzeltme: `.headline.weight(.bold)` (sonraki commit). Bu düzeltme ekranda görülmedi (tur sınırı 1); `Theme.Fonts.meaning` aynı yolu (`.title.weight(.bold)`) kullanıyor ve orada kalın çıkıyor.
+  - Söyle sayfası yine açılırken (karartılmış) çekilmiş; ana düğme görünmüyor. Tema sorunu değil.
 
 ## 9. Başka dosyalara notlar (bu dalda dokunulmadı)
 

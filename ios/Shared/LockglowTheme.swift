@@ -605,7 +605,9 @@ private struct CapsuleButtonBody: View {
 
     var body: some View {
         configuration.label
-            .font(isNightPrimary ? .headline.bold() : .headline)
+            // `.weight(.bold)`, not `.bold()`: `.headline` is semibold and already counts as bold,
+            // so `.bold()` leaves it unchanged (seen in the 2026-10-22 screenshots).
+            .font(isNightPrimary ? .headline.weight(.bold) : .headline)
             .multilineTextAlignment(.center)
             .foregroundStyle(kind == .primary ? Theme.onPrimary : Theme.ink)
             .padding(.horizontal, fullWidth ? 24 : 20)
