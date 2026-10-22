@@ -17,7 +17,7 @@ Bu belge, içerik hattının (`content-pipeline/`) ürettiği dosyalar ile iOS u
 - `card.rowid` (tam sayı) = `id_registry.json`'daki kalıcı ID. Kullanıcı ilerlemesi (`UserWordProgress.word_id`), widget kuyruğu ve CloudKit senkronu **yalnızca bu tam sayıyı** kullanır.
 - **Kural:** Bir ID bir kez verildikten sonra asla başka karta verilmez. Kart silinse bile ID kayıtta kalır (`retired`).
 
-## 3. SQLite şeması (`PRAGMA user_version = 1`)
+## 3. SQLite şeması (`PRAGMA user_version = 2`)
 
 ```sql
 CREATE TABLE content_meta (
@@ -57,7 +57,7 @@ CREATE TABLE card (
   example_en      TEXT NOT NULL,         -- 1. örnek (kilit ekranında güvenli)
   primary_topic   TEXT NOT NULL REFERENCES category(id),
   register        TEXT NOT NULL,
-  sensitivity     INTEGER NOT NULL,      -- 0 temiz | 1 hafif olumsuz (yalnızca etiketli kategoride)
+  sensitivity     INTEGER NOT NULL,      -- 0 temiz | 1 kişisel konu ya da hafif kaba kelime (bkz. kurallar)
   is_free         INTEGER NOT NULL,      -- 1 = ücretsiz katmanda
   json            TEXT NOT NULL          -- kartın tamamı (detay ekranı için), şema v1.0
 );
@@ -70,7 +70,16 @@ CREATE TABLE card_l1 (
   gloss        TEXT NOT NULL,            -- ≤28: widget 2. satır
   equivalence  TEXT NOT NULL,            -- full|partial|cognate|false_friend|none
   example_tr   TEXT,                     -- 1. örneğin çevirisi
+  gloss_short  TEXT,                     -- ≤16: gloss sığmayınca widget'ta gösterilen kısa anlam; gloss ≤16 ise NULL
   PRIMARY KEY (card_rowid, lang)
+);
+
+-- Karışan kelimeler (borrow ↔ lend). İki yönlü: (A,B) varsa (B,A) da var. Yalnız destede kartı olan
+-- eşler; kartın kendi listesi (eşi destede olmayanlar dahil) card.json içindeki "confusables" alanında.
+CREATE TABLE card_confusable (
+  card_rowid   INTEGER NOT NULL REFERENCES card(rowid),
+  other_rowid  INTEGER NOT NULL REFERENCES card(rowid),
+  PRIMARY KEY (card_rowid, other_rowid)
 );
 
 CREATE TABLE card_category (
@@ -92,7 +101,12 @@ CREATE VIRTUAL TABLE card_fts USING fts5(
 **Uygulama tarafı kuralları**
 - Veritabanı salt okunurdur; uygulama içine asla yazılmaz. Kullanıcı verisi ayrı bir depodadır.
 - `is_free = 0` olan kart, abonelik yoksa widget kuyruğuna girmez ve akışta kilitli olarak gösterilir.
-- `sensitivity = 1` kartlar, kullanıcı ilgili kategoriyi açmadıkça hiçbir yerde gösterilmez. `sensitivity = 2` veritabanına hiç girmez.
+- **Hassasiyet** (`card.sensitivity`, şema 2'den beri; `docs/tasarim/ogrenme_ilkeleri.md` §2.1):
+  - `1` = kişisel konu (ilişki, ayrılık, beden, işini ya da parasını kaybetmek) ya da hafif kaba kelime. Kilit ekranını aile ya da iş arkadaşları görebilir; bu kartlar **kilit ekranında ve orta widget'ta varsayılan olarak gösterilmez**, Akış'ta, Tekrar'da ve Sözlük'te kalır. Her kategoride olabilir (şema 1'deki "yalnız etiketli kategoride" kuralı kalktı).
+  - `2` veritabanına hiç girmez.
+  - Seed yalnız `sensitivity = 0` kartları alır.
+- **Kısa anlam** (`card_l1.gloss_short`): Türkçe anlam widget'ta hiçbir zaman "…" ile kesilmez. Sığmazsa sırayla tam `gloss` → ilk virgülden önceki kısım → `gloss_short` denenir; hiçbiri sığmazsa anlam gizlenir. `gloss_short` en çok 16 grafemdir ve kendisi de kesilmez.
+- **Karışan kelimeler** (`card_confusable`): iki karışan kelime aynı gün yeni kelime olarak verilmez; eşi henüz bilinmiyorsa (kutu 2'nin altında) quiz'de çeldirici olmaz (`ogrenme_ilkeleri.md` §1 madde 8 ve 1b).
 - Kategori içi `rank`, ücretsiz kartları belirler: `rank < category.free_count` ise kart o kategoride ücretsizdir. `card.is_free`, kartın birincil kategorisine göre hesaplanmış sonuçtur.
 - **Konu (deste) süzgeci** `card_category` üyeliğini okur, `is_primary` ne olursa olsun: bir kart üyesi olduğu her konuda sayılır ve seçilen konulardan birinde olması yeter (birden çok seçilen konuda olan kart bir kez gelir). Konu sayımına yalnız `is_free = 1 AND sensitivity = 0` kartlar girer. Akış sorgusu (`freeCards`) `card_category` ile birleştirilmez, yoksa kartlar tekrarlanır. Grup başlıkları (`category.grp` harfinin Türkçe adı) ve bazı sade görünen adlar (ör. `phrasal_verbs` → "İki kelimeli fiiller") veritabanında değil, uygulamada durur; `category.name_tr` değişmez. Şema değişmedi, `schema_version` artmaz.
 
@@ -121,7 +135,7 @@ Test vektörleri (iki tarafın birim testlerinde aynısı olmalı):
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "content_version": "2026.10.11-1",
   "words": [
     {
@@ -133,13 +147,15 @@ Test vektörleri (iki tarafın birim testlerinde aynısı olmalı):
       "def_micro": "quick to recover",
       "def_short": "able to recover quickly after something difficult",
       "example_en": "Children are often more resilient than adults.",
-      "gloss_tr": "dirençli, çabuk toparlanan"
+      "gloss_tr": "dirençli, çabuk toparlanan",
+      "gloss_short_tr": "dirençli"
     }
   ]
 }
 ```
 
 - Yalnızca `is_free = 1` ve `sensitivity = 0` kartlar girer. A1–C1 seviyeleri sırayla dönüşümlü seçilir, varsayılan 400 kart.
+- `gloss_short_tr` her kelimede vardır, anlam kısaysa `null`'dır (şema 2).
 - Widget belleği (~30 MB sınırı) için dosya **< 300 KB** tutulur.
 
 ## 6. Widget anlık görüntüsü ve olay posta kutusu (App Group)
@@ -158,7 +174,10 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
   `{ "version":1, "plan_id":String, "is_premium":Bool, "interval_seconds":Int, "queue":[WidgetWord], "updated_at":ISO8601 }`
   - `queue`: uygulamanın SRS'e ve filtrelere göre seçtiği sonraki 48–96 kelime. Widget veritabanı açmaz, yalnızca bu kuyruğu okur.
   - `plan_id`: uygulama her yeni plan yazdığında değişir (UUID). Widget, `widget_state.plan_id` farklıysa imlecini sıfırlar.
-  - `WidgetWord` = `{ "id":Int, "lemma":String, "pos":String, "level":String, "ipa_us":String?, "def_micro":String, "def_short":String, "example_en":String, "gloss_tr":String? }` (seed ile aynı alanlar).
+  - `WidgetWord` = `{ "id":Int, "lemma":String, "pos":String, "level":String, "ipa_us":String?, "def_micro":String, "def_short":String, "example_en":String, "gloss_tr":String?, "gloss_short_tr":String?, "sensitivity":Int?, "confusable_ids":[Int]? }`.
+    - İlk dokuz alan ve `gloss_short_tr` seed ile aynıdır.
+    - `sensitivity` (`card.sensitivity`) ve `confusable_ids` (`card_confusable.other_rowid`) yalnız veritabanından gelir; seed'de yoktur.
+    - Şema 2'de eklenen alanların hepsi opsiyoneldir: yoksa ya da `null` ise eski JSON da çözülür. Swift'te `glossShortTR`, `sensitivity`, `isSensitive`, `confusableIDs`.
 - `widget_state.json` (widget yazar, atomik):
   `{ "version":1, "plan_id":String, "cursor_offset":Int, "cursor_anchor":ISO8601, "known_ids":[Int], "updated_at":ISO8601 }`
   - Anlamı: `cursor_anchor` anında döngü kuyruğun `cursor_offset` indeksindeydi.
@@ -184,3 +203,4 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
 |---|---|---|
 | 1 | 2026-10-11 | İlk sürüm |
 | 1.1 | 2026-10-11 | Kod incelemesi sonrası: tek yazan kuralı; `cursor_anchor` ve zamana bağlı döngü algoritması (yeniden yüklemede tekrar başa dönme hatası giderildi); global döngü aralığı; veritabanı App Group'a kopyalanmadan paketten açılır; `journal_mode=DELETE` |
+| 2 | 2026-10-22 | `card_l1.gloss_short` ve seed'de `gloss_short_tr` (widget'ta kesilmeyen kısa anlam); yeni `card_confusable` tablosu; `sensitivity = 1`'in yeni anlamı (kişisel konu, kilit ekranı ve orta widget'ta varsayılan olarak gizli, her kategoride olabilir); `WidgetWord`'e opsiyonel `gloss_short_tr`, `sensitivity`, `confusable_ids`. Eski okuyucular bozulmaz: yalnız sütun, tablo ve opsiyonel alan eklendi. `user_version` ve seed `schema_version` 2 |

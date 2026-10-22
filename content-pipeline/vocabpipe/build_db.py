@@ -76,7 +76,13 @@ CREATE TABLE card_l1 (
   gloss        TEXT NOT NULL,
   equivalence  TEXT NOT NULL,
   example_tr   TEXT,
+  gloss_short  TEXT,
   PRIMARY KEY (card_rowid, lang)
+);
+CREATE TABLE card_confusable (
+  card_rowid   INTEGER NOT NULL REFERENCES card(rowid),
+  other_rowid  INTEGER NOT NULL REFERENCES card(rowid),
+  PRIMARY KEY (card_rowid, other_rowid)
 );
 CREATE TABLE card_category (
   card_rowid   INTEGER NOT NULL REFERENCES card(rowid),
@@ -171,6 +177,28 @@ def free_ids(by_cat: dict[str, list[Card]], tax: Taxonomy) -> set[str]:
     return free
 
 
+# ---------------------------------------------------------------- karışan kelimeler
+
+def confusable_pairs(cards: list[Card], id_map: dict[str, int]) -> set[tuple[int, int]]:
+    """Karışan kelime lemma'larını kart ID çiftlerine bağlar; ilişki iki yönlüdür.
+
+    Lemma büyük/küçük harf duyarsız eşlenir ve o lemma'nın bütün kartlarına bağlanır (ör. "change"
+    hem isim hem fiil). Destede kartı olmayan kelime yalnızca kartın JSON'unda kalır.
+    """
+    by_lemma: dict[str, list[int]] = {}
+    for card in cards:
+        by_lemma.setdefault(card.lemma.lower(), []).append(id_map[card.id])
+    pairs: set[tuple[int, int]] = set()
+    for card in cards:
+        rid = id_map[card.id]
+        for lemma in card.confusable_lemmas():
+            for other in by_lemma.get(lemma.lower(), []):
+                if other != rid:
+                    pairs.add((rid, other))
+                    pairs.add((other, rid))
+    return pairs
+
+
 # ---------------------------------------------------------------- veritabanı
 
 def build_database(
@@ -225,10 +253,14 @@ def build_database(
             for lang in l1_langs:
                 layer = card.l1[lang]
                 con.execute(
-                    "INSERT INTO card_l1 VALUES (?,?,?,?,?)",
-                    (rid, lang, layer.gloss, layer.equivalence, card.examples[0].tr if lang == "tr" else None),
+                    "INSERT INTO card_l1 (card_rowid, lang, gloss, equivalence, example_tr, gloss_short)"
+                    " VALUES (?,?,?,?,?,?)",
+                    (
+                        rid, lang, layer.gloss, layer.equivalence,
+                        card.examples[0].tr if lang == "tr" else None, layer.gloss_short,
+                    ),
                 )
-            gloss_text = " ".join([tr.gloss, *tr.alt]) if tr else ""
+            gloss_text = " ".join([tr.gloss, *([tr.gloss_short] if tr.gloss_short else []), *tr.alt]) if tr else ""
             con.execute(
                 "INSERT INTO card_fts(rowid, lemma_fold, gloss_fold) VALUES (?,?,?)",
                 (rid, fold(card.lemma), fold(gloss_text)),
@@ -238,6 +270,7 @@ def build_database(
                 "INSERT INTO card_category VALUES (?,?,?,?)",
                 [(id_map[c.id], cid, int(c.tags.primary_topic == cid), rank) for rank, c in enumerate(members)],
             )
+        con.executemany("INSERT INTO card_confusable VALUES (?,?)", sorted(confusable_pairs(cards, id_map)))
         attribution = ATTRIBUTION_PATH.read_text(encoding="utf-8").strip() if ATTRIBUTION_PATH.exists() else ""
         meta = {
             "schema_version": str(DB_SCHEMA_VERSION),
@@ -291,6 +324,7 @@ def build_seed(cards: list[Card], id_map: dict[str, int], free: set[str], *, siz
                         "def_short": c.def_.short,
                         "example_en": c.examples[0].en,
                         "gloss_tr": tr.gloss if tr else None,
+                        "gloss_short_tr": tr.gloss_short if tr else None,
                     }
                 )
     return {"schema_version": DB_SCHEMA_VERSION, "content_version": content_version, "words": words}

@@ -54,6 +54,11 @@
       "antonyms": [
         "proud"
       ],
+      "confusables": [
+        "embarrassing",
+        "ashamed",
+        "shy"
+      ],
       "collocations": [
         "feel embarrassed",
         "embarrassed about",
@@ -103,9 +108,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:embarrassing"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -177,6 +180,9 @@
         "pleased",
         "satisfied"
       ],
+      "confusables": [
+        "disappointing"
+      ],
       "collocations": [
         "disappointed with",
         "bitterly disappointed",
@@ -201,6 +207,7 @@
       "l1": {
         "tr": {
           "gloss": "hayal kırıklığına uğramış",
+          "gloss_short": "umudu kırılmış",
           "alt": [
             "umudu kırılmış",
             "canı sıkkın"
@@ -226,9 +233,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:disappointing"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -297,6 +302,10 @@
       "antonyms": [
         "pleased"
       ],
+      "confusables": [
+        "annoying",
+        "nervous"
+      ],
       "collocations": [
         "feel annoyed",
         "annoyed with",
@@ -346,9 +355,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:annoying"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -416,6 +423,9 @@
       ],
       "antonyms": [
         "ungrateful"
+      ],
+      "confusables": [
+        "appreciate"
       ],
       "collocations": [
         "grateful for",
@@ -534,6 +544,9 @@
         "relaxed",
         "calm"
       ],
+      "confusables": [
+        "stressful"
+      ],
       "collocations": [
         "feel stressed",
         "stressed out",
@@ -583,9 +596,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:stressful"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -863,6 +874,9 @@
         "worried",
         "anxious"
       ],
+      "confusables": [
+        "relaxed"
+      ],
       "collocations": [
         "feel relieved",
         "relieved to hear",
@@ -901,9 +915,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:relaxed"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -975,6 +987,9 @@
         "satisfied",
         "pleased"
       ],
+      "confusables": [
+        "frustrating"
+      ],
       "collocations": [
         "feel frustrated",
         "get frustrated",
@@ -999,6 +1014,7 @@
       "l1": {
         "tr": {
           "gloss": "sinirleri bozulmuş",
+          "gloss_short": "sinir olmuş",
           "alt": [
             "bunalmış",
             "çaresiz kalmış"
@@ -1018,9 +1034,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:frustrating"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -1109,6 +1123,7 @@
       "l1": {
         "tr": {
           "gloss": "kendini suçlu hisseden",
+          "gloss_short": "suçluluk duyan",
           "alt": [
             "vicdan azabı çeken"
           ],

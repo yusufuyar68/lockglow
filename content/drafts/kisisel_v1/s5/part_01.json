@@ -54,6 +54,9 @@
         "give",
         "send"
       ],
+      "confusables": [
+        "take"
+      ],
       "collocations": [
         "get a message",
         "get a gift",
@@ -95,8 +98,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:take"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -273,6 +275,9 @@
         "come",
         "stay"
       ],
+      "confusables": [
+        "come"
+      ],
       "collocations": [
         "go to work",
         "go home",
@@ -314,8 +319,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:come"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -386,6 +390,9 @@
       "antonyms": [
         "go"
       ],
+      "confusables": [
+        "go"
+      ],
       "collocations": [
         "come home",
         "come here",
@@ -422,8 +429,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:go"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -710,6 +716,9 @@
         "give away",
         "throw away"
       ],
+      "confusables": [
+        "hold"
+      ],
       "collocations": [
         "keep the receipt",
         "keep the change",
@@ -822,6 +831,10 @@
       "antonyms": [
         "arrive",
         "stay"
+      ],
+      "confusables": [
+        "forget",
+        "live"
       ],
       "collocations": [
         "leave home",
@@ -938,6 +951,9 @@
       "antonyms": [
         "lose"
       ],
+      "confusables": [
+        "look for"
+      ],
       "collocations": [
         "find my keys",
         "find a job",
@@ -972,8 +988,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:look"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -1061,6 +1076,7 @@
       "l1": {
         "tr": {
           "gloss": "denemek, çalışmak",
+          "gloss_short": "denemek",
           "alt": [],
           "equivalence": "partial",
           "false_friend": null,

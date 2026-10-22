@@ -155,6 +155,7 @@
       "l1": {
         "tr": {
           "gloss": "şakır şakır yağmak",
+          "gloss_short": "sağanak yağmak",
           "alt": [
             "bardaktan boşanırcasına",
             "sicim gibi yağmak"
@@ -594,8 +595,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "uncountable",
-          "confusable:lightning"
+          "uncountable"
         ],
         "sensitivity": 0
       },
@@ -688,8 +688,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "uncountable",
-          "confusable:thunder"
+          "uncountable"
         ],
         "sensitivity": 0
       },
@@ -964,6 +963,9 @@
       "antonyms": [
         "sun"
       ],
+      "confusables": [
+        "shadow"
+      ],
       "collocations": [
         "in the shade",
         "sit in the shade",
@@ -1009,8 +1011,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "uncountable",
-          "confusable:shadow"
+          "uncountable"
         ],
         "sensitivity": 0
       },

@@ -43,7 +43,7 @@ def test_build_sample(tmp_path, sample_entries):
     ro.close()
     assert not db_path.with_name("content.sqlite-wal").exists()
     con = sqlite3.connect(db_path)
-    assert con.execute("PRAGMA user_version").fetchone()[0] == 1
+    assert con.execute("PRAGMA user_version").fetchone()[0] == 2
     assert con.execute("SELECT count(*) FROM card").fetchone()[0] == 25
     assert con.execute("SELECT count(*) FROM category").fetchone()[0] == 60
     assert con.execute("SELECT count(*) FROM card_l1 WHERE lang='tr'").fetchone()[0] == 25
@@ -132,4 +132,38 @@ def test_seed_rotates_levels_and_is_small(tmp_path, sample_entries):
     levels = [w["level"] for w in seed["words"]]
     assert levels[:5] == ["A1", "A2", "B1", "B2", "C1"]
     assert "C2" not in levels and "S" not in levels
-    assert set(seed["words"][0]) == {"id", "lemma", "pos", "level", "ipa_us", "def_micro", "def_short", "example_en", "gloss_tr"}
+    assert set(seed["words"][0]) == {
+        "id", "lemma", "pos", "level", "ipa_us", "def_micro", "def_short", "example_en", "gloss_tr", "gloss_short_tr",
+    }
+
+
+def test_gloss_short_reaches_card_l1_seed_and_search(tmp_path, sample_entries):
+    entries = copy.deepcopy(sample_entries)
+    by_lemma = {e["lemma"]: e for e in entries}
+    by_lemma["resilient"]["l1"]["tr"]["gloss_short"] = "yılmaz"
+    _build(tmp_path, entries)
+    con = sqlite3.connect(tmp_path / "content.sqlite")
+    shorts = dict(con.execute("SELECT card.lemma, card_l1.gloss_short FROM card_l1 JOIN card ON card.rowid = card_l1.card_rowid"))
+    assert shorts["resilient"] == "yılmaz"
+    assert shorts["breakfast"] is None
+    assert "resilient" in _search(con, "yilmaz")
+    seed = json.loads((tmp_path / "seed_words.json").read_text(encoding="utf-8"))
+    seed_shorts = {w["lemma"]: w["gloss_short_tr"] for w in seed["words"]}
+    assert seed_shorts["resilient"] == "yılmaz"
+    assert seed_shorts["breakfast"] is None
+
+
+def test_confusables_link_cards_both_ways(tmp_path, sample_entries):
+    entries = copy.deepcopy(sample_entries)
+    by_lemma = {e["lemma"]: e for e in entries}
+    by_lemma["resilient"]["confusables"] = ["Ubiquitous", "elastic"]  # "elastic" destede yok
+    by_lemma["borrow"]["tags"]["flags"].append("confusable:actually")  # eski bayrak biçimi
+    _build(tmp_path, entries)
+    con = sqlite3.connect(tmp_path / "content.sqlite")
+    sql = """SELECT a.lemma, b.lemma FROM card_confusable AS cc
+             JOIN card AS a ON a.rowid = cc.card_rowid JOIN card AS b ON b.rowid = cc.other_rowid"""
+    assert set(con.execute(sql)) == {
+        ("resilient", "ubiquitous"), ("ubiquitous", "resilient"), ("borrow", "actually"), ("actually", "borrow"),
+    }
+    blob = con.execute("SELECT json FROM card WHERE lemma = 'resilient'").fetchone()[0]
+    assert json.loads(blob)["confusables"] == ["Ubiquitous", "elastic"]

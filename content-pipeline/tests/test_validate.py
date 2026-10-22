@@ -11,7 +11,8 @@ def codes(raw_cards, severity="error"):
 def test_sample_dataset_is_clean(sample_entries):
     cards, issues = validate_cards(sample_entries)
     assert len(cards) == 25
-    assert [str(i) for i in issues] == []
+    # Örnek set gloss_short alanından önce yazıldı; uzun anlamlarda yalnızca bu uyarı beklenir.
+    assert [str(i) for i in issues if i.code != "GLOSS_SHORT_MISSING"] == []
 
 
 def test_unmodified_card_is_clean(card):
@@ -37,7 +38,6 @@ def test_unmodified_card_is_clean(card):
         (lambda c: c["tags"].__setitem__("topics", ["food_drink"]), "TOPIC_PRIMARY"),
         (lambda c: c["tags"].__setitem__("exams", ["cambridge"]), "EXAM_UNKNOWN"),
         (lambda c: c["tags"].__setitem__("sensitivity", 2), "SENSITIVE_2"),
-        (lambda c: c["tags"].__setitem__("sensitivity", 1), "SENSITIVE_1_CATEGORY"),
         (lambda c: c.__setitem__("id", "en.mitigate.n.1"), "ID_POS"),
         (lambda c: c.__setitem__("id", "en.mitigation.v.1"), "ID_SLUG"),
         (lambda c: c["ipa"].__setitem__("us", "ˈmɪtɪɡeɪt"), "IPA_FORMAT"),
@@ -45,11 +45,46 @@ def test_unmodified_card_is_clean(card):
         (lambda c: c["l1"]["tr"].__setitem__("gloss", "hafiflet" + "̇"), "TR_NFC"),
         (lambda c: c["synonyms"].append("mitigate"), "SYN_SELF"),
         (lambda c: c.__setitem__("type", "idiom"), "TYPE_POS"),
+        (lambda c: c["l1"]["tr"].__setitem__("gloss_short", "x" * 17), "LEN"),
+        (lambda c: c["l1"]["tr"].__setitem__("gloss_short", "hafifletm…"), "GLOSS_SHORT_CUT"),
+        (lambda c: c.__setitem__("confusables", ["Mitigate"]), "CONF_SELF"),
+        (lambda c: c.__setitem__("confusables", ["militate", "Militate"]), "CONF_DUP"),
+        (lambda c: c.__setitem__("confusables", ["sth/sb"]), "CONF_FORMAT"),
+        (lambda c: c.__setitem__("confusables", ["a", "b", "c", "d"]), "COUNT"),
     ],
 )
 def test_rule_fires(card, mutate, code):
     mutate(card)
     assert code in codes([card])
+
+
+def test_gloss_short_is_asked_for_long_glosses_only(card):
+    assert card["l1"]["tr"]["gloss"] == "hafifletmek, azaltmak"  # 21 grafem
+    assert "GLOSS_SHORT_MISSING" in codes([card], severity="warning")
+    card["l1"]["tr"]["gloss_short"] = "hafifletmek"
+    assert codes([card], severity="warning") & {"GLOSS_SHORT_MISSING", "TR_VERB_FORM"} == set()
+    assert codes([card]) == set()
+    card["l1"]["tr"]["gloss_short"] = "hafifletme"
+    assert "TR_VERB_FORM" in codes([card], severity="warning")
+    card["l1"]["tr"]["gloss"], card["l1"]["tr"]["gloss_short"] = "azaltmak", "azaltmak"
+    assert "GLOSS_SHORT_UNNEEDED" in codes([card], severity="warning")
+
+
+def test_confusables_are_optional_and_clean(card):
+    card["confusables"] = ["militate", "mediate"]
+    assert codes([card]) == set()
+    from vocabpipe.schema import Card
+
+    # Eski "confusable:<kelime>" bayrakları da sayılır, tekrar etmeden.
+    assert card["tags"]["flags"] == ["confusable:militate"]
+    assert Card.model_validate(card).confusable_lemmas() == ["militate", "mediate"]
+
+
+def test_sensitivity_1_is_allowed_in_any_category(card):
+    # Hassasiyet 1 = kilit ekranında varsayılan olarak gösterilmeyen kişisel konu; kategoriye bağlı değil.
+    card["tags"]["sensitivity"] = 1
+    assert card["tags"]["primary_topic"] == "environment_climate"
+    assert codes([card]) == set()
 
 
 def test_schema_errors_are_reported_not_raised(card):

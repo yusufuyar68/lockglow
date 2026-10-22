@@ -53,6 +53,9 @@
       "antonyms": [
         "borrow"
       ],
+      "confusables": [
+        "borrow"
+      ],
       "collocations": [
         "lend sb money",
         "lend sth to sb",
@@ -103,8 +106,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:borrow"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -174,6 +176,10 @@
         "state"
       ],
       "antonyms": [],
+      "confusables": [
+        "tell",
+        "speak"
+      ],
       "collocations": [
         "say hello",
         "say goodbye",
@@ -222,8 +228,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:tell"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -294,6 +299,10 @@
         "let know"
       ],
       "antonyms": [],
+      "confusables": [
+        "say",
+        "talk"
+      ],
       "collocations": [
         "tell the truth",
         "tell a lie",
@@ -311,6 +320,7 @@
       "l1": {
         "tr": {
           "gloss": "söylemek, anlatmak",
+          "gloss_short": "söylemek",
           "alt": [
             "bildirmek",
             "haber vermek"
@@ -343,8 +353,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:say"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -418,6 +427,10 @@
       "antonyms": [
         "destroy"
       ],
+      "confusables": [
+        "do",
+        "let"
+      ],
       "collocations": [
         "make a mistake",
         "make a decision",
@@ -466,8 +479,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:do"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -538,6 +550,9 @@
         "carry out"
       ],
       "antonyms": [],
+      "confusables": [
+        "make"
+      ],
       "collocations": [
         "do homework",
         "do the dishes",
@@ -586,8 +601,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:make"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -660,6 +674,9 @@
       "antonyms": [
         "boredom"
       ],
+      "confusables": [
+        "funny"
+      ],
       "collocations": [
         "have fun",
         "a lot of fun",
@@ -704,8 +721,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "uncountable",
-          "confusable:funny"
+          "uncountable"
         ],
         "sensitivity": 0
       },
@@ -777,6 +793,9 @@
         "serious",
         "sad"
       ],
+      "confusables": [
+        "fun"
+      ],
       "collocations": [
         "a funny story",
         "funny joke",
@@ -819,9 +838,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:fun"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -894,6 +911,9 @@
         "interested",
         "excited"
       ],
+      "confusables": [
+        "boring"
+      ],
       "collocations": [
         "feel bored",
         "get bored",
@@ -949,9 +969,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:boring"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {

@@ -53,6 +53,9 @@
         "interesting",
         "exciting"
       ],
+      "confusables": [
+        "bored"
+      ],
       "collocations": [
         "a boring job",
         "boring lesson",
@@ -103,9 +106,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:bored"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -177,6 +178,9 @@
         "bored",
         "uninterested"
       ],
+      "confusables": [
+        "interesting"
+      ],
       "collocations": [
         "interested in",
         "very interested",
@@ -228,9 +232,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:interesting"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -298,6 +300,9 @@
         "boring",
         "dull"
       ],
+      "confusables": [
+        "interested"
+      ],
       "collocations": [
         "an interesting idea",
         "very interesting",
@@ -344,9 +349,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:interested"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -416,6 +419,9 @@
         "return",
         "give back"
       ],
+      "confusables": [
+        "rob"
+      ],
       "collocations": [
         "steal money",
         "steal a car",
@@ -467,8 +473,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:rob"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -538,6 +543,9 @@
         "mug"
       ],
       "antonyms": [],
+      "confusables": [
+        "steal"
+      ],
       "collocations": [
         "rob a bank",
         "rob a shop",
@@ -587,9 +595,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:steal"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -660,6 +666,11 @@
         "find",
         "keep"
       ],
+      "confusables": [
+        "miss",
+        "loose",
+        "get lost"
+      ],
       "collocations": [
         "lose your keys",
         "lose your way",
@@ -711,8 +722,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:miss"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -783,6 +793,9 @@
       "antonyms": [
         "catch"
       ],
+      "confusables": [
+        "lose"
+      ],
       "collocations": [
         "miss the bus",
         "miss a flight",
@@ -825,9 +838,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:lose"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -898,6 +909,9 @@
       "antonyms": [
         "spend"
       ],
+      "confusables": [
+        "win"
+      ],
       "collocations": [
         "earn money",
         "earn a living",
@@ -915,6 +929,7 @@
       "l1": {
         "tr": {
           "gloss": "çalışarak kazanmak",
+          "gloss_short": "para kazanmak",
           "alt": [
             "para kazanmak"
           ],
@@ -944,9 +959,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:win"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {

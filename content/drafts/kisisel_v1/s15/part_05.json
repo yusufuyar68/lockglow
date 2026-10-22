@@ -163,6 +163,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "follow"
+      ],
       "collocations": [
         "track your order",
         "track a parcel",
@@ -274,6 +277,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "cargo"
+      ],
       "collocations": [
         "free shipping",
         "shipping costs",
@@ -321,8 +327,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "uncountable",
-          "confusable:cargo"
+          "uncountable"
         ],
         "sensitivity": 0
       },
@@ -525,6 +530,7 @@
       "l1": {
         "tr": {
           "gloss": "müşteri hizmetleri",
+          "gloss_short": "müşteri desteği",
           "alt": [
             "müşteri desteği"
           ],

@@ -86,9 +86,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:reason"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -264,6 +262,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "appointment"
+      ],
       "collocations": [
         "go on a date",
         "first date",
@@ -309,10 +310,8 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:appointment"
-        ],
-        "sensitivity": 0
+        "flags": [],
+        "sensitivity": 1
       },
       "quiz": {
         "cloze": "Tomorrow night I'm going on a ______ with Elif. I really like her.",
@@ -486,6 +485,9 @@
         "pair"
       ],
       "antonyms": [],
+      "confusables": [
+        "pair"
+      ],
       "collocations": [
         "a married couple",
         "a young couple",
@@ -517,9 +519,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:pair"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -587,6 +587,9 @@
         "infatuation"
       ],
       "antonyms": [],
+      "confusables": [
+        "crash"
+      ],
       "collocations": [
         "have a crush on",
         "a secret crush",
@@ -624,7 +627,7 @@
         "register": "informal",
         "vibes": [],
         "flags": [],
-        "sensitivity": 0
+        "sensitivity": 1
       },
       "quiz": {
         "cloze": "I've had a ______ on my coworker for months.",
@@ -692,6 +695,10 @@
       "antonyms": [
         "doubt",
         "distrust"
+      ],
+      "confusables": [
+        "believe",
+        "count on"
       ],
       "collocations": [
         "trust sb completely",

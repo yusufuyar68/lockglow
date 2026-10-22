@@ -29,3 +29,15 @@ Python'u Windows'ta `-X utf8` ile çalıştır (IPA ve Türkçe karakterler kons
 - **Sahte dost:** "library" Türkçe için sahte dost değil. Türkçe sahte dost örnekleri: sympathetic ≠ sempatik, actually ≠ aktüel.
 - **Quiz şıkları:** Yazarlar güvenli olsun diye hep aynı birkaç şıkkı kullanıyor. s6'da "wash" 51 sorunun 33'ündeydi. Bu yüzden 3. adım şart.
 - **Zarf soruları:** En riskli soru türü. Bağlam yalnızca bir zarfı zorunlu kılmalı.
+
+## Widget ve kilit ekranı alanları (2026-10-22)
+
+`docs/tasarim/ogrenme_ilkeleri.md` §2.12'deki içerik işi. Kurallar `1_yazar_kurallari.md`'de, denetim soruları `2_denetci_kurallari.md`'de, veritabanı karşılıkları `docs/contract/content-db.md` (şema 2) içinde.
+
+- **`l1.tr.gloss_short`:** anlamı 16 karakteri geçen 97 kartın hepsine yazıldı. 36'sı `alt`'tan, 20'si anlamın ilk virgülden önceki kısmından seçildi, 41'i yeni yazıldı. Bir ajan yazdı; bağımsız bir doğrulayıcı 97'sini okudu ve 6 değişiklik önerdi. Beşi alındı: ask out "çıkmayı önermek", stop "durmak/durdurmak", agree "hemfikir olmak", disagree "hemfikir olmamak", frustrated "sinir olmuş". Parantezli "değiş(tir)mek" önerisi alınmadı; change "değiştirmek" kaldı.
+- **`confusables`:** 276 kartta 355 kayıt (63'ü destede kartı olmayan bir kelimeye: actually → currently gibi).
+  - Eski 153 `confusable:` bayrağının 130'u bu alana taşındı, 23'ü düşürüldü (düz eş anlamlı ya da zıt anlamlı). Bayraklar kartlardan silindi; derleyici eski biçimi yine okur.
+  - Eksik klasik çiftler eklendi: borrow/lend iki yönlü, actually/currently, get up/stand up, receipt/recipe, appointment ↔ date, kitchen/chicken, way → road, weather → air.
+  - Bağımsız doğrulayıcı 195 çiftten 3'ünü düşürdü ve 20 eksik önerdi. Kartın anlamına uyan 17'si alındı; rent/hire ve spend/pass destedeki kartların anlamına uymadığı için alınmadı.
+- **`tags.sensitivity`:** 1.068 kartın hepsi üç ajanla okundu ve 9 kart `1` oldu: divorce, ex, crush, date, break up, ask out, throw up, get fired, broke. Bağımsız ikinci okuma dokuzuna da katıldı ve kaçan kart bulmadı. Destede alkol, sigara, kaba kelime ya da özel beden konusu yok.
+  - Yalnızca ilk örneği kişisel olan ama kelimesi sıradan kartlar işaretlenmedi: stay over, fall out with, ashamed, guilty. İstenirse başka bir örnekleri başa alınabilir.

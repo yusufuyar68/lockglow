@@ -72,7 +72,7 @@ python -m vocabpipe.personal ../content/drafts/kisisel_v1 --out ../ios/App/Resou
 | `exams` | | Yalnızca editörün onayladığı sınav etiketleri: `ielts toefl sat act gre yds yokdil ydt toeic academic` |
 | `zipf`, `freq_rank` | | Frekans (açık kaynaklı listeden). Bilinmiyorsa boş bırak, uydurma |
 | `ipa_us_ref`, `ipa_uk_ref` | | Telaffuz referansı (ör. CMUdict). Doluysa modelin önerisi yerine bu kullanılır |
-| `confusables` | | Karıştırılan kelimeler, `\|` ile |
+| `confusables` | | Karıştırılan kelimeler, `\|` ile. Modele ipucu olarak gider; kartta `confusables` alanı olur (eski `confusable:<kelime>` bayrağını derleyici de okur) |
 | `notes` | | Editör notu (ör. "Turkish false friend: hassas") |
 
 ## Model ve maliyet

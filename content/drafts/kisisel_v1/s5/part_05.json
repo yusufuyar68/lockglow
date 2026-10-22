@@ -53,6 +53,9 @@
       "antonyms": [
         "sell"
       ],
+      "confusables": [
+        "take"
+      ],
       "collocations": [
         "buy a ticket",
         "buy food",
@@ -101,8 +104,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:take"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -220,8 +222,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:buy"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -292,6 +293,10 @@
         "get"
       ],
       "antonyms": [],
+      "confusables": [
+        "be",
+        "happen"
+      ],
       "collocations": [
         "become a doctor",
         "become friends",
@@ -333,8 +338,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:be"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -404,6 +408,9 @@
         "occur"
       ],
       "antonyms": [],
+      "confusables": [
+        "become"
+      ],
       "collocations": [
         "what happened",
         "happen again",
@@ -425,6 +432,7 @@
       "l1": {
         "tr": {
           "gloss": "olmak, meydana gelmek",
+          "gloss_short": "olmak",
           "alt": [
             "gerçekleşmek"
           ],
@@ -519,6 +527,10 @@
       "antonyms": [
         "stop"
       ],
+      "confusables": [
+        "make",
+        "allow"
+      ],
       "collocations": [
         "let me know",
         "let me help",
@@ -558,8 +570,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:make"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -756,6 +767,9 @@
       "antonyms": [
         "disagree"
       ],
+      "confusables": [
+        "join"
+      ],
       "collocations": [
         "I agree with you",
         "agree on a price",
@@ -781,6 +795,7 @@
       "l1": {
         "tr": {
           "gloss": "aynı fikirde olmak",
+          "gloss_short": "hemfikir olmak",
           "alt": [
             "katılmak",
             "kabul etmek"
@@ -878,6 +893,9 @@
       "antonyms": [
         "doubt"
       ],
+      "confusables": [
+        "trust"
+      ],
       "collocations": [
         "believe me",
         "I believe you",
@@ -926,9 +944,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:trust"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -997,6 +1013,9 @@
       "antonyms": [
         "remember"
       ],
+      "confusables": [
+        "leave"
+      ],
       "collocations": [
         "forget a name",
         "forget a password",
@@ -1041,8 +1060,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:leave"
+          "irregular"
         ],
         "sensitivity": 0
       },

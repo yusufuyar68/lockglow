@@ -163,6 +163,9 @@
       "antonyms": [
         "lend"
       ],
+      "confusables": [
+        "lend"
+      ],
       "collocations": [
         "borrow money",
         "borrow a book",
@@ -219,9 +222,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:lend"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -400,6 +401,9 @@
         "in truth"
       ],
       "antonyms": [],
+      "confusables": [
+        "currently"
+      ],
       "collocations": [
         "actually quite",
         "what actually happened",
@@ -421,6 +425,7 @@
       "l1": {
         "tr": {
           "gloss": "aslında, gerçekte",
+          "gloss_short": "aslında",
           "alt": [
             "doğrusu",
             "esasında"
@@ -539,6 +544,7 @@
       "l1": {
         "tr": {
           "gloss": "son teslim tarihi",
+          "gloss_short": "son tarih",
           "alt": [
             "son tarih",
             "teslim süresi"

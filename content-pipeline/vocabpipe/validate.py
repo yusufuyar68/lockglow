@@ -46,6 +46,7 @@ LIMITS = {
     "collocation": 28,
     "etymology": 200,
     "tr.gloss": 28,
+    "tr.gloss_short": 16,
     "tr.alt": 24,
     "tr.note": 220,
     "tr.mistake.wrong": 80,
@@ -59,6 +60,7 @@ COUNT_LIMITS = {
     "examples": (2, 3),
     "synonyms": (0, 5),
     "antonyms": (0, 3),
+    "confusables": (0, 3),
     "collocations": (0, 5),
     "word_family": (0, 4),
     "tr.alt": (0, 3),
@@ -241,6 +243,20 @@ def validate_card(card: Card, tax: Taxonomy | None = None, l1_langs: tuple[str, 
     if card.lemma.lower() in {s.lower() for s in card.synonyms}:
         c.err("SYN_SELF", "synonyms", "eş anlamlılar başlık kelimeyi içeriyor")
 
+    # --- Karışan kelimeler: uygulama bunları aynı gün yeni kelime olarak vermez ve eşi henüz
+    # bilinmiyorsa çeldirici yapmaz. Derleyici lemma'yı başka kartlara bağlar (card_confusable).
+    c.count("confusables", card.confusables, "confusables")
+    seen_conf: set[str] = set()
+    for i, s in enumerate(card.confusables):
+        c.length(f"confusables[{i}]", s, "lemma")
+        if not SPEAKABLE_LEMMA.fullmatch(s):
+            c.err("CONF_FORMAT", f"confusables[{i}]", f"İngilizce kelime ya da öbek olmalı: {s!r}")
+        if s.lower() == card.lemma.lower():
+            c.err("CONF_SELF", f"confusables[{i}]", "kart kendisiyle karışan kelime olamaz")
+        if s.lower() in seen_conf:
+            c.err("CONF_DUP", f"confusables[{i}]", f"tekrar eden kelime: {s!r}")
+        seen_conf.add(s.lower())
+
     # --- Etimoloji
     if card.etymology:
         c.length("etymology.text", card.etymology.text, "etymology")
@@ -257,6 +273,17 @@ def validate_card(card: Card, tax: Taxonomy | None = None, l1_langs: tuple[str, 
             continue
         p = f"l1.{lang}"
         c.length(f"{p}.gloss", layer.gloss, "tr.gloss")
+        # Widget anlamı "…" ile kesmez: tam anlam sığmazsa kısa biçimi gösterir (ogrenme_ilkeleri.md §2.1).
+        if layer.gloss_short is None:
+            if glen(layer.gloss) > LIMITS["tr.gloss_short"]:
+                c.warn("GLOSS_SHORT_MISSING", f"{p}.gloss_short",
+                       f"anlam {glen(layer.gloss)} grafem; widget için ≤{LIMITS['tr.gloss_short']} grafemlik kısa anlam yazın")
+        else:
+            c.length(f"{p}.gloss_short", layer.gloss_short, "tr.gloss_short")
+            if glen(layer.gloss) <= LIMITS["tr.gloss_short"]:
+                c.warn("GLOSS_SHORT_UNNEEDED", f"{p}.gloss_short", "anlam zaten kısa; gloss_short yalnızca uzun anlamda yazılır")
+            if re.search(r"(…|\.\.\.)$", layer.gloss_short.strip()):
+                c.err("GLOSS_SHORT_CUT", f"{p}.gloss_short", "kısa anlam kesilmiş olamaz; tam bir ifade yazın")
         c.count(f"{p}.alt", layer.alt, "tr.alt")
         for i, a in enumerate(layer.alt):
             c.length(f"{p}.alt[{i}]", a, "tr.alt")
@@ -269,7 +296,7 @@ def validate_card(card: Card, tax: Taxonomy | None = None, l1_langs: tuple[str, 
             c.length(f"{p}.mistakes[{i}].why", m.why, "tr.mistake.why")
             if m.wrong.strip() == m.right.strip():
                 c.err("MISTAKE_SAME", f"{p}.mistakes[{i}]", "yanlış ve doğru cümle aynı")
-        texts = [layer.gloss, *layer.alt, layer.note or "", layer.mnemonic or ""]
+        texts = [layer.gloss, layer.gloss_short or "", *layer.alt, layer.note or "", layer.mnemonic or ""]
         if any(not is_nfc(t) for t in texts):
             c.err("TR_NFC", p, "metin NFC normalize değil")
         if layer.equivalence == "false_friend" and layer.false_friend is None:
@@ -280,6 +307,8 @@ def validate_card(card: Card, tax: Taxonomy | None = None, l1_langs: tuple[str, 
             head = layer.gloss.split(",")[0].strip()
             if not re.search(r"(mek|mak)$", head):
                 c.warn("TR_VERB_FORM", f"{p}.gloss", f"fiil karşılığı -mek/-mak ile bitmeli: {head!r}")
+            if layer.gloss_short and not re.search(r"(mek|mak)$", layer.gloss_short.strip()):
+                c.warn("TR_VERB_FORM", f"{p}.gloss_short", f"fiil karşılığı -mek/-mak ile bitmeli: {layer.gloss_short!r}")
         if layer.gloss.strip().lower() == card.lemma.lower() and layer.equivalence != "cognate":
             c.warn("TR_GLOSS_SAME", f"{p}.gloss", "Türkçe karşılık İngilizce ile aynı (alıntı kelime değilse düzeltin)")
 
@@ -298,12 +327,10 @@ def validate_card(card: Card, tax: Taxonomy | None = None, l1_langs: tuple[str, 
     for ex in t.exams:
         if ex not in tax.exam_tags:
             c.err("EXAM_UNKNOWN", "tags.exams", f"bilinmeyen sınav etiketi {ex!r}")
+    # Hassasiyet 1 her kategoride olabilir: kişisel konu (ilişki, ayrılık, beden, alkol) ya da hafif
+    # kaba kelime. Uygulama bu kartları kilit ekranında ve orta widget'ta varsayılan olarak göstermez.
     if t.sensitivity == 2:
         c.err("SENSITIVE_2", "tags.sensitivity", "hassasiyet 2 içerik MVP'de yayınlanmaz")
-    elif t.sensitivity == 1:
-        cat = tax.categories.get(t.primary_topic)
-        if cat is None or not cat.allows_sensitivity_1:
-            c.err("SENSITIVE_1_CATEGORY", "tags.sensitivity", "hassasiyet 1 içerik yalnızca izin verilen kategorilerde olabilir")
     cat = tax.categories.get(t.primary_topic)
     if cat is not None:
         lo, hi = tax.level_rank[cat.level_min], tax.level_rank[cat.level_max]
