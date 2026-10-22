@@ -61,8 +61,9 @@ struct RectangularWordView: View {
                 colors: colors,
                 renderingMode: renderingMode
             )
-            if word.glossTR != nil {
-                WidgetMeaning(forms: WidgetGloss.forms(of: word), typeface: typeface, lines: lines, color: colors.ink2)
+            let forms = WidgetGloss.forms(of: word)
+            if !forms.isEmpty {
+                WidgetMeaning(forms: forms, typeface: typeface, lines: lines, color: colors.ink2)
                     // Room for the band line, which hangs below the word's frame.
                     .padding(.top, 5)
             }

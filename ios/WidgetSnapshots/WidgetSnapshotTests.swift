@@ -127,6 +127,7 @@ final class WidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(WidgetGloss.forms(of: "aynı fikirde olmamak", short: "katılmamak"), ["aynı fikirde olmamak", "katılmamak"])
         XCTAssertEqual(WidgetGloss.forms(of: "kahvaltı", short: "kahvaltı"), ["kahvaltı"])
         XCTAssertEqual(WidgetGloss.firstSense(of: "durmak; durdurmak"), "durmak")
+        XCTAssertEqual(WidgetGloss.firstSense(of: "x (a, b), c"), "x (a, b)")
         XCTAssertEqual(
             WidgetText.candidates(["aslında, gerçekte", "aslında"], lines: [1, 2]),
             [["aslında, gerçekte"], ["aslında"], ["aslında,", "gerçekte"]]

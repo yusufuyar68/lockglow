@@ -119,8 +119,9 @@ struct SmallWordView: View {
                 renderingMode: renderingMode
             )
             // Every card has a Turkish meaning; without one the word stands alone.
-            if word.glossTR != nil {
-                WidgetMeaning(forms: WidgetGloss.forms(of: word), typeface: typeface, lines: lines, color: colors.ink)
+            let forms = WidgetGloss.forms(of: word)
+            if !forms.isEmpty {
+                WidgetMeaning(forms: forms, typeface: typeface, lines: lines, color: colors.ink)
                     .padding(.top, headerGap)
             }
         }
@@ -160,7 +161,7 @@ struct MediumWordView: View {
                 column(shortens: false)
                 column()
                 column(meaning: .subheadline.weight(.bold))
-                wordRow
+                wordRow(lastResort: true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             // The button column's place (a row would take the width of the text); the column
@@ -185,9 +186,11 @@ struct MediumWordView: View {
         }
     }
 
-    private var wordRow: some View {
+    /// The word row; with `lastResort` the word is never passed over (`WidgetFittingWord`).
+    private func wordRow(lastResort: Bool = false) -> some View {
         WidgetWordRow(
             lemma: word.lemma,
+            lastResort: lastResort,
             level: word.level,
             ipa: word.ipaUS,
             colors: colors,
@@ -205,10 +208,10 @@ struct MediumWordView: View {
         nextChange: Bool = false
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            wordRow
+            wordRow()
             VStack(alignment: .leading, spacing: 3) {
-                if word.glossTR != nil {
-                    let forms = WidgetGloss.forms(of: word)
+                let forms = WidgetGloss.forms(of: word)
+                if !forms.isEmpty {
                     WidgetMeaning(
                         forms: shortens ? forms : Array(forms.prefix(1)),
                         typeface: typeface,
@@ -231,12 +234,14 @@ struct MediumWordView: View {
             .padding(.top, headerGap)
             Spacer(minLength: 0)
             if nextChange, let next = entry.nextChange {
-                // "Yeni kelime: 09:00": no Turkish suffix after the time (README point 13).
-                Text("Yeni kelime: \(WidgetTime.clock(next))")
-                    .font(.caption2.weight(.medium))
-                    .foregroundStyle(colors.ink2)
-                    .lineLimit(1)
-                    .padding(.top, 3)
+                // "Yeni kelime: 09:00": no Turkish suffix after the time (README point 13). Whole
+                // or not at all, like the other lines.
+                WidgetFittingText(
+                    candidates: [["Yeni kelime: \(WidgetTime.clock(next))"]],
+                    typeface: .caption2.weight(.medium),
+                    color: colors.ink2
+                )
+                .padding(.top, 3)
             }
         }
     }
@@ -316,14 +321,24 @@ struct WidgetWordStep: Equatable {
     ]
     /// The rectangular Lock Screen widget: 17, then 15 pt on one line.
     static let lockScreen = [WidgetWordStep(size: 17), WidgetWordStep(size: 15)]
+    /// The medium widget: 20, 17, 15 pt on one line, then a phrase on two lines at 17 or 15 pt;
+    /// at large text sizes two unscaled 15 pt lines.
+    static let mediumWidget = [
+        WidgetWordStep(size: 20),
+        WidgetWordStep(size: 17),
+        WidgetWordStep(size: 15),
+        WidgetWordStep(size: 17, lines: 2),
+        WidgetWordStep(size: 15, lines: 2),
+        WidgetWordStep(size: 15, lines: 2, scales: false),
+    ]
 }
 
 /// The headword at the first of its size steps that fits the width whole, each line with its own
 /// band (the band is drawn for one line of text); no hyphen, no "…". A word that fits no step
 /// makes the variant around it too tall to be chosen (`WidgetFit.reject`); with `lastResort` it
-/// is never passed over and, after the steps, shrinks to at most 85 % of the last one (only
-/// "misunderstanding" at 15 pt on an SE needs this). VoiceOver reads the whole word once, with an
-/// English voice.
+/// is never passed over and, after the steps, shrinks to at most 75 % of the last one (11.25 pt,
+/// above Apple's 11 pt floor; only "misunderstanding" at 15 pt on an SE needs this). VoiceOver
+/// reads the whole word once, with an English voice.
 struct WidgetFittingWord: View {
     let lemma: String
     let steps: [WidgetWordStep]
@@ -358,7 +373,7 @@ struct WidgetFittingWord: View {
             lines(slots[4])
             lines(slots[5])
             if lastResort {
-                lines(slots[5], minimumScale: 0.85)
+                lines(slots[5], minimumScale: 0.75)
             } else {
                 WidgetFit.reject
             }
@@ -378,19 +393,22 @@ struct WidgetFittingWord: View {
                     renderingMode: renderingMode,
                     minimumScale: minimumScale
                 )
-                // VoiceOver reads the whole word once, on the first line.
+                // VoiceOver reads the whole word once, on the first line, with an English voice.
                 .accessibilityLabel(Text(verbatim: lemma))
                 .accessibilityHidden(index > 0)
+                .widgetEnglishVoice()
             }
         }
     }
 }
 
-/// The medium widget's word row: the word on one line, shrinking as far as it must (to 60 %;
-/// "Could you tell me the way to" needs about 75 %), the pronunciation when the row leaves room
-/// for it, and the level code.
+/// The medium widget's word row: the word at the first of its size steps that fits whole beside
+/// the level code (`WidgetWordStep.mediumWidget`: 20, 17, 15 pt, a phrase also on two lines), the
+/// pronunciation when the row leaves room for it, and the level code. A word that fits no step
+/// makes the variant around it too tall to be chosen, unless `lastResort`.
 struct WidgetWordRow: View {
     let lemma: String
+    var lastResort = false
     /// The level code ("A2"), nil to leave it out.
     var level: String? = nil
     /// The US pronunciation, shown after the word when the rest of the row leaves room for it.
@@ -401,9 +419,16 @@ struct WidgetWordRow: View {
 
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 6) {
-            // Only the word shrinks; the level and the spacing keep their size.
-            WidgetHeadword(lemma: lemma, color: colors.ink, renderingMode: renderingMode)
-                .layoutPriority(1)
+            // The word takes the width the level and the spacing leave; the pronunciation takes
+            // what the word leaves.
+            WidgetFittingWord(
+                lemma: lemma,
+                steps: WidgetWordStep.mediumWidget,
+                lastResort: lastResort,
+                colors: colors,
+                renderingMode: renderingMode
+            )
+            .layoutPriority(1)
             if let ipa {
                 WidgetIPA(ipa: ipa, color: colors.ink2)
             } else if level != nil {
@@ -416,19 +441,19 @@ struct WidgetWordRow: View {
     }
 }
 
-/// The English word with the phosphor band (README point 4): serif bold, one line, shrinking to
-/// `minimumScale` of its size before it would truncate. The band follows the rendering mode
-/// (yellow highlighter by day, a yellow line under the letters at night, a thin line in the
-/// word's color when tinted or on the Lock Screen) and, like the word, is accentable.
+/// One line of the English word with the phosphor band (README point 4): serif bold, one line.
+/// It shrinks only in the last resort (`minimumScale` below 1); a size step is chosen only when
+/// the word fits whole. The band follows the rendering mode (yellow highlighter by day, a yellow
+/// line under the letters at night, a thin line in the word's color when tinted or on the Lock
+/// Screen) and, like the word, is accentable.
 struct WidgetHeadword: View {
     let lemma: String
-    /// 20 pt on the medium widget; the size steps pass their own (`WidgetFittingWord`).
+    /// The size step's font (`WidgetFittingWord`).
     var typeface: Font = Theme.Fonts.widgetWord
     let color: AnyShapeStyle
     /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
     var renderingMode: WidgetRenderingMode? = nil
-    /// 1 for the size steps, which are chosen only when the word fits whole.
-    var minimumScale: CGFloat = 0.6
+    var minimumScale: CGFloat = 1
 
     var body: some View {
         Text(lemma)
@@ -616,15 +641,29 @@ enum WidgetGloss {
         return result
     }
 
-    /// The meaning up to its first comma or semicolon; the whole meaning when it has none.
+    /// The meaning up to its first comma or semicolon outside brackets ("x (a, b), c" → "x (a,
+    /// b)"); the whole meaning when it has none.
     static func firstSense(of gloss: String) -> String {
-        let first = gloss.split(whereSeparator: { $0 == "," || $0 == ";" }).first.map(String.init) ?? gloss
-        let trimmed = first.trimmingCharacters(in: .whitespaces)
+        var depth = 0
+        var end = gloss.endIndex
+        scan: for index in gloss.indices {
+            let character = gloss[index]
+            if character == "(" {
+                depth += 1
+            } else if character == ")" {
+                depth = max(depth - 1, 0)
+            } else if depth == 0 && (character == "," || character == ";") {
+                end = index
+                break scan
+            }
+        }
+        let trimmed = gloss[..<end].trimmingCharacters(in: .whitespaces)
         return trimmed.isEmpty ? gloss : trimmed
     }
 
-    /// The card's short form (`l1.tr.gloss_short`). The content pipeline is getting this field
-    /// and `WidgetWord` does not carry it yet: return it here once it does.
+    /// The card's short form (`l1.tr.gloss_short`). The content change that adds it (branch
+    /// is3-icerik) names it `WidgetWord.glossShortTR`; once both are merged, return
+    /// `word.glossShortTR` here.
     static func short(of word: WidgetWord) -> String? {
         return nil
     }
