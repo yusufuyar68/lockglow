@@ -39,6 +39,9 @@ struct ReviewView: View {
     /// New words studied in this tab today, for the done screen: "2026-10-22|12,45,78". AppModel
     /// only counts them (`newWordsStudiedToday`); the words themselves are kept here.
     @AppStorage("lockglow.reviewNewWordsToday") private var newWordsTodayLog = ""
+    /// Where VoiceOver goes when the card turns, the next card comes or the round ends: the
+    /// pressed button is gone by then, and the focus would be left nowhere (audit V1).
+    @AccessibilityFocusState private var focus: ReviewFocus?
 
     private var isInRound: Bool {
         return session != nil
@@ -107,17 +110,27 @@ struct ReviewView: View {
     }
 
     /// Only what the round needs: "Kart 3 / 10", the progress bar and "Bitir" (glass: the control
-    /// layer, rule 6) on one line. At accessibility sizes the bar goes under the line.
+    /// layer, rule 6) on one line. At accessibility sizes the bar goes under the line, and when
+    /// "Kart 10 / 20" and "Bitir" do not fit side by side the count goes under "Bitir" rather
+    /// than being cut (audit D3).
     @ViewBuilder
     private func roundHeader(session: ReviewSession) -> some View {
         let total = session.words.count
         if dynamicTypeSize.isAccessibilitySize {
             VStack(spacing: 10) {
-                HStack(spacing: 10) {
-                    cardCounter(total: total)
-                        .minimumScaleFactor(0.7)
-                    Spacer(minLength: 0)
-                    finishButton
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 10) {
+                        cardCounter(total: total)
+                            .fixedSize()
+                        Spacer(minLength: 0)
+                        finishButton
+                    }
+                    VStack(alignment: .leading, spacing: 8) {
+                        finishButton
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        cardCounter(total: total)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                 }
                 RoundProgressBar(done: index, total: total)
             }
@@ -134,12 +147,15 @@ struct ReviewView: View {
         }
     }
 
+    /// The round's heading for VoiceOver (audit V10): "Kart 3, toplam 10", not "3 bölü 10".
     private func cardCounter(total: Int) -> some View {
         Text("Kart \(index + 1) / \(total)")
             .font(.subheadline.weight(.semibold))
             .monospacedDigit()
             .foregroundStyle(Theme.ink2)
-            .lineLimit(1)
+            .accessibilityLabel("Kart \(index + 1), toplam \(total)")
+            .accessibilityAddTraits(.isHeader)
+            .accessibilityFocused($focus, equals: .counter)
     }
 
     private var finishButton: some View {
@@ -200,7 +216,7 @@ struct ReviewView: View {
                             // VoiceOver uses "Anlamı göster" in the bar; the card is not a button
                             // so that "Dinle" and "İpucu" inside it stay separate controls.
                             .onTapGesture {
-                                reveal()
+                                reveal(word)
                             }
                     }
                 }
@@ -258,7 +274,8 @@ struct ReviewView: View {
     /// example sentence (English only: its Turkish would give the answer away).
     private func cardFront(word: WidgetWord) -> some View {
         VStack(spacing: 14) {
-            WordHeadline(lemma: word.lemma, size: 46, maxSize: 60)
+            WordHeadline(lemma: word.lemma, size: 46, maxSize: 60, alignment: .center)
+                .accessibilityFocused($focus, equals: .word)
             CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
             VStack(spacing: 10) {
                 Text("Anlamını hatırlamaya çalış.")
@@ -305,7 +322,7 @@ struct ReviewView: View {
     /// mistake.
     private func cardBack(word: WidgetWord, detail: CardDetail?) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            WordHeadline(lemma: word.lemma, size: 40, maxSize: 56)
+            WordHeadline(lemma: word.lemma, size: 40, maxSize: 56, alignment: .leading)
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: 8) {
                     metaItems(word)
@@ -323,6 +340,8 @@ struct ReviewView: View {
                         .meaningStyle()
                         .fixedSize(horizontal: false, vertical: true)
                         .accessibilityLabel("Türkçesi: " + gloss)
+                        // The card turned: VoiceOver reads the answer first.
+                        .accessibilityFocused($focus, equals: .meaning)
                     if let alternatives = detail?.glossAlternatives, !alternatives.isEmpty {
                         Text(verbatim: "Ayrıca: " + alternatives.joined(separator: ", "))
                             .font(.subheadline)
@@ -336,6 +355,8 @@ struct ReviewView: View {
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
                 .englishVoice()
+                // A card without a Turkish meaning: the definition is the answer.
+                .accessibilityFocused($focus, equals: .definition)
             exampleBlock(word: word, translation: detail?.examples.first?.tr)
             if let mistake = detail?.mistakes.first {
                 MistakeBox(mistake: mistake)
@@ -372,34 +393,35 @@ struct ReviewView: View {
         LevelBadge(code: word.level)
     }
 
-    /// Mockup `.exblock`: "Örnek" with a speaker, the sentence with the learned word marked
-    /// (rule 1), its Turkish.
+    /// The example as in the feed (`ExampleRow`): the sentence with the learned word marked
+    /// (rule 1) and its Turkish, the speaker beside it; no "Örnek" label (less to read). At
+    /// accessibility sizes the speaker goes under the translation and the sentence keeps the width.
     private func exampleBlock(word: WidgetWord, translation: String?) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 8) {
-                Text("Örnek")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Theme.ink2)
-                    .accessibilityAddTraits(.isHeader)
-                Spacer(minLength: 0)
-                ReviewSpeakerButton(text: word.exampleEN, accessibilityName: "Cümleyi dinle")
-                    // The circle lines up with the card's text edge; the target overhangs.
-                    .padding(.trailing, -5)
-            }
-            // The 44 pt target reaches past the row instead of making it taller.
-            .padding(.vertical, -6)
-            Text(ExampleMark.attributed(word.exampleEN, lemma: word.lemma, colorScheme: colorScheme))
-                .exampleStyle()
-                .lineSpacing(3)
-                .fixedSize(horizontal: false, vertical: true)
-                .englishVoice()
-            if let translation = translation {
-                Text(verbatim: translation)
-                    .exampleTranslationStyle()
+        let isLarge = dynamicTypeSize.isAccessibilitySize
+        let rowLayout = isLarge
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+            : AnyLayout(HStackLayout(alignment: .top, spacing: 4))
+        return rowLayout {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(ExampleMark.attributed(word.exampleEN, lemma: word.lemma, colorScheme: colorScheme))
+                    .exampleStyle()
+                    .lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)
+                    .englishVoice()
+                if let translation = translation {
+                    Text(verbatim: translation)
+                        .exampleTranslationStyle()
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            ReviewSpeakerButton(text: word.exampleEN, accessibilityName: "Cümleyi dinle")
+                // The circle lines up with the card's text edge; the 44 pt target overhangs
+                // instead of making the row taller.
+                .padding(.vertical, -7)
+                .padding(isLarge ? .leading : .trailing, -5)
         }
-        .padding(.top, 10)
+        .padding(.top, 12)
         .overlay(alignment: .top) {
             Rectangle()
                 .fill(Theme.line)
@@ -416,7 +438,7 @@ struct ReviewView: View {
             gradeAnswers(word: word, column: false)
         } else {
             Button("Anlamı göster") {
-                reveal()
+                reveal(word)
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
         }
@@ -491,8 +513,9 @@ struct ReviewView: View {
         }
         .buttonStyle(GradeButtonStyle(isDefault: isDefault))
         .accessibilityLabel(info.title)
-        // The time is hidden at accessibility sizes; VoiceOver always hears it.
-        .accessibilityHint(when.map { "Kelime \($0) yeniden gelir" } ?? "")
+        // A value, not a hint: hints come late and many people turn them off (audit V9).
+        // "Bildim, yarın yeniden gelir, düğme".
+        .accessibilityValue(when.map { "\($0) yeniden gelir" } ?? "")
     }
 
     // MARK: Quiz
@@ -535,11 +558,23 @@ struct ReviewView: View {
 
     // MARK: Round flow
 
-    /// Turns the card: a short fade (none with Reduce Motion), no flip and no haptic.
-    private func reveal() {
+    /// Turns the card: a short fade (none with Reduce Motion), no flip and no haptic. VoiceOver
+    /// goes to the Turkish meaning.
+    private func reveal(_ word: WidgetWord) {
         cardHasMore = false
         withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
             isRevealed = true
+        }
+        moveFocus(to: word.glossTR == nil ? .definition : .meaning)
+    }
+
+    /// Moves VoiceOver once the new view is on screen: in the update that creates it, the target
+    /// does not exist yet. Without VoiceOver nothing happens.
+    private func moveFocus(to target: ReviewFocus) {
+        // Cleared first: setting the value it already holds would not move VoiceOver again.
+        focus = nil
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            focus = target
         }
     }
 
@@ -557,9 +592,19 @@ struct ReviewView: View {
         cardHasMore = false
         if let session = session, index + 1 < session.words.count {
             index += 1
+            focusCard(at: index, in: session)
         } else {
             finishRound()
         }
+    }
+
+    /// A flashcard starts at its word; a quiz card at the round's heading.
+    private func focusCard(at position: Int, in session: ReviewSession) {
+        guard session.words.indices.contains(position) else {
+            return
+        }
+        let detail = model.detail(for: session.words[position])
+        moveFocus(to: ReviewView.quiz(in: session, detail: detail) != nil ? .counter : .word)
     }
 
     private func startRound(_ next: ReviewSession) {
@@ -570,6 +615,8 @@ struct ReviewView: View {
         cardHasMore = false
         answers = []
         summary = nil
+        // "Başla" is gone with the start screen.
+        focusCard(at: 0, in: next)
     }
 
     /// Ends the round (all cards done, or "Bitir"): the widget queue is rebuilt from the new
@@ -583,6 +630,9 @@ struct ReviewView: View {
         cardHasMore = false
         answers = []
         model.finishReviewSession()
+        // "Bitir" is gone with the round: the summary, or the start screen when nothing was
+        // answered.
+        moveFocus(to: summary != nil ? .summary : .start)
     }
 
     // MARK: Summary
@@ -600,6 +650,7 @@ struct ReviewView: View {
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 4)
+                    .accessibilityFocused($focus, equals: .summary)
                 if let next = next {
                     NoteRow(symbol: "clock", text: "Sıradaki tekrar: " + ReviewView.dayAndTime(next, now: now))
                         .padding(.horizontal, 4)
@@ -639,6 +690,7 @@ struct ReviewView: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             Button("Tamam") {
                 summary = nil
+                moveFocus(to: .start)
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
             .padding(.horizontal, 16)
@@ -706,6 +758,17 @@ struct ReviewView: View {
                 CountBadge(count: offer.totalCount)
             } else {
                 GoalRing(done: model.newWordsStudiedToday(), goal: model.dailyNewWords)
+                // The ring's text stops growing at its largest size: at accessibility sizes the
+                // goal is also said in plain text (audit D7).
+                if dynamicTypeSize.isAccessibilitySize {
+                    Text(verbatim: "Bugünkü hedef: \(model.newWordsStudiedToday()) / \(model.dailyNewWords) yeni kelime")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Theme.ink2)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        // The ring already says it to VoiceOver.
+                        .accessibilityHidden(true)
+                }
             }
             Text(isDue
                  ? "\(offer.totalCount) kelime tekrar bekliyor"
@@ -715,6 +778,7 @@ struct ReviewView: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityAddTraits(.isHeader)
+                .accessibilityFocused($focus, equals: .start)
             Text(isDue
                  ? "Önce öğrendiğin kelimeleri pekiştirelim."
                  : "Kelimeye bak, anlamını hatırlamaya çalış. Sonra ne kadar bildiğini seç.")
@@ -755,7 +819,8 @@ struct ReviewView: View {
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .accessibilityAddTraits(.isHeader)
-                Text("Şimdilik tekrar edecek kelime yok.")
+                    .accessibilityFocused($focus, equals: .start)
+                Text("Tekrar edecek kelime kalmadı. Şimdi kapatabilirsin.")
                     .font(.callout)
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.center)
@@ -961,6 +1026,22 @@ struct ReviewView: View {
 
 // MARK: - Pieces
 
+/// Where VoiceOver is sent in a round (`ReviewView.focus`).
+private enum ReviewFocus: Hashable {
+    /// "Kart 3, toplam 10": the start of a quiz card.
+    case counter
+    /// The English word on a flashcard's front.
+    case word
+    /// The Turkish meaning on the back.
+    case meaning
+    /// The English definition on the back of a card without a Turkish meaning.
+    case definition
+    /// The first line of the round summary.
+    case summary
+    /// The heading of the start or done screen, after "Tamam" or an empty "Bitir".
+    case start
+}
+
 /// One answer of a round, for the summary.
 private struct RoundAnswer {
     let word: WidgetWord
@@ -995,26 +1076,59 @@ private struct GradeInfo {
 }
 
 /// The English word with the phosphor band (rule 1): one line at `size`; a long phrase that does
-/// not fit drops to a smaller size first, then shrinks with `englishWordStyle`'s scale factor.
-/// VoiceOver reads it with an English voice.
+/// not fit drops to a smaller size first, then breaks into two balanced lines, each on its own
+/// band, as in the feed and the dictionary (audit D1: "Could you tell me the way to" must not end
+/// in "…"). A single long word shrinks with `englishWordStyle`'s scale factor instead. VoiceOver
+/// reads it once, as a heading, with an English voice.
 private struct WordHeadline: View {
     let lemma: String
     let size: CGFloat
     let maxSize: CGFloat
+    let alignment: HorizontalAlignment
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
-            word(size: size, maxSize: maxSize)
-            word(size: size * 0.7, maxSize: maxSize * 0.7)
+            line(lemma, size: size, maxSize: maxSize)
+            line(lemma, size: size * 0.7, maxSize: maxSize * 0.7)
+            if let lines = WordHeadline.balancedLines(lemma) {
+                VStack(alignment: alignment, spacing: 10) {
+                    line(lines.first, size: size * 0.75, maxSize: maxSize * 0.75)
+                    line(lines.second, size: size * 0.75, maxSize: maxSize * 0.75)
+                }
+            }
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: lemma))
         .accessibilityAddTraits(.isHeader)
         .englishVoice()
     }
 
-    private func word(size: CGFloat, maxSize: CGFloat) -> some View {
-        Text(verbatim: lemma)
+    private func line(_ text: String, size: CGFloat, maxSize: CGFloat) -> some View {
+        Text(verbatim: text)
             .englishWordStyle(size: size, maxSize: maxSize)
             .phosphorBand()
+    }
+
+    /// `phrase` cut at the space that makes the longer line shortest; nil for a single word
+    /// (same rule as the feed's `WordCardHeadline`).
+    static func balancedLines(_ phrase: String) -> (first: String, second: String)? {
+        let words = phrase.split(separator: " ").map(String.init)
+        guard words.count > 1 else {
+            return nil
+        }
+        var best: (first: String, second: String)?
+        var bestLength = Int.max
+        for cut in 1..<words.count {
+            let first = words[..<cut].joined(separator: " ")
+            let second = words[cut...].joined(separator: " ")
+            let longer = max(first.count, second.count)
+            // On a tie the later cut: a longer first line reads more naturally.
+            if longer <= bestLength {
+                bestLength = longer
+                best = (first, second)
+            }
+        }
+        return best
     }
 }
 
@@ -1048,17 +1162,25 @@ private struct MoreBelowCue: View {
     }
 }
 
-/// Mockup `.prog`: a 6 pt `surface3` track filled with `tint` (ink, never yellow).
+/// Mockup `.prog`: a 6 pt `surface3` track filled with `tint` (ink, never yellow). With Increase
+/// Contrast the empty track gets an edge (audit K2). Hidden from VoiceOver: the heading "Kart 3,
+/// toplam 10" says where the round is, and a second count one card behind only confuses (V12).
 private struct RoundProgressBar: View {
     let done: Int
     let total: Int
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorSchemeContrast) private var contrast
 
     var body: some View {
         let fraction = total > 0 ? min(1, max(0, CGFloat(done) / CGFloat(total))) : 0
         Capsule()
             .fill(Theme.surface3)
             .frame(height: 6)
+            .overlay {
+                if contrast == .increased {
+                    Capsule().strokeBorder(Theme.lineStrong, lineWidth: 1)
+                }
+            }
             .overlay(alignment: .leading) {
                 GeometryReader { proxy in
                     Capsule()
@@ -1067,43 +1189,48 @@ private struct RoundProgressBar: View {
                 }
             }
             .animation(reduceMotion ? nil : .easeOut(duration: 0.3), value: fraction)
-            .accessibilityElement()
-            .accessibilityLabel("Tur ilerlemesi")
-            .accessibilityValue("\(done) / \(total)")
+            .accessibilityHidden(true)
     }
 }
 
 /// The text of an answer button (mockup `.grade`): icon, grade and when the word comes back. The
 /// time is legible but secondary: regular weight, footnote, `ink2` (and a softer `onPrimary` on
-/// the filled answer). The icon goes at the largest text sizes, the time at accessibility sizes
-/// (it stays in the VoiceOver hint).
+/// the filled answer), and it stays at every text size (audit D2). The icon goes as soon as
+/// title and time no longer fit beside it, so "Bilemedim" never breaks mid-word (audit D8).
 private struct GradeLabel: View {
     let info: GradeInfo
     let when: String?
     let isDefault: Bool
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(spacing: 8) {
-            if dynamicTypeSize < .xxxLarge {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) {
                 Image(systemName: info.symbol)
                     .font(.body.weight(.medium))
                     .frame(width: 22)
                     .foregroundStyle(secondary)
                     .accessibilityHidden(true)
+                texts
             }
-            VStack(alignment: .leading, spacing: 1) {
-                Text(verbatim: info.title)
-                    .font(.body.weight(.semibold))
-                if let when = when, !dynamicTypeSize.isAccessibilitySize {
-                    Text(verbatim: when)
-                        .font(.footnote)
-                        .monospacedDigit()
-                        .foregroundStyle(secondary)
-                }
-            }
-            .multilineTextAlignment(.leading)
+            texts
         }
+    }
+
+    private var texts: some View {
+        VStack(alignment: .leading, spacing: 1) {
+            Text(verbatim: info.title)
+                .font(.body.weight(.semibold))
+                // Even without the icon: shrink a little rather than break "Bilemedim".
+                .lineLimit(1)
+                .minimumScaleFactor(0.85)
+            if let when = when {
+                Text(verbatim: when)
+                    .font(.footnote)
+                    .monospacedDigit()
+                    .foregroundStyle(secondary)
+            }
+        }
+        .multilineTextAlignment(.leading)
     }
 
     private var secondary: Color {
@@ -1127,6 +1254,8 @@ private struct GradeButtonBody: View {
     let isDefault: Bool
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
         let shape = Capsule()
@@ -1142,6 +1271,13 @@ private struct GradeButtonBody: View {
                 shape
                     .fill(isDefault ? Theme.primary : Theme.surface2)
                     .shadow(color: isDefault && colorScheme == .dark ? Theme.primaryGlow : .clear, radius: 10)
+            }
+            // `surface2` barely stands out from the page; with Increase Contrast or Button Shapes
+            // the capsule gets an edge (audit K1).
+            .overlay {
+                if !isDefault && (contrast == .increased || showsButtonShapes) {
+                    shape.strokeBorder(Theme.lineStrong, lineWidth: 1.5)
+                }
             }
             .contentShape(shape)
             .opacity(configuration.isPressed ? 0.85 : 1)
@@ -1332,7 +1468,9 @@ private struct SummaryRow: View {
                 .font(.footnote)
                 .foregroundStyle(Theme.ink2)
             }
-            .fixedSize(horizontal: true, vertical: false)
+            // Stacked at accessibility sizes, "10 dakika sonra" may wrap instead of overflowing
+            // the card (audit D6).
+            .fixedSize(horizontal: !isLarge, vertical: false)
         }
         .padding(.vertical, 10)
         .accessibilityElement(children: .combine)
