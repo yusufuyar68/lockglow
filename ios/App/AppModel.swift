@@ -672,7 +672,7 @@ final class AppModel: ObservableObject {
         AppPreferences.resetNewWordsStudied()
         AppPreferences.resetReviewsDone()
         LocalMetricsRecorder.shared.reset()
-        FeedEncounterStore.clearAll()
+        AppPreferences.clearFeedFirstSeen()
         refreshWidgetPlan()
     }
 

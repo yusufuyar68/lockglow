@@ -325,10 +325,10 @@ private struct FeedKnownNotice {
 /// (`reviews`, `exposures`). The feed is not in `WordProgress`, so the first day each card was on
 /// screen is kept here: UserDefaults `lockglow.feedFirstSeen`, word id → the start of that day
 /// (seconds since 1970). A card first seen today stays a first encounter all day, so it never
-/// changes while the user looks at it. "İlerlemeyi sıfırla" clears it (`clearAll`).
+/// changes while the user looks at it. "İlerlemeyi sıfırla" clears it
+/// (`AppPreferences.clearFeedFirstSeen`).
 final class FeedEncounterStore: ObservableObject {
-    static let defaultsKey = "lockglow.feedFirstSeen"
-    private static let clearedNotification = Notification.Name("lockglow.feedFirstSeen.cleared")
+    static let defaultsKey = AppPreferences.feedFirstSeenKey
 
     private let defaults: UserDefaults
     private var firstSeen: [Int: Date]
@@ -345,7 +345,7 @@ final class FeedEncounterStore: ObservableObject {
         }
         firstSeen = days
         clearObserver = NotificationCenter.default.addObserver(
-            forName: FeedEncounterStore.clearedNotification,
+            forName: AppPreferences.feedFirstSeenCleared,
             object: nil,
             queue: .main
         ) { [weak self] _ in
@@ -358,12 +358,6 @@ final class FeedEncounterStore: ObservableObject {
         if let observer = clearObserver {
             NotificationCenter.default.removeObserver(observer)
         }
-    }
-
-    /// "İlerlemeyi sıfırla": every card is a first encounter again, also in a feed on screen.
-    static func clearAll(defaults: UserDefaults = .standard) {
-        defaults.removeObject(forKey: defaultsKey)
-        NotificationCenter.default.post(name: clearedNotification, object: nil)
     }
 
     /// The card is on screen at `now`; only its first day is kept.

@@ -183,6 +183,20 @@ enum AppPreferences {
         UserDefaults.standard.removeObject(forKey: knownKey)
     }
 
+    // MARK: Feed encounters
+
+    /// The feed's first encounters (`FeedEncounterStore` in FeedView.swift): word id → the first
+    /// day the card was on screen.
+    static let feedFirstSeenKey = "lockglow.feedFirstSeen"
+    /// Posted by `clearFeedFirstSeen`: a feed on screen forgets its first encounters too.
+    static let feedFirstSeenCleared = Notification.Name("lockglow.feedFirstSeen.cleared")
+
+    /// "İlerlemeyi sıfırla": every feed card is a first encounter again.
+    static func clearFeedFirstSeen() {
+        UserDefaults.standard.removeObject(forKey: feedFirstSeenKey)
+        NotificationCenter.default.post(name: feedFirstSeenCleared, object: nil)
+    }
+
     // MARK: New words studied today
 
     /// How many never-reviewed words were reviewed today (local calendar day). It limits how many
