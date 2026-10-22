@@ -1,5 +1,14 @@
-# Manual: runs the screenshot UI test on a small and a large iPhone simulator and uploads the
-# screenshots (artifact "screenshots"). Start it with: gh workflow run screenshots.yml
+# Manual: runs the screenshot UI tests on iPhone simulators and uploads the screenshots (artifact
+# "screenshots"). Start it with:
+#   gh workflow run screenshots.yml -R yusufuyar68/lockglow --ref <branch> -f runner=macos-15-intel
+# Passes (input "gecisler", separated by spaces):
+#   se        iPhone SE, light: the small-screen layout check
+#   pro       iPhone NN Pro (6.3", 1206 x 2622), light: the App Store's required size
+#   promax    iPhone NN Pro Max (6.9", 1320 x 2868), light
+#   se-koyu, pro-koyu, promax-koyu   the same in dark mode
+# Each pass starts from an erased simulator with the status bar at 9:41, full Wi-Fi and cellular
+# bars and a full battery (no "Carrier"). Screenshots land in shots/<pass>/ (raw xcresult export
+# with manifest.json) and named/<pass>/<attachment name>.png.
 name: screenshots
 
 on:
@@ -12,12 +21,23 @@ on:
         type: choice
         default: macos-15
         options: [macos-15, macos-15-intel, macos-26]
+      gecisler:
+        description: "Geçişler (boşlukla): se, pro, promax, se-koyu, pro-koyu, promax-koyu"
+        type: string
+        default: se pro pro-koyu
+      quiz_gecisi:
+        # The gap-fill quiz comes 10 minutes after a missed word: one pass waits for it.
+        description: "Quiz için ~8 dk bekleyen geçiş (boş: hiçbiri)"
+        type: string
+        default: pro
 
 jobs:
   screens:
     name: Ekran görüntüleri (simülatör)
     runs-on: ${{ inputs.runner || 'macos-15' }}
-    timeout-minutes: 70
+    # Two light passes took 39 min on the Intel runner (22 Oct); three passes with the new screens
+    # and the quiz wait (~7 min) need more.
+    timeout-minutes: 130
     steps:
       - uses: actions/checkout@v4
       - name: En yeni Xcode'u seç
@@ -30,48 +50,126 @@ jobs:
       - name: Projeyi üret
         working-directory: ios
         run: xcodegen generate
-      - name: Simülatörleri seç (küçük + büyük iPhone)
+      - name: Simülatörleri seç (SE, Pro, Pro Max)
         id: sims
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json, re, subprocess
           data = json.loads(subprocess.check_output(["xcrun", "simctl", "list", "devices", "available", "-j"]))
-          devices = [(rt, d) for rt, ds in data["devices"].items() if "iOS" in rt for d in ds]
-          devices.sort(key=lambda p: [int(n) for n in re.findall(r"\d+", p[0].split("iOS")[-1])])
-          def pick(test):
-              found = [d for _, d in devices if test(d["name"])]
+          def version(text):
+              return [int(n) for n in re.findall(r"\d+", text)]
+          devices = [(version(rt.split("iOS")[-1]), version(d["name"]), d)
+                     for rt, ds in data["devices"].items() if "iOS" in rt for d in ds]
+          # Newest runtime first, then the newest model of that runtime.
+          devices.sort(key=lambda p: (p[0], p[1]))
+          def pick(pattern):
+              found = [d for _, _, d in devices if re.fullmatch(pattern, d["name"])]
               return found[-1]["udid"] if found else ""
-          print("small=" + pick(lambda n: n.startswith("iPhone SE")))
-          print("large=" + pick(lambda n: "Pro Max" in n))
+          print("se=" + pick(r"iPhone SE.*"))
+          print("pro=" + pick(r"iPhone \d+ Pro"))
+          print("promax=" + pick(r"iPhone \d+ Pro Max"))
           PY
           cat "$GITHUB_OUTPUT"
-      - name: UI testini çalıştır ve görüntüleri çıkar
+      - name: Testleri derle
         working-directory: ios
         env:
-          SMALL: ${{ steps.sims.outputs.small }}
-          LARGE: ${{ steps.sims.outputs.large }}
+          FIRST: ${{ steps.sims.outputs.se || steps.sims.outputs.pro }}
         run: |
-          mkdir -p out shots
-          run_on() {
-            name="$1"; udid="$2"
+          mkdir -p out
+          # Sign to run locally (simulator only; embeds the App Group entitlement). Fall back to unsigned.
+          xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$FIRST" \
+            -derivedDataPath build/dd \
+            CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
+            > out/build.log 2>&1 \
+          || { echo "signed build failed, retrying unsigned"
+               xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$FIRST" \
+                 -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > out/build.log 2>&1; } \
+          || { grep -E "error:" out/build.log | sort -u | head -50; tail -20 out/build.log; exit 1; }
+          grep -E "error:|warning:.*UITests" out/build.log | sort -u | head -50 || true
+          tail -3 out/build.log
+      - name: UI testlerini çalıştır ve görüntüleri çıkar
+        working-directory: ios
+        env:
+          GECISLER: ${{ inputs.gecisler || 'se pro pro-koyu' }}
+          QUIZ_PASS: ${{ inputs.quiz_gecisi }}
+          SIM_SE: ${{ steps.sims.outputs.se }}
+          SIM_PRO: ${{ steps.sims.outputs.pro }}
+          SIM_PROMAX: ${{ steps.sims.outputs.promax }}
+        run: |
+          mkdir -p out shots named
+          # 9:41 today in the runner's time zone, as ISO 8601: simctl formats an ISO time itself
+          # (a plain "9:41" is not shown on every simulator version).
+          TIME="$(python3 -c 'import datetime; print(datetime.datetime.now().astimezone().replace(hour=9, minute=41, second=0, microsecond=0).isoformat())')"
+          prepare() {
+            udid="$1"; appearance="$2"
+            xcrun simctl shutdown "$udid" 2>/dev/null || true
+            # A fresh simulator for every pass: the tests expect a new install (first card
+            # "breakfast", no progress, no own words).
+            xcrun simctl erase "$udid" || { echo "::warning::could not erase $udid"; return 1; }
+            xcrun simctl boot "$udid" || true
+            xcrun simctl bootstatus "$udid" -b > /dev/null || true
+            xcrun simctl ui "$udid" appearance "$appearance" || echo "could not set appearance $appearance"
+            xcrun simctl status_bar "$udid" override --time "$TIME" \
+              --dataNetwork wifi --wifiMode active --wifiBars 3 \
+              --cellularMode active --cellularBars 4 --operatorName '' \
+              --batteryState charged --batteryLevel 100 \
+              || echo "could not override the status bar"
+          }
+          run_pass() {
+            name="$1"
+            case "$name" in
+              se|se-koyu) udid="$SIM_SE" ;;
+              pro|pro-koyu) udid="$SIM_PRO" ;;
+              promax|promax-koyu) udid="$SIM_PROMAX" ;;
+              *) echo "unknown pass $name"; return 0 ;;
+            esac
             [ -n "$udid" ] || { echo "no simulator for $name"; return 0; }
-            # Sign to run locally (simulator only; embeds the App Group entitlement). Fall back to unsigned.
-            xcodebuild test -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$udid" \
-              -only-testing:LockglowUITests -only-testing:LockglowWidgetSnapshots -resultBundlePath "out/$name.xcresult" \
-              CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
-              > "out/$name.log" 2>&1 \
-            || { echo "signed run failed on $name, retrying unsigned"; rm -rf "out/$name.xcresult";
-                 xcodebuild test -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$udid" \
-                   -only-testing:LockglowUITests -only-testing:LockglowWidgetSnapshots -resultBundlePath "out/$name.xcresult" \
-                   CODE_SIGNING_ALLOWED=NO > "out/$name.log" 2>&1 || echo "test run failed on $name"; }
-            grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" "out/$name.log" | tail -20 || true
+            case "$name" in *-koyu) appearance=dark ;; *) appearance=light ;; esac
+            # The widget renders do not depend on the simulator: once per run is enough.
+            only="-only-testing:LockglowUITests"
+            if [ -z "$WIDGETS_DONE" ]; then
+              only="$only -only-testing:LockglowWidgetSnapshots"; WIDGETS_DONE=1
+            fi
+            # xcodebuild hands TEST_RUNNER_* variables to the tests without the prefix
+            # (testCaptureWaitedQuiz reads LOCKGLOW_QUIZ_WAIT).
+            if [ "$name" = "$QUIZ_PASS" ]; then
+              export TEST_RUNNER_LOCKGLOW_QUIZ_WAIT=1
+            else
+              unset TEST_RUNNER_LOCKGLOW_QUIZ_WAIT
+            fi
+            echo "::group::$name ($appearance, $udid)"
+            prepare "$udid" "$appearance" || { echo "skipping $name"; echo "::endgroup::"; return 0; }
+            # shellcheck disable=SC2086
+            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+              -destination "id=$udid" -derivedDataPath build/dd $only \
+              -resultBundlePath "out/$name.xcresult" > "out/$name.log" 2>&1 \
+              || echo "test run failed on $name"
+            grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" "out/$name.log" | tail -40 || true
             if [ -d "out/$name.xcresult" ]; then
               xcrun xcresulttool export attachments --path "out/$name.xcresult" --output-path "shots/$name" || true
             fi
+            xcrun simctl status_bar "$udid" clear || true
+            xcrun simctl shutdown "$udid" || true
+            echo "::endgroup::"
           }
-          run_on small "$SMALL"
-          run_on large "$LARGE"
-          find shots -type f | head -40
+          WIDGETS_DONE=
+          for pass in $GECISLER; do
+            run_pass "$pass"
+          done
+          # Copy each screenshot under its attachment name ("1-akis_0_<uuid>.png" -> "1-akis.png").
+          python3 - <<'PY'
+          import json, pathlib, re, shutil
+          for manifest in pathlib.Path("shots").glob("*/manifest.json"):
+              target = pathlib.Path("named") / manifest.parent.name
+              target.mkdir(parents=True, exist_ok=True)
+              for test in json.loads(manifest.read_text()):
+                  for item in test.get("attachments", []):
+                      source = manifest.parent / item["exportedFileName"]
+                      name = re.sub(r"_\d+_[0-9A-F-]{36}(?=\.\w+$)", "", item["suggestedHumanReadableName"])
+                      if source.exists():
+                          shutil.copyfile(source, target / name)
+          PY
+          find named -type f | sort || true
       - name: Görüntüleri yükle
         if: always()
         uses: actions/upload-artifact@v4
@@ -79,6 +177,20 @@ jobs:
           name: screenshots
           path: |
             ios/shots
+            ios/named
             ios/out/*.log
           if-no-files-found: warn
           retention-days: 7
+      - name: Sonuç (başarısız test varsa kırmızı)
+        working-directory: ios
+        run: |
+          failed="$(grep -hE "Test Case .* failed" out/*.log | sort -u || true)"
+          ran="$(cat out/*.log | grep -cE "Test Case .* (passed|failed)" || true)"
+          echo "### Ekran görüntüleri" >> "$GITHUB_STEP_SUMMARY"
+          echo "Çalışan test: $ran" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$failed" ]; then
+            { echo; echo "Başarısız:"; echo '```'; echo "$failed"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+            echo "$failed"
+            exit 1
+          fi
+          [ "${ran:-0}" -gt 0 ] || { echo "no test ran"; exit 1; }
