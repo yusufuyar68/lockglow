@@ -1,0 +1,534 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.furnished.adj.1",
+      "lemma": "furnished",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "with furniture in it",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɜːrnɪʃt/",
+        "uk": "/ˈfɜːnɪʃt/"
+      },
+      "def": {
+        "micro": "with tables, beds and chairs",
+        "short": "having furniture inside, ready for people to live in",
+        "long": "Having furniture inside, such as a bed, a table and a sofa, so you can live there without buying any. People often use it for flats and houses for rent."
+      },
+      "grammar": {
+        "pattern": "a furnished flat / apartment / room"
+      },
+      "examples": [
+        {
+          "en": "Is the flat furnished?",
+          "tr": "Daire eşyalı mı?",
+          "register": "neutral",
+          "focus": "furnished"
+        },
+        {
+          "en": "Mia rented a small furnished room near her school.",
+          "tr": "Mia okulunun yakınında küçük, eşyalı bir oda kiraladı.",
+          "register": "neutral",
+          "focus": "furnished"
+        },
+        {
+          "en": "The house is fully furnished, so Burak only needs to bring his clothes.",
+          "tr": "Ev tamamen eşyalı, yani Burak'ın sadece kıyafetlerini getirmesi yeterli.",
+          "register": "neutral",
+          "focus": "furnished"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unfurnished"
+      ],
+      "collocations": [
+        "furnished flat",
+        "furnished apartment",
+        "fully furnished",
+        "furnished room"
+      ],
+      "word_family": [
+        {
+          "lemma": "furniture",
+          "pos": "n"
+        },
+        {
+          "lemma": "furnish",
+          "pos": "v"
+        },
+        {
+          "lemma": "unfurnished",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eşyalı",
+          "alt": [
+            "mobilyalı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kiralık ev ilanlarında çok görülür. Eşyasız ev için 'unfurnished' denir. 'Fully furnished' ise tamamen eşyalı demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The flat is ______, so we don't need to buy a bed or a sofa.",
+        "answer": "furnished",
+        "distractors": [
+          "empty",
+          "crowded",
+          "expensive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.settle_in.phv.1",
+      "lemma": "settle in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "get used to a new home",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɛtəl ˈɪn/",
+        "uk": "/ˌsɛtəl ˈɪn/"
+      },
+      "def": {
+        "micro": "get used to a new place",
+        "short": "start to feel happy and comfortable in a new home or place",
+        "long": "To start to feel comfortable and relaxed in a new home, job or school. It usually takes a few days or weeks after you move."
+      },
+      "grammar": {
+        "pattern": "settle in / settle into + place"
+      },
+      "examples": [
+        {
+          "en": "Have you settled in yet?",
+          "tr": "Yeni yerine alıştın mı?",
+          "register": "neutral",
+          "focus": "settled in"
+        },
+        {
+          "en": "Lena settled in quickly and loves her new flat.",
+          "tr": "Lena çabucak alıştı ve yeni dairesini çok seviyor.",
+          "register": "neutral",
+          "focus": "settled in"
+        },
+        {
+          "en": "It took Cem a few weeks to settle in after the move.",
+          "tr": "Taşındıktan sonra Cem'in yeni yerine alışması birkaç hafta sürdü.",
+          "register": "neutral",
+          "focus": "settle in"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "settle in well",
+        "settle in quickly",
+        "help sb settle in",
+        "settle into a new job"
+      ],
+      "word_family": [
+        {
+          "lemma": "settle",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yeni yerine alışmak",
+          "alt": [
+            "yerleşmek",
+            "alışmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Move in' yeni eve taşınmaktır. 'Settle in' ise taşındıktan sonra o eve alışıp rahat etmektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sam loves his new home. He ______ really fast and made new friends.",
+        "answer": "settled in",
+        "distractors": [
+          "broke down",
+          "gave up",
+          "slept in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.leave_on.phv.1",
+      "lemma": "leave on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "not switch off",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/liːv ˈɑːn/",
+        "uk": "/liːv ˈɒn/"
+      },
+      "def": {
+        "micro": "not switch something off",
+        "short": "not switch off a light or machine, so it keeps working",
+        "long": "To not switch off a light, TV, oven or other machine, so it is still working. People often do this by mistake when they go out or go to bed."
+      },
+      "grammar": {
+        "pattern": "leave sth on (leave it on)"
+      },
+      "examples": [
+        {
+          "en": "Don't leave the lights on.",
+          "tr": "Işıkları açık bırakma.",
+          "register": "neutral",
+          "focus": "leave the lights on"
+        },
+        {
+          "en": "Gül left the TV on and fell asleep on the sofa.",
+          "tr": "Gül televizyonu açık bıraktı ve kanepede uyuyakaldı.",
+          "register": "neutral",
+          "focus": "left the TV on"
+        },
+        {
+          "en": "Who left the oven on? The kitchen is really hot.",
+          "tr": "Fırını kim açık bıraktı? Mutfak çok sıcak.",
+          "register": "neutral",
+          "focus": "left the oven on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "turn off",
+        "switch off"
+      ],
+      "collocations": [
+        "leave the lights on",
+        "leave the TV on",
+        "leave the heating on",
+        "leave the oven on"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açık bırakmak",
+          "alt": [
+            "açık unutmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Işık, televizyon, ocak gibi şeyler İngilizcede 'open' değil 'on' olur. Nesne araya girer: 'leave the light on', 'leave it on'.",
+          "mistakes": [
+            {
+              "wrong": "I left the light open.",
+              "right": "I left the light on.",
+              "why": "Türkçede 'ışığı açık bıraktım' deriz ve 'açık' kelimesini 'open' yapmak kolay. Işık, televizyon gibi şeyler için İngilizcede 'open' değil 'on' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody was at home, but the lights were ______ all night.",
+        "answer": "left on",
+        "distractors": [
+          "taken off",
+          "given back",
+          "put away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.use_up.phv.1",
+      "lemma": "use up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "use all of something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/juːz ˈʌp/",
+        "uk": "/juːz ˈʌp/"
+      },
+      "def": {
+        "micro": "use all of something",
+        "short": "use all of something so that nothing is left",
+        "long": "To use all of something, like food, money or hot water, so that there is nothing left."
+      },
+      "grammar": {
+        "pattern": "use sth up / use up sth (use it up)"
+      },
+      "examples": [
+        {
+          "en": "Who used up all the coffee?",
+          "tr": "Bütün kahveyi kim bitirdi?",
+          "register": "neutral",
+          "focus": "used up"
+        },
+        {
+          "en": "Burak used up the shampoo and didn't buy a new one.",
+          "tr": "Burak şampuanı bitirdi ve yenisini almadı.",
+          "register": "neutral",
+          "focus": "used up"
+        },
+        {
+          "en": "Let's use up the vegetables in the fridge before we go shopping.",
+          "tr": "Alışverişe gitmeden önce buzdolabındaki sebzeleri bitirelim.",
+          "register": "neutral",
+          "focus": "use up"
+        }
+      ],
+      "synonyms": [
+        "finish"
+      ],
+      "antonyms": [
+        "save"
+      ],
+      "collocations": [
+        "use up all the milk",
+        "use up the money",
+        "use up energy",
+        "use it up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bitirmek, tüketmek",
+          "alt": [
+            "kullanıp bitirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Use up' ile bir şeyi siz bitirirsiniz: 'I used up the milk'. 'Run out of' ise elde kalmamasıdır: 'We ran out of milk'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry, I ______ all the hot water. Can you wait ten minutes?",
+        "answer": "used up",
+        "distractors": [
+          "gave back",
+          "picked up",
+          "set off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_rid_of.phr.1",
+      "lemma": "get rid of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "throw out or remove something unwanted",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈrɪd əv/",
+        "uk": "/ɡɛt ˈrɪd əv/"
+      },
+      "def": {
+        "micro": "remove an unwanted thing",
+        "short": "throw out, sell or remove something that you do not want any more",
+        "long": "To throw out, give away or sell something you do not want, or to stop a bad thing like a smell or a cold. It is very common in everyday English."
+      },
+      "grammar": {
+        "pattern": "get rid of + sth"
+      },
+      "examples": [
+        {
+          "en": "We need to get rid of this old sofa.",
+          "tr": "Bu eski kanepeden kurtulmamız lazım.",
+          "register": "neutral",
+          "focus": "get rid of"
+        },
+        {
+          "en": "Gül got rid of her old clothes before the move.",
+          "tr": "Gül taşınmadan önce eski kıyafetlerini elden çıkardı.",
+          "register": "neutral",
+          "focus": "got rid of"
+        },
+        {
+          "en": "How can I get rid of the bad smell in the fridge?",
+          "tr": "Buzdolabındaki kötü kokudan nasıl kurtulabilirim?",
+          "register": "neutral",
+          "focus": "get rid of"
+        }
+      ],
+      "synonyms": [
+        "throw out"
+      ],
+      "antonyms": [
+        "keep"
+      ],
+      "collocations": [
+        "get rid of old things",
+        "get rid of the smell",
+        "get rid of a cold",
+        "hard to get rid of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kurtulmak",
+          "alt": [
+            "elden çıkarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Throw away' yalnızca çöpe atmaktır. 'Get rid of' daha geniştir: satmak, birine vermek ya da koku gibi kötü bir şeyden kurtulmak da olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "idioms_expressions"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our sofa is old and broken. We want to ______ it and buy a new one.",
+        "answer": "get rid of",
+        "distractors": [
+          "take care of",
+          "get used to",
+          "get to know"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
