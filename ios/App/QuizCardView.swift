@@ -309,16 +309,18 @@ struct QuizCardView: View {
         // English word alone; after it only the result, not a button: the word in an English
         // voice, then the mark in Turkish.
         .accessibilityRepresentation {
-            if let optionMark = optionMark {
-                Text(verbatim: option)
-                    .englishVoice()
-                Text(optionMark.text)
-            } else {
+            if picked == nil {
                 Button {
                     choose(option)
                 } label: {
                     Text(verbatim: option)
                         .englishVoice()
+                }
+            } else {
+                Text(verbatim: option)
+                    .englishVoice()
+                if let optionMark = optionMark {
+                    Text(optionMark.text)
                 }
             }
         }
@@ -778,7 +780,7 @@ private struct QuizListenButton: View {
         .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
         .accessibilityLabel(isSpeaking ? "Durdur" : "Cümleyi dinle")
         // Voice Control: "Dinle'ye dokun" works as well as the spoken name (audit V12).
-        .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle"), Text(isSpeaking ? "Durdur" : "Cümleyi dinle")])
+        .accessibilityInputLabels(isSpeaking ? [Text("Durdur")] : [Text("Dinle"), Text("Cümleyi dinle")])
     }
 }
 

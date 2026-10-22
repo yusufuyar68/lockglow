@@ -67,6 +67,8 @@ struct ReviewView: View {
     @AccessibilityFocusState private var focus: ReviewFocus?
     /// The tab is on screen (TabView keeps it alive in the background).
     @State private var isOnScreen = false
+    /// "Kitaplığın" is pushed over the start card.
+    @State private var isLibraryOpen = false
     /// The start card says "Ara verdin, sorun değil." in this opening (`updateBreakLines`).
     @State private var showsBreakLines = false
     /// A round started in this opening: "Ara verdin" is over until the next opening.
@@ -111,8 +113,12 @@ struct ReviewView: View {
                 }
             } else {
                 // The opening ended (background). What is on screen stays until the next opening
-                // has decided: it claims again, or the plain card comes back.
+                // has decided: it claims again, or the plain card comes back. A hidden tab drops
+                // its lines now, so they never flash when it comes back.
                 startedThisOpening = false
+                if !isOnScreen {
+                    showsBreakLines = false
+                }
             }
         }
         .sheet(isPresented: $showsReminderOffer) {
@@ -742,15 +748,7 @@ struct ReviewView: View {
         // English option would lose its voice next to the Turkish mark. Before the answer the
         // button with the option alone; after it only the result, not a button.
         .accessibilityRepresentation {
-            if let mark = mark {
-                if isEnglish {
-                    Text(verbatim: option)
-                        .englishVoice()
-                } else {
-                    Text(verbatim: option)
-                }
-                Text(mark.text)
-            } else {
+            if picked == nil {
                 Button {
                     choose(option, question: question)
                 } label: {
@@ -760,6 +758,16 @@ struct ReviewView: View {
                     } else {
                         Text(verbatim: option)
                     }
+                }
+            } else {
+                if isEnglish {
+                    Text(verbatim: option)
+                        .englishVoice()
+                } else {
+                    Text(verbatim: option)
+                }
+                if let mark = mark {
+                    Text(mark.text)
                 }
             }
         }
@@ -819,14 +827,25 @@ struct ReviewView: View {
         let meaning = word.glossTR ?? word.defShort
         let lead = isRight ? "Doğru:" : "Doğrusu:"
         return VStack(alignment: .leading, spacing: 10) {
-            Text("\(lead) \(headword) = \(meaning)")
-                .font(.body)
-                .foregroundStyle(Theme.ink)
-                .fixedSize(horizontal: false, vertical: true)
-                .accessibilityRepresentation {
-                    // A seed word without a Turkish meaning: its English definition, in English.
-                    FeedbackSpeech(lead: lead, english: word.lemma, meaning: meaning, meaningIsEnglish: word.glossTR == nil)
+            Group {
+                if meaning.isEmpty {
+                    Text("\(lead) \(headword)")
+                } else {
+                    Text("\(lead) \(headword) = \(meaning)")
                 }
+            }
+            .font(.body)
+            .foregroundStyle(Theme.ink)
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityRepresentation {
+                // A seed word without a Turkish meaning: its English definition, in English.
+                FeedbackSpeech(
+                    lead: lead,
+                    english: word.lemma,
+                    meaning: meaning.isEmpty ? nil : meaning,
+                    meaningIsEnglish: word.glossTR == nil
+                )
+            }
             if !isRight {
                 pickedFeedback(picked, question: question)
                 Label(ReviewView.retryNote(attempt: attempt), systemImage: "arrow.uturn.forward")
@@ -1001,6 +1020,8 @@ struct ReviewView: View {
             }
         } else {
             Button("Göster") {
+                // A tap on the word in a new-word round (its recall fallback); none in a due round.
+                noteNewWordTap(word)
                 withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
                     isRevealed = true
                 }
@@ -1197,8 +1218,7 @@ struct ReviewView: View {
         noteNewWordTap(word)
         if let result = intro?.answer(right: right) {
             recordIntro(result, word: word, seconds: secondsOnCard)
-            LocalMetricsRecorder.shared.recordNewWord(taps: newWordTaps[word.id] ?? 0)
-            newWordTaps[word.id] = nil
+            recordNewWordTaps(word)
         }
         afterIntroStep()
     }
@@ -1268,8 +1288,15 @@ struct ReviewView: View {
         return Date().timeIntervalSince(cardShownAt)
     }
 
-    /// One tap on a new word's card ("Anlamını göster", "Sonraki", an option, "Devam"); the
-    /// local metrics keep the taps it took to learn each new word (ogrenme_ilkeleri 2.13).
+    /// The taps a decided new word took, from its first card to its decision, go to the local
+    /// metrics (the touch budget of 2.3, at most 4).
+    private func recordNewWordTaps(_ word: WidgetWord) {
+        LocalMetricsRecorder.shared.recordNewWord(taps: newWordTaps[word.id] ?? 0)
+        newWordTaps[word.id] = nil
+    }
+
+    /// One tap on a new word's card ("Anlamını göster", "Sonraki", an option, "Devam", "Göster");
+    /// the local metrics keep the taps it took to learn each new word (ogrenme_ilkeleri 2.13).
     private func noteNewWordTap(_ word: WidgetWord) {
         guard session?.kind == .new else {
             return
@@ -1282,7 +1309,20 @@ struct ReviewView: View {
     /// as missed. The widget queue is rebuilt from the new progress, and the summary follows when
     /// anything was answered.
     private func finishRound() {
+        // A "Hatırla" pick waiting for "Devam" counts as if "Devam" was tapped: "Bitir" took its
+        // place, also as the word's last tap.
+        if let running = session, running.kind == .new, let pick = picked,
+           let card = currentCard(in: running), case let .choice(word, attempt, direction) = card,
+           let question = model.introQuestion(for: word, direction: direction, attempt: attempt) {
+            noteNewWordTap(word)
+            if let result = intro?.answer(right: pick == question.answer) {
+                recordIntro(result, word: word, seconds: secondsOnCard)
+                recordNewWordTaps(word)
+            }
+        }
         // "Bitir" before the last card: a due word left unanswered, or a new word not decided.
+        // After the waiting pick, so that "Bitir" instead of "Devam" on the last question is not
+        // an early end.
         let endedEarly: Bool
         switch session?.kind {
         case .new?:
@@ -1292,13 +1332,10 @@ struct ReviewView: View {
         case nil:
             endedEarly = false
         }
+        // A word whose second try had not come yet is missed. Its taps are not recorded: its flow
+        // was cut before the second try, so the count would be lower than what a new word really
+        // takes, and the metric is the cost of a whole flow (2.13).
         if let running = session, running.kind == .new {
-            if let pick = picked, let card = currentCard(in: running), case let .choice(word, attempt, direction) = card,
-               let question = model.introQuestion(for: word, direction: direction, attempt: attempt) {
-                if let result = intro?.answer(right: pick == question.answer) {
-                    recordIntro(result, word: word, seconds: secondsOnCard)
-                }
-            }
             for id in intro?.awaitingRetry ?? [] {
                 if let word = running.words.first(where: { $0.id == id }) {
                     recordIntro(.missed, word: word)
@@ -1679,6 +1716,14 @@ struct ReviewView: View {
         if model.hasLibrary {
             NavigationLink {
                 ProgressScreen()
+                    .onAppear {
+                        isLibraryOpen = true
+                    }
+                    // An opening decided meanwhile leaves the plain start card (no claim under
+                    // the push, `updateBreakLines`).
+                    .onDisappear {
+                        isLibraryOpen = false
+                    }
             } label: {
                 Label("Kitaplığın", systemImage: "books.vertical")
             }
@@ -1729,11 +1774,12 @@ struct ReviewView: View {
     }
 
     /// "Ara verdin" is a system card (2.10): only once RootView has picked this opening's card
-    /// and none came first (`SystemCardQueue.claim`), only while "Tekrar" is on screen (a hidden
-    /// tab must not take the opening's card from "Akış") and only until a round of this opening
-    /// has started. Otherwise the plain start card stays: "Tekrar zamanı", "Başla (10 kelime)".
+    /// and none came first (`SystemCardQueue.claim`), only while the start card is on screen (a
+    /// hidden tab, or one under "Kitaplığın", must not take the opening's card from "Akış") and
+    /// only until a round of this opening has started. Otherwise the plain start card stays:
+    /// "Tekrar zamanı", "Başla (10 kelime)".
     private func updateBreakLines() {
-        guard systemCards.isDecided, isOnScreen, !startedThisOpening, session == nil, summary == nil,
+        guard systemCards.isDecided, isOnScreen, !isLibraryOpen, !startedThisOpening, session == nil, summary == nil,
               let offer = model.nextReviewSession(), offer.kind == .due,
               offer.totalCount > ReviewView.breakBacklog else {
             showsBreakLines = false
@@ -1749,21 +1795,32 @@ struct ReviewView: View {
     /// (a "no" in iOS, or a switch turned off in "Ayarlar", is an answer), and not after another
     /// system card of this opening (2.10). Whatever the answer, it never comes again.
     private func offerReminderIfFirstTime() {
-        guard !reminderOfferShown, !model.reminderEnabled, !model.showsOnboarding else {
-            return
-        }
-        if let card = systemCards.current, card != .breakStart {
+        guard canOfferReminder else {
             return
         }
         Task { @MainActor in
             let isAuthorized = await ReminderScheduler.isAuthorized()
             let isDenied = await ReminderScheduler.isDenied()
-            guard !isAuthorized, !isDenied, !reminderOfferShown, !model.reminderEnabled, session == nil else {
+            // Again after the awaits: RootView may have shown its card meanwhile.
+            guard !isAuthorized, !isDenied, canOfferReminder, session == nil else {
                 return
             }
             reminderOfferShown = true
             showsReminderOffer = true
         }
+    }
+
+    /// Not asked yet, the reminder off, no onboarding, and RootView has decided this opening
+    /// with no sheet of its own (two sheets at once: one would not open).
+    private var canOfferReminder: Bool {
+        guard !reminderOfferShown, !model.reminderEnabled, !model.showsOnboarding,
+              systemCards.isDecided, systemCards.presented == nil else {
+            return false
+        }
+        if let card = systemCards.current, card != .breakStart {
+            return false
+        }
+        return true
     }
 
     /// "Evet, gönder": iOS asks for permission now. With it the daily reminder is on at the
