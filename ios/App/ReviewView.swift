@@ -300,6 +300,17 @@ struct ReviewView: View {
             }
             .coordinateSpace(.named("reviewCard"))
             .scrollBounceBehavior(.basedOnSize)
+            // While more text is below, its last lines fade out into the card itself: a mask, not
+            // a colored gradient, so it matches the card in every theme.
+            .mask {
+                VStack(spacing: 0) {
+                    Rectangle()
+                    if cardHasMore {
+                        LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                            .frame(height: 56)
+                    }
+                }
+            }
             // The back starts at its top, wherever the front was scrolled.
             .id(side)
         }
@@ -898,9 +909,9 @@ struct ReviewView: View {
             answerTick += 1
             onAnswer(found)
         } label: {
-            GradeLabel(title: info.title, symbol: info.symbol, when: when, isDefault: false)
+            GradeLabel(title: info.title, symbol: info.symbol, when: when)
         }
-        .buttonStyle(GradeButtonStyle(isDefault: false))
+        .buttonStyle(GradeButtonStyle())
         .accessibilityLabel(info.title)
         // A value, not a hint: hints come late and many people turn them off (audit V9).
         .accessibilityValue(when.map { "\($0) yeniden gelir" } ?? "")
@@ -1773,9 +1784,9 @@ private struct WordHeadline: View {
     }
 }
 
-/// "Devamı" on the card's bottom edge (mockup `.wcard.scrolls.more`): the text fades into the
-/// card's `surface` and the cue sits on the faded part, so it never covers a legible line. Not a
-/// capsule, since it is not a control (rule 2); visual only, VoiceOver reads on by itself.
+/// "Devamı" on the card's bottom edge (mockup `.wcard.scrolls.more`): the text fades out under it
+/// (`cardPanel`'s mask) and the cue sits on the faded part, so it never covers a legible line. Not
+/// a capsule, since it is not a control (rule 2); visual only, VoiceOver reads on by itself.
 private struct MoreBelowCue: View {
     var body: some View {
         HStack(spacing: 4) {
@@ -1788,16 +1799,6 @@ private struct MoreBelowCue: View {
         .padding(.top, 26)
         .padding(.bottom, 9)
         .frame(maxWidth: .infinity)
-        .background {
-            LinearGradient(
-                stops: [
-                    .init(color: Theme.surface.opacity(0), location: 0),
-                    .init(color: Theme.surface, location: 0.5)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        }
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
@@ -1835,14 +1836,13 @@ private struct RoundProgressBar: View {
 }
 
 /// The text of an answer button (mockup `.grade`): icon, answer and when the word comes back.
-/// The time is legible but secondary: regular weight, footnote, `ink2` (and a softer `onPrimary`
-/// on a filled answer), and it stays at every text size (audit D2). The icon goes as soon as
-/// title and time no longer fit beside it, so "Bulamadım" never breaks mid-word (audit D8).
+/// The time is legible but secondary: regular weight, footnote, `ink2`, and it stays at every
+/// text size (audit D2). The icon goes as soon as title and time no longer fit beside it, so
+/// "Bulamadım" never breaks mid-word (audit D8).
 private struct GradeLabel: View {
     let title: String
     let symbol: String
     let when: String?
-    let isDefault: Bool
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
@@ -1850,7 +1850,7 @@ private struct GradeLabel: View {
                 Image(systemName: symbol)
                     .font(.body.weight(.medium))
                     .frame(width: 22)
-                    .foregroundStyle(secondary)
+                    .foregroundStyle(Theme.ink2)
                     .accessibilityHidden(true)
                 texts
             }
@@ -1869,32 +1869,24 @@ private struct GradeLabel: View {
                 Text(verbatim: when)
                     .font(.footnote)
                     .monospacedDigit()
-                    .foregroundStyle(secondary)
+                    .foregroundStyle(Theme.ink2)
             }
         }
         .multilineTextAlignment(.leading)
     }
-
-    private var secondary: Color {
-        return isDefault ? Theme.onPrimary.opacity(0.8) : Theme.ink2
-    }
 }
 
-/// Answer button (mockup `.grade`): a 56 pt capsule in `surface2` (rule 2: what can be tapped is
-/// a capsule); a default answer would be the screen's filled button (`primary`, glowing at
-/// night), but "Bulamadım" and "Buldum" are equal (1b). Opaque, never glass (rule 6).
+/// Answer button (mockup `.grade`): a 56 pt capsule in `surface2` with a `lineStrong` edge, like
+/// the theme's other tonal capsules (rule 2: what can be tapped is a capsule). "Bulamadım" and
+/// "Buldum" are equal: no filled default (1b). Opaque, never glass (rule 6).
 private struct GradeButtonStyle: ButtonStyle {
-    let isDefault: Bool
-
     func makeBody(configuration: Configuration) -> some View {
-        GradeButtonBody(configuration: configuration, isDefault: isDefault)
+        GradeButtonBody(configuration: configuration)
     }
 }
 
 private struct GradeButtonBody: View {
     let configuration: ButtonStyleConfiguration
-    let isDefault: Bool
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
@@ -1902,24 +1894,18 @@ private struct GradeButtonBody: View {
     var body: some View {
         let shape = Capsule()
         configuration.label
-            .foregroundStyle(isDefault ? Theme.onPrimary : Theme.ink)
+            .foregroundStyle(Theme.ink)
             // The icon sits at the round end's middle, where the curve leaves the most room; the
             // text keeps the half-width tile's room for "10 dakika sonra" on an iPhone SE.
             .padding(.leading, 16)
             .padding(.trailing, 12)
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity, minHeight: 56, maxHeight: .infinity, alignment: .leading)
-            .background {
-                shape
-                    .fill(isDefault ? Theme.primary : Theme.surface2)
-                    .shadow(color: isDefault && colorScheme == .dark ? Theme.primaryGlow : .clear, radius: 10)
-            }
-            // `surface2` barely stands out from the page; with Increase Contrast or Button Shapes
-            // the capsule gets an edge (audit K1).
+            .background(Theme.surface2, in: shape)
+            // `surface2` barely stands out from the page: always an edge, stronger with Increase
+            // Contrast or Button Shapes (audit K1).
             .overlay {
-                if !isDefault && (contrast == .increased || showsButtonShapes) {
-                    shape.strokeBorder(Theme.lineStrong, lineWidth: 1.5)
-                }
+                shape.strokeBorder(Theme.lineStrong, lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1)
             }
             .contentShape(shape)
             .opacity(configuration.isPressed ? 0.85 : 1)

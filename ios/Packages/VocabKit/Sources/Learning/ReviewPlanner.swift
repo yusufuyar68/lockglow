@@ -134,11 +134,16 @@ extension ReviewPlanner {
     /// The words of the next "Tanış + Hatırla" round, at most `limit`: first the words a failed
     /// "Biliyorum" check sent back (`WordProgress.returnsToIntro`; from `all`, whatever the deck,
     /// the longest waiting first), then the never-reviewed words of `feed` in feed order.
+    ///
+    /// `confusables`: each card's confusable partners (borrow → lend). Words that are easily mixed
+    /// up are not learned together (docs/tasarim/ogrenme_ilkeleri.md 1.8, 2.3): a new word waits
+    /// while a partner is in this round already or is still learning below box 2.
     public static func introWords(
         feed: [WidgetWord],
         all: [WidgetWord],
         progress: [Int: WordProgress],
-        limit: Int
+        limit: Int,
+        confusables: [Int: Set<Int>] = [:]
     ) -> [WidgetWord] {
         guard limit > 0 else {
             return []
@@ -158,13 +163,30 @@ extension ReviewPlanner {
         }
         var result = returning.prefix(limit).map { $0.word }
         var used = Set(result.map { $0.id })
+        var chosen = used
+        func waitsForPartner(_ id: Int) -> Bool {
+            return (confusables[id] ?? []).contains { partner in
+                if chosen.contains(partner) {
+                    return true
+                }
+                guard let p = progress[partner] else {
+                    return false
+                }
+                return p.state == .learning && p.box < 2
+            }
+        }
         for word in feed {
             if result.count == limit {
                 break
             }
-            if used.insert(word.id).inserted, (progress[word.id]?.state ?? .new) == .new {
-                result.append(word)
+            guard used.insert(word.id).inserted, (progress[word.id]?.state ?? .new) == .new else {
+                continue
             }
+            if waitsForPartner(word.id) {
+                continue
+            }
+            result.append(word)
+            chosen.insert(word.id)
         }
         return result
     }

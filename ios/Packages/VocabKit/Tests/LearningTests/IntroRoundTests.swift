@@ -242,6 +242,25 @@ final class IntroRoundTests: XCTestCase {
         XCTAssertEqual(ReviewPlanner.introWords(feed: feed, all: all, progress: [:], limit: 3).map { $0.id }, [1, 2, 3])
     }
 
+    func testConfusableWordsAreNotLearnedTogether() {
+        let feed = (1...5).map { word($0) }
+        let pairs: [Int: Set<Int>] = [1: [3], 3: [1]]
+        func ids(_ progress: [Int: WordProgress]) -> [Int] {
+            return ReviewPlanner.introWords(feed: feed, all: feed, progress: progress, limit: 3, confusables: pairs).map { $0.id }
+        }
+        // Never both in one round.
+        XCTAssertEqual(ids([:]), [1, 2, 4])
+        // Not while the first is still learning below box 2 (the same day, the next days).
+        var first = Leitner.review(WordProgress(wordID: 1), grade: .good, at: now)
+        XCTAssertEqual(ids([1: first]), [2, 4, 5])
+        // Once it reached box 2, the second comes.
+        first = Leitner.review(first, grade: .good, at: now.addingTimeInterval(day))
+        XCTAssertEqual(first.box, 2)
+        XCTAssertEqual(ids([1: first]), [2, 3, 4])
+        // A known partner does not hold it back either.
+        XCTAssertEqual(ids([1: Leitner.markKnown(WordProgress(wordID: 1), at: now)]), [2, 3, 4])
+    }
+
     func testQuestionKindFollowsTheBox() {
         XCTAssertEqual(ReviewPlanner.questionKind(for: nil, hasCloze: true), .cloze)
         for box in 1...3 {
