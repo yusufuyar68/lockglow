@@ -1,0 +1,1019 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.cash_or_card.phr.1",
+      "lemma": "cash or card",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "question about how you will pay",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkæʃ ɔːr ˈkɑːrd/",
+        "uk": "/ˌkæʃ ɔː ˈkɑːd/"
+      },
+      "def": {
+        "micro": "how do you want to pay?",
+        "short": "a short question at a shop till about how you want to pay",
+        "long": "A short question that a shop worker asks when you pay: do you want to use money or a bank card? You can answer simply: 'Card, please.'"
+      },
+      "grammar": {
+        "pattern": "Cash or card?"
+      },
+      "examples": [
+        {
+          "en": "“Cash or card?” “Card, please.”",
+          "tr": "“Nakit mi, kart mı?” “Kartla.”",
+          "register": "neutral",
+          "focus": "Cash or card"
+        },
+        {
+          "en": "The man at the market looked at me and asked, “Cash or card?”",
+          "tr": "Pazardaki adam bana bakıp “Nakit mi, kart mı?” diye sordu.",
+          "register": "neutral",
+          "focus": "Cash or card"
+        },
+        {
+          "en": "When Selin got to the front of the queue, the cashier smiled and said, “Cash or card?”",
+          "tr": "Selin sıranın önüne geldiğinde kasiyer gülümsedi ve “Nakit mi, kart mı?” dedi.",
+          "register": "neutral",
+          "focus": "Cash or card"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay in cash",
+        "pay by card"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nakit mi, kart mı?",
+          "alt": [
+            "nakit mi, kartla mı?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kasada çok sık duyulur. Kısa cevap vermek yeterlidir: 'Card, please.' ya da 'Cash.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "At the till, the cashier asked me, “______?” I said, “Card, please.”",
+        "answer": "Cash or card",
+        "distractors": [
+          "Here or to go",
+          "Small or large",
+          "Hot or cold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.debit_card.phr.1",
+      "lemma": "debit card",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "bank card that uses your own money",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɛbɪt kɑːrd/",
+        "uk": "/ˈdɛbɪt kɑːd/"
+      },
+      "def": {
+        "micro": "card using your own money",
+        "short": "a bank card that takes money straight from your bank account when you pay",
+        "long": "A plastic card from your bank. When you pay with it, the money leaves your own bank account at once, so you cannot spend more than you have."
+      },
+      "grammar": {
+        "pattern": "pay by/with a debit card"
+      },
+      "examples": [
+        {
+          "en": "I lost my debit card yesterday.",
+          "tr": "Dün banka kartımı kaybettim.",
+          "register": "neutral",
+          "focus": "debit card"
+        },
+        {
+          "en": "Tom uses his debit card because he doesn't like to borrow money.",
+          "tr": "Tom banka kartını kullanıyor çünkü borçlanmayı sevmiyor.",
+          "register": "neutral",
+          "focus": "debit card"
+        },
+        {
+          "en": "Zeynep's debit card is linked to her bank account, so she can't spend more than she has.",
+          "tr": "Zeynep'in banka kartı banka hesabına bağlı, bu yüzden elindeki paradan fazlasını harcayamaz.",
+          "register": "neutral",
+          "focus": "debit card"
+        }
+      ],
+      "synonyms": [
+        "bank card"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "pay by debit card",
+        "contactless debit card"
+      ],
+      "word_family": [
+        {
+          "lemma": "debit",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "banka kartı",
+          "alt": [
+            "bankamatik kartı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede fark önemlidir: 'debit card' hesabındaki parayla öder; 'credit card' ise bankanın parasıyla öder, borcu sonra kapatırsın.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My ______ doesn't work at the shop because my bank account is empty.",
+        "answer": "debit card",
+        "distractors": [
+          "library card",
+          "boarding pass",
+          "gift voucher"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.contactless.adj.1",
+      "lemma": "contactless",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "paying by holding a card near",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːntæktləs/",
+        "uk": "/ˈkɒntæktləs/"
+      },
+      "def": {
+        "micro": "paid by tapping a card",
+        "short": "using a card or phone that you hold near a machine to pay",
+        "long": "Used about a way of paying where you hold your card or phone near a machine and do not put it in. People often say 'contactless payment' or 'pay contactless'."
+      },
+      "grammar": {
+        "pattern": "contactless payment / pay contactless"
+      },
+      "examples": [
+        {
+          "en": "You can pay contactless here.",
+          "tr": "Burada temassız ödeyebilirsiniz.",
+          "register": "neutral",
+          "focus": "contactless"
+        },
+        {
+          "en": "Lucy paid for the bus with her contactless card.",
+          "tr": "Lucy otobüs parasını temassız kartıyla ödedi.",
+          "register": "neutral",
+          "focus": "contactless"
+        },
+        {
+          "en": "The total was over the contactless limit, so Can had to put his card in and enter his PIN.",
+          "tr": "Tutar temassız ödeme limitini aştığı için Can kartını takıp şifresini girmek zorunda kaldı.",
+          "register": "neutral",
+          "focus": "contactless"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "contactless payment",
+        "pay contactless",
+        "contactless card"
+      ],
+      "word_family": [
+        {
+          "lemma": "contact",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "temassız",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kartı makineye takmadan, yalnızca yaklaştırarak ödemeyi anlatır. 'pay contactless' temassız ödemek, 'contactless payment' temassız ödeme demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't put your card in. Just hold it near the machine. It's ______.",
+        "answer": "contactless",
+        "distractors": [
+          "waterproof",
+          "handmade",
+          "second-hand"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tip.n.1",
+      "lemma": "tip",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "extra money for service",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɪp/",
+        "uk": "/tɪp/"
+      },
+      "def": {
+        "micro": "extra money for good service",
+        "short": "extra money you give a waiter or driver to say thank you for their service",
+        "long": "A small amount of extra money that you give to a waiter, a taxi driver or a hairdresser to thank them. People often leave a tip on the table in a café or restaurant."
+      },
+      "grammar": {
+        "pattern": "leave/give sb a tip"
+      },
+      "examples": [
+        {
+          "en": "We left a tip for the waiter.",
+          "tr": "Garsona bahşiş bıraktık.",
+          "register": "neutral",
+          "focus": "tip"
+        },
+        {
+          "en": "Emre gave the taxi driver a fifty-lira tip.",
+          "tr": "Emre taksi şoförüne elli lira bahşiş verdi.",
+          "register": "neutral",
+          "focus": "tip"
+        },
+        {
+          "en": "In some countries the tip is already part of the bill, so check before you pay.",
+          "tr": "Bazı ülkelerde bahşiş zaten hesaba dâhildir, o yüzden ödemeden önce kontrol et.",
+          "register": "neutral",
+          "focus": "tip"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "leave a tip",
+        "a big tip",
+        "give a tip"
+      ],
+      "word_family": [
+        {
+          "lemma": "tip",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bahşiş",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil olarak da kullanılır: 'tip the waiter' garsona bahşiş vermek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The waiter was very kind, so we left him a big ______.",
+        "answer": "tip",
+        "distractors": [
+          "fee",
+          "menu",
+          "napkin"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.split_the_bill.phr.1",
+      "lemma": "split the bill",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "share the cost of a meal",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsplɪt ðə ˈbɪl/",
+        "uk": "/ˌsplɪt ðə ˈbɪl/"
+      },
+      "def": {
+        "micro": "share the cost of a meal",
+        "short": "share the cost of a meal so each person pays part of it",
+        "long": "To share the cost of a meal or a drink with the people you ate with, so that everyone pays a part. Often each person pays the same amount."
+      },
+      "grammar": {
+        "pattern": "split the bill (with sb)"
+      },
+      "examples": [
+        {
+          "en": "Let's split the bill.",
+          "tr": "Hesabı bölüşelim.",
+          "register": "neutral",
+          "focus": "split the bill"
+        },
+        {
+          "en": "There were four of us, so we split the bill.",
+          "tr": "Dört kişiydik, o yüzden hesabı bölüştük.",
+          "register": "neutral",
+          "focus": "split the bill"
+        },
+        {
+          "en": "Sara wanted to pay for everyone, but her friends wanted to split the bill.",
+          "tr": "Sara herkesin hesabını ödemek istedi ama arkadaşları hesabı bölüşmek istedi.",
+          "register": "neutral",
+          "focus": "split the bill"
+        }
+      ],
+      "synonyms": [
+        "split the check"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "split the bill evenly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hesabı bölüşmek",
+          "alt": [
+            "hesabı paylaşmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde hesabı (çoğunlukla eşit) bölmek demektir; ABD'de 'split the check' de denir. Herkes kendi yediğini öderse (Alman usulü) 'pay separately' ya da 'go Dutch' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Dinner cost 90 euros for the three of us, so we ______. We paid 30 each.",
+        "answer": "split the bill",
+        "distractors": [
+          "tried it on",
+          "took it back",
+          "sold out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.coin.n.1",
+      "lemma": "coin",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "metal money",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔɪn/",
+        "uk": "/kɔɪn/"
+      },
+      "def": {
+        "micro": "a small round piece of money",
+        "short": "a small, flat, round piece of metal that is used as money",
+        "long": "A small, flat, round piece of metal that is used as money. Paper money is called a note in British English and a bill in American English."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I need a coin for the shopping trolley.",
+          "tr": "Alışveriş arabası için bir madeni para lazım.",
+          "register": "neutral",
+          "focus": "coin"
+        },
+        {
+          "en": "Burak keeps his coins in a small jar.",
+          "tr": "Burak madeni paralarını küçük bir kavanozda saklıyor.",
+          "register": "neutral",
+          "focus": "coins"
+        },
+        {
+          "en": "The parking machine only takes coins, and Anna only had a twenty-euro note.",
+          "tr": "Otopark makinesi yalnızca madeni para alıyor ve Anna'nın elinde sadece yirmi euroluk bir banknot vardı.",
+          "register": "neutral",
+          "focus": "coins"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a pound coin",
+        "a one-euro coin",
+        "toss a coin"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'coin', a wedge or a stamp used to make money. It goes back to Latin 'cuneus', meaning 'wedge'.",
+        "origin": "Old French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "madeni para",
+          "alt": [
+            "bozuk para"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kâğıt para 'note' (ABD'de 'bill') olur. Para üstüne ve cepteki bozukluklara 'change' denir: 'Do you have any change?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This machine doesn't take cards or notes, only ______.",
+        "answer": "coins",
+        "distractors": [
+          "wallets",
+          "receipts",
+          "buttons"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.return.v.2",
+      "lemma": "return",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 2,
+      "sense_note": "give back to a shop",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈtɜːrn/",
+        "uk": "/rɪˈtɜːn/"
+      },
+      "def": {
+        "micro": "give back to the shop",
+        "short": "take something you bought back to the shop because you do not want it",
+        "long": "To take something you bought back to the shop, usually to get your money back. You can often return an item that is broken or the wrong size."
+      },
+      "grammar": {
+        "pattern": "return sth (to the shop)"
+      },
+      "examples": [
+        {
+          "en": "Can I return these shoes?",
+          "tr": "Bu ayakkabıları iade edebilir miyim?",
+          "register": "neutral",
+          "focus": "return"
+        },
+        {
+          "en": "Omar returned the headphones because they stopped working after a week.",
+          "tr": "Omar kulaklığı iade etti çünkü bir hafta sonra bozuldu.",
+          "register": "neutral",
+          "focus": "returned"
+        },
+        {
+          "en": "You can return online orders within 14 days if you still have the box.",
+          "tr": "Kutusu hâlâ sendeyse internet siparişlerini 14 gün içinde iade edebilirsin.",
+          "register": "neutral",
+          "focus": "return"
+        }
+      ],
+      "synonyms": [
+        "take back"
+      ],
+      "antonyms": [
+        "keep"
+      ],
+      "collocations": [
+        "return an item",
+        "return sth for a refund"
+      ],
+      "word_family": [
+        {
+          "lemma": "return",
+          "pos": "n"
+        },
+        {
+          "lemma": "returnable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iade etmek",
+          "alt": [
+            "geri vermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta 'return' mağazaya iade etmek demektir; kelimenin 'geri dönmek' anlamı da vardır. Günlük dilde 'take back' de aynı anlamda kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The dress was the wrong size, so Selin ______ it to the shop and got her money back.",
+        "answer": "returned",
+        "distractors": [
+          "wore",
+          "ironed",
+          "folded"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exchange.v.1",
+      "lemma": "exchange",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "swap an item in a shop",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪksˈtʃeɪndʒ/",
+        "uk": "/ɪksˈtʃeɪndʒ/"
+      },
+      "def": {
+        "micro": "swap for a different item",
+        "short": "take something back to a shop and get a different thing instead",
+        "long": "To take something you bought back to the shop and get a different thing, for example the same shirt in another size or color. You exchange one thing for another."
+      },
+      "grammar": {
+        "pattern": "exchange sth for sth"
+      },
+      "examples": [
+        {
+          "en": "Can I exchange this for a smaller size?",
+          "tr": "Bunu daha küçük bir bedenle değiştirebilir miyim?",
+          "register": "neutral",
+          "focus": "exchange"
+        },
+        {
+          "en": "Deniz exchanged the blue shirt for a black one.",
+          "tr": "Deniz mavi gömleği siyah bir gömlekle değiştirdi.",
+          "register": "neutral",
+          "focus": "exchanged"
+        },
+        {
+          "en": "The shop doesn't give refunds, but you can exchange the item within a month.",
+          "tr": "Mağaza para iadesi yapmıyor ama ürünü bir ay içinde değiştirebilirsin.",
+          "register": "neutral",
+          "focus": "exchange"
+        }
+      ],
+      "synonyms": [
+        "swap"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "exchange sth for sth",
+        "exchange a gift"
+      ],
+      "word_family": [
+        {
+          "lemma": "exchange",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değiştirmek",
+          "alt": [
+            "başkasıyla değiştirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Paranı geri almak 'get a refund', ürünü başka bir ürünle değiştirmek 'exchange' olur. Konuşmada 'change' de duyulur.",
+          "mistakes": [
+            {
+              "wrong": "Can I exchange it with a bigger size?",
+              "right": "Can I exchange it for a bigger size?",
+              "why": "Türkçede 'bir şeyi başka bir şeyle değiştirmek' denir, bu yüzden 'with' kullanılır. Yeni alınan ürün İngilizcede 'for' ile gelir; 'with' değişimi yaptığın kişi içindir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "These jeans are too long. Can I ______ them for a shorter pair?",
+        "answer": "exchange",
+        "distractors": [
+          "borrow",
+          "iron",
+          "lend"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.warranty.n.1",
+      "lemma": "warranty",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "promise of free repair",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɔːrənti/",
+        "uk": "/ˈwɒrənti/"
+      },
+      "def": {
+        "micro": "promise to repair for free",
+        "short": "a written promise that a company will repair a product for free for some time",
+        "long": "A written promise from a company that it will repair or change a product for free if it breaks during a certain time. People say a product is 'under warranty'."
+      },
+      "grammar": {
+        "pattern": "under warranty / a two-year warranty"
+      },
+      "examples": [
+        {
+          "en": "My laptop is still under warranty.",
+          "tr": "Dizüstü bilgisayarım hâlâ garanti kapsamında.",
+          "register": "neutral",
+          "focus": "warranty"
+        },
+        {
+          "en": "This washing machine comes with a two-year warranty.",
+          "tr": "Bu çamaşır makinesi iki yıl garantili.",
+          "register": "neutral",
+          "focus": "warranty"
+        },
+        {
+          "en": "The screen broke after six months, but Mia paid nothing because the phone was under warranty.",
+          "tr": "Ekran altı ay sonra kırıldı ama telefon garanti kapsamında olduğu için Mia hiçbir şey ödemedi.",
+          "register": "neutral",
+          "focus": "warranty"
+        }
+      ],
+      "synonyms": [
+        "guarantee"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "under warranty",
+        "a two-year warranty",
+        "the warranty runs out"
+      ],
+      "word_family": [
+        {
+          "lemma": "warrant",
+          "pos": "v"
+        }
+      ],
+      "etymology": {
+        "text": "From Old North French 'warantie'. 'Guarantee' has the same root: northern French kept the 'w' sound where Paris French used 'g'.",
+        "origin": "Old North French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "garanti",
+          "alt": [
+            "garanti belgesi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiliz İngilizcesinde aynı anlamda 'guarantee' da kullanılır. Kalıp: 'under warranty' (garanti kapsamında).",
+          "mistakes": [],
+          "mnemonic": "w ↔ g: warranty ≈ garanti. İkisi de Eski Fransızcadaki aynı kelimeden gelir."
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The TV stopped working, but it's still under ______, so they'll fix it for free.",
+        "answer": "warranty",
+        "distractors": [
+          "discount",
+          "delivery",
+          "pressure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.complain.v.1",
+      "lemma": "complain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say you are unhappy",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəmˈpleɪn/",
+        "uk": "/kəmˈpleɪn/"
+      },
+      "def": {
+        "micro": "say you are not happy",
+        "short": "say that you are unhappy or angry about something",
+        "long": "To say that you are unhappy or angry about something, for example bad service or a broken product. You complain about a thing and to a person."
+      },
+      "grammar": {
+        "pattern": "complain about sth / complain to sb"
+      },
+      "examples": [
+        {
+          "en": "Leo complained about the cold food.",
+          "tr": "Leo soğuk yemekten şikâyet etti.",
+          "register": "neutral",
+          "focus": "complained"
+        },
+        {
+          "en": "If the delivery is late again, I'll complain to the manager.",
+          "tr": "Teslimat yine gecikirse müdüre şikâyet edeceğim.",
+          "register": "neutral",
+          "focus": "complain"
+        },
+        {
+          "en": "Hakan complained to the shop because his new phone kept turning off by itself.",
+          "tr": "Hakan mağazaya şikâyet etti çünkü yeni telefonu sürekli kendi kendine kapanıyordu.",
+          "register": "neutral",
+          "focus": "complained"
+        }
+      ],
+      "synonyms": [
+        "make a complaint"
+      ],
+      "antonyms": [
+        "praise"
+      ],
+      "collocations": [
+        "complain about",
+        "complain to the manager"
+      ],
+      "word_family": [
+        {
+          "lemma": "complaint",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şikâyet etmek",
+          "alt": [
+            "yakınmak",
+            "şikâyetçi olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'complaint' olur: 'make a complaint' (şikâyette bulunmak).",
+          "mistakes": [
+            {
+              "wrong": "She complained from the noise.",
+              "right": "She complained about the noise.",
+              "why": "Türkçede '-den şikâyet etmek' denir, bu yüzden 'from' kullanılır. İngilizcede şikâyet konusu 'about', şikâyet edilen kişi 'to' ile gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The soup was cold, so Nora ______ to the waiter.",
+        "answer": "complained",
+        "distractors": [
+          "smiled",
+          "cheered",
+          "agreed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
