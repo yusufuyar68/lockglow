@@ -4,8 +4,10 @@ Kurulum: 1.000 kelime, günde 10 yeni kelime, 90 gün (90 günde 900 kelime
 tanıtılır). Her gün aynı saatte (09:00) tek bir Tekrar oturumu olur: zamanı
 gelen bütün kelimeler sorulur, sonra 10 yeni kelime gelir. Oturum içinde
 "Bilemedim" denen kelime 10 dakika sonra yeniden sorulur (Leitner.relearnDelay).
-Oturumun 2 saatlik penceresine sığmayan bir tarih (Leitner'de "Zor" = 12 saat)
-ertesi günün oturumuna kalır.
+Oturum 09:00-11:00 arası açık sayılır: bu sürede zamanı gelen kelime (ör. dün
+09:10'da yeniden sorulup bugün 09:10'a zamanlanan) zamanında sorulur. Bu
+pencereye sığmayan bir tarih (Leitner'de "Zor" = 12 saat) ertesi günün
+oturumuna kalır.
 
 Öğrencinin "gerçek" hafızası FSRS-6'nın varsayılan parametreleriyle modellenir;
 fsrs-rs'in ve Anki'nin simülatörü de böyle yapar. Bu FSRS'i kayırır: unutma
@@ -303,6 +305,7 @@ class Result:
     name: str
     reviews: list[int] = field(default_factory=list)   # zamanı gelen tekrar (günün ilk sorusu)
     repeats: list[int] = field(default_factory=list)   # aynı gün yeniden sorma
+    repeats_after_hard: int = 0                         # bunların "Zor"dan sonra gelenleri
     new: list[int] = field(default_factory=list)
     correct: int = 0
     asked: int = 0
@@ -325,14 +328,16 @@ def simulate(policy: str, seed: int, *, forgetting=1.0, retention=0.9, words=100
         end = start + SESSION_WINDOW
         reviews = repeats = 0
         asked_today: set[int] = set()
+        last_grade: dict[int, int] = {}
         new_today = []
         while len(new_today) < new_per_day and next_word < words:
             new_today.append(next_word)
             next_word += 1
-        # Önce zamanı gelenler, sonra yeni kelimeler; oturum içi tekrarlar tarih sırasıyla.
-        queue = [(c.due, w) for w, c in cards.items() if c.due is not None and c.due <= start + 1e-9]
-        queue.sort()
+        # Oturumun penceresinde zamanı gelen her kelime ve yeni kelimeler, tarih sırasıyla
+        # (her kelimenin hafızası kendi tarihlerine bağlı; sıra yalnız zar sırasını değiştirir).
+        queue = [(c.due, w) for w, c in cards.items() if c.due is not None and c.due <= end + 1e-9]
         queue += [(start, w) for w in new_today]
+        queue.sort()
         while queue:
             due, w = queue.pop(0)
             now = max(start, due)
@@ -341,11 +346,13 @@ def simulate(policy: str, seed: int, *, forgetting=1.0, retention=0.9, words=100
                 cards[w] = Card() if policy == "fsrs" else LeitnerWord()
             elif w in asked_today:
                 repeats += 1
+                res.repeats_after_hard += last_grade[w] == HARD
             else:
                 reviews += 1
                 res.asked += 1
                 res.correct += g != AGAIN
             asked_today.add(w)
+            last_grade[w] = g
             cards[w] = fsrs.review(cards[w], g, now) if policy == "fsrs" else leitner.review(cards[w], g, now)
             if cards[w].due <= end:
                 queue.append((cards[w].due, w))
@@ -368,6 +375,7 @@ def summarize(runs: list[Result]) -> dict[str, float]:
         "tekrar_son30": mean(lambda r: statistics.mean(r.reviews[-30:])),
         "tekrar_tepe": mean(lambda r: max(r.reviews)),
         "ayni_gun": mean(lambda r: statistics.mean(r.repeats)),
+        "ayni_gun_zor": mean(lambda r: r.repeats_after_hard / len(r.repeats)),
         "cevap_gun": mean(lambda r: statistics.mean(
             [a + b + c for a, b, c in zip(r.reviews, r.repeats, r.new)])),
         "dogru": mean(lambda r: r.correct / r.asked),
@@ -499,6 +507,8 @@ def main(argv=None) -> int:
         sd = max(m["tekrar_gun_sd"] for _, m in rows), max(m["hatirlama_sd"] for _, m in rows)
         print(f"\nTohumlar arası standart sapma en çok: tekrar/gün ±{fmt(sd[0], 2)}, "
               f"sondaki hatırlama ±{fmt(100 * sd[1], 2)} puan.")
+        print("Aynı gün yeniden sormaların \"Zor\"dan sonra gelen kısmı (günde): "
+              + ", ".join(f"{label.split(',')[0]} {fmt(m['ayni_gun_zor'])}" for label, m in rows) + ".")
         print()
         print_sweep(sweep(args.tohum, k, (0.70, 0.75, 0.80, 0.85, 0.90, 0.95)))
     print(f"\n### Uzun vade: 365 gün (1.000 kelimenin hepsi 100. güne kadar tanıtılır), unutma hızı 1, "

@@ -59,6 +59,19 @@ final class FSRSTests: XCTestCase {
         XCTAssertEqual(Array(fsrs.weights.suffix(2)), [0, 0.5])
     }
 
+    /// py-fsrs `test_scheduler_parameter_validation` checks the same bounds (it raises; `init` stops).
+    func testWeightsOutsideTheBoundsAreRejected() {
+        XCTAssertTrue(FSRS.areValid(weights: FSRS.defaultWeights))
+        XCTAssertTrue(FSRS.areValid(weights: Array(FSRS.defaultWeights.prefix(19))), "FSRS-5")
+        XCTAssertFalse(FSRS.areValid(weights: Array(FSRS.defaultWeights.prefix(20))), "wrong count")
+        var noDecay = FSRS.defaultWeights
+        noDecay[20] = 0
+        XCTAssertFalse(FSRS.areValid(weights: noDecay), "a decay of 0 makes every interval infinite")
+        var easyBelowOne = FSRS.defaultWeights
+        easyBelowOne[16] = 0.5
+        XCTAssertFalse(FSRS.areValid(weights: easyBelowOne), "the Easy bonus is at least 1")
+    }
+
     /// fsrs-rs `test_next_interval`: stability 1, desired retention 0.1 ... 1.0, interval rounded and
     /// at least 1. fsrs-rs computes in 32 bits; at 0.1 this 64-bit port gets 3,116,769 instead of
     /// 3,116,766 (one part in a million), hence the relative tolerance.

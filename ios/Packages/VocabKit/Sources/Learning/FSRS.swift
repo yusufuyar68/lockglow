@@ -26,6 +26,14 @@ public struct FSRS: Sendable {
         0.796, 1.4835, 0.0614, 0.2629, 1.6483, 0.6014, 1.8729, 0.5425, 0.0912, 0.0658,
         0.1542,
     ]
+    /// The range each weight must stay in (py-fsrs `LOWER_BOUNDS_PARAMETERS`,
+    /// `UPPER_BOUNDS_PARAMETERS`). Outside them intervals can become infinite or NaN (a decay
+    /// w20 of 0, for example).
+    public static let weightBounds: [ClosedRange<Double>] = [
+        0.001...100, 0.001...100, 0.001...100, 0.001...100, 1...10, 0.001...4, 0.001...4,
+        0.001...0.75, 0...4.5, 0...0.8, 0.001...3.5, 0.001...5, 0.001...0.25, 0.001...0.9,
+        0...4, 0...1, 1...6, 0...2, 0...2, 0...0.8, 0.1...0.8,
+    ]
     public static let minimumStability = 0.001
     public static let difficultyRange: ClosedRange<Double> = 1...10
     private static let day: TimeInterval = 86_400
@@ -41,6 +49,15 @@ public struct FSRS: Sendable {
     private let decay: Double
     private let factor: Double
 
+    /// True for 19 (FSRS-5) or 21 (FSRS-6) weights that all stay within `weightBounds`. `init`
+    /// stops on anything else, so weights read from storage (an optimizer's output) are checked
+    /// with this first.
+    public static func areValid(weights: [Double]) -> Bool {
+        let filled = weights.count == 19 ? weights + [0, 0.5] : weights
+        return filled.count == weightBounds.count
+            && zip(filled, weightBounds).allSatisfy { pair in pair.1.contains(pair.0) }
+    }
+
     /// The defaults are py-fsrs's (steps 1 and 10 minutes, relearning 10 minutes). 19 weights are
     /// FSRS-5: w19 = 0 and the decay 0.5 are added.
     public init(
@@ -50,8 +67,8 @@ public struct FSRS: Sendable {
         relearningSteps: [TimeInterval] = [600],
         maximumIntervalDays: Int = 36_500
     ) {
+        precondition(Self.areValid(weights: weights), "FSRS needs 19 or 21 weights within weightBounds")
         let filled = weights.count == 19 ? weights + [0, 0.5] : weights
-        precondition(filled.count == 21, "FSRS needs 19 (FSRS-5) or 21 (FSRS-6) weights")
         precondition(desiredRetention > 0 && desiredRetention <= 1, "desired retention is a probability")
         self.weights = filled
         self.desiredRetention = desiredRetention
