@@ -18,9 +18,11 @@ public struct LearningEvent: Equatable, Sendable {
 /// Turns widget events into progress updates. Pure: the app loads the progress, calls this,
 /// then saves the result.
 ///
-/// - `known` -> `Leitner.markKnown` ("I know this" on the widget)
+/// - `known` -> `Leitner.markKnown` ("I know this" on the widget: asked once in 3 days). Events
+///   written by older widget builds mean the same and get the same check.
 /// - `next`, `reveal` -> `Leitner.markExposure` (the word was seen; seeing is not a review)
-/// - `unknown` -> `Leitner.review(.again)`
+/// - `unknown` -> `Leitner.review(.again)` (two boxes down; a word waiting for its "Biliyorum"
+///   check goes back to "Tanış")
 public enum ProgressIngest {
     /// Applies the events oldest first. Events with the same timestamp keep their input order.
     /// Words without progress start as new. Input is not modified; words without events are untouched.

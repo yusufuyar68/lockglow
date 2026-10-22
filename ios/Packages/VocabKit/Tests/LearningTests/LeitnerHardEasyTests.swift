@@ -58,9 +58,10 @@ final class LeitnerHardEasyTests: XCTestCase {
     }
 
     func testHardOnAKnownWordShortensTheRefresher() {
+        // On a "Biliyorum" word this answers its check: remembered, so the claim is proven.
         let selfDeclared = Leitner.review(known(), grade: .hard, at: now)
         XCTAssertEqual(selfDeclared.state, .known)
-        XCTAssertTrue(selfDeclared.knownOverride)
+        XCTAssertFalse(selfDeclared.knownOverride)
         XCTAssertEqual(selfDeclared.box, 0)
         XCTAssertEqual(selfDeclared.dueAt, now.addingTimeInterval(15 * day))
         XCTAssertEqual(selfDeclared.lapses, 0)
@@ -126,11 +127,11 @@ final class LeitnerHardEasyTests: XCTestCase {
     func testEasyOnAKnownWordKeepsTheNormalRefresher() {
         let p = Leitner.review(known(), grade: .easy, at: now)
         XCTAssertEqual(p.state, .known)
-        XCTAssertTrue(p.knownOverride)
+        XCTAssertFalse(p.knownOverride)
         XCTAssertEqual(p.dueAt, now.addingTimeInterval(30 * day))
     }
 
-    func testAgainStillResetsAfterHardAndEasy() {
+    func testAgainFromBoxTwoGoesToBoxOne() {
         var p = Leitner.review(WordProgress(wordID: 1), grade: .easy, at: now)
         XCTAssertEqual(p.box, 2)
         p = Leitner.review(p, grade: .again, at: now)

@@ -16,7 +16,8 @@ final class ProgressIngestTests: XCTestCase {
         XCTAssertEqual(p.state, .known)
         XCTAssertTrue(p.knownOverride)
         XCTAssertEqual(p.lastSeenAt, now.addingTimeInterval(5))
-        XCTAssertEqual(p.dueAt, now.addingTimeInterval(5 + 30 * day))
+        XCTAssertTrue(p.awaitsKnownCheck)
+        XCTAssertEqual(p.dueAt, now.addingTimeInterval(5 + 3 * day)) // one check in 3 days
         XCTAssertEqual(p.reviews, 0)
     }
 
@@ -52,12 +53,26 @@ final class ProgressIngestTests: XCTestCase {
         XCTAssertEqual(p.dueAt, now.addingTimeInterval(10 + 10 * 60))
     }
 
-    func testUnknownAfterKnownIsALapse() throws {
+    func testUnknownBeforeTheKnownCheckSendsTheWordBackToTanis() throws {
         let result = ProgressIngest.apply([event(.known, 1, at: 0), event(.unknown, 1, at: 60)], to: [:])
         let p = try XCTUnwrap(result[1])
-        XCTAssertEqual(p.state, .learning)
+        XCTAssertEqual(p.state, .new)
+        XCTAssertTrue(p.returnsToIntro)
         XCTAssertFalse(p.knownOverride)
-        XCTAssertEqual(p.box, 1)
+        XCTAssertEqual(p.box, 0)
+        XCTAssertEqual(p.lapses, 1)
+        XCTAssertNil(p.dueAt)
+    }
+
+    func testUnknownDropsALearningWordTwoBoxes() throws {
+        var start = WordProgress(wordID: 1)
+        for _ in 0..<4 {
+            start = Leitner.review(start, grade: .good, at: now)
+        }
+        let result = ProgressIngest.apply([event(.unknown, 1, at: 60)], to: [1: start])
+        let p = try XCTUnwrap(result[1])
+        XCTAssertEqual(p.state, .learning)
+        XCTAssertEqual(p.box, 2)
         XCTAssertEqual(p.lapses, 1)
         XCTAssertEqual(p.dueAt, now.addingTimeInterval(60 + 10 * 60))
     }
@@ -71,12 +86,12 @@ final class ProgressIngestTests: XCTestCase {
         XCTAssertTrue(p.knownOverride)
         XCTAssertEqual(p.box, 1) // left over from the earlier wrong answer
         XCTAssertEqual(p.reviews, 1)
-        XCTAssertEqual(p.dueAt, now.addingTimeInterval(100 + 30 * day))
+        XCTAssertEqual(p.dueAt, now.addingTimeInterval(100 + 3 * day))
     }
 
     func testEqualTimestampsKeepInputOrder() throws {
         let knownThenUnknown = ProgressIngest.apply([event(.known, 1), event(.unknown, 1)], to: [:])
-        XCTAssertEqual(try XCTUnwrap(knownThenUnknown[1]).state, .learning)
+        XCTAssertEqual(try XCTUnwrap(knownThenUnknown[1]).state, .new) // the check failed: back to "Tanış"
 
         let unknownThenKnown = ProgressIngest.apply([event(.unknown, 1), event(.known, 1)], to: [:])
         XCTAssertEqual(try XCTUnwrap(unknownThenKnown[1]).state, .known)
