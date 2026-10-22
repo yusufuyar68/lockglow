@@ -5,25 +5,40 @@
 - Cihazda ya da Xcode'da denenmedi.
 - Karşılaştırma `ios/arayuz-sik` dalındaki tasarıma göre: [`../README.md`](../README.md), [`../lockglow_ui_mockup.html`](../lockglow_ui_mockup.html), `ios/Shared/LockglowTheme.swift`.
 
-**Kullanım durumu:** Kullanıcı kelimelerin çoğunu akşam görüyor: yatakta, ışık kapalı, ekran kısık, çoğu zaman kilitli ekranda. Bu yön o anı tasarlar. Gündüz tasarımı ("kâğıt ve mürekkep") aynen kalır.
+**Kullanım durumu:** Kullanıcı kelimelerin çoğunu akşam görüyor: yatakta, ışık kapalı, ekran kısık, çoğu zaman kilitli ekranda. Bu tasarım o an için. Gündüz tasarımı ("kâğıt ve mürekkep") aynen kalır.
 
 **Amaç:**
 - göz yormamak;
 - uykuyu olabildiğince az bozmak;
 - kısık ışıkta da rahat okunmak.
 
+**Bu belgedeki terimler:**
+- **mockup:** tıklanabilir taslak ekranlar. Gerçek uygulama değil.
+- **token:** tasarımdaki bir rengin adı (ör. `ink` = ana yazı rengi).
+- **ipRGC:** gözde, görmeye değil iç saate (uyku saatine) çalışan hücreler. İçlerinde **melanopsin** adlı ışık algılayıcı var.
+- **melanopik:** bu hücreleri uyaran ışık. **Melanopik EDI** (lx) bu uyaranın ölçüsü: "aynı etkiyi veren gün ışığı kaç lüks olurdu?"
+- **opsin şablonu, Govardovskii şablonu:** ışık algılayıcının hangi renge ne kadar duyarlı olduğunu gösteren hazır eğri.
+- **R² (r²):** eğrinin ölçümlere ne kadar uyduğu; 1'e yakınsa iyi uyar.
+- **halation:** açık renk yazının koyu zeminde dağılıp bulanık görünmesi.
+- **vibrant:** iOS'un kilitli ekran widget'larını tek renkte çizme biçimi.
+- **trait:** iOS'ta ekranın o anki özelliği (koyu mod, yazı boyutu gibi). Renkler buna göre seçilir.
+- **kapsül, plaka, iz:** kapsül = yuvarlak uçlu düğme ya da kutu; plaka = kilitli ekranda widget'ın arkasındaki yarı saydam zemin; iz = ilerleme çubuğunun boş kısmı.
+
 ## Mockup nasıl gezilir
 
 - **Üst çubuktaki ekranlar:**
   - sistem yüzeyleri: Kilitli ekran, Her zaman açık, StandBy;
   - uygulama: Akış, Tekrar, Quiz, Sözlük, Bu gece bitti;
+  - kartlardaki mikrofon düğmesi Söyle sayfasını açar (Dinliyorum → Kontrol ediliyor → Doğru! / Neredeyse! / Bir daha dene / Seni duyamadım; sonuçlar sırayla örnek olarak gelir);
   - Widget'lar ve Ayarlar.
 - **Sağ paneldeki kontroller:**
   - **Ton:** Kehribar (önerilen), Soluk fosfor, Mevcut koyu.
   - **Yan yana:** aynı ekranı mevcut koyu temanın renkleriyle ikinci bir telefonda gösterir.
-  - **Ekran parlaklığı (taklit):** doğrusal ışıkta kısar, %5'e kadar.
+  - **Ekran parlaklığı (taklit):** ışığı gerçek ekran gibi azaltır, %5'e kadar.
   - **Night Shift taklidi.**
   - **Geçişler:** yavaş solma ya da hareketsiz.
+  - **Cihaz:** iPhone (390 × 844) ya da iPhone SE (375 × 667).
+  - **Yazı boyutu (Dynamic Type):** beş kademe. Erişilebilirlik boyutunda kart kısalmaz, kayar; kelime sığmazsa %60'a kadar küçülür.
   - Ekrana özel seçenekler: saat rengi, duvar kâğıdı, StandBy kırmızı modu, widget görünümü.
   - Her ekranın tasarım notu ve Swift notu.
 - **Alttaki tablo:** bütün tokenlar. Kontrast ve "mavi uyaran" değerleri sayfada canlı hesaplanır, bu belgedeki sayılarla aynıdır.
@@ -45,7 +60,7 @@
    - Akış sonsuz değil: üstte "Bu gece 2 / 5", sonunda "Bu geceki 5 kelime tamam. İyi uykular."
    - "5 kelime daha" var ama küçük ve sessiz. Varsayılan yol uyumak.
 4. **Her zaman açık ve StandBy için ayrı düzen.**
-   - `isLuminanceReduced` iken dikdörtgen widget'ta yalnız kelime ve anlam kalır. Plaka yok, şerit saç çizgisine iner.
+   - `isLuminanceReduced` iken dikdörtgen widget'ta yalnız kelime ve anlam kalır. Plaka yok, şerit çok ince bir çizgiye (1 pt) iner.
    - StandBy'da sistem karanlıkta her şeyi kırmızı çizer. Hiyerarşi bu yüzden yalnız boyut, kalınlık ve parlaklıkla kurulur.
 5. **Sistemin yapabildiğini öğret, kendin taklit etme.**
    - Kilitli ekran widget'larının rengini uygulama seçemez. Ayarlar'da tek adımlık ipucu: "Kilitli ekranı kehribar yap."
@@ -72,24 +87,24 @@ Her maddenin kaynağı yanında. Notlar:
 - Melatonini en çok baskılayan bölge kısa dalga boyları:
   - [Brainard ve ark. 2001, J Neurosci](https://pmc.ncbi.nlm.nih.gov/articles/PMC6763155): 72 kişi, 627 gece testi, 420–600 nm. En etkili bölge 446–477 nm; bir opsin şablonuna uyuyor (R² = 0,91) (özet).
   - [Thapan, Arendt, Skene 2001, J Physiol](https://pmc.ncbi.nlm.nih.gov/articles/PMC2278766/): 22 kişi, 424–548 nm arası altı dalga boyu. En iyi uyan eğrinin tepesi 459 nm (r² = 0,74). Çubuk ve koni hücreleri veriye uymuyor (r² < 0,1) (özet).
-  - Kırmızı ve kehribar (uzun dalga) bu eğrinin dışında kalır.
+  - Kırmızı ve kehribar (uzun dalga) bu eğrinin çok düşük ucunda kalır: etkisi az ama sıfır değil.
 - **Uzman önerisi** ([Brown 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC8929548/)):
   - yatmadan en az 3 saat önce gözdeki ışık en çok **10 lx melanopik EDI** olmalı;
   - uyku ortamı en çok **1 lx**.
-  - Gringras 2015'in ölçtüğü değerler (aşağıda, ölçüm koşulları makalede) bu sınırın üstünde. Yani gece ekranı "az ışık" ilkesiyle tasarlanmalı.
+  - Gringras 2015'in ölçtüğü değerler (aşağıda) bu sınırın üstünde. Birimler birebir aynı değil (Gringras "melanopik lux" ölçüyor, Brown "melanopik EDI" diyor; ölçüm karanlık odada ve otomatik parlaklıkta), ama yön aynı. Yani gece ekranı "az ışık" ilkesiyle tasarlanmalı.
 
 ### 2. Gece ekranı uykuyu ne kadar bozuyor?
 
-- [Chang, Aeschbach, Duffy, Czeisler 2015, PNAS](https://pmc.ncbi.nlm.nih.gov/articles/PMC4313820): 12 kişi, beş akşam boyunca 4 saat iPad'de ya da basılı kitapta okudu. iPad ile:
+- [Chang, Aeschbach, Duffy, Czeisler 2015, PNAS](https://pmc.ncbi.nlm.nih.gov/articles/PMC4313820): 12 kişi, beş akşam boyunca 4 saat iPad'de ya da basılı kitapta okudu. Aşağıdaki sayılar tam metinden alındı; 22 Ekim'de ikinci kez kontrol edilemedi (özette sayı yok). iPad ile:
   - melatonin baskılanması %55 (kitapta %19, anlamlı değil);
   - uykuya dalma süresi 25,7 dakika (kitapta 15,8);
   - melatonin başlangıcı 1,5 saatten fazla gecikti;
   - sabah uyanıklık daha düşüktü.
-  - Kısıt: tam parlaklıkta, 4 saat okuma. [Zeitzer'in yorumu](https://pmc.ncbi.nlm.nih.gov/articles/PMC4313797/): gündüz yeterli ışık alanlarda etki daha küçük olabilir.
+  - Kısıt: tam parlaklıkta, 4 saat okuma. [Zeitzer'in yorumu](https://pmc.ncbi.nlm.nih.gov/articles/PMC4313797/): gündüz yeterli ışık alanlarda etki daha küçük olabilir (özet).
 - **Etkiyi parlaklık ve melanopik doz belirler:**
-  - [Schöllhorn ve ark. 2023, Communications Biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974389): 72 kişi. Parlaklığı ve rengi eşit, melanopik içeriği farklı ekranlar denendi (yaklaşık 5–150 lx melanopik EDI).
+  - [Schöllhorn ve ark. 2023, Communications Biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC9974389): 72 sağlıklı erkek (kadınlar yok). Parlaklığı ve rengi eşit, melanopik içeriği farklı ekranlar denendi (yaklaşık 5–150 lx melanopik EDI).
     - Etki doza bağlı: en düşükten en yükseğe uykuya dalma süresi yaklaşık %50 uzadı, melatonin yaklaşık %50 azaldı.
-    - Yazarlar etkileri "küçük" buluyor.
+    - Yazarlar melatonin farklarını görece küçük buluyor.
   - [Gringras ve ark. 2015, Frontiers in Public Health](https://www.frontiersin.org/articles/10.3389/fpubh.2015.00233/full): yazı gösterirken melanopik lux iPad Air'de 302, iPhone 5s'te 55, Kindle Paperwhite'ta 35. Bütün cihazların tepe ışığı 445–455 nm'de. Büyük ve parlak ekran daha çok melanopik ışık verir.
 - **Night Shift tek başına yetmeyebilir:**
   - [Nagare, Plitnick, Figueiro, Lighting Research & Technology 51(3), 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6561503) (çevrimiçi 2018): iPad'de düşük ve yüksek renk sıcaklıklı iki Night Shift ayarı arasında melatonin baskılanması farkı yok. Yazarlara göre parlaklığı değiştirmeden yalnız tayfı değiştirmek "yetersiz olabilir" (özet).
@@ -106,7 +121,7 @@ Her maddenin kaynağı yanında. Notlar:
 - Koyu yazı açık zeminde (pozitif polarite) genelde daha iyi okunur:
   - [Piepenbrock, Mayr, Mund, Buchner 2013, Ergonomics](https://documentacion.fundacionmapfre.org/documentacion/bib/143702.do): genç ve yaşlı okurlarda (özet).
   - [Piepenbrock, Mayr, Buchner 2014](https://documentacion.fundacionmapfre.org/documentacion/publico/en/bib/150136.do): nedeni, parlak ekranda göz bebeğinin küçülmesi ve görüntünün keskinleşmesi (özet).
-  - [Buchner, Mayr, Brandt 2009](https://madoc.bib.uni-mannheim.de/26118/): üstünlük "yüksek ekran parlaklığından" geliyor.
+  - [Buchner, Mayr, Brandt 2009](https://madoc.bib.uni-mannheim.de/26118/): üstünlük "yüksek ekran parlaklığından" geliyor (özet).
   - Benim çıkarımım: kısık ışıkta bu üstünlük küçülür. Gece beyaz zemin ise odayı aydınlatır.
 - **Sonuç:** gece koyu zemin doğru, ama okunurluğu başka yoldan desteklemek gerekir:
   - yazılar ince değil;
@@ -132,7 +147,7 @@ Her maddenin kaynağı yanında. Notlar:
 ### 5. Apple'ın sistem yüzeyleri
 
 - **Her zaman açık:**
-  - iPhone 14 Pro ve sonrası Pro modellerde varsayılan açık. Kilitlenince ekran kararır, yenileme 1 Hz'e kadar iner ([Apple Destek](https://support.apple.com/en-us/109351)).
+  - iPhone 14 Pro ve sonrası Pro modellerde ve iPhone 17'de varsayılan açık; iPhone Air'de varsayılan kapalı. Kilitlenince ekran kararır, yenileme 1 Hz'e kadar iner ([Apple Destek](https://support.apple.com/en-us/109351)).
   - Uyku odağında (Sleep Focus) kapanabilir (özet: [iPhone Kullanma Kılavuzu](https://support.apple.com/guide/iphone/keep-the-iphone-display-on-longer-iph7117338a8/ios)).
 - **`isLuminanceReduced`:** [SwiftUI belgesi](https://developer.apple.com/documentation/swiftui/environmentvalues/isluminancereduced). Apple önerisi: görünümün parlaklığını düşür, şekilleri doldurmak yerine çiz, daha az parlak renk seç.
   - WidgetKit, kilitli ekran widget'larında Her zaman açık için bu değişkeni kullanmayı söylüyor ([Preparing widgets…](https://developer.apple.com/documentation/widgetkit/preparing-widgets-for-additional-contexts-and-appearances)).
@@ -234,10 +249,10 @@ Her maddenin kaynağı yanında. Notlar:
 
 Önem sırasıyla. İlk üçü yalnız token ve küçük bileşen değişikliği.
 
-1. **Koyu modda ışımaları kaldır.** `Theme.bandGlow` ve `Theme.primaryGlow` koyu değerleri `.clear` olur. Şerit çizgisi kalır.
+1. **Koyu modda ışımaları kaldır.** `Theme.bandGlow` ve `Theme.primaryGlow` bugün sabit (`fixed`) renkler ve zaten yalnız gece çiziliyor. Değerleri `.clear` olur ya da `PhosphorBandDrawing` ve `CapsuleButtonBody` ışımayı hiç çizmez. Şerit çizgisi kalır.
 2. **Koyu modda ana düğmeyi tonal yap.**
    - Dolu sarı yerine `band.opacity(0.16)` zemin, `band` yazı ve 1,5 pt `band.opacity(0.45)` kenar.
-   - Ekrandaki en parlak alan (L %71 → %1,4) kaybolur. Okunurluk 9,4:1'de kalır.
+   - `#0D0F11` zeminde bu dolgu `#303019` olur. Ekrandaki en parlak alan kaybolur (L %71 → %2,8). Yazı/zemin oranı 9,7:1. (Kehribar tonunda aynı düğme L %1,4 ve 9,4:1.)
 3. **Koyu modda zemin `#000`, kartlar dolgusuz.**
    - `Theme.bg` koyu `#000000`.
    - `cardSurface()` koyu modda `surface` dolgusu yerine yalnız `line` kenar.
@@ -265,6 +280,9 @@ Her maddenin kaynağı yanında. Notlar:
      - SwiftUI tarafında `UITraitBridgedEnvironmentKey`;
      - `UIColor { traits in traits[NightToneTrait.self] … }`.
    - Böylece `Theme.ink` gibi statik adlar aynı kalır.
+   - İki dikkat noktası:
+     - `bandDark`, `markDark`, `bandGlow`, `primaryGlow` bugün sabit `Color` (`fixed`). Trait'i okumazlar; dinamik sağlayıcıya taşınmaları gerekir.
+     - SwiftUI'nin `Color(uiColor:)` çözerken köprülenen özel trait'i sağlayıcıya verdiği belgelenmemiş, özellikle widget uzantısında. Cihazda doğrulanmalı. Olmazsa yedek yol: `Environment` değeri ve `Theme`'de tona göre renk döndüren işlevler.
    - Proje iOS 17 hedefli (`ios/project.yml`), bu API'ler var.
 2. **Ne zaman açılır?**
    - Varsayılan: yalnız `colorScheme == .dark` iken. Apple HIG uygulamaya özel görünüm ayarından kaçınmayı öneriyor; "Her zaman" seçeneği isteğe bağlı kalmalı.
@@ -279,21 +297,22 @@ Her maddenin kaynağı yanında. Notlar:
 5. **Yazı.**
    - Gece Türkçe anlam `.title.weight(.semibold)` (bold yerine). Açık yazı koyu zeminde zaten kalın görünür.
    - İngilizce kelime serif bold kalır. Hiçbir yerde `.light` ya da `.thin` yok.
-   - Dinamik Tür ölçekleri değişmez.
+   - Dynamic Type (yazı boyutu) ölçekleri değişmez.
 6. **Cam (iOS 26).**
    - Liquid Glass sekme çubuğu ve `glassControl()` koyu zeminde hafif parlar. Gece tonunda sekme çubuğu arka planı siyah tutulabilir mi, cihazda bakılmalı.
    - Olmazsa `glassControl()` gece tonunda `.bordered` dalına düşebilir.
 7. **Hareket.**
    - `accessibilityReduceMotion` ve uygulamadaki "Hareketsiz" seçimi aynı yolu kullanmalı.
    - `repeatForever` nabız yok. "Dinle" çalarken yalnız simge ve yazı değişir ("Çalıyor").
-8. **Renk tek başına anlam taşımaz (kural 4).** Yanlış şık kesik çizgili kenar (`StrokeStyle(dash: [6, 4])`), doğru şık düz kenar ve simge.
-9. **Bildirim.** Hatırlatma kullanıcının saatinde kalır. Gece yarısından sonra yeni bildirim planlanmaz.
-10. **Parlaklık API'si.** `UIScreen.brightness` değiştirilmez. Kullanıcının ayarına dokunulmaz.
-11. **Test.**
+8. **Söyle sayfası.** Mikrofon düğmesi ana düğmeyle aynı tonal stilde (dolu değil). Dinlerken nabız yok; yalnız simge ve yazı değişir. `FeedbackPanel` zemini `goodTint` / `badTint` (%12); "Neredeyse!" için `surface2` ve `caution` simge.
+9. **Renk tek başına anlam taşımaz (kural 4).** Yanlış şık kesik çizgili kenar (`StrokeStyle(dash: [6, 4])`), doğru şık düz kenar ve simge.
+10. **Bildirim.** Hatırlatma kullanıcının saatinde kalır. Gece yarısından sonra yeni bildirim planlanmaz.
+11. **Parlaklık API'si.** `UIScreen.brightness` değiştirilmez. Kullanıcının ayarına dokunulmaz.
+12. **Test.**
     - `WidgetSnapshotTests` ve ekran görüntüsü testlerine gece tonu eklenebilir (`screenshots.yml` kota nedeniyle az çalıştırılmalı).
     - Cihazda denenmeli:
       - kehribar mürekkebin %10 parlaklıkta okunması;
-      - Her zaman açık ekranında saç çizgisi şeridin görünmesi;
+      - Her zaman açık ekranında 1 pt şeridin görünmesi;
       - StandBy kırmızı modda hiyerarşi;
       - kilitli ekran widget'larının saat rengini alması (iOS 17, 18, 26);
       - Türkçe iOS menü adları ("Beyaz Noktayı Azalt", "Erişilebilirlik Kısayolu").
@@ -303,4 +322,4 @@ Her maddenin kaynağı yanında. Notlar:
 - Gece tonu ayrı bir seçenek mi olsun, yoksa koyu modun kendisi mi bu olsun? Öneri: koyu mod bu olsun; Ayarlar'da yalnız ton seçimi.
 - Kehribar mı, soluk fosfor mu? Kehribar daha az mavi; fosfor markaya daha yakın. Kullanıcıyla iki telefon yan yana gece denenmeli.
 - Durma noktası herkes için mi, yalnız akşam mı? "5 kelime daha" ne kadar görünür olmalı?
-- Uyku odağı açıkken (Focus) gece tonu otomatik açılabilir mi? `INFocusStatusCenter` yalnız "odak açık mı" bilgisini verir, hangi odak olduğunu vermez. Ayrıca izin ister.
+- Uyku odağı açıkken (Focus) gece tonu otomatik açılabilir mi? `INFocusStatusCenter` yalnız "odak açık mı" bilgisini verir, hangi odak olduğunu vermez. Ayrıca kullanıcı izni ve ek bir uygulama yeteneği (capability) gerekebilir; Apple belgesinde doğrulanmalı.
