@@ -16,7 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
-APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
+APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
 
 # A declaration that starts with `public` or `open`, after optional attributes such as @discardableResult.

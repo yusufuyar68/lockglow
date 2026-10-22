@@ -5,10 +5,16 @@ import Learning
 
 /// Vertical paging feed: one full-page card per word of the user's deck (iOS 17 scroll APIs).
 /// At accessibility text sizes there are no pages: each card is as tall as its content and
-/// scrolls with the feed, never on its own (README rule 5). No counter, no page dots.
+/// scrolls with the feed, never on its own (README rule 5). No counter, no page dots. Once the
+/// day's new cards reach the daily goal, the end-of-day card is the next page (`considerDayEnd`).
 struct FeedView: View {
     @EnvironmentObject private var model: AppModel
+    /// One system card per opening (RootView): the end-of-day card asks it first.
+    @EnvironmentObject private var systemCards: SystemCardQueue
     @Binding var scrolledWordID: Int?
+    /// "Tekrar'a geç" on the end-of-day card. Nil: through the reminder route, which opens
+    /// "Tekrar" when it asks for no word (`RootView.openReviewIfRequested`).
+    var openReview: (() -> Void)? = nil
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     /// The whole card, opened from a shortened card's "Örnek cümle" row.
@@ -23,6 +29,10 @@ struct FeedView: View {
     @State private var knownNotice: FeedKnownNotice?
     /// VoiceOver is on the notice's "Geri al": the notice stays.
     @AccessibilityFocusState private var noticeHasFocus: Bool
+    /// The end-of-day card stands after this word (today, once claimed; `considerDayEnd`).
+    @State private var dayEndAfterID: Int?
+    /// The feed tab is on screen: only then may it take the opening's system card.
+    @State private var isOnScreen = false
 
     /// After this many card changes the user knows how the feed moves.
     private static let hintCardChanges = 3
@@ -53,10 +63,27 @@ struct FeedView: View {
             await hideKnownNoticeLater()
         }
         .onAppear {
+            isOnScreen = true
             noteCurrentCard()
+        }
+        .onDisappear {
+            isOnScreen = false
         }
         .onChange(of: model.feedWords.first?.id) {
             noteCurrentCard()
+        }
+        // A new opening was decided (RootView): a card waiting since the last one may come now.
+        .onChange(of: systemCards.isDecided) { _, isDecided in
+            if isDecided {
+                openingDecided()
+            }
+        }
+        // The end-of-day card went away under the user (a new day, "İlerlemeyi sıfırla", another
+        // deck): the scroll position moves to a word, so the feed goes on noting cards.
+        .onChange(of: showsDayEnd) { _, shows in
+            if !shows && scrolledWordID == FeedItem.dayEndID {
+                scrolledWordID = nextWordID(afterDayEnd: dayEndAfterID) ?? model.feedWords.first?.id
+            }
         }
         .sheet(item: $detailWord) { word in
             NavigationStack {
@@ -90,8 +117,8 @@ struct FeedView: View {
         let isPaged = !dynamicTypeSize.isAccessibilitySize
         return ScrollView(.vertical) {
             LazyVStack(spacing: 0) {
-                ForEach(model.feedWords) { word in
-                    card(for: word, isPaged: isPaged)
+                ForEach(items) { item in
+                    page(item, isPaged: isPaged)
                         .containerRelativeFrame(isPaged ? [.horizontal, .vertical] : [.horizontal])
                 }
             }
@@ -122,6 +149,33 @@ struct FeedView: View {
         }
         .allowsHitTesting(false)
         .accessibilityHidden(true)
+    }
+
+    /// The deck's words, and the end-of-day card after `dayEndAfterID` while it is today's.
+    private var items: [FeedItem] {
+        var items = model.feedWords.map { FeedItem.word($0) }
+        if showsDayEnd, let index = items.firstIndex(where: { $0.id == dayEndAfterID }) {
+            items.insert(.dayEnd, at: index + 1)
+        }
+        return items
+    }
+
+    /// The end-of-day card is a page now: shown today, and its word is still in the deck.
+    private var showsDayEnd: Bool {
+        guard let after = dayEndAfterID, encounters.isDayEndShown() else {
+            return false
+        }
+        return model.feedWords.contains { $0.id == after }
+    }
+
+    @ViewBuilder
+    private func page(_ item: FeedItem, isPaged: Bool) -> some View {
+        switch item {
+        case .word(let word):
+            card(for: word, isPaged: isPaged)
+        case .dayEnd:
+            dayEndCard(isPaged: isPaged)
+        }
     }
 
     private func card(for word: WidgetWord, isPaged: Bool) -> some View {
@@ -156,11 +210,93 @@ struct FeedView: View {
         }
     }
 
-    /// The card on screen is met today (the first card until the feed is scrolled).
+    /// The word card on screen (the first card until the feed is scrolled); nil on the end-of-day
+    /// card.
+    private var currentWordID: Int? {
+        let id = scrolledWordID ?? model.feedWords.first?.id
+        return id == FeedItem.dayEndID ? nil : id
+    }
+
+    /// The card on screen is met today; the end-of-day card may follow it.
     private func noteCurrentCard() {
-        if let id = scrolledWordID ?? model.feedWords.first?.id {
-            encounters.noteSeen(id)
+        guard let id = currentWordID else {
+            return
         }
+        encounters.noteSeen(id, progress: model.progress[id])
+        considerDayEnd()
+    }
+
+    // MARK: End of the day
+
+    /// The end-of-day card (ogrenme_ilkeleri 2.2 and 2.10). Once the new cards met today reach the
+    /// daily goal, it becomes the page after the card on screen: at most once a day, only while
+    /// the feed is on screen, and only as this opening's one system card
+    /// (`SystemCardQueue.claim`). When another card came first it waits for the next opening.
+    private func considerDayEnd(now: Date = Date()) {
+        guard isOnScreen,
+              systemCards.isDecided,
+              !encounters.isDayEndShown(on: now),
+              encounters.newCardsSeen(on: now) >= model.dailyNewWords,
+              let current = currentWordID,
+              systemCards.claim(.dayEnd)
+        else {
+            return
+        }
+        encounters.noteDayEndShown(at: now)
+        dayEndAfterID = current
+    }
+
+    /// A new opening: the card on screen is this opening's card again; otherwise a waiting one
+    /// may come now.
+    private func openingDecided() {
+        guard isOnScreen else {
+            return
+        }
+        if scrolledWordID == FeedItem.dayEndID {
+            _ = systemCards.claim(.dayEnd)
+        } else {
+            considerDayEnd()
+        }
+    }
+
+    private func dayEndCard(isPaged: Bool) -> some View {
+        var continueFeed: (() -> Void)? = nil
+        if let next = nextWordID(afterDayEnd: dayEndAfterID) {
+            continueFeed = {
+                withAnimation(changeAnimation) {
+                    scrolledWordID = next
+                }
+            }
+        }
+        return FeedDayEndCard(
+            goal: model.dailyNewWords,
+            hasLockScreenWidget: model.hasLockScreenWidget,
+            reviewCount: model.nextReviewSession()?.words.count,
+            fillsPage: isPaged,
+            openReview: openReviewTab,
+            continueFeed: continueFeed
+        )
+        .padding(EdgeInsets(top: 4, leading: 14, bottom: isPaged ? FeedView.pageBottomGap : 16, trailing: 14))
+    }
+
+    /// The word after the end-of-day card; nil when it is the last page.
+    private func nextWordID(afterDayEnd after: Int?) -> Int? {
+        let words = model.feedWords
+        guard let after = after, let index = words.firstIndex(where: { $0.id == after }), index + 1 < words.count else {
+            return nil
+        }
+        return words[index + 1].id
+    }
+
+    /// "Tekrar'a geç". Without `openReview` the reminder route also marks this opening as one a
+    /// reminder opened; that only matters before the opening's card is chosen, which is done by now.
+    private func openReviewTab() {
+        if let openReview = openReview {
+            openReview()
+            return
+        }
+        NotificationRouter.shared.requestedWordID = nil
+        NotificationRouter.shared.reviewRequested = true
     }
 
     // MARK: "Biliyorum"
@@ -211,7 +347,8 @@ struct FeedView: View {
             }
         }
         if model.learningState(of: word) != .known {
-            announce("Öğrenmeye geri alındı.")
+            // terimler.md: "Öğrenmeye döndü".
+            announce("Öğrenmeye döndü.")
         }
     }
 
@@ -262,7 +399,7 @@ struct FeedView: View {
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
-                .accessibilityHint("Kelime öğrenmeye geri döner.")
+                .accessibilityHint("Kelime öğrenme listene döner.")
                 .accessibilityFocused($noticeHasFocus)
             }
             .foregroundStyle(Theme.bg)
@@ -279,16 +416,20 @@ struct FeedView: View {
     }
 
     /// The notice leaves after 5 seconds (ogrenme_ilkeleri 2.2). With VoiceOver or Switch Control
-    /// it stays 10 seconds, and never leaves while VoiceOver is on it (WCAG 2.2.1); the card's
-    /// "Biliyorum" undoes the word at any time anyway.
+    /// it stays 10 seconds, and never leaves while VoiceOver is on it (WCAG 2.2.1). While it is on
+    /// screen its "Geri al" restores the word exactly: the model's undo window is kept a little
+    /// ahead of it (`AppModel.extendKnownUndo`). The card's "Biliyorum" undoes the word at any
+    /// time anyway.
     private func hideKnownNoticeLater() async {
-        guard knownNotice != nil else {
+        guard let word = knownNotice?.word else {
             return
         }
         let isAssisted = UIAccessibility.isVoiceOverRunning || UIAccessibility.isSwitchControlRunning
-        try? await Task.sleep(for: .seconds(isAssisted ? 10 : 5))
-        while !Task.isCancelled && noticeHasFocus {
-            try? await Task.sleep(for: .seconds(1))
+        let end = Date().addingTimeInterval(isAssisted ? 10 : 5)
+        while !Task.isCancelled && (Date() < end || noticeHasFocus) {
+            model.extendKnownUndo(of: word, until: Date().addingTimeInterval(2))
+            let remaining = end.timeIntervalSinceNow
+            try? await Task.sleep(for: .seconds(remaining > 0 ? min(1, remaining) : 1))
         }
         guard !Task.isCancelled else {
             return
@@ -304,11 +445,30 @@ struct FeedView: View {
         case .loading:
             ProgressView()
         default:
+            // No file names here (terimler.md: technical names only under "Teknik bilgiler").
             ContentUnavailableView(
-                "İçerik bulunamadı",
+                "Kelimeler yüklenemedi",
                 systemImage: "tray",
-                description: Text("content.sqlite ve seed_words.json pakete eklenmemiş.")
+                description: Text("Uygulamayı kapatıp yeniden aç.")
             )
+        }
+    }
+}
+
+/// One page of "Akış": a word card, or the end-of-day card.
+private enum FeedItem: Identifiable {
+    /// The end-of-day card's id in the scroll position (word ids are positive).
+    static let dayEndID = -1
+
+    case word(WidgetWord)
+    case dayEnd
+
+    var id: Int {
+        switch self {
+        case .word(let word):
+            return word.id
+        case .dayEnd:
+            return FeedItem.dayEndID
         }
     }
 }
@@ -325,13 +485,19 @@ private struct FeedKnownNotice {
 /// (`reviews`, `exposures`). The feed is not in `WordProgress`, so the first day each card was on
 /// screen is kept here: UserDefaults `lockglow.feedFirstSeen`, word id → the start of that day
 /// (seconds since 1970). A card first seen today stays a first encounter all day, so it never
-/// changes while the user looks at it. "İlerlemeyi sıfırla" clears it
-/// (`AppPreferences.clearFeedFirstSeen`).
+/// changes while the user looks at it. Only new cards are kept: the ones met today are the feed's
+/// part of the daily goal (`newCardsSeen`). The day the end-of-day card was shown is kept too
+/// (`lockglow.feedDayEndShown`); after it no card is kept that day (ogrenme_ilkeleri 2.2: the cards
+/// after it are not that day's new words), so they stay first encounters. "İlerlemeyi sıfırla"
+/// clears both (`AppPreferences.clearFeedFirstSeen`).
 final class FeedEncounterStore: ObservableObject {
     static let defaultsKey = AppPreferences.feedFirstSeenKey
+    static let dayEndKey = "lockglow.feedDayEndShown"
 
     private let defaults: UserDefaults
     private var firstSeen: [Int: Date]
+    /// The start of the day the end-of-day card was shown.
+    private var dayEndShown: Date?
     private var clearObserver: NSObjectProtocol?
 
     init(defaults: UserDefaults = .standard) {
@@ -344,6 +510,7 @@ final class FeedEncounterStore: ObservableObject {
             }
         }
         firstSeen = days
+        dayEndShown = (defaults.object(forKey: FeedEncounterStore.dayEndKey) as? Double).map(Date.init(timeIntervalSince1970:))
         clearObserver = NotificationCenter.default.addObserver(
             forName: AppPreferences.feedFirstSeenCleared,
             object: nil,
@@ -351,6 +518,8 @@ final class FeedEncounterStore: ObservableObject {
         ) { [weak self] _ in
             self?.objectWillChange.send()
             self?.firstSeen = [:]
+            self?.dayEndShown = nil
+            self?.defaults.removeObject(forKey: FeedEncounterStore.dayEndKey)
         }
     }
 
@@ -360,9 +529,10 @@ final class FeedEncounterStore: ObservableObject {
         }
     }
 
-    /// The card is on screen at `now`; only its first day is kept.
-    func noteSeen(_ id: Int, now: Date = Date()) {
-        guard firstSeen[id] == nil else {
+    /// The card is on screen at `now`: a new card keeps its first day, unless the end-of-day card
+    /// was shown today.
+    func noteSeen(_ id: Int, progress: WordProgress?, now: Date = Date()) {
+        guard firstSeen[id] == nil, !FeedEncounterStore.wasMet(progress), !isDayEndShown(on: now) else {
             return
         }
         firstSeen[id] = Calendar.current.startOfDay(for: now)
@@ -375,13 +545,103 @@ final class FeedEncounterStore: ObservableObject {
 
     /// Not reviewed, no widget button, and not in the feed before today.
     func isFirstEncounter(_ id: Int, progress: WordProgress?, now: Date = Date()) -> Bool {
-        if let progress = progress, progress.reviews > 0 || progress.exposures > 0 {
+        if FeedEncounterStore.wasMet(progress) {
             return false
         }
         guard let day = firstSeen[id] else {
             return true
         }
         return day >= Calendar.current.startOfDay(for: now)
+    }
+
+    /// New cards first seen on `now`'s day.
+    func newCardsSeen(on now: Date = Date()) -> Int {
+        let today = Calendar.current.startOfDay(for: now)
+        return firstSeen.values.filter { $0 == today }.count
+    }
+
+    func isDayEndShown(on now: Date = Date()) -> Bool {
+        return dayEndShown == Calendar.current.startOfDay(for: now)
+    }
+
+    func noteDayEndShown(at now: Date = Date()) {
+        let day = Calendar.current.startOfDay(for: now)
+        dayEndShown = day
+        defaults.set(day.timeIntervalSince1970, forKey: FeedEncounterStore.dayEndKey)
+    }
+
+    /// Met in "Tekrar" or through a widget button.
+    private static func wasMet(_ progress: WordProgress?) -> Bool {
+        guard let progress = progress else {
+            return false
+        }
+        return progress.reviews > 0 || progress.exposures > 0
+    }
+}
+
+/// The end-of-day card (ogrenme_ilkeleri 2.2): not a window but the feed's next page, as large as
+/// a word card. Calm (2.10): no count of what is left, no blame, and going on is always free.
+/// "Tekrar'a geç (N kelime)" is the main button while "Tekrar" has a round (N: its words, as on
+/// "Tekrar"'s "Başla"); "Devam et" goes to the next card, the main button when "Tekrar" has none.
+private struct FeedDayEndCard: View {
+    let goal: Int
+    /// "Yarın kilitli ekranında…" only with a Lock Screen widget.
+    let hasLockScreenWidget: Bool
+    /// Words of "Tekrar"'s next round; nil when it has none.
+    let reviewCount: Int?
+    /// As tall as its page (the paged feed); natural height at accessibility text sizes.
+    let fillsPage: Bool
+    let openReview: () -> Void
+    /// Nil on the feed's last page.
+    let continueFeed: (() -> Void)?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 10) {
+                Image(systemName: "sun.max")
+                    .font(.title)
+                    .foregroundStyle(Theme.ink2)
+                    .accessibilityHidden(true)
+                Text(verbatim: "Bugünlük \(goal) yeni kelime yeter.")
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(Theme.ink)
+                    .accessibilityAddTraits(.isHeader)
+                Text(hasLockScreenWidget ? "Yarın kilitli ekranında yenileri olacak." : "Yarın yenileri gelecek.")
+                    .font(.body)
+                    .foregroundStyle(Theme.ink2)
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            buttons
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 24)
+        .frame(maxWidth: .infinity, maxHeight: fillsPage ? .infinity : nil, alignment: .leading)
+        .cardSurface(cornerRadius: Theme.Radius.wordCard)
+        .tint(Theme.ink)
+        .accessibilityElement(children: .contain)
+    }
+
+    @ViewBuilder
+    private var buttons: some View {
+        VStack(spacing: 10) {
+            if let count = reviewCount {
+                Button(action: openReview) {
+                    Text(verbatim: "Tekrar'a geç (\(count) kelime)")
+                }
+                .buttonStyle(PrimaryCapsuleButtonStyle())
+            }
+            if let continueFeed = continueFeed {
+                if reviewCount == nil {
+                    Button("Devam et", action: continueFeed)
+                        .buttonStyle(PrimaryCapsuleButtonStyle())
+                        .accessibilityHint("Sıradaki karta geçer.")
+                } else {
+                    Button("Devam et", action: continueFeed)
+                        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
+                        .accessibilityHint("Sıradaki karta geçer.")
+                }
+            }
+        }
     }
 }
 
@@ -604,7 +864,10 @@ struct WordCardView: View {
             }
             partGap(spacing)
             if step == .allRow {
-                detailRow(title: WordCardView.rowTitle(for: warnings.first), showsCaution: false)
+                detailRow(
+                    title: WordCardView.rowTitle(for: warnings.first, hasExample: !firstExample.en.isEmpty),
+                    showsCaution: false
+                )
             } else {
                 // A user's word without an example has nothing here.
                 if !firstExample.en.isEmpty {
@@ -706,7 +969,7 @@ struct WordCardView: View {
         .buttonStyle(CardCapsuleButtonStyle(isSelected: known.isKnown))
         .accessibilityLabel("Biliyorum")
         .accessibilityAddTraits(known.isKnown ? .isSelected : [])
-        .accessibilityHint(Text(known.isKnown ? "Kelimeyi öğrenmeye geri alır." : ""))
+        .accessibilityHint(Text(known.isKnown ? "Kelime öğrenme listene döner." : ""))
     }
 
     /// The Turkish meaning only: other meanings ("Ayrıca") are on the whole card in "Sözlük".
@@ -758,15 +1021,15 @@ struct WordCardView: View {
         }
     }
 
-    /// The last step's row: what it opens.
-    private static func rowTitle(for warning: CardWarning?) -> String {
+    /// The last step's row: what it opens. A user's word may have no example.
+    private static func rowTitle(for warning: CardWarning?, hasExample: Bool) -> String {
         switch warning {
         case .falseFriend?:
-            return "Örnek cümle ve sahte dost"
+            return hasExample ? "Örnek cümle ve sahte dost" : "Sahte dost"
         case .mistake?:
-            return "Örnek cümle ve Dikkat"
+            return hasExample ? "Örnek cümle ve Dikkat" : "Dikkat"
         case .sameWord?, .phrasalVerb?:
-            return "Örnek cümle ve not"
+            return hasExample ? "Örnek cümle ve not" : "Not"
         case nil:
             return "Örnek cümle"
         }

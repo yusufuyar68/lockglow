@@ -4,9 +4,10 @@ import TextFold
 /// "Son aramalar": the searches that opened a card or were sent with the keyboard's search key,
 /// newest first, at most eight. Kept on this phone only, as one `@AppStorage` text with a search
 /// per line. A search made again moves to the top instead of appearing twice ("odunc" and
-/// "ödünç" count as the same search, as they find the same words).
+/// "ödünç" count as the same search, as they find the same words). "İlerlemeyi sıfırla" deletes
+/// them (`AppModel.clearRecentSearches`).
 enum SozlukRecentSearches {
-    static let storageKey = "lockglow.recentSearches"
+    static let storageKey = AppModel.recentSearchesKey
     static let limit = 8
     /// A pasted sentence is cut: the row shows a search, not a paragraph.
     static let maxLength = 60

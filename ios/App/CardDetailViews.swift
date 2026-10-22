@@ -1,4 +1,5 @@
 import SwiftUI
+import Accessibility
 import CoreModels
 
 // Pieces of a card's detail (from `CardDetail`) shared by the feed, the "Tekrar" cards and the
@@ -64,7 +65,8 @@ struct ExampleRow: View {
 /// "Dikkat" box (mockup `.mist`): a mistake Turkish speakers typically make with this word, the
 /// right form, and why. The words that differ are underlined (dotted in the wrong sentence, solid
 /// and bold in the right one, README point 5). Labelled in words with an icon ("Yanlış",
-/// "Doğru"), so the meaning never depends on color (rule 4). `showsWhy: false` hides the
+/// "Doğru"), so the meaning never depends on color (rule 4); VoiceOver hears the underline as
+/// "Fark: did yerine had" after the heading (audit V12). `showsWhy: false` hides the
 /// explanation (the feed card's second shortening step). Everything on the box's `surface2` is
 /// `ink`: `ink2` there stays under 7:1 (ogrenme_ilkeleri 2.2, contrast).
 struct MistakeBox: View {
@@ -75,7 +77,7 @@ struct MistakeBox: View {
     var body: some View {
         let diff = MistakeDiff(mistake)
         VStack(alignment: .leading, spacing: 8) {
-            heading
+            heading(difference: MistakeBox.difference(mistake))
             if dynamicTypeSize.isAccessibilitySize {
                 // No room for a label column: each label above its sentence.
                 VStack(alignment: .leading, spacing: 4) {
@@ -111,8 +113,9 @@ struct MistakeBox: View {
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
     }
 
-    private var heading: some View {
-        HStack(spacing: 6) {
+    @ViewBuilder
+    private func heading(difference: String?) -> some View {
+        let title = HStack(spacing: 6) {
             Image(systemName: "exclamationmark.triangle")
                 .font(.body.weight(.semibold))
                 .foregroundStyle(Theme.caution)
@@ -123,6 +126,31 @@ struct MistakeBox: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(.isHeader)
+        if let difference = difference {
+            title
+                .accessibilityCustomContent(Text("Fark"), Text(verbatim: difference), importance: .high)
+        } else {
+            title
+        }
+    }
+
+    /// The underlined words in a sentence: "did yerine had"; "Eklenen: to" when the right sentence
+    /// only adds words, "Çıkan: the" when it only drops them. Nil when nothing is marked. The
+    /// words stand alone, with no Turkish suffix (terimler.md).
+    static func difference(_ mistake: CardDetail.Mistake) -> String? {
+        let snippet = MistakeSnippet(mistake)
+        let wrong = snippet.wrong.filter { $0.isChanged }.map { $0.text }.joined(separator: " ")
+        let right = snippet.right.filter { $0.isChanged }.map { $0.text }.joined(separator: " ")
+        switch (wrong.isEmpty, right.isEmpty) {
+        case (false, false):
+            return "\(wrong) yerine \(right)"
+        case (true, false):
+            return "Eklenen: \(right)"
+        case (false, true):
+            return "Çıkan: \(wrong)"
+        case (true, true):
+            return nil
+        }
     }
 
     private func tag(isRight: Bool) -> some View {
@@ -767,8 +795,10 @@ struct CardListenCapsule: View {
 }
 
 /// The capsule of `CardListenCapsule` and the card's "Biliyorum": 44 pt high, subheadline, the
-/// press feedback of the theme's capsule buttons. `isSelected` (a known word's "Biliyorum"):
-/// `surface` with a 1.5 pt `tint` border instead of the `surface2` fill, like a selected chip.
+/// press feedback of the theme's capsule buttons. A `surface2` fill with a 1 pt `lineStrong` edge
+/// (1.5 pt with Increase Contrast or Button Shapes; audit K1: the fill alone is 1.1-1.2:1 against
+/// the card). `isSelected` (a known word's "Biliyorum"): `surface` with a 1.5 pt `tint` border, like
+/// a selected chip.
 struct CardCapsuleButtonStyle: ButtonStyle {
     var isSelected = false
 
@@ -782,6 +812,8 @@ private struct CardCapsuleButtonBody: View {
     let isSelected: Bool
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
         configuration.label
@@ -795,6 +827,8 @@ private struct CardCapsuleButtonBody: View {
             .overlay {
                 if isSelected {
                     Capsule().strokeBorder(Theme.tint, lineWidth: 1.5)
+                } else {
+                    Capsule().strokeBorder(Theme.lineStrong, lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1)
                 }
             }
             .contentShape(Capsule())
@@ -805,10 +839,13 @@ private struct CardCapsuleButtonBody: View {
     }
 }
 
-/// A round speaker for a sentence (mockup `.spk`): a 34 pt `surface2` circle in a 44 pt target.
-/// Reads `text` aloud; a second tap stops it. While it reads, the speaker is filled (no motion).
+/// A round speaker for a sentence (mockup `.spk`): a 34 pt `surface2` circle with a `lineStrong`
+/// edge (audit K1, as `CardCapsuleButtonStyle`) in a 44 pt target. Reads `text` aloud; a second
+/// tap stops it. While it reads, the speaker is filled (no motion).
 struct CardSentenceSpeaker: View {
     @ObservedObject private var speaker = Speaker.shared
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
     @ScaledMetric(relativeTo: .subheadline) private var circleSize: CGFloat = 34
     let text: String
     var accessibilityName = "Cümleyi dinle"
@@ -823,6 +860,9 @@ struct CardSentenceSpeaker: View {
                 .foregroundStyle(Theme.ink)
                 .frame(width: circleSize, height: circleSize)
                 .background(Theme.surface2, in: Circle())
+                .overlay {
+                    Circle().strokeBorder(Theme.lineStrong, lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1)
+                }
                 .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
                 .contentShape(Rectangle())
         }
@@ -845,7 +885,7 @@ enum CardPartOfSpeech {
         case "adv":
             return "zarf"
         case "phv":
-            return "iki kelimeli fiil"
+            return "kalıp fiil"
         case "phr":
             return "kalıp"
         case "idm":
@@ -861,10 +901,10 @@ enum CardPartOfSpeech {
 }
 
 extension View {
-    /// English card text (README point 14, `accessibilitySpeechLanguage = "en-US"`). SwiftUI has
-    /// no speech-language modifier; VoiceOver takes a text's language from the environment's
-    /// locale. Apply it to English text only: a Turkish translation must keep the Turkish voice.
+    /// English card text (README point 14): the theme's `englishVoice()` under its older name, so
+    /// there is one implementation (audit V6). Apply it to English text only: a Turkish
+    /// translation must keep the Turkish voice.
     func cardEnglishVoice() -> some View {
-        environment(\.locale, Locale(identifier: "en_US"))
+        englishVoice()
     }
 }

@@ -671,6 +671,34 @@ final class AppModel: ObservableObject {
         knownUndo = nil
     }
 
+    /// "Vazgeç" after "Geri al" in "Bildiğin kelimeler": the word's progress is `previous` again
+    /// (box, due date and check exactly as before), while it still is `undone` (nothing changed it
+    /// since). Not `markKnown`, which would turn a learned word into an unchecked "Biliyorum".
+    /// False when the word changed meanwhile or the save failed.
+    @discardableResult
+    func restoreProgress(of word: WidgetWord, to previous: WordProgress, ifStill undone: WordProgress) -> Bool {
+        return updateProgress(of: word) { current, _ in
+            current == undone ? previous : nil
+        } != nil
+    }
+
+    /// The screen's "Geri al" for `word` is still showing (for example VoiceOver is on it): the
+    /// exact undo of its last "Biliyorum" lasts until `date`. No change once the window has ended
+    /// or another tap replaced it.
+    func extendKnownUndo(of word: WidgetWord, until date: Date) {
+        guard let undo = knownUndo, undo.word.id == word.id, Date() < undo.expiresAt, date > undo.expiresAt else {
+            return
+        }
+        let extended = KnownUndo(word: undo.word, previous: undo.previous, marked: undo.marked, expiresAt: date)
+        knownUndo = extended
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(nanoseconds: UInt64(max(0, date.timeIntervalSinceNow) * 1_000_000_000))
+            if self?.knownUndo == extended {
+                self?.knownUndo = nil
+            }
+        }
+    }
+
     /// Applies pending widget taps first (a "known" tap still in the mailbox must not undo this
     /// change later), saves, then rewrites the widget queue. `change` returns nil for no change.
     /// Returns the word's progress before (nil: it had none) and after the change; nil when
@@ -712,6 +740,7 @@ final class AppModel: ObservableObject {
         AppPreferences.resetReviewsDone()
         LocalMetricsRecorder.shared.reset()
         AppPreferences.clearFeedFirstSeen()
+        AppModel.clearRecentSearches()
         refreshWidgetPlan()
     }
 

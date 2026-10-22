@@ -4,8 +4,8 @@ import CoreModels
 import Learning
 
 // Pieces shared by Sözlük's lists (SearchView, SozlukTopicView, SozlukRecentSearches) and the word
-// page: the status filter, the status mark, the word row with its two-voice VoiceOver label, the
-// row group, the flow layout of the capsules.
+// page: the status filter, the status mark, the word row with its two VoiceOver parts, the row
+// group, the flow layout of the capsules.
 
 // MARK: - Learning status
 
@@ -19,7 +19,7 @@ enum SozlukStatus {
         case .learning:
             return "Öğreniyorsun"
         case .known:
-            return "Biliyorsun"
+            return "Bildiğin kelime"
         }
     }
 
@@ -58,17 +58,13 @@ enum SozlukFilter: String, CaseIterable, Identifiable {
         return rawValue
     }
 
+    /// The status names of the rows (`SozlukStatus`, docs/tasarim/terimler.md §4), so the chips
+    /// also name the marks.
     var title: String {
-        switch self {
-        case .all:
+        guard let state = state else {
             return "Tümü"
-        case .new:
-            return "Henüz bilmediklerim"
-        case .learning:
-            return "Öğreniyorum"
-        case .known:
-            return "Bildiklerim"
         }
+        return SozlukStatus.title(state)
     }
 
     /// The learning state it keeps; nil for "Tümü".
@@ -97,7 +93,7 @@ enum SozlukFilter: String, CaseIterable, Identifiable {
         case .new:
             return "Yeni kelime kalmadı"
         case .learning:
-            return "Öğrendiğin kelime yok"
+            return "Öğrenmekte olduğun kelime yok"
         case .known:
             return "Bildiğin kelime yok"
         }
@@ -108,7 +104,7 @@ enum SozlukFilter: String, CaseIterable, Identifiable {
         case .all:
             return "Burada henüz kelime yok."
         case .new:
-            return "Bunların hepsine başladın: tekrarda ya da bildiklerin arasında."
+            return "Bunların hepsine başladın: Tekrar'da ya da bildiğin kelimelerde."
         case .learning:
             return "Tekrar'da çalıştığın kelimeler burada görünür."
         case .known:
@@ -165,7 +161,7 @@ struct SozlukFilterBar: View {
         guard let count = counts?[filter] else {
             return filter.title
         }
-        return "\(filter.title), \(count) kelime"
+        return "\(filter.title): \(count)"
     }
 }
 
@@ -188,20 +184,17 @@ struct SozlukStatusMark: View {
 
 // MARK: - VoiceOver language
 
-/// VoiceOver labels with their language (README point 14; audit V5 and V6), the same way as the
-/// Söyle page: every run carries `accessibilitySpeechLanguage`, so the English word of a row is
-/// read in an English voice and the Turkish rest in a Turkish one. A button merges its children
-/// into one label, which loses the `.cardEnglishVoice()` locale of the word inside it. Still to
-/// be heard on the phone (V6). Main actor: it posts to UIKit's accessibility.
+/// VoiceOver labels and announcements with their language (README point 14; audit V5 and V6), the
+/// same way as the Söyle page: every run carries `accessibilitySpeechLanguage`. For what cannot be
+/// two elements: an announcement, a button whose name holds the word ("Geri al: breakfast").
+/// Whether a label keeps the runs is still to be heard on the phone (V6); where the English word
+/// can stand alone it is its own element with `englishVoice()` (`SozlukRowSpeech`). Main
+/// actor: it posts to UIKit's accessibility.
 @MainActor
 enum SozlukSpeech {
     enum Run {
         case turkish(String)
         case english(String)
-    }
-
-    static func english(_ text: String) -> Text {
-        return label([.english(text)])
     }
 
     static func label(_ runs: [Run]) -> Text {
@@ -235,9 +228,10 @@ enum SozlukSpeech {
 
 // MARK: - Word rows
 
-/// A word that opens its whole card (the stack's `WidgetWord` destination), read by VoiceOver as
-/// one label in two voices: the English word in English; the meaning, level, status and the
-/// "Ayrıca" line in Turkish. The marked texts of a search result replace the plain ones.
+/// A word that opens its whole card (`open`: SearchView pushes it on Sözlük's stack). VoiceOver
+/// hears it as two parts (`SozlukRowSpeech`): the English word alone in an English voice, then
+/// "Türkçesi: …" with the level, status and "Ayrıca" line in Turkish. The marked texts of a
+/// search result replace the plain ones.
 struct SozlukWordLink: View {
     @EnvironmentObject private var model: AppModel
     let word: WidgetWord
@@ -247,10 +241,13 @@ struct SozlukWordLink: View {
     var note: AttributedString? = nil
     /// False on the topic page, where the words stand under their level's heading.
     var showsLevel = true
+    let open: (WidgetWord) -> Void
 
     var body: some View {
         let state = model.learningState(of: word)
-        NavigationLink(value: word) {
+        Button {
+            open(word)
+        } label: {
             SozlukWordRow(
                 lemma: lemma ?? AttributedString(word.lemma),
                 gloss: gloss ?? word.glossTR.map { AttributedString($0) },
@@ -261,31 +258,59 @@ struct SozlukWordLink: View {
             )
         }
         .buttonStyle(SozlukRowButtonStyle())
-        .accessibilityLabel(rowLabel(state))
-        .accessibilityHint("Kartı açar")
+        .accessibilityRepresentation {
+            SozlukRowSpeech(lemma: word.lemma, details: spokenDetails(state)) {
+                open(word)
+            }
+        }
     }
 
-    private func rowLabel(_ state: LearningState) -> Text {
-        var turkish = ""
+    /// The Turkish part: "Türkçesi: kahvaltı, Seviye A1, Bildiğin kelime, Ayrıca: …".
+    private func spokenDetails(_ state: LearningState) -> String {
+        var parts: [String] = []
         if let gloss = word.glossTR {
-            turkish += ", " + gloss
+            parts.append("Türkçesi: " + gloss)
         }
         if word.isUserAdded {
-            turkish += ", Senin kelimen"
+            parts.append("Senin kelimen")
         } else if showsLevel {
-            turkish += ", Seviye " + word.level
+            parts.append("Seviye " + word.level)
         }
         if state != .new {
-            turkish += ", " + SozlukStatus.title(state)
+            parts.append(SozlukStatus.title(state))
         }
         if let note = note {
-            turkish += ", " + String(note.characters)
+            parts.append(String(note.characters))
         }
-        var runs: [SozlukSpeech.Run] = [.english(word.lemma)]
-        if !turkish.isEmpty {
-            runs.append(.turkish(turkish))
+        return parts.joined(separator: ", ")
+    }
+}
+
+/// What VoiceOver hears for a word row that opens a card: the row button's
+/// `accessibilityRepresentation`, so the visible row stays one button (README point 14, is3-tema:
+/// a merged label loses the English voice). Two elements: the English word alone in an English
+/// voice (`englishVoice()`; no Turkish label, hint or trait on it), then the Turkish rest
+/// ("Türkçesi: kahvaltı, Seviye A1, …") as a button that says it opens the card. Both open it.
+struct SozlukRowSpeech: View {
+    let lemma: String
+    /// Empty: the second element only says "Kartı aç".
+    let details: String
+    let open: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(verbatim: lemma)
+                .accessibilityAction {
+                    open()
+                }
+                .englishVoice()
+            Text(verbatim: details.isEmpty ? "Kartı aç" : details)
+                .accessibilityAddTraits(.isButton)
+                .accessibilityHint(Text(verbatim: details.isEmpty ? "" : "Kartı açar"))
+                .accessibilityAction {
+                    open()
+                }
         }
-        return SozlukSpeech.label(runs)
     }
 }
 
