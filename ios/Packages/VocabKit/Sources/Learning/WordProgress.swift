@@ -37,6 +37,8 @@ public struct WordProgress: Codable, Equatable, Sendable {
     public var saved: Bool
     /// When the word was last answered, exactly (`Leitner.review`). Unlike `lastSeenAt`, widget
     /// taps and "Biliyorum" never move it. Nil for a word not answered since this field exists.
+    /// It is the answer applied last, like `dueAt`: a widget "Bilmiyorum" that reaches the app
+    /// after a later answer in "Tekrar" brings its own, earlier time.
     public var lastReviewedAt: Date?
     /// The grade of that last answer; nil exactly when `lastReviewedAt` is.
     public var lastGrade: ReviewGrade?

@@ -706,8 +706,9 @@ final class AppModel: ObservableObject {
         discardPendingEvents()
         knownUndo = nil
         progress = [:]
-        persistProgress(progress)
-        try? reviewLog?.removeAll()
+        if persistProgress(progress) {
+            try? reviewLog?.removeAll()
+        }
         AppPreferences.clearKnownWordIDs()
         AppPreferences.resetNewWordsStudied()
         AppPreferences.resetReviewsDone()
