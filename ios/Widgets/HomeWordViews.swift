@@ -26,7 +26,9 @@ import CoreModels
 // variant gets the column's width, and the first whose height fits is shown. Inside a variant,
 // each line that can shorten picks its own step for that width (`WidgetFittingWord`,
 // `WidgetFittingText`). A line with no step that fits makes its variant too tall to be chosen
-// (`WidgetFit.reject`), so the next variant tries smaller type or more lines. The last variant,
+// (`WidgetFit.reject`), so the next variant tries smaller type or more lines. When the person's
+// text size leaves no room for the meaning, the last variants use the default text size
+// (`widgetTextSize`), so the meaning stays and is never larger than the word. The last variant,
 // the word alone, always fits.
 
 /// How far the button group reaches into the widget margin on the widget's outer edges.
@@ -61,19 +63,29 @@ struct SmallWordView: View {
             // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
             // (`WidgetGloss`) before it takes two lines or gets smaller.
             ViewThatFits(in: .vertical) {
-                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1])
-                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [2])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [2])
-                column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
-                column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold))
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold))
+                column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold))
+                column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold))
                 // Until every long meaning has its short form (`gloss_short`): 13 pt on two or
                 // three lines rather than no meaning.
                 column(WidgetWordStep.homeFloor, meaning: .footnote.weight(.bold), lines: [2, 3])
-                column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                // A large text size that leaves no room for the meaning: the default size, so the
+                // word and its meaning stay together (ogrenme_ilkeleri 2.1: in the accessibility
+                // sizes the small widget shows both).
+                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), textSize: .large)
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), textSize: .large)
+                column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), textSize: .large)
+                column(
+                    WidgetWordStep.homeFloor,
+                    lastResort: true,
+                    meaning: .footnote.weight(.bold),
+                    lines: [1, 2, 3],
+                    textSize: .large
+                )
                 WidgetFittingWord(
                     lemma: word.lemma,
-                    steps: WidgetWordStep.homeFloor,
+                    steps: WidgetWordStep.smallWidgetAlone,
                     lastResort: true,
                     colors: colors,
                     renderingMode: renderingMode
@@ -103,12 +115,13 @@ struct SmallWordView: View {
     }
 
     /// One layout variant: the word at the first of `steps` that fits and, under it, the meaning
-    /// in `typeface` on the first of `lines` line counts that fits.
+    /// in `typeface` on the first of `lines` line counts that fits; at `textSize` when given.
     private func column(
         _ steps: [WidgetWordStep],
         lastResort: Bool = false,
         meaning typeface: Font,
-        lines: [Int]
+        lines: [Int] = [1, 2],
+        textSize: DynamicTypeSize? = nil
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             WidgetFittingWord(
@@ -125,6 +138,7 @@ struct SmallWordView: View {
                     .padding(.top, headerGap)
             }
         }
+        .widgetTextSize(textSize)
     }
 }
 
@@ -160,8 +174,18 @@ struct MediumWordView: View {
                 column(shortens: false, definition: true)
                 column(shortens: false)
                 column()
-                column(meaning: .subheadline.weight(.bold))
-                wordRow(lastResort: true)
+                column(word: WidgetWordStep.homeFloor)
+                column(word: WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold))
+                // A large text size that leaves no room for the meaning: the default size.
+                column(textSize: .large)
+                column(
+                    word: WidgetWordStep.homeFloor,
+                    lastResort: true,
+                    meaning: .footnote.weight(.bold),
+                    lines: [1, 2, 3],
+                    textSize: .large
+                )
+                wordRow(steps: WidgetWordStep.mediumWidgetAlone, lastResort: true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             // The button column's place (a row would take the width of the text); the column
@@ -187,9 +211,10 @@ struct MediumWordView: View {
     }
 
     /// The word row; with `lastResort` the word is never passed over (`WidgetFittingWord`).
-    private func wordRow(lastResort: Bool = false) -> some View {
+    private func wordRow(steps: [WidgetWordStep] = WidgetWordStep.mediumWidget, lastResort: Bool = false) -> some View {
         WidgetWordRow(
             lemma: word.lemma,
+            steps: steps,
             lastResort: lastResort,
             level: word.level,
             ipa: word.ipaUS,
@@ -198,24 +223,29 @@ struct MediumWordView: View {
         )
     }
 
-    /// One layout variant: the meaning on one or two lines, whole (`shortens` false) or in its
-    /// shorter forms too; the next change sits at the bottom, beside the Next button.
+    /// One layout variant: the word at the first of `steps` that fits, the meaning on the first of
+    /// `lines` line counts that fits, whole (`shortens` false) or in its shorter forms too; at
+    /// `textSize` when given. The next change sits at the bottom, beside the Next button.
     private func column(
+        word steps: [WidgetWordStep] = WidgetWordStep.mediumWidget,
+        lastResort: Bool = false,
         meaning typeface: Font = .callout.weight(.bold),
+        lines: [Int] = [1, 2],
         shortens: Bool = true,
         definition: Bool = false,
         example: Bool = false,
-        nextChange: Bool = false
+        nextChange: Bool = false,
+        textSize: DynamicTypeSize? = nil
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            wordRow()
+            wordRow(steps: steps, lastResort: lastResort)
             VStack(alignment: .leading, spacing: 3) {
                 let forms = WidgetGloss.forms(of: word)
                 if !forms.isEmpty {
                     WidgetMeaning(
                         forms: shortens ? forms : Array(forms.prefix(1)),
                         typeface: typeface,
-                        lines: [1, 2],
+                        lines: lines,
                         color: colors.ink
                     )
                 }
@@ -244,6 +274,7 @@ struct MediumWordView: View {
                 .padding(.top, 3)
             }
         }
+        .widgetTextSize(textSize)
     }
 }
 
@@ -312,23 +343,38 @@ struct WidgetWordStep: Equatable {
     static let smallWidget = [WidgetWordStep(size: 24), WidgetWordStep(size: 20), WidgetWordStep(size: 17)]
     /// A phrase on the small widget: two lines at 20 or 17 pt ("Could you tell / me the way to").
     static let smallWidgetPhrase = [WidgetWordStep(size: 20, lines: 2), WidgetWordStep(size: 17, lines: 2)]
-    /// The Home Screen floor, 15 pt: one line, then two; at large text sizes also unscaled.
-    static let homeFloor = [
+    /// The floor, 15 pt: one line, then two.
+    static let homeFloor = [WidgetWordStep(size: 15), WidgetWordStep(size: 15, lines: 2)]
+    /// The small widget's word alone (the last variant): every step, then unscaled 15 pt lines,
+    /// which fit at any text size.
+    static let smallWidgetAlone = WidgetWordStep.smallWidget + [
         WidgetWordStep(size: 15),
         WidgetWordStep(size: 15, lines: 2),
-        WidgetWordStep(size: 15, scales: false),
         WidgetWordStep(size: 15, lines: 2, scales: false),
     ]
     /// The rectangular Lock Screen widget: 17, then 15 pt on one line.
     static let lockScreen = [WidgetWordStep(size: 17), WidgetWordStep(size: 15)]
-    /// The medium widget: 20, 17, 15 pt on one line, then a phrase on two lines at 17 or 15 pt;
-    /// at large text sizes two unscaled 15 pt lines.
+    /// The rectangular widget's word alone (the last variant).
+    static let lockScreenAlone = WidgetWordStep.lockScreen + [
+        WidgetWordStep(size: 15, lines: 2),
+        WidgetWordStep(size: 15, scales: false),
+        WidgetWordStep(size: 15, lines: 2, scales: false),
+    ]
+    /// The medium widget: 20, 17, 15 pt on one line, then a phrase on two lines at 17 or 15 pt.
     static let mediumWidget = [
         WidgetWordStep(size: 20),
         WidgetWordStep(size: 17),
         WidgetWordStep(size: 15),
         WidgetWordStep(size: 17, lines: 2),
         WidgetWordStep(size: 15, lines: 2),
+    ]
+    /// The medium widget's word row alone (the last variant).
+    static let mediumWidgetAlone = [
+        WidgetWordStep(size: 20),
+        WidgetWordStep(size: 17),
+        WidgetWordStep(size: 15),
+        WidgetWordStep(size: 15, lines: 2),
+        WidgetWordStep(size: 15, scales: false),
         WidgetWordStep(size: 15, lines: 2, scales: false),
     ]
 }
@@ -408,6 +454,7 @@ struct WidgetFittingWord: View {
 /// makes the variant around it too tall to be chosen, unless `lastResort`.
 struct WidgetWordRow: View {
     let lemma: String
+    var steps = WidgetWordStep.mediumWidget
     var lastResort = false
     /// The level code ("A2"), nil to leave it out.
     var level: String? = nil
@@ -423,7 +470,7 @@ struct WidgetWordRow: View {
             // what the word leaves.
             WidgetFittingWord(
                 lemma: lemma,
-                steps: WidgetWordStep.mediumWidget,
+                steps: steps,
                 lastResort: lastResort,
                 colors: colors,
                 renderingMode: renderingMode
@@ -849,5 +896,16 @@ extension View {
     /// word with an English voice. Turkish text and the time keep the device's locale.
     func widgetEnglishVoice() -> some View {
         environment(\.locale, Locale(identifier: "en_US"))
+    }
+
+    /// A layout variant at a fixed text size (the default size when the person's size leaves no
+    /// room for the meaning); nil keeps the environment's size.
+    @ViewBuilder
+    func widgetTextSize(_ size: DynamicTypeSize?) -> some View {
+        if let size {
+            dynamicTypeSize(size)
+        } else {
+            self
+        }
     }
 }

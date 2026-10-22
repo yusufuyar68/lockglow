@@ -20,8 +20,14 @@ struct RectangularWordView: View {
     var margins = EdgeInsets()
     /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
     var renderingMode: WidgetRenderingMode? = nil
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private var word: WidgetWord { entry.word }
     private var colors: WidgetColors { WidgetColors.lockScreen }
+    /// Up to xxxLarge, the default text size when the person's size leaves no room for the
+    /// meaning; in the accessibility sizes the word stands alone instead (ogrenme_ilkeleri 2.1).
+    private var fallbackTextSize: DynamicTypeSize {
+        dynamicTypeSize.isAccessibilitySize ? dynamicTypeSize : .large
+    }
 
     var body: some View {
         ViewThatFits(in: .vertical) {
@@ -31,11 +37,18 @@ struct RectangularWordView: View {
             rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [2])
             rows(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.semibold), lines: [1])
             rows(WidgetWordStep.homeFloor, meaning: .footnote.weight(.semibold), lines: [1, 2])
-            rows(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.semibold), lines: [1])
-            // Large text sizes and phrases whose meaning fits in no form: the word alone.
+            rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1, 2], textSize: fallbackTextSize)
+            rows(
+                WidgetWordStep.homeFloor,
+                lastResort: true,
+                meaning: .footnote.weight(.semibold),
+                lines: [1, 2],
+                textSize: fallbackTextSize
+            )
+            // The accessibility sizes, and phrases whose meaning fits in no form: the word alone.
             WidgetFittingWord(
                 lemma: word.lemma,
-                steps: WidgetWordStep.homeFloor,
+                steps: WidgetWordStep.lockScreenAlone,
                 lastResort: true,
                 colors: colors,
                 renderingMode: renderingMode
@@ -46,12 +59,13 @@ struct RectangularWordView: View {
     }
 
     /// One layout variant: the word at the first of `steps` that fits and the meaning in
-    /// `typeface` on the first of `lines` line counts that fits.
+    /// `typeface` on the first of `lines` line counts that fits; at `textSize` when given.
     private func rows(
         _ steps: [WidgetWordStep],
         lastResort: Bool = false,
         meaning typeface: Font,
-        lines: [Int]
+        lines: [Int],
+        textSize: DynamicTypeSize? = nil
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             WidgetFittingWord(
@@ -68,6 +82,7 @@ struct RectangularWordView: View {
                     .padding(.top, 5)
             }
         }
+        .widgetTextSize(textSize)
     }
 }
 
