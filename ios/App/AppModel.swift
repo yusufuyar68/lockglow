@@ -69,8 +69,8 @@ final class AppModel: ObservableObject {
     private var progressStore: ProgressStore?
     private var hasStarted = false
     private var lastReloadRequestedAt: Date?
-    /// Every topic of each word (`card_category`), for the deck filter.
-    private var topicsOf: [Int: Set<String>] = [:]
+    /// Every topic of each word (`card_category`), for the deck filter and "İlerleme".
+    private(set) var topicsOf: [Int: Set<String>] = [:]
     /// Every word in the chosen level order: the widget's fallback and where new words come from
     /// once the chosen topics have none left.
     private(set) var allTopicsFeed: [WidgetWord] = []

@@ -11,18 +11,15 @@ import Learning
 ///
 /// How to call it
 ///
-///     // From the "Tekrar" start screen or "Ayarlar": push it onto the NavigationStack.
+///     // In the app ("Kitaplığın" in "Tekrar", the row in "Ayarlar"): push `ProgressScreen`, which
+///     // feeds this view from `AppModel` (AppModel+Progress.swift).
 ///     NavigationLink {
-///         ProgressOverviewView(
-///             summary: model.progressSummary(),
-///             words: model.wordsByID,
-///             onRecapShown: { model.markProgressRecapShown(weekStart: $0) }
-///         )
+///         ProgressScreen()
 ///     } label: {
-///         SettingsRow("İlerleme")
+///         SettingsRow("Kitaplığın ve bu hafta")
 ///     }
 ///
-/// Parameters (plain values: the file needs no `AppModel` or environment object and previews on
+/// Parameters (plain values: the view needs no `AppModel` or environment object and previews on
 /// its own):
 /// - `summary`: `ProgressSummary.make(...)` (Learning) for the moment the screen opens.
 /// - `words`: the loaded words by id, for headwords, meanings and examples. Pass the same words
@@ -303,6 +300,23 @@ struct ProgressOverviewView: View {
         withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
             openShelf = openShelf == shelf ? nil : shelf
         }
+    }
+}
+
+// MARK: - In the app
+
+/// "İlerleme" as the app opens it: `ProgressOverviewView` fed from `AppModel` (the environment
+/// object), made again whenever the progress changes. Built only when it is pushed, so the
+/// summary is the one of the moment it opens.
+struct ProgressScreen: View {
+    @EnvironmentObject private var model: AppModel
+
+    var body: some View {
+        ProgressOverviewView(
+            summary: model.progressSummary(),
+            words: model.wordsByID,
+            onRecapShown: { model.markProgressRecapShown(weekStart: $0) }
+        )
     }
 }
 

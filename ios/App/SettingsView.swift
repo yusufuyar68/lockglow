@@ -396,6 +396,13 @@ struct SettingsView: View {
             .settingsGroupBackground()
             SettingsGroup {
                 NavigationLink {
+                    ProgressScreen()
+                } label: {
+                    SettingsRow("Kitaplığın ve bu hafta")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                NavigationLink {
                     KnownWordsView()
                 } label: {
                     SettingsRow("Bildiğim kelimeler") {
