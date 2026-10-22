@@ -20,6 +20,9 @@ struct SettingsView: View {
     @State private var showResetConfirmation = false
     /// Notification permission was refused (now or earlier in iOS Settings).
     @State private var notificationsDenied = false
+    /// The user picked the daily goal; until then the start level decides it. A state, not a
+    /// read of UserDefaults, so a tap on the number already selected also redraws the footnote.
+    @State private var isDailyGoalChosen = AppPreferences.chosenDailyNewWords != nil
 
     var body: some View {
         NavigationStack {
@@ -130,7 +133,7 @@ struct SettingsView: View {
         }
     }
 
-    /// "5 dk", "1 saat": short enough for five segments side by side.
+    /// "30 dk", "1 saat", "4 saat": short enough for four segments side by side.
     private func intervalLabel(_ minutes: Int) -> String {
         if minutes >= 60 && minutes % 60 == 0 {
             return "\(minutes / 60) saat"
@@ -138,19 +141,12 @@ struct SettingsView: View {
         return "\(minutes) dk"
     }
 
-    /// What the choice means in a day ("Kelime günde 24 kez değişir."). The battery note only for
-    /// the short intervals, where iOS is most likely to delay a change.
+    /// What the choice means in a day ("Kelime günde 24 kez değişir."), and the honest note that
+    /// iOS may delay a change to save the battery (§2.9 keeps it).
     private var rotationFootnote: some View {
-        let minutes = model.rotationMinutes
-        let changesPerDay = 24 * 60 / max(1, minutes)
-        return Group {
-            if minutes < 30 {
-                Text("Kelime günde **\(changesPerDay)** kez değişir. Değiştirince şu an görünen kelime aynı kalır. iPhone, pili korumak için bunu biraz geciktirebilir.")
-            } else {
-                Text("Kelime günde **\(changesPerDay)** kez değişir. Değiştirince şu an görünen kelime aynı kalır.")
-            }
-        }
-        .settingsFootnote()
+        let changesPerDay = 24 * 60 / max(1, model.rotationMinutes)
+        return Text("Kelime günde **\(changesPerDay)** kez değişir. Değiştirince şu an görünen kelime aynı kalır. iPhone, pili korumak için yenilemeyi biraz geciktirebilir.")
+            .settingsFootnote()
     }
 
     // MARK: Learning
@@ -159,10 +155,15 @@ struct SettingsView: View {
         return model.deckChoice.startLevel ?? .a1
     }
 
+    /// A goal the user never chose follows the new level (A1–A2: 5, B1: 10); `AppModel` keeps its
+    /// own copy of the goal, so it is handed the level's number (`AppPreferences.dailyNewWords`).
     private var levelBinding: Binding<Level> {
         return Binding(
             get: { startLevel },
-            set: { model.setStartLevel($0) }
+            set: { level in
+                model.setStartLevel(level)
+                model.setDailyNewWords(AppPreferences.dailyNewWords)
+            }
         )
     }
 
@@ -171,19 +172,24 @@ struct SettingsView: View {
         return count == 0 ? "Tümü" : "\(count) konu"
     }
 
+    /// A tap is the user's own choice, also on the number already selected: it stays whatever
+    /// the level (`chooseDailyNewWords`).
     private var dailyBinding: Binding<Int> {
         return Binding(
             get: { model.dailyNewWords },
-            set: { model.setDailyNewWords($0) }
+            set: { count in
+                AppPreferences.chooseDailyNewWords(count)
+                isDailyGoalChosen = true
+                model.setDailyNewWords(count)
+            }
         )
     }
 
     /// The start level and topics, then the daily goal. Each footnote says what the choice
-    /// means: what the level covers, and an honest pace ("bir ayda yaklaşık 300 kelime"). The
-    /// level footnote sits under "Konular" (mockup), which keeps that row high enough on an
+    /// means: what the level covers, and what the goal costs as well as what it brings (§2.9).
+    /// The level footnote sits under "Konular" (mockup), which keeps that row high enough on an
     /// iPhone SE for the UI test to tap it above the tab bar.
     private var learningSection: some View {
-        let goal = model.dailyNewWords
         let code = startLevel.rawValue
         let summary = levelSummary(startLevel)
         return VStack(alignment: .leading, spacing: 8) {
@@ -229,10 +235,26 @@ struct SettingsView: View {
             )
             .accessibilityElement(children: .contain)
             .accessibilityLabel("Günlük yeni kelime")
-            // An honest pace: at this goal, about this many words a month, and what each costs.
-            Text("Tekrar sekmesi günde **\(goal)** yeni kelime önerir; bir ayda yaklaşık **\(goal * 30)** kelime. Her yeni kelime sonraki günlerde birkaç kısa tekrar ister.")
-                .settingsFootnote()
+            dailyGoalFootnote
         }
+    }
+
+    /// The cost of the goal before its gain (§2.9): "Günde en az 7 dakika, tekrarlar dahil. Bir
+    /// ayda yaklaşık 150 kelime." The minutes are a floor (`SettingsRules.minimumMinutesPerDay`),
+    /// hence "en az" until they are measured on a device. Then tomorrow's share of the load: a new
+    /// word's first review is the next day (Leitner box 1). A goal nobody chose says where it
+    /// came from, so a jump after a level change is not a surprise.
+    private var dailyGoalFootnote: some View {
+        let goal = model.dailyNewWords
+        let minutes = SettingsRules.minimumMinutesPerDay(dailyNewWords: goal)
+        return VStack(alignment: .leading, spacing: 4) {
+            Text("Günde en az **\(minutes) dakika**, tekrarlar dahil. Bir ayda yaklaşık **\(goal * 30)** kelime.")
+            Text("Bugünün **\(goal)** yeni kelimesi yarın tekrar sorulur.")
+            if !isDailyGoalChosen {
+                Text("Bu sayı seviyene göre seçildi: A1 ve A2 için 5, B1 için 10.")
+            }
+        }
+        .settingsFootnote()
     }
 
     /// What a start level covers, in the words of the onboarding's level page.
