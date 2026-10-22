@@ -1,8 +1,10 @@
 # Lockglow Gizlilik Politikası
 
 > **TASLAK:** Bu metin hukuki görüş alınmadan yayınlanmamalıdır. Köşeli parantez içindeki alanlar doldurulmalı, **[TEYİT]** işaretli noktalar avukatla netleştirilmelidir. Yayınlamadan önce bu kutuyu silin.
+>
+> **taslak-2 (22 Ekim 2026):** "Söyle" (mikrofon, cihaz içi konuşma tanıma) ve sesli okuma / widget hoparlör düğmesi bölümleri uygulamanın koduyla karşılaştırılarak güncellendi. Değişen her yer **[TEYİT]** ile işaretli. Metin, abonelik ve analitik içeren ileriki sürüme göre yazılmıştır; ilk ücretsiz sürüm için sadeleştirme: `README.md` §4.1.
 
-**Son güncelleme:** [TARİH] · **Sürüm:** taslak-1
+**Son güncelleme:** [TARİH] · **Sürüm:** taslak-2
 
 ---
 
@@ -10,6 +12,7 @@
 
 - Lockglow hesap istemez. Ad, e-posta veya telefon numarası vermeden kullanırsınız.
 - Öğrenme ilerlemeniz, kaydettiğiniz kelimeler ve ayarlarınız **yalnızca cihazınızda** durur.
+- **Söyle** (telaffuz alıştırması) için mikrofon yalnızca siz dokunduğunuzda ve izninizle açılır. Sesiniz telefonunuzda yazıya çevrilir; kaydedilmez, bize ya da başkasına gönderilmez. Kelimeleri okuyan hoparlör düğmeleri (widget'takiler dahil) de telefonun kendi sesini kullanır. **[TEYİT]**
 - Reklam göstermeyiz, sizi uygulamalar arasında izlemeyiz, verilerinizi satmayız.
 - Kullanım istatistikleri **yalnızca siz izin verirseniz** toplanır. İzin vermemeniz uygulamanın hiçbir özelliğini kısıtlamaz.
 - Abonelik durumunuzu doğrulamak için RevenueCat hizmetini kullanırız. Kart bilgilerinizi görmeyiz; ödemeyi Apple alır.
@@ -46,7 +49,7 @@ Türkiye'de yaşıyorsanız ayrıca 6698 sayılı Kişisel Verilerin Korunması 
 
 Bu veriler uygulama ile widget'ların ortak kullandığı cihaz içi alanda tutulur. Uygulamayı sildiğinizde silinir. Cihazınızı iCloud veya bilgisayara yedekliyorsanız bu veriler Apple'ın yedekleme hizmetine dahil olabilir. Bu, Apple ayarlarınıza ve Apple'ın politikasına bağlıdır; biz bu yedeklere erişmeyiz.
 
-Hatırlatma bildirimleri cihazınızda zamanlanır (yerel bildirim). Bunun için sunucumuza bildirim anahtarı göndermeyiz. Kelime seslendirmesi cihazın kendi konuşma sentezi ile yapılır.
+Hatırlatma bildirimleri cihazınızda zamanlanır (yerel bildirim). Bunun için sunucumuza bildirim anahtarı göndermeyiz. Kelimeler cihazın kendi sesiyle okunur (bkz. Bölüm 3.8). **[TEYİT]**
 
 ### 3.2 Abonelik ve satın alma bilgisi (zorunlu)
 
@@ -86,20 +89,35 @@ Destek için veya "Hata bildir" ile bize e-posta gönderirseniz e-posta adresini
 
 ### 3.6 İşlemediğimiz veriler
 
-Lockglow; konumunuzu, rehberinizi, fotoğraflarınızı, kameranızı, sağlık verilerinizi, ödeme kartı bilgilerinizi ve reklam kimliğinizi (IDFA) **toplamaz**. Uygulama sizi başka uygulama ve sitelerde **izlemez**, reklam göstermez, verilerinizi **satmaz** ve reklam amacıyla kimseyle paylaşmaz.
+Lockglow; konumunuzu, rehberinizi, fotoğraflarınızı, kameranızı, sağlık verilerinizi, ödeme kartı bilgilerinizi ve reklam kimliğinizi (IDFA) **toplamaz**. Mikrofon yalnızca Söyle alıştırmasında, cihaz içinde kullanılır; ses toplanmaz (bkz. Bölüm 3.7) **[TEYİT]**. Uygulama sizi başka uygulama ve sitelerde **izlemez**, reklam göstermez, verilerinizi **satmaz** ve reklam amacıyla kimseyle paylaşmaz.
 
 Uygulamada yapay zekâ sohbeti yoktur; kişisel verileriniz üçüncü taraf yapay zekâ hizmetlerine gönderilmez.
 
 ### 3.7 Telaffuz alıştırması ("Söyle") ve mikrofon
 
-"Söyle" özelliğinde kelimeyi ya da örnek cümleyi sesli söylersiniz; uygulama doğru söyleyip söylemediğinizi Türkçe olarak bildirir.
+**[TEYİT: Bu bölüm taslak-2'de (22 Ekim 2026) uygulamanın koduyla karşılaştırılarak yeniden yazıldı.]**
 
-- **Mikrofon izni** yalnızca "Söyle"ye ilk bastığınızda, o anda istenir. Eski iOS sürümlerinde (iOS 26 öncesi) ayrıca **konuşma tanıma izni** istenir. İzni vermezseniz uygulamanın geri kalanı (kartlar, sesli okuma, widget'lar) aynen çalışır. İzni istediğiniz zaman iPhone Ayarları'ndan geri alabilirsiniz.
-- **Sesiniz cihazınızdan çıkmaz.** Konuşmanız, Apple'ın iPhone'unuzda çalışan konuşma tanıma özelliğiyle yalnızca cihazınızda yazıya çevrilir ve hemen karşılaştırılır. Uygulama, sunucuya gönderen tanımayı kullanmaz.
-- **Kaydedilmez, saklanmaz, paylaşılmaz.** Ses yalnızca o deneme sürerken bellekte tutulur; dosyaya yazılmaz. Ses veya söylediğiniz metin bize ya da üçüncü taraflara (analitik dahil) gönderilmez.
-- iOS 26 ve sonrasında, ilk kullanımda Apple'ın İngilizce konuşma modeli Apple'dan bir kez indirilir. Bu indirmede sesiniz gönderilmez; model iPhone'unuzda saklanır ve başka uygulamalarla paylaşılabilir.
+"Söyle" özelliğinde kartın kelimesini ya da örnek cümlesini sesli söylersiniz; uygulama doğru söyleyip söylemediğinizi Türkçe olarak bildirir ("Doğru!", "Neredeyse!", "Bir daha dene" gibi).
 
-**[TEYİT: Ses yalnızca kullanıcının cihazında işlendiği ve bize ulaşmadığı için bunun KVKK anlamında bizim tarafımızdan "işleme" sayılıp sayılmadığı ve aydınlatma metnine eklenmesi gerekip gerekmediği avukatla netleştirilmeli.]**
+- **İzin yalnızca kullanırken istenir.** Mikrofon izni, "Söyle"ye ilk dokunduğunuzda, o anda istenir; uygulama açılırken istenmez. iOS 17–25'te buna ek olarak **konuşma tanıma izni** istenir; iOS 26 ve sonrasında yalnızca mikrofon izni istenir. İzin vermezseniz uygulamanın geri kalanı (kartlar, tekrar, sesli okuma, widget'lar) aynen çalışır. İzinleri istediğiniz zaman iPhone Ayarları'nda Lockglow bölümünden kapatabilirsiniz.
+- **Mikrofon yalnızca dinlerken açıktır.** Dinleme; konuşmanız bitince, hiç konuşmazsanız birkaç saniye sonra, süre dolunca ya da "Bitti"ye dokununca kendiliğinden durur. Uygulama arka plana geçerse, bir arama gibi bir ses kesintisi olursa ya da Söyle sayfasını kapatırsanız dinleme hemen durur. Uygulama arka planda mikrofonu dinlemez.
+- **Sesiniz cihazınızdan çıkmaz.** Konuşmanız, Apple'ın iPhone'unuzda çalışan konuşma tanıma özelliğiyle yalnızca cihazınızda yazıya çevrilir ve hedef kelime ya da cümleyle karşılaştırılır. iOS 17–25'te uygulama, tanımanın cihazda yapılmasını zorunlu tutar: telefonunuzda cihaz içi İngilizce tanıma yoksa Söyle çalışmaz ve bir uyarı gösterir; ses, sunucuya gönderilerek tanınmaz. iOS 26 ve sonrasında kullanılan Apple bileşeni de sesi Apple sunucularına göndermez.
+- **Kaydedilmez, saklanmaz, paylaşılmaz.** Ses yalnızca o deneme sürerken bellekte tutulur; dosyaya yazılmaz. Tanınan metin ve sonuç yalnızca ekranda gösterilir; öğrenme ilerlemenize, yedeğe ya da başka bir yere kaydedilmez. Ses, tanınan metin ve sonuç bize ya da üçüncü taraflara (analitik dahil) gönderilmez.
+- **Sesiniz sizi tanımak için kullanılmaz.** Uygulama ses izi çıkarmaz ve sesinizle kimlik doğrulamaz; yalnızca söylediğiniz kelimeleri yazıya çevirir.
+- **Model indirme:** iOS 26 ve sonrasında, ilk kullanımda Apple'ın İngilizce konuşma modeli Apple'dan bir kez indirilir. Bu indirmede sesiniz gönderilmez; modeli iOS yönetir, iPhone'unuzda saklanır ve başka uygulamalarla paylaşılabilir.
+
+Söyle, sesi ya da tanınan metni cihaz dışına gönderecek biçimde değişirse önce bu politikayı günceller ve sizden yeniden izin isteriz.
+
+**[TEYİT: Ses yalnızca kullanıcının cihazında işlendiği ve bize ulaşmadığı için bunun KVKK anlamında bizim tarafımızdan "işleme" sayılıp sayılmadığı; sesin kimlik tespiti için kullanılmadığından biyometrik (özel nitelikli) veri sayılmayacağı varsayımı. README §6 soru 20 ve 31.]**
+
+### 3.8 Sesli okuma ve widget'taki hoparlör düğmesi
+
+**[TEYİT: Bu bölüm taslak-2'de (22 Ekim 2026) eklendi.]**
+
+- Uygulamadaki hoparlör düğmeleri ve ana ekran widget'larındaki **"Kelimeyi dinle"** düğmesi, İngilizce kelimeyi ya da cümleyi **iPhone'un kendi İngilizce (ABD) sesiyle, cihaz içinde** okur. Okuma için internet bağlantısı kullanılmaz; okunan metin hiçbir sunucuya gönderilmez.
+- Widget'taki düğme uygulamayı ekrana getirmeden çalışır. Bunun için iOS, Lockglow'u kısa bir süre arka planda çalıştırır ve kelimeyi okutur; uygulamanın "arka planda ses çalma" yetkisi yalnızca bu sesli okuma içindir. Mikrofon arka planda açılmaz.
+- Okunan metin kartın kendi kelimesidir, sizin yazdığınız bir metin değildir. Düğmeye bastığınız bilgisi kaydedilmez ve bize gönderilmez.
+- Apple'ın "Kişisel Ses" (Personal Voice) özelliği kullanılmaz. iPhone Ayarları'ndan daha kaliteli bir İngilizce ses indirdiyseniz uygulama onu kullanabilir; bu indirme sizinle Apple arasındadır.
 
 ## 4. Verileri neden işliyoruz?
 
@@ -199,6 +217,6 @@ Bu politikayı güncelleyebiliriz. Önemli bir değişiklikte (ör. yeni bir sa�
 
 ---
 
-*Son güncelleme: [TARİH] · Sürüm: taslak-1*
+*Son güncelleme: [TARİH] · Sürüm: taslak-2*
 
 *English version: privacy_policy_en.md*

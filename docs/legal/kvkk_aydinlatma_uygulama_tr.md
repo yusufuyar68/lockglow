@@ -3,8 +3,10 @@
 **Lockglow Mobil Uygulaması**
 
 > **TASLAK:** Bu metin hukuki görüş alınmadan yayınlanmamalıdır. Köşeli parantez içindeki alanlar doldurulmalı, **[TEYİT]** işaretli noktalar avukatla netleştirilmelidir. Yayınlamadan önce bu kutuyu silin.
+>
+> **taslak-2 (22 Ekim 2026):** mikrofon (Söyle) ve sesli okuma paragrafı güncellendi; değişen yer **[TEYİT]** ile işaretli. Metin, abonelik ve analitik içeren ileriki sürüme göre yazılmıştır; ilk ücretsiz sürüm için sadeleştirme: `README.md` §4.1.
 
-**Son güncelleme:** [TARİH] · **Sürüm:** taslak-1
+**Son güncelleme:** [TARİH] · **Sürüm:** taslak-2
 
 Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca, Lockglow mobil uygulamasını ve widget'larını kullanırken kişisel verilerinizin nasıl işlendiği hakkında sizi bilgilendirmek için hazırlanmıştır.
 
@@ -34,7 +36,16 @@ Uygulama hesap gerektirmez; öğrenme verileriniz (seviye, kaydedilen kelimeler,
 | **Diğer: hata kaydı** ([SEÇENEKLİ — Sentry kullanılacaksa], yalnızca açık rızanızla) | Çökme ve hata raporu: uygulama/iOS sürümü, cihaz modeli, hatanın teknik izi | Çökmeleri bulmak ve gidermek | **Hayır, isteğe bağlı** (açık rıza) |
 | **Hukuki işlem** | Uyuşmazlık veya yasal talep hâlinde ilgili kayıtlar | Hukuki yükümlülükleri yerine getirmek, hakkın tesisi, kullanılması veya korunması | Hukuki gerekliliğe bağlı |
 
-**Özel nitelikli kişisel veri işlenmez.** Konum, rehber, fotoğraf, kamera, sağlık verisi, ödeme kartı bilgisi ve reklam kimliği (IDFA) toplanmaz. Mikrofon yalnızca Söyle (telaffuz) alıştırması sırasında, izninizle ve cihaz içinde kullanılır; ses kaydedilmez, saklanmaz ve aktarılmaz. **[TEYİT: avukat; yalnız cihazda işlenen sesin KVKK anlamında "işleme" sayılıp sayılmadığı, `README.md` §6 soru 20.]** Uygulamada reklam yoktur ve uygulamalar arası izleme yapılmaz. Verileriniz otomatik karar verme sistemleriyle hakkınızda hukuki sonuç doğuracak biçimde değerlendirilmez.
+**Özel nitelikli kişisel veri işlenmez.** Konum, rehber, fotoğraf, kamera, sağlık verisi, ödeme kartı bilgisi ve reklam kimliği (IDFA) toplanmaz. Uygulamada reklam yoktur ve uygulamalar arası izleme yapılmaz. Verileriniz otomatik karar verme sistemleriyle hakkınızda hukuki sonuç doğuracak biçimde değerlendirilmez.
+
+**Mikrofon ve sesli okuma:** **[TEYİT: Bu paragraf taslak-2'de (22 Ekim 2026) uygulamanın koduyla karşılaştırılarak genişletildi.]**
+
+- Mikrofon yalnızca siz Söyle (telaffuz) alıştırmasını başlattığınızda ve iPhone'un izin penceresinde izin verdiyseniz, yalnızca dinleme süresince kullanılır. Uygulama arka planda mikrofonu dinlemez.
+- Sesiniz, Apple'ın cihaz içi konuşma tanımasıyla **yalnızca telefonunuzda** yazıya çevrilir ve hedef kelime ya da cümleyle karşılaştırılır. Uygulama, tanımanın cihazda yapılmasını zorunlu tutar; cihaz içi tanıma yoksa ses sunucuya gönderilmez, özellik çalışmaz.
+- Ses, tanınan metin ve sonuç **kaydedilmez, saklanmaz, bize veya üçüncü kişilere aktarılmaz.** Sesiniz sizi tanımak için (ses izi, kimlik doğrulama) kullanılmaz.
+- Kelimelerin sesli okunması (uygulamadaki ve widget'taki hoparlör düğmeleri) telefonun kendi sesiyle, cihaz içinde yapılır; okunan metin bir sunucuya gönderilmez.
+
+Bu nedenle ses için yukarıdaki tabloda bir veri kategorisi yer almaz. **[TEYİT: avukat; yalnız cihazda işlenen ve bize ulaşmayan sesin KVKK anlamında veri sorumlusu sıfatıyla "işleme" sayılıp sayılmadığı; kimlik tespiti amacı olmadığından biyometrik veri (KVKK m.6) sayılmayacağı varsayımı; tabloda ayrı satır gerekip gerekmediği. `README.md` §6 soru 20 ve 31.]**
 
 ## 3. Kişisel verilerin kimlere ve hangi amaçla aktarılabileceği
 
@@ -110,4 +121,4 @@ Uygulama içinde bu metnin sonunda yer alan **"Okudum ve anladım"** ifadesi, ya
 
 ---
 
-*Son güncelleme: [TARİH] · Sürüm: taslak-1*
+*Son güncelleme: [TARİH] · Sürüm: taslak-2*
