@@ -359,8 +359,10 @@ public struct ProgressSummary: Equatable, Sendable {
     /// Otherwise it assumes the word climbed one shelf per "Bildim", each on its due day
     /// (1 + 2 + 4 ... days): a word answered late or after a slip can look a little newer than
     /// it is, one answered "Kolay" a little older. Nil for words on no shelf, known words (the
-    /// climb to "Yerleşti" takes weeks), "Biliyorum" words, and words with more answers than such
-    /// a climb and its slips explain (an old word that slipped back down).
+    /// climb to "Yerleşti" takes weeks), "Biliyorum" words, words that slipped and still sit above
+    /// shelf 1, and words with more answers than such a climb and its slips explain (an old word
+    /// that slipped back down). Only for words answered before `firstReviewedAt` existed: `week`
+    /// reads that field first.
     public static func estimatedFirstAnswer(of progress: WordProgress) -> Date? {
         guard progress.state == .learning, progress.reviews > 0, let last = earliestLastAnswer(of: progress) else {
             return nil
@@ -369,8 +371,13 @@ public struct ProgressSummary: Equatable, Sendable {
             return last
         }
         let box = min(max(progress.box, 1), Leitner.maxBox)
-        // A straight climb needs `box` answers; each slip adds two (the wrong answer and the one
-        // after it) and one "Zor" may add one more.
+        // A slip drops a word only `Leitner.lapseDrop` boxes: above box 1, a word that slipped
+        // had climbed higher before, so its box no longer tells when it started.
+        if progress.lapses > 0 && box > 1 {
+            return nil
+        }
+        // A straight climb needs `box` answers; each slip (down to box 1) adds two (the wrong
+        // answer and the one after it) and one "Zor" may add one more.
         guard progress.reviews <= box + 2 * progress.lapses + 1 else {
             return nil
         }

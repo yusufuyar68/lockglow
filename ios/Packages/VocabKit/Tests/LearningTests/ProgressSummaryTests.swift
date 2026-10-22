@@ -186,10 +186,16 @@ final class ProgressSummaryTests: XCTestCase {
         p = Leitner.review(p, grade: .again, at: date(27))
         p = Leitner.review(p, grade: .good, at: date(27, 10, minute: 10))
 
-        let s = summary([1: p], now: date(28, 12))
-        XCTAssertTrue(s.thisWeek.metWordIDs.isEmpty)
-        // Its last answer this week took it up a shelf again.
-        XCTAssertEqual(s.thisWeek.movedUpWordIDs, [1])
+        // As recorded now (first answer on record) and as an earlier build wrote it (estimated:
+        // box 4 after a slip from box 5 says nothing about when it started).
+        XCTAssertNil(ProgressSummary.estimatedFirstAnswer(of: legacy(p)))
+        for record in [p, legacy(p)] {
+            let s = summary([1: record], now: date(28, 12))
+            XCTAssertTrue(s.thisWeek.metWordIDs.isEmpty)
+            XCTAssertTrue(s.lastWeek.metWordIDs.isEmpty)
+            // Its last answer this week took it up a shelf again.
+            XCTAssertEqual(s.thisWeek.movedUpWordIDs, [1])
+        }
     }
 
     func testHistoryWinsOverTheEstimate() {
