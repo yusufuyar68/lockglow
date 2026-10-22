@@ -127,12 +127,12 @@
         {"wrong": "I want to go to abroad.", "right": "I want to go abroad.", "why": "Türkçede '-e' eki vardır ('yurt dışına'), ama 'abroad' tek başına yön bildirir; 'to' kullanılmaz."},
         {"wrong": "My brother lives in abroad.", "right": "My brother lives abroad.", "why": "'Yurt dışında' için 'in abroad' denmez; sadece 'abroad' yeterlidir."}
       ],
-      "mnemonic": null
+      "mnemonic": "Kelimenin içinde 'broad' (geniş) var: evinden çıkıp geniş dünyaya, yurt dışına. 'Go home' gibi 'go abroad' denir."
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "My sister lives ______; she works in Germany.", "answer": "abroad", "distractors": ["upstairs", "nearby", "indoors"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.arrive.v.1",
@@ -172,12 +172,12 @@
         {"wrong": "We arrived to Ankara at night.", "right": "We arrived in Ankara at night.", "why": "Türkçede '-e' (Ankara'ya) olduğu için 'to' denir; ama 'arrive' ile 'in' (şehir) veya 'at' (küçük yer) kullanılır."},
         {"wrong": "I arrived to home at nine.", "right": "I arrived home at nine.", "why": "'Home' bir zarf gibi davranır; 'arrive home' denir, edat gelmez."}
       ],
-      "mnemonic": null
+      "mnemonic": "Latince 'ad ripam' = 'kıyıya': kelime ilk önce geminin kıyıya varması demekti."
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "Our train will ______ in Ankara at nine o'clock.", "answer": "arrive", "distractors": ["pass", "leave", "travel"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.book.v.1",
@@ -216,12 +216,12 @@
       "mistakes": [
         {"wrong": "I did a reservation at the hotel.", "right": "I made a reservation. / I booked a room.", "why": "Türkçede 'rezervasyon yapmak' deriz, ama İngilizcede 'do' değil 'make' kullanılır. Kısaca 'book' demek daha doğaldır."}
       ],
-      "mnemonic": null
+      "mnemonic": "Eskiden rezervasyonlar bir deftere (book) yazılırdı: 'book a table' = masayı deftere yazdırmak."
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I'd like to ______ a table for two at seven o'clock.", "answer": "book", "distractors": ["borrow", "carry", "wear"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.pack.v.1",
@@ -260,12 +260,12 @@
       "mistakes": [
         {"wrong": "I prepared my suitcase last night.", "right": "I packed my suitcase last night.", "why": "'Prepare' genel bir 'hazırlamak'tır; bavul veya çanta için doğal fiil 'pack'tir."}
       ],
-      "mnemonic": null
+      "mnemonic": "Türkçedeki 'paket' ile akraba: eşyalarını bavula koyup paket yapmak gibi düşün."
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I need to ______ my suitcase tonight because our flight is at 6 a.m.", "answer": "pack", "distractors": ["cancel", "borrow", "guess"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.ferry.n.1",
@@ -304,12 +304,12 @@
       "mistakes": [
         {"wrong": "I went to the island with ferry.", "right": "I went to the island by ferry. / on the ferry.", "why": "Türkçede 'vapurla' dendiği için 'with' denir; İngilizcede araç için 'by ferry' (the yok) veya 'on the ferry' kullanılır."}
       ],
-      "mnemonic": "Feribot kelimesi zaten 'ferry'den geliyor: ferry + boat."
+      "mnemonic": "Feribot kelimesi zaten 'ferry boat' sözünden gelir: ferry + boat."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "To go to the island, you must take the ______ from the harbor.", "answer": "ferry", "distractors": ["subway", "highway", "elevator"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.gate.n.1",
@@ -392,12 +392,12 @@
       "mistakes": [
         {"wrong": "Our journey in Paris was great.", "right": "Our trip to Paris was great.", "why": "Gidilen yerdeki gezi 'trip' olur; 'journey' sadece yolda geçen yolculuğu anlatır."}
       ],
-      "mnemonic": null
+      "mnemonic": "'Bonjour' sözündeki 'jour' gün demek: 'journey' önceleri bir günde gidilen yol demekti."
     }
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "The ______ from Istanbul to Izmir by bus takes about nine hours.", "answer": "journey", "distractors": ["ticket", "station", "luggage"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.one_way.adj.1",

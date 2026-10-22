@@ -171,7 +171,7 @@
           "false_friend": null,
           "note": "'Only' = sadece, yalnızca. Anlamı değişmesin diye vurguladığı kelimenin hemen önüne konur: I have only two brothers. Sıfat olarak 'tek' demektir: the only one (tek olan).",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Only' eskiden 'one' + '-ly' gibiydi: tek bir tane, yalnızca o."
         }
       },
       "tags": {
@@ -197,7 +197,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

@@ -9,7 +9,7 @@ Türkçe konuşanlar başta olmak üzere İngilizce öğrenenler için kilit ekr
 | [`docs/contract/content-db.md`](docs/contract/content-db.md) | İçerik hattı ↔ uygulama veri sözleşmesi (SQLite şeması, widget dosyaları, döngü algoritması) | Referans |
 | [`content-pipeline/`](content-pipeline/) | Kart şeması, doğrulama, Claude ile üretim, insan denetimi, SQLite paketleme (Python) | Windows / Mac |
 | [`content/cards/`](content/cards/) | Editör onaylı kartlar: içeriğin kalıcı kaynağı | Veri |
-| [`content/drafts/`](content/drafts/) | Denetlenmemiş taslak kartlar (kişisel set: 933 kart) | Veri |
+| [`content/drafts/`](content/drafts/) | Denetlenmemiş taslak kartlar (kişisel set: 1.068 kart) | Veri |
 | [`ios/`](ios/) | SwiftUI uygulaması + WidgetKit widget'ları + VocabKit paketi (XcodeGen) | **Yalnızca Mac (Xcode)** |
 | [`docs/legal/`](docs/legal/) | Gizlilik politikası, KVKK aydınlatma + açık rıza, kullanım şartları (TR/EN), App Store gizlilik etiketi cevapları. **TASLAK, avukat onayı gerekir** | Okuma |
 | [`marketing/`](marketing/) | Faz 0 açılış sayfası (`landing/`) ve 30 videoluk kanca bankası (`icerik/`) | Web / Okuma |
@@ -36,6 +36,7 @@ cd content-pipeline && python -m pip install -e ".[dev]" && python -m pytest
   - **2. tur (2026-10-20):** 273 temel kart eklendi (fiiller, sıfat ve zarflar, kalıp ifadeler, günlük isimler). Toplam **752 kart**, `content_version` `2026.10.20-kisisel-3`.
   - **Ek (2026-10-20):** `en.smell.v.2` (kokmak, "It smells good") eklendi. Toplam **753 kart**, `content_version` `2026.10.20-kisisel-4`.
   - **3. tur (2026-10-21):** 4 yeni akış: s10 iş ve ofis, s11 seyahat, s12 sağlık, s13 sosyal hayat (her biri 45 kart, Opus denetçiler ve bağımsız doğrulayıcılarla). Toplam **933 kart**, `content_version` `2026.10.21-kisisel-5`.
+  - **4. tur (2026-10-22):** s14 ev, s15 alışveriş ve para, s16 zaman, hava ve doğa (3 × 45 kart); s1–s13'e 204 hafıza ipucu ve 27 düzeltme. Toplam **1.068 kart**, `content_version` `2026.10.22-kisisel-6`.
   - Süreç: `docs/icerik_uretimi/`.
 - ✅ Öğrenme motoru uygulamaya bağlandı: widget dokunuşları ilerlemeye işleniyor, "Tekrar" sekmesi (Bilemedim/Zor/Bildim/Kolay), "Ayarlar" (değişim sıklığı, günlük yeni kelime, sıfırlama). Widget'ta Türkçe anlam önde.
 - ✅ Yasal metin taslakları (`docs/legal/`). Avukat için 30 maddelik [TEYİT] listesi README'de.

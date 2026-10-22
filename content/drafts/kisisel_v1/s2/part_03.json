@@ -38,12 +38,12 @@
       "false_friend": null,
       "note": "Günlük Türkçede çoğu kişi sadece 'kavşak' der. İngilizcede düz kavşak 'junction' veya 'intersection', daire şeklinde olan ise 'roundabout' olur.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "Round (yuvarlak) + about (etrafında): arabalar yuvarlak göbeğin etrafında döner."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "Go straight and turn right at the ______.", "answer": "roundabout", "distractors": ["sidewalk", "kitchen", "elevator"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.passenger.n.1",
@@ -164,12 +164,12 @@
       "false_friend": null,
       "note": "İngiltere'de yazılışı 'neighbourhood'. Türkçede 'mahalle' resmî bir bölüm, 'semt' ise bir bölge hissidir; İngilizcede ikisi için de 'neighborhood' denir.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "Neighbor (komşu) + -hood: komşuların hepsi bir arada, yani mahalle. 'Childhood' (çocukluk) gibi."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I know most people in my ______ because I have lived here for ten years.", "answer": "neighborhood", "distractors": ["airport", "elevator", "highway"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.downtown.adv.1",
@@ -208,12 +208,12 @@
       "mistakes": [
         {"wrong": "I'm going to downtown.", "right": "I'm going downtown.", "why": "Türkçedeki '-e' eki yüzünden 'to' eklenir, ama 'downtown' zaten 'şehir merkezine' demektir; 'to' gerekmez."}
       ],
-      "mnemonic": null
+      "mnemonic": "'Go home' gibi düşün: araya 'to' girmez. 'I'm going downtown' = merkeze gidiyorum."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "The main shops and offices are ______, near the central square.", "answer": "downtown", "distractors": ["upstairs", "outdoors", "overseas"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.crowded.adj.1",
@@ -235,7 +235,7 @@
   "examples": [
     {"en": "The bus was so crowded that I had to stand.", "tr": "Otobüs o kadar kalabalıktı ki ayakta durmak zorunda kaldım.", "register": "neutral", "focus": "crowded"},
     {"en": "I don't like crowded places.", "tr": "Kalabalık yerleri sevmem.", "register": "neutral", "focus": "crowded"},
-    {"en": "The market is very crowded on Saturdays.", "tr": "Pazar cumartesi günleri çok kalabalık olur.", "register": "neutral", "focus": "crowded"}
+    {"en": "The market is very crowded on Saturdays.", "tr": "Cumartesi günleri pazar yeri çok kalabalık olur.", "register": "neutral", "focus": "crowded"}
   ],
   "synonyms": ["packed"],
   "antonyms": ["empty", "quiet"],
@@ -296,12 +296,12 @@
       "mistakes": [
         {"wrong": "Can you tell me the direction to the station?", "right": "Can you give me directions to the station?", "why": "Yol tarifi için çoğul 'directions' kullanılır; tekil 'direction' sadece yön (sağ, sol, kuzey) bildirir."}
       ],
-      "mnemonic": null
+      "mnemonic": "Yol tarifi tek yön değildir: 'düz git, sağa dön, sonra sola…' Birçok yön, bu yüzden 'directions' çoğul."
     }
   },
   "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I'm lost. Can I ask you for ______ to the museum?", "answer": "directions", "distractors": ["tickets", "reasons", "prices"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.forecast.n.1",
@@ -338,12 +338,12 @@
       "false_friend": null,
       "note": "Türkçede 'hava durumu' denir; İngilizcede bu 'weather forecast' veya kısaca 'the forecast'tır. 'Forecast' aslında 'tahmin' demektir ve hava dışında da kullanılır.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "'Fore' önce demek ('before' içinde de var): forecast = önceden yapılan tahmin."
     }
   },
   "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "The weather ______ says it will be sunny on Sunday.", "answer": "forecast", "distractors": ["window", "season", "umbrella"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.temperature.n.1",
@@ -379,15 +379,13 @@
       "equivalence": "full",
       "false_friend": null,
       "note": "Hasta biri için 'have a temperature' = 'ateşi olmak' demektir. Hava ve oda için 'sıcaklık', hasta için 'ateş' denir.",
-      "mistakes": [
-        {"wrong": "How many degrees is it outside?", "right": "What's the temperature outside?", "why": "Türkçede 'kaç derece?' diye sorarız. İngilizcede doğal soru 'What's the temperature?' sorusudur."}
-      ],
+      "mistakes": [],
       "mnemonic": null
     }
   },
   "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "The ______ is minus five today, so wear a warm coat.", "answer": "temperature", "distractors": ["season", "sunshine", "umbrella"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.storm.n.1",
@@ -424,12 +422,12 @@
       "false_friend": null,
       "note": "'Storm' yağmurlu, rüzgârlı veya gök gürültülü her türlü şiddetli hava olabilir. Hortum 'tornado', kasırga 'hurricane' ile söylenir.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "Türkçedeki 'beyin fırtınası' sözü İngilizce 'brainstorm' çevirisidir: brain = beyin, storm = fırtına."
     }
   },
   "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "A big ______ is coming, so stay at home tonight.", "answer": "storm", "distractors": ["season", "forecast", "spring"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 }
 ]
 }

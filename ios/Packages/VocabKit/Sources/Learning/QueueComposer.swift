@@ -129,9 +129,12 @@ public enum QueueComposer {
         return result
     }
 
-    /// `compose` over the user's deck (`DeckFilter.feed`). When the deck adds no word of its own
-    /// (every chosen word is known and not due), the queue comes from `fallbackFeed` (every topic)
-    /// instead, so a topic choice never leaves the widget without words.
+    /// `compose` over the user's deck (`DeckFilter.feed`). When the deck has no new word left, new
+    /// words come from `fallbackFeed` (every topic) after the deck's own words, the same rule as
+    /// "Tekrar" and the reminder (`DeckFilter.newWordFeed`); otherwise a finished deck would rotate
+    /// only its few learning words on the widget. When the deck adds no word of its own at all
+    /// (every chosen word is known and not due), the queue comes from `fallbackFeed` alone, so a
+    /// topic choice never leaves the widget without words.
     ///
     /// `pinFirst` stays first either way, even when it is outside the deck: changing the topics
     /// rewrites the plan like any setting, and the word on screen must not change. The deck's
@@ -146,8 +149,9 @@ public enum QueueComposer {
         limit: Int,
         pinFirst: WidgetWord? = nil
     ) -> [WidgetWord] {
+        let deckHasNew = DeckFilter.hasNewWords(deck, progress: progress)
         let queue = compose(
-            feed: deck,
+            feed: deckHasNew || fallbackFeed.isEmpty ? deck : deck + fallbackFeed,
             progress: progress,
             now: now,
             horizon: horizon,

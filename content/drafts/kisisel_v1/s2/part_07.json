@@ -124,12 +124,12 @@
       "mistakes": [
         {"wrong": "I will text to you later.", "right": "I will text you later.", "why": "Türkçede 'sana' dediğimiz için 'to you' deriz; ama 'text' kişiyi doğrudan alır: text you, text her, text him."}
       ],
-      "mnemonic": null
+      "mnemonic": "'I'll call you' gibi 'I'll text you' denir: ikisinde de araya 'to' girmez."
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "social_skills"], "exams": [], "register": "informal", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "My sister ______ me a photo of her new dress yesterday.", "answer": "texted", "distractors": ["said", "spoke", "told"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.jog.v.1",
@@ -213,12 +213,12 @@
         {"wrong": "I'm fan of this team.", "right": "I'm a fan of this team.", "why": "'Fan' sayılabilir bir isimdir; Türkçede 'bir' demesek de İngilizcede 'a' gerekir."},
         {"wrong": "I'm a fan from this singer.", "right": "I'm a fan of this singer.", "why": "'Şarkıcının hayranı' tamlaması 'fan of' ile kurulur; 'from' kullanılmaz."}
       ],
-      "mnemonic": null
+      "mnemonic": "Türkçedeki 'fanatik' taraftarı düşün: 'fan' takımını ya da şarkıcısını çok seven kişi."
     }
   },
   "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports", "music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "She is a big ______ of that singer and goes to every concert.", "answer": "fan", "distractors": ["boss", "guest", "guide"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.puzzle.n.1",
@@ -297,12 +297,12 @@
       "false_friend": null,
       "note": "'Board game' masa oyunu ya da kutu oyunudur. Tavla ve satranç klasik örnekleridir; İngilizcede tavla = backgammon, satranç = chess.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "Board = tahta: oyun bir tahtanın üstünde oynanır. Satranç tahtasına 'chessboard' denir."
     }
   },
   "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "Let's play a ______ tonight, with dice and cards.", "answer": "board game", "distractors": ["video call", "card trick", "sports bag"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.ride.v.1",

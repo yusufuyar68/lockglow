@@ -4,7 +4,9 @@ import Learning
 
 /// First-launch onboarding, four pages and no paywall: level, topics, how to add the widget,
 /// the first word. It opens by itself once; "Ayarlar > Yardım" opens it again. "Atla" ends it
-/// on any page and keeps what was chosen so far.
+/// on any page (the last one too) and keeps what was chosen so far.
+///
+/// One question and one filled button per page, short sentences for an A2 reader.
 ///
 /// The choice is applied when the topics page is left (and on "Atla"): on a fresh install that
 /// writes the first widget plan, so a widget added on the next page already rotates the chosen
@@ -19,6 +21,7 @@ struct OnboardingView: View {
 
     @EnvironmentObject private var model: AppModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var page: Page = .level
     @State private var level: Level?
     @State private var topicIDs: Set<String> = []
@@ -30,7 +33,7 @@ struct OnboardingView: View {
             ScrollView {
                 pageContent
                     .padding(.horizontal, 20)
-                    .padding(.top, 8)
+                    .padding(.top, 6)
                     .padding(.bottom, 24)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -39,14 +42,20 @@ struct OnboardingView: View {
             bottomBar
         }
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.25), value: page)
-        .background(Palette.background.ignoresSafeArea())
+        .background(Theme.bg.ignoresSafeArea())
+        // A full-screen cover starts its own hierarchy: no blue anywhere inside.
+        .tint(Theme.ink)
         .onAppear(perform: loadChoice)
     }
 
     // MARK: Bars
 
+    /// Mockup `.ob-top`: "geri" and "Atla" are control-layer capsules (glass on iOS 26, rule 6);
+    /// the step bar between them is ink, never yellow, also at night. The bar stops growing at
+    /// the first accessibility text size, so the step bar keeps room between the two capsules
+    /// on an iPhone SE.
     private var topBar: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 10) {
             if page == .level {
                 Color.clear
                     .frame(width: 44, height: 44)
@@ -55,36 +64,35 @@ struct OnboardingView: View {
                     go(to: Page(rawValue: page.rawValue - 1) ?? .level)
                 } label: {
                     Image(systemName: "chevron.left")
-                        .font(.title3.weight(.semibold))
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
+                        .font(.body.weight(.semibold))
+                        .frame(minWidth: 20, minHeight: 30)
                 }
-                .tint(Palette.glowInk)
+                .glassControl()
                 .accessibilityLabel("Geri")
             }
             progressBar
-            if page == .firstWord {
-                Color.clear
-                    .frame(width: 60, height: 44)
-            } else {
-                Button("Atla") {
-                    finish()
-                }
-                .font(.body.weight(.semibold))
-                .tint(Palette.glowInk)
-                .frame(minWidth: 60, minHeight: 44)
-                .accessibilityIdentifier("onboarding.skip")
+            Button {
+                finish()
+            } label: {
+                Text("Atla")
+                    .font(.body.weight(.semibold))
+                    .lineLimit(1)
+                    .frame(minHeight: 30)
             }
+            .glassControl()
+            .accessibilityIdentifier("onboarding.skip")
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal, 12)
         .padding(.top, 4)
+        .frame(minHeight: 52)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility1)
     }
 
     private var progressBar: some View {
         HStack(spacing: 6) {
             ForEach(Page.allCases, id: \.self) { item in
                 Capsule()
-                    .fill(item.rawValue <= page.rawValue ? Palette.glow : Palette.surface2)
+                    .fill(item.rawValue <= page.rawValue ? Theme.tint : Theme.surface3)
                     .frame(height: 6)
             }
         }
@@ -93,14 +101,15 @@ struct OnboardingView: View {
         .accessibilityLabel("Adım \(page.rawValue + 1) / \(Page.allCases.count)")
     }
 
+    /// Mockup `.ob-foot`: on the topics page the deck summary (always there, so the bar does
+    /// not jump at the first tap) over the one filled button of the page. At the largest text
+    /// sizes the summary leads the list instead and the button stops growing, so the list keeps
+    /// most of an iPhone SE screen.
     private var bottomBar: some View {
-        VStack(spacing: 10) {
-            if page == .topics && chosenTopicCount > 0 {
-                DeckSummaryLine(
-                    summary: model.deckSummary(for: topicIDs),
-                    dailyGoal: model.dailyNewWords,
-                    isEverything: false
-                )
+        VStack(alignment: .leading, spacing: 10) {
+            if showsTopicSummary && !dynamicTypeSize.isAccessibilitySize {
+                topicSummary
+                    .padding(.horizontal, 4)
             }
             Button(primaryTitle) {
                 advance()
@@ -108,10 +117,33 @@ struct OnboardingView: View {
             .buttonStyle(GlowButtonStyle())
             .disabled(isNextDisabled)
             .accessibilityIdentifier(page == .firstWord ? "onboarding.start" : "onboarding.next")
+            .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         }
         .padding(.horizontal, 20)
-        .padding(.top, 8)
-        .padding(.bottom, 12)
+        .padding(.top, showsTopicSummary ? 12 : 8)
+        .padding(.bottom, 10)
+        .background(Theme.bg)
+        // The topic list scrolls under the bar: a hairline, as in "Ayarlar > Konular".
+        .overlay(alignment: .top) {
+            if showsTopicSummary {
+                Rectangle()
+                    .fill(Theme.line)
+                    .frame(height: 1)
+            }
+        }
+    }
+
+    private var showsTopicSummary: Bool {
+        return page == .topics && model.contentSource != .loading && !model.choosableTopics.isEmpty
+    }
+
+    private var topicSummary: some View {
+        // "Tümü" is selected when no listed topic is (as in `TopicChoiceList`).
+        DeckSummaryLine(
+            summary: model.deckSummary(for: chosenTopicCount == 0 ? [] : topicIDs),
+            dailyGoal: model.dailyNewWords,
+            isEverything: chosenTopicCount == 0
+        )
     }
 
     /// Topics still loading: leaving the page would apply the choice before there are words,
@@ -165,19 +197,18 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 12) {
             PageTitle(
                 title: "İngilizcen ne düzeyde?",
-                subtitle: "Yeni kelimeler bu seviyeden başlar. Daha kolay kelimeler sona kalır, hiçbiri kaybolmaz."
+                subtitle: "Yeni kelimeler bu seviyeden başlar. Sonra Ayarlar'dan değiştirebilirsin."
             )
-            ForEach(AppPreferences.startLevelChoices, id: \.self) { choice in
-                ChoiceRow(isSelected: level == choice) {
-                    level = choice
-                } label: {
-                    LevelOptionLabel(level: choice, wordCount: wordCount(at: choice))
+            VStack(spacing: 8) {
+                ForEach(AppPreferences.startLevelChoices, id: \.self) { choice in
+                    ChoiceRow(isSelected: level == choice) {
+                        level = choice
+                    } label: {
+                        LevelOptionLabel(level: choice, wordCount: wordCount(at: choice))
+                    }
+                    .accessibilityIdentifier("onboarding.level.\(choice.rawValue)")
                 }
-                .accessibilityIdentifier("onboarding.level.\(choice.rawValue)")
             }
-            Text("İstediğin zaman Ayarlar'dan değiştirebilirsin.")
-                .font(.footnote)
-                .foregroundStyle(Palette.ink2)
         }
     }
 
@@ -185,8 +216,8 @@ struct OnboardingView: View {
     private var topicsPage: some View {
         VStack(alignment: .leading, spacing: 12) {
             PageTitle(
-                title: "Hangi konuları öğrenmek istersin?",
-                subtitle: TopicPickerView.intro
+                title: "Hangi konular ilgini çekiyor?",
+                subtitle: "İstediğin kadar seç. Hiç seçmezsen hepsi gelir."
             )
             if model.contentSource == .loading {
                 ProgressView()
@@ -194,7 +225,12 @@ struct OnboardingView: View {
             } else if model.choosableTopics.isEmpty {
                 Text("Konu listesi yok. Şimdilik bütün kelimeler gösterilecek.")
                     .font(.body)
+                    .foregroundStyle(Theme.ink)
             } else {
+                if dynamicTypeSize.isAccessibilitySize {
+                    topicSummary
+                        .padding(.horizontal, 4)
+                }
                 TopicChoiceList(
                     topics: model.choosableTopics,
                     totalWordCount: model.words.count,
@@ -208,33 +244,39 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 12) {
             PageTitle(
                 title: "Widget'ı ekle",
-                subtitle: "Kelimeler kilitli ekranda ve ana ekranda kendiliğinden değişir. Uygulamayı açmana gerek yok."
+                subtitle: "Kelimeler kilitli ekranında kendiliğinden değişir. Uygulamayı açman gerekmez."
             )
             WidgetGuideContent()
-            Text("Ekledikten sonra buraya dönebilirsin. Bu rehber Ayarlar > Yardım'da da var.")
+            Text("Sonra da ekleyebilirsin: Ayarlar > Yardım.")
                 .font(.footnote)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal, 4)
         }
     }
 
     @ViewBuilder
     private var firstWordPage: some View {
         VStack(alignment: .leading, spacing: 4) {
+            // How learning works, in one sentence (the card plays the word with its speaker).
             PageTitle(
                 title: "İlk kelimen",
-                subtitle: "Öğrenmeye bu kelimeyle başlıyorsun. Hoparlöre dokunup dinleyebilirsin."
+                subtitle: "Kelimeyi önce widget'ta görürsün, sonra Tekrar'da kendini sınarsın."
             )
             if let word = model.firstDeckWord() {
                 // No "Söyle" button here: the onboarding never asks for the microphone.
                 WordCardView(word: word, detail: model.detail(for: word), showsSay: false)
                     .padding(.horizontal, -16)
             } else if model.contentSource == .loading {
-                Text("Kelimeler yükleniyor...")
+                Text("Kelimeler yükleniyor…")
                     .font(.body)
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(Theme.ink2)
             } else {
-                Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç. Sorun sürerse Ayarlar > Tanılama'ya bak.")
+                // The old "Tanılama" section is the "Widget sağlığı" row of Ayarlar now.
+                Text("Kelimeler yüklenemedi. Uygulamayı kapatıp yeniden aç. Sorun sürerse Ayarlar > Widget sağlığı ekranına bak.")
                     .font(.body)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
     }
@@ -282,6 +324,10 @@ struct OnboardingView: View {
     }
 }
 
+/// Mockup `.ob-title` / `.ob-sub`: a large SF Pro title (no rounded design, README point 3) over
+/// a calm `ink2` sentence. The title stops growing at the first accessibility size (as large
+/// titles in navigation bars do), so its words still fit a line on an iPhone SE; the sentence
+/// keeps growing.
 private struct PageTitle: View {
     let title: String
     let subtitle: String
@@ -289,35 +335,45 @@ private struct PageTitle: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(verbatim: title)
-                .font(.largeTitle.weight(.heavy))
-                .fontDesign(.rounded)
+                .font(.largeTitle.weight(.bold))
+                .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
+                .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 .accessibilityAddTraits(.isHeader)
             Text(verbatim: subtitle)
                 .font(.body)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
+                .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(.bottom, 8)
+        .padding(.top, 4)
+        .padding(.bottom, 6)
     }
 }
 
 /// "A2 ●●○  Temel konuşabiliyorum" with what the level covers and how many words it has.
+/// Mockup `.lvc`: the code over its dots (rule 4: never color alone), ink on, `surface3` off.
+/// At the largest text sizes the code stands above the text, which then keeps the row's width.
 private struct LevelOptionLabel: View {
     let level: Level
     let wordCount: Int
+    @ScaledMetric(relativeTo: .body) private var dotSize: CGFloat = 5
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(alignment: .center, spacing: 12) {
-            VStack(spacing: 3) {
-                Text(level.rawValue)
-                    .font(.headline.weight(.heavy))
-                    .fontDesign(.rounded)
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+            : AnyLayout(HStackLayout(alignment: .center, spacing: 12))
+        layout {
+            VStack(spacing: 4) {
+                Text(verbatim: level.rawValue)
+                    .font(.body.weight(.bold))
+                    .foregroundStyle(Theme.ink)
                 HStack(spacing: 3) {
                     ForEach(1...3, id: \.self) { dot in
                         Circle()
-                            .fill(dot <= level.rank ? Palette.glowInk : Palette.surface2)
-                            .frame(width: 5, height: 5)
+                            .fill(dot <= level.rank ? Theme.ink : Theme.surface3)
+                            .frame(width: dotSize, height: dotSize)
                     }
                 }
             }
@@ -326,10 +382,11 @@ private struct LevelOptionLabel: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(verbatim: title)
                     .font(.body.weight(.semibold))
-                    .foregroundStyle(Color.primary)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
                 Text(verbatim: detail)
                     .font(.footnote)
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

@@ -1,0 +1,1412 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Lockglow Gece</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+/* Düzen: solda bir (ya da karşılaştırmada iki) iPhone çerçevesi, sağda kontrol ve not paneli, altta renk ve kontrast tablosu.
+   Sistem: Lockglow'un "kâğıt ve mürekkep" kimliğinin gece hâli. Zemin gerçek siyah, mürekkep kehribar (ya da soluk fosfor),
+   tek parlak işaret yine yalnız öğrenilecek İngilizce kelimenin şeridi. İngilizce serif (New York), Türkçe ve arayüz SF Pro.
+   Sayfanın kendisi bilerek tek (karanlık) görünümde: gece ekranını aydınlık bir sayfanın içinde değerlendirmek yanıltır. */
+:root{
+  color-scheme:dark;
+  --room:#050403; --room-2:#0E0C0A; --room-3:#18140F; --room-line:rgba(255,214,170,.11); --room-line-2:rgba(255,214,170,.2);
+  --room-ink:#DCCBB0; --room-ink-2:#B09C82; --room-ink-3:#8F7E69; --room-accent:#FFB547; --room-accent-soft:rgba(255,181,71,.14);
+  --font-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",system-ui,sans-serif;
+  --font-en:ui-serif,"New York","Source Serif 4",Georgia,"Times New Roman",serif;
+  --fade:420ms;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--room);color:var(--room-ink);font-family:var(--font-ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px;min-height:100vh;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;text-align:inherit}
+:focus-visible{outline:2px solid var(--room-accent);outline-offset:2px;border-radius:10px}
+svg.ic{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+svg.ic.fill{fill:currentColor;stroke:none}
+[hidden]{display:none!important}
+a{color:var(--room-accent)}
+
+/* ───────── Sayfa çerçevesi ───────── */
+.topbar{max-width:1280px;margin:0 auto;padding-block:18px 10px;display:flex;flex-direction:column;gap:12px}
+.brandrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.brand{font:700 24px/1.1 var(--font-en);letter-spacing:-.01em;color:var(--room-ink);margin:0}
+.brand span{position:relative;z-index:0}
+.brand span::before{content:"";position:absolute;z-index:-1;left:-.04em;right:-.04em;bottom:-.2em;height:.1em;background:var(--room-accent);clip-path:polygon(.08em 0,100% 0,calc(100% - .08em) 100%,0 100%)}
+.brandrow p{margin:0;color:var(--room-ink-2);font-size:14px;max-width:70ch}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav button{min-height:44px;padding:0 14px;border-radius:22px;font-weight:600;font-size:14px;color:var(--room-ink-2);background:var(--room-2);border:1px solid var(--room-line);white-space:nowrap}
+.nav button[aria-pressed="true"]{color:var(--room-accent);border-color:rgba(255,181,71,.5);background:var(--room-accent-soft)}
+.nav .sep{width:1px;background:var(--room-line);margin:8px 4px}
+@media (max-width:560px){.nav .sep{display:none}}
+.workspace{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;max-width:1280px;margin:0 auto;align-items:start}
+.stage{min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:6px}
+.phones{display:flex;gap:24px;justify-content:center;align-items:flex-start;width:100%}
+.pwrap{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.plabel{font:600 13px var(--font-ui);color:var(--room-ink-2);letter-spacing:.02em}
+.plabel b{color:var(--room-accent);font-weight:600}
+.phone-box{position:relative;flex:none}
+.phone-box .phone{position:absolute;left:0;top:0;transform-origin:0 0}
+.stage-cap{font-size:13px;color:var(--room-ink-3);text-align:center;max-width:62ch;margin:0}
+.panel{background:var(--room-2);border:1px solid var(--room-line);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.panel h2{margin:0 0 8px;font:700 12px var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--room-ink-3)}
+.grp{display:flex;flex-direction:column;gap:6px}
+.pseg{display:flex;flex-wrap:wrap;gap:4px}
+.pseg button{min-height:44px;padding:0 13px;border-radius:22px;background:var(--room-3);font-weight:600;font-size:14px;color:var(--room-ink-2);border:1px solid transparent}
+.pseg button[aria-pressed="true"]{color:var(--room-accent);border-color:rgba(255,181,71,.5);background:var(--room-accent-soft)}
+.check{display:flex;align-items:center;gap:10px;min-height:44px;font-weight:600;cursor:pointer;color:var(--room-ink)}
+.check input{width:20px;height:20px;accent-color:var(--room-accent)}
+.range{display:flex;flex-direction:column;gap:4px}
+.range label{display:flex;justify-content:space-between;font-weight:600}
+.range label output{color:var(--room-accent);font-variant-numeric:tabular-nums}
+.range input{width:100%;min-height:44px;accent-color:var(--room-accent)}
+.hint-t{font-size:13px;color:var(--room-ink-3);margin:0}
+.stat{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;color:var(--room-ink-2);background:var(--room-3);border-radius:14px;padding:10px 12px;font-variant-numeric:tabular-nums}
+.stat b{color:var(--room-ink);font-weight:600}
+.note{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--room-ink-2)}
+.note h3{margin:0;font:700 17px var(--font-ui);color:var(--room-ink)}
+.note ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.note .swift{background:var(--room-3);border-radius:12px;padding:10px 12px;font-size:13px}
+.note .swift b{color:var(--room-ink)}
+.note code,.tokens code{font:500 12.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--room-ink)}
+@media (max-width:1060px){.workspace{grid-template-columns:minmax(0,1fr)}}
+
+/* ───────── Renk ve kontrast bölümü ───────── */
+.tokens{max-width:1280px;margin:36px auto 0;display:flex;flex-direction:column;gap:18px}
+.tokens h2{margin:0;font:700 26px/1.15 var(--font-en);letter-spacing:-.01em;color:var(--room-ink);text-wrap:balance}
+.tokens > p{margin:0;max-width:72ch;color:var(--room-ink-2)}
+.tscroll{overflow-x:auto;border:1px solid var(--room-line);border-radius:18px;background:var(--room-2)}
+table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+.tt th,.tt td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--room-line)}
+.tt thead th{font:700 12px var(--font-ui);letter-spacing:.05em;text-transform:uppercase;color:var(--room-ink-3)}
+.tt tbody tr:last-child td{border-bottom:0}
+.tt td.use{color:var(--room-ink-2);max-width:26ch}
+.sw{display:flex;align-items:flex-start;gap:9px}
+.sw i{width:26px;height:26px;border-radius:8px;flex:none;box-shadow:inset 0 0 0 1px var(--room-line-2)}
+.sw span{display:flex;flex-direction:column;font-variant-numeric:tabular-nums;line-height:1.35}
+.sw small{color:var(--room-ink-3);font-size:12px}
+.bars{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;background:var(--room-2);border:1px solid var(--room-line);border-radius:18px;padding:16px 18px}
+.bars h3{margin:0 0 4px;font:700 15px var(--font-ui);color:var(--room-ink)}
+.bar{display:grid;grid-template-columns:minmax(120px,210px) minmax(0,1fr) 44px;gap:12px;align-items:center;min-height:30px}
+.bar .lb{font-size:13px;color:var(--room-ink-2)}
+.bar .tr{height:12px;border-radius:0 4px 4px 0;position:relative}
+.bar .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0}
+.bar .v{font:600 13px var(--font-ui);color:var(--room-ink);text-align:right;font-variant-numeric:tabular-nums}
+.bars .axis{font-size:12px;color:var(--room-ink-3)}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}
+.foot-note{font-size:13px;color:var(--room-ink-3);max-width:80ch;margin:0}
+@media (max-width:560px){.bar{grid-template-columns:minmax(0,1fr) 44px}.bar .tr{grid-column:1 / -1;grid-row:2}}
+
+/* ───────── iPhone çerçevesi ───────── */
+.phone{--sw:390px;--sh:844px;--sr:48px;--safe-top:54px;--safe-bottom:34px;
+  position:relative;padding:12px;background:#060606;border-radius:60px;
+  box-shadow:0 0 0 1.5px #2b2722 inset,0 50px 90px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,214,170,.05);color:var(--ink);font-family:var(--font-ui)}
+.phone.land{--sw:844px;--sh:390px}
+/* iPhone SE (375 × 667): ana düğmeli eski kasa, çentik ve ev çubuğu yok. */
+.phone[data-device="se"]{--sw:375px;--sh:667px;--sr:6px;--safe-top:20px;--safe-bottom:0px;padding:72px 14px 80px;border-radius:46px}
+.phone[data-device="se"]::after{content:"";position:absolute;left:50%;bottom:16px;width:50px;height:50px;margin-left:-25px;border-radius:50%;border:2px solid #3b3d44}
+.phone[data-device="se"]::before{content:"";position:absolute;left:50%;top:34px;width:64px;height:7px;margin-left:-32px;border-radius:4px;background:#2a2c31}
+.phone.land[data-device="se"]{--sw:667px;--sh:375px;padding:14px 80px 14px 72px}
+.phone.land[data-device="se"]::before{top:50%;left:34px;width:7px;height:64px;margin:-32px 0 0}
+.phone.land[data-device="se"]::after{top:50%;left:auto;right:16px;bottom:auto;margin:-25px 0 0}
+.phone[data-device="se"] .island,.phone[data-device="se"] .homebar{display:none}
+.phone[data-device="se"] .statusbar{padding:0 10px;font-size:12px}
+.phone[data-device="se"] .tabbar{height:49px;padding:0}
+.phone[data-device="se"] .page{padding-bottom:62px}
+.phone[data-device="se"] .scroll{padding-bottom:66px}
+.phone[data-device="se"] .actbar{padding-bottom:14px}
+.phone[data-device="se"] .done .acts{padding-bottom:12px}
+.phone[data-device="se"] .ls .clock{font-size:76px}
+.phone[data-device="se"] .ls .bot{bottom:22px}
+.phone[data-device="se"] .hs{padding:calc(var(--safe-top) + 12px) 20px 0;gap:16px}
+.phone[data-device="se"] .wg-small{width:148px;height:148px}
+.phone[data-device="se"] .wg-medium{width:321px;height:148px}
+.phone[data-device="se"] .dock{left:20px;right:20px;bottom:8px;height:76px}
+.phone[data-device="se"] .sb-wrap{padding:20px 28px}
+.phone[data-device="se"] .sb-clock .t{font-size:100px}
+.screen{position:relative;width:var(--sw);height:var(--sh);border-radius:var(--sr);overflow:hidden;background:var(--bg);isolation:isolate}
+.statusbar{position:absolute;top:0;left:0;right:0;height:var(--safe-top);display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;z-index:50;font:600 16px var(--font-ui);color:var(--ink-2);pointer-events:none}
+.statusbar .si{display:flex;gap:6px;align-items:center}
+.statusbar svg{height:12px;width:auto;fill:currentColor}
+.statusbar.lk{color:var(--lc)}
+.lsw{position:absolute;inset:0}
+.lsw.aod .statusbar{opacity:.45}
+.hdr .meta svg{width:15px;height:15px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.island{position:absolute;top:11px;left:50%;width:122px;height:36px;margin-left:-61px;background:#000;border-radius:20px;z-index:55}
+.land .island{top:50%;left:11px;width:36px;height:122px;margin:-61px 0 0;border-radius:20px}
+.homebar{position:absolute;bottom:8px;left:50%;width:136px;height:5px;margin-left:-68px;border-radius:3px;background:var(--ink-3);opacity:.55;z-index:60;pointer-events:none}
+.land .homebar{display:none}
+
+/* Uygulama kabuğu */
+.app{position:absolute;inset:0;padding-top:var(--safe-top);display:flex;flex-direction:column;background:var(--bg)}
+.hdr{display:flex;align-items:center;justify-content:space-between;min-height:50px;padding:0 20px;gap:8px;flex:none}
+.hdr .ttl{font:700 calc(17px*var(--dt)) var(--font-ui);color:var(--ink)}
+.hdr .meta{font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3);font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:8px}
+.dots{display:inline-flex;gap:4px}
+.dots b{width:6px;height:6px;border-radius:50%;background:var(--surface-3)}
+.dots b.on{background:var(--ink-2)}
+.page{flex:1;min-height:0;display:flex;flex-direction:column;padding:0 14px 98px}
+.app.round .page{padding-bottom:0}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:83px;padding:0 0 30px;display:flex;border-top:1px solid var(--line);background:var(--tab-bg);z-index:30}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:600 10.5px var(--font-ui);color:var(--ink-3)}
+.tab svg{width:24px;height:24px}
+.tab[aria-current="page"]{color:var(--ink)}
+.app.round .tabbar{display:none}
+.swap{transition:opacity var(--fade) ease}
+.swap.out{opacity:0}
+
+/* Ortak parçalar */
+.t-head{font:700 calc(40px*var(--dt))/1.08 var(--font-en);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;max-width:100%;min-width:0;padding:0 .14em .34em;margin:0 -.14em -.34em;color:var(--ink)}
+.band{position:relative;z-index:0}
+.band::before{content:"";position:absolute;z-index:-1;left:-.06em;right:-.06em;bottom:-.2em;height:.12em;background:var(--band);clip-path:polygon(.1em 0,100% 0,calc(100% - .1em) 100%,0 100%)}
+.band::after{content:"";position:absolute;z-index:-2;left:0;right:0;bottom:-.27em;height:.24em;background:var(--band-glow);filter:blur(.16em);border-radius:50%}
+.mark{font-weight:700;text-decoration:underline solid var(--mark);text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-skip-ink:auto}
+.t-gloss{font:600 calc(28px*var(--dt))/1.18 var(--font-ui);letter-spacing:-.005em;color:var(--ink)}
+.t-def{font:400 calc(19px*var(--dt))/1.38 var(--font-en);color:var(--ink-2)}
+.t-sub{font:400 calc(15px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
+.t-lt{font:700 calc(32px*var(--dt))/1.12 var(--font-ui);letter-spacing:-.01em;color:var(--ink);margin:4px 0 12px}
+.btn{min-height:44px;padding:0 20px;border-radius:22px;font:600 calc(17px*var(--dt))/1.2 var(--font-ui);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;color:var(--ink)}
+.btn-lg{min-height:54px;border-radius:27px;padding:0 24px}
+.btn.block{width:100%}
+.btn-primary{background:var(--primary-bg);color:var(--primary-ink);box-shadow:inset 0 0 0 1.5px var(--primary-line),var(--primary-glow)}
+.btn-tonal{background:var(--surface-2)}
+.btn-line{box-shadow:inset 0 0 0 1.5px var(--line-strong)}
+.btn-text{min-height:44px;padding:0 12px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.btn svg{width:20px;height:20px}
+.pill{min-height:44px;padding:0 14px 0 11px;border-radius:22px;background:var(--surface-2);color:var(--ink);font:600 calc(15px*var(--dt)) var(--font-ui);display:inline-flex;align-items:center;gap:6px;flex:none}
+.pill svg{width:19px;height:19px}
+.pill.on{box-shadow:inset 0 0 0 1.5px var(--line-strong)}
+.icb{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--ink-2);flex:none}
+.icb svg{width:22px;height:22px}
+.lvl{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 9px 0 8px;border-radius:12px;border:1.5px solid var(--line-strong);font:700 calc(13px*var(--dt)) var(--font-ui);color:var(--ink)}
+.lvl i{display:flex;gap:2px}
+.lvl i b{width:5px;height:5px;border-radius:50%;background:var(--ink-3);opacity:.35}
+.lvl i b.on{background:var(--ink-2);opacity:1}
+
+/* Kelime kartı */
+.wcard{flex:1;min-height:0;display:flex;flex-direction:column;border:1px solid var(--card-line);background:var(--card-bg);border-radius:28px;overflow:hidden;position:relative}
+.wcard .inner{flex:1;min-height:0;overflow:hidden;padding:18px 20px 10px;display:flex;flex-direction:column;gap:12px}
+.wcard .inner > *{flex-shrink:0}
+.wcard .foot{padding:4px 14px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none}
+.now{display:inline-flex;align-items:center;gap:5px;min-height:26px;padding:0 10px;border-radius:13px;background:var(--surface-2);font:600 calc(12px*var(--dt)) var(--font-ui);color:var(--ink-2);align-self:flex-start}
+.now svg{width:13px;height:13px}
+.wmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:44px}
+.wmeta .ipa{font:400 calc(15px*var(--dt)) var(--font-en);color:var(--ink-2)}
+.wmeta .pos{font:500 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
+.wmeta .acts{display:inline-flex;align-items:center;gap:2px;margin-left:auto}
+.alt{margin-top:3px}
+.exblock{display:flex;flex-direction:column;gap:5px;border-top:1px solid var(--line);padding-top:10px}
+.ex-h{display:flex;align-items:center;justify-content:space-between;min-height:32px;margin:-6px 0 -4px}
+.ex-h span{font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.ex-en{font:400 calc(17px*var(--dt))/1.45 var(--font-en);color:var(--ink)}
+.ex-tr{font:400 calc(16px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
+.mist{background:var(--surface-2);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:7px}
+.mist .h{display:flex;align-items:center;gap:6px;font:700 calc(15px*var(--dt)) var(--font-ui);color:var(--ink)}
+.mist .h svg{width:19px;height:19px;color:var(--caution)}
+.mist .l{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;align-items:baseline}
+.tag{display:inline-flex;align-items:center;gap:3px;font:700 calc(13px*var(--dt)) var(--font-ui);white-space:nowrap}
+.tag svg{width:13px;height:13px;stroke-width:3}
+.tag.bad{color:var(--bad)}
+.tag.good{color:var(--good)}
+.mist .wrong{font:400 calc(16px*var(--dt))/1.4 var(--font-en);color:var(--ink)}
+.mist .right{font:700 calc(16px*var(--dt))/1.4 var(--font-en);color:var(--ink)}
+.diff{text-decoration:underline dotted var(--bad);text-decoration-thickness:2px;text-underline-offset:4px}
+.fix{text-decoration:underline solid var(--ink-2);text-decoration-thickness:2px;text-underline-offset:3px}
+.mist .why{font:400 calc(15px*var(--dt))/1.42 var(--font-ui);color:var(--ink-2)}
+.mrow{display:none;align-items:center;gap:10px;min-height:52px;width:100%;text-align:left;padding:6px 12px;border-radius:14px;background:var(--surface-2)}
+.mrow svg.li{width:20px;height:20px;color:var(--caution)}
+.mrow .tx{flex:1;display:flex;flex-direction:column}
+.mrow .tx b{font:700 calc(15px*var(--dt)) var(--font-ui);color:var(--ink)}
+.mrow .tx span{font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-2)}
+.mrow .chev{width:18px;height:18px;color:var(--ink-3)}
+/* Kart sondan kısalır: c0 Ayrıca gizli, c1 Dikkat açıklaması gizli, c2 Dikkat satıra iner, c3 örnek de gizlenir */
+.c0 .alt,.c0 .now{display:none}
+.c0 .inner{gap:9px}
+.c1 .mist .why{display:none}
+.c2 .mist{display:none}
+.c2 .mrow{display:flex}
+.c3 .exblock{display:none}
+/* Erişilebilirlik boyutlarında kart kısalmaz, kayar (ana README kural 5). */
+.c4 .inner{overflow-y:auto;scrollbar-width:none}
+.c4 .inner::-webkit-scrollbar{display:none}
+.c4 .exblock,.c4 .mist{display:flex}
+.c4 .mrow{display:none}
+.c4 .mist .why{display:block}
+.known{display:inline-flex;align-items:center;gap:6px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--good)}
+.known svg{width:20px;height:20px}
+
+/* Tekrar ve quiz */
+.rtop{display:flex;align-items:center;gap:10px;min-height:50px;padding:0 16px;flex:none}
+.rtop .mode{display:inline-flex;align-items:center;gap:6px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
+.rtop .mode svg{width:18px;height:18px}
+.rtop .cnt{font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3);margin-left:auto;font-variant-numeric:tabular-nums}
+.prog{height:3px;margin:0 16px 10px;border-radius:2px;background:var(--surface-3);flex:none;overflow:hidden}
+.prog span{display:block;height:100%;background:var(--ink-2);border-radius:2px}
+.deck{flex:1;min-height:0;display:flex;flex-direction:column;padding:0 14px;gap:12px}
+.front{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px}
+.front .t-head{font-size:calc(48px*var(--dt))}
+.front .wmeta{justify-content:center}
+.front .tap{margin-top:18px;display:inline-flex;align-items:center;gap:6px;font:500 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.actbar{flex:none;padding:10px 16px 30px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);background:var(--bg)}
+.ask{font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2);text-align:center}
+.grades{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grade{min-height:60px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line-strong);display:flex;align-items:center;gap:10px;padding:8px 12px;text-align:left;color:var(--ink)}
+.grade .gi{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);color:var(--ink-2);flex:none}
+.grade .gi svg{width:18px;height:18px}
+.grade span{display:flex;flex-direction:column;font:600 calc(16px*var(--dt))/1.2 var(--font-ui)}
+.grade small{font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3);margin-top:2px}
+.quiz{display:flex;flex-direction:column;gap:12px;padding-bottom:12px}
+.quiz .q{font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
+.qcard{background:var(--surface);border:1px solid var(--card-line);border-radius:22px;padding:18px}
+.qcard .s{font:400 calc(21px*var(--dt))/1.45 var(--font-en);color:var(--ink)}
+.blank{display:inline-block;width:92px;border-bottom:2px solid var(--ink-3);transform:translateY(-4px)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{min-height:54px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line-strong);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;font:400 calc(19px*var(--dt)) var(--font-en);color:var(--ink);width:100%}
+.opt.right{box-shadow:inset 0 0 0 2px var(--good)}
+.opt.wrong{box-shadow:none;outline:2px dashed var(--bad);outline-offset:-2px}
+.opt .mk{display:inline-flex;align-items:center;gap:5px;font:700 calc(14px*var(--dt)) var(--font-ui)}
+.opt.right .mk{color:var(--good)}
+.opt.wrong .mk{color:var(--bad)}
+.opt .mk svg{width:18px;height:18px}
+.fb{border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;background:var(--surface-2)}
+.fb.ok{background:var(--good-tint)}
+.fb.no{background:var(--bad-tint)}
+.fb .h{display:flex;align-items:center;gap:7px;font:700 calc(17px*var(--dt)) var(--font-ui);color:var(--ink)}
+.fb.ok .h svg{color:var(--good)}
+.fb.no .h svg{color:var(--bad)}
+.fb .m,.fb .you{font:400 calc(16px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
+.fb .m b,.fb .you b{color:var(--ink);font-family:var(--font-en)}
+.ret{display:flex;align-items:center;gap:6px;font:500 calc(14px*var(--dt)) var(--font-ui);color:var(--ink-3);justify-content:center}
+.ret svg{width:16px;height:16px}
+.sumlist{display:flex;flex-direction:column}
+.sumlist .si{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-top:1px solid var(--line)}
+.sumlist .si:first-child{border-top:0}
+.sumlist .w{grid-column:1;font:700 calc(18px*var(--dt)) var(--font-en);color:var(--ink)}
+.sumlist .g{grid-column:1;font:400 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
+.nlist .si{display:flex;align-items:baseline;gap:10px;padding:9px 0}
+.nlist .g{flex:1;min-width:0}
+.sumlist.nlist .when{font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--good);display:inline-flex;align-items:center;gap:4px}
+.sumlist.nlist .when svg{width:14px;height:14px}
+.sumlist .when{grid-row:1 / 3;grid-column:2;align-self:center;display:inline-flex;align-items:center;gap:5px;font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.sumlist .when svg{width:15px;height:15px}
+
+/* Bu gece bitti */
+.done{flex:1;min-height:0;display:flex;flex-direction:column;gap:14px;padding:6px 6px 0;overflow-y:auto;scrollbar-width:none}
+.moon{width:56px;height:56px;color:var(--band);opacity:.8;margin:8px 0 0}
+.moon svg{width:56px;height:56px;stroke-width:1.5}
+.done h1{margin:0;font:700 calc(30px*var(--dt))/1.15 var(--font-ui);color:var(--ink);text-wrap:balance}
+.done p{margin:0;font:400 calc(17px*var(--dt))/1.45 var(--font-ui);color:var(--ink-2)}
+.card{border:1px solid var(--card-line);border-radius:22px;padding:6px 16px;background:var(--card-bg)}
+.inforow{display:flex;align-items:center;gap:10px;min-height:44px;font:500 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
+.inforow svg{width:19px;height:19px;color:var(--ink-3)}
+.inforow b{color:var(--ink);font-weight:600}
+.done .acts{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:2px;padding-bottom:30px}
+
+/* Ayarlar */
+.scroll{flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;padding:0 16px 104px}
+.scroll::-webkit-scrollbar{display:none}
+.sh{margin:18px 4px 8px;font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.group{background:var(--surface);border:1px solid var(--card-line);border-radius:20px;overflow:hidden}
+.row{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 16px;border-top:1px solid var(--line);width:100%;text-align:left;color:var(--ink)}
+.row:first-child{border-top:0}
+.row.col{flex-direction:column;align-items:stretch;gap:9px}
+.row .rq{font:600 calc(16px*var(--dt)) var(--font-ui);color:var(--ink)}
+.row .rf{font:400 calc(13px*var(--dt))/1.4 var(--font-ui);color:var(--ink-3)}
+.row svg.li{width:22px;height:22px;color:var(--ink-2)}
+.row .tx{flex:1;display:flex;flex-direction:column;font:500 calc(16px*var(--dt)) var(--font-ui)}
+.row .tx small{font:400 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.row .chev{width:18px;height:18px;color:var(--ink-3)}
+.seg{display:flex;gap:3px;background:var(--surface-2);padding:3px;border-radius:14px}
+.seg button{flex:1;min-height:40px;border-radius:11px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2);text-align:center}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.choice{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 12px;border-radius:16px;box-shadow:inset 0 0 0 1.5px var(--line-strong);text-align:left;width:100%}
+.choice[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--ink-2)}
+.choice .smp{width:52px;height:40px;border-radius:10px;background:#000;display:grid;place-items:center;font:700 calc(19px*var(--dt)) var(--font-en);box-shadow:inset 0 0 0 1px var(--line-strong);flex:none}
+.choice .tx{flex:1;display:flex;flex-direction:column;font:600 calc(16px*var(--dt)) var(--font-ui);color:var(--ink)}
+.choice .tx small{font:400 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.choice .rd{width:22px;height:22px;color:var(--ink-2)}
+.sheet{position:absolute;inset:0;z-index:70;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(0,0,0,.6)}
+.sheet .sb{background:var(--surface);border-top:1px solid var(--line-strong);border-radius:28px 28px 0 0;padding:16px 20px 40px;display:flex;flex-direction:column;gap:12px}
+.sheet h3{margin:0;font:700 calc(20px*var(--dt)) var(--font-ui);color:var(--ink)}
+.sheet ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font:400 calc(16px*var(--dt))/1.42 var(--font-ui);color:var(--ink-2)}
+.sheet ol b{color:var(--ink);font-weight:600}
+.sheet .rf{font:400 calc(13px*var(--dt))/1.4 var(--font-ui);color:var(--ink-3)}
+
+/* Söyle (telaffuz) sayfası: mikrofon dolu değil, kenarlı; nabız yok. */
+.sb.say{align-items:center;text-align:center;gap:10px;padding-top:12px}
+.say-h{display:flex;align-items:center;justify-content:space-between;width:100%}
+.say .t-head{margin-top:4px}
+.say .wmeta{justify-content:center}
+.mic-big{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;margin:8px 0 2px;color:var(--primary-ink);background:var(--primary-bg);box-shadow:inset 0 0 0 2px var(--primary-line)}
+.mic-big svg{width:40px;height:40px}
+.mic-big[disabled]{opacity:.55}
+.say-st{font:600 calc(17px*var(--dt)) var(--font-ui);color:var(--ink-2);min-height:28px;display:inline-flex;align-items:center;gap:6px}
+.say-st svg{width:20px;height:20px}
+.verdict{width:100%;border-radius:18px;padding:12px 16px;display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--surface-2)}
+.verdict .h{display:flex;align-items:center;gap:7px;font:700 calc(18px*var(--dt)) var(--font-ui);color:var(--ink)}
+.verdict .h svg{width:22px;height:22px}
+.verdict p{margin:0;font:400 calc(15px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
+.verdict.ok{background:var(--good-tint)} .verdict.ok .h svg{color:var(--good)}
+.verdict.mid .h svg{color:var(--caution)}
+.verdict.no{background:var(--bad-tint)} .verdict.no .h svg{color:var(--bad)}
+.verdict.deaf .h svg{color:var(--ink-3)}
+
+/* Sözlük */
+.sbox{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border-radius:12px;background:var(--surface-2);color:var(--ink-3);margin:2px 0 4px}
+.sbox svg{width:20px;height:20px}
+.sbox input{flex:1;min-width:0;background:none;border:0;outline:0;font:400 calc(17px*var(--dt)) var(--font-ui);color:var(--ink);-webkit-appearance:none;appearance:none}
+.sbox input::placeholder{color:var(--ink-3)}
+.sbox:focus-within{box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.chips-s{display:flex;flex-wrap:wrap;gap:8px}
+.chip-s{min-height:44px;padding:0 16px;border-radius:22px;background:var(--surface-2);font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink)}
+.res .row .rw{font:700 calc(18px*var(--dt)) var(--font-en);color:var(--ink)}
+.res .row .tx small{font-size:calc(15px*var(--dt));color:var(--ink-2)}
+.hit{font-weight:700;text-decoration:underline solid var(--ink-2);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.wcard.scrolls .inner{overflow-y:auto;scrollbar-width:none}
+.wcard.scrolls .inner::-webkit-scrollbar{display:none}
+.exrow{display:flex;flex-direction:column;gap:3px;padding-top:10px;border-top:1px solid var(--line)}
+
+/* Kilitli ekran ve Her zaman açık */
+.wall{position:absolute;inset:0;background:radial-gradient(85% 55% at 70% 24%,#2b1e12 0%,#130d08 40%,#060403 72%,#000 100%)}
+.wall::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--wall-dim,0)}
+.ls{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;padding-top:calc(var(--safe-top) + 4px);color:var(--lc)}
+.ls .lock svg{width:18px;height:18px;opacity:.85}
+.ls .inl{margin-top:10px;font:600 17px var(--font-ui);min-height:30px;display:flex;align-items:center;gap:8px;white-space:nowrap;max-width:330px;overflow:hidden}
+.ls .inl .iw{opacity:.92}
+.ls .clock{font:700 92px/0.95 var(--font-ui);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.ls .rect{width:164px;height:74px;margin-top:16px;border-radius:16px;background:var(--plate);padding:6px 12px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.ls .rect .w{font:700 17px/1.1 var(--font-en);white-space:nowrap;padding-bottom:5px}
+.ls .rect .w .band::before{bottom:-.18em;height:.1em;background:var(--lc);clip-path:polygon(.08em 0,100% 0,calc(100% - .08em) 100%,0 100%)}
+.ls .rect .w .band::after{display:none}
+.ls .rect .g{font:600 14px/1.2 var(--font-ui);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ls .rect .d{font:400 12px/1.25 var(--font-en);opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ls .bot{position:absolute;left:44px;right:44px;bottom:calc(var(--safe-bottom) + 22px);display:flex;justify-content:space-between}
+.ls .bot i{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;color:rgba(255,255,255,.8)}
+.ls .bot svg{width:22px;height:22px}
+.ls.aod .lock,.ls.aod .bot{display:none}
+.ls.aod .clock{opacity:.55}
+.ls.aod .inl{opacity:.6}
+.ls.aod .rect{opacity:.75;background:rgba(255,255,255,.06)}
+.ls.aod .rect .d{opacity:.6}
+/* isLuminanceReduced: tanım gizli, plaka yok, şerit çok ince çizgi */
+.ls.aod.reduced .rect{background:transparent;opacity:.62;height:auto;padding:4px 12px}
+.ls.aod.reduced .rect .d{display:none}
+.ls.aod.reduced .rect .w .band::before{height:1px;bottom:-.12em;opacity:.7;clip-path:none}
+.ls.aod.reduced .clock{opacity:.5;font-weight:600}
+.ls.aod.reduced .inl{opacity:.5}
+
+/* StandBy */
+.sb-wrap{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:26px 40px 26px 64px;background:#000}
+.sb-clock{display:flex;flex-direction:column;justify-content:center;color:var(--ink)}
+.sb-clock .t{font:700 128px/0.9 var(--font-ui);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--ink)}
+.sb-clock .dt{font:600 22px var(--font-ui);color:var(--ink-2);margin-top:14px}
+.sb-w{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0}
+.sb-w .t-head{font-size:50px;margin-bottom:6px}
+.sb-w .g{font:600 30px/1.15 var(--font-ui);color:var(--ink)}
+.sb-w .d{font:400 20px/1.3 var(--font-en);color:var(--ink-3)}
+.sb-w .btns{display:flex;gap:14px;margin-top:14px}
+.sb-w .btns i{width:56px;height:56px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;color:var(--ink-2)}
+.sb-w .btns svg{width:24px;height:24px}
+
+/* Ana ekran widget'ları */
+.hs{position:absolute;inset:0;z-index:2;padding:calc(var(--safe-top) + 16px) 26px 0;display:flex;flex-direction:column;gap:22px}
+.hs .r1{display:flex;gap:22px}
+.quad{display:grid;grid-template-columns:repeat(2,64px);gap:10px 22px}
+.app-i{display:flex;flex-direction:column;align-items:center;gap:3px;font:500 11px var(--font-ui);color:rgba(255,255,255,.62)}
+.app-i i{width:58px;height:58px;border-radius:14px;background:#15120F;display:grid;place-items:center;color:rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.app-i i svg{width:28px;height:28px}
+.icons{display:grid;grid-template-columns:repeat(4,64px);justify-content:space-between}
+.dock{position:absolute;left:31px;right:31px;bottom:20px;height:84px;border-radius:32px;background:rgba(40,34,28,.35);display:flex;justify-content:space-around;align-items:center}
+.wg{position:relative;overflow:hidden;border-radius:24px;flex:none;display:flex;flex-direction:column;padding:16px;background:var(--wg-bg);box-shadow:inset 0 0 0 1px var(--card-line);color:var(--ink);--wg-ink:var(--ink);--wg-ink2:var(--ink-2);--wg-btn:var(--surface-2)}
+.wg-small{width:158px;height:158px}
+.wg-medium{width:338px;height:158px;flex-direction:row;gap:8px}
+.wg-head{display:flex;align-items:baseline;gap:6px;min-height:24px}
+.wg-head .w{font:700 20px/1.12 var(--font-en);white-space:nowrap;color:var(--wg-ink);padding-bottom:6px}
+.wg-head .w .band::before{bottom:-.17em;height:.1em}
+.wg-head .p{font:400 12px var(--font-en);color:var(--wg-ink2)}
+.wg-head .lv{margin-left:auto;font:700 11px var(--font-ui);color:var(--wg-ink2)}
+.wg-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:2px;padding-top:2px}
+.wg-body .g{font:600 15px/1.2 var(--font-ui);color:var(--wg-ink)}
+.wg-body .d{font:400 12.5px/1.28 var(--font-en);color:var(--wg-ink2)}
+.wg-body .nx{font:500 11px var(--font-ui);color:var(--wg-ink2);margin-top:auto}
+.wg-medium .g{font-size:16px}
+.wg-strip{display:flex;justify-content:space-between;margin:0 -8px -8px}
+.wg-rail{display:flex;flex-direction:column;justify-content:space-between;margin:-8px -8px -8px 0}
+.wb{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--wg-ink2)}
+.wb span{width:34px;height:34px;border-radius:50%;background:var(--wg-btn);display:grid;place-items:center}
+.wb svg{width:18px;height:18px}
+.wb.on span{background:var(--good-tint);color:var(--good)}
+.wg-main{flex:1;min-width:0;display:flex;flex-direction:column}
+.hs.tinted .wg{background:rgba(26,21,16,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);--wg-ink:rgba(255,255,255,.86);--wg-ink2:rgba(255,255,255,.6);--wg-btn:rgba(255,255,255,.08);--band:var(--tint-c);--band-glow:transparent}
+.hs.tinted .wg .w{color:var(--tint-c)}
+.hs.tinted .app-i i{color:var(--tint-c);background:#120F0C}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Ekran parlaklığı ve Night Shift taklidi: doğrusal ışıkta (linearRGB) çarpma. -->
+    <filter id="sim" color-interpolation-filters="linearRGB"><feColorMatrix id="simm" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/></filter>
+    <!-- StandBy gece modu taklidi: parlaklık korunur, renk kırmızıya iner. -->
+    <filter id="red" color-interpolation-filters="linearRGB"><feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0  .006 .021 .002 0 0  .004 .014 .0015 0 0  0 0 0 1 0"/></filter>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="brandrow">
+    <h1 class="brand">Lockglow <span>Gece</span></h1>
+    <p>Yatakta, kısık ışıkta, kilitli ekranda okunan kelimeler için alternatif bir tasarım yönü: gerçek siyah zemin, az mavi ışık, kehribar mürekkep, sessiz geçişler. Kartlar <code>content/drafts/kisisel_v1</code> içinden.</p>
+  </div>
+  <nav class="nav" id="nav" aria-label="Ekranlar"></nav>
+</header>
+
+<main class="workspace">
+  <section class="stage" aria-label="Telefon önizlemesi">
+    <div class="phones" id="phones"></div>
+    <p class="stage-cap" id="cap"></p>
+  </section>
+  <aside class="panel" id="panel" aria-label="Kontroller ve notlar"></aside>
+</main>
+
+<section class="tokens" id="renkler" aria-labelledby="renkler-h">
+  <h2 id="renkler-h">Renkler, kontrast ve mavi ışık</h2>
+  <p>Kontrast WCAG 2 formülüyle, her paletin kendi zeminine göre hesaplandı. "Mavi uyaran" sütunu, aynı ekran parlaklığında o rengin göze verdiği melanopik (uyku saatini etkileyen) uyaranın beyaza oranıdır. Bu kaba bir modeldir; yalnız renkleri birbiriyle sıralamak içindir (altta açıklama).</p>
+  <div class="tscroll"><table class="tt" id="tt"></table></div>
+  <div class="two-col">
+    <div class="bars" id="bars"></div>
+    <div class="bars" id="areas"></div>
+  </div>
+  <p class="foot-note" id="model-note"></p>
+</section>
+
+<script>
+const CARDS = [{"id":"en.bedtime.n.1","lemma":"bedtime","pos":"n","level":"A2","ipa":"/ˈbɛdtaɪm/","gloss":"yatma vakti","alt":["yatma saati"],"micro":"time for sleep at night","short":"the time when you usually go to sleep at night","ex":[{"en":"It's bedtime, kids. Brush your teeth!","tr":"Yatma vakti çocuklar. Dişlerinizi fırçalayın!"},{"en":"My bedtime is around eleven.","tr":"Yatma saatim on bir civarı."},{"en":"Do you read a story to your child at bedtime?","tr":"Çocuğuna yatmadan önce hikâye okuyor musun?"}],"mist":[],"note":"Türkçede tek kelimelik karşılığı yoktur: 'yatma vakti / saati' denir. 'Bedtime story' = uyumadan önce okunan masal.","coll":["at bedtime","before bedtime","a bedtime story","past my bedtime","bedtime routine"],"quiz":{"cloze":"It's ______, so please turn off the TV and brush your teeth.","answer":"bedtime","distractors":["lunchtime","playtime","breakfast"]}},{"id":"en.pillow.n.1","lemma":"pillow","pos":"n","level":"A2","ipa":"/ˈpɪloʊ/","gloss":"yastık","alt":[],"micro":"soft bag for your head","short":"a soft bag that you put under your head when you sleep","ex":[{"en":"I need a softer pillow. This one is too hard.","tr":"Daha yumuşak bir yastığa ihtiyacım var. Bu çok sert."},{"en":"Mehmet put the pillow under his head and slept.","tr":"Mehmet yastığı başının altına koyup uyudu."},{"en":"The kids had a pillow fight before bedtime.","tr":"Çocuklar yatmadan önce yastık savaşı yaptı."}],"mist":[],"note":"Uyku yastığı 'pillow', kanepedeki süs yastığı (kırlent) ise 'cushion' olur.","coll":["a soft pillow","an extra pillow","pillowcase","pillow fight","a hard pillow"],"quiz":{"cloze":"I can't sleep. My ______ is too hard.","answer":"pillow","distractors":["carpet","shelf","lamp"]}},{"id":"en.dream.v.1","lemma":"dream","pos":"v","level":"A2","ipa":"/driːm/","gloss":"rüya görmek","alt":[],"micro":"see pictures while asleep","short":"see or feel things in your mind while you are asleep","ex":[{"en":"Last night I dreamed about my old school.","tr":"Dün gece rüyamda eski okulumu gördüm."},{"en":"Mehmet dreams about the sea almost every night.","tr":"Mehmet hemen her gece rüyasında denizi görüyor."},{"en":"Maria dreamed that she was flying over the city.","tr":"Maria şehrin üzerinde uçtuğunu rüyasında gördü."}],"mist":[{"wrong":"I saw a strange dream last night.","right":"I had a strange dream last night.","why":"Türkçede 'rüya görmek' dersiniz ve 'görmek' 'see' diye çevrilir. İngilizcede rüya 'see' ile değil, 'have a dream' ya da 'dream about' ile söylenir."}],"note":"Türkçede 'rüya görmek' dersiniz; İngilizcede 'dream' fiilin kendisidir ('I dreamed about you') ya da 'have a dream' denir. Geçmiş: dreamed ya da dreamt. 'Hayal kurmak' için de 'dream' kullanılır.","coll":["dream about sb","dream of sth","dream that ..."],"quiz":{"cloze":"When I sleep, I often ______ about my family.","answer":"dream","distractors":["chop","clean","pack"]}},{"id":"en.tonight.adv.1","lemma":"tonight","pos":"adv","level":"A1","ipa":"/təˈnaɪt/","gloss":"bu akşam","alt":["bu gece"],"micro":"this evening or night","short":"later today, in the evening or at night","ex":[{"en":"Are you free tonight?","tr":"Bu akşam müsait misin?"},{"en":"I'm tired, so I'm going to bed early tonight.","tr":"Yorgunum, o yüzden bu gece erken yatacağım."},{"en":"There is a football match on TV tonight.","tr":"Bu akşam televizyonda maç var."}],"mist":[{"wrong":"I will study this night.","right":"I will study tonight.","why":"'Bu gece / bu akşam' için tek kelime 'tonight' kullanılır; 'this night' doğal değildir."}],"note":"'Tonight' hem 'bu akşam' hem 'bu gece' demektir. 'This night' denmez; tek kelime olan 'tonight' kullanılır.","coll":["tonight at eight","see you tonight","later tonight","what's on tonight"],"quiz":{"cloze":"I have a big exam tomorrow, so I will study ______.","answer":"tonight","distractors":["yesterday","already","last week"]}},{"id":"en.wake_up.phv.1","lemma":"wake up","pos":"phv","level":"A2","ipa":"/weɪk ˈʌp/","gloss":"uyanmak","alt":["uyandırmak"],"micro":"stop sleeping","short":"stop sleeping and open your eyes","ex":[{"en":"I wake up at six every day.","tr":"Her gün altıda uyanırım."},{"en":"Please wake me up at seven tomorrow.","tr":"Lütfen yarın beni yedide uyandır."},{"en":"The loud noise woke the baby up.","tr":"Yüksek ses bebeği uyandırdı."}],"mist":[{"wrong":"She wakes up me at seven.","right":"She wakes me up at seven.","why":"Zamir (me, him, her) 'wake' ile 'up' arasına girer. 'Wake up me' yanlıştır."}],"note":"Nesneyle birlikte (wake sb up) 'uyandırmak' olur. 'Get up' (yataktan kalkmak) ile karıştırmayın: önce wake up, sonra get up.","coll":["wake up early","wake up late","wake up at six","wake sb up"],"quiz":{"cloze":"Shh! Don't ______ the baby. She is sleeping.","answer":"wake up","distractors":["lie down","stay in","show up"]}},{"id":"en.nap.n.1","lemma":"nap","pos":"n","level":"B1","ipa":"/næp/","gloss":"şekerleme","alt":["kestirme"],"micro":"short sleep in the day","short":"a short sleep, usually in the afternoon","ex":[{"en":"I'll take a short nap after lunch.","tr":"Öğle yemeğinden sonra kısa bir şekerleme yapacağım."},{"en":"The baby is taking a nap, so please be quiet.","tr":"Bebek şekerleme yapıyor, lütfen sessiz ol."},{"en":"A twenty-minute nap can help you feel fresh.","tr":"Yirmi dakikalık bir şekerleme sizi zinde hissettirebilir."}],"mist":[{"wrong":"I made a nap after lunch.","right":"I took a nap after lunch.","why":"Türkçede 'şekerleme yapmak' dediğimiz için 'make' denir; İngilizcede 'take a nap' veya 'have a nap' kullanılır."}],"note":"Türkçedeki 'şekerleme' (kısa uyku) ile tatlı anlamındaki 'şekerleme' aynı yazılır. 'Take a nap' = şekerleme yapmak / kestirmek.","coll":["take a nap","have a nap","an afternoon nap","a quick nap","need a nap"],"quiz":{"cloze":"I was tired, so I lay down and took a short ______ on the sofa.","answer":"nap","distractors":["exam","lesson","shower"]}},{"id":"en.sleep_in.phv.1","lemma":"sleep in","pos":"phv","level":"B1","ipa":"/sliːp ˈɪn/","gloss":"geç saate kadar uyumak","alt":["geç kalkmak"],"micro":"sleep later than usual","short":"stay in bed and sleep later in the morning than usual","ex":[{"en":"I like to sleep in on Sundays.","tr":"Pazar günleri geç saate kadar uyumayı severim."},{"en":"We can sleep in tomorrow. There's no school.","tr":"Yarın geç kalkabiliriz. Okul yok."},{"en":"I slept in and missed my first class.","tr":"Geç kalkıp ilk dersi kaçırdım."}],"mist":[],"note":"Türkçede 'geç saate kadar uyumak' ya da 'geç kalkmak' denir. 'Sleep in' çoğunlukla keyif için yapılır; istemeden uyuyup geç kalmak için 'oversleep' daha yaygındır.","coll":["sleep in on weekends","sleep in late","sleep in on Sunday","love to sleep in"],"quiz":{"cloze":"It's Saturday and I have no work. I want to ______ until ten.","answer":"sleep in","distractors":["slow down","wake up","stand up"]}},{"id":"en.blanket.n.1","lemma":"blanket","pos":"n","level":"A2","ipa":"/ˈblæŋkɪt/","gloss":"battaniye","alt":[],"micro":"warm cover for a bed","short":"a big, warm cover that you put over you or on a bed","ex":[{"en":"It's cold. Can I have another blanket?","tr":"Hava soğuk. Bir battaniye daha alabilir miyim?"},{"en":"Maria put a blanket over the sleeping child.","tr":"Maria uyuyan çocuğun üstüne bir battaniye örttü."},{"en":"We put a blanket on the grass and had a picnic.","tr":"Çimlerin üstüne battaniye serip piknik yaptık."}],"mist":[],"note":"Kalın yatak örtüsü olan 'yorgan' için İngilizcede 'duvet' ya da 'quilt' kullanılır; 'blanket' battaniyedir.","coll":["a warm blanket","an extra blanket","a wool blanket","wrapped in a blanket","under the blanket"],"quiz":{"cloze":"I'm cold. Can you give me a ______?","answer":"blanket","distractors":["fridge","mirror","bill"]}},{"id":"en.midnight.n.1","lemma":"midnight","pos":"n","level":"A2","ipa":"/ˈmɪdnaɪt/","gloss":"gece yarısı","alt":[],"micro":"twelve o'clock at night","short":"twelve o'clock at night, the time between one day and the next","ex":[{"en":"The party ended at midnight.","tr":"Parti gece yarısı bitti."},{"en":"I can't sleep. It's already midnight!","tr":"Uyuyamıyorum. Saat gece yarısı oldu bile!"},{"en":"Our flight arrives just after midnight.","tr":"Uçağımız gece yarısından hemen sonra iniyor."}],"mist":[{"wrong":"We left at the midnight.","right":"We left at midnight.","why":"'Gece yarısı' saat bildiren kalıpta 'at midnight' olur; 'the' kullanılmaz."}],"note":"Karşıtı 'noon' (öğle vakti). Saat söylerken 'at midnight' kullanılır, 'the' gelmez.","coll":["at midnight","after midnight","before midnight","past midnight","a midnight snack"],"quiz":{"cloze":"I went to bed very late, after ______.","answer":"midnight","distractors":["noon","lunch","breakfast"]}},{"id":"en.alarm.n.1","lemma":"alarm","pos":"n","level":"A2","ipa":"/əˈlɑːrm/","gloss":"alarm","alt":["çalar saat"],"micro":"sound that wakes you up","short":"a loud sound on a clock or phone that wakes you up at a set time","ex":[{"en":"I set my alarm for 6:30.","tr":"Alarmı 6.30'a kurdum."},{"en":"My alarm didn't go off, so I was late for work.","tr":"Alarmım çalmadı, o yüzden işe geç kaldım."},{"en":"Turn off the alarm; it's Sunday!","tr":"Alarmı kapat, bugün pazar!"}],"mist":[{"wrong":"I put an alarm for seven.","right":"I set an alarm for seven.","why":"Türkçede 'alarm koymak / kurmak' deriz. İngilizcede doğru fiil 'set'tir; 'put' kullanılmaz."}],"note":"Türkçede de 'alarm' deriz. Aynı kelime yangın alarmı (fire alarm) için de kullanılır. Telefon alarmı için fiil 'set' olur.","coll":["set an alarm","alarm clock","turn off the alarm","the alarm goes off"],"quiz":{"cloze":"My ______ didn't go off, so I woke up at nine.","answer":"alarm","distractors":["window","pillow","blanket"]}},{"id":"en.calm_down.phv.1","lemma":"calm down","pos":"phv","level":"A2","ipa":"/kɑːm ˈdaʊn/","gloss":"sakinleşmek","alt":["sakinleştirmek","yatışmak"],"micro":"become less angry or upset","short":"become quiet and relaxed after feeling angry or afraid","ex":[{"en":"Calm down. Everything is OK.","tr":"Sakin ol. Her şey yolunda."},{"en":"Take a deep breath and calm down.","tr":"Derin bir nefes al ve sakinleş."},{"en":"The teacher calmed the children down.","tr":"Öğretmen çocukları sakinleştirdi."}],"mist":[{"wrong":"Be calm!","right":"Calm down!","why":"Türkçedeki 'sakin ol' kalıbını 'be calm' diye çevirmek anlaşılır ama doğal değildir. 'Calm down' kullanılır."},{"wrong":"I calmed down him.","right":"I calmed him down.","why":"Zamir (him, her, them) 'calm' ile 'down' arasına girer."}],"note":"Kızgın birine 'Calm down!' demek onu daha da kızdırabilir. Daha nazik söylemek için 'Take a deep breath.' (Derin bir nefes al.) denir.","coll":["Calm down!","calm down a bit","calm sb down","try to calm down"],"quiz":{"cloze":"He is very angry. Please ______ and talk slowly.","answer":"calm down","distractors":["cheer up","hurry up","wake up"]}},{"id":"en.tired.adj.1","lemma":"tired","pos":"adj","level":"A1","ipa":"/taɪrd/","gloss":"yorgun","alt":["bitkin"],"micro":"needing sleep or rest","short":"feeling that you need to sleep or rest","ex":[{"en":"I'm so tired after work today.","tr":"Bugün işten sonra çok yorgunum."},{"en":"The kids were tired, so we went home early.","tr":"Çocuklar yorgundu, biz de eve erken döndük."},{"en":"She looks tired. Did she sleep well?","tr":"Yorgun görünüyor. İyi uyudu mu?"}],"mist":[],"note":"'Tired' yorgunluk demektir; uykun geldiyse 'sleepy' (uykulu) de denir.","coll":["feel tired","look tired","tired eyes","tired and hungry"],"quiz":{"cloze":"I only slept three hours, so I feel very ______.","answer":"tired","distractors":["happy","lucky","early"]}},{"id":"en.quiet.adj.1","lemma":"quiet","pos":"adj","level":"A1","ipa":"/ˈkwaɪət/","gloss":"sessiz","alt":["sakin","dingin"],"micro":"making little noise","short":"with little or no noise","ex":[{"en":"Please be quiet. The baby is sleeping.","tr":"Lütfen sessiz ol. Bebek uyuyor."},{"en":"I need a quiet place to study.","tr":"Ders çalışmak için sessiz bir yere ihtiyacım var."},{"en":"Our street is very quiet at night.","tr":"Sokağımız geceleri çok sessiz."}],"mist":[],"note":"'Quiet' (sessiz) ile 'quite' (oldukça) yazılışta karışır; ikisi ayrı kelimelerdir. 'Quiet' iki hecelidir: kwa-yet. Karşıtı 'loud' ya da 'noisy' (gürültülü).","coll":["a quiet place","a quiet street","keep quiet","a quiet person"],"quiz":{"cloze":"Nobody talks in the library, so it is very ______ there.","answer":"quiet","distractors":["loud","dirty","busy"]}}];
+
+/* ───────── Veri ───────── */
+const CARD = Object.fromEntries(CARDS.map(c => [c.lemma, c]));
+const POS = { n: 'isim', v: 'fiil', adj: 'sıfat', adv: 'zarf', phv: 'iki kelimeli fiil' };
+const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
+const FEED = ['bedtime', 'pillow', 'dream', 'tonight', 'wake up', 'tired', 'quiet', 'blanket', 'midnight', 'alarm'];
+const NEWDECK = ['nap', 'sleep in', 'blanket'];
+const QUIZ = ['midnight', 'alarm', 'calm down'];
+const WIDGET_WORDS = ['tonight', 'pillow', 'bedtime', 'dream'];
+/* Süreler main'deki Leitner'dan (yeni kelime); uygulamada Leitner.review(...).dueAt ile hesaplanır. */
+const GRADES = [
+  { k: 'again', t: 'Bilemedim', i: 'x', sub: '10 dakika sonra' },
+  { k: 'hard', t: 'Zor', i: 'tortoise', sub: '12 saat sonra' },
+  { k: 'good', t: 'Bildim', i: 'check', sub: 'yarın' },
+  { k: 'easy', t: 'Kolay', i: 'hare', sub: '2 gün sonra' }
+];
+
+/* Dynamic Type (yazı boyutu) kademeleri (ana mockup ile aynı oranlar; son kademe erişilebilirlik boyutu). */
+const DT = [{ v: .82, l: 'Küçük' }, { v: 1, l: 'Normal' }, { v: 1.18, l: 'Büyük' }, { v: 1.35, l: 'En büyük' }, { v: 1.7, l: 'Erişilebilirlik' }];
+
+/* Paletler. "mevcut" = ios/Shared/LockglowTheme.swift koyu değerleri (karşılaştırma için). */
+const TONES = {
+  kehribar: {
+    name: 'Kehribar', bg: '#000000', surface: '#0D0B09', surface2: '#17130F', surface3: '#231D17',
+    line: '#241C13', lineStrong: '#473827', ink: '#E2C8A0', ink2: '#BFA27C', ink3: '#957D63',
+    band: '#FFB547', bandGlow: 'transparent', mark: '#FFB547',
+    primaryBg: '#291D0B', primaryInk: '#FFB547', primaryLine: 'rgba(255,181,71,.45)', primaryGlow: '0 0 0 0 transparent',
+    cardBg: '#000000', cardLine: '#241C13', good: '#A7C98A', bad: '#FF9580', caution: '#E6CB72',
+    goodTint: 'rgba(167,201,138,.12)', badTint: 'rgba(255,149,128,.12)', wgBg: '#000000', tabBg: '#000000', lockTint: '#FFB547'
+  },
+  fosfor: {
+    name: 'Soluk fosfor', bg: '#000000', surface: '#0C0C0A', surface2: '#161613', surface3: '#22221D',
+    line: '#20201E', lineStrong: '#403F3B', ink: '#DAD7C6', ink2: '#B4B2A3', ink3: '#8E8C7E',
+    band: '#D6DC6E', bandGlow: 'transparent', mark: '#D6DC6E',
+    primaryBg: '#222312', primaryInk: '#D6DC6E', primaryLine: 'rgba(214,220,110,.45)', primaryGlow: '0 0 0 0 transparent',
+    cardBg: '#000000', cardLine: '#20201E', good: '#9FD0A0', bad: '#FF9A8C', caution: '#F2B37A',
+    goodTint: 'rgba(159,208,160,.12)', badTint: 'rgba(255,154,140,.12)', wgBg: '#000000', tabBg: '#000000', lockTint: '#D6DC6E'
+  },
+  mevcut: {
+    name: 'Mevcut koyu', bg: '#0D0F11', surface: '#191C20', surface2: '#24282D', surface3: '#30353B',
+    line: 'rgba(255,255,255,.09)', lineStrong: 'rgba(255,255,255,.18)', ink: '#F3F4F0', ink2: '#B7BDC2', ink3: '#8E959B',
+    band: '#E9E040', bandGlow: 'rgba(233,224,64,.38)', mark: 'rgba(233,224,64,.95)',
+    primaryBg: '#E9E040', primaryInk: '#15181B', primaryLine: 'transparent', primaryGlow: '0 0 26px -4px rgba(233,224,64,.45)',
+    cardBg: '#191C20', cardLine: 'rgba(255,255,255,.09)', good: '#5BD08F', bad: '#FF8C80', caution: '#FF9E5A',
+    goodTint: 'rgba(91,208,143,.16)', badTint: 'rgba(255,140,128,.16)', wgBg: '#191C20', tabBg: '#1B1E22', lockTint: '#FFFFFF'
+  }
+};
+
+const SCREENS = [
+  { k: 'kilit', t: 'Kilitli ekran' },
+  { k: 'aod', t: 'Her zaman açık' },
+  { k: 'standby', t: 'StandBy' },
+  { k: 'sep' },
+  { k: 'akis', t: 'Akış' },
+  { k: 'tekrar', t: 'Tekrar' },
+  { k: 'quiz', t: 'Quiz' },
+  { k: 'sozluk', t: 'Sözlük' },
+  { k: 'bitti', t: 'Bu gece bitti' },
+  { k: 'sep' },
+  { k: 'widget', t: "Widget'lar" },
+  { k: 'ayarlar', t: 'Ayarlar' }
+];
+
+/* ───────── Simgeler (ana mockup ile aynı çizgi dili) ───────── */
+const I = {
+  speaker: '<path d="M11 5 6.2 9H3v6h3.2L11 19z"/><path d="M15.5 8.6a5 5 0 0 1 0 6.8"/><path d="M18.6 5.6a9 9 0 0 1 0 12.8"/>',
+  wave: '<path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/>',
+  mic: '<circle cx="12" cy="12" r="10"/><rect x="9.6" y="6" width="4.8" height="8" rx="2.4"/><path d="M7.8 12a4.2 4.2 0 0 0 8.4 0M12 16.2v2"/>',
+  tap: '<path d="M9 11.5V5.2a1.6 1.6 0 0 1 3.2 0V11"/><path d="M12.2 10.2V8.7a1.6 1.6 0 0 1 3.2 0v2.1"/><path d="M15.4 10.5a1.6 1.6 0 0 1 3.2 0v3.6a6.4 6.4 0 0 1-6.4 6.4h-.7a6.4 6.4 0 0 1-4.9-2.3l-2.3-2.8a1.7 1.7 0 0 1 2.6-2.1L9 15.1"/>',
+  x: '<path d="M18 6 6 18M6 6l12 12"/>',
+  check: '<path d="M20 6.5 9.2 17.3 4 12"/>',
+  checkc: '<circle cx="12" cy="12" r="9.5"/><path d="m8 12.4 2.8 2.8 5.4-5.6"/>',
+  xc: '<circle cx="12" cy="12" r="9.5"/><path d="m15 9-6 6M9 9l6 6"/>',
+  warn: '<path d="M10.3 3.9 1.9 18a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4.5M12 17.3h.01"/>',
+  chevR: '<path d="m9 18 6-6-6-6"/>',
+  chevD: '<path d="m6 9 6 6 6-6"/>',
+  search: '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.3-4.3"/>',
+  stack: '<rect x="3" y="8.5" width="18" height="12.5" rx="3"/><path d="M5.5 5.2h13M8 2h8"/>',
+  cycle: '<path d="M20 11a8 8 0 0 0-14.3-4.9L4 8"/><path d="M4 3.5V8h4.5"/><path d="M4 13a8 8 0 0 0 14.3 4.9L20 16"/><path d="M20 20.5V16h-4.5"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  fwd: '<path d="M2.5 6.4v11.2a.8.8 0 0 0 1.3.6l7.9-5.6a.8.8 0 0 0 0-1.2L3.8 5.8a.8.8 0 0 0-1.3.6z"/><path d="M12.3 6.4v11.2a.8.8 0 0 0 1.3.6l7.9-5.6a.8.8 0 0 0 0-1.2l-7.9-5.6a.8.8 0 0 0-1.3.6z"/>',
+  sparkle: '<path d="M12 3.5 13.9 9 19.5 11l-5.6 2L12 18.5 10.1 13 4.5 11l5.6-2z"/><path d="M19 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>',
+  lock: '<rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>',
+  flash: '<path d="M8 2.5h8v3.5l-2 3.5V21h-4V9.5L8 6z"/><path d="M12 13v2.5"/>',
+  camera: '<path d="M3 8.5A2.5 2.5 0 0 1 5.5 6H8l1.5-2.2h5L16 6h2.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.6"/>',
+  book: '<path d="M4 19.5V5a3 3 0 0 1 3-3h13v16H7a3 3 0 0 0-3 3z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/><path d="M9 7h7M9 10.5h5"/>',
+  tortoise: '<path d="M3 16.5C3 11.6 6.6 8 11 8s8 3.6 8 8.5z"/><path d="M18.8 13.4c1.7-.7 3.2.1 3.2 1.5 0 1.2-1.2 1.9-2.9 1.6"/><path d="M6.2 16.5v3.2M15.6 16.5v3.2"/><path d="M7 12.6h8M11 8.2v8.2"/>',
+  hare: '<circle cx="12" cy="15.4" r="5.6"/><path d="M9.7 10.3C8.5 7.8 8.3 3.4 9.7 3.1s2.5 3.4 2.1 6.9"/><path d="M14.3 10.3c1.2-2.5 1.4-6.9 0-7.2s-2.5 3.4-2.1 6.9"/><path d="M10 14.4h.01M14 14.4h.01M11.2 16.9h1.6"/>',
+  clock: '<circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/>',
+  bell: '<path d="M6 8.5a6 6 0 1 1 12 0c0 6.5 3 8.5 3 8.5H3s3-2 3-8.5"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/>',
+  moon: '<path d="M20.5 14.2A8.6 8.6 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
+  radioOn: '<circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5" fill="currentColor" stroke="none"/>',
+  radioOff: '<circle cx="12" cy="12" r="9.5"/>',
+  note: '<rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  cal: '<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  music: '<path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+  chat: '<path d="M20.5 11.5a8.5 8 0 0 1-12.3 7.2L3.5 20l1.4-4.2A8.5 8 0 1 1 20.5 11.5z"/>',
+  phone: '<path d="M5 3.5h3.5l1.8 4.5-2.3 1.5a11 11 0 0 0 6.5 6.5l1.5-2.3 4.5 1.8V19a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/>',
+  globe: '<circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.8 6 3.8 9.5S14.6 18.9 12 21.5c-2.6-2.6-3.8-6-3.8-9.5S9.4 5.1 12 2.5z"/>',
+  photo: '<circle cx="12" cy="12" r="3"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/>',
+  map: '<path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>'
+};
+const ic = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`;
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const nf = (n, d = 1) => n.toFixed(d).replace('.', ',');
+
+/* ───────── Durum ───────── */
+const reduceMotion = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
+const S = {
+  screen: 'akis', tone: 'kehribar', compare: false, bright: 100, ns: false, motion: reduceMotion ? 'none' : 'slow',
+  clock: 'tint', wall: true, red: true, wgMode: 'dark', word: 0, dt: 1, device: 'std', say: null, fstart: 0,
+  feed: 0, known: new Set(), playing: null,
+  rv: { i: 0, revealed: false, answers: [] }, qz: { i: 0, picked: null },
+  when: 'auto', count: 5, sheet: null, q: '', open: null
+};
+
+/* ───────── Metin yardımcıları (ana mockup ile aynı kurallar) ───────── */
+function stemRe(lemma) {
+  const parts = lemma.split(' ').map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  return new RegExp('\\b' + parts.map(p => p + '\\w*').join('(?:\\s+\\w+)?\\s+') + '\\b', 'i');
+}
+/* Örnek cümlede öğrenilen kelime kalın; "mark" sınıfı gece şeridinin rengiyle altı çizili. */
+function markWord(sentence, lemma, cls = 'mark') {
+  const m = sentence.match(stemRe(lemma));
+  if (!m) return esc(sentence);
+  return esc(sentence.slice(0, m.index)) + `<b class="${cls}">${esc(m[0])}</b>` + esc(sentence.slice(m.index + m[0].length));
+}
+/* Dikkat kutusu: yanlış cümle ile doğrunun ilk seçeneği kelime kelime karşılaştırılır (en uzun ortak dizi). */
+function diffPair(wrong, right) {
+  const norm = w => w.toLowerCase().replace(/[^a-z'çğıöşü]/g, '');
+  const [first, ...rest] = right.split(' / ');
+  const a = wrong.split(/\s+/), b = first.split(/\s+/);
+  const L = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = a.length - 1; i >= 0; i--) for (let j = b.length - 1; j >= 0; j--) {
+    L[i][j] = norm(a[i]) && norm(a[i]) === norm(b[j]) ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  }
+  const keepA = new Set(), keepB = new Set();
+  for (let i = 0, j = 0; i < a.length && j < b.length;) {
+    if (norm(a[i]) && norm(a[i]) === norm(b[j])) { keepA.add(i); keepB.add(j); i++; j++; }
+    else if (L[i + 1][j] >= L[i][j + 1]) i++; else j++;
+  }
+  const paint = (toks, keep, cls) => toks.map((t, i) => keep.has(i) || !norm(t) ? esc(t) : `<span class="${cls}">${esc(t)}</span>`).join(' ');
+  return [paint(a, keepA, 'diff'), paint(b, keepB, 'fix') + (rest.length ? ' / ' + esc(rest.join(' / ')) : '')];
+}
+function hash(s) { let h = 2166136261; for (const ch of s) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function quizOptions(c) {
+  const all = [c.quiz.answer, ...c.quiz.distractors];
+  let h = hash(c.lemma);
+  for (let i = all.length - 1; i > 0; i--) { h = Math.imul(h ^ (h >>> 15), 2246822519) >>> 0; const j = h % (i + 1); [all[i], all[j]] = [all[j], all[i]]; }
+  return all;
+}
+const wordRe = w => new RegExp('\\b' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+
+/* ───────── Ortak parçalar ───────── */
+function lvl(level) {
+  const n = Math.min(3, LEVELS.indexOf(level) + 1);
+  return `<span class="lvl" role="img" aria-label="Seviye ${esc(level)}"><span aria-hidden="true">${esc(level)}</span><i aria-hidden="true">${[1, 2, 3].map(k => `<b class="${k <= n ? 'on' : ''}"></b>`).join('')}</i></span>`;
+}
+function dinle(text) {
+  const on = S.playing === text;
+  return `<button type="button" class="pill${on ? ' on' : ''}" data-act="say" data-say="${esc(text)}" aria-label="Kelimeyi dinle">${ic(on ? 'wave' : 'speaker')}${on ? 'Çalıyor' : 'Dinle'}</button>`;
+}
+function spk(text) {
+  return `<button type="button" class="icb" data-act="say" data-say="${esc(text)}" aria-label="Cümleyi dinle">${ic(S.playing === text ? 'wave' : 'speaker')}</button>`;
+}
+function headBlock(c, { now = false, says = true } = {}) {
+  return `${now ? `<span class="now">${ic('lock')}Şu an kilitli ekranda</span>` : ''}
+    <div class="t-head" lang="en"><span class="band">${esc(c.lemma)}</span></div>
+    <div class="wmeta"><span class="ipa" aria-hidden="true">${esc(c.ipa)}</span><span class="pos">${esc(POS[c.pos] || c.pos)}</span>${lvl(c.level)}
+      <span class="acts">${dinle(c.lemma)}${says ? `<button type="button" class="icb" data-act="sayopen" data-id="${esc(c.lemma)}" aria-label="Söyle: telaffuzunu dene">${ic('mic')}</button>` : ''}</span></div>`;
+}
+function glossBlock(c) {
+  return `<div><div class="t-gloss"><span class="sr">Türkçesi: </span>${esc(c.gloss)}</div>${c.alt.length ? `<div class="t-sub alt">Ayrıca: ${esc(c.alt.join(', '))}</div>` : ''}</div>`;
+}
+function exampleBlock(c) {
+  const ex = c.ex[0];
+  return `<div class="exblock"><div class="ex-h"><span>Örnek</span>${spk(ex.en)}</div>
+    <div class="ex-en" lang="en">${markWord(ex.en, c.lemma)}</div><div class="ex-tr">${esc(ex.tr)}</div></div>`;
+}
+function mistakeBox(m, lemma) {
+  const [w, r] = diffPair(m.wrong, m.right);
+  return `<div class="mist"><div class="h">${ic('warn')}Dikkat</div>
+    <div class="l"><span class="tag bad">${ic('x')}Yanlış</span><span class="wrong" lang="en">${w}</span>
+    <span class="tag good">${ic('check')}Doğru</span><span class="right" lang="en">${r}</span></div>
+    <div class="why">${esc(m.why)}</div></div>
+    <button type="button" class="mrow" data-act="detail" data-id="${esc(lemma)}">${ic('warn', 'li')}<span class="tx"><b>Dikkat</b><span>Sık yapılan hatayı gör</span></span>${ic('chevR', 'chev')}</button>`;
+}
+function cardInner(c, opts = {}) {
+  return `${headBlock(c, opts)}${glossBlock(c)}<div class="t-def" lang="en">${esc(c.short)}</div>${exampleBlock(c)}${c.mist[0] ? mistakeBox(c.mist[0], c.lemma) : ''}`;
+}
+function statusbar(cls = '', time = true) {
+  return `<div class="statusbar ${cls}" aria-hidden="true"><span>${time ? '23:12' : ''}</span><span class="si">
+    <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+    <svg viewBox="0 0 16 12"><path d="M8 2.4a9.6 9.6 0 0 1 6.6 2.6l1.1-1.2A11.2 11.2 0 0 0 8 .8 11.2 11.2 0 0 0 .3 3.8L1.4 5A9.6 9.6 0 0 1 8 2.4zm0 3.3a6.3 6.3 0 0 1 4.3 1.7l1.1-1.2A7.9 7.9 0 0 0 8 4.1a7.9 7.9 0 0 0-5.4 2.1l1.1 1.2A6.3 6.3 0 0 1 8 5.7zm0 3.3a3 3 0 0 1 2 .8L8 12 6 9.8a3 3 0 0 1 2-.8z"/></svg>
+    <svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="11" height="8" rx="1.6"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".45"/></svg></span></div>`;
+}
+function tabbar(sel) {
+  const tabs = [['akis', 'stack', 'Akış'], ['tekrar', 'cycle', 'Tekrar'], ['sozluk', 'search', 'Sözlük'], ['ayarlar', 'gear', 'Ayarlar']];
+  return `<nav class="tabbar" aria-label="Sekmeler">${tabs.map(([k, i, t]) => `<button type="button" class="tab" data-act="tab" data-v="${k}" ${k === sel ? ' aria-current="page"' : ''}>${ic(i)}${t}</button>`).join('')}</nav>`;
+}
+function app(body, { sel = 'akis', round = false } = {}) {
+  return `<div class="app${round ? ' round' : ''}">${body}${round ? '' : tabbar(sel)}${S.say ? sayHTML() : ''}</div>`;
+}
+
+/* ───────── Söyle (telaffuz) ───────── */
+/* Başlıklar main'deki PronunciationFeedback ile aynı; alt satırlar örnek. Mikrofon kenarlı, dolu değil; nabız yok. */
+const SAY_VERDICT = {
+  ok: ['ok', 'checkc', 'Doğru!', 'Telefon kelimeyi anladı.'],
+  mid: ['mid', 'warn', 'Neredeyse!', 'Çok yakın. Bir kez daha, yavaşça söyle.'],
+  no: ['no', 'xc', 'Bir daha dene', 'Önce Dinle\'ye dokun, sonra söyle.'],
+  deaf: ['deaf', 'mic', 'Seni duyamadım', 'Biraz daha yüksek sesle söyle.']
+};
+const SAY_ORDER = ['ok', 'mid', 'no', 'deaf'];
+function sayHTML() {
+  const c = CARD[S.say.id], st = S.say.st, v = SAY_VERDICT[st];
+  const status = st === 'listen' ? `${ic('wave')}Dinliyorum…` : st === 'check' ? `${ic('clock')}Kontrol ediliyor…` : st === 'idle' ? 'Mikrofona dokun ve kelimeyi söyle.' : '';
+  return `<div class="sheet" data-act="sayx"><div class="sb say" role="dialog" aria-modal="true" aria-label="Söyle: ${esc(c.lemma)}">
+    <div class="say-h"><h3>Söyle</h3><button type="button" class="btn btn-line" style="min-height:40px;padding:0 16px;font-size:15px" data-act="sayx">Kapat</button></div>
+    <div class="t-head" lang="en"><span class="band">${esc(c.lemma)}</span></div>
+    <div class="wmeta"><span class="ipa" aria-hidden="true">${esc(c.ipa)}</span>${dinle(c.lemma)}</div>
+    <button type="button" class="mic-big" data-act="saygo" aria-label="Mikrofon: söylemeye başla"${st === 'listen' || st === 'check' ? ' disabled' : ''}>${ic('mic')}</button>
+    ${status ? `<div class="say-st" aria-live="polite">${status}</div>` : ''}
+    ${v ? `<div class="verdict ${v[0]}" aria-live="polite"><div class="h">${ic(v[1])}${v[2]}</div><p>${v[3]}</p></div>` : ''}
+  </div></div>`;
+}
+/* Sırayla dört sonucu gösterir (örnek); "Hareketsiz" iken bekleme yok. */
+function sayRun() {
+  const id = S.say.id, wait = S.motion === 'none' ? 0 : 1;
+  const step = (st, ms, next) => setTimeout(() => { if (!S.say || S.say.id !== id) return; S.say.st = st; render(); if (next) next(); }, ms * wait);
+  S.say.n = (S.say.n || 0) + 1;
+  const result = SAY_ORDER[(S.say.n - 1) % SAY_ORDER.length];
+  S.say.st = 'listen'; render();
+  step('check', 1400, () => step(result, 900));
+}
+
+/* ───────── Akış ───────── */
+/* Bu gecenin kelimeleri: "N kelime daha" listede bir sonraki N kelimeye geçer. */
+function nightWords() {
+  const n = Math.min(S.count, FEED.length);
+  return Array.from({ length: n }, (_, k) => FEED[(S.fstart + k) % FEED.length]);
+}
+function nightDots(i) {
+  const n = Math.min(S.count, FEED.length);
+  return `<span class="dots" aria-hidden="true">${Array.from({ length: n }, (_, k) => `<b class="${k <= i ? 'on' : ''}"></b>`).join('')}</span>`;
+}
+function feedScreen() {
+  const n = Math.min(S.count, FEED.length), i = Math.min(S.feed, n - 1), c = CARD[nightWords()[i]], known = S.known.has(c.lemma);
+  const left = known
+    ? `<span class="known">${ic('checkc')}Bildiğin kelime</span>`
+    : `<button type="button" class="btn btn-line" data-act="know" data-id="${esc(c.lemma)}">${ic('check')}Biliyorum</button>`;
+  return app(`<div class="hdr"><div class="ttl">Akış</div><div class="meta">${ic('moon', 'ic-xs')}Bu gece ${i + 1} / ${n}${nightDots(i)}</div></div>
+    <div class="page"><article class="wcard swap" data-ladder aria-label="${esc(c.lemma)} kartı">
+      <div class="inner">${cardInner(c, { now: i === 0 })}</div>
+      <div class="foot">${left}<button type="button" class="btn btn-tonal" data-act="next">${i === n - 1 ? 'Bitir' : 'Sonraki'}${ic('chevD')}</button></div>
+    </article></div>`, { sel: 'akis' });
+}
+
+/* ───────── Tekrar ───────── */
+function roundTop(kind, i, n) {
+  return `<div class="rtop"><span class="mode">${ic(kind === 'new' ? 'sparkle' : 'cycle')}${kind === 'new' ? 'Yeni kelime' : 'Tekrar sorusu'}</span><span class="cnt">Kart ${Math.min(i + 1, n)} / ${n}</span>
+    <button type="button" class="btn btn-line" style="min-height:40px;padding:0 16px;font-size:15px" data-act="tab" data-v="akis">Bitir</button></div>
+    <div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${i}" aria-label="Tur ilerlemesi"><span style="width:${(i / n) * 100}%"></span></div>`;
+}
+function reviewScreen() {
+  const r = S.rv, n = NEWDECK.length;
+  if (r.i >= n) {
+    return app(`<div class="hdr"><div class="ttl">Tekrar</div></div><div class="scroll"><h1 class="t-lt">Güzel iş</h1>
+      <p class="t-sub" style="margin:-6px 2px 14px;font-size:17px">${n} yeni kelimeye baktın. Ne zaman döneceklerini sistem hesapladı.</p>
+      <div class="card"><div class="sumlist">${r.answers.map(a => {
+        const g = GRADES.find(x => x.k === a.g);
+        return `<div class="si"><span class="w" lang="en">${esc(a.id)}</span><span class="g">${esc(CARD[a.id].gloss)}</span><span class="when">${ic('clock')}${esc(g.sub)}</span></div>`;
+      }).join('')}</div></div>
+      <div style="margin-top:18px"><button type="button" class="btn btn-primary btn-lg block" data-act="rvreset">Tamam</button></div></div>`, { sel: 'tekrar' });
+  }
+  const c = CARD[NEWDECK[r.i]];
+  let body;
+  if (!r.revealed) {
+    body = `<article class="wcard swap" aria-label="${esc(c.lemma)}. Anlamını göstermek için dokun"><div class="front">
+        <div class="t-head" lang="en"><span class="band">${esc(c.lemma)}</span></div>
+        <div class="wmeta"><span class="ipa">${esc(c.ipa)}</span><span class="pos">${esc(POS[c.pos] || c.pos)}</span>${lvl(c.level)}</div>
+        <div>${dinle(c.lemma)}</div>
+        <div class="tap">${ic('tap')}Anlamını görmek için dokun</div></div></article></div>
+      <div class="actbar"><button type="button" class="btn btn-primary btn-lg block" data-act="reveal">Anlamı göster</button></div>`;
+  } else {
+    body = `<article class="wcard swap" data-ladder aria-label="${esc(c.lemma)} kartı"><div class="inner">${cardInner(c, { says: false })}</div></article></div>
+      <div class="actbar"><div class="ask">Bu kelimeyi ne kadar bildin?</div>
+      <div class="grades" role="group" aria-label="Ne kadar bildin?">${GRADES.map(g => `<button type="button" class="grade" data-act="grade" data-g="${g.k}" aria-label="${g.t}, ${g.sub} yeniden gelir"><span class="gi">${ic(g.i)}</span><span>${g.t}<small>${g.sub}</small></span></button>`).join('')}</div></div>`;
+  }
+  return app(`${roundTop('new', r.i, n)}<div class="deck">${body}`, { round: true });
+}
+
+/* ───────── Quiz ───────── */
+function quizScreen() {
+  const z = S.qz, c = CARD[QUIZ[z.i]], q = c.quiz, opts = quizOptions(c), picked = z.picked, done = picked != null, right = picked === q.answer;
+  const parts = q.cloze.split(/_{3,}/);
+  const sentence = done ? `${esc(parts[0])}<b class="mark">${esc(q.answer)}</b>${esc(parts[1] ?? '')}` : `${esc(parts[0])}<span class="blank"><span class="sr">boşluk</span></span>${esc(parts[1] ?? '')}`;
+  const shown = done ? opts.filter(o => o === q.answer || o === picked) : opts;
+  const optHTML = shown.map(o => {
+    let cls = '', mk = '';
+    if (done) {
+      if (o === q.answer) { cls = 'right'; mk = `<span class="mk">${ic('checkc')}Doğru cevap</span>`; }
+      else { cls = 'wrong'; mk = `<span class="mk">${ic('xc')}Yanlış</span>`; }
+    }
+    return `<button type="button" class="opt ${cls}" data-act="pick" data-o="${esc(o)}" lang="en"${done ? ' aria-disabled="true"' : ''}><span>${esc(o)}</span>${mk}</button>`;
+  }).join('');
+  let fb = '', bar = '';
+  if (done) {
+    const pc = CARD[picked];
+    const rule = !right && c.mist.find(m => wordRe(picked).test(m.wrong) || wordRe(picked).test(m.right));
+    fb = `<div class="fb ${right ? 'ok' : 'no'}" aria-live="polite">${right ? `<div class="h">${ic('checkc')}Doğru!</div>` : `<div class="h">${ic('xc')}Doğrusu: <span lang="en" style="font-family:var(--font-en)">${esc(q.answer)}</span></div>`}
+      <div class="m"><b lang="en">${esc(c.lemma)}</b> = ${esc(c.gloss)}</div>
+      ${!right ? `<div class="you">Senin seçtiğin: <b lang="en">${esc(picked)}</b>${pc ? ` = ${esc(pc.gloss)}` : ''}</div>` : ''}
+      ${rule ? `<div class="you"><b style="font-family:var(--font-ui)">Neden?</b> ${esc(rule.why)}</div>` : ''}</div>`;
+    bar = `<div class="actbar">${right ? '' : `<div class="ret">${ic('clock')}Bu kelime 10 dakika sonra yine gelir.</div>`}<button type="button" class="btn btn-primary btn-lg block" data-act="qnext">Devam</button></div>`;
+  }
+  return app(`${roundTop('due', z.i, QUIZ.length)}<div class="deck"><div class="scroll swap" style="padding:2px 2px 12px;margin:0 -2px"><div class="quiz">${done ? '' : '<div class="q">Boşluğa hangisi gelir?</div>'}
+    <div class="qcard"><div class="s" lang="en">${sentence}</div></div>
+    <div class="opts" role="group" aria-label="Şıklar">${optHTML}</div>${fb}</div></div></div>${bar}`, { round: true });
+}
+
+/* ───────── Bu gece bitti (durma noktası) ───────── */
+function doneScreen() {
+  const n = Math.min(S.count, FEED.length), words = nightWords();
+  return app(`<div class="hdr"><div class="ttl">Akış</div><div class="meta">Bu gece ${n} / ${n}${nightDots(n)}</div></div>
+    <div class="page"><div class="done swap">
+      <div class="moon" aria-hidden="true">${ic('moon')}</div>
+      <h1>Bu geceki ${n} kelime tamam</h1>
+      <p>Yarın sabah widget'ta yeni kelime seni bekler. İyi uykular.</p>
+      <div class="card"><div class="sumlist nlist">${words.map(id => `<div class="si"><span class="w" lang="en">${esc(id)}</span><span class="g">${esc(CARD[id].gloss)}</span>${S.known.has(id) ? `<span class="when">${ic('check')}biliyorum</span>` : ''}</div>`).join('')}</div></div>
+      <div class="card" style="padding:2px 16px"><div class="inforow">${ic('cycle')}<span>Sıradaki tekrar: <b>yarın 08:30</b></span></div><div class="inforow" style="border-top:1px solid var(--line)">${ic('bell')}<span>Hatırlatma: <b>20:00</b></span></div></div>
+      <div class="acts"><button type="button" class="btn btn-primary btn-lg block" data-act="tab" data-v="akis">Tamam</button>
+        <button type="button" class="btn-text" data-act="again">${n} kelime daha</button></div>
+    </div></div>`, { round: true });
+}
+
+/* ───────── Sözlük ───────── */
+/* Türkçe harf katlama ("odunc" → "ödünç", "sakinlesmek" → "sakinleşmek"). Harf harf katlar, konumlar kaymaz. */
+function fold(s) {
+  return String(s).toLocaleLowerCase('tr').replace(/[çğıöşüâîû]/g, c => ({ ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', â: 'a', î: 'i', û: 'u' }[c]));
+}
+function search(q) {
+  const f = fold(q.trim());
+  if (!f) return [];
+  const hit = c => [c.lemma, c.gloss, ...c.alt].some(t => fold(t).includes(f));
+  return CARDS.filter(hit).sort((a, b) => (fold(b.lemma).startsWith(f) - fold(a.lemma).startsWith(f)) || a.lemma.localeCompare(b.lemma));
+}
+/* Eşleşen kısım kalın ve çizgili; sarı değil (kural 1: sarı yalnız öğrenilecek kelimede). */
+function hl(text, q) {
+  const f = fold(q.trim()), i = fold(text).indexOf(f);
+  if (!f || i < 0) return esc(text);
+  return esc(text.slice(0, i)) + `<b class="hit">${esc(text.slice(i, i + f.length))}</b>` + esc(text.slice(i + f.length));
+}
+function resultsHTML() {
+  if (!S.q.trim()) {
+    return `<div class="sh">Dene</div><div class="chips-s">${['gece', 'yatma', 'pillow', 'sakin'].map(t => `<button type="button" class="chip-s" data-act="try" data-v="${t}">${t}</button>`).join('')}</div>
+      <p class="rf" style="margin:12px 4px 0">Türkçe harfleri yazmasan da bulur: "sakinlesmek" de olur.</p>`;
+  }
+  const r = search(S.q);
+  if (!r.length) return `<p class="t-sub" style="margin:8px 4px">"${esc(S.q)}" için kelime yok. Başka bir kelime dene.</p>`;
+  const f = fold(S.q.trim());
+  /* Anlam eşleşmiyorsa eşleşen "Ayrıca" karşılığı da gösterilir (ör. tonight: bu akşam · bu gece). */
+  const meaning = c => {
+    const alt = fold(c.gloss).includes(f) ? null : c.alt.find(a => fold(a).includes(f));
+    return hl(c.gloss, S.q) + (alt ? ` · ${hl(alt, S.q)}` : '');
+  };
+  return `<div class="sh">${r.length} kelime</div><div class="group">${r.map(c => `<button type="button" class="row" data-act="open" data-id="${esc(c.lemma)}">
+      <span class="tx"><b class="rw" lang="en">${hl(c.lemma, S.q)}</b><small>${meaning(c)}</small></span>${lvl(c.level)}${ic('chevR', 'chev')}</button>`).join('')}</div>`;
+}
+function dictScreen() {
+  if (S.open) {
+    const c = CARD[S.open];
+    return app(`<div class="hdr"><button type="button" class="btn-text" style="padding:0 8px 0 0;color:var(--ink-2)" data-act="back">‹ Sözlük</button></div>
+      <div class="page"><article class="wcard swap scrolls" aria-label="${esc(c.lemma)} kartı"><div class="inner">${cardInner(c)}
+        ${c.ex.slice(1).map(x => `<div class="exrow"><div class="ex-en" lang="en">${markWord(x.en, c.lemma, '')}</div><div class="ex-tr">${esc(x.tr)}</div></div>`).join('')}</div></article></div>`, { sel: 'sozluk' });
+  }
+  return app(`<div class="hdr"><div class="ttl">Sözlük</div></div><div class="scroll">
+    <label class="sbox">${ic('search')}<span class="sr">Ara</span><input class="qin" type="search" value="${esc(S.q)}" placeholder="İngilizce ya da Türkçe ara" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
+    <div class="res">${resultsHTML()}</div></div>`, { sel: 'sozluk' });
+}
+
+/* ───────── Ayarlar ───────── */
+function seg(act, cur, items) {
+  return `<div class="seg" role="group">${items.map(([v, t]) => `<button type="button" data-act="${act}" data-v="${v}" aria-pressed="${String(cur) === String(v)}">${t}</button>`).join('')}</div>`;
+}
+function toneChoice(k, sub) {
+  const t = TONES[k], on = S.tone === k;
+  return `<button type="button" class="choice" data-act="tone" data-v="${k}" aria-pressed="${on}"><span class="smp" style="color:${t.ink};background:${t.bg}" aria-hidden="true"><span style="position:relative;z-index:0">Aa<i style="position:absolute;left:-1px;right:-1px;bottom:-3px;height:3px;background:${t.band}"></i></span></span>
+    <span class="tx">${t.name}<small>${sub}</small></span>${ic(on ? 'radioOn' : 'radioOff', 'rd')}</button>`;
+}
+function settingsScreen() {
+  const toneOk = S.tone !== 'mevcut';
+  const sheet = S.sheet === 'lock'
+    ? `<div class="sheet" data-act="sheetx"><div class="sb" role="dialog" aria-modal="true" aria-label="Kilitli ekranı gece rengine al"><h3>Kilitli ekranı gece rengine al</h3>
+        <ol><li>Kilitli ekrana <b>dokunup basılı tut</b>.</li><li><b>Özelleştir</b>'e, sonra kilitli ekrana dokun.</li><li><b>Saate</b> dokun ve sıcak bir renk seç (kehribar, turuncu).</li><li><b>Bitti</b>'ye dokun. Widget'lar da saatin rengini alır.</li></ol>
+        <p class="rf">Kilitli ekran widget'larının rengini uygulama seçemez; sistem saatin rengini kullanır.</p>
+        <button type="button" class="btn btn-primary btn-lg block" data-act="sheetx">Anladım</button></div></div>`
+    : S.sheet === 'white'
+    ? `<div class="sheet" data-act="sheetx"><div class="sb" role="dialog" aria-modal="true" aria-label="Beyaz noktayı azalt"><h3>Ekranı en kısıktan da kıs</h3>
+        <ol><li>Ayarlar → <b>Erişilebilirlik</b> → <b>Ekran ve Metin Boyutu</b> → <b>Beyaz Noktayı Azalt</b>.</li><li>Erişilebilirlik → <b>Erişilebilirlik Kısayolu</b> → Beyaz Noktayı Azalt.</li><li>Gece yan tuşa <b>üç kez</b> bas: ekran bir kat daha kararır.</li></ol>
+        <p class="rf">Bu bir iOS ayarıdır; Lockglow değiştirmez.</p>
+        <button type="button" class="btn btn-primary btn-lg block" data-act="sheetx">Anladım</button></div></div>` : '';
+  return app(`<div class="hdr"><div class="ttl">Ayarlar</div></div><div class="scroll">
+    <div class="sh">Gece görünümü</div>
+    <div class="group">
+      <div class="row col"><div class="rq">Ne zaman açılsın?</div>${seg('when', S.when, [['auto', 'Koyu modda'], ['always', 'Her zaman'], ['off', 'Kapalı']])}
+        <div class="rf">Telefon koyu moddayken gece tonu kendiliğinden gelir.</div></div>
+      <div class="row col"><div class="rq">Hangi ton?</div>${toneChoice('kehribar', 'En az mavi ışık')}${toneChoice('fosfor', 'Lockglow sarısına yakın')}
+        ${toneOk ? '' : '<div class="rf">Şu an karşılaştırma için mevcut koyu tema gösteriliyor.</div>'}</div>
+      <div class="row col"><div class="rq">Geçişler</div>${seg('motion', S.motion, [['slow', 'Yavaş solma'], ['none', 'Hareketsiz']])}</div>
+    </div>
+    <div class="sh">Yatmadan önce</div>
+    <div class="group">
+      <div class="row col"><div class="rq">Bir gecede kaç kelime?</div>${seg('count', S.count, [[3, '3'], [5, '5'], [10, '10']])}
+        <div class="rf">Son kelimeden sonra akış durur ve "İyi uykular" der.</div></div>
+    </div>
+    <div class="sh">İpuçları</div>
+    <div class="group">
+      <button type="button" class="row" data-act="sheet" data-v="lock">${ic('lock', 'li')}<span class="tx">Kilitli ekranı kehribar yap<small>Saat ve widget'lar aynı rengi alır</small></span>${ic('chevR', 'chev')}</button>
+      <button type="button" class="row" data-act="sheet" data-v="white">${ic('sun', 'li')}<span class="tx">Ekranı en kısıktan da kıs<small>Beyaz Noktayı Azalt kısayolu</small></span>${ic('chevR', 'chev')}</button>
+    </div></div>${sheet}`, { sel: 'ayarlar' });
+}
+
+/* ───────── Kilitli ekran, Her zaman açık ───────── */
+function lockScreen(tone, aod) {
+  const night = tone !== 'mevcut';
+  const lc = night && S.clock === 'tint' ? TONES[tone].lockTint : 'rgba(255,255,255,.92)';
+  const tc = parse(TONES[tone].lockTint);
+  const plate = night && S.clock === 'tint' ? `rgba(${tc.r},${tc.g},${tc.b},.10)` : 'rgba(255,255,255,.14)';
+  const c = CARD.bedtime;
+  const dim = aod ? (S.wall ? .8 : 1) : (night ? .25 : 0);
+  return `<div class="lsw${aod ? ' aod' : ''}" style="--lc:${lc};--plate:${plate}"><div class="wall" style="--wall-dim:${dim}"></div>${statusbar('lk', false)}
+    <div class="ls${aod ? ' aod' : ''}${aod && night ? ' reduced' : ''}">
+      <div class="lock" aria-hidden="true">${ic('lock')}</div>
+      <div class="inl" role="group" aria-label="Satır içi widget"><span>Çar 22</span><span class="iw" lang="en">${esc(c.lemma)} · ${esc(c.gloss)}</span></div>
+      <div class="clock">23:12</div>
+      <div class="rect" role="group" aria-label="Dikdörtgen widget"><div class="w" lang="en"><span class="band">${esc(c.lemma)}</span></div><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.micro)}</div></div>
+      <div class="bot" aria-hidden="true"><i>${ic('flash')}</i><i>${ic('camera')}</i></div>
+    </div></div>`;
+}
+
+/* ───────── StandBy ───────── */
+function standbyScreen(tone) {
+  const c = CARD[WIDGET_WORDS[S.word]];
+  return `<div class="sb-wrap" data-red="${S.red}">
+    <div class="sb-clock"><div class="t">23:12</div><div class="dt">Çarşamba 22 Ekim</div></div>
+    <div class="sb-w"><div class="t-head" lang="en"><span class="band">${esc(c.lemma)}</span></div><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.micro)}</div>
+      <div class="btns" aria-hidden="true"><i>${ic('check')}</i><i>${ic('speaker')}</i><i>${ic('fwd', 'fill')}</i></div></div>
+  </div>`;
+}
+
+/* ───────── Ana ekran widget'ları ───────── */
+function appTile(name, icon, lg = false) {
+  return `<div class="app-i"><i>${lg ? `<svg viewBox="0 0 58 58" width="58" height="58" aria-hidden="true"><rect width="58" height="58" rx="14" fill="#000"/><path d="M13 33h34l-3 6H10z" fill="var(--band)"/><circle cx="29" cy="24" r="5" fill="none" stroke="var(--ink)" stroke-width="2.4"/><path d="M29 29v7" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/></svg>` : ic(icon)}</i>${esc(name)}</div>`;
+}
+function wbtns() {
+  return `<button type="button" class="wb${S.known.has(WIDGET_WORDS[S.word]) ? ' on' : ''}" data-act="wknow" aria-label="Biliyorum" aria-pressed="${S.known.has(WIDGET_WORDS[S.word])}"><span>${ic('check')}</span></button><button type="button" class="wb" data-act="say" data-say="${esc(WIDGET_WORDS[S.word])}" aria-label="Dinle"><span>${ic('speaker')}</span></button><button type="button" class="wb" data-act="wnext" aria-label="Sonraki kelime"><span>${ic('fwd', 'fill')}</span></button>`;
+}
+function shortEx(c) {
+  return c.ex.filter(x => stemRe(c.lemma).test(x.en)).sort((a, b) => a.en.length - b.en.length)[0] || c.ex[0];
+}
+function homeScreen(tone) {
+  const c = CARD[WIDGET_WORDS[S.word]], tinted = S.wgMode === 'tinted';
+  const tint = tone === 'mevcut' ? '#F1EA6A' : TONES[tone].band;
+  return `<div class="lsw" style="--lc:rgba(255,255,255,.85)"><div class="wall" style="--wall-dim:.35"></div>${statusbar('lk')}
+    <div class="hs${tinted ? ' tinted' : ''}" style="--tint-c:${tint}">
+      <div class="r1">
+        <div class="wg wg-small" role="group" aria-label="Küçük widget"><div class="wg-head"><span class="w" lang="en"><span class="band">${esc(c.lemma)}</span></span><span class="lv">${esc(c.level)}</span></div>
+          <div class="wg-body"><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.micro)}</div></div><div class="wg-strip">${wbtns()}</div></div>
+        <div class="quad">${appTile('Lockglow', '', true)}${appTile('Takvim', 'cal')}${appTile('Notlar', 'note')}${appTile('Müzik', 'music')}</div>
+      </div>
+      <div class="wg wg-medium" role="group" aria-label="Orta widget"><div class="wg-main"><div class="wg-head"><span class="w" lang="en"><span class="band">${esc(c.lemma)}</span></span><span class="p">${esc(c.ipa)}</span><span class="lv">${esc(c.level)}</span></div>
+        <div class="wg-body"><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.short)}</div><div class="nx">Yeni kelime: 10:00</div></div></div><div class="wg-rail">${wbtns()}</div></div>
+      <div class="icons">${appTile('Fotoğraflar', 'photo')}${appTile('Haritalar', 'map')}${appTile('Safari', 'globe')}${appTile('Saat', 'clock')}</div>
+      <div class="dock">${['phone', 'chat', 'globe', 'music'].map(i => `<div class="app-i"><i>${ic(i)}</i></div>`).join('')}</div>
+    </div></div>`;
+}
+
+/* ───────── Ekran seçimi ───────── */
+function screenHTML(tone) {
+  switch (S.screen) {
+    case 'kilit': return lockScreen(tone, false);
+    case 'aod': return lockScreen(tone, true);
+    case 'standby': return standbyScreen(tone);
+    case 'akis': return statusbar() + feedScreen();
+    case 'tekrar': return statusbar() + reviewScreen();
+    case 'quiz': return statusbar() + quizScreen();
+    case 'bitti': return statusbar() + doneScreen();
+    case 'sozluk': return statusbar() + dictScreen();
+    case 'widget': return homeScreen(tone);
+    case 'ayarlar': return statusbar() + settingsScreen();
+  }
+  return '';
+}
+
+/* ───────── Ekran notları ───────── */
+const NOTES = {
+  kilit: {
+    t: 'Kilitli ekran (gece, ekran açık)',
+    d: ['Kilitli ekran widget\'larının rengini uygulama seçemez. Sistem onları tek renkte (vibrant) çizer; renk, kullanıcının saat için seçtiği renktir.',
+      'Bu yüzden öneri bir ipucu: "Kilitli ekranı kehribar yap". Ayarlar\'da adımları gösterir. Sağdaki "Saat rengi" düğmesiyle farkı gör.',
+      'İçerik bugünkü gibi: satır içi "bedtime · yatma vakti", dikdörtgende kelime, anlam ve kısa tanım.',
+      'Gece duvar kâğıdı koyu; Lockglow\'un kendi ekranlarıyla aynı sıcak siyah.'],
+    s: '<code>AccessoryWordViews.swift</code> değişmez: renk yok, yalnız <code>.primary</code> / <code>.secondary</code> hiyerarşisi ve <code>widgetAccentable()</code>. Cihazda doğrula: widget\'lar saatin rengini alıyor mu (iOS 17, 18 ve 26).'
+  },
+  aod: {
+    t: 'Her zaman açık',
+    d: ['Ekran kararınca sistem <code>isLuminanceReduced</code> der. Gece tonunda o an tanım satırı gizlenir; kelime ve anlam kalır.',
+      'Widget plakası çizilmez; şerit çok ince bir çizgiye (1 pt) iner. Yanan piksel azalır, kelime yine okunur.',
+      'Sağdan "Duvar kâğıdı: Gizle" seçilince ekran tam siyah olur (iOS ayarı).',
+      'Mevcut tasarımda Her zaman açık ekranında da üç satır ve plaka duruyor.'],
+    s: '<code>@Environment(\\.isLuminanceReduced)</code>. Apple\'ın önerisi: dolgu yerine çizgi, daha az parlak renk. <code>RectangularWordView</code>: <code>rows(belowWord: reduced ? 1 : 2)</code>, şeritte <code>height: 1</code>. Saniyelik güncelleme yok; ekran 1 Hz\'e kadar iner.'
+  },
+  standby: {
+    t: 'StandBy (başucunda şarjda)',
+    d: ['Telefon şarjdayken yan yatınca StandBy açılır. Karanlıkta sistem her şeyi kırmızıya boyar (Gece modu).',
+      'Kırmızı tek renkte renkler birbirinden ayrılmaz. Hiyerarşi yalnız boyut, kalınlık ve parlaklıkla kalır: kelime en büyük, tanım en sönük.',
+      'StandBy widget zeminini kaldırır. Şerit yine görünür, çünkü bir çizgidir.',
+      'Sağdan "Gece modu" düğmesini kapatıp renkli hâlini gör.'],
+    s: '<code>@Environment(\\.showsWidgetContainerBackground)</code> false iken iç boşluğu kendin ver. <code>systemSmall</code> StandBy\'da büyütülür; yazılar <code>minimumScaleFactor</code> ile sığmalı. Kırmızı modu uygulama seçmez; snapshot testine tek renk (kırmızı) bir varyant eklenebilir.'
+  },
+  akis: {
+    t: 'Akış kartı',
+    d: ['Zemin gerçek siyah. Kartın dolgusu yok, yalnız ince kenar çizgisi var: ekranda yanan alan küçülür.',
+      'Kelime kehribar mürekkep; şerit harflerin altında ince çizgi, ışıma yok. İngilizce tanım ve Türkçe çeviri ikinci mürekkepte (8,7:1).',
+      'Üstte "Bu gece 2 / 5". Beşinci kelimeden sonra akış durur, "Bu geceki 5 kelime tamam" gelir.',
+      'Kart kaymaz; yavaşça solar (420 ms + 420 ms). "Hareketsiz" seçilince anında değişir.'],
+    s: '<code>Theme.bg</code> gece tonunda <code>Color.black</code>. <code>cardSurface()</code> gece tonunda dolgu yerine yalnız <code>strokeBorder(Theme.line)</code>. Geçiş: <code>.transition(.opacity)</code> + <code>.easeInOut(duration: 0.42)</code>; <code>accessibilityReduceMotion</code> ya da "Hareketsiz" iken animasyon yok. Sayaç için <code>AppModel</code>\'e gece hedefi (ör. 5).'
+  },
+  tekrar: {
+    t: 'Tekrar (yeni kelime turu)',
+    d: ['Ön yüzde yalnız kelime ve tek düğme. Ana düğme dolu değil: %16 kehribar zemin, kehribar yazı, ince kenar.',
+      'Mevcut koyu temada aynı düğme ekranın en parlak alanı: dolu sarı ve çevresinde ışıma (karşılaştırmayı aç).',
+      'Cevap düğmeleri renksiz; anlamı simge, kelime ve süre taşır (kural 4 aynı kalır).'],
+    s: '<code>PrimaryCapsuleButtonStyle</code> gece tonunda tonal: dolgu <code>band.opacity(0.16)</code>, yazı <code>band</code>, 1,5 pt <code>band.opacity(0.45)</code> kenar. <code>Theme.primaryGlow</code> ve <code>Theme.bandGlow</code> gece tonunda <code>.clear</code>.'
+  },
+  quiz: {
+    t: 'Quiz (tekrar sorusu)',
+    d: ['Doğru ve yanlış renkleri gece için yumuşak (doğru #A7C98A, yanlış #FF9580) ama siyahta 10–11:1.',
+      'Yanlış şıkkın kenarı kesik çizgi, doğrunun kenarı düz: renk tek başına anlam taşımaz.',
+      'Geri bildirim kutusu %12 tonlu zemin; büyük parlak alan yok.'],
+    s: '<code>Theme.good</code> / <code>bad</code> gece değerleri; <code>goodTint</code> / <code>badTint</code> %12. Yanlış şık: <code>StrokeStyle(lineWidth: 2, dash: [6, 4])</code>. Cevaptan sonra <code>scrollTo(…, anchor: .bottom)</code> animasyonsuz.'
+  },
+  sozluk: {
+    t: 'Sözlük',
+    d: ['Sonuç satırları <code>surface</code> (#0D0B09) üstünde: pikseller tam kapalı değil. Kaydırırken siyah sürünmesi riskini azaltabilir (cihazda bakılmalı).',
+      'Eşleşen kısım kalın ve altı çizili, sarı değil. Sarı yalnız öğrenilecek kelimede kalır (kural 1).',
+      'Boş kutuda "Dene" örnekleri var. Türkçe harfleri yazmasan da bulur.',
+      'Bu ekranın en parlak yeri sistem klavyesidir (koyu modda gri). Arama kısa kalsın diye örnekler tek dokunuşla çalışır.'],
+    s: 'Liste: <code>.scrollContentBackground(.hidden)</code> + <code>Theme.bg</code>, satırlarda <code>.listRowBackground(Theme.surface)</code>. Klavye: <code>.scrollDismissesKeyboard(.immediately)</code>. Vurgu aralığı için <code>TextFold</code> konum eşlemesi (ana README madde 12).'
+  },
+  bitti: {
+    t: 'Bu gece bitti (durma noktası)',
+    d: ['Gece turu biter: çalışılan kelimeler, sıradaki tekrar, hatırlatma saati.',
+      'Ana yol "Tamam". "5 kelime daha" küçük ve sessiz bir metin düğmesi: karar kullanıcıda, ama varsayılan yol uyumak.',
+      'Ay simgesi çizgi; dolgu yok, ışıma yok.'],
+    s: 'Bu ekran yalnız gece tonu açıkken ve gece hedefi dolunca çıkar. Hatırlatma (<code>UNUserNotificationCenter</code>) kullanıcının seçtiği saatte kalır; gece yarısından sonra yeni bildirim planlanmaz.'
+  },
+  widget: {
+    t: "Ana ekran widget'ları",
+    d: ['Koyu ana ekranda widget zemini gerçek siyah, ince kenarlı. Düğmeler sönük daire; kelime kehribar şeritli.',
+      'Renklendirilmiş (iOS 18+) görünümde rengi sistem verir. Kelime ve çizgisi <code>widgetAccentable</code> olduğu için yalnız onlar vurgu rengini alır.',
+      'Düğme sırası ana tasarımla aynı: Biliyorum · Dinle · Sonraki.'],
+    s: '<code>WordWidgetView.containerFill</code> gece tonunda <code>Color.black</code>. Widget uygulamanın tonunu App Group <code>UserDefaults</code> ile okur. Zaman çizelgesi gece saatleri için ayrı giriş üretebilir (ör. 21:00 sonrası).'
+  },
+  ayarlar: {
+    t: 'Ayarlar',
+    d: ['Apple uygulamaya özel görünüm ayarından kaçınmayı önerir. Bu yüzden varsayılan "Koyu modda": telefon koyu moddaysa gece tonu kendiliğinden gelir.',
+      'Ton: Kehribar (en az mavi) ya da Soluk fosfor (Lockglow sarısına yakın). Seçim bu sayfanın her yerini değiştirir.',
+      '"Bir gecede kaç kelime?" 3 / 5 / 10. Akış bu sayıda durur.',
+      'İki ipucu iOS ayarlarına götürür: kilitli ekran rengi ve Beyaz Noktayı Azalt.'],
+    s: 'Ton için iOS 17 özel trait (<code>UITraitDefinition</code> + <code>UITraitBridgedEnvironmentKey</code>); <code>Theme.dynamic</code> sağlayıcısı bu trait\'i okur. Widget hedefine App Group ile gider. Ayar adları cihazdaki Türkçe iOS menüleriyle karşılaştırılmalı.'
+  }
+};
+
+/* ───────── Panel ───────── */
+function pseg(act, cur, items) {
+  return `<div class="pseg" role="group">${items.map(([v, t]) => `<button type="button" data-act="${act}" data-v="${v}" aria-pressed="${String(cur) === String(v)}">${t}</button>`).join('')}</div>`;
+}
+function screenControls() {
+  switch (S.screen) {
+    case 'kilit': return `<div class="grp"><h2>Saat ve widget rengi</h2>${pseg('clock', S.clock, [['tint', 'Kehribar (ipucu)'], ['white', 'Beyaz (varsayılan)']])}</div>`;
+    case 'aod': return `<div class="grp"><h2>Duvar kâğıdı</h2>${pseg('wall', S.wall, [[true, 'Göster'], [false, 'Gizle']])}</div><div class="grp"><h2>Saat ve widget rengi</h2>${pseg('clock', S.clock, [['tint', 'Kehribar'], ['white', 'Beyaz']])}</div>`;
+    case 'standby': return `<div class="grp"><h2>StandBy gece modu</h2>${pseg('red', S.red, [[true, 'Kırmızı (karanlıkta)'], [false, 'Renkli']])}</div>`;
+    case 'widget': return `<div class="grp"><h2>Ana ekran görünümü</h2>${pseg('wgmode', S.wgMode, [['dark', 'Koyu'], ['tinted', 'Renklendirilmiş']])}</div>`;
+  }
+  return '';
+}
+function renderPanel() {
+  const n = NOTES[S.screen], t = TONES[S.tone === 'mevcut' ? 'mevcut' : S.tone];
+  const bg = hexOf(t.bg);
+  $('#panel').innerHTML = `
+    <div class="grp"><h2>Ton</h2>${pseg('tone', S.tone, [['kehribar', 'Kehribar'], ['fosfor', 'Soluk fosfor'], ['mevcut', 'Mevcut koyu']])}
+      <label class="check"><input type="checkbox" id="cmp" data-act="compare" ${S.compare ? 'checked' : ''} ${S.tone === 'mevcut' ? 'disabled' : ''}>Mevcut koyu tema ile yan yana</label></div>
+    <div class="grp range"><label for="br">Ekran parlaklığı (taklit) <output id="brv">%${S.bright}</output></label>
+      <input type="range" id="br" min="5" max="100" step="5" value="${S.bright}" data-act="bright">
+      <p class="hint-t">Işığı gerçek ekran gibi azaltır. Gerçek deneme için kendi ekranını da kıs; yatakta çoğu kişi parlaklığı düşürür.</p></div>
+    <label class="check"><input type="checkbox" id="ns" data-act="ns" ${S.ns ? 'checked' : ''}>Night Shift taklidi (en sıcak)</label>
+    <div class="grp"><h2>Geçişler</h2>${pseg('motion', S.motion, [['slow', 'Yavaş solma'], ['none', 'Hareketsiz']])}</div>
+    <div class="grp"><h2>Cihaz</h2>${pseg('device', S.device, [['std', 'iPhone 390 × 844'], ['se', 'iPhone SE 375 × 667']])}</div>
+    <div class="grp"><h2>Yazı boyutu (Dynamic Type)</h2>${pseg('dt', S.dt, DT.map(d => [d.v, d.l]))}
+      <p class="hint-t">Uygulama ekranlarına uygulanır. Erişilebilirlik boyutunda kart kısalmaz, kayar.</p></div>
+    ${screenControls()}
+    <div class="stat" role="group" aria-label="Seçili tonun sayıları"><span>Mürekkep</span><b>${nf(cr(t.ink, bg))}:1 · mavi %${Math.round(melRel(t.ink) * 100)}</b>
+      <span>İkinci mürekkep</span><b>${nf(cr(t.ink2, bg))}:1</b><span>Şerit</span><b>${nf(cr(t.band, bg))}:1 · mavi %${Math.round(melRel(t.band) * 100)}</b>
+      <span>Ana düğme</span><b>${nf(cr(t.primaryInk, hexOf(t.primaryBg, bg)))}:1 yazı/zemin</b></div>
+    <div class="note"><h3>${n.t}</h3><ul>${n.d.map(x => `<li>${x}</li>`).join('')}</ul><div class="swift"><b>Swift:</b> ${n.s}</div></div>`;
+}
+
+/* ───────── Çizim ───────── */
+const kebab = k => '--' + k.replace(/([a-z])([A-Z0-9])/g, '$1-$2').toLowerCase();
+function tonesShown() {
+  return S.compare && S.tone !== 'mevcut' ? [S.tone, 'mevcut'] : [S.tone];
+}
+/* render() her şeyi yeniden yazar; klavye ve VoiceOver odağı kaybolmasın diye odaktaki düğme geri bulunur. */
+function focusKey() {
+  const a = document.activeElement;
+  if (!a || a === document.body || a.classList.contains('qin')) return null;
+  if (a.id) return { id: a.id };
+  if (!a.dataset || !a.dataset.act) return null;
+  const ph = a.closest('#phones .phone');
+  return { act: a.dataset.act, v: a.dataset.v, did: a.dataset.id, g: a.dataset.g, o: a.dataset.o, phone: ph ? $$('#phones .phone').indexOf(ph) : -1 };
+}
+function restoreFocus(k, sheetWasOpen) {
+  const sheetOpen = !!(S.sheet || S.say);
+  if (sheetOpen && !sheetWasOpen) { const b = $('#phones .sheet .sb button'); if (b) { b.focus({ preventScroll: true }); return; } }
+  if (!k) return;
+  let el = null;
+  if (k.id) el = document.getElementById(k.id);
+  else {
+    const q = (n, v) => v != null ? `[data-${n}="${CSS.escape(v)}"]` : '';
+    const sel = `[data-act="${CSS.escape(k.act)}"]${q('v', k.v)}${q('id', k.did)}${q('g', k.g)}${q('o', k.o)}`;
+    const root = k.phone >= 0 ? $$('#phones .phone')[k.phone] : document;
+    el = root ? $(sel, root) : null;
+  }
+  if (el) el.focus({ preventScroll: true });
+}
+let sheetWasOpen = false;
+function render() {
+  const fk = focusKey();
+  $$('#nav button[data-v]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === S.screen)));
+  const land = S.screen === 'standby';
+  $('#phones').innerHTML = tonesShown().map(tone => `<figure class="pwrap"><figcaption class="plabel">${tone === 'mevcut' ? 'Mevcut koyu tema' : `Gece · <b>${TONES[tone].name}</b>`}</figcaption>
+    <div class="phone-box"><div class="phone${land ? ' land' : ''}" data-tone="${tone}" data-device="${S.device}" style="--dt:${S.dt}"><div class="screen">${screenHTML(tone)}<div class="island" aria-hidden="true"></div><div class="homebar" aria-hidden="true"></div></div></div></div></figure>`).join('');
+  $$('#phones .phone').forEach(ph => {
+    const t = TONES[ph.dataset.tone];
+    for (const [k, v] of Object.entries(t)) if (k !== 'name') ph.style.setProperty(kebab(k), v);
+    const scr = $('.screen', ph);
+    scr.style.filter = (land && S.red ? 'url(#red) ' : '') + 'url(#sim)';
+  });
+  updateSim();
+  fitLadders();
+  fitPhones();
+  $('#cap').textContent = caption();
+  renderPanel();
+  restoreFocus(fk, sheetWasOpen);
+  sheetWasOpen = !!(S.sheet || S.say);
+}
+/* Ekran değiştirmek: adres çubuğundaki #bağlantı da güncellenir; bekleyen yavaş geçiş iptal edilir. */
+function setScreen(v) {
+  cancelSwap();
+  S.screen = v; S.sheet = null; S.say = null;
+  try { history.replaceState(null, '', '#' + v); } catch (err) { /* önizlemede adres değişmeyebilir */ }
+}
+function caption() {
+  const t = { kilit: 'Saat 23:12. Kilitli ekran, gece duvar kâğıdı.', aod: 'Her zaman açık: sistem ekranı karartır, widget\'lar az ışıkla çizilir.', standby: 'StandBy, yatay. Karanlık odada sistem her şeyi kırmızıya boyar.', akis: `Akış: "Sonraki" ile kartlar yavaşça değişir. ${Math.min(S.count, FEED.length)}. kartta tur biter.`, tekrar: 'Kartın ön yüzüne ya da "Anlamı göster"e dokun, sonra bir cevap seç.', quiz: 'Bir şık seç. Yanlış bir şık seçip "Neden?" kutusunu da gör.', bitti: 'Durma noktası: gece turu burada biter.', sozluk: 'Ara: ör. "gece", "yatma" ya da "sakinlesmek". Bir satıra dokun.', widget: 'Koyu ana ekran. Sonraki düğmesi kelimeyi değiştirir.', ayarlar: 'Ton ve geçiş seçimi bütün sayfaya uygulanır. İpuçlarına dokun.' }[S.screen];
+  return t + (S.motion === 'slow' ? ' Geçişler: yavaş solma.' : ' Geçişler: hareketsiz.') + (S.compare && S.tone !== 'mevcut' ? ' Sağdaki telefon aynı düzeni mevcut koyu tema renkleriyle çizer.' : '');
+}
+function updateSim() {
+  const b = S.bright / 100, g = S.ns ? .82 : 1, bl = S.ns ? .5 : 1;
+  $('#simm').setAttribute('values', `${b} 0 0 0 0  0 ${g * b} 0 0 0  0 0 ${bl * b} 0 0  0 0 0 1 0`);
+}
+/* Kart sondan kısalır (ana tasarımın kural 5'i): sığana kadar basamak basamak. */
+function fitLadders() {
+  /* Kelime tek satır: sığmazsa %60'a kadar küçülür (minimumScaleFactor 0.6). */
+  $$('#phones .t-head').forEach(el => {
+    el.style.fontSize = '';
+    let size = parseFloat(getComputedStyle(el).fontSize);
+    const min = size * .6;
+    while (el.scrollWidth > el.clientWidth + .5 && size > min) { size -= 1; el.style.fontSize = size + 'px'; }
+  });
+  $$('#phones [data-ladder]').forEach(card => {
+    const inner = $('.inner', card);
+    if (S.dt >= 1.6) { card.classList.add('c4'); return; }
+    for (const cls of ['c0', 'c1', 'c2', 'c3']) {
+      if (inner.scrollHeight <= inner.clientHeight + 1) break;
+      card.classList.add(cls);
+    }
+  });
+}
+function fitPhones() {
+  const boxes = $$('#phones .phone-box');
+  if (!boxes.length) return;
+  const ph = $('.phone', boxes[0]);
+  const w = ph.offsetWidth, h = ph.offsetHeight, n = boxes.length;
+  const avail = $('#phones').clientWidth - (n - 1) * 24;
+  const top = Math.min(220, $('#phones').getBoundingClientRect().top + window.scrollY);
+  const maxH = Math.max(420, window.innerHeight - top - 56);
+  const s = Math.max(.3, Math.min(1, avail / (w * n), maxH / h));
+  boxes.forEach(box => { box.style.width = w * s + 'px'; box.style.height = h * s + 'px'; $('.phone', box).style.transform = `scale(${s})`; });
+}
+
+/* Yavaş geçiş: içerik soluklaşır, değişir, yeniden belirir. Kayma yok. */
+/* Geçiş sürerken gelen dokunuş yok sayılır (çift dokunuş kart atlatmaz). */
+let busy = false, swapTimer = 0;
+function swap(change) {
+  if (busy) return;
+  if (S.motion === 'none') { change(); render(); return; }
+  busy = true;
+  $$('#phones .swap').forEach(el => el.classList.add('out'));
+  swapTimer = setTimeout(() => {
+    try { change(); render(); } catch (err) { busy = false; throw err; }
+    /* Yeni içerik soluk başlar; zorla yeniden düzen (reflow) sonrası belirir. rAF kullanılmaz: arka plandaki sekmede durur. */
+    const els = $$('#phones .swap');
+    els.forEach(el => el.classList.add('out'));
+    void document.body.offsetWidth;
+    els.forEach(el => el.classList.remove('out'));
+    busy = false;
+  }, 420);
+}
+function cancelSwap() { clearTimeout(swapTimer); busy = false; }
+
+/* ───────── Ses (yalnız dokununca) ───────── */
+/* Her konuşmanın bir numarası var: yalnız son konuşmanın bitişi düğmeyi "Dinle"ye döndürür.
+   Ses hiç başlamazsa 6 sn sonra düğme yine "Dinle" olur. */
+let sayId = 0;
+function say(text) {
+  const id = ++sayId;
+  const done = () => { if (id === sayId && S.playing) { S.playing = null; render(); } };
+  try {
+    if (!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = .88; u.volume = .8;
+    u.onend = u.onerror = done;
+    S.playing = text; render();
+    speechSynthesis.speak(u);
+    setTimeout(done, 6000);
+  } catch (e) { S.playing = null; }
+}
+
+/* ───────── Olaylar ───────── */
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]');
+  if (!el) return;
+  const a = el.dataset.act, v = el.dataset.v;
+  if (el.tagName === 'INPUT') return;
+  switch (a) {
+    case 'screen': setScreen(v); render(); break;
+    case 'tone': S.tone = v; if (v === 'mevcut') S.compare = false; render(); break;
+    case 'motion': S.motion = v; render(); break;
+    case 'clock': S.clock = v; render(); break;
+    case 'wall': S.wall = v === 'true'; render(); break;
+    case 'red': S.red = v === 'true'; render(); break;
+    case 'wgmode': S.wgMode = v; render(); break;
+    case 'when': S.when = v; render(); break;
+    case 'count': S.count = Number(v); S.feed = Math.min(S.feed, Math.min(S.count, FEED.length) - 1); render(); break;
+    case 'sheet': S.sheet = v; render(); break;
+    case 'sheetx': if (e.target === el || el.tagName === 'BUTTON') { S.sheet = null; render(); } break;
+    case 'sayopen': S.say = { id: el.dataset.id, st: 'idle', n: 0 }; render(); break;
+    case 'sayx': if (e.target === el || el.tagName === 'BUTTON') { S.say = null; render(); } break;
+    case 'saygo': if (S.say) sayRun(); break;
+    case 'device': S.device = v; render(); break;
+    case 'dt': S.dt = Number(v); render(); break;
+    case 'say': say(el.dataset.say); break;
+    case 'tab':
+      /* Akış yalnız "Bu gece bitti"den dönünce başa sarar. */
+      if (v === 'akis' && S.screen === 'bitti') S.feed = 0;
+      if (v === 'sozluk') S.open = null;
+      setScreen(v); render(); break;
+    case 'detail': setScreen('sozluk'); S.open = el.dataset.id; render(); break;
+    case 'wknow': { const w = WIDGET_WORDS[S.word]; S.known.has(w) ? S.known.delete(w) : S.known.add(w); render(); break; }
+    case 'know': S.known.has(el.dataset.id) ? S.known.delete(el.dataset.id) : S.known.add(el.dataset.id); render(); break;
+    case 'next': {
+      const n = Math.min(S.count, FEED.length);
+      if (S.feed >= n - 1) swap(() => { setScreen('bitti'); });
+      else swap(() => { S.feed++; });
+      break;
+    }
+    case 'again': swap(() => { S.fstart = (S.fstart + Math.min(S.count, FEED.length)) % FEED.length; S.feed = 0; setScreen('akis'); }); break;
+    case 'reveal': swap(() => { S.rv.revealed = true; }); break;
+    case 'grade': swap(() => { if (S.rv.i >= NEWDECK.length) return; S.rv.answers.push({ id: NEWDECK[S.rv.i], g: el.dataset.g }); S.rv.i++; S.rv.revealed = false; }); break;
+    case 'rvreset': swap(() => { S.rv = { i: 0, revealed: false, answers: [] }; }); break;
+    case 'pick': if (S.qz.picked == null) { S.qz.picked = el.dataset.o; render(); } break;
+    case 'qnext': swap(() => { S.qz.i = (S.qz.i + 1) % QUIZ.length; S.qz.picked = null; }); break;
+    case 'wnext': swap(() => { S.word = (S.word + 1) % WIDGET_WORDS.length; }); break;
+    case 'try': S.q = v; render(); break;
+    case 'open': swap(() => { S.open = el.dataset.id; }); break;
+    case 'back': swap(() => { S.open = null; }); break;
+  }
+});
+/* Tekrar'da kartın kendisine dokunmak da anlamı açar. */
+document.addEventListener('click', e => {
+  if (S.screen === 'tekrar' && !S.rv.revealed && S.rv.i < NEWDECK.length && e.target.closest('#phones .front') && !e.target.closest('[data-act]')) swap(() => { S.rv.revealed = true; });
+});
+document.addEventListener('change', e => {
+  const el = e.target;
+  if (el.dataset.act === 'compare') { S.compare = el.checked; render(); }
+  if (el.dataset.act === 'ns') { S.ns = el.checked; updateSim(); renderPanel(); }
+});
+document.addEventListener('input', e => {
+  const el = e.target;
+  /* Arama: yalnız sonuçlar yenilenir, yazılan kutu odakta kalır; karşılaştırmadaki öteki telefon da eşlenir. */
+  if (el.classList.contains('qin')) {
+    S.q = el.value;
+    $$('#phones .res').forEach(r => { r.innerHTML = resultsHTML(); });
+    $$('#phones .qin').forEach(i => { if (i !== el) i.value = S.q; });
+  }
+  if (el.dataset.act === 'bright') { S.bright = Number(el.value); updateSim(); const o = $('#brv'); if (o) o.textContent = '%' + S.bright; }
+});
+/* Esc açık sayfayı (sheet) kapatır. */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && (S.sheet || S.say)) { S.sheet = null; S.say = null; render(); }
+});
+let rt;
+window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(fitPhones, 80); });
+
+/* ───────── Renk hesabı ───────── */
+/* WCAG 2 bağıl parlaklık ve kontrast oranı (https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). */
+function parse(c) {
+  if (c.startsWith('#')) return { r: parseInt(c.slice(1, 3), 16), g: parseInt(c.slice(3, 5), 16), b: parseInt(c.slice(5, 7), 16), a: 1 };
+  const m = c.match(/rgba?\(([^)]+)\)/);
+  const p = m ? m[1].split(',').map(x => parseFloat(x)) : [0, 0, 0, 0];
+  return { r: p[0], g: p[1], b: p[2], a: p[3] ?? 1 };
+}
+/* Saydam bir rengi zeminin üstüne bindirip düz renk verir. */
+function hexOf(c, over = '#000000') {
+  const f = parse(c), b = parse(over);
+  const mix = k => Math.round(f.a * f[k] + (1 - f.a) * b[k]);
+  return '#' + ['r', 'g', 'b'].map(k => mix(k).toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+const lin = v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; };
+function Lum(hex) { const c = parse(hex); return .2126 * lin(c.r) + .7152 * lin(c.g) + .0722 * lin(c.b); }
+function cr(a, b) { const x = Lum(a), y = Lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); }
+/* Kaba melanopik model (yalnız sıralama için): OLED ana renkleri Gauss eğrisi (mavi 455, yeşil 530, kırmızı 625 nm),
+   melanopsin Govardovskii şablonu (λmax 480 nm) × basit göz merceği süzgeci (tepe ≈ 490 nm, CIE S 026 ile aynı yerde),
+   ana renklerin parlaklık payları sRGB'den (0,2126 / 0,7152 / 0,0722). Sonuç: aynı ekran parlaklığında beyaza oran. */
+const MEL = (() => {
+  const gauss = (l, mu, fw) => { const s = fw / 2.3548; return Math.exp(-.5 * ((l - mu) / s) ** 2); };
+  const V = l => { const x = l / 1000; return 1.019 * Math.exp(-285.4 * (x - .559) ** 2); };
+  const gov = (l, lm = 480) => {
+    const x = lm / l, a = .8795 + .0459 * Math.exp(-((lm - 300) ** 2) / 11940);
+    const alpha = 1 / (Math.exp(69.7 * (a - x)) + Math.exp(28 * (.922 - x)) + Math.exp(-14.9 * (1.104 - x)) + .674);
+    const lmb = 189 + .315 * lm, bb = -40.5 + .195 * lm;
+    return alpha + .26 * Math.exp(-(((l - lmb) / bb) ** 2));
+  };
+  const lens = l => 10 ** -(1.6 * Math.exp(-(l - 400) / 28) + .06 * Math.exp(-(l - 400) / 120));
+  const smel = l => gov(l) * lens(l);
+  let peak = 0, peakL = 0;
+  for (let l = 380; l <= 780; l++) { const v = smel(l); if (v > peak) { peak = v; peakL = l; } }
+  const P = { r: [625, 30], g: [530, 35], b: [455, 25] }, Y = { r: .2126, g: .7152, b: .0722 }, w = {};
+  for (const k of ['r', 'g', 'b']) {
+    let y = 0, m = 0;
+    for (let l = 380; l <= 780; l++) { const s = gauss(l, ...P[k]); y += s * V(l); m += s * smel(l) / peak; }
+    w[k] = Y[k] * m / y;
+  }
+  return { w, peakL };
+})();
+function mel(hex) { const c = parse(hex); return lin(c.r) * MEL.w.r + lin(c.g) * MEL.w.g + lin(c.b) * MEL.w.b; }
+const MEL_WHITE = mel('#FFFFFF');
+const melRel = hex => mel(hexOf(hex)) / MEL_WHITE;
+
+function renderTokens() {
+  const rows = [
+    ['bg', 'Sayfa zemini'], ['surface', 'Gruplu liste, quiz cümlesi'], ['surface2', 'Kapsül, Dikkat kutusu'], ['line', 'Kart kenarı, ayırıcı'],
+    ['ink', 'Ana yazı: kelime, Türkçe anlam, örnek'], ['ink2', 'Tanım, çeviri, IPA'], ['ink3', 'Yardımcı yazı, sayaç'],
+    ['band', 'Şerit: yalnız İngilizce kelime'], ['primaryBg', 'Ana düğme zemini'], ['primaryInk', 'Ana düğme yazısı'],
+    ['good', 'Doğru (simge + kelimeyle)'], ['bad', 'Yanlış (simge + kelimeyle)'], ['caution', 'Yalnız Dikkat üçgeni']
+  ];
+  const cols = ['kehribar', 'fosfor', 'mevcut'];
+  const cell = (tone, key) => {
+    const t = TONES[tone], bg = hexOf(t.bg), raw = t[key];
+    const isBg = ['bg', 'surface', 'surface2', 'line', 'primaryBg'].includes(key);
+    const hex = key === 'line' ? hexOf(raw, bg) : hexOf(raw, bg);
+    let sub;
+    if (key === 'bg') sub = `L ${nf(Lum(hex) * 100, 2)} %`;
+    else if (isBg) sub = `L ${nf(Lum(hex) * 100, 2)} %`;
+    else if (key === 'primaryInk') sub = `${nf(cr(hex, hexOf(t.primaryBg, bg)))}:1 düğme zemininde · mavi %${Math.round(melRel(hex) * 100)}`;
+    else sub = `${nf(cr(hex, bg))}:1 zeminde · ${nf(cr(hex, hexOf(t.surface2, bg)))}:1 kapsülde · mavi %${Math.round(melRel(hex) * 100)}`;
+    const shown = raw.startsWith('rgba') ? `${raw.replace(/\s/g, '')} → ${hex}` : hex;
+    return `<td><div class="sw"><i style="background:${hex}"></i><span><code>${shown}</code><small>${sub}</small></span></div></td>`;
+  };
+  $('#tt').innerHTML = `<caption class="sr" style="position:absolute;left:-9999px">Gece paletleri ve mevcut koyu tema</caption>
+    <thead><tr><th scope="col">Token</th><th scope="col">Ne için</th><th scope="col">Kehribar (önerilen)</th><th scope="col">Soluk fosfor</th><th scope="col">Mevcut koyu</th></tr></thead>
+    <tbody>${rows.map(([k, u]) => `<tr><th scope="row"><code>${k}</code></th><td class="use">${u}</td>${cols.map(c => cell(c, k)).join('')}</tr>`).join('')}</tbody>`;
+
+  const bars = [
+    ['Beyaz #FFFFFF (başvuru)', '#FFFFFF'], ['Mevcut koyu · mürekkep', TONES.mevcut.ink], ['Soluk fosfor · mürekkep', TONES.fosfor.ink], ['Kehribar · mürekkep', TONES.kehribar.ink],
+    ['Mevcut koyu · şerit', TONES.mevcut.band], ['Soluk fosfor · şerit', TONES.fosfor.band], ['Kehribar · şerit', TONES.kehribar.band]
+  ];
+  $('#bars').innerHTML = `<h3>Aynı parlaklıkta mavi (melanopik) uyaran</h3><div class="axis">Beyaz = 100. Kısa çubuk, uyku saatine daha az dokunan renk.</div>
+    ${bars.map(([lb, hx]) => { const v = melRel(hx) * 100; return `<div class="bar" title="${lb}: ${nf(v, 0)}"><span class="lb">${lb}</span><span class="tr"><i style="width:${v}%;background:${hexOf(hx)}"></i></span><span class="v">${nf(v, 0)}</span></div>`; }).join('')}`;
+
+  /* Büyük alanlar: ekranın çoğunu kaplayan renkler. Ana düğme 358 × 54 pt, kart 362 × ~640 pt. */
+  const areas = [
+    ['Mevcut · kart dolgusu', TONES.mevcut.cardBg, TONES.mevcut.bg], ['Gece · kart dolgusu (yok)', TONES.kehribar.cardBg, TONES.kehribar.bg],
+    ['Mevcut · ana düğme', TONES.mevcut.primaryBg, TONES.mevcut.bg], ['Kehribar · ana düğme', TONES.kehribar.primaryBg, '#000000'], ['Soluk fosfor · ana düğme', TONES.fosfor.primaryBg, '#000000']
+  ];
+  const maxL = Lum(hexOf(TONES.mevcut.primaryBg));
+  $('#areas').innerHTML = `<h3>Büyük alanların parlaklığı</h3><div class="axis">Bağıl parlaklık L × 100 (beyaz = 100). Ekranın çoğunu kaplayan alanlar toplam ışığı belirler.</div>
+    ${areas.map(([lb, c, b]) => { const hx = hexOf(c, b), v = Lum(hx) * 100; return `<div class="bar" title="${lb}: ${nf(v, 1)}"><span class="lb">${lb}</span><span class="tr"><i style="width:${Math.max(.6, v / (maxL * 100) * 100)}%;background:${v < 3 ? 'var(--room-ink-3)' : hx}"></i></span><span class="v">${nf(v, 1)}</span></div>`; }).join('')}
+    <div class="axis">Çubuk boyu en parlak alana (mevcut ana düğme, L ${nf(maxL * 100, 0)}) göre. Çok koyu dolgular gri çubukla gösterildi.</div>`;
+
+  $('#model-note').innerHTML = `Model: OLED ana renkleri Gauss eğrisi (mavi 455 nm, yeşil 530 nm, kırmızı 625 nm), melanopsin duyarlılığı Govardovskii şablonu (λmax 480 nm) ve basit bir göz merceği süzgeci; birleşik eğrinin tepesi ${MEL.peakL} nm (CIE S 026'nın 490 nm'sine yakın). Bu modelde beyazın melanopik uyaranının yaklaşık %${Math.round(MEL.w.b / MEL_WHITE * 100)}'i mavi, %${Math.round(MEL.w.g / MEL_WHITE * 100)}'i yeşil ana renkten gelir; kırmızının payı %1'in altında. Kesin değer için cihazın ölçülmüş tayfı ve CIE S 026 araç kutusu gerekir. Asıl etkiyi ekran parlaklığı ve yanan alan belirler; renk değişimi tek başına yetmez (gece_oled.md).`;
+}
+
+/* ───────── Başlat ───────── */
+function renderNav() {
+  $('#nav').innerHTML = SCREENS.map(s => s.k === 'sep' ? '<span class="sep" aria-hidden="true"></span>' : `<button type="button" data-act="screen" data-v="${s.k}" aria-pressed="false">${s.t}</button>`).join('');
+}
+(function start() {
+  const h = (location.hash || '').slice(1);
+  if (SCREENS.some(s => s.k === h)) S.screen = h;
+  renderNav();
+  render();
+  renderTokens();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { render(); });
+})();
+</script>
+</body>
+</html>

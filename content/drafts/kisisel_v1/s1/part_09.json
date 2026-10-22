@@ -290,7 +290,7 @@
               "why": "Türkçede 'fiyat çok pahalı' denir; İngilizcede fiyat 'high' ya da 'low' olur. 'Expensive' ürün için kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Price' (fiyat) 'c' ile yazılır: cüzdan. 'Prize' (ödül) 'z' ile: zafer. Okunuşları da farklı: prays, prayz."
         }
       },
       "tags": {
@@ -317,7 +317,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -692,7 +693,7 @@
               "why": "Türkçede 'para üstü' denir; İngilizcede 'kalan para' için 'rest' değil 'change' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Change' değiştirmek demek; büyük parayı küçüklerle değiştirmek gibi düşün: para üstü ve bozukluk da 'change'."
         }
       },
       "tags": {
@@ -720,7 +721,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -786,7 +788,7 @@
           "false_friend": null,
           "note": "Mağaza ya da market fişi için 'receipt'; elektrik faturası gibi ödenecek hesap için 'bill' denir. 'P' harfi okunmaz: ri-SİT.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Satıcı paranı alır (receive), sana 'receipt' verir: ikisi aynı kökten."
         }
       },
       "tags": {
@@ -811,7 +813,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -889,7 +893,7 @@
               "why": "Türkçede 'indirim yapmak' dersiniz; İngilizcede 'make a discount' denmez, 'give (me) a discount' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Dis-' (dışarı) + 'count' (saymak): fiyatın bir kısmını hesaptan çıkarmak, yani indirim."
         }
       },
       "tags": {
@@ -915,7 +919,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
@@ -989,14 +994,8 @@
           "equivalence": "full",
           "false_friend": null,
           "note": "Nakit için 'in cash', kart için 'by card' denir. 'Peşin' ödeme için ise 'upfront' ya da 'in full' kullanılır.",
-          "mistakes": [
-            {
-              "wrong": "I'll pay by cash.",
-              "right": "I'll pay in cash.",
-              "why": "Kart için 'by card' denir; nakit için en doğal kalıp 'in cash' olur. 'By cash' anlaşılır ama daha az doğaldır."
-            }
-          ],
-          "mnemonic": null
+          "mistakes": [],
+          "mnemonic": "Türkçedeki 'kasa' ile aynı kökten (Latince 'capsa': kutu): kasadaki para 'cash'."
         }
       },
       "tags": {
@@ -1025,7 +1024,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

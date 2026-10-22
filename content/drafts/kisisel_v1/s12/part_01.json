@@ -174,7 +174,7 @@
           "false_friend": null,
           "note": "Türkçede 'dişçi' günlük konuşmada, 'diş hekimi' resmî dilde daha yaygındır; İngilizcede ikisi için de 'dentist' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Latincede 'dens' diş demek. Sondaki '-ist' de 'artist', 'pianist' gibi meslek anlatır: dentist, dişlerle uğraşan kişi."
         }
       },
       "tags": {
@@ -200,7 +200,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -273,7 +274,7 @@
           "false_friend": null,
           "note": "İngiliz İngilizcesinde 'in hospital' (the olmadan), Amerikan İngilizcesinde 'in the hospital' denir. İkisi de doğrudur.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Hospital' ile 'hotel' aynı Latince kökten gelir; kök 'misafir' demek: ikisinde de bir süre misafir gibi kalırsın."
         }
       },
       "tags": {
@@ -299,7 +300,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -870,7 +872,7 @@
               "why": "Türkçede 'doktora görünmelisin' derken 'bir' kullanmak gerekmez. İngilizcede tekil, sayılabilir bir isimden önce 'a', 'an', 'the' ya da 'my' gibi bir sözcük gerekir: see a doctor."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Türkçede 'doktora görünmek', İngilizcede 'see a doctor' (doktoru görmek) denir: ikisi de 'görmek' fiilinden."
         }
       },
       "tags": {
@@ -896,7 +898,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

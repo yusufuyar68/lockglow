@@ -75,6 +75,41 @@ final class CardDetailTests: XCTestCase {
         XCTAssertEqual(noBlank.filledSentence, "No blank here.")
     }
 
+    func testShortestExampleContainingTheWord() {
+        let shorterLater = CardDetail(examples: [
+            CardDetail.Example(en: "Can I borrow your pen for a minute, please?"),
+            CardDetail.Example(en: "She borrowed my car."),
+            CardDetail.Example(en: "We borrow books."),
+        ])
+        XCTAssertEqual(shorterLater.shortestExample(containing: "borrow"), "We borrow books.")
+
+        // The first example does not use the word: a later one that does is chosen.
+        let firstWithout = CardDetail(examples: [
+            CardDetail.Example(en: "Hi."),
+            CardDetail.Example(en: "I look forward to the trip."),
+        ])
+        XCTAssertEqual(firstWithout.shortestExample(containing: "look forward to"), "I look forward to the trip.")
+
+        // Equal length: the earlier sentence wins.
+        let tie = CardDetail(examples: [
+            CardDetail.Example(en: "I lend pens."),
+            CardDetail.Example(en: "I lend cash."),
+        ])
+        XCTAssertEqual(tie.shortestExample(containing: "lend"), "I lend pens.")
+
+        let none = CardDetail(examples: [CardDetail.Example(en: "My teeth hurt.")])
+        XCTAssertNil(none.shortestExample(containing: "tooth"))
+        XCTAssertNil(CardDetail().shortestExample(containing: "tooth"))
+    }
+
+    func testLemmaMatchFindsWholeWordsWithEndings() {
+        let sentence = "She borrowed my car."
+        let found = LemmaMatch.range(of: "borrow", in: sentence)
+        XCTAssertEqual(found.map { String(sentence[$0]) }, "borrowed")
+        XCTAssertNil(LemmaMatch.range(of: "row", in: sentence), "not inside another word")
+        XCTAssertNil(LemmaMatch.range(of: "", in: sentence))
+    }
+
     func testMissingFieldsDecodeAsEmpty() throws {
         XCTAssertEqual(try decode("{}"), CardDetail())
         XCTAssertEqual(try decode(#"{"l1":{"en":{"alt":["x"]}}}"#), CardDetail())

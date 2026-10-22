@@ -164,7 +164,7 @@
           "false_friend": null,
           "note": "Türkçedeki 'otel' ile aynı kökten gelir. Küçük, aile işletmesi konaklama yerine 'guesthouse' ya da 'bed and breakfast' denir; Türkçedeki 'pansiyon' bunlara yakındır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Türkçedeki 'otel' ile aynı kelime, ama İngilizcede baştaki 'h' okunur: 'ho-TEL'."
         }
       },
       "tags": {
@@ -190,7 +190,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -254,13 +256,7 @@
           "equivalence": "partial",
           "false_friend": null,
           "note": "'Plaj' denizin yanındaki kumlu ya da çakıllı yerdir; 'sahil' ise kıyı şeridinin tamamıdır ve İngilizcede 'coast' ya da 'seaside' denir. Yüzülen yer için 'beach' kullanılır.",
-          "mistakes": [
-            {
-              "wrong": "We go to the sea every weekend in summer.",
-              "right": "We go to the beach every weekend in summer.",
-              "why": "Türkçede 'denize gitmek' dersiniz. İngilizcede 'go to the sea' mümkündür ama denize doğru gitmek gibi duyulur; yüzmek ve güneşlenmek için doğal söyleyiş 'go to the beach' olur."
-            }
-          ],
+          "mistakes": [],
           "mnemonic": null
         }
       },
@@ -572,7 +568,7 @@
               "why": "Türkçede 'dişini fırçala' dersiniz ve 'diş' tekil kalır. İngilizcede bütün dişler için çoğul gerekir: teeth."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Tooth' çoğulda 'teeth' olur, tıpkı 'foot' (ayak) ve 'feet' gibi: 'oo' gider, 'ee' gelir."
         }
       },
       "tags": {
@@ -599,7 +595,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

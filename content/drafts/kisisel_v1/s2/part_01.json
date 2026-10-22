@@ -254,12 +254,12 @@
       "mistakes": [
         {"wrong": "Today is very wind.", "right": "It is very windy today.", "why": "İsim (wind) yerine sıfat gerekir: windy. Havadan söz ederken özne 'it' olur."}
       ],
-      "mnemonic": null
+      "mnemonic": "Wind + y = windy. Hava sıfatlarının çoğu böyle: rain → rainy, cloud → cloudy, sun → sunny."
     }
   },
   "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "Hold your hat! It is very ______ today.", "answer": "windy", "distractors": ["snowy", "foggy", "dry"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.autumn.n.1",
@@ -296,12 +296,12 @@
       "false_friend": null,
       "note": "Okunuşu 'otım' gibidir; sondaki 'n' okunmaz. Amerikan İngilizcesinde 'fall' da denir. Mevsim adları küçük harfle yazılır.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "'Autumn' sonundaki 'n' sonbaharda yaprak gibi düşer: yazılır ama okunmaz."
     }
   },
   "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "The leaves turn red and yellow in ______.", "answer": "autumn", "distractors": ["summer", "spring", "winter"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.weekend.n.1",
@@ -384,12 +384,12 @@
       "mistakes": [
         {"wrong": "I will study this night.", "right": "I will study tonight.", "why": "'Bu gece / bu akşam' için tek kelime 'tonight' kullanılır; 'this night' doğal değildir."}
       ],
-      "mnemonic": null
+      "mnemonic": "'Today', 'tonight', 'tomorrow' üçlüsü: hepsi 'to' ile başlar. Bugün, bu akşam, yarın."
     }
   },
   "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I have a big exam tomorrow, so I will study ______.", "answer": "tonight", "distractors": ["yesterday", "already", "last week"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.ago.adv.1",

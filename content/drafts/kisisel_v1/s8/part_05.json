@@ -827,7 +827,7 @@
               "why": "Türkçede 'ne kadar sık' ve 'ne kadar süre' sorularının ikisi de 'ne kadar' ile başlar. Sıklık için 'how often', süre için 'how long' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Often' kelimesinde 't' çoğu zaman okunmaz (ofın). 'Listen' kelimesindeki 't' gibi."
         }
       },
       "tags": {
@@ -852,7 +852,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

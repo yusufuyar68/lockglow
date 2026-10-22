@@ -1,0 +1,1082 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lockglow sakin ilerleme</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,800&display=swap">
+<style>
+/* Düzen: solda iPhone çerçevesi, sağda durum seçici ve tasarım notu; altta ilkeler.
+   Sistem docs/tasarim/lockglow_ui_mockup.html ile aynı: kâğıt + mürekkep, sarı fosfor şeridi yalnız
+   öğrenilecek İngilizce kelimede. İlerleme çubukları, raflar ve halkalar mürekkep tonlarıdır.
+   İngilizce serif (New York), Türkçe ve arayüz SF Pro. */
+:root{
+  --bg:#F3F3EE; --surface:#FFFFFF; --surface-2:#EBEBE4; --surface-3:#DEDED6;
+  --line:rgba(21,24,27,.10); --line-strong:rgba(21,24,27,.22);
+  --ink:#15181B; --ink-2:#4E555B; --ink-3:#626A71;
+  --band:#F5E829; --band-ink:#15181B; --band-top:.36em; --band-bottom:.03em; --band-h:auto; --band-halo:0;
+  --mark:rgba(245,232,41,.80); --mark-a:40%; --mark-b:94%;
+  --primary:#15181B; --on-primary:#FFFFFF; --primary-glow:none;
+  --tint:#15181B; --tint-soft:rgba(21,24,27,.08);
+  --good:#17703F; --good-tint:#DFF2E6; --bad:#B3261E; --bad-tint:#FBE5E2; --caution:#8F5600;
+  --glass-bg:rgba(255,255,255,.58); --glass-line:rgba(255,255,255,.9);
+  --shadow-card:0 1px 2px rgba(21,24,27,.05),0 12px 30px -16px rgba(21,24,27,.22);
+  --shadow-bar:0 1px 0 rgba(255,255,255,.9) inset,0 10px 28px -10px rgba(21,24,27,.30);
+  --chrome-panel:#FFFFFF; --bezel:#0d0e10; --bezel-edge:#34363c;
+  --rule:rgba(21,24,27,.07);
+  --wall-a:#1C2733; --wall-b:#3A3F52; --wall-c:#6B5E57; --on-wall:#FFFFFF; --wall-acc:rgba(255,255,255,.16);
+  --home-a:#D9DCD3; --home-b:#B9BFB4;
+  --font-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",system-ui,sans-serif;
+  --font-en:ui-serif,"New York","Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D0F11; --surface:#191C20; --surface-2:#24282D; --surface-3:#30353B;
+    --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.18);
+    --ink:#F3F4F0; --ink-2:#B7BDC2; --ink-3:#8E959B;
+    --band:#E9E040; --band-ink:#F3F4F0; --band-top:auto; --band-bottom:-.2em; --band-h:.13em; --band-halo:1;
+    --mark:rgba(233,224,64,.95); --mark-a:84%; --mark-b:100%;
+    --primary:#E9E040; --on-primary:#15181B; --primary-glow:0 0 26px -4px rgba(233,224,64,.45);
+    --tint:#F3F4F0; --tint-soft:rgba(255,255,255,.10);
+    --good:#5BD08F; --good-tint:rgba(91,208,143,.16); --bad:#FF8C80; --bad-tint:rgba(255,140,128,.16); --caution:#FF9E5A;
+    --glass-bg:rgba(44,48,54,.55); --glass-line:rgba(255,255,255,.16);
+    --shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 16px 36px -18px rgba(0,0,0,.75);
+    --shadow-bar:0 1px 0 rgba(255,255,255,.10) inset,0 12px 30px -8px rgba(0,0,0,.7);
+    --chrome-panel:#14171A; --bezel:#050607; --bezel-edge:#2a2c31;
+    --rule:rgba(255,255,255,.06);
+    --home-a:#22262B; --home-b:#15181B;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D0F11; --surface:#191C20; --surface-2:#24282D; --surface-3:#30353B;
+  --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.18);
+  --ink:#F3F4F0; --ink-2:#B7BDC2; --ink-3:#8E959B;
+  --band:#E9E040; --band-ink:#F3F4F0; --band-top:auto; --band-bottom:-.2em; --band-h:.13em; --band-halo:1;
+  --mark:rgba(233,224,64,.95); --mark-a:84%; --mark-b:100%;
+  --primary:#E9E040; --on-primary:#15181B; --primary-glow:0 0 26px -4px rgba(233,224,64,.45);
+  --tint:#F3F4F0; --tint-soft:rgba(255,255,255,.10);
+  --good:#5BD08F; --good-tint:rgba(91,208,143,.16); --bad:#FF8C80; --bad-tint:rgba(255,140,128,.16); --caution:#FF9E5A;
+  --glass-bg:rgba(44,48,54,.55); --glass-line:rgba(255,255,255,.16);
+  --shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 16px 36px -18px rgba(0,0,0,.75);
+  --shadow-bar:0 1px 0 rgba(255,255,255,.10) inset,0 12px 30px -8px rgba(0,0,0,.7);
+  --chrome-panel:#14171A; --bezel:#050607; --bezel-edge:#2a2c31;
+  --rule:rgba(255,255,255,.06);
+  --home-a:#22262B; --home-b:#15181B;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ui);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 48px;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:10px}
+svg.ic{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+a{color:var(--ink);text-underline-offset:2px}
+
+/* ───────── Sayfa çerçevesi ───────── */
+.topbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding-block:16px 12px;max-width:1240px;margin:0 auto}
+.brand{display:flex;flex-direction:column;gap:0;min-width:0}
+.brand b{font:700 23px/1.1 var(--font-en);letter-spacing:-.01em}
+.brand small{font:500 13px var(--font-ui);color:var(--ink-3)}
+.mainnav,.pseg{display:flex;flex-wrap:wrap;gap:2px;background:var(--surface-2);padding:3px;border-radius:13px}
+.mainnav button,.pseg button{min-height:44px;padding:0 14px;border-radius:10px;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.pseg button{padding:0 12px;font-size:14px}
+.mainnav button[aria-pressed="true"],.pseg button[aria-pressed="true"]{background:var(--primary);color:var(--on-primary)}
+.topbar .spacer{flex:1}
+.workspace{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;max-width:1240px;margin:0 auto;align-items:start}
+.stage{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;padding-top:6px}
+.phone-box{position:relative;flex:none}
+.phone-box .phone{position:absolute;left:0;top:0;transform-origin:0 0}
+.stage-cap{font-size:13px;color:var(--ink-3);text-align:center;max-width:52ch}
+.panel{background:var(--chrome-panel);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.panel h2{margin:0 0 8px;font:700 12px var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{min-height:44px;padding:0 14px;border-radius:22px;background:var(--surface-2);font-weight:600;font-size:14px;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{background:var(--primary);color:var(--on-primary)}
+.note{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--ink-2)}
+.note h3{margin:0;font:700 18px/1.25 var(--font-ui);color:var(--ink);text-wrap:balance}
+.note h4{margin:4px 0 0;font:700 13px var(--font-ui);color:var(--ink)}
+.note p{margin:0}
+.note ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.note .box{background:var(--surface-2);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--ink-2)}
+.note .box b{color:var(--ink)}
+.note .src{font-size:13px}
+@media (max-width:1020px){.workspace{grid-template-columns:minmax(0,1fr)}}
+
+/* ───────── iPhone çerçevesi ───────── */
+.phone{--sw:390px;--sh:844px;--sr:48px;--safe-top:54px;--safe-bottom:34px;--bar-h:64px;--bar-b:20px;--bar-space:calc(var(--bar-h) + var(--bar-b) + 18px);
+  position:relative;padding:12px;background:var(--bezel);border-radius:60px;
+  box-shadow:0 0 0 1.5px var(--bezel-edge) inset,0 50px 90px -40px rgba(0,0,0,.55);color:var(--ink);font-family:var(--font-ui)}
+.screen{position:relative;width:var(--sw);height:var(--sh);border-radius:var(--sr);overflow:hidden;background:var(--bg);isolation:isolate}
+.statusbar{position:absolute;top:0;left:0;right:0;height:var(--safe-top);display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;z-index:50;font:600 16px var(--font-ui);color:var(--ink);pointer-events:none}
+.statusbar.light{color:var(--on-wall)}
+.statusbar .si{display:flex;gap:6px;align-items:center}
+.statusbar svg{height:12px;width:auto;fill:currentColor}
+.island{position:absolute;top:11px;left:50%;width:122px;height:36px;margin-left:-61px;background:#000;border-radius:20px;z-index:55}
+.homebar{position:absolute;bottom:8px;left:50%;width:136px;height:5px;margin-left:-68px;border-radius:3px;background:var(--ink);opacity:.85;z-index:60;pointer-events:none}
+.homebar.light{background:var(--on-wall)}
+
+.app{position:absolute;inset:0;padding-top:var(--safe-top);display:flex;flex-direction:column;background:var(--bg)}
+.scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 16px var(--bar-space);scrollbar-width:none;display:flex;flex-direction:column;gap:14px}
+.scroll::-webkit-scrollbar{display:none}
+.scroll > *{flex-shrink:0}
+.app.round .scroll{padding-bottom:24px}
+.navbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:52px;padding:0 12px;gap:8px}
+.navbar .ttl{font:600 17px var(--font-ui);text-align:center}
+.btn-cap{min-height:44px;padding:0 14px 0 8px;border-radius:22px;font:600 17px var(--font-ui);color:var(--ink);background:var(--glass-bg);border:1px solid var(--glass-line);box-shadow:0 6px 16px -8px rgba(0,0,0,.25);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);display:inline-flex;align-items:center;gap:2px;justify-self:start}
+.btn-cap svg{width:22px;height:22px}
+.seg{display:flex;gap:2px;background:var(--surface-2);padding:3px;border-radius:12px;margin:2px 16px 12px}
+.seg button{flex:1;min-height:38px;border-radius:9px;font:600 15px var(--font-ui);color:var(--ink-2);text-align:center}
+.seg button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1.5px var(--tint) inset}
+.lt{font:700 34px/1.1 var(--font-ui);letter-spacing:-.012em;margin:6px 0 2px}
+
+.tabbar{position:absolute;left:16px;right:16px;bottom:var(--bar-b);height:var(--bar-h);border-radius:34px;display:flex;gap:2px;padding:4px;z-index:30;
+  background:var(--glass-bg);border:1px solid var(--glass-line);box-shadow:var(--shadow-bar);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.tab{flex:1;border-radius:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ink-2);font:600 12px var(--font-ui)}
+.tab svg{width:25px;height:25px}
+.tab[aria-selected="true"]{background:var(--tint-soft);color:var(--ink)}
+.app.round .tabbar{display:none}
+.app:not(.round)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:calc(var(--bar-h) + var(--bar-b) + 8px);background:linear-gradient(to bottom,transparent,var(--bg) 70%);pointer-events:none;z-index:20}
+
+/* ───────── Ortak bileşenler ───────── */
+.card{background:var(--surface);border-radius:26px;box-shadow:var(--shadow-card);padding:20px}
+.flat{background:var(--surface);border-radius:18px;border:1px solid var(--line);padding:16px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:6px 4px -4px}
+.sec-h h2{margin:0;font:700 20px/1.2 var(--font-ui);letter-spacing:-.01em}
+.sec-h span{font-size:15px;color:var(--ink-3)}
+.t-sub{font:400 15px/1.4 var(--font-ui);color:var(--ink-2);margin:0}
+.t-foot{font:400 13px/1.4 var(--font-ui);color:var(--ink-2);margin:0}
+.en{font-family:var(--font-en)}
+.w{font:700 17px/1.2 var(--font-en);color:var(--ink)}
+.g{font:400 15px/1.3 var(--font-ui);color:var(--ink-2)}
+.btn{min-height:44px;padding:0 20px;border-radius:22px;font:600 17px/1.2 var(--font-ui);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}
+.btn-lg{min-height:54px;border-radius:27px}
+.btn-primary{background:var(--primary);color:var(--on-primary);box-shadow:var(--primary-glow)}
+.btn-secondary{background:var(--surface-2);color:var(--ink)}
+.btn.block{width:100%}
+.btn.small{min-height:44px;font-size:15px;padding:0 16px}
+.btn:active,.shelf:active,.wcard:active,.row-btn:active{transform:scale(.985)}
+.pill{display:inline-flex;align-items:center;gap:5px;min-height:26px;padding:0 10px;border-radius:13px;background:var(--surface-2);font:600 13px var(--font-ui);color:var(--ink)}
+.pill svg{width:14px;height:14px}
+
+/* Fosfor şeridi (yalnız İngilizce kelime). Geometri temaya göre belirteçlerden gelir. */
+.band{position:relative;z-index:0;color:var(--band-ink)}
+.band::before{content:"";position:absolute;z-index:-1;left:-.08em;right:-.08em;top:var(--band-top);bottom:var(--band-bottom);height:var(--band-h);background:var(--band);
+  clip-path:polygon(.12em 0,100% 0,calc(100% - .12em) 100%,0 100%);transform-origin:left center}
+.band::after{content:"";position:absolute;z-index:-2;left:0;right:0;bottom:-.26em;height:.24em;background:var(--band);opacity:calc(var(--band-halo) * .38);filter:blur(.16em);border-radius:50%}
+.band.sweep::before{animation:sweep .7s cubic-bezier(.2,.7,.2,1) .3s both}
+.band.sweep::after{animation:fadein .5s ease-out .8s both}
+@keyframes sweep{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fadein{from{opacity:0}}
+.mark{background:linear-gradient(transparent var(--mark-a),var(--mark) var(--mark-a),var(--mark) var(--mark-b),transparent var(--mark-b));-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em}
+
+/* Raf tonları: kurşun kalemden mürekkebe. */
+.l1{--tone:color-mix(in srgb,var(--ink) 20%,var(--surface))}
+.l2{--tone:color-mix(in srgb,var(--ink) 34%,var(--surface))}
+.l3{--tone:color-mix(in srgb,var(--ink) 50%,var(--surface))}
+.l4{--tone:color-mix(in srgb,var(--ink) 66%,var(--surface))}
+.l5{--tone:color-mix(in srgb,var(--ink) 82%,var(--surface))}
+.l6{--tone:var(--ink)}
+
+/* Kitaplık: raflar */
+.hero-n{display:flex;align-items:baseline;gap:8px}
+.hero-n b{font:700 44px/1 var(--font-ui);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.hero-n span{font:600 20px var(--font-ui)}
+.stack{display:flex;height:12px;border-radius:6px;overflow:hidden;gap:2px;margin:14px 0 10px}
+.stack i{display:block;background:var(--tone);min-width:3px}
+.stack i.self{background:repeating-linear-gradient(135deg,var(--ink-3) 0 2px,transparent 2px 5px)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:10px;height:10px;border-radius:3px;background:var(--tone)}
+.legend i.self{background:repeating-linear-gradient(135deg,var(--ink-3) 0 2px,transparent 2px 4px);box-shadow:0 0 0 1px var(--ink-3) inset}
+.shelves{display:flex;flex-direction:column;background:var(--surface);border-radius:22px;box-shadow:var(--shadow-card);padding:4px 0}
+.shelf{display:grid;grid-template-columns:1fr auto;align-items:end;gap:4px 10px;padding:12px 16px 0;width:100%;text-align:left}
+.shelf-h{display:flex;flex-direction:column;gap:1px;min-width:0}
+.shelf-h b{font:700 16px/1.2 var(--font-ui)}
+.shelf-h small{font:400 13px var(--font-ui);color:var(--ink-3)}
+.shelf .cnt{font:700 17px var(--font-ui);font-variant-numeric:tabular-nums;align-self:start;display:flex;align-items:center;gap:4px}
+.shelf .cnt svg{width:16px;height:16px;color:var(--ink-3);transition:transform .2s}
+.shelf[aria-expanded="true"] .cnt svg{transform:rotate(90deg)}
+.books{grid-column:1/-1;display:flex;align-items:flex-end;gap:2px;min-height:42px;padding-bottom:0;border-bottom:3px solid var(--line-strong);margin-top:4px;overflow:hidden}
+.spine{display:block;flex:none;border-radius:2px 2px 0 0;background:var(--tone);position:relative}
+.spine::after{content:"";position:absolute;left:0;right:0;top:5px;height:2px;background:var(--surface);opacity:.35}
+.spine.self{background:transparent;box-shadow:0 0 0 1.5px var(--ink-3) inset;border-radius:2px 2px 0 0}
+.spine.self::after{display:none}
+.books .more{font:600 12px var(--font-ui);color:var(--ink-3);padding:0 0 4px 6px;align-self:center}
+.books.empty{border-bottom-style:dashed}
+.shelf-list{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px 4px}
+.wchip{display:inline-flex;align-items:baseline;gap:6px;min-height:44px;padding:0 12px;border-radius:22px;background:var(--surface-2)}
+.wchip .w{font-size:16px}
+.wchip .g{font-size:13px}
+.self-box{border:1.5px dashed var(--line-strong);border-radius:22px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.self-box .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.self-box b{font:700 16px var(--font-ui)}
+.how{display:flex;flex-direction:column;gap:10px}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.steps div{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;font:600 11px/1.2 var(--font-ui);color:var(--ink-2)}
+.steps i{display:block;width:100%;height:30px;border-radius:8px;background:var(--tone);position:relative}
+.steps b{font:700 12px var(--font-ui);color:var(--ink)}
+.rules{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px;color:var(--ink-2);margin:0}
+.rules dt{font-weight:700;color:var(--ink)}
+.rules dd{margin:0}
+.link-btn{display:inline-flex;align-items:center;gap:4px;min-height:44px;font:600 15px var(--font-ui);color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+
+/* Kitaplık: defter */
+.notebook{background:var(--surface);border-radius:22px;box-shadow:var(--shadow-card);padding:16px 16px 18px;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 33px,var(--rule) 33px 34px);background-position:0 46px}
+.notebook h3{margin:0 0 10px;font:600 13px var(--font-ui);color:var(--ink-3);letter-spacing:.02em}
+.words{display:flex;flex-wrap:wrap;gap:0 14px;line-height:34px}
+.dw{font-family:var(--font-en);font-size:19px;min-height:34px;color:var(--ink)}
+.dw.l1{color:var(--ink-3);font-weight:400;opacity:.75;letter-spacing:.01em}
+.dw.l2{color:var(--ink-3);font-weight:400}
+.dw.l3{color:var(--ink-2);font-weight:500}
+.dw.l4{color:var(--ink-2);font-weight:600}
+.dw.l5{color:var(--ink);font-weight:600}
+.dw.l6{color:var(--ink);font-weight:800}
+.dw.self{text-decoration:underline dashed var(--ink-3);text-underline-offset:5px;text-decoration-thickness:1px}
+.scale{display:flex;justify-content:space-between;align-items:baseline;gap:4px;font-family:var(--font-en);font-size:19px}
+.scale-cap{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);margin-top:2px}
+
+/* Kitaplık: bahçe */
+.garden{display:flex;flex-direction:column;gap:12px}
+.bed{background:var(--surface);border-radius:20px;box-shadow:var(--shadow-card);padding:12px 14px}
+.bed-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.bed-h b{font:700 15px var(--font-ui)}
+.bed-h span{font-size:13px;color:var(--ink-3)}
+.plots{display:grid;grid-template-columns:repeat(8,1fr);gap:2px}
+.plant{display:grid;place-items:center;height:40px;color:var(--ink);border-radius:10px}
+.plant svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.plant.self{color:var(--ink-3)}
+
+/* Alt sayfa (kelime ayrıntısı) */
+.sheet-back{position:absolute;inset:0;background:rgba(0,0,0,.28);z-index:70;display:flex;align-items:flex-end}
+.sheet{width:100%;background:var(--surface);border-radius:28px 28px 0 0;padding:10px 20px 40px;display:flex;flex-direction:column;gap:10px;box-shadow:0 -10px 40px -10px rgba(0,0,0,.3)}
+.sheet .grab{width:38px;height:5px;border-radius:3px;background:var(--line-strong);align-self:center;margin-bottom:6px}
+.sheet .head{font:700 34px/1.1 var(--font-en);letter-spacing:-.01em;padding-bottom:.25em}
+.sheet .gl{font:700 22px var(--font-ui)}
+.sheet .ex{font:400 17px/1.4 var(--font-en);margin:0}
+.sheet .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+/* Hafta */
+.lead{font:600 20px/1.35 var(--font-ui);letter-spacing:-.005em;margin:0;text-wrap:pretty}
+.lead .en{font-weight:700}
+.date-cap{font:600 13px var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.cards-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 10px;scrollbar-width:none}
+.cards-row::-webkit-scrollbar{display:none}
+.wcard{flex:none;width:150px;min-height:156px;scroll-snap-align:start;background:var(--surface);border-radius:20px;box-shadow:var(--shadow-card);padding:14px;display:flex;flex-direction:column;gap:4px;text-align:left}
+.wcard .w{font-size:21px;line-height:1.15}
+.wcard .g{font-weight:600;color:var(--ink)}
+.wcard .foot{margin-top:auto;display:flex;flex-direction:column;gap:5px}
+.wcard .ex{font:400 15px/1.35 var(--font-en);color:var(--ink);margin:0}
+.wcard .tr{font-size:13px;color:var(--ink-2);margin:0}
+.meter{display:flex;gap:3px}
+.meter i{flex:1;height:5px;border-radius:3px;background:var(--surface-3)}
+.meter i.on{background:var(--ink)}
+.meter-cap{font:600 12px var(--font-ui);color:var(--ink-3)}
+.tip{display:flex;gap:12px;align-items:flex-start}
+.tip svg{width:22px;height:22px;flex:none;color:var(--ink-2);margin-top:1px}
+.tip p{margin:0}
+.calib{display:flex;flex-direction:column;gap:10px;margin:12px 0}
+.calib .r{display:grid;grid-template-columns:76px 1fr 52px;align-items:center;gap:10px;font-size:14px}
+.calib .r b{font-weight:700}
+.calib .track{height:10px;border-radius:5px;background:var(--surface-2);overflow:hidden}
+.calib .track i{display:block;height:100%;background:var(--ink);border-radius:5px}
+.calib .r span{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end;height:112px;margin:12px 0 4px}
+.week div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%}
+.week i{display:block;width:100%;max-width:28px;border-radius:6px 6px 3px 3px;background:var(--tone)}
+.week b{font:700 12px var(--font-ui);font-variant-numeric:tabular-nums}
+.week small{font:600 12px var(--font-ui);color:var(--ink-3)}
+
+/* Konular */
+.topic{display:flex;flex-direction:column;gap:8px;padding:14px 0;border-top:1px solid var(--line)}
+.topic:first-child{border-top:0;padding-top:4px}
+.row-btn{display:flex;flex-direction:column;gap:8px;width:100%;text-align:left}
+.topic .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.topic .top b{font:700 16px var(--font-ui)}
+.topic .top span{font:600 14px var(--font-ui);color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar3{display:flex;height:10px;border-radius:5px;background:var(--surface-2);overflow:hidden;gap:2px}
+.bar3 i{display:block;height:100%}
+.bar3 .k{background:var(--ink)}
+.bar3 .l{background:color-mix(in srgb,var(--ink) 38%,var(--surface))}
+.topic .sub{font-size:13px;color:var(--ink-3)}
+.topic .open{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--ink-2)}
+.topic .open p{margin:0}
+.topic .open .en{color:var(--ink);font-weight:600}
+.lg3{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--ink-2)}
+.lg3 span{display:inline-flex;align-items:center;gap:6px}
+.lg3 i{width:12px;height:12px;border-radius:3px}
+.lg3 .k{background:var(--ink)}.lg3 .l{background:color-mix(in srgb,var(--ink) 38%,var(--surface))}.lg3 .n{background:var(--surface-2);box-shadow:0 0 0 1px var(--line-strong) inset}
+.lvlb{display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:0 8px;border-radius:12px;border:1.5px solid var(--line-strong);font:700 13px var(--font-ui)}
+.lvlb i{display:flex;gap:2px}.lvlb i b{width:5px;height:5px;border-radius:50%;background:var(--ink-3);opacity:.35}.lvlb i b.on{background:var(--ink);opacity:1}
+.done-topic{display:flex;gap:12px;align-items:flex-start}
+.done-topic svg{width:26px;height:26px;flex:none}
+
+/* Tekrar */
+.hero{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.hero h2{margin:0;font:700 28px/1.2 var(--font-ui);letter-spacing:-.01em;text-wrap:balance}
+.badge-n{width:78px;height:78px;border-radius:50%;border:3px solid var(--ink);display:grid;place-items:center;font:700 28px var(--font-ui)}
+.entry{display:flex;align-items:center;gap:14px;width:100%;text-align:left}
+.entry .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.entry .txt b{font:700 17px var(--font-ui)}
+.entry .chev{width:18px;height:18px;color:var(--ink-3)}
+.mini-sh{display:flex;flex-direction:column;gap:3px;width:62px;flex:none}
+.mini-sh div{display:flex;gap:1px;align-items:flex-end;height:9px;border-bottom:1.5px solid var(--line-strong)}
+.mini-sh i{display:block;width:3px;background:var(--tone);border-radius:1px 1px 0 0}
+.sum-h{font:400 17px/1.4 var(--font-ui);color:var(--ink);margin:4px 4px 0}
+.moves{display:flex;flex-wrap:wrap;gap:6px;margin:0 2px}
+.srow{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:11px 0;border-top:1px solid var(--line)}
+.srow:first-of-type{border-top:0}
+.srow .w{font-size:18px}
+.srow .grade{font:600 13px var(--font-ui);color:var(--ink-2);text-align:right;align-self:center}
+.srow .mv{grid-column:1/-1;display:flex;align-items:center;gap:6px;font:500 14px var(--font-ui);color:var(--ink-2)}
+.srow .mv svg{width:15px;height:15px}
+.srow .mv b{color:var(--ink);font-weight:700}
+.mile{display:flex;flex-direction:column;gap:8px;padding:22px 20px}
+.mile .word{font:700 40px/1.1 var(--font-en);letter-spacing:-.012em;padding-bottom:.3em;align-self:flex-start}
+.mile .what{font:700 20px/1.3 var(--font-ui);margin:0}
+.notes{display:flex;flex-direction:column;gap:12px}
+.nrow{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.nrow svg{width:21px;height:21px;color:var(--ink-2);flex:none;margin-top:1px}
+.donemark{width:64px;height:64px;border-radius:50%;background:var(--tint-soft);display:grid;place-items:center}
+.donemark svg{width:32px;height:32px;stroke-width:2.4}
+
+/* Kilit ekranı ve ana ekran */
+.lock{position:absolute;inset:0;color:var(--on-wall);
+  background:radial-gradient(120% 70% at 20% 10%,var(--wall-b),transparent 60%),radial-gradient(90% 60% at 90% 90%,var(--wall-c),transparent 65%),var(--wall-a)}
+.lock.dim{filter:brightness(.42) saturate(.6)}
+.lock .date{position:absolute;top:84px;left:0;right:0;text-align:center;font:600 19px var(--font-ui);display:flex;justify-content:center;gap:8px;opacity:.95}
+.lock .date .inl{opacity:.85;font-weight:600}
+.lock .time{position:absolute;top:104px;left:0;right:0;text-align:center;font:700 104px/1 var(--font-ui);letter-spacing:-.03em;opacity:.95}
+.lock .wrow{position:absolute;top:232px;left:26px;right:26px;display:flex;gap:10px;justify-content:center}
+.lw{background:var(--wall-acc);border-radius:20px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.lw.rect{width:170px;height:76px;padding:8px 13px;display:flex;flex-direction:column;justify-content:center;gap:1px;overflow:hidden}
+.lw.circ{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;position:relative}
+.lw .lw-w{font:700 17px/1.15 var(--font-en);position:relative;align-self:flex-start;padding-bottom:3px}
+.lw .lw-w::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:1px;background:var(--on-wall)}
+.lw .lw-g{font:600 14px/1.2 var(--font-ui)}
+.lw .lw-d{font:400 12px/1.2 var(--font-en);opacity:.72;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lw .cap{font:600 12px var(--font-ui);opacity:.75}
+.lw .mbars{display:flex;gap:4px;align-items:flex-end;height:26px}
+.lw .mbars i{display:block;width:16px;border-radius:3px 3px 1px 1px;background:var(--on-wall)}
+.lw .lw-t{font:600 13px/1.2 var(--font-ui)}
+.gauge{position:absolute;inset:6px}
+.gauge circle{fill:none;stroke:var(--on-wall);stroke-width:6;stroke-linecap:round}
+.gauge .tr{opacity:.25}
+.lw.circ .num{font:700 22px/1 var(--font-ui);text-align:center}
+.lw.circ .num small{display:block;font:600 10px var(--font-ui);opacity:.8;margin-top:2px}
+.lock .flash{position:absolute;bottom:52px;left:46px;width:50px;height:50px;border-radius:50%;background:var(--wall-acc)}
+.lock .cam{position:absolute;bottom:52px;right:46px;width:50px;height:50px;border-radius:50%;background:var(--wall-acc)}
+.home{position:absolute;inset:0;background:linear-gradient(160deg,var(--home-a),var(--home-b));padding:70px 22px 0}
+.home .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 14px}
+.home .w2{grid-column:span 2;grid-row:span 2}
+.app-ic{display:flex;flex-direction:column;align-items:center;gap:5px;font:500 11px var(--font-ui);color:var(--ink)}
+.app-ic i{width:62px;height:62px;border-radius:15px;background:var(--surface);box-shadow:var(--shadow-card);display:block}
+.hw{width:100%;aspect-ratio:1;max-width:100%;background:var(--surface);border-radius:22px;box-shadow:var(--shadow-card);padding:13px 14px;display:flex;flex-direction:column;gap:6px}
+.hw .cap{font:600 12px var(--font-ui);color:var(--ink-3)}
+.hw .mini-sh{width:100%;gap:4px}
+.hw .mini-sh div{height:12px}
+.hw .mini-sh i{width:4px}
+.hw .n{font:700 15px/1.2 var(--font-ui);margin-top:auto}
+.hw .n small{display:block;font:500 12px var(--font-ui);color:var(--ink-2)}
+.hw.word .w{font-size:22px;position:relative;align-self:flex-start}
+
+/* İlkeler bölümü */
+.principles{max-width:1240px;margin:40px auto 0;display:flex;flex-direction:column;gap:18px}
+.principles h2{margin:0;font:700 26px/1.2 var(--font-ui);letter-spacing:-.01em;text-wrap:balance}
+.principles > p{margin:0;max-width:68ch;color:var(--ink-2)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.pcard{background:var(--chrome-panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pcard b{font:700 16px/1.3 var(--font-ui)}
+.pcard p{margin:0;font-size:14px;color:var(--ink-2)}
+.pcard .src{font-size:13px;margin-top:auto;padding-top:4px}
+.nolist{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px 18px;margin:0;padding:0;list-style:none}
+.nolist li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-2);min-width:0}
+.nolist li svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--ink-3)}
+.nolist li b{color:var(--ink)}
+@media (prefers-reduced-motion: reduce){
+  .band.sweep::before,.band.sweep::after{animation:none}
+  .shelf .cnt svg{transition:none}
+  .btn:active,.shelf:active,.wcard:active,.row-btn:active{transform:none}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="p1" viewBox="0 0 24 24"><path d="M4 20h16"/><ellipse cx="12" cy="17.6" rx="2.3" ry="1.5" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="p2" viewBox="0 0 24 24"><path d="M4 20h16M12 20v-5"/><path d="M12 15c0-2.6 2.4-3.6 4.2-3.2-.4 2-2.1 3.2-4.2 3.2z"/></symbol>
+  <symbol id="p3" viewBox="0 0 24 24"><path d="M4 20h16M12 20v-7"/><path d="M12 14c0-2.6 2.5-3.6 4.5-3.1-.5 2-2.2 3.1-4.5 3.1zM12 16.2c0-2.1-2.2-3-4-2.6.4 1.7 2 2.6 4 2.6z"/></symbol>
+  <symbol id="p4" viewBox="0 0 24 24"><path d="M4 20h16M12 20V8"/><path d="M12 11c0-2.8 2.6-4 4.8-3.4-.5 2.2-2.3 3.4-4.8 3.4zM12 14.5c0-2.3-2.3-3.3-4.3-2.8.4 1.8 2.1 2.8 4.3 2.8zM12 17.4c0-1.9 2-2.7 3.6-2.3-.4 1.5-1.8 2.3-3.6 2.3z"/></symbol>
+  <symbol id="p5" viewBox="0 0 24 24"><path d="M4 20h16M12 20v-8"/><path d="M12 16c0-2.3 2.3-3.3 4.2-2.8-.4 1.9-2 2.8-4.2 2.8z"/><circle cx="12" cy="8.2" r="3.4"/><circle cx="12" cy="8.2" r="1.2" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="p6" viewBox="0 0 24 24"><path d="M4 20h16M12 20v-6"/><circle cx="12" cy="9" r="5.6" fill="currentColor"/></symbol>
+  <symbol id="pS" viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M8 20l-1-6h10l-1 6" stroke-dasharray="2 2"/><path d="M12 14v-3"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="brand"><b>Lockglow · sakin ilerleme</b><small>Tasarım keşfi, 26 Ekim 2026 pazartesi gibi gösterilir. Örnek veriler gerçek kartlardan.</small></div>
+  <nav class="mainnav" id="nav" aria-label="Ekranlar"></nav>
+  <div class="spacer"></div>
+  <div class="pseg" id="theme" role="group" aria-label="Tema">
+    <button type="button" id="th-sys" data-th="sys" aria-pressed="true">Sistem</button>
+    <button type="button" id="th-light" data-th="light" aria-pressed="false">Açık</button>
+    <button type="button" id="th-dark" data-th="dark" aria-pressed="false">Koyu</button>
+  </div>
+</header>
+
+<main class="workspace">
+  <section class="stage" aria-label="Telefon önizlemesi">
+    <div class="phone-box" id="phoneBox">
+      <div class="phone" id="phone"><div class="screen" id="screen"></div></div>
+    </div>
+    <p class="stage-cap" id="cap"></p>
+  </section>
+  <aside class="panel" id="panel" aria-label="Durumlar ve tasarım notu"></aside>
+</main>
+
+<section class="principles" aria-labelledby="p-h">
+  <h2 id="p-h">Sekiz ilke: gün değil kelime sayılır</h2>
+  <p>Ekranların hepsi aynı kurallarla çizildi. Her kuralın altında dayandığı araştırma var; ayrıntısı ve tam kaynak listesi <a href="sakin_ilerleme.md">sakin_ilerleme.md</a> dosyasında.</p>
+  <div class="pgrid" id="pgrid"></div>
+  <h2>Yapmadıklarımız</h2>
+  <ul class="nolist" id="nolist"></ul>
+</section>
+
+<script>
+/* ───────── Örnek veri (gerçek kartlardan; sayılar örnek) ───────── */
+const G = {
+  breakfast:'kahvaltı', bread:'ekmek', weekend:'hafta sonu', spoon:'kaşık', fork:'çatal', plate:'tabak', lunch:'öğle yemeği',
+  dinner:'akşam yemeği', tonight:'bu akşam', ago:'önce', twice:'iki kez', laugh:'gülmek', smile:'gülümsemek', cry:'ağlamak',
+  hope:'ummak', sorry:'üzgün, pişman', cheap:'ucuz', expensive:'pahalı', price:'fiyat', fridge:'buzdolabı', towel:'havlu', shower:'duş',
+  sofa:'kanepe', passport:'pasaport', hospital:'hastane', alarm:'alarm', terminal:'terminal', visa:'vize', nurse:'hemşire',
+  customer:'müşteri', cash:'nakit', angry:'kızgın', bowl:'kase', fresh:'taze', flight:'uçuş', wallet:'cüzdan', tired:'yorgun',
+  excited:'heyecanlı', daily:'günlük', midnight:'gece yarısı', snack:'atıştırmalık', delicious:'lezzetli', taste:'tadı ... olmak',
+  arrival:'varış', dentist:'diş hekimi', patient:'hasta', kettle:'su ısıtıcısı', laundry:'çamaşır', receipt:'fiş', discount:'indirim',
+  nowadays:'bugünlerde', bedtime:'yatma vakti', recipe:'tarif', slice:'dilim', blanket:'battaniye', pillow:'yastık', spend:'harcamak',
+  change:'para üstü', surprised:'şaşırmış', afraid:'korkmuş', balcony:'balkon', furniture:'mobilya', dishes:'bulaşık', trash:'çöp',
+  'let me know':'bana haber ver', appointment:'randevu', dessert:'tatlı', suitcase:'bavul', 'seat belt':'emniyet kemeri',
+  boil:'kaynatmak', fry:'kızartmak', 'small talk':'havadan sudan konuşma', awkward:'garip, tuhaf', 'print out':'çıktı almak',
+  'go over':'gözden geçirmek', currently:'şu anda', break:'mola', spicy:'acılı', 'boarding pass':'biniş kartı', departure:'kalkış',
+  lend:'ödünç vermek', borrow:'ödünç almak', actually:'aslında', 'call off':'iptal etmek', 'look into':'araştırmak',
+  thrilled:'çok mutlu ve heyecanlı'
+};
+const EX = {
+  recipe:["This is my grandmother's recipe for soup.","Bu, büyükannemin çorba tarifi."],
+  boil:["Boil the eggs for ten minutes.","Yumurtaları on dakika haşlayın."],
+  fry:["I fry an egg for breakfast every day.","Her gün kahvaltıda yumurta kızartırım."],
+  slice:["Can I have a slice of pizza?","Bir dilim pizza alabilir miyim?"],
+  spicy:["I don't like spicy food.","Acılı yemek sevmem."],
+  dessert:["What's for dessert tonight?","Bu akşam tatlı olarak ne var?"],
+  'boarding pass':["Here is my boarding pass.","İşte biniş kartım."],
+  suitcase:["My suitcase is very heavy.","Bavulum çok ağır."],
+  'seat belt':["Please fasten your seat belt.","Lütfen emniyet kemerinizi bağlayın."],
+  departure:["The departure time is nine o'clock.","Kalkış saati dokuz."],
+  lend:["Can you lend me your charger for an hour?","Şarj aletini bir saatliğine bana ödünç verebilir misin?"],
+  borrow:["Can I borrow your pen for a minute?","Kalemini bir dakikalığına ödünç alabilir miyim?"],
+  fresh:["The bread is fresh. I bought it today.","Ekmek taze. Bugün aldım."],
+  breakfast:["I usually have breakfast at seven.","Genellikle yedide kahvaltı yaparım."],
+  snack:["I always take a snack to work.","İşe hep atıştırmalık götürürüm."]
+};
+/* Raf 1–5 = Leitner kutusu; 6 = yerleşti (state .known, kanıtlı); self = "Biliyorum" ile işaretlenmiş. */
+const LIB_NORMAL = {
+  6:['breakfast','bread','weekend','spoon','fork','plate','lunch','dinner','tonight','ago','twice','laugh','smile','cry','hope','sorry','cheap','expensive','price','fridge','towel','shower'],
+  self:['sofa','passport','hospital','alarm','terminal','visa','nurse','customer','cash','angry'],
+  5:['bowl','fresh','flight','wallet','tired','excited','daily','midnight'],
+  4:['snack','delicious','taste','arrival','dentist','patient','kettle','laundry','receipt','discount','nowadays','bedtime'],
+  3:['recipe','slice','blanket','pillow','spend','change','surprised','afraid','balcony','furniture','dishes','trash','let me know','appointment'],
+  2:['dessert','suitcase','seat belt','boil','fry','small talk','awkward','print out','go over','currently','break'],
+  1:['spicy','boarding pass','departure','lend','borrow','actually','call off','look into','thrilled']
+};
+const LIB_FIRST = {6:[],self:[],5:[],4:[],3:[],2:['recipe','slice'],1:['boil','fry','spicy','dessert']};
+const LIB_EMPTY = {6:[],self:[],5:[],4:[],3:[],2:[],1:[]};
+const SHELF = {
+  6:{name:'Yerleşti', every:'ayda bir kısa tazeleme'},
+  5:{name:'Raf 5 · Çok sağlam', every:'16 günde bir sorulur'},
+  4:{name:'Raf 4 · Sağlam', every:'8 günde bir sorulur'},
+  3:{name:'Raf 3 · Güçleniyor', every:'4 günde bir sorulur'},
+  2:{name:'Raf 2 · Tanıdık', every:'2 günde bir sorulur'},
+  1:{name:'Raf 1 · Yeni', every:'her gün sorulur'}
+};
+const WEEK12 = ['recipe','slice','boil','fry','dessert','suitcase','seat belt','spicy','boarding pass','departure','lend','borrow'];
+function boxOf(w, lib){ for (const k of ['6','5','4','3','2','1']) if (lib[k].includes(w)) return +k; return lib.self.includes(w) ? 'self' : 0; }
+
+/* ───────── Durum ───────── */
+const SCREENS = [
+  {id:'kitaplik', label:'Kitaplık'},
+  {id:'hafta', label:'Bu hafta'},
+  {id:'konular', label:'Konular'},
+  {id:'tekrar', label:'Tekrar'},
+  {id:'kilit', label:'Kilit ekranı'}
+];
+const STATES = {
+  kitaplik:[['normal','86 kelime'],['ilk','İlk hafta'],['bos','Henüz boş']],
+  hafta:[['normal','Dolu hafta'],['sessiz','Sessiz hafta'],['ilk','İlk hafta']],
+  konular:[['secili','Seçtiğin konular'],['bitti','Bir konu bitti']],
+  tekrar:[['giris','Pazartesi girişi'],['tur','Tur sonu'],['yerlesti','Bir kelime yerleşti'],['zor','Zor geçen tur'],['tamam','Bugünlük tamam'],['donus','Aradan sonra']],
+  kilit:[['kilit','Kilit ekranı'],['raf','Raflar widget\'ı'],['acik','Her zaman açık'],['ana','Ana ekran']]
+};
+const S = {screen:'kitaplik', st:{kitaplik:'normal', hafta:'normal', konular:'secili', tekrar:'tur', kilit:'kilit'}, variant:'raflar',
+  open:null, sel:null, flipped:new Set(), topicOpen:null, how:false, anim:0};
+
+/* ───────── Simgeler ───────── */
+const IC = {
+  back:'<svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
+  chev:'<svg class="ic chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
+  up:'<svg class="ic" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
+  same:'<svg class="ic" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14"/></svg>',
+  again:'<svg class="ic" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v5h5"/></svg>',
+  check:'<svg class="ic" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  clock:'<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  bell:'<svg class="ic" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 21h4"/></svg>',
+  lock:'<svg class="ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg>',
+  bulb:'<svg class="ic" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>',
+  leaf:'<svg class="ic" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg>',
+  x:'<svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  akis:'<svg class="ic" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6"/></svg>',
+  tekrar:'<svg class="ic" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v5h-5"/></svg>',
+  sozluk:'<svg class="ic" viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>',
+  ayarlar:'<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>'
+};
+const STATUS = (light) => `<div class="statusbar${light ? ' light' : ''}"><span>9:41</span><span class="si">
+  <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+  <svg viewBox="0 0 16 12"><path d="M8 11.5l2.6-3.1a3.6 3.6 0 0 0-5.2 0zM3.3 6.4a6.8 6.8 0 0 1 9.4 0l1.6-1.9a9.4 9.4 0 0 0-12.6 0z"/></svg>
+  <svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="17" height="8" rx="2"/><rect x="24" y="4" width="2" height="4" rx="1" opacity=".45"/></svg>
+</span></div><div class="island"></div>`;
+const TABS = (sel) => `<nav class="tabbar" aria-label="Sekmeler">${[['akis','Akış'],['tekrar','Tekrar'],['sozluk','Sözlük'],['ayarlar','Ayarlar']]
+  .map(([k, t]) => `<button class="tab" type="button" role="tab" aria-selected="${k === sel}" tabindex="-1">${IC[k]}${t}</button>`).join('')}</nav>`;
+
+/* ───────── Yardımcılar ───────── */
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function hash(s){ let h = 2166136261; for (const c of s){ h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function spine(w, lvl){
+  const h = hash(w), height = 24 + (h % 17), width = Math.max(7, Math.min(13, 4 + w.length * 0.75));
+  return `<i class="spine ${lvl === 'self' ? 'self' : 'l' + lvl}" style="height:${height}px;width:${width.toFixed(1)}px"></i>`;
+}
+function markIn(sentence, word){
+  const i = sentence.toLowerCase().indexOf(word.toLowerCase());
+  if (i < 0) return esc(sentence);
+  return esc(sentence.slice(0, i)) + '<span class="mark">' + esc(sentence.slice(i, i + word.length)) + '</span>' + esc(sentence.slice(i + word.length));
+}
+function meter(box){
+  const n = box === 6 ? 5 : (box === 'self' ? 0 : box);
+  return `<span class="meter" aria-hidden="true">${[1,2,3,4,5].map((i) => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</span>`;
+}
+function shelfLabel(box){ return box === 'self' ? 'Kendin işaretledin' : (box === 6 ? 'Yerleşti' : 'Raf ' + box); }
+function miniShelves(lib, cls = 'mini-sh'){
+  return `<div class="${cls}" aria-hidden="true">${[6,5,4,3,2,1].map((b) => {
+    const n = lib[b].length; const k = Math.min(n, 14);
+    return `<div>${Array.from({length:k}, (_, i) => `<i class="l${b}" style="height:${5 + ((i * 7 + b) % 5)}px"></i>`).join('')}</div>`;
+  }).join('')}</div>`;
+}
+function navbar(title, back){
+  return `<div class="navbar"><button class="btn-cap" type="button" data-act="go" data-to="tekrar">${IC.back}${back}</button><div class="ttl">${title}</div><span></span></div>`;
+}
+function progressSeg(){
+  const items = [['kitaplik','Kitaplık'],['hafta','Bu hafta'],['konular','Konular']];
+  return `<div class="seg" role="tablist" aria-label="İlerleme">${items.map(([k, t]) =>
+    `<button type="button" role="tab" aria-selected="${S.screen === k}" data-act="go" data-to="${k}">${t}</button>`).join('')}</div>`;
+}
+
+/* ───────── Ekran: Kitaplık ───────── */
+function libFor(state){ return state === 'ilk' ? LIB_FIRST : state === 'bos' ? LIB_EMPTY : LIB_NORMAL; }
+function renderKitaplik(){
+  const lib = libFor(S.st.kitaplik);
+  const total = Object.values(lib).reduce((a, l) => a + l.length, 0);
+  const known = lib[6].length, self = lib.self.length, learning = total - known - self;
+  let hero;
+  if (total === 0){
+    hero = `<div class="card"><div class="hero-n"><span>Kitaplığın boş</span></div>
+      <p class="t-sub" style="margin-top:8px">İlk tekrar turunda tanıştığın kelimeler en alt rafa gelir. Her doğru cevapta bir üst rafa çıkarlar.</p>
+      <div style="margin-top:14px"><button class="btn btn-primary block btn-lg" type="button" data-act="go" data-to="tekrar">Tekrar'a git</button></div></div>`;
+  } else {
+    const segs = [6,5,4,3,2,1].filter((b) => lib[b].length).map((b) => `<i class="l${b}" style="flex:${lib[b].length}"></i>`).join('')
+      + (self ? `<i class="self" style="flex:${self}"></i>` : '');
+    const lineKnown = known ? `<b>${known}</b> tanesi yerleşti. ` : '';
+    hero = `<div class="card">
+      <div class="hero-n"><b>${total}</b><span>kelime</span></div>
+      <p class="t-sub" style="margin-top:6px">${lineKnown}<b>${learning}</b> tanesi raflarda yükseliyor.${self ? ` <b>${self}</b> tanesini kendin “biliyorum” diye işaretledin.` : ''}</p>
+      <div class="stack" role="img" aria-label="Rafların dağılımı">${segs}</div>
+      <div class="legend"><span><i class="l6"></i>yerleşti</span><span><i class="l4"></i>raflarda</span><span><i class="l1"></i>yeni</span>${self ? '<span><i class="self"></i>kendin işaretledin</span>' : ''}</div>
+    </div>`;
+  }
+  const how = `<div class="flat how">
+    <button class="link-btn" type="button" data-act="how" aria-expanded="${S.how}">${S.how ? 'Kapat' : 'Raflar nasıl çalışır?'}</button>
+    ${S.how ? `<div class="steps">${[[1,'1 gün'],[2,'2 gün'],[3,'4 gün'],[4,'8 gün'],[5,'16 gün'],[6,'ayda bir']].map(([b, t]) =>
+      `<div><i class="l${b}"></i><b>${b === 6 ? 'Yerleşti' : 'Raf ' + b}</b>${t}</div>`).join('')}</div>
+      <dl class="rules"><dt>Bildim</dt><dd>bir üst raf</dd><dt>Kolay</dt><dd>iki üst raf</dd><dt>Zor</dt><dd>aynı raf, ara yarıya iner</dd><dt>Bilemedim</dt><dd>Raf 1, 10 dakika sonra yine</dd></dl>
+      <p class="t-foot">Aralar her rafta iki katına çıkar. Kelimeyi biraz zorlanarak hatırlamak hafızayı güçlendirir. 5. raftan sonra, 16 gün aradan sonra da hatırladığın kelime “Yerleşti” rafına geçer.</p>
+      <p class="t-foot"><b>Neden “kalıcı” demiyoruz?</b> Unutma hiç tamamen durmaz. Bu yüzden yerleşen kelimeler de ayda bir kısa bir tazelemeyle sorulur.</p>` : ''}
+  </div>`;
+  let body = '';
+  if (total > 0){
+    if (S.variant === 'raflar') body = shelvesView(lib);
+    else if (S.variant === 'defter') body = notebookView(lib);
+    else body = gardenView(lib);
+  }
+  const selfBox = self ? `<div class="self-box"><div class="top"><b>Kendin işaretlediklerin</b><b>${self}</b></div>
+    <p class="t-foot">Widget'ta ya da Akış'ta “Biliyorum” dediğin kelimeler. Bir ay sonra bir kez sorulur; bilirsen “Yerleşti” rafına geçer.</p>
+    <div class="books" style="border-bottom-style:dashed">${lib.self.map((w) => spine(w, 'self')).join('')}</div></div>` : '';
+  const foot = total > 0 ? `<p class="t-foot" style="padding:0 4px">Unuttuğun kelime Raf 1'e döner. Bu bir ceza değil: bir kelimeyi ikinci kez öğrenmek ilkinden kısa sürer.</p>` : '';
+  return `<div class="app">${navbar('İlerleme', 'Tekrar')}${progressSeg()}<div class="scroll">${hero}${body}${S.variant === 'raflar' ? selfBox : ''}${total ? how : ''}${foot}</div>${TABS('tekrar')}</div>`;
+}
+function shelvesView(lib){
+  return `<div class="shelves">${[6,5,4,3,2,1].map((b) => {
+    const words = lib[b], open = S.open === b;
+    const shown = words.slice(0, 24).map((w) => spine(w, b)).join('');
+    return `<button class="shelf" type="button" data-act="shelf" data-b="${b}" aria-expanded="${open}" aria-label="${SHELF[b].name}: ${words.length} kelime. ${SHELF[b].every}.">
+        <span class="shelf-h"><b>${SHELF[b].name}</b><small>${SHELF[b].every}</small></span>
+        <span class="cnt">${words.length}${words.length ? '<svg class="ic" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>' : ''}</span>
+        <span class="books${words.length ? '' : ' empty'}" aria-hidden="true">${shown}${words.length > 24 ? `<span class="more">+${words.length - 24}</span>` : ''}</span>
+      </button>
+      ${open && words.length ? `<div class="shelf-list">${words.map((w) => `<button class="wchip" type="button" data-act="word" data-w="${esc(w)}"><span class="w">${esc(w)}</span><span class="g">${esc(G[w])}</span></button>`).join('')}</div>` : ''}`;
+  }).join('')}<div style="height:12px"></div></div>`;
+}
+function notebookView(lib){
+  const order = [6,5,4,3,2,1].flatMap((b) => lib[b].map((w) => [w, b])).concat(lib.self.map((w) => [w, 'self']));
+  return `<div class="notebook"><h3>Kurşun kalemden mürekkebe</h3>
+    <div class="words">${order.map(([w, b]) => `<button class="dw ${b === 'self' ? 'l5 self' : 'l' + b}" type="button" data-act="word" data-w="${esc(w)}">${esc(w)}</button>`).join('')}</div></div>
+    <div class="flat"><div class="scale" aria-hidden="true"><span class="dw l1">Aa</span><span class="dw l2">Aa</span><span class="dw l3">Aa</span><span class="dw l4">Aa</span><span class="dw l5">Aa</span><span class="dw l6">Aa</span></div>
+    <div class="scale-cap"><span>Raf 1: soluk kalem</span><span>yerleşti: koyu mürekkep</span></div>
+    <p class="t-foot" style="margin-top:8px">Kelime her doğru cevapta biraz daha koyu yazılır. Kesik çizgili olanları kendin işaretledin; henüz sınanmadılar.</p></div>`;
+}
+function gardenView(lib){
+  const beds = [[6,'Ağaç','yerleşti'],[5,'Çiçek','Raf 5'],[4,'Bitki','Raf 4'],[3,'Fide','Raf 3'],[2,'Filiz','Raf 2'],[1,'Tohum','Raf 1'],['self','Saksıda','kendin işaretledin']];
+  return `<div class="garden">${beds.filter(([b]) => lib[b].length).map(([b, name, sub]) =>
+    `<div class="bed"><div class="bed-h"><b>${name} · ${lib[b].length}</b><span>${sub}</span></div>
+      <div class="plots">${lib[b].map((w) => `<button class="plant${b === 'self' ? ' self' : ''}" type="button" data-act="word" data-w="${esc(w)}" aria-label="${esc(w)}: ${esc(G[w])}"><svg aria-hidden="true"><use href="#p${b === 'self' ? 'S' : b}"/></svg></button>`).join('')}</div></div>`).join('')}
+    <p class="t-foot" style="padding:0 4px">Bahçede hiçbir şey kurumaz. Tekrarı geciken kelime solmaz; yalnız unuttuğun kelime tohuma döner.</p></div>`;
+}
+
+/* ───────── Ekran: Bu hafta ───────── */
+function renderHafta(){
+  const st = S.st.hafta;
+  let body = '';
+  if (st === 'sessiz'){
+    body = `<div class="card"><p class="date-cap">Son 7 gün · 19–25 Ekim</p>
+      <p class="lead">Bu hafta sessiz geçti.</p>
+      <p class="t-sub" style="margin-top:8px">Kitaplığındaki <b>86</b> kelime yerinde duruyor. Yerleşen <b>22</b> kelime için acele yok; onlar ayda bir sorulur.</p></div>
+      <div class="flat tip">${IC.leaf}<p><b>Ara vermek öğrendiklerini silmez.</b><br><span class="t-sub">Unuttuğun bir kelimeyi yeniden öğrenmek, ilk seferden daha kısa sürer.</span></p></div>
+      <div class="flat"><p style="margin:0 0 4px;font-weight:700">18 kelime tazelenmeyi bekliyor</p>
+        <p class="t-sub">Önce en eski olanlar gelir. Bir tur birkaç dakika sürer.</p>
+        <div style="margin-top:12px"><button class="btn btn-primary block btn-lg" type="button" data-act="go" data-to="tekrar">18 kelimeyle başla</button></div></div>
+      ${nextWeek()}
+      <p class="t-foot" style="padding:0 4px">Bu sayfa her pazartesi yenilenir. Haftalık bildirim kapalı; istersen Ayarlar'dan açabilirsin.</p>`;
+  } else if (st === 'ilk'){
+    const words = ['recipe','slice','boil','fry','spicy','dessert'];
+    body = `<div class="card"><p class="date-cap">İlk haftan · 19–25 Ekim</p>
+      <p class="lead">${words.length} kelimeyle tanıştın.</p>
+      <p class="t-sub" style="margin-top:8px">Kitaplığın büyüdükçe burada daha çok şey göreceksin: rafı yükselen kelimeler, seni zorlayanlar ve tahminlerinin ne kadar tuttuğu.</p></div>
+      ${weekCards(words, LIB_FIRST)}
+      <div class="flat tip">${IC.bulb}<p><b>Neden yarın yine soruluyor?</b><br><span class="t-sub">Yeni kelime ilk günlerde hızlı unutulur. Ertesi gün bir kez hatırlamak, sonraki aranın iki katına çıkmasını sağlar.</span></p></div>`;
+  } else {
+    body = `<div class="card"><p class="date-cap">Son 7 gün · 19–25 Ekim</p>
+      <p class="lead">12 yeni kelimeyle tanıştın. 19 kelime bir üst rafa çıktı ve 3 kelime yerleşti: <span class="en">breakfast</span>, <span class="en">bread</span>, <span class="en">weekend</span>.</p></div>
+      <div class="sec-h"><h2>Tanıştığın 12 kelime</h2><span>dokun, çevir</span></div>
+      ${weekCards(WEEK12, LIB_NORMAL)}
+      <div class="sec-h"><h2>Seni zorlayanlar</h2></div>
+      <div class="flat" style="display:flex;flex-direction:column;gap:12px">
+        <div class="tip">${IC.bulb}<p><span class="w">borrow</span> <span class="g">ve</span> <span class="w">lend</span><br><span class="t-sub">İkisi de “ödünç”. Alan kişi <i class="en" style="font-style:normal;font-weight:700">borrow</i> der, veren kişi <i class="en" style="font-style:normal;font-weight:700">lend</i>. Akılda kalsın: borrow ≈ borç alırım.</span></p></div>
+        <div class="tip">${IC.bulb}<p><span class="w">actually</span><br><span class="t-sub">“Aktüel” (güncel) değil, “aslında” demek. “Şu anda” için <i class="en" style="font-style:normal;font-weight:700">currently</i>.</span></p></div>
+        <p class="t-foot">Bu üç kelime bu hafta yine gelecek. Karışan kelimeleri ayrı ayrı değil, yan yana görmek daha çok yardım eder.</p>
+      </div>
+      <div class="sec-h"><h2>Tahminin ne kadar tuttu?</h2></div>
+      <div class="flat">
+        <p class="t-sub">Bir kelimeye verdiğin cevabı, o kelime bir sonraki sefer geldiğinde hatırlayıp hatırlamadığınla karşılaştırdık.</p>
+        <div class="calib" role="list">
+          <div class="r" role="listitem"><b>Kolay</b><span class="track"><i style="width:93%"></i></span><span>13 / 14</span></div>
+          <div class="r" role="listitem"><b>Bildim</b><span class="track"><i style="width:84%"></i></span><span>26 / 31</span></div>
+          <div class="r" role="listitem"><b>Zor</b><span class="track"><i style="width:67%"></i></span><span>6 / 9</span></div>
+        </div>
+        <p class="t-foot">“Kolay” dediklerini neredeyse hep hatırladın; kendini iyi tanıyorsun. “Zor” dediklerinin de üçte ikisini hatırladın: “Zor” da bilinmiş sayılır.</p>
+      </div>
+      ${nextWeek()}
+      <p class="t-foot" style="padding:0 4px">Bu sayfa her pazartesi yenilenir. Haftalık bildirim kapalı; istersen Ayarlar'dan açabilirsin.</p>`;
+  }
+  return `<div class="app">${navbar('İlerleme', 'Tekrar')}${progressSeg()}<div class="scroll">${body}</div>${TABS('tekrar')}</div>`;
+}
+function weekCards(words, lib){
+  return `<div class="cards-row" role="list">${words.map((w) => {
+    const box = boxOf(w, lib), flipped = S.flipped.has(w), ex = EX[w];
+    const inner = flipped && ex
+      ? `<p class="ex">${markIn(ex[0], w)}</p><p class="tr">${esc(ex[1])}</p>`
+      : `<span class="w en">${esc(w)}</span><span class="g">${esc(G[w])}</span>
+         <span class="foot">${meter(box)}<span class="meter-cap">${shelfLabel(box)}</span></span>`;
+    return `<button class="wcard" type="button" role="listitem" data-act="flip" data-w="${esc(w)}" aria-label="${esc(w)}, ${esc(G[w])}, ${shelfLabel(box)}. Dokun, örnek cümleyi gör.">${inner}</button>`;
+  }).join('')}</div>`;
+}
+function nextWeek(){
+  const days = [['Pzt',6],['Sal',4],['Çar',9],['Per',3],['Cum',7],['Cmt',2],['Paz',3]];
+  const max = 9;
+  return `<div class="sec-h"><h2>Gelecek hafta</h2><span>34 tekrar</span></div>
+    <div class="flat"><p class="t-sub">Hangi gün kaç kelimenin sorulacağı. Geçmiş günler burada yok; yalnız plan var.</p>
+    <div class="week" role="img" aria-label="Gelecek hafta günlere göre tekrar sayısı: ${days.map(([d, n]) => d + ' ' + n).join(', ')}">
+      ${days.map(([d, n]) => `<div><b>${n}</b><i class="l4" style="height:${Math.round(n / max * 70) + 4}px"></i><small>${d}</small></div>`).join('')}
+    </div><p class="t-foot">En yoğun gün çarşamba. Bir gün atlarsan o günün kelimeleri ertesi güne kayar, kaybolmaz.</p></div>`;
+}
+
+/* ───────── Ekran: Konular ───────── */
+const TOPICS = [
+  {id:'food', name:'Yeme & İçme', total:58, k:['breakfast','bread','spoon','fork','plate','lunch','dinner'], l:['bowl','fresh','snack','delicious','taste','recipe','slice','dessert','boil','fry','spicy']},
+  {id:'home', name:'Ev & Ev İşleri', total:100, k:['fridge','towel','shower','sofa'], l:['kettle','laundry','blanket','pillow','balcony','furniture','dishes','trash']},
+  {id:'travel', name:'Seyahat & Turizm', total:93, k:['passport','terminal','visa'], l:['flight','arrival','suitcase','seat belt','boarding pass','departure']}
+];
+const OTHER = [
+  {name:'Duygular', total:62, k:6, l:5}, {name:'Zaman & Günlük Rutin', total:104, k:5, l:5},
+  {name:'Alışveriş & Para', total:69, k:5, l:5}, {name:'Sağlık & Vücut', total:106, k:2, l:3},
+  {name:'İki kelimeli fiiller', total:132, k:0, l:4}, {name:'Karıştırılan kelimeler', total:55, k:0, l:3}
+];
+function bar3(k, l, total){
+  return `<span class="bar3" aria-hidden="true"><i class="k" style="width:${k / total * 100}%"></i><i class="l" style="width:${l / total * 100}%"></i></span>`;
+}
+function renderKonular(){
+  const done = S.st.konular === 'bitti';
+  const topics = TOPICS.map((t) => t.id === 'travel' && done ? {...t, kN:41, lN:52} : {...t, kN:t.k.length, lN:t.l.length});
+  const rows = topics.map((t) => {
+    const nw = t.total - t.kN - t.lN, open = S.topicOpen === t.id;
+    const sub = nw === 0 ? 'Bütün kelimeleriyle tanıştın' : `${t.kN} bildiğin · ${t.lN} öğreniliyor · ${nw} yeni`;
+    return `<div class="topic"><button class="row-btn" type="button" data-act="topic" data-t="${t.id}" aria-expanded="${open}" aria-label="${t.name}: ${t.total} kelime. ${sub}.">
+      <span class="top"><b>${t.name}</b><span>${t.kN + t.lN} / ${t.total}</span></span>${bar3(t.kN, t.lN, t.total)}<span class="sub">${sub}</span></button>
+      ${open ? `<div class="open">${t.id === 'travel' && done ? '<p>Bu konunun bütün kartları rafta. Tekrarlar sürüyor.</p>'
+        : `<p>Bildiklerin: ${t.k.map((w) => `<span class="en">${esc(w)}</span>`).join(', ')}</p><p>Öğreniliyor: ${t.l.map((w) => `<span class="en">${esc(w)}</span>`).join(', ')}</p>`}</div>` : ''}</div>`;
+  }).join('');
+  const doneCard = done ? `<div class="card done-topic">${IC.check}<div><p style="margin:0;font-weight:700;font-size:17px">Seyahat & Turizm'in 93 kelimesinin hepsiyle tanıştın.</p>
+    <p class="t-sub" style="margin-top:4px">Bu kelimelerin tekrarları sürecek. Yeni kelimeler artık diğer konulardan geliyor.</p>
+    <div style="margin-top:12px"><button class="btn btn-secondary small" type="button">Şehir, Ulaşım & Yön'ü ekle (92)</button></div></div></div>` : '';
+  const other = `<div class="flat"><p style="margin:0 0 2px;font-weight:700">Diğer konular</p><p class="t-foot">Seçmediğin konulardan da tekrar edilen kelimeler.</p>
+    ${OTHER.map((t) => `<div class="topic"><span class="top"><b style="font-size:15px">${t.name}</b><span>${t.k + t.l} / ${t.total}</span></span>${bar3(t.k, t.l, t.total)}</div>`).join('')}</div>`;
+  const levels = [['A1',1,24,4,179],['A2',2,6,38,418],['B1',3,2,12,336]];
+  const lv = `<div class="flat"><p style="margin:0 0 4px;font-weight:700">Seviyeler</p>
+    ${levels.map(([n, d, k, l, t]) => `<div class="topic"><span class="top"><span class="lvlb" aria-label="${n}"><i>${[1,2,3].map((i) => `<b class="${i <= d ? 'on' : ''}"></b>`).join('')}</i>${n}</span><span>${k + l} / ${t}</span></span>${bar3(k, l, t)}</div>`).join('')}</div>`;
+  return `<div class="app">${navbar('İlerleme', 'Tekrar')}${progressSeg()}<div class="scroll">
+    ${doneCard}
+    <div class="sec-h" style="margin-top:0"><h2>Seçtiğin konular</h2></div>
+    <div class="lg3" style="padding:0 4px"><span><i class="k"></i>bildiğin</span><span><i class="l"></i>öğreniliyor</span><span><i class="n"></i>henüz yok</span></div>
+    <div class="flat" style="padding:8px 16px">${rows}</div>
+    ${other}${lv}
+    <p class="t-foot" style="padding:0 4px">Sıralama yok, yüzde yok, kimseyle karşılaştırma yok. Konu çubuğu yalnız senin kartlarını gösterir.</p>
+  </div>${TABS('tekrar')}</div>`;
+}
+
+/* ───────── Ekran: Tekrar ───────── */
+const ROUND = [
+  ['snack','Bildim',4,5,'16 gün sonra'],
+  ['recipe','Bildim',3,4,'8 gün sonra'],
+  ['dessert','Kolay',2,4,'8 gün sonra'],
+  ['lend','Bilemedim',1,1,'10 dakika sonra'],
+  ['seat belt','Zor',2,2,'yarın'],
+  ['suitcase','Bildim',2,3,'4 gün sonra'],
+  ['boil','Bildim',2,3,'4 gün sonra'],
+  ['fresh','Zor',5,5,'8 gün sonra'],
+  ['blanket','Bildim',3,4,'8 gün sonra'],
+  ['spicy','Bildim',1,2,'2 gün sonra']
+];
+const ROUND_MILE = ROUND.map((r) => r[0] === 'fresh' ? ['fresh','Bildim',5,6,'bir ay sonra'] : r);
+const ROUND_HARD = [
+  ['borrow','Bilemedim',1,1,'10 dakika sonra'],['lend','Bilemedim',1,1,'10 dakika sonra'],['actually','Bilemedim',1,1,'10 dakika sonra'],
+  ['departure','Bildim',1,2,'2 gün sonra'],['look into','Bilemedim',1,1,'10 dakika sonra'],['call off','Bilemedim',1,1,'10 dakika sonra'],
+  ['thrilled','Zor',1,1,'12 saat sonra'],['boarding pass','Bildim',1,2,'2 gün sonra'],['awkward','Bilemedim',2,1,'10 dakika sonra'],['currently','Bildim',2,3,'4 gün sonra']
+];
+function moveText(a, b){
+  if (b === 6) return `${IC.up}<span>Raf 5 → <b>Yerleşti</b></span>`;
+  if (b > a) return `${IC.up}<span>Raf ${a} → <b>Raf ${b}</b></span>`;
+  if (b === a && b === 1 && a === 1) return null;
+  if (b === a) return `${IC.same}<span>Raf ${a}'te kaldı</span>`;
+  return `${IC.again}<span>Raf ${a} → <b>Raf 1</b></span>`;
+}
+function summary(rows){
+  const up = rows.filter((r) => r[3] > r[2]).length, again = rows.filter((r) => r[1] === 'Bilemedim').length, same = rows.length - up - again;
+  return `<div class="moves">
+      <span class="pill">${IC.up}${up} yükseldi</span>${same ? `<span class="pill">${IC.same}${same} aynı rafta</span>` : ''}${again ? `<span class="pill">${IC.again}${again} baştan</span>` : ''}
+    </div>
+    <div class="flat" style="padding:6px 16px"><p style="margin:8px 0 2px;font-weight:700">Kelimeler ne zaman dönecek?</p>
+    ${rows.map(([w, g, a, b, when]) => {
+      const mv = g === 'Bilemedim' ? `${IC.again}<span>Raf 1'den yeniden · <b>${when}</b></span>` : `${moveText(a, b) || ''}<span>· ${when}</span>`;
+      return `<div class="srow"><span><span class="w en">${esc(w)}</span> <span class="g">${esc(G[w])}</span></span><span class="grade">${g}</span><span class="mv">${mv}</span></div>`;
+    }).join('')}</div>`;
+}
+function renderTekrar(){
+  const st = S.st.tekrar;
+  if (st === 'tur' || st === 'yerlesti' || st === 'zor'){
+    const rows = st === 'zor' ? ROUND_HARD : st === 'yerlesti' ? ROUND_MILE : ROUND;
+    const again = rows.filter((r) => r[1] === 'Bilemedim').length;
+    let top = '';
+    if (st === 'yerlesti'){
+      top = `<div class="card mile"><span class="word en band sweep" data-anim="${S.anim}">fresh</span>
+        <p class="what">kitaplığının en üst rafına yerleşti.</p>
+        <p class="t-sub">16 gün aradan sonra da hatırladın. Artık ayda bir kısa bir tazeleme yeter.</p>
+        <div><button class="btn btn-secondary small" type="button" data-act="go" data-to="kitaplik">Kitaplıkta gör</button></div></div>`;
+    } else if (st === 'zor'){
+      top = `<div class="flat tip">${IC.leaf}<p><b>Zorlanmak işe yarar.</b><br><span class="t-sub">Cevabı hatırlamaya çalışmak, hemen bakmaktan daha kalıcı iz bırakır. Bu ${again} kelime 10 dakika sonra yine gelecek; ikinci sefer genelde daha kolaydır.</span></p></div>`;
+    }
+    const head = st === 'zor' ? `10 kelime çalıştın. ${again} tanesi bu sefer gelmedi.` : '10 kelime çalıştın.';
+    return `<div class="app round"><div class="navbar"><span></span><div class="ttl">Tur bitti</div><span></span></div><div class="scroll">
+      <p class="sum-h">${head}</p>${top}${summary(rows)}
+      <p class="t-foot" style="padding:0 6px">“Zor” da bilinmiş sayılır. Zamanı gelen kelime Tekrar'da seni bekler.</p>
+      <button class="btn btn-primary btn-lg block" type="button" data-act="state" data-s="tamam">Tamam</button></div></div>`;
+  }
+  let body;
+  if (st === 'giris'){
+    body = `<div class="card hero"><div class="badge-n">6</div><h2>6 kelime tekrar bekliyor</h2>
+      <p class="t-sub">Önce öğrendiğin kelimeleri pekiştirelim.</p>
+      <button class="btn btn-primary btn-lg block" type="button" data-act="state" data-s="tur">Başla (6 kart)</button></div>
+      <button class="flat entry" type="button" data-act="go" data-to="hafta"><span class="txt"><b>Geçen haftanın özeti</b><span class="t-sub">12 yeni kelime · 3 kelime yerleşti</span></span>${IC.chev}</button>
+      <button class="flat entry" type="button" data-act="go" data-to="kitaplik">${miniShelves(LIB_NORMAL)}<span class="txt"><b>Kitaplığın</b><span class="t-sub">86 kelime · 22'si yerleşti</span></span>${IC.chev}</button>
+      <p class="t-foot" style="padding:0 6px">Özet kartı pazartesiden çarşambaya kadar burada durur, sonra yalnız İlerleme'de kalır.</p>`;
+  } else if (st === 'tamam'){
+    body = `<div class="card hero"><div class="donemark">${IC.check}</div><h2>Bugünlük tamam.</h2>
+      <p class="t-sub">Bugün: 10 yeni kelime, 16 tekrar. Şimdi kapatabilirsin.</p></div>
+      <div class="flat notes"><div class="nrow">${IC.clock}<span>Sıradaki tekrar: yarın 09:10</span></div>
+        <div class="nrow">${IC.bell}<span>Hatırlatma: 20:00</span></div>
+        <div class="nrow">${IC.lock}<span>Kilitli ekranın yeni kelimeleri göstermeye devam ediyor.</span></div></div>
+      <button class="flat entry" type="button" data-act="go" data-to="kitaplik">${miniShelves(LIB_NORMAL)}<span class="txt"><b>Kitaplığın</b><span class="t-sub">86 kelime · bugün 7 kelime raf atladı</span></span>${IC.chev}</button>
+      <button class="btn btn-secondary block" type="button">5 yeni kelime daha öğren</button>`;
+  } else {
+    body = `<div class="card hero"><h2>Tekrar hoş geldin.</h2>
+      <p class="t-sub">Kitaplığındaki 86 kelime yerinde. 42 kelime tazelenmeyi bekliyor; hepsini bugün yapman gerekmiyor.</p>
+      <button class="btn btn-primary btn-lg block" type="button" data-act="state" data-s="tur">Başla (20 kart)</button></div>
+      <div class="flat notes"><div class="nrow">${IC.clock}<span>Her turda en eski 20 kelime gelir. Bugün bir tur yeter; kalanlar yarın da bekler.</span></div>
+        <div class="nrow">${IC.leaf}<span>Yerleşen 22 kelime için acele yok.</span></div></div>`;
+  }
+  return `<div class="app"><div class="scroll" style="padding-top:4px"><h1 class="lt">Tekrar</h1>${body}</div>${TABS('tekrar')}</div>`;
+}
+
+/* ───────── Ekran: Kilit ekranı ───────── */
+function gauge(frac){
+  const r = 29, c = 2 * Math.PI * r;
+  return `<svg class="gauge" viewBox="0 0 64 64" aria-hidden="true"><circle class="tr" cx="32" cy="32" r="${r}"/><circle cx="32" cy="32" r="${r}" stroke-dasharray="${(c * frac).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 32 32)"/></svg>`;
+}
+function renderKilit(){
+  const st = S.st.kilit;
+  if (st === 'ana'){
+    const icons = ['Takvim','Fotoğraflar','Kamera','Hava','Notlar','Saat'];
+    return `${STATUS(false)}<div class="home"><div class="grid">
+      <div class="w2"><div class="hw"><span class="cap">Kitaplığın</span>${miniShelves(LIB_NORMAL)}<span class="n">22 kelime<small>yerleşti</small></span></div></div>
+      <div class="w2"><div class="hw word"><span class="cap">Lockglow</span><span class="w en band" style="font-size:24px">fresh</span><span style="font:700 16px var(--font-ui)">taze</span><span class="t-foot en">just made or picked</span></div></div>
+      ${icons.map((n) => `<div class="app-ic"><i></i>${n}</div>`).join('')}
+    </div></div><div class="homebar"></div>`;
+  }
+  const word = `<div class="lw rect" role="img" aria-label="Kelime widget'ı: breakfast, kahvaltı"><span class="lw-w">breakfast</span><span class="lw-g">kahvaltı</span><span class="lw-d">first meal of the day</span></div>`;
+  const circ = `<div class="lw circ" role="img" aria-label="Yerleşen 22 kelime, kitaplıkta 86">${gauge(22 / 86)}<span class="num">22<small>yerleşti</small></span></div>`;
+  const shelves = [22, 8, 12, 14, 11, 9];
+  const rectP = `<div class="lw rect" role="img" aria-label="Kitaplık: 86 kelime, 22 yerleşti"><span class="cap">Kitaplık</span>
+    <span class="mbars">${shelves.map((n, i) => `<i style="height:${Math.round(n / 22 * 22) + 4}px;opacity:${(1 - i * 0.13).toFixed(2)}"></i>`).join('')}</span>
+    <span class="lw-t">86 kelime · 22 yerleşti</span></div>`;
+  const row = st === 'raf' ? rectP + circ : word + circ;
+  return `${STATUS(true)}<div class="lock${st === 'acik' ? ' dim' : ''}">
+    <div class="date"><span>Pazartesi 26 Ekim</span><span class="inl">· 86 kelime</span></div>
+    <div class="time">9:41</div>
+    <div class="wrow">${row}</div>
+    <div class="flash"></div><div class="cam"></div></div><div class="homebar light"></div>`;
+}
+
+/* ───────── Alt sayfa ───────── */
+function sheet(){
+  if (!S.sel) return '';
+  const w = S.sel, lib = libFor(S.st.kitaplik), box = boxOf(w, lib), ex = EX[w];
+  const info = box === 'self' ? 'Kendin işaretledin · bir ay sonra bir kez sorulur' : box === 6 ? 'Yerleşti · ayda bir kısa tazeleme' : `${SHELF[box].name} · ${SHELF[box].every}`;
+  return `<div class="sheet-back" data-act="close"><div class="sheet" role="dialog" aria-label="${esc(w)}" data-stop="1">
+    <span class="grab"></span>
+    <span class="head en"><span class="band">${esc(w)}</span></span>
+    <span class="gl">${esc(G[w])}</span>
+    <span class="row">${meter(box)}<span class="t-foot">${info}</span></span>
+    ${ex ? `<p class="ex">${markIn(ex[0], w)}</p><p class="t-sub">${esc(ex[1])}</p>` : ''}
+    <button class="btn btn-secondary block" type="button" data-act="close">Kapat</button>
+  </div></div>`;
+}
+
+/* ───────── Panel notları ───────── */
+const NOTES = {
+  kitaplik:{
+    t:'Kitaplık: kelimeler raf raf',
+    what:'Leitner\'ın beş kutusu beş raf olur. Doğru cevapta kelime bir üst rafa çıkar ve daha geç sorulur. 5. raftan sonra doğru bilinen kelime “Yerleşti” rafına geçer. “Biliyorum” ile işaretlenenler ayrı, kesik çizgili bir kutuda durur: henüz sınanmadılar.',
+    why:'İnsan işinin ilerlediğini görünce motive olur (küçük kazanımlar). Raflar ilerlemeyi gün sayısıyla değil kelimeyle gösterir; ara versen de boşalmaz. Kendi işaretlediklerini ayrı göstermek dürüst bir öz değerlendirme sağlar.',
+    no:['Seri sayacı, alev, gün noktası yok.','“Kalıcı” ya da “sonsuza dek öğrendin” denmez; en üst raf “Yerleşti”dir ve ayda bir sorulur.','Unutulan kelime kırmızı değil; “Raf 1\'e döndü” der.','Bahçe çeşidinde bitki kurumaz, solmaz.','Raflar mürekkep tonlarıdır; sarı yalnız İngilizce kelimede (alt sayfada).'],
+    data:'<b>Var:</b> WordProgress.box, state, knownOverride. Yeni veri gerekmez. <b>Küçük düzeltme:</b> “Biliyorum” denmiş kelime tazelemede bilinince knownOverride = false olmalı, yoksa sonsuza dek “sınanmadı” kalır.',
+    swift:'<b>LibraryView</b> (yeni). Learning\'de saf <b>LibraryStats.make(words:progress:)</b> raf sayılarını verir. Raf satırı Button; açılınca kelime kapsülleri, kapsül WordDetailView\'a gider. Üç görünüm aynı veriyi kullanır; öneri “Raflar”.',
+    src:[['progress','Amabile & Kramer 2011'],['leitner','Leitner sistemi'],['cepeda','Cepeda ve ark. 2006']]
+  },
+  hafta:{
+    t:'Haftalık sakin özet',
+    what:'Pazartesi yenilenen tek sayfa: tanıştığın kelimeler (çevrilebilen kartlar), yerleşenler, seni zorlayanlar, tahminlerinin ne kadar tuttuğu ve gelecek haftanın planı.',
+    why:'Haftanın başı “yeni başlangıç” etkisi yaratır. Günlük değil haftalık bakmak, kaçırılan bir günü önemsiz kılar. “Tahminin ne kadar tuttu?” kartı kendini değerlendirmeyi öğretir: insanlar neyi bildiklerini çoğu zaman yanlış tahmin eder.',
+    no:['Geçmiş günler için boş kutu ya da nokta yok; yalnız gelecek haftanın planı var.','Sessiz haftada suçlama yok: “Bu hafta sessiz geçti. Kitaplığın yerinde.”','Bildirim varsayılan kapalı; açılırsa haftada bir tane.','Karışan kelimeler yan yana ve kartın kendi ipucuyla.'],
+    data:'<b>Gerekiyor:</b> tekrar günlüğü (kelime, zaman, cevap, önceki ve sonraki raf). Tanışılan kelime ve yerleşme tarihi için en azından WordProgress\'e <b>firstReviewedAt</b> ve <b>knownAt</b>. Kalibrasyon kartı yalnız günlükle hesaplanır.',
+    swift:'<b>WeeklyDigest.make(log:progress:words:weekStart:calendar:)</b> Learning\'de, saf, Linux\'ta sınanır. Kart Tekrar başlangıcında pazartesi–çarşamba görünür, sonra İlerleme\'de kalır.',
+    src:[['fresh','Dai, Milkman & Riis 2014'],['bjork','Bjork, Dunlosky & Kornell 2013']]
+  },
+  konular:{
+    t:'Konu konu ilerleme',
+    what:'Seçtiğin her konu tek çubuk: koyu kısım bildiğin, açık kısım öğrenilen, boş kısım henüz tanışmadığın kelimeler. Satıra dokununca kelimeler görünür. Altta diğer konular ve seviyeler.',
+    why:'Sınırlı ve somut bir hedef (58 kelimelik Yeme & İçme) bitirilebilir hissi verir; hedefe yaklaştıkça çaba artar. Yarış yok: sıralama, yüzde ve karşılaştırma yok.',
+    no:['Kilitli konu ya da “bitirmezsen kaybedersin” yok.','Konu bitince rozet yerine bir cümle ve benzer bir konu önerisi.','Seçilmeyen konulardaki tekrarlar gizlenmez; ayrı listede.'],
+    data:'<b>Var:</b> AppModel.topicsOf (şu an private), topics ve progress. Ayarlar\'daki seviye çubukları (LevelProgressRow) zaten var. Yeni veri gerekmez.',
+    swift:'<b>TopicProgress.rows(words:topicsOf:progress:)</b> Learning\'e. LevelProgressRow\'un üç parçalı sürümü (bildiğin / öğreniliyor / yeni). Ayarlar\'daki üç sayı kutusu bu ekrana bağlantı olur.',
+    src:[['goal','Kivetz, Urminsky & Zheng 2006'],['hanus','Hanus & Fox 2015']]
+  },
+  tekrar:{
+    giris:{t:'Tekrar başlangıcı: iki giriş kartı', what:'Yeni sekme yok. İlerleme, Tekrar sekmesinden açılır: pazartesi “Geçen haftanın özeti” kartı, her gün “Kitaplığın” kartı.', why:'İlerleme işin yanında durur, ayrı bir “skor” yeri olmaz. Tekrar yapmaya gelen kişi orada görür.', no:['Uygulama simgesinde kırmızı rozet yok.','Kart kapatılabilir; çarşambadan sonra kendiliğinden gider.'], data:'<b>Var:</b> nextReviewSession, progressCounts.', swift:'ReviewView.startContent altına iki <b>NavigationLink</b>. Mini raf çizimi LibraryStats\'tan.', src:[['calm','Weiser & Brown 1996']]},
+    tur:{t:'Tur sonu: ne oldu, açıkça', what:'Kelime kelime: verdiğin cevap, raf değişimi (Raf 2 → 3) ve ne zaman döneceği. Üstte üç sayı: yükseldi, aynı rafta, baştan.', why:'Geri bildirim kişiye değil işe yönelik olunca öğrenmeye daha çok yardım eder. “Harikasın!” yerine ne olduğunu söyleyen cümle.', no:['Puan, XP, konfeti, ses yok.','Bilemedim kırmızı değil; simge ve kelimeyle gösterilir.','“Bir tur daha” düğmesi yok.'], data:'<b>Var:</b> RoundAnswer (cevap, dueAt). <b>Eklenecek:</b> boxBefore ve boxAfter (recordReview zaten eski ve yeni ilerlemeyi biliyor).', swift:'RoundAnswer\'a iki alan; SummaryRow\'a raf satırı. Sayılar için <b>Label</b> + SF Symbol (arrow.up, equal, arrow.counterclockwise).', src:[['hattie','Hattie & Timperley 2007'],['dweck','Mueller & Dweck 1998']]},
+    yerlesti:{t:'Tek seferlik küçük bir an', what:'Bir kelime ilk kez en üst rafa yerleşince tur özetinin başında kendi kartı çıkar: fosfor kalem kelimenin altını bir kez çizer (0,7 sn) ve tek hafif titreşim olur.', why:'Kutlama gerçek bir kanıta bağlı: 16 gün aradan sonra hatırlamak. Nadir olduğu için anlamlı kalır. Sarının tek hareketli kullanımı, markanın “fosforlu kalem” fikrinden gelir.', no:['Konfeti, rozet, paylaş düğmesi yok.','Her doğru cevapta değil, her kelimede bir kez.','Hareket azaltma açıksa çizgi hazır gelir.'], data:'<b>Eklenecek:</b> knownAt (ya da günlükte stateAfter = known).', swift:'<b>HeadwordBand</b> + <b>.scaleEffect(x:anchor: .leading)</b> animasyonu, <b>sensoryFeedback(.success)</b>. accessibilityReduceMotion açıkken animasyon yok.', src:[['deci','Deci, Koestner & Ryan 1999']]},
+    zor:{t:'Zor geçen tur: öğretici, sakin', what:'Çok “Bilemedim” olan turda üstte kısa bir açıklama: zorlanmak öğrenmenin parçası; kelimeler 10 dakika sonra yine gelir.', why:'Hatırlamaya çalışmak (geri getirme) cevabı tekrar okumaktan daha kalıcıdır, yanlış olsa bile. Bu bilgiyi tam zorlandığı anda vermek moral bozukluğunu azaltır.', no:['“Şimdi bir daha dene” yok; 10 dakikalık ara bilinçli.','Başarı yüzdesi yok.'], data:'<b>Var:</b> cevaplar ve dueAt.', swift:'summaryScreen\'de again sayısı turun yarısını geçerse <b>TipRow</b>.', src:[['roediger','Roediger & Karpicke 2006'],['bjork2','Bjork & Bjork 2011']]},
+    tamam:{t:'Bugünlük tamam: durma izni', what:'“Harikasın, bugünlük tamam!” yerine “Bugünlük tamam.” ve “Şimdi kapatabilirsin.” Ek yeni kelime düğmesi sessiz (ikincil) kalır.', why:'Bitiş noktası olan uygulama sonsuz akıştan daha az yorar. Durmak bir başarısızlık değil, planın parçası.', no:['Otomatik başlayan yeni tur yok.','“Hedefini aş!” gibi baskı yok.'], data:'<b>Var:</b> hepsi.', swift:'doneContent metni değişir; Kitaplık kartı eklenir.', src:[['acd','Monge Roffarello ve ark. 2023']]},
+    donus:{t:'Aradan sonra dönüş', what:'Gün sayısı yok, “kaçırdın” yok. Birikmiş tekrarlar 20\'lik turlara bölünür; bir tur yeter, kalanlar yarın da bekler.', why:'Ara sonrası suçluluk geri dönmeyi zorlaştırır; kendini affetmek bir sonraki çalışmayı kolaylaştırır. Büyük bir yığın yerine küçük bir ilk adım.', no:['“9 gündür yoksun” yok.','Seri sıfırlandı mesajı yok (seri zaten yok).'], data:'<b>Var:</b> dueWords, reviewSessionLimit = 20.', swift:'offerCard\'da totalCount > reviewSessionLimit iken bu metin.', src:[['wohl','Wohl, Pychyl & Bennett 2010'],['streak','Silverman & Barasch 2023']]}
+  },
+  kilit:{
+    t:'Kilit ekranında küçük ilerleme',
+    what:'Yuvarlak widget: yerleşen kelime sayısı, halka kitaplığın ne kadarının yerleştiğini gösterir. Dikdörtgen: altı rafın küçük çubukları. Satır içi: tarih yanında “86 kelime”. Ana ekranda küçük raf widget\'ı.',
+    why:'Kilit ekranı günde onlarca kez görülür; orada baskı değil sakin bilgi durmalı. Sayı yalnız birikir; ancak bir kelime gerçekten unutulursa düşer.',
+    no:['“Bugün çalışmadın” ya da günlük sayaç yok.','Haftalık sayaç yok: pazartesi sabahı “0” görmek baskı yaratır.','Bekleyen tekrar sayısı varsayılan değil.','Kilit ekranında renk yok; sistem tek renk çizer.'],
+    data:'<b>Widget progress.json\'u okuyamaz</b> (uygulamaya özel). <b>Yeni:</b> App Group\'ta küçük progress_summary.json (yalnız sayılar: raflar, yerleşen, toplam, updatedAt).',
+    swift:'Yeni widget türü <b>ProgressWidget</b>: accessoryCircular (Gauge, .accessoryCircularCapacity), accessoryRectangular, accessoryInline, systemSmall. Uygulama tur sonunda ve arka plana geçerken yazar; <b>reloadTimelines(ofKind:)</b>.',
+    src:[['calm','Weiser & Brown 1996'],['hig','Apple HIG: Widgets']]
+  }
+};
+const SRC = {
+  progress:'https://hbr.org/2011/05/the-power-of-small-wins',
+  leitner:'https://en.wikipedia.org/wiki/Leitner_system',
+  fresh:'https://doi.org/10.1287/mnsc.2014.1901',
+  bjork:'https://doi.org/10.1146/annurev-psych-113011-143823',
+  goal:'https://doi.org/10.1509/jmkr.43.1.39',
+  hanus:'https://doi.org/10.1016/j.compedu.2014.08.019',
+  calm:'https://calmtech.com/papers/coming-age-calm-technology.html',
+  hattie:'https://doi.org/10.3102/003465430298487',
+  dweck:'https://doi.org/10.1037/0022-3514.75.1.33',
+  deci:'https://doi.org/10.1037/0033-2909.125.6.627',
+  roediger:'https://doi.org/10.1111/j.1467-9280.2006.01693.x',
+  bjork2:'https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/04/EBjork_RBjork_2011.pdf',
+  acd:'https://doi.org/10.1145/3544548.3580729',
+  wohl:'https://doi.org/10.1016/j.paid.2010.01.029',
+  streak:'https://doi.org/10.1093/jcr/ucac029',
+  hig:'https://developer.apple.com/design/human-interface-guidelines/widgets',
+  sdt:'https://doi.org/10.1037/0003-066X.55.1.68',
+  murre:'https://doi.org/10.1371/journal.pone.0120644',
+  gray:'https://doi.org/10.1145/3173574.3174108',
+  renfree:'https://doi.org/10.1145/2851581.2892495',
+  koriat:'https://doi.org/10.1037/0278-7393.31.2.187',
+  cepeda:'https://doi.org/10.1037/0033-2909.132.3.354'
+};
+const PRINCIPLES = [
+  ['Gün değil kelime say','Seri, kaçırılan günü kayıp gibi gösterir; kırılınca insanlar çoğu zaman tamamen bırakır. Lockglow yalnız biriken kelimeyi gösterir.',[['streak','Silverman & Barasch 2023'],['renfree','Renfree ve ark. 2016']]],
+  ['Kanıtı göster, kişiyi övme','“Harikasın” yerine “snack 5. rafa çıktı”. İşe yönelik geri bildirim öğrenmeye yardım eder; kişiye yönelik övgü çoğu zaman etkisizdir.',[['hattie','Hattie & Timperley 2007'],['dweck','Mueller & Dweck 1998']]],
+  ['Unutmak normaldir','Unutulan kelime cezalandırılmaz; ilk rafa döner. Zorlanarak hatırlamak daha kalıcıdır ve yeniden öğrenmek daha kısa sürer.',[['bjork2','Bjork & Bjork 2011'],['murre','Murre & Dros 2015']]],
+  ['Tahminini sonuçla karşılaştır','“Kolay” dediğin kelimeyi gerçekten hatırladın mı? Kendini doğru değerlendirmek öğrenilebilir bir beceridir.',[['bjork','Bjork, Dunlosky & Kornell 2013'],['koriat','Koriat & Bjork 2005']]],
+  ['İçsel motivasyonu koru','Puan, rozet ve lig gibi dışsal ödüller, zaten ilgilenen kişinin isteğini azaltabilir. Ödül, kelimeyi anlamanın kendisidir.',[['deci','Deci, Koestner & Ryan 1999'],['sdt','Ryan & Deci 2000']]],
+  ['Haftalık ritim','Pazartesi bir “yeni başlangıç” anıdır. Haftalık bakış tek bir kaçırılan günü önemsiz kılar.',[['fresh','Dai, Milkman & Riis 2014']]],
+  ['Dönüşte suçlama yok','Ara sonrası ilk ekran sakin ve küçük bir adım önerir. Kendini affetmek bir sonraki çalışmayı kolaylaştırır.',[['wohl','Wohl, Pychyl & Bennett 2010']]],
+  ['Durmaya izin ver, çevrede kal','Her ekranın bir sonu var. Kilit ekranı bilgi verir, dikkat istemez.',[['acd','Monge Roffarello ve ark. 2023'],['calm','Weiser & Brown 1996']]]
+];
+const NOPE = [
+  ['Seri sayacı ve alev','“Seriyi koru” bildirimi, seri dondurma satın alma'],
+  ['Geçmiş günler için boş kutu','Kaçırılan günü kırmızı nokta ya da gri kutu ile göstermek'],
+  ['Puan, XP, lig, liderlik tablosu','Başkalarıyla karşılaştırma'],
+  ['Konfeti, kutlama sesi, rozet yağmuru','Her doğru cevapta kutlama'],
+  ['Sonsuz akış','“Bir tur daha”, kendiliğinden başlayan tur'],
+  ['Kuruyan bitki, üzgün maskot','Suçlayan bildirim (“Seni özledik!”)'],
+  ['Uygulama simgesinde kırmızı sayı','Bekleyen tekrar sayısını rozetle göstermek'],
+  ['Pazartesi “0” gösteren sayaç','Sıfırlanan haftalık hedef halkası']
+];
+
+/* ───────── Çizim ───────── */
+const screenEl = document.getElementById('screen');
+function renderPhone(){
+  let html;
+  if (S.screen === 'kilit') html = renderKilit();
+  else {
+    const body = {kitaplik:renderKitaplik, hafta:renderHafta, konular:renderKonular, tekrar:renderTekrar}[S.screen]();
+    html = STATUS(false) + body + '<div class="homebar"></div>';
+  }
+  const scroll = screenEl.querySelector('.scroll'), y = scroll ? scroll.scrollTop : 0;
+  screenEl.innerHTML = html;
+  const app = screenEl.querySelector('.app');
+  if (app && S.sel) app.insertAdjacentHTML('beforeend', sheet());
+  const ns = screenEl.querySelector('.scroll');
+  if (ns && S.keepScroll) ns.scrollTop = y;
+  S.keepScroll = false;
+}
+function srcLinks(list){ return list.map(([k, t]) => `<a href="${SRC[k]}" target="_blank" rel="noopener">${t}</a>`).join(' · '); }
+function renderPanel(){
+  const sc = S.screen;
+  const states = STATES[sc].map(([k, t]) => `<button class="chip" type="button" id="st-${sc}-${k}" data-pact="state" data-s="${k}" aria-pressed="${S.st[sc] === k}">${t}</button>`).join('');
+  const variants = sc === 'kitaplik' && S.st.kitaplik !== 'bos' ? `<div><h2>Görünüm</h2><div class="chips">${[['raflar','Raflar (öneri)'],['defter','Defter'],['bahce','Bahçe']].map(([k, t]) =>
+    `<button class="chip" type="button" id="var-${k}" data-pact="variant" data-v="${k}" aria-pressed="${S.variant === k}">${t}</button>`).join('')}</div></div>` : '';
+  const replay = sc === 'tekrar' && S.st.tekrar === 'yerlesti' ? `<div><button class="chip" type="button" id="replay" data-pact="replay">Çizgiyi yeniden oynat</button></div>` : '';
+  const n = sc === 'tekrar' ? NOTES.tekrar[S.st.tekrar] : NOTES[sc];
+  document.getElementById('panel').innerHTML = `<div><h2>Durum</h2><div class="chips">${states}</div></div>${variants}${replay}
+    <div class="note"><h3>${n.t}</h3><p>${n.what}</p>
+      <h4>Neden böyle?</h4><p>${n.why}</p>
+      <h4>Yapmıyoruz</h4><ul>${n.no.map((x) => `<li>${x}</li>`).join('')}</ul>
+      <div class="box">${n.data}</div><div class="box">${n.swift}</div>
+      <p class="src">Kaynak: ${srcLinks(n.src)}</p></div>`;
+  const caps = {kitaplik:'İlerleme › Kitaplık. Rafa ya da kelimeye dokun.', hafta:'İlerleme › Bu hafta. Kartlara dokununca örnek cümle çıkar.', konular:'İlerleme › Konular. Konu satırına dokun.', tekrar:'Tekrar sekmesi. Kartlar İlerleme ekranlarına götürür.', kilit:'Kilit ekranı ve ana ekran widget\'ları (örnek).'};
+  document.getElementById('cap').textContent = caps[sc];
+}
+function renderNav(){
+  document.getElementById('nav').innerHTML = SCREENS.map((s) => `<button type="button" id="nav-${s.id}" data-nav="${s.id}" aria-pressed="${S.screen === s.id}">${s.label}</button>`).join('');
+}
+function renderAll(){ renderNav(); renderPhone(); renderPanel(); }
+function go(id){
+  if (!STATES[id]) return;
+  S.screen = id; S.open = null; S.sel = null; S.topicOpen = null;
+  try { history.replaceState(null, '', '#' + id); } catch (e) {}
+  renderAll();
+  const sc = screenEl.querySelector('.scroll'); if (sc) sc.scrollTop = 0;
+}
+
+document.getElementById('nav').addEventListener('click', (e) => { const b = e.target.closest('[data-nav]'); if (b) go(b.dataset.nav); });
+document.getElementById('panel').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-pact]'); if (!b) return;
+  if (b.dataset.pact === 'state'){ S.st[S.screen] = b.dataset.s; S.open = null; S.sel = null; S.flipped.clear(); S.anim++; }
+  if (b.dataset.pact === 'variant'){ S.variant = b.dataset.v; S.sel = null; }
+  if (b.dataset.pact === 'replay'){ S.anim++; }
+  renderPhone(); renderPanel();
+  const f = document.getElementById(b.id); if (f) f.focus();
+});
+screenEl.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  if (e.target.closest('[data-stop]') && b.dataset.act === 'close' && !b.matches('button')) return;
+  const a = b.dataset.act;
+  if (a === 'go'){ go(b.dataset.to); return; }
+  if (a === 'state'){ S.st[S.screen] = b.dataset.s; S.anim++; renderPhone(); renderPanel(); return; }
+  if (a === 'shelf'){ const v = +b.dataset.b; S.open = S.open === v ? null : v; }
+  if (a === 'word'){ S.sel = b.dataset.w; }
+  if (a === 'close'){ S.sel = null; }
+  if (a === 'how'){ S.how = !S.how; }
+  if (a === 'flip'){ const w = b.dataset.w; S.flipped.has(w) ? S.flipped.delete(w) : S.flipped.add(w); }
+  if (a === 'topic'){ S.topicOpen = S.topicOpen === b.dataset.t ? null : b.dataset.t; }
+  S.keepScroll = true;
+  const row = screenEl.querySelector('.cards-row'), rx = row ? row.scrollLeft : 0;
+  renderPhone();
+  const nr = screenEl.querySelector('.cards-row'); if (nr) nr.scrollLeft = rx;
+});
+
+/* Tema: Sistem / Açık / Koyu */
+document.getElementById('theme').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-th]'); if (!b) return;
+  const t = b.dataset.th;
+  if (t === 'sys') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme', t);
+  document.querySelectorAll('#theme button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+});
+
+/* Telefonu sütuna sığdır */
+const box = document.getElementById('phoneBox'), phone = document.getElementById('phone');
+function fit(){
+  const W = 414, H = 868;
+  const avail = box.parentElement.clientWidth;
+  const s = Math.min(1, avail / W);
+  phone.style.transform = `scale(${s})`;
+  box.style.width = (W * s) + 'px'; box.style.height = (H * s) + 'px';
+}
+new ResizeObserver(fit).observe(box.parentElement);
+addEventListener('resize', fit);
+
+/* İlkeler */
+document.getElementById('pgrid').innerHTML = PRINCIPLES.map(([t, p, s]) => `<div class="pcard"><b>${t}</b><p>${p}</p><p class="src">${srcLinks(s)}</p></div>`).join('');
+document.getElementById('nolist').innerHTML = NOPE.map(([t, d]) => `<li>${IC.x}<span><b>${t}.</b> ${d}.</span></li>`).join('');
+
+const start = (location.hash || '').replace('#', '');
+if (STATES[start]) S.screen = start;
+renderAll(); fit();
+</script>

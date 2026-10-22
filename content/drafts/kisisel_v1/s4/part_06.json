@@ -85,12 +85,12 @@
           "mistakes": [
             {"wrong": "I will carry on to study.", "right": "I will carry on studying.", "why": "Türkçedeki '-meye devam etmek' İngilizcede 'carry on + -ing' olur. 'To + fiil' kullanılmaz."}
           ],
-          "mnemonic": "Carry = taşımak, on = üzerinde: yükü taşımaya devam edersin."
+          "mnemonic": "Carry = taşımak, on = devam (go on, keep on gibi): yükü bırakmadan taşımaya devam edersin."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "success_productivity"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
       "quiz": {"cloze": "I'm tired, but I must ______ working until six.", "answer": "carry on", "distractors": ["break down", "turn off", "get off"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.hang_out.phv.1",

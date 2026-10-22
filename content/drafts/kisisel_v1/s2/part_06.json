@@ -40,12 +40,12 @@
       "mistakes": [
         {"wrong": "I downloaded my photo to my profile page.", "right": "I uploaded my photo to my profile page.", "why": "Telefondan internete göndermek 'upload'dır (fotoğrafı profile yüklemek). Download ise internetten telefonuna almaktır (indirmek)."}
       ],
-      "mnemonic": null
+      "mnemonic": "Down = aşağı: dosya buluttan (internetten) telefonuna iner. Tersi 'upload': telefondan buluta çıkar."
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I need to ______ this app before I can use it.", "answer": "download", "distractors": ["delete", "charge", "scan"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.upload.v.1",
@@ -84,12 +84,12 @@
       "mistakes": [
         {"wrong": "I uploaded the app on my phone.", "right": "I downloaded the app on my phone.", "why": "Telefona uygulama almak 'download' (veya 'install') olur. 'Upload' dosyayı telefondan internete göndermektir."}
       ],
-      "mnemonic": null
+      "mnemonic": "Up = yukarı: fotoğraf telefonundan buluta (internete) çıkar. Tersi 'download': buluttan telefona iner."
     }
   },
   "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "I took some photos and want to ______ them to my website.", "answer": "upload", "distractors": ["delete", "download", "print"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.password.n.1",

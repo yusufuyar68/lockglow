@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Lockglow widget galerisi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+/* Düzen: üstte sabit araç çubuğu (görünüm, renk, kelime); solda fikirler önerilen sırayla;
+   ortada gerçek boyutlu iPhone çerçeveleri, altında Apple kuralları ve maliyet notları.
+   Sayfa da uygulama gibi kâğıt ve mürekkep; sarı yalnız İngilizce kelimenin şeridinde. */
+:root{
+  --bg:#F3F3EE; --surface:#FFFFFF; --surface2:#EBEBE4; --surface3:#DEDED6;
+  --line:rgba(21,24,27,.12); --line-strong:rgba(21,24,27,.24);
+  --ink:#15181B; --ink2:#4E555B; --ink3:#626A71;
+  --band:#F5E829;
+  --good:#17703F; --good-tint:#DFF2E6; --bad:#B3261E; --bad-tint:#FBE5E2; --caution:#8F5600; --caution-tint:#F7EBD7;
+  --code-bg:#EBEBE4;
+  --font-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",system-ui,sans-serif;
+  --font-en:ui-serif,"New York","Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D0F11; --surface:#191C20; --surface2:#24282D; --surface3:#30353B;
+    --line:rgba(255,255,255,.10); --line-strong:rgba(255,255,255,.20);
+    --ink:#F3F4F0; --ink2:#B7BDC2; --ink3:#8E959B;
+    --band:#E9E040;
+    --good:#5BD08F; --good-tint:rgba(91,208,143,.16); --bad:#FF8C80; --bad-tint:rgba(255,140,128,.16); --caution:#FF9E5A; --caution-tint:rgba(255,158,90,.14);
+    --code-bg:#24282D; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D0F11; --surface:#191C20; --surface2:#24282D; --surface3:#30353B;
+  --line:rgba(255,255,255,.10); --line-strong:rgba(255,255,255,.20);
+  --ink:#F3F4F0; --ink2:#B7BDC2; --ink3:#8E959B;
+  --band:#E9E040;
+  --good:#5BD08F; --good-tint:rgba(91,208,143,.16); --bad:#FF8C80; --bad-tint:rgba(255,140,128,.16); --caution:#FF9E5A; --caution-tint:rgba(255,158,90,.14);
+  --code-bg:#24282D; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--font-ui);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:8px}
+code{font:500 .86em var(--font-mono);background:var(--code-bg);padding:.08em .35em;border-radius:5px;overflow-wrap:anywhere}
+.en{font-family:var(--font-en)}
+.band{position:relative;z-index:0}
+.band::before{content:"";position:absolute;z-index:-1;left:-.08em;right:-.08em;top:.36em;bottom:.03em;background:var(--band)}
+
+/* ───────── Üst çubuk ───────── */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px))) 0;
+  padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+.top-in{max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
+.brand{display:flex;flex-direction:column;gap:0;margin-right:auto;min-width:0}
+.brand b{font:700 19px/1.2 var(--font-en);letter-spacing:-.005em}
+.brand > span{font-size:13px;color:var(--ink2)}
+.ctl{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ctl-l{font:600 12px var(--font-ui);color:var(--ink2);letter-spacing:.03em}
+.seg{display:inline-flex;background:var(--surface2);border-radius:22px;padding:3px;gap:2px}
+.seg button{min-height:38px;padding:0 13px;border-radius:19px;font:600 14px var(--font-ui);color:var(--ink2);white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1.5px var(--ink) inset}
+.sw{width:30px;height:30px;border-radius:50%;box-shadow:0 0 0 1px var(--line-strong) inset}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--ink)}
+.sw:disabled{opacity:.35;cursor:default}
+.wordpick{display:inline-flex;align-items:center;gap:4px}
+.wordpick button{width:38px;height:38px;border-radius:50%;background:var(--surface2);display:grid;place-items:center}
+.wordpick select{min-height:38px;border-radius:19px;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--ink);font:600 15px var(--font-en);padding:0 12px;max-width:190px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ───────── Ana düzen ───────── */
+.layout{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;padding-top:22px}
+nav.ideas{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);align-self:start;display:flex;flex-direction:column;gap:2px}
+nav.ideas .nl{font:600 12px var(--font-ui);color:var(--ink3);letter-spacing:.04em;margin:0 0 6px 10px}
+.ni{display:flex;align-items:flex-start;gap:10px;text-align:left;width:100%;min-height:44px;padding:9px 10px;border-radius:12px;color:var(--ink2)}
+.ni:hover{background:var(--surface2)}
+.ni[aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line-strong) inset}
+.ni .rk{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font:700 11px var(--font-ui);margin-top:1px;font-variant-numeric:tabular-nums}
+.ni .rk.top3{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.ni .tx{min-width:0;display:flex;flex-direction:column}
+.ni .tx b{font:600 14px/1.3 var(--font-ui)}
+.ni .tx small{font:500 12px/1.3 var(--font-ui);color:var(--ink3)}
+main{min-width:0}
+
+/* ───────── Fikir sayfası ───────── */
+.idea-h{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+.idea-h .big-rk{flex:none;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--surface);display:grid;place-items:center;font:700 19px var(--font-ui)}
+.idea-h .big-rk.dim{background:var(--surface2);color:var(--ink2)}
+h1{margin:0;font:700 clamp(24px,3.2vw,32px)/1.15 var(--font-ui);letter-spacing:-.01em;text-wrap:balance}
+h2{margin:0 0 10px;font:700 18px/1.3 var(--font-ui);text-wrap:balance}
+h3{margin:0 0 8px;font:700 13px/1.3 var(--font-ui);letter-spacing:.04em;color:var(--ink2)}
+.pitch{margin:6px 0 0;font-size:17px;line-height:1.5;color:var(--ink2);max-width:68ch;text-wrap:pretty}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.fact{display:inline-flex;align-items:center;gap:7px;min-height:30px;padding:0 11px;border-radius:15px;background:var(--surface2);font:600 13px var(--font-ui);color:var(--ink)}
+.fact span{color:var(--ink2);font-weight:500}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--ink);opacity:.18}
+.dots i.on{opacity:1}
+.risk-d{color:var(--good)} .risk-o{color:var(--caution)} .risk-y{color:var(--bad)}
+
+.stage{display:flex;flex-wrap:wrap;gap:22px 26px;align-items:flex-start;padding:22px;border-radius:24px;background:var(--surface2);margin-bottom:10px}
+.frame{display:flex;flex-direction:column;gap:10px;align-items:center;min-width:0;max-width:100%}
+.frame figcaption{font:600 13px var(--font-ui);color:var(--ink2);text-align:center;max-width:36ch}
+.hint{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--ink2);margin:0 0 24px;padding:0 4px}
+.hint .ic{width:18px;height:18px;margin-top:2px}
+.stage-ctl{width:100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.nc{background:var(--surface);border-radius:18px;padding:16px 18px;box-shadow:0 0 0 1px var(--line) inset;min-width:0}
+.nc.wide{grid-column:1/-1}
+.nc ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px}
+.nc li{font-size:14.5px;line-height:1.5;color:var(--ink);text-wrap:pretty}
+.nc li::marker{color:var(--ink3)}
+.nc .src{list-style:none;padding:0}
+.nc .src li{display:flex;gap:8px;align-items:baseline}
+.nc .src li::before{content:"↗";color:var(--ink3);flex:none}
+.tag{display:inline-block;font:700 10.5px/1 var(--font-ui);letter-spacing:.04em;padding:3px 6px;border-radius:6px;vertical-align:1px;margin-left:4px}
+.tag.v{background:var(--good-tint);color:var(--good)}
+.tag.u{background:var(--caution-tint);color:var(--caution)}
+
+/* ───────── Özet ───────── */
+.lead{font-size:17px;line-height:1.55;max-width:70ch;color:var(--ink);margin:8px 0 0;text-wrap:pretty}
+.top3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 30px}
+.t3{background:var(--surface);border-radius:20px;padding:18px;box-shadow:0 0 0 1px var(--line) inset;display:flex;flex-direction:column;gap:8px;text-align:left;min-width:0}
+.t3:hover{box-shadow:0 0 0 1.5px var(--ink) inset}
+.t3 .rk{width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--surface);display:grid;place-items:center;font:700 14px var(--font-ui)}
+.t3 b{font:700 17px/1.3 var(--font-ui)}
+.t3 p{margin:0;font-size:14.5px;color:var(--ink2);line-height:1.5}
+.t3 .facts{margin-top:auto;padding-top:6px}
+.tbl-wrap{overflow-x:auto;border-radius:18px;box-shadow:0 0 0 1px var(--line) inset;background:var(--surface);margin-bottom:30px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12px var(--font-ui);letter-spacing:.04em;color:var(--ink2);background:var(--surface2)}
+tr:last-child td{border-bottom:0}
+td .lnk{font-weight:600}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:30px}
+.rules .nc b{display:block;margin-bottom:4px}
+.rules .nc p{margin:0;font-size:14.5px;color:var(--ink2)}
+
+/* ───────── Toast ───────── */
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:20px;font:600 14px var(--font-ui);max-width:calc(100% - 32px);box-shadow:0 10px 30px -10px rgba(0,0,0,.45)}
+
+/* ═════════ Cihaz içi ═════════
+   Cihazın içindeki renkler sayfa temasından bağımsızdır: üstteki "Görünüm" seçer.
+   m-light: açık ana ekran, m-dark: koyu, m-tint: renklendirilmiş (iOS 18), m-glass: cam (iOS 26). */
+.fit{position:relative;flex:none}
+.fit>.dev{position:absolute;left:0;top:0;transform:scale(var(--k,1));transform-origin:0 0}
+.phone{--s:#FFFFFF;--s2:#EBEBE4;--i:#15181B;--i2:#4E555B;--wband:#F5E829;--wline:rgba(21,24,27,.10);
+  --ok:#17703F;--ok-t:#DFF2E6;--no:#B3261E;--no-t:#FBE5E2;--tc:#F2D34B;
+  position:relative;padding:12px;background:#0B0C0E;border-radius:60px;color:var(--i);font-family:var(--font-ui);
+  box-shadow:0 0 0 1.5px #34363c inset,0 40px 70px -40px rgba(0,0,0,.6)}
+.phone.m-dark{--s:#191C20;--s2:#24282D;--i:#F3F4F0;--i2:#B7BDC2;--wband:#E9E040;--wline:rgba(255,255,255,.09);--ok:#5BD08F;--ok-t:rgba(91,208,143,.16);--no:#FF8C80;--no-t:rgba(255,140,128,.16)}
+.phone.m-tint{--s:rgba(22,25,30,.62);--s2:rgba(255,255,255,.10);--i:#FFFFFF;--i2:rgba(255,255,255,.76);--wband:var(--tc);--wline:rgba(255,255,255,.14);--ok:#FFFFFF;--ok-t:rgba(255,255,255,.14);--no:#FFFFFF;--no-t:rgba(255,255,255,.07)}
+.phone.m-glass{--s:rgba(255,255,255,.16);--s2:rgba(255,255,255,.20);--i:#FFFFFF;--i2:rgba(255,255,255,.90);--wband:rgba(255,255,255,.95);--wline:rgba(255,255,255,.28);--ok:#FFFFFF;--ok-t:rgba(255,255,255,.20);--no:#FFFFFF;--no-t:rgba(255,255,255,.10)}
+.screen{position:relative;width:390px;height:844px;border-radius:48px;overflow:hidden;isolation:isolate;background:#000}
+.phone.land{border-radius:60px}
+.phone.land .screen{width:844px;height:390px}
+.wall{position:absolute;inset:0;z-index:0}
+.wall.gun{background:radial-gradient(80% 45% at 30% 0%,rgba(255,255,255,.6),transparent 60%),linear-gradient(180deg,#8EB5CF 0%,#6F93B1 55%,#4F6E89 100%)}
+.wall.gece{background:radial-gradient(80% 45% at 25% 10%,rgba(233,224,64,.20),transparent 62%),radial-gradient(70% 50% at 90% 75%,rgba(70,120,160,.45),transparent 70%),linear-gradient(180deg,#1C2731 0%,#0B0F13 80%)}
+.wall.safak{background:radial-gradient(80% 45% at 70% 0%,rgba(255,226,150,.85),transparent 62%),linear-gradient(180deg,#F2A27E 0%,#B16E9E 55%,#3C3F7A 100%)}
+.wall.dim::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.stat{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 34px 0 40px;z-index:50;font:600 16px var(--font-ui);color:#fff;pointer-events:none}
+.stat .si{display:flex;gap:6px;align-items:center}
+.stat svg{height:12px;width:auto;fill:currentColor}
+.island{position:absolute;top:11px;left:50%;width:122px;height:36px;margin-left:-61px;background:#000;border-radius:20px;z-index:55}
+.homebar{position:absolute;bottom:8px;left:50%;width:136px;height:5px;margin-left:-68px;border-radius:3px;background:#fff;opacity:.9;z-index:60}
+
+/* Ana ekran */
+.hs{position:absolute;inset:0;padding:68px 26px 0;z-index:2;display:flex;flex-direction:column;gap:22px}
+.hs .row{display:flex;justify-content:space-between;gap:22px}
+.hs .icons{display:grid;grid-template-columns:repeat(4,1fr);row-gap:8px}
+.app-i{display:flex;flex-direction:column;align-items:center;gap:5px;color:#fff;font:500 11px var(--font-ui);text-shadow:0 1px 3px rgba(0,0,0,.4);height:82px}
+.app-i i{display:block;width:60px;height:60px;border-radius:14px;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--a,#888),var(--b,#555))}
+.app-i i::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.28),transparent 55%)}
+.app-i i .ic{position:absolute;left:15px;top:15px;width:30px;height:30px;color:#fff;stroke-width:2.2;z-index:1}
+.app-i.lg i{background:none}
+.app-i.lg i::after{display:none}
+.app-i.lg i svg{display:block;width:60px;height:60px}
+.m-dark .app-i i{filter:brightness(.82)}
+.m-tint .app-i i{background:rgba(24,27,32,.74)}
+.m-tint .app-i i .ic{color:var(--tc)}
+.m-tint .app-i i::after,.m-glass .app-i i::after{background:none}
+.m-glass .app-i i{background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 1px rgba(255,255,255,.3)}
+.quad{width:158px;height:158px;display:grid;grid-template-columns:1fr 1fr;align-content:space-between;justify-items:center}
+.quad .app-i{height:76px}
+.dock{position:absolute;left:31px;right:31px;bottom:20px;height:86px;border-radius:34px;background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);display:flex;justify-content:space-around;align-items:center;z-index:3}
+.dock .app-i{height:60px}
+.dock .app-i span{display:none}
+.pgdots{position:absolute;bottom:118px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:3}
+.pgdots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45)}
+.pgdots i:first-child{background:#fff}
+
+/* Widget kabuğu */
+.wg{position:relative;overflow:hidden;border-radius:24px;flex:none;display:flex;flex-direction:column;padding:16px;color:var(--i);background:var(--s);
+  box-shadow:0 10px 24px -12px rgba(0,0,0,.45),inset 0 0 0 1px var(--wline)}
+.m-tint .wg{-webkit-backdrop-filter:blur(26px);backdrop-filter:blur(26px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.10)}
+.m-glass .wg{-webkit-backdrop-filter:blur(26px) saturate(190%);backdrop-filter:blur(26px) saturate(190%);text-shadow:0 1px 3px rgba(20,20,40,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 0 0 1px rgba(255,255,255,.28),0 14px 30px -14px rgba(0,0,0,.5)}
+.wg-s{width:158px;height:158px}
+.wg-m{width:338px;height:158px}
+.wg-l{width:338px;height:354px}
+.wg .w{font-family:var(--font-en);font-weight:700;white-space:nowrap;color:var(--i);padding:0 .12em .3em;margin:0 -.12em -.3em;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.m-tint .wg .w{color:var(--tc)}
+.wg .band::before{background:var(--wband)}
+.m-dark .wg .band::before{top:auto;bottom:-.2em;height:.13em;clip-path:polygon(.1em 0,100% 0,calc(100% - .1em) 100%,0 100%)}
+.m-dark .wg .band::after{content:"";position:absolute;z-index:-2;left:0;right:0;bottom:-.26em;height:.24em;background:rgba(233,224,64,.36);filter:blur(.16em);border-radius:50%}
+.m-tint .wg .band::before,.m-glass .wg .band::before{top:auto;bottom:-.17em;height:.1em;clip-path:polygon(.08em 0,100% 0,calc(100% - .08em) 100%,0 100%)}
+.wg-head{display:flex;align-items:baseline;gap:6px;min-height:24px;flex:none}
+.wg-head .p{font:400 12px var(--font-en);color:var(--i2);white-space:nowrap}
+.lv{margin-left:auto;font:700 11px var(--font-ui);color:var(--i2);padding-left:4px;flex:none}
+.wg-body{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:2px;padding-top:6px}
+.wg .g{font:700 15px/1.2 var(--font-ui);color:var(--i);display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+.wg .d{font:400 12.5px/1.28 var(--font-en);color:var(--i2);display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+.wg .e{font:400 12px/1.28 var(--font-en);color:var(--i2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wg .e b{color:var(--i)}
+.wg .nx{font:500 11px var(--font-ui);color:var(--i2)}
+.wg-m .g{font-size:16px}
+.wg-m .d{font-size:13px}
+.strip{display:flex;justify-content:space-between;margin:0 -8px -8px;flex:none}
+.rail{display:flex;flex-direction:column;justify-content:space-between;margin:-8px -8px -8px 0;flex:none}
+.wb{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--i);flex:none}
+.wb span{width:34px;height:34px;border-radius:50%;background:var(--s2);display:grid;place-items:center}
+.wb .ic{width:18px;height:18px}
+.wb.playing span{animation:pulse .9s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.wmain{flex:1;min-width:0;display:flex;flex-direction:column;min-height:0}
+
+/* Quiz */
+.q-lab{font:600 11.5px var(--font-ui);color:var(--i2);letter-spacing:.01em}
+.q-sent{font:400 14.5px/1.3 var(--font-en);color:var(--i);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin-top:4px}
+.blank{display:inline-block;min-width:3.4em;border-bottom:2px solid var(--i);transform:translateY(-3px);height:1em;vertical-align:baseline}
+.q-sent .w{padding:0 .1em .2em;margin:0 -.1em -.2em;overflow:visible}
+.q-opts{display:flex;gap:8px;margin-top:auto;margin-bottom:-6px}
+.opt{flex:1;min-width:0;min-height:44px;border-radius:22px;background:var(--s2);color:var(--i);font:600 15px var(--font-en);padding:0 12px;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:inset 0 0 0 1.5px var(--wline)}
+.opt.tr{font-family:var(--font-ui);font-size:13.5px}
+.opt .ic{width:16px;height:16px;stroke-width:2.6}
+.opt.ok{background:var(--ok-t);color:var(--ok);box-shadow:inset 0 0 0 1.5px var(--ok)}
+.opt.no{background:var(--no-t);color:var(--no);text-decoration:line-through;text-decoration-thickness:1.5px}
+.opt.off{opacity:.45}
+.q-fb{display:flex;align-items:center;gap:8px;margin-top:auto;margin-bottom:-6px;min-height:44px}
+.q-fb .msg{flex:1;min-width:0;font:600 13.5px/1.3 var(--font-ui);color:var(--i)}
+.q-fb .msg .en{font-weight:700}
+.q-fb .msg small{display:block;font:500 12px var(--font-ui);color:var(--i2)}
+.q-fb .mk{width:24px;height:24px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--ok-t);color:var(--ok)}
+.q-fb .mk.x{background:var(--no-t);color:var(--no)}
+.q-fb .mk .ic{width:15px;height:15px;stroke-width:2.8}
+.qs-opts{display:flex;flex-direction:column;gap:6px;margin:auto -8px -8px}
+.qs-opts .opt{min-height:40px;border-radius:20px;justify-content:flex-start;padding:0 12px}
+
+/* Cümle */
+.sn-top{display:flex;align-items:baseline;gap:6px;flex:none}
+.sn-txt{font:400 16px/1.32 var(--font-en);color:var(--i);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin-top:5px}
+.sn-txt .w{font-weight:700;padding:0 .1em .22em;margin:0 -.1em -.22em;overflow:visible}
+.sn-tr{font:400 13px/1.32 var(--font-ui);color:var(--i2);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.sn-bot{display:flex;align-items:center;gap:8px;margin-top:auto;margin-bottom:-8px;margin-right:-8px}
+.cap{min-height:44px;display:inline-flex;align-items:center}
+.cap span{min-height:34px;padding:0 13px;border-radius:17px;background:var(--s2);display:inline-flex;align-items:center;gap:6px;font:600 13px var(--font-ui);color:var(--i)}
+.cap .ic{width:16px;height:16px}
+
+/* Büyük */
+.lg-top{display:flex;align-items:center;gap:8px;flex:none;margin:-6px -8px 0 0}
+.lg-top .t{font:600 12px var(--font-ui);color:var(--i2)}
+.lg-row{display:flex;gap:6px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--wline);flex:none}
+.lg-row:first-of-type{border-top:0}
+.lg-row .wmain{gap:2px}
+.lg-row .who{font:600 11px var(--font-ui);color:var(--i2);white-space:nowrap}
+.lg-row .wb{margin:-6px -8px 0 0}
+.hid{display:inline-block;width:6.5em;height:.9em;border-radius:.45em;background:var(--s2);vertical-align:-1px}
+
+/* Kilit ekranı */
+.ls{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;padding-top:60px;color:#fff}
+.ls .lk{opacity:.9}
+.ls .lk .ic{width:18px;height:18px}
+.ls .inl{margin-top:8px;font:600 17px var(--font-ui);min-height:24px;display:flex;align-items:center;color:rgba(255,255,255,.92);max-width:330px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ls .clock{font:700 92px/1 var(--font-ui);letter-spacing:-.02em;color:rgba(255,255,255,.92);font-variant-numeric:tabular-nums}
+.ls .acc{display:flex;gap:12px;margin-top:14px;align-items:center}
+.ls .rect{width:160px;height:72px;border-radius:16px;background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);padding:5px 12px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.ls .rect .w{font:700 17px/1.12 var(--font-en);color:#fff;white-space:nowrap;padding:0 .12em .24em;margin:0 -.12em}
+.ls .band::before{background:rgba(255,255,255,.9);top:auto;bottom:-.17em;height:.1em;clip-path:polygon(.08em 0,100% 0,calc(100% - .08em) 100%,0 100%)}
+.ls .rect .g{font:600 14px/1.2 var(--font-ui);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ls .rect .d{font:400 12px/1.22 var(--font-en);color:rgba(255,255,255,.78);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ls .rect .q{font:500 13px/1.22 var(--font-ui);color:rgba(255,255,255,.78)}
+.circ{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);position:relative;display:grid;place-items:center;flex:none}
+.circ svg.ring{position:absolute;inset:4px;width:64px;height:64px}
+.circ .n{font:700 22px/1 var(--font-ui);font-variant-numeric:tabular-nums;text-align:center}
+.circ .n small{display:block;font:600 10px/1.2 var(--font-ui);opacity:.8;margin-top:1px}
+.circ .ic{width:24px;height:24px;stroke-width:2.6}
+.ls-bot{position:absolute;left:46px;right:46px;bottom:34px;display:flex;justify-content:space-between;z-index:3}
+.ls-bot i{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);display:grid;place-items:center;color:#fff}
+.ls-bot i .ic{width:22px;height:22px}
+.ls-bot button i{background:rgba(255,255,255,.34)}
+.ls-bot .mine i{box-shadow:0 0 0 2px rgba(255,255,255,.9)}
+
+/* Canlı Etkinlik */
+.la{position:absolute;left:12px;right:12px;bottom:104px;z-index:4;border-radius:24px;padding:14px 16px 14px;display:flex;flex-direction:column;gap:8px;background:var(--s);color:var(--i);box-shadow:0 12px 30px -14px rgba(0,0,0,.6)}
+.m-tint .la,.m-glass .la{background:rgba(20,22,26,.72);-webkit-backdrop-filter:blur(26px);backdrop-filter:blur(26px);--i:#fff;--i2:rgba(255,255,255,.78);--s2:rgba(255,255,255,.14);--wband:#E9E040}
+.la-top{display:flex;align-items:center;gap:8px;font:600 13px var(--font-ui);color:var(--i2)}
+.la-top svg.app{width:20px;height:20px;border-radius:5px}
+.la-top .n{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--i)}
+.la-prog{height:4px;border-radius:2px;background:var(--s2);overflow:hidden}
+.la-prog i{display:block;height:100%;background:var(--i);border-radius:2px}
+.la-mid{display:flex;align-items:center;gap:12px;min-height:60px}
+.la-mid .wmain{gap:2px}
+.la .w{font:700 26px/1.12 var(--font-en);white-space:nowrap;padding:0 .12em .3em;margin:0 -.12em -.3em;overflow:hidden;text-overflow:ellipsis}
+.la .band::before{background:var(--wband)}
+.m-dark .la .band::before,.m-tint .la .band::before,.m-glass .la .band::before{top:auto;bottom:-.2em;height:.13em;clip-path:polygon(.1em 0,100% 0,calc(100% - .1em) 100%,0 100%)}
+.la .p{font:400 13px var(--font-en);color:var(--i2)}
+.la .g{font:700 18px/1.2 var(--font-ui)}
+.la .q{font:500 14px var(--font-ui);color:var(--i2)}
+.la-btns{display:flex;gap:8px}
+.pill{flex:1;min-height:44px;border-radius:22px;background:var(--s2);color:var(--i);font:600 15px var(--font-ui);display:flex;align-items:center;justify-content:center;gap:6px;padding:0 14px}
+.pill.pri{background:var(--i);color:var(--s)}
+.m-tint .pill.pri,.m-glass .pill.pri{color:#15181B}
+.pill .ic{width:17px;height:17px}
+.la-done{font:500 14.5px/1.4 var(--font-ui)}
+.di-frame{width:414px;height:150px;border-radius:60px 60px 0 0;background:#0B0C0E;padding:12px 12px 0;overflow:hidden}
+.di-scr{position:relative;width:390px;height:138px;border-radius:48px 48px 0 0;overflow:hidden}
+.di{position:absolute;top:11px;left:50%;transform:translateX(-50%);height:37px;border-radius:19px;background:#000;display:flex;align-items:center;justify-content:space-between;padding:0 14px 0 10px;width:250px;z-index:5;color:#fff}
+.di .l{display:flex;align-items:center;gap:6px;font:700 13px var(--font-ui);font-variant-numeric:tabular-nums}
+.di .r{font:700 15px var(--font-en);color:#E9E040}
+.di svg{width:20px;height:20px}
+
+/* Denetim Merkezi */
+.cc{position:absolute;inset:0;z-index:2;background:rgba(14,16,20,.42);-webkit-backdrop-filter:blur(28px) saturate(140%);backdrop-filter:blur(28px) saturate(140%);padding:96px 32px 0}
+.cc-grid{display:grid;grid-template-columns:repeat(4,68px);grid-auto-rows:68px;gap:18px}
+.mod{border-radius:22px;background:rgba(255,255,255,.12);display:grid;place-items:center;color:#fff;position:relative}
+.mod.c{border-radius:50%}
+.mod .ic{width:24px;height:24px}
+.mod.on{background:rgba(255,255,255,.92);color:#15181B}
+.mod .lbl{font:600 13px var(--font-ui)}
+.mod.conn{grid-column:1/3;grid-row:1/3;grid-template-columns:1fr 1fr;padding:12px;gap:10px}
+.mod.conn span{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center}
+.mod.conn span.on{background:#fff;color:#15181B}
+.mod.music{grid-column:3/5;grid-row:1/3;place-items:start;padding:16px;align-content:space-between}
+.mod.music b{font:600 14px var(--font-ui)}
+.mod.music small{font:500 12px var(--font-ui);opacity:.7}
+.mod.slider{grid-row:span 2;border-radius:22px;overflow:hidden;place-items:end center;padding-bottom:12px}
+.mod.slider::before{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--v);background:rgba(255,255,255,.9)}
+.mod.slider .ic{position:relative;color:#15181B}
+.ctl-m{grid-column:span 2;border-radius:34px;background:rgba(255,255,255,.12);display:flex;align-items:center;gap:10px;padding:0 14px 0 8px;color:#fff;text-align:left;min-width:0}
+.ctl-m .ci{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;flex:none}
+.ctl-m.on .ci,.ctl-m:active .ci{background:#fff;color:#15181B}
+.ctl-m .tx{display:flex;flex-direction:column;min-width:0}
+.ctl-m b{font:700 13px/1.15 var(--font-ui);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.ctl-m small{font:500 12px/1.3 var(--font-ui);opacity:.78;white-space:nowrap}
+.cc-cap{position:absolute;left:0;right:0;bottom:70px;text-align:center;font:500 12px var(--font-ui);color:rgba(255,255,255,.75)}
+.mine-ring{box-shadow:0 0 0 2px rgba(255,255,255,.85)}
+
+/* StandBy */
+.sb{background:#000;display:flex;align-items:stretch;justify-content:space-between;padding:22px 26px;gap:24px}
+.sb-clock{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;color:var(--sbi);font:600 136px/1 var(--font-ui);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.sb-clock small{font:600 20px var(--font-ui);letter-spacing:0;color:var(--sbi2);margin-top:10px}
+.sb-w{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;min-width:0;color:var(--sbi)}
+.sb-w .w{font:700 56px/1.1 var(--font-en);white-space:nowrap;padding:0 .1em .3em;margin:0 -.1em -.3em;overflow:hidden;text-overflow:ellipsis;color:var(--sbi)}
+.sb-w .band::before{background:var(--sbband);top:auto;bottom:-.16em;height:.1em;clip-path:polygon(.08em 0,100% 0,calc(100% - .08em) 100%,0 100%)}
+.sb-w .band::after{content:"";position:absolute;z-index:-2;left:0;right:0;bottom:-.24em;height:.22em;background:var(--sbglow);filter:blur(.16em);border-radius:50%}
+.sb-w .g{font:700 30px/1.2 var(--font-ui);margin-top:12px}
+.sb-w .d{font:400 19px/1.3 var(--font-en);color:var(--sbi2)}
+.sb-w .lvl{font:700 15px var(--font-ui);color:var(--sbi2)}
+.sbday{--sbi:#F3F4F0;--sbi2:#B7BDC2;--sbband:#E9E040;--sbglow:rgba(233,224,64,.36)}
+.sbnight{--sbi:#E0372C;--sbi2:rgba(224,55,44,.66);--sbband:#E0372C;--sbglow:transparent}
+
+/* Saat (Apple Watch) */
+.watch{position:relative;width:236px;height:286px;border-radius:64px;background:#1a1b1e;padding:14px;box-shadow:0 0 0 2px #2c2e33 inset,0 30px 60px -30px rgba(0,0,0,.6)}
+.watch::after{content:"";position:absolute;right:-8px;top:78px;width:10px;height:44px;border-radius:5px;background:#2c2e33}
+.wscr{width:208px;height:258px;border-radius:52px;background:#000;overflow:hidden;position:relative;padding:20px 16px;color:#fff;display:flex;flex-direction:column;gap:10px}
+.wscr .t{align-self:flex-end;font:600 22px var(--font-ui);color:#E9E040;font-variant-numeric:tabular-nums}
+.wrect{border-radius:16px;background:rgba(255,255,255,.12);padding:8px 10px;display:flex;flex-direction:column}
+.wrect .w{font:700 17px/1.12 var(--font-en);white-space:nowrap;padding:0 .12em .24em;margin:0 -.12em;overflow:hidden;text-overflow:ellipsis}
+.wrect .band::before{background:#E9E040;top:auto;bottom:-.17em;height:.1em;clip-path:polygon(.08em 0,100% 0,calc(100% - .08em) 100%,0 100%)}
+.wrect .g{font:600 14px/1.2 var(--font-ui);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrect .d{font:400 12px/1.2 var(--font-en);color:rgba(255,255,255,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow{display:flex;justify-content:space-between;margin-top:auto}
+.wrow .circ{width:54px;height:54px;background:rgba(255,255,255,.12)}
+.wrow .circ .n{font-size:17px}
+
+/* Düzenleme sayfası */
+.edit{position:absolute;inset:0;z-index:5;background:rgba(0,0,0,.42);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;padding-top:68px;gap:16px}
+.esheet{width:338px;border-radius:26px;background:rgba(246,246,244,.96);color:#15181B;padding:6px 0;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.m-dark .esheet,.m-tint .esheet{background:rgba(36,38,42,.96);color:#F3F4F0}
+.erow{display:flex;flex-direction:column;gap:8px;padding:12px 16px;border-top:1px solid rgba(127,127,127,.22)}
+.erow:first-child{border-top:0}
+.erow .k{font:600 13px var(--font-ui);opacity:.72}
+.eopts{display:flex;gap:6px;flex-wrap:wrap}
+.eopts button{min-height:36px;padding:0 13px;border-radius:18px;font:600 14px var(--font-ui);background:rgba(127,127,127,.16)}
+.eopts button[aria-pressed="true"]{background:currentColor}
+.eopts button[aria-pressed="true"] span{color:var(--inv,#fff);filter:invert(1)}
+.ehead{display:flex;align-items:center;gap:10px;padding:8px 16px 10px}
+.ehead svg{width:30px;height:30px;border-radius:7px}
+.ehead b{font:700 16px var(--font-ui)}
+.ehead small{display:block;font:500 12px var(--font-ui);opacity:.7}
+
+/* Eylem düğmesi çizimi */
+.abtn{width:100%;max-width:360px;display:flex;gap:14px;align-items:center;padding:14px;border-radius:18px;background:var(--surface);box-shadow:0 0 0 1px var(--line) inset}
+.abtn svg{flex:none;width:76px;height:120px}
+.abtn p{margin:0;font-size:14px;color:var(--ink2)}
+.abtn b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+
+@media (max-width:1080px){
+  .notes,.rules{grid-template-columns:minmax(0,1fr)}
+  .top3{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:18px;padding-top:14px}
+  nav.ideas{position:static;flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:6px;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+  nav.ideas .nl{display:none}
+  .ni{flex:none;width:auto;max-width:220px;background:var(--surface2)}
+  .ni .tx small{display:none}
+  .stage{padding:14px;border-radius:18px}
+  .top{position:static}
+}
+@media (max-width:560px){
+  .brand > span{display:none}
+  .seg button{padding:0 10px;font-size:13px}
+  .idea-h .big-rk{width:36px;height:36px;font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .wb.playing span{animation:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand"><b>Lockglow <span class="band">widget</span> galerisi</b><span>Yeni widget ve kilit ekranı fikirleri · 22 Ekim 2026</span></div>
+    <div class="ctl" role="group" aria-label="Görünüm">
+      <span class="ctl-l">GÖRÜNÜM</span>
+      <div class="seg" id="modeSeg"></div>
+      <div class="ctl" id="tintSw" aria-label="Renklendirme rengi"></div>
+    </div>
+    <div class="ctl wordpick" aria-label="Kelime">
+      <span class="ctl-l">KELİME</span>
+      <button type="button" data-act="word" data-v="-1" aria-label="Önceki kelime"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <select id="wordSel" aria-label="Kelime seç"></select>
+      <button type="button" data-act="word" data-v="1" aria-label="Sonraki kelime"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <nav class="ideas" id="nav" aria-label="Fikirler"></nav>
+  <main id="main"></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script>
+const CARDS = [{"id":"en.breakfast.n.1","lemma":"breakfast","type":"word","pos":"n","level":"A1","ipa":"/ˈbrɛkfəst/","gloss":"kahvaltı","micro":"first meal of the day","short":"the first meal of the day, eaten in the morning","exEn":"I usually have breakfast at seven.","exTr":"Genellikle yedide kahvaltı yaparım.","quiz":{"cloze":"We usually eat ______ at 7 a.m., before school.","answer":"breakfast","distractors":["dinner","supper","lunch"]},"mistake":{"wrong":"I did breakfast at eight.","right":"I had breakfast at eight.","why":"'Kahvaltı yapmak' kalıbını 'do' ile kurmayın; İngilizcede 'have breakfast' denir ('make breakfast' = hazırlamak)."},"note":"Türkçedeki 'kahvaltı' da bir birleşik sözcüktür (kahve altı). İngilizcede öğün adlarından önce genellikle 'the' kullanılmaz.","src":"s0_ornek/part_01.json"},{"id":"en.borrow.v.1","lemma":"borrow","type":"word","pos":"v","level":"A2","ipa":"/ˈbɑːroʊ/","gloss":"ödünç almak","micro":"take and give back later","short":"take something from someone and give it back later","exEn":"Can I borrow your pen for a minute?","exTr":"Kalemini bir dakikalığına ödünç alabilir miyim?","quiz":{"cloze":"Could I ______ your charger? Mine is dead.","answer":"borrow","distractors":["lend","give","owe"]},"mistake":{"wrong":"Can you borrow me your pen?","right":"Can you lend me your pen? / Can I borrow your pen?","why":"'Borrow' yalnızca alan kişi için; veren kişi 'lend' kullanır."},"note":"Türkçede 'ödünç' hem alma hem verme için kullanılır (ödünç almak / ödünç vermek). İngilizcede iki ayrı fiil var: borrow = alan, lend = veren.","src":"s0_ornek/part_01.json"},{"id":"en.actually.adv.1","lemma":"actually","type":"word","pos":"adv","level":"B1","ipa":"/ˈæktʃuəli/","gloss":"aslında, gerçekte","micro":"in fact; in reality","short":"used to say what is really true, often when it is not what people expect","exEn":"Actually, I'd prefer tea, if that's okay.","exTr":"Aslında çay tercih ederim, sakıncası yoksa.","quiz":{"cloze":"He looks young, but he is ______ forty.","answer":"actually","distractors":["currently","recently","fortunately"]},"mistake":{"wrong":"The actual price of petrol is very high.","right":"The current price of petrol is very high.","why":"'Güncel' = 'current'; 'actual' = gerçek/asıl."},"note":"Türkçedeki 'aktüel' = 'güncel'. İngilizce 'actual/actually' ise 'gerçek/aslında' demektir. 'Şu anda' için 'currently' veya 'at the moment' kullanılır.","src":"s0_ornek/part_01.json"},{"id":"en.spoon.n.1","lemma":"spoon","type":"word","pos":"n","level":"A1","ipa":"/spuːn/","gloss":"kaşık","micro":"tool for eating soup","short":"a small tool with a round end, used to eat soup or stir tea","exEn":"Can I have a spoon, please?","exTr":"Bir kaşık alabilir miyim lütfen?","quiz":{"cloze":"I eat soup with a ______, not with a fork.","answer":"spoon","distractors":["knife","plate","cup"]},"mistake":{"wrong":"Add two spoon of sugar.","right":"Add two spoons of sugar.","why":"Türkçede sayıdan sonra isim çoğul olmaz (iki kaşık); İngilizcede birden fazla ise -s gerekir: two spoons."},"note":"Türkçede 'kaşık' küçük de büyük de olabilir; İngilizcede küçük çay kaşığına teaspoon, büyük yemek kaşığına tablespoon denir.","src":"s1/part_01.json"},{"id":"en.umbrella.n.1","lemma":"umbrella","type":"word","pos":"n","level":"A1","ipa":"/ʌmˈbrɛlə/","gloss":"şemsiye","micro":"thing that keeps you dry","short":"a round cover on a stick that you hold over your head when it rains","exEn":"Ayşe forgot her umbrella on the bus.","exTr":"Ayşe şemsiyesini otobüste unuttu.","quiz":{"cloze":"Take your ______ with you. It will rain this afternoon.","answer":"umbrella","distractors":["sunglasses","sandals","swimsuit"]},"mistake":{"wrong":"I bought a umbrella yesterday.","right":"I bought an umbrella yesterday.","why":"'Umbrella' ünlü bir sesle (ʌ) başlar, bu yüzden 'an' gelir. Türkçedeki 'bir' her sözcükten önce aynı kaldığı için 'a umbrella' demek kolay olur."},"note":"Türkçede 'şemsiye' güneşten korunmak için de kullanılır; İngilizcede plaj şemsiyesine 'beach umbrella', küçük güneş şemsiyesine 'parasol' denir.","src":"s9/part_02.json"},{"id":"en.tired.adj.1","lemma":"tired","type":"word","pos":"adj","level":"A1","ipa":"/taɪrd/","gloss":"yorgun","micro":"needing sleep or rest","short":"feeling that you need to sleep or rest","exEn":"I'm so tired after work today.","exTr":"Bugün işten sonra çok yorgunum.","quiz":{"cloze":"I only slept three hours, so I feel very ______.","answer":"tired","distractors":["happy","lucky","early"]},"mistake":null,"note":"'Tired' yorgunluk demektir; uykun geldiyse 'sleepy' (uykulu) de denir.","src":"s3/part_01.json"},{"id":"en.headache.n.1","lemma":"headache","type":"word","pos":"n","level":"A1","ipa":"/ˈhɛdeɪk/","gloss":"baş ağrısı","micro":"pain in your head","short":"a pain in your head","exEn":"Mehmet took a pill for his headache.","exTr":"Mehmet baş ağrısı için bir hap aldı.","quiz":{"cloze":"My head hurts a lot. I have a bad ______.","answer":"headache","distractors":["towel","price","kettle"]},"mistake":{"wrong":"I have headache.","right":"I have a headache.","why":"Türkçede 'a/an' yoktur; 'headache' sayılabilir bir isimdir ve tekilse 'a' gerekir."},"note":"Türkçede 'başım ağrıyor' dersiniz; İngilizcede 'I have a headache' ya da 'My head hurts' denir.","src":"s1/part_11.json"},{"id":"en.forget.v.1","lemma":"forget","type":"word","pos":"v","level":"A1","ipa":"/fərˈɡɛt/","gloss":"unutmak","micro":"not remember something","short":"to not remember something, or to not do something that you should do","exEn":"Don't forget to call your mother.","exTr":"Annene telefon etmeyi unutma.","quiz":{"cloze":"I can't open my phone. I ______ my password.","answer":"forgot","distractors":["missed","opened","wore"]},"mistake":{"wrong":"I forgot buying milk, so we have none.","right":"I forgot to buy milk, so we have none.","why":"Türkçede 'süt almayı unuttum' tek yapıdır; '-mayı' eki çoğu zaman '-ing' gibi çevrilir. 'Forget to buy' yapılmayan işi, 'forget buying' yapılmış ama unutulmuş işi anlatır."},"note":"Unutmak iki yolla kurulur: forget + isim (şifremi unuttum) ya da forget to + fiil (aramayı unuttum). Düzensiz: forget - forgot - forgotten.","src":"s5/part_05.json"},{"id":"en.quiet.adj.1","lemma":"quiet","type":"word","pos":"adj","level":"A1","ipa":"/ˈkwaɪət/","gloss":"sessiz","micro":"making little noise","short":"with little or no noise","exEn":"I need a quiet place to study.","exTr":"Ders çalışmak için sessiz bir yere ihtiyacım var.","quiz":{"cloze":"Nobody talks in the library, so it is very ______ there.","answer":"quiet","distractors":["loud","dirty","busy"]},"mistake":null,"note":"'Quiet' (sessiz) ile 'quite' (oldukça) yazılışta karışır; ikisi ayrı kelimelerdir. 'Quiet' iki hecelidir: kwa-yet. Karşıtı 'loud' ya da 'noisy' (gürültülü).","src":"s7/part_02.json"},{"id":"en.weather.n.1","lemma":"weather","type":"word","pos":"n","level":"A1","ipa":"/ˈwɛðər/","gloss":"hava","micro":"heat, cold, rain, and wind","short":"what it is like outside, for example hot, cold, sunny, or rainy","exEn":"The weather is nice today.","exTr":"Bugün hava güzel.","quiz":{"cloze":"Is it going to rain tomorrow? Let's check the ______ forecast.","answer":"weather","distractors":["bus","jacket","hotel"]},"mistake":{"wrong":"How is the air today?","right":"How is the weather today?","why":"Türkçede 'Bugün hava nasıl?' dersiniz ve 'hava' sözcüğü 'air' sanılır. İngilizcede hava durumunu sorarken 'weather' kullanılır; 'air' soluduğumuz havadır."},"note":"Türkçede 'hava' hem 'air' hem 'weather' demektir. İngilizcede dışarıdaki hava durumu için 'weather', soluduğumuz hava için 'air' denir. 'Weather' sayılamaz.","src":"s9/part_06.json"},{"id":"en.wake_up.phv.1","lemma":"wake up","type":"phrasal_verb","pos":"phv","level":"A2","ipa":"/weɪk ˈʌp/","gloss":"uyanmak","micro":"stop sleeping","short":"stop sleeping and open your eyes","exEn":"I wake up at six every day.","exTr":"Her gün altıda uyanırım.","quiz":{"cloze":"Shh! Don't ______ the baby. She is sleeping.","answer":"wake up","distractors":["lie down","stay in","show up"]},"mistake":{"wrong":"She wakes up me at seven.","right":"She wakes me up at seven.","why":"Zamir (me, him, her) 'wake' ile 'up' arasına girer. 'Wake up me' yanlıştır."},"note":"Nesneyle birlikte (wake sb up) 'uyandırmak' olur. 'Get up' (yataktan kalkmak) ile karıştırmayın: önce wake up, sonra get up.","src":"s4/part_01.json"},{"id":"en.lend.v.1","lemma":"lend","type":"word","pos":"v","level":"A2","ipa":"/lɛnd/","gloss":"ödünç vermek","micro":"give for a short time","short":"give something to someone to use for a short time, and get it back later","exEn":"I never lend my books to anyone.","exTr":"Kitaplarımı kimseye ödünç vermem.","quiz":{"cloze":"Could you ______ me your umbrella? It's raining.","answer":"lend","distractors":["borrow","keep","hold"]},"mistake":{"wrong":"Can you borrow me your pen?","right":"Can you lend me your pen?","why":"Kalemi veren kişi 'lend' der; 'borrow' yalnızca alan kişi içindir."},"note":"Türkçede 'ödünç' hem verme hem alma için kullanılır. İngilizcede iki ayrı fiil var: 'lend' = veren, 'borrow' = alan. Düzensiz fiil: lend - lent - lent.","src":"s3/part_10.json"},{"id":"en.appointment.n.1","lemma":"appointment","type":"word","pos":"n","level":"A2","ipa":"/əˈpɔɪntmənt/","gloss":"randevu","micro":"arranged time to see someone","short":"a time that you arrange to see a doctor or another person","exEn":"Can I make an appointment for Monday?","exTr":"Pazartesi için randevu alabilir miyim?","quiz":{"cloze":"I can't come on Monday. I have a doctor's ______ at ten.","answer":"appointment","distractors":["recipe","discount","parcel"]},"mistake":{"wrong":"I took an appointment for Friday.","right":"I made an appointment for Friday.","why":"Türkçede 'randevu almak' dersiniz; İngilizcede 'take an appointment' denmez, 'make' ya da 'book an appointment' denir."},"note":"Doktor ya da resmî görüşme için 'appointment'. Türkçede 'randevu' romantik buluşma da olabilir; bunun için 'date' denir.","src":"s1/part_12.json"},{"id":"en.delicious.adj.1","lemma":"delicious","type":"word","pos":"adj","level":"A2","ipa":"/dɪˈlɪʃəs/","gloss":"lezzetli","micro":"tasting very good","short":"with a very good taste or smell","exEn":"This soup is delicious!","exTr":"Bu çorba çok lezzetli!","quiz":{"cloze":"Thank you, dinner was ______!","answer":"delicious","distractors":["hungry","angry","empty"]},"mistake":{"wrong":"This cake is very delicious.","right":"This cake is really delicious.","why":"'Delicious' zaten 'çok güzel' demektir; 'very' ile pek kullanılmaz. Vurgu için 'really' ya da 'absolutely' kullanın."},"note":"'Çok güzel' demek yeter ama İngilizcede yemek için 'delicious' çok doğaldır. 'Tasty' biraz daha hafif bir övgüdür.","src":"s1/part_01.json"},{"id":"en.neighbor.n.1","lemma":"neighbor","type":"word","pos":"n","level":"A2","ipa":"/ˈneɪbər/","gloss":"komşu","micro":"person who lives next to you","short":"a person who lives in the next home or very near your home","exEn":"Ayşe gave her neighbor some soup.","exTr":"Ayşe komşusuna biraz çorba verdi.","quiz":{"cloze":"The people who live next to us are our ______.","answer":"neighbors","distractors":["teachers","guests","drivers"]},"mistake":null,"note":"Ortadaki 'gh' okunmaz: 'ney-bır'. 'Neighborhood' mahalle demektir. İngiliz yazımı 'neighbour' olur.","src":"s1/part_06.json"},{"id":"en.recipe.n.1","lemma":"recipe","type":"word","pos":"n","level":"A2","ipa":"/ˈrɛsəpi/","gloss":"tarif","micro":"steps for cooking a dish","short":"a list of food and steps that show you how to cook a dish","exEn":"This is my grandmother's recipe for soup.","exTr":"Bu, büyükannemin çorba tarifi.","quiz":{"cloze":"My grandma gave me her ______ for apple cake.","answer":"recipe","distractors":["menu","receipt","plate"]},"mistake":{"wrong":"Can you tell me the recipe of this cake?","right":"Can you tell me the recipe for this cake?","why":"Türkçedeki 'pastanın tarifi' tamlaması 'of' dedirtir; oysa İngilizcede yemek için 'recipe for' kalıbı kullanılır."},"note":"'Yol tarifi' İngilizcede directions'dır; 'recipe' yalnızca yemek (veya karışım) tarifidir. Doktor reçetesi ise prescription'dır.","src":"s1/part_01.json"},{"id":"en.decide.v.1","lemma":"decide","type":"word","pos":"v","level":"A2","ipa":"/dɪˈsaɪd/","gloss":"karar vermek","micro":"make a choice","short":"to choose what to do after thinking about it","exEn":"We can't decide where to eat tonight.","exTr":"Bu akşam nerede yemek yiyeceğimize karar veremiyoruz.","quiz":{"cloze":"I can't ______ what to eat. The menu has too many things.","answer":"decide","distractors":["forget","finish","stop"]},"mistake":{"wrong":"I gave a decision to learn English.","right":"I decided to learn English.","why":"Türkçede 'karar verdim' deriz ve 'vermek' = 'give' gibi çevrilir. İngilizcede 'decide' tek fiildir ya da 'make a decision' denir."},"note":"Türkçede 'karar vermek' iki sözcüktür; İngilizcede 'decide' tek fiildir. Kendi kararın için 'give a decision' denmez: 'decide' ya da 'make a decision' denir.","src":"s5/part_05.json"},{"id":"en.remember.v.1","lemma":"remember","type":"word","pos":"v","level":"A2","ipa":"/rɪˈmɛmbər/","gloss":"hatırlamak","micro":"keep something in your mind","short":"keep something in your memory, or bring it back to your mind","exEn":"I can't remember her name.","exTr":"Onun adını hatırlayamıyorum.","quiz":{"cloze":"I can't ______ where I put my keys.","answer":"remember","distractors":["remind","miss","carry"]},"mistake":{"wrong":"Remember me to buy milk.","right":"Remind me to buy milk.","why":"Birinin sana hatırlatmasını istiyorsan 'remind' kullanılır; 'remember' kendi hafızanda tutmaktır."},"note":"Hatırlayan kişi 'remember'; birine hatırlatan kişi ya da şey 'remind'. 'Remember to do' = yapmayı unutmamak; 'remember doing' = yaptığını hatırlamak.","src":"s3/part_12.json"},{"id":"en.journey.n.1","lemma":"journey","type":"word","pos":"n","level":"A2","ipa":"/ˈdʒɜːrni/","gloss":"yolculuk","micro":"a trip between places","short":"the time you spend traveling from one place to another","exEn":"Have a safe journey!","exTr":"İyi yolculuklar!","quiz":{"cloze":"The ______ from Istanbul to Izmir by bus takes about nine hours.","answer":"journey","distractors":["ticket","station","luggage"]},"mistake":{"wrong":"Our journey in Paris was great.","right":"Our trip to Paris was great.","why":"Gidilen yerdeki gezi 'trip' olur; 'journey' sadece yolda geçen yolculuğu anlatır."},"note":"'Journey' yolda geçen süre ve yoldur; gidilen yerdeki gezi veya tatil için 'trip' kullanılır. 'Seyahat' daha resmî, 'yolculuk' daha günlüktür.","src":"s2/part_05.json"},{"id":"en.receipt.n.1","lemma":"receipt","type":"word","pos":"n","level":"A2","ipa":"/rɪˈsiːt/","gloss":"fiş","micro":"paper that shows you paid","short":"a piece of paper that shows what you bought and how much you paid","exEn":"Can I have a receipt, please?","exTr":"Fiş alabilir miyim lütfen?","quiz":{"cloze":"Please keep the ______. You need it if you want to return the shirt.","answer":"receipt","distractors":["recipe","menu","button"]},"mistake":null,"note":"Mağaza ya da market fişi için 'receipt'; elektrik faturası gibi ödenecek hesap için 'bill' denir. 'P' harfi okunmaz: ri-SİT.","src":"s1/part_09.json"},{"id":"en.soon.adv.1","lemma":"soon","type":"word","pos":"adv","level":"A2","ipa":"/suːn/","gloss":"yakında","micro":"in a short time","short":"in a short time from now; before long","exEn":"See you soon!","exTr":"Yakında görüşürüz!","quiz":{"cloze":"The movie starts in five minutes. Please sit down. It will begin ______.","answer":"soon","distractors":["yesterday","ago","back"]},"mistake":null,"note":"'Soon' = yakında, birazdan. 'Erken' için 'early' kullanılır: get up early (erken kalkmak). 'As soon as' = -ir -mez (gelir gelmez).","src":"s7/part_06.json"},{"id":"en.enough.det.1","lemma":"enough","type":"word","pos":"det","level":"A2","ipa":"/ɪˈnʌf/","gloss":"yeterince","micro":"as much as you need","short":"as much or as many as you need","exEn":"Elif is old enough to travel alone.","exTr":"Elif tek başına seyahat etmek için yeterince büyük.","quiz":{"cloze":"We have ______ chairs for everyone, so please sit down.","answer":"enough","distractors":["every","each","another"]},"mistake":{"wrong":"She is enough old to drive.","right":"She is old enough to drive.","why":"Türkçede 'yeterince' sıfattan önce gelir (yeterince büyük). İngilizcede 'enough' sıfat ve zarftan sonra gelir: old enough, big enough."},"note":"Türkçede 'yeterince büyük' dersiniz (yeterince sıfattan önce). İngilizcede sıfattan sonra gelir: big enough, old enough. İsimden önce gelir: enough money.","src":"s7/part_04.json"},{"id":"en.by_the_way.phr.1","lemma":"by the way","type":"phrase","pos":"phr","level":"A2","ipa":"/baɪ ðə ˈweɪ/","gloss":"bu arada","micro":"to add a new small point","short":"used to add something new or something you just remembered","exEn":"By the way, I like your new bag.","exTr":"Bu arada, yeni çantanı beğendim.","quiz":{"cloze":"I'll see you at six. ______, can you bring my book?","answer":"By the way","distractors":["Well done","Of course","Happy birthday"]},"mistake":null,"note":"Konuşmada ve mesajlarda yeni bir konu açar. Mesajlarda kısaca 'btw' yazılır. Türkçedeki 'bu arada' bazen 'meanwhile' anlamında da kullanılır; o zaman İngilizcesi farklıdır.","src":"s8/part_01.json"},{"id":"en.patient.n.1","lemma":"patient","type":"word","pos":"n","level":"B1","ipa":"/ˈpeɪʃənt/","gloss":"hasta","micro":"person who gets medical care","short":"a person who is being looked after by a doctor or a nurse","exEn":"The doctor will see the next patient now.","exTr":"Doktor şimdi sıradaki hastayı muayene edecek.","quiz":{"cloze":"The doctor is ready, so she calls her next ______ into the room.","answer":"patient","distractors":["passenger","customer","tourist"]},"mistake":null,"note":"Türkçede 'hasta' hem kişi hem durumdur. Doktorun baktığı kişiye 'patient' denir; hasta olmak ise 'be sick' ya da 'be ill' olur. Aynı yazılan sıfat 'patient' ise 'sabırlı' demektir.","src":"s12/part_01.json"},{"id":"en.commute.v.1","lemma":"commute","type":"word","pos":"v","level":"B1","ipa":"/kəˈmjuːt/","gloss":"işe gidip gelmek","micro":"travel to work every day","short":"to travel regularly between your home and your work or school","exEn":"I commute to work by train every day.","exTr":"Her gün işe trenle gidip geliyorum.","quiz":{"cloze":"I ______ to work by train; it takes about an hour each way.","answer":"commute","distractors":["retire","arrive","borrow"]},"mistake":{"wrong":"I commute to work with the metro.","right":"I commute to work by metro.","why":"Türkçede 'metroyla' dendiği için 'with' kullanılır; ama araç için 'by' (the yok) denir: by metro, by bus."},"note":"Türkçede tek kelimelik karşılığı yok. 'Commute' düzenli yapılan, genelde uzun gidiş-gelişi anlatır; tek seferlik yolculuk için 'travel' veya 'go' kullanılır.","src":"s2/part_09.json"},{"id":"en.afford.v.1","lemma":"afford","type":"word","pos":"v","level":"B1","ipa":"/əˈfɔːrd/","gloss":"gücü yetmek","micro":"have enough money to buy","short":"to have enough money to buy or pay for something","exEn":"Can we afford a holiday this year?","exTr":"Bu yıl tatile gidecek paramız var mı?","quiz":{"cloze":"That house is too expensive. We can't ______ it.","answer":"afford","distractors":["taste","boil","eat"]},"mistake":{"wrong":"I don't afford it.","right":"I can't afford it.","why":"'Afford' çoğunlukla 'can' ya da 'can't' ile kullanılır. Türkçedeki 'alamıyorum' anlamı 'can't afford' ile verilir."},"note":"'Afford' neredeyse her zaman 'can' ile kullanılır: 'I can afford it' = Param yeter. 'Affordable' = uygun fiyatlı.","src":"s1/part_10.json"},{"id":"en.improve.v.1","lemma":"improve","type":"word","pos":"v","level":"B1","ipa":"/ɪmˈpruːv/","gloss":"geliştirmek, gelişmek","micro":"make or become better","short":"become better than before, or make something better","exEn":"I want to improve my English.","exTr":"İngilizcemi geliştirmek istiyorum.","quiz":{"cloze":"My English is getting better. I want to ______ it more.","answer":"improve","distractors":["forget","ignore","lose"]},"mistake":{"wrong":"I want to develop my English.","right":"I want to improve my English.","why":"Türkçede 'İngilizcemi geliştirmek' dersiniz ve 'geliştirmek' 'develop' diye çevrilir. Var olan bir beceriyi daha iyi yapmak için 'improve' denir; 'develop' yeni bir şey ortaya çıkarmaktır."},"note":"Türkçede 'geliştirmek' İngilizcede çoğu zaman 'improve' olur; 'develop' daha çok yeni bir şey (plan, ürün) geliştirmek içindir. 'Improve my English' denir; 'develop my English' pek duyulmaz.","src":"s6/part_06.json"},{"id":"en.brave.adj.1","lemma":"brave","type":"word","pos":"adj","level":"B1","ipa":"/breɪv/","gloss":"cesur","micro":"ready to face danger","short":"ready to do something difficult or scary without showing fear","exEn":"It was brave of her to speak first.","exTr":"İlk önce konuşması cesurca bir davranıştı.","quiz":{"cloze":"Firefighters are very ______ people.","answer":"brave","distractors":["lazy","rude","selfish"]},"mistake":null,"note":"'Be brave!' = Cesur ol! / Dayan! Genelde zor bir an öncesinde, özellikle çocuklara söylenir.","src":"s3/part_04.json"},{"id":"en.under_the_weather.idm.1","lemma":"under the weather","type":"idiom","pos":"idm","level":"B1","ipa":"/ˌʌndər ðə ˈwɛðər/","gloss":"kendini pek iyi hissetmemek","micro":"feeling a little ill","short":"feeling a little unwell, with low energy, but not very ill","exEn":"I feel a bit under the weather today.","exTr":"Bugün kendimi pek iyi hissetmiyorum.","quiz":{"cloze":"I have a slight cough and no energy, so I feel a little ______.","answer":"under the weather","distractors":["over the moon","in a mess","on the ball"]},"mistake":null,"note":"Deyim hafif bir keyifsizlik için kullanılır; ağır hastalık için kullanılmaz. Hava durumuyla ilgisi yoktur; sözcük sözcük çevrilirse anlam çıkmaz.","src":"s12/part_03.json"},{"id":"en.lost_and_found.phr.1","lemma":"lost and found","type":"phrase","pos":"phr","level":"B1","ipa":"/ˌlɔːst ən ˈfaʊnd/","gloss":"kayıp eşya bürosu","micro":"place for things left behind","short":"the place where things that people left behind are kept for their owners","exEn":"Maria found her scarf at the lost and found.","exTr":"Maria atkısını kayıp eşya bürosunda buldu.","quiz":{"cloze":"Ali left his jacket at the airport. He went to the ______ to look for it.","answer":"lost and found","distractors":["post office","box office","tax office"]},"mistake":null,"note":"Türkçede 'kayıp eşya' denir. ABD'de 'lost and found', İngiltere'de 'lost property' kullanılır. 'Lost and found' eşyaların saklandığı yeri anlatır; 'lost property' ise kaybolan eşyalar için de kullanılır.","src":"s11/part_04.json"},{"id":"en.come_up_with.phv.1","lemma":"come up with","type":"phrasal_verb","pos":"phv","level":"B1","ipa":"/kʌm ˈʌp wɪð/","gloss":"bulmak, akıl etmek","micro":"think of an idea or plan","short":"think of a new idea, plan or answer, usually when you need one","exEn":"Can you come up with a better idea?","exTr":"Daha iyi bir fikir bulabilir misin?","quiz":{"cloze":"Nobody knew what to do, but Liam quickly ______ a good plan.","answer":"came up with","distractors":["turned off","gave back","woke up"]},"mistake":null,"note":"'Come up with' düşünerek bir fikir, plan ya da çözüm bulmaktır. Üç parça birlikte kalır; 'with' unutulursa anlam değişir: 'come up' ortaya çıkmak demektir.","src":"s10/part_04.json"},{"id":"en.take_a_rain_check.idm.1","lemma":"take a rain check","type":"idiom","pos":"idm","level":"B1","ipa":"/teɪk ə ˈreɪn tʃɛk/","gloss":"başka zamana bırakmak","micro":"ask to do it another day","short":"politely say no to a plan now and ask to do it another day instead","exEn":"Thanks, but I'll have to take a rain check.","exTr":"Teşekkürler ama başka zamana kalsın.","quiz":{"cloze":"“Can you come to dinner tonight?” “I'm busy. Can I ______? Let's do it next week.”","answer":"take a rain check","distractors":["spill the beans","miss the boat","steal the show"]},"mistake":null,"note":"Daveti kesin olarak reddetmek değil; 'şimdi olmaz ama başka zaman olur' demektir. Daha çok Amerikan İngilizcesinde ve arkadaşlar arasında kullanılır.","src":"s13/part_03.json"},{"id":"en.look_up_to.phv.1","lemma":"look up to","type":"phrasal_verb","pos":"phv","level":"B1","ipa":"/lʊk ˈʌp tə/","gloss":"örnek almak, saygı duymak","micro":"see as a good example","short":"have great respect for someone and want to be like them","exEn":"My little brother looks up to me.","exTr":"Küçük kardeşim beni örnek alıyor.","quiz":{"cloze":"Leyla wants to be a pilot like her mother one day. She ______ her a lot.","answer":"looks up to","distractors":["looks down on","looks for","looks into"]},"mistake":{"wrong":"He looks up his uncle.","right":"He looks up to his uncle.","why":"Türkçede 'amcasını örnek alıyor' deriz; 'amcasını' doğrudan nesnedir, arada edat yoktur. İngilizcede 'to' düşerse 'look up' (bilgi aramak) olur ve anlam değişir."},"note":"Genellikle bir kişiyle kullanılır: look up to + kişi. Türkçede 'örnek alıyorum' deriz ama İngilizcede çoğunlukla geniş zaman gelir: I look up to her. Birini küçük görmek ise 'look down on' olur.","src":"s13/part_02.json"},{"id":"en.get_over.phv.1","lemma":"get over","type":"phrasal_verb","pos":"phv","level":"B1","ipa":"/ɡɛt ˈoʊvər/","gloss":"atlatmak","micro":"become well after an illness","short":"become well again after an illness such as a cold or the flu","exEn":"I hope you get over your cold soon.","exTr":"Umarım nezleni çabuk atlatırsın.","quiz":{"cloze":"Don't worry. You will ______ this cold in a few days.","answer":"get over","distractors":["come across","turn into","break into"]},"mistake":null,"note":"Bu kartta 'get over' hastalıktan toparlanmak demektir: 'get over a cold'. Nesne zamir olsa da 'over' sözcüğünden sonra gelir: 'get over it' denir, 'get it over' bu anlamda denmez. 'Get better' genel olarak iyileşmektir.","src":"s12/part_03.json"}];
+</script>
+<script>
+'use strict';
+/* Lockglow widget galerisi. Kartlar content/drafts/kisisel_v1 içinden olduğu gibi alındı
+   (örnek: kelimeyi içeren en kısa örnek, uygulamadaki CardDetail.shortestExample gibi). */
+
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ───────── Simgeler (SF Symbols karşılığı) ───────── */
+const I = {
+  speaker: '<path d="M11 5 6.2 9H3v6h3.2L11 19z"/><path d="M15.5 8.6a5 5 0 0 1 0 6.8"/><path d="M18.6 5.6a9 9 0 0 1 0 12.8"/>',
+  fwd: '<path d="M2.5 6.4v11.2a.8.8 0 0 0 1.3.6l7.9-5.6a.8.8 0 0 0 0-1.2L3.8 5.8a.8.8 0 0 0-1.3.6z"/><path d="M12.3 6.4v11.2a.8.8 0 0 0 1.3.6l7.9-5.6a.8.8 0 0 0 0-1.2l-7.9-5.6a.8.8 0 0 0-1.3.6z"/>',
+  check: '<path d="M20 6.5 9.2 17.3 4 12"/>',
+  x: '<path d="M18 6 6 18M6 6l12 12"/>',
+  eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  eyeoff: '<path d="M3 3l18 18"/><path d="M10.6 5.1A10.6 10.6 0 0 1 12 5c6.4 0 10 7 10 7a17.7 17.7 0 0 1-3.2 4.1M6.6 6.6C3.8 8.4 2 12 2 12s3.6 7 10 7a9.8 9.8 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>',
+  lock: '<rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>',
+  flash: '<path d="M8 2.5h8v3.5l-2 3.5V21h-4V9.5L8 6z"/><path d="M12 13v2.5"/>',
+  camera: '<path d="M3 8.5A2.5 2.5 0 0 1 5.5 6H8l1.5-2.2h5L16 6h2.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.6"/>',
+  cal: '<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  photo: '<circle cx="12" cy="12" r="3"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/>',
+  note: '<rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
+  map: '<path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>',
+  music: '<path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+  clock: '<circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
+  phone: '<path d="M5 3.5h3.5l1.8 4.5-2.3 1.5a11 11 0 0 0 6.5 6.5l1.5-2.3 4.5 1.8V19a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/>',
+  chat: '<path d="M20.5 11.5a8.5 8 0 0 1-12.3 7.2L3.5 20l1.4-4.2A8.5 8 0 1 1 20.5 11.5z"/>',
+  globe: '<circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.8 6 3.8 9.5S14.6 18.9 12 21.5c-2.6-2.6-3.8-6-3.8-9.5S9.4 5.1 12 2.5z"/>',
+  plane: '<path d="M10.5 3.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v6l7.5 4.5v2l-7.5-2.3V19l2.5 2v1.5L12 21.5l-4 1V21l2.5-2v-5.3L3 16v-2l7.5-4.5z"/>',
+  wifi: '<path d="M2.5 9a14 14 0 0 1 19 0M5.8 12.4a9.2 9.2 0 0 1 12.4 0M9 15.7a4.6 4.6 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/>',
+  bt: '<path d="m7 7 10 10-5 4.5V2.5L17 7 7 17"/>',
+  cell: '<path d="M5 18v-3M10 18v-6M15 18V9M20 18V5"/>',
+  moon: '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/>',
+  vol: '<path d="M11 5 6.2 9H3v6h3.2L11 19z"/><path d="M15.5 8.6a5 5 0 0 1 0 6.8"/>',
+  calc: '<rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M8.5 7h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/>',
+  info: '<circle cx="12" cy="12" r="9.5"/><path d="M12 16.5v-5M12 7.8h.01"/>',
+  tap: '<path d="M9 11.5V5.2a1.6 1.6 0 0 1 3.2 0V11"/><path d="M12.2 10.2V8.7a1.6 1.6 0 0 1 3.2 0v2.1"/><path d="M15.4 10.5a1.6 1.6 0 0 1 3.2 0v3.6a6.4 6.4 0 0 1-6.4 6.4h-.7a6.4 6.4 0 0 1-4.9-2.3l-2.3-2.8a1.7 1.7 0 0 1 2.6-2.1L9 15.1"/>',
+  cycle: '<path d="M20 11a8 8 0 0 0-14.3-4.9L4 8"/><path d="M4 3.5V8h4.5"/><path d="M4 13a8 8 0 0 0 14.3 4.9L20 16"/><path d="M20 20.5V16h-4.5"/>'
+};
+const ic = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`;
+
+/* Uygulama ikonu: fosfor şeridinden oyulmuş anahtar deliği (docs/tasarim önerisi). */
+let icoSeq = 0;
+function appIcon(dark = false) {
+  const id = 'lg' + (++icoSeq);
+  const bg0 = dark ? '#1F2328' : '#FBFBF7', bg1 = dark ? '#0B0D0F' : '#E9E9E1';
+  const band = dark ? '#E9E040' : '#F5E829', ink = dark ? '#0B0D0F' : '#15181B';
+  return `<svg viewBox="0 0 120 120" class="app" role="img" aria-label="Lockglow ikonu"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${bg0}"/><stop offset="1" stop-color="${bg1}"/></linearGradient></defs><rect width="120" height="120" fill="url(#${id})"/><path d="M22 44H104L98 86H16Z" fill="${band}"/><path d="M54.6 66.6A10 10 0 1 1 65.4 66.6L68 80H52Z" fill="${ink}"/></svg>`;
+}
+
+/* ───────── Kaynaklar (Apple belgeleri) ───────── */
+const L = {
+  budget: ['Keeping a widget up to date', 'https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date'],
+  interact: ['Adding interactivity to widgets and Live Activities', 'https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities'],
+  standby: ['Adding StandBy and CarPlay support to your widget', 'https://developer.apple.com/documentation/widgetkit/adding-standby-and-carplay-support-to-your-widget'],
+  background: ['Displaying the right widget background', 'https://developer.apple.com/documentation/widgetkit/displaying-the-right-widget-background'],
+  accented: ['Optimizing your widget for accented rendering mode and Liquid Glass', 'https://developer.apple.com/documentation/widgetkit/optimizing-your-widget-for-accented-rendering-mode-and-liquid-glass'],
+  push: ['Starting and updating Live Activities with ActivityKit push notifications', 'https://developer.apple.com/documentation/activitykit/starting-and-updating-live-activities-with-activitykit-push-notifications'],
+  review: ['App Review Guidelines (2.5.16, 4.5.3)', 'https://developer.apple.com/app-store/review/guidelines/'],
+  gauge: ['GaugeStyle (accessoryCircularCapacity)', 'https://developer.apple.com/documentation/swiftui/gaugestyle'],
+  controlCenter: ['ControlCenter (reloadControls)', 'https://developer.apple.com/documentation/widgetkit/controlcenter'],
+  accessory: ['Creating accessory widgets and watch complications', 'https://developer.apple.com/documentation/widgetkit/creating-accessory-widgets-and-watch-complications'],
+  hig: ['HIG: Widgets', 'https://developer.apple.com/design/human-interface-guidelines/widgets'],
+  controls: ['Creating controls to perform actions across the system', 'https://developer.apple.com/documentation/widgetkit/creating-controls-to-perform-actions-across-the-system'],
+  higControls: ['HIG: Controls (Control Center)', 'https://developer.apple.com/design/human-interface-guidelines/controls'],
+  live: ['Displaying live data with Live Activities', 'https://developer.apple.com/documentation/activitykit/displaying-live-data-with-live-activities'],
+  higLive: ['HIG: Live Activities', 'https://developer.apple.com/design/human-interface-guidelines/live-activities'],
+  liveIntent: ['LiveActivityIntent', 'https://developer.apple.com/documentation/appintents/liveactivityintent'],
+  audio: ['AudioPlaybackIntent', 'https://developer.apple.com/documentation/appintents/audioplaybackintent'],
+  config: ['Making a configurable widget', 'https://developer.apple.com/documentation/widgetkit/making-a-configurable-widget'],
+  family: ['WidgetFamily', 'https://developer.apple.com/documentation/widgetkit/widgetfamily'],
+  render: ['WidgetRenderingMode', 'https://developer.apple.com/documentation/widgetkit/widgetrenderingmode'],
+  accentable: ['widgetAccentable(_:)', 'https://developer.apple.com/documentation/swiftui/view/widgetaccentable(_:)'],
+  relevance: ['TimelineEntryRelevance', 'https://developer.apple.com/documentation/widgetkit/timelineentryrelevance'],
+  wwdc23new: ['WWDC23: Bring widgets to new places', 'https://developer.apple.com/videos/play/wwdc2023/10027/'],
+  wwdc23life: ['WWDC23: Bring widgets to life', 'https://developer.apple.com/videos/play/wwdc2023/10028/'],
+  wwdc24: ['WWDC24: Extend your app’s controls across the system', 'https://developer.apple.com/videos/play/wwdc2024/10157/'],
+  wwdc25: ['WWDC25: What’s new in widgets', 'https://developer.apple.com/videos/play/wwdc2025/278/'],
+  watchConn: ['WatchConnectivity', 'https://developer.apple.com/documentation/watchconnectivity']
+};
+const src = keys => `<ul class="src">${keys.map(k => `<li><a href="${L[k][1]}" target="_blank" rel="noopener">${esc(L[k][0])}</a></li>`).join('')}</ul>`;
+
+/* ───────── Durum ───────── */
+const MODES = [['light', 'Açık'], ['dark', 'Koyu'], ['tint', 'Renklendirilmiş'], ['glass', 'Cam']];
+const TINTS = [['Sarı', '#F2D34B'], ['Mavi', '#8DB9FF'], ['Pembe', '#FF9FBC']];
+const WALL = { light: 'gun', dark: 'gece', tint: 'gece', glass: 'safak' };
+const S = {
+  i: Math.max(0, CARDS.findIndex(c => c.lemma === 'lend')),
+  mode: 'light', tint: 0, view: 'ozet',
+  qm: null, qs: null, sent: false, big: false, night: false, ccPlay: false,
+  cfg: { show: 'quiz', when: 'later' },
+  la: { k: 0, phase: 'ask', good: 0, again: 0, done: false }
+};
+const LA_TOTAL = 6;
+const card = (d = 0) => CARDS[((S.i + d) % CARDS.length + CARDS.length) % CARDS.length];
+const hash = s => [...s].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, 7);
+
+/* Kelimeyi taşıyan satıra sığması için yazı boyutu (Swift'teki minimumScaleFactor 0.6 gibi). */
+function fitSize(text, width, base, ratio = .52) {
+  const need = text.length * ratio * base;
+  return Math.round(Math.max(base * .6, Math.min(base, base * width / need)) * 10) / 10;
+}
+const word = (c, width, base, cls = '') => `<span class="w ${cls}" style="font-size:${fitSize(c.lemma, width, base)}px"><span class="band">${esc(c.lemma)}</span></span>`;
+
+/* Örnek cümlede kelimeyi bulur (büyük/küçük harf ve sonek esnek). */
+function markIn(sentence, lemma, tag = 'b') {
+  const re = new RegExp('\\b(' + lemma.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[a-z]*)', 'i');
+  const m = sentence.match(re);
+  if (!m) return esc(sentence);
+  const a = m.index, b = a + m[1].length;
+  const inner = tag === 'band' ? `<span class="w"><span class="band">${esc(sentence.slice(a, b))}</span></span>` : `<b>${esc(sentence.slice(a, b))}</b>`;
+  return esc(sentence.slice(0, a)) + inner + esc(sentence.slice(b));
+}
+
+/* ───────── Widget'lar ───────── */
+const wb = (icon, label, act = '', v = '') => `<button type="button" class="wb" ${act ? `data-act="${act}" data-v="${esc(v)}"` : ''} aria-label="${esc(label)}"><span>${ic(icon)}</span></button>`;
+
+function wSmall(c) {
+  return `<div class="wg wg-s" role="group" aria-label="Kelime widget'ı, küçük">
+    <div class="wg-head">${word(c, 104, 20)}<span class="lv">${c.level}</span></div>
+    <div class="wg-body"><div class="g" style="-webkit-line-clamp:2">${esc(c.gloss)}</div><div class="d" style="-webkit-line-clamp:1">${esc(c.micro)}</div></div>
+    <div class="strip">${wb('check', 'Biliyorum', 'know')}${wb('speaker', 'Kelimeyi dinle', 'speak', c.lemma)}${wb('fwd', 'Sonraki kelime', 'next')}</div>
+  </div>`;
+}
+
+function wMedium(c) {
+  return `<div class="wg wg-m" style="flex-direction:row;gap:8px" role="group" aria-label="Kelime widget'ı, orta">
+    <div class="wmain">
+      <div class="wg-head">${word(c, 190, 20)}${c.ipa && c.lemma.length < 11 ? `<span class="p">${esc(c.ipa)}</span>` : ''}<span class="lv">${c.level}</span></div>
+      <div class="wg-body"><div class="g" style="-webkit-line-clamp:1">${esc(c.gloss)}</div><div class="d" style="-webkit-line-clamp:2">${esc(c.short)}</div><div class="e">${markIn(c.exEn, c.lemma)}</div></div>
+    </div>
+    <div class="rail">${wb('check', 'Biliyorum', 'know')}${wb('speaker', 'Kelimeyi dinle', 'speak', c.lemma)}${wb('fwd', 'Sonraki kelime', 'next')}</div>
+  </div>`;
+}
+
+/* Şık sırası kelime kimliğine göre sabit (uygulamadaki quiz gibi). */
+function quizOptions(c) {
+  const right = c.quiz.answer, wrong = c.quiz.distractors[0];
+  return hash(c.id) % 2 ? [right, wrong] : [wrong, right];
+}
+/* Küçük quiz için çeldiricinin Türkçesi: çeldirici bir kartsa onun anlamı, değilse başka bir kartın. */
+function glossDistractor(c) {
+  for (const d of c.quiz.distractors) {
+    const other = CARDS.find(x => x.lemma.toLowerCase() === d.toLowerCase());
+    if (other && other.gloss !== c.gloss) return other.gloss;
+  }
+  let k = (CARDS.indexOf(c) + 7) % CARDS.length;
+  while (CARDS[k].gloss === c.gloss) k = (k + 1) % CARDS.length;
+  return CARDS[k].gloss;
+}
+
+function wQuizM(c) {
+  const q = c.quiz, opts = quizOptions(c), picked = S.qm;
+  const parts = q.cloze.split(/_{3,}/);
+  const filled = picked
+    ? `${esc(parts[0])}<span class="w"><span class="band">${esc(q.answer)}</span></span>${esc(parts.slice(1).join(''))}`
+    : `${esc(parts[0])}<span class="blank" aria-label="boşluk"></span>${esc(parts.slice(1).join(''))}`;
+  let bottom;
+  if (!picked) {
+    bottom = `<div class="q-opts">${opts.map(o => `<button type="button" class="opt" data-act="qm" data-v="${esc(o)}">${esc(o)}</button>`).join('')}</div>`;
+  } else {
+    const ok = picked === q.answer;
+    bottom = `<div class="q-fb"><span class="mk ${ok ? '' : 'x'}">${ic(ok ? 'check' : 'x')}</span>
+      <span class="msg">${ok ? 'Doğru.' : 'Doğrusu:'} <span class="en">${esc(c.lemma)}</span> = ${esc(c.gloss)}${ok ? '' : `<small>Seçtiğin: <span class="en">${esc(picked)}</span></small>`}</span>
+      ${wb('speaker', 'Kelimeyi dinle', 'speak', c.lemma)}${wb('fwd', 'Sıradaki soru', 'next')}</div>`;
+  }
+  return `<div class="wg wg-m" role="group" aria-label="Quiz widget'ı, orta">
+    <div class="wg-head"><span class="q-lab">Boşluğa hangisi gelir?</span><span class="lv">${c.level}</span></div>
+    <div class="q-sent">${filled}</div>${bottom}</div>`;
+}
+
+function wQuizS(c) {
+  const right = c.gloss, wrong = glossDistractor(c);
+  const opts = hash(c.id + 's') % 2 ? [right, wrong] : [wrong, right];
+  const picked = S.qs;
+  if (picked) {
+    const ok = picked === right;
+    return `<div class="wg wg-s" role="group" aria-label="Quiz widget'ı, küçük">
+      <div class="wg-head">${word(c, 104, 20)}<span class="lv">${c.level}</span></div>
+      <div class="wg-body"><div class="q-lab" style="display:flex;gap:4px;align-items:center">${ic(ok ? 'check' : 'x')}${ok ? 'Doğru' : 'Doğrusu'}</div><div class="g" style="-webkit-line-clamp:2">${esc(right)}</div></div>
+      <div class="strip">${wb('speaker', 'Kelimeyi dinle', 'speak', c.lemma)}<span></span>${wb('fwd', 'Sıradaki soru', 'next')}</div></div>`;
+  }
+  return `<div class="wg wg-s" role="group" aria-label="Quiz widget'ı, küçük">
+    <div class="wg-head">${word(c, 104, 20)}<span class="lv">${c.level}</span></div>
+    <div class="q-lab" style="margin-top:4px">Anlamı hangisi?</div>
+    <div class="qs-opts">${opts.map(o => `<button type="button" class="opt tr" data-act="qs" data-v="${esc(o)}">${esc(o)}</button>`).join('')}</div></div>`;
+}
+
+/* Günün cümlesi: dün gördüğün bir kelime. Galeride seçili kelimeden 5 önceki kart "dün" sayılır. */
+function wSentence() {
+  const c = card(-5);
+  return `<div class="wg wg-m" role="group" aria-label="Günün cümlesi widget'ı">
+    <div class="sn-top"><span class="q-lab">Günün cümlesi · dünden: <span class="en" style="font-weight:700">${esc(c.lemma)}</span></span><span class="lv">${c.level}</span></div>
+    <div class="sn-txt">${markIn(c.exEn, c.lemma, 'band')}</div>
+    <div class="sn-bot">${S.sent ? `<div class="sn-tr" style="flex:1">${esc(c.exTr)}</div>` : `<button type="button" class="cap" data-act="sent" style="margin-right:auto"><span>${ic('eye')}Türkçesi</span></button>`}
+      ${S.sent ? `<button type="button" class="wb" data-act="sent" aria-label="Türkçesini gizle"><span>${ic('eyeoff')}</span></button>` : ''}${wb('speaker', 'Cümleyi dinle', 'speak', c.exEn)}</div>
+  </div>`;
+}
+
+/* Büyük: şu anki kelime ve az önceki iki kelime (dönüşümde bir ve iki önceki). */
+function wLarge() {
+  const rows = [card(0), card(-1), card(-2)];
+  const head = `<div class="lg-top"><span class="t">Günün kelimeleri · Yeni kelime: 11:00</span><span style="margin-left:auto"></span>
+    <button type="button" class="cap" data-act="big" aria-pressed="${S.big}"><span>${ic(S.big ? 'eye' : 'eyeoff')}${S.big ? 'Göster' : 'Gizle'}</span></button></div>`;
+  const first = c => `<div class="lg-row"><div class="wmain">
+      <div class="wg-head">${word(c, 150, 22)}<span class="who">Şimdi</span><span class="lv">${c.level}</span></div>
+      <div class="g" style="-webkit-line-clamp:1;margin-top:5px;font-size:17px">${esc(c.gloss)}</div>
+      <div class="d" style="-webkit-line-clamp:1;font-size:13px">${esc(c.short)}</div>
+      <div class="e">${markIn(c.exEn, c.lemma)}</div></div>${wb('speaker', 'Kelimeyi dinle', 'speak', c.lemma)}</div>`;
+  const older = (c, when) => `<div class="lg-row"><div class="wmain">
+      <div class="wg-head">${word(c, 150, 18)}<span class="who">${when}</span><span class="lv">${c.level}</span></div>
+      <div class="g" style="-webkit-line-clamp:1;margin-top:4px;font-size:14.5px">${S.big ? '<span class="hid" aria-label="Anlam gizli"></span>' : esc(c.gloss)}</div>
+      <div class="d" style="-webkit-line-clamp:1;font-size:12px">${esc(c.micro)}</div></div>${wb('speaker', 'Kelimeyi dinle', 'speak', c.lemma)}</div>`;
+  return `<div class="wg wg-l" role="group" aria-label="Büyük widget, günün üç kelimesi">${head}${first(rows[0])}${older(rows[1], '1 saat önce')}${older(rows[2], '2 saat önce')}</div>`;
+}
+
+/* ───────── Kilit ekranı parçaları (hep "vibrant": renk yok) ───────── */
+function aRect(c, phase) {
+  return `<div class="rect" role="group" aria-label="Kilit ekranı dikdörtgen widget">${word(c, 136, 17)}
+    ${phase === 'ask' ? '<div class="q">Ne demekti?</div><div class="d" style="opacity:.75">Cevap: 10:05</div>' : `<div class="g">${esc(c.gloss)}</div><div class="d">${esc(c.micro)}</div>`}</div>`;
+}
+function aCirc(n) {
+  const frac = Math.min(1, n / 12), r = 29, len = 2 * Math.PI * r;
+  return `<div class="circ" role="img" aria-label="${n ? n + ' kelime tekrar bekliyor' : 'Bugünlük tekrar bitti'}">
+    <svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="${r}" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="4"/>
+    ${n ? `<circle cx="32" cy="32" r="${r}" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="${(len * frac).toFixed(1)} ${len.toFixed(1)}" transform="rotate(-90 32 32)"/>` : ''}</svg>
+    ${n ? `<div class="n">${n}<small>tekrar</small></div>` : ic('check')}</div>`;
+}
+const inline = (c, phase) => phase === 'ask' ? `Per 22 · ${esc(c.lemma)} · ne demekti?` : `Per 22 · ${esc(c.lemma)} · ${esc(c.gloss.split(',')[0])}`;
+
+/* ───────── Çerçeveler ───────── */
+const STAT = `<div class="stat"><span>{T}</span><span class="si"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.3-1.4C13.3 1.2 10.8.2 8 .2S2.7 1.2.7 3.2L2 4.6c1.6-1.5 3.7-2.4 6-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.4l1.3-1.4C11.5 4.6 9.8 3.8 8 3.8S4.5 4.6 3.3 5.8l1.3 1.4c.9-.9 2.1-1.4 3.4-1.4zm0 3.6c-.6 0-1.1.2-1.5.6L8 11.6l1.5-1.6c-.4-.4-.9-.6-1.5-.6z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="18" height="8" rx="2"/><rect x="24.5" y="4" width="2" height="4" rx="1" opacity=".45"/></svg></span></div>`;
+const APPS = [['cal', 'Takvim', '#FF6B5E', '#E0443A'], ['photo', 'Fotoğraflar', '#FFC65C', '#F08A3E'], ['note', 'Notlar', '#FFE27A', '#F2C744'], ['sun', 'Hava', '#6DB7FF', '#3B7BE0'],
+  ['map', 'Harita', '#7ED39A', '#3FA466'], ['music', 'Müzik', '#FF7A9A', '#E0436A'], ['clock', 'Saat', '#4A4F57', '#24272C'], ['gear', 'Ayarlar', '#9AA1AA', '#646B74']];
+const appI = (a, label = true) => `<div class="app-i"><i style="--a:${a[2]};--b:${a[3]}">${ic(a[0])}</i>${label ? `<span>${a[1]}</span>` : ''}</div>`;
+const iconRow = (from = 0) => `<div class="icons">${[0, 1, 2, 3].map(k => appI(APPS[(from + k) % APPS.length])).join('')}</div>`;
+const quad = (from = 0) => `<div class="quad">${[0, 1, 2, 3].map(k => appI(APPS[(from + k) % APPS.length])).join('')}</div>`;
+const lgIcon = () => `<div class="app-i lg"><i>${appIcon(S.mode !== 'light')}</i><span>Lockglow</span></div>`;
+const dock = () => `<div class="pgdots"><i></i><i></i></div><div class="dock">${appI(['phone', 'Telefon', '#7ED39A', '#36A55B'], false)}${appI(['chat', 'Mesajlar', '#7ED39A', '#3FB866'], false)}${appI(['globe', 'Tarayıcı', '#7FB6FF', '#3D7EEA'], false)}${lgIcon()}</div>`;
+
+function phone(mode, inner, { wall = WALL[mode], time = '10:02', dim = false } = {}) {
+  return `<div class="fit" data-w="414" data-h="868" data-max=".8"><div class="dev"><div class="phone m-${mode}" style="--tc:${TINTS[S.tint][1]}"><div class="screen">
+    <div class="wall ${wall}${dim || mode === 'tint' ? ' dim' : ''}"></div>${STAT.replace('{T}', time)}<div class="island"></div>${inner}<div class="homebar"></div></div></div></div></div>`;
+}
+const home = (mode, rows) => phone(mode, `<div class="hs">${rows.join('')}</div>${dock()}`);
+const row = (...items) => `<div class="row">${items.join('')}</div>`;
+
+function lock(mode, { c, phase = 'answer', due = 6, live = '', ctlLeft = null, time = '10:02', inl = true } = {}) {
+  const left = ctlLeft || `<i>${ic('flash')}</i>`;
+  return phone(mode, `<div class="ls"><div class="lk">${ic('lock')}</div>
+      <div class="inl">${inl ? inline(c, phase) : 'Perşembe 22 Ekim'}</div>
+      <div class="clock">${time}</div>
+      <div class="acc">${aCirc(due)}${aRect(c, phase)}</div></div>
+      ${live}<div class="ls-bot">${left}<i>${ic('camera')}</i></div>`, { wall: WALL[mode] === 'gun' ? 'gun' : WALL[mode], time: '' });
+}
+const fig = (inner, cap) => `<figure class="frame" style="margin:0">${inner}${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
+
+/* ───────── Fikirler (önerilen sırayla) ───────── */
+const IDEAS = [
+  {
+    id: 'hatirla', rank: 1, title: 'Kilit ekranı: önce hatırla', short: 'Anlam 5 dakika sonra çıkar',
+    pitch: 'Kilit ekranı önce yalnız kelimeyi gösterir ve “Ne demekti?” diye sorar. Birkaç dakika sonra anlamı kendiliğinden çıkar. Hiçbir şeye dokunman gerekmez.',
+    ios: 'iOS 17+', fayda: 4, maliyet: '1–2 gün', mp: 1, riskLv: 'Düşük', yeni: 'Yok (aynı widget, yeni giriş türü)',
+    stage: () => fig(lock(S.mode, { c: card(), phase: 'ask', time: '10:02' }), '10:02 · önce soru: kelime ve “Ne demekti?”')
+      + fig(lock(S.mode, { c: card(), phase: 'answer', time: '10:06' }), '10:06 · sonra cevap: anlam ve kısa tanım'),
+    hint: 'Üstten kelimeyi değiştir; iki ekran aynı kelimenin iki anını gösterir. Soldaki daire, zamanı gelen tekrar sayısı.',
+    allow: [
+      'Kilit ekranı aileleri: dikdörtgen (<code>accessoryRectangular</code>, 6,1" ekranda yaklaşık 160 × 72 pt), daire (<code>accessoryCircular</code>, 72 × 72 pt) ve satır içi (<code>accessoryInline</code>). Sistem onları “vibrant” çizer: renk yok, yalnız parlaklık.',
+      'Dikdörtgen ve daire düğme alabilir, ama Apple’a göre kilitli cihazda düğmeler pasiftir; kişi Face ID ile kilidi açana kadar hiçbir şey çalışmaz <span class="tag v">BELGEDE</span>. Bu fikir bu yüzden düğme yerine <b>zamanı</b> kullanır.',
+      'Zaman çizelgesine giriş önceden konur; sistem her girişi kendi saatinde gösterir. Apple girişler arasında en az 5 dakika öneriyor.'
+    ],
+    budget: [
+      'Girişler önceden hesaplanır. Sıradaki girişe geçmek yeniden yükleme değildir; bütçeyi yalnız yeni çizelge isteği harcar.',
+      'Her kelime aralığı iki giriş olur (soru + cevap). 60 dakikalık aralıkta 48 saat 96 giriş eder; bugünkü 96 giriş sınırı korunur.',
+      'Aralık 10 dakikadan kısaysa (5 dakika seçeneği) bölme yapılmaz, anlam hemen görünür: girişler 5 dakikadan sık olmasın.',
+      'Daire de aynı girişlerde hesaplanır; ek yükleme yok.'
+    ],
+    how: [
+      '<code>WordEntry</code>’ye <code>phase</code> (soru / cevap) eklenir. <code>WordProvider.makeEntries</code> her sınırdan sonra bir cevap girişi koyar: sınır + 5 dakika.',
+      'Yalnız kilit ekranı aileleri bu alanı okur; ana ekran widget’ları anlamı hep gösterir.',
+      'Ayarlar’a bir satır: “Kilit ekranında anlam: Hemen / 5 dakika sonra”. Varsayılan “5 dakika sonra”.',
+      'Daire: zamanı gelmiş tekrar sayısı, <code>Gauge</code> + <code>.accessoryCircularCapacity</code>. Uygulama planı yazarken kelimelerin tekrar saatlerini (<code>dueAt</code>, yalnız sayı için) ekler; widget her girişte sayar. 0 olunca ✓.',
+      'Dokunuş: dikdörtgen kelimenin kartını, daire Tekrar sekmesini açar (<code>widgetURL</code>).',
+      'İleride: Face ID ile kilit açıkken çalışan bir “Göster” düğmesi. Zamanla açılma daha sakin olduğu için önce o.'
+    ],
+    benefit: [
+      'Telefona her bakış küçük bir hatırlama denemesi olur. Önce kendin bulmaya çalışırsın, sonra cevabı görürsün. Hatırlamaya çalışmak, yalnız okumaktan daha iyi öğretir.',
+      'Bildirim metniyle aynı dil: “Hatırlıyor musun: …?” (ui2-bildirim).',
+      'Dokunmak, karar vermek gerekmez. Yormaz.'
+    ],
+    risk: [
+      'Bazı kullanıcılar anlamı hemen görmek ister: ayar şart.',
+      'Sayaç baskı yapmasın: kırmızı yok, rozet yok, seri yok; 0 olunca ✓.',
+      'Satır içi widget çok kısa: soru evresinde “lend · ne demekti?”, cevapta ilk anlam.'
+    ],
+    links: ['accessory', 'budget', 'interact', 'gauge', 'hig']
+  },
+  {
+    id: 'quiz', rank: 2, title: 'Mini quiz widget’ı', short: 'İki şık, uygulama açılmaz',
+    pitch: 'Widget kelimeyi sorar; iki şıktan birine dokunursun. Cevap uygulamayı açmadan kaydedilir ve Tekrar planına girer.',
+    ios: 'iOS 17+', fayda: 5, maliyet: '3–5 gün', mp: 3, riskLv: 'Orta', yeni: 'Yok (yeni intent ve plan alanı)',
+    stage: () => fig(home(S.mode, [row(wQuizM(card())), row(wQuizS(card()), wSmall(card())), iconRow(0), iconRow(4)]), 'Orta: boşluk doldurma. Küçük: anlamı hangisi?'),
+    hint: 'Şıklardan birine dokun. Doğru ya da yanlış, geri bildirim widget’ın içinde görünür. “Sıradaki” kelimeyi değiştirir (bütün widget’larda).',
+    allow: [
+      'iOS 17’den beri ana ekran widget’ında <code>Button(intent:)</code> ve <code>Toggle(isOn:intent:)</code> var. Dokununca <code>AppIntent.perform()</code> widget eklentisinde çalışır, sonra sistem widget’ı yeniden çizer.',
+      'Yazı yazma, kaydırma, sürükleme yok; yalnız düğme ve anahtar. Bu yüzden quiz iki şıklı.',
+      'Widget intent parametrelerini sormaz: her parametre (kelime kimliği, seçilen şık) düğmede dolu verilir.',
+      '<code>invalidatableContent()</code>: dokununca şık, yeni çizim gelene kadar soluk görünür. Apple “ölçülü kullan” diyor.'
+    ],
+    budget: [
+      'Apple’a göre bir intent’le (düğme, anahtar) gelen yeniden yükleme her zaman yapılır ve bütçeden sayılmaz <span class="tag v">BELGEDE</span>.',
+      'Veri <code>perform()</code> dönmeden diske yazılmalı; sistem dönüşte widget’ı yeniden çizer.',
+      'Soru kelimeyle birlikte değişir; ek giriş yok.',
+      'İsteğe bağlı: <code>TimelineEntryRelevance</code> ile hatırlatma saatinde (20:00) quiz, Akıllı Yığın’da öne çıkar.'
+    ],
+    how: [
+      'Uygulama planı yazarken kelimeye <code>quiz</code> alanı ekler: boşluklu cümle, doğru cevap, bir çeldirici, küçük boy için çeldiricinin Türkçesi. Widget SQLite açmaz (kural).',
+      'Yeni intent <code>AnswerQuizIntent(wordID, choice)</code>. Son cevap <code>widget_state.json</code>’a yazılır. Olay mevcut türlerle: yanlış → <code>unknown</code> (uygulama <code>review(.again)</code> yapar), doğru → <code>reveal</code> (yalnız “görüldü”). Yeni olay türü gerekmez.',
+      'Cevaptan sonra: ✓ ya da ✗, boşlukta kelime şeritle durur. “Sıradaki” mevcut <code>NextWordIntent</code>.',
+      'Şık sırası kelime kimliğine göre sabit (uygulamadaki quiz gibi).',
+      'Küçük boy: “Anlamı hangisi?” (kelime → iki Türkçe anlam). Orta boy: boşluk doldurma (cümle → iki kelime).'
+    ],
+    benefit: [
+      'Okumak yerine seçmek: aktif hatırlama. Uygulamayı açmadan günde birkaç soru.',
+      'Yanlış bilinen kelime 10 dakika sonra Tekrar’da yine gelir.',
+      'Tek soru, iki şık, süre yok, puan yok.'
+    ],
+    risk: [
+      'Yanlışlıkla doğru şıka basmak zarar vermez (kutu değişmez). Yanlışlıkla yanlış şık: kelime erken tekrar gelir; kabul edilebilir.',
+      'Dokunuştan sonra çizim gecikmesi yalnız Release’te ölçülür (ios/README madde 26).',
+      'Renklendirilmiş ve cam modda yeşil ve kırmızı kaybolur: ✓ ✗ simgesi ve “Doğru / Doğrusu” yazısı şart (kural 4).',
+      'Bazı quiz cevapları çekimli (<i>forgot</i>, <i>came up with</i>): boşluğa cevap yazılır, şerit yine kelimede.'
+    ],
+    links: ['interact', 'budget', 'wwdc23life', 'relevance']
+  },
+  {
+    id: 'kontrol', rank: 3, title: 'Kelimeyi dinle düğmesi', short: 'Denetim Merkezi · Eylem düğmesi',
+    pitch: 'Denetim Merkezi’nde, kilit ekranının alt köşesinde ya da Eylem düğmesinde tek dokunuşla şu anki kelimeyi dinle.',
+    ios: 'iOS 18+', fayda: 4, maliyet: '1–2 gün', mp: 1, riskLv: 'Orta', yeni: 'Yok (aynı eklentide kontrol)',
+    stage: () => fig(phone(S.mode, ccInner(), { dim: true }), 'Denetim Merkezi: geniş “Kelimeyi dinle”; küçük “Sonraki kelime” ikinci adım')
+      + fig(lock(S.mode, { c: card(), phase: 'answer', ctlLeft: `<button type="button" class="mine" data-act="speak" data-v="${esc(card().lemma)}" aria-label="Kelimeyi dinle"><i>${ic('speaker')}</i></button>` }), 'Kilit ekranı: fener yerine “Kelimeyi dinle”')
+      + fig(`<div class="abtn"><svg viewBox="0 0 76 120" aria-hidden="true"><rect x="14" y="4" width="54" height="112" rx="14" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="8" y="26" width="5" height="14" rx="2.5" fill="currentColor"/><rect x="8" y="46" width="5" height="10" rx="2.5" fill="currentColor" opacity=".45"/><rect x="8" y="60" width="5" height="10" rx="2.5" fill="currentColor" opacity=".45"/></svg><p><b>Eylem düğmesi</b>Ayarlar › Eylem Düğmesi › Denetim › Lockglow: “Kelimeyi dinle”. Telefona bakmadan bas, kelimeyi duy.</p></div>`, 'iPhone 15 Pro ve sonrası'),
+    hint: 'Denetim Merkezi’ndeki geniş kontrole ya da kilit ekranındaki hoparlöre dokun: tarayıcı kelimeyi İngilizce okur. Küçük kontrol kelimeyi değiştirir.',
+    allow: [
+      'iOS 18 kontrolleri (<code>ControlWidget</code>): <code>ControlWidgetButton</code> ve <code>ControlWidgetToggle</code>. Kullanıcı bunları Denetim Merkezi’ne, kilit ekranının alt iki düğmesinin yerine ve Eylem düğmesine koyar.',
+      'Görünümü sistem çizer. Denetim Merkezi’nde simge, büyük boylarda başlık ve değer; kilit ekranında <b>yalnız simge</b>; Eylem düğmesinde simge ve değer Dynamic Island’da <span class="tag v">BELGEDE</span>.',
+      'Cihaz kilitliyken sistem başlığı ve değeri gizler. Kontrolün intent’i kilitliyken çalışır mı, belgede açık değil <span class="tag u">DOĞRULANMADI</span>.',
+      'Kontrol bir App Intent çalıştırır. Bizde zaten <code>SpeakWordIntent</code> (<code>AudioPlaybackIntent</code>, uygulamanın sürecinde) ve <code>NextWordIntent</code> var. Ses intent’inin kontrolden uygulama açılmadan çalması belgede yok <span class="tag u">DOĞRULANMADI</span>.'
+    ],
+    budget: [
+      'Kontrollerin zaman çizelgesi yok. Yenilenme: <code>perform()</code> dönünce, uygulama <code>ControlCenter.shared.reloadControls(ofKind:)</code> çağırınca ya da push ile. Saat başı kendiliğinden yenilenmez.',
+      'Bu yüzden değer satırına kelime yazılmaz: saat başı değişen kelime kontrolde eski kalırdı. Başlık “Kelimeyi dinle”, değer “Şu anki kelime”. Okunan kelime dokunma anında hesaplanır.',
+      '“Sonraki kelime” kontrolden basılınca widget’lar kendiliğinden yenilenmez; intent <code>WidgetCenter.shared.reloadAllTimelines()</code> çağırmalı. Bunun bütçeden sayılıp sayılmadığı belgede yok.'
+    ],
+    how: [
+      'Yeni parametresiz intent <code>SpeakCurrentWordIntent</code> (<code>AudioPlaybackIntent</code>): <code>perform()</code> anında kelimeyi <code>TimelinePlanner.wordAt(...)</code> ile bulur (widget’la aynı hesap, aynı kelime) ve mevcut <code>WordSpeechPlayer</code> ile okur.',
+      'Önce tek kontrol: “Kelimeyi dinle”. “Sonraki kelime” ikinci adım (yukarıdaki bütçe sorusu).',
+      'Proje iOS 17 hedefliyor: kontrol <code>@available(iOS 18, *)</code>, bundle’da <code>if #available</code> dalıyla eklenir.',
+      'HIG: değişebilen başlık ya da değer için galeride yer tutucu (<code>previewValue</code>); “Basılı tut” gibi ipucu için <code>controlWidgetActionHint</code>.'
+    ],
+    benefit: [
+      'Telaffuz tek dokunuşla. Eylem düğmesine atanırsa telefona bakmadan.',
+      'Kilit ekranında fener yerine “Dinle”: kilit ekranındaki kelimeyi duymak için uygulamayı açmak gerekmez (Face ID ile).'
+    ],
+    risk: [
+      'Kilitliyken ve uygulama kapalıyken sesin çıkması cihazda denenmeli (widget hoparlörüyle aynı yol, ios/README madde 45).',
+      'iOS 17 kullanıcıları bu kontrolü görmez; ana ekran widget’ındaki hoparlör onlarda kalır.'
+    ],
+    links: ['controls', 'controlCenter', 'wwdc24', 'audio', 'higControls']
+  },
+  {
+    id: 'cumle', rank: 4, title: 'Günün cümlesi', short: 'Dünkü kelime, yeni cümle',
+    pitch: 'Dün gördüğün bir kelime, yeni bir cümlede. Önce İngilizcesini oku, anlamaya çalış, sonra Türkçesine bak.',
+    ios: 'iOS 17+', fayda: 4, maliyet: '2–3 gün', mp: 2, riskLv: 'Düşük', yeni: 'Yok (yeni widget türü)',
+    stage: () => fig(home(S.mode, [row(wSentence()), row(wSmall(card()), quad(4)), iconRow(0), iconRow(2)]), 'Orta boy; günde bir kez değişir'),
+    hint: '“Türkçesi”ne dokun: çeviri açılır. Hoparlör cümleyi okur.',
+    allow: [
+      '<code>systemMedium</code> ve iOS 17 düğmeleri: “Türkçesi” bir anahtar (<code>Toggle(isOn:intent:)</code>), “Dinle” bir düğme.'
+    ],
+    budget: [
+      'Günde bir değişim: gece yarısında tek giriş. Ek yükleme yok.',
+      '“Türkçesi” ve “Dinle” dokunuşları etkileşimdir; bütçeyi beklemez.'
+    ],
+    how: [
+      'Uygulama planı yazarken iki günlük “günün cümlesi” listesi ekler: tarih, kelime, İngilizce cümle, Türkçesi.',
+      'Kelime: dün ilk kez gördüğün ya da dün tekrar ettiğin bir kelime. Cümle: kartın akışta gösterilmeyen başka bir örneği. Yeni bağlam, aynı kelime.',
+      'Cümledeki kelimede şerit var (kural 1: örnekteki aynı kelime).',
+      '“Türkçesi” açık kalır; ertesi gün kapanır. Durum <code>widget_state.json</code>’da.',
+      '“Dinle” cümleyi okur (aynı <code>SpeakWordIntent</code>, metin = cümle). 8 saniyelik sınır uzun cümlede yetmeyebilir; 12 saniyeye çıkarılabilir.'
+    ],
+    benefit: [
+      '1 gün sonra tekrar, aralıklı tekrar için iyi bir zaman. Kelimeyi yeni bir cümlede görmek anlamı derinleştirir.',
+      'Önce İngilizce, sonra Türkçe: kendini sınama.',
+      'Günde bir kez değişir; sakin.'
+    ],
+    risk: [
+      'Uzun cümle 3 satıra sığmaz: seçerken 90 karakterden kısa örnek tercih edilir.',
+      'Tohum kelimelerde (plan yok) dünkü kelime yok: o zaman şu anki kelimenin örneği görünür.'
+    ],
+    links: ['interact', 'budget', 'family']
+  },
+  {
+    id: 'standby', rank: 5, title: 'StandBy: gece kelimesi', short: 'Yatay şarjda büyük kelime',
+    pitch: 'Telefon yatay şarjdayken kelime büyük ve sakin görünür. Karanlık odada sistem her şeyi kırmızıya çevirir.',
+    ios: 'iOS 17+', fayda: 3, maliyet: '1 gün', mp: 1, riskLv: 'Düşük', yeni: 'Yok (küçük widget’a dal)',
+    stage: () => `<div class="stage-ctl"><span class="ctl-l">STANDBY</span><div class="seg"><button type="button" data-act="night" data-v="0" aria-pressed="${!S.night}">Gündüz</button><button type="button" data-act="night" data-v="1" aria-pressed="${S.night}">Gece (kırmızı)</button></div></div>`
+      + fig(standby(card()), S.night ? 'Gece: sistem tek renk kırmızı çizer; şerit ince çizgi' : 'Gündüz: arka plan yok, kelime iri, düğme yok'),
+    hint: 'Gündüz ve gece arasında geç. Solda sistemin saat widget’ı, sağda Lockglow.',
+    allow: [
+      'StandBy (iOS 17): telefon yatay ve şarjdayken çalışır. Yalnız küçük (<code>systemSmall</code>) widget’lar görünür; iki yığın yan yana, her biri ekranın yarısına büyütülür <span class="tag v">BELGEDE</span>.',
+      'Sistem arka planı kaldırır. Bunun için arka plan <code>containerBackground(for: .widget)</code> içinde olmalı (bizde öyle); StandBy’da <code>showsWidgetContainerBackground</code> false olur. <code>containerBackgroundRemovable(false)</code> dersen widget StandBy galerisinde görünmez.',
+      'Karanlık odada sistem “vibrant” modla, kırmızı tek renk çizer.',
+      'HIG: uzaktan okunur iri yazı, az renk ve resim.',
+      'Uygulamaya ait ayrı bir tam ekran StandBy görünümü için API yok; yalnız widget’lar ve Canlı Etkinlikler.'
+    ],
+    budget: ['Aynı zaman çizelgesi. Apple: StandBy’da sistemin kendi ekran yenilemesi bütçeden sayılmaz.'],
+    how: [
+      'Var olan küçük widget’a bir dal: <code>showsWidgetContainerBackground == false</code> iken düğmesiz, daha iri düzen.',
+      'Kelime en büyük; altında Türkçe anlam ve kısa tanım. Gece şerit ince çizgi (vibrant mod, bugünkü kod zaten yapıyor).',
+      'Gece ışıma eklenmez: göz yorulmasın.'
+    ],
+    benefit: [
+      'Uyumadan önce ve uyanınca bir kelime. Komodindeki telefon sessiz bir kelime kartı olur.',
+      'Uzaktan okunur: büyük yazı, az metin.'
+    ],
+    risk: [
+      'StandBy’da düğmelerin çalışıp çalışmadığı belgede yok <span class="tag u">DOĞRULANMADI</span>. Telefon komodinde çoğu zaman kilitli; kilitliyken düğmeler pasif. Bu yüzden StandBy düzeninde düğme yok, dokunuş yalnız uygulamayı açar.',
+      'Kenar boşlukları elle uygulanıyor (madde 45): StandBy’da cihazda bakılmalı.'
+    ],
+    links: ['standby', 'background', 'wwdc23new', 'hig']
+  },
+  {
+    id: 'buyuk', rank: 6, title: 'Büyük widget: günün 3 kelimesi', short: 'Şimdi + az önceki iki kelime',
+    pitch: 'Şimdiki kelime büyük; altında az önceki iki kelime. İstersen eski ikisinin anlamını gizleyip kendini dene.',
+    ios: 'iOS 17+', fayda: 3, maliyet: '2–3 gün', mp: 2, riskLv: 'Düşük', yeni: 'Yok (yeni aile)',
+    stage: () => fig(home(S.mode, [row(wLarge()), iconRow(0), iconRow(4)]), 'systemLarge, yaklaşık 338 × 354 pt'),
+    hint: '“Gizle”ye dokun: alttaki iki kelimenin anlamı kapanır. Her satırın hoparlörü o kelimeyi okur.',
+    allow: [
+      '<code>systemLarge</code> iPhone’da var: 6,1" ekranda 338 × 354 pt, 6,9" ekranda 364 × 382 pt <span class="tag v">BELGEDE</span>. <code>systemExtraLarge</code> iPhone’da yok.',
+      'Orta ve büyük widget’ta birden çok <code>Link</code> olabilir: her satır kendi kelimesini açar.',
+      'Düğme ve anahtarlar (iOS 17).'
+    ],
+    budget: ['Aynı zaman çizelgesi; her girişte 3 kelime. Ek yükleme yok.'],
+    how: [
+      'Üst satır şu anki kelime (bütün widget’larla aynı). Altında dönüşümde bir ve iki önceki kelime.',
+      '<code>WordEntry</code>’ye <code>recent: [WidgetWord]</code>; aynı <code>TimelinePlanner</code> hesabı, aynı tur.',
+      'Her satırda “Dinle”; üstte “Gizle” anahtarı (<code>Toggle(isOn:intent:)</code>, durum App Group’ta).'
+    ],
+    benefit: [
+      'Her kelime 3 saat görünür: daha çok tekrar.',
+      'Ana ekranda tek bakışta küçük bir ders sayfası.'
+    ],
+    risk: [
+      'Ana ekranda çok yer kaplar; az kullanıcı seçer.',
+      'Metin yoğun: örnek cümle yalnız üst satırda.'
+    ],
+    links: ['family', 'hig', 'interact']
+  },
+  {
+    id: 'cam', rank: 7, title: 'iOS 26 cam ve renklendirme', short: 'Her ana ekran görünümünde okunur',
+    pitch: 'Kullanıcı ana ekranı koyu, renklendirilmiş ya da cam yapınca widget yine okunur ve kimliğini korur. Yeni widget değil, bütün widget’lar için bir kontrol listesi.',
+    ios: 'iOS 18 / 26', fayda: 3, maliyet: '1 gün', mp: 1, riskLv: 'Düşük', yeni: 'Yok',
+    stage: () => ['light', 'tint', 'glass'].map(m => fig(home(m, [row(wSmall(card()), wQuizS(card())), row(wSentence()), iconRow(0), iconRow(4)]), { light: 'Tam renk (bugünkü)', tint: 'Renklendirilmiş (iOS 18+)', glass: 'Cam (iOS 26)' }[m])).join(''),
+    hint: 'Bu sayfa üç görünümü yan yana gösterir; üstteki “Görünüm” düğmesi burada etkisiz. Renk düğmeleri renklendirilmiş görünümü değiştirir.',
+    allow: [
+      'Ana ekran görünümleri: iOS 18’de koyu ve renklendirilmiş, iOS 26’da cam (şeffaf).',
+      'Renklendirilmiş ve camda widget <code>accented</code> modda çizilir <span class="tag v">BELGEDE</span>: sistem içeriği iki gruba ayırır (birincil ve vurgu) ve renkleri kendisi atar; bizim renkler yalnız saydamlık olarak kalır.',
+      '<code>.widgetAccentable()</code> bir görünümü vurgu grubuna koyar. Bizde: kelime ve şeridi.',
+      'Arka planı sistem kaldırır, yerine cam ya da renk koyar (<code>containerBackground</code> bu yüzden zorunlu).',
+      'Resimler için <code>widgetAccentedRenderingMode</code> (<code>.desaturated</code>, <code>.accentedDesaturated</code>, <code>.fullColor</code> …). Apple çoğu resimde soluklaştırılmış seçenekleri öneriyor.'
+    ],
+    budget: ['Yok: görünüm değişince sistem kendisi yeniden çizer.'],
+    how: [
+      'Bugünkü kod doğru yolda: <code>WidgetColors.system</code>, ince şerit çizgisi, kelime <code>widgetAccentable</code>.',
+      'Yeni widget’larda doğru/yanlış rengine güvenme: simge ve kelime (kural 4).',
+      'Düğme daireleri <code>quaternary</code>: camda yeterince görünüyor mu, cihazda bak.',
+      'Resim kullanmıyoruz (yalnız SF Symbols): <code>widgetAccentedRenderingMode</code> gerekmez.',
+      'ui2-widget oturumu şu an widget’ları cilalıyor; bu liste onların cihaz denetimine eklenebilir.'
+    ],
+    benefit: ['Kullanıcı hangi ana ekranı seçerse seçsin Lockglow düzgün ve tanınır görünür.'],
+    risk: ['Camda okunurluk duvar kâğıdına bağlı: açık duvar kâğıdında beyaz yazı zayıflar.'],
+    links: ['accented', 'render', 'accentable', 'wwdc25']
+  },
+  {
+    id: 'duzenle', rank: 8, title: 'Widget’ı düzenle', short: 'Kelime, cümle ya da quiz seç',
+    pitch: 'Widget’a uzun basıp “Widget’ı Düzenle”: kelime mi, cümle mi, quiz mi göstersin; anlam hemen mi, 5 dakika sonra mı çıksın.',
+    ios: 'iOS 17+', fayda: 3, maliyet: '3–4 gün', mp: 3, riskLv: 'Orta', yeni: 'Yeni widget türü önerilir',
+    stage: () => fig(phone(S.mode, `<div class="hs"><div style="height:158px;flex:none"></div>${iconRow(0)}${iconRow(4)}${iconRow(2)}</div>${dock()}${editSheet()}`), 'Düzenleme ekranı: seçenekler widget’ın altında'),
+    hint: 'Seçeneklere dokun: üstteki widget hemen değişir.',
+    allow: [
+      '<code>AppIntentConfiguration</code> + <code>WidgetConfigurationIntent</code> (iOS 17): widget’a uzun basıp “Widget’ı Düzenle” ile seçenek.',
+      'Düzenleme ekranını sistem parametrelerden kendisi kurar, yazıldıkları sırayla. Seçenekler sabit listeler (<code>AppEnum</code>) ya da uygulamanın verdiği öğeler (<code>AppEntity</code>) olabilir. Zorunlu parametrenin varsayılanı olmalı.'
+    ],
+    budget: ['Seçenek değişince sistem o widget için yeni çizelge ister. Bunun bütçeye etkisi belgede ayrıca yazmıyor; günde birkaç kez olur, sorun beklenmez.'],
+    how: [
+      'İki yol: (A) ayrı widget türleri (Kelime, Quiz, Cümle), galeride üç kart; (B) tek widget ve “Ne gösterilsin?” seçeneği.',
+      'Öneri: önce A. Bugünkü <code>WordWidget</code> <code>StaticConfiguration</code>; aynı <code>kind</code> ile yapılandırmaya geçmek ekrandaki widget’ları etkileyebilir, cihazda denenmeden yapılmamalı.',
+      '“Konu” seçeneği pahalı: widget planı tek kuyruk; konuya göre ayrı kuyruk gerekir. İlk sürümde yok.'
+    ],
+    benefit: ['Kullanıcı kendi tarzını seçer; aynı ekranda iki widget iki ayrı şey gösterebilir.'],
+    risk: ['Çok seçenek kafa karıştırır: en çok iki soru.'],
+    links: ['config', 'wwdc23life']
+  },
+  {
+    id: 'canli', rank: 9, title: 'Canlı Etkinlik: tekrar turu', short: 'Kilit ekranında 6 kartlık tur',
+    pitch: 'Uygulamada “Kilit ekranında devam et”e basarsın. Tur kilit ekranında sürer: kelime, “Göster”, sonra “Bildim” ya da “Bilemedim”.',
+    ios: 'iOS 17+', fayda: 4, maliyet: '5–8 gün', mp: 5, riskLv: 'Yüksek', yeni: 'ActivityKit, Info.plist anahtarı',
+    stage: () => fig(lock(S.mode, { c: card(), phase: 'answer', due: 6, live: liveActivity(), inl: false }), 'Kilit ekranı: Canlı Etkinlik turun kartını gösterir')
+      + fig(diFrame(), 'Dynamic Island: “3/6” ve kelime'),
+    hint: '“Göster”, sonra “Bildim” ya da “Bilemedim”. 6 kart sonra tur biter.',
+    allow: [
+      'Canlı Etkinlik (ActivityKit) kilit ekranında ve Dynamic Island’da görünür. Düğmeler iOS 17’den beri: <code>LiveActivityIntent</code>, uygulamanın sürecinde çalışır ve <code>Activity.update</code> yapabilir <span class="tag v">BELGEDE</span>.',
+      'Kilitli cihazda Canlı Etkinlik düğmeleri de pasif: kişi Face ID ile kilidi açınca çalışır (ekran kilit ekranında kalabilir).',
+      'En çok 8 saat etkin kalır; sonra sistem bitirir, kilit ekranında en çok 4 saat daha durur (toplam 12 saat).',
+      'İçerik en çok 4 KB. Kilit ekranı görünümü yaklaşık 371 pt geniş, 84–160 pt yüksek; 160 pt’yi aşan kesilebilir.',
+      'Başlatma: çoğunlukla uygulama önde olmalı; bir <code>LiveActivityIntent</code> arka planda da başlatabilir (ör. bir kontrolden). Sunucudan başlatma (push-to-start) iOS 17.2+ ve sunucu ister.',
+      'HIG: başı ve sonu belli işler için (en çok 8 saat); reklam ya da tanıtım için değil; tercihen tek etkileşimli öğe.'
+    ],
+    budget: [
+      'Uygulama içinden yerel güncellemeler için belgede sayı yok. Push güncellemelerinin saatlik bütçesi var; bizde push yok. Burada güncelleme yalnız dokununca olur.'
+    ],
+    how: [
+      'Tekrar ekranında “Kilit ekranında devam et”. İleride bir kontrol (“Tekrar turu başlat”) turu uygulamayı açmadan da başlatabilir.',
+      'Düğmeler: soru evresinde tek düğme “Göster”, cevap evresinde “Bildim” ve “Bilemedim” (<code>LiveActivityIntent</code>). Intent cevabı kaydeder, <code>activity.update(...)</code> ile sıradaki kartı koyar.',
+      'Kilitliyken <code>progress.json</code> okunamayabilir (ios/README madde 30): cevaplar önce App Group olay kutusuna yazılır, uygulama sonra işler.',
+      'Info.plist: <code>NSSupportsLiveActivities = YES</code>. Görünüm widget eklentisinde (<code>ActivityConfiguration</code>): kilit ekranı, Dynamic Island’ın kompakt, minimal ve geniş hâlleri.'
+    ],
+    benefit: [
+      'Uygulamayı açmadan kısa bir tur; telefona her bakışta bir kart.',
+      'Dynamic Island’da “3/6” sessizce durur.'
+    ],
+    risk: [
+      'HIG tek etkileşimli öğe öneriyor; cevap evresinde iki düğme var. App Review 4.5.3: Canlı Etkinlik ile rahatsız etme yok; tur yalnız kullanıcı isteyince başlar.',
+      'En pahalı iPhone fikri: ActivityKit, Dynamic Island düzenleri, kilit durumu, testler.',
+      'Intent’in kapalı uygulamayı arka planda uyandırıp etkinliği güncellemesi cihazda denenmeli.'
+    ],
+    links: ['live', 'liveIntent', 'interact', 'higLive', 'push', 'review']
+  },
+  {
+    id: 'saat', rank: 10, title: 'Apple Watch (yalnız not)', short: 'Komplikasyonda kelime',
+    pitch: 'Saatte kelime: komplikasyonda kelime ve anlamı. Şimdilik yapılmaz; yalnız not.',
+    ios: 'watchOS 10+', fayda: 2, maliyet: '10+ gün', mp: 5, riskLv: 'Yüksek', yeni: 'watchOS uygulaması ve eklentisi',
+    stage: () => fig(`<div class="watch" role="img" aria-label="Apple Watch komplikasyon taslağı"><div class="wscr"><div class="t">10:09</div><div class="wrect">${word(card(), 160, 17)}<div class="g">${esc(card().gloss)}</div><div class="d">${esc(card().micro)}</div></div><div class="wrow">${aCirc(6)}<div class="circ"><div class="n">${card().level}</div></div></div></div></div>`, 'Taslak: dikdörtgen ve iki daire komplikasyon'),
+    hint: 'Yalnız fikir. Saat yüzü çizimi yaklaşık.',
+    allow: [
+      'watchOS komplikasyonları WidgetKit aksesuar aileleriyle yapılır: daire, dikdörtgen, satır içi, köşe.',
+      'Ayrı bir watchOS uygulaması ve widget eklentisi gerekir. App Group iPhone ile saat arasında paylaşılmaz: plan <code>WatchConnectivity</code> ile gönderilir, saat kendi App Group’una yazar (Apple forum yanıtı).',
+      'watchOS 26: Akıllı Yığın’da doğru zamanda öne çıkmak için <code>RelevanceConfiguration</code>. Ayrıca watchOS 26’da iPhone uygulamasının kontrolleri saatte de çıkabilir: “Kelimeyi dinle” için ayrı saat uygulaması gerekmeyebilir.'
+    ],
+    budget: ['Saatte yenileme daha da kısıtlı: çizelge önceden hesaplanmalı.'],
+    how: ['Şimdilik yapılmaz. Kilit ekranı ve quiz oturduktan sonra yeniden bakılır.'],
+    benefit: ['Bileğe bakış en kısa etkileşim: günde onlarca kez.'],
+    risk: ['İkinci platform: test, TestFlight ve macOS dakikaları (CLAUDE.md: 10 kat sayılıyor).'],
+    links: ['accessory', 'watchConn', 'wwdc25']
+  }
+];
+
+/* ───────── Özel çerçeveler ───────── */
+function ccInner() {
+  const c = card();
+  return `<div class="cc"><div class="cc-grid">
+    <div class="mod conn"><span class="on">${ic('plane')}</span><span class="on">${ic('cell')}</span><span class="on">${ic('wifi')}</span><span class="on">${ic('bt')}</span></div>
+    <div class="mod music"><b>Çalan yok</b><small>Müzik</small></div>
+    <div class="ctl-m" style="grid-column:1/3"><span class="ci">${ic('moon')}</span><span class="tx"><b style="font-family:var(--font-ui)">Odak</b><small>Kapalı</small></span></div>
+    <div class="mod slider" style="--v:62%;grid-column:3;grid-row:3/5">${ic('sun')}</div>
+    <div class="mod slider" style="--v:40%;grid-column:4;grid-row:3/5">${ic('vol')}</div>
+    <button type="button" class="ctl-m mine-ring" style="grid-column:1/3;grid-row:4" data-act="speak" data-v="${esc(c.lemma)}" aria-label="Kelimeyi dinle"><span class="ci">${ic('speaker')}</span><span class="tx"><b style="font-family:var(--font-ui)">Kelimeyi dinle</b><small>Şu anki kelime</small></span></button>
+    <div class="mod c">${ic('flash')}</div><div class="mod c">${ic('clock')}</div>
+    <button type="button" class="mod c mine-ring" data-act="next" aria-label="Sonraki kelime">${ic('fwd')}</button>
+    <div class="mod c">${ic('camera')}</div>
+    <div class="mod c">${ic('calc')}</div>
+  </div><div class="cc-cap">Beyaz çerçeveli iki kontrol Lockglow’un</div></div>`;
+}
+
+function liveActivity() {
+  const a = S.la, c = card(a.k);
+  const n = Math.min(a.k + 1, LA_TOTAL);
+  const prog = (a.done ? LA_TOTAL : a.k) / LA_TOTAL * 100;
+  let mid, btns;
+  if (a.done) {
+    mid = `<div class="la-done">Tur bitti. ${a.good} kelimeyi bildin${a.again ? `, ${a.again} kelime 10 dakika sonra yine gelir` : ''}.</div>`;
+    btns = `<div class="la-btns"><button type="button" class="pill" data-act="la-reset">Kapat</button></div>`;
+  } else {
+    mid = `<div class="la-mid"><div class="wmain"><div style="display:flex;align-items:baseline;gap:8px;min-width:0">${word(c, 230, 26)}${c.ipa ? `<span class="p">${esc(c.ipa)}</span>` : ''}</div>
+      ${a.phase === 'ask' ? '<div class="q">Ne demekti? Önce kendin hatırla.</div>' : `<div class="g">${esc(c.gloss)}</div>`}</div></div>`;
+    btns = a.phase === 'ask'
+      ? `<div class="la-btns"><button type="button" class="pill pri" data-act="la-show">${ic('eye')}Göster</button></div>`
+      : `<div class="la-btns"><button type="button" class="pill" data-act="la-again">${ic('x')}Bilemedim</button><button type="button" class="pill pri" data-act="la-good">${ic('check')}Bildim</button></div>`;
+  }
+  return `<div class="la" role="group" aria-label="Canlı Etkinlik: tekrar turu"><div class="la-top">${appIcon(S.mode !== 'light')}<span>Tekrar turu</span><span class="n">${a.done ? 'Bitti' : `${n} / ${LA_TOTAL}`}</span></div>
+    <div class="la-prog"><i style="width:${prog}%"></i></div>${mid}${btns}</div>`;
+}
+
+function diFrame() {
+  const a = S.la, c = card(a.k), n = a.done ? LA_TOTAL : a.k;
+  const r = 7, len = 2 * Math.PI * r;
+  return `<div class="fit" data-w="414" data-h="150" data-max=".8"><div class="dev"><div class="di-frame"><div class="di-scr"><div class="wall ${WALL[S.mode]}"></div>${STAT.replace('{T}', '10:02')}
+    <div class="di"><span class="l"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="${r}" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="3"/><circle cx="10" cy="10" r="${r}" fill="none" stroke="#E9E040" stroke-width="3" stroke-linecap="round" stroke-dasharray="${(len * n / LA_TOTAL).toFixed(1)} ${len.toFixed(1)}" transform="rotate(-90 10 10)"/></svg>${a.done ? 'Bitti' : `${a.k + 1}/${LA_TOTAL}`}</span><span class="r">${a.done ? '✓' : esc(c.lemma)}</span></div>
+  </div></div></div></div>`;
+}
+
+function standby(c) {
+  return `<div class="fit" data-w="868" data-h="414" data-max=".9"><div class="dev"><div class="phone land"><div class="screen sb ${S.night ? 'sbnight' : 'sbday'}">
+    <div class="sb-clock">10:42<small>Perşembe 22 Ekim</small></div>
+    <div class="sb-w"><span class="lvl">${c.level}</span>${word(c, 380, 56)}<div class="g">${esc(c.gloss)}</div><div class="d">${esc(c.micro)}</div></div>
+  </div></div></div></div>`;
+}
+
+function cfgWidget() {
+  const c = card();
+  if (S.cfg.show === 'quiz') return wQuizM(c);
+  if (S.cfg.show === 'cumle') return wSentence();
+  return wMedium(c);
+}
+function editSheet() {
+  const o = (k, v, t) => `<button type="button" data-act="cfg" data-v="${k}:${v}" aria-pressed="${S.cfg[k] === v}"><span>${t}</span></button>`;
+  return `<div class="edit">${cfgWidget()}<div class="esheet">
+    <div class="ehead">${appIcon(S.mode !== 'light')}<div><b>Lockglow</b><small>Ana ekranda öğren</small></div></div>
+    <div class="erow"><span class="k">Ne gösterilsin?</span><div class="eopts">${o('show', 'kelime', 'Kelime')}${o('show', 'cumle', 'Cümle')}${o('show', 'quiz', 'Quiz')}</div></div>
+    <div class="erow"><span class="k">Türkçe anlam</span><div class="eopts">${o('when', 'now', 'Hemen')}${o('when', 'later', '5 dakika sonra')}</div></div>
+  </div></div>`;
+}
+
+/* ───────── Sayfalar ───────── */
+const dots = n => `<span class="dots" role="img" aria-label="5 üzerinden ${n}">${[1, 2, 3, 4, 5].map(k => `<i class="${k <= n ? 'on' : ''}"></i>`).join('')}</span>`;
+const riskCls = r => r === 'Düşük' ? 'risk-d' : r === 'Orta' ? 'risk-o' : 'risk-y';
+const facts = d => `<div class="facts"><span class="fact">${esc(d.ios)}</span><span class="fact"><span>Fayda</span>${dots(d.fayda)}</span><span class="fact"><span>Maliyet</span>${esc(d.maliyet)}</span><span class="fact"><span>Risk</span><b class="${riskCls(d.riskLv)}">${esc(d.riskLv)}</b></span></div>`;
+const list = arr => `<ul>${arr.map(x => `<li>${x}</li>`).join('')}</ul>`;
+
+function ideaView(d) {
+  return `<article aria-labelledby="h-${d.id}">
+    <header class="idea-h"><div class="big-rk ${d.rank > 3 ? 'dim' : ''}" aria-label="Önerilen sıra ${d.rank}">${d.rank}</div><div style="min-width:0"><h1 id="h-${d.id}">${esc(d.title)}</h1><p class="pitch">${esc(d.pitch)}</p>${facts(d)}</div></header>
+    <div class="stage">${d.stage()}</div>
+    <p class="hint">${ic('tap')}<span>${esc(d.hint)}</span></p>
+    <div class="notes">
+      <section class="nc"><h3>APPLE NE İZİN VERİYOR</h3>${list(d.allow)}</section>
+      <section class="nc"><h3>BÜTÇE VE YENİLENME</h3>${list(d.budget)}</section>
+      <section class="nc"><h3>NASIL YAPILIR</h3>${list(d.how)}</section>
+      <section class="nc"><h3>KULLANICIYA FAYDASI</h3>${list(d.benefit)}</section>
+      <section class="nc"><h3>DİKKAT</h3>${list(d.risk)}</section>
+      <section class="nc"><h3>KAYNAKLAR</h3>${src(d.links)}<p style="margin:10px 0 0;font-size:13px;color:var(--ink2)">Swift taslağı: <code>docs/tasarim/alternatifler/widget_galerisi.md</code></p></section>
+    </div></article>`;
+}
+
+function summaryView() {
+  const t3 = IDEAS.slice(0, 3).map(d => `<button type="button" class="t3" data-act="view" data-v="${d.id}"><span class="rk">${d.rank}</span><b>${esc(d.title)}</b><p>${esc(d.pitch)}</p>${facts(d)}</button>`).join('');
+  const rows = IDEAS.map(d => `<tr><td class="num">${d.rank}</td><td><button type="button" class="lnk" data-act="view" data-v="${d.id}" style="text-decoration:underline;text-underline-offset:3px">${esc(d.title)}</button></td><td class="num">${esc(d.ios)}</td><td>${dots(d.fayda)}</td><td class="num">${esc(d.maliyet)}</td><td class="${riskCls(d.riskLv)}" style="font-weight:600">${esc(d.riskLv)}</td><td>${esc(d.yeni)}</td></tr>`).join('');
+  return `<article>
+    <header class="idea-h"><div style="min-width:0"><h1>Yeni widget ve kilit ekranı fikirleri</h1>
+    <p class="lead">Lockglow’un asıl gücü widget’lar. Bu galeri, bugünkü küçük, orta ve kilit ekranı widget’larının ötesinde on fikri gerçek iPhone çerçevelerinde gösterir. Her fikrin yanında Apple’ın neye izin verdiği, yenilenme sınırları, maliyet ve fayda var. Kartlar <code>content/drafts/kisisel_v1</code> içinden olduğu gibi alındı. Swift koduna dokunulmadı; hiçbiri cihazda denenmedi.</p></div></header>
+    <h2>Önerilen ilk üç</h2>
+    <div class="top3">${t3}</div>
+    <h2>Bütün fikirler</h2>
+    <div class="tbl-wrap"><table><thead><tr><th>SIRA</th><th>FİKİR</th><th>SÜRÜM</th><th>FAYDA</th><th>MALİYET</th><th>RİSK</th><th>YENİ HEDEF / İZİN</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <h2>Bütün yeni widget’lar için kurallar</h2>
+    <div class="rules">
+      <div class="nc"><b>Aynı anda her yerde aynı kelime</b><p>Yeni widget’lar ve kontroller de aynı dönüşümü okur (<code>TimelinePlanner.wordAt</code>). “Sıradaki” her yerde aynı imleci ilerletir (ios/README, süreklilik).</p></div>
+      <div class="nc"><b>Widget SQLite açmaz</b><p>Quiz, cümle, tekrar saatleri gibi yeni veriyi uygulama plana yazar. Widget yalnız iki küçük JSON okur.</p></div>
+      <div class="nc"><b>Sarı yalnız kelimede</b><p>Şerit öğrenilecek kelimede ve örnekteki aynı kelimede. Doğru/yanlış, ilerleme ve seçim mürekkep rengi.</p></div>
+      <div class="nc"><b>Renk tek başına anlam taşımaz</b><p>Renklendirilmiş, cam ve kilit ekranında yeşil ve kırmızı kaybolur: her zaman ✓ ✗ ve bir kelime.</p></div>
+      <div class="nc"><b>Yormayan</b><p>Seri yok, puan yok, kırmızı rozet yok, hareket yok. Bir widget, bir soru; küçük widget’ta en çok üç düğme.</p></div>
+      <div class="nc"><b>44 pt</b><p>Her dokunma alanı en az 44 × 44 pt. Kilit ekranı ve StandBy’da düğme yok.</p></div>
+    </div>
+    <p class="hint">${ic('info')}<span>Soldan bir fikre geç. Üstteki “Görünüm” açık, koyu, renklendirilmiş ve cam ana ekranı değiştirir; “Kelime” bütün çerçevelerdeki kartı değiştirir.</span></p>
+  </article>`;
+}
+
+/* ───────── Çizim ───────── */
+function renderTop() {
+  $('#modeSeg').innerHTML = MODES.map(([k, t]) => `<button type="button" data-act="mode" data-v="${k}" aria-pressed="${S.mode === k}">${t}</button>`).join('');
+  $('#tintSw').innerHTML = TINTS.map(([n, c], k) => `<button type="button" class="sw" style="background:${c}" data-act="tint" data-v="${k}" aria-label="Renk: ${n}" aria-pressed="${S.tint === k}" ${S.mode === 'tint' || S.view === 'cam' ? '' : 'disabled'}></button>`).join('');
+  $('#wordSel').value = String(S.i);
+}
+function renderNav() {
+  $('#nav').innerHTML = `<span class="nl">ÖNERİLEN SIRA</span>
+    <button type="button" class="ni" data-act="view" data-v="ozet" ${S.view === 'ozet' ? 'aria-current="page"' : ''}><span class="rk">${ic('info').replace('class="ic ', 'class="ic " style="width:14px;height:14px" ')}</span><span class="tx"><b>Özet ve sıra</b><small>On fikir, tek tabloda</small></span></button>`
+    + IDEAS.map(d => `<button type="button" class="ni" data-act="view" data-v="${d.id}" ${S.view === d.id ? 'aria-current="page"' : ''}><span class="rk ${d.rank <= 3 ? 'top3' : ''}">${d.rank}</span><span class="tx"><b>${esc(d.title)}</b><small>${esc(d.short)}</small></span></button>`).join('');
+}
+function render() {
+  renderTop();
+  renderNav();
+  const d = IDEAS.find(x => x.id === S.view);
+  $('#main').innerHTML = d ? ideaView(d) : summaryView();
+  fitAll();
+}
+function fitAll() {
+  document.querySelectorAll('.fit').forEach(f => {
+    const w = +f.dataset.w, h = +f.dataset.h, max = +(f.dataset.max || 1);
+    const stage = f.closest('.stage');
+    const avail = stage ? stage.clientWidth - parseFloat(getComputedStyle(stage).paddingLeft) * 2 : w;
+    const k = Math.min(max, avail / w);
+    f.style.setProperty('--k', k);
+    f.style.width = (w * k) + 'px';
+    f.style.height = (h * k) + 'px';
+  });
+}
+
+/* ───────── Ses ve bildirim ───────── */
+let toastTimer;
+function toast(msg) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.hidden = true; }, 2600);
+}
+function speak(text, btn) {
+  try {
+    const synth = window.speechSynthesis;
+    if (!synth) throw new Error('no speech');
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = .9;
+    const v = synth.getVoices().find(x => /^en(-|_)US/i.test(x.lang));
+    if (v) u.voice = v;
+    synth.cancel();
+    if (btn) btn.classList.add('playing');
+    u.onend = u.onerror = () => btn && btn.classList.remove('playing');
+    synth.speak(u);
+  } catch (err) {
+    toast('Bu tarayıcı sesi çalamıyor. Telefonda kelime İngilizce okunur.');
+  }
+}
+
+/* ───────── Etkileşim ───────── */
+function setWord(i) {
+  S.i = ((i % CARDS.length) + CARDS.length) % CARDS.length;
+  S.qm = null; S.qs = null; S.sent = false;
+  render();
+}
+function act(a, v, el) {
+  switch (a) {
+    case 'view':
+      S.view = v;
+      try { history.replaceState(null, '', v === 'ozet' ? location.pathname + location.search : '#' + v); } catch (err) { /* önizlemede adres değişmez */ }
+      render();
+      window.scrollTo({ top: 0 });
+      break;
+    case 'mode': S.mode = v; render(); break;
+    case 'tint': S.tint = +v; render(); break;
+    case 'word': setWord(S.i + (+v)); break;
+    case 'speak': speak(v, el.classList.contains('wb') ? el : null); break;
+    case 'next': setWord(S.i + 1); toast('Sonraki kelime: bütün widget’lar aynı kelimeye geçer.'); break;
+    case 'know': { const w = card().lemma; setWord(S.i + 1); toast(`“${w}” bilinenlere eklendi; bir daha çıkmaz.`); break; }
+    case 'qm': S.qm = v; render(); break;
+    case 'qs': S.qs = v; render(); break;
+    case 'sent': S.sent = !S.sent; render(); break;
+    case 'big': S.big = !S.big; render(); break;
+    case 'night': S.night = v === '1'; render(); break;
+    case 'cfg': { const [k, val] = v.split(':'); S.cfg[k] = val; render(); break; }
+    case 'la-show': S.la.phase = 'show'; render(); break;
+    case 'la-good':
+    case 'la-again':
+      if (a === 'la-good') S.la.good++; else S.la.again++;
+      S.la.k++; S.la.phase = 'ask';
+      if (S.la.k >= LA_TOTAL) { S.la.done = true; S.la.k = LA_TOTAL - 1; }
+      render();
+      break;
+    case 'la-reset': S.la = { k: 0, phase: 'ask', good: 0, again: 0, done: false }; render(); break;
+  }
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-act]');
+  if (!b || b.disabled) return;
+  act(b.dataset.act, b.dataset.v, b);
+});
+
+/* ───────── Başlangıç ───────── */
+$('#wordSel').innerHTML = CARDS.map((c, k) => `<option value="${k}">${esc(c.lemma)} · ${esc(c.level)}</option>`).join('');
+$('#wordSel').addEventListener('change', e => setWord(+e.target.value));
+const fromHash = (location.hash || '').slice(1);
+if (IDEAS.some(d => d.id === fromHash)) S.view = fromHash;
+render();
+window.addEventListener('hashchange', () => {
+  const h = (location.hash || '').slice(1);
+  const v = IDEAS.some(d => d.id === h) ? h : 'ozet';
+  if (v !== S.view) { S.view = v; render(); window.scrollTo({ top: 0 }); }
+});
+let fitTimer;
+window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitAll, 60); });
+if (window.speechSynthesis) { try { speechSynthesis.getVoices(); } catch (err) { /* sesler sonra yüklenir */ } }
+</script>
+</body>
+</html>

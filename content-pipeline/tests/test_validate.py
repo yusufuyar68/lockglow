@@ -25,6 +25,7 @@ def test_unmodified_card_is_clean(card):
         (lambda c: c["def"].__setitem__("short", "mitigate something bad"), "DEF_CIRCULAR"),
         (lambda c: c["def"].__setitem__("micro", "x" * 29), "LEN"),
         (lambda c: c["def"].__setitem__("micro", "reduce (harm)"), "DEF_PARENS"),
+        (lambda c: c.__setitem__("lemma", "mitigate sth/sb"), "LEMMA_SPEAKABLE"),
         (lambda c: c["examples"][0].__setitem__("focus", "mitigates"), "EX_FOCUS"),
         (lambda c: c["examples"][1].__setitem__("tr", None), "EX_TR_MISSING"),
         (lambda c: c["examples"].__setitem__(slice(1, None), []), "COUNT"),

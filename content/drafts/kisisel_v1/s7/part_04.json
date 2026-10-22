@@ -200,7 +200,7 @@
               "why": "Türkçede sıfat zarf gibi de kullanılır (dikkatli sür). İngilizcede fiili anlatan zarf '-ly' alır: carefully. 'Careful' ise kişiyi ya da durumu anlatan sıfattır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Care (özen) + full (dolu) = özen dolu, yani dikkatli. Yazarken sonda tek 'l' olur."
         }
       },
       "tags": {
@@ -227,7 +227,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -313,7 +314,7 @@
               "why": "Türkçede 'yalnız' hem 'tek başına' hem 'yalnızlık duyan' demektir. 'Alone' = tek başına (durum), 'lonely' = yalnızlık hissetmek (duygu)."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Alone' eskiden 'all one' idi: bütünüyle tek, yani tek başına."
         }
       },
       "tags": {
@@ -342,7 +343,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -421,7 +423,7 @@
               "why": "Türkçede 'yeterince' sıfattan önce gelir (yeterince büyük). İngilizcede 'enough' sıfat ve zarftan sonra gelir: old enough, big enough."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Enough' sonundaki 'gh' 'f' diye okunur: inaf. 'Laugh' (gülmek) kelimesinde de öyle."
         }
       },
       "tags": {
@@ -447,7 +449,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -637,7 +640,7 @@
               "why": "Türkçede 'henüz' ile 'zaten / çoktan' karışır. Olumsuz cümlede 'henüz' demek istiyorsanız 'yet' kullanılır; 'already' olumlu cümlede 'çoktan' anlamında gelir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Already' = 'all ready': her şey hazır, yani iş çoktan bitmiş. Yazarken tek 'l' var."
         }
       },
       "tags": {
@@ -668,7 +671,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -854,7 +858,7 @@
           "false_friend": null,
           "note": "'Almost' = neredeyse. 'Most' ile karıştırma: 'most people' = çoğu insan, 'almost people' denmez. Fiille: 'I almost fell' = az kalsın düşüyordum. 'Nearly' ile aynı anlamdadır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Almost' = 'all' + 'most': hemen hemen hepsi, yani neredeyse."
         }
       },
       "tags": {
@@ -881,7 +885,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

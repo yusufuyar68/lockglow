@@ -1,0 +1,996 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.washing_machine.phr.1",
+      "lemma": "washing machine",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "machine that washes clothes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɑːʃɪŋ məˌʃiːn/",
+        "uk": "/ˈwɒʃɪŋ məˌʃiːn/"
+      },
+      "def": {
+        "micro": "a machine for dirty clothes",
+        "short": "an electric machine at home that cleans your clothes with water and soap",
+        "long": "An electric machine that cleans clothes, towels and sheets with water and soap. You load it, turn it on and take the clothes out when it finishes."
+      },
+      "grammar": {
+        "pattern": "put sth in / take sth out of the washing machine"
+      },
+      "examples": [
+        {
+          "en": "The washing machine is making a strange noise.",
+          "tr": "Çamaşır makinesi garip bir ses çıkarıyor.",
+          "register": "neutral",
+          "focus": "washing machine"
+        },
+        {
+          "en": "Selin put her jeans in the washing machine.",
+          "tr": "Selin kotunu çamaşır makinesine koydu.",
+          "register": "neutral",
+          "focus": "washing machine"
+        },
+        {
+          "en": "Can you take the wet clothes out of the washing machine, please?",
+          "tr": "Islak çamaşırları çamaşır makinesinden çıkarabilir misin lütfen?",
+          "register": "neutral",
+          "focus": "washing machine"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "load the washing machine",
+        "turn on the washing machine",
+        "empty the washing machine"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çamaşır makinesi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çamaşır yıkamak 'do the laundry' olur. Bulaşık makinesine ise 'dishwasher' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My clothes are dirty, so I'll put them in the ______.",
+        "answer": "washing machine",
+        "distractors": [
+          "dishwasher",
+          "microwave",
+          "freezer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fold.v.1",
+      "lemma": "fold",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "bend clothes neatly into a shape",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/foʊld/",
+        "uk": "/fəʊld/"
+      },
+      "def": {
+        "micro": "bend cloth into a neat shape",
+        "short": "bend clothes or paper so one part lies on top of the other",
+        "long": "To bend a piece of clothing, a towel or paper so that one part lies flat on top of another part. People do this to make things neat and small."
+      },
+      "grammar": {
+        "pattern": "fold sth (in half)"
+      },
+      "examples": [
+        {
+          "en": "Ana folded the clean towels.",
+          "tr": "Ana temiz havluları katladı.",
+          "register": "neutral",
+          "focus": "folded"
+        },
+        {
+          "en": "Please fold your shirts and put them in the drawer.",
+          "tr": "Lütfen gömleklerini katla ve çekmeceye koy.",
+          "register": "neutral",
+          "focus": "fold"
+        },
+        {
+          "en": "Liam folded the letter in half and put it in an envelope.",
+          "tr": "Liam mektubu ikiye katladı ve bir zarfa koydu.",
+          "register": "neutral",
+          "focus": "folded"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unfold"
+      ],
+      "collocations": [
+        "fold clothes",
+        "fold the laundry",
+        "fold a towel",
+        "fold in half"
+      ],
+      "word_family": [
+        {
+          "lemma": "unfold",
+          "pos": "v"
+        },
+        {
+          "lemma": "folder",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "katlamak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Fold in half' ikiye katlamak demek. Bilgisayardaki 'folder' (klasör) de aynı kökten gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The clean towels are on the bed. Can you ______ them and put them in the cupboard?",
+        "answer": "fold",
+        "distractors": [
+          "pour",
+          "sweep",
+          "melt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hang_up.phv.2",
+      "lemma": "hang up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 2,
+      "sense_note": "put clothes on a hook or hanger",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæŋ ˈʌp/",
+        "uk": "/hæŋ ˈʌp/"
+      },
+      "def": {
+        "micro": "put on a hook or hanger",
+        "short": "put a coat or other clothes on a hook or a hanger",
+        "long": "To put a coat, shirt or other clothes on a hook or a hanger, so they stay neat. Put 'it' or 'them' between 'hang' and 'up': hang it up."
+      },
+      "grammar": {
+        "pattern": "hang sth up / hang up sth"
+      },
+      "examples": [
+        {
+          "en": "Hang up your coat, please.",
+          "tr": "Lütfen montunu as.",
+          "register": "neutral",
+          "focus": "Hang up"
+        },
+        {
+          "en": "Omar hung up his jacket behind the door.",
+          "tr": "Omar ceketini kapının arkasına astı.",
+          "register": "neutral",
+          "focus": "hung up"
+        },
+        {
+          "en": "Deniz ironed her dress and hung it up in the wardrobe.",
+          "tr": "Deniz elbisesini ütüledi ve gardıroba astı.",
+          "register": "neutral",
+          "focus": "hung it up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "hang up your coat",
+        "hang up your clothes",
+        "hang it up"
+      ],
+      "word_family": [
+        {
+          "lemma": "hanger",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "asmak",
+          "alt": [
+            "askıya asmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Hang up' telefonu kapatmak demek de olabilir; burada ise ceket ya da kıyafet asmak anlamında. Zamir araya girer: 'hang it up' denir, 'hang up it' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ your coat on the hook by the door.",
+        "answer": "hang up",
+        "distractors": [
+          "throw away",
+          "turn off",
+          "fill in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.set_the_table.phr.1",
+      "lemma": "set the table",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "prepare the table for a meal",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɛt ðə ˈteɪbəl/",
+        "uk": "/sɛt ðə ˈteɪbəl/"
+      },
+      "def": {
+        "micro": "get the table ready to eat",
+        "short": "put plates, glasses, forks and knives on the table before a meal",
+        "long": "To put plates, glasses, forks, knives and spoons on the table before people eat. In British English, people also say 'lay the table'."
+      },
+      "examples": [
+        {
+          "en": "Can you set the table, please?",
+          "tr": "Sofrayı kurar mısın lütfen?",
+          "register": "neutral",
+          "focus": "set the table"
+        },
+        {
+          "en": "Mehmet set the table while his wife cooked dinner.",
+          "tr": "Karısı akşam yemeğini pişirirken Mehmet sofrayı kurdu.",
+          "register": "neutral",
+          "focus": "set the table"
+        },
+        {
+          "en": "The kids set the table for six because their grandparents were coming.",
+          "tr": "Dedeleriyle nineleri geleceği için çocuklar sofrayı altı kişilik kurdu.",
+          "register": "neutral",
+          "focus": "set the table"
+        }
+      ],
+      "synonyms": [
+        "lay the table"
+      ],
+      "antonyms": [
+        "clear the table"
+      ],
+      "collocations": [
+        "set the table for dinner",
+        "help set the table",
+        "set the table for four"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sofrayı kurmak",
+          "alt": [
+            "masayı hazırlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiliz İngilizcesinde 'lay the table' da denir. Yemekten sonra sofrayı toplamak ise 'clear the table' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Dinner is almost ready. Can you ______ for four people?",
+        "answer": "set the table",
+        "distractors": [
+          "clear the table",
+          "make the bed",
+          "water the plants"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.clear_the_table.phr.1",
+      "lemma": "clear the table",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "take dishes away after a meal",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/klɪr ðə ˈteɪbəl/",
+        "uk": "/klɪə ðə ˈteɪbəl/"
+      },
+      "def": {
+        "micro": "remove plates after a meal",
+        "short": "take the plates, glasses and food away from the table after eating",
+        "long": "To take the dirty plates, glasses and food away from the table when everyone has finished eating. It is often a job for children at home."
+      },
+      "examples": [
+        {
+          "en": "I'll clear the table after dinner.",
+          "tr": "Yemekten sonra sofrayı ben toplarım.",
+          "register": "neutral",
+          "focus": "clear the table"
+        },
+        {
+          "en": "Selin cleared the table and put the plates in the sink.",
+          "tr": "Selin sofrayı topladı ve tabakları lavaboya koydu.",
+          "register": "neutral",
+          "focus": "cleared the table"
+        },
+        {
+          "en": "In our house, whoever cooks doesn't have to clear the table.",
+          "tr": "Bizim evde yemeği yapan sofrayı toplamak zorunda değil.",
+          "register": "neutral",
+          "focus": "clear the table"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "set the table"
+      ],
+      "collocations": [
+        "clear the table after dinner",
+        "help clear the table"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sofrayı toplamak",
+          "alt": [
+            "masayı toplamak",
+            "sofrayı kaldırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yemekten önce sofrayı kurmak 'set the table', yemekten sonra toplamak 'clear the table' olur.",
+          "mistakes": [
+            {
+              "wrong": "Can you collect the table?",
+              "right": "Can you clear the table?",
+              "why": "'Toplamak' çoğu zaman 'collect' diye çevrilir, ama sofra için 'clear' kullanılır: tabakları kaldırıp masayı boşaltmak demek."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We've finished dinner. Can you help me ______? Put the plates in the sink.",
+        "answer": "clear the table",
+        "distractors": [
+          "set the table",
+          "book a table",
+          "make the bed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.burn.v.1",
+      "lemma": "burn",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "damage food or skin with heat",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɜːrn/",
+        "uk": "/bɜːn/"
+      },
+      "def": {
+        "micro": "damage with too much heat",
+        "short": "damage food by cooking it too long, or hurt your skin on something hot",
+        "long": "To damage food by cooking it for too long, or to hurt your skin on something very hot. The past form is 'burned', and in British English also 'burnt'."
+      },
+      "grammar": {
+        "pattern": "burn sth; burn your hand / finger"
+      },
+      "examples": [
+        {
+          "en": "Oh no, I burned the toast!",
+          "tr": "Eyvah, ekmeği yaktım!",
+          "register": "neutral",
+          "focus": "burned"
+        },
+        {
+          "en": "Mehmet burned his hand on the hot pan.",
+          "tr": "Mehmet elini sıcak tavada yaktı.",
+          "register": "neutral",
+          "focus": "burned"
+        },
+        {
+          "en": "Turn the heat down, or you'll burn the rice.",
+          "tr": "Ocağın altını kıs, yoksa pilavı yakacaksın.",
+          "register": "neutral",
+          "focus": "burn"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "burn the toast",
+        "burn your hand",
+        "burn your tongue",
+        "burn the dinner"
+      ],
+      "word_family": [
+        {
+          "lemma": "burn",
+          "pos": "n"
+        },
+        {
+          "lemma": "burnt",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yakmak",
+          "alt": [
+            "yanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Geçmiş zaman: Amerikan İngilizcesinde 'burned', İngiliz İngilizcesinde 'burnt' de olur. 'Burnt toast' yanık ekmek demek.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I forgot the pizza in the oven, and I ______ it. It's black now.",
+        "answer": "burned",
+        "distractors": [
+          "froze",
+          "peeled",
+          "chopped"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.oven.n.1",
+      "lemma": "oven",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "kitchen box for baking and roasting",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʌvən/",
+        "uk": "/ˈʌvən/"
+      },
+      "def": {
+        "micro": "a hot box for cooking food",
+        "short": "a kitchen machine like a box with a door, used for baking and cooking food",
+        "long": "A kitchen machine shaped like a box with a door. It gets very hot inside, and you use it to bake bread and cakes or to cook meat and vegetables."
+      },
+      "examples": [
+        {
+          "en": "The cake is in the oven.",
+          "tr": "Kek fırında.",
+          "register": "neutral",
+          "focus": "oven"
+        },
+        {
+          "en": "Liam turned on the oven before he made the pizza.",
+          "tr": "Liam pizzayı yapmadan önce fırını açtı.",
+          "register": "neutral",
+          "focus": "oven"
+        },
+        {
+          "en": "Be careful! The oven door is very hot.",
+          "tr": "Dikkat et! Fırının kapağı çok sıcak.",
+          "register": "neutral",
+          "focus": "oven"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "turn on the oven",
+        "heat the oven",
+        "put sth in the oven",
+        "take sth out of the oven"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fırın",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'fırın' hem mutfaktaki fırın hem de ekmek satılan dükkân demek. Mutfaktaki fırın 'oven', ekmek fırını ise 'bakery' olur. Mikrodalga 'microwave' denir.",
+          "mistakes": [
+            {
+              "wrong": "I bought fresh bread from the oven.",
+              "right": "I bought fresh bread from the bakery.",
+              "why": "Türkçede ekmek alınan dükkâna da 'fırın' denir. İngilizcede o dükkân 'bakery' olur; 'oven' yalnızca pişirme makinesidir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "home_household",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:bakery"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Heat the ______ to 180 degrees, then put the cake in.",
+        "answer": "oven",
+        "distractors": [
+          "kettle",
+          "toaster",
+          "fridge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cupboard.n.1",
+      "lemma": "cupboard",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "kitchen furniture with doors",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌbərd/",
+        "uk": "/ˈkʌbəd/"
+      },
+      "def": {
+        "micro": "a shelf unit with a door",
+        "short": "a piece of furniture with doors and shelves, used for plates, cups and food",
+        "long": "A piece of furniture with a door and shelves inside, often on a kitchen wall. People keep plates, cups and food in it. In the US, people often say 'cabinet'."
+      },
+      "examples": [
+        {
+          "en": "The cups are in the cupboard.",
+          "tr": "Fincanlar dolapta.",
+          "register": "neutral",
+          "focus": "cupboard"
+        },
+        {
+          "en": "Omar put the clean plates back in the cupboard.",
+          "tr": "Omar temiz tabakları dolaba geri koydu.",
+          "register": "neutral",
+          "focus": "cupboard"
+        },
+        {
+          "en": "There's a bag of rice in the cupboard above the sink.",
+          "tr": "Lavabonun üstündeki dolapta bir paket pirinç var.",
+          "register": "neutral",
+          "focus": "cupboard"
+        }
+      ],
+      "synonyms": [
+        "cabinet"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "kitchen cupboard",
+        "in the cupboard",
+        "cupboard door",
+        "open the cupboard"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dolap",
+          "alt": [
+            "mutfak dolabı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'p' harfi okunmaz: 'kabırd' gibi söylenir. Giysi dolabı ise 'wardrobe' olur. Amerikan İngilizcesinde mutfak dolabına çoğu zaman 'cabinet' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:wardrobe"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The plates are in the ______. Open the door on the left.",
+        "answer": "cupboard",
+        "distractors": [
+          "wardrobe",
+          "pocket",
+          "shelf"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.drawer.n.1",
+      "lemma": "drawer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "box in furniture that slides out",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/drɔːr/",
+        "uk": "/drɔː/"
+      },
+      "def": {
+        "micro": "a box that slides in and out",
+        "short": "a box in a desk, table or cupboard that you pull out to open",
+        "long": "A box inside a desk, table or other furniture that slides in and out. You pull it open to put things in or take things out, like spoons, socks or papers."
+      },
+      "examples": [
+        {
+          "en": "The forks are in that drawer.",
+          "tr": "Çatallar şu çekmecede.",
+          "register": "neutral",
+          "focus": "drawer"
+        },
+        {
+          "en": "Deniz keeps her socks in the top drawer.",
+          "tr": "Deniz çoraplarını en üst çekmecede tutuyor.",
+          "register": "neutral",
+          "focus": "drawer"
+        },
+        {
+          "en": "I looked in every drawer in the kitchen, but I couldn't find the scissors.",
+          "tr": "Mutfaktaki bütün çekmecelere baktım ama makası bulamadım.",
+          "register": "neutral",
+          "focus": "drawer"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "top drawer",
+        "kitchen drawer",
+        "open the drawer",
+        "chest of drawers"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çekmece",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğu zaman tek hece gibi söylenir: Amerikan İngilizcesinde /drɔːr/, İngiliz İngilizcesinde /drɔː/. 'Chest of drawers' çekmeceli dolap, şifonyer demek.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The spoons are in the top ______ next to the oven. Just pull it open.",
+        "answer": "drawer",
+        "distractors": [
+          "shelf",
+          "sink",
+          "bowl"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sink.n.1",
+      "lemma": "sink",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "basin with taps for washing",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪŋk/",
+        "uk": "/sɪŋk/"
+      },
+      "def": {
+        "micro": "a basin with taps",
+        "short": "a bowl with taps in a kitchen or bathroom, used for washing dishes or hands",
+        "long": "A large bowl fixed to the wall or a counter, with taps for water. You wash dishes in the kitchen sink and wash your hands in the bathroom sink."
+      },
+      "examples": [
+        {
+          "en": "Don't leave dirty plates in the sink.",
+          "tr": "Kirli tabakları lavaboda bırakma.",
+          "register": "neutral",
+          "focus": "sink"
+        },
+        {
+          "en": "Ana washed the vegetables in the kitchen sink.",
+          "tr": "Ana sebzeleri mutfak lavabosunda yıkadı.",
+          "register": "neutral",
+          "focus": "sink"
+        },
+        {
+          "en": "Kaan filled the sink with hot water and soap.",
+          "tr": "Kaan lavaboyu sıcak su ve sabunla doldurdu.",
+          "register": "neutral",
+          "focus": "sink"
+        }
+      ],
+      "synonyms": [
+        "basin"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "kitchen sink",
+        "bathroom sink",
+        "in the sink",
+        "wash sth in the sink"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "lavabo",
+          "alt": [
+            "evye"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Mutfaktaki lavabo (evye) de banyodaki lavabo da 'sink' olur. Türkçedeki 'lavaboya gitmek' (tuvalete gitmek) için ise 'go to the toilet' ya da 'go to the bathroom' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Wash your hands in the ______ before dinner.",
+        "answer": "sink",
+        "distractors": [
+          "oven",
+          "fridge",
+          "drawer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

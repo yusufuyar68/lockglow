@@ -323,3 +323,27 @@ Alan adları kartın JSON yoludur; `l1.tr` Türkçe katmandır. Uzun metinler k�
 - **out of the office:** "otomatik e-posta yanıtı ayarladı" doğal mı, yoksa "otomatik yanıt koydu" mu denir?
 - **look into:** Nottaki "gerçeğini araştırmak" yerine "aslını araştırmak" daha mı doğal?
 - **customer (mnemonic):** "Custom = gelenek, alışkanlık…" A2 öğrencisine yararlı mı, yoksa null mu olmalı?
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 7 ipucu önerdi. Şüpheci doğrulayıcı 1 tanesini reddetti, 0 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 6** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yok. Yazar bütün kartlarda çevirileri, Dikkat kutularını ve quiz şıklarını tek tek denedi; bariz bir hata bulmadı.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.take_a_day_off.phr.1 | 'Off' kapalı demektir: ışığı 'turn off' ile kapatırsın. 'Day off' da işin senin için kapalı olduğu gün. |
+| en.manager.n.1 | Futbolcunun ya da şarkıcının 'menajeri' olur: aynı kelime. İş yerinde 'manager' müdür ya da yöneticidir. |
+| en.let_me_know.phr.1 | Kelime kelime 'bilmeme izin ver' demek: 'let' izin vermek, 'know' bilmek. Yani bana haber ver. |
+| en.job_interview.phr.1 | 'Inter' arası, 'view' görmek: iki taraf birbirini görür. Türkçedeki 'görüşme' de aynı fikir. |
+| en.print_out.phv.1 | Kâğıt yazıcıdan dışarı (out) çıkar: Türkçede de buna 'çıktı' denir. |
+| en.company.n.1 | Latince 'com' birlikte, 'panis' ekmek demek: 'company' ekmeğini birlikte paylaşan insanlar. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `email`: Kelime çok kolay; 'electronic mail' bilgisi kartın kökeninde ve alt karşılıkta zaten var.

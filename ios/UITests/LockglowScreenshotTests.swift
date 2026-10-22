@@ -147,6 +147,59 @@ final class LockglowScreenshotTests: XCTestCase {
         XCTAssertTrue(app.tabBars.buttons["Akış"].waitForExistence(timeout: 5), "the onboarding did not close")
     }
 
+    /// A long phrase in Sözlük (the card title on a small screen) and the "Söyle" page.
+    /// The speech permission alert may cover the Söyle page on a fresh simulator; the
+    /// screenshot is taken either way.
+    func testCaptureLongLemmaAndSoyle() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
+        app.launch()
+
+        XCTAssertTrue(app.tabBars.buttons["Sözlük"].waitForExistence(timeout: 30), "no tabs")
+        app.tabBars.buttons["Sözlük"].tap()
+        let field = app.searchFields.firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 5), "no search field")
+        field.tap()
+        field.typeText("look forward")
+        let hit = app.descendants(matching: .any)
+            .matching(NSPredicate(format: "label CONTAINS[c] %@", "look forward"))
+            .firstMatch
+        XCTAssertTrue(hit.waitForExistence(timeout: 5), "searching 'look forward' found nothing")
+        hit.tap()
+        sleep(1)
+        attachScreenshot(of: app, named: "11-sozluk-uzun-lemma")
+
+        let say = app.buttons["Söyle: telaffuzunu dene"].firstMatch
+        if !say.waitForExistence(timeout: 3) {
+            app.swipeUp()
+        }
+        XCTAssertTrue(say.waitForExistence(timeout: 5), "no Söyle button on the card")
+        say.tap()
+        sleep(2)
+        attachScreenshot(of: app, named: "8b-soyle-sayfasi")
+    }
+
+    /// Ayarlar > Yardım > "Nasıl öğrenirim?" (the learning guide).
+    func testCaptureLearningGuide() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
+        app.launch()
+
+        XCTAssertTrue(app.tabBars.buttons["Ayarlar"].waitForExistence(timeout: 30), "no tabs")
+        app.tabBars.buttons["Ayarlar"].tap()
+        let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Nasıl öğrenirim")).firstMatch
+        for _ in 0..<4 where !(row.exists && row.isHittable) {
+            app.swipeUp()
+        }
+        XCTAssertTrue(row.waitForExistence(timeout: 5), "no learning guide row in Ayarlar")
+        row.tap()
+        sleep(1)
+        attachScreenshot(of: app, named: "12-nasil-ogrenirim")
+        app.swipeUp()
+        sleep(1)
+        attachScreenshot(of: app, named: "12b-nasil-ogrenirim-devam")
+    }
+
     /// "Atla" on the first page closes the onboarding without a level.
     func testSkipOnboarding() throws {
         let app = XCUIApplication()

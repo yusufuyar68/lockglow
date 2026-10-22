@@ -14,38 +14,55 @@ struct TopicPickerView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Text(verbatim: "\(TopicPickerView.intro) Öğrendiğin kelimelerin tekrarı her konuda sürer.")
+                Text(verbatim: TopicPickerView.intro)
                     .font(.subheadline)
-                    .foregroundStyle(Palette.ink2)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 4)
                 if model.choosableTopics.isEmpty {
                     Text("Konu listesi yok (içerik veritabanı yüklenmedi). Bütün kelimeler gösteriliyor.")
                         .font(.body)
+                        .foregroundStyle(Theme.ink)
                 } else {
                     // Largest text sizes: no pinned bar, the summary leads the list.
                     if dynamicTypeSize.isAccessibilitySize {
                         summaryLine
+                            .padding(.horizontal, 4)
                     }
                     TopicChoiceList(
                         topics: model.choosableTopics,
                         totalWordCount: model.words.count,
                         selection: $selection
                     )
-                    Text("Bir kelime birden çok konuda yer alabilir. Toplam her kelimeyi bir kez sayar.")
+                    Text("Bir kelime birkaç konuda olabilir; toplamda bir kez sayılır. Öğrendiğin kelimelerin tekrarı her konuda sürer.")
                         .font(.footnote)
-                        .foregroundStyle(Palette.ink2)
+                        .foregroundStyle(Theme.ink2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.horizontal, 4)
+                        .padding(.top, 8)
                 }
             }
-            .padding(16)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .padding(.bottom, 20)
         }
+        // The summary stays in sight while the list scrolls (as on the onboarding's topics page):
+        // an opaque strip of page background with a hairline, not a material (rule 6).
         .safeAreaInset(edge: .bottom) {
             if !model.choosableTopics.isEmpty && !dynamicTypeSize.isAccessibilitySize {
                 summaryLine
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(.thinMaterial)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 12)
+                    .padding(.bottom, 12)
+                    .background(Theme.bg)
+                    .overlay(alignment: .top) {
+                        Rectangle()
+                            .fill(Theme.line)
+                            .frame(height: 1)
+                    }
             }
         }
-        .background(Palette.background.ignoresSafeArea())
+        .background(Theme.bg.ignoresSafeArea())
         .navigationTitle("Konular")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
@@ -64,14 +81,17 @@ struct TopicPickerView: View {
         }
     }
 
-    /// The first three sentences are also the onboarding's topics page text.
-    static let intro = "Widget'ta, Akış'ta ve Tekrar'ın yeni kelimelerinde seçtiğin konular döner. Hiç seçmezsen hepsi gelir. Seçtiğin konuların yeni kelimeleri bitince diğer konulardan devam edilir."
+    /// What the choice changes. The onboarding has its own shorter sentence: there the user does
+    /// not know "Akış" and "Tekrar" yet.
+    static let intro = "Widget, Akış ve Tekrar yeni kelimeleri seçtiğin konulardan getirir. Hiç seçmezsen hepsi gelir."
 
+    /// "Tümü" exactly when the list shows it checked: no listed topic is in the selection.
     private var summaryLine: some View {
-        DeckSummaryLine(
-            summary: model.deckSummary(for: selection),
+        let isEverything = !model.choosableTopics.contains { selection.contains($0.id) }
+        return DeckSummaryLine(
+            summary: model.deckSummary(for: isEverything ? [] : selection),
             dailyGoal: model.dailyNewWords,
-            isEverything: selection.isDisjoint(with: model.topics.map { $0.id })
+            isEverything: isEverything
         )
     }
 
@@ -83,16 +103,25 @@ struct TopicPickerView: View {
 }
 
 /// The topic choice of the onboarding and "Ayarlar > Konular": "Tümü" first (no topic chosen
-/// means every topic), then the topics under their group titles, each with its word count.
+/// means every topic), then the topics as chips under a few group titles. Chips keep the 28
+/// topics within about one and a half screens on an iPhone SE, where full rows took four.
 struct TopicChoiceList: View {
     let topics: [ContentTopic]
     let totalWordCount: Int
     @Binding var selection: Set<String>
+    /// The drawn height of a chip (`ChipButtonStyle`: 36 pt, scaled like `.subheadline`).
+    @ScaledMetric(relativeTo: .subheadline) private var chipHeight: CGFloat = 36
+
+    /// 8 pt between chip lines: the chips' transparent margins up to 44 pt give it at the default
+    /// size; at large sizes the chips are taller than 44 pt, have no margin, and the layout adds it.
+    private var chipLineSpacing: CGFloat {
+        return max(0, 8 - max(0, Theme.minHitSize - chipHeight))
+    }
 
     var body: some View {
         // "Tümü" also when only topics that are no longer listed are in the selection.
         let isEverything = !topics.contains { selection.contains($0.id) }
-        LazyVStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 0) {
             ChoiceRow(isSelected: isEverything) {
                 selection = []
             } label: {
@@ -100,20 +129,31 @@ struct TopicChoiceList: View {
             }
             .accessibilityIdentifier("topics.all")
             ForEach(TopicGroup.groups(of: topics)) { group in
+                // Mockup `.grp-t`: the group title well above its topics, close to its chips.
                 Text(group.title)
                     .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Palette.ink2)
-                    .padding(.top, 12)
+                    .foregroundStyle(Theme.ink2)
+                    .padding(.top, 16)
+                    .padding(.bottom, 4)
                     .padding(.leading, 4)
                     .accessibilityAddTraits(.isHeader)
-                ForEach(group.topics) { topic in
-                    ChoiceRow(isSelected: selection.contains(topic.id)) {
-                        toggle(topic.id)
-                    } label: {
-                        TopicRowLabel(title: topic.displayName, detail: "\(topic.cardCount) kelime")
+                ChipFlowLayout(spacing: 8, lineSpacing: chipLineSpacing) {
+                    ForEach(group.topics) { topic in
+                        let isSelected = selection.contains(topic.id)
+                        Button {
+                            toggle(topic.id)
+                        } label: {
+                            TopicChipLabel(title: topic.displayName, count: topic.cardCount, isSelected: isSelected)
+                        }
+                        .buttonStyle(ChipButtonStyle(isSelected: isSelected))
+                        .accessibilityLabel(Text(verbatim: "\(topic.displayName), \(topic.cardCount) kelime"))
+                        .accessibilityAddTraits(isSelected ? .isSelected : [])
+                        .accessibilityIdentifier("topics.\(topic.id)")
                     }
-                    .accessibilityIdentifier("topics.\(topic.id)")
                 }
+                // Beyond this size a long word ("Karıştırılan") no longer fits a chip on an
+                // iPhone SE and would break in the middle.
+                .dynamicTypeSize(...DynamicTypeSize.accessibility2)
             }
         }
     }
@@ -135,28 +175,159 @@ private struct TopicRowLabel: View {
         VStack(alignment: .leading, spacing: 2) {
             Text(verbatim: title)
                 .font(.body.weight(.semibold))
-                .foregroundStyle(Color.primary)
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
             Text(verbatim: detail)
                 .font(.footnote)
-                .foregroundStyle(Palette.ink2)
+                .foregroundStyle(Theme.ink2)
         }
+    }
+}
+
+/// "✓ Yemek ve içecek 58": the check is there only when selected, so the state is never the
+/// border alone (rule 4). The chip style sets the font and the ink color. At accessibility
+/// sizes the count goes under the name, which then keeps the chip's whole width.
+private struct TopicChipLabel: View {
+    let title: String
+    let count: Int
+    let isSelected: Bool
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    var body: some View {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 0))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 6))
+        HStack(alignment: .firstTextBaseline, spacing: 6) {
+            if isSelected {
+                Image(systemName: "checkmark")
+                    .font(.caption.weight(.bold))
+                    .accessibilityHidden(true)
+            }
+            layout {
+                Text(verbatim: title)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(verbatim: "\(count)")
+                    .font(.footnote)
+                    .monospacedDigit()
+                    .foregroundStyle(Theme.ink3)
+            }
+        }
+    }
+}
+
+/// Chips side by side, wrapping to the next line (left aligned). A chip wider than the line is
+/// offered the line's width, so its text wraps instead of running off the screen (largest text
+/// sizes). `lineSpacing` comes on top of the chips' own transparent margins.
+struct ChipFlowLayout: Layout {
+    var spacing: CGFloat = 8
+    var lineSpacing: CGFloat = 0
+
+    private struct Item {
+        let index: Int
+        let size: CGSize
+        let x: CGFloat
+    }
+
+    private struct Line {
+        var items: [Item] = []
+        var y: CGFloat = 0
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+    }
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let proposedWidth = proposal.width ?? .infinity
+        let lines = arrange(subviews, maxWidth: proposedWidth)
+        let height = lines.last.map { $0.y + $0.height } ?? 0
+        let usedWidth = lines.map { $0.width }.max() ?? 0
+        // The ideal size (nil or infinite width) is one line of every chip.
+        return CGSize(width: proposedWidth.isFinite ? proposedWidth : usedWidth, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for line in arrange(subviews, maxWidth: bounds.width) {
+            for item in line.items {
+                subviews[item.index].place(
+                    at: CGPoint(x: bounds.minX + item.x, y: bounds.minY + line.y + (line.height - item.size.height) / 2),
+                    anchor: .topLeading,
+                    proposal: ProposedViewSize(item.size)
+                )
+            }
+        }
+    }
+
+    private func arrange(_ subviews: Subviews, maxWidth: CGFloat) -> [Line] {
+        var lines: [Line] = []
+        var line = Line()
+        for index in subviews.indices {
+            var size = subviews[index].sizeThatFits(.unspecified)
+            if size.width > maxWidth {
+                size = subviews[index].sizeThatFits(ProposedViewSize(width: maxWidth, height: nil))
+                size.width = min(size.width, maxWidth)
+            }
+            var x = line.items.isEmpty ? 0 : line.width + spacing
+            if !line.items.isEmpty && x + size.width > maxWidth {
+                let nextY = line.y + line.height + lineSpacing
+                lines.append(line)
+                line = Line()
+                line.y = nextY
+                x = 0
+            }
+            line.items.append(Item(index: index, size: size, x: x))
+            line.width = x + size.width
+            line.height = max(line.height, size.height)
+        }
+        if !line.items.isEmpty {
+            lines.append(line)
+        }
+        return lines
     }
 }
 
 extension ContentTopic {
-    /// The name shown in the app. Two category names are heavy for an A2 learner; the content
-    /// (`category.name_tr`) stays as it is.
+    /// The name shown in the app: short everyday Turkish with "ve" instead of "&" (A2 reader).
+    /// The content (`category.name_tr`) stays as it is; a new topic shows its own name.
     var displayName: String {
         switch id {
+        case "food_drink": return "Yemek ve içecek"
+        case "home_household": return "Ev ve ev işleri"
+        case "family_relationships": return "Aile"
+        case "clothes_fashion": return "Giyim"
+        case "shopping_money": return "Alışveriş ve para"
+        case "health_body": return "Sağlık ve vücut"
+        case "cities_transport": return "Şehir ve ulaşım"
+        case "weather_seasons": return "Hava ve mevsimler"
+        case "time_routines": return "Zaman ve günlük işler"
+        case "hobbies_sports": return "Hobi ve spor"
+        case "school_learning": return "Okul"
+        case "nature_animals": return "Doğa ve hayvanlar"
+        case "travel_tourism": return "Seyahat"
+        case "culture_celebrations": return "Ülkeler ve kültür"
+        case "music_film": return "Müzik ve film"
+        case "art_design_architecture": return "Sanat"
+        case "emotions_feelings": return "Duygular"
+        case "personality": return "Kişilik"
+        case "social_skills": return "Sohbet"
+        case "love_friendship": return "Aşk ve arkadaşlık"
+        case "opinions_debate": return "Fikir ve tartışma"
+        case "success_productivity": return "Başarı ve motivasyon"
+        case "business_management": return "İş dünyası"
+        case "workplace_office": return "İş yerinde"
+        case "careers_interviews": return "İş görüşmesi"
+        case "finance_economics": return "Para ve ekonomi"
+        case "technology_internet": return "Teknoloji ve internet"
         case "phrasal_verbs": return "İki kelimeli fiiller"
+        case "idioms_expressions": return "Deyimler"
+        case "collocations": return "Kelime ikilileri"
         case "confusing_words": return "Karıştırılan kelimeler"
-        default: return nameTR
+        default: return nameTR.replacingOccurrences(of: " & ", with: " ve ")
         }
     }
 }
 
-/// Topics under the Turkish title of their `category.grp`, in the order the topics come
-/// (`category.sort`).
+/// Topics under a few plain titles, in the order the topics come (`category.sort`). Groups
+/// with one or two topics share a title with a neighbour (B and F, D and E), so no title
+/// stands over a single chip.
 struct TopicGroup: Identifiable {
     let id: String
     let title: String
@@ -164,27 +335,27 @@ struct TopicGroup: Identifiable {
 
     static func groups(of topics: [ContentTopic]) -> [TopicGroup] {
         var order: [String] = []
-        var byGroup: [String: [ContentTopic]] = [:]
+        var byHeading: [String: [ContentTopic]] = [:]
         for topic in topics {
-            if byGroup[topic.group] == nil {
-                order.append(topic.group)
+            let heading = TopicGroup.heading(of: topic.group)
+            if byHeading[heading] == nil {
+                order.append(heading)
             }
-            byGroup[topic.group, default: []].append(topic)
+            byHeading[heading, default: []].append(topic)
         }
-        return order.map { group in
-            TopicGroup(id: group, title: title(of: group), topics: byGroup[group] ?? [])
+        return order.map { heading in
+            TopicGroup(id: heading, title: heading, topics: byHeading[heading] ?? [])
         }
     }
 
-    private static func title(of group: String) -> String {
+    /// `category.grp` → title.
+    private static func heading(of group: String) -> String {
         switch group {
         case "A": return "Günlük hayat"
-        case "B": return "Seyahat ve kültür"
+        case "B", "F": return "Seyahat ve kültür"
         case "C": return "İnsanlar ve duygular"
-        case "D": return "İş hayatı"
-        case "E": return "Bilim ve teknoloji"
-        case "F": return "Sanat ve eğlence"
-        case "G": return "Dil kalıpları"
+        case "D", "E": return "İş ve teknoloji"
+        case "G": return "Kalıplar ve tuzaklar"
         case "H": return "Zengin kelimeler"
         case "I": return "Sınavlar"
         default: return "Diğer"

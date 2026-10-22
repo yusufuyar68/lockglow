@@ -174,12 +174,12 @@
           "mistakes": [
             {"wrong": "I make sport three times a week.", "right": "I work out three times a week.", "why": "Türkçedeki 'spor yapmak' için 'make sport' denmez. Genel antrenman için 'work out', belirli sporlar için 'play football' ya da 'do yoga' denir."}
           ],
-          "mnemonic": null
+          "mnemonic": "'Work' çalışmak demek: Türkçedeki 'kas çalıştırmak' gibi, spor salonunda bedenini çalıştırırsın."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "hobbies_sports", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
       "quiz": {"cloze": "I go to the gym and ______ for an hour every morning.", "answer": "work out", "distractors": ["sleep in", "dress up", "sit down"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.grow_up.phv.1",
@@ -312,8 +312,8 @@
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "emotions_feelings", "social_skills"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
-      "quiz": {"cloze": "He is very angry. Please ______ and talk slowly.", "answer": "calm down", "distractors": ["cheer up", "hurry up", "wake up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "quiz": {"cloze": "You are very angry. Please ______ and talk slowly.", "answer": "calm down", "distractors": ["cheer up", "hurry up", "wake up"]},
+      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.stay_in.phv.1",
@@ -397,12 +397,12 @@
             {"wrong": "I signed up to my account.", "right": "I logged in to my account.", "why": "'Sign up' yeni kayıt olmaktır. Var olan hesaba girmek için 'log in' kullanılır; Türkçede 'giriş' ve 'kayıt' karışabilir."},
             {"wrong": "I want to sign up the course.", "right": "I want to sign up for the course.", "why": "'Kursa kaydolmak' için 'for' gerekir: sign up for."}
           ],
-          "mnemonic": null
+          "mnemonic": "'Sign' imzalamak demek: listeye adını yazıp yeni kayıt olursun. Hesabın zaten varsa 'log in' ile girersin."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet", "school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
       "quiz": {"cloze": "The class is free, but you must ______ first.", "answer": "sign up", "distractors": ["log out", "get off", "get out"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.look_around.phv.1",
@@ -424,7 +424,7 @@
       "examples": [
         {"en": "I'm just looking around, thanks.", "tr": "Sadece bakıyorum, teşekkürler.", "register": "neutral", "focus": "looking around"},
         {"en": "Let's look around the old town before lunch.", "tr": "Öğle yemeğinden önce eski şehri gezip görelim.", "register": "neutral", "focus": "look around"},
-        {"en": "She looked around the room, but nobody was there.", "tr": "Odanın etrafına bakındı ama kimse yoktu.", "register": "neutral", "focus": "looked around"}
+        {"en": "She looked around the room, but nobody was there.", "tr": "Odaya göz gezdirdi ama kimse yoktu.", "register": "neutral", "focus": "looked around"}
       ],
       "synonyms": [],
       "antonyms": [],

@@ -26,6 +26,8 @@ from .schema import TYPE_POS, Card
 from .taxonomy import Taxonomy, load_taxonomy
 from .textutil import contains_phrase, contains_stem, glen, is_nfc, slugify_lemma
 
+SPEAKABLE_LEMMA = re.compile(r"[A-Za-z]+(?:[ '\-][A-Za-z]+)*")
+
 # Grafem sınırları (raporlar/07_icerik_stratejisi.md §4). Widget yerleşimleri bunlara göre tasarlandı.
 LIMITS = {
     "lemma": 28,
@@ -158,6 +160,10 @@ def validate_card(card: Card, tax: Taxonomy | None = None, l1_langs: tuple[str, 
         c.err("TYPE_POS", "pos", f"tek kelime kartı pos={card.pos} olamaz")
 
     c.length("lemma", card.lemma, "lemma")
+    # The app's "Söyle" practice compares speech recognition output with the lemma, so the lemma
+    # must be plain speakable words: no "sb/sth", digits or slashes.
+    if not SPEAKABLE_LEMMA.fullmatch(card.lemma):
+        c.err("LEMMA_SPEAKABLE", "lemma", "lemma yalnız harf, boşluk, kesme ve tire içermeli (sb/sth, rakam, / yok)")
     c.length("sense_note", card.sense_note, "sense_note")
 
     # --- Telaffuz

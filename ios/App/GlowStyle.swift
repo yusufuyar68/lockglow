@@ -1,78 +1,37 @@
 import SwiftUI
-import UIKit
 
-/// Colors of the design proposal (`docs/tasarim/README.md`, light / dark values of the mockup),
-/// defined in code so the onboarding and the topic picker can use them before the asset
-/// catalog has them. Amber fills only the one main button and the selected item; text on amber
-/// is always `onGlow`, amber text and icons use `glowInk`.
+/// Names of the first design proposal, kept so the onboarding and the topic picker compile; they
+/// now map onto the tokens of `Theme` (ios/Shared/LockglowTheme.swift) as in docs/tasarim/README.md
+/// ("GlowStyle.swift eşlemesi"). New code uses `Theme` directly. App target only: the widget
+/// extension and the snapshot bundle do not compile this file.
+/// The old `glowTint` (the box behind the Turkish meaning) is gone: the meaning has no box.
 enum Palette {
-    /// Fill: the main button, the selected option.
-    static let glow = dynamic(light: 0xFFB321, dark: 0xFFBD3F)
-    /// Text and icons on a `glow` fill (white on amber is unreadable).
-    static let onGlow = Color(uiColor: UIColor(rgb: 0x1B1200))
-    /// Links, icons, step numbers.
-    static let glowInk = dynamic(light: 0x955000, dark: 0xFFC862)
-    /// Background of the Turkish meaning box and highlights.
-    static let glowTint = dynamic(light: 0xFFF1D2, dark: 0xFFBD3F, darkAlpha: 0.14)
+    /// Fill of the one main button: ink by day, phosphor at night (`Theme.primary`).
+    /// Progress and selection use `glowInk` (`Theme.tint`), which never turns yellow.
+    static let glow = Theme.primary
+    /// Text and icons on a `glow` fill (`Theme.onPrimary`).
+    static let onGlow = Theme.onPrimary
+    /// Selected items, step numbers, the onboarding's text buttons (`Theme.tint`).
+    static let glowInk = Theme.tint
     /// Secondary text.
-    static let ink2 = dynamic(light: 0x4F4A63, dark: 0xBDB7CF)
-    static let background = dynamic(light: 0xF5F4F9, dark: 0x0C0A12)
-    static let surface = dynamic(light: 0xFFFFFF, dark: 0x171420)
+    static let ink2 = Theme.ink2
+    static let background = Theme.bg
+    static let surface = Theme.surface
     /// Unselected choices.
-    static let surface2 = dynamic(light: 0xEDEBF3, dark: 0x211D2D)
-    static let line = dynamic(light: 0x15131F, dark: 0xFFFFFF, lightAlpha: 0.12, darkAlpha: 0.12)
-
-    private static func dynamic(
-        light: UInt32,
-        dark: UInt32,
-        lightAlpha: CGFloat = 1,
-        darkAlpha: CGFloat = 1
-    ) -> Color {
-        return Color(uiColor: UIColor { traits in
-            if traits.userInterfaceStyle == .dark {
-                return UIColor(rgb: dark, alpha: darkAlpha)
-            }
-            return UIColor(rgb: light, alpha: lightAlpha)
-        })
-    }
+    static let surface2 = Theme.surface2
+    static let line = Theme.line
 }
 
-private extension UIColor {
-    convenience init(rgb: UInt32, alpha: CGFloat = 1) {
-        self.init(
-            red: CGFloat((rgb >> 16) & 0xFF) / 255,
-            green: CGFloat((rgb >> 8) & 0xFF) / 255,
-            blue: CGFloat(rgb & 0xFF) / 255,
-            alpha: alpha
-        )
-    }
-}
-
-/// The one amber button of a screen (mockup `.btn-primary.btn-lg`): full width, 54 pt high.
+/// The one main button of a screen (mockup `.btn-primary.btn-lg`): a full-width 54 pt capsule.
 struct GlowButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
-        GlowButtonBody(configuration: configuration)
+        PrimaryCapsuleButtonStyle(fullWidth: true, minHeight: 54)
+            .makeBody(configuration: configuration)
     }
 }
 
-private struct GlowButtonBody: View {
-    let configuration: ButtonStyleConfiguration
-    @Environment(\.isEnabled) private var isEnabled
-
-    var body: some View {
-        configuration.label
-            .font(.headline)
-            .multilineTextAlignment(.center)
-            .foregroundStyle(Palette.onGlow)
-            .padding(.horizontal, 24)
-            .frame(maxWidth: .infinity, minHeight: 54)
-            .background(Palette.glow, in: RoundedRectangle(cornerRadius: 17, style: .continuous))
-            .opacity(isEnabled ? (configuration.isPressed ? 0.85 : 1) : 0.45)
-            .contentShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
-    }
-}
-
-/// A row that can be chosen (mockup `.opt`): amber check when selected, at least 56 pt high.
+/// A row that can be chosen (mockup `.choice`), at least 56 pt high: a `surface` row with a
+/// `lineStrong` border; selected, a 2 pt `tint` border and a `tint` check (never yellow).
 /// Used for the level and topic choices.
 struct ChoiceRow<Content: View>: View {
     let isSelected: Bool
@@ -86,21 +45,26 @@ struct ChoiceRow<Content: View>: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                     .font(.title2)
-                    .foregroundStyle(isSelected ? Palette.glowInk : Palette.ink2)
+                    .foregroundStyle(isSelected ? Theme.tint : Theme.ink3)
                     .accessibilityHidden(true)
             }
             .padding(.vertical, 10)
-            .padding(.horizontal, 16)
+            .padding(.leading, 16)
+            .padding(.trailing, 14)
             .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
-            .background(isSelected ? Palette.glowTint : Palette.surface, in: RoundedRectangle(cornerRadius: 17, style: .continuous))
+            .background(Theme.surface, in: rowShape)
             .overlay(
-                RoundedRectangle(cornerRadius: 17, style: .continuous)
-                    .strokeBorder(isSelected ? Palette.glow : Palette.line, lineWidth: 1.5)
+                rowShape
+                    .strokeBorder(isSelected ? Theme.tint : Theme.lineStrong, lineWidth: isSelected ? 2 : 1.5)
             )
-            .contentShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
+            .contentShape(rowShape)
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(isSelected ? .isSelected : [])
+    }
+
+    private var rowShape: RoundedRectangle {
+        RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous)
     }
 }
 
@@ -109,11 +73,14 @@ struct SegmentOption<Value: Hashable>: Hashable {
     let title: String
 }
 
-/// Two or three always-visible options (mockup `.seg`), selected one in amber. Stacks
-/// vertically when the text does not fit side by side (largest text sizes).
+/// Two or three always-visible options (mockup `.seg`) in a `surface2` well. The selected one is
+/// a `surface` segment with ink text and a 1.5 pt `tint` inner border (a white fill with the old
+/// white-on-amber text would be unreadable). Stacks vertically when the text does not fit side by
+/// side (largest text sizes).
 struct SegmentButtons<Value: Hashable>: View {
     let options: [SegmentOption<Value>]
     @Binding var selection: Value
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
@@ -125,7 +92,7 @@ struct SegmentButtons<Value: Hashable>: View {
             }
         }
         .padding(3)
-        .background(Palette.surface2, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Theme.surface2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 
     private var buttons: some View {
@@ -135,20 +102,31 @@ struct SegmentButtons<Value: Hashable>: View {
                 selection = option.value
             } label: {
                 Text(option.title)
-                    .font(.subheadline.weight(.bold))
+                    .font(.subheadline.weight(.semibold))
                     .lineLimit(1)
                     .fixedSize()
-                    .foregroundStyle(isSelected ? Palette.onGlow : Palette.ink2)
+                    .foregroundStyle(isSelected ? Theme.ink : Theme.ink2)
                     .padding(.horizontal, 12)
                     .frame(maxWidth: .infinity, minHeight: 46)
-                    .background(
-                        RoundedRectangle(cornerRadius: 11, style: .continuous)
-                            .fill(isSelected ? Palette.glow : Color.clear)
-                    )
+                    .background {
+                        if isSelected {
+                            selectedSegment
+                        }
+                    }
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .accessibilityAddTraits(isSelected ? .isSelected : [])
         }
+    }
+
+    private var selectedSegment: some View {
+        RoundedRectangle(cornerRadius: Theme.Radius.segment, style: .continuous)
+            .fill(Theme.surface)
+            .shadow(color: colorScheme == .dark ? .clear : Color.black.opacity(0.16), radius: 1.5, x: 0, y: 1)
+            .overlay(
+                RoundedRectangle(cornerRadius: Theme.Radius.segment, style: .continuous)
+                    .strokeBorder(Theme.tint, lineWidth: 1.5)
+            )
     }
 }

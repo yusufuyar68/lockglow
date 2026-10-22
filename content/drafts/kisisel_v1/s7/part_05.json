@@ -192,7 +192,7 @@
               "why": "Türkçede 'hiç' ile olumsuz fiil birlikte kullanılır (hiç yemem). İngilizcede 'never' zaten olumsuzdur; yanına 'don't' eklenmez."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Never' = eski 'ne' (değil) + 'ever' (hiç): içinde 'değil' zaten var, o yüzden yanına 'do not' eklenmez."
         }
       },
       "tags": {
@@ -218,7 +218,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -940,7 +941,7 @@
               "why": "Türkçede 'çok güzel' hem 'very' hem 'too' için kullanılır. İngilizcede 'too' = gereğinden fazla, bir sorun var. Güzel bir şey için 'very' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Too' kelimesinde fazladan bir 'o' var: 'too' gereğinden fazla demek. 'To' tek 'o' ile yazılır."
         }
       },
       "tags": {
@@ -967,7 +968,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

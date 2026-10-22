@@ -193,7 +193,7 @@
               "why": "Türkçede 'geç geldi' dersiniz; 'geç' hem sıfat hem zarf olur. İngilizcede de 'late' zarf olarak aynen kalır. Zarf diye '-ly' eklemek akla gelir; ama 'lately' 'son zamanlarda' demektir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Kısa kelime, kısa karşılık: 'late' = geç. Uzun kelime, uzun karşılık: 'lately' = son zamanlarda."
         }
       },
       "tags": {
@@ -222,7 +222,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -305,7 +306,7 @@
           "false_friend": null,
           "note": "'I'm busy' = işim var, müsait değilim. Yoğun bir gün, işlek bir cadde de 'busy' olur. Telefon için 'The line is busy' denir (hat meşgul).",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Busy' yazılır ama 'bizi' diye okunur: 'Bizi şimdi arama, meşgulüz!'"
         }
       },
       "tags": {
@@ -330,7 +331,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -861,7 +864,7 @@
               "why": "Türkçede 'hızlı' sıfat da zarf da olur (hızlı gitti); İngilizcede de 'fast' böyledir. 'Quickly', 'slowly' gibi zarflar '-ly' aldığı için 'fastly' denir, ama bu yanlıştır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Türkçede de 'fast food' denir: çabuk hazırlanan yemek. 'Fast' = hızlı."
         }
       },
       "tags": {
@@ -887,7 +890,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -970,7 +974,7 @@
           "false_friend": null,
           "note": "'Slow' sıfattır (a slow bus). Fiili anlatan zarf genellikle 'slowly' (yavaşça) olur. 'Slow down' = yavaşlamak. Karşıtı 'fast' (hızlı).",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Türkçede de yavaş şarkıya 'slow' denir: düğünde 'slow' çalınca çiftler yavaş dans eder."
         }
       },
       "tags": {
@@ -996,7 +1000,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

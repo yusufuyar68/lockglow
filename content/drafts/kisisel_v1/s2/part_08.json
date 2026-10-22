@@ -125,9 +125,7 @@
       "equivalence": "partial",
       "false_friend": null,
       "note": "Türkçedeki 'hecelemek' heceleri ayırır (ka-pı); 'spell' ise harfleri tek tek söyler (K-A-P-I). 'Nasıl yazılıyor?' = 'How do you spell it?'",
-      "mistakes": [
-        {"wrong": "How do you write your name?", "right": "How do you spell your name?", "why": "Harfleri sormak için 'spell' kullanılır. 'Write' ise kalemle yazmak veya metin yazmak demektir."}
-      ],
+      "mistakes": [],
       "mnemonic": null
     }
   },
@@ -172,12 +170,12 @@
       "mistakes": [
         {"wrong": "We stayed in a small island.", "right": "We stayed on a small island.", "why": "Türkçede '-da' eki 'in' gibi gelir, ama adalar için 'on' kullanılır: on an island."}
       ],
-      "mnemonic": null
+      "mnemonic": "'Island' içindeki 's' sonradan, 'isle' kelimesine benzesin diye eklendi. O yüzden okunmaz: 'aylınd'."
     }
   },
   "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "You can only reach the ______ by boat; there is no bridge.", "answer": "island", "distractors": ["highway", "station", "airport"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.leaf.n.1",
@@ -258,12 +256,12 @@
       "false_friend": null,
       "note": "Türkçede 'böcek' her küçük canlıyı kapsayabilir. İngilizcede 'insect' altı bacaklı hayvandır; örümcek (spider) sekiz bacaklıdır, bu yüzden insect sayılmaz. Günlük dilde 'bug' da denir.",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "Latince 'insectum' = 'çentikli, bölünmüş': karıncaya bak, gövdesi boğum boğum bölümlere ayrılmış."
     }
   },
   "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "A bee is a small ______ that makes honey.", "answer": "insect", "distractors": ["bird", "fish", "plant"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.playlist.n.1",
@@ -344,12 +342,12 @@
       "mistakes": [
         {"wrong": "I watched two serieses this month.", "right": "I watched two series this month.", "why": "'Series' kelimesinin çoğulu da 'series'tir; sonuna -es eklenmez."}
       ],
-      "mnemonic": null
+      "mnemonic": "Türkçedeki 'seri' ile aynı kelime: bölümler seri hâlinde, art arda gelir."
     }
   },
   "tags": {"primary_topic": "music_film", "topics": ["music_film", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I stayed up all night to finish the whole ______ on my laptop.", "answer": "series", "distractors": ["street", "battery", "lesson"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "quiz": {"cloze": "I stayed up all night to finish the whole ______ on my laptop.", "answer": "series", "distractors": ["street", "battery", "pillow"]},
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.episode.n.1",

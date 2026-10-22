@@ -89,7 +89,7 @@
               "why": "Türkçede 'anneme hediye aldım' (-e hâli) dediğimiz için 'to' denir. İngilizcede kişi doğrudan gelirse 'to' kullanılmaz: buy my mother a gift."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Buy' içindeki 'u' okunmaz; 'bye' (hoşça kal) ile aynı söylenir. Kasada öde, al, 'bye' de çık."
         }
       },
       "tags": {
@@ -118,7 +118,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -207,7 +208,7 @@
               "why": "Türkçede düzensiz fiil yoktur; bu yüzden geçmiş zaman için '-ed' eklenir. 'Sell' düzensizdir: sell - sold - sold."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Mağaza camındaki 'SALE' yazısını bilirsin: 'sell' (satmak) ile aynı aileden."
         }
       },
       "tags": {
@@ -237,7 +238,8 @@
         "status": "draft",
         "qa_flags": [
           "distractors_diversified",
-          "ipa_dress_normalized"
+          "ipa_dress_normalized",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -319,7 +321,7 @@
               "why": "Türkçede 'saat sekiz oldu' denir ve 'olmak' = 'become' gibi düşünülür. İngilizcede saat için 'be' kullanılır: It was eight o'clock."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "İçinde 'come' var ama 'gelmek' değil! 'Become' = olmak: 'become a doctor' doktor olmak."
         }
       },
       "tags": {
@@ -348,7 +350,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -435,7 +438,7 @@
               "why": "Türkçede 'kaza oldu' için 'oldu' = 'was' gibi düşünülür. 'Happen' kendiliğinden olan bir olayı anlatır ve edilgen yapılmaz."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Happen' ile 'happy' aynı eski kelimeden gelir: 'hap' (şans). Şans eseri bir şey olunca 'it happened' denir."
         }
       },
       "tags": {
@@ -460,7 +463,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -540,7 +545,7 @@
               "why": "Türkçede 'çıkmama izin vermiyor' denir ve fiil -mek/-mak biçimindedir; bu yüzden 'to go' denir. 'Let' ile yalın fiil kullanılır, 'to' gelmez."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Bildiğin 'Let's go!' aslında 'let us go' demek: bize izin ver, gidelim. 'Let' = izin vermek."
         }
       },
       "tags": {
@@ -572,7 +577,8 @@
         "qa_flags": [
           "critic_edited",
           "distractors_diversified",
-          "ipa_dress_normalized"
+          "ipa_dress_normalized",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -908,7 +914,7 @@
               "why": "Türkçede 'inanıyorum' -yor ekiyle (şimdiki zaman) söylenir; bu yüzden 'I'm believing' denir. 'Believe' durum fiilidir ve genelde -ing almaz."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Believe' yazılışında 'lie' (yalan) saklı: be-LIE-ve. Yalana inanma! 'ie' sırasını böyle hatırla."
         }
       },
       "tags": {
@@ -937,7 +943,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

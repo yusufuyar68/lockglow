@@ -379,7 +379,7 @@
               "why": "Türkçede 'kaza yapmak' denir ve 'yapmak' make ya da do diye çevrilir. İngilizcede kaza 'have' ile söylenir: have an accident. Kazaya sebep olan kişi için 'cause an accident' de denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Accident' kelimesindeki iki 'c' farklı okunur: ilki 'k', ikincisi 's'. Yani 'aksidınt'."
         }
       },
       "tags": {
@@ -405,7 +405,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

@@ -193,7 +193,7 @@
               "why": "Türkçede 'izin' hem 'permission' hem de işten izin demektir. İşe gitmediğin gün için 'permission' kullanılmaz; 'take a day off' ya da 'take Friday off' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Off' kapalı demektir: ışığı 'turn off' ile kapatırsın. 'Day off' da işin senin için kapalı olduğu gün."
         }
       },
       "tags": {
@@ -220,7 +220,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -406,7 +407,7 @@
           "false_friend": null,
           "note": "'Manager' bir ekibi, mağazayı ya da bölümü yöneten kişidir. Türkçede 'müdür' ya da 'yönetici' denir. 'Boss' günlük konuşmada kullanılan genel sözcüktür; 'manager' ise bir iş unvanıdır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Futbolcunun ya da şarkıcının 'menajeri' olur: aynı kelime. İş yerinde 'manager' müdür ya da yöneticidir."
         }
       },
       "tags": {
@@ -434,7 +435,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -726,7 +729,7 @@
           "false_friend": null,
           "note": "Türkçedeki 'bana haber ver' gibidir; 'tell me' demekten daha yumuşak duyulur. 'Let' fiilinden sonra 'to' gelmez. Ardından çoğunlukla 'if', 'when' ya da 'what' ile bir cümle gelir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Kelime kelime 'bilmeme izin ver' demek: 'let' izin vermek, 'know' bilmek. Yani bana haber ver."
         }
       },
       "tags": {
@@ -753,7 +756,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -1057,7 +1061,7 @@
               "why": "Türkçede 'görüşme yapmak' deriz ve 'yapmak' sözü 'make' diye çevrilir. Ama 'make a job interview' denmez; görüşmeye giren kişi 'have a job interview' der."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Inter' arası, 'view' görmek: iki taraf birbirini görür. Türkçedeki 'görüşme' de aynı fikir."
         }
       },
       "tags": {
@@ -1085,7 +1089,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

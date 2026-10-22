@@ -309,7 +309,7 @@
               "why": "Türkçede 'yüzmeyi bilmiyorum' denir. İngilizcede bir beceri için 'know how to' + fiil gerekir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Know' tıpkı 'no' gibi okunur; baştaki 'k' sessizdir."
         }
       },
       "tags": {
@@ -338,7 +338,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

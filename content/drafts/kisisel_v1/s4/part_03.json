@@ -84,12 +84,12 @@
           "mistakes": [
             {"wrong": "I got out of the bus at the station.", "right": "I got off the bus at the station.", "why": "Araç büyükse (otobüs, tren, uçak) 'get off', küçükse (araba, taksi) 'get out of' kullanılır."}
           ],
-          "mnemonic": null
+          "mnemonic": "Otobüse basamaktan üstüne (on) çıkıp binersin, üstünden ayrılıp (off) inersin. Arabadan ise 'get out'."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
       "quiz": {"cloze": "I'm on the bus and this is my stop. I'll ______ here.", "answer": "get off", "distractors": ["log in", "move out", "go on"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.try_on.phv.1",
@@ -394,12 +394,12 @@
           "mistakes": [
             {"wrong": "Write down it, please.", "right": "Write it down, please.", "why": "Zamir (it, them) 'write' ile 'down' arasına girer. 'Write down it' yanlıştır."}
           ],
-          "mnemonic": null
+          "mnemonic": "Türkçede de 'kâğıda dökmek' deriz: duyduğun bilgiyi kâğıda aşağı (down) döker gibi yazarsın."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning", "workplace_office"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
       "quiz": {"cloze": "The address is long. Please ______ the address so I don't forget.", "answer": "write down", "distractors": ["throw away", "take off", "look for"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.lie_down.phv.1",

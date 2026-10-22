@@ -185,7 +185,7 @@
               "why": "Türkçede sayıdan sonra isim çoğul olmaz (iki bavul); İngilizcede birden fazla ise -s gerekir: two suitcases."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Suit' takım elbise, 'case' kutu ya da kılıf demek: takım elbiseni koyup taşıdığın kutu, yani bavul."
         }
       },
       "tags": {
@@ -211,7 +211,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -803,7 +804,7 @@
           "false_friend": null,
           "note": "ABD'de genelde 'canceled' (tek l), İngiltere'de 'cancelled' (çift l) yazılır. İsim hâli ise iki ülkede de 'cancellation' (çift l) olur.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Latince kökü 'üstünü çapraz çizgilerle çizmek' demek: takvimdeki planının üstüne kocaman bir çarpı attığını düşün."
         }
       },
       "tags": {
@@ -830,7 +831,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "verifier_edited"
+          "verifier_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -908,7 +910,7 @@
           "false_friend": null,
           "note": "Türkçede tek fiil yoktur: 'bavulu boşaltmak' ya da 'eşyaları yerleştirmek' denir. Zıttı 'pack' (bavul hazırlamak).",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Un-' bir işi tersine çevirir: 'lock' kilitle, 'unlock' kilidi aç; 'pack' bavulu doldur, 'unpack' bavulu boşalt."
         }
       },
       "tags": {
@@ -934,7 +936,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

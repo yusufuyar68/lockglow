@@ -130,3 +130,69 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman.
 - `quiz.cloze` değiştirilen kart: yok. Doğru cevaplar ve cümleler aynı kaldı.
 - `recipe`/`menu`/`receipt` üçlüsü (karıştırılan sözcükler) yalnızca `recipe`, `receipt`, `prescription`, `medicine`, `parcel`, `ingredient`, `sale` gibi sınav değeri olan kartlarda bırakıldı; diğer yerlerde konuya yakın ama cümleye uymayan sözcüklerle (mutfak, ev, alışveriş, sağlık) değiştirildi.
 - Doğrulayıcı: `python -m vocabpipe.validate --strict` → 0 hata · 0 uyarı.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 31 ipucu önerdi. Şüpheci doğrulayıcı 7 tanesini reddetti, 4 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 24** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yazarın 4 önerisinden doğrulayıcının onayladığı 4 tanesi uygulandı (çeviri 1, Dikkat 2, quiz 1). Düzeltilen kartlara `critic_edited` eklendi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `127 kart · 127 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.boil.v.1 | Türkçedeki 'boyler' (sıcak su kazanı) İngilizce 'boiler' kelimesinden gelir: 'boiler' suyu kaynatan kazan. |
+| en.fry.v.1 | Patates kızartmasına 'French fries' denir: 'fry' kızartmak, 'fries' kızarmış patates. |
+| en.apartment.n.1 | 'Apartment' apartman değil, tek bir daire! Bütün bina 'apartment building'. |
+| en.kettle.n.1 | Türkiye'de de mutfakta 'kettle' denir: suyu hızla kaynatan elektrikli ısıtıcı. |
+| en.housework.n.1 | 'Housework' evin (house) işi: temizlik, ütü. 'Homework' ise okul ödevi: evde (home) yapılan ders işi. |
+| en.rent.n.1 | Tatil yerlerindeki 'Rent a Car' tabelalarını hatırla: araba kiralama. 'Rent' kira demek. |
+| en.aunt.n.1 | ABD'de çoğu kişi 'aunt' kelimesini 'ant' (karınca) gibi okur. Yazarken 'u' harfini unutma: a-u-n-t. |
+| en.grandparent.n.1 | 'Grand' büyük demek: grand + mother = büyükanne, grand + father = büyükbaba. Tıpkı Türkçedeki gibi. |
+| en.neighbor.n.1 | 'Neigh-' eski İngilizcede 'yakın' demekti (bugünkü 'near' ile akraba): yakında oturan kişi, komşu. |
+| en.jacket.n.1 | Türkçedeki 'ceket' ile aynı kökten gelir; okunuşu 'CEK-it'. |
+| en.size.n.1 | Türkçedeki 'size' ile aynı yazılır: mağazada 'Size hangi beden lazım?' diye düşün. Okunuşu 'sayz'. |
+| en.button.n.1 | Ekrandaki 'buton' ile aynı kökten: gömlekteki düğme de, asansördeki tuş da 'button'. |
+| en.slipper.n.1 | 'Slip' kaymak demek: ayağını içine kaydırıp giydiğin ev ayakkabısı 'slipper'. |
+| en.fit.v.1 | Yapboz parçası yerine tam oturunca 'It fits!' denir; ayakkabı ayağına tam olunca da öyle. |
+| en.wardrobe.n.1 | Ward (korumak) + robe (elbise): elbiseleri koruyan dolap. Türkçedeki 'gardırop' da aynı kelimeden. |
+| en.price.n.1 | 'Price' (fiyat) 'c' ile yazılır: cüzdan. 'Prize' (ödül) 'z' ile: zafer. Okunuşları da farklı: prays, prayz. |
+| en.change.n.2 | 'Change' değiştirmek demek; büyük parayı küçüklerle değiştirmek gibi düşün: para üstü ve bozukluk da 'change'. |
+| en.receipt.n.1 | Satıcı paranı alır (receive), sana 'receipt' verir: ikisi aynı kökten. |
+| en.discount.n.1 | 'Dis-' (dışarı) + 'count' (saymak): fiyatın bir kısmını hesaptan çıkarmak, yani indirim. |
+| en.cash.n.1 | Türkçedeki 'kasa' ile aynı kökten (Latince 'capsa': kutu): kasadaki para 'cash'. |
+| en.save.v.2 | Bilgisayarda dosya kaybolmasın diye 'save' tuşuna basarsın; parayı harcamayıp saklamak da 'save'. |
+| en.headache.n.1 | Head (baş) + ache (ağrı). 'Ache' içindeki 'ch' k gibi okunur: 'hed-eyk'. Toothache = diş ağrısı. |
+| en.flu.n.1 | 'Flu', 'influenza' kelimesinin kısa hâli; gribin tıptaki adı Türkçede de 'enflüanza'. |
+| en.sick.adj.1 | 'Seasick' (deniz + hasta) deniz tutması, 'homesick' (ev + hasta) sıla hasreti: ikisinde de 'sick' hasta demek. |
+
+### Düzeltmeler
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| en.fork.n.1 | quiz.distractors[2] | plate → kettle | 'plate' de doğru: 'I need a knife and a plate for this steak' tamamen doğal. |
+| en.delicious.adj.1 | l1.tr.mistakes[0] | ✗ This cake is very delicious. ✓ This cake is really delicious. ('Delicious' zaten 'çok güzel' demektir; 'very' ile pek kullanılmaz. Vurgu için 'really' ya da 'absolutely' kullanın.) → (silindi) | 'very delicious' İngilizcede kabul edilebilir (rehberde örnek); gerçek hata değil. |
+| en.cash.n.1 | l1.tr.mistakes[0] | ✗ I'll pay by cash. ✓ I'll pay in cash. (Kart için 'by card' denir; nakit için en doğal kalıp 'in cash' olur. 'By cash' anlaşılır ama daha az doğaldır.) → (silindi) | 'pay by cash' kabul edilebilir (why kendisi de 'anlaşılır' diyor); gerçek hata değil. |
+| en.second_hand.adj.1 | examples[2].tr | Kenji eski telefonunu ikinci el bir dükkâna sattı. → Kenji eski telefonunu bir ikinci el dükkânına sattı. | Eski çeviri dükkânın kendisini ikinci el gibi okutuyordu; önerilen 'eşya alan' ise bilgi ekliyor, doğal kalıp 'ikinci el dükkânı'. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `plate`: Plaka-levha-tabak zinciri dolaylı; ikinci yarısı notu (bowl) tekrar ediyor ve kelime zaten kolay.
+- `fridge`: 'Frigorifik' A2 öğrencisi için yaygın değil, Latince kök anlatımı ağır; kelime zaten kolay.
+- `shower`: Kartın anlamı (duş) dışında ikinci bir anlam (sağanak) getiriyor; A1 için kafa karıştırır, kanca zayıf.
+- `sofa`: Notu ve sahte dost alanını aynen tekrar ediyor; bugün çoğu Türk 'sofa'yı zaten kanepe sanır, karışıklık zayıf.
+- `laundry`: Köken doğru ama 'lavabo' ile 'laundry' arasındaki ses bağı zayıf ve Latince kök A2 için uzak.
+- `relative`: Kanca A2 öğrencisinin bilmediği 'related' kelimesine dayanıyor; akılda bağ kurmuyor.
+- `coat`: Türk öğrenciler 'coat' ile 'kot' kelimesini karıştırmaz; olmayan bir karışıklık yaratıyor.
+
+### Anadili Türkçe birinin bakması gerekenler
+
+- en.groceries.n.1 ex[1]: 'Taşımama' çeviride eklenmiş; 'Market alışverişi arabada' biraz yapay (dokunulmadı)
+- en.dishes.n.1 quiz: 'stairs' (do the stairs = merdiveni temizlemek, İngiltere) sınırda (dokunulmadı)
+- en.cheap.adj.1 Dikkat[0]: 'The price is very cheap' günlük İngilizcede de duyulur; sınırda (dokunulmadı)
+- en.bargain.n.1 Dikkat[0]: 'make a bargain' = anlaşma yapmak, İngilizcede doğru bir söz; sınırda (dokunulmadı)
+- en.sofa.n.1: Türkçede 'sofa' (hol) bugün ne kadar biliniyor, anadili Türkçe biri baksın.
+- en.second_hand.adj.1 ex[2]: 'ikinci el dükkânı' mı 'ikinci elci' mi daha doğal, anadili Türkçe biri baksın.

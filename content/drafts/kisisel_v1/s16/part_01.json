@@ -1,0 +1,955 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.the_day_after_tomorrow.phr.1",
+      "lemma": "the day after tomorrow",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "two days from today",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ðə ˌdeɪ æftər təˈmɑːroʊ/",
+        "uk": "/ðə ˌdeɪ ɑːftə təˈmɒrəʊ/"
+      },
+      "def": {
+        "micro": "two days from today",
+        "short": "the day that comes two days after today",
+        "long": "The day that comes two days after today. If today is Monday, it is Wednesday."
+      },
+      "examples": [
+        {
+          "en": "My grandparents are coming the day after tomorrow.",
+          "tr": "Büyükannemle büyükbabam öbür gün geliyor.",
+          "register": "neutral",
+          "focus": "the day after tomorrow"
+        },
+        {
+          "en": "It will rain tomorrow, but the day after tomorrow will be sunny.",
+          "tr": "Yarın yağmur yağacak ama öbür gün hava güneşli olacak.",
+          "register": "neutral",
+          "focus": "the day after tomorrow"
+        },
+        {
+          "en": "I'm busy today and tomorrow. Can we meet the day after tomorrow, Leyla?",
+          "tr": "Bugün ve yarın meşgulüm. Öbür gün buluşabilir miyiz, Leyla?",
+          "register": "neutral",
+          "focus": "the day after tomorrow"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öbür gün",
+          "alt": [
+            "yarından sonraki gün"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dikkat: 'the other day' öbür gün demek değildir; 'geçen gün' demektir ve geçmiş için kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I will see you after tomorrow.",
+              "right": "I will see you the day after tomorrow.",
+              "why": "Türkçedeki 'yarından sonra' kelime kelime çevrilir. 'After tomorrow' tek bir günü göstermez; öbür gün için 'the day after tomorrow' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Today is Monday. The concert is on Wednesday, ______.",
+        "answer": "the day after tomorrow",
+        "distractors": [
+          "the other day",
+          "tomorrow",
+          "in three days"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.the_day_before_yesterday.phr.1",
+      "lemma": "the day before yesterday",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "two days before today",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ðə deɪ bɪfɔːr ˈjɛstərdeɪ/",
+        "uk": "/ðə deɪ bɪfɔː ˈjɛstədeɪ/"
+      },
+      "def": {
+        "micro": "two days ago",
+        "short": "the day that came two days before today",
+        "long": "The day that came two days before today. If today is Friday, it was Wednesday."
+      },
+      "examples": [
+        {
+          "en": "It snowed the day before yesterday.",
+          "tr": "Evvelki gün kar yağdı.",
+          "register": "neutral",
+          "focus": "the day before yesterday"
+        },
+        {
+          "en": "I called Murat the day before yesterday, but he didn't answer.",
+          "tr": "Evvelki gün Murat'ı aradım ama açmadı.",
+          "register": "neutral",
+          "focus": "the day before yesterday"
+        },
+        {
+          "en": "The day before yesterday was my birthday, and it was a lovely sunny day.",
+          "tr": "Evvelki gün benim doğum günümdü ve güzel, güneşli bir gündü.",
+          "register": "neutral",
+          "focus": "the day before yesterday"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "evvelki gün",
+          "alt": [
+            "önceki gün",
+            "dünden önceki gün"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Konuşmada 'two days ago' da çok kullanılır ve aynı günü anlatır.",
+          "mistakes": [
+            {
+              "wrong": "I saw her before yesterday.",
+              "right": "I saw her the day before yesterday.",
+              "why": "Türkçedeki 'dünden önce' kelime kelime çevrilir. İngilizcede bu günün adı 'the day before yesterday' kalıbıdır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Today is Wednesday. I last saw Elif on Monday, ______.",
+        "answer": "the day before yesterday",
+        "distractors": [
+          "yesterday",
+          "three days ago",
+          "in two days"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.last_night.phr.1",
+      "lemma": "last night",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "yesterday evening or night",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌlæst ˈnaɪt/",
+        "uk": "/ˌlɑːst ˈnaɪt/"
+      },
+      "def": {
+        "micro": "yesterday, after dark",
+        "short": "in the evening or the dark hours of yesterday",
+        "long": "In the evening or the dark hours of yesterday, before you went to sleep or while you were sleeping."
+      },
+      "examples": [
+        {
+          "en": "Did you sleep well last night?",
+          "tr": "Dün gece iyi uyudun mu?",
+          "register": "neutral",
+          "focus": "last night"
+        },
+        {
+          "en": "There was a big storm last night, and the wind was very loud.",
+          "tr": "Dün gece büyük bir fırtına vardı ve rüzgâr çok gürültülüydü.",
+          "register": "neutral",
+          "focus": "last night"
+        },
+        {
+          "en": "Last night Daniel and I sat outside and looked at the stars.",
+          "tr": "Dün akşam Daniel'le dışarıda oturup yıldızlara baktık.",
+          "register": "neutral",
+          "focus": "Last night"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "late last night",
+        "since last night"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dün gece",
+          "alt": [
+            "dün akşam"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dün sabah için 'yesterday morning' denir; ama dün gece için 'yesterday night' değil, 'last night' kullanılır. 'Last night' dün akşamı da kapsar.",
+          "mistakes": [
+            {
+              "wrong": "I watched a film yesterday night.",
+              "right": "I watched a film last night.",
+              "why": "Türkçedeki 'dün gece' kelime kelime çevrilir. İngilizcede 'yesterday night' denmez; 'last night' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't sleep well ______, so I'm very tired today.",
+        "answer": "last night",
+        "distractors": [
+          "yesterday night",
+          "tomorrow night",
+          "a year ago"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.this_morning.phr.1",
+      "lemma": "this morning",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "the morning of today",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ðɪs ˈmɔːrnɪŋ/",
+        "uk": "/ðɪs ˈmɔːnɪŋ/"
+      },
+      "def": {
+        "micro": "today, before 12 o'clock",
+        "short": "during the early part of today, before the middle of the day",
+        "long": "During the early part of today, from when you get up until the middle of the day."
+      },
+      "examples": [
+        {
+          "en": "It was very cold this morning.",
+          "tr": "Bu sabah hava çok soğuktu.",
+          "register": "neutral",
+          "focus": "this morning"
+        },
+        {
+          "en": "I went for a run this morning before work.",
+          "tr": "Bu sabah işten önce koşuya çıktım.",
+          "register": "neutral",
+          "focus": "this morning"
+        },
+        {
+          "en": "This morning the garden was white with snow, but now it's all gone.",
+          "tr": "Bu sabah bahçe kardan bembeyazdı ama şimdi hepsi eridi.",
+          "register": "neutral",
+          "focus": "This morning"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "early this morning",
+        "at 7 this morning"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu sabah",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Aynı kalıp: 'this afternoon' (bu öğleden sonra), 'this evening' (bu akşam). Ama 'bu gece' için 'tonight' denir.",
+          "mistakes": [
+            {
+              "wrong": "I saw Ali today morning.",
+              "right": "I saw Ali this morning.",
+              "why": "Türkçedeki 'bugün sabah' kelime kelime çevrilir. İngilizcede bugünün sabahı için 'this morning' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's noon now. I had a coffee at seven ______, and I want another one.",
+        "answer": "this morning",
+        "distractors": [
+          "this evening",
+          "today morning",
+          "tomorrow morning"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.these_days.phr.1",
+      "lemma": "these days",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "in the present period",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ðiːz ˈdeɪz/",
+        "uk": "/ðiːz ˈdeɪz/"
+      },
+      "def": {
+        "micro": "around now, in this period",
+        "short": "in the period we are living in now, not in the past",
+        "long": "In the period we are living in now, which can be a few weeks or many years. People use it a lot about their own life, for example: 'I'm busy these days.'"
+      },
+      "examples": [
+        {
+          "en": "I'm very busy these days.",
+          "tr": "Bu aralar çok meşgulüm.",
+          "register": "neutral",
+          "focus": "these days"
+        },
+        {
+          "en": "It doesn't snow much in our town these days.",
+          "tr": "Son zamanlarda kasabamıza pek kar yağmıyor.",
+          "register": "neutral",
+          "focus": "these days"
+        },
+        {
+          "en": "These days Sofia walks to work because the weather is so nice.",
+          "tr": "Hava çok güzel olduğu için Sofia bugünlerde işe yürüyerek gidiyor.",
+          "register": "neutral",
+          "focus": "These days"
+        }
+      ],
+      "synonyms": [
+        "nowadays"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu aralar",
+          "alt": [
+            "bugünlerde",
+            "son zamanlarda"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Nowadays' ile yakın anlamlıdır ama 'these days' konuşmada daha sık duyulur ve kişinin kendi hayatındaki geçici durumlar için de kullanılır: 'I'm busy these days.' Genelde geniş zaman ya da şimdiki zamanla gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Winters were very cold when I was a child, but ______ they are much warmer.",
+        "answer": "these days",
+        "distractors": [
+          "last winter",
+          "back then",
+          "the night before"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.half_an_hour.phr.1",
+      "lemma": "half an hour",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "thirty minutes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌhæf ən ˈaʊər/",
+        "uk": "/ˌhɑːf ən ˈaʊə/"
+      },
+      "def": {
+        "micro": "thirty minutes",
+        "short": "a period of thirty minutes",
+        "long": "A period of thirty minutes. In American English, people also say 'a half hour'."
+      },
+      "examples": [
+        {
+          "en": "I'll be ready in half an hour.",
+          "tr": "Yarım saate hazır olurum.",
+          "register": "neutral",
+          "focus": "half an hour"
+        },
+        {
+          "en": "We walked by the river for half an hour and then went home.",
+          "tr": "Nehir kenarında yarım saat yürüdük, sonra eve döndük.",
+          "register": "neutral",
+          "focus": "half an hour"
+        },
+        {
+          "en": "The rain stopped after half an hour, and Kaan went back outside.",
+          "tr": "Yağmur yarım saat sonra dindi ve Kaan yeniden dışarı çıktı.",
+          "register": "neutral",
+          "focus": "half an hour"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wait half an hour",
+        "in half an hour",
+        "for half an hour"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yarım saat",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir buçuk saat için 'an hour and a half' ya da 'one and a half hours' denir. Amerikan İngilizcesinde 'a half hour' da kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "The trip took one and half hour.",
+              "right": "The trip took an hour and a half.",
+              "why": "Türkçedeki 'bir buçuk saat' sırasıyla çevrilir ve 'saat' tekil kalır. İngilizcede 'an hour and a half' ya da 'one and a half hours' (çoğul) denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We left home at 10:00 and got to the lake at 10:30. The walk took ______.",
+        "answer": "half an hour",
+        "distractors": [
+          "a whole day",
+          "ten minutes",
+          "two hours"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_a_while.phr.1",
+      "lemma": "in a while",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "soon, after a short time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ə ˈwaɪl/",
+        "uk": "/ɪn ə ˈwaɪl/"
+      },
+      "def": {
+        "micro": "soon, after a short time",
+        "short": "after a short time from now",
+        "long": "After a short time from now; we do not say exactly how long. For example: 'I'll call you in a while.' In negative sentences, 'I haven't seen you in a while' means for a long time."
+      },
+      "examples": [
+        {
+          "en": "I'll call you back in a while.",
+          "tr": "Seni birazdan geri ararım.",
+          "register": "neutral",
+          "focus": "in a while"
+        },
+        {
+          "en": "The sky is getting brighter. The sun will come out in a while.",
+          "tr": "Gökyüzü aydınlanıyor. Güneş birazdan çıkar.",
+          "register": "neutral",
+          "focus": "in a while"
+        },
+        {
+          "en": "Go and play, Nil. Dinner will be ready in a while.",
+          "tr": "Git oyna, Nil. Yemek az sonra hazır olur.",
+          "register": "neutral",
+          "focus": "in a while"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "back in a while",
+        "see you in a while"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "birazdan",
+          "alt": [
+            "az sonra",
+            "biraz sonra"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'For a while' bir süre boyunca demektir: 'I waited for a while.' 'In a while' ise birazdan demektir. Olumsuz cümlede 'uzun zamandır' anlamına da gelir: I haven't seen him in a while.",
+          "mistakes": [
+            {
+              "wrong": "I will be there after ten minutes.",
+              "right": "I will be there in ten minutes.",
+              "why": "Türkçedeki 'on dakika sonra' kelime kelime çevrilir. Şimdiden ileriye bakarken 'in' kullanılır (in ten minutes, in a while); 'after ten minutes' geçmişi anlatırken doğrudur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't go out yet. The rain will stop ______.",
+        "answer": "in a while",
+        "distractors": [
+          "an hour ago",
+          "next year",
+          "a while ago"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.so_far.phr.1",
+      "lemma": "so far",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "until now",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsoʊ ˈfɑːr/",
+        "uk": "/ˌsəʊ ˈfɑː/"
+      },
+      "def": {
+        "micro": "until now",
+        "short": "from a time in the past until this moment",
+        "long": "From a time in the past until this moment; the situation may change later. We usually use it with the present perfect."
+      },
+      "examples": [
+        {
+          "en": "So far, the weather has been great.",
+          "tr": "Şimdiye kadar hava harikaydı.",
+          "register": "neutral",
+          "focus": "So far"
+        },
+        {
+          "en": "We've seen two deer on our walk so far.",
+          "tr": "Yürüyüşümüzde şu ana kadar iki geyik gördük.",
+          "register": "neutral",
+          "focus": "so far"
+        },
+        {
+          "en": "Leo has read three chapters so far, and he wants to finish the book tonight.",
+          "tr": "Leo şimdiye kadar üç bölüm okudu ve kitabı bu gece bitirmek istiyor.",
+          "register": "neutral",
+          "focus": "so far"
+        }
+      ],
+      "synonyms": [
+        "until now",
+        "up to now"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "so far so good",
+        "so far this year"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şimdiye kadar",
+          "alt": [
+            "şu ana kadar",
+            "bugüne kadar"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde 'have/has + V3' ile kullanılır. 'So far so good' (şimdilik her şey yolunda) de çok duyulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We've walked eight kilometers ______. Only two more to the lake!",
+        "answer": "so far",
+        "distractors": [
+          "next weekend",
+          "two years ago",
+          "later today"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.the_other_day.phr.1",
+      "lemma": "the other day",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a few days ago",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ði ˈʌðər deɪ/",
+        "uk": "/ði ˈʌðə deɪ/"
+      },
+      "def": {
+        "micro": "a few days ago",
+        "short": "on a day a short time ago, without saying exactly when",
+        "long": "On a day a short time ago, maybe a few days or a week ago; we do not say exactly when. It is always about the past."
+      },
+      "examples": [
+        {
+          "en": "I saw your sister the other day.",
+          "tr": "Geçen gün kız kardeşini gördüm.",
+          "register": "neutral",
+          "focus": "the other day"
+        },
+        {
+          "en": "It was so hot the other day that we went swimming in the lake.",
+          "tr": "Geçen gün hava o kadar sıcaktı ki gölde yüzmeye gittik.",
+          "register": "neutral",
+          "focus": "the other day"
+        },
+        {
+          "en": "The other day Aylin found a little bird in the garden and gave it some water.",
+          "tr": "Geçen gün Aylin bahçede küçük bir kuş buldu ve ona biraz su verdi.",
+          "register": "neutral",
+          "focus": "The other day"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçen gün",
+          "alt": [
+            "geçenlerde",
+            "birkaç gün önce"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hep geçmiş zamanla kullanılır. Kesin günü söylemez; birkaç gün ya da bir hafta önce olabilir.",
+          "mistakes": [
+            {
+              "wrong": "Let's meet the other day.",
+              "right": "Let's meet the day after tomorrow.",
+              "why": "'Öbür gün' ile 'the other day' benzer görünür ama 'the other day' geçmişte, birkaç gün önce demektir. Yarından sonraki gün için 'the day after tomorrow' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I met Kerem at the park ______. He said hi to you.",
+        "answer": "the other day",
+        "distractors": [
+          "next Tuesday",
+          "in a few days",
+          "later tonight"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.for_ages.phr.1",
+      "lemma": "for ages",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "for a very long time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fər ˈeɪdʒɪz/",
+        "uk": "/fər ˈeɪdʒɪz/"
+      },
+      "def": {
+        "micro": "for a very long time",
+        "short": "for a very long time, often longer than you like",
+        "long": "For a very long time. People often say it in everyday speech when a time feels too long, for example when they wait or do not see a friend."
+      },
+      "examples": [
+        {
+          "en": "I haven't seen you for ages!",
+          "tr": "Seni görmeyeli yıllar oldu!",
+          "register": "neutral",
+          "focus": "for ages"
+        },
+        {
+          "en": "We waited for ages, but the rain didn't stop.",
+          "tr": "Çok uzun süre bekledik ama yağmur dinmedi.",
+          "register": "neutral",
+          "focus": "for ages"
+        },
+        {
+          "en": "Ece has lived by the sea for ages, so she knows every beach here.",
+          "tr": "Ece yıllardır deniz kenarında yaşıyor, o yüzden buradaki her plajı biliyor.",
+          "register": "neutral",
+          "focus": "for ages"
+        }
+      ],
+      "synonyms": [
+        "for a long time"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "wait for ages",
+        "take ages"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uzun zamandır",
+          "alt": [
+            "yıllardır",
+            "çok uzun süre"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gündelik ve abartılı bir ifadedir; süre gerçekten yıllar olmayabilir. 'It took ages' (çok uzun sürdü) de çok kullanılır. Olumsuz cümlede 'in ages' de denir: I haven't seen you in ages.",
+          "mistakes": [
+            {
+              "wrong": "I haven't seen him since ages.",
+              "right": "I haven't seen him for ages.",
+              "why": "Türkçede '-dır/-dir' ekinin karşılığı olarak 'since' seçilir. 'Since' bir başlangıç anıyla gelir (since Monday); süre için 'for' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hurry up! You've been on the phone ______!",
+        "answer": "for ages",
+        "distractors": [
+          "a year ago",
+          "last summer",
+          "next month"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

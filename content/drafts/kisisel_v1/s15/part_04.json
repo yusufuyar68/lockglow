@@ -1,0 +1,996 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.bank_account.phr.1",
+      "lemma": "bank account",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "money kept at a bank",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbæŋk əˌkaʊnt/",
+        "uk": "/ˈbæŋk əˌkaʊnt/"
+      },
+      "def": {
+        "micro": "your money kept by a bank",
+        "short": "a service where a bank keeps your money for you",
+        "long": "A service where a bank keeps your money for you. You can put money in, take it out and pay for things with your card."
+      },
+      "examples": [
+        {
+          "en": "I want to open a bank account.",
+          "tr": "Bir banka hesabı açmak istiyorum.",
+          "register": "neutral",
+          "focus": "bank account"
+        },
+        {
+          "en": "I'll send the money to your bank account tonight.",
+          "tr": "Parayı bu akşam banka hesabına gönderirim.",
+          "register": "neutral",
+          "focus": "bank account"
+        },
+        {
+          "en": "Deniz needs her passport to open a bank account here.",
+          "tr": "Deniz'in burada banka hesabı açmak için pasaportuna ihtiyacı var.",
+          "register": "neutral",
+          "focus": "bank account"
+        }
+      ],
+      "synonyms": [
+        "account"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "open a bank account",
+        "close a bank account",
+        "bank account number",
+        "joint bank account"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "banka hesabı",
+          "alt": [
+            "hesap"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kısaca 'account' da denir: 'I have an account at this bank.' Hesap numarasına 'account number' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to keep my money safe, so I'm going to open a ______.",
+        "answer": "bank account",
+        "distractors": [
+          "price tag",
+          "phone bill",
+          "shopping bag"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.withdraw.v.1",
+      "lemma": "withdraw",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take money out of a bank",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɪðˈdrɔː/",
+        "uk": "/wɪðˈdrɔː/"
+      },
+      "def": {
+        "micro": "take money out of a bank",
+        "short": "take money out of your bank account or from a cash machine",
+        "long": "To take money out of your bank account, for example at a cash machine or at the bank counter. You withdraw money from an account."
+      },
+      "grammar": {
+        "pattern": "withdraw sth (from sth)"
+      },
+      "examples": [
+        {
+          "en": "I need to withdraw some cash.",
+          "tr": "Biraz nakit para çekmem gerekiyor.",
+          "register": "neutral",
+          "focus": "withdraw"
+        },
+        {
+          "en": "Lucas withdrew 200 euros from the cash machine.",
+          "tr": "Lucas bankamatikten 200 euro çekti.",
+          "register": "neutral",
+          "focus": "withdrew"
+        },
+        {
+          "en": "You can withdraw up to 5,000 lira a day with this card.",
+          "tr": "Bu kartla günde en fazla 5.000 lira çekebilirsin.",
+          "register": "neutral",
+          "focus": "withdraw"
+        }
+      ],
+      "synonyms": [
+        "take out"
+      ],
+      "antonyms": [
+        "deposit"
+      ],
+      "collocations": [
+        "withdraw money",
+        "withdraw cash",
+        "withdraw from an account"
+      ],
+      "word_family": [
+        {
+          "lemma": "withdrawal",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Middle English: 'with', which once meant 'back' or 'away', plus 'draw' (pull). So it first meant 'pull back'.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "para çekmek",
+          "alt": [
+            "çekmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Para çekme işlemine 'withdrawal' denir. Tersi, hesaba para yatırmak, 'deposit' ya da 'pay in' olur. Günlük konuşmada 'take out money' da çok kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The shop only takes cash, so I need to ______ some money from the cash machine.",
+        "answer": "withdraw",
+        "distractors": [
+          "lend",
+          "earn",
+          "waste"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.balance.n.1",
+      "lemma": "balance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money in an account",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbæləns/",
+        "uk": "/ˈbæləns/"
+      },
+      "def": {
+        "micro": "money now in your account",
+        "short": "the amount of money that is in your bank account now",
+        "long": "The amount of money that is in a bank account at a certain time. You can check it in your bank app or at a cash machine."
+      },
+      "examples": [
+        {
+          "en": "Let me check my balance first.",
+          "tr": "Önce bakiyemi kontrol edeyim.",
+          "register": "neutral",
+          "focus": "balance"
+        },
+        {
+          "en": "My balance is always low before payday.",
+          "tr": "Maaş gününden önce bakiyem hep düşük olur.",
+          "register": "neutral",
+          "focus": "balance"
+        },
+        {
+          "en": "Zeynep checked her balance in the app before she paid the rent.",
+          "tr": "Zeynep kirayı ödemeden önce uygulamadan bakiyesine baktı.",
+          "register": "neutral",
+          "focus": "balance"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "check your balance",
+        "bank balance",
+        "account balance",
+        "low balance"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'bilanx' (with two pans), through Old French 'balance', a weighing scale. The money meaning comes from comparing money in and money out.",
+        "origin": "Latin",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bakiye",
+          "alt": [
+            "hesaptaki para"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta 'balance' hesaptaki paranın miktarıdır. Kelimenin bir de 'denge' anlamı vardır: 'lose your balance' dengeni kaybetmek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bank app says my ______ is 30 euros, so I can't buy the 50-euro ticket.",
+        "answer": "balance",
+        "distractors": [
+          "wallet",
+          "password",
+          "discount"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.loan.n.1",
+      "lemma": "loan",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money borrowed from a bank",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/loʊn/",
+        "uk": "/ləʊn/"
+      },
+      "def": {
+        "micro": "money you borrow from a bank",
+        "short": "money that a bank gives you and you pay back later with extra money",
+        "long": "Money that you borrow, usually from a bank, and pay back over time with extra money called interest."
+      },
+      "examples": [
+        {
+          "en": "We got a loan to buy a car.",
+          "tr": "Araba almak için kredi çektik.",
+          "register": "neutral",
+          "focus": "loan"
+        },
+        {
+          "en": "Burak took out a loan for his new shop.",
+          "tr": "Burak yeni dükkânı için kredi çekti.",
+          "register": "neutral",
+          "focus": "loan"
+        },
+        {
+          "en": "The bank gave them a loan, and they pay 500 euros back every month.",
+          "tr": "Banka onlara kredi verdi; her ay 500 euro geri ödüyorlar.",
+          "register": "neutral",
+          "focus": "loan"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take out a loan",
+        "get a loan",
+        "pay off a loan",
+        "bank loan",
+        "student loan"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old Norse 'lán'. It is related to the English verb 'lend'.",
+        "origin": "Old Norse",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kredi",
+          "alt": [
+            "borç para"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kredi kartı 'credit card' olur ama bankadan çekilen kredi 'loan' olur. 'Kredi çekmek' için 'take out a loan' ya da 'get a loan' denir.",
+          "mistakes": [
+            {
+              "wrong": "I took a credit from the bank.",
+              "right": "I took out a loan from the bank.",
+              "why": "Türkçede 'kredi çekmek' denir, bu yüzden 'credit' kullanılıyor. İngilizcede bankadan çekilen belli bir para 'a loan' olur; 'credit' borçla alma düzenini anlatır: 'buy on credit', 'credit card'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "They couldn't pay for the house in cash, so they got a ______ from the bank.",
+        "answer": "loan",
+        "distractors": [
+          "receipt",
+          "refund",
+          "bargain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.owe.v.1",
+      "lemma": "owe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "need to pay money back",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/oʊ/",
+        "uk": "/əʊ/"
+      },
+      "def": {
+        "micro": "have to pay someone back",
+        "short": "need to give someone money because you borrowed it or got something from them",
+        "long": "To need to give money to someone because they lent it to you, or because you got something and have not paid for it yet."
+      },
+      "grammar": {
+        "pattern": "owe sb sth; owe sth to sb"
+      },
+      "examples": [
+        {
+          "en": "I owe you 200 lira for lunch.",
+          "tr": "Öğle yemeği için sana 200 lira borçluyum.",
+          "register": "neutral",
+          "focus": "owe"
+        },
+        {
+          "en": "How much do I owe you?",
+          "tr": "Sana ne kadar borçluyum?",
+          "register": "neutral",
+          "focus": "owe"
+        },
+        {
+          "en": "Sara still owes her friend 300 euros for the plane ticket.",
+          "tr": "Sara uçak bileti için arkadaşına hâlâ 300 euro borçlu.",
+          "register": "neutral",
+          "focus": "owes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "owe money",
+        "owe someone money",
+        "how much do I owe"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'āgan', meaning 'to have'. The words 'own' and 'ought' come from the same old word.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "borçlu olmak",
+          "alt": [
+            "borcu olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'I owe you 200 lira' = 'Sana 200 lira borçluyum'. Teşekkür ederken söylenen 'I owe you one' deyimi ise para değil, iyilik borcunu anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You paid for my coffee yesterday, so I ______ you 3 euros.",
+        "answer": "owe",
+        "distractors": [
+          "lend",
+          "borrow",
+          "spend"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.save_up.phv.1",
+      "lemma": "save up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "save money for a goal",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪv ˈʌp/",
+        "uk": "/seɪv ˈʌp/"
+      },
+      "def": {
+        "micro": "collect money over time",
+        "short": "keep money over a period of time so you can buy something big later",
+        "long": "To keep some of your money over weeks or months so that you can pay for something big later, like a car or a trip."
+      },
+      "grammar": {
+        "pattern": "save up (for sth); save up sth"
+      },
+      "examples": [
+        {
+          "en": "We're saving up for a holiday in Italy.",
+          "tr": "İtalya tatili için para biriktiriyoruz.",
+          "register": "neutral",
+          "focus": "saving up"
+        },
+        {
+          "en": "Nina saved up for two years to travel to Japan.",
+          "tr": "Nina Japonya'ya gitmek için iki yıl para biriktirdi.",
+          "register": "neutral",
+          "focus": "saved up"
+        },
+        {
+          "en": "If we save up 200 euros a month, we can buy a car next year.",
+          "tr": "Ayda 200 euro biriktirirsek seneye araba alabiliriz.",
+          "register": "neutral",
+          "focus": "save up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "save up for",
+        "save up money",
+        "save up to buy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "para biriktirmek",
+          "alt": [
+            "biriktirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Save' tek başına da para biriktirmek demektir. 'Save up' ise belli bir hedef için bir süre boyunca biriktirmeyi vurgular. Hedef 'for' ile söylenir: 'save up for a car'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "phrasal_verbs",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kemal wants a new laptop, so he is ______ for it every month.",
+        "answer": "saving up",
+        "distractors": [
+          "paying off",
+          "giving up",
+          "topping up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pay_off.phv.1",
+      "lemma": "pay off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "pay all of a debt",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/peɪ ˈɔːf/",
+        "uk": "/peɪ ˈɒf/"
+      },
+      "def": {
+        "micro": "clear a debt completely",
+        "short": "give back all the money you borrowed, so you have no more debt",
+        "long": "To give back all the money that you borrowed, so that you have no more debt. People often do this in small amounts over many months."
+      },
+      "grammar": {
+        "pattern": "pay off sth; pay sth off"
+      },
+      "examples": [
+        {
+          "en": "I finally paid off my credit card.",
+          "tr": "Sonunda kredi kartı borcumu tamamen ödedim.",
+          "register": "neutral",
+          "focus": "paid off"
+        },
+        {
+          "en": "It took Murat five years to pay off his car loan.",
+          "tr": "Murat'ın araba kredisini ödeyip bitirmesi beş yıl sürdü.",
+          "register": "neutral",
+          "focus": "pay off"
+        },
+        {
+          "en": "Once we pay off the house, we will have more money for holidays.",
+          "tr": "Evin borcunu ödeyip bitirince tatiller için daha çok paramız olacak.",
+          "register": "neutral",
+          "focus": "pay off"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay off a loan",
+        "pay off a debt",
+        "pay off a credit card"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "borcu kapatmak",
+          "alt": [
+            "borcu ödeyip bitirmek",
+            "tamamen ödemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Pay back' birinden aldığın parayı ona geri vermektir. 'Pay off' ise bir borcu, çoğu zaman bankaya olan bir borcu, sonuna kadar ödeyip bitirmektir: 'pay off a loan'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "phrasal_verbs",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After ten years, Ana finally ______ all her student loans.",
+        "answer": "paid off",
+        "distractors": [
+          "gave up",
+          "topped up",
+          "sold out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.broke.adj.1",
+      "lemma": "broke",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having no money",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/broʊk/",
+        "uk": "/brəʊk/"
+      },
+      "def": {
+        "micro": "having no money at all",
+        "short": "having no money or very little money, usually for a short time",
+        "long": "Having no money, or very little money, usually for a short time. It is an informal word that people use with friends and family."
+      },
+      "examples": [
+        {
+          "en": "I can't come to the cinema. I'm broke.",
+          "tr": "Sinemaya gelemem. Beş parasızım.",
+          "register": "informal",
+          "focus": "broke"
+        },
+        {
+          "en": "Yusuf is always broke at the end of the month.",
+          "tr": "Yusuf ay sonunda hep meteliksiz kalıyor.",
+          "register": "informal",
+          "focus": "broke"
+        },
+        {
+          "en": "After paying for the holiday, Hana was completely broke for weeks.",
+          "tr": "Tatilin parasını ödedikten sonra Hana haftalarca tamamen meteliksiz kaldı.",
+          "register": "informal",
+          "focus": "broke"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "rich"
+      ],
+      "collocations": [
+        "be broke",
+        "go broke",
+        "completely broke",
+        "flat broke"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "meteliksiz",
+          "alt": [
+            "beş parasız",
+            "parasız"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Burada 'broke' bir sıfattır, 'break' fiilinin geçmiş zamanı değildir: 'I'm broke' 'Meteliksizim' demektir, 'kırıldım' değil. Gayriresmîdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I spent all my money on the trip, so I'm ______ until payday.",
+        "answer": "broke",
+        "distractors": [
+          "rich",
+          "full",
+          "late"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.due.adj.1",
+      "lemma": "due",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "must be paid by a date",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/duː/",
+        "uk": "/djuː/"
+      },
+      "def": {
+        "micro": "to be paid on a certain day",
+        "short": "needing to be paid on or before a certain date",
+        "long": "Needing to be paid on or before a certain date. If you pay after that day, your payment is late."
+      },
+      "grammar": {
+        "pattern": "be due (on/by + date)"
+      },
+      "examples": [
+        {
+          "en": "The rent is due on Friday.",
+          "tr": "Kiranın son ödeme günü cuma.",
+          "register": "neutral",
+          "focus": "due"
+        },
+        {
+          "en": "When is the phone bill due?",
+          "tr": "Telefon faturasının son ödeme tarihi ne zaman?",
+          "register": "neutral",
+          "focus": "due"
+        },
+        {
+          "en": "The first payment is due at the end of March, so Emma is saving every week.",
+          "tr": "İlk ödemenin mart sonunda yapılması gerekiyor, bu yüzden Emma her hafta para biriktiriyor.",
+          "register": "neutral",
+          "focus": "due"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "due date",
+        "due on Friday",
+        "payment is due"
+      ],
+      "word_family": [
+        {
+          "lemma": "overdue",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'deü', meaning 'owed', from Latin 'debere' (to owe). The word 'debt' comes from the same Latin word.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ödenmesi gereken",
+          "alt": [
+            "vadesi gelen",
+            "ödenecek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Due date' son ödeme tarihidir. Gün ya da tarih 'on' ile söylenir: 'due on Friday'. 'En geç' demek için 'by' kullanılır: 'due by the 10th'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Pay the electricity bill today. It's ______ tomorrow, and you don't want to be late.",
+        "answer": "due",
+        "distractors": [
+          "cheap",
+          "empty",
+          "free"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pocket_money.phr.1",
+      "lemma": "pocket money",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "money for children",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːkɪt ˌmʌni/",
+        "uk": "/ˈpɒkɪt ˌmʌni/"
+      },
+      "def": {
+        "micro": "money parents give children",
+        "short": "a small amount of money that parents give their children every week or month",
+        "long": "A small amount of money that parents give their children regularly, often every week, to spend on small things."
+      },
+      "examples": [
+        {
+          "en": "My parents gave me pocket money every week.",
+          "tr": "Annemle babam bana her hafta harçlık verirdi.",
+          "register": "neutral",
+          "focus": "pocket money"
+        },
+        {
+          "en": "Leo spends his pocket money on comics.",
+          "tr": "Leo harçlığını çizgi romanlara harcıyor.",
+          "register": "neutral",
+          "focus": "pocket money"
+        },
+        {
+          "en": "Selin saves half of her pocket money to buy a new game.",
+          "tr": "Selin yeni bir oyun almak için harçlığının yarısını biriktiriyor.",
+          "register": "neutral",
+          "focus": "pocket money"
+        }
+      ],
+      "synonyms": [
+        "allowance"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "get pocket money",
+        "give pocket money",
+        "weekly pocket money"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "harçlık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde buna 'allowance' denir: 'My parents give me an allowance.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Arda's parents give him ______ every week, and he spends it on sweets.",
+        "answer": "pocket money",
+        "distractors": [
+          "homework",
+          "rent",
+          "advice"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

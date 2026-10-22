@@ -148,3 +148,53 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman.
 - Sonra: 50 soru, 84 farklı çeldirici; en sık: wait×4, say×4, speak×4, wash×4, wear×4, lose×4. Doğrulayıcı sınırı (`QUIZ_DISTRACTOR_REPEAT`): 4.
 - Çeldiricisi değişen kart: 15 (`distractors_diversified`). Doğru cevaplar değişmedi.
 - Bu bölümü editör (Opus) yazdı: çeşitlendirme ajanı işini bitirip raporu yazamadan kullanım sınırına takıldı. Sayılar dosyalardan ölçüldü.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 23 ipucu önerdi. Şüpheci doğrulayıcı 3 tanesini reddetti, 6 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 20** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yok. Yazar bütün kartlarda çevirileri, Dikkat kutularını ve quiz şıklarını tek tek denedi; önerdiği 1 düzeltme doğrulayıcıdan geçmedi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `50 kart · 50 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.know.v.1 | 'Know' tıpkı 'no' gibi okunur; baştaki 'k' sessizdir. |
+| en.meet.v.1 | Türkçedeki 'miting' ile aynı kelime: 'meeting', insanların bir araya gelmesi. 'Meet' = buluşmak, tanışmak. |
+| en.teach.v.1 | 'Teacher' (öğretmen) kelimesinin içinde 'teach' var: öğretmek öğretmenin işi. Sen öğrenirken 'learn' dersin. |
+| en.study.v.1 | 'Student' (öğrenci) ile 'study' aynı aileden: ders çalışmak öğrencinin işi. Para kazanmak için çalışmak 'work'. |
+| en.speak.v.1 | Türkçedeki 'spiker' ile aynı kelime: 'speaker', yani konuşan kişi. 'Speak' = konuşmak. |
+| en.talk.v.1 | Televizyondaki 'talk show' bir sohbet programıdır: 'talk' sohbet etmek. Bir dili konuşmak ise 'speak English'. |
+| en.carry.v.1 | 'Carry' ile 'car' (araba) aynı Latince kökten gelir: eskiden yükler arabayla taşınırdı. |
+| en.buy.v.1 | 'Buy' içindeki 'u' okunmaz; 'bye' (hoşça kal) ile aynı söylenir. Kasada öde, al, 'bye' de çık. |
+| en.sell.v.1 | Mağaza camındaki 'SALE' yazısını bilirsin: 'sell' (satmak) ile aynı aileden. |
+| en.become.v.1 | İçinde 'come' var ama 'gelmek' değil! 'Become' = olmak: 'become a doctor' doktor olmak. |
+| en.happen.v.1 | 'Happen' ile 'happy' aynı eski kelimeden gelir: 'hap' (şans). Şans eseri bir şey olunca 'it happened' denir. |
+| en.believe.v.1 | 'Believe' yazılışında 'lie' (yalan) saklı: be-LIE-ve. Yalana inanma! 'ie' sırasını böyle hatırla. |
+| en.call.v.1 | 'Call center' telefonla aradığın yerdir: 'call' = telefonla aramak. Kayıp anahtarı aramak ise 'look for'. |
+| en.wait.v.1 | Restorandaki 'waiter' (garson) masanın yanında bekler: 'wait' + '-er'. Beklediğin şeyden önce 'for': wait for me. |
+| en.live.v.1 | 'Live' ile 'life' (hayat) aynı aileden: hayatını geçirdiğin yerde 'live'. Tatilde birkaç gün kalırsan 'stay'. |
+| en.let.v.1 | Bildiğin 'Let's go!' aslında 'let us go' demek: bize izin ver, gidelim. 'Let' = izin vermek. |
+| en.keep.v.1 | Futboldaki 'goalkeeper' (kaleci) topu kaptırmaz, elinde tutar: 'keep' = vermemek, elinde tutmak. |
+| en.leave.v.1 | Geçmişi 'left', yani 'sol' ile aynı yazılır. 'He left' = gitti; sola dönmek değil! |
+| en.find.v.1 | Havalimanındaki 'Lost and Found' kayıp eşya bürosudur: kaybolan ve bulunan. 'Found', 'find' fiilinin geçmişi. |
+| en.answer.v.1 | 'Answer' kelimesindeki 'w' yazılır ama okunmaz, tıpkı 'two' kelimesindeki 'w' gibi. |
+
+### Geri çevrilen düzeltme önerileri
+
+- en.buy.v.1 `examples[1].tr`: Cem pazardan ekmek ve süt aldı. → Cem marketten ekmek ve süt aldı. (doğrulayıcı: 'Market' hem semt pazarı hem market olabilir; 'pazardan ekmek ve süt aldı' da doğal Türkçe, bariz hata değil.)
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `understand`: Yalnızca geçmiş biçimi açıklıyor (notta zaten var); anlamı hatırlatan bir kanca değil, bilgi.
+- `open`: Turn on / open ayrımını not ve Dikkat kutusu zaten aynen söylüyor; musluk sahnesi ışık ve TV için bağ kurmuyor.
+- `put`: 't' ile biten kısa fiiller değişmez genellemesi yanlış (get-got, sit-sat, meet-met); kalan kısım notu tekrarlıyor.
+
+### Anadili Türkçe birinin bakması gerekenler
+
+- en.feel.v.1 ex[0]: 'Bugün yorgun hissediyorum' yerine 'Bugün kendimi yorgun hissediyorum' daha doğal olabilir (dokunulmadı).
+- en.need.v.1 quiz: 'The doctor says I plan to rest' dilbilgisi olarak olası ama anlamca zayıf; şimdilik dokunulmadı.
+- en.meet.v.1: 'miting' Türkçede siyasi toplantı/gösteri anlamında; ipucunun 'buluşmak' bağı anadil gözüyle doğrulanmalı.

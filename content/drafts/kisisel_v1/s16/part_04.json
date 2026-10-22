@@ -1,0 +1,1062 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.season.n.1",
+      "lemma": "season",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "spring, summer, autumn, winter",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsiːzən/",
+        "uk": "/ˈsiːzən/"
+      },
+      "def": {
+        "micro": "one of four parts of a year",
+        "short": "one of the four parts of the year: spring, summer, autumn or winter",
+        "long": "One of the four parts of the year: spring, summer, autumn and winter. Each one has its own weather. Some hot countries have only a rainy season and a dry season."
+      },
+      "examples": [
+        {
+          "en": "Spring is the best season in Istanbul.",
+          "tr": "İstanbul'da en güzel mevsim ilkbahardır.",
+          "register": "neutral",
+          "focus": "season"
+        },
+        {
+          "en": "Which season do you like best, Elif?",
+          "tr": "En çok hangi mevsimi seviyorsun, Elif?",
+          "register": "neutral",
+          "focus": "season"
+        },
+        {
+          "en": "In Thailand, the rainy season starts in May.",
+          "tr": "Tayland'da yağmur mevsimi mayısta başlar.",
+          "register": "neutral",
+          "focus": "season"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "four seasons",
+        "rainy season",
+        "dry season",
+        "change of season"
+      ],
+      "word_family": [
+        {
+          "lemma": "seasonal",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'seson', from Latin 'satio', meaning sowing: at first it meant the time of year for planting seeds.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "mevsim",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Season' sezon anlamına da gelir: turizm sezonu (tourist season), bir dizinin yeni sezonu (a new season). Bu kartta mevsim anlamı var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There are four ______ in a year: spring, summer, autumn and winter.",
+        "answer": "seasons",
+        "distractors": [
+          "months",
+          "weeks",
+          "holidays"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nature.n.1",
+      "lemma": "nature",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "the natural world",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈneɪtʃər/",
+        "uk": "/ˈneɪtʃə/"
+      },
+      "def": {
+        "micro": "plants, animals, sea and sky",
+        "short": "plants, animals, rivers, mountains and everything else that people did not make",
+        "long": "All the plants, animals, mountains, rivers and seas in the world, and not the things that people make. Many people like to spend their free time in nature."
+      },
+      "examples": [
+        {
+          "en": "We spent the weekend out in nature, far from the city.",
+          "tr": "Hafta sonunu şehirden uzakta, doğada geçirdik.",
+          "register": "neutral",
+          "focus": "nature"
+        },
+        {
+          "en": "Deniz loves taking photos of nature.",
+          "tr": "Deniz doğa fotoğrafları çekmeyi çok sever.",
+          "register": "neutral",
+          "focus": "nature"
+        },
+        {
+          "en": "Walking in nature helps Ana relax after a long week.",
+          "tr": "Doğada yürümek, uzun bir haftanın ardından Ana'nın rahatlamasına yardımcı olur.",
+          "register": "neutral",
+          "focus": "nature"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in nature",
+        "love nature",
+        "close to nature",
+        "nature lover",
+        "protect nature"
+      ],
+      "word_family": [
+        {
+          "lemma": "natural",
+          "pos": "adj"
+        },
+        {
+          "lemma": "naturally",
+          "pos": "adv"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'natura', which comes from 'nasci', meaning to be born.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "doğa",
+          "alt": [
+            "tabiat"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Nature' bir kişinin huyu, yaradılışı anlamına da gelir: 'She is kind by nature.' (Yaradılıştan nazik biridir.)",
+          "mistakes": [
+            {
+              "wrong": "I love the nature.",
+              "right": "I love nature.",
+              "why": "Türkçede 'doğayı seviyorum' derken belirtme eki var, bu da 'the' eklemeye iter. Genel anlamda doğadan söz ederken 'nature' önüne 'the' gelmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ece loves ______: trees, birds, rivers and mountains.",
+        "answer": "nature",
+        "distractors": [
+          "fashion",
+          "traffic",
+          "history"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_for_a_walk.phr.1",
+      "lemma": "go for a walk",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ fər ə ˈwɔːk/",
+        "uk": "/ɡəʊ fər ə ˈwɔːk/"
+      },
+      "def": {
+        "micro": "go outside on foot for fun",
+        "short": "leave the house and move on foot for pleasure or exercise",
+        "long": "To leave home and move on foot for a short time, for fun or exercise. People often do it after dinner, in a park or by the sea."
+      },
+      "grammar": {
+        "pattern": "go for a walk (in the park / by the sea)"
+      },
+      "examples": [
+        {
+          "en": "Let's go for a walk after dinner.",
+          "tr": "Akşam yemeğinden sonra yürüyüşe çıkalım.",
+          "register": "neutral",
+          "focus": "go for a walk"
+        },
+        {
+          "en": "Every morning, Murat goes for a walk with his dog.",
+          "tr": "Murat her sabah köpeğiyle yürüyüşe çıkar.",
+          "register": "neutral",
+          "focus": "goes for a walk"
+        },
+        {
+          "en": "The rain stopped, so we went for a walk by the lake.",
+          "tr": "Yağmur durdu, biz de göl kenarında yürüyüşe çıktık.",
+          "register": "neutral",
+          "focus": "went for a walk"
+        }
+      ],
+      "synonyms": [
+        "take a walk"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go for a long walk",
+        "go for a short walk",
+        "go for a walk in the park"
+      ],
+      "word_family": [
+        {
+          "lemma": "walk",
+          "pos": "v"
+        },
+        {
+          "lemma": "walk",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yürüyüşe çıkmak",
+          "alt": [
+            "yürüyüş yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Aynı anlamda 'take a walk' de denir; Amerikan İngilizcesinde daha yaygındır.",
+          "mistakes": [
+            {
+              "wrong": "Let's make a walk.",
+              "right": "Let's go for a walk.",
+              "why": "Türkçedeki 'yürüyüş yapmak' kalıbı 'make' kullanmaya iter. İngilizcede 'go for a walk' ya da 'take a walk' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We left the car at home and ______ in the park with the dog.",
+        "answer": "went for a walk",
+        "distractors": [
+          "made a walk",
+          "went for walk",
+          "went to a walk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fresh_air.phr.1",
+      "lemma": "fresh air",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfrɛʃ ˈɛr/",
+        "uk": "/ˌfrɛʃ ˈeə/"
+      },
+      "def": {
+        "micro": "clean air from outside",
+        "short": "clean, cool air outside, not the warm old air inside a room",
+        "long": "Clean, cool air outside, not the old air inside a building. People open a window or go outside to get some."
+      },
+      "grammar": {
+        "pattern": "get some fresh air"
+      },
+      "examples": [
+        {
+          "en": "Let's open the window and get some fresh air.",
+          "tr": "Pencereyi açıp biraz temiz hava alalım.",
+          "register": "neutral",
+          "focus": "fresh air"
+        },
+        {
+          "en": "After work, Selin goes to the park for some fresh air.",
+          "tr": "Selin işten sonra biraz temiz hava almak için parka gider.",
+          "register": "neutral",
+          "focus": "fresh air"
+        },
+        {
+          "en": "We spent the day by the sea, and the fresh air helped us sleep well.",
+          "tr": "Günü deniz kenarında geçirdik; temiz hava iyi uyumamıza yardımcı oldu.",
+          "register": "neutral",
+          "focus": "fresh air"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get some fresh air",
+        "need some fresh air",
+        "a breath of fresh air",
+        "go out for fresh air"
+      ],
+      "word_family": [
+        {
+          "lemma": "air",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "temiz hava",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Air' sayılamaz; 'a fresh air' denmez. 'A breath of fresh air' ise mecazen ferahlatıcı, yeni ve güzel bir şey demektir.",
+          "mistakes": [
+            {
+              "wrong": "I'm going out to take fresh air.",
+              "right": "I'm going out to get some fresh air.",
+              "why": "Türkçedeki 'temiz hava almak' kalıbı 'take' kullanmaya iter. İngilizcede 'get some fresh air' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I've been inside all day. I need to go out and get some ______.",
+        "answer": "fresh air",
+        "distractors": [
+          "dirty air",
+          "smoke",
+          "dust"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.have_a_picnic.phr.1",
+      "lemma": "have a picnic",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv ə ˈpɪknɪk/",
+        "uk": "/hæv ə ˈpɪknɪk/"
+      },
+      "def": {
+        "micro": "eat a meal outside in nature",
+        "short": "eat a meal outside, for example in a park, with food that you bring",
+        "long": "To take food with you and eat it outside, for example in a park, on a beach or in a forest. People often sit on a blanket on the grass."
+      },
+      "grammar": {
+        "pattern": "have a picnic (in the park / by the lake)"
+      },
+      "examples": [
+        {
+          "en": "Let's have a picnic in the park on Sunday.",
+          "tr": "Pazar günü parkta piknik yapalım.",
+          "register": "neutral",
+          "focus": "have a picnic"
+        },
+        {
+          "en": "Burak and his friends had a picnic by the lake.",
+          "tr": "Burak ve arkadaşları göl kenarında piknik yaptı.",
+          "register": "neutral",
+          "focus": "had a picnic"
+        },
+        {
+          "en": "We wanted to have a picnic, but it started to rain, so we ate in the car.",
+          "tr": "Piknik yapmak istedik ama yağmur başladı, biz de arabada yedik.",
+          "register": "neutral",
+          "focus": "have a picnic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a picnic in the park",
+        "have a picnic lunch",
+        "go on a picnic",
+        "picnic basket"
+      ],
+      "word_family": [
+        {
+          "lemma": "picnic",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "piknik yapmak",
+          "alt": [
+            "pikniğe gitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Go on a picnic' (pikniğe gitmek) da çok kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "We made a picnic last weekend.",
+              "right": "We had a picnic last weekend.",
+              "why": "Türkçedeki 'piknik yapmak' kalıbı 'make' kullanmaya iter. İngilizcede 'have a picnic' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The weather is lovely. Let's take some sandwiches and ______ by the river.",
+        "answer": "have a picnic",
+        "distractors": [
+          "make a picnic",
+          "do a picnic",
+          "go a picnic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_camping.phr.1",
+      "lemma": "go camping",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈkæmpɪŋ/",
+        "uk": "/ɡəʊ ˈkæmpɪŋ/"
+      },
+      "def": {
+        "micro": "sleep in a tent for fun",
+        "short": "go away for a holiday and sleep in a tent, usually in nature",
+        "long": "To go away for a short holiday and sleep in a tent, often in a forest, near a lake or in the mountains. You can do it with friends or family."
+      },
+      "grammar": {
+        "pattern": "go camping (in the mountains / by a lake)"
+      },
+      "examples": [
+        {
+          "en": "We go camping every summer.",
+          "tr": "Her yaz kampa gideriz.",
+          "register": "neutral",
+          "focus": "go camping"
+        },
+        {
+          "en": "Last August, Jonas went camping in the mountains with his friends.",
+          "tr": "Jonas geçen ağustos arkadaşlarıyla dağlara kampa gitti.",
+          "register": "neutral",
+          "focus": "went camping"
+        },
+        {
+          "en": "If it doesn't rain this weekend, Aylin wants to go camping by the sea.",
+          "tr": "Bu hafta sonu yağmur yağmazsa Aylin deniz kenarında kamp yapmak istiyor.",
+          "register": "neutral",
+          "focus": "go camping"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go camping in the forest",
+        "go camping by a lake",
+        "camping trip"
+      ],
+      "word_family": [
+        {
+          "lemma": "camp",
+          "pos": "n"
+        },
+        {
+          "lemma": "camp",
+          "pos": "v"
+        },
+        {
+          "lemma": "campsite",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kampa gitmek",
+          "alt": [
+            "kamp yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Etkinlik bildiren '-ing' sözcükleriyle 'go' arasına 'to' girmez: go camping, go swimming, go fishing.",
+          "mistakes": [
+            {
+              "wrong": "We went to camping last summer.",
+              "right": "We went camping last summer.",
+              "why": "Türkçedeki 'kampa gitmek' yönelme eki yüzünden 'to' eklenir. 'Go' + '-ing' kalıbında 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We took a tent and sleeping bags because we wanted to ______.",
+        "answer": "go camping",
+        "distractors": [
+          "go to camping",
+          "make camping",
+          "go skating"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hill.n.1",
+      "lemma": "hill",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɪl/",
+        "uk": "/hɪl/"
+      },
+      "def": {
+        "micro": "a small mountain",
+        "short": "high land that is lower and rounder than a mountain",
+        "long": "An area of high land that is lower than a mountain. Many towns are built on hills, and people like to walk up them for the view."
+      },
+      "examples": [
+        {
+          "en": "We climbed the hill to watch the sunset.",
+          "tr": "Gün batımını izlemek için tepeye tırmandık.",
+          "register": "neutral",
+          "focus": "hill"
+        },
+        {
+          "en": "The village is on a green hill near the sea.",
+          "tr": "Köy, denize yakın yeşil bir tepenin üzerinde.",
+          "register": "neutral",
+          "focus": "hill"
+        },
+        {
+          "en": "Riding a bike up the hill was hard, but going down was fun.",
+          "tr": "Bisikletle yokuşu çıkmak zordu ama inmek eğlenceliydi.",
+          "register": "neutral",
+          "focus": "hill"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "top of the hill",
+        "up the hill",
+        "down the hill",
+        "a steep hill",
+        "green hills"
+      ],
+      "word_family": [
+        {
+          "lemma": "hilly",
+          "pos": "adj"
+        },
+        {
+          "lemma": "hillside",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'hyll'. It is related to Latin 'collis', meaning hill.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tepe",
+          "alt": [
+            "yokuş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yol için 'hill' yokuş anlamına da gelir: 'walk up the hill' (yokuşu çıkmak).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The house is high up on a ______, so it has a great view of the town.",
+        "answer": "hill",
+        "distractors": [
+          "river",
+          "beach",
+          "bridge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lake.n.1",
+      "lemma": "lake",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/leɪk/",
+        "uk": "/leɪk/"
+      },
+      "def": {
+        "micro": "water with land all around",
+        "short": "a large area of fresh water with land all around it",
+        "long": "A large area of water with land all around it. The water is usually not salty, and people swim, fish or sail on it."
+      },
+      "examples": [
+        {
+          "en": "We swam in the lake every morning.",
+          "tr": "Her sabah gölde yüzdük.",
+          "register": "neutral",
+          "focus": "lake"
+        },
+        {
+          "en": "There is a small lake behind the village.",
+          "tr": "Köyün arkasında küçük bir göl var.",
+          "register": "neutral",
+          "focus": "lake"
+        },
+        {
+          "en": "In winter the lake freezes, and children skate on the ice.",
+          "tr": "Kışın göl donar ve çocuklar buzun üstünde paten kayar.",
+          "register": "neutral",
+          "focus": "lake"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "swim in the lake",
+        "by the lake",
+        "a frozen lake",
+        "a mountain lake"
+      ],
+      "word_family": [
+        {
+          "lemma": "lakeside",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'lacus', meaning a pond or a pool, through Old French 'lac'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "göl",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [
+            {
+              "wrong": "We visited Van Lake last summer.",
+              "right": "We visited Lake Van last summer.",
+              "why": "Türkçede göl adı önce gelir (Van Gölü). İngilizcede göl adlarında genellikle 'Lake' önce gelir: Lake Van, Lake Tuz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "On hot days we swim in the ______ near our village.",
+        "answer": "lake",
+        "distractors": [
+          "forest",
+          "field",
+          "tower"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.forest.n.1",
+      "lemma": "forest",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɔːrɪst/",
+        "uk": "/ˈfɒrɪst/"
+      },
+      "def": {
+        "micro": "large area full of trees",
+        "short": "a large area of land covered with many trees",
+        "long": "A large area of land covered with trees and plants, where many wild animals live. A forest is bigger and wilder than a wood or a park."
+      },
+      "examples": [
+        {
+          "en": "There are many tall trees in this forest.",
+          "tr": "Bu ormanda bir sürü uzun ağaç var.",
+          "register": "neutral",
+          "focus": "forest"
+        },
+        {
+          "en": "Elena saw a deer in the forest this morning.",
+          "tr": "Elena bu sabah ormanda bir geyik gördü.",
+          "register": "neutral",
+          "focus": "forest"
+        },
+        {
+          "en": "Don't light a fire in the forest when the weather is hot and dry.",
+          "tr": "Hava sıcak ve kuruyken ormanda ateş yakmayın.",
+          "register": "neutral",
+          "focus": "forest"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the forest",
+        "rain forest",
+        "pine forest",
+        "forest fire",
+        "a thick forest"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'forest' and Medieval Latin 'forestis'. It probably comes from Latin 'foris', meaning outside.",
+        "origin": "Latin",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "orman",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Daha küçük ormanlık alana 'wood' ya da 'the woods' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many wild animals live in the ______, among the tall trees.",
+        "answer": "forest",
+        "distractors": [
+          "desert",
+          "ocean",
+          "sky"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.view.n.1",
+      "lemma": "view",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "what you can see",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/vjuː/",
+        "uk": "/vjuː/"
+      },
+      "def": {
+        "micro": "what you see from a place",
+        "short": "everything you can see from a place, especially beautiful land, sea or sky",
+        "long": "Everything you can see from a certain place, especially land, sea or a city that is nice to look at. Hotels often have rooms with a sea view."
+      },
+      "examples": [
+        {
+          "en": "The view from the hill is amazing.",
+          "tr": "Tepeden görünen manzara harika.",
+          "register": "neutral",
+          "focus": "view"
+        },
+        {
+          "en": "Our hotel room had a view of the sea.",
+          "tr": "Otel odamız deniz manzaralıydı.",
+          "register": "neutral",
+          "focus": "view"
+        },
+        {
+          "en": "We stopped the car on the mountain road to enjoy the view.",
+          "tr": "Manzaranın tadını çıkarmak için dağ yolunda arabayı durdurduk.",
+          "register": "neutral",
+          "focus": "view"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a great view",
+        "sea view",
+        "enjoy the view",
+        "a view of the sea",
+        "a room with a view"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'veue', meaning sight, from 'veoir', to see, which comes from Latin 'videre'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "manzara",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'View' görüş, fikir anlamına da gelir: 'In my view…' (bence). Bu kartta manzara anlamı var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Let's sit by the window. The ______ of the mountains is beautiful from here.",
+        "answer": "view",
+        "distractors": [
+          "noise",
+          "map",
+          "taste"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

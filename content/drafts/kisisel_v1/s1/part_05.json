@@ -776,7 +776,7 @@
           "false_friend": null,
           "note": "Türkçede baba tarafı 'hala', anne tarafı 'teyze', amca ya da dayının eşi 'yenge' denir; İngilizcede hepsine 'aunt' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "ABD'de çoğu kişi 'aunt' kelimesini 'ant' (karınca) gibi okur. Yazarken 'u' harfini unutma: a-u-n-t."
         }
       },
       "tags": {
@@ -801,7 +801,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

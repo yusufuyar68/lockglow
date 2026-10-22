@@ -129,12 +129,12 @@
           "mistakes": [
             {"wrong": "I'm looking my keys.", "right": "I'm looking for my keys.", "why": "Türkçede 'anahtarı arıyorum' için ayrı bir edat yok; İngilizcede 'for' şarttır. 'Look' tek başına nesne almaz."}
           ],
-          "mnemonic": null
+          "mnemonic": "'For' için demek: bir şeyi bulmak için (for) bakınırsın, yani ararsın. Yalnızca gözle bakmak 'look at'."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "careers_interviews"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
       "quiz": {"cloze": "I can't find my phone. I'm ______ it everywhere.", "answer": "looking for", "distractors": ["looking after", "looking at", "getting up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.look_after.phv.1",
@@ -174,12 +174,12 @@
             {"wrong": "I look my little sister while my mother works.", "right": "I look after my little sister while my mother works.", "why": "'Kardeşime bakıyorum' demek için 'look after' gerekir. 'Look' tek başına gözle bakmaktır."},
             {"wrong": "Who will look at the baby tonight?", "right": "Who will look after the baby tonight?", "why": "'Look at' gözle bakmaktır, 'look after' bakım yapmaktır. Türkçede ikisi de 'bakmak' olduğu için karışır."}
           ],
-          "mnemonic": null
+          "mnemonic": "Parkta çocuğunun arkasından (after) yürüyüp gözünü ondan ayırmayan bir anne düşün: 'look after' göz kulak olmaktır."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
       "quiz": {"cloze": "I'm going away for a week. Who will ______ my plants?", "answer": "look after", "distractors": ["look for", "look up", "hang up"]},
-      "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.find_out.phv.1",
@@ -219,12 +219,12 @@
             {"wrong": "I found out my keys under the sofa.", "right": "I found my keys under the sofa.", "why": "'Find out' yalnızca bilgi ya da gerçek için kullanılır. Kaybolan bir nesneyi bulmak için 'find' denir."},
             {"wrong": "Can you find out where is the station?", "right": "Can you find out where the station is?", "why": "Dolaylı soruda özne fiilden önce gelir. Türkçedeki 'istasyon nerede' sırasını kopyalamayın."}
           ],
-          "mnemonic": null
+          "mnemonic": "'Find' bulmak, 'out' dışarı: saklı bir bilgiyi bulup ortaya çıkarırsın, yani öğrenirsin."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
       "quiz": {"cloze": "I don't know when the shop opens. I'll ______ online.", "answer": "find out", "distractors": ["look after", "give up", "break down"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.give_up.phv.1",
@@ -443,12 +443,12 @@
             {"wrong": "I got out the car.", "right": "I got out of the car.", "why": "Yer adı varsa 'out of' gerekir. Türkçedeki '-den' eki İngilizcede 'of' ile gelir."},
             {"wrong": "He got off the taxi.", "right": "He got out of the taxi.", "why": "Taksi ve araba için 'get off' değil 'get out of' kullanılır. 'Get off' otobüs, tren, uçak içindir."}
           ],
-          "mnemonic": null
+          "mnemonic": "Arabanın içine (in) girip binersin, içinden dışarı (out) çıkıp inersin. Otobüsten ise 'get off' ile inilir."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
       "quiz": {"cloze": "We're at the hotel. Please ______ of the car here.", "answer": "get out", "distractors": ["get in", "get on", "get up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     }
   ]
 }

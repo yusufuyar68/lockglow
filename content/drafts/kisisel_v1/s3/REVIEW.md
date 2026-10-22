@@ -125,3 +125,66 @@ Alan adlarında `examples[n]` sıfır tabanlıdır (`examples[0]` = ilk örnek).
 - Sonra: 123 soru, 192 farklı çeldirici; en sık: bored×6, tired×6, salary×6, happy×5, lucky×5, excited×5. Doğrulayıcı sınırı (`QUIZ_DISTRACTOR_REPEAT`): 7.
 - Çeldiricisi değişen kart: 33 (`distractors_diversified`). Doğru cevaplar değişmedi.
 - Bu bölümü editör (Opus) yazdı: çeşitlendirme ajanı işini bitirip raporu yazamadan kullanım sınırına takıldı. Sayılar dosyalardan ölçüldü.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 26 ipucu önerdi. Şüpheci doğrulayıcı 2 tanesini reddetti, 6 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 24** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yazarın 4 önerisinden doğrulayıcının onayladığı 4 tanesi uygulandı; koordinatör 2 yazım düzeltmesi ekledi (çeviri 2, diğer 3, Dikkat 1). Düzeltilen kartlara `critic_edited` eklendi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `123 kart · 123 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.lend.v.1 | Krediyi veren bankaya 'lender' denir: parayı o verir (lend). Sen ise bankadan borç alırsın (borrow). |
+| en.say.v.1 | Fotoğrafçı 'Say cheese!' der: 'say' söylenen sözün kendisini alır. Kişiye söylemek için 'tell me' denir. |
+| en.tell.v.1 | Falcıya 'fortune teller' denir: sana geleceğini anlatır. 'Tell' de dinleyeni hemen yanına alır: 'tell me'. |
+| en.make.v.1 | Kahve makinesine 'coffee maker' denir: ortaya yeni bir şey çıkarır. Ödev, bulaşık gibi işler ise 'do' ile yapılır. |
+| en.do.v.1 | 'To-do list' yapılacak işler listesidir: ödev, bulaşık, alışveriş gibi işler 'do' ile yapılır. |
+| en.fun.n.1 | Lunaparka İngilizcede 'funfair' de denir: oradaki duygu 'fun' (eğlence). Güldüren komik şey ise 'funny'. |
+| en.lose.v.1 | 'Lose' kelimesi bir 'o' harfini kaybetmiş gibi: tek 'o' var. Gevşek anlamındaki 'loose' iki 'o' ile yazılır. |
+| en.win.v.1 | Geçmiş hâli 'won', tıpkı 'one' (bir) gibi okunur: kazanan bir numara olur! |
+| en.hear.v.1 | 'Hear' kelimesinin içinde 'ear' (kulak) var: ses kulağına kendiliğinden gelir. |
+| en.listen.v.1 | 'Listen' kelimesinde 't' okunmaz: 'lisın' denir. O sessiz 't' gibi sen de sessizce dinle. |
+| en.remember.v.1 | 'Remember' ile 'memory' (hafıza) aynı kökten: hatırlayan senin hafızandır. Başkasına hatırlatmak 'remind'. |
+| en.bring.v.1 | 'Bring' ile 'buraya' aynı harfle başlar: 'Bring it here!' Buradan uzağa götürmek ise 'take'. |
+| en.take.v.1 | Paket yemeğe İngilizcede 'takeaway' denir: yemeği alıp götürürsün. 'Take' buradan uzağa götürmektir. |
+| en.watch.v.1 | Bekçiye 'watchman' denir: gece boyunca dikkatle izler. Film ve maç da böyle, uzun uzun 'watch' ile izlenir. |
+| en.worried.adj.1 | Ünlü şarkıyı hatırla: 'Don't worry, be happy' = Endişelenme, mutlu ol. |
+| en.upset.adj.1 | 'Upset' devirmek, altüst etmek de demek. Üzgün kişi için Türkçede de 'içi altüst oldu' deriz. |
+| en.calm.adj.1 | 'Calm' kelimesinde 'l' okunmaz: 'kaam' gibi söylenir. Sakin ol, 'l' de sessiz kalsın. |
+| en.polite.adj.1 | 'Polite' ile 'polish' (cilalamak) aynı kökten: kibar insanın tavırları cilalı gibi pürüzsüzdür. |
+| en.advice.n.1 | 'Advice' sonu 'ice' (buz) gibi okunur ve buz gibi sayılmaz: 'an advice' ya da 'advices' denmez. |
+| en.secret.n.1 | 'Secret' ile 'secretary' (sekreter) aynı kökten: sekreter, eskiden sırlar emanet edilen kişi demekti. |
+| en.date.n.1 | 'Date' tarih demek. Takvimde günü belirlenen romantik buluşmaya da zamanla 'date' denmeye başlandı. |
+| en.guest.n.1 | 'Guest' kelimesindeki 'u' okunmaz: 'gest' denir. 'Guess' ve 'guitar' kelimelerinde de 'u' sessizdir. |
+| en.laugh.v.1 | 'Laugh' kelimesinde 'gh' 'f' gibi okunur: 'laf' denir. Komik bir lafa gülersin! |
+| en.introduce.v.1 | Şarkının girişine 'intro' denir: 'introduce' da bir tanışmanın girişidir, iki kişiyi ilk kez buluşturur. |
+
+### Düzeltmeler
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| en.tell.v.1 | examples[2].tr | Annene babana gezi hakkında söyledin mi? → Annene babana geziyi söyledin mi? | Eski çeviri doğal değildi; 'Annenle babana' yerine orijinaldeki daha yaygın 'Annene babana' korundu. |
+| en.lonely.adj.1 | examples[2].tr | Yurt dışına taşınmak yalnız bir dönem olabilir. → Yurt dışına taşınmak, yalnızlık dolu bir dönem olabilir. | 'yalnız bir dönem' Türkçede doğal değil; 'a lonely time' = yalnızlık dolu bir dönem. |
+| en.colleague.n.1 | l1.tr.mistakes[0].wrong | She is my colleague from school. → She is my colleague from school. (= sınıf arkadaşım) | Cümle tek başına doğru olabilir (aynı okulda çalışan iki öğretmen). Kastedilen 'sınıf arkadaşı' anlamı diğer kartlardaki gibi belirtilmeli. |
+| en.suggest.v.1 | l1.tr.note | 'Suggest' + kişi + 'to do' kalıbı yoktur. 'Suggest doing sth' ya da 'suggest that we do sth' denir. 'Recommend' (tavsiye etmek) daha güçlü bir önerididir. → 'Suggest' + kişi + 'to do' kalıbı yoktur. 'Suggest doing sth' ya da 'suggest that we do sth' denir. 'Recommend' (tavsiye etmek) daha güçlü bir öneridir. | Yazım hatası: 'önerididir' yerine 'öneridir'. |
+| en.funny.adj.1 | l1.tr.alt[0] | espirili → esprili | Yazım hatası: doğrusu 'esprili' (koordinatör). |
+| en.mood.n.1 | l1.tr.alt[1] | modu → mod | Karşılık çekimli biçimde yazılmıştı; yalın hâli 'mod' ('modum yok') (koordinatör). |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `miss`: Kartın notu iki anlamı ve 'I miss you' örneğini zaten veriyor; 'kaçırdığını özlersin' bağı da mantıksal olarak zayıf.
+- `nervous`: Sahte dost gerçek ama not ve Dikkat kutusu 'sinirli değil, gergin, sınav öncesi' bilgisini aynen veriyor; tekrar.
+
+### Anadili Türkçe birinin bakması gerekenler
+
+- en.funny.adj.1: alt 'espirili' yanlış yazılmış; doğrusu 'esprili' (alt, dokunulmadı)
+- en.mood.n.1: alt 'modu' tek başına garip; 'mod' ya da 'keyif' daha doğal olabilir (alt, dokunulmadı)
+- en.nervous.adj.1: quiz çeldiricisi 'hungry' ('I always feel hungry before a big presentation') sınırda olabilir; dokunulmadı
+- en.attend.v.1: quiz çeldiricisi 'followed' (çevrimiçi toplantıyı takip etmek) sınırda olabilir; dokunulmadı
+- en.colleague.n.1: Türklerin 'colleague' kelimesini sınıf arkadaşı için gerçekten kullanıp kullanmadığına anadili Türkçe biri baksın; değilse madde tümden silinebilir.
+- en.polite.adj.1: ipucu kartın İngilizce ety alanıyla aynı bilgiyi Türkçe veriyor; ety uygulamada gösteriliyorsa tekrar sayılabilir.

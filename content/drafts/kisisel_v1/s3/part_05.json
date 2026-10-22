@@ -133,10 +133,10 @@
 {"en":"Can I introduce myself? I'm Sam.","tr":"Kendimi tanıtabilir miyim? Ben Sam.","register":"neutral","focus":"introduce"}],
 "synonyms":["present"],"antonyms":[],"collocations":["introduce yourself","introduce sb to sb","allow me to introduce","introduce a friend"],
 "word_family":[{"lemma":"introduction","pos":"n"},{"lemma":"introductory","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"tanıştırmak","alt":["tanıtmak"],"equivalence":"partial","false_friend":null,"note":"Birini birine tanıştırmak: 'introduce A to B'. Kendini tanıtmak: 'introduce yourself'. Yeni biriyle tanışınca 'Nice to meet you' (Tanıştığımıza memnun oldum) denir.","mistakes":[{"wrong":"Let me introduce with my friend.","right":"Let me introduce you to my friend.","why":"'Tanıştırmak' doğrudan nesne alır: introduce SB to sb. 'With' kullanılmaz."}],"mnemonic":null}},
+"l1":{"tr":{"gloss":"tanıştırmak","alt":["tanıtmak"],"equivalence":"partial","false_friend":null,"note":"Birini birine tanıştırmak: 'introduce A to B'. Kendini tanıtmak: 'introduce yourself'. Yeni biriyle tanışınca 'Nice to meet you' (Tanıştığımıza memnun oldum) denir.","mistakes":[{"wrong":"Let me introduce with my friend.","right":"Let me introduce you to my friend.","why":"'Tanıştırmak' doğrudan nesne alır: introduce SB to sb. 'With' kullanılmaz."}],"mnemonic":"Şarkının girişine 'intro' denir: 'introduce' da bir tanışmanın girişidir, iki kişiyi ilk kez buluşturur."}},
 "tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
 "quiz":{"cloze":"Ayşe wants to ______ her new boyfriend to her parents.","answer":"introduce","distractors":["carry","pay","wear"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
+"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
 
 {"id":"en.promise.v.1","lemma":"promise","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
 "ipa":{"us":"/ˈprɑːmɪs/","uk":"/ˈprɒmɪs/"},
