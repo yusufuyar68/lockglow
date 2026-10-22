@@ -224,7 +224,8 @@ struct PronunciationPracticeView: View {
 
     /// English is serif (rule 3), never italic. The word: bold, with its phosphor band (rule 1),
     /// and the IPA under it (visual only; VoiceOver users play the word instead). The sentence: at
-    /// the definition size, the word in it marked as on the cards.
+    /// the definition size, the word in it marked as on the cards. VoiceOver reads either in an
+    /// English voice (audit V2), the word as the page's heading.
     private var targetView: some View {
         VStack(alignment: .leading, spacing: 12) {
             switch mode {
@@ -232,6 +233,8 @@ struct PronunciationPracticeView: View {
                 Text(word.lemma)
                     .englishWordStyle(size: 34, maxSize: 48)
                     .phosphorBand()
+                    .accessibilityLabel(SpeechLanguage.english(word.lemma))
+                    .accessibilityAddTraits(.isHeader)
                     .englishVoice()
                 if let ipa = word.ipaUS {
                     Text(ipa)
@@ -245,6 +248,7 @@ struct PronunciationPracticeView: View {
                     .foregroundStyle(Theme.ink)
                     .lineSpacing(2)
                     .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel(SpeechLanguage.english(example))
                     .englishVoice()
             }
         }
@@ -570,6 +574,8 @@ private struct PracticeStepBar: View {
 /// Dikkat diff of the cards), then the sound tip (th, w/v, final sounds) when there is one.
 /// README point 15: `good` / `caution` / `bad` on a `goodTint` / `cautionTint` / `badTint` panel
 /// (mockup `.verdict`).
+/// VoiceOver (audit V2): the verdict and its line are read together; the English rows are their
+/// own elements, so they keep the English voice (a combined element would read them in Turkish).
 private struct FeedbackPanel: View {
     let feedback: PronunciationFeedback
     /// What the learner was asked to say.
@@ -587,6 +593,8 @@ private struct FeedbackPanel: View {
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(spokenVerdict)
             if !feedback.heard.isEmpty {
                 comparison
             }
@@ -611,7 +619,21 @@ private struct FeedbackPanel: View {
         .padding(.horizontal, 16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(panel, in: RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous))
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .contain)
+    }
+
+    /// The verdict and `lead` for VoiceOver, the words not heard in an English voice.
+    private var spokenVerdict: Text {
+        // A pause after the title ("Bir daha dene" has no mark of its own).
+        let title = feedback.title.last.map { ".!?".contains($0) } == true ? feedback.title : feedback.title + "."
+        if feedback.verdict == .almost && !feedback.missedWords.isEmpty {
+            return SpeechLanguage.mixed([
+                .turkish(title + " Çok yaklaştın. Tam duyulmayan: "),
+                .english(feedback.missedWords.joined(separator: ", ")),
+                .turkish("."),
+            ])
+        }
+        return SpeechLanguage.mixed([.turkish(title + " " + lead)])
     }
 
     /// Encouraging and short; the details are in the rows and the tip below.
@@ -653,12 +675,12 @@ private struct FeedbackPanel: View {
             VStack(alignment: .leading, spacing: 8) {
                 VStack(alignment: .leading, spacing: 2) {
                     rowLabel("Duyulan")
-                    englishRow(heard)
+                    englishRow(heard, speech: feedback.heard)
                 }
                 if differs {
                     VStack(alignment: .leading, spacing: 2) {
                         rowLabel("Doğrusu")
-                        englishRow(expected)
+                        englishRow(expected, speech: target)
                     }
                 }
             }
@@ -666,12 +688,12 @@ private struct FeedbackPanel: View {
             Grid(alignment: .leadingFirstTextBaseline, horizontalSpacing: 12, verticalSpacing: 6) {
                 GridRow {
                     rowLabel("Duyulan")
-                    englishRow(heard)
+                    englishRow(heard, speech: feedback.heard)
                 }
                 if differs {
                     GridRow {
                         rowLabel("Doğrusu")
-                        englishRow(expected)
+                        englishRow(expected, speech: target)
                     }
                 }
             }
@@ -684,12 +706,14 @@ private struct FeedbackPanel: View {
             .foregroundStyle(Theme.ink2)
     }
 
-    private func englishRow(_ text: Text) -> some View {
+    /// `speech`: the row's plain words, read in an English voice.
+    private func englishRow(_ text: Text, speech: String) -> some View {
         text
             .font(Theme.Fonts.example)
             .foregroundStyle(Theme.ink)
             .fixedSize(horizontal: false, vertical: true)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityLabel(SpeechLanguage.english(speech))
             .englishVoice()
     }
 
@@ -783,5 +807,35 @@ private struct ProblemPanel: View {
         case .recognitionFailed(let detail):
             return "Konuşma tanıma bu sefer çalışmadı. Bir daha dene. (\(detail))"
         }
+    }
+}
+
+// MARK: - Speech language
+
+/// VoiceOver labels with their language (README point 14; audit V2 and V6). `englishVoice()` gives
+/// a view an English locale; these labels also put `accessibilitySpeechLanguage` on every run
+/// ("en-US" for English, "tr-TR" for Turkish), so whichever of the two this iOS honors, English
+/// is not read in a Turkish voice. Which one works is still to be heard on the phone (V6).
+private enum SpeechLanguage {
+    enum Run {
+        case turkish(String)
+        case english(String)
+    }
+
+    static func english(_ text: String) -> Text {
+        return mixed([.english(text)])
+    }
+
+    static func mixed(_ runs: [Run]) -> Text {
+        let result = NSMutableAttributedString()
+        for run in runs {
+            switch run {
+            case .turkish(let text):
+                result.append(NSAttributedString(string: text, attributes: [.accessibilitySpeechLanguage: "tr-TR"]))
+            case .english(let text):
+                result.append(NSAttributedString(string: text, attributes: [.accessibilitySpeechLanguage: "en-US"]))
+            }
+        }
+        return Text(AttributedString(result))
     }
 }

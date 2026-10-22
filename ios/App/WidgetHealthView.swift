@@ -1,4 +1,23 @@
 import SwiftUI
+import Learning
+import Pronunciation
+
+/// The developer parts of "Widget sağlığı": "Yerel ölçüm" and "Söyle tanılama" (which also stops
+/// recording when off). Before the App Store release set `showsInRelease` to false: they then
+/// exist only in Debug builds (`#if DEBUG`, Xcode). TestFlight builds are Release builds, so it
+/// stays true while testing on the phone. The measurements themselves (`LocalMetricsRecorder`)
+/// are always kept.
+enum DiagnosticsSwitch {
+    static let showsInRelease = true
+
+    static var isOn: Bool {
+        #if DEBUG
+        return true
+        #else
+        return showsInRelease
+        #endif
+    }
+}
 
 extension WidgetHealthStatus {
     /// The verdict on the model's last health check, as "Ayarlar" and "Widget sağlığı" show it.
@@ -18,7 +37,10 @@ extension WidgetHealthStatus {
 /// otherwise "Widget'ları yenile". Pushed from "Ayarlar" (it has no NavigationStack of its own).
 struct WidgetHealthView: View {
     @EnvironmentObject private var model: AppModel
+    @ObservedObject private var sayDiagnostics = SayDiagnostics.shared
     @State private var showsTechnicalDetails = false
+    @State private var showsMetrics = false
+    @State private var showsSayDiagnostics = false
 
     var body: some View {
         ScrollView {
@@ -30,6 +52,13 @@ struct WidgetHealthView: View {
                 }
                 stateSection
                 actionsSection
+                if DiagnosticsSwitch.isOn {
+                    VStack(alignment: .leading, spacing: 10) {
+                        SettingsSectionHeader("Tanılama")
+                        metricsSection
+                        sayDiagnosticsSection
+                    }
+                }
             }
             .padding(.horizontal, 16)
             .padding(.top, 8)
@@ -181,6 +210,162 @@ struct WidgetHealthView: View {
         }
         .padding(.horizontal, 14)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
+    }
+
+    /// "Yerel ölçüm" (docs/tasarim/ogrenme_ilkeleri.md §2.13): the last 28 days on this phone and
+    /// the first acceptance targets, in words ("tuttu" / "tutmadı"), not color alone.
+    private var metricsSection: some View {
+        DisclosureGroup(isExpanded: $showsMetrics) {
+            let report = LocalMetricsRecorder.shared.report(dailyNewWords: model.dailyNewWords)
+            VStack(alignment: .leading, spacing: 0) {
+                TechnicalRow(title: "Çalışılan gün", value: "\(report.studyDays) / \(report.windowDays)")
+                TechnicalRow(title: "Günlük soru (ortanca)", value: Self.number(report.medianDailyAnswers))
+                TechnicalRow(title: "İlk denemede doğru", value: Self.share(report.firstTryCorrectRate, count: report.firstTryAnswers))
+                TechnicalRow(title: "Soru başına süre", value: report.meanSecondsPerAnswer.map { Self.number($0) + " sn" } ?? "yok")
+                TechnicalRow(title: "Tur süresi (ortanca)", value: report.medianRoundMinutes.map { Self.number($0) + " dk" } ?? "yok")
+                TechnicalRow(title: "Kutular 1–5", value: Self.boxes(report.boxes))
+                TechnicalRow(
+                    title: "Hatırlatma açılma",
+                    value: report.reminderOpenRate.map { Self.percent($0) + " (\(report.remindersOpened)/\(report.remindersFired))" } ?? "yok"
+                )
+                TechnicalRow(title: "Görmezden gelinen hatırlatma", value: "\(report.remindersIgnored)")
+                Text("Kabul hedefleri")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.ink)
+                    .padding(.top, 14)
+                    .padding(.bottom, 2)
+                    .accessibilityAddTraits(.isHeader)
+                ForEach(report.acceptance, id: \.goal) { check in
+                    TechnicalRow(title: Self.title(of: check.goal), value: Self.verdict(of: check))
+                }
+                Text("Yalnız bu telefonda kalır, hiçbir yere gönderilmez. Hedefler ilk eşikler; ölçüldükçe ayarlanır.")
+                    .settingsFootnote()
+                    .padding(.top, 10)
+            }
+            .padding(.top, 4)
+            .padding(.bottom, 12)
+        } label: {
+            Text("Yerel ölçüm")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink)
+                .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
+        }
+        .padding(.horizontal, 14)
+        .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
+    }
+
+    /// "Söyle tanılama": the last 20 Söyle takes (README "Söyle: bilinen belirsizlikler" 1 and 4),
+    /// a short summary first. Never what was said.
+    private var sayDiagnosticsSection: some View {
+        DisclosureGroup(isExpanded: $showsSayDiagnostics) {
+            let attempts = sayDiagnostics.attempts
+            VStack(alignment: .leading, spacing: 0) {
+                if attempts.isEmpty {
+                    Text("Henüz deneme yok. Söyle sayfasında birkaç kez dene; son 20 deneme burada görünür.")
+                        .settingsFootnote()
+                        .padding(.vertical, 8)
+                } else {
+                    let confidences = attempts.compactMap(\.confidence)
+                    TechnicalRow(title: "Motor", value: attempts[0].engine.rawValue)
+                    TechnicalRow(title: "Güven değeri gelen", value: "\(confidences.count) / \(attempts.count)")
+                    TechnicalRow(
+                        title: "Güven aralığı",
+                        value: confidences.isEmpty ? "yok" : Self.decimal(confidences.min() ?? 0) + " – " + Self.decimal(confidences.max() ?? 0)
+                    )
+                    TechnicalRow(title: "Aday sayısı (en çok)", value: "\(attempts.map(\.candidates).max() ?? 0)")
+                    TechnicalRow(title: "\"Neredeyse\" güven sınırı", value: Self.decimal(PronunciationCheck.lowConfidence))
+                    ForEach(attempts) { attempt in
+                        SayAttemptRow(attempt: attempt)
+                    }
+                    Button("Listeyi temizle") {
+                        sayDiagnostics.clear()
+                    }
+                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
+                    .padding(.top, 14)
+                }
+                Text("Yalnız bellekte, bu telefonda tutulur; uygulama kapanınca silinir. Söylediğin şey kaydedilmez.")
+                    .settingsFootnote()
+                    .padding(.top, 10)
+            }
+            .padding(.top, 4)
+            .padding(.bottom, 12)
+        } label: {
+            Text("Söyle tanılama")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink)
+                .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
+        }
+        .padding(.horizontal, 14)
+        .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
+    }
+
+    // MARK: Measurement values
+
+    private static func title(of goal: AcceptanceCheck.Goal) -> String {
+        switch goal {
+        case .dailyMinutes: return "Günlük süre (ortanca)"
+        case .tapsPerNewWord: return "Yeni kelime başına dokunma"
+        case .earlyEndRate: return "Bitir ile biten tur"
+        case .knownCheckFailRate: return "Biliyorum, kontrolde bilinmedi"
+        }
+    }
+
+    /// "8 dk · hedef en çok 7 · tutmadı", or how many samples are still missing.
+    private static func verdict(of check: AcceptanceCheck) -> String {
+        let value: String
+        let limit: String
+        switch check.goal {
+        case .dailyMinutes:
+            value = check.value.map { number($0) + " dk" } ?? "yok"
+            limit = "en çok " + number(check.limit) + " dk"
+        case .tapsPerNewWord:
+            value = check.value.map { number($0) } ?? "yok"
+            limit = "en çok " + number(check.limit)
+        case .earlyEndRate:
+            value = check.value.map { percent($0) } ?? "yok"
+            limit = percent(check.limit) + " altı"
+        case .knownCheckFailRate:
+            value = check.value.map { percent($0) } ?? "yok"
+            limit = "en çok " + percent(check.limit)
+        }
+        let status: String
+        switch check.status {
+        case .met: status = "✓ tuttu"
+        case .missed: status = "✗ tutmadı"
+        case .tooFewSamples: status = "az veri (\(check.samples))"
+        }
+        return "\(value) · hedef \(limit) · \(status)"
+    }
+
+    private static func boxes(_ counts: BoxCounts?) -> String {
+        guard let counts else {
+            return "yok"
+        }
+        let known = counts.graduated + counts.markedKnown
+        return counts.boxes.map { String($0) }.joined(separator: " · ") + " · bilinen \(known)"
+    }
+
+    private static func share(_ rate: Double?, count: Int) -> String {
+        guard let rate else {
+            return "yok"
+        }
+        return percent(rate) + " (\(count) soru)"
+    }
+
+    /// Up to one decimal, in the phone's language ("7,5").
+    private static func number(_ value: Double?) -> String {
+        guard let value else {
+            return "yok"
+        }
+        return value.formatted(.number.precision(.fractionLength(0...1)))
+    }
+
+    private static func decimal(_ value: Double) -> String {
+        return value.formatted(.number.precision(.fractionLength(2)))
+    }
+
+    private static func percent(_ value: Double) -> String {
+        return value.formatted(.percent.precision(.fractionLength(0)))
     }
 
     // MARK: Values
@@ -417,5 +602,79 @@ private struct TechnicalRow: View {
                 .accessibilityHidden(true)
         }
         .accessibilityElement(children: .combine)
+    }
+}
+
+/// One take under "Söyle tanılama": when, what was to be said (its length only) and the result,
+/// then the numbers the recognizer gave.
+private struct SayAttemptRow: View {
+    let attempt: SayDiagnostics.Attempt
+
+    var body: some View {
+        VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(verbatim: headline)
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.ink)
+                Text(verbatim: details)
+                    .font(.caption)
+                    .foregroundStyle(Theme.ink2)
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Rectangle()
+                .fill(Theme.line)
+                .frame(height: 1)
+                .accessibilityHidden(true)
+        }
+        .accessibilityElement(children: .combine)
+    }
+
+    /// "14:32:05 · tek kelime · Neredeyse"
+    private var headline: String {
+        let time = attempt.date.formatted(date: .omitted, time: .standard)
+        let target = attempt.targetWords > 1 ? "\(attempt.targetWords) kelimelik hedef" : "tek kelime"
+        return "\(time) · \(target) · \(outcome)"
+    }
+
+    /// "aday 3 · güven 0,82 · dinleme 2,1 sn · indirme 12,0 sn · hata kAFAssistantErrorDomain 1110"
+    private var details: String {
+        var parts = ["aday \(attempt.candidates)"]
+        parts.append("güven " + (attempt.confidence.map { $0.formatted(.number.precision(.fractionLength(2))) } ?? "yok"))
+        if let seconds = attempt.listeningSeconds {
+            parts.append("dinleme " + seconds.formatted(.number.precision(.fractionLength(1))) + " sn")
+        }
+        if let seconds = attempt.modelDownloadSeconds {
+            parts.append("indirme " + seconds.formatted(.number.precision(.fractionLength(1))) + " sn")
+        }
+        if let code = attempt.errorCode {
+            parts.append("hata " + code)
+        }
+        return parts.joined(separator: " · ")
+    }
+
+    private var outcome: String {
+        switch attempt.outcome {
+        case .verdict(let verdict):
+            switch verdict {
+            case .correct: return "Doğru"
+            case .almost: return "Neredeyse"
+            case .tryAgain: return "Bir daha dene"
+            case .notHeard: return "Duyulmadı"
+            }
+        case .failed(let problem):
+            switch problem {
+            case .microphoneDenied: return "Mikrofon izni yok"
+            case .speechDenied: return "Tanıma izni yok"
+            case .speechRestricted: return "Tanıma kısıtlı"
+            case .modelUnavailable: return "Model yok"
+            case .onDeviceUnavailable: return "Cihaz içi tanıma yok"
+            case .audioFailed: return "Mikrofon başlamadı"
+            case .recognitionFailed: return "Tanıma hatası"
+            }
+        case .cancelled:
+            return "Yarıda kaldı"
+        }
     }
 }
