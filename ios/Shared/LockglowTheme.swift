@@ -49,7 +49,7 @@ import CoreModels
 //   exampleTranslation, widgetWord.
 //   `englishVoice()` goes on the English Text itself (or on an element whose whole spoken text is
 //   English), never on a container or a button with a Turkish label, hint or value: everything
-//   under it is read with the English voice. See the method for what is known and what is not.
+//   under it is read with the English voice. `.combine` loses it. See the method for details.
 //
 // Phosphor band (rule 1, only on the English word): `.phosphorBand()` in the app,
 // `.phosphorBand(.widget)` in widgets. Apply it to the single-line word Text right after its font
@@ -306,19 +306,23 @@ extension View {
     /// speech-language modifier; VoiceOver takes a text's language from the environment's locale.
     /// Apply it to English text only: Turkish text must keep the Turkish voice.
     ///
-    /// Checked 2026-10-22 (audit V5, V6; docs/denetim/kontrast_tema_2026-10-22.md), not yet heard
-    /// on a device:
-    /// - The text must not be a localization key. `Text(verbatim:)`, `Text(someString)` and
-    ///   `Text(attributedString)` take the locale; a literal `Text("breakfast")` is looked up in
-    ///   the app's (Turkish) strings and was reported to keep the device's voice.
-    /// - Everything under the modifier switches: a Turkish label, hint or value, the "button"
-    ///   trait and dates or numbers formatted in it are read in English too. Put it on the English
-    ///   `Text` (or on a button whose whole label is English), not on a mixed container.
-    /// - With `.accessibilityElement(children: .ignore)` and an `accessibilityLabel(Text(verbatim:))`
-    ///   apply it to that element, after the label, as the card titles do.
-    /// - One `Text` with both languages, or parts merged with `.combine`, has no reliable English
-    ///   voice: SwiftUI ignores AttributedString's speech-language attribute in reports. Keep the
-    ///   English part a separate element.
+    /// Measured 2026-10-22 on the iOS 26.2 simulator (audit V5, V6; probe and table in
+    /// docs/denetim/kontrast_tema_2026-10-22.md); not yet heard on a device:
+    /// - It works: the element's `accessibilityLanguage` and the label's speech-language attribute
+    ///   become "en-Latn-US" for `Text(verbatim:)`, `Text(someString)`, `Text(attributedString)`,
+    ///   a button and an `.accessibilityElement(children: .ignore)` element with its own
+    ///   `accessibilityLabel` (put it on that element, after the label, as the card titles do).
+    ///   Prefer `Text(verbatim:)` for literals: older iOS versions were reported to keep the
+    ///   device's voice for a localized `Text("breakfast")`.
+    /// - `.accessibilityElement(children: .combine)` drops it: "Doğrusu: borrow" merged from a
+    ///   Turkish and an English Text is read with one (the device's) voice. Keep the English part
+    ///   a separate element, or give the merged element an explicit label.
+    /// - A button takes the language of its label for the whole element: with an English label
+    ///   (even when only the inner Text has this modifier) its Turkish hint and the "button" trait
+    ///   are read with the English voice too. Give such buttons no Turkish hint, or keep the
+    ///   English word out of the button.
+    /// - Everything under the modifier switches, Turkish text and formatted dates or numbers
+    ///   included: never put it on a mixed container.
     /// - `cardEnglishVoice()` (CardDetailViews) and `widgetEnglishVoice()` (HomeWordViews) do the
     ///   same thing; new code uses this one, which compiles in every target.
     func englishVoice() -> some View {
