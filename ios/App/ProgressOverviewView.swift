@@ -312,12 +312,15 @@ struct ProgressOverviewView: View {
 /// summary is the one of the moment it opens.
 struct ProgressScreen: View {
     @EnvironmentObject private var model: AppModel
+    /// "Tekrar'a git" on the empty library: RootView switches the tab (from "Ayarlar"). Nil hides it.
+    var onStartReview: (() -> Void)? = nil
 
     var body: some View {
         ProgressOverviewView(
             summary: model.progressSummary(),
             words: model.wordsByID,
-            onRecapShown: { model.markProgressRecapShown(weekStart: $0) }
+            onRecapShown: { model.markProgressRecapShown(weekStart: $0) },
+            onStartReview: onStartReview
         )
     }
 }
@@ -363,8 +366,15 @@ private extension ProgressSummary.Shelf {
         }
         switch self {
         case .settled:
+            // "kısa tazeleme: önce ayda bir, sonra 60 ve 120 günde bir" (`Leitner.refresherDays`).
             let days = Int((Leitner.refresherDelay / 86_400).rounded())
-            return (28...31).contains(days) ? "ayda bir kısa tazeleme" : "\(days) günde bir kısa tazeleme"
+            let first = (28...31).contains(days) ? "ayda bir" : "\(days) günde bir"
+            let later = Leitner.refresherDays.dropFirst().map { String(Int($0.rounded())) }
+            guard let last = later.last else {
+                return "kısa tazeleme: \(first)"
+            }
+            let longer = later.count > 1 ? later.dropLast().joined(separator: ", ") + " ve " + last : last
+            return "kısa tazeleme: önce \(first), sonra \(longer) günde bir"
         default:
             return "bir kez sorulur"
         }
@@ -374,8 +384,8 @@ private extension ProgressSummary.Shelf {
     var voiceRhythm: String {
         switch self {
         case .settled:
-            let refresher = rhythm.replacingOccurrences(of: "tazeleme", with: "tazelemeyle")
-            return sentenceCase(refresher) + " sorulur."
+            // "Kısa bir tazelemeyle sorulur: önce ayda bir, sonra 60 ve 120 günde bir."
+            return rhythm.replacingOccurrences(of: "kısa tazeleme", with: "Kısa bir tazelemeyle sorulur") + "."
         case .selfMarked:
             return sentenceCase(rhythm) + "."
         default:
@@ -840,7 +850,7 @@ private struct HowShelvesWork: View {
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.ink)
                     .accessibilityAddTraits(.isHeader)
-                Text("Unutmak hiçbir zaman tamamen durmaz. Bu yüzden yerleşen kelimeler de ayda bir kısaca sorulur.")
+                Text("Unutmak hiçbir zaman tamamen durmaz. Bu yüzden yerleşen kelimeler de kısa bir tazelemeyle sorulur: önce ayda bir, sonra daha seyrek.")
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
             }

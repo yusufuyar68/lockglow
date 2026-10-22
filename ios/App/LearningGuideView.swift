@@ -41,10 +41,10 @@ import Learning
 /// - `rotationMinutes`: how often the widget word changes (`AppModel.rotationMinutes`; 30 to 240),
 ///   quoted in "Widget'ı iyi kullan".
 ///
-/// Every wait in the text ("12 saat sonra", "1 gün, 2 gün, 4 gün…", "30 günde bir") comes from
-/// `Leitner`, so the guide follows the real schedule when the intervals change. Design system
-/// only (`Theme`, `SecondaryCapsuleButtonStyle`, `ExampleMark`, `MistakeDiff`); the page has one
-/// phosphor band (the word to try) and one marked example sentence (rule 1).
+/// Every wait in the text ("12 saat sonra", "1 gün, 2 gün, 4 gün…", "30 gün", "60, sonra 120
+/// gün") comes from `Leitner`, so the guide follows the real schedule when the intervals change.
+/// Design system only (`Theme`, `SecondaryCapsuleButtonStyle`, `ExampleMark`, `MistakeDiff`); the
+/// page has one phosphor band (the word to try) and one marked example sentence (rule 1).
 struct LearningGuideView: View {
     let dailyNewWords: Int
     let rotationMinutes: Int
@@ -96,14 +96,15 @@ struct LearningGuideContent: View {
             GuideParagraph("Bilemediğin bir kelime bir sonraki turda yine gelir. Bildiğin bir kelime ise en az \(GuideText.newWordWait(.good)) sonra gelir. Neden? Unutmaya başladığın bir kelimeyi hatırlamak, onu daha kalıcı yapar.")
             GuideParagraph("Her doğru cevapta kelime bir basamak çıkar ve ara uzar:")
             GuideIntervalLadder(waits: GuideText.boxWaits)
-            GuideNote("Son basamakta da bilirsen kelime öğrenilmiş sayılır. Sonra yalnızca \(GuideText.refresherInterval) sorulur.", systemImage: "checkmark.seal")
+            GuideNote("Son basamakta da bilirsen kelime öğrenilmiş sayılır. \(GuideText.firstRefresher) sonra yine sorulur; her doğru cevapta ara uzar: \(GuideText.laterRefreshers).", systemImage: "checkmark.seal")
             GuideSubheading("Tekrar'daki cevaplar ne demek?")
             // Symbols and names of the answers in the round summary (ReviewView), worst to best.
             VStack(alignment: .leading, spacing: 12) {
                 GuideIconRow(
                     systemImage: "xmark",
                     title: "Bilemedim",
-                    detail: "Sorun değil. Kelime \(Leitner.lapseDrop) basamak iner, baştan başlamaz.",
+                    // A learned word whose refresher was missed goes to `Leitner.refresherLapseBox`.
+                    detail: "Sorun değil, kelime baştan başlamaz. \(Leitner.lapseDrop) basamak iner; öğrenilmiş kelime \(Leitner.refresherLapseBox). basamağa iner.",
                     trailing: "sonraki turda"
                 )
                 GuideIconRow(
@@ -166,7 +167,7 @@ struct LearningGuideContent: View {
                 GuideIconRow(
                     systemImage: "checkmark",
                     title: "Biliyorum",
-                    detail: "Kelimeyi zaten biliyorsan dokun. Kelime widget'tan çıkar; \(GuideText.duration(Leitner.knownCheckDelay)) sonra bir kez sorarız. Bilirsen yalnızca \(GuideText.refresherInterval) gelir; bilemezsen yeniden öğrenirsin."
+                    detail: "Kelimeyi zaten biliyorsan dokun. Kelime widget'tan çıkar; \(GuideText.duration(Leitner.knownCheckDelay)) sonra bir kez sorarız. Bilirsen \(GuideText.firstRefresher) sonra yine sorulur, sonra ara uzar; bilemezsen yeniden öğrenirsin."
                 )
                 GuideIconRow(
                     systemImage: "speaker.wave.2",
@@ -221,18 +222,17 @@ private enum GuideText {
         return Leitner.intervalDays.map { duration($0 * 86_400) }
     }
 
-    /// How often a learned word (or a "Biliyorum" word after its right check) comes back: "30 günde
-    /// bir". A correct refresher sets the same wait again.
-    static var refresherInterval: String {
-        let wait = amount(Leitner.refresherDelay)
-        switch wait.unit {
-        case .minutes:
-            return "\(wait.value) dakikada bir"
-        case .hours:
-            return "\(wait.value) saatte bir"
-        case .days:
-            return "\(wait.value) günde bir"
-        }
+    /// When a learned word (or a "Biliyorum" word after its right check) first comes back: "30
+    /// gün" (`Leitner.refresherDays`, first step).
+    static var firstRefresher: String {
+        return duration(Leitner.refresherWait(step: 0))
+    }
+
+    /// The longer waits after each right refresher (`Leitner.refresherDays`, later steps): "60,
+    /// sonra 120 gün". The last one then repeats.
+    static var laterRefreshers: String {
+        let days = Leitner.refresherDays.dropFirst().map { String(Int($0.rounded())) }
+        return days.joined(separator: ", sonra ") + " gün"
     }
 
     /// A wait in its largest whole unit: "10 dakika", "12 saat", "16 gün".
@@ -762,7 +762,8 @@ private struct GuideVerdictSamples: View {
 
     @ViewBuilder
     private var samples: some View {
-        sample("Doğru!", systemImage: "checkmark.circle.fill", color: Theme.good, fill: Theme.goodTint)
+        // The phone says whether it understood, not whether it was right (ilkeler 2.7).
+        sample("Anlaşıldı!", systemImage: "checkmark.circle.fill", color: Theme.good, fill: Theme.goodTint)
         sample("Neredeyse!", systemImage: "exclamationmark.circle.fill", color: Theme.caution, fill: Theme.cautionTint)
         sample("Bir daha dene", systemImage: "arrow.counterclockwise.circle.fill", color: Theme.bad, fill: Theme.badTint)
     }

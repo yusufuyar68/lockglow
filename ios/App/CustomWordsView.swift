@@ -382,7 +382,10 @@ struct CustomWordEditor: View {
                 .onSubmit {
                     focus = .meaning
                 }
-                .accessibilityHint(Text(verbatim: problem(for: .lemma)?.message ?? "Yalnızca İngilizce harfler, boşluk, tire ve kesme."))
+                .accessibilityLabel("İngilizce kelime")
+                .accessibilityHint(Text(verbatim: problem(for: .lemma)?.message ?? "Yalnızca İngilizce harfler, boşluk, tire ve kesme işareti."))
+                // The UI test finds the field by this (the 22 Oct run found none by its label).
+                .accessibilityIdentifier("customWord.lemma")
         } footer: {
             if problem(for: .lemma) == nil, let meaning = existingCardMeaning {
                 Label {
@@ -414,7 +417,9 @@ struct CustomWordEditor: View {
                 .onSubmit {
                     focus = .example
                 }
+                .accessibilityLabel("Türkçe anlamı")
                 .accessibilityHint(Text(verbatim: problem(for: .meaning)?.message ?? ""))
+                .accessibilityIdentifier("customWord.meaning")
         }
     }
 
@@ -441,7 +446,9 @@ struct CustomWordEditor: View {
             .autocorrectionDisabled()
             .keyboardType(.asciiCapable)
             .focused($focus, equals: .example)
+            .accessibilityLabel("Örnek cümle")
             .accessibilityHint(Text(verbatim: problem(for: .example)?.message ?? "İngilizce bir cümle. İstersen boş bırak."))
+            .accessibilityIdentifier("customWord.example")
         }
     }
 
@@ -465,7 +472,9 @@ struct CustomWordEditor: View {
             .foregroundStyle(Theme.ink)
             .lineLimit(2...6)
             .focused($focus, equals: .note)
+            .accessibilityLabel("Not")
             .accessibilityHint(Text(verbatim: problem(for: .note)?.message ?? "İstersen boş bırak."))
+            .accessibilityIdentifier("customWord.note")
         }
     }
 
@@ -612,7 +621,9 @@ struct CustomWordTag: View {
             .labelStyle(.titleAndIcon)
             .font(.subheadline.weight(.medium))
             .foregroundStyle(Theme.ink2)
-            .fixedSize()
+            // One line where it fits; at the largest text sizes on a narrow phone it wraps
+            // instead of running off the card.
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
 
@@ -835,15 +846,17 @@ private struct CustomWordsRecoveryBanner: View {
         )
     }
 
+    /// Short sentences, "biz", no suffix after the date (in brackets), as
+    /// `SystemCardSheet.recoveryMessage` (RootView).
     private var message: String {
         switch outcome {
         case let .restoredFromBackup(_, backupDate):
             if let date = backupDate {
-                return "Kelime dosyan okunamadı, \(date.formatted(date: .long, time: .shortened)) tarihli yedekten geri yüklendi. Ondan sonra eklediğin kelimeler kaybolmuş olabilir."
+                return "Kelime dosyan okunamadı. Yedekten geri yükledik (yedek: \(date.formatted(date: .long, time: .shortened))). Bu tarihten sonra eklediğin kelimeler kaybolmuş olabilir."
             }
-            return "Kelime dosyan okunamadı, yedekten geri yüklendi. Son eklediğin kelimeler kaybolmuş olabilir."
+            return "Kelime dosyan okunamadı. Yedekten geri yükledik. Son eklediğin kelimeler kaybolmuş olabilir."
         case .startedOver:
-            return "Kelime dosyan okunamadı ve yedek yoktu, liste boş başladı. Eski dosya silinmedi; sonraki bir sürüm onu kurtarabilir."
+            return "Kelime dosyan okunamadı ve yedek yoktu; liste boş başladı. Eski dosyayı silmedik."
         case .fresh, .loaded:
             return ""
         }

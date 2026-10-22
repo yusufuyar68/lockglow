@@ -101,7 +101,8 @@ final class LockglowScreenshotTests: XCTestCase {
             .firstMatch
         XCTAssertTrue(hit.waitForExistence(timeout: 5), "searching 'kahv' did not find breakfast")
         attachScreenshot(of: app, named: "7-sozluk-arama")
-        hit.tap()
+        // The row's VoiceOver form is an `accessibilityRepresentation`: tap the visible row there.
+        hit.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         sleep(1)
         attachScreenshot(of: app, named: "8-sozluk-kart")
 
@@ -125,7 +126,7 @@ final class LockglowScreenshotTests: XCTestCase {
             .firstMatch
         XCTAssertTrue(knownWord.waitForExistence(timeout: 5), "breakfast is not in the known words")
         attachScreenshot(of: app, named: "9-bildiklerim")
-        knownWord.tap()
+        knownWord.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         let undo = app.buttons["Öğrenmeye geri al"]
         XCTAssertTrue(undo.waitForExistence(timeout: 5), "no undo button on the known word")
         undo.tap()
@@ -305,12 +306,14 @@ final class LockglowScreenshotTests: XCTestCase {
             return
         }
         // The form focuses the word field by itself after a moment, and return moves on to the
-        // meaning and then the example: the text goes in through the keyboard focus. (The 22 Oct
-        // run found no text field labelled "İngilizce kelime"; the labels are logged here.)
+        // meaning and then the example: the text goes in through the keyboard focus. Without a
+        // keyboard the word field is tapped by its identifier (`customWord.lemma`; the 22 Oct run
+        // found no text field labelled "İngilizce kelime"; the labels are logged here).
         sleep(2)
         print("Kendi kelime form fields: \(app.textFields.allElementsBoundByIndex.map { "\($0.label) | \($0.placeholderValue ?? "")" })")
         if !app.keyboards.firstMatch.exists {
-            app.textFields.firstMatch.tap()
+            let lemmaField = app.textFields["customWord.lemma"]
+            (lemmaField.exists ? lemmaField : app.textFields.firstMatch).tap()
         }
         // A word that is on a card: the form says so and still lets it be added.
         app.typeText("breakfast")
@@ -378,8 +381,8 @@ final class LockglowScreenshotTests: XCTestCase {
         XCTAssertTrue(topic.waitForExistence(timeout: 5), "no topic capsule in Sözlük")
         scrollToHittable(topic, in: app)
         topic.tap()
-        // On a topic page the filter labels carry the count: "Öğreniyorum, 3 kelime".
-        let learning = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Öğreniyorum")).firstMatch
+        // On a topic page the filter labels carry the count: "Öğreniyorsun: 3" (SozlukFilterBar).
+        let learning = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Öğreniyorsun")).firstMatch
         XCTAssertTrue(learning.waitForExistence(timeout: 10), "the topic page has no filter")
         sleep(1)
         attachScreenshot(of: app, named: "16b-sozluk-konu")
@@ -398,7 +401,8 @@ final class LockglowScreenshotTests: XCTestCase {
             .firstMatch
         XCTAssertTrue(breakfast.waitForExistence(timeout: 5), "searching 'kahvalti' did not find breakfast")
         attachScreenshot(of: app, named: "16d-sozluk-kahvalti")
-        let known = app.buttons["Bildiklerim"]
+        // The filter's name is "Bildiğin kelime" ("Bildiğin kelime: N" where it shows counts).
+        let known = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Bildiğin kelime")).firstMatch
         XCTAssertTrue(known.waitForExistence(timeout: 5), "no filter above the results")
         known.tap()
         sleep(1)

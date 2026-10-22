@@ -687,7 +687,7 @@ private struct SayAttemptRow: View {
         switch attempt.outcome {
         case .verdict(let verdict):
             switch verdict {
-            case .correct: return "Doğru"
+            case .correct: return "Anlaşıldı"
             case .almost: return "Neredeyse"
             case .tryAgain: return "Bir daha dene"
             case .notHeard: return "Duyulmadı"

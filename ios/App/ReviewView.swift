@@ -460,7 +460,8 @@ struct ReviewView: View {
             if word.isUserAdded, let note = detail?.noteTR {
                 NoteRow(symbol: "note.text", text: note)
             }
-            if let mistake = detail?.mistakes.first {
+            // The card's own Dikkat, as in Akış: the first mistake about this word.
+            if let mistake = detail?.cardMistake(lemma: word.lemma) {
                 MistakeBox(mistake: mistake)
             }
         }
@@ -1730,7 +1731,7 @@ struct ReviewView: View {
                 Label("Kitaplığın", systemImage: "books.vertical")
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
-            .accessibilityHint(Text("Öğrendiğin kelimeleri, raflarını ve bu haftayı gösterir."))
+            .accessibilityHint(Text("Öğrendiğin kelimeleri, basamaklarını ve bu haftayı gösterir."))
         }
     }
 
@@ -2553,13 +2554,15 @@ private struct DoneMark: View {
                 if contrast != .increased && !reduceTransparency && !isLuminanceReduced {
                     Capsule()
                         .fill(Theme.bandGlow)
-                        .frame(width: 104, height: 20)
-                        .blur(radius: 8)
+                        .frame(width: 104, height: 10)
+                        .blur(radius: 6)
                         .offset(y: 22)
                 }
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                // As thin as the word's night line (0.13 em of the 40 pt check, about 5 pt), not a
+                // filled yellow bar.
+                PhosphorBandShape(slant: 4)
                     .fill(Theme.bandDark)
-                    .frame(width: 104, height: 12)
+                    .frame(width: 104, height: 5)
                     .offset(y: 21)
             } else {
                 PhosphorBandShape(slant: 10)

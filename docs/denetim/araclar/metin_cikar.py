@@ -49,6 +49,9 @@ DEFAULT_PATHS = (
     "ios/Packages/VocabKit/Sources/Learning/ReminderPlanner.swift",
     # Kullanıcıya görünen metni olan paket dosyaları (görev kapsamının dışında ama ekranda çıkıyor).
     "ios/Packages/VocabKit/Sources/Pronunciation/PronunciationCheck.swift",
+    # İlerleme ekranının not cümleleri ve kendi kelime formunun sorun metinleri.
+    "ios/Packages/VocabKit/Sources/Learning/ProgressSummary.swift",
+    "ios/Packages/VocabKit/Sources/Learning/CustomWords.swift",
     "ios/project.yml",
 )
 
@@ -122,6 +125,8 @@ TERMS: dict[str, tuple[str, list[str]]] = {
     "kilitli ekran": (r"kilitli ekran", [r"kilit ekran"]),
     "hatırlatma": (r"hatırlatma", [r"^Bildirim$", r"bildirim gelir", r"hatırlatma olarak", r"kısa hatırlatma"]),
     "günlük hedef": (r"günlük (hedef|yeni kelime)", [r"bugünkü hedef"]),
+    # "Dikkat kutusu" ayrı bir kavram (terimler §4), işaretlenmez.
+    "basamak": (r"\bbasamak", [r"\b[Rr]af", r"(?<!Dikkat )(?<!Dikkat\*\* )\bkutu"]),
 }
 
 

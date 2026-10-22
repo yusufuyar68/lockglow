@@ -8,8 +8,9 @@ import CoreModels
 /// day was skipped, and no sentence ever says "0 gün". Only a word that was really forgotten
 /// moves down a shelf.
 ///
-/// The shelves are the Leitner boxes: box 1 ... 5 are "Raf 1" ... "Raf 5"; a known word that a
-/// review proved is "Yerleşti"; a "Biliyorum" word that no review checked yet stays apart, in
+/// The shelves are the Leitner boxes: box 1 ... 5 are "Basamak 1" ... "Basamak 5" on screen
+/// (never "raf" or "kutu", docs/tasarim/terimler.md); a known word that a review proved is
+/// "Yerleşti"; a "Biliyorum" word that no review checked yet stays apart, in
 /// "Kendin işaretlediklerin".
 ///
 /// `progress.json` keeps no history. "This week" is read from each word's last answer
@@ -191,8 +192,8 @@ public struct ProgressSummary: Equatable, Sendable {
     /// Words that were answered at least once or marked known: everything on the shelves.
     public let libraryCount: Int
     /// "Uzun süreli hafızaya geçen" words: shelves 4 and 5 and "Yerleşti", ascending ids.
-    /// Self-marked words are left out (no review checked them). The screen calls them "üst
-    /// raflardaki kelimeler", never "kalıcı": forgetting never stops completely
+    /// Self-marked words are left out (no review checked them). The screen says "kelime üst
+    /// basamaklarda", never "kalıcı": forgetting never stops completely
     /// (sakin_ilerleme.md, "Neden kalıcı demiyoruz?").
     public let longTermWordIDs: [Int]
     public let thisWeek: Week
@@ -518,7 +519,7 @@ public struct ProgressSummary: Equatable, Sendable {
             return WeeklyNote(
                 kind: .emptyLibrary,
                 weekStart: thisWeek.start,
-                text: "Kitaplığın henüz boş. İlk tekrar turunda tanıştığın kelimeler en alt rafa gelir."
+                text: "Kitaplığın henüz boş. Tekrar'daki ilk turda tanıştığın kelimeler ilk basamağa gelir."
             )
         }
         return WeeklyNote(
@@ -528,7 +529,7 @@ public struct ProgressSummary: Equatable, Sendable {
         )
     }
 
-    /// "Bu hafta 4 gün çalıştın. 12 yeni kelimeyle tanıştın ve 19 kelime bir üst rafa çıktı."
+    /// "Bu hafta 4 gün çalıştın. 12 yeni kelimeyle tanıştın ve 19 kelime bir basamak çıktı."
     /// A part whose number would be 0 is left out, so no number in it is ever 0. No praise, no
     /// percentage, no exclamation mark (ogrenme_ilkeleri 1.12, 2.5).
     private static func sentence(_ week: Week, opening: String) -> String {
@@ -537,7 +538,7 @@ public struct ProgressSummary: Equatable, Sendable {
             parts.append("\(week.metWordIDs.count) yeni kelimeyle tanıştın")
         }
         if !week.movedUpWordIDs.isEmpty {
-            parts.append("\(week.movedUpWordIDs.count) kelime bir üst rafa çıktı")
+            parts.append("\(week.movedUpWordIDs.count) kelime bir basamak çıktı")
         }
         if !week.recalledAfterLongGapWordIDs.isEmpty {
             parts.append("\(week.recalledAfterLongGapWordIDs.count) kelimeyi uzun bir aradan sonra da hatırladın")

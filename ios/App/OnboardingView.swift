@@ -102,6 +102,13 @@ struct OnboardingView: View {
             ForEach(Page.allCases, id: \.self) { item in
                 Capsule()
                     .fill(item.rawValue <= page.rawValue ? Theme.tint : Theme.surface3)
+                    // The steps ahead get a 1 pt `lineStrong` edge: `surface3` alone is under 3:1
+                    // against the page (audit K2), as the theme's gray capsules.
+                    .overlay {
+                        if item.rawValue > page.rawValue {
+                            Capsule().strokeBorder(Theme.lineStrong, lineWidth: 1)
+                        }
+                    }
                     .frame(height: 6)
             }
         }
@@ -486,7 +493,8 @@ private struct GuessWordCard: View {
 }
 
 /// "A2 ●●○  Temel konuşabiliyorum" with what the level covers and how many words it has.
-/// Mockup `.lvc`: the code over its dots (rule 4: never color alone), ink on, `surface3` off.
+/// Mockup `.lvc`: the code over its dots (rule 4: never color alone), ink on, a 1 pt `ink3` ring
+/// off (as `LevelBadge`; a `surface3` dot was under 3:1, audit K2).
 /// At the largest text sizes the code stands above the text, which then keeps the row's width.
 private struct LevelOptionLabel: View {
     let level: Level
@@ -505,9 +513,15 @@ private struct LevelOptionLabel: View {
                     .foregroundStyle(Theme.ink)
                 HStack(spacing: 3) {
                     ForEach(1...3, id: \.self) { dot in
-                        Circle()
-                            .fill(dot <= level.rank ? Theme.ink : Theme.surface3)
-                            .frame(width: dotSize, height: dotSize)
+                        if dot <= level.rank {
+                            Circle()
+                                .fill(Theme.ink)
+                                .frame(width: dotSize, height: dotSize)
+                        } else {
+                            Circle()
+                                .strokeBorder(Theme.ink3, lineWidth: 1)
+                                .frame(width: dotSize, height: dotSize)
+                        }
                     }
                 }
             }

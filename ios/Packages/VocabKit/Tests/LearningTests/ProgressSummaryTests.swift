@@ -269,7 +269,7 @@ final class ProgressSummaryTests: XCTestCase {
         let s = summary(progress, now: date(28, 12))
         XCTAssertEqual(s.note.kind, .thisWeek)
         XCTAssertEqual(s.note.weekStart, date(26, 0))
-        XCTAssertEqual(s.note.text, "Bu hafta 2 gün çalıştın. 2 yeni kelimeyle tanıştın ve 1 kelime bir üst rafa çıktı.")
+        XCTAssertEqual(s.note.text, "Bu hafta 2 gün çalıştın. 2 yeni kelimeyle tanıştın ve 1 kelime bir basamak çıktı.")
         assertNoZero(s.note.text)
     }
 
@@ -282,7 +282,7 @@ final class ProgressSummaryTests: XCTestCase {
         let s = summary(progress, now: date(28, 12))
         XCTAssertEqual(
             s.note.text,
-            "Bu hafta 2 gün çalıştın. 2 yeni kelimeyle tanıştın, 1 kelime bir üst rafa çıktı ve 1 kelimeyi uzun bir aradan sonra da hatırladın."
+            "Bu hafta 2 gün çalıştın. 2 yeni kelimeyle tanıştın, 1 kelime bir basamak çıktı ve 1 kelimeyi uzun bir aradan sonra da hatırladın."
         )
     }
 

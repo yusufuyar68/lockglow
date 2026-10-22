@@ -72,6 +72,10 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
     private var current: AVSpeechUtterance?
     private var waiter: CheckedContinuation<Void, Never>?
     private var watchdog: Task<Void, Never>?
+    /// Counts the starts (`speakAndWait`) and the stops (`stop`). `end`'s delayed release belongs
+    /// to the generation that scheduled it: it never closes a session taken over since, such as
+    /// a "Söyle" recording that started right after `stop()`.
+    private var generation = 0
 
     override init() {
         super.init()
@@ -92,6 +96,7 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         current = nil
         watchdog?.cancel()
         resumeWaiter()
+        generation += 1
 
         // If the app's own audio session cannot be activated (the system refuses it while the app
         // runs in the background), let the system manage the session for this utterance (WWDC20
@@ -123,7 +128,14 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
     /// now, without `end`'s grace period: the caller (the "Söyle" microphone, via
     /// `Speaker.stopAll()`) takes the session over right after. The waiting intent returns.
     func stop() {
-        guard current != nil else { return }
+        // A release `end` still has pending must leave the session to the caller.
+        generation += 1
+        guard current != nil else {
+            // A speech that has just ended may still be in `end`'s grace period: its intent
+            // returns now (nothing happens when no intent waits).
+            resumeWaiter()
+            return
+        }
         current = nil
         watchdog?.cancel()
         watchdog = nil
@@ -147,10 +159,12 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         watchdog = nil
         // `didFinish` can arrive while the last samples are still playing, and the app may be
         // suspended right after the intent returns: give the end of the word a moment. A call that
-        // started meanwhile owns the session (and has already released this call's waiter).
+        // started meanwhile, or a `stop()` (the "Söyle" microphone), owns the session and has
+        // already released this call's waiter: a newer `generation` leaves both alone.
+        let ending = generation
         Task { @MainActor [weak self] in
             try? await Task.sleep(nanoseconds: 250_000_000)
-            guard let self, self.current == nil else { return }
+            guard let self, self.generation == ending else { return }
             WordSpeech.deactivateSession()
             self.resumeWaiter()
         }

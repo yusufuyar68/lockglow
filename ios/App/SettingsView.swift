@@ -14,6 +14,8 @@ import Learning
 /// rows up by label).
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
+    /// "Tekrar'a git" on the empty library ("Kitaplığın ve bu hafta"): RootView opens "Tekrar".
+    var openReview: (() -> Void)? = nil
     @Environment(\.openURL) private var openURL
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
@@ -71,14 +73,12 @@ struct SettingsView: View {
         }
     }
 
-    /// The progress, today's counts, the local measurements and the feed's first encounters
-    /// (`AppModel.resetProgress`), then Sözlük's recent searches and the words "Tekrar" listed as
-    /// today's new words (they are new again). The user's own words stay; their progress goes
+    /// The progress, today's counts, the local measurements, the feed's first encounters,
+    /// Sözlük's recent searches and the words "Tekrar" listed as today's new words (they are new
+    /// again): all in `AppModel.resetProgress`. The user's own words stay; their progress goes
     /// with the rest. VoiceOver hears that it is done: the dialog just closes.
     private func resetProgress() {
         model.resetProgress()
-        UserDefaults.standard.removeObject(forKey: SozlukRecentSearches.storageKey)
-        UserDefaults.standard.removeObject(forKey: "lockglow.reviewNewWordsToday")
         AccessibilityNotification.Announcement(AttributedString("İlerleme sıfırlandı.")).post()
     }
 
@@ -111,7 +111,7 @@ struct SettingsView: View {
             SettingsQuestion("Kelime ne sıklıkla değişsin?")
             SegmentButtons(
                 options: AppPreferences.rotationMinuteChoices.map { minutes in
-                    SegmentOption(value: minutes, title: intervalLabel(minutes))
+                    SegmentOption(value: minutes, title: intervalLabel(minutes), spokenTitle: spokenIntervalLabel(minutes))
                 },
                 selection: rotationBinding
             )
@@ -152,6 +152,14 @@ struct SettingsView: View {
             return "\(minutes / 60) saat"
         }
         return "\(minutes) dk"
+    }
+
+    /// `intervalLabel` for VoiceOver, the unit in full: "30 dakika", "1 saat" (audit V12).
+    private func spokenIntervalLabel(_ minutes: Int) -> String {
+        if minutes >= 60 && minutes % 60 == 0 {
+            return "\(minutes / 60) saat"
+        }
+        return "\(minutes) dakika"
     }
 
     /// What the choice means in a day ("Kelime günde 24 kez değişir."), and the honest note that
@@ -437,7 +445,7 @@ struct SettingsView: View {
             .settingsGroupBackground()
             SettingsGroup {
                 NavigationLink {
-                    ProgressScreen()
+                    ProgressScreen(onStartReview: openReview)
                 } label: {
                     SettingsRow("Kitaplığın ve bu hafta")
                 }

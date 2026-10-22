@@ -4,15 +4,11 @@ import SwiftUI
 /// now map onto the tokens of `Theme` (ios/Shared/LockglowTheme.swift) as in docs/tasarim/README.md
 /// ("GlowStyle.swift eşlemesi"). New code uses `Theme` directly. App target only: the widget
 /// extension and the snapshot bundle do not compile this file.
-/// The old `glowTint` (the box behind the Turkish meaning) is gone: the meaning has no box.
+/// The old `glowTint` (the box behind the Turkish meaning) is gone: the meaning has no box, and
+/// so are the unused `glow` and `onGlow` (the main button's fill and text: `Theme.primary` and
+/// `Theme.onPrimary`, drawn by `PrimaryCapsuleButtonStyle`).
 enum Palette {
-    /// Fill of the one main button: ink by day, a faint ink tint at night (`Theme.primary`;
-    /// `PrimaryCapsuleButtonStyle`, which `GlowButtonStyle` uses, adds the night edge and bold
-    /// text). Progress and selection use `glowInk` (`Theme.tint`). Neither is ever yellow.
-    static let glow = Theme.primary
-    /// Text and icons on a `glow` fill (`Theme.onPrimary`): white by day, ink at night.
-    static let onGlow = Theme.onPrimary
-    /// Selected items, step numbers, the onboarding's text buttons (`Theme.tint`).
+    /// Selected items, step numbers, the onboarding's text buttons (`Theme.tint`). Never yellow.
     static let glowInk = Theme.tint
     /// Secondary text.
     static let ink2 = Theme.ink2
@@ -72,6 +68,9 @@ struct ChoiceRow<Content: View>: View {
 struct SegmentOption<Value: Hashable>: Hashable {
     let value: Value
     let title: String
+    /// What VoiceOver says when `title` is a short form: "30 dakika" for "30 dk" (audit V12).
+    /// Nil: `title` is read.
+    var spokenTitle: String? = nil
 }
 
 /// Two or three always-visible options (mockup `.seg`) in a `surface2` well with a 1 pt
@@ -127,6 +126,7 @@ struct SegmentButtons<Value: Hashable>: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(Text(verbatim: option.spokenTitle ?? option.title))
             .accessibilityAddTraits(isSelected ? .isSelected : [])
         }
     }

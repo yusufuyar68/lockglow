@@ -93,8 +93,9 @@ public struct SentReminder: Codable, Equatable, Sendable {
 /// box 2 and up; or, for `.newWord`, from the deck's new words after the ones the next days'
 /// rounds offer (seen on the widget first).
 public enum ReminderPlanner {
-    /// A word due in "Tekrar" before this long after the reminder is never its word.
-    public static let quietWindow: TimeInterval = 6 * 3600
+    /// A word due in "Tekrar" before this long after the reminder is never its word. The widget's
+    /// window (rule a, `QueueComposer.hiddenBeforeDue`): one constant for both (ogrenme_ilkeleri 2.10).
+    public static let quietWindow: TimeInterval = QueueComposer.hiddenBeforeDue
     /// The same kind of text and the same word do not come back within this many days.
     public static let repeatGapDays = 5
     /// Words tried per kind and day; each may read one card from the database (`detail`).

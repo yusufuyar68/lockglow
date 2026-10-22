@@ -33,7 +33,8 @@ struct RootView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            FeedView(scrolledWordID: $scrolledWordID)
+            // "Tekrar'a geç" on the end-of-day card switches the tab here, not via the reminder route.
+            FeedView(scrolledWordID: $scrolledWordID, openReview: { selectedTab = .review })
                 .tabItem { Label("Akış", systemImage: "rectangle.stack") }
                 .tag(AppTab.feed)
             // "Günlük hedefi değiştir" on the done screen opens Ayarlar.
@@ -43,7 +44,8 @@ struct RootView: View {
             SearchView()
                 .tabItem { Label("Sözlük", systemImage: "magnifyingglass") }
                 .tag(AppTab.search)
-            SettingsView()
+            // "Tekrar'a git" on the empty library ("Kitaplığın ve bu hafta") opens Tekrar.
+            SettingsView(openReview: { selectedTab = .review })
                 .tabItem { Label("Ayarlar", systemImage: "gearshape") }
                 .badge(model.progressRecovery == nil ? 0 : 1)
                 .tag(AppTab.settings)

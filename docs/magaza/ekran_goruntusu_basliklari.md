@@ -29,7 +29,7 @@
 | 2 | **Türkçe anlamı, örneği, sesi** | 27 | 933 kart: A1, A2, B1 | `01-akis-kelime-karti.png` | **Hazır** (1320 × 2868) |
 | 3 | **Uygulamayı açmadan dinle** | 24 | Widget'ta Biliyorum, Dinle, Sonraki | `05-widget-orta.png` + `06-widget-kucuk-koyu.png`, bir ana ekran montajında | Montaj gerekir; widget'taki "9:00 AM" → "09:00" (Türkçe bölge ayarı) |
 | 4 | **Sık yapılan hatayı baştan gör** | 29 | 571 kartta Dikkat kutusu | `01`'in "Dikkat" bölümü büyütülerek, ya da Pro Max'te Dikkat kutusu ortada yeniden çekim | Hazır görüntüden kırpma ya da yeniden çekim |
-| 5 | **Söyle, telefon seni dinlesin** | 28 | Ses telefondan çıkmaz | Söyle sayfası, "Doğru!" sonucuyla (`LockglowScreenshotTests.testCaptureLongLemmaAndSoyle`) | **Yeni çekim gerekir** (klasörde yok) |
+| 5 | **Söyle, telefon seni dinlesin** | 28 | Ses telefondan çıkmaz | Söyle sayfası, "Anlaşıldı!" sonucuyla (`LockglowScreenshotTests.testCaptureLongLemmaAndSoyle`) | **Yeni çekim gerekir** (klasörde yok) |
 | 6 | **Unutmadan önce yeniden gelir** | 28 | Bilemedim, Zor, Bildim, Kolay | `02-tekrar-dort-cevap-se.png` | **Pro Max'te yeniden çek.** SE'de "Devamı ↓" Dikkat kutusunun üstüne biniyor |
 | 7 | **Boşluğu doldur, kalıcı öğren** | 28 | Yanlışta doğrusunu hemen gör | `03-quiz-yanlis-cevap.png` | **Yeniden çek** (kırpılmış, 750 × 958). Tercihen doğru cevap anı; yanlış anı olumsuz durabilir |
 | 8 | **Seviyeni seç: A1, A2 ya da B1** | 29 | İlk açılışta, bir dakikada | `08-acilis-seviye-se.png` | **Pro Max'te yeniden çek** |
@@ -47,7 +47,7 @@ Başlık uzunlukları Python'la sayıldı (karakter).
 - Durum çubuğu iş akışında ayarlanıyor: saat **9:41**, tam Wi-Fi ve hücresel çubuk, tam pil, "Carrier" yazısı yok (`xcrun simctl status_bar … override`). Simülatör bölgesi İngilizce (ABD) kalıyor; uygulama metinleri zaten Türkçe.
 - **Simülatörde çekilemeyenler:**
   - kilit ekranı (1. kare);
-  - Söyle'nin "Doğru!" sonucu (5. kare): gerçek konuşma gerekiyor, uygulamada deneme yolu yok;
+  - Söyle'nin "Anlaşıldı!" sonucu (5. kare): gerçek konuşma gerekiyor, uygulamada deneme yolu yok;
   - Ayarlar'da widget sağlığı **"Çalışıyor"** (10. kare): simülatörde widget listesi boş geliyor, satır "Bilinmiyor" diyor.
 
   Bu üçü gerçek iPhone'dan çekilmeli. Mağaza karesinde istenirse Ayarlar yerine başka bir ekran kullanılabilir.

@@ -207,9 +207,10 @@ public enum CustomWordProblem: Equatable, Sendable {
         case .lemmaTooLong:
             return "Çok uzun. Widget'a sığması için en çok \(CustomWordDraft.lemmaLimit) harf olabilir (boşluklar da sayılır)."
         case let .lemmaHasTurkishLetter(letter):
-            return "Türkçe harf var: \(letter). Kelimeyi İngilizce harflerle (a–z) yaz."
+            // No signs in brackets: VoiceOver reads "(a–z)", "(-)" and "(')" badly.
+            return "Türkçe harf var: \(letter). Kelimeyi İngilizce harflerle yaz."
         case .lemmaNotSpeakable:
-            return "Yalnızca harf (a–z), boşluk, tire (-) ve kesme (') kullan. Rakam ya da başka işaret olmasın."
+            return "Yalnızca İngilizce harf, boşluk, tire ve kesme işareti kullan. Rakam ya da başka işaret olmasın."
         case .lemmaAlreadyAdded:
             return "Bu kelimeyi zaten ekledin."
         case .meaningMissing:

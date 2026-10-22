@@ -165,10 +165,10 @@ struct MistakeBox: View {
         .fixedSize()
     }
 
-    // The example's size (17 pt serif), not 16 pt (ogrenme_ilkeleri 2.2, type table).
+    // The example's size (18 pt serif, `exampleFont`), not 16 pt (ogrenme_ilkeleri 2.2, type table).
     private func wrongSentence(_ diff: MistakeDiff) -> some View {
         Text(diff.wrongText())
-            .font(Theme.Fonts.example)
+            .exampleFont()
             .foregroundStyle(Theme.ink)
             .lineSpacing(4)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -177,7 +177,7 @@ struct MistakeBox: View {
 
     private func rightSentence(_ diff: MistakeDiff) -> some View {
         Text(diff.rightText())
-            .font(Theme.Fonts.example.weight(.bold))
+            .exampleFont(bold: true)
             .foregroundStyle(Theme.ink)
             .lineSpacing(4)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -521,7 +521,8 @@ enum CardLinePart {
     case symbol(String, color: Color, spoken: String)
 }
 
-/// One `CardLinePart`: 16 pt Turkish, 17 pt serif English, all in `ink` (the signs `ink2`).
+/// One `CardLinePart`: 16 pt Turkish, 18 pt serif English (`exampleFont`), all in `ink` (the
+/// signs `ink2`).
 struct CardLinePartView: View {
     let part: CardLinePart
 
@@ -534,7 +535,7 @@ struct CardLinePartView: View {
                 .accessibilityLabel(Text(verbatim: spoken ?? text))
         case let .english(text, bold):
             Text(text)
-                .font(bold ? Theme.Fonts.example.weight(.bold) : Theme.Fonts.example)
+                .exampleFont(bold: bold)
                 .foregroundStyle(Theme.ink)
                 .cardEnglishVoice()
         case let .sign(text):

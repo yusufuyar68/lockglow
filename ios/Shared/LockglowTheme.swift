@@ -42,12 +42,14 @@ import CoreModels
 //     Text(word.lemma).englishWordStyle(size: 46, maxSize: 60)    // Tekrar card front
 //     Text(gloss).meaningStyle()                                  // .title bold, ink
 //     Text(definition).definitionStyle()                          // .title3 serif, ink
-//     Text(example).exampleStyle()                                // .body serif, ink
+//     Text(example).exampleStyle()                                // 18 pt serif (scaled), ink
+//     Text(mistake.wrong).exampleFont()                           // Dikkat sentences: 18 pt serif
 //     Text(translation).exampleTranslationStyle()                 // .callout, ink2
 //     Text(word.lemma).widgetWordStyle().phosphorBand(.widget)    // widgets: .title3 bold serif
 //     Text(example).englishVoice()                                // VoiceOver: English voice
-//   The same fonts without color: Theme.Fonts.englishWord(size:), meaning, definition, example,
-//   exampleTranslation, widgetWord.
+//   The same fonts without color: Theme.Fonts.englishWord(size:), meaning, definition, example
+//   (17 pt `.body` serif; example and Dikkat sentences use `exampleFont()`), exampleTranslation,
+//   widgetWord.
 //   `englishVoice()` goes on the English Text itself (or on an element whose whole spoken text is
 //   English), never on a container or a button with a Turkish label, hint or value: everything
 //   under it is read with the English voice. `.combine` loses it. See the method for details.
@@ -58,7 +60,8 @@ import CoreModels
 // it is a highlighter behind the lower part of the letters; at night a slanted line under the
 // descenders with a faint glow (none with Increase Contrast, Reduce Transparency or the dimmed
 // Always-On display); in accented and vibrant widgets (tinted Home Screen, Lock Screen) a
-// thin line in the word's color. The night line hangs up to ~0.45 em below the text frame: leave
+// thin line in the word's color. On the dimmed Always-On display every line is 1 pt
+// (ogrenme_ilkeleri 2.1). The night line hangs up to ~0.45 em below the text frame: leave
 // at least 8 pt (4 pt in widgets) before the next row. The modifier already adds
 // `.widgetAccentable()`. Snapshot tests can force a mode: `.phosphorBand(.widget, renderingMode: .accented)`.
 //   The same word inside an example sentence:
@@ -214,7 +217,8 @@ enum Theme {
         static let meaning = Font.title.weight(.bold)
         /// English definition, 20 pt serif.
         static let definition = Font.system(.title3, design: .serif)
-        /// English example, 17 pt serif, never italic.
+        /// English text in the example's family, 17 pt `.body` serif, never italic (collocations,
+        /// the form field). Example sentences and the Dikkat sentences are 18 pt: `exampleFont()`.
         static let example = Font.system(.body, design: .serif)
         /// Turkish translation of the example, 16 pt.
         static let exampleTranslation = Font.callout
@@ -284,10 +288,17 @@ extension View {
             .foregroundStyle(Theme.ink)
     }
 
-    /// An English example sentence: `.body` serif, ink, not italic.
+    /// An English example sentence: 18 pt serif (`exampleFont()`), ink, not italic.
     func exampleStyle() -> some View {
-        font(Theme.Fonts.example)
+        exampleFont()
             .foregroundStyle(Theme.ink)
+    }
+
+    /// The font of English example sentences and of the Dikkat box's wrong and right sentences:
+    /// 18 pt serif at the default text size, scaled with Dynamic Type like `.body`
+    /// (ogrenme_ilkeleri 2.2, type table). `bold` for the right sentence. No color is set.
+    func exampleFont(bold: Bool = false) -> some View {
+        modifier(ExampleFont(bold: bold))
     }
 
     /// The Turkish translation of an example: `.callout`, ink2.
@@ -351,6 +362,17 @@ private struct EnglishWordStyle: ViewModifier {
     }
 }
 
+/// `exampleFont(bold:)`: 18 pt serif relative to `.body` (17 pt), so it grows like the body text.
+private struct ExampleFont: ViewModifier {
+    let bold: Bool
+    @ScaledMetric(relativeTo: .body) private var size: CGFloat = 18
+
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: size, weight: bold ? .bold : .regular, design: .serif))
+    }
+}
+
 // MARK: - Phosphor band
 
 /// Where the band is drawn: the night line is thinner in widgets (0.1 em instead of 0.13 em).
@@ -409,7 +431,13 @@ private struct PhosphorBandModifier: ViewModifier {
         content
             .background(alignment: .topLeading) {
                 GeometryReader { proxy in
-                    PhosphorBandDrawing(kind: kind, placement: placement, size: proxy.size, glows: glows)
+                    PhosphorBandDrawing(
+                        kind: kind,
+                        placement: placement,
+                        size: proxy.size,
+                        glows: glows,
+                        isDimmed: isLuminanceReduced
+                    )
                 }
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
@@ -447,6 +475,8 @@ private struct PhosphorBandDrawing: View {
     let size: CGSize
     /// Draws the faint glow under the night line.
     let glows: Bool
+    /// The dimmed Always-On display (`isLuminanceReduced`): the line is 1 pt (ogrenme_ilkeleri 2.1).
+    let isDimmed: Bool
 
     var body: some View {
         let em = size.height / SerifMetrics.lineHeight
@@ -474,14 +504,14 @@ private struct PhosphorBandDrawing: View {
                     x: -0.08 * em,
                     y: underlineTop,
                     width: size.width + 0.16 * em,
-                    height: max((isWidget ? 0.1 : 0.13) * em, 1.5)
+                    height: isDimmed ? 1 : max((isWidget ? 0.1 : 0.13) * em, 1.5)
                 ),
                 slant: (isWidget ? 0.08 : 0.1) * em,
                 color: Theme.bandDark
             )
         case .line:
             band(
-                CGRect(x: 0, y: underlineTop, width: size.width, height: max(0.1 * em, 1.5)),
+                CGRect(x: 0, y: underlineTop, width: size.width, height: isDimmed ? 1 : max(0.1 * em, 1.5)),
                 slant: 0.08 * em,
                 color: .primary
             )

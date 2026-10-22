@@ -749,6 +749,8 @@ final class AppModel: ObservableObject {
         LocalMetricsRecorder.shared.reset()
         AppPreferences.clearFeedFirstSeen()
         AppModel.clearRecentSearches()
+        // The words "Tekrar" listed as today's new words (`ReviewView.newWordsTodayLog`) are new again.
+        UserDefaults.standard.removeObject(forKey: "lockglow.reviewNewWordsToday")
         refreshWidgetPlan()
     }
 
@@ -925,7 +927,15 @@ final class AppModel: ObservableObject {
             horizon: AppModel.queueHorizon,
             maxNew: dailyNewWords * 2,
             limit: AppModel.queueLimit,
-            pinFirst: pinnedWord(currentWord)
+            pinFirst: pinnedWord(currentWord),
+            // The slot pattern is tied to the clock (boundaries since 1970), so a rewrite on every
+            // trip to the background does not start it again; +1: the slot after the pinned word.
+            patternOffset: TimelinePlanner.elapsedBoundaries(
+                from: Date(timeIntervalSince1970: 0),
+                to: rewriteTime,
+                interval: TimeInterval(rotationMinutes * 60),
+                alignmentOffset: TimelinePlanner.localAlignmentOffset(for: rewriteTime)
+            ) + 1
         )
         if queue.isEmpty {
             logger.notice("no words for a plan; the widget keeps its current data or the bundled seed")
