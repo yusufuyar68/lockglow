@@ -1,0 +1,1013 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.tap.v.1",
+      "lemma": "tap",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "touch a screen lightly",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tæp/",
+        "uk": "/tæp/"
+      },
+      "def": {
+        "micro": "touch quickly and lightly",
+        "short": "touch a screen or button quickly and lightly with your finger",
+        "long": "To touch a screen or a button quickly and lightly with your finger. On phones, you tap an icon to open an app."
+      },
+      "grammar": {
+        "pattern": "tap sth / tap on sth"
+      },
+      "examples": [
+        {
+          "en": "Tap the icon to open the app.",
+          "tr": "Uygulamayı açmak için simgeye dokun.",
+          "register": "neutral",
+          "focus": "Tap"
+        },
+        {
+          "en": "Tap twice on the photo to make it bigger.",
+          "tr": "Fotoğrafı büyütmek için üstüne iki kez dokun.",
+          "register": "neutral",
+          "focus": "Tap"
+        },
+        {
+          "en": "Elif tapped 'Send' before she finished writing the message.",
+          "tr": "Elif mesajı yazmayı bitirmeden 'Gönder'e dokundu.",
+          "register": "neutral",
+          "focus": "tapped"
+        }
+      ],
+      "synonyms": [
+        "touch"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "tap the screen",
+        "tap the icon",
+        "tap twice",
+        "tap on a link"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dokunmak",
+          "alt": [
+            "basmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefonda parmakla ekrana kısa ve hafifçe dokunmaya 'tap' denir. Musluk anlamındaki 'tap' (isim) ayrı bir karttır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Just ______ the photo once with your finger to open it.",
+        "answer": "tap",
+        "distractors": [
+          "hide",
+          "upload",
+          "delete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.swipe.v.1",
+      "lemma": "swipe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move a finger across a touch screen",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/swaɪp/",
+        "uk": "/swaɪp/"
+      },
+      "def": {
+        "micro": "slide a finger on a screen",
+        "short": "move your finger quickly across a touch screen, for example to the left",
+        "long": "To move your finger quickly across a touch screen, to the left, to the right, up or down. People do this to see the next photo or to close an app."
+      },
+      "grammar": {
+        "pattern": "swipe left / right / up / down; swipe sth away"
+      },
+      "examples": [
+        {
+          "en": "Swipe left to see the next photo.",
+          "tr": "Sonraki fotoğrafı görmek için sola kaydır.",
+          "register": "neutral",
+          "focus": "Swipe"
+        },
+        {
+          "en": "Swipe up from the bottom of the screen to close the app.",
+          "tr": "Uygulamayı kapatmak için ekranın altından yukarı kaydır.",
+          "register": "neutral",
+          "focus": "Swipe"
+        },
+        {
+          "en": "Murat swiped through his holiday photos to find the one from the beach.",
+          "tr": "Murat plajdaki fotoğrafı bulmak için tatil fotoğraflarını kaydırdı.",
+          "register": "neutral",
+          "focus": "swiped"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "swipe left",
+        "swipe right",
+        "swipe up",
+        "swipe through photos"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaydırmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ekranda parmağı hızlıca sağa, sola ya da yukarı çekmek 'swipe' olur; fotoğraf geçerken kullanılır. Uzun bir sayfada aşağı inmeye ise 'scroll' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:scroll"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To delete a message, ______ it to the left and tap 'Delete'.",
+        "answer": "swipe",
+        "distractors": [
+          "copy",
+          "send",
+          "print"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.click.v.1",
+      "lemma": "click",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "press a mouse button or choose a link",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/klɪk/",
+        "uk": "/klɪk/"
+      },
+      "def": {
+        "micro": "press a mouse button",
+        "short": "press a button on a mouse, or choose a link or button on a screen",
+        "long": "To press a button on a computer mouse, or to choose a link or a button on a screen. You often say 'click on' something."
+      },
+      "grammar": {
+        "pattern": "click sth / click on sth; double-click"
+      },
+      "examples": [
+        {
+          "en": "Click here to download the form.",
+          "tr": "Formu indirmek için buraya tıkla.",
+          "register": "neutral",
+          "focus": "Click"
+        },
+        {
+          "en": "Double-click the file to open it on your computer.",
+          "tr": "Dosyayı bilgisayarında açmak için üzerine çift tıkla.",
+          "register": "neutral",
+          "focus": "Double-click"
+        },
+        {
+          "en": "Kenji clicked on the wrong link, and the page closed.",
+          "tr": "Kenji yanlış bağlantıya tıkladı ve sayfa kapandı.",
+          "register": "neutral",
+          "focus": "clicked on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "click on a link",
+        "click here",
+        "click the button",
+        "double-click"
+      ],
+      "word_family": [
+        {
+          "lemma": "click",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tıklamak",
+          "alt": [
+            "tıklatmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bilgisayarda fareyle yapılan hareket 'click' olur. Telefonda parmakla dokunmak için genelde 'tap' denir. 'Click the link' ve 'click on the link' ikisi de doğrudur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Use your mouse to ______ on the blue button at the bottom of the page.",
+        "answer": "click",
+        "distractors": [
+          "write",
+          "search",
+          "read"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.zoom_in.phv.1",
+      "lemma": "zoom in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make an image bigger on a screen",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/zuːm ˈɪn/",
+        "uk": "/zuːm ˈɪn/"
+      },
+      "def": {
+        "micro": "make an image look bigger",
+        "short": "make a picture, map or page look bigger on a screen",
+        "long": "To make a picture, a map or a page look bigger on a screen so that you can see small details. The opposite is 'zoom out'."
+      },
+      "grammar": {
+        "pattern": "zoom in (on sth)"
+      },
+      "examples": [
+        {
+          "en": "Zoom in to read the small text.",
+          "tr": "Küçük yazıyı okumak için yakınlaştır.",
+          "register": "neutral",
+          "focus": "Zoom in"
+        },
+        {
+          "en": "Zoom in on the map to find our street.",
+          "tr": "Sokağımızı bulmak için haritayı yakınlaştır.",
+          "register": "neutral",
+          "focus": "Zoom in"
+        },
+        {
+          "en": "Maria zoomed in on the photo and saw her cat behind the tree.",
+          "tr": "Maria fotoğrafı yakınlaştırdı ve ağacın arkasındaki kedisini gördü.",
+          "register": "neutral",
+          "focus": "zoomed in"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "zoom out"
+      ],
+      "collocations": [
+        "zoom in on a photo",
+        "zoom in on the map"
+      ],
+      "word_family": [
+        {
+          "lemma": "zoom",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yakınlaştırmak",
+          "alt": [
+            "büyütmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ekranda iki parmağını açarak yakınlaştırırsın; karşıtı 'zoom out' (uzaklaştırmak). Neyi yakınlaştırdığını 'on' ile söylersin: zoom in on the map.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bird in this photo is too small to see. Let me ______.",
+        "answer": "zoom in",
+        "distractors": [
+          "zoom out",
+          "log out",
+          "shut down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.connect.v.1",
+      "lemma": "connect",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "join to the internet or another device",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈnɛkt/",
+        "uk": "/kəˈnɛkt/"
+      },
+      "def": {
+        "micro": "join to a network or device",
+        "short": "join a phone or computer to the internet, Wi-Fi or another device",
+        "long": "To join a phone or a computer to the internet, to Wi-Fi or to another device so that they work together. You connect to something, or connect one thing to another."
+      },
+      "grammar": {
+        "pattern": "connect to sth; connect sth to sth"
+      },
+      "examples": [
+        {
+          "en": "My phone won't connect to the Wi-Fi.",
+          "tr": "Telefonum Wi-Fi'ye bağlanmıyor.",
+          "register": "neutral",
+          "focus": "connect"
+        },
+        {
+          "en": "Connect your phone to the car speaker to play music.",
+          "tr": "Müzik çalmak için telefonunu arabanın hoparlörüne bağla.",
+          "register": "neutral",
+          "focus": "Connect"
+        },
+        {
+          "en": "Ahmet connected his laptop to the TV so we could watch the film.",
+          "tr": "Ahmet filmi izleyebilelim diye dizüstü bilgisayarını televizyona bağladı.",
+          "register": "neutral",
+          "focus": "connected"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "disconnect"
+      ],
+      "collocations": [
+        "connect to the internet",
+        "connect to Wi-Fi",
+        "connect a device"
+      ],
+      "word_family": [
+        {
+          "lemma": "connection",
+          "pos": "n"
+        },
+        {
+          "lemma": "disconnect",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağlanmak",
+          "alt": [
+            "bağlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kendiniz bağlanıyorsanız 'connect to', bir cihazı başka bir şeye bağlıyorsanız 'connect sth to sth' denir. İsmi 'connection' (bağlantı) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't send the email because my laptop won't ______ to the internet.",
+        "answer": "connect",
+        "distractors": [
+          "join",
+          "plug",
+          "download"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.save.v.3",
+      "lemma": "save",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 3,
+      "sense_note": "keep a file or number on a device",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪv/",
+        "uk": "/seɪv/"
+      },
+      "def": {
+        "micro": "keep on a phone or computer",
+        "short": "keep a file, photo or number on a phone or computer so you can use it later",
+        "long": "To keep a file, a photo or a phone number on a phone or a computer so that you can find it and use it later."
+      },
+      "grammar": {
+        "pattern": "save sth (on / to sth)"
+      },
+      "examples": [
+        {
+          "en": "Save the file before you close it.",
+          "tr": "Kapatmadan önce dosyayı kaydet.",
+          "register": "neutral",
+          "focus": "Save"
+        },
+        {
+          "en": "I saved your number on my phone.",
+          "tr": "Numaranı telefonuma kaydettim.",
+          "register": "neutral",
+          "focus": "saved"
+        },
+        {
+          "en": "Deniz saved the photo from the group chat so she could print it later.",
+          "tr": "Deniz sonra bastırabilmek için fotoğrafı grup sohbetinden kaydetti.",
+          "register": "neutral",
+          "focus": "saved"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "delete"
+      ],
+      "collocations": [
+        "save a file",
+        "save a photo",
+        "save a number",
+        "save changes"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaydetmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Para biriktirmek anlamı için ayrı kart var (save, 2. kart). Ekrandaki 'Kaydet' düğmesi İngilizcede 'Save' olur.",
+          "mistakes": [
+            {
+              "wrong": "I recorded your number.",
+              "right": "I saved your number.",
+              "why": "Türkçede 'kaydetmek' hem 'save' hem 'record' demektir. Ses ve video için 'record', dosya, fotoğraf ve numara için 'save' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My laptop turned off before I could ______ the document, so I lost my work.",
+        "answer": "save",
+        "distractors": [
+          "spend",
+          "open",
+          "share"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.volume.n.1",
+      "lemma": "volume",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "how loud a sound is",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɑːljuːm/",
+        "uk": "/ˈvɒljuːm/"
+      },
+      "def": {
+        "micro": "how loud a sound is",
+        "short": "how loud or quiet the sound from a phone, TV or radio is",
+        "long": "How loud or quiet the sound from a phone, a TV, a radio or a speaker is. You can make it higher or lower with buttons."
+      },
+      "grammar": {
+        "pattern": "the volume (is too high / low); at full volume"
+      },
+      "examples": [
+        {
+          "en": "The volume is too low. I can't hear you.",
+          "tr": "Ses çok kısık. Seni duyamıyorum.",
+          "register": "neutral",
+          "focus": "volume"
+        },
+        {
+          "en": "Use the buttons on the side of the phone to change the volume.",
+          "tr": "Ses seviyesini değiştirmek için telefonun yanındaki tuşları kullan.",
+          "register": "neutral",
+          "focus": "volume"
+        },
+        {
+          "en": "Sena always listens to music at full volume on the bus.",
+          "tr": "Sena otobüste müziği hep son ses dinler.",
+          "register": "neutral",
+          "focus": "volume"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "turn up the volume",
+        "turn down the volume",
+        "at full volume",
+        "volume button",
+        "low volume"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ses seviyesi",
+          "alt": [
+            "ses"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Telefon ve televizyon sesinin ne kadar yüksek olduğu 'volume' ile söylenir. Bir kitabın cildi anlamında da kullanılır; o ayrı bir anlamdır.",
+          "mistakes": [
+            {
+              "wrong": "Can you open the sound?",
+              "right": "Can you turn up the volume?",
+              "why": "Türkçede 'sesi aç' denir. İngilizcede sesi açmak için 'open' değil 'turn up' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't hear my phone ring because the ______ was very low.",
+        "answer": "volume",
+        "distractors": [
+          "brightness",
+          "storage",
+          "font"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.up_to_date.phr.1",
+      "lemma": "up to date",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "newest, with the latest changes",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌʌp tə ˈdeɪt/",
+        "uk": "/ˌʌp tə ˈdeɪt/"
+      },
+      "def": {
+        "micro": "with the latest changes",
+        "short": "newest; with the latest changes or the latest information",
+        "long": "Newest, with the latest changes or the latest information. Before a noun, it is written with hyphens: an up-to-date map."
+      },
+      "grammar": {
+        "pattern": "be / keep sth / stay up to date; an up-to-date sth"
+      },
+      "examples": [
+        {
+          "en": "Keep your apps up to date.",
+          "tr": "Uygulamalarını güncel tut.",
+          "register": "neutral",
+          "focus": "up to date"
+        },
+        {
+          "en": "This map isn't up to date. The new bridge isn't on it.",
+          "tr": "Bu harita güncel değil. Yeni köprü haritada yok.",
+          "register": "neutral",
+          "focus": "up to date"
+        },
+        {
+          "en": "Lucas reads the news every morning to stay up to date.",
+          "tr": "Lucas gelişmelerden haberdar olmak için her sabah haberleri okur.",
+          "register": "neutral",
+          "focus": "up to date"
+        }
+      ],
+      "synonyms": [
+        "current",
+        "updated"
+      ],
+      "antonyms": [
+        "out of date"
+      ],
+      "collocations": [
+        "keep up to date",
+        "stay up to date",
+        "up-to-date information"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güncel",
+          "alt": [
+            "güncellenmiş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsimden önce tireyle yazılır: an up-to-date map. 'Update' fiili güncellemek demektir; bu ifade ise bir şeyin güncel olduğunu söyler.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone is slow because the software isn't ______.",
+        "answer": "up to date",
+        "distractors": [
+          "out of date",
+          "on time",
+          "in charge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.back_up.phv.1",
+      "lemma": "back up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "copy files so you do not lose them",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bæk ˈʌp/",
+        "uk": "/bæk ˈʌp/"
+      },
+      "def": {
+        "micro": "make a copy of your files",
+        "short": "make a copy of files or photos so you do not lose them",
+        "long": "To make a copy of the files, photos or messages on a phone or computer, so that you do not lose them if the device breaks. The noun is 'backup'."
+      },
+      "grammar": {
+        "pattern": "back up sth / back sth up (back it up)"
+      },
+      "examples": [
+        {
+          "en": "I back up my photos every week.",
+          "tr": "Fotoğraflarımı her hafta yedeklerim.",
+          "register": "neutral",
+          "focus": "back up"
+        },
+        {
+          "en": "Back up your phone before you reset it.",
+          "tr": "Telefonunu sıfırlamadan önce yedekle.",
+          "register": "neutral",
+          "focus": "Back up"
+        },
+        {
+          "en": "Zeynep's laptop broke, but she had backed up all her files.",
+          "tr": "Zeynep'in dizüstü bilgisayarı bozuldu ama bütün dosyalarını yedeklemişti.",
+          "register": "neutral",
+          "focus": "backed up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "back up files",
+        "back up photos",
+        "back up your phone"
+      ],
+      "word_family": [
+        {
+          "lemma": "backup",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yedeklemek",
+          "alt": [
+            "yedek almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil iki sözcükle (back up), isim tek sözcükle (a backup) yazılır. Zamir araya girer: back it up.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I lost my phone, but my photos are safe because I ______ my phone every month.",
+        "answer": "back up",
+        "distractors": [
+          "give up",
+          "turn off",
+          "set up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reset.v.1",
+      "lemma": "reset",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change back to first settings",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌriːˈsɛt/",
+        "uk": "/ˌriːˈsɛt/"
+      },
+      "def": {
+        "micro": "return to original settings",
+        "short": "make a device go back to its original settings, or make a new password",
+        "long": "To make a phone or a machine go back to the settings it had at the start, or to make a new password when you forget the old one. The past form is also 'reset'."
+      },
+      "grammar": {
+        "pattern": "reset sth (past: reset)"
+      },
+      "examples": [
+        {
+          "en": "I forgot my password, so I reset it.",
+          "tr": "Şifremi unuttum, bu yüzden sıfırladım.",
+          "register": "neutral",
+          "focus": "reset"
+        },
+        {
+          "en": "We sent you an email so you can reset your password.",
+          "tr": "Şifreni sıfırlayabilmen için sana bir e-posta gönderdik.",
+          "register": "neutral",
+          "focus": "reset"
+        },
+        {
+          "en": "Before Hasan sold his old phone, he reset it to factory settings.",
+          "tr": "Hasan eski telefonunu satmadan önce fabrika ayarlarına sıfırladı.",
+          "register": "neutral",
+          "focus": "reset"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "reset a password",
+        "reset your phone",
+        "reset the router",
+        "factory reset"
+      ],
+      "word_family": [
+        {
+          "lemma": "reset",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sıfırlamak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Restart' cihazı kapatıp yeniden açmaktır. 'Reset' ise ayarları ilk hâline döndürür; bazen her şey silinir. Geçmiş zaman biçimi de 'reset' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't remember my password. How can I ______ it?",
+        "answer": "reset",
+        "distractors": [
+          "unplug",
+          "install",
+          "lock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
