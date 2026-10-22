@@ -310,6 +310,21 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 .sheet ol b{color:var(--ink);font-weight:600}
 .sheet .rf{font:400 13px/1.4 var(--font-ui);color:var(--ink-3)}
 
+/* Sözlük */
+.sbox{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border-radius:12px;background:var(--surface-2);color:var(--ink-3);margin:2px 0 4px}
+.sbox svg{width:20px;height:20px}
+.sbox input{flex:1;min-width:0;background:none;border:0;outline:0;font:400 17px var(--font-ui);color:var(--ink);-webkit-appearance:none;appearance:none}
+.sbox input::placeholder{color:var(--ink-3)}
+.sbox:focus-within{box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.chips-s{display:flex;flex-wrap:wrap;gap:8px}
+.chip-s{min-height:44px;padding:0 16px;border-radius:22px;background:var(--surface-2);font:600 15px var(--font-ui);color:var(--ink)}
+.row .rw{font:700 18px var(--font-en);color:var(--ink)}
+.row .tx small{font-size:15px;color:var(--ink-2)}
+.hit{font-weight:700;text-decoration:underline solid var(--ink-2);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.wcard.scrolls .inner{overflow-y:auto;scrollbar-width:none}
+.wcard.scrolls .inner::-webkit-scrollbar{display:none}
+.exrow{display:flex;flex-direction:column;gap:3px;padding-top:10px;border-top:1px solid var(--line)}
+
 /* Kilitli ekran ve Her zaman açık */
 .wall{position:absolute;inset:0;background:radial-gradient(85% 55% at 70% 24%,#2b1e12 0%,#130d08 40%,#060403 72%,#000 100%)}
 .wall::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--wall-dim,0)}
@@ -477,6 +492,7 @@ const SCREENS = [
   { k: 'akis', t: 'Akış' },
   { k: 'tekrar', t: 'Tekrar' },
   { k: 'quiz', t: 'Quiz' },
+  { k: 'sozluk', t: 'Sözlük' },
   { k: 'bitti', t: 'Bu gece bitti' },
   { k: 'sep' },
   { k: 'widget', t: "Widget'lar" },
@@ -536,7 +552,7 @@ const S = {
   clock: 'tint', wall: true, red: true, wgMode: 'dark', word: 0,
   feed: 0, known: new Set(), playing: null,
   rv: { i: 0, revealed: false, answers: [] }, qz: { i: 0, picked: null },
-  when: 'auto', count: 5, sheet: null
+  when: 'auto', count: 5, sheet: null, q: '', open: null
 };
 
 /* ───────── Metin yardımcıları (ana mockup ile aynı kurallar) ───────── */
@@ -722,6 +738,51 @@ function doneScreen() {
     </div></div>`, { round: true });
 }
 
+/* ───────── Sözlük ───────── */
+/* Türkçe harf katlama ("odunc" → "ödünç", "sakinlesmek" → "sakinleşmek"). Harf harf katlar, konumlar kaymaz. */
+function fold(s) {
+  return String(s).toLocaleLowerCase('tr').replace(/[çğıöşüâîû]/g, c => ({ ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', â: 'a', î: 'i', û: 'u' }[c]));
+}
+function search(q) {
+  const f = fold(q.trim());
+  if (!f) return [];
+  const hit = c => [c.lemma, c.gloss, ...c.alt].some(t => fold(t).includes(f));
+  return CARDS.filter(hit).sort((a, b) => (fold(b.lemma).startsWith(f) - fold(a.lemma).startsWith(f)) || a.lemma.localeCompare(b.lemma));
+}
+/* Eşleşen kısım kalın ve çizgili; sarı değil (kural 1: sarı yalnız öğrenilecek kelimede). */
+function hl(text, q) {
+  const f = fold(q.trim()), i = fold(text).indexOf(f);
+  if (!f || i < 0) return esc(text);
+  return esc(text.slice(0, i)) + `<b class="hit">${esc(text.slice(i, i + f.length))}</b>` + esc(text.slice(i + f.length));
+}
+function resultsHTML() {
+  if (!S.q.trim()) {
+    return `<div class="sh">Dene</div><div class="chips-s">${['gece', 'yatma', 'pillow', 'sakin'].map(t => `<button type="button" class="chip-s" data-act="try" data-v="${t}">${t}</button>`).join('')}</div>
+      <p class="rf" style="margin:12px 4px 0">Türkçe harfleri yazmasan da bulur: "sakinlesmek" de olur.</p>`;
+  }
+  const r = search(S.q);
+  if (!r.length) return `<p class="t-sub" style="margin:8px 4px">"${esc(S.q)}" için kelime yok. Başka bir kelime dene.</p>`;
+  const f = fold(S.q.trim());
+  /* Anlam eşleşmiyorsa eşleşen "Ayrıca" karşılığı da gösterilir (ör. tonight: bu akşam · bu gece). */
+  const meaning = c => {
+    const alt = fold(c.gloss).includes(f) ? null : c.alt.find(a => fold(a).includes(f));
+    return hl(c.gloss, S.q) + (alt ? ` · ${hl(alt, S.q)}` : '');
+  };
+  return `<div class="sh">${r.length} kelime</div><div class="group">${r.map(c => `<button type="button" class="row" data-act="open" data-id="${esc(c.lemma)}">
+      <span class="tx"><b class="rw" lang="en">${hl(c.lemma, S.q)}</b><small>${meaning(c)}</small></span>${lvl(c.level)}${ic('chevR', 'chev')}</button>`).join('')}</div>`;
+}
+function dictScreen() {
+  if (S.open) {
+    const c = CARD[S.open];
+    return app(`<div class="hdr"><button type="button" class="btn-text" style="padding:0 8px 0 0;color:var(--ink-2)" data-act="back">‹ Sözlük</button></div>
+      <div class="page"><article class="wcard swap scrolls" aria-label="${esc(c.lemma)} kartı"><div class="inner">${cardInner(c)}
+        ${c.ex.slice(1).map(x => `<div class="exrow"><div class="ex-en" lang="en">${markWord(x.en, c.lemma, '')}</div><div class="ex-tr">${esc(x.tr)}</div></div>`).join('')}</div></article></div>`, { sel: 'sozluk' });
+  }
+  return app(`<div class="hdr"><div class="ttl">Sözlük</div></div><div class="scroll">
+    <label class="sbox">${ic('search')}<span class="sr">Ara</span><input class="qin" type="search" value="${esc(S.q)}" placeholder="İngilizce ya da Türkçe ara" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
+    <div class="res">${resultsHTML()}</div></div>`, { sel: 'sozluk' });
+}
+
 /* ───────── Ayarlar ───────── */
 function seg(act, cur, items) {
   return `<div class="seg" role="group">${items.map(([v, t]) => `<button type="button" data-act="${act}" data-v="${v}" aria-pressed="${String(cur) === String(v)}">${t}</button>`).join('')}</div>`;
@@ -829,6 +890,7 @@ function screenHTML(tone) {
     case 'tekrar': return statusbar() + reviewScreen();
     case 'quiz': return statusbar() + quizScreen();
     case 'bitti': return statusbar() + doneScreen();
+    case 'sozluk': return statusbar() + dictScreen();
     case 'widget': return homeScreen(tone);
     case 'ayarlar': return statusbar() + settingsScreen();
   }
@@ -882,6 +944,14 @@ const NOTES = {
       'Yanlış şıkkın kenarı kesik çizgi, doğrunun kenarı düz: renk tek başına anlam taşımaz.',
       'Geri bildirim kutusu %12 tonlu zemin; büyük parlak alan yok.'],
     s: '<code>Theme.good</code> / <code>bad</code> gece değerleri; <code>goodTint</code> / <code>badTint</code> %12. Yanlış şık: <code>StrokeStyle(lineWidth: 2, dash: [6, 4])</code>. Cevaptan sonra <code>scrollTo(…, anchor: .bottom)</code> animasyonsuz.'
+  },
+  sozluk: {
+    t: 'Sözlük',
+    d: ['Sonuç satırları <code>surface</code> (#0D0B09) üstünde: pikseller tam kapalı değil. Kaydırırken siyah sürünmesi riskini azaltabilir (cihazda bakılmalı).',
+      'Eşleşen kısım kalın ve altı çizili, sarı değil. Sarı yalnız öğrenilecek kelimede kalır (kural 1).',
+      'Boş kutuda "Dene" örnekleri var. Türkçe harfleri yazmasan da bulur.',
+      'Bu ekranın en parlak yeri sistem klavyesidir (koyu modda gri). Arama kısa kalsın diye örnekler tek dokunuşla çalışır.'],
+    s: 'Liste: <code>.scrollContentBackground(.hidden)</code> + <code>Theme.bg</code>, satırlarda <code>.listRowBackground(Theme.surface)</code>. Klavye: <code>.scrollDismissesKeyboard(.immediately)</code>. Vurgu aralığı için <code>TextFold</code> konum eşlemesi (ana README madde 12).'
   },
   bitti: {
     t: 'Bu gece bitti (durma noktası)',
@@ -961,7 +1031,7 @@ function render() {
   renderPanel();
 }
 function caption() {
-  const t = { kilit: 'Saat 23:12. Kilitli ekran, gece duvar kâğıdı.', aod: 'Her zaman açık: sistem ekranı karartır, widget\'lar az ışıkla çizilir.', standby: 'StandBy, yatay. Karanlık odada sistem her şeyi kırmızıya boyar.', akis: 'Akış: "Sonraki" ile kartlar yavaşça değişir. Beşinci kartta tur biter.', tekrar: 'Kartın ön yüzüne ya da "Anlamı göster"e dokun, sonra bir cevap seç.', quiz: 'Bir şık seç. Yanlış bir şık seçip "Neden?" kutusunu da gör.', bitti: 'Durma noktası: gece turu burada biter.', widget: 'Koyu ana ekran. Sonraki düğmesi kelimeyi değiştirir.', ayarlar: 'Ton ve geçiş seçimi bütün sayfaya uygulanır. İpuçlarına dokun.' }[S.screen];
+  const t = { kilit: 'Saat 23:12. Kilitli ekran, gece duvar kâğıdı.', aod: 'Her zaman açık: sistem ekranı karartır, widget\'lar az ışıkla çizilir.', standby: 'StandBy, yatay. Karanlık odada sistem her şeyi kırmızıya boyar.', akis: 'Akış: "Sonraki" ile kartlar yavaşça değişir. Beşinci kartta tur biter.', tekrar: 'Kartın ön yüzüne ya da "Anlamı göster"e dokun, sonra bir cevap seç.', quiz: 'Bir şık seç. Yanlış bir şık seçip "Neden?" kutusunu da gör.', bitti: 'Durma noktası: gece turu burada biter.', sozluk: 'Ara: ör. "gece", "yatma" ya da "sakinlesmek". Bir satıra dokun.', widget: 'Koyu ana ekran. Sonraki düğmesi kelimeyi değiştirir.', ayarlar: 'Ton ve geçiş seçimi bütün sayfaya uygulanır. İpuçlarına dokun.' }[S.screen];
   return t + (S.motion === 'slow' ? ' Geçişler: yavaş solma.' : ' Geçişler: hareketsiz.') + (S.compare && S.tone !== 'mevcut' ? ' Sağdaki telefon aynı düzeni mevcut koyu tema renkleriyle çizer.' : '');
 }
 function updateSim() {
@@ -1040,6 +1110,7 @@ document.addEventListener('click', e => {
       if (v === 'akis') { S.screen = 'akis'; if (S.feed >= Math.min(S.count, FEED.length) - 1) S.feed = 0; }
       else if (v === 'tekrar') { S.screen = 'tekrar'; }
       else if (v === 'ayarlar') { S.screen = 'ayarlar'; }
+      else if (v === 'sozluk') { S.screen = 'sozluk'; S.open = null; }
       S.sheet = null; render(); break;
     case 'know': S.known.has(el.dataset.id) ? S.known.delete(el.dataset.id) : S.known.add(el.dataset.id); render(); break;
     case 'next': {
@@ -1055,6 +1126,9 @@ document.addEventListener('click', e => {
     case 'pick': if (S.qz.picked == null) { S.qz.picked = el.dataset.o; render(); } break;
     case 'qnext': swap(() => { S.qz.i = (S.qz.i + 1) % QUIZ.length; S.qz.picked = null; }); break;
     case 'wnext': swap(() => { S.word = (S.word + 1) % WIDGET_WORDS.length; }); break;
+    case 'try': S.q = v; render(); break;
+    case 'open': swap(() => { S.open = el.dataset.id; }); break;
+    case 'back': swap(() => { S.open = null; }); break;
   }
 });
 /* Tekrar'da kartın kendisine dokunmak da anlamı açar. */
@@ -1068,6 +1142,12 @@ document.addEventListener('change', e => {
 });
 document.addEventListener('input', e => {
   const el = e.target;
+  /* Arama: yalnız sonuçlar yenilenir, yazılan kutu odakta kalır; karşılaştırmadaki öteki telefon da eşlenir. */
+  if (el.classList.contains('qin')) {
+    S.q = el.value;
+    $$('#phones .res').forEach(r => { r.innerHTML = resultsHTML(); });
+    $$('#phones .qin').forEach(i => { if (i !== el) i.value = S.q; });
+  }
   if (el.dataset.act === 'bright') { S.bright = Number(el.value); updateSim(); const o = $('#brv'); if (o) o.textContent = '%' + S.bright; }
 });
 let rt;

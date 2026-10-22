@@ -16,7 +16,7 @@
 
 - **Üst çubuktaki ekranlar:**
   - sistem yüzeyleri: Kilitli ekran, Her zaman açık, StandBy;
-  - uygulama: Akış, Tekrar, Quiz, Bu gece bitti;
+  - uygulama: Akış, Tekrar, Quiz, Sözlük, Bu gece bitti;
   - Widget'lar ve Ayarlar.
 - **Sağ paneldeki kontroller:**
   - **Ton:** Kehribar (önerilen), Soluk fosfor, Mevcut koyu.
@@ -27,7 +27,7 @@
   - Ekrana özel seçenekler: saat rengi, duvar kâğıdı, StandBy kırmızı modu, widget görünümü.
   - Her ekranın tasarım notu ve Swift notu.
 - **Alttaki tablo:** bütün tokenlar. Kontrast ve "mavi uyaran" değerleri sayfada canlı hesaplanır, bu belgedeki sayılarla aynıdır.
-- **Doğrudan bağlantılar:** `#kilit`, `#aod`, `#standby`, `#akis`, `#tekrar`, `#quiz`, `#bitti`, `#widget`, `#ayarlar`.
+- **Doğrudan bağlantılar:** `#kilit`, `#aod`, `#standby`, `#akis`, `#tekrar`, `#quiz`, `#sozluk`, `#bitti`, `#widget`, `#ayarlar`.
 - **Kartlar:** `content/drafts/kisisel_v1` içinden olduğu gibi alındı. Gece konulu kelimeler seçildi: bedtime, pillow, dream, tonight, wake up, nap, sleep in, blanket, midnight, alarm, calm down, tired, quiet. "Yarın 08:30", "Hatırlatma: 20:00" gibi değerler örnektir.
 
 ## En iyi 5 fikir
@@ -60,7 +60,7 @@ Ek fikirler:
 ## Bilim: göz, gece okuma ve mavi ışık
 
 Her maddenin kaynağı yanında. Notlar:
-- "(özet)": kaynağı yalnız özetinden ya da arama sonucundan gördüm, tam metnini okumadım.
+- "(özet)": kaynağın yalnız özetini (abstract) ya da arama sonucunu okudum, tam metnini okumadım. Makale özetleri [Europe PMC](https://europepmc.org/) üzerinden kontrol edildi (22 Ekim 2026).
 - Sayıların çoğu benim aktarmam, kelimesi kelimesine alıntı değil.
 
 ### 1. Uyku saatini hangi ışık etkiler?
@@ -70,8 +70,8 @@ Her maddenin kaynağı yanında. Notlar:
   - Göz merceği süzdükten sonra tepe yaklaşık **490 nm**'ye kayar (32 yaşında bir göz için).
   - Kaynak: [Brown ve ark., PLoS Biology 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC8929548/); ölçüm sistemi [CIE S 026:2018](https://www.cie.co.at/publications/cie-system-metrology-optical-radiation-iprgc-influenced-responses-light-0).
 - Melatonini en çok baskılayan bölge kısa dalga boyları:
-  - [Brainard ve ark. 2001, J Neurosci](https://pmc.ncbi.nlm.nih.gov/articles/PMC6763155): 446–477 nm (özet).
-  - [Thapan, Arendt, Skene 2001, J Physiol](https://pmc.ncbi.nlm.nih.gov/articles/PMC2278766/): yaklaşık 457–462 nm; çubuk ve koni hücreleriyle açıklanamıyor (özet).
+  - [Brainard ve ark. 2001, J Neurosci](https://pmc.ncbi.nlm.nih.gov/articles/PMC6763155): 72 kişi, 627 gece testi, 420–600 nm. En etkili bölge 446–477 nm; bir opsin şablonuna uyuyor (R² = 0,91) (özet).
+  - [Thapan, Arendt, Skene 2001, J Physiol](https://pmc.ncbi.nlm.nih.gov/articles/PMC2278766/): 22 kişi, 424–548 nm arası altı dalga boyu. En iyi uyan eğrinin tepesi 459 nm (r² = 0,74). Çubuk ve koni hücreleri veriye uymuyor (r² < 0,1) (özet).
   - Kırmızı ve kehribar (uzun dalga) bu eğrinin dışında kalır.
 - **Uzman önerisi** ([Brown 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC8929548/)):
   - yatmadan en az 3 saat önce gözdeki ışık en çok **10 lx melanopik EDI** olmalı;
@@ -92,8 +92,8 @@ Her maddenin kaynağı yanında. Notlar:
     - Yazarlar etkileri "küçük" buluyor.
   - [Gringras ve ark. 2015, Frontiers in Public Health](https://www.frontiersin.org/articles/10.3389/fpubh.2015.00233/full): yazı gösterirken melanopik lux iPad Air'de 302, iPhone 5s'te 55, Kindle Paperwhite'ta 35. Bütün cihazların tepe ışığı 445–455 nm'de. Büyük ve parlak ekran daha çok melanopik ışık verir.
 - **Night Shift tek başına yetmeyebilir:**
-  - [Nagare, Plitnick, Figueiro 2018, Lighting Research & Technology](https://pmc.ncbi.nlm.nih.gov/articles/PMC6561503): iki Night Shift ayarı da melatonini yine anlamlı baskıladı. Parlaklık düşmeden yalnız renk değişimi "yetersiz olabilir" (özet).
-  - Duraccio ve ark. 2021, *Sleep Health* 7(4), [doi:10.1016/j.sleh.2021.03.005](https://doi.org/10.1016/j.sleh.2021.03.005): 167 genç yetişkin. Night Shift açık, kapalı ve yatmadan önce telefonsuz gruplar arasında anlamlı uyku farkı yok (özet).
+  - [Nagare, Plitnick, Figueiro, Lighting Research & Technology 51(3), 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6561503) (çevrimiçi 2018): iPad'de düşük ve yüksek renk sıcaklıklı iki Night Shift ayarı arasında melatonin baskılanması farkı yok. Yazarlara göre parlaklığı değiştirmeden yalnız tayfı değiştirmek "yetersiz olabilir" (özet).
+  - Duraccio ve ark., "Does iPhone night shift mitigate negative effects of smartphone use on sleep outcomes in emerging adults?", *Sleep Health* 7(4):478–484, 2021, [doi:10.1016/j.sleh.2021.03.005](https://doi.org/10.1016/j.sleh.2021.03.005): 167 kişi, 18–24 yaş, yatmadan önceki bir saatte yedi gece. Night Shift açık, kapalı ve telefonsuz gruplar arasında anlamlı uyku farkı yok. Gecede 6,8 saatten çok uyuyanlarda en iyi sonuç telefonsuz grupta (özet).
 - **Kehribar gözlük** ([Burkhart & Phelps 2009](https://pubmed.ncbi.nlm.nih.gov/20030543/)): uyku kalitesi kendi beyanına göre arttı. Zayıf kanıt: 20 kişi, melatonin ölçülmedi.
 
 **Tasarım sonucu:**
