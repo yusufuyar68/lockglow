@@ -260,11 +260,11 @@ struct SozlukWordLink: View {
             )
         }
         .buttonStyle(SozlukRowButtonStyle())
-        .accessibilityLabel(accessibilityLabel(state))
+        .accessibilityLabel(rowLabel(state))
         .accessibilityHint("Kartı açar")
     }
 
-    private func accessibilityLabel(_ state: LearningState) -> Text {
+    private func rowLabel(_ state: LearningState) -> Text {
         var turkish = ""
         if let gloss = word.glossTR {
             turkish += ", " + gloss
