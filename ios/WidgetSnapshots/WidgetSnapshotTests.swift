@@ -12,8 +12,9 @@ import CoreModels
 /// The views are told the rendering mode and whether the system shows their paper (the
 /// environment's own values cannot be set here), so the tinted images show the thin band line and
 /// the system text styles on a dark stand-in for the tinted background, the StandBy images the
-/// small widget without its paper on black, and the Lock Screen images the opaque grays on a dark
-/// wallpaper (darker still on the Always-On display, `-aod`).
+/// small widget without its paper on black (by day in full color, at night, `-standby-gece`, in
+/// the system styles: the system's red tint is not reproduced), and the Lock Screen images the
+/// opaque grays on a dark wallpaper (darker still on the Always-On display, `-aod`).
 /// The iPhone SE sizes are also rendered at three larger text sizes (`-xxxl`, `-ax1`, `-ax3`):
 /// the meaning must never run under the buttons or be cut (accessibility audit D5).
 @MainActor
@@ -66,6 +67,8 @@ final class WidgetSnapshotTests: XCTestCase {
     private let tinted = Look(suffix: "-renkli", colorScheme: .dark, renderingMode: .accented)
     /// StandBy by day: full color without the widget's paper.
     private let standBy = Look(suffix: "-standby", colorScheme: .dark, renderingMode: .fullColor, showsBackground: false)
+    /// StandBy at night: the system draws the widget in vibrant mode without its paper.
+    private let standByNight = Look(suffix: "-standby-gece", colorScheme: .dark, renderingMode: .vibrant, showsBackground: false)
     /// The Lock Screen: light text on a dark wallpaper.
     private let lockScreen = Look(suffix: "", colorScheme: .dark, renderingMode: .vibrant)
     /// The Always-On display: the Lock Screen dimmed.
@@ -119,26 +122,60 @@ final class WidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(WidgetText.balancedLines("misunderstanding", count: 2), ["misunderstanding"])
     }
 
-    /// The meaning shortens to its first sense (a " / " pair stays whole), then to its short
-    /// form; it is never cut and no form repeats.
+    /// The meaning shortens to the editor's short form when the card has one, else to its first
+    /// sense (a " / " pair stays whole); it is never cut and no form repeats.
     func testGlossFormsNeverCutTheMeaning() {
         XCTAssertEqual(WidgetGloss.forms(of: "aslında, gerçekte", short: nil), ["aslında, gerçekte", "aslında"])
+        XCTAssertEqual(WidgetGloss.forms(of: "aslında, gerçekte", short: " "), ["aslında, gerçekte", "aslında"])
         XCTAssertEqual(WidgetGloss.forms(of: "amca / dayı", short: nil), ["amca / dayı"])
-        XCTAssertEqual(WidgetGloss.forms(of: "aynı fikirde olmamak", short: "katılmamak"), ["aynı fikirde olmamak", "katılmamak"])
+        XCTAssertEqual(WidgetGloss.forms(of: "aynı fikirde olmamak", short: "hemfikir olmamak"), ["aynı fikirde olmamak", "hemfikir olmamak"])
         XCTAssertEqual(WidgetGloss.forms(of: "kahvaltı", short: "kahvaltı"), ["kahvaltı"])
+        // The editor's short form wins over the first sense: never the narrower "durmak", never
+        // the broken question "nakit mi".
+        XCTAssertEqual(WidgetGloss.forms(of: "durmak, durdurmak", short: "durmak/durdurmak"), ["durmak, durdurmak", "durmak/durdurmak"])
+        XCTAssertEqual(WidgetGloss.forms(of: "nakit mi, kart mı?", short: "nakit mi kart mı"), ["nakit mi, kart mı?", "nakit mi kart mı"])
+        XCTAssertEqual(WidgetGloss.forms(of: "demek, anlamına gelmek", short: "anlamına gelmek"), ["demek, anlamına gelmek", "anlamına gelmek"])
         XCTAssertEqual(WidgetGloss.firstSense(of: "durmak; durdurmak"), "durmak")
         XCTAssertEqual(WidgetGloss.firstSense(of: "x (a, b), c"), "x (a, b)")
         XCTAssertEqual(
             WidgetText.candidates(["aslında, gerçekte", "aslında"], lines: [1, 2]),
             [["aslında, gerçekte"], ["aslında"], ["aslında,", "gerçekte"]]
         )
+        // A card without a short definition: the micro one, never an empty line.
+        XCTAssertEqual(WidgetText.candidates(["", "first meal of the day"], lines: [1]), [["first meal of the day"]])
+        XCTAssertEqual(WidgetText.candidates(["", " "], lines: [1, 2]), [])
+        // Every snapshot card with a short form shows it as its second form.
+        for word in SnapshotWords.cards {
+            if let short = word.glossShortTR {
+                XCTAssertEqual(WidgetGloss.forms(of: word).last, short, word.lemma)
+            }
+        }
+    }
+
+    /// The user's own words (`WidgetWord.isUserAdded`) have no part of speech, level, English
+    /// definition or short meaning and may have no example: no layout shows an empty line or an
+    /// empty level for them (kendi_kelime.md §6). The images show the rest (`be fed up with`,
+    /// `awkward`).
+    func testUserWordsLeaveNoEmptyLines() throws {
+        let awkward = try XCTUnwrap(SnapshotWords.userAdded.first { $0.lemma == "awkward" })
+        let fedUp = try XCTUnwrap(SnapshotWords.userAdded.first { $0.lemma == "be fed up with" })
+        XCTAssertTrue(SnapshotWords.userAdded.allSatisfy { $0.isUserAdded })
+        XCTAssertFalse(SnapshotWords.cards.contains { $0.isUserAdded })
+        XCTAssertEqual(WidgetGloss.forms(of: awkward), ["garip"])
+        XCTAssertEqual(WidgetGloss.forms(of: fedUp), ["bir şeyden bıkmış olmak"])
+        XCTAssertEqual(InlineWordView.versions(of: awkward), ["awkward · garip", "awkward"])
+        XCTAssertEqual(InlineWordView.versions(of: fedUp), ["be fed up with · bir şeyden bıkmış olmak", "be fed up with"])
+        // A word with no meaning and no definition: the word alone, never "awkward · ".
+        let bare = WidgetWord(id: 1_000_002, lemma: "awkward", pos: "", level: "", defMicro: "", defShort: "", exampleEN: "")
+        XCTAssertEqual(InlineWordView.versions(of: bare), ["awkward"])
+        XCTAssertEqual(WidgetGloss.forms(of: bare), [])
     }
 
     private func looks(for family: Family) -> [Look] {
         let base: [Look]
         switch family.kind {
         case .small:
-            base = family.allLooks ? [day, night, tinted, standBy] : [day]
+            base = family.allLooks ? [day, night, tinted, standBy, standByNight] : [day]
         case .medium:
             base = family.allLooks ? [day, night, tinted] : [day]
         case .rectangular:
@@ -202,7 +239,7 @@ final class WidgetSnapshotTests: XCTestCase {
         case .small, .medium:
             if look.renderingMode == .fullColor && look.showsBackground {
                 Theme.surface
-            } else if look.renderingMode == .fullColor {
+            } else if !look.showsBackground {
                 Color.black
             } else {
                 Color(red: 0.09, green: 0.10, blue: 0.12)

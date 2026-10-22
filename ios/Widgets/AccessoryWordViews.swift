@@ -26,8 +26,9 @@ struct RectangularWordView: View {
     var body: some View {
         ViewThatFits(in: .vertical) {
             rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1])
-            // Until every long meaning has its short form (`gloss_short`): the whole meaning on
-            // two lines rather than no meaning ("kendini pek iyi / hissetmemek").
+            // A long meaning without a short form (the user's own words have none; every card's
+            // meaning over 16 characters has `gloss_short`): the whole meaning on two lines
+            // rather than no meaning ("bir şeyden / bıkmış olmak").
             rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [2])
             rows(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.semibold), lines: [1])
             rows(WidgetWordStep.homeFloor, meaning: .footnote.weight(.semibold), lines: [1, 2])
@@ -72,22 +73,28 @@ struct RectangularWordView: View {
 }
 
 /// One line of system text (the family ignores fonts), shortened step by step when it does not
-/// fit: "actually · aslında, gerçekte" → "actually · aslında" → (the short form) → "actually".
+/// fit: "actually · aslında, gerçekte" → "actually · aslında" (the shorter form) → "actually".
 /// The meaning's forms are those of the other widgets (`WidgetGloss`): never cut, a " / " pair
 /// stays whole.
+/// The family shows a single Text, so VoiceOver gets its own two elements instead (text audit
+/// #15, accessibility audit V5): the word with an English voice, then "Türkçesi: …" with the
+/// whole meaning in the device's voice; the "·" is not read.
 struct InlineWordView: View {
     let entry: WordEntry
     private var word: WidgetWord { entry.word }
 
     /// The line's versions, fullest first, the word alone last.
-    private var versions: [String] {
+    static func versions(of word: WidgetWord) -> [String] {
         let forms = WidgetGloss.forms(of: word)
-        let meanings = forms.isEmpty ? [word.defMicro] : forms
+        // Every card has a Turkish meaning; the English micro definition is only a fallback.
+        let meanings = (forms.isEmpty ? [word.defMicro] : forms).filter { meaning in
+            !meaning.trimmingCharacters(in: .whitespaces).isEmpty
+        }
         return meanings.map { "\(word.lemma) · \($0)" } + [word.lemma]
     }
 
     var body: some View {
-        let slots = WidgetFit.slots(versions)
+        let slots = WidgetFit.slots(InlineWordView.versions(of: word))
         ViewThatFits(in: .horizontal) {
             Text(verbatim: slots[0])
             Text(verbatim: slots[1])
@@ -97,5 +104,20 @@ struct InlineWordView: View {
             Text(verbatim: slots[5])
         }
         .widgetAccentable()
+        .accessibilityRepresentation {
+            spoken
+        }
+    }
+
+    /// What VoiceOver reads: two elements, so each keeps its own voice (`.combine` or one label
+    /// would read both with one voice).
+    private var spoken: some View {
+        HStack {
+            Text(verbatim: word.lemma)
+                .widgetEnglishVoice()
+            if let meaning = WidgetGloss.forms(of: word).first {
+                Text("Türkçesi: \(meaning)")
+            }
+        }
     }
 }

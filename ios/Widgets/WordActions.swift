@@ -38,7 +38,8 @@ enum WordActions {
         )
     }
 
-    /// "Know": the word joins the known set and is skipped from now on.
+    /// "Know": the word joins the known set and the widget skips it. The event tells the app,
+    /// which asks the word once 3 days later (`ProgressIngest`).
     static func know(wordID: Int, source: String) {
         guard let store = WordDataSource.makeStore() else {
             logger.error("App Group container unavailable; known not recorded")
