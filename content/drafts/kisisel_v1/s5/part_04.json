@@ -202,7 +202,7 @@
               "why": "Türkçede 'İzmir'de' (-de hâli) hem 'in' hem 'at' olabilir. Şehir ve ülke için 'in' kullanılır: live in Izmir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Live' ile 'life' (hayat) aynı aileden: hayatını geçirdiğin yerde 'live'. Tatilde birkaç gün kalırsan 'stay'."
         }
       },
       "tags": {
@@ -232,7 +232,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -327,7 +328,7 @@
               "why": "Türkçede 'sınava çalışıyorum' (-a hâli) dediğimiz için 'to' denir. İngilizcede sınav için 'for' kullanılır: study for an exam."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Student' (öğrenci) ile 'study' aynı aileden: ders çalışmak öğrencinin işi. Para kazanmak için çalışmak 'work'."
         }
       },
       "tags": {
@@ -354,7 +355,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -554,7 +557,7 @@
               "why": "Türkçede 'öğren-' ve 'öğret-' birbirine çok benzer; bu yüzden karıştırılır. Başkasına öğretmek için 'teach', kendin öğrenmek için 'learn' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Teacher' (öğretmen) kelimesinin içinde 'teach' var: öğretmek öğretmenin işi. Sen öğrenirken 'learn' dersin."
         }
       },
       "tags": {
@@ -582,7 +585,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -666,7 +671,7 @@
               "why": "Türkçede 'iyi' hem sıfat hem zarf olarak kullanılır: 'iyi konuşuyorum'. İngilizcede fiili anlatan sözcük zarf olur: 'well'."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Türkçedeki 'spiker' ile aynı kelime: 'speaker', yani konuşan kişi. 'Speak' = konuşmak."
         }
       },
       "tags": {
@@ -695,7 +700,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -788,7 +795,7 @@
               "why": "Türkçede 'öğretmenimle konuştum' denir. İngilizcede konuşulan kişiden önce 'to' (ya da 'with') gelir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Televizyondaki 'talk show' bir sohbet programıdır: 'talk' sohbet etmek. Bir dili konuşmak ise 'speak English'."
         }
       },
       "tags": {
@@ -816,7 +823,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -1006,7 +1015,7 @@
           "false_friend": null,
           "note": "'Carry' elinde ya da sırtında taşımaktır ve yön belirtmez. 'Bring' getirmek, 'take' götürmek demektir. Geçmiş zaman: carried (y harfi ied olur).",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Carry' ile 'car' (araba) aynı Latince kökten gelir: eskiden yükler arabayla taşınırdı."
         }
       },
       "tags": {
@@ -1032,7 +1041,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

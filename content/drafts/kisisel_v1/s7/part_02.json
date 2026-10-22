@@ -853,7 +853,7 @@
               "why": "Türkçede 'kitaplarla dolu' dersiniz (-la/-le), bu yüzden 'with' akla gelir. İngilizcede 'dolu' için 'full of' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Benzincide 'depoyu full yap' denir: tamamen dolu demek."
         }
       },
       "tags": {
@@ -880,7 +880,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

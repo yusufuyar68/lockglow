@@ -355,3 +355,23 @@ Küçük sorular:
     - en.lost_and_found.phr.1: "Ali left his jacket at the airport." cümlesindeki 'left' "bıraktı" diye mi anlaşılır?
     - en.overnight.adj.1: "11 p.m."
     - en.go_straight.phr.1: "Cross the road" şıkkı.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 8 ipucu önerdi. Şüpheci doğrulayıcı 0 tanesini reddetti, 0 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 8** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yok. Yazar bütün kartlarda çevirileri, Dikkat kutularını ve quiz şıklarını tek tek denedi; bariz bir hata bulmadı.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `45 kart · 45 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.suitcase.n.1 | 'Suit' takım elbise, 'case' kutu ya da kılıf demek: takım elbiseni koyup taşıdığın kutu, yani bavul. |
+| en.boarding_pass.phr.1 | 'Board' uçağa binmek demek: kapıda 'Now boarding' anonsunu duyunca biniş başlar. 'Boarding pass' bu binişin kartı. |
+| en.flight.n.1 | 'Fly' (uçmak) fiilinden gelir. İçindeki 'gh' okunmaz: 'night', 'light' gibi 'flayt' denir. |
+| en.cancel.v.1 | Latince kökü 'üstünü çapraz çizgilerle çizmek' demek: takvimdeki planının üstüne kocaman bir çarpı attığını düşün. |
+| en.unpack.v.1 | 'Un-' bir işi tersine çevirir: 'lock' kilitle, 'unlock' kilidi aç; 'pack' bavulu doldur, 'unpack' bavulu boşalt. |
+| en.double_room.phr.1 | 'Twin' ikiz demek: 'twin room' içinde ikizler gibi yan yana iki ayrı yatak var. 'Double room' içinde tek büyük yatak. |
+| en.go_straight.phr.1 | 'Straight' kelimesinde 'gh' okunmaz, 'streyt' denir. Düz saça da 'straight hair' denir: yol da o saç gibi dümdüz. |
+| en.go_past.phv.1 | Saatte 'ten past five' (beşi on geçiyor) derken kullanılan 'past' bu: 'go past the bank' bankayı geçip gitmek. |

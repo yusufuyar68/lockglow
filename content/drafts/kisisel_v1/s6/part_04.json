@@ -435,7 +435,7 @@
           "false_friend": null,
           "note": "'Close the door' kapıyı kapatmak, 'lock the door' kapıyı kilitlemek demektir; ikisi aynı şey değildir. Kilidi açmak için 'unlock', kilitli için 'locked' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Bu uygulama kelimeleri telefonunun 'lock screen' yani kilit ekranında gösterir: 'lock' = kilitlemek."
         }
       },
       "tags": {
@@ -461,7 +461,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -548,7 +549,7 @@
           "false_friend": null,
           "note": "Türkçede 'saymak' 'saygı duymak' anlamına da gelir ('Seni çok sayarım'); 'count' bu anlamda kullanılmaz. 'Count' sayı saymak ve toplamını bulmaktır. 'Count on' (güvenmek) ayrı bir kalıptır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Yılbaşı gecesi 'countdown' (geri sayım) yapılır: 10, 9, 8… 'Count' = saymak."
         }
       },
       "tags": {
@@ -576,7 +577,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -772,7 +774,7 @@
           "false_friend": null,
           "note": "'I guess' günlük konuşmada 'sanırım' ya da 'galiba' demektir ('I guess so' = Sanırım öyle). 'Guess what?' ise bir haber vermeden önce söylenir: 'Tahmin et ne oldu?'",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Guess' içindeki 'u' okunmaz; 'guest' ve 'guitar' kelimelerinde de öyle."
         }
       },
       "tags": {
@@ -799,7 +801,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

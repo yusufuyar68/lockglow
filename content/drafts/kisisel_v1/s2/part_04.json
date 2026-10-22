@@ -40,12 +40,12 @@
       "mistakes": [
         {"wrong": "It is very freezing today.", "right": "It is freezing today.", "why": "'Freezing' zaten 'çok soğuk' demektir; yanına 'very' eklemeyin. Vurgu için 'absolutely freezing' denir."}
       ],
-      "mnemonic": null
+      "mnemonic": "Buzdolabının 'freezer' bölümünü düşün: dışarısı 'freezing' ise hava orası kadar soğuk."
     }
   },
   "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "Put on your coat. It's ______ outside!", "answer": "freezing", "distractors": ["boiling", "sunny", "dry"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.sunrise.n.1",
@@ -82,12 +82,12 @@
       "false_friend": null,
       "note": "'Dawn' (şafak) güneş çıkmadan önceki aydınlıktır; 'sunrise' ise güneşin göründüğü andır. Karşıtı 'sunset' (gün batımı).",
       "mistakes": [],
-      "mnemonic": null
+      "mnemonic": "Sun + rise (yükselmek): sabah güneş ufuktan yükselir. Akşam güneş batar (set): sunset."
     }
   },
   "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "We woke up at five in the morning to see the ______ on the beach.", "answer": "sunrise", "distractors": ["sunset", "midnight", "noon"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.sunset.n.1",
@@ -340,12 +340,12 @@
       "mistakes": [
         {"wrong": "In nowadays, people use phones.", "right": "Nowadays, people use phones.", "why": "Türkçede 'günümüzde' dersiniz ('-de' eki var), ama 'nowadays' bir zarftır; 'in' almaz."}
       ],
-      "mnemonic": null
+      "mnemonic": "Now + a + days: ortadaki 'a' eskiden 'on' (-de) demekti. '-de' zaten içinde, önüne 'in' koyma."
     }
   },
   "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "My grandfather wrote letters, but ______ we send messages.", "answer": "nowadays", "distractors": ["yesterday", "tomorrow", "already"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 },
 {
   "id": "en.suddenly.adv.1",

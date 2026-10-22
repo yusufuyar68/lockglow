@@ -119,3 +119,54 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman.
 ## Editör kararları (Opus, 2026-10-20)
 
 - `en.key.n.1`, `en.question.n.1`, `en.mistake.n.1`, `en.window.n.1`: ilk örnek başka bir kartın örneğiyle aynıydı (find, ask, make a mistake, open). Yeni kısa örnekler yazıldı (`example_dedup_by_editor_agent`).
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 26 ipucu önerdi. Şüpheci doğrulayıcı 5 tanesini reddetti, 3 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 21** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yazarın 3 önerisinden doğrulayıcının onayladığı 3 tanesi uygulandı (çeviri 1, Dikkat 2). Düzeltilen kartlara `critic_edited` eklendi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `59 kart · 59 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.husband.n.1 | 'Husband' içinde 'hus' var: eski İskandinav dilinde 'hús' ev (house) demek. İlk anlamı 'evin sahibi' idi. |
+| en.address.n.1 | 'Address' kelimesi 'add' (eklemek) ile başlar: Türkçe 'adres' sözcüğüne bir 'd' ve bir 's' ekle. |
+| en.glass.n.1 | Bardak camdan yapılır, bu yüzden ikisi de 'glass'. İki camlı gözlüğe de 'glasses' denir. |
+| en.umbrella.n.1 | Latincede 'umbra' gölge demektir: 'umbrella' seni gölgede tutar. |
+| en.ticket.n.1 | 'Ticket' ile Türkçedeki 'etiket' aynı Fransızca kelimeden gelir: ikisi de üstünde yazı olan küçük kâğıt. |
+| en.news.n.1 | 'News' kelimesi 'new' (yeni) kelimesinden gelir: haber, yeni olan şeydir. |
+| en.information.n.1 | Türkçedeki 'enformasyon' ile aynı kelime: enformasyon masası, bilgi aldığın yerdir. |
+| en.mistake.n.1 | 'Mis' yanlış, 'take' almak demek: bir şeyi yanlış alırsan hata yaparsın. |
+| en.half.n.1 | 'Half' kelimesinde 'l' okunmaz: 'haf' dersin. Tıpkı 'walk' ve 'talk' kelimelerindeki gibi. |
+| en.window.n.1 | 'Window' eski İskandinav dilinde 'rüzgâr gözü' demekti: evin, içeri rüzgâr giren gözü. |
+| en.meat.n.1 | 'Meat' içinde 'eat' (yemek) var: m + eat. 'Meet' (tanışmak) aynı okunur ama iki 'e' ile yazılır. |
+| en.chicken.n.1 | 'Chicken' (tavuk) ile 'kitchen' (mutfak) çok karışır. Tavuk, 'chick' (civciv) ile başlar. |
+| en.fruit.n.1 | 'Fruit' tek hece okunur: 'fruut', 'i' sessizdir. Meyve şekeri 'fruktoz' da aynı Latince kökten gelir. |
+| en.vegetable.n.1 | 'Vegetable' üç hece okunur: 'VEC-tı-bıl', ikinci 'e' okunmaz. Anlamı için Türkçedeki 'vejetaryen' sözcüğünü düşün. |
+| en.meal.n.1 | 'Meal' eskiden 'belli bir zaman' demekti: öğün, belli saatte yenen yemektir. 'Meat' (et) ile karıştırma. |
+| en.holiday.n.1 | 'Holiday' = 'holy' (kutsal) + 'day' (gün). İlk anlamı 'kutsal gün', yani bayram. |
+| en.library.n.1 | 'Library' 'LAY-bre-ri' diye okunur, 'li' değil. Latincede 'liber' kitap demektir: kitapların yeri. |
+| en.pharmacy.n.1 | 'Ph' harfleri 'f' okunur: 'FAR-mı-si'. İlaç bilimi 'farmakoloji' de aynı Yunanca kökten gelir. |
+| en.airport.n.1 | 'Air' hava, 'port' liman demek: 'airport' tıpkı Türkçedeki gibi hava + liman. |
+| en.hotel.n.1 | Türkçedeki 'otel' ile aynı kelime, ama İngilizcede baştaki 'h' okunur: 'ho-TEL'. |
+| en.tooth.n.1 | 'Tooth' çoğulda 'teeth' olur, tıpkı 'foot' (ayak) ve 'feet' gibi: 'oo' gider, 'ee' gelir. |
+
+### Düzeltmeler
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| en.umbrella.n.1 | examples[2].tr | İstasyona kadar şemsiyeni paylaşabilir miyim? → İstasyona kadar şemsiyenin altına girebilir miyim? | 'Şemsiyeni paylaşmak' İngilizceden birebir çeviri; Türkçede 'şemsiyenin altına girmek' ya da 'şemsiyene girmek' denir. |
+| en.dinner.n.1 | l1.tr.mistakes[0] | ✗ I will do dinner tonight. ✓ I will make dinner tonight. (Türkçede 'akşam yemeği yapmak' dersiniz ve 'yapmak' çoğu zaman 'do' sanılır. İngilizcede yemek hazırlamak için 'make' ya da 'cook' kullanılır.) → (silindi) | 'I'll do dinner tonight' günlük İngilizcede doğru ve yaygın ('do' = yemeği hazırlamak; Cambridge: 'Who's doing the dinner?'). Gerçek hata değil. |
+| en.beach.n.1 | l1.tr.mistakes[0] | ✗ We go to the sea every weekend in summer. ✓ We go to the beach every weekend in summer. (Türkçede 'denize gitmek' dersiniz. İngilizcede 'go to the sea' mümkündür ama denize doğru gitmek gibi duyulur; yüzmek ve güneşlenmek için doğal söyleyiş 'go to the beach' olur.) → (silindi) | 'Yanlış' cümle doğru İngilizce (İngiliz İngilizcesinde 'go to the sea/seaside' yaygın); maddenin kendisi de 'mümkündür' diyor. Gerçek hata değil. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `people`: A1 düzeyinde çok kolay bir kelime; 'popüler' bağı köken olarak doğru ama hatırlamaya yardım etmiyor.
+- `key`: Kelime çok kolay ve klavye tuşu bilgisi zaten notta var.
+- `room`: Oda/yer ikiliğini notta zaten anlatıyor; yeni bir kanca eklemiyor.
+- `kitchen`: Köken doğru ama 'kitchen' ile 'cook' arasındaki bağ öğrencinin gözünde ya da kulağında görünmüyor; zorlama.
+- `vacation`: Bağ, A2 öğrencisinin bilmediği 'vacant' kelimesine ve uçak tuvaleti tabelasına dayanıyor; zorlama.

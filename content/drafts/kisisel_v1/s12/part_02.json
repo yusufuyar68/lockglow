@@ -356,7 +356,7 @@
           "false_friend": null,
           "note": "Türkçede 'başım ağrıyor' (fiil) dersiniz; İngilizcede isim kullanılır ve 'a' unutulmaz: I have a headache. Ağrı yeni başlıyorsa 'I'm getting a headache' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Head' baş, 'ache' ağrı demek. 'Ache' kelimesinde 'ch' harfleri 'k' gibi okunur: 'hed-eyk'."
         }
       },
       "tags": {
@@ -382,7 +382,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -649,7 +650,7 @@
           "false_friend": null,
           "note": "Türkçede 'burnum akıyor' dersiniz; İngilizcede 'I have a runny nose' ya da 'My nose is running' denir. 'Run' = akmak, 'nose' = burun.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Burnun koşmuyor, akıyor! 'Run' sıvılar için 'akmak' demek: musluktan akan suya da 'running water' denir."
         }
       },
       "tags": {
@@ -675,7 +676,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -751,7 +753,7 @@
           "false_friend": null,
           "note": "Türkçede 'mide' ve 'karın' ayrıdır; İngilizcede 'stomachache' ikisini de karşılar. Samimi dilde, özellikle çocuklarla, 'tummy ache' de denir. İngiltere'de genellikle ayrı yazılır: stomach ache.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Stomach' ve 'ache' kelimelerinin ikisinde de 'ch' harfleri 'k' gibi okunur: 'stamık-eyk'."
         }
       },
       "tags": {
@@ -777,7 +779,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

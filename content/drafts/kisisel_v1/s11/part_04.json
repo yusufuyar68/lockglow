@@ -288,7 +288,7 @@
           "false_friend": null,
           "note": "Yol tarifinde çok kullanılır. 'Go straight on' ve 'go straight ahead' da söylenir. Dönmeden devam etmek demektir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Straight' kelimesinde 'gh' okunmaz, 'streyt' denir. Düz saça da 'straight hair' denir: yol da o saç gibi dümdüz."
         }
       },
       "tags": {
@@ -315,7 +315,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "verifier_edited"
+          "verifier_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -910,7 +911,7 @@
           "false_friend": null,
           "note": "'Geçmek' deyince 'pass' akla gelir; ama 'go' fiilinden sonra 'past' kullanılır: go past the bank. Tek fiil istersen 'pass the bank' da denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Saatte 'ten past five' (beşi on geçiyor) derken kullanılan 'past' bu: 'go past the bank' bankayı geçip gitmek."
         }
       },
       "tags": {
@@ -939,7 +940,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

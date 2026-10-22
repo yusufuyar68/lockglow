@@ -411,7 +411,7 @@
           "false_friend": null,
           "note": "Türkçede 'eşim' hem kadın hem erkek için söylenir; İngilizcede erkek eş 'husband', kadın eş 'wife' olur. Resmî dilde cinsiyetsiz 'spouse' kullanılır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Husband' içinde 'hus' var: eski İskandinav dilinde 'hús' ev (house) demek. İlk anlamı 'evin sahibi' idi."
         }
       },
       "tags": {
@@ -436,7 +436,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -830,7 +832,7 @@
               "why": "Türkçede 'adres' tek d ve tek s ile yazılır. İngilizcede 'address' iki d ve iki s ister; Türkçe yazıma göre yazınca harf eksik kalır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Address' kelimesi 'add' (eklemek) ile başlar: Türkçe 'adres' sözcüğüne bir 'd' ve bir 's' ekle."
         }
       },
       "tags": {
@@ -856,7 +858,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

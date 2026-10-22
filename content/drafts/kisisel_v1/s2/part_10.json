@@ -167,9 +167,7 @@
       "equivalence": "full",
       "false_friend": null,
       "note": "'Meanwhile' genelde cümle başında ve virgülle kullanılır. Konu değiştirirken söylenen 'bu arada…' ise İngilizcede 'by the way' olur.",
-      "mistakes": [
-        {"wrong": "In the meanwhile, we can talk.", "right": "In the meantime, we can talk. / Meanwhile, we can talk.", "why": "Doğru kalıplar 'in the meantime' veya sadece 'meanwhile'dır; 'in the meanwhile' modern İngilizcede doğal değildir."}
-      ],
+      "mistakes": [],
       "mnemonic": null
     }
   },
@@ -409,7 +407,7 @@
   },
   "grammar": null,
   "examples": [
-    {"en": "We have a four-hour layover in Frankfurt.", "tr": "Frankfurt'ta dört saatlik aktarma bekleyeceğiz.", "register": "neutral", "focus": "layover"},
+    {"en": "We have a four-hour layover in Frankfurt.", "tr": "Frankfurt'ta dört saatlik bir aktarmamız var.", "register": "neutral", "focus": "layover"},
     {"en": "It's a long layover, so we will have lunch at the airport.", "tr": "Aktarma bekleme süresi uzun, o yüzden öğle yemeğini havalimanında yiyeceğiz.", "register": "neutral", "focus": "layover"},
     {"en": "I prefer a short layover because I get tired.", "tr": "Yorulduğum için kısa aktarma süresini tercih ederim.", "register": "neutral", "focus": "layover"}
   ],
@@ -431,7 +429,7 @@
   },
   "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
   "quiz": {"cloze": "Our flight to New York has a three-hour ______ in Istanbul.", "answer": "layover", "distractors": ["souvenir", "passport", "luggage"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
 }
 ]
 }

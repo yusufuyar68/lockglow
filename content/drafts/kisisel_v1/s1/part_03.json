@@ -463,7 +463,7 @@
               "why": "'Apartment' tek bir dairedir. Birçok daire içeren bina 'apartment building' (ya da block of flats) olur."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Apartment' apartman değil, tek bir daire! Bütün bina 'apartment building'."
         }
       },
       "tags": {
@@ -488,7 +488,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -557,7 +559,7 @@
           "false_friend": null,
           "note": "'Kettle' yalnızca su ısıtır; çay ayrı bir kapta (teapot) demlenir. Bu yüzden Türk çaydanlığı tam olarak 'kettle' değildir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Türkiye'de de mutfakta 'kettle' denir: suyu hızla kaynatan elektrikli ısıtıcı."
         }
       },
       "tags": {
@@ -585,7 +587,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-11",
         "model": "claude-sonnet (in-session subagent)",

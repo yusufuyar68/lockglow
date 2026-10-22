@@ -65,7 +65,7 @@
           "false_friend": null,
           "note": "Konuşmada ve mesajlarda yeni bir konu açar. Mesajlarda kısaca 'btw' yazılır. Türkçedeki 'bu arada' bazen 'meanwhile' anlamında da kullanılır; o zaman İngilizcesi farklıdır.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "Kelimesi kelimesine 'yol kenarında': sohbet yolunda ilerlerken aklına gelen yan bir şeyi eklersin."
         }
       },
       "tags": {
@@ -92,7 +92,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -156,7 +157,7 @@
           "false_friend": null,
           "note": "'Boş ver' ve 'neyse' çoğu zaman bu işi görür. Biri özür dilediğinde 'önemli değil' demek de 'never mind' ile anlatılabilir. Soru sorup vazgeçerken de 'never mind' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Mind' burada 'kafaya takmak' demek ('Do you mind?' gibi): never mind = hiç kafana takma, boş ver."
         }
       },
       "tags": {
@@ -182,7 +183,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -442,7 +444,7 @@
               "why": "Türkçede 'havaya bağlı' derken -a eki yeter. İngilizcede ise ek yerine 'on' gerekir: depends on."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Depend', 'pandantif' ile aynı 'asılı durmak' kökünden: cevap bir şeye asılıdır, o yüzden 'depends on' denir."
         }
       },
       "tags": {
@@ -468,7 +470,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -740,7 +743,7 @@
               "why": "Türkçede ikisi de 'zamanında' olduğu için 'in time' denir. Saate ve plana uymak için 'on time' kullanılır; 'in time' yetişmek içindir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'On' noktanın üstü gibi: tren tam 8.15'te, saati saatine gelir. 'In time' = süre bitmeden içeri yetişmek."
         }
       },
       "tags": {
@@ -768,7 +771,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -938,7 +942,7 @@
           "false_friend": null,
           "note": "Sayıdan önce 'en az' demektir. Zıttı 'at most' = 'en fazla'. 'At last' (sonunda) ile sesi çok benzer; yazarken ve dinlerken dikkat et.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Least' şu sıranın sonu: little, less, least (az, daha az, en az). 'At last' ise 'son' (last) demek."
         }
       },
       "tags": {
@@ -964,7 +968,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

@@ -301,7 +301,7 @@
           "false_friend": null,
           "note": "'Yemek yapmak' İngilizcede de 'cook' olur. Yemek yapan kişiye de 'cook' denir: 'She is a good cook.' 'Cooker' ise ocak demektir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Cook' hem pişirmek hem aşçı demek. '-er' ekleyince insan değil alet olur: 'cooker' = ocak!"
         }
       },
       "tags": {
@@ -329,7 +329,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -547,7 +548,7 @@
               "why": "Türkçedeki '-la/-le' eki ('arabayla') 'with' diye çevrilir. İngilizcede araç için 'by car' denir ya da kısaca 'drive' kullanılır."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Direksiyon başındaysan 'drive'. Bisiklete ya da ata bacakların iki yanda binersen 'ride'."
         }
       },
       "tags": {
@@ -576,7 +577,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -788,7 +790,7 @@
               "why": "Türkçede fiil çekimi hep düzenlidir; 'choose' ise düzensizdir: choose - chose - chosen. 'Choosed' diye bir şekil yoktur."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Choose' içindeki çift 'oo', 'food' ve 'school' gibi uzun 'u' okunur. Tek 'o' olan 'chose' geçmiştir."
         }
       },
       "tags": {
@@ -816,7 +818,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -907,7 +910,7 @@
               "why": "Türkçede 'kontrol etmek' dersiniz ve İngilizce 'control' akla gelir. Ama 'control' yönetmek demektir; bakıp doğru mu diye görmek 'check' olur."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Havalimanında 'check-in' yaparken biletini ve pasaportunu kontrol ederler: 'check' = kontrol etmek."
         }
       },
       "tags": {
@@ -937,7 +940,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -1146,7 +1150,7 @@
               "why": "Türkçede 'çok eğlendik' nesnesizdir. İngilizcede 'enjoy' bir nesne ister; kendimiz için 'ourselves' gelir. Kısaca 'We had a great time' da denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Enjoy' içinde 'joy' (neşe, sevinç) saklı: bir şeyden keyif alınca içine neşe dolar."
         }
       },
       "tags": {
@@ -1173,7 +1177,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "distractors_diversified"
+          "distractors_diversified",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

@@ -165,3 +165,45 @@ Alan adları kartın JSON yoludur. `l1.tr` = Türkçe katman.
 - Zarf sorularında zarflar birbirinin yerine geçebildiği için çeldiriciler başka işlevden zarflar (here, away, ago, tomorrow, far...) veya cümleye açıkça uymayan sözcüklerle değiştirildi; her yeni şık boşluğa konup tek tek okundu; o cümlede doğru olabilecek sözcükler (ör. `again` sorusunda `slowly`/`tomorrow`, `anyway` sorusunda `there`/`alone`, `maybe` sorusunda `perhaps`/`tomorrow`) kullanılmadı.
 - `free.adj.1` (bedava) ve `free.adj.2` (müsait) sorularında diğer anlama gelen bir çeldirici yok (`busy`, `available`, `cheap` kullanılmadı).
 - Doğrulayıcı: `python -m vocabpipe.validate --strict` → 0 hata · 0 uyarı.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 19 ipucu önerdi. Şüpheci doğrulayıcı 4 tanesini reddetti, 3 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 15** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yazarın 1 önerisinden doğrulayıcının onayladığı 1 tanesi uygulandı (Dikkat 1). Düzeltilen kartlara `critic_edited` eklendi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `59 kart · 59 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.late.adj.1 | Kısa kelime, kısa karşılık: 'late' = geç. Uzun kelime, uzun karşılık: 'lately' = son zamanlarda. |
+| en.busy.adj.1 | 'Busy' yazılır ama 'bizi' diye okunur: 'Bizi şimdi arama, meşgulüz!' |
+| en.slow.adj.1 | Türkçede de yavaş şarkıya 'slow' denir: düğünde 'slow' çalınca çiftler yavaş dans eder. |
+| en.full.adj.1 | Benzincide 'depoyu full yap' denir: tamamen dolu demek. |
+| en.safe.adj.1 | Bankadaki çelik kasaya da 'safe' denir: içindeki para orada güvende. |
+| en.wrong.adj.1 | 'Wrong' kelimesinde 'w' okunmaz: rong. 'Write' (yazmak) kelimesinde de 'w' okunmaz. |
+| en.careful.adj.1 | Care (özen) + full (dolu) = özen dolu, yani dikkatli. Yazarken sonda tek 'l' olur. |
+| en.alone.adj.1 | 'Alone' eskiden 'all one' idi: bütünüyle tek, yani tek başına. |
+| en.enough.det.1 | 'Enough' sonundaki 'gh' 'f' diye okunur: inaf. 'Laugh' (gülmek) kelimesinde de öyle. |
+| en.already.adv.1 | 'Already' = 'all ready': her şey hazır, yani iş çoktan bitmiş. Yazarken tek 'l' var. |
+| en.almost.adv.1 | 'Almost' = 'all' + 'most': hemen hemen hepsi, yani neredeyse. |
+| en.never.adv.1 | 'Never' = eski 'ne' (değil) + 'ever' (hiç): içinde 'değil' zaten var, o yüzden yanına 'do not' eklenmez. |
+| en.too.adv.1 | 'Too' kelimesinde fazladan bir 'o' var: 'too' gereğinden fazla demek. 'To' tek 'o' ile yazılır. |
+| en.only.adv.1 | 'Only' eskiden 'one' + '-ly' gibiydi: tek bir tane, yalnızca o. |
+| en.fast.adj.1 | Türkçede de 'fast food' denir: çabuk hazırlanan yemek. 'Fast' = hızlı. |
+
+### Düzeltmeler
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| en.young.adj.1 | l1.tr.mistakes[0].why | Türkçede 'küçük kardeşim' dersiniz; 'küçük' hem 'small' hem 'young' demektir. Yaşça küçük için 'young / younger / little brother' denir; 'small' boyu anlatır. → Türkçede 'küçük kardeşim' dersiniz; 'küçük' hem 'small' hem 'young' demektir. Yaşça küçük kardeş için 'younger brother' ya da 'little brother' denir; 'small' boyu anlatır. | 'my young brother' doğal değil; yaşça küçük kardeş için younger/little brother denir. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `free`: 'Duty free' vergisiz demek, 'bedava' değil; üstelik 'free' zaten çok bilinen kolay bir kelime.
+- `loud`: Öğrenci 'loudspeaker' kelimesini bilmiyor, kanca zayıf; ikinci cümle Dikkat kutusunu tekrar ediyor.
+- `still`: Öğrencinin önce 'stand still' anlamını bilmesi gerekiyor ve 'iş yerinden' ifadesi işyeri gibi okunup kafa karıştırıyor.
+- `sometimes`: 's' kısmı notu ve Dikkat kutusunu tekrar ediyor; 'times = kereler' okuması kartın kökenindeki zarf eki -s ile de çelişiyor.

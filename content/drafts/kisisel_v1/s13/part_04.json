@@ -165,7 +165,7 @@
           "false_friend": null,
           "note": "Burada 'mean' yapmayı planlamak, kastetmek demektir. Fiil söylenmeden kısa cevap olarak da kullanılır: 'I'm sorry. I didn't mean to.' Bilerek yapılan şey için 'on purpose' denir: I did it on purpose.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'What do you mean?' (Ne demek istiyorsun?) sorusundaki 'mean' ile aynı: istemek, niyet etmek. Yani 'bunu istemedim, niyetim bu değildi'."
         }
       },
       "tags": {
@@ -191,7 +191,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

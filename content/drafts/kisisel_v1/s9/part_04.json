@@ -272,7 +272,7 @@
               "why": "Türkçede 'pencereden baktı' (çıkma hâli, -den) dersiniz, bu yüzden 'from' denir. İngilizcede 'look out of the window' (ya da 'look out the window') denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Window' eski İskandinav dilinde 'rüzgâr gözü' demekti: evin, içeri rüzgâr giren gözü."
         }
       },
       "tags": {
@@ -299,7 +299,8 @@
         "status": "draft",
         "qa_flags": [
           "distractors_diversified",
-          "example_dedup_by_editor_agent"
+          "example_dedup_by_editor_agent",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -577,7 +578,7 @@
           "false_friend": null,
           "note": "'Meat' sayılamaz: 'meats' denmez. Balık 'fish' olarak ayrı sayılır, 'meat' içine girmez. Sığır eti 'beef', kuzu eti 'lamb', koyun eti 'mutton' olur.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Meat' içinde 'eat' (yemek) var: m + eat. 'Meet' (tanışmak) aynı okunur ama iki 'e' ile yazılır."
         }
       },
       "tags": {
@@ -605,7 +606,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -678,7 +680,7 @@
               "why": "Türkçede sayıdan sonra çoğul eki gelmez ('iki tavuk'). Hayvan olan 'chicken' sayılabilir olduğu için İngilizcede 'two chickens' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Chicken' (tavuk) ile 'kitchen' (mutfak) çok karışır. Tavuk, 'chick' (civciv) ile başlar."
         }
       },
       "tags": {
@@ -704,7 +706,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -786,7 +790,7 @@
               "why": "Türkçede 'meyveleri severim' diyebilirsiniz, bu yüzden 'fruits' denir. İngilizcede genel anlamda 'fruit' kullanılır; 'fruits' yalnızca farklı meyve türleri için söylenir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Fruit' tek hece okunur: 'fruut', 'i' sessizdir. Meyve şekeri 'fruktoz' da aynı Latince kökten gelir."
         }
       },
       "tags": {
@@ -814,7 +818,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -890,7 +895,7 @@
               "why": "Türkçede 'sebze severim' dersiniz, çoğul eki yoktur. İngilizcede 'vegetable' sayılabilirdir; genel olarak konuşurken 'vegetables' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Vegetable' üç hece okunur: 'VEC-tı-bıl', ikinci 'e' okunmaz. Anlamı için Türkçedeki 'vejetaryen' sözcüğünü düşün."
         }
       },
       "tags": {
@@ -915,7 +920,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"
@@ -995,7 +1002,7 @@
               "why": "Türkçede 'yemek' hem tek bir öğünü hem yiyecekleri anlatır ('Türk yemekleri'). İngilizcede 'meal' bir öğündür; yiyecekler için 'food' denir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "'Meal' eskiden 'belli bir zaman' demekti: öğün, belli saatte yenen yemektir. 'Meat' (et) ile karıştırma."
         }
       },
       "tags": {
@@ -1021,7 +1028,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "mnemonic_added"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
         "source": "kisisel_v1"

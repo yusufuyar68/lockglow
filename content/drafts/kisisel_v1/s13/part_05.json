@@ -71,7 +71,7 @@
               "why": "Türkçede 'ben de' hem olumlu hem olumsuz cümleye uyar, bu yüzden 'me too' denir. İngilizcede olumsuz cümleye 'me neither' ile cevap verilir; 'me too' olumlu cümleler içindir."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Birçok olumsuz söz 'n' ile başlar: 'no', 'not', 'never'. Olumsuz bir cümleye 'ben de' derken de 'n' ile: 'Me neither'."
         }
       },
       "tags": {
@@ -97,7 +97,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

@@ -200,7 +200,7 @@
               "why": "Türkçede 'arkadaş edinmek' tekil söylenir ('arkadaş'). İngilizcede ya çoğul 'make friends' ya da 'make a friend' dersin; 'make friend' olmaz."
             }
           ],
-          "mnemonic": null
+          "mnemonic": "Arkadaşlık iki kişiyle olur, el sıkışmak gibi: 'make friends' ve 'shake hands' hep çoğul söylenir."
         }
       },
       "tags": {
@@ -227,7 +227,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",
@@ -719,7 +720,7 @@
           "false_friend": null,
           "note": "Biri teşekkür ettiğinde ya da özür dilediğinde söylenen gayriresmî bir cevaptır; arkadaşlarla ve günlük konuşmada kullanılır. Daha resmî ortamda teşekküre 'You're welcome', özre 'That's all right' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Worry' endişe, dert demek: 'No worries' kelimesi kelimesine 'dert yok', yani 'dert etme, sorun değil'."
         }
       },
       "tags": {
@@ -745,7 +746,8 @@
       "meta": {
         "status": "draft",
         "qa_flags": [
-          "critic_edited"
+          "critic_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

@@ -112,3 +112,55 @@ Editör için işaretler (değişmeyen eski çeldiriciler):
 - `get_on`: çeldirici `get up before it leaves`; doğal değil ama dilbilgisi olarak mümkün. Bırakıldı.
 - `work_out` (1): çeldirici `sit down for an hour`; "spor salonuna gidip oturmak" mümkün ama tuhaf. Bırakıldı.
 - `warm_up`: çeldiriciler `take out` / `put away the soup in the microwave`; dilbilgisi olarak mümkün, cümleye uymuyor. Bırakıldı.
+
+## Hafıza ipuçları ve denetim (2026-10-22)
+
+- **Hafıza ipucu:** yazar ajan 17 ipucu önerdi. Şüpheci doğrulayıcı 2 tanesini reddetti, 1 tanesini küçük düzeltmeyle kabul etti. **Eklenen: 15** (`meta.qa_flags`: `mnemonic_added`).
+- **Düzeltme:** yazarın 5 önerisinden doğrulayıcının onayladığı 5 tanesi uygulandı (çeviri 1, Dikkat 2, mevcut ipucu 1, quiz 1). Düzeltilen kartlara `critic_edited` eklendi.
+- Yalnızca A1/A2 kartlarına ipucu eklendi. `id`, `lemma`, anlam, `gloss`, `def` ve IPA değişmedi.
+- Doğrulayıcı: `100 kart · 100 şemadan geçti · 0 hata · 0 uyarı`
+
+### Eklenen hafıza ipuçları
+
+| Kart | İpucu |
+|---|---|
+| en.turn_off.phv.1 | Cihazlardaki 'ON/OFF' düğmesini düşün: düğmeyi çevirip (turn) 'off' konumuna getirirsin, cihaz kapanır. |
+| en.take_off.phv.1 | Giyerken giysi bedeninin üstüne (on) gelir, çıkarırken üstünden ayrılır (off): 'put on' giy, 'take off' çıkar. |
+| en.stand_up.phv.1 | 'Stand' ayakta durmak demek: 'stand up' ile ayaklarının üstüne kalkarsın. Sabah yataktan kalkmak ise 'get up'. |
+| en.look_for.phv.1 | 'For' için demek: bir şeyi bulmak için (for) bakınırsın, yani ararsın. Yalnızca gözle bakmak 'look at'. |
+| en.look_after.phv.1 | Parkta çocuğunun arkasından (after) yürüyüp gözünü ondan ayırmayan bir anne düşün: 'look after' göz kulak olmaktır. |
+| en.find_out.phv.1 | 'Find' bulmak, 'out' dışarı: saklı bir bilgiyi bulup ortaya çıkarırsın, yani öğrenirsin. |
+| en.get_out.phv.1 | Arabanın içine (in) girip binersin, içinden dışarı (out) çıkıp inersin. Otobüsten ise 'get off' ile inilir. |
+| en.get_off.phv.1 | Otobüse basamaktan üstüne (on) çıkıp binersin, üstünden ayrılıp (off) inersin. Arabadan ise 'get out'. |
+| en.hold_on.phv.1 | 'Hold' tutmak demek: telefonda hattı tutup kapatmadan beklersin. Telefonda 'Hold the line' (hatta kalın) da denir. |
+| en.run_out_of.phv.1 | Kum saatini düşün: kum akar (run), dışarı (out) çıkar ve sonunda hiç kalmaz. 'We ran out of time' de böyle. |
+| en.put_away.phv.1 | İkisinde de 'away' var ama 'put' koymak, 'throw' fırlatmak: 'put away' yerine kaldır, 'throw away' çöpe at. |
+| en.log_in.phv.1 | 'Log' kayıt defteri demek (gemilerin seyir defterine 'logbook' denir): giriş yapınca adın sisteme kaydedilir ve içeri (in) girersin. |
+| en.sign_up.phv.1 | 'Sign' imzalamak demek: listeye adını yazıp yeni kayıt olursun. Hesabın zaten varsa 'log in' ile girersin. |
+| en.write_down.phv.1 | Türkçede de 'kâğıda dökmek' deriz: duyduğun bilgiyi kâğıda aşağı (down) döker gibi yazarsın. |
+| en.work_out.phv.1 | 'Work' çalışmak demek: Türkçedeki 'kas çalıştırmak' gibi, spor salonunda bedenini çalıştırırsın. |
+
+### Düzeltmeler
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| en.look_around.phv.1 | examples[2].tr | Odanın etrafına bakındı ama kimse yoktu. → Odaya göz gezdirdi ama kimse yoktu. | 'Odanın etrafına bakınmak' odanın dışını dolaşmak gibi duyuluyor, doğal değil. 'Looked around the room' = odaya göz gezdirdi (karttaki alt: göz gezdirmek). |
+| en.get_up.phv.1 | l1.tr.mistakes[1].why | 'Get up' kişinin kendi kalkmasıdır. Başkasını kaldırmak (uyandırmak) için 'wake sb up' denir. → 'Get up' tek başına kişinin kendi kalkmasıdır. Başkasını kaldırırken kişi araya girer: 'wake my kids up' ya da 'get my kids up'. | 'Get sb up' (birini yataktan kaldırmak) doğru ve yaygın İngilizce; eski açıklama bunu yok sayıp başkası için yalnızca 'wake sb up' olur diyordu. Hata cümlesi ve doğru cümle aynı kalıyor. |
+| en.log_out.phv.1 | l1.tr.mistakes[0] | ✗ I logged out from the app. ✓ I logged out of the app. (Türkçedeki '-den' eki burada 'from' değil 'of' ile gelir: log out of.) → (silindi) | 'Log out from' yaygın ve kabul edilebilir İngilizce (uygulama ve site arayüzlerinde de geçer); 'log out of' daha sık ama 'from' hata değil. |
+| en.calm_down.phv.1 | quiz.cloze | He is very angry. Please ______ and talk slowly. → You are very angry. Please ______ and talk slowly. | Cümle kızgın kişiden 'he' diye söz edip sonra karşıdakine 'Please calm down' diyor; kime söylendiği belli değil. Özne 'you' olunca tek doğru cevap net (cheer up/hurry up/wake up yine yanlış). |
+| en.carry_on.phv.1 | l1.tr.mnemonic | Carry = taşımak, on = üzerinde: yükü taşımaya devam edersin. → Carry = taşımak, on = devam (go on, keep on gibi): yükü bırakmadan taşımaya devam edersin. | Burada 'on' üzerinde değil, devam anlamında (go on, keep on). 'Üzerinde' parçacığın işlevini yanlış anlatıyor. |
+
+### Atılan ipucu önerileri
+
+Zorlama, doğruluğu şüpheli ya da kartta zaten söylenen öneriler atıldı:
+
+- `pick up`: 'Up = yukarı, yukarı kaldırırsın' gloss'taki 'kaldırmak' ile Dikkat[0]'ı tekrar ediyor; yeni kanca yok.
+- `take out`: Gloss 'dışarı çıkarmak' ve notu (take off ayrımı) tekrar ediyor; yeni kanca eklemiyor.
+
+### Anadili Türkçe birinin bakması gerekenler
+
+- en.run_out_of.phv.1 Dikkat[0]: 'The sugar is finished.' İngiliz İngilizcesinde gündelik konuşmada kabul edilebilir olabilir ('The milk's finished'); dokunulmadı.
+- en.put_off.phv.1 Dikkat[0]: 'Put off the TV' hata sayılmış; İngiliz İngilizcesinde 'put the light/TV off' gündelik olarak kullanılır. Madde 'put off = ertelemek' karışıklığı için yine de yararlı; dokunulmadı.
+- en.sort_out.phv.1 Dikkat[0]: 'I sorted the problem.' İngiliz İngilizcesinde gayriresmî 'sort' (= sort out) kullanımı var ('I'll sort it'); dokunulmadı.
+- en.log_out.phv.1 Dikkat[0] silindi: 'log out from' kabul edilebilir sayıldı; 'of' daha standart. Anadil/İngilizce editörü isterse maddeyi yumuşatılmış haliyle geri koyabilir.
+- en.get_up.phv.1 Dikkat[1]: yeni açıklama 'get my kids up' da doğru diyor; 'right' cümlesi 'wake' ile kaldı, tutarlı ama bakılabilir.

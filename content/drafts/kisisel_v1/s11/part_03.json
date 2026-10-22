@@ -181,7 +181,7 @@
           "false_friend": null,
           "note": "Türkçede 'iki kişilik oda' hem tek geniş yataklı hem iki ayrı yataklı odayı anlatabilir. İngilizcede 'double room' genellikle tek geniş yataklıdır; iki ayrı yatak için 'twin room', tek kişilik için 'single room' denir.",
           "mistakes": [],
-          "mnemonic": null
+          "mnemonic": "'Twin' ikiz demek: 'twin room' içinde ikizler gibi yan yana iki ayrı yatak var. 'Double room' içinde tek büyük yatak."
         }
       },
       "tags": {
@@ -208,7 +208,8 @@
         "status": "draft",
         "qa_flags": [
           "critic_edited",
-          "verifier_edited"
+          "verifier_edited",
+          "mnemonic_added"
         ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-sonnet (in-session subagent)",

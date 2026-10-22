@@ -40,12 +40,12 @@
           "mistakes": [
             {"wrong": "Hold a minute, please.", "right": "Hold on a minute, please.", "why": "'Hold' tek başına tutmak demektir. Beklemek için 'hold on' gerekir."}
           ],
-          "mnemonic": null
+          "mnemonic": "'Hold' tutmak demek: telefonda hattı tutup kapatmadan beklersin. Telefonda 'Hold the line' (hatta kalın) da denir."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "social_skills"], "exams": [], "register": "informal", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
       "quiz": {"cloze": "Wait! ______ a second. I forgot my bag.", "answer": "Hold on", "distractors": ["Hurry up", "Move out", "Cheer up"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.run_out_of.phv.1",
@@ -85,12 +85,12 @@
             {"wrong": "The sugar is finished.", "right": "We've run out of sugar.", "why": "Türkçede 'şeker bitti' deriz. İngilizcede 'finish' bir işi bitirmektir; bir şeyin kalmaması için 'run out of' kullanılır."},
             {"wrong": "We ran out milk.", "right": "We ran out of milk.", "why": "'Of' atlanmaz: run out of + isim."}
           ],
-          "mnemonic": null
+          "mnemonic": "Kum saatini düşün: kum akar (run), dışarı (out) çıkar ve sonunda hiç kalmaz. 'We ran out of time' de böyle."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": ["inseparable"], "sensitivity": 0},
       "quiz": {"cloze": "I can't print this. We've ______ paper.", "answer": "run out of", "distractors": ["looked after", "taken off", "turned off"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.throw_away.phv.1",
@@ -264,12 +264,12 @@
             {"wrong": "Please put away the old bottles in the bin.", "right": "Please throw away the old bottles.", "why": "Türkçedeki 'kaldır' hem yerine koymak hem atmak olabilir. 'Put away' yerine koymaktır; çöpe atmak için 'throw away' denir."},
             {"wrong": "Put away it, please.", "right": "Put it away, please.", "why": "Zamir (it, them) 'put' ile 'away' arasına girer."}
           ],
-          "mnemonic": null
+          "mnemonic": "İkisinde de 'away' var ama 'put' koymak, 'throw' fırlatmak: 'put away' yerine kaldır, 'throw away' çöpe at."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": ["separable"], "sensitivity": 0},
       "quiz": {"cloze": "Playtime is over. Please ______ the toys.", "answer": "put away", "distractors": ["sign up", "sit down", "get on"]},
-      "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["distractors_diversified", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.eat_out.phv.1",
@@ -353,12 +353,12 @@
             {"wrong": "I can't login.", "right": "I can't log in.", "why": "Fiil olarak iki ayrı sözcük yazılır: log in. 'Login' bir addır (login page)."},
             {"wrong": "I logged in my account.", "right": "I logged in to my account.", "why": "'Hesaba' için 'to' gerekir: log in to."}
           ],
-          "mnemonic": null
+          "mnemonic": "'Log' kayıt defteri demek (gemilerin seyir defterine 'logbook' denir): giriş yapınca adın sisteme kaydedilir ve içeri (in) girersin."
         }
       },
       "tags": {"primary_topic": "phrasal_verbs", "topics": ["phrasal_verbs", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["intransitive"], "sensitivity": 0},
       "quiz": {"cloze": "To see your messages, you must first ______.", "answer": "log in", "distractors": ["log out", "check out", "hang up"]},
-      "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
+      "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
     },
     {
       "id": "en.log_out.phv.1",
@@ -394,9 +394,7 @@
           "equivalence": "full",
           "false_friend": null,
           "note": "'Log out' yalnızca hesaptan çıkmaktır. Cihazı kapatmak 'turn off', telefonu kapatmak 'hang up' demektir; Türkçede hepsi 'kapatmak' olabilir.",
-          "mistakes": [
-            {"wrong": "I logged out from the app.", "right": "I logged out of the app.", "why": "Türkçedeki '-den' eki burada 'from' değil 'of' ile gelir: log out of."}
-          ],
+          "mistakes": [],
           "mnemonic": null
         }
       },
