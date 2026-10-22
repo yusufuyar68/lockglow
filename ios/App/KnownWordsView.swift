@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 import CoreModels
 
-/// "Bildiğim kelimeler": every known word, the most recent first (mockup `st-known`). A word
+/// "Bildiğin kelimeler": every known word, the most recent first (mockup `st-known`). A word
 /// marked known by mistake (for example the widget's "Biliyorum" tapped by accident) goes back
 /// to learning with the row's "Geri al" or a swipe; a short notice at the bottom offers "Vazgeç".
 /// What "Geri al" does is said once, above the list, where a long list does not hide it.
@@ -39,7 +39,7 @@ struct KnownWordsView: View {
         .overlay(alignment: .bottom) {
             undoNotice
         }
-        .navigationTitle("Bildiğim kelimeler")
+        .navigationTitle("Bildiğin kelimeler")
         .navigationBarTitleDisplayMode(.large)
         // Outside the list's rows: the open card stays when its row leaves the list (after
         // "Öğrenmeye geri al" on the card).
