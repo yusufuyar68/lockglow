@@ -113,6 +113,7 @@ struct PronunciationPracticeView: View {
     private static let preparingText = "İngilizce konuşma modeli iniyor. Bu yalnız ilk seferde olur."
     /// Short: listening starts once it has been said (`PronunciationRecognizer.downloadAnnouncementSeconds`).
     private static let preparingAnnouncement = "İngilizce konuşma modeli iniyor."
+    private static let permissionOnAnnouncement = "İzin açık. Söyle artık çalışır."
 
     var body: some View {
         NavigationStack {
@@ -204,7 +205,7 @@ struct PronunciationPracticeView: View {
             if let new {
                 announce(ProblemPanel.spoken(new), while: .permission(new))
             } else if old != nil {
-                announce([.turkish("İzin açık. Söyle artık çalışır.")], while: .permission(nil))
+                announce([.turkish(PronunciationPracticeView.permissionOnAnnouncement)], while: .permission(nil))
             }
         }
         // Step 1 is done once the target has been read aloud (to the end, or stopped).
@@ -509,9 +510,15 @@ struct PronunciationPracticeView: View {
     /// again, a "permission off" result is dropped so that "Söyle" is the main action again.
     private func refreshPermission() {
         let blocked = PronunciationPracticeView.currentPermissionProblem()
+        let wasBlocked = blockedBy != nil
         blockedBy = blocked
         if blocked == nil, case .failed(let problem) = recognizer.phase, PronunciationPracticeView.opensSettings(problem) {
             recognizer.cancel()
+            // `blockedBy` never changed when the system's question did not take the app out of the
+            // active state: "permission on" is said here instead.
+            if !wasBlocked {
+                announce([.turkish(PronunciationPracticeView.permissionOnAnnouncement)], while: .permission(nil))
+            }
         }
     }
 
