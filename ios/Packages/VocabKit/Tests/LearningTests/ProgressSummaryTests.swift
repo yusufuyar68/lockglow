@@ -154,7 +154,8 @@ final class ProgressSummaryTests: XCTestCase {
         // A widget tap since then moves `lastSeenAt`. The recorded answer stays exact; an
         // earlier build's word can't be told any more.
         let tapped = Leitner.markExposure(good, at: date(27, 18))
-        XCTAssertEqual(ProgressSummary.lastAnswer(of: tapped), ProgressSummary.LastAnswer(date: date(27), kind: .movedUp))
+        XCTAssertEqual(ProgressSummary.lastAnswer(of: tapped)?.kind, .movedUp)
+        XCTAssertEqual(ProgressSummary.lastAnswer(of: tapped)?.date, date(27))
         XCTAssertNil(ProgressSummary.lastAnswer(of: legacy(tapped)))
         // "Biliyorum" is not an answer.
         XCTAssertNil(ProgressSummary.lastAnswer(of: Leitner.markKnown(WordProgress(wordID: 5), at: date(27))))
