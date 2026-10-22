@@ -11,9 +11,31 @@ import CoreModels
 /// ("sabırsızlanıyorum"). Added for the two-row Lock Screen and the small widget's size steps
 /// (docs/tasarim/ogrenme_ilkeleri.md 2.1): a meaning without a comma that must never show as
 /// "aynı fikirde ol…" ("disagree") and the second longest phrase, with a short meaning ("the day
-/// before yesterday").
+/// before yesterday"). The cards carry their editor's short meaning (`gloss_short`) as in the
+/// database; two more show it chosen over the first sense ("stop": "durmak/durdurmak", not
+/// "durmak"; "cash or card": "nakit mi kart mı", not "nakit mi"). Last come two of the user's
+/// own words (`userAdded`).
 enum SnapshotWords {
-    static let all: [WidgetWord] = [
+    static let all: [WidgetWord] = cards + userAdded
+
+    /// Words the user added ("Kendi kelimeni ekle", `CustomWord.widgetWord`): no part of speech,
+    /// level, pronunciation or English definition, no short meaning, an example only if the user
+    /// wrote one. A meaning without a comma that is too long for one line ("bir şeyden bıkmış
+    /// olmak", the form allows 28 characters) and a short one with no example ("awkward").
+    static let userAdded: [WidgetWord] = [
+        WidgetWord(
+            id: 1_000_000, lemma: "be fed up with", pos: "", level: "",
+            defMicro: "", defShort: "",
+            exampleEN: "I'm fed up with this rain.", glossTR: "bir şeyden bıkmış olmak"
+        ),
+        WidgetWord(
+            id: 1_000_001, lemma: "awkward", pos: "", level: "",
+            defMicro: "", defShort: "",
+            exampleEN: "", glossTR: "garip"
+        ),
+    ]
+
+    static let cards: [WidgetWord] = [
         WidgetWord(
             id: 1, lemma: "breakfast", pos: "n", level: "A1", ipaUS: "/ˈbrɛkfəst/",
             defMicro: "first meal of the day", defShort: "the first meal of the day, eaten in the morning",
@@ -22,12 +44,14 @@ enum SnapshotWords {
         WidgetWord(
             id: 311, lemma: "look forward to", pos: "phv", level: "B1", ipaUS: "/lʊk ˈfɔːrwərd tə/",
             defMicro: "wait happily for something", defShort: "feel happy and excited about something that will happen",
-            exampleEN: "I'm looking forward to the weekend.", glossTR: "dört gözle beklemek"
+            exampleEN: "I'm looking forward to the weekend.", glossTR: "dört gözle beklemek",
+            glossShortTR: "iple çekmek"
         ),
         WidgetWord(
             id: 399, lemma: "end up", pos: "phv", level: "B1", ipaUS: "/ɛnd ˈʌp/",
             defMicro: "finally be in a situation", defShort: "be in a place or situation at the end, often by chance",
-            exampleEN: "We got lost and ended up in a small village.", glossTR: "sonunda kendini ... bulmak"
+            exampleEN: "We got lost and ended up in a small village.", glossTR: "sonunda kendini ... bulmak",
+            glossShortTR: "kendini bulmak"
         ),
         WidgetWord(
             id: 11, lemma: "fridge", pos: "n", level: "A1", ipaUS: "/frɪdʒ/",
@@ -42,22 +66,26 @@ enum SnapshotWords {
         WidgetWord(
             id: 286, lemma: "actually", pos: "adv", level: "B1", ipaUS: "/ˈæktʃuəli/",
             defMicro: "in fact; in reality", defShort: "used to say what is really true, often when it is not what people expect",
-            exampleEN: "I thought the test would be hard, but it was actually quite easy.", glossTR: "aslında, gerçekte"
+            exampleEN: "I thought the test would be hard, but it was actually quite easy.", glossTR: "aslında, gerçekte",
+            glossShortTR: "aslında"
         ),
         WidgetWord(
             id: 807, lemma: "Could you tell me the way to", pos: "phr", level: "A2", ipaUS: "/kʊdju ˌtɛl mi ðə ˈweɪ tə/",
             defMicro: "ask how to get to a place", defShort: "a polite question to find out how to get to a place",
-            exampleEN: "Could you tell me the way to the museum, please?", glossTR: "… yolunu tarif eder misiniz?"
+            exampleEN: "Could you tell me the way to the museum, please?", glossTR: "… yolunu tarif eder misiniz?",
+            glossShortTR: "Nasıl gidilir?"
         ),
         WidgetWord(
             id: 905, lemma: "lost and found", pos: "phr", level: "B1", ipaUS: "/ˌlɔːst ən ˈfaʊnd/",
             defMicro: "place for things left behind", defShort: "the place where things that people left behind are kept for their owners",
-            exampleEN: "I left my phone on the train, so I called the lost and found.", glossTR: "kayıp eşya bürosu"
+            exampleEN: "I left my phone on the train, so I called the lost and found.", glossTR: "kayıp eşya bürosu",
+            glossShortTR: "kayıp eşya"
         ),
         WidgetWord(
             id: 882, lemma: "under the weather", pos: "idm", level: "B1", ipaUS: "/ˌʌndər ðə ˈwɛðər/",
             defMicro: "feeling a little ill", defShort: "feeling a little unwell, with low energy, but not very ill",
-            exampleEN: "I feel a bit under the weather today.", glossTR: "kendini pek iyi hissetmemek"
+            exampleEN: "I feel a bit under the weather today.", glossTR: "kendini pek iyi hissetmemek",
+            glossShortTR: "biraz rahatsız"
         ),
         WidgetWord(
             id: 899, lemma: "misunderstanding", pos: "n", level: "B1", ipaUS: "/ˌmɪsˌʌndərˈstændɪŋ/",
@@ -67,17 +95,31 @@ enum SnapshotWords {
         WidgetWord(
             id: 820, lemma: "I can't wait", pos: "phr", level: "A2", ipaUS: "/aɪ ˌkænt ˈweɪt/",
             defMicro: "excited about a coming event", defShort: "used to say that you are very excited and want something to happen soon",
-            exampleEN: "I can't wait for the weekend!", glossTR: "sabırsızlanıyorum"
+            exampleEN: "I can't wait for the weekend!", glossTR: "sabırsızlanıyorum",
+            glossShortTR: "iple çekiyorum"
         ),
         WidgetWord(
             id: 801, lemma: "disagree", pos: "v", level: "A2", ipaUS: "/ˌdɪsəˈɡriː/",
             defMicro: "have a different opinion", defShort: "have a different opinion from someone else about something",
-            exampleEN: "I'm sorry, but I disagree.", glossTR: "aynı fikirde olmamak"
+            exampleEN: "I'm sorry, but I disagree.", glossTR: "aynı fikirde olmamak",
+            glossShortTR: "hemfikir olmamak"
         ),
         WidgetWord(
             id: 939, lemma: "the day before yesterday", pos: "phr", level: "A2", ipaUS: "/ðə deɪ bɪfɔːr ˈjɛstərdeɪ/",
             defMicro: "two days ago", defShort: "the day that came two days before today",
             exampleEN: "It snowed the day before yesterday.", glossTR: "evvelki gün"
+        ),
+        WidgetWord(
+            id: 541, lemma: "stop", pos: "v", level: "A1", ipaUS: "/stɑːp/",
+            defMicro: "end a movement or action", defShort: "to end an action or a movement, or to not go on any more",
+            exampleEN: "Please stop the music.", glossTR: "durmak, durdurmak",
+            glossShortTR: "durmak/durdurmak"
+        ),
+        WidgetWord(
+            id: 965, lemma: "cash or card", pos: "phr", level: "A2", ipaUS: "/ˌkæʃ ɔːr ˈkɑːrd/",
+            defMicro: "how do you want to pay?", defShort: "a short question at a shop till about how you want to pay",
+            exampleEN: "“Cash or card?” “Card, please.”", glossTR: "nakit mi, kart mı?",
+            glossShortTR: "nakit mi kart mı"
         ),
     ]
 }

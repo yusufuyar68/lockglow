@@ -13,7 +13,8 @@ import CoreModels
 // which marks a word known without a test, is the farthest from it, and the harmless speaker sits
 // between the two buttons that change state.
 // The buttons are icon-only with a Turkish label for VoiceOver ("Kelimeyi dinle", "Sonraki
-// kelime", "Biliyorum"); meaning never depends on color. Each one is a 34 pt circle (mockup `.wb`)
+// kelime", "Biliyorum") and the short names of docs/tasarim/terimler.md §3 for Voice Control
+// ("Dinle", "Sonraki"); meaning never depends on color. Each one is a 34 pt circle (mockup `.wb`)
 // centred in a hit area of exactly 44 x 44 pt, so the views can keep the buttons' place free of
 // text (HomeWordViews.swift).
 // The glyphs share one font size, weight and image scale; Next is the filled one (mockup `.wb`).
@@ -31,20 +32,28 @@ struct NextWordButton: View {
             WidgetButtonFace(title: "Sonraki kelime", systemImage: "forward.fill", colors: colors)
         }
         .buttonStyle(.plain)
+        .accessibilityInputLabels([Text("Sonraki kelime"), Text("Sonraki")])
     }
 }
 
+/// "Biliyorum" (medium widget): the word leaves the widget and the app asks it once 3 days later;
+/// a word known then comes back every 30 days (`Leitner.knownCheckDelay`, `refresherDelay`,
+/// ogrenme_ilkeleri 2.2). The hint says so, as the app's "Biliyorum" does.
 struct KnowWordButton: View {
     let wordID: Int
     let source: WidgetEventSource
     /// The widget's colors for its rendering mode (HomeWordViews.swift).
     var colors = WidgetColors.tokens
 
+    /// The VoiceOver hint; the widget cannot read the two waits from `Leitner`.
+    static let hint = "Kelime widget'tan çıkar. 3 gün sonra bir kez sorarız; bilirsen 30 günde bir gelir."
+
     var body: some View {
         Button(intent: KnowWordIntent(wordID: wordID, source: source.rawValue)) {
             WidgetButtonFace(title: "Biliyorum", systemImage: "checkmark", colors: colors)
         }
         .buttonStyle(.plain)
+        .accessibilityHint(Text(KnowWordButton.hint))
     }
 }
 
@@ -59,6 +68,7 @@ struct SpeakWordButton: View {
             WidgetButtonFace(title: "Kelimeyi dinle", systemImage: "speaker.wave.2", colors: colors)
         }
         .buttonStyle(.plain)
+        .accessibilityInputLabels([Text("Kelimeyi dinle"), Text("Dinle")])
         // VoiceOver stays quiet while the word is being read.
         .accessibilityAddTraits(.startsMediaSession)
     }

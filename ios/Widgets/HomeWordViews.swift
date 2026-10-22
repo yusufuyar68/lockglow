@@ -59,25 +59,25 @@ struct SmallWordView: View {
         VStack(alignment: .leading, spacing: 0) {
             // ogrenme_ilkeleri 2.1: the word steps down 24 → 20 → 17 pt (a phrase may take two
             // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
-            // (`WidgetGloss`) before it takes two lines or gets smaller.
+            // (`WidgetGloss`) on one line, then on two, before it gets smaller. At accessibility
+            // text sizes the word and the meaning are shown (2.1): when they do not fit at the
+            // chosen size, they stop growing at the largest standard size before the meaning is
+            // left out.
             ViewThatFits(in: .vertical) {
-                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1])
-                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [2])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [2])
+                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
                 column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
                 column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                // Until every long meaning has its short form (`gloss_short`): 13 pt on two or
-                // three lines rather than no meaning.
+                // A long meaning without a short form (the user's own words have none; every
+                // card's meaning over 16 characters has `gloss_short`): 13 pt on two or three
+                // lines rather than no meaning.
                 column(WidgetWordStep.homeFloor, meaning: .footnote.weight(.bold), lines: [2, 3])
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
                 column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                WidgetFittingWord(
-                    lemma: word.lemma,
-                    steps: WidgetWordStep.homeFloor,
-                    lastResort: true,
-                    colors: colors,
-                    renderingMode: renderingMode
-                )
+                WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
@@ -152,8 +152,10 @@ struct MediumWordView: View {
         HStack(alignment: .top, spacing: 8) {
             // The next change gives way first, then the example, then the definition (the short
             // one, else the micro one); only then does the meaning shorten (`WidgetGloss`), take
-            // two lines and get smaller. The word alone is the last resort, so the meaning never
-            // runs out of the column at large text sizes (accessibility audit D5).
+            // two lines and get smaller. At accessibility text sizes the word and the meaning stop
+            // growing at the largest standard size before the meaning is left out. The word alone
+            // is the last resort, so the meaning never runs out of the column at large text sizes
+            // (accessibility audit D5).
             ViewThatFits(in: .vertical) {
                 column(shortens: false, definition: true, example: true, nextChange: true)
                 column(shortens: false, definition: true, example: true)
@@ -161,6 +163,10 @@ struct MediumWordView: View {
                 column(shortens: false)
                 column()
                 column(meaning: .subheadline.weight(.bold))
+                column()
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                column(meaning: .subheadline.weight(.bold))
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
                 wordRow(lastResort: true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -237,12 +243,16 @@ struct MediumWordView: View {
             Spacer(minLength: 0)
             if nextChange, let next = entry.nextChange {
                 // "Yeni kelime: 09:00": no Turkish suffix after the time (README point 13). Whole
-                // or not at all, like the other lines.
+                // or not at all, like the other lines. VoiceOver says "Sonraki değişim: 09:00",
+                // the name Widget sağlığı uses (docs/tasarim/terimler.md §5).
+                let clock = WidgetTime.clock(next)
                 WidgetFittingText(
-                    candidates: [["Yeni kelime: \(WidgetTime.clock(next))"]],
+                    candidates: [["Yeni kelime: \(clock)"]],
                     typeface: .caption2.weight(.medium),
                     color: colors.ink2
                 )
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(Text("Sonraki değişim: \(clock)"))
                 .padding(.top, 3)
             }
         }
@@ -318,6 +328,11 @@ struct WidgetWordStep: Equatable {
     static let homeFloor = [
         WidgetWordStep(size: 15),
         WidgetWordStep(size: 15, lines: 2),
+        WidgetWordStep(size: 15, scales: false),
+        WidgetWordStep(size: 15, lines: 2, scales: false),
+    ]
+    /// The floor without Dynamic Type: the last resort of the word alone (`WidgetWordAlone`).
+    static let homeFloorUnscaled = [
         WidgetWordStep(size: 15, scales: false),
         WidgetWordStep(size: 15, lines: 2, scales: false),
     ]
@@ -400,6 +415,36 @@ struct WidgetFittingWord: View {
                 .accessibilityHidden(index > 0)
                 .widgetEnglishVoice()
             }
+        }
+    }
+}
+
+/// The word alone, the last layout variant of the small and the Lock Screen widget: at the first
+/// of the Home Screen floor's steps that fits the width and the height, else at an unscaled 15 pt.
+/// At the largest text sizes a phrase on two scaled lines can fit the width and still be taller
+/// than the widget ("I can't / wait" ran out of the Lock Screen rectangle at AX3); it gets smaller
+/// instead of being cut.
+struct WidgetWordAlone: View {
+    let lemma: String
+    let colors: WidgetColors
+    /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
+    var renderingMode: WidgetRenderingMode? = nil
+
+    var body: some View {
+        ViewThatFits(in: .vertical) {
+            WidgetFittingWord(
+                lemma: lemma,
+                steps: WidgetWordStep.homeFloor,
+                colors: colors,
+                renderingMode: renderingMode
+            )
+            WidgetFittingWord(
+                lemma: lemma,
+                steps: WidgetWordStep.homeFloorUnscaled,
+                lastResort: true,
+                colors: colors,
+                renderingMode: renderingMode
+            )
         }
     }
 }
@@ -558,7 +603,8 @@ struct WidgetDefinition: View {
 /// Widget text that is shown whole or not at all: the first candidate (a list of lines, fullest
 /// first) whose every line fits the width on one line. When none fits, the view reports a height
 /// no widget has (`WidgetFit.reject`), so the vertical ViewThatFits around it passes over the
-/// variant. VoiceOver reads the lines that are shown.
+/// variant. VoiceOver reads the lines that are shown as one element, in the voice of the
+/// environment's locale (the English definition with `widgetEnglishVoice()`).
 struct WidgetFittingText: View {
     let candidates: [[String]]
     let typeface: Font
@@ -590,7 +636,10 @@ struct WidgetFittingText: View {
                     .lineLimit(1)
             }
         }
-        .accessibilityElement(children: .combine)
+        // An explicit label, not `.combine`: a combined element loses the English voice
+        // (LockglowTheme `englishVoice()`).
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: lines.joined(separator: " ")))
     }
 }
 
@@ -619,10 +668,14 @@ enum WidgetFit {
 }
 
 /// The Turkish meaning's forms for the widgets, fullest first (ogrenme_ilkeleri 2.1, "Türkçe
-/// anlamın widget'ta kısalması"): the whole meaning; its first sense, which drops what follows the
-/// first comma or semicolon ("aslında, gerçekte" → "aslında") but keeps a " / " pair whole ("amca
-/// / dayı"); the editor's short form (`gloss_short`, at most 16 characters). A form is never cut:
-/// when none fits, the widget leaves the meaning out.
+/// anlamın widget'ta kısalması"): the whole meaning, then one shorter form. That is the editor's
+/// short form (`gloss_short`, at most 16 characters) when the card has one: every meaning longer
+/// than 16 characters has it, and the editor often chose it over the first sense on purpose
+/// ("stop": "durmak/durdurmak", not the narrower "durmak"; "cash or card": "nakit mi kart mı",
+/// not "nakit mi"). Without one (a short meaning, or the user's own word) it is the first sense,
+/// which drops what follows the first comma or semicolon ("aslında, gerçekte" → "aslında") but
+/// keeps a " / " pair whole ("amca / dayı"). A form is never cut: when none fits, the widget
+/// leaves the meaning out.
 enum WidgetGloss {
     static func forms(of word: WidgetWord) -> [String] {
         guard let gloss = word.glossTR else {
@@ -631,11 +684,14 @@ enum WidgetGloss {
         return forms(of: gloss, short: short(of: word))
     }
 
-    /// The forms without repeats ("kahvaltı" has one).
+    /// The forms without repeats ("kahvaltı" has one) or empty ones.
     static func forms(of gloss: String, short: String?) -> [String] {
+        let editorShort = short?.trimmingCharacters(in: .whitespaces) ?? ""
+        let shorter = editorShort.isEmpty ? firstSense(of: gloss) : editorShort
         var result: [String] = []
-        for candidate in [gloss, firstSense(of: gloss), short] {
-            guard let form = candidate?.trimmingCharacters(in: .whitespaces), !form.isEmpty, !result.contains(form) else {
+        for candidate in [gloss, shorter] {
+            let form = candidate.trimmingCharacters(in: .whitespaces)
+            guard !form.isEmpty, !result.contains(form) else {
                 continue
             }
             result.append(form)
@@ -671,6 +727,10 @@ enum WidgetGloss {
 
 /// Text helpers for the widget layouts.
 enum WidgetText {
+    /// The largest standard text size (no accessibility size): where the word and the meaning
+    /// stop growing when they fit at no larger size.
+    static let largestStandardSize = DynamicTypeSize.xxxLarge
+
     /// `text` in two lines of about the same length (`balancedLines(_:count:)`).
     static func balancedLines(_ text: String) -> [String] {
         return balancedLines(text, count: 2)
@@ -709,11 +769,12 @@ enum WidgetText {
     }
 
     /// The candidates of a fitting line: for each line count in turn, each text in balanced lines,
-    /// without repeats.
+    /// without repeats. Empty texts are left out (a card without a short definition), so no
+    /// candidate is an empty line.
     static func candidates(_ texts: [String], lines counts: [Int]) -> [[String]] {
         var result: [[String]] = []
         for count in counts {
-            for text in texts {
+            for text in texts where !text.trimmingCharacters(in: .whitespaces).isEmpty {
                 let candidate = balancedLines(text, count: count)
                 if !result.contains(candidate) {
                     result.append(candidate)

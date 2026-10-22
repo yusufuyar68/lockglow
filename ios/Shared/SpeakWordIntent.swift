@@ -13,8 +13,9 @@ import Foundation
 ///
 /// Home screen families only (Lock Screen buttons would not work while the device is locked).
 struct SpeakWordIntent: AudioPlaybackIntent {
+    /// The button's name (docs/tasarim/terimler.md §3).
     static var title: LocalizedStringResource {
-        "Kelimeyi seslendir"
+        "Kelimeyi dinle"
     }
 
     /// Widget-only: not offered as a "speak any text" action in Shortcuts, Spotlight or Siri.

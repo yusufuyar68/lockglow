@@ -10,7 +10,8 @@ struct WordWidget: Widget {
             WordWidgetView(entry: entry)
         }
         .configurationDisplayName("Kelime")
-        .description("Ana ekranda ve kilit ekranında yeni kelimeler.")
+        // "kilitli ekran", Apple's Turkish name (docs/tasarim/terimler.md §5).
+        .description("Ana ekranda ve kilitli ekranda yeni kelimeler.")
         .supportedFamilies([
             .systemSmall,
             .systemMedium,

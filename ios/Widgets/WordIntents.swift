@@ -27,10 +27,12 @@ struct NextWordIntent: AppIntent {
     }
 }
 
-/// Widget button: mark the word as known (hidden from the widget from now on).
+/// Widget button: mark the word as known. It leaves the widget; the app asks it once 3 days
+/// later (`ProgressIngest`, `Leitner.markKnown`). The title is the button's name
+/// (docs/tasarim/terimler.md §3).
 struct KnowWordIntent: AppIntent {
     static var title: LocalizedStringResource {
-        "Bu kelimeyi biliyorum"
+        "Biliyorum"
     }
 
     @Parameter(title: "Kelime kimliği")
