@@ -14,8 +14,9 @@ enum ReviewKind: Equatable {
 struct ReviewSession: Equatable {
     let kind: ReviewKind
     let words: [WidgetWord]
-    /// Cards waiting in total (a due round), or new words left for today (a new round). A round
+    /// Words waiting in total (a due round), or new words left for today (a new round). A round
     /// is capped at `AppModel.reviewSessionLimit` or `AppModel.introRoundLimit` words, so this
-    /// can be larger than `words.count`.
+    /// can be larger than `words.count`. A due round's total is never shown (a large pile reads as
+    /// a debt); "Tekrar" only uses it to say "Ara verdin" above 20.
     let totalCount: Int
 }

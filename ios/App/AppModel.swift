@@ -14,8 +14,9 @@ final class AppModel: ObservableObject {
     static let queueLimit = 96
     /// The widget queue covers this far ahead: reviews that fall due within it are queued now.
     static let queueHorizon: TimeInterval = 48 * 3600
-    /// Cards per "Tekrar" round; more due cards wait for the next round.
-    static let reviewSessionLimit = 20
+    /// Due words per "Tekrar" round, at most 10 questions (ogrenme_ilkeleri 1b); more wait for
+    /// "Bir tur daha" or the next days.
+    static let reviewSessionLimit = 10
     /// New words per "Tanış + Hatırla" round; a larger daily goal comes in more rounds ("Bir tur
     /// daha"): short parts at one's own pace teach better than one long one.
     static let introRoundLimit = 5
@@ -556,8 +557,9 @@ final class AppModel: ObservableObject {
     }
 
     /// The confusable partners of `word` the user has not settled yet (new, or still in box 1):
-    /// they are kept out of its "Hatırla" options, where the pair would only teach the mix-up.
-    private func unsettledConfusables(of word: WidgetWord) -> Set<Int> {
+    /// they are kept out of its "Hatırla" options and its fill-in-the-blank question
+    /// (`clozeQuiz`, AppModel+Review.swift), where the pair would only teach the mix-up.
+    func unsettledConfusables(of word: WidgetWord) -> Set<Int> {
         let partners = word.confusableIDs ?? []
         return Set(partners.filter { id in
             guard let p = progress[id] else {
