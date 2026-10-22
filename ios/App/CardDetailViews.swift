@@ -8,36 +8,55 @@ import CoreModels
 
 /// An English example with its Turkish translation under it (mockup `.exrow`), and a round
 /// speaker that reads the English sentence aloud. With `lemma`, the learned word is bold in the
-/// sentence, without the yellow mark: a card shows at most one marked example (rule 1).
+/// sentence; `marksWord` adds the yellow mark, for a card's first example only (rule 1: a card
+/// shows at most one marked example). At accessibility text sizes the speaker goes under the
+/// translation, so the sentence keeps the full width.
 struct ExampleRow: View {
     let example: CardDetail.Example
     var lemma: String? = nil
+    var marksWord = false
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(alignment: .top, spacing: 4) {
-            VStack(alignment: .leading, spacing: 2) {
-                sentence
-                    .exampleStyle()
-                    .lineSpacing(2)
-                    .cardEnglishVoice()
-                if let tr = example.tr {
-                    Text(tr)
-                        .exampleTranslationStyle()
-                }
+        if dynamicTypeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 4) {
+                texts
+                speaker
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            // The 44 pt target reaches past the row's top and bottom instead of making it taller.
-            CardSentenceSpeaker(text: example.en, accessibilityName: "Cümleyi dinle")
-                .padding(.vertical, -7)
+        } else {
+            HStack(alignment: .top, spacing: 4) {
+                texts
+                // The 44 pt target reaches past the row's top and bottom instead of making it taller.
+                speaker
+                    .padding(.vertical, -7)
+            }
         }
+    }
+
+    private var texts: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            sentence
+                .exampleStyle()
+                .lineSpacing(2)
+                .cardEnglishVoice()
+            if let tr = example.tr {
+                Text(tr)
+                    .exampleTranslationStyle()
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var speaker: some View {
+        CardSentenceSpeaker(text: example.en, accessibilityName: "Cümleyi dinle")
     }
 
     private var sentence: Text {
         guard let lemma = lemma else {
             return Text(example.en)
         }
-        return Text(ExampleMark.attributed(example.en, lemma: lemma, colorScheme: colorScheme, highlighted: false))
+        return Text(ExampleMark.attributed(example.en, lemma: lemma, colorScheme: colorScheme, highlighted: marksWord))
     }
 }
 

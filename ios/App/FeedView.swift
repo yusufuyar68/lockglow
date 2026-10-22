@@ -10,8 +10,17 @@ struct FeedView: View {
     @Binding var scrolledWordID: Int?
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    /// The whole card, opened from a shortened card's "Dikkat" or "Kartın devamı" row.
+    /// The whole card, opened from a shortened card's "Dikkat" or "Örnek cümle" row.
     @State private var detailWord: WidgetWord? = nil
+    /// "Yukarı kaydır" is retired for good once the user has moved through a few cards.
+    @AppStorage("lockglow.feedHintSeen") private var feedHintSeen = false
+    /// Card changes in this session, up to `hintCardChanges`.
+    @State private var cardChanges = 0
+
+    /// After this many card changes the user knows how the feed moves.
+    private static let hintCardChanges = 3
+    /// Below a paged card, above the tab bar; the tab bar veil fades in over it.
+    private static let pageBottomGap: CGFloat = 12
 
     var body: some View {
         VStack(spacing: 0) {
@@ -26,6 +35,9 @@ struct FeedView: View {
         .background {
             Theme.bg
                 .ignoresSafeArea()
+        }
+        .overlay {
+            tabBarVeil
         }
         .sheet(item: $detailWord) { word in
             NavigationStack {
@@ -69,6 +81,27 @@ struct FeedView: View {
         .modifier(FeedPagingModifier(isEnabled: isPaged))
         .scrollPosition(id: $scrolledWordID)
         .scrollIndicators(isPaged ? .hidden : .automatic)
+        .onChange(of: scrolledWordID) { oldID, newID in
+            noteCardChange(from: oldID, to: newID)
+        }
+    }
+
+    /// The glass tab bar floats over the feed, and the next card's top (its yellow band) would
+    /// show through it. Under the bar lies the page's paper instead; its top edge fades over the
+    /// gap below the card, so a card coming up appears softly rather than at a hard line.
+    private var tabBarVeil: some View {
+        GeometryReader { proxy in
+            VStack(spacing: 0) {
+                LinearGradient(colors: [Theme.bg.opacity(0), Theme.bg], startPoint: .top, endPoint: .bottom)
+                    .frame(height: FeedView.pageBottomGap)
+                Theme.bg
+                    .frame(height: proxy.safeAreaInsets.bottom)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .ignoresSafeArea(edges: .bottom)
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 
     private func card(for word: WidgetWord, isPaged: Bool) -> some View {
@@ -80,12 +113,26 @@ struct FeedView: View {
             // Only while a Lockglow widget is on the Lock Screen (last health check).
             isOnLockScreen: model.hasLockScreenWidget && word.id == model.lockScreenWordID,
             known: knownControl(for: word),
-            showsSwipeHint: words.count > 1 && word.id == words.first?.id,
+            // Until the user has swiped a few times; never on the last card.
+            showsSwipeHint: !feedHintSeen && word.id != words.last?.id,
             openDetail: {
                 detailWord = word
             },
-            outerPadding: EdgeInsets(top: 4, leading: 14, bottom: isPaged ? 12 : 16, trailing: 14)
+            outerPadding: EdgeInsets(top: 4, leading: 14, bottom: isPaged ? FeedView.pageBottomGap : 16, trailing: 14)
         )
+    }
+
+    /// Counts the cards the user moves to; after `hintCardChanges` of them the hint is gone.
+    private func noteCardChange(from oldID: Int?, to newID: Int?) {
+        guard !feedHintSeen, newID != nil, newID != oldID else {
+            return
+        }
+        cardChanges += 1
+        if cardChanges >= FeedView.hintCardChanges {
+            withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
+                feedHintSeen = true
+            }
+        }
     }
 
     /// "Biliyorum" under the card: the same change as the widget button and the "Sözlük" card.
@@ -139,12 +186,16 @@ private struct FeedPagingModifier: ViewModifier {
 /// pronunciation, part of speech and level with "Dinle" (and "Söyle"), the Turkish meaning
 /// (large, no box), the simple English definition, the example with its Turkish translation,
 /// then one typical mistake ("Dikkat"). `detail` is nil for seed words: the card then shows the
-/// example without a translation and no "Dikkat".
+/// example without a translation and no "Dikkat". Few labels: a rule sets the example apart, and
+/// "Dikkat" is the only part with a name.
 ///
-/// In the feed (`fillsPage`) the card fills its page. Where the page is too short, it shortens
-/// itself from the end (rule 5, "kart sondan kısalır"): first smaller text without the Lock Screen label and "Ayrıca", then
-/// no Dikkat explanation, then Dikkat as one row, then the example in that row too; the rows open
-/// the whole card (`openDetail`). At accessibility text sizes it always shows everything at its
+/// In the feed (`fillsPage`) the card fills its page. A tall page first gets the card's second
+/// example; what room is left widens the gaps between the parts a little (`extraGap`), so the
+/// card does not end in one empty block above "Biliyorum". Where the page is too short, the
+/// card shortens itself from the end (rule 5, "kart sondan kısalır"): first no second example,
+/// then smaller text without the Lock Screen label and "Ayrıca", then no Dikkat explanation,
+/// then Dikkat as one row, then the example in that row too; the rows open the whole card
+/// (`openDetail`). At accessibility text sizes it always shows everything (one example) at its
 /// natural height. Elsewhere (the onboarding) it is as tall as its content.
 /// `showsSay: false` hides the microphone (a card shown where no permission prompt may appear).
 struct WordCardView: View {
@@ -164,7 +215,7 @@ struct WordCardView: View {
     var isOnLockScreen = false
     /// nil: no "Biliyorum" row (the onboarding).
     var known: KnownControl? = nil
-    /// "Yukarı kaydır" next to "Biliyorum" (the feed's first card).
+    /// "Yukarı kaydır" next to "Biliyorum" (the feed's first few cards).
     var showsSwipeHint = false
     /// Opens the whole card; the last two shortening steps need it.
     var openDetail: (() -> Void)? = nil
@@ -172,7 +223,6 @@ struct WordCardView: View {
     var outerPadding = EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
 
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         let maxHeight: CGFloat? = isPaged ? .infinity : nil
@@ -205,13 +255,21 @@ struct WordCardView: View {
         return CardDetail.Example(en: word.exampleEN, tr: detail?.examples.first?.tr)
     }
 
+    /// The card's next example, for a page with room to spare; nil for seed words and cards with
+    /// one example.
+    private var secondExample: CardDetail.Example? {
+        return detail?.examples.dropFirst().first { $0.en != word.exampleEN }
+    }
+
     private var alternatives: [String] {
         return detail?.glossAlternatives ?? []
     }
 
-    // MARK: Shortening (rule 5)
+    // MARK: Fitting the page (rule 5)
 
     private enum FitStep: Int {
+        /// Everything and a second example: only where the page has room for it.
+        case roomy
         /// Everything.
         case full
         /// 1. Smaller meaning and definition, tighter spacing; no Lock Screen label, no "Ayrıca".
@@ -220,19 +278,25 @@ struct WordCardView: View {
         case noWhy
         /// 3. Dikkat as one row.
         case mistakeRow
-        /// 4. The example in that row too ("Kartın devamı").
+        /// 4. The example in that row too.
         case exampleRow
 
         var isSmaller: Bool {
-            return self != .full
+            return rawValue >= FitStep.smaller.rawValue
         }
     }
+
+    /// The most a gap between the card's parts grows on a page with room left.
+    private static let extraGap: CGFloat = 20
 
     @ViewBuilder
     private var content: some View {
         if isPaged {
             // The first step whose height fits the page wins; the last one is used regardless.
             ViewThatFits(in: .vertical) {
+                if secondExample != nil {
+                    cardContent(.roomy)
+                }
                 cardContent(.full)
                 cardContent(.smaller)
                 if mistake != nil {
@@ -255,38 +319,33 @@ struct WordCardView: View {
     }
 
     private func cardContent(_ step: FitStep) -> some View {
-        VStack(alignment: .leading, spacing: step.isSmaller ? 8 : 12) {
-            if isOnLockScreen && !step.isSmaller {
-                WordCardLockScreenChip()
+        let spacing: CGFloat = step.isSmaller ? 8 : 12
+        return VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: spacing) {
+                if isOnLockScreen && !step.isSmaller {
+                    WordCardLockScreenNote()
+                }
+                // The night band hangs below the word: at least 8 pt before the next row.
+                WordCardHeadline(lemma: word.lemma)
+                    .padding(.bottom, step.isSmaller ? 2 : 0)
+                metaRow
+                meaning(step)
+                Text(word.defShort)
+                    .font(step.isSmaller ? Theme.Fonts.example : Theme.Fonts.definition)
+                    .foregroundStyle(Theme.ink)
+                    .lineSpacing(step.isSmaller ? 1 : 2)
+                    .lineLimit(step == .exampleRow ? 3 : nil)
+                    .cardEnglishVoice()
             }
-            // The night band hangs below the word: at least 8 pt before the next row.
-            WordCardHeadline(lemma: word.lemma)
-                .padding(.bottom, step.isSmaller ? 2 : 0)
-            metaRow
-            meaning(step)
-            Text(word.defShort)
-                .font(step.isSmaller ? Theme.Fonts.example : Theme.Fonts.definition)
-                .foregroundStyle(Theme.ink)
-                .lineSpacing(step.isSmaller ? 1 : 2)
-                .lineLimit(step == .exampleRow ? 3 : nil)
-                .cardEnglishVoice()
+            partGap(spacing)
             if step == .exampleRow {
-                detailRow(
-                    systemImage: "book",
-                    iconColor: Theme.ink2,
-                    title: "Kartın devamı",
-                    subtitle: mistake == nil ? "Örnek cümle" : "Örnek cümle ve Dikkat notu"
-                )
+                detailRow(title: mistake == nil ? "Örnek cümle" : "Örnek cümle ve Dikkat", showsCaution: false)
             } else {
-                exampleBlock
+                exampleBlock(step)
                 if let mistake = mistake {
+                    partGap(spacing)
                     if step == .mistakeRow {
-                        detailRow(
-                            systemImage: "exclamationmark.triangle",
-                            iconColor: Theme.caution,
-                            title: "Dikkat",
-                            subtitle: "Sık yapılan hatayı gör"
-                        )
+                        detailRow(title: "Dikkat: sık yapılan hata", showsCaution: true)
                     } else {
                         MistakeBox(mistake: mistake, showsWhy: step.rawValue < FitStep.noWhy.rawValue)
                     }
@@ -298,6 +357,15 @@ struct WordCardView: View {
         .padding(.horizontal, 20)
         .padding(.bottom, known == nil ? 20 : 12)
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    /// Between the word's part, the example and Dikkat: `minimum`, and on a page with room left up
+    /// to `extraGap` more (the rest stays above "Biliyorum"). Its ideal height is `minimum`, so it
+    /// never changes which step fits; the low priority lets the text take its room first.
+    private func partGap(_ minimum: CGFloat) -> some View {
+        Color.clear
+            .frame(minHeight: minimum, idealHeight: minimum, maxHeight: minimum + (isPaged ? WordCardView.extraGap : 0))
+            .layoutPriority(-1)
     }
 
     // MARK: Parts
@@ -356,70 +424,43 @@ struct WordCardView: View {
         }
     }
 
-    /// Mockup `.exblock`: a rule, "Örnek" with the sentence's speaker, the sentence with the
-    /// learned word marked (the band's yellow, rule 1), its Turkish translation.
-    private var exampleBlock: some View {
-        let example = firstExample
-        return VStack(alignment: .leading, spacing: 4) {
+    /// Mockup `.exblock` without its "Örnek" label (the rule and the sentence say it): the
+    /// sentence with the learned word marked (the band's yellow, rule 1), its Turkish translation
+    /// and its speaker. On a roomy page a second example follows, the word bold but not yellow.
+    private func exampleBlock(_ step: FitStep) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
             WordCardRule()
-            HStack(spacing: 8) {
-                sectionLabel("Örnek")
-                Spacer(minLength: 8)
-                // The 44 pt target reaches past the label row instead of making it taller.
-                CardSentenceSpeaker(text: example.en, accessibilityName: "Cümleyi dinle")
-                    .padding(.vertical, -6)
-            }
-            .frame(minHeight: 32)
-            .padding(.top, 6)
-            Text(ExampleMark.attributed(example.en, lemma: word.lemma, colorScheme: colorScheme))
-                .exampleStyle()
-                .lineSpacing(2)
-                .cardEnglishVoice()
-            if let tr = example.tr {
-                Text(tr)
-                    .exampleTranslationStyle()
+            ExampleRow(example: firstExample, lemma: word.lemma, marksWord: true)
+            if step == .roomy, let second = secondExample {
+                ExampleRow(example: second, lemma: word.lemma)
             }
         }
     }
 
-    private func sectionLabel(_ title: String) -> some View {
-        Text(title)
-            .font(.footnote.weight(.semibold))
-            .foregroundStyle(Theme.ink2)
-            .accessibilityAddTraits(.isHeader)
-    }
-
-    /// One row in place of a part that no longer fits (mockup `.mrow`); opens the whole card.
-    private func detailRow(systemImage: String, iconColor: Color, title: String, subtitle: String) -> some View {
+    /// One capsule in place of a part that no longer fits (mockup `.mrow`; tappable, so a
+    /// capsule, rule 2); opens the whole card.
+    private func detailRow(title: String, showsCaution: Bool) -> some View {
         Button {
             openDetail?()
         } label: {
-            HStack(spacing: 10) {
-                Image(systemName: systemImage)
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(iconColor)
-                    .accessibilityHidden(true)
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(title)
-                        .font(.subheadline.weight(.bold))
-                        .foregroundStyle(Theme.ink)
-                    Text(subtitle)
-                        .font(.footnote.weight(.medium))
-                        .foregroundStyle(Theme.ink2)
+            HStack(spacing: 8) {
+                if showsCaution {
+                    Image(systemName: "exclamationmark.triangle")
+                        .foregroundStyle(Theme.caution)
+                        .accessibilityHidden(true)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                Text(title)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Image(systemName: "chevron.right")
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(Theme.ink3)
                     .accessibilityHidden(true)
             }
-            .padding(.vertical, 6)
-            .padding(.horizontal, 12)
-            .frame(minHeight: 52)
-            .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
-            .contentShape(RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
+            .font(.subheadline.weight(.semibold))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 48, tonal: true))
+        .accessibilityHint("Kartın tamamını açar")
     }
 
     // MARK: Footer
@@ -455,12 +496,16 @@ struct WordCardView: View {
         } else {
             Button(action: known.markKnown) {
                 Label("Biliyorum", systemImage: "checkmark")
+                    // The largest text sizes on a narrow phone: a little smaller, never broken
+                    // inside the word.
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
         }
     }
 
-    /// The first card shows where the next one is. Visual only: VoiceOver moves on by itself.
+    /// The first few cards show where the next one is. Visual only: VoiceOver moves on by itself.
     private var swipeHint: some View {
         HStack(spacing: 4) {
             Image(systemName: "chevron.up")
@@ -594,8 +639,9 @@ private struct WordCardMetaLayout: Layout {
     }
 }
 
-/// "Şu an kilitli ekranda" (mockup `.now-chip`).
-private struct WordCardLockScreenChip: View {
+/// "Şu an kilitli ekranda" (mockup `.now-chip`): a quiet line, not a capsule, since it cannot be
+/// tapped (rule 2).
+private struct WordCardLockScreenNote: View {
     var body: some View {
         HStack(spacing: 5) {
             Image(systemName: "lock")
@@ -603,11 +649,8 @@ private struct WordCardLockScreenChip: View {
                 .accessibilityHidden(true)
             Text("Şu an kilitli ekranda")
         }
-        .font(.caption.weight(.semibold))
+        .font(.footnote.weight(.semibold))
         .foregroundStyle(Theme.ink2)
-        .padding(.horizontal, 10)
-        .frame(minHeight: 26)
-        .background(Theme.surface2, in: Capsule())
     }
 }
 
