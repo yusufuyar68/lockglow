@@ -2,9 +2,11 @@ import SwiftUI
 import WidgetKit
 
 /// "Widget nasıl eklenir": steps for the Lock Screen and the Home Screen on iOS 26. Button names
-/// are the ones in Apple's Turkish iPhone User Guide for iOS 26, where a widget is called
-/// "araç takımı" ("Düzenle", "Araç Takımı Ekle", "Özelleştir", "Bitti"). Shown in the onboarding
-/// and under "Ayarlar > Yardım". A small drawing shows where the widget goes (mockup `.gprev`).
+/// are the ones in Apple's Turkish iPhone User Guide for iOS 26 ("Özel bir iPhone kilitli ekranı
+/// yaratma", "Araç takımlarını ekleme, düzenleme ve silme"), where a widget is called "araç
+/// takımı": "Özelleştir", "Araç Takımı Ekle", "Düzenle", "Bitti". The English names follow in one
+/// line, for a phone set to English. Shown in the onboarding and under "Ayarlar > Yardım". A small
+/// drawing shows where the widget goes (mockup `.gprev`).
 struct WidgetGuideContent: View {
     enum Place: Hashable {
         case lockScreen
@@ -12,9 +14,11 @@ struct WidgetGuideContent: View {
     }
 
     @State private var place: Place = .lockScreen
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
+            // The UI test taps "Ana ekran" by its label.
             SegmentButtons(
                 options: [
                     SegmentOption(value: Place.lockScreen, title: "Kilitli ekran"),
@@ -36,18 +40,34 @@ struct WidgetGuideContent: View {
                 RoundedRectangle(cornerRadius: Theme.Radius.group, style: .continuous)
                     .strokeBorder(Theme.line, lineWidth: 1)
             )
-            // Mockup `.info`.
-            HStack(alignment: .firstTextBaseline, spacing: 10) {
-                Image(systemName: "info.circle")
-                    .foregroundStyle(Theme.ink2)
-                    .accessibilityHidden(true)
-                Text(note)
-                    .foregroundStyle(Theme.ink)
-                    .fixedSize(horizontal: false, vertical: true)
+            // Mockup `.info`: what iPhone calls a widget, the one-line Lock Screen widget
+            // (`accessoryInline`, in the date line), and the English button names.
+            VStack(alignment: .leading, spacing: 10) {
+                GuideNote(systemImage: "info.circle") {
+                    Text(verbatim: "iPhone widget'a “araç takımı” der.")
+                        .foregroundStyle(Theme.ink)
+                }
+                if place == .lockScreen {
+                    GuideNote(systemImage: "text.alignleft") {
+                        Text(verbatim: "Tek satırlık widget için 3. adımda saatin üstündeki tarihe dokun.")
+                            .foregroundStyle(Theme.ink)
+                    }
+                }
+                GuideNote(systemImage: "globe") {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(verbatim: "Telefonun dili İngilizceyse:")
+                            .foregroundStyle(Theme.ink2)
+                        // English is serif (rule 3) and read with the English voice.
+                        Text(verbatim: englishNames.joined(separator: ", "))
+                            .font(.system(.callout, design: .serif))
+                            .foregroundStyle(Theme.ink)
+                            .englishVoice()
+                    }
+                }
             }
-            .font(.callout)
             .padding(.horizontal, 2)
         }
+        .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: place)
     }
 
     /// Markdown (bold button names), read through `LocalizedStringKey`.
@@ -55,42 +75,66 @@ struct WidgetGuideContent: View {
         switch place {
         case .lockScreen:
             return [
-                "Yan düğmeye bas ve kilitli ekranı aç. Telefonun kilidi Face ID ya da parolayla açılmış olmalı.",
-                "Kilitli ekranda boş bir yeri basılı tut. Parola sorarsa gir.",
-                "Alttaki **Özelleştir**'e (Customize) dokun. Seçmeni isterse kilitli ekranı seç.",
-                "**Araç Takımı Ekle**'ye (Add Widgets) dokun.",
-                "Listede **Lockglow**'u bul ve dikdörtgen widget'a dokun. Tek satırlık widget için bunun yerine saatin üstündeki tarih satırına dokun.",
-                "**Bitti**'ye (Done) dokun.",
+                "Kilitli ekranda boş bir yeri **basılı tut**. Parola sorarsa gir.",
+                "Alttaki **Özelleştir**'e dokun. Sorarsa kilitli ekranı seç.",
+                "**Araç Takımı Ekle**'ye dokun.",
+                "Listeden **Lockglow**'u seç ve widget'a dokun.",
+                "**Bitti**'ye dokun.",
             ]
         case .homeScreen:
             return [
-                "Ana ekranda boş bir yeri basılı tut. Uygulamalar titremeye başlar.",
-                "Ekranın üstündeki **Düzenle**'ye (Edit), sonra **Araç Takımı Ekle**'ye (Add Widget) dokun.",
-                "Arama kutusuna **Lockglow** yaz ve ona dokun.",
-                "Boyutlar arasında kaydır (küçük ya da orta). İstediğin boyutta **Araç Takımı Ekle**'ye dokun.",
-                "Widget'ı istediğin yere taşı, sonra **Bitti**'ye (Done) dokun.",
+                "Ana ekranda boş bir yeri **basılı tut**. Uygulamalar titrer.",
+                "Üstteki **Düzenle**'ye, sonra **Araç Takımı Ekle**'ye dokun.",
+                "**Lockglow**'u ara ve ona dokun.",
+                "Küçük ya da orta boyu seç. **Araç Takımı Ekle**'ye dokun.",
+                "Widget'ı yerine taşı, **Bitti**'ye dokun.",
             ]
         }
     }
 
-    private var note: String {
+    /// The same buttons on a phone set to English, in the order of the steps.
+    private var englishNames: [String] {
         switch place {
         case .lockScreen:
-            return "iPhone'da widget'ın adı \"araç takımı\". Telefonun dili İngilizceyse parantezdeki adlara bak. Kilitli ekrandaki widget'ta düğme yok; kelime kendiliğinden değişir."
+            return ["Customize", "Add Widgets", "Done"]
         case .homeScreen:
-            return "iPhone'da widget'ın adı \"araç takımı\". Telefonun dili İngilizceyse parantezdeki adlara bak. Küçük ve orta boyda \"Sonraki\", \"Biliyorum\" ve hoparlör düğmeleri var."
+            return ["Edit", "Add Widget", "Done"]
         }
     }
 }
 
-/// A numbered step (mockup `.step`): an ink circle with the number, then the sentence.
+/// A small icon in `ink2` before a short note (mockup `.info`).
+private struct GuideNote<Content: View>: View {
+    let systemImage: String
+    @ViewBuilder let content: () -> Content
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 10) {
+            Image(systemName: systemImage)
+                .foregroundStyle(Theme.ink2)
+                .accessibilityHidden(true)
+            content()
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        // Not combined: the English names keep their English voice.
+        .font(.callout)
+    }
+}
+
+/// A numbered step (mockup `.step`): an ink circle with the number, then the sentence. At the
+/// largest text sizes the number stands above the sentence, so the sentence keeps the width.
 private struct StepRow: View {
     let number: Int
     let text: String
     @ScaledMetric(relativeTo: .body) private var circleSize: CGFloat = 28
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 12) {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 12))
+        layout {
             Text(verbatim: "\(number)")
                 .font(.subheadline.weight(.bold))
                 .monospacedDigit()
@@ -111,8 +155,9 @@ private struct StepRow: View {
 }
 
 /// Where the widget goes (mockup `.gprev`): a drawn Lock Screen or Home Screen with the widget
-/// outlined in yellow dashes. A picture with a fixed size and fixed colors (it shows the phone,
-/// whatever the app's appearance); VoiceOver reads one sentence instead.
+/// outlined in white dashes. Calm, muted colors: the only yellow is the band of the English word
+/// (rule 1). A picture with a fixed size and fixed colors (it shows the phone, whatever the app's
+/// appearance and text size); VoiceOver reads one sentence instead.
 private struct WidgetPlacePreview: View {
     let place: WidgetGuideContent.Place
 
@@ -126,7 +171,9 @@ private struct WidgetPlacePreview: View {
             }
         }
         .padding(14)
-        .frame(maxWidth: .infinity, minHeight: 168)
+        // Both drawings (about 174 and 157 pt) are this tall, so switching does not move the
+        // steps below.
+        .frame(maxWidth: .infinity, minHeight: 180)
         .background(wallpaper)
         .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
         .accessibilityElement(children: .ignore)
@@ -146,9 +193,9 @@ private struct WidgetPlacePreview: View {
     // MARK: Lock Screen
 
     private var lockScreen: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 6) {
             Text(verbatim: "9:41")
-                .font(.system(size: 50, weight: .bold))
+                .font(.system(size: 40, weight: .bold))
                 .foregroundStyle(Color.white.opacity(0.92))
             // The rectangular Lock Screen widget: the word on the thin band of a vibrant widget.
             VStack(alignment: .leading, spacing: 0) {
@@ -168,16 +215,11 @@ private struct WidgetPlacePreview: View {
             .padding(.horizontal, 11)
             .padding(.vertical, 7)
             .frame(width: 150, alignment: .leading)
-            .background(Color.white.opacity(0.16), in: RoundedRectangle(cornerRadius: 13, style: .continuous))
+            .background(Color.white.opacity(0.14), in: RoundedRectangle(cornerRadius: 13, style: .continuous))
             .overlay(PreviewOutline(cornerRadius: 13))
-            .padding(.top, 2)
-            HStack(spacing: 4) {
-                Image(systemName: "chevron.up")
-                Text(verbatim: "Lockglow burada")
-            }
-            .font(.system(size: 12, weight: .bold))
-            .foregroundStyle(Color(guideHex: 0xF1EA6A))
             .padding(.top, 4)
+            pointer
+                .padding(.top, 6)
         }
         // The Lock Screen is dark: the band's thin line takes the white of the text.
         .environment(\.colorScheme, .dark)
@@ -186,72 +228,78 @@ private struct WidgetPlacePreview: View {
     // MARK: Home Screen
 
     private var homeScreen: some View {
-        HStack(spacing: 18) {
-            // The small Home Screen widget in full color: the word on its day band.
-            VStack(alignment: .leading, spacing: 1) {
-                Text(verbatim: "breakfast")
-                    .font(.system(size: 15, weight: .bold, design: .serif))
-                    .phosphorBand(.widget)
-                Text(verbatim: "kahvaltı")
-                    .font(.system(size: 12.5, weight: .bold))
-                    .padding(.top, 2)
-                Text(verbatim: "first meal of the day")
-                    .font(.system(size: 11, weight: .regular, design: .serif))
-                    .foregroundStyle(Color(guideHex: 0x4E555B))
-                    .lineLimit(2)
-                Spacer(minLength: 0)
+        HStack(alignment: .top, spacing: 18) {
+            VStack(spacing: 8) {
+                // The small Home Screen widget in full color: the word on its day band.
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(verbatim: "breakfast")
+                        .font(.system(size: 15, weight: .bold, design: .serif))
+                        .phosphorBand(.widget)
+                    Text(verbatim: "kahvaltı")
+                        .font(.system(size: 12.5, weight: .bold))
+                        .padding(.top, 2)
+                    Text(verbatim: "first meal of the day")
+                        .font(.system(size: 11, weight: .regular, design: .serif))
+                        .foregroundStyle(Color(guideHex: 0x4E555B))
+                        .lineLimit(2)
+                    Spacer(minLength: 0)
+                }
+                .foregroundStyle(Color(guideHex: 0x15181B))
+                .padding(11)
+                .frame(width: 104, height: 104, alignment: .topLeading)
+                .background(Color.white, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+                .overlay(PreviewOutline(cornerRadius: 22))
+                .environment(\.colorScheme, .light)
+                pointer
+                    .padding(.top, 4)
             }
-            .foregroundStyle(Color(guideHex: 0x15181B))
-            .padding(11)
-            .frame(width: 112, height: 112, alignment: .topLeading)
-            .background(Color.white, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .overlay(PreviewOutline(cornerRadius: 22))
-            .environment(\.colorScheme, .light)
+            // Plain app icons: three by three, as tall as the widget.
             VStack(spacing: 10) {
-                appRow([0xE58A7E, 0xE9C46A, 0x7FB3D5, 0x86C29F])
-                appRow([0x9AA0A6, 0xD98FA8, 0x6E9BD1, 0xE9D27A])
+                ForEach(0..<3, id: \.self) { _ in
+                    HStack(spacing: 10) {
+                        ForEach(0..<3, id: \.self) { _ in
+                            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                .fill(Color.white.opacity(0.26))
+                                .frame(width: 28, height: 28)
+                        }
+                    }
+                }
             }
         }
     }
 
-    private func appRow(_ colors: [UInt32]) -> some View {
-        HStack(spacing: 10) {
-            ForEach(colors, id: \.self) { color in
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .fill(Color(guideHex: color).opacity(0.9))
-                    .frame(width: 30, height: 30)
-            }
-        }
-    }
+    // MARK: Parts
 
-    // MARK: Wallpaper
+    /// "^ Lockglow burada" under the drawn widget.
+    private var pointer: some View {
+        HStack(spacing: 4) {
+            Image(systemName: "chevron.up")
+            Text(verbatim: "Lockglow burada")
+        }
+        .font(.system(size: 11, weight: .semibold))
+        .foregroundStyle(Color.white.opacity(0.85))
+        .lineLimit(1)
+        .fixedSize()
+    }
 
     @ViewBuilder
     private var wallpaper: some View {
         switch place {
         case .lockScreen:
-            ZStack {
-                LinearGradient(
-                    stops: [
-                        .init(color: Color(guideHex: 0x1D2630), location: 0),
-                        .init(color: Color(guideHex: 0x0C1014), location: 0.8),
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                RadialGradient(
-                    colors: [Theme.bandDark.opacity(0.26), Color.clear],
-                    center: UnitPoint(x: 0.3, y: 0),
-                    startRadius: 0,
-                    endRadius: 190
-                )
-            }
+            LinearGradient(
+                stops: [
+                    .init(color: Color(guideHex: 0x2B3238), location: 0),
+                    .init(color: Color(guideHex: 0x13171A), location: 0.85),
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
         case .homeScreen:
             LinearGradient(
                 stops: [
-                    .init(color: Color(guideHex: 0xA7C7D9), location: 0),
-                    .init(color: Color(guideHex: 0x5E7E96), location: 0.6),
-                    .init(color: Color(guideHex: 0x2D3D4C), location: 1),
+                    .init(color: Color(guideHex: 0x7D8C96), location: 0),
+                    .init(color: Color(guideHex: 0x4D5A63), location: 0.6),
+                    .init(color: Color(guideHex: 0x2E363C), location: 1),
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -260,13 +308,13 @@ private struct WidgetPlacePreview: View {
     }
 }
 
-/// The dashed yellow outline 4 pt around the drawn widget (mockup `outline: 2px dashed`).
+/// The dashed white outline 6 pt around the drawn widget (mockup `outline: 2px dashed`).
 private struct PreviewOutline: View {
     let cornerRadius: CGFloat
 
     var body: some View {
         RoundedRectangle(cornerRadius: cornerRadius + 6, style: .continuous)
-            .strokeBorder(Theme.bandDark, style: StrokeStyle(lineWidth: 2, dash: [5, 4]))
+            .strokeBorder(Color.white.opacity(0.8), style: StrokeStyle(lineWidth: 1.5, dash: [5, 4]))
             .padding(-6)
     }
 }
