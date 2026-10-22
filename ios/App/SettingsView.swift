@@ -50,11 +50,12 @@ struct SettingsView: View {
                 titleVisibility: .visible
             ) {
                 Button("İlerlemeyi sıfırla", role: .destructive) {
-                    model.resetProgress()
+                    resetProgress()
                 }
                 Button("Vazgeç", role: .cancel) {}
             } message: {
-                Text("Bildiğin ve öğrendiğin tüm kelimelerin kaydı silinir. Bu işlem geri alınamaz.")
+                // Everything `resetProgress()` clears, and the one thing it keeps.
+                Text("Bildiğin ve öğrendiğin kelimelerin kaydı, kullanım ölçümleri, son aramalar ve Akış geçmişi silinir. Kendi eklediğin kelimeler kalır ama baştan başlar. Bu işlem geri alınamaz.")
             }
             .task {
                 await refreshStatus()
@@ -68,6 +69,17 @@ struct SettingsView: View {
                 }
             }
         }
+    }
+
+    /// The progress, today's counts, the local measurements and the feed's first encounters
+    /// (`AppModel.resetProgress`), then Sözlük's recent searches and the words "Tekrar" listed as
+    /// today's new words (they are new again). The user's own words stay; their progress goes
+    /// with the rest. VoiceOver hears that it is done: the dialog just closes.
+    private func resetProgress() {
+        model.resetProgress()
+        UserDefaults.standard.removeObject(forKey: SozlukRecentSearches.storageKey)
+        UserDefaults.standard.removeObject(forKey: "lockglow.reviewNewWordsToday")
+        AccessibilityNotification.Announcement(AttributedString("İlerleme sıfırlandı.")).post()
     }
 
     private func refreshStatus() async {
@@ -93,7 +105,7 @@ struct SettingsView: View {
                 widgetStatusRow(status)
             }
             if status == .notUpdating {
-                Text("Dokun ve \"Widget'ları yenile\"yi dene. Düzelmezse widget'ı kaldırıp yeniden ekle.")
+                Text("Yukarıdaki satıra dokun, sonra Widget'ları yenile düğmesine dokun. Düzelmezse widget'ı kaldırıp yeniden ekle.")
                     .settingsFootnote()
             }
             SettingsQuestion("Kelime ne sıklıkla değişsin?")
@@ -115,7 +127,7 @@ struct SettingsView: View {
     private func widgetStatusRow(_ status: WidgetHealthStatus) -> some View {
         if status == .notAdded {
             NavigationLink {
-                WidgetGuideScreen()
+                WidgetGuideScreen(word: model.widgetGuideWord)
             } label: {
                 SettingsRow("Widget ekli değil", systemImage: "plus.circle") {
                     Text("Nasıl eklenir?")
@@ -313,16 +325,26 @@ struct SettingsView: View {
             let granted = await ReminderScheduler.requestPermission()
             notificationsDenied = !granted
             model.setReminderEnabled(granted)
+            if !granted {
+                AccessibilityNotification.Announcement(AttributedString("Bildirim izni yok. Hatırlatma kapalı kaldı.")).post()
+            }
         } else {
             model.setReminderEnabled(false)
         }
         await ReminderScheduler.replace(with: model.reminderPlan())
     }
 
+    /// A week of ignored reminders turned them off at an opening (`ReminderLog.pause`, RootView);
+    /// the note stays until they are on again (turning them on clears the pause).
+    private var isReminderPaused: Bool {
+        return ReminderLog.pausedAt() != nil && !model.reminderEnabled
+    }
+
+    /// The feature is "hatırlatma" (terimler §5); iOS's permission keeps its own name, "bildirim".
     private var reminderSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            SettingsSectionHeader("Bildirim")
-            SettingsQuestion("Ne zaman hatırlatayım?")
+            SettingsSectionHeader("Hatırlatma")
+            SettingsQuestion("Ne zaman hatırlatalım?")
             SettingsGroup {
                 Toggle(isOn: reminderBinding) {
                     Text("Her gün hatırlat")
@@ -338,6 +360,24 @@ struct SettingsView: View {
                             .settingsRowTitle()
                     }
                     .settingsRowPadding()
+                }
+                if isReminderPaused && !notificationsDenied {
+                    SettingsDivider()
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Bir hafta bakılmadığı için hatırlatmaları duraklattık.")
+                            .font(.subheadline)
+                            .foregroundStyle(Theme.ink2)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Button {
+                            Task {
+                                await setReminder(true)
+                            }
+                        } label: {
+                            Label("Hatırlatmayı yeniden aç", systemImage: "bell")
+                        }
+                        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
+                    }
+                    .padding(14)
                 }
                 if notificationsDenied {
                     SettingsDivider()
@@ -358,8 +398,9 @@ struct SettingsView: View {
                     .padding(14)
                 }
             }
-            // The reminder shows one word, not counts (ui2-bildirim: `Learning/ReminderText`).
-            Text("Seçtiğin saatte, tekrarı gelen bir kelimeyi ya da sıradaki yeni kelimeyi gösteren kısa bir bildirim gelir. O günün işini bitirdiysen gelmez.")
+            // The reminder carries a word, not counts (`Learning/ReminderText`). The week-long
+            // pause is said in its own row above, when it happens.
+            Text("Seçtiğin saatte bir kelimeyle kısa bir hatırlatma gelir. O günün işini bitirdiysen gelmez.")
                 .settingsFootnote()
         }
     }
@@ -376,9 +417,9 @@ struct SettingsView: View {
             SettingsSectionHeader("İlerleme")
             VStack(spacing: 16) {
                 tileLayout {
-                    ProgressTile(value: counts.known, caption: "bildiğim kelime")
-                    ProgressTile(value: counts.learning, caption: "öğreniyorum")
-                    ProgressTile(value: counts.dueToday, caption: "bugün tekrar edilecek")
+                    ProgressTile(value: counts.known, caption: "bildiğin kelime", isStacked: dynamicTypeSize.isAccessibilitySize)
+                    ProgressTile(value: counts.learning, caption: "öğrenme listende", isStacked: dynamicTypeSize.isAccessibilitySize)
+                    ProgressTile(value: counts.dueToday, caption: "bugün tekrar edilecek", isStacked: dynamicTypeSize.isAccessibilitySize)
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 if !levels.isEmpty {
@@ -405,7 +446,7 @@ struct SettingsView: View {
                 NavigationLink {
                     KnownWordsView()
                 } label: {
-                    SettingsRow("Bildiğim kelimeler") {
+                    SettingsRow("Bildiğin kelimeler") {
                         Text(verbatim: "\(counts.known)")
                             .monospacedDigit()
                     }
@@ -462,7 +503,7 @@ struct SettingsView: View {
                 .buttonStyle(SettingsRowButtonStyle())
                 SettingsDivider()
                 NavigationLink {
-                    WidgetGuideScreen()
+                    WidgetGuideScreen(word: model.widgetGuideWord)
                 } label: {
                     SettingsRow("Widget nasıl eklenir?")
                 }
@@ -493,7 +534,7 @@ struct SettingsView: View {
         .padding(.top, 8)
     }
 
-    /// "Lockglow 1.0 · içerik 2026.10.21 (933 kart)".
+    /// "Lockglow 1.0 · içerik 2026.10.21 (933 kelime)".
     private var versionLine: some View {
         var text = "Lockglow"
         if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
@@ -503,7 +544,7 @@ struct SettingsView: View {
             text += " · içerik \(content)"
         }
         if model.cardCount > 0 {
-            text += " (\(model.cardCount) kart)"
+            text += " (\(model.cardCount) kelime)"
         }
         return Text(verbatim: text)
             .settingsFootnote()
@@ -521,10 +562,15 @@ struct SettingsView: View {
                     .foregroundStyle(Theme.caution)
                     .accessibilityHidden(true)
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(recoveryMessage(outcome))
-                        .font(.subheadline)
-                        .foregroundStyle(Theme.ink)
-                        .fixedSize(horizontal: false, vertical: true)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(verbatim: SystemCardSheet.recoveryTitle)
+                            .font(.subheadline.weight(.semibold))
+                        Text(verbatim: SystemCardSheet.recoveryMessage(outcome))
+                            .font(.subheadline)
+                    }
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityElement(children: .combine)
                     Button("Anladım") {
                         model.dismissProgressRecovery()
                     }
@@ -539,20 +585,6 @@ struct SettingsView: View {
                 RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous)
                     .strokeBorder(Theme.caution, lineWidth: 1.5)
             )
-        }
-    }
-
-    private func recoveryMessage(_ outcome: ProgressStore.LoadOutcome) -> String {
-        switch outcome {
-        case let .restoredFromBackup(_, backupDate):
-            if let date = backupDate {
-                return "İlerleme dosyası okunamadı, \(date.formatted(date: .long, time: .shortened)) tarihli yedekten geri yüklendi. Ondan sonraki değişiklikler kaybolmuş olabilir."
-            }
-            return "İlerleme dosyası okunamadı, yedekten geri yüklendi. Son değişiklikler kaybolmuş olabilir."
-        case .startedOver:
-            return "İlerleme dosyası okunamadı ve yedek yoktu, ilerleme sıfırdan başladı. Eski dosya silinmedi; sonraki bir sürüm onu kurtarabilir."
-        case .fresh, .loaded:
-            return ""
         }
     }
 }
@@ -572,13 +604,16 @@ private struct LevelProgress: Identifiable {
 private struct ProgressTile: View {
     let value: Int
     let caption: String
+    /// The tiles stand one under another (accessibility text sizes).
+    var isStacked = false
     @ScaledMetric(relativeTo: .title) private var numberSize: CGFloat = 26
 
     var body: some View {
         VStack(spacing: 3) {
             Text(verbatim: "\(value)")
-                // Grows with the text size, but not past 34 pt: three tiles share one row.
-                .font(.system(size: min(numberSize, 34), weight: .bold))
+                // Grows with the text size, but not past 34 pt while three tiles share one row;
+                // stacked, it keeps growing, so it is never smaller than its caption (audit D10).
+                .font(.system(size: isStacked ? numberSize : min(numberSize, 34), weight: .bold))
                 .monospacedDigit()
                 .foregroundStyle(Theme.ink)
                 .lineLimit(1)
@@ -598,33 +633,61 @@ private struct ProgressTile: View {
     }
 }
 
-/// "A2 ▬▬▬──── 34 / 418" (mockup `.lvb`): known words of one level, the bar in `tint`.
+/// "A2 ▬▬▬──── 34 / 418" (mockup `.lvb`): known words of one level, the bar in `tint`. At the
+/// accessibility text sizes the code and the count share a line over a full-width bar, so the
+/// bar keeps its length (audit D9).
 private struct LevelProgressRow: View {
     let item: LevelProgress
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(spacing: 10) {
-            Text(verbatim: item.level.rawValue)
-                .font(.subheadline.weight(.bold))
-                .foregroundStyle(Theme.ink)
-                .frame(minWidth: 30, alignment: .leading)
-            GeometryReader { proxy in
-                Capsule()
-                    .fill(Theme.surface2)
-                    .overlay(alignment: .leading) {
-                        Capsule()
-                            .fill(Theme.tint)
-                            .frame(width: filledWidth(in: proxy.size.width))
+        Group {
+            if dynamicTypeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 10) {
+                        code
+                        Spacer(minLength: 0)
+                        count
                     }
+                    bar
+                }
+            } else {
+                HStack(spacing: 10) {
+                    code
+                    bar
+                    count
+                }
             }
-            .frame(height: 8)
-            Text(verbatim: "\(item.known) / \(item.total)")
-                .font(.caption.weight(.medium))
-                .monospacedDigit()
-                .foregroundStyle(Theme.ink2)
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: "\(item.level.rawValue): \(item.total) kelimeden \(item.known) kelimeyi biliyorsun"))
+    }
+
+    private var code: some View {
+        Text(verbatim: item.level.rawValue)
+            .font(.subheadline.weight(.bold))
+            .foregroundStyle(Theme.ink)
+            .frame(minWidth: 30, alignment: .leading)
+    }
+
+    private var count: some View {
+        Text(verbatim: "\(item.known) / \(item.total)")
+            .font(.caption.weight(.medium))
+            .monospacedDigit()
+            .foregroundStyle(Theme.ink2)
+    }
+
+    private var bar: some View {
+        GeometryReader { proxy in
+            Capsule()
+                .fill(Theme.surface2)
+                .overlay(alignment: .leading) {
+                    Capsule()
+                        .fill(Theme.tint)
+                        .frame(width: filledWidth(in: proxy.size.width))
+                }
+        }
+        .frame(height: 8)
     }
 
     /// At least a dot once one word is known, so a small start still shows.

@@ -120,7 +120,7 @@ struct RootView: View {
         }
         .sheet(isPresented: $showsWidgetGuide) {
             NavigationStack {
-                WidgetGuideScreen()
+                WidgetGuideScreen(word: model.widgetGuideWord)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Kapat") {
@@ -161,7 +161,12 @@ struct RootView: View {
     /// file was recovered > reminders paused > the reminder time question > the widget tip. The
     /// screens' own cards ("Ara verdin", the end-of-day card) come after these (`claim`).
     private func startOpening() async {
-        guard systemCards.beginOpening() else {
+        // The launch task ends after the content has loaded: the user may have left by then, and
+        // the next activation starts the opening instead.
+        guard UIApplication.shared.applicationState != .background else {
+            return
+        }
+        guard let opening = systemCards.beginOpening() else {
             return
         }
         let now = Date()
@@ -201,7 +206,7 @@ struct RootView: View {
         if model.showsOnboarding || detailWord != nil {
             candidates = []
         }
-        let shown = systemCards.decide(from: candidates)
+        let shown = systemCards.decide(from: candidates, opening: opening)
         switch shown {
         case .progressRecovered?:
             recoveryCardShown = true
@@ -306,94 +311,90 @@ struct RootView: View {
 // MARK: - System card queue
 
 /// System cards (ogrenme_ilkeleri 2.10): notes at an opening that teach no word. At most one per
-/// opening; an opening lasts from coming to the foreground until going to the background.
+/// opening; an opening lasts from coming to the foreground until going to the background. The
+/// rule is `SystemCardSlot` (Learning, tested on Linux); this object keeps one for the app and
+/// publishes it. RootView offers its cards when an opening starts and shows the first by priority
+/// as a sheet: the recovery warning > the reminder pause note > the reminder time question > the
+/// widget tip. The screens' own cards come after these.
 ///
-/// RootView offers its cards when an opening starts and shows the first by priority as a sheet.
-/// A screen with a card of its own ("Ara verdin" in "Tekrar", the end-of-day card in "Akış")
-/// calls `claim(_:)` once `isDecided` is true: it gets true only if no other card came first.
-/// Otherwise the screen shows its plain version ("Başla (10 kart)" without the two lines) or
-/// keeps its card for the next opening.
+/// A screen with a card of its own ("Ara verdin" in "Tekrar", the end-of-day card in "Akış"):
+///
+///     @EnvironmentObject private var systemCards: SystemCardQueue
+///     @State private var showsBreakCard = false
+///
+///     .onAppear { updateBreakCard() }
+///     .onChange(of: systemCards.isDecided) { _, _ in updateBreakCard() }
+///
+///     private func updateBreakCard() {
+///         // Only when the card is due; the claim takes the opening.
+///         guard systemCards.isDecided else { return }  // in the background: keep what is shown
+///         showsBreakCard = isAfterBreak && systemCards.claim(.breakStart)
+///     }
+///
+/// - Claim only when the card would really be shown now: a claim takes the opening even if the
+///   card never appears.
+/// - Before RootView has decided (`isDecided` false) a claim returns false; claim again when
+///   `isDecided` turns true. It turns false when the app goes to the background and true again
+///   at the next opening.
+/// - Asking again in the same opening returns the same answer, so `onAppear` may claim each time.
+/// - A card still on screen at a new opening is claimed again: false means a sheet of the new
+///   opening came first, so the screen shows its plain version ("Başla (10 kelime)" without the
+///   two lines) or keeps its card for a later opening (the end-of-day card).
+/// - Only one tab is on screen at a time, so between "Ara verdin" and the end-of-day card the
+///   first claim of the opening wins.
 @MainActor
 final class SystemCardQueue: ObservableObject {
-    /// In priority order, the most important first.
-    enum Card: Int, Comparable, Identifiable {
-        /// The progress file was damaged and recovered (`AppModel.progressRecovery`).
-        case progressRecovered
-        /// "Hatırlatmaları duraklattık." after a week of ignored reminders.
-        case remindersPaused
-        /// "Hatırlatma saatini değiştirelim mi?" after three days of ignored reminders.
-        case reminderTime
-        /// No widget yet: how to add one.
-        case widgetTip
-        /// "Ara verdin, sorun değil." (Tekrar's start after a break; shown by ReviewView).
-        case breakStart
-        /// "Bugünlük 10 yeni kelime yeter." (Akış; shown by FeedView).
-        case dayEnd
-
-        var id: Int {
-            return rawValue
-        }
-
-        static func < (lhs: Card, rhs: Card) -> Bool {
-            return lhs.rawValue < rhs.rawValue
-        }
-    }
+    typealias Card = SystemCard
 
     /// The card RootView shows as a sheet; nil when closed.
     @Published var presented: Card?
     /// RootView has picked this opening's card (or none): screens may `claim` from now on.
     @Published private(set) var isDecided = false
-    /// This opening's card, shown by RootView or claimed by a screen.
-    private(set) var current: Card?
-    private var hasBegun = false
+    private var slot = SystemCardSlot()
 
-    /// Starts an opening; false when one is already running (the launch and the first activation
-    /// both start it) or a card from before the background is still open (it is this opening's).
-    func beginOpening() -> Bool {
-        if hasBegun {
-            return false
-        }
-        hasBegun = true
-        if let open = presented {
-            current = open
-            isDecided = true
-            return false
-        }
-        current = nil
-        isDecided = false
-        return true
+    /// This opening's card, shown by RootView or claimed by a screen.
+    var current: Card? {
+        return slot.current
+    }
+
+    /// Starts an opening. Returns its number when RootView should gather its cards and call
+    /// `decide(from:opening:)`; nil when one is already running (the launch and the first
+    /// activation both start it) or a card from before the background is still open (it is this
+    /// opening's).
+    func beginOpening() -> Int? {
+        let opening = slot.beginOpening(stillShown: presented)
+        publish()
+        return opening
     }
 
     func endOpening() {
-        hasBegun = false
-        isDecided = false
-        current = nil
+        slot.endOpening()
+        publish()
     }
 
-    /// RootView's cards for this opening: the first by priority is shown and returned.
+    /// RootView's cards for `opening`: the first by priority is shown and returned. Nothing is
+    /// shown when the app went to the background in the meantime.
     @discardableResult
-    func decide(from candidates: Set<Card>) -> Card? {
-        defer {
-            isDecided = true
+    func decide(from candidates: Set<Card>, opening: Int) -> Card? {
+        let card = slot.decide(from: candidates, opening: opening)
+        if let card = card {
+            presented = card
         }
-        guard current == nil, let first = candidates.min() else {
-            return nil
-        }
-        current = first
-        presented = first
-        return first
+        publish()
+        return card
     }
 
-    /// A screen's own card: true when it is this opening's card (it was free or already this
-    /// card's), false while RootView has not decided or another card came first.
+    /// A screen's own card (`.breakStart`, `.dayEnd`): true when it is this opening's card (it was
+    /// free or already this card's), false while RootView has not decided or another card came
+    /// first. See the type's documentation.
     func claim(_ card: Card) -> Bool {
-        guard isDecided else {
-            return false
+        return slot.claim(card)
+    }
+
+    private func publish() {
+        if isDecided != slot.isDecided {
+            isDecided = slot.isDecided
         }
-        if current == nil {
-            current = card
-        }
-        return current == card
     }
 }
 
@@ -594,10 +595,10 @@ struct SystemCardSheet: View {
 
     private var title: String {
         switch card {
-        case .progressRecovered: return "İlerleme dosyası okunamadı"
+        case .progressRecovered: return SystemCardSheet.recoveryTitle
         case .remindersPaused: return "Hatırlatmaları duraklattık"
         case .reminderTime: return "Hatırlatma saatini değiştirelim mi?"
-        case .widgetTip: return "Kelimeler kilit ekranında da görünsün mü?"
+        case .widgetTip: return "Kelimeler kilitli ekranında da görünsün mü?"
         case .breakStart: return "Ara verdin, sorun değil."
         case .dayEnd: return "Bugünlük yeter."
         }
@@ -620,16 +621,20 @@ struct SystemCardSheet: View {
         }
     }
 
-    /// Same wording as the notice in "Ayarlar", which stays until "Anladım".
+    /// The title of the recovery card and of the notice in "Ayarlar", which stays until "Anladım".
+    static let recoveryTitle = "İlerleme kayıtların okunamadı"
+
+    /// The sentences under `recoveryTitle`, here and in "Ayarlar": short, "biz", no suffix after
+    /// the date (the date stands in brackets).
     static func recoveryMessage(_ outcome: ProgressStore.LoadOutcome?) -> String {
         switch outcome {
         case let .restoredFromBackup(_, backupDate)?:
             if let date = backupDate {
-                return "İlerleme dosyası okunamadı, \(date.formatted(date: .long, time: .shortened)) tarihli yedekten geri yüklendi. Ondan sonraki değişiklikler kaybolmuş olabilir."
+                return "Yedekten geri yükledik (yedek: \(date.formatted(date: .long, time: .shortened))). Bu tarihten sonraki değişiklikler kaybolmuş olabilir."
             }
-            return "İlerleme dosyası okunamadı, yedekten geri yüklendi. Son değişiklikler kaybolmuş olabilir."
+            return "Yedekten geri yükledik. Son değişiklikler kaybolmuş olabilir."
         case .startedOver?:
-            return "İlerleme dosyası okunamadı ve yedek yoktu, ilerleme sıfırdan başladı. Eski dosya silinmedi; sonraki bir sürüm onu kurtarabilir."
+            return "Yedek yoktu, ilerleme sıfırdan başladı. Eski dosyayı silmedik; sonraki bir sürüm onu kurtarabilir."
         case .fresh?, .loaded?, nil:
             return ""
         }

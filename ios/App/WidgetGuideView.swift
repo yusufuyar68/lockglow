@@ -1,17 +1,22 @@
 import SwiftUI
 import WidgetKit
+import CoreModels
 
 /// "Widget nasıl eklenir": steps for the Lock Screen and the Home Screen on iOS 26. Button names
 /// are the ones in Apple's Turkish iPhone User Guide for iOS 26 ("Özel bir iPhone kilitli ekranı
 /// yaratma", "Araç takımlarını ekleme, düzenleme ve silme"), where a widget is called "araç
 /// takımı": "Özelleştir", "Araç Takımı Ekle", "Düzenle", "Bitti". The English names follow in one
 /// line, for a phone set to English. Shown in the onboarding and under "Ayarlar > Yardım". A small
-/// drawing shows where the widget goes (mockup `.gprev`).
+/// drawing shows where the widget goes (mockup `.gprev`), with the user's own word on it (§2.8).
 struct WidgetGuideContent: View {
     enum Place: Hashable {
         case lockScreen
         case homeScreen
     }
+
+    /// The word on the drawn widget: in the onboarding the first word of the chosen level and
+    /// topics, later the word the widget shows now. Nil (no words loaded): "breakfast".
+    var word: WidgetWord? = nil
 
     @State private var place: Place = .lockScreen
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -26,7 +31,10 @@ struct WidgetGuideContent: View {
                 ],
                 selection: $place
             )
-            WidgetPlacePreview(place: place)
+            // Named like the option groups of "Ayarlar"; the two buttons keep their own names.
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("Nereye ekleyeceksin?")
+            WidgetPlacePreview(place: place, sample: WidgetPreviewSample(word: word))
             // Mockup `.steps`: one white group, numbered rows 14 pt apart.
             VStack(alignment: .leading, spacing: 14) {
                 ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
@@ -154,12 +162,36 @@ private struct StepRow: View {
     }
 }
 
+/// What the drawn widget shows, as the real Lock Screen and small widgets do: the word and its
+/// Turkish meaning, nothing else (ogrenme_ilkeleri 2.1). The short form of a long meaning fits the
+/// small drawing best. A sensitive word never reaches the widget (`QueueComposer`), so the drawing
+/// shows "breakfast" instead.
+private struct WidgetPreviewSample {
+    let lemma: String
+    let meaning: String?
+
+    init(word: WidgetWord?) {
+        guard let word = word, !word.lemma.isEmpty, !word.isSensitive else {
+            lemma = "breakfast"
+            meaning = "kahvaltı"
+            return
+        }
+        lemma = word.lemma
+        meaning = [word.glossShortTR, word.glossTR]
+            .compactMap { $0?.trimmingCharacters(in: .whitespaces) }
+            .first { !$0.isEmpty }
+    }
+}
+
 /// Where the widget goes (mockup `.gprev`): a drawn Lock Screen or Home Screen with the widget
 /// outlined in white dashes. Calm, muted colors: the only yellow is the band of the English word
 /// (rule 1). A picture with a fixed size and fixed colors (it shows the phone, whatever the app's
-/// appearance and text size); VoiceOver reads one sentence instead.
+/// appearance and text size); VoiceOver reads one sentence instead. A long word or meaning
+/// shrinks to fit the drawing ("Could you tell me the way to" fits); only a very long word of the
+/// user's own may still be cut.
 private struct WidgetPlacePreview: View {
     let place: WidgetGuideContent.Place
+    let sample: WidgetPreviewSample
 
     var body: some View {
         ZStack {
@@ -197,23 +229,25 @@ private struct WidgetPlacePreview: View {
             Text(verbatim: "9:41")
                 .font(.system(size: 40, weight: .bold))
                 .foregroundStyle(Color.white.opacity(0.92))
-            // The rectangular Lock Screen widget: the word on the thin band of a vibrant widget.
+            // The rectangular Lock Screen widget: the word on the thin band of a vibrant widget,
+            // the meaning under it. English is serif (rule 3), as on the real widget.
             VStack(alignment: .leading, spacing: 0) {
-                Text(verbatim: "breakfast")
+                Text(verbatim: sample.lemma)
                     .font(.system(size: 15, weight: .bold, design: .serif))
+                    .minimumScaleFactor(0.45)
                     .phosphorBand(.widget, renderingMode: .vibrant)
-                    .padding(.bottom, 3)
-                Text(verbatim: "kahvaltı")
-                    .font(.system(size: 12.5, weight: .semibold))
-                // English is serif (rule 3), as on the real widget.
-                Text(verbatim: "first meal of the day")
-                    .font(.system(size: 11, weight: .regular, design: .serif))
-                    .opacity(0.8)
+                    .padding(.bottom, 4)
+                if let meaning = sample.meaning {
+                    Text(verbatim: meaning)
+                        .font(.system(size: 12.5, weight: .semibold))
+                        .minimumScaleFactor(0.7)
+                        .opacity(0.85)
+                }
             }
             .lineLimit(1)
             .foregroundStyle(Color.white)
             .padding(.horizontal, 11)
-            .padding(.vertical, 7)
+            .padding(.vertical, 9)
             .frame(width: 150, alignment: .leading)
             .background(Color.white.opacity(0.14), in: RoundedRectangle(cornerRadius: 13, style: .continuous))
             .overlay(PreviewOutline(cornerRadius: 13))
@@ -230,18 +264,21 @@ private struct WidgetPlacePreview: View {
     private var homeScreen: some View {
         HStack(alignment: .top, spacing: 18) {
             VStack(spacing: 8) {
-                // The small Home Screen widget in full color: the word on its day band.
+                // The small Home Screen widget in full color: the word on its day band and the
+                // meaning under it.
                 VStack(alignment: .leading, spacing: 1) {
-                    Text(verbatim: "breakfast")
+                    Text(verbatim: sample.lemma)
                         .font(.system(size: 15, weight: .bold, design: .serif))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.45)
                         .phosphorBand(.widget)
-                    Text(verbatim: "kahvaltı")
-                        .font(.system(size: 12.5, weight: .bold))
-                        .padding(.top, 2)
-                    Text(verbatim: "first meal of the day")
-                        .font(.system(size: 11, weight: .regular, design: .serif))
-                        .foregroundStyle(Color(guideHex: 0x4E555B))
-                        .lineLimit(2)
+                    if let meaning = sample.meaning {
+                        Text(verbatim: meaning)
+                            .font(.system(size: 12.5, weight: .bold))
+                            .lineLimit(3)
+                            .minimumScaleFactor(0.8)
+                            .padding(.top, 4)
+                    }
                     Spacer(minLength: 0)
                 }
                 .foregroundStyle(Color(guideHex: 0x15181B))
@@ -332,11 +369,22 @@ private extension Color {
     }
 }
 
+extension AppModel {
+    /// The word the widget guide draws after the onboarding: the one the Lock Screen widget shows
+    /// now, otherwise the first word of the deck.
+    var widgetGuideWord: WidgetWord? {
+        return lockScreenWordID.flatMap { word(id: $0) } ?? firstDeckWord()
+    }
+}
+
 /// "Ayarlar > Yardım > Widget nasıl eklenir?"
 struct WidgetGuideScreen: View {
+    /// The word on the drawn widget (`WidgetGuideContent.word`).
+    var word: WidgetWord? = nil
+
     var body: some View {
         ScrollView {
-            WidgetGuideContent()
+            WidgetGuideContent(word: word)
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
                 .padding(.bottom, 24)
