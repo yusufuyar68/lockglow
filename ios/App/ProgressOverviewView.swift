@@ -828,7 +828,7 @@ private struct HowShelvesWork: View {
                 Text("**Bildim:** bir basamak çıkar.")
                 Text("**Kolay:** iki basamak çıkar.")
                 Text("**Zor:** aynı basamakta kalır, ara yarıya iner.")
-                Text("**Bilemedim:** \(Leitner.lapseDrop) basamak iner, sonraki turda yine sorulur.")
+                Text("**Bilemedim:** aşağı iner, sonraki turda yine sorulur.")
             }
             .font(.subheadline)
             .foregroundStyle(Theme.ink)

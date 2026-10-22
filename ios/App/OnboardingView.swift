@@ -352,6 +352,8 @@ struct OnboardingView: View {
     /// would stay on "Devam", and a second double tap would skip a page unread.
     private func go(to target: Page) {
         page = target
+        // From false, so the change is seen even when the old title still had the focus.
+        isTitleFocused = false
         Task { @MainActor in
             try? await Task.sleep(for: .milliseconds(reduceMotion ? 100 : 350))
             isTitleFocused = true

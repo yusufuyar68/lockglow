@@ -55,7 +55,7 @@ struct SettingsView: View {
                 Button("Vazgeç", role: .cancel) {}
             } message: {
                 // Everything `resetProgress()` clears, and the one thing it keeps.
-                Text("Bildiğin ve öğrendiğin kelimelerin kaydı silinir. Kullanım ölçümleri, son aramalar ve Akış'ta gördüğün kartların kaydı da silinir. Kendi eklediğin kelimeler kalır, ama onlar da baştan başlar. Bu işlem geri alınamaz.")
+                Text("Bildiğin ve öğrendiğin kelimelerin kaydı, kullanım ölçümleri, son aramalar ve Akış geçmişi silinir. Kendi eklediğin kelimeler kalır ama baştan başlar. Bu işlem geri alınamaz.")
             }
             .task {
                 await refreshStatus()
@@ -72,11 +72,13 @@ struct SettingsView: View {
     }
 
     /// The progress, today's counts, the local measurements and the feed's first encounters
-    /// (`AppModel.resetProgress`), then Sözlük's recent searches. The user's own words stay; their
-    /// progress goes with the rest. VoiceOver hears that it is done: the dialog just closes.
+    /// (`AppModel.resetProgress`), then Sözlük's recent searches and the words "Tekrar" listed as
+    /// today's new words (they are new again). The user's own words stay; their progress goes
+    /// with the rest. VoiceOver hears that it is done: the dialog just closes.
     private func resetProgress() {
         model.resetProgress()
         UserDefaults.standard.removeObject(forKey: SozlukRecentSearches.storageKey)
+        UserDefaults.standard.removeObject(forKey: "lockglow.reviewNewWordsToday")
         AccessibilityNotification.Announcement(AttributedString("İlerleme sıfırlandı.")).post()
     }
 
@@ -324,7 +326,7 @@ struct SettingsView: View {
             notificationsDenied = !granted
             model.setReminderEnabled(granted)
             if !granted {
-                AccessibilityNotification.Announcement(AttributedString("Bildirimlere izin verilmemiş. Hatırlatma kapalı kaldı.")).post()
+                AccessibilityNotification.Announcement(AttributedString("Bildirim izni yok. Hatırlatma kapalı kaldı.")).post()
             }
         } else {
             model.setReminderEnabled(false)
@@ -396,9 +398,9 @@ struct SettingsView: View {
                     .padding(14)
                 }
             }
-            // The reminder shows one word, not counts (`Learning/ReminderText`); a tap opens
-            // "Tekrar" (`NotificationRouter`); a week ignored pauses it (`ReminderBackoff`).
-            Text("Seçtiğin saatte kısa bir hatırlatma gelir. İçinde bir kelime ve anlamı olur. Dokununca Tekrar açılır. O günün işini bitirdiysen gelmez. Bir hafta bakılmazsa hatırlatma kendiliğinden durur.")
+            // The reminder carries a word, not counts (`Learning/ReminderText`). The week-long
+            // pause is said in its own row above, when it happens.
+            Text("Seçtiğin saatte bir kelimeyle kısa bir hatırlatma gelir. O günün işini bitirdiysen gelmez.")
                 .settingsFootnote()
         }
     }

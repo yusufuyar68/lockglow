@@ -164,13 +164,14 @@ private struct StepRow: View {
 
 /// What the drawn widget shows, as the real Lock Screen and small widgets do: the word and its
 /// Turkish meaning, nothing else (ogrenme_ilkeleri 2.1). The short form of a long meaning fits the
-/// small drawing best.
+/// small drawing best. A sensitive word never reaches the widget (`QueueComposer`), so the drawing
+/// shows "breakfast" instead.
 private struct WidgetPreviewSample {
     let lemma: String
     let meaning: String?
 
     init(word: WidgetWord?) {
-        guard let word = word, !word.lemma.isEmpty else {
+        guard let word = word, !word.lemma.isEmpty, !word.isSensitive else {
             lemma = "breakfast"
             meaning = "kahvaltı"
             return
@@ -186,7 +187,8 @@ private struct WidgetPreviewSample {
 /// outlined in white dashes. Calm, muted colors: the only yellow is the band of the English word
 /// (rule 1). A picture with a fixed size and fixed colors (it shows the phone, whatever the app's
 /// appearance and text size); VoiceOver reads one sentence instead. A long word or meaning
-/// shrinks to fit the drawing rather than being cut.
+/// shrinks to fit the drawing ("Could you tell me the way to" fits); only a very long word of the
+/// user's own may still be cut.
 private struct WidgetPlacePreview: View {
     let place: WidgetGuideContent.Place
     let sample: WidgetPreviewSample
@@ -232,7 +234,7 @@ private struct WidgetPlacePreview: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text(verbatim: sample.lemma)
                     .font(.system(size: 15, weight: .bold, design: .serif))
-                    .minimumScaleFactor(0.6)
+                    .minimumScaleFactor(0.45)
                     .phosphorBand(.widget, renderingMode: .vibrant)
                     .padding(.bottom, 4)
                 if let meaning = sample.meaning {
@@ -268,7 +270,7 @@ private struct WidgetPlacePreview: View {
                     Text(verbatim: sample.lemma)
                         .font(.system(size: 15, weight: .bold, design: .serif))
                         .lineLimit(1)
-                        .minimumScaleFactor(0.6)
+                        .minimumScaleFactor(0.45)
                         .phosphorBand(.widget)
                     if let meaning = sample.meaning {
                         Text(verbatim: meaning)

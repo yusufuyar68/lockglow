@@ -161,6 +161,11 @@ struct RootView: View {
     /// file was recovered > reminders paused > the reminder time question > the widget tip. The
     /// screens' own cards ("Ara verdin", the end-of-day card) come after these (`claim`).
     private func startOpening() async {
+        // The launch task ends after the content has loaded: the user may have left by then, and
+        // the next activation starts the opening instead.
+        guard UIApplication.shared.applicationState != .background else {
+            return
+        }
         guard let opening = systemCards.beginOpening() else {
             return
         }
