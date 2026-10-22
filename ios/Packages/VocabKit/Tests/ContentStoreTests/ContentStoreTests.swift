@@ -34,7 +34,7 @@ final class ContentStoreTests: XCTestCase {
         let store = try ContentStore(path: databasePath)
 
         let all = try store.freeCards(maxLevelRank: 7, limit: 10)
-        // id 3 is not free, id 4 is sensitive. Order: level_rank, freq_rank (NULL last), rowid.
+        // id 3 is not free, id 4 is offensive (sensitivity 2). Order: level_rank, freq_rank (NULL last), rowid.
         XCTAssertEqual(all.map { $0.id }, [1, 5, 2])
 
         let beginner = try store.freeCards(maxLevelRank: 1, limit: 10)
@@ -86,11 +86,12 @@ final class ContentStoreTests: XCTestCase {
 
         let store = try ContentStore(path: databasePath)
         let topics = try store.topics()
-        // Sort order: travel (0), general (1), success (7). "empty_topic" has no card;
-        // "workplace_office" only a locked and a sensitive one. "general" counts cards 1, 2 and 5
-        // (3 is locked, 4 sensitive); travel counts 6, 7 and card 1 through its second topic.
-        XCTAssertEqual(topics.map { $0.id }, ["travel_tourism", "general", "success_productivity"])
-        XCTAssertEqual(topics.map { $0.cardCount }, [3, 3, 1])
+        // Sort order: travel (0), general (1), workplace (5), success (7). "empty_topic" has no
+        // card. "general" counts cards 1, 2 and 5 (3 is locked, 4 offensive); travel counts 6, 7
+        // and card 1 through its second topic; "workplace_office" counts the personal card 9
+        // (sensitivity 1 stays in the app), not the locked card 8.
+        XCTAssertEqual(topics.map { $0.id }, ["travel_tourism", "general", "workplace_office", "success_productivity"])
+        XCTAssertEqual(topics.map { $0.cardCount }, [3, 3, 1, 1])
         XCTAssertEqual(
             topics.first,
             ContentTopic(id: "travel_tourism", group: "B", nameEN: "Travel & Tourism", nameTR: "Seyahat & Turizm", sort: 0, cardCount: 3)
@@ -150,11 +151,20 @@ final class ContentStoreTests: XCTestCase {
         XCTAssertEqual(first.defMicro, "micro")
         XCTAssertEqual(first.exampleEN, "example")
         XCTAssertEqual(first.ipaUS, "/ipa/")
+        XCTAssertEqual(first.glossShortTR, "cicek")
+        XCTAssertEqual(first.sensitivity, 0)
+        XCTAssertFalse(first.isSensitive)
 
         // Card 5 has no card_l1 row: the LEFT JOIN yields a nil gloss.
         let noGloss = try XCTUnwrap(cards.first(where: { $0.id == 5 }))
         XCTAssertNil(noGloss.glossTR)
+        XCTAssertNil(noGloss.glossShortTR)
         XCTAssertNil(noGloss.ipaUS)
+
+        // Card 2 has a gloss but no short one.
+        let noShort = try XCTUnwrap(cards.first(where: { $0.id == 2 }))
+        XCTAssertEqual(noShort.glossTR, "direncli")
+        XCTAssertNil(noShort.glossShortTR)
     }
 
     func testSearchUsesFoldedPrefixMatch() throws {
@@ -170,9 +180,28 @@ final class ContentStoreTests: XCTestCase {
         XCTAssertEqual(phrase.map { $0.id }, [3])
     }
 
-    func testSearchHidesSensitiveCards() throws {
+    func testSearchHidesOffensiveCards() throws {
         let store = try ContentStore(path: databasePath)
         XCTAssertTrue(try store.search("sensitive", limit: 10).isEmpty)
+    }
+
+    func testPersonalCardsStayInTheApp() throws {
+        // Sensitivity 1 (relationships, work trouble…) leaves only the widget queue; the app lists
+        // and finds it like any card, and says it is sensitive.
+        let writer = try DatabaseQueue(path: databasePath)
+        try writer.write { db in
+            try self.insertCard(db, id: 6, lemma: "divorce", level: "B1", levelRank: 3, freqRank: 400, sensitivity: 1, isFree: 1, ipa: nil, gloss: "boşanma")
+        }
+
+        let store = try ContentStore(path: databasePath)
+        let free = try store.freeCards(maxLevelRank: 7, limit: 10)
+        XCTAssertEqual(free.map { $0.id }, [1, 5, 6, 2])
+        let personal = try XCTUnwrap(free.first(where: { $0.id == 6 }))
+        XCTAssertEqual(personal.sensitivity, 1)
+        XCTAssertTrue(personal.isSensitive)
+
+        XCTAssertEqual(try store.search("divorce", limit: 10).map { $0.id }, [6])
+        XCTAssertEqual(try store.search("bosanma", limit: 10).map { $0.id }, [6])
     }
 
     func testSearchWithUnsearchableQueryReturnsEmpty() throws {
@@ -217,7 +246,7 @@ final class ContentStoreTests: XCTestCase {
                 );
                 CREATE TABLE card_l1 (
                   card_rowid INTEGER NOT NULL REFERENCES card(rowid), lang TEXT NOT NULL,
-                  gloss TEXT NOT NULL, equivalence TEXT NOT NULL, example_tr TEXT,
+                  gloss TEXT NOT NULL, gloss_short TEXT, equivalence TEXT NOT NULL, example_tr TEXT,
                   PRIMARY KEY (card_rowid, lang)
                 );
                 CREATE TABLE card_category (
@@ -235,10 +264,10 @@ final class ContentStoreTests: XCTestCase {
                 """)
 
             // id, lemma, level, level_rank, freq_rank, sensitivity, is_free, ipa, gloss
-            try self.insertCard(db, id: 1, lemma: "cicek", level: "A1", levelRank: 1, freqRank: 50, sensitivity: 0, isFree: 1, ipa: "/ipa/", gloss: "flower")
+            try self.insertCard(db, id: 1, lemma: "cicek", level: "A1", levelRank: 1, freqRank: 50, sensitivity: 0, isFree: 1, ipa: "/ipa/", gloss: "flower", glossShort: "cicek")
             try self.insertCard(db, id: 2, lemma: "resilient", level: "C1", levelRank: 5, freqRank: 900, sensitivity: 0, isFree: 1, ipa: nil, gloss: "direncli")
             try self.insertCard(db, id: 3, lemma: "look up to", level: "B2", levelRank: 4, freqRank: nil, sensitivity: 0, isFree: 0, ipa: nil, gloss: "saygi duymak")
-            try self.insertCard(db, id: 4, lemma: "sensitive", level: "B1", levelRank: 3, freqRank: 10, sensitivity: 1, isFree: 1, ipa: nil, gloss: "hassas")
+            try self.insertCard(db, id: 4, lemma: "sensitive", level: "B1", levelRank: 3, freqRank: 10, sensitivity: 2, isFree: 1, ipa: nil, gloss: "hassas")
             try self.insertCard(db, id: 5, lemma: "breakfast", level: "A1", levelRank: 1, freqRank: nil, sensitivity: 0, isFree: 1, ipa: nil, gloss: nil)
         }
     }
@@ -262,6 +291,7 @@ final class ContentStoreTests: XCTestCase {
         isFree: Int,
         ipa: String?,
         gloss: String?,
+        glossShort: String? = nil,
         topic: String = "general"
     ) throws {
         try db.execute(
@@ -282,8 +312,8 @@ final class ContentStoreTests: XCTestCase {
         var glossFold = ""
         if let gloss = gloss {
             try db.execute(
-                sql: "INSERT INTO card_l1 (card_rowid, lang, gloss, equivalence) VALUES (?, 'tr', ?, 'full')",
-                arguments: [id, gloss]
+                sql: "INSERT INTO card_l1 (card_rowid, lang, gloss, gloss_short, equivalence) VALUES (?, 'tr', ?, ?, 'full')",
+                arguments: [id, gloss, glossShort]
             )
             glossFold = TextFold.fold(gloss)
         }
