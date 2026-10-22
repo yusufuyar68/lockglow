@@ -20,7 +20,7 @@ struct TopicPickerView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 4)
                 if model.choosableTopics.isEmpty {
-                    Text("Konu listesi yok (içerik veritabanı yüklenmedi). Bütün kelimeler gösteriliyor.")
+                    Text("Konu listesi yüklenemedi. Şimdilik bütün kelimeler gelir.")
                         .font(.body)
                         .foregroundStyle(Theme.ink)
                 } else {
@@ -34,7 +34,7 @@ struct TopicPickerView: View {
                         totalWordCount: model.words.count,
                         selection: $selection
                     )
-                    Text("Bir kelime birkaç konuda olabilir; toplamda bir kez sayılır. Öğrendiğin kelimelerin tekrarı her konuda sürer.")
+                    Text("Bir kelime birkaç konuda olabilir; bir kez sayılır. Bir konuyu kaldırsan da öğrendiğin kelimeler Tekrar'da sorulmaya devam eder.")
                         .font(.footnote)
                         .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
@@ -125,7 +125,7 @@ struct TopicChoiceList: View {
             ChoiceRow(isSelected: isEverything) {
                 selection = []
             } label: {
-                TopicRowLabel(title: "Tümü", detail: "Bütün konular, \(totalWordCount) kelime")
+                TopicRowLabel(title: "Tümü", detail: "Tüm konular, \(totalWordCount) kelime")
             }
             .accessibilityIdentifier("topics.all")
             ForEach(TopicGroup.groups(of: topics)) { group in
@@ -316,10 +316,15 @@ extension ContentTopic {
         case "careers_interviews": return "İş görüşmesi"
         case "finance_economics": return "Para ve ekonomi"
         case "technology_internet": return "Teknoloji ve internet"
-        case "phrasal_verbs": return "İki kelimeli fiiller"
+        case "phrasal_verbs": return "Kalıp fiiller"
         case "idioms_expressions": return "Deyimler"
         case "collocations": return "Kelime ikilileri"
         case "confusing_words": return "Karıştırılan kelimeler"
+        // Topics without cards today: named here so a later content build is not in title case.
+        case "compliments_insults": return "İltifat ve laf sokma"
+        case "slang_informal": return "Argo ve gündelik dil"
+        case "society_media": return "Toplum ve haberler"
+        case "environment_climate": return "Çevre ve iklim"
         default: return nameTR.replacingOccurrences(of: " & ", with: " ve ")
         }
     }

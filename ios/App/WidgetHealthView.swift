@@ -119,7 +119,7 @@ struct WidgetHealthView: View {
                     value: health.nextChangeAt.map { $0.formatted(date: .omitted, time: .shortened) } ?? "yok"
                 )
                 SettingsDivider()
-                HealthValueRow(title: "Uygulamaya iletilecek dokunuş", value: "\(health.pendingEventCount)")
+                HealthValueRow(title: "Widget'ta bekleyen dokunuş", value: "\(health.pendingEventCount)")
             }
         }
     }
@@ -148,21 +148,24 @@ struct WidgetHealthView: View {
         }
     }
 
+    /// The card above changes in place, so VoiceOver hears the new verdict once the check is done.
     private var refreshButton: some View {
         Button {
             model.refreshWidgetPlan()
             Task {
                 await model.refreshHealth()
+                let verdict = WidgetHealthCard.title(of: WidgetHealthStatus(of: model))
+                AccessibilityNotification.Announcement(AttributedString("Widget'lar yenilendi. " + verdict)).post()
             }
         } label: {
             Label("Widget'ları yenile", systemImage: "arrow.triangle.2.circlepath")
         }
     }
 
-    /// The same guide as "Ayarlar > Widget nasıl eklenir?" and the onboarding.
+    /// The same guide as "Widget nasıl eklenir?" in Ayarlar and the onboarding.
     private var guideLink: some View {
         NavigationLink {
-            WidgetGuideScreen()
+            WidgetGuideScreen(word: model.widgetGuideWord)
         } label: {
             Label("Widget nasıl eklenir?", systemImage: "plus.circle")
         }
@@ -181,7 +184,7 @@ struct WidgetHealthView: View {
                 TechnicalRow(title: "Bekleyen olay", value: "\(health.pendingEventCount)")
                 TechnicalRow(title: "Son yenileme isteği", value: format(health.lastReloadRequestedAt, seconds: true))
                 TechnicalRow(title: "Kaynak", value: sourceDescription)
-                TechnicalRow(title: "Kart sayısı", value: "\(model.cardCount)")
+                TechnicalRow(title: "Kelime sayısı", value: "\(model.cardCount)")
                 TechnicalRow(title: "İçerik sürümü", value: model.contentVersion ?? "yok")
                 VStack(spacing: 8) {
                     Button("Yalnızca zaman çizelgelerini yenile") {
@@ -432,13 +435,15 @@ private struct WidgetHealthCard: View {
     let status: WidgetHealthStatus
     let problem: WidgetPlanProblem?
     let lastUpdate: Date?
+    /// The icon circle grows with the symbol's text style, so the symbol never leaves it.
+    @ScaledMetric(relativeTo: .title3) private var circleSize: CGFloat = 44
 
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
             Image(systemName: symbol)
                 .font(.title3.weight(.bold))
                 .foregroundStyle(symbolColor)
-                .frame(width: 44, height: 44)
+                .frame(width: circleSize, height: circleSize)
                 .background(Circle().fill(circleColor))
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 2) {
@@ -463,6 +468,11 @@ private struct WidgetHealthCard: View {
     }
 
     private var title: String {
+        return WidgetHealthCard.title(of: status)
+    }
+
+    /// The card's first line; also what "Widget'ları yenile" announces.
+    static func title(of status: WidgetHealthStatus) -> String {
         switch status {
         case .checking: return "Kontrol ediliyor"
         case .working: return "Her şey yolunda"
@@ -486,7 +496,7 @@ private struct WidgetHealthCard: View {
             if let date = lastUpdate {
                 parts.append("Son güncelleme: \(date.formatted(date: .abbreviated, time: .shortened)).")
             }
-            parts.append("\"Widget'ları yenile\"ye dokun; düzelmezse widget'ı kaldırıp yeniden ekle.")
+            parts.append("Widget'ları yenile düğmesine dokun. Düzelmezse widget'ı kaldırıp yeniden ekle.")
             return parts.joined(separator: " ")
         case .notAdded:
             return "Kelimeler hazır. Widget'ı kilitli ekrana ya da ana ekrana ekleyince kelimeler orada değişir."
@@ -577,13 +587,40 @@ private struct HealthValueRow: View {
     }
 }
 
-/// One raw value under "Teknik bilgiler" (mockup `details.tech .r`).
+/// One raw value under "Teknik bilgiler" (mockup `details.tech .r`). At accessibility sizes the
+/// value goes under the title, so neither is squeezed into a narrow column.
 private struct TechnicalRow: View {
     let title: String
     let value: String
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         VStack(spacing: 0) {
+            content
+                .font(.footnote)
+                .padding(.vertical, 8)
+                .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
+            Rectangle()
+                .fill(Theme.line)
+                .frame(height: 1)
+                .accessibilityHidden(true)
+        }
+        .accessibilityElement(children: .combine)
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        if dynamicTypeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(verbatim: title)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(verbatim: value)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        } else {
             HStack(alignment: .firstTextBaseline, spacing: 12) {
                 Text(verbatim: title)
                     .foregroundStyle(Theme.ink)
@@ -593,15 +630,7 @@ private struct TechnicalRow: View {
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.trailing)
             }
-            .font(.footnote)
-            .padding(.vertical, 8)
-            .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
-            Rectangle()
-                .fill(Theme.line)
-                .frame(height: 1)
-                .accessibilityHidden(true)
         }
-        .accessibilityElement(children: .combine)
     }
 }
 

@@ -122,7 +122,7 @@ struct CustomWordsView: View {
                     Text(verbatim: "\(library.words.count) kelime")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(Theme.ink)
-                    Text("Widget'ta ve Tekrar'da kartlarla birlikte döner. Düzeltmek için kelimeye dokun.")
+                    Text("Bu kelimeler widget'ta ve Tekrar'da da karşına çıkar. Düzeltmek için kelimeye dokun.")
                         .font(.footnote)
                         .foregroundStyle(Theme.ink2)
                 }
@@ -189,11 +189,11 @@ struct CustomWordsView: View {
         switch outcome {
         case let .added(word):
             addedCount += 1
-            show(CustomWordsNotice(message: "\(word.lemma) eklendi. Widget'ta ve Tekrar'da karşına çıkacak."))
+            show(CustomWordsNotice(lemma: word.lemma, text: " eklendi. Widget'ta ve Tekrar'da karşına çıkacak."))
         case let .updated(word):
-            show(CustomWordsNotice(message: "\(word.lemma) kaydedildi."))
+            show(CustomWordsNotice(lemma: word.lemma, text: " kaydedildi."))
         case let .removed(word):
-            show(CustomWordsNotice(message: "\(word.lemma) silindi.", undo: word))
+            show(CustomWordsNotice(lemma: word.lemma, text: " silindi.", undo: word))
         }
     }
 
@@ -203,10 +203,10 @@ struct CustomWordsView: View {
                 try library.remove(id: word.id)
             }
             if let removed = removed {
-                show(CustomWordsNotice(message: "\(removed.lemma) silindi.", undo: removed))
+                show(CustomWordsNotice(lemma: removed.lemma, text: " silindi.", undo: removed))
             }
         } catch {
-            show(CustomWordsNotice(message: "Silinemedi. Biraz sonra yeniden dene."))
+            show(CustomWordsNotice(text: "Silinemedi. Biraz sonra yeniden dene."))
         }
     }
 
@@ -217,20 +217,22 @@ struct CustomWordsView: View {
                 try library.restore(word)
                 notice = nil
             }
-            UIAccessibility.post(notification: .announcement, argument: "\(word.lemma) geri geldi.")
+            SozlukSpeech.announce([.english(word.lemma), .turkish(" geri geldi.")])
         } catch CustomWordList.ChangeError.invalid(_) {
             // The same word was added again in the meantime.
-            show(CustomWordsNotice(message: "\(word.lemma) yeniden eklenmiş, geri alınmadı."))
+            show(CustomWordsNotice(lemma: word.lemma, text: " listede zaten var. Silinen kelime geri gelmedi."))
         } catch {
-            show(CustomWordsNotice(message: "Geri alınamadı. Biraz sonra yeniden dene."))
+            show(CustomWordsNotice(text: "Geri alınamadı. Biraz sonra yeniden dene."))
         }
     }
 
+    /// Queued after what VoiceOver is saying (the closing sheet, the swipe action), the word in
+    /// an English voice.
     private func show(_ next: CustomWordsNotice) {
         withAnimation(reduceMotion ? nil : .default) {
             notice = next
         }
-        UIAccessibility.post(notification: .announcement, argument: next.message)
+        SozlukSpeech.announce(next.runs)
     }
 
     /// The notice leaves on its own after a few seconds; with VoiceOver it stays longer, so
@@ -562,7 +564,7 @@ struct CustomWordEditor: View {
         let problems = library.problems(for: draft, editing: editedWord?.id)
         if let first = problems.first {
             focus = first.field
-            UIAccessibility.post(notification: .announcement, argument: first.message)
+            SozlukSpeech.announce([.turkish(first.message)])
             return
         }
         do {
@@ -576,6 +578,9 @@ struct CustomWordEditor: View {
             dismiss()
         } catch let CustomWordList.ChangeError.invalid(found) {
             focus = found.first?.field
+            if let first = found.first {
+                SozlukSpeech.announce([.turkish(first.message)])
+            }
         } catch {
             failure = "Kelimen kaydedilemedi. Biraz sonra yeniden dene."
         }
@@ -623,6 +628,7 @@ private struct CustomWordFieldBox<Field: View, Footer: View>: View {
     let problem: CustomWordProblem?
     @ViewBuilder let field: () -> Field
     @ViewBuilder let footer: () -> Footer
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     init(
         title: String,
@@ -645,17 +651,26 @@ private struct CustomWordFieldBox<Field: View, Footer: View>: View {
     }
 
     var body: some View {
+        // At accessibility text sizes the title, "isteğe bağlı" and the count go under each other.
+        let isLarge = dynamicTypeSize.isAccessibilitySize
+        let layout = isLarge
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 8))
         VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .firstTextBaseline, spacing: 8) {
+            layout {
                 Text(verbatim: title)
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
                 if isOptional {
                     Text("isteğe bağlı")
                         .font(.footnote)
                         .foregroundStyle(Theme.ink3)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
-                Spacer(minLength: 8)
+                if !isLarge {
+                    Spacer(minLength: 8)
+                }
                 if showsCount {
                     Text(verbatim: "\(count)/\(limit)")
                         .font(.footnote.monospacedDigit())
@@ -729,7 +744,6 @@ private struct CustomWordRow: View {
                     Text(verbatim: word.lemma)
                         .font(.system(.body, design: .serif).weight(.bold))
                         .foregroundStyle(Theme.ink)
-                        .englishVoice()
                     Text(verbatim: word.meaningTR)
                         .font(.subheadline.weight(.medium))
                         .foregroundStyle(Theme.ink2)
@@ -744,6 +758,9 @@ private struct CustomWordRow: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(CustomWordRowButtonStyle())
+        // One label in two voices (as in "Bildiğin kelimeler"): an English locale inside the
+        // button would read the meaning and the hint in the English voice too.
+        .accessibilityLabel(SozlukSpeech.label([.english(word.lemma), .turkish(", Türkçesi: " + word.meaningTR)]))
         .accessibilityHint("Düzeltmek ya da silmek için açar")
     }
 }
@@ -836,8 +853,23 @@ private struct CustomWordsRecoveryBanner: View {
 /// What the bottom notice says, and the deleted word "Vazgeç" brings back.
 struct CustomWordsNotice: Equatable, Identifiable {
     let id = UUID()
-    let message: String
+    /// The English word the message starts with ("awkward silindi."), read in an English voice.
+    var lemma: String? = nil
+    /// The Turkish rest after `lemma`, or the whole message.
+    let text: String
     var undo: CustomWord? = nil
+
+    var message: String {
+        return (lemma ?? "") + text
+    }
+
+    /// For VoiceOver: the word in English, the rest in Turkish.
+    var runs: [SozlukSpeech.Run] {
+        guard let lemma = lemma else {
+            return [.turkish(text)]
+        }
+        return [.english(lemma), .turkish(text)]
+    }
 }
 
 /// Mockup `.toast`: an ink bar with the result and, after a delete, "Vazgeç". At accessibility
@@ -856,6 +888,7 @@ private struct CustomWordsNoticeBar: View {
                 .font(.subheadline.weight(.semibold))
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityLabel(SozlukSpeech.label(notice.runs))
             if notice.undo != nil {
                 Button(action: undo) {
                     Text("Vazgeç")

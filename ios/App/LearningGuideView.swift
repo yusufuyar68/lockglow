@@ -134,7 +134,7 @@ struct LearningGuideContent: View {
     private var recallFirst: some View {
         GuideSection(title: "Önce hatırlamaya çalış", systemImage: "brain.head.profile") {
             GuideParagraph("Cevaba hemen bakma. Önce birkaç saniye düşün: “Bu ne demekti?”")
-            GuideParagraph("Hatırlamaya çalışmak, cevabı okumaktan daha iyi öğretir. Bilemesen bile bu çaba işe yarar. Buna “sınama etkisi” (testing effect) denir.")
+            GuideParagraph("Hatırlamaya çalışmak, cevabı okumaktan daha iyi öğretir. Bilemesen bile bu çaba işe yarar. Buna “sınama etkisi” denir.")
             GuideRecallDemo()
             GuideNote("Tekrar'da da böyle yap: önce düşün, sonra karta dokun.", systemImage: "hand.tap")
         }
@@ -158,15 +158,15 @@ struct LearningGuideContent: View {
 
     private var widgetTips: some View {
         GuideSection(title: "Widget'ı iyi kullan", systemImage: "iphone") {
-            GuideParagraph("Widget'ı kilitli ekrana ekle. Telefona her baktığında kelimeyi görürsün; bu, gün içinde birçok kısa hatırlatma demek.")
-            GuideNote("Kelime şu an \(GuideText.rotation(minutes: rotationMinutes)) değişir. Bunu Ayarlar'dan değiştirebilirsin; kelimeyi rahatça okumak için 30 dakika ya da 1 saat iyidir.", systemImage: "clock")
+            GuideParagraph("Widget'ı kilitli ekrana ekle. Telefona her baktığında kelimeyi görürsün. Kelimeyi asıl Tekrar'da hatırlayarak öğrenirsin.")
+            GuideNote("Kelime şu an \(GuideText.rotation(minutes: rotationMinutes)) değişir. Bunu Ayarlar'dan değiştirebilirsin. Rahatça okumak için 30 dakika ya da 1 saat iyidir.", systemImage: "clock")
             GuideSubheading("Ana ekran widget'ındaki düğmeler")
             // Symbols and order of the widget's buttons (Widgets/WidgetButtons.swift).
             VStack(alignment: .leading, spacing: 12) {
                 GuideIconRow(
                     systemImage: "checkmark",
                     title: "Biliyorum",
-                    detail: "Kelimeyi zaten iyi biliyorsan bas. Kelime sıradan çıkar ve \(GuideText.duration(Leitner.knownCheckDelay)) sonra Tekrar'da bir kez sorulur. Bilirsen yalnızca \(GuideText.refresherInterval) gelir; bilemezsen yeniden öğrenirsin."
+                    detail: "Kelimeyi zaten biliyorsan dokun. Kelime widget'tan çıkar; \(GuideText.duration(Leitner.knownCheckDelay)) sonra bir kez sorarız. Bilirsen yalnızca \(GuideText.refresherInterval) gelir; bilemezsen yeniden öğrenirsin."
                 )
                 GuideIconRow(
                     systemImage: "speaker.wave.2",
@@ -187,7 +187,7 @@ struct LearningGuideContent: View {
 
     private var pronunciation: some View {
         GuideSection(title: "Söyle ile telaffuz", systemImage: "mic") {
-            GuideParagraph("Akış'taki ve Sözlük'teki kartlarda kelimenin yanında bir mikrofon var. Ona dokun, önce dinle, sonra **Söyle**'ye bas ve kelimeyi yüksek sesle söyle.")
+            GuideParagraph("Akış'ta ve Sözlük'te kartlardaki **Söyle**'ye dokun. Önce dinle, sonra **Söyle**'ye dokunup kelimeyi yüksek sesle söyle.")
             GuideVerdictSamples()
             GuideParagraph("Telefon seni dinler ve Türkçe cevap verir. Sesli söylemek kelimeyi akılda da tutar. Söyle ilerlemeni değiştirmez; rahatça dene.")
         }
@@ -221,8 +221,8 @@ private enum GuideText {
         return Leitner.intervalDays.map { duration($0 * 86_400) }
     }
 
-    /// How often a learned word (or one marked "Biliyorum") comes back: "30 günde bir". A
-    /// correct refresher sets the same wait again.
+    /// How often a learned word (or a "Biliyorum" word after its right check) comes back: "30 günde
+    /// bir". A correct refresher sets the same wait again.
     static var refresherInterval: String {
         let wait = amount(Leitner.refresherDelay)
         switch wait.unit {
@@ -267,7 +267,7 @@ private enum GuideText {
         return (Int((seconds / 86_400).rounded()), .days)
     }
 
-    /// How often the widget word changes: "5 dakikada bir", "saatte bir", "2 saatte bir".
+    /// How often the widget word changes: "30 dakikada bir", "saatte bir", "2 saatte bir".
     static func rotation(minutes: Int) -> String {
         if minutes >= 60 && minutes % 60 == 0 {
             let hours = minutes / 60
@@ -488,7 +488,7 @@ private struct GuideSummary: View {
                 .accessibilityAddTraits(.isHeader)
             row("Her gün biraz çalış. Kısa ve düzenli çalışmak en iyisi.")
             row("Önce hatırlamaya çalış, sonra cevaba bak.")
-            row("Dürüst cevap ver: “Zor” da doğru cevap sayılır.")
+            row("“Zor” da doğru cevap sayılır. Zorlandıysan Zor'u seç.")
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -694,7 +694,7 @@ private struct GuideRecallDemo: View {
                 }
                 .transition(.opacity)
             } else {
-                Text("Önce kendin hatırlamaya çalış. Sonra düğmeye bas.")
+                Text("Önce kendin hatırlamaya çalış. Sonra düğmeye dokun.")
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
