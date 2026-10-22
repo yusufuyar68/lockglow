@@ -19,10 +19,6 @@ final class AppModel: ObservableObject {
     /// New words per "Tanış + Hatırla" round; a larger daily goal comes in more rounds ("Bir tur
     /// daha"): short parts at one's own pace teach better than one long one.
     static let introRoundLimit = 5
-    /// How long "Geri al" can take back a "Biliyorum" exactly (`knownUndo`).
-    static let knownUndoWindow: TimeInterval = 5
-    /// Shown with "Geri al" after "Biliyorum" (docs/tasarim/ogrenme_ilkeleri.md 2.2).
-    static let knownUndoMessage = "Tamam. 3 gün sonra bir kez soracağız."
     /// A topic needs this many cards to be offered on its own (`choosableTopics`).
     static let minimumTopicCards = 5
 
@@ -536,9 +532,9 @@ final class AppModel: ObservableObject {
     /// "Biliyorum" in the app (feed, dictionary, "Bunu zaten biliyorum" in "Tanış"): the same as
     /// the widget button. The word leaves the rotation and is asked once in 3 days
     /// (`Leitner.markKnown`). For `undoWindow` seconds `knownUndo` holds the tap, and "Geri al"
-    /// (`undoKnown`) restores the word exactly as it was; the screen shows `knownUndoMessage`
+    /// (`undoKnown`) restores the word exactly as it was; the screen shows `KnownUndo.message`
     /// beside it. Pass a longer window while VoiceOver is on. No change for a known word.
-    func markKnown(_ word: WidgetWord, undoWindow: TimeInterval = AppModel.knownUndoWindow) {
+    func markKnown(_ word: WidgetWord, undoWindow: TimeInterval = KnownUndo.window) {
         guard let change = updateProgress(of: word, { current, now in
             current.state == .known ? nil : Leitner.markKnown(current, at: now)
         }) else {
@@ -916,15 +912,15 @@ final class AppModel: ObservableObject {
 
 /// A "Biliyorum" that "Geri al" can still take back exactly (`AppModel.knownUndo`).
 struct KnownUndo: Equatable {
+    /// How long "Geri al" can take it back (`AppModel.markKnown`).
+    static let window: TimeInterval = 5
+    /// Shown with "Geri al" (docs/tasarim/ogrenme_ilkeleri.md 2.2).
+    static let message = "Tamam. 3 gün sonra bir kez soracağız."
+
     let word: WidgetWord
     /// The word's progress before the tap; nil when it had none.
     let previous: WordProgress?
     /// What the tap wrote: the undo restores `previous` only while the word still has this.
     let marked: WordProgress
     let expiresAt: Date
-
-    /// "Tamam. 3 gün sonra bir kez soracağız."
-    var message: String {
-        return AppModel.knownUndoMessage
-    }
 }
