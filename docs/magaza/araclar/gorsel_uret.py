@@ -51,16 +51,16 @@ BOYUTLAR = {
 # yakin: ekranın bir bölümü büyütülüp telefonun üstüne konur (yakın çekim).
 #   kutu: ekran pikseli (1320 genişlikte), r: köşe yarıçapı (ekran pikseli),
 #   genislik: görsel genişliğine oranı, merkez_y: görsel yüksekliğine oranı
-#   (yoksa bölümün telefondaki yerine konur).
+#   (yoksa bölümün telefondaki yerine konur), kaydir: o yerden aşağı kayma (yükseklik oranı).
 
 KARELER = [
     {
         "dosya": "01-kilit-ekrani-widget",
-        "baslik": "Telefona bak,\n{actually} öğren",
+        "baslik": "Telefona her bakışta\nyeni kelime: {actually}",
         "alt": "Kilit ekranında, Türkçe anlamıyla",
         "ekran": "kilit",
         "tasma": True,
-        "yakin": {"kutu": (345, 648, 975, 950), "r": 60, "genislik": 0.74, "merkez_y": 0.70},
+        "yakin": {"kutu": (345, 648, 975, 950), "r": 60, "genislik": 0.64, "merkez_y": 0.66},
     },
     {
         "dosya": "02-kelime-karti",
@@ -72,9 +72,10 @@ KARELER = [
     {
         "dosya": "03-tekrar",
         "baslik": "Unutmadan önce\n{breakfast} yine gelir",
-        "alt": "Ne kadar bildiğini seç, süresi ona göre ayarlanır",
+        "alt": "Bildiğine göre tekrar zamanı ayarlanır",
         "ekran": "kaynak",
         "kaynak": "5-tekrar-kart-arka",
+        "yakin": {"kutu": (24, 2290, 1296, 2762), "r": 60, "genislik": 0.90},
     },
     {
         "dosya": "04-widget-dinle",
@@ -86,22 +87,22 @@ KARELER = [
     {
         "dosya": "05-dikkat",
         "baslik": "{spoon} derken\nhata nerede?",
-        "alt": "Dikkat kutusu sık yapılan hatayı gösterir",
+        "alt": "Türkçeden gelen hatayı doğrusuyla gösterir",
         "ekran": "kaynak",
         "kaynak": "2-akis-ikinci-kart",
-        "yakin": {"kutu": (102, 1560, 1218, 2045), "r": 48, "genislik": 0.86},
+        "yakin": {"kutu": (102, 1560, 1218, 2045), "r": 48, "genislik": 0.86, "kaydir": 0.012},
     },
     {
         "dosya": "06-soyle",
         "baslik": "Sesli söyle:\n{look forward to}",
-        "alt": "Telefon seni dinler; ses telefondan çıkmaz",
+        "alt": "Sesin kaydedilmez, hiçbir yere gönderilmez",
         "ekran": "kaynak",
         "kaynak": "8b-soyle-sayfasi",
     },
     {
         "dosya": "07-sozluk",
         "baslik": "Türkçesini yaz,\n{breakfast} çıksın",
-        "alt": "ı/i, ş/s karışsa da bulur",
+        "alt": "Birkaç harf yazman yeter",
         "ekran": "kaynak",
         "kaynak": "7-sozluk-arama",
     },
@@ -342,17 +343,34 @@ def durum_simgeleri(kaynak_ekran, beyaz):
     return s, kutu
 
 
+def yumusak_isik(tuval, merkez, yaricap, renk, opaklik):
+    """Duvar kâğıdına bulanık, açık bir leke (düz gradyan yapay durmasın diye)."""
+    m = Image.new("L", tuval.size, 0)
+    cx, cy = merkez
+    ImageDraw.Draw(m).ellipse((cx - yaricap, cy - yaricap, cx + yaricap, cy + yaricap), fill=int(255 * opaklik))
+    m = m.filter(ImageFilter.GaussianBlur(yaricap * 0.5))
+    k = Image.new("RGBA", tuval.size, renk + (0,))
+    k.putalpha(m)
+    tuval.alpha_composite(k)
+
+
+# Montajlardaki saat, gerçek çekimlerin durum çubuğuyla aynı.
+SAAT = "9:45"
+
+
 def kilit_ekrani(kaynak, yazi):
-    """9:41, tarih ve gerçek kilit ekranı widget'ı (actually) koyu bir duvar kâğıdında."""
+    """Saat, tarih ve gerçek kilit ekranı widget'ı (actually) koyu bir duvar kâğıdında."""
     ref = kaynak_yukle(kaynak, "1-akis")
     w, h = ref.size
     pt = w / 440
-    e = dikey_gradyan((w, h), (0x30, 0x35, 0x3B), NIGHT)
+    e = dikey_gradyan((w, h), (0x2C, 0x31, 0x37), NIGHT)
+    yumusak_isik(e, (w * 0.15, h * 0.10), w * 0.75, (0x6B, 0x74, 0x7C), 0.55)
+    yumusak_isik(e, (w * 0.95, h * 0.78), w * 0.55, (0x4E, 0x55, 0x5B), 0.45)
     d = ImageDraw.Draw(e)
     simge, kutu = durum_simgeleri(ref, beyaz=True)
     e.alpha_composite(simge, kutu[:2])
     d.text((w / 2, 74 * pt), "22 Ekim Perşembe", font=yazi.sans(21 * pt, 600), fill=(255, 255, 255, 235), anchor="mt")
-    d.text((w / 2, 210 * pt), "9:41", font=yazi.sans(116 * pt, 600), fill=(255, 255, 255, 245), anchor="ms")
+    d.text((w / 2, 210 * pt), SAAT, font=yazi.sans(116 * pt, 600), fill=(255, 255, 255, 245), anchor="ms")
     rect = canli_beyaz(kaynak_yukle(kaynak, "rect-actually"), 71)
     rw = round(170 * pt)               # accessoryRectangular, Pro Max ~170 x 76 pt
     rect = rect.resize((rw, round(rect.height * rw / rect.width)), Image.LANCZOS)
@@ -366,9 +384,10 @@ def ana_ekran(kaynak, yazi):
     w, h = ref.size
     pt = w / 440
     e = dikey_gradyan((w, h), (0x7A, 0x82, 0x88), (0x2B, 0x30, 0x36))
+    yumusak_isik(e, (w * 0.85, h * 0.12), w * 0.7, (0xA9, 0xB0, 0xB5), 0.45)
     simge, kutu = durum_simgeleri(ref, beyaz=True)
     e.alpha_composite(simge, kutu[:2])
-    ImageDraw.Draw(e).text((52 * pt, 34 * pt), "9:41", font=yazi.sans(17 * pt, 600), fill=(255, 255, 255, 255), anchor="lm")
+    ImageDraw.Draw(e).text((52 * pt, 34 * pt), SAAT, font=yazi.sans(17 * pt, 600), fill=(255, 255, 255, 255), anchor="lm")
     kenar, bosluk = 38 * pt, 24 * pt   # Pro Max: orta 364 x 170 pt, küçük 170 x 170 pt
     orta = kaynak_yukle(kaynak, "medium-misunderstanding")
     ow = round(364 * pt)
@@ -380,6 +399,10 @@ def ana_ekran(kaynak, yazi):
     for i, ad in enumerate(["small-fridge-koyu", "small-actually"]):
         k = kaynak_yukle(kaynak, ad).resize((sw, sw), Image.LANCZOS)
         e.alpha_composite(k, (round(kenar + i * (sw + 24 * pt)), y))
+    y += sw + round(bosluk)
+    koyu = kaynak_yukle(kaynak, "medium-under the weather-koyu")
+    koyu = koyu.resize((ow, round(koyu.height * ow / koyu.width)), Image.LANCZOS)
+    e.alpha_composite(koyu, (round(kenar), y))
     # iOS ana ekranının altındaki "Ara" kapsülü
     kw, kh = round(84 * pt), round(30 * pt)
     kx, ky = (w - kw) // 2, h - round(118 * pt)
@@ -431,7 +454,7 @@ def kare_uret(kare, kaynak, yazi, W, H, baslik_boyutu):
         if "merkez_y" in y:
             merkez = y["merkez_y"] * H
         else:                                   # bölümün telefondaki yeri
-            merkez = ust + (b + (y0 + y1) / 2) * olcek
+            merkez = ust + (b + (y0 + y1) / 2) * olcek + y.get("kaydir", 0) * H
         yakin_ekle(tuval, ekran.crop((x0, y0, x1, y1)), y["r"], round(W * y["genislik"]), merkez, s)
     return tuval.convert("RGB")   # App Store: alfa kanalı olmamalı
 
