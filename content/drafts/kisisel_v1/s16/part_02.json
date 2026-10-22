@@ -1,0 +1,985 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.any_minute_now.phr.1",
+      "lemma": "any minute now",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "very soon",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɛni ˈmɪnɪt naʊ/",
+        "uk": "/ˌɛni ˈmɪnɪt naʊ/"
+      },
+      "def": {
+        "micro": "very soon",
+        "short": "very soon; probably in the next few minutes",
+        "long": "Very soon, probably in the next few minutes. People say it when they are waiting for something and expect it to happen soon."
+      },
+      "grammar": {
+        "pattern": "will / should / be going to ... any minute now"
+      },
+      "examples": [
+        {
+          "en": "The bus will be here any minute now.",
+          "tr": "Otobüs her an gelebilir.",
+          "register": "neutral",
+          "focus": "any minute now"
+        },
+        {
+          "en": "Take your umbrella. It's going to rain any minute now.",
+          "tr": "Şemsiyeni al. Her an yağmur başlayabilir.",
+          "register": "neutral",
+          "focus": "any minute now"
+        },
+        {
+          "en": "Leyla's plane has landed, so she should call us any minute now.",
+          "tr": "Leyla'nın uçağı indi, birazdan bizi arar.",
+          "register": "neutral",
+          "focus": "any minute now"
+        }
+      ],
+      "synonyms": [
+        "any moment now"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "be here any minute now",
+        "arrive any minute now"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "her an",
+          "alt": [
+            "birazdan",
+            "az sonra"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'her an' bazen 'her zaman' anlamına da gelir ('her an yanındayım'). Bu İngilizce ifade ise yalnızca 'çok yakında olacak' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hurry up! The train is leaving ______. The doors are closing.",
+        "answer": "any minute now",
+        "distractors": [
+          "a minute ago",
+          "every minute",
+          "next winter"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.at_the_last_minute.phr.1",
+      "lemma": "at the last minute",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "very late, just before the time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æt ðə ˌlæst ˈmɪnɪt/",
+        "uk": "/æt ðə ˌlɑːst ˈmɪnɪt/"
+      },
+      "def": {
+        "micro": "just before it is too late",
+        "short": "very late, just before something starts or before it is too late",
+        "long": "Very late, just before an event starts or just before it is too late to do something. People often use it about plans that change."
+      },
+      "grammar": {
+        "pattern": "do something at the last minute"
+      },
+      "examples": [
+        {
+          "en": "Our flight was cancelled at the last minute.",
+          "tr": "Uçuşumuz son dakikada iptal edildi.",
+          "register": "neutral",
+          "focus": "at the last minute"
+        },
+        {
+          "en": "Burak always packs his bag at the last minute.",
+          "tr": "Burak çantasını hep son dakikada hazırlar.",
+          "register": "neutral",
+          "focus": "at the last minute"
+        },
+        {
+          "en": "We changed our plans at the last minute because of the storm.",
+          "tr": "Fırtına yüzünden planlarımızı son dakikada değiştirdik.",
+          "register": "neutral",
+          "focus": "at the last minute"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cancel at the last minute",
+        "change at the last minute",
+        "leave it to the last minute"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "son dakikada",
+          "alt": [
+            "son anda"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfat olarak da kullanılır: a last-minute change (son dakika değişikliği).",
+          "mistakes": [
+            {
+              "wrong": "She arrived in the last minute.",
+              "right": "She arrived at the last minute.",
+              "why": "Türkçedeki '-da' eki yüzünden 'in' denir. 'Son anda' anlamında 'at' kullanılır. 'In the last minute' yalnızca bir maçın son dakikası gibi gerçek bir dakikayı anlatır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ece never plans ahead. She bought her train ticket ______, ten minutes before it left.",
+        "answer": "at the last minute",
+        "distractors": [
+          "a month ago",
+          "the week before",
+          "last spring"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.every_other_day.phr.1",
+      "lemma": "every other day",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "every second day",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɛvri ˌʌðər ˈdeɪ/",
+        "uk": "/ˌɛvri ˌʌðə ˈdeɪ/"
+      },
+      "def": {
+        "micro": "on one day, not the next",
+        "short": "once every two days, for example on Monday, Wednesday and Friday",
+        "long": "Once every two days: you do something one day, skip the next day, then do it again. People use it for habits like sport or watering plants."
+      },
+      "grammar": {
+        "pattern": "do something every other day"
+      },
+      "examples": [
+        {
+          "en": "I go swimming every other day.",
+          "tr": "Gün aşırı yüzmeye gidiyorum.",
+          "register": "neutral",
+          "focus": "every other day"
+        },
+        {
+          "en": "It rained every other day in April.",
+          "tr": "Nisanda gün aşırı yağmur yağdı.",
+          "register": "neutral",
+          "focus": "every other day"
+        },
+        {
+          "en": "Tom runs every other day. He ran yesterday, so today is his rest day.",
+          "tr": "Tom gün aşırı koşuyor. Dün koştu, yani bugün dinlenme günü.",
+          "register": "neutral",
+          "focus": "every other day"
+        }
+      ],
+      "synonyms": [
+        "every two days"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "every other week",
+        "every other month"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gün aşırı",
+          "alt": [
+            "iki günde bir"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Aynı mantıkla 'every other week' iki haftada bir, 'every other month' iki ayda bir demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ran on Monday and Wednesday, and I'll run again on Friday. I run ______.",
+        "answer": "every other day",
+        "distractors": [
+          "once a month",
+          "twice a year",
+          "at weekends"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.be_running_late.phr.1",
+      "lemma": "be running late",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "behind schedule",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bi ˌrʌnɪŋ ˈleɪt/",
+        "uk": "/bi ˌrʌnɪŋ ˈleɪt/"
+      },
+      "def": {
+        "micro": "not going to arrive on time",
+        "short": "behind your plan, so you will arrive after the agreed time",
+        "long": "Behind your plan, so you will arrive after the time you agreed. People often say it in a call or a message to the person who is waiting."
+      },
+      "grammar": {
+        "pattern": "I'm / we're / the bus is running late"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I'm running late. I'll be there in ten minutes.",
+          "tr": "Kusura bakma, geç kalıyorum. On dakikaya oradayım.",
+          "register": "informal",
+          "focus": "running late"
+        },
+        {
+          "en": "The snow is very heavy, so the buses are running late today.",
+          "tr": "Kar çok yoğun yağıyor, o yüzden otobüsler bugün gecikiyor.",
+          "register": "neutral",
+          "focus": "running late"
+        },
+        {
+          "en": "Text Deniz and tell her we're running late because of the rain.",
+          "tr": "Deniz'e mesaj at, yağmur yüzünden geciktiğimizi söyle.",
+          "register": "informal",
+          "focus": "running late"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "running a bit late",
+        "running ten minutes late"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geç kalmak",
+          "alt": [
+            "gecikmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Genelde hâlâ yoldayken, plandan geride olduğunu söylemek için kullanılır: 'I'm running late' (geç kalıyorum). 'I'm late' ise genel olarak 'geç kaldım' demektir; yolda da, varınca da söylenir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Start the meeting without me. My train is delayed, so I'm ______.",
+        "answer": "running late",
+        "distractors": [
+          "running early",
+          "right on time",
+          "already here"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.time_flies.idm.1",
+      "lemma": "time flies",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "time passes quickly",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/taɪm ˈflaɪz/",
+        "uk": "/taɪm ˈflaɪz/"
+      },
+      "def": {
+        "micro": "the hours pass very quickly",
+        "short": "the hours, days or years seem to pass very quickly",
+        "long": "We say this when the hours, days or years seem to go very fast, often because we are busy or happy. People often add 'when you're having fun'."
+      },
+      "grammar": {
+        "pattern": "time flies (when you're having fun)"
+      },
+      "examples": [
+        {
+          "en": "Summer is over already. Time flies!",
+          "tr": "Yaz bitti bile. Zaman su gibi geçiyor!",
+          "register": "neutral",
+          "focus": "Time flies"
+        },
+        {
+          "en": "Time flies when you're having fun!",
+          "tr": "Eğlenirken zaman su gibi geçer!",
+          "register": "informal",
+          "focus": "Time flies"
+        },
+        {
+          "en": "Your son is ten already? Wow, time flies!",
+          "tr": "Oğlun on yaşına mı geldi? Vay be, zaman su gibi geçiyor!",
+          "register": "informal",
+          "focus": "time flies"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zaman su gibi geçer",
+          "alt": [
+            "zaman çabuk geçiyor",
+            "zaman uçup gidiyor"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde biraz şaşırarak söylenir. 'Time flies when you're having fun' (eğlenirken zaman çabuk geçer) kalıbı da çok yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We talked for hours, but it felt like ten minutes. ______!",
+        "answer": "Time flies",
+        "distractors": [
+          "Time's up",
+          "About time",
+          "Just in time"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.foggy.adj.1",
+      "lemma": "foggy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "weather",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɑːɡi/",
+        "uk": "/ˈfɒɡi/"
+      },
+      "def": {
+        "micro": "full of low, thick cloud",
+        "short": "with thick, low cloud in the air, so you cannot see far",
+        "long": "When the air near the ground is full of thick, wet cloud, the weather is like this. You cannot see far, so driving can be dangerous."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "It's very foggy this morning.",
+          "tr": "Bu sabah hava çok sisli.",
+          "register": "neutral",
+          "focus": "foggy"
+        },
+        {
+          "en": "On foggy days, Emre drives slowly and uses his lights.",
+          "tr": "Sisli günlerde Emre yavaş sürer ve farlarını yakar.",
+          "register": "neutral",
+          "focus": "foggy"
+        },
+        {
+          "en": "It was so foggy that we couldn't see the bridge from the hotel.",
+          "tr": "Hava o kadar sisliydi ki otelden köprüyü göremedik.",
+          "register": "neutral",
+          "focus": "foggy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "foggy morning",
+        "foggy day",
+        "foggy weather"
+      ],
+      "word_family": [
+        {
+          "lemma": "fog",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sisli",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'fog' (sis) olur. Hafif sise 'mist', hafif sisli havaya 'misty' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Drive carefully. It's so ______ that I can't see the car in front of me.",
+        "answer": "foggy",
+        "distractors": [
+          "warm",
+          "dry",
+          "chilly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.degree.n.1",
+      "lemma": "degree",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "unit of temperature",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈɡriː/",
+        "uk": "/dɪˈɡriː/"
+      },
+      "def": {
+        "micro": "unit for measuring heat",
+        "short": "a unit for measuring how hot or cold something is",
+        "long": "A unit that we use to say how hot or cold the air, water or a person is. We write it as a small circle after the number: 20°C."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "It's 30 degrees outside today.",
+          "tr": "Bugün dışarıda hava 30 derece.",
+          "register": "neutral",
+          "focus": "degrees"
+        },
+        {
+          "en": "Water boils at 100 degrees Celsius.",
+          "tr": "Su 100 santigrat derecede kaynar.",
+          "register": "neutral",
+          "focus": "degrees"
+        },
+        {
+          "en": "In Erzurum, it can be minus twenty degrees in January.",
+          "tr": "Erzurum'da ocak ayında hava eksi yirmi derece olabilir.",
+          "register": "neutral",
+          "focus": "degrees"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "degrees Celsius",
+        "degrees Fahrenheit",
+        "minus five degrees"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'degré', from Latin 'de-' + 'gradus', meaning a step.",
+        "origin": "Old French, Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "derece",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkiye'de Celsius (°C) kullanılır; ABD'de Fahrenheit (°F) kullanılır. 30 °C yaklaşık 86 °F eder.",
+          "mistakes": [
+            {
+              "wrong": "It's 30 degree today.",
+              "right": "It's 30 degrees today.",
+              "why": "Türkçede sayıdan sonra isim tekil kalır (30 derece). İngilizcede 1 dışındaki sayılardan sonra çoğul gerekir: 30 degrees, zero degrees."
+            },
+            {
+              "wrong": "The weather is 30 degrees.",
+              "right": "It's 30 degrees.",
+              "why": "Türkçede 'hava 30 derece' deriz. İngilizcede bu cümle 'it' ile kurulur ya da 'the temperature' denir; 'the weather' ile söylenmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The weather report says it will be 38 ______ in Antalya tomorrow. Very hot!",
+        "answer": "degrees",
+        "distractors": [
+          "minutes",
+          "meters",
+          "kilos"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.below_zero.phr.1",
+      "lemma": "below zero",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "temperature",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪˌloʊ ˈzɪroʊ/",
+        "uk": "/bɪˌləʊ ˈzɪərəʊ/"
+      },
+      "def": {
+        "micro": "colder than freezing point",
+        "short": "lower than the point where water turns into ice",
+        "long": "Colder than the point where water turns into ice. In Celsius, it means a minus number, like minus five."
+      },
+      "grammar": {
+        "pattern": "be / fall / drop below zero"
+      },
+      "examples": [
+        {
+          "en": "The temperature is below zero today.",
+          "tr": "Bugün hava sıfırın altında.",
+          "register": "neutral",
+          "focus": "below zero"
+        },
+        {
+          "en": "It was ten degrees below zero last night.",
+          "tr": "Dün gece sıcaklık sıfırın altında on dereceydi.",
+          "register": "neutral",
+          "focus": "below zero"
+        },
+        {
+          "en": "When it's below zero, the roads get icy, so drive carefully.",
+          "tr": "Hava sıfırın altındayken yollar buz tutar, o yüzden dikkatli sür.",
+          "register": "neutral",
+          "focus": "below zero"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "above zero"
+      ],
+      "collocations": [
+        "fall below zero",
+        "drop below zero",
+        "degrees below zero"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sıfırın altında",
+          "alt": [
+            "eksilerde"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tersi 'above zero' (sıfırın üstünde) olur.",
+          "mistakes": [
+            {
+              "wrong": "It was five degrees under zero.",
+              "right": "It was five degrees below zero.",
+              "why": "Türkçedeki 'altında' yüzünden 'under' denir. Sıcaklık gibi ölçülerde 'below' kullanılır: below zero."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Water turns into ice when the temperature goes ______.",
+        "answer": "below zero",
+        "distractors": [
+          "above zero",
+          "over thirty",
+          "up to twenty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_wet.phr.1",
+      "lemma": "get wet",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "become wet",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈwɛt/",
+        "uk": "/ɡɛt ˈwɛt/"
+      },
+      "def": {
+        "micro": "become covered with water",
+        "short": "become covered with water, for example in the rain",
+        "long": "To become covered with water or rain, so your clothes, hair or body are not dry. Use 'get' in the right tense: got wet, getting wet."
+      },
+      "grammar": {
+        "pattern": "get wet / get something wet"
+      },
+      "examples": [
+        {
+          "en": "Take an umbrella or you'll get wet.",
+          "tr": "Şemsiye al, yoksa ıslanırsın.",
+          "register": "neutral",
+          "focus": "get wet"
+        },
+        {
+          "en": "We got wet on the way home because it started to rain.",
+          "tr": "Eve dönerken yağmur başladı ve ıslandık.",
+          "register": "neutral",
+          "focus": "got wet"
+        },
+        {
+          "en": "Arda's shoes got wet when he walked through the snow.",
+          "tr": "Arda karda yürürken ayakkabıları ıslandı.",
+          "register": "neutral",
+          "focus": "got wet"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "get dry"
+      ],
+      "collocations": [
+        "get wet in the rain",
+        "get soaking wet"
+      ],
+      "word_family": [
+        {
+          "lemma": "wet",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ıslanmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir şeyi ıslatmak 'get something wet' olur: Don't get your phone wet.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's raining hard and I don't have an umbrella. I'm going to ______.",
+        "answer": "get wet",
+        "distractors": [
+          "get lost",
+          "get dressed",
+          "get married"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_dark.phr.1",
+      "lemma": "get dark",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "night is coming",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈdɑːrk/",
+        "uk": "/ɡɛt ˈdɑːk/"
+      },
+      "def": {
+        "micro": "become night, with no sun",
+        "short": "lose daylight in the evening as the sun goes down",
+        "long": "When the sun goes down and night starts, the sky loses its light. People usually say it with 'it': it gets dark early in winter."
+      },
+      "grammar": {
+        "pattern": "it gets / it's getting dark"
+      },
+      "examples": [
+        {
+          "en": "It's getting dark. Let's go home.",
+          "tr": "Hava kararıyor. Hadi eve gidelim.",
+          "register": "neutral",
+          "focus": "getting dark"
+        },
+        {
+          "en": "In winter, it gets dark at five o'clock.",
+          "tr": "Kışın hava saat beşte kararır.",
+          "register": "neutral",
+          "focus": "gets dark"
+        },
+        {
+          "en": "We have to put up the tent before it gets dark.",
+          "tr": "Hava kararmadan çadırı kurmalıyız.",
+          "register": "neutral",
+          "focus": "gets dark"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "get light"
+      ],
+      "collocations": [
+        "get dark early",
+        "before it gets dark",
+        "after it gets dark"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hava kararmak",
+          "alt": [
+            "karanlık basmak",
+            "karanlık olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sabah hava aydınlanınca 'get light' denir: In summer, it gets light at five.",
+          "mistakes": [
+            {
+              "wrong": "The weather is getting dark.",
+              "right": "It's getting dark.",
+              "why": "Türkçede 'hava kararıyor' deriz. İngilizcede 'weather' yağmur, güneş gibi durumlar içindir; kararmak için cümle 'it' ile kurulur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please turn on the light. I can't read my book because it's ______.",
+        "answer": "getting dark",
+        "distractors": [
+          "getting hot",
+          "getting windy",
+          "getting cold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
