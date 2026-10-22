@@ -58,6 +58,7 @@ Metinler `docs/magaza/kayit_metinleri_tr.md` (açıklama ve tanıtım metni) ile
 
 ## Artifact önizlemesi
 
+- Özel önizleme (22 Ekim 2026, sürüm 1): https://claude.ai/artifact/HKw8kQi6M9nbmWSn5r6q4U. Yalnız sahibi açabilir. Güncellerken aynı bağlantıya yükle, yeni bağlantı açma.
 - Artifact kendi `<!doctype>`, `<html>`, `<head>` ve `<body>` iskeletini ekler. Yüklerken `index.html`'den bu sarmalayıcı çıkarılır, içerik aynen kalır.
 - Görseller `img/…` yoluyla, `aydinlatma.html` kendi adıyla yan dosya olarak yüklenir.
 - Önizleme **özel** kalır; paylaşım bağlantısı açılmaz.
