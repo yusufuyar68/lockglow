@@ -128,8 +128,9 @@ enum AppPreferences {
     ///
     /// Saving the number the start level gives while the user never chose one saves nothing:
     /// `AppModel.setDailyNewWords` is also how a view hands the model a new level's goal, and
-    /// that goal must keep following the level. A tap in "Ayarlar" is saved with
-    /// `chooseDailyNewWords` first, so it counts as a choice even then.
+    /// that goal must keep following the level. So the setter is for that sync, and the level
+    /// must be saved before it; a user's choice goes through `chooseDailyNewWords` first (a tap
+    /// in "Ayarlar"), which counts even for the level's own number.
     static var dailyNewWords: Int {
         get {
             return AppPreferences.dailyNewWords(startLevel: startLevel)

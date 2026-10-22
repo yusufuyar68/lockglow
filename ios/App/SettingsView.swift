@@ -21,7 +21,8 @@ struct SettingsView: View {
     /// Notification permission was refused (now or earlier in iOS Settings).
     @State private var notificationsDenied = false
     /// The user picked the daily goal; until then the start level decides it. A state, not a
-    /// read of UserDefaults, so a tap on the number already selected also redraws the footnote.
+    /// read of UserDefaults, so a tap on the number already selected (`SegmentButtons` sets the
+    /// binding on every tap) also redraws the footnote.
     @State private var isDailyGoalChosen = AppPreferences.chosenDailyNewWords != nil
 
     var body: some View {
@@ -157,6 +158,8 @@ struct SettingsView: View {
 
     /// A goal the user never chose follows the new level (A1–A2: 5, B1: 10); `AppModel` keeps its
     /// own copy of the goal, so it is handed the level's number (`AppPreferences.dailyNewWords`).
+    /// Keep the order: the level is saved first, so the goal's setter sees the new level and does
+    /// not save its number as the user's choice.
     private var levelBinding: Binding<Level> {
         return Binding(
             get: { startLevel },
@@ -241,15 +244,16 @@ struct SettingsView: View {
 
     /// The cost of the goal before its gain (§2.9): "Günde en az 7 dakika, tekrarlar dahil. Bir
     /// ayda yaklaşık 150 kelime." The minutes are a floor (`SettingsRules.minimumMinutesPerDay`),
-    /// hence "en az" until they are measured on a device. Then tomorrow's share of the load: a new
-    /// word's first review is the next day (Leitner box 1). A goal nobody chose says where it
-    /// came from, so a jump after a level change is not a surprise.
+    /// hence "en az" until they are measured on a device. Then tomorrow's share of the load:
+    /// "Bildim" puts a new word in Leitner box 1, back the next day ("Kolay" waits two days, a
+    /// widget glance is no review), hence "çoğu". A goal nobody chose says where it came from,
+    /// so a jump after a level change is not a surprise.
     private var dailyGoalFootnote: some View {
         let goal = model.dailyNewWords
         let minutes = SettingsRules.minimumMinutesPerDay(dailyNewWords: goal)
         return VStack(alignment: .leading, spacing: 4) {
             Text("Günde en az **\(minutes) dakika**, tekrarlar dahil. Bir ayda yaklaşık **\(goal * 30)** kelime.")
-            Text("Bugünün **\(goal)** yeni kelimesi yarın tekrar sorulur.")
+            Text("Bugün öğrendiğin kelimelerin çoğu yarın tekrar sorulur.")
             if !isDailyGoalChosen {
                 Text("Bu sayı seviyene göre seçildi: A1 ve A2 için 5, B1 için 10.")
             }

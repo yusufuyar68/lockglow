@@ -222,7 +222,7 @@ struct OnboardingView: View {
             }
             // The daily goal comes with the level (§2.8), said once a level is chosen.
             if level != nil {
-                Text("Günde **\(dailyGoal)** yeni kelimeyle başlarsın. Bu sayı da Ayarlar'dan değişir.")
+                Text("Günde **\(dailyGoal)** yeni kelimeyle başlarsın. Bu sayıyı da sonra değiştirebilirsin.")
                     .font(.footnote)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
@@ -347,6 +347,8 @@ struct OnboardingView: View {
         }
     }
 
+    /// The button goes away with the hidden card, so VoiceOver also says the meaning that came
+    /// out (a high-priority announcement is not cut off by the focus moving on).
     private func showMeaning(of word: WidgetWord) {
         if reduceMotion {
             shownMeaningWordID = word.id
@@ -355,11 +357,17 @@ struct OnboardingView: View {
                 shownMeaningWordID = word.id
             }
         }
+        if let gloss = word.glossTR {
+            var announcement = AttributedString("Türkçesi: " + gloss)
+            announcement.accessibilitySpeechAnnouncementPriority = .high
+            AccessibilityNotification.Announcement(announcement).post()
+        }
     }
 
     /// The deck, then the daily goal of the level when the user never chose one: `AppModel` keeps
     /// its own copy of the goal, so it is handed the level's number (`AppPreferences.dailyNewWords`
-    /// does not save it as a choice). A goal the user chose stays.
+    /// does not save it as a choice). A goal the user chose stays. Keep the order: the level is
+    /// saved first, so the goal's setter compares with the new level's number.
     private func applyChoice() {
         model.setDeckChoice(DeckChoice(topicIDs: topicIDs, startLevel: level))
         model.setDailyNewWords(AppPreferences.dailyNewWords)
