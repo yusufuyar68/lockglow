@@ -1,0 +1,570 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.place_an_order.phr.1",
+      "lemma": "place an order",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "ask a shop or website for goods",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pleɪs ən ˈɔːrdər/",
+        "uk": "/pleɪs ən ˈɔːdə/"
+      },
+      "def": {
+        "micro": "ask to buy goods",
+        "short": "ask a shop or website to send you goods that you want to buy",
+        "long": "To tell a shop or a website that you want to buy something, so they can send it to you. You usually place an order online, by phone or in a store."
+      },
+      "grammar": {
+        "pattern": "place an order (for sth)"
+      },
+      "examples": [
+        {
+          "en": "I placed an order for new headphones.",
+          "tr": "Yeni bir kulaklık için sipariş verdim.",
+          "register": "neutral",
+          "focus": "placed an order"
+        },
+        {
+          "en": "Zeynep placed an order on the website, and the shoes came two days later.",
+          "tr": "Zeynep siteden sipariş verdi ve ayakkabılar iki gün sonra geldi.",
+          "register": "neutral",
+          "focus": "placed an order"
+        },
+        {
+          "en": "To place an order, add the items to your basket and click \"Buy now\".",
+          "tr": "Sipariş vermek için ürünleri sepetinize ekleyin ve \"Şimdi satın al\" düğmesine tıklayın.",
+          "register": "neutral",
+          "focus": "place an order"
+        }
+      ],
+      "synonyms": [
+        "order"
+      ],
+      "antonyms": [
+        "cancel an order"
+      ],
+      "collocations": [
+        "place an order online",
+        "place an order for",
+        "an online order"
+      ],
+      "word_family": [
+        {
+          "lemma": "order",
+          "pos": "n"
+        },
+        {
+          "lemma": "order",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sipariş vermek",
+          "alt": [
+            "siparişte bulunmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Biraz daha resmî bir kalıptır; günlük konuşmada yalnızca 'order' da denir: 'I ordered a new phone.' Restoranda yemek istemek için genelde sadece 'order' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I gave an order online.",
+              "right": "I placed an order online.",
+              "why": "Türkçedeki 'sipariş vermek' yüzünden 'give' kullanılıyor; ama 'give an order' emir vermek demektir. Sipariş için 'place an order' ya da sadece 'order' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______ an order online last night, and it arrives on Friday.",
+        "answer": "placed",
+        "distractors": [
+          "gave",
+          "sold",
+          "bought"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.track.v.1",
+      "lemma": "track",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "follow where a parcel or order is",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/træk/",
+        "uk": "/træk/"
+      },
+      "def": {
+        "micro": "see where a parcel is now",
+        "short": "follow a parcel or an order online to see where it is",
+        "long": "To check, usually online or in an app, where a parcel or an order is on its way to you. Shops often send you a number so you can do this."
+      },
+      "grammar": {
+        "pattern": "track sth (online)"
+      },
+      "examples": [
+        {
+          "en": "You can track your order in the app.",
+          "tr": "Siparişini uygulamadan takip edebilirsin.",
+          "register": "neutral",
+          "focus": "track"
+        },
+        {
+          "en": "Burak kept tracking his parcel because he needed it before the weekend.",
+          "tr": "Burak hafta sonundan önce ihtiyacı olduğu için kargosunu sürekli takip etti.",
+          "register": "neutral",
+          "focus": "tracking"
+        },
+        {
+          "en": "Lena used the tracking number to track the package, and it was already in her city.",
+          "tr": "Lena paketi takip etmek için takip numarasını kullandı; paket zaten onun şehrindeydi.",
+          "register": "neutral",
+          "focus": "track"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "track your order",
+        "track a parcel",
+        "tracking number",
+        "track a delivery"
+      ],
+      "word_family": [
+        {
+          "lemma": "tracking",
+          "pos": "n"
+        },
+        {
+          "lemma": "track",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takip etmek",
+          "alt": [
+            "izlemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kargo ya da sipariş için 'track' kullanılır. Sitelerde gördüğün 'tracking number' kargo takip numarası demektir.",
+          "mistakes": [
+            {
+              "wrong": "I am following my order online.",
+              "right": "I am tracking my order online.",
+              "why": "'Takip etmek' sözlükte 'follow' diye geçiyor; ama 'follow' birinin peşinden gitmek ya da haberleri izlemek demektir. Kargonun nerede olduğuna bakmak için 'track' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Use this number to ______ your parcel online and see where it is now.",
+        "answer": "track",
+        "distractors": [
+          "wrap",
+          "carry",
+          "lose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shipping.n.1",
+      "lemma": "shipping",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "sending goods and its cost",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʃɪpɪŋ/",
+        "uk": "/ˈʃɪpɪŋ/"
+      },
+      "def": {
+        "micro": "sending goods to a buyer",
+        "short": "sending things you bought to your home, or the money you pay for this",
+        "long": "The service of sending goods that a customer has bought to their address, or the cost of this service. Online shops often say if it is free or how much it costs."
+      },
+      "grammar": {
+        "pattern": "free shipping; shipping costs"
+      },
+      "examples": [
+        {
+          "en": "How much is shipping to Turkey?",
+          "tr": "Türkiye'ye kargo ne kadar?",
+          "register": "neutral",
+          "focus": "shipping"
+        },
+        {
+          "en": "The jacket was cheap, but Hakan had to pay 15 dollars for shipping.",
+          "tr": "Ceket ucuzdu ama Hakan kargo için 15 dolar ödemek zorunda kaldı.",
+          "register": "neutral",
+          "focus": "shipping"
+        },
+        {
+          "en": "Sofia chose fast shipping, so her order came the next day.",
+          "tr": "Sofia hızlı kargoyu seçti, bu yüzden siparişi ertesi gün geldi.",
+          "register": "neutral",
+          "focus": "shipping"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "free shipping",
+        "shipping costs",
+        "fast shipping",
+        "shipping address"
+      ],
+      "word_family": [
+        {
+          "lemma": "ship",
+          "pos": "v"
+        },
+        {
+          "lemma": "shipment",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kargo",
+          "alt": [
+            "gönderim",
+            "kargo ücreti"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İnternet alışverişindeki 'kargo' için 'shipping' ya da 'delivery' denir; 'cargo' gemi ya da uçakla taşınan büyük yüktür. 'Delivery' daha çok ürünün kapına gelmesini anlatır.",
+          "mistakes": [
+            {
+              "wrong": "How much is the cargo?",
+              "right": "How much is shipping?",
+              "why": "Türkçede internet alışverişinde 'kargo' denir; ama İngilizcede 'cargo' gemi ya da uçakla taşınan büyük yük demektir. Burada 'shipping' ya da 'delivery' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable",
+          "confusable:cargo"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The shoes cost 40 euros and ______ is free, so I only pay 40 euros.",
+        "answer": "shipping",
+        "distractors": [
+          "cargo",
+          "receipt",
+          "luggage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.review.n.1",
+      "lemma": "review",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a customer's opinion online",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈvjuː/",
+        "uk": "/rɪˈvjuː/"
+      },
+      "def": {
+        "micro": "what a buyer thinks of it",
+        "short": "what a customer writes online about a product, shop or place",
+        "long": "A short piece of writing, often with stars, where a customer says what they think about a product, a shop, a hotel or a restaurant. People read them before they buy."
+      },
+      "grammar": {
+        "pattern": "read / leave / write a review"
+      },
+      "examples": [
+        {
+          "en": "This hotel has great reviews.",
+          "tr": "Bu otelin yorumları çok iyi.",
+          "register": "neutral",
+          "focus": "reviews"
+        },
+        {
+          "en": "Emre always reads the reviews before he buys anything online.",
+          "tr": "Emre internetten bir şey almadan önce her zaman yorumları okur.",
+          "register": "neutral",
+          "focus": "reviews"
+        },
+        {
+          "en": "Nadia loved the restaurant, so she left a five-star review on the app.",
+          "tr": "Nadia restoranı çok beğendi, bu yüzden uygulamada beş yıldızlı bir yorum bıraktı.",
+          "register": "neutral",
+          "focus": "review"
+        }
+      ],
+      "synonyms": [
+        "comment"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "read the reviews",
+        "leave a review",
+        "a good review",
+        "five-star review",
+        "customer reviews"
+      ],
+      "word_family": [
+        {
+          "lemma": "review",
+          "pos": "v"
+        },
+        {
+          "lemma": "reviewer",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'revue', from 'revoir', 'to see again'.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yorum",
+          "alt": [
+            "değerlendirme",
+            "müşteri yorumu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yorum yazmak için 'write a review', yorum bırakmak için 'leave a review' denir. Kitap ya da film eleştirisi için de 'review' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "countable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before I buy a new phone, I always read the customer ______ online.",
+        "answer": "reviews",
+        "distractors": [
+          "wallets",
+          "refunds",
+          "queues"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.customer_service.phr.1",
+      "lemma": "customer service",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "help a company gives its buyers",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkʌstəmər ˈsɜːrvɪs/",
+        "uk": "/ˌkʌstəmə ˈsɜːvɪs/"
+      },
+      "def": {
+        "micro": "help for people who buy",
+        "short": "the people in a company who help buyers with questions and problems",
+        "long": "The part of a company that answers questions and helps people who have bought something, for example when an order is late or broken. You can call, email or chat with them."
+      },
+      "grammar": {
+        "pattern": "call / contact customer service"
+      },
+      "examples": [
+        {
+          "en": "I called customer service about my late order.",
+          "tr": "Geciken siparişim için müşteri hizmetlerini aradım.",
+          "register": "neutral",
+          "focus": "customer service"
+        },
+        {
+          "en": "Kerem waited on the phone with customer service for twenty minutes.",
+          "tr": "Kerem müşteri hizmetleriyle telefonda yirmi dakika bekledi.",
+          "register": "neutral",
+          "focus": "customer service"
+        },
+        {
+          "en": "The laptop stopped working, so Aisha wrote to customer service and got a new one.",
+          "tr": "Dizüstü bilgisayar bozuldu, bu yüzden Aisha müşteri hizmetlerine yazdı ve yenisini aldı.",
+          "register": "neutral",
+          "focus": "customer service"
+        }
+      ],
+      "synonyms": [
+        "support"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "call customer service",
+        "good customer service",
+        "contact customer service"
+      ],
+      "word_family": [
+        {
+          "lemma": "customer",
+          "pos": "n"
+        },
+        {
+          "lemma": "service",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "müşteri hizmetleri",
+          "alt": [
+            "müşteri desteği"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hem şirketin bölümü hem de müşteriye gösterilen ilgi için kullanılır: 'The customer service was great.' İngiliz İngilizcesinde 'customer services' de denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My new headphones arrived broken, so I called ______ to get help.",
+        "answer": "customer service",
+        "distractors": [
+          "room service",
+          "first aid",
+          "lost property"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1027 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.worth.adj.1",
+      "lemma": "worth",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having a value; deserving",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɜːrθ/",
+        "uk": "/wɜːθ/"
+      },
+      "def": {
+        "micro": "having a certain value",
+        "short": "having a value of; good enough to pay for or spend time on",
+        "long": "Having a particular value in money, or good enough to spend money, time or effort on. Common patterns are 'be worth + price' and 'be worth + -ing'."
+      },
+      "grammar": {
+        "pattern": "be worth + price / -ing; be worth it"
+      },
+      "examples": [
+        {
+          "en": "Is this jacket worth the money?",
+          "tr": "Bu ceket bu paraya değer mi?",
+          "register": "neutral",
+          "focus": "worth"
+        },
+        {
+          "en": "The tickets were expensive, but it was worth it.",
+          "tr": "Biletler pahalıydı ama değdi.",
+          "register": "neutral",
+          "focus": "worth"
+        },
+        {
+          "en": "Mehmet says the fish market by the sea is worth visiting early in the morning.",
+          "tr": "Mehmet'e göre deniz kenarındaki balık pazarı sabah erkenden gidip görmeye değer.",
+          "register": "neutral",
+          "focus": "worth"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "worth it",
+        "worth the money",
+        "worth a try",
+        "well worth"
+      ],
+      "word_family": [
+        {
+          "lemma": "worth",
+          "pos": "n"
+        },
+        {
+          "lemma": "worthless",
+          "pos": "adj"
+        },
+        {
+          "lemma": "worthwhile",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'weorþ', meaning 'value' or 'valuable'. German 'wert' comes from the same old root.",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "değerinde",
+          "alt": [
+            "değmek",
+            "değer"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Worth' bir sıfattır, fiil değildir; bu yüzden önüne 'be' gelir: 'It's worth 50 lira.', 'It isn't worth it.'",
+          "mistakes": [
+            {
+              "wrong": "It worths 50 lira.",
+              "right": "It's worth 50 lira.",
+              "why": "Türkçede 'değer' bir fiil olduğu için 'worth' da fiil sanılıp -s eki ekleniyor. 'Worth' sıfattır; önüne 'is' gelir."
+            },
+            {
+              "wrong": "It doesn't worth it.",
+              "right": "It isn't worth it.",
+              "why": "'Değmez' olumsuz fiil gibi düşünülüp 'doesn't' kullanılıyor. 'Worth' sıfat olduğu için olumsuzu 'isn't worth' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This old guitar is ______ 300 euros now.",
+        "answer": "worth",
+        "distractors": [
+          "cheap",
+          "costly",
+          "valuable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.value_for_money.phr.1",
+      "lemma": "value for money",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "good for the price",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌvæljuː fər ˈmʌni/",
+        "uk": "/ˌvæljuː fə ˈmʌni/"
+      },
+      "def": {
+        "micro": "good for the price paid",
+        "short": "giving you a lot for the price you pay",
+        "long": "Giving you a lot of quality or use for the price you pay. People often say something is 'good value for money' or 'great value for money'."
+      },
+      "grammar": {
+        "pattern": "be good / great value for money"
+      },
+      "examples": [
+        {
+          "en": "This hotel is good value for money.",
+          "tr": "Bu otel ödediğin paranın karşılığını veriyor.",
+          "register": "neutral",
+          "focus": "value for money"
+        },
+        {
+          "en": "The lunch menu here is great value for money.",
+          "tr": "Buradaki öğle menüsü fiyatına göre çok iyi.",
+          "register": "neutral",
+          "focus": "value for money"
+        },
+        {
+          "en": "For a big family like Zeynep's, the large pack is better value for money.",
+          "tr": "Zeynep'inki gibi kalabalık bir aile için büyük paket daha hesaplı.",
+          "register": "neutral",
+          "focus": "value for money"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "waste of money"
+      ],
+      "collocations": [
+        "good value for money",
+        "great value for money",
+        "better value for money"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fiyatına göre iyi",
+          "alt": [
+            "parasının karşılığı",
+            "fiyat/performans"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'fiyat/performans' anlamına gelir. 'Cheap' yalnızca ucuz demektir; 'value for money' ise ödediğin paraya göre iyi demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The meal was big, tasty and not expensive. It was great ______.",
+        "answer": "value for money",
+        "distractors": [
+          "waste of money",
+          "pocket money",
+          "cash payment"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cost_an_arm_and_a_leg.idm.1",
+      "lemma": "cost an arm and a leg",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "be very expensive",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔːst ən ˌɑːrm ən ə ˈlɛɡ/",
+        "uk": "/kɒst ən ˌɑːm ən ə ˈlɛɡ/"
+      },
+      "def": {
+        "micro": "be very expensive",
+        "short": "to be very expensive; to cost much more than you want to pay",
+        "long": "To be very expensive. It is an informal phrase, often used for phones, cars, holidays or repairs."
+      },
+      "examples": [
+        {
+          "en": "A new phone costs an arm and a leg.",
+          "tr": "Yeni bir telefon ateş pahası.",
+          "register": "informal",
+          "focus": "costs an arm and a leg"
+        },
+        {
+          "en": "Fixing the car cost an arm and a leg.",
+          "tr": "Arabanın tamiri çok pahalıya patladı.",
+          "register": "informal",
+          "focus": "cost an arm and a leg"
+        },
+        {
+          "en": "We wanted to fly to Tokyo, but in August the tickets cost an arm and a leg.",
+          "tr": "Tokyo'ya uçmak istedik ama ağustosta biletler ateş pahasıydı.",
+          "register": "informal",
+          "focus": "cost an arm and a leg"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cost me an arm and a leg"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ateş pahası olmak",
+          "alt": [
+            "pahalıya patlamak",
+            "dudak uçuklatmak",
+            "çok pahalı olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kelimesi kelimesine 'bir kola ve bir bacağa mal olmak' demektir. 'Cost' fiili cümleye göre çekimlenir: 'costs', geçmişte 'cost'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "idioms_expressions"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't eat at the hotel restaurant. The food ______. A sandwich is 25 euros!",
+        "answer": "costs an arm and a leg",
+        "distractors": [
+          "costs nothing",
+          "is very cheap",
+          "is on the house"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      },
+      "grammar": {
+        "pattern": "sth costs (sb) an arm and a leg"
+      }
+    },
+    {
+      "id": "en.go_up.phv.1",
+      "lemma": "go up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "prices rise",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈʌp/",
+        "uk": "/ɡəʊ ˈʌp/"
+      },
+      "def": {
+        "micro": "become higher in price",
+        "short": "to become more expensive or larger in amount",
+        "long": "To become higher in price or amount. People often say that prices, rents, bills or fares have gone up."
+      },
+      "grammar": {
+        "pattern": "price / rent + go up (by + amount)"
+      },
+      "examples": [
+        {
+          "en": "Bus fares went up this month.",
+          "tr": "Otobüs ücretlerine bu ay zam geldi.",
+          "register": "neutral",
+          "focus": "went up"
+        },
+        {
+          "en": "Our rent is going up by ten percent.",
+          "tr": "Kiramız yüzde on artıyor.",
+          "register": "neutral",
+          "focus": "going up"
+        },
+        {
+          "en": "Coffee prices have gone up so much that Leyla now makes her coffee at home.",
+          "tr": "Kahve fiyatları o kadar arttı ki Leyla artık kahvesini evde yapıyor.",
+          "register": "neutral",
+          "focus": "gone up"
+        }
+      ],
+      "synonyms": [
+        "rise",
+        "increase"
+      ],
+      "antonyms": [
+        "go down"
+      ],
+      "collocations": [
+        "prices go up",
+        "rent goes up",
+        "go up by"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "artmak",
+          "alt": [
+            "zamlanmak",
+            "zam gelmek",
+            "yükselmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fiyatlar için 'zam gelmek' anlamında çok kullanılır. Tersi 'go down' olur. Daha resmî karşılıkları 'rise' ve 'increase'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A loaf of bread was 15 lira last month. Now it is 20. The price ______ last week.",
+        "answer": "went up",
+        "distractors": [
+          "went down",
+          "gave up",
+          "went off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.come_to.phv.1",
+      "lemma": "come to",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "add up to a total",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌm tə/",
+        "uk": "/ˈkʌm tə/"
+      },
+      "def": {
+        "micro": "add up to a total",
+        "short": "to make a total amount when everything is added together",
+        "long": "To make a particular total when all the prices or numbers are added together. Shop workers often say 'That comes to…' before you pay."
+      },
+      "grammar": {
+        "pattern": "sth + come to + amount"
+      },
+      "examples": [
+        {
+          "en": "Our lunch came to 60 euros.",
+          "tr": "Öğle yemeğimiz 60 euro tuttu.",
+          "register": "neutral",
+          "focus": "came to"
+        },
+        {
+          "en": "How much does it all come to?",
+          "tr": "Hepsi ne kadar tutuyor?",
+          "register": "neutral",
+          "focus": "come to"
+        },
+        {
+          "en": "With delivery, the total came to 320 lira, so Can paid by card.",
+          "tr": "Kargo dâhil toplam 320 lira tuttu, bu yüzden Can kartla ödedi.",
+          "register": "neutral",
+          "focus": "came to"
+        }
+      ],
+      "synonyms": [
+        "add up to",
+        "total"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "that comes to",
+        "the bill came to",
+        "the total came to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tutmak",
+          "alt": [
+            "etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kasada sık duyulur: 'That comes to 45 lira.' = 'Toplam 45 lira tutuyor.' 'Cost' tek bir şeyin fiyatıdır; 'come to' ise birkaç şeyin toplamıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Two coffees and a cake? That ______ 12 dollars, please.",
+        "answer": "comes to",
+        "distractors": [
+          "comes up",
+          "goes on",
+          "takes off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rip_off.phv.1",
+      "lemma": "rip off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "charge too much",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪp ˈɔːf/",
+        "uk": "/rɪp ˈɒf/"
+      },
+      "def": {
+        "micro": "charge someone too much",
+        "short": "to make someone pay much more than something is really worth",
+        "long": "To make someone pay far too much money for something, often in a dishonest way. It is informal and very common in the passive: 'We got ripped off.'"
+      },
+      "grammar": {
+        "pattern": "rip sb off; get ripped off"
+      },
+      "examples": [
+        {
+          "en": "That taxi driver ripped us off!",
+          "tr": "O taksici bizi kazıkladı!",
+          "register": "informal",
+          "focus": "ripped us off"
+        },
+        {
+          "en": "Check the prices first, or they might rip you off.",
+          "tr": "Önce fiyatlara bak, yoksa seni kazıklayabilirler.",
+          "register": "informal",
+          "focus": "rip you off"
+        },
+        {
+          "en": "Daniel paid 30 euros for a small sandwich at the airport and felt ripped off.",
+          "tr": "Daniel havalimanında küçük bir sandviçe 30 euro verdi ve kazıklandığını hissetti.",
+          "register": "informal",
+          "focus": "ripped off"
+        }
+      ],
+      "synonyms": [
+        "overcharge",
+        "cheat"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "get ripped off",
+        "feel ripped off",
+        "rip tourists off"
+      ],
+      "word_family": [
+        {
+          "lemma": "rip-off",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kazıklamak",
+          "alt": [
+            "fazla para almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gayriresmî bir sözdür. İsim hâli 'a rip-off' olur: 'That's a rip-off!' = 'Bu resmen kazık!' Edilgen hâli de çok yaygındır: 'I got ripped off.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ten euros for a bottle of water? They are trying to ______ tourists.",
+        "answer": "rip off",
+        "distractors": [
+          "give up",
+          "look after",
+          "cheer up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.haggle.v.1",
+      "lemma": "haggle",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "argue about a price",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhæɡəl/",
+        "uk": "/ˈhæɡəl/"
+      },
+      "def": {
+        "micro": "argue about a price",
+        "short": "to talk with a seller to agree on a lower price",
+        "long": "To talk with a seller, often at a market, to try to agree on a lower price. You haggle with someone over or about a price."
+      },
+      "grammar": {
+        "pattern": "haggle (with sb) over / about sth"
+      },
+      "examples": [
+        {
+          "en": "My mum always haggles at the market.",
+          "tr": "Annem pazarda hep pazarlık yapar.",
+          "register": "neutral",
+          "focus": "haggles"
+        },
+        {
+          "en": "In some shops you can haggle over the price.",
+          "tr": "Bazı dükkânlarda fiyat için pazarlık edebilirsin.",
+          "register": "neutral",
+          "focus": "haggle"
+        },
+        {
+          "en": "Lucas haggled with the seller and got the carpet for 6,000 lira.",
+          "tr": "Lucas satıcıyla pazarlık etti ve halıyı 6.000 liraya aldı.",
+          "register": "neutral",
+          "focus": "haggled"
+        }
+      ],
+      "synonyms": [
+        "negotiate"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "haggle over the price",
+        "haggle with a seller",
+        "try to haggle"
+      ],
+      "word_family": [
+        {
+          "lemma": "haggling",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pazarlık etmek",
+          "alt": [
+            "pazarlık yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Bargain' fiil olarak da pazarlık etmek demektir, ama çoğu zaman isim olarak 'kelepir' anlamında duyulur: 'What a bargain!' Pazarda fiyat için en doğal fiil 'haggle' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "At the street market, prices aren't fixed, so you can ______.",
+        "answer": "haggle",
+        "distractors": [
+          "deliver",
+          "borrow",
+          "queue"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shop_around.phv.1",
+      "lemma": "shop around",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "compare prices before buying",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃɑːp əˈraʊnd/",
+        "uk": "/ʃɒp əˈraʊnd/"
+      },
+      "def": {
+        "micro": "compare prices before buying",
+        "short": "to look at prices in different shops or websites before you buy",
+        "long": "To look at and compare prices in different shops or on different websites before you decide to buy. It helps you find the best deal."
+      },
+      "grammar": {
+        "pattern": "shop around (for sth)"
+      },
+      "examples": [
+        {
+          "en": "Shop around before you buy a new laptop.",
+          "tr": "Yeni bir laptop almadan önce fiyatları karşılaştır.",
+          "register": "neutral",
+          "focus": "Shop around"
+        },
+        {
+          "en": "We shopped around and found a cheaper flight.",
+          "tr": "Fiyatları karşılaştırdık ve daha ucuz bir uçuş bulduk.",
+          "register": "neutral",
+          "focus": "shopped around"
+        },
+        {
+          "en": "Hana always shops around online, so she rarely pays full price.",
+          "tr": "Hana hep internette fiyatları karşılaştırır, bu yüzden nadiren tam fiyat öder.",
+          "register": "neutral",
+          "focus": "shops around"
+        }
+      ],
+      "synonyms": [
+        "compare prices"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "shop around for",
+        "shop around online"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fiyat karşılaştırmak",
+          "alt": [
+            "birkaç yere bakmak",
+            "piyasayı araştırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Tek bir dükkândan hemen almak yerine birkaç yere bakıp fiyatları karşılaştırmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't buy the first sofa you see. You should ______ first.",
+        "answer": "shop around",
+        "distractors": [
+          "show off",
+          "sell out",
+          "throw away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.waste_of_money.phr.1",
+      "lemma": "waste of money",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "money spent for nothing",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌweɪst əv ˈmʌni/",
+        "uk": "/ˌweɪst əv ˈmʌni/"
+      },
+      "def": {
+        "micro": "something not worth buying",
+        "short": "something that costs a lot but gives you little or nothing useful",
+        "long": "Something you pay for that turns out to be useless, bad or not needed. It is usually used with 'a': 'a waste of money'."
+      },
+      "grammar": {
+        "pattern": "be a waste of money"
+      },
+      "examples": [
+        {
+          "en": "Those shoes were a total waste of money.",
+          "tr": "O ayakkabılar tam bir para israfıydı.",
+          "register": "neutral",
+          "focus": "waste of money"
+        },
+        {
+          "en": "Don't buy it. It's a waste of money.",
+          "tr": "Onu alma. Paraya yazık.",
+          "register": "neutral",
+          "focus": "waste of money"
+        },
+        {
+          "en": "Selin never went to the gym, so her yearly membership was a waste of money.",
+          "tr": "Selin spor salonuna hiç gitmedi, bu yüzden yıllık üyeliğine verdiği para boşa gitti.",
+          "register": "neutral",
+          "focus": "waste of money"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "value for money"
+      ],
+      "collocations": [
+        "a waste of money",
+        "a total waste of money",
+        "a complete waste of money"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "para israfı",
+          "alt": [
+            "paraya yazık",
+            "boşa giden para"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Genelde 'a' ile kullanılır: 'a waste of money'. Aynı kalıp zaman için de vardır: 'a waste of time' = 'vakit kaybı'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The phone case broke after two days. It was a ______.",
+        "answer": "waste of money",
+        "distractors": [
+          "piece of cake",
+          "good deal",
+          "nice surprise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.discount_code.phr.1",
+      "lemma": "discount code",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a code for a lower price online",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪskaʊnt koʊd/",
+        "uk": "/ˈdɪskaʊnt kəʊd/"
+      },
+      "def": {
+        "micro": "letters that lower a price",
+        "short": "letters or numbers you type when paying online to get a lower price",
+        "long": "A short set of letters and numbers that you type when you pay online, so the price becomes lower. Shops often send them by email."
+      },
+      "grammar": {
+        "pattern": "use / enter a discount code"
+      },
+      "examples": [
+        {
+          "en": "Do you have a discount code?",
+          "tr": "İndirim kodun var mı?",
+          "register": "neutral",
+          "focus": "discount code"
+        },
+        {
+          "en": "Enter the discount code at checkout.",
+          "tr": "Ödeme sırasında indirim kodunu gir.",
+          "register": "neutral",
+          "focus": "discount code"
+        },
+        {
+          "en": "Ahmet found a discount code online and saved 15 percent on his new headphones.",
+          "tr": "Ahmet internette bir indirim kodu buldu ve yeni kulaklığını yüzde 15 daha ucuza aldı.",
+          "register": "neutral",
+          "focus": "discount code"
+        }
+      ],
+      "synonyms": [
+        "promo code",
+        "coupon code",
+        "voucher code"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "enter a discount code",
+        "use a discount code",
+        "apply a discount code"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "indirim kodu",
+          "alt": [
+            "promosyon kodu",
+            "kupon kodu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Discount' tek başına indirimin kendisidir; 'discount code' ise internette ödeme sayfasına yazılan koddur. Aynı anlamda 'promo code' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Type the ______ at checkout to get 10 percent off.",
+        "answer": "discount code",
+        "distractors": [
+          "password",
+          "username",
+          "postcode"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

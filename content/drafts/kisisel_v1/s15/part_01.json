@@ -1,0 +1,1002 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.cashier.n.1",
+      "lemma": "cashier",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who takes payment in a shop",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kæˈʃɪr/",
+        "uk": "/kæˈʃɪə/"
+      },
+      "def": {
+        "micro": "person who takes your money",
+        "short": "a person in a shop or supermarket whose job is to take your money",
+        "long": "A person whose job is to take money from customers in a shop, supermarket or bank. You pay the cashier when you finish your shopping."
+      },
+      "grammar": {
+        "pattern": "pay the cashier / ask the cashier"
+      },
+      "examples": [
+        {
+          "en": "The cashier gave me my receipt and smiled.",
+          "tr": "Kasiyer fişimi verdi ve gülümsedi.",
+          "register": "neutral",
+          "focus": "cashier"
+        },
+        {
+          "en": "Ask the cashier if you can pay by card.",
+          "tr": "Kartla ödeyip ödeyemeyeceğini kasiyere sor.",
+          "register": "neutral",
+          "focus": "cashier"
+        },
+        {
+          "en": "Zeynep works as a cashier in a big supermarket on weekends.",
+          "tr": "Zeynep hafta sonları büyük bir süpermarkette kasiyer olarak çalışıyor.",
+          "register": "neutral",
+          "focus": "cashier"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "supermarket cashier",
+        "bank cashier",
+        "pay the cashier"
+      ],
+      "word_family": [
+        {
+          "lemma": "cash",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'caissier', from 'caisse' (money box); 'cash' has the same root. Turkish 'kasa' (from Italian 'cassa') also goes back to Latin 'capsa' (box).",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kasiyer",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'kasiyer' ile aynı anlamdadır. Ödeme yapılan yerin kendisine ise 'checkout' denir; İngiltere'de 'till' de duyarsın.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ scanned my milk and eggs and said, “That's 85 lira, please.”",
+        "answer": "cashier",
+        "distractors": [
+          "waiter",
+          "customer",
+          "chef"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.checkout.n.1",
+      "lemma": "checkout",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "pay point in a shop or online",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtʃɛkaʊt/",
+        "uk": "/ˈtʃɛkaʊt/"
+      },
+      "def": {
+        "micro": "place where you pay",
+        "short": "the place in a shop where you pay, or the last step when you buy online",
+        "long": "The place in a supermarket or shop where you pay for the things you want to buy. In online shopping, it is the last step, where you enter your address and pay."
+      },
+      "grammar": {
+        "pattern": "at the checkout / go to (the) checkout"
+      },
+      "examples": [
+        {
+          "en": "Please take your basket to the checkout.",
+          "tr": "Lütfen sepetini kasaya götür.",
+          "register": "neutral",
+          "focus": "checkout"
+        },
+        {
+          "en": "The self-service checkouts were faster, so I used one.",
+          "tr": "Self servis kasalar daha hızlıydı, ben de birini kullandım.",
+          "register": "neutral",
+          "focus": "checkouts"
+        },
+        {
+          "en": "I added three books to my basket online, but I never went to checkout.",
+          "tr": "İnternette sepetime üç kitap ekledim ama ödeme adımına hiç geçmedim.",
+          "register": "neutral",
+          "focus": "checkout"
+        }
+      ],
+      "synonyms": [
+        "till"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "at the checkout",
+        "self-service checkout",
+        "go to checkout"
+      ],
+      "word_family": [
+        {
+          "lemma": "check out",
+          "pos": "phv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kasa",
+          "alt": [
+            "ödeme noktası",
+            "ödeme adımı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bitişik yazılan bir isimdir. Ayrı yazılan 'check out' ise fiildir: otelden çıkış yapmak ya da bir şeye göz atmak. 'checkout' = kasa ya da internette ödeme adımı.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:check out"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our trolley is full. Let's go to the ______ and pay.",
+        "answer": "checkout",
+        "distractors": [
+          "fitting room",
+          "bakery",
+          "entrance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.basket.n.1",
+      "lemma": "basket",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "shopping basket, in a shop or online",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbæskɪt/",
+        "uk": "/ˈbɑːskɪt/"
+      },
+      "def": {
+        "micro": "container for your shopping",
+        "short": "a light container with handles for the things you want to buy in a shop",
+        "long": "A light container with handles that you carry around a shop for the things you want to buy. On shopping websites, your basket is the list of things you plan to buy."
+      },
+      "grammar": {
+        "pattern": "put sth in your basket / add to basket"
+      },
+      "examples": [
+        {
+          "en": "I only need milk, so I'll take a basket.",
+          "tr": "Sadece süt lazım, o yüzden bir sepet alacağım.",
+          "register": "neutral",
+          "focus": "basket"
+        },
+        {
+          "en": "Kenji put two apples and some bread in his basket.",
+          "tr": "Kenji sepetine iki elma ve biraz ekmek koydu.",
+          "register": "neutral",
+          "focus": "basket"
+        },
+        {
+          "en": "Your basket is empty. Add something before you go to checkout.",
+          "tr": "Sepetin boş. Ödemeye geçmeden önce bir şey ekle.",
+          "register": "neutral",
+          "focus": "basket"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "shopping basket",
+        "add to basket",
+        "a full basket"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sepet",
+          "alt": [
+            "alışveriş sepeti"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tekerlekli büyük alışveriş arabasına İngiltere'de 'trolley', Amerika'da 'cart' denir. Amerikan sitelerinde internet sepeti de genelde 'cart' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I only need three things, so I don't need a trolley. A ______ is enough.",
+        "answer": "basket",
+        "distractors": [
+          "receipt",
+          "fridge",
+          "suitcase"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shop_assistant.phr.1",
+      "lemma": "shop assistant",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "person who helps customers in a shop",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʃɑːp əˌsɪstənt/",
+        "uk": "/ˈʃɒp əˌsɪstənt/"
+      },
+      "def": {
+        "micro": "person who helps in a shop",
+        "short": "a person whose job is to help customers and sell things in a shop",
+        "long": "A person who works in a shop. They help customers find things, answer questions and sell things. In American English, people usually say 'salesperson'."
+      },
+      "grammar": {
+        "pattern": "ask a shop assistant (for sth)"
+      },
+      "examples": [
+        {
+          "en": "I asked the shop assistant for a bigger size.",
+          "tr": "Satış görevlisinden bir beden büyüğünü istedim.",
+          "register": "neutral",
+          "focus": "shop assistant"
+        },
+        {
+          "en": "The shop assistant showed us where the shoes were.",
+          "tr": "Satış görevlisi bize ayakkabıların nerede olduğunu gösterdi.",
+          "register": "neutral",
+          "focus": "shop assistant"
+        },
+        {
+          "en": "Sofia works as a shop assistant in a bookshop on Saturdays.",
+          "tr": "Sofia cumartesileri bir kitapçıda satış görevlisi olarak çalışıyor.",
+          "register": "neutral",
+          "focus": "shop assistant"
+        }
+      ],
+      "synonyms": [
+        "salesperson",
+        "sales assistant"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "ask a shop assistant",
+        "a friendly shop assistant",
+        "work as a shop assistant"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "satış görevlisi",
+          "alt": [
+            "tezgâhtar",
+            "satış danışmanı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde daha çok 'salesperson' denir. Kasada parayı alan kişi ise 'cashier' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In the shop, I couldn't find jeans in my size, so I asked a ______ for help.",
+        "answer": "shop assistant",
+        "distractors": [
+          "bus driver",
+          "waiter",
+          "tour guide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fitting_room.phr.1",
+      "lemma": "fitting room",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "small room for trying on clothes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɪtɪŋ ruːm/",
+        "uk": "/ˈfɪtɪŋ ruːm/"
+      },
+      "def": {
+        "micro": "room to try on clothes",
+        "short": "a small room in a clothes shop where you put on clothes before you buy them",
+        "long": "A small private room in a clothes shop where you can put on clothes to see if they fit and look good before you buy them. In American English, people also say 'dressing room'."
+      },
+      "grammar": {
+        "pattern": "in the fitting room"
+      },
+      "examples": [
+        {
+          "en": "Where is the fitting room?",
+          "tr": "Deneme kabini nerede?",
+          "register": "neutral",
+          "focus": "fitting room"
+        },
+        {
+          "en": "The fitting rooms were busy, so we waited ten minutes.",
+          "tr": "Deneme kabinleri doluydu, o yüzden on dakika bekledik.",
+          "register": "neutral",
+          "focus": "fitting rooms"
+        },
+        {
+          "en": "You can only take five things into the fitting room.",
+          "tr": "Deneme kabinine en fazla beş parça alabilirsin.",
+          "register": "neutral",
+          "focus": "fitting room"
+        }
+      ],
+      "synonyms": [
+        "changing room",
+        "dressing room"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in the fitting room",
+        "fitting room queue"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "deneme kabini",
+          "alt": [
+            "soyunma kabini",
+            "prova odası"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiltere'de 'changing room', Amerika'da 'dressing room' da denir. Kabinde kıyafet denemek için 'try on' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I want to see if this dress fits me. Where is the ______?",
+        "answer": "fitting room",
+        "distractors": [
+          "checkout",
+          "car park",
+          "lift"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.opening_hours.phr.1",
+      "lemma": "opening hours",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "times when a place is open",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈoʊpənɪŋ aʊərz/",
+        "uk": "/ˈəʊpənɪŋ aʊəz/"
+      },
+      "def": {
+        "micro": "times when a shop is open",
+        "short": "the times of the day when a shop, bank or museum is open",
+        "long": "The times of the day or week when a shop, bank, museum or other place is open for people. They are often written on the door or on the website."
+      },
+      "grammar": {
+        "pattern": "the opening hours of / sb's opening hours"
+      },
+      "examples": [
+        {
+          "en": "What are your opening hours?",
+          "tr": "Çalışma saatleriniz nedir?",
+          "register": "neutral",
+          "focus": "opening hours"
+        },
+        {
+          "en": "The opening hours are on the door: 9 a.m. to 8 p.m.",
+          "tr": "Çalışma saatleri kapıda yazıyor: sabah 9'dan akşam 8'e kadar.",
+          "register": "neutral",
+          "focus": "opening hours"
+        },
+        {
+          "en": "Omar checked the opening hours online before he went to the bank.",
+          "tr": "Omar bankaya gitmeden önce çalışma saatlerine internetten baktı.",
+          "register": "neutral",
+          "focus": "opening hours"
+        }
+      ],
+      "synonyms": [
+        "business hours"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "check the opening hours",
+        "Sunday opening hours",
+        "longer opening hours"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çalışma saatleri",
+          "alt": [
+            "açılış saatleri",
+            "açılış-kapanış saatleri"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hep çoğul kullanılır: 'opening hours'. Kapanış saati için 'closing time' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can visit the museum from 10 a.m. to 6 p.m. Those are its ______.",
+        "answer": "opening hours",
+        "distractors": [
+          "prices",
+          "tickets",
+          "holidays"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ill_take_it.phr.1",
+      "lemma": "I'll take it",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "deciding to buy something in a shop",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪl ˈteɪk ɪt/",
+        "uk": "/aɪl ˈteɪk ɪt/"
+      },
+      "def": {
+        "micro": "I will buy this one",
+        "short": "what you say in a shop when you decide to buy something",
+        "long": "You say this in a shop or market when you decide to buy the thing you are looking at. It is a short, natural way to say 'I want to buy this.'"
+      },
+      "grammar": {
+        "pattern": "I'll take it / I'll take them"
+      },
+      "examples": [
+        {
+          "en": "I love this bag. I'll take it.",
+          "tr": "Bu çantaya bayıldım. Alıyorum.",
+          "register": "neutral",
+          "focus": "I'll take it"
+        },
+        {
+          "en": "“It's 300 lira.” “OK, I'll take it.”",
+          "tr": "“300 lira.” “Tamam, alıyorum.”",
+          "register": "neutral",
+          "focus": "I'll take it"
+        },
+        {
+          "en": "The jacket fits well and the price is good, so I'll take it.",
+          "tr": "Ceket iyi oturuyor, fiyatı da güzel, o yüzden alıyorum.",
+          "register": "neutral",
+          "focus": "I'll take it"
+        }
+      ],
+      "synonyms": [
+        "I'll buy it"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "OK, I'll take it",
+        "I'll take them",
+        "I'll take this one"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "alıyorum",
+          "alt": [
+            "bunu alayım",
+            "alacağım"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Birden fazla şey için 'I'll take them' denir. 'I will buy it' de doğrudur ama mağazada 'I'll take it' çok daha doğal.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“This jacket is 50 euros.” “It's perfect. ______!”",
+        "answer": "I'll take it",
+        "distractors": [
+          "No, thanks",
+          "Never mind",
+          "I'm just looking"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.brand.n.1",
+      "lemma": "brand",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "company name on a product",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/brænd/",
+        "uk": "/brænd/"
+      },
+      "def": {
+        "micro": "name of a company's products",
+        "short": "the name of a company that makes a type of product",
+        "long": "The name that a company gives to the things it makes, so people know who made them. People often choose a brand they trust."
+      },
+      "grammar": {
+        "pattern": "a brand of sth / What brand is it?"
+      },
+      "examples": [
+        {
+          "en": "What brand is your phone?",
+          "tr": "Telefonun hangi marka?",
+          "register": "neutral",
+          "focus": "brand"
+        },
+        {
+          "en": "This shampoo is a cheap brand, but it works well.",
+          "tr": "Bu şampuan ucuz bir marka ama işe yarıyor.",
+          "register": "neutral",
+          "focus": "brand"
+        },
+        {
+          "en": "Leo only buys one brand of coffee because he loves the taste.",
+          "tr": "Leo tadına bayıldığı için yalnızca tek bir marka kahve alıyor.",
+          "register": "neutral",
+          "focus": "brand"
+        }
+      ],
+      "synonyms": [
+        "make"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a famous brand",
+        "a brand of coffee",
+        "brand name",
+        "favorite brand"
+      ],
+      "word_family": [
+        {
+          "lemma": "branded",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "Old English 'brand' meant fire. Later it meant a mark burned onto animals or goods to show the owner, and then a company's name.",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "marka",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'marka' İngilizcede 'brand' olur. İngilizce 'mark' ise iz, leke ya da sınav notu demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:mark"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like this ______ of jeans. Their jeans always fit me well.",
+        "answer": "brand",
+        "distractors": [
+          "price",
+          "pocket",
+          "button"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.for_sale.phr.1",
+      "lemma": "for sale",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "available to buy, e.g. a house or car",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fər ˈseɪl/",
+        "uk": "/fə ˈseɪl/"
+      },
+      "def": {
+        "micro": "available to buy",
+        "short": "available for people to buy, often used for houses, cars and used things",
+        "long": "Available to buy because the owner wants to sell it. You often see these words on signs for houses, cars and used things."
+      },
+      "grammar": {
+        "pattern": "be for sale / put sth up for sale"
+      },
+      "examples": [
+        {
+          "en": "Our neighbors' house is for sale.",
+          "tr": "Komşularımızın evi satılık.",
+          "register": "neutral",
+          "focus": "for sale"
+        },
+        {
+          "en": "Is this bike for sale? How much is it?",
+          "tr": "Bu bisiklet satılık mı? Kaç para?",
+          "register": "neutral",
+          "focus": "for sale"
+        },
+        {
+          "en": "Emre put his old car up for sale last week.",
+          "tr": "Emre geçen hafta eski arabasını satışa çıkardı.",
+          "register": "neutral",
+          "focus": "for sale"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "house for sale",
+        "put up for sale",
+        "not for sale"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "satılık",
+          "alt": [
+            "satışta"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'for sale' = satılık. 'on sale' ise çoğunlukla 'indirimde' demektir. Ev ya da araba tabelasında 'For Sale' yazar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:on sale"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The Yılmaz family is moving to another city, so their flat is ______.",
+        "answer": "for sale",
+        "distractors": [
+          "out of order",
+          "on time",
+          "in stock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.out_of_stock.phr.1",
+      "lemma": "out of stock",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "none left to sell right now",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌaʊt əv ˈstɑːk/",
+        "uk": "/ˌaʊt əv ˈstɒk/"
+      },
+      "def": {
+        "micro": "none left in the shop now",
+        "short": "not available because the shop has no more of it at the moment",
+        "long": "Not available in a shop or on a website because there are none left at the moment. The opposite is 'in stock'."
+      },
+      "grammar": {
+        "pattern": "be out of stock"
+      },
+      "examples": [
+        {
+          "en": "Sorry, this size is out of stock.",
+          "tr": "Üzgünüm, bu beden stokta yok.",
+          "register": "neutral",
+          "focus": "out of stock"
+        },
+        {
+          "en": "The black one is out of stock online, but the shop has some.",
+          "tr": "Siyah olan internette stokta yok ama mağazada var.",
+          "register": "neutral",
+          "focus": "out of stock"
+        },
+        {
+          "en": "Hana wanted the new game, but it was out of stock everywhere.",
+          "tr": "Hana yeni oyunu istiyordu ama her yerde stokta yoktu.",
+          "register": "neutral",
+          "focus": "out of stock"
+        }
+      ],
+      "synonyms": [
+        "sold out"
+      ],
+      "antonyms": [
+        "in stock"
+      ],
+      "collocations": [
+        "currently out of stock",
+        "be out of stock"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "stokta yok",
+          "alt": [
+            "tükenmiş",
+            "kalmamış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'in stock' (stokta var). 'sell out' bir fiildir ('The tickets sold out'); 'out of stock' ise 'be' ile kullanılır: 'It is out of stock.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:sell out"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I wanted to order the blue sofa, but the website said it was ______.",
+        "answer": "out of stock",
+        "distractors": [
+          "in stock",
+          "for sale",
+          "on time"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
