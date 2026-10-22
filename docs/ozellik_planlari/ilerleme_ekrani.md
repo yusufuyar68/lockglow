@@ -20,7 +20,34 @@ Kaynak: [`docs/tasarim/alternatifler/sakin_ilerleme.md`](../tasarim/alternatifle
   | `ios/App/ProgressOverviewView.swift` | Ekran. `AppModel`'e bağlı değil; veriyi dışarıdan alır. Üç önizleme var. |
   | `docs/ozellik_planlari/ilerleme_ekrani.md` | Bu not. |
 
-- **Henüz bağlı değil:** Ekran hiçbir yerden açılmıyor. Bağlama adımları aşağıda.
+- **Bağlandı** (dal `ilerleme-bagla`, taban `entegrasyon-3`). Ayrıntı aşağıdaki "Bağlama: yapılanlar" bölümünde. Onun altındaki "Bağlama adımları" ilk öneriydi; kod biraz farklı yere kondu.
+
+## Bağlama: yapılanlar
+
+- **`ios/App/AppModel+Progress.swift` (yeni):**
+  - `extension AppModel`: `hasLibrary`, `wordsByID`, `progressSummary(now:)`, `markProgressRecapShown(weekStart:)`, `progressTopicLimit = 8`;
+  - `extension AppPreferences`: `progressRecapWeek` (anahtar `lockglow.progressRecapWeek`).
+
+  Yalnız Foundation kullanır. Linux denetimine eklendi (`linux_check_prepare.py` → `APP_LOGIC_FILES`).
+- **`AppModel.swift`:** tek satır. `topicsOf` artık `private(set)`, çünkü uzantı başka dosyada.
+- **`ProgressOverviewView.swift`:** `ProgressScreen` eklendi. Ekranı `AppModel`'den (ortam nesnesi) besler ve yalnız açılınca hesaplanır. `ProgressOverviewView` yine düz veri alır.
+- **`ReviewView.swift`:** "Kitaplığın" bağlantısı (tonal kapsül) iki yerde var:
+  - tur önerisi varken "Bugün…" satırının altında;
+  - "Bugünlük tamam" kartının altında.
+
+  Kitaplık boşken (`hasLibrary == false`) görünmez.
+- **`SettingsView.swift`:** İlerleme bölümünde, "Bildiğim kelimeler"in üstünde "Kitaplığın ve bu hafta" satırı.
+- **Konular:**
+  - konu seçiliyse seçilen konular gösterilir;
+  - "Tümü" seçiliyse başlanmış konular gösterilir, en çok 8;
+  - ikisinde de içerik sırası kullanılır, ilerlemeye göre sıralama yok.
+- **Leitner kontrolü (entegrasyon-3):**
+  - FSRS henüz bağlı değil, zamanlamayı Leitner yapıyor;
+  - Tanış + Hatırla her yeni kelimeyi tek `recordReview` ile yazar: ilk denemede Bildim, ikinci denemede Zor, kaçarsa Bilemedim;
+  - Bilemedim iki raf indirir, 10 dakika sonra yine gelir;
+  - "Biliyorum" 3 gün sonra bir kez sorulur.
+
+  Hepsi `ProgressSummary.lastAnswer`'ın tanıdığı süreleri yazar. "Biliyorum" kelimeleri `knownOverride` ile ayrı kalır. Kontrolü geçen kelime "Yerleşti"ye, geçemeyen "yeni"ye döner.
 
 ## Hesaplama: `ProgressSummary` (Learning)
 

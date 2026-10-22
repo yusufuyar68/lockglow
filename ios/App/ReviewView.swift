@@ -1375,6 +1375,7 @@ struct ReviewView: View {
                         offerCard(offer)
                         todayLine(withKnown: true)
                             .padding(.horizontal, 6)
+                        libraryLink
                     } else {
                         doneContent
                     }
@@ -1481,6 +1482,7 @@ struct ReviewView: View {
             .padding(.vertical, 22)
             .frame(maxWidth: .infinity)
             .cardSurface(cornerRadius: Theme.Radius.wordCard)
+            libraryLink
             VStack(alignment: .leading, spacing: 12) {
                 if let next = next {
                     NoteRow(symbol: "clock", text: "Sıradaki tekrar: " + ReviewView.dayAndTime(next, now: now))
@@ -1536,6 +1538,22 @@ struct ReviewView: View {
                 }
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
+        }
+    }
+
+    /// "Kitaplığın" under today's line: the progress screen (`ProgressScreen`, sakin_ilerleme.md:
+    /// opened from "Tekrar"). Tonal, as "Başla" is the screen's one filled button; only once a
+    /// word is on the shelves.
+    @ViewBuilder
+    private var libraryLink: some View {
+        if model.hasLibrary {
+            NavigationLink {
+                ProgressScreen()
+            } label: {
+                Label("Kitaplığın", systemImage: "books.vertical")
+            }
+            .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
+            .accessibilityHint(Text("Öğrendiğin kelimeleri, raflarını ve bu haftayı gösterir."))
         }
     }
 
