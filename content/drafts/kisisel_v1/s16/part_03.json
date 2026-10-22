@@ -1,0 +1,1037 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.rainbow.n.1",
+      "lemma": "rainbow",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈreɪnboʊ/",
+        "uk": "/ˈreɪnbəʊ/"
+      },
+      "def": {
+        "micro": "arc of colors in the sky",
+        "short": "a curved line of colors in the sky when the sun shines after rain",
+        "long": "A curved band of colors in the sky, from red to violet. You see it when the sun shines while it is raining or just after rain."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Look, there's a rainbow over the sea!",
+          "tr": "Bak, denizin üstünde bir gökkuşağı var!",
+          "register": "neutral",
+          "focus": "rainbow"
+        },
+        {
+          "en": "After the rain stopped, Can and his sister saw a rainbow above the hills.",
+          "tr": "Yağmur durduktan sonra Can ile kız kardeşi tepelerin üstünde bir gökkuşağı gördü.",
+          "register": "neutral",
+          "focus": "rainbow"
+        },
+        {
+          "en": "There was a double rainbow over the city after the storm.",
+          "tr": "Fırtınadan sonra şehrin üstünde çift gökkuşağı vardı.",
+          "register": "neutral",
+          "focus": "rainbow"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "see a rainbow",
+        "double rainbow",
+        "colors of the rainbow"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'regnboga': 'rain' + 'bow', because its shape is curved like a bow.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "gökkuşağı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede kelime 'rain' (yağmur) ve 'bow' (yay) sözcüklerinden oluşur: yağmurdan sonra çıkan renkli yay. Gökkuşağının renkleri: 'the colors of the rainbow'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The rain stopped and the sun came out. We saw a big ______ in the sky.",
+        "answer": "rainbow",
+        "distractors": [
+          "puddle",
+          "raincoat",
+          "thunder"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pour_with_rain.phr.1",
+      "lemma": "pour with rain",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "rain very heavily",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɔːr wɪð ˌreɪn/",
+        "uk": "/ˈpɔː wɪð ˌreɪn/"
+      },
+      "def": {
+        "micro": "water falls hard from clouds",
+        "short": "used when a lot of water falls very hard and fast from the clouds",
+        "long": "When it is very wet outside and a lot of water falls from the clouds very fast. People usually say 'It's pouring with rain'; this is British, and Americans often just say 'It's pouring'."
+      },
+      "grammar": {
+        "pattern": "it + pour with rain (often -ing)"
+      },
+      "examples": [
+        {
+          "en": "Look outside! It's pouring with rain.",
+          "tr": "Dışarı bak! Bardaktan boşanırcasına yağıyor.",
+          "register": "neutral",
+          "focus": "pouring with rain"
+        },
+        {
+          "en": "It poured with rain all day, so we stayed at home.",
+          "tr": "Bütün gün bardaktan boşanırcasına yağmur yağdı, o yüzden evde kaldık.",
+          "register": "neutral",
+          "focus": "poured with rain"
+        },
+        {
+          "en": "When Hasan left the cinema, it was pouring with rain and he had no umbrella.",
+          "tr": "Hasan sinemadan çıktığında bardaktan boşanırcasına yağmur yağıyordu ve şemsiyesi yoktu.",
+          "register": "neutral",
+          "focus": "pouring with rain"
+        }
+      ],
+      "synonyms": [
+        "pour down",
+        "bucket down"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "it's pouring with rain",
+        "pour with rain all day"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şakır şakır yağmak",
+          "alt": [
+            "bardaktan boşanırcasına",
+            "sicim gibi yağmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Özne her zaman 'it' olur: 'It's pouring with rain.' Bu kalıp daha çok İngiliz İngilizcesidir; Amerikalılar genelde kısaca 'It's pouring.' der.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The football match was cancelled because it was ______ with rain.",
+        "answer": "pouring",
+        "distractors": [
+          "falling",
+          "dropping",
+          "spilling"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.clear_up.phv.1",
+      "lemma": "clear up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "weather: become bright",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/klɪr ˈʌp/",
+        "uk": "/klɪər ˈʌp/"
+      },
+      "def": {
+        "micro": "become bright and dry again",
+        "short": "of the weather, stop raining or being cloudy and become bright",
+        "long": "When rain stops and the clouds go away, so the sky becomes bright and sunny again. We often say 'the weather clears up' or 'it clears up'."
+      },
+      "grammar": {
+        "pattern": "the weather / it clears up (no object)"
+      },
+      "examples": [
+        {
+          "en": "I hope the weather clears up soon.",
+          "tr": "Umarım hava yakında açar.",
+          "register": "neutral",
+          "focus": "clears up"
+        },
+        {
+          "en": "It rained all morning, but it cleared up after lunch.",
+          "tr": "Bütün sabah yağmur yağdı ama öğle yemeğinden sonra hava açtı.",
+          "register": "neutral",
+          "focus": "cleared up"
+        },
+        {
+          "en": "The forecast says it will clear up by Saturday, so Leyla wants to go to the lake.",
+          "tr": "Hava durumuna göre cumartesiye kadar açacakmış, o yüzden Leyla göle gitmek istiyor.",
+          "register": "neutral",
+          "focus": "clear up"
+        }
+      ],
+      "synonyms": [
+        "brighten up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the weather clears up",
+        "the sky clears up",
+        "it clears up later"
+      ],
+      "word_family": [
+        {
+          "lemma": "clear",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(hava) açmak",
+          "alt": [
+            "düzelmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kart havanın açmasını anlatır. 'Clear up' ayrıca 'ortalığı toplamak' demektir: 'Clear up the kitchen.' Bağlamdan anlaşılır.",
+          "mistakes": [
+            {
+              "wrong": "The rain stopped and the weather opened.",
+              "right": "The rain stopped and the weather cleared up.",
+              "why": "Türkçedeki 'hava açtı' sözünü kelime kelime çevirmeyin. İngilizcede hava 'open' olmaz; 'clear up' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was cloudy in the morning, but the sky ______ in the afternoon and we went out.",
+        "answer": "cleared up",
+        "distractors": [
+          "clouded over",
+          "cleaned up",
+          "closed up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.boiling.adj.1",
+      "lemma": "boiling",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very hot weather",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɔɪlɪŋ/",
+        "uk": "/ˈbɔɪlɪŋ/"
+      },
+      "def": {
+        "micro": "extremely hot",
+        "short": "very, very hot, so hot that you feel uncomfortable",
+        "long": "Very, very hot, so that you feel uncomfortable. In everyday speech people use it about the weather, a room or themselves: 'It's boiling today.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "It's boiling today! Let's find some shade.",
+          "tr": "Bugün hava kavurucu sıcak! Gölge bir yer bulalım.",
+          "register": "informal",
+          "focus": "boiling"
+        },
+        {
+          "en": "Can you open the window? It's boiling in this room.",
+          "tr": "Pencereyi açar mısın? Bu oda fırın gibi.",
+          "register": "informal",
+          "focus": "boiling"
+        },
+        {
+          "en": "In August, Izmir is boiling hot, so Zeynep goes swimming every day.",
+          "tr": "Ağustosta İzmir kavurucu sıcak olur, o yüzden Zeynep her gün yüzmeye gider.",
+          "register": "informal",
+          "focus": "boiling"
+        }
+      ],
+      "synonyms": [
+        "scorching",
+        "baking"
+      ],
+      "antonyms": [
+        "freezing"
+      ],
+      "collocations": [
+        "boiling hot",
+        "it's boiling today",
+        "I'm boiling"
+      ],
+      "word_family": [
+        {
+          "lemma": "boil",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok sıcak",
+          "alt": [
+            "kavurucu sıcak",
+            "fırın gibi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Asıl anlamı 'kaynayan'dır: boiling water = kaynar su. Günlük dilde abartıyla 'çok sıcak' demektir. 'I'm boiling.' = Çok sıcakladım. Zıttı 'freezing' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you turn off the heater? It's ______ in here and I'm sweating.",
+        "answer": "boiling",
+        "distractors": [
+          "chilly",
+          "icy",
+          "cool"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mild.adj.1",
+      "lemma": "mild",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "weather: not too cold",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/maɪld/",
+        "uk": "/maɪld/"
+      },
+      "def": {
+        "micro": "pleasantly warm, not cold",
+        "short": "not very cold and not very hot, often warmer than usual",
+        "long": "Not very cold and not very hot, so it feels pleasant. We often use the word for a winter day or a winter that is warmer than usual."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "It's very mild for January.",
+          "tr": "Ocak ayına göre hava çok ılık.",
+          "register": "neutral",
+          "focus": "mild"
+        },
+        {
+          "en": "We had a mild winter this year, with almost no snow.",
+          "tr": "Bu yıl kış ılıman geçti, neredeyse hiç kar yağmadı.",
+          "register": "neutral",
+          "focus": "mild"
+        },
+        {
+          "en": "The weather in Bodrum is mild in spring, so it's great for long walks.",
+          "tr": "Bodrum'da baharda hava ılımandır, bu yüzden uzun yürüyüşler için harikadır.",
+          "register": "neutral",
+          "focus": "mild"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "harsh",
+        "severe"
+      ],
+      "collocations": [
+        "mild weather",
+        "mild winter",
+        "mild climate",
+        "a mild day"
+      ],
+      "word_family": [
+        {
+          "lemma": "mildly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ılık",
+          "alt": [
+            "ılıman",
+            "yumuşak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hava dışında 'hafif' anlamı da vardır: a mild cold = hafif bir soğuk algınlığı. Bu kart havayı anlatır: özellikle kışın beklenenden ılık hava.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's December, but the weather is ______. You don't need a heavy coat.",
+        "answer": "mild",
+        "distractors": [
+          "frosty",
+          "snowy",
+          "wintry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.thunder.n.1",
+      "lemma": "thunder",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈθʌndər/",
+        "uk": "/ˈθʌndə/"
+      },
+      "def": {
+        "micro": "loud noise during a storm",
+        "short": "the loud, deep noise that you hear in the sky during a storm",
+        "long": "The loud, deep noise that comes from the sky during a storm, usually a few seconds after a flash of light. It is uncountable: we say 'thunder', not 'a thunder'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Did you hear the thunder last night?",
+          "tr": "Dün gece gök gürültüsünü duydun mu?",
+          "register": "neutral",
+          "focus": "thunder"
+        },
+        {
+          "en": "Our dog hides under the bed when there's thunder.",
+          "tr": "Gök gürültüsü olunca köpeğimiz yatağın altına saklanır.",
+          "register": "neutral",
+          "focus": "thunder"
+        },
+        {
+          "en": "First we saw the lightning, and a few seconds later we heard the thunder.",
+          "tr": "Önce şimşeği gördük, birkaç saniye sonra da gök gürültüsünü duyduk.",
+          "register": "neutral",
+          "focus": "thunder"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "thunder and lightning",
+        "hear thunder",
+        "loud thunder",
+        "a clap of thunder"
+      ],
+      "word_family": [
+        {
+          "lemma": "thunderstorm",
+          "pos": "n"
+        },
+        {
+          "lemma": "thundery",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'thunor'. The name of the god Thor and the word 'Thursday' come from the same old root.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "gök gürültüsü",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz: 'a thunder' denmez. Tek bir gürleme için 'a clap of thunder' denir. 'Gök gürlüyor' = 'It's thundering.' Gökteki ışığa 'lightning' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable",
+          "confusable:lightning"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We heard loud ______ and saw lightning, so we went inside.",
+        "answer": "thunder",
+        "distractors": [
+          "rainbow",
+          "fog",
+          "sunshine"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lightning.n.1",
+      "lemma": "lightning",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlaɪtnɪŋ/",
+        "uk": "/ˈlaɪtnɪŋ/"
+      },
+      "def": {
+        "micro": "bright flash in a storm",
+        "short": "a sudden, very bright flash of light in the sky during a storm",
+        "long": "A sudden, very bright flash of light in the sky during a storm. It can hit tall things like trees. It is uncountable: say 'a flash of lightning'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "There was thunder and lightning all night.",
+          "tr": "Bütün gece gök gürledi ve şimşek çaktı.",
+          "register": "neutral",
+          "focus": "lightning"
+        },
+        {
+          "en": "Don't stand under a tree when there's lightning.",
+          "tr": "Şimşek çakarken ağacın altında durma.",
+          "register": "neutral",
+          "focus": "lightning"
+        },
+        {
+          "en": "Lightning hit an old tree near Selin's house during the storm.",
+          "tr": "Fırtına sırasında Selin'in evinin yakınındaki yaşlı bir ağaca yıldırım düştü.",
+          "register": "neutral",
+          "focus": "Lightning"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "thunder and lightning",
+        "a flash of lightning",
+        "struck by lightning",
+        "lightning strike"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şimşek",
+          "alt": [
+            "yıldırım"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede gökteki ışığa 'şimşek', yere düşene 'yıldırım' denir; İngilizcede ikisi de 'lightning' olur. Yazımına dikkat: ortada 'e' yok ('lightening' başka bir kelime).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable",
+          "confusable:thunder"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The old house on the hill was hit by ______ during the storm, and the TV stopped working.",
+        "answer": "lightning",
+        "distractors": [
+          "thunder",
+          "fog",
+          "mist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.soaked.adj.1",
+      "lemma": "soaked",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/soʊkt/",
+        "uk": "/səʊkt/"
+      },
+      "def": {
+        "micro": "completely wet",
+        "short": "very wet, with water all through your clothes, hair or shoes",
+        "long": "Very wet, so that water has gone all through your clothes, hair or shoes. It is stronger than 'wet'. People often say 'I got soaked'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My shoes are soaked.",
+          "tr": "Ayakkabılarım sırılsıklam.",
+          "register": "neutral",
+          "focus": "soaked"
+        },
+        {
+          "en": "Burak walked home without a coat and got soaked.",
+          "tr": "Burak montsuz yürüyerek eve döndü ve sırılsıklam oldu.",
+          "register": "neutral",
+          "focus": "soaked"
+        },
+        {
+          "en": "We got soaked to the skin while we waited for the bus.",
+          "tr": "Otobüs beklerken iliklerimize kadar ıslandık.",
+          "register": "neutral",
+          "focus": "soaked"
+        }
+      ],
+      "synonyms": [
+        "drenched",
+        "soaking wet",
+        "wet through"
+      ],
+      "antonyms": [
+        "dry"
+      ],
+      "collocations": [
+        "get soaked",
+        "soaked to the skin",
+        "soaked through"
+      ],
+      "word_family": [
+        {
+          "lemma": "soak",
+          "pos": "v"
+        },
+        {
+          "lemma": "soaking",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sırılsıklam",
+          "alt": [
+            "çok ıslak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Wet' ıslak, 'soaked' sırılsıklam demektir; daha güçlüdür. 'Soaked to the skin' = iliklerine kadar ıslanmış. Genelde 'get soaked' (sırılsıklam olmak) diye kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It rained hard during our walk, and now my socks are ______.",
+        "answer": "soaked",
+        "distractors": [
+          "dry",
+          "sunburnt",
+          "dusty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.breeze.n.1",
+      "lemma": "breeze",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/briːz/",
+        "uk": "/briːz/"
+      },
+      "def": {
+        "micro": "light, gentle wind",
+        "short": "a soft, gentle wind that often feels cool and nice",
+        "long": "A soft, gentle wind that often feels cool and pleasant, especially on a hot day. A wind from the sea is called a sea breeze."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "There's a nice breeze by the sea.",
+          "tr": "Deniz kenarında hoş bir esinti var.",
+          "register": "neutral",
+          "focus": "breeze"
+        },
+        {
+          "en": "A cool breeze came in through the open window.",
+          "tr": "Açık pencereden serin bir esinti girdi.",
+          "register": "neutral",
+          "focus": "breeze"
+        },
+        {
+          "en": "In the evening, a light breeze made the hot day feel much better.",
+          "tr": "Akşam esen hafif bir meltem sayesinde sıcak gün çok daha rahat geçti.",
+          "register": "neutral",
+          "focus": "breeze"
+        }
+      ],
+      "synonyms": [
+        "light wind"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a light breeze",
+        "a cool breeze",
+        "a sea breeze",
+        "a gentle breeze"
+      ],
+      "word_family": [
+        {
+          "lemma": "breezy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "esinti",
+          "alt": [
+            "meltem",
+            "hafif rüzgâr"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hafif ve genelde hoş bir rüzgârdır; sert rüzgâra 'wind' ya da 'strong wind' denir. Günlük dilde 'It's a breeze.' ise 'Çok kolay.' anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's hot, but a cool ______ from the sea makes it nice to sit outside.",
+        "answer": "breeze",
+        "distractors": [
+          "storm",
+          "flood",
+          "heat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shade.n.1",
+      "lemma": "shade",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "area out of the sun",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃeɪd/",
+        "uk": "/ʃeɪd/"
+      },
+      "def": {
+        "micro": "cool area out of the sun",
+        "short": "an area that is darker and cooler because something blocks the sun",
+        "long": "An area that is darker and cooler because a tree, a building or something else blocks the sunlight. People sit in it on hot days."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Let's sit in the shade.",
+          "tr": "Gölgede oturalım.",
+          "register": "neutral",
+          "focus": "shade"
+        },
+        {
+          "en": "It's 35 degrees, so Deniz parked her car in the shade.",
+          "tr": "Hava 35 derece, bu yüzden Deniz arabasını gölgeye park etti.",
+          "register": "neutral",
+          "focus": "shade"
+        },
+        {
+          "en": "We had lunch in the shade of a big tree.",
+          "tr": "Öğle yemeğini büyük bir ağacın gölgesinde yedik.",
+          "register": "neutral",
+          "focus": "shade"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "sun"
+      ],
+      "collocations": [
+        "in the shade",
+        "sit in the shade",
+        "the shade of a tree",
+        "find some shade"
+      ],
+      "word_family": [
+        {
+          "lemma": "shady",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'sceadu'. 'Shade' and 'shadow' come from this same old word.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "gölge",
+          "alt": [
+            "gölgelik"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede ikisine de 'gölge' denir. Güneşin gelmediği serin yer 'shade' olur; bir şeyin yere düşen karanlık şekline ise 'shadow' denir.",
+          "mistakes": [
+            {
+              "wrong": "It's hot. Let's sit in the shadow.",
+              "right": "It's hot. Let's sit in the shade.",
+              "why": "Türkçede ikisi de 'gölge' olduğu için 'shadow' demek kolaydır. Güneşin gelmediği serin yer için İngilizcede 'shade' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable",
+          "confusable:shadow"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's too sunny here. Let's move our chairs into the ______ under that tree.",
+        "answer": "shade",
+        "distractors": [
+          "sunlight",
+          "puddle",
+          "heat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

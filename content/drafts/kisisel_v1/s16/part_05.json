@@ -1,0 +1,521 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.wave.n.1",
+      "lemma": "wave",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "water in the sea",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/weɪv/",
+        "uk": "/weɪv/"
+      },
+      "def": {
+        "micro": "a moving line of sea water",
+        "short": "a line of water that rises and moves across the top of the sea",
+        "long": "A line of water that rises on the top of the sea or a lake and moves toward the land. Strong wind makes big ones."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The waves are very big today.",
+          "tr": "Bugün dalgalar çok büyük.",
+          "register": "neutral",
+          "focus": "waves"
+        },
+        {
+          "en": "Deniz and Leo sat on the sand and listened to the waves.",
+          "tr": "Deniz ve Leo kuma oturup dalgaları dinlediler.",
+          "register": "neutral",
+          "focus": "waves"
+        },
+        {
+          "en": "A big wave came up the beach and carried Ana's towel into the sea.",
+          "tr": "Büyük bir dalga kumsala kadar geldi ve Ana'nın havlusunu denize sürükledi.",
+          "register": "neutral",
+          "focus": "wave"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "big waves",
+        "huge waves",
+        "the sound of the waves",
+        "catch a wave"
+      ],
+      "word_family": [
+        {
+          "lemma": "wavy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dalga",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Wave' fiil olarak 'el sallamak' da demektir: She waved at me. Bu kartta deniz dalgası anlamı var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A huge ______ hit the rocks, and the sea water made us all wet.",
+        "answer": "wave",
+        "distractors": [
+          "shell",
+          "pebble",
+          "island"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shore.n.1",
+      "lemma": "shore",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃɔːr/",
+        "uk": "/ʃɔː/"
+      },
+      "def": {
+        "micro": "land at the edge of water",
+        "short": "the land along the edge of a sea or a lake",
+        "long": "The land along the edge of a sea, a lake or a wide river. People often walk there or leave their boats there."
+      },
+      "grammar": {
+        "pattern": "on the shore"
+      },
+      "examples": [
+        {
+          "en": "We walked along the shore at sunset.",
+          "tr": "Gün batımında kıyı boyunca yürüdük.",
+          "register": "neutral",
+          "focus": "shore"
+        },
+        {
+          "en": "Kemal pulled the small boat onto the shore of the lake.",
+          "tr": "Kemal küçük tekneyi gölün kıyısına çekti.",
+          "register": "neutral",
+          "focus": "shore"
+        },
+        {
+          "en": "The children collected shells on the shore while their parents swam.",
+          "tr": "Anne babaları yüzerken çocuklar kıyıda deniz kabuğu topladı.",
+          "register": "neutral",
+          "focus": "shore"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the shore",
+        "along the shore",
+        "the shore of the lake",
+        "reach the shore"
+      ],
+      "word_family": [
+        {
+          "lemma": "seashore",
+          "pos": "n"
+        },
+        {
+          "lemma": "offshore",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kıyı",
+          "alt": [
+            "sahil"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Beach' kumlu plaj, kumsaldır. 'Shore' ise denizin ya da gölün kenarındaki her türlü karadır: kumlu, taşlı ya da kayalık olabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet swam away from the boat, back to the ______, and lay on the sand.",
+        "answer": "shore",
+        "distractors": [
+          "deck",
+          "field",
+          "mountain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.valley.n.1",
+      "lemma": "valley",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvæli/",
+        "uk": "/ˈvæli/"
+      },
+      "def": {
+        "micro": "low land between hills",
+        "short": "an area of low land between hills or mountains",
+        "long": "An area of low land between hills or mountains. A river often runs through the middle of it."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "There is a small village in the valley.",
+          "tr": "Vadide küçük bir köy var.",
+          "register": "neutral",
+          "focus": "valley"
+        },
+        {
+          "en": "From the top of the hill, Zeynep could see the whole valley.",
+          "tr": "Zeynep tepenin üstünden bütün vadiyi görebiliyordu.",
+          "register": "neutral",
+          "focus": "valley"
+        },
+        {
+          "en": "A cold river runs through the valley, and there are trees on both sides.",
+          "tr": "Vadiden soğuk bir nehir geçiyor ve iki yanında ağaçlar var.",
+          "register": "neutral",
+          "focus": "valley"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a green valley",
+        "a river valley",
+        "a deep valley",
+        "down in the valley"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'valee', which comes from Latin 'vallis', meaning a valley.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "vadi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We walked down the mountain into a green ______ with a small river in the middle.",
+        "answer": "valley",
+        "distractors": [
+          "peak",
+          "cliff",
+          "desert"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.countryside.n.1",
+      "lemma": "countryside",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌntriˌsaɪd/",
+        "uk": "/ˈkʌntriˌsaɪd/"
+      },
+      "def": {
+        "micro": "land away from towns",
+        "short": "land with fields, farms and small villages, away from cities",
+        "long": "Land with fields, farms, forests and small villages, far from big towns and cities. It is usually quiet and green."
+      },
+      "grammar": {
+        "pattern": "in the countryside"
+      },
+      "examples": [
+        {
+          "en": "My grandparents live in the countryside.",
+          "tr": "Büyükannemle büyükbabam kırsal kesimde yaşıyor.",
+          "register": "neutral",
+          "focus": "countryside"
+        },
+        {
+          "en": "On Sundays, Lucas likes to ride his bike in the countryside.",
+          "tr": "Lucas pazar günleri kırda bisiklet sürmeyi seviyor.",
+          "register": "neutral",
+          "focus": "countryside"
+        },
+        {
+          "en": "The countryside is very green in spring, and the air is clean.",
+          "tr": "İlkbaharda kırlar yemyeşil olur ve hava temizdir.",
+          "register": "neutral",
+          "focus": "countryside"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "city"
+      ],
+      "collocations": [
+        "in the countryside",
+        "the English countryside",
+        "beautiful countryside",
+        "the open countryside"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kırsal kesim",
+          "alt": [
+            "kır"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Country' çoğunlukla 'ülke' demektir. Kırlar ve kırsal yerler için 'countryside' denir. 'In the country' de bazen 'kırda' anlamında kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "My uncle lives in countryside.",
+              "right": "My uncle lives in the countryside.",
+              "why": "Türkçede 'the' gibi bir tanımlık yok, bu yüzden 'the' kolayca düşer. Oysa bu sözcük neredeyse hep 'the' ile kullanılır: in the countryside."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable",
+          "confusable:country"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We left the city and spent a week in the ______, with cows and fields all around us.",
+        "answer": "countryside",
+        "distractors": [
+          "capital",
+          "desert",
+          "jungle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.melt.v.1",
+      "lemma": "melt",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become liquid",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mɛlt/",
+        "uk": "/mɛlt/"
+      },
+      "def": {
+        "micro": "become liquid when warm",
+        "short": "change from something hard, like ice, into a liquid because of heat",
+        "long": "To change from a hard or solid thing into a liquid because it gets warm. Ice, snow, butter and chocolate do this in heat."
+      },
+      "grammar": {
+        "pattern": "something melts; melt something"
+      },
+      "examples": [
+        {
+          "en": "The snow melted in the sun.",
+          "tr": "Kar güneşte eridi.",
+          "register": "neutral",
+          "focus": "melted"
+        },
+        {
+          "en": "Eat your ice cream quickly, Selin. It's melting!",
+          "tr": "Dondurmanı çabuk ye, Selin. Eriyor!",
+          "register": "neutral",
+          "focus": "melting"
+        },
+        {
+          "en": "In spring, the ice on the lake melts and the ducks come back.",
+          "tr": "İlkbaharda gölün üstündeki buz erir ve ördekler geri gelir.",
+          "register": "neutral",
+          "focus": "melts"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "freeze"
+      ],
+      "collocations": [
+        "melt in the sun",
+        "snow melts",
+        "ice melts",
+        "melt butter"
+      ],
+      "word_family": [
+        {
+          "lemma": "melted",
+          "pos": "adj"
+        },
+        {
+          "lemma": "melting",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'meltan', meaning to become liquid.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "erimek",
+          "alt": [
+            "eritmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hem 'erimek' hem 'eritmek' anlamında kullanılır: The ice melted (buz eridi), Melt the butter (tereyağını erit).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I left the chocolate in the car on a hot day, and it ______.",
+        "answer": "melted",
+        "distractors": [
+          "froze",
+          "boiled",
+          "grew"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
