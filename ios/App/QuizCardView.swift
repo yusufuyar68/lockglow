@@ -135,8 +135,8 @@ struct QuizCardView: View {
                         }
                         // A moment later, once the options have collapsed and the feedback and the
                         // bottom bar have been laid out: the feedback must never stay hidden under
-                        // the bar (README point 6).
-                        let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.3)
+                        // the bar (README point 6). At most 200 ms (learning principles 2.4).
+                        let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.2)
                         Task { @MainActor in
                             try? await Task.sleep(nanoseconds: 60_000_000)
                             withAnimation(animation) {
@@ -346,13 +346,15 @@ struct QuizCardView: View {
         guard picked == nil else {
             return
         }
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+        // At most 200 ms, none with Reduce Motion (learning principles 2.4).
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
             picked = option
         }
         announce(isRight: option == quiz.answer)
     }
 
-    /// VoiceOver hears how it went, queued after the tap's own speech so it is not cut off:
+    /// VoiceOver hears how it went, queued after the tap's own speech and at high priority, so
+    /// the options changing under the finger do not cut it off (audit V8):
     /// "Doğru! spoon, Türkçesi: kaşık" or "Doğrusu: spoon, Türkçesi: kaşık", the English word in
     /// an English voice. No "Yanlış": the feedback is about the answer (learning principles 2.4).
     private func announce(isRight: Bool) {
@@ -370,11 +372,9 @@ struct QuizCardView: View {
             if let gloss = gloss {
                 text.append(NSAttributedString(string: ", Türkçesi: " + gloss, attributes: turkish))
             }
-            text.addAttribute(
-                .accessibilitySpeechQueueAnnouncement,
-                value: true,
-                range: NSRange(location: 0, length: text.length)
-            )
+            let whole = NSRange(location: 0, length: text.length)
+            text.addAttribute(.accessibilitySpeechQueueAnnouncement, value: true, range: whole)
+            text.addAttribute(.accessibilitySpeechAnnouncementPriority, value: UIAccessibilityPriority.high, range: whole)
             UIAccessibility.post(notification: .announcement, argument: text)
         }
     }
