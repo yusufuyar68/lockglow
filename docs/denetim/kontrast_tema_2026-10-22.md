@@ -122,6 +122,7 @@ Kenar pikseli = düğmenin dolgusu + üstündeki kenar rengi. Komşu = düğmeni
     | Kenarlı ikincil düğme (karşılaştırma) | #191C20 | #757779 | 15,48 | 4,66 |
 
   - **B'nin bedeli:** gece ana düğme kenarlı ikincil düğmeyle neredeyse aynı görünür. Dolgu farkı 1,02:1, kenar farkı 1,10:1. "Ekranın tek dolu düğmesi" gece ayırt edilemez. B seçilirse ana düğmeye bir ayırt edici daha gerekir (ör. kalın yazı ve daha açık dolgu).
+  - **C** (`alt-gece` 0ca246d, onların hesabı): B + 2 pt **tam** `ink` kenar + kalın yazı. Kenar siyahta 19:1, ikincil düğmenin kenarından 4,07:1 ayrılır. Düğmenin ortalama ışığı L %8,6 (A %2,4). Tek sarı odak korunur. B'ye ek olarak kenar opaklığı 1, kalınlık 2 pt ve `.fontWeight(.bold)`.
   - **B'ye geçmek** iki satır: `primary` koyu `Tone(0xF3F4F0, 0.12)`, `onPrimary` koyu `Tone(0xF3F4F0)`; `CapsuleButtonBody` içinde kenar `Theme.band` yerine `Theme.ink`. Seçilen hâle göre ogrenme_ilkeleri.md 204. satır güncellenmeli.
 
 ## 5. Eşiğin altında kalanlar ve diğer dosyalara notlar
