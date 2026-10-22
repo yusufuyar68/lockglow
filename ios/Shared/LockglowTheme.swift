@@ -16,12 +16,25 @@ import CoreModels
 //     Theme.band, ink, ink2, ink3, primary, onPrimary, tint, tintSoft, bg, surface, surface2,
 //     surface3, line, lineStrong, good, goodTint, bad, badTint, caution, cautionTint
 //   - English and Turkish body text: ink; translation, IPA, notes: ink2; helper text: ink3.
-//   - The one filled button of a screen: primary with onPrimary text (ink by day, yellow at night).
+//   - The one filled button of a screen: primary with onPrimary text (ink by day; at night a soft
+//     yellow tint with yellow text, no glow: docs/tasarim/alternatifler/gece_oled.md, step 1).
 //   - Selected tab, option, step bar, progress: tint (ink, never yellow); soft selected fill: tintSoft.
-//   - Pages: bg; cards: surface; capsules and wells: surface2; tracks: surface3; dividers: line;
-//     control borders: lineStrong.
+//   - Pages: bg (pure black at night); cards: surface by day, page black at night with a line
+//     border; capsules and wells: surface2; tracks: surface3; dividers: line; control borders:
+//     lineStrong.
 //   - Right / wrong / Dikkat triangle: good, bad, caution (always with an icon and a word, rule 4);
 //     their panels: goodTint, badTint, cautionTint.
+//
+// Contrast rules (WCAG 2.2; table and script: docs/denetim/kontrast_tema_2026-10-22.md):
+//   - Text is at least 4.5:1 on bg, surface and surface2 in all four looks (light, dark, each with
+//     Increase Contrast); ink2 is at least 7:1 on bg and surface2 (small text, docs/tasarim/
+//     ogrenme_ilkeleri.md).
+//   - Never ink3 text on surface3 (about 4:1 in both appearances). ink3 is for helper text on bg,
+//     surface or surface2, icons and dots.
+//   - Every border of a control (lineStrong) is at least 3:1 against bg, surface and surface2
+//     (WCAG 1.4.11). The styles below draw it; a hand-made capsule needs a 1 pt lineStrong edge,
+//     since a surface2 fill alone is 1.1-1.4:1 against the page.
+//   - line is decoration only (dividers, card edges): never the only sign of a control.
 //
 // Type (English is serif, Turkish and UI are SF Pro; no rounded, no italic):
 //     Text(word.lemma).englishWordStyle().phosphorBand()          // 40 pt serif bold, scaled
@@ -34,12 +47,16 @@ import CoreModels
 //     Text(example).englishVoice()                                // VoiceOver: English voice
 //   The same fonts without color: Theme.Fonts.englishWord(size:), meaning, definition, example,
 //   exampleTranslation, widgetWord.
+//   `englishVoice()` goes on the English Text itself (or on an element whose whole spoken text is
+//   English), never on a container or a button with a Turkish label, hint or value: everything
+//   under it is read with the English voice. `.combine` loses it. See the method for details.
 //
 // Phosphor band (rule 1, only on the English word): `.phosphorBand()` in the app,
 // `.phosphorBand(.widget)` in widgets. Apply it to the single-line word Text right after its font
 // modifiers (before any padding or frame): the band is measured from the text's own frame. By day
 // it is a highlighter behind the lower part of the letters; at night a slanted line under the
-// descenders with a soft glow; in accented and vibrant widgets (tinted Home Screen, Lock Screen) a
+// descenders with a faint glow (none with Increase Contrast, Reduce Transparency or the dimmed
+// Always-On display); in accented and vibrant widgets (tinted Home Screen, Lock Screen) a
 // thin line in the word's color. The night line hangs up to ~0.45 em below the text frame: leave
 // at least 8 pt (4 pt in widgets) before the next row. The modifier already adds
 // `.widgetAccentable()`. Snapshot tests can force a mode: `.phosphorBand(.widget, renderingMode: .accented)`.
@@ -50,13 +67,13 @@ import CoreModels
 // Controls (rule 2: everything tappable is a capsule, 44 pt hit area, no blue):
 //     .buttonStyle(PrimaryCapsuleButtonStyle())                  // filled, full width, 50 pt
 //     .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))     // large main button ("Başla")
-//     .buttonStyle(SecondaryCapsuleButtonStyle())                // surface + lineStrong border
-//     .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))     // surface2 fill, no border
+//     .buttonStyle(SecondaryCapsuleButtonStyle())                // surface + 1.5 pt lineStrong
+//     .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))     // surface2 + 1 pt lineStrong
 //     .buttonStyle(ChipButtonStyle(isSelected: false))           // small chip ("Dene" examples)
 //     .glassControl()                                            // Bitir, geri, Kapat only (rule 6)
 //
 // Containers and badges:
-//     .cardSurface()                                     // surface, 22 pt corners, line border
+//     .cardSurface()                                     // surface (night: bg), 22 pt, line border
 //     .cardSurface(cornerRadius: Theme.Radius.wordCard)  // the word card (28 pt)
 //     LevelBadge(level) / LevelBadge(code: word.level)   // "A2 ●●○", read as "Seviye A2"
 //
@@ -77,23 +94,26 @@ enum Theme {
         light: Tone(0x15181B), dark: Tone(0xF3F4F0),
         lightHigh: Tone(0x0B0C0E), darkHigh: Tone(0xFFFFFF)
     )
-    /// Secondary text: translations, IPA, explanations.
+    /// Secondary text: translations, IPA, explanations. At least 7:1 on bg and surface2, so it
+    /// also carries 11-13 pt text.
     static let ink2 = dynamic(
-        light: Tone(0x4E555B), dark: Tone(0xB7BDC2),
+        light: Tone(0x474E54), dark: Tone(0xB7BDC2),
         lightHigh: Tone(0x3A4046), darkHigh: Tone(0xD3D8DC)
     )
-    /// Helper text, placeholders, chevrons.
+    /// Helper text, placeholders, chevrons. Never text on `surface3`. With Increase Contrast it
+    /// takes ink2's value.
     static let ink3 = dynamic(
         light: Tone(0x626A71), dark: Tone(0x8E959B),
-        lightHigh: Tone(0x4E555B), darkHigh: Tone(0xB7BDC2)
+        lightHigh: Tone(0x474E54), darkHigh: Tone(0xB7BDC2)
     )
-    /// Fill of the one main button of a screen: ink by day, phosphor at night.
+    /// Fill of the one main button of a screen: ink by day; at night a 16 % phosphor tint over
+    /// the page (no full yellow area at night, gece_oled.md step 1).
     static let primary = dynamic(
-        light: Tone(0x15181B), dark: Tone(0xE9E040),
+        light: Tone(0x15181B), dark: Tone(0xE9E040, 0.16),
         lightHigh: Tone(0x0B0C0E)
     )
-    /// Text and icons on `primary`.
-    static let onPrimary = dynamic(light: Tone(0xFFFFFF), dark: Tone(0x15181B))
+    /// Text and icons on `primary`: white by day, phosphor at night.
+    static let onPrimary = dynamic(light: Tone(0xFFFFFF), dark: Tone(0xE9E040))
     /// Selected tab, option, step bar and progress. Stays ink at night (never yellow).
     static let tint = dynamic(
         light: Tone(0x15181B), dark: Tone(0xF3F4F0),
@@ -104,23 +124,24 @@ enum Theme {
         light: Tone(0x15181B, 0.08), dark: Tone(0xFFFFFF, 0.10),
         lightHigh: Tone(0x15181B, 0.12), darkHigh: Tone(0xFFFFFF, 0.16)
     )
-    /// Page background.
-    static let bg = dynamic(light: Tone(0xF3F3EE), dark: Tone(0x0D0F11))
-    /// Cards, lists, the selected segment.
+    /// Page background: paper by day, pure black at night (OLED pixels off).
+    static let bg = dynamic(light: Tone(0xF3F3EE), dark: Tone(0x000000))
+    /// Cards by day, sheets and grouped lists, the selected segment.
     static let surface = dynamic(light: Tone(0xFFFFFF), dark: Tone(0x191C20))
     /// Capsules, wells, unselected segments, the Dikkat box.
     static let surface2 = dynamic(light: Tone(0xEBEBE4), dark: Tone(0x24282D))
-    /// Tracks (progress, switches) and inactive steps.
+    /// Tracks (progress, switches) and inactive steps. No ink3 text on it.
     static let surface3 = dynamic(light: Tone(0xDEDED6), dark: Tone(0x30353B))
-    /// Dividers and card borders.
+    /// Dividers and card borders (decoration; at night the card's only edge).
     static let line = dynamic(
-        light: Tone(0x15181B, 0.10), dark: Tone(0xFFFFFF, 0.09),
+        light: Tone(0x15181B, 0.10), dark: Tone(0xFFFFFF, 0.12),
         lightHigh: Tone(0x15181B, 0.22), darkHigh: Tone(0xFFFFFF, 0.22)
     )
-    /// Borders of options, bordered buttons and badges.
+    /// Borders of options, buttons, chips and badges: at least 3:1 against bg, surface and
+    /// surface2 (WCAG 1.4.11), 4.5:1 with Increase Contrast.
     static let lineStrong = dynamic(
-        light: Tone(0x15181B, 0.22), dark: Tone(0xFFFFFF, 0.18),
-        lightHigh: Tone(0x15181B, 0.45), darkHigh: Tone(0xFFFFFF, 0.40)
+        light: Tone(0x15181B, 0.54), dark: Tone(0xFFFFFF, 0.40),
+        lightHigh: Tone(0x15181B, 0.70), darkHigh: Tone(0xFFFFFF, 0.56)
     )
     /// Right answer, "Çalışıyor". Always paired with an icon and a word.
     static let good = dynamic(
@@ -147,13 +168,15 @@ enum Theme {
     static let bandLight = fixed(0xF5E829)
     /// Night band (under the letters).
     static let bandDark = fixed(0xE9E040)
-    /// Blurred glow under the night band.
-    static let bandGlow = fixed(0xE9E040, 0.38)
+    /// Blurred glow under the night band: faint (at most 15-20 %, ogrenme_ilkeleri.md). The band
+    /// draws none with Increase Contrast, Reduce Transparency or the dimmed Always-On display.
+    static let bandGlow = fixed(0xE9E040, 0.18)
     /// The learned word in an example sentence: day highlight, night underline.
     static let markLight = fixed(0xF5E829, 0.80)
     static let markDark = fixed(0xE9E040, 0.95)
-    /// Glow around the yellow main button at night.
-    static let primaryGlow = fixed(0xE9E040, 0.35)
+    /// Glow around the main button at night: none since the button is a tint (gece_oled.md
+    /// step 1). Kept for callers; transparent.
+    static let primaryGlow = fixed(0xE9E040, 0)
     /// Card shadows (light appearance only).
     static let shadowNear = fixed(0x15181B, 0.05)
     static let shadowFar = fixed(0x15181B, 0.12)
@@ -282,6 +305,26 @@ extension View {
     /// English text (README point 14, `accessibilitySpeechLanguage = "en-US"`). SwiftUI has no
     /// speech-language modifier; VoiceOver takes a text's language from the environment's locale.
     /// Apply it to English text only: Turkish text must keep the Turkish voice.
+    ///
+    /// Measured 2026-10-22 on the iOS 26.2 simulator (audit V5, V6; probe and table in
+    /// docs/denetim/kontrast_tema_2026-10-22.md); not yet heard on a device:
+    /// - It works: the element's `accessibilityLanguage` and the label's speech-language attribute
+    ///   become "en-Latn-US" for `Text(verbatim:)`, `Text(someString)`, `Text(attributedString)`,
+    ///   a button and an `.accessibilityElement(children: .ignore)` element with its own
+    ///   `accessibilityLabel` (put it on that element, after the label, as the card titles do).
+    ///   Prefer `Text(verbatim:)` for literals: older iOS versions were reported to keep the
+    ///   device's voice for a localized `Text("breakfast")`.
+    /// - `.accessibilityElement(children: .combine)` drops it: "Doğrusu: borrow" merged from a
+    ///   Turkish and an English Text is read with one (the device's) voice. Keep the English part
+    ///   a separate element, or give the merged element an explicit label.
+    /// - A button takes the language of its label for the whole element: with an English label
+    ///   (even when only the inner Text has this modifier) its Turkish hint and the "button" trait
+    ///   are read with the English voice too. Give such buttons no Turkish hint, or keep the
+    ///   English word out of the button.
+    /// - Everything under the modifier switches, Turkish text and formatted dates or numbers
+    ///   included: never put it on a mixed container.
+    /// - `cardEnglishVoice()` (CardDetailViews) and `widgetEnglishVoice()` (HomeWordViews) do the
+    ///   same thing; new code uses this one, which compiles in every target.
     func englishVoice() -> some View {
         environment(\.locale, Locale(identifier: "en_US"))
     }
@@ -355,12 +398,15 @@ private struct PhosphorBandModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.isLuminanceReduced) private var isLuminanceReduced
 
     func body(content: Content) -> some View {
         content
             .background(alignment: .topLeading) {
                 GeometryReader { proxy in
-                    PhosphorBandDrawing(kind: kind, placement: placement, size: proxy.size)
+                    PhosphorBandDrawing(kind: kind, placement: placement, size: proxy.size, glows: glows)
                 }
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
@@ -382,6 +428,12 @@ private struct PhosphorBandModifier: ViewModifier {
         }
         return colorScheme == .dark ? .underline : .highlighter
     }
+
+    /// The night line's glow: never with Increase Contrast or Reduce Transparency (a blur
+    /// around the line), nor on the dimmed Always-On display (as little light as possible).
+    private var glows: Bool {
+        return contrast != .increased && !reduceTransparency && !isLuminanceReduced
+    }
 }
 
 /// Draws the band in the text's coordinate space. Sizes are in em of the rendered text, derived
@@ -390,6 +442,8 @@ private struct PhosphorBandDrawing: View {
     let kind: PhosphorBandKind
     let placement: PhosphorBandPlacement
     let size: CGSize
+    /// Draws the faint glow under the night line.
+    let glows: Bool
 
     var body: some View {
         let em = size.height / SerifMetrics.lineHeight
@@ -405,11 +459,13 @@ private struct PhosphorBandDrawing: View {
             )
         case .underline:
             let isWidget = placement == .widget
-            Ellipse()
-                .fill(Theme.bandGlow)
-                .frame(width: size.width, height: 0.24 * em)
-                .blur(radius: 0.16 * em)
-                .position(x: size.width / 2, y: underlineTop + 0.07 * em)
+            if glows {
+                Ellipse()
+                    .fill(Theme.bandGlow)
+                    .frame(width: size.width, height: 0.24 * em)
+                    .blur(radius: 0.16 * em)
+                    .position(x: size.width / 2, y: underlineTop + 0.07 * em)
+            }
             band(
                 CGRect(
                     x: -0.08 * em,
@@ -494,7 +550,8 @@ enum ExampleMark {
 // MARK: - Buttons
 
 /// The one filled button of a screen (mockup `.btn-primary`): `primary` capsule, `onPrimary`
-/// text; a soft yellow glow at night. 54 pt (`minHeight: 54`) for the large bottom button.
+/// text. At night a yellow tint with a 1.5 pt yellow edge and yellow text, no glow and no full
+/// yellow area (gece_oled.md step 1). 54 pt (`minHeight: 54`) for the large bottom button.
 struct PrimaryCapsuleButtonStyle: ButtonStyle {
     var fullWidth = true
     var minHeight: CGFloat = 50
@@ -504,9 +561,11 @@ struct PrimaryCapsuleButtonStyle: ButtonStyle {
     }
 }
 
-/// Any other button: a `surface` capsule with a `lineStrong` border and ink text (mockup
-/// `.btn-bordered`), or with `tonal` a borderless `surface2` capsule (mockup `.btn-secondary`,
-/// e.g. "Biliyorum" on the card).
+/// Any other button: a `surface` capsule with a 1.5 pt `lineStrong` border and ink text (mockup
+/// `.btn-bordered`), or with `tonal` a `surface2` capsule with a 1 pt `lineStrong` edge (mockup
+/// `.btn-secondary`, e.g. "Biliyorum" on the card). The gray fill alone is 1.1-1.4:1 against the
+/// page; the edge gives the 3:1 boundary (audit K1), 1.5 pt with Increase Contrast or Button
+/// Shapes.
 struct SecondaryCapsuleButtonStyle: ButtonStyle {
     var fullWidth = false
     var minHeight: CGFloat = 44
@@ -536,6 +595,8 @@ private struct CapsuleButtonBody: View {
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
         configuration.label
@@ -562,7 +623,16 @@ private struct CapsuleButtonBody: View {
         case .primary:
             Capsule()
                 .fill(Theme.primary)
-                .shadow(color: colorScheme == .dark && isEnabled ? Theme.primaryGlow : .clear, radius: 10)
+                .overlay {
+                    // The night fill is a 16 % tint (1.3:1 against black); its yellow edge is the
+                    // button's boundary: 4.6:1, 8.4:1 with Increase Contrast.
+                    if colorScheme == .dark {
+                        Capsule().strokeBorder(
+                            Theme.band.opacity(contrast == .increased ? 0.7 : 0.45),
+                            lineWidth: 1.5
+                        )
+                    }
+                }
         case .bordered:
             Capsule()
                 .fill(Theme.surface)
@@ -570,12 +640,18 @@ private struct CapsuleButtonBody: View {
         case .tonal:
             Capsule()
                 .fill(Theme.surface2)
+                .overlay(Capsule().strokeBorder(Theme.lineStrong, lineWidth: emphasizesEdge ? 1.5 : 1))
         }
+    }
+
+    private var emphasizesEdge: Bool {
+        return contrast == .increased || showsButtonShapes
     }
 }
 
 /// A small capsule (mockup `.chip`): 36 pt tall, with transparent margins up to a 44 pt hit area.
-/// Selected: `surface` with a 1.5 pt `tint` border (never yellow).
+/// Unselected: `surface2` with a 1 pt `lineStrong` edge (1.5 pt with Increase Contrast or Button
+/// Shapes). Selected: `surface` with a 1.5 pt `tint` border (never yellow).
 struct ChipButtonStyle: ButtonStyle {
     var isSelected = false
 
@@ -590,6 +666,8 @@ private struct ChipBody: View {
     @ScaledMetric(relativeTo: .subheadline) private var height: CGFloat = 36
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
         configuration.label
@@ -603,6 +681,11 @@ private struct ChipBody: View {
             .overlay {
                 if isSelected {
                     Capsule().strokeBorder(Theme.tint, lineWidth: 1.5)
+                } else {
+                    Capsule().strokeBorder(
+                        Theme.lineStrong,
+                        lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1
+                    )
                 }
             }
             .padding(.vertical, max(0, (Theme.minHitSize - height) / 2))
@@ -637,7 +720,10 @@ extension View {
 
 extension View {
     /// A card (mockup `.wcard`, `.qcard`, `.card`): `surface` fill, continuous corners, `line`
-    /// border, a soft shadow in the light appearance only. Does not clip (the band may overhang).
+    /// border, a soft shadow in the light appearance only. At night the fill is the page's black
+    /// (no lit card area, gece_oled.md step 1) and the `line` border alone outlines the card; the
+    /// fill stays opaque, so taps and overlapping content behave as by day. Does not clip (the
+    /// band may overhang).
     func cardSurface(cornerRadius: CGFloat = Theme.Radius.card) -> some View {
         modifier(CardSurfaceModifier(cornerRadius: cornerRadius))
     }
@@ -651,7 +737,7 @@ private struct CardSurfaceModifier: ViewModifier {
         content
             .background {
                 shape
-                    .fill(Theme.surface)
+                    .fill(colorScheme == .dark ? Theme.bg : Theme.surface)
                     .shadow(color: colorScheme == .dark ? .clear : Theme.shadowNear, radius: 1, x: 0, y: 1)
                     .shadow(color: colorScheme == .dark ? .clear : Theme.shadowFar, radius: 14, x: 0, y: 10)
             }
@@ -665,7 +751,8 @@ private struct CardSurfaceModifier: ViewModifier {
     }
 }
 
-/// "A2 ●●○" (rule 4: the level is never color alone). A1 one dot, A2 two, B1 and above three.
+/// "A2 ●●○" (rule 4: the level is never color alone). A1 one dot, A2 two, B1 and above three;
+/// an empty dot is a 1 pt `ink3` ring (5:1 and more; a pale fill was 1.6:1, audit K2).
 /// VoiceOver reads "Seviye A2".
 struct LevelBadge: View {
     let code: String
@@ -690,9 +777,15 @@ struct LevelBadge: View {
                 .foregroundStyle(Theme.ink)
             HStack(spacing: 2) {
                 ForEach(1...3, id: \.self) { dot in
-                    Circle()
-                        .fill(dot <= dots ? Theme.ink : Theme.ink3.opacity(0.35))
-                        .frame(width: dotSize, height: dotSize)
+                    if dot <= dots {
+                        Circle()
+                            .fill(Theme.ink)
+                            .frame(width: dotSize, height: dotSize)
+                    } else {
+                        Circle()
+                            .strokeBorder(Theme.ink3, lineWidth: 1)
+                            .frame(width: dotSize, height: dotSize)
+                    }
                 }
             }
         }
