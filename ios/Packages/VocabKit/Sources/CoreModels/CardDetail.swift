@@ -57,12 +57,30 @@ public struct CardDetail: Decodable, Equatable, Sendable {
             self.distractors = distractors
         }
 
-        /// The answer and the distractors in a stable mixed order: the same `seed` (the word id)
-        /// always gives the same order, on every device and launch. Duplicates are dropped.
-        public func options(seed: Int) -> [String] {
+        /// The answer and the distractors in a mixed order; duplicates are dropped. `seed` is the
+        /// word id, `attempt` how many times the word was answered before (`WordProgress.reviews`).
+        /// The same seed and attempt always give the same order, on every device and launch, so a
+        /// question keeps its order while it is on screen.
+        ///
+        /// Each next attempt moves the answer to another place and mixes the distractors anew, so
+        /// the place cannot stand in for the word (learning principles 2.4): over any `count`
+        /// attempts in a row the answer sits once in every place, in a cycle of places of its own
+        /// for each word. Attempt 0 gives the order this method gave before it took an attempt.
+        public func options(seed: Int, attempt: Int = 0) -> [String] {
             var seen = Set<String>()
             let all = ([answer] + distractors).filter { seen.insert($0).inserted }
-            return all.sorted { Quiz.mixKey(seed: seed, $0) < Quiz.mixKey(seed: seed, $1) }
+            let firstOrder = all.sorted { Quiz.mixKey(seed: seed, $0) < Quiz.mixKey(seed: seed, $1) }
+            guard all.count > 1, let firstPlace = firstOrder.firstIndex(of: answer) else {
+                return firstOrder
+            }
+            let places = Quiz.answerPlaces(seed: seed, first: firstPlace, count: all.count)
+            // Never negative, even for a negative attempt.
+            let place = places[(attempt % places.count + places.count) % places.count]
+            var order = all.dropFirst().sorted {
+                Quiz.mixKey(seed: seed, attempt: attempt, $0) < Quiz.mixKey(seed: seed, attempt: attempt, $1)
+            }
+            order.insert(answer, at: place)
+            return order
         }
 
         /// The sentence with the answer in the blank (the first run of three or more
@@ -79,10 +97,21 @@ public struct CardDetail: Decodable, Equatable, Sendable {
             return cloze.replacingCharacters(in: blank, with: filler)
         }
 
-        /// FNV-1a over "seed|option": deterministic, unlike Swift's per-process `Hasher`.
-        static func mixKey(seed: Int, _ option: String) -> UInt64 {
+        /// The answer's place for attempts 0, 1, 2, … as a repeating cycle: `first` (the place of
+        /// attempt 0), then every other place in an order mixed by `seed`.
+        static func answerPlaces(seed: Int, first: Int, count: Int) -> [Int] {
+            let others = (0..<count)
+                .filter { $0 != first }
+                .sorted { mixKey(seed: seed, "place \($0)") < mixKey(seed: seed, "place \($1)") }
+            return [first] + others
+        }
+
+        /// FNV-1a over "seed|option" (attempt 0, the key from before attempts) or
+        /// "seed|attempt|option": deterministic, unlike Swift's per-process `Hasher`.
+        static func mixKey(seed: Int, attempt: Int = 0, _ option: String) -> UInt64 {
+            let text = attempt == 0 ? "\(seed)|\(option)" : "\(seed)|\(attempt)|\(option)"
             var hash: UInt64 = 0xcbf2_9ce4_8422_2325
-            for byte in "\(seed)|\(option)".utf8 {
+            for byte in text.utf8 {
                 hash ^= UInt64(byte)
                 hash = hash &* 0x0000_0100_0000_01b3
             }

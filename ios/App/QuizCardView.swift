@@ -18,12 +18,14 @@ enum QuizOutcome: Hashable {
 
 /// "Tekrar" question for a word that was already studied: the card's fill-in-the-blank sentence
 /// (large serif, the blank a marked slot) and four equal option capsules (serif: they are
-/// English), two by two when every option fits its half, one per row otherwise. After a tap only
-/// the right option ("Doğru cevap") and a wrong pick ("Yanlış") stay, marked with icons and words,
-/// never color alone; a wrong pick stays on calm paper, no red. The sentence then reads in full
-/// with the word marked and a "Dinle" capsule, and the feedback below says what the word means
-/// ("Doğrusu: spoon = kaşık"), on a wrong pick also what the picked word means ("Senin seçtiğin:
-/// knife = bıçak") and, when the card's Dikkat sentences use the picked word, why ("Neden?").
+/// English), two by two when every option fits its half, one per row otherwise, in a new order
+/// on each attempt (`CardDetail.Quiz.options(seed:attempt:)`). After a tap only the right
+/// option ("Doğru cevap") and a wrong pick ("Yanlış") stay, marked with icons and words, never
+/// color alone; a wrong pick stays on calm paper, no red and no haptic. The sentence then reads
+/// in full with the word marked and a "Dinle" capsule, and the feedback below says what the word
+/// means ("Doğrusu: spoon = kaşık"), on a wrong pick also what the picked word means ("Senin
+/// seçtiğin: knife = bıçak") and, when the card's Dikkat sentences use the picked word, why
+/// ("Neden?"). The feedback is about the answer, never the learner (learning principles 2.4).
 /// `onContinue` reports how it went: after a right pick the learner can also say it was hard or
 /// easy, otherwise "Devam" is a plain right answer.
 /// Give each word its own identity (`.id(word.id)`) so the pick resets between cards.
@@ -51,14 +53,21 @@ struct QuizCardView: View {
     let returnTimes: [QuizOutcome: String]
     let onContinue: (QuizOutcome) -> Void
     @State private var picked: String?
+    /// The options in this attempt's order, taken once: the order stays while the card is on
+    /// screen, even if the caller's attempt changes meanwhile.
+    @State private var optionOrder: [String]
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    /// `initialPick` is for snapshot tests: renders the answered state directly.
+    /// `attempt` is how many times the word was answered before (`WordProgress.reviews`): every
+    /// next attempt puts the answer in another place (learning principles 2.4); without it the
+    /// options keep one order per word. `initialPick` is for snapshot tests: renders the
+    /// answered state directly.
     init(
         word: WidgetWord,
         quiz: CardDetail.Quiz,
+        attempt: Int = 0,
         initialPick: String? = nil,
         layout: Layout = .stacked,
         mistakes: [CardDetail.Mistake] = [],
@@ -74,11 +83,13 @@ struct QuizCardView: View {
         self.returnTimes = returnTimes
         self.onContinue = onContinue
         _picked = State(initialValue: initialPick)
+        _optionOrder = State(initialValue: quiz.options(seed: word.id, attempt: attempt))
     }
 
     private static let feedbackID = "quiz.feedback"
-    /// The short praise of a right pick, on screen and for VoiceOver.
-    private static let praise = "Doğru, çok iyi!"
+    /// A right pick, on screen and for VoiceOver: about the answer, not the learner (learning
+    /// principles 1 item 12, mockup `.fb .h.ok`).
+    private static let praise = "Doğru!"
 
     var body: some View {
         Group {
@@ -124,8 +135,8 @@ struct QuizCardView: View {
                         }
                         // A moment later, once the options have collapsed and the feedback and the
                         // bottom bar have been laid out: the feedback must never stay hidden under
-                        // the bar (README point 6).
-                        let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.3)
+                        // the bar (README point 6). At most 200 ms (learning principles 2.4).
+                        let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.2)
                         Task { @MainActor in
                             try? await Task.sleep(nanoseconds: 60_000_000)
                             withAnimation(animation) {
@@ -138,7 +149,8 @@ struct QuizCardView: View {
         }
         // The speaker buttons are ink, never the system blue (rule 2).
         .tint(Theme.ink)
-        // A light haptic on a right answer only (mockup "Hareket"); a wrong pick stays silent.
+        // A light haptic on a right answer only (mockup "Hareket"). A wrong pick stays silent: it
+        // is part of learning, not an error (learning principles 1b, 2.4), so never `.error`.
         .sensoryFeedback(.success, trigger: picked) { oldValue, newValue in
             oldValue == nil && newValue == quiz.answer
         }
@@ -179,7 +191,7 @@ struct QuizCardView: View {
     /// Before the answer every option; after it the right one first, then a wrong pick.
     private var shownOptions: [String] {
         guard let picked = picked else {
-            return quiz.options(seed: word.id)
+            return optionOrder
         }
         return picked == quiz.answer ? [quiz.answer] : [quiz.answer, picked]
     }
@@ -233,9 +245,10 @@ struct QuizCardView: View {
         return result
     }
 
-    /// VoiceOver reads the blank as a word instead of a row of underscores.
+    /// VoiceOver reads the blank as a word instead of a row of underscores: an English one, since
+    /// the sentence is read in an English voice (audit V4).
     private static func spokenCloze(_ cloze: String) -> String {
-        return cloze.replacingOccurrences(of: "_{3,}", with: "boşluk", options: .regularExpression)
+        return cloze.replacingOccurrences(of: "_{3,}", with: "blank", options: .regularExpression)
     }
 
     // MARK: Options
@@ -333,15 +346,17 @@ struct QuizCardView: View {
         guard picked == nil else {
             return
         }
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+        // At most 200 ms, none with Reduce Motion (learning principles 2.4).
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
             picked = option
         }
         announce(isRight: option == quiz.answer)
     }
 
-    /// VoiceOver hears how it went, queued after the tap's own speech so it is not cut off:
-    /// "Doğru, çok iyi! spoon, Türkçesi: kaşık" or "Yanlış. Doğrusu: spoon, Türkçesi: kaşık",
-    /// the English word in an English voice.
+    /// VoiceOver hears how it went, queued after the tap's own speech and at high priority, so
+    /// the options changing under the finger do not cut it off (audit V8):
+    /// "Doğru! spoon, Türkçesi: kaşık" or "Doğrusu: spoon, Türkçesi: kaşık", the English word in
+    /// an English voice. No "Yanlış": the feedback is about the answer (learning principles 2.4).
     private func announce(isRight: Bool) {
         let answer = quiz.answer
         let gloss = word.glossTR
@@ -350,18 +365,16 @@ struct QuizCardView: View {
             let turkish: [NSAttributedString.Key: Any] = [.accessibilitySpeechLanguage: "tr-TR"]
             let english: [NSAttributedString.Key: Any] = [.accessibilitySpeechLanguage: "en-US"]
             let text = NSMutableAttributedString(
-                string: isRight ? QuizCardView.praise + " " : "Yanlış. Doğrusu: ",
+                string: isRight ? QuizCardView.praise + " " : "Doğrusu: ",
                 attributes: turkish
             )
             text.append(NSAttributedString(string: answer, attributes: english))
             if let gloss = gloss {
                 text.append(NSAttributedString(string: ", Türkçesi: " + gloss, attributes: turkish))
             }
-            text.addAttribute(
-                .accessibilitySpeechQueueAnnouncement,
-                value: true,
-                range: NSRange(location: 0, length: text.length)
-            )
+            let whole = NSRange(location: 0, length: text.length)
+            text.addAttribute(.accessibilitySpeechQueueAnnouncement, value: true, range: whole)
+            text.addAttribute(.accessibilitySpeechAnnouncementPriority, value: UIAccessibilityPriority.high, range: whole)
             UIAccessibility.post(notification: .announcement, argument: text)
         }
     }
@@ -408,6 +421,7 @@ struct QuizCardView: View {
                             .fill(Theme.lineStrong)
                             .frame(height: 1)
                     }
+                    .accessibilityElement(children: .combine)
                 }
             }
         }
@@ -415,7 +429,9 @@ struct QuizCardView: View {
         .padding(.vertical, 14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous))
-        .accessibilityElement(children: .combine)
+        // Not `.combine`: one element is read in one voice, and the English words need their own
+        // (audit V3, `FeedbackSpeech`).
+        .accessibilityElement(children: .contain)
     }
 
     /// The answer is the card's word itself (not another form of it, "broke down" for
@@ -430,10 +446,6 @@ struct QuizCardView: View {
         let answer: Text = Text(verbatim: quiz.answer)
             .font(.system(.body, design: .serif).weight(.bold))
         let gloss = answerIsHeadword ? word.glossTR : nil
-        var spoken = "Doğrusu: " + quiz.answer
-        if let gloss = gloss {
-            spoken += ", Türkçesi: " + gloss
-        }
         return Label {
             if let gloss = gloss {
                 Text("Doğrusu: \(answer) = \(gloss)")
@@ -448,7 +460,9 @@ struct QuizCardView: View {
         .font(.body.weight(.bold))
         .foregroundStyle(Theme.ink)
         .fixedSize(horizontal: false, vertical: true)
-        .accessibilityLabel(spoken)
+        .accessibilityRepresentation {
+            FeedbackSpeech(lead: "Doğrusu:", english: quiz.answer, meaning: gloss)
+        }
     }
 
     /// Mockup `.fb .m`: "spoon = kaşık", the word in bold serif, the meaning in the UI face.
@@ -462,10 +476,13 @@ struct QuizCardView: View {
                 .font(.callout)
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
-                .accessibilityLabel(word.lemma + ", Türkçesi: " + gloss)
+                .accessibilityRepresentation {
+                    FeedbackSpeech(english: word.lemma, meaning: gloss)
+                }
         } else {
             headword
                 .foregroundStyle(Theme.ink)
+                .englishVoice()
         }
     }
 
@@ -475,10 +492,6 @@ struct QuizCardView: View {
             .font(.system(.subheadline, design: .serif).weight(.bold))
             .foregroundStyle(Theme.ink)
         let meaning = optionMeanings[picked]
-        var spoken = "Senin seçtiğin: " + picked
-        if let meaning = meaning {
-            spoken += ", Türkçesi: " + meaning
-        }
         return Group {
             if let meaning = meaning {
                 Text("Senin seçtiğin: \(pickedWord) = \(meaning)")
@@ -489,7 +502,9 @@ struct QuizCardView: View {
         .font(.subheadline)
         .foregroundStyle(Theme.ink2)
         .fixedSize(horizontal: false, vertical: true)
-        .accessibilityLabel(spoken)
+        .accessibilityRepresentation {
+            FeedbackSpeech(lead: "Senin seçtiğin:", english: picked, meaning: meaning)
+        }
     }
 
     /// The card's Dikkat entry whose wrong or right sentence uses the picked word as a whole
@@ -682,6 +697,27 @@ private struct QuizOptionPressBody: View {
             .opacity(configuration.isPressed ? 0.85 : 1)
             .scaleEffect(configuration.isPressed && !reduceMotion ? 0.985 : 1)
             .animation(reduceMotion ? nil : .easeOut(duration: 0.12), value: configuration.isPressed)
+    }
+}
+
+/// What VoiceOver reads for a feedback line ("Doğrusu: spoon = kaşık") instead of the line: one
+/// element is read in one voice, so the English word is an element of its own in an English
+/// voice (audit V3) between the Turkish parts ("Doğrusu:", "Türkçesi: kaşık"). On screen the
+/// line stays one `Text` that wraps as a sentence.
+private struct FeedbackSpeech: View {
+    var lead: String?
+    let english: String
+    let meaning: String?
+
+    var body: some View {
+        if let lead = lead {
+            Text(lead)
+        }
+        Text(verbatim: english)
+            .englishVoice()
+        if let meaning = meaning {
+            Text("Türkçesi: " + meaning)
+        }
     }
 }
 
