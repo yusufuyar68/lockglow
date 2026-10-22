@@ -821,7 +821,7 @@ private struct CustomWordsRecoveryBanner: View {
 }
 
 /// What the bottom notice says, and the deleted word "Vazgeç" brings back.
-private struct CustomWordsNotice: Equatable, Identifiable {
+struct CustomWordsNotice: Equatable, Identifiable {
     let id = UUID()
     let message: String
     var undo: CustomWord? = nil
