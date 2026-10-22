@@ -67,6 +67,8 @@ final class AppModel: ObservableObject {
     private var store: AppGroupStore?
     /// Nil until the progress file has been loaded (or when its folder is unavailable).
     private var progressStore: ProgressStore?
+    /// Every answer, for FSRS later (`ReviewLog`). Best effort: a failed write loses that line only.
+    private let reviewLog = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
     private var hasStarted = false
     private var lastReloadRequestedAt: Date?
     /// Every topic of each word (`card_category`), for the deck filter and "İlerleme".
@@ -489,7 +491,9 @@ final class AppModel: ObservableObject {
         let wasNew = current.state == .new
         let updated = Leitner.review(current, grade: grade, at: now)
         progress[word.id] = updated
-        persistProgress(progress)
+        if persistProgress(progress) {
+            try? reviewLog?.append(before: current, after: updated, source: .review)
+        }
         let metrics = LocalMetricsRecorder.shared
         // A word sent back to "Tanış" by a failed "Biliyorum" check is new again but was answered
         // before: the metrics count only a word's very first question as new.
@@ -734,7 +738,9 @@ final class AppModel: ObservableObject {
         discardPendingEvents()
         knownUndo = nil
         progress = [:]
-        persistProgress(progress)
+        if persistProgress(progress) {
+            try? reviewLog?.removeAll()
+        }
         AppPreferences.clearKnownWordIDs()
         AppPreferences.resetNewWordsStudied()
         AppPreferences.resetReviewsDone()
@@ -838,11 +844,12 @@ final class AppModel: ObservableObject {
                 logger.info("widget event \(event.type.rawValue, privacy: .public) word=\(event.wordID) source=\(event.source.rawValue, privacy: .public)")
                 events.append(LearningEvent(type: event.type, wordID: event.wordID, at: event.at))
             }
-            let updated = ProgressIngest.apply(events, to: progress)
+            let (updated, answers) = ProgressIngest.applyLogged(events, to: progress)
             if !persistProgress(updated) {
                 return
             }
             progress = updated
+            try? reviewLog?.append(answers)
         }
 
         for item in stored {

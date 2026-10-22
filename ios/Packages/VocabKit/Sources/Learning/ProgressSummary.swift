@@ -13,9 +13,10 @@ import CoreModels
 /// "Kendin işaretlediklerin".
 ///
 /// `progress.json` keeps no history. "This week" is read from each word's last answer
-/// (`lastAnswer(of:)`) and, for the first answer, from an estimate (`estimatedFirstAnswer(of:)`).
-/// Exact dates (a future `WordProgress.firstReviewedAt`, a review log, recorded study days) go in
-/// through `StudyHistory` and always win over the estimate.
+/// (`lastAnswer(of:)`) and first answer (`WordProgress.firstReviewedAt`). Words answered before
+/// those dates were recorded fall back to estimates (the gap reading in `lastAnswer(of:)`,
+/// `estimatedFirstAnswer(of:)`). Exact dates from elsewhere (a review log, recorded study days)
+/// go in through `StudyHistory` and always win.
 public struct ProgressSummary: Equatable, Sendable {
     /// A shelf of the library, bottom to top, then the separate box of self-marked words.
     public enum Shelf: Int, CaseIterable, Comparable, Identifiable, Sendable {
@@ -130,11 +131,10 @@ public struct ProgressSummary: Equatable, Sendable {
         }
     }
 
-    /// Dates the app knows exactly. Empty by default: everything is then read from
-    /// `progress.json`. Any entry here wins over the estimate.
+    /// Dates the app knows exactly from elsewhere. Empty by default: everything is then read
+    /// from `progress.json`. Any entry here wins over `progress.json`.
     public struct StudyHistory: Equatable, Sendable {
-        /// When each word was answered for the first time (`WordProgress.firstReviewedAt` once
-        /// that field exists, or a review log).
+        /// When each word was answered for the first time (a review log, say).
         public var firstAnswers: [Int: Date]
         /// One moment of each day with at least one answer (any time of the day will do).
         public var studyDays: [Date]
@@ -290,12 +290,36 @@ public struct ProgressSummary: Equatable, Sendable {
 
     // MARK: Reading progress.json
 
-    /// The word's last answer, read from the gap between `lastSeenAt` and `dueAt` (both written
-    /// from the same moment by `Leitner.review`). Nil when the gap matches no answer: a widget tap
-    /// moved `lastSeenAt` since, the word was never answered, or it is a "Biliyorum" word (marking
-    /// a word known leaves a gap that looks like an answer).
+    /// The word's last answer. Nil for a word that was never answered, a word sent back to the
+    /// new words, and a "Biliyorum" word waiting for its check.
+    ///
+    /// Exact from `lastReviewedAt` and `lastGrade`. A word answered before those fields existed
+    /// is read from the gap between `lastSeenAt` and `dueAt` (both written from the same moment
+    /// by `Leitner.review`); nil when the gap matches no answer: a widget tap moved `lastSeenAt`
+    /// since, or marking a word known left a gap that looks like an answer.
     public static func lastAnswer(of progress: WordProgress) -> LastAnswer? {
-        guard progress.reviews > 0, let due = progress.dueAt, let seen = progress.lastSeenAt else {
+        guard progress.reviews > 0 else {
+            return nil
+        }
+        if let at = progress.lastReviewedAt, let grade = progress.lastGrade {
+            switch progress.state {
+            case .new:
+                return nil
+            case .learning:
+                switch grade {
+                case .again:
+                    return LastAnswer(date: at, kind: .forgot)
+                case .hard:
+                    return LastAnswer(date: at, kind: .stayed)
+                case .good, .easy:
+                    return LastAnswer(date: at, kind: .movedUp)
+                }
+            case .known:
+                // A wrong answer never leaves a word known.
+                return progress.knownOverride || grade == .again ? nil : LastAnswer(date: at, kind: .recalledOnTop)
+            }
+        }
+        guard let due = progress.dueAt, let seen = progress.lastReviewedAt ?? progress.lastSeenAt else {
             return nil
         }
         let gap = due.timeIntervalSince(seen)
@@ -323,7 +347,8 @@ public struct ProgressSummary: Equatable, Sendable {
             if progress.knownOverride {
                 return nil
             }
-            if matches(Leitner.refresherDelay) || matches(Leitner.refresherDelay * Leitner.hardFactor) {
+            let waits = Leitner.refresherDays.indices.map { Leitner.refresherWait(step: $0) }
+            if waits.contains(where: { matches($0) || matches($0 * Leitner.hardFactor) }) {
                 return LastAnswer(date: seen, kind: .recalledOnTop)
             }
             return nil
@@ -334,8 +359,10 @@ public struct ProgressSummary: Equatable, Sendable {
     /// Otherwise it assumes the word climbed one shelf per "Bildim", each on its due day
     /// (1 + 2 + 4 ... days): a word answered late or after a slip can look a little newer than
     /// it is, one answered "Kolay" a little older. Nil for words on no shelf, known words (the
-    /// climb to "Yerleşti" takes weeks), "Biliyorum" words, and words with more answers than such
-    /// a climb and its slips explain (an old word that slipped back down).
+    /// climb to "Yerleşti" takes weeks), "Biliyorum" words, words that slipped and still sit above
+    /// shelf 1, and words with more answers than such a climb and its slips explain (an old word
+    /// that slipped back down). Only for words answered before `firstReviewedAt` existed: `week`
+    /// reads that field first.
     public static func estimatedFirstAnswer(of progress: WordProgress) -> Date? {
         guard progress.state == .learning, progress.reviews > 0, let last = earliestLastAnswer(of: progress) else {
             return nil
@@ -344,8 +371,13 @@ public struct ProgressSummary: Equatable, Sendable {
             return last
         }
         let box = min(max(progress.box, 1), Leitner.maxBox)
-        // A straight climb needs `box` answers; each slip adds two (the wrong answer and the one
-        // after it) and one "Zor" may add one more.
+        // A slip drops a word only `Leitner.lapseDrop` boxes: above box 1, a word that slipped
+        // had climbed higher before, so its box no longer tells when it started.
+        if progress.lapses > 0 && box > 1 {
+            return nil
+        }
+        // A straight climb needs `box` answers; each slip (down to box 1) adds two (the wrong
+        // answer and the one after it) and one "Zor" may add one more.
         guard progress.reviews <= box + 2 * progress.lapses + 1 else {
             return nil
         }
@@ -394,10 +426,15 @@ public struct ProgressSummary: Equatable, Sendable {
         var movedUp: [Int] = []
         var recalled: [Int] = []
         for (id, p) in records {
+            // A recorded answer marks its day whatever happened to the word since (a failed
+            // "Biliyorum" check takes it off the shelves).
+            if let answered = p.lastReviewedAt, inWeek(answered) {
+                days.insert(calendar.startOfDay(for: answered))
+            }
             guard Shelf.of(p) != nil else {
                 continue
             }
-            if let exact = history.firstAnswers[id] {
+            if let exact = history.firstAnswers[id] ?? p.firstReviewedAt {
                 if inWeek(exact) {
                     met.append((exact, id))
                     days.insert(calendar.startOfDay(for: exact))

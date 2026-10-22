@@ -108,8 +108,7 @@ final class QueueComposerTests: XCTestCase {
         // 3: "Zor" 2 h ago in box 1: due in 12 h less 2 h. Answered today.
         // 4: "Bildim" 47 h ago (yesterday), box 2 → due 2 days later = in 1 h. Not today: hidden.
         // 5: "Bilemedim" 2 h ago, then "Sonraki" tapped on the widget 30 min ago: the tap moves
-        //    only the "last seen" time, so the answer can no longer be read back. It counts as
-        //    not answered and, being overdue, is hidden (the safe side).
+        //    only the "last seen" time; the answer's own time is on record. Missed today.
         // 6: "Bilemedim" 23 h ago (yesterday, 23:13): overdue, not answered today. Hidden.
         var tapped = answer(5, .again, at: now.addingTimeInterval(-2 * hour))
         tapped = Leitner.markExposure(tapped, at: now.addingTimeInterval(-30 * minute))
@@ -121,12 +120,36 @@ final class QueueComposerTests: XCTestCase {
             5: tapped,
             6: answer(6, .again, at: now.addingTimeInterval(-23 * hour)),
         ]
-        // Answered (correct), earliest answer first: 1 (3 h ago), 3 (2 h ago). Missed: 2.
-        // New (maxNew 3): 7, 8, 9.
-        // N→7, L→1, R→(no refresher) learning 3, L→(no correct left) missed 2, N→8,
-        // L→(no learning) new 9, F→ every list empty: the queue ends.
+        // Answered (correct), earliest answer first: 1 (3 h ago), 3 (2 h ago). Missed: 5 (2 h
+        // ago), 2 (1 h ago). New (maxNew 3): 7, 8, 9.
+        // N→7, L→1, R→(no refresher) learning 3, L→(no correct left) missed 5, N→8, L→missed 2,
+        // F→(nothing missed or learning left) new 9, L→ every list empty: the queue ends.
         let queue = QueueComposer.compose(feed: words(1...9), progress: progress, now: now, horizon: 2 * day, maxNew: 3, limit: 20, calendar: utc)
-        XCTAssertEqual(ids(queue), [7, 1, 3, 2, 8, 9])
+        XCTAssertEqual(ids(queue), [7, 1, 3, 5, 8, 2, 9])
+    }
+
+    func testAnAnswerFromBeforeTheAnswerTimeWasRecordedIsReadFromTheGap() {
+        // Progress written by an earlier build: no `lastReviewedAt`, no `lastGrade`.
+        func legacy(_ p: WordProgress) -> WordProgress {
+            var old = p
+            old.lastReviewedAt = nil
+            old.lastGrade = nil
+            old.firstReviewedAt = nil
+            return old
+        }
+        // 1: "Bildim" 3 h ago and 2: "Bilemedim" 1 h ago are read back from the gap.
+        // 3: "Bilemedim" 2 h ago, then a widget tap: the gap matches nothing, so the answer is
+        //    unknown and the overdue word stays hidden (the safe side).
+        var tapped = legacy(answer(3, .again, at: now.addingTimeInterval(-2 * hour)))
+        tapped = Leitner.markExposure(tapped, at: now.addingTimeInterval(-30 * minute))
+        let progress = [
+            1: legacy(answer(1, .good, at: now.addingTimeInterval(-3 * hour))),
+            2: legacy(answer(2, .again, at: now.addingTimeInterval(-1 * hour), box: 2)),
+            3: tapped,
+        ]
+        // N→(no new) answered 1, L→ missed 2, then every list is empty.
+        let queue = QueueComposer.compose(feed: words(1...3), progress: progress, now: now, horizon: 2 * day, maxNew: 3, limit: 20, calendar: utc)
+        XCTAssertEqual(ids(queue), [1, 2])
     }
 
     func testBiliyorumWordWaitsOffTheWidgetUntilItsCheck() {

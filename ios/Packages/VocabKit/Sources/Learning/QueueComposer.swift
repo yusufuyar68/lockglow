@@ -202,14 +202,23 @@ public enum QueueComposer {
         return result
     }
 
-    /// When a learning word was last answered, and whether the answer was wrong, read from its
-    /// progress: `Leitner.review` sets `lastSeenAt` and `dueAt` from the same instant, so the gap
-    /// between them is one of the delays an answer gives in the word's box. A later widget tap
+    /// When a learning word was last answered, and whether the answer was wrong: exact from
+    /// `lastReviewedAt` and `lastGrade`, which widget taps never move.
+    ///
+    /// Progress answered before those fields existed is read from the gap instead:
+    /// `Leitner.review` sets `lastSeenAt` and `dueAt` from the same instant, so the gap between
+    /// them is one of the delays an answer gives in the word's box. A later widget tap
     /// (`Leitner.markExposure`) moves only `lastSeenAt`; the gap then matches nothing and the
     /// answer time is unknown (nil). Unknown counts as "not answered today", which can only
     /// hide a word, never show one early.
     static func lastAnswer(of p: WordProgress) -> (at: Date, missed: Bool)? {
-        guard p.state == .learning, p.reviews > 0, let due = p.dueAt, let seen = p.lastSeenAt else {
+        guard p.state == .learning, p.reviews > 0 else {
+            return nil
+        }
+        if let at = p.lastReviewedAt, let grade = p.lastGrade {
+            return (at, grade == .again)
+        }
+        guard let due = p.dueAt, let seen = p.lastReviewedAt ?? p.lastSeenAt else {
             return nil
         }
         let gap = due.timeIntervalSince(seen)

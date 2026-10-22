@@ -30,6 +30,15 @@ public enum ProgressIngest {
         _ events: [LearningEvent],
         to progress: [Int: WordProgress]
     ) -> [Int: WordProgress] {
+        return applyLogged(events, to: progress).progress
+    }
+
+    /// `apply`, plus the review-log entry of every answer among the events (`unknown`), in the
+    /// order they were applied (`ReviewLog`).
+    public static func applyLogged(
+        _ events: [LearningEvent],
+        to progress: [Int: WordProgress]
+    ) -> (progress: [Int: WordProgress], answers: [ReviewLogEntry]) {
         let ordered = events.enumerated().sorted { lhs, rhs in
             if lhs.element.at != rhs.element.at {
                 return lhs.element.at < rhs.element.at
@@ -37,12 +46,17 @@ public enum ProgressIngest {
             return lhs.offset < rhs.offset
         }
         var result = progress
+        var answers: [ReviewLogEntry] = []
         for item in ordered {
             let event = item.element
             let current = result[event.wordID] ?? WordProgress(wordID: event.wordID)
-            result[event.wordID] = update(current, with: event)
+            let updated = update(current, with: event)
+            result[event.wordID] = updated
+            if let answer = ReviewLogEntry(before: current, after: updated, source: .widget) {
+                answers.append(answer)
+            }
         }
-        return result
+        return (result, answers)
     }
 
     private static func update(_ progress: WordProgress, with event: LearningEvent) -> WordProgress {

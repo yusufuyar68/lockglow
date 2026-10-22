@@ -2,7 +2,8 @@ import Foundation
 
 /// FSRS-6 scheduling (Free Spaced Repetition Scheduler), plan item v1.2. Not wired into the app
 /// yet: `Leitner` still schedules every review (docs/ozellik_planlari/fsrs.md has the comparison
-/// and the migration plan).
+/// and the migration plan). It can already run in Leitner's shadow from the review log
+/// (`replay`).
 ///
 /// A word's memory is two numbers: stability (days until the chance of recall falls to 90%) and
 /// difficulty (1...10). Retrievability, the chance of recalling the word now, follows from the
@@ -277,6 +278,100 @@ public struct FSRSCard: Equatable, Sendable {
         self.memory = nil
         self.dueAt = nil
         self.lastReviewAt = nil
+    }
+}
+
+// MARK: - In Leitner's shadow
+
+/// Every logged word's FSRS schedule, rebuilt from the review log (`FSRS.replay`).
+public struct FSRSReplay: Equatable, Sendable {
+    /// By word id: where FSRS would have the word now.
+    public var cards: [Int: FSRSCard]
+    /// Words with answers missing from the log (it was trimmed, or lines were lost). They get no
+    /// card; at the switch they start from the estimate of fsrs.md 4.2 step 2.
+    public var incomplete: Set<Int>
+
+    public init(cards: [Int: FSRSCard] = [:], incomplete: Set<Int> = []) {
+        self.cards = cards
+        self.incomplete = incomplete
+    }
+}
+
+extension FSRS {
+    /// The settings Lockglow would switch on (fsrs.md 4.3 step 4): target 0.9 and a single
+    /// 10-minute step for new and forgotten words, Leitner's `relearnDelay`.
+    public static let lockglow = FSRS(learningSteps: [600], relearningSteps: [600])
+
+    /// FSRS run in Leitner's shadow: each word's answers in the review log, oldest first, through
+    /// `review`. Pure: Leitner keeps scheduling, and nothing here is saved.
+    ///
+    /// A word whose first answer ever is in the log starts as a new card. A word answered before
+    /// the log existed starts from its first logged answer's `seed` (`seededCard`). A word with
+    /// neither, or with a gap or a repeat in its answer numbers, is `incomplete`.
+    public func replay(_ log: [ReviewLogEntry]) -> FSRSReplay {
+        var byWord: [Int: [(offset: Int, entry: ReviewLogEntry)]] = [:]
+        for (offset, entry) in log.enumerated() {
+            byWord[entry.wordID, default: []].append((offset, entry))
+        }
+        var result = FSRSReplay()
+        for (id, items) in byWord {
+            let numbers = items.map { $0.entry.reviews }
+            guard let lowest = numbers.min(), let highest = numbers.max(),
+                  Set(numbers).count == numbers.count, highest - lowest + 1 == numbers.count else {
+                result.incomplete.insert(id)
+                continue
+            }
+            // Oldest first: a widget answer can reach the app after a later answer in "Tekrar".
+            let answers = items.sorted { a, b in
+                a.entry.at != b.entry.at ? a.entry.at < b.entry.at : a.offset < b.offset
+            }.map { $0.entry }
+            var card: FSRSCard
+            if lowest == 1 {
+                card = FSRSCard()
+            } else if let seed = items.first(where: { $0.entry.reviews == lowest })?.entry.seed {
+                card = seededCard(seed, firstAnswerAt: answers[0].at)
+            } else {
+                result.incomplete.insert(id)
+                continue
+            }
+            for answer in answers {
+                card = review(card, grade: answer.grade, at: answer.at)
+            }
+            result.cards[id] = card
+        }
+        return result
+    }
+
+    /// The card of a word answered before the log existed, just before its first logged answer
+    /// (fsrs.md 4.2 step 2). Stability is the wait Leitner gave it: its box's interval, or the
+    /// first refresher wait once known. Difficulty starts at "Bildim" and takes one "Bilemedim"
+    /// step per lapse. The last answer is put that wait before the due date. A word without a
+    /// memory to estimate ("Biliyorum" not checked yet, or sent back to "Tanış") starts as a new
+    /// card: its next answer is its first for FSRS (4.2 step 3).
+    public func seededCard(_ seed: ReviewLogEntry.Seed, firstAnswerAt: Date) -> FSRSCard {
+        let stabilityDays: Double
+        switch seed.state {
+        case .learning:
+            stabilityDays = Leitner.intervalDays[min(max(seed.box, 1), Leitner.maxBox) - 1]
+        case .known where !seed.knownOverride:
+            stabilityDays = Leitner.refresherDays[0]
+        case .new, .known:
+            return FSRSCard()
+        }
+        var difficulty = initialMemory(.good).difficulty
+        // Difficulty reaches its ceiling within a few lapses; the cap only bounds the loop.
+        for _ in 0..<min(max(seed.lapses, 0), 20) {
+            let memory = FSRSMemory(stability: stabilityDays, difficulty: difficulty)
+            difficulty = nextMemory(memory, elapsedDays: 1, grade: .again).difficulty
+        }
+        var card = FSRSCard()
+        card.phase = .review
+        card.step = nil
+        card.memory = FSRSMemory(stability: stabilityDays, difficulty: difficulty)
+        card.dueAt = seed.dueAt
+        let estimate = (seed.dueAt ?? firstAnswerAt).addingTimeInterval(-stabilityDays * Self.day)
+        card.lastReviewAt = min(estimate, firstAnswerAt)
+        return card
     }
 }
 

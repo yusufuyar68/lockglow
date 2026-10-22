@@ -151,8 +151,9 @@ extension ReviewPlanner {
         var returning: [(word: WidgetWord, at: Date, order: Int)] = []
         var seen = Set<Int>()
         for (order, word) in all.enumerated() where seen.insert(word.id).inserted {
+            // Waiting since the failed check; a widget tap since then moves only `lastSeenAt`.
             if let p = progress[word.id], p.returnsToIntro {
-                returning.append((word, p.lastSeenAt ?? .distantPast, order))
+                returning.append((word, p.lastReviewedAt ?? p.lastSeenAt ?? .distantPast, order))
             }
         }
         returning.sort { a, b in

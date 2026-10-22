@@ -121,7 +121,11 @@ final class LeitnerHardEasyTests: XCTestCase {
         XCTAssertEqual(easy.state, .known)
         XCTAssertEqual(easy.box, 5)
         XCTAssertEqual(easy.dueAt, now.addingTimeInterval(30 * day))
-        XCTAssertEqual(easy, good)
+        // The same, but for the grade on record.
+        XCTAssertEqual(easy.lastGrade, .easy)
+        var easyAsGood = easy
+        easyAsGood.lastGrade = .good
+        XCTAssertEqual(easyAsGood, good)
     }
 
     func testEasyOnAKnownWordKeepsTheNormalRefresher() {
