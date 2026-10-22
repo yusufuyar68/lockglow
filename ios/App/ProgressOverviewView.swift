@@ -757,7 +757,7 @@ private struct ShelfRow: View {
                 .buttonStyle(ChipButtonStyle())
                 // The word in an English voice through the label's language, so the Turkish
                 // hint keeps the Turkish voice (an English locale would switch the whole button).
-                .accessibilityLabel(SozlukSpeech.english(word.lemma))
+                .accessibilityLabel(SozlukSpeech.label([.english(word.lemma)]))
                 .accessibilityHint(Text(verbatim: "Anlamını ve örneğini gösterir."))
             }
             if hidden > 0 {
