@@ -2,7 +2,8 @@
 
 - drops the GRDB-backed ContentStore target and its tests (GRDB needs SQLite headers);
 - adds stub modules for Apple-only frameworks (Combine, os, WidgetKit) and a ContentStore stub
-  with the same public signatures;
+  with the same public signatures (checked: the run stops if the stub's public declarations differ
+  from the real module's, because the app logic is type-checked against the stub);
 - adds an `AppLogic` target with the app's non-UI files, so their calls into the package
   are type-checked against the real APIs;
 - guards the one Apple-only call in SharedState (App Group container lookup).
@@ -18,10 +19,46 @@ from pathlib import Path
 APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
 
+# A declaration that starts with `public` or `open`, after optional attributes such as @discardableResult.
+PUBLIC_DECL = re.compile(r"^(?:@\w+(?:\([^)]*\))?\s+)*(?:public|open)\b")
+
+
+def public_api(folder: Path) -> list[str]:
+    """The `public`/`open` declarations of the Swift files in `folder`, sorted: comments and bodies
+    removed, multi-line signatures joined, whitespace collapsed."""
+    decls = []
+    for path in sorted(folder.glob("*.swift")):
+        current = None
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            line = re.sub(r"(^|\s)//.*$", "", raw).strip()
+            if current is None:
+                if not PUBLIC_DECL.match(line):
+                    continue
+                current = line
+            else:
+                current += " " + line
+            balanced = current.count("(") == current.count(")")
+            if "{" in current or (balanced and not current.endswith((",", "(", "->"))):
+                decls.append(" ".join(current.split("{", 1)[0].split()))
+                current = None
+    return sorted(decls)
+
+
+def check_stub_api(real: Path, stub: Path) -> None:
+    real_api, stub_api = public_api(real), public_api(stub)
+    if not real_api:
+        raise SystemExit(f"no public declarations found in {real}: update linux_check_prepare.py")
+    if real_api != stub_api:
+        lines = [f"{stub} does not match the public API of {real}; update the stub:"]
+        lines += [f"  only in the real module: {d}" for d in real_api if d not in stub_api]
+        lines += [f"  only in the stub:        {d}" for d in stub_api if d not in real_api]
+        raise SystemExit("\n".join(lines))
+
 
 def main() -> int:
     pkg, app, stubs = (Path(a) for a in sys.argv[1:4])
 
+    check_stub_api(pkg / "Sources" / "ContentStore", stubs / "ContentStore")
     shutil.rmtree(pkg / "Sources" / "ContentStore", ignore_errors=True)
     shutil.rmtree(pkg / "Tests" / "ContentStoreTests", ignore_errors=True)
 
