@@ -69,8 +69,10 @@ jobs:
               xcrun xcresulttool export attachments --path "out/$name.xcresult" --output-path "shots/$name" || true
             fi
           }
-          run_on small "$SMALL"
-          run_on large "$LARGE"
+          # is4-tekrar-sonda (never merged): only the VoiceOver language probe.
+          xcodebuild test -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$SMALL"             -only-testing:LockglowWidgetSnapshots/EnglishVoiceProbeTests -resultBundlePath "out/probe.xcresult"             CODE_SIGNING_ALLOWED=NO > "out/probe.log" 2>&1 || echo "probe run failed"
+          grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" out/probe.log | tail -20 || true
+          grep -h "SESPROBE" out/*.log | head -200 || true
           find shots -type f | head -40
       - name: Görüntüleri yükle
         if: always()
