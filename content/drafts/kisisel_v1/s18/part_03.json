@@ -1,0 +1,1045 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.course.n.1",
+      "lemma": "course",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "set of lessons",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɔːrs/",
+        "uk": "/kɔːs/"
+      },
+      "def": {
+        "micro": "a set of lessons on a topic",
+        "short": "a set of lessons about one subject, for example English or cooking",
+        "long": "A set of lessons about one subject that you take for some weeks or months. You can take a course at a school, at a center or online."
+      },
+      "grammar": {
+        "pattern": "take / do a course in something"
+      },
+      "examples": [
+        {
+          "en": "Aylin is taking an English course this summer.",
+          "tr": "Aylin bu yaz bir İngilizce kursuna gidiyor.",
+          "register": "neutral",
+          "focus": "course"
+        },
+        {
+          "en": "Mia did a cooking course, and now she makes great pasta.",
+          "tr": "Mia bir yemek kursuna katıldı, artık harika makarna yapıyor.",
+          "register": "neutral",
+          "focus": "course"
+        },
+        {
+          "en": "The online course has twelve lessons, and you can watch them at any time.",
+          "tr": "Online kursta on iki ders var ve onları istediğin zaman izleyebilirsin.",
+          "register": "neutral",
+          "focus": "course"
+        }
+      ],
+      "synonyms": [
+        "class"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take a course",
+        "an English course",
+        "an online course",
+        "a cooking course",
+        "sign up for a course"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'cours', from Latin 'cursus', a running or a race. A course is a path you follow from start to end.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kurs",
+          "alt": [
+            "ders"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Üniversitede 'course' tek bir ders de olabilir: 'I'm taking five courses' (beş ders alıyorum). 'Of course' (elbette) ise ayrı bir kalıptır.",
+          "mistakes": [
+            {
+              "wrong": "I go to English course on Saturdays.",
+              "right": "I go to an English course on Saturdays.",
+              "why": "Türkçede 'İngilizce kursuna gidiyorum' derken artikel yok; İngilizcede tekil sayılabilen isimden önce 'a/an' ya da 'the' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The cooking ______ lasts six weeks, with one lesson every Tuesday.",
+        "answer": "course",
+        "distractors": [
+          "lesson",
+          "teacher",
+          "recipe"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.enroll.v.1",
+      "lemma": "enroll",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "join a course officially",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈroʊl/",
+        "uk": "/ɪnˈrəʊl/"
+      },
+      "def": {
+        "micro": "officially join a class",
+        "short": "officially put your name on the list for a course, school or university",
+        "long": "To officially put your name on the list for a course, school or university, so that you become a student there. People enroll in a course or at a school."
+      },
+      "grammar": {
+        "pattern": "enroll in a course / at a school"
+      },
+      "examples": [
+        {
+          "en": "Deniz enrolled in a yoga class last week.",
+          "tr": "Deniz geçen hafta bir yoga dersine kaydoldu.",
+          "register": "neutral",
+          "focus": "enrolled"
+        },
+        {
+          "en": "You can enroll online, but you need to pay before Friday.",
+          "tr": "İnternetten kaydolabilirsin ama cumadan önce ödeme yapman gerekiyor.",
+          "register": "neutral",
+          "focus": "enroll"
+        },
+        {
+          "en": "More than 200 students enrolled at the new language school this year.",
+          "tr": "Bu yıl yeni dil okuluna 200'den fazla öğrenci kaydoldu.",
+          "register": "neutral",
+          "focus": "enrolled"
+        }
+      ],
+      "synonyms": [
+        "register",
+        "sign up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "enroll in a course",
+        "enroll at a university",
+        "enroll online"
+      ],
+      "word_family": [
+        {
+          "lemma": "enrollment",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'enroller': 'en' (in) + 'rolle' (a roll, a list). To enroll was to write a name on a list.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kaydolmak",
+          "alt": [
+            "kayıt yaptırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiliz yazımı 'enrol'. Günlük konuşmada 'sign up for' daha yaygındır. Okul bir öğrenciyi kaydederse 'enroll a student' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Classes start in May, so you need to ______ before the end of April.",
+        "answer": "enroll",
+        "distractors": [
+          "graduate",
+          "retire",
+          "apologize"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.certificate.n.1",
+      "lemma": "certificate",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "paper after a course",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sərˈtɪfɪkət/",
+        "uk": "/səˈtɪfɪkət/"
+      },
+      "def": {
+        "micro": "paper that shows you passed",
+        "short": "an official paper that shows you finished a course or passed a test",
+        "long": "An official paper that shows you finished a course, passed a test or have a skill. You often get one at the end of a course."
+      },
+      "grammar": {
+        "pattern": "a certificate in something"
+      },
+      "examples": [
+        {
+          "en": "Grace got a certificate at the end of the course.",
+          "tr": "Grace kursun sonunda sertifika aldı.",
+          "register": "neutral",
+          "focus": "certificate"
+        },
+        {
+          "en": "Lucas has a first aid certificate, so he can help in an emergency.",
+          "tr": "Lucas'ın ilk yardım sertifikası var, bu yüzden acil bir durumda yardım edebilir.",
+          "register": "neutral",
+          "focus": "certificate"
+        },
+        {
+          "en": "To get the certificate, you must come to at least eight of the ten lessons.",
+          "tr": "Sertifikayı almak için on dersin en az sekizine katılmalısın.",
+          "register": "neutral",
+          "focus": "certificate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get a certificate",
+        "a first aid certificate",
+        "a language certificate"
+      ],
+      "word_family": [
+        {
+          "lemma": "certify",
+          "pos": "v"
+        },
+        {
+          "lemma": "certified",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Medieval Latin 'certificatum', from 'certus' (sure) and 'facere' (to make): a paper that makes something sure.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "sertifika",
+          "alt": [
+            "belge"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Doğum belgesi 'birth certificate' olur. Üniversite bitirince alınan derece için ise genelde 'degree' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the six-week course, every student gets a ______ with their name on it.",
+        "answer": "certificate",
+        "distractors": [
+          "passport",
+          "ticket",
+          "wallet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.graduate.v.1",
+      "lemma": "graduate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "finish school",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡrædʒueɪt/",
+        "uk": "/ˈɡrædʒueɪt/"
+      },
+      "def": {
+        "micro": "finish school or university",
+        "short": "finish your studies at a school or university and get a diploma",
+        "long": "To finish your studies at a school or university and get an official paper that shows this. You graduate from a school."
+      },
+      "grammar": {
+        "pattern": "graduate from university / high school"
+      },
+      "examples": [
+        {
+          "en": "Selin graduated from university last year.",
+          "tr": "Selin geçen yıl üniversiteden mezun oldu.",
+          "register": "neutral",
+          "focus": "graduated"
+        },
+        {
+          "en": "Noah wants to find a job after he graduates in June.",
+          "tr": "Noah haziranda mezun olduktan sonra bir iş bulmak istiyor.",
+          "register": "neutral",
+          "focus": "graduates"
+        },
+        {
+          "en": "My sister graduated from high school and started a cooking course in the summer.",
+          "tr": "Kız kardeşim liseden mezun oldu ve yazın bir yemek kursuna başladı.",
+          "register": "neutral",
+          "focus": "graduated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "graduate from university",
+        "graduate from high school",
+        "graduate in June",
+        "after you graduate"
+      ],
+      "word_family": [
+        {
+          "lemma": "graduation",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Medieval Latin 'graduare', to give a degree, from 'gradus', a step.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "mezun olmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'graduate' /ˈɡrædʒuət/ 'mezun' demektir: 'I'm a university graduate.' Fiilde son hece 'eyt' diye okunur.",
+          "mistakes": [
+            {
+              "wrong": "I am graduated from Ankara University.",
+              "right": "I graduated from Ankara University.",
+              "why": "Türkçedeki 'mezunum' sözü 'I am' dedirtir; İngilizcede 'graduate' bir eylemdir ve geçmiş zamanla söylenir: I graduated."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hakan studied for four years and ______ from university in 2022.",
+        "answer": "graduated",
+        "distractors": [
+          "retired",
+          "failed",
+          "enrolled"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.degree.n.2",
+      "lemma": "degree",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 2,
+      "sense_note": "university qualification",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈɡriː/",
+        "uk": "/dɪˈɡriː/"
+      },
+      "def": {
+        "micro": "a diploma from a university",
+        "short": "the title you get when you finish your studies at a university",
+        "long": "The title or diploma that a university gives you when you finish your studies there. You can have a degree in a subject, like economics."
+      },
+      "grammar": {
+        "pattern": "a degree in (subject)"
+      },
+      "examples": [
+        {
+          "en": "Emma has a degree in economics.",
+          "tr": "Emma'nın ekonomi diploması var.",
+          "register": "neutral",
+          "focus": "degree"
+        },
+        {
+          "en": "You need a bachelor's degree for this job.",
+          "tr": "Bu iş için lisans diploması gerekiyor.",
+          "register": "neutral",
+          "focus": "degree"
+        },
+        {
+          "en": "Ana got her degree in May and is now looking for a job.",
+          "tr": "Ana mayısta diplomasını aldı ve şimdi iş arıyor.",
+          "register": "neutral",
+          "focus": "degree"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a degree in economics",
+        "a bachelor's degree",
+        "a master's degree",
+        "get a degree",
+        "a university degree"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'degré', a step, from Latin 'gradus'. A university degree was seen as a step up in learning.",
+        "origin": "Old French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "üniversite diploması",
+          "alt": [
+            "diploma",
+            "lisans"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta 'üniversite diploması' anlamındadır; sıcaklık derecesi için ayrı kart var. Lisans 'bachelor's degree', yüksek lisans 'master's degree' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif finished university last year with a ______ in biology.",
+        "answer": "degree",
+        "distractors": [
+          "license",
+          "salary",
+          "diet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.major.n.1",
+      "lemma": "major",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "main subject, US",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmeɪdʒər/",
+        "uk": "/ˈmeɪdʒə/"
+      },
+      "def": {
+        "micro": "main subject at university",
+        "short": "the main subject that a student studies at college or university",
+        "long": "The main subject that a student studies at college or university. This word is mostly used in the US: 'What's your major?' means 'What are you studying?'"
+      },
+      "grammar": {
+        "pattern": "What's your major?"
+      },
+      "examples": [
+        {
+          "en": "My major is computer science.",
+          "tr": "Bölümüm bilgisayar bilimleri.",
+          "register": "neutral",
+          "focus": "major"
+        },
+        {
+          "en": "Lucas changed his major from math to music in his second year.",
+          "tr": "Lucas ikinci yılında bölümünü matematikten müziğe değiştirdi.",
+          "register": "neutral",
+          "focus": "major"
+        },
+        {
+          "en": "At the party, everyone asked Grace about her major and her plans.",
+          "tr": "Partide herkes Grace'e bölümünü ve planlarını sordu.",
+          "register": "neutral",
+          "focus": "major"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "What's your major?",
+        "change your major",
+        "choose a major"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'maior', meaning 'bigger'. Your major is the bigger, main part of your studies.",
+        "origin": "Latin",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bölüm",
+          "alt": [
+            "ana dal"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'bölüm' dendiği için 'department' demek akla gelir, ama 'department' okulun birimidir. Öğrencinin okuduğu alan için 'major' denir ya da 'What do you study?' diye sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Omar loves numbers, so he chose math as his ______ at college.",
+        "answer": "major",
+        "distractors": [
+          "teacher",
+          "uniform",
+          "classroom"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.college.n.1",
+      "lemma": "college",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "university, US",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːlɪdʒ/",
+        "uk": "/ˈkɒlɪdʒ/"
+      },
+      "def": {
+        "micro": "a school after high school",
+        "short": "in the US, a university or a school where you study after high school",
+        "long": "In the US, a university or a school where people study after high school. Americans often say 'go to college' for going to university."
+      },
+      "grammar": {
+        "pattern": "go to college / be in college"
+      },
+      "examples": [
+        {
+          "en": "Noah is in his second year of college.",
+          "tr": "Noah üniversitenin ikinci sınıfında.",
+          "register": "neutral",
+          "focus": "college"
+        },
+        {
+          "en": "Deniz wants to go to college in the US and study art.",
+          "tr": "Deniz ABD'de üniversiteye gidip sanat okumak istiyor.",
+          "register": "neutral",
+          "focus": "college"
+        },
+        {
+          "en": "Kerem met his best friend in college, and they still talk every week.",
+          "tr": "Kerem en yakın arkadaşıyla üniversitede tanıştı ve hâlâ her hafta konuşuyorlar.",
+          "register": "neutral",
+          "focus": "college"
+        }
+      ],
+      "synonyms": [
+        "university"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "go to college",
+        "in college",
+        "a college student",
+        "a college degree"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'collegium', a group of people who work together.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "üniversite",
+          "alt": [
+            "yüksekokul"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "kolej",
+            "tr_means": "özel, çoğu zaman İngilizce eğitim veren okul ya da lise",
+            "en_for_that": "private school"
+          },
+          "note": "Türkiye'deki 'kolej' genelde özel bir okul ya da lisedir; İngilizcede bu 'private school' olur. ABD'de 'college' üniversite demektir; İngiltere'de 16 yaşından sonra gidilen okul da olabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After high school, Diego went to ______ in Boston to study music.",
+        "answer": "college",
+        "distractors": [
+          "kindergarten",
+          "primary school",
+          "middle school"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scholarship.n.1",
+      "lemma": "scholarship",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money for studies",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskɑːlərʃɪp/",
+        "uk": "/ˈskɒləʃɪp/"
+      },
+      "def": {
+        "micro": "money given to good students",
+        "short": "money given to a good student to pay for school, which they do not pay back",
+        "long": "Money that a school, a company or a group gives to a student to pay for their studies. The student does not need to pay it back."
+      },
+      "grammar": {
+        "pattern": "get / win a scholarship (to study)"
+      },
+      "examples": [
+        {
+          "en": "Aylin won a scholarship to study in Canada.",
+          "tr": "Aylin Kanada'da okumak için burs kazandı.",
+          "register": "neutral",
+          "focus": "scholarship"
+        },
+        {
+          "en": "Without a scholarship, Mehmet could not pay for university.",
+          "tr": "Mehmet burs olmadan üniversitenin parasını ödeyemezdi.",
+          "register": "neutral",
+          "focus": "scholarship"
+        },
+        {
+          "en": "Sofia has good grades, so she is applying for three scholarships this year.",
+          "tr": "Sofia'nın notları iyi, bu yüzden bu yıl üç burs için başvuruyor.",
+          "register": "neutral",
+          "focus": "scholarships"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get a scholarship",
+        "win a scholarship",
+        "apply for a scholarship",
+        "a full scholarship"
+      ],
+      "word_family": [
+        {
+          "lemma": "scholar",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From 'scholar' (a student or learned person) + '-ship'. 'Scholar' goes back to Latin 'schola', school.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "burs",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Scholarship' genelde başarı için verilir. İhtiyaca göre verilen paraya daha çok 'grant' denir. Geri ödenen öğrenim kredisi ise 'student loan' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe's grades were so good that she got a ______ and paid nothing for college.",
+        "answer": "scholarship",
+        "distractors": [
+          "diploma",
+          "bill",
+          "receipt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.beginner.n.1",
+      "lemma": "beginner",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪˈɡɪnər/",
+        "uk": "/bɪˈɡɪnə/"
+      },
+      "def": {
+        "micro": "someone new to an activity",
+        "short": "a person who has just started to learn or do something",
+        "long": "A person who has just started to learn or do something, so they do not know much yet. Many courses are for beginners."
+      },
+      "grammar": {
+        "pattern": "a course / class for beginners"
+      },
+      "examples": [
+        {
+          "en": "This yoga class is for beginners.",
+          "tr": "Bu yoga dersi yeni başlayanlar için.",
+          "register": "neutral",
+          "focus": "beginners"
+        },
+        {
+          "en": "I'm a beginner, so please speak a little more slowly.",
+          "tr": "Ben yeni başlayan biriyim, lütfen biraz daha yavaş konuş.",
+          "register": "neutral",
+          "focus": "beginner"
+        },
+        {
+          "en": "Hakan is a complete beginner, but he practices the guitar every evening.",
+          "tr": "Hakan gitarda tamamen yeni başlayan biri ama her akşam pratik yapıyor.",
+          "register": "neutral",
+          "focus": "beginner"
+        }
+      ],
+      "synonyms": [
+        "novice"
+      ],
+      "antonyms": [
+        "expert"
+      ],
+      "collocations": [
+        "a complete beginner",
+        "a course for beginners",
+        "beginner level",
+        "an absolute beginner"
+      ],
+      "word_family": [
+        {
+          "lemma": "begin",
+          "pos": "v"
+        },
+        {
+          "lemma": "beginning",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yeni başlayan",
+          "alt": [
+            "acemi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfat gibi de kullanılır: 'beginner level' (başlangıç seviyesi).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Zeynep started tennis last week, so she is still a ______.",
+        "answer": "beginner",
+        "distractors": [
+          "champion",
+          "coach",
+          "referee"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.native_speaker.phr.1",
+      "lemma": "native speaker",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌneɪtɪv ˈspiːkər/",
+        "uk": "/ˌneɪtɪv ˈspiːkə/"
+      },
+      "def": {
+        "micro": "grew up using the language",
+        "short": "a person who learned a language as a child, as their first language",
+        "long": "A person who learned a language as a small child at home, as their first language. You say 'a native speaker of English'."
+      },
+      "grammar": {
+        "pattern": "a native speaker of (language)"
+      },
+      "examples": [
+        {
+          "en": "Our English teacher is a native speaker.",
+          "tr": "İngilizce öğretmenimizin ana dili İngilizce.",
+          "register": "neutral",
+          "focus": "native speaker"
+        },
+        {
+          "en": "Emma is a native speaker of English, and she helps me with my homework.",
+          "tr": "Emma'nın ana dili İngilizce ve ödevlerimde bana yardım ediyor.",
+          "register": "neutral",
+          "focus": "native speaker"
+        },
+        {
+          "en": "Practicing with native speakers online helps Sofia understand fast, everyday English.",
+          "tr": "Ana dili İngilizce olan kişilerle internette pratik yapmak, Sofia'nın hızlı ve günlük İngilizceyi anlamasına yardım ediyor.",
+          "register": "neutral",
+          "focus": "native speakers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a native speaker of English",
+        "a native English speaker",
+        "sound like a native speaker",
+        "talk to native speakers"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ana dili olarak konuşan kişi",
+          "alt": [
+            "ana dili İngilizce olan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede tek kelimelik karşılığı yok. Başka diller için de kullanılır: 'a native speaker of Spanish' (ana dili İspanyolca olan biri). Karşıtı 'non-native speaker' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali grew up in London, so he is a ______ of English.",
+        "answer": "native speaker",
+        "distractors": [
+          "foreign student",
+          "new learner",
+          "visiting tourist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

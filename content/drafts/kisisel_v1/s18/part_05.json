@@ -1,0 +1,528 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.pick_up.phv.3",
+      "lemma": "pick up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 3,
+      "sense_note": "learn naturally, not lift or collect",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pɪk ˈʌp/",
+        "uk": "/pɪk ˈʌp/"
+      },
+      "def": {
+        "micro": "learn without real classes",
+        "short": "learn a language or skill easily, without real lessons",
+        "long": "To learn a language or skill easily, just by hearing, watching or doing it, not by studying in a class. Typical uses: pick up a language, pick up a few words."
+      },
+      "grammar": {
+        "pattern": "pick up sth / pick sth up (pick it up)"
+      },
+      "examples": [
+        {
+          "en": "Berk picked up some Spanish on holiday.",
+          "tr": "Berk tatilde biraz İspanyolca kaptı.",
+          "register": "neutral",
+          "focus": "picked up"
+        },
+        {
+          "en": "I picked up a lot of English from TV series.",
+          "tr": "Dizilerden epey İngilizce kaptım.",
+          "register": "neutral",
+          "focus": "picked up"
+        },
+        {
+          "en": "Nil lived in London for a year and picked up the language from her neighbors.",
+          "tr": "Nil bir yıl Londra'da yaşadı ve dili komşularından öğrendi.",
+          "register": "neutral",
+          "focus": "picked up"
+        }
+      ],
+      "synonyms": [
+        "learn",
+        "acquire"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "pick up a language",
+        "pick up a few words",
+        "pick up a skill",
+        "pick up some Spanish"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(bir dili) kapmak",
+          "alt": [
+            "ders almadan öğrenmek",
+            "kulaktan öğrenmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kart 'pick up' fiilinin üçüncü anlamı: ders almadan, duyarak ya da yaşayarak öğrenmek. 'Yerden almak' ve 'birini arabayla almak' anlamları ayrı kartlarda.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I never took Italian lessons. I just ______ some words in Rome.",
+        "answer": "picked up",
+        "distractors": [
+          "gave up",
+          "handed in",
+          "turned down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.brush_up_on.phv.1",
+      "lemma": "brush up on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "practice something you half forgot",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/brʌʃ ˈʌp ɑːn/",
+        "uk": "/brʌʃ ˈʌp ɒn/"
+      },
+      "def": {
+        "micro": "refresh what you knew",
+        "short": "study or practice again something you learned before but partly forgot",
+        "long": "To study or practice again something you learned before but have partly forgotten, often before you need it. For example: brush up on your English before a trip."
+      },
+      "grammar": {
+        "pattern": "brush up on sth (brush up on my English)"
+      },
+      "examples": [
+        {
+          "en": "I need to brush up on my English before the trip.",
+          "tr": "Seyahatten önce İngilizcemi tazelemem gerekiyor.",
+          "register": "neutral",
+          "focus": "brush up on"
+        },
+        {
+          "en": "Ethan is brushing up on his French with a free app.",
+          "tr": "Ethan ücretsiz bir uygulamayla Fransızcasını tazeliyor.",
+          "register": "neutral",
+          "focus": "brushing up on"
+        },
+        {
+          "en": "Before the interview, Ana brushed up on the grammar she learned at school.",
+          "tr": "Ana mülakattan önce okulda öğrendiği dil bilgisinin üzerinden geçti.",
+          "register": "neutral",
+          "focus": "brushed up on"
+        }
+      ],
+      "synonyms": [
+        "refresh",
+        "review"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "brush up on your English",
+        "brush up on grammar",
+        "brush up on your skills"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tazelemek",
+          "alt": [
+            "üzerinden geçmek",
+            "bilgiyi tazelemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Daha önce bildiğin ama biraz unuttuğun şey için kullanılır; hiç bilmediğin bir şey için değil. İngiliz İngilizcesinde 'on' olmadan da duyulur: 'brush up my French'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I forgot a lot of my school German. Before my new job in Berlin, I must ______ my German.",
+        "answer": "brush up on",
+        "distractors": [
+          "run out of",
+          "look forward to",
+          "drop out of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_by.phv.1",
+      "lemma": "get by",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "manage with little",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈbaɪ/",
+        "uk": "/ɡɛt ˈbaɪ/"
+      },
+      "def": {
+        "micro": "manage with what you have",
+        "short": "manage with only a little knowledge, money or help",
+        "long": "To manage a situation with only a little knowledge, money or help. It is not perfect, but it is enough: I can get by in English."
+      },
+      "grammar": {
+        "pattern": "get by (in English / on little money)"
+      },
+      "examples": [
+        {
+          "en": "My English isn't perfect, but I can get by.",
+          "tr": "İngilizcem mükemmel değil ama idare edebiliyorum.",
+          "register": "neutral",
+          "focus": "get by"
+        },
+        {
+          "en": "Kaan knows only a few Italian words, but he gets by in Rome.",
+          "tr": "Kaan sadece birkaç İtalyanca kelime biliyor ama Roma'da idare ediyor.",
+          "register": "neutral",
+          "focus": "gets by"
+        },
+        {
+          "en": "With a translation app and some simple phrases, Chloe got by in Japan for two weeks.",
+          "tr": "Chloe bir çeviri uygulaması ve birkaç basit kalıpla Japonya'da iki hafta idare etti.",
+          "register": "neutral",
+          "focus": "got by"
+        }
+      ],
+      "synonyms": [
+        "manage",
+        "cope"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "get by in English",
+        "just about get by",
+        "get by on little money"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "idare etmek",
+          "alt": [
+            "işini görmek",
+            "geçinmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Para için de kullanılır: 'get by on 900 euros a month' (ayda 900 avroyla geçinmek). Dil için 'get by in English' kalıbı çok yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I only know a few words of Greek, but it's enough to ______ in shops.",
+        "answer": "get by",
+        "distractors": [
+          "stay up",
+          "break down",
+          "sleep in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fluent.adj.1",
+      "lemma": "fluent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "speaking a language easily",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfluːənt/",
+        "uk": "/ˈfluːənt/"
+      },
+      "def": {
+        "micro": "speaking easily and well",
+        "short": "able to speak a language easily and well, without stopping",
+        "long": "Able to speak or write a language easily and well, without stopping to think about every word. We say fluent in English or fluent English."
+      },
+      "grammar": {
+        "pattern": "be fluent in + language / fluent + language"
+      },
+      "examples": [
+        {
+          "en": "Nil is fluent in three languages.",
+          "tr": "Nil üç dili akıcı konuşuyor.",
+          "register": "neutral",
+          "focus": "fluent"
+        },
+        {
+          "en": "After a year in Canada, Berk's English became really fluent.",
+          "tr": "Kanada'da geçen bir yılın ardından Berk'in İngilizcesi gerçekten akıcı hâle geldi.",
+          "register": "neutral",
+          "focus": "fluent"
+        },
+        {
+          "en": "You don't need to be fluent to travel; a few simple sentences are enough.",
+          "tr": "Seyahat etmek için akıcı konuşman gerekmez; birkaç basit cümle yeter.",
+          "register": "neutral",
+          "focus": "fluent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fluent in English",
+        "fluent English",
+        "become fluent",
+        "a fluent speaker"
+      ],
+      "word_family": [
+        {
+          "lemma": "fluently",
+          "pos": "adv"
+        },
+        {
+          "lemma": "fluency",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'fluens', 'flowing', from 'fluere', 'to flow'. Fluent speech flows like water.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "akıcı",
+          "alt": [
+            "akıcı konuşan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiili nitelerken zarf biçimi 'fluently' kullanılır: 'She speaks English fluently.' Kişi için 'fluent in English' denir.",
+          "mistakes": [
+            {
+              "wrong": "I speak English fluent.",
+              "right": "I speak English fluently.",
+              "why": "Türkçede 'akıcı' hem sıfat hem zarf gibi kullanılır ('akıcı konuşmak'). İngilizcede fiili zarf niteler: 'fluently'. Ya da 'I'm fluent in English' diyebilirsin."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ana lived in Spain for five years, so she's ______ in Spanish.",
+        "answer": "fluent",
+        "distractors": [
+          "famous",
+          "lazy",
+          "confused"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.accent.n.1",
+      "lemma": "accent",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "way of saying words",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæksɛnt/",
+        "uk": "/ˈæksənt/"
+      },
+      "def": {
+        "micro": "way a person says words",
+        "short": "the way people from a place or country say words when they speak",
+        "long": "The way a person says words, which often shows the country or area they come from. Common phrases: a Turkish accent, a strong accent."
+      },
+      "grammar": {
+        "pattern": "a/an + adj + accent; speak with an accent"
+      },
+      "examples": [
+        {
+          "en": "Chloe has a lovely French accent.",
+          "tr": "Chloe'nin hoş bir Fransız aksanı var.",
+          "register": "neutral",
+          "focus": "accent"
+        },
+        {
+          "en": "Don't worry about your accent; people can understand you.",
+          "tr": "Aksanını dert etme; insanlar seni anlayabiliyor.",
+          "register": "neutral",
+          "focus": "accent"
+        },
+        {
+          "en": "Ethan speaks Turkish well, but he still has a strong American accent.",
+          "tr": "Ethan Türkçeyi iyi konuşuyor ama hâlâ belirgin bir Amerikan aksanı var.",
+          "register": "neutral",
+          "focus": "accent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a strong accent",
+        "a Turkish accent",
+        "a British accent",
+        "speak with an accent",
+        "lose your accent"
+      ],
+      "word_family": [
+        {
+          "lemma": "accented",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'accentus', from 'ad' (to) and 'cantus' (song); it first meant the rise and fall of the voice.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "aksan",
+          "alt": [
+            "şive"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Accent yalnızca sesle ilgilidir. Kelimeleri ve dil bilgisini de kapsayan bölgesel konuşma biçimine 'dialect' (lehçe, ağız) denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When Kaan speaks English, people hear his Turkish ______ right away.",
+        "answer": "accent",
+        "distractors": [
+          "spelling",
+          "handwriting",
+          "passport"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

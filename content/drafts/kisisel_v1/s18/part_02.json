@@ -1,0 +1,1037 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.do_well.phr.1",
+      "lemma": "do well",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "be successful, get good results",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/duː ˈwɛl/",
+        "uk": "/duː ˈwɛl/"
+      },
+      "def": {
+        "micro": "be successful",
+        "short": "get good results, for example in an exam or at school",
+        "long": "To get good results or be successful, for example in an exam, at school or at work. People say 'do well in an exam' or 'do well at school'."
+      },
+      "grammar": {
+        "pattern": "do well (in/on sth, at school)"
+      },
+      "examples": [
+        {
+          "en": "I hope you do well in your exam!",
+          "tr": "Umarım sınavında başarılı olursun!",
+          "register": "neutral",
+          "focus": "do well"
+        },
+        {
+          "en": "Elif did well on her math test this week.",
+          "tr": "Elif bu hafta matematik sınavında iyi bir sonuç aldı.",
+          "register": "neutral",
+          "focus": "did well"
+        },
+        {
+          "en": "Mehmet studied every evening, so he did well at school this year.",
+          "tr": "Mehmet her akşam ders çalıştı, bu yüzden bu yıl okulda başarılı oldu.",
+          "register": "neutral",
+          "focus": "did well"
+        }
+      ],
+      "synonyms": [
+        "succeed"
+      ],
+      "antonyms": [
+        "do badly"
+      ],
+      "collocations": [
+        "do well in an exam",
+        "do well at school",
+        "do well at work"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başarılı olmak",
+          "alt": [
+            "iyi sonuç almak",
+            "iyi geçmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Burada 'well' zarftır: 'She did well.' Kötü sonuç için 'do badly' denir. Sınav için 'in' ya da Amerikan İngilizcesinde 'on' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Leo studied hard, so he ______ in his final exams.",
+        "answer": "did well",
+        "distractors": [
+          "did badly",
+          "made well",
+          "got well"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.essay.n.1",
+      "lemma": "essay",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a piece of writing for school",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛseɪ/",
+        "uk": "/ˈɛseɪ/"
+      },
+      "def": {
+        "micro": "a short piece of writing",
+        "short": "a short piece of writing about one subject, often for school",
+        "long": "A short piece of writing about one subject, usually written by a student for a class. Teachers often ask students to write an essay of 300 words."
+      },
+      "grammar": {
+        "pattern": "write an essay (on/about sth)"
+      },
+      "examples": [
+        {
+          "en": "I have to write an essay for Monday.",
+          "tr": "Pazartesiye bir kompozisyon yazmam lazım.",
+          "register": "neutral",
+          "focus": "essay"
+        },
+        {
+          "en": "Ms. Patel asked us to write an essay about our hometown.",
+          "tr": "Patel Hanım bizden memleketimiz hakkında bir kompozisyon yazmamızı istedi.",
+          "register": "neutral",
+          "focus": "essay"
+        },
+        {
+          "en": "Sara's essay was only 200 words, but the teacher wanted at least 500.",
+          "tr": "Sara'nın kompozisyonu sadece 200 kelimeydi ama öğretmen en az 500 kelime istiyordu.",
+          "register": "neutral",
+          "focus": "essay"
+        }
+      ],
+      "synonyms": [
+        "composition",
+        "paper"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "write an essay",
+        "an essay on",
+        "a short essay",
+        "hand in an essay"
+      ],
+      "word_family": [
+        {
+          "lemma": "essayist",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'essai', meaning 'a try'. The French writer Montaigne used it in the 1500s as the name for his short writings.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kompozisyon",
+          "alt": [
+            "deneme",
+            "yazılı ödev"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Okulda yazılan kompozisyona İngilizcede genellikle 'essay' denir. Fiil olarak 'write' kullanılır: 'write an essay'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "For homework, write a 300-word ______ about your best friend.",
+        "answer": "essay",
+        "distractors": [
+          "timetable",
+          "dictionary",
+          "certificate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cheat.v.1",
+      "lemma": "cheat",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "copy answers in an exam",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃiːt/",
+        "uk": "/tʃiːt/"
+      },
+      "def": {
+        "micro": "copy answers in a test",
+        "short": "act in a dishonest way, for example by copying answers in an exam",
+        "long": "To do something dishonest to get a better result, for example looking at another student's answers in an exam. Students who cheat can get zero points."
+      },
+      "grammar": {
+        "pattern": "cheat (in/on an exam)"
+      },
+      "examples": [
+        {
+          "en": "Don't cheat in the exam.",
+          "tr": "Sınavda kopya çekme.",
+          "register": "neutral",
+          "focus": "cheat"
+        },
+        {
+          "en": "Daniel was caught cheating on his history test.",
+          "tr": "Daniel tarih sınavında kopya çekerken yakalandı.",
+          "register": "neutral",
+          "focus": "cheating"
+        },
+        {
+          "en": "The teacher took Cem's phone because she thought he was cheating.",
+          "tr": "Öğretmen, kopya çektiğini düşündüğü için Cem'in telefonunu aldı.",
+          "register": "neutral",
+          "focus": "cheating"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cheat in an exam",
+        "cheat on a test",
+        "get caught cheating",
+        "cheat at cards"
+      ],
+      "word_family": [
+        {
+          "lemma": "cheater",
+          "pos": "n"
+        },
+        {
+          "lemma": "cheating",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kopya çekmek",
+          "alt": [
+            "hile yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kartta 'cheat' sınavda kopya çekmek anlamında. Oyunda hile yapmak için de kullanılır: 'cheat at cards'. Dikkat: 'cheat on someone' ise sevgilisini aldatmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you ______ in the exam, you will get zero points.",
+        "answer": "cheat",
+        "distractors": [
+          "pass",
+          "succeed",
+          "try hard"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.catch_up_on.phv.1",
+      "lemma": "catch up on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "do work you missed earlier",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kætʃ ˈʌp ɑːn/",
+        "uk": "/kætʃ ˈʌp ɒn/"
+      },
+      "def": {
+        "micro": "do work you missed",
+        "short": "do work or get something that you did not have time for before",
+        "long": "To do work that you did not finish before, or to get something you missed, like sleep. Students often catch up on homework at the weekend."
+      },
+      "grammar": {
+        "pattern": "catch up on sth"
+      },
+      "examples": [
+        {
+          "en": "I need to catch up on my homework this weekend.",
+          "tr": "Bu hafta sonu biriken ödevlerimi yetiştirmem lazım.",
+          "register": "neutral",
+          "focus": "catch up on"
+        },
+        {
+          "en": "Mia was sick last week, so she is catching up on her lessons.",
+          "tr": "Mia geçen hafta hastaydı, bu yüzden kaçırdığı dersleri telafi ediyor.",
+          "register": "neutral",
+          "focus": "catching up on"
+        },
+        {
+          "en": "After the exams, Zeynep slept for twelve hours to catch up on sleep.",
+          "tr": "Sınavlardan sonra Zeynep uykusunu telafi etmek için on iki saat uyudu.",
+          "register": "neutral",
+          "focus": "catch up on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "catch up on homework",
+        "catch up on sleep",
+        "catch up on work",
+        "catch up on the news"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eksiğini kapatmak",
+          "alt": [
+            "yetiştirmek",
+            "telafi etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Dikkat: 'catch up' tek başına çoğunlukla birine yetişmek ya da bir arkadaşla buluşup sohbet etmek anlamında kullanılır. Kaçırdığın bir işi bitirmek için 'catch up on' + iş denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I missed three classes, so I have to ______ my reading this week.",
+        "answer": "catch up on",
+        "distractors": [
+          "look up to",
+          "put up with",
+          "come up with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fall_behind.phv.1",
+      "lemma": "fall behind",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "progress more slowly than others",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɔːl bɪˈhaɪnd/",
+        "uk": "/fɔːl bɪˈhaɪnd/"
+      },
+      "def": {
+        "micro": "be slower than others",
+        "short": "not do as much work as you should, or move slower than others",
+        "long": "To do less work than you should, or to make slower progress than other people, for example in a class. If you miss many lessons, you can fall behind."
+      },
+      "grammar": {
+        "pattern": "fall behind (in/with sth)"
+      },
+      "examples": [
+        {
+          "en": "Don't miss class, or you will fall behind.",
+          "tr": "Dersi kaçırma, yoksa geride kalırsın.",
+          "register": "neutral",
+          "focus": "fall behind"
+        },
+        {
+          "en": "Cem fell behind in math after he changed schools.",
+          "tr": "Cem okul değiştirdikten sonra matematikte geride kaldı.",
+          "register": "neutral",
+          "focus": "fell behind"
+        },
+        {
+          "en": "Ayşe worked too many hours at the café and fell behind in her studies.",
+          "tr": "Ayşe kafede çok fazla saat çalıştı ve derslerinde geride kaldı.",
+          "register": "neutral",
+          "focus": "fell behind"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "keep up"
+      ],
+      "collocations": [
+        "fall behind in class",
+        "fall behind with work",
+        "fall behind schedule"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geride kalmak",
+          "alt": [
+            "geri kalmak",
+            "yetişememek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Fall' gibi çekimlenir: fell behind, fallen behind. Geride kaldıktan sonra aradaki farkı kapatmak için 'catch up' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali was ill for three weeks, so he ______ in math.",
+        "answer": "fell behind",
+        "distractors": [
+          "slept in",
+          "dressed up",
+          "checked in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.keep_up_with.phv.1",
+      "lemma": "keep up with",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "go as fast as others",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kiːp ˈʌp wɪð/",
+        "uk": "/kiːp ˈʌp wɪð/"
+      },
+      "def": {
+        "micro": "go as fast as others",
+        "short": "move, learn or work at the same speed as other people",
+        "long": "To go, learn or work as fast as other people so that you are not left behind. In class, it means you understand the lessons even when the teacher goes fast."
+      },
+      "grammar": {
+        "pattern": "keep up with sb/sth"
+      },
+      "examples": [
+        {
+          "en": "I can't keep up with this class.",
+          "tr": "Bu dersin hızına yetişemiyorum.",
+          "register": "neutral",
+          "focus": "keep up with"
+        },
+        {
+          "en": "Daniel reads a lot to keep up with the other students.",
+          "tr": "Daniel diğer öğrencilerden geri kalmamak için çok okuyor.",
+          "register": "neutral",
+          "focus": "keep up with"
+        },
+        {
+          "en": "Ms. Patel speaks so fast that Mia can't keep up with her.",
+          "tr": "Patel Hanım o kadar hızlı konuşuyor ki Mia ona yetişemiyor.",
+          "register": "neutral",
+          "focus": "keep up with"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "fall behind"
+      ],
+      "collocations": [
+        "keep up with the class",
+        "keep up with the news",
+        "can't keep up with"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yetişmek",
+          "alt": [
+            "ayak uydurmak",
+            "geri kalmamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yetişememek için 'can't keep up with' çok kullanılır. Haberleri ya da modayı takip etmek için de denir: 'keep up with the news'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Walk slower, please! I can't ______ you.",
+        "answer": "keep up with",
+        "distractors": [
+          "look after",
+          "get over",
+          "stand up for"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_into.phv.1",
+      "lemma": "get into",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "be accepted by a school",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡɛt ɪntu/",
+        "uk": "/ˈɡɛt ɪntə/"
+      },
+      "def": {
+        "micro": "be accepted by a school",
+        "short": "be accepted as a student at a school or university",
+        "long": "To be accepted as a student at a school, college or university after you apply or pass an exam. People often say 'get into university' or 'get into a good school'."
+      },
+      "grammar": {
+        "pattern": "get into a school/university"
+      },
+      "examples": [
+        {
+          "en": "Elif got into a good university!",
+          "tr": "Elif iyi bir üniversiteyi kazandı!",
+          "register": "neutral",
+          "focus": "got into"
+        },
+        {
+          "en": "Burak studied for two years to get into medical school.",
+          "tr": "Burak tıp fakültesini kazanmak için iki yıl çalıştı.",
+          "register": "neutral",
+          "focus": "get into"
+        },
+        {
+          "en": "If I don't get into this college, I'll try again next year.",
+          "tr": "Bu okulu kazanamazsam seneye tekrar deneyeceğim.",
+          "register": "neutral",
+          "focus": "get into"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get into university",
+        "get into college",
+        "get into a good school"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "okulu kazanmak",
+          "alt": [
+            "kabul edilmek",
+            "okula girmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kartta 'get into' okula kabul edilmek anlamında. Daha resmî bir karşılığı 'be accepted' kalıbıdır.",
+          "mistakes": [
+            {
+              "wrong": "I won the university last year.",
+              "right": "I got into university last year.",
+              "why": "Türkçede 'üniversiteyi kazanmak' denir ama İngilizcede 'win' yarışma, maç ya da ödül için kullanılır. Okula kabul edilmek 'get into' ile anlatılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Great news! My brother ______ Ankara University. He starts in September.",
+        "answer": "got into",
+        "distractors": [
+          "ran into",
+          "turned into",
+          "handed in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.drop_out.phv.1",
+      "lemma": "drop out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "leave school before finishing",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/drɑːp ˈaʊt/",
+        "uk": "/drɒp ˈaʊt/"
+      },
+      "def": {
+        "micro": "quit school before the end",
+        "short": "leave a school, university or course before you finish it",
+        "long": "To leave a school, university or course before it ends, without finishing it. The pattern is 'drop out of school'. A person who does this is a 'dropout'."
+      },
+      "grammar": {
+        "pattern": "drop out (of sth)"
+      },
+      "examples": [
+        {
+          "en": "Cem dropped out of college after one year.",
+          "tr": "Cem bir yıl sonra üniversiteyi bıraktı.",
+          "register": "neutral",
+          "focus": "dropped out"
+        },
+        {
+          "en": "Many students drop out because they need to work.",
+          "tr": "Birçok öğrenci çalışmak zorunda olduğu için okulu bırakıyor.",
+          "register": "neutral",
+          "focus": "drop out"
+        },
+        {
+          "en": "Mehmet dropped out of his guitar course because he had no free time.",
+          "tr": "Mehmet boş vakti olmadığı için gitar kursunu bıraktı.",
+          "register": "neutral",
+          "focus": "dropped out"
+        }
+      ],
+      "synonyms": [
+        "quit"
+      ],
+      "antonyms": [
+        "graduate"
+      ],
+      "collocations": [
+        "drop out of school",
+        "drop out of college",
+        "drop out of a course"
+      ],
+      "word_family": [
+        {
+          "lemma": "dropout",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "okulu bırakmak",
+          "alt": [
+            "okuldan ayrılmak",
+            "yarıda bırakmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Neyi bıraktığınızı söylemek için 'of' gerekir: 'drop out of school'. Okulu bitirmeden bırakan kişiye 'dropout' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He didn't like the course, so he ______ after two months.",
+        "answer": "dropped out",
+        "distractors": [
+          "signed up",
+          "showed up",
+          "moved in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.memorize.v.1",
+      "lemma": "memorize",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "learn by heart",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛməraɪz/",
+        "uk": "/ˈmɛməraɪz/"
+      },
+      "def": {
+        "micro": "learn by heart",
+        "short": "learn something so well that you can say it without reading it",
+        "long": "To learn words, numbers or a text so well that you can remember them exactly. The British spelling is 'memorise'."
+      },
+      "grammar": {
+        "pattern": "memorize sth"
+      },
+      "examples": [
+        {
+          "en": "I memorized twenty new words today.",
+          "tr": "Bugün yirmi yeni kelime ezberledim.",
+          "register": "neutral",
+          "focus": "memorized"
+        },
+        {
+          "en": "Mia memorizes the dates the night before every history exam.",
+          "tr": "Mia her tarih sınavından önceki gece tarihleri ezberler.",
+          "register": "neutral",
+          "focus": "memorizes"
+        },
+        {
+          "en": "Don't just memorize the rules; try to use them when you speak.",
+          "tr": "Kuralları sadece ezberleme; konuşurken kullanmaya çalış.",
+          "register": "neutral",
+          "focus": "memorize"
+        }
+      ],
+      "synonyms": [
+        "learn by heart"
+      ],
+      "antonyms": [
+        "forget"
+      ],
+      "collocations": [
+        "memorize words",
+        "memorize a poem",
+        "memorize the rules"
+      ],
+      "word_family": [
+        {
+          "lemma": "memory",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ezberlemek",
+          "alt": [
+            "ezbere öğrenmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiliz yazımı 'memorise' olur. Aynı anlamda 'learn by heart' da çok yaygındır: 'learn a poem by heart'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Actors have to ______ all their lines before the show.",
+        "answer": "memorize",
+        "distractors": [
+          "forget",
+          "skip",
+          "delete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.concentrate.v.1",
+      "lemma": "concentrate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give all your attention",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnsəntreɪt/",
+        "uk": "/ˈkɒnsəntreɪt/"
+      },
+      "def": {
+        "micro": "give all your attention",
+        "short": "think carefully about one thing and nothing else",
+        "long": "To give all your attention to one thing and not think about other things. We usually say 'concentrate on' something: 'concentrate on your work'."
+      },
+      "grammar": {
+        "pattern": "concentrate (on sth)"
+      },
+      "examples": [
+        {
+          "en": "I can't concentrate with this noise.",
+          "tr": "Bu gürültüde konsantre olamıyorum.",
+          "register": "neutral",
+          "focus": "concentrate"
+        },
+        {
+          "en": "Burak turns off his phone so he can concentrate on his homework.",
+          "tr": "Burak ödevine konsantre olabilmek için telefonunu kapatıyor.",
+          "register": "neutral",
+          "focus": "concentrate"
+        },
+        {
+          "en": "Sara finds it hard to concentrate in the afternoon after a big lunch.",
+          "tr": "Sara öğleden sonra, ağır bir öğle yemeğinin ardından konsantre olmakta zorlanıyor.",
+          "register": "neutral",
+          "focus": "concentrate"
+        }
+      ],
+      "synonyms": [
+        "focus"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "concentrate on",
+        "concentrate hard",
+        "can't concentrate",
+        "concentrate on your studies"
+      ],
+      "word_family": [
+        {
+          "lemma": "concentration",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "konsantre olmak",
+          "alt": [
+            "dikkatini toplamak",
+            "odaklanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Neye konsantre olduğunuzu söylerken 'on' kullanılır: 'concentrate on your work'. Aynı anlamda 'focus on' kalıbı da çok kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I can't concentrate to my lessons.",
+              "right": "I can't concentrate on my lessons.",
+              "why": "Türkçede 'derslerime konsantre olmak' denir; '-e' eki yüzünden 'to' kullanılır. İngilizcede bu fiil 'on' ile kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please be quiet. I'm trying to ______ on my exam.",
+        "answer": "concentrate",
+        "distractors": [
+          "rely",
+          "insist",
+          "spend"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

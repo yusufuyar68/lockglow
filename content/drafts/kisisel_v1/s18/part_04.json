@@ -1,0 +1,1080 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.habit.n.1",
+      "lemma": "habit",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhæbɪt/",
+        "uk": "/ˈhæbɪt/"
+      },
+      "def": {
+        "micro": "something you do very often",
+        "short": "something you do often and regularly, sometimes without thinking about it",
+        "long": "Something you do often and regularly, sometimes without thinking about it. A habit can be good, like reading every day, or bad, like going to bed very late."
+      },
+      "grammar": {
+        "pattern": "a good / bad habit; have a habit of + -ing"
+      },
+      "examples": [
+        {
+          "en": "Reading in English every night is a good habit.",
+          "tr": "Her gece İngilizce okumak iyi bir alışkanlıktır.",
+          "register": "neutral",
+          "focus": "habit"
+        },
+        {
+          "en": "Emre has a habit of learning five new words every morning.",
+          "tr": "Emre'nin her sabah beş yeni kelime öğrenme alışkanlığı var.",
+          "register": "neutral",
+          "focus": "habit"
+        },
+        {
+          "en": "Merve wants to change her study habits and stop studying late at night.",
+          "tr": "Merve çalışma alışkanlıklarını değiştirmek ve gece geç saatlerde ders çalışmayı bırakmak istiyor.",
+          "register": "neutral",
+          "focus": "habits"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a good habit",
+        "a bad habit",
+        "study habits",
+        "break a habit",
+        "get into the habit"
+      ],
+      "word_family": [
+        {
+          "lemma": "habitual",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'habitus', meaning a person's condition or way of being. It comes from the verb 'habere', to have.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "alışkanlık",
+          "alt": [
+            "âdet"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir şeyi alışkanlık hâline getirmek için 'get into the habit of + -ing', bir alışkanlığı bırakmak için 'break a habit' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Biting your nails is a bad ______, so try to stop doing it.",
+        "answer": "habit",
+        "distractors": [
+          "subject",
+          "lesson",
+          "exam"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.step_by_step.phr.1",
+      "lemma": "step by step",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌstɛp baɪ ˈstɛp/",
+        "uk": "/ˌstɛp baɪ ˈstɛp/"
+      },
+      "def": {
+        "micro": "slowly, one part at a time",
+        "short": "doing one small part, then the next one, in the right order",
+        "long": "Slowly and in order, doing one small part and then the next one. Before a noun it has hyphens: a step-by-step guide."
+      },
+      "grammar": {
+        "pattern": "do sth step by step; a step-by-step guide"
+      },
+      "examples": [
+        {
+          "en": "Learn English step by step, and don't hurry.",
+          "tr": "İngilizceyi adım adım öğren, acele etme.",
+          "register": "neutral",
+          "focus": "step by step"
+        },
+        {
+          "en": "This app teaches grammar step by step, from easy to hard.",
+          "tr": "Bu uygulama dil bilgisini kolaydan zora adım adım öğretiyor.",
+          "register": "neutral",
+          "focus": "step by step"
+        },
+        {
+          "en": "Jack explained the homework to me step by step, so I finally understood it.",
+          "tr": "Jack ödevi bana adım adım anlattı, sonunda anladım.",
+          "register": "neutral",
+          "focus": "step by step"
+        }
+      ],
+      "synonyms": [
+        "gradually",
+        "little by little"
+      ],
+      "antonyms": [
+        "all at once"
+      ],
+      "collocations": [
+        "learn step by step",
+        "explain step by step",
+        "a step-by-step guide"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "adım adım",
+          "alt": [
+            "yavaş yavaş",
+            "aşama aşama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir isimden önce tireyle yazılır: 'a step-by-step guide' (adım adım anlatan bir rehber).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "idioms_expressions"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't try to learn it all in one day; take it ______.",
+        "answer": "step by step",
+        "distractors": [
+          "all at once",
+          "in a hurry",
+          "by heart"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_progress.phr.1",
+      "lemma": "make progress",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈprɑːɡrɛs/",
+        "uk": "/meɪk ˈprəʊɡrɛs/"
+      },
+      "def": {
+        "micro": "get better at something",
+        "short": "get better at something or move closer to a goal",
+        "long": "To get better at something or move closer to a goal. People often say 'make good progress' or 'make a lot of progress'."
+      },
+      "grammar": {
+        "pattern": "make (good / a lot of) progress with / in sth"
+      },
+      "examples": [
+        {
+          "en": "Hana is making good progress with her English.",
+          "tr": "Hana İngilizcesinde iyi ilerleme kaydediyor.",
+          "register": "neutral",
+          "focus": "making good progress"
+        },
+        {
+          "en": "I study a little every day, and I can see that I'm making progress.",
+          "tr": "Her gün biraz çalışıyorum ve ilerlediğimi görebiliyorum.",
+          "register": "neutral",
+          "focus": "making progress"
+        },
+        {
+          "en": "Oğuz didn't make much progress last month because he stopped using the app.",
+          "tr": "Oğuz geçen ay pek ilerleme kaydetmedi, çünkü uygulamayı kullanmayı bıraktı.",
+          "register": "neutral",
+          "focus": "make much progress"
+        }
+      ],
+      "synonyms": [
+        "improve",
+        "get better"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "make good progress",
+        "make a lot of progress",
+        "make slow progress",
+        "make progress with"
+      ],
+      "word_family": [
+        {
+          "lemma": "progress",
+          "pos": "n"
+        },
+        {
+          "lemma": "progress",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilerleme kaydetmek",
+          "alt": [
+            "ilerlemek",
+            "gelişmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'progress' sayılamaz: 'a progress' ya da 'progresses' denmez. Önüne 'good, great, a lot of, much' gelir.",
+          "mistakes": [
+            {
+              "wrong": "I made a big progress in English this year.",
+              "right": "I made a lot of progress in English this year.",
+              "why": "Türkçede 'büyük bir ilerleme' denir, bu yüzden 'a' eklenir. İngilizcede 'progress' sayılamaz; 'a lot of' ya da 'great progress' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My speaking is still slow, but I'm ______ progress every week.",
+        "answer": "making",
+        "distractors": [
+          "having",
+          "getting",
+          "giving"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_the_hang_of.idm.1",
+      "lemma": "get the hang of",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ðə ˈhæŋ əv/",
+        "uk": "/ɡɛt ðə ˈhæŋ əv/"
+      },
+      "def": {
+        "micro": "learn how to do something",
+        "short": "slowly learn how to do something well after some practice",
+        "long": "To slowly learn how to do something well after some practice. It is informal, and people often say 'get the hang of it'."
+      },
+      "grammar": {
+        "pattern": "get the hang of sth / it"
+      },
+      "examples": [
+        {
+          "en": "Chess is hard, but I'm slowly getting the hang of it.",
+          "tr": "Satranç zor ama yavaş yavaş mantığını kapıyorum.",
+          "register": "informal",
+          "focus": "getting the hang of"
+        },
+        {
+          "en": "After a week, Sofia got the hang of the new language app.",
+          "tr": "Bir hafta sonra Sofia yeni dil uygulamasının mantığını kaptı.",
+          "register": "informal",
+          "focus": "got the hang of"
+        },
+        {
+          "en": "Writing essays in English is hard at first, but you'll get the hang of it with practice.",
+          "tr": "İngilizce kompozisyon yazmak başta zor ama pratik yaptıkça işi kaparsın.",
+          "register": "informal",
+          "focus": "get the hang of"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get the hang of it",
+        "getting the hang of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "işi kapmak",
+          "alt": [
+            "alışmak",
+            "püf noktasını çözmek",
+            "eli alışmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "En çok 'it' ile kullanılır. 'I'm getting the hang of it' yavaş yavaş alıştığını, işi kapmaya başladığını söyler.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "idioms_expressions"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new keyboard was strange at first, but now I've got the ______ of it.",
+        "answer": "hang",
+        "distractors": [
+          "hand",
+          "head",
+          "half"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.knowledge.n.1",
+      "lemma": "knowledge",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnɑːlɪdʒ/",
+        "uk": "/ˈnɒlɪdʒ/"
+      },
+      "def": {
+        "micro": "what you know and understand",
+        "short": "all the facts, ideas and skills that you have learned about something",
+        "long": "All the facts, ideas and skills that you have learned about something. It is uncountable, so people say 'a lot of knowledge', not 'knowledges'."
+      },
+      "grammar": {
+        "pattern": "knowledge of / about sth"
+      },
+      "examples": [
+        {
+          "en": "Leyla's knowledge of English is very good.",
+          "tr": "Leyla'nın İngilizce bilgisi çok iyi.",
+          "register": "neutral",
+          "focus": "knowledge"
+        },
+        {
+          "en": "You can test your knowledge with a short quiz after each lesson.",
+          "tr": "Her dersten sonra kısa bir testle bilgini sınayabilirsin.",
+          "register": "neutral",
+          "focus": "knowledge"
+        },
+        {
+          "en": "Max uses his knowledge of German to guess the meaning of some English words.",
+          "tr": "Max, bazı İngilizce kelimelerin anlamını tahmin etmek için Almanca bilgisini kullanıyor.",
+          "register": "neutral",
+          "focus": "knowledge"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "ignorance"
+      ],
+      "collocations": [
+        "knowledge of",
+        "general knowledge",
+        "test your knowledge",
+        "share knowledge"
+      ],
+      "word_family": [
+        {
+          "lemma": "know",
+          "pos": "v"
+        },
+        {
+          "lemma": "knowledgeable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Middle English 'knowleche', made from the verb 'know' (Old English 'cnāwan'). Where the second part comes from is not fully clear.",
+        "origin": "Old English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bilgi",
+          "alt": [
+            "birikim"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz: 'knowledges' denmez. 'information' dışarıdan aldığın bilgi (haber, adres), 'knowledge' öğrenip kafanda biriktirdiğin bilgidir.",
+          "mistakes": [
+            {
+              "wrong": "I want to improve my knowledges.",
+              "right": "I want to improve my knowledge.",
+              "why": "Türkçede 'bilgiler' diye çoğul yapılabilir. İngilizcede 'knowledge' sayılamaz, -s almaz; tıpkı 'information' gibi."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Deniz's ______ of history is amazing; she can answer any question about it.",
+        "answer": "knowledge",
+        "distractors": [
+          "luck",
+          "advice",
+          "homework"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vocabulary.n.1",
+      "lemma": "vocabulary",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/voʊˈkæbjəlɛri/",
+        "uk": "/vəˈkæbjələri/"
+      },
+      "def": {
+        "micro": "all the words you know",
+        "short": "all the words that a person knows or uses in a language",
+        "long": "All the words that a person knows or uses in a language. It can also mean the words you study in a lesson."
+      },
+      "grammar": {
+        "pattern": "build / improve your vocabulary"
+      },
+      "examples": [
+        {
+          "en": "Watching series in English improves your vocabulary.",
+          "tr": "İngilizce dizi izlemek kelime bilgini geliştirir.",
+          "register": "neutral",
+          "focus": "vocabulary"
+        },
+        {
+          "en": "Emre writes new vocabulary in a small notebook every day.",
+          "tr": "Emre yeni kelimeleri her gün küçük bir deftere yazıyor.",
+          "register": "neutral",
+          "focus": "vocabulary"
+        },
+        {
+          "en": "Merve's vocabulary is large, but she still finds speaking hard.",
+          "tr": "Merve'nin kelime dağarcığı geniş ama konuşmayı hâlâ zor buluyor.",
+          "register": "neutral",
+          "focus": "vocabulary"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "build your vocabulary",
+        "improve your vocabulary",
+        "a wide vocabulary",
+        "new vocabulary"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'vocabulum', a word or name. It is related to 'vocare', to call.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kelime bilgisi",
+          "alt": [
+            "kelime dağarcığı",
+            "sözcük dağarcığı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tek bir kelime için 'vocabulary' denmez, 'word' denir. 'vocabulary' bildiğin kelimelerin tümüdür ve genelde -s almaz.",
+          "mistakes": [
+            {
+              "wrong": "I learned 20 new vocabularies today.",
+              "right": "I learned 20 new words today.",
+              "why": "Öğrenciler 'vocabulary' kelimesini 'kelime' sanıp 'kelimeler' gibi çoğul yapar. Oysa 'vocabulary' bildiğin kelimelerin tamamıdır; tek tek sayarken 'words' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kerem knows about 2,000 English words, so his ______ is quite large.",
+        "answer": "vocabulary",
+        "distractors": [
+          "accent",
+          "grammar",
+          "spelling"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.translate.v.1",
+      "lemma": "translate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trænsˈleɪt/",
+        "uk": "/trænzˈleɪt/"
+      },
+      "def": {
+        "micro": "put into another language",
+        "short": "change spoken or written words from one language into another",
+        "long": "To change spoken or written words from one language into another. People say 'translate from English into Turkish'."
+      },
+      "grammar": {
+        "pattern": "translate sth (from X) into Y"
+      },
+      "examples": [
+        {
+          "en": "Can you translate this sentence into Turkish?",
+          "tr": "Bu cümleyi Türkçeye çevirebilir misin?",
+          "register": "neutral",
+          "focus": "translate"
+        },
+        {
+          "en": "Try not to translate every word in your head when you speak.",
+          "tr": "Konuşurken her kelimeyi kafanda çevirmemeye çalış.",
+          "register": "neutral",
+          "focus": "translate"
+        },
+        {
+          "en": "Jack used an app to translate the menu into English.",
+          "tr": "Jack menüyü İngilizceye çevirmek için bir uygulama kullandı.",
+          "register": "neutral",
+          "focus": "translate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "translate into",
+        "translate from",
+        "translate a text",
+        "translate a word"
+      ],
+      "word_family": [
+        {
+          "lemma": "translation",
+          "pos": "n"
+        },
+        {
+          "lemma": "translator",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'translatus', meaning carried across. Translating carries words from one language to another.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "çevirmek",
+          "alt": [
+            "tercüme etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde 'into' ile kullanılır: translate into Turkish (Türkçeye çevirmek). 'translate to' da doğrudur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This song is in Spanish. Can you ______ the words into English?",
+        "answer": "translate",
+        "distractors": [
+          "explain",
+          "spell",
+          "repeat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.how_do_you_say.phr.1",
+      "lemma": "how do you say",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌhaʊ duː juː ˈseɪ/",
+        "uk": "/ˌhaʊ duː juː ˈseɪ/"
+      },
+      "def": {
+        "micro": "ask for a word in a language",
+        "short": "used to ask for the right word or phrase in another language",
+        "long": "Used to ask someone for the right word or phrase in another language. It usually comes with 'in English', 'in Turkish' and so on."
+      },
+      "grammar": {
+        "pattern": "How do you say X in English?"
+      },
+      "examples": [
+        {
+          "en": "How do you say “masa” in English?",
+          "tr": "İngilizcede “masa” nasıl denir?",
+          "register": "neutral",
+          "focus": "How do you say"
+        },
+        {
+          "en": "Hana, how do you say “thank you” in Japanese?",
+          "tr": "Hana, Japoncada “teşekkür ederim” nasıl denir?",
+          "register": "neutral",
+          "focus": "how do you say"
+        },
+        {
+          "en": "When I don't know a word, I ask my teacher, “How do you say this in English?”",
+          "tr": "Bir kelimeyi bilmediğimde öğretmenime “Bu İngilizcede nasıl denir?” diye soruyorum.",
+          "register": "neutral",
+          "focus": "How do you say"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "how do you say it",
+        "how do you say this"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "… nasıl denir?",
+          "alt": [
+            "nasıl söylenir?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir şeyin adını sormanın öbür yolu: 'What is it called in English?' ya da 'What's the English word for…?'",
+          "mistakes": [
+            {
+              "wrong": "How is it called in English?",
+              "right": "What is it called in English?",
+              "why": "Türkçedeki 'nasıl denir' kalıbı 'how' ile çevriliyor. İngilizcede bir şeyin adını sorarken 'what' kullanılır: What is it called?"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "idioms_expressions"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I asked the waiter, “______ ‘water’ in Italian?”",
+        "answer": "How do you say",
+        "distractors": [
+          "How do you call",
+          "How do you tell",
+          "What does it say"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.be_good_at.phr.1",
+      "lemma": "be good at",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bi ˈɡʊd æt/",
+        "uk": "/bi ˈɡʊd æt/"
+      },
+      "def": {
+        "micro": "able to do something well",
+        "short": "able to do something well, often because of skill or practice",
+        "long": "Able to do something well, often because of skill or practice. After 'at' you use a noun or an -ing verb: good at math, good at speaking."
+      },
+      "grammar": {
+        "pattern": "be good at + noun / -ing"
+      },
+      "examples": [
+        {
+          "en": "Leyla is good at languages.",
+          "tr": "Leyla dillerde iyidir.",
+          "register": "neutral",
+          "focus": "good at"
+        },
+        {
+          "en": "Oğuz isn't very good at grammar, but he speaks well.",
+          "tr": "Oğuz dil bilgisinde pek iyi değil ama iyi konuşuyor.",
+          "register": "neutral",
+          "focus": "good at"
+        },
+        {
+          "en": "If you want to be good at English, practice a little every day.",
+          "tr": "İngilizcede iyi olmak istiyorsan her gün biraz pratik yap.",
+          "register": "neutral",
+          "focus": "be good at"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "be bad at"
+      ],
+      "collocations": [
+        "good at languages",
+        "good at math",
+        "really good at"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir şeyde iyi olmak",
+          "alt": [
+            "bir şeyi iyi yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir beceriden söz ederken 'at' kullanılır: good at English, good at football. Fiil gelirse -ing alır: good at cooking.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Selin is very ______ math; she always gets the top grade.",
+        "answer": "good at",
+        "distractors": [
+          "bad at",
+          "good for",
+          "good to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.confusing.adj.1",
+      "lemma": "confusing",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈfjuːzɪŋ/",
+        "uk": "/kənˈfjuːzɪŋ/"
+      },
+      "def": {
+        "micro": "hard to understand",
+        "short": "not clear, so it is hard to understand",
+        "long": "Not clear, so it is hard to understand and you do not know what to think or do. It usually describes a thing or a situation, not how a person feels."
+      },
+      "grammar": {
+        "pattern": "it is confusing; sth is confusing for sb"
+      },
+      "examples": [
+        {
+          "en": "English spelling is really confusing.",
+          "tr": "İngilizce yazım gerçekten kafa karıştırıcı.",
+          "register": "neutral",
+          "focus": "confusing"
+        },
+        {
+          "en": "The rules for “a” and “the” are confusing for Tim.",
+          "tr": "“a” ve “the” kuralları Tim'in kafasını karıştırıyor.",
+          "register": "neutral",
+          "focus": "confusing"
+        },
+        {
+          "en": "Sofia finds some English words confusing because one word can have many meanings.",
+          "tr": "Sofia bazı İngilizce kelimeleri kafa karıştırıcı buluyor, çünkü bir kelimenin birçok anlamı olabiliyor.",
+          "register": "neutral",
+          "focus": "confusing"
+        }
+      ],
+      "synonyms": [
+        "unclear"
+      ],
+      "antonyms": [
+        "clear"
+      ],
+      "collocations": [
+        "a bit confusing",
+        "really confusing",
+        "confusing for"
+      ],
+      "word_family": [
+        {
+          "lemma": "confuse",
+          "pos": "v"
+        },
+        {
+          "lemma": "confused",
+          "pos": "adj"
+        },
+        {
+          "lemma": "confusion",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kafa karıştırıcı",
+          "alt": [
+            "karışık",
+            "anlaşılmaz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "-ing/-ed farkı: 'confusing' kafa karıştıran şeydir, 'confused' kafası karışan kişidir. The lesson is confusing, so I'm confused.",
+          "mistakes": [
+            {
+              "wrong": "Sorry, I'm confusing. Can you say it again?",
+              "right": "Sorry, I'm confused. Can you say it again?",
+              "why": "Türkçede 'karışık' hem kafa karıştıran şey hem kişi için kullanılır ('kafam karışık'). İngilizcede kişinin hissi -ed ile anlatılır: 'I'm confused'. 'I'm confusing' 'kafa karıştıran biriyim' demek."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:confused"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When two words sound the same but mean different things, it is ______ for learners.",
+        "answer": "confusing",
+        "distractors": [
+          "confused",
+          "careful",
+          "polite"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
