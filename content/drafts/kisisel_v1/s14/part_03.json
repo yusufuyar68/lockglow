@@ -1,0 +1,1056 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.shelf.n.1",
+      "lemma": "shelf",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "flat board for putting things on",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃɛlf/",
+        "uk": "/ʃɛlf/"
+      },
+      "def": {
+        "micro": "a flat board on a wall",
+        "short": "a long flat board on a wall or in a cupboard where you put things",
+        "long": "A long, flat piece of wood, metal or glass on a wall or inside a cupboard. You put books, plates or other things on it. The plural is 'shelves'."
+      },
+      "grammar": {
+        "pattern": "on the shelf / plural: shelves"
+      },
+      "examples": [
+        {
+          "en": "The jam is on the top shelf.",
+          "tr": "Reçel en üst rafta.",
+          "register": "neutral",
+          "focus": "shelf"
+        },
+        {
+          "en": "Emma has three shelves full of books in her room.",
+          "tr": "Emma'nın odasında kitapla dolu üç raf var.",
+          "register": "neutral",
+          "focus": "shelves"
+        },
+        {
+          "en": "Can you get the salt from the shelf above the oven?",
+          "tr": "Fırının üstündeki raftan tuzu alabilir misin?",
+          "register": "neutral",
+          "focus": "shelf"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "top shelf",
+        "bottom shelf",
+        "kitchen shelf",
+        "on the shelf"
+      ],
+      "word_family": [
+        {
+          "lemma": "bookshelf",
+          "pos": "n"
+        },
+        {
+          "lemma": "shelve",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "raf",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğulu düzensizdir: 'shelfs' değil 'shelves' olur. 'Knife → knives', 'leaf → leaves' de böyledir.",
+          "mistakes": [
+            {
+              "wrong": "We need two new shelfs.",
+              "right": "We need two new shelves.",
+              "why": "Türkçede çoğul hep '-ler' ekiyle yapılır, bu yüzden '-s' eklemek doğal gelir. Ama 'shelf' kelimesinin çoğulu düzensizdir: 'f' harfi 'v' olur, 'shelves' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't reach the books on the top ______ of the bookcase.",
+        "answer": "shelf",
+        "distractors": [
+          "roof",
+          "wall",
+          "step"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.put_up.phv.1",
+      "lemma": "put up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "fix to a wall (shelf, picture)",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pʊt ˈʌp/",
+        "uk": "/pʊt ˈʌp/"
+      },
+      "def": {
+        "micro": "fix something on a wall",
+        "short": "fix something like a shelf, a picture or a curtain on a wall",
+        "long": "To fix something to a wall or in a high place so that it stays there, for example a shelf, a picture, a curtain or a poster. This phrasal verb has other meanings too."
+      },
+      "grammar": {
+        "pattern": "put sth up / put up sth (put it up)"
+      },
+      "examples": [
+        {
+          "en": "Can you help me put up this shelf?",
+          "tr": "Bu rafı takmama yardım eder misin?",
+          "register": "neutral",
+          "focus": "put up"
+        },
+        {
+          "en": "Murat put up some family photos in the living room.",
+          "tr": "Murat oturma odasına birkaç aile fotoğrafı astı.",
+          "register": "neutral",
+          "focus": "put up"
+        },
+        {
+          "en": "We bought new curtains, but we haven't put them up yet.",
+          "tr": "Yeni perdeler aldık ama henüz takmadık.",
+          "register": "neutral",
+          "focus": "put them up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "take down"
+      ],
+      "collocations": [
+        "put up a shelf",
+        "put up a picture",
+        "put up curtains",
+        "put up a poster",
+        "put it up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takmak, asmak",
+          "alt": [
+            "duvara asmak",
+            "monte etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Raf için 'takmak', tablo ve poster için 'asmak' anlamına gelir. 'Put up' başka anlamlara da gelir (ör. birine evinde kalacak yer vermek), bu kart yalnızca duvara takma anlamı içindir.",
+          "mistakes": [
+            {
+              "wrong": "I bought a new shelf. Can you put up it?",
+              "right": "I bought a new shelf. Can you put it up?",
+              "why": "Nesne 'it', 'them' gibi bir zamirse 'put' ile 'up' arasına girer: 'put it up'. 'Put up it' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Murat used a drill to ______ two new shelves in the kitchen.",
+        "answer": "put up",
+        "distractors": [
+          "try on",
+          "throw away",
+          "write down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.curtain.n.1",
+      "lemma": "curtain",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "cloth that covers a window",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɜːrtən/",
+        "uk": "/ˈkɜːtən/"
+      },
+      "def": {
+        "micro": "cloth that covers a window",
+        "short": "a long piece of cloth that hangs at a window and keeps out light",
+        "long": "A long piece of cloth that hangs in front of a window. You close it at night or when the sun is too bright, and open it in the morning."
+      },
+      "grammar": {
+        "pattern": "open / close / draw the curtains"
+      },
+      "examples": [
+        {
+          "en": "Please open the curtains. It's a sunny day.",
+          "tr": "Lütfen perdeleri aç. Hava güneşli.",
+          "register": "neutral",
+          "focus": "curtains"
+        },
+        {
+          "en": "Fatma bought blue curtains for the bedroom.",
+          "tr": "Fatma yatak odası için mavi perdeler aldı.",
+          "register": "neutral",
+          "focus": "curtains"
+        },
+        {
+          "en": "I close the curtains at night because of the street lights.",
+          "tr": "Sokak lambaları yüzünden geceleri perdeleri kapatırım.",
+          "register": "neutral",
+          "focus": "curtains"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "open the curtains",
+        "close the curtains",
+        "draw the curtains",
+        "shower curtain",
+        "curtain rail"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old French 'cortine', from Late Latin 'cortina', a cloth that hangs to cover something.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "perde",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genellikle çoğul kullanılır, çünkü pencerede iki parça olur: 'open the curtains'. Tiyatrodaki sahne perdesine de 'curtain' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The sun is in my eyes. Can you close the ______, please?",
+        "answer": "curtains",
+        "distractors": [
+          "carpets",
+          "cushions",
+          "mirrors"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.light_bulb.phr.1",
+      "lemma": "light bulb",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "glass part of a lamp that gives light",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlaɪt bʌlb/",
+        "uk": "/ˈlaɪt bʌlb/"
+      },
+      "def": {
+        "micro": "glass part that gives light",
+        "short": "the round glass part of a lamp that gives light when it is on",
+        "long": "The glass object that you put in a lamp or in a light on the ceiling. It gives light when you turn it on. When it stops working, you change it."
+      },
+      "grammar": {
+        "pattern": "change a light bulb"
+      },
+      "examples": [
+        {
+          "en": "This light bulb doesn't work anymore.",
+          "tr": "Bu ampul artık çalışmıyor.",
+          "register": "neutral",
+          "focus": "light bulb"
+        },
+        {
+          "en": "Ali stood on a chair to change the light bulb.",
+          "tr": "Ali ampulü değiştirmek için bir sandalyeye çıktı.",
+          "register": "neutral",
+          "focus": "light bulb"
+        },
+        {
+          "en": "These new light bulbs use less electricity and last for years.",
+          "tr": "Bu yeni ampuller daha az elektrik harcıyor ve yıllarca dayanıyor.",
+          "register": "neutral",
+          "focus": "light bulbs"
+        }
+      ],
+      "synonyms": [
+        "bulb"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "change a light bulb",
+        "LED light bulb",
+        "the bulb has gone",
+        "the bulb has blown"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ampul",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kısaca 'bulb' da denir. Ampul yandığında (artık ışık vermeyince) 'The bulb has gone', 'The bulb has blown' ya da 'The bulb has burned out' denir. Yalnızca 'burned' demek ateşte yanmış gibi anlaşılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The lamp doesn't work, so Fatma changed the ______.",
+        "answer": "light bulb",
+        "distractors": [
+          "dishwasher",
+          "vacuum cleaner",
+          "doorbell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.broken.adj.1",
+      "lemma": "broken",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "damaged, not working",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbroʊkən/",
+        "uk": "/ˈbrəʊkən/"
+      },
+      "def": {
+        "micro": "damaged or not working",
+        "short": "damaged, in pieces, or not working because something is wrong with it",
+        "long": "Damaged so that it is in pieces or does not work. A broken cup is in pieces; a broken phone or washing machine does not work. People also say a broken arm or leg."
+      },
+      "grammar": {
+        "pattern": "be broken / a broken + noun"
+      },
+      "examples": [
+        {
+          "en": "Don't sit on that chair. It's broken.",
+          "tr": "O sandalyeye oturma. Kırık.",
+          "register": "neutral",
+          "focus": "broken"
+        },
+        {
+          "en": "Lucas can't call anyone because his phone is broken.",
+          "tr": "Lucas kimseyi arayamıyor çünkü telefonu bozuk.",
+          "register": "neutral",
+          "focus": "broken"
+        },
+        {
+          "en": "Be careful, there is broken glass on the kitchen floor.",
+          "tr": "Dikkat et, mutfakta yerde kırık cam var.",
+          "register": "neutral",
+          "focus": "broken"
+        }
+      ],
+      "synonyms": [
+        "damaged"
+      ],
+      "antonyms": [
+        "working"
+      ],
+      "collocations": [
+        "broken glass",
+        "broken window",
+        "broken arm",
+        "completely broken"
+      ],
+      "word_family": [
+        {
+          "lemma": "break",
+          "pos": "v"
+        },
+        {
+          "lemma": "breakage",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bozuk",
+          "alt": [
+            "kırık",
+            "arızalı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki hem 'bozuk' hem 'kırık' anlamını karşılar. 'Broke' (fiilin geçmişi) ile karıştırma: 'I'm broke' konuşma dilinde 'beş parasızım' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Lucas sat on his glasses by mistake. Now they are ______.",
+        "answer": "broken",
+        "distractors": [
+          "new",
+          "lost",
+          "clean"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.blocked.adj.1",
+      "lemma": "blocked",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "closed so water can't pass (sink)",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/blɑːkt/",
+        "uk": "/blɒkt/"
+      },
+      "def": {
+        "micro": "closed, so water can't pass",
+        "short": "closed by something stuck inside, so water or air cannot pass through",
+        "long": "If a sink, toilet or pipe is like this, something is stuck inside it and the water cannot go down. In American English people also say 'clogged'."
+      },
+      "grammar": {
+        "pattern": "be blocked / a blocked sink"
+      },
+      "examples": [
+        {
+          "en": "The kitchen sink is blocked again.",
+          "tr": "Mutfak lavabosu yine tıkalı.",
+          "register": "neutral",
+          "focus": "blocked"
+        },
+        {
+          "en": "The shower is blocked, so Yuki called the landlord.",
+          "tr": "Duş tıkalı, bu yüzden Yuki ev sahibini aradı.",
+          "register": "neutral",
+          "focus": "blocked"
+        },
+        {
+          "en": "We can't use the downstairs toilet because it's blocked.",
+          "tr": "Alt kattaki tuvaleti kullanamıyoruz çünkü tıkalı.",
+          "register": "neutral",
+          "focus": "blocked"
+        }
+      ],
+      "synonyms": [
+        "clogged"
+      ],
+      "antonyms": [
+        "clear"
+      ],
+      "collocations": [
+        "blocked sink",
+        "blocked toilet",
+        "blocked drain",
+        "blocked pipe",
+        "a blocked nose"
+      ],
+      "word_family": [
+        {
+          "lemma": "block",
+          "pos": "v"
+        },
+        {
+          "lemma": "block",
+          "pos": "n"
+        },
+        {
+          "lemma": "blockage",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tıkalı",
+          "alt": [
+            "tıkanmış",
+            "tıkanık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'lavabo tıkandı' deriz; İngilizcede 'The sink is blocked' denir. Amerikan İngilizcesinde 'clogged' da çok kullanılır. Burun tıkanıklığı için de 'a blocked nose' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't wash the dishes. The sink is ______, and the water won't go down.",
+        "answer": "blocked",
+        "distractors": [
+          "empty",
+          "dry",
+          "warm"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.plumber.n.1",
+      "lemma": "plumber",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who repairs water pipes",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈplʌmər/",
+        "uk": "/ˈplʌmə/"
+      },
+      "def": {
+        "micro": "person who fixes water pipes",
+        "short": "a person whose job is to put in and repair water pipes, toilets and sinks",
+        "long": "A person whose job is to put in and repair water pipes, sinks, toilets and showers. You call one when water is leaking or a sink is blocked."
+      },
+      "grammar": {
+        "pattern": "call a plumber / get a plumber"
+      },
+      "examples": [
+        {
+          "en": "We need to call a plumber.",
+          "tr": "Bir tesisatçı çağırmamız gerekiyor.",
+          "register": "neutral",
+          "focus": "plumber"
+        },
+        {
+          "en": "The plumber came and fixed the leak under the sink.",
+          "tr": "Tesisatçı geldi ve lavabonun altındaki sızıntıyı tamir etti.",
+          "register": "neutral",
+          "focus": "plumber"
+        },
+        {
+          "en": "Fatma's brother is a plumber, so he helped us with the bathroom.",
+          "tr": "Fatma'nın erkek kardeşi tesisatçı, bu yüzden banyoda bize yardım etti.",
+          "register": "neutral",
+          "focus": "plumber"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "call a plumber",
+        "get a plumber",
+        "emergency plumber"
+      ],
+      "word_family": [
+        {
+          "lemma": "plumbing",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'plumbum', meaning lead (the metal). Water pipes were once made of lead.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tesisatçı",
+          "alt": [
+            "su tesisatçısı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'b' harfi okunmaz: 'plamır' gibi söylenir ('plambır' değil). 'Climb' ve 'thumb' kelimelerinde de 'b' okunmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Water is coming out of a pipe under the sink. Let's call a ______.",
+        "answer": "plumber",
+        "distractors": [
+          "dentist",
+          "waiter",
+          "pilot"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.power_cut.phr.1",
+      "lemma": "power cut",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "time with no electricity",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpaʊər kʌt/",
+        "uk": "/ˈpaʊə kʌt/"
+      },
+      "def": {
+        "micro": "time with no electricity",
+        "short": "a time when there is no electricity in a building or an area",
+        "long": "A period of time when the electricity stops in a home, a street or a whole area. In American English people usually say 'power outage'."
+      },
+      "grammar": {
+        "pattern": "there is / was a power cut"
+      },
+      "examples": [
+        {
+          "en": "There was a power cut last night.",
+          "tr": "Dün gece elektrik kesintisi oldu.",
+          "register": "neutral",
+          "focus": "power cut"
+        },
+        {
+          "en": "During the power cut, Emma read a book by candlelight.",
+          "tr": "Elektrik kesintisi sırasında Emma mum ışığında kitap okudu.",
+          "register": "neutral",
+          "focus": "power cut"
+        },
+        {
+          "en": "The fridge stopped working for three hours because of a power cut.",
+          "tr": "Elektrik kesintisi yüzünden buzdolabı üç saat çalışmadı.",
+          "register": "neutral",
+          "focus": "power cut"
+        }
+      ],
+      "synonyms": [
+        "blackout",
+        "power outage"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a power cut",
+        "during a power cut",
+        "a long power cut"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "elektrik kesintisi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'Elektrikler gitti' cümlesi İngilizcede 'There's a power cut' ya da 'The power is out' olur. ABD'de 'power outage' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "All the lights went off. There was a ______, so we used candles.",
+        "answer": "power cut",
+        "distractors": [
+          "traffic jam",
+          "waiting room",
+          "day off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.heating.n.1",
+      "lemma": "heating",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "system that keeps a home warm",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhiːtɪŋ/",
+        "uk": "/ˈhiːtɪŋ/"
+      },
+      "def": {
+        "micro": "system that warms a home",
+        "short": "the system in a building that keeps the rooms warm",
+        "long": "The system that keeps a house or building warm, for example with hot water in pipes and radiators. People turn it on in winter and turn it off in spring."
+      },
+      "grammar": {
+        "pattern": "turn on / turn off the heating"
+      },
+      "examples": [
+        {
+          "en": "Can you turn on the heating? I'm cold.",
+          "tr": "Kaloriferi açabilir misin? Üşüyorum.",
+          "register": "neutral",
+          "focus": "heating"
+        },
+        {
+          "en": "The heating in our apartment doesn't work, so we wear sweaters at home.",
+          "tr": "Dairemizin kaloriferi çalışmıyor, bu yüzden evde kazak giyiyoruz.",
+          "register": "neutral",
+          "focus": "heating"
+        },
+        {
+          "en": "Yuki turns the heating down at night to save money.",
+          "tr": "Yuki tasarruf etmek için geceleri kaloriferi kısıyor.",
+          "register": "neutral",
+          "focus": "heating"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "turn on the heating",
+        "turn off the heating",
+        "central heating",
+        "heating bill"
+      ],
+      "word_family": [
+        {
+          "lemma": "heat",
+          "pos": "n"
+        },
+        {
+          "lemma": "heat",
+          "pos": "v"
+        },
+        {
+          "lemma": "heater",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kalorifer",
+          "alt": [
+            "ısıtma",
+            "kombi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Evdeki ısıtma sisteminin tamamıdır; Türkçede çoğu zaman 'kalorifer' ya da 'kombi' denir. Tek bir kalorifer peteğine 'radiator', taşınabilir ısıtıcıya 'heater' denir.",
+          "mistakes": [
+            {
+              "wrong": "Can you open the heating?",
+              "right": "Can you turn on the heating?",
+              "why": "Türkçede 'kaloriferi aç' deriz. İngilizcede cihaz ve sistemler için 'open' değil 'turn on', kapatmak için 'turn off' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's freezing in here. Please turn on the ______.",
+        "answer": "heating",
+        "distractors": [
+          "fridge",
+          "fan",
+          "freezer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.knock_over.phv.1",
+      "lemma": "knock over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make something fall by accident",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nɑːk ˈoʊvər/",
+        "uk": "/nɒk ˈəʊvə/"
+      },
+      "def": {
+        "micro": "hit and make something fall",
+        "short": "hit something by accident so that it falls on its side",
+        "long": "To hit something by accident so that it falls, for example a glass, a vase or a lamp. It often happens when you move your arm or walk without looking."
+      },
+      "grammar": {
+        "pattern": "knock sth over / knock over sth"
+      },
+      "examples": [
+        {
+          "en": "The cat knocked over my glass of water.",
+          "tr": "Kedi su bardağımı devirdi.",
+          "register": "neutral",
+          "focus": "knocked over"
+        },
+        {
+          "en": "The dog ran into the room and knocked over a lamp.",
+          "tr": "Köpek odaya koşarak girdi ve bir lambayı devirdi.",
+          "register": "neutral",
+          "focus": "knocked over"
+        },
+        {
+          "en": "Ali moved his arm and knocked the vase over, but it didn't break.",
+          "tr": "Ali kolunu oynattı ve vazoyu devirdi ama vazo kırılmadı.",
+          "register": "neutral",
+          "focus": "knocked the vase over"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "knock over a glass",
+        "knock over a vase",
+        "knock over a lamp",
+        "knock it over"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "devirmek",
+          "alt": [
+            "düşürmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genellikle kazayla olur. Bardak devrilip içindeki dökülürse 'spill' de kullanılır: 'I knocked over my glass and spilled the water.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Yuki ______ a glass with her elbow, and water went everywhere.",
+        "answer": "knocked over",
+        "distractors": [
+          "put away",
+          "looked for",
+          "gave back"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

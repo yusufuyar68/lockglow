@@ -1,0 +1,973 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.next_door.phr.1",
+      "lemma": "next door",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "in the house or flat beside yours",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnɛkst ˈdɔːr/",
+        "uk": "/ˌnɛkst ˈdɔː/"
+      },
+      "def": {
+        "micro": "in the house beside yours",
+        "short": "in the house, flat or room that is right beside yours",
+        "long": "In the house or flat that is right beside yours. You can live next door, or talk about the people next door."
+      },
+      "grammar": {
+        "pattern": "live next door (to sb) / the people next door"
+      },
+      "examples": [
+        {
+          "en": "A new family moved in next door last week.",
+          "tr": "Geçen hafta yan eve yeni bir aile taşındı.",
+          "register": "neutral",
+          "focus": "next door"
+        },
+        {
+          "en": "The people next door are very friendly, and they often say hello.",
+          "tr": "Yan evdekiler çok cana yakın, sık sık selam veriyorlar.",
+          "register": "neutral",
+          "focus": "next door"
+        },
+        {
+          "en": "Priya went next door to ask her neighbor for some sugar.",
+          "tr": "Priya komşusundan biraz şeker istemek için yan eve gitti.",
+          "register": "neutral",
+          "focus": "next door"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "live next door",
+        "the people next door",
+        "next-door neighbor",
+        "next door to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yan evde, yan dairede",
+          "alt": [
+            "yan ev",
+            "yan daire"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ev de olsa apartman dairesi de olsa 'next door' denir. İsimden önce tireyle yazılır: 'my next-door neighbor' (yan komşum).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We share a wall with Daniel. He lives ______.",
+        "answer": "next door",
+        "distractors": [
+          "far away",
+          "abroad",
+          "in another city"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.noisy.adj.1",
+      "lemma": "noisy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "making a lot of noise",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnɔɪzi/",
+        "uk": "/ˈnɔɪzi/"
+      },
+      "def": {
+        "micro": "full of loud sounds",
+        "short": "making a lot of loud sound, or full of loud sounds",
+        "long": "Making a lot of loud, often unpleasant sound, or full of this kind of sound. People, places, streets and machines can all be noisy."
+      },
+      "grammar": {
+        "pattern": "noisy + noun / be noisy"
+      },
+      "examples": [
+        {
+          "en": "The kids are really noisy today.",
+          "tr": "Çocuklar bugün çok gürültücü.",
+          "register": "neutral",
+          "focus": "noisy"
+        },
+        {
+          "en": "Hakan can't work at home because the street outside is so noisy.",
+          "tr": "Dışarıdaki sokak çok gürültülü olduğu için Hakan evde çalışamıyor.",
+          "register": "neutral",
+          "focus": "noisy"
+        },
+        {
+          "en": "The old washing machine is really noisy, so we only use it during the day.",
+          "tr": "Eski çamaşır makinesi çok gürültülü, o yüzden onu sadece gündüz kullanıyoruz.",
+          "register": "neutral",
+          "focus": "noisy"
+        }
+      ],
+      "synonyms": [
+        "loud"
+      ],
+      "antonyms": [
+        "quiet"
+      ],
+      "collocations": [
+        "noisy neighbors",
+        "a noisy street",
+        "noisy children",
+        "really noisy"
+      ],
+      "word_family": [
+        {
+          "lemma": "noise",
+          "pos": "n"
+        },
+        {
+          "lemma": "noisily",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gürültülü",
+          "alt": [
+            "gürültücü"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Loud' çoğunlukla sesin kendisi için kullanılır: 'loud music'. 'Noisy' daha çok ses çıkaran kişi, yer ya da makine için: 'a noisy street'. Kesin kural değildir; 'loud neighbors' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't sleep here. The street outside is very ______ at night.",
+        "answer": "noisy",
+        "distractors": [
+          "quiet",
+          "narrow",
+          "clean"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spare_key.phr.1",
+      "lemma": "spare key",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "an extra key",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌspɛr ˈkiː/",
+        "uk": "/ˌspeə ˈkiː/"
+      },
+      "def": {
+        "micro": "an extra key for a door",
+        "short": "an extra copy of a key that you keep in a safe place",
+        "long": "An extra copy of a key that you keep in a safe place in case you lose your own. People often give one to a neighbor, a friend or a family member."
+      },
+      "grammar": {
+        "pattern": "a spare key (to sth)"
+      },
+      "examples": [
+        {
+          "en": "My mom has a spare key to my apartment.",
+          "tr": "Annemde dairemin yedek anahtarı var.",
+          "register": "neutral",
+          "focus": "spare key"
+        },
+        {
+          "en": "Ece gave a spare key to her neighbor before she went on holiday.",
+          "tr": "Ece tatile gitmeden önce komşusuna yedek anahtar verdi.",
+          "register": "neutral",
+          "focus": "spare key"
+        },
+        {
+          "en": "Daniel lost his keys, but luckily his roommate had a spare key.",
+          "tr": "Daniel anahtarlarını kaybetti ama neyse ki ev arkadaşında yedek anahtar vardı.",
+          "register": "neutral",
+          "focus": "spare key"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "have a spare key",
+        "leave a spare key",
+        "a spare key to the house"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yedek anahtar",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Spare' burada 'yedek, fazladan' demektir: 'a spare tire' (stepne), 'spare time' (boş vakit).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I always leave a ______ with my neighbor, just in case.",
+        "answer": "spare key",
+        "distractors": [
+          "broken key",
+          "lost key",
+          "door lock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.keep_it_down.phr.1",
+      "lemma": "keep it down",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "make less noise",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkiːp ɪt ˈdaʊn/",
+        "uk": "/ˌkiːp ɪt ˈdaʊn/"
+      },
+      "def": {
+        "micro": "make less noise",
+        "short": "be quieter; used when you ask someone to make less noise",
+        "long": "An informal way to ask someone to make less noise. People often say it to neighbors, roommates or children. With 'Could you … please?' it sounds polite."
+      },
+      "grammar": {
+        "pattern": "Could you keep it down? (no object)"
+      },
+      "examples": [
+        {
+          "en": "Could you keep it down, please? I'm on the phone.",
+          "tr": "Biraz sessiz olur musun lütfen? Telefondayım.",
+          "register": "neutral",
+          "focus": "keep it down"
+        },
+        {
+          "en": "Nora knocked on the wall and asked her neighbors to keep it down.",
+          "tr": "Nora duvara vurdu ve komşularından biraz sessiz olmalarını istedi.",
+          "register": "neutral",
+          "focus": "keep it down"
+        },
+        {
+          "en": "Keep it down, kids! The baby is sleeping upstairs.",
+          "tr": "Çocuklar, sesinizi biraz kısın! Bebek yukarıda uyuyor.",
+          "register": "neutral",
+          "focus": "Keep it down"
+        }
+      ],
+      "synonyms": [
+        "be quiet"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sessiz olmak",
+          "alt": [
+            "sesini kısmak",
+            "gürültü yapmamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir rica cümlesidir; 'Could you…, please?' ile söylenince kibar olur. Müzik ya da TV gibi bir cihazın sesini kısmak için 'turn it down' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's after midnight and people are trying to sleep. Could you ______, please?",
+        "answer": "keep it down",
+        "distractors": [
+          "turn it up",
+          "speak up",
+          "wake them up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.doorbell.n.1",
+      "lemma": "doorbell",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "the bell at a front door",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɔːrbɛl/",
+        "uk": "/ˈdɔːbɛl/"
+      },
+      "def": {
+        "micro": "a button you press at a door",
+        "short": "a button next to a door that makes a sound when a visitor presses it",
+        "long": "A button next to the door of a house or flat. When a visitor presses it, it makes a sound inside, so you know someone is there."
+      },
+      "grammar": {
+        "pattern": "ring / press the doorbell"
+      },
+      "examples": [
+        {
+          "en": "I think the doorbell is ringing. Is it the pizza?",
+          "tr": "Sanırım kapı zili çalıyor. Pizza mı geldi?",
+          "register": "neutral",
+          "focus": "doorbell"
+        },
+        {
+          "en": "The doorbell rang while Priya was in the shower.",
+          "tr": "Priya duştayken kapı zili çaldı.",
+          "register": "neutral",
+          "focus": "doorbell"
+        },
+        {
+          "en": "Our doorbell is broken, so please knock when you arrive.",
+          "tr": "Kapı zilimiz bozuk, o yüzden gelince lütfen kapıyı tıklatın.",
+          "register": "neutral",
+          "focus": "doorbell"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ring the doorbell",
+        "press the doorbell",
+        "the doorbell rings"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapı zili",
+          "alt": [
+            "zil"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'kapı çalıyor' hem zil hem kapıya vurmak için denir. İngilizcede zil için 'the doorbell rings', kapıya vurmak için 'knock' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Someone rang the ______, so Nora went to open the door.",
+        "answer": "doorbell",
+        "distractors": [
+          "doormat",
+          "door handle",
+          "doorway"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.let_in.phv.1",
+      "lemma": "let in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "allow sb to enter",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɛt ˈɪn/",
+        "uk": "/lɛt ˈɪn/"
+      },
+      "def": {
+        "micro": "allow someone to enter",
+        "short": "open the door and allow someone or something to come inside",
+        "long": "To allow a person or an animal to come into a room or building, often by opening the door for them. The person usually goes between the two words: 'let me in'."
+      },
+      "grammar": {
+        "pattern": "let sb/sth in"
+      },
+      "examples": [
+        {
+          "en": "I forgot my key. Can you let me in?",
+          "tr": "Anahtarımı unuttum. Beni içeri alır mısın?",
+          "register": "neutral",
+          "focus": "let me in"
+        },
+        {
+          "en": "Oscar opened the back door and let the cat in.",
+          "tr": "Oscar arka kapıyı açtı ve kediyi içeri aldı.",
+          "register": "neutral",
+          "focus": "let the cat in"
+        },
+        {
+          "en": "The security guard won't let anyone in after ten o'clock.",
+          "tr": "Güvenlik görevlisi saat ondan sonra kimseyi içeri almıyor.",
+          "register": "neutral",
+          "focus": "let anyone in"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "let out"
+      ],
+      "collocations": [
+        "let sb in",
+        "let the dog in",
+        "let the fresh air in"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "içeri almak",
+          "alt": [
+            "içeri sokmak",
+            "kapıyı açmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kişi iki kelimenin arasına girer: 'let me in', 'let the dog in'. Zamir olunca araya girmesi zorunludur; 'let in me' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm outside your door and it's raining! Please ______.",
+        "answer": "let me in",
+        "distractors": [
+          "let me down",
+          "let me out",
+          "wake me up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lock_yourself_out.phr.1",
+      "lemma": "lock yourself out",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "be outside with your keys inside",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌlɑːk jərˌsɛlf ˈaʊt/",
+        "uk": "/ˌlɒk jəˌsɛlf ˈaʊt/"
+      },
+      "def": {
+        "micro": "get stuck outside your home",
+        "short": "close a locked door by mistake and leave your keys inside",
+        "long": "To close a locked door by mistake while your keys are still inside, so you cannot get back in. Change 'yourself' to match the person: 'I locked myself out.'"
+      },
+      "grammar": {
+        "pattern": "lock yourself out (of sth)"
+      },
+      "examples": [
+        {
+          "en": "Oh no! I locked myself out of my flat again.",
+          "tr": "Eyvah! Anahtarı içeride unuttum, yine kapıda kaldım.",
+          "register": "neutral",
+          "focus": "locked myself out"
+        },
+        {
+          "en": "Ece locked herself out, so she waited for her roommate to come home.",
+          "tr": "Ece kapıda kaldı, o yüzden ev arkadaşının gelmesini bekledi.",
+          "register": "neutral",
+          "focus": "locked herself out"
+        },
+        {
+          "en": "If you lock yourself out, call me. I have a spare key.",
+          "tr": "Kapıda kalırsan beni ara. Bende yedek anahtar var.",
+          "register": "neutral",
+          "focus": "lock yourself out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapıda kalmak",
+          "alt": [
+            "dışarıda kalmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kapıyı kapatıp anahtarı içeride unutunca Türkçede 'kapıda kalmak' denir. 'Yourself' kişiye göre değişir: myself, himself, herself, ourselves.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I left my keys inside and ______. Now I have to wait on the stairs.",
+        "answer": "locked myself out",
+        "distractors": [
+          "locked myself in",
+          "fell asleep",
+          "checked in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tenant.n.1",
+      "lemma": "tenant",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a person who rents a home",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɛnənt/",
+        "uk": "/ˈtɛnənt/"
+      },
+      "def": {
+        "micro": "a person who pays rent",
+        "short": "a person who pays money to live in a house or flat that someone else owns",
+        "long": "A person who pays money every month to live in a house or flat that belongs to someone else. The owner is called the landlord."
+      },
+      "examples": [
+        {
+          "en": "The flat upstairs has a new tenant, a young nurse.",
+          "tr": "Üst kattaki dairenin yeni bir kiracısı var, genç bir hemşire.",
+          "register": "neutral",
+          "focus": "tenant"
+        },
+        {
+          "en": "The landlord asked all the tenants to pay the rent by the fifth.",
+          "tr": "Ev sahibi bütün kiracılardan kirayı ayın beşine kadar ödemelerini istedi.",
+          "register": "neutral",
+          "focus": "tenants"
+        },
+        {
+          "en": "Leyla has been a tenant in this building for six years.",
+          "tr": "Leyla altı yıldır bu binada kiracı.",
+          "register": "neutral",
+          "focus": "tenant"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "landlord"
+      ],
+      "collocations": [
+        "a new tenant",
+        "the previous tenant",
+        "landlord and tenant"
+      ],
+      "word_family": [
+        {
+          "lemma": "tenancy",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old French 'tenant', meaning 'holding', from the verb 'tenir', to hold, which comes from Latin 'tenere'.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kiracı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Evin sahibine 'landlord' (kadınsa 'landlady') denir. Kirayı ödeyerek evde oturan kişi ise 'tenant' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hakan rents a flat from Mr. Brown. Hakan is the ______, and Mr. Brown is the landlord.",
+        "answer": "tenant",
+        "distractors": [
+          "plumber",
+          "owner",
+          "cashier"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.roommate.n.1",
+      "lemma": "roommate",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a person who shares your home",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈruːmmeɪt/",
+        "uk": "/ˈruːmmeɪt/"
+      },
+      "def": {
+        "micro": "someone who shares your flat",
+        "short": "a person who is not your family but shares a flat, house or room with you",
+        "long": "A person who lives in the same flat, house or room as you, but is not your family or partner. Students and young workers often live this way to share the rent."
+      },
+      "examples": [
+        {
+          "en": "My roommate Nora cooks dinner for us on Fridays.",
+          "tr": "Ev arkadaşım Nora cuma günleri bize akşam yemeği yapıyor.",
+          "register": "neutral",
+          "focus": "roommate"
+        },
+        {
+          "en": "Priya is looking for a roommate because the rent is too high.",
+          "tr": "Kira çok yüksek olduğu için Priya ev arkadaşı arıyor.",
+          "register": "neutral",
+          "focus": "roommate"
+        },
+        {
+          "en": "Arda and his roommate take turns cleaning the kitchen.",
+          "tr": "Arda ve ev arkadaşı mutfağı sırayla temizliyor.",
+          "register": "neutral",
+          "focus": "roommate"
+        }
+      ],
+      "synonyms": [
+        "flatmate",
+        "housemate"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "my new roommate",
+        "college roommate"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ev arkadaşı",
+          "alt": [
+            "oda arkadaşı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiliz İngilizcesinde aynı evi paylaşan kişiye çoğunlukla 'flatmate' denir. Amerikan İngilizcesinde 'roommate' hem ev hem oda arkadaşı için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Omar and I aren't family, but we live together and share the rent. He's my ______.",
+        "answer": "roommate",
+        "distractors": [
+          "brother",
+          "landlord",
+          "neighbor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.for_rent.phr.1",
+      "lemma": "for rent",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "available to rent",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fər ˈrɛnt/",
+        "uk": "/fə ˈrɛnt/"
+      },
+      "def": {
+        "micro": "offered for a monthly fee",
+        "short": "available for people to live in or use if they pay money every month",
+        "long": "Offered to people who want to live in it or use it and pay money every month, but not buy it. You often see it on signs. In the UK, 'to let' is also used."
+      },
+      "grammar": {
+        "pattern": "a flat / house / room for rent"
+      },
+      "examples": [
+        {
+          "en": "There's a nice flat for rent near the park.",
+          "tr": "Parkın yakınında kiralık güzel bir daire var.",
+          "register": "neutral",
+          "focus": "for rent"
+        },
+        {
+          "en": "Ayşe saw a 'For Rent' sign on the house across the street.",
+          "tr": "Ayşe karşıdaki evde 'Kiralık' tabelası gördü.",
+          "register": "neutral",
+          "focus": "For Rent"
+        },
+        {
+          "en": "Are there any cheap apartments for rent in this neighborhood?",
+          "tr": "Bu mahallede ucuz kiralık daire var mı?",
+          "register": "neutral",
+          "focus": "for rent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "for sale"
+      ],
+      "collocations": [
+        "apartment for rent",
+        "house for rent",
+        "room for rent"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kiralık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'For sale' satılık demektir. Türkçedeki gibi isimden önce değil, sonra gelir: 'a flat for rent' (kiralık bir daire).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ece can't buy a house, so she is looking for a flat ______.",
+        "answer": "for rent",
+        "distractors": [
+          "for sale",
+          "on sale",
+          "in stock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1084 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-22",
+  "entries": [
+    {
+      "id": "en.make_the_bed.phr.1",
+      "lemma": "make the bed",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "neaten the bed after sleeping",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ðə ˈbɛd/",
+        "uk": "/meɪk ðə ˈbɛd/"
+      },
+      "def": {
+        "micro": "tidy sheets and covers",
+        "short": "pull the sheets and covers flat and neat after you get up",
+        "long": "To put the sheets, covers and pillows back in place after you sleep, so everything looks neat. Many people do it every morning."
+      },
+      "grammar": {
+        "pattern": "make the bed / make your bed"
+      },
+      "examples": [
+        {
+          "en": "I make the bed every morning.",
+          "tr": "Her sabah yatağı toplarım.",
+          "register": "neutral",
+          "focus": "make the bed"
+        },
+        {
+          "en": "Kerem makes his bed before he has breakfast.",
+          "tr": "Kerem kahvaltı etmeden önce yatağını topluyor.",
+          "register": "neutral",
+          "focus": "makes his bed"
+        },
+        {
+          "en": "Tom, please make your bed before you go to school.",
+          "tr": "Tom, lütfen okula gitmeden önce yatağını topla.",
+          "register": "neutral",
+          "focus": "make your bed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make your bed",
+        "make the bed every day",
+        "unmade bed"
+      ],
+      "word_family": [
+        {
+          "lemma": "bed",
+          "pos": "n"
+        },
+        {
+          "lemma": "bedroom",
+          "pos": "n"
+        },
+        {
+          "lemma": "unmade",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yatağı toplamak",
+          "alt": [
+            "yatağı düzeltmek",
+            "yatağı toparlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Buradaki 'make' bir şey üretmek değil, yatağı düzeltip toplamak demek. Kendi yatağın için 'make my bed' de çok sık kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "collocations",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______ every morning, so my sheets and pillows look neat.",
+        "answer": "make the bed",
+        "distractors": [
+          "set the table",
+          "do the dishes",
+          "feed the cat"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tidy_up.phv.1",
+      "lemma": "tidy up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make a place neat",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌtaɪdi ˈʌp/",
+        "uk": "/ˌtaɪdi ˈʌp/"
+      },
+      "def": {
+        "micro": "put things in order",
+        "short": "make a room or place neat by putting things back where they belong",
+        "long": "To make a room, desk or house neat by putting things back in their places. You can say 'tidy up', 'tidy up the room' or 'tidy the room up'."
+      },
+      "grammar": {
+        "pattern": "tidy up / tidy sth up"
+      },
+      "examples": [
+        {
+          "en": "Let's tidy up before the guests come.",
+          "tr": "Misafirler gelmeden önce ortalığı toplayalım.",
+          "register": "neutral",
+          "focus": "tidy up"
+        },
+        {
+          "en": "Sofia tidied up her desk at the end of the day.",
+          "tr": "Sofia gün sonunda masasını topladı.",
+          "register": "neutral",
+          "focus": "tidied up"
+        },
+        {
+          "en": "Kenji, please tidy your room up. There are clothes everywhere!",
+          "tr": "Kenji, lütfen odanı topla. Her yerde kıyafet var!",
+          "register": "neutral",
+          "focus": "tidy your room up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tidy up the house",
+        "tidy up your room",
+        "tidy up after sb"
+      ],
+      "word_family": [
+        {
+          "lemma": "tidy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "tidy",
+          "pos": "v"
+        },
+        {
+          "lemma": "untidy",
+          "pos": "adj"
+        },
+        {
+          "lemma": "tidiness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "toplamak, toparlamak",
+          "alt": [
+            "ortalığı toplamak",
+            "derleyip toplamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Tidy up' dağınık eşyaları yerine koyup ortalığı toplamaktır. Kir ve pisliği de temizlemek için daha çok 'clean up' denir. 'Tidy up' en çok İngiliz İngilizcesinde duyulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Your room is so messy! Please ______ before Grandma arrives.",
+        "answer": "tidy up",
+        "distractors": [
+          "hang out",
+          "sleep in",
+          "log out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sweep.v.1",
+      "lemma": "sweep",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "clean with a broom",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/swiːp/",
+        "uk": "/swiːp/"
+      },
+      "def": {
+        "micro": "clean a floor with a brush",
+        "short": "clean a floor or path by pushing dust away with a long brush",
+        "long": "To clean a floor, steps or a path with a brush on a long handle. You push the dust and dirt into one place and then pick it up."
+      },
+      "grammar": {
+        "pattern": "sweep sth / sweep sth up"
+      },
+      "examples": [
+        {
+          "en": "I sweep the kitchen floor every day.",
+          "tr": "Her gün mutfağı süpürürüm.",
+          "register": "neutral",
+          "focus": "sweep"
+        },
+        {
+          "en": "Tom swept the leaves off the balcony.",
+          "tr": "Tom balkondaki yaprakları süpürdü.",
+          "register": "neutral",
+          "focus": "swept"
+        },
+        {
+          "en": "After lunch, Elif swept up the bread crumbs under the table.",
+          "tr": "Öğle yemeğinden sonra Elif masanın altındaki ekmek kırıntılarını süpürdü.",
+          "register": "neutral",
+          "focus": "swept up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sweep the floor",
+        "sweep up",
+        "sweep the kitchen",
+        "sweep the leaves"
+      ],
+      "word_family": [
+        {
+          "lemma": "sweeper",
+          "pos": "n"
+        },
+        {
+          "lemma": "sweeping",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "süpürmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Sweep' saplı süpürgeyle süpürmektir. Elektrik süpürgesiyle süpürmek 'vacuum' olur. Geçmiş zamanı düzensizdir: 'swept'.",
+          "mistakes": [
+            {
+              "wrong": "I swept the carpet with the vacuum cleaner.",
+              "right": "I vacuumed the carpet.",
+              "why": "Türkçede ikisine de 'süpürmek' denir. İngilizcede elektrik süpürgesi kullanıyorsan 'vacuum', saplı süpürge kullanıyorsan 'sweep' dersin."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:vacuum"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you get the broom and ______ the leaves off the steps?",
+        "answer": "sweep",
+        "distractors": [
+          "iron",
+          "paint",
+          "sew"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mop.v.1",
+      "lemma": "mop",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "wash a floor with water",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mɑːp/",
+        "uk": "/mɒp/"
+      },
+      "def": {
+        "micro": "clean a floor with water",
+        "short": "wash a hard floor with a wet tool that has a long handle",
+        "long": "To wash a hard floor with water and soap, using a tool with a long handle and a soft head. People often do it after they sweep. 'Mop up' means to clean up a spilled liquid."
+      },
+      "grammar": {
+        "pattern": "mop sth / mop sth up"
+      },
+      "examples": [
+        {
+          "en": "Don't walk here. I just mopped the floor.",
+          "tr": "Buraya basma. Yeri yeni paspasladım.",
+          "register": "neutral",
+          "focus": "mopped"
+        },
+        {
+          "en": "Emre mops the kitchen floor every Saturday morning.",
+          "tr": "Emre her cumartesi sabahı mutfağı paspaslıyor.",
+          "register": "neutral",
+          "focus": "mops"
+        },
+        {
+          "en": "Zeynep mopped up the water on the bathroom floor.",
+          "tr": "Zeynep banyoda yerdeki suyu paspasla aldı.",
+          "register": "neutral",
+          "focus": "mopped up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "mop the floor",
+        "mop up",
+        "mop the kitchen"
+      ],
+      "word_family": [
+        {
+          "lemma": "mop",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "paspaslamak",
+          "alt": [
+            "paspas yapmak",
+            "yeri silmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'mop' saplı paspas demek. Kapının önündeki paspasa ise 'doormat' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The kitchen floor is sticky. Take a bucket of water and ______ the floor.",
+        "answer": "mop",
+        "distractors": [
+          "stir",
+          "tie",
+          "dig"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wipe.v.1",
+      "lemma": "wipe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "clean with a cloth",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/waɪp/",
+        "uk": "/waɪp/"
+      },
+      "def": {
+        "micro": "clean with a cloth",
+        "short": "clean or dry a surface by moving a cloth over it",
+        "long": "To move a cloth, a paper towel or your hand over something to clean or dry it. You can wipe a table, a counter or your face."
+      },
+      "grammar": {
+        "pattern": "wipe sth (with sth) / wipe sth off"
+      },
+      "examples": [
+        {
+          "en": "Please wipe the table after dinner.",
+          "tr": "Lütfen akşam yemeğinden sonra masayı sil.",
+          "register": "neutral",
+          "focus": "wipe"
+        },
+        {
+          "en": "Elif wiped the kitchen counter with a wet cloth.",
+          "tr": "Elif mutfak tezgâhını ıslak bir bezle sildi.",
+          "register": "neutral",
+          "focus": "wiped"
+        },
+        {
+          "en": "Kenji wiped his hands on a towel and opened the door.",
+          "tr": "Kenji ellerini havluya silip kapıyı açtı.",
+          "register": "neutral",
+          "focus": "wiped"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wipe the table",
+        "wipe your hands",
+        "wipe your feet",
+        "wipe sth clean",
+        "wipe off"
+      ],
+      "word_family": [
+        {
+          "lemma": "wipe",
+          "pos": "n"
+        },
+        {
+          "lemma": "wiper",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "silmek",
+          "alt": [
+            "bezle silmek",
+            "kurulamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'silmek' birkaç anlama gelir. Bezle silmek 'wipe' olur; kalemle yazılanı silmek 'erase', bilgisayarda dosya silmek 'delete' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:delete"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The table is wet and sticky. Can you ______ it with this cloth?",
+        "answer": "wipe",
+        "distractors": [
+          "delete",
+          "borrow",
+          "melt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vacuum_cleaner.phr.1",
+      "lemma": "vacuum cleaner",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "machine for cleaning floors",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvækjuːm ˌkliːnər/",
+        "uk": "/ˈvækjuːm ˌkliːnə/"
+      },
+      "def": {
+        "micro": "machine that sucks up dust",
+        "short": "an electric machine that sucks up dust and dirt from floors and carpets",
+        "long": "An electric machine that pulls dust and dirt off floors and carpets into a bag or box. People often just call it a 'vacuum'."
+      },
+      "examples": [
+        {
+          "en": "Our vacuum cleaner is very loud.",
+          "tr": "Elektrik süpürgemiz çok gürültülü.",
+          "register": "neutral",
+          "focus": "vacuum cleaner"
+        },
+        {
+          "en": "Sofia bought a small vacuum cleaner for her apartment.",
+          "tr": "Sofia dairesi için küçük bir elektrik süpürgesi aldı.",
+          "register": "neutral",
+          "focus": "vacuum cleaner"
+        },
+        {
+          "en": "The vacuum cleaner stopped working, so Tom swept the floor instead.",
+          "tr": "Elektrik süpürgesi bozuldu, Tom da yeri saplı süpürgeyle süpürdü.",
+          "register": "neutral",
+          "focus": "vacuum cleaner"
+        }
+      ],
+      "synonyms": [
+        "vacuum"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "use the vacuum cleaner",
+        "robot vacuum cleaner",
+        "cordless vacuum cleaner"
+      ],
+      "word_family": [
+        {
+          "lemma": "vacuum",
+          "pos": "v"
+        },
+        {
+          "lemma": "vacuum",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "elektrik süpürgesi",
+          "alt": [
+            "süpürge"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kart makinenin kendisi. Fiil olarak 'vacuum' süpürge çekmek demek: I vacuum the carpet. Makineye kısaca 'a vacuum' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Plug in the ______ and clean the carpet in the living room.",
+        "answer": "vacuum cleaner",
+        "distractors": [
+          "washing machine",
+          "hair dryer",
+          "coffee maker"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dishwasher.n.1",
+      "lemma": "dishwasher",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "kitchen machine for dishes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪʃˌwɑːʃər/",
+        "uk": "/ˈdɪʃˌwɒʃə/"
+      },
+      "def": {
+        "micro": "machine that cleans plates",
+        "short": "a kitchen machine that cleans plates, cups, glasses and forks",
+        "long": "A kitchen machine that cleans plates, glasses, cups and forks for you. You load it with dirty things and empty it when they are clean."
+      },
+      "examples": [
+        {
+          "en": "Can you empty the dishwasher, please?",
+          "tr": "Bulaşık makinesini boşaltır mısın lütfen?",
+          "register": "neutral",
+          "focus": "dishwasher"
+        },
+        {
+          "en": "Kenji put the dirty cups in the dishwasher.",
+          "tr": "Kenji kirli fincanları bulaşık makinesine koydu.",
+          "register": "neutral",
+          "focus": "dishwasher"
+        },
+        {
+          "en": "We don't have a dishwasher, so we wash everything by hand.",
+          "tr": "Bulaşık makinemiz yok, o yüzden her şeyi elde yıkıyoruz.",
+          "register": "neutral",
+          "focus": "dishwasher"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "load the dishwasher",
+        "empty the dishwasher",
+        "run the dishwasher",
+        "dishwasher tablet"
+      ],
+      "word_family": [
+        {
+          "lemma": "dish",
+          "pos": "n"
+        },
+        {
+          "lemma": "dishes",
+          "pos": "n"
+        },
+        {
+          "lemma": "wash",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bulaşık makinesi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Makineyi doldurmak 'load the dishwasher', boşaltmak 'empty' ya da 'unload the dishwasher', çalıştırmak 'run the dishwasher' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After dinner, Leo put all the dirty plates in the ______.",
+        "answer": "dishwasher",
+        "distractors": [
+          "oven",
+          "freezer",
+          "wardrobe"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.water_the_plants.phr.1",
+      "lemma": "water the plants",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "give water to plants",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwɔːtər ðə ˈplænts/",
+        "uk": "/ˌwɔːtə ðə ˈplɑːnts/"
+      },
+      "def": {
+        "micro": "wet the soil around flowers",
+        "short": "make the soil in pots or in a garden wet so flowers don't get dry",
+        "long": "To make the soil around the flowers in your home or garden wet, for example with a can or a hose, so they stay healthy. You can also say 'water the flowers' or 'water the garden'."
+      },
+      "grammar": {
+        "pattern": "water the plants / water my plants"
+      },
+      "examples": [
+        {
+          "en": "Don't forget to water the plants.",
+          "tr": "Çiçekleri sulamayı unutma.",
+          "register": "neutral",
+          "focus": "water the plants"
+        },
+        {
+          "en": "Zeynep waters the plants on her balcony every evening.",
+          "tr": "Zeynep her akşam balkonundaki çiçekleri sular.",
+          "register": "neutral",
+          "focus": "waters the plants"
+        },
+        {
+          "en": "Can you water my plants while I'm on holiday?",
+          "tr": "Ben tatildeyken çiçeklerimi sular mısın?",
+          "register": "neutral",
+          "focus": "water my plants"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "water the garden",
+        "water the flowers",
+        "water the plants daily"
+      ],
+      "word_family": [
+        {
+          "lemma": "water",
+          "pos": "v"
+        },
+        {
+          "lemma": "watering can",
+          "pos": "n"
+        },
+        {
+          "lemma": "plant",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çiçekleri sulamak",
+          "alt": [
+            "bitkileri sulamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Burada 'water' isim değil fiildir ve 'sulamak' demektir. Türkçede saksıdaki her bitkiye 'çiçek' deriz; İngilizcede çoğu zaman 'plants' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "collocations",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The soil in the pots is very dry. Please ______.",
+        "answer": "water the plants",
+        "distractors": [
+          "feed the cat",
+          "lock the door",
+          "charge the phone"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spill.v.1",
+      "lemma": "spill",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "let a liquid fall by accident",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/spɪl/",
+        "uk": "/spɪl/"
+      },
+      "def": {
+        "micro": "let liquid fall by accident",
+        "short": "make a liquid fall out of its cup or bottle by accident",
+        "long": "To let a liquid such as water, coffee or milk fall out of a cup, glass or bottle by accident. The past form is 'spilled' in the US and 'spilled' or 'spilt' in the UK."
+      },
+      "grammar": {
+        "pattern": "spill sth (on sth)"
+      },
+      "examples": [
+        {
+          "en": "Oops, I spilled my tea!",
+          "tr": "Eyvah, çayımı döktüm!",
+          "register": "neutral",
+          "focus": "spilled"
+        },
+        {
+          "en": "Burcu spilled coffee on her white shirt.",
+          "tr": "Burcu beyaz gömleğine kahve döktü.",
+          "register": "neutral",
+          "focus": "spilled"
+        },
+        {
+          "en": "Be careful not to spill juice on the new sofa.",
+          "tr": "Yeni koltuğa meyve suyu dökmemeye dikkat et.",
+          "register": "neutral",
+          "focus": "spill"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "spill coffee",
+        "spill a drink",
+        "spill sth on sth",
+        "spill water"
+      ],
+      "word_family": [
+        {
+          "lemma": "spill",
+          "pos": "n"
+        },
+        {
+          "lemma": "spilt",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dökmek",
+          "alt": [
+            "kazayla dökmek",
+            "dökülmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Spill' yalnızca kazayla dökmek demek. Bilerek dökmek, örneğin bardağa çay koymak 'pour' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "confusable:pour"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Careful! The glass is too full. Don't ______ the milk.",
+        "answer": "spill",
+        "distractors": [
+          "freeze",
+          "order",
+          "smell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stain.n.1",
+      "lemma": "stain",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "dirty mark that is hard to remove",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/steɪn/",
+        "uk": "/steɪn/"
+      },
+      "def": {
+        "micro": "a dirty mark hard to remove",
+        "short": "a dirty or colored mark on clothes or furniture that is hard to remove",
+        "long": "A dirty or colored mark on clothes, a carpet or furniture that is difficult to clean off. Coffee, ink, grass and tomato sauce often leave stains."
+      },
+      "grammar": {
+        "pattern": "a stain on sth / get a stain out"
+      },
+      "examples": [
+        {
+          "en": "There's a stain on my shirt.",
+          "tr": "Gömleğimde bir leke var.",
+          "register": "neutral",
+          "focus": "stain"
+        },
+        {
+          "en": "Sofia tried to get the coffee stain out of the carpet.",
+          "tr": "Sofia halıdaki kahve lekesini çıkarmaya çalıştı.",
+          "register": "neutral",
+          "focus": "stain"
+        },
+        {
+          "en": "This soap removes even old stains from white clothes.",
+          "tr": "Bu sabun beyaz giysilerdeki eski lekeleri bile çıkarıyor.",
+          "register": "neutral",
+          "focus": "stains"
+        }
+      ],
+      "synonyms": [
+        "mark",
+        "spot"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "coffee stain",
+        "remove a stain",
+        "get a stain out",
+        "leave a stain",
+        "stain remover"
+      ],
+      "word_family": [
+        {
+          "lemma": "stain",
+          "pos": "v"
+        },
+        {
+          "lemma": "stained",
+          "pos": "adj"
+        },
+        {
+          "lemma": "stainless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "leke",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Lekeyi çıkarmak 'get a stain out' ya da 'remove a stain' olur. 'Stainless steel' paslanmaz çelik demek, yani 'leke tutmayan'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif dropped tomato sauce on her white T-shirt. Now there's a big ______ on it.",
+        "answer": "stain",
+        "distractors": [
+          "button",
+          "pocket",
+          "zip"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
