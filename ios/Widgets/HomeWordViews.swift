@@ -26,8 +26,11 @@ import CoreModels
 // variant gets the column's width, and the first whose height fits is shown. Inside a variant,
 // each line that can shorten picks its own step for that width (`WidgetFittingWord`,
 // `WidgetFittingText`). A line with no step that fits makes its variant too tall to be chosen
-// (`WidgetFit.reject`), so the next variant tries smaller type or more lines. The last variant,
-// the word alone, always fits.
+// (`WidgetFit.reject`), so the next variant tries smaller type or more lines. When the person's
+// text size leaves no room for the meaning, the variants are tried again at a smaller text size
+// (the home widgets at xxxLarge, the Lock Screen rectangle at the default size up to xxxLarge),
+// so the meaning stays and is never larger than the word. The last variant, the word alone,
+// always fits, in height too (`WidgetWordAlone`).
 
 /// How far the button group reaches into the widget margin on the widget's outer edges.
 private let buttonGroupOverflow: CGFloat = 8
