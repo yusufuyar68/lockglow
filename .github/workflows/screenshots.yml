@@ -71,6 +71,13 @@ jobs:
           }
           run_on small "$SMALL"
           run_on large "$LARGE"
+          # is3-tema-ekran only: the same screens in dark mode on the small iPhone.
+          if [ -n "$SMALL" ]; then
+            xcrun simctl boot "$SMALL" 2>/dev/null || true
+            xcrun simctl ui "$SMALL" appearance dark || echo "could not switch to dark"
+            run_on small-koyu "$SMALL"
+          fi
+          grep -h "SESPROBE" out/*.log | head -200 || true
           find shots -type f | head -40
       - name: Görüntüleri yükle
         if: always()
