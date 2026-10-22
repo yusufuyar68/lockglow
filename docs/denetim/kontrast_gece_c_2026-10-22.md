@@ -180,7 +180,7 @@ Kod okuması (`contrast == .increased || showsButtonShapes`). Ekranda piksel öl
   | Koyu + Kontrastı Artır | **3 px (1,5 pt)**, 160 (`lineStrong` %56) | **6 px (3 pt)**, 255 (#FF) | 31 (#1F) |
 
   - Kenarlar iki ayarda da kalınlaşıyor. Değerler hesapla aynı: dolgu #1D1D1D / #1F1F1F, çip kenarı beyaz %40 / %56 `surface2` üstünde.
-  - Ekrandaki piksellerden ana kenar ile çip kenarı arası 3,65:1 (hesap: kenarsız ikincilden 3,69).
+  - Ekrandaki piksellerden ana kenar ile çip kenarı arası 3,66:1 (hesap: kenarsız ikincilden 3,69).
 - **Görülen:**
   - "1 konuyla devam", "Başla (5 kelime)", ilk kelimedeki "Başla": sarı yok, beyaz kenarlı koyu kapsül. Aynı ekrandaki kenarlı ikincil düğmeden ("Anlamını göster") açıkça ayrılıyor: kenar daha parlak ve daha kalın.
   - Kelimenin sarı şeridi ekrandaki tek sarı.
