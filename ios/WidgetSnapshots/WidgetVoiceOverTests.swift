@@ -6,9 +6,10 @@ import XCTest
 import CoreModels
 
 /// What VoiceOver gets from the widget views (ios/README.md point 14; accessibility audit V5 and
-/// V6; text audit #15): the English word, definition and example in an English voice, the
-/// Turkish meaning, the next change and the buttons in the device's voice, the "Biliyorum" hint
-/// of the 3-day rule, and no empty element for a user's own word. The views are hosted in a window
+/// V6; text audit #15): the English word (once), definition and example in an English voice, the
+/// Turkish meaning, the next change and the buttons in a Turkish voice (`widgetTurkishVoice()`:
+/// the first run, 39841358820, found every localized Turkish label tagged "en-Latn-US"), the
+/// "Biliyorum" hint of the 3-day rule, and no empty element for a user's own word. The views are hosted in a window
 /// and their accessibility elements read as is3-tema's probe did (docs/denetim/
 /// kontrast_tema_2026-10-22.md, "Simülatörde ölçüm"): the element's `accessibilityLanguage`, else
 /// its label's speech-language attribute. This is the data VoiceOver reads in the app's hosting,
@@ -24,6 +25,10 @@ final class WidgetVoiceOverTests: XCTestCase {
 
         var isEnglish: Bool {
             return language?.lowercased().hasPrefix("en") == true
+        }
+
+        var isTurkish: Bool {
+            return language?.lowercased().hasPrefix("tr") == true
         }
     }
 
@@ -91,14 +96,14 @@ final class WidgetVoiceOverTests: XCTestCase {
         let headwords = elements.filter { $0.label == word.lemma }
         XCTAssertEqual(headwords.count, 1, context)
         XCTAssertTrue(headwords.allSatisfy { $0.isEnglish }, context)
-        // The whole Turkish meaning, never in the English voice. The Lock Screen rectangle leaves
-        // a meaning that fits on no line out; the others always have one at the default size.
+        // The whole Turkish meaning in a Turkish voice. The Lock Screen rectangle leaves a meaning
+        // that fits on no line out; the others always have one at the default size.
         let meaning = "Türkçesi: \(word.glossTR ?? "")"
         let meanings = elements.filter { $0.label == meaning }
         if family != "rect" || (word.glossTR ?? "").count <= 16 {
             XCTAssertEqual(meanings.count, 1, context)
         }
-        XCTAssertFalse(meanings.contains { $0.isEnglish }, context)
+        XCTAssertTrue(meanings.allSatisfy { $0.isTurkish }, context)
         // No empty element, no "·" read aloud, no level for a word without one.
         XCTAssertFalse(elements.contains { $0.label.trimmingCharacters(in: .whitespaces).isEmpty }, context)
         XCTAssertFalse(elements.contains { $0.label.contains("·") }, context)
@@ -107,8 +112,8 @@ final class WidgetVoiceOverTests: XCTestCase {
         }
         switch family {
         case "small":
-            XCTAssertTrue(elements.contains { $0.label == "Kelimeyi dinle" && !$0.isEnglish }, context)
-            XCTAssertTrue(elements.contains { $0.label == "Sonraki kelime" && !$0.isEnglish }, context)
+            XCTAssertTrue(elements.contains { $0.label == "Kelimeyi dinle" && $0.isTurkish }, context)
+            XCTAssertTrue(elements.contains { $0.label == "Sonraki kelime" && $0.isTurkish }, context)
         case "medium":
             checkMedium(elements, of: word, context: context)
         default:
@@ -120,14 +125,14 @@ final class WidgetVoiceOverTests: XCTestCase {
         let know = elements.filter { $0.label == "Biliyorum" }
         XCTAssertEqual(know.count, 1, context)
         XCTAssertEqual(know.first?.hint, KnowWordButton.hint, context)
-        XCTAssertFalse(know.contains { $0.isEnglish }, context)
+        XCTAssertTrue(know.allSatisfy { $0.isTurkish }, context)
         if !word.isUserAdded {
             // The English definition (short or micro) in an English voice.
             XCTAssertTrue(
                 elements.contains { ($0.label == word.defShort || $0.label == word.defMicro) && $0.isEnglish },
                 context
             )
-            XCTAssertTrue(elements.contains { $0.label == "Seviye \(word.level)" && !$0.isEnglish }, context)
+            XCTAssertTrue(elements.contains { $0.label == "Seviye \(word.level)" && $0.isTurkish }, context)
         }
         if !word.exampleEN.isEmpty, word.exampleEN.localizedCaseInsensitiveContains(word.lemma) {
             // The example (whole, or from a few words before the word) in an English voice.
@@ -141,8 +146,8 @@ final class WidgetVoiceOverTests: XCTestCase {
             )
         }
         if word.id == 1 {
-            // "Yeni kelime: 10:00" on screen, "Sonraki değişim: …" for VoiceOver.
-            XCTAssertTrue(elements.contains { $0.label.hasPrefix("Sonraki değişim: ") && !$0.isEnglish }, context)
+            // "Yeni kelime: 09:00" on screen, "Sonraki değişim: 09:00" for VoiceOver.
+            XCTAssertTrue(elements.contains { $0.label.hasPrefix("Sonraki değişim: ") && $0.isTurkish }, context)
         }
     }
 
