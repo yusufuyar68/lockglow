@@ -1,18 +1,26 @@
 import SwiftUI
+import UIKit
 import CoreModels
 import Learning
 
-/// "Tekrar": a short round. Due words come first, each asked with its card's fill-in-the-blank
-/// question (`QuizCardView`); when nothing is due the tab offers the next new words (up to the
-/// daily goal) as flashcards. Front of a flashcard: the English word with the phosphor band, its
-/// sound and a nudge to recall the meaning first (with an optional clue, the example sentence).
-/// Tap: the Turkish meaning first (large), then the short definition, the example and the Dikkat
-/// box. A flashcard is answered with one of four grades (Bilemedim, Zor, Bildim, Kolay), each
-/// showing when the word comes back. During a round the tab bar is hidden, the round has its own
-/// header ("Kart 3 / 10", the progress, "Bitir"), the card ends above an opaque answer bar and
-/// scrolls inside itself (at accessibility sizes the answers scroll with the card). A round ends
-/// with a word-by-word summary; with nothing left for today the tab lists the words met today and
-/// says when the next review is due. No streaks, no scores.
+/// "Tekrar": a short round. Due words come first, each asked by its box (`AppModel.questionKind`,
+/// docs/tasarim/ogrenme_ilkeleri.md 2.4): in boxes 1–3 with the card's fill-in-the-blank question
+/// (`QuizCardView`); in boxes 4–5, for refreshers and for the check 3 days after "Biliyorum" with
+/// the recall screen ("İngilizcesini hatırla": the Turkish meaning, "Göster", then "Göstermeden
+/// önce aklına geldi mi?" and two equal answers, "Bulamadım" and "Buldum").
+///
+/// When nothing is due the tab offers new words in rounds of five, "Tanış + Hatırla"
+/// (`IntroRound`, 2.3). "Tanış": the word with its band and sound, the meaning hidden; one bottom
+/// button that stays in place and turns from "Anlamını göster" into "Sonraki"; above it a plain
+/// "Bunu zaten biliyorum", which takes the word out (checked once in 3 days, with a 5-second "Geri
+/// al"). "Hatırla": each word once with four options, "Anlamını seç" or "İngilizcesini seç"; a
+/// wrong answer gets one more try a few cards later. The grade comes from the answers, never from
+/// a self-rating.
+///
+/// During a round the tab bar is hidden, the round has its own header ("Kart 3 / 10", the
+/// progress, "Bitir") and the buttons sit at the bottom, where the thumb is. A round ends with a
+/// word-by-word summary; with nothing left for today the tab lists the words met today and says
+/// when the next review is due. No streaks, no scores.
 struct ReviewView: View {
     /// Switches to "Ayarlar" (the shortcut to the daily goal on the done screen).
     var openSettings: () -> Void = {}
@@ -24,18 +32,25 @@ struct ReviewView: View {
 
     /// The running round; nil while the start screen or the summary is shown.
     @State private var session: ReviewSession?
+    /// The card of a due round.
     @State private var index = 0
+    /// The "Tanış + Hatırla" steps of a new-word round.
+    @State private var intro: IntroRound?
+    /// A "Tanış" card shows its meaning; a recall card shows the English word.
     @State private var isRevealed = false
-    /// The front's clue (the example sentence) is shown.
-    @State private var showsClue = false
+    /// The option picked on a "Hatırla" question, until "Devam".
+    @State private var picked: String?
     /// The card's text runs past the bottom of the card ("Devamı").
     @State private var cardHasMore = false
     /// Answers of the running round, in order.
     @State private var answers: [RoundAnswer] = []
     /// Answers of the round that just ended: the summary stays until "Tamam".
     @State private var summary: [RoundAnswer]?
-    /// Counts flashcard answers: one light tick per answer, nothing else (no buzz for "Bilemedim").
+    /// Counts "Bulamadım / Buldum" answers: one light tick each, nothing else.
     @State private var answerTick = 0
+    /// The word this tab took out with "Bunu zaten biliyorum"; its "Geri al" shows while
+    /// `AppModel.knownUndo` still holds it.
+    @State private var skippedWordID: Int?
     /// New words studied in this tab today, for the done screen: "2026-10-22|12,45,78". AppModel
     /// only counts them (`newWordsStudiedToday`); the words themselves are kept here.
     @AppStorage("lockglow.reviewNewWordsToday") private var newWordsTodayLog = ""
@@ -66,8 +81,8 @@ struct ReviewView: View {
 
     @ViewBuilder
     private var content: some View {
-        if let session = session, session.words.indices.contains(index) {
-            roundScreen(session: session, word: session.words[index])
+        if let session = session, let card = currentCard(in: session) {
+            roundScreen(session: session, card: card)
         } else if let summary = summary {
             summaryScreen(summary)
         } else {
@@ -77,50 +92,101 @@ struct ReviewView: View {
 
     // MARK: Round
 
-    private func roundScreen(session: ReviewSession, word: WidgetWord) -> some View {
-        let detail = model.detail(for: word)
-        let quiz = ReviewView.quiz(in: session, detail: detail)
+    /// What the current step of the round shows.
+    private enum RoundCard {
+        /// Boxes 1–3: the card's fill-in-the-blank question.
+        case cloze(WidgetWord, CardDetail.Quiz)
+        /// Boxes 4–5, refreshers, the "Biliyorum" check.
+        case recall(WidgetWord)
+        /// "Tanış".
+        case meet(WidgetWord)
+        /// "Hatırla".
+        case choice(WidgetWord, attempt: Int, direction: IntroRound.Direction)
+
+        var word: WidgetWord {
+            switch self {
+            case let .cloze(word, _), let .recall(word), let .meet(word), let .choice(word, _, _):
+                return word
+            }
+        }
+    }
+
+    private func currentCard(in session: ReviewSession) -> RoundCard? {
+        switch session.kind {
+        case .due:
+            guard session.words.indices.contains(index) else {
+                return nil
+            }
+            let word = session.words[index]
+            if model.questionKind(for: word) == .cloze, let quiz = model.detail(for: word)?.quiz {
+                return .cloze(word, quiz)
+            }
+            return .recall(word)
+        case .new:
+            guard let round = intro, let step = round.current,
+                  let word = session.words.first(where: { $0.id == step.wordID }) else {
+                return nil
+            }
+            switch step {
+            case .meet:
+                return .meet(word)
+            case let .recall(_, attempt):
+                return .choice(word, attempt: attempt, direction: round.directions[word.id] ?? .pickMeaning)
+            }
+        }
+    }
+
+    private func roundScreen(session: ReviewSession, card: RoundCard) -> some View {
+        let detail = model.detail(for: card.word)
         return VStack(spacing: 8) {
             roundHeader(session: session)
-            if let quiz = quiz {
+            switch card {
+            case let .cloze(word, quiz):
                 QuizCardView(
                     word: word,
                     quiz: quiz,
+                    // Each attempt puts the answer in another place (2.4): the answers so far.
+                    attempt: model.progress[word.id]?.reviews ?? 0,
                     layout: .scrolling,
                     mistakes: detail?.mistakes ?? [],
                     optionMeanings: optionMeanings(for: quiz, word: word),
                     returnTimes: quizReturnTimes(for: word)
                 ) { outcome in
-                    answer(ReviewView.grade(for: outcome), word: word)
+                    let grade = ReviewView.grade(for: outcome)
+                    answerDue(word: word, grade: grade, label: AnswerLabel(grade))
                 }
                 .id(word.id)
-            } else {
-                flashcardRound(word: word, detail: detail)
+            case let .recall(word):
+                recallRound(word: word, detail: detail, times: recallReturnTimes(for: word)) { found in
+                    answerRecall(word: word, found: found)
+                }
+            case let .meet(word):
+                meetRound(word: word, detail: detail)
+            case let .choice(word, attempt, direction):
+                if let question = model.introQuestion(for: word, direction: direction, attempt: attempt) {
+                    choiceRound(word: word, question: question, attempt: attempt, detail: detail)
+                } else {
+                    // Too few cards for options (seed words): the same word is recalled instead.
+                    recallRound(word: word, detail: detail, times: nil) { found in
+                        continueIntro(word: word, right: found)
+                    }
+                }
             }
         }
-    }
-
-    /// A word that was already studied is tested with its fill-in-the-blank question (recall); a
-    /// new word, or a due word whose card has no usable question, is shown as a flashcard.
-    private static func quiz(in session: ReviewSession, detail: CardDetail?) -> CardDetail.Quiz? {
-        guard session.kind == .due, let quiz = detail?.quiz, !quiz.distractors.isEmpty else {
-            return nil
-        }
-        return quiz
     }
 
     /// Only what the round needs: "Kart 3 / 10", the progress bar and "Bitir" (glass: the control
     /// layer, rule 6) on one line. At accessibility sizes the bar goes under the line, and when
     /// "Kart 10 / 20" and "Bitir" do not fit side by side the count goes under "Bitir" rather
-    /// than being cut (audit D3).
+    /// than being cut (audit D3). In "Tanış + Hatırla" every card counts, and a second try adds one.
     @ViewBuilder
     private func roundHeader(session: ReviewSession) -> some View {
-        let total = session.words.count
+        let progress = roundProgress(session)
         if dynamicTypeSize.isAccessibilitySize {
             VStack(spacing: 10) {
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: 10) {
-                        cardCounter(total: total)
+                        cardCounter(done: progress.done, total: progress.total)
                             .fixedSize()
                         Spacer(minLength: 0)
                         finishButton
@@ -128,18 +194,18 @@ struct ReviewView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         finishButton
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                        cardCounter(total: total)
+                        cardCounter(done: progress.done, total: progress.total)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
-                RoundProgressBar(done: index, total: total)
+                RoundProgressBar(done: progress.done, total: progress.total)
             }
             .padding(.horizontal, 16)
         } else {
             HStack(spacing: 12) {
-                cardCounter(total: total)
+                cardCounter(done: progress.done, total: progress.total)
                     .fixedSize()
-                RoundProgressBar(done: index, total: total)
+                RoundProgressBar(done: progress.done, total: progress.total)
                 finishButton
             }
             .frame(minHeight: 52)
@@ -147,13 +213,21 @@ struct ReviewView: View {
         }
     }
 
+    private func roundProgress(_ session: ReviewSession) -> (done: Int, total: Int) {
+        if session.kind == .new, let round = intro {
+            return (round.position, round.steps.count)
+        }
+        return (index, session.words.count)
+    }
+
     /// The round's heading for VoiceOver (audit V10): "Kart 3, toplam 10", not "3 bölü 10".
-    private func cardCounter(total: Int) -> some View {
-        Text("Kart \(index + 1) / \(total)")
+    private func cardCounter(done: Int, total: Int) -> some View {
+        let current = min(done + 1, max(total, 1))
+        return Text("Kart \(current) / \(total)")
             .font(.subheadline.weight(.semibold))
             .monospacedDigit()
             .foregroundStyle(Theme.ink2)
-            .accessibilityLabel("Kart \(index + 1), toplam \(total)")
+            .accessibilityLabel("Kart \(current), toplam \(total)")
             .accessibilityAddTraits(.isHeader)
             .accessibilityFocused($focus, equals: .counter)
     }
@@ -170,26 +244,22 @@ struct ReviewView: View {
         .glassControl()
     }
 
-    /// The card fills the space between the header and the bottom bar and ends above the bar.
-    /// Its text scrolls inside it when it is taller (iPhone SE, large text); the card's bottom
-    /// edge then fades out under "Devamı". At accessibility sizes the revealed card and its
-    /// answers scroll together instead, one answer per row (rule 5): a fixed bar of four grades
-    /// would leave almost no room for the card.
-    private func flashcardRound(word: WidgetWord, detail: CardDetail?) -> some View {
+    // MARK: Tanış
+
+    /// "Tanış": the card fills the space between the header and the bottom bar and ends above
+    /// the bar. Its text scrolls inside it when it is taller (iPhone SE, large text); the card's
+    /// bottom edge then fades out under "Devamı".
+    private func meetRound(word: WidgetWord, detail: CardDetail?) -> some View {
         VStack(spacing: 0) {
-            if isRevealed && dynamicTypeSize.isAccessibilitySize {
-                flowingBack(word: word, detail: detail)
-            } else {
-                cardPanel(word: word, detail: detail)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 4)
-                    .padding(.bottom, 12)
-                // Opaque (rule 6): the answers never sit on glass, and never on the card.
-                flashcardActions(word: word)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 8)
-                    .frame(maxWidth: .infinity)
-            }
+            cardPanel(word: word, detail: detail)
+                .padding(.horizontal, 16)
+                .padding(.top, 4)
+                .padding(.bottom, 12)
+            // Opaque (rule 6): the buttons never sit on glass, and never on the card.
+            meetActions(word: word)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+                .frame(maxWidth: .infinity)
         }
         // Every card starts at the top.
         .id(word.id)
@@ -213,8 +283,8 @@ struct ReviewView: View {
                         cardFront(word: word)
                             .frame(maxWidth: .infinity, minHeight: viewportHeight)
                             .contentShape(Rectangle())
-                            // VoiceOver uses "Anlamı göster" in the bar; the card is not a button
-                            // so that "Dinle" and "İpucu" inside it stay separate controls.
+                            // VoiceOver uses "Anlamını göster" in the bar; the card is not a
+                            // button so that "Dinle" inside it stays a separate control.
                             .onTapGesture {
                                 reveal(word)
                             }
@@ -232,11 +302,22 @@ struct ReviewView: View {
             }
             .coordinateSpace(.named("reviewCard"))
             .scrollBounceBehavior(.basedOnSize)
+            // While more text is below, its last lines fade out into the card itself: a mask, not
+            // a colored gradient, so it matches the card in every theme.
+            .mask {
+                VStack(spacing: 0) {
+                    Rectangle()
+                    if cardHasMore {
+                        LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                            .frame(height: 56)
+                    }
+                }
+            }
             // The back starts at its top, wherever the front was scrolled.
             .id(side)
         }
         // On the card's own bottom edge, over the faded-out end of the text: never on legible
-        // text, never on the answers.
+        // text, never on the buttons.
         .overlay(alignment: .bottom) {
             ZStack {
                 if cardHasMore {
@@ -251,70 +332,23 @@ struct ReviewView: View {
         .cardSurface(cornerRadius: Theme.Radius.wordCard)
     }
 
-    /// Accessibility sizes, revealed: the card at its natural height and the answers under it,
-    /// in one scroll.
-    private func flowingBack(word: WidgetWord, detail: CardDetail?) -> some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                cardBack(word: word, detail: detail)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .cardSurface(cornerRadius: Theme.Radius.wordCard)
-                    .accessibilityElement(children: .contain)
-                gradeAnswers(word: word, column: true)
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 4)
-            .padding(.bottom, 16)
-        }
-        .scrollBounceBehavior(.basedOnSize)
-    }
-
-    /// Mockup `.front`, for recall practice: the word large and centered with the band, "Dinle",
-    /// and a quiet nudge to remember the meaning before turning the card. "İpucu" shows the
-    /// example sentence (English only: its Turkish would give the answer away).
+    /// Mockup `.front`: the word large and centered with the band, "Dinle", and a quiet nudge to
+    /// guess the meaning before turning the card. A word already seen on the widget is a real
+    /// recall attempt: "Widget'ta gördün. Hatırlıyor musun?" (2.1, rule b).
     private func cardFront(word: WidgetWord) -> some View {
         VStack(spacing: 14) {
             WordHeadline(lemma: word.lemma, size: 46, maxSize: 60, alignment: .center)
                 .accessibilityFocused($focus, equals: .word)
             CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
-            VStack(spacing: 10) {
-                Text("Anlamını hatırlamaya çalış.")
-                    .font(.subheadline)
-                    .foregroundStyle(Theme.ink2)
-                    .fixedSize(horizontal: false, vertical: true)
-                clue(word: word)
-            }
-            .padding(.top, 14)
+            Text(model.wasSeenOnWidget(word) ? "Widget'ta gördün. Hatırlıyor musun?" : "Ne demek olabilir? Tahmin et.")
+                .font(.subheadline)
+                .foregroundStyle(Theme.ink2)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.top, 14)
         }
         .multilineTextAlignment(.center)
         .padding(.horizontal, 20)
         .padding(.vertical, 28)
-    }
-
-    @ViewBuilder
-    private func clue(word: WidgetWord) -> some View {
-        let sentence = word.exampleEN.trimmingCharacters(in: .whitespacesAndNewlines)
-        if sentence.isEmpty {
-            EmptyView()
-        } else if showsClue {
-            Text(ExampleMark.attributed(sentence, lemma: word.lemma, colorScheme: colorScheme))
-                .exampleStyle()
-                .lineSpacing(3)
-                .fixedSize(horizontal: false, vertical: true)
-                .englishVoice()
-                .transition(.opacity)
-        } else {
-            Button {
-                withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
-                    showsClue = true
-                }
-            } label: {
-                Label("İpucu", systemImage: "lightbulb")
-                    .labelStyle(.titleAndIcon)
-            }
-            .buttonStyle(ChipButtonStyle())
-            .accessibilityHint("Kelimenin geçtiği bir cümleyi gösterir")
-        }
     }
 
     /// Reading order for an A2 learner (mockup `cardInner`): the word, the Turkish meaning (large,
@@ -429,93 +463,472 @@ struct ReviewView: View {
         }
     }
 
-    /// The bottom bar: "Anlamı göster" (the screen's one filled button), then the grades (at
-    /// accessibility sizes the revealed card's grades scroll with it instead, see
-    /// `flashcardRound`).
+    /// The bottom bar of "Tanış": one filled button that never moves (the thumb stays put) and
+    /// turns from "Anlamını göster" into "Sonraki"; above it, on the front only, the plain
+    /// "Bunu zaten biliyorum", and the "Geri al" note after it was tapped.
+    private func meetActions(word: WidgetWord) -> some View {
+        VStack(spacing: 8) {
+            if let undo = knownUndoToShow {
+                KnownUndoNotice(message: KnownUndo.message) {
+                    undoSkip(undo)
+                }
+                .transition(.opacity)
+            }
+            if !isRevealed {
+                Button("Bunu zaten biliyorum") {
+                    skipKnown(word)
+                }
+                .buttonStyle(QuietButtonStyle())
+                .accessibilityHint("3 gün sonra bir kez sorulur")
+            }
+            Button {
+                if isRevealed {
+                    nextMeet()
+                } else {
+                    reveal(word)
+                }
+            } label: {
+                Text(isRevealed ? "Sonraki" : "Anlamını göster")
+            }
+            .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+        }
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: knownUndoToShow?.word.id)
+    }
+
+    // MARK: Hatırla
+
+    /// "Hatırla": "Şimdi hatırla" on top, the question ("Anlamını seç": the English word with its
+    /// sound; "İngilizcesini seç": the Turkish meaning) and four equal options, one per row (a
+    /// Turkish meaning can be long). After a tap only the right option ("Doğru cevap") and a wrong
+    /// pick ("Yanlış") stay, marked with icons and words, never color alone; the feedback below
+    /// says what the word means and, after a wrong pick, what the picked option means. "Devam"
+    /// then waits at the bottom: nothing moves on by itself (WCAG 2.2.1).
+    private func choiceRound(word: WidgetWord, question: ChoiceQuestion, attempt: Int, detail: CardDetail?) -> some View {
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    if let undo = knownUndoToShow {
+                        KnownUndoNotice(message: KnownUndo.message) {
+                            undoSkip(undo)
+                        }
+                    }
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Şimdi hatırla")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.ink2)
+                            .accessibilityAddTraits(.isHeader)
+                        if picked == nil {
+                            Text("Şimdi hatırlıyor musun, bakalım.")
+                                .font(.subheadline)
+                                .foregroundStyle(Theme.ink2)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                    choicePrompt(question)
+                    VStack(spacing: 10) {
+                        ForEach(shownOptions(question), id: \.self) { option in
+                            choiceOption(option, question: question)
+                                .transition(.opacity)
+                        }
+                    }
+                    if let picked = picked {
+                        choiceFeedback(word: word, question: question, picked: picked, attempt: attempt, detail: detail)
+                            .id(ReviewView.feedbackID)
+                            .transition(.opacity)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 4)
+                .padding(.bottom, 20)
+            }
+            .scrollBounceBehavior(.basedOnSize)
+            // Opaque (rule 6): "Devam" never sits on glass.
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                if let picked = picked {
+                    Button("Devam") {
+                        continueIntro(word: word, right: picked == question.answer)
+                    }
+                    .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
+                    .padding(.bottom, 8)
+                    .frame(maxWidth: .infinity)
+                    .background(Theme.bg)
+                    .transition(.opacity)
+                }
+            }
+            .onChange(of: picked) { _, newValue in
+                guard newValue != nil else {
+                    return
+                }
+                // Once the options have collapsed and "Devam" is laid out: the feedback must never
+                // stay hidden under the bar (README point 6).
+                let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.3)
+                Task { @MainActor in
+                    try? await Task.sleep(nanoseconds: 60_000_000)
+                    withAnimation(animation) {
+                        proxy.scrollTo(ReviewView.feedbackID, anchor: .bottom)
+                    }
+                }
+            }
+        }
+        // A light haptic on a right answer only; a wrong pick stays silent.
+        .sensoryFeedback(.success, trigger: picked) { oldValue, newValue in
+            oldValue == nil && newValue == question.answer
+        }
+        .id("\(word.id)-\(attempt)")
+    }
+
+    private static let feedbackID = "review.choice.feedback"
+
+    /// The question on a card: its kind as a heading, then the word or the meaning to answer.
+    private func choicePrompt(_ question: ChoiceQuestion) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(question.direction == .pickMeaning ? "Anlamını seç" : "İngilizcesini seç")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink2)
+                .accessibilityAddTraits(.isHeader)
+                .accessibilityFocused($focus, equals: .question)
+            switch question.direction {
+            case .pickMeaning:
+                WordHeadline(lemma: question.prompt, size: 36, maxSize: 52, alignment: .leading)
+                CardListenCapsule(text: question.prompt, accessibilityName: "Kelimeyi dinle")
+            case .pickEnglish:
+                // The meaning only: its sound would give the answer away.
+                Text(verbatim: question.prompt)
+                    .meaningStyle()
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel("Türkçesi: " + question.prompt)
+            }
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 18)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .cardSurface(cornerRadius: Theme.Radius.card)
+    }
+
+    /// Before the answer every option; after it the right one first, then a wrong pick.
+    private func shownOptions(_ question: ChoiceQuestion) -> [String] {
+        guard let picked = picked else {
+            return question.options
+        }
+        return picked == question.answer ? [question.answer] : [question.answer, picked]
+    }
+
+    /// A calm option (rule 2): `surface` with a `lineStrong` border, as tall as a quiz option
+    /// (56 pt). English options are serif with an English voice, Turkish ones SF.
+    private func choiceOption(_ option: String, question: ChoiceQuestion) -> some View {
+        let mark = choiceMark(for: option, question: question)
+        let isEnglish = question.direction == .pickEnglish
+        let rowLayout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(spacing: 12))
+        let shape = RoundedRectangle(cornerRadius: 28, style: .continuous)
+        return Button {
+            choose(option, question: question)
+        } label: {
+            rowLayout {
+                Group {
+                    if isEnglish {
+                        Text(verbatim: option)
+                            .font(Theme.Fonts.definition)
+                            .englishVoice()
+                    } else {
+                        Text(verbatim: option)
+                            .font(.title3.weight(.medium))
+                    }
+                }
+                .foregroundStyle(Theme.ink)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                if let mark = mark {
+                    HStack(spacing: 4) {
+                        Image(systemName: mark.symbol)
+                            .font(.body.weight(.semibold))
+                            .accessibilityHidden(true)
+                        Text(mark.text)
+                            .font(.footnote.weight(.bold))
+                    }
+                    .foregroundStyle(mark.color)
+                    .fixedSize()
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity, minHeight: 56)
+            .background(mark?.fill ?? Theme.surface, in: shape)
+            .overlay {
+                shape.strokeBorder(mark?.border ?? Theme.lineStrong, lineWidth: mark?.lineWidth ?? 1.5)
+            }
+            .contentShape(shape)
+        }
+        .buttonStyle(PressFadeButtonStyle())
+        // Not `.disabled`: that would dim the options exactly when the answer is shown.
+        .allowsHitTesting(picked == nil)
+        // After the answer the options only show the result.
+        .accessibilityRemoveTraits(picked == nil ? [] : .isButton)
+    }
+
+    private struct ChoiceMark {
+        let text: String
+        let symbol: String
+        let color: Color
+        let fill: Color
+        let border: Color
+        let lineWidth: CGFloat
+    }
+
+    /// The right option in `good` with a check; a wrong pick stays on paper with a cross in ink2:
+    /// the word and the icon say it, not a red box (rule 4).
+    private func choiceMark(for option: String, question: ChoiceQuestion) -> ChoiceMark? {
+        guard let picked = picked else {
+            return nil
+        }
+        if option == question.answer {
+            return ChoiceMark(
+                text: "Doğru cevap",
+                symbol: "checkmark.circle.fill",
+                color: Theme.good,
+                fill: Theme.goodTint,
+                border: Theme.good,
+                lineWidth: 2
+            )
+        }
+        if option == picked {
+            return ChoiceMark(
+                text: "Yanlış",
+                symbol: "xmark.circle",
+                color: Theme.ink2,
+                fill: Theme.surface,
+                border: Theme.lineStrong,
+                lineWidth: 1.5
+            )
+        }
+        return nil
+    }
+
+    /// About the task, never the person (rule 12): "borrow = ödünç almak"; after a wrong pick
+    /// "Doğrusu: …" and what the picked option means, then when the word comes back. After the
+    /// second wrong pick the card's example closes the word's round.
+    private func choiceFeedback(
+        word: WidgetWord,
+        question: ChoiceQuestion,
+        picked: String,
+        attempt: Int,
+        detail: CardDetail?
+    ) -> some View {
+        let isRight = picked == question.answer
+        let headword: Text = Text(verbatim: word.lemma).bold()
+        let meaning = word.glossTR ?? word.defShort
+        return VStack(alignment: .leading, spacing: 10) {
+            if isRight {
+                Text("Doğru: \(headword) = \(meaning)")
+                    .font(.body)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                Text("Doğrusu: \(headword) = \(meaning)")
+                    .font(.body)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                if let line = ReviewView.pickedLine(picked, question: question) {
+                    Text(verbatim: line)
+                        .font(.subheadline)
+                        .foregroundStyle(Theme.ink2)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Label(ReviewView.retryNote(attempt: attempt), systemImage: "arrow.uturn.forward")
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+                if attempt >= IntroRound.maxAttempts {
+                    exampleBlock(word: word, translation: detail?.examples.first?.tr)
+                }
+            }
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .flatCard(cornerRadius: Theme.Radius.card)
+    }
+
+    /// After a wrong pick: the first try comes back a few cards later, the second in the next round.
+    private static func retryNote(attempt: Int) -> String {
+        return attempt < IntroRound.maxAttempts
+            ? "Birazdan bir kez daha soracağız."
+            : "Bu kelimeyi bir sonraki turda yine soracağız."
+    }
+
+    /// "Senin seçtiğin: lend = ödünç vermek" (English option) or "Senin seçtiğin: ödünç vermek =
+    /// lend" (Turkish option); only the option when no card has it.
+    private static func pickedLine(_ picked: String, question: ChoiceQuestion) -> String? {
+        guard picked != question.answer else {
+            return nil
+        }
+        if let other = question.counterparts[picked] {
+            return "Senin seçtiğin: \(picked) = \(other)"
+        }
+        return "Senin seçtiğin: \(picked)"
+    }
+
+    private func choose(_ option: String, question: ChoiceQuestion) {
+        guard picked == nil else {
+            return
+        }
+        let isRight = option == question.answer
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+            picked = option
+        }
+        let english = question.direction == .pickEnglish ? question.answer : question.prompt
+        let turkish = question.direction == .pickEnglish ? question.prompt : question.answer
+        ReviewView.announce([
+            (isRight ? "Doğru. " : "Doğrusu: ", false),
+            (english, true),
+            (", Türkçesi: " + turkish, false),
+        ])
+    }
+
+    // MARK: Recall
+
+    /// "İngilizcesini hatırla" (boxes 4–5, refreshers, the "Biliyorum" check): the Turkish
+    /// meaning ("ödünç almak → ?"), the English word only after "Göster", large with its sound.
+    /// The question above the answers asks about the moment before the word was shown, when the
+    /// learner did not see it yet (Dunlosky and Rawson 2012).
+    private func recallRound(
+        word: WidgetWord,
+        detail: CardDetail?,
+        times: (notFound: String?, found: String?)?,
+        onAnswer: @escaping (Bool) -> Void
+    ) -> some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                if let undo = knownUndoToShow {
+                    KnownUndoNotice(message: KnownUndo.message) {
+                        undoSkip(undo)
+                    }
+                }
+                Text("İngilizcesini hatırla")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Theme.ink2)
+                    .accessibilityAddTraits(.isHeader)
+                    .accessibilityFocused($focus, equals: .question)
+                recallCard(word: word, detail: detail)
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 4)
+            .padding(.bottom, 20)
+        }
+        .scrollBounceBehavior(.basedOnSize)
+        // Opaque (rule 6): the answers never sit on glass, and never on the card.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            recallActions(word: word, times: times, onAnswer: onAnswer)
+                .padding(.horizontal, 16)
+                .padding(.top, 10)
+                .padding(.bottom, 8)
+                .frame(maxWidth: .infinity)
+                .background(Theme.bg)
+        }
+        .id(word.id)
+    }
+
+    private func recallCard(word: WidgetWord, detail: CardDetail?) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
+            if let gloss = word.glossTR {
+                Text("\(Text(verbatim: gloss)) \(Text(verbatim: "→ ?").foregroundStyle(Theme.ink3))")
+                    .font(Theme.Fonts.meaning)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel("Türkçesi: \(gloss). İngilizcesi ne?")
+            } else {
+                // A seed word without a Turkish meaning: its English definition is the clue.
+                Text(verbatim: word.defShort)
+                    .definitionStyle()
+                    .fixedSize(horizontal: false, vertical: true)
+                    .englishVoice()
+            }
+            if isRevealed {
+                Rectangle()
+                    .fill(Theme.line)
+                    .frame(height: 1)
+                WordHeadline(lemma: word.lemma, size: 40, maxSize: 56, alignment: .leading)
+                    .accessibilityFocused($focus, equals: .word)
+                CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+                exampleBlock(word: word, translation: detail?.examples.first?.tr)
+            } else {
+                Text("İngilizcesini aklından bulmaya çalış. Sonra Göster'e dokun.")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 22)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .cardSurface(cornerRadius: Theme.Radius.wordCard)
+    }
+
+    /// "Göster" (the screen's one filled button), then the question and two equal answers,
+    /// failure first: no filled default (1b), as tall as the quiz options. Each says when the
+    /// word comes back, from the same schedule the answer will write. At accessibility sizes
+    /// one answer per row.
     @ViewBuilder
-    private func flashcardActions(word: WidgetWord) -> some View {
+    private func recallActions(
+        word: WidgetWord,
+        times: (notFound: String?, found: String?)?,
+        onAnswer: @escaping (Bool) -> Void
+    ) -> some View {
         if isRevealed {
-            gradeAnswers(word: word, column: false)
+            let rowLayout = dynamicTypeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(spacing: 8))
+                : AnyLayout(HStackLayout(spacing: 8))
+            VStack(spacing: 8) {
+                Text("Göstermeden önce aklına geldi mi?")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Theme.ink2)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityAddTraits(.isHeader)
+                rowLayout {
+                    recallButton(found: false, when: times?.notFound, onAnswer: onAnswer)
+                    recallButton(found: true, when: times?.found, onAnswer: onAnswer)
+                }
+                .fixedSize(horizontal: false, vertical: true)
+            }
         } else {
-            Button("Anlamı göster") {
-                reveal(word)
+            Button("Göster") {
+                withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
+                    isRevealed = true
+                }
+                moveFocus(to: .word)
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
         }
     }
 
-    /// The question and the four answers: in the bar a 2 x 2 grid; with `column` (accessibility
-    /// sizes, under the card) one full-width answer per row, where "Bilemedim" keeps to one line.
-    private func gradeAnswers(word: WidgetWord, column: Bool) -> some View {
-        VStack(spacing: 8) {
-            Text("Bu kelimeyi ne kadar bildin?")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Theme.ink2)
-                .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
-                .accessibilityAddTraits(.isHeader)
-            if column {
-                gradeColumn(word: word)
-            } else {
-                gradeGrid(word: word)
-            }
-        }
-    }
-
-    /// The four answers stacked, worst to best (accessibility sizes): half an iPhone SE's width
-    /// would break "Bilemedim" in the middle of the word.
-    private func gradeColumn(word: WidgetWord) -> some View {
-        let now = Date()
-        return VStack(spacing: 8) {
-            gradeButton(.again, word: word, now: now)
-                .fixedSize(horizontal: false, vertical: true)
-            gradeButton(.hard, word: word, now: now)
-                .fixedSize(horizontal: false, vertical: true)
-            gradeButton(.good, word: word, now: now)
-                .fixedSize(horizontal: false, vertical: true)
-            gradeButton(.easy, word: word, now: now)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-    }
-
-    /// Four answers in two rows of two (mockup `.grades`) in the bottom bar: four across would
-    /// not fit an iPhone SE at larger text sizes (at accessibility sizes `gradeColumn` under the
-    /// card). Reading order is worst to best; "Bildim" is the one filled button.
-    /// Each says when the word comes back, from the same schedule the answer will write (README
-    /// point 8): for a new word "10 dakika sonra", "12 saat sonra", "yarın", "2 gün sonra".
-    private func gradeGrid(word: WidgetWord) -> some View {
-        let now = Date()
-        return VStack(spacing: 8) {
-            HStack(spacing: 8) {
-                gradeButton(.again, word: word, now: now)
-                gradeButton(.hard, word: word, now: now)
-            }
-            .fixedSize(horizontal: false, vertical: true)
-            HStack(spacing: 8) {
-                gradeButton(.good, word: word, now: now)
-                gradeButton(.easy, word: word, now: now)
-            }
-            .fixedSize(horizontal: false, vertical: true)
-        }
-    }
-
-    private func gradeButton(_ grade: ReviewGrade, word: WidgetWord, now: Date) -> some View {
-        let info = GradeInfo(grade)
-        let when = model.dueDate(ifAnswering: grade, for: word, now: now)
-            .map { ReviewView.returnText(until: $0, from: now) }
-        let isDefault = grade == .good
+    private func recallButton(found: Bool, when: String?, onAnswer: @escaping (Bool) -> Void) -> some View {
+        let info = AnswerLabel(found: found)
         return Button {
-            // A quiz card has its own feedback (`QuizCardView`); only the flashcard ticks.
             answerTick += 1
-            answer(grade, word: word)
+            onAnswer(found)
         } label: {
-            GradeLabel(info: info, when: when, isDefault: isDefault)
+            GradeLabel(title: info.title, symbol: info.symbol, when: when)
         }
-        .buttonStyle(GradeButtonStyle(isDefault: isDefault))
+        .buttonStyle(GradeButtonStyle())
         .accessibilityLabel(info.title)
         // A value, not a hint: hints come late and many people turn them off (audit V9).
-        // "Bildim, yarın yeniden gelir, düğme".
         .accessibilityValue(when.map { "\($0) yeniden gelir" } ?? "")
+    }
+
+    /// When the word comes back after "Bulamadım" and "Buldum". A word waiting for its
+    /// "Biliyorum" check goes back to "Tanış" instead of a date.
+    private func recallReturnTimes(for word: WidgetWord) -> (notFound: String?, found: String?) {
+        let now = Date()
+        let awaitsCheck = model.progress[word.id]?.awaitsKnownCheck ?? false
+        let notFound = awaitsCheck
+            ? "yeniden tanışacaksın"
+            : model.dueDate(ifAnswering: .again, for: word, now: now).map { ReviewView.againText(until: $0, from: now) }
+        let found = model.dueDate(ifAnswering: .good, for: word, now: now).map { ReviewView.returnText(until: $0, from: now) }
+        return (notFound, found)
     }
 
     // MARK: Quiz
@@ -531,13 +944,18 @@ struct ReviewView: View {
         return meanings
     }
 
-    /// When the word comes back after each quiz outcome, from the schedule.
+    /// When the word comes back after each quiz outcome, from the schedule. A wrong answer
+    /// comes back in the next round: "Bu kelime bir sonraki turda yine gelir." (a time in minutes
+    /// would be a promise nothing keeps, 2.3).
     private func quizReturnTimes(for word: WidgetWord) -> [QuizOutcome: String] {
         let now = Date()
         var times: [QuizOutcome: String] = [:]
         for outcome in [QuizOutcome.wrong, .hard, .right, .easy] {
-            if let due = model.dueDate(ifAnswering: ReviewView.grade(for: outcome), for: word, now: now) {
-                times[outcome] = ReviewView.returnText(until: due, from: now)
+            let grade = ReviewView.grade(for: outcome)
+            if let due = model.dueDate(ifAnswering: grade, for: word, now: now) {
+                times[outcome] = grade == .again
+                    ? ReviewView.againText(until: due, from: now)
+                    : ReviewView.returnText(until: due, from: now)
             }
         }
         return times
@@ -558,8 +976,8 @@ struct ReviewView: View {
 
     // MARK: Round flow
 
-    /// Turns the card: a short fade (none with Reduce Motion), no flip and no haptic. VoiceOver
-    /// goes to the Turkish meaning.
+    /// Turns a "Tanış" card: a short fade (none with Reduce Motion), no flip and no haptic.
+    /// VoiceOver goes to the Turkish meaning.
     private func reveal(_ word: WidgetWord) {
         cardHasMore = false
         withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) {
@@ -578,56 +996,173 @@ struct ReviewView: View {
         }
     }
 
-    private func answer(_ grade: ReviewGrade, word: WidgetWord) {
-        // Same test as `AppModel.recordReview` uses to count a new word.
-        let wasNew = (model.progress[word.id]?.state ?? .new) == .new
-        let updated = model.recordReview(word, grade: grade)
-        answers.append(RoundAnswer(word: word, grade: grade, dueAt: updated.dueAt, wasNew: wasNew))
-        if wasNew {
-            noteNewWordToday(word.id)
-        }
+    private func resetCard() {
         isRevealed = false
-        showsClue = false
+        picked = nil
         // The next card measures itself again.
         cardHasMore = false
+    }
+
+    /// A due word answered (quiz or recall): saved at once, then the next card.
+    private func answerDue(word: WidgetWord, grade: ReviewGrade, label: AnswerLabel) {
+        let wasNew = (model.progress[word.id]?.state ?? .new) == .new
+        let updated = model.recordReview(word, grade: grade)
+        answers.append(RoundAnswer(word: word, grade: grade, dueAt: updated.dueAt, wasNew: wasNew, label: label))
+        nextDueCard()
+    }
+
+    private func answerRecall(word: WidgetWord, found: Bool) {
+        let updated = model.recordRecall(word, found: found)
+        var answer = RoundAnswer(
+            word: word,
+            grade: found ? .good : .again,
+            dueAt: updated.dueAt,
+            wasNew: false,
+            label: AnswerLabel(found: found)
+        )
+        answer.returnsToIntro = updated.returnsToIntro
+        answers.append(answer)
+        if updated.returnsToIntro {
+            ReviewView.announce([("Bu kelime öğrenme listene döndü.", false)])
+        }
+        nextDueCard()
+    }
+
+    private func nextDueCard() {
+        resetCard()
         if let session = session, index + 1 < session.words.count {
             index += 1
-            focusCard(at: index, in: session)
+            focusCurrentCard()
         } else {
             finishRound()
         }
     }
 
-    /// A flashcard starts at its word; a quiz card at the round's heading.
-    private func focusCard(at position: Int, in session: ReviewSession) {
-        guard session.words.indices.contains(position) else {
+    /// "Sonraki" on a "Tanış" card.
+    private func nextMeet() {
+        intro?.next()
+        afterIntroStep()
+    }
+
+    /// "Bunu zaten biliyorum": the word leaves the round without a question and is checked once
+    /// in 3 days; "Geri al" can take it back (longer with VoiceOver, so it can be reached).
+    private func skipKnown(_ word: WidgetWord) {
+        let window = UIAccessibility.isVoiceOverRunning ? 15 : KnownUndo.window
+        model.markKnown(word, undoWindow: window)
+        skippedWordID = word.id
+        intro?.skipCurrent()
+        // Only when "Geri al" is there (a word known already, e.g. by a widget tap, has none).
+        if model.knownUndo?.word.id == word.id {
+            ReviewView.announce([(KnownUndo.message, false)])
+        }
+        afterIntroStep()
+    }
+
+    /// The "Geri al" note of this tab: only for the word skipped here, while the model holds it.
+    private var knownUndoToShow: KnownUndo? {
+        guard let undo = model.knownUndo, undo.word.id == skippedWordID else {
+            return nil
+        }
+        return undo
+    }
+
+    /// "Geri al": the word is restored exactly; in a running round its "Tanış" card comes back,
+    /// now when the card on screen was not touched yet, otherwise right after it.
+    private func undoSkip(_ undo: KnownUndo) {
+        model.undoKnown(undo.word)
+        skippedWordID = nil
+        guard session?.kind == .new, intro?.skipped.contains(undo.word.id) == true else {
             return
         }
-        let detail = model.detail(for: session.words[position])
-        moveFocus(to: ReviewView.quiz(in: session, detail: detail) != nil ? .counter : .word)
+        let showNow = !isRevealed && picked == nil
+        intro?.restore(undo.word.id, showNow: showNow)
+        if showNow {
+            resetCard()
+            focusCurrentCard()
+        }
+    }
+
+    /// "Devam" on a "Hatırla" question (or an answer on its recall fallback). A decided word is
+    /// saved at once; a first wrong answer comes back a few cards later.
+    private func continueIntro(word: WidgetWord, right: Bool) {
+        if let result = intro?.answer(right: right) {
+            recordIntro(result, word: word)
+        }
+        afterIntroStep()
+    }
+
+    private func recordIntro(_ result: IntroRound.Result, word: WidgetWord) {
+        let updated = model.recordReview(word, grade: result.grade)
+        answers.append(RoundAnswer(
+            word: word,
+            grade: result.grade,
+            dueAt: updated.dueAt,
+            wasNew: true,
+            label: AnswerLabel(result)
+        ))
+        noteNewWordToday(word.id)
+    }
+
+    private func afterIntroStep() {
+        resetCard()
+        if intro?.isFinished ?? true {
+            finishRound()
+        } else {
+            focusCurrentCard()
+        }
+    }
+
+    /// A "Tanış" card starts at its word; a question at its heading.
+    private func focusCurrentCard() {
+        guard let session = session, let card = currentCard(in: session) else {
+            return
+        }
+        switch card {
+        case .meet:
+            moveFocus(to: .word)
+        case .cloze:
+            moveFocus(to: .counter)
+        case .recall, .choice:
+            moveFocus(to: .question)
+        }
     }
 
     private func startRound(_ next: ReviewSession) {
         session = next
         index = 0
-        isRevealed = false
-        showsClue = false
-        cardHasMore = false
+        intro = next.kind == .new
+            ? IntroRound(wordIDs: next.words.map { $0.id }, seed: Int(Date().timeIntervalSince1970))
+            : nil
+        resetCard()
         answers = []
         summary = nil
         // "Başla" is gone with the start screen.
-        focusCard(at: 0, in: next)
+        focusCurrentCard()
     }
 
-    /// Ends the round (all cards done, or "Bitir"): the widget queue is rebuilt from the new
-    /// progress, and the summary follows when anything was answered.
+    /// Ends the round (all cards done, or "Bitir"): every answer is already saved; a "Hatırla"
+    /// pick still waiting for "Devam" counts, and a word whose second try has not come yet counts
+    /// as missed. The widget queue is rebuilt from the new progress, and the summary follows when
+    /// anything was answered.
     private func finishRound() {
+        if let running = session, running.kind == .new {
+            if let pick = picked, let card = currentCard(in: running), case let .choice(word, attempt, direction) = card,
+               let question = model.introQuestion(for: word, direction: direction, attempt: attempt) {
+                if let result = intro?.answer(right: pick == question.answer) {
+                    recordIntro(result, word: word)
+                }
+            }
+            for id in intro?.awaitingRetry ?? [] {
+                if let word = running.words.first(where: { $0.id == id }) {
+                    recordIntro(.missed, word: word)
+                }
+            }
+        }
         summary = answers.isEmpty ? nil : answers
         session = nil
+        intro = nil
         index = 0
-        isRevealed = false
-        showsClue = false
-        cardHasMore = false
+        resetCard()
         answers = []
         model.finishReviewSession()
         // "Bitir" is gone with the round: the summary, or the start screen when nothing was
@@ -637,20 +1172,36 @@ struct ReviewView: View {
 
     // MARK: Summary
 
-    /// Mockup `reviewSummary`, calm: what was studied, word by word with its meaning, when each
-    /// word comes back and when the next review is. No score, no streak; "Tamam" stays in reach.
+    /// Mockup `reviewSummary`, calm: what was studied, which words come back in the next round,
+    /// word by word with its meaning and when each word comes back, and when the next review is.
+    /// No score, no streak; "Tamam" stays in reach, "Bir tur daha" above it when more is waiting.
     private func summaryScreen(_ answers: [RoundAnswer]) -> some View {
         let now = Date()
         let next = model.nextReviewDate(after: now)
         let hasHard = answers.contains { $0.grade == .hard }
+        let another = model.nextReviewSession()
         return ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                Text(verbatim: ReviewView.summaryLine(answers))
-                    .font(.body)
-                    .foregroundStyle(Theme.ink)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .padding(.horizontal, 4)
-                    .accessibilityFocused($focus, equals: .summary)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(verbatim: ReviewView.summaryLine(answers))
+                        .font(.body)
+                        .foregroundStyle(Theme.ink)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityFocused($focus, equals: .summary)
+                    if let again = ReviewView.againLine(answers) {
+                        Text(verbatim: again)
+                            .font(.body)
+                            .foregroundStyle(Theme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    if let returned = ReviewView.returnedLine(answers) {
+                        Text(verbatim: returned)
+                            .font(.body)
+                            .foregroundStyle(Theme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .padding(.horizontal, 4)
                 if let next = next {
                     NoteRow(symbol: "clock", text: "Sıradaki tekrar: " + ReviewView.dayAndTime(next, now: now))
                         .padding(.horizontal, 4)
@@ -665,10 +1216,7 @@ struct ReviewView: View {
                         if offset > 0 {
                             RowDivider()
                         }
-                        SummaryRow(
-                            answer: answer,
-                            when: answer.dueAt.map { ReviewView.returnText(until: $0, from: now) }
-                        )
+                        SummaryRow(answer: answer, when: summaryWhen(answer, now: now))
                     }
                 }
                 .padding(.horizontal, 16)
@@ -688,11 +1236,28 @@ struct ReviewView: View {
         }
         .scrollBounceBehavior(.basedOnSize)
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            Button("Tamam") {
-                summary = nil
-                moveFocus(to: .start)
+            VStack(spacing: 10) {
+                if let undo = knownUndoToShow {
+                    KnownUndoNotice(message: KnownUndo.message) {
+                        undoSkip(undo)
+                    }
+                }
+                if let another = another {
+                    Button {
+                        startRound(another)
+                    } label: {
+                        Text(another.kind == .new
+                             ? "Bir tur daha (\(another.words.count) kelime)"
+                             : "Bir tur daha (\(another.words.count) kart)")
+                    }
+                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 54, tonal: true))
+                }
+                Button("Tamam") {
+                    summary = nil
+                    moveFocus(to: .start)
+                }
+                .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
             }
-            .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
             .padding(.horizontal, 16)
             .padding(.top, 8)
             .padding(.bottom, 12)
@@ -701,17 +1266,44 @@ struct ReviewView: View {
         }
     }
 
-    /// "10 yeni kelimeyle tanıştın." / "8 kelimeyi tekrar ettin." / "5 kelime çalıştın."
+    private func summaryWhen(_ answer: RoundAnswer, now: Date) -> String? {
+        if answer.returnsToIntro {
+            return "yeniden tanışacaksın"
+        }
+        guard let due = answer.dueAt else {
+            return nil
+        }
+        return answer.grade == .again
+            ? ReviewView.againText(until: due, from: now)
+            : ReviewView.returnText(until: due, from: now)
+    }
+
+    /// "10 kelime çalıştın, 7 tanesini bildin." (no suffix after the number, README point 13; no
+    /// wrong count, no percentage, 1b). Without a known word only the first half.
     private static func summaryLine(_ answers: [RoundAnswer]) -> String {
         let count = answers.count
-        let newCount = answers.filter { $0.wasNew }.count
-        if newCount == count {
-            return "\(count) yeni kelimeyle tanıştın."
+        let known = answers.filter { $0.grade != .again }.count
+        if known == 0 {
+            return "\(count) kelime çalıştın."
         }
-        if newCount == 0 {
-            return "\(count) kelimeyi tekrar ettin."
-        }
-        return "\(count) kelime çalıştın."
+        return "\(count) kelime çalıştın, \(known) tanesini bildin."
+    }
+
+    /// "Bir sonraki turda yine soracağız: borrow, date." (2.5)
+    private static func againLine(_ answers: [RoundAnswer]) -> String? {
+        let words = lemmas(answers.filter { $0.grade == .again && !$0.returnsToIntro })
+        return words.isEmpty ? nil : "Bir sonraki turda yine soracağız: " + words + "."
+    }
+
+    /// "Öğrenme listene döndü: borrow." A failed "Biliyorum" check (2.2).
+    private static func returnedLine(_ answers: [RoundAnswer]) -> String? {
+        let words = lemmas(answers.filter { $0.returnsToIntro })
+        return words.isEmpty ? nil : "Öğrenme listene döndü: " + words + "."
+    }
+
+    private static func lemmas(_ answers: [RoundAnswer]) -> String {
+        var seen = Set<Int>()
+        return answers.filter { seen.insert($0.word.id).inserted }.map { $0.word.lemma }.joined(separator: ", ")
     }
 
     // MARK: Start screen
@@ -746,11 +1338,21 @@ struct ReviewView: View {
                 .frame(maxWidth: .infinity)
             }
             .scrollBounceBehavior(.basedOnSize)
+            // A "Bunu zaten biliyorum" on the round's last card can still be taken back here.
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                if let undo = knownUndoToShow {
+                    KnownUndoNotice(message: KnownUndo.message) {
+                        undoSkip(undo)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 10)
+                }
+            }
         }
     }
 
     /// Mockup `.hero`. Due words: how many wait. New words: the ring of today's goal (only here,
-    /// README "Tekrar").
+    /// README "Tekrar"), what is left of it, and the round of at most five.
     private func offerCard(_ offer: ReviewSession) -> some View {
         let isDue = offer.kind == .due
         return VStack(spacing: 12) {
@@ -781,7 +1383,7 @@ struct ReviewView: View {
                 .accessibilityFocused($focus, equals: .start)
             Text(isDue
                  ? "Önce öğrendiğin kelimeleri pekiştirelim."
-                 : "Kelimeye bak, anlamını hatırlamaya çalış. Sonra ne kadar bildiğini seç.")
+                 : "Önce tanış, sonra hemen bir kez hatırla.")
                 .font(.callout)
                 .foregroundStyle(Theme.ink2)
                 .multilineTextAlignment(.center)
@@ -790,7 +1392,7 @@ struct ReviewView: View {
             Button {
                 startRound(offer)
             } label: {
-                Text("Başla (\(offer.words.count) kart)")
+                Text(isDue ? "Başla (\(offer.words.count) kart)" : "Başla (\(offer.words.count) kelime)")
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
             .padding(.top, 6)
@@ -961,6 +1563,34 @@ struct ReviewView: View {
 
     // MARK: Text
 
+    /// VoiceOver hears `pieces` after the tap's own speech, so it is not cut off; the English
+    /// pieces in an English voice (WCAG 3.1.2).
+    private static func announce(_ pieces: [(text: String, english: Bool)]) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 300_000_000)
+            let text = NSMutableAttributedString()
+            for piece in pieces {
+                text.append(NSAttributedString(
+                    string: piece.text,
+                    attributes: [.accessibilitySpeechLanguage: piece.english ? "en-US" : "tr-TR"]
+                ))
+            }
+            text.addAttribute(
+                .accessibilitySpeechQueueAnnouncement,
+                value: true,
+                range: NSRange(location: 0, length: text.length)
+            )
+            UIAccessibility.post(notification: .announcement, argument: text)
+        }
+    }
+
+    /// When a wrong answer comes back: within the hour it is "bir sonraki turda" (the app sends
+    /// one reminder a day and a round ends after its cards; a time in minutes is a promise nothing
+    /// keeps, 2.3), otherwise the time as in `returnText`.
+    private static func againText(until due: Date, from now: Date) -> String {
+        return due.timeIntervalSince(now) <= 3600 ? "bir sonraki turda" : returnText(until: due, from: now)
+    }
+
     /// When a word comes back, in words (README "Tekrar"): "10 dakika sonra", "12 saat sonra",
     /// "yarın", "2 gün sonra", "1 ay sonra". Under a day it is counted in hours; after that in
     /// calendar days, so a word due tomorrow evening is "yarın".
@@ -1030,7 +1660,9 @@ struct ReviewView: View {
 private enum ReviewFocus: Hashable {
     /// "Kart 3, toplam 10": the start of a quiz card.
     case counter
-    /// The English word on a flashcard's front.
+    /// The heading of a "Hatırla" or recall card: "Anlamını seç", "İngilizcesini hatırla".
+    case question
+    /// The English word on a "Tanış" card's front, or on a recall card after "Göster".
     case word
     /// The Turkish meaning on the back.
     case meaning
@@ -1042,21 +1674,12 @@ private enum ReviewFocus: Hashable {
     case start
 }
 
-/// One answer of a round, for the summary.
-private struct RoundAnswer {
-    let word: WidgetWord
-    let grade: ReviewGrade
-    /// When the word comes back (`WordProgress.dueAt` right after the answer).
-    let dueAt: Date?
-    /// The word had never been reviewed before this answer.
-    let wasNew: Bool
-}
-
-/// Title and SF Symbol of an answer, worst to best.
-private struct GradeInfo {
+/// How an answer is named in the summary, with its icon, worst to best.
+private struct AnswerLabel {
     let title: String
     let symbol: String
 
+    /// A quiz answer.
     init(_ grade: ReviewGrade) {
         switch grade {
         case .again:
@@ -1073,6 +1696,41 @@ private struct GradeInfo {
             symbol = "hare"
         }
     }
+
+    /// The recall screen.
+    init(found: Bool) {
+        title = found ? "Buldum" : "Bulamadım"
+        symbol = found ? "checkmark" : "xmark"
+    }
+
+    /// "Hatırla".
+    init(_ result: IntroRound.Result) {
+        switch result {
+        case .firstTry:
+            title = "Bildim"
+            symbol = "checkmark"
+        case .secondTry:
+            // Right after a wrong answer: "Zor" (2.3), back in 12 hours.
+            title = "Zor"
+            symbol = "tortoise"
+        case .missed:
+            title = "Bilemedim"
+            symbol = "xmark"
+        }
+    }
+}
+
+/// One answer of a round, for the summary.
+private struct RoundAnswer {
+    let word: WidgetWord
+    let grade: ReviewGrade
+    /// When the word comes back (`WordProgress.dueAt` right after the answer).
+    let dueAt: Date?
+    /// The word had never been reviewed before this answer.
+    let wasNew: Bool
+    let label: AnswerLabel
+    /// A failed "Biliyorum" check sent the word back to "Tanış".
+    var returnsToIntro = false
 }
 
 /// The English word with the phosphor band (rule 1): one line at `size`; a long phrase that does
@@ -1132,9 +1790,9 @@ private struct WordHeadline: View {
     }
 }
 
-/// "Devamı" on the card's bottom edge (mockup `.wcard.scrolls.more`): the text fades into the
-/// card's `surface` and the cue sits on the faded part, so it never covers a legible line. Not a
-/// capsule, since it is not a control (rule 2); visual only, VoiceOver reads on by itself.
+/// "Devamı" on the card's bottom edge (mockup `.wcard.scrolls.more`): the text fades out under it
+/// (`cardPanel`'s mask) and the cue sits on the faded part, so it never covers a legible line. Not
+/// a capsule, since it is not a control (rule 2); visual only, VoiceOver reads on by itself.
 private struct MoreBelowCue: View {
     var body: some View {
         HStack(spacing: 4) {
@@ -1147,16 +1805,6 @@ private struct MoreBelowCue: View {
         .padding(.top, 26)
         .padding(.bottom, 9)
         .frame(maxWidth: .infinity)
-        .background {
-            LinearGradient(
-                stops: [
-                    .init(color: Theme.surface.opacity(0), location: 0),
-                    .init(color: Theme.surface, location: 0.5)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        }
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
@@ -1193,22 +1841,22 @@ private struct RoundProgressBar: View {
     }
 }
 
-/// The text of an answer button (mockup `.grade`): icon, grade and when the word comes back. The
-/// time is legible but secondary: regular weight, footnote, `ink2` (and a softer `onPrimary` on
-/// the filled answer), and it stays at every text size (audit D2). The icon goes as soon as
-/// title and time no longer fit beside it, so "Bilemedim" never breaks mid-word (audit D8).
+/// The text of an answer button (mockup `.grade`): icon, answer and when the word comes back.
+/// The time is legible but secondary: regular weight, footnote, `ink2`, and it stays at every
+/// text size (audit D2). The icon goes as soon as title and time no longer fit beside it, so
+/// "Bulamadım" never breaks mid-word (audit D8).
 private struct GradeLabel: View {
-    let info: GradeInfo
+    let title: String
+    let symbol: String
     let when: String?
-    let isDefault: Bool
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
             HStack(spacing: 8) {
-                Image(systemName: info.symbol)
+                Image(systemName: symbol)
                     .font(.body.weight(.medium))
                     .frame(width: 22)
-                    .foregroundStyle(secondary)
+                    .foregroundStyle(Theme.ink2)
                     .accessibilityHidden(true)
                 texts
             }
@@ -1218,41 +1866,33 @@ private struct GradeLabel: View {
 
     private var texts: some View {
         VStack(alignment: .leading, spacing: 1) {
-            Text(verbatim: info.title)
+            Text(verbatim: title)
                 .font(.body.weight(.semibold))
-                // Even without the icon: shrink a little rather than break "Bilemedim".
+                // Even without the icon: shrink a little rather than break "Bulamadım".
                 .lineLimit(1)
                 .minimumScaleFactor(0.85)
             if let when = when {
                 Text(verbatim: when)
                     .font(.footnote)
                     .monospacedDigit()
-                    .foregroundStyle(secondary)
+                    .foregroundStyle(Theme.ink2)
             }
         }
         .multilineTextAlignment(.leading)
     }
-
-    private var secondary: Color {
-        return isDefault ? Theme.onPrimary.opacity(0.8) : Theme.ink2
-    }
 }
 
-/// Answer button (mockup `.grade`): a 56 pt capsule in `surface2` (rule 2: what can be tapped is
-/// a capsule); the default answer is the screen's filled button (`primary`, glowing at night).
-/// Opaque, never glass (rule 6).
+/// Answer button (mockup `.grade`): a 56 pt capsule in `surface2` with a `lineStrong` edge, like
+/// the theme's other tonal capsules (rule 2: what can be tapped is a capsule). "Bulamadım" and
+/// "Buldum" are equal: no filled default (1b). Opaque, never glass (rule 6).
 private struct GradeButtonStyle: ButtonStyle {
-    let isDefault: Bool
-
     func makeBody(configuration: Configuration) -> some View {
-        GradeButtonBody(configuration: configuration, isDefault: isDefault)
+        GradeButtonBody(configuration: configuration)
     }
 }
 
 private struct GradeButtonBody: View {
     let configuration: ButtonStyleConfiguration
-    let isDefault: Bool
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
@@ -1260,29 +1900,92 @@ private struct GradeButtonBody: View {
     var body: some View {
         let shape = Capsule()
         configuration.label
-            .foregroundStyle(isDefault ? Theme.onPrimary : Theme.ink)
+            .foregroundStyle(Theme.ink)
             // The icon sits at the round end's middle, where the curve leaves the most room; the
             // text keeps the half-width tile's room for "10 dakika sonra" on an iPhone SE.
             .padding(.leading, 16)
             .padding(.trailing, 12)
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity, minHeight: 56, maxHeight: .infinity, alignment: .leading)
-            .background {
-                shape
-                    .fill(isDefault ? Theme.primary : Theme.surface2)
-                    .shadow(color: isDefault && colorScheme == .dark ? Theme.primaryGlow : .clear, radius: 10)
-            }
-            // `surface2` barely stands out from the page; with Increase Contrast or Button Shapes
-            // the capsule gets an edge (audit K1).
+            .background(Theme.surface2, in: shape)
+            // `surface2` barely stands out from the page: always an edge, stronger with Increase
+            // Contrast or Button Shapes (audit K1).
             .overlay {
-                if !isDefault && (contrast == .increased || showsButtonShapes) {
-                    shape.strokeBorder(Theme.lineStrong, lineWidth: 1.5)
-                }
+                shape.strokeBorder(Theme.lineStrong, lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1)
             }
             .contentShape(shape)
             .opacity(configuration.isPressed ? 0.85 : 1)
             .scaleEffect(configuration.isPressed && !reduceMotion ? 0.985 : 1)
             .animation(reduceMotion ? nil : .easeOut(duration: 0.12), value: configuration.isPressed)
+    }
+}
+
+/// "Bunu zaten biliyorum" (2.3): a plain text button, ink, a 44 pt target; with Button Shapes an
+/// underline says it can be tapped.
+private struct QuietButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        QuietButtonBody(configuration: configuration)
+    }
+}
+
+private struct QuietButtonBody: View {
+    let configuration: ButtonStyleConfiguration
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
+
+    var body: some View {
+        configuration.label
+            .font(.body.weight(.semibold))
+            .foregroundStyle(Theme.ink)
+            .underline(showsButtonShapes)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 12)
+            .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
+            .contentShape(Rectangle())
+            .opacity(configuration.isPressed ? 0.55 : 1)
+    }
+}
+
+/// A "Hatırla" option only fades while pressed; its look is drawn by the label.
+private struct PressFadeButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.85 : 1)
+    }
+}
+
+/// Mockup `.toast`: an ink bar with "Tamam. 3 gün sonra bir kez soracağız." and "Geri al", where
+/// "Bunu zaten biliyorum" was tapped. At accessibility text sizes "Geri al" goes under the
+/// message.
+private struct KnownUndoNotice: View {
+    let message: String
+    let undo: () -> Void
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    var body: some View {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+            : AnyLayout(HStackLayout(spacing: 10))
+        layout {
+            Text(verbatim: message)
+                .font(.subheadline.weight(.semibold))
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Button(action: undo) {
+                Text("Geri al")
+                    .font(.subheadline.weight(.bold))
+                    .padding(.horizontal, 14)
+                    .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
+                    .background(Color(white: 0.5, opacity: 0.25), in: Capsule())
+                    .contentShape(Capsule())
+            }
+            .buttonStyle(.plain)
+        }
+        .foregroundStyle(Theme.bg)
+        .padding(.leading, 16)
+        .padding(.trailing, 8)
+        .padding(.vertical, 8)
+        .background(Theme.ink, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -1316,6 +2019,7 @@ private struct CountBadge: View {
 }
 
 /// Today's new-word goal (mockup `.pring`): a `surface3` track and a `tint` arc (never yellow).
+/// Only words recalled in "Hatırla" count (2.3).
 private struct GoalRing: View {
     let done: Int
     let goal: Int
@@ -1424,7 +2128,7 @@ private struct RowDivider: View {
 }
 
 /// A word of the round summary (mockup `.sumlist .si`): the word and its meaning, when it comes
-/// back and the answer given. The answer is plain text with its icon, not a capsule (rule 2:
+/// back and how it was answered. The answer is plain text with its icon, not a capsule (rule 2:
 /// capsules are for what can be tapped). Stacked at accessibility sizes.
 private struct SummaryRow: View {
     let answer: RoundAnswer
@@ -1432,7 +2136,6 @@ private struct SummaryRow: View {
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        let info = GradeInfo(answer.grade)
         let isLarge = dynamicTypeSize.isAccessibilitySize
         let rowLayout = isLarge
             ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
@@ -1460,10 +2163,10 @@ private struct SummaryRow: View {
                         .foregroundStyle(Theme.ink)
                 }
                 HStack(spacing: 4) {
-                    Image(systemName: info.symbol)
+                    Image(systemName: answer.label.symbol)
                         .font(.caption2.weight(.semibold))
                         .accessibilityHidden(true)
-                    Text(verbatim: info.title)
+                    Text(verbatim: answer.label.title)
                 }
                 .font(.footnote)
                 .foregroundStyle(Theme.ink2)

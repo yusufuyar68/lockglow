@@ -16,6 +16,9 @@ final class AppModel: ObservableObject {
     static let queueHorizon: TimeInterval = 48 * 3600
     /// Cards per "Tekrar" round; more due cards wait for the next round.
     static let reviewSessionLimit = 20
+    /// New words per "Tanış + Hatırla" round; a larger daily goal comes in more rounds ("Bir tur
+    /// daha"): short parts at one's own pace teach better than one long one.
+    static let introRoundLimit = 5
     /// A topic needs this many cards to be offered on its own (`choosableTopics`).
     static let minimumTopicCards = 5
 
@@ -43,6 +46,9 @@ final class AppModel: ObservableObject {
     @Published private(set) var lockScreenWordID: Int?
     /// Learning progress by word id. Single writer: this model (widget events, reviews, reset).
     @Published private(set) var progress: [Int: WordProgress] = [:]
+    /// The last "Biliyorum" tapped in the app while "Geri al" can still take it back exactly; nil
+    /// after the undo window (`markKnown`), an undo or another "Biliyorum".
+    @Published private(set) var knownUndo: KnownUndo?
     /// Minutes between word changes on the widget (global; written into every plan).
     @Published private(set) var rotationMinutes = AppPreferences.rotationMinutes
     /// Daily goal of new words; the widget queue holds twice as many (48 h horizon).
@@ -381,10 +387,12 @@ final class AppModel: ObservableObject {
         return ReviewPlanner.counts(feed: words, progress: progress, dueBy: endOfToday)
     }
 
-    /// The next flashcard round: due words first (at most `reviewSessionLimit`, from every word
-    /// whatever the deck); when nothing is due, the first new words of the deck (of every topic
-    /// once the deck has none left), up to what is left of today's goal. `extraNew` skips the
-    /// due check and the daily limit ("N more new words" after the goal is reached). Nil when
+    /// The next "Tekrar" round: due words first (at most `reviewSessionLimit`, from every word
+    /// whatever the deck); when nothing is due, a "Tanış + Hatırla" round of at most
+    /// `introRoundLimit` new words, up to what is left of today's goal: first the words a failed
+    /// "Biliyorum" check sent back, then the deck's new words (of every topic once the deck has
+    /// none left). A new round's `totalCount` is what is left of today's goal. `extraNew` skips
+    /// the due check and the daily limit ("N more new words" after the goal is reached). Nil when
     /// there is nothing to offer.
     func nextReviewSession(extraNew: Bool = false, now: Date = Date()) -> ReviewSession? {
         if !extraNew {
@@ -400,15 +408,20 @@ final class AppModel: ObservableObject {
         let allowance = extraNew
             ? dailyNewWords
             : max(0, dailyNewWords - AppPreferences.newWordsStudiedToday(now: now))
-        let fresh = ReviewPlanner.newWords(feed: newWordFeed, progress: progress, limit: allowance)
+        let fresh = ReviewPlanner.introWords(feed: newWordFeed, all: words, progress: progress, limit: allowance)
         if fresh.isEmpty {
             return nil
         }
-        return ReviewSession(kind: .new, words: fresh, totalCount: fresh.count)
+        return ReviewSession(
+            kind: .new,
+            words: Array(fresh.prefix(AppModel.introRoundLimit)),
+            totalCount: fresh.count
+        )
     }
 
-    /// Records one flashcard answer and saves the progress right away. Returns the word's new
-    /// progress (the round summary shows when it comes back).
+    /// Records one answer and saves the progress right away. Returns the word's new progress (the
+    /// round summary shows when it comes back). A new word counts for today's goal only when it
+    /// was recalled: a "Hatırla" missed twice (`again`) leaves room for another new word.
     @discardableResult
     func recordReview(_ word: WidgetWord, grade: ReviewGrade) -> WordProgress {
         let now = Date()
@@ -418,11 +431,50 @@ final class AppModel: ObservableObject {
         progress[word.id] = updated
         persistProgress(progress)
         if wasNew {
-            AppPreferences.addNewWordsStudied(1, now: now)
+            if grade != .again {
+                AppPreferences.addNewWordsStudied(1, now: now)
+            }
         } else {
             AppPreferences.addReviewsDone(1, now: now)
         }
         return updated
+    }
+
+    /// The answer of the recall screen (boxes 4–5, refreshers, the "Biliyorum" check): "Buldum"
+    /// is `good`, "Bulamadım" `again`. A failed check sends the word back to "Tanış"
+    /// (`WordProgress.returnsToIntro` on the result).
+    @discardableResult
+    func recordRecall(_ word: WidgetWord, found: Bool) -> WordProgress {
+        return recordReview(word, grade: found ? .good : .again)
+    }
+
+    /// How a due word is asked (`ReviewPlanner.questionKind`): its fill-in-the-blank question in
+    /// boxes 1–3, the recall screen in boxes 4–5, for refreshers and for the "Biliyorum" check,
+    /// and for a card without a usable question (seed words).
+    func questionKind(for word: WidgetWord) -> QuestionKind {
+        let hasCloze = !(detail(for: word)?.quiz?.distractors.isEmpty ?? true)
+        return ReviewPlanner.questionKind(for: progress[word.id], hasCloze: hasCloze)
+    }
+
+    /// The "Hatırla" question of a new word (`ReviewPlanner.introQuestion`): English options from
+    /// the card's written distractors, Turkish options from other cards' meanings (same part of
+    /// speech and topic, then level). Nil when there are too few cards for options; the caller
+    /// then asks with the recall screen.
+    func introQuestion(for word: WidgetWord, direction: IntroRound.Direction, attempt: Int) -> ChoiceQuestion? {
+        return ReviewPlanner.introQuestion(
+            for: word,
+            direction: direction,
+            attempt: attempt,
+            writtenDistractors: detail(for: word)?.quiz?.distractors ?? [],
+            candidates: words,
+            topicsOf: topicsOf
+        )
+    }
+
+    /// Whether the user already met `word` on the widget: a widget tap on it, or it is on the
+    /// Lock Screen now. "Tanış" then asks "Widget'ta gördün. Hatırlıyor musun?".
+    func wasSeenOnWidget(_ word: WidgetWord) -> Bool {
+        return (progress[word.id]?.exposures ?? 0) > 0 || lockScreenWordID == word.id
     }
 
     /// When `word` would come back if it were answered with `grade` at `now`: the same
@@ -477,37 +529,77 @@ final class AppModel: ObservableObject {
         return progress[word.id]?.state ?? .new
     }
 
-    /// "Biliyorum" in the app: the same as the widget button (leaves the rotation, returns as a
-    /// refresher in 30 days).
-    func markKnown(_ word: WidgetWord) {
-        updateProgress(of: word) { current, now in
+    /// "Biliyorum" in the app (feed, dictionary, "Bunu zaten biliyorum" in "Tanış"): the same as
+    /// the widget button. The word leaves the rotation and is asked once in 3 days
+    /// (`Leitner.markKnown`). For `undoWindow` seconds `knownUndo` holds the tap, and "Geri al"
+    /// (`undoKnown`) restores the word exactly as it was; the screen shows `KnownUndo.message`
+    /// beside it. Pass a longer window while VoiceOver is on. No change for a known word.
+    func markKnown(_ word: WidgetWord, undoWindow: TimeInterval = KnownUndo.window) {
+        guard let change = updateProgress(of: word, { current, now in
             current.state == .known ? nil : Leitner.markKnown(current, at: now)
+        }) else {
+            return
+        }
+        let undo = KnownUndo(
+            word: word,
+            previous: change.previous,
+            marked: change.updated,
+            expiresAt: Date().addingTimeInterval(undoWindow)
+        )
+        knownUndo = undo
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(nanoseconds: UInt64(max(0, undoWindow) * 1_000_000_000))
+            if self?.knownUndo == undo {
+                self?.knownUndo = nil
+            }
         }
     }
 
-    /// "Öğrenmeye geri al": a known word returns to the rotation (due now if it was ever
-    /// answered, otherwise new again). Undoes a "Biliyorum" tapped by mistake on the widget.
+    /// "Geri al" and "Öğrenmeye geri al". Within the undo window of this word's last "Biliyorum"
+    /// (`knownUndo`), and while nothing else changed the word since, it is restored exactly: box
+    /// and due date as before the tap. Otherwise a known word returns to the rotation (due now if
+    /// it was ever answered, otherwise new again); this also undoes a widget "Biliyorum".
     func undoKnown(_ word: WidgetWord) {
-        updateProgress(of: word) { current, now in
-            current.state == .known ? Leitner.undoKnown(current, at: now) : nil
+        let undo = knownUndo.flatMap { $0.word.id == word.id && Date() < $0.expiresAt ? $0 : nil }
+        if knownUndo?.word.id == word.id {
+            knownUndo = nil
         }
+        updateProgress(of: word) { current, now in
+            if let undo = undo, current == undo.marked {
+                return undo.previous ?? WordProgress(wordID: word.id)
+            }
+            return current.state == .known ? Leitner.undoKnown(current, at: now) : nil
+        }
+    }
+
+    /// The "Geri al" note was closed before its time.
+    func dismissKnownUndo() {
+        knownUndo = nil
     }
 
     /// Applies pending widget taps first (a "known" tap still in the mailbox must not undo this
     /// change later), saves, then rewrites the widget queue. `change` returns nil for no change.
-    private func updateProgress(of word: WidgetWord, _ change: (WordProgress, Date) -> WordProgress?) {
+    /// Returns the word's progress before (nil: it had none) and after the change; nil when
+    /// nothing changed or the save failed.
+    @discardableResult
+    private func updateProgress(
+        of word: WidgetWord,
+        _ change: (WordProgress, Date) -> WordProgress?
+    ) -> (previous: WordProgress?, updated: WordProgress)? {
         ingestWidgetEvents()
-        let current = progress[word.id] ?? WordProgress(wordID: word.id)
+        let previous = progress[word.id]
+        let current = previous ?? WordProgress(wordID: word.id)
         guard let changed = change(current, Date()) else {
-            return
+            return nil
         }
         var updated = progress
         updated[word.id] = changed
         guard persistProgress(updated) else {
-            return
+            return nil
         }
         progress = updated
         refreshWidgetPlan()
+        return (previous, changed)
     }
 
     func dismissProgressRecovery() {
@@ -518,6 +610,7 @@ final class AppModel: ObservableObject {
     /// otherwise they would be applied right after the reset. The visible widget word stays.
     func resetProgress() {
         discardPendingEvents()
+        knownUndo = nil
         progress = [:]
         persistProgress(progress)
         AppPreferences.clearKnownWordIDs()
@@ -556,8 +649,10 @@ final class AppModel: ObservableObject {
             return
         }
 
-        // One-time migration: ids the old build kept in UserDefaults become known words. A word
-        // that already has progress is newer than that list and is left alone.
+        // One-time migration: ids the old build kept in UserDefaults become known words, checked
+        // once in 3 days like any "Biliyorum". A word that already has progress is newer than
+        // that list and is left alone. Words marked in progress.json before the check existed
+        // need no rewrite: they get the same check on their due date (`awaitsKnownCheck`).
         let legacy = AppPreferences.knownWordIDs
         if !legacy.isEmpty {
             let now = Date()
@@ -813,4 +908,19 @@ final class AppModel: ObservableObject {
         health = snapshot
         updateLockScreenWord()
     }
+}
+
+/// A "Biliyorum" that "Geri al" can still take back exactly (`AppModel.knownUndo`).
+struct KnownUndo: Equatable {
+    /// How long "Geri al" can take it back (`AppModel.markKnown`).
+    static let window: TimeInterval = 5
+    /// Shown with "Geri al" (docs/tasarim/ogrenme_ilkeleri.md 2.2).
+    static let message = "Tamam. 3 gün sonra bir kez soracağız."
+
+    let word: WidgetWord
+    /// The word's progress before the tap; nil when it had none.
+    let previous: WordProgress?
+    /// What the tap wrote: the undo restores `previous` only while the word still has this.
+    let marked: WordProgress
+    let expiresAt: Date
 }

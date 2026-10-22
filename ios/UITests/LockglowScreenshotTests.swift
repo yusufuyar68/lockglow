@@ -35,7 +35,9 @@ final class LockglowScreenshotTests: XCTestCase {
         if start.waitForExistence(timeout: 10) {
             attachScreenshot(of: app, named: "3-tekrar-baslangic")
             start.tap()
-            let reveal = app.buttons["Anlamı göster"]
+            // A fresh install has no due word: the round is "Tanış + Hatırla" and starts with a
+            // word's front.
+            let reveal = app.buttons["Anlamını göster"]
             if reveal.waitForExistence(timeout: 5) {
                 attachScreenshot(of: app, named: "4-tekrar-kart-on")
                 reveal.tap()

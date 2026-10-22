@@ -59,26 +59,31 @@ final class LeitnerTests: XCTestCase {
         XCTAssertEqual(p.box, 1)
     }
 
-    func testMarkKnownThenRefreshers() {
+    func testMarkKnownThenCheckThenRefreshers() {
         var p = Leitner.markKnown(WordProgress(wordID: 1), at: now)
         XCTAssertEqual(p.state, .known)
         XCTAssertTrue(p.knownOverride)
-        XCTAssertEqual(p.dueAt, now.addingTimeInterval(30 * day))
-        XCTAssertFalse(p.isDue(at: now.addingTimeInterval(29 * day)))
-        XCTAssertTrue(p.isDue(at: now.addingTimeInterval(30 * day)))
+        XCTAssertTrue(p.awaitsKnownCheck)
+        XCTAssertEqual(p.dueAt, now.addingTimeInterval(3 * day))
+        XCTAssertFalse(p.isDue(at: now.addingTimeInterval(2 * day)))
+        XCTAssertTrue(p.isDue(at: now.addingTimeInterval(3 * day)))
 
-        // A correct refresher keeps a self-declared word known, whatever its box.
-        let later = now.addingTimeInterval(30 * day)
-        p = Leitner.review(p, grade: .good, at: later)
+        // The check is passed: the word is known, whatever its box, and comes back as a refresher.
+        let check = now.addingTimeInterval(3 * day)
+        p = Leitner.review(p, grade: .good, at: check)
         XCTAssertEqual(p.state, .known)
-        XCTAssertEqual(p.dueAt, later.addingTimeInterval(30 * day))
+        XCTAssertFalse(p.knownOverride)
+        XCTAssertFalse(p.awaitsKnownCheck)
+        XCTAssertEqual(p.dueAt, check.addingTimeInterval(30 * day))
 
-        // A wrong refresher puts it back into learning.
+        // A wrong refresher puts it back into learning, in box 3.
+        let later = check.addingTimeInterval(30 * day)
         p = Leitner.review(p, grade: .again, at: later)
         XCTAssertEqual(p.state, .learning)
         XCTAssertFalse(p.knownOverride)
-        XCTAssertEqual(p.box, 1)
+        XCTAssertEqual(p.box, 3)
         XCTAssertEqual(p.lapses, 1)
+        XCTAssertEqual(p.dueAt, later.addingTimeInterval(10 * 60))
     }
 
     func testUndoKnown() {
