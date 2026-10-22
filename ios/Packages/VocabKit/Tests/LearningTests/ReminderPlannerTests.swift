@@ -480,6 +480,52 @@ final class ReminderPlannerTests: XCTestCase {
         XCTAssertEqual(reminder?.wordID, 9)
     }
 
+    func testPersonalTopicCardsAreNeverNamed() {
+        // "divorce" itself says nothing the text filter knows; its sensitivity does.
+        let divorce = WidgetWord(id: 8, lemma: "divorce", pos: "n", level: "B1", defMicro: "m", defShort: "s", exampleEN: "They got a divorce.", glossTR: "boşanma", sensitivity: 1)
+        for kind in [ReminderKind.meaning, .newWord, .wordOfTheDay, .mistake, .example, .falseFriend, .mnemonic] {
+            XCTAssertNil(ReminderText.message(kind, word: divorce, detail: fullDetail(divorce)), "\(kind)")
+        }
+        XCTAssertEqual(ReminderText.message(.plain, word: divorce, detail: nil), ReminderText.plain)
+        // A learning personal card is passed over like a private text: the next word is named.
+        let words = [divorce, word(9), word(10)]
+        let progress = [
+            8: learning(8, due: date(day: 20, hour: 9)),
+            9: learning(9, due: date(day: 20, hour: 9)),
+            10: learning(10, due: date(day: 12, hour: 9)),
+        ]
+        let reminder = plan(feed: words, progress: progress, now: date(day: 12, hour: 10), days: 1, goal: 0).first
+        XCTAssertEqual(reminder?.wordID, 9)
+        // As a new word too: word 9 is tonight's new word, the reminder names word 10, not 8.
+        let fresh = plan(feed: [word(9), divorce, word(10), word(11)], progress: [:], now: date(day: 12, hour: 10), days: 1, goal: 1)
+        XCTAssertEqual(fresh.first?.kind, .newWord)
+        XCTAssertEqual(fresh.first?.wordID, 10)
+    }
+
+    func testNewWordsFollowTheIntroOrderWithConfusables() {
+        // Words 1 and 2 are confusable partners: "Tanış" offers 1, 3, 4, 5, 6 tonight and keeps 2
+        // apart, so the new-word reminder never picks one of those five.
+        let words = feed(1...12)
+        let pairs: [Int: Set<Int>] = [1: [2], 2: [1]]
+        let reminders = ReminderPlanner.plan(
+            feed: words,
+            progress: [:],
+            now: date(day: 12, hour: 10),
+            minuteOfDay: evening,
+            days: 1,
+            dailyNewGoal: 5,
+            newStudiedToday: 0,
+            calendar: calendar,
+            confusables: pairs,
+            all: words
+        )
+        let tonight = Set(ReviewPlanner.introWords(feed: words, all: words, progress: [:], limit: 5, confusables: pairs).map { $0.id })
+        XCTAssertEqual(tonight, [1, 3, 4, 5, 6])
+        for reminder in reminders where reminder.kind == .newWord {
+            XCTAssertFalse(tonight.contains(reminder.wordID ?? -1), "\(reminder.wordID ?? -1)")
+        }
+    }
+
     func testNoTextHasACountATaskOrPressure() {
         var progress: [Int: WordProgress] = [:]
         for id in 1...30 {

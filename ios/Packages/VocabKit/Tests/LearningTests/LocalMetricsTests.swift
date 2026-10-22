@@ -228,6 +228,18 @@ final class LocalMetricsTests: XCTestCase {
         XCTAssertEqual(report.remindersIgnored, 1)
     }
 
+    func testReminderThatFiresWhileTheAppIsOpenIsNotIgnored() {
+        let recorder = makeRecorder()
+        let reminder = day(0, hour: 20)
+        recorder.recordReminderPlan([reminder], now: day(0))
+        // Opened before the reminder, left after it: the user was in the app when it fired.
+        recorder.appDidBecomeActive(at: reminder.addingTimeInterval(-600))
+        recorder.appDidEnterBackground(at: reminder.addingTimeInterval(600))
+        let report = recorder.report(dailyNewWords: 5, now: day(1, hour: 21))
+        XCTAssertEqual(report.remindersFired, 1)
+        XCTAssertEqual(report.remindersIgnored, 0)
+    }
+
     func testOpenedReminderScheduledBeforeMeasuringIsAdded() {
         var metrics = LocalMetrics()
         metrics.recordReminderOpened(deliveredAt: day(0, hour: 20), calendar: utc)

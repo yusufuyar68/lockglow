@@ -346,7 +346,9 @@ final class AppModel: ObservableObject {
             newStudiedToday: AppPreferences.newWordsStudiedToday(now: now),
             calendar: .current,
             recent: ReminderLog.recentlySent(now: now),
-            detail: { self.detail(for: $0) }
+            detail: { self.detail(for: $0) },
+            confusables: confusables,
+            all: words
         )
     }
 
@@ -489,7 +491,9 @@ final class AppModel: ObservableObject {
         progress[word.id] = updated
         persistProgress(progress)
         let metrics = LocalMetricsRecorder.shared
-        metrics.recordAnswer(isNew: wasNew, firstTryCorrect: firstTryCorrect ?? (grade != .again), seconds: seconds, at: now)
+        // A word sent back to "Tanış" by a failed "Biliyorum" check is new again but was answered
+        // before: the metrics count only a word's very first question as new.
+        metrics.recordAnswer(isNew: current.reviews == 0, firstTryCorrect: firstTryCorrect ?? (grade != .again), seconds: seconds, at: now)
         if current.awaitsKnownCheck {
             metrics.recordKnownCheck(passed: grade != .again, at: now)
         }
