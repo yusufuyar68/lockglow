@@ -54,4 +54,14 @@ final class QueueBuilderTests: XCTestCase {
         XCTAssertTrue(QueueBuilder.build(feed: makeWords([1]), excluding: [], startAt: nil, limit: 0).isEmpty)
         XCTAssertTrue(QueueBuilder.build(feed: [], excluding: [], startAt: 1, limit: 5).isEmpty)
     }
+
+    func testNegativeLimitGivesAnEmptyQueue() {
+        XCTAssertTrue(QueueBuilder.build(feed: makeWords([1, 2]), excluding: [], startAt: 1, limit: -1).isEmpty)
+    }
+
+    func testEveryWordKnownGivesAnEmptyQueue() {
+        // The known start word moves the pivot past the end (index 2 + 1 = 3 = count): the feed
+        // order is kept, then every word is skipped.
+        XCTAssertTrue(QueueBuilder.build(feed: makeWords([1, 2, 3]), excluding: [1, 2, 3], startAt: 3, limit: 10).isEmpty)
+    }
 }

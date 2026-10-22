@@ -1,4 +1,5 @@
 // Linux compile-check stub with the SAME public signatures as the real GRDB-backed ContentStore.
+// linux_check_prepare.py stops the Linux check when the public declarations differ.
 import CoreModels
 
 public final class ContentStore {
