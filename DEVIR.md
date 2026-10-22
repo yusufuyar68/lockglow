@@ -13,7 +13,7 @@ Bu projeye başka bir Claude hesabı ya da oturumu devam edecekse **önce bu dos
 - **Donanım:** Windows PC'de çalışıyor; Mac var ama kullanılmıyor, bütün iOS derlemeleri GitHub Actions'ta. iPhone'u iOS 26+.
 - **Apple hesabı:** Ücretli Apple Developer hesabı var.
   - Ekip **Yusuf Uyar**, Team ID `3B57WU65P8`.
-  - App Store Connect'te bir de "Ali Celebi" ekibi görünüyor. **Onu seçme.**
+  - App Store Connect'te başka bir ekip daha görünüyor. **Yalnızca Yusuf Uyar ekibini seç.**
 - **Hukuki durum:** Şirketi yok. Mağazaya çıkarken şahıs/GVK 20/B yolu SMMM ile konuşulacak.
 - **Anthropic API anahtarı yok.** Kartlar oturum içi ajanlarla yazılıyor (`docs/icerik_uretimi/`).
 
@@ -45,7 +45,7 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - İlerleme dosyasının günlük yedeği alınıyor; gizlilik manifestinde UserDefaults (CA92.1) ve FileTimestamp (C617.1).
 - **İçerik:** 1.068 kart (`2026.10.22-kisisel-6`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat, s14 ev, s15 alışveriş ve para, s16 zaman, hava ve doğa; 273 kartta hafıza ipucu.
 - **Testler:** her push'ta ücretsiz Linux Swift işi (`build.yml` → `swift-linux`, `linux_check.sh` Docker'da) ve 72 Python testi + `--strict` doğrulama. macOS işi elle: ~170 paket testi + uygulama/widget derlemesi.
-- **Apple:** App Group (`group.com.yusufuyar.vocabwidget`) iki App ID'ye **atandı** (2026-10-20, Developer portalı). App Store Connect API anahtarı (`ZLU4D5GWLX`, Admin) GitHub'da.
+- **Apple:** App Group (`group.com.yusufuyar.vocabwidget`) iki App ID'ye **atandı** (2026-10-20, Developer portalı). App Store Connect API anahtarı (Admin, adı `lockglow-ci`) GitHub gizli değişkenlerinde.
 - **TestFlight:** çalışıyor. Build 18 (20 Ekim) ve **build 22** (21 Ekim: 933 kart, Zor/Kolay, widget sesi) yüklendi. İmza her çalıştırmada geçici sertifika + profillerle (`docs/testflight_kurulum.md` → 2b).
 
 ## Hemen sıradaki iş
