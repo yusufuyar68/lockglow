@@ -5,19 +5,27 @@
 ## Kısa sonuç
 
 - **FSRS-6, bugün kullanılan sürüm.** Anki fsrs-rs 6.6.2'yi kullanıyor (FSRS-6). FSRS-7 yalnız fsrs-rs'in ana dalında var, henüz yayımlanmadı.
-- **Motor resmî değerleri tutturuyor.** `FSRS.swift` py-fsrs 6.3.2'nin Swift karşılığı. py-fsrs ve fsrs-rs'in kendi test değerleri Linux CI'da geçti (15 test).
-- **Simülasyon** (1.000 kelime, günde 10 yeni kelime, 90 gün), varsayılan hedef 0,90:
-  - FSRS günlük tekrarı üçte bir azaltıyor: 55,5'ten 37,1'e.
-  - Hatırlama 1,2 puan düşüyor: %96,0'dan %94,8'e.
-  - Aynı tekrar yükünde FSRS yalnız +0,5–0,7 puan daha iyi. Aynı hatırlamada yaklaşık %10 daha az tekrar istiyor.
-  - Uzun vadede (365 gün) fark büyüyor. Ama farkın çoğu tazeleme aralığından geliyor: Leitner'e "tazeleme 30 → 60 → 120 gün" kuralı eklenirse aynı fayda Leitner'de de alınıyor.
-- **Öneri:**
-  1. Şimdi tekrar günlüğünü (`review_log.jsonl`) ve `lastReviewedAt` alanını ekle.
-  2. Leitner'e büyüyen tazeleme aralığını ekle.
-  3. FSRS'i v1.2'de bir ayarın arkasında aç.
-  4. Kişisel parametreleri birkaç yüz tekrardan sonra hesapla.
+- **Motor resmî değerleri tutturuyor.** `FSRS.swift` py-fsrs 6.3.2'nin Swift karşılığı. 16 testin 10'u py-fsrs ve fsrs-rs'in kendi test değerlerini kullanıyor; hepsi Linux CI'da geçti.
+- **Simülasyon, 90 gün** (1.000 kelime, günde 10 yeni kelime), varsayılan hedef 0,90:
+  - FSRS günlük tekrarı üçte bir azaltıyor: 56,0'dan 37,2'ye.
+  - Hatırlama 1,3 puan düşüyor: %96,1'den %94,8'e.
+  - Aynı tekrar yükünde FSRS yalnız +0,6 puan daha iyi. Aynı hatırlamada %10 daha az tekrar istiyor.
+- **Simülasyon, 365 gün:**
+  - FSRS 0,90 ortalama yükü yarıya indiriyor, son ayın yükünü %71 azaltıyor (42,0 → 12,1).
+  - Ama hatırlama 3,7 puan düşüyor (%98,5 → %94,8). Aynı yükte FSRS'in belirgin bir üstünlüğü yok.
+  - Bugünkü Leitner'in yüksek hatırlaması pahalı: bilinen her kelimeyi 30 günde bir soruyor. Leitner'e "tazeleme 30 → 60 → 120 gün" eklenince sonuç FSRS'e çok benziyor: son ay 13,0 tekrar, hatırlama %95,7.
+- **Bu modelde FSRS'in faydası:**
+  - "hedef hatırlama" ile yük ve hatırlama arasında bilerek seçim yapma imkânı;
+  - aralıkların kendiliğinden uzaması;
+  - ileride kişisel parametreler.
 
-  Ayrıntı: bölüm 5.
+  Verimde büyük bir sıçrama yok. Kişisel parametrelerin katkısını bu simülasyon ölçemez (bölüm 3.6).
+- **Öneri:**
+  1. Şimdi tekrar günlüğünü (`review_log.jsonl`), `lastReviewedAt` ve `lastGrade` alanlarını ekle.
+  2. v1.2'de FSRS'i bir ayarın arkasında aç (hedef 0,90).
+  3. Kişisel parametreleri birkaç yüz tekrardan sonra hesapla.
+
+  FSRS 2–3 aydan uzun gecikecekse arada Leitner'e büyüyen tazelemeyi ekle. Ayrıntı: bölüm 5.
 
 ## 1. FSRS: birincil kaynaklardan özet
 
@@ -77,17 +85,19 @@ Anki kılavuzu:
 - Varsayılan %90.
 - %90'ın üstünde yük hızla artar; %97'nin üstü "bunaltıcı" olabilir.
 - Önerilen sınır: %97'nin altında kal.
-- "Compute minimum recommended retention" aracı Anki 25.07'de kaldırıldı. Yerine yük simülatörü ("Help Me Decide") geldi.
+- "Compute minimum recommended retention" aracı Anki 25.07'de kaldırıldı. Kılavuzda bugün farklı hedeflerin yükünü gösteren deneysel bir simülatör var ("Help Me Decide").
 
 Bizim simülasyonumuzda da aynı şekil çıktı:
-- 0,90 → 0,95'e geçiş günlük tekrarı %65 artırıyor (37,1 → 61,2).
-- Aynı geçiş hatırlamaya yalnız 2,3 puan ekliyor.
+- 0,90 → 0,95'e geçiş günlük tekrarı %66 artırıyor (37,2 → 61,6).
+- Aynı geçiş hatırlamaya yalnız 2,4 puan ekliyor.
 
 ### 1.4 Aynı gün (kısa aralıklı) tekrarlar
 
 - **Gün sayımı:** iki cevap arası tam gün olarak sayılır. py-fsrs'te `timedelta.days`, yani 24 saatin aşağı yuvarlanmış katı.
-- **Bir günden kısa ara:** "aynı gün" formülü kullanılır (yukarıdaki tablo).
-  - "Bildim" ve "Kolay" S'yi büyütür; "Zor" en az korur.
+- **Bir günden kısa ara:** "aynı gün" formülü kullanılır (yukarıdaki tablo). Varsayılan parametrelerle:
+  - "Kolay" S'yi büyütür.
+  - "Bildim" yalnız S yaklaşık 2,1 günden küçükken büyütür. Daha büyük S'de çarpan 1'in altına düşer ve 1'e yükseltilir, yani S aynı kalır.
+  - "Zor" S'yi hiçbir zaman düşürmez (çarpan hep 1'e yükseltilir).
   - "Bilemedim" S'yi küçültür (çarpan 1'in altında).
   - Zorluk her cevapta güncellenir.
 - **Yeni kelime adımları (learning steps):** py-fsrs'te varsayılan 1 dk ve 10 dk.
@@ -117,6 +127,7 @@ Bizim simülasyonumuzda da aynı şekil çıktı:
 - Bulanıklaştırma (fuzz) yok: tarihler belirlenimci. Tek kullanıcıda yük yığılması küçük; istenirse sonra eklenir.
 - Gün aralığı py-fsrs gibi "yarım çifte" yuvarlanıyor (`.toNearestOrEven`). Gün sayımı 24 saatin katı.
 - Varsayılan adımlar py-fsrs'inkiler. Lockglow için önerilen ayar `learningSteps: [600]` ve `relearningSteps: [600]`: Leitner'in 10 dakikası, pratikte "bir sonraki tur".
+- Parametreler py-fsrs'in sınırlarıyla denetlenir (`FSRS.weightBounds`, `FSRS.areValid(weights:)`). Sınır dışı parametre (ör. bozunma 0) sonsuz ya da tanımsız (NaN) aralık verirdi. `init` böyle parametrede durur; kayıttan okunan parametre önce `areValid` ile denetlenmeli.
 - Yok: parametre eniyileme (optimizer), FSRS-7, kalıcı kayıt biçimi (`Codable` yok; alanlar bölüm 4.1'de).
 
 **Lockglow'da yeni kelimenin ilk cevabı** (önerilen adımlarla):
@@ -128,27 +139,35 @@ Bizim simülasyonumuzda da aynı şekil çıktı:
 | Bildim | 1 gün | 2 gün (S0 = 2,31) |
 | Kolay | 2 gün | 8 gün (S0 = 8,30) |
 
-**Testler:** `ios/Packages/VocabKit/Tests/LearningTests/FSRSTests.swift`, 15 test. Commit 17d34b2'de Linux CI yeşil (run 39791520626: 205 testin hepsi geçti).
+**Testler:** `ios/Packages/VocabKit/Tests/LearningTests/FSRSTests.swift`, 16 test.
+- 10'u py-fsrs ve fsrs-rs'in kendi test değerlerini kullanıyor; 6'sı değerleri formülden elle hesaplıyor (hesap yorumda).
+- İlk sürüm (commit 17d34b2, 15 test) Linux CI'da yeşildi: run 39791520626, 205 testin hepsi geçti.
+
+Resmî değerli testler:
 - **py-fsrs `test_review_card`:** Bildim ×6, Bilemedim ×2, Bildim ×5 dizisinin aralıkları `[0, 2, 11, 46, 163, 498, 0, 0, 2, 4, 7, 12, 21]`. Her adımın S ve D değeri test yorumunda tablo olarak var.
 - **py-fsrs `test_memo_state` ve fsrs-rs `test_memory_state`:** S = 53,62691, D = 6,3574867.
 - **fsrs-rs `test_next_states`:** gerçek bir koleksiyondan FSRS-5 parametreleri, dört notun S ve D değerleri.
 - **fsrs-rs `test_next_interval`:** hedef 0,1…1,0 için aralıklar. fsrs-rs 32 bit hesaplıyor; 0,1'de milyonda 1 fark var, testte göreli tolerans kullanıldı.
 - **py-fsrs adım testleri:** yeni kelime adımları, yeniden öğrenme, aynı gün "Zor"un S'yi düşürmemesi, art arda "Kolay"ın D'yi 1'e indirmesi, S'nin 0,001'in altına inmemesi.
-- **Lockglow'un dört notu:** yukarıdaki tablo.
+- **py-fsrs parametre sınırları:** sınır dışı parametrenin reddedilmesi.
+
+Formülden hesaplanan testler: ilk cevabın S ve D değerleri, R(S, S) = 0,9, FSRS-5 doldurma, gün aralığının alt ve üst sınırı, kartın hatırlama olasılığı, Lockglow'un dört notu (yukarıdaki tablo).
 
 Aynı değerleri Python'da da denemek için:
 `python -X utf8 docs/ozellik_planlari/araclar/fsrs_sim.py --dogrula` (22/22 TAMAM).
 
 ## 3. Simülasyon: Leitner ve FSRS
 
-Betik: `docs/ozellik_planlari/araclar/fsrs_sim.py`. Bütün tablolar 20 rastgele tohumun ortalaması; betik yaklaşık 1 dakikada biter.
+Betik: `docs/ozellik_planlari/araclar/fsrs_sim.py`. Bütün tablolar 20 rastgele tohumun ortalaması. Betik yaklaşık 1 dakikada biter ve aynı sayıları yeniden üretir.
 
 ### 3.1 Kurulum
 
 - 1.000 kelime, günde 10 yeni kelime, 90 gün. 90 günde 900 kelime tanıtılır.
-- Her gün 09:00'da tek bir Tekrar oturumu: önce zamanı gelen bütün kelimeler, sonra yeni kelimeler.
+- Her gün 09:00'da tek bir Tekrar oturumu: önce zamanı gelen kelimeler, sonra yeni kelimeler.
 - Oturum içinde "Bilemedim" 10 dakika sonra yeniden sorulur.
-- Oturumun 2 saatine sığmayan tarih ertesi güne kalır. Leitner'in "Zor = 12 saat"i pratikte 1 gün olur.
+- **Oturum 09:00–11:00 arası açık sayılır.** Bu sürede zamanı gelen kelime zamanında sorulur; örneğin dün 09:10'da yeniden sorulup bugün 09:10'a zamanlanan kelime.
+  - Pencereye sığmayan tarih ertesi güne kalır. Leitner'in "Zor = 12 saat"i pratikte 1 gün olur.
+  - Bağımsız denetimin bulgusu: ilk sürümde pencere yoktu, 09:10'a zamanlanan kelimeler bir gün geç soruluyordu. Düzeltme sayıları biraz değiştirdi, sonuçları değiştirmedi.
 - **Öğrencinin "gerçek" hafızası:** varsayılan FSRS-6 modeli. Anki'nin ve fsrs-rs'in simülatörü de böyle yapıyor.
 - **Cevap olasılıkları** fsrs-rs `SimulatorConfig` varsayılanlarından (Anki kullanıcılarının ortalaması):
   - ilk görüşte Bilemedim / Zor / Bildim / Kolay = 0,24 / 0,094 / 0,495 / 0,171;
@@ -169,63 +188,65 @@ Betik: `docs/ozellik_planlari/araclar/fsrs_sim.py`. Bütün tablolar 20 rastgele
 
 | Yöntem | Tekrar/gün (ortalama) | Tekrar/gün (son 30 gün) | En yoğun gün | Aynı gün yeniden | Tekrarda doğru | Sondaki hatırlama | Hatırlanan kelime (900'den) | Toplam cevap |
 |---|---|---|---|---|---|---|---|---|
-| Leitner (main) | 55,5 | 74,0 | 93 | 7,1 | %91,5 | %96,0 | 864 | 6535 |
-| Leitner + iki kutu düşme | 54,1 | 71,5 | 87 | 7,2 | %91,1 | %95,6 | 861 | 6421 |
-| Leitner + iki kutu düşme + tazeleme 30/60/120 | 54,1 | 71,4 | 88 | 7,2 | %91,1 | %95,7 | 861 | 6415 |
-| **FSRS-6, hedef 0,90** | **37,1** | **49,9** | **64** | 10,1 | %88,1 | %94,8 | 853 | 5144 |
+| Leitner (main) | 56,0 | 74,5 | 93 | 7,2 | %91,6 | %96,1 | 865 | 6589 |
+| Leitner + iki kutu düşme | 54,4 | 71,5 | 88 | 7,1 | %91,4 | %95,8 | 862 | 6434 |
+| Leitner + iki kutu düşme + tazeleme 30/60/120 | 54,3 | 71,3 | 88 | 7,1 | %91,4 | %95,8 | 862 | 6428 |
+| **FSRS-6, hedef 0,90** | **37,2** | **49,8** | **64** | 9,6 | %88,9 | %94,8 | 853 | 5119 |
 
-Tohumlar arası standart sapma en çok ±1,4 tekrar/gün ve ±0,16 puan hatırlama. Farklar bundan çok büyük.
+Tohumlar arası standart sapma en çok ±1,0 tekrar/gün ve ±0,17 puan hatırlama. Farklar bundan çok büyük.
 
 **FSRS'in hedefi değişince:**
 
 | FSRS hedefi | Tekrar/gün (ortalama) | Tekrar/gün (son 30 gün) | Tekrarda doğru | Sondaki hatırlama | Hatırlanan kelime |
 |---|---|---|---|---|---|
-| 0,70 | 13,3 | 18,7 | %69,7 | %83,4 | 751 |
-| 0,75 | 17,0 | 23,4 | %74,1 | %86,7 | 780 |
-| 0,80 | 21,1 | 28,8 | %78,4 | %89,2 | 803 |
-| 0,85 | 27,2 | 36,6 | %83,3 | %92,3 | 831 |
-| 0,90 | 37,1 | 49,9 | %88,1 | %94,8 | 853 |
-| 0,95 | 61,2 | 82,6 | %93,0 | %97,1 | 874 |
+| 0,70 | 13,5 | 19,1 | %70,1 | %83,4 | 751 |
+| 0,75 | 16,9 | 23,4 | %75,5 | %86,5 | 779 |
+| 0,80 | 20,8 | 28,0 | %79,5 | %89,2 | 802 |
+| 0,85 | 27,3 | 36,4 | %84,2 | %92,4 | 832 |
+| 0,90 | 37,2 | 49,8 | %88,9 | %94,8 | 853 |
+| 0,95 | 61,6 | 82,5 | %93,6 | %97,2 | 875 |
 
 **Ne gösteriyor:**
 - **Hedef 0,90, Leitner'e göre:**
-  - günlük tekrar −%33 (55,5 → 37,1);
+  - günlük tekrar −%34 (56,0 → 37,2);
   - en yoğun gün 93 → 64;
-  - toplam cevap −%21;
-  - buna karşılık hatırlama −1,2 puan; 900 kelimeden 11 kelime az.
-- **Aynı yükte:** Leitner'in 55,5 tekrarı FSRS'te yaklaşık 0,94 hedefine denk gelir. Orada hatırlama %96,6, yani +0,6 puan ve yaklaşık +5 kelime. Bu sayı iki tablo satırı arasında doğrusal ara değerle bulundu, kaba bir tahmin.
-- **Aynı hatırlamada (%96,0):** FSRS günde yaklaşık 49,7 tekrar ister, yani −%10.
+  - toplam cevap −%22;
+  - buna karşılık hatırlama −1,3 puan; 900 kelimeden 12 kelime az.
+- **Aynı yükte:** Leitner'in 56,0 tekrarı FSRS'te yaklaşık 0,94 hedefine denk gelir. Orada hatırlama yaklaşık %96,7, yani +0,6 puan ve yaklaşık +5 kelime. Bu sayılar iki tablo satırı arasında doğrusal ara değerle bulundu; kaba tahmin.
+- **Aynı hatırlamada (%96,1):** FSRS günde yaklaşık 50,4 tekrar ister, yani −%10.
 - **FSRS'in asıl kazancı tek bir düğme.** Hedef hatırlamayı seçerek yük ile hatırlama arasında bilerek takas yapılabiliyor. Leitner'de böyle bir düğme yok.
-- **Aynı gün yeniden sorma artıyor (7,1 → 10,1):** yeni kelimede "Zor" 12 saat yerine 15 dakika sonra geliyor. Tekrarlar daha düşük hatırlamada yapıldığı için yanlış da biraz daha çok oluyor.
-- **"Tekrarda doğru" hedeften düşük (%88,1, hedef %90):** aralıklar tam güne yuvarlanıyor ve en az 1 gün. S'si 1 günden küçük kelimeler (ilk cevabı "Bilemedim" olanlar) 1 gün sonra %78 civarında hatırlanıyor.
+- **Aynı gün yeniden sorma artıyor (7,2 → 9,6).** Artışın tamamı "Zor"dan geliyor:
+  - Adım içindeki kelimeye "Zor" denince FSRS onu 15 dakika sonra yine soruyor; Leitner ertesi güne bırakıyor. Bu, FSRS'te günde 3,1 soru.
+  - "Bilemedim"den gelen yeniden sormalar FSRS'te daha az: 6,5'e karşı 7,2.
+- **"Tekrarda doğru" hedeften düşük (%88,9, hedef %90):** aralıklar tam güne yuvarlanıyor ve en az 1 gün. İlk cevabı "Bilemedim" olan kelimenin S'si 1 günden küçük (0,25); 1 gün sonra %78 civarında hatırlanıyor.
 
 ### 3.3 İki kutu düşme kuralı (is3-tekrar)
 
 Bu kural `Leitner.swift`'i değiştiriyor ve şu an başka bir oturumda. Simülasyonda etkisi küçük:
-- 90 günde günlük tekrar −1,4 (−%2,5), hatırlama −0,4 puan;
-- 365 günde günlük tekrar −2,3, hatırlama −0,3 puan.
+- 90 günde günlük tekrar −1,6 (−%3), hatırlama −0,3 puan;
+- 365 günde günlük tekrar −2,5, hatırlama −0,3 puan.
 
-Kural birleşince bu belgedeki "Leitner" sayıları neredeyse değişmez. FSRS kararını etkilemez. FSRS'e geçince kural da biter: yanlış cevaptan sonraki aralığı FSRS'in yanlış cevap formülü belirler.
+Kural birleşince bu belgedeki "Leitner" sayıları neredeyse değişmez; FSRS kararını etkilemez. FSRS'e geçince kural da biter: yanlış cevaptan sonraki aralığı FSRS'in yanlış cevap formülü belirler.
 
 ### 3.4 Duyarlılık: varsayılan parametreler bu öğrenciye uymazsa
 
-Yukarıdaki sonuç FSRS'i kayırıyor: öğrencinin hafızası FSRS'in kendisi olduğu için FSRS'in tahmini tanım gereği doğru. Gerçekte varsayılan parametreler Anki kullanıcılarından geliyor; Lockglow'un kullanıcısı yeni İngilizce kelime öğrenen bir A2 öğrencisi. Öğrencinin unutma süresi bir katsayıyla çarpılarak iki sapma denendi:
+Yukarıdaki sonuç FSRS'i kayırıyor: öğrencinin hafızası FSRS'in kendisi olduğu için FSRS'in tahmini tanım gereği doğru. Gerçekte varsayılan parametreler Anki kullanıcılarından geliyor; Lockglow'un kullanıcısı yeni İngilizce kelime öğrenen bir A2 öğrencisi. Öğrencinin unutma süresi bir katsayıyla çarpılarak iki sapma denendi (90 gün):
 
 | Senaryo | Yöntem | Tekrar/gün | Sondaki hatırlama | Hatırlanan kelime | Tekrarda doğru |
 |---|---|---|---|---|---|
-| 3 kat hızlı unutuyor (FSRS'in %90 dediği anda gerçekte %81) | Leitner (main) | 59,6 | %93,5 | 841 | %85,6 |
-| | FSRS 0,90 | 45,9 | %92,6 | 833 | %82,4 |
-| | FSRS 0,95 | 73,5 | %95,9 | 863 | %89,2 |
-| 2 kat yavaş unutuyor (gerçekte %94) | Leitner (main) | 54,0 | %96,9 | 872 | %93,9 |
-| | FSRS 0,90 | 33,5 | %95,7 | 861 | %91,1 |
-| | FSRS 0,95 | 56,9 | %97,6 | 878 | %94,6 |
+| 3 kat hızlı unutuyor (FSRS'in %90 dediği anda gerçekte %81) | Leitner (main) | 60,6 | %93,7 | 844 | %85,7 |
+| | FSRS 0,90 | 47,1 | %92,9 | 836 | %83,3 |
+| | FSRS 0,95 | 73,8 | %96,2 | 866 | %90,1 |
+| 2 kat yavaş unutuyor (gerçekte %94) | Leitner (main) | 54,3 | %97,0 | 873 | %94,0 |
+| | FSRS 0,90 | 33,8 | %95,7 | 861 | %91,5 |
+| | FSRS 0,95 | 56,4 | %97,6 | 879 | %95,2 |
 
-Üç senaryoda da sonuç aynı yönde:
-- Aynı yükte FSRS +0,5–0,7 puan önde.
-- Aynı hatırlamada %10 civarı daha az tekrar istiyor.
-- Hedef 0,90'da yükü %23–38 azaltıyor, hatırlamayı 0,9–1,2 puan düşürüyor.
+Üç senaryoda da sonuç aynı yönde (doğrusal ara değerle):
+- Aynı yükte FSRS +0,4–0,9 puan önde (temel senaryoda +0,6).
+- Aynı hatırlamada %9–12 daha az tekrar istiyor.
+- Hedef 0,90'da yükü %22–38 azaltıyor, hatırlamayı 0,8–1,3 puan düşürüyor.
 
-Hızlı unutan öğrencide FSRS hedefi tutturamıyor: %90 isteniyor, %82 oluyor. Bunu düzeltecek olan, kişisel parametrelerin öğrencinin kendi tekrar günlüğünden hesaplanması. Bunun için günlük şart (bölüm 4).
+Hızlı unutan öğrencide FSRS hedefi tutturamıyor: %90 isteniyor, %83 oluyor. Bunu düzeltecek olan, kişisel parametrelerin öğrencinin kendi tekrar günlüğünden hesaplanması. Bunun için günlük şart (bölüm 4).
 
 ### 3.5 Uzun vade: 365 gün
 
@@ -233,19 +254,30 @@ Hızlı unutan öğrencide FSRS hedefi tutturamıyor: %90 isteniyor, %82 oluyor.
 
 | Yöntem | Tekrar/gün (ortalama) | Tekrar/gün (son 30 gün) | Sondaki hatırlama | Hatırlanan kelime (1.000'den) |
 |---|---|---|---|---|
-| Leitner (main) | 48,7 | 41,6 | %98,5 | 985 |
-| Leitner + iki kutu düşme | 46,4 | 40,0 | %98,2 | 982 |
-| Leitner + iki kutu düşme + tazeleme 30/60/120 | 30,5 | 13,1 | %95,7 | 957 |
-| FSRS-6, hedef 0,90 | 24,7 | 12,0 | %94,8 | 948 |
-| FSRS-6, hedef 0,95 | 42,1 | 22,0 | %97,4 | 974 |
+| Leitner (main) | 48,9 | 42,0 | %98,5 | 985 |
+| Leitner + iki kutu düşme | 46,4 | 39,9 | %98,2 | 982 |
+| Leitner + iki kutu düşme + tazeleme 30/60/120 | 30,5 | 13,0 | %95,7 | 957 |
+| FSRS-6, hedef 0,85 | 17,9 | 8,7 | %92,2 | 922 |
+| FSRS-6, hedef 0,90 | 24,6 | 12,1 | %94,8 | 948 |
+| FSRS-6, hedef 0,95 | 41,5 | 21,2 | %97,4 | 974 |
 
-- **Bugünkü Leitner'in uzun vadeli yükü:** bilinen her kelime 30 günde bir geri geliyor. 1.000 kelimede bu, sonsuza kadar günde 33 tazeleme demek.
-- **FSRS'in kazancı:** aralığı aylara, yıllara uzatıyor; son 30 günün yükü 41,6 → 12,0.
-- **Ama** yalnız "tazeleme 30 → 60 → 120" kuralı da yükü 13,1'e indiriyor. Uzun vadeli kazancın çoğu, FSRS'e geçmeden alınabiliyor.
+- **Bugünkü Leitner** bilinen her kelimeyi 30 günde bir soruyor. 1.000 kelimede bu, sonsuza kadar günde yaklaşık 33 tazeleme demek. Yüksek hatırlamanın (%98,5) bedeli bu.
+- **FSRS 0,90, Leitner'e göre:**
+  - ortalama yük −%50 (48,9 → 24,6);
+  - son 30 günün yükü −%71 (42,0 → 12,1);
+  - buna karşılık hatırlama −3,7 puan (%98,5 → %94,8); 1.000 kelimeden 37 kelime az.
+  - 90 günde bu kayıp 1,3 puandı; süre uzadıkça büyüyor.
+- **Aynı yükte üstünlük yok.** FSRS'i Leitner'in ortalama yüküne (48,9) çıkarmak için hedefi 0,95'in üstüne almak gerekiyor. Tablodaki çizgi uzatılınca hatırlama yaklaşık %98,4–98,5 çıkıyor, Leitner'le aynı. Bu sayı tablonun dışına uzatılmış bir tahmin.
+- **Büyüyen tazeleme** FSRS'e çok benzer bir seçim:
+  - son ayın yükü 42,0 → 13,0;
+  - hatırlama −2,8 puan (%98,5 → %95,7); 28 kelime az.
+  - FSRS 0,90'ın sayıları da yakın: 12,1 ve %94,8.
+  - Uzun vadeli yük kazancının çoğu FSRS'e geçmeden alınabiliyor, ama aynı hatırlama kaybıyla.
+- **Büyüyen tazeleme 90 günde hiçbir şey değiştirmiyor** (3.2'deki satır neredeyse aynı). Hep "Bildim" denen kelime 31. günde "bilinen" olur (hep "Kolay" ile 26. günde), ilk tazelemesi 30 gün sonra gelir; kural ancak 2–3. aydan sonra işe yarar.
 
 ### 3.6 Sınırlar
 
-- Öğrencinin hafıza modeli FSRS-6. FSRS'in gerçek üstünlüğü burada görünenden küçük de olabilir, büyük de.
+- Öğrencinin hafıza modeli FSRS-6. FSRS'in gerçek üstünlüğü burada görünenden küçük de olabilir, büyük de. Kişisel parametrelerin katkısı bu yüzden ölçülemiyor: öğrenci zaten varsayılan modelin ta kendisi.
 - Lockglow'un tekrar sorusu 4 şıklı boşluk doldurma. Şans payı (%25) modelde yok. Widget'ta görmek (exposure) de modelde yok; gerçek hayatta hatırlamayı biraz artırıyor olabilir.
 - Her gün tek oturum varsayıldı; atlanan gün yok.
 - "Biliyorum" (`markKnown`) ve is3-tekrar'ın 3 gün kontrolü simüle edilmedi.
@@ -271,7 +303,10 @@ Hepsi isteğe bağlı (`Optional`). `WordProgress`'in otomatik `Decodable`'ı ek
 **Aynen kalanlar:**
 - `state`, `dueAt` (artık FSRS yazar), `reviews`, `lapses`, `exposures`, `knownOverride`, `saved`.
 - `box` dondurulur: geri dönüş için saklanır, FSRS açıkken güncellenmez.
-- `state == .known` FSRS'te türetilir: S ≥ 30 gün. Mimari raporu "21–30 gün ve en az 2 doğru cevap" diyor (`raporlar/04_teknik_mimari.md`).
+
+**"Bilinen kelime" FSRS'te iki yoldan olur:**
+- S ≥ 30 gün. Mimari raporu "21–30 gün ve en az 2 doğru cevap" diyor (`raporlar/04_teknik_mimari.md`).
+- Ya da kullanıcı "Biliyorum" demiştir (`knownOverride`) ve kontrol cevabı henüz gelmemiştir. Bugünkü gibi `state == .known` kalır.
 
 **Ayrı bir dosya: `review_log.jsonl`.** `alt-ilerleme` tasarım notunda da planlı.
 - Her cevap bir satır: `word_id`, `at`, `grade`, `source` (tekrar / quiz / widget kontrolü), `elapsed_days`.
@@ -290,11 +325,13 @@ Uygulama FSRS açıkken ilk kez başladığında bir kez çalışır. Yalnız `s
    - **S:** kelimenin kutusunun aralığı (`Leitner.intervalDays[box − 1]`: 1, 2, 4, 8, 16 gün); bilinen kelimede 30.
      - Gerekçe: Leitner kelimeyi bu aralıktan sonra soruyordu. Hedef 0,9 iken FSRS'te aralık = S.
      - fsrs-rs'in eski zamanlayıcıdan çevirme fonksiyonu `memory_state_from_sm2(ease, interval, retention)` da S'yi aynı yoldan kurar.
-   - **D:** başlangıç D0(Bildim) = 2,12. Sonra `lapses` kadar kez "Bilemedim" zorluk güncellemesi uygulanır: 1 yanlış ≈ 7,39, 2 yanlış ≈ 9,13. Bildim, D'yi neredeyse değiştirmez, Kolay biraz düşürür; ikisi yok sayılır.
+   - **D:** başlangıç D0(Bildim) = 2,12. Sonra `lapses` kadar kez "Bilemedim" zorluk güncellemesi uygulanır: 1 yanlış ≈ 7,39, 2 yanlış ≈ 9,13.
+     - Zor ve Kolay da D'yi değiştirir ama Leitner bunları saklamıyor. Bir "Zor" 2,12'yi 4,75'e çıkarır; bir "Kolay" 2,12'yi 1'e, 7,39'u 6,51'e indirir. Bu yüzden tahmin kaba.
+     - "Bildim" D'yi neredeyse hiç değiştirmez. D'deki hata, S'deki hatadan daha uzun sürer; ancak sonraki Zor/Kolay/Bilemedim cevaplarıyla düzelir. Günlüğü erken başlatmak için bir neden daha.
    - **Aşama:** `review`.
-3. **"Biliyorum" denmiş ama kanıtlanmamış kelime** (`knownOverride`): bellek uydurulmaz (`stability = nil`). Bekleyen 3 gün kontrolü (is3-tekrar) FSRS'in ilk cevabı olur: `initialMemory(not)`.
+3. **"Biliyorum" denmiş ama kanıtlanmamış kelime** (`knownOverride`): bellek uydurulmaz (`stability = nil`); kelime `known` kalır ve "Bildiğim kelimeler"de sayılır. Bekleyen 3 gün kontrolü (is3-tekrar) FSRS'in ilk cevabı olur: `initialMemory(not)`.
 4. **Yeni kelime** (`state == .new`): değişmez. İlk cevapta `initialMemory`.
-5. **`dueAt` korunur.** Bütün kelimeler bir anda yeniden zamanlanmaz, yani geçiş günü yığılma olmaz. Bir sonraki cevaptan sonra FSRS zamanlar. Tahminin hatası 1–2 cevapta kaybolur: S gerçek cevaplarla güncelleniyor.
+5. **`dueAt` korunur.** Bütün kelimeler bir anda yeniden zamanlanmaz, yani geçiş günü yığılma olmaz. Bir sonraki cevaptan sonra FSRS zamanlar.
 
 **Geri dönüş (FSRS kapatılırsa):** dondurulmuş `box` kullanılır. FSRS açıkken yeni öğrenilen kelimede kutu S'den bulunur: aralığı S'yi geçmeyen en büyük kutu; S ≥ 30 ise `known`.
 
@@ -309,8 +346,8 @@ Uygulama FSRS açıkken ilk kez başladığında bir kez çalışır. Yalnız `s
    - en az bir kez cevaplanmış kelimede "Bilemedim" `lapses += 1` yapar ve `knownOverride`'ı kaldırır.
 4. Ayarlar: `learningSteps: [600]`, `relearningSteps: [600]`, hedef 0,90.
    - İsteğe bağlı bir "Tekrar temposu" ayarı eklenebilir: Rahat 0,85 / Dengeli 0,90 / Yoğun 0,95.
-   - 0,95'i "yük yaklaşık iki katına çıkar" diye açıkla.
-5. Bilinen kelime: S ≥ 30 gün. "Bildiğim kelimeler" listesi ve widget'ın tazeleme slotu bunu kullanır.
+   - 0,95'i "yük yaklaşık %65 artar" diye açıkla (simülasyonda 90 günde %66, 365 günde %69).
+5. Bilinen kelime: S ≥ 30 gün ya da bekleyen "Biliyorum" (4.1). "Bildiğim kelimeler" listesi ve widget'ın tazeleme slotu bunu kullanır.
 6. `QueueComposer.lastAnswer` aralık eşleştirmesi yerine `lastReviewedAt` ve `lastGrade` kullanmalı.
    - Bugün `dueAt − lastSeenAt` farkını Leitner'in aralıklarıyla karşılaştırıyor; FSRS aralıklarında bu eşleşme tutmaz (is3-widgetsira notu).
    - Hata güvenli tarafta olur (kelime yalnız gizlenir), ama "bugün cevaplananlar önce" kuralı sessizce çalışmaz.
@@ -319,22 +356,24 @@ Uygulama FSRS açıkken ilk kez başladığında bir kez çalışır. Yalnız `s
 8. **Gün sınırı.** FSRS 24 saatin katlarıyla sayar: akşam 23:00'teki cevap iki gün sonra 23:00'te "zamanı gelmiş" olur. Anki günü sabah 04:00'te başlatır. Tekrar listesi "bugün"ü yerel 04:00'ten saymalı ki kelime sabah oturumunda gelsin.
 9. **Kişisel parametreler** (v1.2'den sonra).
    - Anki kılavuzu "birkaç yüzden az tekrar" ile eniyilemenin iyi çalışmadığını söylüyor.
-   - Birkaç yüz tekrardan sonra günlük dışa aktarılır, py-fsrs'in eniyileyicisiyle (PyTorch ister) bilgisayarda hesaplanır, parametreler uygulamaya yazılır.
+   - Birkaç yüz tekrardan sonra günlük dışa aktarılır, py-fsrs'in eniyileyicisiyle (PyTorch ister) bilgisayarda hesaplanır, parametreler `FSRS.areValid(weights:)` ile denetlenip uygulamaya yazılır.
    - Cihaz içinde eniyileme Swift'te yok; fsrs-rs'i iOS'a derlemek ağır bir iş.
 
 ### 4.4 Riskler
 
 | Risk | Etki | Önlem |
 |---|---|---|
-| Simülasyon FSRS'i kayırıyor (hafıza modeli FSRS'in kendisi) | Gerçek kazanç daha küçük olabilir | Ayarın arkasında aç; günlükle gerçek doğru oranını izle (hedef 0,90 → gerçekte ~%88 beklenir) |
-| Varsayılan parametreler A2 öğrencisine uymayabilir | Hedef tutmaz: 3 kat hızlı unutan öğrencide %90 yerine %82 | Günlük + kişisel parametreler; o zamana kadar gerçek doğru oranı %80'in altındaysa hedefi yükselt |
+| Simülasyon FSRS'i kayırıyor (hafıza modeli FSRS'in kendisi) | Gerçek kazanç daha küçük olabilir | Ayarın arkasında aç; günlükle gerçek doğru oranını izle (hedef 0,90 → simülasyonda %89) |
+| Varsayılan parametreler A2 öğrencisine uymayabilir | Hedef tutmaz: 3 kat hızlı unutan öğrencide %90 yerine %83 | Günlük + kişisel parametreler; o zamana kadar gerçek doğru oranı %80'in altındaysa hedefi yükselt |
+| Uzun vadede daha düşük hatırlama | 365 günde hedef 0,90 Leitner'den 3,7 puan aşağıda | Bilerek seçilen bir takas; daha yüksek hatırlama istenirse hedef 0,93–0,95 |
 | 4 şıklı soruda şans payı (%25) | Şansla doğru cevap "hatırladı" sayılır, S şişer, aralıklar uzar | Uzun aralıkta daha zor soru türü (ogrenme_ilkeleri 2.4: "soru türü kutuya göre değişir"; FSRS'te kutu yerine S'ye bağlanmalı) |
 | "Zor"un unutulan kelimede kullanılması | FSRS "Zor"u doğru sayar, aralıklar fazla uzar (Anki kılavuzunun en büyük uyarısı) | Düğme metni "Zor ama bildim" (tasarım önerisi); unutan "Bilemedim"e basmalı |
 | `lastSeenAt` widget'ta da değişiyor | Yanlış geçen gün sayısı → yanlış S | `lastReviewedAt` (4.1) |
 | `QueueComposer` Leitner aralıklarını tanıyor | "Bugün cevaplananlar önce" kuralı sessizce bozulur | 4.3 adım 6 |
-| Geçişte tahmin edilen S ve D | İlk 1–2 tekrar biraz erken ya da geç | Günlüğü şimdi başlat; `dueAt` korunur |
-| Aynı gün yeniden sorma artar (7,1 → 10,1/gün) | Tur biraz uzar | Kabul edilebilir: günde 3 soru fazla. Adımları boşaltmak (`[]`) çözüm değil: o zaman "Bilemedim" de 1 gün sonraya kalır |
-| "Bildiğim kelimeler" sayısı geçiş günü değişir | Kullanıcı şaşırır | Eşik S ≥ 30; geçişte bilinen kelimelere S = 30 verildiği için sayı korunur |
+| Geçişte tahmin edilen S ve D | İlk tekrarlar biraz erken ya da geç; D'deki hata daha uzun sürer | Günlüğü şimdi başlat; `dueAt` korunur |
+| Aynı gün yeniden sorma artar (7,2 → 9,6/gün) | Tur biraz uzar. Neden: adım içinde "Zor" 15 dakika sonra yeniden soruluyor (Leitner'de ertesi gün) | Kabul edilebilir: günde 2–3 soru fazla. Adımları boşaltmak (`[]`) çözüm değil: o zaman "Bilemedim" de 1 gün sonraya kalır |
+| "Bildiğim kelimeler" sayısı geçiş günü değişir | Kullanıcı şaşırır | Geçişte bilinen kelimelere S = 30 verilir (eşik 30); "Biliyorum" denmiş kelimeler bayrakla bilinen kalır (4.1). Sayı korunur |
+| Bozuk ya da sınır dışı parametre (ör. eniyileyici çıktısı) | Sonsuz/NaN aralık, uygulama durur | Yüklemeden önce `FSRS.areValid(weights:)`; geçmezse varsayılan parametreler |
 | FSRS-7 ve parametre değişiklikleri | Bellek yeniden hesaplanmalı | Günlük varsa tek seferlik yeniden hesap |
 | 32 bit / 64 bit ve yuvarlama farkları | fsrs-rs ile milyonda 1 fark | Testlerde tolerans; py-fsrs ile aynı yuvarlama |
 
@@ -344,14 +383,19 @@ Uygulama FSRS açıkken ilk kez başladığında bir kez çalışır. Yalnız `s
    - Küçük bir iş; QueueComposer'ın bugünkü sorununu da çözer.
    - FSRS geçişini tahminden kurtarır.
    - Kişisel parametrelerin tek kaynağıdır.
-2. **Şimdi: Leitner'e "tazeleme 30 → 60 → 120 gün".** Simülasyona göre bir yıl sonra günlük yükü 41,6'dan 13,1'e indiriyor. FSRS'in uzun vadeli kazancının çoğu bu. Kod küçük; kayma kuralıyla birlikte is3-tekrar'ın işine eklenebilir.
-3. **v1.2: FSRS'i bir ayarın arkasında aç.**
+2. **v1.2: FSRS'i bir ayarın arkasında aç.**
    - Ayarlar: hedef 0,90, adımlar 10 dk / 10 dk.
    - Günlükte birkaç hafta veri birikince aç; geçişi günlükten kur.
-   - Beklenen: günlük tekrar yaklaşık üçte bir azalır, hatırlama yaklaşık 1 puan düşer.
-   - Daha yüksek hatırlama istenirse hedef 0,93–0,94: Leitner'in yükünde ondan biraz daha iyi hatırlama.
-4. **Sonra: kişisel parametreler.** Birkaç yüz tekrar birikince bilgisayarda hesapla. FSRS'in Leitner'e karşı asıl farkı burada ortaya çıkar: öğrenci varsayılan modelden farklıysa hedefi ancak böyle tutturur.
-5. **Hedef 0,95'in üstüne çıkma.** Yük 0,90'a göre %65 artıyor; Anki de %97'nin altını öneriyor.
+   - **Beklenen, 90 günde:** günlük tekrar yaklaşık üçte bir azalır, hatırlama yaklaşık 1,3 puan düşer.
+   - **Beklenen, bir yılda:** yük yarıya iner, hatırlama yaklaşık 3,7 puan düşer.
+   - Bu takas istenmiyorsa hedef 0,93–0,95. 90 günde 0,94, Leitner'in yükünde ondan biraz daha iyi hatırlama veriyor.
+3. **Sonra: kişisel parametreler.** Birkaç yüz tekrar birikince bilgisayarda hesapla. Öğrenci varsayılan modelden farklıysa FSRS hedefi ancak böyle tutturur. Leitner'in hiç yapamadığı, FSRS'in asıl farkı bu; ama bu simülasyon değerini ölçemiyor.
+4. **FSRS 2–3 aydan uzun gecikecekse arada Leitner'e "tazeleme 30 → 60 → 120 gün".**
+   - Bir yıl sonra günlük yükü 42,0'dan 13,0'a indiriyor, hatırlamayı 2,8 puan düşürüyor.
+   - 90 güne kadar etkisi yok.
+   - Kod küçük; kayma kuralıyla birlikte is3-tekrar'ın işine eklenebilir.
+   - FSRS yakında gelecekse gerek yok: FSRS bu kuralın yerini alır.
+5. **Hedef 0,95'in üstüne çıkma.** Yük 0,90'a göre %66 artıyor; Anki de %97'nin altını öneriyor.
 
 ## Kaynaklar
 
