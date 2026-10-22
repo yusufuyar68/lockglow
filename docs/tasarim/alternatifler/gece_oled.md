@@ -317,6 +317,70 @@ Her maddenin kaynağı yanında. Notlar:
       - kilitli ekran widget'larının saat rengini alması (iOS 17, 18, 26);
       - Türkçe iOS menü adları ("Beyaz Noktayı Azalt", "Erişilebilirlik Kısayolu").
 
+## Uygulama planı (öneri: üç küçük adım)
+
+Bu planı uygulayacak oturum için. Dosya adları `ios/arayuz-sik` dalına (1e4b4e6) göre. O sırada `ui2-*` oturumları aynı dosyaları değiştiriyordu. Bu yüzden önce onların dalları birleşmeli, sonra bu adımlar başlamalı. Satır numarası yerine işlev adları verildi.
+
+Her adım kendi başına bir PR olabilir. Önce 1. adım: en az risk, en çok ışık kazancı.
+
+### Adım 1: Koyu modda ışık bütçesi (yalnız mevcut koyu tema)
+
+Gece tonu henüz yok. Yalnız bugünkü koyu tema daha az ışık verir.
+
+| Dosya | Değişiklik |
+|---|---|
+| `ios/Shared/LockglowTheme.swift` → `Theme.bg` | Koyu değer `0x0D0F11` → `0x000000`. |
+| `LockglowTheme.swift` → `CardSurfaceModifier` | Koyu modda dolgu yok, yalnız `Theme.line` kenar. Açık mod aynı. |
+| `LockglowTheme.swift` → `CapsuleButtonBody` (`.primary`) | Koyu modda dolgu `Theme.band.opacity(0.16)`, yazı `Theme.band`, 1,5 pt `band.opacity(0.45)` kenar. Işıma (`primaryGlow` gölgesi) kalkar. |
+| `LockglowTheme.swift` → `PhosphorBandDrawing` (`.underline`) | Bulanık `Ellipse` ışıması çizilmez; çizgi kalır. |
+| `ios/App/ReviewView.swift` → cevap düğmesinin varsayılan hâli (`Theme.primary` dolgu + `primaryGlow` gölge) ve `DoneMark` | Aynı kural: koyu modda tonal, ışımasız. |
+| `ios/App/GlowStyle.swift` → `Palette.glow` / `onGlow` | `Theme.primary` / `onPrimary`'ye bağlı. `GlowButtonStyle` 1e4b4e6'da hâlâ `OnboardingView`'da kullanılıyor; tonal kural oraya da uygulanmalı. |
+
+**Kabul ölçütü:**
+- Koyu modda hiçbir ekranda dolu sarı alan yok.
+- Ana düğme yazısı zemininde en az 9:1.
+- Açık mod ekran görüntüleri değişmez.
+
+**Test:**
+- `screenshots.yml` bir kez, yalnız koyu mod için çalıştırılır (kota).
+- `WidgetSnapshotTests` değişmez, çünkü widget'lar bu adımda değişmiyor.
+
+### Adım 2: Widget'lar için gece düzeni
+
+| Dosya | Değişiklik |
+|---|---|
+| `ios/Widgets/AccessoryWordViews.swift` → `RectangularWordView` | `@Environment(\.isLuminanceReduced)` okunur. Açıkken `rows(belowWord: 1)` kullanılır (tanım satırı yok) ve şerit 1 pt olur. |
+| `ios/Widgets/WordWidget.swift` → `containerFill` | `.accessoryRectangular` için `isLuminanceReduced` iken `AccessoryWidgetBackground` çizilmez. Ana ekran aileleri koyu modda `Color.black`. |
+| `ios/Widgets/HomeWordViews.swift` | `@Environment(\.showsWidgetContainerBackground)` false ise (StandBy) iç boşluk ve yazı boyutu büyür. Düğme sırası değişmez. |
+| `ios/WidgetSnapshots/WidgetSnapshotTests.swift` | Yeni görünümler: "her-zaman-acik" (`isLuminanceReduced` ortamda ayarlanabiliyorsa onunla; ayarlanamıyorsa görünüme bir parametre verilir) ve "standby" (`.vibrant`, zeminsiz `systemSmall`, kırmızıya boyanmış önizleme). |
+
+**Kabul ölçütü:**
+- Her zaman açık ekranında dikdörtgen widget'ta yalnız kelime ve anlam var.
+- StandBy kırmızı önizlemesinde kelime en büyük ve en parlak öğe.
+- `containerBackgroundRemovable(false)` hiçbir yerde yok.
+
+**Test:** Linux paket testleri her push'ta çalışır. macOS işi `-f runner=macos-15-intel` ile bir kez.
+
+### Adım 3: Gece tonu (kehribar / soluk fosfor) ve durma noktası
+
+Kullanıcı ton seçimini onaylarsa yapılır (bkz. "Açık sorular").
+
+| Dosya | Değişiklik |
+|---|---|
+| `LockglowTheme.swift` | `NightToneTrait` (`UITraitDefinition`; değerler: kapalı / kehribar / fosfor). `Theme.dynamic` koyu dalda bu trait'e göre "Önerilen renk tokenları" tablosundaki değeri döndürür. Sabit renkler (`bandDark`, `markDark`, `bandGlow`, `primaryGlow`) dinamik sağlayıcıya taşınır. |
+| Uygulamanın kök görünümü (`LockglowApp`) | Ayar değeri `UITraitBridgedEnvironmentKey` ile trait'e köprülenir. Köprü widget'ta ya da `Color(uiColor:)` çözümünde çalışmazsa yedek yol: `Environment` değeri ve tona göre renk döndüren işlevler. |
+| App Group `UserDefaults` | Ton ayarı widget hedefiyle paylaşılır; `WidgetCenter.reloadAllTimelines()` ile widget yenilenir. |
+| `ios/App/SettingsView.swift` | "Gece görünümü" bölümü: Ne zaman açılsın (Koyu modda / Her zaman / Kapalı), Hangi ton, Geçişler. "Yardım" bölümüne iki ipucu satırı. Metinler bu belgedeki mockup'tan. |
+| `ios/App/FeedView.swift` | Gece tonu açıkken "Bu gece N / M" sayacı ve son karttan sonra "Bu geceki N kelime tamam" ekranı. N, Ayarlar'daki "Bir gecede kaç kelime?" (3 / 5 / 10). Kart değişimi `.transition(.opacity)`, `accessibilityReduceMotion` ya da "Hareketsiz" iken animasyonsuz. |
+| `ios/App/PronunciationPracticeView.swift` → `FeedbackPanel` | Gece tonunda `goodTint` / `badTint` %12; mikrofon tonal. |
+
+**Kabul ölçütü:**
+- Bu belgedeki tabloyla aynı kontrastlar: `ink` 13,0:1, `ink2` 8,7:1, `ink3` en az 4,5:1 (kapsülde 4,7).
+- Gece tonu kapalıyken koyu mod 1. adımdaki gibi kalır.
+- VoiceOver, Dynamic Type (en büyük boyutta kart kayar) ve Reduce Motion ile denenir.
+
+**Cihazda denenecekler:** "Swift'e taşırken dikkat" bölümünün son maddesindeki liste.
+
 ## Açık sorular
 
 - Gece tonu ayrı bir seçenek mi olsun, yoksa koyu modun kendisi mi bu olsun? Öneri: koyu mod bu olsun; Ayarlar'da yalnız ton seçimi.
