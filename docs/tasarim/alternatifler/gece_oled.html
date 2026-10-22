@@ -107,6 +107,28 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
   position:relative;padding:12px;background:#060606;border-radius:60px;
   box-shadow:0 0 0 1.5px #2b2722 inset,0 50px 90px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,214,170,.05);color:var(--ink);font-family:var(--font-ui)}
 .phone.land{--sw:844px;--sh:390px}
+/* iPhone SE (375 × 667): ana düğmeli eski kasa, çentik ve ev çubuğu yok. */
+.phone[data-device="se"]{--sw:375px;--sh:667px;--sr:6px;--safe-top:20px;--safe-bottom:0px;padding:72px 14px 80px;border-radius:46px}
+.phone[data-device="se"]::after{content:"";position:absolute;left:50%;bottom:16px;width:50px;height:50px;margin-left:-25px;border-radius:50%;border:2px solid #3b3d44}
+.phone[data-device="se"]::before{content:"";position:absolute;left:50%;top:34px;width:64px;height:7px;margin-left:-32px;border-radius:4px;background:#2a2c31}
+.phone.land[data-device="se"]{--sw:667px;--sh:375px;padding:14px 80px 14px 72px}
+.phone.land[data-device="se"]::before{top:50%;left:34px;width:7px;height:64px;margin:-32px 0 0}
+.phone.land[data-device="se"]::after{top:50%;left:auto;right:16px;bottom:auto;margin:-25px 0 0}
+.phone[data-device="se"] .island,.phone[data-device="se"] .homebar{display:none}
+.phone[data-device="se"] .statusbar{padding:0 10px;font-size:12px}
+.phone[data-device="se"] .tabbar{height:49px;padding:0}
+.phone[data-device="se"] .page{padding-bottom:62px}
+.phone[data-device="se"] .scroll{padding-bottom:66px}
+.phone[data-device="se"] .actbar{padding-bottom:14px}
+.phone[data-device="se"] .done .acts{padding-bottom:12px}
+.phone[data-device="se"] .ls .clock{font-size:76px}
+.phone[data-device="se"] .ls .bot{bottom:22px}
+.phone[data-device="se"] .hs{padding:calc(var(--safe-top) + 12px) 20px 0;gap:16px}
+.phone[data-device="se"] .wg-small{width:148px;height:148px}
+.phone[data-device="se"] .wg-medium{width:321px;height:148px}
+.phone[data-device="se"] .dock{left:20px;right:20px;bottom:8px;height:76px}
+.phone[data-device="se"] .sb-wrap{padding:20px 28px}
+.phone[data-device="se"] .sb-clock .t{font-size:100px}
 .screen{position:relative;width:var(--sw);height:var(--sh);border-radius:var(--sr);overflow:hidden;background:var(--bg);isolation:isolate}
 .statusbar{position:absolute;top:0;left:0;right:0;height:var(--safe-top);display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;z-index:50;font:600 16px var(--font-ui);color:var(--ink-2);pointer-events:none}
 .statusbar .si{display:flex;gap:6px;align-items:center}
@@ -124,8 +146,8 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 /* Uygulama kabuğu */
 .app{position:absolute;inset:0;padding-top:var(--safe-top);display:flex;flex-direction:column;background:var(--bg)}
 .hdr{display:flex;align-items:center;justify-content:space-between;min-height:50px;padding:0 20px;gap:8px;flex:none}
-.hdr .ttl{font:700 17px var(--font-ui);color:var(--ink)}
-.hdr .meta{font:600 13px var(--font-ui);color:var(--ink-3);font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:8px}
+.hdr .ttl{font:700 calc(17px*var(--dt)) var(--font-ui);color:var(--ink)}
+.hdr .meta{font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3);font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:8px}
 .dots{display:inline-flex;gap:4px}
 .dots b{width:6px;height:6px;border-radius:50%;background:var(--surface-3)}
 .dots b.on{background:var(--ink-2)}
@@ -134,35 +156,35 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 .tabbar{position:absolute;left:0;right:0;bottom:0;height:83px;padding:0 0 30px;display:flex;border-top:1px solid var(--line);background:var(--tab-bg);z-index:30}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:600 10.5px var(--font-ui);color:var(--ink-3)}
 .tab svg{width:24px;height:24px}
-.tab[aria-selected="true"]{color:var(--ink)}
+.tab[aria-current="page"]{color:var(--ink)}
 .app.round .tabbar{display:none}
 .swap{transition:opacity var(--fade) ease}
 .swap.out{opacity:0}
 
 /* Ortak parçalar */
-.t-head{font:700 40px/1.08 var(--font-en);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;padding:0 .14em .34em;margin:0 -.14em -.34em;color:var(--ink)}
+.t-head{font:700 calc(40px*var(--dt))/1.08 var(--font-en);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;max-width:100%;min-width:0;padding:0 .14em .34em;margin:0 -.14em -.34em;color:var(--ink)}
 .band{position:relative;z-index:0}
 .band::before{content:"";position:absolute;z-index:-1;left:-.06em;right:-.06em;bottom:-.2em;height:.12em;background:var(--band);clip-path:polygon(.1em 0,100% 0,calc(100% - .1em) 100%,0 100%)}
 .band::after{content:"";position:absolute;z-index:-2;left:0;right:0;bottom:-.27em;height:.24em;background:var(--band-glow);filter:blur(.16em);border-radius:50%}
 .mark{font-weight:700;text-decoration:underline solid var(--mark);text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-skip-ink:auto}
-.t-gloss{font:600 28px/1.18 var(--font-ui);letter-spacing:-.005em;color:var(--ink)}
-.t-def{font:400 19px/1.38 var(--font-en);color:var(--ink-2)}
-.t-sub{font:400 15px/1.4 var(--font-ui);color:var(--ink-2)}
-.t-lt{font:700 32px/1.12 var(--font-ui);letter-spacing:-.01em;color:var(--ink);margin:4px 0 12px}
-.btn{min-height:44px;padding:0 20px;border-radius:22px;font:600 17px/1.2 var(--font-ui);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;color:var(--ink)}
+.t-gloss{font:600 calc(28px*var(--dt))/1.18 var(--font-ui);letter-spacing:-.005em;color:var(--ink)}
+.t-def{font:400 calc(19px*var(--dt))/1.38 var(--font-en);color:var(--ink-2)}
+.t-sub{font:400 calc(15px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
+.t-lt{font:700 calc(32px*var(--dt))/1.12 var(--font-ui);letter-spacing:-.01em;color:var(--ink);margin:4px 0 12px}
+.btn{min-height:44px;padding:0 20px;border-radius:22px;font:600 calc(17px*var(--dt))/1.2 var(--font-ui);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;color:var(--ink)}
 .btn-lg{min-height:54px;border-radius:27px;padding:0 24px}
 .btn.block{width:100%}
 .btn-primary{background:var(--primary-bg);color:var(--primary-ink);box-shadow:inset 0 0 0 1.5px var(--primary-line),var(--primary-glow)}
 .btn-tonal{background:var(--surface-2)}
 .btn-line{box-shadow:inset 0 0 0 1.5px var(--line-strong)}
-.btn-text{min-height:44px;padding:0 12px;font:600 15px var(--font-ui);color:var(--ink-3)}
+.btn-text{min-height:44px;padding:0 12px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-3)}
 .btn svg{width:20px;height:20px}
-.pill{min-height:44px;padding:0 14px 0 11px;border-radius:22px;background:var(--surface-2);color:var(--ink);font:600 15px var(--font-ui);display:inline-flex;align-items:center;gap:6px;flex:none}
+.pill{min-height:44px;padding:0 14px 0 11px;border-radius:22px;background:var(--surface-2);color:var(--ink);font:600 calc(15px*var(--dt)) var(--font-ui);display:inline-flex;align-items:center;gap:6px;flex:none}
 .pill svg{width:19px;height:19px}
 .pill.on{box-shadow:inset 0 0 0 1.5px var(--line-strong)}
 .icb{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--ink-2);flex:none}
 .icb svg{width:22px;height:22px}
-.lvl{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 9px 0 8px;border-radius:12px;border:1.5px solid var(--line-strong);font:700 13px var(--font-ui);color:var(--ink)}
+.lvl{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 9px 0 8px;border-radius:12px;border:1.5px solid var(--line-strong);font:700 calc(13px*var(--dt)) var(--font-ui);color:var(--ink)}
 .lvl i{display:flex;gap:2px}
 .lvl i b{width:5px;height:5px;border-radius:50%;background:var(--ink-3);opacity:.35}
 .lvl i b.on{background:var(--ink-2);opacity:1}
@@ -172,36 +194,36 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 .wcard .inner{flex:1;min-height:0;overflow:hidden;padding:18px 20px 10px;display:flex;flex-direction:column;gap:12px}
 .wcard .inner > *{flex-shrink:0}
 .wcard .foot{padding:4px 14px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none}
-.now{display:inline-flex;align-items:center;gap:5px;min-height:26px;padding:0 10px;border-radius:13px;background:var(--surface-2);font:600 12px var(--font-ui);color:var(--ink-2);align-self:flex-start}
+.now{display:inline-flex;align-items:center;gap:5px;min-height:26px;padding:0 10px;border-radius:13px;background:var(--surface-2);font:600 calc(12px*var(--dt)) var(--font-ui);color:var(--ink-2);align-self:flex-start}
 .now svg{width:13px;height:13px}
 .wmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:44px}
-.wmeta .ipa{font:400 15px var(--font-en);color:var(--ink-2)}
-.wmeta .pos{font:500 15px var(--font-ui);color:var(--ink-2)}
+.wmeta .ipa{font:400 calc(15px*var(--dt)) var(--font-en);color:var(--ink-2)}
+.wmeta .pos{font:500 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
 .wmeta .acts{display:inline-flex;align-items:center;gap:2px;margin-left:auto}
 .alt{margin-top:3px}
 .exblock{display:flex;flex-direction:column;gap:5px;border-top:1px solid var(--line);padding-top:10px}
 .ex-h{display:flex;align-items:center;justify-content:space-between;min-height:32px;margin:-6px 0 -4px}
-.ex-h span{font:600 13px var(--font-ui);color:var(--ink-3)}
-.ex-en{font:400 17px/1.45 var(--font-en);color:var(--ink)}
-.ex-tr{font:400 16px/1.4 var(--font-ui);color:var(--ink-2)}
+.ex-h span{font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
+.ex-en{font:400 calc(17px*var(--dt))/1.45 var(--font-en);color:var(--ink)}
+.ex-tr{font:400 calc(16px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
 .mist{background:var(--surface-2);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:7px}
-.mist .h{display:flex;align-items:center;gap:6px;font:700 15px var(--font-ui);color:var(--ink)}
+.mist .h{display:flex;align-items:center;gap:6px;font:700 calc(15px*var(--dt)) var(--font-ui);color:var(--ink)}
 .mist .h svg{width:19px;height:19px;color:var(--caution)}
 .mist .l{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;align-items:baseline}
-.tag{display:inline-flex;align-items:center;gap:3px;font:700 13px var(--font-ui);white-space:nowrap}
+.tag{display:inline-flex;align-items:center;gap:3px;font:700 calc(13px*var(--dt)) var(--font-ui);white-space:nowrap}
 .tag svg{width:13px;height:13px;stroke-width:3}
 .tag.bad{color:var(--bad)}
 .tag.good{color:var(--good)}
-.mist .wrong{font:400 16px/1.4 var(--font-en);color:var(--ink)}
-.mist .right{font:700 16px/1.4 var(--font-en);color:var(--ink)}
+.mist .wrong{font:400 calc(16px*var(--dt))/1.4 var(--font-en);color:var(--ink)}
+.mist .right{font:700 calc(16px*var(--dt))/1.4 var(--font-en);color:var(--ink)}
 .diff{text-decoration:underline dotted var(--bad);text-decoration-thickness:2px;text-underline-offset:4px}
 .fix{text-decoration:underline solid var(--ink-2);text-decoration-thickness:2px;text-underline-offset:3px}
-.mist .why{font:400 15px/1.42 var(--font-ui);color:var(--ink-2)}
+.mist .why{font:400 calc(15px*var(--dt))/1.42 var(--font-ui);color:var(--ink-2)}
 .mrow{display:none;align-items:center;gap:10px;min-height:52px;width:100%;text-align:left;padding:6px 12px;border-radius:14px;background:var(--surface-2)}
 .mrow svg.li{width:20px;height:20px;color:var(--caution)}
 .mrow .tx{flex:1;display:flex;flex-direction:column}
-.mrow .tx b{font:700 15px var(--font-ui);color:var(--ink)}
-.mrow .tx span{font:500 13px var(--font-ui);color:var(--ink-2)}
+.mrow .tx b{font:700 calc(15px*var(--dt)) var(--font-ui);color:var(--ink)}
+.mrow .tx span{font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-2)}
 .mrow .chev{width:18px;height:18px;color:var(--ink-3)}
 /* Kart sondan kısalır: c0 Ayrıca gizli, c1 Dikkat açıklaması gizli, c2 Dikkat satıra iner, c3 örnek de gizlenir */
 .c0 .alt,.c0 .now{display:none}
@@ -210,72 +232,78 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 .c2 .mist{display:none}
 .c2 .mrow{display:flex}
 .c3 .exblock{display:none}
-.known{display:inline-flex;align-items:center;gap:6px;font:600 15px var(--font-ui);color:var(--good)}
+/* Erişilebilirlik boyutlarında kart kısalmaz, kayar (ana README kural 5). */
+.c4 .inner{overflow-y:auto;scrollbar-width:none}
+.c4 .inner::-webkit-scrollbar{display:none}
+.c4 .exblock,.c4 .mist{display:flex}
+.c4 .mrow{display:none}
+.c4 .mist .why{display:block}
+.known{display:inline-flex;align-items:center;gap:6px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--good)}
 .known svg{width:20px;height:20px}
 
 /* Tekrar ve quiz */
 .rtop{display:flex;align-items:center;gap:10px;min-height:50px;padding:0 16px;flex:none}
-.rtop .mode{display:inline-flex;align-items:center;gap:6px;font:600 15px var(--font-ui);color:var(--ink-2)}
+.rtop .mode{display:inline-flex;align-items:center;gap:6px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
 .rtop .mode svg{width:18px;height:18px}
-.rtop .cnt{font:600 13px var(--font-ui);color:var(--ink-3);margin-left:auto;font-variant-numeric:tabular-nums}
+.rtop .cnt{font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3);margin-left:auto;font-variant-numeric:tabular-nums}
 .prog{height:3px;margin:0 16px 10px;border-radius:2px;background:var(--surface-3);flex:none;overflow:hidden}
 .prog span{display:block;height:100%;background:var(--ink-2);border-radius:2px}
 .deck{flex:1;min-height:0;display:flex;flex-direction:column;padding:0 14px;gap:12px}
 .front{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px}
-.front .t-head{font-size:48px}
+.front .t-head{font-size:calc(48px*var(--dt))}
 .front .wmeta{justify-content:center}
-.front .tap{margin-top:18px;display:inline-flex;align-items:center;gap:6px;font:500 15px var(--font-ui);color:var(--ink-3)}
+.front .tap{margin-top:18px;display:inline-flex;align-items:center;gap:6px;font:500 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-3)}
 .actbar{flex:none;padding:10px 16px 30px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);background:var(--bg)}
-.ask{font:600 15px var(--font-ui);color:var(--ink-2);text-align:center}
+.ask{font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2);text-align:center}
 .grades{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .grade{min-height:60px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line-strong);display:flex;align-items:center;gap:10px;padding:8px 12px;text-align:left;color:var(--ink)}
 .grade .gi{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);color:var(--ink-2);flex:none}
 .grade .gi svg{width:18px;height:18px}
-.grade span{display:flex;flex-direction:column;font:600 16px/1.2 var(--font-ui)}
-.grade small{font:500 13px var(--font-ui);color:var(--ink-3);margin-top:2px}
+.grade span{display:flex;flex-direction:column;font:600 calc(16px*var(--dt))/1.2 var(--font-ui)}
+.grade small{font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3);margin-top:2px}
 .quiz{display:flex;flex-direction:column;gap:12px;padding-bottom:12px}
-.quiz .q{font:600 15px var(--font-ui);color:var(--ink-2)}
+.quiz .q{font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
 .qcard{background:var(--surface);border:1px solid var(--card-line);border-radius:22px;padding:18px}
-.qcard .s{font:400 21px/1.45 var(--font-en);color:var(--ink)}
+.qcard .s{font:400 calc(21px*var(--dt))/1.45 var(--font-en);color:var(--ink)}
 .blank{display:inline-block;width:92px;border-bottom:2px solid var(--ink-3);transform:translateY(-4px)}
 .opts{display:flex;flex-direction:column;gap:8px}
-.opt{min-height:54px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line-strong);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;font:400 19px var(--font-en);color:var(--ink);width:100%}
+.opt{min-height:54px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line-strong);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;font:400 calc(19px*var(--dt)) var(--font-en);color:var(--ink);width:100%}
 .opt.right{box-shadow:inset 0 0 0 2px var(--good)}
 .opt.wrong{box-shadow:none;outline:2px dashed var(--bad);outline-offset:-2px}
-.opt .mk{display:inline-flex;align-items:center;gap:5px;font:700 14px var(--font-ui)}
+.opt .mk{display:inline-flex;align-items:center;gap:5px;font:700 calc(14px*var(--dt)) var(--font-ui)}
 .opt.right .mk{color:var(--good)}
 .opt.wrong .mk{color:var(--bad)}
 .opt .mk svg{width:18px;height:18px}
 .fb{border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;background:var(--surface-2)}
 .fb.ok{background:var(--good-tint)}
 .fb.no{background:var(--bad-tint)}
-.fb .h{display:flex;align-items:center;gap:7px;font:700 17px var(--font-ui);color:var(--ink)}
+.fb .h{display:flex;align-items:center;gap:7px;font:700 calc(17px*var(--dt)) var(--font-ui);color:var(--ink)}
 .fb.ok .h svg{color:var(--good)}
 .fb.no .h svg{color:var(--bad)}
-.fb .m,.fb .you{font:400 16px/1.4 var(--font-ui);color:var(--ink-2)}
+.fb .m,.fb .you{font:400 calc(16px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
 .fb .m b,.fb .you b{color:var(--ink);font-family:var(--font-en)}
-.ret{display:flex;align-items:center;gap:6px;font:500 14px var(--font-ui);color:var(--ink-3);justify-content:center}
+.ret{display:flex;align-items:center;gap:6px;font:500 calc(14px*var(--dt)) var(--font-ui);color:var(--ink-3);justify-content:center}
 .ret svg{width:16px;height:16px}
 .sumlist{display:flex;flex-direction:column}
 .sumlist .si{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-top:1px solid var(--line)}
 .sumlist .si:first-child{border-top:0}
-.sumlist .w{grid-column:1;font:700 18px var(--font-en);color:var(--ink)}
-.sumlist .g{grid-column:1;font:400 15px var(--font-ui);color:var(--ink-2)}
+.sumlist .w{grid-column:1;font:700 calc(18px*var(--dt)) var(--font-en);color:var(--ink)}
+.sumlist .g{grid-column:1;font:400 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
 .nlist .si{display:flex;align-items:baseline;gap:10px;padding:9px 0}
 .nlist .g{flex:1;min-width:0}
-.nlist .when{font:500 13px var(--font-ui);color:var(--good);display:inline-flex;align-items:center;gap:4px}
-.nlist .when svg{width:14px;height:14px}
-.sumlist .when{grid-row:1 / 3;grid-column:2;align-self:center;display:inline-flex;align-items:center;gap:5px;font:500 13px var(--font-ui);color:var(--ink-3)}
+.sumlist.nlist .when{font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--good);display:inline-flex;align-items:center;gap:4px}
+.sumlist.nlist .when svg{width:14px;height:14px}
+.sumlist .when{grid-row:1 / 3;grid-column:2;align-self:center;display:inline-flex;align-items:center;gap:5px;font:500 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
 .sumlist .when svg{width:15px;height:15px}
 
 /* Bu gece bitti */
 .done{flex:1;min-height:0;display:flex;flex-direction:column;gap:14px;padding:6px 6px 0;overflow-y:auto;scrollbar-width:none}
 .moon{width:56px;height:56px;color:var(--band);opacity:.8;margin:8px 0 0}
 .moon svg{width:56px;height:56px;stroke-width:1.5}
-.done h1{margin:0;font:700 30px/1.15 var(--font-ui);color:var(--ink);text-wrap:balance}
-.done p{margin:0;font:400 17px/1.45 var(--font-ui);color:var(--ink-2)}
+.done h1{margin:0;font:700 calc(30px*var(--dt))/1.15 var(--font-ui);color:var(--ink);text-wrap:balance}
+.done p{margin:0;font:400 calc(17px*var(--dt))/1.45 var(--font-ui);color:var(--ink-2)}
 .card{border:1px solid var(--card-line);border-radius:22px;padding:6px 16px;background:var(--card-bg)}
-.inforow{display:flex;align-items:center;gap:10px;min-height:44px;font:500 15px var(--font-ui);color:var(--ink-2)}
+.inforow{display:flex;align-items:center;gap:10px;min-height:44px;font:500 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2)}
 .inforow svg{width:19px;height:19px;color:var(--ink-3)}
 .inforow b{color:var(--ink);font-weight:600}
 .done .acts{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:2px;padding-bottom:30px}
@@ -283,32 +311,66 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 /* Ayarlar */
 .scroll{flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;padding:0 16px 104px}
 .scroll::-webkit-scrollbar{display:none}
-.sh{margin:18px 4px 8px;font:600 13px var(--font-ui);color:var(--ink-3)}
+.sh{margin:18px 4px 8px;font:600 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
 .group{background:var(--surface);border:1px solid var(--card-line);border-radius:20px;overflow:hidden}
 .row{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 16px;border-top:1px solid var(--line);width:100%;text-align:left;color:var(--ink)}
 .row:first-child{border-top:0}
 .row.col{flex-direction:column;align-items:stretch;gap:9px}
-.row .rq{font:600 16px var(--font-ui);color:var(--ink)}
-.row .rf{font:400 13px/1.4 var(--font-ui);color:var(--ink-3)}
+.row .rq{font:600 calc(16px*var(--dt)) var(--font-ui);color:var(--ink)}
+.row .rf{font:400 calc(13px*var(--dt))/1.4 var(--font-ui);color:var(--ink-3)}
 .row svg.li{width:22px;height:22px;color:var(--ink-2)}
-.row .tx{flex:1;display:flex;flex-direction:column;font:500 16px var(--font-ui)}
-.row .tx small{font:400 13px var(--font-ui);color:var(--ink-3)}
+.row .tx{flex:1;display:flex;flex-direction:column;font:500 calc(16px*var(--dt)) var(--font-ui)}
+.row .tx small{font:400 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
 .row .chev{width:18px;height:18px;color:var(--ink-3)}
 .seg{display:flex;gap:3px;background:var(--surface-2);padding:3px;border-radius:14px}
-.seg button{flex:1;min-height:40px;border-radius:11px;font:600 15px var(--font-ui);color:var(--ink-2);text-align:center}
+.seg button{flex:1;min-height:40px;border-radius:11px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-2);text-align:center}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink-3)}
 .choice{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 12px;border-radius:16px;box-shadow:inset 0 0 0 1.5px var(--line-strong);text-align:left;width:100%}
 .choice[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--ink-2)}
-.choice .smp{width:52px;height:40px;border-radius:10px;background:#000;display:grid;place-items:center;font:700 19px var(--font-en);box-shadow:inset 0 0 0 1px var(--line-strong);flex:none}
-.choice .tx{flex:1;display:flex;flex-direction:column;font:600 16px var(--font-ui);color:var(--ink)}
-.choice .tx small{font:400 13px var(--font-ui);color:var(--ink-3)}
+.choice .smp{width:52px;height:40px;border-radius:10px;background:#000;display:grid;place-items:center;font:700 calc(19px*var(--dt)) var(--font-en);box-shadow:inset 0 0 0 1px var(--line-strong);flex:none}
+.choice .tx{flex:1;display:flex;flex-direction:column;font:600 calc(16px*var(--dt)) var(--font-ui);color:var(--ink)}
+.choice .tx small{font:400 calc(13px*var(--dt)) var(--font-ui);color:var(--ink-3)}
 .choice .rd{width:22px;height:22px;color:var(--ink-2)}
 .sheet{position:absolute;inset:0;z-index:70;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(0,0,0,.6)}
 .sheet .sb{background:var(--surface);border-top:1px solid var(--line-strong);border-radius:28px 28px 0 0;padding:16px 20px 40px;display:flex;flex-direction:column;gap:12px}
-.sheet h3{margin:0;font:700 20px var(--font-ui);color:var(--ink)}
-.sheet ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font:400 16px/1.42 var(--font-ui);color:var(--ink-2)}
+.sheet h3{margin:0;font:700 calc(20px*var(--dt)) var(--font-ui);color:var(--ink)}
+.sheet ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font:400 calc(16px*var(--dt))/1.42 var(--font-ui);color:var(--ink-2)}
 .sheet ol b{color:var(--ink);font-weight:600}
-.sheet .rf{font:400 13px/1.4 var(--font-ui);color:var(--ink-3)}
+.sheet .rf{font:400 calc(13px*var(--dt))/1.4 var(--font-ui);color:var(--ink-3)}
+
+/* Söyle (telaffuz) sayfası: mikrofon dolu değil, kenarlı; nabız yok. */
+.sb.say{align-items:center;text-align:center;gap:10px;padding-top:12px}
+.say-h{display:flex;align-items:center;justify-content:space-between;width:100%}
+.say .t-head{margin-top:4px}
+.say .wmeta{justify-content:center}
+.mic-big{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;margin:8px 0 2px;color:var(--primary-ink);background:var(--primary-bg);box-shadow:inset 0 0 0 2px var(--primary-line)}
+.mic-big svg{width:40px;height:40px}
+.mic-big[disabled]{opacity:.55}
+.say-st{font:600 calc(17px*var(--dt)) var(--font-ui);color:var(--ink-2);min-height:28px;display:inline-flex;align-items:center;gap:6px}
+.say-st svg{width:20px;height:20px}
+.verdict{width:100%;border-radius:18px;padding:12px 16px;display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--surface-2)}
+.verdict .h{display:flex;align-items:center;gap:7px;font:700 calc(18px*var(--dt)) var(--font-ui);color:var(--ink)}
+.verdict .h svg{width:22px;height:22px}
+.verdict p{margin:0;font:400 calc(15px*var(--dt))/1.4 var(--font-ui);color:var(--ink-2)}
+.verdict.ok{background:var(--good-tint)} .verdict.ok .h svg{color:var(--good)}
+.verdict.mid .h svg{color:var(--caution)}
+.verdict.no{background:var(--bad-tint)} .verdict.no .h svg{color:var(--bad)}
+.verdict.deaf .h svg{color:var(--ink-3)}
+
+/* Sözlük */
+.sbox{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border-radius:12px;background:var(--surface-2);color:var(--ink-3);margin:2px 0 4px}
+.sbox svg{width:20px;height:20px}
+.sbox input{flex:1;min-width:0;background:none;border:0;outline:0;font:400 calc(17px*var(--dt)) var(--font-ui);color:var(--ink);-webkit-appearance:none;appearance:none}
+.sbox input::placeholder{color:var(--ink-3)}
+.sbox:focus-within{box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.chips-s{display:flex;flex-wrap:wrap;gap:8px}
+.chip-s{min-height:44px;padding:0 16px;border-radius:22px;background:var(--surface-2);font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink)}
+.res .row .rw{font:700 calc(18px*var(--dt)) var(--font-en);color:var(--ink)}
+.res .row .tx small{font-size:calc(15px*var(--dt));color:var(--ink-2)}
+.hit{font-weight:700;text-decoration:underline solid var(--ink-2);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.wcard.scrolls .inner{overflow-y:auto;scrollbar-width:none}
+.wcard.scrolls .inner::-webkit-scrollbar{display:none}
+.exrow{display:flex;flex-direction:column;gap:3px;padding-top:10px;border-top:1px solid var(--line)}
 
 /* Kilitli ekran ve Her zaman açık */
 .wall{position:absolute;inset:0;background:radial-gradient(85% 55% at 70% 24%,#2b1e12 0%,#130d08 40%,#060403 72%,#000 100%)}
@@ -332,7 +394,7 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 .ls.aod .inl{opacity:.6}
 .ls.aod .rect{opacity:.75;background:rgba(255,255,255,.06)}
 .ls.aod .rect .d{opacity:.6}
-/* isLuminanceReduced: tanım gizli, plaka yok, şerit saç çizgisi */
+/* isLuminanceReduced: tanım gizli, plaka yok, şerit çok ince çizgi */
 .ls.aod.reduced .rect{background:transparent;opacity:.62;height:auto;padding:4px 12px}
 .ls.aod.reduced .rect .d{display:none}
 .ls.aod.reduced .rect .w .band::before{height:1px;bottom:-.12em;opacity:.7;clip-path:none}
@@ -379,6 +441,7 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 .wb{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--wg-ink2)}
 .wb span{width:34px;height:34px;border-radius:50%;background:var(--wg-btn);display:grid;place-items:center}
 .wb svg{width:18px;height:18px}
+.wb.on span{background:var(--good-tint);color:var(--good)}
 .wg-main{flex:1;min-width:0;display:flex;flex-direction:column}
 .hs.tinted .wg{background:rgba(26,21,16,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);--wg-ink:rgba(255,255,255,.86);--wg-ink2:rgba(255,255,255,.6);--wg-btn:rgba(255,255,255,.08);--band:var(--tint-c);--band-glow:transparent}
 .hs.tinted .wg .w{color:var(--tint-c)}
@@ -441,6 +504,9 @@ const GRADES = [
   { k: 'easy', t: 'Kolay', i: 'hare', sub: '2 gün sonra' }
 ];
 
+/* Dynamic Type (yazı boyutu) kademeleri (ana mockup ile aynı oranlar; son kademe erişilebilirlik boyutu). */
+const DT = [{ v: .82, l: 'Küçük' }, { v: 1, l: 'Normal' }, { v: 1.18, l: 'Büyük' }, { v: 1.35, l: 'En büyük' }, { v: 1.7, l: 'Erişilebilirlik' }];
+
 /* Paletler. "mevcut" = ios/Shared/LockglowTheme.swift koyu değerleri (karşılaştırma için). */
 const TONES = {
   kehribar: {
@@ -454,7 +520,7 @@ const TONES = {
   fosfor: {
     name: 'Soluk fosfor', bg: '#000000', surface: '#0C0C0A', surface2: '#161613', surface3: '#22221D',
     line: '#20201E', lineStrong: '#403F3B', ink: '#DAD7C6', ink2: '#B4B2A3', ink3: '#8E8C7E',
-    band: '#D6DC6E', bandGlow: 'rgba(214,220,110,.18)', mark: '#D6DC6E',
+    band: '#D6DC6E', bandGlow: 'transparent', mark: '#D6DC6E',
     primaryBg: '#222312', primaryInk: '#D6DC6E', primaryLine: 'rgba(214,220,110,.45)', primaryGlow: '0 0 0 0 transparent',
     cardBg: '#000000', cardLine: '#20201E', good: '#9FD0A0', bad: '#FF9A8C', caution: '#F2B37A',
     goodTint: 'rgba(159,208,160,.12)', badTint: 'rgba(255,154,140,.12)', wgBg: '#000000', tabBg: '#000000', lockTint: '#D6DC6E'
@@ -477,6 +543,7 @@ const SCREENS = [
   { k: 'akis', t: 'Akış' },
   { k: 'tekrar', t: 'Tekrar' },
   { k: 'quiz', t: 'Quiz' },
+  { k: 'sozluk', t: 'Sözlük' },
   { k: 'bitti', t: 'Bu gece bitti' },
   { k: 'sep' },
   { k: 'widget', t: "Widget'lar" },
@@ -533,10 +600,10 @@ const nf = (n, d = 1) => n.toFixed(d).replace('.', ',');
 const reduceMotion = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
 const S = {
   screen: 'akis', tone: 'kehribar', compare: false, bright: 100, ns: false, motion: reduceMotion ? 'none' : 'slow',
-  clock: 'tint', wall: true, red: true, wgMode: 'dark', word: 0,
+  clock: 'tint', wall: true, red: true, wgMode: 'dark', word: 0, dt: 1, device: 'std', say: null, fstart: 0,
   feed: 0, known: new Set(), playing: null,
   rv: { i: 0, revealed: false, answers: [] }, qz: { i: 0, picked: null },
-  when: 'auto', count: 5, sheet: null
+  when: 'auto', count: 5, sheet: null, q: '', open: null
 };
 
 /* ───────── Metin yardımcıları (ana mockup ile aynı kurallar) ───────── */
@@ -579,7 +646,7 @@ const wordRe = w => new RegExp('\\b' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') 
 /* ───────── Ortak parçalar ───────── */
 function lvl(level) {
   const n = Math.min(3, LEVELS.indexOf(level) + 1);
-  return `<span class="lvl" aria-label="Seviye ${level}">${level}<i aria-hidden="true">${[1, 2, 3].map(k => `<b class="${k <= n ? 'on' : ''}"></b>`).join('')}</i></span>`;
+  return `<span class="lvl" role="img" aria-label="Seviye ${esc(level)}"><span aria-hidden="true">${esc(level)}</span><i aria-hidden="true">${[1, 2, 3].map(k => `<b class="${k <= n ? 'on' : ''}"></b>`).join('')}</i></span>`;
 }
 function dinle(text) {
   const on = S.playing === text;
@@ -592,26 +659,26 @@ function headBlock(c, { now = false, says = true } = {}) {
   return `${now ? `<span class="now">${ic('lock')}Şu an kilitli ekranda</span>` : ''}
     <div class="t-head" lang="en"><span class="band">${esc(c.lemma)}</span></div>
     <div class="wmeta"><span class="ipa" aria-hidden="true">${esc(c.ipa)}</span><span class="pos">${esc(POS[c.pos] || c.pos)}</span>${lvl(c.level)}
-      <span class="acts">${dinle(c.lemma)}${says ? `<button type="button" class="icb" aria-label="Söyle: telaffuzunu dene">${ic('mic')}</button>` : ''}</span></div>`;
+      <span class="acts">${dinle(c.lemma)}${says ? `<button type="button" class="icb" data-act="sayopen" data-id="${esc(c.lemma)}" aria-label="Söyle: telaffuzunu dene">${ic('mic')}</button>` : ''}</span></div>`;
 }
 function glossBlock(c) {
-  return `<div><div class="t-gloss" aria-label="Türkçesi: ${esc(c.gloss)}">${esc(c.gloss)}</div>${c.alt.length ? `<div class="t-sub alt">Ayrıca: ${esc(c.alt.join(', '))}</div>` : ''}</div>`;
+  return `<div><div class="t-gloss"><span class="sr">Türkçesi: </span>${esc(c.gloss)}</div>${c.alt.length ? `<div class="t-sub alt">Ayrıca: ${esc(c.alt.join(', '))}</div>` : ''}</div>`;
 }
 function exampleBlock(c) {
   const ex = c.ex[0];
   return `<div class="exblock"><div class="ex-h"><span>Örnek</span>${spk(ex.en)}</div>
     <div class="ex-en" lang="en">${markWord(ex.en, c.lemma)}</div><div class="ex-tr">${esc(ex.tr)}</div></div>`;
 }
-function mistakeBox(m) {
+function mistakeBox(m, lemma) {
   const [w, r] = diffPair(m.wrong, m.right);
   return `<div class="mist"><div class="h">${ic('warn')}Dikkat</div>
     <div class="l"><span class="tag bad">${ic('x')}Yanlış</span><span class="wrong" lang="en">${w}</span>
     <span class="tag good">${ic('check')}Doğru</span><span class="right" lang="en">${r}</span></div>
     <div class="why">${esc(m.why)}</div></div>
-    <button type="button" class="mrow">${ic('warn', 'li')}<span class="tx"><b>Dikkat</b><span>Sık yapılan hatayı gör</span></span>${ic('chevR', 'chev')}</button>`;
+    <button type="button" class="mrow" data-act="detail" data-id="${esc(lemma)}">${ic('warn', 'li')}<span class="tx"><b>Dikkat</b><span>Sık yapılan hatayı gör</span></span>${ic('chevR', 'chev')}</button>`;
 }
 function cardInner(c, opts = {}) {
-  return `${headBlock(c, opts)}${glossBlock(c)}<div class="t-def" lang="en">${esc(c.short)}</div>${exampleBlock(c)}${c.mist[0] ? mistakeBox(c.mist[0]) : ''}`;
+  return `${headBlock(c, opts)}${glossBlock(c)}<div class="t-def" lang="en">${esc(c.short)}</div>${exampleBlock(c)}${c.mist[0] ? mistakeBox(c.mist[0], c.lemma) : ''}`;
 }
 function statusbar(cls = '', time = true) {
   return `<div class="statusbar ${cls}" aria-hidden="true"><span>${time ? '23:12' : ''}</span><span class="si">
@@ -621,23 +688,59 @@ function statusbar(cls = '', time = true) {
 }
 function tabbar(sel) {
   const tabs = [['akis', 'stack', 'Akış'], ['tekrar', 'cycle', 'Tekrar'], ['sozluk', 'search', 'Sözlük'], ['ayarlar', 'gear', 'Ayarlar']];
-  return `<nav class="tabbar" aria-label="Sekmeler">${tabs.map(([k, i, t]) => `<button type="button" class="tab" data-act="tab" data-v="${k}" aria-selected="${k === sel}">${ic(i)}${t}</button>`).join('')}</nav>`;
+  return `<nav class="tabbar" aria-label="Sekmeler">${tabs.map(([k, i, t]) => `<button type="button" class="tab" data-act="tab" data-v="${k}" ${k === sel ? ' aria-current="page"' : ''}>${ic(i)}${t}</button>`).join('')}</nav>`;
 }
 function app(body, { sel = 'akis', round = false } = {}) {
-  return `<div class="app${round ? ' round' : ''}">${body}${round ? '' : tabbar(sel)}</div>`;
+  return `<div class="app${round ? ' round' : ''}">${body}${round ? '' : tabbar(sel)}${S.say ? sayHTML() : ''}</div>`;
+}
+
+/* ───────── Söyle (telaffuz) ───────── */
+/* Başlıklar main'deki PronunciationFeedback ile aynı; alt satırlar örnek. Mikrofon kenarlı, dolu değil; nabız yok. */
+const SAY_VERDICT = {
+  ok: ['ok', 'checkc', 'Doğru!', 'Telefon kelimeyi anladı.'],
+  mid: ['mid', 'warn', 'Neredeyse!', 'Çok yakın. Bir kez daha, yavaşça söyle.'],
+  no: ['no', 'xc', 'Bir daha dene', 'Önce Dinle\'ye dokun, sonra söyle.'],
+  deaf: ['deaf', 'mic', 'Seni duyamadım', 'Biraz daha yüksek sesle söyle.']
+};
+const SAY_ORDER = ['ok', 'mid', 'no', 'deaf'];
+function sayHTML() {
+  const c = CARD[S.say.id], st = S.say.st, v = SAY_VERDICT[st];
+  const status = st === 'listen' ? `${ic('wave')}Dinliyorum…` : st === 'check' ? `${ic('clock')}Kontrol ediliyor…` : st === 'idle' ? 'Mikrofona dokun ve kelimeyi söyle.' : '';
+  return `<div class="sheet" data-act="sayx"><div class="sb say" role="dialog" aria-modal="true" aria-label="Söyle: ${esc(c.lemma)}">
+    <div class="say-h"><h3>Söyle</h3><button type="button" class="btn btn-line" style="min-height:40px;padding:0 16px;font-size:15px" data-act="sayx">Kapat</button></div>
+    <div class="t-head" lang="en"><span class="band">${esc(c.lemma)}</span></div>
+    <div class="wmeta"><span class="ipa" aria-hidden="true">${esc(c.ipa)}</span>${dinle(c.lemma)}</div>
+    <button type="button" class="mic-big" data-act="saygo" aria-label="Mikrofon: söylemeye başla"${st === 'listen' || st === 'check' ? ' disabled' : ''}>${ic('mic')}</button>
+    ${status ? `<div class="say-st" aria-live="polite">${status}</div>` : ''}
+    ${v ? `<div class="verdict ${v[0]}" aria-live="polite"><div class="h">${ic(v[1])}${v[2]}</div><p>${v[3]}</p></div>` : ''}
+  </div></div>`;
+}
+/* Sırayla dört sonucu gösterir (örnek); "Hareketsiz" iken bekleme yok. */
+function sayRun() {
+  const id = S.say.id, wait = S.motion === 'none' ? 0 : 1;
+  const step = (st, ms, next) => setTimeout(() => { if (!S.say || S.say.id !== id) return; S.say.st = st; render(); if (next) next(); }, ms * wait);
+  S.say.n = (S.say.n || 0) + 1;
+  const result = SAY_ORDER[(S.say.n - 1) % SAY_ORDER.length];
+  S.say.st = 'listen'; render();
+  step('check', 1400, () => step(result, 900));
 }
 
 /* ───────── Akış ───────── */
+/* Bu gecenin kelimeleri: "N kelime daha" listede bir sonraki N kelimeye geçer. */
+function nightWords() {
+  const n = Math.min(S.count, FEED.length);
+  return Array.from({ length: n }, (_, k) => FEED[(S.fstart + k) % FEED.length]);
+}
 function nightDots(i) {
   const n = Math.min(S.count, FEED.length);
   return `<span class="dots" aria-hidden="true">${Array.from({ length: n }, (_, k) => `<b class="${k <= i ? 'on' : ''}"></b>`).join('')}</span>`;
 }
 function feedScreen() {
-  const n = Math.min(S.count, FEED.length), i = Math.min(S.feed, n - 1), c = CARD[FEED[i]], known = S.known.has(c.lemma);
+  const n = Math.min(S.count, FEED.length), i = Math.min(S.feed, n - 1), c = CARD[nightWords()[i]], known = S.known.has(c.lemma);
   const left = known
     ? `<span class="known">${ic('checkc')}Bildiğin kelime</span>`
     : `<button type="button" class="btn btn-line" data-act="know" data-id="${esc(c.lemma)}">${ic('check')}Biliyorum</button>`;
-  return app(`<div class="hdr"><div class="ttl">Akış</div><div class="meta" aria-label="Bu gece ${i + 1}. kelime, toplam ${n}">${ic('moon', 'ic-xs')}Bu gece ${i + 1} / ${n}${nightDots(i)}</div></div>
+  return app(`<div class="hdr"><div class="ttl">Akış</div><div class="meta">${ic('moon', 'ic-xs')}Bu gece ${i + 1} / ${n}${nightDots(i)}</div></div>
     <div class="page"><article class="wcard swap" data-ladder aria-label="${esc(c.lemma)} kartı">
       <div class="inner">${cardInner(c, { now: i === 0 })}</div>
       <div class="foot">${left}<button type="button" class="btn btn-tonal" data-act="next">${i === n - 1 ? 'Bitir' : 'Sonraki'}${ic('chevD')}</button></div>
@@ -682,7 +785,7 @@ function reviewScreen() {
 function quizScreen() {
   const z = S.qz, c = CARD[QUIZ[z.i]], q = c.quiz, opts = quizOptions(c), picked = z.picked, done = picked != null, right = picked === q.answer;
   const parts = q.cloze.split(/_{3,}/);
-  const sentence = done ? `${esc(parts[0])}<b class="mark">${esc(q.answer)}</b>${esc(parts[1] ?? '')}` : `${esc(parts[0])}<span class="blank" aria-label="boşluk"></span>${esc(parts[1] ?? '')}`;
+  const sentence = done ? `${esc(parts[0])}<b class="mark">${esc(q.answer)}</b>${esc(parts[1] ?? '')}` : `${esc(parts[0])}<span class="blank"><span class="sr">boşluk</span></span>${esc(parts[1] ?? '')}`;
   const shown = done ? opts.filter(o => o === q.answer || o === picked) : opts;
   const optHTML = shown.map(o => {
     let cls = '', mk = '';
@@ -709,7 +812,7 @@ function quizScreen() {
 
 /* ───────── Bu gece bitti (durma noktası) ───────── */
 function doneScreen() {
-  const n = Math.min(S.count, FEED.length), words = FEED.slice(0, n);
+  const n = Math.min(S.count, FEED.length), words = nightWords();
   return app(`<div class="hdr"><div class="ttl">Akış</div><div class="meta">Bu gece ${n} / ${n}${nightDots(n)}</div></div>
     <div class="page"><div class="done swap">
       <div class="moon" aria-hidden="true">${ic('moon')}</div>
@@ -720,6 +823,51 @@ function doneScreen() {
       <div class="acts"><button type="button" class="btn btn-primary btn-lg block" data-act="tab" data-v="akis">Tamam</button>
         <button type="button" class="btn-text" data-act="again">${n} kelime daha</button></div>
     </div></div>`, { round: true });
+}
+
+/* ───────── Sözlük ───────── */
+/* Türkçe harf katlama ("odunc" → "ödünç", "sakinlesmek" → "sakinleşmek"). Harf harf katlar, konumlar kaymaz. */
+function fold(s) {
+  return String(s).toLocaleLowerCase('tr').replace(/[çğıöşüâîû]/g, c => ({ ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', â: 'a', î: 'i', û: 'u' }[c]));
+}
+function search(q) {
+  const f = fold(q.trim());
+  if (!f) return [];
+  const hit = c => [c.lemma, c.gloss, ...c.alt].some(t => fold(t).includes(f));
+  return CARDS.filter(hit).sort((a, b) => (fold(b.lemma).startsWith(f) - fold(a.lemma).startsWith(f)) || a.lemma.localeCompare(b.lemma));
+}
+/* Eşleşen kısım kalın ve çizgili; sarı değil (kural 1: sarı yalnız öğrenilecek kelimede). */
+function hl(text, q) {
+  const f = fold(q.trim()), i = fold(text).indexOf(f);
+  if (!f || i < 0) return esc(text);
+  return esc(text.slice(0, i)) + `<b class="hit">${esc(text.slice(i, i + f.length))}</b>` + esc(text.slice(i + f.length));
+}
+function resultsHTML() {
+  if (!S.q.trim()) {
+    return `<div class="sh">Dene</div><div class="chips-s">${['gece', 'yatma', 'pillow', 'sakin'].map(t => `<button type="button" class="chip-s" data-act="try" data-v="${t}">${t}</button>`).join('')}</div>
+      <p class="rf" style="margin:12px 4px 0">Türkçe harfleri yazmasan da bulur: "sakinlesmek" de olur.</p>`;
+  }
+  const r = search(S.q);
+  if (!r.length) return `<p class="t-sub" style="margin:8px 4px">"${esc(S.q)}" için kelime yok. Başka bir kelime dene.</p>`;
+  const f = fold(S.q.trim());
+  /* Anlam eşleşmiyorsa eşleşen "Ayrıca" karşılığı da gösterilir (ör. tonight: bu akşam · bu gece). */
+  const meaning = c => {
+    const alt = fold(c.gloss).includes(f) ? null : c.alt.find(a => fold(a).includes(f));
+    return hl(c.gloss, S.q) + (alt ? ` · ${hl(alt, S.q)}` : '');
+  };
+  return `<div class="sh">${r.length} kelime</div><div class="group">${r.map(c => `<button type="button" class="row" data-act="open" data-id="${esc(c.lemma)}">
+      <span class="tx"><b class="rw" lang="en">${hl(c.lemma, S.q)}</b><small>${meaning(c)}</small></span>${lvl(c.level)}${ic('chevR', 'chev')}</button>`).join('')}</div>`;
+}
+function dictScreen() {
+  if (S.open) {
+    const c = CARD[S.open];
+    return app(`<div class="hdr"><button type="button" class="btn-text" style="padding:0 8px 0 0;color:var(--ink-2)" data-act="back">‹ Sözlük</button></div>
+      <div class="page"><article class="wcard swap scrolls" aria-label="${esc(c.lemma)} kartı"><div class="inner">${cardInner(c)}
+        ${c.ex.slice(1).map(x => `<div class="exrow"><div class="ex-en" lang="en">${markWord(x.en, c.lemma, '')}</div><div class="ex-tr">${esc(x.tr)}</div></div>`).join('')}</div></article></div>`, { sel: 'sozluk' });
+  }
+  return app(`<div class="hdr"><div class="ttl">Sözlük</div></div><div class="scroll">
+    <label class="sbox">${ic('search')}<span class="sr">Ara</span><input class="qin" type="search" value="${esc(S.q)}" placeholder="İngilizce ya da Türkçe ara" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
+    <div class="res">${resultsHTML()}</div></div>`, { sel: 'sozluk' });
 }
 
 /* ───────── Ayarlar ───────── */
@@ -734,12 +882,12 @@ function toneChoice(k, sub) {
 function settingsScreen() {
   const toneOk = S.tone !== 'mevcut';
   const sheet = S.sheet === 'lock'
-    ? `<div class="sheet" data-act="sheetx"><div class="sb" role="dialog" aria-label="Kilitli ekranı gece rengine al"><h3>Kilitli ekranı gece rengine al</h3>
+    ? `<div class="sheet" data-act="sheetx"><div class="sb" role="dialog" aria-modal="true" aria-label="Kilitli ekranı gece rengine al"><h3>Kilitli ekranı gece rengine al</h3>
         <ol><li>Kilitli ekrana <b>dokunup basılı tut</b>.</li><li><b>Özelleştir</b>'e, sonra kilitli ekrana dokun.</li><li><b>Saate</b> dokun ve sıcak bir renk seç (kehribar, turuncu).</li><li><b>Bitti</b>'ye dokun. Widget'lar da saatin rengini alır.</li></ol>
         <p class="rf">Kilitli ekran widget'larının rengini uygulama seçemez; sistem saatin rengini kullanır.</p>
         <button type="button" class="btn btn-primary btn-lg block" data-act="sheetx">Anladım</button></div></div>`
     : S.sheet === 'white'
-    ? `<div class="sheet" data-act="sheetx"><div class="sb" role="dialog" aria-label="Beyaz noktayı azalt"><h3>Ekranı en kısıktan da kıs</h3>
+    ? `<div class="sheet" data-act="sheetx"><div class="sb" role="dialog" aria-modal="true" aria-label="Beyaz noktayı azalt"><h3>Ekranı en kısıktan da kıs</h3>
         <ol><li>Ayarlar → <b>Erişilebilirlik</b> → <b>Ekran ve Metin Boyutu</b> → <b>Beyaz Noktayı Azalt</b>.</li><li>Erişilebilirlik → <b>Erişilebilirlik Kısayolu</b> → Beyaz Noktayı Azalt.</li><li>Gece yan tuşa <b>üç kez</b> bas: ekran bir kat daha kararır.</li></ol>
         <p class="rf">Bu bir iOS ayarıdır; Lockglow değiştirmez.</p>
         <button type="button" class="btn btn-primary btn-lg block" data-act="sheetx">Anladım</button></div></div>` : '';
@@ -775,9 +923,9 @@ function lockScreen(tone, aod) {
   return `<div class="lsw${aod ? ' aod' : ''}" style="--lc:${lc};--plate:${plate}"><div class="wall" style="--wall-dim:${dim}"></div>${statusbar('lk', false)}
     <div class="ls${aod ? ' aod' : ''}${aod && night ? ' reduced' : ''}">
       <div class="lock" aria-hidden="true">${ic('lock')}</div>
-      <div class="inl" aria-label="Satır içi widget"><span>Çar 22</span><span class="iw" lang="en">${esc(c.lemma)} · ${esc(c.gloss)}</span></div>
+      <div class="inl" role="group" aria-label="Satır içi widget"><span>Çar 22</span><span class="iw" lang="en">${esc(c.lemma)} · ${esc(c.gloss)}</span></div>
       <div class="clock">23:12</div>
-      <div class="rect" aria-label="Dikdörtgen widget"><div class="w" lang="en"><span class="band">${esc(c.lemma)}</span></div><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.micro)}</div></div>
+      <div class="rect" role="group" aria-label="Dikdörtgen widget"><div class="w" lang="en"><span class="band">${esc(c.lemma)}</span></div><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.micro)}</div></div>
       <div class="bot" aria-hidden="true"><i>${ic('flash')}</i><i>${ic('camera')}</i></div>
     </div></div>`;
 }
@@ -797,7 +945,7 @@ function appTile(name, icon, lg = false) {
   return `<div class="app-i"><i>${lg ? `<svg viewBox="0 0 58 58" width="58" height="58" aria-hidden="true"><rect width="58" height="58" rx="14" fill="#000"/><path d="M13 33h34l-3 6H10z" fill="var(--band)"/><circle cx="29" cy="24" r="5" fill="none" stroke="var(--ink)" stroke-width="2.4"/><path d="M29 29v7" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/></svg>` : ic(icon)}</i>${esc(name)}</div>`;
 }
 function wbtns() {
-  return `<button type="button" class="wb" aria-label="Biliyorum"><span>${ic('check')}</span></button><button type="button" class="wb" data-act="say" data-say="${esc(WIDGET_WORDS[S.word])}" aria-label="Dinle"><span>${ic('speaker')}</span></button><button type="button" class="wb" data-act="wnext" aria-label="Sonraki kelime"><span>${ic('fwd', 'fill')}</span></button>`;
+  return `<button type="button" class="wb${S.known.has(WIDGET_WORDS[S.word]) ? ' on' : ''}" data-act="wknow" aria-label="Biliyorum" aria-pressed="${S.known.has(WIDGET_WORDS[S.word])}"><span>${ic('check')}</span></button><button type="button" class="wb" data-act="say" data-say="${esc(WIDGET_WORDS[S.word])}" aria-label="Dinle"><span>${ic('speaker')}</span></button><button type="button" class="wb" data-act="wnext" aria-label="Sonraki kelime"><span>${ic('fwd', 'fill')}</span></button>`;
 }
 function shortEx(c) {
   return c.ex.filter(x => stemRe(c.lemma).test(x.en)).sort((a, b) => a.en.length - b.en.length)[0] || c.ex[0];
@@ -808,11 +956,11 @@ function homeScreen(tone) {
   return `<div class="lsw" style="--lc:rgba(255,255,255,.85)"><div class="wall" style="--wall-dim:.35"></div>${statusbar('lk')}
     <div class="hs${tinted ? ' tinted' : ''}" style="--tint-c:${tint}">
       <div class="r1">
-        <div class="wg wg-small" role="group" aria-label="Küçük widget"><div class="wg-head"><span class="w" lang="en"><span class="band">${esc(c.lemma)}</span></span><span class="lv">${c.level}</span></div>
+        <div class="wg wg-small" role="group" aria-label="Küçük widget"><div class="wg-head"><span class="w" lang="en"><span class="band">${esc(c.lemma)}</span></span><span class="lv">${esc(c.level)}</span></div>
           <div class="wg-body"><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.micro)}</div></div><div class="wg-strip">${wbtns()}</div></div>
         <div class="quad">${appTile('Lockglow', '', true)}${appTile('Takvim', 'cal')}${appTile('Notlar', 'note')}${appTile('Müzik', 'music')}</div>
       </div>
-      <div class="wg wg-medium" role="group" aria-label="Orta widget"><div class="wg-main"><div class="wg-head"><span class="w" lang="en"><span class="band">${esc(c.lemma)}</span></span><span class="p">${esc(c.ipa)}</span><span class="lv">${c.level}</span></div>
+      <div class="wg wg-medium" role="group" aria-label="Orta widget"><div class="wg-main"><div class="wg-head"><span class="w" lang="en"><span class="band">${esc(c.lemma)}</span></span><span class="p">${esc(c.ipa)}</span><span class="lv">${esc(c.level)}</span></div>
         <div class="wg-body"><div class="g">${esc(c.gloss)}</div><div class="d" lang="en">${esc(c.short)}</div><div class="nx">Yeni kelime: 10:00</div></div></div><div class="wg-rail">${wbtns()}</div></div>
       <div class="icons">${appTile('Fotoğraflar', 'photo')}${appTile('Haritalar', 'map')}${appTile('Safari', 'globe')}${appTile('Saat', 'clock')}</div>
       <div class="dock">${['phone', 'chat', 'globe', 'music'].map(i => `<div class="app-i"><i>${ic(i)}</i></div>`).join('')}</div>
@@ -829,6 +977,7 @@ function screenHTML(tone) {
     case 'tekrar': return statusbar() + reviewScreen();
     case 'quiz': return statusbar() + quizScreen();
     case 'bitti': return statusbar() + doneScreen();
+    case 'sozluk': return statusbar() + dictScreen();
     case 'widget': return homeScreen(tone);
     case 'ayarlar': return statusbar() + settingsScreen();
   }
@@ -848,7 +997,7 @@ const NOTES = {
   aod: {
     t: 'Her zaman açık',
     d: ['Ekran kararınca sistem <code>isLuminanceReduced</code> der. Gece tonunda o an tanım satırı gizlenir; kelime ve anlam kalır.',
-      'Widget plakası çizilmez; şerit 1 pt saç çizgisine iner. Yanan piksel azalır, kelime yine okunur.',
+      'Widget plakası çizilmez; şerit çok ince bir çizgiye (1 pt) iner. Yanan piksel azalır, kelime yine okunur.',
       'Sağdan "Duvar kâğıdı: Gizle" seçilince ekran tam siyah olur (iOS ayarı).',
       'Mevcut tasarımda Her zaman açık ekranında da üç satır ve plaka duruyor.'],
     s: '<code>@Environment(\\.isLuminanceReduced)</code>. Apple\'ın önerisi: dolgu yerine çizgi, daha az parlak renk. <code>RectangularWordView</code>: <code>rows(belowWord: reduced ? 1 : 2)</code>, şeritte <code>height: 1</code>. Saniyelik güncelleme yok; ekran 1 Hz\'e kadar iner.'
@@ -882,6 +1031,14 @@ const NOTES = {
       'Yanlış şıkkın kenarı kesik çizgi, doğrunun kenarı düz: renk tek başına anlam taşımaz.',
       'Geri bildirim kutusu %12 tonlu zemin; büyük parlak alan yok.'],
     s: '<code>Theme.good</code> / <code>bad</code> gece değerleri; <code>goodTint</code> / <code>badTint</code> %12. Yanlış şık: <code>StrokeStyle(lineWidth: 2, dash: [6, 4])</code>. Cevaptan sonra <code>scrollTo(…, anchor: .bottom)</code> animasyonsuz.'
+  },
+  sozluk: {
+    t: 'Sözlük',
+    d: ['Sonuç satırları <code>surface</code> (#0D0B09) üstünde: pikseller tam kapalı değil. Kaydırırken siyah sürünmesi riskini azaltabilir (cihazda bakılmalı).',
+      'Eşleşen kısım kalın ve altı çizili, sarı değil. Sarı yalnız öğrenilecek kelimede kalır (kural 1).',
+      'Boş kutuda "Dene" örnekleri var. Türkçe harfleri yazmasan da bulur.',
+      'Bu ekranın en parlak yeri sistem klavyesidir (koyu modda gri). Arama kısa kalsın diye örnekler tek dokunuşla çalışır.'],
+    s: 'Liste: <code>.scrollContentBackground(.hidden)</code> + <code>Theme.bg</code>, satırlarda <code>.listRowBackground(Theme.surface)</code>. Klavye: <code>.scrollDismissesKeyboard(.immediately)</code>. Vurgu aralığı için <code>TextFold</code> konum eşlemesi (ana README madde 12).'
   },
   bitti: {
     t: 'Bu gece bitti (durma noktası)',
@@ -928,11 +1085,14 @@ function renderPanel() {
       <label class="check"><input type="checkbox" id="cmp" data-act="compare" ${S.compare ? 'checked' : ''} ${S.tone === 'mevcut' ? 'disabled' : ''}>Mevcut koyu tema ile yan yana</label></div>
     <div class="grp range"><label for="br">Ekran parlaklığı (taklit) <output id="brv">%${S.bright}</output></label>
       <input type="range" id="br" min="5" max="100" step="5" value="${S.bright}" data-act="bright">
-      <p class="hint-t">Doğrusal ışıkta kısar. Gerçek deneme için kendi ekranını da kıs; yatakta çoğu kişi parlaklığı düşürür.</p></div>
+      <p class="hint-t">Işığı gerçek ekran gibi azaltır. Gerçek deneme için kendi ekranını da kıs; yatakta çoğu kişi parlaklığı düşürür.</p></div>
     <label class="check"><input type="checkbox" id="ns" data-act="ns" ${S.ns ? 'checked' : ''}>Night Shift taklidi (en sıcak)</label>
     <div class="grp"><h2>Geçişler</h2>${pseg('motion', S.motion, [['slow', 'Yavaş solma'], ['none', 'Hareketsiz']])}</div>
+    <div class="grp"><h2>Cihaz</h2>${pseg('device', S.device, [['std', 'iPhone 390 × 844'], ['se', 'iPhone SE 375 × 667']])}</div>
+    <div class="grp"><h2>Yazı boyutu (Dynamic Type)</h2>${pseg('dt', S.dt, DT.map(d => [d.v, d.l]))}
+      <p class="hint-t">Uygulama ekranlarına uygulanır. Erişilebilirlik boyutunda kart kısalmaz, kayar.</p></div>
     ${screenControls()}
-    <div class="stat" aria-label="Seçili tonun sayıları"><span>Mürekkep</span><b>${nf(cr(t.ink, bg))}:1 · mavi %${Math.round(melRel(t.ink) * 100)}</b>
+    <div class="stat" role="group" aria-label="Seçili tonun sayıları"><span>Mürekkep</span><b>${nf(cr(t.ink, bg))}:1 · mavi %${Math.round(melRel(t.ink) * 100)}</b>
       <span>İkinci mürekkep</span><b>${nf(cr(t.ink2, bg))}:1</b><span>Şerit</span><b>${nf(cr(t.band, bg))}:1 · mavi %${Math.round(melRel(t.band) * 100)}</b>
       <span>Ana düğme</span><b>${nf(cr(t.primaryInk, hexOf(t.primaryBg, bg)))}:1 yazı/zemin</b></div>
     <div class="note"><h3>${n.t}</h3><ul>${n.d.map(x => `<li>${x}</li>`).join('')}</ul><div class="swift"><b>Swift:</b> ${n.s}</div></div>`;
@@ -943,11 +1103,36 @@ const kebab = k => '--' + k.replace(/([a-z])([A-Z0-9])/g, '$1-$2').toLowerCase()
 function tonesShown() {
   return S.compare && S.tone !== 'mevcut' ? [S.tone, 'mevcut'] : [S.tone];
 }
+/* render() her şeyi yeniden yazar; klavye ve VoiceOver odağı kaybolmasın diye odaktaki düğme geri bulunur. */
+function focusKey() {
+  const a = document.activeElement;
+  if (!a || a === document.body || a.classList.contains('qin')) return null;
+  if (a.id) return { id: a.id };
+  if (!a.dataset || !a.dataset.act) return null;
+  const ph = a.closest('#phones .phone');
+  return { act: a.dataset.act, v: a.dataset.v, did: a.dataset.id, g: a.dataset.g, o: a.dataset.o, phone: ph ? $$('#phones .phone').indexOf(ph) : -1 };
+}
+function restoreFocus(k, sheetWasOpen) {
+  const sheetOpen = !!(S.sheet || S.say);
+  if (sheetOpen && !sheetWasOpen) { const b = $('#phones .sheet .sb button'); if (b) { b.focus({ preventScroll: true }); return; } }
+  if (!k) return;
+  let el = null;
+  if (k.id) el = document.getElementById(k.id);
+  else {
+    const q = (n, v) => v != null ? `[data-${n}="${CSS.escape(v)}"]` : '';
+    const sel = `[data-act="${CSS.escape(k.act)}"]${q('v', k.v)}${q('id', k.did)}${q('g', k.g)}${q('o', k.o)}`;
+    const root = k.phone >= 0 ? $$('#phones .phone')[k.phone] : document;
+    el = root ? $(sel, root) : null;
+  }
+  if (el) el.focus({ preventScroll: true });
+}
+let sheetWasOpen = false;
 function render() {
+  const fk = focusKey();
   $$('#nav button[data-v]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === S.screen)));
   const land = S.screen === 'standby';
   $('#phones').innerHTML = tonesShown().map(tone => `<figure class="pwrap"><figcaption class="plabel">${tone === 'mevcut' ? 'Mevcut koyu tema' : `Gece · <b>${TONES[tone].name}</b>`}</figcaption>
-    <div class="phone-box"><div class="phone${land ? ' land' : ''}" data-tone="${tone}"><div class="screen">${screenHTML(tone)}<div class="island" aria-hidden="true"></div><div class="homebar" aria-hidden="true"></div></div></div></div></figure>`).join('');
+    <div class="phone-box"><div class="phone${land ? ' land' : ''}" data-tone="${tone}" data-device="${S.device}" style="--dt:${S.dt}"><div class="screen">${screenHTML(tone)}<div class="island" aria-hidden="true"></div><div class="homebar" aria-hidden="true"></div></div></div></div></figure>`).join('');
   $$('#phones .phone').forEach(ph => {
     const t = TONES[ph.dataset.tone];
     for (const [k, v] of Object.entries(t)) if (k !== 'name') ph.style.setProperty(kebab(k), v);
@@ -959,9 +1144,17 @@ function render() {
   fitPhones();
   $('#cap').textContent = caption();
   renderPanel();
+  restoreFocus(fk, sheetWasOpen);
+  sheetWasOpen = !!(S.sheet || S.say);
+}
+/* Ekran değiştirmek: adres çubuğundaki #bağlantı da güncellenir; bekleyen yavaş geçiş iptal edilir. */
+function setScreen(v) {
+  cancelSwap();
+  S.screen = v; S.sheet = null; S.say = null;
+  try { history.replaceState(null, '', '#' + v); } catch (err) { /* önizlemede adres değişmeyebilir */ }
 }
 function caption() {
-  const t = { kilit: 'Saat 23:12. Kilitli ekran, gece duvar kâğıdı.', aod: 'Her zaman açık: sistem ekranı karartır, widget\'lar az ışıkla çizilir.', standby: 'StandBy, yatay. Karanlık odada sistem her şeyi kırmızıya boyar.', akis: 'Akış: "Sonraki" ile kartlar yavaşça değişir. Beşinci kartta tur biter.', tekrar: 'Kartın ön yüzüne ya da "Anlamı göster"e dokun, sonra bir cevap seç.', quiz: 'Bir şık seç. Yanlış bir şık seçip "Neden?" kutusunu da gör.', bitti: 'Durma noktası: gece turu burada biter.', widget: 'Koyu ana ekran. Sonraki düğmesi kelimeyi değiştirir.', ayarlar: 'Ton ve geçiş seçimi bütün sayfaya uygulanır. İpuçlarına dokun.' }[S.screen];
+  const t = { kilit: 'Saat 23:12. Kilitli ekran, gece duvar kâğıdı.', aod: 'Her zaman açık: sistem ekranı karartır, widget\'lar az ışıkla çizilir.', standby: 'StandBy, yatay. Karanlık odada sistem her şeyi kırmızıya boyar.', akis: `Akış: "Sonraki" ile kartlar yavaşça değişir. ${Math.min(S.count, FEED.length)}. kartta tur biter.`, tekrar: 'Kartın ön yüzüne ya da "Anlamı göster"e dokun, sonra bir cevap seç.', quiz: 'Bir şık seç. Yanlış bir şık seçip "Neden?" kutusunu da gör.', bitti: 'Durma noktası: gece turu burada biter.', sozluk: 'Ara: ör. "gece", "yatma" ya da "sakinlesmek". Bir satıra dokun.', widget: 'Koyu ana ekran. Sonraki düğmesi kelimeyi değiştirir.', ayarlar: 'Ton ve geçiş seçimi bütün sayfaya uygulanır. İpuçlarına dokun.' }[S.screen];
   return t + (S.motion === 'slow' ? ' Geçişler: yavaş solma.' : ' Geçişler: hareketsiz.') + (S.compare && S.tone !== 'mevcut' ? ' Sağdaki telefon aynı düzeni mevcut koyu tema renkleriyle çizer.' : '');
 }
 function updateSim() {
@@ -970,8 +1163,16 @@ function updateSim() {
 }
 /* Kart sondan kısalır (ana tasarımın kural 5'i): sığana kadar basamak basamak. */
 function fitLadders() {
+  /* Kelime tek satır: sığmazsa %60'a kadar küçülür (minimumScaleFactor 0.6). */
+  $$('#phones .t-head').forEach(el => {
+    el.style.fontSize = '';
+    let size = parseFloat(getComputedStyle(el).fontSize);
+    const min = size * .6;
+    while (el.scrollWidth > el.clientWidth + .5 && size > min) { size -= 1; el.style.fontSize = size + 'px'; }
+  });
   $$('#phones [data-ladder]').forEach(card => {
     const inner = $('.inner', card);
+    if (S.dt >= 1.6) { card.classList.add('c4'); return; }
     for (const cls of ['c0', 'c1', 'c2', 'c3']) {
       if (inner.scrollHeight <= inner.clientHeight + 1) break;
       card.classList.add(cls);
@@ -991,29 +1192,41 @@ function fitPhones() {
 }
 
 /* Yavaş geçiş: içerik soluklaşır, değişir, yeniden belirir. Kayma yok. */
-let busy = false;
+/* Geçiş sürerken gelen dokunuş yok sayılır (çift dokunuş kart atlatmaz). */
+let busy = false, swapTimer = 0;
 function swap(change) {
-  if (S.motion === 'none' || busy) { change(); render(); return; }
+  if (busy) return;
+  if (S.motion === 'none') { change(); render(); return; }
   busy = true;
   $$('#phones .swap').forEach(el => el.classList.add('out'));
-  setTimeout(() => {
-    change(); render();
+  swapTimer = setTimeout(() => {
+    try { change(); render(); } catch (err) { busy = false; throw err; }
+    /* Yeni içerik soluk başlar; zorla yeniden düzen (reflow) sonrası belirir. rAF kullanılmaz: arka plandaki sekmede durur. */
     const els = $$('#phones .swap');
     els.forEach(el => el.classList.add('out'));
-    requestAnimationFrame(() => requestAnimationFrame(() => { els.forEach(el => el.classList.remove('out')); busy = false; }));
+    void document.body.offsetWidth;
+    els.forEach(el => el.classList.remove('out'));
+    busy = false;
   }, 420);
 }
+function cancelSwap() { clearTimeout(swapTimer); busy = false; }
 
 /* ───────── Ses (yalnız dokununca) ───────── */
+/* Her konuşmanın bir numarası var: yalnız son konuşmanın bitişi düğmeyi "Dinle"ye döndürür.
+   Ses hiç başlamazsa 6 sn sonra düğme yine "Dinle" olur. */
+let sayId = 0;
 function say(text) {
+  const id = ++sayId;
+  const done = () => { if (id === sayId && S.playing) { S.playing = null; render(); } };
   try {
     if (!('speechSynthesis' in window)) return;
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'en-US'; u.rate = .88; u.volume = .8;
-    u.onend = u.onerror = () => { if (S.playing === text) { S.playing = null; render(); } };
+    u.onend = u.onerror = done;
     S.playing = text; render();
     speechSynthesis.speak(u);
+    setTimeout(done, 6000);
   } catch (e) { S.playing = null; }
 }
 
@@ -1024,7 +1237,7 @@ document.addEventListener('click', e => {
   const a = el.dataset.act, v = el.dataset.v;
   if (el.tagName === 'INPUT') return;
   switch (a) {
-    case 'screen': S.screen = v; S.sheet = null; try { history.replaceState(null, '', '#' + v); } catch (err) { /* önizlemede adres değişmeyebilir */ } render(); break;
+    case 'screen': setScreen(v); render(); break;
     case 'tone': S.tone = v; if (v === 'mevcut') S.compare = false; render(); break;
     case 'motion': S.motion = v; render(); break;
     case 'clock': S.clock = v; render(); break;
@@ -1035,26 +1248,36 @@ document.addEventListener('click', e => {
     case 'count': S.count = Number(v); S.feed = Math.min(S.feed, Math.min(S.count, FEED.length) - 1); render(); break;
     case 'sheet': S.sheet = v; render(); break;
     case 'sheetx': if (e.target === el || el.tagName === 'BUTTON') { S.sheet = null; render(); } break;
+    case 'sayopen': S.say = { id: el.dataset.id, st: 'idle', n: 0 }; render(); break;
+    case 'sayx': if (e.target === el || el.tagName === 'BUTTON') { S.say = null; render(); } break;
+    case 'saygo': if (S.say) sayRun(); break;
+    case 'device': S.device = v; render(); break;
+    case 'dt': S.dt = Number(v); render(); break;
     case 'say': say(el.dataset.say); break;
     case 'tab':
-      if (v === 'akis') { S.screen = 'akis'; if (S.feed >= Math.min(S.count, FEED.length) - 1) S.feed = 0; }
-      else if (v === 'tekrar') { S.screen = 'tekrar'; }
-      else if (v === 'ayarlar') { S.screen = 'ayarlar'; }
-      S.sheet = null; render(); break;
+      /* Akış yalnız "Bu gece bitti"den dönünce başa sarar. */
+      if (v === 'akis' && S.screen === 'bitti') S.feed = 0;
+      if (v === 'sozluk') S.open = null;
+      setScreen(v); render(); break;
+    case 'detail': setScreen('sozluk'); S.open = el.dataset.id; render(); break;
+    case 'wknow': { const w = WIDGET_WORDS[S.word]; S.known.has(w) ? S.known.delete(w) : S.known.add(w); render(); break; }
     case 'know': S.known.has(el.dataset.id) ? S.known.delete(el.dataset.id) : S.known.add(el.dataset.id); render(); break;
     case 'next': {
       const n = Math.min(S.count, FEED.length);
-      if (S.feed >= n - 1) swap(() => { S.screen = 'bitti'; });
+      if (S.feed >= n - 1) swap(() => { setScreen('bitti'); });
       else swap(() => { S.feed++; });
       break;
     }
-    case 'again': swap(() => { S.screen = 'akis'; S.feed = 0; }); break;
+    case 'again': swap(() => { S.fstart = (S.fstart + Math.min(S.count, FEED.length)) % FEED.length; S.feed = 0; setScreen('akis'); }); break;
     case 'reveal': swap(() => { S.rv.revealed = true; }); break;
-    case 'grade': swap(() => { S.rv.answers.push({ id: NEWDECK[S.rv.i], g: el.dataset.g }); S.rv.i++; S.rv.revealed = false; }); break;
+    case 'grade': swap(() => { if (S.rv.i >= NEWDECK.length) return; S.rv.answers.push({ id: NEWDECK[S.rv.i], g: el.dataset.g }); S.rv.i++; S.rv.revealed = false; }); break;
     case 'rvreset': swap(() => { S.rv = { i: 0, revealed: false, answers: [] }; }); break;
     case 'pick': if (S.qz.picked == null) { S.qz.picked = el.dataset.o; render(); } break;
     case 'qnext': swap(() => { S.qz.i = (S.qz.i + 1) % QUIZ.length; S.qz.picked = null; }); break;
     case 'wnext': swap(() => { S.word = (S.word + 1) % WIDGET_WORDS.length; }); break;
+    case 'try': S.q = v; render(); break;
+    case 'open': swap(() => { S.open = el.dataset.id; }); break;
+    case 'back': swap(() => { S.open = null; }); break;
   }
 });
 /* Tekrar'da kartın kendisine dokunmak da anlamı açar. */
@@ -1068,7 +1291,17 @@ document.addEventListener('change', e => {
 });
 document.addEventListener('input', e => {
   const el = e.target;
+  /* Arama: yalnız sonuçlar yenilenir, yazılan kutu odakta kalır; karşılaştırmadaki öteki telefon da eşlenir. */
+  if (el.classList.contains('qin')) {
+    S.q = el.value;
+    $$('#phones .res').forEach(r => { r.innerHTML = resultsHTML(); });
+    $$('#phones .qin').forEach(i => { if (i !== el) i.value = S.q; });
+  }
   if (el.dataset.act === 'bright') { S.bright = Number(el.value); updateSim(); const o = $('#brv'); if (o) o.textContent = '%' + S.bright; }
+});
+/* Esc açık sayfayı (sheet) kapatır. */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && (S.sheet || S.say)) { S.sheet = null; S.say = null; render(); }
 });
 let rt;
 window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(fitPhones, 80); });
