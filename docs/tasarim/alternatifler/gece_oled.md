@@ -49,8 +49,8 @@
 
 1. **Işık bütçesi: büyük alanlar karanlık.**
    - Zemin gerçek siyah (`#000`). Kartın dolgusu yok, yalnız ince kenar çizgisi var.
-   - Ana düğme dolu sarı değil: %16 kehribar zemin, kehribar yazı, ince kenar.
-   - Mevcut koyu temada en parlak alan dolu sarı ana düğme: bağıl parlaklık L = %71. Gece hâlinde L = %1,4.
+   - Ana düğme dolu değil ve sarı değil: %12 mürekkep zemin, mürekkep yazı, ince kenar. Böylece sarı yalnız kelimede kalır.
+   - Mevcut koyu temada en parlak alan dolu sarı ana düğme: bağıl parlaklık L = %71. Gece hâlinde L = %0,9.
 2. **Kehribar mürekkep ve şerit.**
    - Mürekkep `#E2C8A0`: siyahta 13,0:1. Mevcut koyu temada 17,4:1.
    - Aynı ekran parlaklığında beyaza göre melanopik ("mavi") uyaran yaklaşık %43. Mevcut mürekkep %88.
@@ -191,7 +191,7 @@ Her maddenin kaynağı yanında. Notlar:
 | `ink2` | `#BFA27C` | **8,7** | 7,6 | %26 | Tanım, çeviri, IPA |
 | `ink3` | `#957D63` | **5,4** | 4,7 | %15 | Yardımcı yazı, sayaç |
 | `band` | `#FFB547` | 12,0 | 10,5 | %21 | Yalnız şerit ve örnekteki kelimenin alt çizgisi |
-| `primaryBg` / `primaryInk` | `#291D0B` / `#FFB547` | yazı/zemin **9,4** | — | %21 | Ana düğme (tonal) |
+| `primaryBg` / `primaryInk` | `#1B1813` / `#E2C8A0` (kenar: `ink` %50 = `#716450`) | yazı/zemin **11,0**; kenar/siyah 3,6 | — | %43 | Ana düğme (tonal mürekkep, sarı değil) |
 | `good` | `#A7C98A` | 11,4 | 10,0 | %37 | Doğru (simge + kelime) |
 | `bad` | `#FF9580` | 9,9 | 8,7 | %25 | Yanlış (simge + kelime) |
 | `caution` | `#E6CB72` | 13,1 | 11,6 | %32 | Yalnız Dikkat üçgeni |
@@ -212,7 +212,7 @@ Her maddenin kaynağı yanında. Notlar:
   - `ink2` `#B4B2A3`: 9,8:1, %39;
   - `ink3` `#8E8C7E`: 6,2:1 (kapsülde 5,4), %23.
 - `band` `#D6DC6E`: 14,3:1, mavi %36. Lockglow'un limon sarısının soluk hâli.
-- Ana düğme: `#222312` zemin üstünde `#D6DC6E` yazı (10,9:1).
+- Ana düğme: `#1A1A18` zemin üstünde `#DAD7C6` yazı (12,0:1), kenar mürekkep %50 (siyahta 4,0:1).
 - Durum renkleri: `good` `#9FD0A0`, `bad` `#FF9A8C`, `caution` `#F2B37A`.
 - Kehribardan daha çok mavi verir, ama markayı daha iyi korur.
 
@@ -251,8 +251,9 @@ Her maddenin kaynağı yanında. Notlar:
 
 1. **Koyu modda ışımaları kaldır.** `Theme.bandGlow` ve `Theme.primaryGlow` bugün sabit (`fixed`) renkler ve zaten yalnız gece çiziliyor. Değerleri `.clear` olur ya da `PhosphorBandDrawing` ve `CapsuleButtonBody` ışımayı hiç çizmez. Şerit çizgisi kalır.
 2. **Koyu modda ana düğmeyi tonal yap.**
-   - Dolu sarı yerine `band.opacity(0.16)` zemin, `band` yazı ve 1,5 pt `band.opacity(0.45)` kenar.
-   - `#0D0F11` zeminde bu dolgu `#303019` olur. Ekrandaki en parlak alan kaybolur (L %71 → %2,8). Yazı/zemin oranı 9,7:1. (Kehribar tonunda aynı düğme L %1,4 ve 9,4:1.)
+   - Önerilen (B): **tonal mürekkep.** Dolu sarı yerine `ink.opacity(0.12)` zemin, `ink` yazı ve 1,5 pt `ink.opacity(0.45)` kenar. Siyah zeminde dolgu `#1D1D1D` (L %1,2), yazı/zemin 15,3:1, kenar/siyah 4,1:1.
+   - Neden B: `docs/tasarim/ogrenme_ilkeleri.md` koyu ekranda iki sarı odağı yasaklıyor (şerit + sarı düğme; Choi 2017). Tonal mürekkep hem ışığı azaltır hem sarıyı yalnız kelimede bırakır. O belgedeki "açık mürekkep dolu düğme" (`#F3F4F0`) ise ekranın en parlak alanı olur (L %90).
+   - İlk öneri (A): tonal sarı (`band.opacity(0.16)`, `band` yazı, `band.opacity(0.45)` kenar). `is3-tema` dalı (cfdd806) bunu uyguladı. Siyahta dolgu L %1,7, yazı/zemin yaklaşık 9,4:1. Işık açısından iyi, ama ikinci sarı odak kalır.
 3. **Koyu modda zemin `#000`, kartlar dolgusuz.**
    - `Theme.bg` koyu `#000000`.
    - `cardSurface()` koyu modda `surface` dolgusu yerine yalnız `line` kenar.
@@ -323,6 +324,14 @@ Bu planı uygulayacak oturum için. Dosya adları `ios/arayuz-sik` dalına (1e4b
 
 Her adım kendi başına bir PR olabilir. Önce 1. adım: en az risk, en çok ışık kazancı.
 
+**Durum (22 Ekim akşamı, dalları okuyarak):**
+- `is3-tema` (cfdd806) 1. adımın çoğunu yaptı: koyu `bg` `#000`, koyu modda dolgusuz kart, tonal sarı ana düğme ve kenarı (seçenek A), `primaryGlow` saydam. Şerit ışıması %18'e indi; Yüksek Kontrast, Saydamlığı Azalt ve `isLuminanceReduced` iken çizilmiyor.
+- Kalanlar:
+  - `ReviewView` → `GradeButtonBody`'nin varsayılan düğmesinde gece kenarı yok (o dosyaya `is3-tema` dokunmadı; `is3-tekrar` da aynı dosyada çalışıyor);
+  - `DoneMark` ışıması koşulsuz;
+  - A mı B mi kararı (aşağıda 2. madde) ve buna göre `ogrenme_ilkeleri.md`'deki "koyu temada ana düğme açık mürekkep" satırının güncellenmesi.
+- `is3-kilit` 2. adımın bir kısmını yaptı: dikdörtgen kilit ekranı widget'ı artık hep iki satır (kelime + anlam), tanım satırı yok, `AccessoryWidgetBackground` kalktı (zemini sistem çiziyor). Aşağıdaki 2. adım tablosunda bu yüzden yalnız şerit (Her zaman açık ekranda 1 pt) ve StandBy kalıyor.
+
 ### Adım 1: Koyu modda ışık bütçesi (yalnız mevcut koyu tema)
 
 Gece tonu henüz yok. Yalnız bugünkü koyu tema daha az ışık verir.
@@ -331,9 +340,9 @@ Gece tonu henüz yok. Yalnız bugünkü koyu tema daha az ışık verir.
 |---|---|
 | `ios/Shared/LockglowTheme.swift` → `Theme.bg` | Koyu değer `0x0D0F11` → `0x000000`. |
 | `LockglowTheme.swift` → `CardSurfaceModifier` | Koyu modda dolgu yok, yalnız `Theme.line` kenar. Açık mod aynı. |
-| `LockglowTheme.swift` → `CapsuleButtonBody` (`.primary`) | Koyu modda dolgu `Theme.band.opacity(0.16)`, yazı `Theme.band`, 1,5 pt `band.opacity(0.45)` kenar. Işıma (`primaryGlow` gölgesi) kalkar. |
+| `LockglowTheme.swift` → `CapsuleButtonBody` (`.primary`) | Koyu modda tonal: önerilen B'de dolgu `Theme.ink.opacity(0.12)`, yazı `Theme.ink`, 1,5 pt `ink.opacity(0.45)` kenar (A: aynısı `band` ile, %16). Işıma (`primaryGlow` gölgesi) kalkar. |
 | `LockglowTheme.swift` → `PhosphorBandDrawing` (`.underline`) | Bulanık `Ellipse` ışıması çizilmez; çizgi kalır. |
-| `ios/App/ReviewView.swift` → cevap düğmesinin varsayılan hâli (`Theme.primary` dolgu + `primaryGlow` gölge) ve `DoneMark` | Aynı kural: koyu modda tonal, ışımasız. |
+| `ios/App/ReviewView.swift` → `GradeButtonBody` (varsayılan cevap "Bildim": `Theme.primary` dolgu + `primaryGlow` gölge) ve `DoneMark` | Aynı kural: koyu modda tonal ve **aynı 1,5 pt kenar**. Kenar olmadan tonal dolgu siyahta yalnız 1,2–1,3:1 ve düğmenin sınırı görünmez. `DoneMark`'ın ışıması da şerit gibi Yüksek Kontrast, Saydamlığı Azalt ve Her zaman açık ekranda çizilmez. |
 | `ios/App/GlowStyle.swift` → `Palette.glow` / `onGlow` | `Theme.primary` / `onPrimary`'ye bağlı. `GlowButtonStyle` 1e4b4e6'da hâlâ `OnboardingView`'da kullanılıyor; tonal kural oraya da uygulanmalı. |
 
 **Kabul ölçütü:**
@@ -349,8 +358,8 @@ Gece tonu henüz yok. Yalnız bugünkü koyu tema daha az ışık verir.
 
 | Dosya | Değişiklik |
 |---|---|
-| `ios/Widgets/AccessoryWordViews.swift` → `RectangularWordView` | `@Environment(\.isLuminanceReduced)` okunur. Açıkken `rows(belowWord: 1)` kullanılır (tanım satırı yok) ve şerit 1 pt olur. |
-| `ios/Widgets/WordWidget.swift` → `containerFill` | `.accessoryRectangular` için `isLuminanceReduced` iken `AccessoryWidgetBackground` çizilmez. Ana ekran aileleri koyu modda `Color.black`. |
+| `ios/Widgets/AccessoryWordViews.swift` → `RectangularWordView` | (`is3-kilit` sonrası tanım satırı zaten yok.) `@Environment(\.isLuminanceReduced)` iken şerit 1 pt olur; bugün `.line` çizgisi `max(0.1 em, 1.5)` (17 pt'de yaklaşık 1,7 pt). |
+| `ios/Widgets/WordWidget.swift` → `containerFill` | (`is3-kilit` sonrası dikdörtgen için zaten `Color.clear`.) Ana ekran aileleri koyu modda `Theme.bg` (`#000`). |
 | `ios/Widgets/HomeWordViews.swift` | `@Environment(\.showsWidgetContainerBackground)` false ise (StandBy) iç boşluk ve yazı boyutu büyür. Düğme sırası değişmez. |
 | `ios/WidgetSnapshots/WidgetSnapshotTests.swift` | Yeni görünümler: "her-zaman-acik" (`isLuminanceReduced` ortamda ayarlanabiliyorsa onunla; ayarlanamıyorsa görünüme bir parametre verilir) ve "standby" (`.vibrant`, zeminsiz `systemSmall`, kırmızıya boyanmış önizleme). |
 

@@ -513,7 +513,7 @@ const TONES = {
     name: 'Kehribar', bg: '#000000', surface: '#0D0B09', surface2: '#17130F', surface3: '#231D17',
     line: '#241C13', lineStrong: '#473827', ink: '#E2C8A0', ink2: '#BFA27C', ink3: '#957D63',
     band: '#FFB547', bandGlow: 'transparent', mark: '#FFB547',
-    primaryBg: '#291D0B', primaryInk: '#FFB547', primaryLine: 'rgba(255,181,71,.45)', primaryGlow: '0 0 0 0 transparent',
+    primaryBg: '#1B1813', primaryInk: '#E2C8A0', primaryLine: 'rgba(226,200,160,.5)', primaryGlow: '0 0 0 0 transparent',
     cardBg: '#000000', cardLine: '#241C13', good: '#A7C98A', bad: '#FF9580', caution: '#E6CB72',
     goodTint: 'rgba(167,201,138,.12)', badTint: 'rgba(255,149,128,.12)', wgBg: '#000000', tabBg: '#000000', lockTint: '#FFB547'
   },
@@ -521,7 +521,7 @@ const TONES = {
     name: 'Soluk fosfor', bg: '#000000', surface: '#0C0C0A', surface2: '#161613', surface3: '#22221D',
     line: '#20201E', lineStrong: '#403F3B', ink: '#DAD7C6', ink2: '#B4B2A3', ink3: '#8E8C7E',
     band: '#D6DC6E', bandGlow: 'transparent', mark: '#D6DC6E',
-    primaryBg: '#222312', primaryInk: '#D6DC6E', primaryLine: 'rgba(214,220,110,.45)', primaryGlow: '0 0 0 0 transparent',
+    primaryBg: '#1A1A18', primaryInk: '#DAD7C6', primaryLine: 'rgba(218,215,198,.5)', primaryGlow: '0 0 0 0 transparent',
     cardBg: '#000000', cardLine: '#20201E', good: '#9FD0A0', bad: '#FF9A8C', caution: '#F2B37A',
     goodTint: 'rgba(159,208,160,.12)', badTint: 'rgba(255,154,140,.12)', wgBg: '#000000', tabBg: '#000000', lockTint: '#D6DC6E'
   },
@@ -1020,10 +1020,10 @@ const NOTES = {
   },
   tekrar: {
     t: 'Tekrar (yeni kelime turu)',
-    d: ['Ön yüzde yalnız kelime ve tek düğme. Ana düğme dolu değil: %16 kehribar zemin, kehribar yazı, ince kenar.',
-      'Mevcut koyu temada aynı düğme ekranın en parlak alanı: dolu sarı ve çevresinde ışıma (karşılaştırmayı aç).',
+    d: ['Ön yüzde yalnız kelime ve tek düğme. Ana düğme dolu değil ve sarı değil: %12 mürekkep zemin, mürekkep yazı, ince kenar. Sarı yalnız kelimede kalır (ogrenme_ilkeleri: koyu ekranda iki sarı odak olmasın).',
+      'Mevcut koyu temada (1e4b4e6) aynı düğme ekranın en parlak alanı: dolu sarı ve çevresinde ışıma (karşılaştırmayı aç).',
       'Cevap düğmeleri renksiz; anlamı simge, kelime ve süre taşır (kural 4 aynı kalır).'],
-    s: '<code>PrimaryCapsuleButtonStyle</code> gece tonunda tonal: dolgu <code>band.opacity(0.16)</code>, yazı <code>band</code>, 1,5 pt <code>band.opacity(0.45)</code> kenar. <code>Theme.primaryGlow</code> ve <code>Theme.bandGlow</code> gece tonunda <code>.clear</code>.'
+    s: '<code>PrimaryCapsuleButtonStyle</code> koyu modda tonal mürekkep: dolgu <code>ink.opacity(0.12)</code>, yazı <code>ink</code>, 1,5 pt <code>ink.opacity(0.5)</code> kenar (Yüksek Kontrast: 0,7). Tekrar ekranındaki varsayılan cevap düğmesi (<code>GradeButtonBody</code>) de aynı kenarı almalı. Işıma yok.'
   },
   quiz: {
     t: 'Quiz (tekrar sorusu)',
@@ -1131,7 +1131,7 @@ function render() {
   const fk = focusKey();
   $$('#nav button[data-v]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === S.screen)));
   const land = S.screen === 'standby';
-  $('#phones').innerHTML = tonesShown().map(tone => `<figure class="pwrap"><figcaption class="plabel">${tone === 'mevcut' ? 'Mevcut koyu tema' : `Gece · <b>${TONES[tone].name}</b>`}</figcaption>
+  $('#phones').innerHTML = tonesShown().map(tone => `<figure class="pwrap"><figcaption class="plabel">${tone === 'mevcut' ? 'Mevcut koyu tema (1e4b4e6)' : `Gece · <b>${TONES[tone].name}</b>`}</figcaption>
     <div class="phone-box"><div class="phone${land ? ' land' : ''}" data-tone="${tone}" data-device="${S.device}" style="--dt:${S.dt}"><div class="screen">${screenHTML(tone)}<div class="island" aria-hidden="true"></div><div class="homebar" aria-hidden="true"></div></div></div></div></figure>`).join('');
   $$('#phones .phone').forEach(ph => {
     const t = TONES[ph.dataset.tone];
