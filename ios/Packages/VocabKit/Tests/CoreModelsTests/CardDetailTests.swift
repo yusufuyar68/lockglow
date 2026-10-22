@@ -6,6 +6,10 @@ final class CardDetailTests: XCTestCase {
         return try JSONDecoder().decode(CardDetail.self, from: Data(json.utf8))
     }
 
+    private let spoon = CardDetail.Quiz(
+        cloze: "I eat soup with a ______, not with a fork.", answer: "spoon", distractors: ["knife", "plate", "cup"]
+    )
+
     func testFullCardJSONDecodesTheFieldsTheAppShows() throws {
         // Trimmed copy of a real card as build_db stores it in `card.json` (unused fields kept
         // to make sure they are ignored).
@@ -64,6 +68,85 @@ final class CardDetailTests: XCTestCase {
         let quiz = CardDetail.Quiz(cloze: "a ______", answer: "x", distractors: ["y", "x", "y"])
         XCTAssertEqual(Set(quiz.options(seed: 7)), ["x", "y"])
         XCTAssertEqual(quiz.options(seed: 7).count, 2)
+    }
+
+    func testQuizOptionsWithoutAnAttemptKeepTheEarlierOrder() {
+        // The orders `options(seed:)` gave before it took an attempt (the snapshot cases).
+        XCTAssertEqual(spoon.options(seed: 2), ["knife", "cup", "plate", "spoon"])
+        let lyrics = CardDetail.Quiz(cloze: "the ______", answer: "lyrics", distractors: ["tickets", "trailers", "playlists"])
+        XCTAssertEqual(lyrics.options(seed: 452), ["playlists", "trailers", "tickets", "lyrics"])
+        for seed in -5...50 {
+            XCTAssertEqual(spoon.options(seed: seed), spoon.options(seed: seed, attempt: 0))
+        }
+    }
+
+    func testQuizOptionsAreStableWithinAnAttempt() {
+        for seed in [2, 452, -7] {
+            for attempt in 0..<6 {
+                let options = spoon.options(seed: seed, attempt: attempt)
+                XCTAssertEqual(options.count, 4)
+                XCTAssertEqual(Set(options), ["spoon", "knife", "plate", "cup"])
+                XCTAssertEqual(spoon.options(seed: seed, attempt: attempt), options, "same seed and attempt, same order")
+            }
+        }
+        // Pinned, so a change of the mixing (or a per-process hash) shows up here: every device
+        // must give the same order.
+        XCTAssertEqual(spoon.options(seed: 2, attempt: 1), ["plate", "knife", "spoon", "cup"])
+    }
+
+    func testQuizAnswerMovesOnEveryNextAttempt() {
+        for seed in 1...200 {
+            for attempt in 0..<20 {
+                let now = spoon.options(seed: seed, attempt: attempt).firstIndex(of: "spoon")
+                let next = spoon.options(seed: seed, attempt: attempt + 1).firstIndex(of: "spoon")
+                XCTAssertNotEqual(now, next, "seed \(seed), attempt \(attempt)")
+            }
+        }
+    }
+
+    func testQuizAnswerIsSpreadOverThePlaces() {
+        // One word over time: any four attempts in a row put the answer once in each place.
+        for seed in 1...200 {
+            for start in 0..<12 {
+                let places = (start..<start + 4).compactMap { spoon.options(seed: seed, attempt: $0).firstIndex(of: "spoon") }
+                XCTAssertEqual(places.sorted(), [0, 1, 2, 3], "seed \(seed), attempts from \(start)")
+            }
+        }
+        // Many words at the same attempt: about a quarter in each place (100 of 400 expected).
+        for attempt in 0..<4 {
+            var counts = [0, 0, 0, 0]
+            for seed in 1...400 {
+                if let place = spoon.options(seed: seed, attempt: attempt).firstIndex(of: "spoon") {
+                    counts[place] += 1
+                }
+            }
+            for count in counts {
+                XCTAssertGreaterThan(count, 60, "attempt \(attempt): \(counts)")
+                XCTAssertLessThan(count, 140, "attempt \(attempt): \(counts)")
+            }
+        }
+    }
+
+    func testQuizDistractorsAreMixedAnewToo() {
+        for seed in [2, 452] {
+            let orders = Set((0..<24).map { attempt in
+                spoon.options(seed: seed, attempt: attempt).filter { $0 != "spoon" }
+            })
+            XCTAssertGreaterThan(orders.count, 2, "seed \(seed)")
+        }
+    }
+
+    func testQuizOptionsWithFewOptions() {
+        // Two options (after dropping duplicates): the answer switches sides every attempt.
+        let two = CardDetail.Quiz(cloze: "a ______", answer: "x", distractors: ["y", "x", "y"])
+        XCTAssertEqual(Set(two.options(seed: 7, attempt: 3)), ["x", "y"])
+        XCTAssertNotEqual(two.options(seed: 7, attempt: 0), two.options(seed: 7, attempt: 1))
+        XCTAssertEqual(two.options(seed: 7, attempt: 0), two.options(seed: 7, attempt: 2))
+        let one = CardDetail.Quiz(cloze: "a ______", answer: "x", distractors: ["x"])
+        XCTAssertEqual(one.options(seed: 3, attempt: 5), ["x"])
+        // The app never passes a negative attempt; it still gives every option once.
+        XCTAssertEqual(Set(spoon.options(seed: 5, attempt: -3)), ["spoon", "knife", "plate", "cup"])
+        XCTAssertEqual(spoon.options(seed: 5, attempt: -3).count, 4)
     }
 
     func testFilledSentencePutsTheAnswerInTheBlank() {
