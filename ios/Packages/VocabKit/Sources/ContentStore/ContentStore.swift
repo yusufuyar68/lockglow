@@ -32,13 +32,15 @@ public final class ContentStore {
         }
     }
 
-    /// Free, non-sensitive cards up to `maxLevelRank` (A1 = 1 ... C2 = 6, S = 7), easiest and
-    /// most frequent first. The Turkish gloss is optional (LEFT JOIN).
+    /// Free cards up to `maxLevelRank` (A1 = 1 ... C2 = 6, S = 7), easiest and most frequent
+    /// first. Personal-topic cards (sensitivity 1) are included: they stay in Akış, Sözlük and
+    /// Tekrar, and only the widget queue leaves them out (`QueueComposer`). The Turkish gloss is
+    /// optional (LEFT JOIN).
     public func freeCards(maxLevelRank: Int, limit: Int) throws -> [WidgetWord] {
         let sql = """
             SELECT \(selectColumns)
             \(fromClause)
-            WHERE c.is_free = 1 AND c.sensitivity = 0 AND c.level_rank <= ?
+            WHERE c.is_free = 1 AND c.sensitivity <= 1 AND c.level_rank <= ?
             \(orderClause)
             LIMIT ?
             """
@@ -49,7 +51,7 @@ public final class ContentStore {
         }
     }
 
-    /// Topics the user can choose: categories with at least one free, non-sensitive card (the
+    /// Topics the user can choose: categories with at least one free card (the
     /// cards `freeCards` returns) among their members (`card_category`, main topic or not), in
     /// `category.sort` order, with that count. A card in several categories counts in each.
     public func topics() throws -> [ContentTopic] {
@@ -59,7 +61,7 @@ public final class ContentStore {
             FROM category AS cat
             JOIN card_category AS cc ON cc.category_id = cat.id
             JOIN card AS c ON c.rowid = cc.card_rowid
-            WHERE c.is_free = 1 AND c.sensitivity = 0
+            WHERE c.is_free = 1 AND c.sensitivity <= 1
             GROUP BY cat.id
             ORDER BY cat.sort ASC, cat.id ASC
             """
@@ -115,7 +117,7 @@ public final class ContentStore {
             SELECT \(selectColumns)
             \(fromClause)
             WHERE c.rowid IN (SELECT rowid FROM card_fts WHERE card_fts MATCH ?)
-              AND c.sensitivity = 0
+              AND c.sensitivity <= 1
             \(orderClause)
             LIMIT ?
             """
@@ -151,7 +153,7 @@ public final class ContentStore {
 private let selectColumns = """
     c.rowid AS id, c.lemma AS lemma, c.pos AS pos, c.level AS level, c.ipa_us AS ipa_us, \
     c.def_micro AS def_micro, c.def_short AS def_short, c.example_en AS example_en, \
-    l.gloss AS gloss_tr
+    l.gloss AS gloss_tr, l.gloss_short AS gloss_short_tr, c.sensitivity AS sensitivity
     """
 
 private let fromClause = """
@@ -174,6 +176,8 @@ private func makeWord(from row: Row) -> WidgetWord {
     let defShort: String = row["def_short"]
     let exampleEN: String = row["example_en"]
     let glossTR: String? = row["gloss_tr"]
+    let glossShortTR: String? = row["gloss_short_tr"]
+    let sensitivity: Int = row["sensitivity"]
     return WidgetWord(
         id: id,
         lemma: lemma,
@@ -183,6 +187,8 @@ private func makeWord(from row: Row) -> WidgetWord {
         defMicro: defMicro,
         defShort: defShort,
         exampleEN: exampleEN,
-        glossTR: glossTR
+        glossTR: glossTR,
+        glossShortTR: glossShortTR,
+        sensitivity: sensitivity
     )
 }

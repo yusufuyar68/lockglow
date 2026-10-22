@@ -96,7 +96,9 @@ public enum QueueComposer {
         var seenInFeed = Set<Int>()
 
         for (order, word) in feed.enumerated() {
-            if used.contains(word.id) || seenInFeed.contains(word.id) {
+            // Personal-topic cards (divorce, crush, get fired…) never go on the lock screen or
+            // home screen; they stay in Akış, Sözlük and Tekrar.
+            if used.contains(word.id) || seenInFeed.contains(word.id) || word.isSensitive {
                 continue
             }
             seenInFeed.insert(word.id)

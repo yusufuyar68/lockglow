@@ -402,6 +402,15 @@ final class QueueComposerTests: XCTestCase {
         XCTAssertEqual(ids(deck), ids(plain))
     }
 
+    func testSensitiveCardsNeverEnterTheWidgetQueue() {
+        // Word 2 is a personal-topic card (sensitivity 1): new words 1 and 3 come, 2 never does.
+        var feed = words(1...3)
+        feed[1] = WidgetWord(id: 2, lemma: "divorce", pos: "n", level: "B1", defMicro: "m", defShort: "s", exampleEN: "e", sensitivity: 1)
+        let queue = QueueComposer.compose(feed: feed, progress: [:], now: now, horizon: 0, maxNew: 5, limit: 5)
+        XCTAssertFalse(ids(queue).contains(2))
+        XCTAssertEqual(Set(ids(queue)), [1, 3])
+    }
+
     func testZeroLimitAndDeterminism() {
         XCTAssertTrue(QueueComposer.compose(feed: words(1...5), progress: [:], now: now, horizon: 0, maxNew: 2, limit: 0).isEmpty)
         let first = QueueComposer.compose(feed: words(1...30), progress: mixedProgress(), now: now, horizon: day, maxNew: 5, limit: 20, calendar: utc)
