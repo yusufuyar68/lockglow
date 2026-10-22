@@ -8,7 +8,16 @@
 - **Sıra önemli:** Aramada yalnızca ilk 2–3 dikey kare görünür. En güçlü üç fayda başa: kilit ekranı, Türkçe kart, widget'tan ses.
 - **Başlık:** 2 satırı geçmesin; en çok yaklaşık 30 karakter (`raporlar/08_aso_isim_metadata.md` §6.1 ≤35 diyor). "Sen" diliyle, uygulamanın arayüzüyle aynı. Önce fayda, sonra özellik.
 - **Gerçeği göster** (Kural 2.3.3): her kare uygulamanın gerçek ekranı ya da gerçek widget'ı olmalı. Sayılar doğru olmalı (933 kart; "10.000+" gibi şişirme yok).
-- **Boyut:** Apple'ın listesinde büyük iPhone (6.9") için 1260 × 2736, 1290 × 2796 ya da 1320 × 2868 piksel (dikey) kabul ediliyor; bu yoksa 6.5" (1284 × 2778 ya da 1242 × 2688) zorunlu. Cihaz boyutu başına en az 1, en çok 10 görüntü; Apple büyük görüntüyü küçük ekranlar için kendisi küçültür ([Screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications), 22 Ekim 2026). Klasördeki 10 dosyadan **yalnızca `01` bu boyutta** (1320 × 2868); SE görüntüleri (750 × 1334) mağazada kullanılamaz.
+- **Boyut (Apple'ın güncel kuralı, 22 Ekim 2026):**
+  - **Zorunlu olan 6.3":** Apple'ın adıyla "iPhone with Dynamic Island (medium display)". Dikey **1206 × 2622** (iPhone 16 Pro, 17 Pro, 17) ya da 1179 × 2556 piksel. En az 1, en çok 10 görüntü.
+  - **6.9" artık zorunlu değil:** 1260 × 2736, 1290 × 2796 ya da 1320 × 2868 (Pro Max). İsteğe bağlı.
+  - **6.5":** 1284 × 2778 ya da 1242 × 2688. Yalnız 6.9" görüntü verilmezse isteniyor.
+  - Apple, görüntüyü küçük ekranlar için kendisi küçültür. PNG ya da JPEG olur; saydamlık (alfa kanalı) olmaz.
+  - Kaynak: [Screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications). Mağaza görseli oturumu 22 Ekim'de baktı (`docs/magaza/gorseller/README.md`).
+  - Eski kural "6.9" ya da 6.5" zorunlu" diyordu; artık geçerli değil.
+- **Hangi görüntüler bu boyutta:**
+  - `docs/ekran-goruntuleri/yeni-tasarim-2026-10-22/` klasöründe yalnız `01` büyük (1320 × 2868, 6.9"). Ötekiler SE görüntüsü (750 × 1334); mağazada kullanılamaz.
+  - `screenshots.yml` artık `pro` geçişinde iPhone NN Pro simülatöründe, yani doğrudan **1206 × 2622** boyutunda çekiyor. Çıktı, artifact içinde `named/pro/<ad>.png` olarak gelir (aşağıda "Yeniden çekim notları").
 - **Yaş:** Kareler ve ikon her yaşa uygun olmalı (Kural 2.3.8).
 - **Rakipten farklı görün** (Kural 4.3 riski): Orbit'in koyu lacivert, yıldızlı arka planını ve maskotlarını kullanmayın. Lockglow'un kendi kâğıt rengi (`#F3F3EE`) ve fosfor sarısı (`#F5E829`) yeter (`docs/tasarim/`).
 
@@ -33,8 +42,16 @@ Başlık uzunlukları Python'la sayıldı (karakter).
 
 ## Yeniden çekim notları
 
-- `screenshots.yml` zaten küçük (SE) **ve büyük (Pro Max)** simülatörde çekiyor (`.github/workflows/screenshots.yml:44–45`). Son çalıştırmanın Pro Max çıktıları GitHub'da duruyorsa yeni çalıştırma gerekmez; yoksa bütün eksikler **tek turda** toplanıp bir kez çalıştırılmalı (~12 dk macOS, kota 10 kat sayılıyor).
-- Simülatörde saat **9:41**, Türkçe bölge (24 saat), tam şarj; "Carrier" yazısı görünmesin.
+- `screenshots.yml` (22 Ekim'den beri) üç geçiş çalıştırır: `se` (iPhone SE, açık), `pro` (iPhone NN Pro, 6.3", açık; mağaza boyutu) ve `pro-koyu` (aynı cihaz, koyu mod). İstenirse `-f gecisler="pro promax"` ile Pro Max (6.9") de eklenir. Bütün eksikler **tek turda** toplanıp bir kez çalıştırılmalı (Intel makinede ~1 saat).
+- Görüntüler artifact içinde `named/<geçiş>/<ad>.png` adıyla gelir (`1-akis.png`, `17-tekrar-quiz-soru.png` gibi). Artifact 7 gün saklanır.
+- Durum çubuğu iş akışında ayarlanıyor: saat **9:41**, tam Wi-Fi ve hücresel çubuk, tam pil, "Carrier" yazısı yok (`xcrun simctl status_bar … override`). Simülatör bölgesi İngilizce (ABD) kalıyor; uygulama metinleri zaten Türkçe.
+- **Simülatörde çekilemeyenler:**
+  - kilit ekranı (1. kare);
+  - Söyle'nin "Doğru!" sonucu (5. kare): gerçek konuşma gerekiyor, uygulamada deneme yolu yok;
+  - Ayarlar'da widget sağlığı **"Çalışıyor"** (10. kare): simülatörde widget listesi boş geliyor, satır "Bilinmiyor" diyor.
+
+  Bu üçü gerçek iPhone'dan çekilmeli. Mağaza karesinde istenirse Ayarlar yerine başka bir ekran kullanılabilir.
+- **Quiz (7. kare):** `testCaptureWaitedQuiz` Tanış turunda iki kez yanlış cevaplanan kelimeyi 10 dakika bekleyip tam ekran boşluk doldurma olarak çeker: `17-tekrar-quiz-soru` (soru) ve `17-tekrar-quiz-cevap` (doğru cevap anı). Yalnız `pro` geçişinde çalışır (bekleme ~8 dk).
 - Açık tema ağırlıklı; bir kare (ör. 3'teki küçük widget) koyu tema olabilir.
 - 2. ve 4. kare aynı görüntüden çıkıyorsa 4. kare için başka bir kelime seçin (ör. "look forward to" ya da bir phrasal verb).
 

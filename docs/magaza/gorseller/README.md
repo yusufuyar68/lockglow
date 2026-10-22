@@ -22,7 +22,7 @@ Kaynak: [Screenshot specifications](https://developer.apple.com/help/app-store-c
 - **6.5" (Face ID, large):** 1284 × 2778 ya da 1242 × 2688. Yalnızca 6.9" görüntü verilmezse zorunlu. 6.9" verdiğimiz için gerekmez. Betik isterse bunu da üretir (`--boyut 6.5`).
 - Cihaz boyutu başına en az 1, en çok 10 görüntü. `.png`, `.jpg` ya da `.jpeg`. Alfa kanalı ve saydamlık olmaz.
 
-**Dikkat:** [`../ekran_goruntusu_basliklari.md`](../ekran_goruntusu_basliklari.md) "6.9" ya da 6.5" zorunlu" diyor. Apple sayfası artık "medium display" boyutunu zorunlu sayıyor. O belge ayrıca güncellenmeli (bu işin kapsamında değildi).
+[`../ekran_goruntusu_basliklari.md`](../ekran_goruntusu_basliklari.md) de bu kurala göre güncellendi (22 Ekim, `is4-ekran`): zorunlu boyut 6.3" (1206 × 2622).
 
 ## Sıra ve gerekçe
 
