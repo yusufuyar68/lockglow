@@ -411,6 +411,17 @@ struct SettingsView: View {
                     }
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                // Words the user heard and added; they rotate with the cards (CustomWordsView).
+                NavigationLink {
+                    CustomWordsView(library: model.customWordLibrary, cardMeaning: model.lookup(lemma:))
+                } label: {
+                    SettingsRow("Kendi kelimelerin") {
+                        Text(verbatim: "\(model.customWordLibrary.words.count)")
+                            .monospacedDigit()
+                    }
+                }
+                .buttonStyle(SettingsRowButtonStyle())
             }
             .padding(.top, 4)
         }

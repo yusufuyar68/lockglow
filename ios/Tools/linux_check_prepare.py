@@ -16,7 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
-APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
+APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
 
 # A declaration that starts with `public` or `open`, after optional attributes such as @discardableResult.
@@ -77,7 +77,7 @@ def main() -> int:
         '        .target(name: "WidgetKit"),\n'
         '        .target(name: "ContentStore", dependencies: ["CoreModels"]),\n'
         '        .target(name: "AppLogic", dependencies: ["Combine", "os", "WidgetKit", "ContentStore", '
-        '"CoreModels", "SharedState", "Scheduler", "Learning"]),\n'
+        '"CoreModels", "SharedState", "Scheduler", "Learning", "TextFold"]),\n'
     )
     if s.count(anchor) != 1:
         raise SystemExit("CoreModelsTests target not found in Package.swift")

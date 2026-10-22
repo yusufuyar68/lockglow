@@ -13,7 +13,7 @@ struct CustomWordsView: View {
     @ObservedObject var library: CustomWordLibrary
     /// The Turkish meaning of a card with this headword (`AppModel.lookup(lemma:)`), so the form
     /// can say the word is already in the cards. Nil: no such line.
-    var cardMeaning: ((String) -> String?)? = nil
+    var cardMeaning: (@MainActor (String) -> String?)? = nil
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -281,7 +281,7 @@ struct CustomWordEditor: View {
 
     @ObservedObject private var library: CustomWordLibrary
     private let mode: Mode
-    private let cardMeaning: ((String) -> String?)?
+    private let cardMeaning: (@MainActor (String) -> String?)?
     private let onFinish: (Outcome) -> Void
 
     @Environment(\.dismiss) private var dismiss
@@ -295,7 +295,7 @@ struct CustomWordEditor: View {
     init(
         library: CustomWordLibrary,
         mode: Mode,
-        cardMeaning: ((String) -> String?)? = nil,
+        cardMeaning: (@MainActor (String) -> String?)? = nil,
         onFinish: @escaping (Outcome) -> Void = { _ in }
     ) {
         _library = ObservedObject(wrappedValue: library)
@@ -597,6 +597,19 @@ struct CustomWordEditor: View {
 }
 
 // MARK: - Parts
+
+/// "Senin kelimen": on a word the user added, in the place of a card's part of speech and level,
+/// which it does not have. It keeps the user's words apart from the checked cards
+/// (docs/tasarim/ogrenme_ilkeleri.md 2.6). Used on the "Tekrar", "Akış" and dictionary cards.
+struct CustomWordTag: View {
+    var body: some View {
+        Label("Senin kelimen", systemImage: "person.fill")
+            .labelStyle(.titleAndIcon)
+            .font(.subheadline.weight(.medium))
+            .foregroundStyle(Theme.ink2)
+            .fixedSize()
+    }
+}
 
 /// One form field: its title (with "isteğe bağlı" and a character count), the text field in a
 /// `surface` box with a `lineStrong` border, then its problem (`bad` border, icon and sentence;

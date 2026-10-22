@@ -4,6 +4,14 @@ Kaynak: `raporlar/14_guncel_fark_raporu.md` öneri 6 ("Basit bir form: kelime, T
 
 Dal `kendi-kelime` yalnızca **yeni dosya** ekler. Var olan hiçbir dosya değişmedi. Özellik bağlanana kadar uygulamada görünmez. Bu not, koordinatörün hangi dosyaya hangi satırları ekleyeceğini anlatır.
 
+> **Durum (2026-10-22): bağlandı**, dal `kendi-kelime-bagla` (taban `entegrasyon-3`). Aşağıdaki adımlar uygulandı. Plandan farklar:
+> - Yardımcılar `ios/App/AppModel+CustomWords.swift` içinde (`withCustomWords`, `customWordMatches`, `introCandidates`, `pinnedWord`). AppModel.swift'te yalnız durumu değiştiren küçük satırlar var. Linux kontrolüne iki dosya ve AppLogic'e `TextFold` eklendi.
+> - **Tanış + Hatırla:** seçenek havuzu kelime türüne ve seviyeye bakıyor; kullanıcı kelimesinin ikisi de yok. `introCandidates` ona bütün kelimeleri "aynı türden" verir; böylece Hatırla sorusu kartların anlamlarından ve kelimelerinden seçenek alır. Zamanı gelen tekrarda sınav (`cloze`) olmadığı için hatırlama ekranı çıkar.
+> - **Sözlük:** arama kullanıcı kelimelerini de bulur (önce onlar). Sonuç çıkmazsa ve aranan şey İngilizce bir kelimeye benziyorsa "… kelimesini kendin ekle" düğmesi formu açar.
+> - **İlerleme ekranı** (entegrasyon-3'te yeni): seviye rozeti yerine "Senin kelimen"; arka yüzde örnek de tanım da yoksa yine bu etiket.
+> - **Düzeltme (dışarıdan gelen hata):** `refreshWidgetPlan` kısa örnek seçince `WidgetWord`'ü yeniden kurarken `glossShortTR`, `sensitivity` ve `confusableIDs` düşüyordu. Artık korunuyor.
+> - Kullanıcı kelimelerinde `glossShortTR`, `sensitivity` ve `confusableIDs` nil.
+
 | Dosya | Ne |
 |---|---|
 | `ios/Packages/VocabKit/Sources/CoreModels/CustomWordID.swift` | Kimlik aralığı, `WidgetWord.isUserAdded` (widget eklentisi de görür) |

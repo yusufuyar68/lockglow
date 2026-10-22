@@ -20,6 +20,8 @@ struct SearchView: View {
     @State private var showsAllTopics = false
     @AppStorage(SozlukRecentSearches.storageKey) private var recentSearchLog = ""
     @StateObject private var topicIndex = SozlukTopicIndex()
+    /// "Kendin ekle" after a search that found nothing (`CustomWordEditor`).
+    @State private var customWordEditor: CustomWordEditor.Mode?
 
     /// "Dene" examples (mockup `.try`): a Turkish start, the same kind without Turkish letters,
     /// a Turkish word and an English start.
@@ -53,6 +55,9 @@ struct SearchView: View {
             .textInputAutocapitalization(.never)
             .onSubmit(of: .search) {
                 remember(query)
+            }
+            .sheet(item: $customWordEditor) { mode in
+                CustomWordEditor(library: model.customWordLibrary, mode: mode, cardMeaning: model.lookup(lemma:))
             }
             .navigationDestination(for: WidgetWord.self) { word in
                 // A card opened from the results makes its search a recent one; from a topic
@@ -263,6 +268,26 @@ struct SearchView: View {
                 title: "\"\(query)\" bulunamadı",
                 message: message
             )
+            addOwnWordButton(for: query)
+        }
+    }
+
+    /// A search that reads as an English word (the rule of the user's words) can become one:
+    /// "Kendi kelimeni ekle" with the word filled in. A bordered capsule: the screen has no filled
+    /// button.
+    @ViewBuilder
+    private func addOwnWordButton(for query: String) -> some View {
+        let lemma = CustomWordText.lemma(query)
+        if CustomWordText.isSpeakable(lemma) && lemma.count <= CustomWordDraft.lemmaLimit {
+            Button {
+                customWordEditor = .add(lemma: lemma)
+            } label: {
+                Label("\"\(lemma)\" kelimesini kendin ekle", systemImage: "plus")
+            }
+            .buttonStyle(SecondaryCapsuleButtonStyle())
+            .accessibilityHint("Kelimeyi Türkçe anlamıyla kendi kelimelerine ekler; widget'ta ve Tekrar'da karşına çıkar.")
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 16)
         }
     }
 
@@ -618,11 +643,16 @@ struct WordDetailView: View {
                 WordDetailHeadline(lemma: word.lemma)
                 WordDetailMetaRow(word: word)
                 meaning(alternatives: detail?.glossAlternatives ?? [])
-                Text(word.defShort)
-                    .definitionStyle()
-                    .lineSpacing(2)
-                    .cardEnglishVoice()
-                examplesSection(detail?.examples ?? [])
+                // A user's word has no English definition (and maybe no example).
+                if !word.defShort.isEmpty {
+                    Text(word.defShort)
+                        .definitionStyle()
+                        .lineSpacing(2)
+                        .cardEnglishVoice()
+                }
+                if !(detail?.examples ?? []).isEmpty || !word.exampleEN.isEmpty {
+                    examplesSection(detail?.examples ?? [])
+                }
                 cautionSection(detail)
                 if let collocations = detail?.collocations, !collocations.isEmpty {
                     collocationsSection(collocations)
@@ -819,15 +849,24 @@ private struct WordDetailMetaRow: View {
         }
     }
 
+    /// A user's word: "Senin kelimen" in place of the part of speech, and no level.
+    @ViewBuilder
     private var partOfSpeech: some View {
-        Text(CardPartOfSpeech.turkish(word.pos))
-            .font(.subheadline.weight(.medium))
-            .foregroundStyle(Theme.ink2)
+        if word.isUserAdded {
+            CustomWordTag()
+        } else {
+            Text(CardPartOfSpeech.turkish(word.pos))
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(Theme.ink2)
+        }
     }
 
+    @ViewBuilder
     private var level: some View {
-        LevelBadge(code: word.level)
-            .fixedSize()
+        if !word.isUserAdded {
+            LevelBadge(code: word.level)
+                .fixedSize()
+        }
     }
 
     private var actions: some View {

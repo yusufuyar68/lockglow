@@ -191,7 +191,8 @@ struct MediumWordView: View {
         WidgetWordRow(
             lemma: word.lemma,
             lastResort: lastResort,
-            level: word.level,
+            // A user's own word has no level.
+            level: word.level.isEmpty ? nil : word.level,
             ipa: word.ipaUS,
             colors: colors,
             renderingMode: renderingMode
@@ -219,14 +220,15 @@ struct MediumWordView: View {
                         color: colors.ink
                     )
                 }
-                if definition {
+                // A user's own word has no definition and may have no example: no empty line.
+                if definition && !(word.defShort.isEmpty && word.defMicro.isEmpty) {
                     WidgetDefinition(
                         texts: [word.defShort, word.defMicro],
                         typeface: .system(.footnote, design: .serif),
                         color: colors.ink2
                     )
                 }
-                if example {
+                if example && !word.exampleEN.isEmpty {
                     WidgetExampleLine(sentence: word.exampleEN, lemma: word.lemma, color: colors.ink2)
                         .widgetEnglishVoice()
                 }

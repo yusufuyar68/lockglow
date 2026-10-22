@@ -47,6 +47,7 @@ The following is stored on your device and is **not sent to us**:
 - your chosen level, goals and settings,
 - saved words, "I know it" marks, learning status, quiz results and streak,
 - custom lists you create,
+- words you add yourself (the English word, its Turkish meaning, and an optional example sentence and note),
 - widget settings and reminder times.
 
 This data lives in storage shared between the app and its widgets, and it is deleted when you delete the app. If you back up your device to iCloud or a computer, Apple's backup service may include this data. That depends on your Apple settings and on Apple's own policy; we have no access to those backups.
@@ -118,7 +119,7 @@ If Söyle ever changes so that audio or recognized text would leave your device,
 
 - The speaker buttons in the app and the **"Kelimeyi dinle"** (listen to the word) button on the Home Screen widgets read the English word or sentence **with the iPhone's own US English voice, on the device**. No internet connection is used, and the text is not sent to any server.
 - The widget button works without bringing the app to the screen. For this, iOS runs Lockglow briefly in the background to read the word; the app's "audio in the background" capability is used only for this read-aloud. The microphone is never turned on in the background.
-- The text read aloud is the card's own word, not something you typed. Taps on the button are not recorded and not sent to us.
+- The text read aloud is the card's word or sentence. For a word you added yourself (Section 3.1), the word and example you typed are read; this also happens on the device, and the text is not sent anywhere. Taps on the button are not recorded and not sent to us.
 - Apple's Personal Voice is not used. If you downloaded a higher-quality English voice in iPhone Settings, the app may use it; that download is between you and Apple.
 
 ## 4. Why we use data

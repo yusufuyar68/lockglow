@@ -80,6 +80,10 @@ final class AppModel: ObservableObject {
     private var detailCache: [Int: CardDetail] = [:]
     /// Loaded words by lowercased headword (`lookup(lemma:)`); the first card of a headword wins.
     private var wordsByLemma: [String: WidgetWord] = [:]
+    /// The user's own words ("Kendi kelimelerin"), in front of every deck (AppModel+CustomWords.swift).
+    let customWordLibrary = CustomWordLibrary()
+    /// The loaded cards (content.sqlite or the seed) without the user's words; `words` is both.
+    private var contentWords: [WidgetWord] = []
 
     // MARK: Lifecycle
 
@@ -99,13 +103,21 @@ final class AppModel: ObservableObject {
         // Progress is loaded before the first suspension point: a scene-phase callback that
         // arrives while the content loads must never ingest events into an empty dictionary.
         loadProgress()
+        // The user's words too: the first deck and the first plan include them.
+        customWordLibrary.onChange = { [weak self] _ in
+            self?.customWordsDidChange()
+        }
+        customWordLibrary.load()
+        customWordLibrary.reserveIDs(progress.keys)
 
         let limit = AppModel.feedLimit
         let loaded = await Task.detached(priority: .userInitiated) {
             ContentLoader.load(feedLimit: limit)
         }.value
 
-        words = loaded.words
+        contentWords = loaded.words
+        words = withCustomWords(loaded.words)
+        // Cards only: the form's "kartlarda zaten var" must not find the user's own word.
         wordsByLemma = AppModel.lemmaIndex(loaded.words)
         topics = loaded.topics
         topicsOf = loaded.topicsOf
@@ -148,6 +160,12 @@ final class AppModel: ObservableObject {
         if progressStore == nil {
             // The file could not be read at launch (for example a locked device): try again.
             loadProgress()
+            customWordLibrary.reserveIDs(progress.keys)
+        }
+        // The same for the user's words: once readable, the deck and the queue get them.
+        if customWordLibrary.load() {
+            customWordLibrary.reserveIDs(progress.keys)
+            customWordsDidChange()
         }
         ingestWidgetEvents()
         // Time and widget taps ("Sonraki", "Biliyorum") may have moved the rotation on.
@@ -229,7 +247,7 @@ final class AppModel: ObservableObject {
     /// content are dropped first, as in the feed.
     func deckSummary(for topicIDs: Set<String>) -> DeckSummary {
         let live = topicIDs.intersection(topics.map { $0.id })
-        return DeckFilter.summary(words, topicsOf: topicsOf, topicIDs: live, progress: progress)
+        return DeckFilter.summary(contentWords, topicsOf: topicsOf, topicIDs: live, progress: progress)
     }
 
     /// A loaded word by id (a widget tap on a word outside the deck).
@@ -238,8 +256,19 @@ final class AppModel: ObservableObject {
     }
 
     private func rebuildFeed() {
-        feedWords = DeckFilter.feed(words, topicsOf: topicsOf, choice: deckChoice)
-        allTopicsFeed = DeckFilter.ordered(words, startingAt: deckChoice.startLevel)
+        feedWords = withCustomWords(DeckFilter.feed(contentWords, topicsOf: topicsOf, choice: deckChoice))
+        allTopicsFeed = withCustomWords(DeckFilter.ordered(contentWords, startingAt: deckChoice.startLevel))
+    }
+
+    /// "Kendi kelimelerin" saved a change: the deck, the counts and the widget queue follow at
+    /// once. Before the content has loaded nothing is built yet; `start` adds the words then.
+    private func customWordsDidChange() {
+        guard contentSource != .loading else {
+            return
+        }
+        words = withCustomWords(contentWords)
+        rebuildFeed()
+        refreshWidgetPlan()
     }
 
     // MARK: Onboarding
@@ -326,6 +355,10 @@ final class AppModel: ObservableObject {
     /// Every example with its Turkish translation and the Turkish learner notes of a card, read
     /// once from content.sqlite (one row by id) and cached. Nil for seed words or an unreadable card.
     func detail(for word: WidgetWord) -> CardDetail? {
+        // A user's word: its own example and note, no quiz (`CustomWord.cardDetail`).
+        if word.isUserAdded {
+            return customWordLibrary.word(id: word.id)?.cardDetail
+        }
         if let cached = detailCache[word.id] {
             return cached
         }
@@ -373,7 +406,9 @@ final class AppModel: ObservableObject {
         }
         if contentSource == .database, let store = detailStore {
             do {
-                return try store.search(trimmed, limit: limit)
+                let cards = try store.search(trimmed, limit: limit)
+                // The index has only the cards; the user's words come first.
+                return Array((customWordMatches(trimmed, limit: limit) + cards).prefix(limit))
             } catch {
                 logger.error("search failed: \(error.localizedDescription, privacy: .public)")
                 return []
@@ -494,7 +529,7 @@ final class AppModel: ObservableObject {
             direction: direction,
             attempt: attempt,
             writtenDistractors: detail(for: word)?.quiz?.distractors ?? [],
-            candidates: words,
+            candidates: introCandidates(for: word),
             topicsOf: topicsOf,
             excludedIDs: unsettledConfusables(of: word)
         )
@@ -848,7 +883,7 @@ final class AppModel: ObservableObject {
             horizon: AppModel.queueHorizon,
             maxNew: dailyNewWords * 2,
             limit: AppModel.queueLimit,
-            pinFirst: currentWord
+            pinFirst: pinnedWord(currentWord)
         )
         if queue.isEmpty {
             logger.notice("no words for a plan; the widget keeps its current data or the bundled seed")
@@ -872,7 +907,10 @@ final class AppModel: ObservableObject {
                 defMicro: word.defMicro,
                 defShort: word.defShort,
                 exampleEN: shortest,
-                glossTR: word.glossTR
+                glossTR: word.glossTR,
+                glossShortTR: word.glossShortTR,
+                sensitivity: word.sensitivity,
+                confusableIDs: word.confusableIDs
             )
         }
 
