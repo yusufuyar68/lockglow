@@ -32,11 +32,13 @@ public enum TimelinePlanner {
     ///   - cursorAnchor: Moment the rotation was at `cursorOffset`.
     ///   - now: Date of the first entry.
     ///   - interval: Seconds between word changes. Clamped to `minimumInterval`.
-    ///   - horizon: How far past `now` entries may reach.
+    ///   - horizon: How far past `now` entries may reach. Negative or NaN: nothing after `now`.
     ///   - maxEntries: Hard cap on the number of entries.
     ///   - alignmentOffset: Seconds added to UTC before aligning boundaries. Pass
     ///     `localAlignmentOffset(for:)` so daily boundaries fall on local midnight.
     /// - Returns: Entries in date order. Empty when the queue is empty or every word is known.
+    ///   Only the entry at `now` when `now` is off the boundary grid (not finite, or more than
+    ///   1e15 intervals from 1970; also for a non-finite or huge `alignmentOffset`).
     public static func plan(
         queue: [WidgetWord],
         knownIDs: Set<Int>,
@@ -57,16 +59,26 @@ public enum TimelinePlanner {
         }
 
         let step = clampedInterval(interval)
-        let nowIndex = boundaryIndex(of: now, step: step, alignmentOffset: alignmentOffset)
+        let gridIndex = exactBoundaryIndex(of: now, step: step, alignmentOffset: alignmentOffset)
+        let nowIndex = gridIndex ?? 0
         let anchorIndex = boundaryIndex(of: cursorAnchor, step: step, alignmentOffset: alignmentOffset)
-        let horizonEnd = now.addingTimeInterval(max(horizon, 0))
 
         // Same formula as `wordAt`: R[max(0, boundaryIndex - anchorIndex) mod R.count].
         var entries: [PlannedEntry] = []
         entries.append((date: now, word: lap[max(0, nowIndex - anchorIndex) % lap.count]))
 
-        var boundariesAhead = 1
-        while entries.count < maxEntries {
+        // Off the grid no boundary date after `now` can be computed: the loop would never find one.
+        guard gridIndex != nil else {
+            return entries
+        }
+        let horizonEnd = now.addingTimeInterval(horizon.isNaN ? 0 : max(horizon, 0))
+
+        // Boundary `nowIndex + 1` is after `now` except through rounding, so `maxEntries` steps
+        // always fill the timeline; the bound keeps the loop finite whatever the inputs.
+        for boundariesAhead in 1...maxEntries {
+            if entries.count >= maxEntries {
+                break
+            }
             let index = nowIndex + boundariesAhead
             let date = boundaryDate(index: index, step: step, alignmentOffset: alignmentOffset)
             if date > horizonEnd {
@@ -75,7 +87,6 @@ public enum TimelinePlanner {
             if date > now {
                 entries.append((date: date, word: lap[max(0, index - anchorIndex) % lap.count]))
             }
-            boundariesAhead += 1
         }
         return entries
     }
@@ -176,10 +187,16 @@ public enum TimelinePlanner {
         return ((value % modulus) + modulus) % modulus
     }
 
+    /// Off-grid dates count as index 0, so `wordAt` still answers for them.
     private static func boundaryIndex(of date: Date, step: TimeInterval, alignmentOffset: TimeInterval) -> Int {
+        return exactBoundaryIndex(of: date, step: step, alignmentOffset: alignmentOffset) ?? 0
+    }
+
+    /// Nil when the date is off the grid: the index is not finite or more than 1e15 from 0.
+    private static func exactBoundaryIndex(of date: Date, step: TimeInterval, alignmentOffset: TimeInterval) -> Int? {
         let value = ((date.timeIntervalSince1970 + alignmentOffset) / step).rounded(.down)
         if !value.isFinite || abs(value) > 1e15 {
-            return 0
+            return nil
         }
         return Int(value)
     }

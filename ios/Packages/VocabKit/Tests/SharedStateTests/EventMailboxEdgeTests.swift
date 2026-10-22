@@ -1,7 +1,7 @@
 import XCTest
 import Dispatch
 import CoreModels
-import SharedState
+@testable import SharedState
 
 /// `EventMailbox` with damaged files, odd file system states and concurrent use: the widget
 /// appends while the app lists, purges and deletes.
@@ -116,6 +116,17 @@ final class EventMailboxEdgeTests: XCTestCase {
         XCTAssertTrue(early.lastPathComponent.hasPrefix("1700000000000-"), early.lastPathComponent)
         // Oldest first.
         XCTAssertEqual(try mailbox.list().map { $0.event.wordID }, [2, 1])
+    }
+
+    /// `Int64(Double)` traps for a value it cannot hold; such dates get prefix 0 instead.
+    func testFileNameMillisecondsNeverTrap() {
+        XCTAssertEqual(EventMailbox.fileNameMillis(for: Date(timeIntervalSince1970: 1_700_000_000.9996)), 1_700_000_001_000)
+        XCTAssertEqual(EventMailbox.fileNameMillis(for: Date(timeIntervalSince1970: -1.5)), -1_500)
+        // 8.9e15 s = 8.9e18 ms, still below Int64.max (about 9.22e18).
+        XCTAssertEqual(EventMailbox.fileNameMillis(for: Date(timeIntervalSince1970: 8.9e15)), 8_900_000_000_000_000_000)
+        for seconds: TimeInterval in [.infinity, -.infinity, .nan, 9.3e15, -9.3e15, 1e300] {
+            XCTAssertEqual(EventMailbox.fileNameMillis(for: Date(timeIntervalSince1970: seconds)), 0, "\(seconds)")
+        }
     }
 
     func testTwoEventsInTheSameMillisecondAreBothKept() throws {

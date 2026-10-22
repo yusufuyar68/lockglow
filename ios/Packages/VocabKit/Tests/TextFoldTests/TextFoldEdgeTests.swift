@@ -121,26 +121,28 @@ final class TextFoldEdgeTests: XCTestCase {
         ])
     }
 
-    // MARK: Known differences from the Python side
+    // MARK: Cases where the two sides used to differ
 
-    /// Python's `\s` and `str.strip()` treat U+001C...U+001F (information separators) as whitespace;
-    /// Unicode's White_Space property, which Swift's `isWhitespace` uses, does not.
-    /// Python: fold("a\u001fb") == "a b". Card texts never contain control characters.
-    func testUnitSeparatorMatchesThePythonSide() throws {
-        try expectKnownBug(
-            "fold(\"a\\u{1F}b\"): Python treats U+001C-U+001F as whitespace, Swift keeps them",
-            actual: TextFold.fold("a\u{1F}b"),
-            expected: "a b"
-        )
+    /// Same vectors as `SHARED_EDGE_VECTORS` in `content-pipeline/tests/test_textutil.py`.
+    /// Whitespace is Unicode's White_Space property: U+001C...U+001F (information separators) are
+    /// not in it, so they stay and are not trimmed (Python's `\s` and `strip()` alone would take them).
+    func testInformationSeparatorsAreNotWhitespace() {
+        assertFolds([
+            ("a\u{1F}b", "a\u{1F}b"),
+            ("a\u{1C}\u{1D}\u{1E}b", "a\u{1C}\u{1D}\u{1E}b"),
+            ("\u{1F} look \u{1F}", "\u{1F} look \u{1F}"),
+            ("\u{1F}a\u{1F}", "\u{1F}a\u{1F}"),
+        ])
     }
 
-    /// Python's `str.lower()` applies the context-sensitive final sigma rule ("ΟΔΟΣ" -> "οδος");
-    /// Swift's `lowercased()` maps every Σ to σ. Card texts are English and Turkish only.
-    func testFinalSigmaMatchesThePythonSide() throws {
-        try expectKnownBug(
-            "fold(\"ΟΔΟΣ\"): Python lowercases a word-final Σ to ς, Swift to σ",
-            actual: TextFold.fold("\u{039F}\u{0394}\u{039F}\u{03A3}"),
-            expected: "\u{03BF}\u{03B4}\u{03BF}\u{03C2}"
-        )
+    /// Every sigma folds to U+03C3: a word-final capital sigma (Python's `lower()` gives U+03C2 there),
+    /// a typed final sigma U+03C2, and the lunate sigmas U+03F2/U+03F9 (NFKD gives U+03C2).
+    func testEverySigmaFoldsToTheSameLetter() {
+        assertFolds([
+            ("\u{039F}\u{0394}\u{039F}\u{03A3}", "\u{03BF}\u{03B4}\u{03BF}\u{03C3}"),
+            ("\u{03BF}\u{03B4}\u{03BF}\u{03C2}", "\u{03BF}\u{03B4}\u{03BF}\u{03C3}"),
+            ("\u{03A3}\u{0391}\u{03A3} \u{03A3}", "\u{03C3}\u{03B1}\u{03C3} \u{03C3}"),
+            ("\u{03F2}\u{03F9}", "\u{03C3}\u{03C3}"),
+        ])
     }
 }

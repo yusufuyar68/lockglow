@@ -26,11 +26,23 @@ _TR_FOLD = str.maketrans(
 
 _WS = re.compile(r"\s+")
 
+# fold() için boşluk: Unicode White_Space özelliği (Swift'in `isWhitespace`'i). Python'un `\s`'i ve
+# `str.strip()`'i U+001C–U+001F'yi de boşluk sayar, Swift saymaz; bu yüzden küme açıkça yazıldı.
+FOLD_WHITESPACE = (
+    "\t\n\v\f\r \x85\xa0 "
+    "           "
+    "    　"
+)
+_FOLD_WS = re.compile("[" + re.escape(FOLD_WHITESPACE) + "]+")
+
 
 def fold(text: str) -> str:
     s = unicodedata.normalize("NFC", text).translate(_TR_FOLD).lower()
     s = "".join(ch for ch in unicodedata.normalize("NFKD", s) if not unicodedata.combining(ch))
-    return _WS.sub(" ", s).strip()
+    # Son sigma: Python'un lower()'ı sözcük sonundaki Σ'yı ς yapar, Swift σ; NFKD de ϲ'yi ς yapar.
+    # Arama için hepsi σ.
+    s = s.replace("ς", "σ")
+    return _FOLD_WS.sub(" ", s).strip(" ")
 
 
 def glen(text: str) -> int:

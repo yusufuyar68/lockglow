@@ -18,8 +18,7 @@ public struct EventMailbox: Sendable {
     @discardableResult
     public func append(_ event: WidgetEvent) throws -> URL {
         let data = try JSONCoding.makeEncoder().encode(event)
-        let millis = Int64((event.at.timeIntervalSince1970 * 1000).rounded())
-        let fileName = "\(millis)-\(UUID().uuidString).json"
+        let fileName = "\(EventMailbox.fileNameMillis(for: event.at))-\(UUID().uuidString).json"
         let url = directory.appendingPathComponent(fileName)
         try AtomicFile.write(data, to: url)
         return url
@@ -69,6 +68,16 @@ public struct EventMailbox: Sendable {
             }
         }
         return removed
+    }
+
+    /// Event time in whole milliseconds since 1970 for the file name. 0 for a date that has no
+    /// Int64 millisecond value (not finite, or about 292 million years away), which would trap.
+    static func fileNameMillis(for date: Date) -> Int64 {
+        let millis = (date.timeIntervalSince1970 * 1000).rounded()
+        if !millis.isFinite || abs(millis) >= 9e18 {
+            return 0
+        }
+        return Int64(millis)
     }
 
     private func eventFileURLs() throws -> [URL] {

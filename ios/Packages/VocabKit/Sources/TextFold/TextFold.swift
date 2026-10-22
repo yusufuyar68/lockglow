@@ -16,14 +16,17 @@ public enum TextFold {
         // 3. Lowercase (Swift's lowercased() is locale independent).
         let lowered = String(mapped).lowercased()
 
-        // 4. NFKD, then drop combining marks.
+        // 4. NFKD, then drop combining marks. Final sigma becomes sigma: Python's lower() turns a
+        // word-final capital sigma into U+03C2, Swift's lowercased() into U+03C3, and NFKD turns
+        // the lunate sigma U+03F2 into U+03C2. Search treats them all as U+03C3.
         let decomposed = lowered.decomposedStringWithCompatibilityMapping
         var stripped = String.UnicodeScalarView()
         for scalar in decomposed.unicodeScalars where !isCombiningMark(scalar) {
-            stripped.append(scalar)
+            stripped.append(scalar.value == 0x03C2 ? "\u{03C3}" : scalar)
         }
 
-        // 5. Collapse whitespace runs to one space, trim both ends.
+        // 5. Collapse whitespace runs to one space, trim both ends. Whitespace is Unicode's
+        // White_Space property; the Python side lists the same set (U+001C...U+001F are not in it).
         var result = ""
         var pendingSpace = false
         for scalar in stripped {
