@@ -6,10 +6,11 @@ import SwiftUI
 /// extension and the snapshot bundle do not compile this file.
 /// The old `glowTint` (the box behind the Turkish meaning) is gone: the meaning has no box.
 enum Palette {
-    /// Fill of the one main button: ink by day, phosphor at night (`Theme.primary`).
-    /// Progress and selection use `glowInk` (`Theme.tint`), which never turns yellow.
+    /// Fill of the one main button: ink by day, a soft phosphor tint at night (`Theme.primary`;
+    /// `GlowButtonStyle` adds the night edge). Progress and selection use `glowInk`
+    /// (`Theme.tint`), which never turns yellow.
     static let glow = Theme.primary
-    /// Text and icons on a `glow` fill (`Theme.onPrimary`).
+    /// Text and icons on a `glow` fill (`Theme.onPrimary`): white by day, phosphor at night.
     static let onGlow = Theme.onPrimary
     /// Selected items, step numbers, the onboarding's text buttons (`Theme.tint`).
     static let glowInk = Theme.tint
@@ -73,16 +74,20 @@ struct SegmentOption<Value: Hashable>: Hashable {
     let title: String
 }
 
-/// Two or three always-visible options (mockup `.seg`) in a `surface2` well. The selected one is
-/// a `surface` segment with ink text and a 1.5 pt `tint` inner border (a white fill with the old
-/// white-on-amber text would be unreadable). Stacks vertically when the text does not fit side by
-/// side (largest text sizes).
+/// Two or three always-visible options (mockup `.seg`) in a `surface2` well with a 1 pt
+/// `lineStrong` edge (the gray well alone is 1.1-1.4:1 against the page, audit K1). The selected
+/// one is a `surface` segment with ink text and a 1.5 pt `tint` inner border (a white fill with
+/// the old white-on-amber text would be unreadable). Stacks vertically when the text does not fit
+/// side by side (largest text sizes).
 struct SegmentButtons<Value: Hashable>: View {
     let options: [SegmentOption<Value>]
     @Binding var selection: Value
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
+        let well = RoundedRectangle(cornerRadius: 16, style: .continuous)
         ViewThatFits(in: .horizontal) {
             HStack(spacing: 2) {
                 buttons
@@ -92,7 +97,13 @@ struct SegmentButtons<Value: Hashable>: View {
             }
         }
         .padding(3)
-        .background(Theme.surface2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(Theme.surface2, in: well)
+        .overlay {
+            well.strokeBorder(
+                Theme.lineStrong,
+                lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1
+            )
+        }
     }
 
     private var buttons: some View {
