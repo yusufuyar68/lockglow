@@ -6,11 +6,11 @@ import SwiftUI
 /// extension and the snapshot bundle do not compile this file.
 /// The old `glowTint` (the box behind the Turkish meaning) is gone: the meaning has no box.
 enum Palette {
-    /// Fill of the one main button: ink by day, a soft phosphor tint at night (`Theme.primary`;
-    /// `GlowButtonStyle` adds the night edge). Progress and selection use `glowInk`
-    /// (`Theme.tint`), which never turns yellow.
+    /// Fill of the one main button: ink by day, a faint ink tint at night (`Theme.primary`;
+    /// `PrimaryCapsuleButtonStyle`, which `GlowButtonStyle` uses, adds the night edge and bold
+    /// text). Progress and selection use `glowInk` (`Theme.tint`). Neither is ever yellow.
     static let glow = Theme.primary
-    /// Text and icons on a `glow` fill (`Theme.onPrimary`): white by day, phosphor at night.
+    /// Text and icons on a `glow` fill (`Theme.onPrimary`): white by day, ink at night.
     static let onGlow = Theme.onPrimary
     /// Selected items, step numbers, the onboarding's text buttons (`Theme.tint`).
     static let glowInk = Theme.tint
