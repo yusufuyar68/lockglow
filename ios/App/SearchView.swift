@@ -19,7 +19,8 @@ struct SearchView: View {
     @State private var filter: SozlukFilter = .all
     @State private var showsAllTopics = false
     @AppStorage(SozlukRecentSearches.storageKey) private var recentSearchLog = ""
-    @StateObject private var topicIndex = SozlukTopicIndex()
+    /// Sözlük's stack: topics and word cards (`open`).
+    @State private var path = NavigationPath()
     /// "Kendin ekle" after a search that found nothing (`CustomWordEditor`).
     @State private var customWordEditor: CustomWordEditor.Mode?
 
@@ -34,11 +35,11 @@ struct SearchView: View {
     /// Results of one search; a filter other than "Tümü" looks further, so that it has words to keep.
     private static let resultLimit = 50
     private static let filteredResultLimit = 200
-    /// Topics shown before "Bütün konular".
+    /// Topics shown before "Tüm konular".
     private static let collapsedTopicCount = 8
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ScrollView {
                 content
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -68,14 +69,11 @@ struct SearchView: View {
                     }
             }
             .navigationDestination(for: ContentTopic.self) { topic in
-                SozlukTopicView(index: topicIndex, topic: topic)
+                SozlukTopicView(topic: topic, open: open)
             }
         }
         // Rule 2: no blue link color on the search field, its cancel button or the back button.
         .tint(Theme.ink)
-        .task {
-            await topicIndex.load()
-        }
         .task(id: query) {
             await announceResults(of: query)
         }
@@ -99,6 +97,11 @@ struct SearchView: View {
                 resultList(found, terms: SearchHighlight.terms(of: trimmed))
             }
         }
+    }
+
+    /// A row's word: its whole card on Sözlük's stack.
+    private func open(_ word: WidgetWord) {
+        path.append(word)
     }
 
     private func search(_ text: String) -> [WidgetWord] {
@@ -157,11 +160,11 @@ struct SearchView: View {
     }
 
     /// "Konuya göre göz at": a capsule per topic with its word count; a tap opens the topic's
-    /// words. The first few at once, the rest behind "Bütün konular".
+    /// words. The first few at once, the rest behind "Tüm konular".
     private func topicSection(_ topics: [ContentTopic]) -> some View {
         let isCollapsible = topics.count > SearchView.collapsedTopicCount
         let shown = showsAllTopics || !isCollapsible ? topics : Array(topics.prefix(SearchView.collapsedTopicCount))
-        let toggleTitle = showsAllTopics ? "Daha az göster" : "Bütün konular (\(topics.count))"
+        let toggleTitle = showsAllTopics ? "Daha az göster" : "Tüm konular (\(topics.count))"
         return VStack(alignment: .leading, spacing: 6) {
             SozlukSectionTitle(title: "Konuya göre göz at")
             // No line spacing: the chips already reach 44 pt with transparent margins.
@@ -211,16 +214,10 @@ struct SearchView: View {
                 Button {
                     query = example.text
                 } label: {
-                    if example.isEnglish {
-                        Text(verbatim: example.text)
-                            .cardEnglishVoice()
-                    } else {
-                        Text(verbatim: example.text)
-                    }
+                    Text(verbatim: example.text)
                 }
                 .buttonStyle(ChipButtonStyle())
                 .modifier(SearchTryExampleVoice(example: example))
-                .accessibilityHint("Aramaya yazar")
             }
         }
         .padding(.horizontal, 16)
@@ -259,7 +256,7 @@ struct SearchView: View {
         let message = shorter.map { start in
             WordListEmptyState.message("Yazım hatası olabilir. Daha kısa yazmayı dene: ", start, ".")
         } ?? WordListEmptyState.message(
-            "Kelimenin başını yazmayı dene. Türkçe harfler gerekmez: ", "odunc", " da ", "ödünç", " bulur."
+            "Kelimenin başını yazmayı dene. Türkçe harf gerekmez: ", "odunc", " yazınca ", "ödünç", " çıkar."
         )
         return VStack(alignment: .leading, spacing: 0) {
             tryRow(shorter.map { [SearchTryExample(text: $0)] } ?? SearchView.tryQueries)
@@ -329,7 +326,7 @@ struct SearchView: View {
                             DictionaryRule()
                                 .padding(.leading, 16)
                         }
-                        SearchResultLink(word: word, terms: terms)
+                        SearchResultLink(word: word, terms: terms, open: open)
                     }
                 }
             }
@@ -377,8 +374,9 @@ private struct SearchTryExample: Hashable {
     var isEnglish = false
 }
 
-/// An English "Dene" example is read in an English voice (audit V5): the chip merges its text into
-/// one label, which loses the text's own locale.
+/// An English "Dene" example is read in an English voice (audit V5): the whole button gets
+/// `englishVoice()`, so it has no Turkish hint, which would be read in English too (is3-tema). A
+/// Turkish one says what it does.
 private struct SearchTryExampleVoice: ViewModifier {
     let example: SearchTryExample
 
@@ -386,9 +384,11 @@ private struct SearchTryExampleVoice: ViewModifier {
     func body(content: Content) -> some View {
         if example.isEnglish {
             content
-                .accessibilityLabel(SozlukSpeech.english(example.text))
+                .accessibilityLabel(Text(verbatim: example.text))
+                .englishVoice()
         } else {
             content
+                .accessibilityHint("Aramaya yazar")
         }
     }
 }
@@ -400,6 +400,7 @@ private struct SearchResultLink: View {
     @EnvironmentObject private var model: AppModel
     let word: WidgetWord
     let terms: [String]
+    let open: (WidgetWord) -> Void
 
     var body: some View {
         let lemmaMatch = SearchHighlight.matches(of: terms, in: word.lemma)
@@ -423,7 +424,8 @@ private struct SearchResultLink: View {
                     hitFont: Font.body.weight(.heavy)
                 )
             },
-            note: alternatives
+            note: alternatives,
+            open: open
         )
     }
 
@@ -925,7 +927,8 @@ private struct WordDetailInfoRow: View {
 
 /// A word partner ("have breakfast"): a chip in serif (English) with a small speaker; a tap reads
 /// the phrase aloud, a second tap stops it. The speaker waves while it reads, unless Reduce
-/// Motion is on.
+/// Motion is on. VoiceOver name "Dinle: have breakfast" (the phrase in its English run), "Durdur"
+/// while it reads; no hint, as on every speaker button.
 private struct WordDetailCollocationCapsule: View {
     @ObservedObject private var speaker = Speaker.shared
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -942,22 +945,26 @@ private struct WordDetailCollocationCapsule: View {
                     .foregroundStyle(Theme.ink2)
                     .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
                     .accessibilityHidden(true)
-                Text(phrase)
+                Text(verbatim: phrase)
                     .font(.system(.subheadline, design: .serif).weight(.semibold))
-                    .cardEnglishVoice()
             }
         }
         .buttonStyle(ChipButtonStyle())
-        .accessibilityHint(Text(isSpeaking ? "Durdurur" : "Sesli okur"))
+        .accessibilityLabel(isSpeaking ? Text("Durdur") : SozlukSpeech.label([.turkish("Dinle: "), .english(phrase)]))
+        // Voice Control: "Dinle'ye dokun", as on the other speaker buttons.
+        .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle")])
     }
 }
 
 /// "Durum", last on the card (README "Sözlük"): where the word stands, on a line of its own,
 /// and under it the one outlined button that changes it. Not a segment: nothing looks selected.
-/// The button is replaced by the other one, so VoiceOver hears what changed.
+/// The button is replaced by the other one; VoiceOver hears what changed and its focus moves to
+/// the new button (audit V7).
 private struct WordDetailStatusSection: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    /// On the status button: kept there when it is replaced by the other one.
+    @AccessibilityFocusState private var buttonHasFocus: Bool
     let word: WidgetWord
 
     var body: some View {
@@ -979,28 +986,32 @@ private struct WordDetailStatusSection: View {
                             model.undoKnown(word)
                         }
                         if model.learningState(of: word) != .known {
-                            SozlukSpeech.announce([.english(word.lemma), .turkish(": öğrenmeye geri alındı")])
+                            // terimler.md: "Öğrenmeye döndü: breakfast" (no suffix on the word).
+                            SozlukSpeech.announce([.turkish("Öğrenmeye döndü: "), .english(word.lemma)])
                         }
                     } label: {
                         Label("Öğrenmeye geri al", systemImage: "arrow.uturn.backward")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle())
                     .accessibilityLabel("Öğrenmeye geri al")
-                    .accessibilityHint("Kelime yeniden widget'a ve tekrara gelir.")
+                    .accessibilityHint("Kelime yine widget'a ve Tekrar'a gelir.")
+                    .accessibilityFocused($buttonHasFocus)
                 } else {
                     Button {
                         change {
                             model.markKnown(word)
                         }
                         if model.learningState(of: word) == .known {
-                            SozlukSpeech.announce([.english(word.lemma), .turkish(": bildiğin kelimelere eklendi")])
+                            SozlukSpeech.announce([.turkish("Bildiğin kelimelere eklendi: "), .english(word.lemma)])
                         }
                     } label: {
                         Label("Biliyorum olarak işaretle", systemImage: "checkmark")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle())
                     .accessibilityLabel("Biliyorum olarak işaretle")
-                    .accessibilityHint("Kelime widget'tan çıkar, 30 gün sonra hatırlatma olarak döner.")
+                    // `Leitner.markKnown`: one check question in 3 days (ogrenme_ilkeleri 2.2).
+                    .accessibilityHint("Kelime widget'tan çıkar. 3 gün sonra bir kez soracağız.")
+                    .accessibilityFocused($buttonHasFocus)
                     // LockglowScreenshotTests looks this button up as "Biliyorum".
                     .accessibilityIdentifier("Biliyorum")
                 }
@@ -1008,9 +1019,19 @@ private struct WordDetailStatusSection: View {
         }
     }
 
+    /// The change, then VoiceOver's focus on the button that replaced the tapped one, once it is
+    /// on screen.
     private func change(_ update: () -> Void) {
+        let hadFocus = buttonHasFocus
         withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
             update()
+        }
+        guard hadFocus else {
+            return
+        }
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(150))
+            buttonHasFocus = true
         }
     }
 }

@@ -1,52 +1,6 @@
 import SwiftUI
 import CoreModels
 import Learning
-import ContentStore
-
-/// Which cards belong to each topic (`card_category`, every topic of a card, main or not), read
-/// once from content.sqlite off the main thread with `ContentStore.topicsByCard()`, the query the
-/// deck filter is built from. Unavailable with seed words only (no database).
-@MainActor
-final class SozlukTopicIndex: ObservableObject {
-    enum Status {
-        case loading
-        case ready
-        case unavailable
-    }
-
-    @Published private(set) var status: Status = .loading
-    private var cardsByTopic: [String: Set<Int>] = [:]
-    private var hasStarted = false
-
-    func load() async {
-        if hasStarted {
-            return
-        }
-        hasStarted = true
-        let byCard = await Task.detached(priority: .utility) { () -> [Int: Set<String>]? in
-            guard let store = ContentLoader.openStore() else {
-                return nil
-            }
-            return try? store.topicsByCard()
-        }.value
-        guard let byCard = byCard, !byCard.isEmpty else {
-            status = .unavailable
-            return
-        }
-        var byTopic: [String: Set<Int>] = [:]
-        for (card, topics) in byCard {
-            for topic in topics {
-                byTopic[topic, default: []].insert(card)
-            }
-        }
-        cardsByTopic = byTopic
-        status = .ready
-    }
-
-    func cards(of topicID: String) -> Set<Int> {
-        return cardsByTopic[topicID] ?? []
-    }
-}
 
 /// A topic's words, opened from "Konuya göre göz at": the loaded words of the topic by level, A1
 /// first, and within a level in the content's order (the most frequent first), under one small
@@ -54,8 +8,9 @@ final class SozlukTopicIndex: ObservableObject {
 /// whole card. No main button (one main action per screen: here there is none).
 struct SozlukTopicView: View {
     @EnvironmentObject private var model: AppModel
-    @ObservedObject var index: SozlukTopicIndex
     let topic: ContentTopic
+    /// A word's whole card (SearchView's stack).
+    let open: (WidgetWord) -> Void
     @State private var filter: SozlukFilter = .all
 
     private struct LevelGroup {
@@ -81,26 +36,23 @@ struct SozlukTopicView: View {
 
     @ViewBuilder
     private var content: some View {
-        switch index.status {
-        case .loading:
-            ProgressView()
-                .frame(maxWidth: .infinity)
-                .padding(.top, 40)
-        case .unavailable:
+        let words = topicWords
+        if words.isEmpty {
+            // Only when the content changed under an open page: the topic list hides empty topics.
             WordListEmptyState(
                 systemImage: "square.stack.3d.up.slash",
-                title: "Konu açılamadı",
-                message: AttributedString("Bu konunun kelimeleri şu an okunamadı. Arama yine çalışır.")
+                title: "Bu konuda kelime yok",
+                message: AttributedString("Arama yine çalışır.")
             )
-        case .ready:
-            list(topicWords)
+        } else {
+            list(words)
         }
     }
 
-    /// The topic's loaded words by level (unknown codes last), each level in the loaded order.
+    /// The topic's loaded words (`AppModel.words(inTopic:)`) by level (unknown codes last), each
+    /// level in the loaded order.
     private var topicWords: [WidgetWord] {
-        let members = index.cards(of: topic.id)
-        let words = model.words.enumerated().filter { members.contains($0.element.id) }
+        let words = model.words(inTopic: topic.id).enumerated()
         return words.sorted { lhs, rhs in
             let left = SozlukTopicView.rank(lhs.element)
             let right = SozlukTopicView.rank(rhs.element)
@@ -162,7 +114,7 @@ struct SozlukTopicView: View {
                         DictionaryRule()
                             .padding(.leading, 16)
                     }
-                    SozlukWordLink(word: word, showsLevel: false)
+                    SozlukWordLink(word: word, showsLevel: false, open: open)
                 }
             }
         }
