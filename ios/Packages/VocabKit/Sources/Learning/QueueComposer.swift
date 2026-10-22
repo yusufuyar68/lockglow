@@ -19,7 +19,8 @@ import CoreModels
 /// When a slot's own list is empty, the next list in that slot's preference order is used. When
 /// every list is empty, the queue is topped up first with learning words due after the horizon
 /// (soonest first), then with new words beyond `maxNew`, so the widget never loops over a
-/// handful of words. Known words appear only as refreshers. Everything is deterministic.
+/// handful of words. Known words appear only as refreshers, and not while a "Biliyorum" claim
+/// (`knownOverride`) waits for its check. Everything is deterministic.
 public enum QueueComposer {
     public enum Slot: Sendable {
         case new
@@ -125,7 +126,9 @@ public enum QueueComposer {
                     notYetDue.append((word, due, order))
                 }
             case .known:
-                if let due = p.dueAt, due > hideUntil, due <= deadline {
+                // A word marked "Biliyorum" leaves the widget until its one check in "Tekrar"
+                // has proven it (ogrenme_ilkeleri 2.2).
+                if !p.knownOverride, let due = p.dueAt, due > hideUntil, due <= deadline {
                     refreshers.append((word, due, order))
                 }
             }

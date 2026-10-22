@@ -129,6 +129,18 @@ final class QueueComposerTests: XCTestCase {
         XCTAssertEqual(ids(queue), [7, 1, 3, 2, 8, 9])
     }
 
+    func testBiliyorumWordWaitsOffTheWidgetUntilItsCheck() {
+        // 1 was marked "Biliyorum" and its one check comes in 12 h; 2 graduated on its own and its
+        // refresher comes in 12 h. Both are past the 6 h window, but only 2 is a refresher.
+        // New: 3 (maxNew 1). N→3, L→(no learning, no new) refresher 2, R→ every list empty: the end.
+        let progress = [
+            1: known(1, due: now.addingTimeInterval(12 * hour), override: true),
+            2: known(2, due: now.addingTimeInterval(12 * hour)),
+        ]
+        let queue = QueueComposer.compose(feed: words(1...3), progress: progress, now: now, horizon: 2 * day, maxNew: 1, limit: 5, calendar: utc)
+        XCTAssertEqual(ids(queue), [3, 2])
+    }
+
     func testMissedTodayGoesToTheFreeSlotFirst() {
         // Correct answers today: 11...14 (4 h, 3 h, 2 h, 1 h ago). Missed today: 15 (30 min ago).
         // Refresher: 20 (due in 12 h). New: 1...3 (maxNew 3).
