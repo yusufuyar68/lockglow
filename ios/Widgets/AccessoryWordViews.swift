@@ -39,6 +39,7 @@ struct RectangularWordView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .padding(margins)
+        .widgetTurkishVoice()
     }
 
     /// One layout variant: the word at the first of `steps` that fits and the meaning in
@@ -102,6 +103,7 @@ struct InlineWordView: View {
         .accessibilityRepresentation {
             spoken
         }
+        .widgetTurkishVoice()
     }
 
     /// What VoiceOver reads: two elements, so each keeps its own voice (`.combine` or one label
@@ -111,7 +113,8 @@ struct InlineWordView: View {
             Text(verbatim: word.lemma)
                 .widgetEnglishVoice()
             if let meaning = WidgetGloss.forms(of: word).first {
-                Text("Türkçesi: \(meaning)")
+                Text(verbatim: "Türkçesi: \(meaning)")
+                    .widgetTurkishVoice()
             }
         }
     }

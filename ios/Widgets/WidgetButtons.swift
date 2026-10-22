@@ -76,21 +76,26 @@ struct SpeakWordButton: View {
 
 /// A widget button's look: the icon in a 34 pt circle (`surface2` in full color, a faint wash
 /// when the system tints the widget or removes its paper), centred in a 44 x 44 pt hit area that
-/// is all tappable.
+/// is all tappable. The title is VoiceOver's name for the button, a verbatim Turkish text read
+/// with the widget's Turkish voice (`widgetTurkishVoice()`).
 private struct WidgetButtonFace: View {
-    let title: LocalizedStringKey
+    let title: String
     let systemImage: String
     let colors: WidgetColors
 
     var body: some View {
-        Label(title, systemImage: systemImage)
-            .labelStyle(.iconOnly)
-            .font(.subheadline.weight(.semibold))
-            .imageScale(.medium)
-            .foregroundStyle(colors.ink)
-            .frame(width: 34, height: 34)
-            .background(colors.buttonFill, in: Circle())
-            .frame(width: Theme.minHitSize, height: Theme.minHitSize)
-            .contentShape(Rectangle())
+        Label {
+            Text(verbatim: title)
+        } icon: {
+            Image(systemName: systemImage)
+        }
+        .labelStyle(.iconOnly)
+        .font(.subheadline.weight(.semibold))
+        .imageScale(.medium)
+        .foregroundStyle(colors.ink)
+        .frame(width: 34, height: 34)
+        .background(colors.buttonFill, in: Circle())
+        .frame(width: Theme.minHitSize, height: Theme.minHitSize)
+        .contentShape(Rectangle())
     }
 }

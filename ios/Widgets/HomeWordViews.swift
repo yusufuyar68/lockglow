@@ -61,22 +61,27 @@ struct SmallWordView: View {
             // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
             // (`WidgetGloss`) on one line, then on two, before it gets smaller. At accessibility
             // text sizes the word and the meaning are shown (2.1): when they do not fit at the
-            // chosen size, they stop growing at the largest standard size before the meaning is
-            // left out.
+            // chosen size, the same variants are tried again at the largest standard size before
+            // the meaning is left out. The word grows with the text size in every variant with a
+            // meaning; it drops to an unscaled 15 pt only in the last two, so a small word never
+            // stands above a large meaning.
             ViewThatFits(in: .vertical) {
                 column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
                 column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
                 column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
-                column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
                 // A long meaning without a short form (the user's own words have none; every
                 // card's meaning over 16 characters has `gloss_short`): 13 pt on two or three
                 // lines rather than no meaning.
-                column(WidgetWordStep.homeFloor, meaning: .footnote.weight(.bold), lines: [2, 3])
+                column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
                 column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
                     .dynamicTypeSize(...WidgetText.largestStandardSize)
-                column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
                     .dynamicTypeSize(...WidgetText.largestStandardSize)
                 column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
                 WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -100,6 +105,7 @@ struct SmallWordView: View {
             .padding(.trailing, max(margins.trailing - buttonGroupOverflow, 0))
             .padding(.bottom, margins.bottom - bottomOverflow)
         }
+        .widgetTurkishVoice()
     }
 
     /// One layout variant: the word at the first of `steps` that fits and, under it, the meaning
@@ -190,12 +196,16 @@ struct MediumWordView: View {
             .padding(.bottom, max(margins.bottom - buttonGroupOverflow, 0))
             .padding(.trailing, margins.trailing - trailingOverflow)
         }
+        .widgetTurkishVoice()
     }
 
-    /// The word row; with `lastResort` the word is never passed over (`WidgetFittingWord`).
+    /// The word row; with `lastResort` the word is never passed over (`WidgetFittingWord`) and may
+    /// drop to an unscaled 15 pt. Beside a meaning it grows with the text size, so a small word
+    /// never stands above a large meaning.
     private func wordRow(lastResort: Bool = false) -> some View {
         WidgetWordRow(
             lemma: word.lemma,
+            steps: lastResort ? WidgetWordStep.mediumWidget : WidgetWordStep.mediumWidgetScaled,
             lastResort: lastResort,
             // A user's own word has no level.
             level: word.level.isEmpty ? nil : word.level,
@@ -252,7 +262,7 @@ struct MediumWordView: View {
                     color: colors.ink2
                 )
                 .accessibilityElement(children: .ignore)
-                .accessibilityLabel(Text("Sonraki değişim: \(clock)"))
+                .accessibilityLabel(Text(verbatim: "Sonraki değişim: \(clock)"))
                 .padding(.top, 3)
             }
         }
@@ -324,30 +334,28 @@ struct WidgetWordStep: Equatable {
     static let smallWidget = [WidgetWordStep(size: 24), WidgetWordStep(size: 20), WidgetWordStep(size: 17)]
     /// A phrase on the small widget: two lines at 20 or 17 pt ("Could you tell / me the way to").
     static let smallWidgetPhrase = [WidgetWordStep(size: 20, lines: 2), WidgetWordStep(size: 17, lines: 2)]
-    /// The Home Screen floor, 15 pt: one line, then two; at large text sizes also unscaled.
-    static let homeFloor = [
-        WidgetWordStep(size: 15),
-        WidgetWordStep(size: 15, lines: 2),
-        WidgetWordStep(size: 15, scales: false),
-        WidgetWordStep(size: 15, lines: 2, scales: false),
-    ]
-    /// The floor without Dynamic Type: the last resort of the word alone (`WidgetWordAlone`).
+    /// The Home Screen floor, 15 pt scaled with Dynamic Type: one line, then two.
+    static let homeFloorScaled = [WidgetWordStep(size: 15), WidgetWordStep(size: 15, lines: 2)]
+    /// The floor without Dynamic Type: the last resort (`WidgetWordAlone`).
     static let homeFloorUnscaled = [
         WidgetWordStep(size: 15, scales: false),
         WidgetWordStep(size: 15, lines: 2, scales: false),
     ]
+    /// The Home Screen floor, 15 pt: one line, then two; at large text sizes also unscaled.
+    static let homeFloor = homeFloorScaled + homeFloorUnscaled
     /// The rectangular Lock Screen widget: 17, then 15 pt on one line.
     static let lockScreen = [WidgetWordStep(size: 17), WidgetWordStep(size: 15)]
-    /// The medium widget: 20, 17, 15 pt on one line, then a phrase on two lines at 17 or 15 pt;
-    /// at large text sizes two unscaled 15 pt lines.
-    static let mediumWidget = [
+    /// The medium widget beside a meaning: 20, 17, 15 pt on one line, then a phrase on two lines
+    /// at 17 or 15 pt, all scaled with Dynamic Type.
+    static let mediumWidgetScaled = [
         WidgetWordStep(size: 20),
         WidgetWordStep(size: 17),
         WidgetWordStep(size: 15),
         WidgetWordStep(size: 17, lines: 2),
         WidgetWordStep(size: 15, lines: 2),
-        WidgetWordStep(size: 15, lines: 2, scales: false),
     ]
+    /// The medium widget's word alone: at large text sizes also two unscaled 15 pt lines.
+    static let mediumWidget = mediumWidgetScaled + [WidgetWordStep(size: 15, lines: 2, scales: false)]
 }
 
 /// The headword at the first of its size steps that fits the width whole, each line with its own
@@ -410,7 +418,9 @@ struct WidgetFittingWord: View {
                     renderingMode: renderingMode,
                     minimumScale: minimumScale
                 )
-                // VoiceOver reads the whole word once, on the first line, with an English voice.
+                // VoiceOver reads the whole word once, on the first line, with an English voice:
+                // one element per line (without `.ignore` the line was read twice).
+                .accessibilityElement(children: .ignore)
                 .accessibilityLabel(Text(verbatim: lemma))
                 .accessibilityHidden(index > 0)
                 .widgetEnglishVoice()
@@ -455,6 +465,8 @@ struct WidgetWordAlone: View {
 /// makes the variant around it too tall to be chosen, unless `lastResort`.
 struct WidgetWordRow: View {
     let lemma: String
+    /// The word's size steps; `WidgetWordStep.mediumWidgetScaled` beside a meaning.
+    var steps = WidgetWordStep.mediumWidget
     var lastResort = false
     /// The level code ("A2"), nil to leave it out.
     var level: String? = nil
@@ -470,7 +482,7 @@ struct WidgetWordRow: View {
             // what the word leaves.
             WidgetFittingWord(
                 lemma: lemma,
-                steps: WidgetWordStep.mediumWidget,
+                steps: steps,
                 lastResort: lastResort,
                 colors: colors,
                 renderingMode: renderingMode
@@ -553,7 +565,7 @@ struct WidgetLevel: View {
             .foregroundStyle(color)
             .lineLimit(1)
             .fixedSize()
-            .accessibilityLabel(Text("Seviye \(code)"))
+            .accessibilityLabel(Text(verbatim: "Seviye \(code)"))
     }
 }
 
@@ -578,7 +590,7 @@ struct WidgetMeaning: View {
             color: color
         )
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("Türkçesi: \(spoken)"))
+        .accessibilityLabel(Text(verbatim: "Türkçesi: \(spoken)"))
     }
 }
 
@@ -907,8 +919,18 @@ struct WidgetExampleLine: View {
 extension View {
     /// English widget text (README point 14): the same approach as the app's
     /// `cardEnglishVoice()`, the environment's locale set to US English, so VoiceOver reads the
-    /// word with an English voice. Turkish text and the time keep the device's locale.
+    /// word with an English voice. Inside `widgetTurkishVoice()` it switches back for its part.
     func widgetEnglishVoice() -> some View {
         environment(\.locale, Locale(identifier: "en_US"))
+    }
+
+    /// Turkish widget text, set on each widget view as a whole: the environment's locale set to
+    /// Turkish, so VoiceOver reads the meaning, the buttons and the hints with a Turkish voice. The
+    /// app is not localized (its development language is English), and on the iOS 26 simulator
+    /// a localized Turkish `Text("Türkçesi: …")` reached VoiceOver tagged "en-Latn-US"
+    /// (`WidgetVoiceOverTests`, 2026-10-22); with this locale and `Text(verbatim:)` it is tagged
+    /// Turkish whatever the device's language.
+    func widgetTurkishVoice() -> some View {
+        environment(\.locale, Locale(identifier: "tr_TR"))
     }
 }
