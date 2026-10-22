@@ -46,7 +46,8 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(feedback.verdict, .correct)
         XCTAssertNil(feedback.tip)
         XCTAssertEqual(feedback.heard, "Think.")
-        XCTAssertEqual(feedback.title, "Doğru!")
+        XCTAssertEqual(feedback.title, "Anlaşıldı!")
+        XCTAssertEqual(feedback.message, "Telefon seni anladı.")
     }
 
     func testCompoundsMatchWrittenTogetherOrApart() {
@@ -99,6 +100,7 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(feedback.verdict, .almost)
         XCTAssertEqual(feedback.missedWords, ["please"])
         XCTAssertEqual(feedback.message, "Şunlar duyulmadı: please. Bir daha dene.")
+        XCTAssertEqual(feedback.messageRuns, [.turkish("Şunlar duyulmadı: "), .english("please"), .turkish(". Bir daha dene.")])
     }
 
     func testSentenceAlmostKeepsTheTip() {
@@ -106,7 +108,7 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(feedback.verdict, .almost)
         XCTAssertEqual(feedback.tip?.kind, .th)
         XCTAssertEqual(feedback.missedWords, ["think"])
-        XCTAssertTrue(feedback.message.hasPrefix("Şunlar duyulmadı: think. 'think' yerine 'sink' duydum."), feedback.message)
+        XCTAssertEqual(feedback.message, "Şunlar duyulmadı: think. Bir daha dene.")
     }
 
     func testOneWordOfAPhraseMissingIsAlmost() {
@@ -161,7 +163,8 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(think.tip?.kind, .th)
         XCTAssertEqual(think.tip?.expected, "think")
         XCTAssertEqual(think.tip?.heard, "sink")
-        XCTAssertTrue(think.message.hasPrefix("'think' yerine 'sink' duydum. 'th' sesine dikkat"), think.message)
+        XCTAssertEqual(think.message, "Telefon farklı bir şey anladı.")
+        XCTAssertTrue(think.tip?.advice.hasPrefix("'th' sesine dikkat") ?? false)
 
         XCTAssertEqual(check("three", ipa: "/θriː/", heard: ["tree"]).tip?.kind, .th)
     }
@@ -222,7 +225,7 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(feedback.verdict, .tryAgain)
         XCTAssertNil(feedback.tip)
         XCTAssertEqual(feedback.title, "Bir daha dene")
-        XCTAssertEqual(feedback.message, "'bread' duydum. Önce hoparlör düğmesiyle dinle, sonra yavaş ve net söyle.")
+        XCTAssertEqual(feedback.message, "Telefon farklı bir şey anladı. Önce Dinle'ye dokunup dinle, sonra yavaş ve net söyle.")
     }
 
     func testSentenceTipUsesSpellingWithoutIPA() {
@@ -245,6 +248,39 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(feedback.missedWords, ["21"])
     }
 
+    // MARK: - Wording
+
+    /// Ilkeler 2.7 and terimler §1: the phone is the one that hears ("Anlaşıldı!", never "Doğru!"),
+    /// no "duydum", the button is "Dinle", and only the two state titles end in "!". English words
+    /// in the line are English runs (read in an English voice).
+    func testLinesSayWhatThePhoneUnderstood() {
+        let results = [
+            check("think", heard: ["think"]),
+            PronunciationCheck.evaluate(target: PronunciationTarget(text: "spoon"), hypotheses: [Hypothesis(text: "spoon", confidence: 0.3)]),
+            check("get up", heard: ["get"]),
+            check("I think you are right.", heard: ["I sink you are right"]),
+            check("think", ipa: "/θɪŋk/", heard: ["sink"]),
+            check("breakfast", heard: ["bread"]),
+            check("think", heard: []),
+        ]
+        XCTAssertEqual(Set(results.map(\.verdict)), [.correct, .almost, .tryAgain, .notHeard])
+        for feedback in results {
+            let line = feedback.message
+            XCTAssertFalse(line.contains("Doğru"), line)
+            XCTAssertFalse(line.contains("duydum"), line)
+            XCTAssertFalse(line.contains("hoparlör"), line)
+            XCTAssertFalse(line.contains("!"), line)
+            XCTAssertFalse(line.contains("..."), line)
+            XCTAssertNotEqual(feedback.title, "Doğru!")
+            XCTAssertEqual(feedback.title.hasSuffix("!"), feedback.verdict == .correct || feedback.verdict == .almost, feedback.title)
+            for run in feedback.messageRuns {
+                if case .english(let words) = run {
+                    XCTAssertEqual(words, feedback.missedWords.joined(separator: ", "))
+                }
+            }
+        }
+    }
+
     // MARK: - Nothing heard
 
     func testNothingHeard() {
@@ -253,6 +289,7 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(blank.verdict, .notHeard)
         XCTAssertEqual(blank.heard, "")
         XCTAssertEqual(blank.title, "Seni duyamadım")
+        XCTAssertEqual(blank.message, "Mikrofona yakın, net bir sesle söyle.")
     }
 
     func testEmptyTargetIsNotHeard() {

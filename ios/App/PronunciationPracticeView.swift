@@ -26,6 +26,8 @@ struct SayButton: View {
         }
         .buttonStyle(.borderless)
         .accessibilityLabel("Söyle: telaffuzunu dene")
+        // Voice Control: "Söyle'ye dokun" works as well as the spoken name.
+        .accessibilityInputLabels([Text("Söyle"), Text("Söyle: telaffuzunu dene")])
         .sheet(isPresented: $isPresented) {
             PronunciationPracticeView(word: word, example: example)
                 .presentationDetents(sheetDetents)
@@ -59,7 +61,7 @@ private struct SaySheetDetent: CustomPresentationDetent {
 }
 
 /// The learner says the word (or the example sentence); the phone checks it on the device and
-/// answers in Turkish ("Doğru!", "Bir daha dene" with what it heard and a tip).
+/// answers in Turkish ("Anlaşıldı!", "Bir daha dene" with a tip), what it heard in its own row.
 /// Mockup `.saysheet`, in three steps: Dinle → Söyle → Sonuç. Each step has one filled button in
 /// the bottom bar (listen, then speak, then speak again); the speaker stays next to it as a tonal
 /// capsule once listening is no longer the main action. A step bar and one short line say where
@@ -83,6 +85,14 @@ struct PronunciationPracticeView: View {
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
+    init(word: WidgetWord, example: String) {
+        self.word = word
+        self.example = example
+        // Read before the first frame: a permission that is already off when the page opens is
+        // shown, not announced (only later changes are).
+        _blockedBy = State(initialValue: PronunciationPracticeView.currentPermissionProblem())
+    }
+
     enum Mode: String, CaseIterable, Identifiable {
         case word = "Kelime"
         case sentence = "Örnek cümle"
@@ -100,6 +110,10 @@ struct PronunciationPracticeView: View {
     }
 
     private static let statusID = "say.status"
+    private static let preparingText = "İngilizce konuşma modeli iniyor. Bu yalnız ilk seferde olur."
+    /// Short: listening starts once it has been said (`PronunciationRecognizer.downloadAnnouncementSeconds`).
+    private static let preparingAnnouncement = "İngilizce konuşma modeli iniyor."
+    private static let permissionOnAnnouncement = "İzin açık. Söyle artık çalışır."
 
     var body: some View {
         NavigationStack {
@@ -159,10 +173,13 @@ struct PronunciationPracticeView: View {
                     default:
                         break
                     }
-                    // VoiceOver hears the verdict without having to find the panel.
-                    if case .finished(let feedback) = phase {
-                        UIAccessibility.post(notification: .announcement, argument: feedback.title)
+                    if phase == .preparing {
+                        announce([.turkish(PronunciationPracticeView.preparingAnnouncement)], while: .phase(phase))
                     }
+                }
+                // The result, or why the take could not run (audit V7).
+                .onChange(of: recognizer.endedTakes) {
+                    announceEndOfTake()
                 }
                 .navigationTitle("Söyle")
                 .navigationBarTitleDisplayMode(.inline)
@@ -182,6 +199,14 @@ struct PronunciationPracticeView: View {
         }
         .onChange(of: mode) {
             recognizer.cancel()
+        }
+        // A permission turned off or back on in iPhone Settings (audit V7).
+        .onChange(of: blockedBy) { old, new in
+            if let new {
+                announce(ProblemPanel.spoken(new), while: .permission(new))
+            } else if old != nil {
+                announce([.turkish(PronunciationPracticeView.permissionOnAnnouncement)], while: .permission(nil))
+            }
         }
         // Step 1 is done once the target has been read aloud (to the end, or stopped).
         .onChange(of: speaker.speakingText) { old, new in
@@ -293,11 +318,11 @@ struct PronunciationPracticeView: View {
             case .preparing:
                 HStack(spacing: 10) {
                     ProgressView()
-                    statusLine("İngilizce konuşma modeli iniyor. Bu yalnız ilk seferde olur.")
+                    statusLine(PronunciationPracticeView.preparingText)
                 }
                 .frame(minHeight: 44)
             case .listening:
-                Label("Dinliyorum... Bitince sus ya da Bitti'ye bas.", systemImage: "waveform")
+                Label("Dinliyorum… Bitirince bekle ya da Bitti'ye dokun.", systemImage: "waveform")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.ink)
                     .symbolEffect(.variableColor.iterative, isActive: !reduceMotion)
@@ -378,12 +403,15 @@ struct PronunciationPracticeView: View {
 
     private func mainButton(_ action: MainAction) -> some View {
         let isSpeaking = speaker.speakingText == target.text
+        // "Durdur" on screen too, so Voice Control finds the name VoiceOver reads.
+        let visible = action == .listen && isSpeaking ? "Durdur" : title(of: action)
+        // Dinle's VoiceOver name says what is read (terimler §3); Voice Control also takes "Dinle".
+        let spoken = action == .listen && !isSpeaking ? listenName : visible
         return Button {
             perform(action)
         } label: {
             Label {
-                // "Durdur" on screen too, so Voice Control finds the name VoiceOver reads.
-                Text(action == .listen && isSpeaking ? "Durdur" : title(of: action))
+                Text(visible)
             } icon: {
                 Image(systemName: symbol(of: action, speaking: isSpeaking))
                     .symbolEffect(.variableColor.iterative, isActive: action == .listen && isSpeaking && !reduceMotion)
@@ -391,6 +419,8 @@ struct PronunciationPracticeView: View {
         }
         .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 64))
         .disabled(action == .wait)
+        .accessibilityLabel(spoken)
+        .accessibilityInputLabels(visible == spoken ? [Text(visible)] : [Text(visible), Text(spoken)])
     }
 
     private var listenAgainButton: some View {
@@ -403,17 +433,27 @@ struct PronunciationPracticeView: View {
                 .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
         }
         .buttonStyle(SecondaryCapsuleButtonStyle(minHeight: 64, tonal: true))
-        .accessibilityLabel(isSpeaking ? "Durdur" : (mode == .word ? "Kelimeyi dinle" : "Cümleyi dinle"))
+        .accessibilityLabel(isSpeaking ? "Durdur" : listenName)
+        .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle"), Text(isSpeaking ? "Durdur" : listenName)])
+    }
+
+    /// Dinle's VoiceOver name (terimler §3).
+    private var listenName: String {
+        return mode == .word ? "Kelimeyi dinle" : "Cümleyi dinle"
     }
 
     private func title(of action: MainAction) -> String {
         switch action {
         case .openSettings:
-            return "Ayarları aç"
+            // iPhone Settings, not the app's Ayarlar tab (terimler §2): named after what to turn on.
+            return shownProblem == .speechDenied ? "Tanıma iznini aç" : "Mikrofon iznini aç"
         case .listen:
             return "Dinle"
-        case .say, .wait:
+        case .say:
             return "Söyle"
+        case .wait:
+            // Not a dimmed "Söyle", which VoiceOver reads as "speak now" (metin denetimi #14).
+            return "Bekle"
         case .finish:
             return "Bitti"
         case .sayAgain:
@@ -431,7 +471,9 @@ struct PronunciationPracticeView: View {
             return speaking ? "speaker.wave.2.fill" : "speaker.wave.2"
         case .finish:
             return "stop.fill"
-        case .say, .wait, .sayAgain, .retry:
+        case .wait:
+            return "hourglass"
+        case .say, .sayAgain, .retry:
             return "mic.fill"
         }
     }
@@ -467,14 +509,20 @@ struct PronunciationPracticeView: View {
     /// first "Söyle"; once a permission is off, only Settings can turn it on. When it is on
     /// again, a "permission off" result is dropped so that "Söyle" is the main action again.
     private func refreshPermission() {
-        let blocked = currentPermissionProblem()
+        let blocked = PronunciationPracticeView.currentPermissionProblem()
+        let wasBlocked = blockedBy != nil
         blockedBy = blocked
         if blocked == nil, case .failed(let problem) = recognizer.phase, PronunciationPracticeView.opensSettings(problem) {
             recognizer.cancel()
+            // `blockedBy` never changed when the system's question did not take the app out of the
+            // active state: "permission on" is said here instead.
+            if !wasBlocked {
+                announce([.turkish(PronunciationPracticeView.permissionOnAnnouncement)], while: .permission(nil))
+            }
         }
     }
 
-    private func currentPermissionProblem() -> PronunciationRecognizer.Problem? {
+    private static func currentPermissionProblem() -> PronunciationRecognizer.Problem? {
         if AVAudioApplication.shared.recordPermission == .denied {
             return .microphoneDenied
         }
@@ -483,6 +531,57 @@ struct PronunciationPracticeView: View {
             return nil
         }
         return SFSpeechRecognizer.authorizationStatus() == .denied ? .speechDenied : nil
+    }
+
+    // MARK: - VoiceOver announcements
+
+    /// What must still be true when an announcement goes out, a moment after it was made.
+    private enum StillTrue {
+        /// No other take has started or ended.
+        case phase(PronunciationRecognizer.Phase)
+        /// The permission is still off (nil: still on), and no take has just failed for it: that
+        /// take's own announcement says it already (the first "no" to the system's question).
+        case permission(PronunciationRecognizer.Problem?)
+    }
+
+    /// The take's result, or why it could not run: a permission that is off first, as on the page.
+    private func announceEndOfTake() {
+        let phase = recognizer.phase
+        switch phase {
+        case .finished(let feedback):
+            announce(FeedbackPanel.spokenResult(feedback), while: .phase(phase))
+        case .failed(let problem):
+            announce(ProblemPanel.spoken(blockedBy ?? problem), while: .phase(phase))
+        case .idle, .preparing, .listening, .checking:
+            break
+        }
+    }
+
+    /// Says what just changed, so that a VoiceOver user does not have to look for it (audit V7):
+    /// what happened and what to do. Never when listening starts: the microphone would hear it (a
+    /// light tap says that instead). Posted a moment later, once the page has scrolled, so that
+    /// VoiceOver does not drop it, and only if `still` holds then. Default priority, never
+    /// `.high`: an announcement that cannot be cut off would still be speaking when the learner
+    /// taps "Bir daha söyle", and the microphone would hear it.
+    private func announce(_ runs: [FeedbackRun], while still: StillTrue) {
+        let recognizer = self.recognizer
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 300_000_000)
+            switch still {
+            case .phase(let phase):
+                guard recognizer.phase == phase else {
+                    return
+                }
+            case .permission(let problem):
+                guard PronunciationPracticeView.currentPermissionProblem() == problem else {
+                    return
+                }
+                if let problem, recognizer.phase == .failed(problem) {
+                    return
+                }
+            }
+            UIAccessibility.post(notification: .announcement, argument: SpeechLanguage.attributed(runs))
+        }
     }
 }
 
@@ -574,8 +673,9 @@ private struct PracticeStepBar: View {
 /// Dikkat diff of the cards), then the sound tip (th, w/v, final sounds) when there is one.
 /// README point 15: `good` / `caution` / `bad` on a `goodTint` / `cautionTint` / `badTint` panel
 /// (mockup `.verdict`).
-/// VoiceOver (audit V2): the verdict and its line are read together; the English rows are their
+/// VoiceOver (audit V2, V5): the verdict and its line are read together; the English rows are their
 /// own elements, so they keep the English voice (a combined element would read them in Turkish).
+/// The same verdict, line and tip are announced when the result comes.
 private struct FeedbackPanel: View {
     let feedback: PronunciationFeedback
     /// What the learner was asked to say.
@@ -588,13 +688,13 @@ private struct FeedbackPanel: View {
                 Label(feedback.title, systemImage: symbol)
                     .font(.title3.weight(.bold))
                     .foregroundStyle(color)
-                Text(lead)
+                Text(feedback.message)
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .accessibilityElement(children: .combine)
-            .accessibilityLabel(spokenVerdict)
+            .accessibilityLabel(SpeechLanguage.mixed(FeedbackPanel.spokenVerdict(feedback)))
             if !feedback.heard.isEmpty {
                 comparison
             }
@@ -622,36 +722,20 @@ private struct FeedbackPanel: View {
         .accessibilityElement(children: .contain)
     }
 
-    /// The verdict and `lead` for VoiceOver, the words not heard in an English voice.
-    private var spokenVerdict: Text {
+    /// The verdict and its line for VoiceOver, the words not heard in an English voice.
+    static func spokenVerdict(_ feedback: PronunciationFeedback) -> [FeedbackRun] {
         // A pause after the title ("Bir daha dene" has no mark of its own).
         let title = feedback.title.last.map { ".!?".contains($0) } == true ? feedback.title : feedback.title + "."
-        if feedback.verdict == .almost && !feedback.missedWords.isEmpty {
-            return SpeechLanguage.mixed([
-                .turkish(title + " Çok yaklaştın. Tam duyulmayan: "),
-                .english(feedback.missedWords.joined(separator: ", ")),
-                .turkish("."),
-            ])
-        }
-        return SpeechLanguage.mixed([.turkish(title + " " + lead)])
+        return [.turkish(title + " ")] + feedback.messageRuns
     }
 
-    /// Encouraging and short; the details are in the rows and the tip below.
-    private var lead: String {
-        switch feedback.verdict {
-        case .correct, .notHeard:
-            return feedback.message
-        case .almost:
-            if feedback.missedWords.isEmpty {
-                return feedback.message
-            }
-            return "Çok yaklaştın. Tam duyulmayan: " + feedback.missedWords.joined(separator: ", ") + "."
-        case .tryAgain:
-            if feedback.tip != nil {
-                return "Telefon farklı bir şey anladı."
-            }
-            return "Telefon farklı bir şey anladı. Önce dinle, sonra yavaş ve net söyle."
+    /// The announcement: the verdict, its line and the tip, i.e. what happened and what to do.
+    static func spokenResult(_ feedback: PronunciationFeedback) -> [FeedbackRun] {
+        var runs = spokenVerdict(feedback)
+        if let tip = feedback.tip {
+            runs.append(.turkish(" " + tip.advice))
         }
+        return runs
     }
 
     /// "Doğrusu" only when something was not right and the words differ.
@@ -754,17 +838,20 @@ private struct FeedbackPanel: View {
 }
 
 /// Why "Söyle" cannot run right now, calmly, in Turkish (mockup `.problem`): a bordered panel in
-/// ink, never red. A permission that is off is fixed in Settings, so "Ayarları aç" is then the
-/// page's main button (bottom bar); otherwise the main button tries again.
+/// ink, never red. A permission that is off is fixed in iPhone Settings, so "Mikrofon iznini aç"
+/// (which opens them) is then the page's main button (bottom bar); otherwise the main button tries
+/// again. What happened, then what to do; announced to VoiceOver when it appears.
 private struct ProblemPanel: View {
-    let problem: PronunciationRecognizer.Problem
+    typealias Problem = PronunciationRecognizer.Problem
+
+    let problem: Problem
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Label(title, systemImage: "mic.slash")
+            Label(ProblemPanel.title(problem), systemImage: "mic.slash")
                 .font(.headline)
                 .foregroundStyle(Theme.ink)
-            Text(message)
+            Text(ProblemPanel.message(problem))
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
@@ -779,7 +866,12 @@ private struct ProblemPanel: View {
         .accessibilityElement(children: .combine)
     }
 
-    private var title: String {
+    /// Title and message, for the announcement.
+    static func spoken(_ problem: Problem) -> [FeedbackRun] {
+        return [.turkish(title(problem) + ". " + message(problem))]
+    }
+
+    static func title(_ problem: Problem) -> String {
         switch problem {
         case .microphoneDenied:
             return "Mikrofon izni kapalı"
@@ -790,43 +882,46 @@ private struct ProblemPanel: View {
         }
     }
 
-    private var message: String {
+    /// No ">" in a path (VoiceOver may read "büyüktür") and no system error text (it is English
+    /// and in "Söyle tanılama" already): terimler §1, metin denetimi "Söyle".
+    static func message(_ problem: Problem) -> String {
         switch problem {
         case .microphoneDenied:
-            return "Söyle için mikrofon gerekiyor. Ayarlar'da Lockglow'a mikrofon iznini açabilirsin. Dinle ve kartlar izinsiz de çalışır."
+            return "iPhone Ayarları'nda Lockglow için mikrofon iznini açabilirsin. Dinle ve kartlar izinsiz de çalışır."
         case .speechDenied:
-            return "Söyle için konuşma tanıma gerekiyor. Ayarlar'da Lockglow'a bu izni açabilirsin. Dinle ve kartlar izinsiz de çalışır."
+            return "iPhone Ayarları'nda Lockglow için konuşma tanıma iznini açabilirsin. Dinle ve kartlar izinsiz de çalışır."
         case .speechRestricted:
-            return "Konuşma tanıma bu telefonda kısıtlı (Ekran Süresi ya da kurum ayarı)."
+            return "Konuşma tanıma bu telefonda kısıtlı. Ekran Süresi ya da telefonu yöneten kurum bunu kapatmış olabilir."
         case .modelUnavailable:
             return "İngilizce konuşma modeli indirilemedi. İnternete bağlanıp bir daha dene. Model bir kez iner, sonra internet gerekmez."
         case .onDeviceUnavailable:
-            return "Bu telefonda cihaz içi İngilizce tanıma kurulu değil. Ayarlar > Genel > Klavye bölümünde İngilizce (ABD) klavyeyi ekleyip Dikte'yi açınca çalışır."
+            return "Bu telefonda İngilizce konuşma tanıma hazır değil. iPhone Ayarları'nda Genel, sonra Klavye bölümüne gir. İngilizce (ABD) klavyeyi ekle ve Dikte'yi aç."
         case .audioFailed:
             return "Mikrofon başlatılamadı. Başka bir uygulama mikrofonu kullanıyor olabilir. Bir daha dene."
-        case .recognitionFailed(let detail):
-            return "Konuşma tanıma bu sefer çalışmadı. Bir daha dene. (\(detail))"
+        case .recognitionFailed:
+            return "Konuşma tanıma bu sefer çalışmadı. Bir daha dene."
         }
     }
 }
 
 // MARK: - Speech language
 
-/// VoiceOver labels with their language (README point 14; audit V2 and V6). `englishVoice()` gives
-/// a view an English locale; these labels also put `accessibilitySpeechLanguage` on every run
-/// ("en-US" for English, "tr-TR" for Turkish), so whichever of the two this iOS honors, English
-/// is not read in a Turkish voice. Which one works is still to be heard on the phone (V6).
+/// VoiceOver labels and announcements with their language (README point 14; audit V2 and V6).
+/// `englishVoice()` gives a view an English locale; these labels also put
+/// `accessibilitySpeechLanguage` on every run ("en-US" for English, "tr-TR" for Turkish), so
+/// whichever of the two this iOS honors, English is not read in a Turkish voice. Which one works in
+/// a label is still to be heard on the phone (V6); announcements are UIKit attributed strings,
+/// which carry the attribute themselves.
 private enum SpeechLanguage {
-    enum Run {
-        case turkish(String)
-        case english(String)
-    }
-
     static func english(_ text: String) -> Text {
         return mixed([.english(text)])
     }
 
-    static func mixed(_ runs: [Run]) -> Text {
+    static func mixed(_ runs: [FeedbackRun]) -> Text {
+        return Text(AttributedString(attributed(runs)))
+    }
+
+    static func attributed(_ runs: [FeedbackRun]) -> NSMutableAttributedString {
         let result = NSMutableAttributedString()
         for run in runs {
             switch run {
@@ -836,6 +931,6 @@ private enum SpeechLanguage {
                 result.append(NSAttributedString(string: text, attributes: [.accessibilitySpeechLanguage: "en-US"]))
             }
         }
-        return Text(AttributedString(result))
+        return result
     }
 }

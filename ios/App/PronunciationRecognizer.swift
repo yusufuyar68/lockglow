@@ -21,7 +21,8 @@ final class PronunciationRecognizer: ObservableObject {
         /// iOS 17–25: no on-device US English recognition on this phone.
         case onDeviceUnavailable
         case audioFailed
-        case recognitionFailed(String)
+        /// Recognition did not run this time (the error code is in "Söyle tanılama").
+        case recognitionFailed
     }
 
     enum Phase: Equatable {
@@ -37,6 +38,15 @@ final class PronunciationRecognizer: ObservableObject {
     static let locale = Locale(identifier: "en-US")
 
     @Published private(set) var phase: Phase = .idle
+    /// Takes that ended with a result or a problem. The page announces each end, also one that
+    /// looks like the last (the same problem again right after "Bir daha dene", too quick for the
+    /// page to see the phase change).
+    @Published private(set) var endedTakes = 0
+
+    /// First use with VoiceOver on: the page announces the model download; listening starts no
+    /// sooner than this after the download began, so that the microphone does not hear the end of
+    /// the announcement.
+    static let downloadAnnouncementSeconds = 4.0
 
     private let engine = AVAudioEngine()
     private var tapInstalled = false
@@ -50,6 +60,9 @@ final class PronunciationRecognizer: ObservableObject {
     private var take: SayDiagnostics.Attempt?
     private var listeningSince: Date?
     private var downloadSince: Date?
+
+    /// iOS 17–25: failed takes in a row, for the set-up instructions (`RecognitionFailures`).
+    private static var failureStreak = RecognitionFailureStreak()
 
     private static var engine: SayDiagnostics.Engine {
         if #available(iOS 26.0, *) {
@@ -83,9 +96,16 @@ final class PronunciationRecognizer: ObservableObject {
                 if current == self.generation {
                     self.backend = nil
                     self.phase = .failed(problem)
+                    self.endedTakes += 1
                     self.logTake(.failed(problem))
                 }
                 return
+            }
+            if let since = self.downloadSince, UIAccessibility.isVoiceOverRunning {
+                let left = PronunciationRecognizer.downloadAnnouncementSeconds - Date().timeIntervalSince(since)
+                if left > 0 {
+                    try? await Task.sleep(for: .seconds(left))
+                }
             }
             guard current == self.generation, let backend = self.backend else {
                 return
@@ -113,6 +133,7 @@ final class PronunciationRecognizer: ObservableObject {
                 self.backend = nil
                 self.take?.errorCode = SayDiagnostics.code(of: error)
                 self.phase = .failed(.audioFailed)
+                self.endedTakes += 1
                 self.logTake(.failed(.audioFailed))
             }
         }
@@ -130,7 +151,7 @@ final class PronunciationRecognizer: ObservableObject {
         }
         let current = generation
         work = Task {
-            let outcome: Phase
+            var outcome: Phase
             var hypotheses: [Hypothesis] = []
             var failure: Error?
             do {
@@ -138,19 +159,33 @@ final class PronunciationRecognizer: ObservableObject {
                 outcome = .finished(PronunciationCheck.evaluate(target: target, hypotheses: hypotheses))
             } catch {
                 failure = error
-                outcome = .failed(.recognitionFailed(error.localizedDescription))
+                outcome = .failed(.recognitionFailed)
             }
             guard current == self.generation else {
                 return
             }
+            // iOS 17–25 (README "Söyle: bilinen belirsizlikler" 8): failed takes in a row mean that
+            // on-device English recognition is not set up; the page then says how to set it up. A
+            // recognizer that did not answer in time is slow, not a sign of that.
+            if Self.engine == .recognizer {
+                if failure != nil {
+                    if backend.failureCode != RecognizerBackend.timeoutCode, Self.failureStreak.recordFailure() {
+                        outcome = .failed(.onDeviceUnavailable)
+                    }
+                } else if !hypotheses.isEmpty {
+                    Self.failureStreak.recordHeard()
+                }
+            }
             self.backend = nil
             self.phase = outcome
+            self.endedTakes += 1
             self.take?.candidates = hypotheses.count
             self.take?.confidence = hypotheses.first?.confidence
-            if let failure {
+            // The recognizer's own code first: on iOS 17–25 the error thrown only says "failed".
+            if let code = backend.failureCode {
+                self.take?.errorCode = code
+            } else if let failure {
                 self.take?.errorCode = SayDiagnostics.code(of: failure)
-            } else if hypotheses.isEmpty {
-                self.take?.errorCode = backend.failureCode
             }
             switch outcome {
             case .finished(let feedback):
@@ -320,6 +355,8 @@ final class PronunciationRecognizer: ObservableObject {
 enum RecognizerError: Error {
     case noMicrophone
     case modelMissing
+    /// iOS 17–25: the recognizer answered with an error other than "no speech", or not at all.
+    case recognitionFailed
 }
 
 /// Decides on the audio thread when a take is over: once the learner has spoken and then been
@@ -380,10 +417,11 @@ protocol SpeechBackend: AnyObject {
     func start() async throws
     func append(_ buffer: AVAudioPCMBuffer)
     /// Ends the audio and returns the transcriptions, best first (empty when nothing was heard).
+    /// Throws when recognition did not run.
     func finish() async throws -> [Hypothesis]
     func cancel()
-    /// Why the last `finish()` came back empty, as "domain code" ("Söyle tanılama"); nil when
-    /// nothing went wrong or the backend throws instead.
+    /// The recognizer's error behind the last `finish()`, as "domain code" ("Söyle tanılama"),
+    /// whether it came back empty or threw; nil when there was none or the backend does not keep it.
     var failureCode: String? { get }
 }
 
@@ -539,21 +577,31 @@ final class AnalyzerBackend: SpeechBackend {
     }
 }
 
-/// iOS 17–25: an on-device-only SFSpeechRecognizer request. Any recognition error (including "no
-/// speech") ends the take with nothing heard.
+/// iOS 17–25: an on-device-only SFSpeechRecognizer request. "No speech" (and a cancel) ends the take
+/// with nothing heard; any other error, or no answer at all, makes `finish()` throw
+/// (`RecognitionFailures`).
 final class RecognizerBackend: SpeechBackend {
+    /// `failureCode` when the recognizer did not answer within 4 s of the end of the audio.
+    static let timeoutCode = "timeout"
+
+    /// What the recognizer answered; `failed`: it did not run (see `RecognitionFailures`).
+    private struct Outcome {
+        let hypotheses: [Hypothesis]
+        let code: String?
+        let failed: Bool
+    }
+
     private let recognizer: SFSpeechRecognizer
     private let request = SFSpeechAudioBufferRecognitionRequest()
     private var task: SFSpeechRecognitionTask?
     private let lock = NSLock()
-    private var outcome: [Hypothesis]?
-    private var outcomeCode: String?
-    private var waiter: CheckedContinuation<[Hypothesis], Never>?
+    private var outcome: Outcome?
+    private var waiter: CheckedContinuation<Outcome, Never>?
 
     var failureCode: String? {
         lock.lock()
         defer { lock.unlock() }
-        return outcomeCode
+        return outcome?.code
     }
 
     init(recognizer: SFSpeechRecognizer) {
@@ -573,7 +621,9 @@ final class RecognizerBackend: SpeechBackend {
                 }
                 self?.deliver(hypotheses)
             } else if let error {
-                self?.deliver([], failureCode: SayDiagnostics.code(of: error))
+                let nsError = error as NSError
+                let failed = RecognitionFailures.isFailure(domain: nsError.domain, code: nsError.code)
+                self?.deliver([], failureCode: SayDiagnostics.code(of: error), failed: failed)
             }
         }
     }
@@ -587,9 +637,9 @@ final class RecognizerBackend: SpeechBackend {
         // Safety net in case the recognizer never reports back.
         Task { [weak self] in
             try? await Task.sleep(for: .seconds(4))
-            self?.deliver([], failureCode: "timeout")
+            self?.deliver([], failureCode: RecognizerBackend.timeoutCode, failed: true)
         }
-        return await withCheckedContinuation { continuation in
+        let answer: Outcome = await withCheckedContinuation { continuation in
             lock.lock()
             if let outcome {
                 lock.unlock()
@@ -599,6 +649,10 @@ final class RecognizerBackend: SpeechBackend {
             waiter = continuation
             lock.unlock()
         }
+        if answer.failed {
+            throw RecognizerError.recognitionFailed
+        }
+        return answer.hypotheses
     }
 
     func cancel() {
@@ -608,18 +662,18 @@ final class RecognizerBackend: SpeechBackend {
     }
 
     /// The first outcome wins; a waiting `finish()` gets it.
-    private func deliver(_ hypotheses: [Hypothesis], failureCode: String? = nil) {
+    private func deliver(_ hypotheses: [Hypothesis], failureCode: String? = nil, failed: Bool = false) {
         lock.lock()
         guard outcome == nil else {
             lock.unlock()
             return
         }
-        outcome = hypotheses
-        outcomeCode = failureCode
+        let delivered = Outcome(hypotheses: hypotheses, code: failureCode, failed: failed)
+        outcome = delivered
         let waiting = waiter
         waiter = nil
         lock.unlock()
-        waiting?.resume(returning: hypotheses)
+        waiting?.resume(returning: delivered)
     }
 
     /// Mean segment confidence; nil when the recognizer gave none (0 means "none" here).
