@@ -17,7 +17,7 @@ jobs:
   screens:
     name: Ekran görüntüleri (simülatör)
     runs-on: ${{ inputs.runner || 'macos-15' }}
-    timeout-minutes: 70
+    timeout-minutes: 95
     steps:
       - uses: actions/checkout@v4
       - name: En yeni Xcode'u seç
@@ -57,20 +57,34 @@ jobs:
             [ -n "$udid" ] || { echo "no simulator for $name"; return 0; }
             # Sign to run locally (simulator only; embeds the App Group entitlement). Fall back to unsigned.
             xcodebuild test -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$udid" \
-              -only-testing:LockglowUITests -only-testing:LockglowWidgetSnapshots -resultBundlePath "out/$name.xcresult" \
+              -only-testing:LockglowUITests -resultBundlePath "out/$name.xcresult" \
               CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
               > "out/$name.log" 2>&1 \
             || { echo "signed run failed on $name, retrying unsigned"; rm -rf "out/$name.xcresult";
                  xcodebuild test -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$udid" \
-                   -only-testing:LockglowUITests -only-testing:LockglowWidgetSnapshots -resultBundlePath "out/$name.xcresult" \
+                   -only-testing:LockglowUITests -resultBundlePath "out/$name.xcresult" \
                    CODE_SIGNING_ALLOWED=NO > "out/$name.log" 2>&1 || echo "test run failed on $name"; }
             grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" "out/$name.log" | tail -20 || true
             if [ -d "out/$name.xcresult" ]; then
               xcrun xcresulttool export attachments --path "out/$name.xcresult" --output-path "shots/$name" || true
             fi
           }
-          run_on small "$SMALL"
-          run_on large "$LARGE"
+          # is4-tema-ekran only (not merged): the night main button (option C) on the small iPhone,
+          # dark mode three times: plain, with Button Shapes, with Increase Contrast.
+          [ -n "$SMALL" ] || { echo "no small simulator"; exit 1; }
+          xcrun simctl boot "$SMALL" 2>/dev/null || true
+          xcrun simctl bootstatus "$SMALL" -b || true
+          xcrun simctl ui "$SMALL" appearance dark || echo "could not switch to dark"
+          run_on small-koyu "$SMALL"
+          xcrun simctl spawn "$SMALL" defaults write com.apple.Accessibility ButtonShapesEnabled -bool true || echo "no button shapes key"
+          xcrun simctl spawn "$SMALL" notifyutil -p com.apple.accessibility.button.shapes.changed || true
+          xcrun simctl spawn "$SMALL" defaults read com.apple.Accessibility ButtonShapesEnabled || true
+          run_on small-koyu-dugme-sekilleri "$SMALL"
+          xcrun simctl spawn "$SMALL" defaults write com.apple.Accessibility ButtonShapesEnabled -bool false || true
+          xcrun simctl spawn "$SMALL" notifyutil -p com.apple.accessibility.button.shapes.changed || true
+          xcrun simctl ui "$SMALL" increase_contrast enabled || echo "could not enable increase contrast"
+          xcrun simctl ui "$SMALL" increase_contrast || true
+          run_on small-koyu-yk "$SMALL"
           find shots -type f | head -40
       - name: Görüntüleri yükle
         if: always()
