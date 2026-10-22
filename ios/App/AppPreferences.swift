@@ -1,14 +1,21 @@
 import Foundation
 import CoreModels
+import Learning
 
 /// App-private persisted settings (UserDefaults). Learning progress itself lives in
-/// `ProgressStore` (Application Support/progress.json), not here.
+/// `ProgressStore` (Application Support/progress.json), not here. The rules behind the
+/// defaults and the carry-over from earlier builds are `SettingsRules` (tested on Linux).
 enum AppPreferences {
-    /// Rotation intervals offered in "Ayarlar", in minutes. The widget clamps to at least 300 s.
-    static let rotationMinuteChoices = [5, 15, 30, 60, 120]
-    static let dailyNewWordChoices = [5, 10, 15, 20]
-    static let defaultRotationMinutes = 60
-    static let defaultDailyNewWords = 10
+    /// Rotation intervals offered in "Ayarlar", in minutes: 30, 60, 120, 240. The widget clamps to
+    /// at least 300 s.
+    static let rotationMinuteChoices = SettingsRules.rotationMinuteChoices
+    static let dailyNewWordChoices = SettingsRules.dailyNewWordChoices
+    static let defaultRotationMinutes = SettingsRules.defaultRotationMinutes
+    /// The daily goal of a user who never chose one, for the stored start level: 5 from A1 and
+    /// A2 (and without a level), 10 from B1.
+    static var defaultDailyNewWords: Int {
+        return SettingsRules.defaultDailyNewWords(startLevel: startLevel)
+    }
     /// Start levels offered in the onboarding and in "Ayarlar" (the content has A1-B1 cards).
     static let startLevelChoices: [Level] = [.a1, .a2, .b1]
 
@@ -99,26 +106,70 @@ enum AppPreferences {
         }
     }
 
-    /// Minutes between word changes on the widget. Anything not in the choices reads as the default.
+    /// Minutes between word changes on the widget. 5 and 15 minutes, offered by earlier builds,
+    /// read as 30 and are written back as 30 the first time (at launch, `AppModel`); anything
+    /// else not in the choices reads as the default hour.
     static var rotationMinutes: Int {
         get {
-            let stored = UserDefaults.standard.integer(forKey: rotationKey)
-            return rotationMinuteChoices.contains(stored) ? stored : defaultRotationMinutes
+            let stored = storedInt(forKey: rotationKey)
+            let minutes = SettingsRules.rotationMinutes(stored: stored)
+            if let stored = stored, SettingsRules.legacyRotationMinutes.contains(stored) {
+                UserDefaults.standard.set(minutes, forKey: rotationKey)
+            }
+            return minutes
         }
         set {
             UserDefaults.standard.set(newValue, forKey: rotationKey)
         }
     }
 
-    /// Daily goal of new words. Anything not in the choices reads as the default.
+    /// Daily goal of new words: the user's own number, otherwise the start level's
+    /// (`defaultDailyNewWords`), so a goal nobody chose follows a new level.
+    ///
+    /// Saving the number the start level gives while the user never chose one saves nothing:
+    /// `AppModel.setDailyNewWords` is also how a view hands the model a new level's goal, and
+    /// that goal must keep following the level. So the setter is for that sync, and the level
+    /// must be saved before it; a user's choice goes through `chooseDailyNewWords` first (a tap
+    /// in "Ayarlar"), which counts even for the level's own number.
     static var dailyNewWords: Int {
         get {
-            let stored = UserDefaults.standard.integer(forKey: dailyNewWordsKey)
-            return dailyNewWordChoices.contains(stored) ? stored : defaultDailyNewWords
+            return AppPreferences.dailyNewWords(startLevel: startLevel)
         }
         set {
+            if chosenDailyNewWords == nil && newValue == defaultDailyNewWords {
+                return
+            }
             UserDefaults.standard.set(newValue, forKey: dailyNewWordsKey)
         }
+    }
+
+    /// The goal with `level` as the start level: the user's own number, or the level's. The
+    /// onboarding shows it before the level is saved.
+    static func dailyNewWords(startLevel level: Level?) -> Int {
+        return SettingsRules.dailyNewWords(stored: storedInt(forKey: dailyNewWordsKey), startLevel: level)
+    }
+
+    /// The user's own daily goal; nil while they never chose one (the start level decides).
+    static var chosenDailyNewWords: Int? {
+        return SettingsRules.chosenDailyNewWords(stored: storedInt(forKey: dailyNewWordsKey))
+    }
+
+    /// The user picked this goal in "Ayarlar": it stays whatever the level, also when it is the
+    /// number the level would give.
+    static func chooseDailyNewWords(_ count: Int) {
+        guard dailyNewWordChoices.contains(count) else {
+            return
+        }
+        UserDefaults.standard.set(count, forKey: dailyNewWordsKey)
+    }
+
+    /// A stored number, nil when the key was never written. `integer(forKey:)` also reads a
+    /// launch argument, which arrives as text.
+    private static func storedInt(forKey key: String) -> Int? {
+        if UserDefaults.standard.object(forKey: key) == nil {
+            return nil
+        }
+        return UserDefaults.standard.integer(forKey: key)
     }
 
     /// LEGACY: words marked as known on the widget before the learning progress file existed.

@@ -6,7 +6,10 @@ import Learning
 /// the first word. It opens by itself once; "Ayarlar > Yardım" opens it again. "Atla" ends it
 /// on any page (the last one too) and keeps what was chosen so far.
 ///
-/// One question and one filled button per page, short sentences for an A2 reader.
+/// One question and one filled button per page, short sentences for an A2 reader, no pressure.
+/// The level also sets the daily goal without a page of its own (§2.8): 5 new words from A1 and
+/// A2, 10 from B1, unless the user already chose a number in "Ayarlar". The first word starts
+/// with its meaning hidden, so the move of "Tekrar" (guess, then look) is learned by doing it.
 ///
 /// The choice is applied when the topics page is left (and on "Atla"): on a fresh install that
 /// writes the first widget plan, so a widget added on the next page already rotates the chosen
@@ -26,6 +29,9 @@ struct OnboardingView: View {
     @State private var level: Level?
     @State private var topicIDs: Set<String> = []
     @State private var hasLoadedChoice = false
+    /// The first word whose meaning was shown; another first word (a new level or topic) starts
+    /// hidden again.
+    @State private var shownMeaningWordID: Int?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -141,9 +147,14 @@ struct OnboardingView: View {
         // "Tümü" is selected when no listed topic is (as in `TopicChoiceList`).
         DeckSummaryLine(
             summary: model.deckSummary(for: chosenTopicCount == 0 ? [] : topicIDs),
-            dailyGoal: model.dailyNewWords,
+            dailyGoal: dailyGoal,
             isEverything: chosenTopicCount == 0
         )
+    }
+
+    /// The goal the level on screen gives (not saved until the topics page is left).
+    private var dailyGoal: Int {
+        return AppPreferences.dailyNewWords(startLevel: level)
     }
 
     /// Topics still loading: leaving the page would apply the choice before there are words,
@@ -209,6 +220,15 @@ struct OnboardingView: View {
                     .accessibilityIdentifier("onboarding.level.\(choice.rawValue)")
                 }
             }
+            // The daily goal comes with the level (§2.8), said once a level is chosen.
+            if level != nil {
+                Text("Günde **\(dailyGoal)** yeni kelimeyle başlarsın. Bu sayıyı da sonra değiştirebilirsin.")
+                    .font(.footnote)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 4)
+                    .padding(.top, 4)
+            }
         }
     }
 
@@ -255,18 +275,31 @@ struct OnboardingView: View {
         }
     }
 
+    /// Mockup `.ob` page 4, interactive (§2.8, "Teach through interactivity"): the word and
+    /// "Dinle" first, the meaning one tap away; then the whole card and how learning goes on.
     @ViewBuilder
     private var firstWordPage: some View {
+        let word = model.firstDeckWord()
+        let isMeaningShown = word != nil && word?.id == shownMeaningWordID
         VStack(alignment: .leading, spacing: 4) {
-            // How learning works, in one sentence (the card plays the word with its speaker).
             PageTitle(
                 title: "İlk kelimen",
-                subtitle: "Kelimeyi önce widget'ta görürsün, sonra Tekrar'da kendini sınarsın."
+                subtitle: isMeaningShown
+                    ? "Kelimeyi önce widget'ta görürsün. Sonra Tekrar'da hatırlamaya çalışırsın."
+                    : "Anlamını tahmin et, sonra dokun."
             )
-            if let word = model.firstDeckWord() {
+            if let word = word {
                 // No "Söyle" button here: the onboarding never asks for the microphone.
-                WordCardView(word: word, detail: model.detail(for: word), showsSay: false)
-                    .padding(.horizontal, -16)
+                if isMeaningShown {
+                    WordCardView(word: word, detail: model.detail(for: word), showsSay: false)
+                        .padding(.horizontal, -16)
+                        .transition(.opacity)
+                } else {
+                    GuessWordCard(word: word) {
+                        showMeaning(of: word)
+                    }
+                    .transition(.opacity)
+                }
             } else if model.contentSource == .loading {
                 Text("Kelimeler yükleniyor…")
                     .font(.body)
@@ -314,8 +347,30 @@ struct OnboardingView: View {
         }
     }
 
+    /// The button goes away with the hidden card, so VoiceOver also says the meaning that came
+    /// out (a high-priority announcement is not cut off by the focus moving on).
+    private func showMeaning(of word: WidgetWord) {
+        if reduceMotion {
+            shownMeaningWordID = word.id
+        } else {
+            withAnimation(.easeInOut(duration: 0.25)) {
+                shownMeaningWordID = word.id
+            }
+        }
+        if let gloss = word.glossTR {
+            var announcement = AttributedString("Türkçesi: " + gloss)
+            announcement.accessibilitySpeechAnnouncementPriority = .high
+            AccessibilityNotification.Announcement(announcement).post()
+        }
+    }
+
+    /// The deck, then the daily goal of the level when the user never chose one: `AppModel` keeps
+    /// its own copy of the goal, so it is handed the level's number (`AppPreferences.dailyNewWords`
+    /// does not save it as a choice). A goal the user chose stays. Keep the order: the level is
+    /// saved first, so the goal's setter compares with the new level's number.
     private func applyChoice() {
         model.setDeckChoice(DeckChoice(topicIDs: topicIDs, startLevel: level))
+        model.setDailyNewWords(AppPreferences.dailyNewWords)
     }
 
     private func finish() {
@@ -348,6 +403,55 @@ private struct PageTitle: View {
         }
         .padding(.top, 4)
         .padding(.bottom, 6)
+    }
+}
+
+/// The first word with its meaning hidden (§2.8): the word as on the card (serif, the band under
+/// it) and "Dinle", then one button that turns it into the whole card. Same corners, padding and
+/// place as `WordCardView`, so nothing jumps when the meaning appears. "Başla" works either way.
+private struct GuessWordCard: View {
+    let word: WidgetWord
+    let showMeaning: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            headline
+            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+            Button(action: showMeaning) {
+                Label("Anlamını göster", systemImage: "eye")
+            }
+            .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
+            .accessibilityIdentifier("onboarding.reveal")
+        }
+        .padding(.top, 18)
+        .padding(.horizontal, 20)
+        .padding(.bottom, 20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .cardSurface(cornerRadius: Theme.Radius.wordCard)
+        .tint(Theme.ink)
+        .padding(.vertical, 16)
+    }
+
+    /// One line at 40 or 32 pt, as the card's headline; a long phrase wraps at 28 pt instead.
+    private var headline: some View {
+        ViewThatFits(in: .horizontal) {
+            line(size: 40)
+            line(size: 32)
+            Text(word.lemma)
+                .font(Theme.Fonts.englishWord(size: 28))
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: word.lemma))
+        .accessibilityAddTraits(.isHeader)
+        .cardEnglishVoice()
+    }
+
+    private func line(size: CGFloat) -> some View {
+        Text(word.lemma)
+            .englishWordStyle(size: size, maxSize: size * 1.4)
+            .phosphorBand()
     }
 }
 
