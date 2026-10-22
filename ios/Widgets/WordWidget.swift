@@ -28,10 +28,9 @@ struct WordWidget: Widget {
 /// the system removes or replaces it in tinted, vibrant and StandBy rendering. StandBy shows the
 /// small widget without its paper on a black screen (in vibrant mode at night); the home views
 /// then switch to the system's text styles (`WidgetColors`, `showsWidgetContainerBackground`).
-/// On the Always-On display the rectangular widget leaves out its definition row.
+/// On the Lock Screen the system draws the background; the widget brings only its gray levels.
 /// Content margins are disabled (see `WordWidget`): the home families place them themselves
-/// (HomeWordViews.swift), the rectangular family uses them as a minimum inner padding, the inline
-/// family gets them back as plain padding.
+/// (HomeWordViews.swift), the Lock Screen families get them back as plain padding.
 /// Tapping anywhere outside a button opens the app on this word (`widgetURL`); the word itself is
 /// not a button.
 struct WordWidgetView: View {
@@ -65,14 +64,12 @@ struct WordWidgetView: View {
     }
 
     /// Paper for the home widgets (mockup `.mode-color .wg`: `surface`, white by day and
-    /// near-black at night), the system's Lock Screen plate for the rectangular family; the inline
-    /// family draws none.
+    /// near-black at night). The Lock Screen families draw none: the system draws their
+    /// background (docs/tasarim/ogrenme_ilkeleri.md 2.1).
     @ViewBuilder
     private var containerFill: some View {
         switch family {
-        case .accessoryRectangular:
-            AccessoryWidgetBackground()
-        case .accessoryInline:
+        case .accessoryRectangular, .accessoryInline:
             Color.clear
         default:
             Theme.surface

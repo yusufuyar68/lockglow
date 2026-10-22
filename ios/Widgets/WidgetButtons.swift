@@ -6,13 +6,16 @@ import CoreModels
 // Interactive buttons (iOS 17 `Button(intent:)`). Used on the home screen families only;
 // accessory (Lock Screen) widgets could show buttons, but they do not work while the device is
 // locked, so those families have none.
-// Order in both home families: Know, speaker, Next (README "Widget'lar"). Next sits in the easy
-// corner (bottom right of the small widget, bottom of the medium widget's column); Know, which
-// marks a word known without a test, is the farthest from it, and the harmless speaker sits
+// The small widget has two buttons, speaker and Next, in its bottom corners: three 44 pt buttons
+// do not fit an iPhone SE's 116 pt with room between them (docs/tasarim/ogrenme_ilkeleri.md 2.1).
+// The medium widget's column keeps Know, speaker, Next (README "Widget'lar"). Next sits in the
+// easy corner (bottom right of the small widget, bottom of the medium widget's column); Know,
+// which marks a word known without a test, is the farthest from it, and the harmless speaker sits
 // between the two buttons that change state.
-// All three buttons are icon-only with a text label for VoiceOver; meaning never depends on color.
-// Each one is a 34 pt circle (mockup `.wb`) centred in a hit area of exactly 44 x 44 pt, so the
-// group is always 132 pt long and the views can keep its place free of text (HomeWordViews.swift).
+// The buttons are icon-only with a Turkish label for VoiceOver ("Kelimeyi dinle", "Sonraki
+// kelime", "Biliyorum"); meaning never depends on color. Each one is a 34 pt circle (mockup `.wb`)
+// centred in a hit area of exactly 44 x 44 pt, so the views can keep the buttons' place free of
+// text (HomeWordViews.swift).
 // The glyphs share one font size, weight and image scale; Next is the filled one (mockup `.wb`).
 // Next and Know run in the widget extension (`WordActions`); the speaker button runs in the app's
 // process (`SpeakWordIntent` is an `AudioPlaybackIntent`).
