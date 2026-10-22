@@ -59,26 +59,25 @@ struct SmallWordView: View {
         VStack(alignment: .leading, spacing: 0) {
             // ogrenme_ilkeleri 2.1: the word steps down 24 → 20 → 17 pt (a phrase may take two
             // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
-            // (`WidgetGloss`) before it takes two lines or gets smaller.
+            // (`WidgetGloss`) on one line, then on two, before it gets smaller. At accessibility
+            // text sizes the word and the meaning are shown (2.1): when they do not fit at the
+            // chosen size, they stop growing at the largest standard size before the meaning is
+            // left out.
             ViewThatFits(in: .vertical) {
-                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1])
-                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [2])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [2])
+                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
                 column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
                 column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
                 // A long meaning without a short form (the user's own words have none; every
                 // card's meaning over 16 characters has `gloss_short`): 13 pt on two or three
                 // lines rather than no meaning.
                 column(WidgetWordStep.homeFloor, meaning: .footnote.weight(.bold), lines: [2, 3])
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
                 column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                WidgetFittingWord(
-                    lemma: word.lemma,
-                    steps: WidgetWordStep.homeFloor,
-                    lastResort: true,
-                    colors: colors,
-                    renderingMode: renderingMode
-                )
+                WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
@@ -153,8 +152,10 @@ struct MediumWordView: View {
         HStack(alignment: .top, spacing: 8) {
             // The next change gives way first, then the example, then the definition (the short
             // one, else the micro one); only then does the meaning shorten (`WidgetGloss`), take
-            // two lines and get smaller. The word alone is the last resort, so the meaning never
-            // runs out of the column at large text sizes (accessibility audit D5).
+            // two lines and get smaller. At accessibility text sizes the word and the meaning stop
+            // growing at the largest standard size before the meaning is left out. The word alone
+            // is the last resort, so the meaning never runs out of the column at large text sizes
+            // (accessibility audit D5).
             ViewThatFits(in: .vertical) {
                 column(shortens: false, definition: true, example: true, nextChange: true)
                 column(shortens: false, definition: true, example: true)
@@ -162,6 +163,10 @@ struct MediumWordView: View {
                 column(shortens: false)
                 column()
                 column(meaning: .subheadline.weight(.bold))
+                column()
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                column(meaning: .subheadline.weight(.bold))
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
                 wordRow(lastResort: true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -326,6 +331,11 @@ struct WidgetWordStep: Equatable {
         WidgetWordStep(size: 15, scales: false),
         WidgetWordStep(size: 15, lines: 2, scales: false),
     ]
+    /// The floor without Dynamic Type: the last resort of the word alone (`WidgetWordAlone`).
+    static let homeFloorUnscaled = [
+        WidgetWordStep(size: 15, scales: false),
+        WidgetWordStep(size: 15, lines: 2, scales: false),
+    ]
     /// The rectangular Lock Screen widget: 17, then 15 pt on one line.
     static let lockScreen = [WidgetWordStep(size: 17), WidgetWordStep(size: 15)]
     /// The medium widget: 20, 17, 15 pt on one line, then a phrase on two lines at 17 or 15 pt;
@@ -405,6 +415,36 @@ struct WidgetFittingWord: View {
                 .accessibilityHidden(index > 0)
                 .widgetEnglishVoice()
             }
+        }
+    }
+}
+
+/// The word alone, the last layout variant of the small and the Lock Screen widget: at the first
+/// of the Home Screen floor's steps that fits the width and the height, else at an unscaled 15 pt.
+/// At the largest text sizes a phrase on two scaled lines can fit the width and still be taller
+/// than the widget ("I can't / wait" ran out of the Lock Screen rectangle at AX3); it gets smaller
+/// instead of being cut.
+struct WidgetWordAlone: View {
+    let lemma: String
+    let colors: WidgetColors
+    /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
+    var renderingMode: WidgetRenderingMode? = nil
+
+    var body: some View {
+        ViewThatFits(in: .vertical) {
+            WidgetFittingWord(
+                lemma: lemma,
+                steps: WidgetWordStep.homeFloor,
+                colors: colors,
+                renderingMode: renderingMode
+            )
+            WidgetFittingWord(
+                lemma: lemma,
+                steps: WidgetWordStep.homeFloorUnscaled,
+                lastResort: true,
+                colors: colors,
+                renderingMode: renderingMode
+            )
         }
     }
 }
@@ -687,6 +727,10 @@ enum WidgetGloss {
 
 /// Text helpers for the widget layouts.
 enum WidgetText {
+    /// The largest standard text size (no accessibility size): where the word and the meaning
+    /// stop growing when they fit at no larger size.
+    static let largestStandardSize = DynamicTypeSize.xxxLarge
+
     /// `text` in two lines of about the same length (`balancedLines(_:count:)`).
     static func balancedLines(_ text: String) -> [String] {
         return balancedLines(text, count: 2)

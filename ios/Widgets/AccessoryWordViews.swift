@@ -33,14 +33,9 @@ struct RectangularWordView: View {
             rows(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.semibold), lines: [1])
             rows(WidgetWordStep.homeFloor, meaning: .footnote.weight(.semibold), lines: [1, 2])
             rows(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.semibold), lines: [1])
-            // Large text sizes and phrases whose meaning fits in no form: the word alone.
-            WidgetFittingWord(
-                lemma: word.lemma,
-                steps: WidgetWordStep.homeFloor,
-                lastResort: true,
-                colors: colors,
-                renderingMode: renderingMode
-            )
+            // Large text sizes and phrases whose meaning fits in no form: the word alone, never
+            // taller than the widget.
+            WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .padding(margins)
