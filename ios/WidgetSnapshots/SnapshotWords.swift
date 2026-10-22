@@ -8,7 +8,10 @@ import CoreModels
 /// in its example ("lost and found": the example starts a few words before the word), the longest
 /// gloss without a comma ("under the weather"). Added on 2026-10-22: the longest single word
 /// ("misunderstanding", which cannot go onto two lines) and the longest one-word gloss
-/// ("sabırsızlanıyorum").
+/// ("sabırsızlanıyorum"). Added for the two-row Lock Screen and the small widget's size steps
+/// (docs/tasarim/ogrenme_ilkeleri.md 2.1): a meaning without a comma that must never show as
+/// "aynı fikirde ol…" ("disagree") and the second longest phrase, with a short meaning ("the day
+/// before yesterday").
 enum SnapshotWords {
     static let all: [WidgetWord] = [
         WidgetWord(
@@ -65,6 +68,16 @@ enum SnapshotWords {
             id: 820, lemma: "I can't wait", pos: "phr", level: "A2", ipaUS: "/aɪ ˌkænt ˈweɪt/",
             defMicro: "excited about a coming event", defShort: "used to say that you are very excited and want something to happen soon",
             exampleEN: "I can't wait for the weekend!", glossTR: "sabırsızlanıyorum"
+        ),
+        WidgetWord(
+            id: 801, lemma: "disagree", pos: "v", level: "A2", ipaUS: "/ˌdɪsəˈɡriː/",
+            defMicro: "have a different opinion", defShort: "have a different opinion from someone else about something",
+            exampleEN: "I'm sorry, but I disagree.", glossTR: "aynı fikirde olmamak"
+        ),
+        WidgetWord(
+            id: 939, lemma: "the day before yesterday", pos: "phr", level: "A2", ipaUS: "/ðə deɪ bɪfɔːr ˈjɛstərdeɪ/",
+            defMicro: "two days ago", defShort: "the day that came two days before today",
+            exampleEN: "It snowed the day before yesterday.", glossTR: "evvelki gün"
         ),
     ]
 }

@@ -9,11 +9,13 @@ import CoreModels
 /// screen. An approximation: WidgetKit's own chrome, tinting and Lock Screen vibrancy are not
 /// reproduced; home widgets get WidgetKit's default 16 pt content margin. The widget disables
 /// the system margins and the views apply them, so the margins are passed in as on a device.
-/// The views are told the rendering mode, whether the system shows their paper and whether the
-/// display is dimmed (the environment's own values cannot be set here), so the tinted images show
-/// the thin band line and the system text styles on a dark stand-in for the tinted background,
-/// the StandBy images the small widget without its paper on black, and the Always-On images the
-/// rectangular widget without its definition row.
+/// The views are told the rendering mode and whether the system shows their paper (the
+/// environment's own values cannot be set here), so the tinted images show the thin band line and
+/// the system text styles on a dark stand-in for the tinted background, the StandBy images the
+/// small widget without its paper on black, and the Lock Screen images the opaque grays on a dark
+/// wallpaper (darker still on the Always-On display, `-aod`).
+/// The iPhone SE sizes are also rendered at three larger text sizes (`-xxxl`, `-ax1`, `-ax3`):
+/// the meaning must never run under the buttons or be cut (accessibility audit D5).
 @MainActor
 final class WidgetSnapshotTests: XCTestCase {
     private enum Kind {
@@ -28,9 +30,10 @@ final class WidgetSnapshotTests: XCTestCase {
         let kind: Kind
         let size: CGSize
         let margin: CGFloat
-        /// Also rendered at night, tinted and (small) in StandBy: the 393 pt sizes; the SE sizes
-        /// check the fit only.
+        /// Also rendered at night, tinted and (small) in StandBy: the 393 pt sizes.
         let allLooks: Bool
+        /// Also rendered at larger text sizes: the SE sizes.
+        var textSizes = false
     }
 
     /// The appearance an image is rendered in; `suffix` is added to the attachment name.
@@ -40,18 +43,22 @@ final class WidgetSnapshotTests: XCTestCase {
         let renderingMode: WidgetRenderingMode
         /// False in StandBy: the system removes the widget's paper.
         var showsBackground = true
-        /// The Always-On display.
+        /// The Always-On display (only the backdrop changes).
         var luminanceReduced = false
+        var dynamicTypeSize = DynamicTypeSize.large
     }
 
-    // Point sizes on a 393 pt wide iPhone (15/16/17) and on the 375 pt iPhone SE.
+    // Point sizes from the HIG widget size table: a 393 pt wide iPhone (15/16/17) and the 375 x
+    // 667 pt iPhone SE.
     private let families = [
         Family(name: "small", kind: .small, size: CGSize(width: 158, height: 158), margin: 16, allLooks: true),
-        Family(name: "small-se", kind: .small, size: CGSize(width: 148, height: 148), margin: 16, allLooks: false),
+        Family(name: "small-se", kind: .small, size: CGSize(width: 148, height: 148), margin: 16, allLooks: false, textSizes: true),
         Family(name: "medium", kind: .medium, size: CGSize(width: 338, height: 158), margin: 16, allLooks: true),
-        Family(name: "medium-se", kind: .medium, size: CGSize(width: 321, height: 148), margin: 16, allLooks: false),
+        Family(name: "medium-se", kind: .medium, size: CGSize(width: 321, height: 148), margin: 16, allLooks: false, textSizes: true),
         Family(name: "rect", kind: .rectangular, size: CGSize(width: 160, height: 72), margin: 0, allLooks: false),
-        Family(name: "inline", kind: .inline, size: CGSize(width: 240, height: 22), margin: 0, allLooks: false),
+        Family(name: "rect-se", kind: .rectangular, size: CGSize(width: 153, height: 68), margin: 0, allLooks: false, textSizes: true),
+        Family(name: "inline", kind: .inline, size: CGSize(width: 234, height: 26), margin: 0, allLooks: false),
+        Family(name: "inline-se", kind: .inline, size: CGSize(width: 225, height: 26), margin: 0, allLooks: false),
     ]
 
     private let day = Look(suffix: "", colorScheme: .light, renderingMode: .fullColor)
@@ -63,6 +70,12 @@ final class WidgetSnapshotTests: XCTestCase {
     private let lockScreen = Look(suffix: "", colorScheme: .dark, renderingMode: .vibrant)
     /// The Always-On display: the Lock Screen dimmed.
     private let alwaysOn = Look(suffix: "-aod", colorScheme: .dark, renderingMode: .vibrant, luminanceReduced: true)
+    /// The larger text sizes of the SE images.
+    private let textSizes: [(suffix: String, size: DynamicTypeSize)] = [
+        ("-xxxl", .xxxLarge),
+        ("-ax1", .accessibility1),
+        ("-ax3", .accessibility3),
+    ]
 
     func testRenderWidgetFamiliesForStressWords() throws {
         let now = Date(timeIntervalSince1970: 1_800_000_000)
@@ -92,26 +105,58 @@ final class WidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(WidgetTime.clock(evening, timeZone: timeZone), "21:05")
     }
 
-    /// Phrases and meanings that do not fit on one line break between words into two lines of
-    /// about the same length; a single word is never broken.
+    /// Phrases and meanings that do not fit on one line break between words into lines of about
+    /// the same length; a single word is never broken.
     func testBalancedLines() {
         XCTAssertEqual(WidgetText.balancedLines("Could you tell me the way to"), ["Could you tell", "me the way to"])
         XCTAssertEqual(WidgetText.balancedLines("kendini pek iyi hissetmemek"), ["kendini pek iyi", "hissetmemek"])
         XCTAssertEqual(WidgetText.balancedLines("sonunda kendini ... bulmak"), ["sonunda kendini", "... bulmak"])
         XCTAssertEqual(WidgetText.balancedLines("aslında, gerçekte"), ["aslında,", "gerçekte"])
         XCTAssertEqual(WidgetText.balancedLines("sabırsızlanıyorum"), ["sabırsızlanıyorum"])
+        XCTAssertEqual(WidgetText.balancedLines("kendini pek iyi hissetmemek", count: 3), ["kendini", "pek iyi", "hissetmemek"])
+        XCTAssertEqual(WidgetText.balancedLines("… yolunu tarif eder misiniz?", count: 3), ["… yolunu", "tarif eder", "misiniz?"])
+        XCTAssertEqual(WidgetText.balancedLines("aslında, gerçekte", count: 3), ["aslında,", "gerçekte"])
+        XCTAssertEqual(WidgetText.balancedLines("misunderstanding", count: 2), ["misunderstanding"])
+    }
+
+    /// The meaning shortens to its first sense (a " / " pair stays whole), then to its short
+    /// form; it is never cut and no form repeats.
+    func testGlossFormsNeverCutTheMeaning() {
+        XCTAssertEqual(WidgetGloss.forms(of: "aslında, gerçekte", short: nil), ["aslında, gerçekte", "aslında"])
+        XCTAssertEqual(WidgetGloss.forms(of: "amca / dayı", short: nil), ["amca / dayı"])
+        XCTAssertEqual(WidgetGloss.forms(of: "aynı fikirde olmamak", short: "katılmamak"), ["aynı fikirde olmamak", "katılmamak"])
+        XCTAssertEqual(WidgetGloss.forms(of: "kahvaltı", short: "kahvaltı"), ["kahvaltı"])
+        XCTAssertEqual(WidgetGloss.firstSense(of: "durmak; durdurmak"), "durmak")
+        XCTAssertEqual(
+            WidgetText.candidates(["aslında, gerçekte", "aslında"], lines: [1, 2]),
+            [["aslında, gerçekte"], ["aslında"], ["aslında,", "gerçekte"]]
+        )
     }
 
     private func looks(for family: Family) -> [Look] {
+        let base: [Look]
         switch family.kind {
         case .small:
-            return family.allLooks ? [day, night, tinted, standBy] : [day]
+            base = family.allLooks ? [day, night, tinted, standBy] : [day]
         case .medium:
-            return family.allLooks ? [day, night, tinted] : [day]
+            base = family.allLooks ? [day, night, tinted] : [day]
         case .rectangular:
-            return [lockScreen, alwaysOn]
+            base = [lockScreen, alwaysOn]
         case .inline:
-            return [lockScreen]
+            base = [lockScreen]
+        }
+        guard family.textSizes, let first = base.first else {
+            return base
+        }
+        return base + textSizes.map { textSize in
+            Look(
+                suffix: first.suffix + textSize.suffix,
+                colorScheme: first.colorScheme,
+                renderingMode: first.renderingMode,
+                showsBackground: first.showsBackground,
+                luminanceReduced: first.luminanceReduced,
+                dynamicTypeSize: textSize.size
+            )
         }
     }
 
@@ -126,8 +171,7 @@ final class WidgetSnapshotTests: XCTestCase {
                 entry: entry,
                 margins: margins,
                 renderingMode: look.renderingMode,
-                showsBackground: look.showsBackground,
-                luminanceReduced: look.luminanceReduced
+                showsBackground: look.showsBackground
             )
         case .medium:
             MediumWordView(
@@ -140,8 +184,7 @@ final class WidgetSnapshotTests: XCTestCase {
             RectangularWordView(
                 entry: entry,
                 margins: margins,
-                renderingMode: look.renderingMode,
-                luminanceReduced: look.luminanceReduced
+                renderingMode: look.renderingMode
             )
         case .inline:
             InlineWordView(entry: entry)
@@ -150,8 +193,8 @@ final class WidgetSnapshotTests: XCTestCase {
     }
 
     /// What WidgetKit would draw behind the view: the widget's `surface` in full color, black in
-    /// StandBy, a dark tinted panel, the Lock Screen plate (`AccessoryWidgetBackground`) on a dark
-    /// wallpaper (fainter on the Always-On display), or just the wallpaper behind the inline line.
+    /// StandBy, a dark tinted panel, or on the Lock Screen just the wallpaper (the system draws no
+    /// plate there; darker on the Always-On display).
     @ViewBuilder
     private func backdrop(for family: Family, look: Look) -> some View {
         switch family.kind {
@@ -163,13 +206,8 @@ final class WidgetSnapshotTests: XCTestCase {
             } else {
                 Color(red: 0.09, green: 0.10, blue: 0.12)
             }
-        case .rectangular:
-            ZStack {
-                Color(white: look.luminanceReduced ? 0.04 : 0.16)
-                Color.white.opacity(look.luminanceReduced ? 0.06 : 0.14)
-            }
-        case .inline:
-            Color(white: 0.16)
+        case .rectangular, .inline:
+            Color(white: look.luminanceReduced ? 0.04 : 0.16)
         }
     }
 
@@ -192,6 +230,7 @@ final class WidgetSnapshotTests: XCTestCase {
             }
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius(for: family), style: .continuous))
             .environment(\.colorScheme, look.colorScheme)
+            .environment(\.dynamicTypeSize, look.dynamicTypeSize)
         let renderer = ImageRenderer(content: content)
         renderer.scale = 3
         guard let image = renderer.uiImage else {

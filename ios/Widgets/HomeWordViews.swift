@@ -2,39 +2,37 @@ import SwiftUI
 import WidgetKit
 import CoreModels
 
-// Home Screen widgets (docs/tasarim/README.md "Widget'lar", mockup `.wg`): paper and ink, the
-// phosphor band under the English word as the only bright mark. English text is serif, Turkish
-// and UI text SF Pro (no rounded, no italic). Fonts stay at 11 pt or above (`.caption2` is the
-// smallest style used); only a headword that does not fit otherwise shrinks below that.
+// Home Screen widgets (docs/tasarim/README.md "Widget'lar", docs/tasarim/ogrenme_ilkeleri.md 2.1,
+// mockup `.wg`): paper and ink, the phosphor band under the English word as the only bright mark.
+// English text is serif, Turkish and UI text SF Pro (no rounded, no italic). Fonts stay at 11 pt or
+// above (`.caption2` is the smallest style used); only a 16-letter word on an iPhone SE shrinks a
+// little below its 15 pt floor (`WidgetFittingWord`, last resort).
 // Home widgets have roughly 126 x 126 pt (small) and 306 x 126 pt (medium) of content area
-// (116 x 116 and 289 x 116 pt on an iPhone SE); the 44 pt buttons take a large share of that, so
-// the text is kept short.
-// Buttons: Know, speaker, Next (WidgetButtons.swift). Three 44 pt buttons are 132 pt long: more
-// than the small widget's content width and the medium widget's content height on an SE (116 pt;
-// 126 pt on 6.1" phones). The widget disables the system content margins (`WordWidget`); these
-// views apply them (`margins`, from `widgetContentMargins`) and draw the buttons in an overlay
-// that reaches `buttonGroupOverflow` into the margin on the widget's outer edges (small: left,
-// right and bottom; medium: top, right and bottom), so each 34 pt circle sits 13 pt from those
-// edges. The hit areas stay 44 x 44 pt and inside the widget's root view; a placeholder holds the
-// part of the buttons that lies inside the margins, so the text never runs under them. The glyphs
-// stop growing at the first accessibility text size, so the group stays 132 pt and never pushes
-// the text.
-// Reading at a glance (A2 learner): the word is the largest text, the Turkish meaning (bold) the
-// second; the English definition, the example and the next change are quiet (`ink2`) and one line
-// each. The small widget shows at most three lines: the word, the meaning, and the micro definition
-// only when the meaning takes one line.
-// Layout: every line is a single line of text that is either shown whole or not at all, never cut
-// with "…". The text column is a ViewThatFits over layout variants, fullest first; it compares the
-// variants' ideal sizes (all lines on one line each) with the space left by the buttons. A word or
-// meaning that does not fit steps down: it may shrink a little (`ShrinkableLine`), a phrase or a
-// meaning of several words goes onto two balanced lines (`WidgetText.balancedLines`), and on the
-// small widget the level code gives way to a long word. The last variant is the fallback for the
-// largest text sizes and the longest phrases.
+// (116 x 116 and 289 x 116 pt on an iPhone SE); the 44 pt buttons take a large share of that.
+// Buttons (WidgetButtons.swift): the small widget has two, speaker and Next. Three 44 pt buttons
+// would take 132 pt, more than an SE's 116 pt, with no room between them (ogrenme_ilkeleri 2.1);
+// Know is on the medium widget and in the app. The medium widget keeps Know, speaker, Next in a
+// column. The widget disables the system content margins (`WordWidget`); these views apply them
+// (`margins`, from `widgetContentMargins`) and draw the buttons in an overlay that reaches
+// `buttonGroupOverflow` into the margin on the widget's outer edges (small: left, right and
+// bottom; medium: top, right and bottom), so each 34 pt circle sits 13 pt from those edges. The
+// hit areas stay 44 x 44 pt and inside the widget's root view; a placeholder holds the part of the
+// buttons that lies inside the margins, so the text never runs under them at any text size
+// (accessibility audit D5). The glyphs stop growing at the first accessibility text size.
+// Reading at a glance (A2 learner): the small widget shows the word and its Turkish meaning and
+// nothing else. The medium widget adds a quiet (`ink2`) definition, example and next change.
+// Layout: every line is shown whole or not at all, never cut with "…" and never broken inside a
+// word. The text column is a vertical ViewThatFits over layout variants, fullest first: each
+// variant gets the column's width, and the first whose height fits is shown. Inside a variant,
+// each line that can shorten picks its own step for that width (`WidgetFittingWord`,
+// `WidgetFittingText`). A line with no step that fits makes its variant too tall to be chosen
+// (`WidgetFit.reject`), so the next variant tries smaller type or more lines. The last variant,
+// the word alone, always fits.
 
 /// How far the button group reaches into the widget margin on the widget's outer edges.
 private let buttonGroupOverflow: CGFloat = 8
-/// Space between the word's row and the meaning: the night band hangs about 4 pt below the
-/// word's frame (LockglowTheme, "Phosphor band").
+/// Space between the word and the meaning: the night band hangs about 4 pt below the word's
+/// frame (LockglowTheme, "Phosphor band").
 private let headerGap: CGFloat = 6
 
 struct SmallWordView: View {
@@ -45,11 +43,8 @@ struct SmallWordView: View {
     var renderingMode: WidgetRenderingMode? = nil
     /// Replaces the environment's `showsWidgetContainerBackground` (snapshot tests only).
     var showsBackground: Bool? = nil
-    /// Replaces the environment's `isLuminanceReduced` (snapshot tests only).
-    var luminanceReduced: Bool? = nil
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.showsWidgetContainerBackground) private var environmentShowsBackground
-    @Environment(\.isLuminanceReduced) private var environmentLuminanceReduced
     private var word: WidgetWord { entry.word }
     private var colors: WidgetColors {
         WidgetColors.forMode(
@@ -57,40 +52,47 @@ struct SmallWordView: View {
             showsBackground: showsBackground ?? environmentShowsBackground
         )
     }
-    /// StandBy at night and other dimmed displays: no definition line.
-    private var isDimmed: Bool { luminanceReduced ?? environmentLuminanceReduced }
     /// The part of the button row that lies in the bottom margin.
     private var bottomOverflow: CGFloat { min(buttonGroupOverflow, margins.bottom) }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // At most three lines; the micro definition (at most 28 characters) only when it fits
-            // whole under a one-line meaning.
-            ViewThatFits {
-                column(.large, meaningLines: 1, definition: !isDimmed)
-                column(.large, meaningLines: 1)
-                column(.large, meaningLines: 2)
-                column(.large, wordLines: 2, meaningLines: 1)
-                column(.small, meaningLines: 1, level: false)
-                column(.small, meaningLines: 2, level: false)
-                column(.small, wordLines: 2, meaningLines: 1, level: false)
-                fallbackColumn
+            // ogrenme_ilkeleri 2.1: the word steps down 24 → 20 → 17 pt (a phrase may take two
+            // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
+            // (`WidgetGloss`) before it takes two lines or gets smaller.
+            ViewThatFits(in: .vertical) {
+                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1])
+                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [2])
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1])
+                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [2])
+                column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
+                column(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                // Until every long meaning has its short form (`gloss_short`): 13 pt on two or
+                // three lines rather than no meaning.
+                column(WidgetWordStep.homeFloor, meaning: .footnote.weight(.bold), lines: [2, 3])
+                column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                WidgetFittingWord(
+                    lemma: word.lemma,
+                    steps: WidgetWordStep.homeFloor,
+                    lastResort: true,
+                    colors: colors,
+                    renderingMode: renderingMode
+                )
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
-            Spacer(minLength: 4)
+            Spacer(minLength: 2)
             // The button row's place; the row itself is the overlay below.
             Color.clear
                 .frame(height: Theme.minHitSize - bottomOverflow)
         }
         .padding(margins)
         .overlay(alignment: .bottom) {
-            // Next in the easy corner (bottom right), Know the farthest from it.
+            // Next in the easy corner (bottom right), the speaker in the other corner: the wide
+            // gap between them keeps one from being pressed for the other.
             HStack(spacing: 0) {
-                KnowWordButton(wordID: word.id, source: .systemSmall, colors: colors)
-                Spacer(minLength: 0)
                 SpeakWordButton(text: word.lemma, colors: colors)
-                Spacer(minLength: 0)
+                Spacer(minLength: 8)
                 NextWordButton(wordID: word.id, source: .systemSmall, colors: colors)
             }
             .dynamicTypeSize(...DynamicTypeSize.accessibility1)
@@ -100,74 +102,32 @@ struct SmallWordView: View {
         }
     }
 
-    /// One layout variant: the word (with the level when `level`), the meaning in `meaningLines`
-    /// lines and, when `definition`, the micro definition on one line.
+    /// One layout variant: the word at the first of `steps` that fits and, under it, the meaning
+    /// in `typeface` on the first of `lines` line counts that fits.
     private func column(
-        _ fit: WidgetWordFit,
-        wordLines: Int = 1,
-        meaningLines: Int,
-        definition: Bool = false,
-        level: Bool = true
+        _ steps: [WidgetWordStep],
+        lastResort: Bool = false,
+        meaning typeface: Font,
+        lines: [Int]
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            WidgetWordLines(
+            WidgetFittingWord(
                 lemma: word.lemma,
-                fit: fit,
-                lines: wordLines,
-                level: level ? word.level : nil,
+                steps: steps,
+                lastResort: lastResort,
                 colors: colors,
                 renderingMode: renderingMode
             )
-            VStack(alignment: .leading, spacing: 2) {
-                if let gloss = word.glossTR {
-                    WidgetMeaning(gloss: gloss, typeface: .subheadline.weight(.bold), lines: meaningLines, color: colors.ink)
-                    if definition {
-                        WidgetDefinition(text: word.defMicro, typeface: .system(.caption, design: .serif), color: colors.ink2)
-                    }
-                } else {
-                    // No Turkish meaning: the micro definition takes its place.
-                    WidgetDefinition(text: word.defMicro, typeface: .system(.caption, design: .serif), lines: meaningLines, color: colors.ink2)
-                }
+            // Every card has a Turkish meaning; without one the word stands alone.
+            if word.glossTR != nil {
+                WidgetMeaning(forms: WidgetGloss.forms(of: word), typeface: typeface, lines: lines, color: colors.ink)
+                    .padding(.top, headerGap)
             }
-            .padding(.top, headerGap)
-        }
-    }
-
-    /// The fallback for the longest phrases ("Could you tell me the way to") and the largest text
-    /// sizes: a phrase on two lines at 17 pt, shrinking as far as it must, and the meaning at 13 pt
-    /// in the room left (two lines at the default text size; cut only when even one does not fit).
-    /// The one exception to three lines: such a phrase and its meaning do not fit whole in fewer.
-    private var fallbackColumn: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            WidgetWordLines(
-                lemma: word.lemma,
-                fit: .small,
-                lines: 2,
-                typeface: Font.system(.headline, design: .serif).weight(.bold),
-                colors: colors,
-                renderingMode: renderingMode
-            )
-            .layoutPriority(1)
-            Group {
-                if let gloss = word.glossTR {
-                    WidgetMeaning(gloss: gloss, typeface: .footnote.weight(.bold), lines: 2, wraps: true, color: colors.ink)
-                } else {
-                    WidgetDefinition(text: word.defMicro, typeface: .system(.caption, design: .serif), lines: 2, color: colors.ink2)
-                }
-            }
-            .padding(.top, headerGap)
         }
     }
 }
 
 struct MediumWordView: View {
-    /// Which definition a layout variant shows: the short one when it fits on one line, else the
-    /// micro definition (at most 28 characters).
-    private enum DefinitionLength {
-        case short
-        case micro
-    }
-
     let entry: WordEntry
     /// The widget's content margins (`widgetContentMargins`); WidgetKit's default for home widgets.
     var margins = EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
@@ -189,17 +149,18 @@ struct MediumWordView: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            // The definition gives way first (short, then micro), then the next change, the
-            // example, the definition; the word shrinks last.
-            ViewThatFits {
-                column(.large, definition: .short, example: true, nextChange: true)
-                column(.large, definition: .micro, example: true, nextChange: true)
-                column(.large, definition: .micro, example: true)
-                column(.large, definition: .micro)
-                column(.large)
-                column(.large, meaningLines: 2)
-                column(.small, definition: .micro)
-                column(.small, meaningLines: 2)
+            // The next change gives way first, then the example, then the definition (the short
+            // one, else the micro one); only then does the meaning shorten (`WidgetGloss`), take
+            // two lines and get smaller. The word alone is the last resort, so the meaning never
+            // runs out of the column at large text sizes (accessibility audit D5).
+            ViewThatFits(in: .vertical) {
+                column(shortens: false, definition: true, example: true, nextChange: true)
+                column(shortens: false, definition: true, example: true)
+                column(shortens: false, definition: true)
+                column(shortens: false)
+                column()
+                column(meaning: .subheadline.weight(.bold))
+                wordRow
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             // The button column's place (a row would take the width of the text); the column
@@ -224,30 +185,40 @@ struct MediumWordView: View {
         }
     }
 
-    /// One layout variant. The next change sits at the bottom, beside the Next button.
+    private var wordRow: some View {
+        WidgetWordRow(
+            lemma: word.lemma,
+            level: word.level,
+            ipa: word.ipaUS,
+            colors: colors,
+            renderingMode: renderingMode
+        )
+    }
+
+    /// One layout variant: the meaning on one or two lines, whole (`shortens` false) or in its
+    /// shorter forms too; the next change sits at the bottom, beside the Next button.
     private func column(
-        _ fit: WidgetWordFit,
-        meaningLines: Int = 1,
-        definition: DefinitionLength? = nil,
+        meaning typeface: Font = .callout.weight(.bold),
+        shortens: Bool = true,
+        definition: Bool = false,
         example: Bool = false,
         nextChange: Bool = false
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            WidgetWordLines(
-                lemma: word.lemma,
-                fit: fit,
-                level: word.level,
-                ipa: word.ipaUS,
-                colors: colors,
-                renderingMode: renderingMode
-            )
+            wordRow
             VStack(alignment: .leading, spacing: 3) {
-                if let gloss = word.glossTR {
-                    WidgetMeaning(gloss: gloss, typeface: .callout.weight(.bold), lines: meaningLines, color: colors.ink)
+                if word.glossTR != nil {
+                    let forms = WidgetGloss.forms(of: word)
+                    WidgetMeaning(
+                        forms: shortens ? forms : Array(forms.prefix(1)),
+                        typeface: typeface,
+                        lines: [1, 2],
+                        color: colors.ink
+                    )
                 }
-                if let definition {
+                if definition {
                     WidgetDefinition(
-                        text: definition == .short ? word.defShort : word.defMicro,
+                        texts: [word.defShort, word.defMicro],
                         typeface: .system(.footnote, design: .serif),
                         color: colors.ink2
                     )
@@ -274,16 +245,17 @@ struct MediumWordView: View {
 // MARK: - Parts shared with the Lock Screen views
 
 /// The widget's colors for its rendering mode. Full color on the widget's own paper uses the
-/// design tokens. When the system tints the widget (accented and clear Home Screen, vibrant Lock
-/// Screen, StandBy at night) it keeps only each color's opacity, so two opaque tokens would look
-/// the same: the system's hierarchical styles keep the meaning and definition visibly quieter
-/// than the word, and the button circles become a faint wash instead of an opaque disc that
-/// tinting would paint in the icon's own color. The same styles are used in full color when the
-/// system removes the paper (StandBy, `showsWidgetContainerBackground`): ink on a black screen.
+/// design tokens. When the system tints a Home Screen widget (accented and clear Home Screen,
+/// StandBy at night) it keeps only each color's opacity, so two opaque tokens would look the
+/// same: the system's hierarchical styles keep the meaning and definition visibly quieter than the
+/// word, and the button circles become a faint wash instead of an opaque disc that tinting would
+/// paint in the icon's own color. The same styles are used in full color when the system removes
+/// the paper (StandBy, `showsWidgetContainerBackground`): ink on a black screen. The Lock Screen
+/// has its own opaque grays (`lockScreen`).
 struct WidgetColors {
     /// The word, the meaning and the button icons.
     let ink: AnyShapeStyle
-    /// Definition, example, IPA, level and the next change.
+    /// Definition, example, IPA, level and the next change; the meaning on the Lock Screen.
     let ink2: AnyShapeStyle
     /// The circle behind a button icon (mockup `.wb span`).
     let buttonFill: AnyShapeStyle
@@ -297,8 +269,7 @@ struct WidgetColors {
         )
     }
 
-    /// Tinted and vibrant rendering, or no paper: the system's primary, secondary and quaternary
-    /// styles.
+    /// Tinted rendering, or no paper: the system's primary, secondary and quaternary styles.
     static var system: WidgetColors {
         return WidgetColors(
             ink: AnyShapeStyle(HierarchicalShapeStyle.primary),
@@ -307,99 +278,164 @@ struct WidgetColors {
         )
     }
 
+    /// The Lock Screen (vibrant rendering; the system draws the background): opaque grays, white
+    /// for the word and a darker gray for the meaning. The system turns their luminance into its
+    /// vibrant material; Apple asks for "opaque grayscale values, rather than opacities of white"
+    /// (HIG Widgets), so the hierarchy is never built with opacity. The gray stays the same on the
+    /// Always-On display, where the system dims the whole screen.
+    static var lockScreen: WidgetColors {
+        return WidgetColors(
+            ink: AnyShapeStyle(Color(white: 1)),
+            ink2: AnyShapeStyle(Color(white: 0.75)),
+            buttonFill: AnyShapeStyle(Color(white: 0.3))
+        )
+    }
+
     static func forMode(_ mode: WidgetRenderingMode, showsBackground: Bool = true) -> WidgetColors {
         return mode == .fullColor && showsBackground ? tokens : system
     }
 }
 
-/// How large a layout variant draws the headword. ViewThatFits measures the word as if it already
-/// had shrunk to `measuredScale` of its size (`ShrinkableLine`; the level and IPA beside it count
-/// at full size); placed, the word takes the width it gets and shrinks only as far as it must
-/// (`widgetWordStyle`: to 60 % at most).
-enum WidgetWordFit {
-    /// The word fits at 80 % of its size or more: still clearly the largest text.
-    case large
-    /// The word may shrink to about 65 % (the long phrases); on the small widget the level code
-    /// gives way.
-    case small
+/// One size step of a headword: `size` pt at the default text size, scaled with Dynamic Type
+/// unless `scales` is false, on up to `lines` balanced lines (a single word stays on one line).
+struct WidgetWordStep: Equatable {
+    let size: CGFloat
+    var lines = 1
+    var scales = true
 
-    var measuredScale: CGFloat {
-        switch self {
-        case .large:
-            return 0.8
-        case .small:
-            return 0.65
+    /// The small widget (ogrenme_ilkeleri 2.1): 24, 20, then 17 pt on one line.
+    static let smallWidget = [WidgetWordStep(size: 24), WidgetWordStep(size: 20), WidgetWordStep(size: 17)]
+    /// A phrase on the small widget: two lines at 20 or 17 pt ("Could you tell / me the way to").
+    static let smallWidgetPhrase = [WidgetWordStep(size: 20, lines: 2), WidgetWordStep(size: 17, lines: 2)]
+    /// The Home Screen floor, 15 pt: one line, then two; at large text sizes also unscaled.
+    static let homeFloor = [
+        WidgetWordStep(size: 15),
+        WidgetWordStep(size: 15, lines: 2),
+        WidgetWordStep(size: 15, scales: false),
+        WidgetWordStep(size: 15, lines: 2, scales: false),
+    ]
+    /// The rectangular Lock Screen widget: 17, then 15 pt on one line.
+    static let lockScreen = [WidgetWordStep(size: 17), WidgetWordStep(size: 15)]
+}
+
+/// The headword at the first of its size steps that fits the width whole, each line with its own
+/// band (the band is drawn for one line of text); no hyphen, no "…". A word that fits no step
+/// makes the variant around it too tall to be chosen (`WidgetFit.reject`); with `lastResort` it
+/// is never passed over and, after the steps, shrinks to at most 85 % of the last one (only
+/// "misunderstanding" at 15 pt on an SE needs this). VoiceOver reads the whole word once, with an
+/// English voice.
+struct WidgetFittingWord: View {
+    let lemma: String
+    let steps: [WidgetWordStep]
+    var lastResort = false
+    let colors: WidgetColors
+    /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
+    var renderingMode: WidgetRenderingMode? = nil
+    /// 100 times the Dynamic Type factor of `.title3` (100 at the default text size).
+    @ScaledMetric(relativeTo: .title3) private var scaledHundred: CGFloat = 100
+
+    init(
+        lemma: String,
+        steps: [WidgetWordStep],
+        lastResort: Bool = false,
+        colors: WidgetColors,
+        renderingMode: WidgetRenderingMode? = nil
+    ) {
+        self.lemma = lemma
+        self.steps = steps
+        self.lastResort = lastResort
+        self.colors = colors
+        self.renderingMode = renderingMode
+    }
+
+    var body: some View {
+        let slots = WidgetFit.slots(steps.isEmpty ? [WidgetWordStep(size: 15)] : steps)
+        ViewThatFits(in: .horizontal) {
+            lines(slots[0])
+            lines(slots[1])
+            lines(slots[2])
+            lines(slots[3])
+            lines(slots[4])
+            lines(slots[5])
+            if lastResort {
+                lines(slots[5], minimumScale: 0.85)
+            } else {
+                WidgetFit.reject
+            }
+        }
+    }
+
+    private func lines(_ step: WidgetWordStep, minimumScale: CGFloat = 1) -> some View {
+        let size = step.scales ? step.size * scaledHundred / 100 : step.size
+        let parts = WidgetText.balancedLines(lemma, count: step.lines)
+        // Room for the band, which hangs below each line's frame.
+        return VStack(alignment: .leading, spacing: 4) {
+            ForEach(Array(parts.enumerated()), id: \.offset) { index, part in
+                WidgetHeadword(
+                    lemma: part,
+                    typeface: Theme.Fonts.englishWord(size: size),
+                    color: colors.ink,
+                    renderingMode: renderingMode,
+                    minimumScale: minimumScale
+                )
+                // VoiceOver reads the whole word once, on the first line.
+                .accessibilityLabel(Text(verbatim: lemma))
+                .accessibilityHidden(index > 0)
+            }
         }
     }
 }
 
-/// The headword on one line or, for a phrase in a two-line variant, on two balanced lines, each
-/// with its own band (the band is drawn for one line of text). The first line carries the IPA
-/// (medium widget, when there is room) and the level code. VoiceOver reads the whole word once,
-/// with an English voice.
-struct WidgetWordLines: View {
+/// The medium widget's word row: the word on one line, shrinking as far as it must (to 60 %;
+/// "Could you tell me the way to" needs about 75 %), the pronunciation when the row leaves room
+/// for it, and the level code.
+struct WidgetWordRow: View {
     let lemma: String
-    let fit: WidgetWordFit
-    /// 2: a phrase in two balanced lines; a single word stays on one line.
-    var lines = 1
     /// The level code ("A2"), nil to leave it out.
     var level: String? = nil
-    /// The US pronunciation, shown after the word when the rest of the line leaves room for it.
+    /// The US pronunciation, shown after the word when the rest of the row leaves room for it.
     var ipa: String? = nil
-    /// 20 pt on the Home Screen; the rectangular Lock Screen widget passes 17 pt.
-    var typeface: Font = Theme.Fonts.widgetWord
     let colors: WidgetColors
     /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
     var renderingMode: WidgetRenderingMode? = nil
 
     var body: some View {
-        let parts = lines > 1 ? WidgetText.balancedLines(lemma) : [lemma]
-        // Room for the band, which hangs below each line's frame.
-        VStack(alignment: .leading, spacing: 4) {
-            ForEach(Array(parts.enumerated()), id: \.offset) { index, part in
-                HStack(alignment: .firstTextBaseline, spacing: 6) {
-                    // Only the word shrinks; the level and the spacing keep their size.
-                    ShrinkableLine(scale: fit.measuredScale) {
-                        WidgetHeadword(lemma: part, typeface: typeface, color: colors.ink, renderingMode: renderingMode)
-                            // VoiceOver reads the whole word once, on the first line.
-                            .accessibilityLabel(Text(verbatim: lemma))
-                            .accessibilityHidden(index > 0)
-                            .widgetEnglishVoice()
-                    }
-                    .layoutPriority(1)
-                    if index == 0 {
-                        if let ipa {
-                            WidgetIPA(ipa: ipa, color: colors.ink2)
-                        } else if level != nil {
-                            Spacer(minLength: 0)
-                        }
-                        if let level {
-                            WidgetLevel(code: level, color: colors.ink2)
-                        }
-                    }
-                }
+        HStack(alignment: .firstTextBaseline, spacing: 6) {
+            // Only the word shrinks; the level and the spacing keep their size.
+            WidgetHeadword(lemma: lemma, color: colors.ink, renderingMode: renderingMode)
+                .layoutPriority(1)
+            if let ipa {
+                WidgetIPA(ipa: ipa, color: colors.ink2)
+            } else if level != nil {
+                Spacer(minLength: 0)
+            }
+            if let level {
+                WidgetLevel(code: level, color: colors.ink2)
             }
         }
     }
 }
 
 /// The English word with the phosphor band (README point 4): serif bold, one line, shrinking to
-/// 60 % before it truncates. The band follows the rendering mode (yellow highlighter by day, a
-/// yellow line under the letters at night, a thin line in the word's color when tinted) and,
-/// like the word, is accentable.
+/// `minimumScale` of its size before it would truncate. The band follows the rendering mode
+/// (yellow highlighter by day, a yellow line under the letters at night, a thin line in the
+/// word's color when tinted or on the Lock Screen) and, like the word, is accentable.
 struct WidgetHeadword: View {
     let lemma: String
-    /// 20 pt on the Home Screen; the rectangular Lock Screen widget passes 17 pt.
+    /// 20 pt on the medium widget; the size steps pass their own (`WidgetFittingWord`).
     var typeface: Font = Theme.Fonts.widgetWord
     let color: AnyShapeStyle
     /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
     var renderingMode: WidgetRenderingMode? = nil
+    /// 1 for the size steps, which are chosen only when the word fits whole.
+    var minimumScale: CGFloat = 0.6
 
     var body: some View {
-        // The Text's own font wins over the one `widgetWordStyle()` puts in the environment.
         Text(lemma)
             .font(typeface)
-            .widgetWordStyle()
+            .lineLimit(1)
+            .minimumScaleFactor(minimumScale)
+            .widgetAccentable()
             .foregroundStyle(color)
             .phosphorBand(.widget, renderingMode: renderingMode)
             .widgetEnglishVoice()
@@ -407,8 +443,8 @@ struct WidgetHeadword: View {
 }
 
 /// The pronunciation after the word on the medium widget. It takes the room the word and the
-/// level leave and shows only when it fits whole; its own width never counts when ViewThatFits
-/// measures the line (a hidden space of the same font sets the slot's ideal size).
+/// level leave and shows only when it fits whole; its own width never counts when the row is
+/// measured (a hidden space of the same font sets the slot's ideal size).
 struct WidgetIPA: View {
     let ipa: String
     let color: AnyShapeStyle
@@ -449,117 +485,217 @@ struct WidgetLevel: View {
     }
 }
 
-/// The Turkish meaning: SF bold, no box behind it, read as "Türkçesi: …" (README point 14). On one
-/// line, or with `lines` 2 on two balanced lines (a single word stays on one). Each line may
-/// shrink to 85 % (`ShrinkableLine` lets ViewThatFits count on that). With `wraps` (fallbacks
-/// only) it is one text that wraps onto up to `lines` lines and gives way when there is no room.
+/// The Turkish meaning: SF bold, no box behind it, read as "Türkçesi: …" with the whole meaning
+/// (README point 14). For each line count in `lines` it tries the meaning's forms (`WidgetGloss`),
+/// fullest first, and shows the first that fits whole. When none fits, the variant around it is
+/// passed over: the meaning is never cut.
 struct WidgetMeaning: View {
-    let gloss: String
+    /// The meaning's forms, fullest first; the first is the whole meaning.
+    let forms: [String]
     let typeface: Font
-    var lines = 1
-    var wraps = false
+    /// The line counts to try, in order.
+    var lines = [1]
     let color: AnyShapeStyle
 
+    private var spoken: String { forms.first ?? "" }
+
     var body: some View {
-        let parts = lines > 1 ? WidgetText.balancedLines(gloss) : [gloss]
-        Group {
-            if wraps {
-                Text(verbatim: gloss)
-                    .font(typeface)
-                    .foregroundStyle(color)
-                    // A single word shrinks rather than breaking between its letters.
-                    .lineLimit(parts.count > 1 ? lines : 1)
-                    .minimumScaleFactor(0.85)
-            } else {
-                VStack(alignment: .leading, spacing: 0) {
-                    ForEach(Array(parts.enumerated()), id: \.offset) { _, part in
-                        ShrinkableLine(scale: 0.86) {
-                            Text(verbatim: part)
-                                .font(typeface)
-                                .foregroundStyle(color)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.85)
-                        }
-                    }
-                }
-            }
-        }
+        WidgetFittingText(
+            candidates: WidgetText.candidates(forms, lines: lines),
+            typeface: typeface,
+            color: color
+        )
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("Türkçesi: \(gloss)"))
+        .accessibilityLabel(Text("Türkçesi: \(spoken)"))
     }
 }
 
-/// An English definition in serif, whole on one line (or `lines` balanced lines); the variant that
-/// shows it is chosen only when it fits.
+/// An English definition in serif on one line, whole: the first of `texts` that fits (the medium
+/// widget: the short definition, else the micro one). When neither fits, the variant around it is
+/// passed over.
 struct WidgetDefinition: View {
-    let text: String
+    let texts: [String]
     let typeface: Font
-    var lines = 1
     let color: AnyShapeStyle
 
     var body: some View {
-        let parts = lines > 1 ? WidgetText.balancedLines(text) : [text]
+        WidgetFittingText(
+            candidates: WidgetText.candidates(texts, lines: [1]),
+            typeface: typeface,
+            color: color
+        )
+        .widgetEnglishVoice()
+    }
+}
+
+/// Widget text that is shown whole or not at all: the first candidate (a list of lines, fullest
+/// first) whose every line fits the width on one line. When none fits, the view reports a height
+/// no widget has (`WidgetFit.reject`), so the vertical ViewThatFits around it passes over the
+/// variant. VoiceOver reads the lines that are shown.
+struct WidgetFittingText: View {
+    let candidates: [[String]]
+    let typeface: Font
+    let color: AnyShapeStyle
+
+    var body: some View {
+        let slots = WidgetFit.slots(candidates)
+        if slots.isEmpty {
+            WidgetFit.reject
+        } else {
+            ViewThatFits(in: .horizontal) {
+                lines(slots[0])
+                lines(slots[1])
+                lines(slots[2])
+                lines(slots[3])
+                lines(slots[4])
+                lines(slots[5])
+                WidgetFit.reject
+            }
+        }
+    }
+
+    private func lines(_ lines: [String]) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            ForEach(Array(parts.enumerated()), id: \.offset) { _, part in
-                Text(verbatim: part)
+            ForEach(Array(lines.enumerated()), id: \.offset) { _, line in
+                Text(verbatim: line)
                     .font(typeface)
                     .foregroundStyle(color)
                     .lineLimit(1)
             }
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: text))
-        .widgetEnglishVoice()
+        .accessibilityElement(children: .combine)
     }
 }
 
-/// Measures its line as `scale` times as wide when asked for its ideal size (ViewThatFits's
-/// question), so a variant counts as fitting when its line fits once shrunk that far
-/// (`minimumScaleFactor`). Any other proposal passes through: placed, the line takes the width it
-/// gets and shrinks only as much as it must.
-struct ShrinkableLine: Layout {
-    let scale: CGFloat
+/// Helpers for the fitting lines.
+enum WidgetFit {
+    /// How many steps a fitting line tries (ViewThatFits needs a fixed number of children).
+    static let slotCount = 6
 
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        guard let line = subviews.first else {
-            return .zero
-        }
-        let size = line.sizeThatFits(proposal)
-        guard proposal.width == nil else {
-            return size
-        }
-        return CGSize(width: (size.width * scale).rounded(.up), height: size.height)
+    /// A view no widget has room for: the last choice of a fitting line that must not be shown
+    /// cut. A vertical ViewThatFits then passes over the variant that contains it.
+    static var reject: some View {
+        Color.clear
+            .frame(width: 0, height: 100_000)
+            .accessibilityHidden(true)
     }
 
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        for line in subviews {
-            line.place(at: bounds.origin, proposal: ProposedViewSize(width: bounds.width, height: bounds.height))
+    /// `items` as exactly `slotCount` slots: the first `slotCount`, the last one repeated to fill
+    /// the rest (a repeated step that did not fit does not fit again); empty when `items` is.
+    static func slots<Item>(_ items: [Item]) -> [Item] {
+        let kept = Array(items.prefix(slotCount))
+        guard let last = kept.last else {
+            return []
         }
+        return kept + Array(repeating: last, count: slotCount - kept.count)
+    }
+}
+
+/// The Turkish meaning's forms for the widgets, fullest first (ogrenme_ilkeleri 2.1, "Türkçe
+/// anlamın widget'ta kısalması"): the whole meaning; its first sense, which drops what follows the
+/// first comma or semicolon ("aslında, gerçekte" → "aslında") but keeps a " / " pair whole ("amca
+/// / dayı"); the editor's short form (`gloss_short`, at most 16 characters). A form is never cut:
+/// when none fits, the widget leaves the meaning out.
+enum WidgetGloss {
+    static func forms(of word: WidgetWord) -> [String] {
+        guard let gloss = word.glossTR else {
+            return []
+        }
+        return forms(of: gloss, short: short(of: word))
+    }
+
+    /// The forms without repeats ("kahvaltı" has one).
+    static func forms(of gloss: String, short: String?) -> [String] {
+        var result: [String] = []
+        for candidate in [gloss, firstSense(of: gloss), short] {
+            guard let form = candidate?.trimmingCharacters(in: .whitespaces), !form.isEmpty, !result.contains(form) else {
+                continue
+            }
+            result.append(form)
+        }
+        return result
+    }
+
+    /// The meaning up to its first comma or semicolon; the whole meaning when it has none.
+    static func firstSense(of gloss: String) -> String {
+        let first = gloss.split(whereSeparator: { $0 == "," || $0 == ";" }).first.map(String.init) ?? gloss
+        let trimmed = first.trimmingCharacters(in: .whitespaces)
+        return trimmed.isEmpty ? gloss : trimmed
+    }
+
+    /// The card's short form (`l1.tr.gloss_short`). The content pipeline is getting this field
+    /// and `WidgetWord` does not carry it yet: return it here once it does.
+    static func short(of word: WidgetWord) -> String? {
+        return nil
     }
 }
 
 /// Text helpers for the widget layouts.
 enum WidgetText {
-    /// `text` in two lines of about the same length, broken between words: the break that makes
-    /// the longer line shortest, the first line the longer one on a tie ("Could you tell" / "me the
-    /// way to", "aslında," / "gerçekte"). A single word stays one line.
+    /// `text` in two lines of about the same length (`balancedLines(_:count:)`).
     static func balancedLines(_ text: String) -> [String] {
-        let words = text.split(separator: " ")
-        guard words.count > 1 else {
+        return balancedLines(text, count: 2)
+    }
+
+    /// `text` in at most `count` lines of about the same length, broken between words: the breaks
+    /// that make the longest line shortest, then the lines most even, then the earlier lines the
+    /// longer ones ("Could you tell" / "me the way to", "aslında," / "gerçekte", "kendini" / "pek
+    /// iyi" / "hissetmemek"). A single word stays one line.
+    static func balancedLines(_ text: String, count: Int) -> [String] {
+        let words = text.split(separator: " ").map(String.init)
+        let lineCount = min(count, words.count)
+        guard lineCount > 1 else {
             return [text]
         }
         var best = [text]
-        var bestLength = Int.max
-        for index in 1..<words.count {
-            let first = words[..<index].joined(separator: " ")
-            let second = words[index...].joined(separator: " ")
-            let longer = max(first.count, second.count)
-            if longer < bestLength || (longer == bestLength && first.count > second.count) {
-                best = [first, second]
-                bestLength = longer
+        var bestLengths = [Int.max]
+        // Every way to cut the words into `lineCount` runs; a widget line has a few words.
+        func search(from start: Int, lines: [String]) {
+            let left = lineCount - lines.count
+            if left == 1 {
+                let candidate = lines + [words[start...].joined(separator: " ")]
+                let lengths = candidate.map { $0.count }
+                if isMoreBalanced(lengths, than: bestLengths) {
+                    best = candidate
+                    bestLengths = lengths
+                }
+                return
+            }
+            for end in (start + 1)...(words.count - left + 1) {
+                search(from: end, lines: lines + [words[start..<end].joined(separator: " ")])
             }
         }
+        search(from: 0, lines: [])
         return best
+    }
+
+    /// The candidates of a fitting line: for each line count in turn, each text in balanced lines,
+    /// without repeats.
+    static func candidates(_ texts: [String], lines counts: [Int]) -> [[String]] {
+        var result: [[String]] = []
+        for count in counts {
+            for text in texts {
+                let candidate = balancedLines(text, count: count)
+                if !result.contains(candidate) {
+                    result.append(candidate)
+                }
+            }
+        }
+        return result
+    }
+
+    private static func isMoreBalanced(_ lengths: [Int], than other: [Int]) -> Bool {
+        let longest = lengths.max() ?? 0
+        let otherLongest = other.max() ?? Int.max
+        if longest != otherLongest {
+            return longest < otherLongest
+        }
+        let spread = lengths.reduce(0) { $0 + $1 * $1 }
+        let otherSpread = other.reduce(0) { $0 + $1 * $1 }
+        if spread != otherSpread {
+            return spread < otherSpread
+        }
+        return lengths.lexicographicallyPrecedes(other, by: >)
     }
 }
 
