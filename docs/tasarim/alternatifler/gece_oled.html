@@ -174,7 +174,7 @@ table.tt{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
 .btn{min-height:44px;padding:0 20px;border-radius:22px;font:600 calc(17px*var(--dt))/1.2 var(--font-ui);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;color:var(--ink)}
 .btn-lg{min-height:54px;border-radius:27px;padding:0 24px}
 .btn.block{width:100%}
-.btn-primary{background:var(--primary-bg);color:var(--primary-ink);box-shadow:inset 0 0 0 1.5px var(--primary-line),var(--primary-glow)}
+.btn-primary{background:var(--primary-bg);color:var(--primary-ink);font-weight:700;box-shadow:inset 0 0 0 2px var(--primary-line),var(--primary-glow)}
 .btn-tonal{background:var(--surface-2)}
 .btn-line{box-shadow:inset 0 0 0 1.5px var(--line-strong)}
 .btn-text{min-height:44px;padding:0 12px;font:600 calc(15px*var(--dt)) var(--font-ui);color:var(--ink-3)}
@@ -513,7 +513,7 @@ const TONES = {
     name: 'Kehribar', bg: '#000000', surface: '#0D0B09', surface2: '#17130F', surface3: '#231D17',
     line: '#241C13', lineStrong: '#473827', ink: '#E2C8A0', ink2: '#BFA27C', ink3: '#957D63',
     band: '#FFB547', bandGlow: 'transparent', mark: '#FFB547',
-    primaryBg: '#1B1813', primaryInk: '#E2C8A0', primaryLine: 'rgba(226,200,160,.5)', primaryGlow: '0 0 0 0 transparent',
+    primaryBg: '#1B1813', primaryInk: '#E2C8A0', primaryLine: '#E2C8A0', primaryGlow: '0 0 0 0 transparent',
     cardBg: '#000000', cardLine: '#241C13', good: '#A7C98A', bad: '#FF9580', caution: '#E6CB72',
     goodTint: 'rgba(167,201,138,.12)', badTint: 'rgba(255,149,128,.12)', wgBg: '#000000', tabBg: '#000000', lockTint: '#FFB547'
   },
@@ -521,7 +521,7 @@ const TONES = {
     name: 'Soluk fosfor', bg: '#000000', surface: '#0C0C0A', surface2: '#161613', surface3: '#22221D',
     line: '#20201E', lineStrong: '#403F3B', ink: '#DAD7C6', ink2: '#B4B2A3', ink3: '#8E8C7E',
     band: '#D6DC6E', bandGlow: 'transparent', mark: '#D6DC6E',
-    primaryBg: '#1A1A18', primaryInk: '#DAD7C6', primaryLine: 'rgba(218,215,198,.5)', primaryGlow: '0 0 0 0 transparent',
+    primaryBg: '#1A1A18', primaryInk: '#DAD7C6', primaryLine: '#DAD7C6', primaryGlow: '0 0 0 0 transparent',
     cardBg: '#000000', cardLine: '#20201E', good: '#9FD0A0', bad: '#FF9A8C', caution: '#F2B37A',
     goodTint: 'rgba(159,208,160,.12)', badTint: 'rgba(255,154,140,.12)', wgBg: '#000000', tabBg: '#000000', lockTint: '#D6DC6E'
   },
@@ -1020,10 +1020,10 @@ const NOTES = {
   },
   tekrar: {
     t: 'Tekrar (yeni kelime turu)',
-    d: ['Ön yüzde yalnız kelime ve tek düğme. Ana düğme dolu değil ve sarı değil: %12 mürekkep zemin, mürekkep yazı, ince kenar. Sarı yalnız kelimede kalır (ogrenme_ilkeleri: koyu ekranda iki sarı odak olmasın).',
+    d: ['Ön yüzde yalnız kelime ve tek düğme. Ana düğme dolu değil ve sarı değil: %12 mürekkep zemin, 2 pt parlak mürekkep kenar, kalın yazı. Kenar onu gri kenarlı ikincil düğmelerden ayırır (4:1). Sarı yalnız kelimede kalır (ogrenme_ilkeleri: koyu ekranda iki sarı odak olmasın).',
       'Mevcut koyu temada (1e4b4e6) aynı düğme ekranın en parlak alanı: dolu sarı ve çevresinde ışıma (karşılaştırmayı aç).',
       'Cevap düğmeleri renksiz; anlamı simge, kelime ve süre taşır (kural 4 aynı kalır).'],
-    s: '<code>PrimaryCapsuleButtonStyle</code> koyu modda tonal mürekkep: dolgu <code>ink.opacity(0.12)</code>, yazı <code>ink</code>, 1,5 pt <code>ink.opacity(0.5)</code> kenar (Yüksek Kontrast: 0,7). Tekrar ekranındaki varsayılan cevap düğmesi (<code>GradeButtonBody</code>) de aynı kenarı almalı. Işıma yok.'
+    s: '<code>PrimaryCapsuleButtonStyle</code> koyu modda tonal mürekkep: dolgu <code>ink.opacity(0.12)</code>, yazı <code>ink</code> kalın, 2 pt <code>ink</code> kenar (seçenek C; gece_oled.md). Tekrar ekranındaki varsayılan cevap düğmesi (<code>GradeButtonBody</code>) de aynı kenarı almalı. Işıma yok.'
   },
   quiz: {
     t: 'Quiz (tekrar sorusu)',
