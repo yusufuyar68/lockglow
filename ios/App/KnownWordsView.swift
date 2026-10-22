@@ -92,7 +92,7 @@ struct KnownWordsView: View {
     private var undoNotice: some View {
         if let word = undoneWord {
             let transition: AnyTransition = reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity)
-            KnownWordsUndoNotice(message: noticeText(for: word)) {
+            KnownWordsUndoNotice(lemma: word.lemma) {
                 redo(word)
             }
             .padding(.horizontal, 16)
@@ -101,17 +101,13 @@ struct KnownWordsView: View {
         }
     }
 
-    private func noticeText(for word: WidgetWord) -> String {
-        return "\(word.lemma) geri alındı"
-    }
-
     /// "Geri al": the word returns to the widget and to "Tekrar".
     private func undo(_ word: WidgetWord) {
         withAnimation(reduceMotion ? nil : .default) {
             model.undoKnown(word)
             undoneWord = word
         }
-        UIAccessibility.post(notification: .announcement, argument: noticeText(for: word))
+        SozlukSpeech.announce(KnownWordsUndoNotice.message(lemma: word.lemma))
     }
 
     /// "Vazgeç": the word is known again (back at the top of the list).
@@ -122,13 +118,13 @@ struct KnownWordsView: View {
         }
     }
 
-    /// The notice leaves on its own after a few seconds; with VoiceOver it stays longer, so
-    /// "Vazgeç" can still be reached.
+    /// The notice leaves on its own after a few seconds; with VoiceOver or Switch Control it
+    /// stays longer, so "Vazgeç" can still be reached.
     private func hideNoticeLater() async {
         guard undoneWord != nil else {
             return
         }
-        let seconds = UIAccessibility.isVoiceOverRunning ? 10 : 4
+        let seconds = UIAccessibility.isVoiceOverRunning || UIAccessibility.isSwitchControlRunning ? 10 : 4
         try? await Task.sleep(for: .seconds(seconds))
         guard !Task.isCancelled else {
             return
@@ -140,8 +136,9 @@ struct KnownWordsView: View {
 }
 
 /// Mockup `.kw`: the serif word and its meaning open the whole card; "Geri al" sits on the row
-/// in plain sight. At accessibility text sizes the button goes under the word. VoiceOver hints
-/// say what each of the two buttons does.
+/// in plain sight. At accessibility text sizes the button goes under the word. VoiceOver reads the
+/// word in an English voice and its meaning in a Turkish one (audit V5); "Geri al" says which
+/// word it takes back as its value (V11), and hints say what each of the two buttons does.
 private struct KnownWordRow: View {
     let word: WidgetWord
     let open: () -> Void
@@ -170,6 +167,7 @@ private struct KnownWordRow: View {
             }
             // Not the list's default button style: the row must not also fire "Geri al".
             .buttonStyle(KnownWordOpenButtonStyle())
+            .accessibilityLabel(openLabel)
             .accessibilityHint("Kartı açar")
             // The label stays "Geri al" (no word in it): LockglowScreenshotTests opens the card
             // through the first element whose label contains the word.
@@ -178,9 +176,18 @@ private struct KnownWordRow: View {
                     .font(.subheadline.weight(.semibold))
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
+            .accessibilityValue(SozlukSpeech.english(word.lemma))
             .accessibilityHint("Kelime yeniden tekrara ve widget'a gelir.")
         }
         .padding(.vertical, 2)
+    }
+
+    private var openLabel: Text {
+        var runs: [SozlukSpeech.Run] = [.english(word.lemma)]
+        if let gloss = word.glossTR {
+            runs.append(.turkish(", " + gloss))
+        }
+        return SozlukSpeech.label(runs)
     }
 }
 
@@ -192,10 +199,10 @@ private struct KnownWordOpenButtonStyle: ButtonStyle {
     }
 }
 
-/// Mockup `.toast`: an ink bar over the list with the result and "Vazgeç". At accessibility text
-/// sizes "Vazgeç" goes under the message.
+/// Mockup `.toast`: an ink bar over the list with the result ("breakfast geri alındı", the word
+/// in an English voice) and "Vazgeç". At accessibility text sizes "Vazgeç" goes under the message.
 private struct KnownWordsUndoNotice: View {
-    let message: String
+    let lemma: String
     let undo: () -> Void
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -204,9 +211,10 @@ private struct KnownWordsUndoNotice: View {
             ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
             : AnyLayout(HStackLayout(spacing: 10))
         layout {
-            Text(message)
+            Text(verbatim: lemma + KnownWordsUndoNotice.suffix)
                 .font(.subheadline.weight(.semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityLabel(SozlukSpeech.label(KnownWordsUndoNotice.message(lemma: lemma)))
             Button(action: undo) {
                 Text("Vazgeç")
                     .font(.subheadline.weight(.bold))
@@ -224,5 +232,11 @@ private struct KnownWordsUndoNotice: View {
         .background(Theme.ink, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
         .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 8)
         .accessibilityElement(children: .contain)
+    }
+
+    private static let suffix = " geri alındı"
+
+    static func message(lemma: String) -> [SozlukSpeech.Run] {
+        return [.english(lemma), .turkish(suffix)]
     }
 }

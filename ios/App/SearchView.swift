@@ -1,15 +1,25 @@
 import SwiftUI
+import UIKit
 import CoreModels
 import Learning
 import TextFold
 
-/// "Sözlük": look a word up in English or Turkish (prefix search, Turkish letters folded), then
-/// open the whole card (mockup `#sozluk`). An empty field offers "Dene" examples and the
-/// Turkish-letters tip; in the results the typed part is bold and underlined, never yellow
-/// (rule 1); a search that finds nothing says what to try and offers a shorter search.
+/// "Sözlük": look a word up in English or Turkish (prefix search, Turkish letters folded), or
+/// browse a topic, then open the whole card (mockup `#sozluk`). An empty field offers the "Dene"
+/// examples, the recent searches and the topics as capsules; a topic opens its words by level
+/// (`SozlukTopicView`). In the results the typed part is bold and underlined, never yellow (rule
+/// 1), and a filter keeps the new, learning or known words only; a search that finds nothing says
+/// what to try and offers a shorter search. No main button: nothing here is filled (rule of one
+/// main action per screen).
 struct SearchView: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var query = ""
+    /// Back to "Tümü" whenever the field is emptied (`SozlukFilter`).
+    @State private var filter: SozlukFilter = .all
+    @State private var showsAllTopics = false
+    @AppStorage(SozlukRecentSearches.storageKey) private var recentSearchLog = ""
+    @StateObject private var topicIndex = SozlukTopicIndex()
 
     /// "Dene" examples (mockup `.try`): a Turkish start, the same kind without Turkish letters,
     /// a Turkish word and an English start.
@@ -19,6 +29,11 @@ struct SearchView: View {
         SearchTryExample(text: "randevu"),
         SearchTryExample(text: "break", isEnglish: true),
     ]
+    /// Results of one search; a filter other than "Tümü" looks further, so that it has words to keep.
+    private static let resultLimit = 50
+    private static let filteredResultLimit = 200
+    /// Topics shown before "Bütün konular".
+    private static let collapsedTopicCount = 8
 
     var body: some View {
         NavigationStack {
@@ -36,33 +51,140 @@ struct SearchView: View {
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "İngilizce ya da Türkçe kelime")
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
+            .onSubmit(of: .search) {
+                remember(query)
+            }
             .navigationDestination(for: WidgetWord.self) { word in
+                // A card opened from the results makes its search a recent one; from a topic
+                // the field is empty and nothing is kept.
                 WordDetailView(word: word)
+                    .onAppear {
+                        remember(query)
+                    }
+            }
+            .navigationDestination(for: ContentTopic.self) { topic in
+                SozlukTopicView(index: topicIndex, topic: topic)
             }
         }
         // Rule 2: no blue link color on the search field, its cancel button or the back button.
         .tint(Theme.ink)
+        .task {
+            await topicIndex.load()
+        }
+        .task(id: query) {
+            await announceResults(of: query)
+        }
+        .onChange(of: query) { _, newQuery in
+            if newQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                filter = .all
+            }
+        }
     }
 
     @ViewBuilder
     private var content: some View {
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmed.isEmpty {
-            VStack(alignment: .leading, spacing: 0) {
-                tryRow(SearchView.tryQueries)
+            startPage
+        } else {
+            let found = search(trimmed)
+            if found.isEmpty {
+                noResults(for: trimmed)
+            } else {
+                resultList(found, terms: SearchHighlight.terms(of: trimmed))
+            }
+        }
+    }
+
+    private func search(_ text: String) -> [WidgetWord] {
+        return model.search(text, limit: filter == .all ? SearchView.resultLimit : SearchView.filteredResultLimit)
+    }
+
+    private func shownResults(_ found: [WidgetWord]) -> [WidgetWord] {
+        return found.filter { filter.includes(model.learningState(of: $0)) }
+    }
+
+    // MARK: Start page
+
+    /// The empty field: "Dene", the recent searches, the topics and the Turkish-letters tip. With
+    /// neither recent searches nor topics (seed words only), the "Kelime ara" explanation instead.
+    private var startPage: some View {
+        let recent = SozlukRecentSearches.list(recentSearchLog)
+        let topics = browseTopics
+        return VStack(alignment: .leading, spacing: 0) {
+            tryRow(SearchView.tryQueries)
+            if !recent.isEmpty {
+                SozlukRecentSearchesSection(
+                    searches: recent,
+                    select: { query = $0 },
+                    remove: { forget($0) },
+                    clear: { forgetAll() }
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
+            }
+            if !topics.isEmpty {
+                topicSection(topics)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 20)
+            }
+            if recent.isEmpty && topics.isEmpty {
                 WordListEmptyState(
                     systemImage: "character.book.closed",
                     title: "Kelime ara",
                     message: AttributedString("İngilizce bir kelime ya da Türkçe anlamını yaz."),
                     tip: SearchView.turkishLettersTip
                 )
-            }
-        } else {
-            let results = model.search(trimmed)
-            if results.isEmpty {
-                noResults(for: trimmed)
             } else {
-                resultList(results, terms: SearchHighlight.terms(of: trimmed))
+                tip
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+            }
+        }
+    }
+
+    /// The topics to browse: the user's own topics first, then the others, each part in the
+    /// content's order. Topics with only a handful of words are left out, as in the topic choice.
+    private var browseTopics: [ContentTopic] {
+        let topics = model.choosableTopics
+        let chosen = model.activeTopicIDs
+        return topics.filter { chosen.contains($0.id) } + topics.filter { !chosen.contains($0.id) }
+    }
+
+    /// "Konuya göre göz at": a capsule per topic with its word count; a tap opens the topic's
+    /// words. The first few at once, the rest behind "Bütün konular".
+    private func topicSection(_ topics: [ContentTopic]) -> some View {
+        let isCollapsible = topics.count > SearchView.collapsedTopicCount
+        let shown = showsAllTopics || !isCollapsible ? topics : Array(topics.prefix(SearchView.collapsedTopicCount))
+        let toggleTitle = showsAllTopics ? "Daha az göster" : "Bütün konular (\(topics.count))"
+        return VStack(alignment: .leading, spacing: 6) {
+            SozlukSectionTitle(title: "Konuya göre göz at")
+            // No line spacing: the chips already reach 44 pt with transparent margins.
+            DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 0) {
+                ForEach(shown) { topic in
+                    NavigationLink(value: topic) {
+                        HStack(spacing: 6) {
+                            Text(topic.nameTR)
+                            Text(verbatim: "\(topic.cardCount)")
+                                .foregroundStyle(Theme.ink2)
+                                .monospacedDigit()
+                        }
+                    }
+                    .buttonStyle(ChipButtonStyle())
+                    .accessibilityLabel(Text(verbatim: "\(topic.nameTR), \(topic.cardCount) kelime"))
+                    .accessibilityHint("Bu konunun kelimelerini açar")
+                }
+                if isCollapsible {
+                    Button {
+                        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
+                            showsAllTopics.toggle()
+                        }
+                    } label: {
+                        Label(toggleTitle, systemImage: showsAllTopics ? "chevron.up" : "chevron.down")
+                        .labelStyle(.titleAndIcon)
+                    }
+                    .buttonStyle(ChipButtonStyle())
+                }
             }
         }
     }
@@ -92,12 +214,38 @@ struct SearchView: View {
                     }
                 }
                 .buttonStyle(ChipButtonStyle())
-                .accessibilityHint("Bunu arar")
+                .modifier(SearchTryExampleVoice(example: example))
+                .accessibilityHint("Aramaya yazar")
             }
         }
         .padding(.horizontal, 16)
         .padding(.top, 4)
     }
+
+    // MARK: Recent searches
+
+    private func remember(_ text: String) {
+        let updated = SozlukRecentSearches.adding(text, to: recentSearchLog)
+        if updated != recentSearchLog {
+            recentSearchLog = updated
+        }
+    }
+
+    private func forget(_ search: String) {
+        withAnimation(reduceMotion ? nil : .default) {
+            recentSearchLog = SozlukRecentSearches.removing(search, from: recentSearchLog)
+        }
+        SozlukSpeech.announce([.turkish("Silindi")])
+    }
+
+    private func forgetAll() {
+        withAnimation(reduceMotion ? nil : .default) {
+            recentSearchLog = ""
+        }
+        SozlukSpeech.announce([.turkish("Son aramalar silindi")])
+    }
+
+    // MARK: Results
 
     /// Nothing found: what to try, and as "Dene" a shorter search that does find something (a
     /// misspelled word usually starts right: "brekfast" → "bre"), or the usual examples.
@@ -130,36 +278,56 @@ struct SearchView: View {
         }
     }
 
-    /// Mockup `.res`: the count, the rows in one rounded group, the Turkish-letters tip under it.
-    private func resultList(_ results: [WidgetWord], terms: [String]) -> some View {
-        let group = RoundedRectangle(cornerRadius: Theme.Radius.group, style: .continuous)
+    /// Mockup `.res`: the filter, the count, the rows in one rounded group, the Turkish-letters
+    /// tip under it. A filter that keeps nothing says so and offers every result again.
+    private func resultList(_ found: [WidgetWord], terms: [String]) -> some View {
+        let results = shownResults(found)
         return VStack(alignment: .leading, spacing: 0) {
-            Text(verbatim: "\(results.count) sonuç")
-                .font(.footnote.weight(.semibold))
-                .foregroundStyle(Theme.ink2)
-                .padding(.horizontal, 4)
-                .padding(.vertical, 6)
-            LazyVStack(spacing: 0) {
-                ForEach(Array(results.enumerated()), id: \.element.id) { index, word in
-                    if index > 0 {
-                        DictionaryRule()
-                            .padding(.leading, 16)
-                    }
-                    NavigationLink(value: word) {
-                        SearchResultRow(word: word, terms: terms)
-                    }
-                    .buttonStyle(SearchResultButtonStyle())
+            SozlukFilterBar(selection: $filter)
+            if results.isEmpty {
+                SozlukFilteredOut(
+                    filter: filter,
+                    message: "Bu aramada \(found.count) kelime var; hiçbiri bu süzgece uymuyor."
+                ) {
+                    filter = .all
                 }
-            }
-            .background(Theme.surface)
-            .clipShape(group)
-            .overlay {
-                group.strokeBorder(Theme.line, lineWidth: 1)
+            } else {
+                Text(verbatim: "\(results.count) sonuç")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.ink2)
+                    .padding(.horizontal, 4)
+                    .padding(.top, 4)
+                    .padding(.bottom, 6)
+                SozlukRowGroup {
+                    ForEach(Array(results.enumerated()), id: \.element.id) { index, word in
+                        if index > 0 {
+                            DictionaryRule()
+                                .padding(.leading, 16)
+                        }
+                        SearchResultLink(word: word, terms: terms)
+                    }
+                }
             }
             tip
         }
         .padding(.horizontal, 16)
         .padding(.top, 6)
+    }
+
+    /// VoiceOver hears how many words the search found, once typing pauses (`task(id:)` cancels
+    /// the wait at every letter).
+    @MainActor
+    private func announceResults(of text: String) async {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty, UIAccessibility.isVoiceOverRunning else {
+            return
+        }
+        try? await Task.sleep(for: .milliseconds(800))
+        guard !Task.isCancelled else {
+            return
+        }
+        let count = shownResults(search(trimmed)).count
+        SozlukSpeech.announce([.turkish(count == 0 ? "Sonuç yok" : "\(count) sonuç")])
     }
 
     /// Mockup `.tip`.
@@ -184,12 +352,27 @@ private struct SearchTryExample: Hashable {
     var isEnglish = false
 }
 
-/// One result (mockup `.rrow`): the serif word with its level (and a check when it is known),
-/// the Turkish meaning in ink, then the short English definition, or the other Turkish meanings
-/// when the search matched one of those. At accessibility sizes the level goes under the word.
-private struct SearchResultRow: View {
+/// An English "Dene" example is read in an English voice (audit V5): the chip merges its text into
+/// one label, which loses the text's own locale.
+private struct SearchTryExampleVoice: ViewModifier {
+    let example: SearchTryExample
+
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if example.isEnglish {
+            content
+                .accessibilityLabel(SozlukSpeech.english(example.text))
+        } else {
+            content
+        }
+    }
+}
+
+/// One result as a `SozlukWordLink`: the typed part of the word or of its Turkish meaning is bold
+/// and underlined; when the search matched neither but one of the other Turkish meanings,
+/// "Ayrıca: …" under the meaning shows where.
+private struct SearchResultLink: View {
     @EnvironmentObject private var model: AppModel
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let word: WidgetWord
     let terms: [String]
 
@@ -201,63 +384,22 @@ private struct SearchResultRow: View {
         let marksLemma = lemmaMatch.coversAll || !(glossMatch?.coversAll ?? false)
         let marksGloss = !lemmaMatch.coversAll
         let alternatives = lemmaMatch.isEmpty && (glossMatch?.isEmpty ?? true) ? matchedAlternatives : nil
-        let headLayout = dynamicTypeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
-            : AnyLayout(HStackLayout(spacing: 8))
-
-        HStack(spacing: 10) {
-            VStack(alignment: .leading, spacing: 2) {
-                headLayout {
-                    Text(SearchHighlight.attributed(
-                        word.lemma,
-                        marking: marksLemma ? lemmaMatch.ranges : [],
-                        hitFont: Font.system(.title3, design: .serif).weight(.heavy)
-                    ))
-                    .font(.system(.title3, design: .serif).weight(.bold))
-                    .foregroundStyle(Theme.ink)
-                    .cardEnglishVoice()
-                    HStack(spacing: 8) {
-                        LevelBadge(code: word.level)
-                            .fixedSize()
-                        if model.learningState(of: word) == .known {
-                            Image(systemName: "checkmark.circle.fill")
-                                .font(.subheadline)
-                                .foregroundStyle(Theme.good)
-                                .accessibilityLabel("Biliyorsun")
-                        }
-                    }
-                }
-                if let gloss = word.glossTR, let glossMatch = glossMatch {
-                    Text(SearchHighlight.attributed(
-                        gloss,
-                        marking: marksGloss ? glossMatch.ranges : [],
-                        hitFont: Font.body.weight(.heavy)
-                    ))
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(Theme.ink)
-                }
-                if let alternatives = alternatives {
-                    Text(alternatives)
-                        .font(.caption.weight(.medium))
-                        .foregroundStyle(Theme.ink2)
-                } else {
-                    Text(word.defMicro)
-                        .font(.system(.footnote, design: .serif))
-                        .foregroundStyle(Theme.ink2)
-                        .cardEnglishVoice()
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            Image(systemName: "chevron.right")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Theme.ink3)
-                .accessibilityHidden(true)
-        }
-        .padding(.leading, 16)
-        .padding(.trailing, 12)
-        .padding(.vertical, 10)
-        .frame(minHeight: 68)
-        .contentShape(Rectangle())
+        SozlukWordLink(
+            word: word,
+            lemma: SearchHighlight.attributed(
+                word.lemma,
+                marking: marksLemma ? lemmaMatch.ranges : [],
+                hitFont: Font.system(.title3, design: .serif).weight(.heavy)
+            ),
+            gloss: word.glossTR.map { gloss in
+                SearchHighlight.attributed(
+                    gloss,
+                    marking: marksGloss ? (glossMatch?.ranges ?? []) : [],
+                    hitFont: Font.body.weight(.heavy)
+                )
+            },
+            note: alternatives
+        )
     }
 
     /// "Ayrıca: …" with the match marked, when the query found neither the word nor its meaning
@@ -275,14 +417,6 @@ private struct SearchResultRow: View {
         var line = AttributedString("Ayrıca: ")
         line.append(SearchHighlight.attributed(joined, marking: match.ranges, hitFont: Font.caption.weight(.heavy)))
         return line
-    }
-}
-
-/// A result row's press feedback: the row darkens like a list cell.
-private struct SearchResultButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .background(configuration.isPressed ? Theme.surface2 : Color.clear)
     }
 }
 
@@ -461,78 +595,6 @@ struct WordListEmptyState: View {
             result.append(part)
         }
         return result
-    }
-}
-
-/// A 1 pt `line` rule between rows (mockup `border-top: 1px solid var(--line)`).
-private struct DictionaryRule: View {
-    var body: some View {
-        Rectangle()
-            .fill(Theme.line)
-            .frame(height: 1)
-            .accessibilityHidden(true)
-    }
-}
-
-/// Capsules from the leading edge, wrapping to a new line when the line is full (mockup
-/// `flex-wrap: wrap`): the "Dene" examples and the word partners. A capsule wider than the line
-/// gets the line's width, so its text wraps inside it. Each subview is centered on its line.
-private struct DictionaryFlowLayout: Layout {
-    /// Between two subviews on a line.
-    var itemSpacing: CGFloat
-    /// Between two lines.
-    var lineSpacing: CGFloat
-
-    private struct Line {
-        var items: [(index: Int, size: CGSize)] = []
-        var width: CGFloat = 0
-        var height: CGFloat = 0
-    }
-
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let lines = arrange(subviews, maxWidth: proposal.width ?? .infinity)
-        let gaps = lineSpacing * CGFloat(max(lines.count - 1, 0))
-        let height = lines.reduce(CGFloat(0)) { $0 + $1.height } + gaps
-        let usedWidth = lines.reduce(CGFloat(0)) { max($0, $1.width) }
-        return CGSize(width: usedWidth, height: height)
-    }
-
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        var y = bounds.minY
-        for line in arrange(subviews, maxWidth: bounds.width) {
-            var x = bounds.minX
-            for item in line.items {
-                subviews[item.index].place(
-                    at: CGPoint(x: x, y: y + (line.height - item.size.height) / 2),
-                    anchor: .topLeading,
-                    proposal: ProposedViewSize(item.size)
-                )
-                x += item.size.width + itemSpacing
-            }
-            y += line.height + lineSpacing
-        }
-    }
-
-    private func arrange(_ subviews: Subviews, maxWidth: CGFloat) -> [Line] {
-        var lines: [Line] = []
-        var line = Line()
-        for index in subviews.indices {
-            var size = subviews[index].sizeThatFits(.unspecified)
-            if size.width > maxWidth {
-                size = subviews[index].sizeThatFits(ProposedViewSize(width: maxWidth, height: nil))
-            }
-            if !line.items.isEmpty && line.width + itemSpacing + size.width > maxWidth {
-                lines.append(line)
-                line = Line()
-            }
-            line.width += (line.items.isEmpty ? 0 : itemSpacing) + size.width
-            line.height = max(line.height, size.height)
-            line.items.append((index: index, size: size))
-        }
-        if !line.items.isEmpty {
-            lines.append(line)
-        }
-        return lines
     }
 }
 
@@ -853,6 +915,7 @@ private struct WordDetailCollocationCapsule: View {
 
 /// "Durum", last on the card (README "Sözlük"): where the word stands, on a line of its own,
 /// and under it the one outlined button that changes it. Not a segment: nothing looks selected.
+/// The button is replaced by the other one, so VoiceOver hears what changed.
 private struct WordDetailStatusSection: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -862,11 +925,12 @@ private struct WordDetailStatusSection: View {
         let state = model.learningState(of: word)
         WordDetailSection(title: "Durum") {
             VStack(alignment: .leading, spacing: 12) {
-                // Rule 4: the state is said in words and with an icon, not by color alone.
+                // Rule 4: the state is said in words and with an icon, not by color alone; the
+                // same icons as the marks and filters of Sözlük's lists.
                 Label {
-                    Text(statusText(state))
+                    Text(SozlukStatus.title(state))
                 } icon: {
-                    Image(systemName: statusSymbol(state))
+                    Image(systemName: SozlukStatus.symbol(state))
                 }
                 .font(.body.weight(.semibold))
                 .foregroundStyle(state == .known ? Theme.good : Theme.ink)
@@ -874,6 +938,9 @@ private struct WordDetailStatusSection: View {
                     Button {
                         change {
                             model.undoKnown(word)
+                        }
+                        if model.learningState(of: word) != .known {
+                            SozlukSpeech.announce([.english(word.lemma), .turkish(": öğrenmeye geri alındı")])
                         }
                     } label: {
                         Label("Öğrenmeye geri al", systemImage: "arrow.uturn.backward")
@@ -885,6 +952,9 @@ private struct WordDetailStatusSection: View {
                     Button {
                         change {
                             model.markKnown(word)
+                        }
+                        if model.learningState(of: word) == .known {
+                            SozlukSpeech.announce([.english(word.lemma), .turkish(": bildiğin kelimelere eklendi")])
                         }
                     } label: {
                         Label("Biliyorum olarak işaretle", systemImage: "checkmark")
@@ -902,28 +972,6 @@ private struct WordDetailStatusSection: View {
     private func change(_ update: () -> Void) {
         withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
             update()
-        }
-    }
-
-    private func statusText(_ state: LearningState) -> String {
-        switch state {
-        case .new:
-            return "Yeni kelime"
-        case .learning:
-            return "Öğreniyorsun"
-        case .known:
-            return "Biliyorsun"
-        }
-    }
-
-    private func statusSymbol(_ state: LearningState) -> String {
-        switch state {
-        case .new:
-            return "circle.dashed"
-        case .learning:
-            return "circle.lefthalf.filled"
-        case .known:
-            return "checkmark.circle.fill"
         }
     }
 }
