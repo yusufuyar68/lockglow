@@ -188,7 +188,7 @@ struct SozlukStatusMark: View {
 /// same way as the Söyle page: every run carries `accessibilitySpeechLanguage`. For what cannot be
 /// two elements: an announcement, a button whose name holds the word ("Geri al: breakfast").
 /// Whether a label keeps the runs is still to be heard on the phone (V6); where the English word
-/// can stand alone it is its own element with `englishVoice()` (`SozlukEnglishPart`). Main
+/// can stand alone it is its own element with `englishVoice()` (`SozlukRowSpeech`). Main
 /// actor: it posts to UIKit's accessibility.
 @MainActor
 enum SozlukSpeech {
@@ -229,10 +229,9 @@ enum SozlukSpeech {
 // MARK: - Word rows
 
 /// A word that opens its whole card (`open`: SearchView pushes it on Sözlük's stack). VoiceOver
-/// reads it as two parts (README point 14, is3-tema: a merged label loses the English voice): the
-/// English word alone in an English voice, then "Türkçesi: …" with the level, status and "Ayrıca"
-/// line in Turkish, which says it opens the card. Both parts open it. The marked texts of a search
-/// result replace the plain ones.
+/// hears it as two parts (`SozlukRowSpeech`): the English word alone in an English voice, then
+/// "Türkçesi: …" with the level, status and "Ayrıca" line in Turkish. The marked texts of a
+/// search result replace the plain ones.
 struct SozlukWordLink: View {
     @EnvironmentObject private var model: AppModel
     let word: WidgetWord
@@ -255,16 +254,15 @@ struct SozlukWordLink: View {
                 note: note,
                 // A user's word has no level.
                 level: showsLevel && !word.isUserAdded ? word.level : nil,
-                state: state,
-                spokenDetails: spokenDetails(state),
-                open: {
-                    open(word)
-                }
+                state: state
             )
         }
         .buttonStyle(SozlukRowButtonStyle())
-        // The row's two parts are VoiceOver's elements, not the button.
-        .accessibilityElement(children: .contain)
+        .accessibilityRepresentation {
+            SozlukRowSpeech(lemma: word.lemma, details: spokenDetails(state)) {
+                open(word)
+            }
+        }
     }
 
     /// The Turkish part: "Türkçesi: kahvaltı, Seviye A1, Bildiğin kelime, Ayrıca: …".
@@ -288,35 +286,31 @@ struct SozlukWordLink: View {
     }
 }
 
-/// The English word of a row as its own VoiceOver element: read alone in an English voice
-/// (`englishVoice()`; no Turkish label, hint or trait on it), and it opens the row's card.
-struct SozlukEnglishPart: ViewModifier {
+/// What VoiceOver hears for a word row that opens a card: the row button's
+/// `accessibilityRepresentation`, so the visible row stays one button (README point 14, is3-tema:
+/// a merged label loses the English voice). Two elements: the English word alone in an English
+/// voice (`englishVoice()`; no Turkish label, hint or trait on it), then the Turkish rest
+/// ("Türkçesi: kahvaltı, Seviye A1, …") as a button that says it opens the card. Both open it.
+struct SozlukRowSpeech: View {
+    let lemma: String
+    /// Empty: the second element only says "Kartı aç".
+    let details: String
     let open: () -> Void
 
-    func body(content: Content) -> some View {
-        content
-            .accessibilityAction {
-                open()
-            }
-            .englishVoice()
-    }
-}
-
-/// The Turkish rest of a row as one VoiceOver element: `label`, a button that opens the card.
-struct SozlukTurkishPart: ViewModifier {
-    let label: String
-    var hint = "Kartı açar"
-    let open: () -> Void
-
-    func body(content: Content) -> some View {
-        content
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text(verbatim: label))
-            .accessibilityAddTraits(.isButton)
-            .accessibilityHint(Text(verbatim: hint))
-            .accessibilityAction {
-                open()
-            }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(verbatim: lemma)
+                .accessibilityAction {
+                    open()
+                }
+                .englishVoice()
+            Text(verbatim: details.isEmpty ? "Kartı aç" : details)
+                .accessibilityAddTraits(.isButton)
+                .accessibilityHint(Text(verbatim: details.isEmpty ? "" : "Kartı açar"))
+                .accessibilityAction {
+                    open()
+                }
+        }
     }
 }
 
@@ -330,39 +324,29 @@ struct SozlukWordRow: View {
     var note: AttributedString? = nil
     var level: String? = nil
     let state: LearningState
-    /// VoiceOver's Turkish part (`SozlukTurkishPart`): on the meaning and note, or on the level and
-    /// status when the word has neither.
-    let spokenDetails: String
-    let open: () -> Void
 
     var body: some View {
-        let hasLines = gloss != nil || note != nil
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 2) {
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: 8) {
                         word
-                        meta(speaks: !hasLines)
+                        meta
                     }
                     VStack(alignment: .leading, spacing: 4) {
                         word
-                        meta(speaks: !hasLines)
+                        meta
                     }
                 }
-                if hasLines {
-                    VStack(alignment: .leading, spacing: 2) {
-                        if let gloss = gloss {
-                            Text(gloss)
-                                .font(.body.weight(.semibold))
-                                .foregroundStyle(Theme.ink)
-                        }
-                        if let note = note {
-                            Text(note)
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(Theme.ink2)
-                        }
-                    }
-                    .modifier(SozlukTurkishPart(label: spokenDetails, open: open))
+                if let gloss = gloss {
+                    Text(gloss)
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Theme.ink)
+                }
+                if let note = note {
+                    Text(note)
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(Theme.ink2)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -382,15 +366,13 @@ struct SozlukWordRow: View {
         Text(lemma)
             .font(.system(.title3, design: .serif).weight(.bold))
             .foregroundStyle(Theme.ink)
-            .modifier(SozlukEnglishPart(open: open))
+            .cardEnglishVoice()
     }
 
-    /// The level and status. VoiceOver hears them in the Turkish part; they are that part only
-    /// when the word has no meaning line (`speaks`).
     @ViewBuilder
-    private func meta(speaks: Bool) -> some View {
+    private var meta: some View {
         if level != nil || state != .new {
-            let flow = DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 4) {
+            DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 4) {
                 if let level = level {
                     LevelBadge(code: level)
                         .fixedSize()
@@ -398,11 +380,6 @@ struct SozlukWordRow: View {
                 if state != .new {
                     SozlukStatusMark(state: state)
                 }
-            }
-            if speaks {
-                flow.modifier(SozlukTurkishPart(label: spokenDetails, open: open))
-            } else {
-                flow.accessibilityHidden(true)
             }
         }
     }

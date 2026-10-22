@@ -78,6 +78,13 @@ struct FeedView: View {
                 openingDecided()
             }
         }
+        // The end-of-day card went away under the user (a new day, "İlerlemeyi sıfırla", another
+        // deck): the scroll position moves to a word, so the feed goes on noting cards.
+        .onChange(of: showsDayEnd) { _, shows in
+            if !shows && scrolledWordID == FeedItem.dayEndID {
+                scrolledWordID = nextWordID(afterDayEnd: dayEndAfterID) ?? model.feedWords.first?.id
+            }
+        }
         .sheet(item: $detailWord) { word in
             NavigationStack {
                 WordDetailView(word: word)
@@ -147,11 +154,18 @@ struct FeedView: View {
     /// The deck's words, and the end-of-day card after `dayEndAfterID` while it is today's.
     private var items: [FeedItem] {
         var items = model.feedWords.map { FeedItem.word($0) }
-        if let after = dayEndAfterID, encounters.isDayEndShown(),
-           let index = items.firstIndex(where: { $0.id == after }) {
+        if showsDayEnd, let index = items.firstIndex(where: { $0.id == dayEndAfterID }) {
             items.insert(.dayEnd, at: index + 1)
         }
         return items
+    }
+
+    /// The end-of-day card is a page now: shown today, and its word is still in the deck.
+    private var showsDayEnd: Bool {
+        guard let after = dayEndAfterID, encounters.isDayEndShown() else {
+            return false
+        }
+        return model.feedWords.contains { $0.id == after }
     }
 
     @ViewBuilder
@@ -274,7 +288,8 @@ struct FeedView: View {
         return words[index + 1].id
     }
 
-    /// "Tekrar'a geç".
+    /// "Tekrar'a geç". Without `openReview` the reminder route also marks this opening as one a
+    /// reminder opened; that only matters before the opening's card is chosen, which is done by now.
     private func openReviewTab() {
         if let openReview = openReview {
             openReview()
@@ -401,16 +416,20 @@ struct FeedView: View {
     }
 
     /// The notice leaves after 5 seconds (ogrenme_ilkeleri 2.2). With VoiceOver or Switch Control
-    /// it stays 10 seconds, and never leaves while VoiceOver is on it (WCAG 2.2.1); the card's
-    /// "Biliyorum" undoes the word at any time anyway.
+    /// it stays 10 seconds, and never leaves while VoiceOver is on it (WCAG 2.2.1). While it is on
+    /// screen its "Geri al" restores the word exactly: the model's undo window is kept a little
+    /// ahead of it (`AppModel.extendKnownUndo`). The card's "Biliyorum" undoes the word at any
+    /// time anyway.
     private func hideKnownNoticeLater() async {
-        guard knownNotice != nil else {
+        guard let word = knownNotice?.word else {
             return
         }
         let isAssisted = UIAccessibility.isVoiceOverRunning || UIAccessibility.isSwitchControlRunning
-        try? await Task.sleep(for: .seconds(isAssisted ? 10 : 5))
-        while !Task.isCancelled && noticeHasFocus {
-            try? await Task.sleep(for: .seconds(1))
+        let end = Date().addingTimeInterval(isAssisted ? 10 : 5)
+        while !Task.isCancelled && (Date() < end || noticeHasFocus) {
+            model.extendKnownUndo(of: word, until: Date().addingTimeInterval(2))
+            let remaining = end.timeIntervalSinceNow
+            try? await Task.sleep(for: .seconds(remaining > 0 ? min(1, remaining) : 1))
         }
         guard !Task.isCancelled else {
             return

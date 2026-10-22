@@ -163,12 +163,10 @@ private struct KnownWordRow: View {
                     Text(verbatim: word.lemma)
                         .font(.system(.body, design: .serif).weight(.bold))
                         .foregroundStyle(Theme.ink)
-                        .modifier(SozlukEnglishPart(open: open))
                     if let gloss = word.glossTR {
                         Text(gloss)
                             .font(.subheadline.weight(.medium))
                             .foregroundStyle(Theme.ink2)
-                            .modifier(SozlukTurkishPart(label: "Türkçesi: " + gloss, open: open))
                     }
                 }
                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
@@ -176,10 +174,11 @@ private struct KnownWordRow: View {
             }
             // Not the list's default button style: the row must not also fire "Geri al".
             .buttonStyle(KnownWordOpenButtonStyle())
-            // Its two parts are VoiceOver's elements. LockglowScreenshotTests opens the card
-            // through the first element whose label contains the word: the English part, before
-            // "Geri al".
-            .accessibilityElement(children: .contain)
+            // Two VoiceOver parts, as in Sözlük. LockglowScreenshotTests opens the card through the
+            // first element whose label contains the word: the English part, before "Geri al".
+            .accessibilityRepresentation {
+                SozlukRowSpeech(lemma: word.lemma, details: word.glossTR.map { "Türkçesi: " + $0 } ?? "", open: open)
+            }
             Button(action: undo) {
                 Label("Geri al", systemImage: "arrow.uturn.backward")
                     .font(.subheadline.weight(.semibold))

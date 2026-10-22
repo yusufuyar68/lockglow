@@ -667,6 +667,23 @@ final class AppModel: ObservableObject {
         knownUndo = nil
     }
 
+    /// The screen's "Geri al" for `word` is still showing (for example VoiceOver is on it): the
+    /// exact undo of its last "Biliyorum" lasts until `date`. No change once the window has ended
+    /// or another tap replaced it.
+    func extendKnownUndo(of word: WidgetWord, until date: Date) {
+        guard let undo = knownUndo, undo.word.id == word.id, Date() < undo.expiresAt, date > undo.expiresAt else {
+            return
+        }
+        let extended = KnownUndo(word: undo.word, previous: undo.previous, marked: undo.marked, expiresAt: date)
+        knownUndo = extended
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(nanoseconds: UInt64(max(0, date.timeIntervalSinceNow) * 1_000_000_000))
+            if self?.knownUndo == extended {
+                self?.knownUndo = nil
+            }
+        }
+    }
+
     /// Applies pending widget taps first (a "known" tap still in the mailbox must not undo this
     /// change later), saves, then rewrites the widget queue. `change` returns nil for no change.
     /// Returns the word's progress before (nil: it had none) and after the change; nil when

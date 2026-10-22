@@ -42,7 +42,7 @@ struct SozlukTopicView: View {
             WordListEmptyState(
                 systemImage: "square.stack.3d.up.slash",
                 title: "Bu konuda kelime yok",
-                message: AttributedString("Arama yine çalışır.")
+                message: AttributedString("Kelimeleri Sözlük'te arayabilirsin.")
             )
         } else {
             list(words)
