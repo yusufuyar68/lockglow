@@ -22,6 +22,9 @@ Başka bir ajanın yazdığı kelime kartlarını **kart kart okuyup düzeltecek
    - İlk örnek kilit ekranına uygun mu (kısa, tek başına anlaşılır)?
 3. **Türkçe çeviri:** Çeviriyi **İngilizceye geri çevir**. İngilizce cümleyle aynı anlam çıkıyorsa iyi. Fazla ya da eksik bilgi, doğal olmayan Türkçe ya da kelimenin karşılığının kaybolması düzeltilir.
 4. **gloss ve alt:** Gerçek ve yaygın Türkçe karşılıklar mı? Açıklama cümlesi değil, sözcük ya da kalıp mı?
+   - **gloss_short** (anlam 16 karakteri geçiyorsa var): kilit ekranında tek başına okununca doğal ve doğru mu? Kesilmiş gibi durmuyor mu, olumsuzluğu koruyor mu, başka anlama kaymıyor mu ("randevu istemek" ask out için doktor randevusu gibi okunur)?
+   - **confusables:** her eş gerçek bir karışıklık mı (Türkçede aynı karşılık, benzer yazılış ya da ses, sahte dost, bilinen kullanım farkı)? Düz eş anlamlı ya da aynı konudan kelimeyse sil. Destedeki eşte de karşılığı var mı?
+   - **sensitivity:** kart, kilit ekranında başkası görünce sahibini utandırabilecek ya da özel hayatı sanılabilecek bir konuda mı (ilişki, ayrılık, beden, alkol, kaba kelime, iş ya da para kaybı)? Öyleyse `1`, değilse `0`.
 5. **Yaygın hata (mistakes):** Türkçe konuşanların **gerçekten** yaptığı bir hata mı?
    - Uydurma, zorlama ya da Türkçeyle ilgisiz bir hataysa sil (liste boş kalabilir) ya da gerçek bir hatayla değiştir.
    - `right` gerçekten doğru mu?

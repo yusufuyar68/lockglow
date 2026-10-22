@@ -1,156 +1,1125 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{"id":"en.confident.adj.1","lemma":"confident","type":"word","pos":"adj","sense_no":1,"sense_note":"sure of yourself","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈkɑːnfɪdənt/","uk":"/ˈkɒnfɪdənt/"},
-"def":{"micro":"sure about yourself","short":"believing in yourself and your own abilities","long":"Believing in yourself and in what you can do, so you are not afraid to try. A confident person usually speaks clearly and stays calm in front of others."},
-"grammar":{"pattern":"confident (in / about sth)"},
-"examples":[
-{"en":"She is confident and speaks well in meetings.","tr":"Kendine güveniyor ve toplantılarda iyi konuşuyor.","register":"neutral","focus":"confident"},
-{"en":"I feel confident about my English now.","tr":"Artık İngilizcem konusunda kendime güveniyorum.","register":"neutral","focus":"confident"},
-{"en":"He gave a confident answer in the interview.","tr":"Mülakatta kendinden emin bir cevap verdi.","register":"neutral","focus":"confident"}],
-"synonyms":["self-assured","sure"],"antonyms":["shy","insecure"],"collocations":["feel confident","confident about","confident smile","fairly confident"],
-"word_family":[{"lemma":"confidence","pos":"n"},{"lemma":"confidently","pos":"adv"}],"etymology":null,
-"l1":{"tr":{"gloss":"kendine güvenen","alt":["özgüvenli","kendinden emin"],"equivalence":"full","false_friend":null,"note":"'Confident' = özgüvenli, emin. 'Confidential' ile karıştırma: o 'gizli' demektir (a confidential report).","mistakes":[{"wrong":"I'm confident to myself.","right":"I'm confident in myself.","why":"'Kendine güvenmek' için 'confident in yourself' denir; 'to' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"personality","topics":["personality","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:confidential"],"sensitivity":0},
-"quiz":{"cloze":"Before the interview, she felt calm and ______.","answer":"confident","distractors":["nervous","worried","upset"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.reliable.adj.1","lemma":"reliable","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/rɪˈlaɪəbəl/","uk":"/rɪˈlaɪəbəl/"},
-"def":{"micro":"someone you can depend on","short":"doing what you say you will do, so people can depend on you","long":"Doing what you say you will do, so people can depend on you. A reliable car or phone works well every time you use it."},
-"grammar":null,
-"examples":[
-{"en":"Ali is reliable. He is never late.","tr":"Ali güvenilir biri. Asla geç kalmaz.","register":"neutral","focus":"reliable"},
-{"en":"I need a reliable car for my long drive to work.","tr":"İşe giden uzun yol için güvenilir bir arabaya ihtiyacım var.","register":"neutral","focus":"reliable"},
-{"en":"Is this website reliable? I can't tell.","tr":"Bu web sitesi güvenilir mi? Anlayamıyorum.","register":"neutral","focus":"reliable"}],
-"synonyms":["dependable","trustworthy"],"antonyms":["unreliable"],"collocations":["reliable source","reliable information","very reliable","a reliable friend"],
-"word_family":[{"lemma":"rely","pos":"v"},{"lemma":"reliably","pos":"adv"},{"lemma":"reliability","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"güvenilir","alt":["güvenilebilir","sözünün eri"],"equivalence":"full","false_friend":null,"note":"Kişi, araç, haber kaynağı ya da uygulama için kullanılabilir. 'Rely on sb' = birine güvenmek, bel bağlamak.","mistakes":[{"wrong":"He is a trustable man.","right":"He is a reliable man.","why":"'Güvenilir' için 'trustable' demeyiz; 'reliable' ya da 'trustworthy' kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"personality","topics":["personality","workplace_office"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"You can always count on Sam. He is very ______.","answer":"reliable","distractors":["lazy","careless","selfish"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.ambitious.adj.1","lemma":"ambitious","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/æmˈbɪʃəs/","uk":"/æmˈbɪʃəs/"},
-"def":{"micro":"wanting to be successful","short":"wanting very much to be successful and ready to work hard for it","long":"Wanting very much to be successful and ready to work hard for it, for example to get a better job. Young people are often ambitious."},
-"grammar":null,
-"examples":[
-{"en":"She is ambitious and wants to be a manager.","tr":"Hırslı biri, müdür olmak istiyor.","register":"neutral","focus":"ambitious"},
-{"en":"My brother is young and ambitious.","tr":"Kardeşim genç ve hırslı.","register":"neutral","focus":"ambitious"},
-{"en":"He has ambitious plans for his business.","tr":"İşi için iddialı planları var.","register":"neutral","focus":"ambitious"}],
-"synonyms":["driven","determined"],"antonyms":["lazy"],"collocations":["highly ambitious","ambitious plan","ambitious goal","fiercely ambitious"],
-"word_family":[{"lemma":"ambition","pos":"n"},{"lemma":"ambitiously","pos":"adv"}],"etymology":null,
-"l1":{"tr":{"gloss":"hırslı","alt":["azimli","iddialı"],"equivalence":"partial","false_friend":null,"note":"Türkçede 'hırslı' bazen olumsuz duyulur. İngilizcede 'ambitious' çoğunlukla olumludur: hedefi büyük ve çalışmaya hazır biri.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"personality","topics":["personality","success_productivity"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"She is very ______ and wants to run her own company.","answer":"ambitious","distractors":["lazy","shy","careless"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.easygoing.adj.1","lemma":"easygoing","type":"word","pos":"adj","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˌiːziˈɡoʊɪŋ/","uk":"/ˌiːziˈɡəʊɪŋ/"},
-"def":{"micro":"relaxed and not easily upset","short":"calm and relaxed; not easily worried or upset by things","long":"Calm and relaxed, and not easily worried or upset. An easygoing person is nice to work with and does not mind small changes of plan."},
-"grammar":null,
-"examples":[
-{"en":"My boss is easygoing, so work is fun.","tr":"Müdürüm rahat biri, bu yüzden iş keyifli.","register":"neutral","focus":"easygoing"},
-{"en":"Ayşe is easygoing and never gets angry.","tr":"Ayşe rahat biri ve hiç kızmaz.","register":"neutral","focus":"easygoing"},
-{"en":"We're easygoing. Any restaurant is fine.","tr":"Biz geçimi kolay insanlarız. Hangi restoran olursa olur.","register":"neutral","focus":"easygoing"}],
-"synonyms":["laid-back","relaxed"],"antonyms":["strict","fussy"],"collocations":["easygoing attitude","easygoing person","an easygoing nature","pretty easygoing"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"geçimi kolay","alt":["rahat","uyumlu"],"equivalence":"partial","false_friend":null,"note":"Türkçede tek kelimelik tam karşılığı yok: 'geçimi kolay', 'rahat tabiatlı'. 'Easy-going' (tireli) yazım da doğrudur. Sinirli olmayan, her şeye uyan kişidir.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"personality","topics":["personality"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"I'm ______. I'm happy with any plan you choose.","answer":"easygoing","distractors":["stubborn","strict","bossy"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.outgoing.adj.1","lemma":"outgoing","type":"word","pos":"adj","sense_no":1,"sense_note":"friendly and social","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈaʊtɡoʊɪŋ/","uk":"/ˈaʊtɡəʊɪŋ/"},
-"def":{"micro":"friendly and likes to talk","short":"friendly and happy to meet and talk to new people","long":"Friendly, happy to talk to people, and good at making new friends. An outgoing person is the opposite of shy."},
-"grammar":null,
-"examples":[
-{"en":"She's outgoing and makes friends easily.","tr":"Girişken biri, kolay arkadaş edinir.","register":"neutral","focus":"outgoing"},
-{"en":"Are you outgoing, or do you prefer to stay home?","tr":"Sen girişken misin, yoksa evde kalmayı mı seversin?","register":"neutral","focus":"outgoing"},
-{"en":"He has an outgoing personality.","tr":"Girişken bir kişiliği var.","register":"neutral","focus":"outgoing"}],
-"synonyms":["sociable","friendly","extroverted"],"antonyms":["shy","reserved"],"collocations":["outgoing personality","outgoing and friendly","very outgoing","outgoing nature"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"girişken","alt":["sosyal","dışa dönük"],"equivalence":"partial","false_friend":null,"note":"'Outgoing' = girişken, insanlarla kolay iletişim kuran kişi. 'Outgoing mail' (giden e-posta) gibi 'giden' anlamı ise başka bir kullanımdır.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"personality","topics":["personality","social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"He is very ______ and talks to everyone at parties.","answer":"outgoing","distractors":["shy","quiet","unfriendly"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.mature.adj.1","lemma":"mature","type":"word","pos":"adj","sense_no":1,"sense_note":"sensible, grown-up","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/məˈtʃʊr/","uk":"/məˈtʃʊə/"},
-"def":{"micro":"behaving like an adult","short":"thinking and acting in a sensible way, like an adult","long":"Thinking and acting in a sensible, grown-up way. A young person can be mature for their age, and a mature person stays calm in hard moments."},
-"grammar":{"pattern":"mature (for your age)"},
-"examples":[
-{"en":"Mehmet is only 15, but he is very mature.","tr":"Mehmet daha 15 yaşında ama çok olgun.","register":"neutral","focus":"mature"},
-{"en":"Be mature. Don't shout at your sister.","tr":"Olgun ol. Kız kardeşine bağırma.","register":"neutral","focus":"mature"},
-{"en":"She handled the problem in a mature way.","tr":"Sorunu olgun bir şekilde ele aldı.","register":"neutral","focus":"mature"}],
-"synonyms":["grown-up","sensible"],"antonyms":["childish","immature"],"collocations":["mature for your age","mature attitude","emotionally mature","mature way"],
-"word_family":[{"lemma":"maturity","pos":"n"},{"lemma":"immature","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"olgun","alt":["ağırbaşlı","yaşından büyük"],"equivalence":"full","false_friend":null,"note":"Bu kartta 'mature' kişinin davranışıdır: olgun, ağırbaşlı. Meyve ve peynir için de 'olgunlaşmış' anlamında kullanılır (mature cheese).","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"personality","topics":["personality"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"For her age, she is very ______ and thinks carefully.","answer":"mature","distractors":["careless","silly","selfish"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.invite.v.1","lemma":"invite","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ɪnˈvaɪt/","uk":"/ɪnˈvaɪt/"},
-"def":{"micro":"ask someone to come","short":"ask someone to come to a party, meal, or event","long":"To ask someone to come to a party, a meal, or another event. You invite a person TO a place or an event."},
-"grammar":{"pattern":"invite sb (to / for sth)"},
-"examples":[
-{"en":"I want to invite you to my birthday party.","tr":"Seni doğum günü partime davet etmek istiyorum.","register":"neutral","focus":"invite"},
-{"en":"They invited us for dinner on Saturday.","tr":"Bizi cumartesi akşam yemeğine davet ettiler.","register":"neutral","focus":"invited"},
-{"en":"Did Ayşe invite her new neighbors?","tr":"Ayşe yeni komşularını davet etti mi?","register":"neutral","focus":"invite"}],
-"synonyms":["ask"],"antonyms":[],"collocations":["invite sb to dinner","invite sb to a party","invite friends","invite sb over"],
-"word_family":[{"lemma":"invitation","pos":"n"},{"lemma":"invited","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"davet etmek","alt":["çağırmak"],"equivalence":"full","false_friend":null,"note":"Günlük konuşmada 'çağırmak' da denir. İsmi 'invitation' (davetiye, davet); konuşmada 'an invite' de duyulur.","mistakes":[{"wrong":"She invited me in her wedding.","right":"She invited me to her wedding.","why":"'Düğüne davet etmek' için 'invite to' kullanılır; 'in' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills","love_friendship"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"We want to ______ all our friends to the party.","answer":"invite","distractors":["visit","thank","answer"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.apologise.v.1","lemma":"apologise","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/əˈpɑːlədʒaɪz/","uk":"/əˈpɒlədʒaɪz/"},
-"def":{"micro":"say you are sorry","short":"tell someone you are sorry for something you did","long":"To tell someone that you are sorry for something you did wrong. You apologise TO a person FOR something. In US English the spelling is 'apologize'."},
-"grammar":{"pattern":"apologise (to sb) for sth"},
-"examples":[
-{"en":"I want to apologise for being late.","tr":"Geç kaldığım için özür dilemek istiyorum.","register":"neutral","focus":"apologise"},
-{"en":"He apologised to her for the mistake.","tr":"Hata için ondan özür diledi.","register":"neutral","focus":"apologised"},
-{"en":"You should apologise to your sister.","tr":"Kız kardeşinden özür dilemelisin.","register":"neutral","focus":"apologise"}],
-"synonyms":["say sorry"],"antonyms":[],"collocations":["apologise for","apologise to sb","apologise sincerely","owe sb an apology"],
-"word_family":[{"lemma":"apology","pos":"n"},{"lemma":"apologetic","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"özür dilemek","alt":["af dilemek"],"equivalence":"full","false_friend":null,"note":"Amerikan yazımı 'apologize'dır; ikisi aynıdır. Günlük konuşmada kısaca 'sorry' denir; 'I apologise' daha resmîdir.","mistakes":[{"wrong":"I apologise you.","right":"I apologise to you.","why":"Türkçede '-den özür dilemek' derken İngilizcede 'apologise TO sb' denir; fiil doğrudan kişiyi almaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"You were rude, so you should ______ to him.","answer":"apologise","distractors":["refuse","argue","borrow"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.introduce.v.1","lemma":"introduce","type":"word","pos":"v","sense_no":1,"sense_note":"present people","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˌɪntrəˈduːs/","uk":"/ˌɪntrəˈdjuːs/"},
-"def":{"micro":"make people meet each other","short":"tell two people each other's names when they meet for the first time","long":"To tell people each other's names when they meet for the first time. You can also introduce yourself by saying your own name."},
-"grammar":{"pattern":"introduce sb to sb"},
-"examples":[
-{"en":"Let me introduce you to my sister.","tr":"Seni kız kardeşimle tanıştırayım.","register":"neutral","focus":"introduce"},
-{"en":"Ali introduced his wife to the team.","tr":"Ali eşini ekiple tanıştırdı.","register":"neutral","focus":"introduced"},
-{"en":"Can I introduce myself? I'm Sam.","tr":"Kendimi tanıtabilir miyim? Ben Sam.","register":"neutral","focus":"introduce"}],
-"synonyms":["present"],"antonyms":[],"collocations":["introduce yourself","introduce sb to sb","allow me to introduce","introduce a friend"],
-"word_family":[{"lemma":"introduction","pos":"n"},{"lemma":"introductory","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"tanıştırmak","alt":["tanıtmak"],"equivalence":"partial","false_friend":null,"note":"Birini birine tanıştırmak: 'introduce A to B'. Kendini tanıtmak: 'introduce yourself'. Yeni biriyle tanışınca 'Nice to meet you' (Tanıştığımıza memnun oldum) denir.","mistakes":[{"wrong":"Let me introduce with my friend.","right":"Let me introduce you to my friend.","why":"'Tanıştırmak' doğrudan nesne alır: introduce SB to sb. 'With' kullanılmaz."}],"mnemonic":"Şarkının girişine 'intro' denir: 'introduce' da bir tanışmanın girişidir, iki kişiyi ilk kez buluşturur."}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Ayşe wants to ______ her new boyfriend to her parents.","answer":"introduce","distractors":["carry","pay","wear"]},
-"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.promise.v.1","lemma":"promise","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈprɑːmɪs/","uk":"/ˈprɒmɪs/"},
-"def":{"micro":"say you will surely do it","short":"tell someone that you will definitely do something","long":"To tell someone that you will definitely do something, or that something will definitely happen. When you promise, people expect you to keep your word."},
-"grammar":{"pattern":"promise (sb) to do sth / that ..."},
-"examples":[
-{"en":"I promise I'll call you tonight.","tr":"Söz veriyorum, bu akşam seni arayacağım.","register":"neutral","focus":"promise"},
-{"en":"He promised to help me move house.","tr":"Taşınmama yardım edeceğine söz verdi.","register":"neutral","focus":"promised"},
-{"en":"Do you promise not to tell anyone?","tr":"Kimseye söylemeyeceğine söz veriyor musun?","register":"neutral","focus":"promise"}],
-"synonyms":["swear","give your word"],"antonyms":[],"collocations":["promise to do sth","keep a promise","break a promise","make a promise"],
-"word_family":[{"lemma":"promise","pos":"n"},{"lemma":"promising","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"söz vermek","alt":["vaat etmek"],"equivalence":"full","false_friend":null,"note":"'Promise' isim olarak da 'söz' demektir: 'söz tutmak' = keep a promise, 'sözünden dönmek' = break a promise.","mistakes":[{"wrong":"I promise that I come tomorrow.","right":"I promise that I'll come tomorrow.","why":"Gelecek için söz verirken 'will' (ya da 'to + fiil') kullanılır; basit şimdiki zaman yetmez."}],"mnemonic":null}},
-"tags":{"primary_topic":"social_skills","topics":["social_skills","love_friendship"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Please ______ me you won't forget my birthday.","answer":"promise","distractors":["ask","wish","thank"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.confident.adj.1",
+      "lemma": "confident",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "sure of yourself",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnfɪdənt/",
+        "uk": "/ˈkɒnfɪdənt/"
+      },
+      "def": {
+        "micro": "sure about yourself",
+        "short": "believing in yourself and your own abilities",
+        "long": "Believing in yourself and in what you can do, so you are not afraid to try. A confident person usually speaks clearly and stays calm in front of others."
+      },
+      "grammar": {
+        "pattern": "confident (in / about sth)"
+      },
+      "examples": [
+        {
+          "en": "She is confident and speaks well in meetings.",
+          "tr": "Kendine güveniyor ve toplantılarda iyi konuşuyor.",
+          "register": "neutral",
+          "focus": "confident"
+        },
+        {
+          "en": "I feel confident about my English now.",
+          "tr": "Artık İngilizcem konusunda kendime güveniyorum.",
+          "register": "neutral",
+          "focus": "confident"
+        },
+        {
+          "en": "He gave a confident answer in the interview.",
+          "tr": "Mülakatta kendinden emin bir cevap verdi.",
+          "register": "neutral",
+          "focus": "confident"
+        }
+      ],
+      "synonyms": [
+        "self-assured",
+        "sure"
+      ],
+      "antonyms": [
+        "shy",
+        "insecure"
+      ],
+      "confusables": [
+        "confidential"
+      ],
+      "collocations": [
+        "feel confident",
+        "confident about",
+        "confident smile",
+        "fairly confident"
+      ],
+      "word_family": [
+        {
+          "lemma": "confidence",
+          "pos": "n"
+        },
+        {
+          "lemma": "confidently",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kendine güvenen",
+          "alt": [
+            "özgüvenli",
+            "kendinden emin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Confident' = özgüvenli, emin. 'Confidential' ile karıştırma: o 'gizli' demektir (a confidential report).",
+          "mistakes": [
+            {
+              "wrong": "I'm confident to myself.",
+              "right": "I'm confident in myself.",
+              "why": "'Kendine güvenmek' için 'confident in yourself' denir; 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before the interview, she felt calm and ______.",
+        "answer": "confident",
+        "distractors": [
+          "nervous",
+          "worried",
+          "upset"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reliable.adj.1",
+      "lemma": "reliable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈlaɪəbəl/",
+        "uk": "/rɪˈlaɪəbəl/"
+      },
+      "def": {
+        "micro": "someone you can depend on",
+        "short": "doing what you say you will do, so people can depend on you",
+        "long": "Doing what you say you will do, so people can depend on you. A reliable car or phone works well every time you use it."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Ali is reliable. He is never late.",
+          "tr": "Ali güvenilir biri. Asla geç kalmaz.",
+          "register": "neutral",
+          "focus": "reliable"
+        },
+        {
+          "en": "I need a reliable car for my long drive to work.",
+          "tr": "İşe giden uzun yol için güvenilir bir arabaya ihtiyacım var.",
+          "register": "neutral",
+          "focus": "reliable"
+        },
+        {
+          "en": "Is this website reliable? I can't tell.",
+          "tr": "Bu web sitesi güvenilir mi? Anlayamıyorum.",
+          "register": "neutral",
+          "focus": "reliable"
+        }
+      ],
+      "synonyms": [
+        "dependable",
+        "trustworthy"
+      ],
+      "antonyms": [
+        "unreliable"
+      ],
+      "collocations": [
+        "reliable source",
+        "reliable information",
+        "very reliable",
+        "a reliable friend"
+      ],
+      "word_family": [
+        {
+          "lemma": "rely",
+          "pos": "v"
+        },
+        {
+          "lemma": "reliably",
+          "pos": "adv"
+        },
+        {
+          "lemma": "reliability",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güvenilir",
+          "alt": [
+            "güvenilebilir",
+            "sözünün eri"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kişi, araç, haber kaynağı ya da uygulama için kullanılabilir. 'Rely on sb' = birine güvenmek, bel bağlamak.",
+          "mistakes": [
+            {
+              "wrong": "He is a trustable man.",
+              "right": "He is a reliable man.",
+              "why": "'Güvenilir' için 'trustable' demeyiz; 'reliable' ya da 'trustworthy' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can always count on Sam. He is very ______.",
+        "answer": "reliable",
+        "distractors": [
+          "lazy",
+          "careless",
+          "selfish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ambitious.adj.1",
+      "lemma": "ambitious",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æmˈbɪʃəs/",
+        "uk": "/æmˈbɪʃəs/"
+      },
+      "def": {
+        "micro": "wanting to be successful",
+        "short": "wanting very much to be successful and ready to work hard for it",
+        "long": "Wanting very much to be successful and ready to work hard for it, for example to get a better job. Young people are often ambitious."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "She is ambitious and wants to be a manager.",
+          "tr": "Hırslı biri, müdür olmak istiyor.",
+          "register": "neutral",
+          "focus": "ambitious"
+        },
+        {
+          "en": "My brother is young and ambitious.",
+          "tr": "Kardeşim genç ve hırslı.",
+          "register": "neutral",
+          "focus": "ambitious"
+        },
+        {
+          "en": "He has ambitious plans for his business.",
+          "tr": "İşi için iddialı planları var.",
+          "register": "neutral",
+          "focus": "ambitious"
+        }
+      ],
+      "synonyms": [
+        "driven",
+        "determined"
+      ],
+      "antonyms": [
+        "lazy"
+      ],
+      "collocations": [
+        "highly ambitious",
+        "ambitious plan",
+        "ambitious goal",
+        "fiercely ambitious"
+      ],
+      "word_family": [
+        {
+          "lemma": "ambition",
+          "pos": "n"
+        },
+        {
+          "lemma": "ambitiously",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hırslı",
+          "alt": [
+            "azimli",
+            "iddialı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'hırslı' bazen olumsuz duyulur. İngilizcede 'ambitious' çoğunlukla olumludur: hedefi büyük ve çalışmaya hazır biri.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She is very ______ and wants to run her own company.",
+        "answer": "ambitious",
+        "distractors": [
+          "lazy",
+          "shy",
+          "careless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.easygoing.adj.1",
+      "lemma": "easygoing",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌiːziˈɡoʊɪŋ/",
+        "uk": "/ˌiːziˈɡəʊɪŋ/"
+      },
+      "def": {
+        "micro": "relaxed and not easily upset",
+        "short": "calm and relaxed; not easily worried or upset by things",
+        "long": "Calm and relaxed, and not easily worried or upset. An easygoing person is nice to work with and does not mind small changes of plan."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My boss is easygoing, so work is fun.",
+          "tr": "Müdürüm rahat biri, bu yüzden iş keyifli.",
+          "register": "neutral",
+          "focus": "easygoing"
+        },
+        {
+          "en": "Ayşe is easygoing and never gets angry.",
+          "tr": "Ayşe rahat biri ve hiç kızmaz.",
+          "register": "neutral",
+          "focus": "easygoing"
+        },
+        {
+          "en": "We're easygoing. Any restaurant is fine.",
+          "tr": "Biz geçimi kolay insanlarız. Hangi restoran olursa olur.",
+          "register": "neutral",
+          "focus": "easygoing"
+        }
+      ],
+      "synonyms": [
+        "laid-back",
+        "relaxed"
+      ],
+      "antonyms": [
+        "strict",
+        "fussy"
+      ],
+      "collocations": [
+        "easygoing attitude",
+        "easygoing person",
+        "an easygoing nature",
+        "pretty easygoing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçimi kolay",
+          "alt": [
+            "rahat",
+            "uyumlu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede tek kelimelik tam karşılığı yok: 'geçimi kolay', 'rahat tabiatlı'. 'Easy-going' (tireli) yazım da doğrudur. Sinirli olmayan, her şeye uyan kişidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm ______. I'm happy with any plan you choose.",
+        "answer": "easygoing",
+        "distractors": [
+          "stubborn",
+          "strict",
+          "bossy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.outgoing.adj.1",
+      "lemma": "outgoing",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "friendly and social",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈaʊtɡoʊɪŋ/",
+        "uk": "/ˈaʊtɡəʊɪŋ/"
+      },
+      "def": {
+        "micro": "friendly and likes to talk",
+        "short": "friendly and happy to meet and talk to new people",
+        "long": "Friendly, happy to talk to people, and good at making new friends. An outgoing person is the opposite of shy."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "She's outgoing and makes friends easily.",
+          "tr": "Girişken biri, kolay arkadaş edinir.",
+          "register": "neutral",
+          "focus": "outgoing"
+        },
+        {
+          "en": "Are you outgoing, or do you prefer to stay home?",
+          "tr": "Sen girişken misin, yoksa evde kalmayı mı seversin?",
+          "register": "neutral",
+          "focus": "outgoing"
+        },
+        {
+          "en": "He has an outgoing personality.",
+          "tr": "Girişken bir kişiliği var.",
+          "register": "neutral",
+          "focus": "outgoing"
+        }
+      ],
+      "synonyms": [
+        "sociable",
+        "friendly",
+        "extroverted"
+      ],
+      "antonyms": [
+        "shy",
+        "reserved"
+      ],
+      "collocations": [
+        "outgoing personality",
+        "outgoing and friendly",
+        "very outgoing",
+        "outgoing nature"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "girişken",
+          "alt": [
+            "sosyal",
+            "dışa dönük"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Outgoing' = girişken, insanlarla kolay iletişim kuran kişi. 'Outgoing mail' (giden e-posta) gibi 'giden' anlamı ise başka bir kullanımdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He is very ______ and talks to everyone at parties.",
+        "answer": "outgoing",
+        "distractors": [
+          "shy",
+          "quiet",
+          "unfriendly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mature.adj.1",
+      "lemma": "mature",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "sensible, grown-up",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/məˈtʃʊr/",
+        "uk": "/məˈtʃʊə/"
+      },
+      "def": {
+        "micro": "behaving like an adult",
+        "short": "thinking and acting in a sensible way, like an adult",
+        "long": "Thinking and acting in a sensible, grown-up way. A young person can be mature for their age, and a mature person stays calm in hard moments."
+      },
+      "grammar": {
+        "pattern": "mature (for your age)"
+      },
+      "examples": [
+        {
+          "en": "Mehmet is only 15, but he is very mature.",
+          "tr": "Mehmet daha 15 yaşında ama çok olgun.",
+          "register": "neutral",
+          "focus": "mature"
+        },
+        {
+          "en": "Be mature. Don't shout at your sister.",
+          "tr": "Olgun ol. Kız kardeşine bağırma.",
+          "register": "neutral",
+          "focus": "mature"
+        },
+        {
+          "en": "She handled the problem in a mature way.",
+          "tr": "Sorunu olgun bir şekilde ele aldı.",
+          "register": "neutral",
+          "focus": "mature"
+        }
+      ],
+      "synonyms": [
+        "grown-up",
+        "sensible"
+      ],
+      "antonyms": [
+        "childish",
+        "immature"
+      ],
+      "confusables": [
+        "ripe"
+      ],
+      "collocations": [
+        "mature for your age",
+        "mature attitude",
+        "emotionally mature",
+        "mature way"
+      ],
+      "word_family": [
+        {
+          "lemma": "maturity",
+          "pos": "n"
+        },
+        {
+          "lemma": "immature",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olgun",
+          "alt": [
+            "ağırbaşlı",
+            "yaşından büyük"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu kartta 'mature' kişinin davranışıdır: olgun, ağırbaşlı. Meyve ve peynir için de 'olgunlaşmış' anlamında kullanılır (mature cheese).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "For her age, she is very ______ and thinks carefully.",
+        "answer": "mature",
+        "distractors": [
+          "careless",
+          "silly",
+          "selfish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.invite.v.1",
+      "lemma": "invite",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈvaɪt/",
+        "uk": "/ɪnˈvaɪt/"
+      },
+      "def": {
+        "micro": "ask someone to come",
+        "short": "ask someone to come to a party, meal, or event",
+        "long": "To ask someone to come to a party, a meal, or another event. You invite a person TO a place or an event."
+      },
+      "grammar": {
+        "pattern": "invite sb (to / for sth)"
+      },
+      "examples": [
+        {
+          "en": "I want to invite you to my birthday party.",
+          "tr": "Seni doğum günü partime davet etmek istiyorum.",
+          "register": "neutral",
+          "focus": "invite"
+        },
+        {
+          "en": "They invited us for dinner on Saturday.",
+          "tr": "Bizi cumartesi akşam yemeğine davet ettiler.",
+          "register": "neutral",
+          "focus": "invited"
+        },
+        {
+          "en": "Did Ayşe invite her new neighbors?",
+          "tr": "Ayşe yeni komşularını davet etti mi?",
+          "register": "neutral",
+          "focus": "invite"
+        }
+      ],
+      "synonyms": [
+        "ask"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "invite sb to dinner",
+        "invite sb to a party",
+        "invite friends",
+        "invite sb over"
+      ],
+      "word_family": [
+        {
+          "lemma": "invitation",
+          "pos": "n"
+        },
+        {
+          "lemma": "invited",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "davet etmek",
+          "alt": [
+            "çağırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'çağırmak' da denir. İsmi 'invitation' (davetiye, davet); konuşmada 'an invite' de duyulur.",
+          "mistakes": [
+            {
+              "wrong": "She invited me in her wedding.",
+              "right": "She invited me to her wedding.",
+              "why": "'Düğüne davet etmek' için 'invite to' kullanılır; 'in' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We want to ______ all our friends to the party.",
+        "answer": "invite",
+        "distractors": [
+          "visit",
+          "thank",
+          "answer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.apologise.v.1",
+      "lemma": "apologise",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpɑːlədʒaɪz/",
+        "uk": "/əˈpɒlədʒaɪz/"
+      },
+      "def": {
+        "micro": "say you are sorry",
+        "short": "tell someone you are sorry for something you did",
+        "long": "To tell someone that you are sorry for something you did wrong. You apologise TO a person FOR something. In US English the spelling is 'apologize'."
+      },
+      "grammar": {
+        "pattern": "apologise (to sb) for sth"
+      },
+      "examples": [
+        {
+          "en": "I want to apologise for being late.",
+          "tr": "Geç kaldığım için özür dilemek istiyorum.",
+          "register": "neutral",
+          "focus": "apologise"
+        },
+        {
+          "en": "He apologised to her for the mistake.",
+          "tr": "Hata için ondan özür diledi.",
+          "register": "neutral",
+          "focus": "apologised"
+        },
+        {
+          "en": "You should apologise to your sister.",
+          "tr": "Kız kardeşinden özür dilemelisin.",
+          "register": "neutral",
+          "focus": "apologise"
+        }
+      ],
+      "synonyms": [
+        "say sorry"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "apologise for",
+        "apologise to sb",
+        "apologise sincerely",
+        "owe sb an apology"
+      ],
+      "word_family": [
+        {
+          "lemma": "apology",
+          "pos": "n"
+        },
+        {
+          "lemma": "apologetic",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özür dilemek",
+          "alt": [
+            "af dilemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Amerikan yazımı 'apologize'dır; ikisi aynıdır. Günlük konuşmada kısaca 'sorry' denir; 'I apologise' daha resmîdir.",
+          "mistakes": [
+            {
+              "wrong": "I apologise you.",
+              "right": "I apologise to you.",
+              "why": "Türkçede '-den özür dilemek' derken İngilizcede 'apologise TO sb' denir; fiil doğrudan kişiyi almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You were rude, so you should ______ to him.",
+        "answer": "apologise",
+        "distractors": [
+          "refuse",
+          "argue",
+          "borrow"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.introduce.v.1",
+      "lemma": "introduce",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "present people",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɪntrəˈduːs/",
+        "uk": "/ˌɪntrəˈdjuːs/"
+      },
+      "def": {
+        "micro": "make people meet each other",
+        "short": "tell two people each other's names when they meet for the first time",
+        "long": "To tell people each other's names when they meet for the first time. You can also introduce yourself by saying your own name."
+      },
+      "grammar": {
+        "pattern": "introduce sb to sb"
+      },
+      "examples": [
+        {
+          "en": "Let me introduce you to my sister.",
+          "tr": "Seni kız kardeşimle tanıştırayım.",
+          "register": "neutral",
+          "focus": "introduce"
+        },
+        {
+          "en": "Ali introduced his wife to the team.",
+          "tr": "Ali eşini ekiple tanıştırdı.",
+          "register": "neutral",
+          "focus": "introduced"
+        },
+        {
+          "en": "Can I introduce myself? I'm Sam.",
+          "tr": "Kendimi tanıtabilir miyim? Ben Sam.",
+          "register": "neutral",
+          "focus": "introduce"
+        }
+      ],
+      "synonyms": [
+        "present"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "introduce yourself",
+        "introduce sb to sb",
+        "allow me to introduce",
+        "introduce a friend"
+      ],
+      "word_family": [
+        {
+          "lemma": "introduction",
+          "pos": "n"
+        },
+        {
+          "lemma": "introductory",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tanıştırmak",
+          "alt": [
+            "tanıtmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Birini birine tanıştırmak: 'introduce A to B'. Kendini tanıtmak: 'introduce yourself'. Yeni biriyle tanışınca 'Nice to meet you' (Tanıştığımıza memnun oldum) denir.",
+          "mistakes": [
+            {
+              "wrong": "Let me introduce with my friend.",
+              "right": "Let me introduce you to my friend.",
+              "why": "'Tanıştırmak' doğrudan nesne alır: introduce SB to sb. 'With' kullanılmaz."
+            }
+          ],
+          "mnemonic": "Şarkının girişine 'intro' denir: 'introduce' da bir tanışmanın girişidir, iki kişiyi ilk kez buluşturur."
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ayşe wants to ______ her new boyfriend to her parents.",
+        "answer": "introduce",
+        "distractors": [
+          "carry",
+          "pay",
+          "wear"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.promise.v.1",
+      "lemma": "promise",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɑːmɪs/",
+        "uk": "/ˈprɒmɪs/"
+      },
+      "def": {
+        "micro": "say you will surely do it",
+        "short": "tell someone that you will definitely do something",
+        "long": "To tell someone that you will definitely do something, or that something will definitely happen. When you promise, people expect you to keep your word."
+      },
+      "grammar": {
+        "pattern": "promise (sb) to do sth / that ..."
+      },
+      "examples": [
+        {
+          "en": "I promise I'll call you tonight.",
+          "tr": "Söz veriyorum, bu akşam seni arayacağım.",
+          "register": "neutral",
+          "focus": "promise"
+        },
+        {
+          "en": "He promised to help me move house.",
+          "tr": "Taşınmama yardım edeceğine söz verdi.",
+          "register": "neutral",
+          "focus": "promised"
+        },
+        {
+          "en": "Do you promise not to tell anyone?",
+          "tr": "Kimseye söylemeyeceğine söz veriyor musun?",
+          "register": "neutral",
+          "focus": "promise"
+        }
+      ],
+      "synonyms": [
+        "swear",
+        "give your word"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "promise to do sth",
+        "keep a promise",
+        "break a promise",
+        "make a promise"
+      ],
+      "word_family": [
+        {
+          "lemma": "promise",
+          "pos": "n"
+        },
+        {
+          "lemma": "promising",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "söz vermek",
+          "alt": [
+            "vaat etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Promise' isim olarak da 'söz' demektir: 'söz tutmak' = keep a promise, 'sözünden dönmek' = break a promise.",
+          "mistakes": [
+            {
+              "wrong": "I promise that I come tomorrow.",
+              "right": "I promise that I'll come tomorrow.",
+              "why": "Gelecek için söz verirken 'will' (ya da 'to + fiil') kullanılır; basit şimdiki zaman yetmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ me you won't forget my birthday.",
+        "answer": "promise",
+        "distractors": [
+          "ask",
+          "wish",
+          "thank"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

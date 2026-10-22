@@ -350,6 +350,9 @@
         "well",
         "healthy"
       ],
+      "confusables": [
+        "patient"
+      ],
       "collocations": [
         "feel ill",
         "look ill",
@@ -675,6 +678,7 @@
       "l1": {
         "tr": {
           "gloss": "kendini pek iyi hissetmemek",
+          "gloss_short": "biraz rahatsız",
           "alt": [
             "keyifsiz olmak",
             "biraz rahatsız olmak"
@@ -764,6 +768,9 @@
         "be sick"
       ],
       "antonyms": [],
+      "confusables": [
+        "throw away"
+      ],
       "collocations": [
         "feel like throwing up",
         "about to throw up",
@@ -794,7 +801,7 @@
         "flags": [
           "separable"
         ],
-        "sensitivity": 0
+        "sensitivity": 1
       },
       "quiz": {
         "cloze": "My stomach hurts and I feel like I am going to ______.",
@@ -861,6 +868,9 @@
         "catch"
       ],
       "antonyms": [],
+      "confusables": [
+        "come up with"
+      ],
       "collocations": [
         "come down with a cold",
         "come down with the flu",
@@ -871,6 +881,7 @@
       "l1": {
         "tr": {
           "gloss": "hastalığa yakalanmak",
+          "gloss_short": "hastalanmak",
           "alt": [
             "hastalanmak",
             "hasta olmak"

@@ -21,6 +21,10 @@ Equivalence = Literal["full", "partial", "cognate", "false_friend", "none"]
 Confidence = Literal["high", "medium", "low"]
 Status = Literal["draft", "validated", "reviewed", "approved", "sample", "rejected"]
 
+# Eski biçim: karışan kelime tags.flags içinde "confusable:<kelime>" olarak yazılırdı. Yeni kartlar
+# `confusables` alanını kullanır; derleyici ikisini birleştirir (Card.confusable_lemmas).
+CONFUSABLE_FLAG = "confusable:"
+
 # Hangi kart türünün hangi sözcük türüyle gelmesi gerektiği.
 TYPE_POS: dict[str, set[str]] = {
     "phrasal_verb": {"phv"},
@@ -88,6 +92,8 @@ class Mistake(_Strict):
 
 class L1Layer(_Strict):
     gloss: str
+    # Widget'ta "…" ile kesilmeyecek kısa anlam (≤16 grafem). Yalnızca gloss 16 grafemi geçince yazılır.
+    gloss_short: str | None = None
     alt: list[str] = Field(default_factory=list)
     equivalence: Equivalence
     false_friend: FalseFriend | None = None
@@ -140,6 +146,9 @@ class Card(_Strict):
     examples: list[Example]
     synonyms: list[str] = Field(default_factory=list)
     antonyms: list[str] = Field(default_factory=list)
+    # Öğrencinin bu kelimeyle karıştırdığı İngilizce kelimeler (borrow → lend). Başka kartın
+    # lemma'sı olabilir ya da destede olmayan bir kelime.
+    confusables: list[str] = Field(default_factory=list)
     collocations: list[str] = Field(default_factory=list)
     word_family: list[WordFamilyItem] = Field(default_factory=list)
     etymology: Etymology | None = None
@@ -151,6 +160,17 @@ class Card(_Strict):
     @property
     def level_rank(self) -> int:
         return LEVEL_RANK[self.level]
+
+    def confusable_lemmas(self) -> list[str]:
+        """`confusables` ve eski biçimdeki `confusable:<kelime>` bayrakları, sırası korunarak, tekrarsız."""
+        legacy = [f.split(":", 1)[1].strip() for f in self.tags.flags if f.startswith(CONFUSABLE_FLAG)]
+        seen: set[str] = set()
+        out: list[str] = []
+        for lemma in [*self.confusables, *legacy]:
+            if lemma and lemma.lower() not in seen:
+                seen.add(lemma.lower())
+                out.append(lemma)
+        return out
 
     def to_json_dict(self) -> dict:
         """Diske/veritabanına yazılacak hali: 'def' takma adıyla, boş varsayılanlar dahil."""

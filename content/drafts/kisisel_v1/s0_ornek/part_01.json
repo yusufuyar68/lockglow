@@ -1,589 +1,595 @@
 {
- "schema_version": "1.0",
- "l1_langs": [
-  "tr"
- ],
- "generated_on": "2026-10-10",
- "entries": [
-  {
-   "id": "en.breakfast.n.1",
-   "lemma": "breakfast",
-   "type": "word",
-   "pos": "n",
-   "sense_no": 1,
-   "sense_note": null,
-   "level": "A1",
-   "level_source": "editorial_estimate",
-   "freq": {
-    "rank": 2426,
-    "zipf": 4.61
-   },
-   "ipa": {
-    "us": "/ˈbrɛkfəst/",
-    "uk": "/ˈbrɛkfəst/"
-   },
-   "def": {
-    "micro": "first meal of the day",
-    "short": "the first meal of the day, eaten in the morning",
-    "long": "The first meal of the day, usually eaten in the morning before work or school. It can be light (tea and toast) or large (eggs, cheese, olives, and more)."
-   },
-   "examples": [
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-10",
+  "entries": [
     {
-     "en": "I usually have breakfast at seven.",
-     "tr": "Genellikle yedide kahvaltı yaparım.",
-     "register": "neutral",
-     "focus": "breakfast"
-    },
-    {
-     "en": "Ayşe made breakfast for the whole family.",
-     "tr": "Ayşe bütün aile için kahvaltı hazırladı.",
-     "register": "neutral",
-     "focus": "breakfast"
-    },
-    {
-     "en": "Breakfast is included in the hotel price.",
-     "tr": "Kahvaltı otel fiyatına dâhildir.",
-     "register": "neutral",
-     "focus": "Breakfast"
-    }
-   ],
-   "synonyms": [
-    "morning meal"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "have breakfast",
-    "skip breakfast",
-    "make breakfast",
-    "breakfast in bed",
-    "a light breakfast"
-   ],
-   "word_family": [],
-   "etymology": {
-    "text": "From 'break' + 'fast': the meal that breaks the long overnight fast since dinner.",
-    "origin": "English",
-    "confidence": "high"
-   },
-   "l1": {
-    "tr": {
-     "gloss": "kahvaltı",
-     "alt": [],
-     "equivalence": "full",
-     "false_friend": null,
-     "note": "Türkçedeki 'kahvaltı' da bir birleşik sözcüktür (kahve altı). İngilizcede öğün adlarından önce genellikle 'the' kullanılmaz.",
-     "mistakes": [
-      {
-       "wrong": "I did breakfast at eight.",
-       "right": "I had breakfast at eight.",
-       "why": "'Kahvaltı yapmak' kalıbını 'do' ile kurmayın; İngilizcede 'have breakfast' denir ('make breakfast' = hazırlamak)."
+      "id": "en.breakfast.n.1",
+      "lemma": "breakfast",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": {
+        "rank": 2426,
+        "zipf": 4.61
       },
-      {
-       "wrong": "I eat the breakfast at 8.",
-       "right": "I eat breakfast at 8.",
-       "why": "Öğün adlarının önüne genellikle 'the' gelmez."
-      }
-     ],
-     "mnemonic": "Break + fast = orucu bozmak. İftar gibi, ama her sabah: gece boyu süren açlığı bozan öğün."
-    }
-   },
-   "tags": {
-    "primary_topic": "food_drink",
-    "topics": [
-     "food_drink",
-     "time_routines"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "We usually eat ______ at 7 a.m., before school.",
-    "answer": "breakfast",
-    "distractors": [
-     "dinner",
-     "supper",
-     "lunch"
-    ]
-   },
-   "meta": {
-    "status": "sample",
-    "qa_flags": []
-   }
-  },
-  {
-   "id": "en.borrow.v.1",
-   "lemma": "borrow",
-   "type": "word",
-   "pos": "v",
-   "sense_no": 1,
-   "sense_note": null,
-   "level": "A2",
-   "level_source": "editorial_estimate",
-   "freq": {
-    "rank": 7101,
-    "zipf": 4
-   },
-   "ipa": {
-    "us": "/ˈbɑːroʊ/",
-    "uk": "/ˈbɒrəʊ/"
-   },
-   "def": {
-    "micro": "take and give back later",
-    "short": "take something from someone and give it back later",
-    "long": "To take something that belongs to someone else, with their permission, and return it after a time. You borrow FROM someone; the other person lends it TO you."
-   },
-   "grammar": {
-    "pattern": "borrow + sth + from + sb"
-   },
-   "examples": [
-    {
-     "en": "Can I borrow your pen for a minute?",
-     "tr": "Kalemini bir dakikalığına ödünç alabilir miyim?",
-     "register": "neutral",
-     "focus": "borrow"
-    },
-    {
-     "en": "She borrowed some money from her brother.",
-     "tr": "Kardeşinden biraz para ödünç aldı.",
-     "register": "neutral",
-     "focus": "borrowed"
-    },
-    {
-     "en": "You can borrow up to five books from the library.",
-     "tr": "Kütüphaneden en fazla beş kitap ödünç alabilirsiniz.",
-     "register": "formal",
-     "focus": "borrow"
-    }
-   ],
-   "synonyms": [
-    "take on loan"
-   ],
-   "antonyms": [
-    "lend"
-   ],
-   "collocations": [
-    "borrow money",
-    "borrow a book",
-    "borrow from a friend",
-    "living on borrowed time",
-    "borrow an idea"
-   ],
-   "word_family": [
-    {
-     "lemma": "borrower",
-     "pos": "n"
-    },
-    {
-     "lemma": "loan",
-     "pos": "n"
-    }
-   ],
-   "etymology": {
-    "text": "From Old English 'borgian' (to borrow, lend, give a pledge), from 'borg', a pledge: borrowing once meant leaving something as a guarantee.",
-    "origin": "Old English",
-    "confidence": "high"
-   },
-   "l1": {
-    "tr": {
-     "gloss": "ödünç almak",
-     "alt": [
-      "borç almak"
-     ],
-     "equivalence": "partial",
-     "false_friend": null,
-     "note": "Türkçede 'ödünç' hem alma hem verme için kullanılır (ödünç almak / ödünç vermek). İngilizcede iki ayrı fiil var: borrow = alan, lend = veren.",
-     "mistakes": [
-      {
-       "wrong": "Can you borrow me your pen?",
-       "right": "Can you lend me your pen? / Can I borrow your pen?",
-       "why": "'Borrow' yalnızca alan kişi için; veren kişi 'lend' kullanır."
+      "ipa": {
+        "us": "/ˈbrɛkfəst/",
+        "uk": "/ˈbrɛkfəst/"
       },
-      {
-       "wrong": "I borrowed him my book.",
-       "right": "I lent him my book.",
-       "why": "Kitabı veren kişi olarak 'lend' (lent) kullanılır."
-      }
-     ],
-     "mnemonic": "Borrow ≈ BORÇ alırım. Borç alan 'borrow' der, borç veren 'lend'."
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words",
-     "shopping_money",
-     "school_learning"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "confusable:lend"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "Could I ______ your charger? Mine is dead.",
-    "answer": "borrow",
-    "distractors": [
-     "lend",
-     "give",
-     "owe"
-    ]
-   },
-   "meta": {
-    "status": "sample",
-    "qa_flags": [
-     "ipa_us_regional_variant"
-    ]
-   }
-  },
-  {
-   "id": "en.luggage.n.1",
-   "lemma": "luggage",
-   "type": "word",
-   "pos": "n",
-   "sense_no": 1,
-   "sense_note": null,
-   "level": "A2",
-   "level_source": "editorial_estimate",
-   "freq": {
-    "rank": 9624,
-    "zipf": 3.8
-   },
-   "ipa": {
-    "us": "/ˈlʌɡɪdʒ/",
-    "uk": "/ˈlʌɡɪdʒ/"
-   },
-   "def": {
-    "micro": "bags and cases for a trip",
-    "short": "the bags and suitcases you take with you when you travel",
-    "long": "All the bags, suitcases, and boxes a traveler takes on a journey. 'Baggage' means almost the same and is common in airline English. It is uncountable: never 'luggages'."
-   },
-   "examples": [
-    {
-     "en": "Please keep your luggage with you at all times.",
-     "tr": "Lütfen bagajınızı her zaman yanınızda tutun.",
-     "register": "formal",
-     "focus": "luggage"
-    },
-    {
-     "en": "The airline lost our luggage on the way to Izmir.",
-     "tr": "Havayolu şirketi, İzmir'e giderken bagajımızı kaybetti.",
-     "register": "neutral",
-     "focus": "luggage"
-    },
-    {
-     "en": "Do you have any luggage to check in?",
-     "tr": "Teslim edeceğiniz bagajınız var mı?",
-     "register": "formal",
-     "focus": "luggage"
-    }
-   ],
-   "synonyms": [
-    "baggage"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "hand luggage",
-    "carry-on luggage",
-    "check in luggage",
-    "lost luggage",
-    "luggage allowance"
-   ],
-   "word_family": [],
-   "etymology": {
-    "text": "From 'lug' (to drag or carry with effort) + '-age': literally, the things you have to lug around.",
-    "origin": "English",
-    "confidence": "high"
-   },
-   "l1": {
-    "tr": {
-     "gloss": "bagaj",
-     "alt": [
-      "seyahat eşyası"
-     ],
-     "equivalence": "partial",
-     "false_friend": null,
-     "note": "Türkçedeki 'bagaj' arabanın bagajı anlamına da gelir; İngilizcede araba bagajı 'trunk' (ABD) veya 'boot' (İngiltere)'dir, 'luggage' değildir.",
-     "mistakes": [
-      {
-       "wrong": "I have two luggages.",
-       "right": "I have two bags. / two pieces of luggage",
-       "why": "'Luggage' sayılamayan isimdir, çoğul eki almaz; sayı için 'bag' veya 'piece of luggage' kullanın."
+      "def": {
+        "micro": "first meal of the day",
+        "short": "the first meal of the day, eaten in the morning",
+        "long": "The first meal of the day, usually eaten in the morning before work or school. It can be light (tea and toast) or large (eggs, cheese, olives, and more)."
       },
-      {
-       "wrong": "My luggage are heavy.",
-       "right": "My luggage is heavy.",
-       "why": "Sayılamayan isimler tekil fiil alır."
-      }
-     ],
-     "mnemonic": "'Lug' = sürükleyerek taşımak. Luggage = sürükleyip taşıdığın şeyler."
-    }
-   },
-   "tags": {
-    "primary_topic": "travel_tourism",
-    "topics": [
-     "travel_tourism",
-     "cities_transport"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "uncountable"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "The airline lost my ______, so I had no clothes for the trip.",
-    "answer": "luggage",
-    "distractors": [
-     "ticket",
-     "passport",
-     "flight"
-    ]
-   },
-   "meta": {
-    "status": "sample",
-    "qa_flags": []
-   }
-  },
-  {
-   "id": "en.actually.adv.1",
-   "lemma": "actually",
-   "type": "word",
-   "pos": "adv",
-   "sense_no": 1,
-   "sense_note": "in fact",
-   "level": "B1",
-   "level_source": "editorial_estimate",
-   "freq": {
-    "rank": 302,
-    "zipf": 5.49
-   },
-   "ipa": {
-    "us": "/ˈæktʃuəli/",
-    "uk": "/ˈæktʃuəli/"
-   },
-   "def": {
-    "micro": "in fact; in reality",
-    "short": "used to say what is really true, often when it is not what people expect",
-    "long": "Used to show what is really true or what really happened, especially when it is surprising or different from what was expected. It does NOT mean 'at the moment' ('currently' or 'now' mean that)."
-   },
-   "examples": [
-    {
-     "en": "I thought the test would be hard, but it was actually quite easy.",
-     "tr": "Sınavın zor olacağını sanıyordum ama aslında oldukça kolaymış.",
-     "register": "neutral",
-     "focus": "actually"
-    },
-    {
-     "en": "Actually, I'd prefer tea, if that's okay.",
-     "tr": "Aslında çay tercih ederim, sakıncası yoksa.",
-     "register": "neutral",
-     "focus": "Actually"
-    },
-    {
-     "en": "He looks shy, but he actually loves meeting new people.",
-     "tr": "Çekingen görünüyor ama aslında yeni insanlarla tanışmaya bayılıyor.",
-     "register": "neutral",
-     "focus": "actually"
-    }
-   ],
-   "synonyms": [
-    "in fact",
-    "in reality",
-    "really",
-    "in truth"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "actually quite",
-    "what actually happened",
-    "did you actually",
-    "but actually",
-    "actually, no"
-   ],
-   "word_family": [
-    {
-     "lemma": "actual",
-     "pos": "adj"
-    }
-   ],
-   "etymology": {
-    "text": "From 'actual', from Latin 'actus' (a doing, a deed): 'actually' = in deed, in real fact, not just in theory.",
-    "origin": "Latin",
-    "confidence": "high"
-   },
-   "l1": {
-    "tr": {
-     "gloss": "aslında, gerçekte",
-     "alt": [
-      "doğrusu",
-      "esasında"
-     ],
-     "equivalence": "false_friend",
-     "false_friend": {
-      "tr_word": "aktüel",
-      "tr_means": "güncel, şu anki",
-      "en_for_that": "current / currently"
-     },
-     "note": "Türkçedeki 'aktüel' = 'güncel'. İngilizce 'actual/actually' ise 'gerçek/aslında' demektir. 'Şu anda' için 'currently' veya 'at the moment' kullanılır.",
-     "mistakes": [
-      {
-       "wrong": "The actual price of petrol is very high.",
-       "right": "The current price of petrol is very high.",
-       "why": "'Güncel' = 'current'; 'actual' = gerçek/asıl."
+      "examples": [
+        {
+          "en": "I usually have breakfast at seven.",
+          "tr": "Genellikle yedide kahvaltı yaparım.",
+          "register": "neutral",
+          "focus": "breakfast"
+        },
+        {
+          "en": "Ayşe made breakfast for the whole family.",
+          "tr": "Ayşe bütün aile için kahvaltı hazırladı.",
+          "register": "neutral",
+          "focus": "breakfast"
+        },
+        {
+          "en": "Breakfast is included in the hotel price.",
+          "tr": "Kahvaltı otel fiyatına dâhildir.",
+          "register": "neutral",
+          "focus": "Breakfast"
+        }
+      ],
+      "synonyms": [
+        "morning meal"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have breakfast",
+        "skip breakfast",
+        "make breakfast",
+        "breakfast in bed",
+        "a light breakfast"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From 'break' + 'fast': the meal that breaks the long overnight fast since dinner.",
+        "origin": "English",
+        "confidence": "high"
       },
-      {
-       "wrong": "Actually I'm studying English. (= şu anda)",
-       "right": "I'm currently studying English.",
-       "why": "'Actually' zaman bildirmez; 'şu anda' için 'currently / at the moment'."
+      "l1": {
+        "tr": {
+          "gloss": "kahvaltı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'kahvaltı' da bir birleşik sözcüktür (kahve altı). İngilizcede öğün adlarından önce genellikle 'the' kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "I did breakfast at eight.",
+              "right": "I had breakfast at eight.",
+              "why": "'Kahvaltı yapmak' kalıbını 'do' ile kurmayın; İngilizcede 'have breakfast' denir ('make breakfast' = hazırlamak)."
+            },
+            {
+              "wrong": "I eat the breakfast at 8.",
+              "right": "I eat breakfast at 8.",
+              "why": "Öğün adlarının önüne genellikle 'the' gelmez."
+            }
+          ],
+          "mnemonic": "Break + fast = orucu bozmak. İftar gibi, ama her sabah: gece boyu süren açlığı bozan öğün."
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We usually eat ______ at 7 a.m., before school.",
+        "answer": "breakfast",
+        "distractors": [
+          "dinner",
+          "supper",
+          "lunch"
+        ]
+      },
+      "meta": {
+        "status": "sample",
+        "qa_flags": []
       }
-     ],
-     "mnemonic": "ACT = eylem: 'actually' = fiilen, gerçekte. 'Aktüel' (güncel) tuzağına düşme."
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words",
-     "social_skills"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "false_friend_tr"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "He looks young, but he is ______ forty.",
-    "answer": "actually",
-    "distractors": [
-     "currently",
-     "recently",
-     "fortunately"
-    ]
-   },
-   "meta": {
-    "status": "sample",
-    "qa_flags": []
-   }
-  },
-  {
-   "id": "en.deadline.n.1",
-   "lemma": "deadline",
-   "type": "word",
-   "pos": "n",
-   "sense_no": 1,
-   "sense_note": null,
-   "level": "B1",
-   "level_source": "editorial_estimate",
-   "freq": {
-    "rank": 5871,
-    "zipf": 4.12
-   },
-   "ipa": {
-    "us": "/ˈdɛdlaɪn/",
-    "uk": "/ˈdɛdlaɪn/"
-   },
-   "def": {
-    "micro": "last time to finish a task",
-    "short": "the latest date or time by which something must be finished",
-    "long": "A fixed date or time by which a task must be completed or handed in. Missing a deadline can have consequences, such as a penalty or a lost opportunity."
-   },
-   "examples": [
-    {
-     "en": "The deadline for the report is Friday at noon.",
-     "tr": "Raporun son teslim tarihi cuma günü öğlen.",
-     "register": "neutral",
-     "focus": "deadline"
     },
     {
-     "en": "We worked all night to meet the deadline.",
-     "tr": "Son teslim tarihine yetişmek için bütün gece çalıştık.",
-     "register": "neutral",
-     "focus": "deadline"
+      "id": "en.borrow.v.1",
+      "lemma": "borrow",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": {
+        "rank": 7101,
+        "zipf": 4
+      },
+      "ipa": {
+        "us": "/ˈbɑːroʊ/",
+        "uk": "/ˈbɒrəʊ/"
+      },
+      "def": {
+        "micro": "take and give back later",
+        "short": "take something from someone and give it back later",
+        "long": "To take something that belongs to someone else, with their permission, and return it after a time. You borrow FROM someone; the other person lends it TO you."
+      },
+      "grammar": {
+        "pattern": "borrow + sth + from + sb"
+      },
+      "examples": [
+        {
+          "en": "Can I borrow your pen for a minute?",
+          "tr": "Kalemini bir dakikalığına ödünç alabilir miyim?",
+          "register": "neutral",
+          "focus": "borrow"
+        },
+        {
+          "en": "She borrowed some money from her brother.",
+          "tr": "Kardeşinden biraz para ödünç aldı.",
+          "register": "neutral",
+          "focus": "borrowed"
+        },
+        {
+          "en": "You can borrow up to five books from the library.",
+          "tr": "Kütüphaneden en fazla beş kitap ödünç alabilirsiniz.",
+          "register": "formal",
+          "focus": "borrow"
+        }
+      ],
+      "synonyms": [
+        "take on loan"
+      ],
+      "antonyms": [
+        "lend"
+      ],
+      "confusables": [
+        "lend"
+      ],
+      "collocations": [
+        "borrow money",
+        "borrow a book",
+        "borrow from a friend",
+        "living on borrowed time",
+        "borrow an idea"
+      ],
+      "word_family": [
+        {
+          "lemma": "borrower",
+          "pos": "n"
+        },
+        {
+          "lemma": "loan",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'borgian' (to borrow, lend, give a pledge), from 'borg', a pledge: borrowing once meant leaving something as a guarantee.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ödünç almak",
+          "alt": [
+            "borç almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'ödünç' hem alma hem verme için kullanılır (ödünç almak / ödünç vermek). İngilizcede iki ayrı fiil var: borrow = alan, lend = veren.",
+          "mistakes": [
+            {
+              "wrong": "Can you borrow me your pen?",
+              "right": "Can you lend me your pen? / Can I borrow your pen?",
+              "why": "'Borrow' yalnızca alan kişi için; veren kişi 'lend' kullanır."
+            },
+            {
+              "wrong": "I borrowed him my book.",
+              "right": "I lent him my book.",
+              "why": "Kitabı veren kişi olarak 'lend' (lent) kullanılır."
+            }
+          ],
+          "mnemonic": "Borrow ≈ BORÇ alırım. Borç alan 'borrow' der, borç veren 'lend'."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "shopping_money",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Could I ______ your charger? Mine is dead.",
+        "answer": "borrow",
+        "distractors": [
+          "lend",
+          "give",
+          "owe"
+        ]
+      },
+      "meta": {
+        "status": "sample",
+        "qa_flags": [
+          "ipa_us_regional_variant"
+        ]
+      }
     },
     {
-     "en": "She asked for a deadline extension.",
-     "tr": "Son teslim tarihinin uzatılmasını istedi.",
-     "register": "neutral",
-     "focus": "deadline"
-    }
-   ],
-   "synonyms": [
-    "due date",
-    "cutoff",
-    "time limit"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "meet a deadline",
-    "miss a deadline",
-    "tight deadline",
-    "set a deadline",
-    "extend the deadline"
-   ],
-   "word_family": [],
-   "etymology": {
-    "text": "First a line around a US Civil War prison camp that prisoners could not cross. The 'time limit' sense came later (printing); the link between the two is only indirectly documented.",
-    "origin": "American English",
-    "confidence": "medium"
-   },
-   "l1": {
-    "tr": {
-     "gloss": "son teslim tarihi",
-     "alt": [
-      "son tarih",
-      "teslim süresi"
-     ],
-     "equivalence": "full",
-     "false_friend": null,
-     "note": "Gündelik iş dilinde Türkçede de 'deadline' aynen kullanılır; resmî yazıda 'son teslim tarihi' tercih edin.",
-     "mistakes": [
-      {
-       "wrong": "The deadline is until Friday.",
-       "right": "The deadline is Friday. / We must finish by Friday.",
-       "why": "Türkçedeki 'cumaya kadar' kalıbı 'until' ile çevrilir; ama bitiş anı için 'by' kullanılır."
+      "id": "en.luggage.n.1",
+      "lemma": "luggage",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": {
+        "rank": 9624,
+        "zipf": 3.8
+      },
+      "ipa": {
+        "us": "/ˈlʌɡɪdʒ/",
+        "uk": "/ˈlʌɡɪdʒ/"
+      },
+      "def": {
+        "micro": "bags and cases for a trip",
+        "short": "the bags and suitcases you take with you when you travel",
+        "long": "All the bags, suitcases, and boxes a traveler takes on a journey. 'Baggage' means almost the same and is common in airline English. It is uncountable: never 'luggages'."
+      },
+      "examples": [
+        {
+          "en": "Please keep your luggage with you at all times.",
+          "tr": "Lütfen bagajınızı her zaman yanınızda tutun.",
+          "register": "formal",
+          "focus": "luggage"
+        },
+        {
+          "en": "The airline lost our luggage on the way to Izmir.",
+          "tr": "Havayolu şirketi, İzmir'e giderken bagajımızı kaybetti.",
+          "register": "neutral",
+          "focus": "luggage"
+        },
+        {
+          "en": "Do you have any luggage to check in?",
+          "tr": "Teslim edeceğiniz bagajınız var mı?",
+          "register": "formal",
+          "focus": "luggage"
+        }
+      ],
+      "synonyms": [
+        "baggage"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "hand luggage",
+        "carry-on luggage",
+        "check in luggage",
+        "lost luggage",
+        "luggage allowance"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From 'lug' (to drag or carry with effort) + '-age': literally, the things you have to lug around.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "bagaj",
+          "alt": [
+            "seyahat eşyası"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'bagaj' arabanın bagajı anlamına da gelir; İngilizcede araba bagajı 'trunk' (ABD) veya 'boot' (İngiltere)'dir, 'luggage' değildir.",
+          "mistakes": [
+            {
+              "wrong": "I have two luggages.",
+              "right": "I have two bags. / two pieces of luggage",
+              "why": "'Luggage' sayılamayan isimdir, çoğul eki almaz; sayı için 'bag' veya 'piece of luggage' kullanın."
+            },
+            {
+              "wrong": "My luggage are heavy.",
+              "right": "My luggage is heavy.",
+              "why": "Sayılamayan isimler tekil fiil alır."
+            }
+          ],
+          "mnemonic": "'Lug' = sürükleyerek taşımak. Luggage = sürükleyip taşıdığın şeyler."
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The airline lost my ______, so I had no clothes for the trip.",
+        "answer": "luggage",
+        "distractors": [
+          "ticket",
+          "passport",
+          "flight"
+        ]
+      },
+      "meta": {
+        "status": "sample",
+        "qa_flags": []
       }
-     ],
-     "mnemonic": "'Dead' (ölü) + 'line' (çizgi): bu çizgiyi geçersen iş 'ölür'."
+    },
+    {
+      "id": "en.actually.adv.1",
+      "lemma": "actually",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in fact",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": {
+        "rank": 302,
+        "zipf": 5.49
+      },
+      "ipa": {
+        "us": "/ˈæktʃuəli/",
+        "uk": "/ˈæktʃuəli/"
+      },
+      "def": {
+        "micro": "in fact; in reality",
+        "short": "used to say what is really true, often when it is not what people expect",
+        "long": "Used to show what is really true or what really happened, especially when it is surprising or different from what was expected. It does NOT mean 'at the moment' ('currently' or 'now' mean that)."
+      },
+      "examples": [
+        {
+          "en": "I thought the test would be hard, but it was actually quite easy.",
+          "tr": "Sınavın zor olacağını sanıyordum ama aslında oldukça kolaymış.",
+          "register": "neutral",
+          "focus": "actually"
+        },
+        {
+          "en": "Actually, I'd prefer tea, if that's okay.",
+          "tr": "Aslında çay tercih ederim, sakıncası yoksa.",
+          "register": "neutral",
+          "focus": "Actually"
+        },
+        {
+          "en": "He looks shy, but he actually loves meeting new people.",
+          "tr": "Çekingen görünüyor ama aslında yeni insanlarla tanışmaya bayılıyor.",
+          "register": "neutral",
+          "focus": "actually"
+        }
+      ],
+      "synonyms": [
+        "in fact",
+        "in reality",
+        "really",
+        "in truth"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "currently"
+      ],
+      "collocations": [
+        "actually quite",
+        "what actually happened",
+        "did you actually",
+        "but actually",
+        "actually, no"
+      ],
+      "word_family": [
+        {
+          "lemma": "actual",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From 'actual', from Latin 'actus' (a doing, a deed): 'actually' = in deed, in real fact, not just in theory.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "aslında, gerçekte",
+          "gloss_short": "aslında",
+          "alt": [
+            "doğrusu",
+            "esasında"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "aktüel",
+            "tr_means": "güncel, şu anki",
+            "en_for_that": "current / currently"
+          },
+          "note": "Türkçedeki 'aktüel' = 'güncel'. İngilizce 'actual/actually' ise 'gerçek/aslında' demektir. 'Şu anda' için 'currently' veya 'at the moment' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "The actual price of petrol is very high.",
+              "right": "The current price of petrol is very high.",
+              "why": "'Güncel' = 'current'; 'actual' = gerçek/asıl."
+            },
+            {
+              "wrong": "Actually I'm studying English. (= şu anda)",
+              "right": "I'm currently studying English.",
+              "why": "'Actually' zaman bildirmez; 'şu anda' için 'currently / at the moment'."
+            }
+          ],
+          "mnemonic": "ACT = eylem: 'actually' = fiilen, gerçekte. 'Aktüel' (güncel) tuzağına düşme."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "false_friend_tr"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He looks young, but he is ______ forty.",
+        "answer": "actually",
+        "distractors": [
+          "currently",
+          "recently",
+          "fortunately"
+        ]
+      },
+      "meta": {
+        "status": "sample",
+        "qa_flags": []
+      }
+    },
+    {
+      "id": "en.deadline.n.1",
+      "lemma": "deadline",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": {
+        "rank": 5871,
+        "zipf": 4.12
+      },
+      "ipa": {
+        "us": "/ˈdɛdlaɪn/",
+        "uk": "/ˈdɛdlaɪn/"
+      },
+      "def": {
+        "micro": "last time to finish a task",
+        "short": "the latest date or time by which something must be finished",
+        "long": "A fixed date or time by which a task must be completed or handed in. Missing a deadline can have consequences, such as a penalty or a lost opportunity."
+      },
+      "examples": [
+        {
+          "en": "The deadline for the report is Friday at noon.",
+          "tr": "Raporun son teslim tarihi cuma günü öğlen.",
+          "register": "neutral",
+          "focus": "deadline"
+        },
+        {
+          "en": "We worked all night to meet the deadline.",
+          "tr": "Son teslim tarihine yetişmek için bütün gece çalıştık.",
+          "register": "neutral",
+          "focus": "deadline"
+        },
+        {
+          "en": "She asked for a deadline extension.",
+          "tr": "Son teslim tarihinin uzatılmasını istedi.",
+          "register": "neutral",
+          "focus": "deadline"
+        }
+      ],
+      "synonyms": [
+        "due date",
+        "cutoff",
+        "time limit"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "meet a deadline",
+        "miss a deadline",
+        "tight deadline",
+        "set a deadline",
+        "extend the deadline"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "First a line around a US Civil War prison camp that prisoners could not cross. The 'time limit' sense came later (printing); the link between the two is only indirectly documented.",
+        "origin": "American English",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "son teslim tarihi",
+          "gloss_short": "son tarih",
+          "alt": [
+            "son tarih",
+            "teslim süresi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gündelik iş dilinde Türkçede de 'deadline' aynen kullanılır; resmî yazıda 'son teslim tarihi' tercih edin.",
+          "mistakes": [
+            {
+              "wrong": "The deadline is until Friday.",
+              "right": "The deadline is Friday. / We must finish by Friday.",
+              "why": "Türkçedeki 'cumaya kadar' kalıbı 'until' ile çevrilir; ama bitiş anı için 'by' kullanılır."
+            }
+          ],
+          "mnemonic": "'Dead' (ölü) + 'line' (çizgi): bu çizgiyi geçersen iş 'ölür'."
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "business_management",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The project is late, so we asked for a new ______.",
+        "answer": "deadline",
+        "distractors": [
+          "salary",
+          "holiday",
+          "uniform"
+        ]
+      },
+      "meta": {
+        "status": "sample",
+        "qa_flags": [
+          "etymology_link_debated"
+        ]
+      }
     }
-   },
-   "tags": {
-    "primary_topic": "workplace_office",
-    "topics": [
-     "workplace_office",
-     "business_management",
-     "school_learning"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "The project is late, so we asked for a new ______.",
-    "answer": "deadline",
-    "distractors": [
-     "salary",
-     "holiday",
-     "uniform"
-    ]
-   },
-   "meta": {
-    "status": "sample",
-    "qa_flags": [
-     "etymology_link_debated"
-    ]
-   }
-  }
- ]
+  ]
 }

@@ -1,126 +1,962 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-12",
-"entries": [
-{"id":"en.win.v.1","lemma":"win","type":"word","pos":"v","sense_no":1,"sense_note":"come first","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/wɪn/","uk":"/wɪn/"},
-"def":{"micro":"come first in a contest","short":"be the best or first in a game, race, or contest, or get a prize","long":"To be the best or first in a game, race, or contest, or to get a prize. You win a game or a prize; you earn money by working."},
-"grammar":{"pattern":"win sth / win against sb"},
-"examples":[
-{"en":"Our team won the match 2-1.","tr":"Takımımız maçı 2-1 kazandı.","register":"neutral","focus":"won"},
-{"en":"She won first prize in the writing contest.","tr":"Yazı yarışmasında birincilik ödülünü kazandı.","register":"neutral","focus":"won"},
-{"en":"I never win when I play cards with my dad.","tr":"Babamla kart oynarken hiç kazanamıyorum.","register":"neutral","focus":"win"}],
-"synonyms":[],"antonyms":["lose"],"collocations":["win a game","win a prize","win a race","win the lottery","win an award"],
-"word_family":[{"lemma":"winner","pos":"n"},{"lemma":"win","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"kazanmak","alt":["yenmek","birinci olmak"],"equivalence":"partial","false_friend":null,"note":"'Win' = yarışma, maç, oyun ya da ödül kazanmak. Çalışarak para kazanmak için 'earn' kullanılır. Düzensiz: win - won - won. Karşıtı 'lose'. Rakibi yenmek için 'beat sb' denir.","mistakes":[{"wrong":"Our team won Ali's team.","right":"Our team beat Ali's team.","why":"Rakibi yenmek için 'beat' kullanılır; 'win' maçı, oyunu ya da ödülü nesne alır."},{"wrong":"I won 5,000 lira at work this month.","right":"I earned 5,000 lira at work this month.","why":"Çalışarak kazanılan para için 'earn' kullanılır; 'win' yarışma ve oyun içindir."}],"mnemonic":"Geçmiş hâli 'won', tıpkı 'one' (bir) gibi okunur: kazanan bir numara olur!"}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words","hobbies_sports"],"exams":[],"register":"neutral","vibes":[],"flags":["irregular","confusable:earn"],"sensitivity":0},
-"quiz":{"cloze":"We played well and ______ the match 3-0.","answer":"won","distractors":["earned","beat","missed"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.hear.v.1","lemma":"hear","type":"word","pos":"v","sense_no":1,"sense_note":"notice a sound","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/hɪr/","uk":"/hɪə/"},
-"def":{"micro":"notice sounds with your ears","short":"know that a sound is there because it reaches your ears","long":"To know that there is a sound because it reaches your ears, without trying. You hear a sound by chance, but you listen when you pay attention on purpose."},
-"grammar":{"pattern":"hear sth / can hear sth"},
-"examples":[
-{"en":"I heard a strange noise last night.","tr":"Dün gece garip bir ses duydum.","register":"neutral","focus":"heard"},
-{"en":"I can't hear you. It's too loud here.","tr":"Seni duyamıyorum. Burada çok gürültülü.","register":"neutral","focus":"hear"},
-{"en":"Can you hear me? The line is bad.","tr":"Beni duyabiliyor musun? Hat kötü.","register":"neutral","focus":"hear"}],
-"synonyms":["catch","notice"],"antonyms":[],"collocations":["hear a noise","hear the news","can hear","hear from sb","hear music"],
-"word_family":[{"lemma":"hearing","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"duymak","alt":["işitmek"],"equivalence":"partial","false_friend":null,"note":"'Hear' = duymak (ses kulağa kendiliğinden gelir); 'listen' = dinlemek (dikkat vererek). Genelde 'can' ile kullanılır: 'I can hear music'. Düzensiz: hear - heard - heard.","mistakes":[{"wrong":"I am hearing a strange sound.","right":"I can hear a strange sound.","why":"Duyma ve görme fiilleri şimdiki anda genelde -ing almaz; 'can hear' kullanılır."},{"wrong":"I hear to the radio every morning.","right":"I listen to the radio every morning.","why":"Dikkatle dinlemek için 'listen to' kullanılır; 'hear' doğrudan nesne alır, 'to' almaz."}],"mnemonic":"'Hear' kelimesinin içinde 'ear' (kulak) var: ses kulağına kendiliğinden gelir."}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["irregular","confusable:listen"],"sensitivity":0},
-"quiz":{"cloze":"Speak louder, please. I can't ______ you.","answer":"hear","distractors":["listen","speak","look"]},
-"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.listen.v.1","lemma":"listen","type":"word","pos":"v","sense_no":1,"sense_note":"pay attention to sound","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈlɪsən/","uk":"/ˈlɪsən/"},
-"def":{"micro":"pay attention to sounds","short":"give your attention to a sound or to someone who is speaking","long":"To pay attention to a sound or to someone who is speaking, on purpose. You listen TO something; the word 'to' always comes before the thing or person."},
-"grammar":{"pattern":"listen to sb/sth"},
-"examples":[
-{"en":"I listen to music on the bus every morning.","tr":"Her sabah otobüste müzik dinlerim.","register":"neutral","focus":"listen"},
-{"en":"Please listen carefully to the instructions.","tr":"Lütfen talimatları dikkatle dinleyin.","register":"neutral","focus":"listen"},
-{"en":"He never listens when I talk.","tr":"Ben konuşurken hiç dinlemez.","register":"neutral","focus":"listens"}],
-"synonyms":["pay attention"],"antonyms":["ignore"],"collocations":["listen to music","listen carefully","listen to advice","listen to the radio","listen to me"],
-"word_family":[{"lemma":"listener","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"dinlemek","alt":["kulak vermek"],"equivalence":"partial","false_friend":null,"note":"'Listen' mutlaka 'to' ile kullanılır. Türkçede 'müziği dinlemek' (-i hâli) dediğimiz için 'to' atlanır. 'Hear' = duymak (kendiliğinden kulağa gelen ses).","mistakes":[{"wrong":"I listen music every day.","right":"I listen to music every day.","why":"Türkçede 'müzik dinlemek' deriz ama İngilizcede 'listen' + to + isim gerekir."},{"wrong":"I listened a strange noise.","right":"I heard a strange noise.","why":"Kulağa gelen sesi fark etmek 'hear'; 'listen' dikkatle dinlemektir."}],"mnemonic":"'Listen' kelimesinde 't' okunmaz: 'lisın' denir. O sessiz 't' gibi sen de sessizce dinle."}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words","music_film"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:hear"],"sensitivity":0},
-"quiz":{"cloze":"Please ______ to your teacher. This is important.","answer":"listen","distractors":["hear","tell","see"]},
-"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.remember.v.1","lemma":"remember","type":"word","pos":"v","sense_no":1,"sense_note":"keep in mind","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/rɪˈmɛmbər/","uk":"/rɪˈmɛmbə/"},
-"def":{"micro":"keep something in your mind","short":"keep something in your memory, or bring it back to your mind","long":"To keep something in your memory, or to think of something from the past. You remember by yourself; another person or thing can remind you."},
-"grammar":{"pattern":"remember sth / to do sth / doing sth"},
-"examples":[
-{"en":"I can't remember her name.","tr":"Onun adını hatırlayamıyorum.","register":"neutral","focus":"remember"},
-{"en":"Remember to lock the door when you leave.","tr":"Çıkarken kapıyı kilitlemeyi unutma.","register":"neutral","focus":"Remember"},
-{"en":"Do you remember our first day at school?","tr":"Okuldaki ilk günümüzü hatırlıyor musun?","register":"neutral","focus":"remember"}],
-"synonyms":["recall","recollect"],"antonyms":["forget"],"collocations":["remember a name","remember to do","remember doing","if I remember right","remember clearly"],
-"word_family":[{"lemma":"remembrance","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"hatırlamak","alt":["anımsamak","akılda tutmak"],"equivalence":"partial","false_friend":null,"note":"Hatırlayan kişi 'remember'; birine hatırlatan kişi ya da şey 'remind'. 'Remember to do' = yapmayı unutmamak; 'remember doing' = yaptığını hatırlamak.","mistakes":[{"wrong":"Remember me to buy milk.","right":"Remind me to buy milk.","why":"Birinin sana hatırlatmasını istiyorsan 'remind' kullanılır; 'remember' kendi hafızanda tutmaktır."},{"wrong":"I remember to meet him last year.","right":"I remember meeting him last year.","why":"Geçmişte yaptığın şeyi hatırlamak için 'remember + -ing'; yapılacak işi akılda tutmak için 'remember + to'."}],"mnemonic":"'Remember' ile 'memory' (hafıza) aynı kökten: hatırlayan senin hafızandır. Başkasına hatırlatmak 'remind'."}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:remind"],"sensitivity":0},
-"quiz":{"cloze":"I can't ______ where I put my keys.","answer":"remember","distractors":["remind","miss","carry"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.remind.v.1","lemma":"remind","type":"word","pos":"v","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/rɪˈmaɪnd/","uk":"/rɪˈmaɪnd/"},
-"def":{"micro":"help someone not forget","short":"say or do something that makes someone remember something","long":"To say or do something that makes someone remember something, for example a task or a name. You remind someone TO do something or OF something."},
-"grammar":{"pattern":"remind sb to do sth / of sth"},
-"examples":[
-{"en":"Please remind me to call my mom tonight.","tr":"Lütfen bu akşam annemi aramamı bana hatırlat.","register":"neutral","focus":"remind"},
-{"en":"My phone reminds me when I have a meeting.","tr":"Telefonum toplantım olduğunda bana hatırlatıyor.","register":"neutral","focus":"reminds"},
-{"en":"This song reminds me of my school days.","tr":"Bu şarkı bana okul günlerimi hatırlatıyor.","register":"neutral","focus":"reminds"}],
-"synonyms":["prompt","jog sb's memory"],"antonyms":[],"collocations":["remind sb to","remind sb of","a gentle reminder","remind me later","set a reminder"],
-"word_family":[{"lemma":"reminder","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"hatırlatmak","alt":["anımsatmak"],"equivalence":"partial","false_friend":null,"note":"'Hatırlatmak' = 'remind', 'hatırlamak' = 'remember'. Kalıp: remind sb TO do sth (yapmasını hatırlatmak), remind sb OF sth (bir şeyi hatırlatmak). 'Reminder' = hatırlatıcı bildirim.","mistakes":[{"wrong":"Please remember me to send the email.","right":"Please remind me to send the email.","why":"Birinin sana hatırlatmasını istiyorsan 'remind' kullanılır; 'remember' kendi hafızanda tutmaktır."},{"wrong":"This photo reminds me to my childhood.","right":"This photo reminds me of my childhood.","why":"'... bana ...'ı hatırlatıyor' = 'remind sb OF sth'; 'to' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:remember"],"sensitivity":0},
-"quiz":{"cloze":"Can you ______ me to buy bread on the way home?","answer":"remind","distractors":["remember","miss","lose"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.bring.v.1","lemma":"bring","type":"word","pos":"v","sense_no":1,"sense_note":"carry to here","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/brɪŋ/","uk":"/brɪŋ/"},
-"def":{"micro":"carry something to here","short":"take something or someone with you to the place where you or the listener is","long":"To carry something or someone with you to the place where you or the other person is or will be. 'Bring' goes toward the speaker; 'take' goes away from the speaker."},
-"grammar":{"pattern":"bring sth (to sb / here)"},
-"examples":[
-{"en":"Can you bring your laptop to the meeting?","tr":"Toplantıya dizüstü bilgisayarını getirebilir misin?","register":"neutral","focus":"bring"},
-{"en":"Please bring some water when you come.","tr":"Gelirken biraz su getir lütfen.","register":"neutral","focus":"bring"},
-{"en":"She always brings her dog when she visits us.","tr":"Bizi ziyarete geldiğinde köpeğini de getirir.","register":"neutral","focus":"brings"}],
-"synonyms":["carry here","fetch"],"antonyms":["take"],"collocations":["bring sth with you","bring a friend","bring food","bring it here","bring sb a drink"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"getirmek","alt":["yanında getirmek"],"equivalence":"partial","false_friend":null,"note":"'Getirmek' = 'bring' (buraya, konuşana doğru); 'götürmek' = 'take' (buradan uzağa). Düzensiz: bring - brought - brought.","mistakes":[{"wrong":"Bring this book to the library for me.","right":"Take this book to the library for me.","why":"Konuşanın bulunduğu yerden uzağa götürmek için 'take' kullanılır; 'bring' buraya getirmektir."},{"wrong":"I will bring you to the airport.","right":"I will take you to the airport.","why":"Seni oraya götüreceğim = 'take'. 'Bring' konuşanın olduğu yere doğru hareketi anlatır."}],"mnemonic":"'Bring' ile 'buraya' aynı harfle başlar: 'Bring it here!' Buradan uzağa götürmek ise 'take'."}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["irregular","confusable:take"],"sensitivity":0},
-"quiz":{"cloze":"Please ______ me a glass of water. I'm thirsty.","answer":"bring","distractors":["take","carry","hold"]},
-"meta":{"status":"draft","qa_flags":["critic_edited","mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.take.v.1","lemma":"take","type":"word","pos":"v","sense_no":1,"sense_note":"carry away from here","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/teɪk/","uk":"/teɪk/"},
-"def":{"micro":"carry to another place","short":"carry or lead something or someone from here to another place","long":"To carry or lead something or someone from the place where you are to another place. 'Take' goes away from the speaker; 'bring' goes toward the speaker."},
-"grammar":{"pattern":"take sb/sth to + place"},
-"examples":[
-{"en":"I take my kids to school every morning.","tr":"Her sabah çocuklarımı okula götürürüm.","register":"neutral","focus":"take"},
-{"en":"Take an umbrella with you. It might rain.","tr":"Yanına bir şemsiye al. Yağmur yağabilir.","register":"neutral","focus":"Take"},
-{"en":"Can you take this letter to the post office?","tr":"Bu mektubu postaneye götürebilir misin?","register":"neutral","focus":"take"}],
-"synonyms":["carry away","lead"],"antonyms":["bring"],"collocations":["take sb to school","take sth with you","take sb home","take it away","take sb out"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"götürmek","alt":["almak","alıp götürmek"],"equivalence":"partial","false_friend":null,"note":"'Take' çok anlamlı bir fiildir (take a photo, take a bus). Bu kart 'götürmek' anlamını anlatır: buradan başka yere. Düzensiz: take - took - taken. Karşıtı 'bring' (getirmek).","mistakes":[{"wrong":"Take me a glass of water, please.","right":"Bring me a glass of water, please.","why":"Bana doğru, buraya getirmek için 'bring' kullanılır; 'take' buradan uzağa götürmektir."}],"mnemonic":"Paket yemeğe İngilizcede 'takeaway' denir: yemeği alıp götürürsün. 'Take' buradan uzağa götürmektir."}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["irregular","confusable:bring"],"sensitivity":0},
-"quiz":{"cloze":"I always ______ my dog for a walk after dinner.","answer":"take","distractors":["bring","come","arrive"]},
-"meta":{"status":"draft","qa_flags":["mnemonic_added"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.job.n.1","lemma":"job","type":"word","pos":"n","sense_no":1,"sense_note":"paid position","level":"A2","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/dʒɑːb/","uk":"/dʒɒb/"},
-"def":{"micro":"work you do for money","short":"the regular work that you do to get paid","long":"The regular work that you do to get money, for example as a teacher or a driver. It is countable (a job, two jobs), but 'work' is uncountable."},
-"grammar":{"pattern":"a job (as / in / at)"},
-"examples":[
-{"en":"She has a new job at a bank.","tr":"Bankada yeni bir işi var.","register":"neutral","focus":"job"},
-{"en":"I'm looking for a job in Istanbul.","tr":"İstanbul'da iş arıyorum.","register":"neutral","focus":"job"},
-{"en":"He lost his job last month.","tr":"Geçen ay işini kaybetti.","register":"neutral","focus":"job"}],
-"synonyms":["position","occupation"],"antonyms":[],"collocations":["look for a job","get a job","a full-time job","quit a job","a good job"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"iş","alt":["meslek","görev"],"equivalence":"partial","false_friend":null,"note":"Türkçe 'iş' hem 'job' hem 'work' demektir. 'Job' sayılabilir: belirli bir iş yeri ya da meslek (a job, two jobs). 'Work' sayılamaz: genel çalışma, yapılacak işler.","mistakes":[{"wrong":"I'm looking for a work.","right":"I'm looking for a job.","why":"'Work' sayılamaz, 'a work' denmez. İş aramak için 'look for a job' kullanılır."},{"wrong":"I go to job by bus every day.","right":"I go to work by bus every day.","why":"'İşe gitmek' İngilizcede 'go to work' denir; 'go to job' denmez. Bu kalıpta 'work' iş yeri anlamındadır."}],"mnemonic":null}},
-"tags":{"primary_topic":"confusing_words","topics":["confusing_words"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:work"],"sensitivity":0},
-"quiz":{"cloze":"I'm looking for a new ______ because I want more money.","answer":"job","distractors":["work","lesson","desk"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-12",
+  "entries": [
+    {
+      "id": "en.win.v.1",
+      "lemma": "win",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "come first",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɪn/",
+        "uk": "/wɪn/"
+      },
+      "def": {
+        "micro": "come first in a contest",
+        "short": "be the best or first in a game, race, or contest, or get a prize",
+        "long": "To be the best or first in a game, race, or contest, or to get a prize. You win a game or a prize; you earn money by working."
+      },
+      "grammar": {
+        "pattern": "win sth / win against sb"
+      },
+      "examples": [
+        {
+          "en": "Our team won the match 2-1.",
+          "tr": "Takımımız maçı 2-1 kazandı.",
+          "register": "neutral",
+          "focus": "won"
+        },
+        {
+          "en": "She won first prize in the writing contest.",
+          "tr": "Yazı yarışmasında birincilik ödülünü kazandı.",
+          "register": "neutral",
+          "focus": "won"
+        },
+        {
+          "en": "I never win when I play cards with my dad.",
+          "tr": "Babamla kart oynarken hiç kazanamıyorum.",
+          "register": "neutral",
+          "focus": "win"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "lose"
+      ],
+      "confusables": [
+        "earn",
+        "beat"
+      ],
+      "collocations": [
+        "win a game",
+        "win a prize",
+        "win a race",
+        "win the lottery",
+        "win an award"
+      ],
+      "word_family": [
+        {
+          "lemma": "winner",
+          "pos": "n"
+        },
+        {
+          "lemma": "win",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kazanmak",
+          "alt": [
+            "yenmek",
+            "birinci olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Win' = yarışma, maç, oyun ya da ödül kazanmak. Çalışarak para kazanmak için 'earn' kullanılır. Düzensiz: win - won - won. Karşıtı 'lose'. Rakibi yenmek için 'beat sb' denir.",
+          "mistakes": [
+            {
+              "wrong": "Our team won Ali's team.",
+              "right": "Our team beat Ali's team.",
+              "why": "Rakibi yenmek için 'beat' kullanılır; 'win' maçı, oyunu ya da ödülü nesne alır."
+            },
+            {
+              "wrong": "I won 5,000 lira at work this month.",
+              "right": "I earned 5,000 lira at work this month.",
+              "why": "Çalışarak kazanılan para için 'earn' kullanılır; 'win' yarışma ve oyun içindir."
+            }
+          ],
+          "mnemonic": "Geçmiş hâli 'won', tıpkı 'one' (bir) gibi okunur: kazanan bir numara olur!"
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We played well and ______ the match 3-0.",
+        "answer": "won",
+        "distractors": [
+          "earned",
+          "beat",
+          "missed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hear.v.1",
+      "lemma": "hear",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "notice a sound",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɪr/",
+        "uk": "/hɪə/"
+      },
+      "def": {
+        "micro": "notice sounds with your ears",
+        "short": "know that a sound is there because it reaches your ears",
+        "long": "To know that there is a sound because it reaches your ears, without trying. You hear a sound by chance, but you listen when you pay attention on purpose."
+      },
+      "grammar": {
+        "pattern": "hear sth / can hear sth"
+      },
+      "examples": [
+        {
+          "en": "I heard a strange noise last night.",
+          "tr": "Dün gece garip bir ses duydum.",
+          "register": "neutral",
+          "focus": "heard"
+        },
+        {
+          "en": "I can't hear you. It's too loud here.",
+          "tr": "Seni duyamıyorum. Burada çok gürültülü.",
+          "register": "neutral",
+          "focus": "hear"
+        },
+        {
+          "en": "Can you hear me? The line is bad.",
+          "tr": "Beni duyabiliyor musun? Hat kötü.",
+          "register": "neutral",
+          "focus": "hear"
+        }
+      ],
+      "synonyms": [
+        "catch",
+        "notice"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "listen"
+      ],
+      "collocations": [
+        "hear a noise",
+        "hear the news",
+        "can hear",
+        "hear from sb",
+        "hear music"
+      ],
+      "word_family": [
+        {
+          "lemma": "hearing",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "duymak",
+          "alt": [
+            "işitmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Hear' = duymak (ses kulağa kendiliğinden gelir); 'listen' = dinlemek (dikkat vererek). Genelde 'can' ile kullanılır: 'I can hear music'. Düzensiz: hear - heard - heard.",
+          "mistakes": [
+            {
+              "wrong": "I am hearing a strange sound.",
+              "right": "I can hear a strange sound.",
+              "why": "Duyma ve görme fiilleri şimdiki anda genelde -ing almaz; 'can hear' kullanılır."
+            },
+            {
+              "wrong": "I hear to the radio every morning.",
+              "right": "I listen to the radio every morning.",
+              "why": "Dikkatle dinlemek için 'listen to' kullanılır; 'hear' doğrudan nesne alır, 'to' almaz."
+            }
+          ],
+          "mnemonic": "'Hear' kelimesinin içinde 'ear' (kulak) var: ses kulağına kendiliğinden gelir."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Speak louder, please. I can't ______ you.",
+        "answer": "hear",
+        "distractors": [
+          "listen",
+          "speak",
+          "look"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.listen.v.1",
+      "lemma": "listen",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "pay attention to sound",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɪsən/",
+        "uk": "/ˈlɪsən/"
+      },
+      "def": {
+        "micro": "pay attention to sounds",
+        "short": "give your attention to a sound or to someone who is speaking",
+        "long": "To pay attention to a sound or to someone who is speaking, on purpose. You listen TO something; the word 'to' always comes before the thing or person."
+      },
+      "grammar": {
+        "pattern": "listen to sb/sth"
+      },
+      "examples": [
+        {
+          "en": "I listen to music on the bus every morning.",
+          "tr": "Her sabah otobüste müzik dinlerim.",
+          "register": "neutral",
+          "focus": "listen"
+        },
+        {
+          "en": "Please listen carefully to the instructions.",
+          "tr": "Lütfen talimatları dikkatle dinleyin.",
+          "register": "neutral",
+          "focus": "listen"
+        },
+        {
+          "en": "He never listens when I talk.",
+          "tr": "Ben konuşurken hiç dinlemez.",
+          "register": "neutral",
+          "focus": "listens"
+        }
+      ],
+      "synonyms": [
+        "pay attention"
+      ],
+      "antonyms": [
+        "ignore"
+      ],
+      "confusables": [
+        "hear"
+      ],
+      "collocations": [
+        "listen to music",
+        "listen carefully",
+        "listen to advice",
+        "listen to the radio",
+        "listen to me"
+      ],
+      "word_family": [
+        {
+          "lemma": "listener",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dinlemek",
+          "alt": [
+            "kulak vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Listen' mutlaka 'to' ile kullanılır. Türkçede 'müziği dinlemek' (-i hâli) dediğimiz için 'to' atlanır. 'Hear' = duymak (kendiliğinden kulağa gelen ses).",
+          "mistakes": [
+            {
+              "wrong": "I listen music every day.",
+              "right": "I listen to music every day.",
+              "why": "Türkçede 'müzik dinlemek' deriz ama İngilizcede 'listen' + to + isim gerekir."
+            },
+            {
+              "wrong": "I listened a strange noise.",
+              "right": "I heard a strange noise.",
+              "why": "Kulağa gelen sesi fark etmek 'hear'; 'listen' dikkatle dinlemektir."
+            }
+          ],
+          "mnemonic": "'Listen' kelimesinde 't' okunmaz: 'lisın' denir. O sessiz 't' gibi sen de sessizce dinle."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ to your teacher. This is important.",
+        "answer": "listen",
+        "distractors": [
+          "hear",
+          "tell",
+          "see"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.remember.v.1",
+      "lemma": "remember",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep in mind",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈmɛmbər/",
+        "uk": "/rɪˈmɛmbə/"
+      },
+      "def": {
+        "micro": "keep something in your mind",
+        "short": "keep something in your memory, or bring it back to your mind",
+        "long": "To keep something in your memory, or to think of something from the past. You remember by yourself; another person or thing can remind you."
+      },
+      "grammar": {
+        "pattern": "remember sth / to do sth / doing sth"
+      },
+      "examples": [
+        {
+          "en": "I can't remember her name.",
+          "tr": "Onun adını hatırlayamıyorum.",
+          "register": "neutral",
+          "focus": "remember"
+        },
+        {
+          "en": "Remember to lock the door when you leave.",
+          "tr": "Çıkarken kapıyı kilitlemeyi unutma.",
+          "register": "neutral",
+          "focus": "Remember"
+        },
+        {
+          "en": "Do you remember our first day at school?",
+          "tr": "Okuldaki ilk günümüzü hatırlıyor musun?",
+          "register": "neutral",
+          "focus": "remember"
+        }
+      ],
+      "synonyms": [
+        "recall",
+        "recollect"
+      ],
+      "antonyms": [
+        "forget"
+      ],
+      "confusables": [
+        "remind"
+      ],
+      "collocations": [
+        "remember a name",
+        "remember to do",
+        "remember doing",
+        "if I remember right",
+        "remember clearly"
+      ],
+      "word_family": [
+        {
+          "lemma": "remembrance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hatırlamak",
+          "alt": [
+            "anımsamak",
+            "akılda tutmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hatırlayan kişi 'remember'; birine hatırlatan kişi ya da şey 'remind'. 'Remember to do' = yapmayı unutmamak; 'remember doing' = yaptığını hatırlamak.",
+          "mistakes": [
+            {
+              "wrong": "Remember me to buy milk.",
+              "right": "Remind me to buy milk.",
+              "why": "Birinin sana hatırlatmasını istiyorsan 'remind' kullanılır; 'remember' kendi hafızanda tutmaktır."
+            },
+            {
+              "wrong": "I remember to meet him last year.",
+              "right": "I remember meeting him last year.",
+              "why": "Geçmişte yaptığın şeyi hatırlamak için 'remember + -ing'; yapılacak işi akılda tutmak için 'remember + to'."
+            }
+          ],
+          "mnemonic": "'Remember' ile 'memory' (hafıza) aynı kökten: hatırlayan senin hafızandır. Başkasına hatırlatmak 'remind'."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't ______ where I put my keys.",
+        "answer": "remember",
+        "distractors": [
+          "remind",
+          "miss",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.remind.v.1",
+      "lemma": "remind",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈmaɪnd/",
+        "uk": "/rɪˈmaɪnd/"
+      },
+      "def": {
+        "micro": "help someone not forget",
+        "short": "say or do something that makes someone remember something",
+        "long": "To say or do something that makes someone remember something, for example a task or a name. You remind someone TO do something or OF something."
+      },
+      "grammar": {
+        "pattern": "remind sb to do sth / of sth"
+      },
+      "examples": [
+        {
+          "en": "Please remind me to call my mom tonight.",
+          "tr": "Lütfen bu akşam annemi aramamı bana hatırlat.",
+          "register": "neutral",
+          "focus": "remind"
+        },
+        {
+          "en": "My phone reminds me when I have a meeting.",
+          "tr": "Telefonum toplantım olduğunda bana hatırlatıyor.",
+          "register": "neutral",
+          "focus": "reminds"
+        },
+        {
+          "en": "This song reminds me of my school days.",
+          "tr": "Bu şarkı bana okul günlerimi hatırlatıyor.",
+          "register": "neutral",
+          "focus": "reminds"
+        }
+      ],
+      "synonyms": [
+        "prompt",
+        "jog sb's memory"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "remember"
+      ],
+      "collocations": [
+        "remind sb to",
+        "remind sb of",
+        "a gentle reminder",
+        "remind me later",
+        "set a reminder"
+      ],
+      "word_family": [
+        {
+          "lemma": "reminder",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hatırlatmak",
+          "alt": [
+            "anımsatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Hatırlatmak' = 'remind', 'hatırlamak' = 'remember'. Kalıp: remind sb TO do sth (yapmasını hatırlatmak), remind sb OF sth (bir şeyi hatırlatmak). 'Reminder' = hatırlatıcı bildirim.",
+          "mistakes": [
+            {
+              "wrong": "Please remember me to send the email.",
+              "right": "Please remind me to send the email.",
+              "why": "Birinin sana hatırlatmasını istiyorsan 'remind' kullanılır; 'remember' kendi hafızanda tutmaktır."
+            },
+            {
+              "wrong": "This photo reminds me to my childhood.",
+              "right": "This photo reminds me of my childhood.",
+              "why": "'... bana ...'ı hatırlatıyor' = 'remind sb OF sth'; 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ me to buy bread on the way home?",
+        "answer": "remind",
+        "distractors": [
+          "remember",
+          "miss",
+          "lose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bring.v.1",
+      "lemma": "bring",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "carry to here",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/brɪŋ/",
+        "uk": "/brɪŋ/"
+      },
+      "def": {
+        "micro": "carry something to here",
+        "short": "take something or someone with you to the place where you or the listener is",
+        "long": "To carry something or someone with you to the place where you or the other person is or will be. 'Bring' goes toward the speaker; 'take' goes away from the speaker."
+      },
+      "grammar": {
+        "pattern": "bring sth (to sb / here)"
+      },
+      "examples": [
+        {
+          "en": "Can you bring your laptop to the meeting?",
+          "tr": "Toplantıya dizüstü bilgisayarını getirebilir misin?",
+          "register": "neutral",
+          "focus": "bring"
+        },
+        {
+          "en": "Please bring some water when you come.",
+          "tr": "Gelirken biraz su getir lütfen.",
+          "register": "neutral",
+          "focus": "bring"
+        },
+        {
+          "en": "She always brings her dog when she visits us.",
+          "tr": "Bizi ziyarete geldiğinde köpeğini de getirir.",
+          "register": "neutral",
+          "focus": "brings"
+        }
+      ],
+      "synonyms": [
+        "carry here",
+        "fetch"
+      ],
+      "antonyms": [
+        "take"
+      ],
+      "confusables": [
+        "take"
+      ],
+      "collocations": [
+        "bring sth with you",
+        "bring a friend",
+        "bring food",
+        "bring it here",
+        "bring sb a drink"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "getirmek",
+          "alt": [
+            "yanında getirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Getirmek' = 'bring' (buraya, konuşana doğru); 'götürmek' = 'take' (buradan uzağa). Düzensiz: bring - brought - brought.",
+          "mistakes": [
+            {
+              "wrong": "Bring this book to the library for me.",
+              "right": "Take this book to the library for me.",
+              "why": "Konuşanın bulunduğu yerden uzağa götürmek için 'take' kullanılır; 'bring' buraya getirmektir."
+            },
+            {
+              "wrong": "I will bring you to the airport.",
+              "right": "I will take you to the airport.",
+              "why": "Seni oraya götüreceğim = 'take'. 'Bring' konuşanın olduğu yere doğru hareketi anlatır."
+            }
+          ],
+          "mnemonic": "'Bring' ile 'buraya' aynı harfle başlar: 'Bring it here!' Buradan uzağa götürmek ise 'take'."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ me a glass of water. I'm thirsty.",
+        "answer": "bring",
+        "distractors": [
+          "take",
+          "carry",
+          "hold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take.v.1",
+      "lemma": "take",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "carry away from here",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk/",
+        "uk": "/teɪk/"
+      },
+      "def": {
+        "micro": "carry to another place",
+        "short": "carry or lead something or someone from here to another place",
+        "long": "To carry or lead something or someone from the place where you are to another place. 'Take' goes away from the speaker; 'bring' goes toward the speaker."
+      },
+      "grammar": {
+        "pattern": "take sb/sth to + place"
+      },
+      "examples": [
+        {
+          "en": "I take my kids to school every morning.",
+          "tr": "Her sabah çocuklarımı okula götürürüm.",
+          "register": "neutral",
+          "focus": "take"
+        },
+        {
+          "en": "Take an umbrella with you. It might rain.",
+          "tr": "Yanına bir şemsiye al. Yağmur yağabilir.",
+          "register": "neutral",
+          "focus": "Take"
+        },
+        {
+          "en": "Can you take this letter to the post office?",
+          "tr": "Bu mektubu postaneye götürebilir misin?",
+          "register": "neutral",
+          "focus": "take"
+        }
+      ],
+      "synonyms": [
+        "carry away",
+        "lead"
+      ],
+      "antonyms": [
+        "bring"
+      ],
+      "confusables": [
+        "bring",
+        "get",
+        "buy"
+      ],
+      "collocations": [
+        "take sb to school",
+        "take sth with you",
+        "take sb home",
+        "take it away",
+        "take sb out"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "götürmek",
+          "alt": [
+            "almak",
+            "alıp götürmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Take' çok anlamlı bir fiildir (take a photo, take a bus). Bu kart 'götürmek' anlamını anlatır: buradan başka yere. Düzensiz: take - took - taken. Karşıtı 'bring' (getirmek).",
+          "mistakes": [
+            {
+              "wrong": "Take me a glass of water, please.",
+              "right": "Bring me a glass of water, please.",
+              "why": "Bana doğru, buraya getirmek için 'bring' kullanılır; 'take' buradan uzağa götürmektir."
+            }
+          ],
+          "mnemonic": "Paket yemeğe İngilizcede 'takeaway' denir: yemeği alıp götürürsün. 'Take' buradan uzağa götürmektir."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I always ______ my dog for a walk after dinner.",
+        "answer": "take",
+        "distractors": [
+          "bring",
+          "come",
+          "arrive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.job.n.1",
+      "lemma": "job",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "paid position",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dʒɑːb/",
+        "uk": "/dʒɒb/"
+      },
+      "def": {
+        "micro": "work you do for money",
+        "short": "the regular work that you do to get paid",
+        "long": "The regular work that you do to get money, for example as a teacher or a driver. It is countable (a job, two jobs), but 'work' is uncountable."
+      },
+      "grammar": {
+        "pattern": "a job (as / in / at)"
+      },
+      "examples": [
+        {
+          "en": "She has a new job at a bank.",
+          "tr": "Bankada yeni bir işi var.",
+          "register": "neutral",
+          "focus": "job"
+        },
+        {
+          "en": "I'm looking for a job in Istanbul.",
+          "tr": "İstanbul'da iş arıyorum.",
+          "register": "neutral",
+          "focus": "job"
+        },
+        {
+          "en": "He lost his job last month.",
+          "tr": "Geçen ay işini kaybetti.",
+          "register": "neutral",
+          "focus": "job"
+        }
+      ],
+      "synonyms": [
+        "position",
+        "occupation"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "work",
+        "task"
+      ],
+      "collocations": [
+        "look for a job",
+        "get a job",
+        "a full-time job",
+        "quit a job",
+        "a good job"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iş",
+          "alt": [
+            "meslek",
+            "görev"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçe 'iş' hem 'job' hem 'work' demektir. 'Job' sayılabilir: belirli bir iş yeri ya da meslek (a job, two jobs). 'Work' sayılamaz: genel çalışma, yapılacak işler.",
+          "mistakes": [
+            {
+              "wrong": "I'm looking for a work.",
+              "right": "I'm looking for a job.",
+              "why": "'Work' sayılamaz, 'a work' denmez. İş aramak için 'look for a job' kullanılır."
+            },
+            {
+              "wrong": "I go to job by bus every day.",
+              "right": "I go to work by bus every day.",
+              "why": "'İşe gitmek' İngilizcede 'go to work' denir; 'go to job' denmez. Bu kalıpta 'work' iş yeri anlamındadır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm looking for a new ______ because I want more money.",
+        "answer": "job",
+        "distractors": [
+          "work",
+          "lesson",
+          "desk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

@@ -1,223 +1,515 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.soil.n.1",
-  "lemma": "soil",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "where plants grow",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/sɔɪl/", "uk": "/sɔɪl/"},
-  "def": {
-    "micro": "the earth plants grow in",
-    "short": "the brown or black material on the ground where plants grow",
-    "long": "The brown or black material on the top of the ground, where plants grow. Gardeners and farmers use it to grow flowers and food."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "The soil here is dry, so the plants need more water.", "tr": "Buradaki toprak kuru, bu yüzden bitkilerin daha çok suya ihtiyacı var.", "register": "neutral", "focus": "soil"},
-    {"en": "Put some soil in the pot and then add the seeds.", "tr": "Saksıya biraz toprak koy, sonra tohumları ekle.", "register": "neutral", "focus": "soil"},
-    {"en": "Rain washes the soil away from the hill.", "tr": "Yağmur tepenin toprağını yıkıp götürüyor.", "register": "neutral", "focus": "soil"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": ["earth"],
-  "antonyms": [],
-  "collocations": ["rich soil", "dry soil", "garden soil", "add soil"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "toprak",
-      "alt": [],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'toprak' hem 'soil' (bitkilerin yetiştiği toprak), hem 'ground' (yer, zemin), hem 'land' (arazi) olabilir. Bitki yetiştirdiğin toprak 'soil'dir.",
-      "mistakes": [
-        {"wrong": "The ground in this pot is very dry.", "right": "The soil in this pot is very dry.", "why": "Saksıdaki ve bahçedeki bitki toprağı 'soil'dir. 'Ground' yerin yüzeyidir (yere düşmek: fall on the ground)."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.soil.n.1",
+      "lemma": "soil",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "where plants grow",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɔɪl/",
+        "uk": "/sɔɪl/"
+      },
+      "def": {
+        "micro": "the earth plants grow in",
+        "short": "the brown or black material on the ground where plants grow",
+        "long": "The brown or black material on the top of the ground, where plants grow. Gardeners and farmers use it to grow flowers and food."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The soil here is dry, so the plants need more water.",
+          "tr": "Buradaki toprak kuru, bu yüzden bitkilerin daha çok suya ihtiyacı var.",
+          "register": "neutral",
+          "focus": "soil"
+        },
+        {
+          "en": "Put some soil in the pot and then add the seeds.",
+          "tr": "Saksıya biraz toprak koy, sonra tohumları ekle.",
+          "register": "neutral",
+          "focus": "soil"
+        },
+        {
+          "en": "Rain washes the soil away from the hill.",
+          "tr": "Yağmur tepenin toprağını yıkıp götürüyor.",
+          "register": "neutral",
+          "focus": "soil"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Flowers need water, sun, and good ______ to grow.", "answer": "soil", "distractors": ["glass", "plastic", "cloud"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.lyrics.n.1",
-  "lemma": "lyrics",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "of a song",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈlɪrɪks/", "uk": "/ˈlɪrɪks/"},
-  "def": {
-    "micro": "words of a song",
-    "short": "the words that a person sings in a song",
-    "long": "The words of a song. Many people read them on their phone to learn the song, and the word is usually plural."
-  },
-  "grammar": {"pattern": "the lyrics of / to + song"},
-  "examples": [
-    {"en": "I love this song, but I don't know the lyrics.", "tr": "Bu şarkıyı seviyorum ama sözlerini bilmiyorum.", "register": "neutral", "focus": "lyrics"},
-    {"en": "Can you send me the lyrics to that song?", "tr": "O şarkının sözlerini bana gönderir misin?", "register": "neutral", "focus": "lyrics"},
-    {"en": "The lyrics are very sad, but the music is happy.", "tr": "Şarkı sözleri çok hüzünlü ama müzik neşeli.", "register": "neutral", "focus": "lyrics"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["song lyrics", "the lyrics of", "read the lyrics", "write lyrics"],
-  "word_family": [{"lemma": "lyricist", "pos": "n"}],
-  "etymology": {"text": "From Greek 'lyra' (a lyre, a small harp). 'Lyric' first meant poetry that was sung with a lyre.", "origin": "Greek", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "şarkı sözleri",
-      "alt": ["söz"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Genellikle çoğul kullanılır: 'the lyrics'. Tek bir dize için 'a line' denir. Fiil de çoğul olur: 'The lyrics are...'.",
-      "mistakes": [
-        {"wrong": "The lyrics of this song is beautiful.", "right": "The lyrics of this song are beautiful.", "why": "'Lyrics' çoğul bir isimdir; fiil de çoğul olur (are). Türkçede fiil çoğulu göstermediği için bu hata sık yapılır."}
+      "synonyms": [
+        "earth"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I like the music, but I can't understand the ______ because they sing too fast.", "answer": "lyrics", "distractors": ["tickets", "trailers", "playlists"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.podcast.n.1",
-  "lemma": "podcast",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈpɑːdkæst/", "uk": "/ˈpɒdkɑːst/"},
-  "def": {
-    "micro": "audio show you play online",
-    "short": "a series of audio shows that you can listen to on your phone or computer",
-    "long": "A series of audio programs, usually about one topic, that you can listen to on your phone or computer whenever you want. New episodes often come out every week."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I listen to a podcast on my way to work.", "tr": "İşe giderken bir podcast dinliyorum.", "register": "neutral", "focus": "podcast"},
-    {"en": "This podcast is about history and travel.", "tr": "Bu podcast tarih ve seyahat hakkında.", "register": "neutral", "focus": "podcast"},
-    {"en": "She started a podcast with her best friend.", "tr": "En iyi arkadaşıyla bir podcast başlattı.", "register": "neutral", "focus": "podcast"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["listen to a podcast", "a podcast episode", "start a podcast", "a popular podcast"],
-  "word_family": [],
-  "etymology": {"text": "A mix of 'iPod' and 'broadcast', first used in 2004. Today you can play one on any phone or computer, not only on an iPod.", "origin": "English", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "podcast",
-      "alt": ["sesli yayın"],
-      "equivalence": "cognate",
-      "false_friend": null,
-      "note": "Türkçede de 'podcast' denir. Her bölüme 'episode' (bölüm) denir: 'a podcast episode'.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I listen to a ______ about cooking every morning.", "answer": "podcast", "distractors": ["magazine", "camera", "menu"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.subtitles.n.1",
-  "lemma": "subtitles",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "in films and shows",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈsʌbtaɪtəlz/", "uk": "/ˈsʌbtaɪtəlz/"},
-  "def": {
-    "micro": "text under a film",
-    "short": "the words shown at the bottom of a film or show that tell what people say",
-    "long": "The words shown at the bottom of a film or show that tell what people say, often in another language. Many learners watch with them to understand better."
-  },
-  "grammar": {"pattern": "with / turn on + subtitles"},
-  "examples": [
-    {"en": "I always watch foreign films with subtitles.", "tr": "Yabancı filmleri hep altyazılı izlerim.", "register": "neutral", "focus": "subtitles"},
-    {"en": "Can you turn on the English subtitles?", "tr": "İngilizce altyazıyı açar mısın?", "register": "neutral", "focus": "subtitles"},
-    {"en": "The subtitles are too fast to read.", "tr": "Altyazılar okunamayacak kadar hızlı.", "register": "neutral", "focus": "subtitles"}
-  ],
-  "synonyms": ["captions"],
-  "antonyms": [],
-  "collocations": ["English subtitles", "with subtitles", "turn on subtitles", "Turkish subtitles"],
-  "word_family": [{"lemma": "subtitle", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "altyazı",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "İngilizcede çoğul kullanılır: 'with subtitles' (altyazılı). Aynı dildeki altyazıya (özellikle işitme engelliler için) çoğu zaman 'captions' denir.",
-      "mistakes": [
-        {"wrong": "I watch films with subtitle.", "right": "I watch films with subtitles.", "why": "Türkçede 'altyazı' tekil kalır, ama İngilizcede 'subtitles' genelde çoğul kullanılır."}
+      "antonyms": [],
+      "collocations": [
+        "rich soil",
+        "dry soil",
+        "garden soil",
+        "add soil"
       ],
-      "mnemonic": null
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "toprak",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'toprak' hem 'soil' (bitkilerin yetiştiği toprak), hem 'ground' (yer, zemin), hem 'land' (arazi) olabilir. Bitki yetiştirdiğin toprak 'soil'dir.",
+          "mistakes": [
+            {
+              "wrong": "The ground in this pot is very dry.",
+              "right": "The soil in this pot is very dry.",
+              "why": "Saksıdaki ve bahçedeki bitki toprağı 'soil'dir. 'Ground' yerin yüzeyidir (yere düşmek: fall on the ground)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Flowers need water, sun, and good ______ to grow.",
+        "answer": "soil",
+        "distractors": [
+          "glass",
+          "plastic",
+          "cloud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lyrics.n.1",
+      "lemma": "lyrics",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "of a song",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɪrɪks/",
+        "uk": "/ˈlɪrɪks/"
+      },
+      "def": {
+        "micro": "words of a song",
+        "short": "the words that a person sings in a song",
+        "long": "The words of a song. Many people read them on their phone to learn the song, and the word is usually plural."
+      },
+      "grammar": {
+        "pattern": "the lyrics of / to + song"
+      },
+      "examples": [
+        {
+          "en": "I love this song, but I don't know the lyrics.",
+          "tr": "Bu şarkıyı seviyorum ama sözlerini bilmiyorum.",
+          "register": "neutral",
+          "focus": "lyrics"
+        },
+        {
+          "en": "Can you send me the lyrics to that song?",
+          "tr": "O şarkının sözlerini bana gönderir misin?",
+          "register": "neutral",
+          "focus": "lyrics"
+        },
+        {
+          "en": "The lyrics are very sad, but the music is happy.",
+          "tr": "Şarkı sözleri çok hüzünlü ama müzik neşeli.",
+          "register": "neutral",
+          "focus": "lyrics"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "song lyrics",
+        "the lyrics of",
+        "read the lyrics",
+        "write lyrics"
+      ],
+      "word_family": [
+        {
+          "lemma": "lyricist",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Greek 'lyra' (a lyre, a small harp). 'Lyric' first meant poetry that was sung with a lyre.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "şarkı sözleri",
+          "alt": [
+            "söz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genellikle çoğul kullanılır: 'the lyrics'. Tek bir dize için 'a line' denir. Fiil de çoğul olur: 'The lyrics are...'.",
+          "mistakes": [
+            {
+              "wrong": "The lyrics of this song is beautiful.",
+              "right": "The lyrics of this song are beautiful.",
+              "why": "'Lyrics' çoğul bir isimdir; fiil de çoğul olur (are). Türkçede fiil çoğulu göstermediği için bu hata sık yapılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I like the music, but I can't understand the ______ because they sing too fast.",
+        "answer": "lyrics",
+        "distractors": [
+          "tickets",
+          "trailers",
+          "playlists"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.podcast.n.1",
+      "lemma": "podcast",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːdkæst/",
+        "uk": "/ˈpɒdkɑːst/"
+      },
+      "def": {
+        "micro": "audio show you play online",
+        "short": "a series of audio shows that you can listen to on your phone or computer",
+        "long": "A series of audio programs, usually about one topic, that you can listen to on your phone or computer whenever you want. New episodes often come out every week."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I listen to a podcast on my way to work.",
+          "tr": "İşe giderken bir podcast dinliyorum.",
+          "register": "neutral",
+          "focus": "podcast"
+        },
+        {
+          "en": "This podcast is about history and travel.",
+          "tr": "Bu podcast tarih ve seyahat hakkında.",
+          "register": "neutral",
+          "focus": "podcast"
+        },
+        {
+          "en": "She started a podcast with her best friend.",
+          "tr": "En iyi arkadaşıyla bir podcast başlattı.",
+          "register": "neutral",
+          "focus": "podcast"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "listen to a podcast",
+        "a podcast episode",
+        "start a podcast",
+        "a popular podcast"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "A mix of 'iPod' and 'broadcast', first used in 2004. Today you can play one on any phone or computer, not only on an iPod.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "podcast",
+          "alt": [
+            "sesli yayın"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede de 'podcast' denir. Her bölüme 'episode' (bölüm) denir: 'a podcast episode'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I listen to a ______ about cooking every morning.",
+        "answer": "podcast",
+        "distractors": [
+          "magazine",
+          "camera",
+          "menu"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.subtitles.n.1",
+      "lemma": "subtitles",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "in films and shows",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌbtaɪtəlz/",
+        "uk": "/ˈsʌbtaɪtəlz/"
+      },
+      "def": {
+        "micro": "text under a film",
+        "short": "the words shown at the bottom of a film or show that tell what people say",
+        "long": "The words shown at the bottom of a film or show that tell what people say, often in another language. Many learners watch with them to understand better."
+      },
+      "grammar": {
+        "pattern": "with / turn on + subtitles"
+      },
+      "examples": [
+        {
+          "en": "I always watch foreign films with subtitles.",
+          "tr": "Yabancı filmleri hep altyazılı izlerim.",
+          "register": "neutral",
+          "focus": "subtitles"
+        },
+        {
+          "en": "Can you turn on the English subtitles?",
+          "tr": "İngilizce altyazıyı açar mısın?",
+          "register": "neutral",
+          "focus": "subtitles"
+        },
+        {
+          "en": "The subtitles are too fast to read.",
+          "tr": "Altyazılar okunamayacak kadar hızlı.",
+          "register": "neutral",
+          "focus": "subtitles"
+        }
+      ],
+      "synonyms": [
+        "captions"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "English subtitles",
+        "with subtitles",
+        "turn on subtitles",
+        "Turkish subtitles"
+      ],
+      "word_family": [
+        {
+          "lemma": "subtitle",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "altyazı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede çoğul kullanılır: 'with subtitles' (altyazılı). Aynı dildeki altyazıya (özellikle işitme engelliler için) çoğu zaman 'captions' denir.",
+          "mistakes": [
+            {
+              "wrong": "I watch films with subtitle.",
+              "right": "I watch films with subtitles.",
+              "why": "Türkçede 'altyazı' tekil kalır, ama İngilizcede 'subtitles' genelde çoğul kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't understand Korean, so I watch the series with English ______.",
+        "answer": "subtitles",
+        "distractors": [
+          "trailers",
+          "episodes",
+          "lyrics"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trailer.n.1",
+      "lemma": "trailer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "for a film",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtreɪlər/",
+        "uk": "/ˈtreɪlə/"
+      },
+      "def": {
+        "micro": "short preview of a film",
+        "short": "a short video that shows parts of a new film or show",
+        "long": "A short video with the best parts of a new film or show, made to make people want to watch it. It is shown on TV, online, and before films in the cinema."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Have you seen the trailer for the new movie?",
+          "tr": "Yeni filmin fragmanını izledin mi?",
+          "register": "neutral",
+          "focus": "trailer"
+        },
+        {
+          "en": "The trailer looks great, so let's go to the cinema.",
+          "tr": "Fragman harika görünüyor, hadi sinemaya gidelim.",
+          "register": "neutral",
+          "focus": "trailer"
+        },
+        {
+          "en": "I watched the trailer three times.",
+          "tr": "Fragmanı üç kez izledim.",
+          "register": "neutral",
+          "focus": "trailer"
+        }
+      ],
+      "synonyms": [
+        "preview"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "watch a trailer",
+        "a movie trailer",
+        "the official trailer",
+        "a new trailer"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From 'trail'. Trailers were first shown after the main film, so they 'trailed' behind it. Today they are shown before the film.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "fragman",
+          "alt": [
+            "tanıtım filmi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede aynı kelime römork (arabanın arkasına takılan araç) anlamına da gelir. Filmde 'trailer' = fragman.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I watched the ______ online, and now I want to see the whole film.",
+        "answer": "trailer",
+        "distractors": [
+          "menu",
+          "signal",
+          "keyboard"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I don't understand Korean, so I watch the series with English ______.", "answer": "subtitles", "distractors": ["trailers", "episodes", "lyrics"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.trailer.n.1",
-  "lemma": "trailer",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "for a film",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈtreɪlər/", "uk": "/ˈtreɪlə/"},
-  "def": {
-    "micro": "short preview of a film",
-    "short": "a short video that shows parts of a new film or show",
-    "long": "A short video with the best parts of a new film or show, made to make people want to watch it. It is shown on TV, online, and before films in the cinema."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Have you seen the trailer for the new movie?", "tr": "Yeni filmin fragmanını izledin mi?", "register": "neutral", "focus": "trailer"},
-    {"en": "The trailer looks great, so let's go to the cinema.", "tr": "Fragman harika görünüyor, hadi sinemaya gidelim.", "register": "neutral", "focus": "trailer"},
-    {"en": "I watched the trailer three times.", "tr": "Fragmanı üç kez izledim.", "register": "neutral", "focus": "trailer"}
-  ],
-  "synonyms": ["preview"],
-  "antonyms": [],
-  "collocations": ["watch a trailer", "a movie trailer", "the official trailer", "a new trailer"],
-  "word_family": [],
-  "etymology": {"text": "From 'trail'. Trailers were first shown after the main film, so they 'trailed' behind it. Today they are shown before the film.", "origin": "English", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "fragman",
-      "alt": ["tanıtım filmi"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "İngilizcede aynı kelime römork (arabanın arkasına takılan araç) anlamına da gelir. Filmde 'trailer' = fragman.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "music_film", "topics": ["music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I watched the ______ online, and now I want to see the whole film.", "answer": "trailer", "distractors": ["menu", "signal", "keyboard"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

@@ -55,6 +55,9 @@
         "start",
         "begin"
       ],
+      "confusables": [
+        "run out of"
+      ],
       "collocations": [
         "finish work",
         "finish homework",
@@ -175,6 +178,9 @@
         "close",
         "shut"
       ],
+      "confusables": [
+        "turn on"
+      ],
       "collocations": [
         "open the door",
         "open the window",
@@ -225,9 +231,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:turn on"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -295,6 +299,10 @@
       "antonyms": [
         "open"
       ],
+      "confusables": [
+        "turn off",
+        "hang up"
+      ],
       "collocations": [
         "close the door",
         "close the window",
@@ -349,9 +357,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:turn off"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -415,6 +421,11 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "expect",
+        "look forward to",
+        "stop"
+      ],
       "collocations": [
         "wait for the bus",
         "wait for me",
@@ -463,9 +474,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:stop"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -534,6 +543,9 @@
         "ring"
       ],
       "antonyms": [],
+      "confusables": [
+        "look for"
+      ],
       "collocations": [
         "call a friend",
         "call me later",
@@ -589,9 +601,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:look for"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -660,6 +670,9 @@
       "antonyms": [
         "answer"
       ],
+      "confusables": [
+        "ask for"
+      ],
       "collocations": [
         "ask a question",
         "ask a friend",
@@ -700,9 +713,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:ask for"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -822,9 +833,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:ask"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -1016,6 +1025,11 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "know",
+        "get to know",
+        "meat"
+      ],
       "collocations": [
         "meet a friend",
         "meet at six",
@@ -1059,8 +1073,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:know"
+          "irregular"
         ],
         "sensitivity": 0
       },

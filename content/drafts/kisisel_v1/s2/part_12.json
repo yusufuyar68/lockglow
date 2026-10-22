@@ -1,439 +1,1037 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.storage.n.1",
-  "lemma": "storage",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "on a device",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈstɔːrɪdʒ/", "uk": "/ˈstɔːrɪdʒ/"},
-  "def": {
-    "micro": "space for your files",
-    "short": "the space on a phone or computer where photos and files are kept",
-    "long": "The amount of space on a phone, a computer, or an online account where you keep photos, apps, and files. When it is full, you cannot save more."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "My phone storage is full.", "tr": "Telefonumun depolama alanı dolu.", "register": "neutral", "focus": "storage"},
-    {"en": "I deleted some apps to get more storage.", "tr": "Daha fazla yer açmak için birkaç uygulamayı sildim.", "register": "neutral", "focus": "storage"},
-    {"en": "You get 5 GB of free storage with this account.", "tr": "Bu hesapla 5 GB ücretsiz depolama alanı alıyorsunuz.", "register": "neutral", "focus": "storage"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["storage space", "phone storage", "free storage", "cloud storage", "storage is full"],
-  "word_family": [{"lemma": "store", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "depolama alanı",
-      "alt": ["depolama", "hafıza"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Telefonda 'depolama' (storage, dosyaların saklandığı yer) ile 'bellek' (memory, RAM) farklıdır. Günlük Türkçede 'hafıza doldu' denir; İngilizcede 'storage is full' denir.",
-      "mistakes": [
-        {"wrong": "I need more storages on my phone.", "right": "I need more storage on my phone.", "why": "'Storage' sayılamayan bir isimdir; çoğul eki almaz."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.storage.n.1",
+      "lemma": "storage",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "on a device",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstɔːrɪdʒ/",
+        "uk": "/ˈstɔːrɪdʒ/"
+      },
+      "def": {
+        "micro": "space for your files",
+        "short": "the space on a phone or computer where photos and files are kept",
+        "long": "The amount of space on a phone, a computer, or an online account where you keep photos, apps, and files. When it is full, you cannot save more."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My phone storage is full.",
+          "tr": "Telefonumun depolama alanı dolu.",
+          "register": "neutral",
+          "focus": "storage"
+        },
+        {
+          "en": "I deleted some apps to get more storage.",
+          "tr": "Daha fazla yer açmak için birkaç uygulamayı sildim.",
+          "register": "neutral",
+          "focus": "storage"
+        },
+        {
+          "en": "You get 5 GB of free storage with this account.",
+          "tr": "Bu hesapla 5 GB ücretsiz depolama alanı alıyorsunuz.",
+          "register": "neutral",
+          "focus": "storage"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": ["uncountable"], "sensitivity": 0},
-  "quiz": {"cloze": "I can't take more photos because my phone ______ is full.", "answer": "storage", "distractors": ["case", "link", "settings"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.device.n.1",
-  "lemma": "device",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "phone, tablet, laptop",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/dɪˈvaɪs/", "uk": "/dɪˈvaɪs/"},
-  "def": {
-    "micro": "machine like a phone",
-    "short": "a small machine, such as a phone, tablet, or laptop",
-    "long": "A small machine made for a special job, especially an electronic one such as a phone, tablet, or laptop. You can often use the same account on several of them."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "You can use up to five devices on one account.", "tr": "Tek hesapla en fazla beş cihaz kullanabilirsin.", "register": "neutral", "focus": "devices"},
-    {"en": "Please turn off all electronic devices during the flight.", "tr": "Lütfen uçuş sırasında bütün elektronik cihazları kapatın.", "register": "formal", "focus": "devices"},
-    {"en": "My old device is too slow, so I'm buying a new one.", "tr": "Eski cihazım çok yavaş, o yüzden yenisini alıyorum.", "register": "neutral", "focus": "device"}
-  ],
-  "synonyms": ["gadget"],
-  "antonyms": [],
-  "collocations": ["an electronic device", "a mobile device", "a new device", "connect a device"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "cihaz",
-      "alt": ["aygıt"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Telefon, tablet ve bilgisayarın hepsi 'device'tır. Yazılışı benzer 'devise' (tasarlamak) fiilidir; karıştırmayın.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "You can log in on your phone, tablet, or any other ______.", "answer": "device", "distractors": ["signal", "keyboard", "battery"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.crash.v.1",
-  "lemma": "crash",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "an app or computer",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/kræʃ/", "uk": "/kræʃ/"},
-  "def": {
-    "micro": "stop working suddenly",
-    "short": "to suddenly stop working, said about an app or computer",
-    "long": "Used for an app, a program, or a computer that suddenly stops working and closes by itself. You can lose your work if it happens before you save."
-  },
-  "grammar": {"pattern": "the app / computer + crashes"},
-  "examples": [
-    {"en": "The app keeps crashing on my phone.", "tr": "Uygulama telefonumda sürekli çöküyor.", "register": "neutral", "focus": "crashing"},
-    {"en": "My laptop crashed, and I lost my document.", "tr": "Laptopum çöktü ve belgemi kaybettim.", "register": "neutral", "focus": "crashed"},
-    {"en": "The website crashed when too many people logged in.", "tr": "Çok fazla kişi giriş yapınca site çöktü.", "register": "neutral", "focus": "crashed"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["the app crashes", "the computer crashed", "keeps crashing", "the system crashed"],
-  "word_family": [{"lemma": "crash", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "çökmek",
-      "alt": ["donup kapanmak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Aynı kelime araba kazası için de kullanılır ('a car crash'). Bilgisayar ve uygulama için 'çökmek' denir.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My game ______ every time I open the second level.", "answer": "crashes", "distractors": ["jogs", "packs", "books"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.notification.n.1",
-  "lemma": "notification",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "from an app",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˌnoʊtɪfɪˈkeɪʃən/", "uk": "/ˌnəʊtɪfɪˈkeɪʃən/"},
-  "def": {
-    "micro": "message from an app",
-    "short": "a short message or sound from an app that tells you something new",
-    "long": "A short message or sound from an app that tells you about something new, such as a message, a sale, or an update. You can turn them on or off in your settings."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I got a notification from the delivery app.", "tr": "Kurye uygulamasından bir bildirim geldi.", "register": "neutral", "focus": "notification"},
-    {"en": "Please turn off notifications during the meeting.", "tr": "Lütfen toplantı sırasında bildirimleri kapatın.", "register": "neutral", "focus": "notifications"},
-    {"en": "I get too many notifications, so I turned most of them off.", "tr": "Çok fazla bildirim geliyor, o yüzden çoğunu kapattım.", "register": "neutral", "focus": "notifications"}
-  ],
-  "synonyms": ["alert"],
-  "antonyms": [],
-  "collocations": ["get a notification", "turn off notifications", "a push notification", "a new notification"],
-  "word_family": [{"lemma": "notify", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bildirim",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Telefon ekranında beliren kısa mesajlara 'bildirim' denir. Fiil: notify = bildirmek. 'Notice' ise kâğıt üzerindeki duyuru veya uyarıdır.",
-      "mistakes": [
-        {"wrong": "I got a notice from the app.", "right": "I got a notification from the app.", "why": "Telefon veya uygulama bildirimi 'notification'dır. 'Notice' daha çok yazılı duyuru, uyarı veya ihbar anlamına gelir."}
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "storage space",
+        "phone storage",
+        "free storage",
+        "cloud storage",
+        "storage is full"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My phone makes a sound every time I get a new ______.", "answer": "notification", "distractors": ["neighbor", "street", "lesson"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.score.v.1",
-  "lemma": "score",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "get a goal or point",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/skɔːr/", "uk": "/skɔː/"},
-  "def": {
-    "micro": "get a point or goal",
-    "short": "to get a point or goal in a game or match",
-    "long": "To get a point, a goal, or a number of marks in a game, match, or test. In football, the team that does this more times wins."
-  },
-  "grammar": {"pattern": "score + a goal / a point"},
-  "examples": [
-    {"en": "He scored two goals in the first half.", "tr": "İlk yarıda iki gol attı.", "register": "neutral", "focus": "scored"},
-    {"en": "Our team didn't score, so we lost the match.", "tr": "Takımımız gol atamadı, o yüzden maçı kaybettik.", "register": "neutral", "focus": "score"},
-    {"en": "She scored 90 out of 100 on the exam.", "tr": "Sınavdan 100 üzerinden 90 aldı.", "register": "neutral", "focus": "scored"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["score a goal", "score a point", "score well"],
-  "word_family": [{"lemma": "score", "pos": "n"}, {"lemma": "scorer", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "gol atmak",
-      "alt": ["sayı yapmak", "puan almak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Futbolda 'gol atmak', basketbolda 'sayı yapmak', sınavda 'puan almak' denir; İngilizcede hepsi için 'score' kullanılır.",
-      "mistakes": [
-        {"wrong": "He did two goals in the match.", "right": "He scored two goals in the match.", "why": "'Gol atmak / yapmak' İngilizcede 'score a goal' olur; 'do' veya 'make' kullanılmaz."}
+      "word_family": [
+        {
+          "lemma": "store",
+          "pos": "v"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Our team lost 0-1 because we couldn't ______ a goal.", "answer": "score", "distractors": ["borrow", "spell", "ride"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.equipment.n.1",
-  "lemma": "equipment",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ɪˈkwɪpmənt/", "uk": "/ɪˈkwɪpmənt/"},
-  "def": {
-    "micro": "tools for an activity",
-    "short": "the things you need for a sport, a job, or an activity",
-    "long": "The tools, machines, or other things you need for a sport, a job, or an activity. It is uncountable: say 'some equipment' or 'a piece of equipment'."
-  },
-  "grammar": {"pattern": "a piece of equipment"},
-  "examples": [
-    {"en": "The gym has a lot of new equipment.", "tr": "Spor salonunda çok sayıda yeni ekipman var.", "register": "neutral", "focus": "equipment"},
-    {"en": "Do I need special equipment for hiking?", "tr": "Doğa yürüyüşü için özel ekipman gerekir mi?", "register": "neutral", "focus": "equipment"},
-    {"en": "We rent all the equipment at the beach.", "tr": "Bütün malzemeleri plajda kiralıyoruz.", "register": "neutral", "focus": "equipment"}
-  ],
-  "synonyms": ["gear"],
-  "antonyms": [],
-  "collocations": ["sports equipment", "camping equipment", "safety equipment", "a piece of equipment", "rent equipment"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "ekipman",
-      "alt": ["malzeme", "donanım"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'ekipmanlar' diyebiliriz, ama İngilizcede 'equipment' sayılamaz: 'equipments' denmez. Tek bir parça için 'a piece of equipment' kullanılır.",
-      "mistakes": [
-        {"wrong": "We need new equipments for the gym.", "right": "We need new equipment for the gym.", "why": "'Equipment' sayılamayan bir isimdir; çoğul eki almaz."}
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "depolama alanı",
+          "alt": [
+            "depolama",
+            "hafıza"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Telefonda 'depolama' (storage, dosyaların saklandığı yer) ile 'bellek' (memory, RAM) farklıdır. Günlük Türkçede 'hafıza doldu' denir; İngilizcede 'storage is full' denir.",
+          "mistakes": [
+            {
+              "wrong": "I need more storages on my phone.",
+              "right": "I need more storage on my phone.",
+              "why": "'Storage' sayılamayan bir isimdir; çoğul eki almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't take more photos because my phone ______ is full.",
+        "answer": "storage",
+        "distractors": [
+          "case",
+          "link",
+          "settings"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.device.n.1",
+      "lemma": "device",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "phone, tablet, laptop",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈvaɪs/",
+        "uk": "/dɪˈvaɪs/"
+      },
+      "def": {
+        "micro": "machine like a phone",
+        "short": "a small machine, such as a phone, tablet, or laptop",
+        "long": "A small machine made for a special job, especially an electronic one such as a phone, tablet, or laptop. You can often use the same account on several of them."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "You can use up to five devices on one account.",
+          "tr": "Tek hesapla en fazla beş cihaz kullanabilirsin.",
+          "register": "neutral",
+          "focus": "devices"
+        },
+        {
+          "en": "Please turn off all electronic devices during the flight.",
+          "tr": "Lütfen uçuş sırasında bütün elektronik cihazları kapatın.",
+          "register": "formal",
+          "focus": "devices"
+        },
+        {
+          "en": "My old device is too slow, so I'm buying a new one.",
+          "tr": "Eski cihazım çok yavaş, o yüzden yenisini alıyorum.",
+          "register": "neutral",
+          "focus": "device"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "hobbies_sports", "topics": ["hobbies_sports"], "exams": [], "register": "neutral", "vibes": [], "flags": ["uncountable"], "sensitivity": 0},
-  "quiz": {"cloze": "We bought some camping ______: a tent, a bag, and a lamp.", "answer": "equipment", "distractors": ["tickets", "lessons", "episodes"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.grade.n.1",
-  "lemma": "grade",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "a school mark",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ɡreɪd/", "uk": "/ɡreɪd/"},
-  "def": {
-    "micro": "mark you get at school",
-    "short": "the letter or number that a teacher gives for your work",
-    "long": "The letter or number that a teacher gives you to show how good your work or exam is. It can be a letter, like A or B, or a number, like 90."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I got a good grade on my English exam.", "tr": "İngilizce sınavından iyi bir not aldım.", "register": "neutral", "focus": "grade"},
-    {"en": "Her grades are always high.", "tr": "Notları hep yüksek.", "register": "neutral", "focus": "grades"},
-    {"en": "He studied hard to get better grades.", "tr": "Daha iyi notlar almak için çok çalıştı.", "register": "neutral", "focus": "grades"}
-  ],
-  "synonyms": ["mark"],
-  "antonyms": [],
-  "collocations": ["a good grade", "get good grades", "a high grade", "a bad grade", "a final grade"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "not",
-      "alt": ["karne notu"],
-      "equivalence": "false_friend",
-      "false_friend": {"tr_word": "not", "tr_means": "okul notu, puan", "en_for_that": "grade (ABD) / mark (İngiltere)"},
-      "note": "Türkçedeki 'not' (okul notu) İngilizcede 'grade' veya 'mark'tır. İngilizce 'note' ise kısa yazılı not, hatırlatma demektir. ABD'de 'grade' aynı zamanda sınıf düzeyi (9th grade) olarak da kullanılır.",
-      "mistakes": [
-        {"wrong": "I got a high note in math.", "right": "I got a high grade in math.", "why": "Okul notu için 'note' değil 'grade' (ABD) veya 'mark' (İngiltere) kullanılır. 'Note' kısa yazılı mesajdır."}
+      "synonyms": [
+        "gadget"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": ["confusable:note", "false_friend_tr"], "sensitivity": 0},
-  "quiz": {"cloze": "She got an A, the best ______ in the class.", "answer": "grade", "distractors": ["note", "uniform", "holiday"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.assignment.n.1",
-  "lemma": "assignment",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "school work",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/əˈsaɪnmənt/", "uk": "/əˈsaɪnmənt/"},
-  "def": {
-    "micro": "task from a teacher",
-    "short": "a piece of work that a teacher gives students to do",
-    "long": "A piece of work, such as an essay or a project, that a teacher gives students to do. It usually has a deadline, and it is often longer than daily homework."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I have to finish my assignment by Friday.", "tr": "Ödevimi cumaya kadar bitirmem lazım.", "register": "neutral", "focus": "assignment"},
-    {"en": "The teacher gave us a long assignment about the environment.", "tr": "Öğretmen bize çevre hakkında uzun bir ödev verdi.", "register": "neutral", "focus": "assignment"},
-    {"en": "Don't forget to hand in your assignment on time.", "tr": "Ödevini zamanında teslim etmeyi unutma.", "register": "neutral", "focus": "assignment"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["hand in an assignment", "finish an assignment", "a written assignment", "a group assignment"],
-  "word_family": [{"lemma": "assign", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "ödev",
-      "alt": ["görev", "proje ödevi"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Günlük, kısa ev ödevi 'homework'; öğretmenin verdiği daha uzun iş (kompozisyon, proje) 'assignment' olur. İş yerinde 'assignment' görev demektir.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Our English teacher gave us a long ______ about our city.", "answer": "assignment", "distractors": ["subject", "semester", "holiday"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.pronounce.v.1",
-  "lemma": "pronounce",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/prəˈnaʊns/", "uk": "/prəˈnaʊns/"},
-  "def": {
-    "micro": "say a word in a certain way",
-    "short": "to say the sounds of a word in the right way",
-    "long": "To say the sounds of a word in a certain way. People ask 'How do you pronounce this?' when they do not know how to say a word."
-  },
-  "grammar": {"pattern": "pronounce + a word"},
-  "examples": [
-    {"en": "How do you pronounce your last name?", "tr": "Soyadını nasıl telaffuz ediyorsun?", "register": "neutral", "focus": "pronounce"},
-    {"en": "I can't pronounce this word. Can you say it again?", "tr": "Bu kelimeyi telaffuz edemiyorum. Tekrar söyler misin?", "register": "neutral", "focus": "pronounce"},
-    {"en": "Many learners pronounce 'th' like 's' or 'z'.", "tr": "Birçok öğrenci 'th' sesini 's' ya da 'z' gibi telaffuz ediyor.", "register": "neutral", "focus": "pronounce"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["pronounce a word", "pronounce correctly", "pronounce clearly", "hard to pronounce"],
-  "word_family": [{"lemma": "pronunciation", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "telaffuz etmek",
-      "alt": ["söylemek", "okumak"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Türkçede 'Bu nasıl okunuyor?' denir; İngilizcede söylenişi sorarken 'pronounce' kullanılır. İsim hâli 'pronunciation' yazılırken 'ou' kaybolur: pronounce → pronunciation.",
-      "mistakes": [
-        {"wrong": "How do you read this word?", "right": "How do you pronounce this word?", "why": "Türkçede 'nasıl okunuyor?' deriz, ama söylenişi sormak için 'pronounce' kullanılır. 'Read' metni okumaktır."}
+      "antonyms": [],
+      "collocations": [
+        "an electronic device",
+        "a mobile device",
+        "a new device",
+        "connect a device"
       ],
-      "mnemonic": null
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "cihaz",
+          "alt": [
+            "aygıt"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefon, tablet ve bilgisayarın hepsi 'device'tır. Yazılışı benzer 'devise' (tasarlamak) fiilidir; karıştırmayın.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can log in on your phone, tablet, or any other ______.",
+        "answer": "device",
+        "distractors": [
+          "signal",
+          "keyboard",
+          "battery"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.crash.v.1",
+      "lemma": "crash",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "an app or computer",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kræʃ/",
+        "uk": "/kræʃ/"
+      },
+      "def": {
+        "micro": "stop working suddenly",
+        "short": "to suddenly stop working, said about an app or computer",
+        "long": "Used for an app, a program, or a computer that suddenly stops working and closes by itself. You can lose your work if it happens before you save."
+      },
+      "grammar": {
+        "pattern": "the app / computer + crashes"
+      },
+      "examples": [
+        {
+          "en": "The app keeps crashing on my phone.",
+          "tr": "Uygulama telefonumda sürekli çöküyor.",
+          "register": "neutral",
+          "focus": "crashing"
+        },
+        {
+          "en": "My laptop crashed, and I lost my document.",
+          "tr": "Laptopum çöktü ve belgemi kaybettim.",
+          "register": "neutral",
+          "focus": "crashed"
+        },
+        {
+          "en": "The website crashed when too many people logged in.",
+          "tr": "Çok fazla kişi giriş yapınca site çöktü.",
+          "register": "neutral",
+          "focus": "crashed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "crush"
+      ],
+      "collocations": [
+        "the app crashes",
+        "the computer crashed",
+        "keeps crashing",
+        "the system crashed"
+      ],
+      "word_family": [
+        {
+          "lemma": "crash",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çökmek",
+          "alt": [
+            "donup kapanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Aynı kelime araba kazası için de kullanılır ('a car crash'). Bilgisayar ve uygulama için 'çökmek' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My game ______ every time I open the second level.",
+        "answer": "crashes",
+        "distractors": [
+          "jogs",
+          "packs",
+          "books"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.notification.n.1",
+      "lemma": "notification",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "from an app",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnoʊtɪfɪˈkeɪʃən/",
+        "uk": "/ˌnəʊtɪfɪˈkeɪʃən/"
+      },
+      "def": {
+        "micro": "message from an app",
+        "short": "a short message or sound from an app that tells you something new",
+        "long": "A short message or sound from an app that tells you about something new, such as a message, a sale, or an update. You can turn them on or off in your settings."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I got a notification from the delivery app.",
+          "tr": "Kurye uygulamasından bir bildirim geldi.",
+          "register": "neutral",
+          "focus": "notification"
+        },
+        {
+          "en": "Please turn off notifications during the meeting.",
+          "tr": "Lütfen toplantı sırasında bildirimleri kapatın.",
+          "register": "neutral",
+          "focus": "notifications"
+        },
+        {
+          "en": "I get too many notifications, so I turned most of them off.",
+          "tr": "Çok fazla bildirim geliyor, o yüzden çoğunu kapattım.",
+          "register": "neutral",
+          "focus": "notifications"
+        }
+      ],
+      "synonyms": [
+        "alert"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "get a notification",
+        "turn off notifications",
+        "a push notification",
+        "a new notification"
+      ],
+      "word_family": [
+        {
+          "lemma": "notify",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bildirim",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefon ekranında beliren kısa mesajlara 'bildirim' denir. Fiil: notify = bildirmek. 'Notice' ise kâğıt üzerindeki duyuru veya uyarıdır.",
+          "mistakes": [
+            {
+              "wrong": "I got a notice from the app.",
+              "right": "I got a notification from the app.",
+              "why": "Telefon veya uygulama bildirimi 'notification'dır. 'Notice' daha çok yazılı duyuru, uyarı veya ihbar anlamına gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone makes a sound every time I get a new ______.",
+        "answer": "notification",
+        "distractors": [
+          "neighbor",
+          "street",
+          "lesson"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.score.v.1",
+      "lemma": "score",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get a goal or point",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skɔːr/",
+        "uk": "/skɔː/"
+      },
+      "def": {
+        "micro": "get a point or goal",
+        "short": "to get a point or goal in a game or match",
+        "long": "To get a point, a goal, or a number of marks in a game, match, or test. In football, the team that does this more times wins."
+      },
+      "grammar": {
+        "pattern": "score + a goal / a point"
+      },
+      "examples": [
+        {
+          "en": "He scored two goals in the first half.",
+          "tr": "İlk yarıda iki gol attı.",
+          "register": "neutral",
+          "focus": "scored"
+        },
+        {
+          "en": "Our team didn't score, so we lost the match.",
+          "tr": "Takımımız gol atamadı, o yüzden maçı kaybettik.",
+          "register": "neutral",
+          "focus": "score"
+        },
+        {
+          "en": "She scored 90 out of 100 on the exam.",
+          "tr": "Sınavdan 100 üzerinden 90 aldı.",
+          "register": "neutral",
+          "focus": "scored"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "score a goal",
+        "score a point",
+        "score well"
+      ],
+      "word_family": [
+        {
+          "lemma": "score",
+          "pos": "n"
+        },
+        {
+          "lemma": "scorer",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gol atmak",
+          "alt": [
+            "sayı yapmak",
+            "puan almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Futbolda 'gol atmak', basketbolda 'sayı yapmak', sınavda 'puan almak' denir; İngilizcede hepsi için 'score' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "He did two goals in the match.",
+              "right": "He scored two goals in the match.",
+              "why": "'Gol atmak / yapmak' İngilizcede 'score a goal' olur; 'do' veya 'make' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our team lost 0-1 because we couldn't ______ a goal.",
+        "answer": "score",
+        "distractors": [
+          "borrow",
+          "spell",
+          "ride"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.equipment.n.1",
+      "lemma": "equipment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈkwɪpmənt/",
+        "uk": "/ɪˈkwɪpmənt/"
+      },
+      "def": {
+        "micro": "tools for an activity",
+        "short": "the things you need for a sport, a job, or an activity",
+        "long": "The tools, machines, or other things you need for a sport, a job, or an activity. It is uncountable: say 'some equipment' or 'a piece of equipment'."
+      },
+      "grammar": {
+        "pattern": "a piece of equipment"
+      },
+      "examples": [
+        {
+          "en": "The gym has a lot of new equipment.",
+          "tr": "Spor salonunda çok sayıda yeni ekipman var.",
+          "register": "neutral",
+          "focus": "equipment"
+        },
+        {
+          "en": "Do I need special equipment for hiking?",
+          "tr": "Doğa yürüyüşü için özel ekipman gerekir mi?",
+          "register": "neutral",
+          "focus": "equipment"
+        },
+        {
+          "en": "We rent all the equipment at the beach.",
+          "tr": "Bütün malzemeleri plajda kiralıyoruz.",
+          "register": "neutral",
+          "focus": "equipment"
+        }
+      ],
+      "synonyms": [
+        "gear"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "sports equipment",
+        "camping equipment",
+        "safety equipment",
+        "a piece of equipment",
+        "rent equipment"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ekipman",
+          "alt": [
+            "malzeme",
+            "donanım"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'ekipmanlar' diyebiliriz, ama İngilizcede 'equipment' sayılamaz: 'equipments' denmez. Tek bir parça için 'a piece of equipment' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "We need new equipments for the gym.",
+              "right": "We need new equipment for the gym.",
+              "why": "'Equipment' sayılamayan bir isimdir; çoğul eki almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We bought some camping ______: a tent, a bag, and a lamp.",
+        "answer": "equipment",
+        "distractors": [
+          "tickets",
+          "lessons",
+          "episodes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.grade.n.1",
+      "lemma": "grade",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a school mark",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡreɪd/",
+        "uk": "/ɡreɪd/"
+      },
+      "def": {
+        "micro": "mark you get at school",
+        "short": "the letter or number that a teacher gives for your work",
+        "long": "The letter or number that a teacher gives you to show how good your work or exam is. It can be a letter, like A or B, or a number, like 90."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I got a good grade on my English exam.",
+          "tr": "İngilizce sınavından iyi bir not aldım.",
+          "register": "neutral",
+          "focus": "grade"
+        },
+        {
+          "en": "Her grades are always high.",
+          "tr": "Notları hep yüksek.",
+          "register": "neutral",
+          "focus": "grades"
+        },
+        {
+          "en": "He studied hard to get better grades.",
+          "tr": "Daha iyi notlar almak için çok çalıştı.",
+          "register": "neutral",
+          "focus": "grades"
+        }
+      ],
+      "synonyms": [
+        "mark"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "note"
+      ],
+      "collocations": [
+        "a good grade",
+        "get good grades",
+        "a high grade",
+        "a bad grade",
+        "a final grade"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "not",
+          "alt": [
+            "karne notu"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "not",
+            "tr_means": "okul notu, puan",
+            "en_for_that": "grade (ABD) / mark (İngiltere)"
+          },
+          "note": "Türkçedeki 'not' (okul notu) İngilizcede 'grade' veya 'mark'tır. İngilizce 'note' ise kısa yazılı not, hatırlatma demektir. ABD'de 'grade' aynı zamanda sınıf düzeyi (9th grade) olarak da kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I got a high note in math.",
+              "right": "I got a high grade in math.",
+              "why": "Okul notu için 'note' değil 'grade' (ABD) veya 'mark' (İngiltere) kullanılır. 'Note' kısa yazılı mesajdır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "false_friend_tr"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She got an A, the best ______ in the class.",
+        "answer": "grade",
+        "distractors": [
+          "note",
+          "uniform",
+          "holiday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.assignment.n.1",
+      "lemma": "assignment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "school work",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈsaɪnmənt/",
+        "uk": "/əˈsaɪnmənt/"
+      },
+      "def": {
+        "micro": "task from a teacher",
+        "short": "a piece of work that a teacher gives students to do",
+        "long": "A piece of work, such as an essay or a project, that a teacher gives students to do. It usually has a deadline, and it is often longer than daily homework."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I have to finish my assignment by Friday.",
+          "tr": "Ödevimi cumaya kadar bitirmem lazım.",
+          "register": "neutral",
+          "focus": "assignment"
+        },
+        {
+          "en": "The teacher gave us a long assignment about the environment.",
+          "tr": "Öğretmen bize çevre hakkında uzun bir ödev verdi.",
+          "register": "neutral",
+          "focus": "assignment"
+        },
+        {
+          "en": "Don't forget to hand in your assignment on time.",
+          "tr": "Ödevini zamanında teslim etmeyi unutma.",
+          "register": "neutral",
+          "focus": "assignment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "hand in an assignment",
+        "finish an assignment",
+        "a written assignment",
+        "a group assignment"
+      ],
+      "word_family": [
+        {
+          "lemma": "assign",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ödev",
+          "alt": [
+            "görev",
+            "proje ödevi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük, kısa ev ödevi 'homework'; öğretmenin verdiği daha uzun iş (kompozisyon, proje) 'assignment' olur. İş yerinde 'assignment' görev demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our English teacher gave us a long ______ about our city.",
+        "answer": "assignment",
+        "distractors": [
+          "subject",
+          "semester",
+          "holiday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pronounce.v.1",
+      "lemma": "pronounce",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prəˈnaʊns/",
+        "uk": "/prəˈnaʊns/"
+      },
+      "def": {
+        "micro": "say a word in a certain way",
+        "short": "to say the sounds of a word in the right way",
+        "long": "To say the sounds of a word in a certain way. People ask 'How do you pronounce this?' when they do not know how to say a word."
+      },
+      "grammar": {
+        "pattern": "pronounce + a word"
+      },
+      "examples": [
+        {
+          "en": "How do you pronounce your last name?",
+          "tr": "Soyadını nasıl telaffuz ediyorsun?",
+          "register": "neutral",
+          "focus": "pronounce"
+        },
+        {
+          "en": "I can't pronounce this word. Can you say it again?",
+          "tr": "Bu kelimeyi telaffuz edemiyorum. Tekrar söyler misin?",
+          "register": "neutral",
+          "focus": "pronounce"
+        },
+        {
+          "en": "Many learners pronounce 'th' like 's' or 'z'.",
+          "tr": "Birçok öğrenci 'th' sesini 's' ya da 'z' gibi telaffuz ediyor.",
+          "register": "neutral",
+          "focus": "pronounce"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pronounce a word",
+        "pronounce correctly",
+        "pronounce clearly",
+        "hard to pronounce"
+      ],
+      "word_family": [
+        {
+          "lemma": "pronunciation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "telaffuz etmek",
+          "alt": [
+            "söylemek",
+            "okumak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'Bu nasıl okunuyor?' denir; İngilizcede söylenişi sorarken 'pronounce' kullanılır. İsim hâli 'pronunciation' yazılırken 'ou' kaybolur: pronounce → pronunciation.",
+          "mistakes": [
+            {
+              "wrong": "How do you read this word?",
+              "right": "How do you pronounce this word?",
+              "why": "Türkçede 'nasıl okunuyor?' deriz, ama söylenişi sormak için 'pronounce' kullanılır. 'Read' metni okumaktır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "How do you ______ this word? I don't know how to say it.",
+        "answer": "pronounce",
+        "distractors": [
+          "cross",
+          "ride",
+          "pack"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stray.adj.1",
+      "lemma": "stray",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "of animals",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/streɪ/",
+        "uk": "/streɪ/"
+      },
+      "def": {
+        "micro": "without a home",
+        "short": "describes an animal that has no home and lives outside",
+        "long": "Used for a cat, a dog, or another animal that has no home or owner and lives on the streets. Many cities have people who feed them."
+      },
+      "grammar": {
+        "pattern": "stray + cat / dog / animal"
+      },
+      "examples": [
+        {
+          "en": "A stray cat sleeps under our car every night.",
+          "tr": "Her gece arabamızın altında bir sokak kedisi uyuyor.",
+          "register": "neutral",
+          "focus": "stray"
+        },
+        {
+          "en": "She feeds the stray dogs in her neighborhood.",
+          "tr": "Mahallesindeki sokak köpeklerini besliyor.",
+          "register": "neutral",
+          "focus": "stray"
+        },
+        {
+          "en": "The city has a program to help stray animals.",
+          "tr": "Şehrin sokak hayvanlarına yardım eden bir programı var.",
+          "register": "neutral",
+          "focus": "stray"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "pet"
+      ],
+      "collocations": [
+        "a stray cat",
+        "a stray dog",
+        "stray animals",
+        "feed stray cats"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sahipsiz",
+          "alt": [
+            "sokak",
+            "başıboş"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'sokak kedisi / sokak köpeği' denir; İngilizcede 'stray cat / stray dog'. 'Wild' (vahşi, doğada yaşayan) ile karıştırmayın: stray hayvan bir zamanlar evcil olabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many ______ cats live on the streets of Istanbul and need food and water.",
+        "answer": "stray",
+        "distractors": [
+          "sunny",
+          "humid",
+          "chilly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "school_learning", "topics": ["school_learning"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "How do you ______ this word? I don't know how to say it.", "answer": "pronounce", "distractors": ["cross", "ride", "pack"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.stray.adj.1",
-  "lemma": "stray",
-  "type": "word",
-  "pos": "adj",
-  "sense_no": 1,
-  "sense_note": "of animals",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/streɪ/", "uk": "/streɪ/"},
-  "def": {
-    "micro": "without a home",
-    "short": "describes an animal that has no home and lives outside",
-    "long": "Used for a cat, a dog, or another animal that has no home or owner and lives on the streets. Many cities have people who feed them."
-  },
-  "grammar": {"pattern": "stray + cat / dog / animal"},
-  "examples": [
-    {"en": "A stray cat sleeps under our car every night.", "tr": "Her gece arabamızın altında bir sokak kedisi uyuyor.", "register": "neutral", "focus": "stray"},
-    {"en": "She feeds the stray dogs in her neighborhood.", "tr": "Mahallesindeki sokak köpeklerini besliyor.", "register": "neutral", "focus": "stray"},
-    {"en": "The city has a program to help stray animals.", "tr": "Şehrin sokak hayvanlarına yardım eden bir programı var.", "register": "neutral", "focus": "stray"}
-  ],
-  "synonyms": [],
-  "antonyms": ["pet"],
-  "collocations": ["a stray cat", "a stray dog", "stray animals", "feed stray cats"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "sahipsiz",
-      "alt": ["sokak", "başıboş"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'sokak kedisi / sokak köpeği' denir; İngilizcede 'stray cat / stray dog'. 'Wild' (vahşi, doğada yaşayan) ile karıştırmayın: stray hayvan bir zamanlar evcil olabilir.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "nature_animals", "topics": ["nature_animals"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Many ______ cats live on the streets of Istanbul and need food and water.", "answer": "stray", "distractors": ["sunny", "humid", "chilly"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

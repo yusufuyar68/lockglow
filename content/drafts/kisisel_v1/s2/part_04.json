@@ -1,439 +1,1024 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.freezing.adj.1",
-  "lemma": "freezing",
-  "type": "word",
-  "pos": "adj",
-  "sense_no": 1,
-  "sense_note": "very cold",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈfriːzɪŋ/", "uk": "/ˈfriːzɪŋ/"},
-  "def": {
-    "micro": "very, very cold",
-    "short": "extremely cold, often at or below zero degrees",
-    "long": "Extremely cold, often at or below zero degrees. People also use it to say they feel very cold: 'I'm freezing!'"
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "It's freezing outside. Wear a hat!", "tr": "Hava buz gibi. Bere tak!", "register": "neutral", "focus": "freezing"},
-    {"en": "I'm freezing. Can you close the window?", "tr": "Donuyorum. Pencereyi kapatır mısın?", "register": "informal", "focus": "freezing"},
-    {"en": "The water in the lake was freezing.", "tr": "Gölün suyu buz gibiydi.", "register": "neutral", "focus": "freezing"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": ["very cold"],
-  "antonyms": ["boiling"],
-  "collocations": ["freezing cold", "freezing weather", "freezing outside", "I'm freezing"],
-  "word_family": [{"lemma": "freeze", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "buz gibi soğuk",
-      "alt": ["dondurucu"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'I'm freezing' = 'Donuyorum / Çok üşüyorum'. Günlük dilde sıcaklık sıfırın altında olmasa da abartı olarak sık söylenir.",
-      "mistakes": [
-        {"wrong": "It is very freezing today.", "right": "It is freezing today.", "why": "'Freezing' zaten 'çok soğuk' demektir; yanına 'very' eklemeyin. Vurgu için 'absolutely freezing' denir."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.freezing.adj.1",
+      "lemma": "freezing",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very cold",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfriːzɪŋ/",
+        "uk": "/ˈfriːzɪŋ/"
+      },
+      "def": {
+        "micro": "very, very cold",
+        "short": "extremely cold, often at or below zero degrees",
+        "long": "Extremely cold, often at or below zero degrees. People also use it to say they feel very cold: 'I'm freezing!'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "It's freezing outside. Wear a hat!",
+          "tr": "Hava buz gibi. Bere tak!",
+          "register": "neutral",
+          "focus": "freezing"
+        },
+        {
+          "en": "I'm freezing. Can you close the window?",
+          "tr": "Donuyorum. Pencereyi kapatır mısın?",
+          "register": "informal",
+          "focus": "freezing"
+        },
+        {
+          "en": "The water in the lake was freezing.",
+          "tr": "Gölün suyu buz gibiydi.",
+          "register": "neutral",
+          "focus": "freezing"
+        }
       ],
-      "mnemonic": "Buzdolabının 'freezer' bölümünü düşün: dışarısı 'freezing' ise hava orası kadar soğuk."
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Put on your coat. It's ______ outside!", "answer": "freezing", "distractors": ["boiling", "sunny", "dry"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.sunrise.n.1",
-  "lemma": "sunrise",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈsʌnraɪz/", "uk": "/ˈsʌnraɪz/"},
-  "def": {
-    "micro": "time the sun comes up",
-    "short": "the time in the morning when the sun first appears",
-    "long": "The moment in the morning when the sun first appears in the sky, or the colorful sky at that time. It happens earlier in summer than in winter."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "We woke up early to watch the sunrise.", "tr": "Gün doğumunu izlemek için erken kalktık.", "register": "neutral", "focus": "sunrise"},
-    {"en": "The sunrise over the sea was beautiful.", "tr": "Denizin üzerindeki gün doğumu çok güzeldi.", "register": "neutral", "focus": "sunrise"},
-    {"en": "In June, sunrise is at about five in the morning.", "tr": "Haziranda gün doğumu sabah beş civarında.", "register": "neutral", "focus": "sunrise"}
-  ],
-  "synonyms": [],
-  "antonyms": ["sunset"],
-  "collocations": ["watch the sunrise", "at sunrise", "before sunrise", "sunrise time", "a beautiful sunrise"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "gün doğumu",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Dawn' (şafak) güneş çıkmadan önceki aydınlıktır; 'sunrise' ise güneşin göründüğü andır. Karşıtı 'sunset' (gün batımı).",
-      "mistakes": [],
-      "mnemonic": "Sun + rise (yükselmek): sabah güneş ufuktan yükselir. Akşam güneş batar (set): sunset."
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "We woke up at five in the morning to see the ______ on the beach.", "answer": "sunrise", "distractors": ["sunset", "midnight", "noon"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.sunset.n.1",
-  "lemma": "sunset",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈsʌnsɛt/", "uk": "/ˈsʌnsɛt/"},
-  "def": {
-    "micro": "time the sun goes down",
-    "short": "the time in the evening when the sun goes down",
-    "long": "The time in the evening when the sun goes out of sight, or the red and orange sky at that time. Many tourists take photos of it by the sea."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Let's watch the sunset from the roof.", "tr": "Gün batımını çatıdan izleyelim.", "register": "neutral", "focus": "sunset"},
-    {"en": "We had tea and watched the sunset.", "tr": "Çay içip gün batımını izledik.", "register": "neutral", "focus": "sunset"},
-    {"en": "In winter, sunset is before five o'clock.", "tr": "Kışın gün batımı saat beşten önce.", "register": "neutral", "focus": "sunset"}
-  ],
-  "synonyms": ["sundown"],
-  "antonyms": ["sunrise"],
-  "collocations": ["watch the sunset", "at sunset", "before sunset", "a beautiful sunset"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "gün batımı",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": null,
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "We ate dinner on the beach and watched the ______ in the evening.", "answer": "sunset", "distractors": ["sunrise", "noon", "morning"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.midnight.n.1",
-  "lemma": "midnight",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈmɪdnaɪt/", "uk": "/ˈmɪdnaɪt/"},
-  "def": {
-    "micro": "twelve o'clock at night",
-    "short": "twelve o'clock at night, the time between one day and the next",
-    "long": "Twelve o'clock at night, when one day ends and the next day begins. We say 'at midnight' or 'after midnight'."
-  },
-  "grammar": {"pattern": "at / after / before midnight"},
-  "examples": [
-    {"en": "The party ended at midnight.", "tr": "Parti gece yarısı bitti.", "register": "neutral", "focus": "midnight"},
-    {"en": "I can't sleep. It's already midnight!", "tr": "Uyuyamıyorum. Saat gece yarısı oldu bile!", "register": "neutral", "focus": "midnight"},
-    {"en": "Our flight arrives just after midnight.", "tr": "Uçağımız gece yarısından hemen sonra iniyor.", "register": "neutral", "focus": "midnight"}
-  ],
-  "synonyms": [],
-  "antonyms": ["noon"],
-  "collocations": ["at midnight", "after midnight", "before midnight", "past midnight", "a midnight snack"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "gece yarısı",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Karşıtı 'noon' (öğle vakti). Saat söylerken 'at midnight' kullanılır, 'the' gelmez.",
-      "mistakes": [
-        {"wrong": "We left at the midnight.", "right": "We left at midnight.", "why": "'Gece yarısı' saat bildiren kalıpta 'at midnight' olur; 'the' kullanılmaz."}
+      "synonyms": [
+        "very cold"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I went to bed very late, after ______.", "answer": "midnight", "distractors": ["noon", "lunch", "breakfast"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.daily.adj.1",
-  "lemma": "daily",
-  "type": "word",
-  "pos": "adj",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈdeɪli/", "uk": "/ˈdeɪli/"},
-  "def": {
-    "micro": "happening every day",
-    "short": "done or happening every day",
-    "long": "Done or happening every day. You can use it with words like routine, life, news, or walk: 'my daily walk'."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "My daily walk to work takes twenty minutes.", "tr": "Her gün işe yaptığım yürüyüş yirmi dakika sürüyor.", "register": "neutral", "focus": "daily"},
-    {"en": "She reads the daily news on her phone.", "tr": "Günlük haberleri telefonundan okuyor.", "register": "neutral", "focus": "daily"},
-    {"en": "Daily life in a big city is busy and fast.", "tr": "Büyük şehirde günlük hayat yoğun ve hızlıdır.", "register": "neutral", "focus": "Daily"}
-  ],
-  "synonyms": ["day-to-day"],
-  "antonyms": [],
-  "collocations": ["daily routine", "daily life", "daily newspaper", "a daily walk"],
-  "word_family": [{"lemma": "day", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "günlük",
-      "alt": [],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'günlük' hem 'daily' hem 'diary' demektir. 'Daily' (her gün olan) ile 'everyday' (sıradan, alışılmış) karışmasın: daily routine, everyday clothes.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I read the ______ news on my phone every morning.", "answer": "daily", "distractors": ["monthly", "yearly", "hourly"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.bedtime.n.1",
-  "lemma": "bedtime",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈbɛdtaɪm/", "uk": "/ˈbɛdtaɪm/"},
-  "def": {
-    "micro": "time for sleep at night",
-    "short": "the time when you usually go to sleep at night",
-    "long": "The usual time in the evening when you go to sleep. Parents often tell children: 'It's bedtime!'"
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "It's bedtime, kids. Brush your teeth!", "tr": "Yatma vakti çocuklar. Dişlerinizi fırçalayın!", "register": "neutral", "focus": "bedtime"},
-    {"en": "My bedtime is around eleven.", "tr": "Yatma saatim on bir civarı.", "register": "neutral", "focus": "bedtime"},
-    {"en": "Do you read a story to your child at bedtime?", "tr": "Çocuğuna yatmadan önce hikâye okuyor musun?", "register": "neutral", "focus": "bedtime"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["at bedtime", "before bedtime", "a bedtime story", "past my bedtime", "bedtime routine"],
-  "word_family": [{"lemma": "bed", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yatma vakti",
-      "alt": ["yatma saati"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede tek kelimelik karşılığı yoktur: 'yatma vakti / saati' denir. 'Bedtime story' = uyumadan önce okunan masal.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "family_relationships"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "It's ______, so please turn off the TV and brush your teeth.", "answer": "bedtime", "distractors": ["lunchtime", "playtime", "breakfast"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.alarm.n.1",
-  "lemma": "alarm",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "wake-up alarm",
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/əˈlɑːrm/", "uk": "/əˈlɑːm/"},
-  "def": {
-    "micro": "sound that wakes you up",
-    "short": "a loud sound on a clock or phone that wakes you up at a set time",
-    "long": "A loud sound from a clock or phone that wakes you up at the time you choose. Many people set more than one on their phone every night."
-  },
-  "grammar": {"pattern": "set an alarm for + time"},
-  "examples": [
-    {"en": "I set my alarm for 6:30.", "tr": "Alarmı 6.30'a kurdum.", "register": "neutral", "focus": "alarm"},
-    {"en": "My alarm didn't go off, so I was late for work.", "tr": "Alarmım çalmadı, o yüzden işe geç kaldım.", "register": "neutral", "focus": "alarm"},
-    {"en": "Turn off the alarm; it's Sunday!", "tr": "Alarmı kapat, bugün pazar!", "register": "informal", "focus": "alarm"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["set an alarm", "alarm clock", "turn off the alarm", "the alarm goes off"],
-  "word_family": [],
-  "etymology": {"text": "From Italian 'all'arme', meaning 'to arms!': a call to pick up weapons because of danger. The word first meant a warning cry.", "origin": "Italian", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "alarm",
-      "alt": ["çalar saat"],
-      "equivalence": "cognate",
-      "false_friend": null,
-      "note": "Türkçede de 'alarm' deriz. Aynı kelime yangın alarmı (fire alarm) için de kullanılır. Telefon alarmı için fiil 'set' olur.",
-      "mistakes": [
-        {"wrong": "I put an alarm for seven.", "right": "I set an alarm for seven.", "why": "Türkçede 'alarm koymak / kurmak' deriz. İngilizcede doğru fiil 'set'tir; 'put' kullanılmaz."}
+      "antonyms": [
+        "boiling"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My ______ didn't go off, so I woke up at nine.", "answer": "alarm", "distractors": ["window", "pillow", "blanket"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.nowadays.adv.1",
-  "lemma": "nowadays",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈnaʊədeɪz/", "uk": "/ˈnaʊədeɪz/"},
-  "def": {
-    "micro": "at the present time",
-    "short": "in these days, when you compare it with the past",
-    "long": "At the present time, especially when you compare it with the past. We use it to say that things are different now from before."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Nowadays, most people pay with their phones.", "tr": "Bugünlerde çoğu insan telefonla ödeme yapıyor.", "register": "neutral", "focus": "Nowadays"},
-    {"en": "My grandfather wrote letters, but nowadays we send messages.", "tr": "Dedem mektup yazardı ama bugünlerde biz mesaj atıyoruz.", "register": "neutral", "focus": "nowadays"},
-    {"en": "I don't watch TV much nowadays.", "tr": "Bugünlerde pek televizyon izlemiyorum.", "register": "neutral", "focus": "nowadays"}
-  ],
-  "synonyms": ["these days", "today"],
-  "antonyms": [],
-  "collocations": [],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bugünlerde",
-      "alt": ["günümüzde", "şimdilerde"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'Nowadays' şimdiki zamanla kullanılır ve geçmişle karşılaştırma yapar. Bitmiş geçmiş zamanla (I went) kullanılmaz.",
-      "mistakes": [
-        {"wrong": "In nowadays, people use phones.", "right": "Nowadays, people use phones.", "why": "Türkçede 'günümüzde' dersiniz ('-de' eki var), ama 'nowadays' bir zarftır; 'in' almaz."}
+      "collocations": [
+        "freezing cold",
+        "freezing weather",
+        "freezing outside",
+        "I'm freezing"
       ],
-      "mnemonic": "Now + a + days: ortadaki 'a' eskiden 'on' (-de) demekti. '-de' zaten içinde, önüne 'in' koyma."
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "My grandfather wrote letters, but ______ we send messages.", "answer": "nowadays", "distractors": ["yesterday", "tomorrow", "already"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited", "mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.suddenly.adv.1",
-  "lemma": "suddenly",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈsʌdənli/", "uk": "/ˈsʌdənli/"},
-  "def": {
-    "micro": "without warning",
-    "short": "very quickly and when you do not expect it",
-    "long": "Very quickly and when you do not expect it. It often comes at the start of a sentence or before the verb: 'Suddenly, the lights went out.'"
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Suddenly, the lights went out.", "tr": "Birden ışıklar söndü.", "register": "neutral", "focus": "Suddenly"},
-    {"en": "It was sunny, but suddenly it started to rain.", "tr": "Hava güneşliydi ama birden yağmur başladı.", "register": "neutral", "focus": "suddenly"},
-    {"en": "He suddenly stopped and looked at his phone.", "tr": "Birden durdu ve telefonuna baktı.", "register": "neutral", "focus": "suddenly"}
-  ],
-  "synonyms": ["all of a sudden", "abruptly"],
-  "antonyms": ["slowly"],
-  "collocations": ["suddenly stop", "suddenly appear", "suddenly realize", "suddenly change"],
-  "word_family": [{"lemma": "sudden", "pos": "adj"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "birdenbire",
-      "alt": ["aniden", "birden"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Birden', 'aniden' ve 'birdenbire' hep 'suddenly' olur. İngilizcede hikâye anlatırken cümle başında çok kullanılır.",
-      "mistakes": [
-        {"wrong": "It was a suddenly decision.", "right": "It was a sudden decision.", "why": "İsmin önünde sıfat gerekir: 'sudden' (ani). 'Suddenly' fiili anlatan bir zarftır."}
+      "word_family": [
+        {
+          "lemma": "freeze",
+          "pos": "v"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I was reading in bed when, ______, the lights went out.", "answer": "suddenly", "distractors": ["usually", "carefully", "slowly"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.rarely.adv.1",
-  "lemma": "rarely",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A2",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈrɛrli/", "uk": "/ˈreəli/"},
-  "def": {
-    "micro": "not often",
-    "short": "not often; only a few times",
-    "long": "Not often; only a few times. It is stronger than 'sometimes' and close to 'never'. It goes before the main verb: 'I rarely eat out.'"
-  },
-  "grammar": {"pattern": "subject + rarely + verb"},
-  "examples": [
-    {"en": "I rarely drink coffee after lunch.", "tr": "Öğle yemeğinden sonra nadiren kahve içerim.", "register": "neutral", "focus": "rarely"},
-    {"en": "My brother rarely calls me; he sends messages.", "tr": "Kardeşim beni nadiren arar, genelde mesaj atar.", "register": "neutral", "focus": "rarely"},
-    {"en": "It rarely snows in Izmir.", "tr": "İzmir'de nadiren kar yağar.", "register": "neutral", "focus": "rarely"}
-  ],
-  "synonyms": ["seldom"],
-  "antonyms": ["often", "usually"],
-  "collocations": ["rarely see", "rarely use", "very rarely", "rarely happen"],
-  "word_family": [{"lemma": "rare", "pos": "adj"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "nadiren",
-      "alt": ["çok seyrek"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Rarely' olumsuz bir anlam taşır ('pek … mez'). Bu yüzden yanına ayrıca 'not' veya 'never' eklenmez.",
-      "mistakes": [
-        {"wrong": "I don't rarely go out.", "right": "I rarely go out.", "why": "'Rarely' zaten 'neredeyse hiç' demektir; 'don't' ile birlikte kullanılmaz."}
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buz gibi soğuk",
+          "alt": [
+            "dondurucu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'I'm freezing' = 'Donuyorum / Çok üşüyorum'. Günlük dilde sıcaklık sıfırın altında olmasa da abartı olarak sık söylenir.",
+          "mistakes": [
+            {
+              "wrong": "It is very freezing today.",
+              "right": "It is freezing today.",
+              "why": "'Freezing' zaten 'çok soğuk' demektir; yanına 'very' eklemeyin. Vurgu için 'absolutely freezing' denir."
+            }
+          ],
+          "mnemonic": "Buzdolabının 'freezer' bölümünü düşün: dışarısı 'freezing' ise hava orası kadar soğuk."
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Put on your coat. It's ______ outside!",
+        "answer": "freezing",
+        "distractors": [
+          "boiling",
+          "sunny",
+          "dry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sunrise.n.1",
+      "lemma": "sunrise",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌnraɪz/",
+        "uk": "/ˈsʌnraɪz/"
+      },
+      "def": {
+        "micro": "time the sun comes up",
+        "short": "the time in the morning when the sun first appears",
+        "long": "The moment in the morning when the sun first appears in the sky, or the colorful sky at that time. It happens earlier in summer than in winter."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "We woke up early to watch the sunrise.",
+          "tr": "Gün doğumunu izlemek için erken kalktık.",
+          "register": "neutral",
+          "focus": "sunrise"
+        },
+        {
+          "en": "The sunrise over the sea was beautiful.",
+          "tr": "Denizin üzerindeki gün doğumu çok güzeldi.",
+          "register": "neutral",
+          "focus": "sunrise"
+        },
+        {
+          "en": "In June, sunrise is at about five in the morning.",
+          "tr": "Haziranda gün doğumu sabah beş civarında.",
+          "register": "neutral",
+          "focus": "sunrise"
+        }
       ],
-      "mnemonic": null
+      "synonyms": [],
+      "antonyms": [
+        "sunset"
+      ],
+      "collocations": [
+        "watch the sunrise",
+        "at sunrise",
+        "before sunrise",
+        "sunrise time",
+        "a beautiful sunrise"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gün doğumu",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Dawn' (şafak) güneş çıkmadan önceki aydınlıktır; 'sunrise' ise güneşin göründüğü andır. Karşıtı 'sunset' (gün batımı).",
+          "mistakes": [],
+          "mnemonic": "Sun + rise (yükselmek): sabah güneş ufuktan yükselir. Akşam güneş batar (set): sunset."
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We woke up at five in the morning to see the ______ on the beach.",
+        "answer": "sunrise",
+        "distractors": [
+          "sunset",
+          "midnight",
+          "noon"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sunset.n.1",
+      "lemma": "sunset",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌnsɛt/",
+        "uk": "/ˈsʌnsɛt/"
+      },
+      "def": {
+        "micro": "time the sun goes down",
+        "short": "the time in the evening when the sun goes down",
+        "long": "The time in the evening when the sun goes out of sight, or the red and orange sky at that time. Many tourists take photos of it by the sea."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Let's watch the sunset from the roof.",
+          "tr": "Gün batımını çatıdan izleyelim.",
+          "register": "neutral",
+          "focus": "sunset"
+        },
+        {
+          "en": "We had tea and watched the sunset.",
+          "tr": "Çay içip gün batımını izledik.",
+          "register": "neutral",
+          "focus": "sunset"
+        },
+        {
+          "en": "In winter, sunset is before five o'clock.",
+          "tr": "Kışın gün batımı saat beşten önce.",
+          "register": "neutral",
+          "focus": "sunset"
+        }
+      ],
+      "synonyms": [
+        "sundown"
+      ],
+      "antonyms": [
+        "sunrise"
+      ],
+      "collocations": [
+        "watch the sunset",
+        "at sunset",
+        "before sunset",
+        "a beautiful sunset"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gün batımı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We ate dinner on the beach and watched the ______ in the evening.",
+        "answer": "sunset",
+        "distractors": [
+          "sunrise",
+          "noon",
+          "morning"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.midnight.n.1",
+      "lemma": "midnight",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɪdnaɪt/",
+        "uk": "/ˈmɪdnaɪt/"
+      },
+      "def": {
+        "micro": "twelve o'clock at night",
+        "short": "twelve o'clock at night, the time between one day and the next",
+        "long": "Twelve o'clock at night, when one day ends and the next day begins. We say 'at midnight' or 'after midnight'."
+      },
+      "grammar": {
+        "pattern": "at / after / before midnight"
+      },
+      "examples": [
+        {
+          "en": "The party ended at midnight.",
+          "tr": "Parti gece yarısı bitti.",
+          "register": "neutral",
+          "focus": "midnight"
+        },
+        {
+          "en": "I can't sleep. It's already midnight!",
+          "tr": "Uyuyamıyorum. Saat gece yarısı oldu bile!",
+          "register": "neutral",
+          "focus": "midnight"
+        },
+        {
+          "en": "Our flight arrives just after midnight.",
+          "tr": "Uçağımız gece yarısından hemen sonra iniyor.",
+          "register": "neutral",
+          "focus": "midnight"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "noon"
+      ],
+      "collocations": [
+        "at midnight",
+        "after midnight",
+        "before midnight",
+        "past midnight",
+        "a midnight snack"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gece yarısı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'noon' (öğle vakti). Saat söylerken 'at midnight' kullanılır, 'the' gelmez.",
+          "mistakes": [
+            {
+              "wrong": "We left at the midnight.",
+              "right": "We left at midnight.",
+              "why": "'Gece yarısı' saat bildiren kalıpta 'at midnight' olur; 'the' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I went to bed very late, after ______.",
+        "answer": "midnight",
+        "distractors": [
+          "noon",
+          "lunch",
+          "breakfast"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.daily.adj.1",
+      "lemma": "daily",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdeɪli/",
+        "uk": "/ˈdeɪli/"
+      },
+      "def": {
+        "micro": "happening every day",
+        "short": "done or happening every day",
+        "long": "Done or happening every day. You can use it with words like routine, life, news, or walk: 'my daily walk'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My daily walk to work takes twenty minutes.",
+          "tr": "Her gün işe yaptığım yürüyüş yirmi dakika sürüyor.",
+          "register": "neutral",
+          "focus": "daily"
+        },
+        {
+          "en": "She reads the daily news on her phone.",
+          "tr": "Günlük haberleri telefonundan okuyor.",
+          "register": "neutral",
+          "focus": "daily"
+        },
+        {
+          "en": "Daily life in a big city is busy and fast.",
+          "tr": "Büyük şehirde günlük hayat yoğun ve hızlıdır.",
+          "register": "neutral",
+          "focus": "Daily"
+        }
+      ],
+      "synonyms": [
+        "day-to-day"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "daily routine",
+        "daily life",
+        "daily newspaper",
+        "a daily walk"
+      ],
+      "word_family": [
+        {
+          "lemma": "day",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "günlük",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'günlük' hem 'daily' hem 'diary' demektir. 'Daily' (her gün olan) ile 'everyday' (sıradan, alışılmış) karışmasın: daily routine, everyday clothes.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I read the ______ news on my phone every morning.",
+        "answer": "daily",
+        "distractors": [
+          "monthly",
+          "yearly",
+          "hourly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bedtime.n.1",
+      "lemma": "bedtime",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɛdtaɪm/",
+        "uk": "/ˈbɛdtaɪm/"
+      },
+      "def": {
+        "micro": "time for sleep at night",
+        "short": "the time when you usually go to sleep at night",
+        "long": "The usual time in the evening when you go to sleep. Parents often tell children: 'It's bedtime!'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "It's bedtime, kids. Brush your teeth!",
+          "tr": "Yatma vakti çocuklar. Dişlerinizi fırçalayın!",
+          "register": "neutral",
+          "focus": "bedtime"
+        },
+        {
+          "en": "My bedtime is around eleven.",
+          "tr": "Yatma saatim on bir civarı.",
+          "register": "neutral",
+          "focus": "bedtime"
+        },
+        {
+          "en": "Do you read a story to your child at bedtime?",
+          "tr": "Çocuğuna yatmadan önce hikâye okuyor musun?",
+          "register": "neutral",
+          "focus": "bedtime"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "at bedtime",
+        "before bedtime",
+        "a bedtime story",
+        "past my bedtime",
+        "bedtime routine"
+      ],
+      "word_family": [
+        {
+          "lemma": "bed",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yatma vakti",
+          "alt": [
+            "yatma saati"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede tek kelimelik karşılığı yoktur: 'yatma vakti / saati' denir. 'Bedtime story' = uyumadan önce okunan masal.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's ______, so please turn off the TV and brush your teeth.",
+        "answer": "bedtime",
+        "distractors": [
+          "lunchtime",
+          "playtime",
+          "breakfast"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.alarm.n.1",
+      "lemma": "alarm",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "wake-up alarm",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈlɑːrm/",
+        "uk": "/əˈlɑːm/"
+      },
+      "def": {
+        "micro": "sound that wakes you up",
+        "short": "a loud sound on a clock or phone that wakes you up at a set time",
+        "long": "A loud sound from a clock or phone that wakes you up at the time you choose. Many people set more than one on their phone every night."
+      },
+      "grammar": {
+        "pattern": "set an alarm for + time"
+      },
+      "examples": [
+        {
+          "en": "I set my alarm for 6:30.",
+          "tr": "Alarmı 6.30'a kurdum.",
+          "register": "neutral",
+          "focus": "alarm"
+        },
+        {
+          "en": "My alarm didn't go off, so I was late for work.",
+          "tr": "Alarmım çalmadı, o yüzden işe geç kaldım.",
+          "register": "neutral",
+          "focus": "alarm"
+        },
+        {
+          "en": "Turn off the alarm; it's Sunday!",
+          "tr": "Alarmı kapat, bugün pazar!",
+          "register": "informal",
+          "focus": "alarm"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "set an alarm",
+        "alarm clock",
+        "turn off the alarm",
+        "the alarm goes off"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Italian 'all'arme', meaning 'to arms!': a call to pick up weapons because of danger. The word first meant a warning cry.",
+        "origin": "Italian",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "alarm",
+          "alt": [
+            "çalar saat"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede de 'alarm' deriz. Aynı kelime yangın alarmı (fire alarm) için de kullanılır. Telefon alarmı için fiil 'set' olur.",
+          "mistakes": [
+            {
+              "wrong": "I put an alarm for seven.",
+              "right": "I set an alarm for seven.",
+              "why": "Türkçede 'alarm koymak / kurmak' deriz. İngilizcede doğru fiil 'set'tir; 'put' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My ______ didn't go off, so I woke up at nine.",
+        "answer": "alarm",
+        "distractors": [
+          "window",
+          "pillow",
+          "blanket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nowadays.adv.1",
+      "lemma": "nowadays",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnaʊədeɪz/",
+        "uk": "/ˈnaʊədeɪz/"
+      },
+      "def": {
+        "micro": "at the present time",
+        "short": "in these days, when you compare it with the past",
+        "long": "At the present time, especially when you compare it with the past. We use it to say that things are different now from before."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Nowadays, most people pay with their phones.",
+          "tr": "Bugünlerde çoğu insan telefonla ödeme yapıyor.",
+          "register": "neutral",
+          "focus": "Nowadays"
+        },
+        {
+          "en": "My grandfather wrote letters, but nowadays we send messages.",
+          "tr": "Dedem mektup yazardı ama bugünlerde biz mesaj atıyoruz.",
+          "register": "neutral",
+          "focus": "nowadays"
+        },
+        {
+          "en": "I don't watch TV much nowadays.",
+          "tr": "Bugünlerde pek televizyon izlemiyorum.",
+          "register": "neutral",
+          "focus": "nowadays"
+        }
+      ],
+      "synonyms": [
+        "these days",
+        "today"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bugünlerde",
+          "alt": [
+            "günümüzde",
+            "şimdilerde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Nowadays' şimdiki zamanla kullanılır ve geçmişle karşılaştırma yapar. Bitmiş geçmiş zamanla (I went) kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "In nowadays, people use phones.",
+              "right": "Nowadays, people use phones.",
+              "why": "Türkçede 'günümüzde' dersiniz ('-de' eki var), ama 'nowadays' bir zarftır; 'in' almaz."
+            }
+          ],
+          "mnemonic": "Now + a + days: ortadaki 'a' eskiden 'on' (-de) demekti. '-de' zaten içinde, önüne 'in' koyma."
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandfather wrote letters, but ______ we send messages.",
+        "answer": "nowadays",
+        "distractors": [
+          "yesterday",
+          "tomorrow",
+          "already"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.suddenly.adv.1",
+      "lemma": "suddenly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌdənli/",
+        "uk": "/ˈsʌdənli/"
+      },
+      "def": {
+        "micro": "without warning",
+        "short": "very quickly and when you do not expect it",
+        "long": "Very quickly and when you do not expect it. It often comes at the start of a sentence or before the verb: 'Suddenly, the lights went out.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Suddenly, the lights went out.",
+          "tr": "Birden ışıklar söndü.",
+          "register": "neutral",
+          "focus": "Suddenly"
+        },
+        {
+          "en": "It was sunny, but suddenly it started to rain.",
+          "tr": "Hava güneşliydi ama birden yağmur başladı.",
+          "register": "neutral",
+          "focus": "suddenly"
+        },
+        {
+          "en": "He suddenly stopped and looked at his phone.",
+          "tr": "Birden durdu ve telefonuna baktı.",
+          "register": "neutral",
+          "focus": "suddenly"
+        }
+      ],
+      "synonyms": [
+        "all of a sudden",
+        "abruptly"
+      ],
+      "antonyms": [
+        "slowly"
+      ],
+      "collocations": [
+        "suddenly stop",
+        "suddenly appear",
+        "suddenly realize",
+        "suddenly change"
+      ],
+      "word_family": [
+        {
+          "lemma": "sudden",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "birdenbire",
+          "alt": [
+            "aniden",
+            "birden"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Birden', 'aniden' ve 'birdenbire' hep 'suddenly' olur. İngilizcede hikâye anlatırken cümle başında çok kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "It was a suddenly decision.",
+              "right": "It was a sudden decision.",
+              "why": "İsmin önünde sıfat gerekir: 'sudden' (ani). 'Suddenly' fiili anlatan bir zarftır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I was reading in bed when, ______, the lights went out.",
+        "answer": "suddenly",
+        "distractors": [
+          "usually",
+          "carefully",
+          "slowly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rarely.adv.1",
+      "lemma": "rarely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛrli/",
+        "uk": "/ˈreəli/"
+      },
+      "def": {
+        "micro": "not often",
+        "short": "not often; only a few times",
+        "long": "Not often; only a few times. It is stronger than 'sometimes' and close to 'never'. It goes before the main verb: 'I rarely eat out.'"
+      },
+      "grammar": {
+        "pattern": "subject + rarely + verb"
+      },
+      "examples": [
+        {
+          "en": "I rarely drink coffee after lunch.",
+          "tr": "Öğle yemeğinden sonra nadiren kahve içerim.",
+          "register": "neutral",
+          "focus": "rarely"
+        },
+        {
+          "en": "My brother rarely calls me; he sends messages.",
+          "tr": "Kardeşim beni nadiren arar, genelde mesaj atar.",
+          "register": "neutral",
+          "focus": "rarely"
+        },
+        {
+          "en": "It rarely snows in Izmir.",
+          "tr": "İzmir'de nadiren kar yağar.",
+          "register": "neutral",
+          "focus": "rarely"
+        }
+      ],
+      "synonyms": [
+        "seldom"
+      ],
+      "antonyms": [
+        "often",
+        "usually"
+      ],
+      "collocations": [
+        "rarely see",
+        "rarely use",
+        "very rarely",
+        "rarely happen"
+      ],
+      "word_family": [
+        {
+          "lemma": "rare",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nadiren",
+          "alt": [
+            "çok seyrek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Rarely' olumsuz bir anlam taşır ('pek … mez'). Bu yüzden yanına ayrıca 'not' veya 'never' eklenmez.",
+          "mistakes": [
+            {
+              "wrong": "I don't rarely go out.",
+              "right": "I rarely go out.",
+              "why": "'Rarely' zaten 'neredeyse hiç' demektir; 'don't' ile birlikte kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______ eat fast food; I almost never go to those places.",
+        "answer": "rarely",
+        "distractors": [
+          "often",
+          "usually",
+          "always"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I ______ eat fast food; I almost never go to those places.", "answer": "rarely", "distractors": ["often", "usually", "always"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

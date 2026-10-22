@@ -66,6 +66,7 @@
       "l1": {
         "tr": {
           "gloss": "ihtiyacı olmak, gerekmek",
+          "gloss_short": "ihtiyacı olmak",
           "alt": [],
           "equivalence": "partial",
           "false_friend": null,
@@ -89,9 +90,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:want"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -202,9 +201,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:need"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -270,6 +267,11 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "meet",
+        "recognize",
+        "get to know"
+      ],
       "collocations": [
         "know the answer",
         "know a lot",
@@ -321,8 +323,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:meet"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -439,8 +440,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [
-          "irregular",
-          "confusable:believe"
+          "irregular"
         ],
         "sensitivity": 0
       },
@@ -650,6 +650,7 @@
       "l1": {
         "tr": {
           "gloss": "demek, anlamına gelmek",
+          "gloss_short": "anlamına gelmek",
           "alt": [
             "anlamı olmak"
           ],
@@ -742,6 +743,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "fill"
+      ],
       "collocations": [
         "feel tired",
         "feel better",
@@ -850,6 +854,10 @@
         "seem"
       ],
       "antonyms": [],
+      "confusables": [
+        "look like",
+        "seem"
+      ],
       "collocations": [
         "look tired",
         "look happy",
@@ -887,9 +895,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:feel"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {
@@ -1075,6 +1081,9 @@
         "start",
         "continue"
       ],
+      "confusables": [
+        "wait"
+      ],
       "collocations": [
         "stop talking",
         "stop the car",
@@ -1096,6 +1105,7 @@
       "l1": {
         "tr": {
           "gloss": "durmak, durdurmak",
+          "gloss_short": "durmak/durdurmak",
           "alt": [
             "bırakmak",
             "kesmek"
@@ -1121,9 +1131,7 @@
         "exams": [],
         "register": "neutral",
         "vibes": [],
-        "flags": [
-          "confusable:wait"
-        ],
+        "flags": [],
         "sensitivity": 0
       },
       "quiz": {

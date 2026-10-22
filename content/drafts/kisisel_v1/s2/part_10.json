@@ -1,435 +1,1022 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.nap.n.1",
-  "lemma": "nap",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/næp/", "uk": "/næp/"},
-  "def": {
-    "micro": "short sleep in the day",
-    "short": "a short sleep, usually in the afternoon",
-    "long": "A short sleep during the day, usually less than an hour. Many people take one after lunch when they feel tired."
-  },
-  "grammar": {"pattern": "take / have a nap"},
-  "examples": [
-    {"en": "I'll take a short nap after lunch.", "tr": "Öğle yemeğinden sonra kısa bir şekerleme yapacağım.", "register": "neutral", "focus": "nap"},
-    {"en": "The baby is taking a nap, so please be quiet.", "tr": "Bebek şekerleme yapıyor, lütfen sessiz ol.", "register": "neutral", "focus": "nap"},
-    {"en": "A twenty-minute nap can help you feel fresh.", "tr": "Yirmi dakikalık bir şekerleme sizi zinde hissettirebilir.", "register": "neutral", "focus": "nap"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": ["snooze"],
-  "antonyms": [],
-  "collocations": ["take a nap", "have a nap", "an afternoon nap", "a quick nap", "need a nap"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "şekerleme",
-      "alt": ["kestirme"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Türkçedeki 'şekerleme' (kısa uyku) ile tatlı anlamındaki 'şekerleme' aynı yazılır. 'Take a nap' = şekerleme yapmak / kestirmek.",
-      "mistakes": [
-        {"wrong": "I made a nap after lunch.", "right": "I took a nap after lunch.", "why": "Türkçede 'şekerleme yapmak' dediğimiz için 'make' denir; İngilizcede 'take a nap' veya 'have a nap' kullanılır."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.nap.n.1",
+      "lemma": "nap",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/næp/",
+        "uk": "/næp/"
+      },
+      "def": {
+        "micro": "short sleep in the day",
+        "short": "a short sleep, usually in the afternoon",
+        "long": "A short sleep during the day, usually less than an hour. Many people take one after lunch when they feel tired."
+      },
+      "grammar": {
+        "pattern": "take / have a nap"
+      },
+      "examples": [
+        {
+          "en": "I'll take a short nap after lunch.",
+          "tr": "Öğle yemeğinden sonra kısa bir şekerleme yapacağım.",
+          "register": "neutral",
+          "focus": "nap"
+        },
+        {
+          "en": "The baby is taking a nap, so please be quiet.",
+          "tr": "Bebek şekerleme yapıyor, lütfen sessiz ol.",
+          "register": "neutral",
+          "focus": "nap"
+        },
+        {
+          "en": "A twenty-minute nap can help you feel fresh.",
+          "tr": "Yirmi dakikalık bir şekerleme sizi zinde hissettirebilir.",
+          "register": "neutral",
+          "focus": "nap"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I was tired, so I lay down and took a short ______ on the sofa.", "answer": "nap", "distractors": ["exam", "lesson", "shower"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited","distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.recently.adv.1",
-  "lemma": "recently",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈriːsəntli/", "uk": "/ˈriːsntli/"},
-  "def": {
-    "micro": "not long ago",
-    "short": "a short time ago, in the last few days or weeks",
-    "long": "A short time ago, in the last few days, weeks, or months. It is often used with the present perfect or the past simple: 'I have recently moved.'"
-  },
-  "grammar": {"pattern": "have + recently + past participle"},
-  "examples": [
-    {"en": "I recently moved to a new apartment.", "tr": "Geçenlerde yeni bir daireye taşındım.", "register": "neutral", "focus": "recently"},
-    {"en": "Have you watched any good movies recently?", "tr": "Son zamanlarda iyi bir film izledin mi?", "register": "neutral", "focus": "recently"},
-    {"en": "She has recently started a new job.", "tr": "Kısa süre önce yeni bir işe başladı.", "register": "neutral", "focus": "recently"}
-  ],
-  "synonyms": ["lately"],
-  "antonyms": [],
-  "collocations": ["until recently", "only recently", "very recently"],
-  "word_family": [{"lemma": "recent", "pos": "adj"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "geçenlerde",
-      "alt": ["son zamanlarda", "yakın zamanda"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'Recently' geçmişteki yakın bir zamanı anlatır; çoğunlukla geçmiş zamanla veya 'have + V3' ile kullanılır, düz şimdiki zamanla kullanılmaz.",
-      "mistakes": [
-        {"wrong": "I am recently learning English.", "right": "I have recently started learning English.", "why": "Türkçedeki 'son zamanlarda öğreniyorum' kalıbı İngilizcede şimdiki zamanla kurulmaz; 'have started' veya geçmiş zaman gerekir."}
+      "synonyms": [
+        "snooze"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Mehmet ______ changed his job, so he is very busy now.", "answer": "recently", "distractors": ["tomorrow", "always", "usually"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.currently.adv.1",
-  "lemma": "currently",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈkɜːrəntli/", "uk": "/ˈkʌrəntli/"},
-  "def": {
-    "micro": "at this moment",
-    "short": "at this time, for the time being",
-    "long": "At this time; now, but maybe not for a long time. It is used for jobs, addresses, and situations: 'I'm currently living in Izmir.'"
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I'm currently looking for a new apartment.", "tr": "Şu anda yeni bir daire arıyorum.", "register": "neutral", "focus": "currently"},
-    {"en": "She currently works for a travel company.", "tr": "Şu sıralar bir seyahat şirketinde çalışıyor.", "register": "neutral", "focus": "currently"},
-    {"en": "This item is currently out of stock.", "tr": "Bu ürün şu anda stokta yok.", "register": "neutral", "focus": "currently"}
-  ],
-  "synonyms": ["right now", "at present"],
-  "antonyms": [],
-  "collocations": ["currently available", "currently working", "currently out of stock"],
-  "word_family": [{"lemma": "current", "pos": "adj"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "şu anda",
-      "alt": ["şimdilik", "halen"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Şu anda geçerli olan durum için kullanılır; ileride değişebilir. 'Actually' (aslında) ile karıştırmayın: 'güncel' anlamı 'current / currently' ile verilir.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I'm ______ living in Izmir, but next year I will move to Ankara.", "answer": "currently", "distractors": ["always", "finally", "suddenly"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.meanwhile.adv.1",
-  "lemma": "meanwhile",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈmiːnwaɪl/", "uk": "/ˈmiːnwaɪl/"},
-  "def": {
-    "micro": "at the same time as that",
-    "short": "during the time that something else is happening",
-    "long": "During the time that something else is happening, or between two events. It joins two actions: 'I cooked dinner. Meanwhile, my brother set the table.'"
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I'll make the tea. Meanwhile, you can set the table.", "tr": "Ben çayı demleyeyim. Bu arada sen sofrayı kurabilirsin.", "register": "neutral", "focus": "Meanwhile"},
-    {"en": "Ayşe was cooking. Meanwhile, her husband was playing with the kids.", "tr": "Ayşe yemek yapıyordu. Bu sırada kocası çocuklarla oynuyordu.", "register": "neutral", "focus": "Meanwhile"},
-    {"en": "The train is late. Meanwhile, we can have a coffee.", "tr": "Tren gecikti. Bu arada bir kahve içebiliriz.", "register": "neutral", "focus": "Meanwhile"}
-  ],
-  "synonyms": ["in the meantime"],
-  "antonyms": [],
-  "collocations": [],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bu arada",
-      "alt": ["bu sırada", "bu esnada"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Meanwhile' genelde cümle başında ve virgülle kullanılır. Konu değiştirirken söylenen 'bu arada…' ise İngilizcede 'by the way' olur.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I'll cook the rice, and ______ you can wash the vegetables.", "answer": "meanwhile", "distractors": ["rarely", "already", "suddenly"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.time_zone.phr.1",
-  "lemma": "time zone",
-  "type": "collocation",
-  "pos": "phr",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈtaɪm zoʊn/", "uk": "/ˈtaɪm zəʊn/"},
-  "def": {
-    "micro": "area with the same time",
-    "short": "one of the areas of the world where people use the same time",
-    "long": "One of the areas of the world where people use the same time. When you fly far east or west, you go into a new one and must change your watch."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "What time zone are you in?", "tr": "Hangi saat dilimindesin?", "register": "neutral", "focus": "time zone"},
-    {"en": "My brother lives in Berlin, which is in a different time zone.", "tr": "Kardeşim Berlin'de yaşıyor ve orası farklı bir saat diliminde.", "register": "neutral", "focus": "time zone"},
-    {"en": "Remember to change the time zone on your phone when you travel.", "tr": "Seyahat ederken telefonundaki saat dilimini değiştirmeyi unutma.", "register": "neutral", "focus": "time zone"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["a different time zone", "the same time zone", "change time zones", "cross time zones", "time zone difference"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "saat dilimi",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Türkiye'de tek saat dilimi vardır. ABD'de birkaç tane vardır ve adlarıyla söylenir: Eastern Time, Pacific Time.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "It is morning here but night in Tokyo, so we are in a different ______.", "answer": "time zone", "distractors": ["weather report", "bus stop", "phone call"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.souvenir.n.1",
-  "lemma": "souvenir",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˌsuːvəˈnɪr/", "uk": "/ˌsuːvəˈnɪə/"},
-  "def": {
-    "micro": "thing to remember a trip",
-    "short": "something you buy on a trip to remember the place",
-    "long": "A small thing that you buy on a trip to remind you of the place, or to give as a gift. Tourist shops sell many of them near famous places."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I bought a small souvenir for my mother.", "tr": "Annem için küçük bir hediyelik eşya aldım.", "register": "neutral", "focus": "souvenir"},
-    {"en": "The shop near the castle sells cheap souvenirs.", "tr": "Kalenin yanındaki dükkân ucuz hediyelik eşyalar satıyor.", "register": "neutral", "focus": "souvenirs"},
-    {"en": "This magnet is a souvenir from Cappadocia.", "tr": "Bu mıknatıs Kapadokya'dan bir hatıra.", "register": "neutral", "focus": "souvenir"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["buy a souvenir", "a souvenir shop", "a souvenir from", "a small souvenir"],
-  "word_family": [],
-  "etymology": {"text": "From French 'souvenir' ('to remember', and also 'a memory'), from Latin 'subvenire' ('to come to mind').", "origin": "French", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "hediyelik eşya",
-      "alt": ["hatıra"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'hediyelik eşya' hem 'souvenir' hem 'gift' için söylenir. Gezdiğin yeri hatırlatmak için alınan şey 'souvenir', başkasına verilen hediye ise 'gift' veya 'present'tir.",
-      "mistakes": [],
-      "mnemonic": "Fransızca 'se souvenir' = hatırlamak. Souvenir = sana o yeri hatırlatan şey."
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I always buy a small ______ from every city I visit.", "answer": "souvenir", "distractors": ["passport", "timetable", "airport"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited","distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.sightseeing.n.1",
-  "lemma": "sightseeing",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈsaɪtsiːɪŋ/", "uk": "/ˈsaɪtsiːɪŋ/"},
-  "def": {
-    "micro": "visiting famous places",
-    "short": "visiting famous places and buildings when you are on a trip",
-    "long": "The activity of visiting famous places, buildings, and other interesting things in a city or country, usually on a trip. It has no plural: 'We did some sightseeing.'"
-  },
-  "grammar": {"pattern": "go sightseeing / do some sightseeing"},
-  "examples": [
-    {"en": "We went sightseeing in Istanbul all day.", "tr": "Bütün gün İstanbul'u gezip gördük.", "register": "neutral", "focus": "sightseeing"},
-    {"en": "I don't like sightseeing when it's very hot.", "tr": "Hava çok sıcakken gezip görmeyi sevmem.", "register": "neutral", "focus": "sightseeing"},
-    {"en": "There is a sightseeing bus that goes around the old town.", "tr": "Eski şehri dolaşan bir şehir turu otobüsü var.", "register": "neutral", "focus": "sightseeing"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["go sightseeing", "a sightseeing tour", "do some sightseeing", "a sightseeing bus"],
-  "word_family": [{"lemma": "sight", "pos": "n"}, {"lemma": "sightseer", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "turistik gezi",
-      "alt": ["gezip görme"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede tek kelimelik karşılığı yoktur: 'gezip görmek', 'turistik gezi'. 'Sightseeing' sayılamaz bir isimdir: 'go sightseeing' denir, 'a sightseeing' denmez.",
-      "mistakes": [
-        {"wrong": "We went to sightseeing in Rome.", "right": "We went sightseeing in Rome.", "why": "'Gezmeye gittik' dendiği için 'to' eklenir; ama 'go sightseeing' kalıbında 'to' kullanılmaz."}
+      "antonyms": [],
+      "collocations": [
+        "take a nap",
+        "have a nap",
+        "an afternoon nap",
+        "a quick nap",
+        "need a nap"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": ["uncountable"], "sensitivity": 0},
-  "quiz": {"cloze": "We love to see famous places, so we go ______ in every new city.", "answer": "sightseeing", "distractors": ["packing", "booking", "commuting"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.customs.n.1",
-  "lemma": "customs",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "at the border",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈkʌstəmz/", "uk": "/ˈkʌstəmz/"},
-  "def": {
-    "micro": "border check for bags",
-    "short": "the place at an airport or border where officers check your bags",
-    "long": "The place at an airport or border where officers check your bags for things you must not bring into a country or must pay tax on. You go through it after you land."
-  },
-  "grammar": {"pattern": "go through customs (no 'the')"},
-  "examples": [
-    {"en": "We had to wait in line at customs for an hour.", "tr": "Gümrükte bir saat sırada beklemek zorunda kaldık.", "register": "neutral", "focus": "customs"},
-    {"en": "Do you have anything to declare at customs?", "tr": "Gümrükte beyan edecek bir şeyiniz var mı?", "register": "formal", "focus": "customs"},
-    {"en": "The customs officer opened my suitcase.", "tr": "Gümrük memuru bavulumu açtı.", "register": "neutral", "focus": "customs"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["go through customs", "a customs officer", "a customs check", "clear customs", "customs duty"],
-  "word_family": [],
-  "etymology": {"text": "From 'custom'. In the past, 'customs' were the usual taxes that people paid to a ruler when goods came into a place.", "origin": "English", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "gümrük",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Yer anlamında hep çoğul kullanılır: 'customs'. Tekil 'custom' ise gelenek demektir.",
-      "mistakes": [
-        {"wrong": "We passed from the customs quickly.", "right": "We went through customs quickly.", "why": "'Gümrükten geçmek' = 'go through customs'. 'Pass from' denmez ve 'the' kullanılmaz."}
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şekerleme",
+          "alt": [
+            "kestirme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'şekerleme' (kısa uyku) ile tatlı anlamındaki 'şekerleme' aynı yazılır. 'Take a nap' = şekerleme yapmak / kestirmek.",
+          "mistakes": [
+            {
+              "wrong": "I made a nap after lunch.",
+              "right": "I took a nap after lunch.",
+              "why": "Türkçede 'şekerleme yapmak' dediğimiz için 'make' denir; İngilizcede 'take a nap' veya 'have a nap' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I was tired, so I lay down and took a short ______ on the sofa.",
+        "answer": "nap",
+        "distractors": [
+          "exam",
+          "lesson",
+          "shower"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recently.adv.1",
+      "lemma": "recently",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈriːsəntli/",
+        "uk": "/ˈriːsntli/"
+      },
+      "def": {
+        "micro": "not long ago",
+        "short": "a short time ago, in the last few days or weeks",
+        "long": "A short time ago, in the last few days, weeks, or months. It is often used with the present perfect or the past simple: 'I have recently moved.'"
+      },
+      "grammar": {
+        "pattern": "have + recently + past participle"
+      },
+      "examples": [
+        {
+          "en": "I recently moved to a new apartment.",
+          "tr": "Geçenlerde yeni bir daireye taşındım.",
+          "register": "neutral",
+          "focus": "recently"
+        },
+        {
+          "en": "Have you watched any good movies recently?",
+          "tr": "Son zamanlarda iyi bir film izledin mi?",
+          "register": "neutral",
+          "focus": "recently"
+        },
+        {
+          "en": "She has recently started a new job.",
+          "tr": "Kısa süre önce yeni bir işe başladı.",
+          "register": "neutral",
+          "focus": "recently"
+        }
       ],
-      "mnemonic": null
+      "synonyms": [
+        "lately"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "until recently",
+        "only recently",
+        "very recently"
+      ],
+      "word_family": [
+        {
+          "lemma": "recent",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçenlerde",
+          "alt": [
+            "son zamanlarda",
+            "yakın zamanda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Recently' geçmişteki yakın bir zamanı anlatır; çoğunlukla geçmiş zamanla veya 'have + V3' ile kullanılır, düz şimdiki zamanla kullanılmaz.",
+          "mistakes": [
+            {
+              "wrong": "I am recently learning English.",
+              "right": "I have recently started learning English.",
+              "why": "Türkçedeki 'son zamanlarda öğreniyorum' kalıbı İngilizcede şimdiki zamanla kurulmaz; 'have started' veya geçmiş zaman gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet ______ changed his job, so he is very busy now.",
+        "answer": "recently",
+        "distractors": [
+          "tomorrow",
+          "always",
+          "usually"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.currently.adv.1",
+      "lemma": "currently",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɜːrəntli/",
+        "uk": "/ˈkʌrəntli/"
+      },
+      "def": {
+        "micro": "at this moment",
+        "short": "at this time, for the time being",
+        "long": "At this time; now, but maybe not for a long time. It is used for jobs, addresses, and situations: 'I'm currently living in Izmir.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I'm currently looking for a new apartment.",
+          "tr": "Şu anda yeni bir daire arıyorum.",
+          "register": "neutral",
+          "focus": "currently"
+        },
+        {
+          "en": "She currently works for a travel company.",
+          "tr": "Şu sıralar bir seyahat şirketinde çalışıyor.",
+          "register": "neutral",
+          "focus": "currently"
+        },
+        {
+          "en": "This item is currently out of stock.",
+          "tr": "Bu ürün şu anda stokta yok.",
+          "register": "neutral",
+          "focus": "currently"
+        }
+      ],
+      "synonyms": [
+        "right now",
+        "at present"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "actually"
+      ],
+      "collocations": [
+        "currently available",
+        "currently working",
+        "currently out of stock"
+      ],
+      "word_family": [
+        {
+          "lemma": "current",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şu anda",
+          "alt": [
+            "şimdilik",
+            "halen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Şu anda geçerli olan durum için kullanılır; ileride değişebilir. 'Actually' (aslında) ile karıştırmayın: 'güncel' anlamı 'current / currently' ile verilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm ______ living in Izmir, but next year I will move to Ankara.",
+        "answer": "currently",
+        "distractors": [
+          "always",
+          "finally",
+          "suddenly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.meanwhile.adv.1",
+      "lemma": "meanwhile",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmiːnwaɪl/",
+        "uk": "/ˈmiːnwaɪl/"
+      },
+      "def": {
+        "micro": "at the same time as that",
+        "short": "during the time that something else is happening",
+        "long": "During the time that something else is happening, or between two events. It joins two actions: 'I cooked dinner. Meanwhile, my brother set the table.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I'll make the tea. Meanwhile, you can set the table.",
+          "tr": "Ben çayı demleyeyim. Bu arada sen sofrayı kurabilirsin.",
+          "register": "neutral",
+          "focus": "Meanwhile"
+        },
+        {
+          "en": "Ayşe was cooking. Meanwhile, her husband was playing with the kids.",
+          "tr": "Ayşe yemek yapıyordu. Bu sırada kocası çocuklarla oynuyordu.",
+          "register": "neutral",
+          "focus": "Meanwhile"
+        },
+        {
+          "en": "The train is late. Meanwhile, we can have a coffee.",
+          "tr": "Tren gecikti. Bu arada bir kahve içebiliriz.",
+          "register": "neutral",
+          "focus": "Meanwhile"
+        }
+      ],
+      "synonyms": [
+        "in the meantime"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "by the way"
+      ],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu arada",
+          "alt": [
+            "bu sırada",
+            "bu esnada"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Meanwhile' genelde cümle başında ve virgülle kullanılır. Konu değiştirirken söylenen 'bu arada…' ise İngilizcede 'by the way' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'll cook the rice, and ______ you can wash the vegetables.",
+        "answer": "meanwhile",
+        "distractors": [
+          "rarely",
+          "already",
+          "suddenly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.time_zone.phr.1",
+      "lemma": "time zone",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtaɪm zoʊn/",
+        "uk": "/ˈtaɪm zəʊn/"
+      },
+      "def": {
+        "micro": "area with the same time",
+        "short": "one of the areas of the world where people use the same time",
+        "long": "One of the areas of the world where people use the same time. When you fly far east or west, you go into a new one and must change your watch."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "What time zone are you in?",
+          "tr": "Hangi saat dilimindesin?",
+          "register": "neutral",
+          "focus": "time zone"
+        },
+        {
+          "en": "My brother lives in Berlin, which is in a different time zone.",
+          "tr": "Kardeşim Berlin'de yaşıyor ve orası farklı bir saat diliminde.",
+          "register": "neutral",
+          "focus": "time zone"
+        },
+        {
+          "en": "Remember to change the time zone on your phone when you travel.",
+          "tr": "Seyahat ederken telefonundaki saat dilimini değiştirmeyi unutma.",
+          "register": "neutral",
+          "focus": "time zone"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a different time zone",
+        "the same time zone",
+        "change time zones",
+        "cross time zones",
+        "time zone difference"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "saat dilimi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkiye'de tek saat dilimi vardır. ABD'de birkaç tane vardır ve adlarıyla söylenir: Eastern Time, Pacific Time.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It is morning here but night in Tokyo, so we are in a different ______.",
+        "answer": "time zone",
+        "distractors": [
+          "weather report",
+          "bus stop",
+          "phone call"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.souvenir.n.1",
+      "lemma": "souvenir",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsuːvəˈnɪr/",
+        "uk": "/ˌsuːvəˈnɪə/"
+      },
+      "def": {
+        "micro": "thing to remember a trip",
+        "short": "something you buy on a trip to remember the place",
+        "long": "A small thing that you buy on a trip to remind you of the place, or to give as a gift. Tourist shops sell many of them near famous places."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I bought a small souvenir for my mother.",
+          "tr": "Annem için küçük bir hediyelik eşya aldım.",
+          "register": "neutral",
+          "focus": "souvenir"
+        },
+        {
+          "en": "The shop near the castle sells cheap souvenirs.",
+          "tr": "Kalenin yanındaki dükkân ucuz hediyelik eşyalar satıyor.",
+          "register": "neutral",
+          "focus": "souvenirs"
+        },
+        {
+          "en": "This magnet is a souvenir from Cappadocia.",
+          "tr": "Bu mıknatıs Kapadokya'dan bir hatıra.",
+          "register": "neutral",
+          "focus": "souvenir"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "buy a souvenir",
+        "a souvenir shop",
+        "a souvenir from",
+        "a small souvenir"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'souvenir' ('to remember', and also 'a memory'), from Latin 'subvenire' ('to come to mind').",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hediyelik eşya",
+          "alt": [
+            "hatıra"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'hediyelik eşya' hem 'souvenir' hem 'gift' için söylenir. Gezdiğin yeri hatırlatmak için alınan şey 'souvenir', başkasına verilen hediye ise 'gift' veya 'present'tir.",
+          "mistakes": [],
+          "mnemonic": "Fransızca 'se souvenir' = hatırlamak. Souvenir = sana o yeri hatırlatan şey."
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I always buy a small ______ from every city I visit.",
+        "answer": "souvenir",
+        "distractors": [
+          "passport",
+          "timetable",
+          "airport"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sightseeing.n.1",
+      "lemma": "sightseeing",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsaɪtsiːɪŋ/",
+        "uk": "/ˈsaɪtsiːɪŋ/"
+      },
+      "def": {
+        "micro": "visiting famous places",
+        "short": "visiting famous places and buildings when you are on a trip",
+        "long": "The activity of visiting famous places, buildings, and other interesting things in a city or country, usually on a trip. It has no plural: 'We did some sightseeing.'"
+      },
+      "grammar": {
+        "pattern": "go sightseeing / do some sightseeing"
+      },
+      "examples": [
+        {
+          "en": "We went sightseeing in Istanbul all day.",
+          "tr": "Bütün gün İstanbul'u gezip gördük.",
+          "register": "neutral",
+          "focus": "sightseeing"
+        },
+        {
+          "en": "I don't like sightseeing when it's very hot.",
+          "tr": "Hava çok sıcakken gezip görmeyi sevmem.",
+          "register": "neutral",
+          "focus": "sightseeing"
+        },
+        {
+          "en": "There is a sightseeing bus that goes around the old town.",
+          "tr": "Eski şehri dolaşan bir şehir turu otobüsü var.",
+          "register": "neutral",
+          "focus": "sightseeing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go sightseeing",
+        "a sightseeing tour",
+        "do some sightseeing",
+        "a sightseeing bus"
+      ],
+      "word_family": [
+        {
+          "lemma": "sight",
+          "pos": "n"
+        },
+        {
+          "lemma": "sightseer",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "turistik gezi",
+          "alt": [
+            "gezip görme"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede tek kelimelik karşılığı yoktur: 'gezip görmek', 'turistik gezi'. 'Sightseeing' sayılamaz bir isimdir: 'go sightseeing' denir, 'a sightseeing' denmez.",
+          "mistakes": [
+            {
+              "wrong": "We went to sightseeing in Rome.",
+              "right": "We went sightseeing in Rome.",
+              "why": "'Gezmeye gittik' dendiği için 'to' eklenir; ama 'go sightseeing' kalıbında 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We love to see famous places, so we go ______ in every new city.",
+        "answer": "sightseeing",
+        "distractors": [
+          "packing",
+          "booking",
+          "commuting"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.customs.n.1",
+      "lemma": "customs",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "at the border",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌstəmz/",
+        "uk": "/ˈkʌstəmz/"
+      },
+      "def": {
+        "micro": "border check for bags",
+        "short": "the place at an airport or border where officers check your bags",
+        "long": "The place at an airport or border where officers check your bags for things you must not bring into a country or must pay tax on. You go through it after you land."
+      },
+      "grammar": {
+        "pattern": "go through customs (no 'the')"
+      },
+      "examples": [
+        {
+          "en": "We had to wait in line at customs for an hour.",
+          "tr": "Gümrükte bir saat sırada beklemek zorunda kaldık.",
+          "register": "neutral",
+          "focus": "customs"
+        },
+        {
+          "en": "Do you have anything to declare at customs?",
+          "tr": "Gümrükte beyan edecek bir şeyiniz var mı?",
+          "register": "formal",
+          "focus": "customs"
+        },
+        {
+          "en": "The customs officer opened my suitcase.",
+          "tr": "Gümrük memuru bavulumu açtı.",
+          "register": "neutral",
+          "focus": "customs"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "custom"
+      ],
+      "collocations": [
+        "go through customs",
+        "a customs officer",
+        "a customs check",
+        "clear customs",
+        "customs duty"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From 'custom'. In the past, 'customs' were the usual taxes that people paid to a ruler when goods came into a place.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "gümrük",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yer anlamında hep çoğul kullanılır: 'customs'. Tekil 'custom' ise gelenek demektir.",
+          "mistakes": [
+            {
+              "wrong": "We passed from the customs quickly.",
+              "right": "We went through customs quickly.",
+              "why": "'Gümrükten geçmek' = 'go through customs'. 'Pass from' denmez ve 'the' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After we landed, we went through ______ and showed our passports and bags.",
+        "answer": "customs",
+        "distractors": [
+          "traffic",
+          "elevator",
+          "highway"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.currency.n.1",
+      "lemma": "currency",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money of a country",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɜːrənsi/",
+        "uk": "/ˈkʌrənsi/"
+      },
+      "def": {
+        "micro": "money used in a country",
+        "short": "the type of money that a country uses, such as dollars or euros",
+        "long": "The type of money that a country uses, such as the lira, the dollar, or the euro. When you travel, you often change your money into the local one."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "What is the local currency in Japan?",
+          "tr": "Japonya'da yerel para birimi nedir?",
+          "register": "neutral",
+          "focus": "currency"
+        },
+        {
+          "en": "I need to change some money into foreign currency.",
+          "tr": "Biraz paramı dövize çevirmem gerekiyor.",
+          "register": "neutral",
+          "focus": "currency"
+        },
+        {
+          "en": "The euro is the currency of many European countries.",
+          "tr": "Euro, birçok Avrupa ülkesinin para birimidir.",
+          "register": "neutral",
+          "focus": "currency"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "local currency",
+        "foreign currency",
+        "exchange currency",
+        "currency exchange"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'currere' ('to run'). The word first meant 'flowing' or 'moving around', like money going from hand to hand.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "para birimi",
+          "alt": [
+            "döviz"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Döviz' yabancı para demektir (foreign currency); 'para birimi' bir ülkenin parasının adıdır (lira, euro). İngilizcede ikisi için de 'currency' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The local ______ in Japan is the yen.",
+        "answer": "currency",
+        "distractors": [
+          "language",
+          "weather",
+          "timetable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.layover.n.1",
+      "lemma": "layover",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈleɪoʊvər/",
+        "uk": "/ˈleɪəʊvə/"
+      },
+      "def": {
+        "micro": "wait between two flights",
+        "short": "a stop of some hours between two flights on one trip",
+        "long": "A stop of a few hours between two flights on the same trip. You get off the plane, wait at the airport, and then take your next flight."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "We have a four-hour layover in Frankfurt.",
+          "tr": "Frankfurt'ta dört saatlik bir aktarmamız var.",
+          "register": "neutral",
+          "focus": "layover"
+        },
+        {
+          "en": "It's a long layover, so we will have lunch at the airport.",
+          "tr": "Aktarma bekleme süresi uzun, o yüzden öğle yemeğini havalimanında yiyeceğiz.",
+          "register": "neutral",
+          "focus": "layover"
+        },
+        {
+          "en": "I prefer a short layover because I get tired.",
+          "tr": "Yorulduğum için kısa aktarma süresini tercih ederim.",
+          "register": "neutral",
+          "focus": "layover"
+        }
+      ],
+      "synonyms": [
+        "stopover"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a long layover",
+        "a short layover",
+        "a layover in",
+        "a four-hour layover",
+        "have a layover"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aktarma",
+          "alt": [
+            "transit bekleme"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'aktarma' hem bağlantılı uçuşu hem beklemeyi anlatır. 'Layover' yalnızca iki uçuş arasındaki bekleme süresidir. Daha çok ABD'de kullanılır; İngiltere'de 'stopover' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our flight to New York has a three-hour ______ in Istanbul.",
+        "answer": "layover",
+        "distractors": [
+          "souvenir",
+          "passport",
+          "luggage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "After we landed, we went through ______ and showed our passports and bags.", "answer": "customs", "distractors": ["traffic", "elevator", "highway"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.currency.n.1",
-  "lemma": "currency",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "money of a country",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈkɜːrənsi/", "uk": "/ˈkʌrənsi/"},
-  "def": {
-    "micro": "money used in a country",
-    "short": "the type of money that a country uses, such as dollars or euros",
-    "long": "The type of money that a country uses, such as the lira, the dollar, or the euro. When you travel, you often change your money into the local one."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "What is the local currency in Japan?", "tr": "Japonya'da yerel para birimi nedir?", "register": "neutral", "focus": "currency"},
-    {"en": "I need to change some money into foreign currency.", "tr": "Biraz paramı dövize çevirmem gerekiyor.", "register": "neutral", "focus": "currency"},
-    {"en": "The euro is the currency of many European countries.", "tr": "Euro, birçok Avrupa ülkesinin para birimidir.", "register": "neutral", "focus": "currency"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["local currency", "foreign currency", "exchange currency", "currency exchange"],
-  "word_family": [],
-  "etymology": {"text": "From Latin 'currere' ('to run'). The word first meant 'flowing' or 'moving around', like money going from hand to hand.", "origin": "Latin", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "para birimi",
-      "alt": ["döviz"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'Döviz' yabancı para demektir (foreign currency); 'para birimi' bir ülkenin parasının adıdır (lira, euro). İngilizcede ikisi için de 'currency' kullanılır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The local ______ in Japan is the yen.", "answer": "currency", "distractors": ["language", "weather", "timetable"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.layover.n.1",
-  "lemma": "layover",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈleɪoʊvər/", "uk": "/ˈleɪəʊvə/"},
-  "def": {
-    "micro": "wait between two flights",
-    "short": "a stop of some hours between two flights on one trip",
-    "long": "A stop of a few hours between two flights on the same trip. You get off the plane, wait at the airport, and then take your next flight."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "We have a four-hour layover in Frankfurt.", "tr": "Frankfurt'ta dört saatlik bir aktarmamız var.", "register": "neutral", "focus": "layover"},
-    {"en": "It's a long layover, so we will have lunch at the airport.", "tr": "Aktarma bekleme süresi uzun, o yüzden öğle yemeğini havalimanında yiyeceğiz.", "register": "neutral", "focus": "layover"},
-    {"en": "I prefer a short layover because I get tired.", "tr": "Yorulduğum için kısa aktarma süresini tercih ederim.", "register": "neutral", "focus": "layover"}
-  ],
-  "synonyms": ["stopover"],
-  "antonyms": [],
-  "collocations": ["a long layover", "a short layover", "a layover in", "a four-hour layover", "have a layover"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "aktarma",
-      "alt": ["transit bekleme"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'aktarma' hem bağlantılı uçuşu hem beklemeyi anlatır. 'Layover' yalnızca iki uçuş arasındaki bekleme süresidir. Daha çok ABD'de kullanılır; İngiltere'de 'stopover' denir.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Our flight to New York has a three-hour ______ in Istanbul.", "answer": "layover", "distractors": ["souvenir", "passport", "luggage"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

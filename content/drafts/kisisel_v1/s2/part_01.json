@@ -1,440 +1,1021 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.corner.n.1",
-  "lemma": "corner",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "where streets meet",
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈkɔːrnər/", "uk": "/ˈkɔːnə/"},
-  "def": {
-    "micro": "where two streets meet",
-    "short": "the place where two streets or two walls meet",
-    "long": "The place where two streets, walls, or sides of something meet. In a town, shops and cafés are often on a street corner."
-  },
-  "grammar": {"pattern": "on / at the corner of + street"},
-  "examples": [
-    {"en": "The bakery is on the next corner.", "tr": "Fırın bir sonraki köşede.", "register": "neutral", "focus": "corner"},
-    {"en": "Turn left at the corner, then walk to the end of the street.", "tr": "Köşeden sola dönün, sonra sokağın sonuna kadar yürüyün.", "register": "neutral", "focus": "corner"},
-    {"en": "Sam put the new lamp in the corner of the living room.", "tr": "Sam yeni lambayı oturma odasının köşesine koydu.", "register": "neutral", "focus": "corner"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["on the corner", "around the corner", "turn the corner", "the corner of the room", "corner shop"],
-  "word_family": [],
-  "etymology": {"text": "From Latin 'cornu' (horn, point) through Old French. A corner is a 'point' where two lines or walls meet.", "origin": "Latin", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "köşe",
-      "alt": ["köşebaşı"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Futboldaki 'korner' kelimesi de buradan gelir: corner kick = köşe vuruşu. Sokak köşesi için 'on the corner', oda köşesi için 'in the corner' denir.",
-      "mistakes": [
-        {"wrong": "The shop is in the corner of the street.", "right": "The shop is on the corner of the street.", "why": "Sokak köşesi dışarıdadır: 'on the corner'. 'In the corner' odanın veya kutunun iç köşesi için kullanılır."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.corner.n.1",
+      "lemma": "corner",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "where streets meet",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɔːrnər/",
+        "uk": "/ˈkɔːnə/"
+      },
+      "def": {
+        "micro": "where two streets meet",
+        "short": "the place where two streets or two walls meet",
+        "long": "The place where two streets, walls, or sides of something meet. In a town, shops and cafés are often on a street corner."
+      },
+      "grammar": {
+        "pattern": "on / at the corner of + street"
+      },
+      "examples": [
+        {
+          "en": "The bakery is on the next corner.",
+          "tr": "Fırın bir sonraki köşede.",
+          "register": "neutral",
+          "focus": "corner"
+        },
+        {
+          "en": "Turn left at the corner, then walk to the end of the street.",
+          "tr": "Köşeden sola dönün, sonra sokağın sonuna kadar yürüyün.",
+          "register": "neutral",
+          "focus": "corner"
+        },
+        {
+          "en": "Sam put the new lamp in the corner of the living room.",
+          "tr": "Sam yeni lambayı oturma odasının köşesine koydu.",
+          "register": "neutral",
+          "focus": "corner"
+        }
       ],
-      "mnemonic": "Futbolda 'korner' dersin ya: corner = köşe. Aynı kelime."
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport", "home_household"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The café is on the ______ of Park Street and Main Street.", "answer": "corner", "distractors": ["side", "middle", "floor"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.bridge.n.1",
-  "lemma": "bridge",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "over a river or road",
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/brɪdʒ/", "uk": "/brɪdʒ/"},
-  "def": {
-    "micro": "road over a river",
-    "short": "a structure that lets people or cars go across a river or road",
-    "long": "A structure built over a river, a road, or a railway so that people and cars can go across it. Many big cities have a famous bridge."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "The bridge is closed because of the snow.", "tr": "Köprü kar yüzünden kapalı.", "register": "neutral", "focus": "bridge"},
-    {"en": "We walked across the bridge to the old town.", "tr": "Köprüden yürüyerek karşıya geçip eski şehre gittik.", "register": "neutral", "focus": "bridge"},
-    {"en": "Traffic on the bridge is very slow in the morning.", "tr": "Köprüdeki trafik sabahları çok yavaş ilerliyor.", "register": "neutral", "focus": "bridge"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["cross a bridge", "over the bridge", "a stone bridge", "a toll bridge", "a suspension bridge"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "köprü",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Ünlü köprü adlarının başına çoğunlukla 'the' gelir: the Galata Bridge, the Bosphorus Bridge.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "You can walk across the ______ to the other side of the river.", "answer": "bridge", "distractors": ["tunnel", "corner", "bus"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.cross.v.1",
-  "lemma": "cross",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "go to the other side",
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/krɔːs/", "uk": "/krɒs/"},
-  "def": {
-    "micro": "go to the other side",
-    "short": "to go from one side of a street, river, or bridge to the other",
-    "long": "To go from one side of something to the other, for example a street, a river, or a bridge. Always look both ways before you cross a busy road."
-  },
-  "grammar": {"pattern": "cross + the street / a road / a bridge"},
-  "examples": [
-    {"en": "Look left and right before you cross the street.", "tr": "Karşıdan karşıya geçmeden önce sağa sola bak.", "register": "neutral", "focus": "cross"},
-    {"en": "The children crossed the bridge on their way to school.", "tr": "Çocuklar okula giderken köprüyü geçti.", "register": "neutral", "focus": "crossed"},
-    {"en": "We crossed the border into Bulgaria in the evening.", "tr": "Akşam Bulgaristan sınırını geçtik.", "register": "neutral", "focus": "crossed"}
-  ],
-  "synonyms": ["go across"],
-  "antonyms": [],
-  "collocations": ["cross the street", "cross the road", "cross a bridge", "cross the border"],
-  "word_family": [{"lemma": "crossing", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "karşıya geçmek",
-      "alt": ["geçmek"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'geçmek' hem 'cross' (karşıya geçmek) hem 'pass' (yanından geçmek) anlamına gelir. İngilizcede bunlar ayrıdır: cross = bir yandan öbür yana geçmek.",
-      "mistakes": [
-        {"wrong": "Be careful when you pass the road.", "right": "Be careful when you cross the road.", "why": "Yolun karşısına geçmek 'cross'tur. 'Pass' yanından geçip gitmek içindir (pass the bank)."}
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the corner",
+        "around the corner",
+        "turn the corner",
+        "the corner of the room",
+        "corner shop"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Please ______ the street at the traffic lights.", "answer": "cross", "distractors": ["pass", "arrive", "wait"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.street.n.1",
-  "lemma": "street",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/striːt/", "uk": "/striːt/"},
-  "def": {
-    "micro": "road with buildings",
-    "short": "a road in a town or city with houses or shops along it",
-    "long": "A public road in a town or city, with houses, shops, or offices on one or both sides. A 'road' often goes between places, but this word is usually inside a town."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Our street is quiet at night.", "tr": "Sokağımız geceleri sessiz.", "register": "neutral", "focus": "street"},
-    {"en": "She lives on Gül Street, near the park.", "tr": "Gül Sokak'ta, parkın yakınında oturuyor.", "register": "neutral", "focus": "Street"},
-    {"en": "The street was full of people and music.", "tr": "Sokak insanlarla ve müzikle doluydu.", "register": "neutral", "focus": "street"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["on the street", "cross the street", "a busy street", "street food", "main street"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "sokak",
-      "alt": ["cadde"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede dar yol 'sokak', geniş yol 'cadde' olur; İngilizcede 'street' ikisini de karşılar. 'Road' ise daha çok iki yeri birbirine bağlayan yoldur.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "cities_transport", "topics": ["cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Our house is on a quiet ______ near the park.", "answer": "street", "distractors": ["bridge", "station", "tunnel"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.cloudy.adj.1",
-  "lemma": "cloudy",
-  "type": "word",
-  "pos": "adj",
-  "sense_no": 1,
-  "sense_note": "weather",
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈklaʊdi/", "uk": "/ˈklaʊdi/"},
-  "def": {
-    "micro": "not clear or sunny",
-    "short": "when the sky is covered and you cannot see much sun",
-    "long": "Used when the sky is covered with grey or white clouds and you cannot see much sun. A day like this is often cooler than a sunny day."
-  },
-  "grammar": {"pattern": "It is cloudy."},
-  "examples": [
-    {"en": "It is cloudy today, but it is not cold.", "tr": "Bugün hava bulutlu ama soğuk değil.", "register": "neutral", "focus": "cloudy"},
-    {"en": "Tomorrow will be cloudy, with some rain in the evening.", "tr": "Yarın hava bulutlu olacak, akşam biraz yağmur bekleniyor.", "register": "neutral", "focus": "cloudy"}
-  ],
-  "synonyms": ["overcast"],
-  "antonyms": ["sunny", "clear"],
-  "collocations": ["a cloudy day", "a cloudy sky", "partly cloudy", "mostly cloudy"],
-  "word_family": [{"lemma": "cloud", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bulutlu",
-      "alt": ["kapalı"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Hava durumunda 'hava bulutlu / kapalı' denir. İngilizcede 'hava' kelimesini çevirmeyin: 'It is cloudy.' deyin.",
-      "mistakes": [
-        {"wrong": "Today weather is cloudy.", "right": "The weather is cloudy today. / It is cloudy today.", "why": "'Weather' önünde 'the' ister; en kolayı 'It is cloudy today.' demektir."}
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'cornu' (horn, point) through Old French. A corner is a 'point' where two lines or walls meet.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "köşe",
+          "alt": [
+            "köşebaşı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Futboldaki 'korner' kelimesi de buradan gelir: corner kick = köşe vuruşu. Sokak köşesi için 'on the corner', oda köşesi için 'in the corner' denir.",
+          "mistakes": [
+            {
+              "wrong": "The shop is in the corner of the street.",
+              "right": "The shop is on the corner of the street.",
+              "why": "Sokak köşesi dışarıdadır: 'on the corner'. 'In the corner' odanın veya kutunun iç köşesi için kullanılır."
+            }
+          ],
+          "mnemonic": "Futbolda 'korner' dersin ya: corner = köşe. Aynı kelime."
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The café is on the ______ of Park Street and Main Street.",
+        "answer": "corner",
+        "distractors": [
+          "side",
+          "middle",
+          "floor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bridge.n.1",
+      "lemma": "bridge",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "over a river or road",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/brɪdʒ/",
+        "uk": "/brɪdʒ/"
+      },
+      "def": {
+        "micro": "road over a river",
+        "short": "a structure that lets people or cars go across a river or road",
+        "long": "A structure built over a river, a road, or a railway so that people and cars can go across it. Many big cities have a famous bridge."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "The bridge is closed because of the snow.",
+          "tr": "Köprü kar yüzünden kapalı.",
+          "register": "neutral",
+          "focus": "bridge"
+        },
+        {
+          "en": "We walked across the bridge to the old town.",
+          "tr": "Köprüden yürüyerek karşıya geçip eski şehre gittik.",
+          "register": "neutral",
+          "focus": "bridge"
+        },
+        {
+          "en": "Traffic on the bridge is very slow in the morning.",
+          "tr": "Köprüdeki trafik sabahları çok yavaş ilerliyor.",
+          "register": "neutral",
+          "focus": "bridge"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I can't see the sun. The sky is ______.", "answer": "cloudy", "distractors": ["sunny", "hot", "dry"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.windy.adj.1",
-  "lemma": "windy",
-  "type": "word",
-  "pos": "adj",
-  "sense_no": 1,
-  "sense_note": "weather",
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈwɪndi/", "uk": "/ˈwɪndi/"},
-  "def": {
-    "micro": "with fast-moving air",
-    "short": "when the air outside moves fast and strongly",
-    "long": "Used when the air outside moves fast and strongly. On a day like this, hats can fly away and the sea can be rough."
-  },
-  "grammar": {"pattern": "It is windy."},
-  "examples": [
-    {"en": "It is very windy today, so take a jacket.", "tr": "Bugün hava çok rüzgârlı, o yüzden mont al.", "register": "neutral", "focus": "windy"},
-    {"en": "Istanbul can be cold and windy in March.", "tr": "İstanbul mart ayında soğuk ve rüzgârlı olabilir.", "register": "neutral", "focus": "windy"}
-  ],
-  "synonyms": [],
-  "antonyms": ["calm"],
-  "collocations": ["a windy day", "windy weather", "cold and windy", "windy outside"],
-  "word_family": [{"lemma": "wind", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "rüzgârlı",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "'Rüzgâr' isimdir (wind), 'rüzgârlı' sıfattır (windy). 'Breezy' daha hafif, tatlı bir rüzgâr demektir.",
-      "mistakes": [
-        {"wrong": "Today is very wind.", "right": "It is very windy today.", "why": "İsim (wind) yerine sıfat gerekir: windy. Havadan söz ederken özne 'it' olur."}
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cross a bridge",
+        "over the bridge",
+        "a stone bridge",
+        "a toll bridge",
+        "a suspension bridge"
       ],
-      "mnemonic": "Wind + y = windy. Hava sıfatlarının çoğu böyle: rain → rainy, cloud → cloudy, sun → sunny."
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Hold your hat! It is very ______ today.", "answer": "windy", "distractors": ["snowy", "foggy", "dry"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.autumn.n.1",
-  "lemma": "autumn",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈɔːtəm/", "uk": "/ˈɔːtəm/"},
-  "def": {
-    "micro": "season before winter",
-    "short": "the season between summer and winter, when leaves fall",
-    "long": "The season between summer and winter, from September to November in many countries. The weather gets cooler and the leaves fall from the trees."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I love walking in the park in autumn.", "tr": "Sonbaharda parkta yürümeyi çok severim.", "register": "neutral", "focus": "autumn"},
-    {"en": "Autumn is my favorite season because it is not too hot.", "tr": "Sonbahar en sevdiğim mevsim, çünkü çok sıcak olmuyor.", "register": "neutral", "focus": "Autumn"},
-    {"en": "In autumn, the days get shorter and the nights get longer.", "tr": "Sonbaharda günler kısalır, geceler uzar.", "register": "neutral", "focus": "autumn"}
-  ],
-  "synonyms": ["fall"],
-  "antonyms": [],
-  "collocations": ["in autumn", "autumn leaves", "autumn colors", "early autumn", "autumn weather"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "sonbahar",
-      "alt": ["güz"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Okunuşu 'otım' gibidir; sondaki 'n' okunmaz. Amerikan İngilizcesinde 'fall' da denir. Mevsim adları küçük harfle yazılır.",
-      "mistakes": [],
-      "mnemonic": "'Autumn' sonundaki 'n' sonbaharda yaprak gibi düşer: yazılır ama okunmaz."
-    }
-  },
-  "tags": {"primary_topic": "weather_seasons", "topics": ["weather_seasons", "time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The leaves turn red and yellow in ______.", "answer": "autumn", "distractors": ["summer", "spring", "winter"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.weekend.n.1",
-  "lemma": "weekend",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈwiːkɛnd/", "uk": "/ˌwiːkˈɛnd/"},
-  "def": {
-    "micro": "Saturday and Sunday",
-    "short": "Saturday and Sunday, the days when many people do not work",
-    "long": "Saturday and Sunday, when many people do not go to work or school. In some countries, the days off are different, for example Friday and Saturday."
-  },
-  "grammar": {"pattern": "at / on / over the weekend"},
-  "examples": [
-    {"en": "What are you doing this weekend?", "tr": "Bu hafta sonu ne yapıyorsun?", "register": "neutral", "focus": "weekend"},
-    {"en": "We usually visit my grandmother at the weekend.", "tr": "Hafta sonları genellikle büyükannemi ziyaret ederiz.", "register": "neutral", "focus": "weekend"},
-    {"en": "Have a nice weekend!", "tr": "İyi hafta sonları!", "register": "neutral", "focus": "weekend"}
-  ],
-  "synonyms": [],
-  "antonyms": ["weekday"],
-  "collocations": ["this weekend", "at the weekend", "over the weekend", "a long weekend", "weekend plans"],
-  "word_family": [{"lemma": "weekday", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "hafta sonu",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Türkçedeki 'vikend' de buradan gelir. 'At the weekend' İngiltere'de, 'on the weekend' ABD'de daha yaygındır.",
-      "mistakes": [
-        {"wrong": "I will visit them in the weekend.", "right": "I will visit them at the weekend.", "why": "'Hafta sonunda' için 'in' kullanmayın: 'at the weekend' (İngiltere) veya 'on the weekend' (ABD) denir."}
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "köprü",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ünlü köprü adlarının başına çoğunlukla 'the' gelir: the Galata Bridge, the Bosphorus Bridge.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can walk across the ______ to the other side of the river.",
+        "answer": "bridge",
+        "distractors": [
+          "tunnel",
+          "corner",
+          "bus"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cross.v.1",
+      "lemma": "cross",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go to the other side",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/krɔːs/",
+        "uk": "/krɒs/"
+      },
+      "def": {
+        "micro": "go to the other side",
+        "short": "to go from one side of a street, river, or bridge to the other",
+        "long": "To go from one side of something to the other, for example a street, a river, or a bridge. Always look both ways before you cross a busy road."
+      },
+      "grammar": {
+        "pattern": "cross + the street / a road / a bridge"
+      },
+      "examples": [
+        {
+          "en": "Look left and right before you cross the street.",
+          "tr": "Karşıdan karşıya geçmeden önce sağa sola bak.",
+          "register": "neutral",
+          "focus": "cross"
+        },
+        {
+          "en": "The children crossed the bridge on their way to school.",
+          "tr": "Çocuklar okula giderken köprüyü geçti.",
+          "register": "neutral",
+          "focus": "crossed"
+        },
+        {
+          "en": "We crossed the border into Bulgaria in the evening.",
+          "tr": "Akşam Bulgaristan sınırını geçtik.",
+          "register": "neutral",
+          "focus": "crossed"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines", "hobbies_sports"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I don't work on Saturday or Sunday. I rest at the ______.", "answer": "weekend", "distractors": ["weekday", "night", "month"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.tonight.adv.1",
-  "lemma": "tonight",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": "this evening or night",
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/təˈnaɪt/", "uk": "/təˈnaɪt/"},
-  "def": {
-    "micro": "this evening or night",
-    "short": "later today, in the evening or at night",
-    "long": "The evening or the night of today. People use it for plans and for things that happen later today: 'Are you free tonight?'"
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "Are you free tonight?", "tr": "Bu akşam müsait misin?", "register": "neutral", "focus": "tonight"},
-    {"en": "I'm tired, so I'm going to bed early tonight.", "tr": "Yorgunum, o yüzden bu gece erken yatacağım.", "register": "neutral", "focus": "tonight"},
-    {"en": "There is a football match on TV tonight.", "tr": "Bu akşam televizyonda maç var.", "register": "neutral", "focus": "tonight"}
-  ],
-  "synonyms": ["this evening"],
-  "antonyms": [],
-  "collocations": ["tonight at eight", "see you tonight", "later tonight", "what's on tonight"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "bu akşam",
-      "alt": ["bu gece"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'Tonight' hem 'bu akşam' hem 'bu gece' demektir. 'This night' denmez; tek kelime olan 'tonight' kullanılır.",
-      "mistakes": [
-        {"wrong": "I will study this night.", "right": "I will study tonight.", "why": "'Bu gece / bu akşam' için tek kelime 'tonight' kullanılır; 'this night' doğal değildir."}
+      "synonyms": [
+        "go across"
       ],
-      "mnemonic": "'Today', 'tonight', 'tomorrow' üçlüsü: hepsi 'to' ile başlar. Bugün, bu akşam, yarın."
-    }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I have a big exam tomorrow, so I will study ______.", "answer": "tonight", "distractors": ["yesterday", "already", "last week"]},
-  "meta": {"status": "draft", "qa_flags": ["mnemonic_added"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.ago.adv.1",
-  "lemma": "ago",
-  "type": "word",
-  "pos": "adv",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "A1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/əˈɡoʊ/", "uk": "/əˈɡəʊ/"},
-  "def": {
-    "micro": "before now",
-    "short": "used after a time to say how long before now something happened",
-    "long": "Used after a length of time to say how long before now something happened. It goes after the time words and takes the past simple: two days ago."
-  },
-  "grammar": {"pattern": "time + ago (+ past simple)"},
-  "examples": [
-    {"en": "We moved here two years ago.", "tr": "Buraya iki yıl önce taşındık.", "register": "neutral", "focus": "ago"},
-    {"en": "She called me ten minutes ago.", "tr": "Beni on dakika önce aradı.", "register": "neutral", "focus": "ago"},
-    {"en": "A long time ago, there was a small bakery here.", "tr": "Uzun zaman önce burada küçük bir fırın vardı.", "register": "neutral", "focus": "ago"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["two days ago", "a week ago", "years ago", "long ago", "a long time ago"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "önce",
-      "alt": [],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'iki yıl önce' dersiniz. İngilizcede 'ago' sayıdan sonra gelir ve 'before' kullanılmaz: two years ago. Cümle geçmiş zamanla kurulur.",
-      "mistakes": [
-        {"wrong": "I met her before two years.", "right": "I met her two years ago.", "why": "'İki yıl önce' diye düşünüp 'before' demeyin. Geçmişte geçen süre için sayıdan sonra 'ago' gelir: two years ago."},
-        {"wrong": "I have met her two years ago.", "right": "I met her two years ago.", "why": "'Ago' ile bitmiş bir zaman söylendiği için 'have met' değil, geçmiş zaman (met) kullanılır."}
+      "antonyms": [],
+      "collocations": [
+        "cross the street",
+        "cross the road",
+        "cross a bridge",
+        "cross the border"
       ],
-      "mnemonic": null
+      "word_family": [
+        {
+          "lemma": "crossing",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karşıya geçmek",
+          "alt": [
+            "geçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'geçmek' hem 'cross' (karşıya geçmek) hem 'pass' (yanından geçmek) anlamına gelir. İngilizcede bunlar ayrıdır: cross = bir yandan öbür yana geçmek.",
+          "mistakes": [
+            {
+              "wrong": "Be careful when you pass the road.",
+              "right": "Be careful when you cross the road.",
+              "why": "Yolun karşısına geçmek 'cross'tur. 'Pass' yanından geçip gitmek içindir (pass the bank)."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ the street at the traffic lights.",
+        "answer": "cross",
+        "distractors": [
+          "pass",
+          "arrive",
+          "wait"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.street.n.1",
+      "lemma": "street",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/striːt/",
+        "uk": "/striːt/"
+      },
+      "def": {
+        "micro": "road with buildings",
+        "short": "a road in a town or city with houses or shops along it",
+        "long": "A public road in a town or city, with houses, shops, or offices on one or both sides. A 'road' often goes between places, but this word is usually inside a town."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Our street is quiet at night.",
+          "tr": "Sokağımız geceleri sessiz.",
+          "register": "neutral",
+          "focus": "street"
+        },
+        {
+          "en": "She lives on Gül Street, near the park.",
+          "tr": "Gül Sokak'ta, parkın yakınında oturuyor.",
+          "register": "neutral",
+          "focus": "Street"
+        },
+        {
+          "en": "The street was full of people and music.",
+          "tr": "Sokak insanlarla ve müzikle doluydu.",
+          "register": "neutral",
+          "focus": "street"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the street",
+        "cross the street",
+        "a busy street",
+        "street food",
+        "main street"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sokak",
+          "alt": [
+            "cadde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede dar yol 'sokak', geniş yol 'cadde' olur; İngilizcede 'street' ikisini de karşılar. 'Road' ise daha çok iki yeri birbirine bağlayan yoldur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our house is on a quiet ______ near the park.",
+        "answer": "street",
+        "distractors": [
+          "bridge",
+          "station",
+          "tunnel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cloudy.adj.1",
+      "lemma": "cloudy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "weather",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈklaʊdi/",
+        "uk": "/ˈklaʊdi/"
+      },
+      "def": {
+        "micro": "not clear or sunny",
+        "short": "when the sky is covered and you cannot see much sun",
+        "long": "Used when the sky is covered with grey or white clouds and you cannot see much sun. A day like this is often cooler than a sunny day."
+      },
+      "grammar": {
+        "pattern": "It is cloudy."
+      },
+      "examples": [
+        {
+          "en": "It is cloudy today, but it is not cold.",
+          "tr": "Bugün hava bulutlu ama soğuk değil.",
+          "register": "neutral",
+          "focus": "cloudy"
+        },
+        {
+          "en": "Tomorrow will be cloudy, with some rain in the evening.",
+          "tr": "Yarın hava bulutlu olacak, akşam biraz yağmur bekleniyor.",
+          "register": "neutral",
+          "focus": "cloudy"
+        }
+      ],
+      "synonyms": [
+        "overcast"
+      ],
+      "antonyms": [
+        "sunny",
+        "clear"
+      ],
+      "collocations": [
+        "a cloudy day",
+        "a cloudy sky",
+        "partly cloudy",
+        "mostly cloudy"
+      ],
+      "word_family": [
+        {
+          "lemma": "cloud",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bulutlu",
+          "alt": [
+            "kapalı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hava durumunda 'hava bulutlu / kapalı' denir. İngilizcede 'hava' kelimesini çevirmeyin: 'It is cloudy.' deyin.",
+          "mistakes": [
+            {
+              "wrong": "Today weather is cloudy.",
+              "right": "The weather is cloudy today. / It is cloudy today.",
+              "why": "'Weather' önünde 'the' ister; en kolayı 'It is cloudy today.' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't see the sun. The sky is ______.",
+        "answer": "cloudy",
+        "distractors": [
+          "sunny",
+          "hot",
+          "dry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.windy.adj.1",
+      "lemma": "windy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "weather",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɪndi/",
+        "uk": "/ˈwɪndi/"
+      },
+      "def": {
+        "micro": "with fast-moving air",
+        "short": "when the air outside moves fast and strongly",
+        "long": "Used when the air outside moves fast and strongly. On a day like this, hats can fly away and the sea can be rough."
+      },
+      "grammar": {
+        "pattern": "It is windy."
+      },
+      "examples": [
+        {
+          "en": "It is very windy today, so take a jacket.",
+          "tr": "Bugün hava çok rüzgârlı, o yüzden mont al.",
+          "register": "neutral",
+          "focus": "windy"
+        },
+        {
+          "en": "Istanbul can be cold and windy in March.",
+          "tr": "İstanbul mart ayında soğuk ve rüzgârlı olabilir.",
+          "register": "neutral",
+          "focus": "windy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "calm"
+      ],
+      "collocations": [
+        "a windy day",
+        "windy weather",
+        "cold and windy",
+        "windy outside"
+      ],
+      "word_family": [
+        {
+          "lemma": "wind",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rüzgârlı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Rüzgâr' isimdir (wind), 'rüzgârlı' sıfattır (windy). 'Breezy' daha hafif, tatlı bir rüzgâr demektir.",
+          "mistakes": [
+            {
+              "wrong": "Today is very wind.",
+              "right": "It is very windy today.",
+              "why": "İsim (wind) yerine sıfat gerekir: windy. Havadan söz ederken özne 'it' olur."
+            }
+          ],
+          "mnemonic": "Wind + y = windy. Hava sıfatlarının çoğu böyle: rain → rainy, cloud → cloudy, sun → sunny."
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hold your hat! It is very ______ today.",
+        "answer": "windy",
+        "distractors": [
+          "snowy",
+          "foggy",
+          "dry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.autumn.n.1",
+      "lemma": "autumn",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːtəm/",
+        "uk": "/ˈɔːtəm/"
+      },
+      "def": {
+        "micro": "season before winter",
+        "short": "the season between summer and winter, when leaves fall",
+        "long": "The season between summer and winter, from September to November in many countries. The weather gets cooler and the leaves fall from the trees."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I love walking in the park in autumn.",
+          "tr": "Sonbaharda parkta yürümeyi çok severim.",
+          "register": "neutral",
+          "focus": "autumn"
+        },
+        {
+          "en": "Autumn is my favorite season because it is not too hot.",
+          "tr": "Sonbahar en sevdiğim mevsim, çünkü çok sıcak olmuyor.",
+          "register": "neutral",
+          "focus": "Autumn"
+        },
+        {
+          "en": "In autumn, the days get shorter and the nights get longer.",
+          "tr": "Sonbaharda günler kısalır, geceler uzar.",
+          "register": "neutral",
+          "focus": "autumn"
+        }
+      ],
+      "synonyms": [
+        "fall"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in autumn",
+        "autumn leaves",
+        "autumn colors",
+        "early autumn",
+        "autumn weather"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonbahar",
+          "alt": [
+            "güz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Okunuşu 'otım' gibidir; sondaki 'n' okunmaz. Amerikan İngilizcesinde 'fall' da denir. Mevsim adları küçük harfle yazılır.",
+          "mistakes": [],
+          "mnemonic": "'Autumn' sonundaki 'n' sonbaharda yaprak gibi düşer: yazılır ama okunmaz."
+        }
+      },
+      "tags": {
+        "primary_topic": "weather_seasons",
+        "topics": [
+          "weather_seasons",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The leaves turn red and yellow in ______.",
+        "answer": "autumn",
+        "distractors": [
+          "summer",
+          "spring",
+          "winter"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.weekend.n.1",
+      "lemma": "weekend",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwiːkɛnd/",
+        "uk": "/ˌwiːkˈɛnd/"
+      },
+      "def": {
+        "micro": "Saturday and Sunday",
+        "short": "Saturday and Sunday, the days when many people do not work",
+        "long": "Saturday and Sunday, when many people do not go to work or school. In some countries, the days off are different, for example Friday and Saturday."
+      },
+      "grammar": {
+        "pattern": "at / on / over the weekend"
+      },
+      "examples": [
+        {
+          "en": "What are you doing this weekend?",
+          "tr": "Bu hafta sonu ne yapıyorsun?",
+          "register": "neutral",
+          "focus": "weekend"
+        },
+        {
+          "en": "We usually visit my grandmother at the weekend.",
+          "tr": "Hafta sonları genellikle büyükannemi ziyaret ederiz.",
+          "register": "neutral",
+          "focus": "weekend"
+        },
+        {
+          "en": "Have a nice weekend!",
+          "tr": "İyi hafta sonları!",
+          "register": "neutral",
+          "focus": "weekend"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "weekday"
+      ],
+      "collocations": [
+        "this weekend",
+        "at the weekend",
+        "over the weekend",
+        "a long weekend",
+        "weekend plans"
+      ],
+      "word_family": [
+        {
+          "lemma": "weekday",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hafta sonu",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'vikend' de buradan gelir. 'At the weekend' İngiltere'de, 'on the weekend' ABD'de daha yaygındır.",
+          "mistakes": [
+            {
+              "wrong": "I will visit them in the weekend.",
+              "right": "I will visit them at the weekend.",
+              "why": "'Hafta sonunda' için 'in' kullanmayın: 'at the weekend' (İngiltere) veya 'on the weekend' (ABD) denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't work on Saturday or Sunday. I rest at the ______.",
+        "answer": "weekend",
+        "distractors": [
+          "weekday",
+          "night",
+          "month"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tonight.adv.1",
+      "lemma": "tonight",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "this evening or night",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/təˈnaɪt/",
+        "uk": "/təˈnaɪt/"
+      },
+      "def": {
+        "micro": "this evening or night",
+        "short": "later today, in the evening or at night",
+        "long": "The evening or the night of today. People use it for plans and for things that happen later today: 'Are you free tonight?'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Are you free tonight?",
+          "tr": "Bu akşam müsait misin?",
+          "register": "neutral",
+          "focus": "tonight"
+        },
+        {
+          "en": "I'm tired, so I'm going to bed early tonight.",
+          "tr": "Yorgunum, o yüzden bu gece erken yatacağım.",
+          "register": "neutral",
+          "focus": "tonight"
+        },
+        {
+          "en": "There is a football match on TV tonight.",
+          "tr": "Bu akşam televizyonda maç var.",
+          "register": "neutral",
+          "focus": "tonight"
+        }
+      ],
+      "synonyms": [
+        "this evening"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "tonight at eight",
+        "see you tonight",
+        "later tonight",
+        "what's on tonight"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu akşam",
+          "alt": [
+            "bu gece"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Tonight' hem 'bu akşam' hem 'bu gece' demektir. 'This night' denmez; tek kelime olan 'tonight' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I will study this night.",
+              "right": "I will study tonight.",
+              "why": "'Bu gece / bu akşam' için tek kelime 'tonight' kullanılır; 'this night' doğal değildir."
+            }
+          ],
+          "mnemonic": "'Today', 'tonight', 'tomorrow' üçlüsü: hepsi 'to' ile başlar. Bugün, bu akşam, yarın."
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a big exam tomorrow, so I will study ______.",
+        "answer": "tonight",
+        "distractors": [
+          "yesterday",
+          "already",
+          "last week"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ago.adv.1",
+      "lemma": "ago",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈɡoʊ/",
+        "uk": "/əˈɡəʊ/"
+      },
+      "def": {
+        "micro": "before now",
+        "short": "used after a time to say how long before now something happened",
+        "long": "Used after a length of time to say how long before now something happened. It goes after the time words and takes the past simple: two days ago."
+      },
+      "grammar": {
+        "pattern": "time + ago (+ past simple)"
+      },
+      "examples": [
+        {
+          "en": "We moved here two years ago.",
+          "tr": "Buraya iki yıl önce taşındık.",
+          "register": "neutral",
+          "focus": "ago"
+        },
+        {
+          "en": "She called me ten minutes ago.",
+          "tr": "Beni on dakika önce aradı.",
+          "register": "neutral",
+          "focus": "ago"
+        },
+        {
+          "en": "A long time ago, there was a small bakery here.",
+          "tr": "Uzun zaman önce burada küçük bir fırın vardı.",
+          "register": "neutral",
+          "focus": "ago"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "before"
+      ],
+      "collocations": [
+        "two days ago",
+        "a week ago",
+        "years ago",
+        "long ago",
+        "a long time ago"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önce",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'iki yıl önce' dersiniz. İngilizcede 'ago' sayıdan sonra gelir ve 'before' kullanılmaz: two years ago. Cümle geçmiş zamanla kurulur.",
+          "mistakes": [
+            {
+              "wrong": "I met her before two years.",
+              "right": "I met her two years ago.",
+              "why": "'İki yıl önce' diye düşünüp 'before' demeyin. Geçmişte geçen süre için sayıdan sonra 'ago' gelir: two years ago."
+            },
+            {
+              "wrong": "I have met her two years ago.",
+              "right": "I met her two years ago.",
+              "why": "'Ago' ile bitmiş bir zaman söylendiği için 'have met' değil, geçmiş zaman (met) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We met in Ankara two years ______.",
+        "answer": "ago",
+        "distractors": [
+          "before",
+          "last",
+          "past"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "time_routines", "topics": ["time_routines"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "We met in Ankara two years ______.", "answer": "ago", "distractors": ["before", "last", "past"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }

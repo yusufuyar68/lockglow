@@ -74,6 +74,7 @@
       "l1": {
         "tr": {
           "gloss": "büyükanne veya büyükbaba",
+          "gloss_short": "dede ya da nine",
           "alt": [],
           "equivalence": "partial",
           "false_friend": null,
@@ -676,6 +677,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "niece"
+      ],
       "collocations": [
         "my nephew",
         "two nephews",
@@ -777,6 +781,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
+      "confusables": [
+        "nephew"
+      ],
       "collocations": [
         "my niece",
         "a niece and a nephew",
@@ -1025,7 +1032,7 @@
         "register": "neutral",
         "vibes": [],
         "flags": [],
-        "sensitivity": 0
+        "sensitivity": 1
       },
       "quiz": {
         "cloze": "After ten years of marriage, they decided to ______.",

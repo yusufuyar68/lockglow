@@ -1,975 +1,995 @@
 {
- "schema_version": "1.0",
- "l1_langs": [
-  "tr"
- ],
- "generated_on": "2026-10-12",
- "entries": [
-  {
-   "id": "en.work.n.1",
-   "lemma": "work",
-   "type": "word",
-   "pos": "n",
-   "sense_no": 1,
-   "sense_note": "tasks, uncountable",
-   "level": "A2",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/wɜːrk/",
-    "uk": "/wɜːk/"
-   },
-   "def": {
-    "micro": "tasks you do for a job",
-    "short": "the things you do at your job or school, or the effort you put in",
-    "long": "The activity of doing tasks, usually at a job or at school. It is uncountable: say 'a lot of work' or 'some work', never 'works' or 'a work'."
-   },
-   "grammar": {
-    "pattern": "a lot of work / go to work"
-   },
-   "examples": [
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-12",
+  "entries": [
     {
-     "en": "I have a lot of work today.",
-     "tr": "Bugün çok işim var.",
-     "register": "neutral",
-     "focus": "work"
-    },
-    {
-     "en": "She goes to work by bus.",
-     "tr": "İşe otobüsle gidiyor.",
-     "register": "neutral",
-     "focus": "work"
-    },
-    {
-     "en": "Great work, everyone! See you tomorrow.",
-     "tr": "Harika iş çıkardınız, arkadaşlar! Yarın görüşürüz.",
-     "register": "neutral",
-     "focus": "work"
-    }
-   ],
-   "synonyms": [
-    "labor"
-   ],
-   "antonyms": [
-    "rest",
-    "play"
-   ],
-   "collocations": [
-    "go to work",
-    "hard work",
-    "a lot of work",
-    "paid work",
-    "at work"
-   ],
-   "word_family": [
-    {
-     "lemma": "worker",
-     "pos": "n"
-    },
-    {
-     "lemma": "work",
-     "pos": "v"
-    }
-   ],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "iş",
-     "alt": [
-      "çalışma",
-      "emek"
-     ],
-     "equivalence": "partial",
-     "false_friend": null,
-     "note": "'Work' sayılamaz: 'a work' ya da 'works' demeyiz (sanat eseri anlamı hariç: 'a work of art'). İş yeri ya da meslek için 'job' kullanılır.",
-     "mistakes": [
-      {
-       "wrong": "I have many works to do.",
-       "right": "I have a lot of work to do.",
-       "why": "'Work' sayılamaz; çoğul eki almaz ve 'many' yerine 'a lot of / much' ile gelir."
+      "id": "en.work.n.1",
+      "lemma": "work",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "tasks, uncountable",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɜːrk/",
+        "uk": "/wɜːk/"
       },
-      {
-       "wrong": "What is your work? (= mesleğin)",
-       "right": "What is your job? / What do you do?",
-       "why": "Meslek sormak için 'job' ya da 'What do you do?' kullanılır; 'work' yapılan işi genel olarak anlatır."
-      }
-     ],
-     "mnemonic": null
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "uncountable",
-     "confusable:job"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "I can't come out tonight. I have too much ______ to do.",
-    "answer": "work",
-    "distractors": [
-     "job",
-     "works",
-     "tasks"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": [
-     "critic_edited"
-    ],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  },
-  {
-   "id": "en.trip.n.1",
-   "lemma": "trip",
-   "type": "word",
-   "pos": "n",
-   "sense_no": 1,
-   "sense_note": "short journey",
-   "level": "A2",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/trɪp/",
-    "uk": "/trɪp/"
-   },
-   "def": {
-    "micro": "a short journey to a place",
-    "short": "a journey to a place and back again, for fun or work",
-    "long": "A journey to a place and back again, usually for a short time, for pleasure or for work. A trip can last a day or a few days."
-   },
-   "grammar": {
-    "pattern": "a trip to + place"
-   },
-   "examples": [
-    {
-     "en": "We took a day trip to the lake.",
-     "tr": "Göle günübirlik bir gezi yaptık.",
-     "register": "neutral",
-     "focus": "trip"
-    },
-    {
-     "en": "How was your trip to Izmir?",
-     "tr": "İzmir gezin nasıldı?",
-     "register": "neutral",
-     "focus": "trip"
-    },
-    {
-     "en": "He is away on a business trip this week.",
-     "tr": "Bu hafta iş gezisinde.",
-     "register": "neutral",
-     "focus": "trip"
-    }
-   ],
-   "synonyms": [
-    "journey",
-    "outing"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "a day trip",
-    "a business trip",
-    "a road trip",
-    "go on a trip",
-    "a school trip"
-   ],
-   "word_family": [],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "gezi",
-     "alt": [
-      "seyahat",
-      "yolculuk"
-     ],
-     "equivalence": "partial",
-     "false_friend": null,
-     "note": "'Trip' = gidip dönülen kısa gezi ya da yolculuk. 'Travel' sayılamaz ve genel olarak seyahat etmeyi anlatır. Fiil olarak 'trip' ise 'takılıp düşmek' demektir.",
-     "mistakes": [
-      {
-       "wrong": "I made a travel to Antalya.",
-       "right": "I took a trip to Antalya.",
-       "why": "'Gezi yapmak' için 'take / go on a trip' denir; 'travel' sayılamaz, 'a travel' denmez."
+      "def": {
+        "micro": "tasks you do for a job",
+        "short": "the things you do at your job or school, or the effort you put in",
+        "long": "The activity of doing tasks, usually at a job or at school. It is uncountable: say 'a lot of work' or 'some work', never 'works' or 'a work'."
       },
-      {
-       "wrong": "Have a nice travel!",
-       "right": "Have a nice trip!",
-       "why": "Yolcu uğurlarken 'Have a nice trip!' denir; 'travel' bu kalıpta kullanılmaz."
-      }
-     ],
-     "mnemonic": null
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words",
-     "travel_tourism"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "confusable:travel"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "We're planning a weekend ______ to the mountains.",
-    "answer": "trip",
-    "distractors": [
-     "travel",
-     "lesson",
-     "price"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": [],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  },
-  {
-   "id": "en.travel.v.1",
-   "lemma": "travel",
-   "type": "word",
-   "pos": "v",
-   "sense_no": 1,
-   "sense_note": "go to places",
-   "level": "A2",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/ˈtrævəl/",
-    "uk": "/ˈtrævəl/"
-   },
-   "def": {
-    "micro": "go from one place to another",
-    "short": "go from one place to another, especially far away",
-    "long": "To go from one place to another, especially over a long distance. As a verb or an uncountable noun, it names the act of going; for one short journey, say 'trip'."
-   },
-   "grammar": {
-    "pattern": "travel to + place / by + vehicle"
-   },
-   "examples": [
-    {
-     "en": "I travel to work by train.",
-     "tr": "İşe trenle gidiyorum.",
-     "register": "neutral",
-     "focus": "travel"
-    },
-    {
-     "en": "She loves to travel and see new places.",
-     "tr": "Seyahat etmeyi ve yeni yerler görmeyi seviyor.",
-     "register": "neutral",
-     "focus": "travel"
-    },
-    {
-     "en": "We traveled around Italy for two weeks.",
-     "tr": "İki hafta boyunca İtalya'yı dolaştık.",
-     "register": "neutral",
-     "focus": "traveled"
-    }
-   ],
-   "synonyms": [
-    "journey",
-    "tour"
-   ],
-   "antonyms": [
-    "stay"
-   ],
-   "collocations": [
-    "travel abroad",
-    "travel by train",
-    "travel alone",
-    "love to travel",
-    "travel light"
-   ],
-   "word_family": [
-    {
-     "lemma": "traveler",
-     "pos": "n"
-    },
-    {
-     "lemma": "travel",
-     "pos": "n"
-    }
-   ],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "seyahat etmek",
-     "alt": [
-      "yolculuk etmek",
-      "gezmek"
-     ],
-     "equivalence": "partial",
-     "false_friend": null,
-     "note": "'Travel' fiil ya da sayılamayan isimdir ('Travel is expensive'). Tek bir gezi için 'trip' denir. İngiliz yazımı 'travelled', Amerikan yazımı 'traveled'.",
-     "mistakes": [
-      {
-       "wrong": "I travel with the bus every day.",
-       "right": "I travel by bus every day.",
-       "why": "Araç belirtirken 'by + araç' kullanılır (by bus, by train); 'with' kullanılmaz."
+      "grammar": {
+        "pattern": "a lot of work / go to work"
       },
-      {
-       "wrong": "I made a travel last week.",
-       "right": "I went on a trip last week.",
-       "why": "'Travel' sayılamaz, 'a travel' denmez; tek bir gezi için 'trip' kullanılır."
-      }
-     ],
-     "mnemonic": null
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words",
-     "travel_tourism"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "confusable:trip"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "I love to ______ and meet people from other countries.",
-    "answer": "travel",
-    "distractors": [
-     "trip",
-     "holiday",
-     "journey"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": [],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  },
-  {
-   "id": "en.actual.adj.1",
-   "lemma": "actual",
-   "type": "word",
-   "pos": "adj",
-   "sense_no": 1,
-   "sense_note": "real, true",
-   "level": "B1",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/ˈæktʃuəl/",
-    "uk": "/ˈæktʃuəl/"
-   },
-   "def": {
-    "micro": "real, not guessed or planned",
-    "short": "real or true, not what people think, say, or plan",
-    "long": "Real or true; used to say what is really so, not what was planned, guessed, or said. It does NOT mean 'current' (güncel): for that, use 'current'."
-   },
-   "grammar": {
-    "pattern": "the actual + noun"
-   },
-   "examples": [
-    {
-     "en": "The actual price was higher than the price online.",
-     "tr": "Gerçek fiyat internetteki fiyattan yüksekti.",
-     "register": "neutral",
-     "focus": "actual"
-    },
-    {
-     "en": "What was the actual reason for his decision?",
-     "tr": "Kararının asıl nedeni neydi?",
-     "register": "neutral",
-     "focus": "actual"
-    },
-    {
-     "en": "The photo looks nice, but the actual room is small.",
-     "tr": "Fotoğraf güzel görünüyor ama gerçek oda küçük.",
-     "register": "neutral",
-     "focus": "actual"
-    }
-   ],
-   "synonyms": [
-    "real",
-    "true"
-   ],
-   "antonyms": [
-    "imaginary",
-    "estimated"
-   ],
-   "collocations": [
-    "the actual cost",
-    "the actual date",
-    "the actual reason",
-    "in actual fact"
-   ],
-   "word_family": [
-    {
-     "lemma": "actually",
-     "pos": "adv"
-    }
-   ],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "gerçek, asıl",
-     "alt": [
-      "esas",
-      "gerçekte olan"
-     ],
-     "equivalence": "false_friend",
-     "false_friend": {
-      "tr_word": "aktüel",
-      "tr_means": "güncel, şu anki",
-      "en_for_that": "current"
-     },
-     "note": "Türkçe 'aktüel' = güncel, şu anki. İngilizce 'actual' ise 'gerçek, asıl' demektir. 'Güncel' için 'current' kullanılır. 'Actually' (aslında) kartına da bak.",
-     "mistakes": [
-      {
-       "wrong": "The actual situation of the economy is difficult. (= güncel)",
-       "right": "The current situation of the economy is difficult.",
-       "why": "'Güncel, şu anki' = 'current'; 'actual' = gerçek, asıl."
+      "examples": [
+        {
+          "en": "I have a lot of work today.",
+          "tr": "Bugün çok işim var.",
+          "register": "neutral",
+          "focus": "work"
+        },
+        {
+          "en": "She goes to work by bus.",
+          "tr": "İşe otobüsle gidiyor.",
+          "register": "neutral",
+          "focus": "work"
+        },
+        {
+          "en": "Great work, everyone! See you tomorrow.",
+          "tr": "Harika iş çıkardınız, arkadaşlar! Yarın görüşürüz.",
+          "register": "neutral",
+          "focus": "work"
+        }
+      ],
+      "synonyms": [
+        "labor"
+      ],
+      "antonyms": [
+        "rest",
+        "play"
+      ],
+      "confusables": [
+        "job",
+        "study"
+      ],
+      "collocations": [
+        "go to work",
+        "hard work",
+        "a lot of work",
+        "paid work",
+        "at work"
+      ],
+      "word_family": [
+        {
+          "lemma": "worker",
+          "pos": "n"
+        },
+        {
+          "lemma": "work",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iş",
+          "alt": [
+            "çalışma",
+            "emek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Work' sayılamaz: 'a work' ya da 'works' demeyiz (sanat eseri anlamı hariç: 'a work of art'). İş yeri ya da meslek için 'job' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I have many works to do.",
+              "right": "I have a lot of work to do.",
+              "why": "'Work' sayılamaz; çoğul eki almaz ve 'many' yerine 'a lot of / much' ile gelir."
+            },
+            {
+              "wrong": "What is your work? (= mesleğin)",
+              "right": "What is your job? / What do you do?",
+              "why": "Meslek sormak için 'job' ya da 'What do you do?' kullanılır; 'work' yapılan işi genel olarak anlatır."
+            }
+          ],
+          "mnemonic": null
+        }
       },
-      {
-       "wrong": "Check the actual news about the weather.",
-       "right": "Check the latest news about the weather.",
-       "why": "'Aktüel haberler' = 'current / latest news'; 'actual' bu anlamda kullanılmaz."
-      }
-     ],
-     "mnemonic": "Aktüel (güncel) = current. Actual = gerçek: 'act' = eylem, fiilen olan."
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "false_friend_tr",
-     "confusable:current"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "He says he is thirty, but his ______ age is forty.",
-    "answer": "actual",
-    "distractors": [
-     "future",
-     "empty",
-     "local"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": [
-     "critic_edited"
-    ],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  },
-  {
-   "id": "en.eventually.adv.1",
-   "lemma": "eventually",
-   "type": "word",
-   "pos": "adv",
-   "sense_no": 1,
-   "sense_note": "in the end",
-   "level": "B1",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/ɪˈvɛntʃuəli/",
-    "uk": "/ɪˈvɛntʃuəli/"
-   },
-   "def": {
-    "micro": "at last, after a long time",
-    "short": "finally, after a long time or after many things happened",
-    "long": "In the end, after a long time or after many things have happened. It does NOT mean 'possibly' (olası): for that, use 'possibly' or 'perhaps'."
-   },
-   "grammar": {
-    "pattern": "eventually + verb"
-   },
-   "examples": [
-    {
-     "en": "We got lost, but eventually we found the hotel.",
-     "tr": "Kaybolduk ama sonunda oteli bulduk.",
-     "register": "neutral",
-     "focus": "eventually"
-    },
-    {
-     "en": "She worked hard and eventually became a doctor.",
-     "tr": "Çok çalıştı ve sonunda doktor oldu.",
-     "register": "neutral",
-     "focus": "eventually"
-    },
-    {
-     "en": "The bus was late, but it eventually arrived.",
-     "tr": "Otobüs geç kaldı ama sonunda geldi.",
-     "register": "neutral",
-     "focus": "eventually"
-    }
-   ],
-   "synonyms": [
-    "finally",
-    "in the end",
-    "at last"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "eventually find",
-    "eventually decide",
-    "and eventually",
-    "will eventually"
-   ],
-   "word_family": [
-    {
-     "lemma": "eventual",
-     "pos": "adj"
-    }
-   ],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "sonunda",
-     "alt": [
-      "nihayet",
-      "er geç"
-     ],
-     "equivalence": "false_friend",
-     "false_friend": {
-      "tr_word": "eventüel",
-      "tr_means": "olası, muhtemel, ihtimal dahilindeki",
-      "en_for_that": "possible / possibly"
-     },
-     "note": "Türkçe 'eventüel' = olası, muhtemel. İngilizce 'eventually' ise 'sonunda' demektir ve kesin gerçekleşen bir sonu anlatır. 'Muhtemelen' için 'probably' ya da 'possibly' kullanılır.",
-     "mistakes": [
-      {
-       "wrong": "Eventually, I may come to your party. (= muhtemelen)",
-       "right": "I may possibly come to your party.",
-       "why": "'Eventüel' (olası) için 'possibly / perhaps' kullanılır; 'eventually' kesin bir sonu anlatır."
-      }
-     ],
-     "mnemonic": "Event-ually: olaylar yaşandıktan sonra gelen son. 'Eventüel' (olası) tuzağına düşme."
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "false_friend_tr",
-     "confusable:possibly"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "It took many hours, but she ______ finished the book.",
-    "answer": "eventually",
-    "distractors": [
-     "usually",
-     "rarely",
-     "hardly"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": [],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  },
-  {
-   "id": "en.sensible.adj.1",
-   "lemma": "sensible",
-   "type": "word",
-   "pos": "adj",
-   "sense_no": 1,
-   "sense_note": "showing good sense",
-   "level": "B1",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/ˈsɛnsəbəl/",
-    "uk": "/ˈsɛnsəbəl/"
-   },
-   "def": {
-    "micro": "showing good judgment",
-    "short": "thinking carefully and making practical, wise choices",
-    "long": "Showing good judgment and making choices that are practical and wise. It does NOT mean 'sensitive' (hassas, kolay etkilenen): for that, use 'sensitive'."
-   },
-   "grammar": null,
-   "examples": [
-    {
-     "en": "That's a sensible idea. Let's do it.",
-     "tr": "Bu mantıklı bir fikir. Hadi yapalım.",
-     "register": "neutral",
-     "focus": "sensible"
-    },
-    {
-     "en": "It's sensible to take an umbrella today.",
-     "tr": "Bugün şemsiye almak akıllıca olur.",
-     "register": "neutral",
-     "focus": "sensible"
-    },
-    {
-     "en": "She is a sensible girl and never takes silly risks.",
-     "tr": "Aklı başında bir kız; saçma riskler almaz.",
-     "register": "neutral",
-     "focus": "sensible"
-    }
-   ],
-   "synonyms": [
-    "wise",
-    "reasonable",
-    "practical"
-   ],
-   "antonyms": [
-    "silly",
-    "foolish"
-   ],
-   "collocations": [
-    "a sensible idea",
-    "sensible advice",
-    "sensible shoes",
-    "a sensible choice",
-    "be sensible"
-   ],
-   "word_family": [
-    {
-     "lemma": "sense",
-     "pos": "n"
-    },
-    {
-     "lemma": "sensibly",
-     "pos": "adv"
-    }
-   ],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "makul, mantıklı",
-     "alt": [
-      "akıllıca",
-      "aklı başında"
-     ],
-     "equivalence": "full",
-     "false_friend": null,
-     "note": "Türkler 'sensible' ile 'sensitive' kelimelerini sık karıştırır. 'Sensible' mantıklı, akıllıca davranan demektir. Türkçedeki 'hassas, duyarlı' ise İngilizcede 'sensitive'dir.",
-     "mistakes": [
-      {
-       "wrong": "He is a very sensible person. He cries easily. (= hassas)",
-       "right": "He is a very sensitive person. He cries easily.",
-       "why": "Hassas, kolay etkilenen için 'sensitive'; 'sensible' mantıklı demektir."
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
       },
-      {
-       "wrong": "My skin is sensible to the sun.",
-       "right": "My skin is sensitive to the sun.",
-       "why": "Cilt güneşe karşı hassastır: 'sensitive'. 'Sensible' bu anlamda kullanılmaz."
-      }
-     ],
-     "mnemonic": "Sensible: 'good sense' (sağduyu) sahibi. Sensitive: duyarlı, hassas."
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words",
-     "personality"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "confusable:sensitive"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "Wearing a coat in winter is a ______ idea.",
-    "answer": "sensible",
-    "distractors": [
-     "sensitive",
-     "careless",
-     "silly"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": [
-     "l1_edited_by_editor_agent",
-     "critic_edited",
-     "distractors_diversified"
-    ],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  },
-  {
-   "id": "en.see.v.1",
-   "lemma": "see",
-   "type": "word",
-   "pos": "v",
-   "sense_no": 1,
-   "sense_note": "notice with eyes",
-   "level": "A2",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/siː/",
-    "uk": "/siː/"
-   },
-   "def": {
-    "micro": "notice with your eyes",
-    "short": "know that something is there because your eyes show it to you",
-    "long": "To notice or know that something is there with your eyes, without trying. You see something by chance, but you watch something that moves, on purpose."
-   },
-   "grammar": {
-    "pattern": "see sth / can see sth"
-   },
-   "examples": [
-    {
-     "en": "I can see the sea from my window.",
-     "tr": "Pencereden denizi görebiliyorum.",
-     "register": "neutral",
-     "focus": "see"
-    },
-    {
-     "en": "Did you see Ali at the party last night?",
-     "tr": "Dün gece partide Ali'yi gördün mü?",
-     "register": "neutral",
-     "focus": "see"
-    },
-    {
-     "en": "I can't see without my glasses.",
-     "tr": "Gözlüğüm olmadan göremiyorum.",
-     "register": "neutral",
-     "focus": "see"
-    }
-   ],
-   "synonyms": [
-    "notice",
-    "spot"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "can see",
-    "see a bird",
-    "see you later",
-    "see clearly",
-    "hard to see"
-   ],
-   "word_family": [
-    {
-     "lemma": "sight",
-     "pos": "n"
-    }
-   ],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "görmek",
-     "alt": [
-      "fark etmek"
-     ],
-     "equivalence": "full",
-     "false_friend": null,
-     "note": "'See' = görmek (göz kendiliğinden görür); 'watch' = izlemek (dikkatle, bir süre bakmak); 'look at' = bakmak. Genelde 'can' ile: 'I can see'. Düzensiz: see - saw - seen.",
-     "mistakes": [
-      {
-       "wrong": "I'm seeing a bird in the tree.",
-       "right": "I can see a bird in the tree.",
-       "why": "Görme fiili 'see' şimdiki anda genelde -ing almaz; 'can see' kullanılır."
+      "quiz": {
+        "cloze": "I can't come out tonight. I have too much ______ to do.",
+        "answer": "work",
+        "distractors": [
+          "job",
+          "works",
+          "tasks"
+        ]
       },
-      {
-       "wrong": "I saw TV all evening.",
-       "right": "I watched TV all evening.",
-       "why": "Televizyon gibi hareketli bir şeyi bir süre izlemek için 'watch'; 'see' bir anda görmektir."
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
       }
-     ],
-     "mnemonic": null
-    }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "irregular",
-     "confusable:watch"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "I can't ______ the board from the back of the room.",
-    "answer": "see",
-    "distractors": [
-     "watch",
-     "listen",
-     "hear"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": [
-     "critic_edited"
-    ],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  },
-  {
-   "id": "en.watch.v.1",
-   "lemma": "watch",
-   "type": "word",
-   "pos": "v",
-   "sense_no": 1,
-   "sense_note": "look with attention",
-   "level": "A2",
-   "level_source": "editorial_estimate",
-   "freq": null,
-   "ipa": {
-    "us": "/wɑːtʃ/",
-    "uk": "/wɒtʃ/"
-   },
-   "def": {
-    "micro": "look at something for a time",
-    "short": "look at something that moves or changes, and give it your attention",
-    "long": "To look at something that moves or changes, such as a film, a match, or a child, and give it your attention for some time. You watch on purpose; you see by chance."
-   },
-   "grammar": {
-    "pattern": "watch sb/sth (do / doing)"
-   },
-   "examples": [
-    {
-     "en": "We watch a film together every Friday.",
-     "tr": "Her cuma birlikte film izleriz.",
-     "register": "neutral",
-     "focus": "watch"
     },
     {
-     "en": "I like to watch the news in the morning.",
-     "tr": "Sabahları haberleri izlemeyi severim.",
-     "register": "neutral",
-     "focus": "watch"
-    },
-    {
-     "en": "She watched the kids play in the park.",
-     "tr": "Çocukların parkta oynamasını izledi.",
-     "register": "neutral",
-     "focus": "watched"
-    }
-   ],
-   "synonyms": [
-    "observe",
-    "view"
-   ],
-   "antonyms": [],
-   "collocations": [
-    "watch TV",
-    "watch a film",
-    "watch a match",
-    "watch the news",
-    "watch videos"
-   ],
-   "word_family": [
-    {
-     "lemma": "watch",
-     "pos": "n"
-    },
-    {
-     "lemma": "watcher",
-     "pos": "n"
-    }
-   ],
-   "etymology": null,
-   "l1": {
-    "tr": {
-     "gloss": "izlemek",
-     "alt": [
-      "seyretmek"
-     ],
-     "equivalence": "full",
-     "false_friend": null,
-     "note": "'Watch' = izlemek, seyretmek (dikkatle ve bir süre). Televizyon, film, maç için 'watch'; resim ya da tabela için 'look at' kullanılır. 'Watch' isim olarak 'kol saati' demektir.",
-     "mistakes": [
-      {
-       "wrong": "I'm looking TV.",
-       "right": "I'm watching TV.",
-       "why": "TV izlemek için 'watch'; 'look' ancak 'look at' kalıbıyla kullanılır."
+      "id": "en.trip.n.1",
+      "lemma": "trip",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "short journey",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trɪp/",
+        "uk": "/trɪp/"
       },
-      {
-       "wrong": "Let's see TV tonight.",
-       "right": "Let's watch TV tonight.",
-       "why": "Televizyon gibi hareketli şeyleri bir süre izlemek için 'watch' kullanılır; 'see' kısa bir bakıştır."
+      "def": {
+        "micro": "a short journey to a place",
+        "short": "a journey to a place and back again, for fun or work",
+        "long": "A journey to a place and back again, usually for a short time, for pleasure or for work. A trip can last a day or a few days."
+      },
+      "grammar": {
+        "pattern": "a trip to + place"
+      },
+      "examples": [
+        {
+          "en": "We took a day trip to the lake.",
+          "tr": "Göle günübirlik bir gezi yaptık.",
+          "register": "neutral",
+          "focus": "trip"
+        },
+        {
+          "en": "How was your trip to Izmir?",
+          "tr": "İzmir gezin nasıldı?",
+          "register": "neutral",
+          "focus": "trip"
+        },
+        {
+          "en": "He is away on a business trip this week.",
+          "tr": "Bu hafta iş gezisinde.",
+          "register": "neutral",
+          "focus": "trip"
+        }
+      ],
+      "synonyms": [
+        "journey",
+        "outing"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "travel",
+        "journey"
+      ],
+      "collocations": [
+        "a day trip",
+        "a business trip",
+        "a road trip",
+        "go on a trip",
+        "a school trip"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gezi",
+          "alt": [
+            "seyahat",
+            "yolculuk"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Trip' = gidip dönülen kısa gezi ya da yolculuk. 'Travel' sayılamaz ve genel olarak seyahat etmeyi anlatır. Fiil olarak 'trip' ise 'takılıp düşmek' demektir.",
+          "mistakes": [
+            {
+              "wrong": "I made a travel to Antalya.",
+              "right": "I took a trip to Antalya.",
+              "why": "'Gezi yapmak' için 'take / go on a trip' denir; 'travel' sayılamaz, 'a travel' denmez."
+            },
+            {
+              "wrong": "Have a nice travel!",
+              "right": "Have a nice trip!",
+              "why": "Yolcu uğurlarken 'Have a nice trip!' denir; 'travel' bu kalıpta kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We're planning a weekend ______ to the mountains.",
+        "answer": "trip",
+        "distractors": [
+          "travel",
+          "lesson",
+          "price"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
       }
-     ],
-     "mnemonic": "Bekçiye 'watchman' denir: gece boyunca dikkatle izler. Film ve maç da böyle, uzun uzun 'watch' ile izlenir."
+    },
+    {
+      "id": "en.travel.v.1",
+      "lemma": "travel",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go to places",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtrævəl/",
+        "uk": "/ˈtrævəl/"
+      },
+      "def": {
+        "micro": "go from one place to another",
+        "short": "go from one place to another, especially far away",
+        "long": "To go from one place to another, especially over a long distance. As a verb or an uncountable noun, it names the act of going; for one short journey, say 'trip'."
+      },
+      "grammar": {
+        "pattern": "travel to + place / by + vehicle"
+      },
+      "examples": [
+        {
+          "en": "I travel to work by train.",
+          "tr": "İşe trenle gidiyorum.",
+          "register": "neutral",
+          "focus": "travel"
+        },
+        {
+          "en": "She loves to travel and see new places.",
+          "tr": "Seyahat etmeyi ve yeni yerler görmeyi seviyor.",
+          "register": "neutral",
+          "focus": "travel"
+        },
+        {
+          "en": "We traveled around Italy for two weeks.",
+          "tr": "İki hafta boyunca İtalya'yı dolaştık.",
+          "register": "neutral",
+          "focus": "traveled"
+        }
+      ],
+      "synonyms": [
+        "journey",
+        "tour"
+      ],
+      "antonyms": [
+        "stay"
+      ],
+      "confusables": [
+        "trip",
+        "journey"
+      ],
+      "collocations": [
+        "travel abroad",
+        "travel by train",
+        "travel alone",
+        "love to travel",
+        "travel light"
+      ],
+      "word_family": [
+        {
+          "lemma": "traveler",
+          "pos": "n"
+        },
+        {
+          "lemma": "travel",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "seyahat etmek",
+          "alt": [
+            "yolculuk etmek",
+            "gezmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Travel' fiil ya da sayılamayan isimdir ('Travel is expensive'). Tek bir gezi için 'trip' denir. İngiliz yazımı 'travelled', Amerikan yazımı 'traveled'.",
+          "mistakes": [
+            {
+              "wrong": "I travel with the bus every day.",
+              "right": "I travel by bus every day.",
+              "why": "Araç belirtirken 'by + araç' kullanılır (by bus, by train); 'with' kullanılmaz."
+            },
+            {
+              "wrong": "I made a travel last week.",
+              "right": "I went on a trip last week.",
+              "why": "'Travel' sayılamaz, 'a travel' denmez; tek bir gezi için 'trip' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I love to ______ and meet people from other countries.",
+        "answer": "travel",
+        "distractors": [
+          "trip",
+          "holiday",
+          "journey"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.actual.adj.1",
+      "lemma": "actual",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "real, true",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæktʃuəl/",
+        "uk": "/ˈæktʃuəl/"
+      },
+      "def": {
+        "micro": "real, not guessed or planned",
+        "short": "real or true, not what people think, say, or plan",
+        "long": "Real or true; used to say what is really so, not what was planned, guessed, or said. It does NOT mean 'current' (güncel): for that, use 'current'."
+      },
+      "grammar": {
+        "pattern": "the actual + noun"
+      },
+      "examples": [
+        {
+          "en": "The actual price was higher than the price online.",
+          "tr": "Gerçek fiyat internetteki fiyattan yüksekti.",
+          "register": "neutral",
+          "focus": "actual"
+        },
+        {
+          "en": "What was the actual reason for his decision?",
+          "tr": "Kararının asıl nedeni neydi?",
+          "register": "neutral",
+          "focus": "actual"
+        },
+        {
+          "en": "The photo looks nice, but the actual room is small.",
+          "tr": "Fotoğraf güzel görünüyor ama gerçek oda küçük.",
+          "register": "neutral",
+          "focus": "actual"
+        }
+      ],
+      "synonyms": [
+        "real",
+        "true"
+      ],
+      "antonyms": [
+        "imaginary",
+        "estimated"
+      ],
+      "confusables": [
+        "current"
+      ],
+      "collocations": [
+        "the actual cost",
+        "the actual date",
+        "the actual reason",
+        "in actual fact"
+      ],
+      "word_family": [
+        {
+          "lemma": "actually",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gerçek, asıl",
+          "alt": [
+            "esas",
+            "gerçekte olan"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "aktüel",
+            "tr_means": "güncel, şu anki",
+            "en_for_that": "current"
+          },
+          "note": "Türkçe 'aktüel' = güncel, şu anki. İngilizce 'actual' ise 'gerçek, asıl' demektir. 'Güncel' için 'current' kullanılır. 'Actually' (aslında) kartına da bak.",
+          "mistakes": [
+            {
+              "wrong": "The actual situation of the economy is difficult. (= güncel)",
+              "right": "The current situation of the economy is difficult.",
+              "why": "'Güncel, şu anki' = 'current'; 'actual' = gerçek, asıl."
+            },
+            {
+              "wrong": "Check the actual news about the weather.",
+              "right": "Check the latest news about the weather.",
+              "why": "'Aktüel haberler' = 'current / latest news'; 'actual' bu anlamda kullanılmaz."
+            }
+          ],
+          "mnemonic": "Aktüel (güncel) = current. Actual = gerçek: 'act' = eylem, fiilen olan."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "false_friend_tr"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He says he is thirty, but his ______ age is forty.",
+        "answer": "actual",
+        "distractors": [
+          "future",
+          "empty",
+          "local"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.eventually.adv.1",
+      "lemma": "eventually",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in the end",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈvɛntʃuəli/",
+        "uk": "/ɪˈvɛntʃuəli/"
+      },
+      "def": {
+        "micro": "at last, after a long time",
+        "short": "finally, after a long time or after many things happened",
+        "long": "In the end, after a long time or after many things have happened. It does NOT mean 'possibly' (olası): for that, use 'possibly' or 'perhaps'."
+      },
+      "grammar": {
+        "pattern": "eventually + verb"
+      },
+      "examples": [
+        {
+          "en": "We got lost, but eventually we found the hotel.",
+          "tr": "Kaybolduk ama sonunda oteli bulduk.",
+          "register": "neutral",
+          "focus": "eventually"
+        },
+        {
+          "en": "She worked hard and eventually became a doctor.",
+          "tr": "Çok çalıştı ve sonunda doktor oldu.",
+          "register": "neutral",
+          "focus": "eventually"
+        },
+        {
+          "en": "The bus was late, but it eventually arrived.",
+          "tr": "Otobüs geç kaldı ama sonunda geldi.",
+          "register": "neutral",
+          "focus": "eventually"
+        }
+      ],
+      "synonyms": [
+        "finally",
+        "in the end",
+        "at last"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "in the end",
+        "at last"
+      ],
+      "collocations": [
+        "eventually find",
+        "eventually decide",
+        "and eventually",
+        "will eventually"
+      ],
+      "word_family": [
+        {
+          "lemma": "eventual",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonunda",
+          "alt": [
+            "nihayet",
+            "er geç"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "eventüel",
+            "tr_means": "olası, muhtemel, ihtimal dahilindeki",
+            "en_for_that": "possible / possibly"
+          },
+          "note": "Türkçe 'eventüel' = olası, muhtemel. İngilizce 'eventually' ise 'sonunda' demektir ve kesin gerçekleşen bir sonu anlatır. 'Muhtemelen' için 'probably' ya da 'possibly' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "Eventually, I may come to your party. (= muhtemelen)",
+              "right": "I may possibly come to your party.",
+              "why": "'Eventüel' (olası) için 'possibly / perhaps' kullanılır; 'eventually' kesin bir sonu anlatır."
+            }
+          ],
+          "mnemonic": "Event-ually: olaylar yaşandıktan sonra gelen son. 'Eventüel' (olası) tuzağına düşme."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "false_friend_tr"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It took many hours, but she ______ finished the book.",
+        "answer": "eventually",
+        "distractors": [
+          "usually",
+          "rarely",
+          "hardly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sensible.adj.1",
+      "lemma": "sensible",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "showing good sense",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɛnsəbəl/",
+        "uk": "/ˈsɛnsəbəl/"
+      },
+      "def": {
+        "micro": "showing good judgment",
+        "short": "thinking carefully and making practical, wise choices",
+        "long": "Showing good judgment and making choices that are practical and wise. It does NOT mean 'sensitive' (hassas, kolay etkilenen): for that, use 'sensitive'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "That's a sensible idea. Let's do it.",
+          "tr": "Bu mantıklı bir fikir. Hadi yapalım.",
+          "register": "neutral",
+          "focus": "sensible"
+        },
+        {
+          "en": "It's sensible to take an umbrella today.",
+          "tr": "Bugün şemsiye almak akıllıca olur.",
+          "register": "neutral",
+          "focus": "sensible"
+        },
+        {
+          "en": "She is a sensible girl and never takes silly risks.",
+          "tr": "Aklı başında bir kız; saçma riskler almaz.",
+          "register": "neutral",
+          "focus": "sensible"
+        }
+      ],
+      "synonyms": [
+        "wise",
+        "reasonable",
+        "practical"
+      ],
+      "antonyms": [
+        "silly",
+        "foolish"
+      ],
+      "confusables": [
+        "sensitive"
+      ],
+      "collocations": [
+        "a sensible idea",
+        "sensible advice",
+        "sensible shoes",
+        "a sensible choice",
+        "be sensible"
+      ],
+      "word_family": [
+        {
+          "lemma": "sense",
+          "pos": "n"
+        },
+        {
+          "lemma": "sensibly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "makul, mantıklı",
+          "alt": [
+            "akıllıca",
+            "aklı başında"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkler 'sensible' ile 'sensitive' kelimelerini sık karıştırır. 'Sensible' mantıklı, akıllıca davranan demektir. Türkçedeki 'hassas, duyarlı' ise İngilizcede 'sensitive'dir.",
+          "mistakes": [
+            {
+              "wrong": "He is a very sensible person. He cries easily. (= hassas)",
+              "right": "He is a very sensitive person. He cries easily.",
+              "why": "Hassas, kolay etkilenen için 'sensitive'; 'sensible' mantıklı demektir."
+            },
+            {
+              "wrong": "My skin is sensible to the sun.",
+              "right": "My skin is sensitive to the sun.",
+              "why": "Cilt güneşe karşı hassastır: 'sensitive'. 'Sensible' bu anlamda kullanılmaz."
+            }
+          ],
+          "mnemonic": "Sensible: 'good sense' (sağduyu) sahibi. Sensitive: duyarlı, hassas."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Wearing a coat in winter is a ______ idea.",
+        "answer": "sensible",
+        "distractors": [
+          "sensitive",
+          "careless",
+          "silly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "l1_edited_by_editor_agent",
+          "critic_edited",
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.see.v.1",
+      "lemma": "see",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "notice with eyes",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/siː/",
+        "uk": "/siː/"
+      },
+      "def": {
+        "micro": "notice with your eyes",
+        "short": "know that something is there because your eyes show it to you",
+        "long": "To notice or know that something is there with your eyes, without trying. You see something by chance, but you watch something that moves, on purpose."
+      },
+      "grammar": {
+        "pattern": "see sth / can see sth"
+      },
+      "examples": [
+        {
+          "en": "I can see the sea from my window.",
+          "tr": "Pencereden denizi görebiliyorum.",
+          "register": "neutral",
+          "focus": "see"
+        },
+        {
+          "en": "Did you see Ali at the party last night?",
+          "tr": "Dün gece partide Ali'yi gördün mü?",
+          "register": "neutral",
+          "focus": "see"
+        },
+        {
+          "en": "I can't see without my glasses.",
+          "tr": "Gözlüğüm olmadan göremiyorum.",
+          "register": "neutral",
+          "focus": "see"
+        }
+      ],
+      "synonyms": [
+        "notice",
+        "spot"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "watch",
+        "look at"
+      ],
+      "collocations": [
+        "can see",
+        "see a bird",
+        "see you later",
+        "see clearly",
+        "hard to see"
+      ],
+      "word_family": [
+        {
+          "lemma": "sight",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görmek",
+          "alt": [
+            "fark etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'See' = görmek (göz kendiliğinden görür); 'watch' = izlemek (dikkatle, bir süre bakmak); 'look at' = bakmak. Genelde 'can' ile: 'I can see'. Düzensiz: see - saw - seen.",
+          "mistakes": [
+            {
+              "wrong": "I'm seeing a bird in the tree.",
+              "right": "I can see a bird in the tree.",
+              "why": "Görme fiili 'see' şimdiki anda genelde -ing almaz; 'can see' kullanılır."
+            },
+            {
+              "wrong": "I saw TV all evening.",
+              "right": "I watched TV all evening.",
+              "why": "Televizyon gibi hareketli bir şeyi bir süre izlemek için 'watch'; 'see' bir anda görmektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "irregular"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't ______ the board from the back of the room.",
+        "answer": "see",
+        "distractors": [
+          "watch",
+          "listen",
+          "hear"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.watch.v.1",
+      "lemma": "watch",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "look with attention",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɑːtʃ/",
+        "uk": "/wɒtʃ/"
+      },
+      "def": {
+        "micro": "look at something for a time",
+        "short": "look at something that moves or changes, and give it your attention",
+        "long": "To look at something that moves or changes, such as a film, a match, or a child, and give it your attention for some time. You watch on purpose; you see by chance."
+      },
+      "grammar": {
+        "pattern": "watch sb/sth (do / doing)"
+      },
+      "examples": [
+        {
+          "en": "We watch a film together every Friday.",
+          "tr": "Her cuma birlikte film izleriz.",
+          "register": "neutral",
+          "focus": "watch"
+        },
+        {
+          "en": "I like to watch the news in the morning.",
+          "tr": "Sabahları haberleri izlemeyi severim.",
+          "register": "neutral",
+          "focus": "watch"
+        },
+        {
+          "en": "She watched the kids play in the park.",
+          "tr": "Çocukların parkta oynamasını izledi.",
+          "register": "neutral",
+          "focus": "watched"
+        }
+      ],
+      "synonyms": [
+        "observe",
+        "view"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "see",
+        "look at"
+      ],
+      "collocations": [
+        "watch TV",
+        "watch a film",
+        "watch a match",
+        "watch the news",
+        "watch videos"
+      ],
+      "word_family": [
+        {
+          "lemma": "watch",
+          "pos": "n"
+        },
+        {
+          "lemma": "watcher",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "izlemek",
+          "alt": [
+            "seyretmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Watch' = izlemek, seyretmek (dikkatle ve bir süre). Televizyon, film, maç için 'watch'; resim ya da tabela için 'look at' kullanılır. 'Watch' isim olarak 'kol saati' demektir.",
+          "mistakes": [
+            {
+              "wrong": "I'm looking TV.",
+              "right": "I'm watching TV.",
+              "why": "TV izlemek için 'watch'; 'look' ancak 'look at' kalıbıyla kullanılır."
+            },
+            {
+              "wrong": "Let's see TV tonight.",
+              "right": "Let's watch TV tonight.",
+              "why": "Televizyon gibi hareketli şeyleri bir süre izlemek için 'watch' kullanılır; 'see' kısa bir bakıştır."
+            }
+          ],
+          "mnemonic": "Bekçiye 'watchman' denir: gece boyunca dikkatle izler. Film ve maç da böyle, uzun uzun 'watch' ile izlenir."
+        }
+      },
+      "tags": {
+        "primary_topic": "confusing_words",
+        "topics": [
+          "confusing_words",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He sat on the sofa and ______ TV all evening.",
+        "answer": "watched",
+        "distractors": [
+          "saw",
+          "looked",
+          "heard"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "mnemonic_added"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-   },
-   "tags": {
-    "primary_topic": "confusing_words",
-    "topics": [
-     "confusing_words",
-     "music_film"
-    ],
-    "exams": [],
-    "register": "neutral",
-    "vibes": [],
-    "flags": [
-     "confusable:see"
-    ],
-    "sensitivity": 0
-   },
-   "quiz": {
-    "cloze": "He sat on the sofa and ______ TV all evening.",
-    "answer": "watched",
-    "distractors": [
-     "saw",
-     "looked",
-     "heard"
-    ]
-   },
-   "meta": {
-    "status": "draft",
-    "qa_flags": ["mnemonic_added"],
-    "prompt_ver": "kisisel-2026-10-11",
-    "model": "claude-sonnet (in-session subagent)",
-    "source": "kisisel_v1"
-   }
-  }
- ]
+  ]
 }

@@ -1,172 +1,1208 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{"id":"en.colleague.n.1","lemma":"colleague","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈkɑːliːɡ/","uk":"/ˈkɒliːɡ/"},
-"def":{"micro":"a person you work with","short":"a person who works with you at the same company","long":"A person who works with you in the same company or organization. You may share an office with a colleague or work on the same team."},
-"grammar":null,
-"examples":[
-{"en":"I'm having lunch with a colleague today.","tr":"Bugün bir iş arkadaşımla öğle yemeği yiyorum.","register":"neutral","focus":"colleague"},
-{"en":"My colleagues gave me a card on my birthday.","tr":"İş arkadaşlarım doğum günümde bana kart verdi.","register":"neutral","focus":"colleagues"},
-{"en":"She is a new colleague, so please help her.","tr":"Yeni bir iş arkadaşımız, o yüzden lütfen ona yardım et.","register":"neutral","focus":"colleague"}],
-"synonyms":["coworker","workmate"],"antonyms":[],"collocations":["a work colleague","former colleague","fellow colleague","colleagues and friends"],
-"word_family":[],
-"etymology":{"text":"From Latin 'collega', meaning a partner in office or work: someone chosen to work together with you.","origin":"Latin","confidence":"high"},
-"l1":{"tr":{"gloss":"iş arkadaşı","alt":["meslektaş"],"equivalence":"full","false_friend":null,"note":"'Colleague' aynı yerde çalışan kişidir. Okunuşu 'KO-lig' gibidir ve 'college' (kolej / üniversite) ile karıştırılmamalıdır. 'Coworker' günlük konuşmada aynı anlamdadır.","mistakes":[{"wrong":"She is my colleague from school. (= sınıf arkadaşım)","right":"She is my classmate from school.","why":"Okuldaki arkadaş için 'classmate' kullanılır; 'colleague' yalnızca iş yerinde çalışanlar içindir."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:college"],"sensitivity":0},
-"quiz":{"cloze":"We work at the same company, so he is my ______.","answer":"colleague","distractors":["customer","neighbor","cousin"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.meeting.n.1","lemma":"meeting","type":"word","pos":"n","sense_no":1,"sense_note":"work gathering","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈmiːtɪŋ/","uk":"/ˈmiːtɪŋ/"},
-"def":{"micro":"a planned talk with others","short":"a planned time when people come together to talk and make decisions","long":"A planned time when people come together, in a room or online, to talk about work and make decisions. Meetings can be short or long, big or small."},
-"grammar":{"pattern":"have / go to a meeting"},
-"examples":[
-{"en":"I have a meeting at ten o'clock.","tr":"Saat onda bir toplantım var.","register":"neutral","focus":"meeting"},
-{"en":"The team meeting was moved to Thursday.","tr":"Ekip toplantısı perşembeye alındı.","register":"neutral","focus":"meeting"},
-{"en":"Sorry, I'm in a meeting. Can I call you back?","tr":"Pardon, toplantıdayım. Seni sonra arayabilir miyim?","register":"neutral","focus":"meeting"}],
-"synonyms":["session"],"antonyms":[],"collocations":["have a meeting","attend a meeting","team meeting","a meeting room","online meeting"],
-"word_family":[{"lemma":"meet","pos":"v"}],"etymology":null,
-"l1":{"tr":{"gloss":"toplantı","alt":["görüşme"],"equivalence":"full","false_friend":null,"note":"'Meeting' = toplantı. 'Meet' fiili ise tanışmak ya da buluşmak demektir. 'Toplantı yapmak' için 'have' ya da 'hold a meeting' denir.","mistakes":[{"wrong":"I make a meeting every Monday.","right":"I have a meeting every Monday.","why":"'Toplantı yapmak' için 'make' değil 'have' (ya da 'hold') kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Please be on time for the ______ at nine tomorrow.","answer":"meeting","distractors":["uniform","salary","desk"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.boss.n.1","lemma":"boss","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/bɔːs/","uk":"/bɒs/"},
-"def":{"micro":"the person you work for","short":"the person who is in charge of you and your work","long":"The person who is in charge of other workers and tells them what to do. Your boss may decide your tasks and your work hours."},
-"grammar":{"pattern":"my / your / her boss"},
-"examples":[
-{"en":"My boss is very kind and fair.","tr":"Müdürüm çok kibar ve adil biri.","register":"informal","focus":"boss"},
-{"en":"I need to ask my boss for a day off.","tr":"Müdürümden bir gün izin istemem gerek.","register":"informal","focus":"boss"},
-{"en":"She wants to be her own boss one day.","tr":"Bir gün kendi patronu olmak istiyor.","register":"informal","focus":"boss"}],
-"synonyms":["manager","supervisor"],"antonyms":["employee"],"collocations":["my boss","the big boss","be your own boss","talk to your boss"],
-"word_family":[{"lemma":"bossy","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"patron","alt":["müdür","amir"],"equivalence":"partial","false_friend":null,"note":"'Boss' senin üstündeki kişidir; Türkçede duruma göre 'patron', 'müdür' ya da 'amir' denir. Resmî ortamda 'manager' ya da 'supervisor' kullanılır; 'boss' konuşma dilidir.","mistakes":[{"wrong":"I talked with my chief about it.","right":"I talked with my boss about it.","why":"'Şef' kelimesinin karşılığı 'chief' iş yerinde pek kullanılmaz; üstün için 'boss' ya da 'manager' denir."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office"],"exams":[],"register":"informal","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"My ______ gave me a day off because I worked all weekend.","answer":"boss","distractors":["neighbor","cousin","student"]},
-"meta":{"status":"draft","qa_flags":["critic_edited"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.salary.n.1","lemma":"salary","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈsæləri/","uk":"/ˈsæləri/"},
-"def":{"micro":"money you get from work","short":"the fixed amount of money you get each month for your job","long":"The fixed amount of money that a company pays you for your work, usually every month. Many people ask for a higher salary after a few years."},
-"grammar":{"pattern":"earn / get a salary"},
-"examples":[
-{"en":"My salary goes into my bank account on the 15th.","tr":"Maaşım ayın 15'inde banka hesabıma yatıyor.","register":"neutral","focus":"salary"},
-{"en":"He left his job because the salary was too low.","tr":"Maaş çok düşük olduğu için işinden ayrıldı.","register":"neutral","focus":"salary"},
-{"en":"What salary are you hoping for?","tr":"Ne kadar maaş bekliyorsun?","register":"neutral","focus":"salary"}],
-"synonyms":["pay","wages"],"antonyms":[],"collocations":["a high salary","a monthly salary","earn a salary","salary increase","annual salary"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"maaş","alt":["aylık"],"equivalence":"full","false_friend":null,"note":"'Salary' aylık sabit maaştır. Saat ya da günlük ücret için 'wage' kullanılır. Genel olarak 'pay', iş karşılığı alınan paradır.","mistakes":[{"wrong":"I take a good salary.","right":"I earn a good salary. / I get a good salary.","why":"Maaş için 'earn' ya da 'get' kullanılır; 'take' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office","finance_economics"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:wage"],"sensitivity":0},
-"quiz":{"cloze":"She earns a good ______ as a nurse.","answer":"salary","distractors":["report","ticket","address"]},
-"meta":{"status":"draft","qa_flags":["distractors_diversified"],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.schedule.n.1","lemma":"schedule","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈskɛdʒuːl/","uk":"/ˈʃɛdjuːl/"},
-"def":{"micro":"a plan of times for things","short":"a list that shows when things will happen or when you must do them","long":"A plan or list that shows the times when things will happen or when you must do them, such as work hours or meetings. Your schedule can be busy or free."},
-"grammar":{"pattern":"on / behind schedule"},
-"examples":[
-{"en":"My schedule is full this week.","tr":"Bu hafta programım dolu.","register":"neutral","focus":"schedule"},
-{"en":"Let me check my schedule and call you back.","tr":"Programıma bakıp seni geri arayayım.","register":"neutral","focus":"schedule"},
-{"en":"The bus schedule changed, so I'll be late.","tr":"Otobüs saatleri değişti, o yüzden geç kalacağım.","register":"neutral","focus":"schedule"}],
-"synonyms":["timetable","plan"],"antonyms":[],"collocations":["a busy schedule","a tight schedule","on schedule","behind schedule","check your schedule"],
-"word_family":[{"lemma":"schedule","pos":"v"},{"lemma":"scheduled","pos":"adj"}],"etymology":null,
-"l1":{"tr":{"gloss":"program","alt":["çizelge","takvim"],"equivalence":"partial","false_friend":null,"note":"Zaman planı olarak Türkçedeki 'program' sözcüğü karşılar. İngilizcede 'program' ise TV programı ya da bilgisayar programıdır. Okunuşu: ABD 'sked-yul', İngiltere 'shed-yul'.","mistakes":[{"wrong":"I have a busy program today.","right":"I have a busy schedule today.","why":"Günlük plan için 'schedule' kullanılır; 'program' TV programı ya da bilgisayar programı demektir."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office","time_routines"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:program"],"sensitivity":0},
-"quiz":{"cloze":"I have a very busy ______ today, with five meetings.","answer":"schedule","distractors":["salary","holiday","report"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.task.n.1","lemma":"task","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/tæsk/","uk":"/tɑːsk/"},
-"def":{"micro":"a piece of work to do","short":"a piece of work that you have to do, often a small one","long":"A piece of work that you must do, often as part of a bigger job. Small tasks are easier to finish than big ones."},
-"grammar":{"pattern":"a task for / to do"},
-"examples":[
-{"en":"My first task today is to answer emails.","tr":"Bugünkü ilk işim e-postaları yanıtlamak.","register":"neutral","focus":"task"},
-{"en":"Cleaning the kitchen is not an easy task.","tr":"Mutfağı temizlemek kolay bir iş değil.","register":"neutral","focus":"task"},
-{"en":"Our manager gave each person a different task.","tr":"Müdürümüz herkese farklı bir görev verdi.","register":"neutral","focus":"task"}],
-"synonyms":["job","duty","chore"],"antonyms":[],"collocations":["a difficult task","complete a task","a simple task","daily tasks","the task of"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"görev","alt":["iş","vazife"],"equivalence":"full","false_friend":null,"note":"'Task' sayılabilir, belirli bir iştir (two tasks). 'Work' sayılamayan genel iştir; 'job' ise meslek ya da iş yeridir.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office"],"exams":[],"register":"neutral","vibes":[],"flags":["confusable:job"],"sensitivity":0},
-"quiz":{"cloze":"Please finish this ______ before lunch.","answer":"task","distractors":["salary","uniform","address"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.overtime.n.1","lemma":"overtime","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈoʊvərtaɪm/","uk":"/ˈəʊvətaɪm/"},
-"def":{"micro":"extra hours at work","short":"time you work after your normal hours, often with extra pay","long":"Time that you work in addition to your normal work hours. Some companies pay more for overtime, and some do not."},
-"grammar":{"pattern":"do / work overtime"},
-"examples":[
-{"en":"I worked two hours of overtime yesterday.","tr":"Dün iki saat fazla mesai yaptım.","register":"neutral","focus":"overtime"},
-{"en":"She gets extra pay for overtime.","tr":"Fazla mesai için ek ücret alıyor.","register":"neutral","focus":"overtime"},
-{"en":"We all did overtime to finish the project on time.","tr":"Projeyi zamanında bitirmek için hepimiz fazla mesai yaptık.","register":"neutral","focus":"overtime"}],
-"synonyms":["extra hours"],"antonyms":[],"collocations":["work overtime","do overtime","overtime pay","unpaid overtime"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"fazla mesai","alt":["ek mesai"],"equivalence":"full","false_friend":null,"note":"Sayılamaz isimdir: 'an overtime' denmez. 'Fazla mesai yapmak' = 'do / work overtime'. Ücretli ya da ücretsiz olabilir.","mistakes":[{"wrong":"I made overtime yesterday.","right":"I did overtime yesterday. / I worked overtime yesterday.","why":"'Fazla mesai yapmak' için 'do / work overtime' denir; 'make' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office"],"exams":[],"register":"neutral","vibes":[],"flags":["uncountable"],"sensitivity":0},
-"quiz":{"cloze":"He is tired because he worked ______ all week.","answer":"overtime","distractors":["salary","schedule","break"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.feedback.n.1","lemma":"feedback","type":"word","pos":"n","sense_no":1,"sense_note":null,"level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/ˈfiːdbæk/","uk":"/ˈfiːdbæk/"},
-"def":{"micro":"comments about your work","short":"comments that tell you what is good or bad about your work","long":"Comments about someone's work or actions that tell them what was good and what they can do better. It is uncountable: say 'some feedback', not 'a feedback'."},
-"grammar":{"pattern":"feedback on sth"},
-"examples":[
-{"en":"Thanks for the feedback on my report.","tr":"Raporum hakkındaki geri bildirimin için teşekkürler.","register":"neutral","focus":"feedback"},
-{"en":"My teacher gave me useful feedback.","tr":"Öğretmenim bana faydalı geri bildirim verdi.","register":"neutral","focus":"feedback"},
-{"en":"Can I get your feedback on this idea?","tr":"Bu fikir hakkında geri bildiriminizi alabilir miyim?","register":"neutral","focus":"feedback"}],
-"synonyms":["comments","response"],"antonyms":[],"collocations":["give feedback","positive feedback","ask for feedback","useful feedback","customer feedback"],
-"word_family":[],"etymology":null,
-"l1":{"tr":{"gloss":"geri bildirim","alt":["dönüt","görüş"],"equivalence":"full","false_friend":null,"note":"Sayılamayan isimdir: 'a feedback' ya da 'feedbacks' denmez; 'some feedback' ya da 'a piece of feedback' denir. Türkçede 'feedback' sık sık aynen kullanılır.","mistakes":[{"wrong":"I got many feedbacks.","right":"I got a lot of feedback.","why":"'Feedback' sayılamaz; çoğul eki almaz ve 'many' yerine 'a lot of / some' kullanılır."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office","school_learning"],"exams":[],"register":"neutral","vibes":[],"flags":["uncountable"],"sensitivity":0},
-"quiz":{"cloze":"Thank you for your honest ______ on my presentation.","answer":"feedback","distractors":["schedule","uniform","wage"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.report.n.1","lemma":"report","type":"word","pos":"n","sense_no":1,"sense_note":"written facts","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/rɪˈpɔːrt/","uk":"/rɪˈpɔːt/"},
-"def":{"micro":"a written account of facts","short":"a piece of writing that gives facts about a subject, often for work","long":"A piece of writing, or a talk, that gives facts about something, usually for people at work or at school. Managers often ask for a monthly report."},
-"grammar":{"pattern":"a report on / about sth"},
-"examples":[
-{"en":"I have to finish this report by Friday.","tr":"Bu raporu cumaya kadar bitirmem gerekiyor.","register":"neutral","focus":"report"},
-{"en":"She wrote a short report about the sales.","tr":"Satışlarla ilgili kısa bir rapor yazdı.","register":"neutral","focus":"report"},
-{"en":"The report says that sales went up by ten percent.","tr":"Rapora göre satışlar yüzde on arttı.","register":"neutral","focus":"report"}],
-"synonyms":["account","summary"],"antonyms":[],"collocations":["write a report","a monthly report","read a report","report card","a final report"],
-"word_family":[{"lemma":"report","pos":"v"},{"lemma":"reporter","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"rapor","alt":[],"equivalence":"cognate","false_friend":null,"note":"Türkçedeki 'rapor' ile aynı kökten ve benzer anlamda. Doktor raporu için 'doctor's note' ya da 'medical report' denir. 'Report' fiil olarak da 'bildirmek, haber vermek' demektir.","mistakes":[],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office","school_learning"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"My boss wants a short ______ on last month's sales.","answer":"report","distractors":["lunch","uniform","ticket"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.attend.v.1","lemma":"attend","type":"word","pos":"v","sense_no":1,"sense_note":"be present at","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/əˈtɛnd/","uk":"/əˈtɛnd/"},
-"def":{"micro":"be present at an event","short":"go to a meeting, class, or event and be there","long":"To be present at an event, a meeting, or a class. 'Attend' is more formal than 'go to', and it takes no preposition."},
-"grammar":{"pattern":"attend + sth (no preposition)"},
-"examples":[
-{"en":"Over fifty people attended the meeting.","tr":"Toplantıya elliden fazla kişi katıldı.","register":"formal","focus":"attended"},
-{"en":"I can't attend the class on Friday.","tr":"Cuma günkü derse katılamıyorum.","register":"formal","focus":"attend"},
-{"en":"Please attend the training session at nine.","tr":"Lütfen dokuzdaki eğitim oturumuna katılın.","register":"formal","focus":"attend"}],
-"synonyms":["go to","be present"],"antonyms":["miss"],"collocations":["attend a meeting","attend a class","attend school","regularly attend","attend a wedding"],
-"word_family":[{"lemma":"attendance","pos":"n"},{"lemma":"attendee","pos":"n"}],"etymology":null,
-"l1":{"tr":{"gloss":"katılmak","alt":["devam etmek","bulunmak"],"equivalence":"partial","false_friend":null,"note":"'Attend' resmî dildir; günlük konuşmada 'go to' denir. 'Attend' doğrudan nesne alır. 'Attend to' ise 'ilgilenmek' demektir, 'katılmak' değil.","mistakes":[{"wrong":"I attended to the meeting.","right":"I attended the meeting.","why":"'Toplantıya katılmak' için 'attend' doğrudan nesne alır; 'to' eklenirse anlam 'ilgilenmek' olur."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office","school_learning"],"exams":[],"register":"formal","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"Only ten people ______ the meeting because of the rain.","answer":"attended","distractors":["asked","followed","borrowed"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}},
-
-{"id":"en.break.n.1","lemma":"break","type":"word","pos":"n","sense_no":1,"sense_note":"short rest","level":"B1","level_source":"editorial_estimate","freq":null,
-"ipa":{"us":"/breɪk/","uk":"/breɪk/"},
-"def":{"micro":"a short rest from work","short":"a short time when you stop work or study to rest","long":"A short time when you stop working or studying to rest, eat, or have a drink. A coffee break is usually about fifteen minutes."},
-"grammar":{"pattern":"take / have a break"},
-"examples":[
-{"en":"Let's take a break and have some coffee.","tr":"Mola verip kahve içelim.","register":"neutral","focus":"break"},
-{"en":"She works for four hours without a break.","tr":"Dört saat mola vermeden çalışıyor.","register":"neutral","focus":"break"},
-{"en":"We have a ten-minute break at eleven.","tr":"Saat on birde on dakikalık bir molamız var.","register":"neutral","focus":"break"}],
-"synonyms":["rest","pause"],"antonyms":[],"collocations":["take a break","lunch break","coffee break","a short break","a break from work"],
-"word_family":[{"lemma":"break","pos":"v"}],"etymology":null,
-"l1":{"tr":{"gloss":"mola","alt":["ara","dinlenme"],"equivalence":"partial","false_friend":null,"note":"'Break' = mola, ara. Aynı yazılan fiil 'break' ise 'kırmak' demektir. 'Mola vermek' için 'take a break' denir.","mistakes":[{"wrong":"Let's make a break.","right":"Let's take a break.","why":"'Mola vermek' için 'take a break' denir; 'make' ya da 'give' kullanılmaz."}],"mnemonic":null}},
-"tags":{"primary_topic":"workplace_office","topics":["workplace_office","time_routines"],"exams":[],"register":"neutral","vibes":[],"flags":[],"sensitivity":0},
-"quiz":{"cloze":"We've been working for hours. Let's take a ______.","answer":"break","distractors":["email","desk","uniform"]},
-"meta":{"status":"draft","qa_flags":[],"prompt_ver":"kisisel-2026-10-11","model":"claude-sonnet (in-session subagent)","source":"kisisel_v1"}}
-]
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.colleague.n.1",
+      "lemma": "colleague",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːliːɡ/",
+        "uk": "/ˈkɒliːɡ/"
+      },
+      "def": {
+        "micro": "a person you work with",
+        "short": "a person who works with you at the same company",
+        "long": "A person who works with you in the same company or organization. You may share an office with a colleague or work on the same team."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I'm having lunch with a colleague today.",
+          "tr": "Bugün bir iş arkadaşımla öğle yemeği yiyorum.",
+          "register": "neutral",
+          "focus": "colleague"
+        },
+        {
+          "en": "My colleagues gave me a card on my birthday.",
+          "tr": "İş arkadaşlarım doğum günümde bana kart verdi.",
+          "register": "neutral",
+          "focus": "colleagues"
+        },
+        {
+          "en": "She is a new colleague, so please help her.",
+          "tr": "Yeni bir iş arkadaşımız, o yüzden lütfen ona yardım et.",
+          "register": "neutral",
+          "focus": "colleague"
+        }
+      ],
+      "synonyms": [
+        "coworker",
+        "workmate"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "college"
+      ],
+      "collocations": [
+        "a work colleague",
+        "former colleague",
+        "fellow colleague",
+        "colleagues and friends"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Latin 'collega', meaning a partner in office or work: someone chosen to work together with you.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "iş arkadaşı",
+          "alt": [
+            "meslektaş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Colleague' aynı yerde çalışan kişidir. Okunuşu 'KO-lig' gibidir ve 'college' (kolej / üniversite) ile karıştırılmamalıdır. 'Coworker' günlük konuşmada aynı anlamdadır.",
+          "mistakes": [
+            {
+              "wrong": "She is my colleague from school. (= sınıf arkadaşım)",
+              "right": "She is my classmate from school.",
+              "why": "Okuldaki arkadaş için 'classmate' kullanılır; 'colleague' yalnızca iş yerinde çalışanlar içindir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We work at the same company, so he is my ______.",
+        "answer": "colleague",
+        "distractors": [
+          "customer",
+          "neighbor",
+          "cousin"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.meeting.n.1",
+      "lemma": "meeting",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "work gathering",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmiːtɪŋ/",
+        "uk": "/ˈmiːtɪŋ/"
+      },
+      "def": {
+        "micro": "a planned talk with others",
+        "short": "a planned time when people come together to talk and make decisions",
+        "long": "A planned time when people come together, in a room or online, to talk about work and make decisions. Meetings can be short or long, big or small."
+      },
+      "grammar": {
+        "pattern": "have / go to a meeting"
+      },
+      "examples": [
+        {
+          "en": "I have a meeting at ten o'clock.",
+          "tr": "Saat onda bir toplantım var.",
+          "register": "neutral",
+          "focus": "meeting"
+        },
+        {
+          "en": "The team meeting was moved to Thursday.",
+          "tr": "Ekip toplantısı perşembeye alındı.",
+          "register": "neutral",
+          "focus": "meeting"
+        },
+        {
+          "en": "Sorry, I'm in a meeting. Can I call you back?",
+          "tr": "Pardon, toplantıdayım. Seni sonra arayabilir miyim?",
+          "register": "neutral",
+          "focus": "meeting"
+        }
+      ],
+      "synonyms": [
+        "session"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a meeting",
+        "attend a meeting",
+        "team meeting",
+        "a meeting room",
+        "online meeting"
+      ],
+      "word_family": [
+        {
+          "lemma": "meet",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "toplantı",
+          "alt": [
+            "görüşme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Meeting' = toplantı. 'Meet' fiili ise tanışmak ya da buluşmak demektir. 'Toplantı yapmak' için 'have' ya da 'hold a meeting' denir.",
+          "mistakes": [
+            {
+              "wrong": "I make a meeting every Monday.",
+              "right": "I have a meeting every Monday.",
+              "why": "'Toplantı yapmak' için 'make' değil 'have' (ya da 'hold') kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please be on time for the ______ at nine tomorrow.",
+        "answer": "meeting",
+        "distractors": [
+          "uniform",
+          "salary",
+          "desk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.boss.n.1",
+      "lemma": "boss",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɔːs/",
+        "uk": "/bɒs/"
+      },
+      "def": {
+        "micro": "the person you work for",
+        "short": "the person who is in charge of you and your work",
+        "long": "The person who is in charge of other workers and tells them what to do. Your boss may decide your tasks and your work hours."
+      },
+      "grammar": {
+        "pattern": "my / your / her boss"
+      },
+      "examples": [
+        {
+          "en": "My boss is very kind and fair.",
+          "tr": "Müdürüm çok kibar ve adil biri.",
+          "register": "informal",
+          "focus": "boss"
+        },
+        {
+          "en": "I need to ask my boss for a day off.",
+          "tr": "Müdürümden bir gün izin istemem gerek.",
+          "register": "informal",
+          "focus": "boss"
+        },
+        {
+          "en": "She wants to be her own boss one day.",
+          "tr": "Bir gün kendi patronu olmak istiyor.",
+          "register": "informal",
+          "focus": "boss"
+        }
+      ],
+      "synonyms": [
+        "manager",
+        "supervisor"
+      ],
+      "antonyms": [
+        "employee"
+      ],
+      "collocations": [
+        "my boss",
+        "the big boss",
+        "be your own boss",
+        "talk to your boss"
+      ],
+      "word_family": [
+        {
+          "lemma": "bossy",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "patron",
+          "alt": [
+            "müdür",
+            "amir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Boss' senin üstündeki kişidir; Türkçede duruma göre 'patron', 'müdür' ya da 'amir' denir. Resmî ortamda 'manager' ya da 'supervisor' kullanılır; 'boss' konuşma dilidir.",
+          "mistakes": [
+            {
+              "wrong": "I talked with my chief about it.",
+              "right": "I talked with my boss about it.",
+              "why": "'Şef' kelimesinin karşılığı 'chief' iş yerinde pek kullanılmaz; üstün için 'boss' ya da 'manager' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My ______ gave me a day off because I worked all weekend.",
+        "answer": "boss",
+        "distractors": [
+          "neighbor",
+          "cousin",
+          "student"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.salary.n.1",
+      "lemma": "salary",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsæləri/",
+        "uk": "/ˈsæləri/"
+      },
+      "def": {
+        "micro": "money you get from work",
+        "short": "the fixed amount of money you get each month for your job",
+        "long": "The fixed amount of money that a company pays you for your work, usually every month. Many people ask for a higher salary after a few years."
+      },
+      "grammar": {
+        "pattern": "earn / get a salary"
+      },
+      "examples": [
+        {
+          "en": "My salary goes into my bank account on the 15th.",
+          "tr": "Maaşım ayın 15'inde banka hesabıma yatıyor.",
+          "register": "neutral",
+          "focus": "salary"
+        },
+        {
+          "en": "He left his job because the salary was too low.",
+          "tr": "Maaş çok düşük olduğu için işinden ayrıldı.",
+          "register": "neutral",
+          "focus": "salary"
+        },
+        {
+          "en": "What salary are you hoping for?",
+          "tr": "Ne kadar maaş bekliyorsun?",
+          "register": "neutral",
+          "focus": "salary"
+        }
+      ],
+      "synonyms": [
+        "pay",
+        "wages"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a high salary",
+        "a monthly salary",
+        "earn a salary",
+        "salary increase",
+        "annual salary"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "maaş",
+          "alt": [
+            "aylık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Salary' aylık sabit maaştır. Saat ya da günlük ücret için 'wage' kullanılır. Genel olarak 'pay', iş karşılığı alınan paradır.",
+          "mistakes": [
+            {
+              "wrong": "I take a good salary.",
+              "right": "I earn a good salary. / I get a good salary.",
+              "why": "Maaş için 'earn' ya da 'get' kullanılır; 'take' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She earns a good ______ as a nurse.",
+        "answer": "salary",
+        "distractors": [
+          "report",
+          "ticket",
+          "address"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.schedule.n.1",
+      "lemma": "schedule",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskɛdʒuːl/",
+        "uk": "/ˈʃɛdjuːl/"
+      },
+      "def": {
+        "micro": "a plan of times for things",
+        "short": "a list that shows when things will happen or when you must do them",
+        "long": "A plan or list that shows the times when things will happen or when you must do them, such as work hours or meetings. Your schedule can be busy or free."
+      },
+      "grammar": {
+        "pattern": "on / behind schedule"
+      },
+      "examples": [
+        {
+          "en": "My schedule is full this week.",
+          "tr": "Bu hafta programım dolu.",
+          "register": "neutral",
+          "focus": "schedule"
+        },
+        {
+          "en": "Let me check my schedule and call you back.",
+          "tr": "Programıma bakıp seni geri arayayım.",
+          "register": "neutral",
+          "focus": "schedule"
+        },
+        {
+          "en": "The bus schedule changed, so I'll be late.",
+          "tr": "Otobüs saatleri değişti, o yüzden geç kalacağım.",
+          "register": "neutral",
+          "focus": "schedule"
+        }
+      ],
+      "synonyms": [
+        "timetable",
+        "plan"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "program"
+      ],
+      "collocations": [
+        "a busy schedule",
+        "a tight schedule",
+        "on schedule",
+        "behind schedule",
+        "check your schedule"
+      ],
+      "word_family": [
+        {
+          "lemma": "schedule",
+          "pos": "v"
+        },
+        {
+          "lemma": "scheduled",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "program",
+          "alt": [
+            "çizelge",
+            "takvim"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zaman planı olarak Türkçedeki 'program' sözcüğü karşılar. İngilizcede 'program' ise TV programı ya da bilgisayar programıdır. Okunuşu: ABD 'sked-yul', İngiltere 'shed-yul'.",
+          "mistakes": [
+            {
+              "wrong": "I have a busy program today.",
+              "right": "I have a busy schedule today.",
+              "why": "Günlük plan için 'schedule' kullanılır; 'program' TV programı ya da bilgisayar programı demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a very busy ______ today, with five meetings.",
+        "answer": "schedule",
+        "distractors": [
+          "salary",
+          "holiday",
+          "report"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.task.n.1",
+      "lemma": "task",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tæsk/",
+        "uk": "/tɑːsk/"
+      },
+      "def": {
+        "micro": "a piece of work to do",
+        "short": "a piece of work that you have to do, often a small one",
+        "long": "A piece of work that you must do, often as part of a bigger job. Small tasks are easier to finish than big ones."
+      },
+      "grammar": {
+        "pattern": "a task for / to do"
+      },
+      "examples": [
+        {
+          "en": "My first task today is to answer emails.",
+          "tr": "Bugünkü ilk işim e-postaları yanıtlamak.",
+          "register": "neutral",
+          "focus": "task"
+        },
+        {
+          "en": "Cleaning the kitchen is not an easy task.",
+          "tr": "Mutfağı temizlemek kolay bir iş değil.",
+          "register": "neutral",
+          "focus": "task"
+        },
+        {
+          "en": "Our manager gave each person a different task.",
+          "tr": "Müdürümüz herkese farklı bir görev verdi.",
+          "register": "neutral",
+          "focus": "task"
+        }
+      ],
+      "synonyms": [
+        "job",
+        "duty",
+        "chore"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "job"
+      ],
+      "collocations": [
+        "a difficult task",
+        "complete a task",
+        "a simple task",
+        "daily tasks",
+        "the task of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görev",
+          "alt": [
+            "iş",
+            "vazife"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Task' sayılabilir, belirli bir iştir (two tasks). 'Work' sayılamayan genel iştir; 'job' ise meslek ya da iş yeridir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please finish this ______ before lunch.",
+        "answer": "task",
+        "distractors": [
+          "salary",
+          "uniform",
+          "address"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.overtime.n.1",
+      "lemma": "overtime",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈoʊvərtaɪm/",
+        "uk": "/ˈəʊvətaɪm/"
+      },
+      "def": {
+        "micro": "extra hours at work",
+        "short": "time you work after your normal hours, often with extra pay",
+        "long": "Time that you work in addition to your normal work hours. Some companies pay more for overtime, and some do not."
+      },
+      "grammar": {
+        "pattern": "do / work overtime"
+      },
+      "examples": [
+        {
+          "en": "I worked two hours of overtime yesterday.",
+          "tr": "Dün iki saat fazla mesai yaptım.",
+          "register": "neutral",
+          "focus": "overtime"
+        },
+        {
+          "en": "She gets extra pay for overtime.",
+          "tr": "Fazla mesai için ek ücret alıyor.",
+          "register": "neutral",
+          "focus": "overtime"
+        },
+        {
+          "en": "We all did overtime to finish the project on time.",
+          "tr": "Projeyi zamanında bitirmek için hepimiz fazla mesai yaptık.",
+          "register": "neutral",
+          "focus": "overtime"
+        }
+      ],
+      "synonyms": [
+        "extra hours"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "work overtime",
+        "do overtime",
+        "overtime pay",
+        "unpaid overtime"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fazla mesai",
+          "alt": [
+            "ek mesai"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz isimdir: 'an overtime' denmez. 'Fazla mesai yapmak' = 'do / work overtime'. Ücretli ya da ücretsiz olabilir.",
+          "mistakes": [
+            {
+              "wrong": "I made overtime yesterday.",
+              "right": "I did overtime yesterday. / I worked overtime yesterday.",
+              "why": "'Fazla mesai yapmak' için 'do / work overtime' denir; 'make' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He is tired because he worked ______ all week.",
+        "answer": "overtime",
+        "distractors": [
+          "salary",
+          "schedule",
+          "break"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feedback.n.1",
+      "lemma": "feedback",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfiːdbæk/",
+        "uk": "/ˈfiːdbæk/"
+      },
+      "def": {
+        "micro": "comments about your work",
+        "short": "comments that tell you what is good or bad about your work",
+        "long": "Comments about someone's work or actions that tell them what was good and what they can do better. It is uncountable: say 'some feedback', not 'a feedback'."
+      },
+      "grammar": {
+        "pattern": "feedback on sth"
+      },
+      "examples": [
+        {
+          "en": "Thanks for the feedback on my report.",
+          "tr": "Raporum hakkındaki geri bildirimin için teşekkürler.",
+          "register": "neutral",
+          "focus": "feedback"
+        },
+        {
+          "en": "My teacher gave me useful feedback.",
+          "tr": "Öğretmenim bana faydalı geri bildirim verdi.",
+          "register": "neutral",
+          "focus": "feedback"
+        },
+        {
+          "en": "Can I get your feedback on this idea?",
+          "tr": "Bu fikir hakkında geri bildiriminizi alabilir miyim?",
+          "register": "neutral",
+          "focus": "feedback"
+        }
+      ],
+      "synonyms": [
+        "comments",
+        "response"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "give feedback",
+        "positive feedback",
+        "ask for feedback",
+        "useful feedback",
+        "customer feedback"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geri bildirim",
+          "alt": [
+            "dönüt",
+            "görüş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamayan isimdir: 'a feedback' ya da 'feedbacks' denmez; 'some feedback' ya da 'a piece of feedback' denir. Türkçede 'feedback' sık sık aynen kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I got many feedbacks.",
+              "right": "I got a lot of feedback.",
+              "why": "'Feedback' sayılamaz; çoğul eki almaz ve 'many' yerine 'a lot of / some' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thank you for your honest ______ on my presentation.",
+        "answer": "feedback",
+        "distractors": [
+          "schedule",
+          "uniform",
+          "wage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.report.n.1",
+      "lemma": "report",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "written facts",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈpɔːrt/",
+        "uk": "/rɪˈpɔːt/"
+      },
+      "def": {
+        "micro": "a written account of facts",
+        "short": "a piece of writing that gives facts about a subject, often for work",
+        "long": "A piece of writing, or a talk, that gives facts about something, usually for people at work or at school. Managers often ask for a monthly report."
+      },
+      "grammar": {
+        "pattern": "a report on / about sth"
+      },
+      "examples": [
+        {
+          "en": "I have to finish this report by Friday.",
+          "tr": "Bu raporu cumaya kadar bitirmem gerekiyor.",
+          "register": "neutral",
+          "focus": "report"
+        },
+        {
+          "en": "She wrote a short report about the sales.",
+          "tr": "Satışlarla ilgili kısa bir rapor yazdı.",
+          "register": "neutral",
+          "focus": "report"
+        },
+        {
+          "en": "The report says that sales went up by ten percent.",
+          "tr": "Rapora göre satışlar yüzde on arttı.",
+          "register": "neutral",
+          "focus": "report"
+        }
+      ],
+      "synonyms": [
+        "account",
+        "summary"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "write a report",
+        "a monthly report",
+        "read a report",
+        "report card",
+        "a final report"
+      ],
+      "word_family": [
+        {
+          "lemma": "report",
+          "pos": "v"
+        },
+        {
+          "lemma": "reporter",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rapor",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'rapor' ile aynı kökten ve benzer anlamda. Doktor raporu için 'doctor's note' ya da 'medical report' denir. 'Report' fiil olarak da 'bildirmek, haber vermek' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My boss wants a short ______ on last month's sales.",
+        "answer": "report",
+        "distractors": [
+          "lunch",
+          "uniform",
+          "ticket"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.attend.v.1",
+      "lemma": "attend",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be present at",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈtɛnd/",
+        "uk": "/əˈtɛnd/"
+      },
+      "def": {
+        "micro": "be present at an event",
+        "short": "go to a meeting, class, or event and be there",
+        "long": "To be present at an event, a meeting, or a class. 'Attend' is more formal than 'go to', and it takes no preposition."
+      },
+      "grammar": {
+        "pattern": "attend + sth (no preposition)"
+      },
+      "examples": [
+        {
+          "en": "Over fifty people attended the meeting.",
+          "tr": "Toplantıya elliden fazla kişi katıldı.",
+          "register": "formal",
+          "focus": "attended"
+        },
+        {
+          "en": "I can't attend the class on Friday.",
+          "tr": "Cuma günkü derse katılamıyorum.",
+          "register": "formal",
+          "focus": "attend"
+        },
+        {
+          "en": "Please attend the training session at nine.",
+          "tr": "Lütfen dokuzdaki eğitim oturumuna katılın.",
+          "register": "formal",
+          "focus": "attend"
+        }
+      ],
+      "synonyms": [
+        "go to",
+        "be present"
+      ],
+      "antonyms": [
+        "miss"
+      ],
+      "confusables": [
+        "join"
+      ],
+      "collocations": [
+        "attend a meeting",
+        "attend a class",
+        "attend school",
+        "regularly attend",
+        "attend a wedding"
+      ],
+      "word_family": [
+        {
+          "lemma": "attendance",
+          "pos": "n"
+        },
+        {
+          "lemma": "attendee",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "katılmak",
+          "alt": [
+            "devam etmek",
+            "bulunmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Attend' resmî dildir; günlük konuşmada 'go to' denir. 'Attend' doğrudan nesne alır. 'Attend to' ise 'ilgilenmek' demektir, 'katılmak' değil.",
+          "mistakes": [
+            {
+              "wrong": "I attended to the meeting.",
+              "right": "I attended the meeting.",
+              "why": "'Toplantıya katılmak' için 'attend' doğrudan nesne alır; 'to' eklenirse anlam 'ilgilenmek' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Only ten people ______ the meeting because of the rain.",
+        "answer": "attended",
+        "distractors": [
+          "asked",
+          "followed",
+          "borrowed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.break.n.1",
+      "lemma": "break",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "short rest",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/breɪk/",
+        "uk": "/breɪk/"
+      },
+      "def": {
+        "micro": "a short rest from work",
+        "short": "a short time when you stop work or study to rest",
+        "long": "A short time when you stop working or studying to rest, eat, or have a drink. A coffee break is usually about fifteen minutes."
+      },
+      "grammar": {
+        "pattern": "take / have a break"
+      },
+      "examples": [
+        {
+          "en": "Let's take a break and have some coffee.",
+          "tr": "Mola verip kahve içelim.",
+          "register": "neutral",
+          "focus": "break"
+        },
+        {
+          "en": "She works for four hours without a break.",
+          "tr": "Dört saat mola vermeden çalışıyor.",
+          "register": "neutral",
+          "focus": "break"
+        },
+        {
+          "en": "We have a ten-minute break at eleven.",
+          "tr": "Saat on birde on dakikalık bir molamız var.",
+          "register": "neutral",
+          "focus": "break"
+        }
+      ],
+      "synonyms": [
+        "rest",
+        "pause"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take a break",
+        "lunch break",
+        "coffee break",
+        "a short break",
+        "a break from work"
+      ],
+      "word_family": [
+        {
+          "lemma": "break",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mola",
+          "alt": [
+            "ara",
+            "dinlenme"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Break' = mola, ara. Aynı yazılan fiil 'break' ise 'kırmak' demektir. 'Mola vermek' için 'take a break' denir.",
+          "mistakes": [
+            {
+              "wrong": "Let's make a break.",
+              "right": "Let's take a break.",
+              "why": "'Mola vermek' için 'take a break' denir; 'make' ya da 'give' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We've been working for hours. Let's take a ______.",
+        "answer": "break",
+        "distractors": [
+          "email",
+          "desk",
+          "uniform"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
 }

@@ -1,435 +1,1051 @@
 {
-"schema_version": "1.0",
-"l1_langs": ["tr"],
-"generated_on": "2026-10-11",
-"entries": [
-{
-  "id": "en.round_trip.phr.1",
-  "lemma": "round trip",
-  "type": "collocation",
-  "pos": "phr",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˌraʊnd ˈtrɪp/", "uk": "/ˌraʊnd ˈtrɪp/"},
-  "def": {
-    "micro": "trip there and back",
-    "short": "a trip to a place and back again",
-    "long": "A trip to a place and back again to where you started. A ticket for this is often cheaper than two one-way tickets."
-  },
-  "grammar": {"pattern": "a round trip ticket / flight"},
-  "examples": [
-    {"en": "A round trip ticket to Izmir is cheaper online.", "tr": "İzmir'e gidiş-dönüş bileti internetten daha ucuz.", "register": "neutral", "focus": "round trip"},
-    {"en": "The round trip takes about eight hours by bus.", "tr": "Gidiş-dönüş otobüsle yaklaşık sekiz saat sürüyor.", "register": "neutral", "focus": "round trip"},
-    {"en": "I'd like a round trip ticket to Ankara, please.", "tr": "Ankara'ya gidiş-dönüş bir bilet istiyorum.", "register": "neutral", "focus": "round trip"}
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
   ],
-  "synonyms": ["return"],
-  "antonyms": ["one-way"],
-  "collocations": ["a round trip ticket", "a round trip flight", "a round trip to", "the round trip"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "gidiş-dönüş",
-      "alt": [],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "ABD'de 'round trip', İngiltere'de 'return' (a return ticket) denir. Karşıtı 'one-way' (tek yön, sadece gidiş).",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I'm coming back on Sunday, so I need a ______ ticket.", "answer": "round trip", "distractors": ["one-way", "free", "double"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.jet_lag.phr.1",
-  "lemma": "jet lag",
-  "type": "collocation",
-  "pos": "phr",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ˈdʒɛt læɡ/", "uk": "/ˈdʒɛt læɡ/"},
-  "def": {
-    "micro": "tired after a long flight",
-    "short": "the tired feeling you get after flying across many time zones",
-    "long": "A tired, confused feeling that you get after a long flight to a place with a different time. Your body still thinks it is the time at home."
-  },
-  "grammar": {"pattern": "have / suffer from jet lag (no 'a')"},
-  "examples": [
-    {"en": "I had terrible jet lag after the trip to Tokyo.", "tr": "Tokyo yolculuğundan sonra çok kötü jet lag yaşadım.", "register": "neutral", "focus": "jet lag"},
-    {"en": "It takes me three days to get over jet lag.", "tr": "Jet lag'i atlatmam üç gün sürüyor.", "register": "neutral", "focus": "jet lag"},
-    {"en": "She woke up at 3 a.m. because of jet lag.", "tr": "Jet lag yüzünden sabah 3'te uyandı.", "register": "neutral", "focus": "jet lag"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["suffer from jet lag", "get over jet lag", "bad jet lag", "have jet lag"],
-  "word_family": [],
-  "etymology": {"text": "'Lag' means 'delay'. After a fast jet plane takes you across time zones, your body 'lags behind'. The word appeared in the 1960s with jet travel.", "origin": "English", "confidence": "high"},
-  "l1": {
-    "tr": {
-      "gloss": "jet lag",
-      "alt": ["saat farkı yorgunluğu"],
-      "equivalence": "cognate",
-      "false_friend": null,
-      "note": "Türkçede de 'jet lag' deriz. Sebebi uyku düzeninin saat farkına uymamasıdır; sıradan yorgunluk (tired) değildir.",
-      "mistakes": [
-        {"wrong": "I have a jet lag.", "right": "I have jet lag.", "why": "'Jet lag' sayılamayan bir isimdir. Türkçede 'bir jet lag yaşadım' diyebildiğimiz için 'a' eklenir; ama 'a jet lag' denmez."}
+  "generated_on": "2026-10-11",
+  "entries": [
+    {
+      "id": "en.round_trip.phr.1",
+      "lemma": "round trip",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌraʊnd ˈtrɪp/",
+        "uk": "/ˌraʊnd ˈtrɪp/"
+      },
+      "def": {
+        "micro": "trip there and back",
+        "short": "a trip to a place and back again",
+        "long": "A trip to a place and back again to where you started. A ticket for this is often cheaper than two one-way tickets."
+      },
+      "grammar": {
+        "pattern": "a round trip ticket / flight"
+      },
+      "examples": [
+        {
+          "en": "A round trip ticket to Izmir is cheaper online.",
+          "tr": "İzmir'e gidiş-dönüş bileti internetten daha ucuz.",
+          "register": "neutral",
+          "focus": "round trip"
+        },
+        {
+          "en": "The round trip takes about eight hours by bus.",
+          "tr": "Gidiş-dönüş otobüsle yaklaşık sekiz saat sürüyor.",
+          "register": "neutral",
+          "focus": "round trip"
+        },
+        {
+          "en": "I'd like a round trip ticket to Ankara, please.",
+          "tr": "Ankara'ya gidiş-dönüş bir bilet istiyorum.",
+          "register": "neutral",
+          "focus": "round trip"
+        }
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "health_body"], "exams": [], "register": "neutral", "vibes": [], "flags": ["uncountable"], "sensitivity": 0},
-  "quiz": {"cloze": "After a ten-hour flight to the US, I had bad ______ for three days.", "answer": "jet lag", "distractors": ["luggage", "currency", "customs"]},
-  "meta": {"status": "draft", "qa_flags": ["critic_edited"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.board.v.1",
-  "lemma": "board",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "a plane, ship, or train",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/bɔːrd/", "uk": "/bɔːd/"},
-  "def": {
-    "micro": "get on a plane or ship",
-    "short": "to get on a plane, ship, or train at the start of a trip",
-    "long": "To get on a plane, ship, or train at the start of a trip. At airports, you usually do it at the gate after your pass is checked."
-  },
-  "grammar": {"pattern": "board + plane / ship / train"},
-  "examples": [
-    {"en": "Passengers can now board the plane.", "tr": "Yolcular artık uçağa binebilir.", "register": "formal", "focus": "board"},
-    {"en": "We boarded the ferry at six in the morning.", "tr": "Sabah altıda vapura bindik.", "register": "neutral", "focus": "boarded"},
-    {"en": "The flight to Rome is now boarding at gate 14.", "tr": "Roma uçuşu için 14. kapıdan biniş başladı.", "register": "formal", "focus": "boarding"}
-  ],
-  "synonyms": ["get on"],
-  "antonyms": ["get off"],
-  "collocations": ["board a plane", "board the train", "now boarding", "board a flight"],
-  "word_family": [{"lemma": "boarding", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "uçağa binmek",
-      "alt": ["gemiye binmek", "biniş yapmak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Düzenli, resmî biniş için kullanılır (uçak, gemi, tren). Otobüs ve metro için günlük dilde 'get on' denir. 'Biniş kartı' = boarding pass.",
-      "mistakes": [
-        {"wrong": "We boarded to the plane.", "right": "We boarded the plane.", "why": "Türkçede 'uçağa' (-e) dediğimiz için 'to' eklenir; ama 'board' doğrudan nesne alır."}
+      "synonyms": [
+        "return"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The passengers will ______ the plane in ten minutes.", "answer": "board", "distractors": ["pack", "arrive", "carry"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.delay.n.1",
-  "lemma": "delay",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": null,
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/dɪˈleɪ/", "uk": "/dɪˈleɪ/"},
-  "def": {
-    "micro": "time when something is late",
-    "short": "a period of time when something happens later than planned",
-    "long": "A period of time when something happens later than planned, for example a flight, a train, or a package. Airlines often tell passengers about them by message."
-  },
-  "grammar": {"pattern": "a delay of + time / a delay to + sth"},
-  "examples": [
-    {"en": "There is a one-hour delay for the flight to Berlin.", "tr": "Berlin uçuşunda bir saatlik gecikme var.", "register": "neutral", "focus": "delay"},
-    {"en": "Sorry for the delay. The traffic was terrible.", "tr": "Gecikme için özür dilerim. Trafik berbattı.", "register": "neutral", "focus": "delay"},
-    {"en": "Because of the delay, we missed our connection.", "tr": "Gecikme yüzünden aktarmayı kaçırdık.", "register": "neutral", "focus": "delay"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["a flight delay", "a long delay", "a delay of an hour", "expect delays"],
-  "word_family": [{"lemma": "delay", "pos": "v"}, {"lemma": "delayed", "pos": "adj"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "gecikme",
-      "alt": ["rötar"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Uçak ve tren duyurularında 'rötar' da denir (Fransızca 'retard'dan). Fiil olarak: 'be delayed' = gecikmek, 'delay' = geciktirmek.",
-      "mistakes": [
-        {"wrong": "The train was delay for two hours.", "right": "The train was delayed for two hours.", "why": "'Delay' isimdir (gecikme). 'Gecikti' demek için sıfat/fiil hâli 'delayed' gerekir."}
+      "antonyms": [
+        "one-way"
       ],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "travel_tourism", "topics": ["travel_tourism", "cities_transport"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The plane left two hours late because of a ______ at the airport.", "answer": "delay", "distractors": ["souvenir", "passport", "hotel"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.subscription.n.1",
-  "lemma": "subscription",
-  "type": "word",
-  "pos": "n",
-  "sense_no": 1,
-  "sense_note": "for an app or service",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/səbˈskrɪpʃən/", "uk": "/səbˈskrɪpʃən/"},
-  "def": {
-    "micro": "monthly fee for a service",
-    "short": "money you pay every month or year to use an app, magazine, or service",
-    "long": "Money that you pay regularly, often every month or year, to use an app, a streaming service, or a magazine. It continues until you cancel it."
-  },
-  "grammar": null,
-  "examples": [
-    {"en": "I have a monthly subscription to a music app.", "tr": "Bir müzik uygulamasına aylık aboneliğim var.", "register": "neutral", "focus": "subscription"},
-    {"en": "Don't forget to cancel your subscription before the free trial ends.", "tr": "Ücretsiz deneme bitmeden aboneliğini iptal etmeyi unutma.", "register": "neutral", "focus": "subscription"},
-    {"en": "The yearly subscription is cheaper than paying monthly.", "tr": "Yıllık abonelik, aylık ödemeden daha ucuz.", "register": "neutral", "focus": "subscription"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["cancel a subscription", "a monthly subscription", "a yearly subscription", "renew a subscription"],
-  "word_family": [{"lemma": "subscribe", "pos": "v"}, {"lemma": "subscriber", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "abonelik",
-      "alt": ["üyelik"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Uygulama ve yayın platformlarında 'abonelik' denir. 'Subscribe' = abone olmak. Spor salonu veya kulüp için 'membership' (üyelik) kullanılır.",
-      "mistakes": [
-        {"wrong": "I made a subscription to this app.", "right": "I subscribed to this app.", "why": "'Abonelik yapmak' kalıbı İngilizcede fiille söylenir: 'subscribe to'. 'Make a subscription' denmez."}
+      "collocations": [
+        "a round trip ticket",
+        "a round trip flight",
+        "a round trip to",
+        "the round trip"
       ],
-      "mnemonic": null
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gidiş-dönüş",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "ABD'de 'round trip', İngiltere'de 'return' (a return ticket) denir. Karşıtı 'one-way' (tek yön, sadece gidiş).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm coming back on Sunday, so I need a ______ ticket.",
+        "answer": "round trip",
+        "distractors": [
+          "one-way",
+          "free",
+          "double"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.jet_lag.phr.1",
+      "lemma": "jet lag",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒɛt læɡ/",
+        "uk": "/ˈdʒɛt læɡ/"
+      },
+      "def": {
+        "micro": "tired after a long flight",
+        "short": "the tired feeling you get after flying across many time zones",
+        "long": "A tired, confused feeling that you get after a long flight to a place with a different time. Your body still thinks it is the time at home."
+      },
+      "grammar": {
+        "pattern": "have / suffer from jet lag (no 'a')"
+      },
+      "examples": [
+        {
+          "en": "I had terrible jet lag after the trip to Tokyo.",
+          "tr": "Tokyo yolculuğundan sonra çok kötü jet lag yaşadım.",
+          "register": "neutral",
+          "focus": "jet lag"
+        },
+        {
+          "en": "It takes me three days to get over jet lag.",
+          "tr": "Jet lag'i atlatmam üç gün sürüyor.",
+          "register": "neutral",
+          "focus": "jet lag"
+        },
+        {
+          "en": "She woke up at 3 a.m. because of jet lag.",
+          "tr": "Jet lag yüzünden sabah 3'te uyandı.",
+          "register": "neutral",
+          "focus": "jet lag"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "suffer from jet lag",
+        "get over jet lag",
+        "bad jet lag",
+        "have jet lag"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "'Lag' means 'delay'. After a fast jet plane takes you across time zones, your body 'lags behind'. The word appeared in the 1960s with jet travel.",
+        "origin": "English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "jet lag",
+          "alt": [
+            "saat farkı yorgunluğu"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede de 'jet lag' deriz. Sebebi uyku düzeninin saat farkına uymamasıdır; sıradan yorgunluk (tired) değildir.",
+          "mistakes": [
+            {
+              "wrong": "I have a jet lag.",
+              "right": "I have jet lag.",
+              "why": "'Jet lag' sayılamayan bir isimdir. Türkçede 'bir jet lag yaşadım' diyebildiğimiz için 'a' eklenir; ama 'a jet lag' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After a ten-hour flight to the US, I had bad ______ for three days.",
+        "answer": "jet lag",
+        "distractors": [
+          "luggage",
+          "currency",
+          "customs"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.board.v.1",
+      "lemma": "board",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "a plane, ship, or train",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɔːrd/",
+        "uk": "/bɔːd/"
+      },
+      "def": {
+        "micro": "get on a plane or ship",
+        "short": "to get on a plane, ship, or train at the start of a trip",
+        "long": "To get on a plane, ship, or train at the start of a trip. At airports, you usually do it at the gate after your pass is checked."
+      },
+      "grammar": {
+        "pattern": "board + plane / ship / train"
+      },
+      "examples": [
+        {
+          "en": "Passengers can now board the plane.",
+          "tr": "Yolcular artık uçağa binebilir.",
+          "register": "formal",
+          "focus": "board"
+        },
+        {
+          "en": "We boarded the ferry at six in the morning.",
+          "tr": "Sabah altıda vapura bindik.",
+          "register": "neutral",
+          "focus": "boarded"
+        },
+        {
+          "en": "The flight to Rome is now boarding at gate 14.",
+          "tr": "Roma uçuşu için 14. kapıdan biniş başladı.",
+          "register": "formal",
+          "focus": "boarding"
+        }
+      ],
+      "synonyms": [
+        "get on"
+      ],
+      "antonyms": [
+        "get off"
+      ],
+      "confusables": [
+        "get on"
+      ],
+      "collocations": [
+        "board a plane",
+        "board the train",
+        "now boarding",
+        "board a flight"
+      ],
+      "word_family": [
+        {
+          "lemma": "boarding",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uçağa binmek",
+          "alt": [
+            "gemiye binmek",
+            "biniş yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Düzenli, resmî biniş için kullanılır (uçak, gemi, tren). Otobüs ve metro için günlük dilde 'get on' denir. 'Biniş kartı' = boarding pass.",
+          "mistakes": [
+            {
+              "wrong": "We boarded to the plane.",
+              "right": "We boarded the plane.",
+              "why": "Türkçede 'uçağa' (-e) dediğimiz için 'to' eklenir; ama 'board' doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The passengers will ______ the plane in ten minutes.",
+        "answer": "board",
+        "distractors": [
+          "pack",
+          "arrive",
+          "carry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.delay.n.1",
+      "lemma": "delay",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈleɪ/",
+        "uk": "/dɪˈleɪ/"
+      },
+      "def": {
+        "micro": "time when something is late",
+        "short": "a period of time when something happens later than planned",
+        "long": "A period of time when something happens later than planned, for example a flight, a train, or a package. Airlines often tell passengers about them by message."
+      },
+      "grammar": {
+        "pattern": "a delay of + time / a delay to + sth"
+      },
+      "examples": [
+        {
+          "en": "There is a one-hour delay for the flight to Berlin.",
+          "tr": "Berlin uçuşunda bir saatlik gecikme var.",
+          "register": "neutral",
+          "focus": "delay"
+        },
+        {
+          "en": "Sorry for the delay. The traffic was terrible.",
+          "tr": "Gecikme için özür dilerim. Trafik berbattı.",
+          "register": "neutral",
+          "focus": "delay"
+        },
+        {
+          "en": "Because of the delay, we missed our connection.",
+          "tr": "Gecikme yüzünden aktarmayı kaçırdık.",
+          "register": "neutral",
+          "focus": "delay"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "postpone"
+      ],
+      "collocations": [
+        "a flight delay",
+        "a long delay",
+        "a delay of an hour",
+        "expect delays"
+      ],
+      "word_family": [
+        {
+          "lemma": "delay",
+          "pos": "v"
+        },
+        {
+          "lemma": "delayed",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gecikme",
+          "alt": [
+            "rötar"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Uçak ve tren duyurularında 'rötar' da denir (Fransızca 'retard'dan). Fiil olarak: 'be delayed' = gecikmek, 'delay' = geciktirmek.",
+          "mistakes": [
+            {
+              "wrong": "The train was delay for two hours.",
+              "right": "The train was delayed for two hours.",
+              "why": "'Delay' isimdir (gecikme). 'Gecikti' demek için sıfat/fiil hâli 'delayed' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The plane left two hours late because of a ______ at the airport.",
+        "answer": "delay",
+        "distractors": [
+          "souvenir",
+          "passport",
+          "hotel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.subscription.n.1",
+      "lemma": "subscription",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "for an app or service",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səbˈskrɪpʃən/",
+        "uk": "/səbˈskrɪpʃən/"
+      },
+      "def": {
+        "micro": "monthly fee for a service",
+        "short": "money you pay every month or year to use an app, magazine, or service",
+        "long": "Money that you pay regularly, often every month or year, to use an app, a streaming service, or a magazine. It continues until you cancel it."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "I have a monthly subscription to a music app.",
+          "tr": "Bir müzik uygulamasına aylık aboneliğim var.",
+          "register": "neutral",
+          "focus": "subscription"
+        },
+        {
+          "en": "Don't forget to cancel your subscription before the free trial ends.",
+          "tr": "Ücretsiz deneme bitmeden aboneliğini iptal etmeyi unutma.",
+          "register": "neutral",
+          "focus": "subscription"
+        },
+        {
+          "en": "The yearly subscription is cheaper than paying monthly.",
+          "tr": "Yıllık abonelik, aylık ödemeden daha ucuz.",
+          "register": "neutral",
+          "focus": "subscription"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cancel a subscription",
+        "a monthly subscription",
+        "a yearly subscription",
+        "renew a subscription"
+      ],
+      "word_family": [
+        {
+          "lemma": "subscribe",
+          "pos": "v"
+        },
+        {
+          "lemma": "subscriber",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "abonelik",
+          "alt": [
+            "üyelik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Uygulama ve yayın platformlarında 'abonelik' denir. 'Subscribe' = abone olmak. Spor salonu veya kulüp için 'membership' (üyelik) kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I made a subscription to this app.",
+              "right": "I subscribed to this app.",
+              "why": "'Abonelik yapmak' kalıbı İngilizcede fiille söylenir: 'subscribe to'. 'Make a subscription' denmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I pay ten euros a month for my music ______.",
+        "answer": "subscription",
+        "distractors": [
+          "cable",
+          "screen",
+          "souvenir"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.install.v.1",
+      "lemma": "install",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "an app or program",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈstɔːl/",
+        "uk": "/ɪnˈstɔːl/"
+      },
+      "def": {
+        "micro": "put an app on your device",
+        "short": "to put a program or app on your phone or computer so you can use it",
+        "long": "To put a program or app on a phone or computer so that it is ready to use. After you download a file, you often need to do this and wait a few minutes."
+      },
+      "grammar": {
+        "pattern": "install + app / program (on + device)"
+      },
+      "examples": [
+        {
+          "en": "I installed the new app on my phone.",
+          "tr": "Yeni uygulamayı telefonuma yükledim.",
+          "register": "neutral",
+          "focus": "installed"
+        },
+        {
+          "en": "You need to install the update before you can log in.",
+          "tr": "Giriş yapmadan önce güncellemeyi yüklemen gerekiyor.",
+          "register": "neutral",
+          "focus": "install"
+        },
+        {
+          "en": "The program is easy to install; it takes two minutes.",
+          "tr": "Programı kurmak kolay; iki dakika sürüyor.",
+          "register": "neutral",
+          "focus": "install"
+        }
+      ],
+      "synonyms": [
+        "set up"
+      ],
+      "antonyms": [
+        "uninstall"
+      ],
+      "confusables": [
+        "upload",
+        "download"
+      ],
+      "collocations": [
+        "install an app",
+        "install software",
+        "install updates",
+        "install a program"
+      ],
+      "word_family": [
+        {
+          "lemma": "installation",
+          "pos": "n"
+        },
+        {
+          "lemma": "uninstall",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yüklemek",
+          "alt": [
+            "kurmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Uygulama ve program için 'yüklemek' veya 'kurmak' denir; 'install' ikisini de karşılar. 'Download' (indirmek) ise dosyayı internetten almaktır; kurulum sonraki adımdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You need to ______ the app before you can play the game.",
+        "answer": "install",
+        "distractors": [
+          "borrow",
+          "delete",
+          "spell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.browse.v.1",
+      "lemma": "browse",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "websites or shops",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/braʊz/",
+        "uk": "/braʊz/"
+      },
+      "def": {
+        "micro": "look around without a plan",
+        "short": "to look at websites or things in a shop without a clear plan",
+        "long": "To look at websites, pages, or things in a shop for fun or to find something interesting, without a clear plan. Many people do it on their phone before bed."
+      },
+      "grammar": {
+        "pattern": "browse + the internet / a shop"
+      },
+      "examples": [
+        {
+          "en": "I was just browsing the internet.",
+          "tr": "Sadece internette geziniyordum.",
+          "register": "neutral",
+          "focus": "browsing"
+        },
+        {
+          "en": "She likes to browse online shops on Sunday.",
+          "tr": "Pazar günleri online mağazalara göz atmayı sever.",
+          "register": "neutral",
+          "focus": "browse"
+        },
+        {
+          "en": "Can I help you? No, thanks. I'm just browsing.",
+          "tr": "Yardımcı olabilir miyim? Hayır, teşekkürler. Sadece bakıyorum.",
+          "register": "neutral",
+          "focus": "browsing"
+        }
+      ],
+      "synonyms": [
+        "look around"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "browse the internet",
+        "browse the web",
+        "browse online shops",
+        "just browsing"
+      ],
+      "word_family": [
+        {
+          "lemma": "browser",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "göz atmak",
+          "alt": [
+            "gezinmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Browse' amaçsız gezinmektir: mağazada 'sadece bakıyorum' demek gibi. 'Browser' = tarayıcı. Belli bir şeyi aramak için 'search' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can I help you? No, thanks. I'm just ______.",
+        "answer": "browsing",
+        "distractors": [
+          "packing",
+          "booking",
+          "spelling"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stream.v.1",
+      "lemma": "stream",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "video or music online",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/striːm/",
+        "uk": "/striːm/"
+      },
+      "def": {
+        "micro": "play online without saving",
+        "short": "to watch or listen to something over the internet without downloading it",
+        "long": "To watch or listen to a video, show, or song over the internet while it comes to your device, without saving it first. It needs a good connection."
+      },
+      "grammar": {
+        "pattern": "stream + video / music"
+      },
+      "examples": [
+        {
+          "en": "We stream movies on Friday nights.",
+          "tr": "Cuma geceleri filmleri internetten izliyoruz.",
+          "register": "neutral",
+          "focus": "stream"
+        },
+        {
+          "en": "I stream music while I work.",
+          "tr": "Çalışırken internetten müzik dinliyorum.",
+          "register": "neutral",
+          "focus": "stream"
+        },
+        {
+          "en": "The video won't stream because the Wi-Fi is slow.",
+          "tr": "Wi-Fi yavaş olduğu için video açılmıyor.",
+          "register": "neutral",
+          "focus": "stream"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "stream a movie",
+        "stream music",
+        "stream a show",
+        "stream online"
+      ],
+      "word_family": [
+        {
+          "lemma": "streaming",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "internetten izlemek",
+          "gloss_short": "online izlemek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'internetten izlemek / dinlemek' veya 'stream etmek' denir. Dosyayı kaydetmeden anında oynatmak demektir. 'Streaming platform' = yayın platformu.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't have the song on my phone, but I can ______ it online.",
+        "answer": "stream",
+        "distractors": [
+          "spell",
+          "pack",
+          "jog"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scroll.v.1",
+      "lemma": "scroll",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "on a screen",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skroʊl/",
+        "uk": "/skrəʊl/"
+      },
+      "def": {
+        "micro": "move a page up or down",
+        "short": "to move the text or pictures on a screen up or down with your finger",
+        "long": "To move the text or pictures on a screen up or down, using your finger or a mouse. People often do it for a long time on social media."
+      },
+      "grammar": {
+        "pattern": "scroll down / up / through + sth"
+      },
+      "examples": [
+        {
+          "en": "Scroll down to see more photos.",
+          "tr": "Daha fazla fotoğraf görmek için aşağı kaydırın.",
+          "register": "neutral",
+          "focus": "Scroll"
+        },
+        {
+          "en": "I scrolled through my phone for an hour before bed.",
+          "tr": "Yatmadan önce bir saat telefonumda gezindim.",
+          "register": "neutral",
+          "focus": "scrolled"
+        },
+        {
+          "en": "He kept scrolling and didn't hear me.",
+          "tr": "Kaydırmaya devam etti ve beni duymadı.",
+          "register": "neutral",
+          "focus": "scrolling"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "scroll down",
+        "scroll up",
+        "scroll through",
+        "keep scrolling"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaydırmak",
+          "alt": [
+            "aşağı kaydırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ekranı yukarı-aşağı kaydırmak 'scroll', yana kaydırmak veya fotoğraf geçmek 'swipe' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The page is very long, so you have to ______ down to see the end.",
+        "answer": "scroll",
+        "distractors": [
+          "jog",
+          "spell",
+          "cross"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scan.v.1",
+      "lemma": "scan",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "a code or document",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skæn/",
+        "uk": "/skæn/"
+      },
+      "def": {
+        "micro": "read with a camera",
+        "short": "to use a camera or machine to read a code or copy a page",
+        "long": "To use your phone, a camera, or a machine to read a code or to copy a paper into a digital file. Restaurants often ask you to do it to see the menu."
+      },
+      "grammar": {
+        "pattern": "scan + a code / a document"
+      },
+      "examples": [
+        {
+          "en": "Scan the QR code to see the menu.",
+          "tr": "Menüyü görmek için QR kodu okutun.",
+          "register": "neutral",
+          "focus": "Scan"
+        },
+        {
+          "en": "I scanned my passport and sent it by email.",
+          "tr": "Pasaportumu tarayıp e-postayla gönderdim.",
+          "register": "neutral",
+          "focus": "scanned"
+        },
+        {
+          "en": "Please scan your ticket at the gate.",
+          "tr": "Lütfen biletinizi kapıda okutun.",
+          "register": "neutral",
+          "focus": "scan"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "scan a QR code",
+        "scan a document",
+        "scan a ticket",
+        "scan a barcode"
+      ],
+      "word_family": [
+        {
+          "lemma": "scanner",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "okutmak",
+          "alt": [
+            "taramak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "QR kod, bilet ve barkod için 'okutmak', belge ve fotoğraf için 'taramak' denir. İngilizcede ikisi için de 'scan' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To open the menu, you only need to ______ the QR code with your phone.",
+        "answer": "scan",
+        "distractors": [
+          "spell",
+          "delete",
+          "charge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-11",
+        "model": "claude-sonnet (in-session subagent)",
+        "source": "kisisel_v1"
+      }
     }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I pay ten euros a month for my music ______.", "answer": "subscription", "distractors": ["cable", "screen", "souvenir"]},
-  "meta": {"status": "draft", "qa_flags": ["distractors_diversified"], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.install.v.1",
-  "lemma": "install",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "an app or program",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/ɪnˈstɔːl/", "uk": "/ɪnˈstɔːl/"},
-  "def": {
-    "micro": "put an app on your device",
-    "short": "to put a program or app on your phone or computer so you can use it",
-    "long": "To put a program or app on a phone or computer so that it is ready to use. After you download a file, you often need to do this and wait a few minutes."
-  },
-  "grammar": {"pattern": "install + app / program (on + device)"},
-  "examples": [
-    {"en": "I installed the new app on my phone.", "tr": "Yeni uygulamayı telefonuma yükledim.", "register": "neutral", "focus": "installed"},
-    {"en": "You need to install the update before you can log in.", "tr": "Giriş yapmadan önce güncellemeyi yüklemen gerekiyor.", "register": "neutral", "focus": "install"},
-    {"en": "The program is easy to install; it takes two minutes.", "tr": "Programı kurmak kolay; iki dakika sürüyor.", "register": "neutral", "focus": "install"}
-  ],
-  "synonyms": ["set up"],
-  "antonyms": ["uninstall"],
-  "collocations": ["install an app", "install software", "install updates", "install a program"],
-  "word_family": [{"lemma": "installation", "pos": "n"}, {"lemma": "uninstall", "pos": "v"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "yüklemek",
-      "alt": ["kurmak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Uygulama ve program için 'yüklemek' veya 'kurmak' denir; 'install' ikisini de karşılar. 'Download' (indirmek) ise dosyayı internetten almaktır; kurulum sonraki adımdır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "You need to ______ the app before you can play the game.", "answer": "install", "distractors": ["borrow", "delete", "spell"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.browse.v.1",
-  "lemma": "browse",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "websites or shops",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/braʊz/", "uk": "/braʊz/"},
-  "def": {
-    "micro": "look around without a plan",
-    "short": "to look at websites or things in a shop without a clear plan",
-    "long": "To look at websites, pages, or things in a shop for fun or to find something interesting, without a clear plan. Many people do it on their phone before bed."
-  },
-  "grammar": {"pattern": "browse + the internet / a shop"},
-  "examples": [
-    {"en": "I was just browsing the internet.", "tr": "Sadece internette geziniyordum.", "register": "neutral", "focus": "browsing"},
-    {"en": "She likes to browse online shops on Sunday.", "tr": "Pazar günleri online mağazalara göz atmayı sever.", "register": "neutral", "focus": "browse"},
-    {"en": "Can I help you? No, thanks. I'm just browsing.", "tr": "Yardımcı olabilir miyim? Hayır, teşekkürler. Sadece bakıyorum.", "register": "neutral", "focus": "browsing"}
-  ],
-  "synonyms": ["look around"],
-  "antonyms": [],
-  "collocations": ["browse the internet", "browse the web", "browse online shops", "just browsing"],
-  "word_family": [{"lemma": "browser", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "göz atmak",
-      "alt": ["gezinmek"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "'Browse' amaçsız gezinmektir: mağazada 'sadece bakıyorum' demek gibi. 'Browser' = tarayıcı. Belli bir şeyi aramak için 'search' kullanılır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "Can I help you? No, thanks. I'm just ______.", "answer": "browsing", "distractors": ["packing", "booking", "spelling"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.stream.v.1",
-  "lemma": "stream",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "video or music online",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/striːm/", "uk": "/striːm/"},
-  "def": {
-    "micro": "play online without saving",
-    "short": "to watch or listen to something over the internet without downloading it",
-    "long": "To watch or listen to a video, show, or song over the internet while it comes to your device, without saving it first. It needs a good connection."
-  },
-  "grammar": {"pattern": "stream + video / music"},
-  "examples": [
-    {"en": "We stream movies on Friday nights.", "tr": "Cuma geceleri filmleri internetten izliyoruz.", "register": "neutral", "focus": "stream"},
-    {"en": "I stream music while I work.", "tr": "Çalışırken internetten müzik dinliyorum.", "register": "neutral", "focus": "stream"},
-    {"en": "The video won't stream because the Wi-Fi is slow.", "tr": "Wi-Fi yavaş olduğu için video açılmıyor.", "register": "neutral", "focus": "stream"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["stream a movie", "stream music", "stream a show", "stream online"],
-  "word_family": [{"lemma": "streaming", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "internetten izlemek",
-      "alt": [],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "Türkçede 'internetten izlemek / dinlemek' veya 'stream etmek' denir. Dosyayı kaydetmeden anında oynatmak demektir. 'Streaming platform' = yayın platformu.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "music_film"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "I don't have the song on my phone, but I can ______ it online.", "answer": "stream", "distractors": ["spell", "pack", "jog"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.scroll.v.1",
-  "lemma": "scroll",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "on a screen",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/skroʊl/", "uk": "/skrəʊl/"},
-  "def": {
-    "micro": "move a page up or down",
-    "short": "to move the text or pictures on a screen up or down with your finger",
-    "long": "To move the text or pictures on a screen up or down, using your finger or a mouse. People often do it for a long time on social media."
-  },
-  "grammar": {"pattern": "scroll down / up / through + sth"},
-  "examples": [
-    {"en": "Scroll down to see more photos.", "tr": "Daha fazla fotoğraf görmek için aşağı kaydırın.", "register": "neutral", "focus": "Scroll"},
-    {"en": "I scrolled through my phone for an hour before bed.", "tr": "Yatmadan önce bir saat telefonumda gezindim.", "register": "neutral", "focus": "scrolled"},
-    {"en": "He kept scrolling and didn't hear me.", "tr": "Kaydırmaya devam etti ve beni duymadı.", "register": "neutral", "focus": "scrolling"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["scroll down", "scroll up", "scroll through", "keep scrolling"],
-  "word_family": [],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "kaydırmak",
-      "alt": ["aşağı kaydırmak"],
-      "equivalence": "full",
-      "false_friend": null,
-      "note": "Ekranı yukarı-aşağı kaydırmak 'scroll', yana kaydırmak veya fotoğraf geçmek 'swipe' olur.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "The page is very long, so you have to ______ down to see the end.", "answer": "scroll", "distractors": ["jog", "spell", "cross"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-},
-{
-  "id": "en.scan.v.1",
-  "lemma": "scan",
-  "type": "word",
-  "pos": "v",
-  "sense_no": 1,
-  "sense_note": "a code or document",
-  "level": "B1",
-  "level_source": "editorial_estimate",
-  "freq": null,
-  "ipa": {"us": "/skæn/", "uk": "/skæn/"},
-  "def": {
-    "micro": "read with a camera",
-    "short": "to use a camera or machine to read a code or copy a page",
-    "long": "To use your phone, a camera, or a machine to read a code or to copy a paper into a digital file. Restaurants often ask you to do it to see the menu."
-  },
-  "grammar": {"pattern": "scan + a code / a document"},
-  "examples": [
-    {"en": "Scan the QR code to see the menu.", "tr": "Menüyü görmek için QR kodu okutun.", "register": "neutral", "focus": "Scan"},
-    {"en": "I scanned my passport and sent it by email.", "tr": "Pasaportumu tarayıp e-postayla gönderdim.", "register": "neutral", "focus": "scanned"},
-    {"en": "Please scan your ticket at the gate.", "tr": "Lütfen biletinizi kapıda okutun.", "register": "neutral", "focus": "scan"}
-  ],
-  "synonyms": [],
-  "antonyms": [],
-  "collocations": ["scan a QR code", "scan a document", "scan a ticket", "scan a barcode"],
-  "word_family": [{"lemma": "scanner", "pos": "n"}],
-  "etymology": null,
-  "l1": {
-    "tr": {
-      "gloss": "okutmak",
-      "alt": ["taramak"],
-      "equivalence": "partial",
-      "false_friend": null,
-      "note": "QR kod, bilet ve barkod için 'okutmak', belge ve fotoğraf için 'taramak' denir. İngilizcede ikisi için de 'scan' kullanılır.",
-      "mistakes": [],
-      "mnemonic": null
-    }
-  },
-  "tags": {"primary_topic": "technology_internet", "topics": ["technology_internet", "shopping_money"], "exams": [], "register": "neutral", "vibes": [], "flags": [], "sensitivity": 0},
-  "quiz": {"cloze": "To open the menu, you only need to ______ the QR code with your phone.", "answer": "scan", "distractors": ["spell", "delete", "charge"]},
-  "meta": {"status": "draft", "qa_flags": [], "prompt_ver": "kisisel-2026-10-11", "model": "claude-sonnet (in-session subagent)", "source": "kisisel_v1"}
-}
-]
+  ]
 }
