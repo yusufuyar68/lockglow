@@ -7,6 +7,7 @@ import Learning
 /// (`ReminderTiming.explanation`).
 struct ReminderTimeRows: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.scenePhase) private var scenePhase
     /// "Ayarlar"' own picker binding: a picked time is saved and the reminders are planned again.
     let time: Binding<Date>
 
@@ -45,17 +46,26 @@ struct ReminderTimeRows: View {
                 }
                 // A switch is on in `good` green, as in iOS (never yellow, never ink).
                 .tint(Theme.good)
+                // VoiceOver reads the reason with the switch, not as a separate line.
+                .accessibilityHint(Text(verbatim: isAuto ? explanation ?? "" : ""))
                 if isAuto, let explanation = explanation {
                     Text(explanation)
                         .font(.subheadline)
                         .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityHidden(true)
                 }
             }
             .settingsRowPadding()
         }
         .onAppear {
             refresh()
+        }
+        // Back from the background, perhaps on a new day.
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active {
+                refresh()
+            }
         }
     }
 

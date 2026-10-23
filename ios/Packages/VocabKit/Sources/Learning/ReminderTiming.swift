@@ -186,7 +186,9 @@ public final class StudyTimeRecorder: @unchecked Sendable {
 /// - **Usual time:** of the last 14 days' own starts (not those right after a reminder: they only
 ///   echo the reminder's time, and counting them would pull the reminder earlier every day), the
 ///   hour that holds the most days (`windowMinutes`, across midnight too); in it, the middle one
-///   of each day's first start. Fewer than `minimumDays` days in that hour: no usual time.
+///   of each day's first start. Fewer than `minimumDays` days in that hour: no usual time. The
+///   days studied right after a reminder vote for the reminder's own time: the hour must hold
+///   more days than they are, or the time stays.
 /// - **Aim:** `leadMinutes` before it, on a 5-minute grid, from `earliestMinute` (08:00) to
 ///   `latestMinute` (22:30), the edges of the first reminder question's times; a time in the
 ///   night goes to the nearer edge.
@@ -232,7 +234,8 @@ public enum ReminderTiming {
     public enum Reason: Equatable, Sendable {
         /// Fewer than `minimumDays` days of studying yet.
         case learning
-        /// Most days the studying came right after a reminder: nothing to move toward.
+        /// Studying came right after a reminder on as many days as in any other hour, or more:
+        /// the time works, it stays.
         case followsReminder
         /// Days enough, but no hour holds `minimumDays` of them.
         case varied
@@ -273,14 +276,18 @@ public enum ReminderTiming {
         let today = allowed(base)
         let recent = StudyTimes(starts: starts).recent(now: now, calendar: calendar)
         let own = recent.filter { !$0.afterReminder }
+        let ownDays = days(own, calendar: calendar)
+        let echoDays = days(recent.filter(\.afterReminder), calendar: calendar)
+        let busiest = usualMinute(own, calendar: calendar, near: today)
 
-        guard let usual = usualMinute(own, calendar: calendar, near: today) else {
-            let ownDays = days(own, calendar: calendar)
-            let echoDays = days(recent.filter(\.afterReminder), calendar: calendar)
+        // Days studied right after a reminder vote for the time it came at: another hour moves the
+        // reminder only when it holds more days. Otherwise a habit the reminder already serves
+        // (its starts all fall after the reminder) would lose to a few days at another hour.
+        guard let usual = busiest, usual.days > echoDays.count else {
             let reason: Reason
             if ownDays.union(echoDays).count < minimumDays {
                 reason = .learning
-            } else if echoDays.count >= ownDays.count {
+            } else if echoDays.count >= (busiest?.days ?? ownDays.count) {
                 reason = .followsReminder
             } else {
                 reason = .varied
@@ -288,7 +295,7 @@ public enum ReminderTiming {
             return Decision(today: today, later: today, reason: reason, state: State(minute: today, next: today, decidedOn: todayKey))
         }
 
-        let shown = usual - usual % grid
+        let shown = usual.minute - usual.minute % grid
         let wanted = (shown - leadMinutes + 1440) % 1440
         let aim = allowed(wanted)
         let later = step(from: today, toward: aim)
@@ -303,10 +310,11 @@ public enum ReminderTiming {
         return Decision(today: today, later: later, reason: reason, state: State(minute: today, next: later, decidedOn: todayKey))
     }
 
-    /// The usual start in minutes after midnight, or nil when no hour holds `minimumDays` days.
-    /// Every start is tried as the beginning of the hour; the busiest hour wins (most days, then
-    /// most starts, then the one whose aim is nearest `current`, then the earliest).
-    static func usualMinute(_ starts: [StudyStart], calendar: Calendar, near current: Int) -> Int? {
+    /// The usual start in minutes after midnight and the days its hour holds, or nil when no hour
+    /// holds `minimumDays` days. Every start is tried as the beginning of the hour; the busiest
+    /// hour wins (most days, then most starts, then the one whose aim is nearest `current`, then
+    /// the earliest).
+    static func usualMinute(_ starts: [StudyStart], calendar: Calendar, near current: Int) -> (minute: Int, days: Int)? {
         var byDay: [String: [Int]] = [:]
         for start in starts where (0..<1440).contains(start.minute) {
             byDay[LocalMetrics.dayKey(start.at, calendar: calendar), default: []].append(start.minute)
@@ -334,7 +342,7 @@ public enum ReminderTiming {
                 best = (key, usual)
             }
         }
-        return best?.usual
+        return best.map { (minute: $0.usual, days: $0.key.0) }
     }
 
     /// `minute` (any number of minutes after midnight) moved out of the night: from
@@ -372,19 +380,19 @@ public enum ReminderTiming {
     }
 
     /// One line for "Ayarlar" on why the time is what it is: plain Turkish, at most two short
-    /// sentences, no suffix after a time (docs/tasarim/terimler.md).
+    /// sentences, no suffix after a time, no promise about later (docs/tasarim/terimler.md).
     public static func explanation(_ reason: Reason) -> String {
         switch reason {
         case .learning:
-            return "Birkaç gün çalışınca saati sana göre seçeceğiz. Şimdilik aynı kalıyor."
+            return "Saati seçmek için birkaç günlük çalışma gerekiyor. Şimdilik değiştirmiyoruz."
         case .followsReminder:
-            return "Çoğu gün hatırlatma gelince çalışıyorsun. Bu yüzden saat aynı kalıyor."
+            return "Çoğu gün hatırlatma gelince çalışıyorsun. Bu yüzden saati değiştirmiyoruz."
         case .varied:
-            return "Çalıştığın saat her gün değişiyor. Bu yüzden saat aynı kalıyor."
+            return "Çalıştığın saat her gün değişiyor. Bu yüzden saati değiştirmiyoruz."
         case .settled(let usual):
             return "Genelde \(clock(usual)) civarında çalışıyorsun. Hatırlatma biraz önce geliyor."
         case .moving(let usual, let aim):
-            return "Genelde \(clock(usual)) civarında çalışıyorsun. Saat her gün biraz değişip \(clock(aim)) olacak."
+            return "Genelde \(clock(usual)) civarında çalışıyorsun. Saati her gün biraz \(clock(aim)) saatine yaklaştırıyoruz."
         case .latestLimit(let usual):
             return "Genelde \(clock(usual)) civarında çalışıyorsun. Geceleri hatırlatmıyoruz, en geç \(clock(latestMinute))."
         case .earliestLimit(let usual):

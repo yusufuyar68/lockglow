@@ -96,6 +96,8 @@ final class AppModel: ObservableObject {
             return
         }
         hasStarted = true
+        // Today's time of "Saati benim için seç" before any screen shows it (AppModel+ReminderTiming.swift).
+        reminderTimeDecision()
 
         let container = AppGroupLocator.containerURL()
         store = container.map { AppGroupStore(containerURL: $0) }
@@ -157,6 +159,8 @@ final class AppModel: ObservableObject {
     func sceneDidBecomeActive() {
         // Counted from the first launch on, before the content is ready.
         LocalMetricsRecorder.shared.appDidBecomeActive()
+        // A new day: today's time of "Saati benim için seç" (AppModel+ReminderTiming.swift).
+        reminderTimeDecision()
         if !hasStarted {
             return
         }

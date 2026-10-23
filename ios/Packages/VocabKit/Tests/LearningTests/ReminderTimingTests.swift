@@ -222,6 +222,18 @@ final class ReminderTimingTests: XCTestCase {
         XCTAssertEqual(decision.later, 18 * 60 + 30)
     }
 
+    func testAHabitTheReminderServesIsNotOutvoted() {
+        // Reminder at 20:00: on ten days the user studied 40 minutes after it, on four days at
+        // 10:00 on their own. The four days do not pull the reminder to the morning.
+        let studied = starts(5...14, hour: 20, minute: 40, afterReminder: true) + starts(15...18, hour: 10)
+        let decision = decide(nil, chosen: 20 * 60, studied, now: date(day: 18, hour: 23))
+        XCTAssertEqual(decision.reason, .followsReminder)
+        XCTAssertEqual(decision.later, 20 * 60)
+        // Once the other hour holds more days than the reminder's, the time moves toward it.
+        let changed = starts(13...14, hour: 20, minute: 40, afterReminder: true) + starts(15...18, hour: 10)
+        XCTAssertEqual(decide(nil, chosen: 20 * 60, changed, now: date(day: 18, hour: 23)).later, 19 * 60 + 30)
+    }
+
     func testFollowedRemindersNeverDriftEarlier() {
         // The user studies 5 minutes after every reminder for six weeks, after a first week of
         // studying at 21:30 on their own (the reminder was at 20:00 then).
@@ -244,6 +256,7 @@ final class ReminderTimingTests: XCTestCase {
             history.append(reminder)
         }
         XCTAssertEqual(Array(history.prefix(5)), [1200, 1200, 1230, 1260, 1260], "the first three days teach 21:30, the aim is 21:00")
+        XCTAssertTrue(history[5...].allSatisfy { $0 == 1260 }, "from the sixth day the reminder's days outvote the old ones: \(history)")
         XCTAssertTrue(history.allSatisfy { $0 >= 1200 }, "\(history)")
         XCTAssertEqual(history.last, 1260)
     }
@@ -461,7 +474,7 @@ final class ReminderTimingTests: XCTestCase {
         }
         XCTAssertEqual(
             ReminderTiming.explanation(.moving(usual: 1140, aim: 1110)),
-            "Genelde 19:00 civarında çalışıyorsun. Saat her gün biraz değişip 18:30 olacak."
+            "Genelde 19:00 civarında çalışıyorsun. Saati her gün biraz 18:30 saatine yaklaştırıyoruz."
         )
         XCTAssertEqual(
             ReminderTiming.explanation(.latestLimit(usual: 1410)),
