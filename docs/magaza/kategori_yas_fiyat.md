@@ -68,7 +68,7 @@ Apple 2025'te yaş sistemini değiştirdi: **4+, 9+, 13+, 16+, 18+**. Yeni soru 
 
 - **AB (DSA) satıcı beyanı:** AB'de dağıtım için Apple, geliştiriciden "trader" (tacir) olup olmadığını sorar. Tacir sayılırsa **adres, telefon ve e-posta AB ürün sayfalarında herkese açık** görünür (`raporlar/09` §1.2). Gelir yoksa "non-trader" demek mümkün olabilir **[TEYİT: avukat]**. En basit yol: ilk sürümü AB'ye açmamak.
 - İçerik Türkçe konuşanlar için; başka ülkede kitle küçük.
-- İleride: Kıbrıs, Almanya, Hollanda gibi Türkçe konuşan nüfusu olan ülkeler (AB beyanı ve gizlilik metinleri GDPR bölümleriyle birlikte).
+- İleride: Kıbrıs, Almanya, Hollanda gibi Türkçe konuşan nüfusu olan ülkeler (AB beyanı ve gizlilik metinleri GDPR bölümleriyle birlikte). Ayrıntılı plan: [`avrupa_acilis_plani.md`](avrupa_acilis_plani.md).
 
 ## İleride abonelik fikri (yalnızca not, karar değil)
 

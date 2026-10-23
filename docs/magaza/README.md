@@ -14,6 +14,7 @@
 |---|---|
 | [`kayit_metinleri_tr.md`](kayit_metinleri_tr.md) | Türkçe: ad, alt başlık, tanıtım metni, açıklama, anahtar kelimeler, Yenilikler; her iddianın kaynağı |
 | [`kayit_metinleri_en.md`](kayit_metinleri_en.md) | İngilizce (U.K.): aynı alanlar; neden en-GB |
+| [`kayit_metinleri_de.md`](kayit_metinleri_de.md), [`kayit_metinleri_nl.md`](kayit_metinleri_nl.md) | Almanca ve Felemenkçe mağaza sayfası taslağı (Almanya ve Hollanda denemesi; anadil konuşucusu okumadan girilmez) |
 | [`rakip_analizi.md`](rakip_analizi.md) | 23 Ekim: Türkiye mağazasında 17 rakip, arama ifadeleri, anahtar kelime stratejisi, ekran görüntüsü kalıpları |
 | [`rakiplerden_ogrenilenler.md`](rakiplerden_ogrenilenler.md) | 22 Ekim: rakip yorumlarından dersler; söylenmeyecekler |
 | [`ekran_goruntusu_basliklari.md`](ekran_goruntusu_basliklari.md) | 8 kare (6.3"): senaryo, Türkçe ve İngilizce başlıklar, neyin gerçek neyin montaj olduğu |
@@ -23,6 +24,7 @@
 | [`app_review_notu.md`](app_review_notu.md) | İnceleme ekibine İngilizce not |
 | [`destek_ve_gizlilik_url.md`](destek_ve_gizlilik_url.md) | Destek ve gizlilik adresi önerisi; destek sayfası taslağı (TR, EN) |
 | [`kategori_yas_fiyat.md`](kategori_yas_fiyat.md) | Kategori, yaş sınırı cevapları, fiyat ve ülke önerisi; abonelik notu |
+| [`avrupa_acilis_plani.md`](avrupa_acilis_plani.md) | Türkçe konuşulan Avrupa ülkelerine açılış: hangi mağazada Türkçe aranır, DSA, GDPR, değişecek metinler |
 | [`araclar/gorsel_uret.py`](araclar/gorsel_uret.py) | Ekran görüntülerinden mağaza karelerini üretir |
 | [`araclar/metin_say.py`](araclar/metin_say.py) | Metin uzunluklarını ve anahtar kelime kurallarını denetler |
 
