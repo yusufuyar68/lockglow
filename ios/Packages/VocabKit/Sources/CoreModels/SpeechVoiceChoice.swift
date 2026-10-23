@@ -28,14 +28,17 @@ public struct SpeechVoiceInfo: Equatable, Sendable {
     public let isNovelty: Bool
     /// `voiceTraits.isPersonalVoice` (needs its own permission; never ours to use).
     public let isPersonal: Bool
+    /// `AVSpeechSynthesisVoice.gender`; nil when the voice does not say (`.unspecified`).
+    public let gender: SpeechVoiceGender?
 
-    public init(identifier: String, name: String, language: String, quality: Quality, isNovelty: Bool = false, isPersonal: Bool = false) {
+    public init(identifier: String, name: String, language: String, quality: Quality, isNovelty: Bool = false, isPersonal: Bool = false, gender: SpeechVoiceGender? = nil) {
         self.identifier = identifier
         self.name = name
         self.language = language
         self.quality = quality
         self.isNovelty = isNovelty
         self.isPersonal = isPersonal
+        self.gender = gender
     }
 
     /// The name without a quality in brackets ("Ava (Premium)" → "Ava"): the quality is shown on
@@ -84,18 +87,30 @@ public enum SpeechVoiceChoice {
     }
 
     /// The voice that reads: the chosen one while it is installed and offered for the accent,
-    /// otherwise the best offered one. Nil when the accent has no offered voice at all.
-    public static func voice(chosen: String?, among voices: [SpeechVoiceInfo], accent: SpeechAccent, systemDefault: String? = nil) -> SpeechVoiceInfo? {
+    /// otherwise the best offered one of `gender` (a woman's voice in standard quality before a
+    /// man's in premium: the user asked for the character), otherwise the best offered one. Nil
+    /// when the accent has no offered voice at all.
+    public static func voice(chosen: String?, among voices: [SpeechVoiceInfo], accent: SpeechAccent, gender: SpeechVoiceGender? = nil, systemDefault: String? = nil) -> SpeechVoiceInfo? {
         let ranked = offered(voices, accent: accent, systemDefault: systemDefault)
         if let chosen, let match = ranked.first(where: { $0.identifier == chosen }) {
+            return match
+        }
+        return best(of: ranked, gender: gender)
+    }
+
+    /// The first of `ranked` (best first, as `offered`) of `gender`; the first of all when none is.
+    public static func best(of ranked: [SpeechVoiceInfo], gender: SpeechVoiceGender?) -> SpeechVoiceInfo? {
+        if let gender, let match = ranked.first(where: { $0.gender == gender }) {
             return match
         }
         return ranked.first
     }
 
-    /// True while the accent has no enhanced or premium voice: "Ses ve aksan" then shows how to
-    /// download a more natural one.
-    public static func needsBetterVoice(_ voices: [SpeechVoiceInfo], accent: SpeechAccent) -> Bool {
-        return !offered(voices, accent: accent).contains { $0.quality >= .enhanced }
+    /// True while the accent has no enhanced or premium voice (of `gender`, when given): "Ses ve
+    /// aksan" then shows how to download a more natural one.
+    public static func needsBetterVoice(_ voices: [SpeechVoiceInfo], accent: SpeechAccent, gender: SpeechVoiceGender? = nil) -> Bool {
+        return !offered(voices, accent: accent).contains { voice in
+            voice.quality >= .enhanced && (gender == nil || voice.gender == gender)
+        }
     }
 }

@@ -256,6 +256,51 @@ final class SpeechVoiceChoiceTests: XCTestCase {
         XCTAssertTrue(SpeechVoiceChoice.needsBetterVoice(onlyPersonal, accent: .british))
     }
 
+    // MARK: Voice character
+
+    private var gendered: [SpeechVoiceInfo] {
+        return [
+            SpeechVoiceInfo(identifier: "us.ava", name: "Ava (Premium)", language: "en-US", quality: .premium, gender: .female),
+            SpeechVoiceInfo(identifier: "us.samantha", name: "Samantha", language: "en-US", quality: .standard, gender: .female),
+            SpeechVoiceInfo(identifier: "us.aaron", name: "Aaron", language: "en-US", quality: .standard, gender: .male),
+            SpeechVoiceInfo(identifier: "us.unknown", name: "Nobody", language: "en-US", quality: .enhanced),
+            SpeechVoiceInfo(identifier: "gb.serena", name: "Serena", language: "en-GB", quality: .standard, gender: .female),
+        ]
+    }
+
+    func testTheGenderPicksTheVoiceBeforeTheQuality() {
+        XCTAssertEqual(SpeechVoiceChoice.voice(chosen: nil, among: gendered, accent: .american, gender: .female)?.identifier, "us.ava")
+        // A man's standard voice before a premium woman's: the user asked for the character.
+        XCTAssertEqual(SpeechVoiceChoice.voice(chosen: nil, among: gendered, accent: .american, gender: .male)?.identifier, "us.aaron")
+        // No man's voice for the accent: the best one.
+        XCTAssertEqual(SpeechVoiceChoice.voice(chosen: nil, among: gendered, accent: .british, gender: .male)?.identifier, "gb.serena")
+        // A voice chosen by name still wins.
+        XCTAssertEqual(SpeechVoiceChoice.voice(chosen: "us.samantha", among: gendered, accent: .american, gender: .male)?.identifier, "us.samantha")
+    }
+
+    func testNeedsBetterVoiceCountsOnlyTheGender() {
+        XCTAssertFalse(SpeechVoiceChoice.needsBetterVoice(gendered, accent: .american, gender: .female))
+        // The enhanced voice says no gender: it is no man's voice.
+        XCTAssertTrue(SpeechVoiceChoice.needsBetterVoice(gendered, accent: .american, gender: .male))
+        XCTAssertFalse(SpeechVoiceChoice.needsBetterVoice(gendered, accent: .american))
+    }
+
+    func testGenderIsStoredAndDefaultsToAWoman() throws {
+        let suite = "SpeechVoiceChoiceTests-\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        XCTAssertEqual(SpeechSettings(defaults: defaults).gender, .female)
+        var settings = SpeechSettings.standard
+        settings.gender = .male
+        settings.save(to: defaults)
+        XCTAssertEqual(SpeechSettings(defaults: defaults).gender, .male)
+        // What `@AppStorage` writes, and an unknown value.
+        defaults.set("female", forKey: SpeechSettings.Key.gender)
+        XCTAssertEqual(SpeechSettings(defaults: defaults).gender, .female)
+        defaults.set("robot", forKey: SpeechSettings.Key.gender)
+        XCTAssertEqual(SpeechSettings(defaults: defaults).gender, .female)
+    }
+
     func testDisplayNameDropsTheQualityInBrackets() {
         XCTAssertEqual(voice("a", "Ava (Premium)").displayName, "Ava")
         XCTAssertEqual(voice("e", "Evan (Enhanced)").displayName, "Evan")
