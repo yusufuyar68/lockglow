@@ -403,6 +403,9 @@ private struct QuizTopRow: View {
                 }
             }
             .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+            // Their whole width, always: the word column gives way (screenshots 23 Oct: without it
+            // the "Devam" capsule ran over the speaker on the large widget).
+            .fixedSize()
             // The 34 pt faces line up with the first line; the 44 pt hit areas reach 5 pt up into
             // the margin.
             .padding(.top, -5)
