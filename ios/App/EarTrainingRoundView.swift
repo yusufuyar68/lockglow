@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import CoreModels
 import Learning
 
 /// A round of "Kulak alıştırması": 10 questions, then the summary.
@@ -31,6 +32,8 @@ struct EarTrainingRoundView: View {
     @State private var right = 0
     /// Groups with a mixed-up answer in this round, in the order they came.
     @State private var missedGroups: [String] = []
+    /// "Ses ve aksan": the voice reads in this accent (`WordSpeech`), so the IPA shown follows it.
+    @AppStorage(SpeechSettings.Key.accent, store: SpeechSettingsStore.defaults) private var accent = SpeechAccent.american
     @Environment(\.dismiss) private var dismiss
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityVoiceOverEnabled) private var voiceOverEnabled
@@ -260,7 +263,7 @@ struct EarTrainingRoundView: View {
                     .font(.system(.title2, design: .serif).weight(.semibold))
                     .foregroundStyle(Theme.ink)
                     .englishVoice()
-                Text(verbatim: word.ipa.us)
+                Text(verbatim: word.ipa.text(for: accent))
                     .font(.callout)
                     .foregroundStyle(Theme.ink2)
                     .accessibilityHidden(true)

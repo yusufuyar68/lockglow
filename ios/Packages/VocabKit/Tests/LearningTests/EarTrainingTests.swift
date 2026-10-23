@@ -1,4 +1,5 @@
 import XCTest
+import CoreModels
 import Learning
 
 /// SplitMix64: the same numbers on every platform, so a seed gives the same round.
@@ -320,6 +321,14 @@ final class EarTrainingTests: XCTestCase {
         XCTAssertTrue(question.isRight(.b))
         XCTAssertFalse(question.isRight(.a))
         XCTAssertEqual(EarTrainingSide.a.other, .b)
+    }
+
+    func testTheIPAFollowsTheAccent() {
+        let both = EarTrainingWord.IPA(us: "/wɜːrk/", uk: "/wɜːk/")
+        XCTAssertEqual(both.text(for: .american), "/wɜːrk/")
+        XCTAssertEqual(both.text(for: .british), "/wɜːk/")
+        // No British transcription: the American one.
+        XCTAssertEqual(EarTrainingWord.IPA(us: "/ʃɪp/").text(for: .british), "/ʃɪp/")
     }
 
     // MARK: Tally

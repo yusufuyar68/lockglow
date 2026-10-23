@@ -1,3 +1,4 @@
+import CoreModels
 import Foundation
 
 // "Kulak alıştırması": minimal pairs that Turkish learners find hard to hear apart (ship / sheep,
@@ -160,7 +161,7 @@ public struct EarTrainingWord: Codable, Equatable, Hashable, Sendable {
     public let level: String?
 
     public struct IPA: Codable, Equatable, Hashable, Sendable {
-        /// "/ʃiːp/": General American, the voice the app reads with.
+        /// "/ʃiːp/": General American.
         public let us: String
         /// Standard British; nil when the file has none.
         public let uk: String?
@@ -168,6 +169,17 @@ public struct EarTrainingWord: Codable, Equatable, Hashable, Sendable {
         public init(us: String, uk: String? = nil) {
             self.us = us
             self.uk = uk
+        }
+
+        /// The transcription in the accent of "Ses ve aksan" (the voice reads in that accent);
+        /// the American one when the file has no British one.
+        public func text(for accent: SpeechAccent) -> String {
+            switch accent {
+            case .american:
+                return us
+            case .british:
+                return uk ?? us
+            }
         }
     }
 
