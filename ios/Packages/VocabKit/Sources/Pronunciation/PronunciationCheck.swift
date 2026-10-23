@@ -204,8 +204,10 @@ public enum PronunciationCheck {
         return map
     }()
 
+    /// is5-ses: British spellings ("neighbour", from the British recognizer) compare as American.
     private static func canonical(_ key: String) -> String {
-        return canonicalSpelling[key] ?? key
+        let american = SpellingVariants.americanSpelling(key)
+        return canonicalSpelling[american] ?? american
     }
 
     private static func isSame(_ a: Token, _ b: Token) -> Bool {

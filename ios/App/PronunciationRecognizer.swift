@@ -35,7 +35,10 @@ final class PronunciationRecognizer: ObservableObject {
         case failed(Problem)
     }
 
-    static let locale = Locale(identifier: "en-US")
+    /// is5-ses: the accent of "Ses ve aksan" ("en-US" or "en-GB"), read at every take.
+    static var locale: Locale {
+        return SpeechSettingsStore.recognitionLocale
+    }
 
     @Published private(set) var phase: Phase = .idle
     /// Takes that ended with a result or a problem. The page announces each end, also one that
@@ -271,7 +274,9 @@ final class PronunciationRecognizer: ObservableObject {
             default:
                 return .speechDenied
             }
-            guard let recognizer = SFSpeechRecognizer(locale: Self.locale), recognizer.supportsOnDeviceRecognition else {
+            // is5-ses: American English when the phone cannot recognize the chosen accent on the device.
+            let locales = [Self.locale, Locale(identifier: "en-US")]
+            guard let recognizer = locales.lazy.compactMap({ SFSpeechRecognizer(locale: $0) }).first(where: { $0.supportsOnDeviceRecognition }) else {
                 return .onDeviceUnavailable
             }
             backend = RecognizerBackend(recognizer: recognizer)

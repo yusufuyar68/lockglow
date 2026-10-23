@@ -152,7 +152,7 @@ public final class ContentStore {
 
 private let selectColumns = """
     c.rowid AS id, c.lemma AS lemma, c.pos AS pos, c.level AS level, c.ipa_us AS ipa_us, \
-    c.def_micro AS def_micro, c.def_short AS def_short, c.example_en AS example_en, \
+    c.ipa_uk AS ipa_uk, c.def_micro AS def_micro, c.def_short AS def_short, c.example_en AS example_en, \
     l.gloss AS gloss_tr, l.gloss_short AS gloss_short_tr, c.sensitivity AS sensitivity, \
     (SELECT group_concat(cf.other_rowid) FROM card_confusable AS cf WHERE cf.card_rowid = c.rowid) \
     AS confusable_ids
@@ -174,6 +174,7 @@ private func makeWord(from row: Row) -> WidgetWord {
     let pos: String = row["pos"]
     let level: String = row["level"]
     let ipaUS: String? = row["ipa_us"]
+    let ipaUK: String? = row["ipa_uk"]
     let defMicro: String = row["def_micro"]
     let defShort: String = row["def_short"]
     let exampleEN: String = row["example_en"]
@@ -191,6 +192,7 @@ private func makeWord(from row: Row) -> WidgetWord {
         pos: pos,
         level: level,
         ipaUS: ipaUS,
+        ipaUK: ipaUK,
         defMicro: defMicro,
         defShort: defShort,
         exampleEN: exampleEN,

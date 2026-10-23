@@ -34,6 +34,8 @@ struct SettingsView: View {
                     recoverySection
                     widgetSection
                     learningSection
+                    // is5-ses: "Ses ve aksan" (SpeechSettingsView.swift).
+                    SpeechSettingsSection()
                     reminderSection
                     ReviewLiveActivitySection() // is5-canli: the round's Live Activity switch
                     progressSection

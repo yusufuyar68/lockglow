@@ -979,6 +979,7 @@ final class AppModel: ObservableObject {
                 pos: word.pos,
                 level: word.level,
                 ipaUS: word.ipaUS,
+                ipaUK: word.ipaUK, // is5-ses: the widget's IPA follows "Ses ve aksan"
                 defMicro: word.defMicro,
                 defShort: word.defShort,
                 exampleEN: shortest,

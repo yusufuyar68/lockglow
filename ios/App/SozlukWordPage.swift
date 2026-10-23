@@ -316,11 +316,14 @@ private struct SozlukWordFacts: View {
 
     var body: some View {
         DictionaryFlowLayout(itemSpacing: 10, lineSpacing: 6) {
-            if let ipa = word.ipaUS {
-                Text(ipa)
-                    .font(.system(.subheadline, design: .serif))
-                    .foregroundStyle(Theme.ink2)
-                    .accessibilityHidden(true)
+            // In the accent of "Ses ve aksan" (is5-ses); a word without IPA adds no item.
+            if word.ipaUS != nil {
+                AccentIPA(word) { ipa in
+                    Text(ipa)
+                        .font(.system(.subheadline, design: .serif))
+                        .foregroundStyle(Theme.ink2)
+                        .accessibilityHidden(true)
+                }
             }
             // A user's word: "Senin kelimen" in place of the part of speech, and no level.
             if word.isUserAdded {
