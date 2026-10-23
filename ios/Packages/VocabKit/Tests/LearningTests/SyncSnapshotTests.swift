@@ -21,6 +21,7 @@ final class SyncSnapshotTests: XCTestCase {
         p.lastGrade = .easy
         p.firstReviewedAt = now.addingTimeInterval(-9_000)
         p.refresherStep = 2
+        p.fsrs = FSRSState(stability: 12.5, difficulty: 4.2, phase: .review, step: nil, lastReviewAt: now.addingTimeInterval(-120), reviews: 7, shelfBefore: 3)
         return p
     }
 
@@ -49,7 +50,7 @@ final class SyncSnapshotTests: XCTestCase {
     /// up (`SyncSnapshot.currentFormat`): an older build would drop the field from every record it
     /// writes back. Update both, then this count.
     func testWordProgressFieldsAreAllKnownToSync() {
-        XCTAssertEqual(Mirror(reflecting: WordProgress(wordID: 1)).children.count, 14, "WordProgress gained a field: copy it in reidentified(_:) and raise SyncSnapshot.currentFormat")
+        XCTAssertEqual(Mirror(reflecting: WordProgress(wordID: 1)).children.count, 15, "WordProgress gained a field: copy it in reidentified(_:) and raise SyncSnapshot.currentFormat")
     }
 
     /// The same for `CustomWord` and `SyncWord` (its text in iCloud).
@@ -83,9 +84,9 @@ final class SyncSnapshotTests: XCTestCase {
     }
 
     func testNewerFormatIsNeverRead() {
-        let data = Data(#"{"format": 2, "cards": [], "words": [], "deleted": [], "new_field": 1}"#.utf8)
+        let data = Data(#"{"format": 3, "cards": [], "words": [], "deleted": [], "new_field": 1}"#.utf8)
         XCTAssertThrowsError(try SyncSnapshot.decode(data)) { error in
-            XCTAssertEqual(error as? SyncSnapshot.DecodeError, .newerFormat(2))
+            XCTAssertEqual(error as? SyncSnapshot.DecodeError, .newerFormat(3))
         }
     }
 

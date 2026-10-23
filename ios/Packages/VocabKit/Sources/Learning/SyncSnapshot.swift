@@ -22,8 +22,8 @@ public struct SyncSnapshot: Codable, Equatable, Sendable {
     /// The `format` this build writes and reads. A copy with a newer one is never overwritten
     /// (`decode` throws `newerFormat`). Raise it when `WordProgress` or `CustomWord` gains a field
     /// (SyncSnapshotTests fails as a reminder): an older build would drop the field from every
-    /// record it writes back.
-    public static let currentFormat = 1
+    /// record it writes back. 2: `WordProgress.fsrs` (is5-fsrs).
+    public static let currentFormat = 2
 
     public var format: Int
     /// "İlerlemeyi sıfırla" on a syncing device at this time: progress from before it is gone on
@@ -282,6 +282,7 @@ extension WordProgress {
         copy.lastGrade = lastGrade
         copy.firstReviewedAt = firstReviewedAt
         copy.refresherStep = refresherStep
+        copy.fsrs = fsrs
         return copy
     }
 
