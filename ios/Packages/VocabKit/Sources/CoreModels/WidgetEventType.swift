@@ -10,7 +10,7 @@ public enum WidgetEventType: String, Codable, Sendable {
 public enum WidgetEventSource: String, Codable, Sendable {
     case systemSmall = "system_small"
     case systemMedium = "system_medium"
-    case systemLarge = "system_large"
     case accessoryRectangular = "accessory_rectangular"
     case accessoryInline = "accessory_inline"
+    case systemLarge = "system_large"
 }
