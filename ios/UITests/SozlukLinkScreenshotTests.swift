@@ -14,7 +14,9 @@ final class SozlukLinkScreenshotTests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
         app.launch()
-        try openWord("borrow", in: app)
+        guard openWord("borrow", in: app) else {
+            return
+        }
         attachScreenshot(of: app, named: "17a-sozluk-karistirma")
 
         // The "Karıştırma" row's English part is an element of its own, labelled with the word
@@ -41,6 +43,11 @@ final class SozlukLinkScreenshotTests: XCTestCase {
         borrowRow.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         sleep(1)
         attachScreenshot(of: app, named: "17c-sozluk-karistirma-geri")
+        // Back on the first borrow page, not on a new one: one more step back is Sözlük itself.
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        sleep(1)
+        let field = app.searchFields.firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 5) && field.isHittable, "the link back to borrow opened a new page")
     }
 
     /// The word page at accessibility size L: the facts wrap, the example speakers go under their
@@ -52,15 +59,18 @@ final class SozlukLinkScreenshotTests: XCTestCase {
             "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityL",
         ]
         app.launch()
-        try openWord("borrow", in: app)
+        guard openWord("borrow", in: app) else {
+            return
+        }
         attachScreenshot(of: app, named: "17d-sozluk-buyuk-yazi")
         app.swipeUp()
         sleep(1)
         attachScreenshot(of: app, named: "17e-sozluk-buyuk-yazi-alt")
     }
 
-    /// Sözlük, `lemma` typed in the field, its result row opened.
-    private func openWord(_ lemma: String, in app: XCUIApplication) throws {
+    /// Sözlük, `lemma` typed in the field, its result row opened; false (and a failure) when the
+    /// search found nothing.
+    private func openWord(_ lemma: String, in app: XCUIApplication) -> Bool {
         let tab = app.tabBars.buttons["Sözlük"]
         XCTAssertTrue(tab.waitForExistence(timeout: 30), "no tabs")
         tab.tap()
@@ -70,11 +80,12 @@ final class SozlukLinkScreenshotTests: XCTestCase {
         field.typeText(lemma)
         guard let row = onScreenElement(labelled: lemma, in: app) else {
             XCTFail("searching '\(lemma)' found nothing")
-            throw XCTSkip("no result for \(lemma)")
+            return false
         }
         // The row's VoiceOver form is an `accessibilityRepresentation`: tap the visible row there.
         row.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         sleep(1)
+        return true
     }
 
     /// The first element labelled exactly `label` whose middle is on screen, waiting up to

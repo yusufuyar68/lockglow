@@ -42,17 +42,28 @@ public enum WordLinks {
         return lemma.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
     }
 
-    /// The words of a Turkish meaning ("iyi kalpli, nazik" → iyi, kalpli, nazik), lowercased.
+    /// The words of a Turkish meaning ("iyi kalpli, nazik" → iyi, kalpli, nazik), in Turkish
+    /// lower case, without the helper verbs and small words that many meanings share ("yardım
+    /// etmek" and "kontrol etmek" do not mean the same thing).
     static func meaningWords(_ gloss: String?) -> Set<String> {
         guard let gloss = gloss else {
             return []
         }
-        // The meanings are written in lower case; this only evens out a capital at the start.
-        let words = gloss.lowercased()
+        // Turkish casing by hand ("I" → "ı", "İ" → "i"): the same on Apple platforms and Linux.
+        let lower = gloss.replacingOccurrences(of: "I", with: "ı")
+            .replacingOccurrences(of: "İ", with: "i")
+            .lowercased()
+        let words = lower
             .split(whereSeparator: { !$0.isLetter })
             .map(String.init)
+            .filter { !sharedWords.contains($0) }
         return Set(words)
     }
+
+    /// Words too common in meanings to tell two senses apart.
+    static let sharedWords: Set<String> = [
+        "etmek", "olmak", "yapmak", "almak", "vermek", "bir", "ve", "ile", "için", "bu", "şey",
+    ]
 
     private static func closestSenses(_ senses: [WidgetWord], meaning: Set<String>, pos: String) -> [WidgetWord] {
         guard senses.count > 1 else {

@@ -27,7 +27,8 @@ struct SozlukTopicGrid: View {
                         ForEach(row) { topic in
                             tile(topic)
                         }
-                        // A last row with one tile keeps the tile half wide.
+                        // A last row with one tile keeps it in the first column (with a single
+                        // topic, the only tile takes the whole width).
                         if row.count < columns {
                             Color.clear
                                 .gridCellUnsizedAxes([.horizontal, .vertical])

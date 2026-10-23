@@ -41,6 +41,16 @@ final class WordLinksTests: XCTestCase {
         XCTAssertEqual(found.map { $0.id }, [3])
     }
 
+    /// A helper verb both meanings end in ("etmek") is no shared meaning: the part of speech
+    /// decides.
+    func testHelperVerbIsNoSharedMeaning() {
+        let help = word(1, "help", "v", gloss: "yardım etmek", confusables: [2, 3])
+        let checkNoun = word(2, "check", "n", gloss: "kontrol etmek")
+        let checkVerb = word(3, "check", "v", gloss: "denetlemek")
+        let found = WordLinks.confusables(of: help, in: index([help, checkNoun, checkVerb]))
+        XCTAssertEqual(found.map { $0.id }, [3])
+    }
+
     /// Nothing narrows the senses down: all of them stay.
     func testAllSensesWhenNothingNarrows() {
         let a = word(1, "a", "adj", gloss: "bir", confusables: [2, 3])

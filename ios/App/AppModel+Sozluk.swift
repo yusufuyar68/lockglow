@@ -28,7 +28,15 @@ extension AppModel {
         guard let ids = word.confusableIDs, !ids.isEmpty else {
             return []
         }
-        return WordLinks.confusables(of: word, in: wordsByID)
+        // A handful of partners: looked up one by one rather than indexing every word at each
+        // redraw of the page.
+        var partners: [Int: WidgetWord] = [:]
+        for id in ids where partners[id] == nil {
+            if let partner = words.first(where: { $0.id == id }) {
+                partners[id] = partner
+            }
+        }
+        return WordLinks.confusables(of: word, in: partners)
     }
 
     /// "Başka anlamı" on the word page: the other loaded cards with `word`'s headword ("break":

@@ -68,16 +68,27 @@ struct WordDetailView: View {
     }
 
     /// The word on its band (the night band hangs below it: the spacing leaves it room), its
-    /// facts, then "Dinle" and "Söyle".
+    /// facts, then "Dinle" and "Söyle", one under the other when a line cannot hold both (the
+    /// largest text sizes).
     private func header(state: LearningState) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             WordDetailHeadline(lemma: word.lemma)
             SozlukWordFacts(word: word, state: state)
-            HStack(spacing: 6) {
-                CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
-                SayButton(word: word, example: word.exampleEN)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 6) {
+                    actions
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    actions
+                }
             }
         }
+    }
+
+    @ViewBuilder
+    private var actions: some View {
+        CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+        SayButton(word: word, example: word.exampleEN)
     }
 
     /// The Turkish meaning, the other Turkish meanings ("Ayrıca") and the English definition (a
@@ -89,7 +100,8 @@ struct WordDetailView: View {
                     .meaningStyle()
                     .accessibilityLabel(Text(verbatim: "Türkçesi: " + gloss))
             }
-            if !alternatives.isEmpty {
+            // "Ayrıca" only under a meaning it adds to.
+            if word.glossTR != nil && !alternatives.isEmpty {
                 Text("Ayrıca: " + alternatives.joined(separator: ", "))
                     .font(.callout)
                     .foregroundStyle(Theme.ink2)
@@ -224,8 +236,9 @@ extension EnvironmentValues {
 }
 
 /// "Karıştırma" or "Başka anlamı": a titled group of word rows (`SozlukWordLink`, the rows of
-/// Sözlük's lists, with their two VoiceOver parts); a row opens that word's page. The other
-/// senses say their part of speech under the meaning ("isim"), which is what tells them apart.
+/// Sözlük's lists, with their two VoiceOver parts) in one of the page's cards, black at night
+/// like the others; a row opens that word's page. The other senses say their part of speech
+/// under the meaning ("isim"), which is what tells them apart.
 private struct SozlukLinkSection: View {
     let title: String
     let systemImage: String
@@ -236,7 +249,7 @@ private struct SozlukLinkSection: View {
 
     var body: some View {
         SozlukPageSection(title: title, systemImage: systemImage, caption: caption) {
-            SozlukRowGroup {
+            VStack(spacing: 0) {
                 ForEach(Array(words.enumerated()), id: \.element.id) { index, linked in
                     if index > 0 {
                         DictionaryRule()
@@ -245,6 +258,9 @@ private struct SozlukLinkSection: View {
                     SozlukWordLink(word: linked, note: note(for: linked), open: open)
                 }
             }
+            // The pressed row's fill keeps to the rounded corners.
+            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.group, style: .continuous))
+            .sozlukCard()
         }
     }
 
