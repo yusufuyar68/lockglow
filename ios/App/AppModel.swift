@@ -175,6 +175,8 @@ final class AppModel: ObservableObject {
             customWordsDidChange()
         }
         ingestWidgetEvents()
+        // "Yeni zamanlama": FSRS's weekly refit (AppModel+Scheduler.swift).
+        refreshFSRSIfDue()
         // Time and widget taps ("Sonraki", "Biliyorum") may have moved the rotation on.
         updateLockScreenWord()
     }
@@ -507,7 +509,7 @@ final class AppModel: ObservableObject {
         let now = Date()
         let current = progress[word.id] ?? WordProgress(wordID: word.id)
         let wasNew = current.state == .new
-        let updated = Leitner.review(current, grade: grade, at: now)
+        let updated = reviewScheduler.review(current, grade: grade, at: now)
         progress[word.id] = updated
         if persistProgress(progress) {
             try? reviewLog?.append(before: current, after: updated, source: .review)
@@ -594,12 +596,12 @@ final class AppModel: ObservableObject {
         return (progress[word.id]?.exposures ?? 0) > 0 || lockScreenWordID == word.id
     }
 
-    /// When `word` would come back if it were answered with `grade` at `now`: the same
-    /// `Leitner.review` that `recordReview` runs, on a copy of the progress (the times on the
+    /// When `word` would come back if it were answered with `grade` at `now`: the same scheduler
+    /// that `recordReview` runs (`reviewScheduler`), on a copy of the progress (the times on the
     /// answer buttons, README point 8). Nothing is saved.
     func dueDate(ifAnswering grade: ReviewGrade, for word: WidgetWord, now: Date = Date()) -> Date? {
         let current = progress[word.id] ?? WordProgress(wordID: word.id)
-        return Leitner.review(current, grade: grade, at: now).dueAt
+        return reviewScheduler.review(current, grade: grade, at: now).dueAt
     }
 
     /// The earliest review or refresher of a loaded word that falls due after `now` ("Sıradaki
@@ -749,6 +751,18 @@ final class AppModel: ObservableObject {
         return (previous, changed)
     }
 
+    /// Every word's progress at once ("Yeni zamanlama", AppModel+Scheduler.swift): saved first,
+    /// then adopted, then the widget queue follows. False when the save failed; nothing changes.
+    @discardableResult
+    func replaceProgress(_ updated: [Int: WordProgress]) -> Bool {
+        guard persistProgress(updated) else {
+            return false
+        }
+        progress = updated
+        refreshWidgetPlan()
+        return true
+    }
+
     func dismissProgressRecovery() {
         progressRecovery = nil
     }
@@ -763,6 +777,7 @@ final class AppModel: ObservableObject {
             try? reviewLog?.removeAll()
         }
         AppPreferences.clearKnownWordIDs()
+        AppPreferences.clearFSRSFit()
         AppPreferences.resetNewWordsStudied()
         AppPreferences.resetReviewsDone()
         LocalMetricsRecorder.shared.reset()
@@ -868,7 +883,7 @@ final class AppModel: ObservableObject {
                 logger.info("widget event \(event.type.rawValue, privacy: .public) word=\(event.wordID) source=\(event.source.rawValue, privacy: .public)")
                 events.append(LearningEvent(type: event.type, wordID: event.wordID, at: event.at))
             }
-            let (updated, answers) = ProgressIngest.applyLogged(events, to: progress)
+            let (updated, answers) = ProgressIngest.applyLogged(events, to: progress, scheduler: reviewScheduler)
             if !persistProgress(updated) {
                 return
             }

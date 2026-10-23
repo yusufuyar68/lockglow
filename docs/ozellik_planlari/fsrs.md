@@ -1,6 +1,10 @@
 # FSRS (v1.2): motor, simülasyon ve geçiş planı
 
-> Durum: 2026-10-22, dal `fsrs`, taban `main` 29797b4. İlk parça yapıldı: saf ve testli bir FSRS-6 motoru (`ios/Packages/VocabKit/Sources/Learning/FSRS.swift`). Motor **uygulamaya bağlı değil**; bütün tekrarları hâlâ `Leitner` zamanlıyor. Bu belge motoru anlatır, Leitner ile karşılaştırır ve bağlama işini planlar.
+> Durum: 2026-10-23, dal `is5-fsrs`. FSRS uygulamaya bağlandı: **"Ayarlar → Yeni zamanlama (deneme)"** açılınca tekrarları FSRS zamanlıyor. Ayar varsayılan olarak kapalı; kapalıyken her şey Leitner'le eskisi gibi. Neler yapıldı, neler açık: 4.3. FSRS'te basamak: 4.5.
+>
+> Lockglow kuralları (4.5): "Yerleşti"ye yalnız 4–5. basamaktan, hatırlama sorusuyla geçilir; henüz bilinmeyen kelime en çok 16 gün bekler; aynı gün adımındaki "Zor" en az 12 saat bekler. Ayar kapatılınca çok uzak tarihler Leitner'in en uzun beklemesine çekilir (4.2). Hesap, 4 şıklı sorudaki %25 şans payını hesaba katar (4.3 adım 9).
+>
+> Önceki adımlar: 2026-10-22 dal `fsrs` (taban `main` 29797b4) saf ve testli FSRS-6 motorunu yazdı (`FSRS.swift`); `is4-ogrenme` 4.3'ün 1. ve 6. adımlarını yaptı.
 
 ## Kısa sonuç
 
@@ -128,7 +132,7 @@ Bizim simülasyonumuzda da aynı şekil çıktı:
 - Gün aralığı py-fsrs gibi "yarım çifte" yuvarlanıyor (`.toNearestOrEven`). Gün sayımı 24 saatin katı.
 - Varsayılan adımlar py-fsrs'inkiler. Lockglow için önerilen ayar `learningSteps: [600]` ve `relearningSteps: [600]`: Leitner'in 10 dakikası, pratikte "bir sonraki tur".
 - Parametreler py-fsrs'in sınırlarıyla denetlenir (`FSRS.weightBounds`, `FSRS.areValid(weights:)`). Sınır dışı parametre (ör. bozunma 0) sonsuz ya da tanımsız (NaN) aralık verirdi. `init` böyle parametrede durur; kayıttan okunan parametre önce `areValid` ile denetlenmeli.
-- Yok: parametre eniyileme (optimizer), FSRS-7, kalıcı kayıt biçimi (`Codable` yok; alanlar bölüm 4.1'de).
+- Yok: tam parametre eniyileme (optimizer), FSRS-7. Motorun kendisinde kalıcı kayıt biçimi yok; kelimenin belleğini `FSRSState` saklar (4.1). Cihazda yalnız w0…w3 hesaplanır (`FSRSParameterFit`, 4.3 adım 9).
 
 **Lockglow'da yeni kelimenin ilk cevabı** (önerilen adımlarla):
 
@@ -285,27 +289,44 @@ Hızlı unutan öğrencide FSRS hedefi tutturamıyor: %90 isteniyor, %83 oluyor.
 
 ## 4. Geçiş planı
 
-Bu dalda yalnız motor var. Aşağıdakiler `WordProgress`, `Leitner`, `AppModel` ve `QueueComposer`'a dokunduğu için ayrı oturum(lar)da, o dosyaların sahipleriyle sırayla yapılır.
+Motor `is5-fsrs`'te uygulamaya bağlandı. Kod:
+- `ReviewScheduler.swift`: tek giriş noktası (`ReviewScheduler`, `LeitnerScheduler`, `SchedulerKind`).
+- `FSRSScheduler.swift`: FSRS + Lockglow kuralları, `FSRSState`.
+- `FSRSMigration.swift`: açma (`takeOver`) ve kapama (`handBack`).
+- `FSRSParameterFit.swift`: w0…w3'ün günlükten hesabı.
+- `ios/App/AppModel+Scheduler.swift`: ayar, açma/kapama, haftalık yenileme.
 
-### 4.1 `WordProgress`'e eklenecek alanlar
+### 4.1 `WordProgress`'teki alanlar
 
-Hepsi isteğe bağlı (`Optional`). `WordProgress`'in otomatik `Decodable`'ı eksik anahtarı `nil` okur, yani eski `progress.json` bozulmaz.
+İsteğe bağlı (`Optional`) alanlar. Eksik anahtar `nil` okunur, yani eski `progress.json` bozulmaz.
 
 | Alan | JSON anahtarı | Tür | Neden |
 |---|---|---|---|
-| `lastReviewedAt` | `last_reviewed_at` | `Date?` | Geçen gün sayısı buradan hesaplanır. Yalnız bir cevap (`review`) yazar. `lastSeenAt` olmaz: widget'ta görmek (`markExposure`) onu da değiştiriyor. `QueueComposer.lastAnswer` da buna geçmeli (aşağıda 4.3, adım 6). |
-| `lastGrade` | `last_grade` | `ReviewGrade?` | `QueueComposer`'ın "bugün kaçırıldı" ayrımı (is3-widgetsira notu). |
-| `stability` | `fsrs_stability` | `Double?` | FSRS belleği; `nil` = FSRS bu kelimeyi henüz görmedi. |
-| `difficulty` | `fsrs_difficulty` | `Double?` | aynı |
-| `fsrsPhase` | `fsrs_phase` | `String?` (`learning` / `review` / `relearning`) | Adım içinde mi, gün aralığında mı. |
-| `fsrsStep` | `fsrs_step` | `Int?` | Adımın sırası. |
+| `lastReviewedAt` | `last_reviewed_at` | `Date?` | Geçen gün sayısı buradan hesaplanır. Yalnız bir cevap yazar; widget'ta görmek (`markExposure`) yazmaz. `is4-ogrenme`'de eklendi. |
+| `lastGrade` | `last_grade` | `ReviewGrade?` | `QueueComposer`'ın "bugün kaçırıldı" ayrımı. `is4-ogrenme`'de eklendi. |
+| `fsrs` | `fsrs` | `FSRSState?` (iç içe bir nesne) | FSRS belleği; `nil` = FSRS'in bu kelime için belleği yok. |
+
+Plandaki dört ayrı `fsrs_…` alanı yerine tek bir iç içe nesne var. `fsrs` nesnesinin alanları:
+
+| Alan | JSON anahtarı | Ne |
+|---|---|---|
+| `stability` | `stability` | S, gün |
+| `difficulty` | `difficulty` | D, 1…10 |
+| `phase` | `phase` | `learning` / `review` / `relearning` |
+| `step` | `step` | Adımın sırası; `review`'da yok |
+| `lastReviewAt` | `last_review_at` | FSRS'in bildiği son cevap: kendi cevabında tam, devraldığı kelimede tahmin |
+| `reviews` | `reviews` | Bu belleğin içerdiği cevap sayısı. `WordProgress.reviews`'a eşitse bellek güncel |
+| `shelfBefore` | `shelf_before` | FSRS'in son cevabından hemen önceki raf (`ProgressSummary.Shelf`, yoksa 0). Günlükten kurulan bellekte yok (4.5) |
+
+- Okunamayan ya da sınır dışı bir `fsrs` nesnesi (sonsuz, NaN, aralık dışı) bütünüyle atılır; yerine tahmin gelir. Kelimenin geri kalanı okunur.
+- `dueAt` `fsrs` içinde tutulmaz: kelimenin kendi `dueAt`'i geçerli.
 
 **Aynen kalanlar:**
-- `state`, `dueAt` (artık FSRS yazar), `reviews`, `lapses`, `exposures`, `knownOverride`, `saved`.
-- `box` dondurulur: geri dönüş için saklanır, FSRS açıkken güncellenmez.
+- `state`, `dueAt` (FSRS açıkken FSRS yazar), `reviews`, `lapses`, `exposures`, `knownOverride`, `saved`, `refresherStep`, `firstReviewedAt`.
+- **`box` dondurulmuyor** (ilk plan dondurmaktı). FSRS açıkken de güncellenir ve **basamak** olarak kalır: FSRS beklemesinden bulunur (4.5). Böylece ekranlar, widget sırası ve hatırlatma iki zamanlayıcıda da aynı alanları okur.
 
 **"Bilinen kelime" FSRS'te iki yoldan olur:**
-- S ≥ 30 gün. Mimari raporu "21–30 gün ve en az 2 doğru cevap" diyor (`raporlar/04_teknik_mimari.md`).
+- S ≥ 30 gün (gün aralığı aşamasında) ve kelime cevaptan önce 4. ya da 5. basamaktaydı (4.5). Mimari raporu "21–30 gün ve en az 2 doğru cevap" diyordu (`raporlar/04_teknik_mimari.md`); eşik Leitner'in ilk tazelemesi olan 30 gün oldu.
 - Ya da kullanıcı "Biliyorum" demiştir (`knownOverride`) ve kontrol cevabı henüz gelmemiştir. Bugünkü gibi `state == .known` kalır.
 
 **Ayrı bir dosya: `review_log.jsonl`.** `alt-ilerleme` tasarım notunda da planlı.
@@ -318,46 +339,87 @@ Hepsi isteğe bağlı (`Optional`). `WordProgress`'in otomatik `Decodable`'ı ek
 
 ### 4.2 Mevcut ilerlemenin çevrilmesi
 
-Uygulama FSRS açıkken ilk kez başladığında bir kez çalışır. Yalnız `stability == nil && reviews > 0` olan kelimelere dokunur, yani iki kez çalışsa da zarar vermez.
+`FSRSMigration.takeOver(_:log:scheduler:now:)`. "Yeni zamanlama" açılınca çalışır.
+- Önce bekleyen widget dokunuşları işlenir, sonra günlük okunur ve parametreler hesaplanır (4.3 adım 9).
+- **Yalnız `fsrs` değişir.** Tarihler (`dueAt`), basamaklar, durumlar, "Yerleşti", sayaçlar aynen kalır. Ekrandaki sayılar geçiş günü değişmez.
+- Dokunduğu kelimeler: en az bir kez cevaplanmış ve belleği yok ya da güncel değil (`fsrs.reviews != reviews`). Belleği güncel kelime korunur. Yani iki kez çalışsa da bir şey değişmez.
+- İlerleme ayar değişmeden önce kaydedilir. Kayıt başarısız olursa ayar açılmaz, Leitner sürer.
+- Sonuç bir raporda sayılır (`Report`): günlükten kurulan, tahmin edilen, korunan, belleksiz.
 
-1. **Günlükte geçmişi olan kelime:** bellek günlükteki cevaplardan sırayla hesaplanır (`initialMemory`, sonra her cevap için `nextMemory`). Tam doğru.
-2. **Günlükte geçmişi olmayan kelime** (günlükten önceki cevaplar): tahmin.
-   - **S:** kelimenin kutusunun aralığı (`Leitner.intervalDays[box − 1]`: 1, 2, 4, 8, 16 gün); bilinen kelimede 30.
+1. **Bütün cevapları günlükte olan kelime:** bellek günlükteki cevaplardan sırayla hesaplanır (`FSRSScheduler.replay`). Doğru bir "Biliyorum" kontrolü burada da kelimeyi bilinen yapar (4.5). Tam doğru.
+2. **Cevaplarının bir kısmı günlükte olmayan kelime** (günlükten önceki, kırpılmış ya da kaybolmuş satırlar): tahmin (`estimatedCard`).
+   - **S:** kelimenin kutusunun aralığı (`Leitner.intervalDays[box − 1]`: 1, 2, 4, 8, 16 gün); bilinen kelimede tazeleme beklemesi (30, `refresherStep`'e göre 60 ya da 120).
      - Gerekçe: Leitner kelimeyi bu aralıktan sonra soruyordu. Hedef 0,9 iken FSRS'te aralık = S.
      - fsrs-rs'in eski zamanlayıcıdan çevirme fonksiyonu `memory_state_from_sm2(ease, interval, retention)` da S'yi aynı yoldan kurar.
    - **D:** başlangıç D0(Bildim) = 2,12. Sonra `lapses` kadar kez "Bilemedim" zorluk güncellemesi uygulanır: 1 yanlış ≈ 7,39, 2 yanlış ≈ 9,13.
      - Zor ve Kolay da D'yi değiştirir ama Leitner bunları saklamıyor. Bir "Zor" 2,12'yi 4,75'e çıkarır; bir "Kolay" 2,12'yi 1'e, 7,39'u 6,51'e indirir. Bu yüzden tahmin kaba.
      - "Bildim" D'yi neredeyse hiç değiştirmez. D'deki hata, S'deki hatadan daha uzun sürer; ancak sonraki Zor/Kolay/Bilemedim cevaplarıyla düzelir. Günlüğü erken başlatmak için bir neden daha.
    - **Aşama:** `review`.
-3. **"Biliyorum" denmiş ama kanıtlanmamış kelime** (`knownOverride`): bellek uydurulmaz (`stability = nil`); kelime `known` kalır ve "Bildiğim kelimeler"de sayılır. Bekleyen 3 gün kontrolü (is3-tekrar) FSRS'in ilk cevabı olur: `initialMemory(not)`.
-4. **Yeni kelime** (`state == .new`): değişmez. İlk cevapta `initialMemory`.
+   - **Son cevap:** `lastReviewedAt`; yoksa `dueAt`'ten S gün önce.
+3. **"Biliyorum" denmiş ama kanıtlanmamış kelime** (`knownOverride`) ve **"Tanış"a dönmüş kelime:** bellek uydurulmaz (`fsrs = nil`). Biliyorum denmiş kelime `known` kalır ve "Bildiğim kelimeler"de sayılır. Bir sonraki cevap FSRS'in ilk cevabı olur.
+4. **Hiç cevaplanmamış kelime:** değişmez. İlk cevapta `initialMemory`.
 5. **`dueAt` korunur.** Bütün kelimeler bir anda yeniden zamanlanmaz, yani geçiş günü yığılma olmaz. Bir sonraki cevaptan sonra FSRS zamanlar.
 
-**Geri dönüş (FSRS kapatılırsa):** dondurulmuş `box` kullanılır. FSRS açıkken yeni öğrenilen kelimede kutu S'den bulunur: aralığı S'yi geçmeyen en büyük kutu; S ≥ 30 ise `known`.
+**Geri dönüş (FSRS kapatılırsa): `FSRSMigration.handBack(_:)`.** FSRS `state`, `box`, `dueAt` ve `refresherStep`'i Leitner'in terimleriyle yazıyor (4.5). Leitner FSRS'in bıraktığı basamaktan ve tazeleme adımından devam eder.
+- Önce bekleyen widget dokunuşları işlenir, yani FSRS onları kendi kurallarıyla cevaplar. Açarken de aynı.
+- **Yalnız çok uzak tarihler öne çekilir.** FSRS bir yıla kadar bekletebilir, Leitner en çok 120 gün. Son cevabı FSRS'in olan kelimenin tarihi, Leitner'in o basamaktaki beklemesinden uzaksa `lastReviewedAt` + o bekleme olur:
+  - öğrenilen kelimede basamağın aralığı (`Leitner.intervalDays`: 1, 2, 4, 8, 16 gün);
+  - bilinen kelimede tazeleme beklemesi (`Leitner.refresherWait`: 30, 60 ya da 120 gün).
+- Tarih yalnız öne gelir, hiç geriye gitmez. Başka hiçbir alan değişmez.
+- Dokunmadıkları: bekleyen "Biliyorum" kontrolü, belleği güncel olmayan kelime, günlükten kurulan bellek (`shelfBefore` yok: son cevap FSRS'in değil). İki kez çalışsa da bir şey değişmez.
+- Değişen bir şey varsa ilerleme ayar değişmeden önce kaydedilir. Kayıt başarısız olursa ayar kapanmaz.
 
-### 4.3 Bağlama adımları (sonraki oturumlar)
+**Bayatlayan bellek.** Bellekler dosyada kalır. Ayar kapalıyken Leitner bir kelimeyi cevaplayınca o kelimenin `fsrs.reviews`'ı artık `reviews`'a eşit olmaz; bellek güncel sayılmaz. Bellek şu zamanlarda yeniden kurulur:
+- ayar bir sonraki açılışında (`takeOver`);
+- ayar açıkken haftalık yenilemede (`refreshFSRSIfDue`): güncel olmayan kelime varsa hemen, yoksa 7 günde bir;
+- o arada FSRS bu kelimeyi cevaplarsa, cevaptan önce tahminle (`card(of:at:)`).
 
-1. `review_log.jsonl` yazmaya başla; `WordProgress`'e `lastReviewedAt` ve `lastGrade` ekle. Leitner de yazsın. FSRS'ten bağımsız, şimdi yapılabilir.
-2. Tek bir giriş noktası: `ReviewScheduler.review(_ p: WordProgress, grade:at:) -> WordProgress`.
-   - `AppModel`, `ReviewPlanner` ve `ProgressIngest` doğrudan `Leitner.review` yerine bunu çağırır.
-   - Hangi zamanlayıcının çalışacağı bir tercihle seçilir (`lockglow.scheduler`). Telefonda denenene kadar varsayılan Leitner.
-3. `WordProgress` ↔ `FSRSCard` çevirisi. Sayaçlar Leitner'deki gibi işler:
-   - her cevapta `reviews += 1` ve `lastSeenAt = now`;
-   - en az bir kez cevaplanmış kelimede "Bilemedim" `lapses += 1` yapar ve `knownOverride`'ı kaldırır.
-4. Ayarlar: `learningSteps: [600]`, `relearningSteps: [600]`, hedef 0,90.
-   - İsteğe bağlı bir "Tekrar temposu" ayarı eklenebilir: Rahat 0,85 / Dengeli 0,90 / Yoğun 0,95.
+### 4.3 Bağlama adımları
+
+| Adım | Durum |
+|---|---|
+| 1. Günlük, `lastReviewedAt`, `lastGrade` | Yapıldı (`is4-ogrenme`) |
+| 2. Tek giriş noktası, ayar | Yapıldı (`is5-fsrs`) |
+| 3. Çeviri, sayaçlar | Yapıldı (`is5-fsrs`) |
+| 4. Hedef 0,90, adımlar 10 dk | Yapıldı (`is5-fsrs`); "Tekrar temposu" açık |
+| 5. Bilinen kelime | Yapıldı (`is5-fsrs`) |
+| 6. `QueueComposer.lastAnswer` | Yapıldı (`is4-ogrenme`) |
+| 7. Düğme süreleri | Yapıldı (`is5-fsrs`) |
+| 8. Gün sınırı 04:00 | **Açık** |
+| 9. Kişisel parametreler | Kısmen (`is5-fsrs`): cihazda yalnız w0…w3; tam eniyileme açık |
+
+1. **Yapıldı.** `review_log.jsonl` yazmaya başla; `WordProgress`'e `lastReviewedAt` ve `lastGrade` ekle. Leitner de yazsın.
+2. **Yapıldı.** Tek bir giriş noktası: `ReviewScheduler.review(_:grade:at:) -> WordProgress` (`LeitnerScheduler`, `FSRSScheduler`).
+   - Tekrar, hatırlama ekranı, "Biliyorum" kontrolü, widget'ın "Bilmiyorum"u (`ProgressIngest`) ve düğme süreleri bunu çağırır (`AppModel.reviewScheduler`).
+   - Seçim: "Ayarlar → Yeni zamanlama (deneme)", tercih anahtarı `lockglow.scheduler` (`leitner` / `fsrs`). Varsayılan ve bilinmeyen değer Leitner.
+   - Görmek, "Biliyorum" ve geri alması cevap değil: ikisinde de `Leitner.markExposure`, `markKnown`, `undoKnown`.
+3. **Yapıldı.** `WordProgress` ↔ `FSRSCard` çevirisi. Sayaçlar Leitner'deki gibi işler:
+   - her cevapta `reviews += 1`, `lastSeenAt`, `lastReviewedAt`, `lastGrade`; ilk cevapta `firstReviewedAt`;
+   - basamaktaki ya da bilinen kelimede "Bilemedim" `lapses += 1` yapar; "Bilemedim" `knownOverride`'ı kaldırır.
+   - Bu yüzden günlük iki zamanlayıcıdan da aynı satırları alır.
+4. **Yapıldı.** `FSRS.lockglowSettings`: `learningSteps: [600]`, `relearningSteps: [600]`, hedef 0,90, en uzun bekleme 365 gün (`FSRSScheduler.maximumIntervalDays`; Leitner'in en uzunu 120 gün).
+   - **Açık:** isteğe bağlı bir "Tekrar temposu" ayarı: Rahat 0,85 / Dengeli 0,90 / Yoğun 0,95.
    - 0,95'i "yük yaklaşık %65 artar" diye açıkla (simülasyonda 90 günde %66, 365 günde %69).
-5. Bilinen kelime: S ≥ 30 gün ya da bekleyen "Biliyorum" (4.1). "Bildiğim kelimeler" listesi ve widget'ın tazeleme slotu bunu kullanır.
-6. `QueueComposer.lastAnswer` aralık eşleştirmesi yerine `lastReviewedAt` ve `lastGrade` kullanmalı.
+5. **Yapıldı.** Bilinen kelime: 4–5. basamakta S ≥ 30 gün ya da bekleyen "Biliyorum" (4.1). "Bildiğim kelimeler" listesi ve widget'ın tazeleme slotu `state == .known`'u okur, FSRS bunu yazar (4.5).
+6. **Yapıldı.** `QueueComposer.lastAnswer` aralık eşleştirmesi yerine `lastReviewedAt` ve `lastGrade` kullanmalı.
    - Bugün `dueAt − lastSeenAt` farkını Leitner'in aralıklarıyla karşılaştırıyor; FSRS aralıklarında bu eşleşme tutmaz (is3-widgetsira notu).
    - Hata güvenli tarafta olur (kelime yalnız gizlenir), ama "bugün cevaplananlar önce" kuralı sessizce çalışmaz.
    - `QueueComposerTests` gerçek `Leitner.review` ile kurulu; bilerek kırılır.
-7. **Düğme etiketleri.** Tasarım önerisi "Bildim · yarın", "Kolay · 2 gün" gibi süreler yazıyor. FSRS'te bu süreler kelimeye göre değişir; dört not için `review` bir kopya üstünde çağrılıp hesaplanır.
-8. **Gün sınırı.** FSRS 24 saatin katlarıyla sayar: akşam 23:00'teki cevap iki gün sonra 23:00'te "zamanı gelmiş" olur. Anki günü sabah 04:00'te başlatır. Tekrar listesi "bugün"ü yerel 04:00'ten saymalı ki kelime sabah oturumunda gelsin.
-9. **Kişisel parametreler** (v1.2'den sonra).
+7. **Yapıldı. Düğme etiketleri.** Tasarım önerisi "Bildim · yarın", "Kolay · 2 gün" gibi süreler yazıyor. FSRS'te bu süreler kelimeye göre değişir. `AppModel.dueDate(ifAnswering:for:now:)` seçili zamanlayıcının `review`'unu bir kopya üstünde çağırır; süreler iki zamanlayıcıda da doğru.
+8. **Açık. Gün sınırı.** FSRS 24 saatin katlarıyla sayar: akşam 23:00'teki cevap iki gün sonra 23:00'te "zamanı gelmiş" olur. Anki günü sabah 04:00'te başlatır. Tekrar listesi "bugün"ü yerel 04:00'ten saymalı ki kelime sabah oturumunda gelsin.
+9. **Kısmen yapıldı. Kişisel parametreler.**
    - Anki kılavuzu "birkaç yüzden az tekrar" ile eniyilemenin iyi çalışmadığını söylüyor.
-   - Birkaç yüz tekrardan sonra günlük dışa aktarılır, py-fsrs'in eniyileyicisiyle (PyTorch ister) bilgisayarda hesaplanır, parametreler `FSRS.areValid(weights:)` ile denetlenip uygulamaya yazılır.
-   - Cihaz içinde eniyileme Swift'te yok; fsrs-rs'i iOS'a derlemek ağır bir iş.
+   - **Cihazda, yalnız w0…w3** (dört notun ilk kararlılığı): `FSRSParameterFit.fit(_:base:)`. fsrs-rs'in "pretrain" adımının sade bir kopyası. Saf, belirlenimci, dosya okumaz.
+     - Örnek: günlükte ilk cevabı olan kelime (`reviews == 1`, `seed` yok, "Biliyorum" kontrolü değil) ve en az bir tam gün sonra gelen ikinci cevabı. Örnek = (ilk not, geçen tam gün, ikinci cevap doğru mu).
+     - Her not için unutma eğrisine en uyan S aranır (log ızgara, sonra altın oran araması; S 0,1…100 gün).
+     - **Şans payı:** ikinci cevap çoğu zaman 4 şıklı cloze. Kelimeyi unutan öğrenci de dörtte bir doğru şıkkı seçer. Bu yüzden doğru cevabın olasılığı R değil, 0,25 + 0,75 · R (`guessChance`). Yoksa şanslı seçimler hafıza sayılır, ilk S'ler şişer (4.4'teki şans payı riski). Günlük soru türünü yazmıyor; payı her örneğe uygulanır.
+     - Varsayılana çekme: log ölçeğinde 32 sahte örnek ağırlığıyla (`priorWeight`). Sonra `FSRS.weightBounds` içine sıkıştırılır ve w0 ≤ w1 ≤ w2 ≤ w3 sıralanır.
+     - Bir notta 16'dan az örnek (`minimumSamples`): o not varsayılanda kalır.
+     - Günlükte 400'den az cevap (`minimumAnswers`): bütün parametreler varsayılan.
+     - Sonuç `FSRS.areValid(weights:)`'ten geçmezse varsayılan. w4…w20 hep varsayılan.
+   - Ne zaman: ayar açılırken ve açıkken haftada bir (`refreshFSRSIfDue`, `fsrsRefitInterval` 7 gün). Günlük ana iş parçacığının dışında okunur. Parametreler `lockglow.fsrsWeights`'te; okunurken yine `areValid` ile denetlenir.
+   - Ayarlar ekranı kaç cevaptan hesaplandığını ve parametrelerin kişisel olup olmadığını gösterir (`fsrsFitSummary`). "İlerlemeyi sıfırla" parametreleri siler. Sıfırlamadan önce günlüğü okumuş bir yenileme sonucunu yazmaz (`AppPreferences.fsrsFitGeneration`).
+   - **Açık:** bütün parametrelerin tam eniyilemesi. Günlük dışa aktarılır, py-fsrs'in eniyileyicisiyle (PyTorch ister) bilgisayarda hesaplanır, `FSRS.areValid(weights:)` ile denetlenip uygulamaya yazılır. Cihaz içinde tam eniyileme Swift'te yok; fsrs-rs'i iOS'a derlemek ağır bir iş.
 
 ### 4.4 Riskler
 
@@ -366,16 +428,75 @@ Uygulama FSRS açıkken ilk kez başladığında bir kez çalışır. Yalnız `s
 | Simülasyon FSRS'i kayırıyor (hafıza modeli FSRS'in kendisi) | Gerçek kazanç daha küçük olabilir | Ayarın arkasında aç; günlükle gerçek doğru oranını izle (hedef 0,90 → simülasyonda %89) |
 | Varsayılan parametreler A2 öğrencisine uymayabilir | Hedef tutmaz: 3 kat hızlı unutan öğrencide %90 yerine %83 | Günlük + kişisel parametreler; o zamana kadar gerçek doğru oranı %80'in altındaysa hedefi yükselt |
 | Uzun vadede daha düşük hatırlama | 365 günde hedef 0,90 Leitner'den 3,7 puan aşağıda | Bilerek seçilen bir takas; daha yüksek hatırlama istenirse hedef 0,93–0,95 |
-| 4 şıklı soruda şans payı (%25) | Şansla doğru cevap "hatırladı" sayılır, S şişer, aralıklar uzar | Uzun aralıkta daha zor soru türü (ogrenme_ilkeleri 2.4: "soru türü kutuya göre değişir"; FSRS'te kutu yerine S'ye bağlanmalı) |
+| 4 şıklı soruda şans payı (%25) | Şansla doğru cevap "hatırladı" sayılır, S şişer, aralıklar uzar | Uzun aralıkta daha zor soru türü (ogrenme_ilkeleri 2.4: "soru türü kutuya göre değişir"). FSRS'te basamak S'den bulunduğu için soru türü de S'ye bağlı (4.5). "Yerleşti"ye yalnız 4–5. basamaktan, hatırlama sorusuyla geçilir (4.5). Parametre hesabı şans payını hesaba katar (4.3 adım 9) |
 | "Zor"un unutulan kelimede kullanılması | FSRS "Zor"u doğru sayar, aralıklar fazla uzar (Anki kılavuzunun en büyük uyarısı) | Düğme metni "Zor ama bildim" (tasarım önerisi); unutan "Bilemedim"e basmalı |
 | `lastSeenAt` widget'ta da değişiyor | Yanlış geçen gün sayısı → yanlış S | `lastReviewedAt` (4.1) |
 | `QueueComposer` Leitner aralıklarını tanıyor | "Bugün cevaplananlar önce" kuralı sessizce bozulur | 4.3 adım 6 |
 | Geçişte tahmin edilen S ve D | İlk tekrarlar biraz erken ya da geç; D'deki hata daha uzun sürer | Günlüğü şimdi başlat; `dueAt` korunur |
-| Aynı gün yeniden sorma artar (7,2 → 9,6/gün) | Tur biraz uzar. Neden: adım içinde "Zor" 15 dakika sonra yeniden soruluyor (Leitner'de ertesi gün) | Kabul edilebilir: günde 2–3 soru fazla. Adımları boşaltmak (`[]`) çözüm değil: o zaman "Bilemedim" de 1 gün sonraya kalır |
+| Aynı gün yeniden sorma artar (7,2 → 9,6/gün) | Tur biraz uzar. Neden: FSRS adım içindeki "Zor"u 15 dakika sonra yeniden sorar (Leitner'de 12 saat) | Lockglow'da adım içindeki "Zor" en az 12 saat bekler (4.5); fark yalnız "Bilemedim"de kalır. Adımları boşaltmak (`[]`) çözüm değil: o zaman "Bilemedim" de 1 gün sonraya kalır |
 | "Bildiğim kelimeler" sayısı geçiş günü değişir | Kullanıcı şaşırır | Geçişte bilinen kelimelere S = 30 verilir (eşik 30); "Biliyorum" denmiş kelimeler bayrakla bilinen kalır (4.1). Sayı korunur |
 | Bozuk ya da sınır dışı parametre (ör. eniyileyici çıktısı) | Sonsuz/NaN aralık, uygulama durur | Yüklemeden önce `FSRS.areValid(weights:)`; geçmezse varsayılan parametreler |
 | FSRS-7 ve parametre değişiklikleri | Bellek yeniden hesaplanmalı | Günlük varsa tek seferlik yeniden hesap |
 | 32 bit / 64 bit ve yuvarlama farkları | fsrs-rs ile milyonda 1 fark | Testlerde tolerans; py-fsrs ile aynı yuvarlama |
+
+### 4.5 FSRS'te basamak
+
+Ekranlar, widget sırası, soru türü ve İlerleme "basamak"ı (`box`) okuyor. FSRS'in kendi basamağı yok. Bu yüzden FSRS açıkken basamak FSRS beklemesinden bulunur (`FSRSScheduler.box(forStability:)`).
+
+**Tanım:** basamak, FSRS beklemesinin ulaştığı son Leitner basamağı. Hedef 0,9 iken FSRS beklemesi = S. Leitner'in beklemeleri 1, 2, 4, 8, 16 gün (`Leitner.intervalDays`).
+
+| S (gün) | Basamak | Sonraki soru (yaklaşık) |
+|---|---|---|
+| 2'den az | 1 | 2 günden önce |
+| 2 – 4 | 2 | 2–4 gün |
+| 4 – 8 | 3 | 4–8 gün |
+| 8 – 16 | 4 | 8–16 gün |
+| 16 ve üstü | 5 | en çok 16 gün |
+| 30 ve üstü, 4–5. basamaktan (gün aralığı aşamasında) | **Yerleşti** (bilinen, basamak 5) | 30 gün ve sonrası, en çok 365 |
+
+Böylece 3. basamaktaki kelime Leitner'deki gibi 4–8 gün sonra gelir.
+
+**Henüz bilinmeyen kelime en çok 16 gün bekler** (`FSRSScheduler.unprovenMaximumWait`, Leitner'in 5. basamağı). S daha büyük olsa da sonraki soru 16 gün içinde gelir.
+
+**İstisna: yeni kelime 1. basamaktan başlar.** Basamakta olmayan kelime (yeni, ya da "Tanış"a dönmüş) ilk cevabıyla hep 1. basamağa gelir, ilk beklemesi ne olursa olsun. Örnek: "Hatırla"da "Bildim" 2 gün bekletir (S0 = 2,31) ama kelime 1. basamaktadır. ("Hatırla" yalnız Bildim, Zor ve Bilemedim verir.)
+- Neden: ilk gerçek soru yazılmış cloze (ogrenme_ilkeleri 1.2, 2.4). 4 şıklı "Hatırla" bunu kanıtlamaz.
+- İlerleme de "ilk turun kelimeleri ilk basamağa gelir" diyor.
+- Sonraki doğru cevap kelimeyi yeni S'nin basamağına taşır. Örnek: 2 gün sonra "Bildim" → S ≈ 10,8 → 4. basamak.
+
+**İki sakin kural:**
+- Doğru cevap basamağı hiç indirmez ve bilinen kelimeyi "Yerleşti"den hiç çıkarmaz. S'nin basamağı kelimenin şimdiki basamağından düşük olabilir (ör. Leitner'den gelen, belleği tahmin edilen kelimede); o zaman basamak yerinde kalır. Ekranda yalnız unutulan kelime aşağı iner (`ProgressSummary`).
+- "Bilemedim" basamağı hiç yükseltmez: yeni basamak, S'nin basamağı ile önceki basamağın küçüğü.
+
+**Yerleşme:** 4. ya da 5. basamaktaki kelime (`ReviewPlanner.recallFromBox`) gün aralığında S ≥ 30'a ulaşınca bilinen olur, basamak 5. Leitner'de kutu 5'ten çıkmak gibi.
+- Neden: bu basamaklarda soru hatırlama sorusu. 4 şıklı bir tahmin kelimeyi yerleştirmemeli (ogrenme_ilkeleri 2.4).
+- Daha alt basamakta S 30'a ulaşırsa kelime öğrenilen kalır, 5. basamağa çıkar (`box(forStability:)`) ve en çok 16 gün sonra hatırlama sorusuyla gelir. O soruyu bilirse yerleşir.
+
+**Adım içinde "Zor" en az 12 saat bekler** (`FSRSScheduler.hardStepWait`, Leitner'in 1. basamaktaki "Zor"u). FSRS kelime aynı gün adımındayken (yeni kelime ya da unutulmuş kelime) "Zor"u 15 dakika sonra sorar; Lockglow'da en az 12 saat.
+- Neden: ilk gerçek soru başka bir günde gelir (ogrenme_ilkeleri 1.2). Hiçbir düğme dakikayla süre vaat etmez.
+- FSRS'in belleği değişmez; yalnız tarih geç olur.
+
+**Güvenlik:** S sonlu bir sayı değilse (geçerli parametrelerle olmaz) cevabı `Leitner.review` zamanlar. Kaydedilemeyen bir tarih yazılmaz.
+
+**Soru türü basamağa bağlı, eskisi gibi** (`ReviewPlanner`): 1–3. basamak cloze, 4–5. basamak ve bilinen kelime hatırlama (`recallFromBox = 4`).
+
+**İlerleme'deki "bir basamak çıktı":** FSRS'te "Bildim" her zaman bir sonraki basamağa çıkarmaz. Bu yüzden yalnız gerçek çıkışlar sayılır. FSRS her cevapta cevaptan önceki rafı saklar (`FSRSState.shelfBefore`), `FSRSScheduler.lastAnswer` buna bakar:
+
+| Son cevap | İlerleme'de |
+|---|---|
+| "Bilemedim" | unuttu |
+| Öğrenilen kelime, öncekinden yüksek basamakta | bir basamak çıktı |
+| Öğrenilen kelime, aynı basamakta ya da "Tanış"tan sonra ilk kez | yerinde kaldı |
+| 4. basamaktan "Yerleşti"ye | bir basamak çıktı |
+| 5. basamakta ya da "Yerleşti"de hatırlandı, doğru "Biliyorum" kontrolü | en üstte hatırlandı (Leitner'deki gibi) |
+
+Günlükten kurulan bellekte `shelfBefore` yok; o kelimenin son cevabını Leitner'in okuması değerlendirir. Okuma ayara değil kelimenin kendi kaydına bakar: geçiş eski cevapları yanlış okutamaz.
+
+**Tazeleme adımı (`refresherStep`):** bilinen kelimede S'den bulunur: S ≥ 60 → 1, S ≥ 120 → 2, daha azı 0 (`Leitner.refresherDays` 30/60/120). Ayar kapatılınca Leitner benzer bir beklemeyle devam eder.
+
+**"Biliyorum" kontrolü FSRS'te** (`awaitsKnownCheck`, 3 gün sonraki tek soru):
+- Doğru: kelime bilinen olur, S en az 30'a çıkarılır, sonraki soru S'nin beklemesi kadar sonra (en az 30 gün).
+- Yanlış: kelime "Tanış"a döner (yeni, basamak 0, tarihsiz). FSRS'in bu cevaptan kurduğu bellek saklanır.
+- Neden: ogrenme_ilkeleri 2.2. "Biliyorum" bir iddia, kontrol onu bir kez sınar; doğru kontrolden sonraki soru 30 gün sonra gelir. Bu tek cevaptan gelen S (ilk cevap, birkaç gün) bunu bozardı ve kelimeyi bilinenlerden çıkarırdı.
 
 ## 5. Öneri
 

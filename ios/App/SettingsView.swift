@@ -262,6 +262,15 @@ struct SettingsView: View {
             .accessibilityElement(children: .contain)
             .accessibilityLabel("Günlük yeni kelime")
             dailyGoalFootnote
+            SettingsGroup {
+                NavigationLink {
+                    SchedulerSettingsView()
+                } label: {
+                    SettingsRow("Yeni zamanlama (deneme)")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+            }
+            .padding(.top, 12)
         }
     }
 

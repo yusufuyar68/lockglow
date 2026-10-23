@@ -14,7 +14,7 @@ public enum LearningState: String, Codable, Sendable {
 
 /// Per-word learning record. App-private (never shared with the widget extension).
 ///
-/// The last five fields came later. They are optional, so a progress file written before them
+/// The last six fields came later. They are optional, so a progress file written before them
 /// loads with nil, and they are left out of the file while nil, so such a file is written back
 /// in its old shape. An earlier build ignores them when it reads a newer file.
 public struct WordProgress: Codable, Equatable, Sendable {
@@ -48,6 +48,9 @@ public struct WordProgress: Codable, Equatable, Sendable {
     /// A known word's step in `Leitner.refresherDays`: one step on after each correct refresher.
     /// Nil is step 0, the first refresher wait (and every word that is not known).
     public var refresherStep: Int?
+    /// The word's FSRS memory (`FSRSScheduler`); nil until FSRS has one. Leitner leaves it as it
+    /// was: once Leitner answers, its answer count no longer matches and it is rebuilt.
+    public var fsrs: FSRSState?
 
     public init(wordID: Int) {
         self.wordID = wordID
@@ -64,6 +67,7 @@ public struct WordProgress: Codable, Equatable, Sendable {
         self.lastGrade = nil
         self.firstReviewedAt = nil
         self.refresherStep = nil
+        self.fsrs = nil
     }
 
     /// The fields every build wrote are read strictly, as before. A later field whose value this
@@ -85,6 +89,7 @@ public struct WordProgress: Codable, Equatable, Sendable {
         lastGrade = try? c.decodeIfPresent(ReviewGrade.self, forKey: .lastGrade)
         firstReviewedAt = try? c.decodeIfPresent(Date.self, forKey: .firstReviewedAt)
         refresherStep = try? c.decodeIfPresent(Int.self, forKey: .refresherStep)
+        fsrs = try? c.decodeIfPresent(FSRSState.self, forKey: .fsrs)
     }
 
     /// True when the word should come back now: a learning word whose review is due, or a
@@ -130,5 +135,6 @@ public struct WordProgress: Codable, Equatable, Sendable {
         case lastGrade = "last_grade"
         case firstReviewedAt = "first_reviewed_at"
         case refresherStep = "refresher_step"
+        case fsrs
     }
 }
