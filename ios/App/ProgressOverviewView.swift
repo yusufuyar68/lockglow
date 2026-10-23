@@ -57,6 +57,13 @@ struct ProgressOverviewView: View {
                     librarySection
                     topicsSection
                 }
+                // is5-seviye: "Yol haritası" (LevelMapView.swift).
+                NavigationLink {
+                    LevelMapScreen()
+                } label: {
+                    LevelMapLinkLabel()
+                }
+                .buttonStyle(.plain)
             }
             .padding(.horizontal, 16)
             .padding(.top, 8)

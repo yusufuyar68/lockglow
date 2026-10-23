@@ -234,6 +234,8 @@ struct OnboardingView: View {
                     .accessibilityIdentifier("onboarding.level.\(choice.rawValue)")
                 }
             }
+            // is5-seviye: "Seviyeni bilmiyor musun?" (PlacementTestView.swift) picks the level here.
+            PlacementTestButton { level = $0 }
             // The daily goal comes with the level (§2.8), said once a level is chosen.
             if level != nil {
                 Text("Günde **\(dailyGoal)** yeni kelimeyle başlarsın. Bu sayıyı da sonra değiştirebilirsin.")
