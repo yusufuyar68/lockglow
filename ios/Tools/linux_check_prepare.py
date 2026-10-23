@@ -18,6 +18,8 @@ from pathlib import Path
 
 APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
+# Siri, Kestirmeler and Spotlight (ios/App/Intents): the data readers, on a line of their own.
+APP_LOGIC_FILES += ["AppModel+Shortcuts.swift"]
 
 # A declaration that starts with `public` or `open`, after optional attributes such as @discardableResult.
 PUBLIC_DECL = re.compile(r"^(?:@\w+(?:\([^)]*\))?\s+)*(?:public|open)\b")
