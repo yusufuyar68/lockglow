@@ -109,14 +109,14 @@ final class LargeWidgetSnapshotTests: XCTestCase {
         let sentence = "I'm looking forward to the weekend."
         let candidates = LargeExampleText.candidates(sentence, lemma: "look forward to", lines: [1, 2])
         XCTAssertEqual(candidates.count, 2)
-        XCTAssertEqual(candidates.first.map { $0.map(plain) }, [sentence])
-        XCTAssertEqual(candidates.last.map { $0.map(plain) }, ["I'm looking forward", "to the weekend."])
-        XCTAssertEqual(candidates.last.map { $0.map(boldParts) }, [["looking", "forward"], ["to"]])
+        XCTAssertEqual(candidates.first.map { lines in lines.map { plain($0) } }, [sentence])
+        XCTAssertEqual(candidates.last.map { lines in lines.map { plain($0) } }, ["I'm looking forward", "to the weekend."])
+        XCTAssertEqual(candidates.last.map { lines in lines.map { boldParts($0) } }, [["looking", "forward"], ["to"]])
 
         let fedUp = LargeExampleText.candidates("I'm fed up with this rain.", lemma: "be fed up with", lines: [1])
-        XCTAssertEqual(fedUp.first.map { $0.map(boldParts) }, [["fed", "up", "with"]])
+        XCTAssertEqual(fedUp.first.map { lines in lines.map { boldParts($0) } }, [["fed", "up", "with"]])
         let breakfast = LargeExampleText.candidates("Breakfast is ready.", lemma: "breakfast", lines: [1])
-        XCTAssertEqual(breakfast.first.map { $0.map(boldParts) }, [["Breakfast"]])
+        XCTAssertEqual(breakfast.first.map { lines in lines.map { boldParts($0) } }, [["Breakfast"]])
         let teeth = LargeExampleText.candidates("I brush my teeth twice a day.", lemma: "tooth", lines: [1, 2])
         XCTAssertTrue(teeth.allSatisfy { lines in lines.allSatisfy { boldParts($0).isEmpty } })
         XCTAssertEqual(LargeExampleText.candidates(" ", lemma: "tooth", lines: [1, 2]).count, 0)
@@ -148,7 +148,9 @@ final class LargeWidgetSnapshotTests: XCTestCase {
         try XCTSkipUnless(LargeWidgetSnapshotTests.accessibilityEnabled, "accessibility automation is not available")
         RunLoop.main.run(until: Date().addingTimeInterval(1))
         var report = ["iOS \(UIDevice.current.systemVersion), preferred \(Locale.preferredLanguages)"]
-        for id in [1, 286, 240, 1_000_001] {
+        // Words whose fullest layout fits the 393 pt widget at the default size (a mistake, a
+        // missing word, a false friend, a user's word), so every line asked about is shown.
+        for id in [1, 240, 384, 1_000_001] {
             let word = try XCTUnwrap(LargeSnapshotWords.all.first { $0.id == id })
             let entry = WordEntry(date: now, word: word, nextChange: now.addingTimeInterval(3600))
             let found = elements(

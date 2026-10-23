@@ -23,9 +23,11 @@ import CoreModels
 // column keeps the full margins and never runs under the row, which takes its own height.
 // Layout, as on the medium widget: a vertical ViewThatFits over variants, fullest first; every
 // line is shown whole or not at all, never cut with "…" and never broken inside a word. The card
-// shortens from its end (README rule 5): the next change gives way first, then the warning and the
-// examples drop to one line, the second example goes, then the pronunciation, the first example,
-// the warning and the definition. Only then does the meaning shorten (`WidgetGloss`) and get
+// shortens from its end (README rule 5): the next change gives way first, then the examples drop
+// to one line, the second example goes, then the pronunciation, the first example, the warning and
+// the definition. The warning takes one line when it fits and two otherwise; it stays longer than
+// the examples, as the card's warning slot comes before its further examples (ogrenme_ilkeleri
+// 2.2). Only then does the meaning shorten (`WidgetGloss`) and get
 // smaller (ogrenme_ilkeleri 2.2: nothing hides the meaning before the definition). When the word
 // and the meaning do not fit at the person's text size they are tried again at AX1, at xxxLarge
 // and at the default size, as on the medium widget, so the meaning stays at every text size; the
@@ -69,10 +71,10 @@ struct LargeWordView: View {
                 Group {
                     column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2], nextChange: true)
                     column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2])
-                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, exampleLines: [1], warning: [1])
-                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1])
-                    column(shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1])
-                    column(shortens: false, definition: [1, 2], warning: [1])
+                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, exampleLines: [1], warning: [1, 2])
+                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
+                    column(shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
+                    column(shortens: false, definition: [1, 2], warning: [1, 2])
                     column(shortens: false, definition: [1, 2])
                     column(shortens: false)
                 }
