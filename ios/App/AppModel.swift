@@ -981,6 +981,8 @@ final class AppModel: ObservableObject {
             logger.error("could not write the widget plan: \(error.localizedDescription, privacy: .public)")
             return
         }
+        // Quiz widget: questions from the same queue (AppModel+QuizWidget.swift).
+        writeQuizWidgetPlan(from: planQueue, at: rewriteTime)
         // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
         updateLockScreenWord()
         reloadWidgets()

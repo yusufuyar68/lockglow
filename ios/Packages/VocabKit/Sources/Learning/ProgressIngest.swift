@@ -21,6 +21,8 @@ public struct LearningEvent: Equatable, Sendable {
 /// - `known` -> `Leitner.markKnown` ("I know this" on the widget: asked once in 3 days). Events
 ///   written by older widget builds mean the same and get the same check.
 /// - `next`, `reveal` -> `Leitner.markExposure` (the word was seen; seeing is not a review)
+/// - `quiz` -> `Leitner.markExposure` too: an option chosen on the quiz widget shows the answer at
+///   once, so it is seeing, not a grade; "Tekrar" keeps its own schedule
 /// - `unknown` -> `Leitner.review(.again)` (two boxes down; a word waiting for its "Biliyorum"
 ///   check goes back to "Tanış")
 public enum ProgressIngest {
@@ -63,7 +65,7 @@ public enum ProgressIngest {
         switch event.type {
         case .known:
             return Leitner.markKnown(progress, at: event.at)
-        case .next, .reveal:
+        case .next, .reveal, .quiz:
             return Leitner.markExposure(progress, at: event.at)
         case .unknown:
             return Leitner.review(progress, grade: .again, at: event.at)
