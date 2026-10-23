@@ -11,21 +11,26 @@ import CoreModels
 ///   hairline, the example is marked by a hanging quotation mark instead of a label;
 /// - the warning slot is the page's footnote, under a hairline at the foot of the card, so the
 ///   eye always finds it in the same place;
-/// - the meta line says "Yeni kelime" on the first encounter and "Daha önce gördün" afterwards
-///   (`isFirstEncounter`); later encounters also get the short definition, a second example and
-///   the whole Dikkat note, so the two look different at a glance;
-/// - nothing that cannot be tapped is a capsule (rule 2): the level is plain text with dots.
+/// - the first encounter ends the meta line with "Yeni kelime"; later encounters show the word's
+///   state there only when it has one ("Öğreniyorsun", "Bildiğin kelime", the names of
+///   terimler.md and "Sözlük"), and they get the short definition, a second example and the
+///   whole Dikkat note, so the two look different at a glance;
+/// - nothing that cannot be tapped is a capsule (rule 2): the level is plain text with dots;
+/// - one "Neden?" per card, on the slot's first line.
 ///
 /// The first encounter shows at most the 8 blocks and one warning slot of ogrenme_ilkeleri 2.2.
 /// In the paged feed (`fillsPage`) the card fills its page and shortens itself from the end when
-/// the page is too short (rule 5), with the steps of `WordCardView`. At accessibility text sizes
-/// it shows everything (one example) at its natural height, and the buttons stack at full width.
-/// VoiceOver hears the same elements, labels and hints as on `WordCardView`, plus the encounter
-/// line after the level.
+/// the page is too short (rule 5), with the steps of `WordCardView` and one more before them that
+/// keeps every text size: a slightly smaller word and tighter gaps (an iPhone SE page). At
+/// accessibility text sizes it shows everything (one example) at its natural height, and the
+/// buttons stack at full width. VoiceOver hears the same elements, labels and hints as on
+/// `WordCardView`, plus the state line after the level.
 struct FeedCardView: View {
     let word: WidgetWord
     let detail: CardDetail?
     var isFirstEncounter = true
+    /// The word is in the Leitner boxes ("Öğreniyorsun" in the meta line).
+    var isLearning = false
     /// "Şu an kilitli ekranda" in the meta line (`AppModel.lockScreenWordID`).
     var isOnLockScreen = false
     /// nil: no "Biliyorum".
@@ -44,9 +49,9 @@ struct FeedCardView: View {
     /// The warning the sheet explains: kept after it closes, so the sheet does not go blank
     /// while it slides down.
     @State private var explained: CardWarning? = nil
-    /// The Turkish meaning: 30 pt on the first encounter, 27 pt afterwards (28 pt before).
-    @ScaledMetric(relativeTo: .title) private var firstMeaningSize: CGFloat = 30
-    @ScaledMetric(relativeTo: .title) private var laterMeaningSize: CGFloat = 27
+    /// The Turkish meaning: 28 pt bold (ogrenme_ilkeleri 2.2), scaled like `.title` and never
+    /// larger than the word's 60 pt.
+    @ScaledMetric(relativeTo: .title) private var meaningSize: CGFloat = 28
 
     var body: some View {
         content
@@ -93,12 +98,14 @@ struct FeedCardView: View {
 
     // MARK: Fitting the page (rule 5)
 
-    /// The steps of `WordCardView.FitStep`, in the same order.
+    /// The steps of `WordCardView.FitStep`, in the same order, with `compact` before them.
     private enum FitStep: Int {
         /// Met before, a page with room for it: a second example.
         case roomy
         /// Everything for this encounter.
         case full
+        /// 0. Every text size kept: the word at 90 % and tighter gaps.
+        case compact
         /// 1. Smaller meaning and definition, tighter spacing; no Lock Screen label.
         case smaller
         /// 2. Met before: the Dikkat note without its explanation.
@@ -112,6 +119,20 @@ struct FeedCardView: View {
 
         var isSmaller: Bool {
             return rawValue >= FitStep.smaller.rawValue
+        }
+
+        /// From the compact step on; the roomy and full steps keep the whole spacing and the
+        /// 44 pt word.
+        var isTightened: Bool {
+            return rawValue >= FitStep.compact.rawValue
+        }
+
+        /// One of three spacings: the whole one, the compact step's, the smaller steps'.
+        func space(_ whole: CGFloat, compact: CGFloat, smaller: CGFloat) -> CGFloat {
+            if isSmaller {
+                return smaller
+            }
+            return isTightened ? compact : whole
         }
     }
 
@@ -127,6 +148,7 @@ struct FeedCardView: View {
                     page(.roomy, warnings: warnings)
                 }
                 page(.full, warnings: warnings)
+                page(.compact, warnings: warnings)
                 page(.smaller, warnings: warnings)
                 if metBefore && hasMistake {
                     page(.noWhy, warnings: warnings)
@@ -156,13 +178,13 @@ struct FeedCardView: View {
     private func page(_ step: FitStep, warnings: [CardWarning]) -> some View {
         let tight = step.isSmaller
         return VStack(alignment: .leading, spacing: 0) {
-            FeedCardHeadline(lemma: word.lemma)
+            FeedCardHeadline(lemma: word.lemma, scale: step.isTightened ? 0.9 : 1)
             // The night band hangs below the word: at least 8 pt before the next row.
             metaRow(showsLockScreen: isOnLockScreen && !tight)
-                .padding(.top, tight ? 8 : 10)
+                .padding(.top, step.space(10, compact: 8, smaller: 8))
             tools
-                .padding(.top, tight ? 10 : 14)
-            gap(tight ? 14 : 22, extra: 18)
+                .padding(.top, step.space(14, compact: 12, smaller: 10))
+            gap(step.space(22, compact: 16, smaller: 14), extra: 18)
             meaning(step)
             // A user's word has no English definition (and maybe no example).
             if !definition.isEmpty {
@@ -173,7 +195,7 @@ struct FeedCardView: View {
                     .lineSpacing(tight ? 2 : 5)
                     .lineLimit(step.rawValue >= FitStep.exampleRow.rawValue ? 3 : nil)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.top, tight ? 4 : 8)
+                    .padding(.top, step.space(8, compact: 6, smaller: 4))
                     .englishVoice()
             }
             examplePart(step, warnings: warnings)
@@ -181,18 +203,18 @@ struct FeedCardView: View {
                 .layoutPriority(-2)
             if step != .allRow && !warnings.isEmpty {
                 footnote(step, warnings: warnings)
-                    .padding(.top, tight ? 12 : 18)
+                    .padding(.top, step.space(18, compact: 14, smaller: 12))
             }
             if showsSwipeHint {
                 swipeHint
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.top, 10)
+                    .padding(.top, step.space(10, compact: 8, smaller: 8))
             }
         }
-        .padding(.top, 22)
+        .padding(.top, step.space(22, compact: 18, smaller: 18))
         .padding(.leading, 24)
         .padding(.trailing, 22)
-        .padding(.bottom, showsSwipeHint ? 14 : 20)
+        .padding(.bottom, showsSwipeHint ? 12 : step.space(20, compact: 16, smaller: 16))
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 
@@ -207,14 +229,15 @@ struct FeedCardView: View {
 
     // MARK: Parts
 
-    /// Pronunciation, part of speech, level, the Lock Screen label and how the user met the word;
-    /// the facts wrap when the line is full, the encounter line keeps to the trailing edge.
+    /// Pronunciation, part of speech, level, the Lock Screen label and the word's state; the
+    /// facts wrap when the line is full, the state keeps to the trailing edge.
     private func metaRow(showsLockScreen: Bool) -> some View {
-        CardFlowLayout(itemSpacing: 12, lineSpacing: 4, pinsLastToTrailingEdge: true) {
+        let state = self.state
+        return CardFlowLayout(itemSpacing: 12, lineSpacing: 4, pinsLastToTrailingEdge: state != nil) {
             if let ipa = word.ipaUS {
                 // Visual only: VoiceOver says the word itself, and "Dinle" plays it.
                 Text(ipa)
-                    .font(.system(.callout, design: .serif))
+                    .font(.system(.subheadline, design: .serif))
                     .foregroundStyle(Theme.ink2)
                     .accessibilityHidden(true)
             }
@@ -229,15 +252,22 @@ struct FeedCardView: View {
             if showsLockScreen {
                 WordCardLockScreenNote()
             }
-            FeedEncounterLine(kind: encounter)
+            if let state = state {
+                FeedStateLine(state: state)
+            }
         }
     }
 
-    private var encounter: FeedEncounterLine.Kind {
+    /// "Bildiğin kelime" once known, "Öğreniyorsun" in the boxes, "Yeni kelime" on the first
+    /// encounter; a new word met before shows none (seeing it again changes nothing).
+    private var state: FeedStateLine.Status? {
         if known?.isKnown == true {
             return .known
         }
-        return isFirstEncounter ? .first : .metBefore
+        if isLearning {
+            return .learning
+        }
+        return isFirstEncounter ? .new : nil
     }
 
     /// "Dinle", "Söyle" and "Biliyorum" on one row, one block (ogrenme_ilkeleri 2.2); "Biliyorum"
@@ -292,9 +322,7 @@ struct FeedCardView: View {
     private func meaning(_ step: FitStep) -> some View {
         if let gloss = word.glossTR {
             Text(gloss)
-                .font(step.isSmaller
-                      ? Font.title2.weight(.bold)
-                      : Font.system(size: isFirstEncounter ? firstMeaningSize : laterMeaningSize, weight: .bold))
+                .font(step.isSmaller ? Font.title2.weight(.bold) : Font.system(size: min(meaningSize, 60), weight: .bold))
                 .foregroundStyle(Theme.ink)
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
@@ -309,12 +337,12 @@ struct FeedCardView: View {
     private func examplePart(_ step: FitStep, warnings: [CardWarning]) -> some View {
         let hasExample = !firstExample.en.isEmpty
         if step == .allRow {
-            gap(step.isSmaller ? 14 : 18, extra: 22)
+            gap(step.space(18, compact: 14, smaller: 14), extra: 22)
             detailRow(title: WordCardView.rowTitle(for: warnings.first, hasExample: hasExample))
         } else if hasExample {
-            gap(step.isSmaller ? 14 : 18, extra: 22)
+            gap(step.space(18, compact: 14, smaller: 14), extra: 22)
             FeedCardRule()
-            gap(step.isSmaller ? 12 : 16, extra: 12)
+            gap(step.space(16, compact: 12, smaller: 12), extra: 12)
             if step == .exampleRow {
                 detailRow(title: "Örnek cümle")
             } else {
@@ -329,32 +357,33 @@ struct FeedCardView: View {
 
     /// The page's footnote: a hairline, then the warning slot. The first encounter (and a short
     /// page) shows the slot's one line; met before, every warning, the mistake as the whole
-    /// Dikkat note.
+    /// Dikkat note. Only the first line has "Neden?": one sheet, one way in.
     private func footnote(_ step: FitStep, warnings: [CardWarning]) -> some View {
         let isSlotOnly = isFirstEncounter || step.rawValue >= FitStep.slotOnly.rawValue
         let shown = isSlotOnly ? Array(warnings.prefix(1)) : warnings
         return VStack(alignment: .leading, spacing: 12) {
             FeedCardRule()
-            ForEach(Array(shown.enumerated()), id: \.offset) { _, warning in
+            ForEach(Array(shown.enumerated()), id: \.offset) { index, warning in
                 if !isSlotOnly, case let .mistake(mistake) = warning {
                     FeedMistakeNote(
                         mistake: mistake,
                         showsWhy: step.rawValue < FitStep.noWhy.rawValue,
-                        explain: explainAction(for: warning)
+                        explain: index == 0 ? explainAction(for: warning) : nil
                     )
                 } else {
-                    CardWarningLine(warning: warning, lemma: word.lemma, explain: explainAction(for: warning))
+                    CardWarningLine(
+                        warning: warning,
+                        lemma: word.lemma,
+                        explain: index == 0 ? explainAction(for: warning) : nil
+                    )
                 }
             }
         }
     }
 
-    /// "Neden?" for the false friend and the mistake, and for the other lines when the card has a
-    /// Turkish note that explains them (`noteTR`; not for the user's own words, whose note is
-    /// their own).
+    /// "Neden?" for the false friend and the mistake (the lines with more to say).
     private func explainAction(for warning: CardWarning) -> (() -> Void)? {
-        let hasNote = !word.isUserAdded && !(detail?.noteTR ?? "").isEmpty
-        guard warning.hasExplanation || hasNote else {
+        guard warning.hasExplanation else {
             return nil
         }
         return {
@@ -397,32 +426,45 @@ struct FeedCardView: View {
     }
 }
 
-/// The English word on its phosphor band, 44 pt at the default text size and at most 60 pt
-/// (ogrenme_ilkeleri 2.2). A phrase too long for one line first tries 80 %, then breaks into two
-/// balanced lines, each on its own band; only as the last step does a line shrink, to 75 % at
-/// least (never below, never cut, no tighter letter spacing). VoiceOver reads it once, as a
-/// heading, with an English voice.
+/// The English word on its phosphor band, 44 pt at the default text size (`scale` 0.9 on the
+/// compact steps) and at most 60 pt (ogrenme_ilkeleri 2.2). A single word that does not fit
+/// shrinks, to 75 % at least. A phrase first tries 80 % on one line, then breaks at a space into
+/// two balanced lines, each on its own band, which shrink as the last step. Never cut with "…",
+/// never a hyphen, no tighter letter spacing. VoiceOver reads it once, as a heading, with an
+/// English voice.
 private struct FeedCardHeadline: View {
     let lemma: String
+    var scale: CGFloat = 1
     @ScaledMetric(relativeTo: .largeTitle) private var size: CGFloat = 44
 
     var body: some View {
-        let full = min(size, 60)
-        ViewThatFits(in: .horizontal) {
-            line(lemma, size: full)
-            line(lemma, size: full * 0.8)
+        let full = min(size, 60) * scale
+        Group {
             if let lines = WordCardHeadline.balancedLines(lemma) {
-                VStack(alignment: .leading, spacing: 10) {
-                    line(lines.first, size: full * 0.8)
-                    line(lines.second, size: full * 0.8)
+                ViewThatFits(in: .horizontal) {
+                    line(lemma, size: full)
+                    line(lemma, size: full * 0.8)
+                    twoLines(lines, size: full * 0.8)
+                    twoLines(lines, size: full * 0.8, shrinks: true)
+                }
+            } else {
+                ViewThatFits(in: .horizontal) {
+                    line(lemma, size: full)
+                    line(lemma, size: full, shrinks: true)
                 }
             }
-            line(lemma, size: full * 0.8, shrinks: true)
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: lemma))
         .accessibilityAddTraits(.isHeader)
         .englishVoice()
+    }
+
+    private func twoLines(_ lines: (first: String, second: String), size: CGFloat, shrinks: Bool = false) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            line(lines.first, size: size, shrinks: shrinks)
+            line(lines.second, size: size, shrinks: shrinks)
+        }
     }
 
     private func line(_ text: String, size: CGFloat, shrinks: Bool = false) -> some View {
@@ -469,56 +511,51 @@ struct FeedLevelMark: View {
     }
 }
 
-/// How the user met the word, at the end of the meta line: "Yeni kelime" (a filled dot) on the
-/// first encounter, "Daha önce gördün" (a ring) afterwards, "Bildiğin kelime" (a check) once it is
-/// known. The words carry the meaning; the mark only repeats it.
-struct FeedEncounterLine: View {
-    enum Kind {
-        case first
-        case metBefore
+/// The word's state at the end of the meta line, with the state names of terimler.md (as in
+/// "Sözlük"): "Yeni kelime" (a sparkle), "Öğreniyorsun" (the "Tekrar" arrows), "Bildiğin kelime"
+/// (a check). The words carry the meaning; the symbol only repeats it and is hidden from
+/// VoiceOver. It wraps instead of being cut at large text sizes.
+struct FeedStateLine: View {
+    enum Status {
+        case new
+        case learning
         case known
     }
 
-    let kind: Kind
-    @ScaledMetric(relativeTo: .footnote) private var dotSize: CGFloat = 6
+    let state: Status
 
     var body: some View {
-        HStack(spacing: 6) {
-            mark
+        HStack(spacing: 5) {
+            Image(systemName: symbol)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(state == .known ? Theme.good : Theme.ink2)
                 .accessibilityHidden(true)
             Text(title)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .font(.footnote.weight(.semibold))
         .foregroundStyle(Theme.ink2)
-        .lineLimit(1)
     }
 
     private var title: String {
-        switch kind {
-        case .first:
+        switch state {
+        case .new:
             return "Yeni kelime"
-        case .metBefore:
-            return "Daha önce gördün"
+        case .learning:
+            return "Öğreniyorsun"
         case .known:
             return "Bildiğin kelime"
         }
     }
 
-    @ViewBuilder
-    private var mark: some View {
-        switch kind {
-        case .first:
-            Circle()
-                .fill(Theme.ink)
-                .frame(width: dotSize, height: dotSize)
-        case .metBefore:
-            Circle()
-                .strokeBorder(Theme.ink2, lineWidth: 1.5)
-                .frame(width: dotSize, height: dotSize)
+    private var symbol: String {
+        switch state {
+        case .new:
+            return "sparkle"
+        case .learning:
+            return "arrow.triangle.2.circlepath"
         case .known:
-            Image(systemName: "checkmark")
-                .font(.caption2.weight(.heavy))
-                .foregroundStyle(Theme.good)
+            return "checkmark"
         }
     }
 }

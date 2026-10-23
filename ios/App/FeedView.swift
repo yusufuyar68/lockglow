@@ -189,6 +189,7 @@ struct FeedView: View {
             word: word,
             detail: model.detail(for: word),
             isFirstEncounter: encounters.isFirstEncounter(word.id, progress: model.progress[word.id]),
+            isLearning: model.learningState(of: word) == .learning,
             // Only while a Lockglow widget is on the Lock Screen (last health check).
             isOnLockScreen: model.hasLockScreenWidget && word.id == model.lockScreenWordID,
             known: knownControl(for: word),
@@ -278,13 +279,10 @@ struct FeedView: View {
                 }
             }
         }
-        // The new words met today, in the feed's order (the store keeps no order).
-        let metToday = Set(encounters.newCardIDs())
         return FeedDayEndView(
             goal: model.dailyNewWords,
             hasLockScreenWidget: model.hasLockScreenWidget,
             reviewCount: model.nextReviewSession()?.words.count,
-            metWords: model.feedWords.filter { metToday.contains($0.id) }.map { $0.lemma },
             fillsPage: isPaged,
             openReview: openReviewTab,
             continueFeed: continueFeed
@@ -574,14 +572,8 @@ final class FeedEncounterStore: ObservableObject {
 
     /// New cards first seen on `now`'s day.
     func newCardsSeen(on now: Date = Date()) -> Int {
-        return newCardIDs(on: now).count
-    }
-
-    /// The ids of the new cards first seen on `now`'s day, in no particular order (the
-    /// end-of-day card lists them).
-    func newCardIDs(on now: Date = Date()) -> [Int] {
         let today = Calendar.current.startOfDay(for: now)
-        return firstSeen.filter { $0.value == today }.map { $0.key }
+        return firstSeen.values.filter { $0 == today }.count
     }
 
     func isDayEndShown(on now: Date = Date()) -> Bool {
@@ -618,7 +610,7 @@ private struct FeedPagingModifier: ViewModifier {
 }
 
 /// How a page moves while the feed scrolls (paged feed only): the card leaving or arriving fades
-/// to about half and settles back to 94 %, so the eye follows one card, not two edges. It follows
+/// a little (to 70 %) and settles back to 97 %, so the eye follows one card, not two edges. It follows
 /// the finger (`.interactive`) and stops with it: no motion of its own, nothing to wait for (HIG
 /// Motion). With Reduce Motion only the fade is left. Off at accessibility sizes, where a card
 /// taller than the screen is never fully on it and would stay faded while read. A card counts as
@@ -635,8 +627,8 @@ private struct FeedPageTransition: ViewModifier {
         let reduceMotion = self.reduceMotion
         return content.scrollTransition(.interactive.threshold(.visible(0.9)), axis: .vertical) { effect, phase in
             effect
-                .opacity(isEnabled ? 1 - min(abs(phase.value), 1) * 0.5 : 1)
-                .scaleEffect(isEnabled && !reduceMotion ? 1 - CGFloat(min(abs(phase.value), 1)) * 0.06 : 1)
+                .opacity(isEnabled ? 1 - min(abs(phase.value), 1) * 0.3 : 1)
+                .scaleEffect(isEnabled && !reduceMotion ? 1 - CGFloat(min(abs(phase.value), 1)) * 0.03 : 1)
         }
     }
 }

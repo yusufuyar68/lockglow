@@ -69,7 +69,8 @@ struct FeedWhySheet: View {
     // MARK: Lead
 
     /// The warning's own explanation. A false friend card also gets its Dikkat note here, since
-    /// the false friend took the card's one slot; the other lines are repeated as on the card.
+    /// the false friend took the card's one slot. The other lines have no "Neden?" on the card;
+    /// should one open the sheet, it starts with the card's note.
     @ViewBuilder
     private var lead: some View {
         switch warning {
@@ -86,7 +87,7 @@ struct FeedWhySheet: View {
         case let .mistake(mistake):
             FeedMistakeNote(mistake: mistake)
         case .sameWord, .phrasalVerb:
-            CardWarningLine(warning: warning, lemma: word.lemma)
+            EmptyView()
         }
     }
 
