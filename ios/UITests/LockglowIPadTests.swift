@@ -33,7 +33,7 @@ final class LockglowIPadTests: XCTestCase {
         let field = app.searchFields.firstMatch
         // ⌘F under a sheet does nothing: the tab must not change unseen behind it.
         let why = app.buttons["Neden?"].firstMatch
-        if app.responds(to: Selector(("typeKey:modifierFlags:"))) && why.waitForExistence(timeout: 3) && why.isHittable {
+        if app.responds(to: NSSelectorFromString("typeKey:modifierFlags:")) && why.waitForExistence(timeout: 3) && why.isHittable {
             why.tap()
             let close = app.buttons["Kapat"].firstMatch
             if close.waitForExistence(timeout: 5) {
@@ -193,7 +193,7 @@ final class LockglowIPadTests: XCTestCase {
     /// Types `key` on the hardware keyboard (with ⌘ when `command`); false when this XCTest
     /// cannot.
     private func press(_ app: XCUIApplication, _ key: String, command: Bool = false) -> Bool {
-        guard app.responds(to: Selector(("typeKey:modifierFlags:"))) else {
+        guard app.responds(to: NSSelectorFromString("typeKey:modifierFlags:")) else {
             return false
         }
         // XCUIKeyModifierFlags: Command is 1 << 4.
@@ -203,7 +203,7 @@ final class LockglowIPadTests: XCTestCase {
 
     /// Whether `element` has the keyboard focus; nil when XCTest does not say.
     private func hasKeyboardFocus(_ element: XCUIElement) -> Bool? {
-        guard element.responds(to: Selector(("hasKeyboardFocus"))) else {
+        guard element.responds(to: NSSelectorFromString("hasKeyboardFocus")) else {
             return nil
         }
         return element.value(forKey: "hasKeyboardFocus") as? Bool
