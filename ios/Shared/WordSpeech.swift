@@ -60,25 +60,62 @@ enum WordSpeech {
         return voice(for: SpeechSettingsStore.current)
     }
 
-    /// `text` with the current settings. A word and a card's sentence alike: the sentence stays
-    /// one utterance, so the voice keeps its sentence stress and its pauses at the punctuation;
-    /// `SpeechText` only removes what makes a voice stumble (spacing, "2-1", Turkish names).
-    /// Every call counts as a hearing: the same text with the same voice and speed again within
-    /// 30 seconds is read slower when "Yavaş tekrar" is on.
+    /// `text` as ONE utterance with the current settings (the widget's speaker button reads a word
+    /// this way). Every call counts as a hearing: the same text with the same voice and speed
+    /// again within 30 seconds is read slower when "Yavaş tekrar" is on.
     static func makeUtterance(_ text: String) -> AVSpeechUtterance {
-        let settings = SpeechSettingsStore.current
-        let voice = voice(for: settings)
-        let key = SpeechRepeatTracker.key(text: text, voiceIdentifier: voice?.identifier, rate: settings.rate)
-        let isRepeat = repeats.register(key)
-        let utterance = AVSpeechUtterance(attributedString: spokenText(text, accent: settings.accent))
-        utterance.voice = voice
-        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
-            * SpeechRules.rateMultiplier(settings.rate, isRepeat: isRepeat, slowRepeat: settings.slowRepeat)
-        // For the device test: which voice read, how fast, and whether it was a repeat.
-        logger.info(
-            "speech voice: \(voice?.identifier ?? "none", privacy: .public), rate: \(utterance.rate, privacy: .public), repeat: \(isRepeat, privacy: .public)"
-        )
-        return utterance
+        let reading = Reading(text)
+        return reading.utterance(text)
+    }
+
+    /// `text` as one utterance per sentence (`SpeechText.sentences`), each but the last with the
+    /// pause that follows it (`SpeechRules.pause`), so the sentences of a card example and the two
+    /// speakers of a dialogue are heard apart. One sentence, a word or a phrase: one utterance, as
+    /// `makeUtterance`. Speak them in order on one synthesizer; the last one ends the reading. One
+    /// hearing for "Yavaş tekrar", however many sentences.
+    static func makeUtterances(_ text: String) -> [AVSpeechUtterance] {
+        let reading = Reading(text)
+        let sentences = SpeechText.sentences(text)
+        guard sentences.count > 1 else {
+            return [reading.utterance(text)]
+        }
+        return sentences.enumerated().map { index, sentence -> AVSpeechUtterance in
+            let utterance = reading.utterance(sentence.text)
+            if index < sentences.count - 1 {
+                utterance.postUtteranceDelay = SpeechRules.pause(endsTurn: sentence.endsTurn, rateMultiplier: reading.rateMultiplier)
+            }
+            return utterance
+        }
+    }
+
+    /// The voice, speed and accent of one reading, worked out once for all its utterances.
+    private struct Reading {
+        let voice: AVSpeechSynthesisVoice?
+        let accent: SpeechAccent
+        let rateMultiplier: Float
+
+        init(_ text: String) {
+            let settings = SpeechSettingsStore.current
+            let voice = WordSpeech.voice(for: settings)
+            let key = SpeechRepeatTracker.key(text: text, voiceIdentifier: voice?.identifier, rate: settings.rate)
+            let isRepeat = WordSpeech.repeats.register(key)
+            let rateMultiplier = SpeechRules.rateMultiplier(settings.rate, isRepeat: isRepeat, slowRepeat: settings.slowRepeat)
+            // For the device test: which voice read, how fast (share of the default rate), and
+            // whether it was a repeat.
+            WordSpeech.logger.info(
+                "speech voice: \(voice?.identifier ?? "none", privacy: .public), rate x: \(rateMultiplier, privacy: .public), repeat: \(isRepeat, privacy: .public)"
+            )
+            self.voice = voice
+            self.accent = settings.accent
+            self.rateMultiplier = rateMultiplier
+        }
+
+        func utterance(_ text: String) -> AVSpeechUtterance {
+            let utterance = AVSpeechUtterance(attributedString: WordSpeech.spokenText(text, accent: accent))
+            utterance.voice = voice
+            utterance.rate = AVSpeechUtteranceDefaultSpeechRate * rateMultiplier
+            return utterance
+        }
     }
 
     /// The pieces of `SpeechText`, a Turkish name with its IPA for the voice.
@@ -102,14 +139,14 @@ enum WordSpeech {
     /// accent, then American English: never nil while an English voice exists (a nil voice
     /// would read with the phone's language, Turkish).
     static func voice(for settings: SpeechSettings) -> AVSpeechSynthesisVoice? {
-        let installed = catalog.voices
+        let snapshot = catalog.snapshot
         let pick = SpeechVoiceChoice.voice(
             chosen: settings.voiceIdentifier,
-            among: installed.map(info(of:)),
+            among: snapshot.infos,
             accent: settings.accent,
-            systemDefault: systemDefaultIdentifier(settings.accent)
+            systemDefault: snapshot.systemDefaults[settings.accent]
         )
-        if let pick, let voice = installed.first(where: { $0.identifier == pick.identifier }) {
+        if let pick, let voice = snapshot.voices.first(where: { $0.identifier == pick.identifier }) {
             return voice
         }
         return AVSpeechSynthesisVoice(language: settings.accent.languageCode)
@@ -118,16 +155,13 @@ enum WordSpeech {
 
     /// The voices "Ses ve aksan" offers for `accent`, best first.
     static func offeredVoices(for accent: SpeechAccent) -> [SpeechVoiceInfo] {
-        return SpeechVoiceChoice.offered(
-            catalog.voices.map(info(of:)),
-            accent: accent,
-            systemDefault: systemDefaultIdentifier(accent)
-        )
+        let snapshot = catalog.snapshot
+        return SpeechVoiceChoice.offered(snapshot.infos, accent: accent, systemDefault: snapshot.systemDefaults[accent])
     }
 
     /// No enhanced or premium voice is installed for `accent` ("Daha doğal ses indir").
     static func needsBetterVoice(for accent: SpeechAccent) -> Bool {
-        return SpeechVoiceChoice.needsBetterVoice(catalog.voices.map(info(of:)), accent: accent)
+        return SpeechVoiceChoice.needsBetterVoice(catalog.snapshot.infos, accent: accent)
     }
 
     /// Reads the installed voices again at the next use: back from iPhone Settings, where a voice
@@ -145,10 +179,6 @@ enum WordSpeech {
             isNovelty: voice.voiceTraits.contains(.isNoveltyVoice),
             isPersonal: voice.voiceTraits.contains(.isPersonalVoice)
         )
-    }
-
-    private static func systemDefaultIdentifier(_ accent: SpeechAccent) -> String? {
-        return AVSpeechSynthesisVoice(language: accent.languageCode)?.identifier
     }
 
     private static let catalog = VoiceCatalog()
@@ -181,37 +211,70 @@ enum WordSpeech {
     }
 }
 
-/// The installed voices, read once (`speechVoices()` is slow the first time) and again after iOS
-/// reports a change or after `invalidate()`. Any thread.
+/// The installed voices and the system's own voice for each accent, read once (`speechVoices()`
+/// is slow the first time) and again after iOS reports a change or after `invalidate()`. Any
+/// thread. The voices are read outside the lock: iOS may report a change while they load, and
+/// `invalidate()` takes the lock; a snapshot read across an invalidation is used once, not kept.
 private final class VoiceCatalog: @unchecked Sendable {
-    private let lock = NSLock()
-    private var cached: [AVSpeechSynthesisVoice]?
-    private var observer: NSObjectProtocol?
+    struct Snapshot {
+        let voices: [AVSpeechSynthesisVoice]
+        let infos: [SpeechVoiceInfo]
+        /// `AVSpeechSynthesisVoice(language:)` for each accent.
+        let systemDefaults: [SpeechAccent: String]
+    }
 
-    var voices: [AVSpeechSynthesisVoice] {
+    private let lock = NSLock()
+    private var cached: Snapshot?
+    private var generation = 0
+    private var isObserving = false
+
+    var snapshot: Snapshot {
+        startObserving()
         lock.lock()
-        defer { lock.unlock() }
-        if observer == nil {
-            observer = NotificationCenter.default.addObserver(
-                forName: AVSpeechSynthesizer.availableVoicesDidChangeNotification,
-                object: nil,
-                queue: nil
-            ) { [weak self] _ in
-                self?.invalidate()
-            }
-        }
         if let cached {
+            lock.unlock()
             return cached
         }
+        let started = generation
+        lock.unlock()
+
         let voices = AVSpeechSynthesisVoice.speechVoices()
-        cached = voices
-        return voices
+        var systemDefaults: [SpeechAccent: String] = [:]
+        for accent in SpeechAccent.allCases {
+            systemDefaults[accent] = AVSpeechSynthesisVoice(language: accent.languageCode)?.identifier
+        }
+        let snapshot = Snapshot(voices: voices, infos: voices.map(WordSpeech.info(of:)), systemDefaults: systemDefaults)
+
+        lock.lock()
+        if generation == started {
+            cached = snapshot
+        }
+        lock.unlock()
+        return snapshot
     }
 
     func invalidate() {
         lock.lock()
         cached = nil
+        generation += 1
         lock.unlock()
+    }
+
+    private func startObserving() {
+        lock.lock()
+        let isFirst = !isObserving
+        isObserving = true
+        lock.unlock()
+        guard isFirst else {
+            return
+        }
+        _ = NotificationCenter.default.addObserver(
+            forName: AVSpeechSynthesizer.availableVoicesDidChangeNotification,
+            object: nil,
+            queue: nil
+        ) { [weak self] _ in
+            self?.invalidate()
+        }
     }
 }
 
@@ -251,8 +314,8 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
     }
 
     /// Speaks `text`. A second call replaces the first. Returns after the speech ended, after it
-    /// was replaced, or after `timeout` seconds (a speech that never starts must not keep the
-    /// intent running).
+    /// was replaced, or after `timeout` seconds at the normal speed, more for a slower reading (a
+    /// speech that never starts must not keep the intent running).
     func speakAndWait(_ text: String, timeout: TimeInterval = 8) async {
         let spoken = text.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !spoken.isEmpty else { return }
@@ -278,11 +341,14 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         let utterance = WordSpeech.makeUtterance(spoken)
         let id = ObjectIdentifier(utterance)
         current = utterance
+        // `timeout` is for the normal speed; a slow (or slow repeat) reading of a phrase may need more.
+        let normalRate = AVSpeechUtteranceDefaultSpeechRate * SpeechRate.normal.defaultRateMultiplier
+        let limit = timeout * max(1, Double(normalRate / max(utterance.rate, 0.05)))
         await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             waiter = continuation
             watchdog = Task { @MainActor [weak self] in
                 do {
-                    try await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
+                    try await Task.sleep(nanoseconds: UInt64(limit * 1_000_000_000))
                 } catch {
                     return
                 }

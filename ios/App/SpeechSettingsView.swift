@@ -66,6 +66,7 @@ struct SpeechSettingsView: View {
     @AppStorage(SpeechSettings.Key.slowRepeat, store: SpeechSettingsStore.defaults) private var slowRepeat = true
     @ObservedObject private var speaker = Speaker.shared
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     /// The voice chosen for the current accent; nil: the best installed one ("Otomatik").
     @State private var chosenVoice: String?
     /// The accent's voices, best first (`WordSpeech.offeredVoices`).
@@ -166,19 +167,23 @@ struct SpeechSettingsView: View {
                 .settingsRowPadding()
             }
             .padding(.top, 4)
-            Text("Aynı kelimeye ya da cümleye hemen yeniden dokununca daha yavaş okur. Önce normal, sonra yavaş duyarsın.")
+            // While it reads, a second tap stops it (`Speaker.toggle`): the repeat comes after.
+            Text("Okuma bitince aynı kelimeye ya da cümleye yine dokunursan daha yavaş okur. Önce normal, sonra yavaş duyarsın.")
                 .settingsFootnote()
             sampleRow
                 .padding(.top, 4)
         }
     }
 
-    /// The sample sentence with its own "Dinle": a second tap right after the first is the slow
-    /// repeat.
+    /// The sample sentence with its own "Dinle": a tap after the first reading has ended is the
+    /// slow repeat. At the accessibility text sizes the button stands under the sentence.
     private var sampleRow: some View {
         let isSpeaking = speaker.speakingText == Self.sample
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10))
+            : AnyLayout(HStackLayout(spacing: 12))
         return SettingsGroup {
-            HStack(spacing: 12) {
+            layout {
                 Text(verbatim: Self.sample)
                     .font(Theme.Fonts.example)
                     .foregroundStyle(Theme.ink)
@@ -347,7 +352,7 @@ struct VoiceDownloadGuide: View {
                     .foregroundStyle(Theme.ink)
                     .accessibilityAddTraits(.isHeader)
             }
-            Text("Telefonunda yalnız standart İngilizce sesler var. iPhone'da daha doğal sesler ücretsiz indirilebilir; sonra internetsiz de çalışır.")
+            Text(verbatim: intro)
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
@@ -370,6 +375,12 @@ struct VoiceDownloadGuide: View {
         )
     }
 
+    /// The card says why it is there: this accent has only standard voices.
+    private var intro: String {
+        let download = "iPhone'da daha doğal İngilizce sesler ücretsiz indirilir. Sonra internetsiz de çalışır."
+        return isCard ? "Bu aksan için telefonunda yalnız standart sesler var. " + download : download
+    }
+
     private var steps: [String] {
         let page: String
         if #available(iOS 26, *) {
@@ -382,7 +393,7 @@ struct VoiceDownloadGuide: View {
         case .american:
             voices = "ABD seslerinden birine dokun, örneğin **Ava** ya da **Zoe**."
         case .british:
-            voices = "Birleşik Krallık seslerinden birine dokun, örneğin **Serena** ya da **Jamie**."
+            voices = "iPhone İngiltere seslerine **Birleşik Krallık** der. Bu seslerden birine dokun, örneğin **Serena** ya da **Jamie**."
         }
         return [
             "**iPhone Ayarları**'nı aç.",
@@ -390,7 +401,7 @@ struct VoiceDownloadGuide: View {
             page,
             "**Sesler**'e dokun, sonra **İngilizce**'ye dokun.",
             voices,
-            "**Premium** ya da **Gelişmiş** yazan satırdaki indirme simgesine dokun.",
+            "Boyutu en büyük olanı seç; en doğal ses odur. Yanındaki indirme simgesine dokun.",
             "İndirme bitince Lockglow'a dön. Yeni ses burada listede görünür.",
         ]
     }
@@ -500,7 +511,8 @@ extension SpeechRate {
 }
 
 extension SpeechVoiceInfo.Quality {
-    /// iPhone Settings writes the same two names next to the voices ("Premium", "Gelişmiş").
+    /// Our names for the three qualities. Whether iPhone Settings writes "Premium" and "Gelişmiş"
+    /// in Turkish too is not checked yet (the guide names neither).
     var title: String {
         switch self {
         case .premium:

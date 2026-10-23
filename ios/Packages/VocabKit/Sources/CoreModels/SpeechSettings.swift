@@ -131,6 +131,16 @@ public enum SpeechRules {
         }
         return max(slowestMultiplier, chosen * repeatSlowdown)
     }
+
+    /// Pause after a sentence when a text is read one sentence at a time (`SpeechText.sentences`),
+    /// on top of the voice's own: 0.25 s between sentences, 0.45 s between the two speakers of a
+    /// dialogue, at the normal speed; longer as the reading gets slower, so a slow reading keeps
+    /// its rhythm. Not heard on a device yet.
+    public static func pause(endsTurn: Bool, rateMultiplier: Float) -> TimeInterval {
+        let base: TimeInterval = endsTurn ? 0.45 : 0.25
+        let slowdown = Double(SpeechRate.normal.defaultRateMultiplier / max(rateMultiplier, 0.1))
+        return base * slowdown
+    }
 }
 
 /// Remembers the last reading, to tell a second hearing ("Yavaş tekrar"). The key is the text

@@ -20,7 +20,7 @@ final class SpeechTextTests: XCTestCase {
 
     func testTurkishNamesGetTheirPronunciation() {
         XCTAssertEqual(SpeechText.pieces("Ayşe made breakfast for the whole family."), [
-            Piece(text: "Ayşe", ipa: "ɑjʃɛ"),
+            Piece(text: "Ayşe", ipa: "aɪʃɛ"),
             Piece(text: " made breakfast for the whole family."),
         ])
         XCTAssertEqual(SpeechText.pieces("I met Gül and Oğuz in İzmir."), [
@@ -37,7 +37,22 @@ final class SpeechTextTests: XCTestCase {
 
     func testTheVowelÖFollowsTheAccent() {
         XCTAssertEqual(SpeechText.pieces("Kadıköy", accent: .american), [Piece(text: "Kadıköy", ipa: "kɑdəkɝj")])
-        XCTAssertEqual(SpeechText.pieces("Kadıköy", accent: .british), [Piece(text: "Kadıköy", ipa: "kɑdəkɜːj")])
+        XCTAssertEqual(SpeechText.pieces("Kadıköy", accent: .british), [Piece(text: "Kadıköy", ipa: "kædəkɜːj")])
+    }
+
+    /// A British voice gets British vowels.
+    func testBritishVowels() {
+        XCTAssertEqual(SpeechText.pieces("Ayşe", accent: .british), [Piece(text: "Ayşe", ipa: "aɪʃe")])
+        XCTAssertEqual(SpeechText.pieces("Oğuz", accent: .british), [Piece(text: "Oğuz", ipa: "ɒuːz")])
+        XCTAssertEqual(SpeechText.pieces("so Can went", accent: .british)[1], Piece(text: "Can", ipa: "dʒæn"))
+    }
+
+    func testDiphthongsAndTheYBeforeÜ() {
+        XCTAssertEqual(SpeechText.pieces("Büyükada"), [Piece(text: "Büyükada", ipa: "bjujukɑdɑ")])
+        // "ay" before a vowel is not a diphthong: "Ayça" has one, "Ayaz" has not.
+        XCTAssertEqual(SpeechText.pieces("Ayça"), [Piece(text: "Ayça", ipa: "aɪtʃɑ")])
+        XCTAssertEqual(SpeechText.pieces("Şeyma")[0], Piece(text: "Şeyma", ipa: "ʃeɪmɑ"))
+        XCTAssertEqual(SpeechText.pieces("Ilgın")[0], Piece(text: "Ilgın", ipa: "əlɡən"))
     }
 
     func testNamesWithATurkishC() {
@@ -80,10 +95,38 @@ final class SpeechTextTests: XCTestCase {
 
     func testSpacingDotsAndDialogue() {
         XCTAssertEqual(SpeechText.normalized("  Wait...   what?  "), "Wait… what?")
+        XCTAssertEqual(SpeechText.normalized("one\u{00A0}\ttwo"), "one two")
         XCTAssertEqual(SpeechText.normalized("“It's 300 lira.”“OK, I'll take it.”"), "“It's 300 lira.” “OK, I'll take it.”")
         XCTAssertEqual(SpeechText.normalized("First line\nsecond line"), "First line. second line")
         XCTAssertEqual(SpeechText.normalized("Hello,\n\nworld"), "Hello, world")
         XCTAssertEqual(SpeechText.normalized(""), "")
+    }
+
+    func testSentencesOfADialogue() {
+        XCTAssertEqual(SpeechText.sentences("“Will the bakery still be open at nine?” “I hope so. I need bread.”"), [
+            SpeechText.Sentence(text: "“Will the bakery still be open at nine?”", endsTurn: true),
+            SpeechText.Sentence(text: "“I hope so.", endsTurn: false),
+            SpeechText.Sentence(text: "I need bread.”", endsTurn: false),
+        ])
+        XCTAssertEqual(SpeechText.sentences("Kenji asked Maria, \"Will you marry me?\""), [
+            SpeechText.Sentence(text: "Kenji asked Maria, \"Will you marry me?\""),
+        ])
+    }
+
+    func testSentencesAreNotCutAfterTitlesTimesOrInitials() {
+        for text in [
+            "Dr. Kaya has thirty patients to see today.",
+            "We appreciate you coming so early, Mr. Chen.",
+            "She woke up at 3 a.m. because of jet lag.",
+            "The book is by J. Smith.",
+            "I usually have breakfast at seven.",
+        ] {
+            XCTAssertEqual(SpeechText.sentences(text), [SpeechText.Sentence(text: text)], text)
+        }
+        XCTAssertEqual(SpeechText.sentences("Sorry! I didn't see you there.").map(\.text), ["Sorry!", "I didn't see you there."])
+        XCTAssertEqual(SpeechText.sentences("It costs 5 euros. 2 people came.").map(\.text), ["It costs 5 euros.", "2 people came."])
+        XCTAssertEqual(SpeechText.sentences(""), [])
+        XCTAssertEqual(SpeechText.sentences("breakfast"), [SpeechText.Sentence(text: "breakfast")])
     }
 
     func testPiecesRebuildTheNormalizedText() {

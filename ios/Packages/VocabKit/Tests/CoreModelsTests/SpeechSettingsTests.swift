@@ -105,6 +105,15 @@ final class SpeechSettingsTests: XCTestCase {
         }
     }
 
+    func testPausesGrowWithTurnsAndSlowerReading() {
+        let normal = SpeechRate.normal.defaultRateMultiplier
+        XCTAssertEqual(SpeechRules.pause(endsTurn: false, rateMultiplier: normal), 0.25, accuracy: 0.001)
+        XCTAssertEqual(SpeechRules.pause(endsTurn: true, rateMultiplier: normal), 0.45, accuracy: 0.001)
+        let slowRepeat = SpeechRules.rateMultiplier(.slow, isRepeat: true, slowRepeat: true)
+        XCTAssertGreaterThan(SpeechRules.pause(endsTurn: false, rateMultiplier: slowRepeat), 0.25)
+        XCTAssertLessThan(SpeechRules.pause(endsTurn: false, rateMultiplier: SpeechRate.fast.defaultRateMultiplier), 0.25)
+    }
+
     // MARK: Repeats
 
     func testTheSameTextAgainSoonIsARepeat() {
