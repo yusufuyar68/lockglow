@@ -1,0 +1,242 @@
+import SwiftUI
+import WidgetKit
+import CoreModels
+import Scheduler
+
+// Watch face complications (is5-watch). Static text only, like the phone's Lock Screen families
+// (ogrenme_ilkeleri 2.1): the word and its Turkish meaning, never cut; a form that does not fit is
+// left out (the meaning first tries its shorter form). The word changes on the hour (`WatchRotation`),
+// the same word as in the watch app. Tapping a complication opens the watch app.
+
+@main
+struct LockglowWatchWidgetsBundle: WidgetBundle {
+    var body: some Widget {
+        WatchWordComplication()
+    }
+}
+
+struct WatchWordComplication: Widget {
+    static let kind = "WatchWordComplication"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: WatchWordComplication.kind, provider: WatchWordProvider()) { entry in
+            WatchComplicationView(entry: entry)
+        }
+        .configurationDisplayName("Kelime")
+        .description("Kadranda her saat yeni bir kelime.")
+        .supportedFamilies([
+            .accessoryRectangular,
+            .accessoryInline,
+            .accessoryCircular,
+            .accessoryCorner,
+        ])
+    }
+}
+
+struct WatchWordEntry: TimelineEntry {
+    let date: Date
+    let word: WidgetWord
+}
+
+/// One entry per hour for two days, from the watch's two small JSON files (or the seed words).
+/// Placeholder and snapshot are instant and static: no file access.
+struct WatchWordProvider: TimelineProvider {
+    func placeholder(in context: Context) -> WatchWordEntry {
+        return WatchWordEntry(date: Date(), word: WidgetWord.sample)
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (WatchWordEntry) -> Void) {
+        completion(WatchWordEntry(date: Date(), word: WidgetWord.sample))
+    }
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<WatchWordEntry>) -> Void) {
+        let now = Date()
+        let input = WatchStore.loadInput(store: WatchStore.sharedStore())
+        let planned = WatchRotation.entries(input: input, now: now, alignmentOffset: WatchStore.alignmentOffset(for: now))
+        if planned.isEmpty {
+            // No plan and no seed file: the static sample, and another look in an hour.
+            let fallback = Timeline(
+                entries: [WatchWordEntry(date: now, word: WidgetWord.sample)],
+                policy: TimelineReloadPolicy.after(now.addingTimeInterval(WatchRotation.interval))
+            )
+            completion(fallback)
+            return
+        }
+        let entries = planned.map { WatchWordEntry(date: $0.date, word: $0.word) }
+        completion(Timeline(entries: entries, policy: TimelineReloadPolicy.atEnd))
+    }
+}
+
+struct WatchComplicationView: View {
+    @Environment(\.widgetFamily) private var family
+    let entry: WatchWordEntry
+
+    var body: some View {
+        content
+            .containerBackground(for: .widget) {
+                WatchTheme.surface
+            }
+            .watchTurkishVoice()
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        switch family {
+        case .accessoryInline:
+            WatchInlineWordView(word: entry.word)
+        case .accessoryCircular:
+            WatchCircularWordView(word: entry.word)
+        case .accessoryCorner:
+            WatchCornerWordView(word: entry.word)
+        default:
+            WatchRectangularWordView(word: entry.word)
+        }
+    }
+}
+
+/// What VoiceOver reads for a complication: the word, then "Türkçesi: …" (the "·" is not read).
+private func spokenLabel(_ word: WidgetWord) -> Text {
+    guard let meaning = WatchGloss.forms(of: word).first else {
+        return Text(verbatim: word.lemma)
+    }
+    return Text(verbatim: "\(word.lemma), Türkçesi: \(meaning)")
+}
+
+/// Two rows: the word in serif bold and the Turkish meaning under it (its full form, else the
+/// shorter one, else none). A word too long for one line wraps instead of being cut.
+private struct WatchRectangularWordView: View {
+    let word: WidgetWord
+
+    var body: some View {
+        let forms = WatchGloss.forms(of: word)
+        ViewThatFits(in: .vertical) {
+            if let full = forms.first {
+                rows(meaning: full)
+            }
+            if forms.count > 1, let short = forms.last {
+                rows(meaning: short)
+            }
+            rows(meaning: nil)
+            Text(verbatim: word.lemma)
+                .font(.system(.headline, design: .serif).weight(.bold))
+                .lineLimit(2)
+                .minimumScaleFactor(0.6)
+                .widgetAccentable()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(spokenLabel(word))
+    }
+
+    private func rows(meaning: String?) -> some View {
+        VStack(alignment: .leading, spacing: 1) {
+            Text(verbatim: word.lemma)
+                .font(.system(.headline, design: .serif).weight(.bold))
+                .fixedSize(horizontal: false, vertical: true)
+                .widgetAccentable()
+            if let meaning = meaning {
+                Text(verbatim: meaning)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+    }
+}
+
+/// One line of system text: "word · meaning", then "word · short meaning", then the word alone.
+private struct WatchInlineWordView: View {
+    let word: WidgetWord
+
+    var body: some View {
+        let forms = WatchGloss.forms(of: word)
+        ViewThatFits(in: .horizontal) {
+            if let full = forms.first {
+                Text(verbatim: "\(word.lemma) · \(full)")
+            }
+            if forms.count > 1, let short = forms.last {
+                Text(verbatim: "\(word.lemma) · \(short)")
+            }
+            Text(verbatim: word.lemma)
+        }
+        .widgetAccentable()
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(spokenLabel(word))
+    }
+}
+
+/// The word alone in the circle, at the largest of three sizes it fits whole (11 pt at least, the
+/// smallest text Apple allows); a phrase may take two lines. A word that fits at none shows the
+/// book symbol instead of a cut word.
+private struct WatchCircularWordView: View {
+    let word: WidgetWord
+
+    private var twoLines: String? {
+        let parts = word.lemma.split(separator: " ").map(String.init)
+        guard parts.count > 1 else {
+            return nil
+        }
+        // The break that makes the longer line shortest.
+        var best: (lines: String, longest: Int)?
+        for split in 1..<parts.count {
+            let first = parts[..<split].joined(separator: " ")
+            let second = parts[split...].joined(separator: " ")
+            let longest = max(first.count, second.count)
+            if best == nil || longest < best!.longest {
+                best = (lines: "\(first)\n\(second)", longest: longest)
+            }
+        }
+        return best?.lines
+    }
+
+    var body: some View {
+        ZStack {
+            AccessoryWidgetBackground()
+            ViewThatFits(in: [.horizontal, .vertical]) {
+                wordText(word.lemma, size: 16)
+                wordText(word.lemma, size: 13)
+                if let lines = twoLines {
+                    wordText(lines, size: 13)
+                }
+                wordText(word.lemma, size: 11)
+                if let lines = twoLines {
+                    wordText(lines, size: 11)
+                }
+                Image(systemName: "book.closed")
+                    .font(.title3)
+                    .widgetAccentable()
+            }
+            .padding(4)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(spokenLabel(word))
+    }
+
+    private func wordText(_ text: String, size: CGFloat) -> some View {
+        Text(verbatim: text)
+            .font(.system(size: size, weight: .bold, design: .serif))
+            .multilineTextAlignment(.center)
+            .fixedSize()
+            .widgetAccentable()
+    }
+}
+
+/// The corner: the book symbol in the small circle and the word along the bezel. The bezel text
+/// is the word alone: the system would cut a longer label.
+private struct WatchCornerWordView: View {
+    let word: WidgetWord
+
+    var body: some View {
+        ZStack {
+            AccessoryWidgetBackground()
+            Image(systemName: "book.closed")
+                .font(.title3)
+                .widgetAccentable()
+        }
+        .widgetLabel {
+            Text(verbatim: word.lemma)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(spokenLabel(word))
+    }
+}

@@ -984,6 +984,7 @@ final class AppModel: ObservableObject {
         // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
         updateLockScreenWord()
         reloadWidgets()
+        WatchPlanRelay.planDidChange()  // is5-watch: the Apple Watch gets the new plan too (WatchBridge)
     }
 
     /// Works out `lockScreenWordID` from the plan and the widget's state on disk, with the same

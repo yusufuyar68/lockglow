@@ -12,4 +12,6 @@ public enum WidgetEventSource: String, Codable, Sendable {
     case systemMedium = "system_medium"
     case accessoryRectangular = "accessory_rectangular"
     case accessoryInline = "accessory_inline"
+    /// The Apple Watch app's buttons (is5-watch); the phone writes these events for the watch.
+    case watch
 }
