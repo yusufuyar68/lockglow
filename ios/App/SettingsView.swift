@@ -39,6 +39,7 @@ struct SettingsView: View {
                     reminderSection
                     ReviewLiveActivitySection() // is5-canli: the round's Live Activity switch
                     progressSection
+                    EarTrainingSettingsSection() // is5-kulak: "Kulak alıştırması" (EarTrainingView.swift)
                     helpSection
                     resetSection
                 }
