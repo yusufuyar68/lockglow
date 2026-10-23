@@ -250,6 +250,10 @@ struct SettingsView: View {
                 }
             }
             .settingsFootnote()
+            // is5-seviye: the level test (PlacementTestView.swift); its result sets the level.
+            // Below the footnote, so the "Konular" row keeps its place for the UI test.
+            PlacementTestSettingsRow()
+                .padding(.top, 4)
 
             SettingsQuestion("Günde kaç yeni kelime?")
                 .padding(.top, 12)
