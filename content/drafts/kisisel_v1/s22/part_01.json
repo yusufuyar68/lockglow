@@ -1,0 +1,1284 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.come_up.phv.1",
+      "lemma": "come up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "happen unexpectedly",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌm ˈʌp/",
+        "uk": "/kʌm ˈʌp/"
+      },
+      "def": {
+        "micro": "happen unexpectedly",
+        "short": "happen suddenly, usually a problem or a job you did not plan for",
+        "long": "A small problem or an urgent job happens suddenly, and you did not plan for it. People often say 'Sorry, something came up' when they cancel a plan."
+      },
+      "grammar": {
+        "pattern": "sth comes up (no object)"
+      },
+      "examples": [
+        {
+          "en": "Sorry, something came up at work.",
+          "tr": "Kusura bakma, işte bir şey çıktı.",
+          "register": "neutral",
+          "focus": "came up"
+        },
+        {
+          "en": "I can't come tonight. A family problem has come up.",
+          "tr": "Bu akşam gelemem. Bir aile meselesi çıktı.",
+          "register": "neutral",
+          "focus": "come up"
+        },
+        {
+          "en": "Mehmet left the meeting early because something urgent came up.",
+          "tr": "Mehmet acil bir iş çıktığı için toplantıdan erken ayrıldı.",
+          "register": "neutral",
+          "focus": "came up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "something came up",
+        "a problem came up",
+        "an issue comes up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(bir iş) çıkmak",
+          "alt": [
+            "araya bir iş girmek",
+            "ortaya çıkmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir planı iptal ederken çok kullanılır: 'Something came up.' (Bir işim çıktı.) Bir fikir bulmak ise 'come up with' olur.",
+          "mistakes": [
+            {
+              "wrong": "Sorry, a work came out. I can't come.",
+              "right": "Sorry, something came up. I can't come.",
+              "why": "Türkçedeki 'bir iş çıktı' kelime kelime çevrilir: 'iş' work, 'çıkmak' come out olur. Ama 'work' sayılamaz, 'come out' da dışarı çıkmak ya da yayınlanmak demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "come up with",
+        "come out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "time_routines",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry, I can't meet you tonight. Something has ______ at work.",
+        "answer": "come up",
+        "distractors": [
+          "come over",
+          "put off",
+          "given up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.turn_out.phv.1",
+      "lemma": "turn out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "be found to be in the end",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɜːrn ˈaʊt/",
+        "uk": "/tɜːn ˈaʊt/"
+      },
+      "def": {
+        "micro": "be found to be in the end",
+        "short": "be or become something in the end, often not what you expected",
+        "long": "You use it when you learn at the end how something or someone really is, often a surprise. The usual patterns are 'turn out to be + adjective/noun' and 'It turned out that...'."
+      },
+      "grammar": {
+        "pattern": "turn out to be sth; it turned out (that)..."
+      },
+      "examples": [
+        {
+          "en": "The test turned out to be easy.",
+          "tr": "Sınav kolay çıktı.",
+          "register": "neutral",
+          "focus": "turned out"
+        },
+        {
+          "en": "We were worried about the new neighbor, but he turned out to be very kind.",
+          "tr": "Yeni komşu için endişeliydik ama çok kibar biri çıktı.",
+          "register": "neutral",
+          "focus": "turned out"
+        },
+        {
+          "en": "It turned out that Selin knew the answer all along.",
+          "tr": "Selin'in cevabı baştan beri bildiği ortaya çıktı.",
+          "register": "neutral",
+          "focus": "turned out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "turn out to be",
+        "it turned out that",
+        "turn out well"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olduğu ortaya çıkmak",
+          "gloss_short": "ortaya çıkmak",
+          "alt": [
+            "sonradan anlaşılmak",
+            "olduğu anlaşılmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'iyi biri çıktı', 'kolay çıktı' kalıbının karşılığıdır: 'turned out to be kind/easy'. 'Turn up' ise gelmek, gelip görünmek (ya da sesi açmak) demektir.",
+          "mistakes": [
+            {
+              "wrong": "The new boss came out very kind.",
+              "right": "The new boss turned out to be very kind.",
+              "why": "Türkçede 'çok iyi biri çıktı' denir, 'çıkmak' da 'come out' diye çevrilir. Ama 'come out' dışarı çıkmak, yayınlanmak demektir; sonuçta nasıl olduğu 'turn out (to be)' ile söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "find out",
+        "turn up",
+        "come out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I thought the film would be boring, but it ______ to be great.",
+        "answer": "turned out",
+        "distractors": [
+          "turned up",
+          "found out",
+          "came out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hold_up.phv.1",
+      "lemma": "hold up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make someone late",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hoʊld ˈʌp/",
+        "uk": "/həʊld ˈʌp/"
+      },
+      "def": {
+        "micro": "make someone late",
+        "short": "make someone or something late, for example traffic or a long meeting",
+        "long": "To make a person, a trip or a piece of work slower or later than planned. It is often passive: 'I got held up in traffic' or 'The flight was held up'."
+      },
+      "grammar": {
+        "pattern": "be/get held up (in sth); hold sb up"
+      },
+      "examples": [
+        {
+          "en": "Sorry I'm late, I got held up in traffic.",
+          "tr": "Kusura bakma, geç kaldım, trafiğe takıldım.",
+          "register": "neutral",
+          "focus": "held up"
+        },
+        {
+          "en": "The meeting held me up, so I missed the bus.",
+          "tr": "Toplantı beni geciktirdi, bu yüzden otobüsü kaçırdım.",
+          "register": "neutral",
+          "focus": "held me up"
+        },
+        {
+          "en": "Our flight was held up for two hours because of the snow.",
+          "tr": "Uçuşumuz kar yüzünden iki saat gecikti.",
+          "register": "neutral",
+          "focus": "held up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get held up",
+        "held up in traffic",
+        "hold sb up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geciktirmek",
+          "alt": [
+            "oyalamak",
+            "alıkoymak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğunlukla edilgen kullanılır: 'I got held up' (bir yere takıldım, geciktim). 'Hold on' ise telefonda ya da konuşurken 'bir dakika bekle' demektir.",
+          "mistakes": [
+            {
+              "wrong": "Sorry, I stayed in traffic.",
+              "right": "Sorry, I got held up in traffic.",
+              "why": "Türkçede 'trafikte kaldım' denir, 'kalmak' da 'stay' diye çevrilir. Ama 'stay' bir yerde bilerek kalmaktır; istemeden gecikmek 'get held up' ya da 'get stuck in traffic' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "hold on"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "cities_transport",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry I'm late. I was ______ at the post office for an hour.",
+        "answer": "held up",
+        "distractors": [
+          "held on",
+          "let down",
+          "turned down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.meet_up.phv.1",
+      "lemma": "meet up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "meet friends by plan",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/miːt ˈʌp/",
+        "uk": "/miːt ˈʌp/"
+      },
+      "def": {
+        "micro": "see a friend at a set time",
+        "short": "come together with a friend at a time and place you planned",
+        "long": "To meet someone you already know, like a friend, at a time and place you planned before. You use 'meet' for the first time you see a new person, not 'meet up'."
+      },
+      "grammar": {
+        "pattern": "meet up (with sb)"
+      },
+      "examples": [
+        {
+          "en": "Let's meet up after work.",
+          "tr": "İşten sonra buluşalım.",
+          "register": "neutral",
+          "focus": "meet up"
+        },
+        {
+          "en": "Zeynep and I meet up for coffee every Saturday.",
+          "tr": "Zeynep'le her cumartesi kahve içmek için buluşuyoruz.",
+          "register": "neutral",
+          "focus": "meet up"
+        },
+        {
+          "en": "When Lucas came to Istanbul, we met up with him near the Galata Tower.",
+          "tr": "Lucas İstanbul'a geldiğinde onunla Galata Kulesi'nin yakınında buluştuk.",
+          "register": "neutral",
+          "focus": "met up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "meet up for coffee",
+        "meet up with friends",
+        "meet up after work"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buluşmak",
+          "alt": [
+            "görüşmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'tanışmak' ve 'buluşmak' ayrıdır; İngilizcede 'meet' ikisi için de olur. Tanıdığın biriyle planlı buluşmak için 'meet up' daha açıktır; ilk tanışma için 'meet up' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "meet",
+        "get together"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Tom is in town this week. I'm going to ______ with him for lunch.",
+        "answer": "meet up",
+        "distractors": [
+          "look up",
+          "set up",
+          "write down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.come_along.phv.1",
+      "lemma": "come along",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "go somewhere with someone",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌm əˈlɔːŋ/",
+        "uk": "/kʌm əˈlɒŋ/"
+      },
+      "def": {
+        "micro": "go somewhere with someone",
+        "short": "go with someone to a place or an event",
+        "long": "To go with another person or a group to a place or an event, often after someone invites you. People often ask 'Do you want to come along?'"
+      },
+      "grammar": {
+        "pattern": "come along (with sb / to sth)"
+      },
+      "examples": [
+        {
+          "en": "We're going to the beach. Do you want to come along?",
+          "tr": "Plaja gidiyoruz. Sen de gelmek ister misin?",
+          "register": "neutral",
+          "focus": "come along"
+        },
+        {
+          "en": "Hakan came along to the concert with his sister.",
+          "tr": "Hakan da kız kardeşiyle birlikte konsere geldi.",
+          "register": "neutral",
+          "focus": "came along"
+        },
+        {
+          "en": "I'm going to the market. Why don't you come along and help me choose some fruit?",
+          "tr": "Pazara gidiyorum. Sen de gelip meyve seçmeme yardım etsene.",
+          "register": "neutral",
+          "focus": "come along"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "come along to",
+        "want to come along",
+        "come along with us"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(birlikte) gelmek",
+          "gloss_short": "birlikte gelmek",
+          "alt": [
+            "bize katılmak",
+            "eşlik etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Birini bir yere davet ederken çok kullanılır. 'Come over' ise birinin evine gelmektir.",
+          "mistakes": [
+            {
+              "wrong": "Will you come together with us?",
+              "right": "Will you come along with us?",
+              "why": "Türkçedeki 'bizimle birlikte gelir misin' cümlesinde 'birlikte' together diye eklenir. 'Come together' bir araya gelmek demektir; 'come along' ya da 'come with us' yeterlidir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "come over",
+        "come on"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm walking to the park with the kids. Would you like to ______?",
+        "answer": "come along",
+        "distractors": [
+          "come across",
+          "turn down",
+          "come apart"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_for.phv.1",
+      "lemma": "go for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "choose (food, an option)",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡoʊ fər/",
+        "uk": "/ˈɡəʊ fə/"
+      },
+      "def": {
+        "micro": "choose one thing",
+        "short": "choose one thing from a group, like food in a restaurant or a plan",
+        "long": "To choose one thing from two or more, like a meal from a menu, a color or a job. People often say 'I'll go for...' when they decide."
+      },
+      "grammar": {
+        "pattern": "go for sth"
+      },
+      "examples": [
+        {
+          "en": "I think I'll go for the blue one.",
+          "tr": "Sanırım maviyi seçeceğim.",
+          "register": "neutral",
+          "focus": "go for"
+        },
+        {
+          "en": "Pınar couldn't decide between the two jobs, but she went for the one near home.",
+          "tr": "Pınar iki iş arasında karar veremedi ama evine yakın olanı seçti.",
+          "register": "neutral",
+          "focus": "went for"
+        },
+        {
+          "en": "If you want something light, go for the salad.",
+          "tr": "Hafif bir şey istiyorsan salatayı tercih et.",
+          "register": "neutral",
+          "focus": "go for"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go for the soup",
+        "go for the cheaper one",
+        "I'll go for"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(bir şeyi) seçmek",
+          "gloss_short": "tercih etmek",
+          "alt": [
+            "-de karar kılmak",
+            "tercih etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Restoranda sipariş verirken çok duyulur: 'I'll go for the fish.' 'Go for it!' ise 'hadi, yap!' diye cesaret vermektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "go with"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "food_drink",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everything on the menu looks good, but I think I'll ______ the fish.",
+        "answer": "go for",
+        "distractors": [
+          "get over",
+          "turn into",
+          "look into"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_with.phv.1",
+      "lemma": "go with",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "look or taste good together",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡoʊ wɪð/",
+        "uk": "/ˈɡəʊ wɪð/"
+      },
+      "def": {
+        "micro": "look good together",
+        "short": "look or taste good together with another thing, like clothes or food",
+        "long": "To look, sound or taste good together with another thing. You use it for colors, clothes, furniture and food."
+      },
+      "grammar": {
+        "pattern": "sth goes (well) with sth"
+      },
+      "examples": [
+        {
+          "en": "This tie goes with your shirt.",
+          "tr": "Bu kravat gömleğine yakışıyor.",
+          "register": "neutral",
+          "focus": "goes with"
+        },
+        {
+          "en": "White rice goes really well with this soup.",
+          "tr": "Beyaz pilav bu çorbayla çok iyi gider.",
+          "register": "neutral",
+          "focus": "goes really well with"
+        },
+        {
+          "en": "Esra bought a new bag that goes with her brown boots.",
+          "tr": "Esra kahverengi botlarına uyan yeni bir çanta aldı.",
+          "register": "neutral",
+          "focus": "goes with"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go well with",
+        "go with a dress",
+        "go with rice"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uymak, yakışmak",
+          "alt": [
+            "birbirini tutmak",
+            "uyum sağlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Renk, giysi ve yemek uyumu için kullanılır. Bedenin, ölçünün uyması 'fit' olur. 'Go with' bir seçenekte karar kılmak anlamına da gelebilir ('I'll go with the red one').",
+          "mistakes": [
+            {
+              "wrong": "These shoes fit your dress.",
+              "right": "These shoes go with your dress.",
+              "why": "Türkçede 'uymak' hem beden hem renk ve stil için kullanılır. 'Fit' yalnızca bedenin, ölçünün uymasıdır; renk ve stil uyumu için 'go with' ya da 'match' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "fit",
+        "go for"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "clothes_fashion",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Do you think this green scarf ______ my grey coat?",
+        "answer": "goes with",
+        "distractors": [
+          "goes for",
+          "goes off",
+          "takes after"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.try_out.phv.1",
+      "lemma": "try out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "test something new",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/traɪ ˈaʊt/",
+        "uk": "/traɪ ˈaʊt/"
+      },
+      "def": {
+        "micro": "use something new to test it",
+        "short": "use or do something new to see if it is good or if you like it",
+        "long": "To use a new thing, place or way of doing something for the first time to see if it works or if you like it, for example a new app, a café or a recipe."
+      },
+      "grammar": {
+        "pattern": "try sth out; try out sth"
+      },
+      "examples": [
+        {
+          "en": "I want to try out the new café.",
+          "tr": "Yeni kafeyi denemek istiyorum.",
+          "register": "neutral",
+          "focus": "try out"
+        },
+        {
+          "en": "Burak is trying out a new app for learning English.",
+          "tr": "Burak İngilizce öğrenmek için yeni bir uygulamayı deniyor.",
+          "register": "neutral",
+          "focus": "trying out"
+        },
+        {
+          "en": "Before you buy the bike, you can try it out in the shop's garden.",
+          "tr": "Bisikleti almadan önce dükkânın bahçesinde deneyebilirsin.",
+          "register": "neutral",
+          "focus": "try it out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "try out a new app",
+        "try out a recipe",
+        "try it out"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(yeni bir şeyi) denemek",
+          "gloss_short": "denemek",
+          "alt": [
+            "test etmek",
+            "bir şans vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir aleti, yeri, yemeği ya da yöntemi denemek 'try out' olur. Giysi ya da ayakkabıyı giyip denemek ise 'try on' denir.",
+          "mistakes": [
+            {
+              "wrong": "I tried on the new phone in the shop.",
+              "right": "I tried out the new phone in the shop.",
+              "why": "Türkçede ikisi de 'denemek'. 'Try on' yalnızca giysi, ayakkabı gibi şeyleri giyip denemektir; bir telefonu, aleti ya da yeri denemek 'try out' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "try on"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "hobbies_sports",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The gym is free this week, so I'm going to ______ the new yoga class.",
+        "answer": "try out",
+        "distractors": [
+          "try on",
+          "fill in",
+          "hand in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.think_over.phv.1",
+      "lemma": "think over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "think carefully before deciding",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/θɪŋk ˈoʊvər/",
+        "uk": "/θɪŋk ˈəʊvə/"
+      },
+      "def": {
+        "micro": "consider well, then decide",
+        "short": "consider an idea or an offer carefully before you decide",
+        "long": "To take some time to think carefully about an offer, a plan or a problem before you make a decision. People often say 'Can I think it over?'"
+      },
+      "grammar": {
+        "pattern": "think sth over; think it over"
+      },
+      "examples": [
+        {
+          "en": "Can I think it over?",
+          "tr": "Bunu iyice düşünebilir miyim?",
+          "register": "neutral",
+          "focus": "think it over"
+        },
+        {
+          "en": "Thank you for the offer. I'll think it over and call you tomorrow.",
+          "tr": "Teklif için teşekkürler. İyice düşünüp yarın sizi ararım.",
+          "register": "neutral",
+          "focus": "think it over"
+        },
+        {
+          "en": "Before Cem chose a university, he thought over all his options for weeks.",
+          "tr": "Cem üniversite seçmeden önce haftalarca bütün seçeneklerini düşünüp taşındı.",
+          "register": "neutral",
+          "focus": "thought over"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "think it over",
+        "think over an offer",
+        "think things over"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyice düşünmek",
+          "alt": [
+            "düşünüp taşınmak",
+            "üzerinde düşünmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'It', 'them' gibi zamirler 'think' ile 'over' arasına girer: 'think it over'. İsimle iki sıra da olur: 'think over the offer' ya da 'think the offer over'.",
+          "mistakes": [
+            {
+              "wrong": "Let me think over it.",
+              "right": "Let me think it over.",
+              "why": "Türkçede 'onun üzerinde düşüneyim' deriz ve 'over'ı 'üzerinde' gibi görüp 'it'i sona koyarız. Ama bu fiilde 'it' gibi zamirler 'think' ile 'over' arasına girer."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "overthink"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "opinions_debate",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need a few days to ______ your offer. I'll call you on Monday.",
+        "answer": "think over",
+        "distractors": [
+          "hand out",
+          "take after",
+          "run into"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stick_to.phv.1",
+      "lemma": "stick to",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "keep to a plan or decision",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstɪk tuː/",
+        "uk": "/ˈstɪk tuː/"
+      },
+      "def": {
+        "micro": "not change a plan or rule",
+        "short": "continue to follow a plan, a rule or a decision and not change it",
+        "long": "To keep following a plan, a list, a rule or a decision and not change it, even when it is hard. 'Let's stick to the plan' means we will do what we decided."
+      },
+      "grammar": {
+        "pattern": "stick to sth"
+      },
+      "examples": [
+        {
+          "en": "Let's stick to the plan.",
+          "tr": "Plana bağlı kalalım.",
+          "register": "neutral",
+          "focus": "stick to"
+        },
+        {
+          "en": "Gül is trying to stick to her diet, so she didn't eat any cake.",
+          "tr": "Gül diyetine sadık kalmaya çalışıyor, bu yüzden hiç pasta yemedi.",
+          "register": "neutral",
+          "focus": "stick to"
+        },
+        {
+          "en": "Money is tight this month, so we need to stick to the shopping list.",
+          "tr": "Bu ay para dar, o yüzden alışveriş listesine bağlı kalmalıyız.",
+          "register": "neutral",
+          "focus": "stick to"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "stick to the plan",
+        "stick to a diet",
+        "stick to the rules"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(plana) bağlı kalmak",
+          "gloss_short": "bağlı kalmak",
+          "alt": [
+            "sadık kalmak",
+            "-dan şaşmamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Plan, liste, kural, karar ya da diyet için kullanılır. Bir konudan sapmamak için de denir: 'Please stick to the topic.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "time_routines",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I always ______ the speed limit when I drive in the city.",
+        "answer": "stick to",
+        "distractors": [
+          "look after",
+          "give away",
+          "put out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.work_on.phv.1",
+      "lemma": "work on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "spend time making or improving",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɜːrk ɑːn/",
+        "uk": "/ˈwɜːk ɒn/"
+      },
+      "def": {
+        "micro": "spend time making or fixing",
+        "short": "spend time making, fixing or improving something",
+        "long": "To spend time making, repairing or improving something, like a project, a report or a skill: 'I'm working on my English.'"
+      },
+      "grammar": {
+        "pattern": "work on sth"
+      },
+      "examples": [
+        {
+          "en": "I'm working on a new project.",
+          "tr": "Yeni bir proje üzerinde çalışıyorum.",
+          "register": "neutral",
+          "focus": "working on"
+        },
+        {
+          "en": "Your English is good, but you need to work on your pronunciation.",
+          "tr": "İngilizcen iyi ama telaffuzun üzerinde çalışman gerekiyor.",
+          "register": "neutral",
+          "focus": "work on"
+        },
+        {
+          "en": "Volkan has been working on the report all morning, and it's almost finished.",
+          "tr": "Volkan sabahtan beri rapor üzerinde çalışıyor ve rapor neredeyse bitti.",
+          "register": "neutral",
+          "focus": "working on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "work on a project",
+        "work on your English",
+        "work on it"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üzerinde çalışmak",
+          "gloss_short": "üstünde çalışmak",
+          "alt": [
+            "geliştirmeye çalışmak",
+            "uğraşmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir işi yapmak da, bir becerini geliştirmek de olur. 'I'm working on it' (üstünde çalışıyorum, hallediyorum) iş yerinde çok duyulur. 'Work out' ise spor yapmak ya da çözmek demektir.",
+          "mistakes": [
+            {
+              "wrong": "I'm working English every day.",
+              "right": "I'm working on my English every day.",
+              "why": "Türkçede 'İngilizce çalışıyorum' denir ve 'çalışmak' work diye çevrilir. Ama 'work' bu anlamda nesne almaz; bir beceriyi geliştirmek 'work on' olur, ders çalışmak ise 'study'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "work out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My speaking is still weak, so I'm ______ it with a teacher.",
+        "answer": "working on",
+        "distractors": [
+          "working out",
+          "putting off",
+          "running into"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.go_off.phv.1",
+      "lemma": "go off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "start ringing (an alarm)",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡoʊ ˈɔːf/",
+        "uk": "/ɡəʊ ˈɒf/"
+      },
+      "def": {
+        "micro": "start to ring",
+        "short": "start to make a loud noise, like an alarm or a clock",
+        "long": "For an alarm or an alarm clock: to suddenly start making a loud noise. Be careful: 'The lights went off' means the lights stopped working."
+      },
+      "grammar": {
+        "pattern": "sth goes off (no object)"
+      },
+      "examples": [
+        {
+          "en": "My alarm went off at six.",
+          "tr": "Alarmım altıda çaldı.",
+          "register": "neutral",
+          "focus": "went off"
+        },
+        {
+          "en": "The fire alarm went off during the lesson, so we all left the building.",
+          "tr": "Ders sırasında yangın alarmı çaldı, bu yüzden hepimiz binadan çıktık.",
+          "register": "neutral",
+          "focus": "went off"
+        },
+        {
+          "en": "Kerem didn't hear his alarm go off and was late for his first class.",
+          "tr": "Kerem alarmının çaldığını duymadı ve ilk dersine geç kaldı.",
+          "register": "neutral",
+          "focus": "go off"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the alarm went off",
+        "an alarm goes off",
+        "go off at six"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(alarm) çalmak",
+          "alt": [
+            "ötmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Alarm için 'go off' çalmaya başlamaktır, susmak değil. Işık ya da elektrik için 'go off' ise sönmek, kesilmek olur: 'The lights went off.' Alarmı kapatmak 'turn off' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "turn off",
+        "go out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "time_routines",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everyone ran outside when the fire alarm ______.",
+        "answer": "went off",
+        "distractors": [
+          "went out",
+          "gave up",
+          "turned off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
