@@ -35,6 +35,7 @@ struct SettingsView: View {
                     widgetSection
                     learningSection
                     reminderSection
+                    ReviewLiveActivitySection() // is5-canli: the round's Live Activity switch
                     progressSection
                     helpSection
                     resetSection

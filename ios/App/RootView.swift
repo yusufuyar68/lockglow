@@ -56,6 +56,8 @@ struct RootView: View {
         // Screens with a system card of their own ask the queue first (`claim`).
         .environmentObject(systemCards)
         .task {
+            // is5-canli: a new run has no round; a Live Activity left by the last run goes.
+            ReviewLiveActivity.shared.endLeftovers()
             await model.start()
             await startOpening()
         }
@@ -291,6 +293,11 @@ struct RootView: View {
     /// to it. A word outside the deck (the one kept on screen right after a topic change, or one
     /// from the every-topic fallback): its card opens in a sheet.
     private func handle(_ url: URL) {
+        // is5-canli: the round's Live Activity ("Devam et") opens "Tekrar", where the round waits.
+        if ReviewActivityAttributes.isContinueURL(url) {
+            selectedTab = .review
+            return
+        }
         guard let wordID = DeepLink.wordID(from: url) else {
             return
         }

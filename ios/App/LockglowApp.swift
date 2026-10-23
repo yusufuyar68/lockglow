@@ -19,5 +19,9 @@ struct LockglowApp: App {
             RootView()
                 .environmentObject(model)
         }
+        // is5-canli: closes the round's Live Activity left alone for 30 minutes, when iOS runs it.
+        .backgroundTask(.appRefresh(ReviewLiveActivity.refreshTaskID)) {
+            await ReviewLiveActivity.shared.backgroundRefresh()
+        }
     }
 }

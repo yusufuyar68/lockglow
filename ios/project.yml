@@ -65,6 +65,7 @@ targets:
         NSMicrophoneUsageDescription: "Söyle alıştırmasında söylediğin kelimeyi dinlemek için mikrofon kullanılır. Ses kaydedilmez ve telefondan çıkmaz."
         NSSpeechRecognitionUsageDescription: "Söylediğin kelimenin anlaşılıp anlaşılmadığını görmek için konuşma tanıma kullanılır. Bu iş telefonda yapılır; sesin hiçbir yere gönderilmez."
         ITSAppUsesNonExemptEncryption: false
+        NSSupportsLiveActivities: true # is5-canli: the "Tekrar" round on the Lock Screen (App/ReviewLiveActivity.swift)
         # The page colour (Theme.bg) with the icon's mark in the middle (Assets.xcassets).
         UILaunchScreen: {UIColorName: LaunchBackground, UIImageName: LaunchMark}
         UISupportedInterfaceOrientations:
@@ -73,6 +74,9 @@ targets:
         # app runs in the background; Apple: the .playback category needs this mode to play there.
         UIBackgroundModes:
           - audio
+          - fetch # is5-canli: closes the round's Live Activity (ReviewLiveActivity.refreshTaskID)
+        BGTaskSchedulerPermittedIdentifiers: # is5-canli
+          - $(PRODUCT_BUNDLE_IDENTIFIER).reviewLiveActivity
         # iPhone only, portrait only: opt out of the all-orientations rule (Xcode archive warning).
         UIRequiresFullScreen: true
         WGAppGroupID: $(APP_GROUP_ID)
