@@ -194,7 +194,8 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
 5. `t` anında gösterilen kelime = `R[geçen(d, t) mod |R|]`. Zaman çizelgesi girişleri: `[şimdi, sonraki her sınır…]`, i. giriş = `R[(geçen(d, şimdi) + i) mod |R|]`.
 6. Uygulama planı yeniden yazarken önce **eski** plan ve durumla `t = şimdi` için gösterilen kelimeyi hesaplar, yeni kuyruğu o kelimeyle başlatır ve `updated_at = şimdi` yazar.
 - `events/` klasörü: her olay ayrı bir dosya, adı `<unix_ms>-<uuid>.json`, içeriği:
-  `{ "type":"next|known|unknown|reveal", "word_id":Int, "at":ISO8601, "source":"system_small|system_medium|accessory_rectangular|accessory_inline" }`.
+  `{ "type":"next|known|unknown|reveal", "word_id":Int, "at":ISO8601, "source":"system_small|system_medium|accessory_rectangular|accessory_inline|control" }`.
+  `control`: iOS 18 kontrolleri (Denetim Merkezi, kilitli ekranın alt düğmeleri, Eylem düğmesi); kontrol o anda widget'ta görünen kelimeyle olay yazar.
   Uygulama ön plana gelince olayları işler (SRS'e "bildi/bilmedi" olarak), dosyaları siler, yeni `widget_plan.json` yazar ve `WidgetCenter.reloadAllTimelines()` çağırır.
 
 ## 7. Sürüm geçmişi

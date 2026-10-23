@@ -6,10 +6,12 @@ public enum WidgetEventType: String, Codable, Sendable {
     case reveal
 }
 
-/// `source` of an event file: the widget family the tap came from.
+/// `source` of an event file: the widget family the tap came from, or `control` for an iOS 18
+/// control (Control Center, the Lock Screen's bottom buttons, the Action button).
 public enum WidgetEventSource: String, Codable, Sendable {
     case systemSmall = "system_small"
     case systemMedium = "system_medium"
     case accessoryRectangular = "accessory_rectangular"
     case accessoryInline = "accessory_inline"
+    case control
 }

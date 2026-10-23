@@ -136,6 +136,17 @@ struct RootView: View {
         .onOpenURL { url in
             handle(url)
         }
+        // The "Tekrar'ı aç" control (iOS 18, Shared/ControlsIntents.swift) opens Tekrar in front:
+        // a word card or the widget guide closes (a system card stays, as for a reminder tap).
+        .onReceive(ControlOpenRequest.shared.$screen) { screen in
+            guard screen == .review else {
+                return
+            }
+            ControlOpenRequest.shared.clear()
+            detailWord = nil
+            showsWidgetGuide = false
+            selectedTab = .review
+        }
         .onAppear {
             openReviewIfRequested()
         }
