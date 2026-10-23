@@ -5,7 +5,11 @@ import TextFold
 
 /// Read-only access to `content.sqlite` (contract section 3). App only: the widget
 /// extension must never link this module or open SQLite.
-public final class ContentStore {
+///
+/// Safe to pass between threads: its only state is the GRDB `DatabaseQueue`, which runs every
+/// read one at a time on its own serial queue. The app opens it off the main thread
+/// (`ContentLoader`) and reads it on the main thread; the widget plan writer has its own.
+public final class ContentStore: @unchecked Sendable {
     private let dbQueue: DatabaseQueue
 
     /// Opens the database read-only. Throws if the file is missing or is not a SQLite database.

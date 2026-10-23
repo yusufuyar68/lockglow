@@ -12,6 +12,9 @@
 # bars and a full battery (no "Carrier"). Screenshots land in shots/<pass>/ (raw xcresult export
 # with manifest.json) and named/<pass>/<attachment name>.png. A pass whose UI test runner did not
 # start is run once more (UI tests only) as "<pass>-retry": out/<pass>-retry.log, shots/<pass>-retry/.
+# Input "olcum" = evet: after the passes, the launch and widget timings (LaunchPerformanceTests,
+# WidgetPerformanceTests; skipped otherwise) on an erased simulator: out/olcum.log, job summary.
+# Only the timings: -f gecisler=yok -f olcum=evet.
 name: screenshots
 
 on:
@@ -33,6 +36,11 @@ on:
         description: "Quiz için ~8 dk bekleyen geçiş (boş: hiçbiri)"
         type: string
         default: pro
+      olcum:
+        description: "Açılış ve widget ölçümleri (evet: geçişlerden sonra ayrı bir simülatörde)"
+        type: choice
+        default: hayir
+        options: [hayir, evet]
 
 jobs:
   screens:
@@ -212,6 +220,58 @@ jobs:
                           shutil.copyfile(source, target / name)
           PY
           find named -type f | sort || true
+      - name: Ölçümler (açılış süresi, widget zaman çizelgesi ve belleği)
+        if: inputs.olcum == 'evet'
+        working-directory: ios
+        env:
+          SIM: ${{ steps.sims.outputs.pro || steps.sims.outputs.se }}
+        run: |
+          mkdir -p out
+          [ -n "$SIM" ] || { echo "no simulator for the timings"; exit 1; }
+          # An erased simulator: the launch test measures a fresh install, like a new user.
+          xcrun simctl shutdown "$SIM" 2>/dev/null || true
+          xcrun simctl erase "$SIM"
+          xcrun simctl boot "$SIM" || true
+          xcrun simctl bootstatus "$SIM" -b > /dev/null || true
+          # The timing tests skip themselves without this (xcodebuild drops the TEST_RUNNER_ prefix).
+          export TEST_RUNNER_LOCKGLOW_PERF=1
+          xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+            -destination "id=$SIM" -derivedDataPath build/dd \
+            -only-testing:LockglowUITests/LaunchPerformanceTests \
+            -only-testing:LockglowWidgetSnapshots/WidgetPerformanceTests \
+            -resultBundlePath out/olcum.xcresult > out/olcum.log 2>&1 \
+            || echo "the timing run failed"
+          # 23 Oct: the UI test runner was killed before it connected ("Early unexpected exit"),
+          # as in the passes. Once more then, on an erased simulator, the launch timings only.
+          if grep -qiE "Early unexpected exit|failed to initialize for UI testing" out/olcum.log \
+            && ! grep -qF "Test Case '-[LockglowUITests.LaunchPerformanceTests" out/olcum.log; then
+            echo "::warning::the UI test runner did not start, trying the launch timings once more"
+            mv out/olcum.xcresult out/olcum-first.xcresult || true
+            xcrun simctl shutdown "$SIM" 2>/dev/null || true
+            xcrun simctl erase "$SIM"
+            xcrun simctl boot "$SIM" || true
+            xcrun simctl bootstatus "$SIM" -b > /dev/null || true
+            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+              -destination "id=$SIM" -derivedDataPath build/dd \
+              -only-testing:LockglowUITests/LaunchPerformanceTests \
+              -resultBundlePath out/olcum.xcresult >> out/olcum.log 2>&1 \
+              || echo "the second timing run failed"
+          fi
+          grep -E "measured|\[ölçüm\]|Test Case .* (passed|failed|skipped)|error:" out/olcum.log | tail -80 || true
+          {
+            echo "### Ölçümler (simülatör, $(xcrun simctl list devices | grep "$SIM" | head -1 | sed 's/ (.*//' | xargs))"
+            echo '```'
+            if grep -E "measured|\[ölçüm\]" out/olcum.log > out/olcum.txt; then
+              sed -E "s/^.*Test Case '-\[[A-Za-z]+\.//; s/\]' measured/ measured/" out/olcum.txt
+            else
+              echo "no measurement"
+            fi
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          xcrun simctl shutdown "$SIM" || true
+          # The UI test runner sometimes does not start (see the passes): no launch numbers is a failure.
+          grep -q "LaunchPerformanceTests testLaunchUntilResponsive\]' passed" out/olcum.log \
+            || { echo "::error::the launch timings did not run"; exit 1; }
       - name: Görüntüleri yükle
         if: always()
         uses: actions/upload-artifact@v4

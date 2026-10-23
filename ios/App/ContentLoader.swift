@@ -18,6 +18,9 @@ struct LoadedContent: Sendable {
     /// Topics the user can choose and every topic of each card; empty for seed words.
     let topics: [ContentTopic]
     let topicsOf: [Int: Set<String>]
+    /// The open content.sqlite when the words came from it (card details and the dictionary
+    /// search); nil for seed words. Opened here, off the main thread.
+    var store: ContentStore? = nil
 }
 
 /// Reads the feed words: the bundled `content.sqlite` (opened read-only, straight from the app
@@ -56,7 +59,8 @@ enum ContentLoader {
                         cardCount: count,
                         contentVersion: version,
                         topics: topics.topics,
-                        topicsOf: topics.topicsOf
+                        topicsOf: topics.topicsOf,
+                        store: store
                     )
                 }
                 logger.error("content.sqlite has no free cards; using seed words")

@@ -31,7 +31,9 @@ let package = Package(
         .target(name: "Scheduler", dependencies: ["CoreModels", "SharedState"]),
         // Leitner scheduling, queue composition, the app-private progress file and "Cümle kur"
         // (TextFold: its tiles are checked by folded keys). App only.
-        .target(name: "Learning", dependencies: ["CoreModels", "TextFold"]),
+        // The widget plan (WidgetPlanBuilder) needs SharedState and Scheduler; the widget itself
+        // links those two, never Learning.
+        .target(name: "Learning", dependencies: ["CoreModels", "TextFold", "SharedState", "Scheduler"]),
         // "Söyle" practice: compares what the speech recognizer heard with the card. Pure. App only.
         .target(name: "Pronunciation"),
         .target(
@@ -46,7 +48,9 @@ let package = Package(
         .testTarget(name: "TextFoldTests", dependencies: ["TextFold"]),
         .testTarget(name: "SharedStateTests", dependencies: ["SharedState", "CoreModels"]),
         .testTarget(name: "SchedulerTests", dependencies: ["Scheduler", "SharedState", "CoreModels"]),
-        .testTarget(name: "LearningTests", dependencies: ["Learning", "CoreModels"]),
+        .testTarget(name: "LearningTests", dependencies: ["Learning", "CoreModels", "SharedState", "Scheduler"]),
+        // Timings and sizes (`measure`, printed as "[ölçüm]" lines); Linux and macOS.
+        .testTarget(name: "PerformanceTests", dependencies: ["CoreModels", "SharedState", "Scheduler", "Learning"]),
         .testTarget(name: "PronunciationTests", dependencies: ["Pronunciation"]),
         .testTarget(
             name: "ContentStoreTests",
@@ -54,6 +58,10 @@ let package = Package(
                 "ContentStore",
                 "CoreModels",
                 "TextFold",
+                // The real content's first widget plan (ContentStorePerformanceTests).
+                "SharedState",
+                "Scheduler",
+                "Learning",
                 .product(name: "GRDB", package: "GRDB.swift"),
             ]
         ),
