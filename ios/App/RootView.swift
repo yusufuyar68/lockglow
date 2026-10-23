@@ -136,6 +136,12 @@ struct RootView: View {
         .onOpenURL { url in
             handle(url)
         }
+        .onAppear {
+            openReviewIfRequested()
+        }
+        .onChange(of: notifications.reviewRequested) { _, _ in
+            openReviewIfRequested()
+        }
         // Siri, Kestirmeler and a tapped Spotlight result (Intents/ShortcutRouter.swift): a word
         // opens as its whole card, "Tekrar" as the tab; the add form is the modifier's own sheet.
         .shortcutRoutes(
@@ -143,12 +149,6 @@ struct RootView: View {
             openWord: { open($0, in: model.feedWords, asCard: true) },
             openReview: { selectedTab = .review }
         )
-        .onAppear {
-            openReviewIfRequested()
-        }
-        .onChange(of: notifications.reviewRequested) { _, _ in
-            openReviewIfRequested()
-        }
     }
 
     /// Shown on first launch and from "Ayarlar"; the onboarding closes itself through the model.
