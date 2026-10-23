@@ -34,13 +34,19 @@ public enum DataImport {
     public static let maxDueAhead: TimeInterval = 2 * 365 * 86_400
     /// Dates before this are refused (Lockglow did not exist).
     public static let earliestDate = Date(timeIntervalSince1970: 1_577_836_800) // 2020-01-01
+    /// Own-word numbers above this are refused: far more than anyone adds, and the renumbering
+    /// adds to them, which must never overflow.
+    public static let maxCustomWordID = CustomWordID.first + 10_000_000
+    /// Counters above this are refused (a year of study is a few thousand answers).
+    public static let maxCount = 1_000_000
 
     // MARK: Checks
 
     /// Whether a progress record can be imported as it is.
     public static func isValid(_ p: WordProgress, now: Date) -> Bool {
         guard p.wordID > 0, (0...Leitner.maxBox).contains(p.box),
-              p.reviews >= 0, p.lapses >= 0, p.lapses <= p.reviews, p.exposures >= 0 else {
+              p.reviews >= 0, p.lapses >= 0, p.lapses <= p.reviews, p.exposures >= 0,
+              p.reviews <= maxCount, p.exposures <= maxCount, p.wordID < maxCustomWordID else {
             return false
         }
         if p.state == .learning && p.box < 1 {
@@ -63,7 +69,7 @@ public enum DataImport {
     /// it (`CustomWordDraft.problems`, the duplicate check aside) or its number or dates are off.
     public static func checkedCustomWord(_ word: CustomWord, now: Date) -> CustomWord? {
         let draft = CustomWordDraft(word)
-        guard CustomWordID.contains(word.id), draft.problems().isEmpty,
+        guard CustomWordID.contains(word.id), word.id < maxCustomWordID, draft.problems().isEmpty,
               isPlausiblePast(word.createdAt, now: now), isPlausiblePast(word.updatedAt, now: now) else {
             return nil
         }
@@ -79,7 +85,8 @@ public enum DataImport {
     }
 
     public static func isValid(_ entry: ReviewLogEntry, now: Date) -> Bool {
-        return entry.wordID > 0 && entry.reviews >= 1 && isPlausiblePast(entry.at, now: now)
+        return entry.wordID > 0 && entry.wordID < maxCustomWordID && entry.reviews >= 1
+            && entry.reviews <= maxCount && isPlausiblePast(entry.at, now: now)
     }
 
     private static func isPlausiblePast(_ date: Date, now: Date) -> Bool {
@@ -230,11 +237,14 @@ public enum DataImport {
         }
     }
 
-    /// Works out the import of `reading` into the phone's `progress` and own words.
+    /// Works out the import of `reading` into the phone's `progress` and own words. `cardIDs`:
+    /// the cards this phone has; a record of another card is left out and counted (nil: every
+    /// card id is taken, for a phone without the card database).
     public static func plan(
         _ reading: DataArchive.Reading,
         progress device: [Int: WordProgress],
         customWords deviceWords: CustomWordList,
+        cardIDs: Set<Int>? = nil,
         now: Date
     ) -> Plan {
         let archive = reading.archive
@@ -244,6 +254,7 @@ public enum DataImport {
 
         // Own words (rule 4): first the checks, then same English word, then numbers.
         var fileWords: [CustomWord] = []
+        var refusedIDs = Set<Int>()
         var seenIDs = Set<Int>()
         var seenLemmas = Set<String>()
         for raw in archive.customWords {
@@ -251,6 +262,9 @@ public enum DataImport {
                   seenIDs.insert(word.id).inserted,
                   seenLemmas.insert(CustomWordText.duplicateKey(word.lemma)).inserted else {
                 summary.skipped += 1
+                if !fileWords.contains(where: { $0.id == raw.id }) {
+                    refusedIDs.insert(raw.id)
+                }
                 continue
             }
             fileWords.append(word)
@@ -306,11 +320,16 @@ public enum DataImport {
         var incoming: [Int: WordProgress] = [:]
         for word in archive.progress {
             let record = word.progress
-            guard isValid(record, now: now) else {
+            guard isValid(record, now: now),
+                  CustomWordID.contains(record.wordID) || cardIDs?.contains(record.wordID) ?? true else {
                 summary.skipped += 1
                 continue
             }
             guard let id = phoneID(record.wordID) else {
+                // A refused own word's progress is counted with it; a deleted word's is not.
+                if refusedIDs.contains(record.wordID) {
+                    summary.skipped += 1
+                }
                 continue
             }
             guard incoming[id] == nil else {
@@ -415,10 +434,25 @@ public enum DataImport {
 }
 
 extension ReviewLog {
-    /// Writes `entries` as the whole log, in one atomic write (an import: `DataImport.Plan.log`).
-    /// A failure leaves the old log as it was.
-    public func replaceAll(with entries: [ReviewLogEntry]) throws {
+    /// The log's lines this build cannot read (cut short, or written by a later build), as they are.
+    public func unreadableLines() throws -> [Data] {
+        guard FileManager.default.fileExists(atPath: fileURL.path) else {
+            return []
+        }
+        return try Data(contentsOf: fileURL).split(separator: 0x0A).map { Data($0) }.filter { line in
+            ReviewLog.decode(line).isEmpty
+        }
+    }
+
+    /// Writes `entries` as the whole log, in one atomic write (an import: `DataImport.Plan.log`),
+    /// after `keeping`: lines a later build may still read stay as they were. A failure leaves the
+    /// old log as it was.
+    public func replaceAll(with entries: [ReviewLogEntry], keeping: [Data] = []) throws {
         var data = Data()
+        for line in keeping where !line.isEmpty {
+            data.append(line)
+            data.append(0x0A)
+        }
         for entry in entries {
             data.append(try ReviewLog.line(entry))
             data.append(0x0A)

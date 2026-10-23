@@ -87,6 +87,10 @@ The App, source code, design, icon, layouts, content database (definitions, tran
 
 **Your content:** Custom lists you create stay on your device and belong to you. We claim no right to use them.
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Out of date for the code: there are no custom lists; the content users type is "own words". Proposed text:
+>
+> "**Your content:** The words you add yourself, their meanings, your example sentences and notes belong to you; we claim no right to use them. This content stays on your device and, if you turn on iCloud sync, in your own iCloud account, and it can appear on the widget and the Lock Screen; do not type personal or sensitive information, other people's personal data or unlawful content into it. You can get a copy of your data in **Settings > Progress > Verilerin**. The app has no server; unless you made a backup, we cannot recover your data after you delete the app or the phone or use "Hepsini sil"." **[TEYİT: validity together with the data-loss exclusion in Section 9 under consumer law.]**
+
 ## 7. Acceptable use
 
 You agree not to:

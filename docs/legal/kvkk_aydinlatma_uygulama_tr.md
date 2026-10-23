@@ -5,6 +5,8 @@
 > **TASLAK:** Bu metin hukuki görüş alınmadan yayınlanmamalıdır. Köşeli parantez içindeki alanlar doldurulmalı, **[TEYİT]** işaretli noktalar avukatla netleştirilmelidir. Yayınlamadan önce bu kutuyu silin.
 >
 > **taslak-2 (22 Ekim 2026):** mikrofon (Söyle) ve sesli okuma paragrafı güncellendi; değişen yer **[TEYİT]** ile işaretli. Metin, abonelik ve analitik içeren ileriki sürüme göre yazılmıştır; ilk ücretsiz sürüm için sadeleştirme: `README.md` §4.1.
+>
+> **[ÖNERİ is5-veri, 2026-10-24]** **taslak-3 önerileri:** cihazdaki veriler, kendi kelimeleriniz, yerel ölçüm, "Verilerin" ekranı ve iCloud ile eşitleme, 24 Ekim 2026 koduna göre (`origin/main` cb3cf7a + `is5-veri` 79d4113). Ayrıntılı kanıt: `gizlilik_politikasi_tr.md` §3.1, 3.1a, 3.9–3.11 önerileri.
 
 **Son güncelleme:** [TARİH] · **Sürüm:** taslak-2
 
@@ -27,6 +29,14 @@ Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. ma
 
 Uygulama hesap gerektirmez; öğrenme verileriniz (seviye, kaydedilen kelimeler, quiz sonuçları, ayarlar) **yalnızca cihazınızda** kalır ve bize iletilmez. Aşağıdaki veriler bu durumun dışında, belirtilen amaçlarla işlenir.
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Bu paragraf şöyle genişletilmeli (neden: "quiz sonuçları" dışında tekrar kaydı, kendi kelimeler, son aramalar ve yerel ölçüm de cihazda tutuluyor; iCloud ile eşitleme ve "Verilerin" ekranı eklendi):
+>
+> "Uygulama hesap gerektirmez. Öğrenme verileriniz (seviye ve ayarlar, kelimelerdeki ilerleme, tekrar kaydı, kendi eklediğiniz kelimeler, Sözlük'teki son aramalar ve yalnızca sayılardan oluşan yerel kullanım ölçümü) **cihazınızda** kalır ve bize iletilmez. İsteğe bağlı **iCloud ile eşitleme**yi açarsanız ilerlemeniz ve kendi kelimeleriniz ayrıca **sizin iCloud hesabınızda** saklanır; bu kopyaya biz erişmeyiz (bkz. Bölüm 3). Verilerinizi **Ayarlar > İlerleme > Verilerin** bölümünden dosya olarak dışa aktarabilir, içe aktarabilir ve silebilirsiniz; dosyalar yalnızca sizin seçtiğiniz yere gider.
+>
+> Kendi eklediğiniz kelimeler ve anlamları widget'ta ve kilitli ekranda görünebilir; bu alanlara kişisel veya hassas bilgi yazmamanızı rica ederiz."
+>
+> **[TEYİT: Avukat: yalnız cihazda kalan ve bize ulaşmayan bu verilerin KVKK anlamında bizim işlememiz sayılıp sayılmadığı; tabloya satır gerekip gerekmediği (ses için sorulan `README.md` §6 soru 32 ile aynı soru).]**
+
 | Veri kategorisi | İşlenen veriler | İşleme amacı | Zorunlu mu? |
 |---|---|---|---|
 | **Müşteri işlem** | Rastgele uygulama kullanıcı kimliği (RevenueCat), satın alma ve abonelik kaydı (ürün, tarih, bitiş, deneme/yenileme/iade durumu), App Store ülkesi | Aboneliği doğrulamak, premium özellikleri açmak, satın alımları geri yüklemek, sahteciliği önlemek | Abonelik özelliğini kullanmak için zorunlu |
@@ -47,6 +57,8 @@ Uygulama hesap gerektirmez; öğrenme verileriniz (seviye, kaydedilen kelimeler,
 
 Bu nedenle ses için yukarıdaki tabloda bir veri kategorisi yer almaz. **[TEYİT: avukat; yalnız cihazda işlenen ve bize ulaşmayan sesin KVKK anlamında veri sorumlusu sıfatıyla "işleme" sayılıp sayılmadığı; kimlik tespiti amacı olmadığından biyometrik veri (KVKK m.6) sayılmayacağı varsayımı; tabloda ayrı satır gerekip gerekmediği. `README.md` §6 soru 20 ve 31.]**
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Kontrol (2026-10-24): mikrofon paragrafı kodla hâlâ uyumlu (kanıt: `gizlilik_politikasi_tr.md` §3.7 önerisi). Tek düzeltme: sesli okuma ve tanıma artık seçilen İngilizce aksanla (ABD ya da İngiltere) yapılıyor (`ios/Packages/VocabKit/Sources/CoreModels/SpeechSettings.swift:7–18`); paragrafta aksan geçmediği için metin değişmeden doğru kalır.
+
 ## 3. Kişisel verilerin kimlere ve hangi amaçla aktarılabileceği
 
 Verileriniz satılmaz ve reklam amacıyla üçüncü kişilerle paylaşılmaz. Aktarım yapılan taraflar şunlardır:
@@ -63,6 +75,11 @@ Verileriniz satılmaz ve reklam amacıyla üçüncü kişilerle paylaşılmaz. A
 **Yurt dışına aktarım hakkında:** Yukarıdaki alıcıların bir kısmı yurt dışındadır. Aktarımlar KVKK m.9 kapsamında, Kişisel Verileri Koruma Kurulu'nca öngörülen uygun güvencelerden biriyle (ör. standart sözleşme) yapılır. Standart sözleşme kullanıldığında, sözleşme imzalandıktan sonra 5 iş günü içinde Kişisel Verileri Koruma Kurumu'na bildirim yapılır. **[TEYİT: Her alıcı için kullanılacak dayanak; sağlayıcıların Türk standart sözleşmesini imzalayıp imzalamayacağı; bildirimin yapılıp yapılmadığı; açık rızanın sürekli aktarım için ek veya tek dayanak olarak kullanılıp kullanılamayacağı.]**
 
 Aktarılan veri en aza indirilmiştir: ad, e-posta, konum veya reklam kimliği aktarılmaz.
+
+> **[ÖNERİ is5-veri, 2026-10-24]** Tabloya iki not:
+>
+> 1. **iCloud ile eşitleme (isteğe bağlı, varsayılan kapalı):** Apple satırına "isteğe bağlı iCloud ile eşitleme: ilerlemeniz ve kendi kelimeleriniz, sizin iCloud hesabınızda (Apple'ın Türkiye dışında olabilecek sunucularında) saklanır; bu kopyaya biz erişmeyiz" eklenmeli. Aktarım sütunu için **[TEYİT: Kullanıcının kendi seçimiyle kendi iCloud hesabına giden ve geliştiricinin erişmediği verinin KVKK m.9 kapsamında bizim aktarımımız sayılıp sayılmadığı; sayılırsa dayanak (uygun güvence / arızi aktarımda açık rıza) ve anahtarın açık rıza yerine geçip geçemeyeceği. Kod: `ios/App/SyncKeyValueCloud.swift:3–17`, `ios/App/SyncSettingsView.swift:112`.]**
+> 2. **Dışa aktarılan dosyalar:** "Paylaşma penceresinden kendi seçtiğiniz yere (Mail, AirDrop, Dosyalar, başka uygulama) gönderdiğiniz dosyalar tarafımızdan aktarılmış sayılmaz; o hizmetin şartları geçerlidir." **[TEYİT]**
 
 ## 4. Kişisel veri toplamanın yöntemi ve hukuki sebebi
 
@@ -91,6 +108,8 @@ Aktarılan veri en aza indirilmiştir: ad, e-posta, konum veya reklam kimliği a
 
 Süre sonunda veriler silinir, yok edilir veya anonim hale getirilir.
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Tabloya satırlar eklenmeli: "Cihazınızdaki veriler: uygulamayı silene veya 'Hepsini sil'i kullanana kadar; yerel ölçüm en fazla 120 gün" ve "iCloud ile eşitleme kopyası (açtıysanız): 'iCloud'daki kopyayı sil'i kullanana kadar; uygulamayı silmek bu kopyayı silmez **[TEYİT]**". Kanıt: `gizlilik_politikasi_tr.md` §8 önerisi.
+
 ## 6. İlgili kişinin hakları (KVKK m.11)
 
 KVKK m.11 uyarınca veri sorumlusuna başvurarak kişisel verilerinizle ilgili şu haklara sahipsiniz:
@@ -104,6 +123,8 @@ KVKK m.11 uyarınca veri sorumlusuna başvurarak kişisel verilerinizle ilgili �
 - düzeltme, silme ve yok etme işlemlerinin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,
 - işlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,
 - kanuna aykırı işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme.
+
+> **[ÖNERİ is5-veri, 2026-10-24]** Listenin altına şu paragraf eklenmeli: "Cihazınızda duran ve bize ulaşmayan verileriniz için bu hakları doğrudan uygulamadan kullanabilirsiniz: **Ayarlar > İlerleme > Verilerin** bölümünde 'Dışa aktar' ile verilerinizin bir kopyasını alabilir, 'Hepsini sil' ile cihazdaki tüm verileri silebilir; kendi kelimelerinizi düzeltebilir veya silebilirsiniz. iCloud ile eşitlemeyi açtıysanız iCloud'daki kopyayı 'iCloud ile eşitle' ekranından silebilirsiniz. Bu veriler bizde bulunmadığından, bunlar için başvurunuzda size verebileceğimiz veya silebileceğimiz bir kopya yoktur." **[TEYİT: m.11 ve m.13 başvuru usulüyle ilişkisi; bkz. `gizlilik_politikasi_tr.md` §10 önerisi.]**
 
 ### Başvuru yöntemi
 

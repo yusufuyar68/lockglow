@@ -44,6 +44,7 @@ final class DataEraseTests: XCTestCase {
         try touch(group.appendingPathComponent("widget_state.json"))
         try touch(group.appendingPathComponent("events/1-a.json"))
         try touch(group.appendingPathComponent("Library/Caches/system.db"))
+        try touch(group.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist"))
 
         let failed = DataErase.empty([
             DataErase.Folder(support),
@@ -54,7 +55,7 @@ final class DataEraseTests: XCTestCase {
         XCTAssertEqual(failed, [])
         XCTAssertEqual(try names(support), [], "hidden files and folders too")
         XCTAssertEqual(try names(tmp), [])
-        XCTAssertEqual(try names(group), ["Library"])
+        XCTAssertEqual(try names(group), [".com.apple.mobile_container_manager.metadata.plist", "Library"], "iOS's own files stay")
         XCTAssertEqual(try names(group.appendingPathComponent("Library/Caches")), ["system.db"], "system folders stay")
         XCTAssertTrue(FileManager.default.fileExists(atPath: support.path), "the folder itself stays")
     }

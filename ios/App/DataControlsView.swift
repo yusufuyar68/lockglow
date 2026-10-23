@@ -18,6 +18,7 @@ struct DataControlsView: View {
     @State private var pending: PendingImport?
     @State private var importMessage: String?
     @State private var showsEraseConfirmation = false
+    @State private var eraseFailed = false
 
     private struct PendingImport: Identifiable {
         let id = UUID()
@@ -28,7 +29,7 @@ struct DataControlsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
-                Text("Verilerin yalnızca bu telefonda durur. Buradan bir kopyasını alabilir, başka telefona taşıyabilir ya da hepsini silebilirsin.")
+                Text("Verilerin bu telefonda durur. iCloud ile eşitle açıksa iCloud hesabında da durur. Buradan bir kopyasını alabilir, başka telefona taşıyabilir ya da hepsini silebilirsin.")
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
@@ -45,6 +46,10 @@ struct DataControlsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             prepareExport()
+        }
+        // The copies in the temporary folder go when the page closes (the share sheet keeps it open).
+        .onDisappear {
+            try? FileManager.default.removeItem(at: AppModel.exportFolder)
         }
         .fileImporter(isPresented: $showsImporter, allowedContentTypes: [.json]) { result in
             picked(result)
@@ -89,13 +94,13 @@ struct DataControlsView: View {
                     .buttonStyle(SettingsRowButtonStyle())
                 }
             } else if exportFailed {
-                Text("Dosyalar hazırlanamadı. Telefonunda yer olduğundan emin ol, sonra bu sayfayı yeniden aç.")
+                Text("Dosyalar şu an hazırlanamadı. Biraz sonra bu sayfayı yeniden aç.")
                     .settingsFootnote()
             } else {
                 ProgressView()
                     .frame(maxWidth: .infinity)
             }
-            Text("İlerlemen, bildiğin kelimeler, kendi kelimelerin ve ölçümler dosyaya yazılır. Dosyayı nereye göndereceğini sen seçersin. Yeni telefona taşımak için yedek dosyasını kullan. Tablo dosyaları Numbers ya da Excel'de açılır.")
+            Text("Dosyaya ilerlemen, cevap geçmişin, bildiğin kelimeler, kendi kelimelerin, ölçümler, ayarların ve son aramaların yazılır. Dosyayı nereye göndereceğini sen seçersin. Yeni telefona taşımak için yedek dosyasını kullan. Tablo dosyaları Numbers ya da Excel'de açılır.")
                 .settingsFootnote()
         }
     }
@@ -133,7 +138,7 @@ struct DataControlsView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 6)
             }
-            Text("Başka telefondan aldığın yedek dosyasını seç. Bu telefondaki veriler silinmez, ikisi birleşir. Ayarlar ve ölçümler bu telefondaki gibi kalır.")
+            Text("Başka telefondan aldığın yedek dosyasını seç. İkisi birleşir. Bir kelime iki yerde de varsa daha çok cevap verdiğin kayıt kalır. Ayarlar ve ölçümler bu telefondaki gibi kalır.")
                 .settingsFootnote()
         }
     }
@@ -184,12 +189,10 @@ struct DataControlsView: View {
     private var eraseSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader("Hepsini sil")
-            Text("Bu telefondaki bütün Lockglow verisini siler: ilerleme, kendi kelimelerin, ayarlar, ölçümler ve yedek kopyalar. İlerlemeyi sıfırla bunlardan yalnız ilerlemeyi siler. Silmeden önce bir kopya istersen önce yedek dosyasını paylaş.")
+            Text("Bu telefondaki bütün Lockglow verisini siler: ilerleme, kendi kelimelerin, ayarlar, ölçümler ve yedek kopyalar. İlerlemeyi sıfırla bunlardan yalnız ilerlemeyi siler. İlerlemeni saklamak istersen önce yedek dosyasını paylaş.")
                 .settingsFootnote()
-            if model.cloudSync.isEnabled {
-                Text("iCloud'daki kopya kalır. Onu iCloud ile eşitle sayfasından silebilirsin.")
-                    .settingsFootnote()
-            }
+            Text("iCloud'daki kopya ve telefonun eski yedekleri bundan etkilenmez. iCloud'daki kopyayı iCloud ile eşitle sayfasından silebilirsin.")
+                .settingsFootnote()
             Button(role: .destructive) {
                 showsEraseConfirmation = true
             } label: {
@@ -198,15 +201,27 @@ struct DataControlsView: View {
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
             .padding(.top, 8)
+            if eraseFailed {
+                Text("Bazı dosyalar silinemedi. Hepsini sil düğmesine yeniden dokun.")
+                    .settingsFootnote()
+            }
         }
     }
 
     private func eraseAll() {
-        model.eraseAllLocalData()
+        let failed = model.eraseAllLocalData()
+        // A "Tekrar" round on the Lock Screen ends too.
+        ReviewLiveActivity.shared.roundChanged(to: nil)
+        ReviewLiveActivity.shared.endLeftovers()
         // Reminders already planned or on screen go too.
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         center.removeAllDeliveredNotifications()
+        if !failed.isEmpty {
+            eraseFailed = true
+            AccessibilityNotification.Announcement(AttributedString("Bazı dosyalar silinemedi.")).post()
+            return
+        }
         AccessibilityNotification.Announcement(AttributedString("Bütün veriler silindi.")).post()
         dismiss()
     }
@@ -233,7 +248,7 @@ private struct ImportConfirmationSheet: View {
                             .foregroundStyle(Theme.ink)
                             .fixedSize(horizontal: false, vertical: true)
                     }
-                    Text("Bu telefondaki hiçbir şey silinmez.")
+                    Text("Bu telefondaki kelimelerin kalır. İki yerde de olan kelimede daha çok cevaplı kayıt seçilir.")
                         .settingsFootnote()
                         .padding(.top, 4)
                     Button("İçe aktar", action: confirm)

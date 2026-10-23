@@ -269,9 +269,9 @@ final class DataImportTests: XCTestCase {
         clockAhead.lastReviewedAt = now.addingTimeInterval(3600)
 
         let file = try reading(
-            progress: [badBox, moreLapsesThanAnswers, learningInBoxZero, answeredInTheFuture, dueInTenYears, before2020, badWordID, fine, clockAhead],
+            progress: [badBox, moreLapsesThanAnswers, learningInBoxZero, answeredInTheFuture, dueInTenYears, before2020, badWordID, fine, clockAhead, studied(first, reviews: 1)],
             words: [
-                word(first, "şarj"),                                   // Turkish letter
+                word(first, "şarj"),                                   // Turkish letter (its progress below)
                 word(first + 1, "a1"),                                  // not speakable
                 word(first + 2, String(repeating: "a", count: 40)),     // too long
                 word(first + 3, "awkward", ""),                         // no meaning
@@ -286,9 +286,9 @@ final class DataImportTests: XCTestCase {
         XCTAssertEqual(Set(result.progress.keys), [7, 8], "a clock a little ahead is fine")
         XCTAssertEqual(result.customWords.words.map { $0.lemma }, ["ripe"])
         XCTAssertEqual(result.log(device: [], deviceProgress: [:]).count, 1)
-        // 7 progress + 6 own words + 2 answers + 2 unreadable in the file.
-        XCTAssertEqual(result.summary.skipped, 17)
-        XCTAssertTrue(result.summary.lines.contains("Okunamayan kayıt: 17. Bunlar alınmaz."))
+        // 7 progress + 6 own words + the refused word's progress + 2 answers + 2 unreadable.
+        XCTAssertEqual(result.summary.skipped, 18)
+        XCTAssertTrue(result.summary.lines.contains("Okunamayan kayıt: 18. Bunlar alınmaz."))
     }
 
     func testRepeatedWordInTheFileIsReadOnce() throws {
@@ -297,6 +297,22 @@ final class DataImportTests: XCTestCase {
         XCTAssertEqual(result.summary.wordsInFile, 1)
         XCTAssertEqual(result.summary.skipped, 1)
         XCTAssertNotNil(result.progress[10])
+    }
+
+    func testHugeNumbersAndUnknownCardsAreSkipped() throws {
+        var countless = studied(9, reviews: 1)
+        countless.exposures = DataImport.maxCount + 1
+        let file = try reading(
+            progress: [studied(10, reviews: 1), studied(99, reviews: 1), countless],
+            words: [word(Int.max, "awkward"), word(DataImport.maxCustomWordID, "ripe")],
+            nextID: first,
+            log: [entry(Int.max, daysAgo: 1, reviews: 1)]
+        )
+        let result = DataImport.plan(file, progress: [:], customWords: CustomWordList(), cardIDs: [9, 10], now: now)
+        XCTAssertEqual(Set(result.progress.keys), [10], "card 99 is not on this phone")
+        XCTAssertTrue(result.customWords.isEmpty, "no number near Int.max: the renumbering cannot overflow")
+        // 99, countless, two own words, one answer.
+        XCTAssertEqual(result.summary.skipped, 5)
     }
 
     // MARK: Answers (rule 5)
@@ -330,6 +346,18 @@ final class DataImportTests: XCTestCase {
         XCTAssertEqual(try log.entries(), merged)
         try log.append([entry(3, daysAgo: 0, reviews: 1)])
         XCTAssertEqual(try log.entries().count, 3, "appending after a replace still works")
+
+        // A line this build cannot read (a later build's) survives the next replace.
+        let later = Data("{\"word_id\": 4, \"from\": \"a later build\"}".utf8)
+        var bytes = try Data(contentsOf: log.fileURL)
+        bytes.append(later)
+        bytes.append(0x0A)
+        try bytes.write(to: log.fileURL)
+        let kept = try log.unreadableLines()
+        XCTAssertEqual(kept, [later])
+        try log.replaceAll(with: merged, keeping: kept)
+        XCTAssertEqual(try log.entries(), merged)
+        XCTAssertEqual(try log.unreadableLines(), [later])
     }
 
     // MARK: Summary text

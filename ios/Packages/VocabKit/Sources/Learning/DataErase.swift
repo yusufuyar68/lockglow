@@ -36,7 +36,9 @@ public enum DataErase {
             guard let items = try? fileManager.contentsOfDirectory(at: folder.url, includingPropertiesForKeys: nil, options: []) else {
                 continue
             }
-            for item in items where !folder.keeping.contains(item.lastPathComponent) {
+            // iOS keeps its own container metadata there (".com.apple.mobile_container_manager…").
+            for item in items where !folder.keeping.contains(item.lastPathComponent)
+                && !item.lastPathComponent.hasPrefix(".com.apple.") {
                 do {
                     try fileManager.removeItem(at: item)
                 } catch {

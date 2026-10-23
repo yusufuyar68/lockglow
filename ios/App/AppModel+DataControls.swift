@@ -56,6 +56,13 @@ extension AppModel {
     /// Writes the backup and the four tables into `exportFolder` (emptied first) for the share
     /// sheet. Throws when a file cannot be written.
     func writeExportFiles(now: Date = Date()) throws -> (backup: URL, tables: [URL]) {
+        // A copy made while the files could not be read would look complete and be nearly empty.
+        guard canImportData else {
+            throw DataImportFailure.notReady
+        }
+        if let url = try? ReviewLog.defaultURL() {
+            _ = try ReviewLog(fileURL: url).entries()
+        }
         let archive = makeDataArchive(now: now)
         let folder = AppModel.exportFolder
         let fileManager = FileManager.default
@@ -63,7 +70,11 @@ extension AppModel {
         try fileManager.createDirectory(at: folder, withIntermediateDirectories: true)
         func write(_ file: DataExportFile) throws -> URL {
             let url = folder.appendingPathComponent(file.name)
+            #if canImport(Darwin)
+            try file.data.write(to: url, options: [.atomic, .completeFileProtection])
+            #else
             try file.data.write(to: url, options: [.atomic])
+            #endif
             return url
         }
         let backup = try write(try archive.backupFile(calendar: .current))
@@ -111,7 +122,7 @@ extension AppModel {
         guard canImportData else {
             return nil
         }
-        return DataImport.plan(reading, progress: progress, customWords: customWordLibrary.currentList, now: now).summary
+        return DataImport.plan(reading, progress: progress, customWords: customWordLibrary.currentList, cardIDs: importableCardIDs, now: now).summary
     }
 
     /// Imports `reading` (DataImport's rules): the own words first (the progress may belong to
@@ -122,8 +133,18 @@ extension AppModel {
             return .failure(.notReady)
         }
         ingestWidgetEvents()
+        // The log is read before anything changes: if it cannot be read, nothing is imported.
+        let log = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+        let logBefore: [ReviewLogEntry]
+        let keptLines: [Data]
+        do {
+            logBefore = try log?.entries() ?? []
+            keptLines = try log?.unreadableLines() ?? []
+        } catch {
+            return .failure(.notSaved)
+        }
         let before = progress
-        let plan = DataImport.plan(reading, progress: before, customWords: customWordLibrary.currentList, now: now)
+        let plan = DataImport.plan(reading, progress: before, customWords: customWordLibrary.currentList, cardIDs: importableCardIDs, now: now)
         if plan.summary.changesNothing {
             return .success(plan.summary)
         }
@@ -142,18 +163,28 @@ extension AppModel {
                 return .failure(.notSaved)
             }
         }
-        if let url = try? ReviewLog.defaultURL() {
-            let log = ReviewLog(fileURL: url)
-            if let current = try? log.entries() {
-                // Best effort, like every log write: a failure loses only FSRS history.
-                try? log.replaceAll(with: plan.log(device: current, deviceProgress: device))
-            }
+        if let log = log {
+            // Answers a widget tap added while saving (the plan rewrite applies pending taps) stay.
+            let current = (try? log.entries()) ?? logBefore
+            let added = current.count > logBefore.count ? Array(current[logBefore.count...]) : []
+            let merged = plan.log(device: logBefore, deviceProgress: device) + added
+            // Best effort, like every log write: a failure loses only FSRS history.
+            try? log.replaceAll(with: merged, keeping: keptLines)
         }
         customWordLibrary.reserveIDs(progress.keys)
         LocalMetricsRecorder.shared.recordBoxes(progress)
         // While iCloud sync is on, the other devices get the import too.
         syncWithCloud()
         return .success(plan.summary)
+    }
+
+    /// The card ids an import may bring progress for: the loaded cards. Nil with seed words only
+    /// (the backup's cards are then unknown here, not wrong), so nothing is left out for it.
+    private var importableCardIDs: Set<Int>? {
+        guard contentSource == .database else {
+            return nil
+        }
+        return Set(words.lazy.filter { !$0.isUserAdded }.map { $0.id })
     }
 
     // MARK: Erase
@@ -177,11 +208,19 @@ extension AppModel {
         setReminderEnabled(false)
         setReminderMinuteOfDay(AppPreferences.defaultReminderMinuteOfDay)
 
-        let failed = DataErase.empty(AppModel.eraseFolders())
+        // Items the system holds in the temporary folder or the caches may refuse; they are not ours.
+        let fileManager = FileManager.default
+        let systemFolders = [fileManager.temporaryDirectory] + fileManager.urls(for: .cachesDirectory, in: .userDomainMask)
+        let failed = DataErase.empty(AppModel.eraseFolders()).filter { item in
+            !systemFolders.contains { item.standardizedFileURL.path.hasPrefix($0.standardizedFileURL.path) }
+        }
         AppModel.eraseSettings()
         LocalMetricsRecorder.shared.reset()
         AppPreferences.onboardingCompleted = false
         showOnboarding()
+        // A fresh plan of the default deck: the widgets and the Watch drop the old words now
+        // (the Watch gets every plan the app writes).
+        refreshWidgetPlan()
         reloadWidgets()
         return failed
     }

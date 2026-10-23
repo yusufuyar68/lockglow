@@ -1,6 +1,6 @@
 # App Store Connect "App Privacy" Cevap Kâğıdı ve PrivacyInfo.xcprivacy Kontrol Listesi
 
-**Lockglow** · iOS 17+ · App + Widget Extension · Sürüm: taslak-2 (22 Ekim 2026: Söyle, widget sesi, şimdiki derleme için Bölüm 2A ve 5.6) · Tarih: [TARİH]
+**Lockglow** · iOS 17+ · App + Widget Extension · Sürüm: taslak-2 (22 Ekim 2026: Söyle, widget sesi, şimdiki derleme için Bölüm 2A ve 5.6) · taslak-3 önerileri: is5-veri · Tarih: [TARİH]
 
 > **TASLAK:** Hukuki/uyum görüşü değildir; avukat ve gerçek ağ trafiği doğrulaması gerekir. Bu kâğıt, planlanan SDK'lara göre **muhafazakâr** (daha çok beyan eden) yorumla hazırlandı. Apple'ın veri türü adları ve soru akışı İngilizce bırakıldı; App Store Connect'te aynen görünür. Apple'ın güncel soru listesi değişmiş olabilir **[TEYİT]**.
 
@@ -20,6 +20,13 @@
 | V8 | Arka uç yok. İçerik uygulama paketinde gelir (CDN/CloudKit **sonraki sürümlerde**; bkz. Bölüm 5, "yeniden kontrol tetikleyicileri"). | — |
 | V9 | **Söyle (telaffuz):** mikrofon yalnızca kullanıcı Söyle'ye dokununca ve izinle açılır. iOS 26+: `SpeechAnalyzer` + `DictationTranscriber` (Apple: bu modüller sesi Apple sunucularına göndermez); iOS 17–25: `SFSpeechRecognizer` + `requiresOnDeviceRecognition = true`, cihaz içi tanıma yoksa özellik çalışmaz (sunucuya düşmez). Ses yalnızca bellekte, dosyaya yazılmaz; tanınan metin ve sonuç ilerleme dosyasına kaydedilmez; arka plana geçişte ve ses kesintisinde dinleme iptal. **[TEYİT: taslak-2]** | Kod (2026-10-22): `PronunciationRecognizer.swift:139–178` (izin, arka uç), `:470` (`requiresOnDeviceRecognition`), `:192–213` (yalnız bellek tamponu); `PronunciationPracticeView.swift:144–160` (arka plan/kesinti iptali) |
 | V10 | **Şimdiki derleme** (2026-10-22) RevenueCat, PostHog ve Sentry **içermez**; ağ kodu yok. Bölüm 2 ileriki ticari sürüm içindir; şimdiki derlemenin cevabı **Bölüm 2A**'dadır. **[TEYİT: taslak-2]** | Kod araması (Bölüm 2A) |
+
+> **[ÖNERİ is5-veri, 2026-10-24]** Varsayım tablosuna ekler ve düzeltmeler (kod: `origin/main` cb3cf7a + `is5-veri` 79d4113, 2026-10-24):
+>
+> - **V9 satır numaraları eskidi:** `PronunciationRecognizer.swift` büyüdü. Güncel yerler: izin ve arka uç `:262–330` (iOS 26+ dalı `:276–309`, konuşma tanıma izni yalnız iOS 17–25 `:311–318`, `:347`), cihaz içi tanıma `:319–321` ve `:745` (`requiresOnDeviceRecognition = true`), yalnız bellek tamponu `:373–387`, model indirme (`AssetInventory`) `:592`; iptal `PronunciationPracticeView.swift:216–260`. Davranış değişmedi. Yeni: tanıma dili "Ses ve aksan" ayarından gelir (en-US / en-GB; iOS 17–25'te cihazda tanınamazsa en-US) `PronunciationRecognizer.swift:40–41`, `:319–321`.
+> - **V11 (yeni) iCloud ile eşitleme:** `NSUbiquitousKeyValueStore`, tek anahtar `lockglow.sync.1`, zlib ile sıkıştırılmış JSON (`ios/App/SyncKeyValueCloud.swift:3–17`). İçerik: kart ilerlemesi, kendi kelimeler (kelime, anlam, örnek, not, tarihler, rastgele uuid), silinen kendi kelimelerin uuid'i ve zamanı, son sıfırlama zamanı (`Learning/SyncSnapshot.swift:21–37`, `:101–148`). Ayarlar, tekrar kaydı, ölçüm, son aramalar eşitlenmez (`ios/App/SyncSettingsView.swift:101–105`). Varsayılan kapalı (`ios/App/SyncController.swift:55–56`, `:118`). Şu an `com.apple.developer.ubiquity-kvstore-identifier` yetkisi yok (`ios/project.yml:105–109`), bu yüzden derlemede çalışmaz (`SyncKeyValueCloud.swift:8–10`). Geliştiriciye açık sunucu ya da panel yok. Hesap işareti (`ubiquityIdentityToken`) yalnız cihazda UserDefaults'ta (`SyncController.swift:22–24`, `:111`).
+> - **V12 (yeni) "Verilerin":** dışa aktarma yalnız kullanıcı dokununca, `ShareLink` ile (`ios/App/DataControlsView.swift:77–85`); içe aktarma `fileImporter` (yalnız JSON) ile ve onaydan sonra (`DataControlsView.swift:49`, `:215–255`); "Hepsini sil" yerel dosya ve ayarları siler, iCloud kopyasını bırakır (`ios/App/AppModel+DataControls.swift:161–220`). Ağ kodu yok.
+> - **V7'ye ek:** widget planı Apple Watch'a WatchConnectivity ile gönderiliyor (`ios/App/WatchPlanRelay.swift:1–4`, `ios/App/WatchBridge.swift:62`). Veri kullanıcının kendi cihazları arasında kalır; geliştiriciye gelmez. `ios/Watch` altında `PrivacyInfo.xcprivacy` bulunamadı **[TEYİT: saat uzantısı required-reason API kullanıyorsa manifest gerekir; bu denetimin kapsamı dışında, ayrıca bakılmalı]**.
 
 ## 1. Apple'ın tanımları (kısaca)
 
@@ -61,6 +68,12 @@
 | **Diagnostics**: Other Diagnostic Data | **Yes** *(yalnızca Sentry ve rıza ile)* | **Yes** | **No** | **App Functionality** | **Sentry:** cihaz modeli, iOS/uygulama sürümü, bellek/pil gibi olay ekleri. |
 | **Other Data**: Other Data Types | **No** | – | – | – | Başka veri türü toplanmaz. (Apple'ın yeni "Surroundings" ve "Body" türleri de uygulanamaz: kamera/derinlik/el-baş izleme yok **[TEYİT: güncel liste]**.) |
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Tablodaki üç satıra not:
+>
+> - **User Content: Other User Content** satırındaki "CloudKit v1.2" notu eskidi. Eşitleme CloudKit değil, iCloud anahtar-değer deposu (V11). Kendi kelimeler (kullanıcının yazdığı metin) bu deponun içinde, **kullanıcının kendi iCloud hesabında** durur; geliştirici okuyamaz. Muhafazakâr yorumla bile "Collected: No" beklenir, çünkü veri "siz ve/veya üçüncü taraf ortaklarınız"ın erişebileceği bir yere gitmiyor; Apple kullanıcının iCloud sağlayıcısıdır. **[TEYİT: Apple'ın güncel App Privacy belgesinde, geliştiricinin erişemediği iCloud (KVS/CloudKit özel veritabanı) verisinin "collect" sayılmadığını açıkça yazan bir cümle var mı? Bu denetimde Apple belgesi okunmadı.]**
+> - **Search History:** Son aramalar (en fazla 8, `ios/App/SozlukRecentSearches.swift:11`) yalnızca kullanıcı "Dışa aktar"ı seçip dosyayı kendi seçtiği yere gönderirse cihazdan çıkar (`Learning/DataExport.swift:106`). Geliştiriciye ulaşmaz; "No" kalır **[TEYİT]**.
+> - **Dışa aktarma genel olarak:** Kullanıcı başlattığı, hedefini kendisinin seçtiği (`ShareLink`) ve geliştiriciye ulaşmayan dosya paylaşımı "collect" tanımına (§1) girmez; hiçbir satır değişmez **[TEYİT]**.
+
 **"Tracking" ekranı:** *"Do you or your third-party partners use data from this app for tracking?"* → **No**. ATT istemi gösterilmez, `NSUserTrackingUsageDescription` **eklenmez**.
 
 ## 2A. Şimdiki derleme için cevap: "Data Not Collected"
@@ -84,11 +97,26 @@ Kodda doğrulananlar (2026-10-22):
 | Widget hoparlörü | Cihaz içi ses, ağ yok (V7) | `ios/Shared/SpeakWordIntent.swift`, `ios/Shared/WordSpeech.swift` |
 | Yerel bildirim | Sunucu ve bildirim anahtarı yok | `ios/App/ReminderScheduler.swift` |
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Bu tabloya eklenecek satırlar ve düzeltmeler (2026-10-24):
+>
+> | Kontrol | Sonuç | Yer |
+> |---|---|---|
+> | Ağ kodu satırındaki yer | `PronunciationRecognizer.swift:343` artık `:592` (`AssetInventory`) | aynı dosya |
+> | Dışa aktar (paylaşma penceresi) | Yalnız kullanıcı dokununca; dosyalar uygulamanın geçici klasörüne yazılır, `ShareLink` açılır, hedefi kullanıcı seçer; ağ kodu yok, geliştiriciye bir şey gitmez → beyan gerekmez **[TEYİT]** | `ios/App/AppModel+DataControls.swift:13–72`, `ios/App/DataControlsView.swift:77–85` |
+> | İçe aktar (dosya seçici) | Kullanıcı `fileImporter` ile JSON seçer; dosya `FileHandle.read(upToCount:)` ile en fazla 50 MB okunur, dosya tarihine/boyutuna bakılmaz; onaydan sonra birleştirilir; cihazdan bir şey çıkmaz (eşitleme açıksa sonuç kullanıcının iCloud'una gider, V11) | `AppModel+DataControls.swift:78–106`, `:154–155`; `DataControlsView.swift:49`; `Learning/DataExport.swift:30` |
+> | Hepsini sil | Application Support, Documents, Caches, geçici klasör ve App Group içeriği (App Group `Library` hariç), uygulama ve App Group UserDefaults, bekleyen/gelmiş bildirimler silinir; önce eşitleme kapanır, iCloud kopyası kalır. Klasörler tarih/boyut anahtarı istenmeden listelenir | `AppModel+DataControls.swift:161–220`, `Learning/DataErase.swift:36`, `DataControlsView.swift:208–209` |
+> | iCloud ile eşitleme | Kullanıcının kendi iCloud hesabındaki anahtar-değer deposu; varsayılan kapalı; bu derlemede yetki yok, çalışmaz (V11) | `ios/App/SyncKeyValueCloud.swift`, `ios/App/SyncController.swift`, `ios/project.yml:105–109` |
+> | Uygulama manifesti (düzeltme) | UserDefaults artık `CA92.1` **ve** `1C8F.1` (App Group "Ses ve aksan", `ios/Shared/WordSpeech.swift:6–15`); FileTimestamp `C617.1` | `ios/App/PrivacyInfo.xcprivacy` |
+> | Widget manifesti (düzeltme) | UserDefaults `1C8F.1` (ses ayarı okunuyor); toplanan veri yok | `ios/Widgets/PrivacyInfo.xcprivacy` |
+> | Apple Watch | Widget planı saate gider (kullanıcının cihazları arası; V7 eki); saat hedefinde manifest bulunamadı | `ios/App/WatchBridge.swift:62` |
+
 **Tracking → No.** ATT istemi yok, `NSUserTrackingUsageDescription` yok.
 
 Bu cevap verilirse gizlilik politikası ve aydınlatma metni de buna göre sadeleştirilmelidir (`README.md` §4.1); aksi hâlde politika, etikette olmayan bir veri toplamayı (RevenueCat) anlatmış olur. SDK eklendiği gün Bölüm 2'ye geçilir.
 
 **Doğrulama (yayından önce):** temiz kurulumla uygulamayı ve Söyle'yi **uçak modunda** deneyin (cihaz içi çalıştığının pratik kanıtı); bir trafik aracıyla (Proxyman vb.) Apple dışında hiçbir sunucuya istek gitmediğini görün **[TEYİT]**.
+
+> **[ÖNERİ is5-veri, 2026-10-24]** Sonuç: "Verilerin" ekranı ve iCloud ile eşitleme **"Data Not Collected" cevabını değiştirmez**, şu koşullarla: (1) dışa aktarma yalnız kullanıcının seçtiği hedefe gider ve uygulama hiçbir dosyayı kendisi bir sunucuya yüklemez; (2) iCloud kopyası kullanıcının kendi iCloud hesabında kalır ve geliştiricinin erişebileceği bir CloudKit genel veritabanına, sunucuya ya da panele gitmez **[TEYİT: Apple'ın güncel tanımı]**; (3) analitik eklenirse dışa aktarma/içe aktarma/silme olaylarına içerik (kelime, arama) konmaz. Ek doğrulama: eşitleme açıkken trafik aracında yalnız Apple iCloud alan adlarının göründüğünü kontrol edin. Ayrıca "Söyle tanılama" ve "Yerel ölçüm" geliştirici ekranları mağaza derlemesinde hâlâ açık (`ios/App/WidgetHealthView.swift:11`, `showsInRelease = true`); etikete etkisi yok (veri cihazda), ama yayından önce kapatılması planlanmıştı.
 
 ## 3. App Store Connect'te nasıl görünür (beklenen etiket)
 
@@ -159,6 +187,13 @@ Bu cevap verilirse gizlilik politikası ve aydınlatma metni de buna göre sadel
 - Uygulama: UserDefaults `CA92.1` (yalnız `UserDefaults.standard`; App Group'ta UserDefaults kullanılmıyor, paylaşım dosyayla), FileTimestamp `C617.1` (günlük ilerleme yedeği). Yukarıdaki `1C8F.1` maddesi App Group UserDefaults kullanılırsa gerekir; şu an gerekmez.
 - Widget: required-reason API listesi boş. Uzantı dosya zaman damgası, disk alanı veya açılış süresi API'si kullanmıyorsa doğru **[TEYİT: Xcode Privacy Report ile]**.
 
+> **[ÖNERİ is5-veri, 2026-10-24]** §5.4a artık eski. Güncel durum (2026-10-24):
+>
+> - **App Group UserDefaults kullanılıyor:** "Ses ve aksan" ayarı App Group'un UserDefaults'unda (`ios/Shared/WordSpeech.swift:6–15`); uygulama manifestinde `CA92.1` + `1C8F.1`, widget manifestinde `1C8F.1` var. Yukarıdaki "App Group'ta UserDefaults kullanılmıyor; 1C8F.1 şu an gerekmez" cümlesi silinmeli. "Hepsini sil" App Group UserDefaults'u da siler (`ios/App/AppModel+DataControls.swift:215–219`).
+> - **FileTimestamp `C617.1`:** artık iki günlük yedek için: `progress.backup.json` ve `custom_words.backup.json` (`Learning/ProgressStore.swift:162–164`, `Learning/CustomWords.swift:617–620`). Neden kodu aynı (uygulama kabındaki dosyalar).
+> - **Yeni kodda required-reason API yok:** içe aktarma seçilen dosyayı `FileHandle.read(upToCount:)` ile okur, dosya tarihine veya boyutuna bakmaz (`AppModel+DataControls.swift:87–93`); bu yüzden `3B52.1` (kullanıcının seçtiği dosyanın zaman damgası) gerekmez. Silme klasörleri `contentsOfDirectory(…, includingPropertiesForKeys: nil)` ile, tarih/boyut anahtarı istemeden listeler (`Learning/DataErase.swift:36`). Dışa aktarma yalnız yazar. Disk alanı API'si kullanılmıyor (kodda `volumeAvailableCapacity`/`systemFreeSize` araması boş).
+> - **iCloud anahtar-değer deposu** (`NSUbiquitousKeyValueStore`) ve `FileManager.ubiquityIdentityToken` Apple'ın required-reason listesinde değil; manifest değişmez **[TEYİT: Apple'ın güncel listesi]**. Eşitleme açıldığında App ID'ye iCloud yeteneği ve `com.apple.developer.ubiquity-kvstore-identifier` eklenir; bu bir gizlilik manifesti değil, yetki değişikliğidir.
+
 ### 5.5 Doğrulama adımları (her gönderimden önce)
 
 1. [ ] **Xcode > Product > Archive**, sonra arşiv üzerinde **Generate Privacy Report** (tüm manifestleri birleştiren PDF). Rapordaki veri türleri Bölüm 2 ile aynı mı?
@@ -184,6 +219,8 @@ Kaynak: `ios/project.yml` (XcodeGen, `targets.Lockglow.info.properties`). Bu bel
 | `ITSAppUsesNonExemptEncryption` | `false` | — | Gizlilikle ilgisi yok; ihracat beyanı. |
 | Bildirim izni | Info.plist anahtarı gerekmez | **Evet** (yerel bildirim) | — |
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Tablodaki `NSSpeechRecognitionUsageDescription` satırının "Şimdiki metin" sütunu eskidi. `ios/project.yml:65`'teki güncel metin: "Söylediğin kelimenin anlaşılıp anlaşılmadığını görmek için konuşma tanıma kullanılır. Bu iş telefonda yapılır; sesin hiçbir yere gönderilmez." Belgelerle hâlâ tutarlı: iOS 17–25'te cihaz içi tanıma zorunlu (`PronunciationRecognizer.swift:319–321`, `:745`), iOS 26+'da izin hiç sorulmaz (`:276–309`). Eski metindeki "Apple'a ya da başka bir sunucuya" yerine "hiçbir yere" deniyor; anlam aynı, daha geniş. "Kelime/cümle" notu ve İngilizce karşılık eksikliği sürüyor (`InfoPlist.strings`/`.xcstrings` hâlâ yok; `ios/project.yml:8` `developmentLanguage: en`). İngilizce taslağı da güncellenmeli: "Speech recognition checks whether the word you said was understood. This happens on your iPhone; your voice is not sent anywhere." `NSMicrophoneUsageDescription` (`ios/project.yml:64`) değişmedi.
+
 **Bulunan uyumsuzluklar:**
 
 1. **Dil:** İzin metinleri yalnızca Türkçe; `developmentLanguage: en`, `InfoPlist.strings`/`.xcstrings` yok. İngilizce mağaza yerelleştirmesi açılırsa İngilizce kullanıcı Türkçe izin penceresi görür. Mağazadan önce İngilizce karşılık eklenmeli (taslak: "Söyle listens to the word or sentence you say. Nothing is recorded, and your voice never leaves your iPhone." / "Speech recognition runs only on your iPhone to check how you said it. Your voice is not sent to Apple or any server.").
@@ -197,6 +234,16 @@ Kaynak: `ios/project.yml` (XcodeGen, `targets.Lockglow.info.properties`). Bu bel
 - SDK eklendi/çıkarıldı/yükseltildi (RevenueCat, PostHog, Sentry, GRDB, yeni analitik/atıf aracı),
 - Analitiğe yeni olay veya özellik eklendi; PostHog/Sentry ayarı (GeoIP, replay, autocapture, tracing) değişti,
 - **Yeni özellik:** CloudKit senkronu (v1.2), içerik güncellemeleri için CDN (IP adresi sunucu günlüğüne düşer), Söyle'de ses ya da tanınan metnin cihazdan çıkması (sunucuya giderse Audio Data = Yes), Söyle sonuçlarının analitiğe gönderilmesi (Product Interaction; tanınan metin giderse ayrıca Audio Data / Other User Content), sesli okumada bulut seslendirme (TTS) kullanılması (okunan metin ve IP sunucuya gider) **[TEYİT: taslak-2]**, hesap/giriş, uzaktan push (bildirim anahtarı), Apple Ads AdServices atıfı, uygulama içi destek formu, yapay zekâ özellikleri (5.1.2(i): üçüncü taraf yapay zekâya veri gönderme için açık izin),
+
+> **[ÖNERİ is5-veri, 2026-10-24]** Tetikleyici listesine ekler (2026-10-24):
+>
+> - **iCloud ile eşitlemenin açılması** (App ID'ye iCloud yeteneği ve KVS yetkisi eklendiği sürüm): politika §3.11, aydınlatma §3, bu kâğıt V11 aynı sürümde yayında olmalı; "CloudKit senkronu (v1.2)" ifadesi "iCloud anahtar-değer eşitlemesi (kodda, kapalı)" olmalı. CloudKit'e geçilirse veya **genel** (public) CloudKit veritabanı kullanılırsa yeniden değerlendirin (genel veritabanı geliştiricinin erişimindedir → User Content = Yes olabilir).
+> - Eşitlenen ya da dışa aktarılan **veri türüne yeni alan** eklenmesi (ör. ayarlar, Söyle sonuçları, tanınan metin).
+> - Dışa aktarmanın **uygulama tarafından otomatik** bir hedefe (sunucu, e-posta adresi, CloudKit genel veritabanı) gönderilmesi; içe aktarmanın bir web adresinden dosya indirmesi.
+> - "Hepsini sil"in kapsamının daralması (politika §3.10 neyi sildiğini sayıyor).
+> - Apple Watch uygulamasının saate giden veriyi değiştirmesi veya saatin kendi ağ erişimi kazanması.
+> - "Söyle tanılama"/"Yerel ölçüm" ekranlarının verisini dosyaya yazmaya başlaması.
+
 - RevenueCat entegrasyonları veya paywall deneyleri değişti.
 
 ### SDK değişiklik kaydı (doldurulacak)
