@@ -3,10 +3,12 @@ import UIKit
 import CoreModels
 import Learning
 
-/// Vertical paging feed: one full-page card per word of the user's deck (iOS 17 scroll APIs).
-/// At accessibility text sizes there are no pages: each card is as tall as its content and
-/// scrolls with the feed, never on its own (README rule 5). No counter, no page dots. Once the
-/// day's new cards reach the daily goal, the end-of-day card is the next page (`considerDayEnd`).
+/// Vertical paging feed: one full-page card per word of the user's deck (iOS 17 scroll APIs),
+/// `FeedCardView` (FeedCardView.swift). At accessibility text sizes there are no pages: each card
+/// is as tall as its content and scrolls with the feed, never on its own (README rule 5). No
+/// counter, no page dots. A card moving off its page fades and settles back a little
+/// (`FeedPageTransition`; only the fade with Reduce Motion). Once the day's new cards reach the
+/// daily goal, the end-of-day card is the next page (`considerDayEnd`, `FeedDayEndView`).
 struct FeedView: View {
     @EnvironmentObject private var model: AppModel
     /// One system card per opening (RootView): the end-of-day card asks it first.
@@ -38,6 +40,8 @@ struct FeedView: View {
     private static let hintCardChanges = 3
     /// Below a paged card, above the tab bar; the tab bar veil fades in over it.
     private static let pageBottomGap: CGFloat = 12
+    /// Left and right of a card: 12 pt, so the card's 24 pt margin leaves a long enough line.
+    private static let pageSideGap: CGFloat = 12
 
     var body: some View {
         VStack(spacing: 0) {
@@ -120,6 +124,7 @@ struct FeedView: View {
                 ForEach(items) { item in
                     page(item, isPaged: isPaged)
                         .containerRelativeFrame(isPaged ? [.horizontal, .vertical] : [.horizontal])
+                        .modifier(FeedPageTransition(isEnabled: isPaged, reduceMotion: reduceMotion))
                 }
             }
             .scrollTargetLayout()
@@ -180,11 +185,11 @@ struct FeedView: View {
 
     private func card(for word: WidgetWord, isPaged: Bool) -> some View {
         let words = model.feedWords
-        return WordCardView(
+        return FeedCardView(
             word: word,
             detail: model.detail(for: word),
-            fillsPage: true,
             isFirstEncounter: encounters.isFirstEncounter(word.id, progress: model.progress[word.id]),
+            isLearning: model.learningState(of: word) == .learning,
             // Only while a Lockglow widget is on the Lock Screen (last health check).
             isOnLockScreen: model.hasLockScreenWidget && word.id == model.lockScreenWordID,
             known: knownControl(for: word),
@@ -193,7 +198,13 @@ struct FeedView: View {
             openDetail: {
                 detailWord = word
             },
-            outerPadding: EdgeInsets(top: 4, leading: 14, bottom: isPaged ? FeedView.pageBottomGap : 16, trailing: 14)
+            fillsPage: true,
+            outerPadding: EdgeInsets(
+                top: 4,
+                leading: FeedView.pageSideGap,
+                bottom: isPaged ? FeedView.pageBottomGap : 16,
+                trailing: FeedView.pageSideGap
+            )
         )
     }
 
@@ -268,7 +279,7 @@ struct FeedView: View {
                 }
             }
         }
-        return FeedDayEndCard(
+        return FeedDayEndView(
             goal: model.dailyNewWords,
             hasLockScreenWidget: model.hasLockScreenWidget,
             reviewCount: model.nextReviewSession()?.words.count,
@@ -276,7 +287,12 @@ struct FeedView: View {
             openReview: openReviewTab,
             continueFeed: continueFeed
         )
-        .padding(EdgeInsets(top: 4, leading: 14, bottom: isPaged ? FeedView.pageBottomGap : 16, trailing: 14))
+        .padding(EdgeInsets(
+            top: 4,
+            leading: FeedView.pageSideGap,
+            bottom: isPaged ? FeedView.pageBottomGap : 16,
+            trailing: FeedView.pageSideGap
+        ))
     }
 
     /// The word after the end-of-day card; nil when it is the last page.
@@ -579,72 +595,6 @@ final class FeedEncounterStore: ObservableObject {
     }
 }
 
-/// The end-of-day card (ogrenme_ilkeleri 2.2): not a window but the feed's next page, as large as
-/// a word card. Calm (2.10): no count of what is left, no blame, and going on is always free.
-/// "Tekrar'a geç (N kelime)" is the main button while "Tekrar" has a round (N: its words, as on
-/// "Tekrar"'s "Başla"); "Devam et" goes to the next card, the main button when "Tekrar" has none.
-private struct FeedDayEndCard: View {
-    let goal: Int
-    /// "Yarın kilitli ekranında…" only with a Lock Screen widget.
-    let hasLockScreenWidget: Bool
-    /// Words of "Tekrar"'s next round; nil when it has none.
-    let reviewCount: Int?
-    /// As tall as its page (the paged feed); natural height at accessibility text sizes.
-    let fillsPage: Bool
-    let openReview: () -> Void
-    /// Nil on the feed's last page.
-    let continueFeed: (() -> Void)?
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 28) {
-            VStack(alignment: .leading, spacing: 10) {
-                Image(systemName: "sun.max")
-                    .font(.title)
-                    .foregroundStyle(Theme.ink2)
-                    .accessibilityHidden(true)
-                Text(verbatim: "Bugünlük \(goal) yeni kelime yeter.")
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(Theme.ink)
-                    .accessibilityAddTraits(.isHeader)
-                Text(hasLockScreenWidget ? "Yarın kilitli ekranında yenileri olacak." : "Yarın yenileri gelecek.")
-                    .font(.body)
-                    .foregroundStyle(Theme.ink2)
-            }
-            .fixedSize(horizontal: false, vertical: true)
-            buttons
-        }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 24)
-        .frame(maxWidth: .infinity, maxHeight: fillsPage ? .infinity : nil, alignment: .leading)
-        .cardSurface(cornerRadius: Theme.Radius.wordCard)
-        .tint(Theme.ink)
-        .accessibilityElement(children: .contain)
-    }
-
-    @ViewBuilder
-    private var buttons: some View {
-        VStack(spacing: 10) {
-            if let count = reviewCount {
-                Button(action: openReview) {
-                    Text(verbatim: "Tekrar'a geç (\(count) kelime)")
-                }
-                .buttonStyle(PrimaryCapsuleButtonStyle())
-            }
-            if let continueFeed = continueFeed {
-                if reviewCount == nil {
-                    Button("Devam et", action: continueFeed)
-                        .buttonStyle(PrimaryCapsuleButtonStyle())
-                        .accessibilityHint("Sıradaki karta geçer.")
-                } else {
-                    Button("Devam et", action: continueFeed)
-                        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
-                        .accessibilityHint("Sıradaki karta geçer.")
-                }
-            }
-        }
-    }
-}
-
 /// Page-by-page scrolling, off at accessibility text sizes (README point 7).
 private struct FeedPagingModifier: ViewModifier {
     let isEnabled: Bool
@@ -655,6 +605,30 @@ private struct FeedPagingModifier: ViewModifier {
             content.scrollTargetBehavior(.paging)
         } else {
             content
+        }
+    }
+}
+
+/// How a page moves while the feed scrolls (paged feed only): the card leaving or arriving fades
+/// a little (to 70 %) and settles back to 97 %, so the eye follows one card, not two edges. It follows
+/// the finger (`.interactive`) and stops with it: no motion of its own, nothing to wait for (HIG
+/// Motion). With Reduce Motion only the fade is left. Off at accessibility sizes, where a card
+/// taller than the screen is never fully on it and would stay faded while read. A card counts as
+/// at rest from 90 % on screen, so a page a hair short of its frame never stays faded. The
+/// modifier is always applied (only its values change), so a change of text size keeps each
+/// card's state, an open sheet included.
+private struct FeedPageTransition: ViewModifier {
+    let isEnabled: Bool
+    let reduceMotion: Bool
+
+    func body(content: Content) -> some View {
+        // Copies for the `@Sendable` closure, which then captures two Bools, not the modifier.
+        let isEnabled = self.isEnabled
+        let reduceMotion = self.reduceMotion
+        return content.scrollTransition(.interactive.threshold(.visible(0.9)), axis: .vertical) { effect, phase in
+            effect
+                .opacity(isEnabled ? 1 - min(abs(phase.value), 1) * 0.3 : 1)
+                .scaleEffect(isEnabled && !reduceMotion ? 1 - CGFloat(min(abs(phase.value), 1)) * 0.03 : 1)
         }
     }
 }
@@ -1022,7 +996,7 @@ struct WordCardView: View {
     }
 
     /// The last step's row: what it opens. A user's word may have no example.
-    private static func rowTitle(for warning: CardWarning?, hasExample: Bool) -> String {
+    static func rowTitle(for warning: CardWarning?, hasExample: Bool) -> String {
         switch warning {
         case .falseFriend?:
             return hasExample ? "Örnek cümle ve sahte dost" : "Sahte dost"
@@ -1078,7 +1052,7 @@ struct WordCardView: View {
 /// The English word on its phosphor band. A phrase too long for one line at the full size first
 /// tries a smaller size, then breaks into two balanced lines, each on its own band; a single long
 /// word shrinks instead. VoiceOver reads it once, as a heading, with an English voice.
-private struct WordCardHeadline: View {
+struct WordCardHeadline: View {
     let lemma: String
 
     var body: some View {
@@ -1128,7 +1102,7 @@ private struct WordCardHeadline: View {
 
 /// "Şu an kilitli ekranda" (mockup `.now-chip`): a quiet item of the meta line, not a capsule,
 /// since it cannot be tapped (rule 2).
-private struct WordCardLockScreenNote: View {
+struct WordCardLockScreenNote: View {
     var body: some View {
         HStack(spacing: 5) {
             Image(systemName: "lock")
