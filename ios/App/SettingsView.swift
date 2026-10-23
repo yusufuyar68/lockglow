@@ -473,6 +473,16 @@ struct SettingsView: View {
                     }
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                // iCloud (is5-icloud, SyncSettingsView.swift): progress and own words on every device.
+                NavigationLink {
+                    SyncSettingsView(sync: model.cloudSync)
+                } label: {
+                    SettingsRow("iCloud ile eşitle") {
+                        SyncSwitchValue(sync: model.cloudSync)
+                    }
+                }
+                .buttonStyle(SettingsRowButtonStyle())
             }
             .padding(.top, 4)
         }

@@ -136,6 +136,8 @@ final class AppModel: ObservableObject {
         if !showsOnboarding || store?.readPlan() != nil {
             refreshWidgetPlan()
         }
+        // iCloud (is5-icloud, AppModel+Sync.swift): the first sync, once words and progress are in.
+        startCloudSync()
         await refreshHealth()
     }
 
@@ -752,6 +754,8 @@ final class AppModel: ObservableObject {
         // The words "Tekrar" listed as today's new words (`ReviewView.newWordsTodayLog`) are new again.
         UserDefaults.standard.removeObject(forKey: "lockglow.reviewNewWordsToday")
         refreshWidgetPlan()
+        // iCloud (is5-icloud, AppModel+Sync.swift): while syncing, the reset reaches the other devices.
+        cloudSyncProgressWasReset()
     }
 
     private func loadProgress() {
@@ -821,6 +825,24 @@ final class AppModel: ObservableObject {
             logger.error("could not save progress: \(error.localizedDescription, privacy: .public)")
             return false
         }
+    }
+
+    // MARK: iCloud (is5-icloud, AppModel+Sync.swift; here for the private save)
+
+    /// The progress file was read: an iCloud sync may merge into `progress` and save it.
+    var isProgressReadyForSync: Bool {
+        return progressStore != nil
+    }
+
+    /// iCloud sync merged the progress (`SyncMerge`): saved first, then adopted like any change.
+    /// False when it could not be saved; nothing changed then.
+    func adoptSyncedProgress(_ merged: [Int: WordProgress]) -> Bool {
+        guard persistProgress(merged) else {
+            return false
+        }
+        progress = merged
+        refreshWidgetPlan()
+        return true
     }
 
     // MARK: Widget events
