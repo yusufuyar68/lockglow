@@ -64,6 +64,7 @@ targets:
         NSMicrophoneUsageDescription: "Söyle alıştırmasında söylediğin kelimeyi dinlemek için mikrofon kullanılır. Ses kaydedilmez ve telefondan çıkmaz."
         NSSpeechRecognitionUsageDescription: "Söylediğin kelimenin anlaşılıp anlaşılmadığını görmek için konuşma tanıma kullanılır. Bu iş telefonda yapılır; sesin hiçbir yere gönderilmez."
         ITSAppUsesNonExemptEncryption: false
+        NSSupportsLiveActivities: true # is5-canli: the "Tekrar" round on the Lock Screen (App/ReviewLiveActivity.swift)
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait

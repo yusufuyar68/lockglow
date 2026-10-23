@@ -85,6 +85,15 @@ struct ReviewView: View {
         return session != nil
     }
 
+    /// is5-canli: the running round's counter for its Live Activity; nil without a round.
+    private var liveActivityProgress: ReviewActivityTracker.Progress? {
+        guard let session = session else {
+            return nil
+        }
+        let progress = roundProgress(session)
+        return ReviewActivityTracker.Progress(done: progress.done, total: progress.total)
+    }
+
     var body: some View {
         NavigationStack {
             content
@@ -106,6 +115,11 @@ struct ReviewView: View {
         }
         .onDisappear {
             isOnScreen = false
+        }
+        // is5-canli: the round's Live Activity starts with the round, follows "Kart 3 / 10" and
+        // closes when the round ends (ReviewLiveActivity).
+        .onChange(of: liveActivityProgress) { _, progress in
+            ReviewLiveActivity.shared.roundChanged(to: progress)
         }
         .onChange(of: systemCards.isDecided) { _, isDecided in
             if isDecided {
