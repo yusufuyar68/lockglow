@@ -39,7 +39,8 @@ extension View {
     /// loaded and the onboarding is closed, then:
     /// - a word opens as its whole card (`openWord`) once no sheet is up, or in place of the word
     ///   card RootView shows (`wordCardShown`);
-    /// - "Tekrar" (`openReview`) opens at once; RootView closes its word card first;
+    /// - "Tekrar" (`openReview`) opens at once (after the add form, if that is up); RootView
+    ///   closes its word card first;
     /// - the add form opens as this modifier's own sheet once no sheet is up.
     /// `otherSheetShown`: another sheet of RootView is up or about to be (a system card, the
     /// widget guide). Sheets of the tabs (a card in Akış, the form in Sözlük) are seen on the
@@ -70,6 +71,9 @@ private struct ShortcutRoutes: ViewModifier {
     @Environment(\.scenePhase) private var scenePhase
     /// Counts the words added from a shortcut (the success feedback).
     @State private var addedCount = 0
+    /// Bumped by the retry loop; `deliver` runs in `onChange`, which always sees this view's
+    /// current values (a running `task` keeps the values it started with).
+    @State private var retry = 0
 
     func body(content: Content) -> some View {
         content
@@ -97,9 +101,12 @@ private struct ShortcutRoutes: ViewModifier {
             // closing tells RootView nothing.
             .task(id: router.pending) {
                 while router.pending != nil && !Task.isCancelled {
-                    deliver()
+                    retry &+= 1
                     try? await Task.sleep(nanoseconds: 300_000_000)
                 }
+            }
+            .onChange(of: retry) { _, _ in
+                deliver()
             }
             // A request belongs to the visit it was made in: one still waiting is dropped, so
             // it never pops up hours later.
@@ -117,6 +124,7 @@ private struct ShortcutRoutes: ViewModifier {
     }
 
     /// Does the waiting route when nothing is in its way; otherwise the loop above tries again.
+    /// Called from `onChange` only, so the flags and closures are this view's current ones.
     private func deliver() {
         guard let route = router.pending, model.contentSource != .loading, !model.showsOnboarding else {
             return
@@ -124,7 +132,10 @@ private struct ShortcutRoutes: ViewModifier {
         let depth = ShortcutRoutes.sheetDepth()
         switch route {
         case .review:
-            break
+            // Not under the shortcut's own form; a system card may stay over it.
+            guard router.editor == nil else {
+                return
+            }
         case .word:
             // Nothing up, or only RootView's word card, which the new word replaces.
             guard !otherSheetShown, router.editor == nil, depth == 0 || (depth == 1 && wordCardShown) else {
