@@ -29,8 +29,8 @@ let package = Package(
         .target(name: "TextFold"),
         .target(name: "SharedState", dependencies: ["CoreModels"]),
         .target(name: "Scheduler", dependencies: ["CoreModels", "SharedState"]),
-        // Leitner scheduling, queue composition, the app-private progress file and "Cümle kur"
-        // (TextFold: its tiles are checked by folded keys). App only.
+        // Leitner scheduling, queue composition, the app-private progress file, "Cümle kur" and
+        // "İngilizcesini yaz" (TextFold: tiles and typed answers are compared by folded keys). App only.
         // The widget plan (WidgetPlanBuilder) needs SharedState and Scheduler; the widget itself
         // links those two, never Learning.
         .target(name: "Learning", dependencies: ["CoreModels", "TextFold", "SharedState", "Scheduler"]),

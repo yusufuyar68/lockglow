@@ -16,7 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
-APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "AppModel+ProgressSnapshot.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift", "AppModel+ReminderTiming.swift", "WeeklyRecapModel.swift", "AppModel+Scheduler.swift", "AppModel+SentencePractice.swift", "AppModel+Shortcuts.swift", "WatchPlanRelay.swift", "AppModel+Sync.swift", "SyncController.swift", "PlacementTestModel.swift", "LevelMapModel.swift", "AppModel+WidgetPlan.swift", "WidgetPlanWriter.swift"]
+APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "AppModel+ProgressSnapshot.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift", "AppModel+ReminderTiming.swift", "WeeklyRecapModel.swift", "AppModel+Scheduler.swift", "AppModel+SentencePractice.swift", "AppModel+Shortcuts.swift", "WatchPlanRelay.swift", "AppModel+Sync.swift", "SyncController.swift", "PlacementTestModel.swift", "LevelMapModel.swift", "AppModel+WidgetPlan.swift", "WidgetPlanWriter.swift", "AppModel+Review.swift", "AppModel+DueQuestion.swift", "AppModel+QuizWidget.swift", "AppModel+DataControls.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
 # Siri, Kestirmeler and Spotlight (ios/App/Intents): the data readers, on a line of their own.
 
@@ -57,7 +57,6 @@ def check_stub_api(real: Path, stub: Path) -> None:
 
 
 # The quiz widget's questions (ios/App/AppModel+QuizWidget.swift), on a line of their own.
-APP_LOGIC_FILES += ["AppModel+QuizWidget.swift"]
 APP_LOGIC_FILES += ["AppModel+DataControls.swift"]  # is5-veri
 
 

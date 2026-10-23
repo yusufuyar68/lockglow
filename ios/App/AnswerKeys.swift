@@ -2,7 +2,8 @@ import SwiftUI
 
 /// Tekrar's keys on a hardware keyboard (iPad, Mac; an iPhone with a keyboard too): `1`–`4` pick
 /// the answer in reading order, Space presses the card's one main button. Plain keys without ⌘:
-/// a shortcut exists only while its button is on screen, and Tekrar has no text field. Also
+/// a shortcut exists only while its button is on screen, and none is on screen together with
+/// "İngilizcesini yaz"'s text field (its keys come only after the answer). Also
 /// compiled into the snapshot bundle with `QuizCardView`.
 ///
 /// - Four options (`QuizCardView`, "Hatırla"): 1–4, left to right and top to bottom, before the

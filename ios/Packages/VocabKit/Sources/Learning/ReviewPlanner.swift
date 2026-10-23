@@ -111,8 +111,16 @@ public enum ReviewPlanner {
 /// How a due word is asked in "Tekrar" (docs/tasarim/ogrenme_ilkeleri.md 2.4). A new word is
 /// asked in its "Tanış + Hatırla" round instead (`IntroRound`).
 public enum QuestionKind: Equatable, Sendable {
-    /// Boxes 1–3: the card's written fill-in-the-blank question with four options.
+    /// Box 1, and every other question in boxes 2–3: the card's written fill-in-the-blank
+    /// question with four options.
     case cloze
+    /// Boxes 2–3, every other question: the word is read aloud and picked from four English
+    /// words ("Dinle ve seç", `ReviewPlanner.listenQuestion`). Never with the sound off or
+    /// VoiceOver on: the caller then says it cannot listen.
+    case listen
+    /// Boxes 2–3, every other question: the Turkish meaning is shown and the English word is
+    /// typed ("İngilizcesini yaz", `ReviewPlanner.typeQuestion`).
+    case typing
     /// Boxes 4–5, refreshers and the "Biliyorum" check: the Turkish meaning is shown, the
     /// English word is recalled from memory, then "Göster" and "Bulamadım / Buldum".
     case recall
@@ -121,14 +129,59 @@ public enum QuestionKind: Equatable, Sendable {
 extension ReviewPlanner {
     /// From this box on a learning word is recalled, not picked from options.
     public static let recallFromBox = 4
+    /// The boxes where "Dinle ve seç" and "İngilizcesini yaz" take turns with the
+    /// fill-in-the-blank question.
+    public static let mixedQuestionBoxes = 2...3
 
-    /// The question for a due word. `hasCloze`: the card has a usable fill-in-the-blank question;
-    /// a word without one is recalled whatever its box.
-    public static func questionKind(for progress: WordProgress?, hasCloze: Bool) -> QuestionKind {
+    /// The question for a due word (docs/tasarim/ogrenme_ilkeleri.md 2.4, "Dinle ve seç, Yaz").
+    /// `hasCloze`: the card has a usable fill-in-the-blank question; `canListen`, `canType`: the
+    /// word has a "Dinle ve seç" or "İngilizcesini yaz" question now (the caller leaves listening
+    /// out with the sound off or VoiceOver on). With the defaults the new kinds never come.
+    ///
+    /// - Known words, boxes 4–5: recall.
+    /// - Box 1 (and a word without progress): the fill-in-the-blank question, recall without one.
+    /// - Boxes 2–3: every answer counts one review, so the parity of `reviews` makes a word's
+    ///   questions take turns: an odd count asks the fill-in-the-blank question, an even one
+    ///   "Dinle ve seç" or "İngilizcesini yaz". Those two take turns as well, every other even
+    ///   count, starting with one or the other by the word's id, so both come about as often.
+    ///   On the straight way up (one right answer in each box: "Hatırla", then box 1, 2, 3) a word
+    ///   gets one of them in box 2 and the fill-in-the-blank question in box 3. After a "Zor" in
+    ///   box 1 or a lapse into box 1 the count can be odd on entering box 2, so box 1's question
+    ///   comes once more there; inside boxes 2–3 two questions in a row are never the same kind.
+    ///   A kind the word cannot have gives way to the next one in turn; with none of the three,
+    ///   recall. Without a fill-in-the-blank question the two new kinds take turns on every count.
+    public static func questionKind(
+        for progress: WordProgress?,
+        hasCloze: Bool,
+        canListen: Bool = false,
+        canType: Bool = false
+    ) -> QuestionKind {
         if let p = progress, p.state == .known || p.box >= recallFromBox {
             return .recall
         }
-        return hasCloze ? .cloze : .recall
+        guard let p = progress, p.state == .learning, mixedQuestionBoxes.contains(p.box) else {
+            return hasCloze ? .cloze : .recall
+        }
+        let phase = hasCloze ? p.reviews / 2 : p.reviews
+        var order: [QuestionKind] = (phase &+ p.wordID) & 1 == 0 ? [.listen, .typing] : [.typing, .listen]
+        if p.reviews % 2 == 0 {
+            order.append(.cloze)
+        } else {
+            order.insert(.cloze, at: 0)
+        }
+        let kind = order.first { candidate in
+            switch candidate {
+            case .cloze:
+                return hasCloze
+            case .listen:
+                return canListen
+            case .typing:
+                return canType
+            case .recall:
+                return true
+            }
+        }
+        return kind ?? .recall
     }
 
     /// The words of the next "Tanış + Hatırla" round, at most `limit`: first the words a failed
