@@ -188,7 +188,7 @@ final class FSRSConsumersTests: XCTestCase {
 
     func testDueWordsWithFSRSWaits() {
         // 1: "Bildim" on the 12th (due the 14th). 2: "Bilemedim" at 11:00 (due 11:10).
-        // 3: "Kolay" on the 12th (due the 20th). 4: "Zor" at 11:30 (due 11:45).
+        // 3: "Kolay" on the 12th (due the 20th). 4: "Zor" at 11:30 (due 23:30: never under 12 h).
         let progress = [
             1: answered(1, [(.good, date(day: 12, hour: 9))]),
             2: answered(2, [(.again, date(day: 13, hour: 11))]),
@@ -196,9 +196,10 @@ final class FSRSConsumersTests: XCTestCase {
             4: answered(4, [(.hard, date(day: 13, hour: 11, minute: 30))]),
         ]
         XCTAssertEqual(progress[3]?.dueAt, date(day: 20, hour: 9))
-        XCTAssertEqual(progress[4]?.dueAt, date(day: 13, hour: 11, minute: 45))
+        XCTAssertEqual(progress[4]?.dueAt, date(day: 13, hour: 23, minute: 30))
         let now = date(day: 13, hour: 12)
-        XCTAssertEqual(ids(ReviewPlanner.dueWords(feed: feed(1...4), progress: progress, now: now, limit: 10)), [2, 4])
+        XCTAssertEqual(ids(ReviewPlanner.dueWords(feed: feed(1...4), progress: progress, now: now, limit: 10)), [2])
+        XCTAssertEqual(ids(ReviewPlanner.dueWords(feed: feed(1...4), progress: progress, now: date(day: 13, hour: 23, minute: 30), limit: 10)), [2, 4])
         XCTAssertEqual(
             ReviewPlanner.counts(feed: feed(1...4), progress: progress, dueBy: date(day: 14, hour: 0)),
             ProgressCounts(learning: 4, dueToday: 2)
@@ -251,14 +252,15 @@ final class FSRSConsumersTests: XCTestCase {
 
     func testAWordFSRSAnsweredTodayIsReinforcement() throws {
         let now = date(day: 14, hour: 15)
-        // 1: "Zor" 1 h ago: due again 15 min later, so already due, but answered today.
-        // 2: "Bildim" 2 h ago. 3: "Zor" yesterday at 22:00: overdue, not answered today (hidden).
+        // 1: "Zor" 1 h ago: due again 12 h later, answered today. 2: "Bildim" 2 h ago.
+        // 3: "Zor" yesterday at 22:00: due today at 10:00, overdue, not answered today (hidden).
         let progress = [
             1: answered(1, [(.hard, now.addingTimeInterval(-1 * hour))]),
             2: answered(2, [(.good, now.addingTimeInterval(-2 * hour))]),
             3: answered(3, [(.hard, date(day: 13, hour: 22))]),
         ]
-        XCTAssertLessThan(try XCTUnwrap(progress[1]?.dueAt), now)
+        XCTAssertEqual(progress[1]?.dueAt, now.addingTimeInterval(11 * hour))
+        XCTAssertEqual(progress[3]?.dueAt, date(day: 14, hour: 10))
         let queue = QueueComposer.compose(feed: feed(1...3), progress: progress, now: now, horizon: 2 * day, maxNew: 0, limit: 10, calendar: utc)
         XCTAssertEqual(ids(queue), [2, 1])
     }
@@ -402,7 +404,7 @@ final class FSRSConsumersTests: XCTestCase {
         XCTAssertTrue(week.recalledAfterLongGapWordIDs.isEmpty)
     }
 
-    func testAnFSRSJumpFromStep3ToYerlestiIsAMoveUp() throws {
+    func testAnFSRSJumpFromStep3ToStep5IsAMoveUp() throws {
         var p = WordProgress(wordID: 3)
         p.state = .learning
         p.box = 3
@@ -421,12 +423,16 @@ final class FSRSConsumersTests: XCTestCase {
             reviews: 3,
             shelfBefore: ProgressSummary.Shelf.box2.rawValue
         )
-        // "Kolay" 20 days later: the stability passes 30 days.
+        // "Kolay" 20 days later: the stability passes 30 days, but "Yerleşti" waits for the
+        // recall question: basamak 5, back within 16 days.
         let jumped = fsrs.review(p, grade: .easy, at: date(day: 13, hour: 9))
-        XCTAssertEqual(jumped.state, .known)
+        XCTAssertEqual(jumped.state, .learning)
         XCTAssertEqual(jumped.box, Leitner.maxBox)
+        XCTAssertEqual(jumped.dueAt, date(day: 29, hour: 9))
         XCTAssertGreaterThanOrEqual(try XCTUnwrap(jumped.fsrs?.stability), FSRSScheduler.knownStability)
         XCTAssertEqual(jumped.fsrs?.shelfBefore, ProgressSummary.Shelf.box3.rawValue)
+        XCTAssertEqual(ProgressSummary.Shelf.of(jumped), .box5)
+        XCTAssertEqual(ReviewPlanner.questionKind(for: jumped, hasCloze: true), .recall)
         XCTAssertEqual(ProgressSummary.lastAnswer(of: jumped)?.kind, .movedUp)
 
         let week = summary([3: jumped]).thisWeek

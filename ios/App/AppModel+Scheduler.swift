@@ -35,14 +35,22 @@ extension AppModel {
     /// progress is saved before the setting changes: if the save fails, Leitner keeps scheduling.
     /// No due date, step or known word changes.
     ///
-    /// Off: only the setting. Leitner goes on from the steps and due dates FSRS left.
+    /// Off: pending widget taps are applied by FSRS first; due dates beyond Leitner's longest wait
+    /// come earlier (`FSRSMigration.handBack`), and Leitner goes on from the steps FSRS left.
     @discardableResult
     func setFSRSEnabled(_ enabled: Bool, now: Date = Date()) -> Bool {
         guard enabled != usesFSRS else {
             return true
         }
-        if enabled {
-            ingestWidgetEvents()
+        ingestWidgetEvents()
+        if !enabled {
+            let handed = FSRSMigration.handBack(progress)
+            if handed != progress {
+                guard replaceProgress(handed) else {
+                    return false
+                }
+            }
+        } else {
             let log = AppModel.readReviewLog()
             let fit = FSRSParameterFit.fit(log)
             let migrated = FSRSMigration.takeOver(progress, log: log, scheduler: FSRSScheduler(weights: fit.weights), now: now)
@@ -67,11 +75,13 @@ extension AppModel {
         guard refitDue || FSRSMigration.outdatedCount(progress) > 0 else {
             return
         }
+        let generation = AppPreferences.fsrsFitGeneration
         Task { @MainActor [weak self] in
             let log = await Task.detached(priority: .utility) {
                 AppModel.readReviewLog()
             }.value
-            guard let self = self, self.usesFSRS else {
+            // "İlerlemeyi sıfırla" meanwhile: this log is gone, and so is its fit.
+            guard let self = self, self.usesFSRS, AppPreferences.fsrsFitGeneration == generation else {
                 return
             }
             let fit = FSRSParameterFit.fit(log)
@@ -105,6 +115,12 @@ extension AppPreferences {
     private static let fsrsFittedAtKey = "lockglow.fsrsFittedAt"
     private static let fsrsFitAnswersKey = "lockglow.fsrsFitAnswers"
     private static let fsrsFitPersonalKey = "lockglow.fsrsFitPersonal"
+    private static let fsrsFitGenerationKey = "lockglow.fsrsFitGeneration"
+
+    /// Counts "İlerlemeyi sıfırla": a refit that read the log before a reset is dropped.
+    static var fsrsFitGeneration: Int {
+        return UserDefaults.standard.integer(forKey: fsrsFitGenerationKey)
+    }
 
     /// Leitner unless "Yeni zamanlama (deneme)" was turned on; an unknown value is Leitner.
     static var schedulerKind: SchedulerKind {
@@ -154,5 +170,6 @@ extension AppPreferences {
         for key in [fsrsWeightsKey, fsrsFittedAtKey, fsrsFitAnswersKey, fsrsFitPersonalKey] {
             defaults.removeObject(forKey: key)
         }
+        defaults.set(fsrsFitGeneration &+ 1, forKey: fsrsFitGenerationKey)
     }
 }

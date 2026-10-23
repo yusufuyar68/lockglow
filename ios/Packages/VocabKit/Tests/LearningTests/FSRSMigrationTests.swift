@@ -427,6 +427,149 @@ final class FSRSMigrationTests: XCTestCase {
         XCTAssertEqual(FSRSMigration.outdatedCount(progress), 0)
     }
 
+    // MARK: Switching off: handBack
+
+    /// A word whose last answer was FSRS's (`shelfBefore` set), last answered at `start`.
+    private func answeredByFSRS(
+        _ id: Int,
+        state: LearningState,
+        box: Int,
+        dueAt: Date,
+        refresherStep: Int? = nil,
+        stability: Double,
+        shelfBefore: Int? = ProgressSummary.Shelf.box5.rawValue
+    ) -> WordProgress {
+        var p = WordProgress(wordID: id)
+        p.state = state
+        p.box = box
+        p.reviews = 7
+        p.lapses = 1
+        p.exposures = 4
+        p.saved = true
+        p.dueAt = dueAt
+        p.refresherStep = refresherStep
+        p.firstReviewedAt = at(days: -90)
+        p.lastSeenAt = start
+        p.lastReviewedAt = start
+        p.lastGrade = .good
+        p.fsrs = FSRSState(
+            stability: stability, difficulty: 4, phase: .review, step: nil, lastReviewAt: start, reviews: 7, shelfBefore: shelfBefore
+        )
+        return p
+    }
+
+    func testHandBackBringsFSRSWaitsWithinLeitners() throws {
+        // FSRS gave a known word on refresher step 1 200 days; Leitner gives that step 60.
+        let known = answeredByFSRS(1, state: .known, box: 5, dueAt: at(days: 200), refresherStep: 1, stability: 210)
+        // A known word on step 0 whose wait is 46 days: Leitner's 30.
+        let fresh = answeredByFSRS(2, state: .known, box: 5, dueAt: at(days: 46), stability: 46)
+        // A learning word on basamak 1 with FSRS's first "Bildim" wait of 2 days: Leitner's 1 day.
+        let firstGood = scheduler.review(WordProgress(wordID: 3), grade: .good, at: start)
+        XCTAssertEqual(firstGood.box, 1)
+        XCTAssertEqual(firstGood.dueAt, at(days: 2))
+        // A learning word on basamak 4 that FSRS gave 11 days: Leitner's 8.
+        let step4 = answeredByFSRS(4, state: .learning, box: 4, dueAt: at(days: 11), stability: 11, shelfBefore: 1)
+
+        let progress = [1: known, 2: fresh, 3: firstGood, 4: step4]
+        let result = FSRSMigration.handBack(progress)
+        XCTAssertEqual(Set(result.keys), Set(progress.keys))
+        XCTAssertEqual(result[1]?.dueAt, start.addingTimeInterval(Leitner.refresherWait(step: 1)))
+        XCTAssertEqual(result[1]?.dueAt, at(days: 60))
+        XCTAssertEqual(result[2]?.dueAt, start.addingTimeInterval(Leitner.refresherWait(step: 0)))
+        XCTAssertEqual(result[3]?.dueAt, at(days: 1))
+        XCTAssertEqual(result[4]?.dueAt, at(days: 8))
+
+        // Only the due date changes.
+        for (id, before) in progress {
+            var after = try XCTUnwrap(result[id], "word \(id)")
+            XCTAssertLessThan(after.dueAt ?? .distantFuture, before.dueAt ?? .distantPast, "word \(id)")
+            after.dueAt = before.dueAt
+            XCTAssertEqual(after, before, "word \(id)")
+        }
+    }
+
+    func testHandBackNeverPutsADateOff() {
+        // Within Leitner's wait, or already overdue: as they were.
+        let missed = scheduler.review(WordProgress(wordID: 1), grade: .again, at: start)
+        let hard = scheduler.review(WordProgress(wordID: 2), grade: .hard, at: start)
+        XCTAssertEqual(hard.dueAt, start.addingTimeInterval(FSRSScheduler.hardStepWait))
+        let soon = answeredByFSRS(3, state: .known, box: 5, dueAt: at(days: 25), stability: 25)
+        let overdue = answeredByFSRS(4, state: .learning, box: 2, dueAt: at(days: -3), stability: 2, shelfBefore: 1)
+        let exact = answeredByFSRS(5, state: .learning, box: 3, dueAt: at(days: 4), stability: 4, shelfBefore: 2)
+        let progress = [1: missed, 2: hard, 3: soon, 4: overdue, 5: exact]
+        XCTAssertEqual(FSRSMigration.handBack(progress), progress)
+    }
+
+    func testHandBackLeavesWhatFSRSDidNotScheduleLast() {
+        // A memory rebuilt by `takeOver` (no `shelfBefore`): Leitner set that date.
+        let migrated = answeredByFSRS(1, state: .known, box: 5, dueAt: at(days: 200), refresherStep: 1, stability: 210, shelfBefore: nil)
+        // Answered by Leitner after FSRS: the memory is behind.
+        var stale = answeredByFSRS(2, state: .known, box: 5, dueAt: at(days: 200), refresherStep: 1, stability: 210)
+        stale.reviews += 1
+        // A pending "Biliyorum" check, days after FSRS's last answer: its check date stays.
+        let claimed = Leitner.markKnown(scheduler.review(WordProgress(wordID: 3), grade: .good, at: start), at: at(days: 40))
+        XCTAssertTrue(claimed.awaitsKnownCheck)
+        XCTAssertEqual(claimed.dueAt, at(days: 43))
+        // Sent back to "Tanış" by FSRS: no due date.
+        let backToIntro = scheduler.review(Leitner.markKnown(WordProgress(wordID: 4), at: start), grade: .again, at: at(days: 3))
+        XCTAssertTrue(backToIntro.returnsToIntro)
+        XCTAssertNotNil(backToIntro.fsrs)
+        // Never answered by FSRS.
+        var leitner = WordProgress(wordID: 5)
+        leitner = Leitner.review(leitner, grade: .good, at: start)
+        let progress = [1: migrated, 2: stale, 3: claimed, 4: backToIntro, 5: leitner]
+        XCTAssertEqual(FSRSMigration.handBack(progress), progress)
+        XCTAssertEqual(FSRSMigration.handBack([:]), [:])
+    }
+
+    func testHandingBackTwiceIsHandingBackOnce() {
+        var progress = makeFixture().progress
+        progress[20] = answeredByFSRS(20, state: .known, box: 5, dueAt: at(days: 200), refresherStep: 2, stability: 300)
+        progress[21] = scheduler.review(WordProgress(wordID: 21), grade: .good, at: start)
+        let once = FSRSMigration.handBack(progress)
+        XCTAssertNotEqual(once, progress)
+        XCTAssertEqual(FSRSMigration.handBack(once), once)
+        XCTAssertEqual(once[20]?.dueAt, at(days: 120))
+        XCTAssertEqual(once[21]?.dueAt, at(days: 1))
+        // FSRS's "Bildim" on the 3rd day (due on the 5th): Leitner's 1 day.
+        XCTAssertEqual(once[W.upToDate]?.dueAt, at(days: 4))
+        // The words Leitner answered last are untouched.
+        for id in W.all where id != W.upToDate {
+            XCTAssertEqual(once[id], progress[id], "word \(id)")
+        }
+    }
+
+    func testLeitnerGoesOnAfterHandBack() throws {
+        let known = answeredByFSRS(1, state: .known, box: 5, dueAt: at(days: 200), refresherStep: 1, stability: 210)
+        let firstGood = scheduler.review(WordProgress(wordID: 2), grade: .good, at: start)
+        let handedBack = FSRSMigration.handBack([1: known, 2: firstGood])
+
+        // The known word: its refresher on step 1's date, then step 2's wait.
+        let refresherDay = at(days: 60)
+        let knownBack = try XCTUnwrap(handedBack[1])
+        XCTAssertEqual(knownBack.dueAt, refresherDay)
+        let refreshed = Leitner.review(knownBack, grade: .good, at: refresherDay)
+        XCTAssertEqual(refreshed.state, .known)
+        XCTAssertEqual(refreshed.box, 5)
+        XCTAssertEqual(refreshed.refresherStep, 2)
+        XCTAssertEqual(refreshed.dueAt, refresherDay.addingTimeInterval(Leitner.refresherWait(step: 2)))
+        XCTAssertEqual(refreshed.fsrs, known.fsrs)
+        XCTAssertNotEqual(refreshed.fsrs?.reviews, refreshed.reviews)
+
+        // The learning word: due tomorrow as with Leitner, then basamak 2.
+        let tomorrow = at(days: 1)
+        let word = try XCTUnwrap(handedBack[2])
+        XCTAssertEqual(word.dueAt, tomorrow)
+        let next = LeitnerScheduler().review(word, grade: .good, at: tomorrow)
+        XCTAssertEqual(next, Leitner.review(word, grade: .good, at: tomorrow))
+        XCTAssertEqual(next.state, .learning)
+        XCTAssertEqual(next.box, 2)
+        XCTAssertEqual(next.dueAt, tomorrow.addingTimeInterval(2 * day))
+
+        // A Leitner answer makes the memory stale: a second handBack leaves the word alone.
+        XCTAssertEqual(FSRSMigration.handBack([2: next]), [2: next])
+    }
+
     // MARK: The file
 
     /// `WordProgress` as a build before FSRS knew it.

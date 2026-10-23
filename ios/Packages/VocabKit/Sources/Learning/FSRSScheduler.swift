@@ -12,14 +12,21 @@ import Foundation
 /// basamak 3 comes back in 4 to 8 days, as with Leitner. From `knownStability` (30 days, Leitner's
 /// first refresher) the word is known: "Yerleşti", basamak 5. Three rules keep the steps as the
 /// screens and the learning rules describe them:
-/// - a new word starts on basamak 1, whatever its first wait (a "Kolay" in "Hatırla" waits 8
-///   days): its first real question is the written fill-in-the-blank one (ogrenme_ilkeleri 1.2,
-///   2.4), and İlerleme says that the first round's words come to the first step;
+/// - a new word starts on basamak 1, whatever its first wait: its first real question is the
+///   written fill-in-the-blank one (ogrenme_ilkeleri 1.2, 2.4), and İlerleme says that the first
+///   round's words come to the first step;
+/// - only a word on basamak 4 or 5 (`ReviewPlanner.recallFromBox`) graduates: "Yerleşti" is
+///   reached through the recall question, never through a 4-option guess (2.4). A lower word
+///   whose stability already reached `knownStability` climbs to basamak 5 and comes back within
+///   16 days (`unprovenMaximumWait`) for that question;
 /// - a right answer never takes a word down a step, and never takes a known word off
 ///   "Yerleşti" (`ProgressSummary`: only a forgotten word moves down);
 /// - "Bilemedim" never takes a word up a step.
 ///
 /// Lockglow's other rules stay as with Leitner:
+/// - "Zor" in a same-day step (FSRS: 15 minutes) waits at least 12 hours, Leitner's "Zor" in
+///   basamak 1: the first real question still comes on another day (ogrenme_ilkeleri 1.2), and
+///   no answer button promises a time in minutes;
 /// - "Biliyorum" is a claim, checked once 3 days later (`Leitner.markKnown`). A right check makes
 ///   the word known: its stability is raised to `knownStability` (ogrenme_ilkeleri 2.2: the next
 ///   question 30 days later). A wrong one sends it back to "Tanış", its FSRS memory kept.
@@ -31,6 +38,10 @@ public struct FSRSScheduler: ReviewScheduler {
     public static let knownStability = Leitner.refresherDays[0]
     /// The longest wait. Leitner's longest is 120 days; FSRS may go on to a year, never further.
     public static let maximumIntervalDays = 365
+    /// The shortest wait after "Zor": Leitner's in basamak 1.
+    public static let hardStepWait: TimeInterval = Leitner.intervalDays[0] * Leitner.hardFactor * 86_400
+    /// The longest wait of a word that is not known yet: Leitner's basamak 5.
+    public static let unprovenMaximumWait: TimeInterval = (Leitner.intervalDays.last ?? 16) * 86_400
     private static let day: TimeInterval = 86_400
 
     public let fsrs: FSRS
@@ -51,7 +62,10 @@ public struct FSRSScheduler: ReviewScheduler {
         if before.awaitsKnownCheck && grade != .again {
             card = provenKnown(card, at: now)
         }
-        let stability = card.memory?.stability ?? FSRS.minimumStability
+        guard let stability = card.memory?.stability, stability.isFinite, let due = card.dueAt else {
+            // Not reachable with valid weights; Leitner rather than a schedule that cannot be saved.
+            return Leitner.review(before, grade: grade, at: now)
+        }
 
         var p = before
         p.reviews += 1
@@ -76,9 +90,9 @@ public struct FSRSScheduler: ReviewScheduler {
             } else {
                 p.state = .learning
                 p.box = before.box > 0 ? min(Self.box(forStability: stability), before.box) : 1
-                p.dueAt = card.dueAt
+                p.dueAt = due
             }
-        } else if before.state == .known || (before.box > 0 && Self.isKnown(card)) {
+        } else if before.state == .known || (before.box >= ReviewPlanner.recallFromBox && Self.isKnown(card)) {
             if before.state != .known {
                 // Graduated: the top step, as a Leitner word leaves box 5.
                 p.box = Leitner.maxBox
@@ -86,12 +100,16 @@ public struct FSRSScheduler: ReviewScheduler {
             p.state = .known
             p.knownOverride = false
             p.refresherStep = Self.refresherStep(forStability: stability)
-            p.dueAt = card.dueAt
+            p.dueAt = due
         } else {
             p.state = .learning
             p.box = before.box > 0 ? max(Self.box(forStability: stability), before.box) : 1
             p.refresherStep = nil
-            p.dueAt = card.dueAt
+            var wait = due.timeIntervalSince(now)
+            if grade == .hard && card.phase != .review {
+                wait = max(wait, Self.hardStepWait)
+            }
+            p.dueAt = now.addingTimeInterval(min(wait, Self.unprovenMaximumWait))
         }
         p.fsrs = FSRSState(card: card, reviews: p.reviews, shelfBefore: ProgressSummary.Shelf.of(before)?.rawValue ?? 0)
         return p

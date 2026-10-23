@@ -17,22 +17,22 @@ struct SchedulerSettingsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
                 switchSection
-                infoSection("Nasıl çalışır?", lines: [
-                    "Tekrarlar arasındaki bekleme senin cevaplarından hesaplanır. Bunu FSRS adlı bir model yapar.",
-                    "İyi bildiğin kelimeler daha seyrek gelir. Zorlandığın kelimeler daha erken gelir."
-                ])
                 infoSection("Ne değişir?", lines: [
-                    "Yeni bir kelimede “Zor” dersen, kelime yaklaşık 15 dakika sonra yine gelir.",
-                    "Yeni bir kelimede ilk “Bildim” 1 gün değil, 2 gün bekler.",
-                    "İyi bildiğin bir kelime en çok bir yıl bekleyebilir."
+                    "Tekrarlar arasındaki bekleme senin cevaplarından hesaplanır.",
+                    "Yeni bir kelimede ilk “Bildim” genelde 2 gün bekler. Eskiden 1 gündü.",
+                    "Doğru cevapta kelime bir ya da birkaç basamak çıkabilir. Unuttuğun kelime birkaç basamak inebilir.",
+                    "İyi bildiğin kelimeler daha seyrek gelir, en çok bir yıl bekler. Arada unutabilirsin; unutursan yine sorarız.",
+                    "Zorlandığın kelimeler daha erken gelir."
                 ])
                 infoSection("Ne aynı kalır?", lines: [
                     "Basamak 1–5 ve “Yerleşti” aynı kalır. Basamak, kelimenin ne kadar beklediğini gösterir. Örneğin basamak 3 yaklaşık 4–8 gün demek.",
+                    "Yeni kelime yine basamak 1'den başlar. “Yerleşti”ye yine hatırlama sorusuyla geçer.",
                     "“Biliyorum” dediğin kelime 3 gün sonra bir kez sorulur.",
-                    "Açtığın gün kelimelerin ve tekrar tarihleri değişmez."
+                    "Açtığın gün hiçbir kelimenin basamağı ve tarihi değişmez."
                 ])
                 infoSection("Geri dönmek", lines: [
-                    "İstediğin zaman kapatabilirsin. Kapatınca kelimeler bulundukları basamaktan eski düzenle devam eder. İlerlemen kaybolmaz."
+                    "İstediğin zaman kapatabilirsin. Kelimeler bulundukları basamaktan eski düzenle devam eder.",
+                    "Çok uzak bir tarih, eski düzenin en uzun beklemesine çekilir. İlerlemen kaybolmaz."
                 ])
                 fitSection
             }
@@ -139,14 +139,12 @@ struct SchedulerSettingsView: View {
         }
     }
 
+    /// Only the first waits of new words are fitted (`FSRSParameterFit`): the text says no more,
+    /// and shows no running count, which would read like a goal.
     private var fitText: String {
-        let minimum = FSRSParameterFit.minimumAnswers
-        guard let summary = fitSummary else {
-            return "Aralıklar önce herkes için hazırlanmış ayarlarla başlar. \(minimum) cevaptan sonra senin cevaplarına göre ayarlanır."
+        if fitSummary?.isPersonal == true {
+            return "Yeni kelimelerin ilk beklemesi senin cevaplarına göre ayarlandı."
         }
-        if summary.isPersonal {
-            return "Aralıklar senin \(summary.answers) cevabına göre ayarlandı."
-        }
-        return "\(minimum) cevaptan sonra aralıklar senin cevaplarına göre ayarlanır. Şimdiye kadar \(summary.answers) cevap var."
+        return "Şimdilik herkes için hazırlanmış ayarlar kullanılıyor. Yeterli cevap olunca yeni kelimelerin ilk beklemesi senin cevaplarına göre ayarlanır."
     }
 }

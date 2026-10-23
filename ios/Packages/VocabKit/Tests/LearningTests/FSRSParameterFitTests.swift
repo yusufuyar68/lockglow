@@ -34,13 +34,15 @@ final class FSRSParameterFitTests: XCTestCase {
             }
         }
 
-        /// Words whose recall `days` after a first `first` follows R(t, stability) at each t:
-        /// `perDay` words per t, the recalled count rounded from R.
+        /// Words whose recall `days` after a first `first` follows p = g + (1 − g) · R(t, stability)
+        /// at each t (g = `FSRSParameterFit.guessChance`: a forgotten word's 4-option cloze is
+        /// still right one time in four): `perDay` words per t, the recalled count rounded from p.
         mutating func population(_ first: ReviewGrade, stability: Double, days: [Int], perDay: Int, scale: Int = 1) {
             let fsrs = FSRS()
+            let guess = FSRSParameterFit.guessChance
             for t in days {
                 let r = fsrs.retrievability(elapsedDays: Double(t), stability: stability)
-                let recalled = Int((Double(perDay) * r).rounded())
+                let recalled = Int((Double(perDay) * (guess + (1 - guess) * r)).rounded())
                 words(first, days: Double(t), count: perDay * scale, recalled: recalled * scale)
             }
         }
@@ -48,6 +50,43 @@ final class FSRSParameterFitTests: XCTestCase {
 
     private func builder() -> LogBuilder {
         return LogBuilder(start: start)
+    }
+
+    /// The stability a fit without guessing would find (p = R(t, S)): the best of a fine log grid
+    /// over 0.1...100 days, then shrunk toward `baseStability` as `FSRSParameterFit` does.
+    private func noGuessStability(_ entries: [ReviewLogEntry], baseStability: Double) -> Double {
+        var points: [(t: Double, count: Double, recalled: Double)] = []
+        var firsts: [Int: ReviewLogEntry] = [:]
+        for entry in entries {
+            if entry.reviews == 1 {
+                firsts[entry.wordID] = entry
+            } else if entry.reviews == 2, let first = firsts[entry.wordID] {
+                let t = (entry.at.timeIntervalSince(first.at) / day).rounded(.down)
+                points.append((t: t, count: 1, recalled: entry.grade == .again ? 0.0 : 1.0))
+            }
+        }
+        let fsrs = FSRS()
+        let low = log(0.1)
+        let high = log(100.0)
+        let steps = 2000
+        var bestLog = low
+        var bestValue = -Double.infinity
+        for step in 0...steps {
+            let logStability = low + (high - low) * Double(step) / Double(steps)
+            var sum = 0.0
+            for point in points {
+                let r = fsrs.retrievability(elapsedDays: point.t, stability: exp(logStability))
+                let p = min(max(r, 1e-4), 1 - 1e-4)
+                sum += point.recalled * log(p) + (point.count - point.recalled) * log(1 - p)
+            }
+            if sum > bestValue {
+                bestValue = sum
+                bestLog = logStability
+            }
+        }
+        let n = Double(points.count)
+        let k = FSRSParameterFit.priorWeight
+        return exp((n * bestLog + k * log(baseStability)) / (n + k))
     }
 
     /// Entries nobody can use: answers of words whose first answers are not in the log.
@@ -131,11 +170,12 @@ final class FSRSParameterFitTests: XCTestCase {
 
     // MARK: Fitting
 
-    /// Recall follows R(t, 6) after a first "Bildim": w2 moves from 2.3065 toward 6, closer with
-    /// four times the samples (same proportions, so the same unshrunk fit).
+    /// Recall follows g + (1 − g) · R(t, 6) after a first "Bildim": w2 moves from 2.3065 toward 6
+    /// (about 5.60), closer with four times the samples (about 5.84; same proportions, so the same
+    /// unshrunk fit, about 5.93).
     func testGradeWithManySamplesMovesTowardItsTrueStability() {
         let trueStability = 6.0
-        let days = [2, 6, 18, 45, 90]
+        let days = [2, 5, 15, 40, 100]
         var small = builder()
         small.population(.good, stability: trueStability, days: days, perDay: 100)
         var large = builder()
@@ -159,6 +199,46 @@ final class FSRSParameterFitTests: XCTestCase {
         XCTAssertEqual(smallFit.weights[0], base[0])
         XCTAssertEqual(smallFit.weights[1], base[1])
         XCTAssertEqual(smallFit.weights[3], base[3])
+    }
+
+    /// The same population with guessing: the fit lands near 6 (about 5.84), a fit that read every
+    /// lucky cloze pick as memory would land near 10.5 (unshrunk about 10.8).
+    func testGuessingCorrectionRecoversTrueStability() {
+        let trueStability = 6.0
+        var log = builder()
+        log.population(.good, stability: trueStability, days: [2, 5, 15, 40, 100], perDay: 100, scale: 4)
+
+        let fitted = FSRSParameterFit.fit(log.entries).weights[2]
+        let noGuess = noGuessStability(log.entries, baseStability: base[2])
+        XCTAssertEqual(fitted, trueStability, accuracy: 0.5)
+        XCTAssertGreaterThan(noGuess, 1.5 * trueStability)
+        XCTAssertLessThan(abs(Foundation.log(fitted / trueStability)), abs(Foundation.log(noGuess / trueStability)))
+    }
+
+    /// Nothing remembered at all, below even the guessing rate: every first stability falls, the
+    /// result stays valid and monotonic.
+    func testAllForgottenStillGivesValidWeights() {
+        var log = builder()
+        for grade in [ReviewGrade.again, .hard, .good, .easy] {
+            for t in [1, 5, 20, 60] {
+                log.words(grade, days: Double(t), count: 100, recalled: 0)
+            }
+        }
+
+        let fit = FSRSParameterFit.fit(log.entries)
+        let w = fit.weights
+        XCTAssertEqual(fit.samples, [400, 400, 400, 400])
+        XCTAssertTrue(fit.isPersonal)
+        XCTAssertTrue(FSRS.areValid(weights: w), "\(w)")
+        for index in 0..<4 {
+            XCTAssertTrue(w[index].isFinite)
+            XCTAssertLessThan(w[index], base[index])
+            XCTAssertGreaterThanOrEqual(w[index], FSRS.weightBounds[index].lowerBound)
+        }
+        XCTAssertLessThanOrEqual(w[0], w[1])
+        XCTAssertLessThanOrEqual(w[1], w[2])
+        XCTAssertLessThanOrEqual(w[2], w[3])
+        XCTAssertEqual(Array(w[4...]), Array(base[4...]))
     }
 
     func testGradeBelowMinimumSamplesKeepsBase() {

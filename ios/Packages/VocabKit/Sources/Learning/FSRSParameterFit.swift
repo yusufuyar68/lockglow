@@ -12,8 +12,9 @@ import Foundation
 ///   A second answer on the same day says nothing about the forgetting curve; that word is left out.
 /// - Per grade, the stability S that maximises the Bernoulli log-likelihood of the samples under
 ///   FSRS's forgetting curve R(t, S) = (1 + f · t / S)^(−w20), f = 0.9^(−1/w20) − 1, with w20 from
-///   `base`. S is searched in 0.1...100 days on a log grid, then refined by golden section:
-///   deterministic, the same log always gives the same weights.
+///   `base`, corrected for guessing: a sample counts as recalled with p = g + (1 − g) · R(t, S),
+///   g = `guessChance`, clipped to [1e-4, 1 − 1e-4]. S is searched in 0.1...100 days on a log
+///   grid, then refined by golden section: deterministic, the same log always gives the same weights.
 /// - Shrinkage toward `base`: ln S = (n · ln S_fit + k · ln S_base) / (n + k), n samples,
 ///   k = `priorWeight`. A few samples move the weight a little, many move it close to the fit.
 /// - Clamped to `FSRS.weightBounds`, then made monotonic (w0 ≤ w1 ≤ w2 ≤ w3: an easier first
@@ -40,6 +41,14 @@ public struct FSRSParameterFit: Equatable, Sendable {
     public static let minimumSamples = 16
     /// Pseudo-count pulling a fit toward `base` in log space.
     public static let priorWeight: Double = 32
+    /// The chance that a sample's second answer is right without remembering the word. After
+    /// Tanış, Lockglow's first real question is the 4-option fill-in-the-blank one
+    /// (ogrenme_ilkeleri 1.2, 2.4), so a learner who has forgotten the word still picks the right
+    /// option about one time in four. A recall-screen answer would have no such chance (g = 0),
+    /// but the log does not record the question type, and a word on basamak 1 is always asked with
+    /// the cloze when it has one; 1/4 is used for every sample. Ignoring it would read those lucky
+    /// picks as memory and inflate the fitted first stabilities.
+    public static let guessChance = 0.25
 
     /// The stabilities the search looks at, in days.
     private static let searchRange: ClosedRange<Double> = 0.1...100
@@ -136,15 +145,16 @@ public struct FSRSParameterFit: Equatable, Sendable {
         }
     }
 
-    /// ln S of the most likely stability within `searchRange`.
+    /// ln S of the most likely stability within `searchRange`, recall corrected for `guessChance`.
     private static func bestLogStability(_ points: [(t: Double, count: Double, recalled: Double)], decay: Double) -> Double {
         let factor = pow(0.9, -1 / decay) - 1
         func likelihood(_ logStability: Double) -> Double {
             let stability = exp(logStability)
             var sum = 0.0
             for point in points {
-                let r = min(max(pow(1 + factor * point.t / stability, -decay), 1e-4), 1 - 1e-4)
-                sum += point.recalled * log(r) + (point.count - point.recalled) * log(1 - r)
+                let r = pow(1 + factor * point.t / stability, -decay)
+                let p = min(max(guessChance + (1 - guessChance) * r, 1e-4), 1 - 1e-4)
+                sum += point.recalled * log(p) + (point.count - point.recalled) * log(1 - p)
             }
             return sum
         }

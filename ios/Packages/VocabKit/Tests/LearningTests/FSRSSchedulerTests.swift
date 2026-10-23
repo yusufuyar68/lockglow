@@ -4,10 +4,12 @@ import Learning
 
 /// The two schedulers behind `ReviewScheduler` (docs/ozellik_planlari/fsrs.md 4.3 step 2):
 /// Leitner as before, and FSRS with Lockglow's rules (basamak from stability, known at 30 days,
-/// the "Biliyorum" check), keeping every field in Leitner's terms.
+/// the "Biliyorum" check, graduation only from basamak 4 or 5, "Zor" never under 12 hours),
+/// keeping every field in Leitner's terms.
 final class FSRSSchedulerTests: XCTestCase {
     private let start = Date(timeIntervalSince1970: 1_700_000_000)
     private let minute: TimeInterval = 60
+    private let hour: TimeInterval = 3600
     private let day: TimeInterval = 86_400
     private let scheduler = FSRSScheduler()
     private let grades: [ReviewGrade] = [.again, .hard, .good, .easy]
@@ -151,9 +153,11 @@ final class FSRSSchedulerTests: XCTestCase {
     // MARK: First answers
 
     func testFirstAnswers() throws {
+        XCTAssertEqual(FSRSScheduler.hardStepWait, 12 * hour)
+        // "Zor": FSRS's same-day step would be 15 minutes; Lockglow waits Leitner's 12 hours.
         let waits: [(ReviewGrade, TimeInterval, FSRSCard.Phase, Int?)] = [
             (.again, 10 * minute, .learning, 0),
-            (.hard, 15 * minute, .learning, 0),
+            (.hard, 12 * hour, .learning, 0),
             (.good, 2 * day, .review, nil),
             (.easy, 8 * day, .review, nil),
         ]
@@ -226,8 +230,11 @@ final class FSRSSchedulerTests: XCTestCase {
             if p.state == .learning {
                 XCTAssertLessThan(stability, FSRSScheduler.knownStability)
                 XCTAssertGreaterThanOrEqual(p.box, before.box)
+                XCTAssertLessThanOrEqual(try XCTUnwrap(p.dueAt).timeIntervalSince(now), FSRSScheduler.unprovenMaximumWait)
             } else {
                 XCTAssertGreaterThanOrEqual(stability, FSRSScheduler.knownStability)
+                // Only from basamak 4 or 5, through the recall question.
+                XCTAssertGreaterThanOrEqual(before.box, ReviewPlanner.recallFromBox)
             }
         }
         XCTAssertEqual(p.state, .known)
@@ -247,6 +254,107 @@ final class FSRSSchedulerTests: XCTestCase {
             XCTAssertEqual(p.box, Leitner.maxBox, "\(grade)")
             XCTAssertEqual(p.refresherStep, FSRSScheduler.refresherStep(forStability: stability), "\(grade)")
             XCTAssertEqual(p.dueAt, now.addingTimeInterval(Double(engine.scheduledDays(stability: stability)) * day), "\(grade)")
+        }
+    }
+
+    /// Basamak 3 with stability 4, last answered at `start`.
+    private func onStep3() -> WordProgress {
+        var p = WordProgress(wordID: 1)
+        p.state = .learning
+        p.box = 3
+        p.reviews = 3
+        p.dueAt = at(days: 4)
+        p.lastSeenAt = start
+        p.lastReviewedAt = start
+        p.lastGrade = .good
+        p.firstReviewedAt = at(days: -10)
+        p.fsrs = FSRSState(stability: 4, difficulty: 5, phase: .review, step: nil, lastReviewAt: start, reviews: 3, shelfBefore: 2)
+        return p
+    }
+
+    func testABigJumpBelowStep4ClimbsToStep5First() throws {
+        XCTAssertEqual(FSRSScheduler.unprovenMaximumWait, 16 * day)
+        // "Kolay" on time, and a "Bildim" long overdue: both pass 30 days of stability.
+        let jumps: [(ReviewGrade, Double)] = [(.easy, 8), (.good, 40)]
+        for (grade, days) in jumps {
+            let label = "\(grade) after \(days) days"
+            let now = at(days: days)
+            let p = scheduler.review(onStep3(), grade: grade, at: now)
+            let state = try XCTUnwrap(p.fsrs, label)
+            XCTAssertGreaterThanOrEqual(state.stability, FSRSScheduler.knownStability, label)
+            XCTAssertTrue(FSRSScheduler.isKnown(state.card), label)
+            XCTAssertGreaterThan(engine.scheduledDays(stability: state.stability), 16, label)
+            // Not "Yerleşti" yet: basamak 5, back within 16 days for the recall question.
+            XCTAssertEqual(p.state, .learning, label)
+            XCTAssertEqual(p.box, Leitner.maxBox, label)
+            XCTAssertEqual(p.box, FSRSScheduler.box(forStability: state.stability), label)
+            XCTAssertNil(p.refresherStep, label)
+            XCTAssertFalse(p.knownOverride, label)
+            XCTAssertEqual(p.dueAt, now.addingTimeInterval(FSRSScheduler.unprovenMaximumWait), label)
+            XCTAssertEqual(ReviewPlanner.questionKind(for: p, hasCloze: true), .recall, label)
+            XCTAssertEqual(state.shelfBefore, ProgressSummary.Shelf.box3.rawValue, label)
+            XCTAssertEqual(FSRSScheduler.lastAnswer(of: p)?.kind, .movedUp, label)
+
+            // The next right answer, from basamak 5, graduates.
+            let next = try XCTUnwrap(p.dueAt, label)
+            let known = scheduler.review(p, grade: .good, at: next)
+            let knownState = try XCTUnwrap(known.fsrs, label)
+            XCTAssertEqual(known.state, .known, label)
+            XCTAssertEqual(known.box, Leitner.maxBox, label)
+            XCTAssertFalse(known.knownOverride, label)
+            XCTAssertEqual(known.refresherStep, FSRSScheduler.refresherStep(forStability: knownState.stability), label)
+            XCTAssertEqual(known.dueAt, next.addingTimeInterval(Double(engine.scheduledDays(stability: knownState.stability)) * day), label)
+            XCTAssertEqual(knownState.shelfBefore, ProgressSummary.Shelf.box5.rawValue, label)
+            XCTAssertEqual(FSRSScheduler.lastAnswer(of: known)?.kind, .recalledOnTop, label)
+        }
+    }
+
+    func testANewWordNeverGraduatesFromStep1() throws {
+        // "Kolay", then "Kolay" on its due date: stability over 30 days from basamak 1.
+        let first = scheduler.review(WordProgress(wordID: 1), grade: .easy, at: start)
+        XCTAssertEqual(first.box, 1)
+        let now = try XCTUnwrap(first.dueAt)
+        let p = scheduler.review(first, grade: .easy, at: now)
+        XCTAssertGreaterThanOrEqual(try XCTUnwrap(p.fsrs).stability, FSRSScheduler.knownStability)
+        XCTAssertEqual(p.state, .learning)
+        XCTAssertEqual(p.box, Leitner.maxBox)
+        XCTAssertEqual(p.dueAt, now.addingTimeInterval(16 * day))
+    }
+
+    func testHardInASameDayStepWaitsTwelveHours() throws {
+        // Relearning: a known word forgotten, then "Zor" in its 10-minute step.
+        let (known, _) = try graduated()
+        let forgotAt = try XCTUnwrap(known.dueAt)
+        let forgot = scheduler.review(known, grade: .again, at: forgotAt)
+        XCTAssertEqual(forgot.fsrs?.phase, .relearning)
+        let hardAt = try XCTUnwrap(forgot.dueAt)
+        let relearning = scheduler.review(forgot, grade: .hard, at: hardAt)
+        let state = try XCTUnwrap(relearning.fsrs)
+        XCTAssertEqual(state.phase, .relearning, "FSRS itself would ask again in 15 minutes")
+        XCTAssertEqual(state.step, 0)
+        XCTAssertEqual(relearning.state, .learning)
+        XCTAssertEqual(relearning.box, forgot.box)
+        XCTAssertEqual(relearning.dueAt, hardAt.addingTimeInterval(FSRSScheduler.hardStepWait))
+
+        // Learning: a new word forgotten, then "Zor" in its 10-minute step.
+        let missed = scheduler.review(WordProgress(wordID: 2), grade: .again, at: start)
+        let learning = scheduler.review(missed, grade: .hard, at: at(days: 0, minutes: 10))
+        XCTAssertEqual(learning.fsrs?.phase, .learning)
+        XCTAssertEqual(learning.box, 1)
+        XCTAssertEqual(learning.dueAt, at(days: 0, minutes: 10).addingTimeInterval(12 * hour))
+    }
+
+    func testNonFiniteStabilityFallsBackToLeitner() {
+        var p = WordProgress(wordID: 1)
+        p.state = .learning
+        p.box = 2
+        p.reviews = 2
+        p.dueAt = at(days: 2)
+        p.lastReviewedAt = start
+        p.lastGrade = .good
+        p.fsrs = FSRSState(stability: .infinity, difficulty: 5, phase: .review, step: nil, lastReviewAt: start, reviews: 2, shelfBefore: 1)
+        for grade in grades {
+            XCTAssertEqual(scheduler.review(p, grade: grade, at: at(days: 2)), Leitner.review(p, grade: grade, at: at(days: 2)), "\(grade)")
         }
     }
 
@@ -479,6 +587,9 @@ final class FSRSSchedulerTests: XCTestCase {
             p = scheduler.review(p, grade: .easy, at: now)
             wait = try XCTUnwrap(p.dueAt).timeIntervalSince(now)
             XCTAssertLessThanOrEqual(wait, Double(FSRSScheduler.maximumIntervalDays) * day)
+            if p.state == .learning {
+                XCTAssertLessThanOrEqual(wait, FSRSScheduler.unprovenMaximumWait)
+            }
         }
         XCTAssertEqual(wait, 365 * day)
         XCTAssertEqual(p.state, .known)
