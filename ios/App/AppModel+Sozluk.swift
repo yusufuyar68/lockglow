@@ -1,9 +1,10 @@
 import Foundation
 import CoreModels
+import Learning
 
-// "Sözlük" (SearchView, SozlukTopicView, SozlukRecentSearches): what the dictionary asks of the
-// model. Compiled into the Linux check of the app's logic too (ios/Tools/linux_check_prepare.py
-// `APP_LOGIC_FILES`).
+// "Sözlük" (SearchView, SozlukTopicView, SozlukRecentSearches, SozlukWordPage): what the
+// dictionary asks of the model. Compiled into the Linux check of the app's logic too
+// (ios/Tools/linux_check_prepare.py `APP_LOGIC_FILES`).
 
 extension AppModel {
     /// "Son aramalar" (`SozlukRecentSearches`) are kept on this phone under this UserDefaults key.
@@ -19,5 +20,28 @@ extension AppModel {
     /// words have no topic.
     func words(inTopic topicID: String) -> [WidgetWord] {
         return words.filter { topicsOf[$0.id]?.contains(topicID) ?? false }
+    }
+
+    /// "Karıştırma" on the word page: the loaded words often mixed up with `word`
+    /// (`WordLinks.confusables`). Empty for seed words and the user's own words, which have none.
+    func confusablePartners(of word: WidgetWord) -> [WidgetWord] {
+        guard let ids = word.confusableIDs, !ids.isEmpty else {
+            return []
+        }
+        // A handful of partners: looked up one by one rather than indexing every word at each
+        // redraw of the page.
+        var partners: [Int: WidgetWord] = [:]
+        for id in ids where partners[id] == nil {
+            if let partner = words.first(where: { $0.id == id }) {
+                partners[id] = partner
+            }
+        }
+        return WordLinks.confusables(of: word, in: partners)
+    }
+
+    /// "Başka anlamı" on the word page: the other loaded cards with `word`'s headword ("break":
+    /// mola, kırmak), the user's own words included.
+    func otherSenses(of word: WidgetWord) -> [WidgetWord] {
+        return WordLinks.otherSenses(of: word, in: words)
     }
 }

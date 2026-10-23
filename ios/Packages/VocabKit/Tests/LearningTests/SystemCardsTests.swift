@@ -14,7 +14,7 @@ final class SystemCardsTests: XCTestCase {
     func testThePriorityOrderOfDesignNoteTwoTen() {
         XCTAssertEqual(
             SystemCard.allCases.sorted(),
-            [.progressRecovered, .remindersPaused, .reminderTime, .widgetTip, .breakStart, .dayEnd]
+            [.progressRecovered, .remindersPaused, .reminderTime, .widgetTip, .breakStart, .dayEnd, .weeklyRecap]
         )
         // §2.10: the pause note > the time question > "Ara verdin" > the end-of-day card.
         XCTAssertLessThan(SystemCard.remindersPaused, .reminderTime)
@@ -22,8 +22,24 @@ final class SystemCardsTests: XCTestCase {
         XCTAssertLessThan(SystemCard.breakStart, .dayEnd)
     }
 
-    func testOnlyTheTwoScreenCardsAreClaimed() {
-        XCTAssertEqual(SystemCard.allCases.filter(\.isScreenCard), [.breakStart, .dayEnd])
+    func testOnlyTheScreenCardsAreClaimed() {
+        XCTAssertEqual(SystemCard.allCases.filter(\.isScreenCard), [.breakStart, .dayEnd, .weeklyRecap])
+    }
+
+    /// is5-haftalik: Monday's "Geçen hafta" is claimed like a screen card; the first claim of a
+    /// free opening wins, and a sheet of the opening leaves it nothing.
+    func testTheWeeklyRecapIsClaimedLikeAScreenCard() {
+        var slot = opened()
+        let number = slot.opening
+        XCTAssertNil(slot.decide(from: [.weeklyRecap], opening: number))
+        XCTAssertTrue(slot.claim(.weeklyRecap))
+        XCTAssertFalse(slot.claim(.dayEnd))
+        XCTAssertFalse(slot.claim(.breakStart))
+
+        var taken = opened()
+        let takenNumber = taken.opening
+        XCTAssertEqual(taken.decide(from: [.widgetTip], opening: takenNumber), .widgetTip)
+        XCTAssertFalse(taken.claim(.weeklyRecap))
     }
 
     func testTheMostImportantSheetWins() {

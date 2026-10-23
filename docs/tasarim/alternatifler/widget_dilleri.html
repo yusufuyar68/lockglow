@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lockglow widget dilleri</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,900&display=swap">
+<style>
+/* Düzen: üstte başlık ve üç dilin kartı; altında yapışkan araç çubuğu (görünüm, mod, kelime);
+   ortada sahne: telefon çerçeveleri ya da yan yana karşılaştırma; sonra sayılarla karşılaştırma,
+   öneri ve araştırma. Sayfa da uygulama gibi kâğıt ve mürekkep; sarı yalnız İngilizce kelimede. */
+:root{
+  --bg:#F3F3EE; --surface:#FFFFFF; --surface2:#EBEBE4; --surface3:#DEDED6;
+  --line:rgba(21,24,27,.12); --line-strong:rgba(21,24,27,.30);
+  --ink:#15181B; --ink2:#474E54; --ink3:#626A71;
+  --band:#F5E829; --good:#17703F; --bad:#B3261E; --caution:#8F5600;
+  --stage:#E4E4DC;
+  --f-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Segoe UI",system-ui,sans-serif;
+  --f-en:ui-serif,"New York","Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D0F11; --surface:#191C20; --surface2:#24282D; --surface3:#30353B;
+    --line:rgba(255,255,255,.10); --line-strong:rgba(255,255,255,.28);
+    --ink:#F3F4F0; --ink2:#B7BDC2; --ink3:#8E959B;
+    --band:#E9E040; --good:#5BD08F; --bad:#FF8C80; --caution:#FF9E5A;
+    --stage:#16191C; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D0F11; --surface:#191C20; --surface2:#24282D; --surface3:#30353B;
+  --line:rgba(255,255,255,.10); --line-strong:rgba(255,255,255,.28);
+  --ink:#F3F4F0; --ink2:#B7BDC2; --ink3:#8E959B;
+  --band:#E9E040; --good:#5BD08F; --bad:#FF8C80; --caution:#FF9E5A;
+  --stage:#16191C; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-ui);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+button,select{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:8px}
+code{font:500 .86em var(--f-mono);background:var(--surface2);padding:.08em .35em;border-radius:5px;overflow-wrap:anywhere}
+.wrap{max-width:1320px;margin:0 auto}
+.en{font-family:var(--f-en)}
+.mk-band{position:relative;z-index:0;white-space:nowrap}
+.mk-band::before{content:"";position:absolute;z-index:-1;left:-.06em;right:-.06em;top:.42em;bottom:.04em;background:var(--band)}
+
+/* ───────── Başlık ───────── */
+.hero{padding-block:40px 18px}
+.eyebrow{margin:0 0 6px;font:600 12.5px var(--f-ui);letter-spacing:.06em;color:var(--ink2)}
+h1{margin:0;font:700 clamp(34px,5vw,52px)/1.05 var(--f-en);letter-spacing:-.01em;text-wrap:balance}
+.lede{margin:12px 0 0;max-width:66ch;font-size:17px;line-height:1.55;color:var(--ink2);text-wrap:pretty}
+.langs{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lang{background:var(--surface);border-radius:20px;padding:18px 18px 16px;box-shadow:0 0 0 1px var(--line) inset;display:flex;flex-direction:column;gap:10px;min-width:0}
+.lang .lt{display:flex;align-items:baseline;gap:10px}
+.lang .lt b{font:800 13px var(--f-ui);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--surface);flex:none;transform:translateY(-2px)}
+.lang h2{margin:0;font:700 21px/1.2 var(--f-ui)}
+.lang p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink2);text-wrap:pretty}
+.spec{display:flex;flex-wrap:wrap;gap:6px}
+.spec span{display:inline-flex;align-items:center;gap:6px;min-height:26px;padding:0 9px;border-radius:13px;background:var(--surface2);font:600 12px var(--f-ui);color:var(--ink)}
+.spec i{width:12px;height:12px;border-radius:50%;box-shadow:0 0 0 1px var(--line-strong) inset;flex:none}
+
+/* ───────── Araç çubuğu ───────── */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));
+  padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));border-block:1px solid var(--line)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.ctl{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ctl-l{font:600 12px var(--f-ui);color:var(--ink2);letter-spacing:.03em}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--surface2);border-radius:22px;padding:3px;gap:2px}
+.seg button{min-height:38px;padding:0 12px;border-radius:19px;font:600 13.5px var(--f-ui);color:var(--ink2);white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1.5px var(--ink) inset}
+.wpick{display:inline-flex;align-items:center;gap:4px}
+.wpick button{width:38px;height:38px;border-radius:50%;background:var(--surface2);display:grid;place-items:center}
+.wpick select{min-height:38px;border-radius:19px;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--ink);font:600 15px var(--f-en);padding:0 10px;max-width:220px}
+[hidden]{display:none!important}
+.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ───────── Sahne ───────── */
+section{padding-top:34px}
+.sec-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:12px}
+.sec-h h2{margin:0;font:700 24px/1.2 var(--f-ui);letter-spacing:-.005em}
+.sec-h p{margin:0;color:var(--ink2);font-size:14.5px;max-width:70ch}
+.stage{background:var(--stage);border-radius:26px;padding:22px;display:flex;flex-direction:column;gap:24px}
+.stage > *{min-width:0}
+.row-l{font:700 12px var(--f-ui);letter-spacing:.06em;color:var(--ink2);margin:0 0 -10px 4px}
+.prow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.pcol{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0}
+.pcol figcaption{font:600 13px var(--f-ui);color:var(--ink2);text-align:center}
+.pcol figcaption b{color:var(--ink)}
+figure{margin:0}
+.pz{--k:.66;width:calc(390px*var(--k) + 26px);height:calc(844px*var(--k) + 26px);padding:13px;flex:none}
+.pz.land{--k:.44;width:calc(844px*var(--k) + 26px);height:calc(390px*var(--k) + 26px)}
+.pz > .phone{transform:scale(var(--k));transform-origin:0 0}
+.phone{width:390px;height:844px;border-radius:56px;position:relative;overflow:hidden;
+  box-shadow:0 0 0 10px #1A1B1D,0 0 0 11.5px #45474B,0 24px 50px rgba(0,0,0,.28);isolation:isolate}
+.phone.land{width:844px;height:390px}
+.island{position:absolute;top:11px;left:50%;width:124px;height:36px;margin-left:-62px;border-radius:18px;background:#000;z-index:5}
+.land .island{top:50%;left:11px;width:36px;height:124px;margin:-62px 0 0;}
+.sbar{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 34px 0 46px;color:#fff;font:600 16px var(--f-ui);z-index:4}
+.sbar.dk{color:#111}
+.sbar svg{height:13px}
+.homebar{position:absolute;bottom:8px;left:50%;width:136px;height:5px;margin-left:-68px;border-radius:3px;background:rgba(255,255,255,.75);z-index:4}
+.homebar.dk{background:rgba(0,0,0,.55)}
+.abs{position:absolute}
+.appi{position:absolute;width:64px;display:flex;flex-direction:column;align-items:center;gap:5px;font:500 11.5px var(--f-ui);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.appi i{width:62px;height:62px;border-radius:15px;display:block;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.dots{position:absolute;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45)}
+.dots i:first-child{background:#fff}
+.lockdate{position:absolute;left:0;right:0;text-align:center;color:rgba(255,255,255,.92);font:600 18px var(--f-ui);display:flex;justify-content:center;gap:10px;align-items:center;white-space:nowrap}
+.clock{position:absolute;left:0;right:0;text-align:center;color:rgba(255,255,255,.93);font:700 104px/1 var(--f-ui);letter-spacing:-3px}
+.lockbtn{position:absolute;width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,.28);backdrop-filter:blur(10px);display:grid;place-items:center;color:#fff}
+.lockbtn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}
+.padlock{position:absolute;top:58px;left:50%;margin-left:-9px;width:18px;height:22px;color:rgba(255,255,255,.9)}
+
+/* Duvar kâğıtları (resim yok; yalnız degrade) */
+.wp-day{background:radial-gradient(120% 70% at 20% 10%,#CFE0EE 0%,transparent 60%),radial-gradient(90% 60% at 90% 90%,#D8C2AC 0%,transparent 65%),linear-gradient(165deg,#B5C9DD 0%,#D9D0C4 55%,#C9B5A2 100%)}
+.wp-dark{background:radial-gradient(90% 60% at 15% 15%,#26324A 0%,transparent 65%),radial-gradient(80% 60% at 85% 85%,#3A2A42 0%,transparent 65%),linear-gradient(165deg,#161C2B 0%,#211B2C 60%,#121219 100%)}
+.wp-tint{background:radial-gradient(90% 60% at 15% 15%,#2B2418 0%,transparent 65%),linear-gradient(165deg,#15120C 0%,#1E1810 60%,#0E0C08 100%)}
+.wp-glass{background:radial-gradient(70% 45% at 20% 18%,#62B7A9 0%,transparent 70%),radial-gradient(70% 50% at 85% 55%,#E9A35E 0%,transparent 70%),radial-gradient(80% 50% at 30% 92%,#C4574A 0%,transparent 70%),linear-gradient(160deg,#2F7E8A,#D99A62 60%,#B4503F)}
+.wp-lockday{background:radial-gradient(100% 60% at 25% 20%,#7FA0C4 0%,transparent 65%),radial-gradient(90% 60% at 85% 90%,#A58C74 0%,transparent 65%),linear-gradient(170deg,#56779E 0%,#7F90A4 50%,#9C8570 100%)}
+.wp-lockdark{background:radial-gradient(90% 60% at 20% 20%,#25314B 0%,transparent 65%),radial-gradient(80% 60% at 80% 85%,#3B2741 0%,transparent 65%),linear-gradient(170deg,#121827 0%,#1E1828 60%,#0F0F16 100%)}
+.wp-aod{background:radial-gradient(90% 60% at 20% 20%,#0B0F18 0%,transparent 65%),linear-gradient(170deg,#06080D 0%,#0A080D 60%,#040406 100%)}
+.wp-sb{background:#000}
+
+/* ───────── Widget temeli ───────── */
+.w{flex:none;position:relative;overflow:hidden;color:var(--wink);background:var(--wbg);font-family:var(--f-ui);isolation:isolate}
+.w.home{border-radius:22px}
+.w.small{width:158px;height:158px}
+.w.medium{width:338px;height:158px}
+.w.large{width:338px;height:354px}
+.w.rect{width:160px;height:72px;background:transparent;overflow:visible}
+.w.circ{width:72px;height:72px;background:transparent;overflow:visible}
+.w.inl{width:234px;height:26px;background:transparent;overflow:visible}
+.w.m-glass.home{backdrop-filter:blur(14px) saturate(1.5);-webkit-backdrop-filter:blur(14px) saturate(1.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 1px rgba(255,255,255,.28),inset 0 -1px 0 rgba(255,255,255,.12)}
+.w.m-tint.home{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.w.m-sb{background:transparent}
+.col{position:absolute;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.hw{position:relative;display:block;width:max-content;line-height:1;white-space:nowrap;font-family:var(--f-en);color:var(--wink);isolation:isolate}
+.hw + .hw{margin-top:4px}
+.bd{position:absolute;z-index:-1;pointer-events:none;display:block}
+.mn{display:block;line-height:1.2;white-space:nowrap;color:var(--wink)}
+.t2{color:var(--wink2)}
+.serif{font-family:var(--f-en)}
+.sc{text-transform:uppercase;letter-spacing:.06em;font:700 11px/1.2 var(--f-ui);color:var(--wink2)}
+.ex{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;font-family:var(--f-en);color:var(--wink2)}
+.ex b{font-weight:700;color:var(--wink)}
+.para{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;font-family:var(--f-en);color:var(--wink2)}
+.para b{font-weight:700;color:var(--wink)}
+.rule{display:block;height:1px;background:var(--rule);width:100%}
+.lvl{font:700 11px/1 var(--f-ui);color:var(--wink2);letter-spacing:.02em;white-space:nowrap}
+
+/* Düğmeler: 44 pt dokunma alanı; görünen daire 34 pt */
+.bt{width:44px;height:44px;display:grid;place-items:center;color:var(--wink)}
+.bt > span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center}
+.bt svg{width:15px;height:15px}
+.bt.ton > span{background:var(--btn);box-shadow:inset 0 0 0 1px var(--btnEdge)}
+.bt.pri > span{background:var(--next);color:var(--nextInk);box-shadow:inset 0 0 0 var(--nextEdgeW,0px) var(--nextEdge,transparent)}
+.bt.out > span{background:transparent;box-shadow:inset 0 0 0 1.5px var(--btnEdge)}
+.bt.bare > span{background:transparent}
+.bt.bare svg{width:19px;height:19px}
+.cap{height:44px;display:grid;place-items:center;flex:1 1 0;min-width:0}
+.cap > span{height:32px;width:100%;border-radius:16px;display:flex;align-items:center;justify-content:center;gap:6px;font:600 13px var(--f-ui);color:var(--wink);box-shadow:inset 0 0 0 1px var(--capEdge);white-space:nowrap;padding:0 8px}
+.cap.pri > span{background:var(--next);color:var(--nextInk);box-shadow:inset 0 0 0 var(--nextEdgeW,0px) var(--nextEdge,transparent)}
+.cap.ton > span{background:var(--btn);box-shadow:inset 0 0 0 1px var(--btnEdge)}
+.cap svg{width:13px;height:13px;flex:none}
+.cap.out > span{box-shadow:inset 0 0 0 1.5px var(--btnEdge)}
+.brow{position:absolute;display:flex;align-items:center}
+
+/* ───────── Dil A · Işıklı şerit ───────── */
+.L-a.m-day{--wbg:#FFFFFF;--wink:#15181B;--wink2:#474E54;--band:#F5E829;--btn:#EBEBE4;--btnEdge:rgba(21,24,27,.54);--next:#15181B;--nextInk:#FFFFFF;--capEdge:rgba(21,24,27,.54);--rule:rgba(21,24,27,.12);--mark:rgba(245,232,41,.85)}
+.L-a.m-dark{--wbg:#000000;--wink:#F3F4F0;--wink2:#B7BDC2;--band:#E9E040;--btn:#24282D;--btnEdge:rgba(255,255,255,.40);--next:rgba(243,244,240,.12);--nextInk:#F3F4F0;--nextEdge:#F3F4F0;--nextEdgeW:2px;--capEdge:rgba(255,255,255,.40);--rule:rgba(255,255,255,.12)}
+.L-a .hw{font-weight:900;letter-spacing:-.005em}
+.L-a .mn{font-weight:800}
+.L-a.m-day .bd{left:calc(-1*var(--bleed,16px));right:-.1em;top:.40em;height:.50em;background:var(--band);clip-path:polygon(0 0,100% 0,calc(100% - .16em) 100%,0 100%)}
+.L-a.m-dark .bd{left:calc(-1*var(--bleed,16px));right:-.1em;top:1.04em;height:.16em;background:var(--band);box-shadow:0 0 .35em .04em rgba(233,224,64,.18)}
+.L-a .hw + .hw .bd{left:calc(-1*var(--bleed,16px))}
+.L-a.m-day .ex b{background:var(--mark);padding:0 .08em}
+.L-a.m-dark .ex b,.L-a.m-dark .para b{text-decoration:underline;text-decoration-color:var(--band);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.L-a.m-day .para b{background:var(--mark);padding:0 .08em}
+.L-a .lvl{padding:4px 7px;border-radius:9px;box-shadow:inset 0 0 0 1.5px var(--btnEdge);color:var(--wink)}
+
+/* ───────── Dil B · Sözlük sayfası ───────── */
+.L-b.m-day{--wbg:#FBFAF6;--wink:#1D1B17;--wink2:#4A463E;--band:#F5E829;--btnEdge:rgba(29,27,23,.54);--capEdge:rgba(29,27,23,.54);--rule:rgba(29,27,23,.20);--next:transparent;--nextInk:#1D1B17;--nextEdge:rgba(29,27,23,.54);--nextEdgeW:1.5px}
+.L-b.m-dark{--wbg:#1A1814;--wink:#EFEADF;--wink2:#BFB8A9;--band:#E9E040;--btnEdge:rgba(239,234,223,.45);--capEdge:rgba(239,234,223,.45);--rule:rgba(239,234,223,.20);--next:transparent;--nextInk:#EFEADF;--nextEdge:rgba(239,234,223,.45);--nextEdgeW:1.5px}
+.L-b .hw{font-weight:700}
+.L-b .mn{font-family:var(--f-en);font-weight:600}
+.L-b.m-day .bd{left:-.04em;right:-.04em;top:.68em;height:.25em;background:var(--band);clip-path:polygon(.1em 0,100% 0,calc(100% - .1em) 100%,0 100%)}
+.L-b.m-dark .bd{left:0;right:0;top:1.04em;height:max(1.5px,.06em);background:var(--band)}
+.L-b .ipa{font-family:var(--f-en);color:var(--wink2);white-space:nowrap}
+.L-b .bt > span{background:transparent;box-shadow:inset 0 0 0 1.5px var(--btnEdge)}
+.L-b .cap > span{box-shadow:inset 0 0 0 1.5px var(--capEdge);background:transparent;color:var(--wink)}
+
+/* ───────── Dil C · Yalın ───────── */
+.L-c.m-day{--wbg:#FFFFFF;--wink:#111214;--wink2:#4B5056;--band:#F5E829;--capEdge:rgba(17,18,20,.50);--btnEdge:rgba(17,18,20,.50);--rule:rgba(17,18,20,.10);--next:#111214;--nextInk:#FFFFFF}
+.L-c.m-dark{--wbg:#000000;--wink:#ECEDEA;--wink2:#A3A9AF;--band:#E9E040;--capEdge:rgba(236,237,234,.45);--btnEdge:rgba(236,237,234,.45);--rule:rgba(236,237,234,.12);--next:rgba(236,237,234,.12);--nextInk:#ECEDEA;--nextEdge:#ECEDEA;--nextEdgeW:2px}
+.L-c .hw{font-weight:700;letter-spacing:-.012em}
+.L-c .mn{font-weight:400}
+.L-c .bd{left:calc(-1*var(--caretx,10px));width:3px;top:.10em;height:.72em;background:var(--band);border-radius:1px}
+.L-c .hw + .hw .bd{display:none}
+
+/* ───────── Öneri · Sakin şerit: bugünkü tokenlar; A'nın şeridi ve işaretli örneği, C'nin sadeliği ───────── */
+.L-o.m-day{--wbg:#FFFFFF;--wink:#15181B;--wink2:#474E54;--band:#F5E829;--btn:#EBEBE4;--btnEdge:rgba(21,24,27,.54);--capEdge:rgba(21,24,27,.54);--next:#EBEBE4;--nextInk:#15181B;--nextEdge:rgba(21,24,27,.54);--nextEdgeW:1px;--rule:rgba(21,24,27,.10);--mark:rgba(245,232,41,.8)}
+.L-o.m-dark{--wbg:#191C20;--wink:#F3F4F0;--wink2:#B7BDC2;--band:#E9E040;--btn:#24282D;--btnEdge:rgba(255,255,255,.40);--capEdge:rgba(255,255,255,.40);--next:#24282D;--nextInk:#F3F4F0;--nextEdge:rgba(255,255,255,.40);--nextEdgeW:1px;--rule:rgba(255,255,255,.12)}
+.L-o .hw{font-weight:700}
+.L-o .mn{font-weight:600}
+.L-o.m-day .bd{left:-.06em;right:-.06em;top:.52em;height:.40em;background:var(--band);clip-path:polygon(.1em 0,100% 0,calc(100% - .1em) 100%,0 100%)}
+.L-o.m-dark .bd{left:-.06em;right:-.06em;top:1.04em;height:max(1.5px,.10em);background:var(--band);box-shadow:0 0 .3em rgba(233,224,64,.18)}
+.w.ln.L-o .bd{clip-path:none;box-shadow:none;left:0;right:0;top:1.04em;height:max(1.5px,.09em);background:var(--band)}
+.w.m-aod.L-o .bd{height:1px}
+.L-o.m-day .ex b,.L-o.m-day .para b{background:var(--mark);padding:0 .08em}
+.L-o.m-dark .ex b,.L-o.m-dark .para b{text-decoration:underline;text-decoration-color:var(--band);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.meta{font:700 11.5px/1.2 var(--f-ui);color:var(--wink2);white-space:nowrap}
+.orow{display:flex;flex-wrap:wrap;gap:18px 26px;justify-content:center;align-items:flex-start}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px}
+.strip .cell{min-height:186px}
+.mt{width:100%;min-width:640px}
+.mt td:first-child{white-space:nowrap;font-weight:600}
+
+/* ───────── Sistemin çizdiği modlar (renk yok, yalnız saydamlık) ───────── */
+.w.m-tint{--wbg:rgba(30,22,10,.58);--wink:#F4CF86;--wink2:rgba(244,207,134,.62);--band:#F4CF86;--btn:rgba(244,207,134,.16);--btnEdge:rgba(244,207,134,.40);--next:rgba(244,207,134,.16);--nextInk:#F4CF86;--nextEdge:transparent;--nextEdgeW:0px;--capEdge:rgba(244,207,134,.35);--rule:rgba(244,207,134,.30)}
+.w.m-glass{--wbg:rgba(255,255,255,.13);--wink:rgba(255,255,255,.97);--wink2:rgba(255,255,255,.72);--band:rgba(255,255,255,.97);--btn:rgba(255,255,255,.18);--btnEdge:rgba(255,255,255,.45);--next:rgba(255,255,255,.18);--nextInk:#fff;--nextEdge:transparent;--nextEdgeW:0px;--capEdge:rgba(255,255,255,.45);--rule:rgba(255,255,255,.35)}
+.w.m-sb{--wbg:transparent;--wink:#E8382B;--wink2:rgba(232,56,43,.62);--band:#E8382B;--btn:rgba(232,56,43,.18);--btnEdge:rgba(232,56,43,.45);--next:rgba(232,56,43,.18);--nextInk:#E8382B;--nextEdge:transparent;--nextEdgeW:0px;--capEdge:rgba(232,56,43,.4);--rule:rgba(232,56,43,.35)}
+.w.m-vib{--wink:rgba(255,255,255,.96);--wink2:rgba(255,255,255,.70);--band:rgba(255,255,255,.96);--rule:rgba(255,255,255,.40)}
+.w.m-aod{--wink:rgba(255,255,255,.58);--wink2:rgba(255,255,255,.40);--band:rgba(255,255,255,.58);--rule:rgba(255,255,255,.22)}
+.w.ln .ex b,.w.ln .para b{background:none;text-decoration:none}
+.w.ln.L-a .bd{clip-path:none;box-shadow:none;left:calc(-1*var(--bleed,16px));right:-.08em;top:1.04em;height:max(2px,.09em);background:var(--band)}
+.w.ln.L-b .bd{clip-path:none;left:0;right:0;top:1.04em;height:1px;background:var(--band)}
+.w.ln.L-c .bd{background:var(--band)}
+.w.m-aod.L-a .bd,.w.m-aod.L-b .bd{height:1px}
+.w.ln .bt.pri > span{box-shadow:none}
+
+/* Kilitli ekran aileleri */
+.ring{position:absolute;inset:0}
+.cnum{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--wink);line-height:1}
+.inltx{font:600 15px/26px var(--f-ui);color:var(--wink);white-space:nowrap}
+
+/* ───────── Yan yana ve mod tablosu ───────── */
+.cmp{display:grid;grid-template-columns:110px repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+.cmp .hd{font:700 14px var(--f-ui);padding:0 4px;align-self:end}
+.cmp .hd small{display:block;font:500 12px var(--f-ui);color:var(--ink2)}
+.cmp .rl{font:700 13px/1.3 var(--f-ui);color:var(--ink);align-self:center;padding-right:6px}
+.cmp .rl small{display:block;font:500 12px/1.35 var(--f-ui);color:var(--ink2)}
+.cell{border-radius:18px;padding:14px;display:flex;align-items:center;justify-content:safe center;min-width:0;overflow-x:auto;min-height:120px}
+.cell .zm{flex:none}
+.cell .note{font:600 13px/1.4 var(--f-ui);color:rgba(255,255,255,.8);text-align:center;max-width:24ch}
+.cell.lk{gap:14px;flex-wrap:wrap}
+
+/* ───────── Ölçüm şeridi ve tablolar ───────── */
+.meas{margin-top:14px}
+.mc{background:var(--surface);border-radius:16px;padding:12px 14px;box-shadow:0 0 0 1px var(--line) inset;font-size:13.5px;min-width:0}
+.mc b{display:block;font:700 13px var(--f-ui);margin-bottom:4px}
+.mc ul{margin:0;padding-left:16px;color:var(--ink2)}
+.tbl{overflow-x:auto;border-radius:18px;background:var(--surface);box-shadow:0 0 0 1px var(--line) inset}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12.5px var(--f-ui);color:var(--ink2);letter-spacing:.02em;background:var(--surface)}
+tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok,.no,.mid{display:inline-block;font:700 11px/1 var(--f-ui);padding:3px 6px;border-radius:6px;margin-left:6px;vertical-align:1px}
+.ok{color:var(--good);box-shadow:inset 0 0 0 1.5px var(--good)}
+.no{color:var(--bad);box-shadow:inset 0 0 0 1.5px var(--bad)}
+.mid{color:var(--caution);box-shadow:inset 0 0 0 1.5px var(--caution)}
+.score{display:inline-flex;gap:3px;vertical-align:-1px}
+.score i{width:9px;height:9px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--ink2)}
+.score i.on{background:var(--ink);box-shadow:none}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border-radius:18px;padding:16px 18px;box-shadow:0 0 0 1px var(--line) inset;min-width:0}
+.card.wide{grid-column:1/-1}
+.card h3{margin:0 0 8px;font:700 16px/1.3 var(--f-ui)}
+.card ul,.card ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.card li{font-size:14.5px;line-height:1.5;text-wrap:pretty}
+.card p{margin:0 0 8px;font-size:14.5px;line-height:1.55}
+.tag{display:inline-block;font:700 10.5px/1 var(--f-ui);letter-spacing:.03em;padding:3px 6px;border-radius:6px;vertical-align:1px;margin-left:4px;box-shadow:inset 0 0 0 1px var(--line-strong);color:var(--ink2)}
+.verdict{background:var(--surface);border-radius:22px;padding:20px 22px;box-shadow:0 0 0 2px var(--ink) inset;display:flex;flex-direction:column;gap:10px}
+.verdict h3{margin:0;font:700 20px/1.25 var(--f-ui)}
+.verdict p{margin:0;font-size:15.5px;line-height:1.55;max-width:80ch}
+.src{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px}
+.src li{overflow-wrap:anywhere}
+.foot{margin-top:28px;color:var(--ink2);font-size:13.5px}
+
+.bare .hero,.bare .bar,.bare #karsilastirma,.bare #oneri,.bare #arastirma,.bare .foot,.bare .meas,.bare .sec-h{display:none}
+.bare section{padding-top:12px}
+@media (max-width:1000px){
+  .langs{grid-template-columns:minmax(0,1fr)}
+  .prow{grid-template-columns:minmax(0,1fr)}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .cmp{grid-template-columns:minmax(0,1fr)}
+  .cmp .hd{display:none}
+  .cmp .rl{padding-top:10px}
+  .pz{--k:.74}
+  .pz.land{--k:.42}
+}
+@media (max-width:420px){
+  .pz{--k:.76}
+  .pz.land{--k:.38}
+  .stage{padding:14px}
+}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">LOCKGLOW · TASARIM KEŞFİ · 23 EKİM 2026</p>
+  <h1>Widget dilleri</h1>
+  <p class="lede">Aynı kelime, üç görsel dil ve sonunda bir öneri. Her dilde küçük, orta ve büyük ana ekran widget'ı, kilitli ekranın dikdörtgen, daire ve satır içi widget'ı var. Mod düğmeleri gündüzü, koyu modu, geceyi (StandBy ve Her zaman açık ekran), iOS 18 renklendirilmiş ve iOS 26 cam görünümünü gösterir. Kelimeler <code>SnapshotWords.swift</code> içindeki gerçek kartlar. Swift koduna dokunulmadı.</p>
+  <ul class="langs" aria-label="Üç görsel dil">
+    <li class="lang">
+      <div class="lt"><b>A</b><h2>Işıklı şerit</h2></div>
+      <p>Bugünkü fosfor dilinin cesur hali. Kelime büyür ve çok kalınlaşır. Şerit widget'ın kenarından başlar, kelimenin altından geçer. Gece zemin tam siyah, şerit hafifçe ışır.</p>
+      <div class="spec"><span><i style="background:#F5E829"></i>şerit #F5E829</span><span>kelime 30 pt, en kalın serif</span><span>anlam 19 pt, SF en kalın</span></div>
+    </li>
+    <li class="lang">
+      <div class="lt"><b>B</b><h2>Sözlük sayfası</h2></div>
+      <p>Kâğıt zemin ve neredeyse her yazı serif. Tür, seviye ve söyleniş küçük büyük harflerle yazılır; girdiler ince çizgiyle ayrılır. Şerit, kalemle çizilmiş alçak bir çizgidir.</p>
+      <div class="spec"><span><i style="background:#FBFAF6"></i>kâğıt #FBFAF6</span><span>kelime 24 pt serif</span><span>anlam 17 pt, serif yarı kalın</span></div>
+    </li>
+    <li class="lang">
+      <div class="lt"><b>C</b><h2>Yalın</h2></div>
+      <p>Yalnız kelime ve anlamı, bol boşluk. Söyleniş, seviye ve İngilizce tanım yok. Şerit, kelimenin başında ince bir imlece iner. Orta ve büyük widget'ta düğmelerin adı yazılıdır.</p>
+      <div class="spec"><span><i style="background:#000"></i>gece zemin #000000</span><span>kelime 30 pt serif</span><span>anlam 18 pt, SF düz</span></div>
+    </li>
+  </ul>
+</header>
+</div>
+
+<div class="bar" role="toolbar" aria-label="Görünüm seçenekleri">
+  <div class="wrap">
+    <div class="ctl"><span class="ctl-l" id="l-view">GÖRÜNÜM</span>
+      <div class="seg" role="group" aria-labelledby="l-view" id="seg-view">
+        <button type="button" data-v="phones">Telefonda</button>
+        <button type="button" data-v="side">Yan yana</button>
+        <button type="button" data-v="modes">Mod tablosu</button>
+      </div>
+    </div>
+    <div class="ctl" id="ctl-mode"><span class="ctl-l" id="l-mode">MOD</span>
+      <div class="seg" role="group" aria-labelledby="l-mode" id="seg-mode">
+        <button type="button" data-m="day">Gündüz</button>
+        <button type="button" data-m="dark">Koyu</button>
+        <button type="button" data-m="night">Gece</button>
+        <button type="button" data-m="tint">Renklendirilmiş</button>
+        <button type="button" data-m="glass">Cam</button>
+      </div>
+    </div>
+    <div class="ctl" id="ctl-fam" hidden><span class="ctl-l" id="l-fam">BOY</span>
+      <div class="seg" role="group" aria-labelledby="l-fam" id="seg-fam">
+        <button type="button" data-f="small">Küçük</button>
+        <button type="button" data-f="medium">Orta</button>
+        <button type="button" data-f="large">Büyük</button>
+        <button type="button" data-f="rect">Dikdörtgen</button>
+        <button type="button" data-f="circ">Daire</button>
+      </div>
+    </div>
+    <div class="ctl"><span class="ctl-l" id="l-word">KELİME</span>
+      <div class="wpick">
+        <button type="button" id="w-prev" aria-label="Önceki kelime"><svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <select id="w-sel" aria-labelledby="l-word"></select>
+        <button type="button" id="w-next" aria-label="Sonraki kelime"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<main>
+  <section id="sahne" aria-labelledby="h-sahne">
+    <div class="sec-h"><h2 id="h-sahne">Sahne</h2><p id="stage-note"></p></div>
+    <div class="stage" id="stage"></div>
+    <div class="meas" id="meas" aria-live="polite"></div>
+  </section>
+
+  <section id="karsilastirma" aria-labelledby="h-kars">
+    <div class="sec-h"><h2 id="h-kars">Karşılaştırma</h2><p>Kontrast sayıları bu sayfadaki renklerden hesaplanır (WCAG 2.2, saydam renkler zeminle karıştırılarak). Aynı hesap <code>docs/denetim/araclar/widget_dilleri_kontrast.py</code> ile de yapılır.</p></div>
+    <div class="tbl"><table id="t-contrast"><caption class="sr" hidden>Kontrast tablosu</caption></table></div>
+    <div style="height:14px"></div>
+    <div class="tbl"><table id="t-load"></table></div>
+    <div style="height:14px"></div>
+    <div class="tbl"><table id="t-score"></table></div>
+  </section>
+
+  <section id="oneri" aria-labelledby="h-oneri">
+    <div class="sec-h"><h2 id="h-oneri">Öneri</h2></div>
+    <div id="verdict"></div>
+    <div class="stage" id="o-stage" style="margin-top:14px"></div>
+  </section>
+
+  <section id="arastirma" aria-labelledby="h-ara">
+    <div class="sec-h"><h2 id="h-ara">Araştırma özeti</h2><p>Etiketler: <span class="tag">belgede</span> Apple belgesi, HIG ya da WWDC; <span class="tag">dış</span> Apple dışı kaynak; <span class="tag">doğrulanmadı</span> belgede bulunamadı, cihazda bakılmalı.</p></div>
+    <div class="cards" id="research"></div>
+  </section>
+  <p class="foot">Bu sayfa bir tasarım önerisidir; Swift koduna dokunulmadı. Ayrıntılar, kaynaklar ve dosya düzeyinde değişiklik listesi: <code>docs/tasarim/alternatifler/widget_dilleri.md</code>. Tarayıcıda yazı tipi olarak New York yerine Source Serif 4, SF Pro yerine Inter kullanılır; ölçüler yaklaşıktır.</p>
+</main>
+</div>
+
+<script>
+"use strict";
+/* ───────── Kelimeler: ios/WidgetSnapshots/SnapshotWords.swift (olduğu gibi) ───────── */
+const WORDS = [
+  {id:1,lemma:"breakfast",pos:"n",level:"A1",ipa:"/ˈbrɛkfəst/",micro:"first meal of the day",short:"the first meal of the day, eaten in the morning",ex:"I usually have breakfast at seven.",tr:"kahvaltı"},
+  {id:311,lemma:"look forward to",pos:"phv",level:"B1",ipa:"/lʊk ˈfɔːrwərd tə/",micro:"wait happily for something",short:"feel happy and excited about something that will happen",ex:"I'm looking forward to the weekend.",tr:"dört gözle beklemek",trs:"iple çekmek"},
+  {id:399,lemma:"end up",pos:"phv",level:"B1",ipa:"/ɛnd ˈʌp/",micro:"finally be in a situation",short:"be in a place or situation at the end, often by chance",ex:"We got lost and ended up in a small village.",tr:"sonunda kendini ... bulmak",trs:"sonunda … olmak"},
+  {id:11,lemma:"fridge",pos:"n",level:"A1",ipa:"/frɪdʒ/",micro:"machine that keeps food cold",short:"a big kitchen machine that keeps food and drinks cold",ex:"There is some milk in the fridge.",tr:"buzdolabı"},
+  {id:140,lemma:"date",pos:"n",level:"A2",ipa:"/deɪt/",micro:"a romantic meeting",short:"a planned time when two people meet because they like each other romantically",ex:"I have a date on Friday night.",tr:"romantik buluşma"},
+  {id:286,lemma:"actually",pos:"adv",level:"B1",ipa:"/ˈæktʃuəli/",micro:"in fact; in reality",short:"used to say what is really true, often when it is not what people expect",ex:"I thought the test would be hard, but it was actually quite easy.",tr:"aslında, gerçekte",trs:"aslında"},
+  {id:807,lemma:"Could you tell me the way to",pos:"phr",level:"A2",ipa:"/kʊdju ˌtɛl mi ðə ˈweɪ tə/",micro:"ask how to get to a place",short:"a polite question to find out how to get to a place",ex:"Could you tell me the way to the museum, please?",tr:"… yolunu tarif eder misiniz?",trs:"Nasıl gidilir?"},
+  {id:905,lemma:"lost and found",pos:"phr",level:"B1",ipa:"/ˌlɔːst ən ˈfaʊnd/",micro:"place for things left behind",short:"the place where things that people left behind are kept for their owners",ex:"I left my phone on the train, so I called the lost and found.",tr:"kayıp eşya bürosu",trs:"kayıp eşya"},
+  {id:882,lemma:"under the weather",pos:"idm",level:"B1",ipa:"/ˌʌndər ðə ˈwɛðər/",micro:"feeling a little ill",short:"feeling a little unwell, with low energy, but not very ill",ex:"I feel a bit under the weather today.",tr:"kendini pek iyi hissetmemek",trs:"biraz rahatsız"},
+  {id:899,lemma:"misunderstanding",pos:"n",level:"B1",ipa:"/ˌmɪsˌʌndərˈstændɪŋ/",micro:"a mix-up about what you mean",short:"a small problem when someone gets the wrong idea about what you mean",ex:"It was just a misunderstanding. I'm sorry.",tr:"yanlış anlaşılma"},
+  {id:820,lemma:"I can't wait",pos:"phr",level:"A2",ipa:"/aɪ ˌkænt ˈweɪt/",micro:"excited about a coming event",short:"used to say that you are very excited and want something to happen soon",ex:"I can't wait for the weekend!",tr:"sabırsızlanıyorum",trs:"iple çekiyorum"},
+  {id:801,lemma:"disagree",pos:"v",level:"A2",ipa:"/ˌdɪsəˈɡriː/",micro:"have a different opinion",short:"have a different opinion from someone else about something",ex:"I'm sorry, but I disagree.",tr:"aynı fikirde olmamak",trs:"hemfikir olmamak"},
+  {id:939,lemma:"the day before yesterday",pos:"phr",level:"A2",ipa:"/ðə deɪ bɪfɔːr ˈjɛstərdeɪ/",micro:"two days ago",short:"the day that came two days before today",ex:"It snowed the day before yesterday.",tr:"evvelki gün"},
+  {id:541,lemma:"stop",pos:"v",level:"A1",ipa:"/stɑːp/",micro:"end a movement or action",short:"to end an action or a movement, or to not go on any more",ex:"Please stop the music.",tr:"durmak, durdurmak",trs:"durmak/durdurmak"},
+  {id:965,lemma:"cash or card",pos:"phr",level:"A2",ipa:"/ˌkæʃ ɔːr ˈkɑːrd/",micro:"how do you want to pay?",short:"a short question at a shop till about how you want to pay",ex:"“Cash or card?” “Card, please.”",tr:"nakit mi, kart mı?",trs:"nakit mi kart mı"},
+  {id:1000000,lemma:"be fed up with",pos:"",level:"",ipa:"",micro:"",short:"",ex:"I'm fed up with this rain.",tr:"bir şeyden bıkmış olmak",user:true},
+  {id:1000001,lemma:"awkward",pos:"",level:"",ipa:"",micro:"",short:"",ex:"",tr:"garip",user:true}
+];
+const POS = {n:"isim",v:"fiil",adj:"sıfat",adv:"zarf",phv:"kalıp fiil",phr:"kalıp",idm:"deyim"};
+const LANGS = ["a","b","c"];
+const LNAME = {a:"A · Işıklı şerit",b:"B · Sözlük sayfası",c:"C · Yalın",o:"Öneri · Sakin şerit"};
+const MODES = {day:"Gündüz",dark:"Koyu",night:"Gece",tint:"Renklendirilmiş",glass:"Cam"};
+const FAMS = {small:"Küçük",medium:"Orta",large:"Büyük",rect:"Dikdörtgen",circ:"Daire",inl:"Satır içi"};
+const S = {view:"phones",mode:"day",word:0,fam:"small"};
+
+/* ───────── Ölçme ve sığdırma (Swift'teki ViewThatFits basamaklarının kopyası, yaklaşık) ───────── */
+const CV = document.createElement("canvas").getContext("2d");
+const FEN = getComputedStyle(document.documentElement).getPropertyValue("--f-en").trim() || "Georgia,serif";
+const FUI = getComputedStyle(document.documentElement).getPropertyValue("--f-ui").trim() || "system-ui,sans-serif";
+function tw(text, size, weight, serif){ CV.font = `${weight} ${size}px ${serif ? FEN : FUI}`; return CV.measureText(text).width; }
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+/* Kelimeyi en çok n satıra, satırlar eşit uzunlukta olacak biçimde böler (WidgetText.balancedLines). */
+function balanced(text, n){
+  const w = text.split(" ");
+  const k = Math.min(n, w.length);
+  if (k <= 1) return [text];
+  let best = [text], bestL = [Infinity];
+  const better = (a, b) => {
+    const ma = Math.max(...a), mb = Math.max(...b);
+    if (ma !== mb) return ma < mb;
+    const sa = a.reduce((s, x) => s + x * x, 0), sb = b.reduce((s, x) => s + x * x, 0);
+    if (sa !== sb) return sa < sb;
+    for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] > b[i];
+    return false;
+  };
+  (function go(start, lines){
+    const left = k - lines.length;
+    if (left === 1){
+      const c = lines.concat([w.slice(start).join(" ")]);
+      const L = c.map(x => x.length);
+      if (better(L, bestL)){ best = c; bestL = L; }
+      return;
+    }
+    for (let end = start + 1; end <= w.length - left + 1; end++) go(end, lines.concat([w.slice(start, end).join(" ")]));
+  })(0, []);
+  return best;
+}
+function glossForms(w){
+  if (!w.tr) return [];
+  const first = (() => { let d = 0; for (let i = 0; i < w.tr.length; i++){ const c = w.tr[i]; if (c === "(") d++; else if (c === ")") d = Math.max(d - 1, 0); else if (!d && (c === "," || c === ";")) return w.tr.slice(0, i).trim(); } return w.tr; })();
+  const shorter = (w.trs || "").trim() || first;
+  return [...new Set([w.tr.trim(), shorter.trim()].filter(Boolean))];
+}
+/* Kelime: basamak listesinden genişliğe bütün sığan ilki ({s: boy, n: satır}). */
+function fitWord(text, steps, width, weight){
+  for (const st of steps){
+    const lines = balanced(text, st.n || 1);
+    if (lines.every(l => tw(l, st.s, weight, true) <= width)) return {size: st.s, lines};
+  }
+  return null;
+}
+/* Anlam: her satır sayısı için önce tam, sonra kısa biçim; hiç "…" yok. */
+function fitForms(forms, size, counts, width, weight, serif){
+  for (const n of counts) for (const f of forms){
+    const lines = balanced(f, n);
+    if (lines.every(l => tw(l, size, weight, serif) <= width)) return {size, lines, form: f === forms[0] ? "tam" : "kısa"};
+  }
+  return null;
+}
+function wordH(hw, hang){ return hw.lines.length * hw.size + (hw.lines.length - 1) * 4 + hw.size * (hang ?? .24); }
+/* Örnek cümlede kelimenin yeri (LemmaMatch: her parça + ek; "be" ile başlayan kalıpta geri kalanı). */
+function lemmaRange(lemma, s){
+  const tryM = l => { const re = new RegExp("\\b" + l.split(" ").map(p => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\w*").join("\\s+") + "\\b", "i"); const m = re.exec(s); return m ? [m.index, m.index + m[0].length] : null; };
+  const r = tryM(lemma);
+  if (r) return r;
+  const p = lemma.split(" ");
+  return p.length > 1 && p[0].toLowerCase() === "be" ? tryM(p.slice(1).join(" ")) : null;
+}
+/* Orta widget'ın tek satırlık örneği (WidgetExampleLine.versions): kelimeden önce hiç kesilmez. */
+function exampleLine(s, lemma, width, size){
+  const r = lemmaRange(lemma, s);
+  const mark = t => { const rr = lemmaRange(lemma, t); return rr ? esc(t.slice(0, rr[0])) + "<b>" + esc(t.slice(rr[0], rr[1])) + "</b>" + esc(t.slice(rr[1])) : esc(t); };
+  if (!r) return mark(s);
+  const vs = [{t: s, f: s}, {t: s, f: s.slice(0, r[1]) + "…"}];
+  const before = s.slice(0, r[0]).split(/\s+/).filter(Boolean);
+  for (const k of [4, 2, 0]){
+    if (before.length > k){
+      // Kelimeden önceki k'ıncı sözcüğün başı (k = 0: kelimenin kendisi).
+      let st = r[0];
+      for (let i = 0, pos = r[0]; i < k; i++){ pos = s.lastIndexOf(" ", pos - 2) + 1; st = pos; }
+      vs.push({t: "… " + s.slice(st), f: "… " + s.slice(st, r[1]) + "…"});
+    }
+  }
+  const v = vs.find(v => tw(v.f, size, 400, true) <= width) || vs[vs.length - 1];
+  return mark(v.t);
+}
+/* Çok satırlı metin: kelime kelime sarar, en çok max satır. */
+function wrapCount(text, size, weight, serif, width){
+  const words = text.split(" "); let lines = 1, cur = "";
+  for (const x of words){ const t = cur ? cur + " " + x : x; if (tw(t, size, weight, serif) > width && cur){ lines++; cur = x; } else cur = t; }
+  return lines;
+}
+function markSentence(s, lemma){ const r = lemmaRange(lemma, s); return r ? esc(s.slice(0, r[0])) + "<b>" + esc(s.slice(r[0], r[1])) + "</b>" + esc(s.slice(r[1])) : esc(s); }
+
+/* ───────── Simgeler (SF Symbols benzeri) ───────── */
+const ICO = {
+  spk:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9.2h3.3L12 5v14l-4.7-4.2H4z"/><path d="M15.2 9a4.2 4.2 0 0 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.8 6.4a8 8 0 0 1 0 11.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  fwd:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 5.5v13l9.3-6.5z"/><path d="M12.2 5.5v13l9.3-6.5z"/></svg>',
+  chk:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l4.8 4.8L19.5 7"/></svg>'
+};
+function btn(kind, ico, label){ return `<span class="bt ${kind}" role="img" aria-label="${label}"><span>${ICO[ico]}</span></span>`; }
+function cap(kind, ico, label){ return `<span class="cap ${kind}"><span>${ico ? ICO[ico] : ""}${label}</span></span>`; }
+
+/* ───────── Ortak parçalar ───────── */
+function hwHTML(hw){ return hw.lines.map(l => `<span class="hw" style="font-size:${hw.size}px"><i class="bd"></i>${esc(l)}</span>`).join(""); }
+function mnHTML(m, extra){ return m.lines.map(l => `<span class="mn ${extra || ""}" style="font-size:${m.size}px">${esc(l)}</span>`).join(""); }
+function lineMode(mode){ return ["tint","glass","sb","vib","aod"].includes(mode); }
+function root(fam, lang, mode, inner, style){
+  const cls = ["w", fam, `L-${lang}`, `m-${mode}`];
+  if (["small","medium","large"].includes(fam)) cls.push("home");
+  if (lineMode(mode)) cls.push("ln");
+  return `<div class="${cls.join(" ")}" style="${style || ""}">${inner}</div>`;
+}
+
+/* Dillerin ölçüleri. Her dilin basamakları ayrı; düzen motoru aynı. */
+const P = {
+  a: {small:{steps:[{s:30},{s:26},{s:22},{s:22,n:2},{s:19},{s:19,n:2},{s:17},{s:17,n:2},{s:15},{s:13}], m:[19,17,15,13], wW:900, mW:800},
+      medium:{steps:[{s:26},{s:22},{s:20},{s:20,n:2},{s:17},{s:17,n:2}], m:[18,16], mW:800},
+      large:{steps:[{s:44},{s:38},{s:32},{s:32,n:2},{s:28},{s:28,n:2},{s:24,n:2}], m:[26,22,20], mW:800},
+      rect:{steps:[{s:18},{s:16},{s:15},{s:15,n:2}], m:[15,13], mW:700}},
+  b: {small:{steps:[{s:24},{s:20},{s:20,n:2},{s:17},{s:17,n:2},{s:15},{s:13}], m:[17,15,13], wW:700, mW:600},
+      medium:{steps:[{s:22},{s:20},{s:17},{s:17,n:2},{s:15,n:2}], m:[16,15], mW:600},
+      large:{steps:[{s:30},{s:26},{s:22},{s:22,n:2},{s:20,n:2}], m:[20,18,16], mW:600},
+      rect:{steps:[{s:17},{s:15},{s:15,n:2}], m:[15,13], mW:600}},
+  c: {small:{steps:[{s:30},{s:26},{s:22},{s:22,n:2},{s:19},{s:19,n:2},{s:17},{s:17,n:2},{s:15},{s:13}], m:[18,16,15,13], wW:700, mW:400},
+      medium:{steps:[{s:28},{s:24},{s:20},{s:20,n:2},{s:17},{s:17,n:2}], m:[18,16], mW:400},
+      large:{steps:[{s:48},{s:42},{s:36},{s:36,n:2},{s:30},{s:30,n:2},{s:26,n:2}], m:[28,24,20], mW:400},
+      rect:{steps:[{s:18},{s:16},{s:15},{s:15,n:2}], m:[15,13], mW:400}},
+  o: {small:{steps:[{s:28},{s:24},{s:20},{s:20,n:2},{s:17},{s:17,n:2},{s:15},{s:13}], m:[17,15,13], wW:700, mW:600},
+      medium:{steps:[{s:24},{s:22},{s:20},{s:20,n:2},{s:17},{s:17,n:2}], m:[16,15], mW:600},
+      large:{steps:[{s:40},{s:34},{s:28},{s:28,n:2},{s:24,n:2},{s:20,n:2}], m:[24,22,20], mW:600},
+      rect:{steps:[{s:17},{s:15},{s:15,n:2}], m:[15,13], mW:600}}
+};
+/* Bugünkü kod (main): yalnız ölçüm şeridi için (HomeWordViews.swift basamakları). */
+const NOW_SMALL = {steps:[{s:24},{s:20},{s:17},{s:20,n:2},{s:17,n:2},{s:15},{s:15,n:2},{s:13}], m:[17,15,13], wW:700, mW:700};
+const LAST = {}; // ölçüm şeridi için son seçimler
+
+/* ───────── Küçük (158 × 158; kenar 16; alt düğme satırı 36 + 2) ───────── */
+function renderSmall(lang, w, mode){
+  const p = P[lang].small, forms = glossForms(w);
+  const W = 126, H = 126 - 36 - 2 - (lang === "b" ? 13 : 0);
+  let hw = null, mn = null;
+  outer: for (const ms of p.m){
+    for (const st of p.steps){
+      const h = fitWord(w.lemma, [st], W, p.wW); if (!h || ms > h.size) continue;
+      if (!forms.length){ if (wordH(h) <= H){ hw = h; break outer; } continue; }
+      const m = fitForms(forms, ms, [1, 2], W, p.mW, lang === "b");
+      if (!m) continue;
+      if (wordH(h, lang === "a" ? .3 : .24) + 6 + m.lines.length * ms * 1.2 <= H){ hw = h; mn = m; break outer; }
+    }
+  }
+  if (!hw) hw = fitWord(w.lemma, [{s:15},{s:15,n:2},{s:13,n:2}], W, p.wW) || {size:13, lines:[w.lemma]};
+  LAST[lang] = Object.assign(LAST[lang] || {}, {small: {hw, mn}});
+  const meaning = mn ? (lang === "b" ? `<span class="rule" style="margin:7px 0 6px"></span>` : `<span style="height:${lang === "a" ? 8 : 6}px"></span>`) + mnHTML(mn) : "";
+  let buttons;
+  if (lang === "a") buttons = btn("ton", "spk", "Kelimeyi dinle") + `<span style="flex:1"></span>` + btn(mode === "dark" || lineMode(mode) ? "pri" : "pri", "fwd", "Sonraki kelime");
+  else if (lang === "b") buttons = btn("out", "spk", "Kelimeyi dinle") + `<span style="flex:1"></span>` + btn("out", "fwd", "Sonraki kelime");
+  else if (lang === "o") buttons = btn("ton", "spk", "Kelimeyi dinle") + `<span style="flex:1"></span>` + btn("ton", "fwd", "Sonraki kelime");
+  else buttons = btn("bare", "spk", "Kelimeyi dinle") + `<span style="flex:1"></span>` + btn("bare", "fwd", "Sonraki kelime");
+  const inner = `<div class="col" style="left:16px;top:16px;width:${W}px">${hwHTML(hw)}${meaning}</div>
+    <div class="brow" style="left:8px;right:8px;bottom:8px">${buttons}</div>`;
+  return root("small", lang, mode, inner, "--bleed:16px;--caretx:9px");
+}
+
+/* ───────── Orta (338 × 158) ───────── */
+function metaOf(w){ return [w.pos ? POS[w.pos] || w.pos : "", w.level].filter(Boolean).join(" · "); }
+function renderMedium(lang, w, mode){
+  const p = P[lang].medium, forms = glossForms(w);
+  const lvl = w.level, nextTxt = "Yeni kelime: 11:00";
+  if (lang === "o"){
+    // Öneri: kelime + tür ve seviye, anlam, işaretli örnek; altta adlı düğmeler (AX boylarında simge sütunu).
+    const W = 306, H = 126 - 36 - 4, meta = metaOf(w), metaW = meta ? tw(meta, 11.5, 700, false) + 10 : 0;
+    let pick = null;
+    search: for (const withEx of [true, false]) for (const ms of p.m) for (const st of p.steps){
+      const h = fitWord(w.lemma, [st], W - metaW, 700); if (!h || ms > h.size) continue;
+      const m = forms.length ? fitForms(forms, ms, [1, 2], W, 600, false) : null;
+      if (forms.length && !m) continue;
+      const ex = withEx && w.ex;
+      if (wordH(h) + 6 + (m ? m.lines.length * ms * 1.2 : 0) + (ex ? 4 + 13 * 1.3 : 0) <= H){ pick = {h, m, ex}; break search; }
+    }
+    if (!pick) pick = {h: fitWord(w.lemma, [{s:15},{s:15,n:2}], W - metaW, 700) || {size:15, lines:[w.lemma]}, m: null, ex: false};
+    LAST.o = Object.assign(LAST.o || {}, {medium: {hw: pick.h, mn: pick.m, layers: 2 + (pick.ex ? 1 : 0) + (meta ? 1 : 0)}});
+    const inner = `<div class="col" style="left:16px;top:16px;width:${W}px"><div style="display:flex;align-items:baseline;gap:8px;width:${W}px"><div>${hwHTML(pick.h)}</div><span style="flex:1"></span>${meta ? `<span class="meta" lang="tr">${esc(meta)}</span>` : ""}</div>
+      ${pick.m ? `<span style="height:6px"></span>` + mnHTML(pick.m) : ""}
+      ${pick.ex ? `<span style="height:4px"></span><span class="ex" style="font-size:13px;max-width:${W}px">${exampleLine(w.ex, w.lemma, W, 13)}</span>` : ""}</div>
+      <div class="brow" style="left:12px;right:12px;bottom:8px;gap:8px">${cap("ton", "chk", "Biliyorum")}${cap("ton", "spk", "Dinle")}${cap("ton", "fwd", "Sonraki")}</div>`;
+    return root("medium", lang, mode, inner);
+  }
+  if (lang === "c"){
+    // Yalın: kelime, anlam, örnek. Düğmeler altta, adlarıyla.
+    const W = 306, H = 126 - 36 - 4;
+    let pick = null;
+    search: for (const withEx of [true, false]) for (const ms of p.m) for (const st of p.steps){
+      const h = fitWord(w.lemma, [st], W, 700); if (!h) continue; if (ms > h.size) continue;
+      const m = forms.length ? fitForms(forms, ms, [1, 2], W, 400, false) : null;
+      if (forms.length && !m) continue;
+      const ex = withEx && w.ex;
+      const tot = wordH(h) + 6 + (m ? m.lines.length * ms * 1.2 : 0) + (ex ? 4 + 13 * 1.3 : 0);
+      if (tot <= H){ pick = {h, m, ex}; break search; }
+    }
+    if (!pick) pick = {h: fitWord(w.lemma, [{s:15},{s:15,n:2}], W, 700) || {size:15, lines:[w.lemma]}, m: null, ex: false};
+    LAST.c = Object.assign(LAST.c || {}, {medium: {hw: pick.h, mn: pick.m, layers: 2 + (pick.ex ? 1 : 0)}});
+    const inner = `<div class="col" style="left:16px;top:16px;width:${W}px">${hwHTML(pick.h)}${pick.m ? `<span style="height:6px"></span>` + mnHTML(pick.m) : ""}
+      ${pick.ex ? `<span style="height:4px"></span><span class="ex" style="font-size:13px;max-width:${W}px">${exampleLine(w.ex, w.lemma, W, 13)}</span>` : ""}</div>
+      <div class="brow" style="left:12px;right:12px;bottom:8px;gap:8px">${cap("", "chk", "Biliyorum")}${cap("", "spk", "Dinle")}${cap("pri", "fwd", "Sonraki")}</div>`;
+    return root("medium", lang, mode, inner, "--caretx:9px");
+  }
+  // A ve B: sağda düğme sütunu (Biliyorum · Dinle · Sonraki), metin 262 pt.
+  const W = 262, H = 126;
+  const layersAll = [["def","ex","next"],["def","ex"],["def"],[]];
+  let pick = null;
+  search: for (const layers of layersAll){
+    for (const ms of p.m) for (const st of p.steps){
+      const levelW = lvl ? (lang === "a" ? 34 : 24) : 0;
+      const ipaW = lang === "b" && w.ipa ? Math.min(tw(w.ipa, 12, 400, true) + 6, 999) : 0;
+      let h = fitWord(w.lemma, [st], W - levelW - 6, lang === "a" ? 900 : 700);
+      if (!h || ms > h.size) continue;
+      const showIpa = lang === "b" && ipaW && h.lines.length === 1 && tw(h.lines[0], h.size, 700, true) + ipaW + levelW + 12 <= W;
+      const m = forms.length ? fitForms(forms, ms, [1, 2], W, p.mW, lang === "b") : null;
+      if (forms.length && !m) continue;
+      const hasDef = layers.includes("def") && (w.short || w.micro);
+      const defTxt = hasDef ? [w.short, w.micro].find(t => t && tw(t, 13.5, 400, true) <= W) : null;
+      if (layers.includes("def") && hasDef && !defTxt) continue;
+      const posRow = lang === "b" && w.pos ? 14 : 0;
+      let tot = wordH(h, lang === "a" ? .3 : .24) + posRow + 6 + (m ? m.lines.length * ms * 1.22 : 0)
+        + (defTxt ? 3 + 13.5 * 1.25 : 0) + (layers.includes("ex") && w.ex ? 3 + 12.5 * 1.3 : 0) + (layers.includes("next") ? 4 + 11 * 1.3 : 0);
+      if (tot <= H){ pick = {h, m, defTxt, ex: layers.includes("ex") && w.ex, next: layers.includes("next"), showIpa}; break search; }
+    }
+  }
+  if (!pick) pick = {h: fitWord(w.lemma, [{s:15},{s:15,n:2}], W, 700) || {size:15, lines:[w.lemma]}, m: null};
+  LAST[lang] = Object.assign(LAST[lang] || {}, {medium: {hw: pick.h, mn: pick.m, layers: 2 + (pick.defTxt ? 1 : 0) + (pick.ex ? 1 : 0) + (pick.next ? 1 : 0) + (lang === "b" ? (w.pos ? 1 : 0) + (pick.showIpa ? 1 : 0) : 0) + (lvl ? 1 : 0)}});
+  const lvlHTML = lvl ? (lang === "a" ? `<span class="lvl">${lvl}</span>` : `<span class="sc" style="color:var(--wink2)">${lvl}</span>`) : "";
+  const head = `<div style="display:flex;align-items:${lang === "a" ? "flex-start" : "baseline"};gap:8px;width:${W}px"><div>${hwHTML(pick.h)}</div>${pick.showIpa ? `<span class="ipa" style="font-size:12px">${esc(w.ipa)}</span>` : ""}<span style="flex:1"></span>${lvlHTML}</div>`;
+  const pos = lang === "b" && w.pos ? `<span class="sc" lang="tr" style="margin-top:${Math.round(pick.h.size * .2)}px">${POS[w.pos] || w.pos}</span>` : "";
+  const body = `${pick.m ? `<span style="height:${lang === "b" ? 4 : 6}px"></span>` + mnHTML(pick.m) : ""}
+    ${pick.defTxt ? `<span class="ex" style="font-size:13.5px;margin-top:3px;max-width:${W}px">${esc(pick.defTxt)}</span>` : ""}
+    ${pick.ex ? `<span class="ex" style="font-size:12.5px;margin-top:3px;max-width:${W}px">${lang === "b" ? "▸ " : ""}${exampleLine(w.ex, w.lemma, W - (lang === "b" ? 12 : 0), 12.5)}</span>` : ""}`;
+  const next = pick.next ? (lang === "b" ? `<span class="sc" lang="tr" style="position:absolute;left:16px;bottom:14px">${nextTxt}</span>` : `<span class="t2" style="position:absolute;left:16px;bottom:14px;font:500 11px var(--f-ui)">${nextTxt}</span>`) : "";
+  const kb = lang === "a" ? ["ton","ton","pri"] : ["out","out","out"];
+  const inner = `<div class="col" style="left:16px;top:16px;width:${W}px">${head}${pos}${body}</div>${next}
+    <div class="brow" style="right:8px;top:8px;bottom:8px;flex-direction:column;justify-content:space-between">${btn(kb[0], "chk", "Biliyorum")}${btn(kb[1], "spk", "Kelimeyi dinle")}${btn(kb[2], "fwd", "Sonraki kelime")}</div>`;
+  return root("medium", lang, mode, inner, "--bleed:16px");
+}
+
+/* ───────── Büyük (338 × 354; içerik 306 × 322) ───────── */
+function recentOf(w){ const i = WORDS.indexOf(w); const n = WORDS.length; return [WORDS[(i - 1 + n) % n], WORDS[(i - 2 + n) % n]]; }
+function renderLarge(lang, w, mode){
+  const p = P[lang].large, forms = glossForms(w), W = 306;
+  const bottomBtns = 44 + 4;
+  if (lang === "o"){
+    // Öneri: üstte tür, seviye, söyleniş; kelime, anlam, İngilizce tanım, işaretli örnek; adlı düğmeler. "Az önce" yok.
+    const H = 322 - bottomBtns, meta = metaOf(w), top = meta || w.ipa;
+    let pick = null;
+    search: for (const cfg of [{def:2, ex:2}, {def:1, ex:2}, {def:1, ex:1}, {def:0, ex:2}, {def:0, ex:1}, {def:0, ex:0}]){
+      for (const ms of p.m) for (const st of p.steps){
+        const h = fitWord(w.lemma, [st], W, 700); if (!h || ms > h.size) continue;
+        const m = forms.length ? fitForms(forms, ms, [1, 2], W, 600, false) : null;
+        if (forms.length && !m) continue;
+        const dsrc = w.short || w.micro;
+        const def = cfg.def && dsrc ? (wrapCount(dsrc, 15, 400, true, W - 12) <= cfg.def ? dsrc : (cfg.def === 1 && w.micro && tw(w.micro, 15, 400, true) <= W - 12 ? w.micro : null)) : null;
+        if (cfg.def && dsrc && !def) continue;
+        const exN = cfg.ex && w.ex ? Math.min(cfg.ex, wrapCount(w.ex, 15, 400, true, W - 16)) : 0;
+        const tot = (top ? 26 : 0) + wordH(h) + 8 + (m ? m.lines.length * ms * 1.2 : 0) + (def ? 8 + wrapCount(def, 15, 400, true, W - 12) * 15 * 1.3 : 0) + (exN ? 8 + exN * 15 * 1.35 : 0);
+        if (tot + 4 <= H){ pick = {h, m, def, exN}; break search; }
+      }
+    }
+    if (!pick) pick = {h: fitWord(w.lemma, [{s:20},{s:20,n:2},{s:17,n:2}], W, 700) || {size:17, lines:[w.lemma]}, m: forms.length ? fitForms(forms, 17, [1, 2], W, 600) : null};
+    LAST.o = Object.assign(LAST.o || {}, {large: {hw: pick.h, mn: pick.m, layers: 2 + (meta ? 1 : 0) + (w.ipa ? 1 : 0) + (pick.def ? 1 : 0) + (pick.exN ? 1 : 0)}});
+    const topRow = top ? `<div style="display:flex;gap:10px;align-items:baseline;width:${W}px;height:18px">${meta ? `<span class="meta" lang="tr">${esc(meta)}</span>` : ""}${w.ipa ? `<span class="t2 serif" style="font-size:14px;white-space:nowrap">${esc(w.ipa)}</span>` : ""}</div><span style="height:8px"></span>` : "";
+    const inner = `<div class="col" style="left:16px;top:16px;width:${W}px">${topRow}${hwHTML(pick.h)}
+      ${pick.m ? `<span style="height:8px"></span>` + mnHTML(pick.m) : ""}
+      ${pick.def ? `<span class="para" style="font-size:15px;line-height:1.3;color:var(--wink);margin-top:8px;-webkit-line-clamp:2">${esc(pick.def)}</span>` : ""}
+      ${pick.exN ? `<span class="para" style="font-size:15px;line-height:1.35;margin-top:8px;-webkit-line-clamp:${pick.exN}">${markSentence(w.ex, w.lemma)}</span>` : ""}</div>
+      <div class="brow" style="left:12px;right:12px;bottom:8px;gap:8px">${cap("ton", "chk", "Biliyorum")}${cap("ton", "spk", "Dinle")}${cap("ton", "fwd", "Sonraki")}</div>`;
+    return root("large", lang, mode, inner);
+  }
+  if (lang === "a"){
+    const H = 322 - bottomBtns;
+    let pick = null;
+    search: for (const cfg of [{def:2, ex:2}, {def:1, ex:2}, {def:1, ex:1}, {def:0, ex:2}, {def:0, ex:1}, {def:0, ex:0}]){
+      for (const ms of p.m) for (const st of p.steps){
+        const h = fitWord(w.lemma, [st], W, 900); if (!h) continue; if (ms > h.size) continue;
+        const m = forms.length ? fitForms(forms, ms, [1, 2], W, 800, false) : null;
+        if (forms.length && !m) continue;
+        const def = cfg.def && (w.short || w.micro) ? (wrapCount(w.short || w.micro, 16, 400, true, W) <= cfg.def ? (w.short || w.micro) : (cfg.def === 1 && w.micro && tw(w.micro, 16, 400, true) <= W ? w.micro : null)) : null;
+        if (cfg.def && (w.short || w.micro) && !def) continue;
+        const exN = cfg.ex && w.ex ? Math.min(cfg.ex, wrapCount(w.ex, 15.5, 400, true, W - 16)) : 0;
+        const tot = 4 + 18 + 12 + wordH(h, .3) + 10 + (m ? m.lines.length * ms * 1.2 : 0) + (def ? 10 + wrapCount(def, 16, 400, true, W) * 16 * 1.3 : 0) + (exN ? 10 + exN * 15.5 * 1.35 : 0);
+        if (tot <= H){ pick = {h, m, def, exN}; break search; }
+      }
+    }
+    if (!pick) pick = {h: fitWord(w.lemma, [{s:20},{s:20,n:2},{s:17,n:2}], W, 900) || {size:17, lines:[w.lemma]}, m: forms.length ? fitForms(forms, 17, [1,2], W, 800) : null};
+    LAST.a = Object.assign(LAST.a || {}, {large: {hw: pick.h, mn: pick.m, layers: 2 + (pick.def ? 1 : 0) + (pick.exN ? 1 : 0) + 1}});
+    const top = `<div style="display:flex;gap:8px;align-items:center;width:${W}px;height:18px">${w.level ? `<span class="lvl">${w.level}</span>` : ""}${w.ipa ? `<span class="t2 serif" style="font-size:15px">${esc(w.ipa)}</span>` : ""}</div>`;
+    const inner = `<div class="col" style="left:16px;top:16px;width:${W}px">${top}<span style="height:12px"></span>${hwHTML(pick.h)}
+      ${pick.m ? `<span style="height:10px"></span>` + mnHTML(pick.m) : ""}
+      ${pick.def ? `<span class="para" style="font-size:16px;line-height:1.3;color:var(--wink);margin-top:10px;-webkit-line-clamp:2">${esc(pick.def)}</span>` : ""}
+      ${pick.exN ? `<span class="para" style="font-size:15.5px;line-height:1.35;margin-top:10px;-webkit-line-clamp:${pick.exN}">${markSentence(w.ex, w.lemma)}</span>` : ""}</div>
+      <div class="brow" style="left:12px;right:12px;bottom:8px;gap:8px">${cap("ton", "chk", "Biliyorum")}${cap("ton", "spk", "Dinle")}${cap("pri", "fwd", "Sonraki")}</div>`;
+    return root("large", lang, mode, inner, "--bleed:16px");
+  }
+  if (lang === "b"){
+    const rec = recentOf(w);
+    const H = 322 - bottomBtns;
+    let pick = null;
+    search: for (const cfg of [{def:2, ex:2, rec:2}, {def:1, ex:2, rec:2}, {def:1, ex:1, rec:2}, {def:1, ex:1, rec:1}, {def:0, ex:1, rec:1}, {def:0, ex:0, rec:1}, {def:0, ex:0, rec:0}]){
+      for (const ms of p.m) for (const st of p.steps){
+        const h = fitWord(w.lemma, [st], W - 30, 700); if (!h) continue; if (ms > h.size) continue;
+        const m = forms.length ? fitForms(forms, ms, [1, 2], W, 600, true) : null;
+        if (forms.length && !m) continue;
+        const def = cfg.def && (w.short || w.micro) ? (wrapCount(w.short || w.micro, 14, 400, true, W) <= cfg.def ? (w.short || w.micro) : (w.micro && tw(w.micro, 14, 400, true) <= W ? w.micro : null)) : null;
+        if (cfg.def && (w.short || w.micro) && !def) continue;
+        const exN = cfg.ex && w.ex ? Math.min(cfg.ex, wrapCount("▸ " + w.ex, 13.5, 400, true, W)) : 0;
+        const ipaLine = w.ipa && !(h.lines.length === 1 && tw(h.lines[0], h.size, 700, true) + tw(w.ipa, 13, 400, true) + 10 <= W) ? 19 : 0;
+        // Başlık 15 + çizgi ve boşluklar 17; tür satırı; anlam; tanım; örnek; "Az önce" (çizgi, etiket, satırlar 26).
+        const tot = 32 + wordH(h) + ipaLine + (w.pos || w.level ? Math.round(h.size * .2) + 13 : 0) + (m ? 6 + m.lines.length * ms * 1.2 : 0)
+          + (def ? 6 + wrapCount(def, 14, 400, true, W) * 14 * 1.3 : 0) + (exN ? 6 + exN * 13.5 * 1.35 : 0) + (cfg.rec ? 30 + cfg.rec * 26 : 0);
+        if (tot + 4 <= H){ pick = {h, m, def, exN, rec: cfg.rec, ipaLine}; break search; }
+      }
+    }
+    if (!pick) pick = {h: fitWord(w.lemma, [{s:17},{s:17,n:2}], W, 700) || {size:17, lines:[w.lemma]}, m: null, rec: 0};
+    LAST.b = Object.assign(LAST.b || {}, {large: {hw: pick.h, mn: pick.m, layers: 2 + (w.ipa ? 1 : 0) + (w.pos ? 1 : 0) + (pick.def ? 1 : 0) + (pick.exN ? 1 : 0) + (pick.rec ? 1 + pick.rec * 2 : 0) + 1}});
+    // Sözlük sayfasının üst köşesindeki kılavuz kelimeler: sayfanın ilk ve son girdisi.
+    const guide = pick.rec ? `${esc(w.lemma.toLowerCase())} — ${esc(rec[pick.rec - 1].lemma.toLowerCase())}` : esc(w.lemma.toLowerCase());
+    const meta = [w.pos ? POS[w.pos] || w.pos : "", w.level].filter(Boolean).join(" · ");
+    const recHTML = pick.rec ? `<span class="rule" style="margin:10px 0 6px"></span><span class="sc" lang="tr">Az önce</span>` + rec.slice(0, pick.rec).map(r => {
+      const rf = glossForms(r); let tx = ""; for (const f of rf){ if (tw(r.lemma, 15, 700, true) + tw(" — " + f, 14, 400, true) <= W){ tx = f; break; } }
+      return `<span style="display:block;white-space:nowrap;overflow:hidden;margin-top:4px;line-height:22px"><span class="serif" style="font-weight:700;font-size:15px">${esc(r.lemma)}</span><span class="serif t2" style="font-size:14px">${tx ? " — " + esc(tx) : ""}</span></span>`;
+    }).join("") : "";
+    const inner = `<div class="col" style="left:16px;top:16px;width:${W}px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;width:${W}px"><span class="serif t2" style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;padding-right:10px">${guide}</span><span class="sc" lang="tr" style="flex:none">Lockglow sözlüğü</span></div>
+      <span class="rule" style="margin:6px 0 10px"></span>
+      <div style="display:flex;align-items:baseline;gap:8px"><div>${hwHTML(pick.h)}</div>${w.ipa && !pick.ipaLine ? `<span class="ipa" style="font-size:13px">${esc(w.ipa)}</span>` : ""}</div>
+      ${pick.ipaLine ? `<span class="ipa" style="font-size:13px;margin-top:2px">${esc(w.ipa)}</span>` : ""}
+      ${meta ? `<span class="sc" lang="tr" style="margin-top:${Math.round(pick.h.size * .2)}px">${meta}</span>` : ""}
+      ${pick.m ? `<span style="height:6px"></span>` + mnHTML(pick.m) : ""}
+      ${pick.def ? `<span class="para" style="font-size:14px;line-height:1.3;margin-top:6px;-webkit-line-clamp:2">${esc(pick.def)}</span>` : ""}
+      ${pick.exN ? `<span class="para" style="font-size:13.5px;line-height:1.35;margin-top:6px;-webkit-line-clamp:${pick.exN}">▸ ${markSentence(w.ex, w.lemma)}</span>` : ""}
+      ${recHTML}</div>
+      <div class="brow" style="left:12px;right:12px;bottom:8px;gap:8px">${cap("out", "chk", "Biliyorum")}${cap("out", "spk", "Dinle")}${cap("out", "fwd", "Sonraki")}</div>`;
+    return root("large", lang, mode, inner);
+  }
+  // C: büyük kelime, anlam, örnek; adlı düğmeler.
+  const H = 322 - bottomBtns;
+  let pick = null;
+  search: for (const exMax of [3, 2, 1, 0]){
+    for (const ms of p.m) for (const st of p.steps){
+      const h = fitWord(w.lemma, [st], W, 700); if (!h) continue; if (ms > h.size) continue;
+      const m = forms.length ? fitForms(forms, ms, [1, 2], W, 400, false) : null;
+      if (forms.length && !m) continue;
+      const exN = exMax && w.ex ? Math.min(exMax, wrapCount(w.ex, 17, 400, true, W - 16)) : 0;
+      if (exMax && w.ex && wrapCount(w.ex, 17, 400, true, W - 16) > exMax) continue;
+      const tot = 6 + wordH(h) + 12 + (m ? m.lines.length * ms * 1.2 : 0) + (exN ? 16 + exN * 17 * 1.4 : 0);
+      if (tot <= H){ pick = {h, m, exN, tot}; break search; }
+    }
+  }
+  if (!pick) pick = {h: fitWord(w.lemma, [{s:22},{s:22,n:2},{s:17,n:2}], W, 700) || {size:17, lines:[w.lemma]}, m: null, exN: 0};
+  LAST.c = Object.assign(LAST.c || {}, {large: {hw: pick.h, mn: pick.m, layers: 2 + (pick.exN ? 1 : 0)}});
+  const top = 16 + Math.max(0, Math.round((H - (pick.tot || 0)) / 2));
+  const inner = `<div class="col" style="left:16px;top:${top}px;width:${W}px">${hwHTML(pick.h)}
+    ${pick.m ? `<span style="height:12px"></span>` + mnHTML(pick.m) : ""}
+    ${pick.exN ? `<span class="para" style="font-size:17px;line-height:1.4;margin-top:16px;-webkit-line-clamp:${pick.exN}">${markSentence(w.ex, w.lemma)}</span>` : ""}</div>
+    <div class="brow" style="left:12px;right:12px;bottom:8px;gap:8px">${cap("", "chk", "Biliyorum")}${cap("", "spk", "Dinle")}${cap("pri", "fwd", "Sonraki")}</div>`;
+  return root("large", lang, mode, inner, "--caretx:9px");
+}
+
+/* ───────── Kilitli ekran: dikdörtgen (160 × 72), daire (72), satır içi ───────── */
+function renderRect(lang, w, mode){
+  const p = P[lang].rect, forms = glossForms(w), x0 = lang === "c" ? 9 : 0, W = 160 - x0;
+  let hw = null, mn = null;
+  search: for (const ms of p.m) for (const st of p.steps){
+    const h = fitWord(w.lemma, [st], W, lang === "a" ? 900 : 700); if (!h) continue; if (ms > h.size) continue;
+    const m = forms.length ? fitForms(forms, ms, h.lines.length > 1 ? [1] : [1, 2], W, p.mW, lang === "b") : null;
+    if (forms.length && !m) continue;
+    if (wordH(h) + (lang === "b" ? 9 : 5) + (m ? m.lines.length * ms * 1.2 : 0) <= 72){ hw = h; mn = m; break search; }
+  }
+  if (!hw){ hw = fitWord(w.lemma, [{s:15},{s:15,n:2}], W, 700) || {size:15, lines:[w.lemma]}; mn = null; }
+  const sep = lang === "b" ? `<span class="rule" style="margin:5px 0 3px;width:40px"></span>` : `<span style="height:5px"></span>`;
+  const inner = `<div class="col" style="left:${x0}px;top:0;width:${W}px">${hwHTML(hw)}${mn ? sep + mnHTML(mn, "t2") : ""}</div>`;
+  return root("rect", lang, mode, inner, `--bleed:0px;--caretx:${x0}px`);
+}
+function renderCirc(lang, mode, left, total){
+  const done = total - left, frac = total ? done / total : 1;
+  const R = 33, C = 2 * Math.PI * R;
+  if (lang === "c"){
+    const inner = `<div class="cnum">${left ? `<span style="font:600 30px/1 var(--f-ui)">${left}</span><span class="t2" style="font:600 11px/1.2 var(--f-ui);margin-top:2px">tekrar</span>` : `<span style="width:28px;height:28px">${ICO.chk}</span>`}</div>`;
+    return root("circ", lang, mode, inner);
+  }
+  const sw = lang === "a" ? 6 : lang === "o" ? 4 : 1.75, r = lang === "a" ? 32 : lang === "o" ? 33 : 34.5, cc = 2 * Math.PI * r;
+  const ring = `<svg class="ring" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="${r}" fill="none" stroke="var(--wink)" stroke-opacity=".22" stroke-width="${sw}"/><circle cx="36" cy="36" r="${r}" fill="none" stroke="var(--wink)" stroke-width="${sw}" stroke-linecap="${lang === "b" ? "butt" : "round"}" stroke-dasharray="${cc * frac} ${cc}" transform="rotate(-90 36 36)"/></svg>`;
+  const num = left ? (lang === "o" ? `<span style="font:600 25px/1 var(--f-ui)">${left}</span><span class="t2" style="font:600 11px/1.2 var(--f-ui);margin-top:1px">tekrar</span>` : lang === "a" ? `<span style="font:800 26px/1 var(--f-ui)">${left}</span><span class="t2" style="font:700 11px/1.2 var(--f-ui);margin-top:1px">tekrar</span>`
+                                   : `<span class="serif" style="font-weight:700;font-size:27px;line-height:1">${left}</span><span class="sc" lang="tr" style="font-size:9.5px;margin-top:2px;letter-spacing:.06em">tekrar</span>`)
+                   : `<span style="width:26px;height:26px">${ICO.chk}</span>`;
+  return root("circ", lang, mode, ring + `<div class="cnum">${num}</div>`);
+}
+function renderInline(lang, w, mode){
+  const sep = lang === "b" ? " — " : " · ";
+  const forms = glossForms(w), cand = forms.map(f => w.lemma + sep + f).concat([w.lemma]);
+  const t = cand.find(c => tw(c, 15, 600, false) <= 234) || w.lemma;
+  return root("inl", lang, mode, `<span class="inltx">${esc(t)}</span>`);
+}
+
+/* ───────── Telefon çerçeveleri ───────── */
+const SB_ICONS = `<svg viewBox="0 0 70 13" fill="currentColor"><rect x="0" y="8" width="3" height="5" rx="1"/><rect x="5" y="5.5" width="3" height="7.5" rx="1"/><rect x="10" y="3" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="13" rx="1"/><path d="M31 3.2c2.6 0 4.9 1 6.6 2.6l-1.4 1.5A7.2 7.2 0 0 0 31 5.2a7.2 7.2 0 0 0-5.2 2.1l-1.4-1.5A9.4 9.4 0 0 1 31 3.2zm0 3.7c1.6 0 3 .6 4 1.6l-1.4 1.5a3.6 3.6 0 0 0-5.2 0L27 8.5a5.6 5.6 0 0 1 4-1.6zm0 3.6l1.5 1.6L31 13.6l-1.5-1.5z"/><rect x="44" y="1.5" width="22" height="10.5" rx="3" fill="none" stroke="currentColor" stroke-opacity=".45"/><rect x="46" y="3.5" width="15" height="6.5" rx="1.6"/><rect x="67.3" y="4.8" width="1.6" height="4" rx=".8" fill-opacity=".45"/></svg>`;
+const APPS = [["#E9785A","Takvim"],["#6FA8DC","Hava"],["#F2C14E","Notlar"],["#7BC596","Haritalar"]];
+function homePhone(lang, w, mode){
+  const wp = {day:"wp-day", dark:"wp-dark", tint:"wp-tint", glass:"wp-glass"}[mode];
+  const iconBg = c => mode === "tint" ? "rgba(244,207,134,.22)" : mode === "glass" ? "rgba(255,255,255,.22)" : c;
+  const apps = APPS.map((a, i) => `<span class="appi" style="left:${i % 2 ? 299 : 208}px;top:${i < 2 ? 70 : 164}px"><i style="background:${iconBg(a[0])}"></i>${a[1]}</span>`).join("");
+  return `<div class="phone ${wp}"><span class="island"></span><div class="sbar${mode === "day" ? " dk" : ""}"><span>10:41</span>${SB_ICONS}</div>
+    <div class="abs" style="left:26px;top:70px">${renderSmall(lang, w, mode)}</div>${apps}
+    <div class="abs" style="left:26px;top:258px">${renderMedium(lang, w, mode)}</div>
+    <div class="abs" style="left:26px;top:438px">${renderLarge(lang, w, mode)}</div>
+    <div class="dots" style="top:808px"><i></i><i></i><i></i></div><span class="homebar${mode === "day" ? " dk" : ""}"></span></div>`;
+}
+function lockPhone(lang, w, mode){
+  const aod = mode === "night";
+  const wp = aod ? "wp-aod" : mode === "day" ? "wp-lockday" : "wp-lockdark";
+  const vm = aod ? "aod" : "vib";
+  const dim = aod ? "opacity:.55" : "";
+  return `<div class="phone ${wp}"><span class="island"></span>${aod ? "" : `<div class="sbar"><span></span>${SB_ICONS}</div>`}
+    <svg class="padlock" viewBox="0 0 18 22" style="${dim}"><rect x="1.5" y="9" width="15" height="12" rx="3" fill="currentColor"/><path d="M4.5 9V6.5a4.5 4.5 0 0 1 9 0V9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <div class="lockdate" style="top:98px;${dim}"><span>Cum 23</span>${renderInline(lang, w, vm)}</div>
+    <div class="clock" style="top:128px;${aod ? "color:rgba(255,255,255,.42)" : ""}">10:41</div>
+    <div class="abs" style="left:73px;top:252px;display:flex;gap:12px;align-items:center">${renderRect(lang, w, vm)}${renderCirc(lang, vm, 4, 12)}</div>
+    ${aod ? "" : `<span class="lockbtn" style="left:46px;top:738px"><svg viewBox="0 0 24 24"><path d="M9 2h6l1 5-3 3v11h-2V10L8 7z"/></svg></span><span class="lockbtn" style="right:46px;top:738px"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.6"/><path d="M8.5 7l1.4-2.5h4.2L15.5 7"/></svg></span>`}
+    <span class="homebar" style="${aod ? "opacity:.3" : ""}"></span></div>`;
+}
+function standbyPhone(lang, w){
+  return `<div class="phone land wp-sb"><span class="island"></span>
+    <div class="abs" style="left:48px;top:29px;width:332px;height:332px"><div style="transform:scale(2.1);transform-origin:0 0">${renderSmall(lang, w, "sb")}</div></div>
+    <div class="abs" style="left:430px;top:0;bottom:0;right:30px;display:flex;align-items:center;justify-content:center;color:#E8382B;font:600 150px/1 var(--f-ui);letter-spacing:-4px">02:14</div></div>`;
+}
+const pz = (inner, land) => `<div class="pz${land ? " land" : ""}">${inner}</div>`;
+
+/* ───────── Görünümler ───────── */
+function viewPhones(w){
+  const m = S.mode;
+  if (m === "night"){
+    return `<p class="row-l">STANDBY, GECE MODU · YALNIZ KÜÇÜK WIDGET, SİSTEM KIRMIZI TEK RENK ÇİZER</p>
+      <div class="prow" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))">${LANGS.map(l => `<figure class="pcol">${pz(standbyPhone(l, w), true)}<figcaption><b>${LNAME[l]}</b></figcaption></figure>`).join("")}</div>
+      <p class="row-l">HER ZAMAN AÇIK EKRAN · KİLİTLİ EKRAN KARARTILIR</p>
+      <div class="prow">${LANGS.map(l => `<figure class="pcol">${pz(lockPhone(l, w, "night"))}<figcaption><b>${LNAME[l]}</b></figcaption></figure>`).join("")}</div>
+      <p class="row-l" style="margin:0 0 0 4px">Orta ve büyük widget StandBy'da görünmez; geceyi koyu mod gösterir.</p>`;
+  }
+  return `<p class="row-l">ANA EKRAN · ${MODES[m].toLocaleUpperCase("tr")}</p>
+    <div class="prow">${LANGS.map(l => `<figure class="pcol">${pz(homePhone(l, w, m))}<figcaption><b>${LNAME[l]}</b></figcaption></figure>`).join("")}</div>
+    <p class="row-l">KİLİTLİ EKRAN${m === "tint" || m === "glass" ? " · ANA EKRAN MODU KİLİTLİ EKRANI DEĞİŞTİRMEZ" : ""}</p>
+    <div class="prow">${LANGS.map(l => `<figure class="pcol">${pz(lockPhone(l, w, m))}<figcaption><b>${LNAME[l]}</b></figcaption></figure>`).join("")}</div>`;
+}
+function cellFor(fam, lang, w, mode){
+  const homeWp = {day:"wp-day", dark:"wp-dark", tint:"wp-tint", glass:"wp-glass", night:"wp-sb"}[mode];
+  if (["small","medium","large"].includes(fam)){
+    if (mode === "night"){
+      if (fam !== "small") return `<div class="cell wp-sb"><span class="note">StandBy'da yalnız küçük widget var.</span></div>`;
+      return `<div class="cell wp-sb">${renderSmall(lang, w, "sb")}</div>`;
+    }
+    const fn = {small: renderSmall, medium: renderMedium, large: renderLarge}[fam];
+    return `<div class="cell ${homeWp}">${fn(lang, w, mode)}</div>`;
+  }
+  const lwp = mode === "night" ? "wp-aod" : mode === "day" ? "wp-lockday" : "wp-lockdark";
+  const vm = mode === "night" ? "aod" : "vib";
+  if (fam === "rect") return `<div class="cell ${lwp}">${renderRect(lang, w, vm)}</div>`;
+  if (fam === "circ") return `<div class="cell lk ${lwp}">${renderCirc(lang, vm, 4, 12)}${renderCirc(lang, vm, 0, 12)}</div>`;
+  return `<div class="cell ${lwp}">${renderInline(lang, w, vm)}</div>`;
+}
+function viewSide(w){
+  const fams = ["small","medium","large","rect","circ","inl"];
+  const sub = {small:"158 × 158 pt", medium:"338 × 158 pt", large:"338 × 354 pt", rect:"160 × 72 pt", circ:"72 × 72 pt · 4 tekrar / bitti", inl:"234 × 26 pt · sistem yazısı"};
+  return `<div class="cmp"><span></span>${LANGS.map(l => `<span class="hd">${LNAME[l]}</span>`).join("")}
+    ${fams.map(f => `<span class="rl">${FAMS[f]}<small>${sub[f]}</small></span>${LANGS.map(l => cellFor(f, l, w, S.mode)).join("")}`).join("")}</div>`;
+}
+function viewModes(w){
+  const ms = ["day","dark","night","tint","glass"];
+  const lockNote = {day:"açık duvar kâğıdı", dark:"koyu duvar kâğıdı", night:"Her zaman açık", tint:"kilitli ekran değişmez", glass:"kilitli ekran değişmez"};
+  const homeNote = {day:"tam renk", dark:"tam renk", night:"StandBy, kırmızı", tint:"sistem boyar (renk tonu)", glass:"sistem boyar (beyaz)"};
+  const isLock = ["rect","circ"].includes(S.fam);
+  return `<div class="cmp"><span></span>${LANGS.map(l => `<span class="hd">${LNAME[l]}</span>`).join("")}
+    ${ms.map(m => `<span class="rl">${MODES[m]}<small>${isLock ? lockNote[m] : homeNote[m]}</small></span>${LANGS.map(l => cellFor(S.fam, l, w, m)).join("")}`).join("")}</div>`;
+}
+/* Küçük widget'ın seçimi (renderSmall ile aynı arama; bugünkü kod için de kullanılır). */
+function fitSmallFor(p, w, H){
+  const forms = glossForms(w);
+  for (const ms of p.m) for (const st of p.steps){
+    const h = fitWord(w.lemma, [st], 126, p.wW); if (!h || ms > h.size) continue;
+    if (!forms.length) return {hw: h, mn: null};
+    const m = fitForms(forms, ms, [1, 2], 126, p.mW, false); if (!m) continue;
+    if (wordH(h) + 6 + m.lines.length * ms * 1.2 <= H) return {hw: h, mn: m};
+  }
+  return {hw: null, mn: null};
+}
+/* Küçük widget'ta gündüz şeridinin alanı / widget alanı (her dilin şerit geometrisiyle). */
+function yellowShare(l, hw){
+  if (!hw) return 0;
+  const sz = hw.size, n = hw.lines.length;
+  const ww = Math.max(...hw.lines.map(x => tw(x, sz, l === "a" ? 900 : 700, true)));
+  const area = {a: n * (16 + ww + .1 * sz) * .5 * sz, b: n * (ww + .08 * sz) * .25 * sz, c: 3 * .72 * sz, o: n * (ww + .12 * sz) * .40 * sz, now: n * (ww + .16 * sz) * .8 * sz}[l];
+  return area / (158 * 158) * 100;
+}
+function viewOneri(w){
+  const m = S.mode;
+  const phones = m === "night"
+    ? `<figure class="pcol">${pz(standbyPhone("o", w), true)}<figcaption>StandBy, gece</figcaption></figure><figure class="pcol">${pz(lockPhone("o", w, "night"))}<figcaption>Her zaman açık</figcaption></figure>`
+    : `<figure class="pcol">${pz(homePhone("o", w, m))}<figcaption>Ana ekran · ${MODES[m]}</figcaption></figure><figure class="pcol">${pz(lockPhone("o", w, m))}<figcaption>Kilitli ekran</figcaption></figure>`;
+  const strip = ["day","dark","night","tint","glass"].map(mm => `<figure class="pcol">${cellFor("small", "o", w, mm)}<figcaption>${MODES[mm]}</figcaption></figure>`).join("");
+  return `<p class="row-l">ÖNERİ · SAKİN ŞERİT · MOD VE KELİME ÜSTTEKİ ÇUBUKTAN</p><div class="orow">${phones}</div>
+    <p class="row-l">KÜÇÜK WIDGET, BEŞ MODDA</p><div class="strip">${strip}</div>`;
+}
+function measures(w){
+  const fmtW = hw => hw ? `${hw.size} pt${hw.lines.length > 1 ? ", 2 satır" : ""}` : "—";
+  const fmtM = mn => mn ? `${mn.size} pt, ${mn.form} biçim${mn.lines.length > 1 ? ", 2 satır" : ""}` : "anlam yok";
+  const rows = ["a","b","c","o"].map(l => {
+    const L = LAST[l] || {}, s0 = L.small || {};
+    return `<tr><td>${LNAME[l]}</td><td>${fmtW(s0.hw)}</td><td>${fmtM(s0.mn)}</td><td class="n">${L.medium?.layers ?? "—"} / ${L.large?.layers ?? "—"}</td><td class="n">%${yellowShare(l, s0.hw).toFixed(1).replace(".", ",")}</td></tr>`;
+  });
+  const now = fitSmallFor(NOW_SMALL, w, 88);
+  rows.push(`<tr><td>Bugün (main)</td><td>${fmtW(now.hw)}</td><td>${fmtM(now.mn)}</td><td class="n">en çok 7 / —</td><td class="n">%${yellowShare("now", now.hw).toFixed(1).replace(".", ",")}</td></tr>`);
+  return `<div class="tbl"><table class="mt"><thead><tr><th>Bu kelimede: ${esc(w.lemma)}</th><th>Küçük: kelime</th><th>Küçük: anlam</th><th>Katman: orta / büyük</th><th>Küçükte sarı alan (gündüz)</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+}
+
+/* ───────── Kontrast (WCAG 2.2) ───────── */
+function parse(c){
+  c = c.trim();
+  if (c[0] === "#"){ const n = parseInt(c.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255, 1]; }
+  const m = c.match(/rgba?\(([^)]+)\)/); const p = m[1].split(",").map(Number); return [p[0], p[1], p[2], p[3] ?? 1];
+}
+function over(top, bot){ const a = top[3]; return [top[0] * a + bot[0] * (1 - a), top[1] * a + bot[1] * (1 - a), top[2] * a + bot[2] * (1 - a), 1]; }
+function lum(c){ const f = v => { v /= 255; return v <= .04045 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]); }
+function ratio(fg, bg){ const bgc = parse(bg), f = over(parse(fg), bgc); const a = lum(f), b = lum(bgc); return (Math.max(a, b) + .05) / (Math.min(a, b) + .05); }
+/* Saydam bir rengi opak zeminle karıştırıp opak renk verir. */
+function flat(c, bg){ const f = over(parse(c), parse(bg)); return `rgb(${f.slice(0, 3).map(Math.round).join(",")})`; }
+const TOK = {
+  a: {day:{bg:"#FFFFFF",ink:"#15181B",ink2:"#474E54",band:"#F5E829",btn:"#EBEBE4",edge:"rgba(21,24,27,.54)",next:"#15181B",nextInk:"#FFFFFF"},
+      dark:{bg:"#000000",ink:"#F3F4F0",ink2:"#B7BDC2",band:"#E9E040",btn:"#24282D",edge:"rgba(255,255,255,.40)",next:"rgba(243,244,240,.12)",nextInk:"#F3F4F0"}},
+  b: {day:{bg:"#FBFAF6",ink:"#1D1B17",ink2:"#4A463E",band:"#F5E829",edge:"rgba(29,27,23,.54)",rule:"rgba(29,27,23,.20)"},
+      dark:{bg:"#1A1814",ink:"#EFEADF",ink2:"#BFB8A9",band:"#E9E040",edge:"rgba(239,234,223,.45)",rule:"rgba(239,234,223,.20)"}},
+  c: {day:{bg:"#FFFFFF",ink:"#111214",ink2:"#4B5056",band:"#F5E829",edge:"rgba(17,18,20,.50)"},
+      dark:{bg:"#000000",ink:"#ECEDEA",ink2:"#A3A9AF",band:"#E9E040",edge:"rgba(236,237,234,.45)"}},
+  o: {day:{bg:"#FFFFFF",ink:"#15181B",ink2:"#474E54",band:"#F5E829",btn:"#EBEBE4",edge:"rgba(21,24,27,.54)",next:"#EBEBE4",nextInk:"#15181B"},
+      dark:{bg:"#191C20",ink:"#F3F4F0",ink2:"#B7BDC2",band:"#E9E040",btn:"#24282D",edge:"rgba(255,255,255,.40)",next:"#24282D",nextInk:"#F3F4F0"}},
+  now: {day:{bg:"#FFFFFF",ink:"#15181B",ink2:"#474E54",band:"#F5E829",btn:"#EBEBE4"},dark:{bg:"#191C20",ink:"#F3F4F0",ink2:"#B7BDC2",band:"#E9E040",btn:"#24282D"}}
+};
+function chip(v, min){ return v >= min ? `<span class="ok">≥ ${min}</span>` : `<span class="no">&lt; ${min}</span>`; }
+function cRow(label, f, min){
+  const cells = ["a","b","c","o"].flatMap(l => ["day","dark"].map(m => { const v = f(TOK[l][m], l, m); return v == null ? `<td class="n">—</td>` : `<td class="n">${v.toFixed(2).replace(".", ",")}${min ? chip(v, min) : ""}</td>`; }));
+  return `<tr><td>${label}</td>${cells.join("")}</tr>`;
+}
+function buildTables(){
+  const hd = `<tr><th>Çift</th>${["a","b","c","o"].map(l => { const n = l === "o" ? "Öneri" : l.toUpperCase(); return `<th>${n} gündüz</th><th>${n} koyu</th>`; }).join("")}</tr>`;
+  document.getElementById("t-contrast").innerHTML = `<thead>${hd}</thead><tbody>
+    ${cRow("Kelime ve Türkçe anlam / zemin", t => ratio(t.ink, t.bg), 7)}
+    ${cRow("İkincil yazı (IPA, örnek, saat) / zemin", t => ratio(t.ink2, t.bg), 7)}
+    ${cRow("Gündüz şeridi: harf / şerit", (t, l, m) => m === "day" && l !== "c" ? ratio(t.ink, t.band) : null, 4.5)}
+    ${cRow("Şerit / zemin (süs; görünürlük)", t => ratio(t.band, t.bg), 0)}
+    ${cRow("Düğme kenarı / zemin (WCAG 1.4.11)", t => ratio(t.edge, t.bg), 3)}
+    ${cRow("Düğme simgesi / düğme içi", t => t.btn ? Math.min(ratio(t.ink, flat(t.btn, t.bg)), ratio(t.nextInk, flat(t.next, t.bg))) : ratio(t.ink, t.bg), 4.5)}
+  </tbody>`;
+  const sb1 = ratio("#E8382B", "#000000"), sb2 = ratio("rgba(232,56,43,.62)", "#000000");
+  document.getElementById("t-contrast").insertAdjacentHTML("beforeend", `<tfoot><tr><td colspan="9" style="color:var(--ink2);font-size:13px">StandBy gecesi (üç dil aynı): kırmızı yazı / siyah ${sb1.toFixed(2).replace(".", ",")}, ikincil %62 ${sb2.toFixed(2).replace(".", ",")}. Kilitli ekranda zemini duvar kâğıdı belirler; üç dil de kelimede beyaz, anlamda %75 gri kullanır (HIG: saydamlık değil opak gri). Şerit bir süs: yazı kuralı uygulanmaz, yalnız ne kadar seçildiği gösterilir.</td></tr></tfoot>`);
+}
+
+/* ───────── Puanlar ve öneri: widget_dilleri.md "Karşılaştırma" ile aynı ───────── */
+const LOAD = [
+  ["Küçük: kelime / anlam (breakfast)", "26 / 19 pt", "24 / 17 pt", "26 / 18 pt", "28 / 17 pt", "24 / 17 pt"],
+  ["Anlamın yazısı", "SF Heavy (800)", "New York Semibold", "SF Regular (400)", "SF Semibold (600)", "SF Bold (700)"],
+  ["Yazı katmanı: küçük / orta / büyük", "2 / 6 / 5", "2 / 8 / 12", "2 / 3 / 3", "2 / 4 / 6", "2 / en çok 7 / —"],
+  ["En küçük yazı", "11 pt", "11 pt (büyük harf etiket)", "13 pt", "11,5 pt (tür etiketi)", "11 pt"],
+  ["Sarı alan, küçük (breakfast / Could you tell me the way to)", "%7,0 / %10,7", "%2,6 / %3,8", "%0,2 / %0,2", "%5,6 / %6,2", "%8,4 / %12,4"],
+  ["Gece zemini", "#000000", "#1A1814", "#000000", "#191C20 (bugünkü)", "#191C20"],
+  ["Renklendirilmiş ve camda kalan marka", "kenardan gelen ince çizgi", "ince çizgi; kâğıt ve çizgiler gider", "imleç", "ince çizgi", "ince çizgi"],
+  ["Düğme sınırı (gündüz / koyu)", "3,84 / 3,66", "3,70 / 3,94", "3,52 / 3,91", "3,84 / 3,80", "1,20 / 1,15 (kenar yok)"]
+];
+/* Ölçütler: okunurluk, kontrast ve erişilebilirlik, öğreticilik, yormama, marka, iOS uyumu (5 üzerinden).
+   Bu oturumun puanları hakem raporlarından sonra düzeltildi (C kontrast 5 → 4, marka 3 → 2; B kontrast 5 → 4). */
+const CRIT = ["Okunurluk (bir bakışta)", "Kontrast ve erişilebilirlik", "Öğreticilik", "Yormama", "Marka, tanınırlık", "iOS uyumu (renklendirilmiş, cam, StandBy, kilitli ekran)"];
+const WHY = [
+  "A ve C kelimeyi 26–30 pt, anlamı 18–19 pt yazar. B'de anlam serif ve daha küçük; Türkçe de serif olunca yazı tipi dili göstermez (kural 3).",
+  "Yazıda üçü de 7:1'in üstünde. B'nin etiketleri ve çizgileri camda ve Her zaman açık ekranda soluyor. C'nin küçük widget düğmelerinde kapsül yok (kural 2).",
+  "B en zengini ama bir bakışta okunmuyor. A'nın sarı işaretli örneği kelimeyi cümleye bağlar. C İngilizce tanımı ve seviyeyi hiç göstermez.",
+  "A'da her şey en kalın, şerit kenardan gelir, gece ışır; sarı alan bugünkü kadar. B yoğun. C'de en az katman, ışıma yok.",
+  "A'nın şeridi hemen tanınır. B her sözlük uygulamasına benzer. C'nin imleci zayıf ve kilitli ekranda \"I breakfast\" gibi okunuyor.",
+  "Sistem bu modlarda her şeyi tek renge çevirir: A'nın cesur şeridi ve B'nin kâğıdı kaybolur, ince çizgi kalır. C bu modlarda da aynıdır."
+];
+const RATERS = [
+  {name: "Bu oturum", a: [5,5,4,2,5,3], b: [3,4,4,3,3,3], c: [5,4,3,5,2,5]},
+  {name: "Hakem 1 · A2 öğrenci ve erişilebilirlik", a: [5,4,4,3,5,3], b: [3,3,4,3,3,4], c: [4,3,3,5,2,4]},
+  {name: "Hakem 2 · marka ve görsel", a: [4,5,4,2,5,3], b: [3,3,4,3,3,3], c: [5,4,3,5,2,4]},
+  {name: "Hakem 3 · iOS ve uygulanabilirlik", a: [5,4,4,3,5,4], b: [3,3,5,3,3,2], c: [4,4,3,5,2,3]}
+];
+const BASE = ["Bu oturum: Öneri (A'nın şeridi + C'nin sadeliği)", "Hakem 1: A, sakinleştirilmiş", "Hakem 2: C, şerit geri konmuş", "Hakem 3: A, C'nin ölçülülüğüyle"];
+function dots(n){ return `<span class="score" role="img" aria-label="5 üzerinden ${n}">${[1,2,3,4,5].map(i => `<i class="${i <= n ? "on" : ""}"></i>`).join("")}</span>`; }
+const avg = (l, i) => RATERS.reduce((t, r) => t + r[l][i], 0) / RATERS.length;
+const fmt = v => (Math.round(v * 100) / 100).toString().replace(".", ",");
+function buildLoad(){
+  document.getElementById("t-load").innerHTML = `<thead><tr><th>Okunurluk ve yük</th><th>A · Işıklı şerit</th><th>B · Sözlük sayfası</th><th>C · Yalın</th><th>Öneri · Sakin şerit</th><th>Bugün (main)</th></tr></thead><tbody>${LOAD.map(r => `<tr><td>${r[0]}</td>${r.slice(1).map(c => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody>`;
+  const sum = (r, l) => r[l].reduce((t, v) => t + v, 0);
+  document.getElementById("t-score").innerHTML = `<thead><tr><th>Ölçüt (5 üzerinden, 4 puanlayıcının ortalaması)</th><th>A</th><th>B</th><th>C</th><th>Neden</th></tr></thead><tbody>
+    ${CRIT.map((c, i) => `<tr><td>${c}</td>${["a","b","c"].map(l => `<td class="n">${dots(Math.round(avg(l, i)))} ${fmt(avg(l, i))}</td>`).join("")}<td style="min-width:300px">${WHY[i]}</td></tr>`).join("")}
+    ${RATERS.map((r, k) => `<tr><td>${r.name}</td>${["a","b","c"].map(l => `<td class="n">${sum(r, l)} / 30</td>`).join("")}<td>Temel seçimi: ${BASE[k].split(": ")[1]}</td></tr>`).join("")}
+    <tr><td><b>Ortalama toplam</b></td>${["a","b","c"].map(l => `<td class="n"><b>${fmt(RATERS.reduce((t, r) => t + sum(r, l), 0) / RATERS.length)}</b></td>`).join("")}<td>Hakemler bağımsız çalıştı; birbirlerinin ve bu oturumun puanını görmediler.</td></tr></tbody>`;
+}
+const VERDICT = `<div class="verdict">
+  <h3>Öneri: "Sakin şerit". Bugünkü fosfor dili kalır; A'dan işaretli örnek, C'den sadelik ve adlı düğmeler, B'den yalnız tür etiketi.</h3>
+  <p>Dört puanlayıcının ortalaması (30 üzerinden): A 24, C 22,25, B 19,5. A okunurlukta ve markada önde, C sakinlikte ve iOS modlarında. Hakemlerden ikisi A'yı, biri C'yi temel seçti. Üçü de A'nın kenardan gelen ağır şeridini ve C'nin imlecini istemedi: imleç kilitli ekranda "I breakfast" gibi okunuyor. B'yi kimse seçmedi. Bu yüzden öneri yeni bir dil değil, bugünkü dilin sakinleşmiş hali. Renk tokenı değişmez; kod değişikliği az.</p>
+</div>
+<div class="tbl" style="margin-top:14px"><table><thead><tr><th>Dosya ve yer</th><th>Ne değişir</th><th>Bugün → öneri</th></tr></thead><tbody>
+  <tr><td><code>Shared/LockglowTheme.swift</code> · <code>PhosphorBandDrawing</code>, <code>.highlighter</code>, yalnız <code>.widget</code></td><td>Gündüz şeridi alçalır, incelir; iki satırlık kalıp "bant" gibi görünmez.</td><td>Bugün uygulama ve widget aynı: y = taban − 0,56 em, yükseklik 0,8 em. Widget için yeni dal: y = taban − 0,27 em, yükseklik 0,40 em. Sarı alan %8,4 → %5,6 (breakfast), %12,4 → %6,2 (iki satır).</td></tr>
+  <tr><td><code>Shared/LockglowTheme.swift</code> · <code>Theme.Fonts</code></td><td>Yeni token: widget anlamı.</td><td>— → <code>widgetMeaning = .body.weight(.semibold)</code></td></tr>
+  <tr><td><code>Widgets/HomeWordViews.swift</code> · <code>WidgetWordStep.smallWidget</code></td><td>Küçük widget'ta kelime büyür.</td><td>[24, 20, 17] → [28, 24, 20, 17]</td></tr>
+  <tr><td><code>Widgets/HomeWordViews.swift</code> · <code>SmallWordView</code></td><td>Anlam bold yerine semibold.</td><td><code>.body.weight(.bold)</code> → <code>Theme.Fonts.widgetMeaning</code>; <code>.subheadline.weight(.bold)</code> → <code>.semibold</code></td></tr>
+  <tr><td><code>Widgets/HomeWordViews.swift</code> · <code>MediumWordView</code></td><td>Daha az katman, adlı düğmeler.</td><td>Söyleniş, İngilizce tanım ve "Yeni kelime" satırı çıkar; seviye yerine "tür · seviye" (11,5 pt); örnek işaretli. Düğmeler altta, adlı kapsül satırı (VoiceOver adları aynı); erişilebilirlik yazı boylarında bugünkü simge sütunu.</td></tr>
+  <tr><td><code>Widgets/HomeWordViews.swift</code> · <code>WidgetExampleLine.styled</code></td><td>Örnekteki kelime işaretli (ekranda en çok iki sarı).</td><td><code>highlighted: false</code> → yeni parametre; değeri üstten gelir (<code>WidgetColors.marksExample</code>, yalnız tam renkte true)</td></tr>
+  <tr><td><code>Widgets/HomeWordViews.swift</code> · <code>WidgetColors</code>; <code>Widgets/WidgetButtons.swift</code> · <code>WidgetButtonFace</code></td><td>Düğme dairesine kenar; yeni adlı düğme yüzü.</td><td>Yeni <code>buttonEdge</code> (tam renkte <code>Theme.lineStrong</code>, 1 pt). Daire sınırı 1,20:1 → 3,84:1 (gündüz), 1,15:1 → 3,80:1 (koyu).</td></tr>
+  <tr><td>Değişmeyenler</td><td colspan="2">Renk tokenları; gece kâğıdı <code>surface</code> (#191C20); kilitli ekran (dikdörtgen, satır içi); renklendirilmiş, cam ve StandBy'daki ince çizgi; Her zaman açık ekranda 1 pt çizgi.</td></tr>
+</tbody></table></div>
+<p style="margin:12px 4px 0;color:var(--ink2);font-size:14.5px">Büyük widget, daire, quiz, Widget'ı Düzenle ve cila oturumları için ayrıntılı notlar <code>widget_dilleri.md</code> dosyasının 4. bölümünde.</p>`;
+function buildResearch(){
+  document.getElementById("research").innerHTML = `
+  <div class="card"><h3>Apple'ın kuralları (iOS 17–26)</h3><ul>
+    <li>Renklendirilmiş ve cam ana ekranda sistem widget'ı <code>accented</code> modda çizer: iPhone'da birincil ve vurgu grubunun ikisini de <b>beyaza</b> boyar, zemini kaldırıp cam ya da renk tonu koyar. Yani sarı şerit bu modlarda hiç sarı değildir. <span class="tag">belgede</span></li>
+    <li>Kilitli ekran widget'ları hep <code>vibrant</code>: renk yok, kullanıcının kilitli ekran tonu. Hiyerarşi saydamlıkla değil opak gri tonlarla kurulur. <span class="tag">belgede</span></li>
+    <li>StandBy küçük widget'ı büyütür ve zemini kaldırır; gece modunda <code>vibrant</code> ve kırmızı tek renk. "Zengin resim ve rengi az kullan, büyük yazı." <span class="tag">belgede</span></li>
+    <li>Her zaman açık ekranda (<code>isLuminanceReduced</code>) büyük dolu şekiller çizgiye döner, parlaklık düşer; düzen aynı kalır. <span class="tag">belgede</span></li>
+    <li>Yazı en az 11 pt; özel yazı tipi "ölçülü", çoğunlukla büyük yazıda; küçük yazı SF Pro. Marka öğeleri içeriği bastırmaz. <span class="tag">belgede</span></li>
+    <li>Boyutlar (6,1"): küçük 158, orta 338 × 158, büyük 338 × 354, daire 72, dikdörtgen 160 × 72, satır içi 234 × 26 pt. 6,9 inç ekranda dikdörtgen 172 × 76. <span class="tag">belgede</span></li>
+    <li>iOS 26'da kilitli ekran widget'larının ekranın altına inebildiğini Apple dışı kaynaklar yazıyor. <span class="tag">dış</span></li>
+    <li>Widget içinde <code>.glassEffect</code> kullanılabilir mi, belgede yok. <span class="tag">doğrulanmadı</span></li>
+  </ul></div>
+  <div class="card"><h3>Kelime uygulamalarından örnekler</h3><ul>
+    <li><b>Vocabulary (Monkey Taps):</b> kâğıt zemin, kitap hissi övülüyor; şikâyet: widget güncellenmiyor, kelime tekrar ediyor. <span class="tag">dış</span></li>
+    <li><b>Duolingo:</b> widget kelime göstermiyor, yalnız seri ve gece yarısına doğru "üzülen" baykuş; suçluluk yarattığı için tepki aldı. Tam kaçınılacak örnek. <span class="tag">dış</span></li>
+    <li><b>Babbel, Drops:</b> widget yalnız seri hatırlatıcısı; içerik yok. <span class="tag">dış</span></li>
+    <li><b>LookUp · Word of the Day:</b> kilitli ekran, ana ekran ve StandBy; renklendirilmiş modu destekliyor. <span class="tag">dış</span></li>
+    <li><b>Readwise, Apple Günlük:</b> sakin, yalnız yazı; "sakin zeminde kart". Yalın dile en yakın örnekler. <span class="tag">dış</span></li>
+    <li><b>Çıkan ders:</b> tek kahraman kelime; kilitli ekranda iki katman, ana ekranda en çok üç; tek vurgu rengi vurgu grubunda; fotoğraf zemin yok; seri ve suçluluk yok. <span class="tag">dış</span></li>
+  </ul></div>`;
+}
+
+/* ───────── Kurulum ───────── */
+const sel = document.getElementById("w-sel");
+sel.innerHTML = WORDS.map((w, i) => `<option value="${i}">${esc(w.lemma)}${w.user ? " (kendi kelimen)" : ""}</option>`).join("");
+function render(){
+  const w = WORDS[S.word];
+  sel.value = String(S.word);
+  document.querySelectorAll("#seg-view button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === S.view)));
+  document.querySelectorAll("#seg-mode button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === S.mode)));
+  document.querySelectorAll("#seg-fam button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === S.fam)));
+  document.getElementById("ctl-mode").hidden = S.view === "modes";
+  document.getElementById("ctl-fam").hidden = S.view !== "modes";
+  const note = {phones:"Gerçek boyutun yaklaşık üçte ikisi. Yakından bakmak için Yan yana'yı seç.", side:"Gerçek boyut (1 pt = 1 px). Her satır bir widget ailesi.", modes:"Seçili widget beş modda. Kilitli ekranı ana ekran modu değiştirmez."}[S.view];
+  document.getElementById("stage-note").textContent = note;
+  const st = document.getElementById("stage");
+  st.innerHTML = S.view === "phones" ? viewPhones(w) : S.view === "side" ? viewSide(w) : viewModes(w);
+  // Ölçüm şeridi her zaman gündüz düzeninden (seçim moddan bağımsız).
+  LANGS.concat(["o"]).forEach(l => { renderSmall(l, w, "day"); renderMedium(l, w, "day"); renderLarge(l, w, "day"); });
+  document.getElementById("meas").innerHTML = measures(w);
+  document.getElementById("o-stage").innerHTML = viewOneri(w);
+}
+document.getElementById("seg-view").addEventListener("click", e => { const b = e.target.closest("button"); if (b){ S.view = b.dataset.v; render(); } });
+document.getElementById("seg-mode").addEventListener("click", e => { const b = e.target.closest("button"); if (b){ S.mode = b.dataset.m; render(); } });
+document.getElementById("seg-fam").addEventListener("click", e => { const b = e.target.closest("button"); if (b){ S.fam = b.dataset.f; render(); } });
+sel.addEventListener("change", () => { S.word = Number(sel.value); render(); });
+document.getElementById("w-prev").addEventListener("click", () => { S.word = (S.word - 1 + WORDS.length) % WORDS.length; render(); });
+document.getElementById("w-next").addEventListener("click", () => { S.word = (S.word + 1) % WORDS.length; render(); });
+// Adres parametreleri (yerelde ekran görüntüsü için): ?view=side&mode=dark&word=9&fam=rect
+try {
+  const q = new URLSearchParams(location.search);
+  if (q.get("view") && ["phones","side","modes"].includes(q.get("view"))) S.view = q.get("view");
+  if (q.get("mode") && MODES[q.get("mode")]) S.mode = q.get("mode");
+  if (q.get("fam") && FAMS[q.get("fam")]) S.fam = q.get("fam");
+  if (q.get("word") && WORDS[Number(q.get("word"))]) S.word = Number(q.get("word"));
+  if (q.get("bare")) document.body.classList.add("bare");
+} catch (e) {}
+buildTables(); buildLoad(); buildResearch();
+document.getElementById("verdict").innerHTML = VERDICT;
+render();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(render);
+</script>
+</body>
+</html>

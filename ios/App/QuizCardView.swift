@@ -302,6 +302,8 @@ struct QuizCardView: View {
             .contentShape(QuizOptionShape())
         }
         .buttonStyle(QuizOptionButtonStyle())
+        // A keyboard: 1–4 in reading order, before the answer (`AnswerKeys`).
+        .keyboardShortcut(picked == nil ? AnswerKeys.answer(optionOrder.firstIndex(of: option)) : nil)
         // Not `.disabled`: that would dim the options exactly when the answer is shown.
         .allowsHitTesting(picked == nil)
         // One element has one voice, and a button's label merges its texts ("spoon, Doğru cevap"
@@ -558,6 +560,7 @@ struct QuizCardView: View {
                     onContinue(.right)
                 }
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                .keyboardShortcut(AnswerKeys.main)
                 .accessibilityValue(returnValue(for: .right))
                 Text("Zor muydu, kolay mı?")
                     .font(.footnote.weight(.medium))
@@ -571,6 +574,7 @@ struct QuizCardView: View {
                         gradeLabel("Zor", symbol: "tortoise")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
+                    .keyboardShortcut(AnswerKeys.answer(0))
                     .accessibilityValue(returnValue(for: .hard))
                     .accessibilityHint(returnTimes[.hard] == nil ? "Kelime daha erken yine gelir" : "")
                     Button {
@@ -579,6 +583,7 @@ struct QuizCardView: View {
                         gradeLabel("Kolay", symbol: "hare")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
+                    .keyboardShortcut(AnswerKeys.answer(1))
                     .accessibilityValue(returnValue(for: .easy))
                     .accessibilityHint(returnTimes[.easy] == nil ? "Kelime daha geç yine gelir" : "")
                 }
@@ -601,6 +606,7 @@ struct QuizCardView: View {
                     onContinue(.wrong)
                 }
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                .keyboardShortcut(AnswerKeys.main)
             }
         }
     }

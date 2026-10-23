@@ -1,5 +1,6 @@
 import Foundation
 import os
+import WidgetKit
 import CoreModels
 import SharedState
 import Scheduler
@@ -98,5 +99,7 @@ enum WordActions {
         } catch {
             logger.error("event write failed: \(error.localizedDescription, privacy: .public)")
         }
+        // is5-w-quiz: the quiz widget passes over the word shown here; it follows the new cursor.
+        WidgetCenter.shared.reloadTimelines(ofKind: LockglowQuizWidget.kind)
     }
 }

@@ -16,8 +16,9 @@ import shutil
 import sys
 from pathlib import Path
 
-APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
+APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "AppModel+ProgressSnapshot.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift", "AppModel+ReminderTiming.swift", "WeeklyRecapModel.swift", "AppModel+Scheduler.swift", "AppModel+SentencePractice.swift", "AppModel+Shortcuts.swift", "WatchPlanRelay.swift", "AppModel+Sync.swift", "SyncController.swift", "PlacementTestModel.swift", "LevelMapModel.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
+# Siri, Kestirmeler and Spotlight (ios/App/Intents): the data readers, on a line of their own.
 
 # A declaration that starts with `public` or `open`, after optional attributes such as @discardableResult.
 PUBLIC_DECL = re.compile(r"^(?:@\w+(?:\([^)]*\))?\s+)*(?:public|open)\b")
@@ -53,6 +54,10 @@ def check_stub_api(real: Path, stub: Path) -> None:
         lines += [f"  only in the real module: {d}" for d in real_api if d not in stub_api]
         lines += [f"  only in the stub:        {d}" for d in stub_api if d not in real_api]
         raise SystemExit("\n".join(lines))
+
+
+# The quiz widget's questions (ios/App/AppModel+QuizWidget.swift), on a line of their own.
+APP_LOGIC_FILES += ["AppModel+QuizWidget.swift"]
 
 
 def main() -> int:

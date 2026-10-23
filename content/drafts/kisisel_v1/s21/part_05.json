@@ -1,0 +1,1278 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.cant_stand.phr.1",
+      "lemma": "can't stand",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "dislike very much",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kænt ˈstænd/",
+        "uk": "/kɑːnt ˈstænd/"
+      },
+      "def": {
+        "micro": "really dislike",
+        "short": "to dislike someone or something very much and find it hard to accept",
+        "long": "To dislike a person, a thing or a situation so much that you cannot accept it. It is stronger than 'don't like'. People often use it for small daily things like noise, waiting or bad smells."
+      },
+      "grammar": {
+        "pattern": "can't stand + sb / sth / -ing"
+      },
+      "examples": [
+        {
+          "en": "I can't stand loud music in the morning.",
+          "tr": "Sabahları yüksek sesli müziğe katlanamıyorum.",
+          "register": "neutral",
+          "focus": "can't stand"
+        },
+        {
+          "en": "Mert can't stand waiting in line at the bank.",
+          "tr": "Mert bankada sırada beklemeye hiç dayanamıyor.",
+          "register": "neutral",
+          "focus": "can't stand"
+        },
+        {
+          "en": "My sister can't stand it when people talk during a movie.",
+          "tr": "Kız kardeşim film sırasında insanların konuşmasına hiç katlanamıyor.",
+          "register": "neutral",
+          "focus": "can't stand"
+        }
+      ],
+      "synonyms": [
+        "hate"
+      ],
+      "antonyms": [
+        "love"
+      ],
+      "confusables": [
+        "I can't wait"
+      ],
+      "collocations": [
+        "can't stand the noise",
+        "can't stand waiting",
+        "can't stand it when"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "katlanamamak",
+          "alt": [
+            "dayanamamak",
+            "hiç sevmemek",
+            "tahammül edememek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Buradaki 'stand' ayakta durmak değil, katlanmak anlamındadır. 'I can't wait' ile karıştırma: o sabırsızlanmak demektir, bu ise hiç sevmemek. Arkasından isim ya da -ing gelir: 'I can't stand waiting.'",
+          "mistakes": [
+            {
+              "wrong": "I can't stand to this noise.",
+              "right": "I can't stand this noise.",
+              "why": "Türkçede 'bu gürültüye dayanamıyorum' deriz; '-e' eki 'to' diye çevriliyor. 'Can't stand' arkasındaki ismi doğrudan alır; isimden önce 'to' gelmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Olivia ______ horror films, so she never watches them.",
+        "answer": "can't stand",
+        "distractors": [
+          "really loves",
+          "can't wait for",
+          "often watches"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.it_makes_me.phr.1",
+      "lemma": "it makes me",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "causes me to feel or do something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪt ˈmeɪks mi/",
+        "uk": "/ɪt ˈmeɪks mi/"
+      },
+      "def": {
+        "micro": "it causes me to feel",
+        "short": "used to say that something causes you to have a feeling or do something",
+        "long": "Used to say what a thing or situation does to you: how it changes your feeling, or what it causes you to do. After it, use an adjective (happy, tired) or a verb without 'to' (laugh, cry)."
+      },
+      "grammar": {
+        "pattern": "it makes me + adjective / verb (no 'to')"
+      },
+      "examples": [
+        {
+          "en": "This song makes me so happy.",
+          "tr": "Bu şarkı beni çok mutlu ediyor.",
+          "register": "neutral",
+          "focus": "makes me"
+        },
+        {
+          "en": "When people are late, it makes me angry.",
+          "tr": "İnsanlar geç kalınca bu beni kızdırıyor.",
+          "register": "neutral",
+          "focus": "it makes me"
+        },
+        {
+          "en": "Paul loves his cat because it makes him laugh every day.",
+          "tr": "Paul kedisini çok seviyor çünkü kedisi onu her gün güldürüyor.",
+          "register": "neutral",
+          "focus": "makes him laugh"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "it makes me happy",
+        "it makes me laugh",
+        "it makes me feel"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "beni … ediyor",
+          "alt": [
+            "bana … hissettiriyor"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'beni mutlu ediyor', 'beni güldürüyor' deriz; İngilizcede ikisi de 'make' ile kurulur. Arkasından sıfat ya da yalın fiil gelir: 'It makes me tired.', 'It makes me cry.'",
+          "mistakes": [
+            {
+              "wrong": "It makes me to feel sad.",
+              "right": "It makes me feel sad.",
+              "why": "Fiilleri 'to feel', 'to go' diye mastarla ezberlediğimiz için 'to' ekleniyor. 'Make' + kişi + fiil kalıbında fiil yalın gelir, 'to' almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I love this cartoon. It always ______ laugh.",
+        "answer": "makes me",
+        "distractors": [
+          "makes me to",
+          "feels me",
+          "does me"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feel_like.phr.1",
+      "lemma": "feel like",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "want to have or do",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfiːl ˈlaɪk/",
+        "uk": "/ˌfiːl ˈlaɪk/"
+      },
+      "def": {
+        "micro": "want to have or do",
+        "short": "to want to have or do something at a particular time",
+        "long": "To want something or want to do something at this moment, often because of your mood. It is a little less strong than 'want'. After it, use a noun or a verb with -ing."
+      },
+      "grammar": {
+        "pattern": "feel like + noun / -ing"
+      },
+      "examples": [
+        {
+          "en": "I feel like pizza tonight.",
+          "tr": "Bu akşam canım pizza istiyor.",
+          "register": "neutral",
+          "focus": "feel like"
+        },
+        {
+          "en": "Elif didn't feel like cooking, so they ordered food.",
+          "tr": "Elif'in canı yemek yapmak istemedi, bu yüzden dışarıdan sipariş verdiler.",
+          "register": "neutral",
+          "focus": "feel like"
+        },
+        {
+          "en": "Do you feel like going for a walk after dinner?",
+          "tr": "Akşam yemeğinden sonra canın yürüyüş yapmak istiyor mu?",
+          "register": "neutral",
+          "focus": "feel like"
+        }
+      ],
+      "synonyms": [
+        "want",
+        "fancy"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "would like",
+        "look like"
+      ],
+      "collocations": [
+        "feel like going",
+        "feel like eating",
+        "don't feel like it"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "canı istemek",
+          "alt": [
+            "içinden gelmek",
+            "canı çekmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Feel like' ayrıca 'gibi hissetmek' de olabilir ('I feel like a child.'). Bu kartta 'canı istemek' anlamı var. 'Would like' kibar bir istek bildirir; 'feel like' ise o anki keyfine göre bir şey istemektir.",
+          "mistakes": [
+            {
+              "wrong": "I feel like to go out.",
+              "right": "I feel like going out.",
+              "why": "Türkçede 'dışarı çıkmak istiyorum' deriz ve 'want to' gibi 'to' ekleniyor. 'Feel like' sonrasında fiil -ing alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's raining and I'm tired. I don't ______ going out tonight.",
+        "answer": "feel like",
+        "distractors": [
+          "would like",
+          "want",
+          "look like"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.be_fed_up_with.phr.1",
+      "lemma": "be fed up with",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "bored or annoyed with something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bi ˌfɛd ˈʌp wɪð/",
+        "uk": "/bi ˌfɛd ˈʌp wɪð/"
+      },
+      "def": {
+        "micro": "bored and annoyed",
+        "short": "to be bored, tired or annoyed with something that has gone on for too long",
+        "long": "To feel tired and a little angry about a situation because it has continued for too long and you want it to stop or change. It is informal and very common in daily speech."
+      },
+      "grammar": {
+        "pattern": "be fed up with + sth / -ing"
+      },
+      "examples": [
+        {
+          "en": "I'm fed up with this rain.",
+          "tr": "Bu yağmurdan bıktım.",
+          "register": "neutral",
+          "focus": "fed up with"
+        },
+        {
+          "en": "Umut is fed up with his noisy neighbors.",
+          "tr": "Umut gürültücü komşularından bıkmış.",
+          "register": "neutral",
+          "focus": "fed up with"
+        },
+        {
+          "en": "Cansu was fed up with waiting, so she took a taxi.",
+          "tr": "Cansu beklemekten bıkmıştı, bu yüzden taksiye bindi.",
+          "register": "neutral",
+          "focus": "fed up with"
+        }
+      ],
+      "synonyms": [
+        "sick of",
+        "tired of"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "really fed up with",
+        "get fed up with",
+        "fed up with waiting"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bıkmak",
+          "alt": [
+            "bıkıp usanmak",
+            "canına tak etmek",
+            "gına gelmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yemekle ilgisi yoktur: 'I'm fed up' tok olmak değil, bıkmak demektir. Aynı anlamda 'sick of' ve 'tired of' da kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I'm fed up from this job.",
+              "right": "I'm fed up with this job.",
+              "why": "Türkçede 'bu işten bıktım' deriz; '-den' eki 'from' diye çevriliyor. İngilizcede bu kalıp 'with' ile kurulur."
+            },
+            {
+              "wrong": "I fed up with the traffic.",
+              "right": "I'm fed up with the traffic.",
+              "why": "Türkçede 'bıktım' bir fiil olduğu için 'am' atlanıyor. İngilizcede 'fed up' bir sıfat gibidir; önüne 'be' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Seda is ______ eating the same sandwich every day. She wants something new.",
+        "answer": "fed up with",
+        "distractors": [
+          "excited about",
+          "proud of",
+          "interested in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feel_sorry_for.phr.1",
+      "lemma": "feel sorry for",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "feel sad about someone's problem",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fiːl ˈsɑːri fər/",
+        "uk": "/fiːl ˈsɒri fə/"
+      },
+      "def": {
+        "micro": "be sad about someone",
+        "short": "to feel sad about another person because they have a problem or a bad time",
+        "long": "To feel sad for another person or an animal because something bad or difficult is happening to them. It is not an apology; you use it for other people's problems."
+      },
+      "grammar": {
+        "pattern": "feel sorry for + sb"
+      },
+      "examples": [
+        {
+          "en": "I feel sorry for the little dog in the rain.",
+          "tr": "Yağmurda kalan küçük köpeğe acıyorum.",
+          "register": "neutral",
+          "focus": "feel sorry for"
+        },
+        {
+          "en": "Batu felt sorry for the new student and sat next to him.",
+          "tr": "Batu yeni öğrenciye üzüldü ve yanına oturdu.",
+          "register": "neutral",
+          "focus": "felt sorry for"
+        },
+        {
+          "en": "Don't feel sorry for me. I'm fine!",
+          "tr": "Bana acıma. Ben iyiyim!",
+          "register": "neutral",
+          "focus": "feel sorry for"
+        }
+      ],
+      "synonyms": [
+        "pity"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "sorry"
+      ],
+      "collocations": [
+        "feel sorry for someone",
+        "really feel sorry for",
+        "don't feel sorry for me"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "birine acımak",
+          "alt": [
+            "birine üzülmek",
+            "haline üzülmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Özür dilerken 'I'm sorry' denir. Başkasının haline üzülürken ise 'I feel sorry for him' denir; bu bir özür değildir.",
+          "mistakes": [
+            {
+              "wrong": "I feel sorry to him.",
+              "right": "I feel sorry for him.",
+              "why": "Türkçede 'ona üzülüyorum, ona acıyorum' deriz; '-e' eki 'to' diye çevriliyor. Bu kalıpta 'for' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Poor Paul! He waited in the cold rain and then missed the bus. I really ______ him.",
+        "answer": "felt sorry for",
+        "distractors": [
+          "was proud of",
+          "was jealous of",
+          "got angry with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hurt_your_feelings.phr.1",
+      "lemma": "hurt your feelings",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "make someone sad by being unkind",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɜːrt jʊr ˈfiːlɪŋz/",
+        "uk": "/hɜːt jɔː ˈfiːlɪŋz/"
+      },
+      "def": {
+        "micro": "make someone feel sad",
+        "short": "to make someone sad or upset by saying or doing something unkind",
+        "long": "To make a person feel sad or upset with your words or actions, often without planning to. People say it about small daily things, like a rude joke or forgetting to invite someone."
+      },
+      "grammar": {
+        "pattern": "hurt sb's feelings"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I didn't want to hurt your feelings.",
+          "tr": "Özür dilerim, kalbini kırmak istemedim.",
+          "register": "neutral",
+          "focus": "hurt your feelings"
+        },
+        {
+          "en": "Mert's joke about Seda's old car hurt her feelings.",
+          "tr": "Mert'in Seda'nın eski arabasıyla ilgili şakası onun kalbini kırdı.",
+          "register": "neutral",
+          "focus": "hurt her feelings"
+        },
+        {
+          "en": "Ethan told the truth, but he tried not to hurt anyone's feelings.",
+          "tr": "Ethan doğruyu söyledi ama kimsenin kalbini kırmamaya çalıştı.",
+          "register": "neutral",
+          "focus": "hurt anyone's feelings"
+        }
+      ],
+      "synonyms": [
+        "upset",
+        "offend"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "break your heart"
+      ],
+      "collocations": [
+        "hurt someone's feelings",
+        "my feelings were hurt"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kalbini kırmak",
+          "alt": [
+            "gücendirmek",
+            "kırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'kalbimi kırdın' her gün küçük şeyler için söylenir; İngilizcede bunun karşılığı 'You hurt my feelings' olur.",
+          "mistakes": [
+            {
+              "wrong": "You broke my heart when you laughed at my drawing.",
+              "right": "You hurt my feelings when you laughed at my drawing.",
+              "why": "Türkçede 'kalbimi kırdın' deriz ve kelime kelime 'break my heart' diye çevriliyor. İngilizcede 'break someone's heart' çok derin bir acı için, çoğu zaman aşk için kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nadia didn't invite me to her party. It really ______.",
+        "answer": "hurt my feelings",
+        "distractors": [
+          "made my day",
+          "calmed me down",
+          "cheered me up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lose_your_temper.phr.1",
+      "lemma": "lose your temper",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "suddenly become very angry",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/luːz jʊr ˈtɛmpər/",
+        "uk": "/luːz jɔː ˈtɛmpə/"
+      },
+      "def": {
+        "micro": "suddenly get very angry",
+        "short": "to suddenly become very angry and not control what you say or do",
+        "long": "To suddenly become very angry so that you cannot stay calm, and maybe shout or do something silly. People often say sorry afterwards for this."
+      },
+      "grammar": {
+        "pattern": "lose your/his/her temper (with sb)"
+      },
+      "examples": [
+        {
+          "en": "Dad lost his temper and shouted at the TV.",
+          "tr": "Babamın tepesi attı ve televizyona bağırdı.",
+          "register": "neutral",
+          "focus": "lost his temper"
+        },
+        {
+          "en": "Stay calm and don't lose your temper with the kids.",
+          "tr": "Sakin ol, çocuklara karşı kendini kaybetme.",
+          "register": "neutral",
+          "focus": "lose your temper"
+        },
+        {
+          "en": "Hande never loses her temper, even on busy days at work.",
+          "tr": "Hande işteki yoğun günlerde bile asla kendini kaybetmez.",
+          "register": "neutral",
+          "focus": "loses her temper"
+        }
+      ],
+      "synonyms": [
+        "get angry"
+      ],
+      "antonyms": [
+        "keep your temper",
+        "keep calm"
+      ],
+      "confusables": [
+        "temperature"
+      ],
+      "collocations": [
+        "lose your temper with sb",
+        "never lose your temper",
+        "easily lose your temper"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sinirine hâkim olamamak",
+          "gloss_short": "tepesi atmak",
+          "alt": [
+            "tepesi atmak",
+            "kendini kaybetmek",
+            "çileden çıkmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Temper' burada öfke, sinir anlamındadır; 'temperature' (sıcaklık) ile karıştırma. Kişiye göre değişir: 'I lost my temper', 'She lost her temper'.",
+          "mistakes": [
+            {
+              "wrong": "I lost my control and shouted at him.",
+              "right": "I lost my temper and shouted at him.",
+              "why": "Türkçede 'kontrolümü kaybettim' deriz ve 'my control' diye çevriliyor. İngilizcede 'lose control' ('my' olmadan) ya da 'lose my temper' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The printer broke again and Max ______. He kicked it!",
+        "answer": "lost his temper",
+        "distractors": [
+          "kept calm",
+          "fell asleep",
+          "changed his mind"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_angry.phr.1",
+      "lemma": "get angry",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "become angry",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ˈæŋɡri/",
+        "uk": "/ɡɛt ˈæŋɡri/"
+      },
+      "def": {
+        "micro": "become very annoyed",
+        "short": "to start to feel very annoyed because of something bad or unfair",
+        "long": "To start to feel strong bad feelings because someone did something wrong or something unfair happened. 'Get' shows the change: first you are calm, then you are not."
+      },
+      "grammar": {
+        "pattern": "get angry (with sb / about sth)"
+      },
+      "examples": [
+        {
+          "en": "Don't get angry. It was just a joke.",
+          "tr": "Kızma, sadece bir şakaydı.",
+          "register": "neutral",
+          "focus": "get angry"
+        },
+        {
+          "en": "My mom gets angry when I leave my shoes in the hall.",
+          "tr": "Ayakkabılarımı koridorda bırakınca annem kızıyor.",
+          "register": "neutral",
+          "focus": "gets angry"
+        },
+        {
+          "en": "Emre got angry with his little brother for breaking his headphones.",
+          "tr": "Emre, kulaklığını kırdığı için küçük kardeşine kızdı.",
+          "register": "neutral",
+          "focus": "got angry"
+        }
+      ],
+      "synonyms": [
+        "get mad"
+      ],
+      "antonyms": [
+        "calm down"
+      ],
+      "confusables": [
+        "nervous"
+      ],
+      "collocations": [
+        "get angry with someone",
+        "get angry about something",
+        "easily get angry"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kızmak",
+          "alt": [
+            "sinirlenmek",
+            "öfkelenmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'sinirlendim' için 'I got nervous' denmez; 'nervous' gergin demektir. Doğrusu 'I got angry'.",
+          "mistakes": [
+            {
+              "wrong": "Don't angry! It's not my fault.",
+              "right": "Don't get angry! It's not my fault.",
+              "why": "Türkçede 'kızma' tek bir fiildir. İngilizcede 'angry' bir sıfattır; önüne 'get' ya da 'be' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please don't ______ with me. I'll fix your bike tomorrow.",
+        "answer": "get angry",
+        "distractors": [
+          "get excited",
+          "get lost",
+          "get ready"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.burst_into_tears.phr.1",
+      "lemma": "burst into tears",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "suddenly start crying",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌbɜːrst ˌɪntə ˈtɪrz/",
+        "uk": "/ˌbɜːst ˌɪntə ˈtɪəz/"
+      },
+      "def": {
+        "micro": "suddenly start crying",
+        "short": "to suddenly start crying, because of strong sad or happy feelings",
+        "long": "To start crying suddenly and strongly, often with no warning. It can happen because you are very sad, very happy, tired or surprised."
+      },
+      "grammar": {
+        "pattern": "burst into tears"
+      },
+      "examples": [
+        {
+          "en": "The little girl burst into tears when her ice cream fell.",
+          "tr": "Dondurması yere düşünce küçük kız birden ağlamaya başladı.",
+          "register": "neutral",
+          "focus": "burst into tears"
+        },
+        {
+          "en": "Elif burst into tears of joy when she saw her old friend at the airport.",
+          "tr": "Elif eski arkadaşını havalimanında görünce sevinç gözyaşlarına boğuldu.",
+          "register": "neutral",
+          "focus": "burst into tears"
+        },
+        {
+          "en": "My grandma always bursts into tears at the end of this film.",
+          "tr": "Babaannem bu filmin sonunda hep gözyaşlarına boğulur.",
+          "register": "neutral",
+          "focus": "bursts into tears"
+        }
+      ],
+      "synonyms": [
+        "start crying"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "burst out laughing"
+      ],
+      "collocations": [
+        "burst into tears of joy",
+        "suddenly burst into tears"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "birden ağlamaya başlamak",
+          "gloss_short": "birden ağlamak",
+          "alt": [
+            "gözyaşlarına boğulmak",
+            "ağlamaya başlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Benzer kalıp: 'burst out laughing' (birden gülmeye başlamak). 'Into' ile isim gelir ('into tears'), 'out' ile -ing gelir ('out laughing').",
+          "mistakes": [
+            {
+              "wrong": "She burst into crying.",
+              "right": "She burst into tears.",
+              "why": "Türkçede 'ağlamaya başladı' dediğimiz için fiil -ing ile kuruluyor. 'Burst into' arkasından isim ister ('tears'); -ing ile söylemek istersen 'burst out crying' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Little Batu ______ at his first haircut. \"Don't cry,\" said his dad.",
+        "answer": "burst into tears",
+        "distractors": [
+          "fell asleep",
+          "started laughing",
+          "kept still"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feel_down.phr.1",
+      "lemma": "feel down",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "feel a little sad",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fiːl ˈdaʊn/",
+        "uk": "/fiːl ˈdaʊn/"
+      },
+      "def": {
+        "micro": "feel a little sad",
+        "short": "to feel a little sad and have no energy, usually for a short time",
+        "long": "To feel a little sad, quiet and without energy, often for no big reason, for example on a gray day or after a bad day at work. It usually passes soon."
+      },
+      "grammar": {
+        "pattern": "feel down / be feeling down"
+      },
+      "examples": [
+        {
+          "en": "I feel a bit down today.",
+          "tr": "Bugün moralim biraz bozuk.",
+          "register": "neutral",
+          "focus": "feel a bit down"
+        },
+        {
+          "en": "Rainy Mondays always make Cansu feel down.",
+          "tr": "Yağmurlu pazartesiler Cansu'nun moralini hep bozar.",
+          "register": "neutral",
+          "focus": "feel down"
+        },
+        {
+          "en": "Umut felt down after he failed his driving test, so his friends took him out for pizza.",
+          "tr": "Umut ehliyet sınavını geçemeyince morali bozuldu, arkadaşları da onu pizza yemeye götürdü.",
+          "register": "neutral",
+          "focus": "felt down"
+        }
+      ],
+      "synonyms": [
+        "feel low",
+        "feel sad"
+      ],
+      "antonyms": [
+        "cheer up"
+      ],
+      "collocations": [
+        "feel a bit down",
+        "be feeling down"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "morali bozuk olmak",
+          "gloss_short": "moralsiz olmak",
+          "alt": [
+            "keyifsiz olmak",
+            "moralsiz olmak",
+            "canı sıkkın olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'moral' İngilizcede 'morale' diye yazılır ve daha çok takım ya da grup için kullanılır; 'moral' ise ahlakla ilgili demektir ya da bir hikâyeden çıkan dersi anlatır. 'Moralim bozuk' için 'I feel down' denir.",
+          "mistakes": [
+            {
+              "wrong": "My moral is bad today.",
+              "right": "I feel down today.",
+              "why": "Türkçede 'moralim bozuk' deriz ve kelime kelime çevriliyor. İngilizcede 'moral' ahlakla ilgili bir sözcüktür ya da bir hikâyeden çıkan ders demektir; bu duygu günlük dilde 'feel down' ile anlatılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hana lost her favorite earring and ______ all day. A chocolate cake cheered her up.",
+        "answer": "felt down",
+        "distractors": [
+          "felt proud",
+          "felt lucky",
+          "felt relaxed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_it_personally.phr.1",
+      "lemma": "take it personally",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "feel that something is an attack on you",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ɪt ˈpɜːrsənəli/",
+        "uk": "/teɪk ɪt ˈpɜːsənəli/"
+      },
+      "def": {
+        "micro": "think it's about you",
+        "short": "to feel hurt because you think a comment or action is about you",
+        "long": "To feel upset because you think something was said or done against you, when it was not really about you. People often say 'Don't take it personally' to make someone feel better."
+      },
+      "grammar": {
+        "pattern": "take it personally / don't take it personally"
+      },
+      "examples": [
+        {
+          "en": "Don't take it personally. He's like that with everyone.",
+          "tr": "Üstüne alınma. O herkese karşı böyle.",
+          "register": "neutral",
+          "focus": "take it personally"
+        },
+        {
+          "en": "Nadia often takes it personally when friends make small jokes.",
+          "tr": "Nadia arkadaşları ufak şakalar yapınca çoğu zaman üstüne alınıyor.",
+          "register": "neutral",
+          "focus": "takes it personally"
+        },
+        {
+          "en": "The teacher said the whole class was noisy, but Ethan took it personally.",
+          "tr": "Öğretmen bütün sınıfın gürültülü olduğunu söyledi ama Ethan bunu üstüne aldı.",
+          "register": "neutral",
+          "focus": "took it personally"
+        }
+      ],
+      "synonyms": [
+        "be offended"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "don't take it personally",
+        "take everything personally"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üstüne alınmak",
+          "alt": [
+            "alınmak",
+            "kişisel algılamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğu zaman olumsuz kullanılır: 'Don't take it personally.' yani 'Üstüne alınma, seninle ilgili değil.'",
+          "mistakes": [
+            {
+              "wrong": "Don't take it on yourself. He's like that with everyone.",
+              "right": "Don't take it personally. He's like that with everyone.",
+              "why": "Türkçedeki 'üstüne alınma' kelime kelime çevriliyor. İngilizcede 'take something on yourself' bir işi ya da sorumluluğu üstlenmek demektir; 'alınmak' anlamı için 'take it personally' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My boss says no to everyone's ideas, not just yours. Don't ______.",
+        "answer": "take it personally",
+        "distractors": [
+          "take it easy",
+          "take it back",
+          "take a break"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sense_of_humor.phr.1",
+      "lemma": "sense of humor",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "ability to make or enjoy jokes",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɛns əv ˈhjuːmər/",
+        "uk": "/ˌsɛns əv ˈhjuːmə/"
+      },
+      "def": {
+        "micro": "ability to enjoy jokes",
+        "short": "the ability to make jokes and to laugh at funny things",
+        "long": "The ability to see what is funny, to enjoy jokes and to make other people laugh. People often say a friend has a 'great' or 'good' one."
+      },
+      "grammar": {
+        "pattern": "have a good / great sense of humor"
+      },
+      "examples": [
+        {
+          "en": "Paul has a great sense of humor.",
+          "tr": "Paul'ün espri anlayışı harika.",
+          "register": "neutral",
+          "focus": "sense of humor"
+        },
+        {
+          "en": "I like working with Seda because she has a good sense of humor.",
+          "tr": "Seda ile çalışmayı seviyorum çünkü espri anlayışı çok iyi.",
+          "register": "neutral",
+          "focus": "sense of humor"
+        },
+        {
+          "en": "My uncle has a strange sense of humor. Nobody laughs at his jokes except him.",
+          "tr": "Amcamın tuhaf bir mizah anlayışı var. Esprilerine kendisinden başka kimse gülmüyor.",
+          "register": "neutral",
+          "focus": "sense of humor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a good sense of humor",
+        "a great sense of humor",
+        "no sense of humor"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "espri anlayışı",
+          "alt": [
+            "mizah anlayışı",
+            "mizah duygusu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Amerikan yazımı 'humor', İngiliz yazımı 'humour' olur. Çoğu zaman 'good', 'great' ya da 'no' ile kullanılır: 'He has no sense of humor.' (Hiç espri anlayışı yok.)",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mert laughs at everything and makes great jokes. He has a good ______.",
+        "answer": "sense of humor",
+        "distractors": [
+          "sense of smell",
+          "point of view",
+          "piece of advice"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

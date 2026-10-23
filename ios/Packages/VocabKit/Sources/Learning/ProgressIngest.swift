@@ -21,23 +21,27 @@ public struct LearningEvent: Equatable, Sendable {
 /// - `known` -> `Leitner.markKnown` ("I know this" on the widget: asked once in 3 days). Events
 ///   written by older widget builds mean the same and get the same check.
 /// - `next`, `reveal` -> `Leitner.markExposure` (the word was seen; seeing is not a review)
-/// - `unknown` -> `Leitner.review(.again)` (two boxes down; a word waiting for its "Biliyorum"
-///   check goes back to "Tanış")
+/// - `quiz` -> `Leitner.markExposure` too: an option chosen on the quiz widget shows the answer at
+///   once, so it is seeing, not a grade; "Tekrar" keeps its own schedule
+/// - `unknown` -> `review(.again)` of the selected scheduler (`ReviewScheduler`; with Leitner two
+///   boxes down; a word waiting for its "Biliyorum" check goes back to "Tanış")
 public enum ProgressIngest {
     /// Applies the events oldest first. Events with the same timestamp keep their input order.
     /// Words without progress start as new. Input is not modified; words without events are untouched.
     public static func apply(
         _ events: [LearningEvent],
-        to progress: [Int: WordProgress]
+        to progress: [Int: WordProgress],
+        scheduler: ReviewScheduler = LeitnerScheduler()
     ) -> [Int: WordProgress] {
-        return applyLogged(events, to: progress).progress
+        return applyLogged(events, to: progress, scheduler: scheduler).progress
     }
 
     /// `apply`, plus the review-log entry of every answer among the events (`unknown`), in the
     /// order they were applied (`ReviewLog`).
     public static func applyLogged(
         _ events: [LearningEvent],
-        to progress: [Int: WordProgress]
+        to progress: [Int: WordProgress],
+        scheduler: ReviewScheduler = LeitnerScheduler()
     ) -> (progress: [Int: WordProgress], answers: [ReviewLogEntry]) {
         let ordered = events.enumerated().sorted { lhs, rhs in
             if lhs.element.at != rhs.element.at {
@@ -50,7 +54,7 @@ public enum ProgressIngest {
         for item in ordered {
             let event = item.element
             let current = result[event.wordID] ?? WordProgress(wordID: event.wordID)
-            let updated = update(current, with: event)
+            let updated = update(current, with: event, scheduler: scheduler)
             result[event.wordID] = updated
             if let answer = ReviewLogEntry(before: current, after: updated, source: .widget) {
                 answers.append(answer)
@@ -59,14 +63,14 @@ public enum ProgressIngest {
         return (result, answers)
     }
 
-    private static func update(_ progress: WordProgress, with event: LearningEvent) -> WordProgress {
+    private static func update(_ progress: WordProgress, with event: LearningEvent, scheduler: ReviewScheduler) -> WordProgress {
         switch event.type {
         case .known:
             return Leitner.markKnown(progress, at: event.at)
-        case .next, .reveal:
+        case .next, .reveal, .quiz:
             return Leitner.markExposure(progress, at: event.at)
         case .unknown:
-            return Leitner.review(progress, grade: .again, at: event.at)
+            return scheduler.review(progress, grade: .again, at: event.at)
         }
     }
 }

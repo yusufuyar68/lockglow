@@ -174,10 +174,12 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
   `{ "version":1, "plan_id":String, "is_premium":Bool, "interval_seconds":Int, "queue":[WidgetWord], "updated_at":ISO8601 }`
   - `queue`: uygulamanın SRS'e ve filtrelere göre seçtiği sonraki 48–96 kelime. Widget veritabanı açmaz, yalnızca bu kuyruğu okur.
   - `plan_id`: uygulama her yeni plan yazdığında değişir (UUID). Widget, `widget_state.plan_id` farklıysa imlecini sıfırlar.
-  - `WidgetWord` = `{ "id":Int, "lemma":String, "pos":String, "level":String, "ipa_us":String?, "def_micro":String, "def_short":String, "example_en":String, "gloss_tr":String?, "gloss_short_tr":String?, "sensitivity":Int?, "confusable_ids":[Int]? }`.
-    - İlk dokuz alan ve `gloss_short_tr` seed ile aynıdır.
+  - `WidgetWord` = `{ "id":Int, "lemma":String, "pos":String, "level":String, "ipa_us":String?, "ipa_uk":String?, "def_micro":String, "def_short":String, "example_en":String, "gloss_tr":String?, "gloss_short_tr":String?, "sensitivity":Int?, "confusable_ids":[Int]? }`.
+    - `ipa_uk` dışındaki ilk dokuz alan ve `gloss_short_tr` seed ile aynıdır.
+    - `ipa_uk` (`card.ipa_uk`) yalnız veritabanından gelir (2026-10-23). Ayarlar'daki "Ses ve aksan" İngiltere ise widget ve uygulama onu gösterir; yoksa `ipa_us` (`WidgetWord.ipa(for:)`).
     - `sensitivity` (`card.sensitivity`) ve `confusable_ids` (`card_confusable.other_rowid`) yalnız veritabanından gelir; seed'de yoktur.
     - Şema 2'de eklenen alanların hepsi opsiyoneldir: yoksa ya da `null` ise eski JSON da çözülür. Swift'te `glossShortTR`, `sensitivity`, `isSensitive`, `confusableIDs`.
+    - Büyük widget için (2026-10-23, yalnız planda, seed'de yok, opsiyonel): `"second_example_en":String?` (kartın ikinci örneği: kelimeyi içeren en kısa öteki örnek) ve `"warning"` = `{"false_friend":{"tr_word":String,"en_for_that":String}}` ya da `{"mistake":{"wrong":String,"right":String}}` (önce sahte dost, yoksa Dikkat hatası). Swift'te `secondExampleEN`, `warning` (`WidgetWarning`), uygulama `addingLargeWidgetDetails(from:)` ile doldurur.
 - `widget_state.json` (widget yazar, atomik):
   `{ "version":1, "plan_id":String, "cursor_offset":Int, "cursor_anchor":ISO8601, "known_ids":[Int], "updated_at":ISO8601 }`
   - Anlamı: `cursor_anchor` anında döngü kuyruğun `cursor_offset` indeksindeydi.
@@ -194,7 +196,8 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
 5. `t` anında gösterilen kelime = `R[geçen(d, t) mod |R|]`. Zaman çizelgesi girişleri: `[şimdi, sonraki her sınır…]`, i. giriş = `R[(geçen(d, şimdi) + i) mod |R|]`.
 6. Uygulama planı yeniden yazarken önce **eski** plan ve durumla `t = şimdi` için gösterilen kelimeyi hesaplar, yeni kuyruğu o kelimeyle başlatır ve `updated_at = şimdi` yazar.
 - `events/` klasörü: her olay ayrı bir dosya, adı `<unix_ms>-<uuid>.json`, içeriği:
-  `{ "type":"next|known|unknown|reveal", "word_id":Int, "at":ISO8601, "source":"system_small|system_medium|accessory_rectangular|accessory_inline" }`.
+  `{ "type":"next|known|unknown|reveal", "word_id":Int, "at":ISO8601, "source":"system_small|system_medium|system_large|accessory_rectangular|accessory_inline|control" }`.
+  `control`: iOS 18 kontrolleri (Denetim Merkezi, kilitli ekranın alt düğmeleri, Eylem düğmesi); kontrol o anda widget'ta görünen kelimeyle olay yazar.
   Uygulama ön plana gelince olayları işler (SRS'e "bildi/bilmedi" olarak), dosyaları siler, yeni `widget_plan.json` yazar ve `WidgetCenter.reloadAllTimelines()` çağırır.
 
 ## 7. Sürüm geçmişi

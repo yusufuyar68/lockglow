@@ -1,0 +1,1373 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.feeling.n.1",
+      "lemma": "feeling",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "emotion; idea about sth",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfiːlɪŋ/",
+        "uk": "/ˈfiːlɪŋ/"
+      },
+      "def": {
+        "micro": "something you feel inside",
+        "short": "something you feel inside, like love or fear, or an idea you can't explain",
+        "long": "Something you feel inside you, like happiness, love or fear. 'I have a feeling that…' means you think something is true, but you can't say why."
+      },
+      "grammar": {
+        "pattern": "have a feeling (that) … / sb's feelings"
+      },
+      "examples": [
+        {
+          "en": "I have a feeling that Cem will be late again.",
+          "tr": "İçimden bir ses Cem'in yine geç kalacağını söylüyor.",
+          "register": "neutral",
+          "focus": "feeling"
+        },
+        {
+          "en": "Maria doesn't show her feelings, so it's hard to know if she is happy.",
+          "tr": "Maria duygularını göstermiyor, bu yüzden mutlu mu anlamak zor.",
+          "register": "neutral",
+          "focus": "feelings"
+        },
+        {
+          "en": "Coming home after a long trip is a great feeling.",
+          "tr": "Uzun bir yolculuktan sonra eve dönmek harika bir duygu.",
+          "register": "neutral",
+          "focus": "feeling"
+        }
+      ],
+      "synonyms": [
+        "emotion"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a feeling",
+        "a good feeling",
+        "a bad feeling",
+        "mixed feelings",
+        "show your feelings"
+      ],
+      "word_family": [
+        {
+          "lemma": "feel",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "confusables": [
+        "feel"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "duygu, his",
+          "alt": [
+            "sezgi",
+            "hissiyat"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'I feel …' fiildir: 'I feel tired.' İsim olarak 'a feeling' denir. 'I have a feeling that…' içimde bir his var demektir. Duygular çoğul olur: 'my feelings'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I have a ______ that it will rain today, so I'm taking an umbrella.",
+        "answer": "feeling",
+        "distractors": [
+          "habit",
+          "memory",
+          "voice"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.attitude.n.1",
+      "lemma": "attitude",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "way you think and behave",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈætɪtuːd/",
+        "uk": "/ˈætɪtjuːd/"
+      },
+      "def": {
+        "micro": "how you think and act",
+        "short": "the way you think or feel about something, and how this shows in what you do",
+        "long": "The way you think or feel about something or someone, and how this shows in the way you act. People talk about a positive or a negative attitude."
+      },
+      "grammar": {
+        "pattern": "a positive / bad attitude (to / towards sth)"
+      },
+      "examples": [
+        {
+          "en": "Tolga has a very positive attitude.",
+          "tr": "Tolga'nın çok olumlu bir tavrı var.",
+          "register": "neutral",
+          "focus": "attitude"
+        },
+        {
+          "en": "Fatima's attitude to work changed after she got her new job.",
+          "tr": "Fatima'nın işe karşı tutumu yeni işine girdikten sonra değişti.",
+          "register": "neutral",
+          "focus": "attitude"
+        },
+        {
+          "en": "The teacher said Onur was smart, but his attitude in class was a problem.",
+          "tr": "Öğretmen Onur'un zeki olduğunu ama sınıftaki tavrının sorun olduğunu söyledi.",
+          "register": "neutral",
+          "focus": "attitude"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "positive attitude",
+        "bad attitude",
+        "change your attitude",
+        "attitude towards"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'attitude', from Italian 'attitudine', first used for the way a body or statue is standing.",
+        "origin": "French",
+        "confidence": "medium"
+      },
+      "confusables": [
+        "behavior"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "tavır, tutum",
+          "alt": [
+            "yaklaşım",
+            "bakış açısı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'attitude' birinin bir şeye bakışı ve davranışıdır. 'Bana tavır yaptı' için 'made attitude' denmez, 'He was cold to me.' denir. 'Don't give me attitude!' ise bana ukalalık yapma demektir.",
+          "mistakes": [
+            {
+              "wrong": "Her attitude against me changed.",
+              "right": "Her attitude towards me changed.",
+              "why": "Türkçede 'bana karşı tutumu' denir ve 'karşı' sözcüğü 'against' diye çevrilir. 'attitude' ile 'to' ya da 'towards' kullanılır; 'against' karşı çıkmak anlamı verir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Barış has a positive ______: he always believes things will get better.",
+        "answer": "attitude",
+        "distractors": [
+          "altitude",
+          "address",
+          "talent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.personality.n.1",
+      "lemma": "personality",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌpɜːrsəˈnæləti/",
+        "uk": "/ˌpɜːsəˈnæləti/"
+      },
+      "def": {
+        "micro": "what kind of person you are",
+        "short": "the kind of person you are, for example funny, quiet, kind or friendly",
+        "long": "The kind of person someone is, shown in how they think, feel and act. For example, a person can have a strong, warm or funny personality."
+      },
+      "grammar": {
+        "pattern": "have a … personality"
+      },
+      "examples": [
+        {
+          "en": "Mei has a warm and friendly personality.",
+          "tr": "Mei'nin sıcak ve cana yakın bir kişiliği var.",
+          "register": "neutral",
+          "focus": "personality"
+        },
+        {
+          "en": "The twins look the same, but they have very different personalities.",
+          "tr": "İkizler aynı görünüyor ama kişilikleri çok farklı.",
+          "register": "neutral",
+          "focus": "personalities"
+        },
+        {
+          "en": "At a job interview, they want to learn about your personality, not only your skills.",
+          "tr": "İş görüşmesinde yalnızca becerilerini değil, kişiliğini de öğrenmek isterler.",
+          "register": "neutral",
+          "focus": "personality"
+        }
+      ],
+      "synonyms": [
+        "character"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "strong personality",
+        "friendly personality",
+        "personality type",
+        "different personalities"
+      ],
+      "word_family": [
+        {
+          "lemma": "person",
+          "pos": "n"
+        },
+        {
+          "lemma": "personal",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "confusables": [
+        "personal",
+        "character"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "kişilik",
+          "alt": [
+            "karakter"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'personality' isimdir; 'personal' ise sıfattır ve kişisel demektir: 'a personal question' (kişisel bir soru). Çoğulu 'personalities' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Gizem is funny, kind and full of energy. She has a great ______.",
+        "answer": "personality",
+        "distractors": [
+          "personal",
+          "opinion",
+          "pleasure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hate.v.1",
+      "lemma": "hate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/heɪt/",
+        "uk": "/heɪt/"
+      },
+      "def": {
+        "micro": "to dislike very much",
+        "short": "to dislike someone or something very much",
+        "long": "To dislike someone or something very much. In daily speech people often use it for small things: 'I hate waiting.' It is stronger than 'don't like'."
+      },
+      "grammar": {
+        "pattern": "hate sth / hate doing sth"
+      },
+      "examples": [
+        {
+          "en": "Sam hates cold coffee.",
+          "tr": "Sam soğuk kahveden nefret ediyor.",
+          "register": "neutral",
+          "focus": "hates"
+        },
+        {
+          "en": "I hate getting up early on Saturdays.",
+          "tr": "Cumartesileri erken kalkmaktan nefret ediyorum.",
+          "register": "neutral",
+          "focus": "hate"
+        },
+        {
+          "en": "Lucas hates the winter here, because it's dark at four o'clock.",
+          "tr": "Lucas buradaki kıştan nefret ediyor, çünkü saat dörtte hava kararıyor.",
+          "register": "neutral",
+          "focus": "hates"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "love"
+      ],
+      "collocations": [
+        "really hate",
+        "hate waiting",
+        "hate it when"
+      ],
+      "word_family": [
+        {
+          "lemma": "hatred",
+          "pos": "n"
+        },
+        {
+          "lemma": "hateful",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From Old English 'hatian', with the same meaning.",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "nefret etmek",
+          "alt": [
+            "hiç sevmemek",
+            "sinir olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'hate' güçlü bir kelimedir. Bir kişi için kullanınca sert durur; günlük hayatta daha çok küçük şeyler için söylenir: 'I hate traffic.'",
+          "mistakes": [
+            {
+              "wrong": "I hate from Mondays.",
+              "right": "I hate Mondays.",
+              "why": "Türkçede '-den nefret etmek' denir, ama İngilizcede 'hate' fiilinden sonra 'from' gelmez; nesne doğrudan gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Esra ______ waiting in long lines. It always makes her angry.",
+        "answer": "hates",
+        "distractors": [
+          "loves",
+          "enjoys",
+          "misses"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.care.v.1",
+      "lemma": "care",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be interested, think important",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɛr/",
+        "uk": "/keə/"
+      },
+      "def": {
+        "micro": "to think something matters",
+        "short": "to feel that something is important to you, or to be interested in it",
+        "long": "To feel that someone or something is important to you. 'I don't care' means it isn't important to you; it can sound rude, so be careful how you say it."
+      },
+      "grammar": {
+        "pattern": "care about sb/sth / not care (what / if …)"
+      },
+      "examples": [
+        {
+          "en": "Aylin really cares about her friends.",
+          "tr": "Aylin arkadaşlarını gerçekten önemsiyor.",
+          "register": "neutral",
+          "focus": "cares"
+        },
+        {
+          "en": "Tolga doesn't care about money. He just wants a job he loves.",
+          "tr": "Tolga paraya önem vermiyor. Sadece sevdiği bir iş istiyor.",
+          "register": "neutral",
+          "focus": "care"
+        },
+        {
+          "en": "Jack doesn't care if we eat pizza or pasta. He's just hungry.",
+          "tr": "Pizza mı makarna mı yiyeceğimiz Jack'in umurunda değil. Karnı aç, o kadar.",
+          "register": "neutral",
+          "focus": "care"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "care about",
+        "really care",
+        "don't care",
+        "who cares"
+      ],
+      "word_family": [
+        {
+          "lemma": "care",
+          "pos": "n"
+        },
+        {
+          "lemma": "careful",
+          "pos": "adj"
+        },
+        {
+          "lemma": "careless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "confusables": [
+        "mind"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "umursamak, önemsemek",
+          "gloss_short": "umursamak",
+          "alt": [
+            "umurunda olmak",
+            "değer vermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'I don't care' umurumda değil demektir ve kaba duyulabilir. Bir teklife 'fark etmez, olur' demek için 'I don't mind' daha kibardır.",
+          "mistakes": [
+            {
+              "wrong": "I don't care it.",
+              "right": "I don't care about it.",
+              "why": "Türkçede 'onu umursamıyorum' denir, ama İngilizcede 'care' fiilinden sonra nesne için 'about' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I don't ______ what people say about my hair. I like it.",
+        "answer": "care",
+        "distractors": [
+          "hope",
+          "wear",
+          "smile"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bother.v.1",
+      "lemma": "bother",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "annoy or worry sb",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɑːðər/",
+        "uk": "/ˈbɒðə/"
+      },
+      "def": {
+        "micro": "to annoy or worry someone",
+        "short": "to make someone a little angry or worried, or to stop them while they are busy",
+        "long": "To make someone feel a little angry, worried or uncomfortable. It is often used in questions and with 'not': 'Does it bother you?'"
+      },
+      "grammar": {
+        "pattern": "sth bothers sb / it doesn't bother me"
+      },
+      "examples": [
+        {
+          "en": "Loud music doesn't bother me.",
+          "tr": "Yüksek sesli müzik beni rahatsız etmiyor.",
+          "register": "neutral",
+          "focus": "bother"
+        },
+        {
+          "en": "Does it bother you if I open the window?",
+          "tr": "Pencereyi açsam seni rahatsız eder mi?",
+          "register": "neutral",
+          "focus": "bother"
+        },
+        {
+          "en": "Something is bothering Sibel today. She hasn't said a word all morning.",
+          "tr": "Bugün bir şey Sibel'in canını sıkıyor. Bütün sabah tek kelime etmedi.",
+          "register": "neutral",
+          "focus": "bothering"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "really bother",
+        "it bothers me",
+        "it doesn't bother me"
+      ],
+      "word_family": [
+        {
+          "lemma": "bothered",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "confusables": [
+        "disturb"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "rahatsız etmek",
+          "alt": [
+            "canını sıkmak",
+            "huzursuz etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'disturb' de rahatsız etmek demektir ama daha çok çalışan ya da uyuyan birini bölmek içindir: 'Do not disturb'. 'bother' bir şeyin canınızı sıkması için de kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I'm bothered from the smoke.",
+              "right": "The smoke bothers me.",
+              "why": "Türkçede 'dumandan rahatsız oluyorum' denir. İngilizcede 'from' kullanılmaz; rahatsız eden şey özne olur: 'The smoke bothers me.'"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The noise from the street doesn't ______ me. I can sleep anywhere.",
+        "answer": "bother",
+        "distractors": [
+          "hear",
+          "invite",
+          "lend"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.regret.v.1",
+      "lemma": "regret",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈɡrɛt/",
+        "uk": "/rɪˈɡrɛt/"
+      },
+      "def": {
+        "micro": "to feel sorry you did it",
+        "short": "to feel sorry about something you did or didn't do, and wish it was different",
+        "long": "To feel sorry about something you did or didn't do in the past, and wish you could change it. 'regret doing' is about the past."
+      },
+      "grammar": {
+        "pattern": "regret sth / regret doing sth"
+      },
+      "examples": [
+        {
+          "en": "I regret eating so much cake.",
+          "tr": "O kadar çok pasta yediğime pişmanım.",
+          "register": "neutral",
+          "focus": "regret"
+        },
+        {
+          "en": "Cem shouted at his brother, and now he regrets it.",
+          "tr": "Cem kardeşine bağırdı ve şimdi buna pişman.",
+          "register": "neutral",
+          "focus": "regrets"
+        },
+        {
+          "en": "Maria bought a white sofa, but she regretted it when the kids came home with dirty hands.",
+          "tr": "Maria beyaz bir kanepe aldı ama çocuklar eve kirli ellerle gelince pişman oldu.",
+          "register": "neutral",
+          "focus": "regretted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "really regret",
+        "regret it",
+        "regret doing",
+        "never regret"
+      ],
+      "word_family": [
+        {
+          "lemma": "regret",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pişman olmak",
+          "alt": [
+            "pişmanlık duymak",
+            "hayıflanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Geçmiş zaman ve -ing biçiminde 't' iki kez yazılır: 'regretted', 'regretting'. 'I regret to tell you…' ise resmî bir dilde 'üzülerek bildiririm' demektir.",
+          "mistakes": [
+            {
+              "wrong": "I'm regret.",
+              "right": "I regret it.",
+              "why": "Türkçede 'pişmanım' bir durum sözcüğü gibidir, ama 'regret' bir fiildir; önüne 'am' gelmez. 'I regret it.' ya da 'I'm sorry.' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sam was rude to his teacher, and now he really ______ it. He wants to say sorry.",
+        "answer": "regrets",
+        "distractors": [
+          "admires",
+          "enjoys",
+          "celebrates"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      },
+      "confusables": [
+        "sorry"
+      ]
+    },
+    {
+      "id": "en.panic.v.1",
+      "lemma": "panic",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpænɪk/",
+        "uk": "/ˈpænɪk/"
+      },
+      "def": {
+        "micro": "to suddenly feel very afraid",
+        "short": "to suddenly feel so afraid or worried that you can't think clearly",
+        "long": "To suddenly feel so afraid or worried that you can't think clearly or act calmly. 'Don't panic!' is said to help someone stay calm."
+      },
+      "grammar": {
+        "pattern": "panic (about sth)"
+      },
+      "examples": [
+        {
+          "en": "Don't panic! We still have ten minutes.",
+          "tr": "Panik yapma! Daha on dakikamız var.",
+          "register": "neutral",
+          "focus": "panic"
+        },
+        {
+          "en": "Fatima panicked when she couldn't find her keys.",
+          "tr": "Fatima anahtarlarını bulamayınca paniğe kapıldı.",
+          "register": "neutral",
+          "focus": "panicked"
+        },
+        {
+          "en": "Lucas always panics before exams, but he usually does very well.",
+          "tr": "Lucas sınavlardan önce hep panik yapar ama genelde çok iyi sonuç alır.",
+          "register": "neutral",
+          "focus": "panics"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "calm down"
+      ],
+      "collocations": [
+        "don't panic",
+        "start to panic",
+        "panic about"
+      ],
+      "word_family": [
+        {
+          "lemma": "panic",
+          "pos": "n"
+        },
+        {
+          "lemma": "panicky",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "From French 'panique', from Greek 'panikos', named after the god Pan, who was said to cause sudden fear.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "panik yapmak",
+          "alt": [
+            "paniğe kapılmak",
+            "telaşlanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Geçmiş zamanda ve -ing biçiminde 'k' eklenir: 'panicked', 'panicking'. İsim olarak da kullanılır: 'in a panic' (panik içinde).",
+          "mistakes": [
+            {
+              "wrong": "Don't make panic!",
+              "right": "Don't panic!",
+              "why": "Türkçede 'panik yapmak' denir, ama İngilizcede 'panic' kendisi fiildir; önüne 'make' ya da 'do' gelmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When Sibel couldn't find her passport at the airport, she ______. Then she found it in her bag.",
+        "answer": "panicked",
+        "distractors": [
+          "relaxed",
+          "celebrated",
+          "yawned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.admire.v.1",
+      "lemma": "admire",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "respect and like sb",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ədˈmaɪər/",
+        "uk": "/ədˈmaɪə/"
+      },
+      "def": {
+        "micro": "to respect and like",
+        "short": "to respect and like someone because of what they are or what they do",
+        "long": "To respect and like someone very much because of their qualities or what they have done. You can also admire a beautiful thing, like a view."
+      },
+      "grammar": {
+        "pattern": "admire sb (for sth)"
+      },
+      "examples": [
+        {
+          "en": "I really admire my grandmother.",
+          "tr": "Büyükanneme gerçekten hayranım.",
+          "register": "neutral",
+          "focus": "admire"
+        },
+        {
+          "en": "Everyone admires Onur for his hard work.",
+          "tr": "Herkes Onur'u çalışkanlığından dolayı takdir ediyor.",
+          "register": "neutral",
+          "focus": "admires"
+        },
+        {
+          "en": "We stopped the car on the hill to admire the view of the sea.",
+          "tr": "Deniz manzarasını hayranlıkla seyretmek için arabayı tepede durdurduk.",
+          "register": "neutral",
+          "focus": "admire"
+        }
+      ],
+      "synonyms": [
+        "respect",
+        "look up to"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "really admire",
+        "admire sb for",
+        "admire the view"
+      ],
+      "word_family": [
+        {
+          "lemma": "admiration",
+          "pos": "n"
+        },
+        {
+          "lemma": "admirer",
+          "pos": "n"
+        }
+      ],
+      "etymology": {
+        "text": "From Latin 'admirari', meaning 'to wonder at'.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "confusables": [
+        "appreciate"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "hayran olmak",
+          "alt": [
+            "takdir etmek",
+            "saygı duymak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'appreciate' de takdir etmek diye çevrilir ama yapılan bir iyiliğe minnettar olmak demektir: 'I appreciate your help.' 'admire' ise birine hayranlık ve saygı duymaktır.",
+          "mistakes": [
+            {
+              "wrong": "I admire to my father.",
+              "right": "I admire my father.",
+              "why": "Türkçede 'babama hayranım' denir ve '-e' eki 'to' gibi çevrilir. 'admire' fiilinden sonra nesne doğrudan gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Lucas really ______ his football coach. The coach works hard and is fair to every player.",
+        "answer": "admires",
+        "distractors": [
+          "regrets",
+          "bothers",
+          "blames"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.annoying.adj.1",
+      "lemma": "annoying",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈnɔɪɪŋ/",
+        "uk": "/əˈnɔɪɪŋ/"
+      },
+      "def": {
+        "micro": "making you a little angry",
+        "short": "making you feel a little angry, often because it happens again and again",
+        "long": "Making you feel a little angry, often because it happens again and again. A person, a sound or a habit can be annoying. You feel annoyed."
+      },
+      "grammar": {
+        "pattern": "it's annoying when …"
+      },
+      "examples": [
+        {
+          "en": "Mosquitoes are so annoying.",
+          "tr": "Sivrisinekler çok sinir bozucu.",
+          "register": "neutral",
+          "focus": "annoying"
+        },
+        {
+          "en": "It's annoying when the bus is late every morning.",
+          "tr": "Otobüsün her sabah geç gelmesi can sıkıcı.",
+          "register": "neutral",
+          "focus": "annoying"
+        },
+        {
+          "en": "Barış has an annoying habit of checking his phone while you are talking.",
+          "tr": "Barış'ın siz konuşurken telefonuna bakmak gibi sinir bozucu bir alışkanlığı var.",
+          "register": "neutral",
+          "focus": "annoying"
+        }
+      ],
+      "synonyms": [
+        "irritating"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "really annoying",
+        "annoying habit",
+        "annoying sound",
+        "so annoying"
+      ],
+      "word_family": [
+        {
+          "lemma": "annoy",
+          "pos": "v"
+        },
+        {
+          "lemma": "annoyed",
+          "pos": "adj"
+        },
+        {
+          "lemma": "annoyance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "confusables": [
+        "annoyed"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "sinir bozucu, can sıkıcı",
+          "gloss_short": "sinir bozucu",
+          "alt": [
+            "rahatsız edici",
+            "bıktırıcı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sinirleri bozan şey 'annoying' olur, sinirlenen kişi 'annoyed' olur: 'The song is annoying. I'm annoyed.'",
+          "mistakes": [
+            {
+              "wrong": "I'm so annoying today.",
+              "right": "I'm so annoyed today.",
+              "why": "Türkçede 'bugün çok sinirliyim' denir. 'I'm annoying' ise 'ben insanları sinir ediyorum' anlamına gelir; kendi hissiniz için '-ed' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "That song again? It's so ______! I've heard it ten times today.",
+        "answer": "annoying",
+        "distractors": [
+          "annoyed",
+          "relaxing",
+          "patient"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.embarrassing.adj.1",
+      "lemma": "embarrassing",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈbærəsɪŋ/",
+        "uk": "/ɪmˈbærəsɪŋ/"
+      },
+      "def": {
+        "micro": "making you feel silly",
+        "short": "making you feel shy, silly or uncomfortable in front of other people",
+        "long": "Making you feel shy, silly or uncomfortable because other people saw or heard something. A moment, a mistake or a question can be embarrassing."
+      },
+      "grammar": {
+        "pattern": "it's embarrassing (to do sth)"
+      },
+      "examples": [
+        {
+          "en": "Falling on the stairs at work was so embarrassing.",
+          "tr": "İş yerinde merdivenlerde düşmek çok utandırıcıydı.",
+          "register": "neutral",
+          "focus": "embarrassing"
+        },
+        {
+          "en": "Aylin sang the wrong words at the school concert. It was so embarrassing!",
+          "tr": "Aylin okul konserinde şarkının sözlerini yanlış söyledi. Çok utanç vericiydi!",
+          "register": "neutral",
+          "focus": "embarrassing"
+        },
+        {
+          "en": "My dad told an embarrassing story about me in front of all my friends.",
+          "tr": "Babam bütün arkadaşlarımın önünde benimle ilgili utandırıcı bir hikâye anlattı.",
+          "register": "neutral",
+          "focus": "embarrassing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "so embarrassing",
+        "embarrassing moment",
+        "embarrassing question",
+        "embarrassing mistake"
+      ],
+      "word_family": [
+        {
+          "lemma": "embarrass",
+          "pos": "v"
+        },
+        {
+          "lemma": "embarrassed",
+          "pos": "adj"
+        },
+        {
+          "lemma": "embarrassment",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "confusables": [
+        "embarrassed"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "utandırıcı, utanç verici",
+          "gloss_short": "utandırıcı",
+          "alt": [
+            "mahcup edici"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yazılışına dikkat: iki 'r', iki 's'. Utandıran durum 'embarrassing' olur, utanan kişi 'embarrassed' olur.",
+          "mistakes": [
+            {
+              "wrong": "It was a very embarrassed moment.",
+              "right": "It was a very embarrassing moment.",
+              "why": "Durumu anlatırken '-ing' kullanılır; '-ed' yalnızca utanan kişi içindir. Türkçede ikisi de 'utanç' kelimesiyle anlatıldığı için karışıyor."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I waved at a woman in the street, but she was waving at someone else. It was so ______!",
+        "answer": "embarrassing",
+        "distractors": [
+          "embarrassed",
+          "relaxing",
+          "exciting"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.moody.adj.1",
+      "lemma": "moody",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmuːdi/",
+        "uk": "/ˈmuːdi/"
+      },
+      "def": {
+        "micro": "often unhappy or angry",
+        "short": "often unhappy or angry, and your feelings change quickly for no clear reason",
+        "long": "Often unhappy or angry, with feelings that change quickly without a clear reason. It is not a nice thing to say about someone."
+      },
+      "grammar": {
+        "pattern": "be / get moody"
+      },
+      "examples": [
+        {
+          "en": "Jack gets moody when he's hungry.",
+          "tr": "Jack acıkınca huysuzlaşıyor.",
+          "register": "neutral",
+          "focus": "moody"
+        },
+        {
+          "en": "Gizem is a bit moody in the mornings, so don't talk to her before coffee.",
+          "tr": "Gizem sabahları biraz huysuz oluyor, o yüzden kahveden önce onunla konuşma.",
+          "register": "neutral",
+          "focus": "moody"
+        },
+        {
+          "en": "Our cat is very moody: one minute she wants to play, the next minute she runs away.",
+          "tr": "Kedimiz çok huysuz: bir an oynamak istiyor, bir sonraki an kaçıyor.",
+          "register": "neutral",
+          "focus": "moody"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "easygoing"
+      ],
+      "collocations": [
+        "a bit moody",
+        "get moody",
+        "moody teenager"
+      ],
+      "word_family": [
+        {
+          "lemma": "mood",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "confusables": [
+        "mood"
+      ],
+      "l1": {
+        "tr": {
+          "gloss": "huysuz, kaprisli",
+          "alt": [
+            "aksi",
+            "ruh hâli değişken"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'moody' olumsuz bir kelimedir; 'modunda, keyifli' demek değildir. Keyifliyseniz 'I'm in a good mood' dersiniz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Onur is so ______: happy in the morning, angry at lunch and sad in the evening.",
+        "answer": "moody",
+        "distractors": [
+          "calm",
+          "patient",
+          "brave"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

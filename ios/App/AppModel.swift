@@ -96,6 +96,8 @@ final class AppModel: ObservableObject {
             return
         }
         hasStarted = true
+        // Today's time of "Saati benim için seç" before any screen shows it (AppModel+ReminderTiming.swift).
+        reminderTimeDecision()
 
         let container = AppGroupLocator.containerURL()
         store = container.map { AppGroupStore(containerURL: $0) }
@@ -136,6 +138,8 @@ final class AppModel: ObservableObject {
         if !showsOnboarding || store?.readPlan() != nil {
             refreshWidgetPlan()
         }
+        // iCloud (is5-icloud, AppModel+Sync.swift): the first sync, once words and progress are in.
+        startCloudSync()
         await refreshHealth()
     }
 
@@ -157,6 +161,8 @@ final class AppModel: ObservableObject {
     func sceneDidBecomeActive() {
         // Counted from the first launch on, before the content is ready.
         LocalMetricsRecorder.shared.appDidBecomeActive()
+        // A new day: today's time of "Saati benim için seç" (AppModel+ReminderTiming.swift).
+        reminderTimeDecision()
         if !hasStarted {
             return
         }
@@ -171,6 +177,8 @@ final class AppModel: ObservableObject {
             customWordsDidChange()
         }
         ingestWidgetEvents()
+        // "Yeni zamanlama": FSRS's weekly refit (AppModel+Scheduler.swift).
+        refreshFSRSIfDue()
         // Time and widget taps ("Sonraki", "Biliyorum") may have moved the rotation on.
         updateLockScreenWord()
     }
@@ -324,7 +332,17 @@ final class AppModel: ObservableObject {
         AppPreferences.reminderEnabled = enabled
     }
 
+    /// A time the user picks. It ends "Saati benim için seç" (AppModel+ReminderTiming.swift).
     func setReminderMinuteOfDay(_ minute: Int) {
+        guard (0..<1440).contains(minute) else {
+            return
+        }
+        endReminderAutoTime()
+        applyReminderMinute(minute)
+    }
+
+    /// Saves the time; also how "Saati benim için seç" sets today's time.
+    func applyReminderMinute(_ minute: Int) {
         guard (0..<1440).contains(minute) else {
             return
         }
@@ -338,12 +356,15 @@ final class AppModel: ObservableObject {
         guard reminderEnabled, !words.isEmpty else {
             return []
         }
+        // "Saati benim için seç" moves the next days' time (AppModel+ReminderTiming.swift).
+        let times = reminderTimes(now: now)
         return ReminderPlanner.plan(
             feed: words,
             newWordFeed: newWordFeed,
             progress: progress,
             now: now,
-            minuteOfDay: reminderMinuteOfDay,
+            minuteOfDay: times.today,
+            laterMinuteOfDay: times.later,
             days: 7,
             dailyNewGoal: dailyNewWords,
             newStudiedToday: AppPreferences.newWordsStudiedToday(now: now),
@@ -490,7 +511,7 @@ final class AppModel: ObservableObject {
         let now = Date()
         let current = progress[word.id] ?? WordProgress(wordID: word.id)
         let wasNew = current.state == .new
-        let updated = Leitner.review(current, grade: grade, at: now)
+        let updated = reviewScheduler.review(current, grade: grade, at: now)
         progress[word.id] = updated
         if persistProgress(progress) {
             try? reviewLog?.append(before: current, after: updated, source: .review)
@@ -502,6 +523,8 @@ final class AppModel: ObservableObject {
         if current.awaitsKnownCheck {
             metrics.recordKnownCheck(passed: grade != .again, at: now)
         }
+        // When the user studies, for "Saati benim için seç" (AppModel+ReminderTiming.swift).
+        noteStudyTime(at: now)
         if wasNew {
             if grade != .again {
                 AppPreferences.addNewWordsStudied(1, now: now)
@@ -575,12 +598,12 @@ final class AppModel: ObservableObject {
         return (progress[word.id]?.exposures ?? 0) > 0 || lockScreenWordID == word.id
     }
 
-    /// When `word` would come back if it were answered with `grade` at `now`: the same
-    /// `Leitner.review` that `recordReview` runs, on a copy of the progress (the times on the
+    /// When `word` would come back if it were answered with `grade` at `now`: the same scheduler
+    /// that `recordReview` runs (`reviewScheduler`), on a copy of the progress (the times on the
     /// answer buttons, README point 8). Nothing is saved.
     func dueDate(ifAnswering grade: ReviewGrade, for word: WidgetWord, now: Date = Date()) -> Date? {
         let current = progress[word.id] ?? WordProgress(wordID: word.id)
-        return Leitner.review(current, grade: grade, at: now).dueAt
+        return reviewScheduler.review(current, grade: grade, at: now).dueAt
     }
 
     /// The earliest review or refresher of a loaded word that falls due after `now` ("Sıradaki
@@ -730,6 +753,18 @@ final class AppModel: ObservableObject {
         return (previous, changed)
     }
 
+    /// Every word's progress at once ("Yeni zamanlama", AppModel+Scheduler.swift): saved first,
+    /// then adopted, then the widget queue follows. False when the save failed; nothing changes.
+    @discardableResult
+    func replaceProgress(_ updated: [Int: WordProgress]) -> Bool {
+        guard persistProgress(updated) else {
+            return false
+        }
+        progress = updated
+        refreshWidgetPlan()
+        return true
+    }
+
     func dismissProgressRecovery() {
         progressRecovery = nil
     }
@@ -744,14 +779,19 @@ final class AppModel: ObservableObject {
             try? reviewLog?.removeAll()
         }
         AppPreferences.clearKnownWordIDs()
+        AppPreferences.clearFSRSFit()
         AppPreferences.resetNewWordsStudied()
         AppPreferences.resetReviewsDone()
         LocalMetricsRecorder.shared.reset()
+        forgetStudyTimes()
         AppPreferences.clearFeedFirstSeen()
         AppModel.clearRecentSearches()
+        AppModel.clearSentencePracticeTally() // "Cümle kur" count (AppModel+SentencePractice)
         // The words "Tekrar" listed as today's new words (`ReviewView.newWordsTodayLog`) are new again.
         UserDefaults.standard.removeObject(forKey: "lockglow.reviewNewWordsToday")
         refreshWidgetPlan()
+        // iCloud (is5-icloud, AppModel+Sync.swift): while syncing, the reset reaches the other devices.
+        cloudSyncProgressWasReset()
     }
 
     private func loadProgress() {
@@ -823,6 +863,24 @@ final class AppModel: ObservableObject {
         }
     }
 
+    // MARK: iCloud (is5-icloud, AppModel+Sync.swift; here for the private save)
+
+    /// The progress file was read: an iCloud sync may merge into `progress` and save it.
+    var isProgressReadyForSync: Bool {
+        return progressStore != nil
+    }
+
+    /// iCloud sync merged the progress (`SyncMerge`): saved first, then adopted like any change.
+    /// False when it could not be saved; nothing changed then.
+    func adoptSyncedProgress(_ merged: [Int: WordProgress]) -> Bool {
+        guard persistProgress(merged) else {
+            return false
+        }
+        progress = merged
+        refreshWidgetPlan()
+        return true
+    }
+
     // MARK: Widget events
 
     /// Reads the widget's event files, applies them to the progress (oldest first), saves, and only
@@ -848,7 +906,7 @@ final class AppModel: ObservableObject {
                 logger.info("widget event \(event.type.rawValue, privacy: .public) word=\(event.wordID) source=\(event.source.rawValue, privacy: .public)")
                 events.append(LearningEvent(type: event.type, wordID: event.wordID, at: event.at))
             }
-            let (updated, answers) = ProgressIngest.applyLogged(events, to: progress)
+            let (updated, answers) = ProgressIngest.applyLogged(events, to: progress, scheduler: reviewScheduler)
             if !persistProgress(updated) {
                 return
             }
@@ -907,6 +965,9 @@ final class AppModel: ObservableObject {
         // Whole seconds: this date is stored as the plan's updated_at, which becomes the new
         // rotation anchor, and it is also the instant the current word is evaluated at.
         let rewriteTime = TimelinePlanner.roundedDownToWholeSecond(Date())
+        // The Lock Screen progress widget's numbers (AppModel+ProgressSnapshot.swift): written even
+        // when no plan is, so they never go stale with an empty queue.
+        writeProgressSnapshot(to: store, now: rewriteTime)
         let rotation = RotationInput.resolve(plan: store.readPlan(), state: store.readState(), seedWords: [])
         let currentWord = TimelinePlanner.wordAt(
             rewriteTime,
@@ -956,6 +1017,7 @@ final class AppModel: ObservableObject {
                 pos: word.pos,
                 level: word.level,
                 ipaUS: word.ipaUS,
+                ipaUK: word.ipaUK, // is5-ses: the widget's IPA follows "Ses ve aksan"
                 defMicro: word.defMicro,
                 defShort: word.defShort,
                 exampleEN: shortest,
@@ -965,6 +1027,8 @@ final class AppModel: ObservableObject {
                 confusableIDs: word.confusableIDs
             )
         }
+        // is5-w-buyuk: the large widget's second example and warning (CoreModels/WidgetWarning.swift).
+        .map { $0.addingLargeWidgetDetails(from: detail(for: $0)) }
 
         // The interval is global (all widget instances). The app owns it; changing it keeps the
         // visible word, because `currentWord` above was computed with the OLD plan's interval.
@@ -981,9 +1045,12 @@ final class AppModel: ObservableObject {
             logger.error("could not write the widget plan: \(error.localizedDescription, privacy: .public)")
             return
         }
+        // Quiz widget: questions from the same queue (AppModel+QuizWidget.swift).
+        writeQuizWidgetPlan(from: planQueue, at: rewriteTime)
         // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
         updateLockScreenWord()
         reloadWidgets()
+        WatchPlanRelay.planDidChange()  // is5-watch: the Apple Watch gets the new plan too (WatchBridge)
     }
 
     /// Works out `lockScreenWordID` from the plan and the widget's state on disk, with the same

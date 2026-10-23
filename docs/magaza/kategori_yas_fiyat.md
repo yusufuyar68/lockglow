@@ -45,7 +45,7 @@ Apple 2025'te yaş sistemini değiştirdi: **4+, 9+, 13+, 16+, 18+**. Yeni soru 
 | Messaging / chat, social media | No | — |
 | Advertising | No | Reklam yok |
 
-İçerik taraması: 22 Ekim 2026, `content.sqlite` (933 kart) içinde alkol, tütün, uyuşturucu, silah, şiddet, cinsellik ve kumar kelimeleri arandı. Yalnızca yukarıdaki üç kart ve ilaç kelimeleri çıktı.
+İçerik taraması: 22 Ekim 2026, `content.sqlite` (933 kart); 23 Ekim 2026'da 1.203 kartla (`2026.10.23-kisisel-10`) yinelendi, sonuç aynı: alkol ve tütün göndermesi yalnız `give_up` ("give up smoking", Dikkat kutusunda), `allow` ("smoking") ve `glass` ("wine") kartlarında; şiddet, uyuşturucu, kumar ve cinsellik yok ("knife" mutfak bıçağı, "fight" yastık kavgası ya da tartışma anlamında). İlaç kelimeleri (medicine, painkiller) de çıktı; dil öğretimi bağlamında (tablodaki "Medical" satırı).
 
 ### Neden 13+?
 
@@ -74,7 +74,7 @@ Apple 2025'te yaş sistemini değiştirdi: **4+, 9+, 13+, 16+, 18+**. Yeni soru 
 
 Raporlardaki öneriler; **şimdi uygulanmayacak**. Kullanıcı mağaza ve gelir kararını verdiğinde yeniden bakılır.
 
-- **Ücretsiz kalacaklar:** Bütün widget'lar ve bugünkü 933 kart. Reklam hiçbir zaman (`Widget_Vocabulary_Analiz_ve_Plan.md` §5.2; `raporlar/14` §3).
+- **Ücretsiz kalacaklar:** Bütün widget'lar ve bugünkü 1.203 kelime. Reklam hiçbir zaman (`Widget_Vocabulary_Analiz_ve_Plan.md` §5.2; `raporlar/14` §3).
 - **Ücretli olabilecekler:** yeni desteler (ör. iş, seyahat genişlemesi), temalar, ek alıştırmalar.
 - **Biçim:** Yıllık + 7 günlük deneme ve isteğe bağlı ömür boyu. **Haftalık plan yok** (Orbit şikâyetleri, `raporlar/02` §4a).
 - **Fiyat çıpası (Ekim 2026):** Kolay İngilizce yıllık ₺299,99, ömür boyu ₺499,99 (`raporlar/14` §3). Planın eski önerisi yıllık ₺899,99 (`Plan` §9.2) bu çıpaya göre yüksek kalıyor.

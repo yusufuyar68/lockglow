@@ -169,6 +169,21 @@ final class CustomWordLibrary: ObservableObject {
         }
     }
 
+    // MARK: iCloud (is5-icloud, AppModel+Sync.swift)
+
+    /// The list with its next id, for the iCloud merge (`SyncMerge`).
+    var currentList: CustomWordList {
+        return list
+    }
+
+    /// The iCloud merge's list replaces this one: saved first, then shown and passed to
+    /// `onChange`, like any change. Throws `SaveError` like `add`.
+    func replaceAll(with merged: CustomWordList) throws {
+        try commit { list in
+            list = merged
+        }
+    }
+
     /// Applies `change` to a copy, saves the copy, and only then adopts it.
     private func commit<T>(_ change: (inout CustomWordList) throws -> T) throws -> T {
         guard status == .ready, let store = store else {

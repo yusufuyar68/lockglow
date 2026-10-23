@@ -34,7 +34,10 @@ struct SettingsView: View {
                     recoverySection
                     widgetSection
                     learningSection
+                    // is5-ses: "Ses ve aksan" (SpeechSettingsView.swift).
+                    SpeechSettingsSection()
                     reminderSection
+                    ReviewLiveActivitySection() // is5-canli: the round's Live Activity switch
                     progressSection
                     EarTrainingSettingsSection() // is5-kulak: "Kulak alıştırması" (EarTrainingView.swift)
                     helpSection
@@ -248,6 +251,10 @@ struct SettingsView: View {
                 }
             }
             .settingsFootnote()
+            // is5-seviye: the level test (PlacementTestView.swift); its result sets the level.
+            // Below the footnote, so the "Konular" row keeps its place for the UI test.
+            PlacementTestSettingsRow()
+                .padding(.top, 4)
 
             SettingsQuestion("Günde kaç yeni kelime?")
                 .padding(.top, 12)
@@ -260,6 +267,15 @@ struct SettingsView: View {
             .accessibilityElement(children: .contain)
             .accessibilityLabel("Günlük yeni kelime")
             dailyGoalFootnote
+            SettingsGroup {
+                NavigationLink {
+                    SchedulerSettingsView()
+                } label: {
+                    SettingsRow("Yeni zamanlama (deneme)")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+            }
+            .padding(.top, 12)
         }
     }
 
@@ -364,13 +380,8 @@ struct SettingsView: View {
                 .settingsRowPadding()
                 if model.reminderEnabled {
                     SettingsDivider()
-                    DatePicker(selection: reminderTimeBinding, displayedComponents: .hourAndMinute) {
-                        Text("Saat")
-                            .settingsRowTitle()
-                    }
-                    // 24-hour "20:00" like the app's other times (clockTime, README point 13), whatever the region.
-                    .environment(\.locale, Locale(identifier: "tr_TR"))
-                    .settingsRowPadding()
+                    // The time and "Saati benim için seç" (ReminderTimeRows.swift).
+                    ReminderTimeRows(time: reminderTimeBinding)
                 }
                 if isReminderPaused && !notificationsDenied {
                     SettingsDivider()
@@ -454,6 +465,8 @@ struct SettingsView: View {
                 }
                 .buttonStyle(SettingsRowButtonStyle())
                 SettingsDivider()
+                SentencePracticeSettingsRow() // "Cümle kur" (SentencePracticeView.swift)
+                SettingsDivider()
                 NavigationLink {
                     KnownWordsView()
                 } label: {
@@ -471,6 +484,16 @@ struct SettingsView: View {
                     SettingsRow("Kendi kelimelerin") {
                         Text(verbatim: "\(model.customWordLibrary.words.count)")
                             .monospacedDigit()
+                    }
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                // iCloud (is5-icloud, SyncSettingsView.swift): progress and own words on every device.
+                NavigationLink {
+                    SyncSettingsView(sync: model.cloudSync)
+                } label: {
+                    SettingsRow("iCloud ile eşitle") {
+                        SyncSwitchValue(sync: model.cloudSync)
                     }
                 }
                 .buttonStyle(SettingsRowButtonStyle())
