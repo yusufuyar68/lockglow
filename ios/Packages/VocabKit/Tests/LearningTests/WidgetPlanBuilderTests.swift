@@ -44,7 +44,10 @@ final class WidgetPlanBuilderTests: XCTestCase {
         case 0:
             return nil
         case 1:
-            return CardDetail(examples: [CardDetail.Example(en: word.exampleEN), CardDetail.Example(en: "Short \(word.lemma).")])
+            return CardDetail(
+                examples: [CardDetail.Example(en: word.exampleEN), CardDetail.Example(en: "Short \(word.lemma)."), CardDetail.Example(en: "Another \(word.lemma) here.")],
+                mistakes: [CardDetail.Mistake(wrong: "I did \(word.lemma).", right: "I had \(word.lemma).", why: "had")]
+            )
         case 2:
             return CardDetail(examples: [CardDetail.Example(en: word.exampleEN)])
         default:
@@ -79,7 +82,8 @@ final class WidgetPlanBuilderTests: XCTestCase {
         )
     }
 
-    /// `AppModel.refreshWidgetPlan` before is5-performans (from `let rotation =` to the plan),
+    /// `AppModel.refreshWidgetPlan` before is5-performans (main cb3cf7a, from `let rotation =` to
+    /// the plan; `writeProgressSnapshot` and the hooks after the write stay in AppModel),
     /// with the model's state as parameters: `detail(for:)` and `pinnedWord(_:)` as closures.
     private func mainThreadPlan(
         _ input: WidgetPlanBuilder.Input,
@@ -138,6 +142,7 @@ final class WidgetPlanBuilderTests: XCTestCase {
                 pos: word.pos,
                 level: word.level,
                 ipaUS: word.ipaUS,
+                ipaUK: word.ipaUK, // is5-ses: the widget's IPA follows "Ses ve aksan"
                 defMicro: word.defMicro,
                 defShort: word.defShort,
                 exampleEN: shortest,
@@ -147,6 +152,8 @@ final class WidgetPlanBuilderTests: XCTestCase {
                 confusableIDs: word.confusableIDs
             )
         }
+        // is5-w-buyuk: the large widget's second example and warning (CoreModels/WidgetWarning.swift).
+        .map { $0.addingLargeWidgetDetails(from: detail(for: $0)) }
         return WidgetPlan(
             planID: planID,
             isPremium: false,
@@ -268,6 +275,21 @@ final class WidgetPlanBuilderTests: XCTestCase {
             XCTAssertEqual(word.glossTR, original.glossTR)
             XCTAssertEqual(word.confusableIDs, original.confusableIDs)
         }
+    }
+
+    /// The large widget's second example and warning come from the same details.
+    func testLargeWidgetDetailsAreWritten() throws {
+        let deck = (1...8).map { card($0) }
+        let input = makeInput(deck: deck, fallback: deck, progress: [:])
+        assertSamePlan(input, at: now, plan: nil, state: nil)
+        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planDetail: planDetail(customWords: [])))
+        let withDetails = plan.queue.filter { $0.id % 4 == 1 }
+        XCTAssertFalse(withDetails.isEmpty)
+        for word in withDetails {
+            XCTAssertNotNil(word.secondExampleEN, word.lemma)
+            XCTAssertNotEqual(word.secondExampleEN, word.exampleEN)
+        }
+        XCTAssertTrue(plan.queue.filter { $0.id % 4 == 0 }.allSatisfy { $0.secondExampleEN == nil && $0.warning == nil })
     }
 
     func testNoWordsNoPlan() {

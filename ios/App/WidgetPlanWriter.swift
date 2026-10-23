@@ -41,7 +41,7 @@ final class WidgetPlanWriter: @unchecked Sendable {
     private var contentStore: ContentStore?
     private var triedOpeningStore = false
 
-    /// Queues one rewrite; `completion` gets whether a new plan was written, on the main thread
+    /// Queues one rewrite; `completion` gets the plan written (nil: none was), on the main thread
     /// once the file is on disk. With `waitUntilWritten` the caller waits for that and
     /// `completion` runs before this returns (the app is leaving the foreground and may be
     /// suspended right after).
@@ -49,7 +49,7 @@ final class WidgetPlanWriter: @unchecked Sendable {
     func write(
         _ request: Request,
         waitUntilWritten: Bool = false,
-        completion: @escaping @MainActor @Sendable (Bool) -> Void
+        completion: @escaping @MainActor @Sendable (WidgetPlan?) -> Void
     ) {
         if waitUntilWritten {
             completion(writeNow(request))
@@ -67,13 +67,13 @@ final class WidgetPlanWriter: @unchecked Sendable {
         }
     }
 
-    private func writeNow(_ request: Request) -> Bool {
+    private func writeNow(_ request: Request) -> WidgetPlan? {
         return queue.sync {
             self.perform(request)
         }
     }
 
-    private func enqueue(_ request: Request, completion: @escaping @MainActor @Sendable (Bool) -> Void) {
+    private func enqueue(_ request: Request, completion: @escaping @MainActor @Sendable (WidgetPlan?) -> Void) {
         queue.async {
             let written = self.perform(request)
             DispatchQueue.main.async {
@@ -85,7 +85,7 @@ final class WidgetPlanWriter: @unchecked Sendable {
     }
 
     /// Runs on `queue`.
-    private func perform(_ request: Request) -> Bool {
+    private func perform(_ request: Request) -> WidgetPlan? {
         let plan = WidgetPlanBuilder.makePlan(
             request.input,
             at: request.time,
@@ -95,17 +95,17 @@ final class WidgetPlanWriter: @unchecked Sendable {
         )
         guard let plan = plan else {
             logger.notice("no words for a plan; the widget keeps its current data or the bundled seed")
-            return false
+            return nil
         }
         // Only this plan's words stay cached: the cache never grows past a plan.
         let queued = Set(plan.queue.map { $0.id })
         details = details.filter { queued.contains($0.key) }
         do {
             try request.store.writePlan(plan)
-            return true
+            return plan
         } catch {
             logger.error("could not write the widget plan: \(error.localizedDescription, privacy: .public)")
-            return false
+            return nil
         }
     }
 

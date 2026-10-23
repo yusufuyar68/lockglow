@@ -119,24 +119,10 @@ public enum WidgetPlanBuilder {
         // (docs/tasarim/README.md "Widget'lar"), not always its first. Only the text changes: the
         // queue and the pinned word stay id-based. Seed words have no detail and keep theirs.
         let planQueue = queue.map { word -> WidgetWord in
-            guard let shortest = planDetail(word)?.shortestExample(containing: word.lemma),
-                  shortest != word.exampleEN else {
-                return word
-            }
-            return WidgetWord(
-                id: word.id,
-                lemma: word.lemma,
-                pos: word.pos,
-                level: word.level,
-                ipaUS: word.ipaUS,
-                defMicro: word.defMicro,
-                defShort: word.defShort,
-                exampleEN: shortest,
-                glossTR: word.glossTR,
-                glossShortTR: word.glossShortTR,
-                sensitivity: word.sensitivity,
-                confusableIDs: word.confusableIDs
-            )
+            let detail = planDetail(word)
+            return withShortestExample(word, detail: detail)
+                // is5-w-buyuk: the large widget's second example and warning (CoreModels/WidgetWarning.swift).
+                .addingLargeWidgetDetails(from: detail)
         }
 
         // The interval is global (all widget instances). The app owns it; changing it keeps the
@@ -147,6 +133,30 @@ public enum WidgetPlanBuilder {
             intervalSeconds: input.rotationMinutes * 60,
             queue: planQueue,
             updatedAt: time
+        )
+    }
+
+    /// The medium widget's example: the card's shortest example that contains the word, when it
+    /// is not already the word's own.
+    private static func withShortestExample(_ word: WidgetWord, detail: CardDetail?) -> WidgetWord {
+        guard let shortest = detail?.shortestExample(containing: word.lemma),
+              shortest != word.exampleEN else {
+            return word
+        }
+        return WidgetWord(
+            id: word.id,
+            lemma: word.lemma,
+            pos: word.pos,
+            level: word.level,
+            ipaUS: word.ipaUS,
+            ipaUK: word.ipaUK, // is5-ses: the widget's IPA follows "Ses ve aksan"
+            defMicro: word.defMicro,
+            defShort: word.defShort,
+            exampleEN: shortest,
+            glossTR: word.glossTR,
+            glossShortTR: word.glossShortTR,
+            sensitivity: word.sensitivity,
+            confusableIDs: word.confusableIDs
         )
     }
 }
