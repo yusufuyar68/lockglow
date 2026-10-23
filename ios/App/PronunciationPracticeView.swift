@@ -757,7 +757,9 @@ private struct PracticeStepBar: View {
 /// The same verdict, line and tip are announced when the result comes.
 /// `wordByWord` (the example sentence): "Doğrusu" is always shown, each word marked as the phone
 /// understood it (`PronunciationFeedback.pieces`): understood words in `good`, the others bold and
-/// underlined, with a one-line key. The line under the title names those words for VoiceOver.
+/// underlined, with a one-line key. VoiceOver reads the row as plain English (its marks are not
+/// spoken), so the line under the title names those words ("Şunlar duyulmadı: …") and the key is
+/// hidden from it.
 private struct FeedbackPanel: View {
     let feedback: PronunciationFeedback
     /// What the learner was asked to say.
@@ -876,6 +878,7 @@ private struct FeedbackPanel: View {
                     .font(.footnote)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityHidden(true)
             }
         }
     }

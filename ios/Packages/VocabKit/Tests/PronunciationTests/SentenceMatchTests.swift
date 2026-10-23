@@ -135,6 +135,30 @@ final class SentenceMatchTests: XCTestCase {
         XCTAssertEqual(statuses(feedback), [.missing, .heard, .heard, .missing, .heard])
     }
 
+    /// VoiceOver does not read the marks on the sentence: the line names the words.
+    func testSentenceToTryAgainNamesTheWords() {
+        let general = check("The cat and the dog.", heard: ["cat and dog"])
+        XCTAssertEqual(general.message, "Şunlar duyulmadı: The. Önce Dinle'ye dokunup dinle, sonra yavaş ve net söyle.")
+        XCTAssertEqual(general.messageRuns[1], .english("The"))
+
+        let withTip = check("I think so.", heard: ["I sink so"])
+        XCTAssertEqual(withTip.verdict, .tryAgain)
+        XCTAssertEqual(withTip.tip?.kind, .th)
+        XCTAssertEqual(withTip.message, "Şunlar duyulmadı: think.")
+    }
+
+    func testWordOrPhraseToTryAgainKeepsTheShortLine() {
+        XCTAssertEqual(check("turn on", heard: ["turn off"]).message, "Telefon farklı bir şey anladı. Önce Dinle'ye dokunup dinle, sonra yavaş ve net söyle.")
+    }
+
+    /// Only an alternative has every word: "almost", and no word is marked, as the line says.
+    func testSentenceOnlyInAnAlternativeMarksNothing() {
+        let feedback = check("I think you are right.", heard: ["I sink you are right", "I think you are right"])
+        XCTAssertEqual(feedback.verdict, .almost)
+        XCTAssertEqual(feedback.missedWords, [])
+        XCTAssertEqual(Set(statuses(feedback)), [.heard])
+    }
+
     func testNothingHeardHasNoPieces() {
         XCTAssertEqual(check("I'm tired.", heard: []).pieces, [])
     }

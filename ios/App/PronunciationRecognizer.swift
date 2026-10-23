@@ -68,6 +68,10 @@ final class PronunciationRecognizer: ObservableObject {
     private var downloadSince: Date?
     /// The microphone samples of the take in progress, for `ownVoice`.
     private var recorder: TakeRecorder?
+    /// The take's voice while it is being checked; `cancel()` drops it at once.
+    private var checkedVoice: AVAudioPCMBuffer?
+    /// iOS 26+: the last cancelled analyzer finishing; the next take waits for it.
+    private var analyzerFinishing: Task<Void, Never>?
 
     /// iOS 17–25: failed takes in a row, for the set-up instructions (`RecognitionFailures`).
     private static var failureStreak = RecognitionFailureStreak()
@@ -159,7 +163,7 @@ final class PronunciationRecognizer: ObservableObject {
             take?.listeningSeconds = Date().timeIntervalSince(since)
         }
         // The tap is gone: nothing more comes in.
-        let voice = recorder.flatMap { Self.clip(from: $0) }
+        checkedVoice = recorder.flatMap { Self.clip(from: $0) }
         recorder = nil
         let current = generation
         work = Task {
@@ -190,8 +194,9 @@ final class PronunciationRecognizer: ObservableObject {
             }
             self.backend = nil
             if case .finished = outcome {
-                self.ownVoice = voice
+                self.ownVoice = self.checkedVoice
             }
+            self.checkedVoice = nil
             self.phase = outcome
             self.endedTakes += 1
             self.take?.candidates = hypotheses.count
@@ -223,12 +228,16 @@ final class PronunciationRecognizer: ObservableObject {
         listeningSince = nil
         downloadSince = nil
         recorder = nil
+        checkedVoice = nil
         ownVoice = nil
         generation += 1
         work?.cancel()
         work = nil
         stopAudio()
-        backend?.cancel()
+        if let backend {
+            backend.cancel()
+            analyzerFinishing = backend.finishing ?? analyzerFinishing
+        }
         backend = nil
         phase = .idle
     }
@@ -262,6 +271,11 @@ final class PronunciationRecognizer: ObservableObject {
             break
         }
         if #available(iOS 26.0, *) {
+            // One analysis at a time: a cancelled take's analyzer finishes first.
+            if let finishing = analyzerFinishing {
+                analyzerFinishing = nil
+                await finishing.value
+            }
             // Apple: SpeechAnalyzer modules never send audio to Apple's servers, so only the
             // microphone permission is asked here.
             do {
@@ -510,10 +524,17 @@ protocol SpeechBackend: AnyObject {
     /// The recognizer's error behind the last `finish()`, as "domain code" ("Söyle tanılama"),
     /// whether it came back empty or threw; nil when there was none or the backend does not keep it.
     var failureCode: String? { get }
+    /// After `cancel()`: the work that releases the engine's resources, if it runs on; the next
+    /// take waits for it.
+    var finishing: Task<Void, Never>? { get }
 }
 
 extension SpeechBackend {
     var failureCode: String? {
+        return nil
+    }
+
+    var finishing: Task<Void, Never>? {
         return nil
     }
 }
@@ -607,14 +628,17 @@ final class AnalyzerBackend: SpeechBackend {
         return hypotheses
     }
 
+    private(set) var finishing: Task<Void, Never>?
+
     /// Ends the input and the analysis at once. Apple: not needed before releasing the analyzer;
-    /// done anyway so that a new take started right away ("Bir daha söyle") does not find this one
-    /// still holding the model (`insufficientResources`).
+    /// done anyway, and the next take waits for it (`finishing`), so that a take started right
+    /// away ("Bir daha söyle") does not find this one still holding the model
+    /// (`insufficientResources`).
     func cancel() {
         inputBuilder.finish()
         phrases?.cancel()
         let analyzer = self.analyzer
-        Task {
+        finishing = Task {
             await analyzer.cancelAndFinishNow()
         }
     }

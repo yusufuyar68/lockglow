@@ -65,14 +65,16 @@ public enum PronunciationCheck {
             }
             return PronunciationFeedback(verdict: .correct, heard: heard, pieces: pieces)
         }
-        let statuses = tokenStatuses(count: targetTokens.count, steps: steps)
-        let pieces = targetPieces(written, tokens: targetTokens, statuses: statuses)
         let inAlternative = heardList.dropFirst().contains { other in
             compact(targetTokens) == compact(other.tokens) || covers(align(targetTokens, other.tokens))
         }
         if inAlternative {
+            // Understood, if not clearly: no word is marked, as the line says.
+            let pieces = targetPieces(written, tokens: targetTokens, statuses: Array(repeating: .heard, count: targetTokens.count))
             return PronunciationFeedback(verdict: .almost, heard: heard, pieces: pieces)
         }
+        let statuses = tokenStatuses(count: targetTokens.count, steps: steps)
+        let pieces = targetPieces(written, tokens: targetTokens, statuses: statuses)
 
         var substituted = 0
         var missedIndexes: [Int] = []
@@ -99,10 +101,14 @@ public enum PronunciationCheck {
         // particle ("turn off" for "turn on") is a substitution and stays "try again".
         let onlyOneWordMissing = targetTokens.count >= 2 && substituted == 0 && missedIndexes.count == 1
         let heardShare = Double(targetTokens.count - missedIndexes.count) / Double(targetTokens.count)
-        if onlyOneWordMissing || (targetTokens.count >= 3 && heardShare >= sentenceAlmostRatio) {
+        let isSentence = targetTokens.count >= 3
+        if onlyOneWordMissing || (isSentence && heardShare >= sentenceAlmostRatio) {
             return PronunciationFeedback(verdict: .almost, tip: tip, heard: heard, missedWords: missedWords, pieces: pieces)
         }
-        return PronunciationFeedback(verdict: .tryAgain, tip: tip, heard: heard, missedWords: missedWords, pieces: pieces)
+        return PronunciationFeedback(
+            verdict: .tryAgain, tip: tip, heard: heard, missedWords: missedWords, pieces: pieces,
+            namesMissedWords: isSentence
+        )
     }
 
     /// The words of `text` as they are compared: lowercased, accents and punctuation dropped,
@@ -732,7 +738,16 @@ public struct PronunciationFeedback: Equatable, Sendable {
         return messageRuns.map(\.text).joined()
     }
 
-    init(verdict: Verdict, tip: PronunciationTip? = nil, heard: String = "", missedWords: [String] = [], pieces: [TargetPiece] = []) {
+    /// `namesMissedWords`: a sentence to try again says which words were not understood (the
+    /// marks on the sentence are not read by VoiceOver); a word or a phrase does not need to.
+    init(
+        verdict: Verdict,
+        tip: PronunciationTip? = nil,
+        heard: String = "",
+        missedWords: [String] = [],
+        pieces: [TargetPiece] = [],
+        namesMissedWords: Bool = false
+    ) {
         self.verdict = verdict
         self.tip = tip
         self.heard = heard
@@ -755,7 +770,14 @@ public struct PronunciationFeedback: Equatable, Sendable {
             }
         case .tryAgain:
             title = "Bir daha dene"
-            if tip == nil {
+            if namesMissedWords && !missedWords.isEmpty {
+                // Two sentences at most (terimler §1): which words, then what to do.
+                messageRuns = [
+                    .turkish("Şunlar duyulmadı: "),
+                    .english(missedWords.joined(separator: ", ")),
+                    .turkish(tip == nil ? ". Önce Dinle'ye dokunup dinle, sonra yavaş ve net söyle." : "."),
+                ]
+            } else if tip == nil {
                 messageRuns = [.turkish("Telefon farklı bir şey anladı. Önce Dinle'ye dokunup dinle, sonra yavaş ve net söyle.")]
             } else {
                 messageRuns = [.turkish("Telefon farklı bir şey anladı.")]

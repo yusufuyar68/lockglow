@@ -56,6 +56,13 @@ final class OwnVoicePlayer: ObservableObject {
         }
         player.scheduleBuffer(voice, at: nil, options: [], completionCallbackType: .dataPlayedBack, completionHandler: ended)
         player.play()
+        // In case the player never reports the end (the engine stops when the route changes,
+        // e.g. headphones unplugged): a moment after the voice's own length, go on to "Doğrusu".
+        let seconds = Double(voice.frameLength) / voice.format.sampleRate
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .seconds(seconds + 1))
+            self?.ownVoiceEnded(generation: current)
+        }
     }
 
     /// Stops whichever part is playing.
@@ -78,8 +85,11 @@ final class OwnVoicePlayer: ObservableObject {
         }
     }
 
-    /// Built outside the main actor: the player calls it on an audio thread.
-    private nonisolated static func whenPlayedBack(_ done: @escaping @MainActor () -> Void) -> AVAudioPlayerNodeCompletionHandler {
+    /// Built outside the main actor: the player calls it on an audio thread. `@Sendable`, as
+    /// `scheduleBuffer` takes it.
+    private nonisolated static func whenPlayedBack(
+        _ done: @escaping @MainActor @Sendable () -> Void
+    ) -> @Sendable (AVAudioPlayerNodeCompletionCallbackType) -> Void {
         return { _ in
             Task { @MainActor in
                 done()
@@ -87,8 +97,9 @@ final class OwnVoicePlayer: ObservableObject {
         }
     }
 
+    /// Called by the player and by the fallback timer; only the first call counts.
     private func ownVoiceEnded(generation current: Int) {
-        guard current == generation, let target else {
+        guard current == generation, part == .ownVoice, let target else {
             return
         }
         engine?.stop()
@@ -107,6 +118,10 @@ final class OwnVoicePlayer: ObservableObject {
     private func readRight(_ target: String, generation current: Int) {
         ownsSession = false
         let speaker = Speaker.shared
+        // `toggle` stops a reading of the same text instead of starting one.
+        if speaker.speakingText == target {
+            speaker.stop()
+        }
         speaker.toggle(target)
         reading = speaker.$speakingText
             .dropFirst()
@@ -144,7 +159,7 @@ struct OwnVoiceControls: View {
                 Label(isPlaying ? "Durdur" : "Kendi sesini dinle", systemImage: isPlaying ? "stop.fill" : "person.wave.2")
             }
             .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
-            .accessibilityHint(isPlaying ? "" : OwnVoiceControls.order)
+            // No hint: the line under the button says the order.
             .accessibilityInputLabels(isPlaying ? [Text("Durdur")] : [Text("Kendi sesini dinle"), Text("Sesimi dinle")])
             HStack(spacing: 8) {
                 partLabel("Kendi sesin", playing: player.part == .ownVoice)
@@ -158,7 +173,7 @@ struct OwnVoiceControls: View {
         }
     }
 
-    /// The hint and, before playing, the line's VoiceOver label.
+    /// The line's VoiceOver label before playing.
     static let order = "Önce kendi sesin, sonra doğrusu çalar."
 
     private var spokenOrder: String {
