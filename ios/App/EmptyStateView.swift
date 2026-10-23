@@ -13,32 +13,38 @@ import SwiftUI
 ///
 ///     EmptyStateView("Bu konuda kelime yok", illustration: .symbol("square.stack.3d.up.slash"))
 ///
-/// - The message is a `Text`, so parts of it can be bold (`WordListEmptyState.message`).
-/// - Buttons are capsules (rule 2); they are at most 360 pt wide.
+/// - The message and the tip are `Text`, so parts can be bold (`WordListEmptyState.message`).
+///   The tip is a hint after a light bulb ("Türkçe harfleri yazmasan da bulur").
+/// - Buttons are capsules (rule 2); they are at most 360 pt wide. Pass no closure for none: a
+///   closure whose buttons are all hidden (`if`) still keeps their 10 pt top margin.
 /// - The illustration is hidden from VoiceOver; the title is a header.
+/// - Same sizes as `WordListEmptyState`, so it can replace it.
 /// - At the largest text sizes it is taller than a short screen: put it in a ScrollView or a
 ///   List row there.
 struct EmptyStateView<Actions: View>: View {
     let title: String
     let illustration: EmptyStateIllustration
     let message: Text?
+    let tip: Text?
     let actions: Actions
-    @ScaledMetric(relativeTo: .title2) private var circleSize: CGFloat = 88
+    @ScaledMetric(relativeTo: .title2) private var circleSize: CGFloat = 76
 
     init(
         _ title: String,
         illustration: EmptyStateIllustration,
         message: Text? = nil,
+        tip: Text? = nil,
         @ViewBuilder actions: () -> Actions
     ) {
         self.title = title
         self.illustration = illustration
         self.message = message
+        self.tip = tip
         self.actions = actions()
     }
 
     var body: some View {
-        let circle = min(circleSize, 132)
+        let circle = min(circleSize, 120)
         VStack(spacing: 10) {
             EmptyStateArt(illustration: illustration, size: circle)
                 .accessibilityHidden(true)
@@ -52,6 +58,16 @@ struct EmptyStateView<Actions: View>: View {
                     .font(.callout)
                     .foregroundStyle(Theme.ink2)
                     .lineSpacing(2)
+            }
+            if let tip = tip {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    Image(systemName: "lightbulb")
+                        .accessibilityHidden(true)
+                    tip
+                }
+                .font(.footnote)
+                .foregroundStyle(Theme.ink2)
+                .padding(.top, 8)
             }
             if Actions.self != EmptyView.self {
                 VStack(spacing: 10) {
@@ -70,8 +86,8 @@ struct EmptyStateView<Actions: View>: View {
 
 extension EmptyStateView where Actions == EmptyView {
     /// Without buttons.
-    init(_ title: String, illustration: EmptyStateIllustration, message: Text? = nil) {
-        self.init(title, illustration: illustration, message: message) {
+    init(_ title: String, illustration: EmptyStateIllustration, message: Text? = nil, tip: Text? = nil) {
+        self.init(title, illustration: illustration, message: message, tip: tip) {
             EmptyView()
         }
     }
@@ -90,8 +106,9 @@ enum EmptyStateIllustration {
     static let noWords = EmptyStateIllustration.cards
     /// A search found nothing.
     static let noResults = EmptyStateIllustration.symbol("magnifyingglass")
-    /// The words could not be loaded.
-    static let loadFailed = EmptyStateIllustration.symbolWithBadge("tray", badge: "exclamationmark")
+    /// The words could not be loaded ("Uygulamayı kapatıp yeniden aç"): a calm "try again", no
+    /// exclamation mark (ogrenme_ilkeleri: nothing that startles).
+    static let loadFailed = EmptyStateIllustration.symbolWithBadge("tray", badge: "arrow.clockwise")
     /// Nothing left to do for now (no answer is waiting).
     static let allDone = EmptyStateIllustration.symbol("checkmark")
 }
@@ -123,7 +140,7 @@ private struct EmptyStateArt: View {
 
     private func symbol(_ name: String) -> some View {
         Image(systemName: name)
-            .font(.system(size: size * 0.42))
+            .font(.system(size: size * 0.45))
     }
 
     /// The badge's symbol is cut out of an ink2 disc; a ring in the circle's own colour keeps it
