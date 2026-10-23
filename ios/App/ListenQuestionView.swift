@@ -131,10 +131,13 @@ struct ListenQuestionView: View {
     /// it reads stops it ("Durdur"). Nothing moves while it reads (2.2).
     private var listenCard: some View {
         let isSpeaking = speaker.speakingText == question.answer
+        let rowLayout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10))
+            : AnyLayout(HStackLayout(spacing: 16))
         return Button {
             speaker.toggle(question.answer)
         } label: {
-            HStack(spacing: 16) {
+            rowLayout {
                 Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
                     .font(.title.weight(.semibold))
                     .foregroundStyle(Theme.ink)
@@ -154,7 +157,6 @@ struct ListenQuestionView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .multilineTextAlignment(.leading)
-                Spacer(minLength: 0)
             }
             .padding(.horizontal, 18)
             .padding(.vertical, 16)
@@ -208,6 +210,8 @@ struct ListenQuestionView: View {
             .contentShape(shape)
         }
         .buttonStyle(.plain)
+        // A keyboard: 1–4 in reading order, before the answer (`AnswerKeys`).
+        .keyboardShortcut(picked == nil ? AnswerKeys.answer(question.options.firstIndex(of: option)) : nil)
         // Not `.disabled`: that would dim the options exactly when the answer is shown.
         .allowsHitTesting(picked == nil)
         // One element has one voice (QuizCardView.optionButton): before the answer the button with
@@ -346,6 +350,7 @@ struct ReviewAnswerActions: View {
                     onContinue(.right)
                 }
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                .keyboardShortcut(AnswerKeys.main)
                 .accessibilityValue(returnValue(for: .right))
                 Text("Zor muydu, kolay mı?")
                     .font(.footnote.weight(.medium))
@@ -359,14 +364,18 @@ struct ReviewAnswerActions: View {
                         gradeLabel("Zor", symbol: "tortoise")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
+                    .keyboardShortcut(AnswerKeys.answer(0))
                     .accessibilityValue(returnValue(for: .hard))
+                    .accessibilityHint(returnTimes[.hard] == nil ? "Kelime daha erken yine gelir" : "")
                     Button {
                         onContinue(.easy)
                     } label: {
                         gradeLabel("Kolay", symbol: "hare")
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
+                    .keyboardShortcut(AnswerKeys.answer(1))
                     .accessibilityValue(returnValue(for: .easy))
+                    .accessibilityHint(returnTimes[.easy] == nil ? "Kelime daha geç yine gelir" : "")
                 }
             }
         case .hard:
@@ -394,6 +403,7 @@ struct ReviewAnswerActions: View {
                 onContinue(outcome)
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+            .keyboardShortcut(AnswerKeys.main)
         }
     }
 

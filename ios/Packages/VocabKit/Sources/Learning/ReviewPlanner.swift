@@ -144,9 +144,12 @@ extension ReviewPlanner {
     ///   questions take turns: an odd count asks the fill-in-the-blank question, an even one
     ///   "Dinle ve seç" or "İngilizcesini yaz". Those two take turns as well, every other even
     ///   count, starting with one or the other by the word's id, so both come about as often.
-    ///   On the straight way up (box 1, 2, 3, 4) a word gets one of them in box 2 and the
-    ///   fill-in-the-blank question in box 3. A kind the word cannot have gives way to the next
-    ///   one in turn; with none of the three, recall.
+    ///   On the straight way up (one right answer in each box: "Hatırla", then box 1, 2, 3) a word
+    ///   gets one of them in box 2 and the fill-in-the-blank question in box 3. After a "Zor" in
+    ///   box 1 or a lapse into box 1 the count can be odd on entering box 2, so box 1's question
+    ///   comes once more there; inside boxes 2–3 two questions in a row are never the same kind.
+    ///   A kind the word cannot have gives way to the next one in turn; with none of the three,
+    ///   recall. Without a fill-in-the-blank question the two new kinds take turns on every count.
     public static func questionKind(
         for progress: WordProgress?,
         hasCloze: Bool,
@@ -159,7 +162,8 @@ extension ReviewPlanner {
         guard let p = progress, p.state == .learning, mixedQuestionBoxes.contains(p.box) else {
             return hasCloze ? .cloze : .recall
         }
-        var order: [QuestionKind] = ((p.reviews / 2) &+ p.wordID) & 1 == 0 ? [.listen, .typing] : [.typing, .listen]
+        let phase = hasCloze ? p.reviews / 2 : p.reviews
+        var order: [QuestionKind] = (phase &+ p.wordID) & 1 == 0 ? [.listen, .typing] : [.typing, .listen]
         if p.reviews % 2 == 0 {
             order.append(.cloze)
         } else {

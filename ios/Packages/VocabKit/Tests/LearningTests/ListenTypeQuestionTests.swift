@@ -96,6 +96,16 @@ final class ListenTypeQuestionTests: XCTestCase {
         XCTAssertEqual(kind(clozeTurn, cloze: false, listen: false, type: false), .recall)
     }
 
+    func testWithoutAFillInTheBlankTheNewKindsTakeTurnsOnEveryCount() {
+        for id in 1...4 {
+            let kinds = (2...9).map { kind(learning(id, box: 2, reviews: $0), cloze: false) }
+            for (a, b) in zip(kinds, kinds.dropFirst()) {
+                XCTAssertNotEqual(a, b, "word \(id): \(kinds)")
+            }
+            XCTAssertFalse(kinds.contains(.cloze))
+        }
+    }
+
     func testOtherBoxesKeepTheirQuestion() {
         XCTAssertEqual(kind(nil), .cloze)
         XCTAssertEqual(kind(learning(1, box: 1, reviews: 2)), .cloze, "box 1")
@@ -274,7 +284,7 @@ final class ListenTypeQuestionTests: XCTestCase {
         }
         XCTAssertEqual(borrow.check("brrw"), .wrong, "two mistakes in six letters")
         XCTAssertEqual(try typing(4).check("spoons"), .almost)
-        XCTAssertEqual(try typing(6).check("secondhand"), .almost)
+        XCTAssertEqual(try typing(6).check("secondhand"), .right, "a hyphen may be left out")
         XCTAssertEqual(try typing(13).check("lookafter"), .almost)
         XCTAssertEqual(try typing(13).check("to look after"), .right)
         let information = try typing(12)
@@ -299,6 +309,44 @@ final class ListenTypeQuestionTests: XCTestCase {
         XCTAssertEqual(borrow.check(""), .wrong)
         XCTAssertEqual(borrow.check("   "), .wrong)
         XCTAssertEqual(borrow.check("xyz"), .wrong)
+    }
+
+    func testSpellingsWithHyphensDotsAndAcutes() throws {
+        let words = [
+            meaning(30, "e-mail", "e-posta", pos: "n"),
+            meaning(31, "a.m.", "öğleden önce", pos: "adv"),
+            meaning(32, "I'd love to", "çok isterim", pos: "phr"),
+        ]
+        let email = try XCTUnwrap(ReviewPlanner.typeQuestion(for: words[0], candidates: words))
+        for typed in ["e-mail", "email", "E mail", "an email"] {
+            XCTAssertEqual(email.check(typed), .right, typed)
+        }
+        let am = try XCTUnwrap(ReviewPlanner.typeQuestion(for: words[1], candidates: words))
+        for typed in ["a.m.", "am", "AM", "a m"] {
+            XCTAssertEqual(am.check(typed), .right, typed)
+        }
+        let love = try XCTUnwrap(ReviewPlanner.typeQuestion(for: words[2], candidates: words))
+        XCTAssertEqual(love.check("I\u{00B4}d love to"), .right, "a spacing acute as the apostrophe")
+    }
+
+    func testAnArticleNeverSwallowsAnotherCard() throws {
+        let words = [
+            meaning(40, "bit", "parça", pos: "n"),
+            meaning(41, "a bit", "biraz", pos: "phr"),
+        ]
+        let bit = try XCTUnwrap(ReviewPlanner.typeQuestion(for: words[0], candidates: words))
+        XCTAssertEqual(bit.check("the bit"), .right)
+        XCTAssertEqual(bit.check("a bit"), .otherWord("a bit", meaning: "biraz"))
+    }
+
+    func testAHeadwordWithSeveralCardsHasTheSameMeaningWhenAnyOfThemHasIt() throws {
+        let words = [
+            meaning(50, "say", "söylemek, demek"),
+            meaning(51, "tell", "anlatmak"),
+            meaning(52, "tell", "söylemek"),
+        ]
+        let say = try XCTUnwrap(ReviewPlanner.typeQuestion(for: words[0], candidates: words))
+        XCTAssertEqual(say.check("tell"), .sameMeaning("tell"))
     }
 
     func testTheExampleIsShownOnlyWhenAnotherCardMeansTheSame() throws {

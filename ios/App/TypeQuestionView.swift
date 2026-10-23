@@ -131,6 +131,9 @@ struct TypeQuestionView: View {
         .sensoryFeedback(.success, trigger: verdict) { oldValue, newValue in
             oldValue == nil && (newValue == .right || newValue == .rightWithHint)
         }
+        .onDisappear {
+            Speaker.shared.stop()
+        }
         // The keyboard comes with the card: typing is the question.
         .task(id: question.wordID) {
             try? await Task.sleep(nanoseconds: 350_000_000)
@@ -176,7 +179,7 @@ struct TypeQuestionView: View {
         let spaced = pattern.map { $0 == " " ? "   " : String($0) }.joined(separator: "\u{2009}")
         let given = pattern.filter { $0.isLetter }.map { String($0) }.joined(separator: ", ")
         return VStack(alignment: .leading, spacing: 2) {
-            Text("İpucu")
+            Text("Harf ipucu")
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(Theme.ink2)
             Text(verbatim: spaced)
@@ -185,7 +188,7 @@ struct TypeQuestionView: View {
                 .fixedSize(horizontal: false, vertical: true)
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("İpucu: \(given). Toplam \(question.letterCount) harf.")
+        .accessibilityLabel("Harf ipucu: \(given). Toplam \(question.letterCount) harf.")
     }
 
     /// The answer field: English serif, no correction, no capitals, "Kontrol et" on the return key.
@@ -197,7 +200,7 @@ struct TypeQuestionView: View {
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled(true)
             .keyboardType(.default)
-            .submitLabel(.done)
+            .submitLabel(.go)
             .focused($isFieldFocused)
             .onSubmit {
                 check()
@@ -262,7 +265,7 @@ struct TypeQuestionView: View {
         hints += 1
         let pattern = question.hint(letters: hints)
         let given = pattern.filter { $0.isLetter }.map { String($0) }.joined(separator: ", ")
-        ReviewAnnouncement.post(lead: "İpucu: \(given)", english: nil, meaning: nil)
+        ReviewAnnouncement.post(lead: "Harf ipucu: \(given)", english: nil, meaning: nil)
     }
 
     private func check() {
@@ -282,6 +285,7 @@ struct TypeQuestionView: View {
         case let .sameMeaning(other):
             sameMeaning = other
             ReviewAnnouncement.post(lead: "Bu da aynı anlama gelir: ", english: other, meaning: nil)
+            ReviewAnnouncement.post(lead: "Aradığımız kelime başka. Bir daha dene.", english: nil, meaning: nil)
             isFieldFocused = true
         }
     }
@@ -317,7 +321,7 @@ struct TypeQuestionView: View {
                 ReviewVerdictLine(text: "Doğru.", symbol: "checkmark.circle.fill", symbolColor: Theme.good)
                 ReviewWordLine(lemma: question.answer, meaning: word.glossTR)
                 if verdict == .rightWithHint {
-                    hardNote("Harf ipucu aldın. Bu cevap Zor sayılır.")
+                    hardNote("Harf ipucuyla bulundu. Bu cevap Zor sayılır.")
                 }
             case .almost:
                 ReviewVerdictLine(text: "Neredeyse doğru.", symbol: "checkmark.circle", symbolColor: Theme.ink2)

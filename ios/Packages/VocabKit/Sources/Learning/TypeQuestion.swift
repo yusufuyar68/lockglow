@@ -69,7 +69,7 @@ public struct TypeQuestion: Equatable, Sendable {
         guard !key.isEmpty else {
             return .wrong
         }
-        if acceptedKeys.contains(key) {
+        if acceptedKeys.contains(key) || acceptedKeys.contains(TypeQuestion.key(typed, joined: true)) {
             return .right
         }
         // A real word, even one edit away ("than" for "then"), is not a spelling mistake.
@@ -120,12 +120,17 @@ public struct TypeQuestion: Equatable, Sendable {
     /// The comparison form: `TextFold` (Unicode NFC, Turkish letters mapped before lowercasing so
     /// İ, I and ı are all i, marks dropped, spaces collapsed), then apostrophes dropped (’ ‘ ' ` ´
     /// ʼ: "I’d" and "Id" are "id"), hyphens and dashes read as spaces ("second-hand"), and the
-    /// punctuation around words dropped ("How far is it?").
-    public static func key(_ text: String) -> String {
-        let folded = TextFold.fold(text)
+    /// punctuation around words dropped ("How far is it?"). `joined`: hyphens and dots are dropped
+    /// instead, so "e-mail" is also "email" and "a.m." also "am".
+    public static func key(_ text: String, joined: Bool = false) -> String {
+        // NFKD inside TextFold would turn the spacing acute into a space: an apostrophe first.
+        let folded = TextFold.fold(text.replacingOccurrences(of: "\u{00B4}", with: "'"))
         var cleaned = ""
         for character in folded {
-            if "'’‘`´ʼ".contains(character) {
+            if "'’‘`ʼ".contains(character) {
+                continue
+            }
+            if joined, "-‐‑‒–—.".contains(character) {
                 continue
             }
             if "-‐‑‒–—".contains(character) {
@@ -176,13 +181,20 @@ extension ReviewPlanner {
               answerKey.split(separator: " ").count <= typeMaxWords else {
             return nil
         }
-        var accepted: Set<String> = [answerKey]
-        if ["v", "phv"].contains(word.pos), !answerKey.hasPrefix("to ") {
-            accepted.insert("to " + answerKey)
-        }
-        if word.pos == "n", TypeQuestion.withoutLead(answerKey).isEmpty {
-            for article in ["a ", "an ", "the "] {
-                accepted.insert(article + answerKey)
+        let answerKeys: Set<String> = [answerKey, TypeQuestion.key(answer, joined: true)]
+        let otherKeys = Set(candidates.filter { $0.id != word.id }.map { TypeQuestion.key($0.lemma) })
+        // "to borrow" and "a spoon" are right too, unless another card is written that way ("a bit").
+        var accepted = answerKeys
+        for key in answerKeys {
+            var leads: [String] = []
+            if ["v", "phv"].contains(word.pos), !key.hasPrefix("to ") {
+                leads = ["to "]
+            }
+            if word.pos == "n", TypeQuestion.withoutLead(key).isEmpty {
+                leads = ["a ", "an ", "the "]
+            }
+            for lead in leads where !otherKeys.contains(lead + key) {
+                accepted.insert(lead + key)
             }
         }
         let promptParts = meaningParts(prompt)
@@ -190,14 +202,20 @@ extension ReviewPlanner {
         var sharesMeaning = false
         for candidate in candidates where candidate.id != word.id {
             let key = TypeQuestion.key(candidate.lemma)
-            guard !key.isEmpty, !accepted.contains(key), others[key] == nil else {
+            guard !key.isEmpty, !accepted.contains(key) else {
                 continue
             }
             let gloss = candidate.glossTR?.trimmingCharacters(in: .whitespacesAndNewlines)
             let meaning = (gloss?.isEmpty ?? true) ? nil : gloss
             let same = meaning.map { !meaningParts($0).isDisjoint(with: promptParts) } ?? false
             sharesMeaning = sharesMeaning || same
-            others[key] = TypeQuestion.OtherWord(lemma: candidate.lemma, meaning: meaning, sameMeaning: same)
+            // A headword with several cards: the first one's meaning, and the same meaning when
+            // any of them has it ("tell": anlatmak, söylemek).
+            if let earlier = others[key] {
+                others[key] = TypeQuestion.OtherWord(lemma: earlier.lemma, meaning: earlier.meaning, sameMeaning: earlier.sameMeaning || same)
+            } else {
+                others[key] = TypeQuestion.OtherWord(lemma: candidate.lemma, meaning: meaning, sameMeaning: same)
+            }
         }
         let context = exampleTranslation?.trimmingCharacters(in: .whitespacesAndNewlines)
         return TypeQuestion(

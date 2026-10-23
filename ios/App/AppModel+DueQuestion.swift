@@ -36,10 +36,11 @@ extension AppModel {
     ///
     /// The question stays the same while the word is on screen: it is kept until the word is
     /// answered (its `reviews`, box or state change), so a later redraw never swaps the card under
-    /// the learner. Only a listening card gives way, when listening stops being possible.
+    /// the learner, not even when the sound is turned down after the word was heard. `canListen`
+    /// counts only when a word's question is chosen.
     func dueQuestion(for word: WidgetWord, canListen: Bool) -> DueQuestion {
         let stamp = DueQuestionStamp(progress[word.id])
-        if let kept = AppModel.dueQuestions[word.id], kept.stamp == stamp, canListen || kept.question.kind != .listen {
+        if let kept = AppModel.dueQuestions[word.id], kept.stamp == stamp {
             return kept.question
         }
         let question = makeDueQuestion(for: word, canListen: canListen)
@@ -74,25 +75,34 @@ extension AppModel {
     private func makeDueQuestion(for word: WidgetWord, canListen: Bool) -> DueQuestion {
         let current = progress[word.id]
         let cloze = clozeQuiz(for: word)
-        // Only boxes 2–3 ask the new kinds; elsewhere their options are not even looked for.
+        // Only boxes 2–3 ask the new kinds. Their options look at every card, so a kind is built
+        // only when its turn comes; one that cannot be built is left out and the rule asked again.
         let mixed = current.map { $0.state == .learning && ReviewPlanner.mixedQuestionBoxes.contains($0.box) } ?? false
-        let listen = mixed && canListen ? listenQuestion(for: word) : nil
-        let typing = mixed ? typeQuestion(for: word) : nil
-        let kind = ReviewPlanner.questionKind(
-            for: current,
-            hasCloze: cloze != nil,
-            canListen: listen != nil,
-            canType: typing != nil
-        )
-        switch kind {
-        case .cloze:
-            return cloze.map { DueQuestion.cloze($0) } ?? .recall
-        case .listen:
-            return listen.map { DueQuestion.listen($0) } ?? .recall
-        case .typing:
-            return typing.map { DueQuestion.typing($0) } ?? .recall
-        case .recall:
-            return .recall
+        var listenPossible = mixed && canListen
+        var typingPossible = mixed
+        while true {
+            let kind = ReviewPlanner.questionKind(
+                for: current,
+                hasCloze: cloze != nil,
+                canListen: listenPossible,
+                canType: typingPossible
+            )
+            switch kind {
+            case .cloze:
+                return cloze.map { DueQuestion.cloze($0) } ?? .recall
+            case .listen:
+                if let question = listenQuestion(for: word) {
+                    return .listen(question)
+                }
+                listenPossible = false
+            case .typing:
+                if let question = typeQuestion(for: word) {
+                    return .typing(question)
+                }
+                typingPossible = false
+            case .recall:
+                return .recall
+            }
         }
     }
 
@@ -108,12 +118,10 @@ private struct DueQuestionStamp: Equatable {
     let reviews: Int
     let box: Int
     let state: LearningState?
-    let dueAt: Date?
 
     init(_ progress: WordProgress?) {
         reviews = progress?.reviews ?? 0
         box = progress?.box ?? 0
         state = progress?.state
-        dueAt = progress?.dueAt
     }
 }
