@@ -6,8 +6,15 @@ struct WordWidget: Widget {
     static let kind = "WordWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: WordWidget.kind, provider: WordProvider()) { entry in
-            WordWidgetView(entry: entry)
+        // "Widget'ı Düzenle" (WidgetConfigurationOptions.swift). The kind is the one the earlier
+        // StaticConfiguration had, so widgets already on a screen stay where they are; they get
+        // the intent's defaults, which draw them as before. The rotation is still WordProvider's.
+        AppIntentConfiguration(
+            kind: WordWidget.kind,
+            intent: WordWidgetConfigurationIntent.self,
+            provider: ConfiguredWordProvider()
+        ) { entry in
+            WordWidgetView(entry: entry.base, options: entry.options)
         }
         .configurationDisplayName("Kelime")
         // "kilitli ekran", Apple's Turkish name (docs/tasarim/terimler.md §5).
@@ -34,11 +41,18 @@ struct WordWidget: Widget {
 /// Content margins are disabled (see `WordWidget`): the home families place them themselves
 /// (HomeWordViews.swift), the Lock Screen families get them back as plain padding.
 /// Tapping anywhere outside a button opens the app on this word (`widgetURL`); the word itself is
-/// not a button.
+/// not a button. The widget's choices (`options`) reach the Home Screen views only; the Lock Screen
+/// views ignore them, and StandBy never hides the meaning (WidgetConfigurationOptions.swift).
 struct WordWidgetView: View {
     @Environment(\.widgetFamily) private var family
     @Environment(\.widgetContentMargins) private var margins
+    @Environment(\.showsWidgetContainerBackground) private var showsBackground
     let entry: WordEntry
+    var options = WidgetDisplayOptions.standard
+
+    private var homeOptions: WidgetDisplayOptions {
+        return options.forContainer(showsBackground: showsBackground)
+    }
 
     var body: some View {
         content
@@ -52,9 +66,9 @@ struct WordWidgetView: View {
     private var content: some View {
         switch family {
         case .systemSmall:
-            SmallWordView(entry: entry, margins: margins)
+            SmallWordView(entry: entry, margins: margins, options: homeOptions)
         case .systemMedium:
-            MediumWordView(entry: entry, margins: margins)
+            MediumWordView(entry: entry, margins: margins, options: homeOptions)
         case .systemLarge:
             LargeWordView(entry: entry, margins: margins)
         case .accessoryRectangular:
@@ -63,7 +77,7 @@ struct WordWidgetView: View {
             InlineWordView(entry: entry)
                 .padding(margins)
         default:
-            SmallWordView(entry: entry, margins: margins)
+            SmallWordView(entry: entry, margins: margins, options: homeOptions)
         }
     }
 

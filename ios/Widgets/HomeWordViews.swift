@@ -51,6 +51,8 @@ struct SmallWordView: View {
     var renderingMode: WidgetRenderingMode? = nil
     /// Replaces the environment's `showsWidgetContainerBackground` (snapshot tests only).
     var showsBackground: Bool? = nil
+    /// is5-w-ayar: "Widget'ı Düzenle" choices (WidgetConfigurationOptions.swift).
+    var options = WidgetDisplayOptions.standard
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.showsWidgetContainerBackground) private var environmentShowsBackground
     private var word: WidgetWord { entry.word }
@@ -107,6 +109,17 @@ struct SmallWordView: View {
                     column(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.bold), lines: [1, 2])
                 }
                 .dynamicTypeSize(...DynamicTypeSize.large)
+                // is5-w-ayar: "Anlamı gizle" and no variant above has room for the Göster button
+                // (a phrase on two lines): the default layout with the meaning, never the word
+                // alone. Without the choice these are the variants above again and fail again.
+                Group {
+                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
+                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                }
+                .dynamicTypeSize(...DynamicTypeSize.large)
+                .widgetMeaningShown()
                 WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -134,6 +147,7 @@ struct SmallWordView: View {
             .padding(.bottom, margins.bottom - bottomOverflow)
         }
         .widgetTurkishVoice()
+        .widgetAccent(options.accent)
     }
 
     /// One layout variant: the word at the first of `steps` that fits and, under it, the meaning
@@ -156,6 +170,7 @@ struct SmallWordView: View {
             let forms = WidgetGloss.forms(of: word)
             if !forms.isEmpty {
                 WidgetMeaning(forms: forms, typeface: typeface, lines: lines, color: colors.ink)
+                    .widgetMeaningReveal(options, wordID: word.id, until: entry.nextChange, colors: colors, aboveButtonRow: true)
                     .padding(.top, headerGap)
             }
         }
@@ -170,6 +185,8 @@ struct MediumWordView: View {
     var renderingMode: WidgetRenderingMode? = nil
     /// Replaces the environment's `showsWidgetContainerBackground` (snapshot tests only).
     var showsBackground: Bool? = nil
+    /// is5-w-ayar: "Widget'ı Düzenle" choices (WidgetConfigurationOptions.swift).
+    var options = WidgetDisplayOptions.standard
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.showsWidgetContainerBackground) private var environmentShowsBackground
     private var word: WidgetWord { entry.word }
@@ -244,6 +261,7 @@ struct MediumWordView: View {
             .padding(.trailing, margins.trailing - trailingOverflow)
         }
         .widgetTurkishVoice()
+        .widgetAccent(options.accent)
     }
 
     /// The word row at the first of `steps` that fits; with `lastResort` (the word alone) it is
@@ -284,6 +302,7 @@ struct MediumWordView: View {
                         lines: [1, 2],
                         color: colors.ink
                     )
+                    .widgetMeaningReveal(options, wordID: word.id, until: entry.nextChange, colors: colors)
                 }
                 // A user's own word has no definition and may have no example: no empty line.
                 if definition && !(word.defShort.isEmpty && word.defMicro.isEmpty) {
@@ -293,7 +312,7 @@ struct MediumWordView: View {
                         color: colors.ink2
                     )
                 }
-                if example && !word.exampleEN.isEmpty {
+                if example && options.showsExample && !word.exampleEN.isEmpty {
                     WidgetExampleLine(sentence: word.exampleEN, lemma: word.lemma, color: colors.ink2)
                         .widgetEnglishVoice()
                 }
