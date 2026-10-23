@@ -48,6 +48,10 @@ public enum SentencePractice {
     public static let collocationsPerRound = 2
     /// Words looked at for one round, at most (each is one card read from the database).
     public static let maxScannedWords = 60
+    /// Once the sentences to build are found, words looked at in all before the search for a
+    /// "which verb?" question stops: such pairs are rare (about one card in 14), and every word
+    /// is a card read on the main thread.
+    public static let scanWithBuildsFull = 25
 
     /// The words practice may use, in id order: being learned or known, and not about to be
     /// asked in "Tekrar" (see the type's note). A word answered today may come, even when it is
@@ -78,6 +82,8 @@ public enum SentencePractice {
     /// an example when one has a listed pair, otherwise from a collocation of the card. Such
     /// pairs are rare, so up to `maxScannedWords` words are looked at for them. Words without a
     /// usable sentence are skipped; `source` gives a word's examples (nil: none). Deterministic.
+    /// Fewer than `collocations` choices may come when the first `scanWithBuildsFull` words
+    /// already give every sentence to build.
     public static func round(
         wordIDs: [Int],
         seed: Int,
@@ -93,8 +99,8 @@ public enum SentencePractice {
         let choiceLimit = min(max(collocations, 0), size / 2)
         var builds: [Item] = []
         var choices: [Item] = []
-        for wordID in order.prefix(maxScannedWords) {
-            if choices.count >= choiceLimit && builds.count >= size - choices.count {
+        for (scanned, wordID) in order.prefix(maxScannedWords).enumerated() {
+            if builds.count >= size - choices.count && (choices.count >= choiceLimit || scanned >= scanWithBuildsFull) {
                 break
             }
             guard let words = source(wordID) else {

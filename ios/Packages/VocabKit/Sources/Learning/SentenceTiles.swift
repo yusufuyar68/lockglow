@@ -18,7 +18,10 @@ import TextFold
 /// words are all the same. The learner then sees only sentences with one right order.
 ///
 /// Checking compares `TextFold.fold` keys (with ’ read as '), not the tiles themselves: two tiles
-/// with the same word ("the", "The") may swap places.
+/// with the same word ("the", "The") may swap places. The two single words around an "and" or
+/// "or" may swap too ("red and itchy", "itchy and red"): both orders are right English, and the
+/// feedback then shows the sentence as written. Other orders that are also right (a time word
+/// put first) are not recognized; the capital of the first tile makes them rarer.
 public struct SentenceTiles: Equatable, Sendable {
     public struct Tile: Identifiable, Hashable, Sendable {
         /// The tile's place in the sentence, from 0.
@@ -89,9 +92,13 @@ public struct SentenceTiles: Equatable, Sendable {
     public func shuffled(seed: Int, attempt: Int = 0) -> [Tile] {
         var generator = PracticeRandom(seed: seed, salt: attempt)
         var order = generator.shuffled(tiles)
-        if order.map(\.key) == tiles.map(\.key) {
-            // A rotation differs from the sentence unless every key is the same (never: `init`).
+        let accepted = acceptedOrders
+        // Turned on until it is no accepted order. The turns of an order differ from each other
+        // unless every key is the same (never: `init`), so this ends long before `count` turns.
+        var turns = 0
+        while accepted.contains(order.map(\.key)) && turns < order.count {
             order.append(order.removeFirst())
+            turns += 1
         }
         return order
     }
@@ -100,11 +107,31 @@ public struct SentenceTiles: Equatable, Sendable {
     /// of another sentence, is not correct.
     public func check(_ placed: [Tile]) -> Check {
         let placedKeys = placed.map(\.key)
-        let rightKeys = tiles.map(\.key)
-        let kept = SentenceTiles.commonPlaces(placedKeys, rightKeys)
-        let misplaced = Set(placed.indices).subtracting(kept)
         let sameTiles = placed.count == tiles.count && Set(placed.map(\.id)) == Set(tiles.map(\.id))
-        return Check(isCorrect: sameTiles && placedKeys == rightKeys, misplaced: misplaced)
+        if sameTiles && acceptedOrders.contains(placedKeys) {
+            return Check(isCorrect: true, misplaced: [])
+        }
+        let kept = SentenceTiles.commonPlaces(placedKeys, tiles.map(\.key))
+        return Check(isCorrect: false, misplaced: Set(placed.indices).subtracting(kept))
+    }
+
+    /// The sentence's order (as keys), then the same with the single words on both sides of an
+    /// "and" or "or" swapped: "Mix the eggs and flour" / "Mix the flour and eggs".
+    var acceptedOrders: [[String]] {
+        let keys = tiles.map(\.key)
+        let joiners: Set<String> = ["and", "or"]
+        var orders = [keys]
+        for place in keys.indices.dropFirst().dropLast() where joiners.contains(keys[place]) {
+            let left = keys[place - 1]
+            let right = keys[place + 1]
+            guard left != right, !joiners.contains(left), !joiners.contains(right) else {
+                continue
+            }
+            var swapped = keys
+            swapped.swapAt(place - 1, place + 1)
+            orders.append(swapped)
+        }
+        return orders
     }
 
     /// The placed tiles as one line, with the sentence's final mark once every tile is placed

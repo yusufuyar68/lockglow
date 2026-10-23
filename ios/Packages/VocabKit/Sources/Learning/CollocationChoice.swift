@@ -3,8 +3,9 @@ import Foundation
 /// "Hangisi birlikte kullanılır?": the verb of a fixed pair ("make a mistake", "do the dishes",
 /// "say sorry", "tell the truth") left out of an example sentence or of a card's collocation, with
 /// the other verb of the pair as the second option ("made" / "did"). Turkish often has one verb
-/// for both ("hata yapmak", "ödev yapmak"; "doğruyu söylemek", "özür dilemek"), so these pairs
-/// are a typical mix-up (ogrenme_ilkeleri 1 item 7).
+/// for both ("hata yapmak", "ödev yapmak"; "doğruyu söylemek", "yalan söylemek"), so these pairs
+/// are a typical mix-up (ogrenme_ilkeleri 1 item 7). Not always: "make friends" is "arkadaş
+/// edinmek", "tell a story" "hikâye anlatmak"; `sharesTurkishVerb` says when the comparison holds.
 ///
 /// Only listed partners count. A verb is left out when a word that goes with it, and not with the
 /// other verb, follows it, with at most a few small words between ("made a big mistake", "told us
@@ -17,9 +18,9 @@ import Foundation
 /// capital ("Make sure…" → "Make" / "Do").
 public struct CollocationChoice: Equatable, Sendable {
     public enum Pair: String, Sendable {
-        /// make / do: Turkish "yapmak" for both, most of the time.
+        /// make / do: Turkish "yapmak" for both with many partners.
         case makeDo
-        /// say / tell: Turkish "söylemek" for both, most of the time.
+        /// say / tell: Turkish "söylemek" for both with a few partners.
         case sayTell
     }
 
@@ -35,14 +36,25 @@ public struct CollocationChoice: Equatable, Sendable {
     public let distractor: String
     /// The pair in its plain form, for the feedback: "make a big mistake", "tell us a funny story".
     public let phrase: String
+    /// The partner word, folded ("mistake").
+    public let partner: String
 
-    public init(pair: Pair, before: String, after: String, answer: String, distractor: String, phrase: String) {
+    public init(pair: Pair, before: String, after: String, answer: String, distractor: String, phrase: String, partner: String) {
         self.pair = pair
         self.before = before
         self.after = after
         self.answer = answer
         self.distractor = distractor
         self.phrase = phrase
+        self.partner = partner
+    }
+
+    /// Turkish says this pair with "yapmak" (make / do) or "söylemek" (say / tell), as it would
+    /// say the other verb: "hata yapmak", "ödev yapmak", "yalan söylemek". Only then may the
+    /// feedback say why the two are easy to mix up; "make friends" (arkadaş edinmek) or "tell a
+    /// story" (hikâye anlatmak) would teach a wrong comparison.
+    public var sharesTurkishVerb: Bool {
+        return CollocationChoice.oneTurkishVerb.contains(partner)
     }
 
     /// The answer and the distractor in a mixed order: the same seed and attempt give the same
@@ -90,14 +102,21 @@ public struct CollocationChoice: Equatable, Sendable {
             let word = words[index]
             let start = word.index(word.startIndex, offsetBy: cores[index].leading.count)
             let end = word.index(start, offsetBy: written.count)
-            let phrase = [verb.lemma] + cores[(index + 1)...partner].map { $0.text == "I" ? "I" : $0.text.lowercased() }
+            // "make fun" goes on as "make fun of".
+            var last = partner
+            if let tail = partnerTails[keys[partner]], partner + 1 < keys.count, keys[partner + 1] == tail,
+               cores[partner].isBare {
+                last = partner + 1
+            }
+            let phrase = [verb.lemma] + cores[(index + 1)...last].map { $0.text == "I" ? "I" : $0.text.lowercased() }
             return CollocationChoice(
                 pair: verb.pair,
                 before: String(trimmed[..<start]),
                 after: String(trimmed[end...]),
                 answer: written,
                 distractor: written.first?.isUppercase == true ? capitalized(otherForm) : otherForm,
-                phrase: phrase.joined(separator: " ")
+                phrase: phrase.joined(separator: " "),
+                partner: keys[partner]
             )
         }
         return nil
@@ -166,6 +185,25 @@ public struct CollocationChoice: Equatable, Sendable {
         "tell": ["truth", "lie", "lies", "story", "stories", "joke", "jokes", "secret", "secrets", "difference"],
     ]
 
+    /// Partners that Turkish says with "yapmak" or "söylemek" (`sharesTurkishVerb`): "hata
+    /// yapmak", "ödev yapmak", "alışveriş yapmak", "doğruyu söylemek". Not "karar vermek",
+    /// "randevu almak", "para kazanmak", "bulaşık yıkamak", "özür dilemek", "fıkra anlatmak".
+    static let oneTurkishVerb: Set<String> = [
+        "mistake", "mistakes", "homework", "housework", "shopping", "exercise", "research", "noise",
+        "plan", "plans", "reservation", "reservations", "announcement", "choice", "choices",
+        "business", "gardening", "chores", "yoga", "overtime", "favour", "favor", "best",
+        "truth", "lie", "lies",
+    ]
+
+    /// A partner that goes on with a fixed word: "make fun of".
+    private static let partnerTails: [String: String] = ["fun": "of"]
+
+    /// A partner followed by one of these is part of something else: "say no one knows", "say no
+    /// more" are no "say no".
+    private static let partnerBlockers: [String: Set<String>] = [
+        "no": ["one", "idea", "more", "longer", "way", "problem", "doubt", "matter", "time"],
+    ]
+
     /// Small words that may stand between the verb and its partner ("a big", "a lot of", "your
     /// own"). Object pronouns too ("do me a favour"), but not "you": "Do you exercise?" asks.
     private static let fillers: Set<String> = [
@@ -189,7 +227,16 @@ public struct CollocationChoice: Equatable, Sendable {
     /// Collocations written with a placeholder are no question ("make sb angry").
     private static let placeholders: Set<String> = ["sb", "sth", "someone", "somebody", "something", "smth"]
     /// Before "made" (and "said", "told"), these ask for the participle: "have made" → "done".
-    private static let haveForms: Set<String> = ["have", "has", "had", "having", "haven't", "hasn't", "hadn't"]
+    private static let haveForms: Set<String> = [
+        "have", "has", "had", "having", "haven't", "hasn't", "hadn't",
+        "i've", "you've", "we've", "they've", "i'd", "you'd", "we'd", "they'd", "he'd", "she'd",
+        "he's", "she's", "it's", "that's", "who's", "there's",
+    ]
+    /// Words that may stand between a "have" and the participle: "Have you ever made…".
+    private static let betweenHaveAndVerb: Set<String> = [
+        "i", "you", "we", "they", "he", "she", "it", "ever", "never", "already", "just", "not",
+        "also", "always", "recently", "all", "both",
+    ]
 
     // MARK: Matching
 
@@ -228,6 +275,9 @@ public struct CollocationChoice: Equatable, Sendable {
         var place = index + 1
         while place < keys.count && place - index - 1 <= maxFillers {
             if own.contains(keys[place]) {
+                if let blockers = partnerBlockers[keys[place]], place + 1 < keys.count, blockers.contains(keys[place + 1]) {
+                    return nil
+                }
                 return place
             }
             guard allowed.contains(keys[place]), cores[place].isBare else {
@@ -238,18 +288,20 @@ public struct CollocationChoice: Equatable, Sendable {
         return nil
     }
 
-    /// The form of the verb at `index`. "made", "said" and "told" are past or participle: after
-    /// a "have" (up to three words back: "Have you ever made…", "I've made") the participle.
+    /// The form of the verb at `index`. "made", "said" and "told" are past or participle: right
+    /// after a "have" ("I've made", "has made"), or with at most two words such as "you ever"
+    /// between ("Have you ever made…"), the participle; otherwise the past ("We had lunch and
+    /// made…" → "did").
     private static func form(of written: String, verb: Verb, keys: [String], at index: Int) -> Form {
         let forms = verb.forms.filter { $0.value == written }.map { $0.key }
         guard forms.count > 1 else {
             return forms.first ?? .base
         }
-        let back = keys[max(0, index - 3)..<index]
-        let afterHave = back.contains { word in
-            haveForms.contains(word) || word.hasSuffix("'ve") || word.hasSuffix("'d") || word.hasSuffix("'s")
+        var place = index - 1
+        while place >= 0 && index - 1 - place < 2 && betweenHaveAndVerb.contains(keys[place]) {
+            place -= 1
         }
-        return afterHave ? .participle : .past
+        return place >= 0 && haveForms.contains(keys[place]) ? .participle : .past
     }
 
     private static func capitalized(_ word: String) -> String {

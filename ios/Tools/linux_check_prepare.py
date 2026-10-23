@@ -16,7 +16,9 @@ import shutil
 import sys
 from pathlib import Path
 
-APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "AppModel+SentencePractice.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
+APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
+# "Cümle kur" (is5-cumle), on its own line so other branches adding files here do not clash.
+APP_LOGIC_FILES += ["AppModel+SentencePractice.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
 
 # A declaration that starts with `public` or `open`, after optional attributes such as @discardableResult.

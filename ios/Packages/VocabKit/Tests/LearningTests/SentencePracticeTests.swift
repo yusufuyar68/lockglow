@@ -231,4 +231,22 @@ final class SentencePracticeTests: XCTestCase {
         let data = try JSONEncoder().encode(tally)
         XCTAssertEqual(try JSONDecoder().decode(PracticeTally.self, from: data), tally)
     }
+
+    /// Once the sentences to build are found, the search for a "which verb?" question stops after
+    /// `scanWithBuildsFull` words: every word is a card read.
+    func testTheSearchForAChoiceStopsSoon() {
+        var looked: [Int] = []
+        let round = SentencePractice.round(wordIDs: Array(1...200), seed: 5) { id in
+            looked.append(id)
+            return SentencePractice.Source(wordID: id, examples: [CardDetail.Example(en: "I like green tea number \(id).", tr: nil)])
+        }
+        XCTAssertEqual(round.count, 5)
+        XCTAssertEqual(looked.count, SentencePractice.scanWithBuildsFull)
+        var all = 0
+        _ = SentencePractice.round(wordIDs: Array(1...200), seed: 5, collocations: 0) { id in
+            all += 1
+            return SentencePractice.Source(wordID: id, examples: [CardDetail.Example(en: "I like green tea number \(id).", tr: nil)])
+        }
+        XCTAssertEqual(all, 5, "without choices the round stops at its fifth word")
+    }
 }

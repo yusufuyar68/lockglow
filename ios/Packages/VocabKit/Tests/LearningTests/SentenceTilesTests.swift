@@ -160,4 +160,28 @@ final class SentenceTilesTests: XCTestCase {
         XCTAssertEqual(tiles.line(Array(tiles.tiles.prefix(3))), "Can I have")
         XCTAssertEqual(tiles.line([]), "")
     }
+
+    /// The single words around "and" or "or" may swap: "itchy and red" is right English too.
+    func testWordsAroundAndOrMaySwap() throws {
+        let arm = try XCTUnwrap(SentenceTiles("My arm is red and itchy."))
+        let t = arm.tiles
+        let swapped = arm.check([t[0], t[1], t[2], t[5], t[4], t[3]])
+        XCTAssertTrue(swapped.isCorrect)
+        XCTAssertEqual(swapped.misplaced, [])
+        XCTAssertFalse(arm.check([t[0], t[1], t[5], t[2], t[4], t[3]]).isCorrect)
+        let bowl = try XCTUnwrap(SentenceTiles("Mix the eggs and flour in a large bowl."))
+        let b = bowl.tiles
+        XCTAssertTrue(bowl.check([b[0], b[1], b[4], b[3], b[2]] + b[5...]).isCorrect)
+        let spicy = try XCTUnwrap(SentenceTiles("Would you like it mild or spicy?"))
+        let s = spicy.tiles
+        XCTAssertTrue(spicy.check(Array(s[..<4]) + [s[6], s[5], s[4]]).isCorrect)
+    }
+
+    /// The mixed order is never one of the right orders either.
+    func testShuffleIsNeverAnotherRightOrder() throws {
+        let tiles = try XCTUnwrap(SentenceTiles("Salt and pepper."))
+        for seed in 0..<300 {
+            XCTAssertFalse(tiles.check(tiles.shuffled(seed: seed)).isCorrect, "seed \(seed)")
+        }
+    }
 }

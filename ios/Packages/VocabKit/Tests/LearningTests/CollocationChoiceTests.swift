@@ -115,4 +115,38 @@ final class CollocationChoiceTests: XCTestCase {
         XCTAssertTrue(partners["make", default: []].isDisjoint(with: partners["do", default: []]))
         XCTAssertTrue(partners["say", default: []].isDisjoint(with: partners["tell", default: []]))
     }
+
+    /// "Türkçede ikisine de yapmak deriz" holds for "hata yapmak", not for "arkadaş edinmek".
+    func testTurkishVerbIsSharedOnlyForSomePartners() throws {
+        XCTAssertEqual(CollocationChoice.find(in: "Sorry, I made a mistake.")?.partner, "mistake")
+        XCTAssertEqual(CollocationChoice.find(in: "Sorry, I made a mistake.")?.sharesTurkishVerb, true)
+        XCTAssertEqual(CollocationChoice.find(in: "I do my homework after dinner.")?.sharesTurkishVerb, true)
+        XCTAssertEqual(CollocationChoice.find(in: "Please tell me the truth.")?.sharesTurkishVerb, true)
+        XCTAssertEqual(CollocationChoice.find(in: "Children make friends quickly.")?.sharesTurkishVerb, false)
+        XCTAssertEqual(CollocationChoice.find(in: "He told us a funny story.")?.sharesTurkishVerb, false)
+        XCTAssertEqual(CollocationChoice.find(in: "Jonas called his brother to say sorry.")?.sharesTurkishVerb, false)
+        XCTAssertEqual(CollocationChoice.find(in: "Make sure you lock the door.")?.sharesTurkishVerb, false)
+        XCTAssertTrue(CollocationChoice.oneTurkishVerb.isSubset(of: CollocationChoice.partners.values.reduce(Set<String>()) { $0.union($1) }))
+    }
+
+    /// "make fun" is "make fun of".
+    func testFunGoesOnWithOf() {
+        XCTAssertEqual(CollocationChoice.find(in: "The kids made fun of Emre's big hat.")?.phrase, "make fun of")
+        XCTAssertEqual(CollocationChoice.find(in: "Don't make fun!")?.phrase, "make fun")
+    }
+
+    /// Only a "have" right before the verb (or two small words before it) asks for the participle.
+    func testAHaveFurtherBackIsNoParticiple() {
+        XCTAssertEqual(CollocationChoice.find(in: "We had lunch and made a reservation.")?.distractor, "did")
+        XCTAssertEqual(CollocationChoice.find(in: "Maria's brother made a mess.")?.distractor, "did")
+        XCTAssertEqual(CollocationChoice.find(in: "She has already made a decision.")?.distractor, "done")
+        XCTAssertEqual(CollocationChoice.find(in: "They haven't made a reservation.")?.distractor, "done")
+    }
+
+    /// "say no one" or "say no more" is no "say no".
+    func testNoBeforeOneOrMoreIsNoPartner() {
+        XCTAssertNil(CollocationChoice.find(in: "They say no one knows the answer."))
+        XCTAssertNil(CollocationChoice.find(in: "Say no more."))
+        XCTAssertEqual(CollocationChoice.find(in: "It is hard to say no.")?.phrase, "say no")
+    }
 }

@@ -11,10 +11,19 @@ extension AppModel {
     /// The practice count (`PracticeTally`) is kept on this phone under this UserDefaults key.
     nonisolated static let sentencePracticeTallyKey = "lockglow.sentencePracticeTally"
 
-    /// Some word can be practiced now: one being learned or known that "Tekrar" will not ask soon.
-    /// Cheap (no card is read), for the links to the practice.
+    /// Some word can be practiced now: one being learned or known that "Tekrar" will not ask soon,
+    /// with a sentence to build or a pair to pick. Stops at the first such word, usually the
+    /// first one; the cards it reads stay cached (`detail(for:)`). For "Biraz daha pratik".
     var hasSentencePractice: Bool {
-        return !SentencePractice.wordIDs(progress: progress, now: Date()).isEmpty
+        let ids = SentencePractice.wordIDs(progress: progress, now: Date())
+        return ids.prefix(SentencePractice.maxScannedWords).contains { id in
+            guard let word = word(id: id), let detail = detail(for: word) else {
+                return false
+            }
+            return !SentencePractice.round(wordIDs: [id], seed: 0, size: 1) { _ in
+                SentencePractice.Source(wordID: id, examples: detail.examples, collocations: detail.collocations)
+            }.isEmpty
+        }
     }
 
     /// A practice round: the example sentences of words being learned or known

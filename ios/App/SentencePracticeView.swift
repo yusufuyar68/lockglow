@@ -65,14 +65,15 @@ struct SentencePracticeView: View {
 
     // MARK: Round
 
-    /// "Cümle 2 / 5" and the progress (a second try adds one), as in "Tekrar"'s header.
+    /// "Soru 2 / 5" and the progress (a second try adds one), as in "Tekrar"'s header. "Soru", not
+    /// "Cümle": a card's collocation ("___ a mistake") is no sentence.
     private func header(_ round: SentencePractice.Round) -> some View {
         let progress = round.progress
-        let counter = Text(verbatim: "Cümle \(progress.done + 1) / \(progress.total)")
+        let counter = Text(verbatim: "Soru \(progress.done + 1) / \(progress.total)")
             .font(.subheadline.weight(.semibold).monospacedDigit())
             .foregroundStyle(Theme.ink2)
             // VoiceOver reads "/" as "bölü" (terimler 1).
-            .accessibilityLabel(Text(verbatim: "Cümle \(progress.done + 1), toplam \(progress.total)"))
+            .accessibilityLabel(Text(verbatim: "Soru \(progress.done + 1), toplam \(progress.total)"))
         let bar = PracticeProgressBar(done: progress.done, total: progress.total)
         return Group {
             if dynamicTypeSize.isAccessibilitySize {
@@ -201,7 +202,8 @@ struct SentencePracticeView: View {
 
     // MARK: Nothing to practice
 
-    /// No word can be used now: none learned yet, or every one is about to be asked in "Tekrar".
+    /// No word can be used now: none learned yet, every one is about to be asked in "Tekrar", or
+    /// none has a sentence that can be built (seed words, a user's word without an example).
     private var emptyState: some View {
         ScrollView {
             VStack(spacing: 12) {
@@ -214,7 +216,7 @@ struct SentencePracticeView: View {
                     .foregroundStyle(Theme.ink)
                     .multilineTextAlignment(.center)
                     .accessibilityAddTraits(.isHeader)
-                Text("Tekrar'da öğrendiğin kelimelerin cümleleri burada gelir. Birazdan sorulacak kelimeler tekrardan sonra gelir.")
+                Text("Öğrendiğin kelimelerin cümleleri buraya gelir. Tekrar'da birazdan sorulacak kelimeler cevaptan sonra gelir.")
                     .font(.callout)
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.center)
@@ -261,22 +263,32 @@ private struct PracticeProgressBar: View {
                         .frame(width: proxy.size.width * fraction)
                 }
             }
-            .animation(reduceMotion ? nil : .easeOut(duration: 0.3), value: fraction)
+            // At most 200 ms (learning principles 2.4).
+            .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: fraction)
             .accessibilityHidden(true)
     }
 }
 
 // MARK: - Ways in
 
-/// "Biraz daha pratik" on Tekrar's done screen (ReviewView `doneContent`): only when some word can
-/// be practiced now. Tonal, as the screen's filled button is another.
+/// "Biraz daha pratik" on Tekrar's done screen (ReviewView `doneContent`): only when some word
+/// has a sentence to practice now. Tonal, as the screen's filled button is another. `isOpen` is
+/// true while the practice is pushed over Tekrar, like "Kitaplığın" (ReviewView
+/// `isLibraryOpen`): a hidden start card must not take the opening's system card.
 struct SentencePracticeLink: View {
+    @Binding var isOpen: Bool
     @EnvironmentObject private var model: AppModel
 
     var body: some View {
         if model.hasSentencePractice {
             NavigationLink {
                 SentencePracticeView()
+                    .onAppear {
+                        isOpen = true
+                    }
+                    .onDisappear {
+                        isOpen = false
+                    }
             } label: {
                 Label("Biraz daha pratik", systemImage: "puzzlepiece")
             }

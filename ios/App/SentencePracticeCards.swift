@@ -12,7 +12,8 @@ import Learning
 /// "Cümleyi kur": the sentence's Turkish, the learner's sentence and the mixed word tiles. A tap
 /// on a tile puts it at the end of the sentence, a tap on a placed tile takes it back; with
 /// VoiceOver this is the whole interaction ("dokunarak sıraya koy"), and after each tap VoiceOver
-/// reads the sentence so far in an English voice and moves on to the next free tile. Without
+/// reads the sentence so far in an English voice and moves on to the next free tile (a new card
+/// starts on its "Cümleyi kur" line, "Kontrol et" moves on to "Devam"). Without
 /// VoiceOver a placed tile can also be dragged to another place, or a free one dropped between
 /// two placed ones. "Kontrol et" compares by folded keys (`SentenceTiles.check`); the feedback
 /// shows the sentence as written, the word marked, with "Dinle", and on a miss the tiles whose
@@ -35,9 +36,10 @@ struct SentenceBuildCard: View {
     @Environment(\.accessibilityVoiceOverEnabled) private var voiceOverEnabled
 
     private enum BuildFocus: Hashable {
+        case header
         case bank(Int)
         case checkButton
-        case feedback
+        case continueButton
     }
 
     init(tiles: SentenceTiles, translation: String?, lemma: String?, seed: Int, attempt: Int, onContinue: @escaping (Bool) -> Void) {
@@ -55,6 +57,7 @@ struct SentenceBuildCard: View {
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.ink2)
                     .accessibilityAddTraits(.isHeader)
+                    .accessibilityFocused($focus, equals: .header)
                 PracticePrompt(translation: translation, fallback: "Kelimeleri doğru sıraya koy.")
                 answerArea
                 if let check = check {
@@ -79,6 +82,10 @@ struct SentenceBuildCard: View {
         }
         // A light haptic on a right sentence only; a miss stays silent (learning principles 2.4).
         .sensoryFeedback(.success, trigger: check?.isCorrect == true)
+        // The button that brought this card is gone: VoiceOver starts on its first line.
+        .onAppear {
+            moveFocus(to: .header)
+        }
     }
 
     // MARK: Areas
@@ -100,14 +107,18 @@ struct SentenceBuildCard: View {
                 } else {
                     TileFlow(spacing: 8, lineSpacing: 8) {
                         ForEach(Array(placed.enumerated()), id: \.element.id) { place, tile in
-                            placedTile(tile, at: place)
-                        }
-                        if placed.count == tiles.tiles.count && !tiles.ending.isEmpty {
-                            Text(verbatim: tiles.ending)
-                                .font(Theme.Fonts.definition)
-                                .foregroundStyle(Theme.ink)
-                                .frame(minHeight: 44)
-                                .accessibilityHidden(true)
+                            if place == tiles.tiles.count - 1 && !tiles.ending.isEmpty {
+                                // The final mark stays with the last tile, never alone on a row.
+                                HStack(spacing: 3) {
+                                    placedTile(tile, at: place)
+                                    Text(verbatim: tiles.ending)
+                                        .font(Theme.Fonts.definition)
+                                        .foregroundStyle(Theme.ink)
+                                        .accessibilityHidden(true)
+                                }
+                            } else {
+                                placedTile(tile, at: place)
+                            }
                         }
                     }
                 }
@@ -159,6 +170,7 @@ struct SentenceBuildCard: View {
                         .accessibilityLabel(Text(verbatim: tile.text))
                         .englishVoice()
                         .accessibilityFocused($focus, equals: .bank(tile.id))
+                        .accessibilityIdentifier("practice.tile")
                         .draggable(String(tile.id)) {
                             TileFace(text: tile.text)
                         }
@@ -183,7 +195,7 @@ struct SentenceBuildCard: View {
     private func placedTile(_ tile: SentenceTiles.Tile, at place: Int) -> some View {
         if let check = check {
             let isMisplaced = check.misplaced.contains(place)
-            TileFace(text: tile.text, mark: isMisplaced ? .misplaced : (check.isCorrect ? .right : nil))
+            TileFace(text: tile.text, mark: isMisplaced ? TileFace.Mark.misplaced : (check.isCorrect ? TileFace.Mark.right : nil))
                 .accessibilityRepresentation {
                     Text(verbatim: tile.text)
                         .englishVoice()
@@ -220,6 +232,7 @@ struct SentenceBuildCard: View {
                 onContinue(check.isCorrect)
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+            .accessibilityFocused($focus, equals: .continueButton)
         } else {
             Button("Kontrol et") {
                 checkSentence()
@@ -246,7 +259,6 @@ struct SentenceBuildCard: View {
             }
             .font(.body.weight(.bold))
             .foregroundStyle(Theme.ink)
-            .accessibilityFocused($focus, equals: .feedback)
             PracticeSentence(sentence: tiles.sentence, lemma: lemma)
             if let translation = translation {
                 Text(verbatim: "Türkçesi: " + translation)
@@ -345,8 +357,10 @@ struct SentenceBuildCard: View {
         withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
             check = result
         }
+        // The announcement says how it went and reads the sentence; the focus waits on "Devam"
+        // ("Kontrol et" is gone), so the feedback is not read twice.
         announce(isCorrect: result.isCorrect)
-        moveFocus(to: .feedback)
+        moveFocus(to: .continueButton)
     }
 
     private func moveFocus(to target: BuildFocus) {
@@ -389,7 +403,8 @@ struct SentenceBuildCard: View {
 /// order mixed by seed and attempt. After a tap only the right option ("Doğru cevap") and a wrong
 /// pick ("Yanlış") stay, marked with icons and words; the sentence reads in full with the verb
 /// bold and "Dinle", and the feedback names the pair ("Birlikte kullanılır: make a mistake"). On a
-/// miss one line says why the pair is easy to mix up for a Turkish speaker.
+/// miss, when Turkish says both with one verb (`CollocationChoice.sharesTurkishVerb`), one line
+/// says so.
 struct CollocationChoiceCard: View {
     let choice: CollocationChoice
     let translation: String?
@@ -397,7 +412,7 @@ struct CollocationChoiceCard: View {
 
     @State private var picked: String?
     @State private var options: [String]
-    @AccessibilityFocusState private var focusesFeedback: Bool
+    @AccessibilityFocusState private var focusesHeader: Bool
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityVoiceOverEnabled) private var voiceOverEnabled
@@ -416,6 +431,7 @@ struct CollocationChoiceCard: View {
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.ink2)
                     .accessibilityAddTraits(.isHeader)
+                    .accessibilityFocused($focusesHeader)
                 sentenceCard
                 optionRow
                 if let picked = picked {
@@ -444,6 +460,16 @@ struct CollocationChoiceCard: View {
         }
         .sensoryFeedback(.success, trigger: picked) { oldValue, newValue in
             oldValue == nil && newValue == choice.answer
+        }
+        // The button that brought this card is gone: VoiceOver starts on its first line.
+        .onAppear {
+            guard voiceOverEnabled else {
+                return
+            }
+            Task { @MainActor in
+                try? await Task.sleep(nanoseconds: 150_000_000)
+                focusesHeader = true
+            }
         }
     }
 
@@ -558,6 +584,7 @@ struct CollocationChoiceCard: View {
                     Text(verbatim: option)
                         .englishVoice()
                 }
+                .accessibilityIdentifier("practice.option")
             } else {
                 Text(verbatim: option)
                     .englishVoice()
@@ -612,7 +639,6 @@ struct CollocationChoiceCard: View {
                     FeedbackSpeech(lead: "Doğrusu:", english: choice.answer, meaning: nil)
                 }
             }
-            .accessibilityFocused($focusesFeedback)
             Text("Birlikte kullanılır: \(Text(verbatim: choice.phrase).font(.system(.callout, design: .serif).weight(.bold)))")
                 .font(.callout)
                 .foregroundStyle(Theme.ink)
@@ -620,7 +646,8 @@ struct CollocationChoiceCard: View {
                 .accessibilityRepresentation {
                     FeedbackSpeech(lead: "Birlikte kullanılır:", english: choice.phrase, meaning: nil)
                 }
-            if !isRight {
+            // Only where it is true: "make friends" is "arkadaş edinmek", not "yapmak".
+            if !isRight && choice.sharesTurkishVerb {
                 Text(choice.pair == .makeDo
                      ? "Türkçede ikisine de çoğu zaman “yapmak” deriz."
                      : "Türkçede ikisine de çoğu zaman “söylemek” deriz.")
@@ -648,13 +675,8 @@ struct CollocationChoiceCard: View {
             attributes: [.accessibilitySpeechLanguage: "tr-TR"]
         )
         text.append(NSAttributedString(string: choice.answer, attributes: [.accessibilitySpeechLanguage: "en-US"]))
+        // The tapped option stays (as text), so the focus stays with it: only the announcement.
         PracticeAnnouncement.post(text)
-        if voiceOverEnabled {
-            Task { @MainActor in
-                try? await Task.sleep(nanoseconds: 150_000_000)
-                focusesFeedback = true
-            }
-        }
     }
 }
 
@@ -855,7 +877,7 @@ struct PracticeListenButton: View {
             .font(.subheadline.weight(.semibold))
         }
         .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
-        .accessibilityLabel(isSpeaking ? "Durdur" : "Cümleyi dinle")
+        .accessibilityLabel(Text(isSpeaking ? "Durdur" : "Cümleyi dinle"))
         .accessibilityInputLabels(isSpeaking ? [Text("Durdur")] : [Text("Dinle"), Text("Cümleyi dinle")])
     }
 }
