@@ -1,0 +1,1002 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.could_you.phr.1",
+      "lemma": "could you",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "polite request",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʊd ju/",
+        "uk": "/ˈkʊd ju/"
+      },
+      "def": {
+        "micro": "a polite way to ask for help",
+        "short": "a polite way to ask someone to do something for you",
+        "long": "You use this before a verb to ask someone to do something for you. It is more polite than 'can you', and it does not talk about the past here. Answer with 'Sure' or 'Of course'."
+      },
+      "grammar": {
+        "pattern": "Could you + verb (+ please)?"
+      },
+      "examples": [
+        {
+          "en": "Could you close the door, please?",
+          "tr": "Kapıyı kapatabilir misiniz lütfen?",
+          "register": "neutral",
+          "focus": "Could you"
+        },
+        {
+          "en": "Excuse me, could you help me with my suitcase? It's very heavy.",
+          "tr": "Affedersiniz, bavuluma yardım edebilir misiniz? Çok ağır.",
+          "register": "neutral",
+          "focus": "could you"
+        },
+        {
+          "en": "Mehmet, could you send me the report before lunch? I need it for the meeting.",
+          "tr": "Mehmet, raporu öğle yemeğinden önce bana gönderebilir misin? Toplantı için lazım.",
+          "register": "neutral",
+          "focus": "could you"
+        }
+      ],
+      "synonyms": [
+        "would you",
+        "can you"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "could you please",
+        "could you help me"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-ebilir misiniz?",
+          "alt": [
+            "-er misiniz?",
+            "rica etsem"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yabancılara, iş yerinde, mağazada kibar ricada kullanılır; 'Can you…?' daha rahattır. Burada geçmiş zaman anlamı yoktur. Cevabı: 'Sure.' ya da 'Of course.' Hayır derken: 'Sorry, I can't.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______ carry this box to my car, please? My back hurts.",
+        "answer": "Could you",
+        "distractors": [
+          "Would I",
+          "Do you",
+          "Should you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.may_i.phr.1",
+      "lemma": "may I",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "ask permission politely",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmeɪ aɪ/",
+        "uk": "/ˈmeɪ aɪ/"
+      },
+      "def": {
+        "micro": "asks for permission politely",
+        "short": "a polite, formal way to ask if you are allowed to do something",
+        "long": "You use this before a verb to ask for permission in a polite way, for example with a teacher, a doctor or a customer. In everyday talk, 'Can I…?' is more common."
+      },
+      "grammar": {
+        "pattern": "May I + verb?"
+      },
+      "examples": [
+        {
+          "en": "Excuse me, may I come in?",
+          "tr": "Affedersiniz, içeri girebilir miyim?",
+          "register": "formal",
+          "focus": "may I"
+        },
+        {
+          "en": "May I use your phone? Mine has no battery left.",
+          "tr": "Telefonunuzu kullanabilir miyim? Benimkinin şarjı bitti.",
+          "register": "formal",
+          "focus": "May I"
+        },
+        {
+          "en": "“May I ask a question about the homework, Ms. Brown?” Nina said.",
+          "tr": "Nina “Ödevle ilgili bir soru sorabilir miyim Bayan Brown?” dedi.",
+          "register": "formal",
+          "focus": "May I"
+        }
+      ],
+      "synonyms": [
+        "could I",
+        "can I"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "may I come in",
+        "may I ask",
+        "may I help you"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-ebilir miyim?",
+          "alt": [
+            "izin verir misiniz?"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İzin isterken kullanılır; öğretmene, doktora, müşteriye ya da yabancıya söylenir ve resmîdir. Günlük konuşmada 'Can I…?' daha yaygındır. Cevabı: 'Of course.' ya da 'Sure, go ahead.'",
+          "mistakes": [
+            {
+              "wrong": "May you help me, please?",
+              "right": "Could you help me, please?",
+              "why": "Türkçede izin de rica da '-ebil' ekiyle sorulur ('girebilir miyim?', 'yardım edebilir misiniz?'); bu yüzden 'may' de her kişiyle kullanılır sanılır. Rica ederken 'Could you…?' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "could you"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Excuse me, doctor. ______ come in?” “Yes, please. Have a seat.”",
+        "answer": "May I",
+        "distractors": [
+          "May you",
+          "Will I",
+          "Am I"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.id_like.phr.1",
+      "lemma": "I'd like",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "say politely what you want",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪd ˈlaɪk/",
+        "uk": "/aɪd ˈlaɪk/"
+      },
+      "def": {
+        "micro": "a polite way to say I want",
+        "short": "used to say politely what you want, for example when you order food",
+        "long": "You use this to say what you want in a polite way, in shops, cafés, hotels or on the phone. After it comes a noun, like 'a tea', or 'to' and a verb, like 'to pay'."
+      },
+      "grammar": {
+        "pattern": "I'd like + noun / I'd like to + verb"
+      },
+      "examples": [
+        {
+          "en": "I'd like a large tea with lemon, please.",
+          "tr": "Limonlu büyük bir çay istiyorum lütfen.",
+          "register": "neutral",
+          "focus": "I'd like"
+        },
+        {
+          "en": "Good morning. I'd like to send this letter to Ankara.",
+          "tr": "Günaydın. Bu mektubu Ankara'ya göndermek istiyorum.",
+          "register": "neutral",
+          "focus": "I'd like"
+        },
+        {
+          "en": "I'd like to try these shoes on. Do you have them in black?",
+          "tr": "Bu ayakkabıları denemek istiyorum. Siyahı var mı?",
+          "register": "neutral",
+          "focus": "I'd like"
+        }
+      ],
+      "synonyms": [
+        "I would like"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "I'd like to order",
+        "I'd like to pay",
+        "I'd like some water"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "… isterim",
+          "alt": [
+            "… alayım",
+            "… istiyorum"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Siparişte, otelde, telefonda isteğini kibarca söylemek için kullanılır; 'I want' kadar sert değildir. Açık hâli 'I would like' olur. Garson da 'What would you like?' diye sorar.",
+          "mistakes": [
+            {
+              "wrong": "I like a tea, please.",
+              "right": "I'd like a tea, please.",
+              "why": "Türkçede 'isterim' tek kelimedir, 'would' gibi ayrı bir kibarlık sözcüğü yoktur. Bu yüzden kısa 'd atlanır; 'I like' ise 'severim' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "I like"
+      ],
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“What would you like to drink?” “______ an apple juice, please.”",
+        "answer": "I'd like",
+        "distractors": [
+          "I like",
+          "I'm liking",
+          "I'll like"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.do_me_a_favor.phr.1",
+      "lemma": "do me a favor",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "ask someone for help",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/du mi ə ˈfeɪvər/",
+        "uk": "/du mi ə ˈfeɪvə/"
+      },
+      "def": {
+        "micro": "help me with something",
+        "short": "used to ask someone to help you with something, often something small",
+        "long": "You say this to ask a friend, a family member or a co-worker to help you. People often ask 'Can you do me a favor?' first and then say what they need."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Can you do me a favor and feed my cat this weekend?",
+          "tr": "Bana bir iyilik yapıp bu hafta sonu kedimi besler misin?",
+          "register": "neutral",
+          "focus": "do me a favor"
+        },
+        {
+          "en": "Diego, could you do me a favor? I need a ride to the airport on Friday.",
+          "tr": "Diego, bana bir iyilik yapar mısın? Cuma günü beni havalimanına götürecek biri lazım.",
+          "register": "neutral",
+          "focus": "do me a favor"
+        },
+        {
+          "en": "Do me a favor and wake me up at half past six. I have an early class tomorrow.",
+          "tr": "Bana bir iyilik yap, beni altı buçukta uyandır. Yarın erken dersim var.",
+          "register": "informal",
+          "focus": "Do me a favor"
+        }
+      ],
+      "synonyms": [
+        "help me out"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "do someone a favor",
+        "ask a favor",
+        "a big favor"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bana bir iyilik yap",
+          "gloss_short": "bir iyilik yap",
+          "alt": [
+            "bir ricam var",
+            "bir iyilik yapar mısın"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşa, aileye, iş arkadaşına küçük bir yardım isterken söylenir. Kibar biçimi 'Could you do me a favor?' olur. Cevabı: 'Sure, what is it?' İngiliz yazımı 'favour' olur.",
+          "mistakes": [
+            {
+              "wrong": "Can you make me a favor?",
+              "right": "Can you do me a favor?",
+              "why": "Türkçede 'iyilik yapmak' denir ve 'yapmak' çoğu zaman 'make' diye çevrilir. 'Favor' ile her zaman 'do' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif, could you ______ me a favor and buy some bread on your way home?",
+        "answer": "do",
+        "distractors": [
+          "make",
+          "give",
+          "take"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sorry_to_bother_you.phr.1",
+      "lemma": "sorry to bother you",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "polite start to a request",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɑːri tə ˈbɑːðər ju/",
+        "uk": "/ˌsɒri tə ˈbɒðə ju/"
+      },
+      "def": {
+        "micro": "a polite way to interrupt",
+        "short": "a polite thing to say before you ask a busy person or a stranger for something",
+        "long": "You say this before you ask a busy person or someone you do not know for help or information. A friendly answer is 'No problem' or 'It's no bother.'"
+      },
+      "examples": [
+        {
+          "en": "Sorry to bother you, but is this the bus to the airport?",
+          "tr": "Rahatsız ediyorum ama havalimanı otobüsü bu mu?",
+          "register": "neutral",
+          "focus": "Sorry to bother you"
+        },
+        {
+          "en": "Hi, Hakan, sorry to bother you. Do you have a minute?",
+          "tr": "Selam Hakan, rahatsız ettiğim için kusura bakma. Bir dakikan var mı?",
+          "register": "neutral",
+          "focus": "sorry to bother you"
+        },
+        {
+          "en": "“Sorry to bother you so late.” “It's no bother. What's wrong?”",
+          "tr": "“Bu saatte rahatsız ettiğim için kusura bakma.” “Hiç sorun değil. Ne oldu?”",
+          "register": "informal",
+          "focus": "Sorry to bother you"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sorry to bother you, but",
+        "sorry to bother you again"
+      ],
+      "word_family": [],
+      "confusables": [
+        "excuse me",
+        "I'm sorry to hear that"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rahatsız ediyorum ama",
+          "gloss_short": "rahatsız ettim",
+          "alt": [
+            "kusura bakmayın",
+            "rahatsız ettim, pardon"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Meşgul birine ya da bir yabancıya bir şey sormadan önce söylenir; kibardır, her ortama uyar. Arkasından çoğu zaman 'but' gelir. Cevabı: 'No problem.' ya da 'It's no bother.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Sorry to ______ you, but where is the post office?” “Sure, it's over there.”",
+        "answer": "bother",
+        "distractors": [
+          "hear",
+          "miss",
+          "leave"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fault.n.1",
+      "lemma": "fault",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "responsibility for something bad",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɔːlt/",
+        "uk": "/fɔːlt/"
+      },
+      "def": {
+        "micro": "the blame for a problem",
+        "short": "the responsibility for something bad that has happened",
+        "long": "If something bad happens because of you, the responsibility is yours. People often say 'It's my fault' or 'It's not your fault' to show who caused a problem."
+      },
+      "grammar": {
+        "pattern": "sb's fault · It's (not) my/your fault"
+      },
+      "examples": [
+        {
+          "en": "Don't be sad. It isn't your fault.",
+          "tr": "Üzülme. Bu senin suçun değil.",
+          "register": "neutral",
+          "focus": "fault"
+        },
+        {
+          "en": "Sorry, Yuki, the mess in the kitchen is my fault.",
+          "tr": "Kusura bakma Yuki, mutfaktaki dağınıklık benim suçum.",
+          "register": "neutral",
+          "focus": "fault"
+        },
+        {
+          "en": "We missed the start of the film, and it was all my fault.",
+          "tr": "Filmin başını kaçırdık ve bu tamamen benim suçumdu.",
+          "register": "neutral",
+          "focus": "fault"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "my fault",
+        "not your fault",
+        "all my fault",
+        "whose fault"
+      ],
+      "word_family": [],
+      "confusables": [
+        "mistake"
+      ],
+      "etymology": {
+        "text": "From Old French 'faute', from Latin 'fallere' (to deceive, to fail). The 'l' was added later in English spelling to look more like Latin.",
+        "origin": "Old French",
+        "confidence": "medium"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "suç",
+          "alt": [
+            "kabahat"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kendi hatanı kabul ederken 'It's my fault.', birini rahatlatırken 'It's not your fault.' denir; arkadaşa da patrona da söylenir. Türkçe 'hata' yanlış yapılan şey anlamında 'mistake' olur.",
+          "mistakes": [
+            {
+              "wrong": "It's not my mistake. The bus was late.",
+              "right": "It's not my fault. The bus was late.",
+              "why": "Türkçede 'benim hatam değil' denir ve 'hata' akla 'mistake' getirir. Kimin sorumlu olduğunu söylerken İngilizcede 'fault' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The accident was the other driver's ______. He didn't stop at the red light.",
+        "answer": "fault",
+        "distractors": [
+          "luck",
+          "choice",
+          "turn"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.it_wont_happen_again.phr.1",
+      "lemma": "it won't happen again",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "promise after an apology",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪt woʊnt ˈhæpən əˈɡɛn/",
+        "uk": "/ɪt wəʊnt ˈhæpən əˈɡɛn/"
+      },
+      "def": {
+        "micro": "a promise after saying sorry",
+        "short": "used after saying sorry to promise that you will not do the same bad thing",
+        "long": "You say this after you apologize, to promise that you will not make the same mistake. People say it at work, at school and to friends."
+      },
+      "examples": [
+        {
+          "en": "Sorry about the noise last night. It won't happen again.",
+          "tr": "Dün geceki gürültü için kusura bakmayın. Bir daha olmayacak.",
+          "register": "neutral",
+          "focus": "It won't happen again"
+        },
+        {
+          "en": "“You forgot to lock the door again, Jack.” “I know. It won't happen again.”",
+          "tr": "“Kapıyı kilitlemeyi yine unuttun Jack.” “Biliyorum. Bir daha olmayacak.”",
+          "register": "informal",
+          "focus": "It won't happen again"
+        },
+        {
+          "en": "I sent the report to the wrong client, but I promise it won't happen again.",
+          "tr": "Raporu yanlış müşteriye gönderdim ama söz veriyorum, bir daha olmayacak.",
+          "register": "neutral",
+          "focus": "it won't happen again"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sorry, it won't happen again"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir daha olmayacak",
+          "gloss_short": "bir daha olmaz",
+          "alt": [
+            "bir daha olmaz",
+            "tekrarlanmayacak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Özür dilerken söz vermek için eklenir: 'Sorry, it won't happen again.' Patrona, öğretmene ya da arkadaşa söylenebilir. Sözü güçlendirmek için başına 'I promise' gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry I shouted at you this morning. It won't ______ again.",
+        "answer": "happen",
+        "distractors": [
+          "become",
+          "come",
+          "stay"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.no_harm_done.phr.1",
+      "lemma": "no harm done",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "reply to an apology",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/noʊ ˈhɑːrm ˈdʌn/",
+        "uk": "/nəʊ ˈhɑːm ˈdʌn/"
+      },
+      "def": {
+        "micro": "nothing bad happened",
+        "short": "used to tell someone who says sorry that nothing bad happened and it is okay",
+        "long": "You say this to someone who says sorry when their small mistake did not hurt anyone or break anything. It means 'Don't worry about it.'"
+      },
+      "examples": [
+        {
+          "en": "“Sorry, I took your seat!” “That's OK, no harm done.”",
+          "tr": "“Pardon, yerinize oturdum!” “Sorun değil, bir şey olmadı.”",
+          "register": "informal",
+          "focus": "no harm done"
+        },
+        {
+          "en": "“I'm so sorry, I hit your car door.” “No harm done. There isn't a mark.”",
+          "tr": "“Çok özür dilerim, arabanızın kapısına çarptım.” “Bir şey olmadı. İz bile yok.”",
+          "register": "neutral",
+          "focus": "No harm done"
+        },
+        {
+          "en": "The vase fell off the table, but it didn't break, so no harm done.",
+          "tr": "Vazo masadan düştü ama kırılmadı, yani bir şey olmadı.",
+          "register": "informal",
+          "focus": "no harm done"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "it's OK, no harm done"
+      ],
+      "word_family": [],
+      "confusables": [
+        "never mind"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir şey olmadı",
+          "alt": [
+            "önemli değil",
+            "sorun yok"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Biri özür dilediğinde, gerçekten bir zarar yoksa söylenir; arkadaşa da yabancıya da rahatça kullanılır. Benzeri: 'Don't worry about it.' Ciddi bir zarar varsa söylenmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Sorry, I stood on your bag!” “It's fine. No ______ done.”",
+        "answer": "harm",
+        "distractors": [
+          "work",
+          "deal",
+          "job"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.im_afraid.phr.1",
+      "lemma": "I'm afraid",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "politely giving bad news",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪm əˈfreɪd/",
+        "uk": "/aɪm əˈfreɪd/"
+      },
+      "def": {
+        "micro": "a soft start to bad news",
+        "short": "used to say sorry in a polite way before you give bad news or say no",
+        "long": "A polite way to start bad news or to say no. There is no fear here: 'I'm afraid I can't come' means 'Sorry, I can't come.'"
+      },
+      "grammar": {
+        "pattern": "I'm afraid + sentence · I'm afraid so/not"
+      },
+      "examples": [
+        {
+          "en": "I'm afraid the pool is closed for repairs.",
+          "tr": "Maalesef havuz tamir için kapalı.",
+          "register": "neutral",
+          "focus": "I'm afraid"
+        },
+        {
+          "en": "“Is there a later train?” “I'm afraid not. That was the last one.”",
+          "tr": "“Daha geç bir tren var mı?” “Maalesef yok. O sonuncusuydu.”",
+          "register": "neutral",
+          "focus": "I'm afraid"
+        },
+        {
+          "en": "I'm afraid I can't help you with that, Priya. Please ask the manager.",
+          "tr": "Korkarım bu konuda size yardım edemem Priya Hanım. Lütfen müdüre sorun.",
+          "register": "formal",
+          "focus": "I'm afraid"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "I'm afraid so",
+        "I'm afraid not",
+        "I'm afraid I can't"
+      ],
+      "word_family": [],
+      "confusables": [
+        "afraid"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "maalesef",
+          "alt": [
+            "korkarım ki",
+            "ne yazık ki"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kötü haberi ya da 'hayır' cevabını kibarca vermek için kullanılır; korku anlamı yoktur. Mağazada, telefonda, iş yerinde çok yaygındır. 'I'm afraid so.' = maalesef evet, 'I'm afraid not.' = maalesef hayır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Can I pay by card?” “I'm ______ not. We only take cash.”",
+        "answer": "afraid",
+        "distractors": [
+          "sorry",
+          "happy",
+          "worried"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.oops.interj.1",
+      "lemma": "oops",
+      "type": "word",
+      "pos": "interj",
+      "sense_no": 1,
+      "sense_note": "small mistake or accident",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/uːps/",
+        "uk": "/ʊps/"
+      },
+      "def": {
+        "micro": "said after a small mistake",
+        "short": "a word you say when you make a small mistake or have a small accident",
+        "long": "A short word that people say when something small goes wrong, like pressing the wrong button. For serious problems people say 'Oh no!' instead."
+      },
+      "examples": [
+        {
+          "en": "Oops, I pressed the wrong button.",
+          "tr": "Hay aksi, yanlış düğmeye bastım.",
+          "register": "informal",
+          "focus": "Oops"
+        },
+        {
+          "en": "Oops, I called you by mistake. Sorry, Murat!",
+          "tr": "Tüh, seni yanlışlıkla aradım. Kusura bakma Murat!",
+          "register": "informal",
+          "focus": "Oops"
+        },
+        {
+          "en": "Oops, this is the wrong room. I'm looking for room 12.",
+          "tr": "Hay aksi, burası yanlış oda. 12 numaralı odayı arıyorum.",
+          "register": "informal",
+          "focus": "Oops"
+        }
+      ],
+      "synonyms": [
+        "whoops"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "oops, sorry"
+      ],
+      "word_family": [],
+      "confusables": [
+        "oh no"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hay aksi",
+          "alt": [
+            "eyvah",
+            "tüh"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Küçük kazalarda ve küçük hatalarda kendiliğinden söylenir; çok rahat bir sözdür. Ciddi bir durumda 'Oh no!' denir. Birinden özür dilemek için arkasından 'Sorry!' eklenir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______! I wrote your name wrong. Let me fix it.",
+        "answer": "Oops",
+        "distractors": [
+          "Yummy",
+          "Cheers",
+          "Hooray"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

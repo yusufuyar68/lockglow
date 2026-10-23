@@ -1,0 +1,996 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.what_do_you_think.phr.1",
+      "lemma": "what do you think",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking for someone's opinion",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wʌt də ju ˈθɪŋk/",
+        "uk": "/wɒt də ju ˈθɪŋk/"
+      },
+      "def": {
+        "micro": "asks for someone's view",
+        "short": "a question you ask when you want to hear another person's opinion",
+        "long": "A question you ask when you want to hear another person's idea or feeling about something. Add 'of' or 'about' for the topic: 'What do you think of my new phone?'"
+      },
+      "grammar": {
+        "pattern": "What do you think (of / about + noun)?"
+      },
+      "examples": [
+        {
+          "en": "I like this blue jacket. What do you think?",
+          "tr": "Bu mavi ceketi beğendim. Sen ne düşünüyorsun?",
+          "register": "neutral",
+          "focus": "What do you think"
+        },
+        {
+          "en": "What do you think of the new teacher, Nazlı?",
+          "tr": "Yeni öğretmen hakkında ne düşünüyorsun Nazlı?",
+          "register": "neutral",
+          "focus": "What do you think"
+        },
+        {
+          "en": "“What do you think about leaving early?” “Good idea. The roads get busy.”",
+          "tr": "“Erken çıkmaya ne dersin?” “İyi fikir. Yollar kalabalık oluyor.”",
+          "register": "neutral",
+          "focus": "What do you think"
+        }
+      ],
+      "synonyms": [
+        "what's your view"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "what do you think of",
+        "what do you think about"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne düşünüyorsun?",
+          "alt": [
+            "sence?",
+            "ne dersin?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşa, aileye ya da iş arkadaşına fikir sormanın kibar ve doğal yoludur. Türkçedeki 'Sence nasıl?' akla gelse de 'How' değil 'What' kullanılır. Cevap: 'I think…' ya da 'I love it!'",
+          "mistakes": [
+            {
+              "wrong": "How do you think?",
+              "right": "What do you think?",
+              "why": "Türkçede 'Sence nasıl?' ya da 'Nasıl düşünüyorsun?' denir, bu yüzden 'how' akla gelir. İngilizcede birinin fikrini sorarken 'what' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Look at my new haircut. ______ do you think?” “I love it!”",
+        "answer": "What",
+        "distractors": [
+          "How",
+          "Which",
+          "Who"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_dont_think_so.phr.1",
+      "lemma": "I don't think so",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a soft no or disagreement",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ doʊnt ˈθɪŋk soʊ/",
+        "uk": "/aɪ dəʊnt ˈθɪŋk səʊ/"
+      },
+      "def": {
+        "micro": "a soft way to say no",
+        "short": "a polite way to say no or to say that you believe something is not true",
+        "long": "A soft, polite way to say no or to show that you believe something is not true. It sounds less strong than a plain 'No.'"
+      },
+      "examples": [
+        {
+          "en": "“Is the shop open now?” “I don't think so. It's Sunday.”",
+          "tr": "“Dükkân şimdi açık mı?” “Sanmıyorum. Bugün pazar.”",
+          "register": "neutral",
+          "focus": "I don't think so"
+        },
+        {
+          "en": "“Did Kenji call?” “I don't think so. My phone didn't ring.”",
+          "tr": "“Kenji aradı mı?” “Sanmıyorum. Telefonum çalmadı.”",
+          "register": "neutral",
+          "focus": "I don't think so"
+        },
+        {
+          "en": "“Is this seat taken?” “I don't think so. Please sit down.”",
+          "tr": "“Bu koltuk dolu mu?” “Sanmıyorum. Buyurun, oturun.”",
+          "register": "neutral",
+          "focus": "I don't think so"
+        }
+      ],
+      "synonyms": [
+        "I doubt it"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "no, I don't think so",
+        "I really don't think so"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sanmıyorum",
+          "alt": [
+            "sanmam",
+            "bence değil"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Herkese söylenir; düz 'No' demekten daha kibardır. İngilizcede 'not' sözcüğü 'think' ile gelir: 'I don't think he's coming.' (Bence gelmiyor.) Olumlusu: 'I think so.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Will it rain today?” “______. The sky is clear and blue.”",
+        "answer": "I don't think so",
+        "distractors": [
+          "I think so",
+          "I don't think",
+          "Me neither"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.its_up_to_you.phr.1",
+      "lemma": "it's up to you",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "the choice is yours",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪts ʌp tə ˈjuː/",
+        "uk": "/ɪts ʌp tə ˈjuː/"
+      },
+      "def": {
+        "micro": "you can choose",
+        "short": "you can decide; the choice belongs to you, not to me",
+        "long": "You say this when you let the other person make the choice. It sounds friendly and shows you are happy with any answer."
+      },
+      "grammar": {
+        "pattern": "It's up to you (+ which / what / whether …)"
+      },
+      "examples": [
+        {
+          "en": "“Beach or mountains this summer?” “It's up to you.”",
+          "tr": "“Bu yaz deniz mi, dağ mı?” “Sana kalmış.”",
+          "register": "neutral",
+          "focus": "It's up to you"
+        },
+        {
+          "en": "“Shall we go by bus or by taxi?” “It's up to you, Leyla. Both are fine.”",
+          "tr": "“Otobüsle mi gidelim, taksiyle mi?” “Sana kalmış Leyla. İkisi de olur.”",
+          "register": "neutral",
+          "focus": "It's up to you"
+        },
+        {
+          "en": "It's up to you which film we watch tonight.",
+          "tr": "Bu akşam hangi filmi izleyeceğimiz sana kalmış.",
+          "register": "neutral",
+          "focus": "It's up to you"
+        }
+      ],
+      "synonyms": [
+        "you decide",
+        "your choice"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "it's up to you to decide",
+        "it's entirely up to you"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sana kalmış",
+          "alt": [
+            "sen bilirsin",
+            "karar senin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşa, aileye, iş arkadaşına söylenir; kararı ona bırakır. 'Sana bağlı' için de bu söylenir. 'Sen bilirsin' bazen soğuk duyulur, bu ifade ise dostçadır. Kararı sen vereceksen: 'It's up to me.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "it depends"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Should we eat at home or go out?” “I don't mind. It's ______.”",
+        "answer": "up to you",
+        "distractors": [
+          "about you",
+          "from you",
+          "for you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.as_far_as_i_know.phr.1",
+      "lemma": "as far as I know",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "from the facts I have",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əz ˈfɑːr əz aɪ ˈnoʊ/",
+        "uk": "/əz ˈfɑːr əz aɪ ˈnəʊ/"
+      },
+      "def": {
+        "micro": "based on my information",
+        "short": "used when you think something is true, but you are not completely sure",
+        "long": "You use this to give information that you believe is true, but you may not have all the facts. It can come at the start or at the end of the sentence."
+      },
+      "examples": [
+        {
+          "en": "As far as I know, the museum is free on Mondays.",
+          "tr": "Bildiğim kadarıyla müze pazartesi günleri ücretsiz.",
+          "register": "neutral",
+          "focus": "As far as I know"
+        },
+        {
+          "en": "“Is Ozan coming tonight?” “As far as I know, yes.”",
+          "tr": "“Ozan bu akşam geliyor mu?” “Bildiğim kadarıyla evet.”",
+          "register": "neutral",
+          "focus": "As far as I know"
+        },
+        {
+          "en": "This train doesn't stop in small towns, as far as I know.",
+          "tr": "Bildiğim kadarıyla bu tren küçük kasabalarda durmuyor.",
+          "register": "neutral",
+          "focus": "as far as I know"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "as far as I can tell",
+        "as far as I remember"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bildiğim kadarıyla",
+          "gloss_short": "bildiğime göre",
+          "alt": [
+            "bildiğime göre"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Her ortamda kullanılır; bilgin eksik olabilir diye kibarca uyarır. Emin olmadığın bir bilgiyi verirken iyi bir seçimdir. Cümlenin başında ya da sonunda gelebilir.",
+          "mistakes": [
+            {
+              "wrong": "As I know, the bank closes at five.",
+              "right": "As far as I know, the bank closes at five.",
+              "why": "Türkçedeki 'bildiğim kadarıyla' kısaca 'As I know' diye çevrilir. İngilizcede bu doğal değildir; bu anlam için 'as far as I know' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "as long as"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______ I know, the shop closes at eight. But check online.",
+        "answer": "As far as",
+        "distractors": [
+          "As long as",
+          "As soon as",
+          "As much as"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.id_rather.phr.1",
+      "lemma": "I'd rather",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "prefer to do something",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪd ˈræðər/",
+        "uk": "/aɪd ˈrɑːðə/"
+      },
+      "def": {
+        "micro": "would prefer to",
+        "short": "used to say which thing you want to do more than another",
+        "long": "You use this to say which thing you want to do more. A verb without 'to' comes after it: 'I'd rather walk.' To say no politely: 'I'd rather not.'"
+      },
+      "grammar": {
+        "pattern": "I'd rather + verb (than + verb) · I'd rather not"
+      },
+      "examples": [
+        {
+          "en": "It's raining. I'd rather stay home this evening.",
+          "tr": "Yağmur yağıyor. Bu akşam evde kalmayı tercih ederim.",
+          "register": "neutral",
+          "focus": "I'd rather"
+        },
+        {
+          "en": "“Shall we take the bus?” “I'd rather walk. It's a nice day.”",
+          "tr": "“Otobüse binelim mi?” “Yürümeyi tercih ederim. Hava çok güzel.”",
+          "register": "neutral",
+          "focus": "I'd rather"
+        },
+        {
+          "en": "“Do you want to talk about it?” “I'd rather not, Julia.”",
+          "tr": "“Bunun hakkında konuşmak ister misin?” “Konuşmamayı tercih ederim Julia.”",
+          "register": "neutral",
+          "focus": "I'd rather"
+        }
+      ],
+      "synonyms": [
+        "I'd prefer to"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "I'd rather not",
+        "I'd rather stay home",
+        "I'd rather walk"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tercih ederim",
+          "alt": [
+            "daha çok isterim",
+            "yeğlerim"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kibarca tercih bildirir; arkadaşa da iş yerinde de söylenir. I'd = I would. Ardından 'to' gelmez: 'I'd rather walk.' Bir teklifi kibarca geri çevirmek için: 'I'd rather not.'",
+          "mistakes": [
+            {
+              "wrong": "I'd rather to stay home.",
+              "right": "I'd rather stay home.",
+              "why": "Türkçede 'evde kalmayı tercih ederim' denir ve 'prefer to' gibi düşünülür, bu yüzden 'to' eklenir. 'I'd rather' sonrasında fiil 'to' olmadan gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "prefer",
+        "I'd better go"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Do you want to go out?” “No, I'd ______ watch a film at home.”",
+        "answer": "rather",
+        "distractors": [
+          "prefer",
+          "love",
+          "want"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.personally.adv.1",
+      "lemma": "personally",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "giving your own opinion",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɜːrsənəli/",
+        "uk": "/ˈpɜːsənəli/"
+      },
+      "def": {
+        "micro": "speaking for myself",
+        "short": "used to show that you are giving your own opinion, not other people's",
+        "long": "You say this before your own opinion, often when other people may think differently. It usually comes at the start: 'Personally, I…'"
+      },
+      "examples": [
+        {
+          "en": "Personally, I like winter more than summer.",
+          "tr": "Şahsen kışı yazdan daha çok severim.",
+          "register": "neutral",
+          "focus": "Personally"
+        },
+        {
+          "en": "Everyone loves that show, but personally, I find it boring.",
+          "tr": "Herkes o diziyi seviyor ama ben şahsen sıkıcı buluyorum.",
+          "register": "neutral",
+          "focus": "personally"
+        },
+        {
+          "en": "Personally, I think the train is better than the plane for short trips.",
+          "tr": "Şahsen kısa yolculuklar için trenin uçaktan daha iyi olduğunu düşünüyorum.",
+          "register": "neutral",
+          "focus": "Personally"
+        }
+      ],
+      "synonyms": [
+        "for me"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "personally, I think",
+        "speaking personally"
+      ],
+      "word_family": [
+        {
+          "lemma": "personal",
+          "pos": "adj"
+        },
+        {
+          "lemma": "person",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şahsen",
+          "alt": [
+            "kişisel olarak",
+            "kendi adıma"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kendi fikrini söylerken kullanılır; başkaları farklı düşünebilir diye sözünü yumuşatır. Her ortamda olur. Genelde cümlenin başında, virgülle gelir: 'Personally, I…'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My friends love camping, but ______, I hate sleeping in a tent.",
+        "answer": "personally",
+        "distractors": [
+          "suddenly",
+          "nearly",
+          "slowly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.to_be_honest.phr.1",
+      "lemma": "to be honest",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "before an honest opinion",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tə bi ˈɑːnɪst/",
+        "uk": "/tə bi ˈɒnɪst/"
+      },
+      "def": {
+        "micro": "saying what I really think",
+        "short": "used before you say what you really think, often something a little negative",
+        "long": "You say this before a true opinion that the other person may not like. It makes your words softer and shows that you mean them."
+      },
+      "examples": [
+        {
+          "en": "To be honest, I didn't like the film.",
+          "tr": "Açıkçası filmi beğenmedim.",
+          "register": "neutral",
+          "focus": "To be honest"
+        },
+        {
+          "en": "“Do you like my new glasses?” “To be honest, I liked the old ones more.”",
+          "tr": "“Yeni gözlüğümü beğendin mi?” “Açıkçası eskisini daha çok beğenmiştim.”",
+          "register": "neutral",
+          "focus": "To be honest"
+        },
+        {
+          "en": "To be honest, Emre, I forgot about our meeting.",
+          "tr": "Açıkçası Emre, toplantımızı unuttum.",
+          "register": "neutral",
+          "focus": "To be honest"
+        }
+      ],
+      "synonyms": [
+        "honestly",
+        "frankly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "to be honest with you",
+        "to be completely honest"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açıkçası",
+          "alt": [
+            "doğrusu",
+            "dürüst olmak gerekirse"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşa da iş yerinde de söylenir; hoş olmayan bir fikirden önce karşındakini hazırlar. Benzeri: 'Honestly, …' Kibarca hayır demek için de işe yarar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“How was the pizza?” “______, it was a bit cold.”",
+        "answer": "To be honest",
+        "distractors": [
+          "To be honestly",
+          "Be honest",
+          "To honesty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_sense.phr.1",
+      "lemma": "make sense",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "be logical or easy to understand",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈsɛns/",
+        "uk": "/meɪk ˈsɛns/"
+      },
+      "def": {
+        "micro": "be clear or logical",
+        "short": "to be easy to understand, or to seem like a good and logical idea",
+        "long": "If something is clear and logical, you can follow it easily. People say 'That makes sense.' when they understand, and 'It doesn't make sense.' when something seems wrong."
+      },
+      "grammar": {
+        "pattern": "something makes sense · It doesn't make sense"
+      },
+      "examples": [
+        {
+          "en": "Oh, that makes sense. Thanks for explaining.",
+          "tr": "Haa, bu mantıklı. Açıkladığın için teşekkürler.",
+          "register": "neutral",
+          "focus": "makes sense"
+        },
+        {
+          "en": "This text message doesn't make sense. Can you write it again?",
+          "tr": "Bu mesaj anlaşılmıyor. Tekrar yazabilir misin?",
+          "register": "neutral",
+          "focus": "make sense"
+        },
+        {
+          "en": "It makes sense to buy a monthly bus pass if you travel every day, Kenji.",
+          "tr": "Her gün yolculuk yapıyorsan aylık otobüs kartı almak mantıklı Kenji.",
+          "register": "neutral",
+          "focus": "makes sense"
+        }
+      ],
+      "synonyms": [
+        "be logical"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "that makes sense",
+        "it makes sense to",
+        "doesn't make sense"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mantıklı olmak",
+          "alt": [
+            "anlaşılır olmak",
+            "anlam ifade etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşa da iş yerinde de söylenir. Bir açıklamayı anlayınca 'That makes sense.' dersin; olumsuzu: 'It doesn't make sense.' 'Mantıklı' için 'logic' (mantık) denmez; bu kalıp ya da 'logical' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "sensible"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“The shop is closed because the owner is sick.” “Oh, that ______ sense.”",
+        "answer": "makes",
+        "distractors": [
+          "does",
+          "has",
+          "gives"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fair_enough.phr.1",
+      "lemma": "fair enough",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "accepting someone's reason",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfɛr ɪˈnʌf/",
+        "uk": "/ˌfeər ɪˈnʌf/"
+      },
+      "def": {
+        "micro": "OK, I accept your reason",
+        "short": "said when you accept someone's reason or point, even if you are not happy",
+        "long": "You say this when someone gives you a reason or makes a point and you accept it. You may not fully agree or be happy, but you understand. It is informal and very common in British English."
+      },
+      "examples": [
+        {
+          "en": "“I can't come tonight. I have to work.” “Fair enough.”",
+          "tr": "“Bu akşam gelemem. Çalışmam gerekiyor.” “Tamam, anlıyorum.”",
+          "register": "informal",
+          "focus": "Fair enough"
+        },
+        {
+          "en": "“This hotel is cheap, but it's very far from the beach.” “Fair enough, let's find another one.”",
+          "tr": "“Bu otel ucuz ama plaja çok uzak.” “Haklısın, başka bir tane bulalım.”",
+          "register": "informal",
+          "focus": "Fair enough"
+        },
+        {
+          "en": "Mia didn't want to drive in the snow, and her brother said, “Fair enough. I'll drive.”",
+          "tr": "Mia karda araba kullanmak istemedi, kardeşi de “Tamam, haklısın. Ben kullanırım.” dedi.",
+          "register": "informal",
+          "focus": "Fair enough"
+        }
+      ],
+      "synonyms": [
+        "that's fair",
+        "OK then"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "fair enough, but",
+        "that's fair enough"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "peki, anlıyorum",
+          "alt": [
+            "haklısın",
+            "makul",
+            "mantıklı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Karşındakinin gerekçesini kabul ederken söylenir; tam katılmasan da 'tamam, anlıyorum' demektir. Arkadaşlar ve iş arkadaşları arasında gayriresmî bir kalıptır, özellikle İngiliz İngilizcesinde çok yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Sorry, I can't help you move on Sunday. I have an exam on Monday.” “______. Good luck!”",
+        "answer": "Fair enough",
+        "distractors": [
+          "Not bad",
+          "Good job",
+          "Hurry up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.why_not.phr.1",
+      "lemma": "why not",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "agreeing to a suggestion",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwaɪ ˈnɑːt/",
+        "uk": "/ˌwaɪ ˈnɒt/"
+      },
+      "def": {
+        "micro": "yes, that is a good idea",
+        "short": "a friendly way to say yes to an idea or a plan that someone suggests",
+        "long": "You say this to agree to someone's idea or plan. It means you see no reason to say no. People often say 'Sure, why not?' It is friendly and can be used with friends or at work."
+      },
+      "examples": [
+        {
+          "en": "“Let's try the new café.” “Why not?”",
+          "tr": "“Yeni kafeyi deneyelim.” “Neden olmasın?”",
+          "register": "neutral",
+          "focus": "Why not"
+        },
+        {
+          "en": "“Do you want to come to the beach with us, Barış?” “Sure, why not?”",
+          "tr": "“Bizimle plaja gelmek ister misin Barış?” “Olur, neden olmasın?”",
+          "register": "informal",
+          "focus": "why not"
+        },
+        {
+          "en": "I've never tried Korean food before, but why not? Let's go there tonight.",
+          "tr": "Daha önce hiç Kore yemeği denemedim ama neden olmasın? Bu akşam oraya gidelim.",
+          "register": "neutral",
+          "focus": "why not"
+        }
+      ],
+      "synonyms": [
+        "sure",
+        "OK"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "sure, why not",
+        "yeah, why not"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "neden olmasın",
+          "alt": [
+            "olur",
+            "niye olmasın"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir öneriyi kabul ederken arkadaşa da iş arkadaşına da söylenir. Dikkat: 'I can't come.' cümlesine 'Why not?' diye cevap verirsen 'Neden gelemiyorsun?' diye sormuş olursun.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Do you want to watch a film at my place tonight?” “______? I'm free.”",
+        "answer": "Why not",
+        "distractors": [
+          "What for",
+          "How come",
+          "Since when"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

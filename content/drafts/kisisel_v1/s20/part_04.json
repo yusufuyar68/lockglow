@@ -1,0 +1,959 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.no_offense.phr.1",
+      "lemma": "no offense",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "before an honest criticism",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/noʊ əˈfɛns/",
+        "uk": "/nəʊ əˈfɛns/"
+      },
+      "def": {
+        "micro": "please don't feel hurt",
+        "short": "said before an honest comment that may upset someone, to show you are not rude",
+        "long": "You say this before an honest opinion or a small criticism, so the other person does not feel hurt. The usual answer is 'None taken.' British English spells it 'no offence'."
+      },
+      "examples": [
+        {
+          "en": "No offense, but your coffee is too strong for me.",
+          "tr": "Alınma ama kahven bana fazla sert.",
+          "register": "informal",
+          "focus": "No offense"
+        },
+        {
+          "en": "“No offense, Hana, but that hat looks funny.” “None taken. It's my dad's!”",
+          "tr": "“Alınma Hana ama o şapka komik duruyor.” “Alınmadım. Babamın şapkası!”",
+          "register": "informal",
+          "focus": "No offense"
+        },
+        {
+          "en": "No offense, but I think the blue jacket looks better on you.",
+          "tr": "Alınma ama bence mavi ceket sana daha çok yakışıyor.",
+          "register": "informal",
+          "focus": "No offense"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "no offense, but",
+        "none taken"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "alınma ama",
+          "alt": [
+            "kusura bakma ama",
+            "gücenme ama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşa dürüst bir eleştiri yapmadan önce söylenir; arkasından genelde 'but' gelir. Cevabı: 'None taken.' (alınmadım). İngiliz yazımı 'no offence'. Kaba bir sözü kibar yapmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“______, but your jokes aren't funny.” “None taken.”",
+        "answer": "No offense",
+        "distractors": [
+          "No way",
+          "No wonder",
+          "Never mind"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.how_was_your_weekend.phr.1",
+      "lemma": "how was your weekend",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "Monday small talk question",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haʊ wəz jər ˈwiːkɛnd/",
+        "uk": "/haʊ wəz jɔː ˌwiːkˈɛnd/"
+      },
+      "def": {
+        "micro": "a Monday small talk question",
+        "short": "a friendly question about what someone did on Saturday and Sunday",
+        "long": "A common question at work or school on Monday morning. Answer in a few words and then ask back: 'It was great, thanks. How about yours?'"
+      },
+      "examples": [
+        {
+          "en": "Good morning, Selin! How was your weekend?",
+          "tr": "Günaydın Selin! Hafta sonun nasıldı?",
+          "register": "neutral",
+          "focus": "How was your weekend"
+        },
+        {
+          "en": "“How was your weekend?” “Quiet. I stayed home and read. How about yours?”",
+          "tr": "“Hafta sonun nasıldı?” “Sakindi. Evde kalıp kitap okudum. Seninki nasıldı?”",
+          "register": "neutral",
+          "focus": "How was your weekend"
+        },
+        {
+          "en": "“Hi, Murat. How was your weekend?” “Busy! We moved to a new flat.”",
+          "tr": "“Selam Murat. Hafta sonun nasıldı?” “Yoğundu! Yeni bir daireye taşındık.”",
+          "register": "informal",
+          "focus": "How was your weekend"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "how was the weekend"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hafta sonun nasıldı?",
+          "gloss_short": "nasıl geçti?",
+          "alt": [
+            "hafta sonu nasıl geçti?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Pazartesi iş yerinde ya da okulda sık sorulan bir sohbet sorusudur. Kısa cevap verip soruyu geri sormak kibar olur: 'It was nice, thanks. How about yours?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“How ______ your weekend?” “Great! We went to the beach on Saturday.”",
+        "answer": "was",
+        "distractors": [
+          "did",
+          "were",
+          "had"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.what_do_you_do.phr.1",
+      "lemma": "what do you do",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking about someone's job",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wʌt də ju ˈduː/",
+        "uk": "/wɒt də ju ˈduː/"
+      },
+      "def": {
+        "micro": "what is your job",
+        "short": "a common question to find out what someone's job is",
+        "long": "A usual question when you meet someone new: it asks about their work, not about this moment. Answer with 'I'm a nurse' or 'I work in a bank.'"
+      },
+      "examples": [
+        {
+          "en": "“What do you do, Jack?” “I'm a taxi driver.”",
+          "tr": "“Ne iş yapıyorsun Jack?” “Taksi şoförüyüm.”",
+          "register": "neutral",
+          "focus": "What do you do"
+        },
+        {
+          "en": "“So, what do you do?” “I work in a bank near the station.”",
+          "tr": "“Eee, ne iş yapıyorsun?” “İstasyonun yakınındaki bir bankada çalışıyorum.”",
+          "register": "neutral",
+          "focus": "what do you do"
+        },
+        {
+          "en": "“What do you do?” “I'm a teacher. And you?” “I'm still a student.”",
+          "tr": "“Ne iş yapıyorsun?” “Öğretmenim. Ya sen?” “Ben hâlâ öğrenciyim.”",
+          "register": "neutral",
+          "focus": "What do you do"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "what do you do for a living"
+      ],
+      "word_family": [],
+      "confusables": [
+        "what are you doing"
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne iş yapıyorsun",
+          "alt": [
+            "mesleğin ne?",
+            "ne iş yaparsın?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yeni tanıştığın birine işini sormanın en doğal yoludur; her ortamda kullanılır. Cevabı: 'I'm a nurse.' ya da 'I work in a bank.' Şu an ne yaptığını sormak için 'What are you doing?' denir.",
+          "mistakes": [
+            {
+              "wrong": "So, what are you doing? Are you a teacher?",
+              "right": "So, what do you do? Are you a teacher?",
+              "why": "Türkçede meslek 'Ne iş yapıyorsun?' diye şimdiki zamanla sorulur. İngilizcede meslek geniş zamanla sorulur; 'What are you doing?' 'Şu an ne yapıyorsun?' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“______?” “I'm a dentist. I work at a small clinic.”",
+        "answer": "What do you do",
+        "distractors": [
+          "What did you do",
+          "How do you do",
+          "What do you like"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.where_are_you_from.phr.1",
+      "lemma": "where are you from",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking someone's home country or city",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɛr ər ju ˈfrʌm/",
+        "uk": "/weər ə ju ˈfrɒm/"
+      },
+      "def": {
+        "micro": "asking about someone's home",
+        "short": "a question about the country or city where someone was born or grew up",
+        "long": "A common question when you meet someone new. Answer with a country or a city: 'I'm from Türkiye' or 'I'm from Izmir.'"
+      },
+      "examples": [
+        {
+          "en": "“Where are you from?” “I'm from Trabzon.”",
+          "tr": "“Nerelisin?” “Trabzonluyum.”",
+          "register": "neutral",
+          "focus": "Where are you from"
+        },
+        {
+          "en": "“Where are you from, Hana?” “I'm from Seoul, but I live in Ankara now.”",
+          "tr": "“Nerelisin Hana?” “Seulluyum ama şimdi Ankara'da yaşıyorum.”",
+          "register": "neutral",
+          "focus": "Where are you from"
+        },
+        {
+          "en": "“I love your accent. Where are you from?” “I'm Turkish. I'm from Bursa.”",
+          "tr": "“Aksanına bayıldım. Nerelisin?” “Türk'üm. Bursalıyım.”",
+          "register": "informal",
+          "focus": "Where are you from"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "originally from"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nerelisin?",
+          "alt": [
+            "nerelisiniz?",
+            "nereden geliyorsun?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tanışırken sorulur; her ortama uyar. Cevap ülke ya da şehirle verilir: 'I'm from Türkiye.' Milliyet 'from' olmadan söylenir: 'I'm Turkish.' Konuşmada 'Turkey' adı da hâlâ yaygındır.",
+          "mistakes": [
+            {
+              "wrong": "I'm from Turkish.",
+              "right": "I'm from Türkiye. / I'm Turkish.",
+              "why": "'Turkish' ülke adı değil; 'Türk' ve 'Türkçe' demektir. 'from' sonrası ülke ya da şehir gelir: 'from Türkiye'. Milliyet 'from' olmadan söylenir: 'I'm Turkish.'"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "cities_transport",
+        "topics": [
+          "cities_transport",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Where are you ______?” “Mexico. I came here two years ago.”",
+        "answer": "from",
+        "distractors": [
+          "of",
+          "in",
+          "by"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.have_we_met_before.phr.1",
+      "lemma": "have we met before",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "when a face looks familiar",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv wi ˈmɛt bɪˈfɔːr/",
+        "uk": "/hæv wi ˈmɛt bɪˈfɔː/"
+      },
+      "def": {
+        "micro": "do I know you already",
+        "short": "a question you ask when you think you know someone's face",
+        "long": "You ask this when a person looks familiar and you think you saw or knew them in the past. If you did not meet, the answer is 'No, I don't think so.'"
+      },
+      "examples": [
+        {
+          "en": "Excuse me, have we met before?",
+          "tr": "Affedersiniz, daha önce tanıştık mı?",
+          "register": "neutral",
+          "focus": "have we met before"
+        },
+        {
+          "en": "Hi, I'm Deniz. Have we met before? Your face looks familiar.",
+          "tr": "Merhaba, ben Deniz. Daha önce tanıştık mı? Yüzün tanıdık geliyor.",
+          "register": "neutral",
+          "focus": "Have we met before"
+        },
+        {
+          "en": "“Have we met before?” “Yes! We were in the same English class last year.”",
+          "tr": "“Daha önce tanıştık mı?” “Evet! Geçen yıl aynı İngilizce dersindeydik.”",
+          "register": "neutral",
+          "focus": "Have we met before"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "I think we've met before"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "daha önce tanıştık mı?",
+          "gloss_short": "tanışıyor muyuz?",
+          "alt": [
+            "tanışıyor muyuz?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Birinin yüzü tanıdık gelince sorulur; kibardır, her ortama uyar. Tanışmadıysanız cevap: 'No, I don't think so.' Hatırlıyorsanız: 'Yes, at the conference last year!'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Have we ______ before?” “Yes, at Selin's wedding last summer.”",
+        "answer": "met",
+        "distractors": [
+          "meet",
+          "known",
+          "seen"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.what_brings_you_here.phr.1",
+      "lemma": "what brings you here",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking why someone has come",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wʌt ˈbrɪŋz ju ˈhɪr/",
+        "uk": "/wɒt ˈbrɪŋz ju ˈhɪə/"
+      },
+      "def": {
+        "micro": "why did you come here",
+        "short": "a friendly question that asks someone why they have come to a place or an event",
+        "long": "A friendly way to ask a new person why they came to a place, such as a party, a course or a city. It sounds kind and interested, not rude."
+      },
+      "examples": [
+        {
+          "en": "Hi, I'm Hakan. So, what brings you here?",
+          "tr": "Merhaba, ben Hakan. Eee, buraya ne vesileyle geldin?",
+          "register": "neutral",
+          "focus": "what brings you here"
+        },
+        {
+          "en": "“What brings you to Istanbul, Deniz?” “Work. I'm here for a meeting.”",
+          "tr": "“Ne vesileyle İstanbul'dasın Deniz?” “İş. Bir toplantı için buradayım.”",
+          "register": "neutral",
+          "focus": "What brings you"
+        },
+        {
+          "en": "“What brings you here?” “I want to learn salsa, and my friend loves this class.”",
+          "tr": "“Seni buraya hangi rüzgâr attı?” “Salsa öğrenmek istiyorum, arkadaşım da bu kursa bayılıyor.”",
+          "register": "informal",
+          "focus": "What brings you here"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "what brings you to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne vesileyle buradasın?",
+          "gloss_short": "ne vesileyle?",
+          "alt": [
+            "seni buraya ne getirdi?",
+            "hangi rüzgâr attı?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Partide, kursta ya da yeni bir şehirde yeni tanıştığın birine sorulur; samimi ve kibardır. Cevap kısa bir nedendir: 'Work.' ya da 'I'm visiting a friend.' 'Why are you here?' ise kaba gelebilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“What ______ you here?” “I'm visiting my cousin for a week.”",
+        "answer": "brings",
+        "distractors": [
+          "takes",
+          "puts",
+          "makes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.isnt_it.phr.1",
+      "lemma": "isn't it",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "question tag after 'it is'",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪzənt ɪt/",
+        "uk": "/ˈɪzənt ɪt/"
+      },
+      "def": {
+        "micro": "asks the listener to agree",
+        "short": "a short question at the end of a sentence to check a fact or ask for agreement",
+        "long": "A short question that you add at the end of a sentence to check a fact or to start a friendly chat. Use it only after 'is': 'Cold today, isn't it?'"
+      },
+      "grammar": {
+        "pattern": "… is …, isn't it?"
+      },
+      "examples": [
+        {
+          "en": "It's really hot today, isn't it?",
+          "tr": "Bugün çok sıcak, değil mi?",
+          "register": "neutral",
+          "focus": "isn't it"
+        },
+        {
+          "en": "“This café is new, isn't it?” “Yes, it opened last month.”",
+          "tr": "“Bu kafe yeni, değil mi?” “Evet, geçen ay açıldı.”",
+          "register": "neutral",
+          "focus": "isn't it"
+        },
+        {
+          "en": "The pharmacy is open until ten, isn't it, Leyla?",
+          "tr": "Eczane saat ona kadar açık, değil mi Leyla?",
+          "register": "neutral",
+          "focus": "isn't it"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "nice day, isn't it",
+        "it's cold, isn't it"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değil mi?",
+          "alt": [
+            "öyle değil mi?"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Herkese söylenir; tanımadığın biriyle havadan sohbet açmak için de iyidir. Türkçedeki 'değil mi?' hiç değişmez, İngilizcede ise özneye ve fiile göre değişir: 'aren't you?', 'don't you?'. Cevabı: 'Yes, it is!'",
+          "mistakes": [
+            {
+              "wrong": "You are tired, isn't it?",
+              "right": "You're tired, aren't you?",
+              "why": "Türkçede her cümlenin sonuna aynı 'değil mi?' eklenir, bu yüzden 'isn't it?' her yere konur. İngilizcede ek özneye ve fiile uyar: 'you are' cümlesinden sonra 'aren't you?' gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's a lovely day today, ______?",
+        "answer": "isn't it",
+        "distractors": [
+          "doesn't it",
+          "aren't you",
+          "wasn't it"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.what_have_you_been_up_to.phr.1",
+      "lemma": "what have you been up to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking about someone's recent life",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wʌt əv ju bɪn ˈʌp tuː/",
+        "uk": "/wɒt əv ju biːn ˈʌp tuː/"
+      },
+      "def": {
+        "micro": "asks about your recent days",
+        "short": "a friendly question about the things someone did in the last weeks or months",
+        "long": "A friendly question to a person you have not seen for some time, about their work, studies or free time. Short answers are fine: 'Not much.' or 'Working a lot.'"
+      },
+      "examples": [
+        {
+          "en": "Hi, Emre! What have you been up to?",
+          "tr": "Selam Emre! Bu aralar neler yapıyorsun?",
+          "register": "informal",
+          "focus": "What have you been up to"
+        },
+        {
+          "en": "“What have you been up to lately?” “Not much. Just work and the gym.”",
+          "tr": "“Son zamanlarda neler yapıyorsun?” “Pek bir şey yok. Sadece iş ve spor salonu.”",
+          "register": "informal",
+          "focus": "What have you been up to"
+        },
+        {
+          "en": "I haven't seen you since the summer, Julia. What have you been up to?",
+          "tr": "Seni yazdan beri görmedim Julia. Bu aralar neler yapıyorsun?",
+          "register": "informal",
+          "focus": "What have you been up to"
+        }
+      ],
+      "synonyms": [
+        "what's new"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu aralar neler yapıyorsun?",
+          "gloss_short": "ne var ne yok?",
+          "alt": [
+            "neler yapıyorsun?",
+            "neler yaptın?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir süredir görmediğin arkadaşa ya da iş arkadaşına sorulan rahat bir sorudur. Kısa cevap yeter: 'Not much.' ya da 'Working a lot.' Sonra sen de sor: 'What about you?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "what are you up to",
+        "how have you been"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“It's been months! What have you been ______?” “Not much, just working.”",
+        "answer": "up to",
+        "distractors": [
+          "up for",
+          "out of",
+          "down to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.speaking_of.phr.1",
+      "lemma": "speaking of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "linking to a topic just mentioned",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspiːkɪŋ əv/",
+        "uk": "/ˈspiːkɪŋ əv/"
+      },
+      "def": {
+        "micro": "about the thing just said",
+        "short": "used to say something new that is connected to a thing someone just talked about",
+        "long": "You use this to move to a new point that is linked to the thing someone just mentioned. A noun comes after it: 'Speaking of holidays, where are you going this year?'"
+      },
+      "grammar": {
+        "pattern": "Speaking of + noun, + sentence"
+      },
+      "examples": [
+        {
+          "en": "Speaking of coffee, is there a good café near here?",
+          "tr": "Kahve demişken, buralarda iyi bir kafe var mı?",
+          "register": "neutral",
+          "focus": "Speaking of"
+        },
+        {
+          "en": "“Sam called me yesterday.” “Speaking of Sam, is he still in London?”",
+          "tr": "“Sam dün beni aradı.” “Sam demişken, hâlâ Londra'da mı?”",
+          "register": "informal",
+          "focus": "Speaking of"
+        },
+        {
+          "en": "That exam was really hard. Speaking of exams, when is the next one?",
+          "tr": "O sınav gerçekten zordu. Sınav demişken, bir sonraki ne zaman?",
+          "register": "neutral",
+          "focus": "Speaking of"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "speaking of which"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "… demişken",
+          "alt": [
+            "laf açılmışken",
+            "konu açılmışken"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşla da iş yerinde de kullanılır. Biri bir konudan söz edince onunla bağlantılı yeni bir şey söylersin; ardından konu gelir: 'Speaking of Sam, …'. İlgisiz yeni bir konu için 'by the way' daha uygundur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "by the way"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“A new pizza place opened near us.” “______ pizza, are you hungry?”",
+        "answer": "Speaking of",
+        "distractors": [
+          "Speaking to",
+          "Spoken of",
+          "Speaks of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.how_long_have_you_been.phr.1",
+      "lemma": "how long have you been",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking about time until now",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haʊ ˈlɔːŋ əv ju bɪn/",
+        "uk": "/haʊ ˈlɒŋ əv ju biːn/"
+      },
+      "def": {
+        "micro": "asks about time up to now",
+        "short": "a question about the time from the start of something until now",
+        "long": "A question about the time from the start of a situation until now, for example living in a city or learning a skill. Answer with 'for' (for two years) or 'since' (since 2020)."
+      },
+      "grammar": {
+        "pattern": "How long have you been + place / -ing?"
+      },
+      "examples": [
+        {
+          "en": "How long have you been in Ankara?",
+          "tr": "Ne zamandır Ankara'dasın?",
+          "register": "neutral",
+          "focus": "How long have you been"
+        },
+        {
+          "en": "“How long have you been learning English?” “For about two years.”",
+          "tr": "“Ne zamandır İngilizce öğreniyorsun?” “Yaklaşık iki yıldır.”",
+          "register": "neutral",
+          "focus": "How long have you been"
+        },
+        {
+          "en": "“How long have you been a taxi driver, Ozan?” “Since 2019.”",
+          "tr": "“Ne zamandır taksi şoförüsün Ozan?” “2019'dan beri.”",
+          "register": "neutral",
+          "focus": "How long have you been"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "how long have you been here"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne zamandır …?",
+          "alt": [
+            "ne kadar zamandır …?",
+            "kaç yıldır …?"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sohbette yeni tanıştığın birine sık sorulur, her ortamda kullanılır. Türkçede şimdiki zaman vardır ('Ne zamandır buradasın?') ama İngilizcede 'have been' gerekir. Cevap: 'For two years.' ya da 'Since May.'",
+          "mistakes": [
+            {
+              "wrong": "How long are you in Ankara?",
+              "right": "How long have you been in Ankara?",
+              "why": "Türkçe 'Ne zamandır Ankara'dasın?' şimdiki zamanla sorar. İngilizcede bugüne kadar süren durum için 'have you been' gerekir; 'How long are you in Ankara?' 'ne kadar kalacaksın' diye anlaşılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“How long ______ been here?” “Since nine this morning.”",
+        "answer": "have you",
+        "distractors": [
+          "are you",
+          "did you",
+          "were you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
