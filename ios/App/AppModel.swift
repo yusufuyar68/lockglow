@@ -77,8 +77,8 @@ final class AppModel: ObservableObject {
     /// Every word in the chosen level order: the widget's fallback and where new words come from
     /// once the chosen topics have none left.
     private(set) var allTopicsFeed: [WidgetWord] = []
-    /// content.sqlite for card details, the search and the widget plan's examples, opened off the
-    /// main thread by the loader (`start`); stays nil when only seed words are available.
+    /// content.sqlite for card details and the search, opened off the main thread by the loader
+    /// (`start`); stays nil when only seed words are available.
     private var detailStore: ContentStore?
     /// Not published: filling it while a view is being drawn must not trigger a redraw.
     private var detailCache: [Int: CardDetail] = [:]
@@ -917,7 +917,7 @@ final class AppModel: ObservableObject {
         let rewriteTime = TimelinePlanner.roundedDownToWholeSecond(Date())
         let request = widgetPlanRequest(
             store: store,
-            contentStore: contentSource == .database ? detailStore : nil,
+            usesDatabase: contentSource == .database,
             at: rewriteTime
         )
         planWriter.write(request, waitUntilWritten: waitUntilWritten) { [weak self] written in

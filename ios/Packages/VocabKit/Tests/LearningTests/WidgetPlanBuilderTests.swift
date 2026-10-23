@@ -52,10 +52,10 @@ final class WidgetPlanBuilderTests: XCTestCase {
         }
     }
 
-    /// What `WidgetPlanWriter` passes: a user's word keeps its own example.
-    private func planExample(customWords: [WidgetWord]) -> (WidgetWord) -> String? {
+    /// What `WidgetPlanWriter` passes: `detail(for:)` of the queued word.
+    private func planDetail(customWords: [WidgetWord]) -> (WidgetWord) -> CardDetail? {
         return { word in
-            word.isUserAdded ? nil : self.detail(of: word, customWords: customWords)?.shortestExample(containing: word.lemma)
+            self.detail(of: word, customWords: customWords)
         }
     }
 
@@ -172,7 +172,7 @@ final class WidgetPlanBuilderTests: XCTestCase {
             previousPlan: plan,
             state: state,
             planID: "new",
-            planExample: planExample(customWords: customWords)
+            planDetail: planDetail(customWords: customWords)
         )
         XCTAssertEqual(built, expected, file: file, line: line)
     }
@@ -195,7 +195,7 @@ final class WidgetPlanBuilderTests: XCTestCase {
         let deck = (1...40).map { card($0) }
         let input = makeInput(deck: deck, fallback: deck, progress: [:])
         assertSamePlan(input, at: now, plan: nil, state: nil)
-        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planExample: { _ in nil }))
+        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planDetail: { _ in nil }))
         XCTAssertEqual(plan.queue.first?.id, 1)
         XCTAssertEqual(plan.updatedAt, now)
         XCTAssertEqual(plan.intervalSeconds, 3600)
@@ -211,7 +211,7 @@ final class WidgetPlanBuilderTests: XCTestCase {
         for minutes in [30, 60, 120, 240] {
             let input = makeInput(deck: deck, fallback: deck, progress: [:], rotationMinutes: minutes)
             assertSamePlan(input, at: now, plan: oldPlan, state: state)
-            let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: oldPlan, state: state, planExample: { _ in nil }))
+            let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: oldPlan, state: state, planDetail: { _ in nil }))
             XCTAssertEqual(plan.queue.first?.id, visible.id, "\(minutes) min")
             XCTAssertEqual(plan.intervalSeconds, minutes * 60)
         }
@@ -230,7 +230,7 @@ final class WidgetPlanBuilderTests: XCTestCase {
         let progress = [3: Leitner.markKnown(WordProgress(wordID: 3), at: now.addingTimeInterval(-30))]
         let input = makeInput(deck: deck, fallback: deck, progress: progress)
         assertSamePlan(input, at: now, plan: oldPlan, state: nil)
-        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: oldPlan, state: nil, planExample: { _ in nil }))
+        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: oldPlan, state: nil, planDetail: { _ in nil }))
         XCTAssertFalse(plan.queue.contains { $0.id == 3 })
     }
 
@@ -242,12 +242,12 @@ final class WidgetPlanBuilderTests: XCTestCase {
         let edited = custom(1, lemma: "awkward", example: "It was an awkward silence.")
         let withEdit = makeInput(deck: [edited] + deck, fallback: [edited] + deck, progress: [:], customWords: [edited])
         assertSamePlan(withEdit, at: now, plan: oldPlan, state: nil, customWords: [edited])
-        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(withEdit, at: now, previousPlan: oldPlan, state: nil, planExample: planExample(customWords: [edited])))
+        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(withEdit, at: now, previousPlan: oldPlan, state: nil, planDetail: planDetail(customWords: [edited])))
         XCTAssertEqual(plan.queue.first, edited)
 
         let deleted = makeInput(deck: deck, fallback: deck, progress: [:], customWords: [])
         assertSamePlan(deleted, at: now, plan: oldPlan, state: nil)
-        let afterDelete = try XCTUnwrap(WidgetPlanBuilder.makePlan(deleted, at: now, previousPlan: oldPlan, state: nil, planExample: { _ in nil }))
+        let afterDelete = try XCTUnwrap(WidgetPlanBuilder.makePlan(deleted, at: now, previousPlan: oldPlan, state: nil, planDetail: { _ in nil }))
         XCTAssertFalse(afterDelete.queue.contains { $0.isUserAdded })
         XCTAssertEqual(afterDelete.queue.first?.id, 1)
     }
@@ -256,7 +256,7 @@ final class WidgetPlanBuilderTests: XCTestCase {
         let deck = (1...12).map { card($0) }
         let input = makeInput(deck: deck, fallback: deck, progress: [:])
         assertSamePlan(input, at: now, plan: nil, state: nil)
-        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planExample: planExample(customWords: [])))
+        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planDetail: planDetail(customWords: [])))
         for word in plan.queue {
             let original = try XCTUnwrap(deck.first { $0.id == word.id })
             if word.id % 4 == 1 {
@@ -272,11 +272,11 @@ final class WidgetPlanBuilderTests: XCTestCase {
 
     func testNoWordsNoPlan() {
         let input = makeInput(deck: [], fallback: [], progress: [:])
-        XCTAssertNil(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planExample: { _ in nil }))
+        XCTAssertNil(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planDetail: { _ in nil }))
         assertSamePlan(input, at: now, plan: nil, state: nil)
         // Only personal-topic cards: never on the widget.
         let personal = (1...5).map { card($0, sensitivity: 1) }
-        XCTAssertNil(WidgetPlanBuilder.makePlan(self.makeInput(deck: personal, fallback: personal, progress: [:]), at: now, previousPlan: nil, state: nil, planExample: { _ in nil }))
+        XCTAssertNil(WidgetPlanBuilder.makePlan(self.makeInput(deck: personal, fallback: personal, progress: [:]), at: now, previousPlan: nil, state: nil, planDetail: { _ in nil }))
     }
 
     /// Many random decks, progress, old plans and widget states: always the plan the main thread wrote.

@@ -235,10 +235,17 @@ jobs:
           {
             echo "### Ölçümler (simülatör, $(xcrun simctl list devices | grep "$SIM" | head -1 | sed 's/ (.*//' | xargs))"
             echo '```'
-            grep -E "measured|\[ölçüm\]" out/olcum.log | sed -E "s/^.*Test Case '-\[[A-Za-z]+\.//; s/\]' measured/ measured/" || echo "no measurement"
+            if grep -E "measured|\[ölçüm\]" out/olcum.log > out/olcum.txt; then
+              sed -E "s/^.*Test Case '-\[[A-Za-z]+\.//; s/\]' measured/ measured/" out/olcum.txt
+            else
+              echo "no measurement"
+            fi
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
           xcrun simctl shutdown "$SIM" || true
+          # The UI test runner sometimes does not start (see the passes): no launch numbers is a failure.
+          grep -q "LaunchPerformanceTests testLaunchUntilResponsive\]' passed" out/olcum.log \
+            || { echo "::error::the launch timings did not run"; exit 1; }
       - name: Görüntüleri yükle
         if: always()
         uses: actions/upload-artifact@v4

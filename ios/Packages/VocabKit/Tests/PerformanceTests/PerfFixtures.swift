@@ -144,8 +144,9 @@ enum PerfReport {
 }
 
 extension XCTestCase {
-    /// `measure` (10 runs) and one "[ölçüm]" line with the median and the slowest run. `budget` is
-    /// a generous ceiling for the median (shared CI machines vary): only a large regression fails.
+    /// `measure` and one "[ölçüm]" line with the median and the slowest run. `budget` is a
+    /// generous ceiling for the median, at least 2 s (shared CI machines vary, the macOS run is a
+    /// debug build on Intel): only a large regression fails, the numbers are for the notes.
     func measureReporting(
         _ label: String,
         budget: TimeInterval,
@@ -170,7 +171,7 @@ extension XCTestCase {
         let median = sorted[sorted.count / 2]
         let slowest = sorted[sorted.count - 1]
         PerfReport.value(label, String(format: "ortanca %.2f ms, en yavaş %.2f ms", median * 1000, slowest * 1000) + " (\(sorted.count) çalıştırma)")
-        XCTAssertLessThan(median, budget, "\(label) is much slower than expected", file: file, line: line)
+        XCTAssertLessThan(median, max(budget, 2.0), "\(label) is much slower than expected", file: file, line: line)
     }
 }
 

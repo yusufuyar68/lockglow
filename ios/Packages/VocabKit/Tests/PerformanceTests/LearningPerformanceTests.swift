@@ -128,13 +128,18 @@ final class LearningPerformanceTests: XCTestCase {
             try mailbox.append(WidgetEvent(type: type, wordID: cards[index % cards.count].id, at: now.addingTimeInterval(Double(index) * 60), source: .systemSmall))
         }
         let progress = PerfFixtures.progress(.month, cards: cards)
-        var applied = 0
+        var applied: [Int: WordProgress] = [:]
+        var listed = 0
         measureReporting("200 widget dokunuşunu oku ve işle", budget: 1.0) {
             let stored = try mailbox.list()
+            listed = stored.count
             let events = stored.map { LearningEvent(type: $0.event.type, wordID: $0.event.wordID, at: $0.event.at) }
-            applied = ProgressIngest.applyLogged(events, to: progress).progress.count
+            applied = ProgressIngest.applyLogged(events, to: progress).progress
         }
-        XCTAssertGreaterThanOrEqual(applied, progress.count)
+        XCTAssertEqual(listed, 200)
+        // Card 1 got "Biliyorum" (event 0), card 2 a "Sonraki" (event 1): both changed.
+        XCTAssertEqual(applied[cards[0].id]?.state, .known)
+        XCTAssertNotEqual(applied[cards[1].id], progress[cards[1].id])
     }
 
     // MARK: İlerleme
