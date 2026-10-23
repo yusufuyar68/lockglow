@@ -1,8 +1,8 @@
 import AppIntents
 import Combine
 import Foundation
+import os
 import CoreModels
-import SharedState
 import Scheduler
 
 // The intents of the iOS 18 controls (Widgets/Controls.swift) that run in the app's process.
@@ -15,17 +15,12 @@ import Scheduler
 //   system"): a control opens the app with an intent that conforms to `OpenIntent`, and the
 //   intent must be in both the app and the widget extension.
 
-/// The word every widget shows right now, read from the App Group as the widget reads it
-/// (`WordDataSource.load`, Widgets/): the plan and the widget state, or the bundled seed words
-/// when there is no plan. Never throws, never opens SQLite.
+/// The word every widget shows right now: the widget's own reading of the App Group
+/// (`WordDataSource`, in Shared/ so the app can use it too) and entry 0 of its timeline
+/// (`TimelinePlanner.shownWord`). Never throws, never opens SQLite.
 enum ShownWord {
     static func current(at now: Date = Date()) -> WidgetWord? {
-        let store = AppGroupLocator.containerURL().map { AppGroupStore(containerURL: $0) }
-        let plan = store?.readPlan()
-        let state = store?.readState()
-        let hasPlan = !(plan?.queue.isEmpty ?? true)
-        let seedWords: [WidgetWord] = hasPlan ? [] : SeedWords.load()
-        let input = RotationInput.resolve(plan: plan, state: state, seedWords: seedWords)
+        let input = WordDataSource.load(store: WordDataSource.makeStore())
         return TimelinePlanner.shownWord(
             input: input,
             now: now,
@@ -73,6 +68,11 @@ enum ControlScreen: String, AppEnum {
 /// "Tekrar'ı aç" control: opens the app on Tekrar. The system brings the app to the foreground
 /// and runs `perform()` there; RootView switches the tab (`ControlOpenRequest`).
 struct OpenReviewIntent: OpenIntent {
+    private static let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier ?? "lockglow",
+        category: "controls"
+    )
+
     static var title: LocalizedStringResource {
         "Tekrar'ı aç"
     }
@@ -93,6 +93,11 @@ struct OpenReviewIntent: OpenIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
+        // For the device test: Apple runs this in the app ("…vocabwidget"); in the extension
+        // ("….widgets") the request would never reach RootView.
+        OpenReviewIntent.logger.notice(
+            "open \(target.rawValue, privacy: .public) in \(Bundle.main.bundleIdentifier ?? "?", privacy: .public)"
+        )
         ControlOpenRequest.shared.screen = target
         return .result()
     }
@@ -106,4 +111,12 @@ final class ControlOpenRequest: ObservableObject {
     static let shared = ControlOpenRequest()
 
     @Published var screen: ControlScreen?
+
+    /// Called by RootView once it has opened the screen. Later, not inside the publisher's own
+    /// delivery: `@Published` sends before it stores, so a reset made there would be overwritten.
+    func clear() {
+        Task { @MainActor in
+            self.screen = nil
+        }
+    }
 }

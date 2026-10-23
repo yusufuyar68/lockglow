@@ -25,7 +25,7 @@ struct SpeakWordControl: ControlWidget {
             }
         }
         .displayName("Kelimeyi dinle")
-        .description("Widget'taki kelimeyi sesli okur. Uygulama açılmaz.")
+        .description("Widget'taki kelimeyi sesli okur.")
     }
 }
 
@@ -62,7 +62,7 @@ struct OpenReviewControl: ControlWidget {
 /// "Sonraki kelime" control: the widget's "Sonraki" (`NextWordIntent`) on the word the widgets
 /// show right now. Runs in the widget extension, like the widget button. After a widget button
 /// the system reloads that widget; after a control it reloads only the control, so this asks for
-/// the widgets itself.
+/// the widgets itself: all of them, so every widget that shows the word moves on together.
 struct NextShownWordIntent: AppIntent {
     /// The button's name (docs/tasarim/terimler.md §3).
     static var title: LocalizedStringResource {
@@ -81,7 +81,7 @@ struct NextShownWordIntent: AppIntent {
             return .result()
         }
         _ = try await NextWordIntent(wordID: word.id, source: WidgetEventSource.control.rawValue).perform()
-        WidgetCenter.shared.reloadTimelines(ofKind: WordWidget.kind)
+        WidgetCenter.shared.reloadAllTimelines()
         return .result()
     }
 }

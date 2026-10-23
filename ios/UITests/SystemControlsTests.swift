@@ -1,3 +1,4 @@
+import UIKit
 import XCTest
 
 /// The iOS 18 controls (Widgets/Controls.swift) in the system's control gallery: opens Control
@@ -8,9 +9,13 @@ import XCTest
 /// change: a step that cannot be done attaches SpringBoard's element tree (`kontrol-agac`) and
 /// skips the test instead of failing it.
 /// The class name sorts after LockglowScreenshotTests, so this runs once those tests are done; it
-/// never launches the app (they expect a fresh install).
+/// never launches the app (they expect a fresh install). It runs in one pass of a screenshots.yml
+/// run only, the one that waits for the quiz (`LOCKGLOW_QUIZ_WAIT`, "pro" by default), and only
+/// on a phone without a Home button: there Control Center opens from the top right corner.
 final class SystemControlsTests: XCTestCase {
-    private let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+    private var springboard: XCUIApplication {
+        XCUIApplication(bundleIdentifier: "com.apple.springboard")
+    }
     /// The controls' display names (`displayName` in Controls.swift).
     private let controlNames = ["Kelimeyi dinle", "Sonraki kelime", "Tekrar'ı aç"]
 
@@ -22,18 +27,23 @@ final class SystemControlsTests: XCTestCase {
         case listed
     }
 
-    override func tearDown() {
-        // Out of the gallery, the edit mode and Control Center: back to the home screen.
-        for _ in 0..<3 {
-            XCUIDevice.shared.press(.home)
-            sleep(1)
-        }
-        super.tearDown()
-    }
-
     func testControlsAreListedInTheControlGallery() throws {
         guard #available(iOS 18.0, *) else {
             throw XCTSkip("Controls need iOS 18.")
+        }
+        guard ProcessInfo.processInfo.environment["LOCKGLOW_QUIZ_WAIT"] == "1" else {
+            throw XCTSkip("Only in the screenshots.yml pass that waits for the quiz.")
+        }
+        // The iPhone SE (667 pt high) has a Home button: Control Center opens from the bottom.
+        guard XCUIScreen.main.screenshot().image.size.height > 700 else {
+            throw XCTSkip("A phone with a Home button.")
+        }
+        defer {
+            // Out of the gallery, the edit mode and Control Center: back to the home screen.
+            for _ in 0..<3 {
+                XCUIDevice.shared.press(.home)
+                sleep(1)
+            }
         }
         var reached = Reached.nothing
         // A tap on an element SpringBoard shows but does not let us hit is SpringBoard's business,
