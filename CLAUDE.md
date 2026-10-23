@@ -29,3 +29,30 @@ Bu depo **Lockglow** projesi: kilit ekranında İngilizce kelime gösteren, Tür
 - **Kart numaraları:** `content-pipeline/data/id_registry.json`'ı elle düzenleme; uygulamadaki ilerleme bu numaralara bağlı.
 - **Windows'ta Python:** `-X utf8` ile çalıştır. Dosyaları LF yaz.
 - **Commit mesajları:** Türkçe. Mesajı bir dosyaya yazıp `git commit -F` kullan.
+
+## Tasarım kuralları: Apple dili (kullanıcının 2026-10-24 isteği)
+
+Ürün bir **iPhone uygulaması**; site değil. Her tasarım işinde, mockup'ta ve kod değişikliğinde bu kurallar geçerli. Uymayan ekran varsa uydur.
+
+- **Apple Human Interface Guidelines'tan ayrılma.** Gezinmede büyük başlık, alt sekme çubuğunda SF Symbols, Ayarlar ve listelerde iOS'un gruplu liste görünümü, ikinci derece sayfalarda sheet, onaylarda iOS uyarısı kullan. Standart denetimleri tercih et.
+- **Yazı boyları Dynamic Type metin stillerinden gelir**, sabit punto yazılmaz:
+  - Large Title 34;
+  - Title 1 28, Title 2 22, Title 3 20;
+  - Headline 17 kalın, Body 17;
+  - Callout 16, Subheadline 15, Footnote 13;
+  - Caption 1 12, Caption 2 11.
+
+  Bir ekranda en çok 3–4 farklı boy kullan; hiyerarşi boy ve kalınlıkla kurulur. Türkçe arayüz SF Pro ile yazılır. İngilizce kelime ve örnek cümle New York (serif) ile yazılabilir. 11 pt'nin altına inme.
+- **Renk Apple'ın anlamsal renk mantığıyla kurulur.**
+  - Metin label / secondaryLabel / tertiaryLabel kademesiyle yazılır.
+  - Zeminler systemBackground ve secondarySystemBackground, ayraçlar separator.
+  - Tek vurgu rengi (tint) var: marka sarısı yalnız vurgu için kullanılır, büyük dolgu yapmaz.
+  - Açık, koyu ve Yüksek Kontrast'ın her birinde metin kontrastı en az 4.5:1, büyük yazıda en az 3:1.
+  - `LockglowTheme` token'ları bu kademeye uymalı.
+- **Ölçüler:**
+  - Kenar boşluğu 16 pt, 8 pt ızgara.
+  - Dokunma alanı en az 44×44 pt.
+  - Güvenli alan ve Dynamic Island'a saygı.
+  - Widget'lar Apple'ın widget kenar boşluklarıyla.
+- **Ekrana sığma:** her ekran iPhone SE (375×667) ile Pro Max arasında ve en büyük erişilebilir yazıda (AX5) kesilmeden çalışmalı. Metin "…" ile kesilmez, satır kayar ya da sayfa kayar. Değişiklikten sonra ekran görüntülerini (`screenshots.yml`) tek tek kontrol et: SE, büyük yazı, koyu mod, widget'lar.
+- **Mockup'lar mobil:** telefon çerçevesinde, 390×844 pt iPhone ekranı; ayrıca widget ve kilit ekranı boyutları. Masaüstü ya da web sayfası düzeni değil.
