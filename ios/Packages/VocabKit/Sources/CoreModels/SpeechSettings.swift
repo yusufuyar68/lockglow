@@ -20,6 +20,14 @@ public enum SpeechAccent: String, CaseIterable, Codable, Sendable {
     }
 }
 
+/// The voice character of "Dinle": a woman's or a man's voice. Without a voice chosen by name,
+/// the best installed voice of this gender reads (`SpeechVoiceChoice`), and the recorded clips
+/// of this voice play (`RecordedSpeech`).
+public enum SpeechVoiceGender: String, CaseIterable, Codable, Sendable {
+    case female
+    case male
+}
+
 /// How fast "Dinle" reads.
 public enum SpeechRate: String, CaseIterable, Codable, Sendable {
     case slow
@@ -45,7 +53,7 @@ public enum SpeechRate: String, CaseIterable, Codable, Sendable {
 /// The settings of "Ses ve aksan". The app writes them; the app's speech (the widget's speaker
 /// button too, which runs in the app) and the widget's IPA read them from the App Group's
 /// UserDefaults. Unknown or missing values read as the defaults: American, normal speed, slow
-/// repeat on, the best installed voice.
+/// repeat on, a woman's voice, the best installed voice.
 public struct SpeechSettings: Equatable, Sendable {
     public var accent: SpeechAccent
     public var rate: SpeechRate
@@ -53,16 +61,19 @@ public struct SpeechSettings: Equatable, Sendable {
     /// (`SpeechRules.rateMultiplier`).
     public var slowRepeat: Bool
     /// The voice chosen for each accent (`AVSpeechSynthesisVoice.identifier`). None: the best
-    /// installed voice of the accent (`SpeechVoiceChoice`).
+    /// installed voice of the accent and the gender (`SpeechVoiceChoice`).
     public var voiceIdentifiers: [SpeechAccent: String]
+    /// "Ses karakteri": Kadın or Erkek.
+    public var gender: SpeechVoiceGender
 
     public static let standard = SpeechSettings(accent: .american, rate: .normal, slowRepeat: true, voiceIdentifiers: [:])
 
-    public init(accent: SpeechAccent, rate: SpeechRate, slowRepeat: Bool, voiceIdentifiers: [SpeechAccent: String]) {
+    public init(accent: SpeechAccent, rate: SpeechRate, slowRepeat: Bool, voiceIdentifiers: [SpeechAccent: String], gender: SpeechVoiceGender = .female) {
         self.accent = accent
         self.rate = rate
         self.slowRepeat = slowRepeat
         self.voiceIdentifiers = voiceIdentifiers
+        self.gender = gender
     }
 
     /// The voice chosen for the current accent; nil for the best installed one.
@@ -76,6 +87,7 @@ public struct SpeechSettings: Equatable, Sendable {
         public static let accent = "lockglow.speech.accent"
         public static let rate = "lockglow.speech.rate"
         public static let slowRepeat = "lockglow.speech.slowRepeat"
+        public static let gender = "lockglow.speech.gender"
 
         public static func voice(_ accent: SpeechAccent) -> String {
             return "lockglow.speech.voice.\(accent.rawValue)"
@@ -88,6 +100,7 @@ public struct SpeechSettings: Equatable, Sendable {
         rate = defaults.string(forKey: Key.rate).flatMap(SpeechRate.init(rawValue:)) ?? standard.rate
         // `bool(forKey:)` also reads a launch argument ("NO"), which arrives as text.
         slowRepeat = defaults.object(forKey: Key.slowRepeat) == nil ? standard.slowRepeat : defaults.bool(forKey: Key.slowRepeat)
+        gender = defaults.string(forKey: Key.gender).flatMap(SpeechVoiceGender.init(rawValue:)) ?? standard.gender
         var voices: [SpeechAccent: String] = [:]
         for accent in SpeechAccent.allCases {
             if let identifier = defaults.string(forKey: Key.voice(accent)), !identifier.isEmpty {
@@ -101,6 +114,7 @@ public struct SpeechSettings: Equatable, Sendable {
         defaults.set(accent.rawValue, forKey: Key.accent)
         defaults.set(rate.rawValue, forKey: Key.rate)
         defaults.set(slowRepeat, forKey: Key.slowRepeat)
+        defaults.set(gender.rawValue, forKey: Key.gender)
         for accent in SpeechAccent.allCases {
             if let identifier = voiceIdentifiers[accent] {
                 defaults.set(identifier, forKey: Key.voice(accent))

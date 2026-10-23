@@ -39,6 +39,13 @@ targets:
           - "Info.plist"
           - "*.entitlements"
           - "Resources/README.md"
+          - "Resources/RecordedSpeech/**"
+      # The recorded clips of "Dinle" (vocabpipe.recorded_speech), as ONE folder: the voices'
+      # subfolders stay in the bundle (RecordedSpeech/us-female/...) and the project file does not
+      # list thousands of files.
+      - path: App/Resources/RecordedSpeech
+        type: folder
+        buildPhase: resources
       # Embedded fallback copy of the seed words (shared file with the widget).
       - path: Widgets/Resources/seed_words.json
       # Shared with the widget extension: the speaker intent runs in THIS process (AudioPlaybackIntent).
