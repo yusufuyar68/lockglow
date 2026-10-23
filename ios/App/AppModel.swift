@@ -981,6 +981,8 @@ final class AppModel: ObservableObject {
             logger.error("could not write the widget plan: \(error.localizedDescription, privacy: .public)")
             return
         }
+        // The Lock Screen progress widget's numbers (AppModel+ProgressSnapshot.swift), reloaded below.
+        writeProgressSnapshot(to: store, now: rewriteTime)
         // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
         updateLockScreenWord()
         reloadWidgets()
