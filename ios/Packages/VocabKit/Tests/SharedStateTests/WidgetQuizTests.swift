@@ -133,7 +133,8 @@ final class WidgetQuizTests: XCTestCase {
     func testWithoutAStateTheFirstQuestionWaits() {
         let quiz = plan([1, 2, 3])
         // Time alone never changes an unanswered question.
-        for hours in [0.0, 1, 30, 24 * 9] {
+        let waits: [TimeInterval] = [0, 1, 30, 216]
+        for hours in waits {
             let screen = WidgetQuizRotation.screen(plan: quiz, state: nil, at: start.addingTimeInterval(hours * 3600))
             XCTAssertEqual(screen?.item.wordID, 1)
             XCTAssertEqual(screen?.isAnswered, false)
