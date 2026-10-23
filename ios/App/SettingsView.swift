@@ -363,13 +363,8 @@ struct SettingsView: View {
                 .settingsRowPadding()
                 if model.reminderEnabled {
                     SettingsDivider()
-                    DatePicker(selection: reminderTimeBinding, displayedComponents: .hourAndMinute) {
-                        Text("Saat")
-                            .settingsRowTitle()
-                    }
-                    // 24-hour "20:00" like the app's other times (clockTime, README point 13), whatever the region.
-                    .environment(\.locale, Locale(identifier: "tr_TR"))
-                    .settingsRowPadding()
+                    // The time and "Saati benim için seç" (ReminderTimeRows.swift).
+                    ReminderTimeRows(time: reminderTimeBinding)
                 }
                 if isReminderPaused && !notificationsDenied {
                     SettingsDivider()
