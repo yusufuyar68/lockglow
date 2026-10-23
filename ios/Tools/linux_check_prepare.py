@@ -56,6 +56,10 @@ def check_stub_api(real: Path, stub: Path) -> None:
         raise SystemExit("\n".join(lines))
 
 
+# The quiz widget's questions (ios/App/AppModel+QuizWidget.swift), on a line of their own.
+APP_LOGIC_FILES += ["AppModel+QuizWidget.swift"]
+
+
 def main() -> int:
     pkg, app, stubs = (Path(a) for a in sys.argv[1:4])
 
