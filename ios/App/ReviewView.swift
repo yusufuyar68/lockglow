@@ -572,6 +572,7 @@ struct ReviewView: View {
                 Text(isRevealed ? "Sonraki" : "Anlamını göster")
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+            .keyboardShortcut(AnswerKeys.main)
         }
         .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: knownUndoToShow?.word.id)
     }
@@ -630,6 +631,7 @@ struct ReviewView: View {
                         continueIntro(word: word, right: picked == question.answer)
                     }
                     .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                    .keyboardShortcut(AnswerKeys.main)
                     .padding(.horizontal, 16)
                     .padding(.top, 10)
                     .padding(.bottom, 8)
@@ -745,6 +747,7 @@ struct ReviewView: View {
             .contentShape(shape)
         }
         .buttonStyle(PressFadeButtonStyle())
+        .keyboardShortcut(picked == nil ? AnswerKeys.answer(question.options.firstIndex(of: option)) : nil)
         // Not `.disabled`: that would dim the options exactly when the answer is shown.
         .allowsHitTesting(picked == nil)
         // As in the quiz (`QuizCardView.optionButton`): a button's label merges its texts and an
@@ -1033,6 +1036,7 @@ struct ReviewView: View {
                 moveFocus(to: .word)
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+            .keyboardShortcut(AnswerKeys.main)
         }
     }
 
@@ -1045,6 +1049,7 @@ struct ReviewView: View {
             GradeLabel(title: info.title, symbol: info.symbol, when: when)
         }
         .buttonStyle(GradeButtonStyle())
+        .keyboardShortcut(AnswerKeys.answer(found ? 1 : 0))
         .accessibilityLabel(info.title)
         // A value, not a hint: hints come late and many people turn them off (audit V9).
         .accessibilityValue(when.map { $0 == ReviewView.backToIntroText ? $0 : "\($0) yine gelir" } ?? "")

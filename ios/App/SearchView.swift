@@ -23,6 +23,8 @@ struct SearchView: View {
     @State private var path = NavigationPath()
     /// "Kendin ekle" after a search that found nothing (`CustomWordEditor`).
     @State private var customWordEditor: CustomWordEditor.Mode?
+    /// A wide window (`SozlukSplitLayout`, WideLayout.swift): words open in the right column.
+    @Environment(\.sozlukShowWord) private var showWordBeside
 
     /// "Dene" examples (mockup `.try`): a Turkish start, the same kind without Turkish letters,
     /// a Turkish word and an English start.
@@ -52,6 +54,7 @@ struct SearchView: View {
             }
             .navigationTitle("Sözlük")
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "İngilizce ya da Türkçe kelime")
+            .sozlukSearchFocus()
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
             .onSubmit(of: .search) {
@@ -101,6 +104,12 @@ struct SearchView: View {
 
     /// A row's word: its whole card on Sözlük's stack.
     private func open(_ word: WidgetWord) {
+        if let showWordBeside = showWordBeside {
+            // As when the card is pushed: a search that opened a card becomes a recent one.
+            remember(query)
+            showWordBeside(word)
+            return
+        }
         path.append(word)
     }
 
