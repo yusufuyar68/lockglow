@@ -53,11 +53,11 @@ final class WidgetLookTests: XCTestCase {
     func testAccentedColorsAreOpaque() throws {
         let colors = WidgetColors.forMode(.accented)
         for scheme in [ColorScheme.light, .dark] {
-            XCTAssertGreaterThan(try pixel(colors.ink, scheme: scheme).alpha, 0.99, "ink \(scheme)")
-            XCTAssertGreaterThan(try pixel(colors.ink2, scheme: scheme).alpha, 0.99, "ink2 \(scheme)")
+            XCTAssertGreaterThan(try opacity(colors.ink, scheme: scheme), 0.99, "ink \(scheme)")
+            XCTAssertGreaterThan(try opacity(colors.ink2, scheme: scheme), 0.99, "ink2 \(scheme)")
             let edge = try XCTUnwrap(colors.buttonEdge)
-            XCTAssertGreaterThan(try pixel(edge, scheme: scheme).alpha, 0.99, "edge \(scheme)")
-            XCTAssertLessThan(try pixel(colors.buttonFill, scheme: scheme).alpha, 0.01, "fill \(scheme)")
+            XCTAssertGreaterThan(try opacity(edge, scheme: scheme), 0.99, "edge \(scheme)")
+            XCTAssertLessThan(try opacity(colors.buttonFill, scheme: scheme), 0.01, "fill \(scheme)")
         }
         // Also without the paper: accented wins over StandBy's no-paper styles.
         XCTAssertNotNil(WidgetColors.forMode(.accented, showsBackground: false).buttonEdge)
@@ -104,7 +104,7 @@ final class WidgetLookTests: XCTestCase {
         let ink2 = try pixel(colors.ink2, over: .black, scheme: .dark)
         let circle = try pixel(colors.buttonFill, over: .black, scheme: .dark)
         for style in [colors.ink, colors.ink2, colors.buttonFill] {
-            XCTAssertGreaterThan(try pixel(style, scheme: .dark).alpha, 0.99)
+            XCTAssertGreaterThan(try opacity(style, scheme: .dark), 0.99)
         }
         XCTAssertGreaterThan(ink.luminance, ink2.luminance)
         XCTAssertGreaterThan(ink2.luminance, circle.luminance)
@@ -420,6 +420,17 @@ final class WidgetLookTests: XCTestCase {
             return true
         }
         return drawn ? data : nil
+    }
+
+    /// How opaque `style` is as drawn: filled over black and over white, an opaque style looks
+    /// the same on both and a clear one takes the backdrop's color (1 minus the gap).
+    /// ImageRenderer gave no transparent pixels here (run 39991796077 measured `Color.clear` at
+    /// alpha 1), so the alpha channel alone cannot tell.
+    private func opacity(_ style: AnyShapeStyle, scheme: ColorScheme) throws -> Double {
+        let onBlack = try pixel(style, over: .black, scheme: scheme)
+        let onWhite = try pixel(style, over: .white, scheme: scheme)
+        let gap = ((onWhite.red - onBlack.red) + (onWhite.green - onBlack.green) + (onWhite.blue - onBlack.blue)) / 3
+        return 1 - gap
     }
 
     /// What SwiftUI draws for `style`, filled over `backdrop` (none: transparent) in `scheme`.
