@@ -2,7 +2,7 @@
 // linux_check_prepare.py stops the Linux check when the public declarations differ.
 import CoreModels
 
-public final class ContentStore {
+public final class ContentStore: @unchecked Sendable {
     public init(path: String) throws {}
     public func cardCount() throws -> Int { 0 }
     public func meta(_ key: String) throws -> String? { nil }

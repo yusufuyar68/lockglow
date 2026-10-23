@@ -77,8 +77,9 @@ final class AppModel: ObservableObject {
     /// Every word in the chosen level order: the widget's fallback and where new words come from
     /// once the chosen topics have none left.
     private(set) var allTopicsFeed: [WidgetWord] = []
-    /// Opened on first use for card details; stays nil when only seed words are available.
-    private lazy var detailStore: ContentStore? = ContentLoader.openStore()
+    /// content.sqlite for card details and the search, opened off the main thread by the loader
+    /// (`start`); stays nil when only seed words are available.
+    private var detailStore: ContentStore?
     /// Not published: filling it while a view is being drawn must not trigger a redraw.
     private var detailCache: [Int: CardDetail] = [:]
     /// Loaded words by lowercased headword (`lookup(lemma:)`); the first card of a headword wins.
@@ -87,6 +88,8 @@ final class AppModel: ObservableObject {
     let customWordLibrary = CustomWordLibrary()
     /// The loaded cards (content.sqlite or the seed) without the user's words; `words` is both.
     private var contentWords: [WidgetWord] = []
+    /// Writes widget_plan.json off the main thread, one rewrite at a time (WidgetPlanWriter.swift).
+    private let planWriter = WidgetPlanWriter()
 
     // MARK: Lifecycle
 
@@ -130,6 +133,7 @@ final class AppModel: ObservableObject {
         contentSource = loaded.source
         cardCount = loaded.cardCount
         contentVersion = loaded.contentVersion
+        detailStore = loaded.store
 
         // First launch: no plan yet, and the onboarding is about to choose the deck. Its choice
         // writes the first plan, so the widget starts with the chosen words instead of keeping
@@ -150,7 +154,8 @@ final class AppModel: ObservableObject {
             return
         }
         LocalMetricsRecorder.shared.recordBoxes(progress)
-        refreshWidgetPlan()
+        // The app may be suspended right after this: the plan must be on disk before it returns.
+        refreshWidgetPlan(waitUntilWritten: true)
         Task {
             await self.refreshHealth()
         }
@@ -948,7 +953,11 @@ final class AppModel: ObservableObject {
     /// The new queue STARTS AT the word the old plan shows right now, so the visible word does
     /// not change and the rotation carries on from it. "Right now" is computed by the same pure
     /// function the widget uses, from the old plan and the widget's state.
-    func refreshWidgetPlan() {
+    ///
+    /// The plan is built and written off the main thread (`WidgetPlanWriter`, `WidgetPlanBuilder`)
+    /// from a copy of the model taken now; `waitUntilWritten` waits for the file (leaving the
+    /// foreground).
+    func refreshWidgetPlan(waitUntilWritten: Bool = false) {
         guard let store = store else {
             return
         }
@@ -968,89 +977,18 @@ final class AppModel: ObservableObject {
         // The Lock Screen progress widget's numbers (AppModel+ProgressSnapshot.swift): written even
         // when no plan is, so they never go stale with an empty queue.
         writeProgressSnapshot(to: store, now: rewriteTime)
-        let rotation = RotationInput.resolve(plan: store.readPlan(), state: store.readState(), seedWords: [])
-        let currentWord = TimelinePlanner.wordAt(
-            rewriteTime,
-            queue: rotation.queue,
-            knownIDs: rotation.knownIDs,
-            cursorOffset: rotation.cursorOffset,
-            cursorAnchor: rotation.cursorAnchor,
-            interval: rotation.interval,
-            alignmentOffset: TimelinePlanner.localAlignmentOffset(for: rewriteTime)
-        )
-
-        // The deck first; if it has nothing left to rotate, every topic (same level order).
-        let queue = QueueComposer.compose(
-            deck: feedWords,
-            fallbackFeed: allTopicsFeed,
-            progress: progress,
-            now: rewriteTime,
-            horizon: AppModel.queueHorizon,
-            maxNew: dailyNewWords * 2,
-            limit: AppModel.queueLimit,
-            pinFirst: pinnedWord(currentWord),
-            // The slot pattern is tied to the clock (boundaries since 1970), so a rewrite on every
-            // trip to the background does not start it again; +1: the slot after the pinned word.
-            patternOffset: TimelinePlanner.elapsedBoundaries(
-                from: Date(timeIntervalSince1970: 0),
-                to: rewriteTime,
-                interval: TimeInterval(rotationMinutes * 60),
-                alignmentOffset: TimelinePlanner.localAlignmentOffset(for: rewriteTime)
-            ) + 1
-        )
-        if queue.isEmpty {
-            logger.notice("no words for a plan; the widget keeps its current data or the bundled seed")
-            return
-        }
-
-        // The medium widget's example is the card's shortest example that contains the word
-        // (docs/tasarim/README.md "Widget'lar"), not always its first. Only the text changes: the
-        // queue and the pinned word stay id-based. Seed words have no detail and keep theirs.
-        let planQueue = queue.map { word -> WidgetWord in
-            guard let shortest = detail(for: word)?.shortestExample(containing: word.lemma),
-                  shortest != word.exampleEN else {
-                return word
+        let request = widgetPlanRequest(store: store, usesDatabase: contentSource == .database, at: rewriteTime)
+        planWriter.write(request, waitUntilWritten: waitUntilWritten) { [weak self] plan in
+            guard let self = self, let plan = plan else {
+                return
             }
-            return WidgetWord(
-                id: word.id,
-                lemma: word.lemma,
-                pos: word.pos,
-                level: word.level,
-                ipaUS: word.ipaUS,
-                ipaUK: word.ipaUK, // is5-ses: the widget's IPA follows "Ses ve aksan"
-                defMicro: word.defMicro,
-                defShort: word.defShort,
-                exampleEN: shortest,
-                glossTR: word.glossTR,
-                glossShortTR: word.glossShortTR,
-                sensitivity: word.sensitivity,
-                confusableIDs: word.confusableIDs
-            )
+            // Quiz widget: questions from the same queue (AppModel+QuizWidget.swift).
+            self.writeQuizWidgetPlan(from: plan.queue, at: rewriteTime)
+            // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
+            self.updateLockScreenWord()
+            self.reloadWidgets()
+            WatchPlanRelay.planDidChange()  // is5-watch: the Apple Watch gets the new plan too (WatchBridge)
         }
-        // is5-w-buyuk: the large widget's second example and warning (CoreModels/WidgetWarning.swift).
-        .map { $0.addingLargeWidgetDetails(from: detail(for: $0)) }
-
-        // The interval is global (all widget instances). The app owns it; changing it keeps the
-        // visible word, because `currentWord` above was computed with the OLD plan's interval.
-        let plan = WidgetPlan(
-            planID: UUID().uuidString,
-            isPremium: false,
-            intervalSeconds: rotationMinutes * 60,
-            queue: planQueue,
-            updatedAt: rewriteTime
-        )
-        do {
-            try store.writePlan(plan)
-        } catch {
-            logger.error("could not write the widget plan: \(error.localizedDescription, privacy: .public)")
-            return
-        }
-        // Quiz widget: questions from the same queue (AppModel+QuizWidget.swift).
-        writeQuizWidgetPlan(from: planQueue, at: rewriteTime)
-        // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
-        updateLockScreenWord()
-        reloadWidgets()
-        WatchPlanRelay.planDidChange()  // is5-watch: the Apple Watch gets the new plan too (WatchBridge)
     }
 
     /// Works out `lockScreenWordID` from the plan and the widget's state on disk, with the same
@@ -1087,6 +1025,8 @@ final class AppModel: ObservableObject {
     }
 
     func refreshHealth() async {
+        // A rewrite asked for just before (launch, "Widget'ları yenile") is on disk first.
+        await planWriter.waitUntilIdle()
         let instances = await WidgetProbe.currentInstances()
 
         var snapshot = WidgetHealthSnapshot()
