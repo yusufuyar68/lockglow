@@ -64,6 +64,8 @@ targets:
         # Apple: the speech key is required for any app using the Speech framework (on-device too).
         NSMicrophoneUsageDescription: "Söyle alıştırmasında söylediğin kelimeyi dinlemek için mikrofon kullanılır. Ses kaydedilmez ve telefondan çıkmaz."
         NSSpeechRecognitionUsageDescription: "Söylediğin kelimenin anlaşılıp anlaşılmadığını görmek için konuşma tanıma kullanılır. Bu iş telefonda yapılır; sesin hiçbir yere gönderilmez."
+        # is5-haftalik: "Paylaş" on "Geçen hafta" offers "Resmi Kaydet"; without this key iOS stops the app there.
+        NSPhotoLibraryAddUsageDescription: "Paylaşım resmini Fotoğraflar'a kaydetmek için. Lockglow fotoğraflarını görmez."
         ITSAppUsesNonExemptEncryption: false
         NSSupportsLiveActivities: true # is5-canli: the "Tekrar" round on the Lock Screen (App/ReviewLiveActivity.swift)
         # The page colour (Theme.bg) with the icon's mark in the middle (Assets.xcassets).

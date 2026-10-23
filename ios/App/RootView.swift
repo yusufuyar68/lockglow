@@ -55,6 +55,8 @@ struct RootView: View {
         .tint(Theme.tint)
         // Screens with a system card of their own ask the queue first (`claim`).
         .environmentObject(systemCards)
+        // is5-haftalik: Monday's "Geçen hafta" claims a free opening (WeeklyRecapView.swift).
+        .weeklyRecapAtOpening(systemCards, blocked: model.showsOnboarding || detailWord != nil || openedFromReminder)
         .task {
             // is5-canli: a new run has no round; a Live Activity left by the last run goes.
             ReviewLiveActivity.shared.endLeftovers()
@@ -596,7 +598,7 @@ struct SystemCardSheet: View {
                     close(nil)
                 }
                 .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
-            case .breakStart, .dayEnd:
+            case .breakStart, .dayEnd, .weeklyRecap:
                 // Shown by their screens, never as a sheet.
                 Button("Tamam") {
                     close(nil)
@@ -624,7 +626,7 @@ struct SystemCardSheet: View {
         case .remindersPaused: return "bell.slash"
         case .reminderTime: return "clock"
         case .widgetTip: return "apps.iphone"
-        case .breakStart, .dayEnd: return "sun.max"
+        case .breakStart, .dayEnd, .weeklyRecap: return "sun.max"
         }
     }
 
@@ -636,6 +638,7 @@ struct SystemCardSheet: View {
         case .widgetTip: return "Kelimeler kilitli ekranında da görünsün mü?"
         case .breakStart: return "Ara verdin, sorun değil."
         case .dayEnd: return "Bugünlük yeter."
+        case .weeklyRecap: return "Geçen hafta"
         }
     }
 
@@ -651,7 +654,7 @@ struct SystemCardSheet: View {
             return "Şu anki saat: \(time). Başka bir saat sana daha uygun olabilir."
         case .widgetTip:
             return "Widget ekleyince telefonuna her baktığında bir kelime görürsün; uygulamayı açman gerekmez."
-        case .breakStart, .dayEnd:
+        case .breakStart, .dayEnd, .weeklyRecap:
             return ""
         }
     }
