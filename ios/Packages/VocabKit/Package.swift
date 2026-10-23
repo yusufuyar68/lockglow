@@ -9,6 +9,8 @@ let package = Package(
     platforms: [
         .iOS(.v17),
         .macOS(.v14),
+        // is5-watch: the Apple Watch app and its complications (CoreModels, SharedState, Scheduler).
+        .watchOS(.v10),
     ],
     products: [
         .library(name: "CoreModels", type: .static, targets: ["CoreModels"]),
