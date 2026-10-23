@@ -4,6 +4,8 @@
 >
 > **taslak-2 (22 Ekim 2026):** Söyle (mikrofon, cihaz içi konuşma tanıma) ve widget'tan sesli okuma koda bakılarak işlendi: gizlilik politikası §3.7–3.8 (TR/EN), KVKK aydınlatma §2, `app_store_privacy_etiketi.md` (V7, V9, V10, §2A, §5.4a, §5.6), bu dosyada §4 madde 7–10, §4.1, §5 ve §6-F. Değişen her yer **[TEYİT]** ile işaretli. Mağaza metinleri: `docs/magaza/`.
 >
+> **[ÖNERİ is5-veri, 2026-10-24]** **taslak-3 önerileri:** kendi kelimeler, yerel ölçüm, "Verilerin" (dışa aktar, içe aktar, hepsini sil) ve iCloud ile eşitleme koda göre işaretli öneri blokları olarak eklendi: gizlilik politikası (TR/EN) §3.1, 3.1a, 3.9–3.11, 6, 7, 8, 10, 12; aydınlatma §2, 3, 5, 6; kullanım şartları (TR/EN) §6; `app_store_privacy_etiketi.md` V9–V12, §2, §2A, §5.4a, §5.6, §6; bu dosyada §4 madde 11–15, §5 ve §6-G. Hiçbir eski cümle silinmedi.
+>
 > **Marka uyarısı:** "Lockglow" adı için **TÜRKPATENT araması ve marka vekili görüşü henüz yapılmadı** (22 Ekim 2026). Ad kesin değildir; yayından önce bu iki adım tamamlanmalı.
 
 Dayandığı kararlar ve bilgiler: `Widget_Vocabulary_Analiz_ve_Plan.md` §8 (teknik yığın), §9 (planlar), §11 (KVKK/GDPR), `raporlar/09_turkiye_hukuk_vergi_butce.md` §3 (KVKK, Apple 5.1.1/5.1.2/3.1.2) ve `marketing/landing/aydinlatma.html` (erken erişim listesi aydınlatması; üslup aynı tutuldu).
@@ -78,6 +80,14 @@ Tüm belgelerde bulk "bul-değiştir" yapın. Parantezli sayısal değerler (`[1
 9. **Widget'tan sesli okuma:** ana ekran widget'ındaki "Kelimeyi dinle" düğmesi (`SpeakWordIntent`, `AudioPlaybackIntent`) iOS tarafından uygulamanın sürecinde, uygulama ekrana gelmeden çalıştırılır; cihazın en-US sesiyle okur, ağ kullanmaz, dokunuş kaydedilmez. Bunun için uygulamada `UIBackgroundModes: audio` var. Ayrıntı: gizlilik politikası §3.8. **[TEYİT: taslak-2]**
 10. **Şimdiki derleme SDK'sız:** RevenueCat, PostHog, Sentry ve paywall henüz yok (2026-10-22). Madde 2–4 ileriki ticari sürüm içindir; ilk ücretsiz sürüm için §4.1. **[TEYİT: taslak-2]**
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Yeni kararlar (2026-10-24):
+>
+> 11. **Kendi kelimeler** cihazda (`custom_words.json` + günlük yedek + okunamayan dosyanın ayrılmış kopyası), widget'ta ve kilitli ekranda görünür, Apple Watch'a gider; belgeler kullanıcıya kişisel/hassas bilgi yazmamasını söyler. "Özel liste" ve "seri" kodda yok; belgelerden çıkmalı.
+> 12. **Yerel ölçüm:** yalnız sayı ve süre, 120 gün, cihaz yedeğinden hariç, hiçbir yere gönderilmez; yalnız kullanıcı dışa aktarırsa dosyaya girer.
+> 13. **"Verilerin":** dışa aktarma kullanıcı başlatır ve hedefi seçer (`ShareLink`); içe aktarma dosya seçici + onay; "Hepsini sil" yerel her şeyi siler, iCloud kopyasını, eski cihaz yedeklerini, paylaşılmış dosyaları, iOS izinlerini ve Apple konuşma modelini silmez. App Store cevabı "Data Not Collected" kalır **[TEYİT]**.
+> 14. **iCloud ile eşitleme kodda** (varsayılan kapalı, `NSUbiquitousKeyValueStore`, kullanıcının kendi iCloud hesabı; geliştirici erişemez). Bu derlemede yetki eklenmediği için çalışmaz. Madde 7'deki "CloudKit (v1.2) yok" ifadesi bu yüzden eskidi.
+> 15. **Haklar:** Politika ve aydınlatma, KVKK m.11 / GDPR m.15–17, 20 için uygulama içi araçlara (Verilerin, iCloud'daki kopyayı sil) yönlendirir; bize ulaşmayan veri için bizde kopya olmadığı açıkça yazılır **[TEYİT]**.
+
 ### 4.1 İlk ücretsiz sürüm için sadeleştirme **[TEYİT: taslak-2, 22 Ekim 2026]**
 
 Bu paket en geniş senaryoya (abonelik + analitik + isteğe bağlı Sentry) göre yazıldı. 22 Ekim 2026'daki kodda RevenueCat, PostHog, Sentry ve paywall **yok**, uygulama hiçbir sunucuya bağlanmıyor (`app_store_privacy_etiketi.md` §2A). İlk mağaza sürümü ücretsiz ve satın almasız çıkarsa:
@@ -118,6 +128,18 @@ Aşağıdakiler yapılmazsa belgeler gerçeği yansıtmaz ve Apple/KVKK riski do
 - [ ] Info.plist izin metinlerine İngilizce karşılık ve "kelime ya da cümle" düzeltmesi (`app_store_privacy_etiketi.md` §5.6). `ios/project.yml`'de yapılır; bu pakette yapılmadı.
 - [ ] Analitik eklenirse Söyle'nin tanınan metni ve sesi olaylara **eklenmez**; yalnızca sayı (deneme sayısı) gönderilebilir ve etiket yeniden kontrol edilir.
 
+> **[ÖNERİ is5-veri, 2026-10-24]** **Verilerin, kendi kelimeler, iCloud (is5-veri; 2026-10-24'te kodda bakıldı) [TEYİT]:**
+>
+> - [x] Dışa aktarma yalnız dokununca, geçici klasöre, `ShareLink` ile (`ios/App/AppModel+DataControls.swift:13–72`, `ios/App/DataControlsView.swift:77–85`); ağ kodu yok.
+> - [x] İçe aktarma `fileImporter` (JSON), en fazla 50 MB, dosya meta verisi okunmaz, onaydan sonra (`AppModel+DataControls.swift:78–157`, `DataControlsView.swift:49`, `:215–255`); ölçüm/ayar/son arama alınmaz (`Learning/DataImport.swift:25–26`).
+> - [x] "Hepsini sil" önce eşitlemeyi kapatır, tüm yerel klasörleri, App Group'u, UserDefaults (uygulama + App Group) ve bildirimleri siler; iCloud kopyası kalır ve ekran bunu söyler (`AppModel+DataControls.swift:161–220`, `DataControlsView.swift:190–209`).
+> - [x] Yerel ölçüm `isExcludedFromBackup` (`Learning/LocalMetricsRecorder.swift:221–231`).
+> - [ ] **Kendi kelimeler kilitli ekranda:** ürün kararı: kendi kelimeleri kilitli ekran widget'ında `privacySensitive()` ile gizlemek ya da kendi kelimeleri hatırlatma başlığına koymamak düşünülebilir (şu an ikisi de yok: widget kodunda `privacySensitive` araması boş; hatırlatmanın hassas konu süzgeci kendi kelimelere işlemiyor, `Learning/ReminderPlanner.swift:351`). Yapılmazsa belgelerdeki uyarı tek önlem olur.
+> - [ ] Kelime ekleme formuna kısa bir not: "Kilitli ekranda görünebilir; kişisel bilgi yazma." (`ios/App/CustomWordsView.swift`; bu pakette yapılmadı).
+> - [ ] iCloud açıldığında: App ID'de iCloud yeteneği + KVS yetkisi, politika §3.11 ve aydınlatma §3 aynı sürümde; "iCloud'daki kopyayı sil"in uygulama silinmeden önce kullanılması gerektiği telefonda denenmeli.
+> - [ ] Yayından önce `DiagnosticsSwitch.showsInRelease = false` (`ios/App/WidgetHealthView.swift:11`).
+> - [ ] Apple Watch hedefinin gizlilik manifesti ve belgelerde saatin anılması (bu denetimin kapsamı dışında; `ios/Watch` altında manifest bulunamadı).
+
 ## 6. [TEYİT]: Avukata sorulacaklar (toplu liste)
 
 **A. KVKK**
@@ -156,6 +178,17 @@ Aşağıdakiler yapılmazsa belgeler gerçeği yansıtmaz ve Apple/KVKK riski do
 33. **Kullanım şartlarında Söyle uyarısı:** `kullanim_sartlari_tr.md:73` (ve EN karşılığı) telaffuzdan söz ediyor, ama Söyle'nin geri bildiriminin cihaz içi tanımaya dayalı ve **yaklaşık** olduğu (aksanı, gürültüyü yanlış değerlendirebileceği) yazmıyor. Böyle bir cümle eklensin mi?
 34. **İzin metinlerinin dili:** Info.plist izin metinleri yalnızca Türkçe (`app_store_privacy_etiketi.md` §5.6). İngilizce mağaza yerelleştirmesinde İngilizce karşılık şart mı (Apple 5.1.1(ii): amaç açıkça anlatılmalı)?
 35. **Arka plan ses modu (App Review 2.5.4):** `UIBackgroundModes: audio` yalnızca widget'tan sesli okuma için. İnceleme notu yeterli mi; kullanıcıya ayrıca anlatmak gerekir mi? *(gizlilik politikası §3.8)*
+
+> **[ÖNERİ is5-veri, 2026-10-24]** **G. Kendi kelimeler, yerel ölçüm, Verilerin, iCloud (taslak-3, 24 Ekim 2026)**
+>
+> 36. **Kullanıcının yazdığı içerik:** Kendi kelimelere kullanıcı kişisel veri (hatta başkasının verisini) yazabilir; içerik yalnız cihazda/kendi iCloud'unda kalıyor. Politika ve kullanım şartlarındaki "kişisel veya hassas bilgi yazmayın" uyarısı yeterli mi; kilitli ekranda görünmesi için ek önlem (ör. ürün tarafında gizleme) beklenir mi? *(politika §3.1a, şartlar §6)*
+> 37. **Erişim ve taşınabilirlik:** Bize hiç ulaşmayan veri için KVKK m.11 ve GDPR m.15/m.20 bizi bağlar mı; "Dışa aktar"ı bu hakların kullanım yolu olarak anlatmak doğru mu; JSON + CSV, m.20'nin "yapılandırılmış, yaygın, makinece okunabilir" şartını karşılar mı? *(politika §10)*
+> 38. **Silme:** "Hepsini sil"in silemedikleri (eski cihaz yedekleri, paylaşılmış dosyalar, iCloud kopyası, iOS izinleri, Apple konuşma modeli) bu şekilde yazılınca KVKK m.7 / GDPR m.17 açısından yeterli mi? *(politika §3.10)*
+> 39. **Paylaşılan dosyalar:** Kullanıcının paylaşma penceresiyle üçüncü bir hizmete gönderdiği dosya için sorumluluğumuzun bittiği ("o hizmetin şartları geçerlidir") cümlesi yeterli mi? *(politika §3.10, §6)*
+> 40. **iCloud ve KVKK m.9:** Kullanıcının kendi iCloud hesabına kendi seçimiyle giden, geliştiricinin erişemediği veri bizim yurt dışı aktarımımız sayılır mı? Sayılırsa dayanak ne; anahtarı açmak açık rıza yerine geçer mi, ayrı metin gerekir mi? Apple bu hizmette kimin adına çalışır (kullanıcının sağlayıcısı / bizim veri işleyenimiz)? *(politika §3.11, §7; aydınlatma §3)*
+> 41. **App Store etiketi ve iCloud:** Kullanıcının özel iCloud alanındaki (KVS) verinin "collected" sayılmadığı varsayımı Apple'ın güncel belgeleriyle doğrulanmalı. *(etiket §2, §2A)*
+> 42. **iCloud kopyasının silinmesi:** Uygulama silindikten sonra KVS verisinin kullanıcı tarafından iOS Ayarları'ndan silinip silinemediği (silinemiyorsa metinde "önce uygulamadaki düğmeyi kullanın" uyarısı). *(politika §3.11)*
+> 43. **Apple Watch:** Widget planı (kendi kelimeler dahil) saate gidiyor; belgelerde saat hiç anılmıyor. Ayrı bir bölüm gerekir mi? (Bu denetimde kodu ayrıntılı incelenmedi.)
 
 **D. Kullanım şartları / tüketici**
 

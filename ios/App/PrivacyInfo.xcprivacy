@@ -21,8 +21,10 @@
 				<string>1C8F.1</string>
 			</array>
 		</dict>
-		<!-- ProgressStore reads/sets the modification date of progress.backup.json in the app's
-		     Application Support folder (daily backup): file metadata inside the app container. -->
+		<!-- ProgressStore and CustomWordStore read/set the modification date of their daily backups
+		     (progress.backup.json, custom_words.backup.json) in the app's Application Support folder:
+		     file metadata inside the app container. The import of "Verilerin" reads a picked file
+		     with FileHandle only (no metadata), so 3B52.1 is not needed. -->
 		<dict>
 			<key>NSPrivacyAccessedAPIType</key>
 			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>

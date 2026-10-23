@@ -5,7 +5,8 @@ import Foundation
 /// lengths, rounds left with "Bitir", taps per new word, "Biliyorum" words checked 3 days later and
 /// the Leitner boxes; and whether each daily reminder was opened.
 ///
-/// Stays on the phone: no network, no export, not in the App Group (the widget never reads it),
+/// Stays on the phone: no network, not in the App Group (the widget never reads it), exported only
+/// when the user asks ("Verilerin", `DataArchive`),
 /// not in device backups. "İlerlemeyi sıfırla" deletes it (`LocalMetricsRecorder.reset`).
 /// No words and no answers are stored, only counts and durations.
 ///

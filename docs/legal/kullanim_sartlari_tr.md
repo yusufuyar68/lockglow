@@ -87,6 +87,10 @@ Uygulama, kaynak kodu, tasarım, ikon, ekran düzeni, içerik veritabanı (tanı
 
 **Sizin içeriğiniz:** Oluşturduğunuz özel listeler cihazınızda kalır ve size aittir. Bunlar üzerinde bir kullanım hakkı talep etmeyiz.
 
+> **[ÖNERİ is5-veri, 2026-10-24]** Bu cümle koda göre eski: uygulamada "özel liste" yok, kullanıcının yazdığı içerik "kendi kelimeleri" (`ios/Packages/VocabKit/Sources/Learning/CustomWords.swift:14–25`). Önerilen metin:
+>
+> "**Sizin içeriğiniz:** Kendi eklediğiniz kelimeler, anlamları, örnek cümleleriniz ve notlarınız size aittir; bunlar üzerinde bir kullanım hakkı talep etmeyiz. Bu içerik cihazınızda, iCloud ile eşitlemeyi açtıysanız ayrıca kendi iCloud hesabınızda durur ve widget'ta, kilitli ekranda görünebilir; içine kişisel veya hassas bilgi, başkalarına ait kişisel veri ya da hukuka aykırı içerik yazmayın. Verilerinizin bir kopyasını **Ayarlar > İlerleme > Verilerin** bölümünden alabilirsiniz. Uygulamanın bir sunucusu yoktur; bir yedeği siz almadıysanız, uygulamayı veya telefonu sildiğinizde ya da 'Hepsini sil'i kullandığınızda verilerinizi geri getiremeyiz." **[TEYİT: Bu cümlenin §9'daki veri kaybı sorumsuzluğu ile birlikte tüketici mevzuatına uygunluğu.]**
+
 ## 7. Kabul edilebilir kullanım
 
 Aşağıdakileri yapmamayı kabul edersiniz:
