@@ -214,9 +214,58 @@ final class ShortcutLogicTests: XCTestCase {
         XCTAssertEqual(ShortcutWordSearch.matches("b", in: words, fold: fold, limit: 0), [])
     }
 
-    func testSearchListsEachWordOnceAndFindsPersonalTopicCardsAsSozlukDoes() {
-        let words = [word(1, "divorce", gloss: "boşanmak", sensitivity: 1), word(1, "divorce", gloss: "boşanmak"), word(2, "divorced", gloss: "boşanmış")]
-        XCTAssertEqual(ids(ShortcutWordSearch.matches("divorce", in: words, fold: fold)), [1, 2])
+    func testSearchListsEachWordOnce() {
+        let words = [word(1, "apple", gloss: "elma"), word(1, "apple", gloss: "elma"), word(2, "apples", gloss: "elmalar")]
+        XCTAssertEqual(ids(ShortcutWordSearch.matches("apple", in: words, fold: fold)), [1, 2])
+    }
+
+    func testSearchFindsAPersonalTopicCardOnlyWhenItIsNamed() {
+        let words = [
+            word(1, "divorce", gloss: "boşanmak", sensitivity: 1),
+            word(2, "divorced", gloss: "boşanmış", sensitivity: 1),
+            word(3, "break up", gloss: "ayrılmak, bitirmek", sensitivity: 1),
+            word(4, "boss", gloss: "patron"),
+        ]
+        XCTAssertEqual(ids(ShortcutWordSearch.matches("divorce", in: words, fold: fold)), [1], "the English word itself")
+        XCTAssertEqual(ids(ShortcutWordSearch.matches("boşanmak", in: words, fold: fold)), [1], "a meaning itself")
+        XCTAssertEqual(ids(ShortcutWordSearch.matches("ayrılmak", in: words, fold: fold)), [3], "one part of the meaning")
+        XCTAssertEqual(ids(ShortcutWordSearch.matches("bo", in: words, fold: fold)), [4], "never from a start Siri reads out")
+        XCTAssertEqual(ids(ShortcutWordSearch.matches("up", in: words, fold: fold)), [])
+    }
+
+    // MARK: The user's words for Siri
+
+    private func temporaryStore() throws -> CustomWordStore {
+        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("ShortcutLogicTests-\(UUID().uuidString)")
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        addTeardownBlock {
+            try? FileManager.default.removeItem(at: folder)
+        }
+        return CustomWordStore(fileURL: folder.appendingPathComponent("custom_words.json"))
+    }
+
+    func testPeekReadsWhatSaveWrote() throws {
+        let store = try temporaryStore()
+        var list = CustomWordList()
+        try list.add(CustomWordDraft(lemma: "awkward", meaningTR: "garip", exampleEN: "It was an awkward moment."), now: Date(timeIntervalSince1970: 1_760_000_000))
+        try list.add(CustomWordDraft(lemma: "look up", meaningTR: "sözlükte aramak"), now: Date(timeIntervalSince1970: 1_760_000_100))
+        try store.save(list, now: Date(timeIntervalSince1970: 1_760_000_200))
+        XCTAssertEqual(store.peek(), list)
+        XCTAssertEqual(store.peek()?.widgetWords.map { $0.lemma }, ["awkward", "look up"])
+    }
+
+    func testPeekLeavesAMissingOrDamagedFileAlone() throws {
+        let store = try temporaryStore()
+        XCTAssertNil(store.peek(), "no file yet")
+
+        try Data("{ not json".utf8).write(to: store.fileURL)
+        XCTAssertNil(store.peek())
+        XCTAssertTrue(FileManager.default.fileExists(atPath: store.fileURL.path), "the damaged file stays for the app's own load")
+        let folder = store.fileURL.deletingLastPathComponent()
+        XCTAssertEqual(try FileManager.default.contentsOfDirectory(atPath: folder.path), ["custom_words.json"], "nothing moved aside or written")
+
+        try Data(#"{"format": 99, "next_id": 1000000, "words": []}"#.utf8).write(to: store.fileURL)
+        XCTAssertNil(store.peek(), "a newer format is not read")
     }
 
     func testSuggestionsLeaveOutPersonalTopicCards() {

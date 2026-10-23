@@ -1,0 +1,22 @@
+/*
+  The English phrases as written in the code (ios/App/Intents/ShortcutIntents.swift). This file
+  only keeps English one of the app's localizations next to tr.lproj, so a phone set to English
+  goes on running the app in English (the development language) as before. Same keys as
+  tr.lproj/AppShortcuts.strings; change all three together.
+*/
+
+"What's today's word in ${applicationName}" = "What's today's word in ${applicationName}";
+"${applicationName} word of the day" = "${applicationName} word of the day";
+"Tell me today's word in ${applicationName}" = "Tell me today's word in ${applicationName}";
+
+"Start a review in ${applicationName}" = "Start a review in ${applicationName}";
+"${applicationName} start review" = "${applicationName} start review";
+"Open review in ${applicationName}" = "Open review in ${applicationName}";
+
+"Add a word to ${applicationName}" = "Add a word to ${applicationName}";
+"${applicationName} add word" = "${applicationName} add word";
+"Add a new word to ${applicationName}" = "Add a new word to ${applicationName}";
+
+"Look up this word in ${applicationName}" = "Look up this word in ${applicationName}";
+"${applicationName} look up a word" = "${applicationName} look up a word";
+"Search for a word in ${applicationName}" = "Search for a word in ${applicationName}";

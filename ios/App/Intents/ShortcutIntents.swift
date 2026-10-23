@@ -81,7 +81,8 @@ struct AddWordIntent: AppIntent {
 }
 
 /// "Bu kelimeyi Lockglow'da ara": Siri asks for the word (English or Turkish), offers the matches
-/// (`WordEntityQuery`) and opens the chosen word's whole card.
+/// (`WordEntityQuery`) and opens the chosen word's whole card. An `OpenIntent` opens the app by
+/// itself.
 struct OpenWordIntent: OpenIntent {
     static var title: LocalizedStringResource {
         "Kelime ara"
@@ -89,10 +90,6 @@ struct OpenWordIntent: OpenIntent {
 
     static var description: IntentDescription? {
         IntentDescription("Kelimeyi İngilizce ya da Türkçe bulur ve kartını açar.")
-    }
-
-    static var openAppWhenRun: Bool {
-        true
     }
 
     @Parameter(title: "Kelime", requestValueDialog: "Hangi kelimeyi arayalım?")
@@ -170,7 +167,11 @@ struct TodayWordSnippet: View {
 /// The phrases Siri knows without any setup, also offered in Spotlight and Kestirmeler. The code
 /// holds the English phrases (the project's development language is English); the Turkish ones
 /// are in Intents/tr.lproj/AppShortcuts.strings, one for each English phrase, keyed by it
-/// (`${applicationName}` there is `\(.applicationName)` here). Change both together.
+/// (`${applicationName}` there is `\(.applicationName)` here). en.lproj repeats the English ones.
+/// Change all three together.
+///
+/// The tr.lproj folder makes Turkish one of the app's localizations: on a phone set to Turkish
+/// the system's own words in the app (search field, "Vazgeç") and dates come in Turkish too.
 struct LockglowShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(

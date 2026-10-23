@@ -145,9 +145,14 @@ struct RootView: View {
         // Siri, Kestirmeler and a tapped Spotlight result (Intents/ShortcutRouter.swift): a word
         // opens as its whole card, "Tekrar" as the tab; the add form is the modifier's own sheet.
         .shortcutRoutes(
-            canOpen: detailWord == nil && systemCards.presented == nil && !showsWidgetGuide,
+            wordCardShown: detailWord != nil,
+            otherSheetShown: systemCards.presented != nil || showsWidgetGuide,
             openWord: { open($0, in: model.feedWords, asCard: true) },
-            openReview: { selectedTab = .review }
+            openReview: {
+                detailWord = nil
+                showsWidgetGuide = false
+                selectedTab = .review
+            }
         )
     }
 

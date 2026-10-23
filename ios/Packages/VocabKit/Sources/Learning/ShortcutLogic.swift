@@ -194,7 +194,8 @@ public enum ShortcutWordSearch {
     /// the meaning starting with it. Within a group the given order stays (the user's own words
     /// first, then the cards, easiest first). `fold` is `TextFold.fold` (case, accents, Turkish
     /// letters); spaces and the punctuation Siri adds around a word ("Kahvaltı.") are ignored.
-    /// Personal-topic cards are found as in "Sözlük": the user asked for this word.
+    /// A personal-topic card comes only when the user named it (the first two groups): Siri may
+    /// read the list aloud, and "b" or "boş" must not bring such cards up.
     public static func matches(_ query: String, in words: [WidgetWord], fold: (String) -> String, limit: Int = ShortcutWordSearch.limit) -> [WidgetWord] {
         let needle = fold(query.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)))
         guard !needle.isEmpty, limit > 0 else {
@@ -215,6 +216,9 @@ public enum ShortcutWordSearch {
             } else if hasWord(startingWith: needle, in: lemma) || hasWord(startingWith: needle, in: meaning) {
                 group = 3
             } else {
+                continue
+            }
+            if group > 1 && word.isSensitive {
                 continue
             }
             seen.insert(word.id)
@@ -252,6 +256,42 @@ public enum ShortcutWordSearch {
             index = text.index(after: index)
         }
         return false
+    }
+}
+
+// MARK: - The user's words for Siri
+
+extension CustomWordStore {
+    /// The saved words as they are on disk, for a reader outside the app's own library (Siri may
+    /// run before the app has a screen). Unlike `load` it never moves, restores or writes
+    /// anything: a damaged file is left for the app, whose own `load` then tells the user. Nil
+    /// when the file is missing, unreadable now (a locked phone) or in a format this build does
+    /// not read. Same file format as `save` (the tests read a saved file back).
+    public func peek() -> CustomWordList? {
+        guard let data = try? Data(contentsOf: fileURL) else {
+            return nil
+        }
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        guard let body = try? decoder.decode(PeekedFile.self, from: data),
+              (1...CustomWordStore.format).contains(body.format)
+        else {
+            return nil
+        }
+        return CustomWordList(words: body.words, nextID: body.nextID)
+    }
+}
+
+/// What `peek` reads of custom_words.json: `CustomWordStore`'s file body.
+private struct PeekedFile: Decodable {
+    let format: Int
+    let nextID: Int
+    let words: [CustomWord]
+
+    enum CodingKeys: String, CodingKey {
+        case format
+        case nextID = "next_id"
+        case words
     }
 }
 

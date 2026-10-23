@@ -15,8 +15,9 @@ extension AppModel {
     nonisolated static let shortcutWordLimit = 5000
 
     /// The word every widget shows now, worked out from the plan and the widget's state on disk
-    /// with the same pure functions as the widget (`WordDataSource`) and `updateLockScreenWord`:
-    /// the bundled seed words before the first plan. Nil when there is no word at all.
+    /// as the widget does (`WordDataSource`, `WordProvider`): the bundled seed words before the
+    /// first plan, and every queued word when all of them are marked known (the widget keeps
+    /// showing words then). Nil when there is no word at all.
     nonisolated static func widgetWordNow(_ now: Date = Date()) -> WidgetWord? {
         let store = AppGroupLocator.containerURL().map { AppGroupStore(containerURL: $0) }
         let plan = store?.readPlan()
@@ -26,15 +27,18 @@ extension AppModel {
             state: store?.readState(),
             seedWords: hasPlan ? [] : SeedWords.load()
         )
-        return TimelinePlanner.wordAt(
-            now,
-            queue: rotation.queue,
-            knownIDs: rotation.knownIDs,
-            cursorOffset: rotation.cursorOffset,
-            cursorAnchor: rotation.cursorAnchor,
-            interval: rotation.interval,
-            alignmentOffset: TimelinePlanner.localAlignmentOffset(for: now)
-        )
+        func word(skipping knownIDs: Set<Int>) -> WidgetWord? {
+            return TimelinePlanner.wordAt(
+                now,
+                queue: rotation.queue,
+                knownIDs: knownIDs,
+                cursorOffset: rotation.cursorOffset,
+                cursorAnchor: rotation.cursorAnchor,
+                interval: rotation.interval,
+                alignmentOffset: TimelinePlanner.localAlignmentOffset(for: now)
+            )
+        }
+        return word(skipping: rotation.knownIDs) ?? word(skipping: [])
     }
 
     /// Every word a shortcut can name, as the app loads them (`ContentLoader`: content.sqlite,
@@ -46,15 +50,15 @@ extension AppModel {
     }
 
     /// The user's own words saved on this phone; empty when there are none or the file cannot be
-    /// read now (for example on a locked phone). `CustomWordStore.load` writes nothing: it only
-    /// moves aside a file it cannot decode, as the app's own load at the next launch would.
+    /// read now (for example on a locked phone). `peek`, never `load`: a damaged file stays where
+    /// it is, so the app's own load finds it and shows its notice.
     nonisolated static func savedCustomWords() -> [WidgetWord] {
         guard let url = try? CustomWordStore.defaultURL(),
-              let loaded = try? CustomWordStore(fileURL: url).load()
+              let list = CustomWordStore(fileURL: url).peek()
         else {
             return []
         }
-        return loaded.list.widgetWords
+        return list.widgetWords
     }
 
     /// What Spotlight may show (`SpotlightCatalog.entries`): the loaded cards without the user's
