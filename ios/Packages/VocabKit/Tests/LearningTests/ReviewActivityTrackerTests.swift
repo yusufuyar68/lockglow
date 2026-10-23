@@ -99,6 +99,29 @@ final class ReviewActivityTrackerTests: XCTestCase {
         XCTAssertTrue(tracker.isShowing)
     }
 
+    /// A background refresh closes it once the user has been away 30 minutes, not before.
+    func testABackgroundRefreshClosesItAfterThirtyMinutes() {
+        var tracker = showing()
+        XCTAssertNil(tracker.closingDate)
+        _ = tracker.didEnterBackground(at: start)
+        XCTAssertEqual(tracker.closingDate, start.addingTimeInterval(30 * minute))
+        XCTAssertEqual(tracker.backgroundCheck(at: start.addingTimeInterval(10 * minute)), .none)
+        XCTAssertEqual(tracker.leftAt, start)
+        XCTAssertEqual(tracker.backgroundCheck(at: start.addingTimeInterval(31 * minute)), .end)
+        XCTAssertFalse(tracker.isShowing)
+        XCTAssertNil(tracker.closingDate)
+        XCTAssertEqual(tracker.backgroundCheck(at: start.addingTimeInterval(40 * minute)), .none)
+        // Back in the app: nothing left to close; the next card starts it again.
+        XCTAssertEqual(tracker.didBecomeActive(at: start.addingTimeInterval(50 * minute)), .none)
+        XCTAssertEqual(tracker.roundChanged(to: Progress(card: 2, total: 10), enabled: true), .start(Progress(card: 2, total: 10)))
+    }
+
+    func testABackgroundRefreshWithoutAnActivityDoesNothing() {
+        var tracker = ReviewActivityTracker()
+        XCTAssertEqual(tracker.backgroundCheck(at: start), .none)
+        XCTAssertNil(tracker.closingDate)
+    }
+
     /// An activation without a background before it (Control Center, an alert) changes nothing.
     func testAnActivationWithoutLeavingDoesNothing() {
         var tracker = showing()

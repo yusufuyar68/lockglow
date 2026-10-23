@@ -10,8 +10,8 @@ import Foundation
 /// - It closes `timeout` after the user left the app in the middle of a round: Apple keeps Live
 ///   Activities for a task that is really going on. A suspended app cannot close it on time, so
 ///   the activity is stale from then on (`staleDate(from:)`: its views drop the counter and the
-///   button) and the app closes it when it comes back (`didBecomeActive(at:)`) or at its next
-///   launch.
+///   button). The app closes it in a background refresh if iOS runs one (`backgroundCheck(at:)`,
+///   `closingDate`), when it comes back (`didBecomeActive(at:)`) or at its next launch.
 /// - Closed by the timeout, it comes back when the user goes on with the round (the next card).
 ///   Closed by the user (swiped away), by iOS, by the switch in "Ayarlar" or by a start that did
 ///   not work, it does not come back in the same round; the next round starts a new one.
@@ -122,6 +122,27 @@ public struct ReviewActivityTracker: Equatable, Sendable {
         }
         isShowing = false
         return .end
+    }
+
+    /// A background refresh (iOS picks when, so it is not guaranteed; the stale view stays the
+    /// fallback): the activity closes when the user has been away `timeout` or longer. Unlike
+    /// `didBecomeActive(at:)` the app stays in the background, so `leftAt` is kept until it closes.
+    public mutating func backgroundCheck(at date: Date) -> Action {
+        guard isShowing, let left = leftAt, date.timeIntervalSince(left) >= ReviewActivityTracker.timeout else {
+            return .none
+        }
+        isShowing = false
+        leftAt = nil
+        return .end
+    }
+
+    /// When a background refresh should come: `timeout` after the user left; nil while the app is
+    /// in front or nothing shows.
+    public var closingDate: Date? {
+        guard isShowing, let left = leftAt else {
+            return nil
+        }
+        return ReviewActivityTracker.staleDate(from: left)
     }
 
     /// The switch in "Ayarlar": off closes the activity now, for the rest of the round. On starts

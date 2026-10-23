@@ -1,4 +1,5 @@
 import ActivityKit
+import BackgroundTasks
 import SwiftUI
 import UIKit
 import Learning
@@ -10,7 +11,10 @@ import Learning
 ///
 /// - ReviewView reports its counter (`roundChanged(to:)`), nil when no round runs.
 /// - The app's background and activation reach it from the notification center: the 30 minutes
-///   count from the moment the user leaves (`ReviewActivityTracker.timeout`).
+///   count from the moment the user leaves (`ReviewActivityTracker.timeout`). Leaving also asks
+///   for a background refresh at the 30th minute (`refreshTaskID`, LockglowApp's
+///   `.backgroundTask`), which closes the activity. iOS decides when (or whether) it runs, so it
+///   is not guaranteed: the stale view stays the fallback until the app comes back.
 /// - RootView calls `endLeftovers()` at launch: a new run has no round, so an activity left by
 ///   the last one (the app was closed in the middle of a round) goes.
 /// - "Ayarlar" has a switch, on by default (`ReviewLiveActivitySection`).
@@ -20,6 +24,10 @@ final class ReviewLiveActivity {
 
     /// The switch in "Ayarlar"; on when never set.
     static let enabledKey = "lockglow.reviewLiveActivity"
+
+    /// The background refresh that closes an activity left alone (project.yml,
+    /// `BGTaskSchedulerPermittedIdentifiers`: `$(PRODUCT_BUNDLE_IDENTIFIER).reviewLiveActivity`).
+    nonisolated static let refreshTaskID = (Bundle.main.bundleIdentifier ?? "lockglow") + ".reviewLiveActivity"
 
     static var isEnabled: Bool {
         return UserDefaults.standard.object(forKey: enabledKey) as? Bool ?? true
@@ -74,13 +82,41 @@ final class ReviewLiveActivity {
         }
         holdBackgroundTime()
         perform(action)
+        scheduleRefresh()
         enqueue {
             ReviewLiveActivity.shared.releaseBackgroundTime()
         }
     }
 
     private func appDidBecomeActive() {
+        // Back in front: the app closes it itself if needed.
+        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: ReviewLiveActivity.refreshTaskID)
         perform(tracker.didBecomeActive(at: Date()))
+    }
+
+    /// The background refresh (LockglowApp): closes the activity when the user has been away 30
+    /// minutes; if iOS ran it early, asks again. A process iOS started just for it has no round:
+    /// whatever activity the last one left goes.
+    func backgroundRefresh() async {
+        if tracker.progress == nil {
+            endLeftovers()
+        } else {
+            perform(tracker.backgroundCheck(at: Date()))
+            scheduleRefresh()
+        }
+        await lastCall?.value
+    }
+
+    /// Asks iOS for a background refresh at `ReviewActivityTracker.closingDate` (a new request
+    /// replaces the old one). Refused on the simulator and when Background App Refresh is off:
+    /// the stale view and the next activation still close it.
+    private func scheduleRefresh() {
+        guard let date = tracker.closingDate else {
+            return
+        }
+        let request = BGAppRefreshTaskRequest(identifier: ReviewLiveActivity.refreshTaskID)
+        request.earliestBeginDate = date
+        try? BGTaskScheduler.shared.submit(request)
     }
 
     private func perform(_ action: ReviewActivityTracker.Action) {
