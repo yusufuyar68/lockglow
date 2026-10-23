@@ -22,6 +22,12 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
     public let sensitivity: Int?
     /// Ids of the cards a learner mixes up with this one (`card_confusable`, both directions).
     public let confusableIDs: [Int]?
+    /// The large widget's second example (`CardDetail.secondExample(besides:containing:)`); nil
+    /// in the seed and for a card with one example. The app sets it and `warning` on the plan's
+    /// copy of the word (`addingLargeWidgetDetails(from:)`), hence `var`.
+    public var secondExampleEN: String?
+    /// The large widget's warning line (`CardDetail.widgetWarning(lemma:)`); nil without one.
+    public var warning: WidgetWarning?
 
     public init(
         id: Int,
@@ -64,6 +70,8 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         case glossShortTR = "gloss_short_tr"
         case sensitivity
         case confusableIDs = "confusable_ids"
+        case secondExampleEN = "second_example_en"
+        case warning
     }
 }
 

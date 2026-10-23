@@ -968,6 +968,8 @@ final class AppModel: ObservableObject {
                 confusableIDs: word.confusableIDs
             )
         }
+        // is5-w-buyuk: the large widget's second example and warning (CoreModels/WidgetWarning.swift).
+        .map { $0.addingLargeWidgetDetails(from: detail(for: $0)) }
 
         // The interval is global (all widget instances). The app owns it; changing it keeps the
         // visible word, because `currentWord` above was computed with the OLD plan's interval.
