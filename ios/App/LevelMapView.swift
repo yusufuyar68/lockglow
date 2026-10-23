@@ -10,12 +10,12 @@ import Learning
 struct LevelMapView: View {
     let map: LevelMap
     /// A topic id's name on screen.
-    let topicName: (String) -> String?
+    let topicName: @MainActor (String) -> String?
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Her seviyenin kelimeleri her zaman açık. Harita, yeni kelimelerin nereden geldiğini gösterir.")
+                Text("Seviyeler kilitli değil. Harita, yeni kelimelerin hangi seviyeden geldiğini gösterir.")
                     .font(.body)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
@@ -95,7 +95,7 @@ struct LevelMapLinkLabel: View {
 
 /// One level: code and dots, its name, "Yeni kelimeler buradan" on the level new words come from
 /// now, the counts with a two-part bar, and the next topics. A zero is never written: an unmet
-/// level says "Henüz yeni".
+/// level says "Henüz tanışmadın".
 private struct LevelStopCard: View {
     let stop: LevelMap.Stop
     let isStart: Bool
@@ -117,15 +117,15 @@ private struct LevelStopCard: View {
                 }
             }
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text(verbatim: countText))
+            .accessibilityLabel(Text(verbatim: countText.replacingOccurrences(of: " · ", with: ". ")))
             if stop.everyWordMet {
-                Text("Bütün kelimeleriyle tanıştın. Tekrarlar sürer.")
+                Text("Bu seviyenin tüm kelimeleriyle tanıştın. Tekrarlar sürüyor.")
                     .font(.footnote)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             } else if !topicNames.isEmpty {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Sırada")
+                    Text(isCurrent ? "Sırada" : "Bu seviyenin konuları")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(Theme.ink2)
                     Text(verbatim: topicNames.joined(separator: ", "))
@@ -134,7 +134,7 @@ private struct LevelStopCard: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .accessibilityElement(children: .ignore)
-                .accessibilityLabel(Text(verbatim: "Sırada: " + topicNames.joined(separator: ", ")))
+                .accessibilityLabel(Text(verbatim: (isCurrent ? "Sırada: " : "Bu seviyenin konuları: ") + topicNames.joined(separator: ", ")))
             }
         }
         .padding(16)
@@ -207,12 +207,12 @@ private struct LevelStopCard: View {
         return text
     }
 
-    /// "418 kelime · 96 kelimeyle tanıştın", "418 kelime · Henüz yeni".
+    /// "418 kelime · 96 kelimeyle tanıştın", "418 kelime · Henüz tanışmadın".
     private var countText: String {
         if stop.met > 0 {
             return "\(stop.total) kelime · \(stop.met) kelimeyle tanıştın"
         }
-        return "\(stop.total) kelime · Henüz yeni"
+        return "\(stop.total) kelime · Henüz tanışmadın"
     }
 }
 

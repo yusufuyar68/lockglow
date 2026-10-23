@@ -10,48 +10,56 @@ struct PlacementTestButton: View {
     @EnvironmentObject private var model: AppModel
     @State private var isPresented = false
 
+    /// The sheet hangs on the `Group`, outside the `if`: content that turns out too small while
+    /// the test is open must not close it mid-test.
     var body: some View {
-        if model.canOfferPlacementTest {
-            Button {
-                isPresented = true
-            } label: {
-                HStack(spacing: 12) {
-                    Image(systemName: "list.bullet.clipboard")
-                        .font(.title3)
-                        .foregroundStyle(Theme.ink2)
-                        .accessibilityHidden(true)
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Seviyeni bilmiyor musun?")
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(Theme.ink)
-                        Text("Yaklaşık 2 dakikalık kısa bir testle bulalım.")
-                            .font(.footnote)
-                            .foregroundStyle(Theme.ink2)
-                    }
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    Image(systemName: "chevron.right")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(Theme.ink3)
-                        .accessibilityHidden(true)
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 16)
-                .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
-                .background(Theme.surface2, in: shape)
-                .overlay(shape.strokeBorder(Theme.lineStrong, lineWidth: 1))
-                .contentShape(shape)
-            }
-            .buttonStyle(.plain)
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel("Seviyeni bilmiyor musun? Kısa seviye testi")
-            .accessibilityIdentifier("placement.open")
-            .sheet(isPresented: $isPresented) {
-                PlacementTestSheet(onResult: onResult)
-                    .environmentObject(model)
+        Group {
+            if model.canOfferPlacementTest {
+                button
             }
         }
+        .sheet(isPresented: $isPresented) {
+            PlacementTestSheet(onResult: onResult)
+                .environmentObject(model)
+        }
+    }
+
+    private var button: some View {
+        Button {
+            isPresented = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "list.bullet.clipboard")
+                    .font(.title3)
+                    .foregroundStyle(Theme.ink2)
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Seviyeni bilmiyor musun?")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Theme.ink)
+                    Text("Yaklaşık 2 dakikalık kısa bir testle bulalım.")
+                        .font(.footnote)
+                        .foregroundStyle(Theme.ink2)
+                }
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                Image(systemName: "chevron.right")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.ink3)
+                    .accessibilityHidden(true)
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
+            .background(Theme.surface2, in: shape)
+            .overlay(shape.strokeBorder(Theme.lineStrong, lineWidth: 1))
+            .contentShape(shape)
+        }
+        .buttonStyle(.plain)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Seviyeni bilmiyor musun? Seviye testi, yaklaşık 2 dakika")
+        .accessibilityIdentifier("placement.open")
     }
 
     private var shape: RoundedRectangle {
@@ -65,24 +73,30 @@ struct PlacementTestSettingsRow: View {
     @State private var isPresented = false
 
     var body: some View {
-        if model.canOfferPlacementTest {
-            SettingsGroup {
-                Button {
-                    isPresented = true
-                } label: {
-                    SettingsRow("Seviyeni bilmiyor musun?", systemImage: "list.bullet.clipboard") {
-                        Text("Kısa test")
-                    }
-                }
-                .buttonStyle(SettingsRowButtonStyle())
-                .accessibilityIdentifier("settings.placement")
+        Group {
+            if model.canOfferPlacementTest {
+                row
             }
-            .sheet(isPresented: $isPresented) {
-                PlacementTestSheet { level in
-                    model.applyPlacementResult(level)
-                }
-                .environmentObject(model)
+        }
+        .sheet(isPresented: $isPresented) {
+            PlacementTestSheet { level in
+                model.applyPlacementResult(level)
             }
+            .environmentObject(model)
+        }
+    }
+
+    private var row: some View {
+        SettingsGroup {
+            Button {
+                isPresented = true
+            } label: {
+                SettingsRow("Seviye testi", systemImage: "list.bullet.clipboard") {
+                    Text("Yaklaşık 2 dakika")
+                }
+            }
+            .buttonStyle(SettingsRowButtonStyle())
+            .accessibilityIdentifier("settings.placement")
         }
     }
 }
@@ -134,7 +148,11 @@ struct PlacementTestSheet: View {
     private var topBar: some View {
         HStack(spacing: 12) {
             if phase == .asking, let test = test {
-                PlacementProgressBar(done: test.answers.count, total: PlacementTest.maximumQuestions)
+                // Toward 20 words first, then toward 25: a clear result at 20 fills the bar.
+                let total = test.answers.count < PlacementTest.minimumQuestions
+                    ? PlacementTest.minimumQuestions
+                    : PlacementTest.maximumQuestions
+                PlacementProgressBar(done: test.answers.count, total: total)
             } else {
                 Spacer(minLength: 0)
             }
@@ -228,10 +246,10 @@ struct PlacementTestSheet: View {
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
             VStack(alignment: .leading, spacing: 12) {
-                IntroLine(symbol: "hand.tap", text: "Her kelimenin Türkçesini seç.")
-                IntroLine(symbol: "questionmark.circle", text: "Emin değilsen tahmin etme. Emin değilim'e dokun.")
-                IntroLine(symbol: "arrow.up.arrow.down", text: "Bildikçe kelimeler zorlaşır, bilmedikçe kolaylaşır.")
-                IntroLine(symbol: "checkmark.seal", text: "Sonunda başlangıç seviyeni söyleriz. Kelimeler bilinen sayılmaz.")
+                IntroLine(symbol: "hand.tap", text: "Her kelimenin anlamını seç.")
+                IntroLine(symbol: "questionmark.circle", text: "Emin değilsen tahmin etme, Emin değilim düğmesine dokun.")
+                IntroLine(symbol: "arrow.up.arrow.down", text: "Kelimeler cevaplarına göre zorlaşır ya da kolaylaşır.")
+                IntroLine(symbol: "checkmark.seal", text: "Sonunda başlangıç seviyeni söyleriz. Testteki kelimeler bildiğin kelimelere eklenmez.")
             }
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -452,7 +470,7 @@ private struct PlacementResultView: View {
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
             VStack(alignment: .leading, spacing: 6) {
-                Text("Testteki kelimeler bilinen sayılmadı. Sırası gelince Tekrar'da karşına çıkar.")
+                Text("Testteki kelimeler bildiğin kelimelere eklenmedi.")
                 Text("Seviyeni Ayarlar'dan istediğin zaman değiştirebilirsin.")
             }
             .font(.footnote)
@@ -462,24 +480,25 @@ private struct PlacementResultView: View {
     }
 }
 
-/// The result's words: the onboarding's level names, and why the start is there.
+/// The result's words: what each level holds (not the user: "Yeni başlıyorum" is the onboarding's
+/// answer), and why the start is there.
 enum PlacementResultText {
     static func title(_ level: Level) -> String {
         switch level {
-        case .a1: return "Yeni başlıyorum"
-        case .a2: return "Temel konuşabiliyorum"
-        default: return "Günlük konuşmayı anlıyorum"
+        case .a1: return "En temel kelimeler"
+        case .a2: return "Günlük hayat"
+        default: return "İş, seyahat ve duygular"
         }
     }
 
     static func explanation(_ level: Level) -> String {
         switch level {
         case .a1:
-            return "Temel kelimelerin bir kısmı senin için yeni. En temel kelimelerle başlıyoruz: ev, yemek, aile."
+            return "A1 kelimelerinin bir kısmı senin için yeni. En temel konularla başlıyoruz: ev, yemek, aile."
         case .a2:
-            return "A1 kelimelerinin çoğunu biliyorsun. Günlük hayatın kelimeleriyle devam ediyoruz: alışveriş, yol, randevu."
+            return "Testte A1 kelimelerinin çoğunu bildin. Günlük hayatla başlıyoruz: alışveriş, yol, randevu."
         default:
-            return "A1 ve A2 kelimelerinin çoğunu biliyorsun. İş, seyahat ve duygular gibi konularla devam ediyoruz."
+            return "Testte A1 ve A2 kelimelerinin çoğunu bildin. İş, seyahat ve duygularla başlıyoruz."
         }
     }
 }

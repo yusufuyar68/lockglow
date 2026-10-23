@@ -30,7 +30,7 @@ extension AppModel {
     /// the same options as "Hatırla"; a confusable partner is never an option). Nil when the card
     /// cannot get four meanings: the test then takes the next word.
     func placementQuestion(for id: Int) -> ChoiceQuestion? {
-        guard let word = word(id: id) else {
+        guard let word = self.word(id: id) else {
             return nil
         }
         let question = ReviewPlanner.introQuestion(
