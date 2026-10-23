@@ -8,7 +8,8 @@
 #   se-koyu, pro-koyu, promax-koyu   the same in dark mode
 # Each pass starts from an erased simulator with the status bar at 9:41, full Wi-Fi and cellular
 # bars and a full battery (no "Carrier"). Screenshots land in shots/<pass>/ (raw xcresult export
-# with manifest.json) and named/<pass>/<attachment name>.png.
+# with manifest.json) and named/<pass>/<attachment name>.png. A pass whose UI test runner did not
+# start is run once more (UI tests only) as "<pass>-retry": out/<pass>-retry.log, shots/<pass>-retry/.
 name: screenshots
 
 on:
@@ -124,6 +125,19 @@ jobs:
               || echo "status bar: operator name refused"
             xcrun simctl status_bar "$udid" list || true
           }
+          # One xcodebuild run on $udid: $1 names its log, result bundle and shots folder; the
+          # rest are its -only-testing flags.
+          run_tests() {
+            run="$1"; shift
+            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+              -destination "id=$udid" -derivedDataPath build/dd "$@" \
+              -resultBundlePath "out/$run.xcresult" > "out/$run.log" 2>&1 \
+              || echo "test run failed on $run"
+            grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" "out/$run.log" | tail -40 || true
+            if [ -d "out/$run.xcresult" ]; then
+              xcrun xcresulttool export attachments --path "out/$run.xcresult" --output-path "shots/$run" || true
+            fi
+          }
           run_pass() {
             name="$1"
             case "$name" in
@@ -149,13 +163,19 @@ jobs:
             echo "::group::$name ($appearance, $udid)"
             prepare "$udid" "$appearance" || { echo "skipping $name"; echo "::endgroup::"; return 0; }
             # shellcheck disable=SC2086
-            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
-              -destination "id=$udid" -derivedDataPath build/dd $only \
-              -resultBundlePath "out/$name.xcresult" > "out/$name.log" 2>&1 \
-              || echo "test run failed on $name"
-            grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" "out/$name.log" | tail -40 || true
-            if [ -d "out/$name.xcresult" ]; then
-              xcrun xcresulttool export attachments --path "out/$name.xcresult" --output-path "shots/$name" || true
+            run_tests "$name" $only
+            # On 22 Oct the UI test runner of "se" and "pro" did not start ("The test runner failed
+            # to initialize for UI testing ... Timed out waiting for AX loaded notification"), so no
+            # UI test ran. Once more then, on an erased simulator, the UI tests only (the widget
+            # renders are done); its log and pictures are "<pass>-retry".
+            if grep -qi "failed to initialize for UI testing" "out/$name.log" \
+              && ! grep -qF "Test Case '-[LockglowUITests." "out/$name.log"; then
+              echo "::warning::$name: the UI test runner did not start, trying once more"
+              if prepare "$udid" "$appearance"; then
+                run_tests "$name-retry" -only-testing:LockglowUITests
+              else
+                echo "could not prepare $name again"
+              fi
             fi
             xcrun simctl status_bar "$udid" clear || true
             xcrun simctl shutdown "$udid" || true
@@ -167,11 +187,11 @@ jobs:
           done
           # Copy each screenshot under its attachment name ("1-akis_0_<uuid>.png" -> "1-akis.png").
           # Images only: XCTest's own attachments on a failure have names with quotes, which the
-          # artifact upload refuses.
+          # artifact upload refuses. A retry's pictures go with its pass ("pro-retry" -> named/pro).
           python3 - <<'PY'
           import json, pathlib, re, shutil
           for manifest in pathlib.Path("shots").glob("*/manifest.json"):
-              target = pathlib.Path("named") / manifest.parent.name
+              target = pathlib.Path("named") / re.sub(r"-retry$", "", manifest.parent.name)
               target.mkdir(parents=True, exist_ok=True)
               for test in json.loads(manifest.read_text()):
                   for item in test.get("attachments", []):

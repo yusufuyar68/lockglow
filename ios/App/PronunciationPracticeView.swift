@@ -185,7 +185,8 @@ struct PronunciationPracticeView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     // A control-layer button: glass on iOS 26 by itself, ink text before that.
-                    ToolbarItem(placement: .topBarTrailing) {
+                    // Top left, like "Kapat" and "Vazgeç" on the app's other sheets.
+                    ToolbarItem(placement: .cancellationAction) {
                         Button("Kapat") {
                             dismiss()
                         }

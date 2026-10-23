@@ -371,7 +371,8 @@ struct CustomWordEditor: View {
             showsCount: true,
             problem: problem(for: .lemma)
         ) {
-            TextField("İngilizce kelime", text: $draft.lemma, prompt: Text("örneğin: awkward").foregroundStyle(Theme.ink3))
+            // English only in the serif field's prompt: a Turkish "örneğin:" would be set in serif.
+            TextField("İngilizce kelime", text: $draft.lemma, prompt: Text(verbatim: "awkward").foregroundStyle(Theme.ink3))
                 .font(.system(.title3, design: .serif).weight(.semibold))
                 .foregroundStyle(Theme.ink)
                 .textInputAutocapitalization(.never)
@@ -389,7 +390,10 @@ struct CustomWordEditor: View {
         } footer: {
             if problem(for: .lemma) == nil, let meaning = existingCardMeaning {
                 Label {
-                    Text(verbatim: "Bu kelime kartlarda zaten var: \(meaning). Yine de ekleyebilirsin.")
+                    // "Yine de ekleyebilirsin" only while adding: an edited word is already added.
+                    Text(verbatim: editedWord == nil
+                        ? "Bu kelime kartlarda zaten var: \(meaning). Yine de ekleyebilirsin."
+                        : "Bu kelime kartlarda da var: \(meaning).")
                         .fixedSize(horizontal: false, vertical: true)
                 } icon: {
                     Image(systemName: "info.circle")
@@ -436,7 +440,8 @@ struct CustomWordEditor: View {
             TextField(
                 "Örnek cümle",
                 text: $draft.exampleEN,
-                prompt: Text("örneğin: That was awkward.").foregroundStyle(Theme.ink3),
+                // English only, like the word field: this field is serif too (Theme.Fonts.example).
+                prompt: Text(verbatim: "That was awkward.").foregroundStyle(Theme.ink3),
                 axis: .vertical
             )
             .font(Theme.Fonts.example)

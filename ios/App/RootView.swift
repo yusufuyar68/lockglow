@@ -483,6 +483,8 @@ struct SystemCardSheet: View {
                 }
                 if isPickingTime {
                     DatePicker("Hatırlatma saati", selection: $pickedTime, displayedComponents: .hourAndMinute)
+                        // 24-hour "20:00" like clockTime in the card's text (README point 13), whatever the region.
+                        .environment(\.locale, Locale(identifier: "tr_TR"))
                         .datePickerStyle(.wheel)
                         .labelsHidden()
                         .frame(maxWidth: .infinity)

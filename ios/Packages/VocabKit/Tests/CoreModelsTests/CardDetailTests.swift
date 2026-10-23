@@ -193,6 +193,12 @@ final class CardDetailTests: XCTestCase {
         XCTAssertNil(LemmaMatch.range(of: "", in: sentence))
     }
 
+    func testLemmaMatchFindsPhraseWithoutBe() {
+        let sentence = "I'm fed up with this rain."
+        XCTAssertEqual(LemmaMatch.range(of: "be fed up with", in: sentence).map { String(sentence[$0]) }, "fed up with")
+        XCTAssertNil(LemmaMatch.range(of: "be late", in: "The bus was on time."))
+    }
+
     func testMissingFieldsDecodeAsEmpty() throws {
         XCTAssertEqual(try decode("{}"), CardDetail())
         XCTAssertEqual(try decode(#"{"l1":{"en":{"alt":["x"]}}}"#), CardDetail())

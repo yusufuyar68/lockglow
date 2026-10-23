@@ -284,52 +284,6 @@ struct ChipFlowLayout: Layout {
     }
 }
 
-extension ContentTopic {
-    /// The name shown in the app: short everyday Turkish with "ve" instead of "&" (A2 reader).
-    /// The content (`category.name_tr`) stays as it is; a new topic shows its own name.
-    var displayName: String {
-        switch id {
-        case "food_drink": return "Yemek ve içecek"
-        case "home_household": return "Ev ve ev işleri"
-        case "family_relationships": return "Aile"
-        case "clothes_fashion": return "Giyim"
-        case "shopping_money": return "Alışveriş ve para"
-        case "health_body": return "Sağlık ve vücut"
-        case "cities_transport": return "Şehir ve ulaşım"
-        case "weather_seasons": return "Hava ve mevsimler"
-        case "time_routines": return "Zaman ve günlük işler"
-        case "hobbies_sports": return "Hobi ve spor"
-        case "school_learning": return "Okul"
-        case "nature_animals": return "Doğa ve hayvanlar"
-        case "travel_tourism": return "Seyahat"
-        case "culture_celebrations": return "Ülkeler ve kültür"
-        case "music_film": return "Müzik ve film"
-        case "art_design_architecture": return "Sanat"
-        case "emotions_feelings": return "Duygular"
-        case "personality": return "Kişilik"
-        case "social_skills": return "Sohbet"
-        case "love_friendship": return "Aşk ve arkadaşlık"
-        case "opinions_debate": return "Fikir ve tartışma"
-        case "success_productivity": return "Başarı ve motivasyon"
-        case "business_management": return "İş dünyası"
-        case "workplace_office": return "İş yerinde"
-        case "careers_interviews": return "İş görüşmesi"
-        case "finance_economics": return "Para ve ekonomi"
-        case "technology_internet": return "Teknoloji ve internet"
-        case "phrasal_verbs": return "Kalıp fiiller"
-        case "idioms_expressions": return "Deyimler"
-        case "collocations": return "Kelime ikilileri"
-        case "confusing_words": return "Karıştırılan kelimeler"
-        // Topics without cards today: named here so a later content build is not in title case.
-        case "compliments_insults": return "İltifat ve laf sokma"
-        case "slang_informal": return "Argo ve gündelik dil"
-        case "society_media": return "Toplum ve haberler"
-        case "environment_climate": return "Çevre ve iklim"
-        default: return nameTR.replacingOccurrences(of: " & ", with: " ve ")
-        }
-    }
-}
-
 /// Topics under a few plain titles, in the order the topics come (`category.sort`). Groups
 /// with one or two topics share a title with a neighbour (B and F, D and E), so no title
 /// stands over a single chip.

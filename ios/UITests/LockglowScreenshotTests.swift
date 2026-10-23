@@ -229,9 +229,10 @@ final class LockglowScreenshotTests: XCTestCase {
         attachScreenshot(of: app, named: "12b-nasil-ogrenirim-devam")
     }
 
-    /// One "Tanış + Hatırla" round to its summary, then "Kitaplığın" and the İlerleme page. The
-    /// word of the first question is answered wrong both times: the summary shows a missed word,
-    /// and the word comes back as a quiz in `testCaptureWaitedQuiz`.
+    /// One "Tanış + Hatırla" round to its summary, the reminder question that follows the first
+    /// "Tamam", then "Kitaplığın" and the İlerleme page. The word of the first question is
+    /// answered wrong both times: the summary shows a missed word, and the word comes back as a
+    /// quiz in `testCaptureWaitedQuiz`.
     func testCaptureTekrarIntroRound() throws {
         let app = XCUIApplication()
         app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
@@ -258,6 +259,20 @@ final class LockglowScreenshotTests: XCTestCase {
         XCTAssertTrue(done.waitForExistence(timeout: 5), "no Tamam on the summary")
         done.tap()
 
+        // The first "Tamam" asks once for a daily reminder ("Her gün 1 hatırlatma gönderelim mi?",
+        // `ReminderOfferSheet` in ReviewView, 2.8). The sheet covers the start screen: the 22 Oct
+        // run could not tap "Kitaplığın" under it. "Şimdi değil" closes it without iOS's
+        // permission alert; the question never comes again on this install.
+        let notNow = app.buttons["Şimdi değil"]
+        if notNow.waitForExistence(timeout: 5) {
+            sleep(1)
+            attachScreenshot(of: app, named: "13-tekrar-hatirlatma-sorusu")
+            notNow.tap()
+            waitForDisappearance(of: notNow)
+        } else {
+            XCTContext.runActivity(named: "No reminder question after the round") { _ in }
+        }
+
         // "Kitaplığın" on the start screen, once a word is on the shelves.
         let library = app.buttons["Kitaplığın"]
         XCTAssertTrue(library.waitForExistence(timeout: 5), "no Kitaplığın link after the round")
@@ -265,7 +280,12 @@ final class LockglowScreenshotTests: XCTestCase {
         sleep(1)
         attachScreenshot(of: app, named: "13-tekrar-baslangic-kitaplik")
         library.tap()
-        XCTAssertTrue(app.navigationBars["İlerleme"].waitForExistence(timeout: 5), "Kitaplığın did not open İlerleme")
+        // `ProgressScreen` (ProgressOverviewView) has the large title "İlerleme". Without it the
+        // pictures below would show the wrong screen, and there is no back button to tap.
+        guard app.navigationBars["İlerleme"].waitForExistence(timeout: 10) else {
+            XCTFail("Kitaplığın did not open İlerleme")
+            return
+        }
         sleep(1)
         attachScreenshot(of: app, named: "14a-ilerleme")
         app.swipeUp()
@@ -373,8 +393,8 @@ final class LockglowScreenshotTests: XCTestCase {
         sleep(1)
         attachScreenshot(of: app, named: "16a-sozluk-baslangic")
 
-        // "Konuya göre göz at": the capsule label is "Yeme & İçme, 67 kelime".
-        var topic = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Yeme & İçme")).firstMatch
+        // "Konuya göre göz at": the capsule label is "Yemek ve içecek, 67 kelime" (ContentTopic.displayName).
+        var topic = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Yemek ve içecek")).firstMatch
         if !topic.waitForExistence(timeout: 3) {
             topic = app.buttons.matching(NSPredicate(format: "label ENDSWITH %@", " kelime")).firstMatch
         }
@@ -651,6 +671,13 @@ final class LockglowScreenshotTests: XCTestCase {
         }
         collect(root)
         return elements
+    }
+
+    /// Waits until the element is gone (a sheet closing), at most `timeout` seconds. It does not
+    /// fail: the next step checks what it needs.
+    private func waitForDisappearance(of element: XCUIElement, timeout: TimeInterval = 5) {
+        let gone = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: element)
+        _ = XCTWaiter.wait(for: [gone], timeout: timeout)
     }
 
     /// Swipes up until the element can be tapped, at most `swipes` times.

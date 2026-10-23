@@ -872,13 +872,15 @@ struct ReviewView: View {
             : "Bu kelimeyi bir sonraki turda yine soracağız."
     }
 
-    /// "Senin seçtiğin: lend = ödünç vermek" (English option) or "Senin seçtiğin: ödünç vermek =
-    /// lend" (Turkish option); only the option when no card has it. VoiceOver: the Turkish part,
-    /// then the English word in an English voice.
+    /// "Senin seçtiğin: lend = ödünç vermek", English first for an English option ("lend") and for
+    /// a Turkish one ("ödünç vermek") alike; only the option when no card has it. VoiceOver: the
+    /// Turkish part, then the English word in an English voice.
     private func pickedFeedback(_ picked: String, question: ChoiceQuestion) -> some View {
         let other = question.counterparts[picked]
         let isEnglishOption = question.direction == .pickEnglish
-        return Text(verbatim: "Senin seçtiğin: " + (other.map { "\(picked) = \($0)" } ?? picked))
+        // English = Turkish, as "Doğrusu: cry = ağlamak" above: "hope = ummak" for either option.
+        let pair = other.map { isEnglishOption ? "\(picked) = \($0)" : "\($0) = \(picked)" } ?? picked
+        return Text(verbatim: "Senin seçtiğin: " + pair)
             .font(.subheadline)
             .foregroundStyle(Theme.ink2)
             .fixedSize(horizontal: false, vertical: true)
@@ -2383,6 +2385,8 @@ private struct ReminderOfferSheet: View {
                             .font(.body.weight(.medium))
                             .foregroundStyle(Theme.ink)
                     }
+                    // 24-hour "20:00" like the choices and clockTime (README point 13), whatever the region.
+                    .environment(\.locale, Locale(identifier: "tr_TR"))
                     .padding(.horizontal, 4)
                     .padding(.top, 2)
                 }

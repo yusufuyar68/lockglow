@@ -30,7 +30,7 @@ struct SozlukTopicView: View {
                 .ignoresSafeArea()
         }
         // Inline: a long topic name would be cut in a large title; the page heading wraps.
-        .navigationTitle(topic.nameTR)
+        .navigationTitle(topic.displayName)
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -85,7 +85,7 @@ struct SozlukTopicView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(topic.nameTR)
+            Text(topic.displayName)
                 .font(.title2.weight(.bold))
                 .foregroundStyle(Theme.ink)
                 .accessibilityAddTraits(.isHeader)

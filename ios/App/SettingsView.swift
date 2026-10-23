@@ -367,6 +367,8 @@ struct SettingsView: View {
                         Text("Saat")
                             .settingsRowTitle()
                     }
+                    // 24-hour "20:00" like the app's other times (clockTime, README point 13), whatever the region.
+                    .environment(\.locale, Locale(identifier: "tr_TR"))
                     .settingsRowPadding()
                 }
                 if isReminderPaused && !notificationsDenied {

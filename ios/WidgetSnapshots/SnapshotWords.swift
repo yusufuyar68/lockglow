@@ -51,7 +51,7 @@ enum SnapshotWords {
             id: 399, lemma: "end up", pos: "phv", level: "B1", ipaUS: "/ɛnd ˈʌp/",
             defMicro: "finally be in a situation", defShort: "be in a place or situation at the end, often by chance",
             exampleEN: "We got lost and ended up in a small village.", glossTR: "sonunda kendini ... bulmak",
-            glossShortTR: "kendini bulmak"
+            glossShortTR: "sonunda … olmak"
         ),
         WidgetWord(
             id: 11, lemma: "fridge", pos: "n", level: "A1", ipaUS: "/frɪdʒ/",

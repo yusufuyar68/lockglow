@@ -172,14 +172,14 @@ struct SearchView: View {
                 ForEach(shown) { topic in
                     NavigationLink(value: topic) {
                         HStack(spacing: 6) {
-                            Text(topic.nameTR)
+                            Text(topic.displayName)
                             Text(verbatim: "\(topic.cardCount)")
                                 .foregroundStyle(Theme.ink2)
                                 .monospacedDigit()
                         }
                     }
                     .buttonStyle(ChipButtonStyle())
-                    .accessibilityLabel(Text(verbatim: "\(topic.nameTR), \(topic.cardCount) kelime"))
+                    .accessibilityLabel(Text(verbatim: "\(topic.displayName), \(topic.cardCount) kelime"))
                     .accessibilityHint("Bu konunun kelimelerini açar")
                 }
                 if isCollapsible {
@@ -673,6 +673,7 @@ struct WordDetailView: View {
                 .ignoresSafeArea()
         }
         .navigationBarTitleDisplayMode(.inline)
+        .hardTopScrollEdge()
         .tint(Theme.ink)
     }
 
@@ -1055,6 +1056,19 @@ private struct WordDetailStatusSection: View {
         Task { @MainActor in
             try? await Task.sleep(for: .milliseconds(150))
             buttonHasFocus = true
+        }
+    }
+}
+
+private extension View {
+    /// iOS 26: a solid edge effect under the bar on a scrolled page (10-geri-alindi), so the
+    /// status bar and the back button do not stand on the text that scrolled under them.
+    /// iOS 17–25 keep the system's own bar.
+    @ViewBuilder func hardTopScrollEdge() -> some View {
+        if #available(iOS 26.0, *) {
+            scrollEdgeEffectStyle(.hard, for: .top)
+        } else {
+            self
         }
     }
 }

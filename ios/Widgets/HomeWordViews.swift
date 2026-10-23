@@ -18,7 +18,9 @@ import CoreModels
 // bottom; medium: top, right and bottom), so each 34 pt circle sits 13 pt from those edges. The
 // hit areas stay 44 x 44 pt and inside the widget's root view; a placeholder holds the part of the
 // buttons that lies inside the margins, so the text never runs under them at any text size
-// (accessibility audit D5). The glyphs stop growing at the first accessibility text size.
+// (accessibility audit D5). The glyphs stop growing at xxLarge: Next (forward.fill) is about 1.4 ×
+// the font size and still fits the 34 pt circle there; at xxxLarge it touched the edge, at AX1 it
+// ran out of it.
 // Reading at a glance (A2 learner): the small widget shows the word and its Turkish meaning and
 // nothing else. The medium widget adds a quiet (`ink2`) definition, example and next change.
 // Layout: every line is shown whole or not at all, never cut with "…" and never broken inside a
@@ -27,10 +29,13 @@ import CoreModels
 // each line that can shorten picks its own step for that width (`WidgetFittingWord`,
 // `WidgetFittingText`). A line with no step that fits makes its variant too tall to be chosen
 // (`WidgetFit.reject`), so the next variant tries smaller type or more lines. When the person's
-// text size leaves no room for the meaning, the variants are tried again at a smaller text size
-// (the home widgets at xxxLarge, the Lock Screen rectangle at the default size up to xxxLarge),
-// so the meaning stays and is never larger than the word. The last variant, the word alone,
-// always fits, in height too (`WidgetWordAlone`).
+// text size leaves no room for the meaning, the variants are tried again at smaller text sizes,
+// so the meaning stays and is never larger than the word: the home widgets at xxxLarge (the
+// medium widget above AX1 first at AX1), then at the default size; the Lock Screen rectangle at
+// the default size (`RectangularWordView`). The home widgets' text area does not grow with the
+// text size (fixed margins and button place), so at the default size they draw exactly the
+// default layout, which has the meaning. The last variant, the word alone, always fits, in
+// height too (`WidgetWordAlone`).
 
 /// How far the button group reaches into the widget margin on the widget's outer edges.
 private let buttonGroupOverflow: CGFloat = 8
@@ -62,12 +67,16 @@ struct SmallWordView: View {
         VStack(alignment: .leading, spacing: 0) {
             // ogrenme_ilkeleri 2.1: the word steps down 24 → 20 → 17 pt (a phrase may take two
             // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
-            // (`WidgetGloss`) on one line, then on two, before it gets smaller. At accessibility
-            // text sizes the word and the meaning are shown (2.1): when they do not fit at the
-            // chosen size, the same variants are tried again at the largest standard size before
-            // the meaning is left out. The word grows with the text size in every variant with a
-            // meaning; it drops to an unscaled 15 pt only in the last two, so a small word never
-            // stands above a large meaning.
+            // (`WidgetGloss`) on one line, then on two, before it gets smaller. At large text sizes
+            // the word and the meaning are shown (2.1): when they do not fit at the person's size,
+            // the same variants are tried again at the largest standard size, then at the default
+            // size, and only then is the meaning left out (the word alone, the last variant). The
+            // word grows with the text size in every variant with a meaning; it drops to an
+            // unscaled 15 pt only in the last variant at xxxLarge, in its copy at the default size
+            // (where 15 pt is the default) and in the word alone, so a small word never stands
+            // above a large meaning.
+            // The retries are groups: a modifier on a Group applies to each of its views, and
+            // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
                 column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
                 column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
@@ -77,14 +86,27 @@ struct SmallWordView: View {
                 // card's meaning over 16 characters has `gloss_short`): 13 pt on two or three
                 // lines rather than no meaning.
                 column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
-                column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
-                column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
-                column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                // The person's size leaves no room for the meaning: the largest standard size.
+                Group {
+                    column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
+                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                }
+                .dynamicTypeSize(...WidgetText.largestStandardSize)
+                // Nothing fits at the person's size nor at xxxLarge: the default text size. The
+                // small widget's text area does not grow with the text size (fixed margins and
+                // button row), so these draw exactly the default layout, which has the meaning
+                // (ogrenme_ilkeleri 2.1).
+                Group {
+                    column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
+                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                }
+                .dynamicTypeSize(...DynamicTypeSize.large)
                 WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -103,7 +125,7 @@ struct SmallWordView: View {
                 Spacer(minLength: 8)
                 NextWordButton(wordID: word.id, source: .systemSmall, colors: colors)
             }
-            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+            .dynamicTypeSize(...DynamicTypeSize.xxLarge)
             .padding(.leading, max(margins.leading - buttonGroupOverflow, 0))
             .padding(.trailing, max(margins.trailing - buttonGroupOverflow, 0))
             .padding(.bottom, margins.bottom - bottomOverflow)
@@ -161,10 +183,13 @@ struct MediumWordView: View {
         HStack(alignment: .top, spacing: 8) {
             // The next change gives way first, then the example, then the definition (the short
             // one, else the micro one); only then does the meaning shorten (`WidgetGloss`), take
-            // two lines and get smaller. At accessibility text sizes the word and the meaning stop
-            // growing at the largest standard size before the meaning is left out. The word alone
-            // is the last resort, so the meaning never runs out of the column at large text sizes
-            // (accessibility audit D5).
+            // two lines and get smaller. When the word and the meaning do not fit at the person's
+            // text size, they are tried again at smaller sizes before the meaning is left out:
+            // above AX1 at AX1 first, then at the largest standard size, then at the default size.
+            // The word alone is the last resort, so the meaning never runs out of the column at
+            // large text sizes (accessibility audit D5).
+            // The retries are groups: a modifier on a Group applies to each of its views, and
+            // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
                 column(shortens: false, definition: true, example: true, nextChange: true)
                 column(shortens: false, definition: true, example: true)
@@ -172,10 +197,23 @@ struct MediumWordView: View {
                 column(shortens: false)
                 column()
                 column(meaning: .subheadline.weight(.bold))
-                column()
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                // Above AX1: one step smaller first, so a larger size never shows smaller text
+                // than AX1.
+                Group {
+                    column()
+                    column(meaning: .subheadline.weight(.bold))
+                }
+                .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+                Group {
+                    column()
+                    column(meaning: .subheadline.weight(.bold))
+                }
+                .dynamicTypeSize(...WidgetText.largestStandardSize)
+                // Nothing fits even at xxxLarge (from xLarge to xxxLarge the retry above is the
+                // person's own size): the default text size; the text column does not grow with
+                // the text size.
                 column(meaning: .subheadline.weight(.bold))
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                    .dynamicTypeSize(...DynamicTypeSize.large)
                 wordRow(lastResort: true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -194,7 +232,7 @@ struct MediumWordView: View {
                 Spacer(minLength: 0)
                 NextWordButton(wordID: word.id, source: .systemMedium, colors: colors)
             }
-            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+            .dynamicTypeSize(...DynamicTypeSize.xxLarge)
             .padding(.top, max(margins.top - buttonGroupOverflow, 0))
             .padding(.bottom, max(margins.bottom - buttonGroupOverflow, 0))
             .padding(.trailing, margins.trailing - trailingOverflow)

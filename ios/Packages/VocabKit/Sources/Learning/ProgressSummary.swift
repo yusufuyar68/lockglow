@@ -566,7 +566,8 @@ public struct ProgressSummary: Equatable, Sendable {
 extension ProgressSummary.WordGroup {
     /// One group per topic, in the order given, holding the topic's words among `words` (a word
     /// can be in several topics). `topicsOf` is the content's card → topic map
-    /// (`ContentStore.topicsByCard()`, `AppModel.topicsOf`).
+    /// (`ContentStore.topicsByCard()`, `AppModel.topicsOf`). The title is the topic's
+    /// `displayName`, the same name as in Konular and Sözlük.
     public static func topics(
         _ topics: [ContentTopic],
         topicsOf: [Int: Set<String>],
@@ -579,7 +580,7 @@ extension ProgressSummary.WordGroup {
             }
         }
         return topics.map { topic in
-            ProgressSummary.WordGroup(id: topic.id, title: topic.nameTR, wordIDs: members[topic.id] ?? [])
+            ProgressSummary.WordGroup(id: topic.id, title: topic.displayName, wordIDs: members[topic.id] ?? [])
         }
     }
 }
