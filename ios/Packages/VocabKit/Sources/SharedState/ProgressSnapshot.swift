@@ -44,7 +44,8 @@ public struct ProgressSnapshot: Codable, Equatable, Sendable {
 
     /// What the widget shows at `date`. The day's new-word count restarts at local midnight:
     /// on another day than `writtenAt` it is 0 until the app writes again. `dueToday` counts what
-    /// is due by the end of `date`'s local day, as "Ayarlar" does (`ReviewPlanner.counts`).
+    /// is due before the next local midnight; a review at exactly midnight is tomorrow's, as the
+    /// widget labels it ("yarın 00:00").
     public func status(at date: Date, calendar: Calendar = .current) -> ProgressStatus {
         let startOfDay = calendar.startOfDay(for: date)
         let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) ?? date
@@ -58,7 +59,7 @@ public struct ProgressSnapshot: Codable, Equatable, Sendable {
             } else if nextDue.map({ due < $0 }) ?? true {
                 nextDue = due
             }
-            if due <= endOfDay {
+            if due < endOfDay {
                 dueToday += 1
             }
         }
@@ -74,7 +75,7 @@ public struct ProgressSnapshot: Codable, Equatable, Sendable {
 
     /// The moments after `start` (up to `end`, at most `limit`) when what the widget shows can
     /// change, for its timeline: the first review falling due while none is due (from then on
-    /// "Tekrar zamanı" stays until the app writes again), and each local midnight (today's counts
+    /// "Sıradaki tekrar: şimdi" stays until the app writes again), and each local midnight (today's counts
     /// restart, "yarın" becomes today). Later due dates of the same day change nothing shown:
     /// the day's total is already counted.
     public func timelineDates(after start: Date, until end: Date, limit: Int, calendar: Calendar = .current) -> [Date] {
@@ -121,7 +122,7 @@ public struct ProgressStatus: Equatable, Sendable {
     public var newWordsToday: Int
     /// Reviews and refreshers due at `date`.
     public var dueNow: Int
-    /// Reviews and refreshers due by the end of `date`'s local day (those due now included).
+    /// Reviews and refreshers due before the next local midnight (those due now included).
     public var dueToday: Int
     /// The earliest due date after `date`; nil when none is known.
     public var nextDue: Date?

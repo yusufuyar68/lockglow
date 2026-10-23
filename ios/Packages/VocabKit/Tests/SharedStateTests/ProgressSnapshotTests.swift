@@ -188,10 +188,13 @@ final class ProgressSnapshotTests: XCTestCase {
         )
     }
 
-    /// A review due exactly at midnight gives one entry, not two.
+    /// A review due exactly at midnight gives one entry, not two, and belongs to the next day (the
+    /// widget calls it "yarın 00:00", so it is not counted today).
     func testDueAtMidnightIsOneEntry() {
         let snapshot = ProgressSnapshot(writtenAt: date(10), dailyGoal: 5, newWordsToday: 0, dueDates: [date(0, days: 1)])
         let dates = snapshot.timelineDates(after: date(10), until: date(1, days: 1), limit: 10, calendar: calendar)
         XCTAssertEqual(dates, [date(0, days: 1)])
+        XCTAssertEqual(snapshot.status(at: date(23), calendar: calendar).dueToday, 0)
+        XCTAssertEqual(snapshot.status(at: date(0, days: 1), calendar: calendar).dueToday, 1)
     }
 }

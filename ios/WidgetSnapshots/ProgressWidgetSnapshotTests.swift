@@ -31,7 +31,7 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(ProgressText.count(11), "10+")
         XCTAssertEqual(ProgressText.count(87), "10+")
         XCTAssertEqual(ProgressText.spokenWords(6), "6 kelime")
-        XCTAssertEqual(ProgressText.spokenWords(87), "10'dan fazla kelime")
+        XCTAssertEqual(ProgressText.spokenWords(87), "10 kelimeden fazla")
     }
 
     func testWhen() {
@@ -51,10 +51,11 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
         let calendar = ProgressWidgetSnapshotTests.istanbul
         let cases = statuses(now: date(10), calendar: calendar)
 
+        // Due now: the same "Sıradaki tekrar" line, no call to action.
         let due = ProgressText.rectangular(cases["bekliyor"]!, calendar: calendar)
-        XCTAssertEqual(due.first, ["Tekrar zamanı"])
-        XCTAssertEqual(due.second, ["Bugün: 6 kelime"])
-        XCTAssertEqual(due.spoken, "Tekrar zamanı. Bugün 6 kelime tekrar edilecek.")
+        XCTAssertEqual(due.first, ["Sıradaki tekrar: şimdi", "Tekrar: şimdi"])
+        XCTAssertEqual(due.second, ["Bugün 6 kelime sırada", "6 kelime sırada"])
+        XCTAssertEqual(due.spoken, "Sıradaki tekrar: şimdi. Bugün 6 kelime sırada.")
 
         let later = ProgressText.rectangular(cases["sirada"]!, calendar: calendar)
         XCTAssertEqual(later.first, [
@@ -62,38 +63,41 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
             "Sıradaki tekrar: 21:40",
             "Tekrar: bugün 21:40",
             "Tekrar: 21:40",
-            "21:40",
         ])
-        XCTAssertEqual(later.second, ["Bugün: 6 kelime"])
-        XCTAssertEqual(later.spoken, "Sıradaki tekrar: bugün 21:40. Bugün 6 kelime tekrar edilecek.")
+        XCTAssertEqual(later.second, ["Bugün 6 kelime sırada", "6 kelime sırada"])
+        XCTAssertEqual(later.spoken, "Sıradaki tekrar: bugün 21:40. Bugün 6 kelime sırada.")
 
         let tomorrow = ProgressText.rectangular(cases["yarin"]!, calendar: calendar)
-        XCTAssertEqual(tomorrow.first, ["Sıradaki tekrar: yarın 09:15", "Tekrar: yarın 09:15", "yarın 09:15"])
+        XCTAssertEqual(tomorrow.first, ["Sıradaki tekrar: yarın 09:15", "Tekrar: yarın 09:15", "Tekrar: yarın"])
         XCTAssertEqual(tomorrow.second, ["Bugün tekrar yok"])
         XCTAssertEqual(tomorrow.spoken, "Sıradaki tekrar: yarın 09:15. Bugün tekrar yok.")
 
         let farther = ProgressText.rectangular(cases["ileri"]!, calendar: calendar)
-        XCTAssertEqual(farther.first.first, "Sıradaki tekrar: 26 Ekim 09:00")
+        XCTAssertEqual(farther.first, ["Sıradaki tekrar: 26 Ekim 09:00", "Tekrar: 26 Ekim 09:00", "Tekrar: 26 Ekim"])
 
         let fresh = ProgressText.rectangular(cases["yeni"]!, calendar: calendar)
         XCTAssertEqual(fresh.first, ["Henüz tekrar yok"])
-        XCTAssertEqual(fresh.second, ["Günlük hedef: 5 yeni kelime", "Hedef: 5 yeni kelime", "Hedef: 5 kelime"])
+        XCTAssertEqual(fresh.second, ["Günlük hedef: 5 yeni kelime", "Hedef: 5 yeni kelime"])
         XCTAssertEqual(fresh.spoken, "Henüz tekrar yok. Günlük hedef 5 yeni kelime.")
 
         // After a break: never the backlog's size (37 now, 42 today).
         let backlog = ProgressText.rectangular(cases["ara"]!, calendar: calendar)
-        XCTAssertEqual(backlog.second, ["Bugün: 10+ kelime"])
-        XCTAssertEqual(backlog.spoken, "Tekrar zamanı. Bugün 10'dan fazla kelime tekrar edilecek.")
+        XCTAssertEqual(backlog.first, ["Sıradaki tekrar: şimdi", "Tekrar: şimdi"])
+        XCTAssertEqual(backlog.second, ["Bugün 10+ kelime sırada", "10+ kelime sırada"])
+        XCTAssertEqual(backlog.spoken, "Sıradaki tekrar: şimdi. Bugün 10 kelimeden fazla sırada.")
 
         let none = ProgressText.rectangular(nil, calendar: calendar)
         XCTAssertEqual(none.first, ["Lockglow"])
         XCTAssertEqual(none.second, ["Uygulamayı bir kez aç"])
+        XCTAssertEqual(none.spoken, "Lockglow. Uygulamayı bir kez aç.")
     }
 
     func testInlineLines() {
         let calendar = ProgressWidgetSnapshotTests.istanbul
         let cases = statuses(now: date(10), calendar: calendar)
-        XCTAssertEqual(ProgressText.inline(cases["bekliyor"]!, calendar: calendar).versions, ["Tekrar zamanı"])
+        let due = ProgressText.inline(cases["bekliyor"]!, calendar: calendar)
+        XCTAssertEqual(due.versions, ["Sıradaki tekrar: şimdi", "Tekrar: şimdi"])
+        XCTAssertEqual(due.spoken, "Sıradaki tekrar: şimdi.")
         XCTAssertEqual(ProgressText.inline(cases["sirada"]!, calendar: calendar).spoken, "Sıradaki tekrar: bugün 21:40.")
         XCTAssertEqual(ProgressText.inline(cases["yarin"]!, calendar: calendar).versions.first, "Sıradaki tekrar: yarın 09:15")
         XCTAssertEqual(ProgressText.inline(cases["yeni"]!, calendar: calendar).versions.first, "Günlük hedef: 5 yeni kelime")
@@ -105,7 +109,9 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(line.versions, ["Günlük hedef: 3 / 5", "Hedef: 3 / 5"])
         XCTAssertEqual(line.spoken, "Günlük hedef 5 yeni kelime. Bugün 3 tanesini çalıştın.")
         let met = ProgressStatus(date: date(10), dailyGoal: 5, newWordsToday: 6, dueNow: 0, dueToday: 0, nextDue: nil)
-        XCTAssertEqual(ProgressText.inline(met, calendar: calendar).versions, ["Bugünlük tamam"])
+        let done = ProgressText.inline(met, calendar: calendar)
+        XCTAssertEqual(done.versions, ["Bugünlük tamam"])
+        XCTAssertEqual(done.spoken, "Bugünlük tamam. Günlük hedef 5 yeni kelime. Bugün 6 tanesini çalıştın.")
         let noGoal = ProgressStatus(date: date(10), dailyGoal: 0, newWordsToday: 0, dueNow: 0, dueToday: 0, nextDue: nil)
         XCTAssertEqual(ProgressText.inline(noGoal, calendar: calendar).versions, ["Henüz tekrar yok"])
     }
@@ -116,7 +122,19 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(ProgressText.goalSpoken(cases["sirada"]!), "Günlük hedef 5 yeni kelime. Bugün 3 tanesini çalıştın.")
         // No "0 tanesini" before the first word.
         XCTAssertEqual(ProgressText.goalSpoken(cases["yeni"]!), "Günlük hedef 5 yeni kelime.")
-        XCTAssertEqual(ProgressText.goalSymbol(cases["sirada"]!), "character.book.closed")
+        XCTAssertEqual(
+            ProgressText.goalSpoken(cases["yarin"]!),
+            "Bugünlük tamam. Günlük hedef 10 yeni kelime. Bugün 10 tanesini çalıştın."
+        )
+        XCTAssertEqual(ProgressText.goalSpoken(nil), "Lockglow. Uygulamayı bir kez aç.")
+        // The counter only while the goal is open and started ("3/5", as the app's ring).
+        let counter = ProgressText.goalCounter(cases["sirada"]!)
+        XCTAssertEqual(counter?.done, "3")
+        XCTAssertEqual(counter?.goal, "/5")
+        XCTAssertNil(ProgressText.goalCounter(cases["yeni"]!))
+        XCTAssertNil(ProgressText.goalCounter(cases["yarin"]!))
+        XCTAssertNil(ProgressText.goalCounter(nil))
+        XCTAssertEqual(ProgressText.goalSymbol(cases["yeni"]!), "character.book.closed")
         XCTAssertEqual(ProgressText.goalSymbol(cases["yarin"]!), "checkmark")
         XCTAssertEqual(ProgressText.goalSymbol(nil), "character.book.closed")
         XCTAssertNotNil(UIImage(systemName: "character.book.closed"))
@@ -124,10 +142,12 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
     }
 
     /// The tone rules over every state: no exclamation mark, no "…", no suffix after a number or a
-    /// time on screen, no "/" read aloud, no number above 10 except times and dates.
+    /// time, no call to action, no "/" read aloud, no number above 10 except times and dates, and
+    /// never a bare time (every version says what it is about).
     func testCalmWordsInEveryState() {
         let calendar = ProgressWidgetSnapshotTests.istanbul
         let all: [ProgressStatus?] = Array(statuses(now: date(10), calendar: calendar).values) + [nil]
+        let topics = ["Tekrar", "tekrar", "kelime", "hedef", "Hedef", "tamam", "Lockglow", "Uygulamayı"]
         for status in all {
             let rows = ProgressText.rectangular(status, calendar: calendar)
             let line = ProgressText.inline(status, calendar: calendar)
@@ -136,10 +156,12 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
             for text in shown + spoken {
                 XCTAssertFalse(text.contains("!"), text)
                 XCTAssertFalse(text.contains("…"), text)
+                XCTAssertFalse(text.contains("'"), text)
+                XCTAssertFalse(text.contains("zamanı"), text)
                 XCTAssertFalse(text.contains("37") || text.contains("42"), text)
             }
             for text in shown {
-                XCTAssertFalse(text.contains("'"), text)
+                XCTAssertTrue(topics.contains { text.contains($0) }, text)
             }
             for text in spoken {
                 XCTAssertFalse(text.contains("/"), text)

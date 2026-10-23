@@ -9,10 +9,11 @@ import SharedState
 // Text is shown whole or not at all (no "…"), and every view is one VoiceOver element with a
 // whole Turkish sentence (`ProgressText`).
 
-/// Today's new-word goal as a ring (the "Tekrar" start screen's `GoalRing`, without numbers): a
-/// dark gray track and a white arc for the words recalled today, a book in the middle, a check
-/// once the goal is met. No "0": before the first word the ring is just the track. The family is
-/// 72 x 72 pt (68 x 68 on an iPhone SE); the ring has a fixed size and needs no text.
+/// Today's new-word goal as a ring (the "Tekrar" start screen's `GoalRing`): a dark gray track and
+/// a white arc for the words recalled today. In the middle a book; once a word is done, a small
+/// book over the counter "3/5" (the done words white, "/5" gray, as in the app); a check once the
+/// goal is met. No "0": before the first word the ring is the track and the book. The family is
+/// 72 x 72 pt (68 x 68 on an iPhone SE); its sizes are fixed (the counter is at most "19/20").
 struct ProgressCircularView: View {
     let entry: ProgressEntry
     private var colors: WidgetColors { WidgetColors.lockScreen }
@@ -33,10 +34,29 @@ struct ProgressCircularView: View {
                     .rotationEffect(.degrees(-90))
                     .widgetAccentable()
             }
-            Image(systemName: ProgressText.goalSymbol(entry.status))
-                .font(.system(size: 22, weight: .semibold))
-                .foregroundStyle(colors.ink)
-                .widgetAccentable()
+            if let counter = ProgressText.goalCounter(entry.status) {
+                VStack(spacing: 1) {
+                    Image(systemName: "character.book.closed")
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(colors.ink2)
+                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                        Text(verbatim: counter.done)
+                            .foregroundStyle(colors.ink)
+                            .widgetAccentable()
+                        Text(verbatim: counter.goal)
+                            .foregroundStyle(colors.ink2)
+                    }
+                    .font(.system(size: 16, weight: .bold))
+                    .monospacedDigit()
+                    .lineLimit(1)
+                    .fixedSize()
+                }
+            } else {
+                Image(systemName: ProgressText.goalSymbol(entry.status))
+                    .font(.system(size: 22, weight: .semibold))
+                    .foregroundStyle(colors.ink)
+                    .widgetAccentable()
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .accessibilityElement(children: .ignore)
@@ -45,9 +65,9 @@ struct ProgressCircularView: View {
     }
 }
 
-/// "Sıradaki": two rows, never a third (ogrenme_ilkeleri 2.1). First, in white: "Tekrar zamanı"
-/// or when the next review is ("Sıradaki tekrar: bugün 21:40"); second, in the darker gray: how
-/// many words come back today ("Bugün: 6 kelime", at most "10+"). The family is 160 x 72 pt
+/// "Sıradaki": two rows, never a third (ogrenme_ilkeleri 2.1). First, in white: when the next
+/// review is ("Sıradaki tekrar: bugün 21:40", "… şimdi"); second, in the darker gray: how many
+/// words are in line today ("Bugün 6 kelime sırada", at most "10+"). The family is 160 x 72 pt
 /// (153 x 68 on an iPhone SE). Each row shortens step by step ("Tekrar: 21:40"); at the largest
 /// text sizes, when the rows no longer fit, they are shown at the default size, and as a last
 /// resort the first row's shortest form alone.
@@ -66,7 +86,7 @@ struct ProgressRectangularView: View {
                 .dynamicTypeSize(...DynamicTypeSize.large)
             variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
                 .dynamicTypeSize(...DynamicTypeSize.large)
-            // Every first row has a short last form ("21:40", "Tekrar zamanı", "Lockglow").
+            // Every first row has a short last form ("Tekrar: 21:40", "Tekrar: yarın", "Lockglow").
             Text(verbatim: rows.first.last ?? "")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(colors.ink)

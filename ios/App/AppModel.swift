@@ -907,6 +907,9 @@ final class AppModel: ObservableObject {
         // Whole seconds: this date is stored as the plan's updated_at, which becomes the new
         // rotation anchor, and it is also the instant the current word is evaluated at.
         let rewriteTime = TimelinePlanner.roundedDownToWholeSecond(Date())
+        // The Lock Screen progress widget's numbers (AppModel+ProgressSnapshot.swift): written even
+        // when no plan is, so they never go stale with an empty queue.
+        writeProgressSnapshot(to: store, now: rewriteTime)
         let rotation = RotationInput.resolve(plan: store.readPlan(), state: store.readState(), seedWords: [])
         let currentWord = TimelinePlanner.wordAt(
             rewriteTime,
@@ -981,8 +984,6 @@ final class AppModel: ObservableObject {
             logger.error("could not write the widget plan: \(error.localizedDescription, privacy: .public)")
             return
         }
-        // The Lock Screen progress widget's numbers (AppModel+ProgressSnapshot.swift), reloaded below.
-        writeProgressSnapshot(to: store, now: rewriteTime)
         // The rewrite pins the visible word, so this is the same word as before, now from the new plan.
         updateLockScreenWord()
         reloadWidgets()

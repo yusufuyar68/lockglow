@@ -2,10 +2,11 @@ import Foundation
 import SharedState
 
 /// The progress widget's words (docs/tasarim/terimler.md; ogrenme_ilkeleri 2.1 and §3): calm and
-/// the same in every state. No streak, no red, no "0", no countdown and no backlog number above
-/// `ProgressStatus.shownCountLimit` ("10+"); no suffix after a number or a time ("Sıradaki tekrar:
-/// bugün 21:40", not "21:40'ta"). Each visible line comes as versions, fullest first: the view
-/// shows the first that fits whole. VoiceOver gets whole sentences with words, never "3 / 5"
+/// in the same voice in every state. No streak, no red, no "0", no countdown, no call to action
+/// and no backlog number above `ProgressStatus.shownCountLimit` ("10+"); no suffix after a number
+/// or a time ("Sıradaki tekrar: bugün 21:40", not "21:40'ta"). Each visible line comes as
+/// versions, fullest first: the view shows the first that fits whole, and every version says what
+/// it is about (never a bare time). VoiceOver gets whole sentences with words, never "3 / 5"
 /// (read "bölü").
 enum ProgressText {
     /// The two rows of the rectangular family and what VoiceOver reads for them.
@@ -33,11 +34,10 @@ enum ProgressText {
         return n > limit ? "\(limit)+" : "\(n)"
     }
 
-    /// "6 kelime", or "10'dan fazla kelime" above the limit (a fixed number, so the suffix is
-    /// allowed: only a variable gets none).
+    /// "6 kelime", or "10 kelimeden fazla" above the limit (no suffix on the number).
     static func spokenWords(_ n: Int) -> String {
         let limit = ProgressStatus.shownCountLimit
-        return n > limit ? "\(limit)'dan fazla kelime" : "\(n) kelime"
+        return n > limit ? "\(limit) kelimeden fazla" : "\(n) kelime"
     }
 
     /// When `date` is, seen from `now`: ("bugün", "21:40"), ("yarın", "09:15") or ("24 Ekim",
@@ -59,8 +59,9 @@ enum ProgressText {
 
     // MARK: Rectangular ("Sıradaki")
 
-    /// First row: whether a review is due now, else when the next one is. Second row: how many
-    /// words come back today. A new user with nothing scheduled sees the daily goal instead.
+    /// First row: when the next review is ("şimdi" when one is due). Second row: how many words
+    /// are in line today ("sırada": waiting, not done; the app's "Bugün: 3 yeni kelime, 12
+    /// tekrar." counts what was done). A new user with nothing scheduled sees the daily goal.
     static func rectangular(_ status: ProgressStatus?, calendar: Calendar) -> Rows {
         guard let status = status else {
             return Rows(first: [appName], second: [openAppHint], spoken: "\(appName). \(openAppHint).")
@@ -77,8 +78,9 @@ enum ProgressText {
         let today: [String]
         let todaySpoken: String
         if status.dueToday > 0 {
-            today = ["Bugün: \(count(status.dueToday)) kelime"]
-            todaySpoken = "Bugün \(spokenWords(status.dueToday)) tekrar edilecek."
+            let n = count(status.dueToday)
+            today = ["Bugün \(n) kelime sırada", "\(n) kelime sırada"]
+            todaySpoken = "Bugün \(spokenWords(status.dueToday)) sırada."
         } else {
             today = ["Bugün tekrar yok"]
             todaySpoken = "Bugün tekrar yok."
@@ -103,30 +105,43 @@ enum ProgressText {
     // MARK: Circular (the goal ring)
 
     /// What VoiceOver reads for the ring, as on the "Tekrar" start screen (`GoalRing`):
-    /// "Günlük hedef 5 yeni kelime. Bugün 2 tanesini çalıştın." (no "0 tanesini" before the first).
+    /// "Günlük hedef 5 yeni kelime. Bugün 2 tanesini çalıştın." (no "0 tanesini" before the first),
+    /// after "Bugünlük tamam." once the goal is met.
     static func goalSpoken(_ status: ProgressStatus?) -> String {
         guard let status = status else {
             return "\(appName). \(openAppHint)."
         }
         guard status.dailyGoal > 0 else {
-            return appName
+            return "\(appName). Günlük hedef yok."
         }
         let goal = "Günlük hedef \(status.dailyGoal) yeni kelime."
-        return status.newWordsToday > 0 ? goal + " Bugün \(status.newWordsToday) tanesini çalıştın." : goal
+        let spoken = status.newWordsToday > 0 ? goal + " Bugün \(status.newWordsToday) tanesini çalıştın." : goal
+        return status.goalReached ? "Bugünlük tamam. " + spoken : spoken
     }
 
-    /// The ring's center: a book while the goal is open, a check once it is met.
+    /// The ring's center when it shows a symbol alone: a book before the first word of the day
+    /// (no "0"), a check once the goal is met.
     static func goalSymbol(_ status: ProgressStatus?) -> String {
         return status?.goalReached == true ? "checkmark" : "character.book.closed"
     }
 
+    /// The ring's counter while the goal is open and started, as the app's ring writes it:
+    /// ("3", "/5"). Nil before the first word, once the goal is met, and without numbers.
+    static func goalCounter(_ status: ProgressStatus?) -> (done: String, goal: String)? {
+        guard let status = status, status.dailyGoal > 0, status.newWordsToday > 0, !status.goalReached else {
+            return nil
+        }
+        return ("\(status.newWordsToday)", "/\(status.dailyGoal)")
+    }
+
     // MARK: Parts
 
-    /// "Tekrar zamanı", or the next review's day and time, fullest first. `spoken` has no period.
-    /// Only for a status with something due now or scheduled.
+    /// The next review's day and time ("şimdi" when one is due), fullest first; the shortest still
+    /// starts with "Tekrar:". `spoken` has no period. Only for a status with something due now or
+    /// scheduled.
     private static func nextLine(_ status: ProgressStatus, calendar: Calendar) -> Line {
         guard status.dueNow == 0, let next = status.nextDue else {
-            return Line(versions: ["Tekrar zamanı"], spoken: "Tekrar zamanı")
+            return Line(versions: ["Sıradaki tekrar: şimdi", "Tekrar: şimdi"], spoken: "Sıradaki tekrar: şimdi")
         }
         let (day, time) = when(next, now: status.date, calendar: calendar)
         let versions: [String]
@@ -136,13 +151,12 @@ enum ProgressText {
                 "Sıradaki tekrar: \(time)",
                 "Tekrar: bugün \(time)",
                 "Tekrar: \(time)",
-                time,
             ]
         } else {
             versions = [
                 "Sıradaki tekrar: \(day) \(time)",
                 "Tekrar: \(day) \(time)",
-                "\(day) \(time)",
+                "Tekrar: \(day)",
             ]
         }
         return Line(versions: versions, spoken: "Sıradaki tekrar: \(day) \(time)")
@@ -156,15 +170,14 @@ enum ProgressText {
             return nil
         }
         let done = status.newWordsToday
+        let versions: [String]
         if status.goalReached {
-            return Line(versions: ["Bugünlük tamam"], spoken: "Bugünlük tamam. " + goalSpoken(status))
+            versions = ["Bugünlük tamam"]
+        } else if done == 0 {
+            versions = ["Günlük hedef: \(goal) yeni kelime", "Hedef: \(goal) yeni kelime"]
+        } else {
+            versions = ["Günlük hedef: \(done) / \(goal)", "Hedef: \(done) / \(goal)"]
         }
-        if done == 0 {
-            return Line(
-                versions: ["Günlük hedef: \(goal) yeni kelime", "Hedef: \(goal) yeni kelime", "Hedef: \(goal) kelime"],
-                spoken: goalSpoken(status)
-            )
-        }
-        return Line(versions: ["Günlük hedef: \(done) / \(goal)", "Hedef: \(done) / \(goal)"], spoken: goalSpoken(status))
+        return Line(versions: versions, spoken: goalSpoken(status))
     }
 }
