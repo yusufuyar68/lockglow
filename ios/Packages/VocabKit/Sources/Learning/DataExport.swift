@@ -214,6 +214,11 @@ public struct DataArchive: Equatable, Sendable {
     public struct Reading: Equatable, Sendable {
         public let archive: DataArchive
         public let unreadableRecords: Int
+
+        public init(archive: DataArchive, unreadableRecords: Int = 0) {
+            self.archive = archive
+            self.unreadableRecords = unreadableRecords
+        }
     }
 
     /// Reads a backup. The whole file is refused only when it is not a Lockglow backup or is
