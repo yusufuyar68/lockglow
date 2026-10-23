@@ -148,13 +148,31 @@ final class WatchSession: NSObject, WCSessionDelegate {
 
     // MARK: Plans from the phone
 
+    /// Saves a plan the phone sent, on `queue` and before returning: a delegate callback that
+    /// returns has its plan on disk, so a background task completed afterwards loses nothing.
+    private func receive(_ payload: [String: Any], isApplicationContext: Bool) {
+        queue.sync {
+            self.save(payload, isApplicationContext: isApplicationContext)
+        }
+    }
+
     /// Runs on `queue`.
-    private func receive(_ payload: [String: Any]) {
+    private func save(_ payload: [String: Any], isApplicationContext: Bool) {
         guard let incoming = WatchSync.plan(from: payload), let store = store else {
             return
         }
         let now = Date()
-        guard WatchSync.isNewer(incoming, than: store.readPlan(), now: now) else {
+        let accepted = WatchSync.shouldAccept(
+            incoming,
+            current: store.readPlan(),
+            isApplicationContext: isApplicationContext,
+            lastContextPlanID: WatchContextMarker.read(from: store.containerURL)?.planID,
+            now: now
+        )
+        if isApplicationContext {
+            try? WatchContextMarker(planID: incoming.planID).write(to: store.containerURL)
+        }
+        guard accepted else {
             return
         }
         let plan = WatchKnownLedger.read(from: store.containerURL).filter(incoming, now: now)
@@ -211,27 +229,20 @@ final class WatchSession: NSObject, WCSessionDelegate {
         }
         if activationState == .activated {
             // The newest context may have arrived while the app was not running.
-            let context = session.receivedApplicationContext
-            queue.async {
-                self.receive(context)
-            }
+            receive(session.receivedApplicationContext, isApplicationContext: true)
             flushOutbox()
         }
         completeTasksIfDone()
     }
 
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
-        queue.async {
-            self.receive(applicationContext)
-        }
+        receive(applicationContext, isApplicationContext: true)
         completeTasksIfDone()
     }
 
     /// Complication user info from the phone (`transferCurrentComplicationUserInfo`) carries a plan.
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any]) {
-        queue.async {
-            self.receive(userInfo)
-        }
+        receive(userInfo, isApplicationContext: false)
         completeTasksIfDone()
     }
 
@@ -245,7 +256,7 @@ final class WatchSession: NSObject, WCSessionDelegate {
             return
         }
         queue.async {
-            try? store.eventMailbox.append(event)
+            _ = try? store.eventMailbox.append(event)
         }
     }
 }

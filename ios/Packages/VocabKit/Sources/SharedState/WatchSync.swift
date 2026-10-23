@@ -93,9 +93,29 @@ public enum WatchSync {
         return plan
     }
 
-    /// Whether the watch should replace `current` with `incoming`. The same plan again (the
-    /// application context is handed over again at every activation) and an older plan (a
-    /// complication transfer delivered after a newer context) are ignored. A current plan dated more
+    /// Whether the watch should replace `current` with `incoming`.
+    /// - The same plan as `current` is ignored.
+    /// - An application context is the phone's newest plan whatever the clocks say: it is accepted
+    ///   unless it is the context the watch already handled (`lastContextPlanID`; the system hands
+    ///   the last context over again at every activation). Without that marker the date rule decides.
+    /// - Complication user info may arrive after a newer context: the date rule (`isNewer`) decides.
+    public static func shouldAccept(
+        _ incoming: WidgetPlan,
+        current: WidgetPlan?,
+        isApplicationContext: Bool,
+        lastContextPlanID: String?,
+        now: Date = Date()
+    ) -> Bool {
+        if incoming.planID == current?.planID {
+            return false
+        }
+        if isApplicationContext, let last = lastContextPlanID {
+            return incoming.planID != last
+        }
+        return isNewer(incoming, than: current, now: now)
+    }
+
+    /// The date rule: `incoming` is another plan, not older than `current`. A current plan dated more
     /// than a day after `now` (a wrong clock since corrected) never blocks a new one.
     public static func isNewer(_ incoming: WidgetPlan, than current: WidgetPlan?, now: Date = Date()) -> Bool {
         guard let current = current else {
@@ -173,6 +193,36 @@ public enum WatchSync {
             sensitivity: word.sensitivity,
             confusableIDs: nil
         )
+    }
+}
+
+/// The plan id of the last application context the watch handled (watch only:
+/// `watch_context.json` in the watch's App Group container, written by the watch app). Lets
+/// `WatchSync.shouldAccept` tell a new context from the old one handed over again.
+public struct WatchContextMarker: Codable, Equatable, Sendable {
+    public static let fileName = "watch_context.json"
+
+    public var planID: String
+
+    public init(planID: String) {
+        self.planID = planID
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case planID = "plan_id"
+    }
+
+    /// The marker in `containerURL`; nil when the file is missing or does not decode.
+    public static func read(from containerURL: URL) -> WatchContextMarker? {
+        guard let data = try? Data(contentsOf: containerURL.appendingPathComponent(fileName)) else {
+            return nil
+        }
+        return try? JSONCoding.makeDecoder().decode(WatchContextMarker.self, from: data)
+    }
+
+    public func write(to containerURL: URL) throws {
+        let data = try JSONCoding.makeEncoder().encode(self)
+        try AtomicFile.write(data, to: containerURL.appendingPathComponent(WatchContextMarker.fileName))
     }
 }
 

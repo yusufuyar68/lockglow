@@ -1,20 +1,20 @@
 # Lockglow Apple Watch (is5-watch)
 
-İzle uygulaması ve kadran komplikasyonları. watchOS 10 hedefler, tek hedefli SwiftUI izle uygulamasıdır.
+Apple Watch uygulaması ve kadran komplikasyonları. watchOS 10 hedefler, tek hedefli SwiftUI saat uygulamasıdır.
 
-> **Durum (23 Ekim 2026):** Kod yazıldı; CI'da simülatör için imzasız derleniyor. İzle hedefi **iPhone uygulamasına henüz gömülü değil** ve hiçbir iPhone şemasında yok. Bu yüzden TestFlight derlemeleri yalnızca iPhone uygulamasını içerir. Gömmek için aşağıdaki "Apple'daki adımlar" gerekir.
+> **Durum (23 Ekim 2026):** Kod yazıldı; CI'da simülatör için imzasız derleniyor. Saat hedefi **iPhone uygulamasına henüz gömülü değil** ve hiçbir iPhone şemasında yok. Bu yüzden TestFlight derlemeleri yalnızca iPhone uygulamasını içerir. Gömmek için aşağıdaki "Apple'daki adımlar" gerekir.
 
 ## Ne yapar
 
-- **İzle uygulaması:** kadrandaki kelimeyi gösterir: İngilizce kelime, Türkçe anlam ve örnek cümle. Köşedeki **Dinle** düğmesi kelimeyi okur. Altta **Sonraki kelime** ve **Biliyorum** düğmeleri var.
+- **Saat uygulaması:** kadrandaki kelimeyi gösterir: İngilizce kelime, Türkçe anlam ve örnek cümle. Köşedeki **Dinle** düğmesi kelimeyi okur. Altta **Sonraki kelime** ve **Biliyorum** düğmeleri var.
 - **Komplikasyonlar:** dikdörtgen, satır içi, yuvarlak ve köşe aileleri. Kelime her saat başı (yerel saat) değişir. Türkçe anlam hiç kesilmez: sığmazsa kısa biçimi, o da sığmazsa yalnız kelime görünür.
-- **Veri:** telefon, widget planını (`widget_plan.json` biçimi) WatchConnectivity ile izleye gönderir. İzle kendi başına not vermez; yalnızca "Biliyorum" ve "Sonraki kelime" olaylarını telefona yollar. Telefon bunları widget olaylarıyla aynı kutuya (`events/`) yazar ve uygulama her zamanki gibi işler.
+- **Veri:** telefon, widget planını (`widget_plan.json` biçimi) WatchConnectivity ile saate gönderir. Saat kendi başına not vermez; yalnızca "Biliyorum" ve "Sonraki kelime" olaylarını telefona yollar. Telefon bunları widget olaylarıyla aynı kutuya (`events/`) yazar ve uygulama her zamanki gibi işler.
 
 ## Dosyalar
 
 ```
 Watch/
-├─ App/        LockglowWatch (izle uygulaması)
+├─ App/        LockglowWatch (saat uygulaması)
 │  ├─ LockglowWatchApp.swift   giriş, arka plan görevleri
 │  ├─ WatchModel.swift         dönüş, iki düğme
 │  ├─ WatchSession.swift       telefondan plan al, olayları gönder
@@ -29,9 +29,9 @@ Telefon tarafı: `App/WatchBridge.swift` (WatchConnectivity) ve `App/WatchPlanRe
 
 ## Akış
 
-1. Uygulama `widget_plan.json` yazınca `WatchBridge` planı kırpar (kişisel konular çıkar, en çok 48 kelime, karışan çiftler çıkar) ve `updateApplicationContext` ile gönderir. Kadranda Lockglow komplikasyonu varsa en çok 2 saatte bir `transferCurrentComplicationUserInfo` da kullanılır; bu, izle uygulamasını arka planda uyandırır.
-2. İzle yeni planı kendi App Group klasörüne aynı biçimde yazar. Son 3 günde izlede "Biliyorum" denen kelimeler plandan çıkarılır (`WatchKnownLedger`), çünkü telefon o olayı henüz almamış olabilir. Ekrandaki kelime yeni planda varsa izle o kelimeden devam eder (`WatchRotation.stateKeepingWord`); telefon da plan yazarken görünen kelimeyi korur. Arka planda gelen veri için iki yol var: SwiftUI `.backgroundTask(.watchConnectivity)` ve `WKApplicationDelegate.handle(_:)`. İzledeki bütün dosya yazmaları `WatchSession`'ın tek sırasından geçer.
-3. İzledeki düğmeler izlenin kendi `widget_state.json` dosyasını günceller ve olayı `events/` kutusuna koyar. `WatchSession` kutuyu `transferUserInfo` ile boşaltır. Sistem olayı telefon alana kadar saklar.
+1. Uygulama `widget_plan.json` yazınca `WatchBridge` planı kırpar (kişisel konular çıkar, en çok 48 kelime, karışan çiftler çıkar) ve `updateApplicationContext` ile gönderir. Kadranda Lockglow komplikasyonu varsa en çok 2 saatte bir `transferCurrentComplicationUserInfo` da kullanılır; bu, saat uygulamasını arka planda uyandırır.
+2. Saat yeni planı kendi App Group klasörüne aynı biçimde yazar. Son 3 günde saatte "Biliyorum" denen kelimeler plandan çıkarılır (`WatchKnownLedger`), çünkü telefon o olayı henüz almamış olabilir. Ekrandaki kelime yeni planda varsa saat o kelimeden devam eder (`WatchRotation.stateKeepingWord`); telefon da plan yazarken görünen kelimeyi korur. Arka planda gelen veri için iki yol var: SwiftUI `.backgroundTask(.watchConnectivity)` ve `WKApplicationDelegate.handle(_:)`. Saatteki bütün dosya yazmaları `WatchSession`'ın tek sırasından geçer.
+3. Saatteki düğmeler saatin kendi `widget_state.json` dosyasını günceller ve olayı `events/` kutusuna koyar. `WatchSession` kutuyu `transferUserInfo` ile boşaltır. Sistem olayı telefon alana kadar saklar.
 4. Telefon olayı aldığında (uygulama açıkken ya da açıldığında) App Group `events/` kutusuna `source: "watch"` ile yazar. `AppModel.ingestWidgetEvents()` onu bir sonraki çalışmada işler: `known` → 3 gün sonra bir kez sorulur, `next` → yalnız görüldü sayılır.
 
 ## CI
@@ -52,6 +52,6 @@ Makinede watchOS simülatör SDK'sı yoksa adım önce `xcodebuild -downloadPlat
 
 ## Cihazda bakılacaklar
 
-- Dinle sesi izlenin hoparlöründen geliyor mu?
+- Dinle sesi saatin hoparlöründen geliyor mu?
 - Komplikasyon, telefon uygulaması kapandıktan sonra yeni kelimeleri alıyor mu (arka plan uyandırması)?
-- Telefon uygulaması açılınca izledeki "Biliyorum" telefonda bildiğin kelimelere geçiyor mu?
+- Telefon uygulaması açılınca saatteki "Biliyorum" telefonda bildiğin kelimelere geçiyor mu?

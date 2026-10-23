@@ -94,16 +94,27 @@ struct WatchComplicationView: View {
     }
 }
 
-/// What VoiceOver reads for a complication: the word, then "Türkçesi: …" (the "·" is not read).
-private func spokenLabel(_ word: WidgetWord) -> Text {
-    guard let meaning = WatchGloss.forms(of: word).first else {
-        return Text(verbatim: word.lemma)
+/// What VoiceOver reads for a complication: two elements, so each keeps its own voice (as on the
+/// phone's Lock Screen widget): the word with an English voice, then "Türkçesi: …" with a Turkish
+/// one. The "·" is not read.
+private struct WatchSpokenWord: View {
+    let word: WidgetWord
+
+    var body: some View {
+        HStack {
+            Text(verbatim: word.lemma)
+                .watchEnglishVoice()
+            if let meaning = WatchGloss.forms(of: word).first {
+                Text(verbatim: "Türkçesi: \(meaning)")
+                    .watchTurkishVoice()
+            }
+        }
     }
-    return Text(verbatim: "\(word.lemma), Türkçesi: \(meaning)")
 }
 
 /// Two rows: the word in serif bold and the Turkish meaning under it (its full form, else the
-/// shorter one, else none). A word too long for one line wraps instead of being cut.
+/// shorter one, else none). A word too long for one line wraps instead of being cut; no step
+/// shrinks text to fit.
 private struct WatchRectangularWordView: View {
     let word: WidgetWord
 
@@ -117,15 +128,20 @@ private struct WatchRectangularWordView: View {
                 rows(meaning: short)
             }
             rows(meaning: nil)
+            // A very long phrase: a smaller fixed size (13 pt, above Apple's 11 pt floor), never a
+            // shrunken or cut word; when even that does not fit, the book symbol.
             Text(verbatim: word.lemma)
-                .font(.system(.headline, design: .serif).weight(.bold))
-                .lineLimit(2)
-                .minimumScaleFactor(0.6)
+                .font(.system(.footnote, design: .serif).weight(.bold))
+                .fixedSize(horizontal: false, vertical: true)
+                .widgetAccentable()
+            Image(systemName: "book.closed")
+                .font(.title3)
                 .widgetAccentable()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(spokenLabel(word))
+        .accessibilityRepresentation {
+            WatchSpokenWord(word: word)
+        }
     }
 
     private func rows(meaning: String?) -> some View {
@@ -160,8 +176,9 @@ private struct WatchInlineWordView: View {
             Text(verbatim: word.lemma)
         }
         .widgetAccentable()
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(spokenLabel(word))
+        .accessibilityRepresentation {
+            WatchSpokenWord(word: word)
+        }
     }
 }
 
@@ -208,8 +225,9 @@ private struct WatchCircularWordView: View {
             }
             .padding(4)
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(spokenLabel(word))
+        .accessibilityRepresentation {
+            WatchSpokenWord(word: word)
+        }
     }
 
     private func wordText(_ text: String, size: CGFloat) -> some View {
@@ -236,7 +254,8 @@ private struct WatchCornerWordView: View {
         .widgetLabel {
             Text(verbatim: word.lemma)
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(spokenLabel(word))
+        .accessibilityRepresentation {
+            WatchSpokenWord(word: word)
+        }
     }
 }

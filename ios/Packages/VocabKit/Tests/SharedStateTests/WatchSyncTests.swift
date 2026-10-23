@@ -133,6 +133,40 @@ final class WatchSyncTests: XCTestCase {
         XCTAssertFalse(WatchSync.isNewer(plan([word(2)], id: "b", at: t0), than: soon, now: t0))
     }
 
+    func testANewApplicationContextWinsWhateverTheClocksSay() {
+        // The phone clock ran 5 hours fast when it wrote plan a, then was corrected.
+        let current = plan([word(1)], id: "a", at: t0.addingTimeInterval(5 * 3600))
+        let next = plan([word(2)], id: "b", at: t0)
+        XCTAssertTrue(WatchSync.shouldAccept(next, current: current, isApplicationContext: true, lastContextPlanID: "a", now: t0))
+        // The same context handed over again at the next activation: nothing to do.
+        XCTAssertFalse(WatchSync.shouldAccept(next, current: current, isApplicationContext: true, lastContextPlanID: "b", now: t0))
+        XCTAssertFalse(WatchSync.shouldAccept(current, current: current, isApplicationContext: true, lastContextPlanID: "x", now: t0))
+        // Complication user info keeps the date rule: an older plan does not replace a newer one.
+        XCTAssertFalse(WatchSync.shouldAccept(next, current: current, isApplicationContext: false, lastContextPlanID: "a", now: t0))
+        // Without a marker (first launch, file lost) the date rule decides for a context too.
+        XCTAssertFalse(WatchSync.shouldAccept(next, current: current, isApplicationContext: true, lastContextPlanID: nil, now: t0))
+        XCTAssertTrue(WatchSync.shouldAccept(next, current: nil, isApplicationContext: true, lastContextPlanID: nil, now: t0))
+    }
+
+    func testAnOldContextHandedOverAgainDoesNotUndoANewerComplicationPlan() {
+        // Context a was handled; then complication user info brought plan b; at the next activation
+        // the system hands context a over again (context b has not arrived yet).
+        let a = plan([word(1)], id: "a", at: t0)
+        let b = plan([word(2)], id: "b", at: t0.addingTimeInterval(600))
+        XCTAssertTrue(WatchSync.shouldAccept(b, current: a, isApplicationContext: false, lastContextPlanID: "a", now: t0))
+        XCTAssertFalse(WatchSync.shouldAccept(a, current: b, isApplicationContext: true, lastContextPlanID: "a", now: t0))
+        // Context b arriving later is the plan on the watch already.
+        XCTAssertFalse(WatchSync.shouldAccept(b, current: b, isApplicationContext: true, lastContextPlanID: "a", now: t0))
+    }
+
+    func testTheContextMarkerFileRoundTrips() throws {
+        let directory = try makeTemporaryDirectory("WatchSyncTests")
+        defer { try? FileManager.default.removeItem(at: directory) }
+        XCTAssertNil(WatchContextMarker.read(from: directory))
+        try WatchContextMarker(planID: "p9").write(to: directory)
+        XCTAssertEqual(WatchContextMarker.read(from: directory), WatchContextMarker(planID: "p9"))
+    }
+
     // MARK: shouldSendComplicationUpdate
 
     func testComplicationTransfersAreSpacedAndKeepTheLastOne() {

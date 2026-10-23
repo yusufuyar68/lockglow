@@ -113,7 +113,7 @@ private struct WatchWordPage: View {
                         }
                         .frame(maxWidth: .infinity)
                     }
-                    .accessibilityHint(Text(verbatim: "Kelime izleden çıkar. 3 gün sonra telefonda bir kez sorarız."))
+                    .accessibilityHint(Text(verbatim: "Kelime saatten çıkar. 3 gün sonra telefonda bir kez sorarız."))
                 }
                 .padding(.top, 4)
 
