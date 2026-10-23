@@ -1669,6 +1669,7 @@ struct ReviewView: View {
             .frame(maxWidth: .infinity)
             .cardSurface(cornerRadius: Theme.Radius.wordCard)
             libraryLink
+            SentencePracticeLink(isOpen: $isLibraryOpen) // "Biraz daha pratik" (SentencePracticeView.swift)
             VStack(alignment: .leading, spacing: 12) {
                 if let next = next {
                     NoteRow(symbol: "clock", text: "Sıradaki tekrar: " + ReviewView.dayAndTime(next, now: now))
