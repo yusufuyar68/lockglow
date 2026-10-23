@@ -231,6 +231,22 @@ jobs:
             -only-testing:LockglowWidgetSnapshots/WidgetPerformanceTests \
             -resultBundlePath out/olcum.xcresult > out/olcum.log 2>&1 \
             || echo "the timing run failed"
+          # 23 Oct: the UI test runner was killed before it connected ("Early unexpected exit"),
+          # as in the passes. Once more then, on an erased simulator, the launch timings only.
+          if grep -qiE "Early unexpected exit|failed to initialize for UI testing" out/olcum.log \
+            && ! grep -qF "Test Case '-[LockglowUITests.LaunchPerformanceTests" out/olcum.log; then
+            echo "::warning::the UI test runner did not start, trying the launch timings once more"
+            mv out/olcum.xcresult out/olcum-first.xcresult || true
+            xcrun simctl shutdown "$SIM" 2>/dev/null || true
+            xcrun simctl erase "$SIM"
+            xcrun simctl boot "$SIM" || true
+            xcrun simctl bootstatus "$SIM" -b > /dev/null || true
+            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+              -destination "id=$SIM" -derivedDataPath build/dd \
+              -only-testing:LockglowUITests/LaunchPerformanceTests \
+              -resultBundlePath out/olcum.xcresult >> out/olcum.log 2>&1 \
+              || echo "the second timing run failed"
+          fi
           grep -E "measured|\[ölçüm\]|Test Case .* (passed|failed|skipped)|error:" out/olcum.log | tail -80 || true
           {
             echo "### Ölçümler (simülatör, $(xcrun simctl list devices | grep "$SIM" | head -1 | sed 's/ (.*//' | xargs))"
