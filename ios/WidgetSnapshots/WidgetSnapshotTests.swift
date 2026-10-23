@@ -11,10 +11,11 @@ import CoreModels
 /// the system margins and the views apply them, so the margins are passed in as on a device.
 /// The views are told the rendering mode and whether the system shows their paper (the
 /// environment's own values cannot be set here), so the tinted images show the thin band line and
-/// the system text styles on a dark stand-in for the tinted background, the StandBy images the
+/// the opaque accented styles on a dark stand-in for the tinted background, the StandBy images the
 /// small widget without its paper on black (by day in full color, at night, `-standby-gece`, in
-/// the system styles: the system's red tint is not reproduced), and the Lock Screen images the
-/// opaque grays on a dark wallpaper (darker still on the Always-On display, `-aod`).
+/// the vibrant opaque grays: the system's red tint is modelled in `WidgetLookTests`), and the Lock
+/// Screen images the opaque grays on a dark wallpaper (darker still on the Always-On display,
+/// `-aod`).
 /// The iPhone SE sizes are also rendered at three larger text sizes (`-xxxl`, `-ax1`, `-ax3`):
 /// the meaning must never run under the buttons or be cut (accessibility audit D5).
 @MainActor

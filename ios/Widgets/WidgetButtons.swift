@@ -75,9 +75,10 @@ struct SpeakWordButton: View {
 }
 
 /// A widget button's look: the icon in a 34 pt circle (`surface2` in full color, a faint wash
-/// when the system tints the widget or removes its paper), centred in a 44 x 44 pt hit area that
-/// is all tappable. The title is VoiceOver's name for the button, a verbatim Turkish text read
-/// with the widget's Turkish voice (`widgetTurkishVoice()`).
+/// when the system removes the paper, a dark gray disc in StandBy at night, a 1.5 pt outline on
+/// the tinted and Liquid Glass Home Screens: `WidgetColors`), centred in a 44 x 44 pt hit area
+/// that is all tappable. The title is VoiceOver's name for the button, a verbatim Turkish text
+/// read with the widget's Turkish voice (`widgetTurkishVoice()`).
 private struct WidgetButtonFace: View {
     let title: String
     let systemImage: String
@@ -95,6 +96,12 @@ private struct WidgetButtonFace: View {
         .foregroundStyle(colors.ink)
         .frame(width: 34, height: 34)
         .background(colors.buttonFill, in: Circle())
+        .overlay {
+            if let edge = colors.buttonEdge {
+                Circle()
+                    .strokeBorder(edge, lineWidth: 1.5)
+            }
+        }
         .frame(width: Theme.minHitSize, height: Theme.minHitSize)
         .contentShape(Rectangle())
     }

@@ -71,10 +71,11 @@ struct SmallWordView: View {
             // the word and the meaning are shown (2.1): when they do not fit at the person's size,
             // the same variants are tried again at the largest standard size, then at the default
             // size, and only then is the meaning left out (the word alone, the last variant). The
-            // word grows with the text size in every variant with a meaning; it drops to an
-            // unscaled 15 pt only in the last variant at xxxLarge, in its copy at the default size
-            // (where 15 pt is the default) and in the word alone, so a small word never stands
-            // above a large meaning.
+            // meaning is never larger than the word: beside a meaning the word grows with the text
+            // size, and it drops to an unscaled 15 pt (or shrinks a little, "misunderstanding" on
+            // an SE) only in the last variant at the default size, beside a 13 pt meaning, and in
+            // the word alone. (A 15 pt word beside an xxxLarge meaning was the 2026-10-22 images'
+            // "small word, large meaning".)
             // The retries are groups: a modifier on a Group applies to each of its views, and
             // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
@@ -91,7 +92,6 @@ struct SmallWordView: View {
                     column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
                     column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
                     column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
-                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
                 }
                 .dynamicTypeSize(...WidgetText.largestStandardSize)
                 // Nothing fits at the person's size nor at xxxLarge: the default text size. The
@@ -104,12 +104,15 @@ struct SmallWordView: View {
                     column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
                     column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
                     column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
-                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.bold), lines: [1, 2])
                 }
                 .dynamicTypeSize(...DynamicTypeSize.large)
                 WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            // The next word fades in; the buttons stay still. No motion in vibrant rendering (the
+            // iPad Lock Screen, StandBy at night) (WidgetMotion.swift).
+            .widgetWordChange(id: word.id, lockScreen: (renderingMode ?? environmentRenderingMode) == .vibrant)
             .layoutPriority(1)
             Spacer(minLength: 2)
             // The button row's place; the row itself is the overlay below.
@@ -196,27 +199,30 @@ struct MediumWordView: View {
                 column(shortens: false, definition: true)
                 column(shortens: false)
                 column()
-                column(meaning: .subheadline.weight(.bold))
+                column(smallMeaning: true)
                 // Above AX1: one step smaller first, so a larger size never shows smaller text
                 // than AX1.
                 Group {
                     column()
-                    column(meaning: .subheadline.weight(.bold))
+                    column(smallMeaning: true)
                 }
                 .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 Group {
                     column()
-                    column(meaning: .subheadline.weight(.bold))
+                    column(smallMeaning: true)
                 }
                 .dynamicTypeSize(...WidgetText.largestStandardSize)
                 // Nothing fits even at xxxLarge (from xLarge to xxxLarge the retry above is the
                 // person's own size): the default text size; the text column does not grow with
                 // the text size.
-                column(meaning: .subheadline.weight(.bold))
+                column(smallMeaning: true)
                     .dynamicTypeSize(...DynamicTypeSize.large)
-                wordRow(lastResort: true)
+                wordRow(WidgetWordStep.mediumWidget, lastResort: true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            // The next word fades in; the buttons stay still. No motion in vibrant rendering (the
+            // iPad Lock Screen) (WidgetMotion.swift).
+            .widgetWordChange(id: word.id, lockScreen: (renderingMode ?? environmentRenderingMode) == .vibrant)
             // The button column's place (a row would take the width of the text); the column
             // itself is the overlay below.
             Color.clear
@@ -240,13 +246,14 @@ struct MediumWordView: View {
         .widgetTurkishVoice()
     }
 
-    /// The word row; with `lastResort` the word is never passed over (`WidgetFittingWord`) and may
-    /// drop to an unscaled 15 pt. Beside a meaning it grows with the text size, so a small word
-    /// never stands above a large meaning.
-    private func wordRow(lastResort: Bool = false) -> some View {
+    /// The word row at the first of `steps` that fits; with `lastResort` (the word alone) it is
+    /// never passed over (`WidgetFittingWord`) and may drop to an unscaled 15 pt. Beside a meaning
+    /// it grows with the text size, as the meaning does, so a small word never stands above a
+    /// large meaning.
+    private func wordRow(_ steps: [WidgetWordStep], lastResort: Bool = false) -> some View {
         WidgetWordRow(
             lemma: word.lemma,
-            steps: lastResort ? WidgetWordStep.mediumWidget : WidgetWordStep.mediumWidgetScaled,
+            steps: steps,
             lastResort: lastResort,
             // A user's own word has no level.
             level: word.level.isEmpty ? nil : word.level,
@@ -257,22 +264,23 @@ struct MediumWordView: View {
     }
 
     /// One layout variant: the meaning on one or two lines, whole (`shortens` false) or in its
-    /// shorter forms too; the next change sits at the bottom, beside the Next button.
+    /// shorter forms too, 16 pt (`.callout`) or with `smallMeaning` 15 pt (`.subheadline`); the
+    /// next change sits at the bottom, beside the Next button.
     private func column(
-        meaning typeface: Font = .callout.weight(.bold),
+        smallMeaning: Bool = false,
         shortens: Bool = true,
         definition: Bool = false,
         example: Bool = false,
         nextChange: Bool = false
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            wordRow()
+            wordRow(WidgetWordStep.mediumWidgetScaled)
             VStack(alignment: .leading, spacing: 3) {
                 let forms = WidgetGloss.forms(of: word)
                 if !forms.isEmpty {
                     WidgetMeaning(
                         forms: shortens ? forms : Array(forms.prefix(1)),
-                        typeface: typeface,
+                        typeface: smallMeaning ? .subheadline.weight(.bold) : .callout.weight(.bold),
                         lines: [1, 2],
                         color: colors.ink
                     )
@@ -312,14 +320,21 @@ struct MediumWordView: View {
 
 // MARK: - Parts shared with the Lock Screen views
 
-/// The widget's colors for its rendering mode. Full color on the widget's own paper uses the
-/// design tokens. When the system tints a Home Screen widget (accented and clear Home Screen,
-/// StandBy at night) it keeps only each color's opacity, so two opaque tokens would look the
-/// same: the system's hierarchical styles keep the meaning and definition visibly quieter than the
-/// word, and the button circles become a faint wash instead of an opaque disc that tinting would
-/// paint in the icon's own color. The same styles are used in full color when the system removes
-/// the paper (StandBy, `showsWidgetContainerBackground`): ink on a black screen. The Lock Screen
-/// has its own opaque grays (`lockScreen`).
+/// The widget's colors for its rendering mode (`forMode`):
+/// - Full color on the widget's own paper: the design tokens (`tokens`).
+/// - Full color without the paper (StandBy by day, `showsWidgetContainerBackground` false): the
+///   system's hierarchical styles, ink on the black screen (`system`).
+/// - Accented (the tinted Home Screen of iOS 18, the clear and tinted Liquid Glass Home Screen of
+///   iOS 26): the system takes away the paper, puts its glass or tint behind the widget and
+///   paints each view in one color, keeping only its opacity (white on iOS 26; the accent group,
+///   the word and its band, in the tint color on iOS 18). Apple asks for no partly transparent
+///   content in this mode ("Optimizing your widget for accented rendering mode and Liquid
+///   Glass"): every text is opaque, so it stands out of the glass at the system's own contrast,
+///   and a button's circle is an opaque outline, since an opaque disc would be painted the icon's
+///   color (`accented`).
+/// - Vibrant (the Lock Screen; StandBy at night, which the system draws in red): opaque grays,
+///   white for the word (and the home widgets' meaning), darker grays for quieter parts
+///   (`lockScreen`).
 struct WidgetColors {
     /// The word, the meaning and the button icons.
     let ink: AnyShapeStyle
@@ -327,6 +342,9 @@ struct WidgetColors {
     let ink2: AnyShapeStyle
     /// The circle behind a button icon (mockup `.wb span`).
     let buttonFill: AnyShapeStyle
+    /// The circle's edge, 1.5 pt (visible on bright clear glass); nil for none (the fill shows
+    /// the circle).
+    var buttonEdge: AnyShapeStyle? = nil
 
     /// Full color: `ink`, `ink2` and `surface2` (the background is `surface`, `WordWidgetView`).
     static var tokens: WidgetColors {
@@ -337,7 +355,7 @@ struct WidgetColors {
         )
     }
 
-    /// Tinted rendering, or no paper: the system's primary, secondary and quaternary styles.
+    /// No paper in full color: the system's primary, secondary and quaternary styles.
     static var system: WidgetColors {
         return WidgetColors(
             ink: AnyShapeStyle(HierarchicalShapeStyle.primary),
@@ -346,10 +364,23 @@ struct WidgetColors {
         )
     }
 
-    /// The Lock Screen (vibrant rendering; the system draws the background): opaque grays, white
-    /// for the word and a darker gray for the meaning. The system turns their luminance into its
-    /// vibrant material; Apple asks for "opaque grayscale values, rather than opacities of white"
-    /// (HIG Widgets), so the hierarchy is never built with opacity. The gray stays the same on the
+    /// Accented rendering (tinted and Liquid Glass Home Screens): everything opaque. The quieter
+    /// lines stay apart by their smaller serif type, not by opacity; the button circle is an
+    /// outline around the icon.
+    static var accented: WidgetColors {
+        return WidgetColors(
+            ink: AnyShapeStyle(HierarchicalShapeStyle.primary),
+            ink2: AnyShapeStyle(HierarchicalShapeStyle.primary),
+            buttonFill: AnyShapeStyle(Color.clear),
+            buttonEdge: AnyShapeStyle(HierarchicalShapeStyle.primary)
+        )
+    }
+
+    /// Vibrant rendering (the Lock Screen, where the system draws the background, and StandBy at
+    /// night): opaque grays, white for the word (and the home widgets' meaning), darker grays for
+    /// the quieter parts. The system turns their luminance into its vibrant material (red in StandBy
+    /// at night); Apple asks for "opaque grayscale values, rather than opacities of white" (HIG
+    /// Widgets), so the hierarchy is never built with opacity. The gray stays the same on the
     /// Always-On display, where the system dims the whole screen.
     static var lockScreen: WidgetColors {
         return WidgetColors(
@@ -360,7 +391,13 @@ struct WidgetColors {
     }
 
     static func forMode(_ mode: WidgetRenderingMode, showsBackground: Bool = true) -> WidgetColors {
-        return mode == .fullColor && showsBackground ? tokens : system
+        if mode == .accented {
+            return accented
+        }
+        if mode == .vibrant {
+            return lockScreen
+        }
+        return showsBackground ? tokens : system
     }
 }
 
@@ -387,7 +424,9 @@ struct WidgetWordStep: Equatable {
     /// The rectangular Lock Screen widget: 17, then 15 pt on one line.
     static let lockScreen = [WidgetWordStep(size: 17), WidgetWordStep(size: 15)]
     /// The medium widget beside a meaning: 20, 17, 15 pt on one line, then a phrase on two lines
-    /// at 17 or 15 pt, all scaled with Dynamic Type.
+    /// at 17 or 15 pt, all scaled with Dynamic Type, as the meaning is. Beside the 16 pt meaning
+    /// the longest phrases take 15 pt: a 16 pt floor would put "Could you tell me the way to" on
+    /// two lines on an SE and push its definition and example out.
     static let mediumWidgetScaled = [
         WidgetWordStep(size: 20),
         WidgetWordStep(size: 17),
@@ -865,20 +904,28 @@ enum WidgetTime {
     }
 }
 
-/// The medium widget's example on one line, never cut before the learned word (README
-/// "Widget'lar"): the whole sentence when it fits; otherwise the sentence cut at its end, as long
-/// as the word stays whole ("Please be patient. The doctor will see…"); otherwise it starts a few
-/// words before the word ("… so I called the lost and found."), at the latest at the word itself.
-/// The word is bold: the band is the screen's only yellow mark. Irregular forms ("teeth" for
-/// "tooth") are not found; such a sentence is shown from its start and cut at its end.
-/// The line's ideal size is that of a hidden space, so the layout variants are chosen by the other
-/// lines; the example then fits itself to the width it gets.
+/// The medium widget's example on one line, never cut inside a word and never before the learned
+/// word (README "Widget'lar"): the whole sentence when it fits; otherwise the sentence cut after
+/// the last whole word that fits, as long as the learned word stays whole ("I usually have
+/// breakfast at…", not "…breakfast at s…"); otherwise it starts a few words before the word ("…
+/// so I called the lost and found."), at the latest at the word itself, and is cut the same way.
+/// A cut after a sentence's end needs no "…" ("It was just a misunderstanding."). The word is
+/// bold: the band is the screen's only yellow mark. Irregular forms ("teeth" for "tooth") are not
+/// found; such a sentence is shown from its start and cut after a whole word. VoiceOver reads the
+/// whole sentence, whatever part is shown.
+/// The line's ideal size is that of its shortest possible form ("… word…"), so the layout variants
+/// are chosen by the other lines; the example then fits itself to the width it gets. When even
+/// that form does not fit, the line makes its variant too tall to be chosen (`WidgetFit.reject`),
+/// so a variant without the example is shown instead of an empty line.
 struct WidgetExampleLine: View {
-    /// One way to show the sentence: `text` on one line, cut at its end when it is too long,
-    /// chosen when `fitting` (its start up to the end of the word, plus the cut's "…") fits.
+    /// One start of the sentence and its cuts, fullest first, each ending after a whole word; the
+    /// last is the shortest that keeps the learned word whole. The start is chosen when that one
+    /// fits; placed, the line shows the fullest cut that fits.
     struct Version: Equatable {
-        let text: String
-        let fitting: String
+        let cuts: [String]
+
+        /// What must fit for this start to be chosen: its shortest cut.
+        var fitting: String { cuts.last ?? "" }
     }
 
     let sentence: String
@@ -887,16 +934,25 @@ struct WidgetExampleLine: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        Text(verbatim: " ")
-            .font(WidgetExampleLine.font)
-            .hidden()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .overlay(alignment: .leading) {
-                lines(WidgetExampleLine.versions(of: sentence, lemma: lemma))
-            }
+        let versions = WidgetExampleLine.versions(of: sentence, lemma: lemma)
+        ViewThatFits(in: .horizontal) {
+            styled(versions[versions.count - 1].fitting)
+                .hidden()
+            WidgetFit.reject
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .overlay(alignment: .leading) {
+            lines(versions)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: sentence))
     }
 
     static let font = Font.system(.caption, design: .serif)
+    /// How many cuts a start tries (ViewThatFits needs a fixed number of children); a sentence
+    /// with more words after the learned word keeps an even spread of them, the fullest and the
+    /// shortest always.
+    static let cutCount = 8
 
     private func lines(_ versions: [Version]) -> some View {
         ViewThatFits(in: .horizontal) {
@@ -904,20 +960,36 @@ struct WidgetExampleLine: View {
             line(versions[1])
             line(versions[2])
             line(versions[3])
-            line(versions[4])
         }
     }
 
     /// ViewThatFits compares the ideal width, which is the width of the hidden `fitting` text
     /// (a flexible frame reports its content's ideal width); placed, the line takes the whole
-    /// width and shows as much of `text` as fits.
+    /// width and shows the fullest cut that fits it, never a cut one.
     private func line(_ version: Version) -> some View {
         styled(version.fitting)
             .hidden()
             .frame(maxWidth: .infinity, alignment: .leading)
             .overlay(alignment: .leading) {
-                styled(version.text)
+                cuts(WidgetExampleLine.slots(version.cuts))
             }
+    }
+
+    /// The fullest cut that fits; nothing when even the shortest does not (the line's own
+    /// `WidgetFit.reject` then has its variant passed over), so no word is ever shown cut.
+    private func cuts(_ slots: [String]) -> some View {
+        ViewThatFits(in: .horizontal) {
+            styled(slots[0])
+            styled(slots[1])
+            styled(slots[2])
+            styled(slots[3])
+            styled(slots[4])
+            styled(slots[5])
+            styled(slots[6])
+            styled(slots[7])
+            Color.clear
+                .frame(width: 0, height: 0)
+        }
     }
 
     private func styled(_ text: String) -> some View {
@@ -927,33 +999,90 @@ struct WidgetExampleLine: View {
             .lineLimit(1)
     }
 
-    /// Exactly five versions, fullest first: the whole sentence; the sentence cut after the word;
-    /// the part from four words, two words and no word before the word, each after "… ". A version
-    /// that does not exist (the word is near the start, or not found) repeats the one before it;
-    /// ViewThatFits takes the first that fits, the last one otherwise.
-    static func versions(of sentence: String, lemma: String) -> [Version] {
-        let whole = Version(text: sentence, fitting: sentence)
-        guard let match = ExampleMark.range(of: lemma, in: sentence) else {
-            return Array(repeating: whole, count: 5)
+    /// `cuts` as exactly `cutCount` slots: all of them, the shortest repeated to fill the rest;
+    /// from a longer list an even spread that keeps the fullest and the shortest.
+    static func slots(_ cuts: [String]) -> [String] {
+        guard let shortest = cuts.last else {
+            return Array(repeating: "", count: cutCount)
         }
-        let wordEnd = match.upperBound
-        // Substrings share the sentence's indices.
-        let wordsBefore = sentence[..<match.lowerBound].split(whereSeparator: { character in
+        guard cuts.count > cutCount else {
+            return cuts + Array(repeating: shortest, count: cutCount - cuts.count)
+        }
+        let step = Double(cuts.count - 1) / Double(cutCount - 1)
+        return (0..<cutCount).map { slot in
+            cuts[Int((Double(slot) * step).rounded())]
+        }
+    }
+
+    /// Exactly four starts, fullest first: the sentence's start, then four words, two words and no
+    /// word before the learned word, each after "… ". A start that does not exist (the word is near
+    /// the start, or not found) repeats the one before it; ViewThatFits takes the first that fits,
+    /// the last one otherwise.
+    static func versions(of sentence: String, lemma: String) -> [Version] {
+        // The sentence's words with their places; substrings share the sentence's indices.
+        let words = sentence.split(whereSeparator: { character in
             character.isWhitespace
         })
-        var result = [whole, Version(text: sentence, fitting: String(sentence[..<wordEnd]) + "…")]
+        guard let first = words.first else {
+            return Array(repeating: Version(cuts: [sentence]), count: 4)
+        }
+        guard let match = ExampleMark.range(of: lemma, in: sentence) else {
+            // Shown from its start, cut after any whole word.
+            let whole = Version(cuts: cuts(of: sentence, words: words, from: first.startIndex, keeping: first.endIndex, prefix: ""))
+            return Array(repeating: whole, count: 4)
+        }
+        let wordsBefore = words.filter { word in
+            word.endIndex <= match.lowerBound
+        }
+        var result = [Version(cuts: cuts(of: sentence, words: words, from: sentence.startIndex, keeping: match.upperBound, prefix: ""))]
         for kept in [4, 2, 0] {
             if wordsBefore.count > kept {
                 let start = kept == 0 ? match.lowerBound : wordsBefore[wordsBefore.count - kept].startIndex
-                result.append(Version(
-                    text: "… " + String(sentence[start...]),
-                    fitting: "… " + String(sentence[start..<wordEnd]) + "…"
-                ))
+                result.append(Version(cuts: cuts(of: sentence, words: words, from: start, keeping: match.upperBound, prefix: "… ")))
             } else {
                 result.append(result[result.count - 1])
             }
         }
         return result
+    }
+
+    /// The part of `sentence` from `start`, after `prefix`, cut after each whole word that ends at
+    /// or after `end`, fullest first: the whole rest of the sentence, then shorter and shorter,
+    /// down to the word that holds `end`. A cut that is not the sentence's end gets "…", unless
+    /// it ends a sentence; a comma, semicolon or colon before the "…" is left out.
+    static func cuts(
+        of sentence: String,
+        words: [Substring],
+        from start: String.Index,
+        keeping end: String.Index,
+        prefix: String
+    ) -> [String] {
+        let ends = words.map(\.endIndex).filter { wordEnd in
+            wordEnd >= end && wordEnd > start
+        }
+        var result: [String] = []
+        for wordEnd in ends.reversed() {
+            var text = prefix + String(sentence[start..<wordEnd])
+            if wordEnd < (words.last?.endIndex ?? sentence.endIndex) && !endsSentence(text) {
+                while let last = text.last, ",;:".contains(last) {
+                    text.removeLast()
+                }
+                text += "…"
+            }
+            if !result.contains(text) {
+                result.append(text)
+            }
+        }
+        return result.isEmpty ? [prefix + String(sentence[start...])] : result
+    }
+
+    /// Whether `text` ends a sentence: ".", "!" or "?", also inside a closing quote.
+    private static func endsSentence(_ text: String) -> Bool {
+        let trimmed = text.trimmingCharacters(in: CharacterSet(charactersIn: "\"”’')"))
+        guard let last = trimmed.last else {
+            return false
+        }
+        return ".!?".contains(last)
     }
 }
 
