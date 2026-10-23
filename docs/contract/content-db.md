@@ -63,6 +63,7 @@ CREATE TABLE card (
 );
 CREATE INDEX idx_card_level ON card(level_rank, is_free);
 CREATE INDEX idx_card_topic ON card(primary_topic);
+CREATE INDEX idx_card_free ON card(is_free, sensitivity, level_rank);  -- topics() için (is5-performans); isteğe bağlı
 
 CREATE TABLE card_l1 (
   card_rowid   INTEGER NOT NULL REFERENCES card(rowid),
