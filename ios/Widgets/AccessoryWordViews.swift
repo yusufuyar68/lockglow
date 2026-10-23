@@ -131,6 +131,8 @@ struct InlineWordView: View {
             Text(verbatim: slots[4])
             Text(verbatim: slots[5])
         }
+        // No animation when the word changes on the Lock Screen (WidgetMotion.swift).
+        .widgetWordChange(id: word.id, lockScreen: true)
         .widgetAccentable()
         .accessibilityRepresentation {
             spoken

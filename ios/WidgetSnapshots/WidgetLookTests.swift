@@ -126,16 +126,17 @@ final class WidgetLookTests: XCTestCase {
 
     // MARK: - Text sizes
 
-    /// The word is never smaller than the meaning beside it (the 2026-10-22 images: a 15 pt word
-    /// under an xxxLarge meaning). Beside a meaning at the person's text size the word's steps all
-    /// grow with Dynamic Type; beside the medium widget's 16 pt meaning they start at 16 pt. The
-    /// unscaled floor is left for the default size and the word alone (the SE images at `-xxxl`,
-    /// `-ax1` and `-ax3` show the result).
+    /// The step tables behind "a small word never stands above a large meaning" (the 2026-10-22
+    /// images: a 15 pt word under an xxxLarge meaning). Beside a meaning at the person's text
+    /// size the word's steps all grow with Dynamic Type, as the meaning does. The unscaled floor
+    /// is left for the default size, beside a 13 pt meaning, and for the word alone. Only a word
+    /// that fits no step at the default size shrinks a little there ("misunderstanding" on an SE,
+    /// to about 14.5 pt). Which table goes with which meaning is in the views; the SE images at
+    /// `-xxxl`, `-ax1` and `-ax3` show it.
     func testWordNeverSmallerThanMeaning() {
         XCTAssertTrue(WidgetWordStep.homeFloorScaled.allSatisfy { $0.scales })
         XCTAssertTrue(WidgetWordStep.smallWidget.allSatisfy { $0.scales && $0.size >= 17 })
         XCTAssertTrue(WidgetWordStep.lockScreen.allSatisfy { $0.scales && $0.size >= 15 })
-        XCTAssertTrue(WidgetWordStep.mediumWidgetBesideCallout.allSatisfy { $0.scales && $0.size >= 16 })
         XCTAssertTrue(WidgetWordStep.mediumWidgetScaled.allSatisfy { $0.scales && $0.size >= 15 })
         XCTAssertFalse(WidgetWordStep.homeFloor.allSatisfy { $0.scales })
     }
@@ -184,9 +185,9 @@ final class WidgetLookTests: XCTestCase {
             WidgetExampleLine.versions(of: "Her teeth are white.", lemma: "tooth")[0].cuts,
             ["Her teeth are white.", "Her teeth are…", "Her teeth…", "Her…"]
         )
-        // More cuts than slots: the fullest ones and the shortest.
+        // More cuts than slots: an even spread, the fullest and the shortest kept.
         let many = (1...12).map { "c\($0)" }
-        XCTAssertEqual(WidgetExampleLine.slots(many), ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c12"])
+        XCTAssertEqual(WidgetExampleLine.slots(many), ["c1", "c3", "c4", "c6", "c7", "c9", "c10", "c12"])
         XCTAssertEqual(WidgetExampleLine.slots(["a", "b"]), ["a", "b", "b", "b", "b", "b", "b", "b"])
         // Every cut of every snapshot example is a run of the sentence's own whole words.
         for word in SnapshotWords.all where !word.exampleEN.isEmpty {
