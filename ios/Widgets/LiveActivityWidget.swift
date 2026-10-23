@@ -30,10 +30,14 @@ struct ReviewLiveActivityWidget: Widget {
             } compactTrailing: {
                 ReviewActivityIslandCounter(state: context.state, isStale: context.isStale, short: true)
             } minimal: {
-                // Calm: the mark, not a counter.
+                // The mark, not a counter: HIG prefers updated information here, but beside other
+                // apps' activities a counter would be one more number pulling at the user
+                // (ogrenme_ilkeleri §1 point 11). The compact view keeps "4/10".
                 ReviewActivityIslandSymbol()
             }
             .widgetURL(ReviewActivityAttributes.continueURL)
+            // A quiet gray edge in dark mode, like the activity's text; never yellow.
+            .keylineTint(Theme.ink2)
         }
     }
 }

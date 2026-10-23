@@ -198,8 +198,8 @@ struct ReviewLiveActivitySection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Apple's Turkish name of the feature (iPhone Ayarları: "Canlı Etkinlikler").
-            SettingsSectionHeader("Canlı Etkinlik")
+            // Apple's Turkish name, as on Lockglow's row in iPhone Ayarları.
+            SettingsSectionHeader("Canlı Etkinlikler")
             SettingsGroup {
                 Toggle(isOn: $isOn) {
                     Text("Turu kilitli ekranda göster")
@@ -227,7 +227,8 @@ struct ReviewLiveActivitySection: View {
                     .padding(14)
                 }
             }
-            Text("Turdan çıkınca kilitli ekranda kaçıncı kartta olduğun görünür. Tur bitince ya da 30 dakika sonra kapanır.")
+            // No time promise (terimler §1): a suspended app cannot close it at the 30th minute.
+            Text("Turdan çıkınca kilitli ekranda hangi kartta olduğun görünür. Tur bitince kapanır.")
                 .settingsFootnote()
         }
         .onAppear {

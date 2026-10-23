@@ -39,7 +39,8 @@ struct ReviewActivityLockScreenView: View {
                 }
             }
         }
-        .padding(16)
+        // HIG's standard margin of a Live Activity.
+        .padding(14)
         // The activity is at most 160 pt tall.
         .dynamicTypeSize(...DynamicTypeSize.accessibility1)
         .widgetTurkishVoice()
@@ -66,33 +67,40 @@ struct ReviewActivityLockScreenView: View {
     }
 }
 
-/// "Devam et", drawn like the app's main button (`PrimaryCapsuleButtonStyle`): an ink capsule by
-/// day; at night (and in the always black Dynamic Island) a faint ink tint with an ink edge and
-/// bold text, never lit (docs/tasarim/alternatifler/gece_oled.md option C). Not a button of its
-/// own: a tap anywhere on the activity opens "Tekrar" (`widgetURL`); in the expanded Dynamic
-/// Island it is also a `Link`, the one place Apple documents links in a Live Activity for.
+/// "Devam et" (goes back to the round; not the quiz's "Devam"), drawn like the app's main button
+/// (`PrimaryCapsuleButtonStyle`): `.headline` on an ink capsule by day; at night (and in the
+/// always black Dynamic Island) bold on a faint ink tint with an ink edge, never lit
+/// (docs/tasarim/alternatifler/gece_oled.md option C). Not a button of its own: a tap anywhere on
+/// the activity opens "Tekrar" (`widgetURL`); in the expanded Dynamic Island it is inside a `Link`
+/// (`inLink`), the one place Apple documents links in a Live Activity for.
 struct ReviewActivityContinueFace: View {
     var fullWidth = false
+    /// Inside a `Link`, which already reads as one: no button trait on top.
+    var inLink = false
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
         Text(verbatim: "Devam et")
-            .font(isNight ? .subheadline.weight(.bold) : .subheadline.weight(.semibold))
+            .font(isNight ? .headline.weight(.bold) : .headline)
             .lineLimit(1)
             .foregroundStyle(Theme.onPrimary)
-            .padding(.horizontal, 18)
+            .padding(.horizontal, 20)
             .frame(maxWidth: fullWidth ? .infinity : nil, minHeight: Theme.minHitSize)
             .background {
                 Capsule()
                     .fill(Theme.primary)
                     .overlay {
                         if isNight {
-                            Capsule().strokeBorder(Theme.onPrimary, lineWidth: contrast == .increased ? 3 : 2)
+                            Capsule().strokeBorder(
+                                Theme.onPrimary,
+                                lineWidth: contrast == .increased || showsButtonShapes ? 3 : 2
+                            )
                         }
                     }
             }
-            .accessibilityAddTraits(.isButton)
+            .accessibilityAddTraits(inLink ? [] : .isButton)
     }
 
     private var isNight: Bool {
@@ -130,8 +138,10 @@ struct ReviewActivityIslandTitle: View {
     }
 }
 
-/// Expanded, trailing ("Kart 4 / 10") and compact, trailing (`short`: "4/10"). Nothing when
-/// stale: the system hides an empty compact trailing view.
+/// Expanded, trailing ("Kart 4 / 10") and compact, trailing (`short`: "4/10", without the spaces
+/// of terimler's "2 / 5": the compact side is about 52 pt, 28 pt when the island is narrow). It
+/// says where the user is, never what is left. Nothing when stale: the system hides an empty
+/// compact trailing view.
 struct ReviewActivityIslandCounter: View {
     let state: ReviewActivityAttributes.ContentState
     let isStale: Bool
@@ -166,7 +176,7 @@ struct ReviewActivityIslandBottom: View {
                     .padding(.horizontal, 4)
             } else if let url = ReviewActivityAttributes.continueURL {
                 Link(destination: url) {
-                    ReviewActivityContinueFace(fullWidth: true)
+                    ReviewActivityContinueFace(fullWidth: true, inLink: true)
                 }
             } else {
                 ReviewActivityContinueFace(fullWidth: true)

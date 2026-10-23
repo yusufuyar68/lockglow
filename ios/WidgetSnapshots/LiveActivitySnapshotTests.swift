@@ -20,7 +20,8 @@ final class LiveActivitySnapshotTests: XCTestCase {
     func testRenderLockScreen() {
         let widths: [(name: String, width: CGFloat)] = [("pro", 371), ("se", 353)]
         for (name, width) in widths {
-            for (look, scheme) in [("", ColorScheme.light), ("-koyu", .dark)] {
+            let looks: [(suffix: String, scheme: ColorScheme)] = [("", .light), ("-koyu", .dark)]
+            for (look, scheme) in looks {
                 renderLockScreen(state: running, stale: false, width: width, scheme: scheme, name: "canli-kilit-\(name)\(look)")
                 renderLockScreen(state: running, stale: true, width: width, scheme: scheme, name: "canli-kilit-\(name)-eski\(look)")
             }
