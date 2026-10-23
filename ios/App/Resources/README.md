@@ -11,5 +11,7 @@ python -m vocabpipe.personal ../content/drafts/kisisel_v1 --out ../ios/App/Resou
 
 A release build comes from reviewed cards instead (`python -m vocabpipe.build_db ../content/cards ...`, see `content-pipeline/README.md`). Card ids are permanent (`content-pipeline/data/id_registry.json`): keep that file, the app's learning progress is keyed by them.
 
+`RecordedSpeech/` holds the recorded clips of "Dinle" (one folder per voice, `voices.json` lists them), made by `python -X utf8 -m vocabpipe.recorded_speech` (see `docs/ses_kaydi.md`). It is bundled as one folder reference (`project.yml`). With no clips (`voices.json` empty) the device's voice reads everything.
+
 Run `xcodegen generate` again after adding or replacing files so Xcode picks them up.
 This README is excluded from the app bundle (see `project.yml`).

@@ -9,6 +9,7 @@ import CoreModels
 struct SpeechSettingsSection: View {
     @AppStorage(SpeechSettings.Key.accent, store: SpeechSettingsStore.defaults) private var accent = SpeechAccent.american
     @AppStorage(SpeechSettings.Key.rate, store: SpeechSettingsStore.defaults) private var rate = SpeechRate.normal
+    @AppStorage(SpeechSettings.Key.gender, store: SpeechSettingsStore.defaults) private var gender = SpeechVoiceGender.female
     @State private var needsBetterVoice = false
     @Environment(\.scenePhase) private var scenePhase
 
@@ -20,9 +21,9 @@ struct SpeechSettingsSection: View {
                     SpeechSettingsView()
                 } label: {
                     SettingsRow("Ses ve aksan", systemImage: "speaker.wave.2") {
-                        Text(verbatim: "\(accent.title) · \(rate.title)")
+                        Text(verbatim: "\(accent.title) · \(gender.title) · \(rate.title)")
                             // "·" may be read aloud (README, VoiceOver and "·").
-                            .accessibilityLabel(Text(verbatim: "\(accent.title), \(rate.title)"))
+                            .accessibilityLabel(Text(verbatim: "\(accent.title), \(gender.title), \(rate.title)"))
                     }
                 }
                 .buttonStyle(SettingsRowButtonStyle())
@@ -32,7 +33,7 @@ struct SpeechSettingsSection: View {
                     .settingsFootnote()
             }
         }
-        .task(id: accent) {
+        .task(id: "\(accent.rawValue)|\(gender.rawValue)") {
             await refresh()
         }
         // Back from iPhone Settings, where a voice may have been downloaded.
@@ -49,8 +50,9 @@ struct SpeechSettingsSection: View {
     /// Off the main thread: the first look at the installed voices is slow.
     private func refresh() async {
         let accent = accent
+        let gender = gender
         needsBetterVoice = await Task.detached {
-            WordSpeech.needsBetterVoice(for: accent)
+            WordSpeech.needsBetterVoice(for: accent, gender: gender)
         }.value
     }
 }
@@ -64,6 +66,7 @@ struct SpeechSettingsView: View {
     @AppStorage(SpeechSettings.Key.accent, store: SpeechSettingsStore.defaults) private var accent = SpeechAccent.american
     @AppStorage(SpeechSettings.Key.rate, store: SpeechSettingsStore.defaults) private var rate = SpeechRate.normal
     @AppStorage(SpeechSettings.Key.slowRepeat, store: SpeechSettingsStore.defaults) private var slowRepeat = true
+    @AppStorage(SpeechSettings.Key.gender, store: SpeechSettingsStore.defaults) private var gender = SpeechVoiceGender.female
     @ObservedObject private var speaker = Speaker.shared
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
@@ -80,6 +83,7 @@ struct SpeechSettingsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 accentSection
+                genderSection
                 rateSection
                 voiceSection
             }
@@ -90,13 +94,21 @@ struct SpeechSettingsView: View {
         .background(Theme.bg.ignoresSafeArea())
         .navigationTitle("Ses ve aksan")
         .navigationBarTitleDisplayMode(.inline)
-        .task(id: accent) {
+        .task(id: "\(accent.rawValue)|\(gender.rawValue)") {
             await reloadVoices()
         }
         .onChange(of: accent) { _, _ in
             // The medium widget shows the IPA of the accent: draw it again now. A reload asked
             // while the app is in front does not count against the widget's refresh budget.
             WidgetCenter.shared.reloadAllTimelines()
+            playSample()
+        }
+        .onChange(of: gender) { _, _ in
+            // The character picks the voice: a voice chosen by name (of either accent) gives way.
+            chosenVoice = nil
+            SpeechSettingsStore.update { settings in
+                settings.voiceIdentifiers = [:]
+            }
             playSample()
         }
         .onChange(of: rate) { _, _ in
@@ -137,6 +149,25 @@ struct SpeechSettingsView: View {
             .accessibilityElement(children: .contain)
             .accessibilityLabel("Aksan")
             Text("Dinle bu aksanla okur, Söyle de bu aksanı bekler. Kartlardaki okunuş yazısı da buna göre değişir.")
+                .settingsFootnote()
+        }
+    }
+
+    // MARK: Voice character
+
+    private var genderSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            SettingsSectionHeader("Ses karakteri")
+            SettingsQuestion("Kim okusun?")
+            SegmentButtons(
+                options: SpeechVoiceGender.allCases.map { gender in
+                    SegmentOption(value: gender, title: gender.title, spokenTitle: gender.spokenTitle)
+                },
+                selection: $gender
+            )
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("Ses karakteri")
+            Text("Hazır kaydı olan kelime ve cümleler bu sesle okunur. Diğerlerini telefonun bu karakterdeki en iyi sesi okur.")
                 .settingsFootnote()
         }
     }
@@ -209,7 +240,7 @@ struct SpeechSettingsView: View {
         VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader("Ses")
             if needsBetterVoice {
-                VoiceDownloadGuide(accent: accent, isCard: true)
+                VoiceDownloadGuide(accent: accent, gender: gender, isCard: true)
                     .padding(.bottom, 8)
             }
             SettingsGroup {
@@ -224,7 +255,7 @@ struct SpeechSettingsView: View {
             if !needsBetterVoice {
                 SettingsGroup {
                     NavigationLink {
-                        VoiceDownloadGuideScreen(accent: accent)
+                        VoiceDownloadGuideScreen(accent: accent, gender: gender)
                     } label: {
                         SettingsRow("Başka bir ses indir", systemImage: "arrow.down.circle")
                     }
@@ -241,6 +272,7 @@ struct SpeechSettingsView: View {
         let isSelected = voice?.identifier == chosenVoice
         let title = voice?.displayName ?? "Otomatik"
         let detail = voiceDetail(voice)
+        let spokenDetail = voiceDetail(voice, spoken: true)
         return Button {
             choose(voice)
         } label: {
@@ -268,15 +300,24 @@ struct SpeechSettingsView: View {
         }
         .buttonStyle(SettingsRowButtonStyle())
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: "\(title), \(detail)"))
+        .accessibilityLabel(Text(verbatim: "\(title), \(spokenDetail)"))
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 
-    private func voiceDetail(_ voice: SpeechVoiceInfo?) -> String {
+    /// "Premium · Kadın"; `spoken`: with a comma, "·" may be read aloud.
+    private func voiceDetail(_ voice: SpeechVoiceInfo?, spoken: Bool = false) -> String {
         if let voice {
-            return voice.quality.title
+            guard let gender = voice.gender else {
+                return voice.quality.title
+            }
+            return voice.quality.title + (spoken ? ", " : " · ") + gender.title
         }
-        guard let best = voices.first else {
+        var automatic = SpeechSettingsStore.current
+        automatic.voiceIdentifiers = [:]
+        if WordSpeech.hasRecordedVoice(for: automatic) {
+            return "Hazır kayıt; kaydı olmayanı telefonun sesi okur"
+        }
+        guard let best = SpeechVoiceChoice.best(of: voices, gender: gender) else {
             return "Telefonun İngilizce sesi"
         }
         return "Şimdi: \(best.displayName), \(best.quality.title)"
@@ -306,8 +347,9 @@ struct SpeechSettingsView: View {
     /// was deleted reads as "Otomatik".
     private func reloadVoices() async {
         let accent = accent
+        let gender = gender
         let (offered, needsBetter) = await Task.detached {
-            (WordSpeech.offeredVoices(for: accent), WordSpeech.needsBetterVoice(for: accent))
+            (WordSpeech.offeredVoices(for: accent), WordSpeech.needsBetterVoice(for: accent, gender: gender))
         }.value
         voices = offered
         needsBetterVoice = needsBetter
@@ -321,10 +363,11 @@ struct SpeechSettingsView: View {
 /// "Daha doğal ses indir" as its own page (from "Başka bir ses indir").
 struct VoiceDownloadGuideScreen: View {
     let accent: SpeechAccent
+    let gender: SpeechVoiceGender
 
     var body: some View {
         ScrollView {
-            VoiceDownloadGuide(accent: accent, isCard: false)
+            VoiceDownloadGuide(accent: accent, gender: gender, isCard: false)
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
                 .padding(.bottom, 40)
@@ -343,6 +386,7 @@ struct VoiceDownloadGuideScreen: View {
 /// read it (terimler §1). `isCard`: inside "Ses ve aksan", under a title, on a white card.
 struct VoiceDownloadGuide: View {
     let accent: SpeechAccent
+    let gender: SpeechVoiceGender
     var isCard = false
 
     var body: some View {
@@ -389,12 +433,25 @@ struct VoiceDownloadGuide: View {
         } else {
             page = "**Seslendirilen İçerik**'e dokun."
         }
+        // Apple's natural voices: Ava, Zoe (woman), Evan, Nathan (man) in the US; Serena, Kate
+        // (woman), Jamie, Daniel (man) in the UK.
+        let names: String
+        switch (accent, gender) {
+        case (.american, .female):
+            names = "**Ava** ya da **Zoe**"
+        case (.american, .male):
+            names = "**Evan** ya da **Nathan**"
+        case (.british, .female):
+            names = "**Serena** ya da **Kate**"
+        case (.british, .male):
+            names = "**Jamie** ya da **Daniel**"
+        }
         let voices: String
         switch accent {
         case .american:
-            voices = "ABD seslerinden birine dokun, örneğin **Ava** ya da **Zoe**."
+            voices = "ABD seslerinden birine dokun, örneğin \(names)."
         case .british:
-            voices = "iPhone İngiltere seslerine **Birleşik Krallık** der. Bu seslerden birine dokun, örneğin **Serena** ya da **Jamie**."
+            voices = "iPhone İngiltere seslerine **Birleşik Krallık** der. Bu seslerden birine dokun, örneğin \(names)."
         }
         return [
             "**iPhone Ayarları**'nı aç.",
@@ -482,6 +539,28 @@ extension SpeechAccent {
             return "ABD İngilizcesi"
         case .british:
             return "İngiltere İngilizcesi"
+        }
+    }
+}
+
+extension SpeechVoiceGender {
+    /// "Kadın", "Erkek".
+    var title: String {
+        switch self {
+        case .female:
+            return "Kadın"
+        case .male:
+            return "Erkek"
+        }
+    }
+
+    /// What VoiceOver says for the option.
+    var spokenTitle: String {
+        switch self {
+        case .female:
+            return "Kadın sesi"
+        case .male:
+            return "Erkek sesi"
         }
     }
 }

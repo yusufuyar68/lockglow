@@ -1,17 +1,19 @@
 import AVFoundation
 import SwiftUI
 
-/// Reads English text aloud with the device's own voice (offline; nothing leaves the phone).
-/// Voice, rate and audio session come from `WordSpeech` (Shared/), the same ones the widget's
-/// speaker button uses.
+/// Reads English text aloud: the app's recorded clip of the text when there is one, otherwise the
+/// device's own voice (both offline; nothing leaves the phone). Clip, voice, rate and audio
+/// session come from `WordSpeech` (Shared/), the same ones the widget's speaker button uses.
 @MainActor
-final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
+final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate, AVAudioPlayerDelegate {
     static let shared = Speaker()
 
     /// The text being read right now (drives the speaker icon); nil when silent.
     @Published private(set) var speakingText: String?
 
     private let synthesizer = AVSpeechSynthesizer()
+    /// The recorded clip playing right now, if the reading is one.
+    private var player: AVAudioPlayer?
     private var current: ObjectIdentifier?
 
     override init() {
@@ -25,11 +27,25 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         if synthesizer.isSpeaking {
             synthesizer.stopSpeaking(at: .immediate)
         }
+        // A stopped clip reports nothing.
+        player?.stop()
+        player = nil
         if wasSpeakingThis {
             finish()
             return
         }
         WordSpeech.activateSession()
+        if let recorded = WordSpeech.recordedPlayer(text) {
+            recorded.delegate = self
+            player = recorded
+            current = ObjectIdentifier(recorded)
+            speakingText = text
+            if recorded.play() {
+                return
+            }
+            // A clip that does not play: the voice reads the text instead.
+            player = nil
+        }
         // is5-ses: a text of several sentences is one utterance per sentence with a pause between;
         // the last one ends the reading (`utteranceEnded`).
         let utterances = WordSpeech.makeUtterances(text)
@@ -44,6 +60,7 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     func stop() {
         guard current != nil else { return }
         synthesizer.stopSpeaking(at: .immediate)
+        player?.stop()
         finish()
     }
 
@@ -57,6 +74,7 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
     private func finish() {
         current = nil
+        player = nil
         speakingText = nil
         WordSpeech.deactivateSession()
     }
@@ -78,6 +96,20 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
     nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
         let id = ObjectIdentifier(utterance)
+        Task { @MainActor in
+            self.utteranceEnded(id)
+        }
+    }
+
+    nonisolated func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        let id = ObjectIdentifier(player)
+        Task { @MainActor in
+            self.utteranceEnded(id)
+        }
+    }
+
+    nonisolated func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        let id = ObjectIdentifier(player)
         Task { @MainActor in
             self.utteranceEnded(id)
         }

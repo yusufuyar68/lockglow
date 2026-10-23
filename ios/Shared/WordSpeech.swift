@@ -41,9 +41,11 @@ extension WidgetWord {
 
 /// How Lockglow reads English aloud. Compiled into the app (the speaker buttons in `Speaker`) and
 /// into the widget extension (`SpeakWordIntent`, which the system runs in the app's process):
-/// the device's own voice (offline) in the accent of "Ses ve aksan", the voice chosen there or
-/// the best installed one (premium, then enhanced, then standard), the chosen speed (slower for a
-/// repeat with "Yavaş tekrar"), and a `.playback` audio session that ducks other audio.
+/// the recorded clip of the text in the accent and the character of "Ses ve aksan" when the app
+/// has one (`recordedPlayer`), otherwise the device's own voice (offline) in that accent: the
+/// voice chosen there or the best installed one of the character (premium, then enhanced, then
+/// standard); the chosen speed (slower for a repeat with "Yavaş tekrar"), and a `.playback`
+/// audio session that ducks other audio.
 enum WordSpeech {
     static let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? "lockglow",
@@ -135,7 +137,8 @@ enum WordSpeech {
     // MARK: Voices
 
     /// The voice that reads with `settings`: the chosen one while it is installed, otherwise the
-    /// best installed one of the accent. With no offered voice at all, the system's voice for the
+    /// best installed one of the accent and the gender ("Ses karakteri"), otherwise the best of the
+    /// accent. With no offered voice at all, the system's voice for the
     /// accent, then American English: never nil while an English voice exists (a nil voice
     /// would read with the phone's language, Turkish).
     static func voice(for settings: SpeechSettings) -> AVSpeechSynthesisVoice? {
@@ -144,6 +147,7 @@ enum WordSpeech {
             chosen: settings.voiceIdentifier,
             among: snapshot.infos,
             accent: settings.accent,
+            gender: settings.gender,
             systemDefault: snapshot.systemDefaults[settings.accent]
         )
         if let pick, let voice = snapshot.voices.first(where: { $0.identifier == pick.identifier }) {
@@ -159,9 +163,9 @@ enum WordSpeech {
         return SpeechVoiceChoice.offered(snapshot.infos, accent: accent, systemDefault: snapshot.systemDefaults[accent])
     }
 
-    /// No enhanced or premium voice is installed for `accent` ("Daha doğal ses indir").
-    static func needsBetterVoice(for accent: SpeechAccent) -> Bool {
-        return SpeechVoiceChoice.needsBetterVoice(catalog.snapshot.infos, accent: accent)
+    /// No enhanced or premium voice of `gender` is installed for `accent` ("Daha doğal ses indir").
+    static func needsBetterVoice(for accent: SpeechAccent, gender: SpeechVoiceGender) -> Bool {
+        return SpeechVoiceChoice.needsBetterVoice(catalog.snapshot.infos, accent: accent, gender: gender)
     }
 
     /// Reads the installed voices again at the next use: back from iPhone Settings, where a voice
@@ -177,12 +181,74 @@ enum WordSpeech {
             language: voice.language,
             quality: SpeechVoiceInfo.Quality(rawQuality: voice.quality.rawValue),
             isNovelty: voice.voiceTraits.contains(.isNoveltyVoice),
-            isPersonal: voice.voiceTraits.contains(.isPersonalVoice)
+            isPersonal: voice.voiceTraits.contains(.isPersonalVoice),
+            gender: gender(of: voice)
         )
+    }
+
+    private static func gender(of voice: AVSpeechSynthesisVoice) -> SpeechVoiceGender? {
+        switch voice.gender {
+        case .female:
+            return .female
+        case .male:
+            return .male
+        default:
+            return nil
+        }
     }
 
     private static let catalog = VoiceCatalog()
     private static let repeats = RepeatMemory()
+
+    // MARK: Recorded clips
+
+    /// The bundle's recorded voices (`RecordedSpeech/voices.json`); none in the widget extension
+    /// and in a build without clips, where the device's voice reads everything.
+    private static let recordedVoices: RecordedSpeechVoices? = {
+        guard let url = Bundle.main.url(forResource: "voices", withExtension: "json", subdirectory: "RecordedSpeech"),
+              let data = try? Data(contentsOf: url) else {
+            return nil
+        }
+        return RecordedSpeechVoices(json: data)
+    }()
+
+    /// The app has recorded clips for `settings` (the accent and the character, no voice chosen by name).
+    static func hasRecordedVoice(for settings: SpeechSettings) -> Bool {
+        return recordedVoices?.voice(for: settings) != nil
+    }
+
+    /// A player for the recorded clip of `text` in the accent and the character of "Ses ve
+    /// aksan", at the chosen speed (slower for a repeat with "Yavaş tekrar"), ready to play. Nil
+    /// when there is no clip: the voice reads (`makeUtterances`). A call counts as a hearing, as
+    /// `makeUtterances`.
+    static func recordedPlayer(_ text: String) -> AVAudioPlayer? {
+        let settings = SpeechSettingsStore.current
+        guard let voice = recordedVoices?.voice(for: settings),
+              let directory = Bundle.main.url(forResource: voice.key, withExtension: nil, subdirectory: "RecordedSpeech") else {
+            return nil
+        }
+        let url = directory.appendingPathComponent("\(RecordedSpeechVoices.key(for: text)).\(voice.ext)")
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            return nil
+        }
+        let player: AVAudioPlayer
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+        } catch {
+            logger.error("recorded clip not opened: \(error.localizedDescription, privacy: .public)")
+            return nil
+        }
+        let key = SpeechRepeatTracker.key(text: text, voiceIdentifier: "recorded.\(voice.key)", rate: settings.rate)
+        let isRepeat = repeats.register(key)
+        let rateMultiplier = SpeechRules.rateMultiplier(settings.rate, isRepeat: isRepeat, slowRepeat: settings.slowRepeat)
+        player.enableRate = true
+        player.rate = RecordedSpeechVoices.playbackRate(rateMultiplier)
+        player.prepareToPlay()
+        logger.info(
+            "speech clip: \(voice.key, privacy: .public), rate x: \(rateMultiplier, privacy: .public), repeat: \(isRepeat, privacy: .public)"
+        )
+        return player
+    }
 
     // MARK: Audio session
 
@@ -295,12 +361,14 @@ private final class RepeatMemory: @unchecked Sendable {
 /// widget intent must not return earlier: the app was most likely launched in the background
 /// just for this tap and is suspended again soon after `perform()` returns.
 @MainActor
-final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
+final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate, AVAudioPlayerDelegate {
     static let shared = WordSpeechPlayer()
 
     private let synthesizer = AVSpeechSynthesizer()
-    /// The utterance being read right now; kept so a stale callback can be told apart.
-    private var current: AVSpeechUtterance?
+    /// The recorded clip playing right now, if the reading is one.
+    private var player: AVAudioPlayer?
+    /// The utterance or the clip being read right now; kept so a stale callback can be told apart.
+    private var current: ObjectIdentifier?
     private var waiter: CheckedContinuation<Void, Never>?
     private var watchdog: Task<Void, Never>?
     /// Counts the starts (`speakAndWait`) and the stops (`stop`). `end`'s delayed release belongs
@@ -323,6 +391,9 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         if synthesizer.isSpeaking {
             synthesizer.stopSpeaking(at: .immediate)
         }
+        // A stopped clip reports nothing.
+        player?.stop()
+        player = nil
         // Release the call this one replaces; its cancel callback arrives with a stale utterance.
         current = nil
         watchdog?.cancel()
@@ -338,12 +409,26 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         WordSpeech.logger.notice(
             "widget speech in \(Bundle.main.bundleIdentifier ?? "?", privacy: .public), app audio session: \(appSession, privacy: .public)"
         )
-        let utterance = WordSpeech.makeUtterance(spoken)
-        let id = ObjectIdentifier(utterance)
-        current = utterance
-        // `timeout` is for the normal speed; a slow (or slow repeat) reading of a phrase may need more.
-        let normalRate = AVSpeechUtteranceDefaultSpeechRate * SpeechRate.normal.defaultRateMultiplier
-        let limit = timeout * max(1, Double(normalRate / max(utterance.rate, 0.05)))
+        // A recorded clip needs the app's own session; on the fallback path the voice reads.
+        let recorded = appSession ? WordSpeech.recordedPlayer(spoken) : nil
+        let utterance = recorded == nil ? WordSpeech.makeUtterance(spoken) : nil
+        let id: ObjectIdentifier
+        let limit: TimeInterval
+        if let recorded {
+            recorded.delegate = self
+            player = recorded
+            id = ObjectIdentifier(recorded)
+            // The clip's own length at its speed, and a moment to start.
+            limit = max(timeout, recorded.duration / Double(max(recorded.rate, 0.5)) + 2)
+        } else if let utterance {
+            id = ObjectIdentifier(utterance)
+            // `timeout` is for the normal speed; a slow (or slow repeat) reading of a phrase may need more.
+            let normalRate = AVSpeechUtteranceDefaultSpeechRate * SpeechRate.normal.defaultRateMultiplier
+            limit = timeout * max(1, Double(normalRate / max(utterance.rate, 0.05)))
+        } else {
+            return
+        }
+        current = id
         await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             waiter = continuation
             watchdog = Task { @MainActor [weak self] in
@@ -354,7 +439,14 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
                 }
                 self?.timedOut(id)
             }
-            synthesizer.speak(utterance)
+            if let recorded {
+                if !recorded.play() {
+                    WordSpeech.logger.notice("recorded clip did not play")
+                    end(id)
+                }
+            } else if let utterance {
+                synthesizer.speak(utterance)
+            }
         }
     }
 
@@ -374,21 +466,25 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
         watchdog?.cancel()
         watchdog = nil
         synthesizer.stopSpeaking(at: .immediate)
+        player?.stop()
+        player = nil
         WordSpeech.deactivateSession()
         resumeWaiter()
     }
 
     private func timedOut(_ id: ObjectIdentifier) {
-        guard let current, ObjectIdentifier(current) == id else { return }
+        guard current == id else { return }
         WordSpeech.logger.notice("widget speech timed out")
         synthesizer.stopSpeaking(at: .immediate)
+        player?.stop()
         end(id)
     }
 
-    /// Only the utterance started last may end the speech and release the audio session.
+    /// Only the utterance or the clip started last may end the speech and release the audio session.
     private func end(_ id: ObjectIdentifier) {
-        guard let current, ObjectIdentifier(current) == id else { return }
-        self.current = nil
+        guard current == id else { return }
+        current = nil
+        player = nil
         watchdog?.cancel()
         watchdog = nil
         // `didFinish` can arrive while the last samples are still playing, and the app may be
@@ -419,6 +515,20 @@ final class WordSpeechPlayer: NSObject, AVSpeechSynthesizerDelegate {
 
     nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
         let id = ObjectIdentifier(utterance)
+        Task { @MainActor in
+            self.end(id)
+        }
+    }
+
+    nonisolated func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        let id = ObjectIdentifier(player)
+        Task { @MainActor in
+            self.end(id)
+        }
+    }
+
+    nonisolated func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        let id = ObjectIdentifier(player)
         Task { @MainActor in
             self.end(id)
         }
