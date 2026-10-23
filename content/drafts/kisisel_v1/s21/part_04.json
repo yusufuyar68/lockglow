@@ -1,0 +1,1373 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.messy.adj.1",
+      "lemma": "messy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not tidy",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛsi/",
+        "uk": "/ˈmɛsi/"
+      },
+      "def": {
+        "micro": "not tidy or clean",
+        "short": "not tidy; with things everywhere and not in the right place",
+        "long": "Not tidy or clean, with things everywhere and not in the right place. It is used for places, things and people who don't put things away."
+      },
+      "grammar": {
+        "pattern": "be / look / get messy"
+      },
+      "examples": [
+        {
+          "en": "Sorry, my car is a bit messy.",
+          "tr": "Kusura bakma, arabam biraz dağınık.",
+          "register": "neutral",
+          "focus": "messy"
+        },
+        {
+          "en": "Tuğba's desk is always messy, but she knows where everything is.",
+          "tr": "Tuğba'nın masası hep dağınık ama her şeyin nerede olduğunu biliyor.",
+          "register": "neutral",
+          "focus": "messy"
+        },
+        {
+          "en": "Eating spaghetti with small kids is always messy.",
+          "tr": "Küçük çocuklarla spagetti yemek her zaman ortalığı batırır.",
+          "register": "neutral",
+          "focus": "messy"
+        }
+      ],
+      "synonyms": [
+        "untidy"
+      ],
+      "antonyms": [
+        "tidy",
+        "neat"
+      ],
+      "confusables": [
+        "mess"
+      ],
+      "collocations": [
+        "messy room",
+        "messy hair",
+        "a bit messy"
+      ],
+      "word_family": [
+        {
+          "lemma": "mess",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dağınık",
+          "alt": [
+            "düzensiz",
+            "darmadağın"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'mess' isimdir: 'My room is a mess.' (Odam darmadağın.) 'messy' sıfattır: 'My room is messy.' İkisi de doğru ama 'very mess' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There were clothes and books all over Berk's floor. His room was really ______.",
+        "answer": "messy",
+        "distractors": [
+          "tidy",
+          "clean",
+          "empty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.organized.adj.1",
+      "lemma": "organized",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "plans things well",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːrɡənaɪzd/",
+        "uk": "/ˈɔːɡənaɪzd/"
+      },
+      "def": {
+        "micro": "plans and keeps order",
+        "short": "good at planning things and keeping things in order",
+        "long": "Good at planning your time and keeping your things in order. An organized person makes lists, knows where things are and is ready on time."
+      },
+      "grammar": {
+        "pattern": "be / get organized"
+      },
+      "examples": [
+        {
+          "en": "Merve is very organized. She plans her whole week on Sunday.",
+          "tr": "Merve çok düzenlidir. Bütün haftasını pazar günü planlar.",
+          "register": "neutral",
+          "focus": "organized"
+        },
+        {
+          "en": "I need to get organized before the new school year starts.",
+          "tr": "Yeni okul yılı başlamadan önce işlerimi düzene sokmam lazım.",
+          "register": "neutral",
+          "focus": "get organized"
+        },
+        {
+          "en": "Grace keeps all her bills in one folder. She's so organized.",
+          "tr": "Grace bütün faturalarını tek bir dosyada tutar. Çok düzenlidir.",
+          "register": "neutral",
+          "focus": "organized"
+        }
+      ],
+      "synonyms": [
+        "well-organized"
+      ],
+      "antonyms": [
+        "disorganized",
+        "messy"
+      ],
+      "confusables": [
+        "regular"
+      ],
+      "collocations": [
+        "very organized",
+        "get organized",
+        "well organized"
+      ],
+      "word_family": [
+        {
+          "lemma": "organize",
+          "pos": "v"
+        },
+        {
+          "lemma": "organization",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düzenli, planlı",
+          "alt": [
+            "tertipli",
+            "derli toplu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'düzenli' iki anlama gelir: belli aralıklarla olan şey 'regular' olur (düzenli spor), işini planlayan kişi 'organized' olur. İngiliz yazımı 'organised'.",
+          "mistakes": [
+            {
+              "wrong": "She is a very regular person.",
+              "right": "She is a very organized person.",
+              "why": "Sözlükte 'düzenli' karşılığı 'regular' çıktığı için kişi için de kullanılıyor. 'regular' belli aralıklarla olan demektir; planlı kişi 'organized' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Şule writes everything in her planner and never forgets a meeting. She's very ______.",
+        "answer": "organized",
+        "distractors": [
+          "messy",
+          "forgetful",
+          "lazy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.punctual.adj.1",
+      "lemma": "punctual",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "never late",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpʌŋktʃuəl/",
+        "uk": "/ˈpʌŋktʃuəl/"
+      },
+      "def": {
+        "micro": "arriving at the right time",
+        "short": "arriving or doing something at the planned time; never late",
+        "long": "Arriving at the planned time and never being late. People often say it about friends, workers and students."
+      },
+      "grammar": {
+        "pattern": "be punctual (for something)"
+      },
+      "examples": [
+        {
+          "en": "Arda is always punctual. He's never late.",
+          "tr": "Arda her zaman dakiktir. Hiç geç kalmaz.",
+          "register": "neutral",
+          "focus": "punctual"
+        },
+        {
+          "en": "Please be punctual. The tour bus leaves at nine.",
+          "tr": "Lütfen geç kalmayın. Tur otobüsü dokuzda kalkıyor.",
+          "register": "neutral",
+          "focus": "punctual"
+        },
+        {
+          "en": "Lin is so punctual that she gets to every meeting ten minutes early.",
+          "tr": "Lin o kadar dakik ki her toplantıya on dakika erken gelir.",
+          "register": "neutral",
+          "focus": "punctual"
+        }
+      ],
+      "synonyms": [
+        "on time"
+      ],
+      "antonyms": [
+        "late"
+      ],
+      "collocations": [
+        "always punctual",
+        "very punctual"
+      ],
+      "word_family": [
+        {
+          "lemma": "punctuality",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dakik",
+          "alt": [
+            "zamanında gelen",
+            "vaktinde gelen"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'punctual' daha çok kişi için kullanılır. Otobüs, tren ya da bir iş için 'on time' daha yaygındır: 'The train was on time.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Oscar has never been late for work in ten years. He's very ______.",
+        "answer": "punctual",
+        "distractors": [
+          "careless",
+          "lazy",
+          "forgetful"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.responsible.adj.1",
+      "lemma": "responsible",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "can be trusted with duties",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈspɑːnsəbəl/",
+        "uk": "/rɪˈspɒnsəbəl/"
+      },
+      "def": {
+        "micro": "does duties well",
+        "short": "doing the things you should do, so people can trust you",
+        "long": "Doing the things you should do and making good choices, so others can trust you. 'Responsible for' means it is your job to look after something."
+      },
+      "grammar": {
+        "pattern": "responsible for something"
+      },
+      "examples": [
+        {
+          "en": "Deniz is very responsible. She always does her homework first.",
+          "tr": "Deniz çok sorumluluk sahibi. Her zaman önce ödevini yapar.",
+          "register": "neutral",
+          "focus": "responsible"
+        },
+        {
+          "en": "Noah is responsible for the music at the party.",
+          "tr": "Partide müzikten Noah sorumlu.",
+          "register": "neutral",
+          "focus": "responsible for"
+        },
+        {
+          "en": "My brother is sixteen, but he isn't responsible enough to have a dog yet.",
+          "tr": "Kardeşim on altı yaşında ama henüz köpek bakacak kadar sorumluluk sahibi değil.",
+          "register": "neutral",
+          "focus": "responsible"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "irresponsible",
+        "careless"
+      ],
+      "collocations": [
+        "very responsible",
+        "responsible for",
+        "feel responsible"
+      ],
+      "word_family": [
+        {
+          "lemma": "responsibility",
+          "pos": "n"
+        },
+        {
+          "lemma": "irresponsible",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sorumluluk sahibi",
+          "gloss_short": "sorumlu",
+          "alt": [
+            "sorumlu",
+            "sorumluluk bilinci olan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir işin sorumlusu olmak 'be responsible for' ile söylenir: 'I'm responsible for the kitchen.' (Mutfaktan ben sorumluyum.)",
+          "mistakes": [
+            {
+              "wrong": "Who is responsible from this room?",
+              "right": "Who is responsible for this room?",
+              "why": "Türkçede '-den sorumlu' denir ve '-den' çoğu zaman 'from' diye çevrilir. İngilizcede 'responsible for' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kaan is only twelve, but he's very ______. He walks the dog and feeds the cat every day.",
+        "answer": "responsible",
+        "distractors": [
+          "careless",
+          "lazy",
+          "spoiled"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.thoughtful.adj.1",
+      "lemma": "thoughtful",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "kind, thinks of others",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈθɔːtfəl/",
+        "uk": "/ˈθɔːtfəl/"
+      },
+      "def": {
+        "micro": "kind and thinks of others",
+        "short": "kind, and always thinking about what other people need or would like",
+        "long": "Thinking about other people's feelings and needs, and doing small kind things for them, like remembering a birthday."
+      },
+      "grammar": {
+        "pattern": "it's thoughtful of someone (to do)"
+      },
+      "examples": [
+        {
+          "en": "Thanks for the flowers. That was very thoughtful of you.",
+          "tr": "Çiçekler için teşekkürler. Çok incelik göstermişsin.",
+          "register": "neutral",
+          "focus": "thoughtful"
+        },
+        {
+          "en": "Priya is a thoughtful friend. She always remembers my birthday.",
+          "tr": "Priya ince düşünceli bir arkadaştır. Doğum günümü hiç unutmaz.",
+          "register": "neutral",
+          "focus": "thoughtful"
+        },
+        {
+          "en": "It was thoughtful of Gökhan to bring an extra umbrella for me.",
+          "tr": "Gökhan'ın bana fazladan bir şemsiye getirmesi düşünceli bir davranıştı.",
+          "register": "neutral",
+          "focus": "thoughtful"
+        }
+      ],
+      "synonyms": [
+        "kind",
+        "considerate"
+      ],
+      "antonyms": [
+        "thoughtless",
+        "selfish"
+      ],
+      "confusables": [
+        "worried"
+      ],
+      "collocations": [
+        "very thoughtful",
+        "thoughtful gift",
+        "thoughtful of you"
+      ],
+      "word_family": [
+        {
+          "lemma": "thought",
+          "pos": "n"
+        },
+        {
+          "lemma": "thoughtless",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ince düşünceli",
+          "alt": [
+            "düşünceli",
+            "nazik",
+            "incelikli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'düşünceli' kaygılı anlamına da gelir; bu anlam için 'worried' denir. 'thoughtful' çoğu zaman başkalarını düşünen, ince düşünceli kişi demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Emma knew I was busy, so she cooked dinner for me. She's so ______.",
+        "answer": "thoughtful",
+        "distractors": [
+          "selfish",
+          "rude",
+          "bossy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sympathetic.adj.1",
+      "lemma": "sympathetic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "understands others' problems",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɪmpəˈθɛtɪk/",
+        "uk": "/ˌsɪmpəˈθɛtɪk/"
+      },
+      "def": {
+        "micro": "understanding and caring",
+        "short": "showing that you understand and care when someone has a problem",
+        "long": "Showing that you understand someone's problem and care about how they feel. A sympathetic person listens and tries to help."
+      },
+      "grammar": {
+        "pattern": "sympathetic to / towards someone"
+      },
+      "examples": [
+        {
+          "en": "Thanks for listening. You're always so sympathetic.",
+          "tr": "Dinlediğin için sağ ol. Her zaman çok anlayışlısın.",
+          "register": "neutral",
+          "focus": "sympathetic"
+        },
+        {
+          "en": "Grace was very sympathetic when I told her about my bad day.",
+          "tr": "Kötü geçen günümü anlattığımda Grace çok anlayış gösterdi.",
+          "register": "neutral",
+          "focus": "sympathetic"
+        },
+        {
+          "en": "Our flight was canceled, but the hotel staff were sympathetic and found us a room.",
+          "tr": "Uçuşumuz iptal oldu ama otel çalışanları anlayışlıydı ve bize bir oda buldu.",
+          "register": "neutral",
+          "focus": "sympathetic"
+        }
+      ],
+      "synonyms": [
+        "understanding",
+        "caring"
+      ],
+      "antonyms": [
+        "unsympathetic"
+      ],
+      "confusables": [
+        "likeable"
+      ],
+      "collocations": [
+        "very sympathetic",
+        "sympathetic ear",
+        "sympathetic to"
+      ],
+      "word_family": [
+        {
+          "lemma": "sympathy",
+          "pos": "n"
+        },
+        {
+          "lemma": "sympathize",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anlayışlı, halden anlayan",
+          "gloss_short": "anlayışlı",
+          "alt": [
+            "şefkatli",
+            "anlayış gösteren"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "sempatik",
+            "tr_means": "sevimli, cana yakın, insanın hoşuna giden",
+            "en_for_that": "likeable, nice"
+          },
+          "note": "Türkçedeki 'sempatik' (sevimli, cana yakın) için 'likeable' ya da 'nice' denir. 'sympathetic' birinin derdini anlayan, ona destek olan kişidir.",
+          "mistakes": [
+            {
+              "wrong": "He's very sympathetic, everyone likes him.",
+              "right": "He's really nice. Everyone likes him.",
+              "why": "Türkçedeki 'sempatik' sevimli demektir ve İngilizcesi 'sympathetic' sanılır. İngilizcede bu kelime anlayışlı, halden anlayan demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I lost my wallet, Arda was very ______. He listened and lent me some money.",
+        "answer": "sympathetic",
+        "distractors": [
+          "jealous",
+          "bossy",
+          "proud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sensitive.adj.1",
+      "lemma": "sensitive",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "easily hurt or upset",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɛnsətɪv/",
+        "uk": "/ˈsɛnsɪtɪv/"
+      },
+      "def": {
+        "micro": "easily upset",
+        "short": "easily upset or hurt by what other people say or do",
+        "long": "Getting upset or hurt easily when people say or do unkind things. A sensitive person often notices other people's feelings too."
+      },
+      "grammar": {
+        "pattern": "sensitive about / to something"
+      },
+      "examples": [
+        {
+          "en": "Be careful what you say. Şule is very sensitive.",
+          "tr": "Ne dediğine dikkat et. Şule çok hassastır.",
+          "register": "neutral",
+          "focus": "sensitive"
+        },
+        {
+          "en": "Berk is sensitive about his singing, so please don't laugh.",
+          "tr": "Berk şarkı söyleyişi konusunda alıngan, o yüzden lütfen gülme.",
+          "register": "neutral",
+          "focus": "sensitive about"
+        },
+        {
+          "en": "Ali is a sensitive boy, so his teacher always speaks to him gently.",
+          "tr": "Ali hassas bir çocuk, o yüzden öğretmeni onunla hep yumuşak bir dille konuşur.",
+          "register": "neutral",
+          "focus": "sensitive"
+        }
+      ],
+      "synonyms": [
+        "touchy"
+      ],
+      "antonyms": [
+        "insensitive",
+        "tough"
+      ],
+      "confusables": [
+        "sensible"
+      ],
+      "collocations": [
+        "very sensitive",
+        "sensitive skin",
+        "sensitive about"
+      ],
+      "word_family": [
+        {
+          "lemma": "sense",
+          "pos": "n"
+        },
+        {
+          "lemma": "sensitivity",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hassas, duyarlı, alıngan",
+          "gloss_short": "hassas",
+          "alt": [
+            "duygusal",
+            "kırılgan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'sensible' mantıklı demektir, 'sensitive' ile karıştırma. 'sensitive' kolay üzülen kişi için kullanılır; güneşe ya da soğuğa karşı hassas cilt ve dişler için de söylenir: 'sensitive teeth'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Arda cries at sad films and gets upset very easily. He's very ______.",
+        "answer": "sensitive",
+        "distractors": [
+          "sensible",
+          "brave",
+          "calm"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mean.adj.1",
+      "lemma": "mean",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "unkind",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/miːn/",
+        "uk": "/miːn/"
+      },
+      "def": {
+        "micro": "unkind to other people",
+        "short": "unkind; saying or doing things that hurt other people",
+        "long": "Unkind to other people, for example by laughing at them or not sharing. In British English it can also mean not liking to spend or share money."
+      },
+      "grammar": {
+        "pattern": "be mean to someone"
+      },
+      "examples": [
+        {
+          "en": "Don't be mean to your little sister.",
+          "tr": "Küçük kız kardeşine kötü davranma.",
+          "register": "neutral",
+          "focus": "mean to"
+        },
+        {
+          "en": "It was mean of Oscar to laugh at Lin's drawing.",
+          "tr": "Oscar'ın Lin'in resmine gülmesi kırıcıydı.",
+          "register": "neutral",
+          "focus": "mean"
+        },
+        {
+          "en": "Some kids were mean to Kaan on his first day, but now he has lots of friends.",
+          "tr": "İlk gün bazı çocuklar Kaan'a kötü davrandı ama şimdi bir sürü arkadaşı var.",
+          "register": "neutral",
+          "focus": "mean to"
+        }
+      ],
+      "synonyms": [
+        "unkind",
+        "nasty"
+      ],
+      "antonyms": [
+        "kind",
+        "nice"
+      ],
+      "confusables": [
+        "rude"
+      ],
+      "collocations": [
+        "be mean to",
+        "mean of you",
+        "a bit mean"
+      ],
+      "word_family": [
+        {
+          "lemma": "meanness",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kötü davranan, kırıcı",
+          "gloss_short": "kötü davranan",
+          "alt": [
+            "kaba",
+            "kötü",
+            "acımasız"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil olan 'mean' (demek istemek) ile karıştırma. Sıfat olarak 'mean' kötü davranan demektir. İngiltere'de cimri anlamına da gelir.",
+          "mistakes": [
+            {
+              "wrong": "Why are you so mean against me?",
+              "right": "Why are you so mean to me?",
+              "why": "Türkçede 'bana karşı kötü' denir ve '-e karşı' çoğu zaman 'against' diye çevrilir. İngilizcede birine kötü davranmak 'mean to' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "compliments_insults"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was ______ of Gökhan to laugh when Tuğba fell off her bike.",
+        "answer": "mean",
+        "distractors": [
+          "kind",
+          "brave",
+          "polite"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spoiled.adj.1",
+      "lemma": "spoiled",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "child who gets everything",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/spɔɪld/",
+        "uk": "/spɔɪld/"
+      },
+      "def": {
+        "micro": "used to getting everything",
+        "short": "behaving badly because people always give you what you want",
+        "long": "Behaving badly and being unhappy unless you get everything you want, often because your family gives you too much."
+      },
+      "grammar": {
+        "pattern": "a spoiled child / be spoiled"
+      },
+      "examples": [
+        {
+          "en": "Their son is so spoiled. He never says thank you.",
+          "tr": "Oğulları çok şımarık. Hiç teşekkür etmiyor.",
+          "register": "neutral",
+          "focus": "spoiled"
+        },
+        {
+          "en": "Priya's grandparents buy her lots of things, but she isn't spoiled at all.",
+          "tr": "Priya'nın büyükannesiyle büyükbabası ona çok şey alıyor ama o hiç şımarık değil.",
+          "register": "neutral",
+          "focus": "spoiled"
+        },
+        {
+          "en": "Stop acting like a spoiled child and wait your turn.",
+          "tr": "Şımarık bir çocuk gibi davranmayı bırak da sıranı bekle.",
+          "register": "neutral",
+          "focus": "spoiled"
+        }
+      ],
+      "synonyms": [
+        "spoilt"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "naughty"
+      ],
+      "collocations": [
+        "spoiled child",
+        "spoiled brat",
+        "a bit spoiled"
+      ],
+      "word_family": [
+        {
+          "lemma": "spoil",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şımarık",
+          "alt": [
+            "şımartılmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'spoil' fiili şımartmak demektir: 'Grandparents spoil their grandkids.' Yiyecek için 'spoiled' bozulmuş demektir. İngiltere'de 'spoilt' yazılır. Çocuğa 'Şımarıklık yapma!' demek için 'Behave!' denir.",
+          "mistakes": [
+            {
+              "wrong": "Ali spoiled a lot this summer.",
+              "right": "Ali got very spoiled this summer.",
+              "why": "Türkçede 'şımarmak' tek başına bir fiildir. İngilizcede 'spoil' birini şımartmak demektir; kendi kendine şımarmak için 'get spoiled' (şımarmak) ya da 'be spoiled' (şımarık olmak) denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Merve's son cries every time he doesn't get what he wants. He's very ______.",
+        "answer": "spoiled",
+        "distractors": [
+          "shy",
+          "generous",
+          "patient"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.open_minded.adj.1",
+      "lemma": "open-minded",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "happy to accept new ideas",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌoʊpənˈmaɪndɪd/",
+        "uk": "/ˌəʊpənˈmaɪndɪd/"
+      },
+      "def": {
+        "micro": "happy to try new ideas",
+        "short": "happy to listen to and accept ideas and ways that are new or different",
+        "long": "Happy to listen to new or different ideas, people and ways of living, and not judging them before you know them."
+      },
+      "grammar": {
+        "pattern": "open-minded about something"
+      },
+      "examples": [
+        {
+          "en": "My grandmother is very open-minded about new ideas.",
+          "tr": "Babaannem yeni fikirlere karşı çok açık fikirlidir.",
+          "register": "neutral",
+          "focus": "open-minded"
+        },
+        {
+          "en": "Traveling helps you become more open-minded.",
+          "tr": "Seyahat etmek insanı daha açık fikirli yapar.",
+          "register": "neutral",
+          "focus": "open-minded"
+        },
+        {
+          "en": "Emma is open-minded, so she's happy to try any Turkish food.",
+          "tr": "Emma açık fikirli, o yüzden her Türk yemeğini denemeye hazır.",
+          "register": "neutral",
+          "focus": "open-minded"
+        }
+      ],
+      "synonyms": [
+        "tolerant"
+      ],
+      "antonyms": [
+        "narrow-minded"
+      ],
+      "collocations": [
+        "very open-minded",
+        "open-minded about",
+        "stay open-minded"
+      ],
+      "word_family": [
+        {
+          "lemma": "open mind",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açık fikirli",
+          "alt": [
+            "ön yargısız"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kişi için sıfat 'open-minded' olur ve tire ile yazılır. 'open mind' isimdir: 'Keep an open mind.' (Ön yargısız ol.)",
+          "mistakes": [
+            {
+              "wrong": "She is very open mind.",
+              "right": "She is very open-minded.",
+              "why": "'açık fikirli' sözündeki '-li' eki atlanıp 'open mind' deniyor. Kişiyi anlatan sıfat 'open-minded' olur; 'open mind' isimdir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Noah is happy to listen to new ideas, even when he doesn't agree. He's very ______.",
+        "answer": "open-minded",
+        "distractors": [
+          "stubborn",
+          "arrogant",
+          "strict"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nosy.adj.1",
+      "lemma": "nosy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "too interested in others' lives",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnoʊzi/",
+        "uk": "/ˈnəʊzi/"
+      },
+      "def": {
+        "micro": "too interested in others",
+        "short": "too interested in other people's private lives and business",
+        "long": "Wanting to know too much about other people's private lives and asking too many questions. It is not a nice thing to say."
+      },
+      "examples": [
+        {
+          "en": "Stop reading my messages! Don't be so nosy.",
+          "tr": "Mesajlarımı okumayı bırak! Her şeye burnunu sokma.",
+          "register": "neutral",
+          "focus": "nosy"
+        },
+        {
+          "en": "Our nosy neighbor always asks where we're going.",
+          "tr": "Her şeye burnunu sokan komşumuz hep nereye gittiğimizi soruyor.",
+          "register": "neutral",
+          "focus": "nosy"
+        },
+        {
+          "en": "Sorry to be nosy, but how much did your new phone cost?",
+          "tr": "Meraklılık gibi olmasın ama yeni telefonun kaça geldi?",
+          "register": "neutral",
+          "focus": "nosy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "confusables": [
+        "curious"
+      ],
+      "collocations": [
+        "nosy neighbor",
+        "don't be nosy",
+        "a bit nosy"
+      ],
+      "word_family": [
+        {
+          "lemma": "nose",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "her şeye burnunu sokan",
+          "gloss_short": "fazla meraklı",
+          "alt": [
+            "maydanoz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'curious' olumlu bir meraktır, öğrenme isteğidir. 'nosy' olumsuzdur: başkalarının özel işlerini öğrenmeye çalışan kişi için söylenir.",
+          "mistakes": [
+            {
+              "wrong": "My neighbor is very curious. She always watches our door.",
+              "right": "My neighbor is very nosy. She always watches our door.",
+              "why": "Türkçede ikisine de 'meraklı' denir. İngilizcede 'curious' olumlu bir anlam taşır; başkasının işine karışan kişi için 'nosy' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Deniz's aunt always asks everyone how much money they earn. She's so ______.",
+        "answer": "nosy",
+        "distractors": [
+          "punctual",
+          "organized",
+          "careful"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.curious.adj.1",
+      "lemma": "curious",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "wants to know or learn",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkjʊriəs/",
+        "uk": "/ˈkjʊəriəs/"
+      },
+      "def": {
+        "micro": "wanting to know or learn",
+        "short": "wanting to know about something or to learn more about it",
+        "long": "Wanting to know more about something or to learn how it works. Children are often curious about everything around them."
+      },
+      "grammar": {
+        "pattern": "curious about something / curious to know"
+      },
+      "examples": [
+        {
+          "en": "Babies are curious about everything.",
+          "tr": "Bebekler her şeyi merak eder.",
+          "register": "neutral",
+          "focus": "curious about"
+        },
+        {
+          "en": "I'm curious to know what's in the box.",
+          "tr": "Kutunun içinde ne olduğunu merak ediyorum.",
+          "register": "neutral",
+          "focus": "curious"
+        },
+        {
+          "en": "Lin was curious about Turkish coffee, so she tried it in Istanbul.",
+          "tr": "Lin Türk kahvesini merak ediyordu, bu yüzden İstanbul'da denedi.",
+          "register": "neutral",
+          "focus": "curious about"
+        }
+      ],
+      "synonyms": [
+        "interested"
+      ],
+      "antonyms": [
+        "uninterested"
+      ],
+      "confusables": [
+        "nosy",
+        "worried"
+      ],
+      "collocations": [
+        "curious about",
+        "curious to know",
+        "just curious"
+      ],
+      "word_family": [
+        {
+          "lemma": "curiosity",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "meraklı",
+          "alt": [
+            "merak eden",
+            "öğrenmeye hevesli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'I'm curious' bir şeyi öğrenmek istiyorum demektir. 'Seni merak ettim' (endişelendim) demek için 'I was worried about you' denir.",
+          "mistakes": [
+            {
+              "wrong": "I was very curious about you. Why didn't you call?",
+              "right": "I was very worried about you. Why didn't you call?",
+              "why": "Türkçede 'merak etmek' hem öğrenmek istemek hem de endişelenmek demektir. Endişe için 'worried' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Grace has a lot of questions about how planes fly. She's really ______ about it.",
+        "answer": "curious",
+        "distractors": [
+          "bored",
+          "nosy",
+          "shy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
