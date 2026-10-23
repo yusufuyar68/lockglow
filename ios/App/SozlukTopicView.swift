@@ -68,7 +68,7 @@ struct SozlukTopicView: View {
         let states = words.map { model.learningState(of: $0) }
         let shown = zip(words, states).filter { filter.includes($0.1) }.map { $0.0 }
         return VStack(alignment: .leading, spacing: 0) {
-            header
+            header(count: words.count)
             SozlukFilterBar(selection: $filter, counts: SozlukTopicView.counts(states))
                 .padding(.top, 10)
             if shown.isEmpty {
@@ -83,15 +83,18 @@ struct SozlukTopicView: View {
         }
     }
 
-    private var header: some View {
+    /// The topic's name, then how many words it has and in which order (mockup A3).
+    private func header(count: Int) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(topic.displayName)
-                .font(.title2.weight(.bold))
+                .font(.title.weight(.bold))
                 .foregroundStyle(Theme.ink)
                 .accessibilityAddTraits(.isHeader)
-            Text("Kelimeler kolaydan zora sıralı.")
-                .font(.footnote)
+            Text(verbatim: "\(count) kelime · kolaydan zora")
+                .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
+                // VoiceOver would read the dot aloud.
+                .accessibilityLabel(Text(verbatim: "\(count) kelime, kolaydan zora sıralı"))
         }
         .padding(.top, 8)
     }
