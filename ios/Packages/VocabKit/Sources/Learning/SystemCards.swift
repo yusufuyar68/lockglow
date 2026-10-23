@@ -18,6 +18,9 @@ public enum SystemCard: Int, CaseIterable, Comparable, Identifiable, Sendable {
     case breakStart
     /// "Bugünlük yeter." at the end of the day's new words in "Akış" (shown by FeedView).
     case dayEnd
+    /// is5-haftalik: "Geçen hafta" on Monday, once (`WeeklyRecap`; shown by WeeklyRecapView's
+    /// presenter on RootView after a claim, like the screens' cards).
+    case weeklyRecap
 
     public var id: Int {
         return rawValue
@@ -27,7 +30,7 @@ public enum SystemCard: Int, CaseIterable, Comparable, Identifiable, Sendable {
     /// opening's sheet, chosen by `SystemCardSlot.decide(from:opening:)`.
     public var isScreenCard: Bool {
         switch self {
-        case .breakStart, .dayEnd:
+        case .breakStart, .dayEnd, .weeklyRecap:
             return true
         case .progressRecovered, .remindersPaused, .reminderTime, .widgetTip:
             return false
