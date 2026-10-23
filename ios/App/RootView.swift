@@ -136,6 +136,14 @@ struct RootView: View {
         .onOpenURL { url in
             handle(url)
         }
+        // The "Tekrar'ı aç" control (iOS 18, Shared/ControlsIntents.swift) opens Tekrar.
+        .onReceive(ControlOpenRequest.shared.$screen) { screen in
+            guard screen == .review else {
+                return
+            }
+            ControlOpenRequest.shared.screen = nil
+            selectedTab = .review
+        }
         .onAppear {
             openReviewIfRequested()
         }
