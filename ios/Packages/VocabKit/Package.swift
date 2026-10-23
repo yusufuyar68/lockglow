@@ -28,7 +28,7 @@ let package = Package(
         .target(name: "SharedState", dependencies: ["CoreModels"]),
         .target(name: "Scheduler", dependencies: ["CoreModels", "SharedState"]),
         // Leitner scheduling, queue composition and the app-private progress file. App only.
-        .target(name: "Learning", dependencies: ["CoreModels"]),
+        .target(name: "Learning", dependencies: ["CoreModels", "TextFold"]),
         // "Söyle" practice: compares what the speech recognizer heard with the card. Pure. App only.
         .target(name: "Pronunciation"),
         .target(

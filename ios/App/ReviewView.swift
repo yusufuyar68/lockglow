@@ -5,7 +5,9 @@ import Learning
 
 /// "Tekrar": a short round. Due words come first, each asked by its box (`AppModel.questionKind`,
 /// docs/tasarim/ogrenme_ilkeleri.md 2.4): in boxes 1–3 with the card's fill-in-the-blank question
-/// (`QuizCardView`, without a confusable partner not learned yet: `AppModel.clozeQuiz`); in
+/// (`QuizCardView`, without a confusable partner not learned yet: `AppModel.clozeQuiz`), in
+/// boxes 2–3 taking turns with "Dinle ve seç" and "İngilizcesini yaz" (`AppModel.dueQuestion`,
+/// `ListenQuestionView`, `TypeQuestionView`); in
 /// boxes 4–5, for refreshers and for the check 3 days after "Biliyorum" with the recall screen
 /// ("İngilizcesini hatırla": the Turkish meaning, "Göster", then "Göstermeden önce aklına geldi
 /// mi?" and two equal answers, "Bulamadım" and "Buldum").
@@ -153,10 +155,15 @@ struct ReviewView: View {
         case meet(WidgetWord)
         /// "Hatırla".
         case choice(WidgetWord, attempt: Int, direction: IntroRound.Direction)
+        /// Boxes 2–3, every other question: "Dinle ve seç" (ListenQuestionView).
+        case listen(WidgetWord, ListenQuestion)
+        /// Boxes 2–3, every other question: "İngilizcesini yaz" (TypeQuestionView).
+        case typing(WidgetWord, TypeQuestion)
 
         var word: WidgetWord {
             switch self {
-            case let .cloze(word, _), let .recall(word), let .meet(word), let .choice(word, _, _):
+            case let .cloze(word, _), let .recall(word), let .meet(word), let .choice(word, _, _),
+                 let .listen(word, _), let .typing(word, _):
                 return word
             }
         }
@@ -169,11 +176,19 @@ struct ReviewView: View {
                 return nil
             }
             let word = session.words[index]
-            // Without a confusable partner not settled yet; too few options left: recall instead.
-            if model.questionKind(for: word) == .cloze, let quiz = model.clozeQuiz(for: word) {
+            // By the box (`AppModel.dueQuestion`, kept while the card is on screen): boxes 2–3 take
+            // turns with "Dinle ve seç" and "İngilizcesini yaz"; listening only with sound on and
+            // VoiceOver off.
+            switch model.dueQuestion(for: word, canListen: ListenAvailability.isAvailable) {
+            case let .cloze(quiz):
                 return .cloze(word, quiz)
+            case let .listen(question):
+                return .listen(word, question)
+            case let .typing(question):
+                return .typing(word, question)
+            case .recall:
+                return .recall(word)
             }
-            return .recall(word)
         case .new:
             guard let round = intro, let step = round.current,
                   let word = session.words.first(where: { $0.id == step.wordID }) else {
@@ -212,6 +227,18 @@ struct ReviewView: View {
                 recallRound(word: word, detail: detail, times: recallReturnTimes(for: word)) { found in
                     answerRecall(word: word, found: found)
                 }
+            case let .listen(word, question):
+                ListenQuestionView(word: word, question: question, returnTimes: quizReturnTimes(for: word)) { outcome in
+                    let grade = ReviewView.grade(for: outcome)
+                    answerDue(word: word, grade: grade, label: AnswerLabel(grade))
+                }
+                .id(word.id)
+            case let .typing(word, question):
+                TypeQuestionView(word: word, question: question, returnTimes: quizReturnTimes(for: word)) { outcome in
+                    let grade = ReviewView.grade(for: outcome)
+                    answerDue(word: word, grade: grade, label: AnswerLabel(grade))
+                }
+                .id(word.id)
             case let .meet(word):
                 meetRound(word: word, detail: detail)
             case let .choice(word, attempt, direction):
@@ -1263,7 +1290,7 @@ struct ReviewView: View {
         switch card {
         case .meet:
             moveFocus(to: .word)
-        case .cloze:
+        case .cloze, .listen, .typing:
             moveFocus(to: .counter)
         case .recall, .choice:
             moveFocus(to: .question)
