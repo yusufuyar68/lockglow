@@ -749,6 +749,7 @@ final class AppModel: ObservableObject {
         LocalMetricsRecorder.shared.reset()
         AppPreferences.clearFeedFirstSeen()
         AppModel.clearRecentSearches()
+        AppModel.clearSentencePracticeTally() // "Cümle kur" count (AppModel+SentencePractice)
         // The words "Tekrar" listed as today's new words (`ReviewView.newWordsTodayLog`) are new again.
         UserDefaults.standard.removeObject(forKey: "lockglow.reviewNewWordsToday")
         refreshWidgetPlan()

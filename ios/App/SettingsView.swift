@@ -453,6 +453,8 @@ struct SettingsView: View {
                 }
                 .buttonStyle(SettingsRowButtonStyle())
                 SettingsDivider()
+                SentencePracticeSettingsRow() // "Cümle kur" (SentencePracticeView.swift)
+                SettingsDivider()
                 NavigationLink {
                     KnownWordsView()
                 } label: {
