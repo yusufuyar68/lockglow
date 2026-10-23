@@ -5,8 +5,9 @@ import Learning
 import TextFold
 
 /// "Sözlük": look a word up in English or Turkish (prefix search, Turkish letters folded), or
-/// browse a topic, then open the whole card (mockup `#sozluk`). An empty field offers the "Dene"
-/// examples, the recent searches and the topics as capsules; a topic opens its words by level
+/// browse a topic, then open the word page (`WordDetailView`, SozlukWordPage.swift; mockup A1-A4
+/// of the Sözlük redesign). An empty field offers the recent searches (the "Dene" examples
+/// before the first one) and the topics as tiles; a topic opens its words by level
 /// (`SozlukTopicView`). In the results the typed part is bold and underlined, never yellow (rule
 /// 1), and a filter keeps the new, learning or known words only; a search that finds nothing says
 /// what to try and offers a shorter search. No main button: nothing here is filled (rule of one
@@ -17,7 +18,6 @@ struct SearchView: View {
     @State private var query = ""
     /// Back to "Tümü" whenever the field is emptied (`SozlukFilter`).
     @State private var filter: SozlukFilter = .all
-    @State private var showsAllTopics = false
     @AppStorage(SozlukRecentSearches.storageKey) private var recentSearchLog = ""
     /// Sözlük's stack: topics and word cards (`open`).
     @State private var path = NavigationPath()
@@ -35,8 +35,6 @@ struct SearchView: View {
     /// Results of one search; a filter other than "Tümü" looks further, so that it has words to keep.
     private static let resultLimit = 50
     private static let filteredResultLimit = 200
-    /// Topics shown before "Tüm konular".
-    private static let collapsedTopicCount = 8
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -114,14 +112,16 @@ struct SearchView: View {
 
     // MARK: Start page
 
-    /// The empty field: "Dene", the recent searches, the topics and the Turkish-letters tip. With
-    /// neither recent searches nor topics (seed words only), the "Kelime ara" explanation instead.
+    /// The empty field: the recent searches (before the first one, the "Dene" examples that show
+    /// what can be typed), the topics and the Turkish-letters tip. With neither recent searches
+    /// nor topics (seed words only), the "Kelime ara" explanation instead.
     private var startPage: some View {
         let recent = SozlukRecentSearches.list(recentSearchLog)
         let topics = browseTopics
         return VStack(alignment: .leading, spacing: 0) {
-            tryRow(SearchView.tryQueries)
-            if !recent.isEmpty {
+            if recent.isEmpty {
+                tryRow(SearchView.tryQueries)
+            } else {
                 SozlukRecentSearchesSection(
                     searches: recent,
                     select: { query = $0 },
@@ -129,12 +129,12 @@ struct SearchView: View {
                     clear: { forgetAll() }
                 )
                 .padding(.horizontal, 16)
-                .padding(.top, 16)
+                .padding(.top, 8)
             }
             if !topics.isEmpty {
-                topicSection(topics)
+                SozlukTopicGrid(topics: topics, putsChosenFirst: !model.activeTopicIDs.isEmpty)
                     .padding(.horizontal, 16)
-                    .padding(.top, 20)
+                    .padding(.top, 24)
             }
             if recent.isEmpty && topics.isEmpty {
                 WordListEmptyState(
@@ -157,44 +157,6 @@ struct SearchView: View {
         let topics = model.choosableTopics
         let chosen = model.activeTopicIDs
         return topics.filter { chosen.contains($0.id) } + topics.filter { !chosen.contains($0.id) }
-    }
-
-    /// "Konuya göre göz at": a capsule per topic with its word count; a tap opens the topic's
-    /// words. The first few at once, the rest behind "Tüm konular".
-    private func topicSection(_ topics: [ContentTopic]) -> some View {
-        let isCollapsible = topics.count > SearchView.collapsedTopicCount
-        let shown = showsAllTopics || !isCollapsible ? topics : Array(topics.prefix(SearchView.collapsedTopicCount))
-        let toggleTitle = showsAllTopics ? "Daha az göster" : "Tüm konular (\(topics.count))"
-        return VStack(alignment: .leading, spacing: 6) {
-            SozlukSectionTitle(title: "Konuya göre göz at")
-            // No line spacing: the chips already reach 44 pt with transparent margins.
-            DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 0) {
-                ForEach(shown) { topic in
-                    NavigationLink(value: topic) {
-                        HStack(spacing: 6) {
-                            Text(topic.displayName)
-                            Text(verbatim: "\(topic.cardCount)")
-                                .foregroundStyle(Theme.ink2)
-                                .monospacedDigit()
-                        }
-                    }
-                    .buttonStyle(ChipButtonStyle())
-                    .accessibilityLabel(Text(verbatim: "\(topic.displayName), \(topic.cardCount) kelime"))
-                    .accessibilityHint("Bu konunun kelimelerini açar")
-                }
-                if isCollapsible {
-                    Button {
-                        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
-                            showsAllTopics.toggle()
-                        }
-                    } label: {
-                        Label(toggleTitle, systemImage: showsAllTopics ? "chevron.up" : "chevron.down")
-                        .labelStyle(.titleAndIcon)
-                    }
-                    .buttonStyle(ChipButtonStyle())
-                }
-            }
-        }
     }
 
     /// "Türkçe harfleri yazmasan da bulur" (README "Sözlük"), with its example in bold.
@@ -622,453 +584,5 @@ struct WordListEmptyState: View {
             result.append(part)
         }
         return result
-    }
-}
-
-// MARK: - The whole card
-
-/// The whole card as a word page (mockup `sz-detail`), read top to bottom: the word on its band
-/// with pronunciation, part of speech, level, "Dinle" and "Söyle"; the Turkish meaning (and
-/// "Ayrıca"); the definition; every example with its Turkish; the "Dikkat" boxes with the note
-/// and memory hook; the word partners as capsules that read themselves aloud; last the learning
-/// status with the one button that changes it. Few, quiet section titles: the Dikkat boxes carry
-/// their own. Opened from "Sözlük", "Bildiğin kelimeler" and the feed (in a sheet).
-struct WordDetailView: View {
-    @EnvironmentObject private var model: AppModel
-    let word: WidgetWord
-
-    var body: some View {
-        let detail = model.detail(for: word)
-        ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
-                // The night band hangs below the word: the 12 pt spacing leaves it room.
-                WordDetailHeadline(lemma: word.lemma)
-                WordDetailMetaRow(word: word)
-                meaning(alternatives: detail?.glossAlternatives ?? [])
-                // A user's word has no English definition (and maybe no example).
-                if !word.defShort.isEmpty {
-                    Text(word.defShort)
-                        .definitionStyle()
-                        .lineSpacing(2)
-                        .cardEnglishVoice()
-                }
-                if !(detail?.examples ?? []).isEmpty || !word.exampleEN.isEmpty {
-                    examplesSection(detail?.examples ?? [])
-                }
-                cautionSection(detail)
-                if let collocations = detail?.collocations, !collocations.isEmpty {
-                    collocationsSection(collocations)
-                }
-                WordDetailStatusSection(word: word)
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 8)
-            // The scroll view already keeps clear of the tab bar; this is the page's own margin
-            // under the last button.
-            .padding(.bottom, 40)
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .background {
-            Theme.bg
-                .ignoresSafeArea()
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .hardTopScrollEdge()
-        .tint(Theme.ink)
-    }
-
-    @ViewBuilder
-    private func meaning(alternatives: [String]) -> some View {
-        if let gloss = word.glossTR {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(gloss)
-                    .meaningStyle()
-                    .accessibilityLabel(Text(verbatim: "Türkçesi: " + gloss))
-                if !alternatives.isEmpty {
-                    Text("Ayrıca: " + alternatives.joined(separator: ", "))
-                        .font(.subheadline)
-                        .foregroundStyle(Theme.ink2)
-                }
-            }
-            .padding(.top, 4)
-        }
-    }
-
-    /// Every example (mockup `.exrow`) with its Turkish, the word bold but not yellow: the band
-    /// is the screen's one yellow mark. Without card details, the word's own example.
-    private func examplesSection(_ examples: [CardDetail.Example]) -> some View {
-        let shown = examples.isEmpty ? [CardDetail.Example(en: word.exampleEN)] : examples
-        return WordDetailSection(title: "Örnekler") {
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(Array(shown.enumerated()), id: \.offset) { index, example in
-                    if index > 0 {
-                        DictionaryRule()
-                    }
-                    ExampleRow(example: example, lemma: word.lemma)
-                        .padding(.vertical, 8)
-                }
-            }
-        }
-    }
-
-    /// The typical mistakes, each in its own "Dikkat" box with the difference marked (README
-    /// point 5), then the note and the memory hook (mockup `.info`). No section title: every box
-    /// is titled "Dikkat" itself.
-    @ViewBuilder
-    private func cautionSection(_ detail: CardDetail?) -> some View {
-        let mistakes = detail?.mistakes ?? []
-        let note = WordDetailView.nonEmpty(detail?.noteTR)
-        let mnemonic = WordDetailView.nonEmpty(detail?.mnemonicTR)
-        if !mistakes.isEmpty || note != nil || mnemonic != nil {
-            VStack(alignment: .leading, spacing: 12) {
-                ForEach(Array(mistakes.enumerated()), id: \.offset) { _, mistake in
-                    MistakeBox(mistake: mistake)
-                }
-                if let note = note {
-                    WordDetailInfoRow(systemImage: "info.circle", text: note)
-                }
-                if let mnemonic = mnemonic {
-                    WordDetailInfoRow(systemImage: "lightbulb", title: "Hafıza ipucu", text: mnemonic)
-                }
-            }
-            .padding(.top, 12)
-        }
-    }
-
-    /// Word partners as capsules that wrap onto more lines (rule 2: a capsule is tappable; a tap
-    /// reads the phrase aloud).
-    private func collocationsSection(_ collocations: [String]) -> some View {
-        WordDetailSection(title: "Birlikte kullanılır") {
-            // No line spacing: the chips already reach 44 pt with transparent margins.
-            DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 0) {
-                ForEach(Array(collocations.enumerated()), id: \.offset) { _, phrase in
-                    WordDetailCollocationCapsule(phrase: phrase)
-                }
-            }
-        }
-    }
-
-    private static func nonEmpty(_ text: String?) -> String? {
-        guard let text = text, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            return nil
-        }
-        return text
-    }
-}
-
-/// The English word on its phosphor band. A phrase too long for one line at the full size first
-/// tries a smaller size, then breaks into two balanced lines, each on its own band; a single long
-/// word shrinks instead. VoiceOver reads it once, as a heading, with an English voice.
-private struct WordDetailHeadline: View {
-    let lemma: String
-
-    var body: some View {
-        ViewThatFits(in: .horizontal) {
-            line(lemma, size: 40)
-            line(lemma, size: 32)
-            if let lines = WordDetailHeadline.balancedLines(lemma) {
-                VStack(alignment: .leading, spacing: 12) {
-                    line(lines.first, size: 34)
-                    line(lines.second, size: 34)
-                }
-            }
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: lemma))
-        .accessibilityAddTraits(.isHeader)
-        .cardEnglishVoice()
-    }
-
-    private func line(_ text: String, size: CGFloat) -> some View {
-        Text(text)
-            .englishWordStyle(size: size, maxSize: size * 1.4)
-            .phosphorBand()
-    }
-
-    /// `phrase` cut at the space that makes the longer line shortest; nil for a single word.
-    static func balancedLines(_ phrase: String) -> (first: String, second: String)? {
-        let words = phrase.split(separator: " ").map(String.init)
-        guard words.count > 1 else {
-            return nil
-        }
-        var best: (first: String, second: String)?
-        var bestLength = Int.max
-        for cut in 1..<words.count {
-            let first = words[..<cut].joined(separator: " ")
-            let second = words[cut...].joined(separator: " ")
-            let longer = max(first.count, second.count)
-            // On a tie the later cut: a longer first line reads more naturally.
-            if longer <= bestLength {
-                bestLength = longer
-                best = (first, second)
-            }
-        }
-        return best
-    }
-}
-
-/// Pronunciation, part of speech and level, then "Dinle" and "Söyle" on the trailing edge
-/// (mockup `.wmeta`). When the line is too narrow the buttons move to their own line, and at the
-/// largest sizes the pronunciation too.
-private struct WordDetailMetaRow: View {
-    let word: WidgetWord
-
-    var body: some View {
-        ViewThatFits(in: .horizontal) {
-            HStack(spacing: 8) {
-                ipa
-                partOfSpeech
-                level
-                Spacer(minLength: 4)
-                actions
-            }
-            VStack(alignment: .leading, spacing: 4) {
-                HStack(spacing: 8) {
-                    ipa
-                    partOfSpeech
-                    level
-                }
-                actions
-            }
-            VStack(alignment: .leading, spacing: 4) {
-                ipa
-                HStack(spacing: 8) {
-                    partOfSpeech
-                    level
-                }
-                actions
-            }
-        }
-    }
-
-    /// Visual only: VoiceOver says the word itself, and "Dinle" plays it.
-    @ViewBuilder
-    private var ipa: some View {
-        if let ipa = word.ipaUS {
-            Text(ipa)
-                .font(.system(.subheadline, design: .serif))
-                .foregroundStyle(Theme.ink2)
-                .accessibilityHidden(true)
-        }
-    }
-
-    /// A user's word: "Senin kelimen" in place of the part of speech, and no level.
-    @ViewBuilder
-    private var partOfSpeech: some View {
-        if word.isUserAdded {
-            CustomWordTag()
-        } else {
-            Text(CardPartOfSpeech.turkish(word.pos))
-                .font(.subheadline.weight(.medium))
-                .foregroundStyle(Theme.ink2)
-        }
-    }
-
-    @ViewBuilder
-    private var level: some View {
-        if !word.isUserAdded {
-            LevelBadge(code: word.level)
-                .fixedSize()
-        }
-    }
-
-    private var actions: some View {
-        HStack(spacing: 2) {
-            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
-            SayButton(word: word, example: word.exampleEN)
-        }
-    }
-}
-
-/// A titled part of the word page (mockup `.sect`), kept quiet: a small ink2 title in sentence
-/// case, a heading for VoiceOver, more room above than below.
-private struct WordDetailSection<Content: View>: View {
-    let title: String
-    @ViewBuilder let content: () -> Content
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(title)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Theme.ink2)
-                .accessibilityAddTraits(.isHeader)
-            content()
-        }
-        .padding(.top, 12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
-
-/// A note with its icon (mockup `.info`), optionally under a bold title.
-private struct WordDetailInfoRow: View {
-    let systemImage: String
-    var title: String? = nil
-    let text: String
-
-    var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 10) {
-            Image(systemName: systemImage)
-                .foregroundStyle(Theme.ink2)
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 2) {
-                if let title = title {
-                    Text(title)
-                        .font(.subheadline.weight(.bold))
-                }
-                Text(text)
-                    .lineSpacing(2)
-            }
-            .foregroundStyle(Theme.ink)
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .font(.callout)
-        .accessibilityElement(children: .combine)
-    }
-}
-
-/// A word partner ("have breakfast"): a chip in serif (English) with a small speaker; a tap reads
-/// the phrase aloud, a second tap stops it. The speaker waves while it reads, unless Reduce
-/// Motion is on. VoiceOver name "Dinle: have breakfast" (the phrase in its English run), "Durdur"
-/// while it reads; no hint, as on every speaker button.
-private struct WordDetailCollocationCapsule: View {
-    @ObservedObject private var speaker = Speaker.shared
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    let phrase: String
-
-    var body: some View {
-        let isSpeaking = speaker.speakingText == phrase
-        Button {
-            speaker.toggle(phrase)
-        } label: {
-            HStack(spacing: 6) {
-                Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(Theme.ink2)
-                    .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
-                    .accessibilityHidden(true)
-                Text(verbatim: phrase)
-                    .font(.system(.subheadline, design: .serif).weight(.semibold))
-            }
-        }
-        .buttonStyle(ChipButtonStyle())
-        .accessibilityLabel(isSpeaking ? Text("Durdur") : SozlukSpeech.label([.turkish("Dinle: "), .english(phrase)]))
-        // Voice Control: "Dinle'ye dokun", as on the other speaker buttons.
-        .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle")])
-    }
-}
-
-/// "Durum", last on the card (README "Sözlük"): where the word stands, on a line of its own,
-/// and under it the one outlined button that changes it. Not a segment: nothing looks selected.
-/// The button is replaced by the other one; VoiceOver hears what changed and its focus moves to
-/// the new button (audit V7).
-private struct WordDetailStatusSection: View {
-    @EnvironmentObject private var model: AppModel
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    /// On the status button: kept there when it is replaced by the other one.
-    @AccessibilityFocusState private var buttonHasFocus: Bool
-    let word: WidgetWord
-
-    var body: some View {
-        let state = model.learningState(of: word)
-        WordDetailSection(title: "Durum") {
-            VStack(alignment: .leading, spacing: 12) {
-                // Rule 4: the state is said in words and with an icon, not by color alone; the
-                // same icons as the marks and filters of Sözlük's lists.
-                Label {
-                    Text(SozlukStatus.title(state))
-                } icon: {
-                    Image(systemName: SozlukStatus.symbol(state))
-                }
-                .font(.body.weight(.semibold))
-                .foregroundStyle(state == .known ? Theme.good : Theme.ink)
-                // A "Biliyorum" still waiting for its one check question (ogrenme_ilkeleri 2.2).
-                if state == .known, let check = checkLine {
-                    Text(check)
-                        .font(.footnote)
-                        .foregroundStyle(Theme.ink2)
-                }
-                if state == .known {
-                    Button {
-                        change {
-                            model.undoKnown(word)
-                        }
-                        if model.learningState(of: word) != .known {
-                            // terimler.md: "Öğrenmeye döndü: breakfast" (no suffix on the word).
-                            SozlukSpeech.announce([.turkish("Öğrenmeye döndü: "), .english(word.lemma)])
-                        }
-                    } label: {
-                        Label("Öğrenmeye geri al", systemImage: "arrow.uturn.backward")
-                    }
-                    .buttonStyle(SecondaryCapsuleButtonStyle())
-                    .accessibilityLabel("Öğrenmeye geri al")
-                    .accessibilityHint("Kelime yine widget'a ve Tekrar'a gelir.")
-                    .accessibilityFocused($buttonHasFocus)
-                } else {
-                    Button {
-                        change {
-                            model.markKnown(word)
-                        }
-                        if model.learningState(of: word) == .known {
-                            // As the feed's "Tamam. 3 gün sonra bir kez soracağız." (`KnownUndo`).
-                            var runs: [SozlukSpeech.Run] = [.turkish("Biliyorum olarak işaretlendi: "), .english(word.lemma)]
-                            if let check = checkLine {
-                                runs.append(.turkish(". " + check))
-                            }
-                            SozlukSpeech.announce(runs)
-                        }
-                    } label: {
-                        Label("Biliyorum olarak işaretle", systemImage: "checkmark")
-                    }
-                    .buttonStyle(SecondaryCapsuleButtonStyle())
-                    .accessibilityLabel("Biliyorum olarak işaretle")
-                    // `Leitner.markKnown`: one check question later (ogrenme_ilkeleri 2.2).
-                    .accessibilityHint(Text(verbatim: "Kelime widget'tan çıkar. \(WordDetailStatusSection.checkDays) gün sonra bir kez soracağız."))
-                    .accessibilityFocused($buttonHasFocus)
-                    // LockglowScreenshotTests looks this button up as "Biliyorum".
-                    .accessibilityIdentifier("Biliyorum")
-                }
-            }
-        }
-    }
-
-    /// Days until the check question of a new "Biliyorum" (`Leitner.knownCheckDelay`).
-    private static let checkDays = Int((Leitner.knownCheckDelay / 86_400).rounded())
-
-    /// "3 gün sonra bir kez soracağız." while the word waits for its check, from its due date
-    /// (`FeedView.checkLine`); nil for a word learned in "Tekrar".
-    private var checkLine: String? {
-        guard let progress = model.progress[word.id], progress.awaitsKnownCheck else {
-            return nil
-        }
-        return FeedView.checkLine(due: progress.dueAt)
-    }
-
-    /// The change, then VoiceOver's focus on the button that replaced the tapped one, once it is
-    /// on screen.
-    private func change(_ update: () -> Void) {
-        let hadFocus = buttonHasFocus
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) {
-            update()
-        }
-        guard hadFocus else {
-            return
-        }
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(150))
-            buttonHasFocus = true
-        }
-    }
-}
-
-private extension View {
-    /// iOS 26: a solid edge effect under the bar on a scrolled page (10-geri-alindi), so the
-    /// status bar and the back button do not stand on the text that scrolled under them.
-    /// iOS 17–25 keep the system's own bar.
-    @ViewBuilder func hardTopScrollEdge() -> some View {
-        if #available(iOS 26.0, *) {
-            scrollEdgeEffectStyle(.hard, for: .top)
-        } else {
-            self
-        }
     }
 }

@@ -4,8 +4,9 @@ import CoreModels
 import Learning
 
 // Pieces shared by Sözlük's lists (SearchView, SozlukTopicView, SozlukRecentSearches) and the word
-// page: the status filter, the status mark, the word row with its two VoiceOver parts, the row
-// group, the flow layout of the capsules.
+// page (SozlukWordPage): the status filter, the status mark, the word row with its two VoiceOver
+// parts (also the page's "Karıştırma" and "Başka anlamı" rows), the row group, the flow layout of
+// the capsules.
 
 // MARK: - Learning status
 
@@ -410,15 +411,16 @@ struct SozlukRowButtonStyle: ButtonStyle {
     }
 }
 
-/// A small quiet title over a part of the page (mockup `.sect`): ink2, sentence case, a heading
-/// for VoiceOver.
+/// The title over a part of Sözlük's start page ("Son aramalar", "Konular"; mockup A1): a bold
+/// `headline` in ink, sentence case, a heading for VoiceOver. The word page titles its parts the
+/// same way (`SozlukPageSection`).
 struct SozlukSectionTitle: View {
     let title: String
 
     var body: some View {
         Text(title)
-            .font(.subheadline.weight(.semibold))
-            .foregroundStyle(Theme.ink2)
+            .font(.headline.weight(.bold))
+            .foregroundStyle(Theme.ink)
             .accessibilityAddTraits(.isHeader)
     }
 }
