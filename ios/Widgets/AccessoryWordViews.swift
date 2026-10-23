@@ -36,9 +36,11 @@ struct RectangularWordView: View {
             // meaning over 16 characters has `gloss_short`): the whole meaning on two lines
             // rather than no meaning ("bir şeyden / bıkmış olmak").
             rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [2])
-            rows(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.semibold), lines: [1])
-            rows(WidgetWordStep.homeFloor, meaning: .footnote.weight(.semibold), lines: [1, 2])
-            rows(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.semibold), lines: [1])
+            // At the person's size the word grows with the text size beside a meaning: never an
+            // unscaled 15 pt word under a larger meaning (the 2026-10-22 images showed
+            // "misunderstanding" smaller than "yanlış anlaşılma" at xxxLarge).
+            rows(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.semibold), lines: [1])
+            rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
             // The accessibility sizes (ogrenme_ilkeleri 2.1): the word alone, but only at a scaled
             // step, so it is larger than at the default size. The padding holds the band line
             // under the last line, which hangs below the text frame.
@@ -66,6 +68,8 @@ struct RectangularWordView: View {
             WidgetWordAlone(lemma: word.lemma, colors: colors, renderingMode: renderingMode)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        // No animation when the word changes on the Lock Screen (WidgetMotion.swift).
+        .widgetWordChange(id: word.id, lockScreen: true)
         .padding(margins)
         .widgetTurkishVoice()
     }
