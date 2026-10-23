@@ -5,7 +5,7 @@ Kaynak dosyaları denetler ve uygulamanın okuduğu tek dosyayı yazar. content.
     python -X utf8 content/kulak/derle.py            # denetle ve yaz
     python -X utf8 content/kulak/derle.py --kontrol  # denetle; çıktı güncel değilse hata ver
 
-Yalnız standart kütüphane. Kurallar: content/kulak/README.md.
+Yalnız standart kütüphane. Kurallar aşağıdaki denetimlerde (load_group, build).
 """
 
 from __future__ import annotations
@@ -92,6 +92,8 @@ def load_group(path: Path, warnings: list[str]) -> dict:
     except json.JSONDecodeError as error:
         raise ContentError(f"{path.name}: JSON okunamadı: {error}") from error
     where = path.name
+    if not isinstance(raw, dict):
+        raise ContentError(f"{where}: en üstte bir nesne olmalı")
     group_id = raw.get("id")
     if group_id != match.group(2):
         raise ContentError(f"{where}: id {group_id!r} dosya adıyla aynı olmalı ({match.group(2)})")

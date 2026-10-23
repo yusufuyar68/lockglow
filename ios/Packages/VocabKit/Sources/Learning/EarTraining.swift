@@ -106,7 +106,7 @@ public struct EarTrainingGroup: Codable, Equatable, Identifiable, Sendable {
 
 /// One of the two sounds of a group, with the note shown after the answer.
 public struct EarTrainingSound: Codable, Equatable, Sendable {
-    /// "ɪ", "θ", "d / t"; nil when the side has no symbol of its own (a word without an ending).
+    /// "ɪ", "θ", "d / t", "∅" (a word without the ending); nil when the file gives none.
     public let ipa: String?
     /// "kısa i".
     public let nameTR: String

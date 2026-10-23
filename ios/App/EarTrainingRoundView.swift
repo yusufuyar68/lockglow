@@ -23,7 +23,10 @@ struct EarTrainingRoundView: View {
     /// The kind of round: nil mixed, otherwise one sound pair (it changes when the summary
     /// starts a round of a mixed-up pair).
     @State private var focus: String?
-    @State private var questions: [EarTrainingQuestion]
+    @State private var questions: [EarTrainingQuestion] = []
+    /// The first round is made once, on appear: `init` runs again on every redraw of the list
+    /// behind (each answer updates the counter it shows).
+    @State private var started = false
     @State private var index = 0
     @State private var picked: EarTrainingSide?
     /// The word was read aloud for this question (the button then says "Bir daha dinle").
@@ -44,12 +47,13 @@ struct EarTrainingRoundView: View {
     init(model: EarTrainingModel, focus: String?) {
         self.model = model
         _focus = State(initialValue: focus)
-        _questions = State(initialValue: model.makeRound(focus: focus))
     }
 
     var body: some View {
         Group {
-            if questions.isEmpty {
+            if !started {
+                Color.clear
+            } else if questions.isEmpty {
                 Text("Bu ses çifti için soru yok.")
                     .font(.body)
                     .foregroundStyle(Theme.ink2)
@@ -65,6 +69,12 @@ struct EarTrainingRoundView: View {
         .navigationBarTitleDisplayMode(.inline)
         // The speaker buttons are ink, never the system blue (rule 2).
         .tint(Theme.ink)
+        .onAppear {
+            if !started {
+                questions = model.makeRound(focus: focus)
+                started = true
+            }
+        }
         .onDisappear {
             Speaker.shared.stop()
         }
@@ -317,7 +327,7 @@ struct EarTrainingRoundView: View {
                 .foregroundStyle(Theme.ink)
             } else {
                 // On screen one line; for VoiceOver the English word is an element of its own.
-                (Text("Doğrusu: ") + Text(verbatim: question.answer.word).bold())
+                Text("Doğrusu: \(Text(verbatim: question.answer.word).bold())")
                     .font(.headline)
                     .foregroundStyle(Theme.ink)
                     .accessibilityRepresentation {
@@ -442,9 +452,27 @@ struct EarTrainingRoundView: View {
         Button {
             restart(focus: group.id)
         } label: {
-            SettingsRow(group.title) {
-                Text(verbatim: group.nameTR)
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 3) {
+                    // English: serif, as in the list of pairs.
+                    Text(verbatim: group.title)
+                        .font(Theme.Fonts.definition.weight(.semibold))
+                        .foregroundStyle(Theme.ink)
+                    Text(verbatim: group.nameTR)
+                        .font(.subheadline)
+                        .foregroundStyle(Theme.ink2)
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                Image(systemName: "chevron.right")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.ink3)
+                    .accessibilityHidden(true)
             }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+            .contentShape(Rectangle())
         }
         .buttonStyle(SettingsRowButtonStyle())
         .accessibilityRepresentation {

@@ -19,6 +19,8 @@ final class EarTrainingModel: ObservableObject {
     private var canSave = true
 
     init(bundle: Bundle = .main) {
+        // Every stored property first: the @Published ones below are set through `self`.
+        store = (try? EarTrainingStore.defaultURL()).map(EarTrainingStore.init(fileURL:))
         if let url = bundle.url(forResource: "minimal_pairs", withExtension: "json"),
            let data = try? Data(contentsOf: url),
            let decoded = try? EarTrainingContent.decode(data),
@@ -27,13 +29,19 @@ final class EarTrainingModel: ObservableObject {
         } else {
             loadFailed = true
         }
-        store = (try? EarTrainingStore.defaultURL()).map(EarTrainingStore.init(fileURL:))
-        if let store = store {
-            do {
-                tally = try store.load()
-            } catch {
-                canSave = false
-            }
+        reloadTally()
+    }
+
+    /// Reads the counter file; while it cannot be read (before the first unlock) nothing is saved.
+    private func reloadTally() {
+        guard let store = store else {
+            return
+        }
+        do {
+            tally = try store.load()
+            canSave = true
+        } catch {
+            canSave = false
         }
     }
 
@@ -61,12 +69,16 @@ final class EarTrainingModel: ObservableObject {
     }
 
     /// "Sayaçları sıfırla": the counter of every sound pair starts again.
+    /// The file is removed even when it could not be read at the start (the phone is unlocked
+    /// by now), so the counters do not come back on the next visit.
     func resetTally() {
         tally = EarTrainingTally()
-        guard canSave, let store = store else {
+        guard let store = store else {
             return
         }
-        try? store.remove()
+        if (try? store.remove()) != nil {
+            canSave = true
+        }
     }
 
     private func save() {
