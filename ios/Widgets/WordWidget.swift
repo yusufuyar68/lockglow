@@ -15,6 +15,7 @@ struct WordWidget: Widget {
         .supportedFamilies([
             .systemSmall,
             .systemMedium,
+            .systemLarge, // is5-w-buyuk (LargeWordView.swift)
             .accessoryRectangular,
             .accessoryInline,
         ])
@@ -54,6 +55,8 @@ struct WordWidgetView: View {
             SmallWordView(entry: entry, margins: margins)
         case .systemMedium:
             MediumWordView(entry: entry, margins: margins)
+        case .systemLarge:
+            LargeWordView(entry: entry, margins: margins)
         case .accessoryRectangular:
             RectangularWordView(entry: entry, margins: margins)
         case .accessoryInline:
