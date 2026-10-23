@@ -271,15 +271,18 @@ final class PronunciationRecognizer: ObservableObject {
             break
         }
         if #available(iOS 26.0, *) {
-            // One analysis at a time: a cancelled take's analyzer finishes first.
+            // One analysis at a time: a cancelled take's analyzer finishes first. Forgotten only
+            // after the wait, so that a take started meanwhile waits for it too.
             if let finishing = analyzerFinishing {
-                analyzerFinishing = nil
                 await finishing.value
+                if analyzerFinishing == finishing {
+                    analyzerFinishing = nil
+                }
             }
             // Apple: SpeechAnalyzer modules never send audio to Apple's servers, so only the
             // microphone permission is asked here.
             do {
-                backend = try await AnalyzerBackend.make(locale: Self.locale) { [weak self] in
+                let made = try await AnalyzerBackend.make(locale: Self.locale) { [weak self] in
                     guard let self, self.generation == current else {
                         return
                     }
@@ -287,6 +290,13 @@ final class PronunciationRecognizer: ObservableObject {
                     self.downloadSince = Date()
                 }
                 noteDownloadTime(generation: current)
+                // A newer take started meanwhile: it has (or makes) its own analyzer.
+                guard current == generation else {
+                    made.cancel()
+                    analyzerFinishing = made.finishing
+                    return nil
+                }
+                backend = made
             } catch {
                 noteDownloadTime(generation: current)
                 if current == generation {
@@ -305,6 +315,10 @@ final class PronunciationRecognizer: ObservableObject {
             }
             guard let recognizer = SFSpeechRecognizer(locale: Self.locale), recognizer.supportsOnDeviceRecognition else {
                 return .onDeviceUnavailable
+            }
+            // Never the backend of a newer take.
+            guard current == generation else {
+                return nil
             }
             backend = RecognizerBackend(recognizer: recognizer)
         }

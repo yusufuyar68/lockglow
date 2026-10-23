@@ -101,6 +101,8 @@ public enum PronunciationCheck {
         // particle ("turn off" for "turn on") is a substitution and stays "try again".
         let onlyOneWordMissing = targetTokens.count >= 2 && substituted == 0 && missedIndexes.count == 1
         let heardShare = Double(targetTokens.count - missedIndexes.count) / Double(targetTokens.count)
+        // By length, not by the page's mode: a three-word phrase ("look forward to") also gets
+        // the words named, which helps there as well.
         let isSentence = targetTokens.count >= 3
         if onlyOneWordMissing || (isSentence && heardShare >= sentenceAlmostRatio) {
             return PronunciationFeedback(verdict: .almost, tip: tip, heard: heard, missedWords: missedWords, pieces: pieces)
