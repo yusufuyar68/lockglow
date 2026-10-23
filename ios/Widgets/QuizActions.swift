@@ -14,19 +14,19 @@ enum QuizActions {
         category: "quiz"
     )
 
-    /// Option `choice` of the question about `wordID`. The first answer marks the options and
-    /// tells the app the word was seen (`WidgetEventType.quiz`: an exposure, never a grade). A
-    /// second tap while that answer is on screen changes nothing and records nothing.
-    static func answer(wordID: Int, choice: Int, source: String) {
+    /// The option with the text `option` of the question about `wordID`. The first answer marks
+    /// the options and tells the app the word was seen (`WidgetEventType.quiz`: an exposure, never
+    /// a grade). A second tap while that answer is on screen changes nothing and records nothing.
+    static func answer(wordID: Int, option: String, source: String) {
         guard let store = WordDataSource.makeStore() else {
             logger.error("App Group container unavailable; quiz answer not recorded")
             return
         }
-        // Whole seconds: the answer time is stored in ISO 8601 and the hold is measured from it.
+        // Whole seconds, like every date in the App Group files.
         let now = TimelinePlanner.roundedDownToWholeSecond(Date())
         guard let state = WidgetQuizRotation.stateAfterAnswer(
             wordID: wordID,
-            choice: choice,
+            option: option,
             plan: store.readQuizPlan(),
             state: store.readQuizState(),
             at: now

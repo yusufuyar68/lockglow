@@ -16,7 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
-APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "AppModel+QuizWidget.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
+APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
 
 # A declaration that starts with `public` or `open`, after optional attributes such as @discardableResult.
@@ -53,6 +53,10 @@ def check_stub_api(real: Path, stub: Path) -> None:
         lines += [f"  only in the real module: {d}" for d in real_api if d not in stub_api]
         lines += [f"  only in the stub:        {d}" for d in stub_api if d not in real_api]
         raise SystemExit("\n".join(lines))
+
+
+# The quiz widget's questions (ios/App/AppModel+QuizWidget.swift), on a line of their own.
+APP_LOGIC_FILES += ["AppModel+QuizWidget.swift"]
 
 
 def main() -> int:

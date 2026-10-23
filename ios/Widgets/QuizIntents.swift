@@ -5,7 +5,8 @@ import Foundation
 // (`QuizActions`), and the system reloads the quiz widget's timeline right after `perform()`
 // returns. Not offered in Shortcuts, Spotlight or Siri: outside the widget they mean nothing.
 
-/// One of the three options of the question on screen.
+/// One of the three options of the question on screen, by its text: the app may have written the
+/// question's options in another order since the widget was drawn.
 struct QuizAnswerIntent: AppIntent {
     static var title: LocalizedStringResource {
         "Şıkkı seç"
@@ -19,21 +20,21 @@ struct QuizAnswerIntent: AppIntent {
     var wordID: Int
 
     @Parameter(title: "Şık")
-    var choice: Int
+    var option: String
 
     @Parameter(title: "Kaynak")
     var source: String
 
     init() {}
 
-    init(wordID: Int, choice: Int, source: String) {
+    init(wordID: Int, option: String, source: String) {
         self.wordID = wordID
-        self.choice = choice
+        self.option = option
         self.source = source
     }
 
     func perform() async throws -> some IntentResult {
-        QuizActions.answer(wordID: wordID, choice: choice, source: source)
+        QuizActions.answer(wordID: wordID, option: option, source: source)
         return .result()
     }
 }

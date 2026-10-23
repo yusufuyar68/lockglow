@@ -19,10 +19,6 @@ public struct WidgetQuizPlan: Codable, Equatable, Sendable {
     /// Changes every time the app writes the file. A state of an older file still counts for its
     /// word when that word is the first question (`WidgetQuizRotation`).
     public var quizID: String
-    /// The word widget's change interval (`interval_seconds` of the widget plan): an answer stays
-    /// this long before the next question comes by itself (at least
-    /// `WidgetQuizRotation.minimumHoldSeconds`).
-    public var intervalSeconds: Int
     /// The questions in the order they are asked. The first is the question that was on screen
     /// when the app wrote the file, while it is still asked.
     public var items: [WidgetQuizItem]
@@ -31,13 +27,11 @@ public struct WidgetQuizPlan: Codable, Equatable, Sendable {
     public init(
         version: Int = WidgetQuizPlan.currentVersion,
         quizID: String,
-        intervalSeconds: Int,
         items: [WidgetQuizItem],
         updatedAt: Date = Date()
     ) {
         self.version = version
         self.quizID = quizID
-        self.intervalSeconds = intervalSeconds
         self.items = items
         self.updatedAt = updatedAt
     }
@@ -45,7 +39,6 @@ public struct WidgetQuizPlan: Codable, Equatable, Sendable {
     enum CodingKeys: String, CodingKey {
         case version
         case quizID = "quiz_id"
-        case intervalSeconds = "interval_seconds"
         case items
         case updatedAt = "updated_at"
     }
@@ -67,8 +60,11 @@ public struct WidgetQuizItem: Codable, Equatable, Sendable {
     /// one. Nil, or a nil entry, when an option has none.
     public var shortOptions: [String?]?
     /// The English word each option is the meaning of (the word itself for the answer), for
-    /// "Senin seçtiğin: izin vermek = allow". Nil, or a nil entry, when it is not known.
+    /// "Senin seçtiğin: allow = izin vermek". Nil, or a nil entry, when it is not known.
     public var optionWords: [String?]?
+    /// The question is not asked from this moment on: "Tekrar" asks the word soon, and the quiz
+    /// shows the answer at once (docs/tasarim/ogrenme_ilkeleri.md 2.1, rule a). Nil: no limit.
+    public var askUntil: Date?
 
     public init(
         wordID: Int,
@@ -78,7 +74,8 @@ public struct WidgetQuizItem: Codable, Equatable, Sendable {
         options: [String],
         answerIndex: Int,
         shortOptions: [String?]? = nil,
-        optionWords: [String?]? = nil
+        optionWords: [String?]? = nil,
+        askUntil: Date? = nil
     ) {
         self.wordID = wordID
         self.lemma = lemma
@@ -88,6 +85,7 @@ public struct WidgetQuizItem: Codable, Equatable, Sendable {
         self.answerIndex = answerIndex
         self.shortOptions = shortOptions
         self.optionWords = optionWords
+        self.askUntil = askUntil
     }
 
     /// A word, at least two options, the answer among them and no empty option. The widget asks
@@ -102,6 +100,11 @@ public struct WidgetQuizItem: Codable, Equatable, Sendable {
     /// The word's own meaning.
     public var answer: String? {
         return options.indices.contains(answerIndex) ? options[answerIndex] : nil
+    }
+
+    /// Whether the question may still be asked at `date` (`askUntil`).
+    public func isAsked(at date: Date) -> Bool {
+        return askUntil.map { date < $0 } ?? true
     }
 
     /// The short form of option `index`, nil when it has none or it is the whole option.
@@ -132,6 +135,7 @@ public struct WidgetQuizItem: Codable, Equatable, Sendable {
         case answerIndex = "answer_index"
         case shortOptions = "short_options"
         case optionWords = "option_words"
+        case askUntil = "ask_until"
     }
 }
 
@@ -143,9 +147,9 @@ public struct WidgetQuizState: Codable, Equatable, Sendable {
     public var version: Int
     /// The `quizID` of the file the buttons acted on.
     public var quizID: String
-    /// The question on screen (its word id): the questions rotate by word, so a new file that
-    /// still asks this word in first place keeps it on screen.
-    public var wordID: Int
+    /// The question on screen (its word id); nil after "Devam" on the last question. The questions
+    /// go by word, so a new file that still asks this word in first place keeps it on screen.
+    public var wordID: Int?
     /// The option chosen for that question; nil before the answer.
     public var answer: WidgetQuizAnswer?
     public var updatedAt: Date
@@ -153,7 +157,7 @@ public struct WidgetQuizState: Codable, Equatable, Sendable {
     public init(
         version: Int = WidgetQuizState.currentVersion,
         quizID: String,
-        wordID: Int,
+        wordID: Int?,
         answer: WidgetQuizAnswer? = nil,
         updatedAt: Date = Date()
     ) {
@@ -209,72 +213,62 @@ public struct WidgetQuizScreen: Equatable, Sendable {
 /// The quiz widget's rotation. Pure and deterministic, shared by the widget (timeline, buttons)
 /// and the app (which keeps the question on screen when it writes new questions).
 ///
-/// - A question stays until it is answered: time alone never changes an unanswered question.
-/// - The first answer stands: the right option is marked, and a chosen wrong one too, until
-///   "Devam" or until the hold (`intervalSeconds`) is over; then the next question comes.
-/// - The question the word widget shows at the same moment (`avoiding`) is passed over for the
-///   one after it, so the two widgets never show a word and its own question side by side.
-///   An answer on screen is never passed over: it already shows the meaning.
+/// - Nothing moves by itself (ogrenme_ilkeleri 2.4, WCAG 2.2.1): a question waits for its answer,
+///   and the answer, the right option marked and a wrong pick too, stays until "Devam".
+/// - The first answer stands: another tap neither changes it nor counts again.
+/// - "Devam" goes forward through the file, never round again: after the last question the widget
+///   says new ones come when the app is opened. A word is asked at most once per file, so the
+///   same question never comes back in the same order and answers never pile up exposures.
+/// - A waiting question is passed over for the next one when it may no longer be asked
+///   (`WidgetQuizItem.askUntil`: "Tekrar" asks it soon) or when it is in `skipping`: the word the
+///   word widget shows at that moment (the two widgets never show a word and its own question side
+///   by side) and the words marked "Biliyorum" on the word widget since the app last wrote its
+///   plan. An answer on screen is never passed over: it already shows the meaning.
 /// - The state belongs to one file (`quizID`). With a newer file it still counts when its word is
 ///   that file's first question: the app puts the question that was on screen first, the very
 ///   same item, so a rewrite never changes the question or its answer under the finger.
 public enum WidgetQuizRotation {
-    /// The shortest time an answer stays on screen.
-    public static let minimumHoldSeconds = 300
-
     /// The usable questions of `plan`, in order (`WidgetQuizItem.isUsable`).
     public static func questions(of plan: WidgetQuizPlan?) -> [WidgetQuizItem] {
         return plan?.items.filter { $0.isUsable } ?? []
     }
 
-    /// How long an answer stays before the next question comes by itself.
-    public static func holdSeconds(of plan: WidgetQuizPlan) -> TimeInterval {
-        return TimeInterval(max(plan.intervalSeconds, minimumHoldSeconds))
-    }
-
-    /// The screen at `date`; nil when there is no usable question.
+    /// The screen at `date`; nil when no question is left to ask (none in the file, all passed
+    /// over, or "Devam" after the last one).
     public static func screen(
         plan: WidgetQuizPlan?,
         state: WidgetQuizState?,
         at date: Date,
-        avoiding avoidedWordID: Int? = nil
+        skipping skipped: Set<Int> = []
     ) -> WidgetQuizScreen? {
         guard let plan = plan else {
             return nil
         }
         let items = questions(of: plan)
-        guard !items.isEmpty else {
+        guard let place = position(in: items, quizID: plan.quizID, state: state) else {
             return nil
         }
-        var (index, answer) = position(in: items, quizID: plan.quizID, state: state)
-        if let given = answer, !stands(given, at: date, hold: holdSeconds(of: plan)) {
-            index = (index + 1) % items.count
-            answer = nil
+        if let given = place.answer {
+            return WidgetQuizScreen(item: items[place.index], choice: given.choice)
         }
-        if answer == nil, let avoided = avoidedWordID, items.count > 1, items[index].wordID == avoided {
-            index = (index + 1) % items.count
+        for item in items[place.index...] where item.isAsked(at: date) && !skipped.contains(item.wordID) {
+            return WidgetQuizScreen(item: item, choice: nil)
         }
-        return WidgetQuizScreen(item: items[index], choice: answer?.choice)
+        return nil
     }
 
-    /// When the answer on screen gives way to the next question; nil without one.
-    public static func answerExpiry(plan: WidgetQuizPlan?, state: WidgetQuizState?) -> Date? {
-        guard let plan = plan else {
-            return nil
-        }
-        let items = questions(of: plan)
-        guard !items.isEmpty, let given = position(in: items, quizID: plan.quizID, state: state).answer else {
-            return nil
-        }
-        return given.at.addingTimeInterval(holdSeconds(of: plan))
+    /// The moments after `date`, up to `end`, at which a waiting question may stop being asked.
+    public static func changeDates(of plan: WidgetQuizPlan?, after date: Date, until end: Date) -> [Date] {
+        return questions(of: plan).compactMap { $0.askUntil }.filter { $0 > date && $0 <= end }
     }
 
-    /// The state after option `choice` of the question about `wordID` is chosen at `date`; nil
-    /// when nothing changes: the word is not asked, the option does not exist, or this question's
-    /// first answer is still on screen (a second tap neither changes it nor counts again).
+    /// The state after the option with the text `option` of the question about `wordID` is chosen
+    /// at `date`. The text, not the place: a rewrite may order the options of a newer file anew.
+    /// Nil when nothing changes: the word is not asked (or no longer, `askUntil`), the option is
+    /// not among its options, or this question's answer is already on screen.
     public static func stateAfterAnswer(
         wordID: Int,
-        choice: Int,
+        option: String,
         plan: WidgetQuizPlan?,
         state: WidgetQuizState?,
         at date: Date
@@ -283,11 +277,12 @@ public enum WidgetQuizRotation {
             return nil
         }
         let items = questions(of: plan)
-        guard let item = items.first(where: { $0.wordID == wordID }), item.options.indices.contains(choice) else {
+        guard let item = items.first(where: { $0.wordID == wordID }), item.isAsked(at: date),
+              let choice = item.options.firstIndex(of: option) else {
             return nil
         }
-        let (index, answer) = position(in: items, quizID: plan.quizID, state: state)
-        if let given = answer, items[index].wordID == wordID, stands(given, at: date, hold: holdSeconds(of: plan)) {
+        if let place = position(in: items, quizID: plan.quizID, state: state),
+           place.answer != nil, items[place.index].wordID == wordID {
             return nil
         }
         return WidgetQuizState(
@@ -299,8 +294,8 @@ public enum WidgetQuizRotation {
     }
 
     /// The state after "Devam" on the question about `wordID` at `date`: the question after it,
-    /// not answered yet (after the last one the first). When that word is no longer asked, the
-    /// question after the one the state points at. Nil without a usable question.
+    /// not answered yet; after the last one, none (`wordID` nil). When that word is no longer in
+    /// the file, the question after the one the state points at. Nil without a usable question.
     public static func stateAfterNext(
         wordID: Int,
         plan: WidgetQuizPlan?,
@@ -314,16 +309,23 @@ public enum WidgetQuizRotation {
         guard !items.isEmpty else {
             return nil
         }
-        let current = items.firstIndex(where: { $0.wordID == wordID })
-            ?? position(in: items, quizID: plan.quizID, state: state).index
-        let next = items[(current + 1) % items.count]
-        return WidgetQuizState(quizID: plan.quizID, wordID: next.wordID, answer: nil, updatedAt: date)
+        guard let current = items.firstIndex(where: { $0.wordID == wordID })
+            ?? position(in: items, quizID: plan.quizID, state: state)?.index else {
+            return WidgetQuizState(quizID: plan.quizID, wordID: nil, updatedAt: date)
+        }
+        let next = current + 1
+        return WidgetQuizState(
+            quizID: plan.quizID,
+            wordID: next < items.count ? items[next].wordID : nil,
+            updatedAt: date
+        )
     }
 
     /// The questions of a new file: the question on screen (`shown`) first while it is still asked
     /// (`askedIDs`), the very same item so its options and its answer stay; then `items` without
     /// it, at most `limit` in all. When `items` has a question about the same word whose word or
-    /// meaning changed (the user edited their own word), that one goes first instead.
+    /// meaning changed (the user edited their own word), that one goes first instead. The kept
+    /// item takes the new question's `askUntil` when there is one.
     public static func keepingShown(
         _ shown: WidgetQuizItem?,
         before items: [WidgetQuizItem],
@@ -335,9 +337,14 @@ public enum WidgetQuizRotation {
         }
         var result: [WidgetQuizItem] = []
         if let shown = shown, shown.isUsable, askedIDs.contains(shown.wordID) {
-            if let fresh = items.first(where: { $0.wordID == shown.wordID }),
-               fresh.lemma != shown.lemma || fresh.answer != shown.answer {
-                result.append(fresh)
+            if let fresh = items.first(where: { $0.wordID == shown.wordID }) {
+                if fresh.lemma != shown.lemma || fresh.answer != shown.answer {
+                    result.append(fresh)
+                } else {
+                    var kept = shown
+                    kept.askUntil = fresh.askUntil
+                    result.append(kept)
+                }
             } else {
                 result.append(shown)
             }
@@ -353,31 +360,33 @@ public enum WidgetQuizRotation {
 
     // MARK: Helpers
 
-    /// The question the state points at and its answer, before the hold and the avoided word are
-    /// applied. Without a state, or with one for a word that is not asked, the first question.
+    /// Where the state points: the question's index and its answer, or nil after the last
+    /// question. Without a state, or with one for a word that is not asked, the first question.
+    /// Nil too when `items` is empty.
     static func position(
         in items: [WidgetQuizItem],
         quizID: String,
         state: WidgetQuizState?
-    ) -> (index: Int, answer: WidgetQuizAnswer?) {
-        guard let state = state, let index = items.firstIndex(where: { $0.wordID == state.wordID }) else {
+    ) -> (index: Int, answer: WidgetQuizAnswer?)? {
+        guard !items.isEmpty else {
+            return nil
+        }
+        guard let state = state else {
             return (0, nil)
         }
-        // A state of an older file counts only for its first question (see the type's comment).
-        guard state.quizID == quizID || index == 0 else {
+        guard let wordID = state.wordID else {
+            // "Devam" after the last question of this file; a newer file starts again.
+            return state.quizID == quizID ? nil : (0, nil)
+        }
+        guard let index = items.firstIndex(where: { $0.wordID == wordID }),
+              state.quizID == quizID || index == 0 else {
+            // A word no longer asked, or further down a newer file (see the type's comment).
             return (0, nil)
         }
         let answer = state.answer.flatMap { given in
             items[index].options.indices.contains(given.choice) ? given : nil
         }
         return (index, answer)
-    }
-
-    /// Whether an answer is still on screen at `date`. A date long before the answer (the clock
-    /// was set back) ends it too, so an answer never stays for days.
-    static func stands(_ answer: WidgetQuizAnswer, at date: Date, hold: TimeInterval) -> Bool {
-        let elapsed = date.timeIntervalSince(answer.at)
-        return elapsed < hold && elapsed > -hold
     }
 }
 

@@ -18,21 +18,26 @@ extension AppModel {
     /// word widget now), at `date`, the new plan's `updated_at`. Up to `QuizWidgetQuestions.limit`
     /// questions (`QuizWidgetQuestions`). The question on the quiz widget stays first while it is
     /// still asked, the very same item, so a rewrite never changes it under the finger and an
-    /// answer on screen stays (`WidgetQuizRotation.keepingShown`). With no question left the file
-    /// is written empty and the widget says to open the app. Best effort: a failed write keeps the
-    /// old questions.
+    /// answer on screen stays (`WidgetQuizRotation.keepingShown`). Every question carries the
+    /// moment "Tekrar" will soon ask its word (`QuizWidgetQuestions.askUntil`); the widget stops
+    /// asking it then, even when the app is not opened. With no question the file is written empty
+    /// and the widget says where questions come from. Best effort: a failed write keeps the old
+    /// questions.
     func writeQuizWidgetPlan(from queue: [WidgetWord], at date: Date) {
         guard let container = AppGroupLocator.containerURL() else {
             return
         }
         let store = AppGroupStore(containerURL: container)
         let asked = QuizWidgetQuestions.words(from: queue, progress: progress, now: date)
+        // `introCandidates` rebuilds the cards for a user's own word without their sensitivity:
+        // personal-topic cards are left out by id, so they never become an option on the Home Screen.
+        let personalIDs = Set(words.filter { $0.isSensitive }.map { $0.id })
         var items: [WidgetQuizItem] = []
         for word in asked where items.count < QuizWidgetQuestions.limit {
             guard let choice = QuizWidgetQuestions.question(
                 for: word,
                 attempt: (progress[word.id]?.exposures ?? 0) + 1,
-                candidates: introCandidates(for: word),
+                candidates: introCandidates(for: word).filter { !personalIDs.contains($0.id) },
                 topicsOf: topicsOf
             ) else {
                 continue
@@ -45,7 +50,8 @@ extension AppModel {
                 options: choice.options,
                 answerIndex: choice.answerIndex,
                 shortOptions: choice.shortOptions,
-                optionWords: choice.optionWords.map { $0.isEmpty ? nil : $0 }
+                optionWords: choice.optionWords.map { $0.isEmpty ? nil : $0 },
+                askUntil: progress[word.id].flatMap { QuizWidgetQuestions.askUntil(of: $0, now: date) }
             ))
         }
         // What the quiz widget shows now; the word widget shows the queue's first word.
@@ -53,11 +59,10 @@ extension AppModel {
             plan: store.readQuizPlan(),
             state: store.readQuizState(),
             at: date,
-            avoiding: queue.first?.id
+            skipping: Set(queue.prefix(1).map { $0.id })
         )?.item
         let plan = WidgetQuizPlan(
             quizID: UUID().uuidString,
-            intervalSeconds: rotationMinutes * 60,
             items: WidgetQuizRotation.keepingShown(
                 shown,
                 before: items,

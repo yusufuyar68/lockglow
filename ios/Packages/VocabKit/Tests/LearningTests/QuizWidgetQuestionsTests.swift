@@ -153,13 +153,38 @@ final class QuizWidgetQuestionsTests: XCTestCase {
             XCTAssertEqual(Set(first.options), Set(second.options))
             XCTAssertNotEqual(first.answerIndex, second.answerIndex, "attempt \(attempt)")
         }
+        // Over three attempts in a row the answer stands once in each place.
+        for attempt in 1...4 {
+            let places = try (attempt..<(attempt + 3)).map { try XCTUnwrap(question(borrow, attempt: $0)).answerIndex }
+            XCTAssertEqual(Set(places), [0, 1, 2], "from attempt \(attempt)")
+        }
         // The same attempt is the same question on every device and launch.
         XCTAssertEqual(question(borrow, attempt: 3), question(borrow, attempt: 3))
     }
 
+    func testAWordTooLongForTheNarrowBoxIsNeitherAnOptionNorAsked() throws {
+        // "dolandırıcılık" (14 letters) has no shorter form: never an option, never asked.
+        let scam = card(50, "scam", "dolandırıcılık", pos: "noun")
+        let nouns = [
+            card(51, "spoon", "kaşık", pos: "noun"), card(52, "fork", "çatal", pos: "noun"),
+            scam, card(53, "plate", "tabak", pos: "noun"), card(54, "cup", "fincan", pos: "noun"),
+        ]
+        for attempt in 1...3 {
+            let q = try XCTUnwrap(QuizWidgetQuestions.question(for: nouns[0], attempt: attempt, candidates: nouns, topicsOf: [:]))
+            XCTAssertFalse(q.options.contains("dolandırıcılık"), "\(q.options)")
+        }
+        XCTAssertNil(QuizWidgetQuestions.question(for: scam, attempt: 1, candidates: nouns, topicsOf: [:]))
+        // A long meaning with a short form that fits, or a first sense that fits, is fine.
+        XCTAssertTrue(QuizWidgetQuestions.fitsNarrowBox("kendini pek iyi hissetmemek", short: "biraz rahatsız"))
+        XCTAssertTrue(QuizWidgetQuestions.fitsNarrowBox("aslında, gerçekte", short: nil))
+        XCTAssertTrue(QuizWidgetQuestions.fitsNarrowBox("sabırsızlanıyorum", short: "iple çekiyorum"))
+        XCTAssertFalse(QuizWidgetQuestions.fitsNarrowBox("sabırsızlanıyorum", short: nil))
+        XCTAssertFalse(QuizWidgetQuestions.fitsNarrowBox("fotoğrafçılık", short: nil))
+    }
+
     // MARK: Which words
 
-    func testMetWordsComeFirstAndTekrarIsNeverAnsweredEarly() {
+    func testOnlyMetWordsTheOneMetLongestAgoFirstAndTekrarIsNeverAnsweredEarly() throws {
         let newWord = card(40, "window", "pencere", pos: "noun")
         let answeredToday = card(41, "door", "kapı", pos: "noun")
         let personal = card(42, "crush", "hoşlanmak", sensitivity: 1)
@@ -186,6 +211,7 @@ final class QuizWidgetQuestionsTests: XCTestCase {
         later.reviews = 3
         later.dueAt = now.addingTimeInterval(2 * day)
         later.lastReviewedAt = now.addingTimeInterval(-2 * day)
+        later.lastSeenAt = now.addingTimeInterval(-2 * day)
         later.lastGrade = .good
         progress[46] = later
         var known = WordProgress(wordID: 48)
@@ -193,10 +219,22 @@ final class QuizWidgetQuestionsTests: XCTestCase {
         known.box = 5
         known.reviews = 6
         known.dueAt = now.addingTimeInterval(10 * day)
+        known.lastSeenAt = now.addingTimeInterval(-20 * day)
         progress[48] = known
 
+        // Never seen: "window" is not asked (its meaning comes first on the widget and in "Tanış").
         let words = QuizWidgetQuestions.words(from: queue, progress: progress, now: now, calendar: utc)
-        XCTAssertEqual(words.map { $0.lemma }, ["door", "floor", "wall", "garden", "window"])
+        XCTAssertEqual(words.map { $0.lemma }, ["garden", "wall", "floor", "door"])
+        XCTAssertFalse(QuizWidgetQuestions.isMet(WordProgress(wordID: 40)))
+        XCTAssertTrue(QuizWidgetQuestions.isMet(try XCTUnwrap(progress[45])))
+
+        // The moment each question stops being asked: six hours before "Tekrar" asks the word; a
+        // word answered today until the end of the day.
+        let endOfToday = try XCTUnwrap(utc.date(from: DateComponents(year: 2023, month: 11, day: 15)))
+        XCTAssertEqual(QuizWidgetQuestions.askUntil(of: try XCTUnwrap(progress[41]), now: now, calendar: utc), endOfToday)
+        XCTAssertEqual(QuizWidgetQuestions.askUntil(of: later, now: now, calendar: utc), now.addingTimeInterval(2 * day - 6 * 3600))
+        XCTAssertEqual(QuizWidgetQuestions.askUntil(of: known, now: now, calendar: utc), now.addingTimeInterval(10 * day - 6 * 3600))
+        XCTAssertNil(QuizWidgetQuestions.askUntil(of: try XCTUnwrap(progress[45]), now: now, calendar: utc))
 
         XCTAssertTrue(QuizWidgetQuestions.isAsked(answeredToday, progress: progress[41], now: now, calendar: utc))
         XCTAssertFalse(QuizWidgetQuestions.isAsked(dueSoon, progress: progress[43], now: now, calendar: utc))

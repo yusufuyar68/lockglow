@@ -13,7 +13,8 @@ import Scheduler
 /// (the quiz widget keeps them). The 393 pt sizes are rendered by day, at night and tinted; the
 /// iPhone SE sizes by day and at three larger text sizes (`-xxxl`, `-ax1`, `-ax3`): an option must
 /// never be cut, run under another or out of the widget.
-/// Attachment names: `quiz-<family>-<word>-<state><look>`, state `soru`, `dogru`, `yanlis`.
+/// Attachment names: `quiz-<family>-<word>-<state><look>`, state `soru`, `dogru`, `yanlis`;
+/// without a question `quiz-<family>-bos-<reason><look>`.
 @MainActor
 final class QuizWidgetSnapshotTests: XCTestCase {
     private enum Kind {
@@ -102,8 +103,14 @@ final class QuizWidgetSnapshotTests: XCTestCase {
                 }
             }
         }
-        for family in families {
-            render(entry: QuizEntry(date: now, screen: nil), family: family, look: looksSE[0], name: "quiz-\(family.name)-bos")
+        let empties: [(String, QuizEntry.Empty)] = [("hazir-degil", .notPrepared), ("kelime-yok", .noWords), ("bitti", .finished)]
+        for (name, reason) in empties {
+            for family in families {
+                let looks = family.allLooks ? [looks393[0]] : [looksSE[0], looksSE[3]]
+                for look in looks {
+                    render(entry: QuizEntry(date: now, screen: nil, empty: reason), family: family, look: look, name: "quiz-\(family.name)-bos-\(name)\(look.suffix)")
+                }
+            }
         }
     }
 
@@ -120,6 +127,13 @@ final class QuizWidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 1), "aynı fikirde olmamak, Doğru cevap")
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 0), "durmak, durdurmak, Yanlış")
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 2), "dört gözle beklemek")
+        // VoiceOver hears the whole right meaning, also when the line shows only "Doğrusu işaretli.".
+        XCTAssertEqual(QuizText.spokenStatus(of: WidgetQuizScreen(item: item, choice: 0)), "Doğrusu: aynı fikirde olmamak")
+        XCTAssertNil(QuizText.spokenStatus(of: WidgetQuizScreen(item: item, choice: 1)))
+        XCTAssertNil(QuizText.spokenStatus(of: WidgetQuizScreen(item: item, choice: nil)))
+        for text in [QuizText.empty(.notPrepared), QuizText.empty(.noWords), QuizText.empty(.finished)] {
+            XCTAssertFalse(text.contains("!"), text)
+        }
         // The option's shorter form is the card's short meaning (`WidgetGloss`).
         XCTAssertEqual(QuizText.forms(of: item, at: 0), ["durmak, durdurmak", "durmak/durdurmak"])
         XCTAssertEqual(QuizText.forms(of: QuizEntry.sampleItem, at: 1), ["ödünç almak"])
@@ -131,21 +145,21 @@ final class QuizWidgetSnapshotTests: XCTestCase {
         return WidgetWord(id: id, lemma: "word\(id)", pos: "n", level: "A1", defMicro: "m", defShort: "s", exampleEN: "e", glossTR: "tr\(id)")
     }
 
-    private func quizItem(_ id: Int) -> WidgetQuizItem {
-        return WidgetQuizItem(wordID: id, lemma: "word\(id)", options: ["tr\(id)", "x\(id)", "y\(id)"], answerIndex: 0)
+    private func quizItem(_ id: Int, askUntil: Date? = nil) -> WidgetQuizItem {
+        return WidgetQuizItem(wordID: id, lemma: "word\(id)", options: ["tr\(id)", "x\(id)", "y\(id)"], answerIndex: 0, askUntil: askUntil)
     }
 
     /// The word widget rotating words 1, 2, 3 every hour from `anchor`.
-    private func rotation(anchor: Date) -> RotationInput {
+    private func rotation(anchor: Date, known: Set<Int> = []) -> RotationInput {
         return RotationInput(
-            planID: "p", queue: [word(1), word(2), word(3)], knownIDs: [], cursorOffset: 0,
+            planID: "p", queue: [word(1), word(2), word(3)], knownIDs: known, cursorOffset: 0,
             cursorAnchor: anchor, interval: 3600, isSeed: false
         )
     }
 
     func testTheQuizNeverAsksTheWordTheWordWidgetShows() throws {
         let now = Date(timeIntervalSince1970: 1_800_000_000)
-        let quiz = WidgetQuizPlan(quizID: "q", intervalSeconds: 3600, items: [quizItem(1), quizItem(2), quizItem(3)], updatedAt: now)
+        let quiz = WidgetQuizPlan(quizID: "q", items: [quizItem(1), quizItem(2), quizItem(3)], updatedAt: now)
         let input = rotation(anchor: now)
         let made = QuizProvider.makeEntries(plan: quiz, state: nil, words: input, now: now)
         let wordEntries = WordProvider.makeEntries(input: input, now: now)
@@ -166,27 +180,52 @@ final class QuizWidgetSnapshotTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(made.reload, now.addingTimeInterval(3600))
     }
 
-    func testAnAnswerHasAnEntryWhenItGivesWay() throws {
+    func testAnAnswerStaysAndAQuestionLeavesWhenTekrarAsksItSoon() throws {
         let now = Date(timeIntervalSince1970: 1_800_000_000)
-        let quiz = WidgetQuizPlan(quizID: "q", intervalSeconds: 1800, items: [quizItem(4), quizItem(5)], updatedAt: now)
-        let answeredAt = now.addingTimeInterval(-600)
-        let state = WidgetQuizState(quizID: "q", wordID: 4, answer: WidgetQuizAnswer(choice: 1, at: answeredAt), updatedAt: answeredAt)
-        let made = QuizProvider.makeEntries(plan: quiz, state: state, words: rotation(anchor: now), now: now)
-        XCTAssertEqual(made.entries.first?.screen?.choice, 1)
-        XCTAssertEqual(made.entries.first?.screen?.item.wordID, 4)
-        let next = try XCTUnwrap(made.entries.first { $0.date == answeredAt.addingTimeInterval(1800) })
-        XCTAssertEqual(next.screen?.item.wordID, 5)
-        XCTAssertNil(next.screen?.choice)
+        let soon = now.addingTimeInterval(1800)
+        let quiz = WidgetQuizPlan(quizID: "q", items: [quizItem(4, askUntil: soon), quizItem(5), quizItem(6)], updatedAt: now)
+        // Waiting: question 4 until its limit, then 5.
+        let waiting = QuizProvider.makeEntries(plan: quiz, state: nil, words: rotation(anchor: now), now: now)
+        XCTAssertEqual(waiting.entries.first?.screen?.item.wordID, 4)
+        let after = try XCTUnwrap(waiting.entries.first(where: { $0.date == soon }))
+        XCTAssertEqual(after.screen?.item.wordID, 5)
+        // Answered: the answer stays in every entry, past the limit too (nothing moves by itself).
+        let state = WidgetQuizState(quizID: "q", wordID: 4, answer: WidgetQuizAnswer(choice: 1, at: now), updatedAt: now)
+        let answered = QuizProvider.makeEntries(plan: quiz, state: state, words: rotation(anchor: now), now: now)
+        XCTAssertEqual(answered.entries.count, 1)
+        XCTAssertEqual(answered.entries.first?.screen?.choice, 1)
+        XCTAssertEqual(answered.entries.first?.screen?.item.wordID, 4)
     }
 
-    func testWithoutQuestionsTheWidgetSaysToOpenTheApp() {
+    func testWordsMarkedKnownOnTheWordWidgetAreNotAsked() {
         let now = Date(timeIntervalSince1970: 1_800_000_000)
-        for quiz in [nil, WidgetQuizPlan(quizID: "q", intervalSeconds: 3600, items: [], updatedAt: now)] {
+        let quiz = WidgetQuizPlan(quizID: "q", items: [quizItem(2), quizItem(7)], updatedAt: now)
+        let made = QuizProvider.makeEntries(plan: quiz, state: nil, words: rotation(anchor: now, known: [2]), now: now)
+        XCTAssertFalse(made.entries.isEmpty)
+        XCTAssertTrue(made.entries.allSatisfy { $0.screen?.item.wordID == 7 })
+    }
+
+    func testWithoutQuestionsTheWidgetSaysWhy() {
+        let now = Date(timeIntervalSince1970: 1_800_000_000)
+        let cases: [(WidgetQuizPlan?, QuizEntry.Empty)] = [
+            (nil, .notPrepared),
+            (WidgetQuizPlan(quizID: "q", items: [], updatedAt: now), .noWords),
+        ]
+        for (quiz, reason) in cases {
             let made = QuizProvider.makeEntries(plan: quiz, state: nil, words: rotation(anchor: now), now: now)
             XCTAssertEqual(made.entries.count, 1)
             XCTAssertNil(made.entries.first?.screen)
+            XCTAssertEqual(made.entries.first?.empty, reason)
             XCTAssertEqual(made.reload, now.addingTimeInterval(QuizProvider.emptyRecheck))
         }
+        // "Devam" after the last question.
+        let quiz = WidgetQuizPlan(quizID: "q", items: [quizItem(7)], updatedAt: now)
+        let done = WidgetQuizState(quizID: "q", wordID: nil, updatedAt: now)
+        let made = QuizProvider.makeEntries(plan: quiz, state: done, words: rotation(anchor: now), now: now)
+        XCTAssertEqual(made.entries.count, 1)
+        XCTAssertNil(made.entries.first?.screen)
+        XCTAssertEqual(made.entries.first?.empty, .finished)
+        XCTAssertGreaterThanOrEqual(made.reload, now.addingTimeInterval(3600))
     }
 
     // MARK: Rendering
