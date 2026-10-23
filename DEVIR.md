@@ -1,4 +1,4 @@
-# Devir notu: Lockglow (2026-10-22)
+# Devir notu: Lockglow (2026-10-23)
 
 Bu projeye başka bir Claude hesabı ya da oturumu devam edecekse **önce bu dosyayı baştan sona oku.** Ekran görüntülü durum özeti: [`docs/lockglow_ilerleme.html`](docs/lockglow_ilerleme.html). Tarayıcıda açılır.
 
@@ -28,8 +28,8 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - `Packages/VocabKit` modülleri: CoreModels, TextFold, SharedState, Scheduler, ContentStore (GRDB), Learning.
   - Tanımlayıcılar: bundle `com.yusufuyar.vocabwidget` ve `.widgets`; App Group `group.com.yusufuyar.vocabwidget`; URL şeması `vocabwidget://`.
 - **İçerik hattı:** `content-pipeline/` (Python `vocabpipe`): şema, doğrulayıcı, derleyici.
-- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s19`, toplam 1.203 taslak kart.
-  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.22-kisisel-9`, şema 2: `card_l1.gloss_short`, `card_confusable`) ve `ios/Widgets/Resources/seed_words.json`.
+- **Kartlar:** `content/drafts/kisisel_v1/s0_ornek … s22` (s20 henüz yok), toplam 1.323 taslak kart.
+  - Uygulamaya derlenmiş hâli: `ios/App/Resources/content.sqlite` (`2026.10.23-kisisel-11`, şema 2: `card_l1.gloss_short`, `card_confusable`) ve `ios/Widgets/Resources/seed_words.json`.
   - Kart numaraları `content-pipeline/data/id_registry.json` içinde kalıcı. Uygulamadaki ilerleme bunlara bağlı, **elle düzenleme**.
 
 ## Durum
@@ -43,14 +43,18 @@ Lockglow, kilit ekranında ve ana ekranda İngilizce kelime gösteren, Türkçe 
   - **Açılış akışı:** ilk açılışta seviye, konu, widget kurma rehberi, ilk kelime (mevcut kullanıcıya gösterilmez).
   - Widget'lar: küçük, orta, kilit ekranı. "Sonraki", "Biliyorum" ve **hoparlör** (AudioPlaybackIntent, uygulama açılmadan okur).
   - İlerleme dosyasının günlük yedeği alınıyor; gizlilik manifestinde UserDefaults (CA92.1) ve FileTimestamp (C617.1).
-- **İçerik:** 1.158 kart (`2026.10.22-kisisel-8`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat, s14 ev, s15 alışveriş ve para, s16 zaman, hava ve doğa, s17 teknoloji, s18 eğitim. 103 kartta widget için kısa anlam, 332 karışan çift kaydı, 9 kişisel konu kartı (`sensitivity` 1: uygulamada görünür, widget'ta ve bildirimde görünmez).
+- **İçerik:** 1.323 kart (`2026.10.23-kisisel-11`): s1–s9 + s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat, s14 ev, s15 alışveriş ve para, s16 zaman, hava ve doğa, s17 teknoloji, s18 eğitim, s19 boş zaman, s21 duygular ve kişilik, s22 deyimler ve phrasal verb'ler. 103 kartta widget için kısa anlam, 332 karışan çift kaydı, 9 kişisel konu kartı (`sensitivity` 1: uygulamada görünür, widget'ta ve bildirimde görünmez).
 - **Testler:** her push'ta Linux Swift işi (`build.yml` → `swift-linux`; ~370 test; `linux_check.sh` Docker'da, AppModel de sahte modüllerle derlenir) ve Python testleri + `--strict` doğrulama. macOS işi elle: ~395 paket testi + uygulama/widget derlemesi.
 - **Apple:** App Group (`group.com.yusufuyar.vocabwidget`) iki App ID'ye **atandı** (2026-10-20, Developer portalı). App Store Connect API anahtarı (Admin, adı `lockglow-ci`) GitHub gizli değişkenlerinde.
-- **TestFlight:** çalışıyor. Build 18, 22, 23, 26 yüklendi; 22 Ekim akşamı **build 27** (`main` 2af9c39: bütün is3 işleri, kendi kelime, ilerleme ekranı, 1.158 kart) **build 28** (`main` 3f48c18: 10 is4 oturumunun hepsi, 1.203 kart), **build 29** (1026122: widget ve ekran görüntüsü düzeltmeleri) ve **build 30** (`main` d12f08b: kilit ekranı büyük yazı uzlaştırması). Build 29'da yükleme bir kez geçici "No Accounts with App Store Connect Access" hatası verdi; `gh run rerun <id> --failed` ile geçti. İmza her çalıştırmada geçici sertifika + profillerle (`docs/testflight_kurulum.md` → 2b).
+- **TestFlight:** çalışıyor. Build 18, 22, 23, 26 yüklendi; 22 Ekim akşamı **build 27** (`main` 2af9c39: bütün is3 işleri, kendi kelime, ilerleme ekranı, 1.158 kart) **build 28** (`main` 3f48c18: 10 is4 oturumunun hepsi, 1.203 kart), **build 29** (1026122: widget ve ekran görüntüsü düzeltmeleri) **build 30** (`main` d12f08b), **build 31** (aa7ef5d: ekran görüntüsü incelemesinin düzeltmeleri), **build 32** (b9005c8: büyük widget, kilit ekranı ilerleme widget'ı, Denetim Merkezi kontrolleri, Siri/Kısayollar, Canlı Etkinlik, yeni Sözlük, yeni ikon) ve **build 33** (`main` d02a254, 23 Ekim: 24 is5 oturumunun işi, 1.323 kart, iPad). Build 29'da yükleme bir kez geçici "No Accounts with App Store Connect Access" hatası verdi; `gh run rerun <id> --failed` ile geçti. İmza her çalıştırmada geçici sertifika + profillerle (`docs/testflight_kurulum.md` → 2b).
 
 ## Hemen sıradaki iş
 
-1. **is4 oturumları (22 Ekim akşamı açıldı, 10 tane; hepsi `entegrasyon-4` üzerinden `main`'e birleşti ve kapatıldı, build 28–30). Yarım kalan: is4-widget ve is4-ekran'ın son ekran görüntüsü incelemesi (notlarında "kalan iş"; küçük/orta widget için büyük yazı yedeği kararı).** tekrar ekranı, akış+sözlük, ayarlar+açılış, Söyle, widget, gece teması (C seçeneği), öğrenme motoru (kesin cevap zamanı, tazeleme 30→60→120, FSRS gölge), sağlamlık (zamanlayıcı/TextFold), ekran görüntüleri+UI testleri, içerik s19. Her biri `origin/entegrasyon-3`'ten kendi `is4-*` dalında çalışır ve dosya sahipliği ayrıdır. Bitenleri yeni bir entegrasyon dalında (`entegrasyon-4`, `main`'den) birleştir, macOS CI yeşilse `main`'e ileri sar. Devir notları: `side-session-notes\…\is4-*.md`.
+1. **is5 oturumları (23 Ekim, 30 oturum, 10 alan):** 24'ü `entegrasyon-5` üzerinden `main`'e birleşti ve kapatıldı (build 33). Açık kalanlar:
+   - `is5-performans` (J2): widget planını arka planda kuran yeniden yazım; `refreshWidgetPlan`'a sonradan eklenen 4 kancayı (ilerleme özeti, aksan IPA, büyük widget ayrıntıları, Watch aktarımı) taşıyarak `origin/main` üstüne yeniden kurulmalı.
+   - s20 (konuşma kalıpları), `is5-veri`, `is5-dinle-yaz`, `is5-kulak`: rapor vermediler; dallarını ve notlarını kontrol et.
+   - **Kullanıcı adımları:** iCloud (App ID'de iCloud kutusu, sonra `project.yml`'e entitlement satırı: `is5-icloud.md`), Apple Watch (iki yeni App ID + App Group, sonra saati TestFlight'a gömme: `is5-watch.md`). Gizlilik politikası iCloud açılmadan güncellenmeli.
+2. **is4 oturumları (22 Ekim akşamı açıldı, 10 tane; hepsi `entegrasyon-4` üzerinden `main`'e birleşti ve kapatıldı, build 28–30). Yarım kalan: is4-widget ve is4-ekran'ın son ekran görüntüsü incelemesi (notlarında "kalan iş"; küçük/orta widget için büyük yazı yedeği kararı).** tekrar ekranı, akış+sözlük, ayarlar+açılış, Söyle, widget, gece teması (C seçeneği), öğrenme motoru (kesin cevap zamanı, tazeleme 30→60→120, FSRS gölge), sağlamlık (zamanlayıcı/TextFold), ekran görüntüleri+UI testleri, içerik s19. Her biri `origin/entegrasyon-3`'ten kendi `is4-*` dalında çalışır ve dosya sahipliği ayrıdır. Bitenleri yeni bir entegrasyon dalında (`entegrasyon-4`, `main`'den) birleştir, macOS CI yeşilse `main`'e ileri sar. Devir notları: `side-session-notes\…\is4-*.md`.
 2. **Dahili test grubu hazır** ("Ben", bütün derlemeler): `gh workflow run testflight_group.yml`. Yeni build: `gh workflow run testflight.yml -R yusufuyar68/lockglow --ref main -f runner=macos-15-intel`.
 3. Kullanıcı iPhone'da TestFlight'tan dener; ilk deneme `ios/README.md` → kontrol listesi. Gelen geri bildirimle düzelt.
 4. `ios/README.md` dondurulmuş durumda: oturumların notlarındaki öneri metinlerini (is3-*.md, is4-*.md) koordinatör toplu işler.
