@@ -36,6 +36,7 @@ struct SettingsView: View {
                     learningSection
                     reminderSection
                     progressSection
+                    EarTrainingSettingsSection() // is5-kulak: "Kulak alıştırması" (EarTrainingView.swift)
                     helpSection
                     resetSection
                 }
