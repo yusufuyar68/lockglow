@@ -13,11 +13,17 @@ struct LockglowWatchApp: App {
             WatchWordView()
                 .environmentObject(model)
         }
+        // New data from the phone while the app is in the background (a complication transfer):
+        // SwiftUI's way of handing the task over. The delegate below covers the WatchKit way.
+        .backgroundTask(.watchConnectivity) {
+            await WatchSession.shared.receivePending()
+        }
     }
 }
 
-/// Starts the phone sync at every launch (also a background launch for new data) and keeps the
-/// system's WatchConnectivity background tasks until the data has arrived (`WatchSession.track`).
+/// Starts the phone sync at every launch (also a background launch for new data) and keeps any
+/// WatchConnectivity background task the system gives the delegate until the data has arrived
+/// (`WatchSession.track`).
 final class WatchAppDelegate: NSObject, WKApplicationDelegate {
     func applicationDidFinishLaunching() {
         WatchSession.shared.activate()

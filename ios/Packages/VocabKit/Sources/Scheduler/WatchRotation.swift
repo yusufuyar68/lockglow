@@ -135,6 +135,33 @@ public enum WatchRotation {
         return makeState(input: input, cursor: cursor, knownIDs: known, now: now)
     }
 
+    /// The watch's state for a new plan from the phone, keeping the word on screen: the rotation
+    /// continues from that word when the new plan has it (as the phone keeps its visible word on a
+    /// plan rewrite), so a plan rewrite does not take back a "Sonraki kelime" or jump within the
+    /// hour. Nil when the word is not in the new plan (then the rotation starts at the plan's first
+    /// word, at `plan.updatedAt`).
+    public static func stateKeepingWord(
+        from old: RotationInput,
+        newPlan: WidgetPlan,
+        now: Date,
+        alignmentOffset: TimeInterval
+    ) -> WidgetState? {
+        guard newPlan.planID != old.planID,
+              let shown = word(at: now, input: old, alignmentOffset: alignmentOffset),
+              let index = newPlan.queue.firstIndex(where: { $0.id == shown.id })
+        else {
+            return nil
+        }
+        let cursor = RotationCursor(offset: index, anchor: TimelinePlanner.roundedDownToWholeSecond(now))
+        return WidgetState(
+            planID: newPlan.planID,
+            cursorOffset: cursor.offset,
+            cursorAnchor: cursor.anchor,
+            knownIDs: [],
+            updatedAt: cursor.anchor
+        )
+    }
+
     private static func makeState(
         input: RotationInput,
         cursor: RotationCursor,

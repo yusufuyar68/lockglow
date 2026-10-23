@@ -111,6 +111,38 @@ final class WatchRotationTests: XCTestCase {
         XCTAssertEqual(wordID(after, at: t0.addingTimeInterval(2 * hour)), 2)
     }
 
+    func testANewPlanKeepsTheWordOnScreenAndGoesOnFromIt() throws {
+        // The watch moved on to word 3 with "Sonraki kelime"; the phone then sends plan q.
+        let state = WidgetState(planID: "p", cursorOffset: 2, cursorAnchor: t0, knownIDs: [], updatedAt: t0)
+        let old = WatchRotation.input(plan: plan([1, 2, 3, 4]), state: state, seedWords: [])
+        let now = t0.addingTimeInterval(1800.5)
+        XCTAssertEqual(wordID(old, at: now), 3)
+
+        let newPlan = plan([9, 3, 8], id: "q")
+        let kept = try XCTUnwrap(WatchRotation.stateKeepingWord(from: old, newPlan: newPlan, now: now, alignmentOffset: 0))
+        XCTAssertEqual(kept.planID, "q")
+        XCTAssertEqual(kept.cursorOffset, 1)
+        XCTAssertEqual(kept.cursorAnchor, t0.addingTimeInterval(1800))
+        XCTAssertEqual(kept.knownIDs, [])
+
+        let after = WatchRotation.input(plan: newPlan, state: kept, seedWords: [])
+        XCTAssertEqual(wordID(after, at: now), 3)
+        XCTAssertEqual(wordID(after, at: t0.addingTimeInterval(hour)), 8)
+        XCTAssertEqual(wordID(after, at: t0.addingTimeInterval(2 * hour)), 9)
+    }
+
+    func testANewPlanWithoutTheWordOnScreenStartsAtItsFirstWord() {
+        let old = WatchRotation.input(plan: plan([1, 2]), state: nil, seedWords: [])
+        XCTAssertNil(WatchRotation.stateKeepingWord(from: old, newPlan: plan([7, 8], id: "q"), now: t0, alignmentOffset: 0))
+        // The same plan again: nothing to change.
+        XCTAssertNil(WatchRotation.stateKeepingWord(from: old, newPlan: plan([1, 2]), now: t0, alignmentOffset: 0))
+        // Seed words on screen, then the first plan.
+        let seed = WatchRotation.input(plan: nil, state: nil, seedWords: words([5]))
+        XCTAssertNil(WatchRotation.stateKeepingWord(from: seed, newPlan: plan([1, 2], id: "q"), now: t0, alignmentOffset: 0))
+        let seedInPlan = WatchRotation.stateKeepingWord(from: seed, newPlan: plan([1, 5], id: "q"), now: t0, alignmentOffset: 0)
+        XCTAssertEqual(seedInPlan?.cursorOffset, 1)
+    }
+
     func testKnowingTheLastUnknownWordMovesOnInsteadOfShowingItAgain() {
         let state = WidgetState(planID: "p", cursorOffset: 0, cursorAnchor: t0, knownIDs: [1, 3], updatedAt: t0)
         let input = WatchRotation.input(plan: plan([1, 2, 3]), state: state, seedWords: [])

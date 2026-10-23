@@ -81,16 +81,18 @@ final class WatchModel: ObservableObject {
         }
         let now = Date()
         let offset = WatchStore.alignmentOffset(for: now)
-        // From disk: a plan may have arrived since `input` was read.
-        let current = WatchStore.loadInput(store: store)
-        let state: WidgetState
-        if type == .known {
-            state = WatchRotation.stateAfterKnow(shownWordID: word.id, input: current, now: now, alignmentOffset: offset)
-        } else {
-            state = WatchRotation.stateAfterNext(shownWordID: word.id, input: current, now: now, alignmentOffset: offset)
-        }
-
-        if let store = store {
+        let wordID = word.id
+        let logger = self.logger
+        // On the sync queue, after any plan received so far: the state is computed from the files
+        // as they are then, and nothing else writes them meanwhile.
+        WatchSession.shared.update({ store in
+            let current = WatchStore.loadInput(store: store)
+            let state: WidgetState
+            if type == .known {
+                state = WatchRotation.stateAfterKnow(shownWordID: wordID, input: current, now: now, alignmentOffset: offset)
+            } else {
+                state = WatchRotation.stateAfterNext(shownWordID: wordID, input: current, now: now, alignmentOffset: offset)
+            }
             do {
                 try store.writeState(state)
             } catch {
@@ -98,17 +100,18 @@ final class WatchModel: ObservableObject {
             }
             if type == .known {
                 var ledger = WatchKnownLedger.read(from: store.containerURL).pruned(now: now)
-                ledger.record(word.id, at: now)
+                ledger.record(wordID, at: now)
                 try? ledger.write(to: store.containerURL)
             }
             do {
-                try store.eventMailbox.append(WidgetEvent(type: type, wordID: word.id, at: now, source: .watch))
+                try store.eventMailbox.append(WidgetEvent(type: type, wordID: wordID, at: now, source: .watch))
             } catch {
                 logger.error("tap not saved for the phone: \(error.localizedDescription, privacy: .public)")
             }
-        }
-        input = WatchStore.loadInput(store: store)
-        WidgetCenter.shared.reloadAllTimelines()
-        WatchSession.shared.flushOutbox()
+        }, then: { [weak self] in
+            self?.reload()
+            WidgetCenter.shared.reloadAllTimelines()
+            WatchSession.shared.flushOutbox()
+        })
     }
 }

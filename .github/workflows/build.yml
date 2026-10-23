@@ -103,16 +103,24 @@ jobs:
           tail -5 build.log
           exit ${status:-0}
       # is5-watch: runs even when the iPhone build failed, so both results come from one run.
-      # A runner image without the watchOS platform gets it first (several GB, a few minutes).
+      # The watchOS SDK ships inside Xcode, but a simulator build that compiles an asset catalog also
+      # needs the watchOS simulator runtime of that SDK version (Xcode 15+). A runner image without
+      # it downloads the platform first (several GB, a few minutes). Outputs are read into variables
+      # first: with pipefail, `grep -q` closing a pipe early would fail the check.
       - name: Apple Watch uygulaması + komplikasyonlar derle (imzasız, simülatör)
         if: ${{ !cancelled() && steps.generate.outcome == 'success' }}
         working-directory: ios
         run: |
-          if ! xcodebuild -showsdks | grep -q watchsimulator; then
-            echo "watchOS simülatör SDK'sı yok; indiriliyor"
+          SDKS="$(xcodebuild -showsdks)"
+          SDKVER="$(printf '%s\n' "$SDKS" | sed -n 's/.*-sdk watchsimulator\([0-9.]*\).*/\1/p' | tail -1)"
+          RUNTIMES="$(xcrun simctl list runtimes)"
+          echo "watchOS simülatör SDK: ${SDKVER:-yok}"
+          printf '%s\n' "$RUNTIMES" | grep -i watchos || true
+          if [ -z "$SDKVER" ] || ! grep -q "watchOS ${SDKVER}" <<< "$RUNTIMES"; then
+            echo "watchOS ${SDKVER} simülatörü yok; indiriliyor"
             xcodebuild -downloadPlatform watchOS
+            xcrun simctl list runtimes | grep -i watchos || true
           fi
-          xcrun simctl list runtimes | grep -i watchos || echo "watchOS simülatörü kurulu değil (genel hedefe derleme için gerekmeyebilir)"
           xcodebuild -project Lockglow.xcodeproj -scheme LockglowWatch -configuration Debug \
             -destination 'generic/platform=watchOS Simulator' \
             CODE_SIGNING_ALLOWED=NO build > build-watch.log 2>&1 || status=$?

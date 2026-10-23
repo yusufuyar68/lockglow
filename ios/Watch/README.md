@@ -30,7 +30,7 @@ Telefon tarafı: `App/WatchBridge.swift` (WatchConnectivity) ve `App/WatchPlanRe
 ## Akış
 
 1. Uygulama `widget_plan.json` yazınca `WatchBridge` planı kırpar (kişisel konular çıkar, en çok 48 kelime, karışan çiftler çıkar) ve `updateApplicationContext` ile gönderir. Kadranda Lockglow komplikasyonu varsa en çok 2 saatte bir `transferCurrentComplicationUserInfo` da kullanılır; bu, izle uygulamasını arka planda uyandırır.
-2. İzle yeni planı kendi App Group klasörüne aynı biçimde yazar. Son 3 günde izlede "Biliyorum" denen kelimeler plandan çıkarılır (`WatchKnownLedger`), çünkü telefon o olayı henüz almamış olabilir.
+2. İzle yeni planı kendi App Group klasörüne aynı biçimde yazar. Son 3 günde izlede "Biliyorum" denen kelimeler plandan çıkarılır (`WatchKnownLedger`), çünkü telefon o olayı henüz almamış olabilir. Ekrandaki kelime yeni planda varsa izle o kelimeden devam eder (`WatchRotation.stateKeepingWord`); telefon da plan yazarken görünen kelimeyi korur. Arka planda gelen veri için iki yol var: SwiftUI `.backgroundTask(.watchConnectivity)` ve `WKApplicationDelegate.handle(_:)`. İzledeki bütün dosya yazmaları `WatchSession`'ın tek sırasından geçer.
 3. İzledeki düğmeler izlenin kendi `widget_state.json` dosyasını günceller ve olayı `events/` kutusuna koyar. `WatchSession` kutuyu `transferUserInfo` ile boşaltır. Sistem olayı telefon alana kadar saklar.
 4. Telefon olayı aldığında (uygulama açıkken ya da açıldığında) App Group `events/` kutusuna `source: "watch"` ile yazar. `AppModel.ingestWidgetEvents()` onu bir sonraki çalışmada işler: `known` → 3 gün sonra bir kez sorulur, `next` → yalnız görüldü sayılır.
 
