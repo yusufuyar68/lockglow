@@ -136,6 +136,13 @@ struct RootView: View {
         .onOpenURL { url in
             handle(url)
         }
+        // Siri, Kestirmeler and a tapped Spotlight result (Intents/ShortcutRouter.swift): a word
+        // opens as its whole card, "Tekrar" as the tab; the add form is the modifier's own sheet.
+        .shortcutRoutes(
+            canOpen: detailWord == nil && systemCards.presented == nil && !showsWidgetGuide,
+            openWord: { open($0, in: model.feedWords, asCard: true) },
+            openReview: { selectedTab = .review }
+        )
         .onAppear {
             openReviewIfRequested()
         }
@@ -204,8 +211,8 @@ struct RootView: View {
         if WidgetTip.isDue(status: WidgetHealthStatus(of: model), now: now) {
             candidates.insert(.widgetTip)
         }
-        // Never over the onboarding or a card opened from the widget.
-        if model.showsOnboarding || detailWord != nil {
+        // Never over the onboarding, a card opened from the widget or what a shortcut asked for.
+        if model.showsOnboarding || detailWord != nil || ShortcutRouter.shared.isActive {
             candidates = []
         }
         let shown = systemCards.decide(from: candidates, opening: opening)
@@ -288,8 +295,9 @@ struct RootView: View {
         open(wordID, in: words)
     }
 
-    private func open(_ wordID: Int, in feed: [WidgetWord]) {
-        if feed.contains(where: { $0.id == wordID }) {
+    /// `asCard`: the whole card even for a word of the deck (Siri, Spotlight).
+    private func open(_ wordID: Int, in feed: [WidgetWord], asCard: Bool = false) {
+        if !asCard && feed.contains(where: { $0.id == wordID }) {
             selectedTab = .feed
             scrolledWordID = wordID
             return

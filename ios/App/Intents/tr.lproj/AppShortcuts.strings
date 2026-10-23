@@ -1,0 +1,28 @@
+/*
+  Siri and Kestirmeler phrases in Turkish (ios/App/Intents/ShortcutIntents.swift, LockglowShortcuts).
+  Each key is an English phrase exactly as written in the code, with ${applicationName} where the
+  code has \(.applicationName); every English phrase has its Turkish one here. Change both together.
+  The app name takes its suffix after an apostrophe, as elsewhere in the app ("Lockglow'da").
+  Each action also has a phrase with the bare name ("Lockglow kelime ekle"), which Siri may catch
+  more easily than a suffixed one.
+*/
+
+/* Bugünün kelimesi (TodayWordIntent) */
+"What's today's word in ${applicationName}" = "${applicationName}'da bugünün kelimesi ne";
+"${applicationName} word of the day" = "${applicationName} bugünün kelimesi";
+"Tell me today's word in ${applicationName}" = "${applicationName}'da bugünün kelimesini söyle";
+
+/* Tekrar'ı aç (StartReviewIntent) */
+"Start a review in ${applicationName}" = "${applicationName}'da tekrar başlat";
+"${applicationName} start review" = "${applicationName} tekrar başlat";
+"Open review in ${applicationName}" = "${applicationName}'da Tekrar'ı aç";
+
+/* Kelime ekle (AddWordIntent) */
+"Add a word to ${applicationName}" = "${applicationName}'a kelime ekle";
+"${applicationName} add word" = "${applicationName} kelime ekle";
+"Add a new word to ${applicationName}" = "${applicationName}'a yeni kelime ekle";
+
+/* Kelime ara (OpenWordIntent) */
+"Look up this word in ${applicationName}" = "Bu kelimeyi ${applicationName}'da ara";
+"${applicationName} look up a word" = "${applicationName} kelime ara";
+"Search for a word in ${applicationName}" = "${applicationName}'da kelime ara";
