@@ -118,7 +118,8 @@ final class WeeklyRecapTests: XCTestCase {
         XCTAssertEqual(recap.studyDays, 2)
         XCTAssertEqual(recap.sentence, "Geçen hafta 2 gün çalıştın.")
         XCTAssertEqual(recap.hardWordIDs, [])
-        XCTAssertEqual(recap.suggestion, .sameRhythm)
+        // Two study days, nothing hard, nothing due: spread the rounds over the week.
+        XCTAssertEqual(recap.suggestion, .spreadOut)
     }
 
     func testTheStepToYerlestiCountsAsMovedUp() throws {

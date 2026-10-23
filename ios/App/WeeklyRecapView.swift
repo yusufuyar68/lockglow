@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import CoreModels
 import Learning
 
@@ -15,16 +16,20 @@ import Learning
 /// It waits until RootView has decided the opening's sheet, then claims `.weeklyRecap` like the
 /// screens' own cards (`SystemCardQueue.claim`): only in an opening that no other system card
 /// has, so never with another one (2.10). Not over the onboarding, a card opened from the widget
-/// or an opening from a reminder (`blocked`): a later opening on Monday may show it.
+/// or an opening from a reminder (`blocked`), not over any other sheet, and not when the app
+/// comes back after less than 30 minutes (a "Tekrar" round may be under way): a later opening on
+/// Monday may show it. Known gap: a widget tap on a word of the deck only scrolls "Akış", and
+/// the recap can open over that word (closing it shows the word).
 extension View {
     func weeklyRecapAtOpening(_ systemCards: SystemCardQueue, blocked: Bool) -> some View {
         modifier(WeeklyRecapPresenter(systemCards: systemCards, isBlocked: blocked))
     }
 }
 
-/// The recap on screen as a sheet item.
+/// The recap on screen as a sheet item, with the words it lists.
 private struct ShownWeeklyRecap: Identifiable {
     let recap: WeeklyRecap
+    let words: [Int: WidgetWord]
 
     var id: Date {
         return recap.weekStart
@@ -35,6 +40,10 @@ private struct WeeklyRecapPresenter: ViewModifier {
     @ObservedObject var systemCards: SystemCardQueue
     let isBlocked: Bool
 
+    /// Back after a shorter time away, the app is still in the middle of what it was doing (a
+    /// "Tekrar" round, say): such an opening gets no recap.
+    private static let freshOpeningAfter: TimeInterval = 30 * 60
+
     @EnvironmentObject private var model: AppModel
     @Environment(\.scenePhase) private var scenePhase
     @State private var shown: ShownWeeklyRecap?
@@ -43,6 +52,8 @@ private struct WeeklyRecapPresenter: ViewModifier {
     @State private var isPreparing = false
     /// A week whose recap had no word to show: the log is not read again for it in this run.
     @State private var emptyWeek: Date?
+    /// When the app last went to the background in this run; nil since the launch.
+    @State private var leftAt: Date?
 
     func body(content: Content) -> some View {
         content
@@ -63,11 +74,12 @@ private struct WeeklyRecapPresenter: ViewModifier {
                 // come back.
                 if phase == .background {
                     shown = nil
+                    leftAt = Date()
                 }
             }
             .sheet(item: $shown) { item in
                 NavigationStack {
-                    WeeklyRecapView(recap: item.recap, words: model.wordsByID) {
+                    WeeklyRecapView(recap: item.recap, words: item.words) {
                         shown = nil
                     }
                 }
@@ -80,10 +92,12 @@ private struct WeeklyRecapPresenter: ViewModifier {
     }
 
     /// The opening is decided: the recap comes when it is due, has a word to show and the
-    /// opening is still free. The claim comes last, right before the sheet (a claim takes the
-    /// opening even if nothing is shown).
+    /// opening is still free. Not when the app comes back after a short time away, nor while any
+    /// sheet is up (a screen's own, as in "Ayarlar"): the recap could not open over it, yet its
+    /// claim would take the opening. The claim comes last, right before the sheet.
     private func consider() {
-        guard systemCards.isDecided, !blockedNow, shown == nil, !isPreparing,
+        guard systemCards.isDecided, !blockedNow, shown == nil, !isPreparing, isFreshOpening,
+              !WeeklyRecapPresenter.isSheetUp(),
               let summary = model.weeklyRecapSummary(), summary.lastWeek.start != emptyWeek else {
             return
         }
@@ -95,12 +109,37 @@ private struct WeeklyRecapPresenter: ViewModifier {
                 emptyWeek = summary.lastWeek.start
                 return
             }
-            // Again after the await: the app may have left, or another card came first.
-            guard systemCards.isDecided, !blockedNow, shown == nil, systemCards.claim(.weeklyRecap) else {
+            // Again after the await: the app may have left, a sheet may be up, or another card
+            // came first.
+            guard systemCards.isDecided, !blockedNow, shown == nil, !WeeklyRecapPresenter.isSheetUp(),
+                  systemCards.claim(.weeklyRecap) else {
                 return
             }
-            shown = ShownWeeklyRecap(recap: recap)
+            shown = ShownWeeklyRecap(recap: recap, words: model.wordsByID)
         }
+    }
+
+    /// The launch, or back after at least `freshOpeningAfter` away.
+    private var isFreshOpening: Bool {
+        guard let leftAt = leftAt else {
+            return true
+        }
+        return Date().timeIntervalSince(leftAt) >= WeeklyRecapPresenter.freshOpeningAfter
+    }
+
+    /// Any sheet or full-screen cover of the app is on screen: every SwiftUI presentation is a
+    /// view controller presented over its window's root.
+    @MainActor
+    private static func isSheetUp() -> Bool {
+        for scene in UIApplication.shared.connectedScenes {
+            guard let windowScene = scene as? UIWindowScene else {
+                continue
+            }
+            if windowScene.windows.contains(where: { $0.rootViewController?.presentedViewController != nil }) {
+                return true
+            }
+        }
+        return false
     }
 }
 

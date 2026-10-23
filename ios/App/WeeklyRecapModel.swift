@@ -7,19 +7,24 @@ import Learning
 // compile check (ios/Tools/linux_check_prepare.py `APP_LOGIC_FILES`).
 
 extension AppModel {
-    /// Monday, last week left a trace and its recap was not shown yet (`WeeklyRecap.isDue`): the
-    /// summary to make the recap from; nil otherwise. Cheap, no file is read: the opening asks
-    /// this first.
+    /// Monday, last week left a trace and its look back was not shown yet (`WeeklyRecap.isDue`):
+    /// the summary to make the recap from; nil otherwise. Cheap, no file is read: the opening asks
+    /// this first. "Once" holds both ways: "İlerleme"'s Monday note of last week (seen before a
+    /// free opening came) counts as the look back too.
     func weeklyRecapSummary(now: Date = Date()) -> ProgressSummary? {
-        guard !words.isEmpty else {
+        let calendar = Calendar.current
+        // Not Monday: nothing to make (the other six days ask this at every opening).
+        guard !words.isEmpty, calendar.isDate(now, inSameDayAs: ProgressSummary.weekStart(containing: now, calendar: calendar)) else {
             return nil
         }
         let summary = ProgressSummary.make(
             progress: progress,
             now: now,
+            calendar: calendar,
             wordIDs: Set(words.map { $0.id })
         )
-        guard WeeklyRecap.isDue(summary: summary, shownForWeek: AppPreferences.weeklyRecapWeek) else {
+        guard WeeklyRecap.isDue(summary: summary, calendar: calendar, shownForWeek: AppPreferences.weeklyRecapWeek),
+              WeeklyRecap.isDue(summary: summary, calendar: calendar, shownForWeek: AppPreferences.progressRecapWeek) else {
             return nil
         }
         return summary
