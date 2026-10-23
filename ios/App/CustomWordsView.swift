@@ -66,6 +66,8 @@ struct CustomWordsView: View {
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle())
                 }
+                // The HIG side margin, as the empty list below.
+                .padding(.horizontal, 16)
             }
         case .ready:
             if library.words.isEmpty {
@@ -798,7 +800,7 @@ private struct CustomWordsMessage<Action: View>: View {
     @ViewBuilder let action: () -> Action
 
     var body: some View {
-        VStack(spacing: 14) {
+        VStack(spacing: 16) {
             Image(systemName: systemImage)
                 .font(.largeTitle)
                 .foregroundStyle(iconColor)
@@ -816,7 +818,7 @@ private struct CustomWordsMessage<Action: View>: View {
         }
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, 8)
+        // The caller keeps the 16 pt side margin.
         .padding(.vertical, 32)
     }
 }
@@ -891,7 +893,8 @@ struct CustomWordsNotice: Equatable, Identifiable {
 }
 
 /// Mockup `.toast`: an ink bar with the result and, after a delete, "Vazgeç". At accessibility
-/// text sizes "Vazgeç" goes under the message.
+/// text sizes "Vazgeç" goes under the message. Inverted tokens only, as the feed's notice: `bg`
+/// text on `ink`; the button is a faint `bg` tint with a `bg` edge.
 private struct CustomWordsNoticeBar: View {
     let notice: CustomWordsNotice
     let undo: () -> Void
@@ -899,8 +902,8 @@ private struct CustomWordsNoticeBar: View {
 
     var body: some View {
         let layout = dynamicTypeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
-            : AnyLayout(HStackLayout(spacing: 10))
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
+            : AnyLayout(HStackLayout(spacing: 8))
         layout {
             Text(verbatim: notice.message)
                 .font(.subheadline.weight(.semibold))
@@ -911,9 +914,10 @@ private struct CustomWordsNoticeBar: View {
                 Button(action: undo) {
                     Text("Vazgeç")
                         .font(.subheadline.weight(.bold))
-                        .padding(.horizontal, 14)
+                        .padding(.horizontal, 16)
                         .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
-                        .background(Color(white: 0.5, opacity: 0.25), in: Capsule())
+                        .background(Theme.bg.opacity(0.18), in: Capsule())
+                        .overlay(Capsule().strokeBorder(Theme.bg.opacity(0.6), lineWidth: 1))
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
@@ -925,8 +929,8 @@ private struct CustomWordsNoticeBar: View {
         .padding(.trailing, 8)
         .padding(.vertical, 8)
         .frame(minHeight: 52)
-        .background(Theme.ink, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 8)
+        .background(Theme.ink, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
+        .shadow(color: Theme.shadowFar, radius: 16, x: 0, y: 8)
         .accessibilityElement(children: .contain)
     }
 }

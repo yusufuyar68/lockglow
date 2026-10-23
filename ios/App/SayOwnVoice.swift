@@ -138,16 +138,22 @@ final class OwnVoicePlayer: ObservableObject {
 
 /// Under the result: "Kendi sesini dinle" (a secondary capsule; the bottom bar keeps the step's
 /// one main action) and the order of the two parts, the one playing in bold with a speaker.
-/// Shape and weight mark the part, not color alone (rule 4).
+/// Shape and weight mark the part, not color alone (rule 4). At accessibility sizes the two parts
+/// go one under the other, the arrow pointing down, so neither name breaks mid-word.
 struct OwnVoiceControls: View {
     let voice: AVAudioPCMBuffer
     /// The word or sentence, for "Doğrusu".
     let target: String
     @ObservedObject var player: OwnVoicePlayer
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         let isPlaying = player.part != nil
+        let isLarge = dynamicTypeSize.isAccessibilitySize
+        let orderLayout = isLarge
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(spacing: 8))
         VStack(alignment: .leading, spacing: 8) {
             Button {
                 if isPlaying {
@@ -161,9 +167,9 @@ struct OwnVoiceControls: View {
             .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
             // No hint: the line under the button says the order.
             .accessibilityInputLabels(isPlaying ? [Text("Durdur")] : [Text("Kendi sesini dinle"), Text("Sesimi dinle")])
-            HStack(spacing: 8) {
+            orderLayout {
                 partLabel("Kendi sesin", playing: player.part == .ownVoice)
-                Image(systemName: "arrow.right")
+                Image(systemName: isLarge ? "arrow.down" : "arrow.right")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(Theme.ink3)
                 partLabel("Doğrusu", playing: player.part == .correct)

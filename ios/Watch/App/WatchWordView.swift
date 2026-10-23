@@ -64,9 +64,11 @@ private struct WatchWordPage: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .watchEnglishVoice()
                         .accessibilityAddTraits(.isHeader)
+                    // Footnote, the example's size: on the watch Caption 2 is larger than Footnote,
+                    // and one size fewer keeps the screen at three (title 3, headline/body, footnote).
                     if let ipa = word.ipaUS, !ipa.isEmpty {
                         Text(verbatim: ipa)
-                            .font(.caption2)
+                            .font(.footnote)
                             .foregroundStyle(WatchTheme.ink3)
                             .accessibilityHidden(true)
                     }
@@ -90,7 +92,7 @@ private struct WatchWordPage: View {
 
                 // "Sonraki kelime" first; "Biliyorum", which takes the word away without a test,
                 // further down (the phone widget keeps them apart the same way).
-                VStack(spacing: 6) {
+                VStack(spacing: 8) {
                     Button {
                         model.next(word)
                     } label: {
@@ -169,7 +171,7 @@ private struct WatchSpeakButton: View {
 private struct WatchEmptyPage: View {
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text(verbatim: "Henüz kelime yok")
                     .font(.headline)
                     .foregroundStyle(WatchTheme.ink)

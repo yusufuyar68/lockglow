@@ -82,8 +82,10 @@ struct EarTrainingView: View {
             Text("Telefon bir kelime okur. İki kelimeden hangisini duyduğunu seç.")
                 .font(.body)
                 .foregroundStyle(Theme.ink)
+            // Subheadline like the pair names below: three sizes on the page (body, subheadline,
+            // footnote), Apple's type scale.
             Text("Sonra ağzın ve dilin o sesleri nasıl çıkardığını okursun.")
-                .font(.callout)
+                .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
         }
         .fixedSize(horizontal: false, vertical: true)
@@ -119,17 +121,18 @@ struct EarTrainingView: View {
     }
 
     /// The pair's best-known words in serif (they are English), its Turkish name and the
-    /// counter line. VoiceOver: the English words are an element of their own in an English
-    /// voice (a button merges its texts into one voice), the Turkish part a second element.
+    /// counter line: an iOS list row (body title, subheadline and footnote under it, 16 pt
+    /// inset like `SettingsRow`). VoiceOver: the English words are an element of their own in an
+    /// English voice (a button merges its texts into one voice), the Turkish part a second element.
     private func groupRow(_ group: EarTrainingGroup) -> some View {
         let line = model.tally.line(for: group.id) ?? "Henüz dinlemedin."
         return Button {
             request = EarTrainingRoundRequest(focus: group.id)
         } label: {
             HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 3) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text(verbatim: group.title)
-                        .font(Theme.Fonts.definition.weight(.semibold))
+                        .font(Theme.Fonts.example.weight(.semibold))
                         .foregroundStyle(Theme.ink)
                     Text(verbatim: group.nameTR)
                         .font(.subheadline)
@@ -145,8 +148,8 @@ struct EarTrainingView: View {
                     .foregroundStyle(Theme.ink3)
                     .accessibilityHidden(true)
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
             .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
             .contentShape(Rectangle())
         }

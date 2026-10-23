@@ -23,9 +23,10 @@ struct ReminderTimeRows: View {
                     Text("Saat")
                         .settingsRowTitle()
                     Spacer(minLength: 8)
+                    // A value that is shown, not picked: `ink2`, like the values of the other rows.
                     Text(verbatim: ReminderTiming.clock(model.reminderMinuteOfDay))
                         .font(.body.monospacedDigit())
-                        .foregroundStyle(Theme.ink)
+                        .foregroundStyle(Theme.ink2)
                 }
                 .settingsRowPadding()
                 .accessibilityElement(children: .combine)
@@ -39,7 +40,7 @@ struct ReminderTimeRows: View {
                 .settingsRowPadding()
             }
             SettingsDivider()
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 4) {
                 Toggle(isOn: autoBinding) {
                     Text("Saati benim için seç")
                         .settingsRowTitle()

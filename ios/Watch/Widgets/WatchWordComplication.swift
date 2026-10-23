@@ -117,6 +117,16 @@ private struct WatchSpokenWord: View {
 /// shrinks text to fit.
 private struct WatchRectangularWordView: View {
     let word: WidgetWord
+    @Environment(\.widgetRenderingMode) private var renderingMode
+
+    /// The meaning's color: the watch's secondary label token in full color; on a tinted face the
+    /// system flattens colors, so the system's secondary level keeps the word above the meaning.
+    private var meaningStyle: AnyShapeStyle {
+        if renderingMode == .fullColor {
+            return AnyShapeStyle(WatchTheme.ink2)
+        }
+        return AnyShapeStyle(HierarchicalShapeStyle.secondary)
+    }
 
     var body: some View {
         let forms = WatchGloss.forms(of: word)
@@ -128,8 +138,8 @@ private struct WatchRectangularWordView: View {
                 rows(meaning: short)
             }
             rows(meaning: nil)
-            // A very long phrase: a smaller fixed size (13 pt, above Apple's 11 pt floor), never a
-            // shrunken or cut word; when even that does not fit, the book symbol.
+            // A very long phrase: the smaller Footnote style (13 pt, above Apple's 11 pt floor),
+            // never a shrunken or cut word; when even that does not fit, the book symbol.
             Text(verbatim: word.lemma)
                 .font(.system(.footnote, design: .serif).weight(.bold))
                 .fixedSize(horizontal: false, vertical: true)
@@ -153,7 +163,7 @@ private struct WatchRectangularWordView: View {
             if let meaning = meaning {
                 Text(verbatim: meaning)
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(meaningStyle)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
@@ -182,9 +192,9 @@ private struct WatchInlineWordView: View {
     }
 }
 
-/// The word alone in the circle, at the largest of three sizes it fits whole (11 pt at least, the
-/// smallest text Apple allows); a phrase may take two lines. A word that fits at none shows the
-/// book symbol instead of a cut word.
+/// The word alone in the circle, at the larger of two text styles it fits whole (Headline, then
+/// Footnote, the watch's smallest style; no fixed point sizes); a phrase may take two lines. A word
+/// that fits at neither shows the book symbol instead of a cut word.
 private struct WatchCircularWordView: View {
     let word: WidgetWord
 
@@ -210,14 +220,10 @@ private struct WatchCircularWordView: View {
         ZStack {
             AccessoryWidgetBackground()
             ViewThatFits(in: [.horizontal, .vertical]) {
-                wordText(word.lemma, size: 16)
-                wordText(word.lemma, size: 13)
+                wordText(word.lemma, style: .headline)
+                wordText(word.lemma, style: .footnote)
                 if let lines = twoLines {
-                    wordText(lines, size: 13)
-                }
-                wordText(word.lemma, size: 11)
-                if let lines = twoLines {
-                    wordText(lines, size: 11)
+                    wordText(lines, style: .footnote)
                 }
                 Image(systemName: "book.closed")
                     .font(.title3)
@@ -230,9 +236,9 @@ private struct WatchCircularWordView: View {
         }
     }
 
-    private func wordText(_ text: String, size: CGFloat) -> some View {
+    private func wordText(_ text: String, style: Font.TextStyle) -> some View {
         Text(verbatim: text)
-            .font(.system(size: size, weight: .bold, design: .serif))
+            .font(.system(style, design: .serif).weight(.bold))
             .multilineTextAlignment(.center)
             .fixedSize()
             .widgetAccentable()

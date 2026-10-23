@@ -15,16 +15,17 @@ struct FeedWhySheet: View {
     let warning: CardWarning
     @Environment(\.dismiss) private var dismiss
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    /// The word at the top: 28 pt serif bold, scaled up to 48 pt; a phrase wraps, never shrinks.
-    @ScaledMetric(relativeTo: .title) private var wordSize: CGFloat = 28
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     // No band: the card behind the sheet already has the word's one yellow mark.
+                    // Title serif bold (28 pt at the default size); a phrase wraps, never shrinks.
+                    // It stops growing at AX3 (48 pt, the old cap), so a long word rarely breaks.
                     Text(verbatim: word.lemma)
-                        .font(Theme.Fonts.englishWord(size: min(wordSize, 48)))
+                        .font(.system(.title, design: .serif).weight(.bold))
+                        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
                         .foregroundStyle(Theme.ink)
                         .fixedSize(horizontal: false, vertical: true)
                         .accessibilityAddTraits(.isHeader)
@@ -37,7 +38,8 @@ struct FeedWhySheet: View {
                         sectionView(section)
                     }
                 }
-                .padding(.horizontal, 24)
+                // The HIG side margin.
+                .padding(.horizontal, 16)
                 .padding(.top, 4)
                 .padding(.bottom, 32)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -217,8 +219,9 @@ struct FeedWhySheet: View {
                 sectionTitle("Birlikte kullanılır")
                 VStack(alignment: .leading, spacing: 6) {
                     ForEach(Array(collocations.enumerated()), id: \.offset) { _, collocation in
+                        // The examples' serif size: one size for the sheet's English text.
                         Text(verbatim: collocation)
-                            .font(Theme.Fonts.example)
+                            .exampleFont()
                             .foregroundStyle(Theme.ink)
                             .fixedSize(horizontal: false, vertical: true)
                             .englishVoice()
@@ -237,10 +240,12 @@ struct FeedWhySheet: View {
         }
     }
 
-    /// A small bold heading in `ink2` (at least 7:1 on `surface`).
+    /// A bold Callout heading in `ink2` (at least 7:1 on `surface`): the size of the sheet's
+    /// Turkish lines, so the sheet keeps few text sizes (the word's Title, Body for the note and
+    /// the English text, Callout).
     private func sectionTitle(_ title: String) -> some View {
         Text(title)
-            .font(.footnote.weight(.bold))
+            .font(.callout.weight(.bold))
             .foregroundStyle(Theme.ink2)
             .accessibilityAddTraits(.isHeader)
     }

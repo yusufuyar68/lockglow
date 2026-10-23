@@ -41,8 +41,8 @@ struct OnboardingView: View {
             topBar
             ScrollView {
                 pageContent
-                    .padding(.horizontal, 20)
-                    .padding(.top, 6)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
                     .padding(.bottom, 24)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -64,7 +64,7 @@ struct OnboardingView: View {
     /// the first accessibility text size, so the step bar keeps room between the two capsules
     /// on an iPhone SE.
     private var topBar: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 8) {
             if page == .level {
                 Color.clear
                     .frame(width: 44, height: 44)
@@ -91,7 +91,7 @@ struct OnboardingView: View {
             .glassControl()
             .accessibilityIdentifier("onboarding.skip")
         }
-        .padding(.horizontal, 12)
+        .padding(.horizontal, 16)
         .padding(.top, 4)
         .frame(minHeight: 52)
         .dynamicTypeSize(...DynamicTypeSize.accessibility1)
@@ -123,7 +123,7 @@ struct OnboardingView: View {
     /// sizes the summary leads the list instead and the button stops growing, so the list keeps
     /// most of an iPhone SE screen.
     private var bottomBar: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             if showsTopicSummary && !dynamicTypeSize.isAccessibilitySize {
                 topicSummary
                     .padding(.horizontal, 4)
@@ -136,9 +136,9 @@ struct OnboardingView: View {
             .accessibilityIdentifier(page == .firstWord ? "onboarding.start" : "onboarding.next")
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 16)
         .padding(.top, showsTopicSummary ? 12 : 8)
-        .padding(.bottom, 10)
+        .padding(.bottom, 8)
         .background(Theme.bg)
         // The topic list scrolls under the bar: a hairline, as in "Ayarlar > Konular".
         .overlay(alignment: .top) {
@@ -445,9 +445,10 @@ private struct PageTitle: View {
     }
 }
 
-/// The first word with its meaning hidden (§2.8): the word as on the card (serif, the band under
-/// it) and "Dinle", then one button that turns it into the whole card. Same corners, padding and
-/// place as `WordCardView`, so nothing jumps when the meaning appears. "Başla" works either way.
+/// The first word with its meaning hidden (§2.8): the word as on the card (the same headline,
+/// serif with the band under it) and "Dinle", then one button that turns it into the whole card.
+/// Same corners, padding and place as `WordCardView`, so nothing jumps when the meaning appears.
+/// "Başla" works either way.
 private struct GuessWordCard: View {
     let word: WidgetWord
     let showMeaning: () -> Void
@@ -471,26 +472,11 @@ private struct GuessWordCard: View {
         .padding(.vertical, 16)
     }
 
-    /// One line at 40 or 32 pt, as the card's headline; a long phrase wraps at 28 pt instead.
+    /// The card's own headline (`WordCardHeadline`, FeedView.swift): the theme's word style at
+    /// the Large Title size (34 pt, scaled with Dynamic Type), a long phrase in two balanced
+    /// lines, each on its band. A heading with the English voice.
     private var headline: some View {
-        ViewThatFits(in: .horizontal) {
-            line(size: 40)
-            line(size: 32)
-            Text(word.lemma)
-                .font(Theme.Fonts.englishWord(size: 28))
-                .foregroundStyle(Theme.ink)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: word.lemma))
-        .accessibilityAddTraits(.isHeader)
-        .cardEnglishVoice()
-    }
-
-    private func line(size: CGFloat) -> some View {
-        Text(word.lemma)
-            .englishWordStyle(size: size, maxSize: size * 1.4)
-            .phosphorBand()
+        WordCardHeadline(lemma: word.lemma)
     }
 }
 

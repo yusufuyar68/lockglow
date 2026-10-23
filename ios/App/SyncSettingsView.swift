@@ -11,7 +11,7 @@ struct SyncSettingsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
                 switchSection
                 if sync.isEnabled {
                     statusSection
@@ -99,12 +99,12 @@ struct SyncSettingsView: View {
     private var aboutSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader("Ne eşitlenir?")
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 8) {
                 AboutLine(symbol: "checkmark", text: "Kelimelerdeki ilerlemen: ne zaman gördüğün ve cevapladığın, bildiğin kelimeler.")
                 AboutLine(symbol: "checkmark", text: "Kendi eklediğin kelimeler, anlamları, örnekleri ve notları.")
                 AboutLine(symbol: "minus", text: "Ayarların, günlük sayıların ve son aramaların eşitlenmez.")
             }
-            .padding(14)
+            .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
             .settingsGroupBackground()
             Text("Bir kelimeyi iki cihazda cevapladıysan son cevap geçerli olur. Bu bir yedek değil: bir cihazda sildiğin ya da sıfırladığın şey diğerlerinde de gider.")
@@ -170,8 +170,9 @@ private struct ProblemLine: View {
     let text: String
 
     var body: some View {
-        HStack(alignment: .top, spacing: 10) {
+        HStack(alignment: .top, spacing: 8) {
             Image(systemName: "exclamationmark.triangle.fill")
+                .font(.subheadline)
                 .foregroundStyle(Theme.caution)
                 .accessibilityHidden(true)
             Text(verbatim: text)
@@ -179,7 +180,7 @@ private struct ProblemLine: View {
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(14)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .combine)
     }
@@ -191,7 +192,7 @@ private struct AboutLine: View {
     let text: String
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 10) {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
             Image(systemName: symbol)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.ink2)

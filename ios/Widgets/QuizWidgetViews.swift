@@ -131,10 +131,12 @@ enum QuizText {
     }
 
     /// The headword's size steps: the medium widget's (20, 17, 15 pt, a phrase also on two lines)
-    /// and a larger set on the large widget (24 pt first).
+    /// and a larger set on the large widget (22 pt first, the Title 2 size). The large widget then
+    /// keeps four sizes: the word, the options (Body), the line on top (Subheadline) and the
+    /// pronunciation, the wrong pick's line and the example (Footnote).
     static let mediumWord = WidgetWordStep.mediumWidgetScaled
     static let largeWord = [
-        WidgetWordStep(size: 24),
+        WidgetWordStep(size: 22),
         WidgetWordStep(size: 20),
         WidgetWordStep(size: 17),
         WidgetWordStep(size: 20, lines: 2),

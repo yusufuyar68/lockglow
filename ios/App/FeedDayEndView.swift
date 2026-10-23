@@ -18,6 +18,8 @@ struct FeedDayEndView: View {
     /// Nil on the feed's last page.
     let continueFeed: (() -> Void)?
 
+    /// Two text sizes (Title, Body) plus the buttons' Headline; 20 pt inside, as the word card,
+    /// spacing on the 8 pt grid.
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Image(systemName: "sun.max")
@@ -29,19 +31,19 @@ struct FeedDayEndView: View {
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityAddTraits(.isHeader)
-                .padding(.top, 14)
+                .padding(.top, 16)
             Text(hasLockScreenWidget ? "Yarın kilitli ekranında yenileri olacak." : "Yarın yenileri gelecek.")
                 .font(.body)
                 .foregroundStyle(Theme.ink2)
                 .lineSpacing(3)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.top, 10)
-            Spacer(minLength: 28)
+                .padding(.top, 8)
+            Spacer(minLength: 32)
             buttons
         }
-        .padding(.horizontal, 24)
-        .padding(.top, 28)
-        .padding(.bottom, 20)
+        .padding(.horizontal, 20)
+        .padding(.top, 24)
+        .padding(.bottom, 24)
         .frame(maxWidth: .infinity, maxHeight: fillsPage ? .infinity : nil, alignment: .topLeading)
         .cardSurface(cornerRadius: Theme.Radius.wordCard)
         .tint(Theme.ink)
@@ -50,7 +52,7 @@ struct FeedDayEndView: View {
 
     @ViewBuilder
     private var buttons: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             if let count = reviewCount {
                 Button(action: openReview) {
                     Text(verbatim: "Tekrar'a geç (\(count) kelime)")

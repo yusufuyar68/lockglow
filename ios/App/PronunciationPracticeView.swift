@@ -21,7 +21,7 @@ struct SayButton: View {
             Image(systemName: "mic.circle")
                 .font(.title2)
                 .foregroundStyle(Theme.ink)
-                .frame(minWidth: 44, minHeight: 44)
+                .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
                 .contentShape(Rectangle())
         }
         .buttonStyle(.borderless)
@@ -159,7 +159,8 @@ struct PronunciationPracticeView: View {
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(maxWidth: .infinity)
                     }
-                    .padding(.horizontal, 20)
+                    // iOS side margins (16 pt), as on the app's other pages.
+                    .padding(.horizontal, 16)
                     .padding(.top, 8)
                     .padding(.bottom, 20)
                 }
@@ -403,9 +404,11 @@ struct PronunciationPracticeView: View {
         misses[target.text] = feedback.verdict == .correct ? 0 : misses[target.text, default: 0] + 1
     }
 
+    /// Subheadline, like the listening line and the result's message: the page keeps to the
+    /// word (Large Title, or title3 for the sentence), body / headline, subheadline and footnote.
     private func statusLine(_ text: String) -> some View {
         Text(text)
-            .font(.callout)
+            .font(.subheadline)
             .foregroundStyle(Theme.ink2)
             .fixedSize(horizontal: false, vertical: true)
     }
@@ -452,7 +455,7 @@ struct PronunciationPracticeView: View {
             }
             mainButton(action)
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 16)
         .padding(.top, 10)
         .padding(.bottom, 12)
         .background(Theme.surface)
@@ -731,7 +734,7 @@ private struct PracticeStepBar: View {
                         .foregroundStyle(Theme.surface)
                 } else {
                     Text(verbatim: "\(step.rawValue)")
-                        .font(.caption.weight(.bold))
+                        .font(.footnote.weight(.bold))
                         .foregroundStyle(isCurrent ? Theme.surface : Theme.ink3)
                 }
             }
@@ -770,8 +773,10 @@ private struct FeedbackPanel: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
+                // Headline, as the problem panel's title: no fifth size next to the Large Title
+                // word, its body IPA and the subheadline lines.
                 Label(feedback.title, systemImage: symbol)
-                    .font(.title3.weight(.bold))
+                    .font(.headline)
                     .foregroundStyle(color)
                 Text(feedback.message)
                     .font(.subheadline)
@@ -800,8 +805,7 @@ private struct FeedbackPanel: View {
                 .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
             }
         }
-        .padding(.vertical, 14)
-        .padding(.horizontal, 16)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(panel, in: RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous))
         .accessibilityElement(children: .contain)
@@ -986,8 +990,7 @@ private struct ProblemPanel: View {
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(.vertical, 14)
-        .padding(.horizontal, 16)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .overlay(
             RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous)

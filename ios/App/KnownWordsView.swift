@@ -100,7 +100,7 @@ struct KnownWordsView: View {
                 redo(undone)
             }
             .padding(.horizontal, 16)
-            .padding(.bottom, 10)
+            .padding(.bottom, 8)
             .transition(transition)
         }
     }
@@ -222,7 +222,8 @@ private struct KnownWordOpenButtonStyle: ButtonStyle {
 
 /// Mockup `.toast`: an ink bar over the list with the result ("Öğrenmeye döndü: breakfast",
 /// docs/tasarim/terimler.md; the word its own element in an English voice) and "Vazgeç". At
-/// accessibility text sizes "Vazgeç" goes under the message.
+/// accessibility text sizes "Vazgeç" goes under the message. Inverted tokens only, as the feed's
+/// notice: `bg` text on `ink`; the button is a faint `bg` tint with a `bg` edge.
 private struct KnownWordsUndoNotice: View {
     let lemma: String
     /// VoiceOver on "Vazgeç" keeps the notice (`KnownWordsView.hideNoticeLater`).
@@ -232,8 +233,8 @@ private struct KnownWordsUndoNotice: View {
 
     var body: some View {
         let layout = dynamicTypeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
-            : AnyLayout(HStackLayout(spacing: 10))
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
+            : AnyLayout(HStackLayout(spacing: 8))
         layout {
             CardFlowLayout(itemSpacing: 5, lineSpacing: 2) {
                 Text(KnownWordsUndoNotice.prefix)
@@ -245,9 +246,10 @@ private struct KnownWordsUndoNotice: View {
             Button(action: undo) {
                 Text("Vazgeç")
                     .font(.subheadline.weight(.bold))
-                    .padding(.horizontal, 14)
+                    .padding(.horizontal, 16)
                     .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
-                    .background(Color(white: 0.5, opacity: 0.25), in: Capsule())
+                    .background(Theme.bg.opacity(0.18), in: Capsule())
+                    .overlay(Capsule().strokeBorder(Theme.bg.opacity(0.6), lineWidth: 1))
                     .contentShape(Capsule())
             }
             .buttonStyle(.plain)
@@ -257,8 +259,8 @@ private struct KnownWordsUndoNotice: View {
         .padding(.leading, 16)
         .padding(.trailing, 8)
         .padding(.vertical, 8)
-        .background(Theme.ink, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 8)
+        .background(Theme.ink, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
+        .shadow(color: Theme.shadowFar, radius: 16, x: 0, y: 8)
         .accessibilityElement(children: .contain)
     }
 

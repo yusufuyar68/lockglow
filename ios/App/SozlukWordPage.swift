@@ -25,7 +25,7 @@ struct WordDetailView: View {
         let detail = model.detail(for: word)
         let state = model.learningState(of: word)
         ScrollView {
-            VStack(alignment: .leading, spacing: 26) {
+            VStack(alignment: .leading, spacing: 24) {
                 header(state: state)
                 meaning(alternatives: detail?.glossAlternatives ?? [])
                 links
@@ -38,7 +38,8 @@ struct WordDetailView: View {
                 }
                 SozlukStatusSection(word: word)
             }
-            .padding(.horizontal, 20)
+            // The HIG side margin.
+            .padding(.horizontal, 16)
             .padding(.top, 8)
             // The scroll view already keeps clear of the tab bar; this is the page's own margin
             // under the last button.
@@ -296,8 +297,10 @@ private struct SozlukPageSection<Content: View>: View {
                 .font(.headline.weight(.bold))
                 .foregroundStyle(Theme.ink)
                 if let caption = caption {
+                    // Callout: the page's one secondary size (the examples' translations, the
+                    // Dikkat boxes).
                     Text(caption)
-                        .font(.subheadline)
+                        .font(.callout)
                         .foregroundStyle(Theme.ink2)
                 }
             }
@@ -320,7 +323,7 @@ private struct SozlukWordFacts: View {
             if word.ipaUS != nil {
                 AccentIPA(word) { ipa in
                     Text(ipa)
-                        .font(.system(.subheadline, design: .serif))
+                        .font(.system(.callout, design: .serif))
                         .foregroundStyle(Theme.ink2)
                         .accessibilityHidden(true)
                 }
@@ -330,7 +333,7 @@ private struct SozlukWordFacts: View {
                 CustomWordTag()
             } else {
                 Text(CardPartOfSpeech.turkish(word.pos))
-                    .font(.subheadline.weight(.medium))
+                    .font(.callout.weight(.medium))
                     .foregroundStyle(Theme.ink2)
                 LevelBadge(code: word.level)
                     .fixedSize()
@@ -390,8 +393,9 @@ private struct SozlukFalseFriendBox: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
+            // As the Dikkat box's heading (`MistakeBox`).
             Text("Sahte dost")
-                .font(.subheadline.weight(.bold))
+                .font(.callout.weight(.bold))
                 .foregroundStyle(Theme.ink)
                 .accessibilityAddTraits(.isHeader)
             CardWarningLine(warning: .falseFriend(friend), lemma: lemma)
@@ -404,7 +408,7 @@ private struct SozlukFalseFriendBox: View {
             }
         }
         .padding(.vertical, 12)
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
     }
@@ -423,7 +427,7 @@ private struct SozlukInfoRow: View {
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
-                    .font(.subheadline.weight(.bold))
+                    .font(.callout.weight(.bold))
                 Text(text)
                     .lineSpacing(3)
             }
@@ -437,16 +441,17 @@ private struct SozlukInfoRow: View {
     }
 }
 
-/// The English word on its phosphor band. A phrase too long for one line at the full size first
-/// tries a smaller size, then breaks into two balanced lines, each on its own band; a single long
-/// word shrinks instead. VoiceOver reads it once, as a heading, with an English voice.
+/// The English word on its phosphor band, at the Large Title size (34 pt, scaled with Dynamic
+/// Type: the page's title, the bar above it stays inline). A phrase too long for one line first
+/// tries the Title 1 size (28 pt), then breaks into two balanced lines, each on its own band; a
+/// single long word shrinks instead. VoiceOver reads it once, as a heading, with an English voice.
 private struct WordDetailHeadline: View {
     let lemma: String
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
-            line(lemma, size: 40)
-            line(lemma, size: 32)
+            line(lemma, size: 34)
+            line(lemma, size: 28)
             if let lines = WordDetailHeadline.balancedLines(lemma) {
                 VStack(alignment: .leading, spacing: 12) {
                     line(lines.first, size: 34)
@@ -508,8 +513,9 @@ private struct WordDetailCollocationCapsule: View {
                     .foregroundStyle(Theme.ink2)
                     .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
                     .accessibilityHidden(true)
+                // Callout, as the card's "Neden?" chip (`CardWhyChip`): the page's secondary size.
                 Text(verbatim: phrase)
-                    .font(.system(.subheadline, design: .serif).weight(.semibold))
+                    .font(.system(.callout, design: .serif).weight(.semibold))
             }
         }
         .buttonStyle(ChipButtonStyle())
@@ -547,7 +553,7 @@ private struct SozlukStatusSection: View {
                             .font(.body.weight(.semibold))
                             .foregroundStyle(state == .known ? Theme.good : Theme.ink)
                         Text(explanation(state))
-                            .font(.subheadline)
+                            .font(.callout)
                             .foregroundStyle(Theme.ink2)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

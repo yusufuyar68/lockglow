@@ -53,8 +53,9 @@ struct SentenceBuildCard: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                // Text styles of the card: footnote, callout, body / headline and title3.
                 Text("Cümleyi kur")
-                    .font(.subheadline.weight(.semibold))
+                    .font(.callout.weight(.semibold))
                     .foregroundStyle(Theme.ink2)
                     .accessibilityAddTraits(.isHeader)
                     .accessibilityFocused($focus, equals: .header)
@@ -121,6 +122,10 @@ struct SentenceBuildCard: View {
                             }
                         }
                     }
+                    // Its own accessibility container: alone in it (the first tile placed), a tile
+                    // would take this card's frame as its own (VoiceOver's outline, its reading
+                    // order, a UI test's tap at the center).
+                    .accessibilityElement(children: .contain)
                 }
             }
             .padding(12)
@@ -177,6 +182,10 @@ struct SentenceBuildCard: View {
                     }
                 }
             }
+            // Its own accessibility container: the last free tile, the only element left in it,
+            // would take the whole area's frame as its own, and a tap at that frame's center
+            // falls between two rows of tiles.
+            .accessibilityElement(children: .contain)
             .frame(maxWidth: .infinity, minHeight: 44, alignment: .topLeading)
             .contentShape(Rectangle())
             .dropDestination(for: String.self) { items, _ in
@@ -249,7 +258,7 @@ struct SentenceBuildCard: View {
     /// Turkish and "Dinle". On a miss also how to read the marks. About the sentence, never the
     /// learner (learning principles 1 item 12).
     private func feedback(_ check: SentenceTiles.Check) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             Label {
                 Text(check.isCorrect ? "Doğru." : "Doğrusu:")
             } icon: {
@@ -277,8 +286,7 @@ struct SentenceBuildCard: View {
             }
             PracticeListenButton(text: tiles.sentence)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous))
         // Not `.combine`: one element is read in one voice, and the sentence needs its own.
@@ -427,8 +435,9 @@ struct CollocationChoiceCard: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                // Text styles of the card: footnote, callout, body / headline and title3.
                 Text("Hangisi birlikte kullanılır?")
-                    .font(.subheadline.weight(.semibold))
+                    .font(.callout.weight(.semibold))
                     .foregroundStyle(Theme.ink2)
                     .accessibilityAddTraits(.isHeader)
                     .accessibilityFocused($focusesHeader)
@@ -485,10 +494,11 @@ struct CollocationChoiceCard: View {
                     Text(filledText)
                 }
             }
-            .font(.system(.title2, design: .serif))
+            // Title3 serif, the size of the options and of the build card's sentence.
+            .font(Theme.Fonts.definition)
             .foregroundStyle(Theme.ink)
             .englishVoice()
-            .lineSpacing(5)
+            .lineSpacing(4)
             .fixedSize(horizontal: false, vertical: true)
             .frame(maxWidth: .infinity, alignment: .leading)
             if let translation = translation {
@@ -501,8 +511,7 @@ struct CollocationChoiceCard: View {
                     .transition(.opacity)
             }
         }
-        .padding(.horizontal, 18)
-        .padding(.vertical, 16)
+        .padding(16)
         .cardSurface(cornerRadius: Theme.Radius.card)
     }
 
@@ -546,25 +555,21 @@ struct CollocationChoiceCard: View {
         return Button {
             pick(option)
         } label: {
-            HStack(spacing: 8) {
-                Text(verbatim: option)
-                    .font(Theme.Fonts.definition)
-                    .foregroundStyle(Theme.ink)
-                    .englishVoice()
-                if let mark = mark {
-                    Label {
-                        Text(mark.text)
-                    } icon: {
-                        Image(systemName: mark.symbol)
-                            .accessibilityHidden(true)
-                    }
-                    .font(.footnote.weight(.bold))
-                    .foregroundStyle(mark.color)
-                    .fixedSize()
+            // Word and mark side by side while both fit; in a half-width capsule (two options
+            // after a wrong pick on an iPhone SE, large text) the mark goes under the word
+            // instead of breaking the word.
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) {
+                    optionWord(option)
+                    optionMarkLabel(mark)
+                }
+                VStack(spacing: 4) {
+                    optionWord(option)
+                    optionMarkLabel(mark)
                 }
             }
-            .padding(.horizontal, 18)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
             .frame(maxWidth: .infinity, minHeight: 56)
             .background(mark?.fill ?? Theme.surface, in: Capsule())
             .overlay {
@@ -592,6 +597,30 @@ struct CollocationChoiceCard: View {
                     Text(mark.text)
                 }
             }
+        }
+    }
+
+    private func optionWord(_ option: String) -> some View {
+        Text(verbatim: option)
+            .font(Theme.Fonts.definition)
+            .foregroundStyle(Theme.ink)
+            .multilineTextAlignment(.center)
+            .englishVoice()
+    }
+
+    /// "Doğru cevap" / "Yanlış" with its icon, never wrapped; nothing before the answer.
+    @ViewBuilder
+    private func optionMarkLabel(_ mark: OptionMark?) -> some View {
+        if let mark = mark {
+            Label {
+                Text(mark.text)
+            } icon: {
+                Image(systemName: mark.symbol)
+                    .accessibilityHidden(true)
+            }
+            .font(.footnote.weight(.bold))
+            .foregroundStyle(mark.color)
+            .fixedSize()
         }
     }
 
@@ -651,13 +680,12 @@ struct CollocationChoiceCard: View {
                 Text(choice.pair == .makeDo
                      ? "Türkçede ikisine de çoğu zaman “yapmak” deriz."
                      : "Türkçede ikisine de çoğu zaman “söylemek” deriz.")
-                    .font(.subheadline)
+                    .font(.callout)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous))
         .accessibilityElement(children: .contain)
@@ -705,8 +733,7 @@ struct PracticePrompt: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .padding(.horizontal, 18)
-        .padding(.vertical, 16)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardSurface(cornerRadius: Theme.Radius.card)
         .accessibilityElement(children: .combine)
@@ -874,7 +901,7 @@ struct PracticeListenButton: View {
                 Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
                     .symbolEffect(.variableColor.iterative, isActive: isSpeaking && !reduceMotion)
             }
-            .font(.subheadline.weight(.semibold))
+            .font(.callout.weight(.semibold))
         }
         .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))
         .accessibilityLabel(Text(isSpeaking ? "Durdur" : "Cümleyi dinle"))

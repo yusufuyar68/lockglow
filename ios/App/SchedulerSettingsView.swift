@@ -15,7 +15,7 @@ struct SchedulerSettingsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
                 switchSection
                 infoSection("Ne değişir?", lines: [
                     "Tekrarlar arasındaki bekleme senin cevaplarından hesaplanır.",
@@ -85,7 +85,7 @@ struct SchedulerSettingsView: View {
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.horizontal, 4)
+                .padding(.horizontal, 16)
             SettingsGroup {
                 Toggle(isOn: switchBinding) {
                     Text("Yeni zamanlamayı kullan")
@@ -110,7 +110,7 @@ struct SchedulerSettingsView: View {
         VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader(title)
             SettingsGroup {
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 8) {
                     ForEach(lines, id: \.self) { line in
                         Text(verbatim: line)
                             .font(.subheadline)
@@ -119,7 +119,7 @@ struct SchedulerSettingsView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
-                .padding(14)
+                .padding(16)
             }
         }
     }
@@ -134,7 +134,7 @@ struct SchedulerSettingsView: View {
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(14)
+                    .padding(16)
             }
         }
     }

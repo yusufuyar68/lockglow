@@ -156,9 +156,11 @@ struct WeeklyRecapView: View {
     /// The share card, drawn once the page is on screen; nil while there is nothing to share.
     @State private var shareImage: Image?
 
+    // Type: the bar's Large Title, Title 3 (the week's sentence, section titles, hard words),
+    // Body / Headline and Subheadline (also the line under "Paylaş"): four sizes.
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
                 WeekCard(recap: recap)
                 let met = listed(recap.metWordIDs)
                 if !met.isEmpty {
@@ -179,7 +181,7 @@ struct WeeklyRecapView: View {
                 SuggestionCard(suggestion: recap.suggestion)
                 buttons
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 16)
             .padding(.top, 8)
             .padding(.bottom, 32)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -212,7 +214,7 @@ struct WeeklyRecapView: View {
     /// One filled button ("Tamam"); "Paylaş" under it once the card is drawn, with what the card
     /// holds.
     private var buttons: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             Button("Tamam", action: close)
                 .buttonStyle(PrimaryCapsuleButtonStyle())
             if let shareImage {
@@ -225,7 +227,7 @@ struct WeeklyRecapView: View {
                 .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
                 .accessibilityHint(Text(verbatim: "Kelimelerle bir resim hazırlar."))
                 Text(verbatim: "Resimde yalnız kelimeler ve anlamları var.")
-                    .font(.footnote)
+                    .font(.subheadline)
                     .foregroundStyle(Theme.ink3)
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
@@ -252,7 +254,7 @@ private struct WeekCard: View {
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(18)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardSurface()
         .accessibilityElement(children: .ignore)
@@ -312,7 +314,6 @@ private struct WordChipSection: View {
 /// example can be heard and said (the suggestion reads it aloud).
 private struct HardWordsSection: View {
     let words: [WidgetWord]
-    @ScaledMetric(relativeTo: .title2) private var lemmaSize: CGFloat = 22
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -343,8 +344,9 @@ private struct HardWordsSection: View {
     private func row(_ word: WidgetWord) -> some View {
         HStack(alignment: .center, spacing: 12) {
             VStack(alignment: .leading, spacing: 2) {
+                // Title 3 serif bold (Dynamic Type), as the section titles above.
                 Text(verbatim: word.lemma)
-                    .font(Theme.Fonts.englishWord(size: min(lemmaSize, 34)))
+                    .font(.system(.title3, design: .serif).weight(.bold))
                     .foregroundStyle(Theme.ink)
                     .lineLimit(2)
                     .minimumScaleFactor(0.7)
@@ -398,7 +400,7 @@ private struct SuggestionCard: View {
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(18)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
     }

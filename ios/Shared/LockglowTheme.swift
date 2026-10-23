@@ -3,8 +3,10 @@ import UIKit
 import WidgetKit
 import CoreModels
 
-// Lockglow design system (docs/tasarim/README.md, docs/tasarim/lockglow_ui_mockup.html): paper and
-// ink, one bright color ("phosphor" yellow) only on the English word being learned.
+// Lockglow design system (docs/tasarim/README.md, docs/tasarim/lockglow_ui_mockup.html): Apple's
+// semantic colors (system grouped backgrounds, label / secondaryLabel / tertiaryLabel, separator,
+// one tint: ink), one bright color ("phosphor" yellow) only on the English word being learned.
+// Values since 2026-10-24: docs/denetim/kontrast_tema_2026-10-22.md (top section).
 // Compiled into the app, the widget extension and the widget snapshot bundle (ios/Shared), so it
 // uses SwiftUI, UIKit, WidgetKit and CoreModels only. `Palette`, `GlowButtonStyle`, `ChoiceRow` and
 // `SegmentButtons` (App/GlowStyle.swift) are app-only: QuizCardView.swift is also compiled into the
@@ -15,41 +17,46 @@ import CoreModels
 // Colors (light / dark / increased contrast resolve automatically):
 //     Theme.band, ink, ink2, ink3, primary, onPrimary, tint, tintSoft, bg, surface, surface2,
 //     surface3, line, lineStrong, good, goodTint, bad, badTint, caution, cautionTint
-//   - English and Turkish body text: ink; translation, IPA, notes: ink2; helper text: ink3.
+//   - English and Turkish body text: ink (label); translation, IPA, notes: ink2 (secondaryLabel);
+//     helper text: ink3 (tertiaryLabel, here kept at 4.5:1 so it can carry text).
 //   - The one main button of a screen: primary with onPrimary text. By day a filled ink capsule;
 //     at night no lit fill and never yellow: a faint ink tint, a full ink edge and bold text
 //     (docs/tasarim/alternatifler/gece_oled.md, option C). Yellow stays on the word alone.
 //   - Selected tab, option, step bar, progress: tint (ink, never yellow); soft selected fill: tintSoft.
-//   - Pages: bg (pure black at night); cards: surface by day, page black at night with a line
-//     border; capsules and wells: surface2; tracks: surface3; dividers: line; control borders:
-//     lineStrong.
-//   - Right / wrong / Dikkat triangle: good, bad, caution (always with an icon and a word, rule 4);
-//     their panels: goodTint, badTint, cautionTint.
+//   - Pages: bg (systemGroupedBackground by day, pure black at night); cards, sheets and grouped
+//     rows: surface (secondarySystemGroupedBackground; at night cards take the page black with a
+//     line border); capsules and wells: surface2 (systemGray5); tracks: surface3 (systemGray4);
+//     dividers: line (separator); control borders: lineStrong.
+//   - Right / wrong / Dikkat triangle: good, bad, caution (Apple's green, red and orange, darkened
+//     or lightened just enough for 4.5:1; always with an icon and a word, rule 4); their panels:
+//     goodTint, badTint, cautionTint.
 //
 // Contrast rules (WCAG 2.2; table and script: docs/denetim/kontrast_tema_2026-10-22.md):
 //   - Text is at least 4.5:1 on bg, surface and surface2 in all four looks (light, dark, each with
-//     Increase Contrast); ink2 is at least 7:1 on bg and surface2 (small text, docs/tasarim/
-//     ogrenme_ilkeleri.md).
-//   - Never ink3 text on surface3 (about 4:1 in both appearances). ink3 is for helper text on bg,
-//     surface or surface2, icons and dots.
+//     Increase Contrast), and good, bad and caution also on their own tint panel; ink2 is at least
+//     7:1 on bg, surface and surface2 (small text, docs/tasarim/ogrenme_ilkeleri.md).
+//   - Never ink3 text on surface3 (about 3.9:1 in both appearances). ink3 is for helper text on
+//     bg, surface or surface2, icons and dots.
 //   - Every border of a control (lineStrong) is at least 3:1 against bg, surface and surface2
-//     (WCAG 1.4.11). The styles below draw it; a hand-made capsule needs a 1 pt lineStrong edge,
-//     since a surface2 fill alone is 1.1-1.4:1 against the page.
+//     (WCAG 1.4.11), 4.5:1 with Increase Contrast, on a surface or surface2 fill or none. The
+//     styles below draw it; a hand-made capsule needs a 1 pt lineStrong edge,
+//     since a surface2 fill alone is 1.1-1.5:1 against the page.
 //   - line is decoration only (dividers, card edges): never the only sign of a control.
 //
-// Type (English is serif, Turkish and UI are SF Pro; no rounded, no italic):
-//     Text(word.lemma).englishWordStyle().phosphorBand()          // 40 pt serif bold, scaled
-//     Text(word.lemma).englishWordStyle(size: 46, maxSize: 60)    // Tekrar card front
+// Type (Dynamic Type text styles only; English is serif, Turkish and UI are SF Pro; no rounded,
+// no italic; nothing below 11 pt `.caption2`; at most 3-4 sizes per screen):
+//     Text(word.lemma).englishWordStyle().phosphorBand()          // Large Title 34 pt serif bold
+//     Text(word.lemma).englishWordStyle(size: 28, maxSize: 46)    // long phrase: Title 1 step
 //     Text(gloss).meaningStyle()                                  // .title bold, ink
 //     Text(definition).definitionStyle()                          // .title3 serif, ink
-//     Text(example).exampleStyle()                                // 18 pt serif (scaled), ink
-//     Text(mistake.wrong).exampleFont()                           // Dikkat sentences: 18 pt serif
+//     Text(example).exampleStyle()                                // .body 17 pt serif, ink
+//     Text(mistake.wrong).exampleFont()                           // Dikkat sentences: .body serif
 //     Text(translation).exampleTranslationStyle()                 // .callout, ink2
 //     Text(word.lemma).widgetWordStyle().phosphorBand(.widget)    // widgets: .title3 bold serif
 //     Text(example).englishVoice()                                // VoiceOver: English voice
 //   The same fonts without color: Theme.Fonts.englishWord(size:), meaning, definition, example
-//   (17 pt `.body` serif; example and Dikkat sentences use `exampleFont()`), exampleTranslation,
-//   widgetWord.
+//   (17 pt `.body` serif, also the example and Dikkat sentences: `exampleFont()`),
+//   exampleTranslation, widgetWord.
 //   `englishVoice()` goes on the English Text itself (or on an element whose whole spoken text is
 //   English), never on a container or a button with a Turkish label, hint or value: everything
 //   under it is read with the English voice. `.combine` loses it. See the method for details.
@@ -94,80 +101,74 @@ import CoreModels
 enum Theme {
     /// Phosphor yellow: only the English word's band and the same word in the example.
     static let band = dynamic(light: Tone(0xF5E829), dark: Tone(0xE9E040))
-    /// Main text.
-    static let ink = dynamic(
-        light: Tone(0x15181B), dark: Tone(0xF3F4F0),
-        lightHigh: Tone(0x0B0C0E), darkHigh: Tone(0xFFFFFF)
-    )
-    /// Secondary text: translations, IPA, explanations. At least 7:1 on bg and surface2, so it
-    /// also carries 11-13 pt text.
+    /// Main text (label): black by day, white at night.
+    static let ink = dynamic(light: Tone(0x000000), dark: Tone(0xFFFFFF))
+    /// Secondary text (secondaryLabel as an opaque gray): translations, IPA, explanations. At
+    /// least 7:1 on bg, surface and surface2, so it also carries 11-13 pt text.
     static let ink2 = dynamic(
-        light: Tone(0x474E54), dark: Tone(0xB7BDC2),
-        lightHigh: Tone(0x3A4046), darkHigh: Tone(0xD3D8DC)
+        light: Tone(0x3C3C43), dark: Tone(0xC7C7CC),
+        lightHigh: Tone(0x2C2C30), darkHigh: Tone(0xE5E5EA)
     )
-    /// Helper text, placeholders, chevrons. Never text on `surface3`. With Increase Contrast it
-    /// takes ink2's value.
+    /// Helper text, placeholders, chevrons (tertiaryLabel, darkened to 4.5:1). Never text on
+    /// `surface3`. With Increase Contrast it takes ink2's value.
     static let ink3 = dynamic(
-        light: Tone(0x626A71), dark: Tone(0x8E959B),
-        lightHigh: Tone(0x474E54), darkHigh: Tone(0xB7BDC2)
+        light: Tone(0x636366), dark: Tone(0x98989D),
+        lightHigh: Tone(0x3C3C43), darkHigh: Tone(0xC7C7CC)
     )
     /// Fill of the one main button of a screen: ink by day; at night a 12 % ink tint over the
     /// page (no lit area and no yellow at night, gece_oled.md option C). The night edge is drawn
     /// by `PrimaryCapsuleButtonStyle`.
-    static let primary = dynamic(
-        light: Tone(0x15181B), dark: Tone(0xF3F4F0, 0.12),
-        lightHigh: Tone(0x0B0C0E), darkHigh: Tone(0xFFFFFF, 0.12)
-    )
-    /// Text and icons on `primary`, and the night edge: white by day, ink at night.
-    static let onPrimary = dynamic(light: Tone(0xFFFFFF), dark: Tone(0xF3F4F0), darkHigh: Tone(0xFFFFFF))
-    /// Selected tab, option, step bar and progress. Stays ink at night (never yellow).
-    static let tint = dynamic(
-        light: Tone(0x15181B), dark: Tone(0xF3F4F0),
-        lightHigh: Tone(0x0B0C0E), darkHigh: Tone(0xFFFFFF)
-    )
+    static let primary = dynamic(light: Tone(0x000000), dark: Tone(0xFFFFFF, 0.12))
+    /// Text and icons on `primary`, and the night edge: white by day, ink (white) at night.
+    static let onPrimary = dynamic(light: Tone(0xFFFFFF), dark: Tone(0xFFFFFF))
+    /// The one tint: selected tab, option, step bar and progress. Ink, also at night (never yellow).
+    static let tint = dynamic(light: Tone(0x000000), dark: Tone(0xFFFFFF))
     /// Soft fill of a selected item (the selected tab).
     static let tintSoft = dynamic(
-        light: Tone(0x15181B, 0.08), dark: Tone(0xFFFFFF, 0.10),
-        lightHigh: Tone(0x15181B, 0.12), darkHigh: Tone(0xFFFFFF, 0.16)
+        light: Tone(0x000000, 0.08), dark: Tone(0xFFFFFF, 0.10),
+        lightHigh: Tone(0x000000, 0.12), darkHigh: Tone(0xFFFFFF, 0.16)
     )
-    /// Page background: paper by day, pure black at night (OLED pixels off).
-    static let bg = dynamic(light: Tone(0xF3F3EE), dark: Tone(0x000000))
-    /// Cards by day, sheets and grouped lists, the selected segment.
-    static let surface = dynamic(light: Tone(0xFFFFFF), dark: Tone(0x191C20))
-    /// Capsules, wells, unselected segments, the Dikkat box.
-    static let surface2 = dynamic(light: Tone(0xEBEBE4), dark: Tone(0x24282D))
-    /// Tracks (progress, switches) and inactive steps. No ink3 text on it.
-    static let surface3 = dynamic(light: Tone(0xDEDED6), dark: Tone(0x30353B))
-    /// Dividers and card borders (decoration; at night the card's only edge).
+    /// Page background: systemGroupedBackground by day, pure black at night (OLED pixels off).
+    static let bg = dynamic(light: Tone(0xF2F2F7), dark: Tone(0x000000))
+    /// Cards by day, sheets and grouped lists, the selected segment
+    /// (secondarySystemGroupedBackground).
+    static let surface = dynamic(light: Tone(0xFFFFFF), dark: Tone(0x1C1C1E))
+    /// Capsules, wells, unselected segments, the Dikkat box (systemGray5).
+    static let surface2 = dynamic(light: Tone(0xE5E5EA), dark: Tone(0x2C2C2E))
+    /// Tracks (progress, switches) and inactive steps (systemGray4). No ink3 text on it.
+    static let surface3 = dynamic(light: Tone(0xD1D1D6), dark: Tone(0x3A3A3C))
+    /// Dividers and card borders (separator; decoration; at night the card's only edge).
     static let line = dynamic(
-        light: Tone(0x15181B, 0.10), dark: Tone(0xFFFFFF, 0.12),
-        lightHigh: Tone(0x15181B, 0.22), darkHigh: Tone(0xFFFFFF, 0.22)
+        light: Tone(0x3C3C43, 0.29), dark: Tone(0x545458, 0.65),
+        lightHigh: Tone(0x3C3C43, 0.45), darkHigh: Tone(0x545458)
     )
     /// Borders of options, buttons, chips and badges: at least 3:1 against bg, surface and
-    /// surface2 (WCAG 1.4.11), 4.5:1 with Increase Contrast.
+    /// surface2 on any of those fills (WCAG 1.4.11), 4.5:1 with Increase Contrast.
     static let lineStrong = dynamic(
-        light: Tone(0x15181B, 0.54), dark: Tone(0xFFFFFF, 0.40),
-        lightHigh: Tone(0x15181B, 0.70), darkHigh: Tone(0xFFFFFF, 0.56)
+        light: Tone(0x000000, 0.52), dark: Tone(0xFFFFFF, 0.42),
+        lightHigh: Tone(0x000000, 0.64), darkHigh: Tone(0xFFFFFF, 0.56)
     )
-    /// Right answer, "Çalışıyor". Always paired with an icon and a word.
+    /// Right answer, "Çalışıyor" (systemGreen). Always paired with an icon and a word.
     static let good = dynamic(
-        light: Tone(0x17703F), dark: Tone(0x5BD08F),
-        lightHigh: Tone(0x0F5A31), darkHigh: Tone(0x85E3AF)
+        light: Tone(0x1E7433), dark: Tone(0x30D158),
+        lightHigh: Tone(0x165526), darkHigh: Tone(0x58DA78)
     )
-    static let goodTint = dynamic(light: Tone(0xDFF2E6), dark: Tone(0x5BD08F, 0.16))
-    /// Wrong answer, reset. Always paired with an icon and a word.
+    /// 12 % good over white by day, 16 % good at night.
+    static let goodTint = dynamic(light: Tone(0xE4EEE7), dark: Tone(0x30D158, 0.16))
+    /// Wrong answer, reset (systemRed). Always paired with an icon and a word.
     static let bad = dynamic(
-        light: Tone(0xB3261E), dark: Tone(0xFF8C80),
-        lightHigh: Tone(0x8E1B15), darkHigh: Tone(0xFFB0A8)
+        light: Tone(0xCE0014), dark: Tone(0xFF6961),
+        lightHigh: Tone(0x9A000F), darkHigh: Tone(0xFFA29D)
     )
-    static let badTint = dynamic(light: Tone(0xFBE5E2), dark: Tone(0xFF8C80, 0.16))
-    /// Only the Dikkat triangle and "Neredeyse!".
+    /// 12 % bad over white by day, 16 % bad at night.
+    static let badTint = dynamic(light: Tone(0xF9E0E3), dark: Tone(0xFF6961, 0.16))
+    /// Only the Dikkat triangle and "Neredeyse!" (systemOrange).
     static let caution = dynamic(
-        light: Tone(0x8F5600), dark: Tone(0xFF9E5A),
-        lightHigh: Tone(0x6E4200), darkHigh: Tone(0xFFBC8C)
+        light: Tone(0xBE3100), dark: Tone(0xFF9F0A),
+        lightHigh: Tone(0x8D2400), darkHigh: Tone(0xFFAD2D)
     )
     /// Panel behind a caution result: 14 % caution over surface (mockup `.verdict.mid`).
-    static let cautionTint = dynamic(light: Tone(0xEFE7DB), dark: Tone(0x392E28))
+    static let cautionTint = dynamic(light: Tone(0xF6E2DB), dark: Tone(0x3C2E1B))
 
     // Fixed colors for drawing that already depends on the color scheme.
     /// Day band (behind the letters).
@@ -184,8 +185,8 @@ enum Theme {
     /// step 1). Kept for callers; transparent.
     static let primaryGlow = fixed(0xE9E040, 0)
     /// Card shadows (light appearance only).
-    static let shadowNear = fixed(0x15181B, 0.05)
-    static let shadowFar = fixed(0x15181B, 0.12)
+    static let shadowNear = fixed(0x000000, 0.05)
+    static let shadowFar = fixed(0x000000, 0.12)
 
     /// Every tappable element is at least this tall and wide.
     static let minHitSize: CGFloat = 44
@@ -209,16 +210,17 @@ enum Theme {
     /// Fonts of the type table. English text is serif (New York), Turkish and UI text SF Pro.
     /// Prefer the view modifiers (`englishWordStyle()` …), which also set color and scaling.
     enum Fonts {
-        /// The English word at a fixed size (not scaled; `englishWordStyle` scales it).
-        static func englishWord(size: CGFloat = 40) -> Font {
+        /// The English word at a fixed size (not scaled; `englishWordStyle` scales it). The
+        /// default is the Large Title size, 34 pt.
+        static func englishWord(size: CGFloat = 34) -> Font {
             .system(size: size, weight: .bold, design: .serif)
         }
         /// Turkish meaning, 28 pt bold.
         static let meaning = Font.title.weight(.bold)
         /// English definition, 20 pt serif.
         static let definition = Font.system(.title3, design: .serif)
-        /// English text in the example's family, 17 pt `.body` serif, never italic (collocations,
-        /// the form field). Example sentences and the Dikkat sentences are 18 pt: `exampleFont()`.
+        /// English text in the example's family, 17 pt `.body` serif, never italic: example
+        /// sentences and the Dikkat sentences (`exampleFont()`), collocations, the form field.
         static let example = Font.system(.body, design: .serif)
         /// Turkish translation of the example, 16 pt.
         static let exampleTranslation = Font.callout
@@ -270,9 +272,10 @@ private struct Tone: Sendable {
 // MARK: - Typography
 
 extension View {
-    /// The English word: serif bold, `size` pt at the default text size, scaled with Dynamic Type
-    /// relative to `.largeTitle` up to `maxSize`; one line, shrinks to 60 % before truncating.
-    func englishWordStyle(size: CGFloat = 40, maxSize: CGFloat = 56) -> some View {
+    /// The English word: serif bold, `size` pt at the default text size (by default the Large
+    /// Title size, 34 pt), scaled with Dynamic Type relative to `.largeTitle` up to `maxSize`; one
+    /// line, shrinks to 60 % before truncating.
+    func englishWordStyle(size: CGFloat = 34, maxSize: CGFloat = 56) -> some View {
         modifier(EnglishWordStyle(size: size, maxSize: maxSize))
     }
 
@@ -288,17 +291,18 @@ extension View {
             .foregroundStyle(Theme.ink)
     }
 
-    /// An English example sentence: 18 pt serif (`exampleFont()`), ink, not italic.
+    /// An English example sentence: `.body` serif (`exampleFont()`), ink, not italic.
     func exampleStyle() -> some View {
         exampleFont()
             .foregroundStyle(Theme.ink)
     }
 
     /// The font of English example sentences and of the Dikkat box's wrong and right sentences:
-    /// 18 pt serif at the default text size, scaled with Dynamic Type like `.body`
-    /// (ogrenme_ilkeleri 2.2, type table). `bold` for the right sentence. No color is set.
+    /// the `.body` text style (17 pt at the default text size) in serif, so it scales with Dynamic
+    /// Type (ogrenme_ilkeleri 2.2, type table; 2026-10-24: Apple's type scale instead of 18 pt).
+    /// `bold` for the right sentence. No color is set.
     func exampleFont(bold: Bool = false) -> some View {
-        modifier(ExampleFont(bold: bold))
+        font(bold ? Theme.Fonts.example.weight(.bold) : Theme.Fonts.example)
     }
 
     /// The Turkish translation of an example: `.callout`, ink2.
@@ -359,17 +363,6 @@ private struct EnglishWordStyle: ViewModifier {
             .foregroundStyle(Theme.ink)
             .lineLimit(1)
             .minimumScaleFactor(0.6)
-    }
-}
-
-/// `exampleFont(bold:)`: 18 pt serif relative to `.body` (17 pt), so it grows like the body text.
-private struct ExampleFont: ViewModifier {
-    let bold: Bool
-    @ScaledMetric(relativeTo: .body) private var size: CGFloat = 18
-
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: size, weight: bold ? .bold : .regular, design: .serif))
     }
 }
 
@@ -604,7 +597,7 @@ struct PrimaryCapsuleButtonStyle: ButtonStyle {
 
 /// Any other button: a `surface` capsule with a 1.5 pt `lineStrong` border and ink text (mockup
 /// `.btn-bordered`), or with `tonal` a `surface2` capsule with a 1 pt `lineStrong` edge (mockup
-/// `.btn-secondary`, e.g. "Biliyorum" on the card). The gray fill alone is 1.1-1.4:1 against the
+/// `.btn-secondary`, e.g. "Biliyorum" on the card). The gray fill alone is 1.1-1.5:1 against the
 /// page; the edge gives the 3:1 boundary (audit K1), 1.5 pt with Increase Contrast or Button
 /// Shapes.
 struct SecondaryCapsuleButtonStyle: ButtonStyle {
@@ -668,8 +661,8 @@ private struct CapsuleButtonBody: View {
                 .fill(Theme.primary)
                 .overlay {
                     // The night fill is a 12 % tint, about as dark as a secondary button. The ink
-                    // edge is the boundary (13-21:1) and the difference: 3.7-4.1:1 brighter than
-                    // a lineStrong edge, only 2.6-2.8:1 with Increase Contrast (lineStrong is
+                    // edge is the boundary (14-21:1) and the difference: 3.7-4.2:1 brighter than
+                    // a lineStrong edge, only 2.5-2.8:1 with Increase Contrast (lineStrong is
                     // brighter there), so with Increase Contrast or Button Shapes it is twice a
                     // secondary's width (docs/denetim/kontrast_gece_c_2026-10-22.md).
                     if isNightPrimary {

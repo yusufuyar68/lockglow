@@ -40,8 +40,9 @@ struct FeedView: View {
     private static let hintCardChanges = 3
     /// Below a paged card, above the tab bar; the tab bar veil fades in over it.
     private static let pageBottomGap: CGFloat = 12
-    /// Left and right of a card: 12 pt, so the card's 24 pt margin leaves a long enough line.
-    private static let pageSideGap: CGFloat = 12
+    /// Left and right of a card: the 16 pt side margin of the HIG, the same as the title's. The
+    /// card's 20 pt inner margin keeps the text where it was (36 pt from the screen's edge).
+    private static let pageSideGap: CGFloat = 16
 
     var body: some View {
         VStack(spacing: 0) {
@@ -106,13 +107,17 @@ struct FeedView: View {
         }
     }
 
-    /// Mockup `.hdr`: the screen's name, small, so the card keeps the room (same height and
-    /// margin as the "Tekrar" header).
+    /// The tab's name as a large title (34 pt bold, HIG: tab roots have large titles), like the
+    /// navigation titles of "Tekrar", "Sözlük" and "Ayarlar". Not a navigation bar: a collapsing
+    /// bar would change the page height while the feed pages. Up to xxxLarge the title fits the
+    /// 52 pt row, so a paged card keeps its room; from the accessibility sizes on (no pages) it
+    /// stops growing at AX1.
     private var header: some View {
         Text("Akış")
-            .font(.headline.weight(.bold))
+            .font(.largeTitle.weight(.bold))
             .foregroundStyle(Theme.ink)
             .accessibilityAddTraits(.isHeader)
+            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
             .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
             .padding(.horizontal, 16)
     }
@@ -387,14 +392,16 @@ struct FeedView: View {
         UIAccessibility.post(notification: .announcement, argument: text)
     }
 
-    /// Mockup `.toast`: an ink bar above the tab bar with the result and "Geri al". At
-    /// accessibility text sizes "Geri al" goes under the message.
+    /// Mockup `.toast`: an ink bar above the tab bar with the result and "Geri al", in the card's
+    /// secondary size (callout). At accessibility text sizes "Geri al" goes under the message.
+    /// Inverted tokens only: `bg` text on `ink` (16:1 and more); the button is a faint `bg` tint
+    /// with a `bg` edge (5:1 and more against the bar, as a `lineStrong` edge on a card).
     @ViewBuilder
     private var knownNoticeBar: some View {
         if let notice = knownNotice {
             let layout = dynamicTypeSize.isAccessibilitySize
-                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
-                : AnyLayout(HStackLayout(spacing: 10))
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
+                : AnyLayout(HStackLayout(spacing: 8))
             layout {
                 Label {
                     Text(notice.message)
@@ -402,16 +409,17 @@ struct FeedView: View {
                     Image(systemName: "checkmark")
                         .accessibilityHidden(true)
                 }
-                .font(.subheadline.weight(.semibold))
+                .font(.callout.weight(.semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 Button {
                     undoKnown(notice.word)
                 } label: {
                     Text("Geri al")
-                        .font(.subheadline.weight(.bold))
-                        .padding(.horizontal, 14)
+                        .font(.callout.weight(.bold))
+                        .padding(.horizontal, 16)
                         .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
-                        .background(Color(white: 0.5, opacity: 0.25), in: Capsule())
+                        .background(Theme.bg.opacity(0.18), in: Capsule())
+                        .overlay(Capsule().strokeBorder(Theme.bg.opacity(0.6), lineWidth: 1))
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
@@ -422,8 +430,8 @@ struct FeedView: View {
             .padding(.leading, 16)
             .padding(.trailing, 8)
             .padding(.vertical, 8)
-            .background(Theme.ink, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 8)
+            .background(Theme.ink, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
+            .shadow(color: Theme.shadowFar, radius: 16, x: 0, y: 8)
             .accessibilityElement(children: .contain)
             .padding(.horizontal, 16)
             .padding(.bottom, FeedView.pageBottomGap + 8)
@@ -761,7 +769,7 @@ struct WordCardView: View {
         case roomy
         /// Everything for this encounter.
         case full
-        /// 1. Smaller meaning and definition, tighter spacing; no Lock Screen label.
+        /// 1. Smaller meaning (Title 2), tighter spacing; no Lock Screen label.
         case smaller
         /// 2. Met before: the Dikkat box without its explanation.
         case noWhy
@@ -825,10 +833,12 @@ struct WordCardView: View {
                 metaRow(showsLockScreen: isOnLockScreen && !step.isSmaller)
                 actionRow
                 meaning(step)
-                // A user's word has no English definition (and maybe no example).
+                // A user's word has no English definition (and maybe no example). The serif
+                // body size of the example (`exampleFont`): the card keeps four sizes (word,
+                // meaning, English text, Turkish secondary text).
                 if !definition.isEmpty {
                     Text(definition)
-                        .font(step.isSmaller ? Theme.Fonts.example : Theme.Fonts.definition)
+                        .exampleFont()
                         .foregroundStyle(Theme.ink)
                         // About 1.45 line height (ogrenme_ilkeleri 2.2), tighter on a short page.
                         .lineSpacing(step.isSmaller ? 2 : 5)
@@ -897,7 +907,7 @@ struct WordCardView: View {
     private var ipa: some View {
         AccentIPA(word) { ipa in
             Text(ipa)
-                .font(.system(.subheadline, design: .serif))
+                .font(.system(.callout, design: .serif))
                 .foregroundStyle(Theme.ink2)
                 .accessibilityHidden(true)
         }
@@ -905,17 +915,18 @@ struct WordCardView: View {
 
     private var partOfSpeech: some View {
         Text(CardPartOfSpeech.turkish(word.pos))
-            .font(.subheadline.weight(.medium))
+            .font(.callout.weight(.medium))
             .foregroundStyle(Theme.ink2)
     }
 
     /// "Dinle", "Söyle" and "Biliyorum" on one row, one block (ogrenme_ilkeleri 2.2):
     /// "Biliyorum" keeps to the trailing edge and wraps under the others when the row is full.
+    /// The feed card's buttons (`FeedToolButtonStyle`, callout), with the same names.
     private var actionRow: some View {
-        CardFlowLayout(itemSpacing: 8, lineSpacing: 6, pinsLastToTrailingEdge: known != nil) {
-            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+        CardFlowLayout(itemSpacing: 8, lineSpacing: 8, pinsLastToTrailingEdge: known != nil) {
+            FeedListenButton(text: word.lemma)
             if showsSay {
-                SayButton(word: word, example: word.exampleEN)
+                FeedSayButton(word: word, example: word.exampleEN)
             }
             if let known = known {
                 knownButton(known)
@@ -940,7 +951,7 @@ struct WordCardView: View {
                 Text("Biliyorum")
             }
         }
-        .buttonStyle(CardCapsuleButtonStyle(isSelected: known.isKnown))
+        .buttonStyle(FeedToolButtonStyle(isSelected: known.isKnown))
         .accessibilityLabel("Biliyorum")
         .accessibilityAddTraits(known.isKnown ? .isSelected : [])
         .accessibilityHint(Text(known.isKnown ? "Kelime öğrenme listene döner." : ""))
@@ -1030,40 +1041,50 @@ struct WordCardView: View {
                     .foregroundStyle(Theme.ink3)
                     .accessibilityHidden(true)
             }
-            .font(.subheadline.weight(.semibold))
+            .font(.callout.weight(.semibold))
         }
         .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 48, tonal: true))
         .accessibilityHint("Kartın tamamını açar")
     }
 
     /// The first few cards show where the next one is. Visual only: VoiceOver moves on by itself.
+    /// It wraps instead of being cut at large text sizes.
     private var swipeHint: some View {
         HStack(spacing: 4) {
             Image(systemName: "chevron.up")
             Text("Yukarı kaydır")
+                .fixedSize(horizontal: false, vertical: true)
         }
-        .font(.footnote.weight(.semibold))
+        .font(.callout.weight(.semibold))
         .foregroundStyle(Theme.ink2)
-        .lineLimit(1)
         .accessibilityHidden(true)
     }
 }
 
-/// The English word on its phosphor band. A phrase too long for one line at the full size first
-/// tries a smaller size, then breaks into two balanced lines, each on its own band; a single long
-/// word shrinks instead. VoiceOver reads it once, as a heading, with an English voice.
+/// The English word on its phosphor band, in the theme's word style (`englishWordStyle()`: serif
+/// bold at the Large Title size, scaled with Dynamic Type). A phrase too long for one line breaks
+/// into two balanced lines, each on its own band; a word (or a half of a phrase) still too wide
+/// shrinks with the style's `minimumScaleFactor`. Never a hyphen, no tighter letter spacing.
+/// VoiceOver reads it once, as a heading, with an English voice. The feed card and the
+/// onboarding's card both use it.
 struct WordCardHeadline: View {
     let lemma: String
 
     var body: some View {
-        ViewThatFits(in: .horizontal) {
-            line(lemma, size: 40)
-            line(lemma, size: 32)
+        Group {
             if let lines = WordCardHeadline.balancedLines(lemma) {
-                VStack(alignment: .leading, spacing: 10) {
-                    line(lines.first, size: 36)
-                    line(lines.second, size: 36)
+                // Each choice is measured unshrunk: one line if it fits, else the two lines (the
+                // last choice, used regardless, so its lines shrink when they must).
+                ViewThatFits(in: .horizontal) {
+                    line(lemma)
+                    // The night band hangs below the first line: 8 pt before the second.
+                    VStack(alignment: .leading, spacing: 8) {
+                        line(lines.first)
+                        line(lines.second)
+                    }
                 }
+            } else {
+                line(lemma)
             }
         }
         .accessibilityElement(children: .ignore)
@@ -1072,9 +1093,9 @@ struct WordCardHeadline: View {
         .cardEnglishVoice()
     }
 
-    private func line(_ text: String, size: CGFloat) -> some View {
-        Text(text)
-            .englishWordStyle(size: size, maxSize: size * 1.4)
+    private func line(_ text: String) -> some View {
+        Text(verbatim: text)
+            .englishWordStyle()
             .phosphorBand()
     }
 
@@ -1109,8 +1130,9 @@ struct WordCardLockScreenNote: View {
                 .imageScale(.small)
                 .accessibilityHidden(true)
             Text("Şu an kilitli ekranda")
+                .fixedSize(horizontal: false, vertical: true)
         }
-        .font(.footnote.weight(.semibold))
+        .font(.callout.weight(.semibold))
         .foregroundStyle(Theme.ink2)
     }
 }

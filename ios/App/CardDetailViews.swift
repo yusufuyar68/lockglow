@@ -68,7 +68,8 @@ struct ExampleRow: View {
 /// "Doğru"), so the meaning never depends on color (rule 4); VoiceOver hears the underline as
 /// "Fark: did yerine had" after the heading (audit V12). `showsWhy: false` hides the
 /// explanation (the feed card's second shortening step). Everything on the box's `surface2` is
-/// `ink`: `ink2` there stays under 7:1 (ogrenme_ilkeleri 2.2, contrast).
+/// `ink`: `ink2` there stays under 7:1 (ogrenme_ilkeleri 2.2, contrast). Two text sizes: Callout
+/// for the Turkish lines (heading, labels, reason), the example's serif size for the sentences.
 struct MistakeBox: View {
     let mistake: CardDetail.Mistake
     var showsWhy = true
@@ -88,7 +89,7 @@ struct MistakeBox: View {
                     rightSentence(diff)
                 }
             } else {
-                Grid(alignment: .leadingFirstTextBaseline, horizontalSpacing: 10, verticalSpacing: 6) {
+                Grid(alignment: .leadingFirstTextBaseline, horizontalSpacing: 8, verticalSpacing: 8) {
                     GridRow {
                         tag(isRight: false)
                         wrongSentence(diff)
@@ -105,10 +106,11 @@ struct MistakeBox: View {
                     .font(.callout)
                     .foregroundStyle(Theme.ink)
                     .lineSpacing(4)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         .padding(.vertical, 12)
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
     }
@@ -121,7 +123,7 @@ struct MistakeBox: View {
                 .foregroundStyle(Theme.caution)
                 .accessibilityHidden(true)
             Text("Dikkat")
-                .font(.subheadline.weight(.bold))
+                .font(.callout.weight(.bold))
                 .foregroundStyle(Theme.ink)
         }
         .accessibilityElement(children: .combine)
@@ -154,18 +156,19 @@ struct MistakeBox: View {
     }
 
     private func tag(isRight: Bool) -> some View {
-        HStack(spacing: 3) {
+        HStack(spacing: 4) {
             Image(systemName: isRight ? "checkmark" : "xmark")
-                .font(.caption2.weight(.black))
+                .imageScale(.small)
+                .fontWeight(.black)
                 .accessibilityHidden(true)
             Text(isRight ? "Doğru" : "Yanlış")
         }
-        .font(.footnote.weight(.bold))
+        .font(.callout.weight(.bold))
         .foregroundStyle(isRight ? Theme.good : Theme.bad)
         .fixedSize()
     }
 
-    // The example's size (18 pt serif, `exampleFont`), not 16 pt (ogrenme_ilkeleri 2.2, type table).
+    // The example's size (Body serif, `exampleFont`), not Callout (ogrenme_ilkeleri 2.2, type table).
     private func wrongSentence(_ diff: MistakeDiff) -> some View {
         Text(diff.wrongText())
             .exampleFont()
@@ -422,9 +425,7 @@ struct CardWarningLine: View {
                 CardLinePartView(part: part)
             }
             if let explain = explain {
-                Button("Neden?", action: explain)
-                    .buttonStyle(ChipButtonStyle())
-                    .accessibilityHint("Açıklamayı açar")
+                CardWhyChip(action: explain)
             }
         }
         .accessibilityElement(children: .contain)
@@ -508,6 +509,22 @@ struct CardWarningLine: View {
     }
 }
 
+/// "Neden?" at the end of a warning line or of the Dikkat heading: a chip (`ChipButtonStyle`)
+/// that opens the explanation sheet. Its label is set in Callout, the size of the Turkish line it
+/// ends, so the card keeps one secondary size.
+struct CardWhyChip: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text("Neden?")
+                .font(.callout.weight(.semibold))
+        }
+        .buttonStyle(ChipButtonStyle())
+        .accessibilityHint("Açıklamayı açar")
+    }
+}
+
 /// A piece of a warning line or of the "Neden?" sheet's false friend lines.
 enum CardLinePart {
     /// Turkish text; `spoken` replaces it for VoiceOver.
@@ -521,7 +538,7 @@ enum CardLinePart {
     case symbol(String, color: Color, spoken: String)
 }
 
-/// One `CardLinePart`: 16 pt Turkish, 18 pt serif English (`exampleFont`), all in `ink` (the
+/// One `CardLinePart`: Callout Turkish, Body serif English (`exampleFont`), all in `ink` (the
 /// signs `ink2`).
 struct CardLinePartView: View {
     let part: CardLinePart
@@ -573,10 +590,12 @@ struct CardWhySheet: View {
                     }
                     if let collocations = detail?.collocations, !collocations.isEmpty {
                         section("Birlikte kullanılır") {
+                            // The examples' serif size: one size for the sheet's English text.
                             Text(verbatim: collocations.joined(separator: " · "))
-                                .font(Theme.Fonts.example)
+                                .exampleFont()
                                 .foregroundStyle(Theme.ink)
                                 .lineSpacing(4)
+                                .fixedSize(horizontal: false, vertical: true)
                                 .cardEnglishVoice()
                         }
                     }
@@ -590,7 +609,8 @@ struct CardWhySheet: View {
                         }
                     }
                 }
-                .padding(.horizontal, 20)
+                // The HIG side margin.
+                .padding(.horizontal, 16)
                 .padding(.top, 8)
                 .padding(.bottom, 32)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -663,10 +683,12 @@ struct CardWhySheet: View {
         .accessibilityElement(children: .contain)
     }
 
+    /// A section with a bold Callout heading: the size of the sheet's Turkish lines, so the sheet
+    /// keeps three text sizes (with the serif English and the navigation title).
     private func section<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
-                .font(.subheadline.weight(.bold))
+                .font(.callout.weight(.bold))
                 .foregroundStyle(Theme.ink)
                 .accessibilityAddTraits(.isHeader)
             content()

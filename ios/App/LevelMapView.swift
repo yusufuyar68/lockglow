@@ -19,7 +19,7 @@ struct LevelMapView: View {
                     .font(.body)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 24)
                 ForEach(Array(map.stops.enumerated()), id: \.element.id) { index, stop in
                     if index > 0 {
                         PathConnector()
@@ -31,11 +31,12 @@ struct LevelMapView: View {
                         topicNames: stop.nextTopicIDs.compactMap(topicName)
                     )
                 }
+                // Four sizes on the page (title, level code, body, subheadline): no footnote.
                 Text("Başlangıç seviyeni Ayarlar'dan değiştirebilirsin.")
-                    .font(.footnote)
+                    .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.top, 20)
+                    .padding(.top, 24)
             }
             .padding(.horizontal, 16)
             .padding(.top, 8)
@@ -73,7 +74,7 @@ struct LevelMapLinkLabel: View {
                     .font(.body.weight(.semibold))
                     .foregroundStyle(Theme.ink)
                 Text("Seviyeler ve sıradaki konular")
-                    .font(.footnote)
+                    .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
             }
             .fixedSize(horizontal: false, vertical: true)
@@ -83,7 +84,7 @@ struct LevelMapLinkLabel: View {
                 .foregroundStyle(Theme.ink3)
                 .accessibilityHidden(true)
         }
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
         .contentShape(Rectangle())
@@ -120,13 +121,13 @@ private struct LevelStopCard: View {
             .accessibilityLabel(Text(verbatim: countText.replacingOccurrences(of: " · ", with: ". ")))
             if stop.everyWordMet {
                 Text("Bu seviyenin tüm kelimeleriyle tanıştın. Tekrarlar sürüyor.")
-                    .font(.footnote)
+                    .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             } else if !topicNames.isEmpty {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(isCurrent ? "Sırada" : "Bu seviyenin konuları")
-                        .font(.footnote.weight(.semibold))
+                        .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.ink2)
                     Text(verbatim: topicNames.joined(separator: ", "))
                         .font(.body)
@@ -176,10 +177,10 @@ private struct LevelStopCard: View {
                     .fixedSize(horizontal: false, vertical: true)
                 if isCurrent || isStart {
                     Text(verbatim: badgeText)
-                        .font(.footnote.weight(.semibold))
+                        .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.ink)
                         .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
+                        .padding(.vertical, 4)
                         .overlay(Capsule().strokeBorder(Theme.lineStrong, lineWidth: 1.5))
                         .fixedSize(horizontal: false, vertical: true)
                 }

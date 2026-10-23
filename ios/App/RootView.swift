@@ -508,7 +508,7 @@ struct SystemCardSheet: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 24) {
                 HStack(alignment: .top, spacing: 12) {
                     Image(systemName: symbol)
                         .font(.title2)
@@ -537,8 +537,9 @@ struct SystemCardSheet: View {
                 }
                 buttons
             }
-            .padding(.horizontal, 20)
-            .padding(.top, 28)
+            // HIG margins: 16 pt at the sides, on the 8 pt grid.
+            .padding(.horizontal, 16)
+            .padding(.top, 24)
             .padding(.bottom, 16)
             .onGeometryChange(for: CGFloat.self) { geometry in
                 geometry.size.height
@@ -563,7 +564,7 @@ struct SystemCardSheet: View {
 
     @ViewBuilder
     private var buttons: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             switch card {
             case .progressRecovered:
                 Button("Anladım") {

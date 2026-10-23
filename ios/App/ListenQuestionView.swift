@@ -138,9 +138,11 @@ struct ListenQuestionView: View {
             speaker.toggle(question.answer)
         } label: {
             rowLayout {
+                // The glyph stops growing at xxxLarge, so it stays inside its 64 pt circle.
                 Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
                     .font(.title.weight(.semibold))
                     .foregroundStyle(Theme.ink)
+                    .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                     .frame(width: 64, height: 64)
                     .background(Theme.surface2, in: Circle())
                     .overlay {
@@ -352,8 +354,9 @@ struct ReviewAnswerActions: View {
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
                 .keyboardShortcut(AnswerKeys.main)
                 .accessibilityValue(returnValue(for: .right))
+                // Subheadline, as the screen's other small lines (one size fewer).
                 Text("Zor muydu, kolay mı?")
-                    .font(.footnote.weight(.medium))
+                    .font(.subheadline.weight(.medium))
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.center)
                     .padding(.top, 2)
@@ -395,7 +398,7 @@ struct ReviewAnswerActions: View {
                 } icon: {
                     Image(systemName: "clock")
                 }
-                .font(.footnote.weight(.medium))
+                .font(.subheadline.weight(.medium))
                 .foregroundStyle(Theme.ink2)
                 .multilineTextAlignment(.center)
             }
@@ -459,13 +462,14 @@ struct ReviewOptionMark {
         return nil
     }
 
+    /// Subheadline like the screen's other small lines (one size fewer).
     var label: some View {
         HStack(spacing: 4) {
             Image(systemName: symbol)
                 .font(.body.weight(.semibold))
                 .accessibilityHidden(true)
             Text(text)
-                .font(.footnote.weight(.bold))
+                .font(.subheadline.weight(.bold))
         }
         .foregroundStyle(color)
         .fixedSize()
@@ -494,7 +498,8 @@ struct ReviewVerdictLine: View {
 
 /// A feedback line "lead word = meaning" ("Doğrusu: borrow = ödünç almak", "Senin seçtiğin: lend =
 /// ödünç vermek"): the word in bold serif, the meaning in the UI face; only "lead word" without a
-/// meaning. `isVerdict`: the bold first line with a light bulb; `isSecondary`: smaller, in ink2.
+/// meaning. Body (the verdict's size, regular, so it never outranks it); `isVerdict`: the bold
+/// first line with a light bulb; `isSecondary`: Subheadline, in ink2.
 /// VoiceOver reads it in parts, the English word in an English voice (`FeedbackSpeech`).
 struct ReviewWordLine: View {
     var lead: String?
@@ -505,7 +510,7 @@ struct ReviewWordLine: View {
 
     /// The line as one `Text`, so it wraps as a sentence.
     private var line: Text {
-        let textStyle: Font.TextStyle = isSecondary ? .subheadline : (isVerdict ? .body : .callout)
+        let textStyle: Font.TextStyle = isSecondary ? .subheadline : .body
         let word: Text = Text(verbatim: lemma)
             .font(.system(textStyle, design: .serif).weight(.bold))
             .foregroundStyle(Theme.ink)
@@ -536,7 +541,7 @@ struct ReviewWordLine: View {
                 .foregroundStyle(Theme.ink)
             } else {
                 line
-                    .font(isSecondary ? .subheadline : .callout)
+                    .font(isSecondary ? .subheadline : .body)
                     .foregroundStyle(isSecondary ? Theme.ink2 : Theme.ink)
             }
         }

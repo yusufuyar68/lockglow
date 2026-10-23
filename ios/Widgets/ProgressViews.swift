@@ -13,7 +13,10 @@ import SharedState
 /// a white arc for the words recalled today. In the middle a book; once a word is done, a small
 /// book over the counter "3/5" (the done words white, "/5" gray, as in the app); a check once the
 /// goal is met. No "0": before the first word the ring is the track and the book. The family is
-/// 72 x 72 pt (68 x 68 on an iPhone SE); its sizes are fixed (the counter is at most "19/20").
+/// 72 x 72 pt (68 x 68 on an iPhone SE). Its type is Apple's text styles (the counter `.callout`
+/// bold, 16 pt; the small book `.caption`, the symbol alone `.title2`): they follow smaller text
+/// sizes and stop growing at the default size, where the ring's middle still holds the widest
+/// counter ("19/20").
 struct ProgressCircularView: View {
     let entry: ProgressEntry
     private var colors: WidgetColors { WidgetColors.lockScreen }
@@ -37,7 +40,7 @@ struct ProgressCircularView: View {
             if let counter = ProgressText.goalCounter(entry.status) {
                 VStack(spacing: 1) {
                     Image(systemName: "character.book.closed")
-                        .font(.system(size: 12, weight: .semibold))
+                        .font(.caption.weight(.semibold))
                         .foregroundStyle(colors.ink2)
                     HStack(alignment: .firstTextBaseline, spacing: 0) {
                         Text(verbatim: counter.done)
@@ -46,18 +49,20 @@ struct ProgressCircularView: View {
                         Text(verbatim: counter.goal)
                             .foregroundStyle(colors.ink2)
                     }
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.callout.weight(.bold))
                     .monospacedDigit()
                     .lineLimit(1)
                     .fixedSize()
                 }
             } else {
                 Image(systemName: ProgressText.goalSymbol(entry.status))
-                    .font(.system(size: 22, weight: .semibold))
+                    .font(.title2.weight(.semibold))
                     .foregroundStyle(colors.ink)
                     .widgetAccentable()
             }
         }
+        // The ring does not grow with the text size: its middle holds "19/20" at the default size.
+        .dynamicTypeSize(...DynamicTypeSize.large)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: ProgressText.goalSpoken(entry.status)))

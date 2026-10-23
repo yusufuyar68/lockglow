@@ -11,7 +11,9 @@ import Learning
 /// an always-visible 46 pt segment (`SegmentButtons`) under a question ("Günde kaç yeni
 /// kelime?") with a short, concrete footnote ("bir ayda yaklaşık 300 kelime"), never a menu or a
 /// 32 pt segmented picker, and every row exists without scrolling a lazy list (the UI tests look
-/// rows up by label).
+/// rows up by label). The groups follow iOS's inset grouped list: 16 pt page margins, 44 pt rows
+/// with a 16 pt inset, headers (`.subheadline` semibold) and footnotes (`.footnote`), both in
+/// `ink2` and aligned with the row text.
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
     /// "Tekrar'a git" on the empty library ("Kitaplığın ve bu hafta"): RootView opens "Tekrar".
@@ -30,7 +32,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 28) {
+                VStack(alignment: .leading, spacing: 24) {
                     recoverySection
                     widgetSection
                     learningSection
@@ -241,7 +243,7 @@ struct SettingsView: View {
                     }
                     .buttonStyle(SettingsRowButtonStyle())
                 }
-                .padding(.top, 4)
+                .padding(.top, 8)
             }
             Group {
                 if model.newWordsComeFromAllTopics {
@@ -254,10 +256,10 @@ struct SettingsView: View {
             // is5-seviye: the level test (PlacementTestView.swift); its result sets the level.
             // Below the footnote, so the "Konular" row keeps its place for the UI test.
             PlacementTestSettingsRow()
-                .padding(.top, 4)
+                .padding(.top, 8)
 
             SettingsQuestion("Günde kaç yeni kelime?")
-                .padding(.top, 12)
+                .padding(.top, 8)
             SegmentButtons(
                 options: AppPreferences.dailyNewWordChoices.map { count in
                     SegmentOption(value: count, title: "\(count)")
@@ -275,7 +277,7 @@ struct SettingsView: View {
                 }
                 .buttonStyle(SettingsRowButtonStyle())
             }
-            .padding(.top, 12)
+            .padding(.top, 8)
         }
     }
 
@@ -385,7 +387,7 @@ struct SettingsView: View {
                 }
                 if isReminderPaused && !notificationsDenied {
                     SettingsDivider()
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text("Bir hafta bakılmadığı için hatırlatmaları duraklattık.")
                             .font(.subheadline)
                             .foregroundStyle(Theme.ink2)
@@ -399,11 +401,11 @@ struct SettingsView: View {
                         }
                         .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
                     }
-                    .padding(14)
+                    .padding(16)
                 }
                 if notificationsDenied {
                     SettingsDivider()
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text("Bildirimlere izin verilmemiş. iPhone Ayarları'nda Lockglow için bildirimleri aç.")
                             .font(.subheadline)
                             .foregroundStyle(Theme.ink2)
@@ -417,7 +419,7 @@ struct SettingsView: View {
                         }
                         .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
                     }
-                    .padding(14)
+                    .padding(16)
                 }
             }
             // The reminder carries a word, not counts (`Learning/ReminderText`). The week-long
@@ -439,13 +441,13 @@ struct SettingsView: View {
             SettingsSectionHeader("İlerleme")
             VStack(spacing: 16) {
                 tileLayout {
-                    ProgressTile(value: counts.known, caption: "bildiğin kelime", isStacked: dynamicTypeSize.isAccessibilitySize)
-                    ProgressTile(value: counts.learning, caption: "öğrenme listende", isStacked: dynamicTypeSize.isAccessibilitySize)
-                    ProgressTile(value: counts.dueToday, caption: "bugün tekrar edilecek", isStacked: dynamicTypeSize.isAccessibilitySize)
+                    ProgressTile(value: counts.known, caption: "bildiğin kelime")
+                    ProgressTile(value: counts.learning, caption: "öğrenme listende")
+                    ProgressTile(value: counts.dueToday, caption: "bugün tekrar edilecek")
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 if !levels.isEmpty {
-                    VStack(spacing: 10) {
+                    VStack(spacing: 8) {
                         ForEach(levels) { item in
                             LevelProgressRow(item: item)
                         }
@@ -598,12 +600,12 @@ struct SettingsView: View {
     @ViewBuilder
     private var recoverySection: some View {
         if let outcome = model.progressRecovery {
-            HStack(alignment: .top, spacing: 10) {
+            HStack(alignment: .top, spacing: 8) {
                 Image(systemName: "exclamationmark.triangle.fill")
                     .font(.title3)
                     .foregroundStyle(Theme.caution)
                     .accessibilityHidden(true)
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 8) {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(verbatim: SystemCardSheet.recoveryTitle)
                             .font(.subheadline.weight(.semibold))
@@ -621,7 +623,7 @@ struct SettingsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(.vertical, 12)
-            .padding(.horizontal, 14)
+            .padding(.horizontal, 16)
             .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: Theme.Radius.choice, style: .continuous)
@@ -646,22 +648,20 @@ private struct LevelProgress: Identifiable {
 private struct ProgressTile: View {
     let value: Int
     let caption: String
-    /// The tiles stand one under another (accessibility text sizes).
-    var isStacked = false
-    @ScaledMetric(relativeTo: .title) private var numberSize: CGFloat = 26
 
     var body: some View {
-        VStack(spacing: 3) {
+        VStack(spacing: 4) {
             Text(verbatim: "\(value)")
-                // Grows with the text size, but not past 34 pt while three tiles share one row;
-                // stacked, it keeps growing, so it is never smaller than its caption (audit D10).
-                .font(.system(size: isStacked ? numberSize : min(numberSize, 34), weight: .bold))
+                // `.title` (28 pt) grows with the text size: at most 34 pt (xxxLarge) while three
+                // tiles share one row; at the accessibility sizes the tiles stand one under
+                // another and it keeps growing, so it is never smaller than its caption (audit D10).
+                .font(.title.weight(.bold))
                 .monospacedDigit()
                 .foregroundStyle(Theme.ink)
                 .lineLimit(1)
                 .minimumScaleFactor(0.6)
             Text(verbatim: caption)
-                .font(.caption.weight(.medium))
+                .font(.footnote.weight(.medium))
                 .foregroundStyle(Theme.ink2)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
@@ -685,8 +685,8 @@ private struct LevelProgressRow: View {
     var body: some View {
         Group {
             if dynamicTypeSize.isAccessibilitySize {
-                VStack(alignment: .leading, spacing: 6) {
-                    HStack(spacing: 10) {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 8) {
                         code
                         Spacer(minLength: 0)
                         count
@@ -694,7 +694,7 @@ private struct LevelProgressRow: View {
                     bar
                 }
             } else {
-                HStack(spacing: 10) {
+                HStack(spacing: 8) {
                     code
                     bar
                     count
@@ -714,7 +714,7 @@ private struct LevelProgressRow: View {
 
     private var count: some View {
         Text(verbatim: "\(item.known) / \(item.total)")
-            .font(.caption.weight(.medium))
+            .font(.footnote.weight(.medium))
             .monospacedDigit()
             .foregroundStyle(Theme.ink2)
     }
@@ -745,6 +745,7 @@ private struct LevelProgressRow: View {
 // MARK: - Settings components (also used by "Widget sağlığı")
 
 /// A group heading (mockup `.sgroup > h3`): sentence case, never upper-cased, a VoiceOver heading.
+/// Inset 16 pt like the row text below it (iOS inset grouped list headers).
 struct SettingsSectionHeader: View {
     let title: String
 
@@ -757,7 +758,8 @@ struct SettingsSectionHeader: View {
             .font(.subheadline.weight(.semibold))
             .foregroundStyle(Theme.ink2)
             .textCase(nil)
-            .padding(.horizontal, 4)
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.horizontal, 16)
             .accessibilityAddTraits(.isHeader)
     }
 }
@@ -776,8 +778,8 @@ struct SettingsQuestion: View {
             .foregroundStyle(Theme.ink)
             .textCase(nil)
             .fixedSize(horizontal: false, vertical: true)
-            .padding(.horizontal, 4)
-            .padding(.top, 6)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
             .accessibilityAddTraits(.isHeader)
     }
 }
@@ -800,9 +802,9 @@ struct SettingsGroup<Content: View>: View {
     }
 }
 
-/// A hairline between the rows of a group, inset like iOS lists.
+/// A hairline between the rows of a group, inset like iOS lists (16 pt, the row text's inset).
 struct SettingsDivider: View {
-    var inset: CGFloat = 14
+    var inset: CGFloat = 16
 
     var body: some View {
         Rectangle()
@@ -813,8 +815,9 @@ struct SettingsDivider: View {
     }
 }
 
-/// One row of a group (mockup `.row`): at least 52 pt, a title (with an optional icon), a value
-/// in `ink2` and a chevron. Title and value share one line while both fit on it; otherwise (an
+/// One row of a group (mockup `.row`): at least 44 pt (an iOS list row, `Theme.minHitSize`) with
+/// a 16 pt inset, a title (with an optional icon), a value in `ink2` and a chevron in `ink3`.
+/// Title and value share one line while both fit on it; otherwise (an
 /// iPhone SE with a long value, large and accessibility text sizes) the value moves under the
 /// title instead of squeezing the title into two lines.
 struct SettingsRow<Value: View>: View {
@@ -856,9 +859,9 @@ struct SettingsRow<Value: View>: View {
                     .accessibilityHidden(true)
             }
         }
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .padding(.vertical, 8)
-        .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+        .frame(maxWidth: .infinity, minHeight: Theme.minHitSize, alignment: .leading)
         .contentShape(Rectangle())
     }
 
@@ -941,7 +944,7 @@ struct WidgetHealthBadge: View {
     }
 
     private func badge(_ title: String, systemImage: String, color: Color) -> some View {
-        HStack(spacing: 5) {
+        HStack(spacing: 4) {
             Image(systemName: systemImage)
                 .accessibilityHidden(true)
             Text(verbatim: title)
@@ -966,19 +969,22 @@ extension View {
             .foregroundStyle(Theme.ink)
     }
 
-    /// Padding of a row that is a control itself (a switch, a time picker): 52 pt high.
+    /// Padding of a row that is a control itself (a switch, a time picker): at least 44 pt high
+    /// (an iOS list row), 16 pt inset like `SettingsRow`.
     func settingsRowPadding() -> some View {
-        padding(.horizontal, 14)
+        padding(.horizontal, 16)
             .padding(.vertical, 6)
-            .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+            .frame(maxWidth: .infinity, minHeight: Theme.minHitSize, alignment: .leading)
     }
 
-    /// The explanation under a group (mockup `.foot-t`): footnote, `ink2`.
-    func settingsFootnote() -> some View {
+    /// The explanation under a group (mockup `.foot-t`, an iOS section footer): footnote, `ink2`,
+    /// inset 16 pt like the row text above it. `inset: 0` where it is not under a group (inside a
+    /// card or a sheet whose other text is not inset).
+    func settingsFootnote(inset: CGFloat = 16) -> some View {
         font(.footnote)
             .foregroundStyle(Theme.ink2)
             .fixedSize(horizontal: false, vertical: true)
-            .padding(.horizontal, 6)
+            .padding(.horizontal, inset)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

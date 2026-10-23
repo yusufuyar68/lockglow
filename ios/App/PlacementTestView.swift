@@ -130,7 +130,7 @@ struct PlacementTestSheet: View {
             topBar
             ScrollView {
                 content
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 16)
                     .padding(.top, 8)
                     .padding(.bottom, 24)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -182,8 +182,8 @@ struct PlacementTestSheet: View {
                 .buttonStyle(GlowButtonStyle())
                 .disabled(model.contentSource == .loading)
                 .accessibilityIdentifier("placement.start")
-                .padding(.horizontal, 20)
-                .padding(.vertical, 10)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
                 .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         case .asking:
             Button {
@@ -194,8 +194,8 @@ struct PlacementTestSheet: View {
             .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50, tonal: true))
             .disabled(picked != nil || question == nil)
             .accessibilityIdentifier("placement.unsure")
-            .padding(.horizontal, 20)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         case .result:
             Button("Tamam") {
@@ -203,8 +203,8 @@ struct PlacementTestSheet: View {
             }
             .buttonStyle(GlowButtonStyle())
             .accessibilityIdentifier("placement.done")
-            .padding(.horizontal, 20)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         }
     }
@@ -235,7 +235,7 @@ struct PlacementTestSheet: View {
     }
 
     private var intro: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             Text("Seviye testi")
                 .font(.largeTitle.weight(.bold))
                 .foregroundStyle(Theme.ink)
@@ -255,7 +255,7 @@ struct PlacementTestSheet: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .cardSurface()
             if model.contentSource == .loading {
-                HStack(spacing: 10) {
+                HStack(spacing: 8) {
                     ProgressView()
                     Text("Kelimeler hazırlanıyor…")
                         .font(.body)
@@ -281,10 +281,10 @@ struct PlacementTestSheet: View {
                 PlacementHeadline(lemma: question.prompt)
                 CardListenCapsule(text: question.prompt, accessibilityName: "Kelimeyi dinle")
             }
-            .padding(18)
+            .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
             .cardSurface()
-            VStack(spacing: 10) {
+            VStack(spacing: 8) {
                 ForEach(question.options, id: \.self) { option in
                     optionButton(option)
                 }
@@ -304,8 +304,8 @@ struct PlacementTestSheet: View {
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 10)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
                 .frame(maxWidth: .infinity, minHeight: 56)
                 .background(Theme.surface, in: shape)
                 .overlay(shape.strokeBorder(isPicked ? Theme.tint : Theme.lineStrong, lineWidth: isPicked ? 2.5 : 1.5))
@@ -403,16 +403,17 @@ private struct IntroLine: View {
     }
 }
 
-/// The test word at 36 pt (smaller when it does not fit), serif with the band under it.
+/// The test word in the theme's word style (Large Title, 34 pt), the Title 1 size (28 pt) when it
+/// does not fit; a long phrase wraps at the Title 1 size. Serif with the band under it.
 private struct PlacementHeadline: View {
     let lemma: String
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
-            line(size: 36, maxSize: 52)
-            line(size: 26, maxSize: 38)
+            line(size: 34, maxSize: 56)
+            line(size: 28, maxSize: 46)
             Text(verbatim: lemma)
-                .font(Theme.Fonts.englishWord(size: 26))
+                .font(.system(.title, design: .serif).weight(.bold))
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -441,9 +442,10 @@ private struct PlacementResultView: View {
             Text("Başlangıç seviyen")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.ink2)
-            HStack(alignment: .center, spacing: 14) {
+            HStack(alignment: .center, spacing: 16) {
+                // The screen's big number: Large Title bold (Dynamic Type), default design.
                 Text(verbatim: level.rawValue)
-                    .font(.system(size: 56, weight: .bold))
+                    .font(.largeTitle.weight(.bold))
                     .foregroundStyle(Theme.ink)
                     .dynamicTypeSize(...DynamicTypeSize.accessibility2)
                 HStack(spacing: 5) {
@@ -469,11 +471,12 @@ private struct PlacementResultView: View {
                 .foregroundStyle(Theme.ink)
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
-            VStack(alignment: .leading, spacing: 6) {
+            // Subheadline like the label at the top: the page keeps four sizes.
+            VStack(alignment: .leading, spacing: 8) {
                 Text("Testteki kelimeler bildiğin kelimelere eklenmedi.")
                 Text("Seviyeni Ayarlar'dan istediğin zaman değiştirebilirsin.")
             }
-            .font(.footnote)
+            .font(.subheadline)
             .foregroundStyle(Theme.ink2)
             .fixedSize(horizontal: false, vertical: true)
         }

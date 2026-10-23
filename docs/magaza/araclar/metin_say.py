@@ -1,6 +1,6 @@
 """Mağaza metinlerinin uzunluğunu ve anahtar kelime kurallarını denetler.
 
-`kayit_metinleri_tr.md` ve `kayit_metinleri_en.md` içindeki alanları (her başlığın altındaki ilk
+`kayit_metinleri_tr.md`, `_en.md`, `_de.md` ve `_nl.md` içindeki alanları (her başlığın altındaki ilk
 ```text bloğu) okur; Apple sınırlarıyla karşılaştırır:
 
     python -X utf8 docs/magaza/araclar/metin_say.py
@@ -32,6 +32,9 @@ ALANLAR = {
         "Keywords": ("anahtar", 100, "bayt"),
     },
 }
+# Almanca ve Felemenkçe dosyalar İngilizce dosyanın başlıklarını kullanır.
+ALANLAR["kayit_metinleri_de.md"] = ALANLAR["kayit_metinleri_en.md"]
+ALANLAR["kayit_metinleri_nl.md"] = ALANLAR["kayit_metinleri_en.md"]
 
 
 def bloklar(metin):

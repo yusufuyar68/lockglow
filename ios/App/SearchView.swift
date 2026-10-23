@@ -51,6 +51,8 @@ struct SearchView: View {
                     .ignoresSafeArea()
             }
             .navigationTitle("Sözlük")
+            // A tab's root: the large title (HIG), with the search field under it.
+            .navigationBarTitleDisplayMode(.large)
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "İngilizce ya da Türkçe kelime")
             .sozlukSearchFocus {
                 path = NavigationPath()
@@ -415,7 +417,7 @@ private struct SearchResultLink: View {
             return nil
         }
         var line = AttributedString("Ayrıca: ")
-        line.append(SearchHighlight.attributed(joined, marking: match.ranges, hitFont: Font.caption.weight(.heavy)))
+        line.append(SearchHighlight.attributed(joined, marking: match.ranges, hitFont: Font.footnote.weight(.heavy)))
         return line
     }
 }
@@ -539,6 +541,8 @@ private struct FoldedText {
 
 /// An empty list (mockup `.empty`): an icon in a soft circle, a title, a sentence whose examples
 /// are bold, and optionally a tip after a light bulb. Used by "Sözlük" and "Bildiğin kelimeler".
+/// Three text sizes: Title 2, Subheadline (the size of the chips around it: "Dene", the filter,
+/// "Tümünü göster") and Footnote.
 struct WordListEmptyState: View {
     let systemImage: String
     let title: String
@@ -549,7 +553,7 @@ struct WordListEmptyState: View {
 
     var body: some View {
         let circle = min(circleSize, 120)
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             Image(systemName: systemImage)
                 .font(.system(size: circle * 0.45))
                 .foregroundStyle(Theme.ink2)
@@ -562,7 +566,7 @@ struct WordListEmptyState: View {
                 .foregroundStyle(Theme.ink)
                 .accessibilityAddTraits(.isHeader)
             Text(message)
-                .font(.callout)
+                .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
                 .lineSpacing(2)
             if let tip = tip {
@@ -577,8 +581,8 @@ struct WordListEmptyState: View {
             }
         }
         .multilineTextAlignment(.center)
-        .padding(.horizontal, 28)
-        .padding(.vertical, 26)
+        .padding(.horizontal, 24)
+        .padding(.vertical, 24)
         .frame(maxWidth: .infinity)
     }
 

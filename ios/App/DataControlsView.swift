@@ -28,11 +28,13 @@ struct DataControlsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
                 Text("Verilerin bu telefonda durur. iCloud ile eşitle açıksa iCloud hesabında da durur. Buradan bir kopyasını alabilir, başka telefona taşıyabilir ya da hepsini silebilirsin.")
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
+                    // Inset like the headers and footnotes below (the row text of the groups).
+                    .padding(.horizontal, 16)
                 exportSection
                 importSection
                 eraseSection
@@ -136,7 +138,7 @@ struct DataControlsView: View {
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.horizontal, 6)
+                    .padding(.horizontal, 16)
             }
             Text("Başka telefondan aldığın yedek dosyasını seç. İkisi birleşir. Bir kelime iki yerde de varsa daha çok cevap verdiğin kayıt kalır. Ayarlar ve ölçümler bu telefondaki gibi kalır.")
                 .settingsFootnote()
@@ -236,7 +238,7 @@ private struct ImportConfirmationSheet: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 8) {
                     if let date = summary.exportedAt {
                         Text(verbatim: "Yedeğin tarihi: \(date.formatted(.dateTime.day().month(.wide).year().locale(Locale(identifier: "tr_TR"))))")
                             .font(.subheadline.weight(.semibold))
@@ -249,15 +251,16 @@ private struct ImportConfirmationSheet: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     Text("Bu telefondaki kelimelerin kalır. İki yerde de olan kelimede daha çok cevaplı kayıt seçilir.")
-                        .settingsFootnote()
-                        .padding(.top, 4)
+                        // Not under a group: as far left as the lines above.
+                        .settingsFootnote(inset: 0)
+                        .padding(.top, 8)
                     Button("İçe aktar", action: confirm)
                         .buttonStyle(PrimaryCapsuleButtonStyle())
                         .padding(.top, 8)
                         .disabled(summary.changesNothing)
                     if summary.changesNothing {
                         Text("Bu yedekteki her şey bu telefonda zaten var.")
-                            .settingsFootnote()
+                            .settingsFootnote(inset: 0)
                     }
                 }
                 .padding(16)

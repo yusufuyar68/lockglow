@@ -71,30 +71,34 @@
 
 ## Kimlik: fosfor şeridi
 
-Lockglow "kilit ekranında parlayan kelime" demek. Türkçede "fosforlu kalem" zaten ışıyan kalemdir. Sarı yalnız **öğrenilecek İngilizce kelimede** durur; geri kalan her şey kâğıt ve mürekkep.
+Lockglow "kilit ekranında parlayan kelime" demek. Türkçede "fosforlu kalem" zaten ışıyan kalemdir. Sarı yalnız **öğrenilecek İngilizce kelimede** durur; geri kalan her şey Apple'ın sistem renkleri: gri sayfa, beyaz kart, siyah yazı (gece siyah sayfa, beyaz yazı).
 
 - **Gündüz:** şerit kelimenin alt yarısının arkasındadır (fosforlu kalem çizgisi). Ana düğme mürekkeptir.
-- **Gece:** şerit harflerin arkasından çıkar ve kuyruklu harflerin (y, p, g) de altından geçen, eğik uçlu, hafif ışıyan kalın bir çizgi olur. Hiçbir harf sarının üstüne binmez. Ana düğme fosfor sarısıdır.
+- **Gece:** şerit harflerin arkasından çıkar ve kuyruklu harflerin (y, p, g) de altından geçen, eğik uçlu, hafif ışıyan kalın bir çizgi olur. Hiçbir harf sarının üstüne binmez. Ana düğme sarı değildir: soluk beyaz dolgu, 2 pt beyaz kenar, kalın yazı (gece_oled.md, C).
 - **Seçili öğeler:** sekme, adım çubuğu, ilerleme, seçili seçenek gece de mürekkep (açık renk) kalır, sarı olmaz.
 
 | Ad | Token | Açık | Koyu | Kullanım | Kontrast (açık / koyu) |
 |---|---|---|---|---|---|
-| Fosfor şeridi | `band` | `#F5E829` | `#E9E040` (alt çizgi) | Yalnız İngilizce kelime ve örnekteki aynı kelime | mürekkep 14:1 |
-| Mürekkep | `ink` | `#15181B` | `#F3F4F0` | Ana yazı | 17,8 / 15,5 |
-| İkincil / üçüncül yazı | `ink2` / `ink3` | `#4E555B` / `#626A71` | `#B7BDC2` / `#8E959B` | Çeviri, IPA, açıklama / yardımcı | 7,6 / 9,0 ; 5,5 / 5,6 |
-| Ana düğme | `primary` / `onPrimary` | `#15181B` / `#FFFFFF` | `#E9E040` / `#15181B` | Ekranın tek dolu düğmesi | 17,8 / 12,9 |
-| Seçili, ilerleme | `tint` / `tintSoft` | `#15181B` / mürekkep %8 | `#F3F4F0` / beyaz %10 | Seçili sekme ve seçenek, adım çubuğu, ilerleme | — |
-| Zemin | `bg`, `surface`, `surface2`, `surface3` | `#F3F3EE`, `#FFFFFF`, `#EBEBE4`, `#DEDED6` | `#0D0F11`, `#191C20`, `#24282D`, `#30353B` | Sayfa, kart, kapsül, iz | — |
-| Çizgi | `line` / `lineStrong` | mürekkep %10 / %22 | beyaz %9 / %18 | Ayırıcı, kenar | — |
-| Doğru | `good` / `goodTint` | `#17703F` / `#DFF2E6` | `#5BD08F` / %16 | Doğru şık, "Çalışıyor" | 4,6 / 6,4 |
-| Yanlış | `bad` / `badTint` | `#B3261E` / `#FBE5E2` | `#FF8C80` / %16 | Yanlış şık, sıfırla | 5,4 / 5,7 |
-| Uyarı | `caution` | `#8F5600` | `#FF9E5A` | Yalnız Dikkat üçgeni | 5,0 / 7,3 |
+| Fosfor şeridi | `band` | `#F5E829` | `#E9E040` (alt çizgi) | Yalnız İngilizce kelime ve örnekteki aynı kelime | mürekkep 16,5:1 |
+| Mürekkep (label) | `ink` | `#000000` | `#FFFFFF` | Ana yazı | 16,7 / 13,9 |
+| İkincil / üçüncül yazı (secondaryLabel / tertiaryLabel) | `ink2` / `ink3` | `#3C3C43` / `#636366` | `#C7C7CC` / `#98989D` | Çeviri, IPA, açıklama / yardımcı | 8,7 / 8,3 ; 4,8 / 4,9 |
+| Ana düğme | `primary` / `onPrimary` | `#000000` / `#FFFFFF` | beyaz %12 + 2 pt beyaz kenar / `#FFFFFF` | Ekranın tek ana düğmesi | 21 / 11,9 |
+| Seçili, ilerleme (tek vurgu rengi) | `tint` / `tintSoft` | `#000000` / siyah %8 | `#FFFFFF` / beyaz %10 | Seçili sekme ve seçenek, adım çubuğu, ilerleme | — |
+| Zemin | `bg`, `surface`, `surface2`, `surface3` | `#F2F2F7` (systemGroupedBackground), `#FFFFFF`, `#E5E5EA` (systemGray5), `#D1D1D6` (systemGray4) | `#000000`, `#1C1C1E`, `#2C2C2E`, `#3A3A3C` | Sayfa, kart ve gruplu liste, kapsül, iz | — |
+| Çizgi | `line` / `lineStrong` | separator (`#3C3C43` %29) / siyah %52 | separator (`#545458` %65) / beyaz %42 | Ayırıcı, kenar | kenar 3,4 / 3,3 |
+| Doğru | `good` / `goodTint` | `#1E7433` / `#E4EEE7` | `#30D158` / %16 | Doğru şık, "Çalışıyor" | 4,6 / 6,2 |
+| Yanlış | `bad` / `badTint` | `#CE0014` / `#F9E0E3` | `#FF6961` / %16 | Yanlış şık, sıfırla | 4,6 / 4,8 |
+| Uyarı | `caution` / `cautionTint` | `#BE3100` / `#F6E2DB` | `#FF9F0A` / `#3C2E1B` | Yalnız Dikkat üçgeni, "Neredeyse!" | 4,6 / 6,4 |
+
+- **2026-10-24:** renkler Apple'ın anlamsal renklerine geçti (sistem gruplu zemin, label kademesi, separator, tek vurgu rengi). Eski değerler (`#F3F3EE` kâğıt, `#15181B` mürekkep…) ve hesap: [`../denetim/kontrast_tema_2026-10-22.md`](../denetim/kontrast_tema_2026-10-22.md) (en üstteki bölüm).
+- **Kontrast sütunu:** yazının `bg`, `surface` ve `surface2` üstündeki en düşük oranı (Doğru, Yanlış, Uyarı için kendi panelleri de dahil); çizgide kenarın en kötü dolgu ve komşu eşleşmesi. Yüksek Kontrast değerleri `LockglowTheme.swift`'te.
+- Doğru, Yanlış ve Uyarı gündüz Apple'ın erişilebilir yeşil, kırmızı ve turuncusunun 4,5:1'i tutan en yakın koyusudur.
 
 **Yazı** (ikisi de iOS'ta hazır, lisans gerekmez):
 
 | Rol | Boyut | SwiftUI |
 |---|---|---|
-| Kelime (İngilizce) | 40 pt bold, serif | `.system(size: 40, weight: .bold, design: .serif)` + `@ScaledMetric(relativeTo: .largeTitle)`, `.lineLimit(1)` + `.minimumScaleFactor(0.6)` |
+| Kelime (İngilizce) | 34 pt bold, serif (Large Title) | `englishWordStyle()`: `.system(size: 34, weight: .bold, design: .serif)` + `@ScaledMetric(relativeTo: .largeTitle)`, `.lineLimit(1)` + `.minimumScaleFactor(0.6)` (2026-10-24'e kadar 40 pt) |
 | Türkçe anlam | 28 pt bold | `.title.weight(.bold)` |
 | Tanım (İngilizce) | 20 pt | `.title3` + `.fontDesign(.serif)` |
 | Örnek (İngilizce) / Türkçesi | 17 / 16 pt | `.body` serif, italik yok / `.callout` + ink2 |
@@ -110,7 +114,7 @@ Lockglow "kilit ekranında parlayan kelime" demek. Türkçede "fosforlu kalem" z
 
 ## Altı kural
 
-1. **Şerit = öğrenilecek kelime.** Sarı yalnız kelimenin şeridinde ve örnekteki aynı kelimede olur. Gece ana düğme de sarıdır. Arama eşleşmesi ve Dikkat farkı sarı değil, kalın ve çizgilidir. Seçili öğeler mürekkeptir.
+1. **Şerit = öğrenilecek kelime.** Sarı yalnız kelimenin şeridinde ve örnekteki aynı kelimede olur. Gece ana düğme de sarı değildir. Arama eşleşmesi ve Dikkat farkı sarı değil, kalın ve çizgilidir. Seçili öğeler mürekkeptir.
 2. **Kapsül = dokunulur.** Dokunulan her şey dolu ya da kenarlı bir kapsüldür. Mavi bağlantı rengi yoktur.
 3. **Yazı tipi dili gösterir.** İngilizce serif, Türkçe ve arayüz SF Pro. Üçüncü bir aile (ör. SF Rounded) yok.
 4. **Renk tek başına anlam taşımaz.** Doğru ve yanlış hep simge ve kelimeyle gösterilir; seviye rozetinde nokta sayısı vardır.

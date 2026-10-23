@@ -45,9 +45,8 @@ struct ChoiceRow<Content: View>: View {
                     .foregroundStyle(isSelected ? Theme.tint : Theme.ink3)
                     .accessibilityHidden(true)
             }
-            .padding(.vertical, 10)
-            .padding(.leading, 16)
-            .padding(.trailing, 14)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 16)
             .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
             .background(Theme.surface, in: rowShape)
             .overlay(
@@ -74,7 +73,7 @@ struct SegmentOption<Value: Hashable>: Hashable {
 }
 
 /// Two or three always-visible options (mockup `.seg`) in a `surface2` well with a 1 pt
-/// `lineStrong` edge (the gray well alone is 1.1-1.4:1 against the page, audit K1). The selected
+/// `lineStrong` edge (the gray well alone is 1.1-1.5:1 against the page, audit K1). The selected
 /// one is a `surface` segment with ink text and a 1.5 pt `tint` inner border (a white fill with
 /// the old white-on-amber text would be unreadable). Stacks vertically when the text does not fit
 /// side by side (largest text sizes).
@@ -134,7 +133,7 @@ struct SegmentButtons<Value: Hashable>: View {
     private var selectedSegment: some View {
         RoundedRectangle(cornerRadius: Theme.Radius.segment, style: .continuous)
             .fill(Theme.surface)
-            .shadow(color: colorScheme == .dark ? .clear : Color.black.opacity(0.16), radius: 1.5, x: 0, y: 1)
+            .shadow(color: colorScheme == .dark ? .clear : Theme.shadowFar, radius: 1.5, x: 0, y: 1)
             .overlay(
                 RoundedRectangle(cornerRadius: Theme.Radius.segment, style: .continuous)
                     .strokeBorder(Theme.tint, lineWidth: 1.5)

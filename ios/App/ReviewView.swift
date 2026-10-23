@@ -425,31 +425,33 @@ struct ReviewView: View {
         .cardSurface(cornerRadius: Theme.Radius.wordCard)
     }
 
-    /// Mockup `.front`: the word large and centered with the band, "Dinle", and a quiet nudge to
-    /// guess the meaning before turning the card. A word already seen on the widget is a real
-    /// recall attempt: "Widget'ta gördün. Hatırlıyor musun?" (2.1, rule b).
+    /// Mockup `.front`: the word centered with the band at the Large Title size (2026-10-24:
+    /// Apple's type scale, no larger hero size), "Dinle", and a quiet nudge to guess the meaning
+    /// before turning the card. The spacing carries the hierarchy: the word and "Dinle" as one
+    /// group (24 pt, room for the night band), the nudge set apart (32 pt). A word already seen
+    /// on the widget is a real recall attempt: "Widget'ta gördün. Hatırlıyor musun?" (2.1, rule b).
     private func cardFront(word: WidgetWord) -> some View {
-        VStack(spacing: 14) {
-            WordHeadline(lemma: word.lemma, size: 46, maxSize: 60, alignment: .center)
+        VStack(spacing: 24) {
+            WordHeadline(lemma: word.lemma, alignment: .center)
                 .accessibilityFocused($focus, equals: .word)
             CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
             Text(model.wasSeenOnWidget(word) ? "Widget'ta gördün. Hatırlıyor musun?" : "Ne demek olabilir? Tahmin et.")
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.top, 14)
+                .padding(.top, 8)
         }
         .multilineTextAlignment(.center)
         .padding(.horizontal, 20)
-        .padding(.vertical, 28)
+        .padding(.vertical, 32)
     }
 
     /// Reading order for an A2 learner (mockup `cardInner`): the word, the Turkish meaning (large,
     /// no box), the simple English definition, the example with its translation, one typical
-    /// mistake.
+    /// mistake. 16 pt between the rows: the night band under the word needs 8 pt before the next.
     private func cardBack(word: WidgetWord, detail: CardDetail?) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            WordHeadline(lemma: word.lemma, size: 40, maxSize: 56, alignment: .leading)
+        VStack(alignment: .leading, spacing: 16) {
+            WordHeadline(lemma: word.lemma, alignment: .leading)
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: 8) {
                     metaItems(word)
@@ -471,7 +473,7 @@ struct ReviewView: View {
                         .accessibilityFocused($focus, equals: .meaning)
                     if let alternatives = detail?.glossAlternatives, !alternatives.isEmpty {
                         Text(verbatim: "Ayrıca: " + alternatives.joined(separator: ", "))
-                            .font(.subheadline)
+                            .font(.callout)
                             .foregroundStyle(Theme.ink2)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -491,7 +493,7 @@ struct ReviewView: View {
                 // Saying the word aloud helps when only some words are said (MacLeod and others
                 // 2010): one card in a round, the microphone optional (2.3).
                 Label("Bir kez sesli söyle. Mikrofon isteğe bağlı.", systemImage: "mic")
-                    .font(.subheadline)
+                    .font(.callout)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -531,11 +533,13 @@ struct ReviewView: View {
         }
     }
 
+    /// Callout, as on the Akış card and like the example's translation on this card (one size
+    /// fewer on the back).
     @ViewBuilder
     private func metaItems(_ word: WidgetWord) -> some View {
         AccentIPA(word) { ipa in
             Text(verbatim: ipa)
-                .font(.system(.subheadline, design: .serif))
+                .font(.system(.callout, design: .serif))
                 .foregroundStyle(Theme.ink2)
                 .accessibilityHidden(true)
         }
@@ -543,7 +547,7 @@ struct ReviewView: View {
             CustomWordTag()
         } else {
             Text(verbatim: CardPartOfSpeech.turkish(word.pos))
-                .font(.subheadline.weight(.medium))
+                .font(.callout.weight(.medium))
                 .foregroundStyle(Theme.ink2)
             LevelBadge(code: word.level)
         }
@@ -706,8 +710,9 @@ struct ReviewView: View {
     private static let feedbackID = "review.choice.feedback"
 
     /// The question on a card: its kind as a heading, then the word or the meaning to answer.
+    /// 16 pt between the rows: the night band under the word needs 8 pt before "Dinle".
     private func choicePrompt(_ question: ChoiceQuestion) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 16) {
             Text(question.direction == .pickMeaning ? "Anlamını seç" : "İngilizcesini seç")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.ink2)
@@ -715,7 +720,7 @@ struct ReviewView: View {
                 .accessibilityFocused($focus, equals: .question)
             switch question.direction {
             case .pickMeaning:
-                WordHeadline(lemma: question.prompt, size: 36, maxSize: 52, alignment: .leading)
+                WordHeadline(lemma: question.prompt, alignment: .leading)
                 CardListenCapsule(text: question.prompt, accessibilityName: "Kelimeyi dinle")
             case .pickEnglish:
                 // The meaning only: its sound would give the answer away.
@@ -771,8 +776,9 @@ struct ReviewView: View {
                         Image(systemName: mark.symbol)
                             .font(.body.weight(.semibold))
                             .accessibilityHidden(true)
+                        // Subheadline like the screen's other small lines (one size fewer).
                         Text(mark.text)
-                            .font(.footnote.weight(.bold))
+                            .font(.subheadline.weight(.bold))
                     }
                     .foregroundStyle(mark.color)
                     .fixedSize()
@@ -1002,8 +1008,9 @@ struct ReviewView: View {
         .id(word.id)
     }
 
+    /// 16 pt between the rows: the night band under the word needs 8 pt before "Dinle".
     private func recallCard(word: WidgetWord, detail: CardDetail?) -> some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             if let gloss = word.glossTR {
                 Text("\(Text(verbatim: gloss)) \(Text(verbatim: "→ ?").foregroundStyle(Theme.ink3))")
                     .font(Theme.Fonts.meaning)
@@ -1021,7 +1028,7 @@ struct ReviewView: View {
                 Rectangle()
                     .fill(Theme.line)
                     .frame(height: 1)
-                WordHeadline(lemma: word.lemma, size: 40, maxSize: 56, alignment: .leading)
+                WordHeadline(lemma: word.lemma, alignment: .leading)
                     .accessibilityFocused($focus, equals: .word)
                 CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
                 if !word.exampleEN.isEmpty {
@@ -1615,9 +1622,13 @@ struct ReviewView: View {
         let afterBreak = isBreak(offer)
         return VStack(spacing: 12) {
             if afterBreak {
+                // About 44 pt: the Large Title glyph at its large scale, which stops growing at
+                // xxxLarge so it stays in its 76 pt row.
                 Image(systemName: "sun.max")
-                    .font(.system(size: 44, weight: .regular))
+                    .font(.largeTitle)
+                    .imageScale(.large)
                     .foregroundStyle(Theme.ink2)
+                    .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                     .frame(height: 76)
                     .accessibilityHidden(true)
             } else if isDue {
@@ -1650,7 +1661,8 @@ struct ReviewView: View {
                     ? "Unutulmaya en yakın \(offer.words.count) kelimeyle başlayalım."
                     : "Önce öğrendiğin kelimeleri hatırlayalım.")
                  : "Önce tanış, sonra hemen bir kez hatırla.")
-                .font(.callout)
+                // Body, as the button under it (Callout was a fifth size on this screen).
+                .font(.body)
                 .foregroundStyle(Theme.ink2)
                 .multilineTextAlignment(.center)
                 .lineSpacing(2)
@@ -1689,7 +1701,7 @@ struct ReviewView: View {
                     .accessibilityAddTraits(.isHeader)
                     .accessibilityFocused($focus, equals: .start)
                 Text("Tekrar edecek kelime kalmadı. Şimdi kapatabilirsin.")
-                    .font(.callout)
+                    .font(.body)
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.center)
                     .lineSpacing(2)
@@ -2103,25 +2115,27 @@ private struct RoundAnswer {
     var returnsToIntro = false
 }
 
-/// The English word with the phosphor band (rule 1): one line at `size`; a long phrase that does
-/// not fit drops to a smaller size first, then breaks into two balanced lines, each on its own
-/// band, as in the feed and the dictionary (audit D1: "Could you tell me the way to" must not end
-/// in "…"). A single long word shrinks with `englishWordStyle`'s scale factor instead. VoiceOver
-/// reads it once, as a heading, with an English voice.
+/// The English word with the phosphor band (rule 1): one line at the Large Title size
+/// (`englishWordStyle()`, 34 pt, the same on every Tekrar card); a long phrase that does not fit
+/// drops to the Title 1 size (28 pt) first, then breaks into two balanced lines at that size,
+/// each on its own band, as in the feed and the dictionary (audit D1: "Could you tell me the way
+/// to" must not end in "…"). A single long word shrinks with `englishWordStyle`'s scale factor
+/// instead. VoiceOver reads it once, as a heading, with an English voice.
 private struct WordHeadline: View {
     let lemma: String
-    let size: CGFloat
-    let maxSize: CGFloat
     let alignment: HorizontalAlignment
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
-            line(lemma, size: size, maxSize: maxSize)
-            line(lemma, size: size * 0.7, maxSize: maxSize * 0.7)
+            Text(verbatim: lemma)
+                .englishWordStyle()
+                .phosphorBand()
+            smallLine(lemma)
             if let lines = WordHeadline.balancedLines(lemma) {
-                VStack(alignment: alignment, spacing: 10) {
-                    line(lines.first, size: size * 0.75, maxSize: maxSize * 0.75)
-                    line(lines.second, size: size * 0.75, maxSize: maxSize * 0.75)
+                // 16 pt: the night band under the first line needs 8 pt before the second.
+                VStack(alignment: alignment, spacing: 16) {
+                    smallLine(lines.first)
+                    smallLine(lines.second)
                 }
             }
         }
@@ -2131,9 +2145,10 @@ private struct WordHeadline: View {
         .englishVoice()
     }
 
-    private func line(_ text: String, size: CGFloat, maxSize: CGFloat) -> some View {
+    /// The Title 1 step (28 pt), scaled like the word up to 46 pt.
+    private func smallLine(_ text: String) -> some View {
         Text(verbatim: text)
-            .englishWordStyle(size: size, maxSize: maxSize)
+            .englishWordStyle(size: 28, maxSize: 46)
             .phosphorBand()
     }
 
@@ -2170,7 +2185,8 @@ private struct MoreBelowCue: View {
             Image(systemName: "chevron.down")
                 .imageScale(.small)
         }
-        .font(.footnote.weight(.semibold))
+        // Subheadline like the round's header (one size fewer on the card's back).
+        .font(.subheadline.weight(.semibold))
         .foregroundStyle(Theme.ink2)
         .padding(.top, 26)
         .padding(.bottom, 9)
@@ -2219,13 +2235,15 @@ private struct GradeLabel: View {
     let title: String
     let symbol: String
     let when: String?
+    /// The icon's column grows with the text, so a large icon never runs into the title.
+    @ScaledMetric(relativeTo: .body) private var iconWidth: CGFloat = 22
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
             HStack(spacing: 8) {
                 Image(systemName: symbol)
                     .font(.body.weight(.medium))
-                    .frame(width: 22)
+                    .frame(width: iconWidth)
                     .foregroundStyle(Theme.ink2)
                     .accessibilityHidden(true)
                 texts
@@ -2345,7 +2363,8 @@ private struct KnownUndoNotice: View {
                     .font(.subheadline.weight(.bold))
                     .padding(.horizontal, 14)
                     .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
-                    .background(Color(white: 0.5, opacity: 0.25), in: Capsule())
+                    // A faint wash of the page color on the ink bar (a token, not a raw gray).
+                    .background(Theme.bg.opacity(0.2), in: Capsule())
                     .contentShape(Capsule())
             }
             .buttonStyle(.plain)
@@ -2395,9 +2414,11 @@ private struct ReminderOfferSheet: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 HStack(alignment: .top, spacing: 12) {
+                    // Stops growing at xxxLarge, so it stays in its 32 pt column.
                     Image(systemName: "bell")
                         .font(.title2)
                         .foregroundStyle(Theme.ink)
+                        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                         .frame(width: 32)
                         .accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 8) {
@@ -2455,7 +2476,8 @@ private struct ReminderOfferSheet: View {
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
                 }
             }
-            .padding(.horizontal, 20)
+            // The 16 pt side margins of every screen.
+            .padding(.horizontal, 16)
             .padding(.top, 28)
             .padding(.bottom, 16)
             .onGeometryChange(for: CGFloat.self) { geometry in
@@ -2500,7 +2522,8 @@ private struct ReminderOfferSheet: View {
 }
 
 /// How many words the due round has (mockup `.count-badge`), never the whole pile: a number in a
-/// thin ring, no color.
+/// thin ring, no color. Text styles (Large Title, Subheadline) that stop growing at xxxLarge, as
+/// the ring stops at 124 pt; "Başla (10 kelime)" under it says the number at every size.
 private struct CountBadge: View {
     let count: Int
     @ScaledMetric(relativeTo: .title) private var diameter: CGFloat = 96
@@ -2509,15 +2532,18 @@ private struct CountBadge: View {
         let size = min(diameter, 124)
         VStack(spacing: 2) {
             Text("\(count)")
-                .font(.system(size: size * 0.35, weight: .bold))
+                .font(.largeTitle.weight(.bold))
                 .monospacedDigit()
                 .foregroundStyle(Theme.ink)
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
             Text("kelime")
-                .font(.system(size: size * 0.125, weight: .medium))
+                .font(.subheadline.weight(.medium))
                 .foregroundStyle(Theme.ink2)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
         }
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .padding(10)
         .frame(width: size, height: size)
         .overlay {
@@ -2560,21 +2586,25 @@ private struct GoalRing: View {
                     .stroke(Theme.tint, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
                     .rotationEffect(.degrees(-90))
             }
-            VStack(spacing: 3) {
+            // Text styles (Large Title, Subheadline as the count badge's "kelime" and the start
+            // screen's today line: no fifth size there) that stop growing at xxxLarge, as the ring
+            // stops at 172 pt; at accessibility sizes the goal is also said under the ring.
+            VStack(spacing: 4) {
                 HStack(alignment: .firstTextBaseline, spacing: 0) {
                     Text("\(done)")
                         .foregroundStyle(Theme.ink)
                     Text("/\(goal)")
                         .foregroundStyle(Theme.ink3)
                 }
-                .font(.system(size: size * 0.24, weight: .bold))
+                .font(.largeTitle.weight(.bold))
                 .monospacedDigit()
                 Text("günlük hedef")
-                    .font(.system(size: size * 0.1, weight: .medium))
+                    .font(.subheadline.weight(.medium))
                     .foregroundStyle(Theme.ink2)
             }
             .lineLimit(1)
             .minimumScaleFactor(0.7)
+            .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
             .padding(lineWidth * 1.5)
         }
         .frame(width: size, height: size)
@@ -2621,6 +2651,7 @@ private struct DoneMark: View {
                     .frame(width: 104, height: 42)
                     .offset(y: 4)
             }
+            // A glyph sized to the drawn band under it (104 × 42 pt), not text: a fixed size.
             Image(systemName: "checkmark")
                 .font(.system(size: 40, weight: .bold))
                 .foregroundStyle(Theme.ink)
@@ -2637,9 +2668,11 @@ private struct NoteRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
+            // The glyph stops growing at xxxLarge, so it stays inside its 36 pt circle.
             Image(systemName: symbol)
                 .font(.body.weight(.medium))
                 .foregroundStyle(Theme.ink)
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                 .frame(width: 36, height: 36)
                 .background(Theme.surface2, in: Circle())
                 .accessibilityHidden(true)

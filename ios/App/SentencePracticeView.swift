@@ -24,6 +24,8 @@ struct SentencePracticeView: View {
     /// Mixes words, sentences and tiles; each "Bir tur daha" takes the next one.
     @State private var seed = Int.random(in: 0..<1_000_000_000)
     @AccessibilityFocusState private var focusesTitle: Bool
+    /// The done circle grows with its Large Title glyph (Dynamic Type), 64 pt at the default size.
+    @ScaledMetric(relativeTo: .largeTitle) private var doneBadgeSize: CGFloat = 64
 
     var body: some View {
         content
@@ -69,8 +71,9 @@ struct SentencePracticeView: View {
     /// "Cümle": a card's collocation ("___ a mistake") is no sentence.
     private func header(_ round: SentencePractice.Round) -> some View {
         let progress = round.progress
+        // Callout, the cards' own small size: four text styles on the page.
         let counter = Text(verbatim: "Soru \(progress.done + 1) / \(progress.total)")
-            .font(.subheadline.weight(.semibold).monospacedDigit())
+            .font(.callout.weight(.semibold).monospacedDigit())
             .foregroundStyle(Theme.ink2)
             // VoiceOver reads "/" as "bölü" (terimler 1).
             .accessibilityLabel(Text(verbatim: "Soru \(progress.done + 1), toplam \(progress.total)"))
@@ -137,12 +140,12 @@ struct SentencePracticeView: View {
     private func summary(_ round: SentencePractice.Round) -> some View {
         let today = AppModel.sentencePracticeTally().todayCount(now: Date())
         return ScrollView {
-            VStack(spacing: 14) {
+            VStack(spacing: 16) {
                 VStack(spacing: 12) {
                     Image(systemName: "checkmark")
-                        .font(.system(size: 34, weight: .bold))
+                        .font(.largeTitle.weight(.bold))
                         .foregroundStyle(Theme.ink)
-                        .frame(width: 64, height: 64)
+                        .frame(width: doneBadgeSize, height: doneBadgeSize)
                         .background(Theme.surface2, in: Circle())
                         .accessibilityHidden(true)
                     Text("Pratik bitti")
@@ -159,24 +162,28 @@ struct SentencePracticeView: View {
                     // Today's count includes this round.
                     if today > round.questionCount {
                         Text(verbatim: "Bugün: \(today) cümle.")
-                            .font(.subheadline)
+                            .font(.callout)
                             .foregroundStyle(Theme.ink2)
                             .multilineTextAlignment(.center)
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.vertical, 22)
+                .padding(.vertical, 24)
                 .frame(maxWidth: .infinity)
                 .cardSurface(cornerRadius: Theme.Radius.wordCard)
                 HStack(alignment: .top, spacing: 12) {
-                    Image(systemName: "info.circle")
-                        .font(.body.weight(.medium))
-                        .foregroundStyle(Theme.ink)
-                        .frame(width: 36, height: 36)
-                        .background(Theme.surface2, in: Circle())
-                        .accessibilityHidden(true)
+                    // Decoration in a fixed 36 pt circle: left out at the accessibility sizes,
+                    // where the glyph would outgrow it and the text needs the whole width.
+                    if !dynamicTypeSize.isAccessibilitySize {
+                        Image(systemName: "info.circle")
+                            .font(.body.weight(.medium))
+                            .foregroundStyle(Theme.ink)
+                            .frame(width: 36, height: 36)
+                            .background(Theme.surface2, in: Circle())
+                            .accessibilityHidden(true)
+                    }
                     Text("Pratik, tekrar sayılmaz. Kelimelerin basamakları değişmez.")
-                        .font(.subheadline.weight(.medium))
+                        .font(.callout.weight(.medium))
                         .foregroundStyle(Theme.ink)
                         .fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 0)
@@ -208,7 +215,7 @@ struct SentencePracticeView: View {
         ScrollView {
             VStack(spacing: 12) {
                 Image(systemName: "text.book.closed")
-                    .font(.system(size: 34, weight: .regular))
+                    .font(.largeTitle)
                     .foregroundStyle(Theme.ink2)
                     .accessibilityHidden(true)
                 Text("Şimdilik cümle yok")
@@ -226,10 +233,10 @@ struct SentencePracticeView: View {
                     dismiss()
                 }
                 .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, tonal: true))
-                .padding(.top, 6)
+                .padding(.top, 8)
             }
             .padding(.horizontal, 20)
-            .padding(.vertical, 22)
+            .padding(.vertical, 24)
             .frame(maxWidth: .infinity)
             .cardSurface(cornerRadius: Theme.Radius.wordCard)
             .padding(.horizontal, 16)

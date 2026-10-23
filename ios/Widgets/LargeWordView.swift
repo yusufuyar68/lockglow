@@ -19,8 +19,13 @@ import CoreModels
 // 34 pt circle with its short name under it (ogrenme_ilkeleri 2.1: "simgelerin altında kısa
 // yazıyla"; docs/tasarim/terimler.md §3). Next sits in the easy corner (bottom right), Know the
 // farthest from it (bottom left). The row reaches `largeButtonOverflow` into the side and bottom
-// margins like the small widget's buttons, so the circles sit 13 pt from the edges; the text
-// column keeps the full margins and never runs under the row, which takes its own height.
+// margins like the small widget's buttons, so the circles sit 11 pt from the edges (HIG Widgets'
+// tighter margin); the text column keeps the full 16 pt margins and never runs under the row,
+// which takes its own height.
+// Type: four sizes (HIG: hierarchy by size and weight): the word at Title 28 (smaller steps when
+// it does not fit), the meaning Title 3 bold, the definition and the examples Subheadline serif,
+// and Footnote for the pronunciation, the level, the warning, the next change and the button
+// names.
 // Layout, as on the medium widget: a vertical ViewThatFits over variants, fullest first; every
 // line is shown whole or not at all, never cut with "…" and never broken inside a word. The card
 // shortens from its end (README rule 5): the next change gives way first, then the examples drop
@@ -34,8 +39,8 @@ import CoreModels
 // word alone is the last resort.
 
 /// How far the button row reaches into the widget margin (`buttonGroupOverflow` on the small and
-/// medium widgets).
-private let largeButtonOverflow: CGFloat = 8
+/// medium widgets): the circles sit 16 - 10 + 5 = 11 pt from the edges.
+private let largeButtonOverflow: CGFloat = 10
 /// Space under the word: the night band hangs about 5 pt below a 28 pt word's frame (LockglowTheme,
 /// "Phosphor band"; `headerGap` is 6 pt for the medium widget's 20 pt word).
 private let largeHeaderGap: CGFloat = 7
@@ -192,7 +197,7 @@ struct LargeWordView: View {
                 let clock = WidgetTime.clock(next)
                 WidgetFittingText(
                     candidates: [["Yeni kelime: \(clock)"]],
-                    typeface: .caption2.weight(.medium),
+                    typeface: .footnote.weight(.medium),
                     color: colors.ink2
                 )
                 .accessibilityElement(children: .ignore)
@@ -220,14 +225,14 @@ struct LargeWordView: View {
 }
 
 extension WidgetWordStep {
-    /// The large widget beside a meaning: 28, 24, 20 pt on one line, a phrase on two lines at 24
-    /// or 20 pt, then 17 pt on one line ("misunderstanding" at large text sizes), all scaled with
-    /// Dynamic Type.
+    /// The large widget beside a meaning: 28, 22, 20 pt on one line (Title, Title 2, Title 3
+    /// sizes), a phrase on two lines at 22 or 20 pt, then 17 pt on one line ("misunderstanding" at
+    /// large text sizes), all scaled with Dynamic Type.
     static let largeWidgetScaled = [
         WidgetWordStep(size: 28),
-        WidgetWordStep(size: 24),
+        WidgetWordStep(size: 22),
         WidgetWordStep(size: 20),
-        WidgetWordStep(size: 24, lines: 2),
+        WidgetWordStep(size: 22, lines: 2),
         WidgetWordStep(size: 20, lines: 2),
         WidgetWordStep(size: 17),
     ]
@@ -657,8 +662,8 @@ struct LargeWidgetButtonRow: View {
 }
 
 /// A large widget button's look: the icon in a 34 pt circle as on the other widgets
-/// (`WidgetButtonFace`), its name under it in 11 pt (`.caption2`, the smallest style used), in a
-/// hit area of at least 44 x 44 pt that is all tappable.
+/// (`WidgetButtonFace`), its name under it in `.footnote` semibold (the widget's smallest size;
+/// it was `.caption2`, a fifth size), in a hit area of at least 44 x 44 pt that is all tappable.
 private struct LargeButtonFace: View {
     let name: String
     let systemImage: String
@@ -673,7 +678,7 @@ private struct LargeButtonFace: View {
                 .frame(width: 34, height: 34)
                 .background(colors.buttonFill, in: Circle())
             Text(verbatim: name)
-                .font(.caption2.weight(.semibold))
+                .font(.footnote.weight(.semibold))
                 .lineLimit(1)
                 .fixedSize()
         }

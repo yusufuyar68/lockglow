@@ -93,7 +93,7 @@ struct EarTrainingRoundView: View {
     private func questionScreen(_ question: EarTrainingQuestion) -> some View {
         ScrollViewReader { proxy in
             ScrollView {
-                VStack(alignment: .leading, spacing: 18) {
+                VStack(alignment: .leading, spacing: 16) {
                     header
                     listenButton(question)
                     VStack(spacing: 12) {
@@ -163,11 +163,13 @@ struct EarTrainingRoundView: View {
         }
     }
 
-    /// "Soru 3 / 10" (VoiceOver: "Soru 3, toplam 10") and the question.
+    /// "Soru 3 / 10" (VoiceOver: "Soru 3, toplam 10") and the question. The question screen shows
+    /// at most four sizes at a time: callout, title2 and headline, plus the title-sized words
+    /// before the answer or the footnote marks after it.
     private var header: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(verbatim: "Soru \(index + 1) / \(questions.count)")
-                .font(.subheadline.weight(.semibold))
+                .font(.callout.weight(.semibold))
                 .foregroundStyle(Theme.ink2)
                 .monospacedDigit()
                 .accessibilityLabel(Text(verbatim: "Soru \(index + 1), toplam \(questions.count)"))
@@ -297,8 +299,8 @@ struct EarTrainingRoundView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             ReviewSpeakerButton(text: word.word, accessibilityName: "Bu kelimeyi dinle")
         }
-        .padding(.leading, 18)
-        .padding(.trailing, 10)
+        .padding(.leading, 16)
+        .padding(.trailing, 8)
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, minHeight: 64, alignment: .leading)
         .background(mark?.fill ?? Theme.surface, in: optionShape)
@@ -314,7 +316,7 @@ struct EarTrainingRoundView: View {
     private func feedback(_ question: EarTrainingQuestion, picked: EarTrainingSide) -> some View {
         let isRight = question.isRight(picked)
         let group = model.group(id: question.groupID)
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             if isRight {
                 Label {
                     Text("Doğru.")
@@ -359,21 +361,27 @@ struct EarTrainingRoundView: View {
         .cardSurface(cornerRadius: Theme.Radius.card)
     }
 
-    /// "sheep · uzun i · iː", then the note on the mouth and tongue.
+    /// "sheep · uzun i · iː", then the note on the mouth and tongue. At accessibility sizes the
+    /// three parts stand one under the other (no "·"), so no word is broken in a narrow column.
     private func soundNote(word: String, sound: EarTrainingSound) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack(alignment: .firstTextBaseline, spacing: 6) {
+        let stacked = dynamicTypeSize.isAccessibilitySize
+        let layout = stacked
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 6))
+        let dot = stacked ? "" : "· "
+        return VStack(alignment: .leading, spacing: 4) {
+            layout {
                 Text(verbatim: word)
                     .font(.system(.body, design: .serif).weight(.bold))
                     .foregroundStyle(Theme.ink)
                     .englishVoice()
-                Text(verbatim: "· \(sound.nameTR)")
-                    .font(.subheadline.weight(.semibold))
+                Text(verbatim: dot + sound.nameTR)
+                    .font(.callout.weight(.semibold))
                     .foregroundStyle(Theme.ink2)
                     .accessibilityLabel(Text(verbatim: sound.nameTR))
                 if let ipa = sound.ipa {
-                    Text(verbatim: "· \(ipa)")
-                        .font(.subheadline)
+                    Text(verbatim: dot + ipa)
+                        .font(.callout)
                         .foregroundStyle(Theme.ink2)
                         .accessibilityHidden(true)
                 }
@@ -453,10 +461,11 @@ struct EarTrainingRoundView: View {
             restart(focus: group.id)
         } label: {
             HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 3) {
-                    // English: serif, as in the list of pairs.
+                VStack(alignment: .leading, spacing: 4) {
+                    // English: serif, as in the list of pairs (an iOS list row: body title,
+                    // subheadline under it).
                     Text(verbatim: group.title)
-                        .font(Theme.Fonts.definition.weight(.semibold))
+                        .font(Theme.Fonts.example.weight(.semibold))
                         .foregroundStyle(Theme.ink)
                     Text(verbatim: group.nameTR)
                         .font(.subheadline)
@@ -469,8 +478,8 @@ struct EarTrainingRoundView: View {
                     .foregroundStyle(Theme.ink3)
                     .accessibilityHidden(true)
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
             .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
             .contentShape(Rectangle())
         }

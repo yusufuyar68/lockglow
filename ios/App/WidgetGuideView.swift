@@ -22,7 +22,7 @@ struct WidgetGuideContent: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             // The UI test taps "Ana ekran" by its label.
             SegmentButtons(
                 options: [
@@ -35,8 +35,8 @@ struct WidgetGuideContent: View {
             .accessibilityElement(children: .contain)
             .accessibilityLabel("Nereye ekleyeceksin?")
             WidgetPlacePreview(place: place, sample: WidgetPreviewSample(word: word))
-            // Mockup `.steps`: one white group, numbered rows 14 pt apart.
-            VStack(alignment: .leading, spacing: 14) {
+            // Mockup `.steps`: one white group, numbered rows 16 pt apart.
+            VStack(alignment: .leading, spacing: 16) {
                 ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
                     StepRow(number: index + 1, text: step)
                 }
@@ -50,7 +50,7 @@ struct WidgetGuideContent: View {
             )
             // Mockup `.info`: what iPhone calls a widget, the one-line Lock Screen widget
             // (`accessoryInline`, in the date line), and the English button names.
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 8) {
                 GuideNote(systemImage: "info.circle") {
                     Text(verbatim: "iPhone widget'a “araç takımı” der.")
                         .foregroundStyle(Theme.ink)
@@ -67,7 +67,7 @@ struct WidgetGuideContent: View {
                             .foregroundStyle(Theme.ink2)
                         // English is serif (rule 3) and read with the English voice.
                         Text(verbatim: englishNames.joined(separator: ", "))
-                            .font(.system(.callout, design: .serif))
+                            .font(.system(.subheadline, design: .serif))
                             .foregroundStyle(Theme.ink)
                             .englishVoice()
                     }
@@ -111,13 +111,14 @@ struct WidgetGuideContent: View {
     }
 }
 
-/// A small icon in `ink2` before a short note (mockup `.info`).
+/// A small icon in `ink2` before a short note (mockup `.info`), `.subheadline` (15 pt: the size of
+/// the segments, so the page keeps two sizes with the 17 pt steps; the drawing is a picture).
 private struct GuideNote<Content: View>: View {
     let systemImage: String
     @ViewBuilder let content: () -> Content
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 10) {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
             Image(systemName: systemImage)
                 .foregroundStyle(Theme.ink2)
                 .accessibilityHidden(true)
@@ -126,7 +127,7 @@ private struct GuideNote<Content: View>: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         // Not combined: the English names keep their English voice.
-        .font(.callout)
+        .font(.subheadline)
     }
 }
 
@@ -140,7 +141,7 @@ private struct StepRow: View {
 
     var body: some View {
         let layout = dynamicTypeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
             : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 12))
         layout {
             Text(verbatim: "\(number)")
@@ -186,7 +187,10 @@ private struct WidgetPreviewSample {
 /// Where the widget goes (mockup `.gprev`): a drawn Lock Screen or Home Screen with the widget
 /// outlined in white dashes. Calm, muted colors: the only yellow is the band of the English word
 /// (rule 1). A picture with a fixed size and fixed colors (it shows the phone, whatever the app's
-/// appearance and text size); VoiceOver reads one sentence instead. A long word or meaning
+/// appearance and text size): its text uses the Dynamic Type styles (`.largeTitle` clock,
+/// `.subheadline` word, `.caption` meaning, `.caption2` pointer) at the default text size
+/// (`dynamicTypeSize(.large)`), so the drawing keeps its proportions; VoiceOver reads one
+/// sentence instead. A long word or meaning
 /// shrinks to fit the drawing ("Could you tell me the way to" fits); only a very long word of the
 /// user's own may still be cut.
 private struct WidgetPlacePreview: View {
@@ -202,8 +206,11 @@ private struct WidgetPlacePreview: View {
                 homeScreen
             }
         }
+        // A picture: the text styles at their default sizes (34, 15, 12 and 11 pt), whatever
+        // the text size of the phone.
+        .dynamicTypeSize(.large)
         .padding(14)
-        // Both drawings (about 174 and 157 pt) are this tall, so switching does not move the
+        // Both drawings (about 167 and 157 pt) are this tall, so switching does not move the
         // steps below.
         .frame(maxWidth: .infinity, minHeight: 180)
         .background(wallpaper)
@@ -227,19 +234,19 @@ private struct WidgetPlacePreview: View {
     private var lockScreen: some View {
         VStack(spacing: 6) {
             Text(verbatim: "9:41")
-                .font(.system(size: 40, weight: .bold))
+                .font(.largeTitle.weight(.bold))
                 .foregroundStyle(Color.white.opacity(0.92))
             // The rectangular Lock Screen widget: the word on the thin band of a vibrant widget,
             // the meaning under it. English is serif (rule 3), as on the real widget.
             VStack(alignment: .leading, spacing: 0) {
                 Text(verbatim: sample.lemma)
-                    .font(.system(size: 15, weight: .bold, design: .serif))
+                    .font(.system(.subheadline, design: .serif).weight(.bold))
                     .minimumScaleFactor(0.45)
                     .phosphorBand(.widget, renderingMode: .vibrant)
                     .padding(.bottom, 4)
                 if let meaning = sample.meaning {
                     Text(verbatim: meaning)
-                        .font(.system(size: 12.5, weight: .semibold))
+                        .font(.caption.weight(.semibold))
                         .minimumScaleFactor(0.7)
                         .opacity(0.85)
                 }
@@ -268,20 +275,21 @@ private struct WidgetPlacePreview: View {
                 // meaning under it.
                 VStack(alignment: .leading, spacing: 1) {
                     Text(verbatim: sample.lemma)
-                        .font(.system(size: 15, weight: .bold, design: .serif))
+                        .font(.system(.subheadline, design: .serif).weight(.bold))
                         .lineLimit(1)
                         .minimumScaleFactor(0.45)
                         .phosphorBand(.widget)
                     if let meaning = sample.meaning {
                         Text(verbatim: meaning)
-                            .font(.system(size: 12.5, weight: .bold))
+                            .font(.caption.weight(.bold))
                             .lineLimit(3)
                             .minimumScaleFactor(0.8)
                             .padding(.top, 4)
                     }
                     Spacer(minLength: 0)
                 }
-                .foregroundStyle(Color(guideHex: 0x15181B))
+                // The widget's day ink (Theme.ink by day, label black since 2026-10-24).
+                .foregroundStyle(Color(guideHex: 0x000000))
                 .padding(11)
                 .frame(width: 104, height: 104, alignment: .topLeading)
                 .background(Color.white, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
@@ -313,7 +321,7 @@ private struct WidgetPlacePreview: View {
             Image(systemName: "chevron.up")
             Text(verbatim: "Lockglow burada")
         }
-        .font(.system(size: 11, weight: .semibold))
+        .font(.caption2.weight(.semibold))
         .foregroundStyle(Color.white.opacity(0.85))
         .lineLimit(1)
         .fixedSize()

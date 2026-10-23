@@ -15,7 +15,8 @@ import CoreModels
 // column. The widget disables the system content margins (`WordWidget`); these views apply them
 // (`margins`, from `widgetContentMargins`) and draw the buttons in an overlay that reaches
 // `buttonGroupOverflow` into the margin on the widget's outer edges (small: left, right and
-// bottom; medium: top, right and bottom), so each 34 pt circle sits 13 pt from those edges. The
+// bottom; medium: top, right and bottom), so each 34 pt circle sits 11 pt from those edges (HIG
+// Widgets: the tighter 11 pt margin for buttons and shapes; text keeps the 16 pt margins). The
 // hit areas stay 44 x 44 pt and inside the widget's root view; a placeholder holds the part of the
 // buttons that lies inside the margins, so the text never runs under them at any text size
 // (accessibility audit D5). The glyphs stop growing at xxLarge: Next (forward.fill) is about 1.4 ×
@@ -37,8 +38,10 @@ import CoreModels
 // default layout, which has the meaning. The last variant, the word alone, always fits, in
 // height too (`WidgetWordAlone`).
 
-/// How far the button group reaches into the widget margin on the widget's outer edges.
-private let buttonGroupOverflow: CGFloat = 8
+/// How far the button group reaches into the widget margin on the widget's outer edges: with the
+/// 5 pt between a 34 pt circle and its 44 pt hit area, the circle sits 16 - 10 + 5 = 11 pt from the
+/// edge (HIG Widgets' tighter margin).
+private let buttonGroupOverflow: CGFloat = 10
 /// Space between the word and the meaning: the night band hangs about 4 pt below the word's
 /// frame (LockglowTheme, "Phosphor band").
 private let headerGap: CGFloat = 6
@@ -67,7 +70,7 @@ struct SmallWordView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // ogrenme_ilkeleri 2.1: the word steps down 24 → 20 → 17 pt (a phrase may take two
+            // ogrenme_ilkeleri 2.1: the word steps down 22 → 20 → 17 pt (a phrase may take two
             // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
             // (`WidgetGloss`) on one line, then on two, before it gets smaller. At large text sizes
             // the word and the meaning are shown (2.1): when they do not fit at the person's size,
@@ -422,13 +425,17 @@ struct WidgetColors {
 
 /// One size step of a headword: `size` pt at the default text size, scaled with Dynamic Type
 /// unless `scales` is false, on up to `lines` balanced lines (a single word stays on one line).
+/// The sizes are those of Apple's text styles at the default text size (Title 28, Title 2 22,
+/// Title 3 20, Body 17, Subheadline 15); every step scales as `.title3` does
+/// (`WidgetFittingWord`), so a smaller step never grows past a larger one.
 struct WidgetWordStep: Equatable {
     let size: CGFloat
     var lines = 1
     var scales = true
 
-    /// The small widget (ogrenme_ilkeleri 2.1): 24, 20, then 17 pt on one line.
-    static let smallWidget = [WidgetWordStep(size: 24), WidgetWordStep(size: 20), WidgetWordStep(size: 17)]
+    /// The small widget (ogrenme_ilkeleri 2.1): 22, 20, then 17 pt on one line (Title 2, Title 3
+    /// and Body sizes).
+    static let smallWidget = [WidgetWordStep(size: 22), WidgetWordStep(size: 20), WidgetWordStep(size: 17)]
     /// A phrase on the small widget: two lines at 20 or 17 pt ("Could you tell / me the way to").
     static let smallWidgetPhrase = [WidgetWordStep(size: 20, lines: 2), WidgetWordStep(size: 17, lines: 2)]
     /// The Home Screen floor, 15 pt scaled with Dynamic Type: one line, then two.
@@ -650,17 +657,20 @@ struct WidgetIPA: View {
             .accessibilityHidden(true)
     }
 
-    static let font = Font.system(.caption, design: .serif)
+    /// `.footnote` serif, the size of the medium widget's definition and example (one size fewer
+    /// on the widget; it was `.caption`, 12 pt).
+    static let font = Font.system(.footnote, design: .serif)
 }
 
-/// The level code ("A2"), small and quiet; VoiceOver reads "Seviye A2".
+/// The level code ("A2"), small and quiet; VoiceOver reads "Seviye A2". `.footnote` bold, the
+/// widgets' secondary size (it was `.caption2`; the large widget then keeps four sizes).
 struct WidgetLevel: View {
     let code: String
     let color: AnyShapeStyle
 
     var body: some View {
         Text(code)
-            .font(.caption2.weight(.bold))
+            .font(.footnote.weight(.bold))
             .foregroundStyle(color)
             .lineLimit(1)
             .fixedSize()
@@ -967,7 +977,9 @@ struct WidgetExampleLine: View {
         .accessibilityLabel(Text(verbatim: sentence))
     }
 
-    static let font = Font.system(.caption, design: .serif)
+    /// `.footnote` serif, the definition's size (medium widget: word 20, meaning 16, definition and
+    /// example 13, next change 11; it was `.caption`, 12 pt, a fifth size).
+    static let font = Font.system(.footnote, design: .serif)
     /// How many cuts a start tries (ViewThatFits needs a fixed number of children); a sentence
     /// with more words after the learned word keeps an even spread of them, the fullest and the
     /// shortest always.

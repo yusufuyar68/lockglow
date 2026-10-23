@@ -183,8 +183,10 @@ struct TypeQuestionView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityLabel("Türkçesi: \(question.prompt). İngilizcesi ne?")
             if let context = question.context {
+                // Subheadline ink2, as the screen's other secondary lines (one size fewer).
                 Text(verbatim: "Örnekte: " + context)
-                    .exampleTranslationStyle()
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             }
             if hints > 0 {
@@ -204,7 +206,7 @@ struct TypeQuestionView: View {
         let given = pattern.filter { $0.isLetter }.map { String($0) }.joined(separator: ", ")
         return VStack(alignment: .leading, spacing: 2) {
             Text("Harf ipucu")
-                .font(.footnote.weight(.semibold))
+                .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.ink2)
             Text(verbatim: spaced)
                 .font(.system(.title3, design: .serif).weight(.semibold))
@@ -247,7 +249,7 @@ struct TypeQuestionView: View {
         VStack(alignment: .leading, spacing: 2) {
             ReviewWordLine(lead: "Bu da aynı anlama gelir:", lemma: other, meaning: nil)
             Text("Aradığımız kelime başka. Bir daha dene.")
-                .font(.callout)
+                .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
         }

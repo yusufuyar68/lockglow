@@ -283,8 +283,9 @@ struct QuizCardView: View {
                         Image(systemName: optionMark.symbol)
                             .font(.body.weight(.semibold))
                             .accessibilityHidden(true)
+                        // Subheadline like the screen's other small lines (one size fewer).
                         Text(optionMark.text)
-                            .font(.footnote.weight(.bold))
+                            .font(.subheadline.weight(.bold))
                     }
                     .foregroundStyle(optionMark.color)
                     .fixedSize()
@@ -441,9 +442,10 @@ struct QuizCardView: View {
                     .foregroundStyle(Theme.ink)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 10)
+                    // A divider, decoration only: `line` (separator), not a control's edge.
                     .overlay(alignment: .top) {
                         Rectangle()
-                            .fill(Theme.lineStrong)
+                            .fill(Theme.line)
                             .frame(height: 1)
                     }
                     .accessibilityElement(children: .combine)
@@ -491,14 +493,15 @@ struct QuizCardView: View {
     }
 
     /// Mockup `.fb .m`: "spoon = kaşık", the word in bold serif, the meaning in the UI face.
-    /// One line under the verdict, never larger than it (the quiz screen has no band).
+    /// One line under the verdict, at its size (Body) but regular, so it never outranks it (the
+    /// quiz screen has no band).
     @ViewBuilder
     private var wordLine: some View {
         let headword: Text = Text(verbatim: word.lemma)
-            .font(.system(.callout, design: .serif).weight(.bold))
+            .font(.system(.body, design: .serif).weight(.bold))
         if let gloss = word.glossTR {
             Text("\(headword) = \(gloss)")
-                .font(.callout)
+                .font(.body)
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityRepresentation {
@@ -562,8 +565,9 @@ struct QuizCardView: View {
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
                 .keyboardShortcut(AnswerKeys.main)
                 .accessibilityValue(returnValue(for: .right))
+                // Subheadline, as the screen's other small lines (one size fewer).
                 Text("Zor muydu, kolay mı?")
-                    .font(.footnote.weight(.medium))
+                    .font(.subheadline.weight(.medium))
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.center)
                     .padding(.top, 2)
@@ -598,7 +602,7 @@ struct QuizCardView: View {
                     } icon: {
                         Image(systemName: "clock")
                     }
-                    .font(.footnote.weight(.medium))
+                    .font(.subheadline.weight(.medium))
                     .foregroundStyle(Theme.ink2)
                     .multilineTextAlignment(.center)
                 }
@@ -790,13 +794,16 @@ private struct QuizListenButton: View {
     }
 }
 
-/// The round speaker of the "Tekrar" tab (mockup `.spk`): a 34 pt `surface2` circle in a 44 pt
-/// target that reads `text` aloud; a second tap stops it. The speaker waves while it reads,
-/// unless Reduce Motion is on. Lives here because the snapshot bundle compiles this file (and
-/// Speaker.swift) but not the card pieces; `ReviewView` uses it.
+/// The round speaker of the "Tekrar" tab (mockup `.spk`): a 34 pt `surface2` circle with a
+/// `lineStrong` edge (the fill alone is 1.1-1.5:1 against the card, audit K1; as
+/// `CardSentenceSpeaker`) in a 44 pt target that reads `text` aloud; a second tap stops it. The
+/// speaker waves while it reads, unless Reduce Motion is on. Lives here because the snapshot
+/// bundle compiles this file (and Speaker.swift) but not the card pieces; `ReviewView` uses it.
 struct ReviewSpeakerButton: View {
     @ObservedObject private var speaker = Speaker.shared
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
     @ScaledMetric(relativeTo: .subheadline) private var circleSize: CGFloat = 34
     let text: String
     var accessibilityName = "Dinle"
@@ -812,6 +819,9 @@ struct ReviewSpeakerButton: View {
                 .foregroundStyle(Theme.ink)
                 .frame(width: circleSize, height: circleSize)
                 .background(Theme.surface2, in: Circle())
+                .overlay {
+                    Circle().strokeBorder(Theme.lineStrong, lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1)
+                }
                 .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
                 .contentShape(Rectangle())
         }

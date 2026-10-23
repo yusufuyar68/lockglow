@@ -178,7 +178,8 @@ struct SozlukStatusMark: View {
             Image(systemName: SozlukStatus.symbol(state))
         }
         .labelStyle(.titleAndIcon)
-        .font(.caption.weight(.semibold))
+        // Footnote, the level badge's size: one small size on the rows and the word page.
+        .font(.footnote.weight(.semibold))
         .foregroundStyle(SozlukStatus.color(state))
     }
 }
@@ -346,7 +347,7 @@ struct SozlukWordRow: View {
                 }
                 if let note = note {
                     Text(note)
-                        .font(.caption.weight(.medium))
+                        .font(.footnote.weight(.medium))
                         .foregroundStyle(Theme.ink2)
                 }
             }

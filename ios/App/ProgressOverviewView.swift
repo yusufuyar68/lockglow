@@ -43,9 +43,12 @@ struct ProgressOverviewView: View {
     @State private var openedWord: WidgetWord?
     @ScaledMetric(relativeTo: .body) private var cardWidth: CGFloat = 220
 
+    // Type (CLAUDE.md, Apple's text styles, four sizes): the counts in Large Title bold; section
+    // titles, the week's sentence, shelf counts and the met words in Title 3; row titles and
+    // examples in Headline / Body; every secondary line in Subheadline.
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
                 if summary.note.kind != .emptyLibrary {
                     NoteCard(note: summary.note)
                 }
@@ -173,7 +176,7 @@ struct ProgressOverviewView: View {
                         Rectangle()
                             .fill(Theme.line)
                             .frame(height: 1)
-                            .padding(.leading, 14)
+                            .padding(.leading, 16)
                             .accessibilityHidden(true)
                     }
                     ShelfRow(
@@ -198,11 +201,11 @@ struct ProgressOverviewView: View {
                         open: { openedWord = $0 }
                     )
                     Text("“Biliyorum” dediğin kelimeler. Henüz sorulmadılar. Bir kez sorulurlar; bilirsen Yerleşti basamağına geçerler.")
-                        .font(.footnote)
+                        .font(.subheadline)
                         .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
-                        .padding(.horizontal, 14)
-                        .padding(.bottom, 14)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 16)
                 }
                 // Dashed: these words were never tested (sakin_ilerleme.md, Koriat and Bjork 2005).
                 .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
@@ -254,7 +257,7 @@ struct ProgressOverviewView: View {
                             Rectangle()
                                 .fill(Theme.line)
                                 .frame(height: 1)
-                                .padding(.leading, 14)
+                                .padding(.leading, 16)
                                 .accessibilityHidden(true)
                         }
                         TopicRow(topic: topic)
@@ -268,7 +271,7 @@ struct ProgressOverviewView: View {
     // MARK: Empty library
 
     private var emptyLibrary: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             Image(systemName: "books.vertical")
                 .font(.largeTitle)
                 .foregroundStyle(Theme.ink3)
@@ -287,7 +290,7 @@ struct ProgressOverviewView: View {
                     .padding(.top, 4)
             }
         }
-        .padding(20)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardSurface()
     }
@@ -467,7 +470,7 @@ private struct NoteCard: View {
                 .lineSpacing(2)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(18)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardSurface()
         .accessibilityElement(children: .ignore)
@@ -518,13 +521,13 @@ private struct CountTile: View {
     let value: Int
     let caption: String
     let voiceLabel: String
-    @ScaledMetric(relativeTo: .title) private var numberSize: CGFloat = 30
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(verbatim: "\(value)")
-                // Grows with the text size, but not past 40 pt: two tiles share one row.
-                .font(.system(size: min(numberSize, 40), weight: .bold))
+                // Large Title bold (Dynamic Type, default design). A number, so it may shrink
+                // on one line; at accessibility sizes the tiles stack and keep the full width.
+                .font(.largeTitle.weight(.bold))
                 .monospacedDigit()
                 .foregroundStyle(Theme.ink)
                 .lineLimit(1)
@@ -534,7 +537,7 @@ private struct CountTile: View {
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(.vertical, 14)
+        .padding(.vertical, 12)
         .padding(.horizontal, 16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
@@ -553,7 +556,6 @@ private struct MetWordCard: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @ScaledMetric(relativeTo: .title2) private var lemmaSize: CGFloat = 24
 
     var body: some View {
         Button {
@@ -615,8 +617,9 @@ private struct MetWordCard: View {
 
     private var front: some View {
         VStack(alignment: .leading, spacing: 8) {
+            // Title 3 serif bold (Dynamic Type), the size of the page's section titles.
             Text(verbatim: word.lemma)
-                .font(Theme.Fonts.englishWord(size: lemmaSize))
+                .font(.system(.title3, design: .serif).weight(.bold))
                 .foregroundStyle(Theme.ink)
                 // Two lines in the narrow card; at accessibility sizes the card is full width and
                 // a long phrase takes the lines it needs.
@@ -625,7 +628,7 @@ private struct MetWordCard: View {
                 .fixedSize(horizontal: false, vertical: true)
             if let gloss = word.glossTR, !gloss.isEmpty {
                 Text(verbatim: gloss)
-                    .font(.callout)
+                    .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -634,7 +637,7 @@ private struct MetWordCard: View {
                 VStack(alignment: .leading, spacing: 6) {
                     ShelfMeter(shelf: shelf)
                     Text(verbatim: shelf.title)
-                        .font(.footnote.weight(.medium))
+                        .font(.subheadline.weight(.medium))
                         .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
                         .accessibilityLabel(Text(verbatim: shelf.voiceTitle))
@@ -699,7 +702,7 @@ private struct ShelfRow: View {
     private static let maxSpines = 20
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             Button(action: toggle) {
                 HStack(alignment: .center, spacing: 12) {
                     VStack(alignment: .leading, spacing: 2) {
@@ -708,7 +711,7 @@ private struct ShelfRow: View {
                             .foregroundStyle(Theme.ink)
                             .fixedSize(horizontal: false, vertical: true)
                         Text(verbatim: shelf.rhythm)
-                            .font(.footnote)
+                            .font(.subheadline)
                             .foregroundStyle(Theme.ink2)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -751,7 +754,9 @@ private struct ShelfRow: View {
                     .transition(.opacity)
             }
         }
-        .padding(14)
+        // A grouped row's margins: 16 pt at the sides.
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
     }
 
     private var voiceLabel: String {
@@ -808,7 +813,7 @@ private struct BookSpines: View {
                 }
                 if extra > 0 {
                     Text(verbatim: "+\(extra)")
-                        .font(.caption.weight(.semibold))
+                        .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.ink2)
                         .padding(.leading, 4)
                 }
@@ -905,11 +910,12 @@ private struct TopicRow: View {
             }
             ThreePartBar(known: topic.known, learning: topic.learning, total: topic.total)
             Text(verbatim: caption)
-                .font(.footnote)
+                .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(14)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: "\(topic.title): \(topic.total) kelime. \(captionText(separator: ", "))"))
@@ -1073,7 +1079,7 @@ private struct ShelfWordSheet: View {
                             .englishVoice()
                     }
                 }
-                .padding(20)
+                .padding(16)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .background {

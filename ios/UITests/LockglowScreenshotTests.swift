@@ -502,7 +502,7 @@ final class LockglowScreenshotTests: XCTestCase {
     private static let roundControls: Set<String> = [
         "Bitir", "Kelimeyi dinle", "Cümleyi dinle", "Dinle", "Durdur", "Devam", "Geri al", "Neden?",
         "Zordu", "Kolaydı", "Anlamını göster", "Sonraki", "Bunu zaten biliyorum", "Göster", "Buldum",
-        "Bulamadım", "Akış", "Tekrar", "Sözlük", "Ayarlar",
+        "Bulamadım", "Akış", "Tekrar", "Sözlük", "Ayarlar", "Sözlük'te ara",
     ]
 
     /// Plays a started Tekrar round up to its summary and attaches the first screen of each kind,

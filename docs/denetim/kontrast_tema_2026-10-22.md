@@ -1,5 +1,63 @@
 # Tema kontrastı: K1 düzeltmesi, yazı tonları, gece 1. adım (22 Ekim 2026)
 
+## Güncel: Apple'ın anlamsal renkleri (24 Ekim 2026, `is6-hig`)
+
+**Ne değişti:** Tokenlar Apple'ın renk mantığına geçti (CLAUDE.md, "Tasarım kuralları: Apple dili"). Adlar ve API aynı. Şerit sarısı (`band`, `bandLight`, `bandDark`, `mark…`) değişmedi.
+- Sayfa `bg` = systemGroupedBackground; kart `surface` = secondarySystemGroupedBackground; `surface2`, `surface3` = systemGray5, systemGray4.
+- Yazı kademesi: `ink` = label, `ink2` = secondaryLabel, `ink3` = tertiaryLabel (opak gri; yazı taşıyabilsin diye 4,5:1'e koyulaştırıldı).
+- `line` = separator. Tek vurgu rengi `tint` = mürekkep (gündüz siyah, gece beyaz).
+- `good`, `bad`, `caution`: gündüz Apple'ın erişilebilir yeşil, kırmızı, turuncusunun, kendi paneli dahil her zeminde 4,5:1'i (payla 4,6:1) tutan en yakın koyusu; gece Apple'ın koyu mod renkleri.
+
+**Yeni değerler** (YK = Yüksek Kontrast):
+
+| Token | açık | koyu | açık+YK | koyu+YK |
+|---|---|---|---|---|
+| `ink`, `tint` | #000000 | #FFFFFF | #000000 | #FFFFFF |
+| `ink2` | #3C3C43 | #C7C7CC | #2C2C30 | #E5E5EA |
+| `ink3` | #636366 | #98989D | #3C3C43 | #C7C7CC |
+| `primary` / `onPrimary` | #000000 / #FFFFFF | #FFFFFF %12 / #FFFFFF | aynı | aynı |
+| `tintSoft` | #000000 %8 | #FFFFFF %10 | #000000 %12 | #FFFFFF %16 |
+| `bg` | #F2F2F7 | #000000 | aynı | aynı |
+| `surface` | #FFFFFF | #1C1C1E | aynı | aynı |
+| `surface2` | #E5E5EA | #2C2C2E | aynı | aynı |
+| `surface3` | #D1D1D6 | #3A3A3C | aynı | aynı |
+| `line` | #3C3C43 %29 | #545458 %65 | #3C3C43 %45 | #545458 |
+| `lineStrong` | #000000 %52 | #FFFFFF %42 | #000000 %64 | #FFFFFF %56 |
+| `good` / `goodTint` | #1E7433 / #E4EEE7 | #30D158 / %16 | #165526 / #E4EEE7 | #58DA78 / %16 |
+| `bad` / `badTint` | #CE0014 / #F9E0E3 | #FF6961 / %16 | #9A000F / #F9E0E3 | #FFA29D / %16 |
+| `caution` / `cautionTint` | #BE3100 / #F6E2DB | #FF9F0A / #3C2E1B | #8D2400 / #F6E2DB | #FFAD2D / #3C2E1B |
+| `shadowNear`, `shadowFar` | #000000 %5, %12 | (gece gölge yok) | | |
+
+**Oranlar** (her satırda en düşük değer; eşik yazıda 4,5, kenarda 3, YK'de kenar 4,5):
+
+| Çift | açık | koyu | açık+YK | koyu+YK |
+|---|---|---|---|---|
+| `ink` / bg, surface, surface2 | 16,73 | 13,94 | 16,73 | 13,94 |
+| `ink2` / bg, surface, surface2 (hedef 7) | 8,71 | 8,28 | 11,08 | 11,10 |
+| `ink3` / bg, surface, surface2 | 4,77 | 4,85 | 8,71 | 8,28 |
+| `ink3` / surface3 (yasak çift) | 3,94 | 3,95 | 7,19 | 6,74 |
+| `good` / zeminler ve `goodTint` | 4,65 | 6,21 | 7,08 | 7,00 |
+| `bad` / zeminler ve `badTint` | 4,60 | 4,79 | 7,03 | 7,02 |
+| `caution` / zeminler ve `cautionTint` | 4,61 | 6,39 | 7,01 | 7,05 |
+| `ink2` / üç panel | 8,75 | 7,45 | 11,13 | 10,00 |
+| `lineStrong` kenarı (en kötü dolgu × komşu) | 3,42 | 3,30 | 5,33 | 5,02 |
+| Ana düğme yazısı / dolgu | 21,00 | 11,88 (kartta; sayfada 16,48) | 21,00 | 11,88 |
+| Gece ana düğme kenarı / ikincil düğme kenarı | — | 3,69–4,23 | — | 2,55–2,78 |
+| `bg` / `ink` (Geri alındı bildirimi) | 18,82 | 21,00 | 18,82 | 21,00 |
+| `ink` / gündüz şeridi (`surface>band`) | 16,46 | — | 16,46 | — |
+| `line` / surface (süs) | 1,70 | 1,66 | 2,39 | 2,26 |
+| `surface2` / bg (dolgu tek başına; sınırı kenar verir) | 1,13 | 1,51 | 1,13 | 1,51 |
+
+- Bütün yazı çiftleri dört görünümde eşiğin üstünde. `kontrast.py`'de ❌ kalan 7 satır eskisiyle aynı türden: dolgu ya da süs (`surface2`, `surface`, `surface3` zeminlerde; gece ana düğme dolgusu; artık çizilmeyen eski rozet noktası `bg>ink3@0.35`).
+- `ink3` / `surface3` 3,9:1: kural aynı, `surface3` üstünde `ink3` yazı yok.
+- **Widget vurgu renkleri** (`WidgetAccent.tones`, testi `WidgetConfigurationTests`): gündüz yeni mürekkeple (#000000) sarı 16,46, yeşil 15,98, pembe 14,07 (eşik 7); gece #1C1C1E üstünde 12,32 / 11,06 / 8,98, siyahta 15,20 / 13,65 / 11,08 (eşik 3). Hepsi geçiyor.
+- **Nasıl hesaplandı:** `python -X utf8 docs/denetim/araclar/kontrast.py --tokenlar` (yazı çiftleri) ve aşağıdaki [Ek](#ek-kenar-hesabı)'teki yöntemle kenarlar; kenar hesabında dolgular `surface`, `surface2` ya da dolgusuz, komşular `bg`, `surface`, `surface2`. Karışımlar 8 bit'e yuvarlandı; bu yüzden bazı değerler betikten 0,01–0,03 farklı. En büyük fark gece `bad` / `badTint` panelinde: betik 4,77 (koyu) ve 6,99 (koyu+YK) veriyor, ikisi de 4,5 eşiğinin üstünde.
+- **Not:** `kontrast.py --oneri` hâlâ eski mürekkebi (#15181B) kullanıyor; bu dalda dokunulmadı.
+
+Aşağısı 22 Ekim'in kaydı; değerleri eski temaya aittir.
+
+---
+
 > **Sonradan değişti (`is4-tema`):** Gece ana düğmesi artık **C** (mürekkep %12 dolgu, kalın mürekkep yazı, 2 pt tam mürekkep kenar; YK ya da Düğme Şekilleri açıkken 3 pt). Aşağıda ana düğmeyi anlatan satırlar (bölüm 1, 2'nin son satırı, 4, 5) bu dalın uyguladığı **A**'yı (tonal sarı) anlatıyor. Güncel ölçüm: [`kontrast_gece_c_2026-10-22.md`](kontrast_gece_c_2026-10-22.md). Tekrar'daki cevap düğmelerinde artık dolu varsayılan düğme yok (`is3-tekrar`); 5. bölümdeki `isDefault` notu geçersiz.
 
 **Ne:** Ortak tasarım sisteminin renk değerleri ve iç çizimi değişti. Adlar ve imzalar (API) aynı.

@@ -3,14 +3,16 @@ import SwiftUI
 /// Lockglow's colors and type on the watch (is5-watch). The watch is always dark, so these are the
 /// night ("Gece") values of `Theme` in ios/Shared/LockglowTheme.swift, which is not compiled for
 /// watchOS (it builds its colors with UIKit's dynamic providers). Yellow stays on the English word
-/// alone (rule 1); English is serif, Turkish and the interface are SF Pro.
+/// alone (rule 1); English is serif, Turkish and the interface are SF Pro. Since 2026-10-24 these
+/// follow Apple's semantic colors: label, secondaryLabel and tertiaryLabel as opaque grays, and
+/// the secondary grouped background for the card.
 enum WatchTheme {
     static let band = tone(0xE9E040)
-    static let ink = tone(0xF3F4F0)
-    static let ink2 = tone(0xB7BDC2)
-    static let ink3 = tone(0x8E959B)
+    static let ink = tone(0xFFFFFF)
+    static let ink2 = tone(0xC7C7CC)
+    static let ink3 = tone(0x98989D)
     /// The Smart Stack card behind the rectangular complication (the face itself draws none).
-    static let surface = tone(0x191C20)
+    static let surface = tone(0x1C1C1E)
 
     enum Fonts {
         /// The English word in the app.

@@ -78,7 +78,7 @@ struct SpeechSettingsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
                 accentSection
                 rateSection
                 voiceSection
@@ -166,12 +166,12 @@ struct SpeechSettingsView: View {
                 .tint(Theme.good)
                 .settingsRowPadding()
             }
-            .padding(.top, 4)
+            .padding(.top, 8)
             // While it reads, a second tap stops it (`Speaker.toggle`): the repeat comes after.
             Text("Okuma bitince aynı kelimeye ya da cümleye yine dokunursan daha yavaş okur. Önce normal, sonra yavaş duyarsın.")
                 .settingsFootnote()
             sampleRow
-                .padding(.top, 4)
+                .padding(.top, 8)
         }
     }
 
@@ -180,7 +180,7 @@ struct SpeechSettingsView: View {
     private var sampleRow: some View {
         let isSpeaking = speaker.speakingText == Self.sample
         let layout = dynamicTypeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10))
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
             : AnyLayout(HStackLayout(spacing: 12))
         return SettingsGroup {
             layout {
@@ -199,7 +199,7 @@ struct SpeechSettingsView: View {
                 .accessibilityLabel(isSpeaking ? "Durdur" : "Örnek cümleyi dinle")
                 .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle")])
             }
-            .padding(14)
+            .padding(16)
         }
     }
 
@@ -230,7 +230,7 @@ struct SpeechSettingsView: View {
                     }
                     .buttonStyle(SettingsRowButtonStyle())
                 }
-                .padding(.top, 4)
+                .padding(.top, 8)
             }
         }
     }
@@ -254,15 +254,16 @@ struct SpeechSettingsView: View {
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                // The selected voice's check in the one tint, as in an iOS list.
                 Image(systemName: "checkmark")
                     .font(.body.weight(.semibold))
-                    .foregroundStyle(Theme.ink)
+                    .foregroundStyle(Theme.tint)
                     .opacity(isSelected ? 1 : 0)
                     .accessibilityHidden(true)
             }
-            .padding(.horizontal, 14)
+            .padding(.horizontal, 16)
             .padding(.vertical, 8)
-            .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+            .frame(maxWidth: .infinity, minHeight: Theme.minHitSize, alignment: .leading)
             .contentShape(Rectangle())
         }
         .buttonStyle(SettingsRowButtonStyle())
@@ -345,7 +346,7 @@ struct VoiceDownloadGuide: View {
     var isCard = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             if isCard {
                 Text("Daha doğal ses indir")
                     .font(.headline)
@@ -356,7 +357,7 @@ struct VoiceDownloadGuide: View {
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
-            VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 16) {
                 ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
                     VoiceGuideStep(number: index + 1, text: step)
                 }
@@ -417,7 +418,7 @@ private struct VoiceGuideStep: View {
 
     var body: some View {
         let layout = dynamicTypeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
             : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 12))
         layout {
             Text(verbatim: "\(number)")

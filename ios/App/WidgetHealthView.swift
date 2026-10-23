@@ -44,7 +44,7 @@ struct WidgetHealthView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
                 WidgetHealthCard(status: status, problem: health.planProblem, lastUpdate: health.planUpdatedAt)
                 // With no widget listed the card above already says so.
                 if !health.instances.isEmpty {
@@ -53,7 +53,7 @@ struct WidgetHealthView: View {
                 stateSection
                 actionsSection
                 if DiagnosticsSwitch.isOn {
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 8) {
                         SettingsSectionHeader("Tanılama")
                         metricsSection
                         sayDiagnosticsSection
@@ -128,7 +128,7 @@ struct WidgetHealthView: View {
     /// actions. No widget: the guide is the main action (refreshing would change nothing). Not
     /// sure (`unknown`): refresh first, the guide as a bordered capsule under it.
     private var actionsSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             if status == .notAdded {
                 guideLink
                     .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
@@ -201,7 +201,7 @@ struct WidgetHealthView: View {
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
                 }
-                .padding(.top, 14)
+                .padding(.top, 16)
             }
             .padding(.top, 4)
             .padding(.bottom, 12)
@@ -211,7 +211,7 @@ struct WidgetHealthView: View {
                 .foregroundStyle(Theme.ink)
                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
         }
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
     }
 
@@ -235,15 +235,16 @@ struct WidgetHealthView: View {
                 Text("Kabul hedefleri")
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(Theme.ink)
-                    .padding(.top, 14)
-                    .padding(.bottom, 2)
+                    .padding(.top, 16)
+                    .padding(.bottom, 4)
                     .accessibilityAddTraits(.isHeader)
                 ForEach(report.acceptance, id: \.goal) { check in
                     TechnicalRow(title: Self.title(of: check.goal), value: Self.verdict(of: check))
                 }
                 Text("Yalnız bu telefonda kalır, hiçbir yere gönderilmez. Hedefler ilk eşikler; ölçüldükçe ayarlanır.")
-                    .settingsFootnote()
-                    .padding(.top, 10)
+                    // Inside the box: as far left as the rows above.
+                    .settingsFootnote(inset: 0)
+                    .padding(.top, 8)
             }
             .padding(.top, 4)
             .padding(.bottom, 12)
@@ -253,7 +254,7 @@ struct WidgetHealthView: View {
                 .foregroundStyle(Theme.ink)
                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
         }
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
     }
 
@@ -265,7 +266,7 @@ struct WidgetHealthView: View {
             VStack(alignment: .leading, spacing: 0) {
                 if attempts.isEmpty {
                     Text("Henüz deneme yok. Söyle sayfasında birkaç kez dene; son 20 deneme burada görünür.")
-                        .settingsFootnote()
+                        .settingsFootnote(inset: 0)
                         .padding(.vertical, 8)
                 } else {
                     let confidences = attempts.compactMap(\.confidence)
@@ -284,11 +285,11 @@ struct WidgetHealthView: View {
                         sayDiagnostics.clear()
                     }
                     .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
-                    .padding(.top, 14)
+                    .padding(.top, 16)
                 }
                 Text("Yalnız bellekte, bu telefonda tutulur; uygulama kapanınca silinir. Söylediğin şey kaydedilmez.")
-                    .settingsFootnote()
-                    .padding(.top, 10)
+                    .settingsFootnote(inset: 0)
+                    .padding(.top, 8)
             }
             .padding(.top, 4)
             .padding(.bottom, 12)
@@ -298,7 +299,7 @@ struct WidgetHealthView: View {
                 .foregroundStyle(Theme.ink)
                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
         }
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .background(Theme.surface2, in: RoundedRectangle(cornerRadius: Theme.Radius.box, style: .continuous))
     }
 
@@ -437,9 +438,15 @@ private struct WidgetHealthCard: View {
     let lastUpdate: Date?
     /// The icon circle grows with the symbol's text style, so the symbol never leaves it.
     @ScaledMetric(relativeTo: .title3) private var circleSize: CGFloat = 44
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        HStack(alignment: .center, spacing: 12) {
+        // At the accessibility text sizes the (then large) circle stands above the sentence, so
+        // the sentence keeps the card's whole width.
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
+            : AnyLayout(HStackLayout(alignment: .center, spacing: 12))
+        return layout {
             Image(systemName: symbol)
                 .font(.title3.weight(.bold))
                 .foregroundStyle(symbolColor)
@@ -458,7 +465,7 @@ private struct WidgetHealthCard: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(14)
+        .padding(16)
         .background(panelColor, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous)
@@ -645,8 +652,9 @@ private struct SayAttemptRow: View {
                 Text(verbatim: headline)
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(Theme.ink)
+                // `.footnote` like the headline above (12 pt merged into 13, at most 3-4 sizes).
                 Text(verbatim: details)
-                    .font(.caption)
+                    .font(.footnote)
                     .foregroundStyle(Theme.ink2)
             }
             .fixedSize(horizontal: false, vertical: true)

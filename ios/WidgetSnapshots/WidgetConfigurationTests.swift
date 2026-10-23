@@ -131,11 +131,13 @@ final class WidgetConfigurationTests: XCTestCase {
 
     /// WCAG 2.2 contrast of every accent: by day the word's ink (and its Increase Contrast value)
     /// stands on the band, at least 7:1; at night the band is a line under the word on the night
-    /// paper and on StandBy's black, at least 3:1 (non-text). Yellow is the theme's band.
+    /// surface (the widget's background) and on StandBy's black, at least 3:1 (non-text). Yellow
+    /// is the theme's band. The ink and surface values are LockglowTheme's (2026-10-24: Apple's
+    /// semantic colors, ink is black by day with and without Increase Contrast).
     func testAccentsKeepTheirContrast() throws {
-        let ink: UInt32 = 0x15181B
-        let inkHigh: UInt32 = 0x0B0C0E
-        let nightSurface: UInt32 = 0x191C20
+        let ink: UInt32 = 0x000000
+        let inkHigh: UInt32 = 0x000000
+        let nightSurface: UInt32 = 0x1C1C1E
         for accent in WidgetAccent.allCases {
             let tones = accent.tones
             XCTAssertGreaterThanOrEqual(contrast(ink, tones.day), 7, "\(accent) by day")

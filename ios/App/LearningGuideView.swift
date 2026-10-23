@@ -63,6 +63,8 @@ struct LearningGuideView: View {
 }
 
 /// The guide's cards without a scroll view, background or title (see `LearningGuideView`).
+/// Type: Title 3 (card titles, the sum, the meaning), Body (paragraphs, English sentences),
+/// Subheadline (notes, labels, captions) and the one word to try in the theme's word style.
 struct LearningGuideContent: View {
     let dailyNewWords: Int
     let rotationMinutes: Int
@@ -481,7 +483,7 @@ private extension View {
 /// "Kısaca": the three habits, for a reader who stops here.
 private struct GuideSummary: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("Kısaca")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.ink2)
@@ -496,7 +498,7 @@ private struct GuideSummary: View {
     }
 
     private func row(_ text: LocalizedStringKey) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: 10) {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
             Image(systemName: "checkmark")
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(Theme.ink)
@@ -536,7 +538,7 @@ private struct GuideLoop: View {
                 arrow
                 column(steps[2])
             }
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 8) {
                 ForEach(steps.indices, id: \.self) { index in
                     row(steps[index])
                 }
@@ -577,7 +579,7 @@ private struct GuideLoop: View {
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(Theme.ink)
             Text(verbatim: step.caption)
-                .font(.footnote)
+                .font(.subheadline)
                 .foregroundStyle(Theme.ink2)
         }
         .lineLimit(1)
@@ -593,7 +595,7 @@ private struct GuideLoop: View {
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Theme.ink)
                 Text(verbatim: step.caption)
-                    .font(.footnote)
+                    .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
             }
             .fixedSize(horizontal: false, vertical: true)
@@ -626,7 +628,7 @@ private struct GuideIntervalLadder: View {
                         .fill(Theme.tint.opacity(barOpacity(index)))
                         .frame(height: 12 + CGFloat(index) * 10)
                     Text(verbatim: waits[index])
-                        .font(.caption.weight(.semibold))
+                        .font(.subheadline.weight(.semibold))
                         .monospacedDigit()
                         .foregroundStyle(Theme.ink)
                         .lineLimit(1)
@@ -688,8 +690,10 @@ private struct GuideRecallDemo: View {
                         .exampleStyle()
                         .fixedSize(horizontal: false, vertical: true)
                         .englishVoice()
+                    // Subheadline like the page's other secondary lines (not Callout: a fifth size).
                     Text(verbatim: translation)
-                        .exampleTranslationStyle()
+                        .font(.subheadline)
+                        .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .transition(.opacity)
@@ -709,7 +713,7 @@ private struct GuideRecallDemo: View {
             }
             .buttonStyle(SecondaryCapsuleButtonStyle())
         }
-        .padding(14)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .guideWell()
     }
@@ -728,7 +732,7 @@ private struct GuideMonthMath: View {
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
             Text(verbatim: "\(perDay) × 30 gün ≈ \(perMonth) kelime")
-                .font(.title2.weight(.bold))
+                .font(.title3.weight(.bold))
                 .monospacedDigit()
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
@@ -737,7 +741,7 @@ private struct GuideMonthMath: View {
                 .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(14)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .guideWell()
         .accessibilityElement(children: .ignore)
@@ -772,10 +776,10 @@ private struct GuideVerdictSamples: View {
     /// accessibility sizes instead of being cut.
     private func sample(_ title: String, systemImage: String, color: Color, fill: Color) -> some View {
         Label(title, systemImage: systemImage)
-            .font(.footnote.weight(.bold))
+            .font(.subheadline.weight(.bold))
             .foregroundStyle(color)
             .fixedSize(horizontal: false, vertical: true)
-            .padding(.horizontal, 10)
+            .padding(.horizontal, 8)
             .padding(.vertical, 6)
             .background(fill, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
@@ -805,7 +809,7 @@ private struct GuideFalseFriends: View {
                 row(pairs[index])
             }
         }
-        .padding(14)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .guideWell()
     }
@@ -900,7 +904,7 @@ private struct GuideMistakeExample: View {
                     rightSentence
                 }
             } else {
-                Grid(alignment: .leadingFirstTextBaseline, horizontalSpacing: 10, verticalSpacing: 6) {
+                Grid(alignment: .leadingFirstTextBaseline, horizontalSpacing: 8, verticalSpacing: 8) {
                     GridRow {
                         tag(isRight: false)
                         wrongSentence
@@ -918,26 +922,27 @@ private struct GuideMistakeExample: View {
                 .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.vertical, 12)
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .guideWell()
     }
 
     private func tag(isRight: Bool) -> some View {
-        HStack(spacing: 3) {
+        HStack(spacing: 4) {
             Image(systemName: isRight ? "checkmark" : "xmark")
-                .font(.caption2.weight(.black))
+                .font(.caption.weight(.black))
                 .accessibilityHidden(true)
             Text(isRight ? "Doğru" : "Yanlış")
         }
-        .font(.footnote.weight(.bold))
+        .font(.subheadline.weight(.bold))
         .foregroundStyle(isRight ? Theme.good : Theme.bad)
         .fixedSize()
     }
 
+    /// The sentences in the example's font (`exampleFont`, Body serif), as in the cards' box.
     private var wrongSentence: some View {
         Text(diff.wrongText())
-            .font(.system(.callout, design: .serif))
+            .exampleFont()
             .foregroundStyle(Theme.ink)
             .lineSpacing(2)
             .fixedSize(horizontal: false, vertical: true)
@@ -947,7 +952,7 @@ private struct GuideMistakeExample: View {
 
     private var rightSentence: some View {
         Text(diff.rightText())
-            .font(.system(.callout, design: .serif).weight(.bold))
+            .exampleFont(bold: true)
             .foregroundStyle(Theme.ink)
             .lineSpacing(2)
             .fixedSize(horizontal: false, vertical: true)
