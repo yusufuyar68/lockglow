@@ -74,8 +74,9 @@ jobs:
     name: iOS (paket testleri + simülatör derlemesi)
     if: github.event_name == 'workflow_dispatch'
     runs-on: ${{ inputs.runner || 'macos-15' }}
-    # 45, not 30: the watchOS build, and the platform download when the image has none (is5-watch).
-    timeout-minutes: 45
+    # 60: the watchOS build with the platform download when the image has none (is5-watch), and
+    # the iPad step; a first boot of a new simulator runtime can take minutes on Intel (is5-ipad).
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: En yeni Xcode'u seç
@@ -97,7 +98,7 @@ jobs:
         working-directory: ios
         run: |
           xcodebuild -project Lockglow.xcodeproj -scheme Lockglow -configuration Debug \
-            -destination 'generic/platform=iOS Simulator' \
+            -destination 'generic/platform=iOS Simulator' -derivedDataPath build/dd \
             CODE_SIGNING_ALLOWED=NO build > build.log 2>&1 || status=$?
           grep -E "error:|warning:" build.log | sort -u | head -200 || true
           tail -5 build.log
@@ -127,6 +128,50 @@ jobs:
           grep -E "error:|warning:" build-watch.log | sort -u | head -200 || true
           tail -5 build-watch.log
           exit ${status:-0}
+      # The build above is for every simulator, iPad included (TARGETED_DEVICE_FAMILY 1,2). Here
+      # the same app is opened on the newest iPad simulator: it must say it is an iPad app and
+      # still run 20 s after launch (Akış, onboarding skipped); the screenshot is kept with the log.
+      - name: iPad simülatöründe aç
+        working-directory: ios
+        timeout-minutes: 12
+        run: |
+          APP=build/dd/Build/Products/Debug-iphonesimulator/Lockglow.app
+          # Read first, then searched: `grep -q` in a pipe can end the writer early (pipefail).
+          app_family="$(plutil -extract UIDeviceFamily json -o - "$APP/Info.plist")"
+          widget_family="$(plutil -extract UIDeviceFamily json -o - "$APP/PlugIns/LockglowWidgets.appex/Info.plist")"
+          echo "UIDeviceFamily: app $app_family, widget $widget_family"
+          grep -q 2 <<< "$app_family" || { echo "::error::the app does not declare iPad (UIDeviceFamily)"; exit 1; }
+          grep -q 2 <<< "$widget_family" || { echo "::error::the widget does not declare iPad (UIDeviceFamily)"; exit 1; }
+          BUNDLE="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist")"
+          # The newest 13" iPad Pro, else 13" iPad Air, else any iPad.
+          UDID="$(xcrun simctl list devices available -j | python3 -c '
+          import json, re, sys
+          data = json.load(sys.stdin)
+          def version(text):
+              return [int(n) for n in re.findall(r"\d+", text)]
+          devices = sorted((version(rt.split("iOS")[-1]), d["name"], d["udid"])
+                           for rt, ds in data["devices"].items() if "iOS" in rt for d in ds)
+          for pattern in (r"iPad Pro 13-inch.*", r"iPad Air 13-inch.*", r"iPad.*"):
+              found = [udid for _, name, udid in devices if re.fullmatch(pattern, name)]
+              if found:
+                  print(found[-1])
+                  break
+          ')"
+          [ -n "$UDID" ] || { echo "::warning::no iPad simulator on this runner"; exit 0; }
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b > /dev/null || { echo "::warning::the iPad simulator did not boot"; exit 0; }
+          xcrun simctl install "$UDID" "$APP"
+          xcrun simctl launch "$UDID" "$BUNDLE" -lockglow.onboardingCompleted YES
+          sleep 20
+          xcrun simctl io "$UDID" screenshot ipad-akis.png || true
+          # launchctl list: PID, status, label; an app that has ended keeps its label with "-".
+          running="$(xcrun simctl spawn "$UDID" launchctl list || true)"
+          if ! awk -v b="UIKitApplication:$BUNDLE" 'index($3, b) == 1 && $1 ~ /^[0-9]+$/ { f = 1 } END { exit !f }' <<< "$running"; then
+            echo "::error::Lockglow is not running on the iPad simulator 20 s after launch"
+            ls -t ~/Library/Logs/DiagnosticReports 2>/dev/null | head -5 || true
+            exit 1
+          fi
+          xcrun simctl shutdown "$UDID" || true
       - name: Derleme günlüğünü sakla
         if: always()
         uses: actions/upload-artifact@v4
@@ -135,5 +180,6 @@ jobs:
           path: |
             ios/build.log
             ios/build-watch.log
+            ios/ipad-akis.png
           if-no-files-found: ignore
           retention-days: 7

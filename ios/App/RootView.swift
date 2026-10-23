@@ -32,20 +32,24 @@ struct RootView: View {
     @State private var openedFromReminder = false
 
     var body: some View {
+        // iPad and Mac (WideLayout.swift): each tab in a readable column, Sözlük in two columns.
         TabView(selection: $selectedTab) {
             // "Tekrar'a geç" on the end-of-day card switches the tab here, not via the reminder route.
             FeedView(scrolledWordID: $scrolledWordID, openReview: { selectedTab = .review })
+                .readableColumn()
                 .tabItem { Label("Akış", systemImage: "rectangle.stack") }
                 .tag(AppTab.feed)
             // "Günlük hedefi değiştir" on the done screen opens Ayarlar.
             ReviewView(openSettings: { selectedTab = .settings })
+                .readableColumn()
                 .tabItem { Label("Tekrar", systemImage: "arrow.triangle.2.circlepath") }
                 .tag(AppTab.review)
-            SearchView()
+            SozlukSplitLayout()
                 .tabItem { Label("Sözlük", systemImage: "character.book.closed") }
                 .tag(AppTab.search)
             // "Tekrar'a git" on the empty library ("Kitaplığın ve bu hafta") opens Tekrar.
             SettingsView(openReview: { selectedTab = .review })
+                .readableColumn()
                 .tabItem { Label("Ayarlar", systemImage: "gearshape") }
                 .badge(model.progressRecovery == nil ? 0 : 1)
                 .tag(AppTab.settings)
@@ -53,6 +57,10 @@ struct RootView: View {
         // The selected tab is ink, never yellow and never the blue default (README `tint`);
         // the tint also reaches every control below. The iOS 26 tab bar is glass by itself.
         .tint(Theme.tint)
+        // ⌘F: Sözlük's search from any tab (WideLayout.swift).
+        .sozlukSearchShortcut {
+            selectedTab = .search
+        }
         // Screens with a system card of their own ask the queue first (`claim`).
         .environmentObject(systemCards)
         // is5-haftalik: Monday's "Geçen hafta" claims a free opening (WeeklyRecapView.swift).
@@ -99,6 +107,7 @@ struct RootView: View {
         }
         .fullScreenCover(isPresented: onboardingBinding) {
             OnboardingView()
+                .readableColumn()
                 .environmentObject(model)
         }
         .sheet(item: $detailWord) { word in
@@ -448,6 +457,10 @@ private enum WidgetTip {
     private static let lastShownKey = "lockglow.widgetTip.lastShownAt"
 
     static func isDue(status: WidgetHealthStatus, now: Date) -> Bool {
+        // A Mac ("Designed for iPad") has no Lock Screen, which the card and its guide are about.
+        if ProcessInfo.processInfo.isiOSAppOnMac {
+            return false
+        }
         let defaults = UserDefaults.standard
         guard let first = defaults.object(forKey: firstOpeningKey) as? Double else {
             defaults.set(now.timeIntervalSince1970, forKey: firstOpeningKey)

@@ -18,7 +18,10 @@ configFiles:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    TARGETED_DEVICE_FAMILY: "1"
+    # iPhone and iPad (2026-10-23). On an Apple silicon Mac the iPad app runs as "Designed for
+    # iPad" (whether the App Store offers it there is an App Store Connect setting).
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: YES
 
 packages:
   # GRDB is declared only in VocabKit's Package.swift (ContentStore depends on it). Declaring it
@@ -73,8 +76,19 @@ targets:
         NSSupportsLiveActivities: true # is5-canli: the "Tekrar" round on the Lock Screen (App/ReviewLiveActivity.swift)
         # The page colour (Theme.bg) with the icon's mark in the middle (Assets.xcassets).
         UILaunchScreen: {UIColorName: LaunchBackground, UIImageName: LaunchMark}
+        # iPhone: portrait only. iPad: every orientation, which iPad multitasking requires (Split
+        # View, Slide Over, Stage Manager windows; the resizable Mac window).
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        # One window: two windows would run two Tekrar rounds and two openings on one progress.
+        # Multitasking still works (the window shares the screen and resizes).
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
         # The widget's speaker button (SpeakWordIntent, an AudioPlaybackIntent) starts speech while the
         # app runs in the background; Apple: the .playback category needs this mode to play there.
         UIBackgroundModes:
@@ -82,8 +96,6 @@ targets:
           - fetch # is5-canli: closes the round's Live Activity (ReviewLiveActivity.refreshTaskID)
         BGTaskSchedulerPermittedIdentifiers: # is5-canli
           - $(PRODUCT_BUNDLE_IDENTIFIER).reviewLiveActivity
-        # iPhone only, portrait only: opt out of the all-orientations rule (Xcode archive warning).
-        UIRequiresFullScreen: true
         WGAppGroupID: $(APP_GROUP_ID)
         CFBundleURLTypes:
           - CFBundleURLName: $(PRODUCT_BUNDLE_IDENTIFIER)
@@ -182,6 +194,8 @@ targets:
       - path: WidgetSnapshots
       # The Tekrar quiz card is rendered here too (it needs SwiftUI, CoreModels and the speaker button).
       - path: App/QuizCardView.swift
+      # Its keyboard shortcuts.
+      - path: App/AnswerKeys.swift
       - path: App/Speaker.swift
       - path: Shared
       - path: Widgets
