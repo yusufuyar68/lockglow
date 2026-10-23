@@ -32,20 +32,24 @@ struct RootView: View {
     @State private var openedFromReminder = false
 
     var body: some View {
+        // iPad and Mac (WideLayout.swift): each tab in a readable column, Sözlük in two columns.
         TabView(selection: $selectedTab) {
             // "Tekrar'a geç" on the end-of-day card switches the tab here, not via the reminder route.
             FeedView(scrolledWordID: $scrolledWordID, openReview: { selectedTab = .review })
+                .readableColumn()
                 .tabItem { Label("Akış", systemImage: "rectangle.stack") }
                 .tag(AppTab.feed)
             // "Günlük hedefi değiştir" on the done screen opens Ayarlar.
             ReviewView(openSettings: { selectedTab = .settings })
+                .readableColumn()
                 .tabItem { Label("Tekrar", systemImage: "arrow.triangle.2.circlepath") }
                 .tag(AppTab.review)
-            SearchView()
-                .tabItem { Label("Sözlük", systemImage: "magnifyingglass") }
+            SozlukSplitLayout()
+                .tabItem { Label("Sözlük", systemImage: "character.book.closed") }
                 .tag(AppTab.search)
             // "Tekrar'a git" on the empty library ("Kitaplığın ve bu hafta") opens Tekrar.
             SettingsView(openReview: { selectedTab = .review })
+                .readableColumn()
                 .tabItem { Label("Ayarlar", systemImage: "gearshape") }
                 .badge(model.progressRecovery == nil ? 0 : 1)
                 .tag(AppTab.settings)
@@ -53,9 +57,17 @@ struct RootView: View {
         // The selected tab is ink, never yellow and never the blue default (README `tint`);
         // the tint also reaches every control below. The iOS 26 tab bar is glass by itself.
         .tint(Theme.tint)
+        // ⌘F: Sözlük's search from any tab (WideLayout.swift).
+        .sozlukSearchShortcut {
+            selectedTab = .search
+        }
         // Screens with a system card of their own ask the queue first (`claim`).
         .environmentObject(systemCards)
+        // is5-haftalik: Monday's "Geçen hafta" claims a free opening (WeeklyRecapView.swift).
+        .weeklyRecapAtOpening(systemCards, blocked: model.showsOnboarding || detailWord != nil || openedFromReminder)
         .task {
+            // is5-canli: a new run has no round; a Live Activity left by the last run goes.
+            ReviewLiveActivity.shared.endLeftovers()
             await model.start()
             await startOpening()
         }
@@ -95,6 +107,7 @@ struct RootView: View {
         }
         .fullScreenCover(isPresented: onboardingBinding) {
             OnboardingView()
+                .readableColumn()
                 .environmentObject(model)
         }
         .sheet(item: $detailWord) { word in
@@ -136,12 +149,35 @@ struct RootView: View {
         .onOpenURL { url in
             handle(url)
         }
+        // The "Tekrar'ı aç" control (iOS 18, Shared/ControlsIntents.swift) opens Tekrar in front:
+        // a word card or the widget guide closes (a system card stays, as for a reminder tap).
+        .onReceive(ControlOpenRequest.shared.$screen) { screen in
+            guard screen == .review else {
+                return
+            }
+            ControlOpenRequest.shared.clear()
+            detailWord = nil
+            showsWidgetGuide = false
+            selectedTab = .review
+        }
         .onAppear {
             openReviewIfRequested()
         }
         .onChange(of: notifications.reviewRequested) { _, _ in
             openReviewIfRequested()
         }
+        // Siri, Kestirmeler and a tapped Spotlight result (Intents/ShortcutRouter.swift): a word
+        // opens as its whole card, "Tekrar" as the tab; the add form is the modifier's own sheet.
+        .shortcutRoutes(
+            wordCardShown: detailWord != nil,
+            otherSheetShown: systemCards.presented != nil || showsWidgetGuide,
+            openWord: { open($0, in: model.feedWords, asCard: true) },
+            openReview: {
+                detailWord = nil
+                showsWidgetGuide = false
+                selectedTab = .review
+            }
+        )
     }
 
     /// Shown on first launch and from "Ayarlar"; the onboarding closes itself through the model.
@@ -204,8 +240,8 @@ struct RootView: View {
         if WidgetTip.isDue(status: WidgetHealthStatus(of: model), now: now) {
             candidates.insert(.widgetTip)
         }
-        // Never over the onboarding or a card opened from the widget.
-        if model.showsOnboarding || detailWord != nil {
+        // Never over the onboarding, a card opened from the widget or what a shortcut asked for.
+        if model.showsOnboarding || detailWord != nil || ShortcutRouter.shared.isActive {
             candidates = []
         }
         let shown = systemCards.decide(from: candidates, opening: opening)
@@ -268,6 +304,11 @@ struct RootView: View {
     /// to it. A word outside the deck (the one kept on screen right after a topic change, or one
     /// from the every-topic fallback): its card opens in a sheet.
     private func handle(_ url: URL) {
+        // is5-canli: the round's Live Activity ("Devam et") opens "Tekrar", where the round waits.
+        if ReviewActivityAttributes.isContinueURL(url) {
+            selectedTab = .review
+            return
+        }
         guard let wordID = DeepLink.wordID(from: url) else {
             return
         }
@@ -288,8 +329,9 @@ struct RootView: View {
         open(wordID, in: words)
     }
 
-    private func open(_ wordID: Int, in feed: [WidgetWord]) {
-        if feed.contains(where: { $0.id == wordID }) {
+    /// `asCard`: the whole card even for a word of the deck (Siri, Spotlight).
+    private func open(_ wordID: Int, in feed: [WidgetWord], asCard: Bool = false) {
+        if !asCard && feed.contains(where: { $0.id == wordID }) {
             selectedTab = .feed
             scrolledWordID = wordID
             return
@@ -415,6 +457,10 @@ private enum WidgetTip {
     private static let lastShownKey = "lockglow.widgetTip.lastShownAt"
 
     static func isDue(status: WidgetHealthStatus, now: Date) -> Bool {
+        // A Mac ("Designed for iPad") has no Lock Screen, which the card and its guide are about.
+        if ProcessInfo.processInfo.isiOSAppOnMac {
+            return false
+        }
         let defaults = UserDefaults.standard
         guard let first = defaults.object(forKey: firstOpeningKey) as? Double else {
             defaults.set(now.timeIntervalSince1970, forKey: firstOpeningKey)
@@ -565,7 +611,7 @@ struct SystemCardSheet: View {
                     close(nil)
                 }
                 .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
-            case .breakStart, .dayEnd:
+            case .breakStart, .dayEnd, .weeklyRecap:
                 // Shown by their screens, never as a sheet.
                 Button("Tamam") {
                     close(nil)
@@ -593,7 +639,7 @@ struct SystemCardSheet: View {
         case .remindersPaused: return "bell.slash"
         case .reminderTime: return "clock"
         case .widgetTip: return "apps.iphone"
-        case .breakStart, .dayEnd: return "sun.max"
+        case .breakStart, .dayEnd, .weeklyRecap: return "sun.max"
         }
     }
 
@@ -605,6 +651,7 @@ struct SystemCardSheet: View {
         case .widgetTip: return "Kelimeler kilitli ekranında da görünsün mü?"
         case .breakStart: return "Ara verdin, sorun değil."
         case .dayEnd: return "Bugünlük yeter."
+        case .weeklyRecap: return "Geçen hafta"
         }
     }
 
@@ -620,7 +667,7 @@ struct SystemCardSheet: View {
             return "Şu anki saat: \(time). Başka bir saat sana daha uygun olabilir."
         case .widgetTip:
             return "Widget ekleyince telefonuna her baktığında bir kelime görürsün; uygulamayı açman gerekmez."
-        case .breakStart, .dayEnd:
+        case .breakStart, .dayEnd, .weeklyRecap:
             return ""
         }
     }

@@ -426,6 +426,9 @@ private struct PhosphorBandModifier: ViewModifier {
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.isLuminanceReduced) private var isLuminanceReduced
+    // is5-w-ayar: a Home Screen widget's accent (WidgetConfigurationAccent.swift); phosphor yellow
+    // everywhere else.
+    @Environment(\.phosphorBandColors) private var bandColors
 
     func body(content: Content) -> some View {
         content
@@ -436,7 +439,8 @@ private struct PhosphorBandModifier: ViewModifier {
                         placement: placement,
                         size: proxy.size,
                         glows: glows,
-                        isDimmed: isLuminanceReduced
+                        isDimmed: isLuminanceReduced,
+                        colors: bandColors
                     )
                 }
                 .allowsHitTesting(false)
@@ -477,6 +481,8 @@ private struct PhosphorBandDrawing: View {
     let glows: Bool
     /// The dimmed Always-On display (`isLuminanceReduced`): the line is 1 pt (ogrenme_ilkeleri 2.1).
     let isDimmed: Bool
+    /// Day, night and glow colors (is5-w-ayar: `PhosphorBandColors`, phosphor yellow by default).
+    let colors: PhosphorBandColors
 
     var body: some View {
         let em = size.height / SerifMetrics.lineHeight
@@ -488,13 +494,13 @@ private struct PhosphorBandDrawing: View {
             band(
                 CGRect(x: -0.08 * em, y: baseline - 0.56 * em, width: size.width + 0.16 * em, height: 0.8 * em),
                 slant: 0.12 * em,
-                color: Theme.bandLight
+                color: colors.light
             )
         case .underline:
             let isWidget = placement == .widget
             if glows {
                 Ellipse()
-                    .fill(Theme.bandGlow)
+                    .fill(colors.glow)
                     .frame(width: size.width, height: 0.24 * em)
                     .blur(radius: 0.16 * em)
                     .position(x: size.width / 2, y: underlineTop + 0.07 * em)
@@ -507,7 +513,7 @@ private struct PhosphorBandDrawing: View {
                     height: isDimmed ? 1 : max((isWidget ? 0.1 : 0.13) * em, 1.5)
                 ),
                 slant: (isWidget ? 0.08 : 0.1) * em,
-                color: Theme.bandDark
+                color: colors.dark
             )
         case .line:
             band(

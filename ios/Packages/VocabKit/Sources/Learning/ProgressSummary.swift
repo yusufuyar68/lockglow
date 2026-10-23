@@ -297,10 +297,14 @@ public struct ProgressSummary: Equatable, Sendable {
     /// Exact from `lastReviewedAt` and `lastGrade`. A word answered before those fields existed
     /// is read from the gap between `lastSeenAt` and `dueAt` (both written from the same moment
     /// by `Leitner.review`); nil when the gap matches no answer: a widget tap moved `lastSeenAt`
-    /// since, or marking a word known left a gap that looks like an answer.
+    /// since, or marking a word known left a gap that looks like an answer. An answer FSRS made
+    /// is read from the step it left (`FSRSScheduler.lastAnswer`): its "Bildim" may stay on a step.
     public static func lastAnswer(of progress: WordProgress) -> LastAnswer? {
         guard progress.reviews > 0 else {
             return nil
+        }
+        if let answer = FSRSScheduler.lastAnswer(of: progress) {
+            return answer
         }
         if let at = progress.lastReviewedAt, let grade = progress.lastGrade {
             switch progress.state {

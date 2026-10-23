@@ -8,6 +8,9 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
     public let pos: String
     public let level: String
     public let ipaUS: String?
+    /// British IPA (`card.ipa_uk`), shown when "Ses ve aksan" is set to İngiltere
+    /// (`ipa(for:)`). The seed words have none.
+    public let ipaUK: String?
     public let defMicro: String
     public let defShort: String
     public let exampleEN: String
@@ -22,6 +25,12 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
     public let sensitivity: Int?
     /// Ids of the cards a learner mixes up with this one (`card_confusable`, both directions).
     public let confusableIDs: [Int]?
+    /// The large widget's second example (`CardDetail.secondExample(besides:containing:)`); nil
+    /// in the seed and for a card with one example. The app sets it and `warning` on the plan's
+    /// copy of the word (`addingLargeWidgetDetails(from:)`), hence `var`.
+    public var secondExampleEN: String?
+    /// The large widget's warning line (`CardDetail.widgetWarning(lemma:)`); nil without one.
+    public var warning: WidgetWarning?
 
     public init(
         id: Int,
@@ -29,6 +38,7 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         pos: String,
         level: String,
         ipaUS: String? = nil,
+        ipaUK: String? = nil,
         defMicro: String,
         defShort: String,
         exampleEN: String,
@@ -42,6 +52,7 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         self.pos = pos
         self.level = level
         self.ipaUS = ipaUS
+        self.ipaUK = ipaUK
         self.defMicro = defMicro
         self.defShort = defShort
         self.exampleEN = exampleEN
@@ -57,6 +68,7 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         case pos
         case level
         case ipaUS = "ipa_us"
+        case ipaUK = "ipa_uk"
         case defMicro = "def_micro"
         case defShort = "def_short"
         case exampleEN = "example_en"
@@ -64,6 +76,8 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         case glossShortTR = "gloss_short_tr"
         case sensitivity
         case confusableIDs = "confusable_ids"
+        case secondExampleEN = "second_example_en"
+        case warning
     }
 }
 

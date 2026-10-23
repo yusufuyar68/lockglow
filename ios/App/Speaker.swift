@@ -30,10 +30,14 @@ final class Speaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             return
         }
         WordSpeech.activateSession()
-        let utterance = WordSpeech.makeUtterance(text)
-        current = ObjectIdentifier(utterance)
+        // is5-ses: a text of several sentences is one utterance per sentence with a pause between;
+        // the last one ends the reading (`utteranceEnded`).
+        let utterances = WordSpeech.makeUtterances(text)
+        current = utterances.last.map { ObjectIdentifier($0) }
         speakingText = text
-        synthesizer.speak(utterance)
+        for utterance in utterances {
+            synthesizer.speak(utterance)
+        }
     }
 
     /// Stops reading at once (nothing happens when silent) and releases the audio session.

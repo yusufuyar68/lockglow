@@ -176,14 +176,15 @@ private struct KnownWordRow: View {
             : AnyLayout(HStackLayout(spacing: 8))
         layout {
             Button(action: open) {
+                // The word and meaning as on Sözlük's rows (`SozlukWordRow`).
                 VStack(alignment: .leading, spacing: 2) {
                     Text(verbatim: word.lemma)
-                        .font(.system(.body, design: .serif).weight(.bold))
+                        .font(.system(.title3, design: .serif).weight(.bold))
                         .foregroundStyle(Theme.ink)
                     if let gloss = word.glossTR {
                         Text(gloss)
-                            .font(.subheadline.weight(.medium))
-                            .foregroundStyle(Theme.ink2)
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(Theme.ink)
                     }
                 }
                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)

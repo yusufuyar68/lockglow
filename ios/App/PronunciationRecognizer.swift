@@ -9,7 +9,9 @@ import Pronunciation
 ///   itself the first time (AssetInventory), so no English keyboard or dictation setup is needed.
 /// - iOS 17–25: an SFSpeechRecognizer request with `requiresOnDeviceRecognition`. It works only
 ///   if the phone already has on-device US English recognition; there is no server fallback.
-/// Audio is kept in memory for the take only: never written to a file, never sent anywhere.
+/// Audio is kept in memory only, never written to a file, never sent anywhere: for the
+/// recognizer while the take runs, and the part with speech in it (`ownVoice`, "Kendi sesini
+/// dinle") until the next take, `cancel()` or the page closing, whichever comes first.
 @MainActor
 final class PronunciationRecognizer: ObservableObject {
     enum Problem: Equatable {
@@ -35,13 +37,20 @@ final class PronunciationRecognizer: ObservableObject {
         case failed(Problem)
     }
 
-    static let locale = Locale(identifier: "en-US")
+    /// is5-ses: the accent of "Ses ve aksan" ("en-US" or "en-GB"), read at every take.
+    static var locale: Locale {
+        return SpeechSettingsStore.recognitionLocale
+    }
 
     @Published private(set) var phase: Phase = .idle
     /// Takes that ended with a result or a problem. The page announces each end, also one that
     /// looks like the last (the same problem again right after "Bir daha dene", too quick for the
     /// page to see the phase change).
     @Published private(set) var endedTakes = 0
+    /// The learner's voice in the last take that gave a result, trimmed to the speech and made
+    /// louder when quiet (`VoiceClip`); nil when no speech was picked up. Memory only: dropped by
+    /// the next take and by `cancel()`, which the page calls when it closes.
+    @Published private(set) var ownVoice: AVAudioPCMBuffer?
 
     /// First use with VoiceOver on: the page announces the model download; listening starts no
     /// sooner than this after the download began, so that the microphone does not hear the end of
@@ -60,6 +69,12 @@ final class PronunciationRecognizer: ObservableObject {
     private var take: SayDiagnostics.Attempt?
     private var listeningSince: Date?
     private var downloadSince: Date?
+    /// The microphone samples of the take in progress, for `ownVoice`.
+    private var recorder: TakeRecorder?
+    /// The take's voice while it is being checked; `cancel()` drops it at once.
+    private var checkedVoice: AVAudioPCMBuffer?
+    /// iOS 26+: the last cancelled analyzer finishing; the next take waits for it.
+    private var analyzerFinishing: Task<Void, Never>?
 
     /// iOS 17–25: failed takes in a row, for the set-up instructions (`RecognitionFailures`).
     private static var failureStreak = RecognitionFailureStreak()
@@ -80,9 +95,10 @@ final class PronunciationRecognizer: ObservableObject {
         }
     }
 
-    /// Starts a take. It ends by itself after the learner stops talking (or at `maxSeconds`), or
-    /// when `finish()` is called.
-    func start(_ target: PronunciationTarget, maxSeconds: Double) {
+    /// Starts a take. It ends by itself once the learner has been quiet for `quietSeconds` after
+    /// talking (longer for a sentence, where a learner stops to think), at `maxSeconds`, or when
+    /// `finish()` is called.
+    func start(_ target: PronunciationTarget, maxSeconds: Double, quietSeconds: Double = TakeMonitor.quietAfterWord) {
         cancel()
         self.target = target
         let current = generation
@@ -115,7 +131,7 @@ final class PronunciationRecognizer: ObservableObject {
                 guard current == self.generation else {
                     return
                 }
-                try self.startAudio(feeding: backend, maxSeconds: maxSeconds, generation: current)
+                try self.startAudio(feeding: backend, maxSeconds: maxSeconds, quietSeconds: quietSeconds, generation: current)
                 self.phase = .listening
                 self.listeningSince = Date()
                 self.deadline = Task {
@@ -149,6 +165,9 @@ final class PronunciationRecognizer: ObservableObject {
         if let since = listeningSince {
             take?.listeningSeconds = Date().timeIntervalSince(since)
         }
+        // The tap is gone: nothing more comes in.
+        checkedVoice = recorder.flatMap { Self.clip(from: $0) }
+        recorder = nil
         let current = generation
         work = Task {
             var outcome: Phase
@@ -177,6 +196,10 @@ final class PronunciationRecognizer: ObservableObject {
                 }
             }
             self.backend = nil
+            if case .finished = outcome {
+                self.ownVoice = self.checkedVoice
+            }
+            self.checkedVoice = nil
             self.phase = outcome
             self.endedTakes += 1
             self.take?.candidates = hypotheses.count
@@ -198,7 +221,8 @@ final class PronunciationRecognizer: ObservableObject {
         }
     }
 
-    /// Stops everything without a result (sheet closed, other mode chosen).
+    /// Stops everything without a result (sheet closed, other mode chosen) and forgets the
+    /// learner's voice.
     func cancel() {
         if isBusy {
             logTake(.cancelled)
@@ -206,11 +230,17 @@ final class PronunciationRecognizer: ObservableObject {
         take = nil
         listeningSince = nil
         downloadSince = nil
+        recorder = nil
+        checkedVoice = nil
+        ownVoice = nil
         generation += 1
         work?.cancel()
         work = nil
         stopAudio()
-        backend?.cancel()
+        if let backend {
+            backend.cancel()
+            analyzerFinishing = backend.finishing ?? analyzerFinishing
+        }
         backend = nil
         phase = .idle
     }
@@ -244,10 +274,18 @@ final class PronunciationRecognizer: ObservableObject {
             break
         }
         if #available(iOS 26.0, *) {
+            // One analysis at a time: a cancelled take's analyzer finishes first. Forgotten only
+            // after the wait, so that a take started meanwhile waits for it too.
+            if let finishing = analyzerFinishing {
+                await finishing.value
+                if analyzerFinishing == finishing {
+                    analyzerFinishing = nil
+                }
+            }
             // Apple: SpeechAnalyzer modules never send audio to Apple's servers, so only the
             // microphone permission is asked here.
             do {
-                backend = try await AnalyzerBackend.make(locale: Self.locale) { [weak self] in
+                let made = try await AnalyzerBackend.make(locale: Self.locale) { [weak self] in
                     guard let self, self.generation == current else {
                         return
                     }
@@ -255,6 +293,13 @@ final class PronunciationRecognizer: ObservableObject {
                     self.downloadSince = Date()
                 }
                 noteDownloadTime(generation: current)
+                // A newer take started meanwhile: it has (or makes) its own analyzer.
+                guard current == generation else {
+                    made.cancel()
+                    analyzerFinishing = made.finishing
+                    return nil
+                }
+                backend = made
             } catch {
                 noteDownloadTime(generation: current)
                 if current == generation {
@@ -271,8 +316,14 @@ final class PronunciationRecognizer: ObservableObject {
             default:
                 return .speechDenied
             }
-            guard let recognizer = SFSpeechRecognizer(locale: Self.locale), recognizer.supportsOnDeviceRecognition else {
+            // is5-ses: American English when the phone cannot recognize the chosen accent on the device.
+            let locales = [Self.locale, Locale(identifier: "en-US")]
+            guard let recognizer = locales.lazy.compactMap({ SFSpeechRecognizer(locale: $0) }).first(where: { $0.supportsOnDeviceRecognition }) else {
                 return .onDeviceUnavailable
+            }
+            // Never the backend of a newer take.
+            guard current == generation else {
+                return nil
             }
             backend = RecognizerBackend(recognizer: recognizer)
         }
@@ -299,7 +350,7 @@ final class PronunciationRecognizer: ObservableObject {
 
     // MARK: - Audio
 
-    private func startAudio(feeding backend: SpeechBackend, maxSeconds: Double, generation current: Int) throws {
+    private func startAudio(feeding backend: SpeechBackend, maxSeconds: Double, quietSeconds: Double, generation current: Int) throws {
         let session = AVAudioSession.sharedInstance()
         try session.setCategory(.playAndRecord, mode: .measurement, options: [.duckOthers, .defaultToSpeaker])
         try session.setActive(true, options: .notifyOthersOnDeactivation)
@@ -309,8 +360,11 @@ final class PronunciationRecognizer: ObservableObject {
         guard format.sampleRate > 0, format.channelCount > 0 else {
             throw RecognizerError.noMicrophone
         }
-        let monitor = TakeMonitor(maxSeconds: maxSeconds)
-        let tap = Self.makeTap(backend: backend, monitor: monitor) { [weak self] in
+        let monitor = TakeMonitor(maxSeconds: maxSeconds, quietAfterSpeech: quietSeconds)
+        // The deadline ends the take 2 s after `maxSeconds` at the latest.
+        let recorder = TakeRecorder(maxSeconds: maxSeconds + 2)
+        self.recorder = recorder
+        let tap = Self.makeTap(backend: backend, monitor: monitor, recorder: recorder) { [weak self] in
             guard let self, self.generation == current else {
                 return
             }
@@ -326,10 +380,12 @@ final class PronunciationRecognizer: ObservableObject {
     private nonisolated static func makeTap(
         backend: SpeechBackend,
         monitor: TakeMonitor,
+        recorder: TakeRecorder,
         onTakeOver: @escaping @MainActor () -> Void
     ) -> AVAudioNodeTapBlock {
         return { buffer, _ in
             backend.append(buffer)
+            recorder.append(buffer)
             if monitor.isTakeOver(after: buffer) {
                 Task { @MainActor in
                     onTakeOver()
@@ -364,17 +420,23 @@ enum RecognizerError: Error {
 /// The levels are a first guess; tune them on the phone.
 final class TakeMonitor {
     static let speechLevel: Float = 0.02
-    static let quietAfterSpeech = 0.9
+    /// Quiet after a word that ends the take.
+    static let quietAfterWord = 0.9
+    /// Quiet after part of a sentence that ends the take: an A2 learner repeating a sentence
+    /// stops to remember the next words.
+    static let quietAfterSentence = 1.6
     static let waitForSpeech = 5.0
 
     private let maxSeconds: Double
+    private let quietAfterSpeech: Double
     private var elapsed = 0.0
     private var quiet = 0.0
     private var heardSpeech = false
     private var over = false
 
-    init(maxSeconds: Double) {
+    init(maxSeconds: Double, quietAfterSpeech: Double = TakeMonitor.quietAfterWord) {
         self.maxSeconds = maxSeconds
+        self.quietAfterSpeech = quietAfterSpeech
     }
 
     /// True once, for the buffer that ends the take.
@@ -390,7 +452,7 @@ final class TakeMonitor {
         } else {
             quiet += seconds
         }
-        over = (heardSpeech && quiet >= Self.quietAfterSpeech)
+        over = (heardSpeech && quiet >= quietAfterSpeech)
             || (!heardSpeech && elapsed >= Self.waitForSpeech)
             || elapsed >= maxSeconds
         return over
@@ -410,6 +472,64 @@ final class TakeMonitor {
     }
 }
 
+/// Copies the first channel of each microphone buffer of one take, on the audio thread, for
+/// "Kendi sesini dinle". Memory only, at most `maxSeconds` of audio; dropped with the take.
+final class TakeRecorder {
+    private let maxSeconds: Double
+    private let lock = NSLock()
+    private var samples: [Float] = []
+    private var sampleRate = 0.0
+
+    init(maxSeconds: Double) {
+        self.maxSeconds = maxSeconds
+    }
+
+    func append(_ buffer: AVAudioPCMBuffer) {
+        guard let channel = buffer.floatChannelData?[0], buffer.frameLength > 0, buffer.format.sampleRate > 0 else {
+            return
+        }
+        lock.lock()
+        defer { lock.unlock() }
+        if sampleRate == 0 {
+            sampleRate = buffer.format.sampleRate
+            samples.reserveCapacity(Int(sampleRate * maxSeconds))
+        }
+        let room = Int(sampleRate * maxSeconds) - samples.count
+        let count = min(Int(buffer.frameLength), room)
+        if count > 0 {
+            samples.append(contentsOf: UnsafeBufferPointer(start: channel, count: count))
+        }
+    }
+
+    /// What was recorded so far.
+    func recorded() -> (samples: [Float], sampleRate: Double) {
+        lock.lock()
+        defer { lock.unlock() }
+        return (samples, sampleRate)
+    }
+}
+
+extension PronunciationRecognizer {
+    /// The part of the take with speech in it, as one mono buffer to play back; nil when the
+    /// learner was not heard at all.
+    static func clip(from recorder: TakeRecorder) -> AVAudioPCMBuffer? {
+        let (samples, sampleRate) = recorder.recorded()
+        guard let range = VoiceClip.speechRange(samples, sampleRate: sampleRate, threshold: TakeMonitor.speechLevel),
+              let format = AVAudioFormat(standardFormatWithSampleRate: sampleRate, channels: 1),
+              let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(range.count)),
+              let channel = buffer.floatChannelData?[0] else {
+            return nil
+        }
+        let speech = samples[range]
+        let gain = VoiceClip.gain(speech)
+        for (offset, sample) in speech.enumerated() {
+            channel[offset] = min(1, max(-1, sample * gain))
+        }
+        buffer.frameLength = AVAudioFrameCount(range.count)
+        return buffer
+    }
+}
+
 // MARK: - Backends
 
 /// One recognition pass. `append` is called on the audio thread; the rest on the main actor.
@@ -423,10 +543,17 @@ protocol SpeechBackend: AnyObject {
     /// The recognizer's error behind the last `finish()`, as "domain code" ("Söyle tanılama"),
     /// whether it came back empty or threw; nil when there was none or the backend does not keep it.
     var failureCode: String? { get }
+    /// After `cancel()`: the work that releases the engine's resources, if it runs on; the next
+    /// take waits for it.
+    var finishing: Task<Void, Never>? { get }
 }
 
 extension SpeechBackend {
     var failureCode: String? {
+        return nil
+    }
+
+    var finishing: Task<Void, Never>? {
         return nil
     }
 }
@@ -520,10 +647,19 @@ final class AnalyzerBackend: SpeechBackend {
         return hypotheses
     }
 
-    /// Ending the input ends the analysis; the analyzer needs no explicit cancel before release.
+    private(set) var finishing: Task<Void, Never>?
+
+    /// Ends the input and the analysis at once. Apple: not needed before releasing the analyzer;
+    /// done anyway, and the next take waits for it (`finishing`), so that a take started right
+    /// away ("Bir daha söyle") does not find this one still holding the model
+    /// (`insufficientResources`).
     func cancel() {
         inputBuilder.finish()
         phrases?.cancel()
+        let analyzer = self.analyzer
+        finishing = Task {
+            await analyzer.cancelAndFinishNow()
+        }
     }
 
     private static func phrase(from result: DictationTranscriber.Result) -> Phrase {

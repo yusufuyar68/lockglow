@@ -87,6 +87,15 @@ struct ReviewView: View {
         return session != nil
     }
 
+    /// is5-canli: the running round's counter for its Live Activity; nil without a round.
+    private var liveActivityProgress: ReviewActivityTracker.Progress? {
+        guard let session = session else {
+            return nil
+        }
+        let progress = roundProgress(session)
+        return ReviewActivityTracker.Progress(done: progress.done, total: progress.total)
+    }
+
     var body: some View {
         NavigationStack {
             content
@@ -108,6 +117,11 @@ struct ReviewView: View {
         }
         .onDisappear {
             isOnScreen = false
+        }
+        // is5-canli: the round's Live Activity starts with the round, follows "Kart 3 / 10" and
+        // closes when the round ends (ReviewLiveActivity).
+        .onChange(of: liveActivityProgress) { _, progress in
+            ReviewLiveActivity.shared.roundChanged(to: progress)
         }
         .onChange(of: systemCards.isDecided) { _, isDecided in
             if isDecided {
@@ -519,7 +533,7 @@ struct ReviewView: View {
 
     @ViewBuilder
     private func metaItems(_ word: WidgetWord) -> some View {
-        if let ipa = word.ipaUS {
+        AccentIPA(word) { ipa in
             Text(verbatim: ipa)
                 .font(.system(.subheadline, design: .serif))
                 .foregroundStyle(Theme.ink2)
@@ -599,6 +613,7 @@ struct ReviewView: View {
                 Text(isRevealed ? "Sonraki" : "Anlamını göster")
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+            .keyboardShortcut(AnswerKeys.main)
         }
         .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: knownUndoToShow?.word.id)
     }
@@ -657,6 +672,7 @@ struct ReviewView: View {
                         continueIntro(word: word, right: picked == question.answer)
                     }
                     .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                    .keyboardShortcut(AnswerKeys.main)
                     .padding(.horizontal, 16)
                     .padding(.top, 10)
                     .padding(.bottom, 8)
@@ -772,6 +788,7 @@ struct ReviewView: View {
             .contentShape(shape)
         }
         .buttonStyle(PressFadeButtonStyle())
+        .keyboardShortcut(picked == nil ? AnswerKeys.answer(question.options.firstIndex(of: option)) : nil)
         // Not `.disabled`: that would dim the options exactly when the answer is shown.
         .allowsHitTesting(picked == nil)
         // As in the quiz (`QuizCardView.optionButton`): a button's label merges its texts and an
@@ -1060,6 +1077,7 @@ struct ReviewView: View {
                 moveFocus(to: .word)
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+            .keyboardShortcut(AnswerKeys.main)
         }
     }
 
@@ -1072,6 +1090,7 @@ struct ReviewView: View {
             GradeLabel(title: info.title, symbol: info.symbol, when: when)
         }
         .buttonStyle(GradeButtonStyle())
+        .keyboardShortcut(AnswerKeys.answer(found ? 1 : 0))
         .accessibilityLabel(info.title)
         // A value, not a hint: hints come late and many people turn them off (audit V9).
         .accessibilityValue(when.map { $0 == ReviewView.backToIntroText ? $0 : "\($0) yine gelir" } ?? "")
@@ -1682,6 +1701,7 @@ struct ReviewView: View {
             .frame(maxWidth: .infinity)
             .cardSurface(cornerRadius: Theme.Radius.wordCard)
             libraryLink
+            SentencePracticeLink(isOpen: $isLibraryOpen) // "Biraz daha pratik" (SentencePracticeView.swift)
             VStack(alignment: .leading, spacing: 12) {
                 if let next = next {
                     NoteRow(symbol: "clock", text: "Sıradaki tekrar: " + ReviewView.dayAndTime(next, now: now))

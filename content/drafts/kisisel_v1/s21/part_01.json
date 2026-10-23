@@ -1,0 +1,1410 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.scared.adj.1",
+      "lemma": "scared",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skɛrd/",
+        "uk": "/skeəd/"
+      },
+      "def": {
+        "micro": "feeling fear",
+        "short": "feeling fear because something might hurt you or something bad might happen",
+        "long": "Feeling fear because you think something might hurt you or something bad might happen. You are scared of something, or scared to do something."
+      },
+      "grammar": {
+        "pattern": "be scared of sth / be scared to do sth"
+      },
+      "examples": [
+        {
+          "en": "Ece is scared of thunder.",
+          "tr": "Ece gök gürültüsünden korkuyor.",
+          "register": "neutral",
+          "focus": "scared"
+        },
+        {
+          "en": "I was scared when all the lights suddenly went off.",
+          "tr": "Bütün ışıklar birden sönünce korktum.",
+          "register": "neutral",
+          "focus": "scared"
+        },
+        {
+          "en": "Tom was too scared to go on the big roller coaster, so he waited for us at the exit.",
+          "tr": "Tom büyük hız trenine binemeyecek kadar korktu, bu yüzden bizi çıkışta bekledi.",
+          "register": "neutral",
+          "focus": "scared"
+        }
+      ],
+      "synonyms": [
+        "afraid",
+        "frightened"
+      ],
+      "antonyms": [
+        "brave"
+      ],
+      "confusables": [
+        "scary",
+        "afraid"
+      ],
+      "collocations": [
+        "scared of the dark",
+        "scared to death",
+        "get scared",
+        "a bit scared"
+      ],
+      "word_family": [
+        {
+          "lemma": "scare",
+          "pos": "v"
+        },
+        {
+          "lemma": "scary",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "korkmuş",
+          "alt": [
+            "korkan",
+            "ürkmüş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Korkan kişi 'scared', korkutan şey 'scary' olur: 'I'm scared of this film. It's scary.' 'afraid' ile aynı anlamdadır ama 'a scared child' denir, 'an afraid child' denmez.",
+          "mistakes": [
+            {
+              "wrong": "I scared of dogs.",
+              "right": "I'm scared of dogs.",
+              "why": "Türkçede 'korkuyorum' bir fiil olduğu için 'am' atlanıyor. İngilizcede 'scared' bir sıfattır ve 'be' ister. 'I scared' 'ben (birini) korkuttum' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Selin screamed and ran out of the room because she was ______ of the spider.",
+        "answer": "scared",
+        "distractors": [
+          "scary",
+          "proud",
+          "fond"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scary.adj.1",
+      "lemma": "scary",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskɛri/",
+        "uk": "/ˈskeəri/"
+      },
+      "def": {
+        "micro": "making you feel afraid",
+        "short": "making you feel afraid or nervous",
+        "long": "Making you feel afraid or nervous. A film, a story, a place or a situation can be like this, for example a dark street at night."
+      },
+      "grammar": {
+        "pattern": "a scary film / it's scary to do sth"
+      },
+      "examples": [
+        {
+          "en": "This film is too scary for children.",
+          "tr": "Bu film çocuklar için fazla korkutucu.",
+          "register": "neutral",
+          "focus": "scary"
+        },
+        {
+          "en": "Driving in snow for the first time was a bit scary.",
+          "tr": "İlk kez karda araba sürmek biraz korkutucuydu.",
+          "register": "neutral",
+          "focus": "scary"
+        },
+        {
+          "en": "Diego told us a scary story about an empty old house, and nobody wanted to turn off the light.",
+          "tr": "Diego bize boş, eski bir ev hakkında korkunç bir hikâye anlattı ve kimse ışığı kapatmak istemedi.",
+          "register": "neutral",
+          "focus": "scary"
+        }
+      ],
+      "synonyms": [
+        "frightening"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "scared"
+      ],
+      "collocations": [
+        "a scary film",
+        "a scary story",
+        "a bit scary",
+        "really scary"
+      ],
+      "word_family": [
+        {
+          "lemma": "scare",
+          "pos": "v"
+        },
+        {
+          "lemma": "scared",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "korkutucu",
+          "alt": [
+            "korkunç",
+            "ürkütücü"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'scary' korku veren şeyi anlatır: film, hikâye, karanlık bir sokak. Korkan kişi için 'scared' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I'm scary when I'm home alone at night.",
+              "right": "I'm scared when I'm home alone at night.",
+              "why": "'Korkuyorum' demek isterken 'scary' seçiliyor. 'I'm scary' 'Ben korkunç biriyim' demektir; korkan kişi 'scared' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I closed my eyes during the film because it was too ______.",
+        "answer": "scary",
+        "distractors": [
+          "scared",
+          "quiet",
+          "short"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pleased.adj.1",
+      "lemma": "pleased",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pliːzd/",
+        "uk": "/pliːzd/"
+      },
+      "def": {
+        "micro": "happy about something",
+        "short": "happy and satisfied about something that happened or that someone did",
+        "long": "Happy and satisfied because something good happened or because someone did something well. It is a little more formal than 'happy'."
+      },
+      "grammar": {
+        "pattern": "pleased with sth / pleased to do sth"
+      },
+      "examples": [
+        {
+          "en": "Pleased to meet you.",
+          "tr": "Tanıştığımıza memnun oldum.",
+          "register": "neutral",
+          "focus": "Pleased"
+        },
+        {
+          "en": "Murat's boss was very pleased with his report.",
+          "tr": "Murat'ın patronu raporundan çok memnun kaldı.",
+          "register": "neutral",
+          "focus": "pleased"
+        },
+        {
+          "en": "We were pleased to hear that our flight was on time.",
+          "tr": "Uçuşumuzun zamanında olduğunu duyunca sevindik.",
+          "register": "neutral",
+          "focus": "pleased"
+        }
+      ],
+      "synonyms": [
+        "happy",
+        "glad"
+      ],
+      "antonyms": [
+        "disappointed"
+      ],
+      "confusables": [
+        "please"
+      ],
+      "collocations": [
+        "pleased with",
+        "pleased to meet you",
+        "very pleased",
+        "pleased to hear"
+      ],
+      "word_family": [
+        {
+          "lemma": "please",
+          "pos": "v"
+        },
+        {
+          "lemma": "pleasure",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "memnun",
+          "alt": [
+            "hoşnut",
+            "sevinmiş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir şeyden memnunsan 'pleased with' denir: 'I'm pleased with my new phone.' Tanışırken 'Pleased to meet you.' kullanılır; buradaki kelime 'please' değil, 'pleased' olur.",
+          "mistakes": [
+            {
+              "wrong": "I'm pleased from my new job.",
+              "right": "I'm pleased with my new job.",
+              "why": "Türkçedeki '-den memnun' eki 'from' diye çevriliyor. İngilizcede 'pleased with' denir."
+            },
+            {
+              "wrong": "Please to meet you.",
+              "right": "Pleased to meet you.",
+              "why": "'please' ile 'pleased' sesçe çok yakın olduğu için sondaki 'd' düşüyor. Tanışırken 'memnun' anlamındaki 'pleased' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The teacher was ______ with Burak's homework, so she gave him a gold star.",
+        "answer": "pleased",
+        "distractors": [
+          "worried",
+          "bored",
+          "upset"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exciting.adj.1",
+      "lemma": "exciting",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈsaɪtɪŋ/",
+        "uk": "/ɪkˈsaɪtɪŋ/"
+      },
+      "def": {
+        "micro": "making you feel excited",
+        "short": "making you feel happy and full of energy because something good is happening",
+        "long": "Making you feel happy and full of energy, often because something is new, fast or full of action. A match, a trip or a new job can be like this."
+      },
+      "grammar": {
+        "pattern": "an exciting match / it's exciting to do sth"
+      },
+      "examples": [
+        {
+          "en": "What an exciting day!",
+          "tr": "Ne heyecan verici bir gün!",
+          "register": "neutral",
+          "focus": "exciting"
+        },
+        {
+          "en": "Laura's first week at her new job was really exciting.",
+          "tr": "Laura'nın yeni işindeki ilk haftası çok heyecan vericiydi.",
+          "register": "neutral",
+          "focus": "exciting"
+        },
+        {
+          "en": "Yuki finds learning a new language exciting, so she practices every day.",
+          "tr": "Yuki yeni bir dil öğrenmeyi heyecan verici buluyor, bu yüzden her gün pratik yapıyor.",
+          "register": "neutral",
+          "focus": "exciting"
+        }
+      ],
+      "synonyms": [
+        "thrilling"
+      ],
+      "antonyms": [
+        "boring",
+        "dull"
+      ],
+      "confusables": [
+        "excited"
+      ],
+      "collocations": [
+        "an exciting match",
+        "exciting news",
+        "really exciting",
+        "an exciting trip"
+      ],
+      "word_family": [
+        {
+          "lemma": "excite",
+          "pos": "v"
+        },
+        {
+          "lemma": "excited",
+          "pos": "adj"
+        },
+        {
+          "lemma": "excitement",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "heyecan verici",
+          "alt": [
+            "heyecanlı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Heyecan veren şey 'exciting', heyecanlanan kişi 'excited' olur: 'The match was exciting, and the fans were excited.'",
+          "mistakes": [
+            {
+              "wrong": "I'm so exciting about my new bike.",
+              "right": "I'm so excited about my new bike.",
+              "why": "Türkçede hem kişi hem şey için 'heyecanlı' denir. İngilizcede heyecanlanan kişi 'excited' olur; 'I'm exciting' 'Ben heyecan verici biriyim' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The last minutes of the game were very ______, and all the fans were shouting.",
+        "answer": "exciting",
+        "distractors": [
+          "excited",
+          "boring",
+          "quiet"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.amazing.adj.1",
+      "lemma": "amazing",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈmeɪzɪŋ/",
+        "uk": "/əˈmeɪzɪŋ/"
+      },
+      "def": {
+        "micro": "very, very good",
+        "short": "very good or surprising in a way that makes you feel happy",
+        "long": "Very good or very surprising in a way that you like. People often use it to talk about food, places, views and people's skills."
+      },
+      "grammar": {
+        "pattern": "really / absolutely amazing"
+      },
+      "examples": [
+        {
+          "en": "The view from the top is amazing.",
+          "tr": "Tepeden manzara harika.",
+          "register": "neutral",
+          "focus": "amazing"
+        },
+        {
+          "en": "Derya makes amazing chocolate cake.",
+          "tr": "Derya harika çikolatalı kek yapıyor.",
+          "register": "neutral",
+          "focus": "amazing"
+        },
+        {
+          "en": "We watched an amazing sunset on our last evening in Bodrum.",
+          "tr": "Bodrum'daki son akşamımızda muhteşem bir gün batımı izledik.",
+          "register": "neutral",
+          "focus": "amazing"
+        }
+      ],
+      "synonyms": [
+        "wonderful",
+        "fantastic"
+      ],
+      "antonyms": [
+        "awful",
+        "terrible"
+      ],
+      "confusables": [
+        "amazed"
+      ],
+      "collocations": [
+        "absolutely amazing",
+        "really amazing",
+        "an amazing view",
+        "amazing food"
+      ],
+      "word_family": [
+        {
+          "lemma": "amaze",
+          "pos": "v"
+        },
+        {
+          "lemma": "amazed",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "harika",
+          "alt": [
+            "muhteşem",
+            "inanılmaz",
+            "şahane"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hayran kalan kişi 'amazed' olur: 'I was amazed by the view.' Güzel ya da şaşırtıcı olan şey 'amazing' olur.",
+          "mistakes": [
+            {
+              "wrong": "The concert was very amazing.",
+              "right": "The concert was absolutely amazing.",
+              "why": "Türkçede 'çok harika' denir. 'amazing' zaten 'çok iyi' demek olduğu için 'very' ile pek kullanılmaz; 'really' ya da 'absolutely' daha doğaldır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thanks for dinner, the food was ______! Can I have the recipe?",
+        "answer": "amazing",
+        "distractors": [
+          "amazed",
+          "awful",
+          "cold"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.anxious.adj.1",
+      "lemma": "anxious",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæŋkʃəs/",
+        "uk": "/ˈæŋkʃəs/"
+      },
+      "def": {
+        "micro": "worried and nervous",
+        "short": "worried and nervous because you think something bad might happen",
+        "long": "Worried and nervous because you think something bad might happen. It is a little stronger and more serious than 'worried'."
+      },
+      "grammar": {
+        "pattern": "anxious about sth / feel anxious"
+      },
+      "examples": [
+        {
+          "en": "Kerem gets anxious before exams.",
+          "tr": "Kerem sınavlardan önce kaygılanıyor.",
+          "register": "neutral",
+          "focus": "anxious"
+        },
+        {
+          "en": "Aisha was anxious about her first day at the new school.",
+          "tr": "Aisha yeni okuldaki ilk günü için kaygılıydı.",
+          "register": "neutral",
+          "focus": "anxious"
+        },
+        {
+          "en": "Ozan always feels a bit anxious on planes, so he listens to music during the flight.",
+          "tr": "Ozan uçakta hep biraz kaygılanır, bu yüzden uçuş boyunca müzik dinler.",
+          "register": "neutral",
+          "focus": "anxious"
+        }
+      ],
+      "synonyms": [
+        "worried",
+        "nervous"
+      ],
+      "antonyms": [
+        "relaxed",
+        "calm"
+      ],
+      "confusables": [
+        "nervous",
+        "worried"
+      ],
+      "collocations": [
+        "feel anxious",
+        "get anxious",
+        "anxious about",
+        "a bit anxious"
+      ],
+      "word_family": [
+        {
+          "lemma": "anxiety",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaygılı",
+          "alt": [
+            "endişeli",
+            "tedirgin"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'worried' ve 'nervous' ile anlamı yakındır; 'anxious' biraz daha güçlü ve ciddidir. Okunuşu 'enkşıs' gibidir; ortadaki 'x' /kş/ sesi verir.",
+          "mistakes": [
+            {
+              "wrong": "I'm always anxious from flying.",
+              "right": "I'm always anxious about flying.",
+              "why": "Türkçedeki '-den kaygılanmak' 'from' diye çevriliyor. İngilizcede 'anxious about' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ben couldn't sleep the night before his driving test. He was very ______.",
+        "answer": "anxious",
+        "distractors": [
+          "relaxed",
+          "calm",
+          "proud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shocked.adj.1",
+      "lemma": "shocked",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃɑːkt/",
+        "uk": "/ʃɒkt/"
+      },
+      "def": {
+        "micro": "very surprised and upset",
+        "short": "very surprised, usually by something bad that you did not expect",
+        "long": "Very surprised, usually by something bad or strange that you did not expect at all. It is much stronger than 'surprised'."
+      },
+      "grammar": {
+        "pattern": "be shocked by sth / be shocked to see / hear"
+      },
+      "examples": [
+        {
+          "en": "I was shocked to see the mess in the kitchen.",
+          "tr": "Mutfaktaki dağınıklığı görünce şok oldum.",
+          "register": "neutral",
+          "focus": "shocked"
+        },
+        {
+          "en": "We were shocked to hear that the little café was closing after 40 years.",
+          "tr": "40 yıllık o küçük kafenin kapanacağını duyunca şok olduk.",
+          "register": "neutral",
+          "focus": "shocked"
+        },
+        {
+          "en": "Tom looked shocked when his old school friend walked into the office as his new boss.",
+          "tr": "Eski okul arkadaşı yeni patronu olarak ofise girince Tom şok olmuş görünüyordu.",
+          "register": "neutral",
+          "focus": "shocked"
+        }
+      ],
+      "synonyms": [
+        "stunned"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "shocking"
+      ],
+      "collocations": [
+        "shocked by",
+        "shocked to hear",
+        "really shocked",
+        "look shocked"
+      ],
+      "word_family": [
+        {
+          "lemma": "shock",
+          "pos": "n"
+        },
+        {
+          "lemma": "shock",
+          "pos": "v"
+        },
+        {
+          "lemma": "shocking",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şok olmuş",
+          "alt": [
+            "çok şaşırmış",
+            "sarsılmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Şok olan kişi 'shocked', şok eden şey 'shocking' olur: 'The news was shocking. We were shocked.'",
+          "mistakes": [
+            {
+              "wrong": "I shocked when I saw the bill.",
+              "right": "I was shocked when I saw the bill.",
+              "why": "Türkçede 'şok oldum' bir fiil gibi kurulduğu için 'was' atlanıyor. 'I shocked' 'ben (birini) şok ettim' demektir; doğrusu 'I was shocked'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Murat was so ______ by the price of the tickets that he almost dropped his phone.",
+        "answer": "shocked",
+        "distractors": [
+          "shocking",
+          "sleepy",
+          "bored"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.furious.adj.1",
+      "lemma": "furious",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfjʊriəs/",
+        "uk": "/ˈfjʊəriəs/"
+      },
+      "def": {
+        "micro": "very, very angry",
+        "short": "extremely angry",
+        "long": "Extremely angry, much more than just 'angry'. You are this with a person, or about a situation."
+      },
+      "grammar": {
+        "pattern": "furious with sb / furious about sth"
+      },
+      "examples": [
+        {
+          "en": "Dad was furious when he saw the broken window.",
+          "tr": "Babam kırık camı görünce öfkeden deliye döndü.",
+          "register": "neutral",
+          "focus": "furious"
+        },
+        {
+          "en": "Ece was furious with her brother for reading her diary.",
+          "tr": "Ece, günlüğünü okuduğu için kardeşine çok kızgındı.",
+          "register": "neutral",
+          "focus": "furious"
+        },
+        {
+          "en": "The passengers were furious because the flight was six hours late and nobody told them why.",
+          "tr": "Uçuş altı saat rötar yaptığı ve kimse nedenini söylemediği için yolcular çok öfkeliydi.",
+          "register": "neutral",
+          "focus": "furious"
+        }
+      ],
+      "synonyms": [
+        "livid"
+      ],
+      "antonyms": [
+        "calm"
+      ],
+      "confusables": [
+        "curious"
+      ],
+      "collocations": [
+        "furious with",
+        "absolutely furious",
+        "get furious",
+        "furious about"
+      ],
+      "word_family": [
+        {
+          "lemma": "fury",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok kızgın",
+          "alt": [
+            "öfkeli",
+            "öfkeden deliye dönmüş",
+            "çileden çıkmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'angry' kelimesinin çok daha güçlü hâlidir. Yazılışı ve sesi 'curious' (meraklı) kelimesine benzer; karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "She was furious to me because I was late.",
+              "right": "She was furious with me because I was late.",
+              "why": "Türkçedeki 'bana kızgın' kalıbındaki '-e' eki 'to' diye çevriliyor. İngilizcede kişiye 'furious with' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Laura was ______ when her neighbor parked in front of her garage again.",
+        "answer": "furious",
+        "distractors": [
+          "curious",
+          "grateful",
+          "relaxed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.miserable.adj.1",
+      "lemma": "miserable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɪzərəbəl/",
+        "uk": "/ˈmɪzrəbəl/"
+      },
+      "def": {
+        "micro": "very unhappy",
+        "short": "very unhappy and uncomfortable",
+        "long": "Very unhappy and uncomfortable, often because you are ill, cold, wet or tired. Bad weather or a bad day can also be described this way."
+      },
+      "grammar": {
+        "pattern": "feel / look miserable"
+      },
+      "examples": [
+        {
+          "en": "Burak has a cold and feels miserable.",
+          "tr": "Burak soğuk algınlığı geçiriyor ve kendini berbat hissediyor.",
+          "register": "neutral",
+          "focus": "miserable"
+        },
+        {
+          "en": "I was miserable on the long bus ride with no air conditioning.",
+          "tr": "Klimasız uzun otobüs yolculuğunda perişan oldum.",
+          "register": "neutral",
+          "focus": "miserable"
+        },
+        {
+          "en": "It rained every day of our camping trip, and we were wet and miserable.",
+          "tr": "Kamp gezimizin her günü yağmur yağdı, sırılsıklam ve perişan olduk.",
+          "register": "neutral",
+          "focus": "miserable"
+        }
+      ],
+      "synonyms": [
+        "unhappy"
+      ],
+      "antonyms": [
+        "cheerful"
+      ],
+      "collocations": [
+        "feel miserable",
+        "look miserable",
+        "miserable weather",
+        "a miserable day"
+      ],
+      "word_family": [
+        {
+          "lemma": "misery",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok mutsuz",
+          "alt": [
+            "perişan",
+            "berbat"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hava için de kullanılır: 'miserable weather' (berbat, kasvetli hava). 'sad' ve 'unhappy' kelimelerinden daha güçlüdür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ozan has a bad cold, it's raining, and he has to work all weekend. He feels ______.",
+        "answer": "miserable",
+        "distractors": [
+          "cheerful",
+          "lucky",
+          "proud"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.offended.adj.1",
+      "lemma": "offended",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈfɛndɪd/",
+        "uk": "/əˈfɛndɪd/"
+      },
+      "def": {
+        "micro": "upset by something rude",
+        "short": "upset because someone said or did something rude or unkind to you",
+        "long": "Upset and a little angry because you think someone was rude to you or did not respect you, often because of something they said."
+      },
+      "grammar": {
+        "pattern": "be offended by sth / feel offended"
+      },
+      "examples": [
+        {
+          "en": "I hope you're not offended.",
+          "tr": "Umarım alınmamışsındır.",
+          "register": "neutral",
+          "focus": "offended"
+        },
+        {
+          "en": "Derya was offended because nobody asked her opinion at the meeting.",
+          "tr": "Toplantıda kimse fikrini sormadığı için Derya alındı.",
+          "register": "neutral",
+          "focus": "offended"
+        },
+        {
+          "en": "Sam made a joke about Aisha's cooking, and she was a little offended.",
+          "tr": "Sam, Aisha'nın yemekleriyle ilgili şaka yaptı ve Aisha biraz alındı.",
+          "register": "neutral",
+          "focus": "offended"
+        }
+      ],
+      "synonyms": [
+        "hurt"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "offensive"
+      ],
+      "collocations": [
+        "feel offended",
+        "a bit offended",
+        "offended by",
+        "get offended"
+      ],
+      "word_family": [
+        {
+          "lemma": "offend",
+          "pos": "v"
+        },
+        {
+          "lemma": "offensive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "alınmış",
+          "alt": [
+            "gücenmiş",
+            "kırılmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Alınan kişi 'offended' olur. Kırıcı, saldırgan söz ya da şakaya 'offensive' denir: 'an offensive joke'.",
+          "mistakes": [
+            {
+              "wrong": "She was offended from my joke.",
+              "right": "She was offended by my joke.",
+              "why": "Türkçedeki '-den alınmak' kalıbı 'from' diye çevriliyor. İngilizcede 'offended by' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Diego didn't mean to be rude, but Zeynep was ______ by his comment about her haircut.",
+        "answer": "offended",
+        "distractors": [
+          "offensive",
+          "pleased",
+          "thankful"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.touched.adj.1",
+      "lemma": "touched",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "emotionally moved",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʌtʃt/",
+        "uk": "/tʌtʃt/"
+      },
+      "def": {
+        "micro": "moved by kindness",
+        "short": "feeling happy and emotional because someone did something kind for you",
+        "long": "Feeling happy and emotional, sometimes almost crying, because someone was kind to you or did something thoughtful."
+      },
+      "grammar": {
+        "pattern": "be touched by sth / be touched that…"
+      },
+      "examples": [
+        {
+          "en": "I was really touched by your message.",
+          "tr": "Mesajına çok duygulandım.",
+          "register": "neutral",
+          "focus": "touched"
+        },
+        {
+          "en": "Grandma was touched when the kids made her a birthday card.",
+          "tr": "Çocuklar ona doğum günü kartı yapınca büyükannem duygulandı.",
+          "register": "neutral",
+          "focus": "touched"
+        },
+        {
+          "en": "Sam was touched that his neighbors looked after his cat while he was away.",
+          "tr": "Sam, kendisi yokken kedisine komşularının bakmasına duygulandı.",
+          "register": "neutral",
+          "focus": "touched"
+        }
+      ],
+      "synonyms": [
+        "moved"
+      ],
+      "antonyms": [],
+      "confusables": [
+        "touching",
+        "impressed"
+      ],
+      "collocations": [
+        "really touched",
+        "deeply touched",
+        "touched by"
+      ],
+      "word_family": [
+        {
+          "lemma": "touch",
+          "pos": "v"
+        },
+        {
+          "lemma": "touching",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "duygulanmış",
+          "alt": [
+            "duygulanan",
+            "içi ısınmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu anlamda 'touched' hep güzel bir duygudur. Türkçedeki 'sözü bana dokundu' (kırıldım) anlamı yoktur; o durumda 'I was hurt' ya da 'I was offended' denir. Duygulandıran şeye 'touching' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When the class sang for her on her last day, the teacher was so ______ that she almost cried.",
+        "answer": "touched",
+        "distractors": [
+          "touching",
+          "jealous",
+          "offended"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.impressed.adj.1",
+      "lemma": "impressed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈprɛst/",
+        "uk": "/ɪmˈprɛst/"
+      },
+      "def": {
+        "micro": "thinking someone did well",
+        "short": "thinking that someone or something is very good, so that you admire them",
+        "long": "Thinking that someone or something is very good, clever or skillful, so that you admire them. You are impressed by or with someone."
+      },
+      "grammar": {
+        "pattern": "be impressed by / with sth"
+      },
+      "examples": [
+        {
+          "en": "I'm impressed. Your English is very good!",
+          "tr": "Etkilendim. İngilizcen çok iyi!",
+          "register": "neutral",
+          "focus": "impressed"
+        },
+        {
+          "en": "Kerem's parents were impressed by his school report.",
+          "tr": "Kerem'in ailesi karnesinden etkilendi.",
+          "register": "neutral",
+          "focus": "impressed"
+        },
+        {
+          "en": "The judges were so impressed with Yuki's dance that they gave her a perfect score.",
+          "tr": "Jüri Yuki'nin dansından o kadar etkilendi ki ona tam puan verdi.",
+          "register": "neutral",
+          "focus": "impressed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unimpressed"
+      ],
+      "confusables": [
+        "impressive",
+        "touched"
+      ],
+      "collocations": [
+        "really impressed",
+        "impressed by",
+        "impressed with",
+        "deeply impressed"
+      ],
+      "word_family": [
+        {
+          "lemma": "impress",
+          "pos": "v"
+        },
+        {
+          "lemma": "impressive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etkilenmiş",
+          "alt": [
+            "çok beğenmiş",
+            "hayran kalmış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'etkilendim' iki anlama gelir: birinin başarısını beğendiysen 'impressed', bir iyilik karşısında duygulandıysan 'touched' denir. Etkileyici olan şeye 'impressive' denir.",
+          "mistakes": [
+            {
+              "wrong": "I impressed from the film.",
+              "right": "I was impressed by the film.",
+              "why": "Türkçedeki 'filmden etkilendim' kelime kelime çevriliyor: 'was' atlanıyor, '-den' de 'from' oluyor. Doğrusu 'I was impressed by'. 'I impressed' 'ben (birini) etkiledim' demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everyone was ______ by Zeynep's guitar playing. She learned to play in only one year!",
+        "answer": "impressed",
+        "distractors": [
+          "impressive",
+          "worried",
+          "disappointed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

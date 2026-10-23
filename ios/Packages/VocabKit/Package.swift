@@ -9,6 +9,8 @@ let package = Package(
     platforms: [
         .iOS(.v17),
         .macOS(.v14),
+        // is5-watch: the Apple Watch app and its complications (CoreModels, SharedState, Scheduler).
+        .watchOS(.v10),
     ],
     products: [
         .library(name: "CoreModels", type: .static, targets: ["CoreModels"]),
@@ -27,7 +29,8 @@ let package = Package(
         .target(name: "TextFold"),
         .target(name: "SharedState", dependencies: ["CoreModels"]),
         .target(name: "Scheduler", dependencies: ["CoreModels", "SharedState"]),
-        // Leitner scheduling, queue composition and the app-private progress file. App only.
+        // Leitner scheduling, queue composition, the app-private progress file and "Cümle kur" and
+        // "İngilizcesini yaz" (TextFold: tiles and typed answers are compared by folded keys). App only.
         .target(name: "Learning", dependencies: ["CoreModels", "TextFold"]),
         // "Söyle" practice: compares what the speech recognizer heard with the card. Pure. App only.
         .target(name: "Pronunciation"),

@@ -6,6 +6,8 @@
 #   pro       iPhone NN Pro (6.3", 1206 x 2622), light: the App Store's required size
 #   promax    iPhone NN Pro Max (6.9", 1320 x 2868), light
 #   se-koyu, pro-koyu, promax-koyu   the same in dark mode
+#   ipad, ipad-koyu   the newest 13" iPad: the iPad tests only (LockglowIPadTests: the wide layout
+#             in landscape and portrait, the keyboard keys); the iPhone walkthrough is not run there
 # Each pass starts from an erased simulator with the status bar at 9:41, full Wi-Fi and cellular
 # bars and a full battery (no "Carrier"). Screenshots land in shots/<pass>/ (raw xcresult export
 # with manifest.json) and named/<pass>/<attachment name>.png. A pass whose UI test runner did not
@@ -23,7 +25,7 @@ on:
         default: macos-15
         options: [macos-15, macos-15-intel, macos-26]
       gecisler:
-        description: "Geçişler (boşlukla): se, pro, promax, se-koyu, pro-koyu, promax-koyu"
+        description: "Geçişler (boşlukla): se, pro, promax, se-koyu, pro-koyu, promax-koyu, ipad, ipad-koyu"
         type: string
         default: se pro pro-koyu
       quiz_gecisi:
@@ -51,7 +53,7 @@ jobs:
       - name: Projeyi üret
         working-directory: ios
         run: xcodegen generate
-      - name: Simülatörleri seç (SE, Pro, Pro Max)
+      - name: Simülatörleri seç (SE, Pro, Pro Max, iPad)
         id: sims
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
@@ -69,6 +71,7 @@ jobs:
           print("se=" + pick(r"iPhone SE.*"))
           print("pro=" + pick(r"iPhone \d+ Pro"))
           print("promax=" + pick(r"iPhone \d+ Pro Max"))
+          print("ipad=" + (pick(r"iPad Pro 13-inch.*") or pick(r"iPad Air 13-inch.*") or pick(r"iPad.*")))
           PY
           cat "$GITHUB_OUTPUT"
       - name: Testleri derle
@@ -78,13 +81,15 @@ jobs:
         run: |
           mkdir -p out
           # Sign to run locally (simulator only; embeds the App Group entitlement). Fall back to unsigned.
+          # Every device's images (ENABLE_ONLY_ACTIVE_RESOURCES=NO): the iPad pass runs this
+          # iPhone-destination build too.
           xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$FIRST" \
-            -derivedDataPath build/dd \
+            -derivedDataPath build/dd ENABLE_ONLY_ACTIVE_RESOURCES=NO \
             CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
             > out/build.log 2>&1 \
           || { echo "signed build failed, retrying unsigned"
                xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$FIRST" \
-                 -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > out/build.log 2>&1; } \
+                 -derivedDataPath build/dd ENABLE_ONLY_ACTIVE_RESOURCES=NO CODE_SIGNING_ALLOWED=NO > out/build.log 2>&1; } \
           || { grep -E "error:" out/build.log | sort -u | head -50; tail -20 out/build.log; exit 1; }
           grep -E "error:|warning:.*UITests" out/build.log | sort -u | head -50 || true
           tail -3 out/build.log
@@ -96,6 +101,7 @@ jobs:
           SIM_SE: ${{ steps.sims.outputs.se }}
           SIM_PRO: ${{ steps.sims.outputs.pro }}
           SIM_PROMAX: ${{ steps.sims.outputs.promax }}
+          SIM_IPAD: ${{ steps.sims.outputs.ipad }}
         run: |
           mkdir -p out shots named
           # 9:41 today in the runner's time zone, as ISO 8601: simctl formats an ISO time itself
@@ -144,12 +150,16 @@ jobs:
               se|se-koyu) udid="$SIM_SE" ;;
               pro|pro-koyu) udid="$SIM_PRO" ;;
               promax|promax-koyu) udid="$SIM_PROMAX" ;;
+              ipad|ipad-koyu) udid="$SIM_IPAD" ;;
               *) echo "unknown pass $name"; return 0 ;;
             esac
             [ -n "$udid" ] || { echo "no simulator for $name"; return 0; }
             case "$name" in *-koyu) appearance=dark ;; *) appearance=light ;; esac
             # The widget renders do not depend on the simulator: once per run is enough.
-            only="-only-testing:LockglowUITests"
+            # An iPad pass runs the iPad tests only (the iPhone walkthrough expects iPhone screens).
+            ui="LockglowUITests"
+            case "$name" in ipad*) ui="LockglowUITests/LockglowIPadTests" ;; esac
+            only="-only-testing:$ui"
             if [ -z "$WIDGETS_DONE" ]; then
               only="$only -only-testing:LockglowWidgetSnapshots"; WIDGETS_DONE=1
             fi
@@ -172,7 +182,7 @@ jobs:
               && ! grep -qF "Test Case '-[LockglowUITests." "out/$name.log"; then
               echo "::warning::$name: the UI test runner did not start, trying once more"
               if prepare "$udid" "$appearance"; then
-                run_tests "$name-retry" -only-testing:LockglowUITests
+                run_tests "$name-retry" "-only-testing:$ui"
               else
                 echo "could not prepare $name again"
               fi

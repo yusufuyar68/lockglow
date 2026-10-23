@@ -16,6 +16,9 @@
 			<key>NSPrivacyAccessedAPITypeReasons</key>
 			<array>
 				<string>CA92.1</string>
+				<!-- "Ses ve aksan" settings in the App Group's UserDefaults (SpeechSettingsStore),
+				     read by the widget extension too. -->
+				<string>1C8F.1</string>
 			</array>
 		</dict>
 		<!-- ProgressStore reads/sets the modification date of progress.backup.json in the app's

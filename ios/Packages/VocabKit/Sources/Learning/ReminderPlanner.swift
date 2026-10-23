@@ -106,11 +106,15 @@ public enum ReminderPlanner {
     /// `ReminderBackoff.pauseAfter` reminders: when that many go unanswered, reminders pause
     /// without the app having to run. A day with nothing to do (no review due, no new word
     /// offered) gets no reminder; that is how today's reminder disappears once the round is done.
+    /// A day whose reminder already came (in `recent`) gets no second one, even when the time
+    /// was changed to a later one since (2.10: one reminder a day).
     ///
     /// Words and counts come from the current progress, as if nothing were studied until then;
     /// the app plans again each time it goes to the background.
     ///
     /// - Parameters:
+    ///   - laterMinuteOfDay: the time from tomorrow on, when it differs from today's
+    ///     ("Saati benim için seç", `ReminderTiming`). Nil: `minuteOfDay` every day.
     ///   - newWordFeed: the user's deck (`DeckFilter.feed`), where new words come from, as in
     ///     "Tekrar". Nil means `feed`. Reviews come from `feed` (every word).
     ///   - recent: reminders already sent (`ReminderLog.recentlySent`); their kinds and words wait
@@ -127,6 +131,7 @@ public enum ReminderPlanner {
         progress: [Int: WordProgress],
         now: Date,
         minuteOfDay: Int,
+        laterMinuteOfDay: Int? = nil,
         days: Int,
         dailyNewGoal: Int,
         newStudiedToday: Int,
@@ -136,7 +141,8 @@ public enum ReminderPlanner {
         confusables: [Int: Set<Int>]? = nil,
         all: [WidgetWord]? = nil
     ) -> [Reminder] {
-        guard days > 0, (0..<1440).contains(minuteOfDay) else {
+        let laterMinute = laterMinuteOfDay ?? minuteOfDay
+        guard days > 0, (0..<1440).contains(minuteOfDay), (0..<1440).contains(laterMinute) else {
             return []
         }
         let goal = max(dailyNewGoal, 0)
@@ -147,17 +153,20 @@ public enum ReminderPlanner {
         let newWords = upcoming.prefix(goal)
         let startOfToday = calendar.startOfDay(for: now)
         var picker = WordPicker(feed: feed, upcoming: upcoming, progress: progress, goal: goal, calendar: calendar, history: recent)
+        let deliveredDays = Set(recent.filter { $0.fireDate <= now }.map { dayNumber(for: $0.fireDate, calendar: calendar) })
 
         var result: [Reminder] = []
         for offset in 0..<days where result.count < ReminderBackoff.pauseAfter {
+            let minute = offset == 0 ? minuteOfDay : laterMinute
             guard let day = calendar.date(byAdding: .day, value: offset, to: startOfToday),
                   let fireDate = calendar.date(
-                      bySettingHour: minuteOfDay / 60,
-                      minute: minuteOfDay % 60,
+                      bySettingHour: minute / 60,
+                      minute: minute % 60,
                       second: 0,
                       of: day
                   ),
-                  fireDate > now
+                  fireDate > now,
+                  !deliveredDays.contains(dayNumber(for: fireDate, calendar: calendar))
             else {
                 continue
             }
