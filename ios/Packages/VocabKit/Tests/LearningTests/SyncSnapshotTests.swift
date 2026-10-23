@@ -28,6 +28,10 @@ final class SyncSnapshotTests: XCTestCase {
         return CustomWord(id: id, lemma: lemma, meaningTR: "anlam", exampleEN: "An \(lemma) day.", note: "not", createdAt: now)
     }
 
+    private func card(_ id: Int) -> SyncCard {
+        return SyncCard(progress: fullRecord(id), changedAt: now)
+    }
+
     private var tempFolder: URL!
 
     override func setUpWithError() throws {
@@ -65,15 +69,16 @@ final class SyncSnapshotTests: XCTestCase {
     func testSnapshotRoundTripsExactly() throws {
         let snapshot = SyncSnapshot(
             resetAt: now,
-            cards: [fullRecord(30), fullRecord(4)],
-            words: [SyncWord(uuid: "b", word: word(CustomWordID.first, "awkward"), progress: fullRecord(CustomWordID.first))],
-            deleted: ["z", "a"]
+            cards: [card(30), card(4)],
+            words: [SyncWord(uuid: "b", word: word(CustomWordID.first, "awkward"), changedAt: now, progress: fullRecord(CustomWordID.first))],
+            deleted: [SyncDeletion(uuid: "z", deletedAt: now), SyncDeletion(uuid: "a", deletedAt: now)]
         )
         let decoded = try SyncSnapshot.decode(snapshot.encoded())
         XCTAssertEqual(decoded, snapshot)
-        XCTAssertEqual(decoded.cards.map { $0.wordID }, [4, 30], "sorted by id")
-        XCTAssertEqual(decoded.deleted, ["a", "z"])
+        XCTAssertEqual(decoded.cards.map { $0.progress.wordID }, [4, 30], "sorted by id")
+        XCTAssertEqual(decoded.deleted.map { $0.uuid }, ["a", "z"])
         XCTAssertEqual(decoded.words.first?.progress?.wordID, 0, "a word's progress is stored without this device's id")
+        XCTAssertEqual(decoded.words.first?.progressChangedAt, now)
         XCTAssertEqual(try decoded.encoded(), try snapshot.encoded(), "equal snapshots give equal bytes")
     }
 
@@ -85,7 +90,7 @@ final class SyncSnapshotTests: XCTestCase {
     }
 
     func testDamagedCopyIsUnreadable() {
-        for text in ["", "not json", #"{"cards": []}"#, #"{"format": 0}"#, #"{"format": 1, "cards": [{"word_id": 1}], "words": [], "deleted": []}"#] {
+        for text in ["", "not json", #"{"cards": []}"#, #"{"format": 0}"#, #"{"format": 1, "cards": [{"changed_at": 1}], "words": [], "deleted": []}"#] {
             XCTAssertThrowsError(try SyncSnapshot.decode(Data(text.utf8)), text) { error in
                 XCTAssertEqual(error as? SyncSnapshot.DecodeError, .unreadable, text)
             }
@@ -93,22 +98,29 @@ final class SyncSnapshotTests: XCTestCase {
     }
 
     func testDecodeNormalizes() throws {
-        let card = fullRecord(5)
-        let custom = fullRecord(CustomWordID.first + 1)
+        let one = card(5)
         var messy = SyncSnapshot()
-        messy.cards = [card, card, custom]
-        let entry = SyncWord(uuid: "u", word: word(CustomWordID.first, "awkward"), progress: nil)
+        messy.cards = [one, one, card(CustomWordID.first + 1)]
+        let entry = SyncWord(uuid: "u", word: word(CustomWordID.first, "awkward"), changedAt: now)
         messy.words = [entry, entry]
-        messy.deleted = ["u", "gone", "gone"]
+        let later = now.addingTimeInterval(60)
+        messy.deleted = [SyncDeletion(uuid: "u", deletedAt: now), SyncDeletion(uuid: "gone", deletedAt: now), SyncDeletion(uuid: "gone", deletedAt: later)]
         let decoded = try SyncSnapshot.decode(SyncCoding.encoder().encode(messy))
-        XCTAssertEqual(decoded.cards, [card], "one record per card; ids of user words are not cards")
+        XCTAssertEqual(decoded.cards, [one], "one record per card; ids of user words are not cards")
         XCTAssertEqual(decoded.words, [entry])
-        XCTAssertEqual(decoded.deleted, ["gone"], "a word that is also deleted stays a word")
+        XCTAssertEqual(decoded.deleted, [SyncDeletion(uuid: "gone", deletedAt: later)], "a word that is also deleted stays a word; the latest deletion counts")
     }
 
     func testUnknownKeysOfTheSameFormatAreIgnored() throws {
         let data = Data(#"{"format": 1, "cards": [], "words": [], "deleted": [], "later": true}"#.utf8)
         XCTAssertEqual(try SyncSnapshot.decode(data), SyncSnapshot())
+    }
+
+    func testLatestChangeIsTheNewestTime() {
+        let later = now.addingTimeInterval(30)
+        let snapshot = SyncSnapshot(cards: [card(1)], deleted: [SyncDeletion(uuid: "x", deletedAt: later)])
+        XCTAssertEqual(snapshot.latestChange, later)
+        XCTAssertNil(SyncSnapshot().latestChange)
     }
 
     func testCanonicalDatesAreAFixedPoint() {
@@ -128,7 +140,7 @@ final class SyncSnapshotTests: XCTestCase {
             joined: true,
             resetAt: now,
             uuids: [CustomWordID.first: "a", CustomWordID.first + 4: "b"],
-            base: SyncSnapshot(cards: [fullRecord(3)])
+            base: SyncSnapshot(cards: [card(3)])
         )
         try store.save(state)
         XCTAssertEqual(try store.load(), state)
@@ -152,12 +164,13 @@ final class SyncSnapshotTests: XCTestCase {
     }
 
     func testLeavingKeepsOnlyTheUuids() {
-        let state = SyncState(joined: true, resetAt: now, uuids: [CustomWordID.first: "a"], base: SyncSnapshot(cards: [fullRecord(3)]))
-        XCTAssertEqual(state.leaving(), SyncState(uuids: [CustomWordID.first: "a"]))
+        let state = SyncState(joined: true, resetAt: now, uuids: [CustomWordID.first: "a"], base: SyncSnapshot(cards: [card(3)]))
+        XCTAssertEqual(state.leaving(), SyncState(uuids: [CustomWordID.first: "a"]), "no copy of the words stays")
+        XCTAssertEqual(state.rejoining(), SyncState(resetAt: now, uuids: [CustomWordID.first: "a"]), "a reset not yet in iCloud stays")
     }
 
-    func testResetIsRememberedOnlyWhileSyncing() {
-        XCTAssertNil(SyncState().resetting(at: now).resetAt, "sync just turned on: nothing to reset in iCloud yet")
+    func testResetIsRememberedBeforeTheFirstSyncToo() {
+        XCTAssertEqual(SyncState().resetting(at: now).resetAt, now)
         XCTAssertEqual(SyncState(joined: true).resetting(at: now).resetAt, now)
     }
 }

@@ -39,7 +39,7 @@ struct SyncSettingsView: View {
             }
             Button("Vazgeç", role: .cancel) {}
         } message: {
-            Text("Bu telefondaki ilerleme ve kelimeler kalır. Eşitleme kapanır. Başka bir cihazda eşitleme açıksa o cihaz kopyayı yeniden yükler.")
+            Text("Bu telefondaki ilerleme ve kelimeler kalır, eşitleme kapanır. Başka bir cihazda eşitleme açıksa kopya yeniden yüklenir; önce orada kapat.")
         }
     }
 
@@ -69,7 +69,7 @@ struct SyncSettingsView: View {
                 }
             }
             Text(sync.isAvailable
-                 ? "Açınca ilerlemen ve kendi kelimelerin iCloud'a yedeklenir. Aynı Apple hesabını kullanan diğer cihazlarında da aynı olur."
+                 ? "Açınca ilerlemen ve kendi kelimelerin iCloud'da saklanır. Aynı Apple hesabını kullanan diğer cihazlarında da aynı olur."
                  : "iCloud ile eşitleme bu sürümde henüz hazır değil.")
                 .settingsFootnote()
         }
@@ -100,16 +100,16 @@ struct SyncSettingsView: View {
         VStack(alignment: .leading, spacing: 8) {
             SettingsSectionHeader("Ne eşitlenir?")
             VStack(alignment: .leading, spacing: 10) {
-                AboutLine(symbol: "checkmark", text: "Hangi kelimeyi ne zaman cevapladığın ve bildiğin kelimeler.")
+                AboutLine(symbol: "checkmark", text: "Kelimelerdeki ilerlemen: ne zaman gördüğün ve cevapladığın, bildiğin kelimeler.")
                 AboutLine(symbol: "checkmark", text: "Kendi eklediğin kelimeler, anlamları, örnekleri ve notları.")
                 AboutLine(symbol: "minus", text: "Ayarların, günlük sayıların ve son aramaların eşitlenmez.")
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
             .settingsGroupBackground()
-            Text("Bir kelimeyi iki cihazda cevapladıysan son cevap geçerli olur. Eşitleme açıkken ilerlemeyi sıfırlarsan diğer cihazlarında da sıfırlanır.")
+            Text("Bir kelimeyi iki cihazda cevapladıysan son cevap geçerli olur. Bu bir yedek değil: bir cihazda sildiğin ya da sıfırladığın şey diğerlerinde de gider.")
                 .settingsFootnote()
-            Text("Bilgiler senin iCloud hesabında durur; biz göremeyiz.")
+            Text("Bilgiler Apple'ın sunucularında, senin iCloud hesabında durur. Biz bunları göremeyiz.")
                 .settingsFootnote()
         }
     }

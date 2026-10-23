@@ -4,7 +4,8 @@ import CoreModels
 
 /// iCloud sync between devices (Learning/SyncMerge.swift). Each test plays devices that sync
 /// one after another through one iCloud copy, as the app does: the device saves what the merge
-/// gives it, and the upload goes through real JSON.
+/// gives it, and the upload goes through real JSON. A device joins (`SyncState.joined`) on the
+/// first sync that meets a copy, so a first device syncs twice to join.
 final class SyncMergeTests: XCTestCase {
     private let start = Date(timeIntervalSince1970: 1_760_011_200)
 
@@ -27,11 +28,14 @@ final class SyncMergeTests: XCTestCase {
     /// iCloud's copy, as the last upload left it.
     private var cloud: SyncSnapshot?
     private var minted: [String: Int] = [:]
+    /// The time of each sync: one second apart, after every answer of the tests.
+    private var clock = Date(timeIntervalSince1970: 1_800_000_000)
 
     override func setUp() {
         super.setUp()
         cloud = nil
         minted = [:]
+        clock = Date(timeIntervalSince1970: 1_800_000_000)
     }
 
     /// Uuids "a-1", "a-2", … for device "a".
@@ -40,27 +44,37 @@ final class SyncMergeTests: XCTestCase {
         return "\(name)-\(minted[name] ?? 0)"
     }
 
-    @discardableResult
-    private func sync(_ device: inout Device, localMayBeOld: Bool = false) throws -> SyncMerge.Result {
+    private func merge(_ device: Device, remote: SyncSnapshot?, localMayBeOld: Bool = false) -> SyncMerge.Result {
+        clock = clock.addingTimeInterval(1)
         let name = device.name
-        let result = SyncMerge.sync(
+        return SyncMerge.sync(
             progress: device.progress,
             words: device.words,
-            remote: cloud,
+            remote: remote,
             state: device.state,
             localMayBeOld: localMayBeOld,
+            now: clock,
             makeUUID: { self.mint(name) }
         )
+    }
+
+    private func apply(_ result: SyncMerge.Result, to device: inout Device) {
         if let progress = result.progress {
             device.progress = progress
         }
         if let words = result.words {
             device.words = words
         }
+        device.state = result.state
+    }
+
+    @discardableResult
+    private func sync(_ device: inout Device, localMayBeOld: Bool = false) throws -> SyncMerge.Result {
+        let result = merge(device, remote: cloud, localMayBeOld: localMayBeOld)
+        apply(result, to: &device)
         if let upload = result.upload {
             cloud = try SyncSnapshot.decode(upload.encoded())
         }
-        device.state = result.state
         return result
     }
 
@@ -78,6 +92,10 @@ final class SyncMergeTests: XCTestCase {
         return device.words.words.first(where: { $0.lemma == lemma })
     }
 
+    private func cards(_ snapshot: SyncSnapshot?) -> [WordProgress] {
+        return snapshot?.cards.map { $0.progress } ?? []
+    }
+
     // MARK: First sync
 
     func testFirstSyncUploadsThisDevice() throws {
@@ -91,13 +109,41 @@ final class SyncMergeTests: XCTestCase {
         XCTAssertNil(result.progress, "nothing changes on the first device")
         XCTAssertNil(result.words)
         let copy = try XCTUnwrap(cloud)
-        XCTAssertEqual(copy.cards.map { $0.wordID }, [7])
+        XCTAssertEqual(copy.cards.map { $0.progress.wordID }, [7])
         XCTAssertEqual(copy.words.map { $0.lemma }, ["awkward"])
         XCTAssertEqual(copy.words.first?.uuid, "a-1")
         XCTAssertEqual(copy.words.first?.progress?.reviews, 1)
         XCTAssertEqual(a.state.uuids, [w.id: "a-1"])
+        XCTAssertFalse(a.state.joined, "no copy met yet")
+
+        let again = try sync(&a)
         XCTAssertTrue(a.state.joined)
+        XCTAssertNil(again.upload)
         XCTAssertEqual(a.state.base, copy)
+    }
+
+    /// iCloud's copy had not reached this device when sync was turned on. When it arrives later,
+    /// with an old reset in it, this device still keeps its progress (turning sync on only adds).
+    func testCopyArrivingAfterTheFirstSyncStillOnlyAdds() throws {
+        var a = Device("a")
+        var b = Device("b")
+        answer(&a, 1, at: at(1))
+        try sync(&a)
+        try sync(&a)
+        a.progress = [:]
+        a.state = a.state.resetting(at: at(5))
+        try sync(&a)
+        XCTAssertEqual(cloud?.resetAt, at(5))
+        answer(&b, 8, at: at(2))
+
+        let early = merge(b, remote: nil)
+        apply(early, to: &b)
+        XCTAssertFalse(b.state.joined)
+        try sync(&b)
+
+        XCTAssertEqual(Set(b.progress.keys), [8], "B's answer from before A's reset stays")
+        XCTAssertEqual(cards(cloud).map { $0.wordID }, [8])
+        XCTAssertTrue(b.state.joined)
     }
 
     // MARK: Ids of the user's words
@@ -129,22 +175,60 @@ final class SyncMergeTests: XCTestCase {
         XCTAssertEqual(cloud?.words.count, 2)
     }
 
-    /// The same English word added on two devices becomes one word, not two.
+    /// The same word with the same text on two devices becomes one word.
     func testSameWordAddedOnTwoDevicesBecomesOne() throws {
         var a = Device("a")
         var b = Device("b")
         try add(&a, "awkward", "garip", at: at(1))
         try sync(&a)
-        try add(&b, "Awkward", "tuhaf", at: at(2))
+        try add(&b, "Awkward", "garip", at: at(2))
 
         try sync(&b)
 
         XCTAssertEqual(b.words.words.count, 1)
         XCTAssertEqual(b.state.uuids[CustomWordID.first], "a-1")
         XCTAssertEqual(cloud?.words.count, 1)
-        XCTAssertEqual(cloud?.words.first?.meaningTR, "tuhaf", "the later text")
         try sync(&a)
-        XCTAssertEqual(a.words.words.map { $0.meaningTR }, ["tuhaf"])
+        XCTAssertEqual(a.words.words.count, 1)
+    }
+
+    /// The same English word with another meaning is another word: nothing the user typed is
+    /// lost; both stay.
+    func testDifferentTextsAreNeverMerged() throws {
+        var a = Device("a")
+        var b = Device("b")
+        try add(&a, "bank", "banka", at: at(1))
+        try sync(&a)
+        try add(&b, "bank", "kıyı", at: at(2))
+
+        try sync(&b)
+        try sync(&a)
+
+        XCTAssertEqual(Set(a.words.words.map { $0.meaningTR }), ["banka", "kıyı"])
+        XCTAssertEqual(Set(b.words.words.map { $0.meaningTR }), ["banka", "kıyı"])
+    }
+
+    /// custom_words.json came back from an older backup and an old id went to a new word: the
+    /// new word does not take the old word's place in iCloud, and the old word comes back.
+    func testOldIdBackFromABackupDoesNotTakeAnotherWord() throws {
+        var a = Device("a")
+        var b = Device("b")
+        let apple = try add(&a, "apple", "elma", at: at(1))
+        try sync(&a)
+        try sync(&a)
+        try sync(&b)
+        a.words = CustomWordList(words: [], nextID: apple.id)
+        let banana = try add(&a, "banana", "muz", at: at(2))
+        XCTAssertEqual(banana.id, apple.id)
+
+        try sync(&a, localMayBeOld: true)
+        try sync(&b)
+
+        XCTAssertEqual(Set(a.words.words.map { $0.lemma }), ["apple", "banana"])
+        XCTAssertEqual(word(a, "banana")?.id, apple.id)
+        XCTAssertNotEqual(word(a, "apple")?.id, apple.id, "apple gets a new id here")
+        XCTAssertEqual(Set(b.words.words.map { $0.lemma }), ["apple", "banana"])
+        XCTAssertEqual(word(b, "apple")?.meaningTR, "elma")
     }
 
     // MARK: Progress rules
@@ -153,6 +237,7 @@ final class SyncMergeTests: XCTestCase {
         var a = Device("a")
         var b = Device("b")
         answer(&a, 7, at: at(1))
+        try sync(&a)
         try sync(&a)
         try sync(&b)
         answer(&a, 7, .again, at: at(20))
@@ -164,7 +249,7 @@ final class SyncMergeTests: XCTestCase {
 
         XCTAssertEqual(a.progress[7]?.lastReviewedAt, at(20))
         XCTAssertEqual(a.progress[7], b.progress[7])
-        XCTAssertEqual(cloud?.cards.first?.lastGrade, .again)
+        XCTAssertEqual(cards(cloud).first?.lastGrade, .again)
     }
 
     /// "Öğrenmeye geri al" changes a word without a new date: with only one device changing it,
@@ -175,6 +260,7 @@ final class SyncMergeTests: XCTestCase {
         answer(&a, 7, at: at(1))
         let answered = try XCTUnwrap(a.progress[7])
         a.progress[7] = Leitner.markKnown(answered, at: at(2))
+        try sync(&a)
         try sync(&a)
         try sync(&b)
         let known = try XCTUnwrap(a.progress[7])
@@ -188,20 +274,29 @@ final class SyncMergeTests: XCTestCase {
         XCTAssertEqual(a.progress[7], b.progress[7])
     }
 
-    /// "Geri al" within 5 seconds brings back the older record; a sync in between must not undo it.
-    func testGeriAlToAnOlderRecordIsKept() throws {
+    /// "Geri al" brings back the older record after both devices synced the "Biliyorum": the
+    /// other device takes the undo too, it does not bring the "Biliyorum" back.
+    func testGeriAlReachesTheOtherDevice() throws {
         var a = Device("a")
+        var b = Device("b")
         answer(&a, 7, at: at(1))
         let before = try XCTUnwrap(a.progress[7])
         try sync(&a)
+        try sync(&a)
+        try sync(&b)
         a.progress[7] = Leitner.markKnown(before, at: at(2))
         try sync(&a)
+        try sync(&b)
+        XCTAssertEqual(b.progress[7]?.state, .known)
         a.progress[7] = before
 
         try sync(&a)
+        try sync(&b)
+        try sync(&a)
 
         XCTAssertEqual(a.progress[7], before)
-        XCTAssertEqual(cloud?.cards, [before])
+        XCTAssertEqual(b.progress[7], before)
+        XCTAssertEqual(cards(cloud), [before])
     }
 
     func testRuleOrder() {
@@ -212,13 +307,23 @@ final class SyncMergeTests: XCTestCase {
         var viewed = WordProgress(wordID: 4)
         viewed.lastSeenAt = at(9)
         viewed.exposures = 5
-        XCTAssertEqual(SyncMerge.pickProgress(local: viewed, remote: answered, base: nil), answered, "an answer beats a later widget view")
         var later = answered
         later.lastReviewedAt = at(2)
-        XCTAssertEqual(SyncMerge.pickProgress(local: answered, remote: later, base: nil), later)
-        XCTAssertEqual(SyncMerge.pickProgress(local: nil, remote: later, base: nil), later)
-        XCTAssertEqual(SyncMerge.pickProgress(local: later, remote: nil, base: answered), later)
-        XCTAssertNil(SyncMerge.pickProgress(local: nil, remote: nil, base: answered))
+        let stamp = at(100)
+        let tick = at(200)
+        func card(_ p: WordProgress, _ time: Date = at(100)) -> SyncCard {
+            return SyncCard(progress: p, changedAt: time)
+        }
+
+        XCTAssertEqual(SyncMerge.pickRecord(local: viewed, remote: card(answered), base: nil, now: tick)?.progress, answered, "an answer beats a later widget view")
+        XCTAssertEqual(SyncMerge.pickRecord(local: answered, remote: card(later), base: nil, now: tick)?.progress, later)
+        XCTAssertEqual(SyncMerge.pickRecord(local: nil, remote: card(later), base: nil, now: tick), card(later))
+        XCTAssertEqual(SyncMerge.pickRecord(local: later, remote: nil, base: card(answered), now: tick), SyncCard(progress: later, changedAt: tick), "new in iCloud: this sync's time")
+        XCTAssertEqual(SyncMerge.pickRecord(local: answered, remote: nil, base: card(answered, stamp), now: tick)?.changedAt, stamp, "unchanged: its old time")
+        XCTAssertNil(SyncMerge.pickRecord(local: nil, remote: nil, base: card(answered), now: tick))
+        // Only iCloud changed it, but iCloud's copy is older than the base: an old copy won a race.
+        XCTAssertEqual(SyncMerge.pickRecord(local: later, remote: card(answered, at(50)), base: card(later, at(60)), now: tick)?.progress, later)
+        XCTAssertEqual(SyncMerge.pickRecord(local: later, remote: card(answered, at(70)), base: card(later, at(60)), now: tick)?.progress, answered)
     }
 
     func testRulesPickTheSameRecordOnBothDevices() {
@@ -244,8 +349,8 @@ final class SyncMergeTests: XCTestCase {
         for x in records {
             for y in records {
                 XCTAssertEqual(
-                    SyncMerge.pickProgress(local: x, remote: y, base: nil),
-                    SyncMerge.pickProgress(local: y, remote: x, base: nil)
+                    SyncMerge.pickRecord(local: x, remote: SyncCard(progress: y, changedAt: at(10)), base: nil, now: at(20))?.progress,
+                    SyncMerge.pickRecord(local: y, remote: SyncCard(progress: x, changedAt: at(10)), base: nil, now: at(20))?.progress
                 )
             }
         }
@@ -258,19 +363,22 @@ final class SyncMergeTests: XCTestCase {
         var b = Device("b")
         answer(&a, 7, at: at(1))
         try sync(&a)
+        try sync(&a)
         try sync(&b)
         let older = cloud
         answer(&a, 7, .easy, at: at(2))
         try sync(&a)
         answer(&b, 9, at: at(2))
-        let race = SyncMerge.sync(progress: b.progress, words: b.words, remote: older, state: b.state)
+        let race = merge(b, remote: older)
+        apply(race, to: &b)
         cloud = try SyncSnapshot.decode(XCTUnwrap(race.upload).encoded())
-        b.state = race.state
 
         try sync(&a)
 
-        XCTAssertEqual(cloud?.cards.map { $0.wordID }, [7, 9])
-        XCTAssertEqual(cloud?.cards.first?.lastGrade, .easy)
+        XCTAssertEqual(cards(cloud).map { $0.wordID }, [7, 9])
+        XCTAssertEqual(cards(cloud).first?.lastGrade, .easy)
+        try sync(&b)
+        XCTAssertEqual(b.progress[7]?.lastGrade, .easy)
     }
 
     // MARK: Deleting and editing words
@@ -288,7 +396,7 @@ final class SyncMergeTests: XCTestCase {
 
         a.words.remove(id: w.id)
         try sync(&a)
-        XCTAssertEqual(cloud?.deleted, ["a-1"])
+        XCTAssertEqual(cloud?.deleted.map { $0.uuid }, ["a-1"])
         XCTAssertEqual(cloud?.words, [])
         try sync(&b)
 
@@ -305,12 +413,14 @@ final class SyncMergeTests: XCTestCase {
             let w = try add(&a, "awkward", "garip", at: at(1))
             answer(&a, w.id, at: at(2))
             try sync(&a)
+            try sync(&a)
             try sync(&b)
             a.words.remove(id: w.id)
             try b.words.update(id: CustomWordID.first, with: CustomWordDraft(lemma: "awkward", meaningTR: "tuhaf"), now: at(3))
 
             if deleterSyncsFirst {
                 try sync(&a)
+                XCTAssertEqual(cloud?.words, [], "the deletion reached iCloud first")
                 try sync(&b)
                 try sync(&a)
             } else {
@@ -333,6 +443,7 @@ final class SyncMergeTests: XCTestCase {
         var b = Device("b")
         let w = try add(&a, "awkward", at: at(1))
         try sync(&a)
+        try sync(&a)
         try sync(&b)
         let removed = try XCTUnwrap(a.words.remove(id: w.id))
         try sync(&a)
@@ -349,6 +460,51 @@ final class SyncMergeTests: XCTestCase {
         XCTAssertEqual(b.words.words.first?.id, CustomWordID.first, "back under B's old id")
     }
 
+    /// A deletion is kept when iCloud's copy was deleted: a device that comes back later with the
+    /// word still deletes it.
+    func testDeletionSurvivesADeletedCopy() throws {
+        var a = Device("a")
+        var c = Device("c")
+        let w = try add(&a, "awkward", at: at(1))
+        try sync(&a)
+        try sync(&a)
+        try sync(&c)
+        try sync(&c)
+        a.words.remove(id: w.id)
+        try sync(&a)
+        cloud = nil
+        try sync(&a)
+        XCTAssertEqual(cloud?.deleted.map { $0.uuid }, ["a-1"], "written again with the copy")
+
+        try sync(&c)
+
+        XCTAssertTrue(c.words.isEmpty)
+    }
+
+    /// A deleted word's older copy won a race in iCloud: it does not come back.
+    func testOlderCopyOfADeletedWordDoesNotComeBack() throws {
+        var a = Device("a")
+        var b = Device("b")
+        let w = try add(&a, "awkward", at: at(1))
+        try sync(&a)
+        try sync(&a)
+        try sync(&b)
+        let older = cloud
+        a.words.remove(id: w.id)
+        try sync(&a)
+        answer(&b, 9, at: at(2))
+        let race = merge(b, remote: older)
+        apply(race, to: &b)
+        cloud = try SyncSnapshot.decode(XCTUnwrap(race.upload).encoded())
+
+        try sync(&a)
+        try sync(&b)
+
+        XCTAssertTrue(a.words.isEmpty)
+        XCTAssertTrue(b.words.isEmpty)
+        XCTAssertEqual(cloud?.deleted.map { $0.uuid }, ["a-1"])
+    }
+
     // MARK: Files restored from a backup
 
     func testWordsRestoredFromABackupAreNotDeletedEverywhere() throws {
@@ -356,10 +512,11 @@ final class SyncMergeTests: XCTestCase {
         try add(&a, "awkward", at: at(1))
         try add(&a, "fancy", at: at(2))
         try sync(&a)
+        try sync(&a)
         // custom_words.json was damaged; the backup from before "fancy" came back.
         a.words = CustomWordList(words: [a.words.words[0]], nextID: CustomWordID.first + 1)
-        let unguarded = SyncMerge.sync(progress: a.progress, words: a.words, remote: cloud, state: a.state)
-        XCTAssertEqual(unguarded.merged.deleted, ["a-2"], "without the flag this looks like a deletion")
+        let unguarded = merge(a, remote: cloud)
+        XCTAssertEqual(unguarded.merged.deleted.map { $0.uuid }, ["a-2"], "without the flag this looks like a deletion")
 
         let result = try sync(&a, localMayBeOld: true)
 
@@ -372,6 +529,7 @@ final class SyncMergeTests: XCTestCase {
         var a = Device("a")
         answer(&a, 7, at: at(1))
         let old = a.progress
+        try sync(&a)
         try sync(&a)
         answer(&a, 7, .easy, at: at(2))
         try sync(&a)
@@ -393,6 +551,7 @@ final class SyncMergeTests: XCTestCase {
         let w = try add(&a, "awkward", at: at(1))
         answer(&a, w.id, at: at(1))
         try sync(&a)
+        try sync(&a)
         try sync(&b)
 
         a.progress = [:]
@@ -406,11 +565,31 @@ final class SyncMergeTests: XCTestCase {
 
         XCTAssertEqual(Set(b.progress.keys), [3], "older progress is gone here too; the later answer stays")
         XCTAssertEqual(b.words.words.map { $0.lemma }, ["awkward"], "a reset keeps the user's words")
-        XCTAssertEqual(cloud?.cards.map { $0.wordID }, [3])
+        XCTAssertEqual(cards(cloud).map { $0.wordID }, [3])
         XCTAssertNil(cloud?.words.first?.progress)
         XCTAssertEqual(b.state.resetAt, at(5))
         try sync(&a)
         XCTAssertEqual(Set(a.progress.keys), [3])
+    }
+
+    /// Sync is on but has not met iCloud's copy yet (its first sync could not run): a reset made
+    /// now still reaches iCloud.
+    func testResetBeforeTheFirstSyncIsKept() throws {
+        var a = Device("a")
+        var b = Device("b")
+        answer(&a, 1, at: at(1))
+        try sync(&a)
+        try sync(&a)
+        answer(&b, 2, at: at(2))
+        b.progress = [:]
+        b.state = b.state.resetting(at: at(5))
+
+        try sync(&b)
+
+        XCTAssertEqual(cloud?.resetAt, at(5))
+        XCTAssertEqual(cloud?.cards, [])
+        try sync(&a)
+        XCTAssertTrue(a.progress.isEmpty)
     }
 
     /// Sync turned off on C, a deletion and a reset on A, then sync on again on C: C loses nothing.
@@ -420,6 +599,7 @@ final class SyncMergeTests: XCTestCase {
         let w = try add(&a, "awkward", at: at(1))
         answer(&a, 7, at: at(1))
         try sync(&a)
+        try sync(&a)
         try sync(&c)
         c.state = c.state.leaving()
         answer(&c, 8, at: at(2))
@@ -427,13 +607,13 @@ final class SyncMergeTests: XCTestCase {
         a.progress = [:]
         a.state = a.state.resetting(at: at(5))
         try sync(&a)
-        XCTAssertEqual(cloud?.deleted, ["a-1"])
+        XCTAssertEqual(cloud?.deleted.map { $0.uuid }, ["a-1"])
 
         try sync(&c)
 
         XCTAssertEqual(c.words.words.map { $0.lemma }, ["awkward"], "turning sync on deletes nothing here")
         XCTAssertEqual(Set(c.progress.keys), [7, 8])
-        XCTAssertEqual(cloud?.cards.map { $0.wordID }, [7, 8])
+        XCTAssertEqual(cards(cloud).map { $0.wordID }, [7, 8])
         XCTAssertEqual(cloud?.deleted, [])
         XCTAssertEqual(cloud?.resetAt, at(5))
     }
@@ -450,27 +630,30 @@ final class SyncMergeTests: XCTestCase {
         try sync(&a)
 
         let again = try sync(&a)
+        let third = try sync(&a)
 
         XCTAssertNil(again.progress)
         XCTAssertNil(again.words)
         XCTAssertNil(again.upload)
+        XCTAssertNil(third.upload)
     }
 
     func testFailedUploadKeepsTheOldBase() throws {
         var a = Device("a")
         answer(&a, 7, at: at(1))
         try sync(&a)
+        try sync(&a)
         let base = a.state.base
         answer(&a, 7, .easy, at: at(2))
 
-        let result = SyncMerge.sync(progress: a.progress, words: a.words, remote: cloud, state: a.state)
+        let result = merge(a, remote: cloud)
 
         XCTAssertNotNil(result.upload)
         XCTAssertEqual(result.stateIfUploadFails.base, base)
         XCTAssertEqual(result.state.base, result.merged)
         a.state = result.stateIfUploadFails
         try sync(&a)
-        XCTAssertEqual(cloud?.cards.first?.lastGrade, .easy, "the next sync still sends the answer")
+        XCTAssertEqual(cards(cloud).first?.lastGrade, .easy, "the next sync still sends the answer")
     }
 
     /// "iCloud'daki kopyayı sil" on another device: the next sync writes this device's copy again.
@@ -478,6 +661,7 @@ final class SyncMergeTests: XCTestCase {
         var a = Device("a")
         answer(&a, 7, at: at(1))
         try add(&a, "awkward", at: at(1))
+        try sync(&a)
         try sync(&a)
         let full = cloud
         cloud = nil
@@ -553,12 +737,12 @@ final class SyncMergeTests: XCTestCase {
             }
             let cloudWords = copy.words.map { "\($0.lemma)=\($0.meaningTR)" }.sorted()
             for device in devices {
-                let cards = device.progress.values.filter { !CustomWordID.contains($0.wordID) }.sorted { $0.wordID < $1.wordID }
-                XCTAssertEqual(cards, copy.cards, "seed \(seed), \(device.name)")
+                let own = device.progress.values.filter { !CustomWordID.contains($0.wordID) }.sorted { $0.wordID < $1.wordID }
+                XCTAssertEqual(own, cards(copy), "seed \(seed), \(device.name)")
                 XCTAssertEqual(device.words.words.map { "\($0.lemma)=\($0.meaningTR)" }.sorted(), cloudWords, "seed \(seed), \(device.name)")
             }
             for (id, date) in newestAnswer {
-                XCTAssertEqual(copy.cards.first(where: { $0.wordID == id })?.lastReviewedAt, date, "seed \(seed): the newest answer to card \(id)")
+                XCTAssertEqual(cards(copy).first(where: { $0.wordID == id })?.lastReviewedAt, date, "seed \(seed): the newest answer to card \(id)")
             }
             let again = try sync(&devices[0])
             XCTAssertNil(again.upload, "seed \(seed): settled")

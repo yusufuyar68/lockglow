@@ -16,17 +16,21 @@ final class SyncKeyValueCloud: SyncCloud {
     static let key = "lockglow.sync.1"
     static let byteLimit = 900_000
 
-    let isAvailable: Bool
     var onChange: ((SyncCloudChange) -> Void)?
     private let store = NSUbiquitousKeyValueStore.default
     private var observer: NSObjectProtocol?
 
-    init() {
-        // Apple: false "if an app was not built with the proper entitlement requests".
-        isAvailable = store.synchronize()
-        guard isAvailable else {
-            return
+    /// Asked only when needed (the iCloud screen, or sync is on): `synchronize()` talks to
+    /// iCloud's store. Apple: false "if an app was not built with the proper entitlement requests".
+    private(set) lazy var isAvailable: Bool = {
+        let available = store.synchronize()
+        if available {
+            startObserving()
         }
+        return available
+    }()
+
+    private func startObserving() {
         observer = NotificationCenter.default.addObserver(
             forName: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
             object: store,
@@ -74,6 +78,35 @@ final class SyncKeyValueCloud: SyncCloud {
         }
         store.removeObject(forKey: SyncKeyValueCloud.key)
         store.synchronize()
+    }
+
+    func accountMarker() -> Data? {
+        guard let token = FileManager.default.ubiquityIdentityToken else {
+            return nil
+        }
+        return try? NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: false)
+    }
+
+    func isSameAccount(_ stored: Data, _ current: Data) -> Bool? {
+        if stored == current {
+            return true
+        }
+        guard let old = SyncKeyValueCloud.token(from: stored), let new = SyncKeyValueCloud.token(from: current) else {
+            return nil
+        }
+        // Apple: identity tokens are compared with isEqual.
+        return old.isEqual(new)
+    }
+
+    private static func token(from data: Data) -> NSObject? {
+        guard let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: data) else {
+            return nil
+        }
+        unarchiver.requiresSecureCoding = false
+        defer {
+            unarchiver.finishDecoding()
+        }
+        return unarchiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? NSObject
     }
 
     /// What a change notification means for the copy; nil for other keys.

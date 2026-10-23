@@ -19,6 +19,11 @@ protocol SyncCloud: AnyObject {
     /// Throws `SyncCloudError.tooLarge` when the copy does not fit.
     func write(_ json: Data) throws
     func remove()
+    /// The signed-in iCloud account as an archived opaque token; nil when iOS gives none. Only
+    /// kept on this device and compared, never sent anywhere.
+    func accountMarker() -> Data?
+    /// Whether two markers name the same account; nil when it cannot tell.
+    func isSameAccount(_ stored: Data, _ current: Data) -> Bool?
     /// What iCloud reports, on the main thread.
     var onChange: ((SyncCloudChange) -> Void)? { get set }
 }
@@ -103,12 +108,14 @@ final class SyncController: ObservableObject {
     private static let enabledKey = "lockglow.icloudSync.enabled"
     private static let lastSyncKey = "lockglow.icloudSync.lastSyncAt"
     private static let problemKey = "lockglow.icloudSync.problem"
+    private static let accountKey = "lockglow.icloudSync.account"
 
     init(cloud: SyncCloud?, stateStore: SyncStateStore?) {
         self.cloud = cloud
         self.stateStore = stateStore
         let stored = UserDefaults.standard
-        isEnabled = (cloud?.isAvailable ?? false) && stored.bool(forKey: SyncController.enabledKey)
+        // The switch first: with sync off, iCloud's store is not even asked (`isAvailable`).
+        isEnabled = stored.bool(forKey: SyncController.enabledKey) && (cloud?.isAvailable ?? false)
         let lastSync = stored.double(forKey: SyncController.lastSyncKey)
         lastSyncAt = lastSync > 0 ? Date(timeIntervalSince1970: lastSync) : nil
         problem = stored.string(forKey: SyncController.problemKey).flatMap(Problem.init(rawValue:))
@@ -135,24 +142,24 @@ final class SyncController: ObservableObject {
     // MARK: The switch
 
     /// Turning sync on starts like a first sync (`SyncState.leaving`): it only adds, nothing on
-    /// this device is deleted or reset by it. Turning it off stops syncing; iCloud's copy stays
-    /// until "iCloud'daki kopyayı sil".
+    /// this device is deleted or reset by it, and it remembers the iCloud account. Turning it off
+    /// stops syncing and drops what the last sync left in the state file (a copy of the words);
+    /// iCloud's copy stays until "iCloud'daki kopyayı sil".
     func setEnabled(_ enabled: Bool) {
         guard enabled != isEnabled else {
             return
         }
         if enabled {
-            guard isAvailable, let stateStore = stateStore else {
+            guard isAvailable else {
                 return
             }
-            do {
-                let state = try stateStore.load()
-                try stateStore.save(state.leaving())
-            } catch {
-                logger.error("sync state not saved: \(error.localizedDescription, privacy: .public)")
+            guard leaveState() else {
                 report(.notSaved)
                 return
             }
+            rememberAccount()
+        } else {
+            leaveState()
         }
         isEnabled = enabled
         defaults.set(enabled, forKey: SyncController.enabledKey)
@@ -166,6 +173,7 @@ final class SyncController: ObservableObject {
     /// everything. Another device that still syncs writes its copy again.
     func deleteCloudCopy() {
         cloud?.remove()
+        leaveState()
         isEnabled = false
         defaults.set(false, forKey: SyncController.enabledKey)
         lastSyncAt = nil
@@ -190,7 +198,7 @@ final class SyncController: ObservableObject {
     /// the state file cannot be read now (a locked device: the next sync tries again) or
     /// iCloud's copy cannot be used (`problem` says why; it is never overwritten then).
     func merge(progress: [Int: WordProgress], words: CustomWordList, localMayBeOld: Bool) -> SyncMerge.Result? {
-        guard isEnabled, let cloud = cloud, let stateStore = stateStore else {
+        guard isEnabled, let cloud = cloud, let stateStore = stateStore, isSameAccount() else {
             return nil
         }
         let state: SyncState
@@ -268,22 +276,70 @@ final class SyncController: ObservableObject {
         case .otherDevice:
             requestSync?()
         case .firstDownload:
-            // iCloud dropped what this device wrote before: the base is not iCloud's copy.
-            if let stateStore = stateStore, var state = try? stateStore.load() {
-                state.base = nil
-                saveState(state)
+            // iCloud dropped what this device wrote before: the next sync meets iCloud's copy
+            // like the first one (it only adds here).
+            if let stateStore = stateStore, let state = try? stateStore.load() {
+                saveState(state.rejoining())
             }
             requestSync?()
         case .quotaExceeded:
             report(.tooLarge)
         case .accountChanged:
-            // Another person's iCloud must not get this device's words: stop until turned on again.
-            guard isEnabled else {
-                return
+            if isEnabled {
+                stopForAnotherAccount()
             }
-            isEnabled = false
-            defaults.set(false, forKey: SyncController.enabledKey)
-            report(.accountChanged)
+        }
+    }
+
+    /// Another person's iCloud must not get this device's words: sync stops until turned on again.
+    private func stopForAnotherAccount() {
+        leaveState()
+        isEnabled = false
+        defaults.set(false, forKey: SyncController.enabledKey)
+        report(.accountChanged)
+    }
+
+    /// The account sync was turned on with, kept on this device to compare (`isSameAccount`).
+    private func rememberAccount() {
+        if let marker = cloud?.accountMarker() {
+            defaults.set(marker, forKey: SyncController.accountKey)
+        } else {
+            defaults.removeObject(forKey: SyncController.accountKey)
+        }
+    }
+
+    /// False, and sync off, when iCloud's account is not the one sync was turned on with: it may
+    /// have changed while the app was closed, before iCloud's own notice arrives. True when iOS
+    /// gives no marker; iCloud's notice (`accountChanged`) still stops sync then.
+    private func isSameAccount() -> Bool {
+        guard let cloud = cloud, let current = cloud.accountMarker() else {
+            return true
+        }
+        guard let stored = defaults.data(forKey: SyncController.accountKey) else {
+            defaults.set(current, forKey: SyncController.accountKey)
+            return true
+        }
+        if cloud.isSameAccount(stored, current) == false {
+            logger.notice("iCloud account changed; sync turned off")
+            stopForAnotherAccount()
+            return false
+        }
+        return true
+    }
+
+    /// The state as after leaving (`SyncState.leaving`): the next sync starts like a first one,
+    /// and no copy of the words stays in the state file. False when it could not be saved.
+    @discardableResult
+    private func leaveState() -> Bool {
+        guard let stateStore = stateStore else {
+            return false
+        }
+        do {
+            try stateStore.save(stateStore.load().leaving())
+            return true
+        } catch {
+            logger.error("sync state not saved: \(error.localizedDescription, privacy: .public)")
+            return false
         }
     }
 

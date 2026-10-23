@@ -14,6 +14,10 @@ import CoreModels
 /// `uuid` instead: every device numbers its own words from `CustomWordID.first`, so two devices
 /// give the same id to different words. Each device keeps its own ids and maps them to uuids
 /// (`SyncState.uuids`); nothing on a device is renumbered.
+///
+/// Every record carries the time its version reached iCloud (`changedAt`, `deletedAt`; see
+/// `SyncMerge`'s clock). It tells a newer change from an older copy that won a race in iCloud
+/// (two devices wrote at once and iCloud kept the older one).
 public struct SyncSnapshot: Codable, Equatable, Sendable {
     /// The `format` this build writes and reads. A copy with a newer one is never overwritten
     /// (`decode` throws `newerFormat`). Raise it when `WordProgress` or `CustomWord` gains a field
@@ -26,13 +30,13 @@ public struct SyncSnapshot: Codable, Equatable, Sendable {
     /// every device that syncs (`SyncMerge`). Nil: never reset.
     public var resetAt: Date?
     /// Progress of cards (ids below `CustomWordID.first`), by id.
-    public var cards: [WordProgress]
+    public var cards: [SyncCard]
     /// The user's words with their progress, by uuid.
     public var words: [SyncWord]
-    /// Uuids of deleted user words, sorted: a device that still has one deletes it too.
-    public var deleted: [String]
+    /// Deleted user words, by uuid: a device that still has one deletes it too.
+    public var deleted: [SyncDeletion]
 
-    public init(resetAt: Date? = nil, cards: [WordProgress] = [], words: [SyncWord] = [], deleted: [String] = []) {
+    public init(resetAt: Date? = nil, cards: [SyncCard] = [], words: [SyncWord] = [], deleted: [SyncDeletion] = []) {
         self.format = SyncSnapshot.currentFormat
         self.resetAt = resetAt
         self.cards = cards
@@ -45,25 +49,43 @@ public struct SyncSnapshot: Codable, Equatable, Sendable {
         return resetAt == nil && cards.isEmpty && words.isEmpty && deleted.isEmpty
     }
 
-    /// One record per id and uuid (the first one wins), sorted, so equal snapshots encode equally:
-    /// cards outside the card range are dropped, word progress gets `wordID` 0, and a uuid that is
-    /// both a word and deleted stays a word (nothing is lost on a damaged copy).
+    /// The latest time any record of this copy reached iCloud.
+    var latestChange: Date? {
+        let times = cards.map { $0.changedAt }
+            + words.flatMap { [$0.changedAt, $0.progressChangedAt].compactMap { $0 } }
+            + deleted.map { $0.deletedAt }
+        return times.max()
+    }
+
+    /// One record per id and uuid (the first one wins; for deletions the latest), sorted, so
+    /// equal snapshots encode equally: cards outside the card range are dropped, word progress
+    /// gets `wordID` 0, and a uuid that is both a word and deleted stays a word (nothing is lost
+    /// on a damaged copy).
     mutating func normalize() {
         format = SyncSnapshot.currentFormat
         var seenCards = Set<Int>()
         cards = cards
-            .filter { !CustomWordID.contains($0.wordID) && seenCards.insert($0.wordID).inserted }
-            .sorted { $0.wordID < $1.wordID }
+            .filter { !CustomWordID.contains($0.progress.wordID) && seenCards.insert($0.progress.wordID).inserted }
+            .sorted { $0.progress.wordID < $1.progress.wordID }
         var seenWords = Set<String>()
         words = words
             .filter { !$0.uuid.isEmpty && seenWords.insert($0.uuid).inserted }
             .map { word in
                 var copy = word
                 copy.progress = word.progress.map { $0.reidentified(0) }
+                if copy.progress == nil {
+                    copy.progressChangedAt = nil
+                } else if copy.progressChangedAt == nil {
+                    copy.progressChangedAt = copy.changedAt
+                }
                 return copy
             }
             .sorted { $0.uuid < $1.uuid }
-        deleted = Array(Set(deleted).subtracting(seenWords).filter { !$0.isEmpty }).sorted()
+        var latest: [String: Date] = [:]
+        for deletion in deleted where !deletion.uuid.isEmpty && !seenWords.contains(deletion.uuid) {
+            latest[deletion.uuid] = max(latest[deletion.uuid] ?? deletion.deletedAt, deletion.deletedAt)
+        }
+        deleted = latest.map { SyncDeletion(uuid: $0.key, deletedAt: $0.value) }.sorted { $0.uuid < $1.uuid }
     }
 
     enum CodingKeys: String, CodingKey {
@@ -72,6 +94,40 @@ public struct SyncSnapshot: Codable, Equatable, Sendable {
         case cards
         case words
         case deleted
+    }
+}
+
+/// A card's progress in iCloud.
+public struct SyncCard: Codable, Equatable, Sendable {
+    public var progress: WordProgress
+    /// When this version reached iCloud.
+    public var changedAt: Date
+
+    public init(progress: WordProgress, changedAt: Date) {
+        self.progress = progress
+        self.changedAt = changedAt
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case progress
+        case changedAt = "changed_at"
+    }
+}
+
+/// A deleted user word in iCloud.
+public struct SyncDeletion: Codable, Equatable, Sendable {
+    public var uuid: String
+    /// When the deletion reached iCloud.
+    public var deletedAt: Date
+
+    public init(uuid: String, deletedAt: Date) {
+        self.uuid = uuid
+        self.deletedAt = deletedAt
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case uuid
+        case deletedAt = "deleted_at"
     }
 }
 
@@ -84,10 +140,14 @@ public struct SyncWord: Codable, Equatable, Sendable {
     public var note: String?
     public var createdAt: Date
     public var updatedAt: Date
+    /// When this version of the text (or the word's return after a deletion) reached iCloud.
+    public var changedAt: Date
     /// The word's progress with `wordID` 0: each device keeps it under its own id.
     public var progress: WordProgress?
+    /// When this version of the progress reached iCloud; nil exactly when `progress` is.
+    public var progressChangedAt: Date?
 
-    public init(uuid: String, word: CustomWord, progress: WordProgress?) {
+    public init(uuid: String, word: CustomWord, changedAt: Date, progress: WordProgress? = nil, progressChangedAt: Date? = nil) {
         self.uuid = uuid
         self.lemma = word.lemma
         self.meaningTR = word.meaningTR
@@ -95,7 +155,9 @@ public struct SyncWord: Codable, Equatable, Sendable {
         self.note = word.note
         self.createdAt = word.createdAt
         self.updatedAt = word.updatedAt
+        self.changedAt = changedAt
         self.progress = progress.map { $0.reidentified(0) }
+        self.progressChangedAt = progress == nil ? nil : (progressChangedAt ?? changedAt)
     }
 
     /// The word under this device's id.
@@ -111,7 +173,7 @@ public struct SyncWord: Codable, Equatable, Sendable {
         )
     }
 
-    /// Same text and dates; the progress is not compared.
+    /// Same text and dates; the progress and the iCloud times are not compared.
     func hasSameContent(as other: SyncWord) -> Bool {
         return lemma == other.lemma
             && meaningTR == other.meaningTR
@@ -129,7 +191,9 @@ public struct SyncWord: Codable, Equatable, Sendable {
         case note
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case changedAt = "changed_at"
         case progress
+        case progressChangedAt = "progress_changed_at"
     }
 }
 
@@ -232,21 +296,21 @@ extension WordProgress {
 
 /// What this device remembers between syncs (Application Support/sync_state.json,
 /// `SyncStateStore`). Losing it loses nothing: the next sync then works like turning sync on
-/// (`joined` false), and words find their uuids again by their English word (`SyncMerge`).
+/// (`joined` false), and unchanged words find their uuids again by their text (`SyncMerge`).
 public struct SyncState: Codable, Equatable, Sendable {
     public static let currentFormat = 1
 
     public var format: Int
-    /// This device has synced since sync was turned on. False before the first sync (and after
-    /// sync was turned off, or iCloud's account changed): that first sync only adds, so turning
-    /// sync on never deletes anything on this device.
+    /// This device has met iCloud's copy since sync was turned on. False before that (and after
+    /// sync was turned off, iCloud's account changed or iCloud's first download came): that first
+    /// meeting only adds, so turning sync on never deletes or resets anything on this device.
     public var joined: Bool
     /// The reset this device's progress belongs to (`SyncSnapshot.resetAt`); set by "İlerlemeyi
-    /// sıfırla" while syncing, until iCloud has it.
+    /// sıfırla" while sync is on, until iCloud has it.
     public var resetAt: Date?
     /// The user's words: this device's id → uuid. An id is never forgotten (ids are never reused).
     public var uuids: [Int: String]
-    /// iCloud's copy after the last sync that reached both this device and iCloud. It tells
+    /// iCloud's copy after the last sync that reached this device and was sent to iCloud. It tells
     /// which side changed a word since (`SyncMerge`). Nil before the first such sync.
     public var base: SyncSnapshot?
 
@@ -259,18 +323,20 @@ public struct SyncState: Codable, Equatable, Sendable {
     }
 
     /// Sync was turned off, or iCloud's account changed: the next sync starts again like the first
-    /// one. Only the uuids stay, so the same words keep their uuids.
+    /// one, and no copy of the words stays here. Only the uuids stay (no text in them).
     public func leaving() -> SyncState {
         return SyncState(uuids: uuids)
     }
 
-    /// "İlerlemeyi sıfırla" at `date` while syncing: the next sync removes older progress from
-    /// iCloud and from the other devices. Nothing before the first sync (sync was just turned on
-    /// and has nothing to reset yet).
+    /// iCloud's first download on this device came: what this device wrote before may have been
+    /// dropped, so the next sync starts like the first one. A reset not yet in iCloud stays.
+    public func rejoining() -> SyncState {
+        return SyncState(resetAt: resetAt, uuids: uuids)
+    }
+
+    /// "İlerlemeyi sıfırla" at `date` while sync is on: the next sync removes older progress from
+    /// iCloud and from the other devices.
     public func resetting(at date: Date) -> SyncState {
-        guard joined else {
-            return self
-        }
         var copy = self
         copy.resetAt = date
         return copy
