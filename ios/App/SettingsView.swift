@@ -496,6 +496,14 @@ struct SettingsView: View {
                     }
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                // Export, import and "Hepsini sil" (is5-veri, DataControlsView.swift).
+                NavigationLink {
+                    DataControlsView()
+                } label: {
+                    SettingsRow("Verilerin")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
             }
             .padding(.top, 4)
         }
