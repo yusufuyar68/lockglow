@@ -96,6 +96,8 @@ final class AppModel: ObservableObject {
             return
         }
         hasStarted = true
+        // Today's time of "Saati benim için seç" before any screen shows it (AppModel+ReminderTiming.swift).
+        reminderTimeDecision()
 
         let container = AppGroupLocator.containerURL()
         store = container.map { AppGroupStore(containerURL: $0) }
@@ -157,6 +159,8 @@ final class AppModel: ObservableObject {
     func sceneDidBecomeActive() {
         // Counted from the first launch on, before the content is ready.
         LocalMetricsRecorder.shared.appDidBecomeActive()
+        // A new day: today's time of "Saati benim için seç" (AppModel+ReminderTiming.swift).
+        reminderTimeDecision()
         if !hasStarted {
             return
         }
@@ -324,7 +328,17 @@ final class AppModel: ObservableObject {
         AppPreferences.reminderEnabled = enabled
     }
 
+    /// A time the user picks. It ends "Saati benim için seç" (AppModel+ReminderTiming.swift).
     func setReminderMinuteOfDay(_ minute: Int) {
+        guard (0..<1440).contains(minute) else {
+            return
+        }
+        endReminderAutoTime()
+        applyReminderMinute(minute)
+    }
+
+    /// Saves the time; also how "Saati benim için seç" sets today's time.
+    func applyReminderMinute(_ minute: Int) {
         guard (0..<1440).contains(minute) else {
             return
         }
@@ -338,12 +352,15 @@ final class AppModel: ObservableObject {
         guard reminderEnabled, !words.isEmpty else {
             return []
         }
+        // "Saati benim için seç" moves the next days' time (AppModel+ReminderTiming.swift).
+        let times = reminderTimes(now: now)
         return ReminderPlanner.plan(
             feed: words,
             newWordFeed: newWordFeed,
             progress: progress,
             now: now,
-            minuteOfDay: reminderMinuteOfDay,
+            minuteOfDay: times.today,
+            laterMinuteOfDay: times.later,
             days: 7,
             dailyNewGoal: dailyNewWords,
             newStudiedToday: AppPreferences.newWordsStudiedToday(now: now),
@@ -502,6 +519,8 @@ final class AppModel: ObservableObject {
         if current.awaitsKnownCheck {
             metrics.recordKnownCheck(passed: grade != .again, at: now)
         }
+        // When the user studies, for "Saati benim için seç" (AppModel+ReminderTiming.swift).
+        noteStudyTime(at: now)
         if wasNew {
             if grade != .again {
                 AppPreferences.addNewWordsStudied(1, now: now)
@@ -747,6 +766,7 @@ final class AppModel: ObservableObject {
         AppPreferences.resetNewWordsStudied()
         AppPreferences.resetReviewsDone()
         LocalMetricsRecorder.shared.reset()
+        forgetStudyTimes()
         AppPreferences.clearFeedFirstSeen()
         AppModel.clearRecentSearches()
         // The words "Tekrar" listed as today's new words (`ReviewView.newWordsTodayLog`) are new again.

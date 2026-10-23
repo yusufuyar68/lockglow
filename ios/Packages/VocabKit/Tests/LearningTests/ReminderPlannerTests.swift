@@ -181,6 +181,36 @@ final class ReminderPlannerTests: XCTestCase {
         XCTAssertEqual(reminders.last?.fireDate, date(day: 18, hour: 20))
     }
 
+    func testTheNextDaysMayHaveAnotherTime() {
+        // "Saati benim için seç": today keeps 20:00, the next days come at 19:30.
+        func times(now: Date, later: Int) -> [Date] {
+            return ReminderPlanner.plan(
+                feed: feed(1...20), progress: [:], now: now, minuteOfDay: evening, laterMinuteOfDay: later,
+                days: 3, dailyNewGoal: 5, newStudiedToday: 0, calendar: calendar
+            ).map(\.fireDate)
+        }
+        XCTAssertEqual(times(now: date(day: 12, hour: 10), later: evening - 30), [
+            date(day: 12, hour: 20), date(day: 13, hour: 19, minute: 30), date(day: 14, hour: 19, minute: 30),
+        ])
+        XCTAssertEqual(times(now: date(day: 12, hour: 20, minute: 5), later: evening - 30), [
+            date(day: 13, hour: 19, minute: 30), date(day: 14, hour: 19, minute: 30),
+        ])
+        XCTAssertTrue(times(now: date(day: 12, hour: 10), later: 1440).isEmpty)
+        XCTAssertTrue(times(now: date(day: 12, hour: 10), later: -1).isEmpty)
+    }
+
+    func testADayWhoseReminderCameGetsNoSecondOne() {
+        // Today's came at 19:30, then the time was set to 20:00 (by hand, or the option turned off).
+        let came = [SentReminder(fireDate: date(day: 12, hour: 19, minute: 30), kind: .meaning, wordID: 1)]
+        XCTAssertEqual(plan(feed: feed(1...20), now: date(day: 12, hour: 19, minute: 45), recent: came).first?.fireDate, date(day: 13, hour: 20))
+        // One that has not come yet does not count.
+        let ahead = [SentReminder(fireDate: date(day: 12, hour: 21), kind: .meaning, wordID: 1)]
+        XCTAssertEqual(plan(feed: feed(1...20), now: date(day: 12, hour: 19, minute: 45), recent: ahead).first?.fireDate, date(day: 12, hour: 20))
+        // Yesterday's does not keep today's away.
+        let yesterday = [SentReminder(fireDate: date(day: 11, hour: 20), kind: .meaning, wordID: 1)]
+        XCTAssertEqual(plan(feed: feed(1...20), now: date(day: 12, hour: 10), recent: yesterday).first?.fireDate, date(day: 12, hour: 20))
+    }
+
     // MARK: Which word (2.1 rule a)
 
     func testNeverNamesAWordTekrarAsksSoon() {
