@@ -2,6 +2,8 @@
 
 > **TASLAK (22 Ekim 2026).** Kaynaklar: `raporlar/01`, `02`, `03`, `05`, `08`, `14`, `referans/orbit_widget_vocabulary_ekranlar/` ve 22 Ekim 2026'da Türkiye App Store'unda yapılan kısa tarama.
 >
+> **23 Ekim güncellemesi:** Rakip tablosu ve anahtar kelime stratejisi yenilendi: [`rakip_analizi.md`](rakip_analizi.md). En önemli değişiklik: Ekim'de çıkan yeni widget uygulamalarıyla "reklam yok, hesap yok, veri toplanmıyor" ve "widget'ta Biliyorum düğmesi" artık tek başına fark değil (aşağıdaki 11. ve 14. satırlar). Bu sayfadaki dersler geçerli; sayılar ve fiyatlar için yeni belgeye bakın.
+>
 > **Kopyalama yok:** Rakip metinleri buraya alınmadı; yalnızca kalıplar, sayılar ve dersler var. Bizim metinlerimiz (`kayit_metinleri_tr.md`, `kayit_metinleri_en.md`) sıfırdan yazıldı.
 
 Rapor tarihleri: 01, 02, 03, 05, 08 → 10 Ekim 2026; 14 → 20 Ekim 2026. Puan ve fiyatlar değişir; yayından önce yeniden bakın.
@@ -25,7 +27,7 @@ Rapor tarihleri: 01, 02, 03, 05, 08 → 10 Ekim 2026; 14 → 20 Ekim 2026. Puan 
 
 | # | Ders | Kanıt | Bizim sayfada |
 |---|---|---|---|
-| 11 | **Reklamsız, hesapsız, takipsiz** olmak övgü alıyor. Orbit'in gizlilik etiketinde cihaz kimliğiyle takip, AdMob ve Firebase var. | `02` §5; `01` §7 | App Privacy: "Data Not Collected" (`docs/legal/app_store_privacy_etiketi.md` §2A). Güçlü fark; 10. karede söyleyin |
+| 11 | **Reklamsız, hesapsız, takipsiz** olmak övgü alıyor. Orbit'in gizlilik etiketinde cihaz kimliğiyle takip, AdMob ve Firebase var. | `02` §5; `01` §7 | App Privacy: "Data Not Collected" (`docs/legal/app_store_privacy_etiketi.md` §2A). 23 Ekim: artık tek başına fark değil (Lugat ve Zarafa da veri toplamıyor); 7. karenin alt satırında söyleniyor |
 | 12 | **"Gün boyu kendiliğinden gözüme çarpıyor"** en olumlu TR yorumunun özü. | `02` §5 | Açıklamanın ilk cümlesi ve 1. kare bu fayda |
 | 13 | **Türkçe mağaza sayfası rakiplerde zayıf.** Orbit'in ve Monkey Taps'in TR sayfası İngilizce. | `03` §0; `08` §0 | Ana dil Türkçe; alt başlığı boş bırakmayın (birçok TR rakip boş bırakmış, `08` §1.3) |
 | 14 | **Alan artık boş değil:** Kolay İngilizce 19 Ekim'de widget ekledi (yaklaşık 37 bin TR puan, yıllık ₺299,99). | `14` §1; 22 Ekim taraması | "Türkçe kilit ekranı widget'ı" tek başına fark değil. Farkı birlikte anlatın: Türkçe açıklama + Dikkat kutusu + dört cevaplı tekrar + cihaz içi Söyle |
@@ -71,10 +73,10 @@ Kaynak: `referans/orbit_widget_vocabulary_ekranlar/phone_1–8.jpg`.
 Raporlar daha büyük bir ürün varsayıyor. Şunlar bugün **yok**; mağaza sayfasına yazılırsa yanıltıcı olur (Kural 2.3.1, 2.3.7):
 
 - YDS, YÖKDİL, IELTS, TOEFL, SAT, GRE paketleri; C1–C2 seviyeleri (bugün yalnızca A1, A2, B1).
-- 2.500+ ya da 10.000+ kelime (bugün 933 kart).
-- Günlük seri (streak), temalar ve yazı tipleri, büyük widget, paylaşım kartı, kendi kelimeni ekleme, iCloud yedeği, FSRS, StandBy, Denetim Merkezi widget'ı, iPad, başka diller.
+- 2.500+ ya da 10.000+ kelime (bugün 1.203 kelime).
+- Günlük seri (streak), temalar ve yazı tipleri, büyük widget, paylaşım kartı, iCloud yedeği, FSRS, StandBy'a özel düzen, Denetim Merkezi, iPad, Apple Watch, başka diller. ("Kendi kelimeni ekleme" 22 Ekim'de eklendi; artık yazılabilir.)
 - Premium, deneme süresi, "ücretsiz başla" (ödeme sistemi yok).
 - Analitik ve çökme raporu (yok; etiket "Data Not Collected").
-- "Akıllı tekrar / yapay zekâ" (doğrusu: Leitner kutu sistemi).
+- "Akıllı tekrar / yapay zekâ" (doğrusu: aralıklı tekrar; uygulamada "basamak").
 
 `08`'deki eski TR alt başlık ve tanıtım taslağı YDS içerdiği için **kullanılmadı**.
