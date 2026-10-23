@@ -42,7 +42,7 @@ struct RootView: View {
                 .tabItem { Label("Tekrar", systemImage: "arrow.triangle.2.circlepath") }
                 .tag(AppTab.review)
             SearchView()
-                .tabItem { Label("Sözlük", systemImage: "magnifyingglass") }
+                .tabItem { Label("Sözlük", systemImage: "character.book.closed") }
                 .tag(AppTab.search)
             // "Tekrar'a git" on the empty library ("Kitaplığın ve bu hafta") opens Tekrar.
             SettingsView(openReview: { selectedTab = .review })
