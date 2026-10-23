@@ -65,71 +65,24 @@ struct TypeQuestionView: View {
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("İngilizcesini yaz")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(Theme.ink2)
-                        .accessibilityAddTraits(.isHeader)
-                    promptCard
-                    if let verdict = verdict {
-                        feedback(verdict)
-                            .id(TypeQuestionView.feedbackID)
-                            .transition(.opacity)
-                        if dynamicTypeSize.isAccessibilitySize {
-                            actions(verdict)
-                        }
-                    } else {
-                        field
-                        if let other = sameMeaning {
-                            sameMeaningNote(other)
-                        }
-                        helpButtons
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 4)
-                .padding(.bottom, 20)
+                column
             }
             .scrollBounceBehavior(.basedOnSize)
             .scrollDismissesKeyboard(.interactively)
             // Opaque (rule 6), and above the keyboard while it is up.
             .safeAreaInset(edge: .bottom, spacing: 0) {
-                Group {
-                    if let verdict = verdict {
-                        if !dynamicTypeSize.isAccessibilitySize {
-                            actions(verdict)
-                        }
-                    } else {
-                        Button("Kontrol et") {
-                            check()
-                        }
-                        .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
-                        .disabled(isEmpty)
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 10)
-                .padding(.bottom, 8)
-                .frame(maxWidth: .infinity)
-                .background(Theme.bg)
+                bottomBar
             }
             .onChange(of: verdict) { _, newValue in
-                guard newValue != nil else {
-                    return
-                }
-                let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.2)
-                Task { @MainActor in
-                    try? await Task.sleep(nanoseconds: 60_000_000)
-                    withAnimation(animation) {
-                        proxy.scrollTo(TypeQuestionView.feedbackID, anchor: .bottom)
-                    }
+                if newValue != nil {
+                    scrollToFeedback(proxy)
                 }
             }
         }
         .tint(Theme.ink)
         // A light haptic on a right answer only (2.4): never on a wrong one.
         .sensoryFeedback(.success, trigger: verdict) { oldValue, newValue in
-            oldValue == nil && (newValue == .right || newValue == .rightWithHint)
+            oldValue == nil && TypeQuestionView.isRight(newValue)
         }
         .onDisappear {
             Speaker.shared.stop()
@@ -140,6 +93,77 @@ struct TypeQuestionView: View {
             if !Task.isCancelled, verdict == nil {
                 isFieldFocused = true
             }
+        }
+    }
+
+    /// The question, then the field and its help, or the feedback.
+    private var column: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("İngilizcesini yaz")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink2)
+                .accessibilityAddTraits(.isHeader)
+            promptCard
+            if let verdict = verdict {
+                feedback(verdict)
+                    .id(TypeQuestionView.feedbackID)
+                    .transition(.opacity)
+                // At accessibility sizes the buttons scroll with the feedback (as in the quiz).
+                if dynamicTypeSize.isAccessibilitySize {
+                    actions(verdict)
+                }
+            } else {
+                field
+                if let other = sameMeaning {
+                    sameMeaningNote(other)
+                }
+                helpButtons
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 4)
+        .padding(.bottom, 20)
+    }
+
+    /// "Kontrol et" before the answer, the answer buttons after it.
+    private var bottomBar: some View {
+        Group {
+            if let verdict = verdict {
+                if !dynamicTypeSize.isAccessibilitySize {
+                    actions(verdict)
+                }
+            } else {
+                Button("Kontrol et") {
+                    check()
+                }
+                .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                .disabled(isEmpty)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 10)
+        .padding(.bottom, 8)
+        .frame(maxWidth: .infinity)
+        .background(Theme.bg)
+    }
+
+    /// Once the field is gone and the bar is laid out: the feedback must never stay hidden under it.
+    private func scrollToFeedback(_ proxy: ScrollViewProxy) {
+        let animation: Animation? = reduceMotion ? nil : .easeInOut(duration: 0.2)
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 60_000_000)
+            withAnimation(animation) {
+                proxy.scrollTo(TypeQuestionView.feedbackID, anchor: .bottom)
+            }
+        }
+    }
+
+    private static func isRight(_ verdict: Verdict?) -> Bool {
+        switch verdict {
+        case .right?, .rightWithHint?:
+            return true
+        default:
+            return false
         }
     }
 
