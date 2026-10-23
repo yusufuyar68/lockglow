@@ -64,14 +64,4 @@ extension AppModel {
             )
         }
     }
-
-    /// The word on the widget while the plan is rewritten, as the new plan pins it: a user's word
-    /// with its edited text, nil when it was just deleted (it must not stay on the widget until
-    /// the next change). Cards stay as they are.
-    func pinnedWord(_ current: WidgetWord?) -> WidgetWord? {
-        guard let current = current, current.isUserAdded else {
-            return current
-        }
-        return customWordLibrary.word(id: current.id)?.widgetWord
-    }
 }
