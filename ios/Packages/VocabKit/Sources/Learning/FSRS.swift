@@ -1,9 +1,10 @@
 import Foundation
 
-/// FSRS-6 scheduling (Free Spaced Repetition Scheduler), plan item v1.2. Not wired into the app
-/// yet: `Leitner` still schedules every review (docs/ozellik_planlari/fsrs.md has the comparison
-/// and the migration plan). It can already run in Leitner's shadow from the review log
-/// (`replay`).
+/// FSRS-6 scheduling (Free Spaced Repetition Scheduler), plan item v1.2. The engine: pure and
+/// without Lockglow's rules. The app reaches it through `FSRSScheduler`, behind the "Yeni
+/// zamanlama (deneme)" switch (off by default: `Leitner` schedules). docs/ozellik_planlari/fsrs.md
+/// has the comparison, the migration and what "basamak" means with FSRS. It also runs in
+/// Leitner's shadow from the review log (`replay`).
 ///
 /// A word's memory is two numbers: stability (days until the chance of recall falls to 90%) and
 /// difficulty (1...10). Retrievability, the chance of recalling the word now, follows from the
@@ -255,7 +256,7 @@ public struct FSRSMemory: Equatable, Sendable {
 
 /// One word's FSRS schedule (py-fsrs `Card`). A new word starts in the first learning step.
 public struct FSRSCard: Equatable, Sendable {
-    public enum Phase: String, Sendable {
+    public enum Phase: String, Codable, Sendable {
         /// New, in the same-day learning steps.
         case learning
         /// Scheduled in whole days.
@@ -290,17 +291,32 @@ public struct FSRSReplay: Equatable, Sendable {
     /// Words with answers missing from the log (it was trimmed, or lines were lost). They get no
     /// card; at the switch they start from the estimate of fsrs.md 4.2 step 2.
     public var incomplete: Set<Int>
+    /// By word id: the number (`ReviewLogEntry.reviews`) of the last answer in its card. A card
+    /// whose number is below the word's `WordProgress.reviews` misses the latest answers.
+    public var reviews: [Int: Int]
 
-    public init(cards: [Int: FSRSCard] = [:], incomplete: Set<Int> = []) {
+    public init(cards: [Int: FSRSCard] = [:], incomplete: Set<Int> = [], reviews: [Int: Int] = [:]) {
         self.cards = cards
         self.incomplete = incomplete
+        self.reviews = reviews
     }
 }
 
 extension FSRS {
-    /// The settings Lockglow would switch on (fsrs.md 4.3 step 4): target 0.9 and a single
+    /// Lockglow's settings (fsrs.md 4.3 step 4) with the default weights: target 0.9 and a single
     /// 10-minute step for new and forgotten words, Leitner's `relearnDelay`.
-    public static let lockglow = FSRS(learningSteps: [600], relearningSteps: [600])
+    public static let lockglow = FSRS.lockglowSettings(weights: FSRS.defaultWeights)
+
+    /// Lockglow's settings with `weights` (the defaults, or weights fitted to the user's log,
+    /// `FSRSParameterFit`). Waits are capped at `FSRSScheduler.maximumIntervalDays`.
+    public static func lockglowSettings(weights: [Double]) -> FSRS {
+        return FSRS(
+            weights: weights,
+            learningSteps: [600],
+            relearningSteps: [600],
+            maximumIntervalDays: FSRSScheduler.maximumIntervalDays
+        )
+    }
 
     /// FSRS run in Leitner's shadow: each word's answers in the review log, oldest first, through
     /// `review`. Pure: Leitner keeps scheduling, and nothing here is saved.
@@ -309,6 +325,14 @@ extension FSRS {
     /// the log existed starts from its first logged answer's `seed` (`seededCard`). A word with
     /// neither, or with a gap or a repeat in its answer numbers, is `incomplete`.
     public func replay(_ log: [ReviewLogEntry]) -> FSRSReplay {
+        return replay(log) { card, entry in
+            review(card, grade: entry.grade, at: entry.at)
+        }
+    }
+
+    /// `replay` with each answer applied by `answer` (`FSRSScheduler.replay` adds Lockglow's
+    /// rules to `review`).
+    public func replay(_ log: [ReviewLogEntry], answer: (FSRSCard, ReviewLogEntry) -> FSRSCard) -> FSRSReplay {
         var byWord: [Int: [(offset: Int, entry: ReviewLogEntry)]] = [:]
         for (offset, entry) in log.enumerated() {
             byWord[entry.wordID, default: []].append((offset, entry))
@@ -334,10 +358,11 @@ extension FSRS {
                 result.incomplete.insert(id)
                 continue
             }
-            for answer in answers {
-                card = review(card, grade: answer.grade, at: answer.at)
+            for entry in answers {
+                card = answer(card, entry)
             }
             result.cards[id] = card
+            result.reviews[id] = highest
         }
         return result
     }
