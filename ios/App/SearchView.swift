@@ -844,7 +844,7 @@ private struct WordDetailMetaRow: View {
     /// Visual only: VoiceOver says the word itself, and "Dinle" plays it.
     @ViewBuilder
     private var ipa: some View {
-        if let ipa = word.ipaUS {
+        AccentIPA(word) { ipa in
             Text(ipa)
                 .font(.system(.subheadline, design: .serif))
                 .foregroundStyle(Theme.ink2)

@@ -250,7 +250,7 @@ struct MediumWordView: View {
             lastResort: lastResort,
             // A user's own word has no level.
             level: word.level.isEmpty ? nil : word.level,
-            ipa: word.ipaUS,
+            ipa: word.chosenIPA, // is5-ses: "Ses ve aksan" (App Group)
             colors: colors,
             renderingMode: renderingMode
         )

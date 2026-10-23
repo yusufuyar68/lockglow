@@ -1,29 +1,160 @@
 import AVFoundation
+import CoreModels
+import SharedState
 import os
+
+/// The settings of "Ses ve aksan" (`SpeechSettings`) in the App Group's UserDefaults. The app
+/// writes them (`SpeechSettingsView`); the app's speech, the widget's speaker button (it runs in
+/// the app, `SpeakWordIntent`) and the widget's IPA read them. Without an App Group (a test
+/// bundle) the process's own defaults.
+enum SpeechSettingsStore {
+    static let defaults: UserDefaults = {
+        if let group = AppGroupLocator.groupIdentifier(), let shared = UserDefaults(suiteName: group) {
+            return shared
+        }
+        return .standard
+    }()
+
+    static var current: SpeechSettings {
+        return SpeechSettings(defaults: defaults)
+    }
+
+    /// The recognizer's language in "Söyle": the accent's ("en-US", "en-GB").
+    static var recognitionLocale: Locale {
+        return Locale(identifier: current.accent.languageCode)
+    }
+
+    static func update(_ change: (inout SpeechSettings) -> Void) {
+        var settings = current
+        change(&settings)
+        settings.save(to: defaults)
+    }
+}
+
+extension WidgetWord {
+    /// The IPA in the accent of "Ses ve aksan", read now. A view on screen while the accent may
+    /// change (Akış, Sözlük, Tekrar) uses `AccentIPA` instead, which redraws.
+    var chosenIPA: String? {
+        return ipa(for: SpeechSettingsStore.current.accent)
+    }
+}
 
 /// How Lockglow reads English aloud. Compiled into the app (the speaker buttons in `Speaker`) and
 /// into the widget extension (`SpeakWordIntent`, which the system runs in the app's process):
-/// the device's own US English voice (offline), the best installed quality, a little slower than
-/// the default rate for an A2 learner, and a `.playback` audio session that ducks other audio.
+/// the device's own voice (offline) in the accent of "Ses ve aksan", the voice chosen there or
+/// the best installed one (premium, then enhanced, then standard), the chosen speed (slower for a
+/// repeat with "Yavaş tekrar"), and a `.playback` audio session that ducks other audio.
 enum WordSpeech {
     static let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? "lockglow",
         category: "speech"
     )
 
-    /// 0.9 of the default rate.
-    static let rate = AVSpeechUtteranceDefaultSpeechRate * 0.9
+    /// The speed of a first hearing with the current settings.
+    static var rate: Float {
+        return AVSpeechUtteranceDefaultSpeechRate * SpeechSettingsStore.current.rate.defaultRateMultiplier
+    }
 
-    /// The best installed US English voice (an enhanced or premium voice when the user has
-    /// downloaded one). Looked up once per process.
-    static let voice: AVSpeechSynthesisVoice? = bestVoice()
+    /// The voice the current settings pick.
+    static var voice: AVSpeechSynthesisVoice? {
+        return voice(for: SpeechSettingsStore.current)
+    }
 
+    /// `text` with the current settings. A word and a card's sentence alike: the sentence stays
+    /// one utterance, so the voice keeps its sentence stress and its pauses at the punctuation;
+    /// `SpeechText` only removes what makes a voice stumble (spacing, "2-1", Turkish names).
+    /// Every call counts as a hearing: the same text with the same voice and speed again within
+    /// 30 seconds is read slower when "Yavaş tekrar" is on.
     static func makeUtterance(_ text: String) -> AVSpeechUtterance {
-        let utterance = AVSpeechUtterance(string: text)
+        let settings = SpeechSettingsStore.current
+        let voice = voice(for: settings)
+        let key = SpeechRepeatTracker.key(text: text, voiceIdentifier: voice?.identifier, rate: settings.rate)
+        let isRepeat = repeats.register(key)
+        let utterance = AVSpeechUtterance(attributedString: spokenText(text, accent: settings.accent))
         utterance.voice = voice
-        utterance.rate = rate
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+            * SpeechRules.rateMultiplier(settings.rate, isRepeat: isRepeat, slowRepeat: settings.slowRepeat)
+        // For the device test: which voice read, how fast, and whether it was a repeat.
+        logger.info(
+            "speech voice: \(voice?.identifier ?? "none", privacy: .public), rate: \(utterance.rate, privacy: .public), repeat: \(isRepeat, privacy: .public)"
+        )
         return utterance
     }
+
+    /// The pieces of `SpeechText`, a Turkish name with its IPA for the voice.
+    static func spokenText(_ text: String, accent: SpeechAccent) -> NSAttributedString {
+        let result = NSMutableAttributedString()
+        let ipaKey = NSAttributedString.Key(AVSpeechSynthesisIPANotationAttribute)
+        for piece in SpeechText.pieces(text, accent: accent) {
+            if let ipa = piece.ipa {
+                result.append(NSAttributedString(string: piece.text, attributes: [ipaKey: ipa]))
+            } else {
+                result.append(NSAttributedString(string: piece.text))
+            }
+        }
+        return result
+    }
+
+    // MARK: Voices
+
+    /// The voice that reads with `settings`: the chosen one while it is installed, otherwise the
+    /// best installed one of the accent. With no offered voice at all, the system's voice for the
+    /// accent, then American English: never nil while an English voice exists (a nil voice
+    /// would read with the phone's language, Turkish).
+    static func voice(for settings: SpeechSettings) -> AVSpeechSynthesisVoice? {
+        let installed = catalog.voices
+        let pick = SpeechVoiceChoice.voice(
+            chosen: settings.voiceIdentifier,
+            among: installed.map(info(of:)),
+            accent: settings.accent,
+            systemDefault: systemDefaultIdentifier(settings.accent)
+        )
+        if let pick, let voice = installed.first(where: { $0.identifier == pick.identifier }) {
+            return voice
+        }
+        return AVSpeechSynthesisVoice(language: settings.accent.languageCode)
+            ?? AVSpeechSynthesisVoice(language: SpeechAccent.american.languageCode)
+    }
+
+    /// The voices "Ses ve aksan" offers for `accent`, best first.
+    static func offeredVoices(for accent: SpeechAccent) -> [SpeechVoiceInfo] {
+        return SpeechVoiceChoice.offered(
+            catalog.voices.map(info(of:)),
+            accent: accent,
+            systemDefault: systemDefaultIdentifier(accent)
+        )
+    }
+
+    /// No enhanced or premium voice is installed for `accent` ("Daha doğal ses indir").
+    static func needsBetterVoice(for accent: SpeechAccent) -> Bool {
+        return SpeechVoiceChoice.needsBetterVoice(catalog.voices.map(info(of:)), accent: accent)
+    }
+
+    /// Reads the installed voices again at the next use: back from iPhone Settings, where a voice
+    /// may have been downloaded (iOS also reports it, `availableVoicesDidChangeNotification`).
+    static func refreshVoices() {
+        catalog.invalidate()
+    }
+
+    static func info(of voice: AVSpeechSynthesisVoice) -> SpeechVoiceInfo {
+        return SpeechVoiceInfo(
+            identifier: voice.identifier,
+            name: voice.name,
+            language: voice.language,
+            quality: SpeechVoiceInfo.Quality(rawQuality: voice.quality.rawValue),
+            isNovelty: voice.voiceTraits.contains(.isNoveltyVoice),
+            isPersonal: voice.voiceTraits.contains(.isPersonalVoice)
+        )
+    }
+
+    private static func systemDefaultIdentifier(_ accent: SpeechAccent) -> String? {
+        return AVSpeechSynthesisVoice(language: accent.languageCode)?.identifier
+    }
+
+    private static let catalog = VoiceCatalog()
+    private static let repeats = RepeatMemory()
+
+    // MARK: Audio session
 
     /// Playback, so a tap is heard even with the silent switch on; other audio dips.
     /// Returns false (and logs why) when the system refuses to activate the session.
@@ -48,15 +179,52 @@ enum WordSpeech {
             logger.notice("audio session deactivation: \(error.localizedDescription, privacy: .public)")
         }
     }
+}
 
-    private static func bestVoice() -> AVSpeechSynthesisVoice? {
-        let candidates = AVSpeechSynthesisVoice.speechVoices().filter { voice in
-            voice.language == "en-US"
-                && !voice.voiceTraits.contains(.isNoveltyVoice)
-                && !voice.voiceTraits.contains(.isPersonalVoice)
+/// The installed voices, read once (`speechVoices()` is slow the first time) and again after iOS
+/// reports a change or after `invalidate()`. Any thread.
+private final class VoiceCatalog: @unchecked Sendable {
+    private let lock = NSLock()
+    private var cached: [AVSpeechSynthesisVoice]?
+    private var observer: NSObjectProtocol?
+
+    var voices: [AVSpeechSynthesisVoice] {
+        lock.lock()
+        defer { lock.unlock() }
+        if observer == nil {
+            observer = NotificationCenter.default.addObserver(
+                forName: AVSpeechSynthesizer.availableVoicesDidChangeNotification,
+                object: nil,
+                queue: nil
+            ) { [weak self] _ in
+                self?.invalidate()
+            }
         }
-        let best = candidates.max { $0.quality.rawValue < $1.quality.rawValue }
-        return best ?? AVSpeechSynthesisVoice(language: "en-US")
+        if let cached {
+            return cached
+        }
+        let voices = AVSpeechSynthesisVoice.speechVoices()
+        cached = voices
+        return voices
+    }
+
+    func invalidate() {
+        lock.lock()
+        cached = nil
+        lock.unlock()
+    }
+}
+
+/// The last reading of the app's process (the app's speaker buttons and the widget's, which runs
+/// here too), for "Yavaş tekrar".
+private final class RepeatMemory: @unchecked Sendable {
+    private let lock = NSLock()
+    private var tracker = SpeechRepeatTracker()
+
+    func register(_ key: String) -> Bool {
+        lock.lock()
+        defer { lock.unlock() }
+        return tracker.register(key, at: Date())
     }
 }
 

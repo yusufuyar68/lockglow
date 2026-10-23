@@ -492,7 +492,7 @@ struct ReviewView: View {
 
     @ViewBuilder
     private func metaItems(_ word: WidgetWord) -> some View {
-        if let ipa = word.ipaUS {
+        AccentIPA(word) { ipa in
             Text(verbatim: ipa)
                 .font(.system(.subheadline, design: .serif))
                 .foregroundStyle(Theme.ink2)

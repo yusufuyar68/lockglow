@@ -174,8 +174,9 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
   `{ "version":1, "plan_id":String, "is_premium":Bool, "interval_seconds":Int, "queue":[WidgetWord], "updated_at":ISO8601 }`
   - `queue`: uygulamanın SRS'e ve filtrelere göre seçtiği sonraki 48–96 kelime. Widget veritabanı açmaz, yalnızca bu kuyruğu okur.
   - `plan_id`: uygulama her yeni plan yazdığında değişir (UUID). Widget, `widget_state.plan_id` farklıysa imlecini sıfırlar.
-  - `WidgetWord` = `{ "id":Int, "lemma":String, "pos":String, "level":String, "ipa_us":String?, "def_micro":String, "def_short":String, "example_en":String, "gloss_tr":String?, "gloss_short_tr":String?, "sensitivity":Int?, "confusable_ids":[Int]? }`.
-    - İlk dokuz alan ve `gloss_short_tr` seed ile aynıdır.
+  - `WidgetWord` = `{ "id":Int, "lemma":String, "pos":String, "level":String, "ipa_us":String?, "ipa_uk":String?, "def_micro":String, "def_short":String, "example_en":String, "gloss_tr":String?, "gloss_short_tr":String?, "sensitivity":Int?, "confusable_ids":[Int]? }`.
+    - `ipa_uk` dışındaki ilk dokuz alan ve `gloss_short_tr` seed ile aynıdır.
+    - `ipa_uk` (`card.ipa_uk`) yalnız veritabanından gelir (2026-10-23). Ayarlar'daki "Ses ve aksan" İngiltere ise widget ve uygulama onu gösterir; yoksa `ipa_us` (`WidgetWord.ipa(for:)`).
     - `sensitivity` (`card.sensitivity`) ve `confusable_ids` (`card_confusable.other_rowid`) yalnız veritabanından gelir; seed'de yoktur.
     - Şema 2'de eklenen alanların hepsi opsiyoneldir: yoksa ya da `null` ise eski JSON da çözülür. Swift'te `glossShortTR`, `sensitivity`, `isSensitive`, `confusableIDs`.
 - `widget_state.json` (widget yazar, atomik):

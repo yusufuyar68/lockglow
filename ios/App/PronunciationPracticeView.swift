@@ -103,7 +103,7 @@ struct PronunciationPracticeView: View {
     private var target: PronunciationTarget {
         switch mode {
         case .word:
-            return PronunciationTarget(text: word.lemma, ipa: word.ipaUS)
+            return PronunciationTarget(text: word.lemma, ipa: word.chosenIPA)
         case .sentence:
             return PronunciationTarget(text: example)
         }
@@ -262,7 +262,7 @@ struct PronunciationPracticeView: View {
                     .accessibilityLabel(SpeechLanguage.english(word.lemma))
                     .accessibilityAddTraits(.isHeader)
                     .englishVoice()
-                if let ipa = word.ipaUS {
+                AccentIPA(word) { ipa in
                     Text(ipa)
                         .font(.body)
                         .foregroundStyle(Theme.ink2)
