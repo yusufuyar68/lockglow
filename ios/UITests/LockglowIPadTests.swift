@@ -31,6 +31,22 @@ final class LockglowIPadTests: XCTestCase {
         attach(app, "ipad-1-akis-yatay")
 
         let field = app.searchFields.firstMatch
+        // ⌘F under a sheet does nothing: the tab must not change unseen behind it.
+        let why = app.buttons["Neden?"].firstMatch
+        if app.responds(to: Selector(("typeKey:modifierFlags:"))) && why.waitForExistence(timeout: 3) && why.isHittable {
+            why.tap()
+            let close = app.buttons["Kapat"].firstMatch
+            if close.waitForExistence(timeout: 5) {
+                _ = press(app, "f", command: true)
+                sleep(1)
+                attach(app, "ipad-1b-akis-neden-yatay")
+                close.tap()
+                sleep(1)
+                XCTAssertFalse(field.exists, "⌘F changed the tab under the Neden? sheet")
+            }
+        } else {
+            note("no Neden? on the first card: ⌘F under a sheet not tested")
+        }
         if press(app, "f", command: true) {
             XCTAssertTrue(field.waitForExistence(timeout: 5), "⌘F did not open Sözlük")
             sleep(1)
@@ -96,7 +112,7 @@ final class LockglowIPadTests: XCTestCase {
 
         // Space through the rest of the "Tanış" cards to the first "Hatırla" question.
         var reachedQuestion = false
-        for _ in 0..<16 {
+        for _ in 0..<30 {
             if recallHeading.exists {
                 reachedQuestion = true
                 break
@@ -165,10 +181,7 @@ final class LockglowIPadTests: XCTestCase {
     /// may not be reported as a tab bar.
     private func tab(_ app: XCUIApplication, _ name: String) -> XCUIElement {
         let inTabBar = app.tabBars.buttons[name]
-        if inTabBar.waitForExistence(timeout: 5) {
-            return inTabBar
-        }
-        return app.buttons[name].firstMatch
+        return inTabBar.exists ? inTabBar : app.buttons[name].firstMatch
     }
 
     private func element(in app: XCUIApplication, containing text: String) -> XCUIElement {

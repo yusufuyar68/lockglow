@@ -63,10 +63,11 @@ extension View {
         modifier(SozlukSearchShortcut(openSozluk: openSozluk))
     }
 
-    /// Sözlük's search field takes the keyboard when ⌘F asked for it. Comes right after
-    /// `.searchable`.
-    func sozlukSearchFocus() -> some View {
-        modifier(SozlukSearchFocus())
+    /// Sözlük's search field takes the keyboard when ⌘F asked for it; `backToSearch` first
+    /// closes what was pushed over the search (a topic, a word), where the field is. Comes right
+    /// after `.searchable`.
+    func sozlukSearchFocus(backToSearch: @escaping () -> Void) -> some View {
+        modifier(SozlukSearchFocus(backToSearch: backToSearch))
     }
 }
 
@@ -98,6 +99,7 @@ private struct SozlukSearchShortcut: ViewModifier {
 }
 
 private struct SozlukSearchFocus: ViewModifier {
+    let backToSearch: () -> Void
     @Environment(\.sozlukSearchRequest) private var request
     @FocusState private var fieldFocused: Bool
 
@@ -113,13 +115,13 @@ private struct SozlukSearchFocus: ViewModifier {
                     takeRequest()
                 }
         } else {
-            // No way to focus the field: ⌘F only opens the tab. The request is still taken.
+            // No way to focus the field: ⌘F opens the tab and its search page only.
             content
                 .onAppear {
-                    request.wrappedValue = false
+                    takeRequest()
                 }
                 .onChange(of: request.wrappedValue) { _, _ in
-                    request.wrappedValue = false
+                    takeRequest()
                 }
         }
     }
@@ -129,10 +131,19 @@ private struct SozlukSearchFocus: ViewModifier {
             return
         }
         request.wrappedValue = false
-        // A moment later: on the first ⌘F the tab and its field are still being built.
+        backToSearch()
+        guard #available(iOS 18.0, *) else {
+            return
+        }
+        // A moment later, and once more: on the first ⌘F the tab and its field are still being
+        // built, and a page pushed over the search is still leaving.
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 150_000_000)
-            fieldFocused = true
+            for delay: UInt64 in [150_000_000, 450_000_000] {
+                try? await Task.sleep(nanoseconds: delay)
+                if !fieldFocused {
+                    fieldFocused = true
+                }
+            }
         }
     }
 }

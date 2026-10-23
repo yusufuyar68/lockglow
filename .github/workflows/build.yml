@@ -73,7 +73,8 @@ jobs:
     name: iOS (paket testleri + simülatör derlemesi)
     if: github.event_name == 'workflow_dispatch'
     runs-on: ${{ inputs.runner || 'macos-15' }}
-    timeout-minutes: 30
+    # 30 before the iPad step; a first boot of a new simulator runtime can take minutes on Intel.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - name: En yeni Xcode'u seç
@@ -104,6 +105,7 @@ jobs:
       # still run 20 s after launch (Akış, onboarding skipped); the screenshot is kept with the log.
       - name: iPad simülatöründe aç
         working-directory: ios
+        timeout-minutes: 12
         run: |
           APP=build/dd/Build/Products/Debug-iphonesimulator/Lockglow.app
           # Read first, then searched: `grep -q` in a pipe can end the writer early (pipefail).
@@ -134,8 +136,9 @@ jobs:
           xcrun simctl launch "$UDID" "$BUNDLE" -lockglow.onboardingCompleted YES
           sleep 20
           xcrun simctl io "$UDID" screenshot ipad-akis.png || true
+          # launchctl list: PID, status, label; an app that has ended keeps its label with "-".
           running="$(xcrun simctl spawn "$UDID" launchctl list || true)"
-          if ! grep -qF "UIKitApplication:$BUNDLE" <<< "$running"; then
+          if ! awk -v b="UIKitApplication:$BUNDLE" 'index($3, b) == 1 && $1 ~ /^[0-9]+$/ { f = 1 } END { exit !f }' <<< "$running"; then
             echo "::error::Lockglow is not running on the iPad simulator 20 s after launch"
             ls -t ~/Library/Logs/DiagnosticReports 2>/dev/null | head -5 || true
             exit 1

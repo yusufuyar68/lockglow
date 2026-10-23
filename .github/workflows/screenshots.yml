@@ -81,13 +81,15 @@ jobs:
         run: |
           mkdir -p out
           # Sign to run locally (simulator only; embeds the App Group entitlement). Fall back to unsigned.
+          # Every device's images (ENABLE_ONLY_ACTIVE_RESOURCES=NO): the iPad pass runs this
+          # iPhone-destination build too.
           xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$FIRST" \
-            -derivedDataPath build/dd \
+            -derivedDataPath build/dd ENABLE_ONLY_ACTIVE_RESOURCES=NO \
             CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
             > out/build.log 2>&1 \
           || { echo "signed build failed, retrying unsigned"
                xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow -destination "id=$FIRST" \
-                 -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > out/build.log 2>&1; } \
+                 -derivedDataPath build/dd ENABLE_ONLY_ACTIVE_RESOURCES=NO CODE_SIGNING_ALLOWED=NO > out/build.log 2>&1; } \
           || { grep -E "error:" out/build.log | sort -u | head -50; tail -20 out/build.log; exit 1; }
           grep -E "error:|warning:.*UITests" out/build.log | sort -u | head -50 || true
           tail -3 out/build.log

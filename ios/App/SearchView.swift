@@ -54,7 +54,9 @@ struct SearchView: View {
             }
             .navigationTitle("Sözlük")
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "İngilizce ya da Türkçe kelime")
-            .sozlukSearchFocus()
+            .sozlukSearchFocus {
+                path = NavigationPath()
+            }
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
             .onSubmit(of: .search) {
