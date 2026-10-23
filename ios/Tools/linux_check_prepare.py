@@ -16,7 +16,7 @@ import shutil
 import sys
 from pathlib import Path
 
-APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "AppModel+ProgressSnapshot.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift", "AppModel+ReminderTiming.swift", "WeeklyRecapModel.swift", "AppModel+Scheduler.swift", "AppModel+SentencePractice.swift", "AppModel+Shortcuts.swift", "WatchPlanRelay.swift"]
+APP_LOGIC_FILES = ["AppModel.swift", "AppModel+Progress.swift", "AppModel+CustomWords.swift", "AppModel+Sozluk.swift", "AppModel+ProgressSnapshot.swift", "CustomWordLibrary.swift", "AppPreferences.swift", "ContentLoader.swift", "ReviewSession.swift", "WidgetHealth.swift", "AppModel+ReminderTiming.swift", "WeeklyRecapModel.swift", "AppModel+Scheduler.swift", "AppModel+SentencePractice.swift", "AppModel+Shortcuts.swift", "WatchPlanRelay.swift", "AppModel+Sync.swift", "SyncController.swift"]
 STUBS = ["Combine", "os", "WidgetKit", "ContentStore"]
 # Siri, Kestirmeler and Spotlight (ios/App/Intents): the data readers, on a line of their own.
 
