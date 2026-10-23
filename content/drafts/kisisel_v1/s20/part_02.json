@@ -1,0 +1,1013 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.nice_talking_to_you.phr.1",
+      "lemma": "nice talking to you",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "ending a conversation",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/naɪs ˈtɔːkɪŋ tə ju/",
+        "uk": "/naɪs ˈtɔːkɪŋ tə ju/"
+      },
+      "def": {
+        "micro": "I enjoyed our chat",
+        "short": "a polite way to end a conversation and say you enjoyed it",
+        "long": "A polite thing to say at the end of a chat, to show you enjoyed it. People often say 'It was nice talking to you' before they leave or end a phone call."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "My bus is here. Nice talking to you!",
+          "tr": "Otobüsüm geldi. Seninle konuşmak güzeldi!",
+          "register": "neutral",
+          "focus": "Nice talking to you"
+        },
+        {
+          "en": "“It was nice talking to you.” “You too! Let's meet again soon.”",
+          "tr": "“Seninle sohbet etmek güzeldi.” “Ben de çok keyif aldım! Yakında yine görüşelim.”",
+          "register": "neutral",
+          "focus": "nice talking to you"
+        },
+        {
+          "en": "Thanks for your help today. It was really nice talking to you.",
+          "tr": "Bugünkü yardımınız için teşekkürler. Sizinle konuşmak gerçekten çok güzeldi.",
+          "register": "neutral",
+          "focus": "nice talking to you"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "it was nice talking to you"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "seninle konuşmak güzeldi",
+          "gloss_short": "konuşmak güzeldi",
+          "alt": [
+            "sohbetimiz güzeldi",
+            "sohbet için sağ ol"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sohbetin sonunda, vedalaşmadan hemen önce söylenir; yeni tanıştığın biri için de, eski bir arkadaş için de olur. Cevabı: 'You too!' Sohbetin başında kullanılmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "nice to meet you",
+        "nice to see you"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sorry, my taxi is here. It was nice ______ to you!",
+        "answer": "talking",
+        "distractors": [
+          "talked",
+          "telling",
+          "saying"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.id_better_go.phr.1",
+      "lemma": "I'd better go",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "politely ending a visit or call",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪd ˈbɛtər ɡoʊ/",
+        "uk": "/aɪd ˈbɛtə ɡəʊ/"
+      },
+      "def": {
+        "micro": "it is time for me to leave",
+        "short": "a polite way to say that you should leave now",
+        "long": "A polite way to end a visit, a chat or a phone call because you need to leave. The 'd is short for 'had', and the verb after 'better' has no 'to'."
+      },
+      "grammar": {
+        "pattern": "I'd better + verb (no 'to')"
+      },
+      "examples": [
+        {
+          "en": "It's getting late. I'd better go.",
+          "tr": "Geç oluyor. Artık gitsem iyi olur.",
+          "register": "neutral",
+          "focus": "I'd better go"
+        },
+        {
+          "en": "Oh no, look at the time! I'd better go, or I'll miss my bus.",
+          "tr": "Eyvah, saate bak! Gitsem iyi olur, yoksa otobüsü kaçıracağım.",
+          "register": "neutral",
+          "focus": "I'd better go"
+        },
+        {
+          "en": "“Do you want another coffee?” “No, I'd better go. I have an early meeting.”",
+          "tr": "“Bir kahve daha ister misin?” “Yok, artık gitmeliyim. Sabah erkenden toplantım var.”",
+          "register": "neutral",
+          "focus": "I'd better go"
+        }
+      ],
+      "synonyms": [
+        "I have to go",
+        "I should go"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "I'd better get going",
+        "I'd better be going"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gitsem iyi olur",
+          "alt": [
+            "artık gitmeliyim",
+            "gitmem lazım"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ziyareti, sohbeti ya da telefonu kibarca bitirmek için söylenir. Buradaki 'd, 'had' demektir, 'would' değil. Ardından çoğu zaman 'Nice talking to you' ya da 'See you!' gelir.",
+          "mistakes": [
+            {
+              "wrong": "I'd better to go.",
+              "right": "I'd better go.",
+              "why": "Türkçedeki 'gitmeliyim' akla 'have to go' ya da 'need to go' kalıplarını getirir; bunlar 'to' aldığı için burada da 'to' eklenir. 'had better' sonrasında fiil 'to' almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "I'd rather"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The last train leaves at eleven, so I'd ______ go now.",
+        "answer": "better",
+        "distractors": [
+          "good",
+          "like",
+          "well"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.thanks_a_lot.phr.1",
+      "lemma": "thanks a lot",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "thank someone warmly",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/θæŋks ə ˈlɑːt/",
+        "uk": "/θæŋks ə ˈlɒt/"
+      },
+      "def": {
+        "micro": "said when someone helps you",
+        "short": "a warm, friendly way to tell someone you are very happy about their help",
+        "long": "You say this when someone helps you or gives you something and you feel very happy about it. It is friendly and common. In an angry voice, it can mean the opposite."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Thanks a lot, Mehmet. The soup was delicious.",
+          "tr": "Çok sağ ol Mehmet. Çorba çok lezzetliydi.",
+          "register": "neutral",
+          "focus": "Thanks a lot"
+        },
+        {
+          "en": "“I fixed the light in your kitchen.” “Oh, thanks a lot! Now I can cook at night.”",
+          "tr": "“Mutfağındaki lambayı tamir ettim.” “Aa, çok teşekkürler! Artık akşamları yemek yapabilirim.”",
+          "register": "informal",
+          "focus": "thanks a lot"
+        },
+        {
+          "en": "“I ate all the cookies.” “Well, thanks a lot! I wanted one too.”",
+          "tr": "“Kurabiyelerin hepsini yedim.” “Ya, çok sağ ol! Ben de bir tane istiyordum.”",
+          "register": "informal",
+          "focus": "thanks a lot"
+        }
+      ],
+      "synonyms": [
+        "thanks so much",
+        "many thanks"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "thanks a lot for",
+        "oh, thanks a lot",
+        "well, thanks a lot"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok teşekkürler",
+          "alt": [
+            "çok sağ ol",
+            "çok teşekkür ederim"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşa, komşuya, satıcıya söylenen samimi bir teşekkürdür. Resmî ortamda 'Thank you very much' daha uygundur. Kızgın bir sesle söylenirse alaycıdır. Cevabı: 'No problem.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Here's your phone. You left it in the taxi.” “Oh, ______! I was so worried.”",
+        "answer": "thanks a lot",
+        "distractors": [
+          "thank a lot",
+          "see you soon",
+          "happy birthday"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.thank_you_for.phr.1",
+      "lemma": "thank you for",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "say what you are grateful for",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈθæŋk ju fər/",
+        "uk": "/ˈθæŋk ju fə/"
+      },
+      "def": {
+        "micro": "said to name a kind act",
+        "short": "used before a noun or an -ing verb to say what someone did that made you happy",
+        "long": "You say this and then name what someone gave you or did for you: a noun, like 'your help', or a verb with -ing, like 'coming'. It is polite and fits every situation."
+      },
+      "grammar": {
+        "pattern": "thank you for + noun / -ing"
+      },
+      "examples": [
+        {
+          "en": "Thank you for the beautiful scarf, Elif.",
+          "tr": "Bu güzel atkı için teşekkür ederim Elif.",
+          "register": "neutral",
+          "focus": "Thank you for"
+        },
+        {
+          "en": "Thank you for waiting. The doctor can see you now.",
+          "tr": "Beklediğiniz için teşekkür ederim. Doktor sizi şimdi alabilir.",
+          "register": "formal",
+          "focus": "Thank you for"
+        },
+        {
+          "en": "Thank you for inviting us, Omar. We had a really good time at your party.",
+          "tr": "Bizi davet ettiğin için teşekkür ederim Omar. Partinde çok güzel vakit geçirdik.",
+          "register": "neutral",
+          "focus": "Thank you for"
+        }
+      ],
+      "synonyms": [
+        "thanks for"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "thank you for your help",
+        "thank you for coming",
+        "thank you for everything"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "… için teşekkür ederim",
+          "gloss_short": "… için sağ olun",
+          "alt": [
+            "… için sağ ol",
+            "… için teşekkürler"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Her ortamda kullanılır; arkadaşlar arasında kısaca 'Thanks for…' denir. Ardından isim ('your help') ya da -ing'li fiil ('coming') gelir. Cevabı: 'You're welcome.'",
+          "mistakes": [
+            {
+              "wrong": "Thank you for help me.",
+              "right": "Thank you for helping me.",
+              "why": "Türkçede 'yardım ettiğin için' fiille kurulur, bu yüzden 'for' sonrasına yalın fiil konur. İngilizcede 'for' sonrasında fiil -ing alır ya da isim gelir: 'for your help'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "thanks to"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thank you ______ the birthday card, Nina. It made me smile.",
+        "answer": "for",
+        "distractors": [
+          "to",
+          "with",
+          "about"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.youre_welcome.phr.1",
+      "lemma": "you're welcome",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "polite reply to thanks",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/jʊr ˈwɛlkəm/",
+        "uk": "/jɔː ˈwɛlkəm/"
+      },
+      "def": {
+        "micro": "a polite answer to thanks",
+        "short": "a polite reply when someone says thank you to you",
+        "long": "You say this when someone thanks you. It is polite and fits almost every place, from shops to offices. Friends often say 'no problem' instead."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "“Thank you, doctor.” “You're welcome. Get some rest.”",
+          "tr": "“Teşekkür ederim doktor bey.” “Rica ederim. Biraz dinlenin.”",
+          "register": "neutral",
+          "focus": "You're welcome"
+        },
+        {
+          "en": "“Thanks for showing me the way, Kerem.” “You're welcome! See you tomorrow.”",
+          "tr": "“Bana yolu gösterdiğin için sağ ol Kerem.” “Rica ederim! Yarın görüşürüz.”",
+          "register": "neutral",
+          "focus": "You're welcome"
+        },
+        {
+          "en": "When we thanked the waiter, he smiled and said, “You're welcome.”",
+          "tr": "Garsona teşekkür edince gülümsedi ve “Rica ederim.” dedi.",
+          "register": "neutral",
+          "focus": "You're welcome"
+        }
+      ],
+      "synonyms": [
+        "not at all",
+        "no problem"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "oh, you're welcome",
+        "you're very welcome",
+        "you're most welcome"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rica ederim",
+          "alt": [
+            "bir şey değil"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Teşekküre verilen kibar cevaptır; mağazada, işte, herkese söylenir. Arkadaşlar arasında 'No problem' ya da 'No worries' daha rahattır. Kapıda misafir karşılarken söylenmez, orada 'Welcome!' denir.",
+          "mistakes": [
+            {
+              "wrong": "(At the door) You're welcome! Please come in.",
+              "right": "(At the door) Welcome! Please come in.",
+              "why": "'Hoş geldiniz' sözü 'welcome' kelimesiyle kurulduğu için 'You're welcome' de aynı sanılır. Oysa bu kalıp yalnızca teşekküre cevaptır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "welcome"
+      ],
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Thanks for the help with my homework.” “______. It was easy for me.”",
+        "answer": "You're welcome",
+        "distractors": [
+          "You welcome",
+          "Welcome home",
+          "Excuse me"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.my_pleasure.phr.1",
+      "lemma": "my pleasure",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "warm, polite reply to thanks",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/maɪ ˈplɛʒər/",
+        "uk": "/maɪ ˈplɛʒə/"
+      },
+      "def": {
+        "micro": "glad I could help you",
+        "short": "a warm, polite reply to thanks that shows you were happy to help",
+        "long": "A warm and polite answer when someone thanks you; it means you were happy to help. Hotel and restaurant staff often say it, and people also say 'It was my pleasure'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "“Thank you for dinner.” “My pleasure. Come again soon.”",
+          "tr": "“Yemek için teşekkürler.” “Ne demek. Yine bekleriz.”",
+          "register": "neutral",
+          "focus": "My pleasure"
+        },
+        {
+          "en": "“Thank you for bringing our bags up.” “My pleasure, sir. Enjoy your stay.”",
+          "tr": "“Çantalarımızı yukarı çıkardığınız için teşekkürler.” “Ne demek efendim. İyi konaklamalar.”",
+          "register": "formal",
+          "focus": "My pleasure"
+        },
+        {
+          "en": "It was my pleasure to show Chloe around the city on her first visit.",
+          "tr": "Chloe'ye ilk gelişinde şehri gezdirmek benim için bir zevkti.",
+          "register": "neutral",
+          "focus": "my pleasure"
+        }
+      ],
+      "synonyms": [
+        "you're welcome",
+        "not at all"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "it was my pleasure",
+        "the pleasure is mine"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne demek",
+          "alt": [
+            "benim için zevkti",
+            "rica ederim"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Teşekküre verilen sıcak ve kibar bir cevaptır; otel, restoran ve mağaza çalışanları sık kullanır. 'You're welcome' sözünden biraz daha resmî ve içtendir. 'It was my pleasure' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "with pleasure"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Thanks for driving me to the airport, Esra.” “It was my ______.”",
+        "answer": "pleasure",
+        "distractors": [
+          "pleased",
+          "welcome",
+          "pleasant"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.no_thanks.phr.1",
+      "lemma": "no thanks",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "politely refuse an offer",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/noʊ ˈθæŋks/",
+        "uk": "/nəʊ ˈθæŋks/"
+      },
+      "def": {
+        "micro": "a polite way to say no",
+        "short": "used to say politely that you do not want something someone offers you",
+        "long": "You say this when someone offers you food, a drink or help and you do not want it. It is short and polite. To accept an offer, people say 'Yes, please'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "“More tea?” “No, thanks. I'm fine.”",
+          "tr": "“Biraz daha çay?” “Yok, sağ ol. Böyle iyiyim.”",
+          "register": "neutral",
+          "focus": "No, thanks"
+        },
+        {
+          "en": "“Do you need a bag for that?” “No, thanks. It fits in my pocket.”",
+          "tr": "“Poşet ister misiniz?” “Hayır, teşekkürler. Cebime sığıyor.”",
+          "register": "neutral",
+          "focus": "No, thanks"
+        },
+        {
+          "en": "Diego offered me a ride home, but I said, “No, thanks. I'll walk.”",
+          "tr": "Diego beni eve bırakmayı teklif etti ama “Hayır, sağ ol. Yürüyeceğim.” dedim.",
+          "register": "neutral",
+          "focus": "No, thanks"
+        }
+      ],
+      "synonyms": [
+        "no, thank you"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "no, thanks, I'm fine",
+        "no, thanks, I'm full"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hayır, teşekkürler",
+          "gloss_short": "yok, sağ ol",
+          "alt": [
+            "hayır, sağ ol",
+            "sağ ol, istemem"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir ikramı ya da teklifi kibarca geri çevirirken söylenir. Türkçede tek başına 'sağ ol' çoğu zaman hayır demektir; İngilizcede yalnızca 'Thank you' evet gibi anlaşılabilir. Kabul ederken 'Yes, please.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "thank you"
+      ],
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Would you like some more rice?” “______. I'm really full.”",
+        "answer": "No, thanks",
+        "distractors": [
+          "Yes, please",
+          "Help yourself",
+          "Of course"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.here_you_are.phr.1",
+      "lemma": "here you are",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "said when giving something",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɪr ju ɑːr/",
+        "uk": "/ˈhɪə ju ɑː/"
+      },
+      "def": {
+        "micro": "said when giving something",
+        "short": "used when you give something to someone, like money, a ticket or a pen",
+        "long": "You say this when you give something to someone, for example in a shop, a café or at a ticket office. A more informal way to say it is 'here you go'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "“Can I see your boarding pass?” “Here you are.”",
+          "tr": "“Biniş kartınızı görebilir miyim?” “Buyurun.”",
+          "register": "neutral",
+          "focus": "Here you are"
+        },
+        {
+          "en": "Here you are, Chloe: one hot chocolate with extra milk.",
+          "tr": "Buyur Chloe: bir sıcak çikolata, bol sütlü.",
+          "register": "neutral",
+          "focus": "Here you are"
+        },
+        {
+          "en": "“That's twenty lira, please.” “Here you are.” “Thanks. And this is your receipt.”",
+          "tr": "“Yirmi lira lütfen.” “Buyurun.” “Teşekkürler. Bu da fişiniz.”",
+          "register": "neutral",
+          "focus": "Here you are"
+        }
+      ],
+      "synonyms": [
+        "here you go",
+        "there you go"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "here you are, sir",
+        "OK, here you are"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buyurun",
+          "alt": [
+            "buyur",
+            "al",
+            "işte"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir şey uzatırken söylenir: para, bilet, kalem. Daha rahatı 'Here you go'. Türkçe 'buyurun' için tek karşılık yoktur: izin verirken 'Go ahead', kapıda 'Come in', mağazada 'Can I help you?' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "go ahead",
+        "come in"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The cashier puts the change in Omar's hand and says, “______.”",
+        "answer": "Here you are",
+        "distractors": [
+          "Go ahead",
+          "Come in",
+          "After you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.please.interj.1",
+      "lemma": "please",
+      "type": "word",
+      "pos": "interj",
+      "sense_no": 1,
+      "sense_note": "polite word in requests",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pliːz/",
+        "uk": "/pliːz/"
+      },
+      "def": {
+        "micro": "makes a request polite",
+        "short": "a word you add when you ask for something or order something, to be polite",
+        "long": "A word you add when you ask for something, so that you sound polite. It often comes at the end: 'A tea, please.' To accept an offer, say 'Yes, please'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "A small water and two teas, please.",
+          "tr": "Bir küçük su ve iki çay lütfen.",
+          "register": "neutral",
+          "focus": "please"
+        },
+        {
+          "en": "“Would you like some cake?” “Yes, please! It looks great.”",
+          "tr": "“Biraz kek ister misin?” “Evet, lütfen! Çok güzel görünüyor.”",
+          "register": "neutral",
+          "focus": "please"
+        },
+        {
+          "en": "Esra, please turn off the lights when you leave the office tonight.",
+          "tr": "Esra, bu akşam ofisten çıkarken lütfen ışıkları kapat.",
+          "register": "neutral",
+          "focus": "please"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "yes, please",
+        "please wait",
+        "please sit down"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "lütfen",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngilizcede neredeyse her ricada kullanılır; Türkçede kibarlık çoğu zaman fiilden gelir ('verir misiniz'). Siparişte cümlenin sonuna eklenir. İkramı kabul ederken 'Yes, please' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Can I help you?” “Yes. A large orange juice, ______.”",
+        "answer": "please",
+        "distractors": [
+          "ouch",
+          "hello",
+          "goodbye"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.can_i_have.phr.1",
+      "lemma": "can I have",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "ask for something",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kən aɪ ˈhæv/",
+        "uk": "/kən aɪ ˈhæv/"
+      },
+      "def": {
+        "micro": "used to ask for something",
+        "short": "a polite, everyday way to ask for something, for example in a café or a shop",
+        "long": "You use this to ask someone to give you something, like food in a café or a ticket at a station. It is polite and very common. 'Could I have…?' is a little more polite."
+      },
+      "grammar": {
+        "pattern": "Can I have + noun (+ please)?"
+      },
+      "examples": [
+        {
+          "en": "Can I have a cheese sandwich, please?",
+          "tr": "Bir peynirli sandviç alabilir miyim lütfen?",
+          "register": "neutral",
+          "focus": "Can I have"
+        },
+        {
+          "en": "Excuse me, can I have two tickets for the six o'clock bus?",
+          "tr": "Affedersiniz, saat altı otobüsü için iki bilet alabilir miyim?",
+          "register": "neutral",
+          "focus": "can I have"
+        },
+        {
+          "en": "Kerem, can I have a piece of your chocolate? It looks really good.",
+          "tr": "Kerem, çikolatandan bir parça alabilir miyim? Çok güzel görünüyor.",
+          "register": "informal",
+          "focus": "can I have"
+        }
+      ],
+      "synonyms": [
+        "could I have",
+        "may I have"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "can I have the bill",
+        "can I have a look"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "… alabilir miyim?",
+          "gloss_short": "alabilir miyim?",
+          "alt": [
+            "… verir misiniz?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kafede, restoranda, mağazada bir şey isterken söylenir. 'I want…' doğrudan ve biraz kaba duyulur. Sonuna 'please' eklenir. Daha kibarı 'Could I have…?' olur.",
+          "mistakes": [
+            {
+              "wrong": "Can I take a coffee, please?",
+              "right": "Can I have a coffee, please?",
+              "why": "Türkçede 'almak' hem 'take' hem 'have/get/buy' demektir. Kafede sipariş verirken 'Can I take…' garip duyulur; 'Can I have…' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "can I take"
+      ],
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“What would you like?” “______ a lemonade, please?”",
+        "answer": "Can I have",
+        "distractors": [
+          "Can you have",
+          "Do I have",
+          "Have I got"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

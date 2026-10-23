@@ -1,0 +1,1000 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.let_me_think.phr.1",
+      "lemma": "let me think",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking for time to answer",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɛt mi ˈθɪŋk/",
+        "uk": "/lɛt mi ˈθɪŋk/"
+      },
+      "def": {
+        "micro": "wait, I need a moment",
+        "short": "said when you need a short time before you can answer a question",
+        "long": "You say this when someone asks you something and you need a moment to remember or decide. People also say 'Let me think about it' when they want to decide later."
+      },
+      "grammar": {
+        "pattern": "let me think (about it)"
+      },
+      "examples": [
+        {
+          "en": "Hmm, let me think. Was it on Tuesday?",
+          "tr": "Hımm, bir düşüneyim. Salı günü müydü?",
+          "register": "neutral",
+          "focus": "let me think"
+        },
+        {
+          "en": "“Which colour do you want for the kitchen, Omar?” “Let me think about it for a day.”",
+          "tr": "“Mutfak için hangi rengi istiyorsun Omar?” “Bir gün düşüneyim.”",
+          "register": "neutral",
+          "focus": "Let me think"
+        },
+        {
+          "en": "“Can you work on Saturday?” “Let me think. I'll tell you tomorrow morning.”",
+          "tr": "“Cumartesi çalışabilir misin?” “Bir düşüneyim. Yarın sabah sana söylerim.”",
+          "register": "neutral",
+          "focus": "Let me think"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "let me think about it",
+        "let me think for a minute"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir düşüneyim",
+          "alt": [
+            "dur bir düşüneyim",
+            "düşüneyim"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir soruya hemen cevap veremeyince zaman kazanmak için söylenir; her ortamda kullanılır. Kararı sonraya bırakmak için 'Let me think about it' denir. Benzer kısa bir kalıp: 'Let me see.'",
+          "mistakes": [
+            {
+              "wrong": "Let me to think about it.",
+              "right": "Let me think about it.",
+              "why": "Türkçedeki 'düşünmeme izin ver' sözü 'allow me to think' gibi düşünülünce araya 'to' eklenir. 'Let' kendisinden sonra 'to' almaz: 'let me think', 'let me see'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“What's seven times eight?” “Hmm, let me ______... It's 56!”",
+        "answer": "think",
+        "distractors": [
+          "know",
+          "help",
+          "go"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.could_you_say_that_again.phr.1",
+      "lemma": "could you say that again",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking someone to repeat",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʊd ju seɪ ðæt əˈɡɛn/",
+        "uk": "/kʊd ju seɪ ðæt əˈɡɛn/"
+      },
+      "def": {
+        "micro": "please repeat what you said",
+        "short": "a polite question when you did not hear or understand what someone said",
+        "long": "You ask this when you did not hear someone well, for example on the phone, in a noisy place, or when they said a name or a number. It is polite. A shorter way is 'Sorry?'"
+      },
+      "grammar": {
+        "pattern": "Could you say that again(, please)?"
+      },
+      "examples": [
+        {
+          "en": "Sorry, could you say that again? The music here is very loud.",
+          "tr": "Pardon, tekrar söyler misiniz? Burada müzik çok yüksek.",
+          "register": "neutral",
+          "focus": "could you say that again"
+        },
+        {
+          "en": "“My number is 0532 418 77 90.” “Could you say that again, please? A bit slower.”",
+          "tr": "“Numaram 0532 418 77 90.” “Tekrar söyler misiniz lütfen? Biraz daha yavaş.”",
+          "register": "neutral",
+          "focus": "Could you say that again"
+        },
+        {
+          "en": "Elif didn't hear the address on the phone, so she asked, “Could you say that again?”",
+          "tr": "Elif telefonda adresi duyamadı, bu yüzden “Tekrar söyler misiniz?” diye sordu.",
+          "register": "neutral",
+          "focus": "Could you say that again"
+        }
+      ],
+      "synonyms": [
+        "Sorry?",
+        "Pardon?"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "say that again",
+        "say it again"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tekrar söyler misiniz?",
+          "gloss_short": "tekrarlar mısın?",
+          "alt": [
+            "bir daha söyler misiniz?",
+            "tekrarlar mısınız?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefonda, gürültüde ya da bir isim veya numarayı duyamayınca kibarca söylenir. 'Can you say that again?' daha günlüktür; kısası 'Sorry?' ya da 'Pardon?' olur.",
+          "mistakes": [
+            {
+              "wrong": "Sorry, can you say again?",
+              "right": "Sorry, can you say that again?",
+              "why": "Türkçede 'tekrar söyler misin?' derken bir nesne gerekmez. İngilizcede 'say' burada nesne ister: 'say that again' ya da 'say it again'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "tell"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“The meeting is in room 304.” “Sorry, could you ______? It's very noisy here.”",
+        "answer": "say that again",
+        "distractors": [
+          "tell that again",
+          "say me again",
+          "talk that again"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pardon.interj.1",
+      "lemma": "pardon",
+      "type": "word",
+      "pos": "interj",
+      "sense_no": 1,
+      "sense_note": "asking someone to repeat",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːrdən/",
+        "uk": "/ˈpɑːdən/"
+      },
+      "def": {
+        "micro": "what did you say?",
+        "short": "a polite word you say when you did not hear what someone said and want it again",
+        "long": "When you did not hear someone, you say this with a rising voice so they say it again. It is polite. In American English people also say 'Pardon me?'; 'I beg your pardon?' is very formal."
+      },
+      "examples": [
+        {
+          "en": "Pardon? Can you speak a little louder?",
+          "tr": "Efendim? Biraz daha yüksek sesle konuşabilir misiniz?",
+          "register": "neutral",
+          "focus": "Pardon"
+        },
+        {
+          "en": "“Your table is ready.” “Pardon?” “Your table is ready now, sir.”",
+          "tr": "“Masanız hazır.” “Efendim?” “Masanız şimdi hazır efendim.”",
+          "register": "formal",
+          "focus": "Pardon"
+        },
+        {
+          "en": "“I beg your pardon?” said the teacher, because Kerem answered too quietly.",
+          "tr": "Kerem çok sessiz cevap verdiği için öğretmen “Efendim?” dedi.",
+          "register": "formal",
+          "focus": "pardon"
+        }
+      ],
+      "synonyms": [
+        "Sorry?",
+        "Excuse me?"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "pardon me",
+        "I beg your pardon"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From French 'pardon', meaning 'forgiveness'. The Turkish word 'pardon' comes from the same French word.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "efendim?",
+          "alt": [
+            "anlayamadım",
+            "ne dediniz?"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Duyamayınca yükselen bir tonla 'Pardon?' denir; kibardır. Türkçede pardon dediğimiz yerlerde özür için 'Sorry!', dikkat çekmek ya da yol istemek için 'Excuse me' daha doğaldır.",
+          "mistakes": [
+            {
+              "wrong": "Pardon, can you help me with my bag?",
+              "right": "Excuse me, can you help me with my bag?",
+              "why": "Türkçede 'pardon' ile dikkat çekeriz. İngilizcede tek başına 'Pardon?' çoğunlukla 'Efendim, ne dediniz?' demektir; birinden yardım isterken 'Excuse me' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "excuse me",
+        "sorry"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Do you want milk in your tea?” “______? It's so noisy in this café.”",
+        "answer": "Pardon",
+        "distractors": [
+          "Enjoy your meal",
+          "Nice try",
+          "Take care"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_didnt_catch_that.phr.1",
+      "lemma": "I didn't catch that",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "not hearing clearly",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˌdɪdnt ˈkætʃ ðæt/",
+        "uk": "/aɪ ˌdɪdnt ˈkætʃ ðæt/"
+      },
+      "def": {
+        "micro": "I did not hear it well",
+        "short": "said when you did not hear clearly what someone said, so they can say it again",
+        "long": "You say this when you did not hear someone's words clearly, for example a name or a number. It is polite and friendly. Here the verb means 'hear' and has nothing to do with taking hold of something."
+      },
+      "grammar": {
+        "pattern": "I didn't catch + that / your name"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I didn't catch that. What time?",
+          "tr": "Pardon, tam duyamadım. Saat kaçta?",
+          "register": "neutral",
+          "focus": "I didn't catch that"
+        },
+        {
+          "en": "“Hi, I'm Lena Hoffmann.” “Nice to meet you. Sorry, I didn't catch your surname.”",
+          "tr": "“Merhaba, ben Lena Hoffmann.” “Memnun oldum. Pardon, soyadınızı tam duyamadım.”",
+          "register": "neutral",
+          "focus": "I didn't catch"
+        },
+        {
+          "en": "The announcement at the station was very quiet, and Tolga didn't catch the platform number.",
+          "tr": "İstasyondaki anonsun sesi çok kısıktı ve Tolga peron numarasını tam duyamadı.",
+          "register": "neutral",
+          "focus": "didn't catch"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "didn't catch your name",
+        "sorry, I didn't catch that"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tam duyamadım",
+          "alt": [
+            "anlayamadım",
+            "kaçırdım"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Birinin sözünü, adını ya da numarasını tam duyamayınca kibarca söylenir: 'Sorry, I didn't catch your name.' Buradaki 'catch' yakalamak değil, duymak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "I don't follow"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“The Wi-Fi password is blue-seven-tree.” “Sorry, I didn't ______ that. Blue-seven what?”",
+        "answer": "catch",
+        "distractors": [
+          "throw",
+          "hold",
+          "keep"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_see.phr.1",
+      "lemma": "I see",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "showing you understand",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˈsiː/",
+        "uk": "/aɪ ˈsiː/"
+      },
+      "def": {
+        "micro": "now I understand",
+        "short": "said to show that you understand what someone has just told or explained to you",
+        "long": "You say this when someone explains something and you now understand it. It is not about your eyes. 'Oh, I see' can also show that the news is a little surprising for you."
+      },
+      "examples": [
+        {
+          "en": "“The shop is closed on Mondays.” “Oh, I see.”",
+          "tr": "“Dükkân pazartesileri kapalı.” “Haa, anladım.”",
+          "register": "neutral",
+          "focus": "I see"
+        },
+        {
+          "en": "“I'm late because my car broke down.” “I see. Don't worry about it.”",
+          "tr": "“Arabam bozulduğu için geç kaldım.” “Anlıyorum. Hiç dert etme.”",
+          "register": "neutral",
+          "focus": "I see"
+        },
+        {
+          "en": "Barış explained the new rules, and Sofia said, “I see. So now we start at nine?”",
+          "tr": "Barış yeni kuralları anlattı, Sofia da “Anladım. Yani artık dokuzda mı başlıyoruz?” dedi.",
+          "register": "neutral",
+          "focus": "I see"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "oh, I see",
+        "I see what you mean"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anlıyorum",
+          "alt": [
+            "anladım",
+            "öyle mi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Biri bir şey açıklayınca dinlediğini ve anladığını göstermek için söylenir; arkadaşa da, işte de olur. Burada gözle görmek anlamı yoktur. 'Oh, I see' biraz şaşırdığını da gösterir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "got it"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“The lift is broken, so we have to use the stairs.” “Oh, ______. Let's go, then.”",
+        "answer": "I see",
+        "distractors": [
+          "me too",
+          "you too",
+          "my turn"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.got_it.phr.1",
+      "lemma": "got it",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "saying you understand",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡɑːt ɪt/",
+        "uk": "/ˈɡɒt ɪt/"
+      },
+      "def": {
+        "micro": "I understand, OK",
+        "short": "an informal way to say that you understand an instruction or a piece of news",
+        "long": "You say this to show that you understand what someone told you to do or what they said. It is short and informal. As a question, 'Got it?' asks if the other person understands."
+      },
+      "examples": [
+        {
+          "en": "“Turn left after the bank.” “Got it!”",
+          "tr": "“Bankadan sonra sola dön.” “Tamamdır!”",
+          "register": "informal",
+          "focus": "Got it"
+        },
+        {
+          "en": "“Press the green button, then wait ten seconds. Got it?” “Yes, got it.”",
+          "tr": "“Yeşil düğmeye bas, sonra on saniye bekle. Anladın mı?” “Evet, anladım.”",
+          "register": "informal",
+          "focus": "Got it"
+        },
+        {
+          "en": "“Kerem, the meeting moved to three o'clock.” “Got it, thanks. I'll tell the others.”",
+          "tr": "“Kerem, toplantı saat üçe alındı.” “Anlaşıldı, sağ ol. Diğerlerine de söylerim.”",
+          "register": "informal",
+          "focus": "Got it"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "OK, got it",
+        "got it, thanks"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anladım",
+          "alt": [
+            "tamamdır",
+            "anlaşıldı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir talimatı ya da bilgiyi aldığını göstermek için arkadaşa, iş arkadaşına söylenir; gayriresmîdir. Soru olarak 'Got it?' = Anladın mı? Resmî ortamda 'I understand' daha uygundur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "I see"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Bring the blue folder, not the red one.” “______. The blue one.”",
+        "answer": "Got it",
+        "distractors": [
+          "Same here",
+          "Good for you",
+          "Go on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_dont_follow.phr.1",
+      "lemma": "I don't follow",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "not understanding an explanation",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ doʊnt ˈfɑːloʊ/",
+        "uk": "/aɪ dəʊnt ˈfɒləʊ/"
+      },
+      "def": {
+        "micro": "I can't understand your idea",
+        "short": "said when you cannot understand what someone is explaining to you",
+        "long": "You say this when someone is explaining something and you cannot understand the ideas or the steps. People also say 'I'm not following' or 'I don't follow you'. It is polite, especially with 'Sorry'."
+      },
+      "grammar": {
+        "pattern": "I don't follow (you) / I'm not following"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I don't follow. Can you start from the beginning?",
+          "tr": "Pardon, anlayamadım. En baştan anlatabilir misin?",
+          "register": "neutral",
+          "focus": "I don't follow"
+        },
+        {
+          "en": "“So we change trains twice and then take a bus back?” “Wait, I don't follow. Why back?”",
+          "tr": "“Yani iki kez tren değiştirip sonra otobüsle geri mi dönüyoruz?” “Dur, anlayamadım. Neden geri?”",
+          "register": "neutral",
+          "focus": "I don't follow"
+        },
+        {
+          "en": "Omar is explaining the new tax rules, but I'm not following. Is it good news or bad news?",
+          "tr": "Omar yeni vergi kurallarını anlatıyor ama ben takip edemiyorum. İyi haber mi, kötü haber mi?",
+          "register": "neutral",
+          "focus": "I'm not following"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "I don't follow you",
+        "I'm not following"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anlayamadım",
+          "alt": [
+            "takip edemiyorum",
+            "seni anlamadım"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Biri bir şey anlatırken konuyu kaçırınca söylenir; başına 'Sorry' ekleyince kibar olur. Burada 'follow' peşinden gitmek değil, anlatılanı takip etmek demektir. 'I'm not following' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "I didn't catch that"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“So x is 5, and y is x plus... no, x minus 2.” “Sorry, I don't ______. Can you slow down?”",
+        "answer": "follow",
+        "distractors": [
+          "chase",
+          "go after",
+          "lead"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.what_do_you_mean.phr.1",
+      "lemma": "what do you mean",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking for someone's meaning",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wʌt də ju ˈmiːn/",
+        "uk": "/wɒt də ju ˈmiːn/"
+      },
+      "def": {
+        "micro": "explain what you are saying",
+        "short": "a question you ask when you want someone to explain the idea behind their words",
+        "long": "You ask this when you do not understand what a person wants to say, or when you are surprised by it. With an angry voice it can sound rude, so people often start with 'Sorry,'."
+      },
+      "grammar": {
+        "pattern": "What do you mean (by + word)?"
+      },
+      "examples": [
+        {
+          "en": "Sorry, what do you mean by “soon”? Today or next week?",
+          "tr": "Pardon, “yakında” derken ne demek istiyorsun? Bugün mü, gelecek hafta mı?",
+          "register": "neutral",
+          "focus": "what do you mean"
+        },
+        {
+          "en": "“The film was interesting.” “What do you mean? Did you like it or not?”",
+          "tr": "“Film ilginçti.” “Ne demek istiyorsun? Beğendin mi, beğenmedin mi?”",
+          "register": "neutral",
+          "focus": "What do you mean"
+        },
+        {
+          "en": "“Elif isn't coming tonight.” “What do you mean? She said yes yesterday!”",
+          "tr": "“Elif bu akşam gelmiyor.” “Nasıl yani? Dün evet demişti!”",
+          "register": "informal",
+          "focus": "What do you mean"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "what do you mean by",
+        "sorry, what do you mean"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ne demek istiyorsun?",
+          "gloss_short": "nasıl yani?",
+          "alt": [
+            "ne kastediyorsun?",
+            "yani?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Söyleneni anlamayınca ya da şaşırınca sorulur. Sert bir sesle söylenirse kızgın duyulabilir; kibar olmak için başına 'Sorry,' ekle. Bir kelimenin anlamını sormak için 'What does it mean?' denir.",
+          "mistakes": [
+            {
+              "wrong": "Sorry, what do you want to say?",
+              "right": "Sorry, what do you mean?",
+              "why": "Türkçedeki 'ne demek istiyorsun?' sorusu kelime kelime çevrilince 'want to say' çıkar. İngilizcede birinin ne kastettiği 'mean' fiiliyle sorulur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "what does it mean"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“The trip is cancelled.” “What do you ______? We bought the tickets yesterday!”",
+        "answer": "mean",
+        "distractors": [
+          "want to say",
+          "ask",
+          "explain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.i_mean.phr.1",
+      "lemma": "I mean",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "correcting or explaining what you said",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪ ˈmiːn/",
+        "uk": "/aɪ ˈmiːn/"
+      },
+      "def": {
+        "micro": "said to correct or explain",
+        "short": "used when you want to correct what you just said or to explain it better",
+        "long": "You use this in speaking when you want to correct a small mistake you just made, or to add more about what you just said. It is informal and very common in everyday talk."
+      },
+      "grammar": {
+        "pattern": "I mean, + sentence"
+      },
+      "examples": [
+        {
+          "en": "The film was long. I mean, really long!",
+          "tr": "Film uzundu. Yani, gerçekten çok uzundu!",
+          "register": "informal",
+          "focus": "I mean"
+        },
+        {
+          "en": "Let's meet on Friday. I mean Saturday, sorry!",
+          "tr": "Cuma günü buluşalım. Yani cumartesi, pardon!",
+          "register": "informal",
+          "focus": "I mean"
+        },
+        {
+          "en": "“Do you like your new job, Tolga?” “It's OK. I mean, the people are nice, but the hours are long.”",
+          "tr": "“Yeni işini seviyor musun Tolga?” “Fena değil. Yani insanlar iyi ama mesai uzun.”",
+          "register": "informal",
+          "focus": "I mean"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "I mean, it's",
+        "well, I mean"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yani",
+          "alt": [
+            "demek istediğim",
+            "yani şöyle"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Konuşurken az önce söylediğini düzeltmek ya da açmak için arkadaşlar arasında çok kullanılır. Gayriresmîdir; yazıda ya da resmî bir konuşmada 'in other words' daha uygundur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "in other words",
+        "what do you mean"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Let's meet at six. ______ seven, sorry! I'm still at work at six.",
+        "answer": "I mean",
+        "distractors": [
+          "I know",
+          "I agree",
+          "I hope"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_other_words.phr.1",
+      "lemma": "in other words",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "saying something more simply",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈʌðər ˈwɜːrdz/",
+        "uk": "/ɪn ˈʌðə ˈwɜːdz/"
+      },
+      "def": {
+        "micro": "said in a simpler way",
+        "short": "used before you say the same thing again in a simpler or clearer way",
+        "long": "You use this to say what you or another person just said again, but in a simpler, shorter or clearer way. It is common in both speaking and writing."
+      },
+      "examples": [
+        {
+          "en": "The hotel room is “cozy”. In other words, it's very small.",
+          "tr": "Otel odası “şirin”. Başka bir deyişle, çok küçük.",
+          "register": "neutral",
+          "focus": "In other words"
+        },
+        {
+          "en": "“My boss says the budget is ‘under review’.” “In other words, there's no money.”",
+          "tr": "“Patronum bütçenin ‘inceleniyor’ olduğunu söylüyor.” “Yani para yok.”",
+          "register": "neutral",
+          "focus": "In other words"
+        },
+        {
+          "en": "Lena is my mother's sister. In other words, she's my aunt.",
+          "tr": "Lena annemin kız kardeşi. Başka bir deyişle, teyzem.",
+          "register": "neutral",
+          "focus": "In other words"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "or, in other words"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başka bir deyişle",
+          "gloss_short": "başka deyişle",
+          "alt": [
+            "yani",
+            "diğer bir deyişle"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Söyleneni daha basit ya da kısa anlatmak için kullanılır; konuşmada da yazıda da olur. Arkadaşlar arasındaki 'I mean' sözünden biraz daha resmîdir ve kendi hatanı düzeltmek için kullanılmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "I mean"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“The soup was salty and the waiter was rude.” “______, you didn't like the place.”",
+        "answer": "In other words",
+        "distractors": [
+          "However",
+          "Otherwise",
+          "Even so"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

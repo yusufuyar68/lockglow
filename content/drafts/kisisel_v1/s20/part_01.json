@@ -1,0 +1,982 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-23",
+  "entries": [
+    {
+      "id": "en.nice_to_meet_you.phr.1",
+      "lemma": "nice to meet you",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "first time you meet someone",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/naɪs tə ˈmiːt ju/",
+        "uk": "/naɪs tə ˈmiːt ju/"
+      },
+      "def": {
+        "micro": "glad to know a new person",
+        "short": "a polite thing you say when you talk to a new person for the first time",
+        "long": "A polite thing to say when someone tells you their name for the first time. The usual answer is 'Nice to meet you too.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Hi, I'm Sara. Nice to meet you.",
+          "tr": "Merhaba, ben Sara. Tanıştığıma memnun oldum.",
+          "register": "neutral",
+          "focus": "Nice to meet you"
+        },
+        {
+          "en": "“This is my brother, Burak.” “Nice to meet you, Burak!”",
+          "tr": "“Bu kardeşim Burak.” “Tanıştığımıza memnun oldum Burak!”",
+          "register": "neutral",
+          "focus": "Nice to meet you"
+        },
+        {
+          "en": "“Nice to meet you, Mrs. Clark.” “Nice to meet you too. Please sit down.”",
+          "tr": "“Tanıştığımıza memnun oldum Bayan Clark.” “Ben de memnun oldum. Lütfen oturun.”",
+          "register": "formal",
+          "focus": "Nice to meet you"
+        }
+      ],
+      "synonyms": [
+        "good to meet you"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "nice to meet you too",
+        "it's nice to meet you"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tanıştığıma memnun oldum",
+          "gloss_short": "memnun oldum",
+          "alt": [
+            "memnun oldum",
+            "tanıştığımıza sevindim"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yalnızca biriyle ilk kez tanışınca söylenir. Cevabı: 'Nice to meet you too.' Daha resmî biçimi 'Pleased to meet you' olur. Tanıdığın birini yeniden görünce 'Nice to see you' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "nice to see you"
+      ],
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Hello, I'm Lucas. I'm your new neighbor.” “Hi, Lucas! I'm Gül. ______.”",
+        "answer": "Nice to meet you",
+        "distractors": [
+          "Nice to see you",
+          "Long time no see",
+          "Get well soon"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nice_to_see_you.phr.1",
+      "lemma": "nice to see you",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "greeting someone you already know",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/naɪs tə ˈsiː ju/",
+        "uk": "/naɪs tə ˈsiː ju/"
+      },
+      "def": {
+        "micro": "happy to be with you again",
+        "short": "a friendly thing you say when you are with someone you already know",
+        "long": "A friendly greeting for a person you already know, like a friend, a relative or a colleague. People also say it when they leave: 'It was nice to see you.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Zeynep! Nice to see you again!",
+          "tr": "Zeynep! Seni yeniden görmek ne güzel!",
+          "register": "neutral",
+          "focus": "Nice to see you"
+        },
+        {
+          "en": "“Hi, Grandma!” “Oh, nice to see you, dear. Come in!”",
+          "tr": "“Merhaba babaanne!” “Ah, seni görmek ne güzel canım. Gel içeri!”",
+          "register": "informal",
+          "focus": "nice to see you"
+        },
+        {
+          "en": "It was really nice to see you. Let's not wait a year next time!",
+          "tr": "Seni görmek gerçekten çok güzeldi. Bir dahaki sefere bir yıl beklemeyelim!",
+          "register": "neutral",
+          "focus": "nice to see you"
+        }
+      ],
+      "synonyms": [
+        "good to see you"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "nice to see you again",
+        "it was nice to see you"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "seni gördüğüme sevindim",
+          "gloss_short": "görmek ne güzel",
+          "alt": [
+            "seni görmek güzel",
+            "görüştüğümüze sevindim"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tanıdığın birine söylenir: arkadaş, akraba, iş arkadaşı. İlk kez tanıştığın kişiye 'Nice to meet you' denir. Vedalaşırken de olur: 'It was nice to see you.' Cevabı: 'You too!'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "nice to meet you"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Hi, Mia! It's been a long time.” “Tom! ______!”",
+        "answer": "Nice to see you",
+        "distractors": [
+          "Nice to meet you",
+          "Same to you",
+          "Bless you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.good_evening.phr.1",
+      "lemma": "good evening",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a hello in the evening",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡʊd ˈiːvnɪŋ/",
+        "uk": "/ɡʊd ˈiːvnɪŋ/"
+      },
+      "def": {
+        "micro": "hello, said after about 6 pm",
+        "short": "a polite way to say hello late in the day, after about six o'clock",
+        "long": "A polite hello that people use from about six o'clock until late. You hear it on TV, in hotels and in restaurants. To say goodbye at night, people say 'Good night' or 'Have a nice evening'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Good evening, sir. Your room is ready.",
+          "tr": "İyi akşamlar efendim. Odanız hazır.",
+          "register": "formal",
+          "focus": "Good evening"
+        },
+        {
+          "en": "The waiter smiled and said, “Good evening. Are you ready to order?”",
+          "tr": "Garson gülümsedi ve “İyi akşamlar. Sipariş vermeye hazır mısınız?” dedi.",
+          "register": "formal",
+          "focus": "Good evening"
+        },
+        {
+          "en": "Good evening, and welcome to tonight's show.",
+          "tr": "İyi akşamlar, bu akşamki programımıza hoş geldiniz.",
+          "register": "formal",
+          "focus": "Good evening"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "good evening, everyone"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyi akşamlar",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Akşam biriyle karşılaşınca selam olarak söylenir; biraz resmîdir (otel, restoran, TV). Türkçedeki gibi vedalaşırken kullanılmaz: ayrılırken 'Good night' ya da 'Have a nice evening' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "good night"
+      ],
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's 8 p.m. You walk into a restaurant. The waiter says, “______. Table for two?”",
+        "answer": "Good evening",
+        "distractors": [
+          "Good night",
+          "Good afternoon",
+          "Sleep well"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.good_night.phr.1",
+      "lemma": "good night",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "goodbye at night or before bed",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡʊd ˈnaɪt/",
+        "uk": "/ɡʊd ˈnaɪt/"
+      },
+      "def": {
+        "micro": "said before bed or leaving",
+        "short": "what you say when you leave someone at night or before you go to sleep",
+        "long": "You say this to someone when you leave them late in the evening or when you go to bed. It is a goodbye, never a hello."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Good night, Mom. See you in the morning.",
+          "tr": "İyi geceler anne. Sabah görüşürüz.",
+          "register": "neutral",
+          "focus": "Good night"
+        },
+        {
+          "en": "It's late, so I'm going to bed. Good night, everyone!",
+          "tr": "Geç oldu, yatmaya gidiyorum. Herkese iyi geceler!",
+          "register": "neutral",
+          "focus": "Good night"
+        },
+        {
+          "en": "“Thanks for a lovely dinner. Good night!” “Good night, Burak. Get home safely.”",
+          "tr": "“Güzel bir akşam yemeği için teşekkürler. İyi geceler!” “İyi geceler Burak. Eve sağ salim var.”",
+          "register": "neutral",
+          "focus": "Good night"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "say good night",
+        "good night, everyone"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyi geceler",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yalnızca ayrılırken ya da yatmadan önce söylenir, selam olarak hiç kullanılmaz. Gece birine rastlayınca 'Good evening' ya da 'Hi' denir. Cevabı da aynıdır: 'Good night!' Rahat biçimi: 'Night!'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "good evening"
+      ],
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm really tired. I'm going to bed now. ______, everyone!",
+        "answer": "Good night",
+        "distractors": [
+          "Good evening",
+          "Good morning",
+          "Well done"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.have_a_nice_day.phr.1",
+      "lemma": "have a nice day",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "a friendly goodbye in the daytime",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hæv ə ˌnaɪs ˈdeɪ/",
+        "uk": "/hæv ə ˌnaɪs ˈdeɪ/"
+      },
+      "def": {
+        "micro": "I hope your day goes well",
+        "short": "a friendly goodbye that wishes someone a good day",
+        "long": "A friendly thing to say when you leave someone or end a talk during the day, for example in a shop or on the phone. The usual answer is 'You too!' or 'Thanks, you too.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Here's your coffee. Have a nice day!",
+          "tr": "Buyurun, kahveniz. İyi günler!",
+          "register": "neutral",
+          "focus": "Have a nice day"
+        },
+        {
+          "en": "“Have a nice day!” “Thanks, you too!”",
+          "tr": "“İyi günler!” “Teşekkürler, size de!”",
+          "register": "neutral",
+          "focus": "Have a nice day"
+        },
+        {
+          "en": "Thanks for your help, Ayşe. Have a nice day at work!",
+          "tr": "Yardımın için sağ ol Ayşe. İş yerinde günün iyi geçsin!",
+          "register": "informal",
+          "focus": "Have a nice day"
+        }
+      ],
+      "synonyms": [
+        "have a good day"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "have a nice weekend",
+        "have a nice day at work"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyi günler",
+          "alt": [
+            "günün iyi geçsin"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gün içinde vedalaşırken söylenir: dükkânda, telefonda, işte. Türkçedeki 'iyi günler' gibi selam olarak kullanılmaz. Cevabı: 'You too!' Cuma günü 'Have a nice weekend!' denir.",
+          "mistakes": [
+            {
+              "wrong": "Good days!",
+              "right": "Have a nice day!",
+              "why": "Türkçede 'iyi günler' çoğul söylenir; kelimesi kelimesine çevirince 'Good days' çıkar. İngilizcede böyle bir kalıp yoktur; vedalaşırken 'Have a nice day' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "time_routines",
+        "topics": [
+          "time_routines",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Here's your change. ______!” “Thanks, you too!”",
+        "answer": "Have a nice day",
+        "distractors": [
+          "Good days",
+          "Have nice day",
+          "Welcome back"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.whats_up.phr.1",
+      "lemma": "what's up",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "informal greeting",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wʌts ˈʌp/",
+        "uk": "/wɒts ˈʌp/"
+      },
+      "def": {
+        "micro": "hi, how are things",
+        "short": "a very casual way to say hello and ask how someone is",
+        "long": "A very casual hello that friends use. It does not need a long answer: people often say 'Not much' or 'Nothing much' and then ask back."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Hey, Tom! What's up?",
+          "tr": "Selam Tom! Naber?",
+          "register": "informal",
+          "focus": "What's up"
+        },
+        {
+          "en": "“What's up?” “Nothing much. Just watching TV.”",
+          "tr": "“Naber?” “Pek bir şey yok. Televizyon izliyorum.”",
+          "register": "informal",
+          "focus": "What's up"
+        },
+        {
+          "en": "Mia sent me a message: “What's up? Are you free tonight?”",
+          "tr": "Mia bana mesaj attı: “Naber? Bu akşam boş musun?”",
+          "register": "informal",
+          "focus": "What's up"
+        }
+      ],
+      "synonyms": [
+        "what's new",
+        "how's it going"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "hey, what's up",
+        "so, what's up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "naber?",
+          "alt": [
+            "ne haber?",
+            "ne var ne yok?"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Arkadaşlar arasında çok rahat bir selamdır; öğretmene ya da müşteriye 'How are you?' daha uygundur. Cevabı genellikle 'Not much.' ya da 'Nothing much.' olur, ardından 'You?' diye sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Hey, Zeynep! ______?” “Not much. I'm just waiting for the bus.”",
+        "answer": "What's up",
+        "distractors": [
+          "How old are you",
+          "What time is it",
+          "Who are you"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.how_have_you_been.phr.1",
+      "lemma": "how have you been",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "asking after a long time",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haʊ həv ju ˈbɪn/",
+        "uk": "/haʊ həv ju ˈbiːn/"
+      },
+      "def": {
+        "micro": "how are things lately",
+        "short": "a question for a person you have not seen or talked to for some time",
+        "long": "You ask this when you meet or call someone after weeks or months. A typical answer is 'I've been good, thanks' or 'Pretty busy, actually.'"
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Gül! How have you been?",
+          "tr": "Gül! Görüşmeyeli nasılsın?",
+          "register": "neutral",
+          "focus": "How have you been"
+        },
+        {
+          "en": "“How have you been?” “I've been fine, thanks. Busy with the new baby!”",
+          "tr": "“Görüşmeyeli nasılsın?” “İyiyim, sağ ol. Yeni bebekle çok meşgulüm!”",
+          "register": "neutral",
+          "focus": "How have you been"
+        },
+        {
+          "en": "It's so good to hear your voice! How have you been since the summer?",
+          "tr": "Sesini duymak çok güzel! Yazdan beri nasılsın?",
+          "register": "neutral",
+          "focus": "How have you been"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "how have you been lately"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görüşmeyeli nasılsın?",
+          "gloss_short": "bu ara nasılsın?",
+          "alt": [
+            "nasılsın bu aralar?"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir süredir görmediğin birine sorulur; arkadaşa da iş arkadaşına da olur. Cevabı: 'I've been good, thanks. And you?' Her gün gördüğün kişiye 'How are you?' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "how are you"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“Lucas! I haven't seen you for months. How have you ______?” “Pretty good, thanks!”",
+        "answer": "been",
+        "distractors": [
+          "being",
+          "be",
+          "was"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.not_bad.phr.1",
+      "lemma": "not bad",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "fairly good",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nɑːt ˈbæd/",
+        "uk": "/nɒt ˈbæd/"
+      },
+      "def": {
+        "micro": "quite good, OK",
+        "short": "fairly good; a common answer when someone asks how you are",
+        "long": "A short, relaxed answer when someone asks how you are or how something was. It sounds modest, and it often means 'quite good', especially in British English."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "“How was the test?” “Not bad. I think I passed.”",
+          "tr": "“Sınav nasıldı?” “Fena değildi. Sanırım geçtim.”",
+          "register": "informal",
+          "focus": "Not bad"
+        },
+        {
+          "en": "“How are you today?” “Not bad at all, thanks!”",
+          "tr": "“Bugün nasılsın?” “Hiç fena değil, sağ ol!”",
+          "register": "informal",
+          "focus": "Not bad"
+        },
+        {
+          "en": "This pizza is not bad for a frozen one!",
+          "tr": "Bu pizza, dondurulmuş bir pizzaya göre fena değil!",
+          "register": "informal",
+          "focus": "not bad"
+        }
+      ],
+      "synonyms": [
+        "pretty good",
+        "not too bad"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "not bad at all",
+        "not bad for"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fena değil",
+          "alt": [
+            "fena sayılmaz",
+            "iyi sayılır"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'How are you?' sorusuna rahat bir cevaptır. Alçakgönüllü bir 'iyiyim' gibidir; İngilizlerde çoğu zaman 'gayet iyi' demektir. 'Not bad at all' daha olumludur. Ardından 'And you?' diye sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“How was your first day at the new job?” “______. The people are nice, but it's far.”",
+        "answer": "Not bad",
+        "distractors": [
+          "Not at all",
+          "Not yet",
+          "Not really"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.welcome.interj.1",
+      "lemma": "welcome",
+      "type": "word",
+      "pos": "interj",
+      "sense_no": 1,
+      "sense_note": "greeting a guest or someone arriving",
+      "level": "A1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɛlkəm/",
+        "uk": "/ˈwɛlkəm/"
+      },
+      "def": {
+        "micro": "glad you are here",
+        "short": "said to greet a guest or someone who has just arrived",
+        "long": "A word you say to greet a guest or a person who has just come to a place. You can say 'Welcome to our home', 'Welcome back' or 'Welcome home'."
+      },
+      "grammar": null,
+      "examples": [
+        {
+          "en": "Welcome home, Sara! We missed you.",
+          "tr": "Eve hoş geldin Sara! Seni özledik.",
+          "register": "neutral",
+          "focus": "Welcome"
+        },
+        {
+          "en": "Welcome to the team! Your desk is over there.",
+          "tr": "Ekibe hoş geldin! Masan şurada.",
+          "register": "neutral",
+          "focus": "Welcome"
+        },
+        {
+          "en": "“Welcome! Come in, please.” “Thank you. What a lovely flat!”",
+          "tr": "“Hoş geldiniz! Buyurun, içeri geçin.” “Teşekkürler. Ne güzel bir daire!”",
+          "register": "neutral",
+          "focus": "Welcome"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "welcome home",
+        "welcome back",
+        "welcome to"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "From Old English 'wilcuma', a wanted guest: 'wil' (wish, pleasure) + 'cuma' (someone who comes).",
+        "origin": "Old English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "hoş geldin",
+          "alt": [
+            "hoş geldiniz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gelen misafire ya da dönen birine söylenir. Türkçedeki gibi sabit bir cevap yoktur: 'Thank you' ya da 'Thanks, it's great to be here' denir. Teşekküre cevap olan 'You're welcome' ile karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "Welcome to home!",
+              "right": "Welcome home!",
+              "why": "Türkçede 'eve hoş geldin' yönelme ekiyle söylenir, bu yüzden 'to' eklenir. 'home' ve 'back' önünde 'to' kullanılmaz: Welcome home, welcome back."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "you're welcome"
+      ],
+      "tags": {
+        "primary_topic": "home_household",
+        "topics": [
+          "home_household",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The door opened and Grandma smiled. “______! Come in, the tea is ready.”",
+        "answer": "Welcome",
+        "distractors": [
+          "You're welcome",
+          "Bye for now",
+          "Good luck"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited",
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.say_hello_to.phr.1",
+      "lemma": "say hello to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "send greetings through someone",
+      "level": "A2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪ həˈloʊ tə/",
+        "uk": "/seɪ həˈləʊ tə/"
+      },
+      "def": {
+        "micro": "send someone your greetings",
+        "short": "ask someone to give your friendly greetings to another person",
+        "long": "You use this to ask a person to pass your friendly wishes to someone you know but cannot see now. In informal speech people also say 'say hi to'."
+      },
+      "grammar": {
+        "pattern": "say hello to sb (for me / from me)"
+      },
+      "examples": [
+        {
+          "en": "Say hello to your parents for me!",
+          "tr": "Annenle babana benden selam söyle!",
+          "register": "neutral",
+          "focus": "Say hello to"
+        },
+        {
+          "en": "Ayşe says hello to everyone in the office.",
+          "tr": "Ayşe'nin ofisteki herkese selamı var.",
+          "register": "neutral",
+          "focus": "says hello to"
+        },
+        {
+          "en": "“I'm visiting my aunt in Ankara this weekend.” “Lovely! Say hello to her from me.”",
+          "tr": "“Bu hafta sonu Ankara'daki teyzemi ziyarete gidiyorum.” “Ne güzel! Ona benden selam söyle.”",
+          "register": "neutral",
+          "focus": "Say hello to"
+        }
+      ],
+      "synonyms": [
+        "say hi to"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "say hello for me",
+        "say hello to everyone"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "selam söylemek",
+          "alt": [
+            "selamını iletmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Birinden, başka birine selamını iletmesini isterken söylenir: 'Say hello to Ali for me.' Arkadaşlar arasında 'Say hi to …' daha rahattır. Cevabı: 'I will!'",
+          "mistakes": [
+            {
+              "wrong": "Say my greetings to your mother.",
+              "right": "Say hello to your mother for me.",
+              "why": "Türkçede 'annene selamımı söyle' iyelik ekiyle kurulur; bu yüzden 'my greetings' denir. İngilizcede 'Say hello to … for me' ya da resmî 'Give my regards to …' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "“I'm having lunch with my cousin today.” “Oh, ______ hello to her for me!”",
+        "answer": "say",
+        "distractors": [
+          "tell",
+          "speak",
+          "talk"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "validator_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
