@@ -80,16 +80,15 @@ public enum WidgetPlanBuilder {
     ///   - time: The rewrite's instant in whole seconds: it becomes the plan's `updated_at` (the new
     ///     rotation anchor) and is the instant the visible word is read from the old plan.
     ///   - previousPlan: The plan on disk now; `state`: the widget's state on disk now.
-    ///   - planExample: The medium widget's example for a queued word: the card's shortest example
-    ///     that contains the word (docs/tasarim/README.md "Widget'lar"), nil to keep the word's own.
-    ///     Only the text changes: the queue and the pinned word stay id-based.
+    ///   - planDetail: The details of a queued word (`AppModel.detail(for:)`: the card's from
+    ///     content.sqlite, a user's word's own); nil for seed words and unreadable cards.
     public static func makePlan(
         _ input: Input,
         at time: Date,
         previousPlan: WidgetPlan?,
         state: WidgetState?,
         planID: String = UUID().uuidString,
-        planExample: (WidgetWord) -> String?
+        planDetail: (WidgetWord) -> CardDetail?
     ) -> WidgetPlan? {
         let currentWord = visibleWord(at: time, plan: previousPlan, state: state)
 
@@ -116,8 +115,12 @@ public enum WidgetPlanBuilder {
             return nil
         }
 
+        // The medium widget's example is the card's shortest example that contains the word
+        // (docs/tasarim/README.md "Widget'lar"), not always its first. Only the text changes: the
+        // queue and the pinned word stay id-based. Seed words have no detail and keep theirs.
         let planQueue = queue.map { word -> WidgetWord in
-            guard let shortest = planExample(word), shortest != word.exampleEN else {
+            guard let shortest = planDetail(word)?.shortestExample(containing: word.lemma),
+                  shortest != word.exampleEN else {
                 return word
             }
             return WidgetWord(

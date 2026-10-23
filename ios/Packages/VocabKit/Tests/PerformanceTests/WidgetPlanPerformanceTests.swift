@@ -35,13 +35,18 @@ final class WidgetPlanPerformanceTests: XCTestCase {
         )
     }
 
-    /// Half of the cards have a shorter example with the word, as content.sqlite's cards often do.
-    private func example(_ word: WidgetWord) -> String? {
-        return word.id % 2 == 0 ? "We \(word.lemma) it." : nil
+    /// Card details as content.sqlite gives them: half of the cards have a shorter example with
+    /// the word, as the real cards often do.
+    private func detail(_ word: WidgetWord) -> CardDetail? {
+        var examples = [CardDetail.Example(en: word.exampleEN, tr: "Türkçe örnek cümle.")]
+        if word.id % 2 == 0 {
+            examples.append(CardDetail.Example(en: "We \(word.lemma) it.", tr: "Kısa örnek."))
+        }
+        return CardDetail(examples: examples, collocations: ["make a \(word.lemma)"], noteTR: "Kısa bir not.")
     }
 
     private func firstPlan(_ input: WidgetPlanBuilder.Input) throws -> WidgetPlan {
-        return try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now.addingTimeInterval(-5400), previousPlan: nil, state: nil, planExample: example))
+        return try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now.addingTimeInterval(-5400), previousPlan: nil, state: nil, planDetail: detail))
     }
 
     // MARK: The rewrite
@@ -54,7 +59,7 @@ final class WidgetPlanPerformanceTests: XCTestCase {
         var queued = 0
         let label = "plan yeniden yazımı, \(user.rawValue), " + (topics.isEmpty ? "tüm konular" : "3 konu")
         measureReporting(label, budget: 0.5) {
-            let plan = WidgetPlanBuilder.makePlan(input, at: self.now, previousPlan: oldPlan, state: state, planExample: self.example)
+            let plan = WidgetPlanBuilder.makePlan(input, at: self.now, previousPlan: oldPlan, state: state, planDetail: self.detail)
             queued = plan?.queue.count ?? 0
         }
         XCTAssertGreaterThan(queued, 0, label)

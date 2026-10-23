@@ -25,19 +25,35 @@ final class LaunchPerformanceTests: XCTestCase {
     }
 
     /// Launch until the feed shows a card with its speaker button: the content is loaded and the
-    /// deck is built (`AppModel.start`). Also the app's memory during that time.
+    /// deck is built (`AppModel.start`).
     func testLaunchUntilTheFirstCard() throws {
         let app = XCUIApplication()
         app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
         let options = XCTMeasureOptions()
         options.iterationCount = 5
         options.invocationOptions = [.manuallyStop]
-        measure(metrics: [XCTClockMetric(), XCTMemoryMetric(application: app)], options: options) {
+        measure(metrics: [XCTClockMetric()], options: options) {
             app.launch()
             let speaker = app.buttons["Kelimeyi dinle"].firstMatch
             XCTAssertTrue(speaker.waitForExistence(timeout: 30), "the feed did not show a card")
             stopMeasuring()
             app.terminate()
+        }
+    }
+
+    /// The running app's memory while the feed turns a few cards (the app is launched first: the
+    /// memory metric reads a process that is already running).
+    func testMemoryWhileTurningFeedCards() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
+        app.launch()
+        XCTAssertTrue(app.buttons["Kelimeyi dinle"].firstMatch.waitForExistence(timeout: 30), "the feed did not show a card")
+        let options = XCTMeasureOptions()
+        options.iterationCount = 3
+        measure(metrics: [XCTMemoryMetric(application: app)], options: options) {
+            for _ in 0..<3 {
+                app.swipeUp()
+            }
         }
     }
 }

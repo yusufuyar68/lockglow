@@ -18,8 +18,8 @@ struct LoadedContent: Sendable {
     /// Topics the user can choose and every topic of each card; empty for seed words.
     let topics: [ContentTopic]
     let topicsOf: [Int: Set<String>]
-    /// The open content.sqlite when the words came from it (card details, the dictionary search
-    /// and the widget plan's examples); nil for seed words. Opened here, off the main thread.
+    /// The open content.sqlite when the words came from it (card details and the dictionary
+    /// search); nil for seed words. Opened here, off the main thread.
     var store: ContentStore? = nil
 }
 
