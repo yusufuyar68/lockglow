@@ -308,6 +308,9 @@ final class WidgetLookTests: XCTestCase {
     private func standBy(_ left: WidgetWord, _ right: WidgetWord, night: Bool) -> some View {
         let mode: WidgetRenderingMode = night ? .vibrant : .fullColor
         let scale: CGFloat = 2
+        // Copies for the ForEach closure (it escapes, so it may not read `self`'s properties).
+        let now = self.now
+        let margins = self.margins
         return HStack(spacing: 24) {
             ForEach([left, right], id: \.id) { word in
                 SmallWordView(
