@@ -36,7 +36,8 @@ final class PronunciationCheckTests: XCTestCase {
         XCTAssertEqual(PronunciationCheck.normalize("The train leaves from platform 4."), "the train leaves from platform four")
         XCTAssertEqual(PronunciationCheck.normalize("at 7:30"), "at seven thirty")
         XCTAssertEqual(PronunciationCheck.normalize("21 days"), "twenty one days")
-        XCTAssertEqual(PronunciationCheck.normalize("100 people"), "100 people")
+        XCTAssertEqual(PronunciationCheck.normalize("100 people"), "one hundred people")
+        XCTAssertEqual(PronunciationCheck.normalize("2026"), "2026")
     }
 
     // MARK: - Correct

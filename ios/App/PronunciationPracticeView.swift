@@ -66,15 +66,22 @@ private struct SaySheetDetent: CustomPresentationDetent {
 /// the bottom bar (listen, then speak, then speak again); the speaker stays next to it as a tonal
 /// capsule once listening is no longer the main action. A step bar and one short line say where
 /// the learner is.
+/// "Örnek cümle" is shadowing: the card's example is read, the learner says it after it, and the
+/// result marks the sentence word by word. After a result, "Kendi sesini dinle" plays the take and
+/// then the right reading (`OwnVoicePlayer`); the take stays in memory until the page closes.
 struct PronunciationPracticeView: View {
     let word: WidgetWord
     let example: String
 
     @StateObject private var recognizer = PronunciationRecognizer()
+    @StateObject private var ownVoicePlayer = OwnVoicePlayer()
     @ObservedObject private var speaker = Speaker.shared
     @State private var mode = Mode.word
     /// Targets read aloud on this page: once a target has been heard, "Söyle" is the main action.
     @State private var listened: Set<String> = []
+    /// Results other than "Anlaşıldı!" in a row, per target, on this page (plan 3.2: a note after
+    /// the third).
+    @State private var misses: [String: Int] = [:]
     /// A permission that is off in Settings, read when the page opens and when the app comes
     /// back: the calm explanation shows before any attempt.
     @State private var blockedBy: PronunciationRecognizer.Problem?
@@ -110,6 +117,10 @@ struct PronunciationPracticeView: View {
     }
 
     private static let statusID = "say.status"
+    /// After this many results other than "Anlaşıldı!" in a row (ilkeler 2.7, plan 3.2).
+    private static let stuckAfter = 3
+    /// No guilt and no pressure: closing is always fine (ilkeler 2.7; the page has no "Geç").
+    private static let stuckText = "Takıldıysan Kapat'a dokun, başka zaman yine denersin."
     private static let preparingText = "İngilizce konuşma modeli iniyor. Bu yalnız ilk seferde olur."
     /// Short: listening starts once it has been said (`PronunciationRecognizer.downloadAnnouncementSeconds`).
     private static let preparingAnnouncement = "İngilizce konuşma modeli iniyor."
@@ -140,7 +151,8 @@ struct PronunciationPracticeView: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .id(PronunciationPracticeView.statusID)
-                        Text("Ses telefondan çıkmaz ve kaydedilmez.")
+                        // The take is kept for "Kendi sesini dinle" while the page is open.
+                        Text("Sesin telefondan çıkmaz. Kaydın yalnız bu sayfa açıkken kalır, kapatınca silinir.")
                             .font(.footnote)
                             .foregroundStyle(Theme.ink2)
                             .multilineTextAlignment(.center)
@@ -179,6 +191,7 @@ struct PronunciationPracticeView: View {
                 }
                 // The result, or why the take could not run (audit V7).
                 .onChange(of: recognizer.endedTakes) {
+                    countMiss()
                     announceEndOfTake()
                 }
                 .navigationTitle("Söyle")
@@ -199,6 +212,7 @@ struct PronunciationPracticeView: View {
             refreshPermission()
         }
         .onChange(of: mode) {
+            ownVoicePlayer.stop()
             recognizer.cancel()
         }
         // A permission turned off or back on in iPhone Settings (audit V7).
@@ -219,22 +233,30 @@ struct PronunciationPracticeView: View {
             if scenePhase == .active {
                 // Back from Settings: the permission may be on now.
                 refreshPermission()
-            } else if recognizer.isBusy {
-                // Never listen in the background (the app has the audio background mode for the
-                // widget).
-                recognizer.cancel()
+            } else {
+                // Not "Kendi sesini dinle" in the background either; the take stays for later.
+                ownVoicePlayer.stop()
+                if recognizer.isBusy {
+                    // Never listen in the background (the app has the audio background mode for
+                    // the widget).
+                    recognizer.cancel()
+                }
             }
         }
         // A call, Siri or an alarm takes the audio session: drop the take.
         .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.interruptionNotification)) { _ in
+            ownVoicePlayer.stop()
             if recognizer.isBusy {
                 recognizer.cancel()
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.mediaServicesWereResetNotification)) { _ in
+            ownVoicePlayer.stop()
             recognizer.cancel()
         }
+        // The learner's voice is deleted with the page (`cancel()` drops it).
         .onDisappear {
+            ownVoicePlayer.stop()
             recognizer.cancel()
         }
         .sensoryFeedback(trigger: recognizer.phase) { _, phase in
@@ -313,9 +335,7 @@ struct PronunciationPracticeView: View {
         } else {
             switch recognizer.phase {
             case .idle:
-                statusLine(step == .listen
-                    ? "Önce nasıl okunduğunu dinle."
-                    : (mode == .word ? "Şimdi kelimeyi yüksek sesle söyle." : "Şimdi cümleyi yüksek sesle söyle."))
+                statusLine(idleText)
             case .preparing:
                 HStack(spacing: 10) {
                     ProgressView()
@@ -338,12 +358,49 @@ struct PronunciationPracticeView: View {
                 }
                 .frame(minHeight: 44)
             case .finished(let feedback):
-                FeedbackPanel(feedback: feedback, target: target.text)
+                VStack(alignment: .leading, spacing: 12) {
+                    FeedbackPanel(feedback: feedback, target: target.text, wordByWord: mode == .sentence)
+                    if let voice = recognizer.ownVoice {
+                        OwnVoiceControls(voice: voice, target: target.text, player: ownVoicePlayer)
+                    }
+                    if showsStuckNote {
+                        statusLine(PronunciationPracticeView.stuckText)
+                    }
+                }
             case .failed:
                 // Shown by `ProblemPanel` above.
                 EmptyView()
             }
         }
+    }
+
+    /// Shadowing in sentence mode: hear the sentence, then say it after it.
+    private var idleText: String {
+        switch (mode, step == .listen) {
+        case (.word, true):
+            return "Önce nasıl okunduğunu dinle."
+        case (.word, false):
+            return "Şimdi kelimeyi yüksek sesle söyle."
+        case (.sentence, true):
+            return "Önce cümleyi dinle, sonra aynısını söyle."
+        case (.sentence, false):
+            return "Şimdi duyduğun cümleyi yüksek sesle söyle."
+        }
+    }
+
+    /// The third result in a row other than "Anlaşıldı!" for this target, and it is showing.
+    private var showsStuckNote: Bool {
+        guard case .finished(let feedback) = recognizer.phase, feedback.verdict != .correct else {
+            return false
+        }
+        return misses[target.text, default: 0] >= PronunciationPracticeView.stuckAfter
+    }
+
+    private func countMiss() {
+        guard case .finished(let feedback) = recognizer.phase else {
+            return
+        }
+        misses[target.text] = feedback.verdict == .correct ? 0 : misses[target.text, default: 0] + 1
     }
 
     private func statusLine(_ text: String) -> some View {
@@ -427,7 +484,7 @@ struct PronunciationPracticeView: View {
     private var listenAgainButton: some View {
         let isSpeaking = speaker.speakingText == target.text
         return Button {
-            speaker.toggle(target.text)
+            listen()
         } label: {
             Image(systemName: isSpeaking ? "speaker.wave.2.fill" : "speaker.wave.2")
                 .font(.title3.weight(.semibold))
@@ -487,16 +544,33 @@ struct PronunciationPracticeView: View {
             }
         case .listen:
             // A second tap stops the reading; either way step 1 is done.
-            speaker.toggle(target.text)
+            listen()
         case .finish:
             recognizer.finish()
         case .wait:
             break
         case .say, .sayAgain, .retry:
+            ownVoicePlayer.stop()
             // A light tap tells a VoiceOver user that listening starts; it comes before the
             // recording session is active (haptics are muted while recording).
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
-            recognizer.start(target, maxSeconds: mode == .word ? 5 : 10)
+            switch mode {
+            case .word:
+                recognizer.start(target, maxSeconds: 5)
+            case .sentence:
+                // Up to 14 words at an A2 learner's pace, with pauses to remember the next words.
+                recognizer.start(target, maxSeconds: 12, quietSeconds: TakeMonitor.quietAfterSentence)
+            }
+        }
+    }
+
+    /// Dinle: reads the target, or stops it. "Kendi sesini dinle" stops first; when it is reading
+    /// the right version, the tap only stops it (the button shows "Durdur" then).
+    private func listen() {
+        let readingRight = ownVoicePlayer.part == .correct && speaker.speakingText == target.text
+        ownVoicePlayer.stop()
+        if !readingRight {
+            speaker.toggle(target.text)
         }
     }
 
@@ -550,7 +624,11 @@ struct PronunciationPracticeView: View {
         let phase = recognizer.phase
         switch phase {
         case .finished(let feedback):
-            announce(FeedbackPanel.spokenResult(feedback), while: .phase(phase))
+            var runs = FeedbackPanel.spokenResult(feedback)
+            if showsStuckNote {
+                runs.append(.turkish(" " + PronunciationPracticeView.stuckText))
+            }
+            announce(runs, while: .phase(phase))
         case .failed(let problem):
             announce(ProblemPanel.spoken(blockedBy ?? problem), while: .phase(phase))
         case .idle, .preparing, .listening, .checking:
@@ -677,10 +755,14 @@ private struct PracticeStepBar: View {
 /// VoiceOver (audit V2, V5): the verdict and its line are read together; the English rows are their
 /// own elements, so they keep the English voice (a combined element would read them in Turkish).
 /// The same verdict, line and tip are announced when the result comes.
+/// `wordByWord` (the example sentence): "Doğrusu" is always shown, each word marked as the phone
+/// understood it (`PronunciationFeedback.pieces`): understood words in `good`, the others bold and
+/// underlined, with a one-line key. The line under the title names those words for VoiceOver.
 private struct FeedbackPanel: View {
     let feedback: PronunciationFeedback
     /// What the learner was asked to say.
     let target: String
+    var wordByWord = false
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
@@ -739,23 +821,67 @@ private struct FeedbackPanel: View {
         return runs
     }
 
-    /// "Doğrusu" only when something was not right and the words differ.
+    /// "Doğrusu" only when something was not right and the words differ; always word by word.
     private func showsTarget(_ marks: MistakeDiff) -> Bool {
+        if wordByWord && !feedback.pieces.isEmpty {
+            return true
+        }
         guard feedback.verdict == .almost || feedback.verdict == .tryAgain else {
             return false
         }
         return marks.wrong.contains { $0.isChanged } || marks.right.contains { $0.isChanged }
     }
 
+    /// The sentence word by word: understood words in `good`; the others bold and underlined in the
+    /// verdict's color (marks, not color alone: rule 4). Spaces and punctuation unmarked.
+    private var markedSentence: AttributedString {
+        var text = AttributedString()
+        for piece in feedback.pieces {
+            var part = AttributedString(piece.text)
+            switch piece.status {
+            case .heard:
+                part.foregroundColor = Theme.good
+            case .different, .missing:
+                part.underlineStyle = Text.LineStyle(pattern: .solid, color: color)
+                part.inlinePresentationIntent = .stronglyEmphasized
+            case nil:
+                break
+            }
+            text.append(part)
+        }
+        return text
+    }
+
+    /// Some word of the sentence was not understood: the key under "Doğrusu" is shown.
+    private var hasMarkedWords: Bool {
+        return wordByWord && feedback.pieces.contains { $0.status == .different || $0.status == .missing }
+    }
+
     /// "Duyulan" and, when it differs, "Doğrusu": English in serif (rule 3). Heard words that are
     /// not in the target get a dotted underline, target words that were not heard an underline
-    /// and bold (the Dikkat diff of the cards): marks, not color alone.
+    /// and bold (the Dikkat diff of the cards): marks, not color alone. Word by word, "Duyulan" is
+    /// plain and "Doğrusu" carries the marks (`markedSentence`): the two diffs could disagree
+    /// ("I'm" heard for "I am" is understood).
     @ViewBuilder
     private var comparison: some View {
         let marks = MistakeDiff(wrong: feedback.heard, right: target)
         let differs = showsTarget(marks)
-        let heard = differs ? Text(marks.wrongText(color: color)) : Text(feedback.heard)
-        let expected = Text(marks.rightText())
+        let markedHeard = differs && !wordByWord
+        let heard = markedHeard ? Text(marks.wrongText(color: color)) : Text(feedback.heard)
+        let expected = wordByWord && !feedback.pieces.isEmpty ? Text(markedSentence) : Text(marks.rightText())
+        VStack(alignment: .leading, spacing: 6) {
+            rows(heard: heard, expected: expected, differs: differs)
+            if hasMarkedWords {
+                Text("Yeşil kelimeler anlaşıldı. Altı çizili kelimeler anlaşılmadı.")
+                    .font(.footnote)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func rows(heard: Text, expected: Text, differs: Bool) -> some View {
         if dynamicTypeSize.isAccessibilitySize {
             VStack(alignment: .leading, spacing: 8) {
                 VStack(alignment: .leading, spacing: 2) {

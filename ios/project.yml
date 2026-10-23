@@ -61,7 +61,8 @@ targets:
         LSRequiresIPhoneOS: true
         # "Söyle" (pronunciation practice): asked on first use only; recognition runs on the device.
         # Apple: the speech key is required for any app using the Speech framework (on-device too).
-        NSMicrophoneUsageDescription: "Söyle alıştırmasında söylediğin kelimeyi dinlemek için mikrofon kullanılır. Ses kaydedilmez ve telefondan çıkmaz."
+        # is5-golgeleme: the take is kept in memory for "Kendi sesini dinle" until the page closes.
+        NSMicrophoneUsageDescription: "Söyle alıştırmasında söylediğin kelimeyi ya da cümleyi dinlemek ve sana geri çalmak için mikrofon kullanılır. Ses telefondan çıkmaz, Söyle sayfası kapanınca silinir."
         NSSpeechRecognitionUsageDescription: "Söylediğin kelimenin anlaşılıp anlaşılmadığını görmek için konuşma tanıma kullanılır. Bu iş telefonda yapılır; sesin hiçbir yere gönderilmez."
         ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}
