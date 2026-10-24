@@ -47,6 +47,9 @@ struct ReviewView: View {
     @State private var picked: String?
     /// The card's text runs past the bottom of the card ("Devamı").
     @State private var cardHasMore = false
+    /// Height of the "Devamı" cue (it grows with the text size): the card's text is faded out
+    /// over at least this much, so the cue never sits on a legible line.
+    @State private var moreCueHeight: CGFloat = 64
     /// Answers of the running round, in order.
     @State private var answers: [RoundAnswer] = []
     /// Answers of the round that just ended: the summary stays until "Tamam".
@@ -108,6 +111,11 @@ struct ReviewView: View {
                 .toolbar(isInRound ? .hidden : .visible, for: .navigationBar)
                 .toolbar(isInRound ? .hidden : .visible, for: .tabBar)
         }
+        // The summary and the start screen each start with the large title. Without a new stack
+        // the bar stays collapsed when "Tamam" replaces a scrolled summary with the start screen
+        // (seen in the 2026-10-24 screenshots). Nothing is pushed at either change: "Kitaplığın"
+        // opens from the start screen only.
+        .id(session == nil && summary != nil)
         // Borderless controls are ink, never the system blue (rule 2).
         .tint(Theme.ink)
         .sensoryFeedback(.selection, trigger: answerTick)
@@ -396,13 +404,16 @@ struct ReviewView: View {
             .coordinateSpace(.named("reviewCard"))
             .scrollBounceBehavior(.basedOnSize)
             // While more text is below, its last lines fade out into the card itself: a mask, not
-            // a colored gradient, so it matches the card in every theme.
+            // a colored gradient, so it matches the card in every theme. The faded zone is as tall
+            // as the cue: the text fades over the cue's top padding and is gone under its label.
             .mask {
                 VStack(spacing: 0) {
                     Rectangle()
                     if cardHasMore {
                         LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
-                            .frame(height: 56)
+                            .frame(height: MoreBelowCue.fadeHeight)
+                        Color.clear
+                            .frame(height: max(moreCueHeight - MoreBelowCue.fadeHeight, 0))
                     }
                 }
             }
@@ -415,6 +426,11 @@ struct ReviewView: View {
             ZStack {
                 if cardHasMore {
                     MoreBelowCue()
+                        .onGeometryChange(for: CGFloat.self) { geometry in
+                            geometry.size.height
+                        } action: { height in
+                            moreCueHeight = height
+                        }
                         .transition(.opacity)
                 }
             }
@@ -1452,10 +1468,9 @@ struct ReviewView: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
-                .padding(.horizontal, 4)
+                // On the 16 pt margin, like the title and the card.
                 if let next = next {
                     NoteRow(symbol: "clock", text: "Sıradaki tekrar: " + ReviewView.dayAndTime(next, now: now))
-                        .padding(.horizontal, 4)
                 }
                 VStack(alignment: .leading, spacing: 0) {
                     Text("Bu turun kelimeleri")
@@ -1479,7 +1494,6 @@ struct ReviewView: View {
                     .font(.footnote)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.horizontal, 6)
             }
             .padding(.horizontal, 16)
             .padding(.top, 6)
@@ -1500,7 +1514,8 @@ struct ReviewView: View {
                         // "kelime", never "kart": a card is not a unit to count (text audit, terms 4).
                         Text("Bir tur daha (\(another.words.count) kelime)")
                     }
-                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 54, tonal: true))
+                    // Bordered, not tonal: at night the gray fill read stronger than "Tamam".
+                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 54))
                 }
                 Button("Tamam") {
                     summary = nil
@@ -1514,7 +1529,14 @@ struct ReviewView: View {
             .padding(.top, 8)
             .padding(.bottom, 12)
             .frame(maxWidth: .infinity)
+            // Opaque (rule 6), with a hairline on top: the list visibly scrolls under the buttons
+            // (iPhone SE), instead of ending in a hard cut.
             .background(Theme.bg)
+            .overlay(alignment: .top) {
+                Rectangle()
+                    .fill(Theme.line)
+                    .frame(height: 0.5)
+            }
         }
     }
 
@@ -2179,6 +2201,9 @@ private struct WordHeadline: View {
 /// (`cardPanel`'s mask) and the cue sits on the faded part, so it never covers a legible line. Not
 /// a capsule, since it is not a control (rule 2); visual only, VoiceOver reads on by itself.
 private struct MoreBelowCue: View {
+    /// The cue's top padding, where the card's text fades out; under the label it is gone.
+    static let fadeHeight: CGFloat = 32
+
     var body: some View {
         HStack(spacing: 4) {
             Text("Devamı")
@@ -2188,7 +2213,7 @@ private struct MoreBelowCue: View {
         // Subheadline like the round's header (one size fewer on the card's back).
         .font(.subheadline.weight(.semibold))
         .foregroundStyle(Theme.ink2)
-        .padding(.top, 26)
+        .padding(.top, MoreBelowCue.fadeHeight)
         .padding(.bottom, 9)
         .frame(maxWidth: .infinity)
         .allowsHitTesting(false)
@@ -2388,7 +2413,12 @@ private struct ReminderOfferSheet: View {
 
     @Environment(\.dismiss) private var dismiss
     @State private var minute: Int
+    /// The scrolling part (question and "when" plan) and the pinned answers, as laid out.
     @State private var height: CGFloat = 0
+    @State private var barHeight: CGFloat = 0
+    /// The space the sheet gives its content: less than both parts on a short screen (iPhone SE,
+    /// large text), where the plan scrolls under the answers.
+    @State private var visibleHeight: CGFloat = 0
 
     private struct Moment {
         let title: String
@@ -2458,28 +2488,11 @@ private struct ReminderOfferSheet: View {
                     .padding(.horizontal, 4)
                     .padding(.top, 2)
                 }
-                VStack(spacing: 10) {
-                    Text("iPhone bir kez izin soracak. Ayarlar'dan her zaman değiştirebilirsin.")
-                        .font(.footnote)
-                        .foregroundStyle(Theme.ink2)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    // The same height for both (2.8): "Şimdi değil" is never the smaller one.
-                    Button("Evet, gönder") {
-                        accept(minute)
-                        dismiss()
-                    }
-                    .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 50))
-                    Button("Şimdi değil") {
-                        dismiss()
-                    }
-                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
-                }
             }
             // The 16 pt side margins of every screen.
             .padding(.horizontal, 16)
             .padding(.top, 28)
-            .padding(.bottom, 16)
+            .padding(.bottom, 8)
             .onGeometryChange(for: CGFloat.self) { geometry in
                 geometry.size.height
             } action: { newHeight in
@@ -2487,16 +2500,64 @@ private struct ReminderOfferSheet: View {
             }
         }
         .scrollBounceBehavior(.basedOnSize)
+        // Pinned under the plan: both answers stay on screen however tall the plan is.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            answerButtons
+        }
+        .onGeometryChange(for: CGFloat.self) { geometry in
+            geometry.size.height
+        } action: { newHeight in
+            visibleHeight = newHeight
+        }
         .presentationDetents(detents)
         .presentationDragIndicator(.visible)
-        .presentationBackground(Theme.bg)
+        // The elevated surface: a black sheet would have no visible edge at night.
+        .presentationBackground(Theme.surface)
     }
 
-    /// As tall as the content plus the home indicator's strip (like `SystemCardSheet`); it
-    /// scrolls when the text is larger than the screen.
+    private var answerButtons: some View {
+        VStack(spacing: 10) {
+            Text("iPhone bir kez izin soracak. Ayarlar'dan her zaman değiştirebilirsin.")
+                .font(.footnote)
+                .foregroundStyle(Theme.ink2)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            // The same height for both (2.8): "Şimdi değil" is never the smaller one.
+            Button("Evet, gönder") {
+                accept(minute)
+                dismiss()
+            }
+            .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 50))
+            Button("Şimdi değil") {
+                dismiss()
+            }
+            .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 12)
+        .padding(.bottom, 16)
+        .background(Theme.surface)
+        // A hairline only while the plan scrolls under the answers.
+        .overlay(alignment: .top) {
+            if height + barHeight > visibleHeight + 1 {
+                Rectangle()
+                    .fill(Theme.line)
+                    .frame(height: 0.5)
+            }
+        }
+        .onGeometryChange(for: CGFloat.self) { geometry in
+            geometry.size.height
+        } action: { newHeight in
+            barHeight = newHeight
+        }
+    }
+
+    /// As tall as the plan and the answers. The detent's height is the content's: iOS adds the
+    /// home indicator's strip itself (adding it here left a 34 pt gap). On a short screen iOS caps
+    /// the sheet at its largest height; the plan then scrolls and the answers stay pinned.
     private var detents: Set<PresentationDetent> {
-        if height > 0 {
-            return [.height(height + 34)]
+        if height > 0 && barHeight > 0 {
+            return [.height(height + barHeight)]
         }
         return [.large]
     }
@@ -2605,7 +2666,11 @@ private struct GoalRing: View {
             .lineLimit(1)
             .minimumScaleFactor(0.7)
             .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
-            .padding(lineWidth * 1.5)
+            // Inset by the circle, not a square: "günlük hedef" sits below the center, where the
+            // ring's inner edge is closer than at the middle. 18 % of the diameter at each side
+            // keeps its corners clear of the stroke (it shrinks to fit, never to "…").
+            .padding(.horizontal, size * 0.18)
+            .padding(.vertical, lineWidth * 1.5)
         }
         .frame(width: size, height: size)
         .accessibilityElement(children: .ignore)

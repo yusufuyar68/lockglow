@@ -87,6 +87,14 @@ struct SearchView: View {
                 filter = .all
             }
         }
+        // A filter chip means reading the results, not typing: the keyboard goes down (the query
+        // stays), so the rows, or a filter's empty state with "Tümünü göster", are not under it
+        // on an iPhone SE. The field gets it back with a tap.
+        .onChange(of: filter) { _, newFilter in
+            if newFilter != .all {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
+        }
     }
 
     @ViewBuilder

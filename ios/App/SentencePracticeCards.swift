@@ -51,35 +51,55 @@ struct SentenceBuildCard: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                // Text styles of the card: footnote, callout, body / headline and title3.
-                Text("Cümleyi kur")
-                    .font(.callout.weight(.semibold))
-                    .foregroundStyle(Theme.ink2)
-                    .accessibilityAddTraits(.isHeader)
-                    .accessibilityFocused($focus, equals: .header)
-                PracticePrompt(translation: translation, fallback: "Kelimeleri doğru sıraya koy.")
-                answerArea
-                if let check = check {
-                    feedback(check)
-                } else {
-                    bankArea
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    // Text styles of the card: footnote, callout, body / headline and title3.
+                    Text("Cümleyi kur")
+                        .font(.callout.weight(.semibold))
+                        .foregroundStyle(Theme.ink2)
+                        .accessibilityAddTraits(.isHeader)
+                        .accessibilityFocused($focus, equals: .header)
+                    PracticePrompt(translation: translation, fallback: "Kelimeleri doğru sıraya koy.")
+                    answerArea
+                    if let check = check {
+                        feedback(check)
+                            .id(practiceFeedbackID)
+                    } else {
+                        bankArea
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 4)
+                .padding(.bottom, 20)
+            }
+            .scrollBounceBehavior(.basedOnSize)
+            // Opaque (rule 6): the main button never sits on glass. The hairline marks it as a bar
+            // over the scrolling card (as the onboarding's topics page).
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                bottomButton
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
+                    .padding(.bottom, 8)
+                    .frame(maxWidth: .infinity)
+                    .background(Theme.bg)
+                    .overlay(alignment: .top) {
+                        PracticeBarHairline()
+                    }
+            }
+            // On an iPhone SE the result card ends under the bar: "Kontrol et" scrolls it into view.
+            .onChange(of: check == nil) { _, isUnchecked in
+                if !isUnchecked {
+                    // After the feedback (and the "Devam" bar) are laid out; no motion with
+                    // Reduce Motion.
+                    Task { @MainActor in
+                        try? await Task.sleep(nanoseconds: 100_000_000)
+                        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+                            proxy.scrollTo(practiceFeedbackID, anchor: .bottom)
+                        }
+                    }
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 4)
-            .padding(.bottom, 20)
-        }
-        .scrollBounceBehavior(.basedOnSize)
-        // Opaque (rule 6): the main button never sits on glass.
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            bottomButton
-                .padding(.horizontal, 16)
-                .padding(.top, 10)
-                .padding(.bottom, 8)
-                .frame(maxWidth: .infinity)
-                .background(Theme.bg)
         }
         // A light haptic on a right sentence only; a miss stays silent (learning principles 2.4).
         .sensoryFeedback(.success, trigger: check?.isCorrect == true)
@@ -433,38 +453,57 @@ struct CollocationChoiceCard: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                // Text styles of the card: footnote, callout, body / headline and title3.
-                Text("Hangisi birlikte kullanılır?")
-                    .font(.callout.weight(.semibold))
-                    .foregroundStyle(Theme.ink2)
-                    .accessibilityAddTraits(.isHeader)
-                    .accessibilityFocused($focusesHeader)
-                sentenceCard
-                optionRow
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    // Text styles of the card: footnote, callout, body / headline and title3.
+                    Text("Hangisi birlikte kullanılır?")
+                        .font(.callout.weight(.semibold))
+                        .foregroundStyle(Theme.ink2)
+                        .accessibilityAddTraits(.isHeader)
+                        .accessibilityFocused($focusesHeader)
+                    sentenceCard
+                    optionRow
+                    if let picked = picked {
+                        feedback(isRight: picked == choice.answer)
+                            .transition(.opacity)
+                            .id(practiceFeedbackID)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 4)
+                .padding(.bottom, 20)
+            }
+            .scrollBounceBehavior(.basedOnSize)
+            .safeAreaInset(edge: .bottom, spacing: 0) {
                 if let picked = picked {
-                    feedback(isRight: picked == choice.answer)
-                        .transition(.opacity)
+                    Button("Devam") {
+                        onContinue(picked == choice.answer)
+                    }
+                    .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
+                    .padding(.bottom, 8)
+                    .frame(maxWidth: .infinity)
+                    .background(Theme.bg)
+                    .overlay(alignment: .top) {
+                        PracticeBarHairline()
+                    }
+                    .transition(.opacity)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 4)
-            .padding(.bottom, 20)
-        }
-        .scrollBounceBehavior(.basedOnSize)
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            if let picked = picked {
-                Button("Devam") {
-                    onContinue(picked == choice.answer)
+            // On an iPhone SE the feedback ends under the "Devam" bar: a pick scrolls it into view.
+            .onChange(of: picked == nil) { _, isUnpicked in
+                if !isUnpicked {
+                    // After the feedback (and the "Devam" bar) are laid out; no motion with
+                    // Reduce Motion.
+                    Task { @MainActor in
+                        try? await Task.sleep(nanoseconds: 100_000_000)
+                        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+                            proxy.scrollTo(practiceFeedbackID, anchor: .bottom)
+                        }
+                    }
                 }
-                .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
-                .padding(.horizontal, 16)
-                .padding(.top, 10)
-                .padding(.bottom, 8)
-                .frame(maxWidth: .infinity)
-                .background(Theme.bg)
-                .transition(.opacity)
             }
         }
         .sensoryFeedback(.success, trigger: picked) { oldValue, newValue in
@@ -709,6 +748,20 @@ struct CollocationChoiceCard: View {
 }
 
 // MARK: - Pieces
+
+/// The scroll id of a card's feedback (one feedback per card).
+private let practiceFeedbackID = "practice.feedback"
+
+/// The 1 pt line on top of a card's bottom bar: the content scrolls under the bar, not into a
+/// hard cut.
+private struct PracticeBarHairline: View {
+    var body: some View {
+        Rectangle()
+            .fill(Theme.line)
+            .frame(height: 1)
+            .accessibilityHidden(true)
+    }
+}
 
 /// The Turkish prompt of a question in a card: "Türkçesi" over the sentence's Turkish, or a plain
 /// instruction when there is no Turkish.

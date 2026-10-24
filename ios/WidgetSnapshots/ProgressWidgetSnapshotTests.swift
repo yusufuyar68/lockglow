@@ -73,11 +73,16 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(tomorrow.spoken, "Sıradaki tekrar: yarın 09:15. Bugün tekrar yok.")
 
         let farther = ProgressText.rectangular(cases["ileri"]!, calendar: calendar)
-        XCTAssertEqual(farther.first, ["Sıradaki tekrar: 26 Ekim 09:00", "Tekrar: 26 Ekim 09:00", "Tekrar: 26 Ekim"])
+        XCTAssertEqual(farther.first, [
+            "Sıradaki tekrar: 26 Ekim 09:00",
+            "Tekrar: 26 Ekim 09:00",
+            "Tekrar: 26 Ekim",
+            "Tekrar: 26.10",
+        ])
 
         let fresh = ProgressText.rectangular(cases["yeni"]!, calendar: calendar)
         XCTAssertEqual(fresh.first, ["Henüz tekrar yok"])
-        XCTAssertEqual(fresh.second, ["Günlük hedef: 5 yeni kelime", "Hedef: 5 yeni kelime"])
+        XCTAssertEqual(fresh.second, ["Günlük hedef: 5 yeni kelime", "Hedef: 5 yeni kelime", "Hedef: 5 kelime", "Hedef: 5"])
         XCTAssertEqual(fresh.spoken, "Henüz tekrar yok. Günlük hedef 5 yeni kelime.")
 
         // After a break: never the backlog's size (37 now, 42 today).
@@ -106,7 +111,7 @@ final class ProgressWidgetSnapshotTests: XCTestCase {
         // A new user who already met some new words today: the visible counter, words for VoiceOver.
         let started = ProgressStatus(date: date(10), dailyGoal: 5, newWordsToday: 3, dueNow: 0, dueToday: 0, nextDue: nil)
         let line = ProgressText.inline(started, calendar: calendar)
-        XCTAssertEqual(line.versions, ["Günlük hedef: 3 / 5", "Hedef: 3 / 5"])
+        XCTAssertEqual(line.versions, ["Günlük hedef: 3 / 5", "Hedef: 3 / 5", "Hedef: 3/5"])
         XCTAssertEqual(line.spoken, "Günlük hedef 5 yeni kelime. Bugün 3 tanesini çalıştın.")
         let met = ProgressStatus(date: date(10), dailyGoal: 5, newWordsToday: 6, dueNow: 0, dueToday: 0, nextDue: nil)
         let done = ProgressText.inline(met, calendar: calendar)

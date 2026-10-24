@@ -140,8 +140,9 @@ struct ReviewActivityIslandTitle: View {
 
 /// Expanded, trailing ("Kart 4 / 10") and compact, trailing (`short`: "4/10", without the spaces
 /// of terimler's "2 / 5": the compact side is about 52 pt, 28 pt when the island is narrow). It
-/// says where the user is, never what is left. Nothing when stale: the system hides an empty
-/// compact trailing view.
+/// says where the user is, never what is left. When stale: nothing in the expanded island (its
+/// bottom says "Cevapların kaydedildi."), and a small check in the compact one, so the island
+/// keeps its two sides instead of looking lopsided.
 struct ReviewActivityIslandCounter: View {
     let state: ReviewActivityAttributes.ContentState
     let isStale: Bool
@@ -157,6 +158,12 @@ struct ReviewActivityIslandCounter: View {
                 .foregroundStyle(short ? Theme.ink : Theme.ink2)
                 .padding(.trailing, short ? 0 : 4)
                 .accessibilityLabel(Text(verbatim: ReviewActivityText.spokenCounter(state)))
+                .islandColors()
+        } else if short {
+            Image(systemName: "checkmark")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.ink2)
+                .accessibilityLabel(Text(verbatim: ReviewActivityText.saved))
                 .islandColors()
         }
     }

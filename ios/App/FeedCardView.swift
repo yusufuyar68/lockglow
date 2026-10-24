@@ -787,12 +787,12 @@ struct FeedSayButton: View {
     }
 }
 
-/// `SaySheetDetent` (PronunciationPracticeView.swift) for the feed's "Söyle": 600 pt, inactive on
-/// short screens (iPhone SE), which keep only `.large`.
+/// `SaySheetDetent` (PronunciationPracticeView.swift) for the feed's "Söyle": 600 pt; short
+/// screens (iPhone SE) get the whole height, as `.large` (a nil height opened a zero-height sheet).
 private struct FeedSaySheetDetent: CustomPresentationDetent {
     static func height(in context: Context) -> CGFloat? {
         if context.maxDetentValue < 700 {
-            return nil
+            return context.maxDetentValue
         }
         return 600
     }

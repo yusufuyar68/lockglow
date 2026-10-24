@@ -136,6 +136,9 @@ final class WidgetLookTests: XCTestCase {
     func testWordNeverSmallerThanMeaning() {
         XCTAssertTrue(WidgetWordStep.homeFloorScaled.allSatisfy { $0.scales })
         XCTAssertTrue(WidgetWordStep.smallWidget.allSatisfy { $0.scales && $0.size >= 17 })
+        // Beside the 17 pt meaning the word never steps down to 17 pt (the 2026-10-24 images: at
+        // xxxLarge and above the meaning looked larger than the word).
+        XCTAssertTrue(WidgetWordStep.smallWidgetBesideBody.allSatisfy { $0.scales && $0.size >= 20 })
         XCTAssertTrue(WidgetWordStep.lockScreen.allSatisfy { $0.scales && $0.size >= 15 })
         XCTAssertTrue(WidgetWordStep.mediumWidgetScaled.allSatisfy { $0.scales && $0.size >= 15 })
         XCTAssertFalse(WidgetWordStep.homeFloor.allSatisfy { $0.scales })
@@ -143,87 +146,60 @@ final class WidgetLookTests: XCTestCase {
 
     // MARK: - Example line
 
-    /// The medium widget's example is cut only between words (the 2026-10-22 images showed
-    /// "…the museu…" and "…at s…"): each start of the sentence lists its cuts, fullest first,
-    /// down to the one that ends right after the learned word.
-    func testExampleLineCutsBetweenWords() {
-        let breakfast = WidgetExampleLine.versions(of: "I usually have breakfast at seven.", lemma: "breakfast")
-        XCTAssertEqual(breakfast.count, 4)
-        XCTAssertEqual(breakfast[0].cuts, ["I usually have breakfast at seven.", "I usually have breakfast at…", "I usually have breakfast…"])
-        XCTAssertEqual(breakfast[2].cuts, ["… usually have breakfast at seven.", "… usually have breakfast at…", "… usually have breakfast…"])
-        XCTAssertEqual(breakfast[3].cuts, ["… breakfast at seven.", "… breakfast at…", "… breakfast…"])
-        let museum = WidgetExampleLine.versions(
-            of: "Could you tell me the way to the museum, please?",
-            lemma: "Could you tell me the way to"
+    /// The example is shown only whole: never cut with "…" at either end (the 2026-10-24 images
+    /// showed "It was just a misunderstanding. I'm…" and "… breakfast at…"). Each text the line
+    /// may show is a run of the example's whole sentences that holds the learned word, fullest
+    /// first; when none fits, the variant without the example is shown.
+    func testExampleLineShowsWholeSentences() {
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "I usually have breakfast at seven.", lemma: "breakfast"),
+            ["I usually have breakfast at seven."]
         )
-        XCTAssertEqual(museum[0].cuts, [
-            "Could you tell me the way to the museum, please?",
-            "Could you tell me the way to the museum…",
-            "Could you tell me the way to the…",
-            "Could you tell me the way to…",
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "It was just a misunderstanding. I'm sorry.", lemma: "misunderstanding"),
+            ["It was just a misunderstanding. I'm sorry.", "It was just a misunderstanding."]
+        )
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "“Cash or card?” “Card, please.”", lemma: "cash or card"),
+            ["“Cash or card?” “Card, please.”", "“Cash or card?”"]
+        )
+        // The word in a later sentence: the runs that hold it, down to its own sentence.
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "Sorry! I was late again.", lemma: "late"),
+            ["Sorry! I was late again.", "I was late again."]
+        )
+        // Not found (an irregular form): the runs from the start.
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "Her teeth are white. She smiles.", lemma: "tooth"),
+            ["Her teeth are white. She smiles.", "Her teeth are white."]
+        )
+        // Each text on each line count in turn, the word bold.
+        let candidates = WidgetExampleLine.candidates(
+            of: "It was just a misunderstanding. I'm sorry.",
+            lemma: "misunderstanding",
+            lines: [1, 2]
+        )
+        XCTAssertEqual(candidates.map { lines in lines.map { String($0.characters) } }, [
+            ["It was just a misunderstanding. I'm sorry."],
+            ["It was just a", "misunderstanding. I'm sorry."],
+            ["It was just a misunderstanding."],
+            ["It was just a", "misunderstanding."],
         ])
-        XCTAssertEqual(museum[0].fitting, "Could you tell me the way to…")
-        // A cut after a sentence's end needs no "…".
-        let sorry = WidgetExampleLine.versions(of: "It was just a misunderstanding. I'm sorry.", lemma: "misunderstanding")
-        XCTAssertEqual(sorry[0].fitting, "It was just a misunderstanding.")
-        XCTAssertEqual(
-            WidgetExampleLine.versions(of: "“Cash or card?” “Card, please.”", lemma: "cash or card")[0].cuts,
-            ["“Cash or card?” “Card, please.”", "“Cash or card?” “Card…", "“Cash or card?”"]
-        )
-        // The word at the sentence's end: each start has one cut, the rest of the sentence.
-        XCTAssertEqual(
-            WidgetExampleLine.versions(of: "I left my phone on the train, so I called the lost and found.", lemma: "lost and found").map(\.cuts),
-            [
-                ["I left my phone on the train, so I called the lost and found."],
-                ["… so I called the lost and found."],
-                ["… called the lost and found."],
-                ["… lost and found."],
-            ]
-        )
-        // Not found (an irregular form): from the start, cut after any whole word.
-        XCTAssertEqual(
-            WidgetExampleLine.versions(of: "Her teeth are white.", lemma: "tooth")[0].cuts,
-            ["Her teeth are white.", "Her teeth are…", "Her teeth…", "Her…"]
-        )
-        // More cuts than slots: an even spread, the fullest and the shortest kept.
+        // More candidates than slots: an even spread, the fullest and the shortest kept.
         let many = (1...12).map { "c\($0)" }
         XCTAssertEqual(WidgetExampleLine.slots(many), ["c1", "c3", "c4", "c6", "c7", "c9", "c10", "c12"])
         XCTAssertEqual(WidgetExampleLine.slots(["a", "b"]), ["a", "b", "b", "b", "b", "b", "b", "b"])
-        // Every cut of every snapshot example is a run of the sentence's own whole words.
+        XCTAssertEqual(WidgetExampleLine.slots([String]()), [])
+        // Every text of every snapshot example is whole: no "…", and it ends a sentence when the
+        // example does.
         for word in SnapshotWords.all where !word.exampleEN.isEmpty {
-            let sentenceWords = word.exampleEN.split(separator: " ").map(String.init)
-            for version in WidgetExampleLine.versions(of: word.exampleEN, lemma: word.lemma) {
-                XCTAssertEqual(WidgetExampleLine.slots(version.cuts).count, WidgetExampleLine.cutCount)
-                for cut in version.cuts {
-                    var body = cut
-                    if body.hasPrefix("… ") {
-                        body.removeFirst(2)
-                    }
-                    if body.hasSuffix("…") {
-                        body.removeLast()
-                    }
-                    XCTAssertTrue(isRun(body.split(separator: " ").map(String.init), of: sentenceWords), cut)
-                }
+            let texts = WidgetExampleLine.texts(of: word.exampleEN, lemma: word.lemma)
+            XCTAssertEqual(texts.first, word.exampleEN.trimmingCharacters(in: .whitespacesAndNewlines))
+            for text in texts {
+                XCTAssertFalse(text.contains("…") && !word.exampleEN.contains("…"), text)
+                XCTAssertTrue(word.exampleEN.contains(text), text)
             }
         }
-    }
-
-    /// Whether `part` is a run of `whole`'s words; its last word may have lost a trailing comma,
-    /// semicolon or colon (before the cut's "…").
-    private func isRun(_ part: [String], of whole: [String]) -> Bool {
-        guard let last = part.last, part.count <= whole.count else {
-            return false
-        }
-        for start in 0...(whole.count - part.count) {
-            let slice = Array(whole[start..<(start + part.count)])
-            let lastWord = slice[slice.count - 1]
-            let lastMatches = lastWord == last
-                || lastWord.trimmingCharacters(in: CharacterSet(charactersIn: ",;:")) == last
-            if Array(slice.dropLast()) == Array(part.dropLast()) && lastMatches {
-                return true
-            }
-        }
-        return false
     }
 
     // MARK: - Images

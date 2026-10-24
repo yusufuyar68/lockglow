@@ -153,6 +153,8 @@ struct ProgressOverviewView: View {
                     }
                     .scrollTargetBehavior(.viewAligned)
                     .scrollIndicators(.hidden)
+                    // The cards' shadows are drawn past the row: not cut into hard gray bands.
+                    .scrollClipDisabled()
                     .contentMargins(.horizontal, 16, for: .scrollContent)
                     .padding(.horizontal, -16)
                 }

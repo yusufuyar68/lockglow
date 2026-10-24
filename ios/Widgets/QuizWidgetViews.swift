@@ -17,9 +17,14 @@ import SharedState
 // top says it in words ("Doğru." / "Doğrusu: ödünç almak"), so the meaning never rests on color
 // (rule 4). No red anywhere: the widget's tone never changes (ogrenme_ilkeleri 2.1).
 // Larger text sizes: the layouts are vertical ViewThatFits variants, fullest first, like the word
-// widget's: the options at 15 pt, then 13 pt on more lines, then the same at the largest standard
-// size, then at the default size, where the last variant may shrink a long word to 11 pt rather
-// than cut it.
+// widget's: after the answer the example gives way first, then the wrong pick's line; then the
+// options get smaller and take more lines; then the same is tried one text size smaller at a time
+// (xxxLarge, xxLarge, xLarge), so the text does not drop straight to the default size after the
+// answer; at the default size the last variant may shrink a long word or the line on top to 11 pt
+// rather than cut it. Options never shrink: in the last variant an option wraps onto more lines.
+// After a wrong pick the line on top and the marked option show the same form of the right
+// meaning: each variant is tried with the whole meaning, then with its short form
+// (`QuizText.answerFormCount`).
 
 /// The quiz widget's colors for its rendering mode, on top of the word widget's.
 struct QuizColors {
@@ -35,10 +40,22 @@ struct QuizColors {
     /// Behind a mark that sits on an option's edge; nil when the system draws the background.
     let paper: AnyShapeStyle?
 
-    /// Full color on the widget's own paper uses the design tokens. Tinted (accented, clear Home
-    /// Screen) or without the paper the system's hierarchical styles keep the levels; the icons
-    /// and the right option's thicker edge carry the meaning there.
+    /// Full color on the widget's own paper uses the design tokens. Without the paper the system's
+    /// hierarchical styles keep the levels. Accented (the tinted and the clear Liquid Glass Home
+    /// Screens) everything is opaque, as on the word widget (`WidgetColors.accented`): quieter
+    /// text in the primary style, not a faint secondary one over a bright wallpaper, and no fill;
+    /// the icons and the right option's thicker edge carry the meaning there.
     static func forMode(_ mode: WidgetRenderingMode, showsBackground: Bool = true) -> QuizColors {
+        if mode == .accented {
+            return QuizColors(
+                base: .accented,
+                optionEdge: AnyShapeStyle(HierarchicalShapeStyle.primary),
+                rightFill: AnyShapeStyle(Color.clear),
+                rightInk: AnyShapeStyle(HierarchicalShapeStyle.primary),
+                quietEdge: AnyShapeStyle(HierarchicalShapeStyle.primary),
+                paper: nil
+            )
+        }
         if mode == .fullColor && showsBackground {
             return QuizColors(
                 base: .tokens,
@@ -70,9 +87,9 @@ enum QuizText {
     static let wrongMark = "Yanlış"
     static let next = "Devam"
     static let nextHint = "Yeni bir soru gelir."
-    /// The last variant's smallest scale: 11 pt (Apple's floor) for 13 and 15 pt text.
+    /// The last variant's smallest scale for the line on top: 11 pt (Apple's floor) for 13 pt
+    /// text.
     static let floorScale13: CGFloat = 11.0 / 13.0
-    static let floorScale15: CGFloat = 11.0 / 15.0
 
     /// What the widget says when there is no question.
     static func empty(_ reason: QuizEntry.Empty) -> String {
@@ -87,8 +104,10 @@ enum QuizText {
     }
 
     /// The line on top, fullest first, one line each: the question; after the answer "Doğru." or
-    /// "Doğrusu: …" with the whole meaning, then its short form, then "Doğrusu işaretli.".
-    static func status(of screen: WidgetQuizScreen) -> [[String]] {
+    /// "Doğrusu: …" with the whole meaning, then its short form, then "Doğrusu işaretli.". With
+    /// `form` only that form of the right meaning (`forms(of:at:)`) before "Doğrusu işaretli.", the
+    /// one the marked option shows in the same layout.
+    static func status(of screen: WidgetQuizScreen, form: Int? = nil) -> [[String]] {
         guard screen.isAnswered else {
             return [[question]]
         }
@@ -96,11 +115,32 @@ enum QuizText {
             return [[right]]
         }
         let item = screen.item
-        var forms = [item.answer ?? ""]
-        if let short = item.shortOption(at: item.answerIndex) {
-            forms.append(short)
+        var shown = forms(of: item, at: item.answerIndex)
+        if let form = form, shown.indices.contains(form) {
+            shown = [shown[form]]
         }
-        return WidgetText.candidates(forms.map { "Doğrusu: \($0)" }, lines: [1]) + [[markedFallback]]
+        return WidgetText.candidates(shown.map { "Doğrusu: \($0)" }, lines: [1]) + [[markedFallback]]
+    }
+
+    /// How many layouts each variant is tried as: after a wrong pick the line on top names the
+    /// right meaning, so it and the marked option must show the same form, one layout per form
+    /// (the whole meaning first); otherwise one.
+    static func answerFormCount(of screen: WidgetQuizScreen) -> Int {
+        guard screen.isAnswered, !screen.isRight else {
+            return 1
+        }
+        return max(forms(of: screen.item, at: screen.item.answerIndex).count, 1)
+    }
+
+    /// The forms option `index` may show in a layout tried with form `form` of the right meaning:
+    /// after a wrong pick the right option shows only that form (as the line on top does); every
+    /// other option, and every option otherwise, all of its forms.
+    static func forms(of screen: WidgetQuizScreen, at index: Int, form: Int) -> [String] {
+        let all = forms(of: screen.item, at: index)
+        guard screen.isAnswered, !screen.isRight, index == screen.item.answerIndex, all.indices.contains(form) else {
+            return all
+        }
+        return [all[form]]
     }
 
     /// What VoiceOver reads for the line on top: always the whole meaning after a wrong pick, also
@@ -196,18 +236,25 @@ struct QuizMediumView: View {
         Group {
             if let screen = entry.screen {
                 ViewThatFits(in: .vertical) {
-                    layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
-                    layout(screen, option: .footnote.weight(.semibold), lines: [1, 2, 3])
-                    // The person's size leaves no room: the largest standard size.
-                    Group {
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
-                        layout(screen, option: .footnote.weight(.semibold), lines: [1, 2, 3])
-                    }
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
+                    variants(screen)
+                    // The person's size leaves no room: one text size smaller at a time, from the
+                    // largest standard size down.
+                    variants(screen)
+                        .dynamicTypeSize(...WidgetText.largestStandardSize)
+                    variants(screen)
+                        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+                    variants(screen)
+                        .dynamicTypeSize(...DynamicTypeSize.xLarge)
                     // Then the default size; the content area does not grow with the text size.
                     Group {
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
-                        layout(screen, option: .footnote.weight(.semibold), lines: [1, 2], lastResort: true)
+                        layouts(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
+                        layout(
+                            screen,
+                            option: .footnote.weight(.semibold),
+                            lines: [1, 2],
+                            lastResort: true,
+                            form: QuizText.answerFormCount(of: screen) - 1
+                        )
                     }
                     .dynamicTypeSize(...DynamicTypeSize.large)
                 }
@@ -219,13 +266,33 @@ struct QuizMediumView: View {
         .widgetTurkishVoice()
     }
 
+    /// The variants at one text size: the options at 15 pt, then at 13 pt on more lines.
+    private func variants(_ screen: WidgetQuizScreen) -> some View {
+        Group {
+            layouts(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
+            layouts(screen, option: .footnote.weight(.semibold), lines: [1, 2, 3])
+        }
+    }
+
+    /// `layout` once for each form of the right meaning (`QuizText.answerFormCount`).
+    private func layouts(_ screen: WidgetQuizScreen, option: Font, lines: [Int]) -> some View {
+        Group {
+            layout(screen, option: option, lines: lines, form: 0)
+            if QuizText.answerFormCount(of: screen) > 1 {
+                layout(screen, option: option, lines: lines, form: 1)
+            }
+        }
+    }
+
     /// One layout variant: the top row, then the options at `option` on the first of `lines` line
-    /// counts that fits. With `lastResort` nothing is passed over (the last variant): a word or an
-    /// option may then shrink to 11 pt.
-    private func layout(_ screen: WidgetQuizScreen, option: Font, lines: [Int], lastResort: Bool = false) -> some View {
+    /// counts that fits; after a wrong pick the line on top and the marked option show form `form`
+    /// of the right meaning. With `lastResort` nothing is passed over (the last variant): a word or
+    /// the line on top may then shrink to 11 pt, an option wraps onto more lines.
+    private func layout(_ screen: WidgetQuizScreen, option: Font, lines: [Int], lastResort: Bool = false, form: Int) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             QuizTopRow(
                 screen: screen,
+                form: form,
                 steps: lastResort ? WidgetWordStep.mediumWidget : QuizText.mediumWord,
                 showsIPA: false,
                 status: .footnote.weight(.semibold),
@@ -243,7 +310,8 @@ struct QuizMediumView: View {
                         layout: .column,
                         typeface: option,
                         lines: lines,
-                        lastResort: lastResort ? QuizText.floorScale13 : nil,
+                        form: form,
+                        lastResort: lastResort,
                         source: .systemMedium,
                         colors: colors
                     )
@@ -275,20 +343,26 @@ struct QuizLargeView: View {
     var body: some View {
         Group {
             if let screen = entry.screen {
-                // After the answer the example gives way first, then the wrong pick's line.
                 ViewThatFits(in: .vertical) {
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true)
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true)
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2])
-                    layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
+                    variants(screen)
+                    // The person's size leaves no room: one text size smaller at a time, from the
+                    // largest standard size down, so the text does not drop straight to the
+                    // default size after the answer.
+                    variants(screen)
+                        .dynamicTypeSize(...WidgetText.largestStandardSize)
+                    variants(screen)
+                        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+                    variants(screen)
+                        .dynamicTypeSize(...DynamicTypeSize.xLarge)
                     Group {
-                        layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true)
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
-                    }
-                    .dynamicTypeSize(...WidgetText.largestStandardSize)
-                    Group {
-                        layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true)
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2], lastResort: true)
+                        variants(screen)
+                        layout(
+                            screen,
+                            option: .subheadline.weight(.semibold),
+                            lines: [1, 2],
+                            lastResort: true,
+                            form: QuizText.answerFormCount(of: screen) - 1
+                        )
                     }
                     .dynamicTypeSize(...DynamicTypeSize.large)
                 }
@@ -300,17 +374,46 @@ struct QuizLargeView: View {
         .widgetTurkishVoice()
     }
 
+    /// The variants at one text size. After the answer the example gives way first (from two
+    /// lines to one, then not at all), then the wrong pick's line; then the options get smaller.
+    private func variants(_ screen: WidgetQuizScreen) -> some View {
+        Group {
+            layouts(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: [1, 2])
+            layouts(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: [1])
+            layouts(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true)
+            layouts(screen, option: .body.weight(.semibold), lines: [1, 2])
+            layouts(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
+        }
+    }
+
+    /// `layout` once for each form of the right meaning (`QuizText.answerFormCount`).
+    private func layouts(_ screen: WidgetQuizScreen, option: Font, lines: [Int], picked: Bool = false, example: [Int] = []) -> some View {
+        Group {
+            layout(screen, option: option, lines: lines, picked: picked, example: example, form: 0)
+            if QuizText.answerFormCount(of: screen) > 1 {
+                layout(screen, option: option, lines: lines, picked: picked, example: example, form: 1)
+            }
+        }
+    }
+
+    /// One layout variant: the top row, the options at `option` on the first of `lines` line
+    /// counts that fits, and after the answer the wrong pick's line (`picked`) and the example on
+    /// the first of `example` line counts (none when empty). After a wrong pick the line on top
+    /// and the marked option show form `form` of the right meaning. With `lastResort` nothing is
+    /// passed over (the last variant).
     private func layout(
         _ screen: WidgetQuizScreen,
         option: Font,
         lines: [Int],
         picked: Bool = false,
-        example: Bool = false,
-        lastResort: Bool = false
+        example exampleLines: [Int] = [],
+        lastResort: Bool = false,
+        form: Int
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             QuizTopRow(
                 screen: screen,
+                form: form,
                 steps: lastResort ? QuizText.largeWord + [WidgetWordStep(size: 15, lines: 2, scales: false)] : QuizText.largeWord,
                 showsIPA: true,
                 status: .subheadline.weight(.semibold),
@@ -328,20 +431,22 @@ struct QuizLargeView: View {
                         layout: .row,
                         typeface: option,
                         lines: lines,
-                        lastResort: lastResort ? QuizText.floorScale15 : nil,
+                        form: form,
+                        lastResort: lastResort,
                         source: .systemLarge,
                         colors: colors
                     )
                 }
             }
             .padding(.top, 12)
-            if screen.isAnswered && (picked || example) {
+            if screen.isAnswered && (picked || !exampleLines.isEmpty) {
                 VStack(alignment: .leading, spacing: 4) {
                     if picked, let line = QuizPickedLine(screen: screen, colors: colors) {
                         line
                     }
-                    if example, let sentence = screen.item.exampleEN, !sentence.isEmpty {
-                        WidgetExampleLine(sentence: sentence, lemma: screen.item.lemma, color: colors.base.ink2)
+                    // A whole sentence or none (`WidgetExampleLine`).
+                    if !exampleLines.isEmpty, let sentence = screen.item.exampleEN, !sentence.isEmpty {
+                        WidgetExampleLine(sentence: sentence, lemma: screen.item.lemma, lines: exampleLines, color: colors.base.ink2)
                             .widgetEnglishVoice()
                     }
                 }
@@ -358,6 +463,8 @@ struct QuizLargeView: View {
 /// so the word keeps its room on the medium widget).
 private struct QuizTopRow: View {
     let screen: WidgetQuizScreen
+    /// The form of the right meaning the line on top names after a wrong pick (`QuizText.status`).
+    let form: Int
     let steps: [WidgetWordStep]
     let showsIPA: Bool
     let status: Font
@@ -371,7 +478,7 @@ private struct QuizTopRow: View {
         HStack(alignment: .top, spacing: 6) {
             VStack(alignment: .leading, spacing: 1) {
                 QuizFittingText(
-                    candidates: QuizText.status(of: screen),
+                    candidates: QuizText.status(of: screen, form: form),
                     typeface: status,
                     color: screen.isAnswered ? colors.base.ink : colors.base.ink2,
                     lastResort: lastResort ? QuizText.floorScale13 : nil,
@@ -431,8 +538,11 @@ private struct QuizOptionButton: View {
     let layout: Layout
     let typeface: Font
     let lines: [Int]
-    /// The last variant's smallest scale (11 pt over the typeface's size); nil elsewhere.
-    let lastResort: CGFloat?
+    /// The form of the right meaning this layout shows (`QuizText.forms(of:at:form:)`).
+    let form: Int
+    /// The last variant: the text is never passed over; when no candidate fits, it wraps onto
+    /// more lines (it never shrinks).
+    let lastResort: Bool
     let source: WidgetEventSource
     let colors: QuizColors
 
@@ -461,11 +571,12 @@ private struct QuizOptionButton: View {
     @ViewBuilder
     private var face: some View {
         let text = QuizFittingText(
-            candidates: WidgetText.candidates(QuizText.forms(of: screen.item, at: index), lines: lines),
+            candidates: WidgetText.candidates(QuizText.forms(of: screen, at: index, form: form), lines: lines),
             typeface: typeface,
             color: mark == .quiet ? colors.base.ink2 : colors.base.ink,
             alignment: layout == .column ? .center : .leading,
-            lastResort: lastResort
+            lastResort: lastResort ? 1 : nil,
+            wrapsLast: true
         )
         switch layout {
         case .column:
@@ -570,6 +681,12 @@ private struct QuizNextButton: View {
                         .imageScale(.medium)
                         .frame(width: 34, height: 34)
                         .background(colors.buttonFill, in: Circle())
+                        .overlay {
+                            if let edge = colors.buttonEdge {
+                                Circle()
+                                    .strokeBorder(edge, lineWidth: 1.5)
+                            }
+                        }
                 } else {
                     HStack(spacing: 4) {
                         Text(verbatim: QuizText.next)
@@ -581,6 +698,13 @@ private struct QuizNextButton: View {
                     .padding(.horizontal, 14)
                     .frame(height: 34)
                     .background(colors.buttonFill, in: Capsule())
+                    .overlay {
+                        // The tinted and clear Home Screens: an outline, as the round buttons have.
+                        if let edge = colors.buttonEdge {
+                            Capsule()
+                                .strokeBorder(edge, lineWidth: 1.5)
+                        }
+                    }
                 }
             }
             .foregroundStyle(colors.ink)
@@ -661,14 +785,16 @@ private struct QuizEmptyView: View {
 /// Quiz text shown whole or not at all, like `WidgetFittingText`, with an alignment: the first
 /// candidate (a list of lines) whose every line fits on one line. When none fits the variant
 /// around it is passed over (`WidgetFit.reject`); with `lastResort` (the smallest scale) the last
-/// candidate is shown and may shrink, at most to that scale, instead. `spoken` replaces what
-/// VoiceOver reads (the lines shown, otherwise).
+/// candidate is shown and may shrink, at most to that scale, instead, or with `wrapsLast` wraps
+/// onto as many lines as it needs at its own size (the options). `spoken` replaces what VoiceOver
+/// reads (the lines shown, otherwise).
 struct QuizFittingText: View {
     let candidates: [[String]]
     let typeface: Font
     let color: AnyShapeStyle
     var alignment: HorizontalAlignment = .leading
     var lastResort: CGFloat? = nil
+    var wrapsLast = false
     var spoken: String? = nil
 
     var body: some View {
@@ -690,7 +816,11 @@ struct QuizFittingText: View {
                 lines(slots[4])
                 lines(slots[5])
                 if let scale = lastResort {
-                    lines(slots[5], minimumScale: scale)
+                    if wrapsLast {
+                        wrapped(slots[5])
+                    } else {
+                        lines(slots[5], minimumScale: scale)
+                    }
                 } else {
                     WidgetFit.reject
                 }
@@ -711,5 +841,16 @@ struct QuizFittingText: View {
         .multilineTextAlignment(alignment == .center ? .center : .leading)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: spoken ?? lines.joined(separator: " ")))
+    }
+
+    /// The candidate as one text that wraps between words onto as many lines as the width needs.
+    private func wrapped(_ lines: [String]) -> some View {
+        let text = lines.joined(separator: " ")
+        return Text(verbatim: text)
+            .font(typeface)
+            .foregroundStyle(color)
+            .multilineTextAlignment(alignment == .center ? .center : .leading)
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityLabel(Text(verbatim: spoken ?? text))
     }
 }

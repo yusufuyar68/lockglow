@@ -12,13 +12,15 @@ import CoreModels
 /// line under it, and the Turkish meaning in SF semibold (15 pt) in a darker gray. No third row:
 /// the English definition is not shown here. The family is 160 x 72 pt (153 x 68 on an iPhone SE).
 /// As on the home widgets, every line is shown whole or not at all: the meaning first tries its
-/// shorter forms (`WidgetGloss`), and only when none fits is it left out. From xLarge to xxxLarge a
-/// meaning that does not fit at the person's text size is shown at the default size instead, with
-/// the word. In the accessibility sizes the word stands alone when it fits at a scaled size, which
-/// is always larger than at the default size; when it does not, the word and its meaning are shown
-/// at the default size (ogrenme_ilkeleri 2.1). It is never shown alone at an unscaled 15 pt while
-/// a meaning would fit. On the Always-On display the text keeps its gray levels; the system dims
-/// the screen.
+/// shorter forms (`WidgetGloss`), and only when none fits is it left out. From xLarge up, when
+/// the word and its meaning do not fit at the person's text size, they are shown one text size
+/// smaller at a time (xxxLarge, xxLarge, xLarge), exactly as a person with that size sees them,
+/// so a larger setting never draws the widget smaller than a smaller setting does. Only when the
+/// meaning fits at none of these does the word stand alone, in the accessibility sizes at a scaled
+/// size, which is always larger than at the default size; otherwise the word and its meaning are
+/// shown at the default size (ogrenme_ilkeleri 2.1). It is never shown alone at an unscaled 15 pt
+/// while a meaning would fit. On the Always-On display the text keeps its gray levels; the system
+/// dims the screen.
 struct RectangularWordView: View {
     let entry: WordEntry
     /// The widget's content margins (`widgetContentMargins`).
@@ -41,9 +43,33 @@ struct RectangularWordView: View {
             // "misunderstanding" smaller than "yanlış anlaşılma" at xxxLarge).
             rows(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.semibold), lines: [1])
             rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
-            // The accessibility sizes (ogrenme_ilkeleri 2.1): the word alone, but only at a scaled
-            // step, so it is larger than at the default size. The padding holds the band line
-            // under the last line, which hangs below the text frame.
+            // Nothing fits at the person's size: the same rows one text size smaller at a time,
+            // as a person with that size sees them, so the word keeps its meaning and a larger
+            // setting is never drawn smaller than a smaller one (the 2026-10-24 images showed
+            // short words alone at AX1 and long phrases at the default size, below xxxLarge).
+            rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+            rows(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.semibold), lines: [1])
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+            rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+            rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+            rows(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.semibold), lines: [1])
+                .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+            rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+            rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(...DynamicTypeSize.xLarge)
+            rows(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.semibold), lines: [1])
+                .dynamicTypeSize(...DynamicTypeSize.xLarge)
+            rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(...DynamicTypeSize.xLarge)
+            // The accessibility sizes (ogrenme_ilkeleri 2.1), when no meaning fits even at xLarge:
+            // the word alone, but only at a scaled step, so it is larger than at the default size.
+            // The padding holds the band line under the last line, which hangs below the text
+            // frame, clear of the widget's rounded bottom corners (4 pt let the corner clip the
+            // band of a two-line phrase at AX1).
             if dynamicTypeSize.isAccessibilitySize {
                 WidgetFittingWord(
                     lemma: word.lemma,
@@ -51,11 +77,10 @@ struct RectangularWordView: View {
                     colors: colors,
                     renderingMode: renderingMode
                 )
-                .padding(.bottom, 4)
+                .padding(.bottom, 8)
             }
             // Otherwise the default text size, which draws exactly the default layout: the word
-            // and its meaning stay together (from xLarge up, and in the accessibility sizes when
-            // the larger word does not fit).
+            // and its meaning stay together.
             rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1, 2])
                 .dynamicTypeSize(...DynamicTypeSize.large)
             rows(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.semibold), lines: [1])

@@ -636,7 +636,7 @@ private struct CapsuleButtonBody: View {
         configuration.label
             // `.weight(.bold)`, not `.bold()`: `.headline` is semibold and already counts as bold,
             // so `.bold()` leaves it unchanged (seen in the 2026-10-22 screenshots).
-            .font(isNightPrimary ? .headline.weight(.bold) : .headline)
+            .font(isNightPrimary && isEnabled ? .headline.weight(.bold) : .headline)
             .multilineTextAlignment(.center)
             .foregroundStyle(kind == .primary ? Theme.onPrimary : Theme.ink)
             .padding(.horizontal, fullWidth ? 24 : 20)
@@ -665,8 +665,14 @@ private struct CapsuleButtonBody: View {
                     // a lineStrong edge, only 2.5-2.8:1 with Increase Contrast (lineStrong is
                     // brighter there), so with Increase Contrast or Button Shapes it is twice a
                     // secondary's width (docs/denetim/kontrast_gece_c_2026-10-22.md).
+                    // Disabled at night it has no ink edge, only a thin lineStrong one: the dimmed ink
+                    // edge alone still looked like an enabled button (2026-10-24 screenshots).
                     if isNightPrimary {
-                        Capsule().strokeBorder(Theme.onPrimary, lineWidth: emphasizesEdge ? 3 : 2)
+                        if isEnabled {
+                            Capsule().strokeBorder(Theme.onPrimary, lineWidth: emphasizesEdge ? 3 : 2)
+                        } else {
+                            Capsule().strokeBorder(Theme.lineStrong, lineWidth: 1)
+                        }
                     }
                 }
         case .bordered:

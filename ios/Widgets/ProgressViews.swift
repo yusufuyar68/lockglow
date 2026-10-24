@@ -74,8 +74,9 @@ struct ProgressCircularView: View {
 /// review is ("Sıradaki tekrar: bugün 21:40", "… şimdi"); second, in the darker gray: how many
 /// words are in line today ("Bugün 6 kelime sırada", at most "10+"). The family is 160 x 72 pt
 /// (153 x 68 on an iPhone SE). Each row shortens step by step ("Tekrar: 21:40"); at the largest
-/// text sizes, when the rows no longer fit, they are shown at the default size, and as a last
-/// resort the first row's shortest form alone.
+/// text sizes, when the rows no longer fit, they are shown one text size smaller at a time
+/// (xxxLarge, xxLarge, xLarge, then the default size), so a larger setting never draws them
+/// smaller than a smaller setting does, and as a last resort the first row's shortest form alone.
 struct ProgressRectangularView: View {
     let entry: ProgressEntry
     var calendar = Calendar.current
@@ -87,11 +88,31 @@ struct ProgressRectangularView: View {
             variant(rows, first: .headline, second: .subheadline.weight(.semibold))
             variant(rows, first: .subheadline.weight(.semibold), second: .subheadline.weight(.semibold))
             variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
+            // Nothing fits at the person's size: the same variants one text size smaller at a
+            // time, as a person with that size sees them, before the default size.
+            variant(rows, first: .headline, second: .subheadline.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+            variant(rows, first: .subheadline.weight(.semibold), second: .subheadline.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+            variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+            variant(rows, first: .headline, second: .subheadline.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+            variant(rows, first: .subheadline.weight(.semibold), second: .subheadline.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+            variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+            variant(rows, first: .headline, second: .subheadline.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xLarge)
+            variant(rows, first: .subheadline.weight(.semibold), second: .subheadline.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xLarge)
+            variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
+                .dynamicTypeSize(...DynamicTypeSize.xLarge)
             variant(rows, first: .headline, second: .subheadline.weight(.semibold))
                 .dynamicTypeSize(...DynamicTypeSize.large)
             variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
                 .dynamicTypeSize(...DynamicTypeSize.large)
-            // Every first row has a short last form ("Tekrar: 21:40", "Tekrar: yarın", "Lockglow").
+            // Every first row has a short last form ("Tekrar: 21:40", "Tekrar: yarın", "Tekrar: 26.10", "Lockglow").
             Text(verbatim: rows.first.last ?? "")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(colors.ink)

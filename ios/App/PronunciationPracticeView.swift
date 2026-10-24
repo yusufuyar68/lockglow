@@ -49,12 +49,13 @@ struct SayButton: View {
 }
 
 /// The Söyle sheet's first height: the word, a result with a tip and the bottom button without
-/// scrolling on most phones, the card still showing above it. Inactive (nil) on short screens
-/// (iPhone SE), which keep only `.large`, the whole height.
+/// scrolling on most phones, the card still showing above it. Short screens (iPhone SE) get the
+/// whole height, as `.large`: a nil height here opened the sheet on a zero-height detent (only
+/// the grabber showed at the bottom of a dimmed screen).
 private struct SaySheetDetent: CustomPresentationDetent {
     static func height(in context: Context) -> CGFloat? {
         if context.maxDetentValue < 700 {
-            return nil
+            return context.maxDetentValue
         }
         return 600
     }

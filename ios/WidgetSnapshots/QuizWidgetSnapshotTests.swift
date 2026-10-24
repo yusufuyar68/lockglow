@@ -124,6 +124,17 @@ final class QuizWidgetSnapshotTests: XCTestCase {
             QuizText.status(of: WidgetQuizScreen(item: item, choice: 0)),
             [["Doğrusu: aynı fikirde olmamak"], ["Doğrusu: hemfikir olmamak"], ["Doğrusu işaretli."]]
         )
+        // One form of the right meaning per layout, shared by the line on top and the marked
+        // option (the 2026-10-24 images: "Doğrusu: hemfikir olmamak" over "aynı fikirde olmamak").
+        let wrongPick = WidgetQuizScreen(item: item, choice: 0)
+        XCTAssertEqual(QuizText.answerFormCount(of: wrongPick), 2)
+        XCTAssertEqual(QuizText.status(of: wrongPick, form: 1), [["Doğrusu: hemfikir olmamak"], ["Doğrusu işaretli."]])
+        XCTAssertEqual(QuizText.forms(of: wrongPick, at: 1, form: 1), ["hemfikir olmamak"])
+        XCTAssertEqual(QuizText.forms(of: wrongPick, at: 1, form: 0), ["aynı fikirde olmamak"])
+        // Other options, and the right option after a right pick, keep all their forms.
+        XCTAssertEqual(QuizText.forms(of: wrongPick, at: 0, form: 1), ["durmak, durdurmak", "durmak/durdurmak"])
+        XCTAssertEqual(QuizText.answerFormCount(of: WidgetQuizScreen(item: item, choice: 1)), 1)
+        XCTAssertEqual(QuizText.forms(of: WidgetQuizScreen(item: item, choice: 1), at: 1, form: 0), ["aynı fikirde olmamak", "hemfikir olmamak"])
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 1), "aynı fikirde olmamak, Doğru cevap")
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 0), "durmak, durdurmak, Yanlış")
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 2), "dört gözle beklemek")

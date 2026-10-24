@@ -20,5 +20,7 @@ Bu klasördeki kartlar editör onayından **geçmedi** (`meta.status: draft`). K
 
   Her akışı ayrı bir denetçi okudu ve 123 kart düzeltildi. Sonra tüm akışlarda (s1–s9) quiz şıkları çeşitlendirildi: 318 kart (`distractors_diversified`). Toplam 752 kart: A1 179, A2 347, B1 226. Aynı gün `en.smell.v.2` (kokmak) eklendi: 753 kart, A2 348. 3. tur (2026-10-21): s10 iş, s11 seyahat, s12 sağlık, s13 sosyal hayat akışları eklendi (4 × 45 kart): toplam 933. Süreç ve kurallar: [`docs/icerik_uretimi/`](../../docs/icerik_uretimi/README.md).
 
+- **Kısa anlam düzeltmesi (2026-10-24, `2026.10.24-kisisel-13`):** widget, tam anlam sığmazsa `gloss_short`'u gösterir; bu yüzden kısa anlam artık ana anlamın ilk anlamı ya da aynı kelimelerle kısaltılmışı olmalı (yeni deyim ya da eş anlamlı yok, noktalama korunur). 79 `gloss_short` değişti, 12'si kaldırıldı (ana anlam 16 grafeme indirildi; eski ana anlam `alt`'a taşındı). Anlamlardaki "…"/"..." yer tutucuları parantezli Türkçeyle değişti: "(bir şey) isterim", "sonunda (bir yerde) kalmak".
+
 Uygulamaya derlemek için: `content-pipeline/README.md` → "Kişisel derleme".
 Bir kartı yayına almak için `review` akışından geçirip `content/cards/`'a taşı (status `reviewed`).
