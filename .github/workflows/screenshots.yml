@@ -48,7 +48,9 @@ jobs:
     runs-on: ${{ inputs.runner || 'macos-15' }}
     # Two light passes took 39 min on the Intel runner (22 Oct); three passes with the new screens
     # and the quiz wait (~7 min) need more.
-    timeout-minutes: 130
+    # 24 Oct: the Intel runners took up to twice as long per test; three passes plus the
+    # widget renders went past 2 h 10 min.
+    timeout-minutes: 200
     steps:
       - uses: actions/checkout@v4
       - name: En yeni Xcode'u seç
@@ -149,7 +151,8 @@ jobs:
               n=$(grep -c "idle notification not received" "$log" 2>/dev/null || true)
               if [ -n "$n" ] && [ "$n" -gt "$seen" ]; then
                 seen=$n
-                pid=$(pgrep -f "Lockglow\.app/Lockglow$" | head -1 || true)
+                # The app runs with the UI tests' launch arguments after its path.
+                pid=$(pgrep -f "/Lockglow\.app/Lockglow( |$)" | head -1 || true)
                 if [ -n "$pid" ]; then
                   sample "$pid" 5 -file "out/$run-hang-$n.log" > /dev/null 2>&1 \
                     || sudo spindump "$pid" 5 -file "out/$run-hang-$n.log" > /dev/null 2>&1 \
