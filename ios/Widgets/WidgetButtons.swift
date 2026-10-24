@@ -17,7 +17,9 @@ import CoreModels
 // ("Dinle", "Sonraki"); meaning never depends on color. Each one is a 34 pt circle (mockup `.wb`)
 // centred in a hit area of exactly 44 x 44 pt, so the views can keep the buttons' place free of
 // text (HomeWordViews.swift).
-// The glyphs share one font size, weight and image scale; Next is the filled one (mockup `.wb`).
+// The glyphs share one font size and weight; Next is the filled one (mockup `.wb`), one image
+// scale smaller (`WidgetButtonFace.filledScale`): at the same scale the solid, wide forward.fill
+// looked heavier than the outlined speaker beside it.
 // Next and Know run in the widget extension (`WordActions`); the speaker button runs in the app's
 // process (`SpeakWordIntent` is an `AudioPlaybackIntent`).
 
@@ -29,7 +31,7 @@ struct NextWordButton: View {
 
     var body: some View {
         Button(intent: NextWordIntent(wordID: wordID, source: source.rawValue)) {
-            WidgetButtonFace(title: "Sonraki kelime", systemImage: "forward.fill", colors: colors)
+            WidgetButtonFace(title: "Sonraki kelime", systemImage: "forward.fill", scale: WidgetButtonFace.filledScale, colors: colors)
         }
         .buttonStyle(.plain)
         .accessibilityInputLabels([Text("Sonraki kelime"), Text("Sonraki")])
@@ -79,10 +81,15 @@ struct SpeakWordButton: View {
 /// the tinted and Liquid Glass Home Screens: `WidgetColors`), centred in a 44 x 44 pt hit area
 /// that is all tappable. The title is VoiceOver's name for the button, a verbatim Turkish text
 /// read with the widget's Turkish voice (`widgetTurkishVoice()`).
-private struct WidgetButtonFace: View {
+struct WidgetButtonFace: View {
     let title: String
     let systemImage: String
+    /// The glyph's image scale: `.medium`, `filledScale` for the filled Next glyph.
+    var scale: Image.Scale = .medium
     let colors: WidgetColors
+
+    /// The filled Next glyph's scale, so it weighs as much as the outlined glyphs beside it.
+    static let filledScale = Image.Scale.small
 
     var body: some View {
         Label {
@@ -92,7 +99,7 @@ private struct WidgetButtonFace: View {
         }
         .labelStyle(.iconOnly)
         .font(.subheadline.weight(.semibold))
-        .imageScale(.medium)
+        .imageScale(scale)
         .foregroundStyle(colors.ink)
         .frame(width: 34, height: 34)
         .background(colors.buttonFill, in: Circle())

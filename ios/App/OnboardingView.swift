@@ -140,9 +140,10 @@ struct OnboardingView: View {
         .padding(.top, showsTopicSummary ? 12 : 8)
         .padding(.bottom, 8)
         .background(Theme.bg)
-        // The topic list scrolls under the bar: a hairline, as in "Ayarlar > Konular".
+        // The topic list and the widget steps scroll under the bar: a hairline, as in
+        // "Ayarlar > Konular", never a hard cut.
         .overlay(alignment: .top) {
-            if showsTopicSummary {
+            if showsTopicSummary || page == .widget {
                 Rectangle()
                     .fill(Theme.line)
                     .frame(height: 1)

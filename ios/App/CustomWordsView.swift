@@ -300,6 +300,7 @@ struct CustomWordEditor: View {
     @State private var confirmsDelete = false
     @State private var failure: String?
     @FocusState private var focus: CustomWordField?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     init(
         library: CustomWordLibrary,
@@ -316,27 +317,60 @@ struct CustomWordEditor: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 22) {
-                    lemmaField
-                    meaningField
-                    exampleField
-                    noteField
-                    if editedWord != nil {
-                        deleteButton
+            ScrollViewReader { proxy in
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 22) {
+                        lemmaField
+                            .id(CustomWordField.lemma)
+                        meaningField
+                            .id(CustomWordField.meaning)
+                        exampleField
+                            .id(CustomWordField.example)
+                        noteField
+                            .id(CustomWordField.note)
+                        if editedWord != nil {
+                            deleteButton
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 12)
+                    .padding(.bottom, 24)
+                }
+                .scrollDismissesKeyboard(.interactively)
+                // `sheetBg`: `bg` by day; at night the elevated #1C1C1E, so the sheet's edge shows
+                // against the black screen behind it, as a system form sheet.
+                .background {
+                    Theme.sheetBg
+                        .ignoresSafeArea()
+                }
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    saveBar
+                }
+                // On an iPhone SE the keyboard and the bottom button leave a few lines: the focused
+                // field (with its title) is scrolled into view above the button, after the keyboard
+                // is up. No anchor: only as far as needed, a visible field stays where it is.
+                .onChange(of: focus) { _, field in
+                    guard let field = field else {
+                        return
+                    }
+                    Task { @MainActor in
+                        try? await Task.sleep(for: .milliseconds(350))
+                        guard focus == field else {
+                            return
+                        }
+                        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+                            proxy.scrollTo(field)
+                        }
                     }
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 12)
-                .padding(.bottom, 24)
-            }
-            .scrollDismissesKeyboard(.interactively)
-            .background {
-                Theme.bg
-                    .ignoresSafeArea()
-            }
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                saveBar
+                // The example and the note grow line by line while typing: their last line stays
+                // above the button.
+                .onChange(of: draft.exampleEN.count + draft.note.count) {
+                    guard let field = focus, field == .example || field == .note else {
+                        return
+                    }
+                    proxy.scrollTo(field)
+                }
             }
             .navigationTitle(editedWord == nil ? "Kelime ekle" : "Kelimeyi düzenle")
             .navigationBarTitleDisplayMode(.inline)
@@ -512,8 +546,15 @@ struct CustomWordEditor: View {
         .padding(.top, 8)
         .padding(.bottom, 8)
         .background {
-            Theme.bg
+            Theme.sheetBg
                 .ignoresSafeArea()
+        }
+        // The form scrolls under the bar: a hairline, as in the onboarding's topics page.
+        .overlay(alignment: .top) {
+            Rectangle()
+                .fill(Theme.line)
+                .frame(height: 1)
+                .accessibilityHidden(true)
         }
     }
 

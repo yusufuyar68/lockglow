@@ -124,6 +124,33 @@ final class QuizWidgetSnapshotTests: XCTestCase {
             QuizText.status(of: WidgetQuizScreen(item: item, choice: 0)),
             [["Doğrusu: aynı fikirde olmamak"], ["Doğrusu: hemfikir olmamak"], ["Doğrusu işaretli."], ["Doğrusu", "işaretli."]]
         )
+        // One form of the right meaning per layout, shared by the line on top and the marked
+        // option (the 2026-10-24 images: "Doğrusu: hemfikir olmamak" over "aynı fikirde olmamak");
+        // each layout names one form, or only "Doğrusu işaretli." (`QuizNaming`).
+        let wrongPick = WidgetQuizScreen(item: item, choice: 0)
+        XCTAssertEqual(QuizText.answerForms(of: item), ["aynı fikirde olmamak", "hemfikir olmamak"])
+        XCTAssertEqual(
+            QuizText.status(of: wrongPick, naming: .form(1)),
+            [["Doğrusu: hemfikir olmamak"], ["Doğrusu:", "hemfikir olmamak"]]
+        )
+        XCTAssertEqual(QuizText.status(of: wrongPick, naming: .form(2)), [])
+        XCTAssertEqual(
+            QuizText.status(of: wrongPick, naming: .wholeOrMarked),
+            [["Doğrusu: aynı fikirde olmamak"], ["Doğrusu işaretli."], ["Doğrusu", "işaretli."]]
+        )
+        XCTAssertEqual(QuizText.status(of: wrongPick, naming: .marked), [["Doğrusu işaretli."], ["Doğrusu", "işaretli."]])
+        // The marked option shows only the named form: its other lines are refused.
+        let rightForms = QuizText.forms(of: item, at: 1)
+        let rightCandidates = WidgetText.candidates(rightForms, lines: [1, 2])
+        let refused = QuizText.refused(rightCandidates, keeping: 1, of: rightForms, lines: [1, 2])
+        XCTAssertEqual(
+            rightCandidates.indices.filter { !refused.contains($0) }.map { rightCandidates[$0] },
+            [["hemfikir olmamak"], ["hemfikir", "olmamak"]]
+        )
+        // Without a named form (the other options, "Doğrusu işaretli.") nothing is refused, and a
+        // right pick's line on top is "Doğru." whatever the layout names.
+        XCTAssertEqual(QuizText.refused(rightCandidates, keeping: nil, of: rightForms, lines: [1, 2]), [])
+        XCTAssertEqual(QuizText.status(of: WidgetQuizScreen(item: item, choice: 1), naming: .form(1)), [["Doğru."]])
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 1), "aynı fikirde olmamak, Doğru cevap")
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 0), "durmak, durdurmak, Yanlış")
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 2), "dört gözle beklemek")

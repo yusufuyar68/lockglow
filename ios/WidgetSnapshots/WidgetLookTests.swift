@@ -131,8 +131,9 @@ final class WidgetLookTests: XCTestCase {
     /// size the word's steps all grow with Dynamic Type, as the meaning does. The unscaled floor
     /// is left for the default size, beside a 13 pt meaning, and for the word alone. Only a word
     /// that fits no step at the default size shrinks a little there ("misunderstanding" on an SE,
-    /// to about 14.5 pt). Which table goes with which meaning is in the views; the SE images at
-    /// `-xxxl`, `-ax1` and `-ax3` show it.
+    /// to about 14.5 pt). Which table goes with which meaning is in the views (the small widget
+    /// passes over a step smaller than its meaning where it is drawn, `SmallWidgetHeadword`); the
+    /// SE images at `-xxxl`, `-ax1` and `-ax3` show it.
     func testWordNeverSmallerThanMeaning() {
         XCTAssertTrue(WidgetWordStep.homeFloorScaled.allSatisfy { $0.scales })
         XCTAssertTrue(WidgetWordStep.smallWidget.allSatisfy { $0.scales && $0.size >= 17 })
@@ -143,17 +144,76 @@ final class WidgetLookTests: XCTestCase {
 
     // MARK: - Example line
 
-    /// The medium widget's example is never cut (2026-10-24 images: "Could you tell me the way to
-    /// the…"): it is the large widget's example text (`LargeExampleText`) on one or two balanced
-    /// lines, so every candidate of every snapshot example is the whole sentence, word for word,
-    /// with no "…" added.
-    func testExampleLineIsTheWholeSentence() {
+    /// The example is shown only whole: never cut with "…" at either end (the 2026-10-24 images
+    /// showed "It was just a misunderstanding. I'm…", "… breakfast at…" and "Could you tell me the
+    /// way to the…"). Each text the line may show is a run of the example's whole sentences that
+    /// holds the learned word, fullest first, each on one or more balanced lines; when none fits,
+    /// the variant without the example is shown.
+    func testExampleLineShowsWholeSentences() {
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "I usually have breakfast at seven.", lemma: "breakfast"),
+            ["I usually have breakfast at seven."]
+        )
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "It was just a misunderstanding. I'm sorry.", lemma: "misunderstanding"),
+            ["It was just a misunderstanding. I'm sorry.", "It was just a misunderstanding."]
+        )
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "“Cash or card?” “Card, please.”", lemma: "cash or card"),
+            ["“Cash or card?” “Card, please.”", "“Cash or card?”"]
+        )
+        // The word in a later sentence: the runs that hold it, down to its own sentence.
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "Sorry! I was late again.", lemma: "late"),
+            ["Sorry! I was late again.", "I was late again."]
+        )
+        // Not found (an irregular form): the runs from the start.
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "Her teeth are white. She smiles.", lemma: "tooth"),
+            ["Her teeth are white. She smiles.", "Her teeth are white."]
+        )
+        // A title's or a time's period doesn't end a sentence.
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "Ms. Patel speaks so fast that Mia can't keep up with her.", lemma: "keep up"),
+            ["Ms. Patel speaks so fast that Mia can't keep up with her."]
+        )
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "She woke up at 3 a.m. because of jet lag.", lemma: "jet lag"),
+            ["She woke up at 3 a.m. because of jet lag."]
+        )
+        // Each text on each line count in turn, the word bold.
+        let candidates = WidgetExampleLine.candidates(
+            of: "It was just a misunderstanding. I'm sorry.",
+            lemma: "misunderstanding",
+            lines: [1, 2]
+        )
+        XCTAssertEqual(candidates.map { lines in lines.map { String($0.characters) } }, [
+            ["It was just a misunderstanding. I'm sorry."],
+            ["It was just a", "misunderstanding. I'm sorry."],
+            ["It was just a misunderstanding."],
+            ["It was just a", "misunderstanding."],
+        ])
+        // More candidates than slots: an even spread, the fullest and the shortest kept.
+        let many = (1...12).map { "c\($0)" }
+        XCTAssertEqual(WidgetExampleLine.slots(many), ["c1", "c3", "c4", "c6", "c7", "c9", "c10", "c12"])
+        XCTAssertEqual(WidgetExampleLine.slots(["a", "b"]), ["a", "b", "b", "b", "b", "b", "b", "b"])
+        XCTAssertEqual(WidgetExampleLine.slots([String]()), [])
+        // Every text of every snapshot example is whole: no "…", and it ends a sentence when the
+        // example does.
         for word in SnapshotWords.all where !word.exampleEN.isEmpty {
-            let candidates = LargeExampleText.candidates(word.exampleEN, lemma: word.lemma, lines: [1, 2])
-            XCTAssertFalse(candidates.isEmpty, word.lemma)
-            for lines in candidates {
-                let joined = lines.map { String($0.characters) }.joined(separator: " ")
-                XCTAssertEqual(joined, word.exampleEN, word.lemma)
+            let texts = WidgetExampleLine.texts(of: word.exampleEN, lemma: word.lemma)
+            XCTAssertEqual(texts.first, word.exampleEN.trimmingCharacters(in: .whitespacesAndNewlines))
+            for text in texts {
+                XCTAssertFalse(text.contains("…") && !word.exampleEN.contains("…"), text)
+                XCTAssertTrue(word.exampleEN.contains(text), text)
+            }
+            // Every candidate is one of those texts, word for word, on one or two lines; the
+            // first is the whole example.
+            let candidates = WidgetExampleLine.candidates(of: word.exampleEN, lemma: word.lemma, lines: [1, 2])
+            let joined = candidates.map { lines in lines.map { String($0.characters) }.joined(separator: " ") }
+            XCTAssertEqual(joined.first, texts.first, word.lemma)
+            for text in joined {
+                XCTAssertTrue(texts.contains(text), text)
             }
         }
     }

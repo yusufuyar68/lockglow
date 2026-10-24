@@ -550,15 +550,17 @@ struct SystemCardSheet: View {
         .scrollBounceBehavior(.basedOnSize)
         .presentationDetents(detents)
         .presentationDragIndicator(.visible)
-        // Not `bg`: at night a black sheet would melt into the black page.
+        // Not `bg`: at night a black sheet would melt into the black page; `sheetBg` is the
+        // elevated surface (#1C1C1E) there, so the sheet's edge shows.
         .presentationBackground(Theme.sheetBg)
     }
 
-    /// As tall as the card plus the home indicator's strip; it scrolls when the text is larger
-    /// than the screen. Half the screen until the card has been measured.
+    /// As tall as the card; it scrolls when the text is larger than the screen. The detent's
+    /// height is the content's: iOS adds the home indicator's strip itself (adding it here left a
+    /// 34 pt gap). Half the screen until the card has been measured.
     private var detents: Set<PresentationDetent> {
         if height > 0 {
-            return [.height(height + 34)]
+            return [.height(height)]
         }
         return [.medium]
     }

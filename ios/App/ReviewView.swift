@@ -1551,7 +1551,8 @@ struct ReviewView: View {
                         // "kelime", never "kart": a card is not a unit to count (text audit, terms 4).
                         Text("Bir tur daha (\(another.words.count) kelime)")
                     }
-                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 54, tonal: true))
+                    // Bordered, not tonal: at night the gray fill read stronger than "Tamam".
+                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 54))
                 }
                 Button("Tamam") {
                     summary = nil
@@ -2677,11 +2678,12 @@ private struct ReminderOfferSheet: View {
     /// As tall as the content and the pinned answers; on a short screen it is the large detent and
     /// the moments scroll. iOS adds the home indicator's strip under a height detent itself: the
     /// former "+ 34" counted it twice and opened a ~34 pt gap between the footnote and the
-    /// answers (2026-10-24 Pro images, finding tekrar-4).
+    /// answers (2026-10-24 Pro images, finding tekrar-4). Both parts are measured first: a height
+    /// from the page alone would open the sheet a strip too short.
     private var detents: Set<PresentationDetent> {
-        if height > 0 {
-            let footer = dynamicTypeSize.isAccessibilitySize ? 0 : footerHeight
-            return [.height(height + footer)]
+        let pinsAnswers = !dynamicTypeSize.isAccessibilitySize
+        if height > 0 && (!pinsAnswers || footerHeight > 0) {
+            return [.height(height + (pinsAnswers ? footerHeight : 0))]
         }
         return [.large]
     }

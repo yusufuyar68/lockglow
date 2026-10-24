@@ -74,8 +74,8 @@ final class LargeWidgetSnapshotTests: XCTestCase {
     }
 
     /// The Dikkat line shows the part of the pair that differs, as the app's card does: one
-    /// shared word on each side, the changed words marked, a missing word kept between its
-    /// neighbours, the final punctuation and a Turkish note left out.
+    /// shared word on each side within the same sentence, the changed words marked, a missing
+    /// word kept between its neighbours, the final punctuation and a Turkish note left out.
     func testMistakeSnippetKeepsThePartThatDiffers() {
         let spoon = LargeMistakeSnippet(wrong: "I have two spoon.", right: "I have two spoons.")
         XCTAssertEqual(spoon.wrong.map(\.text), ["two", "spoon"])
@@ -115,6 +115,25 @@ final class LargeWidgetSnapshotTests: XCTestCase {
         let more = LargeMistakeSnippet(wrong: "I like it. Thanks.", right: "I like it a lot. Thanks.")
         XCTAssertEqual(more.wrongSpoken, "it")
         XCTAssertEqual(more.rightSpoken, "it a lot")
+
+        // Never into a neighbouring sentence (the 2026-10-24 images: "stop to talk. The"); the
+        // whole sentence is there for when it fits.
+        let talk = LargeMistakeSnippet(wrong: "I stopped to talk. The teacher came.", right: "I stopped talking. The teacher came.")
+        XCTAssertEqual(talk.wrongSpoken, "stopped to talk")
+        XCTAssertEqual(talk.rightSpoken, "stopped talking")
+        XCTAssertEqual(talk.wrongSentenceSpoken, "I stopped to talk")
+        XCTAssertEqual(talk.rightSentenceSpoken, "I stopped talking")
+        let late = LargeMistakeSnippet(wrong: "It's late. Go home.", right: "It's late. Let's go home.")
+        XCTAssertEqual(late.wrongSpoken, "Go")
+        XCTAssertEqual(late.rightSpoken, "Let's go")
+        XCTAssertEqual(spoon.wrongSentenceSpoken, "I have two spoon")
+        XCTAssertEqual(spoon.rightSentenceSpoken, "I have two spoons")
+        // A title's period ends no sentence (`WidgetSentenceEnd`): the whole sentence keeps "Ms.".
+        let title = LargeMistakeSnippet(wrong: "Ms. Patel speak fast.", right: "Ms. Patel speaks fast.")
+        XCTAssertEqual(title.wrongSpoken, "Patel speak fast")
+        XCTAssertEqual(title.rightSpoken, "Patel speaks fast")
+        XCTAssertEqual(title.wrongSentenceSpoken, "Ms. Patel speak fast")
+        XCTAssertEqual(title.rightSentenceSpoken, "Ms. Patel speaks fast")
     }
 
     /// An example is whole on one line or in balanced lines, the word bold across a line break;

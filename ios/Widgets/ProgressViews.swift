@@ -101,7 +101,8 @@ struct ProgressRectangularView: View {
                 variants(rows)
             }
             .dynamicTypeSize(...DynamicTypeSize.large)
-            // Every first row has a short last form ("Tekrar: 21:40", "Tekrar: yarın", "Lockglow").
+            // Every first row has a short last form ("Tekrar: 21:40", "Tekrar: yarın", "Tekrar:
+            // 26.10", "Lockglow").
             Text(verbatim: rows.first.last ?? "")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(colors.ink)

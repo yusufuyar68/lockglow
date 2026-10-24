@@ -57,6 +57,15 @@ enum ProgressText {
         return (formatter.string(from: date), time)
     }
 
+    /// A later day in numbers, day first: "26.10" (the shortest form of "26 Ekim").
+    static func numericDay(_ date: Date, calendar: Calendar) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "tr_TR")
+        formatter.timeZone = calendar.timeZone
+        formatter.dateFormat = "dd.MM"
+        return formatter.string(from: date)
+    }
+
     // MARK: Rectangular ("Sıradaki")
 
     /// First row: when the next review is ("şimdi" when one is due). Second row: how many words
@@ -137,7 +146,9 @@ enum ProgressText {
     // MARK: Parts
 
     /// The next review's day and time ("şimdi" when one is due), fullest first; the shortest still
-    /// starts with "Tekrar:". `spoken` has no period. Only for a status with something due now or
+    /// starts with "Tekrar:". A later day ends on its numeric form ("Tekrar: 26.10", as wide as
+    /// "Tekrar: 21:40"), which fits the inline family at the largest text sizes, where "Tekrar:
+    /// 26 Ekim" does not. `spoken` has no period. Only for a status with something due now or
     /// scheduled.
     private static func nextLine(_ status: ProgressStatus, calendar: Calendar) -> Line {
         guard status.dueNow == 0, let next = status.nextDue else {
@@ -152,17 +163,26 @@ enum ProgressText {
                 "Tekrar: bugün \(time)",
                 "Tekrar: \(time)",
             ]
+        } else if day == "yarın" {
+            versions = [
+                "Sıradaki tekrar: \(day) \(time)",
+                "Tekrar: \(day) \(time)",
+                "Tekrar: \(day)",
+            ]
         } else {
             versions = [
                 "Sıradaki tekrar: \(day) \(time)",
                 "Tekrar: \(day) \(time)",
                 "Tekrar: \(day)",
+                "Tekrar: \(numericDay(next, calendar: calendar))",
             ]
         }
         return Line(versions: versions, spoken: "Sıradaki tekrar: \(day) \(time)")
     }
 
     /// The daily goal in words: before the first new word, while it is open, once it is met.
+    /// The last versions are short enough for the inline family at the largest text sizes
+    /// ("Hedef: 5", "Hedef: 3/5", without the spaces of "3 / 5" as the island's "4/10").
     /// Nil without a goal.
     private static func goalLine(_ status: ProgressStatus) -> Line? {
         let goal = status.dailyGoal
@@ -174,9 +194,14 @@ enum ProgressText {
         if status.goalReached {
             versions = ["Bugünlük tamam"]
         } else if done == 0 {
-            versions = ["Günlük hedef: \(goal) yeni kelime", "Hedef: \(goal) yeni kelime"]
+            versions = [
+                "Günlük hedef: \(goal) yeni kelime",
+                "Hedef: \(goal) yeni kelime",
+                "Hedef: \(goal) kelime",
+                "Hedef: \(goal)",
+            ]
         } else {
-            versions = ["Günlük hedef: \(done) / \(goal)", "Hedef: \(done) / \(goal)"]
+            versions = ["Günlük hedef: \(done) / \(goal)", "Hedef: \(done) / \(goal)", "Hedef: \(done)/\(goal)"]
         }
         return Line(versions: versions, spoken: goalSpoken(status))
     }
