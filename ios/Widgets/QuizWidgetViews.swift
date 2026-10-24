@@ -75,7 +75,20 @@ enum QuizText {
     static let floorScale13: CGFloat = 11.0 / 13.0
     static let floorScale15: CGFloat = 11.0 / 15.0
 
-    /// What the widget says when there is no question.
+    /// The heading when there is no question: the state's own title, not the question ("Bu kelime
+    /// ne demek?" stood over no word, w-quiz-6).
+    static func emptyTitle(_ reason: QuizEntry.Empty) -> String {
+        switch reason {
+        case .notPrepared:
+            return "Sorular hazır değil"
+        case .noWords:
+            return "Henüz soru yok"
+        case .finished:
+            return "Şimdilik soru kalmadı"
+        }
+    }
+
+    /// What the widget says under `emptyTitle` when there is no question.
     static func empty(_ reason: QuizEntry.Empty) -> String {
         switch reason {
         case .notPrepared:
@@ -83,7 +96,7 @@ enum QuizText {
         case .noWords:
             return "Sorular tanıştığın kelimelerden gelir. Önce Tekrar'da birkaç kelimeyle tanış."
         case .finished:
-            return "Şimdilik soru kalmadı. Yeni sorular uygulamayı açınca gelir."
+            return "Yeni sorular uygulamayı açınca gelir."
         }
     }
 
@@ -666,14 +679,14 @@ private struct QuizPickedLine: View {
     }
 }
 
-/// No question on screen: why, and what brings questions.
+/// No question on screen: the state's title, then what brings questions.
 private struct QuizEmptyView: View {
     let reason: QuizEntry.Empty
     let colors: QuizColors
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(verbatim: QuizText.question)
+            Text(verbatim: QuizText.emptyTitle(reason))
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(colors.base.ink)
             Text(verbatim: QuizText.empty(reason))

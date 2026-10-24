@@ -132,7 +132,7 @@ struct PronunciationPracticeView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
                         if !example.isEmpty {
-                            // Always-visible 46 pt options, not a 32 pt segmented picker.
+                            // Always-visible options: the system segmented control (a list at accessibility sizes).
                             SegmentButtons(
                                 options: Mode.allCases.map { SegmentOption(value: $0, title: $0.rawValue) },
                                 selection: $mode

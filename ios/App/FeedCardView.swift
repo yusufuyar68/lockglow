@@ -472,10 +472,11 @@ struct FeedLevelMark: View {
     }
 }
 
-/// The word's state at the end of the meta line, with the state names of terimler.md (as in
-/// "Sözlük"): "Yeni kelime" (a sparkle), "Öğreniyorsun" (the "Tekrar" arrows), "Bildiğin kelime"
-/// (a check). The words carry the meaning; the symbol only repeats it and is hidden from
-/// VoiceOver. It wraps instead of being cut at large text sizes.
+/// The word's state at the end of the meta line, with the state names of terimler.md and the
+/// symbols of "Sözlük" (`SozlukStatus.symbol`), so a state looks the same on the card and on the
+/// word page: "Yeni kelime" (a dashed circle), "Öğreniyorsun" (a half-filled circle), "Bildiğin
+/// kelime" (a filled check). The words carry the meaning; the symbol only repeats it and is
+/// hidden from VoiceOver. It wraps instead of being cut at large text sizes.
 struct FeedStateLine: View {
     enum Status {
         case new
@@ -510,15 +511,9 @@ struct FeedStateLine: View {
         }
     }
 
+    /// One symbol per state in the app: Sözlük's (`SozlukStatus.symbol`).
     private var symbol: String {
-        switch state {
-        case .new:
-            return "sparkle"
-        case .learning:
-            return "arrow.triangle.2.circlepath"
-        case .known:
-            return "checkmark"
-        }
+        return SozlukStatus.symbol(state.learningState)
     }
 }
 

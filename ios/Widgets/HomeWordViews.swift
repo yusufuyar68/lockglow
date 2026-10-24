@@ -270,21 +270,38 @@ struct MediumWordView: View {
         }
         .padding(margins)
         .overlay(alignment: .trailing) {
-            // Next in the easy corner (bottom of the column), Know the farthest from it.
+            // Next in the easy corner (bottom of the column), Know the farthest from it. Above and
+            // below the column its part of the margins (6 pt with the default 16 pt), as gaps that
+            // give way when the widget is too short (`columnGap`): an iPad mini's medium widget is
+            // 141 pt tall, and the three 44 pt hit areas did not fit the 129 pt left between two
+            // 6 pt paddings (w-medium-4). There each gap is 4.5 pt and the buttons touch; from
+            // 144 pt up (every iPhone) the gaps are 6 pt and the space between the buttons takes
+            // the rest, as before.
             VStack(spacing: 0) {
+                columnGap(max(margins.top - buttonGroupOverflow, 0))
                 KnowWordButton(wordID: word.id, source: .systemMedium, colors: colors)
                 Spacer(minLength: 0)
                 SpeakWordButton(text: word.lemma, colors: colors)
                 Spacer(minLength: 0)
                 NextWordButton(wordID: word.id, source: .systemMedium, colors: colors)
+                columnGap(max(margins.bottom - buttonGroupOverflow, 0))
             }
             .dynamicTypeSize(...DynamicTypeSize.xxLarge)
-            .padding(.top, max(margins.top - buttonGroupOverflow, 0))
-            .padding(.bottom, max(margins.bottom - buttonGroupOverflow, 0))
             .padding(.trailing, margins.trailing - trailingOverflow)
         }
         .widgetTurkishVoice()
         .widgetAccent(options.accent)
+    }
+
+    /// A gap of at most `height` pt above or below the button column. It is offered the height the
+    /// three buttons leave before the space between them is (layout priority), so it is `height`
+    /// when there is room, the half of what is left when there is not, and the column never
+    /// overflows the widget. No width, so the column stays as wide as its buttons.
+    private func columnGap(_ height: CGFloat) -> some View {
+        Color.clear
+            .frame(width: 0)
+            .frame(maxHeight: height)
+            .layoutPriority(1)
     }
 
     /// The word row at the first of `steps` that fits; with `lastResort` (the word alone) it is

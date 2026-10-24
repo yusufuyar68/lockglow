@@ -153,6 +153,9 @@ struct ProgressOverviewView: View {
                     }
                     .scrollTargetBehavior(.viewAligned)
                     .scrollIndicators(.hidden)
+                    // The cards' light-mode shadow (cardSurface: 14 pt radius, 10 pt down) reaches
+                    // past the row's bounds; without this the scroll view cuts it off flat.
+                    .scrollClipDisabled()
                     .contentMargins(.horizontal, 16, for: .scrollContent)
                     .padding(.horizontal, -16)
                 }

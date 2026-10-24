@@ -72,71 +72,94 @@ struct SegmentOption<Value: Hashable>: Hashable {
     var spokenTitle: String? = nil
 }
 
-/// Two or three always-visible options (mockup `.seg`) in a `surface2` well with a 1 pt
-/// `lineStrong` edge (the gray well alone is 1.1-1.5:1 against the page, audit K1). The selected
-/// one is a `surface` segment with ink text and a 1.5 pt `tint` inner border (a white fill with
-/// the old white-on-amber text would be unreadable). Stacks vertically when the text does not fit
-/// side by side (largest text sizes).
+/// Two to four always-visible options. While their titles fit on one row at the current text size
+/// it is the standard iOS segmented control (HIG: standard controls; findings ayarlar-5,
+/// sozluk-5): a `.segmented` `Picker` with its label hidden. The caller names the group
+/// (`.accessibilityElement(children: .contain)` + `.accessibilityLabel`); XCUITest lists each
+/// segment as a button with its title. At accessibility text sizes, or when the titles do not fit
+/// side by side, the options stack as an iOS list of choices instead (the native control would cut
+/// them with "…"): one 44 pt row each in a `surface` group with a `line` edge, a `tint` checkmark
+/// on the selected row. A single border: the selected row has no box of its own (acilis-1).
+/// A row sets the selection on every tap; the segmented control only when the segment changes.
 struct SegmentButtons<Value: Hashable>: View {
     let options: [SegmentOption<Value>]
     @Binding var selection: Value
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.colorSchemeContrast) private var contrast
-    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        let well = RoundedRectangle(cornerRadius: 16, style: .continuous)
-        ViewThatFits(in: .horizontal) {
-            HStack(spacing: 2) {
-                buttons
+        if dynamicTypeSize.isAccessibilitySize {
+            choiceList
+        } else {
+            ViewThatFits(in: .horizontal) {
+                segmentedPicker
+                choiceList
             }
-            VStack(spacing: 2) {
-                buttons
-            }
-        }
-        .padding(3)
-        .background(Theme.surface2, in: well)
-        .overlay {
-            well.strokeBorder(
-                Theme.lineStrong,
-                lineWidth: contrast == .increased || showsButtonShapes ? 1.5 : 1
-            )
         }
     }
 
-    private var buttons: some View {
-        ForEach(options, id: \.value) { option in
-            let isSelected = option.value == selection
-            Button {
-                selection = option.value
-            } label: {
-                Text(option.title)
-                    .font(.subheadline.weight(.semibold))
-                    .lineLimit(1)
-                    .fixedSize()
-                    .foregroundStyle(isSelected ? Theme.ink : Theme.ink2)
-                    .padding(.horizontal, 12)
-                    .frame(maxWidth: .infinity, minHeight: 46)
-                    .background {
-                        if isSelected {
-                            selectedSegment
-                        }
-                    }
-                    .contentShape(Rectangle())
+    /// The system control. `spokenTitle` becomes the segment's VoiceOver label ("30 dakika" for
+    /// "30 dk", audit V12).
+    private var segmentedPicker: some View {
+        Picker(selection: $selection) {
+            ForEach(options, id: \.value) { option in
+                Text(verbatim: option.title)
+                    .accessibilityLabel(Text(verbatim: option.spokenTitle ?? option.title))
+                    .tag(option.value)
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel(Text(verbatim: option.spokenTitle ?? option.title))
-            .accessibilityAddTraits(isSelected ? .isSelected : [])
+        } label: {
+            EmptyView()
         }
+        .pickerStyle(.segmented)
+        .labelsHidden()
     }
 
-    private var selectedSegment: some View {
-        RoundedRectangle(cornerRadius: Theme.Radius.segment, style: .continuous)
-            .fill(Theme.surface)
-            .shadow(color: colorScheme == .dark ? .clear : Theme.shadowFar, radius: 1.5, x: 0, y: 1)
-            .overlay(
-                RoundedRectangle(cornerRadius: Theme.Radius.segment, style: .continuous)
-                    .strokeBorder(Theme.tint, lineWidth: 1.5)
-            )
+    /// The stacked fallback: an iOS list of choices with hairlines between the rows.
+    private var choiceList: some View {
+        let shape = RoundedRectangle(cornerRadius: Theme.Radius.group, style: .continuous)
+        return VStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(options.enumerated()), id: \.offset) { index, option in
+                if index > 0 {
+                    Rectangle()
+                        .fill(Theme.line)
+                        .frame(height: 1)
+                        .padding(.leading, 16)
+                        .accessibilityHidden(true)
+                }
+                choiceRow(option)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: shape)
+        .clipShape(shape)
+        .overlay(shape.strokeBorder(Theme.line, lineWidth: 1))
+    }
+
+    private func choiceRow(_ option: SegmentOption<Value>) -> some View {
+        let isSelected = option.value == selection
+        return Button {
+            selection = option.value
+        } label: {
+            HStack(spacing: 12) {
+                // Wraps instead of being cut with "…" at the largest text sizes.
+                Text(verbatim: option.title)
+                    .font(.body)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Theme.tint)
+                        .accessibilityHidden(true)
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity, minHeight: Theme.minHitSize, alignment: .leading)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(Text(verbatim: option.spokenTitle ?? option.title))
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }

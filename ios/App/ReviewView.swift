@@ -1493,10 +1493,10 @@ struct ReviewView: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
-                .padding(.horizontal, 4)
+                // The lines, the time and the footnote share the 16 pt edge of the title and the
+                // card: one left edge in the column (finding tekrar-7).
                 if let next = next {
                     NoteRow(symbol: "clock", text: "Sıradaki tekrar: " + ReviewView.dayAndTime(next, now: now))
-                        .padding(.horizontal, 4)
                 }
                 VStack(alignment: .leading, spacing: 0) {
                     Text("Bu turun kelimeleri")
@@ -1520,7 +1520,6 @@ struct ReviewView: View {
                     .font(.footnote)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.horizontal, 6)
             }
             .padding(.horizontal, 16)
             .padding(.top, 6)

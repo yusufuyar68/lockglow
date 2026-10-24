@@ -11,7 +11,8 @@ import Learning
 // MARK: - Learning status
 
 /// Where a word stands, as Sözlük shows it (rule 4: an icon and a word, never color alone). The
-/// same icons on the filter chips, the rows and the word page's "Durum".
+/// same icons on the filter chips, the rows, the word page's "Durum" and the "Akış" card's meta
+/// line (`FeedStateLine`): one symbol per state in the app.
 enum SozlukStatus {
     static func title(_ state: LearningState) -> String {
         switch state {
@@ -43,6 +44,21 @@ enum SozlukStatus {
             return Theme.ink2
         case .known:
             return Theme.good
+        }
+    }
+}
+
+extension FeedStateLine.Status {
+    /// The same state as Sözlük names it, for `SozlukStatus.symbol` (FeedCardView.swift does not
+    /// import Learning).
+    var learningState: LearningState {
+        switch self {
+        case .new:
+            return .new
+        case .learning:
+            return .learning
+        case .known:
+            return .known
         }
     }
 }

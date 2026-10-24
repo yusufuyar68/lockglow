@@ -8,9 +8,10 @@ import Learning
 /// file had to be recovered.
 ///
 /// Plain groups on the page background (mockup `#ayarlar`) instead of a `Form`: every option is
-/// an always-visible 46 pt segment (`SegmentButtons`) under a question ("Günde kaç yeni
-/// kelime?") with a short, concrete footnote ("bir ayda yaklaşık 300 kelime"), never a menu or a
-/// 32 pt segmented picker, and every row exists without scrolling a lazy list (the UI tests look
+/// an always-visible segmented control (`SegmentButtons`: the system one while the labels fit, a
+/// list of 44 pt rows at accessibility sizes; 2026-10-24, Apple's standard controls) under a
+/// question ("Günde kaç yeni kelime?") with a short, concrete footnote ("bir ayda yaklaşık 300
+/// kelime"), never a menu, and every row exists without scrolling a lazy list (the UI tests look
 /// rows up by label). The groups follow iOS's inset grouped list: 16 pt page margins, 44 pt rows
 /// with a 16 pt inset, headers (`.subheadline` semibold) and footnotes (`.footnote`), both in
 /// `ink2` and aligned with the row text.
@@ -25,8 +26,9 @@ struct SettingsView: View {
     /// Notification permission was refused (now or earlier in iOS Settings).
     @State private var notificationsDenied = false
     /// The user picked the daily goal; until then the start level decides it. A state, not a
-    /// read of UserDefaults, so a tap on the number already selected (`SegmentButtons` sets the
-    /// binding on every tap) also redraws the footnote.
+    /// read of UserDefaults, so the footnote redraws on the pick. The system segmented control
+    /// does not report a tap on the number already selected: that number keeps following the
+    /// level until another one is picked.
     @State private var isDailyGoalChosen = AppPreferences.chosenDailyNewWords != nil
 
     var body: some View {

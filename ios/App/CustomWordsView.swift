@@ -164,7 +164,12 @@ struct CustomWordsView: View {
                             undoDelete(word)
                         }
                     }
-                    .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
+                    // Comes in from above and leaves upward, so it never slides under "Kelime
+                    // ekle" (a move from the bottom did, half under the button and, at night,
+                    // seen through its tinted fill; 15d screenshots, 2026-10-24). Drawn over the
+                    // button in case the two still touch while the bar changes height.
+                    .transition(reduceMotion ? .opacity : .move(edge: .top).combined(with: .opacity))
+                    .zIndex(1)
                 }
                 if showsAdd {
                     Button("Kelime ekle") {
@@ -623,10 +628,14 @@ struct CustomWordEditor: View {
 /// which it does not have. It keeps the user's words apart from the checked cards
 /// (docs/tasarim/ogrenme_ilkeleri.md 2.6). Used on the "Tekrar", "Akış" and dictionary cards.
 struct CustomWordTag: View {
+    /// Subheadline, the small size of "İlerleme" and its word sheet; a line set in Callout (the
+    /// Sözlük page's facts, the Tanış and Akış cards) can pass `.callout`, as `LevelBadge`.
+    var textStyle: Font.TextStyle = .subheadline
+
     var body: some View {
         Label("Senin kelimen", systemImage: "person.fill")
             .labelStyle(.titleAndIcon)
-            .font(.subheadline.weight(.medium))
+            .font(.system(textStyle, design: .default).weight(.medium))
             .foregroundStyle(Theme.ink2)
             // One line where it fits; at the largest text sizes on a narrow phone it wraps
             // instead of running off the card.

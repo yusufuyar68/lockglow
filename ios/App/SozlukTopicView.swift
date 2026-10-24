@@ -29,9 +29,10 @@ struct SozlukTopicView: View {
             Theme.bg
                 .ignoresSafeArea()
         }
-        // Inline: a long topic name would be cut in a large title; the page heading wraps.
+        // HIG: the topic's name once, as a large title that folds into the bar when the list
+        // scrolls (sozluk-4: an inline title over a page heading said it twice).
         .navigationTitle(topic.displayName)
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
     }
 
     @ViewBuilder
@@ -83,20 +84,15 @@ struct SozlukTopicView: View {
         }
     }
 
-    /// The topic's name, then how many words it has and in which order (mockup A3).
+    /// How many words the topic has and in which order (mockup A3), under the large title: the
+    /// name itself is the navigation title.
     private func header(count: Int) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(topic.displayName)
-                .font(.title.weight(.bold))
-                .foregroundStyle(Theme.ink)
-                .accessibilityAddTraits(.isHeader)
-            Text(verbatim: "\(count) kelime · kolaydan zora")
-                .font(.subheadline)
-                .foregroundStyle(Theme.ink2)
-                // VoiceOver would read the dot aloud.
-                .accessibilityLabel(Text(verbatim: "\(count) kelime, kolaydan zora sıralı"))
-        }
-        .padding(.top, 8)
+        Text(verbatim: "\(count) kelime · kolaydan zora")
+            .font(.subheadline)
+            .foregroundStyle(Theme.ink2)
+            // VoiceOver would read the dot aloud.
+            .accessibilityLabel(Text(verbatim: "\(count) kelime, kolaydan zora sıralı"))
+            .padding(.top, 8)
     }
 
     /// One level: its badge and word count as a heading, then its words in one group.

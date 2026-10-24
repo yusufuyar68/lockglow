@@ -43,6 +43,11 @@ struct FeedView: View {
     /// Left and right of a card: the 16 pt side margin of the HIG, the same as the title's. The
     /// card's 20 pt inner margin keeps the text where it was (36 pt from the screen's edge).
     private static let pageSideGap: CGFloat = 16
+    /// Above the title's row: the empty 44 pt row of a navigation bar and 8 pt more, so "Akış"
+    /// stands where the large titles of "Tekrar", "Sözlük" and "Ayarlar" stand (their baseline is
+    /// 90 pt below the safe area at the default text size, on SE and Pro alike) and does not jump
+    /// when the tab changes.
+    private static let titleTopGap: CGFloat = 52
 
     var body: some View {
         VStack(spacing: 0) {
@@ -108,9 +113,10 @@ struct FeedView: View {
     }
 
     /// The tab's name as a large title (34 pt bold, HIG: tab roots have large titles), like the
-    /// navigation titles of "Tekrar", "Sözlük" and "Ayarlar". Not a navigation bar: a collapsing
-    /// bar would change the page height while the feed pages. Up to xxxLarge the title fits the
-    /// 52 pt row, so a paged card keeps its room; from the accessibility sizes on (no pages) it
+    /// navigation titles of "Tekrar", "Sözlük" and "Ayarlar", and at the same height
+    /// (`titleTopGap`). Not a navigation bar: a collapsing bar would change the page height while
+    /// the feed pages. Up to xxxLarge the title fits the 52 pt row, so a paged card keeps its room
+    /// (the card shortens itself on a short page); from the accessibility sizes on (no pages) it
     /// stops growing at AX1.
     private var header: some View {
         Text("Akış")
@@ -120,6 +126,7 @@ struct FeedView: View {
             .dynamicTypeSize(...DynamicTypeSize.accessibility1)
             .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
             .padding(.horizontal, 16)
+            .padding(.top, FeedView.titleTopGap)
     }
 
     private var pager: some View {

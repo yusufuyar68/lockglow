@@ -138,9 +138,14 @@ struct PlacementTestSheet: View {
             .scrollBounceBehavior(.basedOnSize)
             bottomBar
         }
-        .background(Theme.bg.ignoresSafeArea())
         .tint(Theme.ink)
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: question?.wordID)
+        // The grabber of the app's other sheets (HIG Sheets): the test can be swiped away, as "Kapat".
+        .presentationDragIndicator(.visible)
+        // Sheets stay on `surface` at night (gece_oled.md step 3), so the full-height sheet's edge
+        // stands out from the black page; by day `bg`, as before. Set here, so both the onboarding
+        // and "Ayarlar" get it.
+        .presentationBackground(Theme.sheetBg)
     }
 
     // MARK: Bars
