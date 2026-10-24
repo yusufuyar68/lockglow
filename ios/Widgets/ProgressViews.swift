@@ -73,24 +73,34 @@ struct ProgressCircularView: View {
 /// "Sıradaki": two rows, never a third (ogrenme_ilkeleri 2.1). First, in white: when the next
 /// review is ("Sıradaki tekrar: bugün 21:40", "… şimdi"); second, in the darker gray: how many
 /// words are in line today ("Bugün 6 kelime sırada", at most "10+"). The family is 160 x 72 pt
-/// (153 x 68 on an iPhone SE). Each row shortens step by step ("Tekrar: 21:40"); at the largest
-/// text sizes, when the rows no longer fit, they are shown at the default size, and as a last
-/// resort the first row's shortest form alone.
+/// (153 x 68 on an iPhone SE). Each row shortens step by step ("Tekrar: 21:40"). When the rows do
+/// not fit at the person's text size, they are tried again one size smaller at a time (AX2, AX1,
+/// xxxLarge, xxLarge, xLarge, then the default size), so a larger text size never shows smaller
+/// text than a smaller one (2026-10-24 images: AX1 and AX3 fell straight to the default size,
+/// below xxxLarge); as a last resort the first row's shortest form alone. Above the default size
+/// the time the default size shows stays: the forms with it are tried first, down to xLarge,
+/// whose type is the default size's ("Tekrar: yarın 09:15", where xxxLarge had "Tekrar: yarın").
 struct ProgressRectangularView: View {
     let entry: ProgressEntry
     var calendar = Calendar.current
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private var colors: WidgetColors { WidgetColors.lockScreen }
 
     var body: some View {
         let rows = ProgressText.rectangular(entry.status, calendar: calendar)
+        // At the default size and below nothing changes (the default size's own choice of form).
+        let timed = dynamicTypeSize > .large ? ProgressRectangularView.keepingTime(rows) : nil
+        // The steps are groups: a modifier on a Group applies to each of its views, and
+        // ViewThatFits tries them one by one, as if they were listed here (LargeWordView).
         ViewThatFits(in: .vertical) {
-            variant(rows, first: .headline, second: .subheadline.weight(.semibold))
-            variant(rows, first: .subheadline.weight(.semibold), second: .subheadline.weight(.semibold))
-            variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
-            variant(rows, first: .headline, second: .subheadline.weight(.semibold))
-                .dynamicTypeSize(...DynamicTypeSize.large)
-            variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
-                .dynamicTypeSize(...DynamicTypeSize.large)
+            if let timed = timed {
+                steps(timed)
+            }
+            steps(rows)
+            Group {
+                variants(rows)
+            }
+            .dynamicTypeSize(...DynamicTypeSize.large)
             // Every first row has a short last form ("Tekrar: 21:40", "Tekrar: yarın", "Lockglow").
             Text(verbatim: rows.first.last ?? "")
                 .font(.subheadline.weight(.semibold))
@@ -103,6 +113,61 @@ struct ProgressRectangularView: View {
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: rows.spoken))
         .widgetTurkishVoice()
+    }
+
+    /// The variants at the person's text size, then one size smaller at a time down to xLarge
+    /// (a step at or above the person's size is the person's size again). AX2 and AX1 hold the
+    /// two rows only on the widest phones; xLarge has the default size's type (`variants`).
+    @ViewBuilder
+    private func steps(_ rows: ProgressText.Rows) -> some View {
+        variants(rows)
+        Group {
+            variants(rows)
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
+        Group {
+            variants(rows)
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+        Group {
+            variants(rows)
+        }
+        .dynamicTypeSize(...WidgetText.largestStandardSize)
+        Group {
+            variants(rows)
+        }
+        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+        Group {
+            variants(rows)
+        }
+        .dynamicTypeSize(...DynamicTypeSize.xLarge)
+    }
+
+    /// One text size's variants, largest type first. The last one at xLarge (17 / 15 pt) is the
+    /// first one at the default size, so a size above it falls to the default size only when the
+    /// default size's own first variant does not fit either.
+    @ViewBuilder
+    private func variants(_ rows: ProgressText.Rows) -> some View {
+        variant(rows, first: .headline, second: .subheadline.weight(.semibold))
+        variant(rows, first: .subheadline.weight(.semibold), second: .subheadline.weight(.semibold))
+        variant(rows, first: .subheadline.weight(.semibold), second: .footnote.weight(.semibold))
+    }
+
+    /// The rows with only the first row's forms that keep the fullest form's time ("Sıradaki
+    /// tekrar: yarın 09:15", "Tekrar: yarın 09:15", not "Tekrar: yarın"). Nil when the fullest form
+    /// has no time ("… şimdi", "Henüz tekrar yok", "Lockglow") or every form keeps it ("Tekrar:
+    /// 21:40"): then the rows themselves are all there is to try.
+    private static func keepingTime(_ rows: ProgressText.Rows) -> ProgressText.Rows? {
+        guard let fullest = rows.first.first,
+              let clock = fullest.range(of: "[0-9]{2}:[0-9]{2}$", options: .regularExpression) else {
+            return nil
+        }
+        let time = String(fullest[clock])
+        let kept = rows.first.filter { $0.hasSuffix(time) }
+        guard !kept.isEmpty, kept.count < rows.first.count else {
+            return nil
+        }
+        return ProgressText.Rows(first: kept, second: rows.second, spoken: rows.spoken)
     }
 
     /// Both rows in these typefaces, each the first of its versions that fits whole; the variant

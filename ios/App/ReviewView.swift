@@ -55,6 +55,14 @@ struct ReviewView: View {
     @State private var summary: [RoundAnswer]?
     /// That round ended with "Bitir" before its last card: the summary says the rest is waiting.
     @State private var summaryEndedEarly = false
+    /// The end of the summary's text (without its bottom margin) and the top edge of its pinned
+    /// buttons in the summary (`"roundSummary"`): while a row runs on under the buttons, their
+    /// strip shows a toolbar's hairline, as on the reminder sheet (finding tekrar-akis-1). Only
+    /// `summaryRunsUnder` is read by `body`: the text's end moves on every frame of a scroll, and
+    /// it must not rebuild the whole Tekrar view (and its next-round lookup) each time.
+    @State private var summaryTextBottom: CGFloat = 0
+    @State private var summaryFooterTop: CGFloat = 0
+    @State private var summaryRunsUnder = false
     /// Counts "Bulamadım / Buldum" answers: one light tick each, nothing else.
     @State private var answerTick = 0
     /// When the card on screen came (the answer time in the local metrics).
@@ -1515,11 +1523,20 @@ struct ReviewView: View {
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
             }
+            // Measured before the bottom margin, as on the reminder sheet: the hairline is for
+            // text under the strip, not for the empty margin.
+            .onGeometryChange(for: CGFloat.self) { geometry in
+                geometry.frame(in: .named("roundSummary")).maxY
+            } action: { newBottom in
+                summaryTextBottom = newBottom
+                updateSummaryEdge()
+            }
             .padding(.horizontal, 16)
             .padding(.top, 6)
             .padding(.bottom, 16)
         }
         .scrollBounceBehavior(.basedOnSize)
+        // The strip insets the page: its last line scrolls up whole above the buttons.
         .safeAreaInset(edge: .bottom, spacing: 0) {
             VStack(spacing: 10) {
                 if let undo = knownUndoToShow {
@@ -1549,6 +1566,29 @@ struct ReviewView: View {
             .padding(.bottom, 12)
             .frame(maxWidth: .infinity)
             .background(Theme.bg)
+            // As a toolbar's edge: a hairline while the word list runs on under the buttons (SE:
+            // a row cut with no edge read as cut off, 2026-10-24 image, finding tekrar-akis-1);
+            // none once the text's end is above them.
+            .overlay(alignment: .top) {
+                if summaryRunsUnder {
+                    RowDivider()
+                }
+            }
+            .onGeometryChange(for: CGFloat.self) { geometry in
+                geometry.frame(in: .named("roundSummary")).minY
+            } action: { newTop in
+                summaryFooterTop = newTop
+                updateSummaryEdge()
+            }
+        }
+        .coordinateSpace(.named("roundSummary"))
+    }
+
+    /// The summary's hairline from its two measures, set only when it turns on or off.
+    private func updateSummaryEdge() {
+        let runsUnder = summaryFooterTop > 0 && summaryTextBottom - summaryFooterTop > 1
+        if runsUnder != summaryRunsUnder {
+            summaryRunsUnder = runsUnder
         }
     }
 
@@ -2437,6 +2477,13 @@ private struct ReminderOfferSheet: View {
     /// toolbar's hairline.
     @State private var textBottom: CGFloat = 0
     @State private var footerTop: CGFloat = 0
+    /// Where the footnote starts in the sheet without the added space, its height, the height of
+    /// one footnote line, and the space added above it (negative: taken away) so that at rest the
+    /// strip's edge falls between two of its lines (`alignFootnote`).
+    @State private var footnoteTop: CGFloat = 0
+    @State private var footnoteHeight: CGFloat = 0
+    @State private var footnoteLine: CGFloat = 0
+    @State private var footnoteDrop: CGFloat = 0
 
     private struct Moment {
         let title: String
@@ -2512,6 +2559,39 @@ private struct ReminderOfferSheet: View {
                         .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        // One line of the footnote: the step between its lines.
+                        .background {
+                            Text(verbatim: "A")
+                                .font(.footnote)
+                                .hidden()
+                                .accessibilityHidden(true)
+                                .onGeometryChange(for: CGFloat.self) { geometry in
+                                    geometry.size.height
+                                } action: { newHeight in
+                                    footnoteLine = newHeight
+                                    alignFootnote()
+                                }
+                        }
+                        .onGeometryChange(for: CGFloat.self) { geometry in
+                            geometry.size.height
+                        } action: { newHeight in
+                            footnoteHeight = newHeight
+                            alignFootnote()
+                        }
+                        .padding(.top, footnoteDrop)
+                        // Measured outside the added space: where the footnote would start
+                        // without it.
+                        .onGeometryChange(for: CGFloat.self) { geometry in
+                            geometry.frame(in: .named("reminderSheet")).minY
+                        } action: { newTop in
+                            // Aligned on its first place only, with the page at rest: later
+                            // places move with the scrolling page (see `alignFootnote`).
+                            let isFirst = footnoteTop == 0
+                            footnoteTop = newTop
+                            if isFirst {
+                                alignFootnote()
+                            }
+                        }
                     // At accessibility sizes the answers scroll with the page: a pinned strip
                     // that tall would take over an SE's screen.
                     if dynamicTypeSize.isAccessibilitySize {
@@ -2568,6 +2648,7 @@ private struct ReminderOfferSheet: View {
                         geometry.frame(in: .named("reminderSheet")).minY
                     } action: { newTop in
                         footerTop = newTop
+                        alignFootnote()
                     }
             }
         }
@@ -2603,6 +2684,30 @@ private struct ReminderOfferSheet: View {
             return [.height(height + footer)]
         }
         return [.large]
+    }
+
+    /// On a short screen (SE) the sheet is as tall as it can be and the strip covers the page's
+    /// end. At rest its edge must not stop inside a line of the footnote: on the 2026-10-24 SE
+    /// image it sat on the first line's baseline, the descenders were cut and "Ayarlar" read
+    /// "Avarlar" (finding tekrar-akis-2). The footnote moves to the nearer line boundary, at most
+    /// half a line: down when the edge is in the line's upper half (that line goes under the
+    /// strip), up when it is in the lower half (that line shows whole above it; the SE case, ~3
+    /// pt). The edge then falls 1 pt into the next line's empty top, clear of the descenders
+    /// above it, with no hole over the strip and the gap after "Saat" near its 20 pt; the page
+    /// still scrolls to every line. A bottom margin would not move that edge: it comes from the
+    /// sheet's height, with the page at rest. Worked out when the strip or the text size
+    /// changes, not while the page scrolls (the footnote's frame then moves with it).
+    private func alignFootnote() {
+        guard footerTop > 0, footnoteTop > 0, footnoteHeight > 0, footnoteLine > 0 else {
+            return
+        }
+        let shown = footerTop - footnoteTop
+        guard !dynamicTypeSize.isAccessibilitySize, shown > 0, shown < footnoteHeight else {
+            footnoteDrop = 0
+            return
+        }
+        let cut = shown.truncatingRemainder(dividingBy: footnoteLine)
+        footnoteDrop = cut <= footnoteLine / 2 ? cut - 1 : cut - footnoteLine - 1
     }
 
     /// The picker edits the chosen minute; a moment row then shows as chosen again only when the

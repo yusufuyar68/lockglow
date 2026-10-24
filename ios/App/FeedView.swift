@@ -51,7 +51,9 @@ struct FeedView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            // Over the pager, whose cards draw past its top edge (`titleVeil`).
             header
+                .zIndex(1)
             if model.feedWords.isEmpty {
                 emptyState
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -127,6 +129,26 @@ struct FeedView: View {
             .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
             .padding(.horizontal, 16)
             .padding(.top, FeedView.titleTopGap)
+            .background {
+                titleVeil
+            }
+    }
+
+    /// The pager does not clip its cards (`scrollClipDisabled`), so their light-mode shadow
+    /// (cardSurface: 14 pt radius, 10 pt down) is not cut flat 4 pt above the card (finding
+    /// tekrar-akis-3). Behind the title lies the page's paper instead, over the page above; its
+    /// last `pageBottomGap` (where the card above stops) fades out down to the pager's top edge,
+    /// so the shadows there end softly rather than at a hard line. Wider than the title for the
+    /// iPad's readable column, where the card above's side shadow reaches past the column.
+    private var titleVeil: some View {
+        VStack(spacing: 0) {
+            Theme.bg
+            LinearGradient(colors: [Theme.bg, Theme.bg.opacity(0)], startPoint: .top, endPoint: .bottom)
+                .frame(height: FeedView.pageBottomGap)
+        }
+        .padding(.horizontal, -48)
+        .ignoresSafeArea(edges: .top)
+        .accessibilityHidden(true)
     }
 
     private var pager: some View {
@@ -144,6 +166,8 @@ struct FeedView: View {
         .modifier(FeedPagingModifier(isEnabled: isPaged))
         .scrollPosition(id: $scrolledWordID)
         .scrollIndicators(isPaged ? .hidden : .automatic)
+        // The cards' shadow reaches past the page; `titleVeil` hides what is above the pager.
+        .scrollClipDisabled()
         .onChange(of: scrolledWordID) { oldID, newID in
             noteCardChange(from: oldID, to: newID)
             noteCurrentCard()

@@ -12,13 +12,17 @@ import CoreModels
 /// line under it, and the Turkish meaning in SF semibold (15 pt) in a darker gray. No third row:
 /// the English definition is not shown here. The family is 160 x 72 pt (153 x 68 on an iPhone SE).
 /// As on the home widgets, every line is shown whole or not at all: the meaning first tries its
-/// shorter forms (`WidgetGloss`), and only when none fits is it left out. From xLarge to xxxLarge a
-/// meaning that does not fit at the person's text size is shown at the default size instead, with
-/// the word. In the accessibility sizes the word stands alone when it fits at a scaled size, which
-/// is always larger than at the default size; when it does not, the word and its meaning are shown
-/// at the default size (ogrenme_ilkeleri 2.1). It is never shown alone at an unscaled 15 pt while
-/// a meaning would fit. On the Always-On display the text keeps its gray levels; the system dims
-/// the screen.
+/// shorter forms (`WidgetGloss`), and only when none fits is it left out. Above the default size
+/// the word grows with the text size beside its meaning and never stands below it. When the word
+/// and its meaning do not fit at the person's text size, the variants are tried again one text
+/// size smaller at a time (AX4, AX3, AX2, AX1, xxxLarge, xxLarge, xLarge), then at the default
+/// size, so the widget shows the largest text size at which the word and its meaning fit: never
+/// straight down to the default size (the 2026-10-24 AX3 images were the default size, smaller
+/// than AX1 and xxxLarge), and in the accessibility sizes never the word alone while a smaller
+/// size keeps the meaning (AX1 left out the meaning that xxxLarge kept; this replaces the word
+/// alone of ogrenme_ilkeleri 2.1). The word stands alone only when its meaning fits in no form,
+/// even at the default size. On the Always-On display the text keeps its gray levels; the system
+/// dims the screen.
 struct RectangularWordView: View {
     let entry: WordEntry
     /// The widget's content margins (`widgetContentMargins`).
@@ -31,31 +35,20 @@ struct RectangularWordView: View {
 
     var body: some View {
         ViewThatFits(in: .vertical) {
-            rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1])
-            // A long meaning without a short form (the user's own words have none; every card's
-            // meaning over 16 characters has `gloss_short`): the whole meaning on two lines
-            // rather than no meaning ("bir şeyden / bıkmış olmak").
-            rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [2])
-            // At the person's size the word grows with the text size beside a meaning: never an
-            // unscaled 15 pt word under a larger meaning (the 2026-10-22 images showed
-            // "misunderstanding" smaller than "yanlış anlaşılma" at xxxLarge).
-            rows(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.semibold), lines: [1])
-            rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
-            // The accessibility sizes (ogrenme_ilkeleri 2.1): the word alone, but only at a scaled
-            // step, so it is larger than at the default size. The padding holds the band line
-            // under the last line, which hangs below the text frame.
-            if dynamicTypeSize.isAccessibilitySize {
-                WidgetFittingWord(
-                    lemma: word.lemma,
-                    steps: WidgetWordStep.homeFloorScaled,
-                    colors: colors,
-                    renderingMode: renderingMode
-                )
-                .padding(.bottom, 4)
-            }
-            // Otherwise the default text size, which draws exactly the default layout: the word
-            // and its meaning stay together (from xLarge up, and in the accessibility sizes when
-            // the larger word does not fit).
+            variants(at: dynamicTypeSize)
+            // The person's size leaves no room for the word and its meaning: the same variants one
+            // text size smaller at a time, so a larger size never drops straight to the default
+            // size nor leaves the meaning out while a smaller size keeps it.
+            smallerSizes
+            // Nothing fits even at xLarge: the default text size, which draws exactly the default
+            // layout, so the word and its meaning stay together. The 17 pt word comes first on its
+            // own: at the default size and below it is the 17 pt step of the next variant, which
+            // it draws the same way, so the default layout is unchanged.
+            rows([WidgetWordStep(size: 17)], meaning: .subheadline.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(...DynamicTypeSize.large)
+            // xLarge's 16.5 pt word over a 15 pt meaning: after the default 17 pt word over the
+            // same meaning, before the default 15 pt word (`footnoteVariant`).
+            footnoteVariant(at: .xLarge)
             rows(WidgetWordStep.lockScreen, meaning: .subheadline.weight(.semibold), lines: [1, 2])
                 .dynamicTypeSize(...DynamicTypeSize.large)
             rows(WidgetWordStep.homeFloor, meaning: .subheadline.weight(.semibold), lines: [1])
@@ -72,6 +65,72 @@ struct RectangularWordView: View {
         .widgetWordChange(id: word.id, lockScreen: true)
         .padding(margins)
         .widgetTurkishVoice()
+    }
+
+    /// The variants at the text size `size`, the size they are drawn at, fullest first. At the
+    /// default size and below they are those of the default layout. Above it the word grows with
+    /// the text size beside the meaning and never stands below it (the 2026-10-22 images showed
+    /// "misunderstanding" smaller than "yanlış anlaşılma" at xxxLarge): the 15 pt step, scaled or
+    /// not, is smaller than a `.subheadline` meaning there (xxxLarge 19.5 pt under 21 pt: "lost and
+    /// found"; AX1 23.25 pt under 25 pt: "I can't wait"), so beside that meaning the word keeps its
+    /// 17 pt step, and the 15 pt step takes the `.footnote` meaning (xxxLarge 19 pt, AX1 23 pt). In
+    /// the standard sizes that variant comes later (`footnoteVariant`).
+    @ViewBuilder
+    private func variants(at size: DynamicTypeSize) -> some View {
+        let wordSteps = size <= .large ? WidgetWordStep.lockScreen : [WidgetWordStep(size: 17)]
+        rows(wordSteps, meaning: .subheadline.weight(.semibold), lines: [1])
+        // A long meaning without a short form (the user's own words have none; every card's
+        // meaning over 16 characters has `gloss_short`): the whole meaning on two lines
+        // rather than no meaning ("bir şeyden / bıkmış olmak").
+        rows(wordSteps, meaning: .subheadline.weight(.semibold), lines: [2])
+        if size <= .large {
+            rows(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.semibold), lines: [1])
+        }
+        if size <= .large || size.isAccessibilitySize {
+            rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
+        }
+    }
+
+    /// The variants again at each text size between the person's and the default one, largest
+    /// first. A size that is not smaller than the person's adds nothing (those variants were
+    /// tried at the person's size). The retries are groups: a modifier on a Group applies to each
+    /// of its views, and ViewThatFits tries them one by one, as if they were listed in `body`.
+    @ViewBuilder
+    private var smallerSizes: some View {
+        smallerVariants(at: .accessibility4)
+        smallerVariants(at: .accessibility3)
+        smallerVariants(at: .accessibility2)
+        smallerVariants(at: .accessibility1)
+        smallerVariants(at: .xxxLarge)
+        smallerVariants(at: .xxLarge)
+        footnoteVariant(at: .xxxLarge)
+        smallerVariants(at: .xLarge)
+        footnoteVariant(at: .xxLarge)
+    }
+
+    /// The variants drawn at `size` when it is smaller than the person's text size; else nothing.
+    @ViewBuilder
+    private func smallerVariants(at size: DynamicTypeSize) -> some View {
+        if size < dynamicTypeSize {
+            Group {
+                variants(at: size)
+            }
+            .dynamicTypeSize(size)
+        }
+    }
+
+    /// The 15 pt step over the `.footnote` meaning at a standard size above the default one
+    /// (xLarge to xxxLarge), when the person's size is at least that size; else nothing. It comes
+    /// after the variants one size smaller: there the 17 pt step stands over a `.subheadline`
+    /// meaning of the same size and is larger (xxLarge 20.4 pt over 19 pt before xxxLarge's 19.5
+    /// pt over 19 pt; the default 17 pt over 15 pt before xLarge's 16.5 pt over 15 pt), so a larger
+    /// size never shows a smaller word over the same meaning.
+    @ViewBuilder
+    private func footnoteVariant(at size: DynamicTypeSize) -> some View {
+        if size <= dynamicTypeSize {
+            rows(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.semibold), lines: [1, 2])
+                .dynamicTypeSize(size)
+        }
     }
 
     /// One layout variant: the word at the first of `steps` that fits and the meaning in

@@ -15,8 +15,9 @@ import SharedState
 // allow = izin vermek") and the example sentence, whole on up to three lines.
 // After the answer the options are no longer buttons: the right one has a check and a `good` box,
 // a wrong pick a cross in a quiet color and the paper's box, the third one is quiet; the line on
-// top says it in words ("Doğru." / "Doğrusu: ödünç almak"), so the meaning never rests on color
-// (rule 4). No red anywhere: the widget's tone never changes (ogrenme_ilkeleri 2.1).
+// top says it in words ("Doğru." / "Doğrusu: ödünç almak", in the form the right option shows,
+// `QuizNaming`), so the meaning never rests on color (rule 4). No red anywhere: the widget's tone
+// never changes (ogrenme_ilkeleri 2.1).
 // Larger text sizes: the layouts are vertical ViewThatFits variants, fullest first, like the word
 // widget's: the options at 15 pt, then 13 pt on more lines, then the same at the largest standard
 // size, then at the default size, where the last variant may shrink a long word to 11 pt rather
@@ -103,23 +104,61 @@ enum QuizText {
     }
 
     /// The line on top, fullest first: the question; after the answer "Doğru." or "Doğrusu: …"
-    /// with the whole meaning, then its short form, each on one line, then "Doğrusu işaretli." on
-    /// one line, else on two ("Doğrusu" / "işaretli."), so a large text size wraps it instead of
-    /// dropping the layout to the default size.
+    /// with the right option's forms (`forms`: the whole meaning, then its short form), each on one
+    /// line, then "Doğrusu işaretli." on one line, else on two ("Doğrusu" / "işaretli."), so a
+    /// large text size wraps it instead of dropping the layout to the default size. A layout shows
+    /// only the part its `QuizNaming` allows (`status(of:naming:)`).
     static func status(of screen: WidgetQuizScreen) -> [[String]] {
+        guard screen.isAnswered, !screen.isRight else {
+            return status(of: screen, naming: .marked)
+        }
+        return answerForms(of: screen.item).map { ["\(answerLead) \($0)"] } + status(of: screen, naming: .marked)
+    }
+
+    /// The line on top as `naming` allows it after a wrong pick; the question and "Doğru." as they
+    /// are. A named form is on one line, else "Doğrusu:" over the form; none when the right option
+    /// has no such form (its variant is then passed over).
+    static func status(of screen: WidgetQuizScreen, naming: QuizNaming) -> [[String]] {
         guard screen.isAnswered else {
             return [[question]]
         }
         if screen.isRight {
             return [[right]]
         }
-        let item = screen.item
-        var forms = [item.answer ?? ""]
-        if let short = item.shortOption(at: item.answerIndex) {
-            forms.append(short)
+        let forms = answerForms(of: screen.item)
+        let marked = WidgetText.candidates([markedFallback], lines: [1, 2])
+        switch naming {
+        case .form(let index):
+            guard forms.indices.contains(index) else {
+                return []
+            }
+            return [["\(answerLead) \(forms[index])"], [answerLead, forms[index]]]
+        case .wholeOrMarked:
+            return forms.prefix(1).map { ["\(answerLead) \($0)"] } + marked
+        case .marked:
+            return marked
         }
-        return WidgetText.candidates(forms.map { "Doğrusu: \($0)" }, lines: [1])
-            + WidgetText.candidates([markedFallback], lines: [1, 2])
+    }
+
+    private static let answerLead = "Doğrusu:"
+
+    /// The right option's forms, fullest first (`forms`); none for a damaged question.
+    static func answerForms(of item: WidgetQuizItem) -> [String] {
+        guard item.options.indices.contains(item.answerIndex) else {
+            return []
+        }
+        return forms(of: item, at: item.answerIndex)
+    }
+
+    /// The indices of an option's `candidates` (`WidgetText.candidates(forms, lines:)`) that are
+    /// not lines of its form at `index`: what the right option may not show while the line on top
+    /// names that form. None when `index` is nil.
+    static func refused(_ candidates: [[String]], keeping index: Int?, of forms: [String], lines: [Int]) -> Set<Int> {
+        guard let index = index else {
+            return []
+        }
+        let kept = forms.indices.contains(index) ? WidgetText.candidates([forms[index]], lines: lines) : []
+        return Set(candidates.indices.filter { !kept.contains(candidates[$0]) })
     }
 
     /// What VoiceOver reads for the line on top: always the whole meaning after a wrong pick, also
@@ -161,6 +200,30 @@ enum QuizText {
         WidgetWordStep(size: 20, lines: 2),
         WidgetWordStep(size: 17, lines: 2),
     ]
+}
+
+/// What the line on top may name after a wrong pick: the right meaning only in the form its
+/// option shows, so the two never disagree (2026-10-24 images: "Doğrusu: hemfikir olmamak" over
+/// the option "aynı fikirde olmamak" on the medium widget).
+enum QuizNaming: Equatable {
+    /// The right option's form at this index (`QuizText.answerForms`); the right option then shows
+    /// only that form (`QuizText.refused`). When either does not fit, the variant is passed over:
+    /// the medium widget tries each form, then `marked`, at the same option size.
+    case form(Int)
+    /// The whole meaning on one line, else `marked` (the large widget). Its option rows are wider
+    /// than the line on top and their type is no smaller, so a whole meaning that fits on top fits
+    /// its option on one line, the form the option shows first.
+    case wholeOrMarked
+    /// "Doğrusu işaretli." only.
+    case marked
+
+    /// The index `form` names; nil for the others.
+    var formIndex: Int? {
+        if case .form(let index) = self {
+            return index
+        }
+        return nil
+    }
 }
 
 /// How an option looks after the answer.
@@ -215,18 +278,18 @@ struct QuizMediumView: View {
         Group {
             if let screen = entry.screen {
                 ViewThatFits(in: .vertical) {
-                    layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
-                    layout(screen, option: .footnote.weight(.semibold), lines: [1, 2, 3])
+                    layouts(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
+                    layouts(screen, option: .footnote.weight(.semibold), lines: [1, 2, 3])
                     // The person's size leaves no room: the largest standard size.
                     Group {
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
-                        layout(screen, option: .footnote.weight(.semibold), lines: [1, 2, 3])
+                        layouts(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
+                        layouts(screen, option: .footnote.weight(.semibold), lines: [1, 2, 3])
                     }
                     .dynamicTypeSize(...WidgetText.largestStandardSize)
                     // Then the default size; the content area does not grow with the text size.
                     Group {
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
-                        layout(screen, option: .footnote.weight(.semibold), lines: [1, 2], lastResort: true)
+                        layouts(screen, option: .subheadline.weight(.semibold), lines: [1, 2])
+                        layouts(screen, option: .footnote.weight(.semibold), lines: [1, 2], lastResort: true)
                     }
                     .dynamicTypeSize(...DynamicTypeSize.large)
                 }
@@ -238,16 +301,30 @@ struct QuizMediumView: View {
         .widgetTurkishVoice()
     }
 
+    /// One layout after a wrong pick with each line on top in turn (`QuizNaming`): "Doğrusu: …"
+    /// in each form of the right meaning, kept only where its option shows that form, then
+    /// "Doğrusu işaretli."; the options keep their size and form throughout. Otherwise the one
+    /// layout.
+    @ViewBuilder
+    private func layouts(_ screen: WidgetQuizScreen, option: Font, lines: [Int], lastResort: Bool = false) -> some View {
+        if screen.isAnswered && !screen.isRight {
+            layout(screen, option: option, lines: lines, naming: .form(0), lastResort: lastResort)
+            layout(screen, option: option, lines: lines, naming: .form(1), lastResort: lastResort)
+        }
+        layout(screen, option: option, lines: lines, naming: .marked, lastResort: lastResort)
+    }
+
     /// One layout variant: the top row, then the options at `option` on the first of `lines` line
     /// counts that fits. With `lastResort` nothing is passed over (the last variant): a word or an
-    /// option may then shrink to 11 pt.
-    private func layout(_ screen: WidgetQuizScreen, option: Font, lines: [Int], lastResort: Bool = false) -> some View {
+    /// option may then shrink to 11 pt; a named form on top never does (`QuizTopRow`).
+    private func layout(_ screen: WidgetQuizScreen, option: Font, lines: [Int], naming: QuizNaming, lastResort: Bool = false) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             QuizTopRow(
                 screen: screen,
                 steps: lastResort ? WidgetWordStep.mediumWidget : QuizText.mediumWord,
                 showsIPA: false,
                 status: .footnote.weight(.semibold),
+                naming: naming,
                 lastResort: lastResort,
                 compactNext: true,
                 source: .systemMedium,
@@ -263,6 +340,7 @@ struct QuizMediumView: View {
                         typeface: option,
                         lines: lines,
                         lastResort: lastResort ? QuizText.floorScale13 : nil,
+                        naming: naming,
                         source: .systemMedium,
                         colors: colors
                     )
@@ -327,11 +405,15 @@ struct QuizLargeView: View {
 
     /// One text size's variants, fullest first. After the answer the example gives way first; the
     /// wrong pick's line ("Senin seçtiğin: allow = izin vermek", what the wrong meaning is in
-    /// English) then takes one line without its lead ("allow = izin vermek"), then the options get
-    /// smaller, and only then is that line left out (no form of it fits at this size). When the
-    /// "Devam" capsule leaves the word too little room (a long word), the round "Devam" of the
-    /// medium widget comes before shorter lines (2026-10-24 images: "misunderstanding" fell to the
-    /// last variant); above the default size "Devam" is always round (`QuizTopRow`).
+    /// English) then takes one line with a shorter lead ("Seçtiğin: allow = izin vermek"), else
+    /// without one ("allow = izin vermek"), and then is left out (no form of it fits beside Body
+    /// options). The options get smaller only where Body has no room even without that line, as
+    /// in the question, so an answer keeps the options' size and form (2026-10-24 images: after a
+    /// wrong pick at AX1 the options fell to Subheadline and to whole meanings the question had
+    /// not shown). When the "Devam" capsule leaves the word too little room (a long word), the
+    /// round "Devam" of the medium widget comes before shorter lines (2026-10-24 images:
+    /// "misunderstanding" fell to the last variant); above the default size "Devam" is always
+    /// round (`QuizTopRow`).
     @ViewBuilder
     private func ladder(_ screen: WidgetQuizScreen) -> some View {
         // With the wrong pick's line (a right answer and a question have none).
@@ -342,7 +424,6 @@ struct QuizLargeView: View {
             layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .whole, example: true, compactNext: true)
             layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .whole, compactNext: true)
             layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .oneLine, compactNext: true)
-            layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3], picked: .oneLine)
         }
         // Without it; the example still fills its room. The round "Devam" without the example
         // too, so a long word does not drop to the last variant when the example has no room.
@@ -350,6 +431,9 @@ struct QuizLargeView: View {
         layout(screen, option: .body.weight(.semibold), lines: [1, 2], example: true, compactNext: true)
         layout(screen, option: .body.weight(.semibold), lines: [1, 2])
         layout(screen, option: .body.weight(.semibold), lines: [1, 2], compactNext: true)
+        // Subheadline options, the wrong pick's line again first.
+        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3], picked: .whole)
+        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3], picked: .oneLine)
         layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
     }
 
@@ -371,6 +455,7 @@ struct QuizLargeView: View {
                 steps: lastResort ? QuizText.largeWord + [WidgetWordStep(size: 15, lines: 2, scales: false)] : QuizText.largeWord,
                 showsIPA: true,
                 status: .subheadline.weight(.semibold),
+                naming: .wholeOrMarked,
                 lastResort: lastResort,
                 compactNext: compactNext,
                 source: .systemLarge,
@@ -386,6 +471,7 @@ struct QuizLargeView: View {
                         typeface: option,
                         lines: lines,
                         lastResort: lastResort ? QuizText.floorScale15 : nil,
+                        naming: .wholeOrMarked,
                         source: .systemLarge,
                         colors: colors
                     )
@@ -431,6 +517,8 @@ private struct QuizTopRow: View {
     let steps: [WidgetWordStep]
     let showsIPA: Bool
     let status: Font
+    /// What the line on top may name after a wrong pick.
+    let naming: QuizNaming
     let lastResort: Bool
     let compactNext: Bool
     let source: WidgetEventSource
@@ -443,10 +531,12 @@ private struct QuizTopRow: View {
         HStack(alignment: .top, spacing: 6) {
             VStack(alignment: .leading, spacing: 1) {
                 QuizFittingText(
-                    candidates: QuizText.status(of: screen),
+                    candidates: QuizText.status(of: screen, naming: naming),
                     typeface: status,
                     color: screen.isAnswered ? colors.base.ink : colors.base.ink2,
-                    lastResort: lastResort ? QuizText.floorScale13 : nil,
+                    // A named form is whole or its variant is passed over; only the last line
+                    // otherwise ("Doğrusu" / "işaretli.") may shrink.
+                    lastResort: lastResort && naming.formIndex == nil ? QuizText.floorScale13 : nil,
                     spoken: QuizText.spokenStatus(of: screen)
                 )
                 if showsIPA {
@@ -510,6 +600,8 @@ private struct QuizOptionButton: View {
     let lines: [Int]
     /// The last variant's smallest scale (11 pt over the typeface's size); nil elsewhere.
     let lastResort: CGFloat?
+    /// The line on top's naming: the right option then shows only the form it names.
+    let naming: QuizNaming
     let source: WidgetEventSource
     let colors: QuizColors
 
@@ -537,12 +629,17 @@ private struct QuizOptionButton: View {
 
     @ViewBuilder
     private var face: some View {
+        let forms = QuizText.forms(of: screen.item, at: index)
+        let candidates = WidgetText.candidates(forms, lines: lines)
+        // The right option shows only the form the line on top names (`QuizNaming.form`).
+        let named: Int? = mark == .right ? naming.formIndex : nil
         let text = QuizFittingText(
-            candidates: WidgetText.candidates(QuizText.forms(of: screen.item, at: index), lines: lines),
+            candidates: candidates,
             typeface: typeface,
             color: mark == .quiet ? colors.base.ink2 : colors.base.ink,
             alignment: layout == .column ? .center : .leading,
-            lastResort: lastResort
+            lastResort: lastResort,
+            refused: QuizText.refused(candidates, keeping: named, of: forms, lines: lines)
         )
         switch layout {
         case .column:
@@ -678,22 +775,25 @@ private struct QuizNextButton: View {
 /// (`gloss_short`, as the option itself shortens), on one line; then, as `form` asks, on two lines
 /// ("Senin seçtiğin:" over "allow = izin vermek", then for a pair too wide for a line, a long
 /// phrase at a large text size, the pair itself on two: "under the weather =" over "biraz
-/// rahatsız") or on one line without the lead, as the app's `ReviewWordLine` writes it without
-/// one. When none fits, the variant is passed over (`WidgetFit.reject`). VoiceOver: "Senin
-/// seçtiğin: izin vermek. İngilizcesi:" in Turkish, then the word in English, whichever form is
-/// shown.
+/// rahatsız") or on one line with the shorter lead ("Seçtiğin: allow = izin vermek"), else without
+/// one, as the app's `ReviewWordLine` writes it. When none fits, the variant is passed over
+/// (`WidgetFit.reject`). VoiceOver: "Senin seçtiğin: izin vermek. İngilizcesi:" in Turkish, then
+/// the word in English, whichever form is shown.
 private struct QuizPickedLine: View {
     /// The forms a layout variant tries after the one-line ones.
     enum Form {
         /// Two lines: the lead over the pair, else the pair broken after "=".
         case whole
-        /// One line without the lead, where two lines leave no room.
+        /// One line, where two lines leave no room: the shorter lead, else none.
         case oneLine
     }
 
     /// Where the lead "Senin seçtiğin:" goes.
     private enum Lead {
         case inline
+        /// Its shorter form before the pair: "Seçtiğin: allow = izin vermek" (2026-10-24 images:
+        /// at AX1 the line had no lead and did not say whose choice it was).
+        case inlineShort
         case above
         case omitted
         /// Left out, and the pair on two lines: "under the weather =" over "biraz rahatsız".
@@ -708,6 +808,7 @@ private struct QuizPickedLine: View {
     let colors: QuizColors
 
     private static let lead = "Senin seçtiğin:"
+    private static let shortLead = "Seçtiğin:"
 
     init?(screen: WidgetQuizScreen, form: Form, colors: QuizColors) {
         guard let choice = screen.choice, !screen.isRight, screen.item.options.indices.contains(choice),
@@ -723,8 +824,8 @@ private struct QuizPickedLine: View {
 
     var body: some View {
         let short = shortOption ?? option
-        let last: Lead = form == .whole ? .above : .omitted
-        // A one-line variant keeps to one line (these two repeat its last forms).
+        let last: Lead = form == .whole ? .above : .inlineShort
+        // A one-line variant keeps to one line: without a lead last.
         let wrapped: Lead = form == .whole ? .omittedPairWrapped : .omitted
         ViewThatFits(in: .horizontal) {
             line(lead: .inline, meaning: option)
@@ -746,6 +847,8 @@ private struct QuizPickedLine: View {
         switch lead {
         case .inline:
             first = Text("\(QuizPickedLine.lead) \(word) = \(meaning)")
+        case .inlineShort:
+            first = Text("\(QuizPickedLine.shortLead) \(word) = \(meaning)")
         case .above, .omitted:
             first = Text("\(word) = \(meaning)")
         case .omittedPairWrapped:
@@ -798,7 +901,8 @@ private struct QuizEmptyView: View {
 /// candidate (a list of lines) whose every line fits on one line. When none fits the variant
 /// around it is passed over (`WidgetFit.reject`); with `lastResort` (the smallest scale) the last
 /// candidate is shown and may shrink, at most to that scale, instead. `spoken` replaces what
-/// VoiceOver reads (the lines shown, otherwise).
+/// VoiceOver reads (the lines shown, otherwise). `refused`: the indices of candidates this variant
+/// may not show; when the first that fits is one of them, the variant is passed over too.
 struct QuizFittingText: View {
     let candidates: [[String]]
     let typeface: Font
@@ -806,9 +910,10 @@ struct QuizFittingText: View {
     var alignment: HorizontalAlignment = .leading
     var lastResort: CGFloat? = nil
     var spoken: String? = nil
+    var refused: Set<Int> = []
 
     var body: some View {
-        let slots = WidgetFit.slots(candidates)
+        let slots = WidgetFit.slots(Array(candidates.indices))
         if slots.isEmpty {
             if lastResort == nil {
                 WidgetFit.reject
@@ -819,18 +924,30 @@ struct QuizFittingText: View {
             }
         } else {
             ViewThatFits(in: .horizontal) {
-                lines(slots[0])
-                lines(slots[1])
-                lines(slots[2])
-                lines(slots[3])
-                lines(slots[4])
-                lines(slots[5])
+                candidate(slots[0])
+                candidate(slots[1])
+                candidate(slots[2])
+                candidate(slots[3])
+                candidate(slots[4])
+                candidate(slots[5])
                 if let scale = lastResort {
-                    lines(slots[5], minimumScale: scale)
+                    candidate(slots[5], minimumScale: scale)
                 } else {
                     WidgetFit.reject
                 }
             }
+        }
+    }
+
+    /// Candidate `index`; a refused one as tall as `WidgetFit.reject`: chosen when it fits the
+    /// width, it makes the vertical ViewThatFits around pass its variant over.
+    @ViewBuilder
+    private func candidate(_ index: Int, minimumScale: CGFloat = 1) -> some View {
+        if refused.contains(index) {
+            lines(candidates[index], minimumScale: minimumScale)
+                .frame(height: 100_000, alignment: .top)
+        } else {
+            lines(candidates[index], minimumScale: minimumScale)
         }
     }
 

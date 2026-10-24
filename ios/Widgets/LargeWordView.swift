@@ -32,14 +32,17 @@ import CoreModels
 // line is shown whole or not at all, never cut with "…" and never broken inside a word. The card
 // shortens from its end (README rule 5): the next change gives way first, then the examples drop
 // to one line, the second example goes, then the pronunciation, the first example, the warning and
-// the definition. The warning takes one line when it fits and two otherwise; it stays longer than
+// the definition; when a line has gone, the next change comes back if it fits in its place. The
+// warning takes one line when it fits and two otherwise; it stays longer than
 // the examples, as the card's warning slot comes before its further examples (ogrenme_ilkeleri
 // 2.2). Only then does the meaning shorten (`WidgetGloss`) and get
-// smaller (ogrenme_ilkeleri 2.2: nothing hides the meaning before the definition). When nothing
-// fits at the person's text size, the whole ladder (`ladder`: the fullest layouts, then the
-// shorter and smaller meaning) is tried again at AX1 and at xxxLarge, so a larger text size never
-// shows less than AX1 shows; then the smaller meaning at the default size, as on the medium
-// widget, so the meaning stays at every text size; the word alone is the last resort.
+// smaller (ogrenme_ilkeleri 2.2: nothing hides the meaning before the definition). Above AX1 each
+// variant of the ladder (`ladder`: the fullest layouts, then the shorter and smaller meaning) is
+// tried at the person's size and at each accessibility size down to AX1 before the next one
+// (`WidgetText.stepped`), so a larger text size never shows less than AX1 shows. When nothing
+// fits at those sizes, the whole ladder is tried again at xxxLarge, then the smaller meaning one
+// size smaller at a time down to the default size, as on the medium widget, so the meaning stays
+// at every text size; the word alone is the last resort.
 
 /// How far the button row reaches into the side margins (`buttonGroupOverflow` on the small and
 /// medium widgets): the circles sit 16 - 10 + 5 = 11 pt from the side edges.
@@ -72,6 +75,8 @@ struct LargeWordView: View {
     var showsBackground: Bool? = nil
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.showsWidgetContainerBackground) private var environmentShowsBackground
+    /// The person's text size (`WidgetText.stepped`).
+    @Environment(\.dynamicTypeSize) private var textSize
     private var word: WidgetWord { entry.word }
     private var mode: WidgetRenderingMode { renderingMode ?? environmentRenderingMode }
     private var paper: Bool { showsBackground ?? environmentShowsBackground }
@@ -90,20 +95,30 @@ struct LargeWordView: View {
             // The retries are groups: a modifier on a Group applies to each of its views, and
             // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
-                ladder
-                // Above AX1: AX1's whole ladder first, so a larger size never shows smaller text
-                // or fewer lines than AX1 (the 2026-10-24 AX3 images had only the word and the
-                // meaning where AX1 also had the definition).
-                Group {
-                    ladder
+                // Above AX1 each variant at the person's size and at each accessibility size down
+                // to AX1 before the next one (`WidgetText.stepped`), so a larger size never shows
+                // fewer lines than AX1 (the 2026-10-24 AX3 images had only the word and the
+                // meaning, or a shortened meaning, where AX1 also had the definition and the
+                // warning).
+                ladder(steppingFrom: textSize)
+                if textSize > WidgetText.largestStandardSize {
+                    Group {
+                        ladder(steppingFrom: WidgetText.largestStandardSize)
+                    }
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
                 }
-                .dynamicTypeSize(...DynamicTypeSize.accessibility1)
-                Group {
-                    ladder
+                // Nothing fits even at xxxLarge: the smaller meaning at xxLarge, at xLarge, then
+                // at the default size (a step at or above the person's size would be the person's
+                // size again). The text area does not grow with the text size: at the default size
+                // this draws the default layout, which has the meaning.
+                if textSize > DynamicTypeSize.xxLarge {
+                    column(meaning: LargeWordView.smallMeaningFont)
+                        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
                 }
-                .dynamicTypeSize(...WidgetText.largestStandardSize)
-                // The text area does not grow with the text size: at the default size this draws
-                // the default layout, which has the meaning.
+                if textSize > DynamicTypeSize.xLarge {
+                    column(meaning: LargeWordView.smallMeaningFont)
+                        .dynamicTypeSize(...DynamicTypeSize.xLarge)
+                }
                 column(meaning: LargeWordView.smallMeaningFont)
                     .dynamicTypeSize(...DynamicTypeSize.large)
                 wordRow(lastResort: true)
@@ -123,20 +138,35 @@ struct LargeWordView: View {
     /// One text size's ladder, fullest first: the whole meaning with its optional lines, then the
     /// meaning's shorter forms, then the smaller meaning. The definition is never kept with a
     /// shortened meaning (ogrenme_ilkeleri 2.2: the definition goes before the meaning shortens).
+    /// Each step first with "Yeni kelime", as on the medium widget: a line that gives way leaves
+    /// its place to the next change, never a hole it would fit in (the 2026-10-24 images: "Could
+    /// you tell me the way to" on an iPhone SE without its second example and "Yeni kelime" under
+    /// 31 pt of empty space, and 50 to 120 pt empty at xxxLarge and AX1). The next change still
+    /// gives way before any other line. Each variant is `WidgetText.stepped` from `size`: above
+    /// AX1 it is also tried at the smaller accessibility sizes before the next variant.
     @ViewBuilder
-    private var ladder: some View {
+    private func ladder(steppingFrom size: DynamicTypeSize) -> some View {
         Group {
-            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2], nextChange: true)
-            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2])
-            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, exampleLines: [1], warning: [1, 2])
-            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
-            column(shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
-            column(shortens: false, definition: [1, 2], warning: [1, 2])
-            column(shortens: false, definition: [1, 2])
-            column(shortens: false)
+            WidgetText.stepped(column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2], nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2]), from: size)
+            WidgetText.stepped(column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, exampleLines: [1], warning: [1, 2], nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, exampleLines: [1], warning: [1, 2]), from: size)
+            WidgetText.stepped(column(shortens: false, pronunciation: true, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2], nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, pronunciation: true, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2]), from: size)
+            WidgetText.stepped(column(shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2], nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2]), from: size)
         }
-        column()
-        column(meaning: LargeWordView.smallMeaningFont)
+        Group {
+            WidgetText.stepped(column(shortens: false, definition: [1, 2], warning: [1, 2], nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, definition: [1, 2], warning: [1, 2]), from: size)
+            WidgetText.stepped(column(shortens: false, definition: [1, 2], nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, definition: [1, 2]), from: size)
+            WidgetText.stepped(column(shortens: false, nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false), from: size)
+        }
+        WidgetText.stepped(column(nextChange: true), from: size)
+        WidgetText.stepped(column(), from: size)
+        WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont), from: size)
     }
 
     /// The word row: the word at the first of its size steps that fits whole, and the level code.

@@ -12,6 +12,9 @@ struct SozlukTopicView: View {
     /// A word's whole card (SearchView's stack).
     let open: (WidgetWord) -> Void
     @State private var filter: SozlukFilter = .all
+    /// The page's large title (`title`) has scrolled up under the bar: the bar then names the
+    /// topic.
+    @State private var titleIsUnderBar = false
 
     private struct LevelGroup {
         let level: String
@@ -19,20 +22,46 @@ struct SozlukTopicView: View {
     }
 
     var body: some View {
-        ScrollView {
-            content
+        // A plain container: it is laid out under the bar, so its "sozlukTopicPage" space starts
+        // at the bar's lower edge, where the list's top rests (`title`).
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    title
+                    content
+                }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 24)
+            }
+            .background {
+                Theme.bg
+                    .ignoresSafeArea()
+            }
+            .solidTopScrollEdge()
         }
-        .background {
-            Theme.bg
-                .ignoresSafeArea()
-        }
-        // HIG: the topic's name once, as a large title that folds into the bar when the list
-        // scrolls (sozluk-4: an inline title over a page heading said it twice).
-        .navigationTitle(topic.displayName)
-        .navigationBarTitleDisplayMode(.large)
+        .coordinateSpace(.named("sozlukTopicPage"))
+        // sozluk-ayarlar-2: `.large` here showed only the inline title in Sözlük's stack
+        // (2026-10-24 images 16b, 16c), so the page writes its own large title, and the bar names
+        // the topic only once that title has scrolled under it: never twice (sozluk-4).
+        .navigationTitle(titleIsUnderBar ? topic.displayName : "")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    /// The topic's name as the page's large title (Large Title, 34 pt bold; wraps, never cut).
+    /// Under the bar once its last line has scrolled past the bar's lower edge.
+    private var title: some View {
+        Text(topic.displayName)
+            .font(.largeTitle.weight(.bold))
+            .foregroundStyle(Theme.ink)
+            .accessibilityAddTraits(.isHeader)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .onGeometryChange(for: Bool.self) { geometry in
+                geometry.frame(in: .named("sozlukTopicPage")).maxY <= 0
+            } action: { isUnderBar in
+                titleIsUnderBar = isUnderBar
+            }
+            .padding(.top, 8)
     }
 
     @ViewBuilder
@@ -84,15 +113,14 @@ struct SozlukTopicView: View {
         }
     }
 
-    /// How many words the topic has and in which order (mockup A3), under the large title: the
-    /// name itself is the navigation title.
+    /// How many words the topic has and in which order (mockup A3), under the large title.
     private func header(count: Int) -> some View {
         Text(verbatim: "\(count) kelime · kolaydan zora")
             .font(.subheadline)
             .foregroundStyle(Theme.ink2)
             // VoiceOver would read the dot aloud.
             .accessibilityLabel(Text(verbatim: "\(count) kelime, kolaydan zora sıralı"))
-            .padding(.top, 8)
+            .padding(.top, 4)
     }
 
     /// One level: its badge and word count as a heading, then its words in one group.
@@ -139,5 +167,18 @@ struct SozlukTopicView: View {
             result[filter] = states.filter { filter.includes($0) }.count
         }
         return result
+    }
+}
+
+private extension View {
+    /// iOS 26: a solid edge effect under the bar on a scrolled page, as on the word page
+    /// (`hardTopScrollEdge`, SozlukWordPage.swift): the page's title that scrolled under the bar
+    /// does not show through beside the bar's own title. iOS 17–25 keep the system's own bar.
+    @ViewBuilder func solidTopScrollEdge() -> some View {
+        if #available(iOS 26.0, *) {
+            scrollEdgeEffectStyle(.hard, for: .top)
+        } else {
+            self
+        }
     }
 }

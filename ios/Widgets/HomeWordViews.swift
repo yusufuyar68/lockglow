@@ -31,12 +31,15 @@ import CoreModels
 // `WidgetFittingText`). A line with no step that fits makes its variant too tall to be chosen
 // (`WidgetFit.reject`), so the next variant tries smaller type or more lines. When the person's
 // text size leaves no room for the meaning, the variants are tried again at smaller text sizes,
-// so the meaning stays and is never larger than the word: the home widgets above AX1 at AX1
-// first, then at xxxLarge, then at the default size; the Lock Screen rectangle at the default
-// size (`RectangularWordView`). The home widgets' text area does not grow with the
-// text size (fixed margins and button place), so at the default size they draw exactly the
-// default layout, which has the meaning. The last variant, the word alone, always fits, in
-// height too (`WidgetWordAlone`).
+// so the meaning stays and is never larger than the word: the small widget above AX1 at AX1
+// first, then at xxxLarge, then at the default size; the medium and large widgets above AX1 each
+// variant at every accessibility size down to AX1 before the next variant (`WidgetText.stepped`),
+// then at xxxLarge, then the smaller meaning one size smaller at a time down to the default size;
+// the Lock Screen rectangle one size smaller at a time down to the default size
+// (`RectangularWordView`). The home widgets' text
+// area does not grow with the text size (fixed margins and button place), so at the default size
+// they draw exactly the default layout, which has the meaning. The last variant, the word alone,
+// always fits, in height too (`WidgetWordAlone`).
 
 /// How far the button group reaches into the widget margin on the widget's outer edges: with the
 /// 5 pt between a 34 pt circle and its 44 pt hit area, the circle sits 16 - 10 + 5 = 11 pt from the
@@ -335,6 +338,8 @@ struct MediumWordView: View {
     var options = WidgetDisplayOptions.standard
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.showsWidgetContainerBackground) private var environmentShowsBackground
+    /// The person's text size (`WidgetText.stepped`).
+    @Environment(\.dynamicTypeSize) private var textSize
     private var word: WidgetWord { entry.word }
     private var colors: WidgetColors {
         WidgetColors.forMode(
@@ -351,29 +356,38 @@ struct MediumWordView: View {
             // one, else the micro one); a definition too wide for its line gives way alone, and
             // the example and the next change stay when they fit (2026-10-24 xxxLarge images: no
             // half-empty widget). Only then does the meaning shorten (`WidgetGloss`), take
-            // two lines and get smaller. When the word and the meaning do not fit at the person's
-            // text size, the whole ladder (`ladder`) is tried again at smaller sizes before the
-            // meaning is left out: above AX1 at AX1 first, then at the largest standard size, then
-            // the smaller meaning at the default size. The word alone is the last resort, so the
-            // meaning never runs out of the column at large text sizes (accessibility audit D5).
-            // The retries are groups: a modifier on a Group applies to each of its views, and
-            // ViewThatFits tries them one by one, as if they were listed here.
+            // two lines and get smaller. Above AX1 each variant of the ladder is tried at the
+            // person's size and then at each accessibility size down to AX1 before the next one
+            // (`WidgetText.stepped`), so a larger size never shows fewer lines than AX1. When the
+            // word and the meaning fit at none of those sizes, the whole ladder is tried again at
+            // the largest standard size, then the smaller meaning one size smaller at a time down
+            // to the default size, before the meaning is left out. The word alone is the last
+            // resort, so the meaning never runs out of the column at large text sizes
+            // (accessibility audit D5). The retries are groups: a modifier on a Group applies to
+            // each of its views, and ViewThatFits tries them one by one, as if they were listed
+            // here.
             ViewThatFits(in: .vertical) {
-                ladder
-                // Above AX1: AX1's whole ladder first, so a larger size never shows smaller text
-                // or fewer lines than AX1 (the 2026-10-24 AX3 images had the word and the meaning
-                // alone, half the widget empty, where AX1 also had "Yeni kelime").
-                Group {
-                    ladder
+                // Above AX1, AX1's lines first: the 2026-10-24 AX3 images had the word and the
+                // meaning alone, a quarter of the widget empty, where AX1 also had the definition
+                // or "Yeni kelime".
+                ladder(steppingFrom: textSize)
+                if textSize > WidgetText.largestStandardSize {
+                    Group {
+                        ladder(steppingFrom: WidgetText.largestStandardSize)
+                    }
+                    .dynamicTypeSize(...WidgetText.largestStandardSize)
                 }
-                .dynamicTypeSize(...DynamicTypeSize.accessibility1)
-                Group {
-                    ladder
+                // Nothing fits even at xxxLarge: the smaller meaning at xxLarge, at xLarge, then
+                // at the default text size (a step at or above the person's size would be the
+                // person's size again); the text column does not grow with the text size.
+                if textSize > DynamicTypeSize.xxLarge {
+                    column(smallMeaning: true)
+                        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
                 }
-                .dynamicTypeSize(...WidgetText.largestStandardSize)
-                // Nothing fits even at xxxLarge (from xLarge to xxxLarge the retry above is the
-                // person's own size): the default text size; the text column does not grow with
-                // the text size.
+                if textSize > DynamicTypeSize.xLarge {
+                    column(smallMeaning: true)
+                        .dynamicTypeSize(...DynamicTypeSize.xLarge)
+                }
                 column(smallMeaning: true)
                     .dynamicTypeSize(...DynamicTypeSize.large)
                 wordRow(WidgetWordStep.mediumWidget, lastResort: true)
@@ -418,21 +432,23 @@ struct MediumWordView: View {
     /// example the definition keeps "Yeni kelime" (the 2026-10-24 xxxLarge images: an example
     /// that no longer fits on two lines left the bottom third empty), and so does a shortened
     /// meaning. The definition is never kept with a shortened meaning (ogrenme_ilkeleri 2.2).
+    /// Each variant is `WidgetText.stepped` from `size`: above AX1 it is also tried at the smaller
+    /// accessibility sizes before the next variant.
     @ViewBuilder
-    private var ladder: some View {
+    private func ladder(steppingFrom size: DynamicTypeSize) -> some View {
         Group {
-            column(shortens: false, definition: true, example: true, nextChange: true)
-            column(shortens: false, definition: true, example: true)
-            column(shortens: false, definition: true, nextChange: true)
-            column(shortens: false, definition: true)
-            column(shortens: false, example: true, nextChange: true)
-            column(shortens: false, example: true)
-            column(shortens: false, nextChange: true)
-            column(shortens: false)
+            WidgetText.stepped(column(shortens: false, definition: true, example: true, nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, definition: true, example: true), from: size)
+            WidgetText.stepped(column(shortens: false, definition: true, nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, definition: true), from: size)
+            WidgetText.stepped(column(shortens: false, example: true, nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false, example: true), from: size)
+            WidgetText.stepped(column(shortens: false, nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false), from: size)
         }
-        column(nextChange: true)
-        column()
-        column(smallMeaning: true)
+        WidgetText.stepped(column(nextChange: true), from: size)
+        WidgetText.stepped(column(), from: size)
+        WidgetText.stepped(column(smallMeaning: true), from: size)
     }
 
     /// A gap of at most `height` pt above or below the button column. It is offered the height the
@@ -1030,6 +1046,31 @@ enum WidgetText {
     /// The largest standard text size (no accessibility size): where the word and the meaning
     /// stop growing when they fit at no larger size.
     static let largestStandardSize = DynamicTypeSize.xxxLarge
+
+    /// A layout variant of the medium and large widgets as children of the vertical ViewThatFits
+    /// around it: at the current text size and then, when `size` (the person's text size) is above
+    /// AX1, at each smaller accessibility size down to AX1, one step at a time (AX4, AX3, AX2,
+    /// AX1). So a variant is tried at all those sizes before the next, shorter one is: above AX1
+    /// the widget never shows fewer lines than AX1 would, and shows them at the largest of those
+    /// sizes they fit (the 2026-10-24 AX3 images had the word and the meaning alone, or a
+    /// shortened meaning, at AX3 where AX1 also had the definition or "Yeni kelime"). At AX1 and
+    /// below, and with a `size` at or below AX1, it is `variant` alone.
+    @ViewBuilder
+    static func stepped<Variant: View>(_ variant: Variant, from size: DynamicTypeSize) -> some View {
+        variant
+        if size > DynamicTypeSize.accessibility4 {
+            variant.dynamicTypeSize(...DynamicTypeSize.accessibility4)
+        }
+        if size > DynamicTypeSize.accessibility3 {
+            variant.dynamicTypeSize(...DynamicTypeSize.accessibility3)
+        }
+        if size > DynamicTypeSize.accessibility2 {
+            variant.dynamicTypeSize(...DynamicTypeSize.accessibility2)
+        }
+        if size > DynamicTypeSize.accessibility1 {
+            variant.dynamicTypeSize(...DynamicTypeSize.accessibility1)
+        }
+    }
 
     /// `text` in two lines of about the same length (`balancedLines(_:count:)`).
     static func balancedLines(_ text: String) -> [String] {
