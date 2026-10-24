@@ -68,22 +68,18 @@ struct ReviewActivityLockScreenView: View {
 }
 
 /// "Devam et" (goes back to the round; not the quiz's "Devam"), drawn like the app's main button
-/// (`PrimaryCapsuleButtonStyle`): `.headline` on an ink capsule by day; at night (and in the
-/// always black Dynamic Island) bold on a faint ink tint with an ink edge, never lit
-/// (docs/tasarim/alternatifler/gece_oled.md option C). Not a button of its own: a tap anywhere on
+/// (`PrimaryCapsuleButtonStyle`): `.headline` on a filled ink capsule, black by day, white at
+/// night and in the always black Dynamic Island. Not a button of its own: a tap anywhere on
 /// the activity opens "Tekrar" (`widgetURL`); in the expanded Dynamic Island it is inside a `Link`
 /// (`inLink`), the one place Apple documents links in a Live Activity for.
 struct ReviewActivityContinueFace: View {
     var fullWidth = false
     /// Inside a `Link`, which already reads as one: no button trait on top.
     var inLink = false
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.colorSchemeContrast) private var contrast
-    @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
         Text(verbatim: "Devam et")
-            .font(isNight ? .headline.weight(.bold) : .headline)
+            .font(.headline)
             .lineLimit(1)
             .foregroundStyle(Theme.onPrimary)
             .padding(.horizontal, 20)
@@ -91,20 +87,8 @@ struct ReviewActivityContinueFace: View {
             .background {
                 Capsule()
                     .fill(Theme.primary)
-                    .overlay {
-                        if isNight {
-                            Capsule().strokeBorder(
-                                Theme.onPrimary,
-                                lineWidth: contrast == .increased || showsButtonShapes ? 3 : 2
-                            )
-                        }
-                    }
             }
             .accessibilityAddTraits(inLink ? [] : .isButton)
-    }
-
-    private var isNight: Bool {
-        return colorScheme == .dark
     }
 }
 
