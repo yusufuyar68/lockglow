@@ -19,9 +19,9 @@ import CoreModels
 //     surface3, line, lineStrong, good, goodTint, bad, badTint, caution, cautionTint
 //   - English and Turkish body text: ink (label); translation, IPA, notes: ink2 (secondaryLabel);
 //     helper text: ink3 (tertiaryLabel, here kept at 4.5:1 so it can carry text).
-//   - The one main button of a screen: primary with onPrimary text. By day a filled ink capsule;
-//     at night no lit fill and never yellow: a faint ink tint, a full ink edge and bold text
-//     (docs/tasarim/alternatifler/gece_oled.md, option C). Yellow stays on the word alone.
+//   - The one main button of a screen: primary with onPrimary text, a filled capsule as in
+//     Apple's apps: black by day, white at night (2026-10-24; it replaced gece_oled.md option C's
+//     unfilled night button). Never yellow: yellow stays on the word alone.
 //   - Selected tab, option, step bar, progress: tint (ink, never yellow); soft selected fill: tintSoft.
 //   - Pages: bg (systemGroupedBackground by day, pure black at night); cards, sheets and grouped
 //     rows: surface (secondarySystemGroupedBackground; at night cards take the page black with a
@@ -115,12 +115,12 @@ enum Theme {
         light: Tone(0x636366), dark: Tone(0x98989D),
         lightHigh: Tone(0x3C3C43), darkHigh: Tone(0xC7C7CC)
     )
-    /// Fill of the one main button of a screen: ink by day; at night a 12 % ink tint over the
-    /// page (no lit area and no yellow at night, gece_oled.md option C). The night edge is drawn
-    /// by `PrimaryCapsuleButtonStyle`.
-    static let primary = dynamic(light: Tone(0x000000), dark: Tone(0xFFFFFF, 0.12))
-    /// Text and icons on `primary`, and the night edge: white by day, ink (white) at night.
-    static let onPrimary = dynamic(light: Tone(0xFFFFFF), dark: Tone(0xFFFFFF))
+    /// Fill of the one main button of a screen: ink, a filled capsule as in Apple's apps, black
+    /// by day and white at night (the user's 2026-10-24 choice; it replaced gece_oled.md option
+    /// C's unfilled night button, which read like the gray-edged secondary buttons). No yellow.
+    static let primary = dynamic(light: Tone(0x000000), dark: Tone(0xFFFFFF))
+    /// Text and icons on `primary`: white by day, black at night (21:1 both).
+    static let onPrimary = dynamic(light: Tone(0xFFFFFF), dark: Tone(0x000000))
     /// The one tint: selected tab, option, step bar and progress. Ink, also at night (never yellow).
     static let tint = dynamic(light: Tone(0x000000), dark: Tone(0xFFFFFF))
     /// Soft fill of a selected item (the selected tab).
@@ -185,8 +185,8 @@ enum Theme {
     /// The learned word in an example sentence: day highlight, night underline.
     static let markLight = fixed(0xF5E829, 0.80)
     static let markDark = fixed(0xE9E040, 0.95)
-    /// Glow around the main button at night: none since the button is not filled (gece_oled.md
-    /// step 1). Kept for callers; transparent.
+    /// Glow around the main button at night: none (gece_oled.md step 1). Kept for callers;
+    /// transparent.
     static let primaryGlow = fixed(0xE9E040, 0)
     /// Card shadows (light appearance only).
     static let shadowNear = fixed(0x000000, 0.05)
@@ -585,11 +585,9 @@ enum ExampleMark {
 
 // MARK: - Buttons
 
-/// The one main button of a screen (mockup `.btn-primary`): `primary` capsule, `onPrimary`
-/// text. By day a filled ink capsule. At night no lit area and no yellow (gece_oled.md option
-/// C): a faint ink tint, a 2 pt ink edge (3 pt with Increase Contrast or Button Shapes) and bold
-/// text set it apart from the gray-edged secondary buttons. 54 pt (`minHeight: 54`) for the
-/// large bottom button.
+/// The one main button of a screen (mockup `.btn-primary`): a filled `primary` capsule with
+/// `onPrimary` text, black by day and white at night, so it stands apart from the gray-edged
+/// secondary buttons in both. 54 pt (`minHeight: 54`) for the large bottom button.
 struct PrimaryCapsuleButtonStyle: ButtonStyle {
     var fullWidth = true
     var minHeight: CGFloat = 50
@@ -631,16 +629,13 @@ private struct CapsuleButtonBody: View {
     let fullWidth: Bool
     let minHeight: CGFloat
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityShowButtonShapes) private var showsButtonShapes
 
     var body: some View {
         configuration.label
-            // `.weight(.bold)`, not `.bold()`: `.headline` is semibold and already counts as bold,
-            // so `.bold()` leaves it unchanged (seen in the 2026-10-22 screenshots).
-            .font(isNightPrimary && isEnabled ? .headline.weight(.bold) : .headline)
+            .font(.headline)
             .multilineTextAlignment(.center)
             .foregroundStyle(kind == .primary ? Theme.onPrimary : Theme.ink)
             .padding(.horizontal, fullWidth ? 24 : 20)
@@ -663,22 +658,6 @@ private struct CapsuleButtonBody: View {
         case .primary:
             Capsule()
                 .fill(Theme.primary)
-                .overlay {
-                    // The night fill is a 12 % tint, about as dark as a secondary button. The ink
-                    // edge is the boundary (14-21:1) and the difference: 3.7-4.2:1 brighter than
-                    // a lineStrong edge, only 2.5-2.8:1 with Increase Contrast (lineStrong is
-                    // brighter there), so with Increase Contrast or Button Shapes it is twice a
-                    // secondary's width (docs/denetim/kontrast_gece_c_2026-10-22.md).
-                    // Disabled at night it has no ink edge, only a thin lineStrong one: the dimmed ink
-                    // edge alone still looked like an enabled button (2026-10-24 screenshots).
-                    if isNightPrimary {
-                        if isEnabled {
-                            Capsule().strokeBorder(Theme.onPrimary, lineWidth: emphasizesEdge ? 3 : 2)
-                        } else {
-                            Capsule().strokeBorder(Theme.lineStrong, lineWidth: 1)
-                        }
-                    }
-                }
         case .bordered:
             Capsule()
                 .fill(Theme.surface)
@@ -694,10 +673,6 @@ private struct CapsuleButtonBody: View {
         return contrast == .increased || showsButtonShapes
     }
 
-    /// The main button at night: not filled, so it takes an edge and bold text.
-    private var isNightPrimary: Bool {
-        return kind == .primary && colorScheme == .dark
-    }
 }
 
 /// A small capsule (mockup `.chip`): 36 pt tall, with transparent margins up to a 44 pt hit area.

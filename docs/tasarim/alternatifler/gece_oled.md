@@ -1,5 +1,7 @@
 # Lockglow Gece / OLED: alternatif tasarım yönü (22 Ekim 2026)
 
+> **2026-10-24 güncellemesi:** Kullanıcı gece ana düğmesinin Apple uygulamalarındaki gibi **dolgulu** olmasını seçti (beyaz zemin, siyah yazı). Aşağıdaki C seçeneğinin "dolgusuz, kenarlı ana düğme" kısmı artık geçerli değil; kenarlı düğme ikincil düğmelerden ayırt edilemiyordu. Siyah sayfa ve sarısız gece kuralları geçerli.
+
 [`gece_oled.html`](gece_oled.html) tarayıcıda açılan, tıklanabilir bir taslak. Artifact (özel): https://claude.ai/artifact/PVNkSgJagU2M411UiTwRVS. Bu yalnız bir öneri:
 - Swift kodu değişmedi.
 - Cihazda ya da Xcode'da denenmedi.

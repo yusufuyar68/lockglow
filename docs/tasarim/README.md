@@ -82,7 +82,7 @@ Lockglow "kilit ekranında parlayan kelime" demek. Türkçede "fosforlu kalem" z
 | Fosfor şeridi | `band` | `#F5E829` | `#E9E040` (alt çizgi) | Yalnız İngilizce kelime ve örnekteki aynı kelime | mürekkep 16,5:1 |
 | Mürekkep (label) | `ink` | `#000000` | `#FFFFFF` | Ana yazı | 16,7 / 13,9 |
 | İkincil / üçüncül yazı (secondaryLabel / tertiaryLabel) | `ink2` / `ink3` | `#3C3C43` / `#636366` | `#C7C7CC` / `#98989D` | Çeviri, IPA, açıklama / yardımcı | 8,7 / 8,3 ; 4,8 / 4,9 |
-| Ana düğme | `primary` / `onPrimary` | `#000000` / `#FFFFFF` | beyaz %12 + 2 pt beyaz kenar / `#FFFFFF` | Ekranın tek ana düğmesi | 21 / 11,9 |
+| Ana düğme | `primary` / `onPrimary` | `#000000` / `#FFFFFF` | `#FFFFFF` / `#000000` (dolgulu, 2026-10-24 kullanıcı kararı; eski C seçeneğinin kenarlı düğmesi ikincil düğmeye benziyordu) | Ekranın tek ana düğmesi | 21 / 21 |
 | Seçili, ilerleme (tek vurgu rengi) | `tint` / `tintSoft` | `#000000` / siyah %8 | `#FFFFFF` / beyaz %10 | Seçili sekme ve seçenek, adım çubuğu, ilerleme | — |
 | Zemin | `bg`, `surface`, `surface2`, `surface3` | `#F2F2F7` (systemGroupedBackground), `#FFFFFF`, `#E5E5EA` (systemGray5), `#D1D1D6` (systemGray4) | `#000000`, `#1C1C1E`, `#2C2C2E`, `#3A3A3C` | Sayfa, kart ve gruplu liste, kapsül, iz | — |
 | Çizgi | `line` / `lineStrong` | separator (`#3C3C43` %29) / siyah %52 | separator (`#545458` %65) / beyaz %42 | Ayırıcı, kenar | kenar 3,4 / 3,3 |
