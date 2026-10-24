@@ -19,11 +19,6 @@ struct WordDetailView: View {
     @Environment(\.sozlukLinkOrigin) private var origin
     /// A linked word opened from this page.
     @State private var linkedWord: WidgetWord?
-    /// The top safe area of the scroll view: the bar's lower edge in its "wordPage" space (0 when
-    /// the scroll view itself starts below the bar).
-    @State private var barEdge: CGFloat = 0
-    /// The headline has scrolled up under the bar: the bar then names the word (akis-5).
-    @State private var headlineIsUnderBar = false
     let word: WidgetWord
 
     var body: some View {
@@ -51,22 +46,10 @@ struct WordDetailView: View {
             .padding(.bottom, 40)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        // The headline is measured in this space (`header`): both values move with the page, not
-        // with a sheet or a push sliding in.
-        .coordinateSpace(.named("wordPage"))
-        .onGeometryChange(for: CGFloat.self) { geometry in
-            geometry.safeAreaInsets.top
-        } action: { newEdge in
-            barEdge = newEdge
-        }
         .background {
             Theme.bg
                 .ignoresSafeArea()
         }
-        // akis-5: a scrolled page still says which word it is, in the inline bar. Empty while the
-        // band shows the word (the band is the page's large title), so it is never said twice.
-        // Not a principal toolbar item: the system title keeps its own size and Dynamic Type.
-        .navigationTitle(headlineIsUnderBar ? word.lemma : "")
         .navigationBarTitleDisplayMode(.inline)
         .hardTopScrollEdge()
         .tint(Theme.ink)
@@ -89,16 +72,8 @@ struct WordDetailView: View {
     /// facts, then "Dinle" and "Söyle", one under the other when a line cannot hold both (the
     /// largest text sizes).
     private func header(state: LearningState) -> some View {
-        // Read here: the measuring closure keeps only the number.
-        let edge = barEdge
-        return VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 12) {
             WordDetailHeadline(lemma: word.lemma)
-                // Under the bar once its last line has scrolled past the bar's lower edge.
-                .onGeometryChange(for: Bool.self) { geometry in
-                    geometry.frame(in: .named("wordPage")).maxY <= edge
-                } action: { isUnderBar in
-                    headlineIsUnderBar = isUnderBar
-                }
             SozlukWordFacts(word: word, state: state)
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: 6) {
