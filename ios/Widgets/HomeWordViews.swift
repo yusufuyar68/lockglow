@@ -31,9 +31,9 @@ import CoreModels
 // `WidgetFittingText`). A line with no step that fits makes its variant too tall to be chosen
 // (`WidgetFit.reject`), so the next variant tries smaller type or more lines. When the person's
 // text size leaves no room for the meaning, the variants are tried again at smaller text sizes,
-// so the meaning stays and is never larger than the word: the home widgets at xxxLarge (the
-// medium widget above AX1 first at AX1), then at the default size; the Lock Screen rectangle at
-// the default size (`RectangularWordView`). The home widgets' text area does not grow with the
+// so the meaning stays and is never larger than the word: the home widgets above AX1 at AX1
+// first, then at xxxLarge, then at the default size; the Lock Screen rectangle at the default
+// size (`RectangularWordView`). The home widgets' text area does not grow with the
 // text size (fixed margins and button place), so at the default size they draw exactly the
 // default layout, which has the meaning. The last variant, the word alone, always fits, in
 // height too (`WidgetWordAlone`).
@@ -74,13 +74,13 @@ struct SmallWordView: View {
             // lines), then to 15 pt; the meaning starts at 17 pt bold and tries its shorter forms
             // (`WidgetGloss`) on one line, then on two, before it gets smaller. At large text sizes
             // the word and the meaning are shown (2.1): when they do not fit at the person's size,
-            // the same variants are tried again at the largest standard size, then at the default
-            // size, and only then is the meaning left out (the word alone, the last variant). The
-            // meaning is never larger than the word: beside a meaning the word grows with the text
-            // size, and it drops to an unscaled 15 pt (or shrinks a little, "misunderstanding" on
-            // an SE) only in the last variant at the default size, beside a 13 pt meaning, and in
-            // the word alone. (A 15 pt word beside an xxxLarge meaning was the 2026-10-22 images'
-            // "small word, large meaning".)
+            // the same variants are tried again at AX1 (above it), at the largest standard size,
+            // then at the default size, and only then is the meaning left out (the word alone, the
+            // last variant). The meaning is never larger than the word: beside a meaning the word
+            // grows with the text size, and it drops to an unscaled 15 pt (or shrinks a little,
+            // "misunderstanding" on an SE) only in the last variant at the default size, beside a
+            // 13 pt meaning, and in the word alone. (A 15 pt word beside an xxxLarge meaning was
+            // the 2026-10-22 images' "small word, large meaning".)
             // The retries are groups: a modifier on a Group applies to each of its views, and
             // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
@@ -92,9 +92,22 @@ struct SmallWordView: View {
                 // card's meaning over 16 characters has `gloss_short`): 13 pt on two or three
                 // lines rather than no meaning.
                 column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
-                // The person's size leaves no room for the meaning: the largest standard size.
+                // Above AX1: AX1's variants first, so a larger size never shows smaller text than
+                // AX1 (the 2026-10-24 AX3 images were smaller than AX1 and even than xxxLarge).
                 Group {
+                    column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
                     column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
+                }
+                .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+                // The person's size leaves no room for the meaning: the largest standard size, the
+                // same variants.
+                Group {
+                    column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
                     column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
                     column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
                 }
@@ -205,7 +218,9 @@ struct MediumWordView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
             // The next change gives way first, then the example, then the definition (the short
-            // one, else the micro one); only then does the meaning shorten (`WidgetGloss`), take
+            // one, else the micro one); a definition too wide for its line gives way alone, and
+            // the example and the next change stay when they fit (2026-10-24 xxxLarge images: no
+            // half-empty widget). Only then does the meaning shorten (`WidgetGloss`), take
             // two lines and get smaller. When the word and the meaning do not fit at the person's
             // text size, they are tried again at smaller sizes before the meaning is left out:
             // above AX1 at AX1 first, then at the largest standard size, then at the default size.
@@ -216,7 +231,12 @@ struct MediumWordView: View {
             ViewThatFits(in: .vertical) {
                 column(shortens: false, definition: true, example: true, nextChange: true)
                 column(shortens: false, definition: true, example: true)
-                column(shortens: false, definition: true)
+                Group {
+                    column(shortens: false, definition: true)
+                    column(shortens: false, example: true, nextChange: true)
+                    column(shortens: false, example: true)
+                    column(shortens: false, nextChange: true)
+                }
                 column(shortens: false)
                 column()
                 column(smallMeaning: true)
@@ -933,188 +953,26 @@ enum WidgetTime {
     }
 }
 
-/// The medium widget's example on one line, never cut inside a word and never before the learned
-/// word (README "Widget'lar"): the whole sentence when it fits; otherwise the sentence cut after
-/// the last whole word that fits, as long as the learned word stays whole ("I usually have
-/// breakfast at…", not "…breakfast at s…"); otherwise it starts a few words before the word ("…
-/// so I called the lost and found."), at the latest at the word itself, and is cut the same way.
-/// A cut after a sentence's end needs no "…" ("It was just a misunderstanding."). The word is
-/// bold: the band is the screen's only yellow mark. Irregular forms ("teeth" for "tooth") are not
-/// found; such a sentence is shown from its start and cut after a whole word. VoiceOver reads the
-/// whole sentence, whatever part is shown.
-/// The line's ideal size is that of its shortest possible form ("… word…"), so the layout variants
-/// are chosen by the other lines; the example then fits itself to the width it gets. When even
-/// that form does not fit, the line makes its variant too tall to be chosen (`WidgetFit.reject`),
-/// so a variant without the example is shown instead of an empty line.
+/// The medium widget's example (README "Widget'lar"): the whole sentence on one line, else on two
+/// balanced lines, never cut with "…" and never broken inside a word (2026-10-24 images: "Could
+/// you tell me the way to the…"). It is the large widget's `LargeExampleText` at `.footnote`
+/// serif: the learned word bold wherever `LemmaMatch` finds it (the band stays the screen's only
+/// yellow mark), an irregular form ("teeth" for "tooth") plain. When neither line count fits the
+/// width, the line makes its variant too tall to be chosen (`WidgetFit.reject`), so a variant
+/// without the example is shown instead of a cut sentence. VoiceOver reads the whole sentence
+/// once, with an English voice.
 struct WidgetExampleLine: View {
-    /// One start of the sentence and its cuts, fullest first, each ending after a whole word; the
-    /// last is the shortest that keeps the learned word whole. The start is chosen when that one
-    /// fits; placed, the line shows the fullest cut that fits.
-    struct Version: Equatable {
-        let cuts: [String]
-
-        /// What must fit for this start to be chosen: its shortest cut.
-        var fitting: String { cuts.last ?? "" }
-    }
-
     let sentence: String
     let lemma: String
     let color: AnyShapeStyle
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        let versions = WidgetExampleLine.versions(of: sentence, lemma: lemma)
-        ViewThatFits(in: .horizontal) {
-            styled(versions[versions.count - 1].fitting)
-                .hidden()
-            WidgetFit.reject
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .overlay(alignment: .leading) {
-            lines(versions)
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: sentence))
+        LargeExampleText(sentence: sentence, lemma: lemma, lines: [1, 2], typeface: WidgetExampleLine.font, color: color)
     }
 
     /// `.footnote` serif, the definition's size (medium widget: word 20, meaning 16, definition and
     /// example 13, next change 11; it was `.caption`, 12 pt, a fifth size).
     static let font = Font.system(.footnote, design: .serif)
-    /// How many cuts a start tries (ViewThatFits needs a fixed number of children); a sentence
-    /// with more words after the learned word keeps an even spread of them, the fullest and the
-    /// shortest always.
-    static let cutCount = 8
-
-    private func lines(_ versions: [Version]) -> some View {
-        ViewThatFits(in: .horizontal) {
-            line(versions[0])
-            line(versions[1])
-            line(versions[2])
-            line(versions[3])
-        }
-    }
-
-    /// ViewThatFits compares the ideal width, which is the width of the hidden `fitting` text
-    /// (a flexible frame reports its content's ideal width); placed, the line takes the whole
-    /// width and shows the fullest cut that fits it, never a cut one.
-    private func line(_ version: Version) -> some View {
-        styled(version.fitting)
-            .hidden()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .overlay(alignment: .leading) {
-                cuts(WidgetExampleLine.slots(version.cuts))
-            }
-    }
-
-    /// The fullest cut that fits; nothing when even the shortest does not (the line's own
-    /// `WidgetFit.reject` then has its variant passed over), so no word is ever shown cut.
-    private func cuts(_ slots: [String]) -> some View {
-        ViewThatFits(in: .horizontal) {
-            styled(slots[0])
-            styled(slots[1])
-            styled(slots[2])
-            styled(slots[3])
-            styled(slots[4])
-            styled(slots[5])
-            styled(slots[6])
-            styled(slots[7])
-            Color.clear
-                .frame(width: 0, height: 0)
-        }
-    }
-
-    private func styled(_ text: String) -> some View {
-        Text(ExampleMark.attributed(text, lemma: lemma, colorScheme: colorScheme, highlighted: false))
-            .font(WidgetExampleLine.font)
-            .foregroundStyle(color)
-            .lineLimit(1)
-    }
-
-    /// `cuts` as exactly `cutCount` slots: all of them, the shortest repeated to fill the rest;
-    /// from a longer list an even spread that keeps the fullest and the shortest.
-    static func slots(_ cuts: [String]) -> [String] {
-        guard let shortest = cuts.last else {
-            return Array(repeating: "", count: cutCount)
-        }
-        guard cuts.count > cutCount else {
-            return cuts + Array(repeating: shortest, count: cutCount - cuts.count)
-        }
-        let step = Double(cuts.count - 1) / Double(cutCount - 1)
-        return (0..<cutCount).map { slot in
-            cuts[Int((Double(slot) * step).rounded())]
-        }
-    }
-
-    /// Exactly four starts, fullest first: the sentence's start, then four words, two words and no
-    /// word before the learned word, each after "… ". A start that does not exist (the word is near
-    /// the start, or not found) repeats the one before it; ViewThatFits takes the first that fits,
-    /// the last one otherwise.
-    static func versions(of sentence: String, lemma: String) -> [Version] {
-        // The sentence's words with their places; substrings share the sentence's indices.
-        let words = sentence.split(whereSeparator: { character in
-            character.isWhitespace
-        })
-        guard let first = words.first else {
-            return Array(repeating: Version(cuts: [sentence]), count: 4)
-        }
-        guard let match = ExampleMark.range(of: lemma, in: sentence) else {
-            // Shown from its start, cut after any whole word.
-            let whole = Version(cuts: cuts(of: sentence, words: words, from: first.startIndex, keeping: first.endIndex, prefix: ""))
-            return Array(repeating: whole, count: 4)
-        }
-        let wordsBefore = words.filter { word in
-            word.endIndex <= match.lowerBound
-        }
-        var result = [Version(cuts: cuts(of: sentence, words: words, from: sentence.startIndex, keeping: match.upperBound, prefix: ""))]
-        for kept in [4, 2, 0] {
-            if wordsBefore.count > kept {
-                let start = kept == 0 ? match.lowerBound : wordsBefore[wordsBefore.count - kept].startIndex
-                result.append(Version(cuts: cuts(of: sentence, words: words, from: start, keeping: match.upperBound, prefix: "… ")))
-            } else {
-                result.append(result[result.count - 1])
-            }
-        }
-        return result
-    }
-
-    /// The part of `sentence` from `start`, after `prefix`, cut after each whole word that ends at
-    /// or after `end`, fullest first: the whole rest of the sentence, then shorter and shorter,
-    /// down to the word that holds `end`. A cut that is not the sentence's end gets "…", unless
-    /// it ends a sentence; a comma, semicolon or colon before the "…" is left out.
-    static func cuts(
-        of sentence: String,
-        words: [Substring],
-        from start: String.Index,
-        keeping end: String.Index,
-        prefix: String
-    ) -> [String] {
-        let ends = words.map(\.endIndex).filter { wordEnd in
-            wordEnd >= end && wordEnd > start
-        }
-        var result: [String] = []
-        for wordEnd in ends.reversed() {
-            var text = prefix + String(sentence[start..<wordEnd])
-            if wordEnd < (words.last?.endIndex ?? sentence.endIndex) && !endsSentence(text) {
-                while let last = text.last, ",;:".contains(last) {
-                    text.removeLast()
-                }
-                text += "…"
-            }
-            if !result.contains(text) {
-                result.append(text)
-            }
-        }
-        return result.isEmpty ? [prefix + String(sentence[start...])] : result
-    }
-
-    /// Whether `text` ends a sentence: ".", "!" or "?", also inside a closing quote.
-    private static func endsSentence(_ text: String) -> Bool {
-        let trimmed = text.trimmingCharacters(in: CharacterSet(charactersIn: "\"”’')"))
-        guard let last = trimmed.last else {
-            return false
-        }
-        return ".!?".contains(last)
-    }
 }
 
 extension View {

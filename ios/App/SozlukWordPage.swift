@@ -86,14 +86,16 @@ struct WordDetailView: View {
         }
     }
 
+    /// "Dinle" in Callout, the page's one secondary size.
     @ViewBuilder
     private var actions: some View {
-        CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+        CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle", font: .callout.weight(.semibold))
         SayButton(word: word, example: word.exampleEN)
     }
 
     /// The Turkish meaning, the other Turkish meanings ("Ayrıca") and the English definition (a
-    /// user's word has none).
+    /// user's word has none). The definition is set as the examples are (Body serif): the page
+    /// keeps four sizes, the word, the meaning, Body and Callout.
     private func meaning(alternatives: [String]) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             if let gloss = word.glossTR {
@@ -109,7 +111,7 @@ struct WordDetailView: View {
             }
             if !word.defShort.isEmpty {
                 Text(word.defShort)
-                    .definitionStyle()
+                    .exampleStyle()
                     .lineSpacing(2)
                     .cardEnglishVoice()
                     .padding(.top, 8)
@@ -256,7 +258,8 @@ private struct SozlukLinkSection: View {
                         DictionaryRule()
                             .padding(.leading, 16)
                     }
-                    SozlukWordLink(word: linked, note: note(for: linked), open: open)
+                    // The page's sizes (Body, Callout), not the Sözlük lists' larger word.
+                    SozlukWordLink(word: linked, note: note(for: linked), compact: true, open: open)
                 }
             }
             // The pressed row's fill keeps to the rounded corners.
@@ -335,12 +338,13 @@ private struct SozlukWordFacts: View {
                 Text(CardPartOfSpeech.turkish(word.pos))
                     .font(.callout.weight(.medium))
                     .foregroundStyle(Theme.ink2)
-                LevelBadge(code: word.level)
+                // Callout like the pronunciation and the part of speech beside them.
+                LevelBadge(code: word.level, textStyle: .callout)
                     .fixedSize()
             }
             // As on the rows: a new word carries no mark (most words are new).
             if state != .new {
-                SozlukStatusMark(state: state)
+                SozlukStatusMark(state: state, textStyle: .callout)
             }
         }
     }

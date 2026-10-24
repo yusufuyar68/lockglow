@@ -135,6 +135,9 @@ struct ProgressInlineView: View {
             Text(verbatim: slots[4])
             Text(verbatim: slots[5])
         }
+        // The inline line is one system row of fixed height; like the ring it does not grow past
+        // the default size (ViewThatFits only measures the width, so a taller line would be cut).
+        .dynamicTypeSize(...DynamicTypeSize.large)
         .widgetAccentable()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: line.spoken))

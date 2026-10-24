@@ -20,20 +20,34 @@ struct WidgetGuideContent: View {
 
     @State private var place: Place = .lockScreen
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            // The UI test taps "Ana ekran" by its label.
-            SegmentButtons(
-                options: [
-                    SegmentOption(value: Place.lockScreen, title: "Kilitli ekran"),
-                    SegmentOption(value: Place.homeScreen, title: "Ana ekran"),
-                ],
-                selection: $place
-            )
-            // Named like the option groups of "Ayarlar"; the two buttons keep their own names.
-            .accessibilityElement(children: .contain)
-            .accessibilityLabel("Nereye ekleyeceksin?")
+            // The UI test taps "Ana ekran" by its label (XCUITest lists the segments of a
+            // segmented control as buttons too).
+            if dynamicTypeSize.isAccessibilitySize {
+                // At the largest text sizes the native control would cut "Kilitli ekran" with
+                // "…": the buttons stack vertically instead.
+                SegmentButtons(
+                    options: [
+                        SegmentOption(value: Place.lockScreen, title: "Kilitli ekran"),
+                        SegmentOption(value: Place.homeScreen, title: "Ana ekran"),
+                    ],
+                    selection: $place
+                )
+                // Named like the option groups of "Ayarlar"; the two buttons keep their own names.
+                .accessibilityElement(children: .contain)
+                .accessibilityLabel("Nereye ekleyeceksin?")
+            } else {
+                // The standard iOS segmented control (HIG: standard controls).
+                Picker("Nereye ekleyeceksin?", selection: $place) {
+                    Text("Kilitli ekran").tag(Place.lockScreen)
+                    Text("Ana ekran").tag(Place.homeScreen)
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+            }
             WidgetPlacePreview(place: place, sample: WidgetPreviewSample(word: word))
             // Mockup `.steps`: one white group, numbered rows 16 pt apart.
             VStack(alignment: .leading, spacing: 16) {
@@ -111,8 +125,8 @@ struct WidgetGuideContent: View {
     }
 }
 
-/// A small icon in `ink2` before a short note (mockup `.info`), `.subheadline` (15 pt: the size of
-/// the segments, so the page keeps two sizes with the 17 pt steps; the drawing is a picture).
+/// A small icon in `ink2` before a short note (mockup `.info`), `.subheadline` (15 pt: with the
+/// 17 pt steps and the system's segmented control the page keeps few sizes; the drawing is a picture).
 private struct GuideNote<Content: View>: View {
     let systemImage: String
     @ViewBuilder let content: () -> Content

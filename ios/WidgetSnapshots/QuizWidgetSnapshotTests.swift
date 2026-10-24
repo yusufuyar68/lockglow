@@ -122,7 +122,7 @@ final class QuizWidgetSnapshotTests: XCTestCase {
         XCTAssertEqual(QuizText.status(of: WidgetQuizScreen(item: item, choice: 1)), [["Doğru."]])
         XCTAssertEqual(
             QuizText.status(of: WidgetQuizScreen(item: item, choice: 0)),
-            [["Doğrusu: aynı fikirde olmamak"], ["Doğrusu: hemfikir olmamak"], ["Doğrusu işaretli."]]
+            [["Doğrusu: aynı fikirde olmamak"], ["Doğrusu: hemfikir olmamak"], ["Doğrusu işaretli."], ["Doğrusu", "işaretli."]]
         )
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 1), "aynı fikirde olmamak, Doğru cevap")
         XCTAssertEqual(QuizText.spokenResult(of: WidgetQuizScreen(item: item, choice: 0), at: 0), "durmak, durdurmak, Yanlış")

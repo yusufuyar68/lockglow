@@ -47,6 +47,8 @@ struct ReviewView: View {
     @State private var picked: String?
     /// The card's text runs past the bottom of the card ("Devamı").
     @State private var cardHasMore = false
+    /// The height of "Devamı" with its padding: under it the card's text is fully faded.
+    @State private var cueHeight: CGFloat = 0
     /// Answers of the running round, in order.
     @State private var answers: [RoundAnswer] = []
     /// Answers of the round that just ended: the summary stays until "Tamam".
@@ -97,16 +99,25 @@ struct ReviewView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            content
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Theme.bg)
-                .navigationTitle(session == nil && summary != nil ? "Tur bitti" : "Tekrar")
-                .navigationBarTitleDisplayMode(.large)
-                // A round has its own header with "Bitir"; the tab bar would only invite leaving
-                // half way, and the answers belong where the thumb is (README point 9).
-                .toolbar(isInRound ? .hidden : .visible, for: .navigationBar)
-                .toolbar(isInRound ? .hidden : .visible, for: .tabBar)
+        // One child whose identity never changes: the modifiers below stay on it, so `onAppear`
+        // and `onDisappear` do not fire again when the stack inside is replaced.
+        ZStack {
+            NavigationStack {
+                content
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Theme.bg)
+                    .navigationTitle(session == nil && summary != nil ? "Tur bitti" : "Tekrar")
+                    .navigationBarTitleDisplayMode(.large)
+                    // A round has its own header with "Bitir"; the tab bar would only invite
+                    // leaving half way, and the answers belong where the thumb is (README point 9).
+                    .toolbar(isInRound ? .hidden : .visible, for: .navigationBar)
+                    .toolbar(isInRound ? .hidden : .visible, for: .tabBar)
+            }
+            // The summary is often scrolled and its bar collapses: a fresh stack after "Tamam"
+            // (and at the round's end) brings the tab root back with its large "Tekrar" title,
+            // as on the tab's first opening (2026-10-24 images). Nothing is ever pushed on the
+            // summary, so no page is lost; all state belongs to this view, outside the stack.
+            .id(summary == nil ? "tekrar" : "tur-bitti")
         }
         // Borderless controls are ink, never the system blue (rule 2).
         .tint(Theme.ink)
@@ -220,7 +231,7 @@ struct ReviewView: View {
     private func roundScreen(session: ReviewSession, card: RoundCard) -> some View {
         let detail = model.detail(for: card.word)
         return VStack(spacing: 8) {
-            roundHeader(session: session)
+            roundHeader(session: session, counterFont: ReviewView.counterFont(for: card))
             switch card {
             case let .cloze(word, quiz):
                 QuizCardView(
@@ -273,13 +284,13 @@ struct ReviewView: View {
     /// "Kart 10 / 20" and "Bitir" do not fit side by side the count goes under "Bitir" rather
     /// than being cut (audit D3). In "Tanış + Hatırla" every card counts, and a second try adds one.
     @ViewBuilder
-    private func roundHeader(session: ReviewSession) -> some View {
+    private func roundHeader(session: ReviewSession, counterFont: Font) -> some View {
         let progress = roundProgress(session)
         if dynamicTypeSize.isAccessibilitySize {
             VStack(spacing: 10) {
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: 10) {
-                        cardCounter(done: progress.done, total: progress.total)
+                        cardCounter(done: progress.done, total: progress.total, font: counterFont)
                             .fixedSize()
                         Spacer(minLength: 0)
                         finishButton
@@ -287,7 +298,7 @@ struct ReviewView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         finishButton
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                        cardCounter(done: progress.done, total: progress.total)
+                        cardCounter(done: progress.done, total: progress.total, font: counterFont)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
@@ -296,7 +307,7 @@ struct ReviewView: View {
             .padding(.horizontal, 16)
         } else {
             HStack(spacing: 12) {
-                cardCounter(done: progress.done, total: progress.total)
+                cardCounter(done: progress.done, total: progress.total, font: counterFont)
                     .fixedSize()
                 RoundProgressBar(done: progress.done, total: progress.total)
                 finishButton
@@ -304,6 +315,16 @@ struct ReviewView: View {
             .frame(minHeight: 52)
             .padding(.horizontal, 16)
         }
+    }
+
+    /// The counter takes the small size of the screen under it, so the header adds no size: the
+    /// "Tanış" card's small lines are Callout (IPA, translation, Dikkat, "Dinle"), the question
+    /// screens' are Subheadline.
+    private static func counterFont(for card: RoundCard) -> Font {
+        if case .meet = card {
+            return .callout.weight(.semibold)
+        }
+        return .subheadline.weight(.semibold)
     }
 
     private func roundProgress(_ session: ReviewSession) -> (done: Int, total: Int) {
@@ -314,10 +335,10 @@ struct ReviewView: View {
     }
 
     /// The round's heading for VoiceOver (audit V10): "Kart 3, toplam 10", not "3 bölü 10".
-    private func cardCounter(done: Int, total: Int) -> some View {
+    private func cardCounter(done: Int, total: Int, font: Font) -> some View {
         let current = min(done + 1, max(total, 1))
         return Text("Kart \(current) / \(total)")
-            .font(.subheadline.weight(.semibold))
+            .font(font)
             .monospacedDigit()
             .foregroundStyle(Theme.ink2)
             .accessibilityLabel("Kart \(current), toplam \(total)")
@@ -396,13 +417,18 @@ struct ReviewView: View {
             .coordinateSpace(.named("reviewCard"))
             .scrollBounceBehavior(.basedOnSize)
             // While more text is below, its last lines fade out into the card itself: a mask, not
-            // a colored gradient, so it matches the card in every theme.
+            // a colored gradient, so it matches the card in every theme. The fade ends above the
+            // cue's text, and under the cue the text is fully faded (2026-10-24 SE images:
+            // "Devamı" stood on a half-faded line).
             .mask {
                 VStack(spacing: 0) {
                     Rectangle()
                     if cardHasMore {
                         LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
-                            .frame(height: 56)
+                            .frame(height: 32)
+                        // The cue's text and bottom padding, with 4 pt to spare.
+                        Color.clear
+                            .frame(height: max(cueHeight - MoreBelowCue.topPadding + 4, 0))
                     }
                 }
             }
@@ -413,10 +439,19 @@ struct ReviewView: View {
         // text, never on the buttons.
         .overlay(alignment: .bottom) {
             ZStack {
+                // Measures the cue for the mask, also before it shows (its height grows with
+                // the text size).
+                MoreBelowCue()
+                    .hidden()
                 if cardHasMore {
                     MoreBelowCue()
                         .transition(.opacity)
                 }
+            }
+            .onGeometryChange(for: CGFloat.self) { geometry in
+                geometry.size.height
+            } action: { newHeight in
+                cueHeight = newHeight
             }
             // Only the cue fades; the card's text never moves with it.
             .animation(reduceMotion ? nil : .easeOut(duration: 0.15), value: cardHasMore)
@@ -434,9 +469,10 @@ struct ReviewView: View {
         VStack(spacing: 24) {
             WordHeadline(lemma: word.lemma, alignment: .center)
                 .accessibilityFocused($focus, equals: .word)
-            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+            // Callout, the card's one small size, as on its back and in the header's counter.
+            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle", font: .callout.weight(.semibold))
             Text(model.wasSeenOnWidget(word) ? "Widget'ta gördün. Hatırlıyor musun?" : "Ne demek olabilir? Tahmin et.")
-                .font(.subheadline)
+                .font(.callout)
                 .foregroundStyle(Theme.ink2)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.top, 8)
@@ -479,10 +515,12 @@ struct ReviewView: View {
                     }
                 }
             }
-            // A user's word has no English definition (and maybe no example).
+            // A user's word has no English definition (and maybe no example). Body serif like the
+            // example (2026-10-24: one size fewer on the back; the rule above the example and its
+            // marked word still set the example apart).
             if !word.defShort.isEmpty {
                 Text(verbatim: word.defShort)
-                    .definitionStyle()
+                    .exampleStyle()
                     .lineSpacing(2)
                     .fixedSize(horizontal: false, vertical: true)
                     .englishVoice()
@@ -513,10 +551,11 @@ struct ReviewView: View {
         .padding(.bottom, 20)
     }
 
-    /// "Dinle" and the "Söyle" microphone, on every "Tanış" card (2.3).
+    /// "Dinle" and the "Söyle" microphone, on every "Tanış" card (2.3). Callout, as the IPA and
+    /// the part of speech beside them.
     private func listenAndSay(_ word: WidgetWord) -> some View {
         HStack(spacing: 4) {
-            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle")
+            CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle", font: .callout.weight(.semibold))
             SayButton(word: word, example: word.exampleEN)
         }
     }
@@ -549,7 +588,9 @@ struct ReviewView: View {
             Text(verbatim: CardPartOfSpeech.turkish(word.pos))
                 .font(.callout.weight(.medium))
                 .foregroundStyle(Theme.ink2)
-            LevelBadge(code: word.level)
+            // Callout like the IPA and the part of speech beside it (the Sözlük page's facts
+            // too): Footnote here was the back's fifth size.
+            LevelBadge(code: word.level, textStyle: .callout)
         }
     }
 
@@ -2175,20 +2216,23 @@ private struct WordHeadline: View {
     }
 }
 
-/// "Devamı" on the card's bottom edge (mockup `.wcard.scrolls.more`): the text fades out under it
-/// (`cardPanel`'s mask) and the cue sits on the faded part, so it never covers a legible line. Not
-/// a capsule, since it is not a control (rule 2); visual only, VoiceOver reads on by itself.
+/// "Devamı" on the card's bottom edge (mockup `.wcard.scrolls.more`): the text fades out above it
+/// and is fully faded under it (`cardPanel`'s mask), so it never covers a legible line. Not a
+/// capsule, since it is not a control (rule 2); visual only, VoiceOver reads on by itself.
 private struct MoreBelowCue: View {
+    /// Above the text: the mask's fade ends just under it.
+    static let topPadding: CGFloat = 26
+
     var body: some View {
         HStack(spacing: 4) {
             Text("Devamı")
             Image(systemName: "chevron.down")
                 .imageScale(.small)
         }
-        // Subheadline like the round's header (one size fewer on the card's back).
-        .font(.subheadline.weight(.semibold))
+        // Callout like the card's other small lines and the round's header on this card.
+        .font(.callout.weight(.semibold))
         .foregroundStyle(Theme.ink2)
-        .padding(.top, 26)
+        .padding(.top, MoreBelowCue.topPadding)
         .padding(.bottom, 9)
         .frame(maxWidth: .infinity)
         .allowsHitTesting(false)
@@ -2387,8 +2431,11 @@ private struct ReminderOfferSheet: View {
     let accept: (Int) -> Void
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var minute: Int
     @State private var height: CGFloat = 0
+    /// The pinned answers' strip (not at accessibility sizes, where the whole page scrolls).
+    @State private var footerHeight: CGFloat = 0
 
     private struct Moment {
         let title: String
@@ -2464,21 +2511,16 @@ private struct ReminderOfferSheet: View {
                         .foregroundStyle(Theme.ink2)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    // The same height for both (2.8): "Şimdi değil" is never the smaller one.
-                    Button("Evet, gönder") {
-                        accept(minute)
-                        dismiss()
+                    // At accessibility sizes the answers scroll with the page: a pinned strip
+                    // that tall would take over an SE's screen.
+                    if dynamicTypeSize.isAccessibilitySize {
+                        answers
                     }
-                    .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 50))
-                    Button("Şimdi değil") {
-                        dismiss()
-                    }
-                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
                 }
             }
             // The 16 pt side margins of every screen.
             .padding(.horizontal, 16)
-            .padding(.top, 28)
+            .padding(.top, 24)
             .padding(.bottom, 16)
             .onGeometryChange(for: CGFloat.self) { geometry in
                 geometry.size.height
@@ -2487,16 +2529,52 @@ private struct ReminderOfferSheet: View {
             }
         }
         .scrollBounceBehavior(.basedOnSize)
+        // Shows once that the moments scroll when the sheet is taller than the screen (SE).
+        .scrollIndicatorsFlash(onAppear: true)
+        // Both answers always in sight (2026-10-24 SE image: "Şimdi değil" was cut by the screen's
+        // edge), on an opaque strip like the Tekrar screens' answers, so nothing shows through.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if !dynamicTypeSize.isAccessibilitySize {
+                answers
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
+                    .padding(.bottom, 8)
+                    .frame(maxWidth: .infinity)
+                    .background(Theme.sheetBg)
+                    .onGeometryChange(for: CGFloat.self) { geometry in
+                        geometry.size.height
+                    } action: { newHeight in
+                        footerHeight = newHeight
+                    }
+            }
+        }
         .presentationDetents(detents)
         .presentationDragIndicator(.visible)
-        .presentationBackground(Theme.bg)
+        // Elevated at night (`sheetBg`): the sheet's edge stands out from the black page.
+        .presentationBackground(Theme.sheetBg)
     }
 
-    /// As tall as the content plus the home indicator's strip (like `SystemCardSheet`); it
-    /// scrolls when the text is larger than the screen.
+    /// The two answers, the same height (2.8): "Şimdi değil" is never the smaller one.
+    private var answers: some View {
+        VStack(spacing: 10) {
+            Button("Evet, gönder") {
+                accept(minute)
+                dismiss()
+            }
+            .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 50))
+            Button("Şimdi değil") {
+                dismiss()
+            }
+            .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 50))
+        }
+    }
+
+    /// As tall as the content, the pinned answers and the home indicator's strip (like
+    /// `SystemCardSheet`); on a short screen it is the large detent and the moments scroll.
     private var detents: Set<PresentationDetent> {
         if height > 0 {
-            return [.height(height + 34)]
+            let footer = dynamicTypeSize.isAccessibilitySize ? 0 : footerHeight
+            return [.height(height + footer + 34)]
         }
         return [.large]
     }
@@ -2561,7 +2639,9 @@ private struct CountBadge: View {
 private struct GoalRing: View {
     let done: Int
     let goal: Int
-    @ScaledMetric(relativeTo: .title) private var diameter: CGFloat = 132
+    /// 144 pt: "günlük hedef" fits whole inside the ring with room to the track (at 132 pt its
+    /// descender nearly touched the ring, 2026-10-24 images).
+    @ScaledMetric(relativeTo: .title) private var diameter: CGFloat = 144
     @Environment(\.colorSchemeContrast) private var contrast
 
     var body: some View {
@@ -2588,8 +2668,10 @@ private struct GoalRing: View {
             }
             // Text styles (Large Title, Subheadline as the count badge's "kelime" and the start
             // screen's today line: no fifth size there) that stop growing at xxxLarge, as the ring
-            // stops at 172 pt; at accessibility sizes the goal is also said under the ring.
-            VStack(spacing: 4) {
+            // stops at 172 pt; at accessibility sizes the goal is also said under the ring. The
+            // text is at most 80 % of the inner circle wide, so its widest line keeps clear of the
+            // track; a wider line shrinks a little (at most to 70 %) rather than touch it.
+            VStack(spacing: 2) {
                 HStack(alignment: .firstTextBaseline, spacing: 0) {
                     Text("\(done)")
                         .foregroundStyle(Theme.ink)
@@ -2605,7 +2687,7 @@ private struct GoalRing: View {
             .lineLimit(1)
             .minimumScaleFactor(0.7)
             .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
-            .padding(lineWidth * 1.5)
+            .frame(maxWidth: (size - 2 * lineWidth) * 0.8)
         }
         .frame(width: size, height: size)
         .accessibilityElement(children: .ignore)

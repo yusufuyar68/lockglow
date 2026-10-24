@@ -550,7 +550,8 @@ struct SystemCardSheet: View {
         .scrollBounceBehavior(.basedOnSize)
         .presentationDetents(detents)
         .presentationDragIndicator(.visible)
-        .presentationBackground(Theme.bg)
+        // Not `bg`: at night a black sheet would melt into the black page.
+        .presentationBackground(Theme.sheetBg)
     }
 
     /// As tall as the card plus the home indicator's strip; it scrolls when the text is larger

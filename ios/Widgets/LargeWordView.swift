@@ -18,10 +18,12 @@ import CoreModels
 // Buttons (WidgetButtons.swift's intents): Know, speaker and Next in a row at the bottom, each a
 // 34 pt circle with its short name under it (ogrenme_ilkeleri 2.1: "simgelerin altında kısa
 // yazıyla"; docs/tasarim/terimler.md §3). Next sits in the easy corner (bottom right), Know the
-// farthest from it (bottom left). The row reaches `largeButtonOverflow` into the side and bottom
-// margins like the small widget's buttons, so the circles sit 11 pt from the edges (HIG Widgets'
-// tighter margin); the text column keeps the full 16 pt margins and never runs under the row,
-// which takes its own height.
+// farthest from it (bottom left). The row reaches `largeButtonOverflow` into the side margins like
+// the small widget's buttons, so the circles sit 11 pt from the side edges, and
+// `largeButtonBottomOverflow` into the bottom margin, so the names under the circles end 11 pt
+// from the bottom edge (HIG Widgets' tighter margin); the row, names included, stays 11 pt inside
+// the sides and the bottom. The text column keeps the full 16 pt margins and never runs under the
+// row, which takes its own height.
 // Type: four sizes (HIG: hierarchy by size and weight): the word at Title 28 (smaller steps when
 // it does not fit), the meaning Title 3 bold, the definition and the examples Subheadline serif,
 // and Footnote for the pronunciation, the level, the warning, the next change and the button
@@ -33,14 +35,19 @@ import CoreModels
 // the definition. The warning takes one line when it fits and two otherwise; it stays longer than
 // the examples, as the card's warning slot comes before its further examples (ogrenme_ilkeleri
 // 2.2). Only then does the meaning shorten (`WidgetGloss`) and get
-// smaller (ogrenme_ilkeleri 2.2: nothing hides the meaning before the definition). When the word
-// and the meaning do not fit at the person's text size they are tried again at AX1, at xxxLarge
-// and at the default size, as on the medium widget, so the meaning stays at every text size; the
-// word alone is the last resort.
+// smaller (ogrenme_ilkeleri 2.2: nothing hides the meaning before the definition). When nothing
+// fits at the person's text size, the whole ladder (`ladder`: the fullest layouts, then the
+// shorter and smaller meaning) is tried again at AX1 and at xxxLarge, so a larger text size never
+// shows less than AX1 shows; then the smaller meaning at the default size, as on the medium
+// widget, so the meaning stays at every text size; the word alone is the last resort.
 
-/// How far the button row reaches into the widget margin (`buttonGroupOverflow` on the small and
-/// medium widgets): the circles sit 16 - 10 + 5 = 11 pt from the edges.
+/// How far the button row reaches into the side margins (`buttonGroupOverflow` on the small and
+/// medium widgets): the circles sit 16 - 10 + 5 = 11 pt from the side edges.
 private let largeButtonOverflow: CGFloat = 10
+/// How far the button row reaches into the bottom margin: the names under the circles reach the
+/// row's bottom, so the row ends 16 - 5 = 11 pt from the bottom edge (the 2026-10-24 images: with
+/// the side overflow the names' ink ended 7 pt from it).
+private let largeButtonBottomOverflow: CGFloat = 5
 /// Space under the word: the night band hangs about 5 pt below a 28 pt word's frame (LockglowTheme,
 /// "Phosphor band"; `headerGap` is 6 pt for the medium widget's 20 pt word).
 private let largeHeaderGap: CGFloat = 7
@@ -73,28 +80,16 @@ struct LargeWordView: View {
             // The retries are groups: a modifier on a Group applies to each of its views, and
             // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
+                ladder
+                // Above AX1: AX1's whole ladder first, so a larger size never shows smaller text
+                // or fewer lines than AX1 (the 2026-10-24 AX3 images had only the word and the
+                // meaning where AX1 also had the definition).
                 Group {
-                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2], nextChange: true)
-                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2])
-                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, exampleLines: [1], warning: [1, 2])
-                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
-                    column(shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
-                    column(shortens: false, definition: [1, 2], warning: [1, 2])
-                    column(shortens: false, definition: [1, 2])
-                    column(shortens: false)
-                }
-                column()
-                column(meaning: LargeWordView.smallMeaningFont)
-                // Above AX1: one step smaller first, so a larger size never shows smaller text
-                // than AX1.
-                Group {
-                    column()
-                    column(meaning: LargeWordView.smallMeaningFont)
+                    ladder
                 }
                 .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 Group {
-                    column()
-                    column(meaning: LargeWordView.smallMeaningFont)
+                    ladder
                 }
                 .dynamicTypeSize(...WidgetText.largestStandardSize)
                 // The text area does not grow with the text size: at the default size this draws
@@ -110,9 +105,28 @@ struct LargeWordView: View {
             LargeWidgetButtonRow(word: word, colors: colors)
                 .padding(.leading, max(margins.leading - largeButtonOverflow, 0))
                 .padding(.trailing, max(margins.trailing - largeButtonOverflow, 0))
-                .padding(.bottom, max(margins.bottom - largeButtonOverflow, 0))
+                .padding(.bottom, max(margins.bottom - largeButtonBottomOverflow, 0))
         }
         .widgetTurkishVoice()
+    }
+
+    /// One text size's ladder, fullest first: the whole meaning with its optional lines, then the
+    /// meaning's shorter forms, then the smaller meaning. The definition is never kept with a
+    /// shortened meaning (ogrenme_ilkeleri 2.2: the definition goes before the meaning shortens).
+    @ViewBuilder
+    private var ladder: some View {
+        Group {
+            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2], nextChange: true)
+            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2])
+            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, exampleLines: [1], warning: [1, 2])
+            column(shortens: false, pronunciation: true, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
+            column(shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2])
+            column(shortens: false, definition: [1, 2], warning: [1, 2])
+            column(shortens: false, definition: [1, 2])
+            column(shortens: false)
+        }
+        column()
+        column(meaning: LargeWordView.smallMeaningFont)
     }
 
     /// The word row: the word at the first of its size steps that fits whole, and the level code.
@@ -244,12 +258,15 @@ extension WidgetWordStep {
 /// the band stays the widget's only yellow mark (as on the medium widget, `ExampleMark` without
 /// the highlight). An irregular form is not found and stays plain. When no line count fits, the
 /// variant around it is passed over (`WidgetFit.reject`). VoiceOver reads the whole sentence once,
-/// with an English voice.
+/// with an English voice. The medium widget's example line (`WidgetExampleLine`) and the quiz
+/// widget's example are this view at `.footnote` serif (`typeface`).
 struct LargeExampleText: View {
     let sentence: String
     let lemma: String
     /// The line counts to try, in order.
     var lines = [1, 2]
+    /// The large widget's Subheadline serif by default.
+    var typeface: Font = LargeExampleText.font
     let color: AnyShapeStyle
 
     static let font = Font.system(.subheadline, design: .serif)
@@ -275,7 +292,7 @@ struct LargeExampleText: View {
         VStack(alignment: .leading, spacing: 2) {
             ForEach(Array(lines.enumerated()), id: \.offset) { _, line in
                 Text(line)
-                    .font(LargeExampleText.font)
+                    .font(typeface)
                     .foregroundStyle(color)
                     .lineLimit(1)
             }
@@ -474,7 +491,9 @@ struct LargeWarningLine: View {
 /// the words around its place ("listen music" / "listen to music"). The words are compared by the
 /// shared `MistakeDiff` (the first right option, ignoring case and punctuation) and keep its marks.
 /// A Turkish note in the sentence ("(= şu anda)") is left out, and a part that reaches the end of
-/// its sentence drops the final punctuation.
+/// its sentence drops the final punctuation. The shared word on a side is never one of another
+/// sentence: "Please stop to talk. The baby is sleeping." gives "stop to talk" / "stop talking",
+/// not "stop talking. The".
 struct LargeMistakeSnippet: Equatable {
     struct Word: Equatable {
         let text: String
@@ -496,6 +515,8 @@ struct LargeMistakeSnippet: Equatable {
         let rightShared = rightWords.indices.filter { LargeMistakeSnippet.isShared(rightWords[$0]) }
         var wrongRange = 0..<wrongWords.count
         var rightRange = 0..<rightWords.count
+        // The part ends where its sentence ends: its last word then drops its punctuation too.
+        var cutAtEnd = false
         if !wrongWords.isEmpty, !rightWords.isEmpty, wrongShared.count == rightShared.count {
             // The shared words, with one before the start and one after the end: a gap between
             // two neighbours is a difference.
@@ -514,12 +535,41 @@ struct LargeMistakeSnippet: Equatable {
             if let firstGap = firstGap {
                 let start = anchors[firstGap]
                 let end = anchors[lastGap + 1]
-                wrongRange = max(start.wrong, 0)..<(min(end.wrong, wrongWords.count - 1) + 1)
-                rightRange = max(start.right, 0)..<(min(end.right, rightWords.count - 1) + 1)
+                var wrongLower = max(start.wrong, 0)
+                var wrongUpper = min(end.wrong, wrongWords.count - 1) + 1
+                var rightLower = max(start.right, 0)
+                var rightUpper = min(end.right, rightWords.count - 1) + 1
+                // A shared word after a sentence's end belongs to the next sentence ("stop
+                // talking. The"): the part ends with its own sentence. Either side's end counts
+                // ("sympathetic, everyone" / "nice. Everyone"), but only where that side's last
+                // gap has words: an empty gap is only a place, and the other side's words may
+                // stand after the sentence's end ("here. Is" / "here. It is"). Neither side is
+                // left empty.
+                let beforeEnd = anchors[lastGap]
+                if end.wrong < wrongWords.count, end.right < rightWords.count,
+                   wrongLower < end.wrong, rightLower < end.right,
+                   (end.wrong - beforeEnd.wrong > 1 && LargeMistakeSnippet.endsSentence(wrongWords[end.wrong - 1].text))
+                    || (end.right - beforeEnd.right > 1 && LargeMistakeSnippet.endsSentence(rightWords[end.right - 1].text)) {
+                    wrongUpper = end.wrong
+                    rightUpper = end.right
+                    cutAtEnd = true
+                }
+                // Likewise a shared word that ends the sentence before the part (again only on a
+                // side whose first gap has words).
+                let afterStart = anchors[firstGap + 1]
+                if start.wrong >= 0, start.right >= 0,
+                   start.wrong + 1 < wrongUpper, start.right + 1 < rightUpper,
+                   (afterStart.wrong - start.wrong > 1 && LargeMistakeSnippet.endsSentence(wrongWords[start.wrong].text))
+                    || (afterStart.right - start.right > 1 && LargeMistakeSnippet.endsSentence(rightWords[start.right].text)) {
+                    wrongLower = start.wrong + 1
+                    rightLower = start.right + 1
+                }
+                wrongRange = wrongLower..<wrongUpper
+                rightRange = rightLower..<rightUpper
             }
         }
-        self.wrong = LargeMistakeSnippet.trimmed(wrongWords, in: wrongRange)
-        self.right = LargeMistakeSnippet.trimmed(rightWords, in: rightRange)
+        self.wrong = LargeMistakeSnippet.trimmed(wrongWords, in: wrongRange, cutAtEnd: cutAtEnd)
+        self.right = LargeMistakeSnippet.trimmed(rightWords, in: rightRange, cutAtEnd: cutAtEnd)
     }
 
     /// The wrong words as plain text (VoiceOver).
@@ -576,11 +626,22 @@ struct LargeMistakeSnippet: Equatable {
         return !word.isChanged && !MistakeDiff.normalized(word.text).isEmpty
     }
 
-    /// The words in `range`; the sentence's last word without its final punctuation.
-    private static func trimmed(_ words: [Word], in range: Range<Int>) -> [Word] {
+    /// Whether `word` ends a sentence: its last character before closing quotes and brackets is
+    /// ".", "!", "?" or "…".
+    private static func endsSentence(_ word: String) -> Bool {
+        let core = word.reversed().drop(while: { character in "\"')”’".contains(character) })
+        guard let last = core.first else {
+            return false
+        }
+        return ".!?…".contains(last)
+    }
+
+    /// The words in `range`; the sentence's last word without its final punctuation, and with
+    /// `cutAtEnd` (the part ends with its sentence) the range's last word too.
+    private static func trimmed(_ words: [Word], in range: Range<Int>, cutAtEnd: Bool) -> [Word] {
         return range.compactMap { index -> Word? in
             var text = words[index].text
-            if index == words.count - 1 {
+            if index == words.count - 1 || (cutAtEnd && index == range.upperBound - 1) {
                 while let last = text.last, ".!?;:,…".contains(last) {
                     text.removeLast()
                 }
@@ -619,7 +680,7 @@ struct LargeMistakeSnippet: Equatable {
 }
 
 /// The large widget's buttons (the intents of WidgetButtons.swift): Know, speaker and Next, each
-/// a 34 pt circle (`surface2`, a faint wash when tinted) with its short name under it, so no
+/// a 34 pt circle (`surface2`, a 1.5 pt outline when tinted) with its short name under it, so no
 /// button rests on its icon alone (ogrenme_ilkeleri 2.1). The hit areas are at least 44 x 44 pt
 /// with at least 8 pt between them. The outer buttons align their circle with the row's edges,
 /// where the other widgets' circles sit. VoiceOver uses the other widgets' names, which contain
@@ -677,6 +738,14 @@ private struct LargeButtonFace: View {
                 .imageScale(.medium)
                 .frame(width: 34, height: 34)
                 .background(colors.buttonFill, in: Circle())
+                // Tinted, the circle is an opaque outline, as on the other widgets
+                // (`WidgetButtonFace`, `WidgetColors.accented`).
+                .overlay {
+                    if let edge = colors.buttonEdge {
+                        Circle()
+                            .strokeBorder(edge, lineWidth: 1.5)
+                    }
+                }
             Text(verbatim: name)
                 .font(.footnote.weight(.semibold))
                 .lineLimit(1)

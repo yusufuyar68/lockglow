@@ -10,8 +10,9 @@ import SharedState
 // Medium (289 x 116 pt of content on an iPhone SE): the question line and the word on top, beside
 // the speaker (and the round "Devam" after the answer); the three options side by side below, each
 // a 44 pt or taller button. Large (289 x 292 pt on an SE): the same top with the pronunciation and
-// a "Devam" capsule, the options as full-width rows, and after a wrong pick what it means ("Senin
-// seçtiğin: allow = izin vermek") and the example sentence.
+// a "Devam" capsule (round, as on the medium widget, for a long word and above the default text
+// size), the options as full-width rows, and after a wrong pick what it means ("Senin seçtiğin:
+// allow = izin vermek") and the example sentence, whole on up to three lines.
 // After the answer the options are no longer buttons: the right one has a check and a `good` box,
 // a wrong pick a cross in a quiet color and the paper's box, the third one is quiet; the line on
 // top says it in words ("Doğru." / "Doğrusu: ödünç almak"), so the meaning never rests on color
@@ -86,8 +87,10 @@ enum QuizText {
         }
     }
 
-    /// The line on top, fullest first, one line each: the question; after the answer "Doğru." or
-    /// "Doğrusu: …" with the whole meaning, then its short form, then "Doğrusu işaretli.".
+    /// The line on top, fullest first: the question; after the answer "Doğru." or "Doğrusu: …"
+    /// with the whole meaning, then its short form, each on one line, then "Doğrusu işaretli." on
+    /// one line, else on two ("Doğrusu" / "işaretli."), so a large text size wraps it instead of
+    /// dropping the layout to the default size.
     static func status(of screen: WidgetQuizScreen) -> [[String]] {
         guard screen.isAnswered else {
             return [[question]]
@@ -100,7 +103,8 @@ enum QuizText {
         if let short = item.shortOption(at: item.answerIndex) {
             forms.append(short)
         }
-        return WidgetText.candidates(forms.map { "Doğrusu: \($0)" }, lines: [1]) + [[markedFallback]]
+        return WidgetText.candidates(forms.map { "Doğrusu: \($0)" }, lines: [1])
+            + WidgetText.candidates([markedFallback], lines: [1, 2])
     }
 
     /// What VoiceOver reads for the line on top: always the whole meaning after a wrong pick, also
@@ -275,11 +279,16 @@ struct QuizLargeView: View {
     var body: some View {
         Group {
             if let screen = entry.screen {
-                // After the answer the example gives way first, then the wrong pick's line.
+                // After the answer the example gives way first, then the wrong pick's line. When
+                // the "Devam" capsule leaves the word too little room (a long word), the round
+                // "Devam" of the medium widget comes before smaller options (2026-10-24 images:
+                // "misunderstanding" fell to the last variant).
                 ViewThatFits(in: .vertical) {
                     layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true)
                     layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true)
                     layout(screen, option: .body.weight(.semibold), lines: [1, 2])
+                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true, compactNext: true)
+                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, compactNext: true)
                     layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
                     Group {
                         layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true)
@@ -288,7 +297,7 @@ struct QuizLargeView: View {
                     .dynamicTypeSize(...WidgetText.largestStandardSize)
                     Group {
                         layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true)
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2], lastResort: true)
+                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2], lastResort: true, compactNext: true)
                     }
                     .dynamicTypeSize(...DynamicTypeSize.large)
                 }
@@ -300,13 +309,16 @@ struct QuizLargeView: View {
         .widgetTurkishVoice()
     }
 
+    /// One layout variant; `compactNext` puts the round "Devam" beside the speaker instead of the
+    /// capsule (always so above the default text size, `QuizTopRow`).
     private func layout(
         _ screen: WidgetQuizScreen,
         option: Font,
         lines: [Int],
         picked: Bool = false,
         example: Bool = false,
-        lastResort: Bool = false
+        lastResort: Bool = false,
+        compactNext: Bool = false
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             QuizTopRow(
@@ -315,7 +327,7 @@ struct QuizLargeView: View {
                 showsIPA: true,
                 status: .subheadline.weight(.semibold),
                 lastResort: lastResort,
-                compactNext: false,
+                compactNext: compactNext,
                 source: .systemLarge,
                 colors: colors,
                 renderingMode: renderingMode
@@ -341,8 +353,16 @@ struct QuizLargeView: View {
                         line
                     }
                     if example, let sentence = screen.item.exampleEN, !sentence.isEmpty {
-                        WidgetExampleLine(sentence: sentence, lemma: screen.item.lemma, color: colors.base.ink2)
-                            .widgetEnglishVoice()
+                        // The whole sentence on one to three balanced lines, never cut with "…";
+                        // when it does not fit, the variant without it is shown.
+                        LargeExampleText(
+                            sentence: sentence,
+                            lemma: screen.item.lemma,
+                            lines: [1, 2, 3],
+                            typeface: WidgetExampleLine.font,
+                            color: colors.base.ink2
+                        )
+                        .widgetEnglishVoice()
                     }
                 }
                 .padding(.top, 10)
@@ -355,7 +375,9 @@ struct QuizLargeView: View {
 
 /// The top row: the question line (the result after the answer) over the word, and on the right
 /// the speaker and, after the answer, "Devam" (`compactNext`: round, as the word widget's buttons,
-/// so the word keeps its room on the medium widget).
+/// so the word keeps its room on the medium widget, and on the large widget for a long word).
+/// Above the default text size "Devam" is always round: the capsule left the word and the line
+/// on top too little room, and the answer dropped to the default size (2026-10-24 images).
 private struct QuizTopRow: View {
     let screen: WidgetQuizScreen
     let steps: [WidgetWordStep]
@@ -366,6 +388,8 @@ private struct QuizTopRow: View {
     let source: WidgetEventSource
     let colors: QuizColors
     let renderingMode: WidgetRenderingMode?
+    /// The variant's own text size (read outside the buttons' xxLarge limit).
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         HStack(alignment: .top, spacing: 6) {
@@ -401,7 +425,12 @@ private struct QuizTopRow: View {
             HStack(spacing: 4) {
                 SpeakWordButton(text: screen.item.lemma, colors: colors.base)
                 if screen.isAnswered {
-                    QuizNextButton(wordID: screen.item.wordID, compact: compactNext, source: source, colors: colors.base)
+                    QuizNextButton(
+                        wordID: screen.item.wordID,
+                        compact: compactNext || dynamicTypeSize > .large,
+                        source: source,
+                        colors: colors.base
+                    )
                 }
             }
             .dynamicTypeSize(...DynamicTypeSize.xxLarge)

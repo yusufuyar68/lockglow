@@ -259,7 +259,8 @@ extension CardDetail {
 /// one-line Dikkat: "I have two spoon." / "I have two spoons." gives "two spoon" / "two spoons";
 /// a missing word keeps the words around its place ("listen music" / "listen to music"). Words
 /// are compared as in `MistakeDiff` (the first right option, ignoring case and punctuation).
-/// A snippet that reaches the end of its sentence drops the final punctuation.
+/// A snippet that reaches the end of its sentence drops the final punctuation, and its shared word
+/// is never one of another sentence ("stop to talk" / "stop talking", not "stop talking. The").
 struct MistakeSnippet: Equatable {
     struct Word: Equatable {
         let text: String
@@ -299,16 +300,46 @@ struct MistakeSnippet: Equatable {
         }
         var wrongRange = 0...(wrongTokens.count - 1)
         var rightRange = 0...(rightTokens.count - 1)
+        // The snippet ends where its sentence ends: its last word then drops its punctuation too.
+        var cutAtEnd = false
         if let firstGap = firstGap {
             let start = anchors[firstGap]
             let end = anchors[lastGap + 1]
-            wrongRange = max(start.wrong, 0)...min(end.wrong, wrongTokens.count - 1)
-            rightRange = max(start.right, 0)...min(end.right, rightTokens.count - 1)
+            var wrongLower = max(start.wrong, 0)
+            var wrongUpper = min(end.wrong, wrongTokens.count - 1)
+            var rightLower = max(start.right, 0)
+            var rightUpper = min(end.right, rightTokens.count - 1)
+            // A shared word after a sentence's end belongs to the next sentence ("stop talking.
+            // The"): the snippet ends with its own sentence, as the large widget's
+            // (`LargeMistakeSnippet`). Either side's end counts, but only where that side's last
+            // gap has words (an empty gap is only a place: "here. Is" / "here. It is"); neither
+            // side is left empty.
+            let beforeEnd = anchors[lastGap]
+            if end.wrong < wrongTokens.count, end.right < rightTokens.count,
+               wrongLower < end.wrong, rightLower < end.right,
+               (end.wrong - beforeEnd.wrong > 1 && MistakeSnippet.endsSentence(wrongTokens[end.wrong - 1]))
+                || (end.right - beforeEnd.right > 1 && MistakeSnippet.endsSentence(rightTokens[end.right - 1])) {
+                wrongUpper = end.wrong - 1
+                rightUpper = end.right - 1
+                cutAtEnd = true
+            }
+            // Likewise a shared word that ends the sentence before the snippet (again only on a
+            // side whose first gap has words).
+            let afterStart = anchors[firstGap + 1]
+            if start.wrong >= 0, start.right >= 0,
+               start.wrong + 1 <= wrongUpper, start.right + 1 <= rightUpper,
+               (afterStart.wrong - start.wrong > 1 && MistakeSnippet.endsSentence(wrongTokens[start.wrong]))
+                || (afterStart.right - start.right > 1 && MistakeSnippet.endsSentence(rightTokens[start.right])) {
+                wrongLower = start.wrong + 1
+                rightLower = start.right + 1
+            }
+            wrongRange = wrongLower...wrongUpper
+            rightRange = rightLower...rightUpper
         }
         let keptWrong = Set(pairs.map { $0.wrong })
         let keptRight = Set(pairs.map { $0.right })
-        self.wrong = MistakeSnippet.words(wrongTokens, in: wrongRange, keeping: keptWrong)
-        self.right = MistakeSnippet.words(rightTokens, in: rightRange, keeping: keptRight)
+        self.wrong = MistakeSnippet.words(wrongTokens, in: wrongRange, keeping: keptWrong, cutAtEnd: cutAtEnd)
+        self.right = MistakeSnippet.words(rightTokens, in: rightRange, keeping: keptRight, cutAtEnd: cutAtEnd)
     }
 
     /// The wrong words, the changed ones underlined with dots in `color`.
@@ -366,10 +397,22 @@ struct MistakeSnippet: Equatable {
         return pairs
     }
 
-    private static func words(_ tokens: [String], in range: ClosedRange<Int>, keeping kept: Set<Int>) -> [Word] {
+    /// Whether `token` ends a sentence: its last character before closing quotes and brackets is
+    /// ".", "!", "?" or "…".
+    private static func endsSentence(_ token: String) -> Bool {
+        let core = token.reversed().drop(while: { character in "\"')”’".contains(character) })
+        guard let last = core.first else {
+            return false
+        }
+        return ".!?…".contains(last)
+    }
+
+    /// The tokens in `range` as words; the sentence's last word without its final punctuation,
+    /// and with `cutAtEnd` (the snippet ends with its sentence) the range's last word too.
+    private static func words(_ tokens: [String], in range: ClosedRange<Int>, keeping kept: Set<Int>, cutAtEnd: Bool) -> [Word] {
         return range.map { index -> Word in
             var text = tokens[index]
-            if index == tokens.count - 1 {
+            if index == tokens.count - 1 || (cutAtEnd && index == range.upperBound) {
                 while let last = text.last, ".!?;:,…".contains(last) {
                     text.removeLast()
                 }
@@ -421,8 +464,15 @@ struct CardWarningLine: View {
             if showsIcon {
                 icon
             }
-            ForEach(Array(parts.enumerated()), id: \.offset) { _, part in
-                CardLinePartView(part: part)
+            // Each unit wraps as one piece: "✓" never stays at a line's end without its sentence
+            // (2026-10-24 SE image: "✕ I did breakfast → ✓" / "I had breakfast"). The spacing is the
+            // layout's own, so a line that fits looks the same.
+            ForEach(Array(units.enumerated()), id: \.offset) { _, unit in
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    ForEach(Array(unit.enumerated()), id: \.offset) { _, part in
+                        CardLinePartView(part: part)
+                    }
+                }
             }
             if let explain = explain {
                 CardWhyChip(action: explain)
@@ -447,6 +497,27 @@ struct CardWarningLine: View {
             .accessibilityHidden(true)
     }
 
+    /// The line's parts in units that wrap as one piece: a mistake's "✕ wrong" and "→ ✓ right"
+    /// (the mark stays with its sentence); any other part alone, wrapping like a word.
+    private var units: [[CardLinePart]] {
+        if case let .mistake(mistake) = warning {
+            let snippet = MistakeSnippet(mistake)
+            return [
+                [
+                    .symbol("xmark", color: Theme.bad, spoken: "Dikkat. Yanlış:"),
+                    .english(snippet.wrongText())
+                ],
+                [
+                    .sign("→"),
+                    .symbol("checkmark", color: Theme.good, spoken: "Doğru:"),
+                    .english(snippet.rightText(), bold: true)
+                ]
+            ]
+        }
+        return parts.map { [$0] }
+    }
+
+    /// The parts of a line that is not a mistake (`units` keeps a mistake's parts together).
     private var parts: [CardLinePart] {
         switch warning {
         case let .falseFriend(friend):
@@ -459,15 +530,8 @@ struct CardWarningLine: View {
                 .sign("="),
                 .english(AttributedString(friend.enForThat))
             ]
-        case let .mistake(mistake):
-            let snippet = MistakeSnippet(mistake)
-            return [
-                .symbol("xmark", color: Theme.bad, spoken: "Dikkat. Yanlış:"),
-                .english(snippet.wrongText()),
-                .sign("→"),
-                .symbol("checkmark", color: Theme.good, spoken: "Doğru:"),
-                .english(snippet.rightText(), bold: true)
-            ]
+        case .mistake:
+            return units.flatMap { $0 }
         case let .sameWord(count):
             return [
                 .turkish("İngilizcede \(CardWarningLine.allOf(count)):"),
@@ -799,6 +863,9 @@ struct CardListenCapsule: View {
     @ObservedObject private var speaker = Speaker.shared
     let text: String
     var accessibilityName = "Kelimeyi dinle"
+    /// The label's text style: Subheadline semibold by default; a screen whose small lines are
+    /// Callout passes Callout, so the capsule adds no size there (the Tanış card, the Sözlük page).
+    var font: Font = .subheadline.weight(.semibold)
 
     var body: some View {
         let isSpeaking = speaker.speakingText == text
@@ -810,29 +877,33 @@ struct CardListenCapsule: View {
                 Text(isSpeaking ? "Durdur" : "Dinle")
             }
         }
-        .buttonStyle(CardCapsuleButtonStyle())
+        .buttonStyle(CardCapsuleButtonStyle(font: font))
         .accessibilityLabel(isSpeaking ? "Durdur" : accessibilityName)
         // Voice Control: "Dinle'ye dokun" works as well as the spoken name.
         .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle"), Text(isSpeaking ? "Durdur" : accessibilityName)])
     }
 }
 
-/// The capsule of `CardListenCapsule` and the card's "Biliyorum": 44 pt high, subheadline, the
-/// press feedback of the theme's capsule buttons. A `surface2` fill with a 1 pt `lineStrong` edge
-/// (1.5 pt with Increase Contrast or Button Shapes; audit K1: the fill alone is 1.1-1.2:1 against
-/// the card). `isSelected` (a known word's "Biliyorum"): `surface` with a 1.5 pt `tint` border, like
-/// a selected chip.
+/// The capsule of `CardListenCapsule` and the card's "Biliyorum": 44 pt high, subheadline (or
+/// `font`), the press feedback of the theme's capsule buttons. A `surface2` fill with a 1 pt
+/// `lineStrong` edge (1.5 pt with Increase Contrast or Button Shapes; audit K1: the fill alone is
+/// 1.1-1.2:1 against the card). `isSelected` (a known word's "Biliyorum"): `surface` with a 1.5 pt
+/// `tint` border, like a selected chip.
 struct CardCapsuleButtonStyle: ButtonStyle {
     var isSelected = false
+    /// The label's text style; the style sets it inside, so a `.font` outside the button does not
+    /// change it.
+    var font: Font = .subheadline.weight(.semibold)
 
     func makeBody(configuration: Configuration) -> some View {
-        CardCapsuleButtonBody(configuration: configuration, isSelected: isSelected)
+        CardCapsuleButtonBody(configuration: configuration, isSelected: isSelected, font: font)
     }
 }
 
 private struct CardCapsuleButtonBody: View {
     let configuration: ButtonStyleConfiguration
     let isSelected: Bool
+    let font: Font
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorSchemeContrast) private var contrast
@@ -840,7 +911,7 @@ private struct CardCapsuleButtonBody: View {
 
     var body: some View {
         configuration.label
-            .font(.subheadline.weight(.semibold))
+            .font(font)
             .lineLimit(1)
             .foregroundStyle(Theme.ink)
             .padding(.leading, 11)

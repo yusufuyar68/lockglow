@@ -130,6 +130,10 @@ enum Theme {
     )
     /// Page background: systemGroupedBackground by day, pure black at night (OLED pixels off).
     static let bg = dynamic(light: Tone(0xF2F2F7), dark: Tone(0x000000))
+    /// A short sheet's background: systemGroupedBackground as an elevated sheet, `bg` by day and
+    /// `surface`'s #1C1C1E at night, so the sheet's edge and corners stand out from the black page
+    /// (gece_oled.md step 3: sheets stay on surface at night).
+    static let sheetBg = dynamic(light: Tone(0xF2F2F7), dark: Tone(0x1C1C1E))
     /// Cards by day, sheets and grouped lists, the selected segment
     /// (secondarySystemGroupedBackground).
     static let surface = dynamic(light: Tone(0xFFFFFF), dark: Tone(0x1C1C1E))
@@ -794,27 +798,31 @@ private struct CardSurfaceModifier: ViewModifier {
 
 /// "A2 ●●○" (rule 4: the level is never color alone). A1 one dot, A2 two, B1 and above three;
 /// an empty dot is a 1 pt `ink3` ring (5:1 and more; a pale fill was 1.6:1, audit K2).
-/// VoiceOver reads "Seviye A2".
+/// VoiceOver reads "Seviye A2". The code is Footnote bold, or `textStyle` bold where the line
+/// around it is set in another size (the Sözlük page's Callout facts).
 struct LevelBadge: View {
     let code: String
     let dots: Int
+    let textStyle: Font.TextStyle
     @ScaledMetric(relativeTo: .footnote) private var dotSize: CGFloat = 5
 
-    init(_ level: Level) {
+    init(_ level: Level, textStyle: Font.TextStyle = .footnote) {
         code = level.rawValue
         dots = min(3, max(0, level.rank))
+        self.textStyle = textStyle
     }
 
     /// `code` as stored in `WidgetWord.level` ("A1", "A2", "B1"); an unknown code gets no dots.
-    init(code: String) {
+    init(code: String, textStyle: Font.TextStyle = .footnote) {
         self.code = code
         dots = Level(rawValue: code).map { min(3, max(0, $0.rank)) } ?? 0
+        self.textStyle = textStyle
     }
 
     var body: some View {
         HStack(spacing: 6) {
             Text(verbatim: code)
-                .font(.footnote.weight(.bold))
+                .font(.system(textStyle, design: .default).weight(.bold))
                 .foregroundStyle(Theme.ink)
             HStack(spacing: 2) {
                 ForEach(1...3, id: \.self) { dot in

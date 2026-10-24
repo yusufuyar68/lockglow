@@ -703,42 +703,19 @@ private struct ShelfRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Button(action: toggle) {
-                HStack(alignment: .center, spacing: 12) {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(verbatim: shelf.title)
-                            .font(.headline)
-                            .foregroundStyle(Theme.ink)
-                            .fixedSize(horizontal: false, vertical: true)
-                        Text(verbatim: shelf.rhythm)
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.ink2)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    Spacer(minLength: 8)
-                    if count > 0 {
-                        Text(verbatim: "\(count)")
-                            .font(.title3.weight(.bold))
-                            .monospacedDigit()
-                            .foregroundStyle(Theme.ink)
-                        Image(systemName: "chevron.down")
-                            .font(.footnote.weight(.semibold))
-                            .foregroundStyle(Theme.ink3)
-                            .rotationEffect(.degrees(isOpen ? 180 : 0))
-                    } else {
-                        Text("boş")
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.ink3)
-                    }
-                }
-                .frame(maxWidth: .infinity, minHeight: Theme.minHitSize, alignment: .leading)
-                .contentShape(Rectangle())
+            // An empty shelf is static text, not a disabled button: a disabled plain button
+            // dims its whole label below 4.5:1, and "boş" already says there is nothing to open.
+            if count > 0 {
+                Button(action: toggle) { header }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(Text(verbatim: voiceLabel))
+                    .accessibilityValue(Text(verbatim: isOpen ? "açık" : "kapalı"))
+                    .accessibilityHint(Text(verbatim: isOpen ? "Kelimeleri gizler." : "Kelimeleri gösterir."))
+            } else {
+                header
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text(verbatim: voiceLabel))
             }
-            .buttonStyle(.plain)
-            .disabled(count == 0)
-            .accessibilityLabel(Text(verbatim: voiceLabel))
-            .accessibilityValue(Text(verbatim: count == 0 ? "" : (isOpen ? "açık" : "kapalı")))
-            .accessibilityHint(Text(verbatim: count == 0 ? "" : (isOpen ? "Kelimeleri gizler." : "Kelimeleri gösterir.")))
 
             if count > 0 && !dynamicTypeSize.isAccessibilitySize {
                 BookSpines(
@@ -757,6 +734,39 @@ private struct ShelfRow: View {
         // A grouped row's margins: 16 pt at the sides.
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
+    }
+
+    /// Name and rhythm on the left; the count and chevron, or "boş", on the right.
+    private var header: some View {
+        HStack(alignment: .center, spacing: 12) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(verbatim: shelf.title)
+                    .font(.headline)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(verbatim: shelf.rhythm)
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 8)
+            if count > 0 {
+                Text(verbatim: "\(count)")
+                    .font(.title3.weight(.bold))
+                    .monospacedDigit()
+                    .foregroundStyle(Theme.ink)
+                Image(systemName: "chevron.down")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.ink3)
+                    .rotationEffect(.degrees(isOpen ? 180 : 0))
+            } else {
+                Text("boş")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.ink3)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: Theme.minHitSize, alignment: .leading)
+        .contentShape(Rectangle())
     }
 
     private var voiceLabel: String {

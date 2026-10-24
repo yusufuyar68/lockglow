@@ -170,6 +170,8 @@ struct SozlukFilterBar: View {
 /// mark on every row would say nothing.
 struct SozlukStatusMark: View {
     let state: LearningState
+    /// Footnote, the level badge's size, on the rows; the word page's facts pass Callout.
+    var textStyle: Font.TextStyle = .footnote
 
     var body: some View {
         Label {
@@ -178,8 +180,8 @@ struct SozlukStatusMark: View {
             Image(systemName: SozlukStatus.symbol(state))
         }
         .labelStyle(.titleAndIcon)
-        // Footnote, the level badge's size: one small size on the rows and the word page.
-        .font(.footnote.weight(.semibold))
+        // The level badge's size: one small size on the rows and on the word page.
+        .font(.system(textStyle, design: .default).weight(.semibold))
         .foregroundStyle(SozlukStatus.color(state))
     }
 }
@@ -243,6 +245,8 @@ struct SozlukWordLink: View {
     var note: AttributedString? = nil
     /// False on the topic page, where the words stand under their level's heading.
     var showsLevel = true
+    /// The word page's link rows (`SozlukWordRow.compact`).
+    var compact = false
     let open: (WidgetWord) -> Void
 
     var body: some View {
@@ -256,7 +260,8 @@ struct SozlukWordLink: View {
                 note: note,
                 // A user's word has no level.
                 level: showsLevel && !word.isUserAdded ? word.level : nil,
-                state: state
+                state: state,
+                compact: compact
             )
         }
         .buttonStyle(SozlukRowButtonStyle())
@@ -326,6 +331,15 @@ struct SozlukWordRow: View {
     var note: AttributedString? = nil
     var level: String? = nil
     let state: LearningState
+    /// The word page's "Başka anlamı" and "Karıştırma" rows: the word at Body serif and the note,
+    /// level and status at Callout, the page's own sizes (Sözlük's lists keep Title 3 and
+    /// Footnote).
+    var compact = false
+
+    /// The note's, the level's and the status's size.
+    private var smallStyle: Font.TextStyle {
+        return compact ? .callout : .footnote
+    }
 
     var body: some View {
         HStack(spacing: 10) {
@@ -347,7 +361,7 @@ struct SozlukWordRow: View {
                 }
                 if let note = note {
                     Text(note)
-                        .font(.footnote.weight(.medium))
+                        .font(.system(smallStyle, design: .default).weight(.medium))
                         .foregroundStyle(Theme.ink2)
                 }
             }
@@ -366,7 +380,7 @@ struct SozlukWordRow: View {
 
     private var word: some View {
         Text(lemma)
-            .font(.system(.title3, design: .serif).weight(.bold))
+            .font(.system(compact ? Font.TextStyle.body : Font.TextStyle.title3, design: .serif).weight(.bold))
             .foregroundStyle(Theme.ink)
             .cardEnglishVoice()
     }
@@ -376,11 +390,11 @@ struct SozlukWordRow: View {
         if level != nil || state != .new {
             DictionaryFlowLayout(itemSpacing: 8, lineSpacing: 4) {
                 if let level = level {
-                    LevelBadge(code: level)
+                    LevelBadge(code: level, textStyle: smallStyle)
                         .fixedSize()
                 }
                 if state != .new {
-                    SozlukStatusMark(state: state)
+                    SozlukStatusMark(state: state, textStyle: smallStyle)
                 }
             }
         }

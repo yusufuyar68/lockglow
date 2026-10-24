@@ -101,6 +101,20 @@ final class LargeWidgetSnapshotTests: XCTestCase {
         let options = LargeMistakeSnippet(wrong: "I am agree.", right: "I agree. / I am in agreement.")
         XCTAssertEqual(options.wrongSpoken, "I am agree")
         XCTAssertEqual(options.rightSpoken, "I agree")
+
+        // The part ends with its own sentence: no shared word of the next one (2026-10-24 images:
+        // "stop talking. The").
+        let stop = LargeMistakeSnippet(wrong: "Please stop to talk. The baby is sleeping.", right: "Please stop talking. The baby is sleeping.")
+        XCTAssertEqual(stop.wrongSpoken, "stop to talk")
+        XCTAssertEqual(stop.rightSpoken, "stop talking")
+        // Only a side whose gap has words says where the sentence ends: a word missing right
+        // after a sentence's end belongs to the next sentence, a word added before it to this one.
+        let added = LargeMistakeSnippet(wrong: "I am here. Is fine.", right: "I am here. It is fine.")
+        XCTAssertEqual(added.wrongSpoken, "Is")
+        XCTAssertEqual(added.rightSpoken, "It is")
+        let more = LargeMistakeSnippet(wrong: "I like it. Thanks.", right: "I like it a lot. Thanks.")
+        XCTAssertEqual(more.wrongSpoken, "it")
+        XCTAssertEqual(more.rightSpoken, "it a lot")
     }
 
     /// An example is whole on one line or in balanced lines, the word bold across a line break;
