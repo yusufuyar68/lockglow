@@ -513,7 +513,20 @@ struct DictionaryFlowLayout: Layout {
         let gaps = lineSpacing * CGFloat(max(lines.count - 1, 0))
         let height = lines.reduce(CGFloat(0)) { $0 + $1.height } + gaps
         let usedWidth = lines.reduce(CGFloat(0)) { max($0, $1.width) }
-        return CGSize(width: usedWidth, height: height)
+        return CGSize(width: DictionaryFlowLayout.reportedWidth(usedWidth, proposal), height: height)
+    }
+
+    /// The widest line, but never wider than the proposal because of the `overrun`: a line that
+    /// used it reports the proposed width itself. So a parent that proposes the reported width
+    /// back (an `HStack`) gets the same lines and the same size, never lines merged by a wider
+    /// proposal; a fraction of a point under it keeps them too, unless a line used nearly all of
+    /// the overrun. A capsule wider than a line on its own (one unbreakable word) still reports
+    /// its own width, as before.
+    private static func reportedWidth(_ usedWidth: CGFloat, _ proposal: ProposedViewSize) -> CGFloat {
+        guard let proposed = proposal.width, usedWidth > proposed, usedWidth <= proposed + overrun else {
+            return usedWidth
+        }
+        return proposed
     }
 
     /// The lines `sizeThatFits` measured for this same proposal, not lines re-broken at

@@ -139,14 +139,43 @@ jobs:
               || echo "status bar: operator name refused"
             xcrun simctl status_bar "$udid" list || true
           }
+          # Hang probe: each time XCUITest reports that the app did not become idle (it waited
+          # 60 s), sample the app process so the main thread's stack shows the call that blocks
+          # it. 24 Oct: two passes hung for minutes in testCaptureMainScreens on a tab switch;
+          # reading the code found no layout loop. Samples: out/<run>-hang-<n>.log.
+          watch_hangs() {
+            log="$1"; run="$2"; seen=0
+            while :; do
+              n=$(grep -c "idle notification not received" "$log" 2>/dev/null || true)
+              if [ -n "$n" ] && [ "$n" -gt "$seen" ]; then
+                seen=$n
+                pid=$(pgrep -f "Lockglow\.app/Lockglow$" | head -1 || true)
+                if [ -n "$pid" ]; then
+                  sample "$pid" 5 -file "out/$run-hang-$n.log" > /dev/null 2>&1 \
+                    || sudo spindump "$pid" 5 -file "out/$run-hang-$n.log" > /dev/null 2>&1 \
+                    || echo "could not sample $pid" > "out/$run-hang-$n.log"
+                else
+                  echo "no Lockglow process" > "out/$run-hang-$n.log"
+                fi
+              fi
+              sleep 5
+            done
+          }
           # One xcodebuild run on $udid: $1 names its log, result bundle and shots folder; the
           # rest are its -only-testing flags.
           run_tests() {
             run="$1"; shift
+            : > "out/$run.log"
+            watch_hangs "out/$run.log" "$run" &
+            watcher=$!
             xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
               -destination "id=$udid" -derivedDataPath build/dd "$@" \
               -resultBundlePath "out/$run.xcresult" > "out/$run.log" 2>&1 \
               || echo "test run failed on $run"
+            kill "$watcher" 2>/dev/null || true
+            if ls out/"$run"-hang-*.log > /dev/null 2>&1; then
+              echo "::warning::$run: the app did not become idle (samples in out/$run-hang-*.log)"
+            fi
             grep -E "error:|Test Case .* (passed|failed)|\*\* TEST" "out/$run.log" | tail -40 || true
             if [ -d "out/$run.xcresult" ]; then
               xcrun xcresulttool export attachments --path "out/$run.xcresult" --output-path "shots/$run" || true

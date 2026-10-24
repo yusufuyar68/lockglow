@@ -215,8 +215,13 @@ struct SozlukSplitLayout: View {
             Theme.bg
                 .ignoresSafeArea()
         }
+        // Only a width that can split is kept; below `splitMinWidth` (every iPhone in portrait) it
+        // is 0, so a size change there (a tab's transition, the keyboard) writes no state and
+        // redraws nothing. The measured width never depends on `width`: the stack fills what it
+        // is offered whatever the columns are, so the measurement cannot feed back.
         .onGeometryChange(for: CGFloat.self) { geometry in
-            geometry.size.width
+            let measured = geometry.size.width
+            return measured >= WideLayout.splitMinWidth ? measured : 0
         } action: { newWidth in
             width = newWidth
         }
