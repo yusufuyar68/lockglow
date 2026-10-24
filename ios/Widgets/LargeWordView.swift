@@ -678,6 +678,9 @@ struct LargeMistakeSnippet: Equatable {
         guard let last = trimmed.last else {
             return false
         }
+        if last == "." && WidgetSentenceEnd.isAbbreviation(trimmed.dropLast()) {
+            return false
+        }
         return ".!?".contains(last)
     }
 

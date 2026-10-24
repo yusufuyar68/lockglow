@@ -173,6 +173,15 @@ final class WidgetLookTests: XCTestCase {
             WidgetExampleLine.texts(of: "Her teeth are white. She smiles.", lemma: "tooth"),
             ["Her teeth are white. She smiles.", "Her teeth are white."]
         )
+        // A title's or a time's period doesn't end a sentence.
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "Ms. Patel speaks so fast that Mia can't keep up with her.", lemma: "keep up"),
+            ["Ms. Patel speaks so fast that Mia can't keep up with her."]
+        )
+        XCTAssertEqual(
+            WidgetExampleLine.texts(of: "She woke up at 3 a.m. because of jet lag.", lemma: "jet lag"),
+            ["She woke up at 3 a.m. because of jet lag."]
+        )
         // Each text on each line count in turn, the word bold.
         let candidates = WidgetExampleLine.candidates(
             of: "It was just a misunderstanding. I'm sorry.",

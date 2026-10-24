@@ -1090,12 +1090,14 @@ struct WidgetExampleLine: View {
 
     /// The ranges of `text`'s sentences, in order, together covering it: a sentence ends after
     /// ".", "!" or "?" (with any closing quotes or brackets) that the text's end or a space
-    /// follows. A later sentence's range starts with the space before it.
+    /// follows, unless the period closes an abbreviation ("Ms.", "a.m.") or a lowercase word
+    /// comes next ("at 3 a.m. because"). A later sentence's range starts with the space before it.
     static func sentenceRanges(of text: String) -> [Range<String.Index>] {
         var result: [Range<String.Index>] = []
         var start = text.startIndex
         var index = text.startIndex
         while index < text.endIndex {
+            let mark = index
             let character = text[index]
             index = text.index(after: index)
             guard ".!?".contains(character) else {
@@ -1104,6 +1106,17 @@ struct WidgetExampleLine: View {
             var end = index
             while end < text.endIndex, "\"”’')!?.".contains(text[end]) {
                 end = text.index(after: end)
+            }
+            if character == "." {
+                let wordStart = text[start..<mark].lastIndex(where: \.isWhitespace)
+                    .map { text.index(after: $0) } ?? start
+                if WidgetSentenceEnd.isAbbreviation(text[wordStart..<mark]) {
+                    continue
+                }
+            }
+            if end < text.endIndex,
+               let next = text[end...].first(where: { !$0.isWhitespace }), next.isLowercase {
+                continue
             }
             if end == text.endIndex || text[end].isWhitespace {
                 result.append(start..<end)
@@ -1115,6 +1128,20 @@ struct WidgetExampleLine: View {
             result.append(start..<text.endIndex)
         }
         return result
+    }
+}
+
+/// Periods that don't end an English sentence: titles and short forms of the examples
+/// ("Ms. Patel", "3 a.m."), so a widget never shows "Patel speaks…" as a whole sentence.
+enum WidgetSentenceEnd {
+    /// Lowercased, without the period that closes them.
+    static let abbreviations: Set<String> = [
+        "mr", "mrs", "ms", "dr", "st", "jr", "sr", "a.m", "p.m", "e.g", "i.e", "etc", "vs",
+    ]
+
+    static func isAbbreviation(_ word: some StringProtocol) -> Bool {
+        let trimmed = word.trimmingCharacters(in: CharacterSet(charactersIn: "\"“‘'("))
+        return abbreviations.contains(trimmed.lowercased())
     }
 }
 
