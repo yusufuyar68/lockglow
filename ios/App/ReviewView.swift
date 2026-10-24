@@ -231,7 +231,7 @@ struct ReviewView: View {
     private func roundScreen(session: ReviewSession, card: RoundCard) -> some View {
         let detail = model.detail(for: card.word)
         return VStack(spacing: 8) {
-            roundHeader(session: session, counterFont: ReviewView.counterFont(for: card))
+            roundHeader(session: session)
             switch card {
             case let .cloze(word, quiz):
                 QuizCardView(
@@ -284,13 +284,13 @@ struct ReviewView: View {
     /// "Kart 10 / 20" and "Bitir" do not fit side by side the count goes under "Bitir" rather
     /// than being cut (audit D3). In "Tanış + Hatırla" every card counts, and a second try adds one.
     @ViewBuilder
-    private func roundHeader(session: ReviewSession, counterFont: Font) -> some View {
+    private func roundHeader(session: ReviewSession) -> some View {
         let progress = roundProgress(session)
         if dynamicTypeSize.isAccessibilitySize {
             VStack(spacing: 10) {
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: 10) {
-                        cardCounter(done: progress.done, total: progress.total, font: counterFont)
+                        cardCounter(done: progress.done, total: progress.total)
                             .fixedSize()
                         Spacer(minLength: 0)
                         finishButton
@@ -298,7 +298,7 @@ struct ReviewView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         finishButton
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                        cardCounter(done: progress.done, total: progress.total, font: counterFont)
+                        cardCounter(done: progress.done, total: progress.total)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
@@ -307,7 +307,7 @@ struct ReviewView: View {
             .padding(.horizontal, 16)
         } else {
             HStack(spacing: 12) {
-                cardCounter(done: progress.done, total: progress.total, font: counterFont)
+                cardCounter(done: progress.done, total: progress.total)
                     .fixedSize()
                 RoundProgressBar(done: progress.done, total: progress.total)
                 finishButton
@@ -315,16 +315,6 @@ struct ReviewView: View {
             .frame(minHeight: 52)
             .padding(.horizontal, 16)
         }
-    }
-
-    /// The counter takes the small size of the screen under it, so the header adds no size: the
-    /// "Tanış" card's small lines are Callout (IPA, translation, Dikkat, "Dinle"), the question
-    /// screens' are Subheadline.
-    private static func counterFont(for card: RoundCard) -> Font {
-        if case .meet = card {
-            return .callout.weight(.semibold)
-        }
-        return .subheadline.weight(.semibold)
     }
 
     private func roundProgress(_ session: ReviewSession) -> (done: Int, total: Int) {
@@ -335,10 +325,14 @@ struct ReviewView: View {
     }
 
     /// The round's heading for VoiceOver (audit V10): "Kart 3, toplam 10", not "3 bölü 10".
-    private func cardCounter(done: Int, total: Int, font: Font) -> some View {
+    /// Headline on every card, the size of "Bitir" beside it (an inline title's size): the header
+    /// keeps its size and the bar its left end when "Tanış" and question cards alternate, and no
+    /// screen gets a fifth size (Callout would be one on the question screens, Subheadline on the
+    /// "Tanış" card's back; 2026-10-24 images, finding tekrar-2).
+    private func cardCounter(done: Int, total: Int) -> some View {
         let current = min(done + 1, max(total, 1))
         return Text("Kart \(current) / \(total)")
-            .font(font)
+            .font(.headline)
             .monospacedDigit()
             .foregroundStyle(Theme.ink2)
             .accessibilityLabel("Kart \(current), toplam \(total)")
@@ -469,7 +463,7 @@ struct ReviewView: View {
         VStack(spacing: 24) {
             WordHeadline(lemma: word.lemma, alignment: .center)
                 .accessibilityFocused($focus, equals: .word)
-            // Callout, the card's one small size, as on its back and in the header's counter.
+            // Callout, the card's one small size, as on its back.
             CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle", font: .callout.weight(.semibold))
             Text(model.wasSeenOnWidget(word) ? "Widget'ta gördün. Hatırlıyor musun?" : "Ne demek olabilir? Tahmin et.")
                 .font(.callout)
@@ -1615,7 +1609,11 @@ struct ReviewView: View {
         } else {
             let offer = model.nextReviewSession()
             ScrollView {
-                VStack(spacing: 14) {
+                // 12 pt here, and a 16 pt edge and an even 12 pt rhythm in `offerCard`: under the
+                // large title, with the goal ring, "Kitaplığın" ends above the floating tab bar on
+                // an iPhone SE instead of under it (2026-10-24 images, finding tekrar-6). Larger
+                // text still scrolls.
+                VStack(spacing: 12) {
                     if let offer = offer {
                         offerCard(offer)
                         if isBreak(offer) {
@@ -1713,10 +1711,9 @@ struct ReviewView: View {
                 Text("Başla (\(offer.words.count) kelime)")
             }
             .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
-            .padding(.top, 6)
         }
         .padding(.horizontal, 20)
-        .padding(.vertical, 22)
+        .padding(.vertical, 16)
         .frame(maxWidth: .infinity)
         .cardSurface(cornerRadius: Theme.Radius.wordCard)
     }
@@ -2228,7 +2225,7 @@ private struct MoreBelowCue: View {
             Image(systemName: "chevron.down")
                 .imageScale(.small)
         }
-        // Callout like the card's other small lines and the round's header on this card.
+        // Callout like the card's other small lines.
         .font(.callout.weight(.semibold))
         .foregroundStyle(Theme.ink2)
         .padding(.top, MoreBelowCue.topPadding)
@@ -2435,6 +2432,11 @@ private struct ReminderOfferSheet: View {
     @State private var height: CGFloat = 0
     /// The pinned answers' strip (not at accessibility sizes, where the whole page scrolls).
     @State private var footerHeight: CGFloat = 0
+    /// The end of the page's text (without its bottom margin) and the strip's top edge in the
+    /// sheet (`"reminderSheet"`): while a line of text runs on under the strip, the strip shows a
+    /// toolbar's hairline.
+    @State private var textBottom: CGFloat = 0
+    @State private var footerTop: CGFloat = 0
 
     private struct Moment {
         let title: String
@@ -2517,6 +2519,14 @@ private struct ReminderOfferSheet: View {
                     }
                 }
             }
+            // Measured before the bottom margin: the hairline is for text under the strip, not
+            // for the empty margin. In the 2026-10-24 Pro images the sheet came out ~2 pt shorter
+            // than page + strip (iOS 26's floating sheet), which would have drawn it at rest.
+            .onGeometryChange(for: CGFloat.self) { geometry in
+                geometry.frame(in: .named("reminderSheet")).maxY
+            } action: { newBottom in
+                textBottom = newBottom
+            }
             // The 16 pt side margins of every screen.
             .padding(.horizontal, 16)
             .padding(.top, 24)
@@ -2532,6 +2542,7 @@ private struct ReminderOfferSheet: View {
         .scrollIndicatorsFlash(onAppear: true)
         // Both answers always in sight (2026-10-24 SE image: "Şimdi değil" was cut by the screen's
         // edge), on an opaque strip like the Tekrar screens' answers, so nothing shows through.
+        // The strip insets the page: its last line scrolls up whole above the strip.
         .safeAreaInset(edge: .bottom, spacing: 0) {
             if !dynamicTypeSize.isAccessibilitySize {
                 answers
@@ -2540,13 +2551,27 @@ private struct ReminderOfferSheet: View {
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity)
                     .background(Theme.sheetBg)
+                    // As a toolbar's edge: a hairline while the page runs on under the strip
+                    // (SE), so a line it covers reads as scrolled under it, not as cut off; none
+                    // once the text's end is above it (2026-10-24 images, findings tekrar-3/4).
+                    .overlay(alignment: .top) {
+                        if footerTop > 0 && textBottom - footerTop > 1 {
+                            RowDivider()
+                        }
+                    }
                     .onGeometryChange(for: CGFloat.self) { geometry in
                         geometry.size.height
                     } action: { newHeight in
                         footerHeight = newHeight
                     }
+                    .onGeometryChange(for: CGFloat.self) { geometry in
+                        geometry.frame(in: .named("reminderSheet")).minY
+                    } action: { newTop in
+                        footerTop = newTop
+                    }
             }
         }
+        .coordinateSpace(.named("reminderSheet"))
         .presentationDetents(detents)
         .presentationDragIndicator(.visible)
         // Elevated at night (`sheetBg`): the sheet's edge stands out from the black page.
@@ -2568,12 +2593,14 @@ private struct ReminderOfferSheet: View {
         }
     }
 
-    /// As tall as the content, the pinned answers and the home indicator's strip (like
-    /// `SystemCardSheet`); on a short screen it is the large detent and the moments scroll.
+    /// As tall as the content and the pinned answers; on a short screen it is the large detent and
+    /// the moments scroll. iOS adds the home indicator's strip under a height detent itself: the
+    /// former "+ 34" counted it twice and opened a ~34 pt gap between the footnote and the
+    /// answers (2026-10-24 Pro images, finding tekrar-4).
     private var detents: Set<PresentationDetent> {
         if height > 0 {
             let footer = dynamicTypeSize.isAccessibilitySize ? 0 : footerHeight
-            return [.height(height + footer + 34)]
+            return [.height(height + footer)]
         }
         return [.large]
     }

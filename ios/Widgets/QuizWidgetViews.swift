@@ -20,7 +20,9 @@ import SharedState
 // Larger text sizes: the layouts are vertical ViewThatFits variants, fullest first, like the word
 // widget's: the options at 15 pt, then 13 pt on more lines, then the same at the largest standard
 // size, then at the default size, where the last variant may shrink a long word to 11 pt rather
-// than cut it.
+// than cut it. The large widget tries its whole ladder at the person's size, then at AX1, at the
+// largest standard size and at the default size, as the large word widget does, so a larger text
+// size never shows smaller text than a smaller one.
 
 /// The quiz widget's colors for its rendering mode, on top of the word widget's.
 struct QuizColors {
@@ -292,24 +294,25 @@ struct QuizLargeView: View {
     var body: some View {
         Group {
             if let screen = entry.screen {
-                // After the answer the example gives way first, then the wrong pick's line. When
-                // the "Devam" capsule leaves the word too little room (a long word), the round
-                // "Devam" of the medium widget comes before smaller options (2026-10-24 images:
-                // "misunderstanding" fell to the last variant).
+                // The retries are groups: a modifier on a Group applies to each of its views, and
+                // ViewThatFits tries them one by one (LargeWordView).
                 ViewThatFits(in: .vertical) {
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true)
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true)
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2])
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true, compactNext: true)
-                    layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, compactNext: true)
-                    layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
+                    ladder(screen)
+                    // Above AX1: AX1's ladder first (2026-10-24 images: AX3 fell to the largest
+                    // standard size and drew smaller text than AX1).
                     Group {
-                        layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true)
-                        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
+                        ladder(screen)
+                    }
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+                    Group {
+                        ladder(screen)
                     }
                     .dynamicTypeSize(...WidgetText.largestStandardSize)
+                    // Then the default size's own layout ("misunderstanding" after the answer:
+                    // the round "Devam", the wrong pick's line and the example, never less than
+                    // the default size shows); the last variant may shrink the word.
                     Group {
-                        layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: true, example: true)
+                        ladder(screen)
                         layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2], lastResort: true, compactNext: true)
                     }
                     .dynamicTypeSize(...DynamicTypeSize.large)
@@ -322,13 +325,42 @@ struct QuizLargeView: View {
         .widgetTurkishVoice()
     }
 
-    /// One layout variant; `compactNext` puts the round "Devam" beside the speaker instead of the
-    /// capsule (always so above the default text size, `QuizTopRow`).
+    /// One text size's variants, fullest first. After the answer the example gives way first; the
+    /// wrong pick's line ("Senin seçtiğin: allow = izin vermek", what the wrong meaning is in
+    /// English) then takes one line without its lead ("allow = izin vermek"), then the options get
+    /// smaller, and only then is that line left out (no form of it fits at this size). When the
+    /// "Devam" capsule leaves the word too little room (a long word), the round "Devam" of the
+    /// medium widget comes before shorter lines (2026-10-24 images: "misunderstanding" fell to the
+    /// last variant); above the default size "Devam" is always round (`QuizTopRow`).
+    @ViewBuilder
+    private func ladder(_ screen: WidgetQuizScreen) -> some View {
+        // With the wrong pick's line (a right answer and a question have none).
+        Group {
+            layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .whole, example: true)
+            layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .whole)
+            layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .oneLine)
+            layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .whole, example: true, compactNext: true)
+            layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .whole, compactNext: true)
+            layout(screen, option: .body.weight(.semibold), lines: [1, 2], picked: .oneLine, compactNext: true)
+            layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3], picked: .oneLine)
+        }
+        // Without it; the example still fills its room. The round "Devam" without the example
+        // too, so a long word does not drop to the last variant when the example has no room.
+        layout(screen, option: .body.weight(.semibold), lines: [1, 2], example: true)
+        layout(screen, option: .body.weight(.semibold), lines: [1, 2], example: true, compactNext: true)
+        layout(screen, option: .body.weight(.semibold), lines: [1, 2])
+        layout(screen, option: .body.weight(.semibold), lines: [1, 2], compactNext: true)
+        layout(screen, option: .subheadline.weight(.semibold), lines: [1, 2, 3])
+    }
+
+    /// One layout variant; `picked`: the wrong pick's line in these forms (`QuizPickedLine`), which
+    /// passes the variant over when none fits; `compactNext` puts the round "Devam" beside the
+    /// speaker instead of the capsule (always so above the default text size, `QuizTopRow`).
     private func layout(
         _ screen: WidgetQuizScreen,
         option: Font,
         lines: [Int],
-        picked: Bool = false,
+        picked: QuizPickedLine.Form? = nil,
         example: Bool = false,
         lastResort: Bool = false,
         compactNext: Bool = false
@@ -360,12 +392,15 @@ struct QuizLargeView: View {
                 }
             }
             .padding(.top, 12)
-            if screen.isAnswered && (picked || example) {
+            // Only the lines this answer has: no empty block (a right answer has no wrong pick).
+            let pickedLine = picked.flatMap { QuizPickedLine(screen: screen, form: $0, colors: colors) }
+            let sentence = example && screen.isAnswered ? (screen.item.exampleEN ?? "") : ""
+            if pickedLine != nil || !sentence.isEmpty {
                 VStack(alignment: .leading, spacing: 4) {
-                    if picked, let line = QuizPickedLine(screen: screen, colors: colors) {
-                        line
+                    if let pickedLine {
+                        pickedLine
                     }
-                    if example, let sentence = screen.item.exampleEN, !sentence.isEmpty {
+                    if !sentence.isEmpty {
                         // The whole sentence on one to three balanced lines, never cut with "…";
                         // when it does not fit, the variant without it is shown.
                         LargeExampleText(
@@ -637,45 +672,104 @@ private struct QuizNextButton: View {
 }
 
 /// "Senin seçtiğin: allow = izin vermek" after a wrong pick, English first as in the app's
-/// "Hatırla" (ReviewView), when the option's English word is known. Shown whole or not at all.
-/// VoiceOver: "Senin seçtiğin: izin vermek. İngilizcesi:" in Turkish, then the word in English.
+/// "Hatırla" (ReviewView), when the option's English word is known. Every line whole, never cut
+/// and never 0 x 0 while its variant counts it as shown (2026-10-24 images: at large text sizes the
+/// line was silently missing and the example stayed): the whole option, then its short form
+/// (`gloss_short`, as the option itself shortens), on one line; then, as `form` asks, on two lines
+/// ("Senin seçtiğin:" over "allow = izin vermek", then for a pair too wide for a line, a long
+/// phrase at a large text size, the pair itself on two: "under the weather =" over "biraz
+/// rahatsız") or on one line without the lead, as the app's `ReviewWordLine` writes it without
+/// one. When none fits, the variant is passed over (`WidgetFit.reject`). VoiceOver: "Senin
+/// seçtiğin: izin vermek. İngilizcesi:" in Turkish, then the word in English, whichever form is
+/// shown.
 private struct QuizPickedLine: View {
+    /// The forms a layout variant tries after the one-line ones.
+    enum Form {
+        /// Two lines: the lead over the pair, else the pair broken after "=".
+        case whole
+        /// One line without the lead, where two lines leave no room.
+        case oneLine
+    }
+
+    /// Where the lead "Senin seçtiğin:" goes.
+    private enum Lead {
+        case inline
+        case above
+        case omitted
+        /// Left out, and the pair on two lines: "under the weather =" over "biraz rahatsız".
+        case omittedPairWrapped
+    }
+
     let option: String
+    /// The option's short form; nil when it has none.
+    let shortOption: String?
     let english: String
+    let form: Form
     let colors: QuizColors
 
-    init?(screen: WidgetQuizScreen, colors: QuizColors) {
+    private static let lead = "Senin seçtiğin:"
+
+    init?(screen: WidgetQuizScreen, form: Form, colors: QuizColors) {
         guard let choice = screen.choice, !screen.isRight, screen.item.options.indices.contains(choice),
               let english = screen.item.optionWord(at: choice) else {
             return nil
         }
         self.option = screen.item.options[choice]
+        self.shortOption = screen.item.shortOption(at: choice)
         self.english = english
+        self.form = form
         self.colors = colors
     }
 
     var body: some View {
+        let short = shortOption ?? option
+        let last: Lead = form == .whole ? .above : .omitted
+        // A one-line variant keeps to one line (these two repeat its last forms).
+        let wrapped: Lead = form == .whole ? .omittedPairWrapped : .omitted
         ViewThatFits(in: .horizontal) {
-            line
-            Color.clear
-                .frame(width: 0, height: 0)
-                .accessibilityHidden(true)
+            line(lead: .inline, meaning: option)
+            line(lead: .inline, meaning: short)
+            line(lead: last, meaning: option)
+            line(lead: last, meaning: short)
+            line(lead: wrapped, meaning: option)
+            line(lead: wrapped, meaning: short)
+            WidgetFit.reject
         }
     }
 
-    private var line: some View {
+    private func line(lead: Lead, meaning: String) -> some View {
         let word = Text(verbatim: english)
             .font(.system(.footnote, design: .serif).weight(.bold))
             .foregroundStyle(colors.base.ink)
-        return Text("Senin seçtiğin: \(word) = \(option)")
-            .font(.footnote)
-            .foregroundStyle(colors.base.ink2)
-            .lineLimit(1)
-            .accessibilityRepresentation {
-                Text(verbatim: "Senin seçtiğin: \(option). İngilizcesi:")
-                Text(verbatim: english)
-                    .widgetEnglishVoice()
+        // One statement per form, not a ternary over the interpolations (quicker to type-check).
+        let first: Text
+        switch lead {
+        case .inline:
+            first = Text("\(QuizPickedLine.lead) \(word) = \(meaning)")
+        case .above, .omitted:
+            first = Text("\(word) = \(meaning)")
+        case .omittedPairWrapped:
+            first = Text("\(word) =")
+        }
+        return VStack(alignment: .leading, spacing: 0) {
+            if lead == .above {
+                Text(verbatim: QuizPickedLine.lead)
+                    .lineLimit(1)
             }
+            first
+                .lineLimit(1)
+            if lead == .omittedPairWrapped {
+                Text(verbatim: meaning)
+                    .lineLimit(1)
+            }
+        }
+        .font(.footnote)
+        .foregroundStyle(colors.base.ink2)
+        .accessibilityRepresentation {
+            Text(verbatim: "Senin seçtiğin: \(option). İngilizcesi:")
+            Text(verbatim: english)
+                .widgetEnglishVoice()
+        }
     }
 }
 

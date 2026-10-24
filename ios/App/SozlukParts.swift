@@ -347,9 +347,9 @@ struct SozlukWordRow: View {
     var note: AttributedString? = nil
     var level: String? = nil
     let state: LearningState
-    /// The word page's "Başka anlamı" and "Karıştırma" rows: the word at Body serif and the note,
-    /// level and status at Callout, the page's own sizes (Sözlük's lists keep Title 3 and
-    /// Footnote).
+    /// The word page's "Başka anlamı" and "Karıştırma" rows: the word at Body serif and the
+    /// meaning, note, level and status at Callout, the page's own sizes (Sözlük's lists keep
+    /// Title 3, Body and Footnote).
     var compact = false
 
     /// The note's, the level's and the status's size.
@@ -371,8 +371,10 @@ struct SozlukWordRow: View {
                     }
                 }
                 if let gloss = gloss {
+                    // On the word page Callout under the Body word, so the English word stays the
+                    // row's title (sozluk-3); a semibold Body meaning outweighed the serif word.
                     Text(gloss)
-                        .font(.body.weight(.semibold))
+                        .font(compact ? Font.callout : Font.body.weight(.semibold))
                         .foregroundStyle(Theme.ink)
                 }
                 if let note = note {
@@ -504,17 +506,23 @@ struct DictionaryFlowLayout: Layout {
         var height: CGFloat = 0
     }
 
+    /// Hugs its lines (the widest one), so a flow beside a word in an `HStack` (`SozlukWordRow`)
+    /// takes no room from it.
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let lines = arrange(subviews, maxWidth: proposal.width ?? .infinity)
+        let lines = arrange(subviews, maxWidth: DictionaryFlowLayout.lineWidth(proposal))
         let gaps = lineSpacing * CGFloat(max(lines.count - 1, 0))
         let height = lines.reduce(CGFloat(0)) { $0 + $1.height } + gaps
         let usedWidth = lines.reduce(CGFloat(0)) { max($0, $1.width) }
         return CGSize(width: usedWidth, height: height)
     }
 
+    /// The lines `sizeThatFits` measured for this same proposal, not lines re-broken at
+    /// `bounds.width`: the bounds are the hugged width rounded to the pixel grid, and a fraction
+    /// of a point less pushed the last capsule onto a line whose height was never reserved (the
+    /// word page's level badge under "Dinle", sozluk-3).
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         var y = bounds.minY
-        for line in arrange(subviews, maxWidth: bounds.width) {
+        for line in arrange(subviews, maxWidth: DictionaryFlowLayout.lineWidth(proposal)) {
             var x = bounds.minX
             for item in line.items {
                 subviews[item.index].place(
@@ -528,15 +536,26 @@ struct DictionaryFlowLayout: Layout {
         }
     }
 
+    /// The width a line may fill: the proposed width, or one endless line when none is proposed.
+    private static func lineWidth(_ proposal: ProposedViewSize) -> CGFloat {
+        return proposal.width ?? .infinity
+    }
+
+    /// How far a line may run past its width and still keep its subview: a parent that proposes
+    /// this layout's own hugged width back, rounded to the pixel grid (or summed in another
+    /// order), lands a fraction of a point under it, and must get the lines it measured.
+    private static let overrun: CGFloat = 1
+
     private func arrange(_ subviews: Subviews, maxWidth: CGFloat) -> [Line] {
+        let fitWidth = maxWidth + DictionaryFlowLayout.overrun
         var lines: [Line] = []
         var line = Line()
         for index in subviews.indices {
             var size = subviews[index].sizeThatFits(.unspecified)
-            if size.width > maxWidth {
+            if size.width > fitWidth {
                 size = subviews[index].sizeThatFits(ProposedViewSize(width: maxWidth, height: nil))
             }
-            if !line.items.isEmpty && line.width + itemSpacing + size.width > maxWidth {
+            if !line.items.isEmpty && line.width + itemSpacing + size.width > fitWidth {
                 lines.append(line)
                 line = Line()
             }

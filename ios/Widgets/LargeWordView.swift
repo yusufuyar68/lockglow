@@ -51,6 +51,16 @@ private let largeButtonBottomOverflow: CGFloat = 5
 /// Space under the word: the night band hangs about 5 pt below a 28 pt word's frame (LockglowTheme,
 /// "Phosphor band"; `headerGap` is 6 pt for the medium widget's 20 pt word).
 private let largeHeaderGap: CGFloat = 7
+/// Space above the examples (on the 8 pt grid; it was 10), above the warning (it was 8) and the
+/// least space above "Yeni kelime" (it was 4; the Spacer above it takes the rest). Together they
+/// give back the 5 pt the button row took from the text when it moved up to 11 pt from the
+/// bottom edge (`largeButtonBottomOverflow`): on an iPhone SE seven words lost "Yeni kelime" and
+/// "end up" its second example, each short of only a point or two (the 2026-10-24 images of
+/// 0011f92). The order stays: the definition 4 pt under the meaning, the examples 6 pt apart, the
+/// examples 8 pt under the definition.
+private let largeExamplesGap: CGFloat = 8
+private let largeWarningGap: CGFloat = 6
+private let largeNextChangeGap: CGFloat = 2
 
 struct LargeWordView: View {
     let entry: WordEntry
@@ -192,7 +202,7 @@ struct LargeWordView: View {
                         LargeExampleText(sentence: sentence, lemma: word.lemma, lines: exampleLines, color: colors.ink)
                     }
                 }
-                .padding(.top, 10)
+                .padding(.top, largeExamplesGap)
             }
             if !warningLines.isEmpty, let warning = word.warning {
                 LargeWarningLine(
@@ -202,7 +212,7 @@ struct LargeWordView: View {
                     colors: colors,
                     isFullColor: isFullColor
                 )
-                .padding(.top, 8)
+                .padding(.top, largeWarningGap)
             }
             Spacer(minLength: 0)
             if nextChange, let next = entry.nextChange {
@@ -216,7 +226,7 @@ struct LargeWordView: View {
                 )
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel(Text(verbatim: "Sonraki değişim: \(clock)"))
-                .padding(.top, 4)
+                .padding(.top, largeNextChangeGap)
             }
         }
     }

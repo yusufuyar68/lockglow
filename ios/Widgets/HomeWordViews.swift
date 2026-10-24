@@ -84,32 +84,17 @@ struct SmallWordView: View {
             // The retries are groups: a modifier on a Group applies to each of its views, and
             // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
-                column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
-                column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
-                column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                // A long meaning without a short form (the user's own words have none; every
-                // card's meaning over 16 characters has `gloss_short`): 13 pt on two or three
-                // lines rather than no meaning.
-                column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
+                variants
                 // Above AX1: AX1's variants first, so a larger size never shows smaller text than
                 // AX1 (the 2026-10-24 AX3 images were smaller than AX1 and even than xxxLarge).
                 Group {
-                    column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
+                    variants
                 }
                 .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 // The person's size leaves no room for the meaning: the largest standard size, the
                 // same variants.
                 Group {
-                    column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
+                    variants
                 }
                 .dynamicTypeSize(...WidgetText.largestStandardSize)
                 // Nothing fits at the person's size nor at xxxLarge: the default text size. The
@@ -117,22 +102,22 @@ struct SmallWordView: View {
                 // button row), so these draw exactly the default layout, which has the meaning
                 // (ogrenme_ilkeleri 2.1).
                 Group {
-                    column(WidgetWordStep.smallWidget, meaning: .body.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.smallWidget, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
-                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.smallWidget, meaning: .body, lines: [1, 2])
+                    column(WidgetWordStep.smallWidget, meaning: .subheadline, lines: [1, 2])
+                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline, lines: [1])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline, lines: [1, 2])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote, lines: [2, 3])
+                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .footnote, lines: [1, 2])
                 }
                 .dynamicTypeSize(...DynamicTypeSize.large)
                 // is5-w-ayar: "Anlamı gizle" and no variant above has room for the Göster button
                 // (a phrase on two lines): the default layout with the meaning, never the word
                 // alone. Without the choice these are the variants above again and fail again.
                 Group {
-                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline.weight(.bold), lines: [1])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline.weight(.bold), lines: [1, 2])
-                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote.weight(.bold), lines: [2, 3])
-                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline.weight(.bold), lines: [1, 2])
+                    column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline, lines: [1])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .subheadline, lines: [1, 2])
+                    column(WidgetWordStep.homeFloorScaled, meaning: .footnote, lines: [2, 3])
+                    column(WidgetWordStep.homeFloor, lastResort: true, meaning: .subheadline, lines: [1, 2])
                 }
                 .dynamicTypeSize(...DynamicTypeSize.large)
                 .widgetMeaningShown()
@@ -166,29 +151,174 @@ struct SmallWordView: View {
         .widgetAccent(options.accent)
     }
 
+    /// The variants at one text size, fullest first. The 22/20/17 pt steps never stand below the
+    /// meaning beside them (`SmallWidgetHeadword`): they grow as `.title3` does, more slowly than
+    /// `.body`, so above the default size a 17 pt step was smaller than a `.body` meaning (AX1:
+    /// "actually" at 26.35 pt over a 28 pt "aslında"). Each is followed by the same variant with
+    /// the word stopped at the largest standard size: above it a word too wide for its own steps
+    /// keeps its xxxLarge size beside the larger meaning instead of dropping a whole step, so it is
+    /// never smaller than at xxxLarge ("actually" 28.6 pt, "awkward" 26 pt; the 2026-10-24 AX3
+    /// images had 26.35 and 23.25 pt). Up to xxxLarge that variant is the one before it again.
+    /// The floor steps keep the same rule: above the default size the 15 pt step is smaller than
+    /// a `.subheadline` meaning (xxxLarge 19.5 pt under 21 pt: "date", "stop", "disagree", "end
+    /// up", "I can't wait"; AX1 "breakfast" 23.25 pt under 25 pt), so there the meaning takes the
+    /// `.footnote` variant instead (19 and 23 pt). At the default size nothing changes.
+    @ViewBuilder
+    private var variants: some View {
+        column(WidgetWordStep.smallWidget, meaning: .body, lines: [1, 2], wordAboveMeaning: true)
+        column(WidgetWordStep.smallWidget, meaning: .body, lines: [1, 2], wordAboveMeaning: true, wordStopsGrowing: true)
+        column(WidgetWordStep.smallWidget, meaning: .subheadline, lines: [1, 2], wordAboveMeaning: true)
+        column(WidgetWordStep.smallWidget, meaning: .subheadline, lines: [1, 2], wordAboveMeaning: true, wordStopsGrowing: true)
+        column(WidgetWordStep.smallWidgetPhrase, meaning: .subheadline, lines: [1], wordAboveMeaning: true)
+        column(WidgetWordStep.homeFloorScaled, meaning: .subheadline, lines: [1, 2], wordAboveMeaning: true)
+        // A long meaning without a short form (the user's own words have none; every card's
+        // meaning over 16 characters has `gloss_short`): 13 pt on two or three lines rather than
+        // no meaning.
+        column(WidgetWordStep.homeFloorScaled, meaning: .footnote, lines: [2, 3], wordAboveMeaning: true)
+    }
+
     /// One layout variant: the word at the first of `steps` that fits and, under it, the meaning
-    /// in `typeface` on the first of `lines` line counts that fits.
+    /// in `style` bold on the first of `lines` line counts that fits. With `wordAboveMeaning` a
+    /// step smaller than the meaning is passed over, and with `wordStopsGrowing` the word stops
+    /// growing at the largest standard size (`SmallWidgetHeadword`).
     private func column(
         _ steps: [WidgetWordStep],
         lastResort: Bool = false,
-        meaning typeface: Font,
-        lines: [Int]
+        meaning style: Font.TextStyle,
+        lines: [Int],
+        wordAboveMeaning: Bool = false,
+        wordStopsGrowing: Bool = false
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            WidgetFittingWord(
-                lemma: word.lemma,
-                steps: steps,
-                lastResort: lastResort,
-                colors: colors,
-                renderingMode: renderingMode
-            )
+            if wordAboveMeaning {
+                SmallWidgetHeadword(
+                    lemma: word.lemma,
+                    steps: steps,
+                    meaning: style,
+                    maximumWordSize: wordStopsGrowing ? WidgetText.largestStandardSize : nil,
+                    colors: colors,
+                    renderingMode: renderingMode
+                )
+            } else {
+                WidgetFittingWord(
+                    lemma: word.lemma,
+                    steps: steps,
+                    lastResort: lastResort,
+                    colors: colors,
+                    renderingMode: renderingMode
+                )
+            }
             // Every card has a Turkish meaning; without one the word stands alone.
             let forms = WidgetGloss.forms(of: word)
             if !forms.isEmpty {
-                WidgetMeaning(forms: forms, typeface: typeface, lines: lines, color: colors.ink)
+                WidgetMeaning(forms: forms, typeface: Font.system(style, design: .default).weight(.bold), lines: lines, color: colors.ink)
                     .widgetMeaningReveal(options, wordID: word.id, until: entry.nextChange, colors: colors, aboveButtonRow: true)
                     .padding(.top, headerGap)
             }
+        }
+    }
+}
+
+/// The small widget's word over a meaning in `meaning` style, never smaller than that meaning:
+/// `WidgetFittingWord` over the size steps that are at least the meaning's size at the current
+/// text size (both measured where the variant is drawn, so inside a retry group at that group's
+/// size). With `maximumWordSize` the word stops growing at that text size while the meaning keeps
+/// the current one. When no step is left, or none fits, the variant around it is passed over
+/// (`WidgetFit.reject`).
+private struct SmallWidgetHeadword: View {
+    let lemma: String
+    let steps: [WidgetWordStep]
+    /// The text style of the meaning under the word (`.body`, `.subheadline` or `.footnote`).
+    let meaning: Font.TextStyle
+    let maximumWordSize: DynamicTypeSize?
+    let colors: WidgetColors
+    /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
+    let renderingMode: WidgetRenderingMode?
+    @ScaledMetric(relativeTo: .body) private var bodySize: CGFloat = 17
+    @ScaledMetric(relativeTo: .subheadline) private var subheadlineSize: CGFloat = 15
+    @ScaledMetric(relativeTo: .footnote) private var footnoteSize: CGFloat = 13
+
+    init(
+        lemma: String,
+        steps: [WidgetWordStep],
+        meaning: Font.TextStyle,
+        maximumWordSize: DynamicTypeSize?,
+        colors: WidgetColors,
+        renderingMode: WidgetRenderingMode?
+    ) {
+        self.lemma = lemma
+        self.steps = steps
+        self.meaning = meaning
+        self.maximumWordSize = maximumWordSize
+        self.colors = colors
+        self.renderingMode = renderingMode
+    }
+
+    var body: some View {
+        let limit = maximumWordSize ?? DynamicTypeSize.accessibility5
+        SmallWidgetHeadwordSteps(
+            lemma: lemma,
+            steps: steps,
+            minimumSize: meaningSize,
+            colors: colors,
+            renderingMode: renderingMode
+        )
+        .dynamicTypeSize(...limit)
+    }
+
+    /// The meaning's point size at the current text size.
+    private var meaningSize: CGFloat {
+        switch meaning {
+        case .subheadline:
+            return subheadlineSize
+        case .footnote:
+            return footnoteSize
+        default:
+            return bodySize
+        }
+    }
+}
+
+/// `SmallWidgetHeadword`'s word at its own text size: the steps of at least `minimumSize` pt
+/// there (scaled as `WidgetFittingWord` scales them), a hair's tolerance so that equal sizes at the
+/// default text size (the 17 pt step over a 17 pt meaning) stay.
+private struct SmallWidgetHeadwordSteps: View {
+    let lemma: String
+    let steps: [WidgetWordStep]
+    let minimumSize: CGFloat
+    let colors: WidgetColors
+    let renderingMode: WidgetRenderingMode?
+    /// 100 times the Dynamic Type factor of `.title3`, as in `WidgetFittingWord`.
+    @ScaledMetric(relativeTo: .title3) private var scaledHundred: CGFloat = 100
+
+    init(
+        lemma: String,
+        steps: [WidgetWordStep],
+        minimumSize: CGFloat,
+        colors: WidgetColors,
+        renderingMode: WidgetRenderingMode?
+    ) {
+        self.lemma = lemma
+        self.steps = steps
+        self.minimumSize = minimumSize
+        self.colors = colors
+        self.renderingMode = renderingMode
+    }
+
+    var body: some View {
+        let kept = steps.filter { step in
+            let size = step.scales ? step.size * scaledHundred / 100 : step.size
+            return size >= minimumSize - 0.1
+        }
+        if kept.isEmpty {
+            WidgetFit.reject
+        } else {
+            WidgetFittingWord(
+                lemma: lemma,
+                steps: kept,
+                colors: colors,
+                renderingMode: renderingMode
+            )
         }
     }
 }
@@ -222,34 +352,23 @@ struct MediumWordView: View {
             // the example and the next change stay when they fit (2026-10-24 xxxLarge images: no
             // half-empty widget). Only then does the meaning shorten (`WidgetGloss`), take
             // two lines and get smaller. When the word and the meaning do not fit at the person's
-            // text size, they are tried again at smaller sizes before the meaning is left out:
-            // above AX1 at AX1 first, then at the largest standard size, then at the default size.
-            // The word alone is the last resort, so the meaning never runs out of the column at
-            // large text sizes (accessibility audit D5).
+            // text size, the whole ladder (`ladder`) is tried again at smaller sizes before the
+            // meaning is left out: above AX1 at AX1 first, then at the largest standard size, then
+            // the smaller meaning at the default size. The word alone is the last resort, so the
+            // meaning never runs out of the column at large text sizes (accessibility audit D5).
             // The retries are groups: a modifier on a Group applies to each of its views, and
             // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
-                column(shortens: false, definition: true, example: true, nextChange: true)
-                column(shortens: false, definition: true, example: true)
+                ladder
+                // Above AX1: AX1's whole ladder first, so a larger size never shows smaller text
+                // or fewer lines than AX1 (the 2026-10-24 AX3 images had the word and the meaning
+                // alone, half the widget empty, where AX1 also had "Yeni kelime").
                 Group {
-                    column(shortens: false, definition: true)
-                    column(shortens: false, example: true, nextChange: true)
-                    column(shortens: false, example: true)
-                    column(shortens: false, nextChange: true)
-                }
-                column(shortens: false)
-                column()
-                column(smallMeaning: true)
-                // Above AX1: one step smaller first, so a larger size never shows smaller text
-                // than AX1.
-                Group {
-                    column()
-                    column(smallMeaning: true)
+                    ladder
                 }
                 .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 Group {
-                    column()
-                    column(smallMeaning: true)
+                    ladder
                 }
                 .dynamicTypeSize(...WidgetText.largestStandardSize)
                 // Nothing fits even at xxxLarge (from xLarge to xxxLarge the retry above is the
@@ -291,6 +410,29 @@ struct MediumWordView: View {
         }
         .widgetTurkishVoice()
         .widgetAccent(options.accent)
+    }
+
+    /// One text size's ladder, fullest first: the whole meaning with the lines that follow it,
+    /// then the meaning's shorter forms, then the smaller meaning. A line that gives way leaves
+    /// its place to the next one down, never a hole the next change would fit in: without the
+    /// example the definition keeps "Yeni kelime" (the 2026-10-24 xxxLarge images: an example
+    /// that no longer fits on two lines left the bottom third empty), and so does a shortened
+    /// meaning. The definition is never kept with a shortened meaning (ogrenme_ilkeleri 2.2).
+    @ViewBuilder
+    private var ladder: some View {
+        Group {
+            column(shortens: false, definition: true, example: true, nextChange: true)
+            column(shortens: false, definition: true, example: true)
+            column(shortens: false, definition: true, nextChange: true)
+            column(shortens: false, definition: true)
+            column(shortens: false, example: true, nextChange: true)
+            column(shortens: false, example: true)
+            column(shortens: false, nextChange: true)
+            column(shortens: false)
+        }
+        column(nextChange: true)
+        column()
+        column(smallMeaning: true)
     }
 
     /// A gap of at most `height` pt above or below the button column. It is offered the height the
