@@ -80,6 +80,8 @@ struct ProgressOverviewView: View {
             Theme.bg
                 .ignoresSafeArea()
         }
+        // The UI tests wait for the page by this (LockglowUITests).
+        .accessibilityIdentifier("progress.page")
         .navigationTitle("İlerleme")
         .navigationBarTitleDisplayMode(.large)
         .sheet(item: $openedWord) { word in

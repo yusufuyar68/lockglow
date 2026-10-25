@@ -468,6 +468,7 @@ struct SettingsView: View {
                     SettingsRow("Kitaplığın ve bu hafta")
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                .accessibilityIdentifier("settings.library")
                 SettingsDivider()
                 SentencePracticeSettingsRow() // "Cümle kur" (SentencePracticeView.swift)
                 SettingsDivider()
@@ -491,6 +492,16 @@ struct SettingsView: View {
                     }
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                SettingsDivider()
+                // A text the user is reading, its words sorted; new ones become their own words
+                // (TextHarvestView.swift).
+                NavigationLink {
+                    TextHarvestView()
+                } label: {
+                    SettingsRow("Metinden kelime bul")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+                .accessibilityIdentifier("settings.textHarvest")
                 SettingsDivider()
                 // iCloud (is5-icloud, SyncSettingsView.swift): progress and own words on every device.
                 NavigationLink {
@@ -547,6 +558,7 @@ struct SettingsView: View {
                     SettingsRow("Nasıl öğrenirim?")
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                .accessibilityIdentifier("settings.learningGuide")
                 SettingsDivider()
                 NavigationLink {
                     WidgetGuideScreen(word: model.widgetGuideWord)

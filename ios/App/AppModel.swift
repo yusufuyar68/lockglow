@@ -416,8 +416,15 @@ final class AppModel: ObservableObject {
     /// for the quiz's "Senin seçtiğin" line. Case and surrounding spaces are ignored; nil when no
     /// card has that headword (a distractor such as "owe" or "lent") or the card has no gloss.
     func lookup(lemma: String) -> String? {
+        return card(lemma: lemma)?.glossTR
+    }
+
+    /// The loaded card whose headword is `lemma` (case and surrounding spaces ignored); nil when
+    /// none. Never a user's own word ("Metinden kelime bul" asks the cards and the user's words
+    /// apart, AppModel+TextHarvest.swift).
+    func card(lemma: String) -> WidgetWord? {
         let key = lemma.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        return wordsByLemma[key]?.glossTR
+        return wordsByLemma[key]
     }
 
     private static func lemmaIndex(_ words: [WidgetWord]) -> [String: WidgetWord] {

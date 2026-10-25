@@ -58,6 +58,8 @@ def check_stub_api(real: Path, stub: Path) -> None:
 
 # The quiz widget's questions (ios/App/AppModel+QuizWidget.swift), on a line of their own.
 APP_LOGIC_FILES += ["AppModel+DataControls.swift"]  # is5-veri
+# "Metinden kelime bul" (ios/App/AppModel+TextHarvest.swift), on a line of its own.
+APP_LOGIC_FILES += ["AppModel+TextHarvest.swift"]
 
 
 def main() -> int:

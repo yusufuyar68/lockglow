@@ -27,12 +27,13 @@ Bu klasör üç özelliğin teknik planını tutar. Hiçbiri kod değil, plan. �
 
 ## Sonra eklenen notlar (22 Ekim 2026)
 
-Bu üç not yukarıdaki kararlardan sonra yazıldı; bu README'nin çelişki çözümü onları kapsamaz.
+Bu notlar yukarıdaki kararlardan sonra yazıldı; bu README'nin çelişki çözümü onları kapsamaz.
 
 | Dosya | Ne | Durum |
 |---|---|---|
 | `ilerleme_ekrani.md` | İlerleme ekranı: bağlama notu (Kitaplık, Bu hafta, Konular; seri, yüzde ve "0" yok) | Bağlandı (`ilerleme-bagla`) |
 | `kendi_kelime.md` | Kendi kelimeni ekle: bağlama notu (form, "Senin kelimen" etiketi, widget dönüşümü) | Bağlandı (`kendi-kelime-bagla`) |
+| `metinden_kelime.md` | Metinden kelime bul (2026-10-26): metin, kamera ya da fotoğraftan kelimeleri kartlar / kendi kelimelerin / yeni diye ayırır | Dal `rakip-ozellikler`, CI'da denenmedi |
 | `fsrs.md` | FSRS (v1.2): motor, simülasyon (`araclar/fsrs_sim.py`) ve geçiş planı | Motor yazıldı, uygulamaya bağlı değil; tekrarları hâlâ Leitner zamanlıyor |
 
 ## Ortak kararlar (tek doğru kaynak)

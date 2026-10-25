@@ -77,6 +77,9 @@ targets:
         # is5-golgeleme: the take is kept in memory for "Kendi sesini dinle" until the page closes.
         NSMicrophoneUsageDescription: "Söyle alıştırmasında sesini dinlemek ve sana geri çalmak için mikrofon kullanılır. Ses telefondan çıkmaz, Söyle sayfası kapanınca silinir."
         NSSpeechRecognitionUsageDescription: "Söylediğin kelimenin anlaşılıp anlaşılmadığını görmek için konuşma tanıma kullanılır. Bu iş telefonda yapılır; sesin hiçbir yere gönderilmez."
+        # "Metinden kelime bul": "Kamerayla tara" reads English text live (VisionKit). Nothing is recorded
+        # or sent. "Fotoğraftan al" uses the system photo picker, which needs no permission.
+        NSCameraUsageDescription: "Kamera yalnız İngilizce yazıyı okumak için kullanılır (Kamerayla tara). Görüntü kaydedilmez, telefondan çıkmaz."
         # is5-haftalik: "Paylaş" on "Geçen hafta" offers "Resmi Kaydet"; without this key iOS stops the app there.
         NSPhotoLibraryAddUsageDescription: "Paylaşım resmini Fotoğraflar'a kaydetmek için. Lockglow fotoğraflarını görmez."
         ITSAppUsesNonExemptEncryption: false

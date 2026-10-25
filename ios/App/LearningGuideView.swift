@@ -61,6 +61,8 @@ struct LearningGuideView: View {
                 .padding(.bottom, 32)
         }
         .background(Theme.bg.ignoresSafeArea())
+        // The UI tests wait for the page by this (LockglowUITests).
+        .accessibilityIdentifier("learningGuide.page")
         .navigationTitle("Nasıl öğrenirim?")
         .navigationBarTitleDisplayMode(.inline)
     }

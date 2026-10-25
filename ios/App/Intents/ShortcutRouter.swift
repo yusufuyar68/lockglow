@@ -15,10 +15,17 @@ final class ShortcutRouter: ObservableObject {
     @Published private(set) var pending: ShortcutRoute?
     /// The "Kendi kelimeni ekle" form a shortcut opened; nil when closed.
     @Published var editor: CustomWordEditor.Mode?
+    /// "Metinden kelime bul" a shortcut opened, with its text; nil when closed.
+    @Published var textHarvest: TextHarvestRequest?
 
-    /// A route waits or its form is open: RootView shows no system card now (`startOpening`).
+    /// A route waits or its sheet is open: RootView shows no system card now (`startOpening`).
     var isActive: Bool {
-        return pending != nil || editor != nil
+        return pending != nil || editor != nil || textHarvest != nil
+    }
+
+    /// Neither the add form nor "Metinden kelime bul" of a shortcut is up.
+    fileprivate var hasNoSheet: Bool {
+        return editor == nil && textHarvest == nil
     }
 
     func open(_ route: ShortcutRoute) {
@@ -35,13 +42,14 @@ final class ShortcutRouter: ObservableObject {
 
 extension View {
     /// RootView's side of Siri, Kestirmeler and Spotlight: a tapped Spotlight result, the routes
-    /// of the intents, the add form and the Spotlight index. A route waits until the words have
-    /// loaded and the onboarding is closed, then:
+    /// of the intents, the add form, "Metinden kelime bul" and the Spotlight index. A route waits
+    /// until the words have loaded and the onboarding is closed, then:
     /// - a word opens as its whole card (`openWord`) once no sheet is up, or in place of the word
     ///   card RootView shows (`wordCardShown`);
-    /// - "Tekrar" (`openReview`) opens at once (after the add form, if that is up); RootView
-    ///   closes its word card first;
-    /// - the add form opens as this modifier's own sheet once no sheet is up.
+    /// - "Tekrar" (`openReview`) opens at once (after the shortcut's own sheet, if one is up);
+    ///   RootView closes its word card first;
+    /// - the add form and "Metinden kelime bul" open as this modifier's own sheets once no sheet
+    ///   is up.
     /// `otherSheetShown`: another sheet of RootView is up or about to be (a system card, the
     /// widget guide). Sheets of the tabs (a card in Akış, the form in Sözlük) are seen on the
     /// window, since they tell RootView nothing.
@@ -96,6 +104,22 @@ private struct ShortcutRoutes: ViewModifier {
                 // A sheet starts its own hierarchy: its controls stay ink (README rule 2).
                 .tint(Theme.ink)
             }
+            // "Metinden kelime bul" with the shortcut's text (a Share sheet shortcut's input);
+            // the user taps "Kelimeleri bul". A word opens on the sheet's own stack.
+            .sheet(item: $router.textHarvest) { request in
+                NavigationStack {
+                    TextHarvestView(text: request.text)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Kapat") {
+                                    router.textHarvest = nil
+                                }
+                            }
+                        }
+                }
+                .tint(Theme.ink)
+                .environmentObject(model)
+            }
             .sensoryFeedback(.success, trigger: addedCount)
             // Tried at once, then a few times a second while the route waits: a tab's sheet
             // closing tells RootView nothing.
@@ -132,17 +156,17 @@ private struct ShortcutRoutes: ViewModifier {
         let depth = ShortcutRoutes.sheetDepth()
         switch route {
         case .review:
-            // Not under the shortcut's own form; a system card may stay over it.
-            guard router.editor == nil else {
+            // Not under the shortcut's own sheet; a system card may stay over it.
+            guard router.hasNoSheet else {
                 return
             }
         case .word:
             // Nothing up, or only RootView's word card, which the new word replaces.
-            guard !otherSheetShown, router.editor == nil, depth == 0 || (depth == 1 && wordCardShown) else {
+            guard !otherSheetShown, router.hasNoSheet, depth == 0 || (depth == 1 && wordCardShown) else {
                 return
             }
-        case .addWord:
-            guard !otherSheetShown, !wordCardShown, router.editor == nil, depth == 0 else {
+        case .addWord, .findWords:
+            guard !otherSheetShown, !wordCardShown, router.hasNoSheet, depth == 0 else {
                 return
             }
         }
@@ -153,6 +177,8 @@ private struct ShortcutRoutes: ViewModifier {
             openReview()
         case let .addWord(lemma)?:
             router.editor = .add(lemma: lemma)
+        case let .findWords(text)?:
+            router.textHarvest = TextHarvestRequest(text: text)
         case nil:
             break
         }
@@ -176,4 +202,11 @@ private struct ShortcutRoutes: ViewModifier {
         }
         return deepest
     }
+}
+
+/// "Metinden kelime bul" opened by a shortcut: a new id each time, so the same text sent twice
+/// opens the sheet again.
+struct TextHarvestRequest: Identifiable, Equatable {
+    let id = UUID()
+    let text: String
 }

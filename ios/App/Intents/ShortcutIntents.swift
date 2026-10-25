@@ -80,6 +80,40 @@ struct AddWordIntent: AppIntent {
     }
 }
 
+/// "Lockglow ile metinden kelime bul": opens "Metinden kelime bul" with the text filled in. In
+/// Kestirmeler the text can come from an earlier action, or from the Share sheet when the shortcut
+/// takes Share sheet input: a page being read is sent to Lockglow in two taps. The route cuts the
+/// text to what the screen reads (`ShortcutRoute.findingWords(in:)`); the user taps "Kelimeleri
+/// bul". The text stays on the phone.
+struct FindWordsInTextIntent: AppIntent {
+    static var title: LocalizedStringResource {
+        "Metinden kelime bul"
+    }
+
+    static var description: IntentDescription? {
+        IntentDescription("İngilizce bir metindeki kartlarda olan ve yeni kelimeleri bulmak için Lockglow'u açar. Metin telefondan çıkmaz.")
+    }
+
+    static var openAppWhenRun: Bool {
+        true
+    }
+
+    @Parameter(title: "Metin")
+    var text: String?
+
+    static var parameterSummary: some ParameterSummary {
+        Summary("Metinden kelime bul: \(\.$text)")
+    }
+
+    init() {}
+
+    @MainActor
+    func perform() async throws -> some IntentResult {
+        ShortcutRouter.shared.open(.findingWords(in: text ?? ""))
+        return .result()
+    }
+}
+
 /// "Bu kelimeyi Lockglow'da ara": Siri asks for the word (English or Turkish), offers the matches
 /// (`WordEntityQuery`) and opens the chosen word's whole card. An `OpenIntent` opens the app by
 /// itself.
@@ -213,6 +247,16 @@ struct LockglowShortcuts: AppShortcutsProvider {
             ],
             shortTitle: "Kelime ara",
             systemImageName: "magnifyingglass"
+        )
+        AppShortcut(
+            intent: FindWordsInTextIntent(),
+            phrases: [
+                "Find words in a text with \(.applicationName)",
+                "\(.applicationName) find words in text",
+                "Find new words with \(.applicationName)",
+            ],
+            shortTitle: "Metinden kelime bul",
+            systemImageName: "text.viewfinder"
         )
     }
 }

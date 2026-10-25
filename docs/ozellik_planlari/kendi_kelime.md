@@ -12,6 +12,8 @@ Dal `kendi-kelime` yalnızca **yeni dosya** ekler. Var olan hiçbir dosya deği�
 > - **Düzeltme (dışarıdan gelen hata):** `refreshWidgetPlan` kısa örnek seçince `WidgetWord`'ü yeniden kurarken `glossShortTR`, `sensitivity` ve `confusableIDs` düşüyordu. Artık korunuyor.
 > - Kullanıcı kelimelerinde `glossShortTR`, `sensitivity` ve `confusableIDs` nil.
 
+> **Ek (2026-10-26):** "Metinden kelime bul" okunan bir metnin yeni kelimelerini bu forma getirir (`CustomWordEditor(mode: .add(lemma:))`, Türkçe anlam yine şart). Ayrıntı: [`metinden_kelime.md`](metinden_kelime.md).
+
 | Dosya | Ne |
 |---|---|
 | `ios/Packages/VocabKit/Sources/CoreModels/CustomWordID.swift` | Kimlik aralığı, `WidgetWord.isUserAdded` (widget eklentisi de görür) |
