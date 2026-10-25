@@ -1,6 +1,6 @@
 # Rakip analizi ve anahtar kelime stratejisi (Türkiye App Store, 23 Ekim 2026)
 
-> **TASLAK.** Mağaza sayfası için son kararlar: [`kayit_metinleri_tr.md`](kayit_metinleri_tr.md), [`kayit_metinleri_en.md`](kayit_metinleri_en.md), [`ekran_goruntusu_basliklari.md`](ekran_goruntusu_basliklari.md). Bu belge onların gerekçesi. 22 Ekim'deki kısa derleme: [`rakiplerden_ogrenilenler.md`](rakiplerden_ogrenilenler.md).
+> **TASLAK.** Mağaza sayfası için son kararlar: [`kayit_metinleri_tr.md`](kayit_metinleri_tr.md), [`kayit_metinleri_en.md`](kayit_metinleri_en.md), [`ekran_goruntusu_basliklari.md`](ekran_goruntusu_basliklari.md). Bu belge onların gerekçesi. 22 Ekim'deki kısa derleme: [`rakiplerden_ogrenilenler.md`](rakiplerden_ogrenilenler.md). 25 Ekim'de rakiplerde olup bizde olmayanların analizi: [`rakip_eksik_analizi.md`](rakip_eksik_analizi.md).
 
 > Önceki çalışmanın üzerine kuruldu: `docs/magaza/rakiplerden_ogrenilenler.md` (22 Ekim), `kayit_metinleri_tr.md` / `_en.md` anahtar kelime bölümleri, `raporlar/08` §1.3–2.2, `raporlar/14`.
 >
