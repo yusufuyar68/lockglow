@@ -1,0 +1,124 @@
+name: native-transfer
+
+on:
+  push:
+    branches: [codex/ios-a-transfer]
+    paths:
+      - ios/**
+      - .github/workflows/native-transfer.yml
+  workflow_dispatch:
+    inputs:
+      variants:
+        description: "Native test variants: se pro pro-dark se-ax pro-dark-ax"
+        type: string
+        default: "se pro-dark-ax"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-transfer-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ios:
+    runs-on: macos-15-intel
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: ios
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Select Xcode and generate project
+        run: |
+          XCODE="$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)"
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
+          brew install xcodegen
+          xcodegen generate
+          mkdir -p native-out native-shots
+      - name: VocabKit package tests
+        working-directory: ios/Packages/VocabKit
+        run: swift test > ../../native-out/package.log 2>&1
+      - name: Choose iPhone simulators
+        id: sims
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json,re,subprocess
+          data=json.loads(subprocess.check_output(['xcrun','simctl','list','devices','available','-j']))
+          version=lambda s:[int(n) for n in re.findall(r'\d+',s)]
+          devices=[(version(rt),version(d['name']),d) for rt,ds in data['devices'].items() if 'iOS' in rt for d in ds]
+          devices.sort(key=lambda item:(item[0],item[1],item[2]['udid']))
+          for key,pattern in [('se',r'iPhone SE.*'),('pro',r'iPhone \d+ Pro')]:
+              matches=[d['udid'] for _,_,d in devices if re.fullmatch(pattern,d['name'])]
+              if not matches: raise SystemExit('Required simulator missing: '+key)
+              print(key+'='+matches[-1])
+          PY
+      - name: Build app, extension and tests
+        env:
+          FIRST: ${{ steps.sims.outputs.se }}
+        run: |
+          xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow \
+            -destination "id=$FIRST" -derivedDataPath build/native-dd \
+            ENABLE_ONLY_ACTIVE_RESOURCES=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= \
+            CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
+            > native-out/build.log 2>&1 \
+          || { tail -100 native-out/build.log; exit 1; }
+      - name: Native A card tests and screenshots
+        env:
+          VARIANTS: ${{ inputs.variants || 'se pro-dark-ax' }}
+          SIM_SE: ${{ steps.sims.outputs.se }}
+          SIM_PRO: ${{ steps.sims.outputs.pro }}
+        run: |
+          for variant in $VARIANTS; do
+            case "$variant" in
+              se|se-ax) device="$SIM_SE" ;;
+              pro|pro-dark|pro-dark-ax) device="$SIM_PRO" ;;
+              *) echo "Unknown variant: $variant"; exit 1 ;;
+            esac
+            appearance=light
+            case "$variant" in *dark*) appearance=dark ;; esac
+            export TEST_RUNNER_LOCKGLOW_NATIVE_AX=0
+            case "$variant" in *ax) export TEST_RUNNER_LOCKGLOW_NATIVE_AX=1 ;; esac
+            xcrun simctl shutdown "$device" 2>/dev/null || true
+            xcrun simctl erase "$device"
+            xcrun simctl boot "$device"
+            xcrun simctl bootstatus "$device" -b > /dev/null
+            xcrun simctl ui "$device" appearance "$appearance"
+            xcrun simctl status_bar "$device" override --time '9:41' || true
+            status=0
+            render_tests=()
+            if [ "$variant" = se ]; then
+              render_tests=(-only-testing:LockglowNativeSnapshots)
+            fi
+            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+              -destination "id=$device" -derivedDataPath build/native-dd \
+              -parallel-testing-enabled NO \
+              -only-testing:LockglowUITests/NativeTransferTests \
+              "${render_tests[@]}" \
+              -resultBundlePath "native-out/$variant.xcresult" \
+              > "native-out/$variant.log" 2>&1 || status=$?
+            xcrun xcresulttool export attachments --path "native-out/$variant.xcresult" \
+              --output-path "native-shots/$variant" || true
+            xcrun simctl shutdown "$device" || true
+            tail -35 "native-out/$variant.log"
+            [ "$status" -eq 0 ] || exit "$status"
+            grep -q "NativeTransferTests.*passed" "native-out/$variant.log" \
+              || { echo 'No passing native test evidence'; exit 1; }
+            if [ "$variant" = se ]; then
+              grep -q "FeedTransferSnapshotTests.*passed" "native-out/$variant.log" \
+                || { echo 'Hosted feed tests did not run'; exit 1; }
+            fi
+          done
+      - name: Keep native evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-transfer-${{ github.sha }}
+          path: |
+            ios/native-out/*.log
+            ios/native-shots
+          if-no-files-found: warn
+          retention-days: 14

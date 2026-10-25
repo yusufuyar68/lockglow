@@ -224,6 +224,23 @@ targets:
       - package: VocabKit
         product: Scheduler
 
+  # Hosted app-view snapshots: imports Lockglow so the real feed/theme code is tested once.
+  LockglowNativeSnapshots:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: NativeTransferSnapshots
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX).$(APP_ID_SLUG).nativesnapshots
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Lockglow.app/Lockglow
+        BUNDLE_LOADER: $(TEST_HOST)
+    dependencies:
+      - target: Lockglow
+      - package: VocabKit
+        product: CoreModels
+
   # is5-watch: the Apple Watch app (one SwiftUI target, watchOS 10) and its complications. Words come
   # from the phone over WatchConnectivity (App/WatchBridge.swift); see Watch/README.md.
   # NOT embedded in the iPhone app and in no iPhone scheme yet: archives and TestFlight uploads stay
@@ -340,6 +357,7 @@ schemes:
       targets:
         - LockglowUITests
         - LockglowWidgetSnapshots
+        - LockglowNativeSnapshots
     archive:
       config: Release
   Lockglow-Release:
