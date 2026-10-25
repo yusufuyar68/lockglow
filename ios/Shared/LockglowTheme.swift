@@ -76,8 +76,8 @@ import CoreModels
 //   (bold with a light yellow mark; `highlighted: false` for bold only, e.g. extra example rows).
 //
 // Controls (rule 2: everything tappable is a capsule, 44 pt hit area, no blue):
-//     .buttonStyle(PrimaryCapsuleButtonStyle())                  // main, full width, 50 pt; night:
-//                                                                // ink tint + 2 pt ink edge, bold
+//     .buttonStyle(PrimaryCapsuleButtonStyle())                  // main, full width, 50 pt; filled:
+//                                                                // black by day, white at night
 //     .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))     // large main button ("Başla")
 //     .buttonStyle(SecondaryCapsuleButtonStyle())                // surface + 1.5 pt lineStrong
 //     .buttonStyle(SecondaryCapsuleButtonStyle(tonal: true))     // surface2 + 1 pt lineStrong
@@ -637,7 +637,7 @@ private struct CapsuleButtonBody: View {
         configuration.label
             .font(.headline)
             .multilineTextAlignment(.center)
-            .foregroundStyle(kind == .primary ? Theme.onPrimary : Theme.ink)
+            .foregroundStyle(kind == .primary ? (isEnabled ? Theme.onPrimary : Theme.ink3) : Theme.ink)
             .padding(.horizontal, fullWidth ? 24 : 20)
             .padding(.vertical, 8)
             .frame(
@@ -647,7 +647,9 @@ private struct CapsuleButtonBody: View {
             )
             .background { fill }
             .contentShape(Capsule())
-            .opacity(isEnabled ? (configuration.isPressed ? 0.85 : 1) : 0.4)
+            // A disabled main button is drawn gray (below), not faded: a faded white fill at night
+            // left its black text at 1.9:1 (2026-10-25 screenshots).
+            .opacity(isEnabled ? (configuration.isPressed ? 0.85 : 1) : (kind == .primary ? 1 : 0.4))
             .scaleEffect(configuration.isPressed && !reduceMotion ? 0.985 : 1)
             .animation(reduceMotion ? nil : .easeOut(duration: 0.12), value: configuration.isPressed)
     }
@@ -656,8 +658,10 @@ private struct CapsuleButtonBody: View {
     private var fill: some View {
         switch kind {
         case .primary:
+            // Disabled: a gray capsule with ink3 text (3.9:1 by day and at night), as Apple's
+            // disabled filled buttons, clearly apart from the black / white enabled one.
             Capsule()
-                .fill(Theme.primary)
+                .fill(isEnabled ? Theme.primary : Theme.surface3)
         case .bordered:
             Capsule()
                 .fill(Theme.surface)

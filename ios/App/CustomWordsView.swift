@@ -942,9 +942,11 @@ struct CustomWordsNotice: Equatable, Identifiable {
     }
 }
 
-/// Mockup `.toast`: an ink bar with the result and, after a delete, "Vazgeç". At accessibility
-/// text sizes "Vazgeç" goes under the message. Inverted tokens only, as the feed's notice: `bg`
-/// text on `ink`; the button is a faint `bg` tint with a `bg` edge.
+/// Mockup `.toast`: a bar with the result and, after a delete, "Vazgeç". At accessibility text
+/// sizes "Vazgeç" goes under the message. A gray `surface3` bar with `ink` text (11-14:1), not
+/// inverted: at night an inverted (white) bar right above the white main button "Kelime ekle"
+/// read as a second main button (2026-10-25). The button is a faint `ink` tint with a
+/// `lineStrong` edge.
 private struct CustomWordsNoticeBar: View {
     let notice: CustomWordsNotice
     let undo: () -> Void
@@ -966,20 +968,24 @@ private struct CustomWordsNoticeBar: View {
                         .font(.subheadline.weight(.bold))
                         .padding(.horizontal, 16)
                         .frame(minWidth: Theme.minHitSize, minHeight: Theme.minHitSize)
-                        .background(Theme.bg.opacity(0.18), in: Capsule())
-                        .overlay(Capsule().strokeBorder(Theme.bg.opacity(0.6), lineWidth: 1))
+                        .background(Theme.ink.opacity(0.08), in: Capsule())
+                        .overlay(Capsule().strokeBorder(Theme.lineStrong, lineWidth: 1))
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
                 .accessibilityHint("Silinen kelimeyi geri getirir")
             }
         }
-        .foregroundStyle(Theme.bg)
+        .foregroundStyle(Theme.ink)
         .padding(.leading, 16)
         .padding(.trailing, 8)
         .padding(.vertical, 8)
         .frame(minHeight: 52)
-        .background(Theme.ink, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
+        .background(Theme.surface3, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous)
+                .strokeBorder(Theme.line, lineWidth: 1)
+        )
         .shadow(color: Theme.shadowFar, radius: 16, x: 0, y: 8)
         .accessibilityElement(children: .contain)
     }
