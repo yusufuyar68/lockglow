@@ -1,9 +1,10 @@
 import SwiftUI
 import Learning
 
-/// "Yeni zamanlama (deneme)" (docs/ozellik_planlari/fsrs.md): the switch to FSRS and back, what
-/// changes (the cost first, §2.9), what stays the same, how to undo it, and whether the waits are
-/// fitted to the user's own answers yet. Calm text only: no praise, no streaks, no percentages.
+/// "Yeni zamanlama" (docs/ozellik_planlari/fsrs.md): the switch to FSRS and back (on for a fresh
+/// install since 2026-10-25, off after an update until turned on), what changes (the cost first,
+/// §2.9), what stays the same, how to undo it, and whether the waits are fitted to the user's own
+/// answers yet. Calm text only: no praise, no streaks, no percentages.
 struct SchedulerSettingsView: View {
     @EnvironmentObject private var model: AppModel
     @State private var isOn = false
@@ -19,7 +20,7 @@ struct SchedulerSettingsView: View {
                 switchSection
                 infoSection("Ne değişir?", lines: [
                     "Tekrarlar arasındaki bekleme senin cevaplarından hesaplanır.",
-                    "Yeni bir kelimede ilk “Bildim” genelde 2 gün bekler. Eskiden 1 gündü.",
+                    "Yeni bir kelimede ilk “Bildim” genelde 2 gün bekler. Eski düzende 1 gündü.",
                     "Doğru cevapta kelime bir ya da birkaç basamak çıkabilir. Unuttuğun kelime birkaç basamak inebilir.",
                     "İyi bildiğin kelimeler daha seyrek gelir, en çok bir yıl bekler. Arada unutabilirsin; unutursan yine sorarız.",
                     "Zorlandığın kelimeler daha erken gelir."
@@ -28,7 +29,7 @@ struct SchedulerSettingsView: View {
                     "Basamak 1–5 ve “Yerleşti” aynı kalır. Basamak, kelimenin ne kadar beklediğini gösterir. Örneğin basamak 3 yaklaşık 4–8 gün demek.",
                     "Yeni kelime yine basamak 1'den başlar. “Yerleşti”ye yine hatırlama sorusuyla geçer.",
                     "“Biliyorum” dediğin kelime 3 gün sonra bir kez sorulur.",
-                    "Açtığın gün hiçbir kelimenin basamağı ve tarihi değişmez."
+                    "Açarsan o gün hiçbir kelimenin basamağı ve tarihi değişmez."
                 ])
                 infoSection("Geri dönmek", lines: [
                     "İstediğin zaman kapatabilirsin. Kelimeler bulundukları basamaktan eski düzenle devam eder.",
@@ -78,14 +79,9 @@ struct SchedulerSettingsView: View {
         AccessibilityNotification.Announcement(AttributedString(message)).post()
     }
 
-    /// "deneme" said once, then the switch (off by default) and the calm line after a failed save.
+    /// The switch and the calm line after a failed save.
     private var switchSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Bu zamanlama deneniyor. İleride değişebilir.")
-                .font(.subheadline)
-                .foregroundStyle(Theme.ink2)
-                .fixedSize(horizontal: false, vertical: true)
-                .padding(.horizontal, 16)
             SettingsGroup {
                 Toggle(isOn: switchBinding) {
                     Text("Yeni zamanlamayı kullan")

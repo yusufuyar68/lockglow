@@ -2,8 +2,8 @@ import Foundation
 
 /// FSRS-6 scheduling (Free Spaced Repetition Scheduler), plan item v1.2. The engine: pure and
 /// without Lockglow's rules. The app reaches it through `FSRSScheduler`, behind the "Yeni
-/// zamanlama (deneme)" switch (off by default: `Leitner` schedules). docs/ozellik_planlari/fsrs.md
-/// has the comparison, the migration and what "basamak" means with FSRS. It also runs in
+/// zamanlama" switch (on for a fresh install, `SchedulerDefault`; off: `Leitner` schedules).
+/// docs/ozellik_planlari/fsrs.md has the comparison, the migration and what "basamak" means with FSRS. It also runs in
 /// Leitner's shadow from the review log (`replay`).
 ///
 /// A word's memory is two numbers: stability (days until the chance of recall falls to 90%) and

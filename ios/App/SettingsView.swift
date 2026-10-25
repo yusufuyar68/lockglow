@@ -275,7 +275,7 @@ struct SettingsView: View {
                 NavigationLink {
                     SchedulerSettingsView()
                 } label: {
-                    SettingsRow("Yeni zamanlama (deneme)")
+                    SettingsRow("Yeni zamanlama")
                 }
                 .buttonStyle(SettingsRowButtonStyle())
             }
@@ -542,7 +542,7 @@ struct SettingsView: View {
             SettingsSectionHeader("Yardım")
             SettingsGroup {
                 NavigationLink {
-                    LearningGuideView(dailyNewWords: model.dailyNewWords, rotationMinutes: model.rotationMinutes)
+                    LearningGuideView(dailyNewWords: model.dailyNewWords, rotationMinutes: model.rotationMinutes, scheduler: model.reviewScheduler)
                 } label: {
                     SettingsRow("Nasıl öğrenirim?")
                 }

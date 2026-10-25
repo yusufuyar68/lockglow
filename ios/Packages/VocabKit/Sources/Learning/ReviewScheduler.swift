@@ -1,7 +1,9 @@
 import Foundation
 
-/// Which scheduler times the reviews: Leitner, or FSRS behind "Yeni zamanlama (deneme)" in
-/// "Ayarlar" (off by default; docs/ozellik_planlari/fsrs.md 4.3 step 2).
+/// Which scheduler times the reviews: FSRS while "Yeni zamanlama" in "Ayarlar" is on, otherwise
+/// Leitner (docs/ozellik_planlari/fsrs.md 4.3 step 2). Since 2026-10-25 a fresh install starts
+/// with FSRS and an update keeps Leitner (`SchedulerDefault`); progress synced from a device on
+/// FSRS reaches a device on Leitner with Leitner's waits (`FSRSMigration.adopted`).
 public enum SchedulerKind: String, Codable, CaseIterable, Sendable {
     case leitner
     case fsrs
@@ -34,7 +36,8 @@ public protocol ReviewScheduler: Sendable {
     func review(_ progress: WordProgress, grade: ReviewGrade, at now: Date) -> WordProgress
 }
 
-/// `Leitner.review` behind `ReviewScheduler`: the default, and what "Yeni zamanlama" off gives.
+/// `Leitner.review` behind `ReviewScheduler`: what "Yeni zamanlama" off gives, and what every
+/// install from before FSRS keeps.
 ///
 /// After FSRS it goes on from what FSRS left: the word's box, due date and refresher step. The
 /// FSRS memory (`WordProgress.fsrs`) is left as it was; its answer count no longer matches once

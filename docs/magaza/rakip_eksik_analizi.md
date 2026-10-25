@@ -34,7 +34,7 @@ Küçük, yeni Türkçe uygulamalar da var: Vocaby (4.000+ kelime), İngilizce K
 | Widget'tan, uygulamayı açmadan sesli okuma | ✅ | Lingo'da yalnızca premium'da; uygulamayı açmadan çaldığı belli değil [D] |
 | Live Activity, Denetim Merkezi, StandBy, Siri | ✅ hepsi | Zarafa'da Live Activity, Wordlet'te Denetim Merkezi var. **Hepsi bir arada başka kimsede yok** |
 | Apple Watch | ✅ (henüz yayında değil) | Gördüğüm rakiplerde yok |
-| Aralıklı tekrar | ✅ Leitner (FSRS kapalı) | Wordlet FSRS'yi varsayılan kullanıyor; büyük uygulamalarda "akıllı tekrar" var |
+| Aralıklı tekrar | ✅ FSRS yeni kurulumda varsayılan, güncellemede Leitner kalır (henüz yayında değil) | Wordlet FSRS'yi varsayılan kullanıyor; büyük uygulamalarda "akıllı tekrar" var |
 | Türk konuşanların tipik hataları, "Dikkat" kutusu, sahte dostlar | ✅ | **Kimsede tam karşılığı yok.** En güçlü farkımız bu |
 | Cihazda telaffuz kontrolü | ✅ | Orbit'te ve Kartlar'da var, ama ses cihazdan çıkıyor mu belli değil |
 | Kulak alıştırması (minimal çiftler), cümle kurma | ✅ | Gördüğüm rakiplerde yok |
@@ -71,7 +71,7 @@ Küçük, yeni Türkçe uygulamalar da var: Vocaby (4.000+ kelime), İngilizce K
 5. **Bağlam ve görsel yok.** Kelibu ve Flaş görselle, WordUp videoyla öğretiyor.
    - **Öneri:** somut kelimelere görsel ekle (A1–A2 için yeterli).
    - Bir de Safari ve paylaşım menüsünden kelime ekleme, Canlı Metin ile kamerayla kelime yakalama özellikleri ekle. Böylece "okuduğun yerden ekle" boşluğu da kapanır.
-6. **FSRS hâlâ kapalı.** Wordlet bunu açıkça satış argümanı yapıyor. Deneme bittiyse varsayılan yapılabilir.
+6. **Yapıldı (2026-10-25): FSRS yeni kurulumlarda varsayılan.** Wordlet bunu açıkça satış argümanı yapıyor. Güncelleme yapan kullanıcı Leitner'de kalır, ayardan açabilir. Ayrıntı: `docs/ozellik_planlari/fsrs.md` 4.3 adım 2.
 7. **iCloud eşitlemesi açık değil.** Telefon değiştiren kullanıcı ilerlemesini kaybetmekten korkar. Bu tek bir entitlement adımı; ucuz bir iş.
 
 ### Konumlanma kararı gerektirenler

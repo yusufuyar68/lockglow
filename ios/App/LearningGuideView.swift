@@ -40,18 +40,22 @@ import Learning
 ///   15, 20). "Günde kaç kelime yeter?" multiplies it by 30 days.
 /// - `rotationMinutes`: how often the widget word changes (`AppModel.rotationMinutes`; 30 to 240),
 ///   quoted in "Widget'ı iyi kullan".
+/// - `scheduler`: the scheduler in use (`AppModel.reviewScheduler`); Leitner when left out.
 ///
-/// Every wait in the text ("12 saat sonra", "1 gün, 2 gün, 4 gün…", "30 gün", "60, sonra 120
-/// gün") comes from `Leitner`, so the guide follows the real schedule when the intervals change.
+/// Every wait in the text comes from the scheduler in use, so the guide follows the real schedule:
+/// a new word's waits after each answer from its `review`; the steps ("1 gün, 2 gün, 4 gün…") and
+/// the refreshers ("30 gün", "60, sonra 120 gün") from `Leitner`. Under FSRS the steps tell the
+/// wait only roughly and a learned word waits up to a year (fsrs.md 4.5), as "Yeni zamanlama" says.
 /// Design system only (`Theme`, `SecondaryCapsuleButtonStyle`, `ExampleMark`, `MistakeDiff`); the
 /// page has one phosphor band (the word to try) and one marked example sentence (rule 1).
 struct LearningGuideView: View {
     let dailyNewWords: Int
     let rotationMinutes: Int
+    var scheduler: ReviewScheduler = LeitnerScheduler()
 
     var body: some View {
         ScrollView {
-            LearningGuideContent(dailyNewWords: dailyNewWords, rotationMinutes: rotationMinutes)
+            LearningGuideContent(dailyNewWords: dailyNewWords, rotationMinutes: rotationMinutes, scheduler: scheduler)
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
                 .padding(.bottom, 32)
@@ -68,6 +72,11 @@ struct LearningGuideView: View {
 struct LearningGuideContent: View {
     let dailyNewWords: Int
     let rotationMinutes: Int
+    var scheduler: ReviewScheduler = LeitnerScheduler()
+
+    private var usesFSRS: Bool {
+        return scheduler.kind == .fsrs
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -95,10 +104,16 @@ struct LearningGuideContent: View {
 
     private var spacedRepetition: some View {
         GuideSection(title: "Aralıklı tekrar", systemImage: "clock.arrow.circlepath") {
-            GuideParagraph("Bilemediğin bir kelime bir sonraki turda yine gelir. Bildiğin bir kelime ise en az \(GuideText.newWordWait(.good)) sonra gelir. Neden? Unutmaya başladığın bir kelimeyi hatırlamak, onu daha kalıcı yapar.")
-            GuideParagraph("Her doğru cevapta kelime bir basamak çıkar ve ara uzar:")
-            GuideIntervalLadder(waits: GuideText.boxWaits)
-            GuideNote("Son basamakta da bilirsen kelime öğrenilmiş sayılır. \(GuideText.firstRefresher) sonra yine sorulur; her doğru cevapta ara uzar: \(GuideText.laterRefreshers).", systemImage: "checkmark.seal")
+            GuideParagraph("Bilemediğin bir kelime bir sonraki turda yine gelir. Bildiğin bir kelime ise en az \(wait(.good)) sonra gelir. Neden? Unutmaya başladığın bir kelimeyi hatırlamak, onu daha kalıcı yapar.")
+            if usesFSRS {
+                GuideParagraph("Her doğru cevapta ara uzar. Ara senin cevaplarından hesaplanır; basamak, yaklaşık bekleme süresini gösterir:")
+                GuideIntervalLadder(waits: GuideText.boxWaits)
+                GuideNote("Son basamaklarda da bilirsen kelime öğrenilmiş sayılır. En az \(GuideText.firstRefresher) sonra yine sorulur; her doğru cevapta ara uzar, en çok bir yıla kadar.", systemImage: "checkmark.seal")
+            } else {
+                GuideParagraph("Her doğru cevapta kelime bir basamak çıkar ve ara uzar:")
+                GuideIntervalLadder(waits: GuideText.boxWaits)
+                GuideNote("Son basamakta da bilirsen kelime öğrenilmiş sayılır. \(GuideText.firstRefresher) sonra yine sorulur; her doğru cevapta ara uzar: \(GuideText.laterRefreshers).", systemImage: "checkmark.seal")
+            }
             GuideSubheading("Tekrar'daki cevaplar ne demek?")
             // Symbols and names of the answers in the round summary (ReviewView), worst to best.
             VStack(alignment: .leading, spacing: 12) {
@@ -106,30 +121,39 @@ struct LearningGuideContent: View {
                     systemImage: "xmark",
                     title: "Bilemedim",
                     // A learned word whose refresher was missed goes to `Leitner.refresherLapseBox`.
-                    detail: "Sorun değil, kelime baştan başlamaz. \(Leitner.lapseDrop) basamak iner; öğrenilmiş kelime \(Leitner.refresherLapseBox). basamağa iner.",
+                    detail: usesFSRS
+                        ? "Sorun değil, kelime baştan başlamaz. Birkaç basamak inebilir."
+                        : "Sorun değil, kelime baştan başlamaz. \(Leitner.lapseDrop) basamak iner; öğrenilmiş kelime \(Leitner.refresherLapseBox). basamağa iner.",
                     trailing: "sonraki turda"
                 )
                 GuideIconRow(
                     systemImage: "tortoise",
                     title: "Zor",
-                    detail: "Hatırladın ama zorlandın. Kelime aynı basamakta kalır.",
-                    trailing: GuideText.newWordWait(.hard) + " sonra"
+                    detail: usesFSRS
+                        ? "Hatırladın ama zorlandın. Ara az uzar."
+                        : "Hatırladın ama zorlandın. Kelime aynı basamakta kalır.",
+                    trailing: wait(.hard) + " sonra"
                 )
                 GuideIconRow(
                     systemImage: "checkmark",
                     title: "Bildim",
-                    detail: "Kelime bir basamak çıkar.",
-                    trailing: GuideText.newWordWait(.good) + " sonra"
+                    detail: usesFSRS ? "Kelime bir ya da birkaç basamak çıkabilir." : "Kelime bir basamak çıkar.",
+                    trailing: wait(.good) + " sonra"
                 )
                 GuideIconRow(
                     systemImage: "hare",
                     title: "Kolay",
-                    detail: "Hiç düşünmeden bildin. Kelime iki basamak çıkar.",
-                    trailing: GuideText.newWordWait(.easy) + " sonra"
+                    detail: usesFSRS ? "Hiç düşünmeden bildin. Ara daha çok uzar." : "Hiç düşünmeden bildin. Kelime iki basamak çıkar.",
+                    trailing: wait(.easy) + " sonra"
                 )
             }
             GuideNote("Bu süreler yeni bir kelime için. Basamak yükseldikçe süreler uzar. Zor ya da kolay olduğunu doğru cevaptan sonra sen söylersin; söylemezsen Bildim sayılır.")
         }
+    }
+
+    /// How long a new word waits after `grade` with the scheduler in use.
+    private func wait(_ grade: ReviewGrade) -> String {
+        return GuideText.newWordWait(grade, scheduler: scheduler)
     }
 
     // MARK: 3. Trying to remember teaches
@@ -169,7 +193,7 @@ struct LearningGuideContent: View {
                 GuideIconRow(
                     systemImage: "checkmark",
                     title: "Biliyorum",
-                    detail: "Kelimeyi zaten biliyorsan dokun. Kelime widget'tan çıkar; \(GuideText.duration(Leitner.knownCheckDelay)) sonra bir kez sorarız. Bilirsen \(GuideText.firstRefresher) sonra yine sorulur, sonra ara uzar; bilemezsen yeniden öğrenirsin."
+                    detail: "Kelimeyi zaten biliyorsan dokun. Kelime widget'tan çıkar; \(GuideText.duration(Leitner.knownCheckDelay)) sonra bir kez sorarız. Bilirsen \(usesFSRS ? "en az " : "")\(GuideText.firstRefresher) sonra yine sorulur, sonra ara uzar; bilemezsen yeniden öğrenirsin."
                 )
                 GuideIconRow(
                     systemImage: "speaker.wave.2",
@@ -210,12 +234,13 @@ struct LearningGuideContent: View {
 
 // MARK: - Text
 
-/// Waits and intervals in words, from the real schedule (`Leitner`).
+/// Waits and intervals in words, from the real schedule (`Leitner`, or the scheduler in use).
 private enum GuideText {
-    /// How long a new word waits after `grade`: "10 dakika", "12 saat", "1 gün", "2 gün".
-    static func newWordWait(_ grade: ReviewGrade) -> String {
+    /// How long a new word waits after `grade` with `scheduler`: "10 dakika", "12 saat", "1 gün",
+    /// "2 gün".
+    static func newWordWait(_ grade: ReviewGrade, scheduler: ReviewScheduler) -> String {
         let start = Date(timeIntervalSinceReferenceDate: 0)
-        let next = Leitner.review(WordProgress(wordID: 0), grade: grade, at: start)
+        let next = scheduler.review(WordProgress(wordID: 0), grade: grade, at: start)
         return duration(next.dueAt?.timeIntervalSince(start) ?? 0)
     }
 

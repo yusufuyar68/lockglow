@@ -1,6 +1,8 @@
 # FSRS (v1.2): motor, simülasyon ve geçiş planı
 
-> Durum: 2026-10-23, dal `is5-fsrs`. FSRS uygulamaya bağlandı: **"Ayarlar → Yeni zamanlama (deneme)"** açılınca tekrarları FSRS zamanlıyor. Ayar varsayılan olarak kapalı; kapalıyken her şey Leitner'le eskisi gibi. Neler yapıldı, neler açık: 4.3. FSRS'te basamak: 4.5.
+> Durum: 2026-10-25, dal `rakip-ozellikler`. **FSRS yeni kurulumlarda varsayılan.** Uygulamayı ilk kez kuran kişide "Ayarlar → Yeni zamanlama" açık gelir; güncelleme yapan kişi olduğu yerde kalır (Leitner kullanıyorsa Leitner, ayarı açtıysa FSRS). Kimse sessizce taşınmaz; ayar her zaman geri dönüş yolu. FSRS kullanan bir cihazdan gelen ilerleme Leitner kullanan cihazda Leitner'in beklemelerine çekilir; bu kısaltma geri gönderilmez, FSRS cihazı kendi beklemesini korur (4.3 adım 2, "Eşitleme koruması"). Neler yapıldı, neler açık: 4.3. FSRS'te basamak: 4.5.
+>
+> 2026-10-23 (`is5-fsrs`): FSRS uygulamaya bağlandı, ayar "Yeni zamanlama (deneme)" adıyla varsayılan olarak kapalıydı.
 >
 > Lockglow kuralları (4.5): "Yerleşti"ye yalnız 4–5. basamaktan, hatırlama sorusuyla geçilir; henüz bilinmeyen kelime en çok 16 gün bekler; aynı gün adımındaki "Zor" en az 12 saat bekler. Ayar kapatılınca çok uzak tarihler Leitner'in en uzun beklemesine çekilir (4.2). Hesap, 4 şıklı sorudaki %25 şans payını hesaba katar (4.3 adım 9).
 >
@@ -379,7 +381,7 @@ Plandaki dört ayrı `fsrs_…` alanı yerine tek bir iç içe nesne var. `fsrs`
 | Adım | Durum |
 |---|---|
 | 1. Günlük, `lastReviewedAt`, `lastGrade` | Yapıldı (`is4-ogrenme`) |
-| 2. Tek giriş noktası, ayar | Yapıldı (`is5-fsrs`) |
+| 2. Tek giriş noktası, ayar | Yapıldı (`is5-fsrs`); yeni kurulumda varsayılan FSRS (2026-10-25) |
 | 3. Çeviri, sayaçlar | Yapıldı (`is5-fsrs`) |
 | 4. Hedef 0,90, adımlar 10 dk | Yapıldı (`is5-fsrs`); "Tekrar temposu" açık |
 | 5. Bilinen kelime | Yapıldı (`is5-fsrs`) |
@@ -391,7 +393,20 @@ Plandaki dört ayrı `fsrs_…` alanı yerine tek bir iç içe nesne var. `fsrs`
 1. **Yapıldı.** `review_log.jsonl` yazmaya başla; `WordProgress`'e `lastReviewedAt` ve `lastGrade` ekle. Leitner de yazsın.
 2. **Yapıldı.** Tek bir giriş noktası: `ReviewScheduler.review(_:grade:at:) -> WordProgress` (`LeitnerScheduler`, `FSRSScheduler`).
    - Tekrar, hatırlama ekranı, "Biliyorum" kontrolü, widget'ın "Bilmiyorum"u (`ProgressIngest`) ve düğme süreleri bunu çağırır (`AppModel.reviewScheduler`).
-   - Seçim: "Ayarlar → Yeni zamanlama (deneme)", tercih anahtarı `lockglow.scheduler` (`leitner` / `fsrs`). Varsayılan ve bilinmeyen değer Leitner.
+   - Seçim: "Ayarlar → Yeni zamanlama", tercih anahtarı `lockglow.scheduler` (`leitner` / `fsrs`).
+   - **Varsayılan (2026-10-25'ten beri):** ilk açılışta değer bir kez yazılır (`SchedulerDefault.initialKind`, `AppModel.settleSchedulerAtLaunch`). Yeni kurulumu güncellemeden ayıran kanıt karşılama ekranınınki (`OnboardingGate`): kayıtlı karşılama bayrağı, widget planı ya da ilerleme yoksa yeni kurulum.
+     - Kayıtlı geçerli değer olduğu gibi kalır.
+     - Bilinmeyen değer (bozuk ya da sonraki bir sürümün) Leitner okunur ve üstüne yazılmaz.
+     - Değer yok + yeni kurulum: FSRS. Cevap olmadığı için `takeOver` gerekmez; ağırlıklar günlük yeterince uzayana kadar varsayılan (`refreshFSRSIfDue` boş günlükle varsayılanı yazar).
+     - Değer yok + güncelleme: Leitner, açıkça yazılır. Sonraki açılışlar `?? .leitner` yedeğine dayanmaz.
+     - "Tüm verileri sil" yeni kurulum gibi FSRS yazar; parametre sayacı silmeden önceki değerin ötesine geçer, silinen günlükle başlamış bir yenileme sonucunu yazamaz.
+     - Arayüz testleri `-lockglow.onboardingCompleted YES` verdiği için güncelleme sayılır ve Leitner'le koşar; ekran görüntüleri değişmez.
+   - **Eşitleme koruması.** Ayar iCloud'la eşitlenmez. FSRS kullanan cihazın tarihleri (bir yıla kadar) Leitner kullanan cihaza gelince `AppModel.syncWithCloud` eşitleme sonucunu kaydetmeden önce `FSRSMigration.adopted(_:local:by:)`'dan geçirir: Leitner'de yeni ilerleme `handBack`'ten geçer, FSRS'te değişiklik yok.
+     - Sonuç: Leitner hiçbir zaman FSRS'in uzun beklemesini devralmaz. Yalnız tarih öne gelir; basamak, "Yerleşti", sayaçlar ve bellek aynen gelir.
+     - Öne çekilen tarih iCloud'a geri gitmez: eşitlemenin tabanı (`SyncState.base`) da aynı kısaltmayla yazılır, kısaltma bu cihazın değişikliği sayılmaz. iCloud ve FSRS cihazı kendi beklemesini korur; Leitner cihazı her eşitlemede iCloud'un kopyasını alıp yeniden kısaltır (kaydedecek bir şey yoksa kaydetmez, döngü yok). Leitner cihazındaki kendi cevap ise her zamanki gibi gider.
+     - İçe aktarma (`adoptSyncedProgress`) da `adopted(_:by:)`'dan geçer. Orada taban yok: içe aktarılan kısaltılmış tarih eşitleme açıksa bir sonraki eşitlemede yerel değişiklik olarak gider.
+     - Yedekten dönen dosyadan sonraki ilk eşitlemede (`localMayBeOld`) taban kullanılmaz; eşit kayıtlarda seçim iki cihazda aynıdır ve kısaltılmış kopya kazanabilir. Seyrek; sonuç yalnız erken tekrar.
+     - Testler: `SchedulerDefaultTests`, `SchedulerSyncTests`.
    - Görmek, "Biliyorum" ve geri alması cevap değil: ikisinde de `Leitner.markExposure`, `markKnown`, `undoKnown`.
 3. **Yapıldı.** `WordProgress` ↔ `FSRSCard` çevirisi. Sayaçlar Leitner'deki gibi işler:
    - her cevapta `reviews += 1`, `lastSeenAt`, `lastReviewedAt`, `lastGrade`; ilk cevapta `firstReviewedAt`;
@@ -407,6 +422,8 @@ Plandaki dört ayrı `fsrs_…` alanı yerine tek bir iç içe nesne var. `fsrs`
    - `QueueComposerTests` gerçek `Leitner.review` ile kurulu; bilerek kırılır.
 7. **Yapıldı. Düğme etiketleri.** Tasarım önerisi "Bildim · yarın", "Kolay · 2 gün" gibi süreler yazıyor. FSRS'te bu süreler kelimeye göre değişir. `AppModel.dueDate(ifAnswering:for:now:)` seçili zamanlayıcının `review`'unu bir kopya üstünde çağırır; süreler iki zamanlayıcıda da doğru.
 8. **Açık. Gün sınırı.** FSRS 24 saatin katlarıyla sayar: akşam 23:00'teki cevap iki gün sonra 23:00'te "zamanı gelmiş" olur. Anki günü sabah 04:00'te başlatır. Tekrar listesi "bugün"ü yerel 04:00'ten saymalı ki kelime sabah oturumunda gelsin.
+   - 2026-10-25 notu: yalnız `FSRSScheduler`'da yapılmadı. Leitner de aynı tam 24 saat katlarıyla sayıyor (`now + intervalDays · 86 400`), uygulamada 04:00 gün sınırı yardımcısı yok; her yer gece yarısını (`Calendar.startOfDay`) kullanıyor (`QueueComposer`, `ReminderPlanner`, `ProgressSummary`, günlük sayaçlar). Sınır yalnız FSRS'e konursa iki zamanlayıcı farklı "gün" sayar; düğme süreleri, `handBack` sınırları ve testlerdeki tam gün beklentileri kayar.
+   - Doğru yer: `WordProgress.isDue`/`ReviewPlanner`'ın "bugün" sorusu ya da her iki zamanlayıcının ortak bir gün ızgarası. Önce karar: sınır 04:00 mü, gece yarısı mı; widget planı ve hatırlatma da aynı sınırı kullanmalı.
 9. **Kısmen yapıldı. Kişisel parametreler.**
    - Anki kılavuzu "birkaç yüzden az tekrar" ile eniyilemenin iyi çalışmadığını söylüyor.
    - **Cihazda, yalnız w0…w3** (dört notun ilk kararlılığı): `FSRSParameterFit.fit(_:base:)`. fsrs-rs'in "pretrain" adımının sade bir kopyası. Saf, belirlenimci, dosya okumaz.
