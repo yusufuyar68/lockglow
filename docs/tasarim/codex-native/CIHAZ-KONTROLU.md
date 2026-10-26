@@ -1,15 +1,17 @@
 # Fiziksel iPhone kontrolü — hazırlık
 
-**Bu aktarımı içeren TestFlight yüklemesi henüz onaylanmadı ve yapılmadı.** Bu liste, onaylanan aday iPhone'a kurulduktan sonra kullanılacak. Henüz hiçbir madde tamamlanmadı.
+**TestFlight 0.1.0 (40) kullanıcı onayıyla yüklendi.** Apple VALID ve IN_BETA_TESTING durumu, mevcut Ben grubunda build 40 erişimi ve hesap sahibinin üyeliği 26 Ekim 2026'da salt okunur kontrolle doğrulandı. Fiziksel kurulum ve aşağıdaki test sonuçları henüz kullanıcı tarafından bildirilmedi; hiçbir fiziksel madde tamamlandı sayılmadı.
 
 Otomatik native CI; derleme, paket testleri, simülatör etkileşimleri ve görüntüler için ayrı kanıttır. Sonuçları [KONTROL.md](KONTROL.md) içinde izlenir. Gerçek ses, mikrofon, widget yenilenmesi ve VoiceOver'ın duyulan sesi bu telefonda ayrıca gözlenecek.
 
-- **TestFlight sürümü / build:** Bekliyor.
-- **iPhone modeli / iOS sürümü:** Bekliyor.
-- **Kontrol tarihi:** Bekliyor.
+- **TestFlight sürümü / build:** 0.1.0 (40); yükleme kaynağı e26a302.
+- **iPhone modeli / iOS sürümü:** iPhone 15 Pro Max / iOS 27.0.1 (kullanıcı beyanı).
+- **Kontrol tarihi:** Dağıtım 26 Ekim 2026; fiziksel test sonuçları bekleniyor.
 - **Ekran / yazı / görünüm / Display Zoom:** Bekliyor. Sonuç bu cihaz/ayar birleşimine aittir; başka model için geçirilmez.
 
 Tüm ekran ve cihaz sınıflarının planı [CIHAZ-UYUM-PLANI.md](CIHAZ-UYUM-PLANI.md) içindedir. Aşağıdaki genişletilmiş maddeler de **henüz denenmedi** durumundadır.
+
+İlk fiziksel tur: TestFlight'ta 0.1.0 (40) güncellenir; mevcut hedef/ilerleme karşılaştırılır, Akış kartı ve örnek/çeviri incelenir, Biliyorum/Geri al ve Dinle/Söyle denenir. Bu turdan sonra koyu görünüm, büyük yazı ve widget maddelerine geçilir. Yalnız kullanıcının gözlediği maddeler sonuçla işaretlenir.
 
 ## Önce mevcut veriyi koru
 

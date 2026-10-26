@@ -2,7 +2,7 @@
 
 26 Ekim 2026. Bu kayıt gerçek Swift/iOS koşularını tarayıcı prototipinden ayrı tutar.
 
-**Güncel kabul: A aktarımının 0–5 temel otomatik kapıları tamamlandı.** Son UI `40387005716`, cihaz Release `40390633801`, kaynak `8563406`. Fiziksel cihaz, TestFlight ve genişletilmiş cihaz matrisi tamamlanmadı.
+**Güncel durum: TestFlight 0.1.0 (40) hazır.** Kullanıcı onayıyla `e26a302` kaynağı yüklendi; Apple VALID/IN_BETA_TESTING ve mevcut Ben grubu erişimi doğrulandı. Temel otomatik kapılar tamamlandı; iPhone 15 Pro Max / iOS 27.0.1 fiziksel sonuçları ve genişletilmiş matris bekleniyor.
 
 | Kod | Koşu | Sonuç |
 |---|---|---|
@@ -108,3 +108,13 @@ Sonraki `checks=release` çağrısı, kayıtlı native-transfer girişinden ayn�
 UI kanıtları `docs/tasarim/codex/kontrol/native/faz5/40387005716/`, Release manifesti/günlükleri ve yerel doğrulama `docs/tasarim/codex/kontrol/native/faz5/release/40390633801/` altında. Kaynak kimlikleri, kart numaraları, ana içerik/registry/seed ve progress.json dizi sözleşmesi korundu. Asıl `is6-hig` klasörü temiz ve `ac3cbed` olarak kaldı.
 
 Bu temel aktarım kabulü; bütün iPhone modellerinin, iOS 17 çalışma zamanının, gerçek VoiceOver sesinin, mikrofonun veya WidgetKit yenileme bütçesinin doğrulandığı anlamına gelmez. Genişletilmiş uyum çalışması [CIHAZ-UYUM-PLANI.md](CIHAZ-UYUM-PLANI.md), henüz tamamlanmamış fiziksel maddeler [CIHAZ-KONTROLU.md](CIHAZ-KONTROLU.md) içindedir. TestFlight yüklemesi ve ana dala birleştirme yapılmadı.
+
+## Onaylı TestFlight dağıtımı — build 40
+
+Kullanıcı 26 Ekim 2026'da TestFlight yüklemesini ve telefonda test etmeyi açıkça onayladı. [TestFlight 40395368718](https://github.com/yusufuyar68/lockglow/actions/runs/40395368718), `codex/ios-a-transfer` / `e26a302825fe03a84c31d93460a4655d19081270` kaynağını **0.1.0 (40)** olarak yükledi. Arşiv, geçici imza/profiller, App Store Connect yüklemesi ve anahtar temizliği adımları başarılı. 20:38:19 UTC: `EXPORT SUCCEEDED` / `Upload succeeded`. Apple 20:40:43 UTC'de build 40 için `VALID` bildirdi; bu derlemenin sertifikası korundu.
+
+Yeşil dağıtım işinin tek başına telefon erişimini kanıtlamaması nedeniyle [salt okunur kontrol 40398639240](https://github.com/yusufuyar68/lockglow/actions/runs/40398639240) ayrıca çalıştırıldı. Kontrol kaynağı `1b15455`; uygulamanın iOS ağacı `e26a302` ile aynıdır. Altı yerel mock testi yanlış build/train, işlenmemiş/süresi dolmuş derleme, bekleyen grup yayılımı, eksik üyelik, yabancı pagination ve HTTP hatasını reddetti. Kontrol yalnız GET kullanır; yeni grup/tester/sertifika oluşturmaz, kişisel bilgi yazdırmaz.
+
+20:46:54 UTC durum dosyası: `verified=true`, build `40`, train `0.1.0`, `processing_state=VALID`, `internal_build_state=IN_BETA_TESTING`, `not_expired=true`, `group_internal=true`, `group_build_listed=true`, `group_access=true`, `member_present=true`. Mevcut Ben grubu ve hesap sahibi erişimi doğrulandı. Kanıt: çalışma alanındaki `docs/tasarim/codex/kontrol/native/testflight/40395368718/testflight-status.json`.
+
+Kullanıcı cihazını **iPhone 15 Pro Max / iOS 27.0.1** olarak bildirdi. Bu bilgi test sonucu değildir. Fiziksel kurulum, kayıtların korunması, ses/mikrofon ve widget gözlemleri henüz bildirilmedi. Ana dala birleştirme yapılmadı.
