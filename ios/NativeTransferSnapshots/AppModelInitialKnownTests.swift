@@ -307,6 +307,39 @@ final class AppModelInitialKnownTests: XCTestCase {
         XCTAssertEqual(stillReady.progress, preserved)
     }
 
+    @MainActor
+    func testB2DefaultsKeepExplicitTargetAndScheduler() throws {
+        for kind in [SchedulerKind.leitner, .fsrs] {
+            UserDefaults.standard.removeObject(forKey: "lockglow.dailyNewWords")
+            AppPreferences.schedulerKind = kind
+            let folder = try location("b2-" + kind.rawValue)
+            let store = ProgressStore(fileURL: folder.appendingPathComponent("progress.json"))
+            let model = AppModel(progressStore: store)
+            defer { model.dismissKnownUndo() }
+            XCTAssertTrue(model.replaceProgress([:]))
+            let bytes = try Data(contentsOf: store.fileURL)
+            let beforeCounts = counts()
+            let b2 = DeckChoice(startLevel: .b2)
+
+            XCTAssertTrue(model.applyOnboardingChoices(
+                choice: b2, explicitDailyChoice: nil, knownSelection: nil, session: nil, now: instant))
+            XCTAssertEqual(model.dailyNewWords, 10)
+            XCTAssertNil(AppPreferences.chosenDailyNewWords)
+            XCTAssertTrue(model.applyOnboardingChoices(
+                choice: b2, explicitDailyChoice: 5, knownSelection: nil, session: nil, now: instant))
+            for choice in [DeckChoice(startLevel: .a1), b2] {
+                XCTAssertTrue(model.applyOnboardingChoices(
+                    choice: choice, explicitDailyChoice: nil, knownSelection: nil, session: nil, now: instant))
+                XCTAssertEqual(model.dailyNewWords, 5)
+                XCTAssertEqual(AppPreferences.chosenDailyNewWords, 5)
+                XCTAssertEqual(AppPreferences.schedulerKind, kind)
+            }
+            XCTAssertTrue(model.progress.isEmpty)
+            XCTAssertEqual(try Data(contentsOf: store.fileURL), bytes)
+            XCTAssertEqual(counts(), beforeCounts)
+        }
+    }
+
     private func ownDefaults() -> [String: Any] {
         return UserDefaults.standard.dictionaryRepresentation().filter { $0.key.hasPrefix("lockglow.") }
     }

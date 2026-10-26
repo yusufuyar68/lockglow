@@ -11,8 +11,8 @@ on:
       runner:
         description: "Mac test machine"
         type: choice
-        options: [macos-15, macos-15-intel]
-        default: macos-15
+        options: [macos-26, macos-15, macos-15-intel]
+        default: macos-26
       variants:
         description: "Native variants: se pro pro-dark se-ax pro-dark-ax"
         type: string
@@ -56,7 +56,7 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJSON(needs.profiles.outputs.matrix) }}
     name: ios (${{ matrix.variant }})
-    runs-on: ${{ inputs.runner || 'macos-15' }}
+    runs-on: ${{ inputs.runner || 'macos-26' }}
     timeout-minutes: 60
     env:
       VARIANT: ${{ matrix.variant }}
@@ -134,6 +134,7 @@ jobs:
           DEVICE: ${{ steps.sim.outputs.device }}
         run: |
           export TEST_RUNNER_LOCKGLOW_NATIVE_AX=0
+          export TEST_RUNNER_LOCKGLOW_NATIVE_UI_TESTS=1
           case "$VARIANT" in *ax) export TEST_RUNNER_LOCKGLOW_NATIVE_AX=1 ;; esac
           render_tests=()
           ui_tests=()
@@ -180,7 +181,7 @@ jobs:
             if [ "$CHECKS" = learning ]; then exit 0; fi
           fi
           if [ "$CHECKS" = onboarding ]; then
-            for method in testBatchFailurePreservesProgressAndPreferences testReopenAndConditionalRestore testNewReviewProtectsInitialClaim testChoicesFilterAndPersist testSkipDoesNotRequireKnownSelection; do
+            for method in testBatchFailurePreservesProgressAndPreferences testReopenAndConditionalRestore testNewReviewProtectsInitialClaim testB2DefaultsKeepExplicitTargetAndScheduler testChoicesFilterAndPersist testSkipDoesNotRequireKnownSelection; do
               grep -q "$method.*passed" "native-out/$VARIANT.log" \
                 || { echo "Required onboarding test did not pass: $method"; exit 1; }
             done

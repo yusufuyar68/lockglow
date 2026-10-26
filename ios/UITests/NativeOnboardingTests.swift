@@ -5,6 +5,9 @@ final class NativeOnboardingTests: XCTestCase {
     private var app: XCUIApplication?
 
     override func setUpWithError() throws {
+        guard ProcessInfo.processInfo.environment["LOCKGLOW_NATIVE_UI_TESTS"] == "1" else {
+            throw XCTSkip("Requires the disposable native-transfer CI simulator")
+        }
         continueAfterFailure = false
         executionTimeAllowance = 900
     }
