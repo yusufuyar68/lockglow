@@ -8,6 +8,11 @@ on:
       - .github/workflows/native-transfer.yml
   workflow_dispatch:
     inputs:
+      runner:
+        description: "Mac test machine"
+        type: choice
+        options: [macos-15, macos-15-intel]
+        default: macos-15
       variants:
         description: "Native variants: se pro pro-dark se-ax pro-dark-ax"
         type: string
@@ -51,7 +56,7 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJSON(needs.profiles.outputs.matrix) }}
     name: ios (${{ matrix.variant }})
-    runs-on: macos-15-intel
+    runs-on: ${{ inputs.runner || 'macos-15' }}
     timeout-minutes: 60
     env:
       VARIANT: ${{ matrix.variant }}
@@ -71,6 +76,9 @@ jobs:
           brew install xcodegen
           xcodegen generate
           mkdir -p native-out native-shots
+          uname -m > "native-out/host-$VARIANT.log"
+          xcrun simctl list runtimes -j > "native-out/runtimes-$VARIANT.json"
+          xcrun simctl list devices available -j > "native-out/devices-$VARIANT.json"
       - name: Choose iPhone simulator
         id: sim
         run: |
