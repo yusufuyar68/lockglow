@@ -101,7 +101,12 @@ jobs:
       - name: VocabKit package tests
         if: matrix.package
         working-directory: ios/Packages/VocabKit
-        run: swift test > "../../native-out/package-$VARIANT.log" 2>&1
+        run: |
+          swift test > "../../native-out/package-$VARIANT.log" 2>&1 || {
+            grep -n -E 'error:|failed' "../../native-out/package-$VARIANT.log" | head -50 || true
+            tail -25 "../../native-out/package-$VARIANT.log"
+            exit 1
+          }
       - name: Prepare fresh iPhone simulator
         env:
           DEVICE: ${{ steps.sim.outputs.device }}

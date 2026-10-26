@@ -197,11 +197,15 @@ public final class InitialKnownSelectionStore {
     }
 
     private func readData() throws -> Data? {
+        var isDirectory: ObjCBool = false
+        if FileManager.default.fileExists(atPath: fileURL.path, isDirectory: &isDirectory), isDirectory.boolValue {
+            throw InitialKnownStoreError.unreadable
+        }
         let handle: FileHandle
         do {
             handle = try FileHandle(forReadingFrom: fileURL)
         } catch {
-            if Self.isMissing(error) { return nil }
+            if Self.isMissing(error), !FileManager.default.fileExists(atPath: fileURL.path) { return nil }
             throw InitialKnownStoreError.unreadable
         }
         defer { try? handle.close() }

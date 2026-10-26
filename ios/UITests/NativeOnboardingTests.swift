@@ -80,9 +80,18 @@ final class NativeOnboardingTests: XCTestCase {
         capture(app, "native-onboarding-feed")
 
         // Normal Biliyorum must retain the visible card, independently of opening exclusions.
-        let known = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "feed.known.")).firstMatch
-        tap(known, app: app)
-        let knownID = known.identifier
+        let firstKnown = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "feed.known.")).firstMatch
+        XCTAssertTrue(firstKnown.waitForExistence(timeout: 15))
+        // Pin identity before scrolling: a lazy feed's firstMatch can change during a gesture.
+        let knownID = firstKnown.identifier
+        let known = app.buttons[knownID]
+        for _ in 0..<12 where !known.isHittable {
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.72))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.42))
+            start.press(forDuration: 0.1, thenDragTo: end)
+        }
+        XCTAssertTrue(known.isHittable, "The pinned current-card control must be reachable")
+        known.tap()
         selected(app.buttons[knownID], true)
         XCTAssertTrue(app.buttons[knownID].isHittable, "A normal claim must keep the current card in place")
 
