@@ -12,6 +12,11 @@ on:
         description: "Native variants: se pro pro-dark se-ax pro-dark-ax"
         type: string
         default: "se pro-dark-ax"
+      checks:
+        description: "Native phase checks"
+        type: choice
+        options: [cards, learning]
+        default: cards
 
 permissions:
   contents: read
@@ -50,6 +55,7 @@ jobs:
     timeout-minutes: 60
     env:
       VARIANT: ${{ matrix.variant }}
+      CHECKS: ${{ inputs.checks || 'learning' }}
     defaults:
       run:
         working-directory: ios
@@ -110,18 +116,28 @@ jobs:
           xcrun simctl ui "$DEVICE" appearance "$appearance"
           xcrun simctl status_bar "$DEVICE" override --time '9:41' || true
           date -u '+simulator preparation finished %FT%TZ'
-      - name: Native A card tests
+      - name: Native phase tests
         env:
           DEVICE: ${{ steps.sim.outputs.device }}
         run: |
           export TEST_RUNNER_LOCKGLOW_NATIVE_AX=0
           case "$VARIANT" in *ax) export TEST_RUNNER_LOCKGLOW_NATIVE_AX=1 ;; esac
           render_tests=()
-          ui_tests=(-only-testing:LockglowUITests/NativeTransferTests/testFeedReadingOrderAndUndo)
-          if [ "$VARIANT" = se ]; then
-            render_tests=(-only-testing:LockglowNativeSnapshots)
-            ui_tests+=(-only-testing:LockglowUITests/NativeTransferTests/testOversizedCardScrollAndWhySheet)
-          fi
+          ui_tests=()
+          case "$CHECKS" in
+            cards)
+              ui_tests=(-only-testing:LockglowUITests/NativeTransferTests/testFeedReadingOrderAndUndo)
+              if [ "$VARIANT" = se ]; then
+                render_tests=(-only-testing:LockglowNativeSnapshots/FeedTransferSnapshotTests)
+                ui_tests+=(-only-testing:LockglowUITests/NativeTransferTests/testOversizedCardScrollAndWhySheet)
+              fi
+              ;;
+            learning)
+              export TEST_RUNNER_LOCKGLOW_NATIVE_MODEL_TESTS=1
+              render_tests=(-only-testing:LockglowNativeSnapshots/AppModelProgressTests)
+              ;;
+            *) echo "Unknown checks: $CHECKS"; exit 1 ;;
+          esac
           date -u '+native tests started %FT%TZ'
           status=0
           xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
@@ -136,6 +152,13 @@ jobs:
           date -u '+native tests finished %FT%TZ'
           tail -35 "native-out/$VARIANT.log"
           [ "$status" -eq 0 ] || exit "$status"
+          if [ "$CHECKS" = learning ]; then
+            for method in testKnownUndoRestoresEveryFieldAndDisk testNewAnswerSurvivesStaleKnownUndo; do
+              grep -q "$method.*passed" "native-out/$VARIANT.log" \
+                || { echo "Required learning test did not pass: $method"; exit 1; }
+            done
+            exit 0
+          fi
           grep -q "testFeedReadingOrderAndUndo.*passed" "native-out/$VARIANT.log" \
             || { echo 'Feed reading and undo test did not pass'; exit 1; }
           if [ "$VARIANT" = se ]; then
@@ -164,6 +187,7 @@ jobs:
           xcrun simctl shutdown "$DEVICE" || true
           date -u '+evidence collection finished %FT%TZ'
       - name: Require exported visual evidence
+        if: success() && env.CHECKS == 'cards'
         run: |
           python3 - <<'PY'
           import json,os

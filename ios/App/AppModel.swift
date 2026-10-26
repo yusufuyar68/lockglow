@@ -69,7 +69,7 @@ final class AppModel: ObservableObject {
     /// Nil until the progress file has been loaded (or when its folder is unavailable).
     private var progressStore: ProgressStore?
     /// Every answer, for FSRS later (`ReviewLog`). Best effort: a failed write loses that line only.
-    private let reviewLog = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+    private let reviewLog: ReviewLog?
     private var hasStarted = false
     private var lastReloadRequestedAt: Date?
     /// Every topic of each word (`card_category`), for the deck filter and "İlerleme".
@@ -92,6 +92,17 @@ final class AppModel: ObservableObject {
     private let planWriter = WidgetPlanWriter()
 
     // MARK: Lifecycle
+
+    init() {
+        reviewLog = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+    }
+
+    /// Supplies app-private persistence without calling `start()`; normal preference initializers
+    /// still run. Tests seed progress through `replaceProgress` and leave the lifecycle unstarted.
+    init(progressStore: ProgressStore, reviewLog: ReviewLog? = nil) {
+        self.progressStore = progressStore
+        self.reviewLog = reviewLog
+    }
 
     /// Launch: load progress and content, write the first widget plan, refresh the health screen.
     func start() async {
