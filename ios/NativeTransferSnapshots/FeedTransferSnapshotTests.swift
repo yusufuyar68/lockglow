@@ -203,7 +203,8 @@ final class FeedTransferSnapshotTests: XCTestCase {
                 .frame(width: size.width, height: size.height, alignment: .topLeading)
                 .background(Theme.bg)
                 .environment(\.colorScheme, look.scheme)
-                .environment(\.colorSchemeContrast, look.contrast)
+                // Contrast is a read-only SwiftUI environment value. The host's UIKit
+                // accessibilityContrast trait below supplies the actual system setting.
                 .environment(\.dynamicTypeSize, look.type)
                 .ignoresSafeArea()
             controller = UIHostingController(rootView: AnyView(root))
