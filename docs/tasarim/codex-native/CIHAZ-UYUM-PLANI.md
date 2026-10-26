@@ -12,6 +12,8 @@
 
 Ekran düzeni model adına göre ayrılmayacak. Kullanılabilir genişlik/yükseklik, sistemin güvenli alanı, yazı boyutu ve içerik uzunluğu belirleyici olacak. Mevcut iPad/Mac geniş ekran düzeni [WideLayout.swift](../../../ios/App/WideLayout.swift) içinde ayrıca korunur.
 
+Güncel ana dalın `5cd59ec` içeriği `3890b55` ile çalışma dalına birleşti. Aşağıdaki metin yakalama, kendi cümleni yazma ve B2 test kapsamı mevcut kaynak özellikleridir; bu belgeyle yeni özellik eklenmez. Bu ek hazırlanırken `14b8bd3` için [Intel CI 40353937504](https://github.com/yusufuyar68/lockglow/actions/runs/40353937504) çalışıyor; Faz 3 kapısı hâlâ açık. Sonraki üretim fazının başladığı veya bu ek özelliklerin bütün cihazlarda geçtiği sonucu çıkarılmaz.
+
 ## Apple yaklaşımı
 
 Apple, arayüzün bulunduğu ortama uyarlanmasını ve sistemin safe area, kenar boşluğu ve yerleşim kılavuzlarına uymasını önerir. Model adına göre bir çentik yüksekliği seçmek yerine sistemin verdiği kullanılabilir alan izlenir. Kaynak: [Layout](https://developer.apple.com/design/human-interface-guidelines/layout).
@@ -26,7 +28,7 @@ Görsel durum renk dışında simge/metinle de anlaşılmalı; odak, etiket, oku
 |---|---|---|
 | SE ve Pro native UI profilleri | Belirli simülatör/iOS ve test senaryolarında gerçek uygulama etkileşimi; SE normal ve Pro koyu/büyük yazı kanıtları | Bütün SE/Pro nesilleri, bütün iOS sürümleri, tüm uygulama ekranları ve fiziksel donanım |
 | Faz 3 SE kabulü ve sekiz özgün PNG | Günlük seçim, bilinenler, rehber, ilk kelime, Akış, yeniden açma ve Atla'nın testte izlenen yolu; görünen alanların incelemesi | Aynı fazın Pro sonucu veya diğer ekran boyutlarının tamamı; güncel durum KONTROL kaydına eklenir |
-| Faz 3 Pro'da saptanan başlangıç konumu | İlk eleme sonrasında kalan uzun kartın altından açılma bulgusu var; üst hizalama düzeltmesi `6e37e86` CI kontrolünde | Düzeltme henüz bu belgeyle geçmiş sayılmaz; ilk açılış ve yeniden açılışta kelime başlığı ayrıca görünür olmalı |
+| Faz 3 Pro'da saptanan başlangıç konumu | İlk eleme sonrasında kalan uzun kartın altından açılma bulgusu var; üst hizalama düzeltmesi `6e37e86` ile eklendi | Birleşik `14b8bd3` kabulü bekliyor; ilk açılış ve yeniden açılışta kelime başlığı ayrıca görünür olmalı |
 | Hosted Akış testleri | [FeedTransferSnapshotTests.swift](../../../ios/NativeTransferSnapshots/FeedTransferSnapshotTests.swift) içinde **375 ve 390 pt genişlik, 500 pt host yüksekliği**; seçili açık/koyu, yüksek kontrast ve AX5 örnekleri | Tam telefon kabuğu, gerçek safe area, sistem klavyesi, parmak hareketinin yönlendirilmesi, bütün kart verisi |
 | Aşağıdaki genişletilmiş matris | Henüz **plan** | Çalıştırılmadan başarı işareti verilmez |
 | Fiziksel iPhone | Bu aktarım için kontrol listesi hazır | Display Zoom, gerçek widget yenilenmesi, ses/mikrofon ve duyulan VoiceOver sonucu bekliyor |
@@ -86,14 +88,42 @@ Tam çarpımda binlerce görüntü üretmek yerine kontroller aşamalı genişle
 
 Öncelik kısa ekran + AX5/klavye ve home indicator + sabit alt düğme birleşimidir. Mevcut başlık/denetim boyut sınırları kaynakta ayrıca değerlendirilir; ekranı sığdırmak için gövde metni keyfî küçültülmez. Statik telefon/widget çiziminin kendi yazı ölçeği, uygulama gövdesinin Dynamic Type uyumundan ayrı ölçülür.
 
+### Donanım yeteneği ekran boyutundan ayrıdır
+
+Genişlik, kamera taraması veya yapay zekâ desteğini belirlemez. Envanter kaydında iOS sürümü, kamera izni, DataScanner destek/kullanılabilirlik sonucu ve cihaz içi modelin o anda kullanılabilirliği ayrı alanlar olmalı. Bir simülatörün veya aynı genişlikte başka bir telefonun sonucu bu yetenekleri kanıtlamaz. Aşağıdaki kontroller **plan / henüz bu uyum matrisinde test edilmedi** durumundadır.
+
+**Metinden kelime bul.** Kaynaklar: [TextHarvestView.swift](../../../ios/App/TextHarvestView.swift), [TextHarvestSources.swift](../../../ios/App/TextHarvestSources.swift).
+
+- **Yazma/yapıştırma:** İngilizce metin alanı ve `Kelimeleri bul` klavye açıkken erişilmeli. Boş girişte ana eylem pasif kalır. Panoda metin yoksa mevcut “Panoda metin yok” notu okunmalı; iOS'un yapıştırma izin penceresi ayrıca denenmeli. Metin değişince önceki sonucun temizlenmesi, yeni paragraf ekleme ve uzun metnin ilk bölümünün alınmasına ilişkin mevcut bilgi notu kontrol edilmeli.
+- **Canlı kamera:** `TextScannerSheet.canScan`, önce `DataScannerViewController.isSupported` kontrol ediyor; destek varsa `isAvailable` veya kamera izninin henüz sorulmamış olması gerekiyor. Bu koşul sağlanmazsa **Kamerayla tara düğmesi gösterilmiyor**; yazma/yapıştırma ve fotoğraf yolu kalıyor. Desteksiz/kullanılamaz cihazda var olmayan tarayıcı veya açıklama ekranı beklenmemeli.
+- **İzin/tarama durumu:** İlk kullanımda kamera izni sorulur. İzin alınamazsa mevcut kamera izni notu görünmeli, giriş kaybolmamalı. Tarayıcı açıldıktan sonra `startScanning()` çalışamazsa kaynak hata paneli üretmiyor: `Yazı aranıyor` ve pasif alma eylemi kalabilir; **Vazgeç** ile çıkılabilmeli. Bu durum başarılı tarama sayılmamalı. Yazı bulunduğunda `Bu metni al` safe area içinde erişilmeli; satırlar okuma sırasıyla alana gelmeli.
+- **Fotoğraf:** Sistem `PhotosPicker` yalnız seçilen fotoğrafı verir; kaynak tüm fotoğraf arşivi izni istemiyor. Seçimden vazgeçme, “Fotoğraf okunuyor”, açılamayan fotoğraf ve okunacak metin bulunamaması ayrı denenmeli. Son iki durumda mevcut kısa not görünmeli ve fotoğraf düğmesi yeniden kullanılabilir olmalı. OCR cihaz üzerinde İngilizce satırları okur; simülatör/fixture OCR sonucu gerçek kameranın doğruluğu sayılmaz.
+- **Sonuçlar:** Kartlarda olanlar, kendi kelimeleri ve yeni kelimeler; uzun satır, boş sonuç ve bilinenleri gizleme durumları dar/AX/klavyeli düzenlerde incelenmeli. Yeni kelime formu Türkçe anlam alınmadan kendiliğinden kayıt üretmemeli. Kamera/fotoğraf akışı için fiziksel gözlem ayrıca bekler.
+
+**Kendi cümleni yaz.** Kaynaklar: [OwnSentenceView.swift](../../../ios/App/OwnSentenceView.swift), [OwnSentenceAI.swift](../../../ios/App/OwnSentenceAI.swift), [OwnSentenceCheck.swift](../../../ios/Packages/VocabKit/Sources/Learning/OwnSentenceCheck.swift).
+
+- **Her cihazdaki temel yol:** Kelime varlığı, cümle uzunluğu, Türkçe harfler, büyük harf ve son işaret için sabit kurallar hemen çalışır. Bu panel tam gramer doğrulaması değildir. Büyüyen giriş, 200 karakter sınırının notu, sonuç ve `Kontrol et`/`Kapat` klavye ve AX5'te erişilmeli. Cümle alıştırması kutu/vade/öğrenme puanı değiştirmemeli; aynı cümlenin tekrar kontrolü aynı sayfada ikinci alıştırma sayılmamalı.
+- **Koşullu öneri:** Cihaz içi öneri yalnız derlemede `FoundationModels` bulunuyorsa, iOS **26+** ise ve `SystemLanguageModel.default.availability` **available** döndürüyorsa istenir. Uygulamanın iOS 17+ desteği, her telefonda Apple Intelligence bulunduğu anlamına gelmez. Ekran genişliğinden uygun cihaz sonucu çıkarılmaz.
+- **Mevcut fallback:** Eski iOS/SDK, uygun olmayan cihaz, Apple Intelligence'ın kapalı olması veya modelin henüz hazır olmaması öneriyi kullanılamaz yapar. Mevcut UI bunlar için ayrı hata metni göstermiyor: **öneri paneli gizli kalıyor, temel kural sonucu kullanılabiliyor**. Cümle boş/çok kısa, hedef kelime yok veya Türkçe harf içeriyorsa da model isteği yapılmaz.
+- **İstek sonrası:** Uygun durumda bekleme ve ayrı cihaz içi öneri paneli denenmeli. Hata, yanıt vermeme, ret, dil/bağlam sorunu veya 15 saniyelik zaman aşımında öneri gelmeyebilir; panel gizlenir ve kural sonucu kalır. Sonraki kontrol önceki isteği, sayfadan çıkma bekleyen isteği iptal eder; eski yanıt yeni cümlenin üstüne gelmemeli. Kaynakta uzak servise yönelen bir fallback yoktur. Gerçek model üretimi uygun fiziksel cihazda ayrıca bekler; önerinin olmadığı cihazda bu temel yolun çalışması kabulün parçasıdır.
+
+**B2 seviye testi.** Kaynaklar: [PlacementTestView.swift](../../../ios/App/PlacementTestView.swift), [PlacementTestModel.swift](../../../ios/App/PlacementTestModel.swift), [Placement.swift](../../../ios/Packages/VocabKit/Sources/Learning/Placement.swift).
+
+Mevcut native testin başlangıç sonuçları A1/A2/B1/B2'dir; B2, bankada en az 15 ayrı uygun B2 kelime olduğunda teste katılır. Azsa mevcut A1–B1 yolu kullanılır. Bu, donanım/AI şartı değil içerik bankası koşuludur. Veri yükleniyor, yetersiz banka ve kullanılabilir soru üretilemeyen kelime durumları ayrıca incelenmeli.
+
+Uzun dört anlam şıkkı, `Emin değilim`, ilerleme, `Kapat` ve sonuç düğmesi dar/XXXL/AX5'te erişilmeli. B2 sonucu, açıklaması ve dört noktalı `LevelDots` çakışmamalı. Test bitmeden kapatma seçim/ilerleme değiştirmemeli; sonuç açılışta düzey taslağına, Ayarlar'da mevcut `applyPlacementResult` yoluna aktarılmalı. Test kelimeleri bilinenlere eklenmez. Açık günlük hedef korunur; hiç seçilmemiş hedefin mevcut varsayılanı A1/A2 için 5, B1/B2 için 10'dur.
+
 ## 4. Ekranlara göre kabul ölçütleri
 
 | Alan | Kabul ölçütü |
 |---|---|
 | **Açılış** | Seviye → konular → günlük → bilinenler → widget → ilk kelime sırası korunur. 5/10/15/20 satırları, Geri/Atla/Devam/Başla erişilir. Düzey varsayılanı ile açık hedef seçimi ayrılır; geri/yeniden açma eski seçimi korur. Bilinenlerin seçimi renk dışında işaretle anlaşılır; kaydetme hatasında sayfa ve seçimler kalır. Boş isteğe bağlı adım ana öğrenmeyi kilitlemez. |
+| **Seviye testi / B2** | Intro, soru, Emin değilim ve sonuç dar/AX ölçülerinde okunur. B2 banka koşulu ve dört noktalı işaret; sonuç sonrası düzey/hedef uyumu sınanır. Testteki cevaplar kalıcı bilinen kelime veya öğrenme cevabı sayılmaz. |
 | **Akış** | İlk açılışta, başlangıç elemesi sonrasında ve yeniden açılışta ilk kalan kartın **kelime başlığı üstte görünür** olmalı; uzun kartın altından açılmamalı. Kelime → Türkçe → tanım birlikte okunur; meta ve ses grubu sonra, Biliyorum ayrı karar olarak kalır. Örnek ve Türkçesi kartta bulunur. Uzun içerik sonuna kaydırılır; ardından normal hareketle sonraki karta geçilir. AX doğal akışı, Neden?/Kapat ve geri dönen odak çalışır. Normal Biliyorum mevcut kartı kaçırmaz; başlangıç elemesi ayrı davranır. |
 | **Tekrar** | Tanış/çevirme, Hatırla, uzun cevap şıkları, doğru/yanlış/sonuç ve tur sonu düğmeleri çakışmaz. Bütün şık metni ve son eylem okunur/erişilir. Görünüm değişimi ikinci cevap kaydı üretmez; native Leitner/FSRS, sayaç ve vade sözleşmesi korunur. |
 | **Sözlük** | Arama alanı, Türkçe giriş, sonuç/boş durum, filtre ve uzun kelime detayında yatay kayma gerekmez. Klavye ve sekme çubuğu son sonucu/eylemi erişilmez yapmaz. Sheet kapatılıp aynı arama bağlamına dönülür. |
+| **Metinden kelime bul** | Giriş, kaynak düğmeleri, sistem izin/seçim penceresi, OCR notları ve üç sonuç grubu klavye/AX düzeninde erişilir. Kamera destek/kullanılabilirlik koşulu ekran boyutundan ayrı sınanır; kamera yokken yazma/yapıştırma/fotoğraf yolları kalır. |
+| **Kendi cümleni yaz** | Klavye üzerindeki Kontrol et ve Kapat erişilir; kural sonucu her uygun iOS yolunda kalır. AI bekleme/öneri ve gizli fallback durumları ayrı sınanır; model desteği olmayan cihazda temel alıştırma engellenmez. |
 | **Ayarlar** | Uzun satır adı/değeri ve seçili günlük hedef kesilmez; büyüyen denetimler gerekirse alt alta geçer. Seviye/konu/hedef değişimi ve Yardım'dan açılışı yeniden açma erişilir. Yazı/görünüm değişimi kayıtlı tercihi değiştirmez. |
 | **Veriler** | Yedek paylaşma, içe aktarma önizlemesi ve hata/sonuç metni büyük yazıda okunur; iptal/onay düğmeleri erişilir. Geçici test verisinde archive round-trip alanları korur; kişisel ilerlemeyi silerek uyum testi yapılmaz. Sistem dosya/paylaşım penceresi ayrıca kontrol edilir. |
 | **Söyle / ses** | Uzun kelime, Dinle, mikrofon durumu, izin/model bekleme/hata, sonuç ve Kapat aynı sayfada ulaşılabilir kalır. Sheet'in küçük/büyük hâli denenir. Gerçek mikrofon, cihaz içi model, ses kesintisi ve arka plan sesi fiziksel cihazda ayrıca bekler. |
@@ -111,9 +141,9 @@ Bu matris [FAZLAR.md](FAZLAR.md) içindeki aktarım kapılarını genişletir; g
 | **Uyum hazırlığı — envanter** | Kurulu Xcode/runtime/cihaz tipleri ve kullanılabilir cihaz eşleri çıkarılır; kısa SE, mini/dar, standart ve büyük temsilciler ölçülür. Eksik runtime/model açıkça işaretlenir. Bu hazırlık üretim özelliği değildir. |
 | **Faz 1 — A kartı** | Tüm temsilî genişliklerde kısa/uzun Akış, dört yazı kategorisi; kısa/dar gerçek UI'da okuma sonundan sonraki karta geçiş. Mevcut 375/390 hosted ve SE/Pro kanıtı başlangıç noktasıdır. |
 | **Faz 2 — Öğrenme eşdeğerliği** | Mevcut gerçek AppModel ve paket testleri korunur. Yeni ölçü/görünüm, Biliyorum/geri alma veya cevap kaydını değiştirmemeli; yerleşim testi algoritma kanıtı yerine geçmez. |
-| **Faz 3 — Açılış** | Altı adımın dar/kısa ve AX5 turu; varsayılan/açık hedef, isteğe bağlı sıfır seçim, geri düzenleme, yeniden açma ve kayıt hatasında açık kalma. İlk başlangıç/eleme/yeniden açılış sonrası ilk kalan kartın başlığı görünür olmalı. Her profilin kendi sonucu ve özgün görüntüsü saklanır. |
-| **Faz 4 — Widget, ses, veri** | Widget ailesi/uzun metin ve hassasiyet, Söyle/izin sheet'i, Veriler ve archive round-trip; cihaz bağımlı sonuçlar fiziksel listede bekler. |
-| **Faz 5 — Birleşik kabul** | Açılış/Akış/Tekrar/Sözlük/Ayarlar/Veriler/Söyle geçişleri; envanterdeki temsilcilerde gerçek UI, genişlik matrisinde hosted geometri, görsel inceleme ve fiziksel kayıtlar birlikte raporlanır. Eksik profiller açıkça listelenir. |
+| **Faz 3 — Açılış** | Altı adımın dar/kısa ve AX5 turu; varsayılan/açık hedef, isteğe bağlı sıfır seçim, geri düzenleme, yeniden açma ve kayıt hatasında açık kalma. B2 düzey/test sonucu ve açık günlük hedefin korunması eklenir. İlk başlangıç/eleme/yeniden açılış sonrası ilk kalan kartın başlığı görünür olmalı. Her profilin kendi sonucu ve özgün görüntüsü saklanır. |
+| **Faz 4 — Widget, ses, veri** | Widget ailesi/uzun metin ve hassasiyet, Söyle/izin sheet'i, Veriler ve archive round-trip; ayrıca mevcut kamera/OCR ve cihaz içi önerinin yetenek/fallback yolları. Bunlar uyum denetimi planıdır; fazın üretim uygulamasına geçildiği anlamına gelmez. Cihaz bağımlı sonuçlar fiziksel listede bekler. |
+| **Faz 5 — Birleşik kabul** | Açılış/Akış/Tekrar/Sözlük/Ayarlar/Veriler/Söyle, Metinden kelime bul ve Kendi cümleni yaz geçişleri; envanterdeki temsilcilerde gerçek UI, genişlik matrisinde hosted geometri, görsel inceleme ve fiziksel kayıtlar birlikte raporlanır. Geometri ile donanım yeteneği sonuçları ayrı, eksik profiller açıkça listelenir. |
 
 ## Sonuç nasıl kaydedilecek?
 

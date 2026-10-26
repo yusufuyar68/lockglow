@@ -13,6 +13,11 @@ on:
         type: choice
         options: [macos-26, macos-15, macos-15-intel]
         default: macos-15-intel
+      ios_runtime:
+        description: "iOS simulator runtime"
+        type: choice
+        options: ['26.1', '26.2', '18.6', 'latest']
+        default: '26.1'
       variants:
         description: "Native variants: se pro pro-dark se-ax pro-dark-ax"
         type: string
@@ -39,8 +44,8 @@ jobs:
       - name: Validate requested profiles
         id: profiles
         env:
-          # A push checks SE; explicit dispatch can check several independent profiles.
-          VARIANTS: ${{ inputs.variants || 'se pro-dark-ax' }}
+          # Finish the open Pro/AX gate; the full matrix is available through dispatch.
+          VARIANTS: ${{ inputs.variants || 'pro-dark-ax' }}
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json,os
@@ -61,6 +66,7 @@ jobs:
     env:
       VARIANT: ${{ matrix.variant }}
       CHECKS: ${{ inputs.checks || 'onboarding' }}
+      IOS_RUNTIME: ${{ inputs.ios_runtime || '26.1' }}
     defaults:
       run:
         working-directory: ios
@@ -85,14 +91,18 @@ jobs:
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json,os,re,subprocess
           data=json.loads(subprocess.check_output(['xcrun','simctl','list','devices','available','-j']))
+          requested=os.environ['IOS_RUNTIME']
+          if requested not in {'26.1','26.2','18.6','latest'}:
+              raise SystemExit('Invalid iOS runtime')
+          runtime_pattern=r'com\.apple\.CoreSimulator\.SimRuntime\.iOS-'+(r'\d+-\d+(?:-\d+)?' if requested=='latest' else re.escape(requested.replace('.','-')))
           version=lambda s:[int(n) for n in re.findall(r'\d+',s)]
           pattern=r'iPhone SE.*' if os.environ['VARIANT'].startswith('se') else r'iPhone \d+ Pro'
-          devices=[(version(rt),version(d['name']),d) for rt,ds in data['devices'].items() if 'iOS' in rt for d in ds if re.fullmatch(pattern,d['name'])]
+          devices=[(version(rt),version(d['name']),d,rt) for rt,ds in data['devices'].items() if re.fullmatch(runtime_pattern,rt) for d in ds if re.fullmatch(pattern,d['name'])]
           devices.sort(key=lambda item:(item[0],item[1],item[2]['udid']))
-          if not devices: raise SystemExit('Required simulator missing')
+          if not devices: raise SystemExit('Required simulator missing for iOS '+requested)
           selected=devices[-1][2]
           print('device='+selected['udid'])
-          print('Selected '+selected['name']+' '+selected['udid'],file=__import__('sys').stderr)
+          print('Selected '+selected['name']+' '+selected['udid']+' on '+devices[-1][3],file=__import__('sys').stderr)
           PY
       - name: Build app, extension and tests
         env:
@@ -133,6 +143,20 @@ jobs:
         env:
           DEVICE: ${{ steps.sim.outputs.device }}
         run: |
+          set -eo pipefail
+          case "$VARIANT" in
+            se|pro|pro-dark|se-ax|pro-dark-ax) ;;
+            *) echo "Invalid native variant: $VARIANT"; exit 1 ;;
+          esac
+          [[ "$DEVICE" =~ ^[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$ ]] \
+            || { echo 'Invalid simulator identifier'; exit 1; }
+          test_log="native-out/$VARIANT.log"
+          result_bundle="native-out/$VARIANT.xcresult"
+          first_log="native-out/$VARIANT-ax-startup-attempt1.log"
+          first_bundle="native-out/$VARIANT-ax-startup-attempt1.xcresult"
+          for path in "$test_log" "$result_bundle" "$first_log" "$first_bundle"; do
+            [ ! -e "$path" ] || { echo "Refusing to overwrite existing evidence: $path"; exit 1; }
+          done
           export TEST_RUNNER_LOCKGLOW_NATIVE_AX=0
           export TEST_RUNNER_LOCKGLOW_NATIVE_UI_TESTS=1
           case "$VARIANT" in *ax) export TEST_RUNNER_LOCKGLOW_NATIVE_AX=1 ;; esac
@@ -160,16 +184,40 @@ jobs:
             *) echo "Unknown checks: $CHECKS"; exit 1 ;;
           esac
           date -u '+native tests started %FT%TZ'
+          run_native_tests() {
+            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+              -destination "id=$DEVICE" -derivedDataPath build/native-dd \
+              -parallel-testing-enabled NO \
+              -test-timeouts-enabled YES \
+              -default-test-execution-time-allowance 120 \
+              -maximum-test-execution-time-allowance "$maximum_allowance" \
+              "${ui_tests[@]}" "${render_tests[@]}" \
+              -resultBundlePath "$result_bundle" \
+              > "$test_log" 2>&1
+          }
           status=0
-          xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
-            -destination "id=$DEVICE" -derivedDataPath build/native-dd \
-            -parallel-testing-enabled NO \
-            -test-timeouts-enabled YES \
-            -default-test-execution-time-allowance 120 \
-            -maximum-test-execution-time-allowance "$maximum_allowance" \
-            "${ui_tests[@]}" "${render_tests[@]}" \
-            -resultBundlePath "native-out/$VARIANT.xcresult" \
-            > "native-out/$VARIANT.log" 2>&1 || status=$?
+          run_native_tests || status=$?
+          ui_start_status=0
+          grep -Eq 'Test Case.*LockglowUITests.*started' "$test_log" || ui_start_status=$?
+          test_failure_status=0
+          grep -Eq 'Test Case.*failed' "$test_log" || test_failure_status=$?
+          if [ "${#ui_tests[@]}" -gt 0 ] && [ "$status" -ne 0 ] \
+            && [ "$ui_start_status" -eq 1 ] && [ "$test_failure_status" -eq 1 ] \
+            && grep -Fq 'Timed out waiting for AX loaded notification' "$test_log"; then
+            mv "$test_log" "$first_log"
+            if [ -e "$result_bundle" ]; then mv "$result_bundle" "$first_bundle"; fi
+            echo 'UI tests never started after AX initialization timeout; retrying once on the same fresh simulator.'
+            xcrun simctl shutdown "$DEVICE" 2>/dev/null || true
+            xcrun simctl erase "$DEVICE"
+            xcrun simctl boot "$DEVICE"
+            xcrun simctl bootstatus "$DEVICE" -b > "native-out/boot-$VARIANT-ax-retry.log" 2>&1
+            appearance=light
+            case "$VARIANT" in *dark*) appearance=dark ;; esac
+            xcrun simctl ui "$DEVICE" appearance "$appearance"
+            xcrun simctl status_bar "$DEVICE" override --time '9:41' || true
+            status=0
+            run_native_tests || status=$?
+          fi
           date -u '+native tests finished %FT%TZ'
           tail -35 "native-out/$VARIANT.log"
           [ "$status" -eq 0 ] || exit "$status"
@@ -253,6 +301,7 @@ jobs:
           path: |
             ios/native-out/*.log
             ios/native-out/*.json
+            ios/native-out/*-ax-startup-attempt1.xcresult
             ios/native-shots
           if-no-files-found: warn
           retention-days: 14
