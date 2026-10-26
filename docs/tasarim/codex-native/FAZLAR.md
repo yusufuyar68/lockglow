@@ -37,7 +37,7 @@ Bu eşleme kaynak koduna dayanır; test başarısı veya faz onayı değildir. T
 | 2 | Mevcut öğrenme ve geri almanın işlevsel eşdeğerliği; gerçek AppModel ile tam snapshot geri yükleme ve yeni cevabı koruma testleri | Tamamlandı: 40316588542 iki gerçek AppModel testi geçti |
 | 3 | Açılışa native günlük miktar ve isteğe bağlı bilinen eleme aktarımı; düzey/konu, rehber, ilk kelime ve kalıcılığı gerçek veriyle doğrulama | Tamamlandı: 40373300406, SE ve Pro/iOS 26.1; iki UI + altı model testi/profil, toplam 18 özgün PNG incelendi |
 | 4 | Widget görünüm/hata durumları, içerik hassasiyeti, gerçek yedek/birleştirme ve ses kontrolleri | Tamamlandı: 40382167052, 1.226 Mac paket testi; profil başına dokuz model/import + provider testi; 12 widget PNG incelendi. Gerçek ses/widget yaşam döngüsü fiziksel kontrol bekler |
-| 5 | Tüm yeni kodda paket testleri, native derleme ve son SE/Pro/koyu/AX görsel incelemesi | Çalışılıyor: iOS 18.6 UI regresyonu, ardından aynı daldan imzasız arm64 Release kabulü |
+| 5 | Tüm yeni kodda paket testleri, native derleme ve son SE/Pro/koyu/AX görsel incelemesi | Temel otomatik kabul tamamlandı: UI 40387005716 / 43 PNG, cihaz Release 40390633801. Genişletilmiş cihaz matrisi ve fiziksel kontrol ayrı açık işlerdir |
 
 ## Başlangıç kanıtı
 

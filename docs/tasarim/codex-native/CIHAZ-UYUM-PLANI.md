@@ -4,6 +4,8 @@
 
 Güncel dar kapsamlı kabul: `08ef238` / `40373300406` ile SE 3 ve iPhone 17 Pro'da iOS 26.1 açılış yolu geçti; toplam 18 PNG incelendi. Aşağıdaki genişletilmiş ekran/cihaz matrisi bu sonuçla geçmiş sayılmaz.
 
+Son temel aktarım kabulü `8563406` ile iOS 18.6 SE 3 / iPhone 16 Pro Akış regresyonunu ve 43 PNG incelemesini de kapsıyor (`40387005716`). Aynı kaynağın imzasız arm64 cihaz Release'i (`40390633801`) minimum iOS 17.0 ve zayıf FoundationModels bağını doğruladı. Bu, iOS 17'de çalışma zamanı veya aşağıdaki bütün ekranların/model sınıflarının kabulü değildir.
+
 ## Mevcut destek politikası
 
 [ios/project.yml](../../../ios/project.yml) kaynak incelemesi şu durumu doğruluyor:
@@ -30,7 +32,7 @@ Görsel durum renk dışında simge/metinle de anlaşılmalı; odak, etiket, oku
 |---|---|---|
 | SE ve Pro native UI profilleri | Belirli simülatör/iOS ve test senaryolarında gerçek uygulama etkileşimi; SE normal ve Pro koyu/büyük yazı kanıtları | Bütün SE/Pro nesilleri, bütün iOS sürümleri, tüm uygulama ekranları ve fiziksel donanım |
 | Faz 3 SE kabulü ve dokuz PNG | `08ef238`: iki UI ve altı model testi; günlük seçim, bilinenler, rehber, kararlı ilk kelime, Akış, yeniden açma ve Atla yolu geçti | Diğer ekran/cihazların tamamı doğrulanmadı. Önceki geçiş karesi kabulün yerine kullanılmaz |
-| Faz 3 Pro/AX kabulü ve dokuz PNG | `08ef238`: iOS 26.1 koyu/AX5 yolculuğu, ilk/yeniden açılış başlığı ve toast sonrası aynı seçili düğmenin görünürlük/dokunulabilirliği geçti | iOS 18.6'nın eski anlık assertion hatası geçmiş sayılmaz; 26 öncesi son UI regresyonu ayrı bekliyor. Uzun içerik sonu/diğer rotalar bu dokuz kareyle tamamen doğrulanmadı |
+| Faz 3 Pro/AX kabulü ve dokuz PNG | `08ef238`: iOS 26.1 koyu/AX5 yolculuğu, ilk/yeniden açılış başlığı ve toast sonrası aynı seçili düğmenin görünürlük/dokunulabilirliği geçti | Başarısız eski iOS 18.6 açılış koşusu ayrı kayıttır. iOS 18.6 Akış regresyonu sonradan Faz 5'te geçti; bu, eski sistemde altı açılış adımının tamamının sınandığı anlamına gelmez |
 | Hosted Akış testleri | [FeedTransferSnapshotTests.swift](../../../ios/NativeTransferSnapshots/FeedTransferSnapshotTests.swift) içinde **375 ve 390 pt genişlik, 500 pt host yüksekliği**; seçili açık/koyu, yüksek kontrast ve AX5 örnekleri | Tam telefon kabuğu, gerçek safe area, sistem klavyesi, parmak hareketinin yönlendirilmesi, bütün kart verisi |
 | Aşağıdaki genişletilmiş matris | Henüz **plan** | Çalıştırılmadan başarı işareti verilmez |
 | Fiziksel iPhone | Bu aktarım için kontrol listesi hazır | Display Zoom, gerçek widget yenilenmesi, ses/mikrofon ve duyulan VoiceOver sonucu bekliyor |
@@ -54,7 +56,7 @@ Kısa SE, dar mini, standart ve büyük ekran grupları envanterden eşlenecek. 
 
 Tanımlı bir cihaz tipi, o tipin kurulu iOS runtime'ında gerçekten çalıştırıldığı anlamına gelmez. Çalışabilir cihaz/runtime eşleri bu hazırlık kapısında seçilip kayda bağlanır; yeni model envanteri kaynak kodundaki elle yazılmış bir model listesinden üretilmez.
 
-Eski runtime bulunamazsa ilgili **yerleşim sınırı**, kurulu runtime üzerinde hosted görünümle ölçülebilir. Bu, eksik iOS sürümünde uygulama çalıştırıldığı veya o donanımın doğrulandığı anlamına gelmez. iOS 17 hedefiyle derlenebilmek de tek başına iOS 17 çalışma zamanı testi değildir; eksik runtime/cihaz kontrolü açık kalır. Birleşik kabul için envanterde çalışabilir **en az bir iOS 26 öncesi runtime'da gerçek UI koşusu** gereklidir. Bu kapı Faz 5'in iOS 18.6 arayüz regresyonunda sınanacak; sonucu alınmadan geçti sayılmaz.
+Eski runtime bulunamazsa ilgili **yerleşim sınırı**, kurulu runtime üzerinde hosted görünümle ölçülebilir. Bu, eksik iOS sürümünde uygulama çalıştırıldığı veya o donanımın doğrulandığı anlamına gelmez. iOS 17 hedefiyle derlenebilmek de tek başına iOS 17 çalışma zamanı testi değildir; eksik runtime/cihaz kontrolü açık kalır. **En az bir iOS 26 öncesi runtime'da gerçek UI** alt kapısı, `40387005716` ile iOS 18.6 SE 3 ve iPhone 16 Pro'da geçti. Genişletilmiş rota/cihaz matrisi açık kalır.
 
 ## 2. Temsilî viewport matrisi
 
@@ -151,7 +153,7 @@ Ortak ölçüt: eylemler safe area içinde erişilebilir, metin/denetimler üst 
 
 ## 5. Mevcut fazlara bağlama
 
-Bu matris [FAZLAR.md](FAZLAR.md) içindeki aktarım kapılarını genişletir; geçmiş bir fazın dar kapsamlı başarısını tüm cihaz onayı olarak yeniden adlandırmaz.
+Bu matris [FAZLAR.md](FAZLAR.md) içindeki temel aktarımın ardından yapılacak **genişletilmiş uyum çalışmasının önerilen kapılarıdır**. Temel 0–5 kabulünün geçmesi bu ek matrisin tamamlandığı anlamına gelmez; geçmiş bir fazın dar kapsamlı başarısı tüm cihaz onayı olarak yeniden adlandırılmaz.
 
 | Mevcut faz | Eklenecek cihaz uyum kontrolü |
 |---|---|

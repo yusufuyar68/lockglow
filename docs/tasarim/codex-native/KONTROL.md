@@ -2,7 +2,7 @@
 
 26 Ekim 2026. Bu kayıt gerçek Swift/iOS koşularını tarayıcı prototipinden ayrı tutar.
 
-**Güncel kabul: Faz 4 tamamlandı.** `ca85638` / `40382167052` için SE/Pro model/import/provider testleri ve 12 widget PNG'si kabul edildi. Faz 5'in iOS 18.6 arayüz regresyonu ve imzasız cihaz Release derlemesi bekleniyor. Fiziksel cihaz ve genişletilmiş cihaz matrisi tamamlanmadı.
+**Güncel kabul: A aktarımının 0–5 temel otomatik kapıları tamamlandı.** Son UI `40387005716`, cihaz Release `40390633801`, kaynak `8563406`. Fiziksel cihaz, TestFlight ve genişletilmiş cihaz matrisi tamamlanmadı.
 
 | Kod | Koşu | Sonuç |
 |---|---|---|
@@ -94,3 +94,17 @@ Kanıtlar `docs/tasarim/codex/kontrol/native/faz4/40382167052/` altında; cihaz 
 Üretim Swift kodu `ca85638` ile aynıdır. Push kabulü iOS 18.6'daki mevcut SE 3 / iPhone 16 Pro simülatörlerine yöneltilir; normal/uzun Akış, Neden?/Kapat, sonraki karta geçiş ve Pro koyu/AX yolu yeniden sınanır. iOS 26.1 açılış kabulü ayrı kanıttır.
 
 Sonraki `checks=release` çağrısı, kayıtlı native-transfer girişinden aynı SHA'daki reusable native-release doğrulayıcısını çağırır. Diğer Mac işleri bitmeden çağrılmaz ve çalışırken bu dala push yapılmaz. Yalnız `Release`, `generic/platform=iOS`, `CODE_SIGNING_ALLOWED=NO`, `CODE_SIGNING_REQUIRED=NO`; gerçek app/widget arm64, minimum iOS 17.0 ve zayıf FoundationModels yük komutu kontrol edilir. Çıktı yerel CI arşividir; imzalı/kurulabilir IPA veya TestFlight yüklemesi değildir. Apple hesabı, sertifika ve profile erişilmez.
+
+## Faz 5 kabulü — 8563406
+
+[UI 40387005716](https://github.com/yusufuyar68/lockglow/actions/runs/40387005716), [Linux/içerik 40387005718](https://github.com/yusufuyar68/lockglow/actions/runs/40387005718) ve [cihaz Release 40390633801](https://github.com/yusufuyar68/lockglow/actions/runs/40390633801) başarılı. Son kaynağın iOS ağacı `2e984d16612e54edb7db44b5c614b2c87a1c29e4`; kabul sonrası yalnız belge kaydı eklenir.
+
+- SE 3 / iOS 18.6: UDID `4E62D48E-A75F-4AF3-BDC2-1C74916B5810`; 1.226 Mac paket testi, iki gerçek UI ve dört hosted test geçti. Normal kart 64,609 sn; uzun kart kaydırma, Neden?/Kapat, dönüş ve sonraki sayfa 139,214 sn. `900002` uzun kart sentetik stres fixture'ıdır; üretim veritabanına yazılmaz.
+- iPhone 16 Pro / iOS 18.6 / 22G86, koyu AX5: UDID `BEB0C3A5-7D46-4D50-B4C6-777F0A79718D`; gerçek okuma/Biliyorum/öğrenmeye dönüş UI testi 49,654 sn geçti. Kaynakta yazı yüksekliği assertion'ı da geçti. Yaklaşık 11 sn sonraki ikinci dokunuş kısa pencereli tam mementoyu kanıtlamaz; tam geri yükleme ve yeni cevabı koruma ayrı gerçek model testlerinde doğrulanmıştır.
+- SE'de 10 native + 20 hosted kart + 8 yüzey, Pro'da beş native PNG: **43/43 özgün görüntü incelendi**. Kalıcı yatay taşma veya erişilemeyen eylem saptanmadı. AX/uzun kart alt karelerinde son eylemler görünür; bazı 375 pt üst karelerinde Neden? kısmen ekran dışındadır, bu üst kareler tek başına erişim kanıtı sayılmaz. Hosted pencere 500 pt yüksekliğinde bir testtir; tam telefon değildir. Yalnız standart açık quiet-paper yüzeyi geçişlidir; koyu/yüksek kontrast düz kaldı.
+- Release aynı `8563406` kaynağından arm64 cihaz hedefiyle derlendi. Uygulama ve gömülü widget'ın gerçek Info.plist/Mach-O minimumu 17.0, platformu iphoneos; imza kapalı, kök `_CodeSignature` dizini yok. Bütün gömülü Mach-O dosyaları incelendi; FoundationModels için tek yük komutu `LC_LOAD_WEAK_DYLIB`.
+- İndirilen `Lockglow-unsigned-8563406e57d61632ff2ec418400032890afad497.app.zip` 11.013.497 bayt; SHA-256 `885b131f057cf0028d97aae847458f3de763112eca0f1a021ca339b62a74a86a`. Yerel SHA ve ZIP CRC doğrulaması geçti. Gerçek metadata 0.1.0 / build 1'dir; bu imzasız doğrulama paketi kurulmadı/yüklenmedi. TestFlight için ayrı onay ve uygun dağıtım build numarası gerekir.
+
+UI kanıtları `docs/tasarim/codex/kontrol/native/faz5/40387005716/`, Release manifesti/günlükleri ve yerel doğrulama `docs/tasarim/codex/kontrol/native/faz5/release/40390633801/` altında. Kaynak kimlikleri, kart numaraları, ana içerik/registry/seed ve progress.json dizi sözleşmesi korundu. Asıl `is6-hig` klasörü temiz ve `ac3cbed` olarak kaldı.
+
+Bu temel aktarım kabulü; bütün iPhone modellerinin, iOS 17 çalışma zamanının, gerçek VoiceOver sesinin, mikrofonun veya WidgetKit yenileme bütçesinin doğrulandığı anlamına gelmez. Genişletilmiş uyum çalışması [CIHAZ-UYUM-PLANI.md](CIHAZ-UYUM-PLANI.md), henüz tamamlanmamış fiziksel maddeler [CIHAZ-KONTROLU.md](CIHAZ-KONTROLU.md) içindedir. TestFlight yüklemesi ve ana dala birleştirme yapılmadı.
